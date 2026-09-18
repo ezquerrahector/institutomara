@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instituto Mara · Educación en línea | Cursos desde tu celular</title>
+<meta name="description" content="Escuela digital mexicana. Cursos de inteligencia artificial, inglés y computación. Estudia desde tu celular, a tu ritmo, desde cualquier estado del país.">
+<meta property="og:title" content="Instituto Mara · Educación en línea">
+<meta property="og:description" content="Aprende hoy. Abre tu mundo. Cursos en línea con constancia, desde tu celular.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --morado:#6D28D9;
+  --morado-osc:#5B21B6;
+  --tinta:#2E1065;
+  --lavanda:#EDE9FE;
+  --lila:#D9D6F7;
+  --turquesa:#14B8A6;
+  --turquesa-osc:#0D9488;
+  --papel:#FFFFFF;
+  --nube:#F8F7FE;
+  --texto:#1F2937;
+  --gris:#6B7280;
+  --linea:#E9E6F7;
+  --verde:#059669;
+  --rojo:#DC2626;
+  --r:18px;
+  --sombra:0 4px 24px rgba(109,40,217,.07);
+  --sombra-alta:0 12px 40px rgba(109,40,217,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  color:var(--texto);background:var(--papel);
+  font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:var(--morado);text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3,h4{color:var(--tinta);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(34px,5.4vw,56px)}
+h2{font-size:clamp(27px,3.6vw,40px)}
+h3{font-size:21px;font-weight:700}
+p{color:var(--texto)}
+
+/* ---------- avisos ---------- */
+.barra-aviso{
+  background:var(--tinta);color:#DDD6FE;font-size:13px;
+  text-align:center;padding:9px 16px;line-height:1.5;
+}
+.barra-aviso strong{color:#fff}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--linea);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.marca{display:flex;align-items:center;gap:11px}
+.marca svg{width:38px;height:38px;flex:none}
+.marca b{font-size:21px;font-weight:800;color:var(--tinta);letter-spacing:-.03em;white-space:nowrap}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{color:var(--texto);font-weight:500;font-size:15.5px}
+.menu a:hover{color:var(--morado)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:0;border-radius:999px;font-family:inherit;font-size:15.5px;font-weight:600;
+  padding:12px 26px;cursor:pointer;transition:.18s;text-align:center;
+}
+.btn-mor{background:var(--morado);color:#fff;box-shadow:0 4px 14px rgba(109,40,217,.28)}
+.btn-mor:hover{background:var(--morado-osc);transform:translateY(-1px);box-shadow:0 8px 22px rgba(109,40,217,.34)}
+.btn-lav{background:var(--lavanda);color:var(--morado)}
+.btn-lav:hover{background:var(--lila)}
+.btn-linea{background:transparent;color:var(--morado);box-shadow:inset 0 0 0 2px var(--lila)}
+.btn-linea:hover{background:var(--lavanda)}
+.btn-grande{padding:16px 34px;font-size:17px}
+.btn-ancho{width:100%}
+.hamb{display:none;background:none;border:0;font-size:26px;color:var(--tinta);cursor:pointer;padding:4px 8px}
+
+/* ---------- hero ---------- */
+.hero{
+  background:linear-gradient(170deg,var(--nube) 0%,#fff 62%);
+  padding:74px 0 0;overflow:hidden;position:relative;
+}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
+.eyebrow{
+  font-size:12.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--morado);margin-bottom:16px;
+}
+.hero p.lead{font-size:20px;color:var(--gris);margin:18px 0 32px;max-width:480px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-nota{
+  margin-top:34px;padding-top:26px;border-top:3px solid var(--morado);
+  max-width:330px;font-size:15.5px;color:var(--gris);border-top-width:4px;
+  border-image:linear-gradient(90deg,var(--morado) 0 46px,transparent 46px) 1;
+}
+.hero-art{position:relative;min-height:400px;display:flex;align-items:center;justify-content:center}
+.blob{
+  position:absolute;inset:auto;width:100%;height:92%;border-radius:36px;
+  background:linear-gradient(140deg,var(--lavanda),#F3E8FF 55%,#CCFBF1);
+}
+.tarjeta-flota{
+  position:absolute;background:#fff;border-radius:14px;padding:13px 17px;
+  box-shadow:var(--sombra-alta);display:flex;align-items:center;gap:11px;
+  font-size:14px;font-weight:600;color:var(--tinta);
+}
+.tf-1{top:16%;left:-14px}
+.tf-2{bottom:19%;right:-10px}
+.punto{width:10px;height:10px;border-radius:50%;flex:none}
+.escrito{
+  font-family:'Caveat',cursive;font-size:27px;color:var(--morado);
+  line-height:1.15;transform:rotate(-6deg);
+}
+
+/* ---------- franja confianza ---------- */
+.confianza{background:var(--lavanda);border-radius:var(--r);padding:26px 30px;margin:52px 0 0}
+.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.conf{display:flex;gap:15px;align-items:flex-start}
+.ico{
+  width:48px;height:48px;border-radius:13px;flex:none;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.ico-mor{background:var(--morado);color:#fff}
+.ico-tur{background:var(--turquesa);color:#fff}
+.ico-lila{background:var(--lila);color:var(--morado)}
+.conf b{display:block;color:var(--tinta);font-size:16px;font-weight:700;margin-bottom:2px}
+.conf span{font-size:14.5px;color:var(--gris);line-height:1.5}
+
+/* ---------- encabezado de sección ---------- */
+.sec-head{max-width:660px;margin-bottom:46px}
+.sec-head.centro{text-align:center;margin-left:auto;margin-right:auto}
+.sec-head p{color:var(--gris);font-size:18px;margin-top:14px}
+
+/* ---------- cursos ---------- */
+.cursos{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.curso{
+  background:#fff;border:1px solid var(--linea);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+}
+.curso:hover{transform:translateY(-4px);box-shadow:var(--sombra-alta);border-color:var(--lila)}
+.curso-top{padding:26px 26px 0;position:relative}
+.curso-num{font-size:13px;font-weight:700;color:var(--turquesa);letter-spacing:.5px;margin-bottom:8px}
+.curso-cuerpo{padding:16px 26px 26px;display:flex;flex-direction:column;flex:1}
+.curso-cuerpo>p{font-size:15.5px;color:var(--gris);margin-bottom:18px}
+.curso ul{list-style:none;margin-bottom:20px}
+.curso li{font-size:15px;color:var(--texto);padding-left:25px;position:relative;margin-bottom:9px;line-height:1.5}
+.curso li::before{
+  content:"";position:absolute;left:0;top:8px;width:13px;height:8px;
+  border-left:2.5px solid var(--turquesa);border-bottom:2.5px solid var(--turquesa);
+  transform:rotate(-45deg);
+}
+.precio{margin-top:auto;padding-top:18px;border-top:1px solid var(--linea)}
+.precio .antes{font-size:15px;color:var(--gris);text-decoration:line-through;margin-right:9px}
+.precio .ahora{font-size:31px;font-weight:800;color:var(--morado);letter-spacing:-.02em}
+.precio .moneda{font-size:14px;color:var(--gris);font-weight:600}
+.precio small{display:block;font-size:13.5px;color:var(--gris);margin:4px 0 16px}
+.cinta{
+  position:absolute;top:26px;right:26px;background:var(--turquesa);color:#fff;
+  font-size:11.5px;font-weight:700;letter-spacing:.7px;padding:5px 12px;border-radius:999px;text-transform:uppercase;
+}
+.destacado{border-color:var(--morado);box-shadow:0 8px 30px rgba(109,40,217,.12)}
+
+/* ---------- paquete ---------- */
+.paquete{
+  margin-top:26px;background:linear-gradient(120deg,var(--tinta),var(--morado));
+  border-radius:var(--r);padding:34px 38px;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.paquete h3{color:#fff;margin-bottom:6px;font-size:23px}
+.paquete p{color:#DDD6FE;font-size:15.5px;max-width:520px}
+.paquete .pq-precio{text-align:right}
+.paquete .pq-precio b{display:block;font-size:36px;font-weight:800;letter-spacing:-.02em}
+.paquete .pq-precio span{font-size:14px;color:#C4B5FD}
+
+/* ---------- pasos ---------- */
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:p}
+.paso{position:relative;padding-top:8px}
+.paso .n{
+  width:44px;height:44px;border-radius:13px;background:var(--lavanda);color:var(--morado);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin-bottom:16px;
+}
+.paso h3{font-size:18px;margin-bottom:8px}
+.paso p{font-size:15px;color:var(--gris)}
+
+/* ---------- franja oscura ---------- */
+.oscuro{background:var(--tinta);color:#fff}
+.oscuro h2,.oscuro h3{color:#fff}
+.oscuro .eyebrow{color:#A78BFA}
+.oscuro .sec-head p{color:#C4B5FD}
+.razones{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.razon h3{font-size:19px;margin:16px 0 8px}
+.razon p{color:#C4B5FD;font-size:15.5px}
+.razon .ico{background:rgba(255,255,255,.1);color:#fff}
+
+/* ---------- etapas ---------- */
+.futuro{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.fut{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:24px;border-top:4px solid var(--lila)}
+.fut.viva{border-top-color:var(--turquesa)}
+.fase{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--morado);margin-bottom:10px}
+.fut.viva .fase{color:var(--turquesa)}
+.fut h3{font-size:18px;margin-bottom:8px}
+.fut p{font-size:14.5px;color:var(--gris)}
+
+/* ---------- formulario ---------- */
+.inscribe{
+  max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--linea);
+  border-radius:var(--r);padding:34px;box-shadow:var(--sombra);
+}
+.campo{margin-bottom:17px}
+.campo label{display:block;font-size:14.5px;font-weight:600;color:var(--tinta);margin-bottom:7px}
+.campo input,.campo select{
+  width:100%;padding:13px 15px;border:1.5px solid var(--linea);border-radius:11px;
+  font-family:inherit;font-size:16px;color:var(--texto);background:#fff;transition:.15s;
+}
+.campo input:focus,.campo select:focus{outline:0;border-color:var(--morado);box-shadow:0 0 0 4px rgba(109,40,217,.1)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.nota-form{font-size:13px;color:var(--gris);margin-top:15px;line-height:1.55;text-align:center}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px;margin:0 auto}
+details{border-bottom:1px solid var(--linea);padding:6px 0}
+summary{
+  cursor:pointer;list-style:none;padding:17px 40px 17px 0;position:relative;
+  font-weight:600;font-size:17px;color:var(--tinta);
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:8px;top:14px;font-size:25px;font-weight:400;
+  color:var(--morado);transition:.2s;
+}
+details[open] summary::after{transform:rotate(45deg)}
+details .r{padding:0 20px 20px 0;color:var(--gris);font-size:16px}
+
+/* ---------- legal + footer ---------- */
+.legal{background:var(--lavanda);padding:30px 0}
+.legal p{font-size:13.5px;color:#4C1D95;line-height:1.7;max-width:980px;margin:0 auto;text-align:center}
+footer{background:var(--tinta);color:#C4B5FD;padding:58px 0 30px;font-size:15px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:38px;margin-bottom:38px}
+footer h4{color:#fff;font-size:15px;margin-bottom:14px;font-weight:700}
+footer p{color:#C4B5FD;font-size:15px}
+footer ul{list-style:none}
+footer li{margin-bottom:9px}
+footer a{color:#C4B5FD}
+footer a:hover{color:#fff}
+.foot-marca{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-marca svg{width:32px;height:32px}
+.foot-marca b{color:#fff;font-size:19px;font-weight:800;letter-spacing:-.03em}
+.copy{border-top:1px solid rgba(255,255,255,.13);padding-top:24px;font-size:13.5px;color:#A78BFA;text-align:center;line-height:1.9}
+
+/* ---------- whatsapp ---------- */
+.wa{
+  position:fixed;right:20px;bottom:20px;z-index:70;background:#25D366;color:#fff;
+  border-radius:999px;padding:14px 22px;font-weight:600;font-size:15.5px;
+  box-shadow:0 8px 26px rgba(37,211,102,.4);display:flex;align-items:center;gap:9px;
+}
+.wa:hover{background:#1FAF52;color:#fff}
+
+/* ---------- responsive ---------- */
+@media(max-width:940px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-art{min-height:270px;order:-1}
+  .cursos,.pasos,.razones,.futuro,.conf-grid,.foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  body{font-size:16px}
+  section{padding:56px 0}
+  .menu{
+    display:none;position:absolute;top:74px;left:0;right:0;background:#fff;
+    flex-direction:column;align-items:stretch;gap:0;padding:12px 24px 22px;
+    border-bottom:1px solid var(--linea);box-shadow:var(--sombra);
+  }
+  .menu.abierto{display:flex}
+  .menu a{padding:13px 0;border-bottom:1px solid var(--linea)}
+  .menu .btn{margin-top:14px}
+  .hamb{display:block}
+  .cursos,.pasos,.razones,.futuro,.conf-grid,.foot-grid,.dos{grid-template-columns:1fr}
+  .conf-grid{gap:18px}
+  .paquete{flex-direction:column;align-items:flex-start;padding:28px}
+  .paquete .pq-precio{text-align:left}
+  .inscribe{padding:24px}
+  .tf-1,.tf-2{display:none}
+  .wa{padding:13px 18px;font-size:14.5px;right:14px;bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ AVISO ============ -->
+<div class="barra-aviso">
+  <strong>Cursos libres de capacitación.</strong> No cuentan con Reconocimiento de Validez Oficial de Estudios (RVOE) de la SEP.
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="marca" aria-label="Instituto Mara, inicio">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95"
+              fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <b>Instituto Mara</b>
+    </a>
+    <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="menu" id="menu">
+      <a href="#cursos">Cursos</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="../plataforma/index.html" class="btn btn-mor">Ingresar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Aprende hoy. Abre tu mundo.</div>
+        <h1>Estudia desde tu celular, al ritmo que tú puedas</h1>
+        <p class="lead">Cursos en línea con contenido listo y constancia al terminar. Sin horarios, sin trasladarte, sin pedir permiso en el trabajo.</p>
+        <div class="hero-cta">
+          <a href="#cursos" class="btn btn-mor btn-grande">Ver los cursos →</a>
+          <a href="#como" class="btn btn-linea btn-grande">Cómo funciona</a>
+        </div>
+        <div class="hero-nota">
+          Estudiar otra vez sí es posible. Nosotros te acompañamos en cada paso.
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="blob"></div>
+        <svg viewBox="0 0 420 340" style="position:relative;width:88%;max-width:400px" aria-hidden="true">
+          <rect x="52" y="34" width="316" height="212" rx="16" fill="#fff"/>
+          <rect x="52" y="34" width="316" height="38" rx="16" fill="#6D28D9"/>
+          <rect x="52" y="58" width="316" height="14" fill="#6D28D9"/>
+          <circle cx="73" cy="53" r="5" fill="#C4B5FD"/><circle cx="90" cy="53" r="5" fill="#C4B5FD"/><circle cx="107" cy="53" r="5" fill="#C4B5FD"/>
+          <rect x="72" y="92" width="132" height="12" rx="6" fill="#2E1065"/>
+          <rect x="72" y="115" width="196" height="8" rx="4" fill="#E9E6F7"/>
+          <rect x="72" y="131" width="164" height="8" rx="4" fill="#E9E6F7"/>
+          <rect x="72" y="158" width="128" height="68" rx="10" fill="#EDE9FE"/>
+          <circle cx="136" cy="192" r="21" fill="#6D28D9"/>
+          <path d="M131 183 L147 192 L131 201 Z" fill="#fff"/>
+          <rect x="214" y="158" width="128" height="30" rx="8" fill="#F8F7FE"/>
+          <rect x="226" y="169" width="62" height="8" rx="4" fill="#D9D6F7"/>
+          <rect x="214" y="196" width="128" height="30" rx="8" fill="#F8F7FE"/>
+          <rect x="226" y="207" width="84" height="8" rx="4" fill="#D9D6F7"/>
+          <rect x="176" y="246" width="68" height="40" rx="5" fill="#D9D6F7"/>
+          <rect x="128" y="286" width="164" height="11" rx="5.5" fill="#C4B5FD"/>
+          <rect x="292" y="212" width="86" height="112" rx="13" fill="#14B8A6"/>
+          <rect x="299" y="224" width="72" height="88" rx="6" fill="#fff"/>
+          <rect x="309" y="238" width="52" height="7" rx="3.5" fill="#CCFBF1"/>
+          <rect x="309" y="252" width="38" height="7" rx="3.5" fill="#CCFBF1"/>
+          <circle cx="335" cy="284" r="16" fill="#14B8A6"/>
+          <path d="M328 284 L333 289 L343 279" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="tarjeta-flota tf-1"><span class="punto" style="background:var(--turquesa)"></span> Bloque 3 completado</div>
+        <div class="tarjeta-flota tf-2"><span class="punto" style="background:var(--morado)"></span> Constancia lista</div>
+      </div>
+    </div>
+
+    <div class="confianza">
+      <div class="conf-grid">
+        <div class="conf">
+          <div class="ico ico-mor">📚</div>
+          <div><b>Por bloques</b><span>Contenido claro y organizado. Avanzas de un bloque al siguiente.</span></div>
+        </div>
+        <div class="conf">
+          <div class="ico ico-tur">🕐</div>
+          <div><b>A tu ritmo, 24/7</b><span>Tú decides cuándo y cómo avanzar. La plataforma nunca cierra.</span></div>
+        </div>
+        <div class="conf">
+          <div class="ico ico-lila">🎓</div>
+          <div><b>Constancia propia</b><span>Al aprobar recibes tu constancia con folio de Instituto Mara.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CURSOS ============ -->
+<section id="cursos">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Cursos en línea</div>
+      <h2>Tres cursos para empezar hoy</h2>
+      <p>Contenido práctico, en español, pensado para quien empieza desde cero. Te decimos exactamente qué vas a aprender, cuánto dura y qué recibes al final.</p>
+    </div>
+
+    <div class="cursos">
+      <article class="curso destacado">
+        <div class="curso-top">
+          <span class="cinta">Más pedido</span>
+          <div class="curso-num">01 ·</div>
+          <h3>Inteligencia artificial aplicada al trabajo</h3>
+        </div>
+        <div class="curso-cuerpo">
+          <p>30 horas · 10 bloques. Aprende a usar la IA para resolver tareas reales de tu trabajo, no para jugar.</p>
+          <ul>
+            <li>Escribir instrucciones que sí funcionan</li>
+            <li>Redactar textos de trabajo en minutos</li>
+            <li>Tu manual de respuestas de WhatsApp</li>
+            <li>Resumir documentos largos</li>
+            <li>Detectar errores y datos inventados</li>
+          </ul>
+          <div class="precio">
+            <span class="antes">$1,490</span>
+            <span class="ahora">$890</span> <span class="moneda">MXN</span>
+            <small>Pago único · Acceso 12 meses</small>
+            <a href="#inscripcion" class="btn btn-mor btn-ancho" data-curso="Inteligencia Artificial aplicada al trabajo">Inscribirme</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="curso">
+        <div class="curso-top">
+          <div class="curso-num">02 ·</div>
+          <h3>Inglés básico desde cero (A1)</h3>
+        </div>
+        <div class="curso-cuerpo">
+          <p>40 horas · 10 bloques. Empieza de cero y termina entendiendo y diciendo lo esencial del día a día.</p>
+          <ul>
+            <li>420 palabras de uso cotidiano</li>
+            <li>Audio y transcripción en cada diálogo</li>
+            <li>Pronunciación con práctica dedicada</li>
+            <li>Presentarte, pedir y preguntar</li>
+            <li>Examen inicial y examen final</li>
+          </ul>
+          <div class="precio">
+            <span class="antes">$990</span>
+            <span class="ahora">$690</span> <span class="moneda">MXN</span>
+            <small>Pago único · Acceso 12 meses</small>
+            <a href="#inscripcion" class="btn btn-lav btn-ancho" data-curso="Inglés básico desde cero (A1)">Inscribirme</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="curso">
+        <div class="curso-top">
+          <div class="curso-num">03 ·</div>
+          <h3>Computación y Office desde cero</h3>
+        </div>
+        <div class="curso-cuerpo">
+          <p>45 horas · 10 bloques. De prender la computadora a entregar un documento y una hoja de cálculo bien hechos.</p>
+          <ul>
+            <li>Windows, archivos y carpetas</li>
+            <li>Word: documentos con formato</li>
+            <li>Excel: fórmulas y tablas</li>
+            <li>PowerPoint y correo electrónico</li>
+            <li>22 archivos de práctica</li>
+          </ul>
+          <div class="precio">
+            <span class="antes">$890</span>
+            <span class="ahora">$590</span> <span class="moneda">MXN</span>
+            <small>Pago único · Requiere computadora</small>
+            <a href="#inscripcion" class="btn btn-lav btn-ancho" data-curso="Computación y Office desde cero">Inscribirme</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="paquete">
+      <div>
+        <h3>Llévate los tres cursos</h3>
+        <p>115 horas de capacitación, tres constancias con folio y acceso durante doce meses. Es la opción que más conviene si quieres cambiar de trabajo o pedir un aumento con algo que demostrar.</p>
+      </div>
+      <div class="pq-precio">
+        <b>$1,790</b>
+        <span>en lugar de $3,370 &nbsp;·&nbsp; ahorras $1,580</span>
+        <a href="#inscripcion" class="btn btn-lav" style="margin-top:14px" data-curso="Los tres cursos (paquete)">Quiero el paquete</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section id="como" style="background:var(--nube)">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De inscribirte a tener tu constancia</h2>
+      <p>Cuatro pasos. Sin trámites presenciales, sin papeleo y sin esperar a que abra un ciclo escolar.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <div class="n">1</div>
+        <h3>Te inscribes</h3>
+        <p>Llenas el formulario y eliges cómo pagar: tarjeta, meses sin intereses, transferencia o efectivo en tienda.</p>
+      </div>
+      <div class="paso">
+        <div class="n">2</div>
+        <h3>Recibes tu acceso</h3>
+        <p>Te llegan por WhatsApp y correo tu usuario y contraseña. Con tarjeta o SPEI, el mismo día.</p>
+      </div>
+      <div class="paso">
+        <div class="n">3</div>
+        <h3>Estudias por bloques</h3>
+        <p>Cada bloque tiene lecciones, un archivo descargable, una actividad y un examen. Apruebas y se abre el siguiente.</p>
+      </div>
+      <div class="paso">
+        <div class="n">4</div>
+        <h3>Obtienes tu constancia</h3>
+        <p>Al terminar y aprobar el examen final, tu constancia con folio se genera sola y la descargas en PDF.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="oscuro">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Por qué Instituto Mara</div>
+      <h2>Hecho para quien ya no tiene tiempo de ir a una escuela</h2>
+      <p>No inventamos nada raro: tomamos lo que impide estudiar a la mayoría de los adultos en México y lo quitamos de en medio.</p>
+    </div>
+    <div class="razones">
+      <div class="razon">
+        <div class="ico">📱</div>
+        <h3>Desde el celular</h3>
+        <p>Todo el contenido está pensado para leerse y verse en una pantalla pequeña, en el camión o en tu hora de comida. No necesitas computadora salvo para el curso de Office.</p>
+      </div>
+      <div class="razon">
+        <div class="ico">💸</div>
+        <h3>Precio de verdad accesible</h3>
+        <p>Cursos completos desde $590 pesos, con meses sin intereses y opción de pagar en efectivo. Sin inscripción, sin colegiatura mensual y sin cargos sorpresa.</p>
+      </div>
+      <div class="razon">
+        <div class="ico">🗺️</div>
+        <h3>En cualquier estado</h3>
+        <p>Da lo mismo si vives en Ciudad de México o en una comunidad de Chiapas. Si tienes internet, tienes escuela. Nunca vas a pisar una oficina.</p>
+      </div>
+      <div class="razon">
+        <div class="ico">🤝</div>
+        <h3>Te contestamos</h3>
+        <p>Un humano responde tus dudas por WhatsApp de lunes a sábado. No es un robot ni un formulario que nadie lee.</p>
+      </div>
+      <div class="razon">
+        <div class="ico">🧾</div>
+        <h3>Te decimos la verdad</h3>
+        <p>Somos cursos libres de capacitación y lo decimos en la portada. No te vendemos validez oficial que no tenemos ni te prometemos un empleo que no depende de nosotros.</p>
+      </div>
+      <div class="razon">
+        <div class="ico">↩️</div>
+        <h3>Garantía de 7 días</h3>
+        <p>Si en la primera semana ves que el curso no es para ti, te devolvemos tu dinero completo. Sin preguntas y sin letra chiquita.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ETAPAS ============ -->
+<section id="futuro">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Hacia dónde vamos</div>
+      <h2>Estamos creciendo, y queremos que crezcas con nosotros</h2>
+      <p>Instituto Mara abre con capacitación y avanza por etapas hacia la formación con reconocimiento oficial. Este es el camino, sin adornos.</p>
+    </div>
+    <div class="futuro">
+      <div class="fut viva">
+        <div class="fase">Etapa 1 · Ya disponible</div>
+        <h3>Capacitación</h3>
+        <p>Inteligencia artificial, inglés y computación. Cursos libres con constancia de Instituto Mara.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 2 · Próximamente</div>
+        <h3>Preparación</h3>
+        <p>Asesoría para el examen CENEVAL del Acuerdo 286 y para exámenes de admisión a prepa y universidad.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 3 · En proceso</div>
+        <h3>Bachillerato</h3>
+        <p>Preparatoria en línea, una vez concluido el trámite de reconocimiento oficial ante la autoridad educativa.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 4 · A futuro</div>
+        <h3>Nivel superior</h3>
+        <p>Licenciaturas en línea, con el reconocimiento oficial correspondiente para cada plan de estudios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSCRIPCIÓN ============ -->
+<section id="inscripcion" style="background:var(--nube)">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Inscripción</div>
+      <h2>Aparta tu lugar hoy</h2>
+      <p>Llena tus datos y te escribimos por WhatsApp con tu enlace de pago y tus accesos. Tarda menos de un minuto.</p>
+    </div>
+
+    <form class="inscribe" id="formIns">
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Como aparece en tu identificación oficial">
+      </div>
+      <div class="dos">
+        <div class="campo">
+          <label for="tel">WhatsApp (10 dígitos)</label>
+          <input type="tel" id="tel" name="tel" required pattern="[0-9]{10}" placeholder="5512345678">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
+        </div>
+      </div>
+      <div class="dos">
+        <div class="campo">
+          <label for="estado">Estado donde vives</label>
+          <input type="text" id="estado" name="estado" required placeholder="Ej. Jalisco">
+        </div>
+        <div class="campo">
+          <label for="curso">Curso que quieres</label>
+          <select id="curso" name="curso" required>
+            <option value="Inteligencia Artificial aplicada al trabajo">IA aplicada al trabajo — $890</option>
+            <option value="Inglés básico desde cero (A1)">Inglés básico A1 — $690</option>
+            <option value="Computación y Office desde cero">Computación y Office — $590</option>
+            <option value="Los tres cursos (paquete)">Los tres cursos (paquete) — $1,790</option>
+          </select>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="pago">Cómo prefieres pagar</label>
+        <select id="pago" name="pago" required>
+          <option value="Tarjeta de crédito o débito">Tarjeta de crédito o débito</option>
+          <option value="Meses sin intereses">Meses sin intereses</option>
+          <option value="Transferencia SPEI">Transferencia SPEI</option>
+          <option value="Efectivo en tienda de conveniencia">Efectivo en tienda de conveniencia</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-mor btn-ancho btn-grande">Apartar mi lugar por WhatsApp</button>
+      <p class="nota-form">Al enviar aceptas que te contactemos por WhatsApp y correo. Tus datos se tratan conforme a nuestro aviso de privacidad y no se comparten con terceros.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="preguntas">
+  <div class="wrap faq">
+    <div class="sec-head centro">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+
+    <details open>
+      <summary>¿Los cursos tienen validez oficial de la SEP?</summary>
+      <div class="r">No, y preferimos decírtelo de frente. Los cursos de Instituto Mara son cursos libres de capacitación para el trabajo: al terminar recibes una constancia de capacitación con folio que acredita las horas que cursaste y lo que aprendiste. No es un certificado de secundaria, de preparatoria ni un título universitario, y no sustituye estudios formales. Si lo que buscas es un certificado oficial, escríbenos y te orientamos sobre las vías legales para obtenerlo.</div>
+    </details>
+
+    <details>
+      <summary>¿Necesito computadora?</summary>
+      <div class="r">Para los cursos de inteligencia artificial e inglés basta con tu celular. El curso de Computación y Office sí requiere una computadora con Windows, porque vas a practicar directamente sobre los programas; puede ser prestada o de un café internet, pero necesitas acceso a una.</div>
+    </details>
+
+    <details>
+      <summary>¿Cuánto tiempo tengo para terminar?</summary>
+      <div class="r">Tienes acceso durante doce meses a partir de tu inscripción. La mayoría de los alumnos termina en seis a diez semanas dedicando entre tres y cinco horas por semana, pero no hay ninguna prisa ni penalización si te tardas más.</div>
+    </details>
+
+    <details>
+      <summary>¿Hay clases en vivo o maestro asignado?</summary>
+      <div class="r">No en esta etapa. Todo el contenido está grabado y cargado, con exámenes que se califican automáticamente y te explican cada respuesta. Sí tienes acompañamiento humano por WhatsApp para dudas de la plataforma, pagos y orientación. Estamos preparando asesorías en vivo opcionales para más adelante.</div>
+    </details>
+
+    <details>
+      <summary>¿Puedo estudiar desde cualquier estado?</summary>
+      <div class="r">Sí. Instituto Mara es 100% en línea y atiende a alumnos de toda la República. No necesitas acudir a ninguna oficina en ningún momento, ni para inscribirte ni para recibir tu constancia.</div>
+    </details>
+
+    <details>
+      <summary>¿Cómo pago y cuándo se abre mi acceso?</summary>
+      <div class="r">Aceptamos tarjeta de crédito y débito, meses sin intereses, transferencia SPEI y pago en efectivo en tiendas de conveniencia. Con tarjeta o SPEI tu acceso se abre el mismo día. Con pago en efectivo, se abre cuando la tienda reporta el depósito, normalmente dentro de las 24 horas siguientes.</div>
+    </details>
+
+    <details>
+      <summary>¿Y si no me gusta el curso?</summary>
+      <div class="r">Si dentro de los primeros siete días naturales y antes de haber completado el segundo bloque consideras que el curso no es para ti, te devolvemos tu pago completo. Solo escríbenos por WhatsApp; no te vamos a pedir explicaciones.</div>
+    </details>
+
+    <details>
+      <summary>¿Dan factura?</summary>
+      <div class="r">Sí. Solicítala al momento de tu inscripción con tu constancia de situación fiscal y te la emitimos junto con tu comprobante de pago.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ LEGAL ============ -->
+<div class="legal">
+  <div class="wrap">
+    <p><strong>Aviso legal.</strong> Los cursos de capacitación que imparte Instituto Mara son cursos libres de formación para el trabajo y <strong>no cuentan con Reconocimiento de Validez Oficial de Estudios (RVOE)</strong> de la Secretaría de Educación Pública ni con acuerdo de incorporación de autoridad educativa alguna. Las constancias que se expiden acreditan la capacitación recibida y las horas cursadas, y <strong>no equivalen a un certificado, título o grado académico</strong> ni sustituyen estudios de tipo básico, medio superior o superior.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-marca">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95"
+                  fill="none" stroke="#FFFFFF" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <b>Instituto Mara</b>
+        </div>
+        <p style="max-width:330px">Educación en línea. Capacitación accesible para adultos que trabajan, en cualquier estado de México.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#como">Cómo funciona</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+          <li><a href="#inscripcion">Inscripción</a></li>
+          <li><a href="../plataforma/index.html">Entrar al aula</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/52XXXXXXXXXX">WhatsApp: 55 XXXX XXXX</a></li>
+          <li><a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a></li>
+          <li>Atención: lunes a sábado, 9:00 a 20:00 h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 Instituto Mara · Educación en línea · Todos los derechos reservados<br>
+      Aviso de privacidad · Términos y condiciones · Política de reembolsos
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/52XXXXXXXXXX?text=Hola,%20quiero%20informes%20de%20los%20cursos%20de%20Instituto%20Mara" target="_blank" rel="noopener">💬 Escríbenos</a>
+
+<script>
+// ---- Menú móvil ----
+var hamb = document.getElementById('hamb');
+var menu = document.getElementById('menu');
+hamb.addEventListener('click', function(){
+  var abierto = menu.classList.toggle('abierto');
+  hamb.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+});
+menu.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ menu.classList.remove('abierto'); });
+});
+
+// ---- Preselecciona el curso al dar clic en la tarjeta ----
+document.querySelectorAll('[data-curso]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var sel = document.getElementById('curso');
+    var v = b.getAttribute('data-curso');
+    for (var i=0;i<sel.options.length;i++){ if(sel.options[i].value===v){ sel.selectedIndex=i; } }
+  });
+});
+
+// ---- Envía la inscripción por WhatsApp (sin necesidad de servidor) ----
+// IMPORTANTE: reemplaza 52XXXXXXXXXX por tu número con lada de país. Ej: 525512345678
+var WHATSAPP = '52XXXXXXXXXX';
+
+document.getElementById('formIns').addEventListener('submit', function(e){
+  e.preventDefault();
+  var d = new FormData(e.target);
+  var msg =
+    'NUEVA INSCRIPCIÓN — Instituto Mara\n\n' +
+    'Nombre: ' + d.get('nombre') + '\n' +
+    'WhatsApp: ' + d.get('tel') + '\n' +
+    'Correo: ' + d.get('correo') + '\n' +
+    'Estado: ' + d.get('estado') + '\n' +
+    'Curso: ' + d.get('curso') + '\n' +
+    'Forma de pago: ' + d.get('pago');
+  window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>

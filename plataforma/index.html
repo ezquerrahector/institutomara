@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aula virtual — Instituto Mara</title>
+<meta name="description" content="Aula virtual de Instituto Mara. Acceso para alumnos y administración.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --morado:#6D28D9; --morado-osc:#5B21B6; --tinta:#2E1065;
+  --lavanda:#EDE9FE; --lila:#D9D6F7;
+  --turquesa:#14B8A6; --turquesa-osc:#0D9488;
+  --nube:#F8F7FE; --texto:#1F2937; --gris:#6B7280; --linea:#E9E6F7;
+  --ok:#059669; --alerta:#D97706; --error:#DC2626;
+  --sombra:0 2px 8px rgba(46,16,101,.06); --sombra-md:0 8px 28px rgba(46,16,101,.10);
+  --r:14px; --r-lg:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:var(--texto);background:var(--nube);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--morado);text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+.oculto{display:none !important}
+.contenedor{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;
+  font-weight:600;border-radius:999px;padding:11px 22px;transition:.18s;line-height:1.2;text-align:center}
+.btn-mor{background:var(--morado);color:#fff;box-shadow:0 4px 14px rgba(109,40,217,.28)}
+.btn-mor:hover{background:var(--morado-osc);transform:translateY(-1px)}
+.btn-tur{background:var(--turquesa);color:#fff}
+.btn-tur:hover{background:var(--turquesa-osc)}
+.btn-linea{background:#fff;color:var(--morado);border:1.5px solid var(--lila)}
+.btn-linea:hover{border-color:var(--morado);background:var(--lavanda)}
+.btn-fantasma{background:transparent;color:var(--gris);padding:8px 14px}
+.btn-fantasma:hover{color:var(--morado);background:var(--lavanda)}
+.btn-peligro{background:#fff;color:var(--error);border:1.5px solid #FCA5A5}
+.btn-peligro:hover{background:#FEF2F2}
+.btn-sm{padding:7px 14px;font-size:.87rem}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ---------- Formularios ---------- */
+.campo{margin-bottom:16px}
+.campo label{display:block;font-weight:600;font-size:.87rem;margin-bottom:6px;color:var(--tinta)}
+.campo input,.campo select,.campo textarea{width:100%;padding:12px 14px;border:1.5px solid var(--linea);
+  border-radius:12px;background:#fff;transition:.15s}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:0;border-color:var(--morado);
+  box-shadow:0 0 0 4px rgba(109,40,217,.10)}
+.campo textarea{min-height:110px;resize:vertical;line-height:1.55}
+.campo .ayuda{font-size:.8rem;color:var(--gris);margin-top:5px}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.fila{grid-template-columns:1fr}}
+
+/* ---------- Login ---------- */
+#pantallaLogin{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr}
+@media(max-width:900px){#pantallaLogin{grid-template-columns:1fr}}
+.login-arte{background:linear-gradient(150deg,var(--tinta) 0%,var(--morado) 58%,#7C3AED 100%);
+  color:#fff;padding:56px 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+@media(max-width:900px){.login-arte{padding:40px 24px;min-height:auto}}
+.login-arte:after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(20,184,166,.28),transparent 68%);right:-180px;bottom:-200px}
+.login-arte>*{position:relative;z-index:1}
+.login-arte h1{font-size:2.5rem;font-weight:800;letter-spacing:-1px;line-height:1.12;margin:26px 0 14px}
+@media(max-width:900px){.login-arte h1{font-size:1.9rem}}
+.login-arte p{color:#DDD6FE;max-width:40ch}
+.login-lista{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:12px}
+.login-lista li{display:flex;gap:11px;align-items:flex-start;color:#EDE9FE;font-size:.95rem}
+.login-lista svg{flex:none;margin-top:3px}
+.login-forma{display:flex;align-items:center;justify-content:center;padding:48px 24px}
+.login-caja{width:100%;max-width:410px}
+.login-caja h2{font-size:1.6rem;font-weight:800;color:var(--tinta);letter-spacing:-.5px}
+.login-caja>p{color:var(--gris);margin-bottom:26px;font-size:.95rem}
+.pestañas{display:flex;gap:6px;background:var(--lavanda);padding:5px;border-radius:999px;margin-bottom:24px}
+.pestañas button{flex:1;border:0;background:transparent;padding:9px;border-radius:999px;font-weight:600;
+  font-size:.9rem;color:var(--morado);cursor:pointer;transition:.15s}
+.pestañas button.activa{background:#fff;color:var(--tinta);box-shadow:var(--sombra)}
+.aviso{padding:12px 15px;border-radius:12px;font-size:.87rem;margin-bottom:16px;line-height:1.5}
+.aviso-error{background:#FEF2F2;color:#991B1B;border:1px solid #FECACA}
+.aviso-ok{background:#ECFDF5;color:#065F46;border:1px solid #A7F3D0}
+.aviso-info{background:var(--lavanda);color:var(--tinta);border:1px solid var(--lila)}
+.demo-datos{margin-top:22px;padding:14px 16px;background:#fff;border:1px dashed var(--lila);
+  border-radius:12px;font-size:.82rem;color:var(--gris);line-height:1.7}
+.demo-datos b{color:var(--tinta)}
+
+/* ---------- Barra superior app ---------- */
+.barra{background:#fff;border-bottom:1px solid var(--linea);position:sticky;top:0;z-index:60;box-shadow:var(--sombra)}
+.barra-in{max-width:1180px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:18px}
+.barra-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--tinta);letter-spacing:-.4px}
+.barra-nav{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.barra-nav button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-weight:600;
+  font-size:.9rem;color:var(--gris);cursor:pointer;transition:.15s}
+.barra-nav button:hover{background:var(--lavanda);color:var(--morado)}
+.barra-nav button.activa{background:var(--morado);color:#fff}
+.usuario-chip{display:flex;align-items:center;gap:9px;padding-left:14px;border-left:1px solid var(--linea);margin-left:6px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--lavanda);color:var(--morado);
+  display:grid;place-items:center;font-weight:700;font-size:.85rem;flex:none}
+.usuario-chip .nom{font-size:.85rem;font-weight:600;color:var(--tinta);line-height:1.25}
+.usuario-chip .rol{font-size:.72rem;color:var(--gris);text-transform:uppercase;letter-spacing:.6px}
+@media(max-width:760px){.usuario-chip .datos{display:none}.barra-nav button{padding:8px 11px;font-size:.84rem}}
+
+/* ---------- Tarjetas ---------- */
+.tarjeta{background:#fff;border:1px solid var(--linea);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sombra)}
+.tarjeta-sm{border-radius:var(--r);padding:18px}
+.rejilla{display:grid;gap:20px}
+.rejilla-3{grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.rejilla-4{grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.seccion{padding:34px 0}
+.seccion h2{font-size:1.5rem;font-weight:800;color:var(--tinta);letter-spacing:-.5px;margin-bottom:5px}
+.seccion .sub{color:var(--gris);margin-bottom:24px}
+.encabezado-fila{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+  margin-bottom:24px;flex-wrap:wrap}
+.encabezado-fila h2{margin-bottom:4px}
+
+/* ---------- Curso ---------- */
+.curso-card{background:#fff;border:1px solid var(--linea);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--sombra);display:flex;flex-direction:column;transition:.2s}
+.curso-card:hover{box-shadow:var(--sombra-md);transform:translateY(-3px)}
+.curso-tapa{height:110px;display:grid;place-items:center;position:relative}
+.curso-tapa svg{opacity:.95}
+.curso-cuerpo{padding:20px;display:flex;flex-direction:column;flex:1}
+.curso-cuerpo h3{font-size:1.12rem;font-weight:700;color:var(--tinta);margin-bottom:6px;letter-spacing:-.3px}
+.curso-cuerpo p{font-size:.9rem;color:var(--gris);flex:1;margin-bottom:16px}
+.etiqueta{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+  padding:4px 11px;border-radius:999px;background:var(--lavanda);color:var(--morado)}
+.etiqueta.tur{background:#CCFBF1;color:var(--turquesa-osc)}
+.etiqueta.ok{background:#D1FAE5;color:#065F46}
+.etiqueta.gris{background:#F3F4F6;color:var(--gris)}
+.etiqueta.alerta{background:#FEF3C7;color:#92400E}
+
+/* ---------- Barra de avance ---------- */
+.avance{height:9px;background:var(--lavanda);border-radius:999px;overflow:hidden}
+.avance i{display:block;height:100%;background:linear-gradient(90deg,var(--morado),var(--turquesa));
+  border-radius:999px;transition:width .5s ease}
+.avance-txt{display:flex;justify-content:space-between;font-size:.8rem;color:var(--gris);
+  margin-bottom:7px;font-weight:600}
+
+/* ---------- Aula / módulos ---------- */
+.modulo{background:#fff;border:1px solid var(--linea);border-radius:var(--r);margin-bottom:14px;overflow:hidden}
+.modulo.bloqueado{opacity:.62}
+.modulo-cab{display:flex;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;transition:.15s}
+.modulo-cab:hover{background:var(--nube)}
+.modulo.bloqueado .modulo-cab{cursor:not-allowed}
+.modulo-num{width:38px;height:38px;border-radius:11px;background:var(--lavanda);color:var(--morado);
+  display:grid;place-items:center;font-weight:700;flex:none}
+.modulo.completo .modulo-num{background:#D1FAE5;color:#065F46}
+.modulo.bloqueado .modulo-num{background:#F3F4F6;color:#9CA3AF}
+.modulo-tit{flex:1;min-width:0}
+.modulo-tit h4{font-size:1rem;font-weight:700;color:var(--tinta);letter-spacing:-.2px}
+.modulo-tit span{font-size:.82rem;color:var(--gris)}
+.modulo-cuerpo{border-top:1px solid var(--linea);padding:6px 0}
+.leccion-item{display:flex;align-items:center;gap:12px;padding:12px 20px 12px 26px;cursor:pointer;
+  transition:.12s;border-left:3px solid transparent}
+.leccion-item:hover{background:var(--nube);border-left-color:var(--lila)}
+.leccion-item.vista{color:var(--gris)}
+.leccion-item .punto{width:19px;height:19px;border-radius:50%;border:2px solid var(--lila);flex:none;
+  display:grid;place-items:center}
+.leccion-item.vista .punto{background:var(--turquesa);border-color:var(--turquesa)}
+.leccion-quiz{background:var(--lavanda);margin:8px 14px 12px;border-radius:11px;padding:13px 16px;
+  display:flex;align-items:center;gap:12px;cursor:pointer;transition:.15s}
+.leccion-quiz:hover{background:var(--lila)}
+
+/* ---------- Lección abierta ---------- */
+.lector{max-width:800px;margin:0 auto}
+.lector-cab{display:flex;align-items:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.lector h1{font-size:1.85rem;font-weight:800;color:var(--tinta);letter-spacing:-.8px;
+  line-height:1.2;margin:10px 0 26px}
+.bloque{margin-bottom:22px}
+.bloque-texto{font-size:1.04rem;line-height:1.78;color:#374151}
+.bloque-texto p{margin-bottom:14px}
+.bloque-titulo{font-size:1.28rem;font-weight:700;color:var(--tinta);margin:34px 0 12px;letter-spacing:-.4px}
+.bloque-lista ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.bloque-lista li{display:flex;gap:11px;align-items:flex-start;line-height:1.65}
+.bloque-lista li:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--turquesa);
+  flex:none;margin-top:10px}
+.bloque-destacado{background:var(--lavanda);border-left:4px solid var(--morado);padding:18px 22px;
+  border-radius:0 var(--r) var(--r) 0;line-height:1.7}
+.bloque-destacado b{color:var(--tinta)}
+.bloque-video{position:relative;padding-bottom:56.25%;height:0;border-radius:var(--r);overflow:hidden;background:#000}
+.bloque-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.bloque-imagen img{width:100%;border-radius:var(--r);border:1px solid var(--linea)}
+.bloque-imagen figcaption{font-size:.85rem;color:var(--gris);margin-top:8px;text-align:center}
+.bloque-audio audio{width:100%}
+.bloque-audio .rotulo{font-weight:600;font-size:.87rem;color:var(--tinta);margin-bottom:8px}
+.bloque-dialogo{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:20px 22px}
+.dialogo-linea{display:flex;gap:12px;margin-bottom:12px}
+.dialogo-quien{font-weight:700;color:var(--morado);flex:none;min-width:62px}
+.dialogo-es{color:var(--gris);font-size:.9rem;font-style:italic}
+.bloque-actividad{background:#fff;border:2px dashed var(--lila);border-radius:var(--r);padding:20px 22px}
+.bloque-actividad .rotulo{font-family:Caveat,cursive;font-size:1.3rem;color:var(--morado);margin-bottom:6px}
+.bloque-vocab{background:#fff;border:1px solid var(--linea);border-radius:var(--r);overflow:hidden}
+.bloque-vocab .rotulo{font-weight:700;color:var(--tinta);font-size:.95rem;padding:15px 20px;background:var(--nube)}
+.vocab-fila{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3px 18px;
+  padding:13px 20px;border-top:1px solid var(--linea)}
+.vocab-en{font-weight:700;color:var(--tinta)}
+.vocab-es{color:var(--texto)}
+.vocab-ej{grid-column:1/-1;font-size:.87rem;color:var(--gris);font-style:italic;margin-top:3px}
+.bloque-archivo{background:#fff;border:1px solid var(--linea);border-radius:var(--r);overflow:hidden}
+.archivo-cab{display:flex;align-items:center;gap:13px;padding:14px 18px;flex-wrap:wrap}
+.archivo-icono{width:40px;height:40px;border-radius:10px;background:var(--lavanda);color:var(--morado);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.66rem;flex:none}
+.archivo-visor{width:100%;height:520px;border:0;border-top:1px solid var(--linea);display:block;background:var(--nube)}
+@media(max-width:640px){.archivo-visor{height:360px}.vocab-fila{grid-template-columns:1fr}}
+.lector-pie{display:flex;justify-content:space-between;gap:14px;margin-top:40px;padding-top:26px;
+  border-top:1px solid var(--linea);flex-wrap:wrap}
+
+/* ---------- Quiz ---------- */
+.quiz{max-width:720px;margin:0 auto}
+.pregunta{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:22px;margin-bottom:16px}
+.pregunta .num{font-size:.78rem;font-weight:700;color:var(--morado);text-transform:uppercase;letter-spacing:.8px}
+.pregunta h4{font-size:1.05rem;font-weight:600;color:var(--tinta);margin:6px 0 16px;line-height:1.5}
+.opcion{display:flex;align-items:flex-start;gap:11px;padding:12px 15px;border:1.5px solid var(--linea);
+  border-radius:11px;margin-bottom:9px;cursor:pointer;transition:.13s;line-height:1.5}
+.opcion:hover{border-color:var(--lila);background:var(--nube)}
+.opcion input{margin-top:4px;accent-color:var(--morado);flex:none}
+.opcion.sel{border-color:var(--morado);background:var(--lavanda)}
+.opcion.correcta{border-color:var(--ok);background:#ECFDF5}
+.opcion.incorrecta{border-color:var(--error);background:#FEF2F2}
+.resultado{text-align:center;padding:40px 26px}
+.resultado .marcador{font-size:3.6rem;font-weight:800;letter-spacing:-2px;line-height:1}
+.resultado.aprobado .marcador{color:var(--ok)}
+.resultado.reprobado .marcador{color:var(--alerta)}
+.resultado h3{font-size:1.4rem;font-weight:800;color:var(--tinta);margin:12px 0 8px}
+.resultado p{color:var(--gris);max-width:44ch;margin:0 auto 24px}
+
+/* ---------- Tablas ---------- */
+.tabla-caja{background:#fff;border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sombra)}
+.tabla-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:620px}
+th{text-align:left;padding:13px 16px;background:var(--nube);font-weight:700;color:var(--tinta);
+  font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid var(--linea);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--linea);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--nube)}
+.vacio{text-align:center;padding:46px 20px;color:var(--gris)}
+.vacio svg{margin-bottom:12px;opacity:.5}
+
+/* ---------- Métricas ---------- */
+.metrica{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:20px;box-shadow:var(--sombra)}
+.metrica .rot{font-size:.78rem;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:.7px}
+.metrica .val{font-size:2rem;font-weight:800;color:var(--tinta);letter-spacing:-1px;line-height:1.2;margin-top:4px}
+.metrica .pie{font-size:.83rem;color:var(--gris)}
+
+/* ---------- Modal ---------- */
+.modal-fondo{position:fixed;inset:0;background:rgba(46,16,101,.5);backdrop-filter:blur(3px);
+  z-index:200;display:grid;place-items:center;padding:20px;overflow-y:auto}
+.modal{background:#fff;border-radius:var(--r-lg);width:100%;max-width:640px;box-shadow:0 24px 60px rgba(46,16,101,.3);
+  max-height:90vh;display:flex;flex-direction:column;margin:auto}
+.modal-cab{padding:22px 26px;border-bottom:1px solid var(--linea);display:flex;align-items:center;
+  justify-content:space-between;gap:16px}
+.modal-cab h3{font-size:1.18rem;font-weight:800;color:var(--tinta);letter-spacing:-.4px}
+.modal-cuerpo{padding:26px;overflow-y:auto;flex:1}
+.modal-pie{padding:18px 26px;border-top:1px solid var(--linea);display:flex;justify-content:flex-end;gap:10px}
+.cerrar{border:0;background:var(--nube);width:34px;height:34px;border-radius:50%;cursor:pointer;
+  color:var(--gris);display:grid;place-items:center;flex:none;font-size:1.1rem}
+.cerrar:hover{background:var(--lavanda);color:var(--morado)}
+
+/* ---------- Editor por bloques ---------- */
+.editor-bloque{background:#fff;border:1px solid var(--linea);border-radius:var(--r);margin-bottom:12px}
+.editor-bloque-cab{display:flex;align-items:center;gap:10px;padding:11px 15px;background:var(--nube);
+  border-bottom:1px solid var(--linea);border-radius:var(--r) var(--r) 0 0}
+.editor-bloque-cab .tipo{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+  color:var(--morado);background:var(--lavanda);padding:4px 10px;border-radius:999px}
+.editor-bloque-cab .acciones{margin-left:auto;display:flex;gap:5px}
+.mini{border:1px solid var(--linea);background:#fff;width:29px;height:29px;border-radius:8px;cursor:pointer;
+  color:var(--gris);display:grid;place-items:center;font-size:.85rem;transition:.13s}
+.mini:hover{border-color:var(--morado);color:var(--morado)}
+.mini.rojo:hover{border-color:var(--error);color:var(--error)}
+.modulo-resumen{font-size:.9rem;color:var(--gris);line-height:1.65;background:var(--nube);
+  border-left:3px solid var(--lila);border-radius:0 10px 10px 0;padding:12px 16px;margin:0 0 14px}
+.pista{font-size:.8rem;color:var(--gris);line-height:1.5;margin:6px 0 0;background:var(--nube);
+  border:1px solid var(--linea);border-radius:9px;padding:8px 11px}
+.pista b{color:var(--tinta)}
+.editor-bloque-cuerpo{padding:15px}
+.paleta-bloques{display:flex;flex-wrap:wrap;gap:8px;padding:16px;background:var(--lavanda);
+  border-radius:var(--r);margin-top:8px}
+.paleta-bloques button{border:1px solid var(--lila);background:#fff;padding:8px 14px;border-radius:999px;
+  font-size:.85rem;font-weight:600;color:var(--morado);cursor:pointer;transition:.13s}
+.paleta-bloques button:hover{background:var(--morado);color:#fff;border-color:var(--morado)}
+.editor-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
+.editor-vista{position:sticky;top:20px;max-height:calc(100vh - 44px);overflow:auto;background:#fff;
+  border:1px solid var(--linea);border-radius:var(--r);padding:8px 26px 26px}
+.editor-vista-rot{position:sticky;top:0;background:#fff;padding:14px 0 12px;margin-bottom:6px;
+  border-bottom:1px solid var(--linea);font-size:.76rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;color:var(--morado);display:flex;align-items:center;gap:8px;z-index:2}
+.editor-vista .lector h1{font-size:1.45rem}
+.editor-bloque.arrastrando{opacity:.35}
+.editor-bloque.encima{border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+.asa{cursor:grab;color:var(--lila);font-size:1.15rem;line-height:1;user-select:none;padding:0 2px}
+.asa:active{cursor:grabbing}
+.barra-formato{display:flex;gap:5px;margin-bottom:7px;flex-wrap:wrap}
+.barra-formato button{border:1px solid var(--linea);background:#fff;border-radius:7px;padding:4px 10px;
+  font-size:.79rem;cursor:pointer;color:var(--tinta);transition:.13s;line-height:1.5}
+.barra-formato button:hover{border-color:var(--morado);color:var(--morado);background:var(--nube)}
+.cambiar-vista{display:none}
+@media(max-width:1080px){
+  .editor-split{grid-template-columns:1fr}
+  .editor-vista{display:none;position:static;max-height:none}
+  .editor-split.ver-vista .editor-col{display:none}
+  .editor-split.ver-vista .editor-vista{display:block}
+  .cambiar-vista{display:inline-flex}
+}
+.arbol-item{display:flex;align-items:center;gap:11px;padding:11px 14px;border:1px solid var(--linea);
+  border-radius:11px;margin-bottom:8px;background:#fff}
+.arbol-item .txt{flex:1;min-width:0}
+.arbol-item .txt b{display:block;font-size:.93rem;color:var(--tinta)}
+.arbol-item .txt span{font-size:.8rem;color:var(--gris)}
+.arbol-hijo{margin-left:26px;border-left:2px solid var(--lavanda);padding-left:14px}
+
+/* ---------- Constancia ---------- */
+.constancia{background:#fff;border:14px solid var(--tinta);padding:52px 46px;text-align:center;
+  max-width:820px;margin:0 auto;position:relative}
+.constancia:before{content:'';position:absolute;inset:8px;border:2px solid var(--turquesa);pointer-events:none}
+.constancia .encabeza{font-size:.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--morado);font-weight:700}
+.constancia h1{font-family:Caveat,cursive;font-size:3rem;color:var(--tinta);margin:14px 0 6px;font-weight:600}
+.constancia .otorga{color:var(--gris);font-size:.95rem}
+.constancia .alumno{font-size:2rem;font-weight:800;color:var(--tinta);letter-spacing:-1px;
+  margin:20px 0;padding:0 20px;border-bottom:2px solid var(--lavanda);display:inline-block}
+.constancia .curso{font-size:1.25rem;font-weight:700;color:var(--morado)}
+.constancia .meta{display:flex;justify-content:center;gap:40px;margin-top:34px;flex-wrap:wrap;
+  font-size:.85rem;color:var(--gris)}
+.constancia .meta b{display:block;color:var(--tinta);font-size:.95rem}
+.constancia .legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--linea);
+  font-size:.74rem;color:var(--gris);line-height:1.6;text-align:left}
+.constancia-sellos{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;
+  margin-top:38px;flex-wrap:wrap;text-align:center}
+.sello-firma{flex:1;min-width:170px;font-size:.78rem;color:var(--gris);line-height:1.5}
+.linea-firma{width:180px;max-width:100%;border-top:1.5px solid var(--tinta);margin:0 auto 8px}
+.sello-oficial{display:flex;flex-direction:column;align-items:center;gap:8px}
+.sello-anillo{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,var(--turquesa),var(--turquesa-osc));
+  border:3px double #fff;box-shadow:0 0 0 2px var(--turquesa-osc),0 6px 14px rgba(13,148,136,.35)}
+.sello-oficial span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3}
+.sello-qr{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:120px}
+.sello-qr span{font-size:.68rem;color:var(--gris);max-width:120px}
+@media(max-width:640px){.constancia-sellos{justify-content:center}}
+@media print{
+  body{background:#fff}
+  .barra,.no-imprimir{display:none !important}
+  .constancia{border-color:#2E1065;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PANTALLA DE ACCESO ============ -->
+<div id="pantallaLogin">
+  <div class="login-arte">
+    <svg width="230" height="52" viewBox="0 0 560 120" aria-label="Instituto Mara">
+      <path d="M25 92 L25 38 C25 30 33 27 38 33 L57 57 L76 33 C81 27 89 30 89 38 L89 92"
+            fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="116" y="70" font-family="Inter,Helvetica,Arial,sans-serif" font-size="42" font-weight="700"
+            letter-spacing="-0.5" fill="#fff">Instituto Mara</text>
+      <text x="118" y="95" font-family="Inter,Helvetica,Arial,sans-serif" font-size="13" font-weight="600"
+            letter-spacing="3.6" fill="#C4B5FD">EDUCACIÓN EN LÍNEA</text>
+    </svg>
+    <h1>Tu aula, abierta<br>las 24 horas.</h1>
+    <p>Entra desde el celular o la computadora, avanza bloque por bloque y retoma justo donde te quedaste.</p>
+    <ul class="login-lista">
+      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tu avance se guarda solo</li>
+      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Evaluación automática al terminar cada módulo</li>
+      <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Constancia con folio al completar el curso</li>
+    </ul>
+  </div>
+
+  <div class="login-forma">
+    <div class="login-caja">
+      <div class="pestañas">
+        <button id="tabEntrar" class="activa">Entrar</button>
+        <button id="tabCrear">Crear cuenta</button>
+      </div>
+
+      <!-- Entrar -->
+      <form id="formEntrar">
+        <h2>Bienvenido de vuelta</h2>
+        <p>Usa el correo con el que te inscribiste.</p>
+        <div id="errEntrar" class="aviso aviso-error oculto"></div>
+        <div class="campo">
+          <label for="eCorreo">Correo</label>
+          <input type="email" id="eCorreo" autocomplete="username" required>
+        </div>
+        <div class="campo">
+          <label for="ePass">Contraseña</label>
+          <input type="password" id="ePass" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-mor" style="width:100%">Entrar al aula</button>
+      </form>
+
+      <!-- Crear cuenta -->
+      <form id="formCrear" class="oculto">
+        <h2>Crea tu cuenta</h2>
+        <p>Solo toma un minuto. Después eliges tu curso.</p>
+        <div id="errCrear" class="aviso aviso-error oculto"></div>
+        <div class="campo">
+          <label for="cNombre">Nombre completo</label>
+          <input type="text" id="cNombre" required>
+        </div>
+        <div class="campo">
+          <label for="cCorreo">Correo</label>
+          <input type="email" id="cCorreo" autocomplete="username" required>
+        </div>
+        <div class="fila">
+          <div class="campo">
+            <label for="cTel">WhatsApp</label>
+            <input type="tel" id="cTel" placeholder="55 1234 5678">
+          </div>
+          <div class="campo">
+            <label for="cPass">Contraseña</label>
+            <input type="password" id="cPass" autocomplete="new-password" minlength="6" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-mor" style="width:100%">Crear mi cuenta</button>
+        <p style="font-size:.78rem;color:var(--gris);margin-top:14px;line-height:1.6">
+          Instituto Mara imparte cursos libres de capacitación. No cuentan con RVOE ni otorgan grado académico.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ APLICACIÓN ============ -->
+<div id="app" class="oculto">
+  <header class="barra no-imprimir">
+    <div class="barra-in">
+      <div class="barra-logo">
+        <svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95"
+                fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Instituto Mara</span>
+      </div>
+      <nav class="barra-nav" id="nav"></nav>
+      <div class="usuario-chip">
+        <div class="avatar" id="avatar">?</div>
+        <div class="datos">
+          <div class="nom" id="nomUsuario">—</div>
+          <div class="rol" id="rolUsuario">—</div>
+        </div>
+        <button class="btn btn-fantasma btn-sm" id="btnSalir" title="Cerrar sesión">Salir</button>
+      </div>
+    </div>
+  </header>
+  <main id="vista" class="contenedor"></main>
+</div>
+
+<div id="modales"></div>
+
+<script>
+/* =========================================================================
+   INSTITUTO MARA — AULA VIRTUAL
+   Plataforma propia, construida desde cero. Sin Moodle, sin WordPress,
+   sin plantillas de terceros. Un solo archivo que corre en cualquier
+   navegador y guarda los datos en el propio equipo (localStorage).
+   Para operar con varios dispositivos, la versión 2 conecta esta misma
+   interfaz a una base de datos en servidor. La estructura ya está lista.
+   ========================================================================= */
+
+/* ---------------- Almacenamiento ---------------- */
+var LLAVE = 'institutoMara.v2';
+/* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
+   se actualice en las computadoras donde la plataforma ya se había abierto. */
+var CONTENIDO_VERSION = 4;
+var memoria = null;               /* respaldo si el navegador bloquea localStorage */
+
+function guardar(){
+  try { localStorage.setItem(LLAVE, JSON.stringify(BD)); }
+  catch(e){ memoria = JSON.stringify(BD); }
+}
+function cargar(){
+  try {
+    var t = localStorage.getItem(LLAVE);
+    if(t) return JSON.parse(t);
+  } catch(e){
+    if(memoria) return JSON.parse(memoria);
+  }
+  return null;
+}
+function folio(pre){
+  return pre + '-' + new Date().getFullYear() + '-' +
+         String(Math.floor(Math.random()*9000)+1000);
+}
+function hoy(){ return new Date().toISOString().slice(0,10); }
+function fechaLarga(iso){
+  var m = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+           'septiembre','octubre','noviembre','diciembre'];
+  var d = new Date(iso + 'T12:00:00');
+  return d.getDate() + ' de ' + m[d.getMonth()] + ' de ' + d.getFullYear();
+}
+function esc(s){
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+function dinero(n){
+  return '$' + Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+/* ---------------- Contenido inicial ---------------- */
+function semilla(){
+  return {
+    config:{
+      nombre:'Instituto Mara',
+      minimoAprobatorio:80,
+      contenidoVersion: CONTENIDO_VERSION,
+      creado: hoy(),
+      whatsapp:'',                 /* ej: 5214771234567, sin signos ni espacios */
+      urlPublica:'',                /* ej: https://ezquerrahector.github.io/institutomara */
+      slaDudasHoras:24,
+      /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
+      supabaseUrl:'', supabaseAnonKey:'',
+      mpPublicKey:'', edgeFnCrearPreferencia:'' /* URL de la función que crea el pago */
+    },
+    biblioteca:[],
+    usuarios:[
+      { id:'u-admin', nombre:'Administración', correo:'admin@institutomara.com',
+        pass:'mara2026', rol:'admin', tel:'', alta:hoy(), foto:'' },
+      { id:'u-demo', nombre:'María Fernanda López', correo:'alumna@ejemplo.com',
+        pass:'demo1234', rol:'alumno', tel:'55 1234 5678', alta:hoy(),
+        folio:'IM-2026-001', foto:'' }
+    ],
+    inscripciones:[
+      { id:'i-1', usuarioId:'u-demo', cursoId:'c-ingles', fecha:hoy(), estatus:'activa' }
+    ],
+    avances:{
+      'u-demo':{ 'c-ingles':{ lecciones:['c-ingles-m1-l1'], quizzes:{} } }
+    },
+    pagos:[
+      { id:'p-1', fecha:hoy(), usuarioId:'u-demo', cursoId:'c-ingles', monto:500,
+        medio:'Mercado Pago', nota:'Primer parcialidad' }
+    ],
+    constancias:[],
+    dudas:[
+      { id:'d-1', usuarioId:'u-demo', cursoId:'c-ingles', moduloId:'c-ingles-m1', leccionId:'c-ingles-m1-l1',
+        pregunta:'¿La contracción I\'m se puede usar siempre o hay casos donde no?',
+        fecha:new Date().toISOString(), respuesta:'', fechaRespuesta:null, estatus:'pendiente' }
+    ],
+    cursos:[
+      {
+        id:'c-ingles', nombre:'Inglés básico A1', color:'#6D28D9',
+        nivel:'Cursos libres de capacitación', familia:'Idiomas', periodoTipo:null, periodoNum:null,
+        desc:'Entiende y produce frases de uso diario: saludar, presentarte, pedir algo, decir la hora y hablar de tu rutina.',
+        horas:20, precio:890, publicado:true, proximamente:false,
+        modulos:[
+          {
+            id:'c-ingles-m1', titulo:'Módulo 1 — Saludar, presentarte y sonar claro',
+            resumen:'Al terminar este módulo vas a poder presentarte, decir de dónde eres, preguntar y entender el nombre de otra persona, deletrear tu apellido y despedirte. Todo con pronunciación cuidada. Son seis lecciones y una evaluación.',
+            lecciones:[
+              {
+                id:'c-ingles-m1-l1', titulo:'Lección 1 — Hello: el saludo correcto para cada hora',
+                bloques:[
+                  {tipo:'texto', texto:'Casi todas las conversaciones del mundo empiezan igual: alguien saluda. Parece lo más simple del idioma y sin embargo es donde más se equivoca quien apenas empieza, porque en inglés el saludo <b>cambia según la hora del día</b> y porque hay una frase que suena a saludo pero en realidad es una despedida. En esta lección resolvemos las dos cosas.'},
+                  {tipo:'texto', texto:'Piensa en esta lección como en aprender a tocar la puerta. No es la conversación completa, es lo que te abre la puerta para tenerla. Con las frases que siguen ya puedes arrancar cualquier intercambio en inglés sin quedarte mudo en los primeros tres segundos, que es donde se atora la mayoría.'},
+                  {tipo:'titulo', texto:'Los saludos por hora del día'},
+                  {tipo:'lista', items:[
+                    '<b>Hello</b> — Hola. Sirve a cualquier hora, con cualquier persona, en cualquier situación. Si dudas, di esta.',
+                    '<b>Hi</b> — Hola, en versión relajada. Con amigos, compañeros, gente de tu edad. En una entrevista de trabajo prefiere <i>hello</i>.',
+                    '<b>Good morning</b> — Buenos días. Desde que te levantas hasta las 12 del día en punto.',
+                    '<b>Good afternoon</b> — Buenas tardes. De las 12 del día hasta que empieza a oscurecer, más o menos las 6.',
+                    '<b>Good evening</b> — Buenas noches, pero <u>al llegar</u>. Es el saludo de la noche, no la despedida.',
+                    '<b>Good night</b> — Buenas noches, pero <u>al irte</u> o antes de dormir. Nunca al llegar.'
+                  ]},
+                  {tipo:'destacado', texto:'<b>El error más común de todos.</b> En español decimos «buenas noches» tanto al llegar como al irnos, y por eso el hispanohablante traduce directo y dice <i>good night</i> al entrar a un lugar. Para quien lo escucha, acabas de decir «ya me voy» en el momento de llegar. La regla es de una línea: <b>llegas de noche → good evening. Te vas de noche → good night.</b>'},
+                  {tipo:'titulo', texto:'Cómo decir tu nombre y preguntar el de la otra persona'},
+                  {tipo:'texto', texto:'Hay tres formas de decir tu nombre y las tres son correctas. Cambian nada más en qué tan formal suenan:'},
+                  {tipo:'lista', items:[
+                    '<b>My name is Hector.</b> — Me llamo Héctor. La más completa y la más segura. Úsala en el trabajo, con desconocidos, por teléfono.',
+                    '<b>I am Hector.</b> — Soy Héctor. Neutra, sirve casi siempre.',
+                    '<b>I\'m Hector.</b> — Soy Héctor, en versión hablada. <i>I\'m</i> es la contracción de <i>I am</i>. En conversación real esta es la que más vas a oír.'
+                  ]},
+                  {tipo:'texto', texto:'Y para preguntar: <b>What\'s your name?</b> (¿Cómo te llamas?). La versión larga es <i>What is your name?</i> y también es correcta, solo suena un poco más formal o más lenta. Fíjate en algo importante: en inglés se pregunta literalmente «¿qué es tu nombre?», no «¿cómo te llamas?». Si traduces palabra por palabra desde el español y dices <i>How do you call yourself?</i>, nadie te va a entender.'},
+                  {tipo:'titulo', texto:'La respuesta de cortesía que cierra la presentación'},
+                  {tipo:'texto', texto:'Cuando alguien te dice su nombre, en inglés casi siempre se contesta algo. Quedarte callado se siente seco. La frase estándar es <b>Nice to meet you</b> (mucho gusto). Si la otra persona la dice primero, tú respondes <b>Nice to meet you too</b> (mucho gusto también).'},
+                  {tipo:'dialogo', titulo:'Diálogo 1 — Dos personas que no se conocen, por la mañana', lineas:[
+                    {quien:'Ana', en:'Good morning!', es:'¡Buenos días!'},
+                    {quien:'Luis', en:'Good morning. My name is Luis.', es:'Buenos días. Me llamo Luis.'},
+                    {quien:'Ana', en:'Nice to meet you, Luis. I\'m Ana.', es:'Mucho gusto, Luis. Soy Ana.'},
+                    {quien:'Luis', en:'Nice to meet you too, Ana.', es:'Mucho gusto también, Ana.'},
+                    {quien:'Ana', en:'Sorry, what\'s your last name?', es:'Perdón, ¿cuál es tu apellido?'},
+                    {quien:'Luis', en:'Ramirez. And you?', es:'Ramírez. ¿Y tú?'},
+                    {quien:'Ana', en:'Torres. Have a good day!', es:'Torres. ¡Que tengas buen día!'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha el diálogo 1 completo', url:''},
+                  {tipo:'titulo', texto:'Cómo despedirte'},
+                  {tipo:'lista', items:[
+                    '<b>Bye</b> / <b>Goodbye</b> — Adiós. La segunda es un poco más formal.',
+                    '<b>See you later</b> — Nos vemos al rato. Es la despedida más común entre conocidos.',
+                    '<b>See you tomorrow</b> — Nos vemos mañana.',
+                    '<b>Have a good day</b> — Que tengas buen día. Muy usada al salir de una tienda, un banco, una oficina.',
+                    '<b>Take care</b> — Cuídate. Cálida, para alguien que aprecias.'
+                  ]},
+                  {tipo:'vocabulario', rotulo:'Vocabulario de la lección 1', palabras:[
+                    {en:'hello', es:'hola', ej:'Hello, my name is Ana.'},
+                    {en:'hi', es:'hola (informal)', ej:'Hi! How are you?'},
+                    {en:'good morning', es:'buenos días', ej:'Good morning, everyone.'},
+                    {en:'good afternoon', es:'buenas tardes', ej:'Good afternoon, sir.'},
+                    {en:'good evening', es:'buenas noches (al llegar)', ej:'Good evening. Table for two, please.'},
+                    {en:'good night', es:'buenas noches (al irse)', ej:'Good night! See you tomorrow.'},
+                    {en:'name', es:'nombre', ej:'My name is Luis.'},
+                    {en:'last name', es:'apellido', ej:'My last name is Torres.'},
+                    {en:'nice to meet you', es:'mucho gusto', ej:'Nice to meet you, Ana.'},
+                    {en:'goodbye / bye', es:'adiós', ej:'Bye! Take care.'},
+                    {en:'see you later', es:'nos vemos al rato', ej:'See you later, Luis.'},
+                    {en:'have a good day', es:'que tengas buen día', ej:'Thank you. Have a good day!'}
+                  ]},
+                  {tipo:'actividad', rotulo:'Actividad 1 — Tres saludos reales', texto:'Hoy, a tres horas distintas del día, di en voz alta el saludo que corresponde: en la mañana <i>good morning</i>, en la tarde <i>good afternoon</i>, en la noche <i>good evening</i>. No lo pienses: dilo. El objetivo no es memorizar la lista, es que la boca ya lo tenga hecho cuando llegue el momento de usarlo con alguien.'},
+                  {tipo:'actividad', rotulo:'Actividad 2 — Grábate', texto:'Con el micrófono del celular, graba el diálogo 1 completo: primero haz el papel de Ana y luego el de Luis. Escúchate. <b>No busques sonar perfecto, busca que se entienda.</b> Guarda la grabación: al terminar el módulo vas a volver a grabarte y la diferencia te va a sorprender.'}
+                ]
+              },
+              {
+                id:'c-ingles-m1-l2', titulo:'Lección 2 — Tres sonidos que te delatan: th, h y la -s final',
+                bloques:[
+                  {tipo:'texto', texto:'Puedes saberte todo el vocabulario del mundo y aun así no lograr que te entiendan, porque hay tres sonidos del inglés que en español sencillamente no existen. Quien empieza los sustituye por el sonido más parecido de su idioma, y ahí es donde la palabra se rompe. Diez minutos aquí te van a ahorrar meses de que te pidan repetir lo que acabas de decir.'},
+                  {tipo:'titulo', texto:'1. El sonido th'},
+                  {tipo:'texto', texto:'Saca un poquito la punta de la lengua entre los dientes de arriba y los de abajo, y sopla. No es una <i>s</i>, no es una <i>d</i> y no es una <i>f</i>. Es un sonido soplado que se hace con la lengua asomada. Se siente ridículo la primera vez. A todo mundo le pasa.'},
+                  {tipo:'texto', texto:'Hay dos versiones del mismo sonido. En <b>think, thank you, three, Thursday, math</b> el th es sordo, o sea que solo sale aire. En <b>the, this, that, they, mother, brother</b> el th vibra, la garganta se enciende. No te obsesiones con distinguirlas al principio: lo que importa es que la lengua salga. Un th mal vibrado se entiende; un th convertido en <i>s</i> o en <i>d</i> muchas veces no.'},
+                  {tipo:'destacado', texto:'<b>Por qué importa tanto:</b> si conviertes <i>think</i> en «sink», acabas de decir «fregadero». Si conviertes <i>three</i> en «tree», dijiste «árbol» en lugar de «tres». Son palabras que vas a usar todos los días.'},
+                  {tipo:'titulo', texto:'2. La h aspirada'},
+                  {tipo:'texto', texto:'En español la h es muda: «hola» se dice «ola». En inglés la h <b>se sopla</b>, como cuando empañas un vidrio para escribirle algo con el dedo. Pon la mano frente a la boca y di <b>hello</b>: debes sentir el aire.'},
+                  {tipo:'lista', items:[
+                    '<b>hello</b> — si la h se calla, suena «elou» y cuesta entenderte.',
+                    '<b>how</b>, <b>home</b>, <b>hand</b>, <b>happy</b>, <b>help</b>, <b>hot</b> — todas llevan el soplido.',
+                    '<b>hour</b> y <b>honest</b> son las excepciones famosas: ahí la h sí es muda.'
+                  ]},
+                  {tipo:'titulo', texto:'3. La -s del final'},
+                  {tipo:'texto', texto:'En inglés la <i>s</i> final carga información: dice si algo es plural o si el verbo va en tercera persona. En español muchas veces la dejamos caer al hablar rápido y no pasa nada. En inglés sí pasa: <b>book</b> es un libro y <b>books</b> son varios; <b>he work</b> está mal y <b>he works</b> está bien. Es una letra chiquita que hace una diferencia grande, así que pronúnciala siempre, aunque te sientas exagerando.'},
+                  {tipo:'destacado', texto:'<b>Truco para la -s:</b> esa s tiene tres sonidos distintos según lo que venga antes. Después de un sonido soplado (p, k, t, f) suena /s/: <i>books</i>, <i>cats</i>. Después de un sonido con vibración suena /z/: <i>dogs</i>, <i>names</i>. Y después de s, z, ch, sh o ge suena /iz/ y agrega una sílaba entera: <i>classes</i>, <i>watches</i>. No lo memorices: dilo en voz alta y tu boca va a escoger sola la que fluye.'},
+                  {tipo:'dialogo', titulo:'Diálogo 2 — Todos los sonidos difíciles en cuatro líneas', lineas:[
+                    {quien:'Ana', en:'Hi! How are you? I think this is your book.', es:'¡Hola! ¿Cómo estás? Creo que este es tu libro.'},
+                    {quien:'Luis', en:'Thank you! Those are my three books.', es:'¡Gracias! Esos son mis tres libros.'},
+                    {quien:'Ana', en:'Here you are. Have a happy Thursday!', es:'Aquí tienes. ¡Feliz jueves!'},
+                    {quien:'Luis', en:'Thanks. You too!', es:'Gracias. ¡Igualmente!'}
+                  ]},
+                  {tipo:'audio', rotulo:'Repite después de cada palabra', url:''},
+                  {tipo:'vocabulario', rotulo:'Vocabulario de la lección 2', palabras:[
+                    {en:'think', es:'pensar, creer', ej:'I think this is correct.'},
+                    {en:'thank you / thanks', es:'gracias', ej:'Thank you very much.'},
+                    {en:'three', es:'tres', ej:'I have three books.'},
+                    {en:'Thursday', es:'jueves', ej:'See you on Thursday.'},
+                    {en:'this / that', es:'este / ese', ej:'This is my book. That is yours.'},
+                    {en:'mother / brother', es:'madre / hermano', ej:'My mother and my brother.'},
+                    {en:'how', es:'cómo', ej:'How are you?'},
+                    {en:'happy', es:'feliz, contento', ej:'I am very happy.'},
+                    {en:'book / books', es:'libro / libros', ej:'Those are my books.'},
+                    {en:'hour', es:'hora (la h es muda)', ej:'In one hour.'}
+                  ]},
+                  {tipo:'actividad', rotulo:'Actividad — Frente al espejo', texto:'Párate frente a un espejo y di diez veces, despacio: <b>«I think this is the third thing.»</b> Revisa con los ojos que la lengua asome en cada <i>th</i>. Luego di diez veces <b>«How happy he is at home.»</b> con la mano frente a la boca, sintiendo el aire en cada <i>h</i>. Es incómodo y es exactamente así como se aprende.'}
+                ]
+              },
+              {
+                id:'c-ingles-m1-l3', titulo:'Lección 3 — To be: el verbo que sostiene todo',
+                bloques:[
+                  {tipo:'texto', texto:'Si solo pudieras aprender un verbo en inglés, sería este. <b>To be</b> significa al mismo tiempo <i>ser</i> y <i>estar</i>, y con él dices quién eres, cómo estás, de dónde vienes, qué edad tienes y dónde te encuentras. Está en la primera frase que aprendiste en la lección 1 (<i>I am Hector</i>) aunque no lo supieras. Aquí lo vemos completo, y una vez que lo tengas, la mitad del idioma se te abre.'},
+                  {tipo:'titulo', texto:'Las tres formas que necesitas'},
+                  {tipo:'lista', items:[
+                    '<b>am</b> — solo con <i>I</i>. <i>I am a student.</i> (Soy estudiante.)',
+                    '<b>is</b> — con <i>he, she, it</i> y con cualquier nombre de una sola persona o cosa. <i>She is my sister.</i> (Ella es mi hermana.)',
+                    '<b>are</b> — con <i>you, we, they</i>. <i>You are welcome.</i> (De nada.) <i>They are my friends.</i> (Ellos son mis amigos.)'
+                  ]},
+                  {tipo:'texto', texto:'Toda la tabla cabe en una frase que vale la pena memorizar tal cual: <b>I am, you are, he is, she is, it is, we are, they are.</b> Dila en voz alta cinco veces seguidas hasta que salga de corrido, como cuando te sabes un número de teléfono.'},
+                  {tipo:'titulo', texto:'Las contracciones: cómo suena de verdad'},
+                  {tipo:'texto', texto:'En conversación real casi nadie dice <i>I am</i> completo. Se pega: <b>I\'m</b>. Aprenderlas desde ahora te va a servir dos veces: para sonar natural cuando hablas, y sobre todo para <b>entender</b> cuando alguien te habla rápido.'},
+                  {tipo:'lista', items:[
+                    'I am → <b>I\'m</b> (se oye «aim»)',
+                    'you are → <b>you\'re</b> (se oye «yur»)',
+                    'he is → <b>he\'s</b> · she is → <b>she\'s</b> · it is → <b>it\'s</b>',
+                    'we are → <b>we\'re</b> · they are → <b>they\'re</b>'
+                  ]},
+                  {tipo:'titulo', texto:'Negar y preguntar'},
+                  {tipo:'texto', texto:'Para negar, agrega <b>not</b> después del verbo: <i>I am not tired.</i> (No estoy cansado.) <i>She is not here.</i> (Ella no está aquí.) Y las contracciones también funcionan: <i>isn\'t</i>, <i>aren\'t</i>.'},
+                  {tipo:'texto', texto:'Para preguntar, <b>solo intercambias el orden</b>. No necesitas agregar nada. <i>You are Ana</i> → <i>Are you Ana?</i> · <i>He is your brother</i> → <i>Is he your brother?</i> Esta regla es de las más agradecidas del inglés: se aprende en un minuto y la vas a usar toda la vida.'},
+                  {tipo:'destacado', texto:'<b>Error clásico:</b> en español decimos «soy Héctor» sin pronombre, porque el verbo ya dice quién. En inglés <u>el pronombre nunca se quita</u>. Decir <i>Am Hector</i> suena tan raro como sonaría en español «tal Héctor». Siempre: <b>I am Hector</b>.'},
+                  {tipo:'titulo', texto:'El alfabeto, para deletrear tu nombre'},
+                  {tipo:'texto', texto:'Vas a necesitarlo más pronto de lo que crees: en un hotel, en una aerolínea, en una llamada. La pregunta que te van a hacer es <b>How do you spell it?</b> (¿Cómo se escribe?) y la respuesta es deletrear.'},
+                  {tipo:'lista', items:[
+                    'A (ei) · B (bi) · C (si) · D (di) · E (i) · F (ef) · G (yi)',
+                    'H (eich) · I (ai) · J (yei) · K (kei) · L (el) · M (em) · N (en)',
+                    'O (ou) · P (pi) · Q (kiu) · R (ar) · S (es) · T (ti) · U (iu)',
+                    'V (vi) · W (dábol iu) · X (eks) · Y (uai) · Z (zi)'
+                  ]},
+                  {tipo:'destacado', texto:'<b>Las cuatro que más se confunden:</b> <b>E</b> suena «i» y <b>I</b> suena «ai» — están cruzadas respecto al español. <b>G</b> suena «yi» y <b>J</b> suena «yei». Si te equivocas en estas cuatro, tu apellido llega mal escrito. Practícalas aparte.'},
+                  {tipo:'dialogo', titulo:'Diálogo 3 — Registro en la recepción de un hotel', lineas:[
+                    {quien:'Recepcionista', en:'Good evening. Do you have a reservation?', es:'Buenas noches. ¿Tiene una reservación?'},
+                    {quien:'Héctor', en:'Yes, I\'m Hector Ezquerra.', es:'Sí, soy Héctor Ezquerra.'},
+                    {quien:'Recepcionista', en:'How do you spell your last name?', es:'¿Cómo se escribe su apellido?'},
+                    {quien:'Héctor', en:'E - Z - Q - U - E - R - R - A.', es:'E - Z - Q - U - E - R - R - A.'},
+                    {quien:'Recepcionista', en:'Thank you. Are you from Mexico?', es:'Gracias. ¿Es usted de México?'},
+                    {quien:'Héctor', en:'Yes, I am. I\'m from Monterrey.', es:'Sí. Soy de Monterrey.'},
+                    {quien:'Recepcionista', en:'Perfect. Here is your key. Have a good night.', es:'Perfecto. Aquí está su llave. Que pase buena noche.'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha el alfabeto letra por letra', url:''},
+                  {tipo:'vocabulario', rotulo:'Vocabulario de la lección 3', palabras:[
+                    {en:'I am / I\'m', es:'yo soy, yo estoy', ej:'I am a teacher.'},
+                    {en:'you are / you\'re', es:'tú eres, tú estás', ej:'You are very kind.'},
+                    {en:'he is / she is', es:'él es / ella es', ej:'She is my sister.'},
+                    {en:'we are / they are', es:'nosotros somos / ellos son', ej:'They are my friends.'},
+                    {en:'not', es:'no (para negar)', ej:'I am not tired.'},
+                    {en:'to spell', es:'deletrear', ej:'How do you spell it?'},
+                    {en:'student', es:'estudiante', ej:'I am a student.'},
+                    {en:'teacher', es:'maestro, maestra', ej:'She is my teacher.'},
+                    {en:'friend', es:'amigo, amiga', ej:'He is my friend.'},
+                    {en:'welcome', es:'bienvenido', ej:'You are welcome.'}
+                  ]},
+                  {tipo:'actividad', rotulo:'Actividad — Deletrea cinco veces', texto:'Deletrea en voz alta, en inglés: tu nombre, tu apellido, el nombre de tu calle, tu ciudad y tu correo electrónico. El correo es el más útil de los cinco y el que más se te va a pedir. Recuerda: el punto se dice <b>dot</b> y la arroba se dice <b>at</b>. Por ejemplo, <i>hector@gmail.com</i> se lee «H-E-C-T-O-R at gmail dot com».'}
+                ]
+              },
+              {
+                id:'c-ingles-m1-l4', titulo:'Lección 4 — Where are you from? Países y nacionalidades',
+                bloques:[
+                  {tipo:'texto', texto:'Es la segunda pregunta que te van a hacer, siempre, en cuanto notan un acento distinto. Y es buena noticia, porque significa que la conversación siguió. Aquí aprendes a contestarla, a devolverla y a entender la respuesta.'},
+                  {tipo:'titulo', texto:'La pregunta y las dos respuestas'},
+                  {tipo:'texto', texto:'La pregunta es <b>Where are you from?</b> (¿De dónde eres?). Fíjate que lleva el <i>from</i> hasta el final: en inglés es normalísimo que la preposición quede colgada al final de la pregunta, aunque en español eso nunca pasa.'},
+                  {tipo:'lista', items:[
+                    '<b>I\'m from Mexico.</b> — Soy de México. Aquí dices el <b>país</b>.',
+                    '<b>I\'m Mexican.</b> — Soy mexicano. Aquí dices la <b>nacionalidad</b>, sin <i>from</i>.',
+                    'Puedes ser más específico: <b>I\'m from Monterrey, Mexico.</b> — Soy de Monterrey, México.'
+                  ]},
+                  {tipo:'destacado', texto:'<b>El error que casi todos cometen:</b> mezclar las dos respuestas y decir <i>I\'m from Mexican</i>. No existe. O usas <b>from</b> + país (<i>from Mexico</i>) o usas la nacionalidad sola (<i>Mexican</i>). Nunca las dos juntas.'},
+                  {tipo:'titulo', texto:'Países y nacionalidades'},
+                  {tipo:'texto', texto:'En inglés, países y nacionalidades <b>siempre se escriben con mayúscula</b>, aunque vayan a media frase. En español no, y por eso se nos olvida. <i>I am mexican</i> está mal escrito; <i>I am Mexican</i> está bien.'},
+                  {tipo:'vocabulario', rotulo:'Países y nacionalidades', palabras:[
+                    {en:'Mexico — Mexican', es:'México — mexicano', ej:'I\'m from Mexico. I\'m Mexican.'},
+                    {en:'The United States — American', es:'Estados Unidos — estadounidense', ej:'She is from the United States.'},
+                    {en:'Canada — Canadian', es:'Canadá — canadiense', ej:'He is Canadian.'},
+                    {en:'Spain — Spanish', es:'España — español', ej:'They are from Spain.'},
+                    {en:'Colombia — Colombian', es:'Colombia — colombiano', ej:'Ana is Colombian.'},
+                    {en:'Argentina — Argentinian', es:'Argentina — argentino', ej:'He is from Argentina.'},
+                    {en:'Brazil — Brazilian', es:'Brasil — brasileño', ej:'She is Brazilian.'},
+                    {en:'England — English', es:'Inglaterra — inglés', ej:'My teacher is English.'},
+                    {en:'France — French', es:'Francia — francés', ej:'They are French.'},
+                    {en:'China — Chinese', es:'China — chino', ej:'He is from China.'},
+                    {en:'Japan — Japanese', es:'Japón — japonés', ej:'She is Japanese.'},
+                    {en:'Germany — German', es:'Alemania — alemán', ej:'We are from Germany.'}
+                  ]},
+                  {tipo:'titulo', texto:'Cómo devolver la pregunta sin repetirla completa'},
+                  {tipo:'texto', texto:'Repetir <i>and where are you from?</i> cada vez se oye pesado. En inglés se devuelve con dos palabras: <b>And you?</b> (¿Y tú?) o simplemente <b>You?</b> con tono de pregunta. Es lo que hace la gente de verdad, y aprenderlo te hace sonar mucho más natural que cualquier frase larga bien armada.'},
+                  {tipo:'dialogo', titulo:'Diálogo 4 — Dos desconocidos en un avión', lineas:[
+                    {quien:'Sara', en:'Excuse me, is this seat free?', es:'Disculpe, ¿este asiento está libre?'},
+                    {quien:'Héctor', en:'Yes, it is. Please.', es:'Sí, lo está. Adelante.'},
+                    {quien:'Sara', en:'Thank you. I\'m Sara.', es:'Gracias. Soy Sara.'},
+                    {quien:'Héctor', en:'Nice to meet you, Sara. I\'m Hector. Where are you from?', es:'Mucho gusto, Sara. Soy Héctor. ¿De dónde eres?'},
+                    {quien:'Sara', en:'I\'m from Canada. And you?', es:'Soy de Canadá. ¿Y tú?'},
+                    {quien:'Héctor', en:'I\'m Mexican. I\'m from Monterrey.', es:'Soy mexicano. Soy de Monterrey.'},
+                    {quien:'Sara', en:'Oh, nice! Is it a big city?', es:'¡Ah, qué bien! ¿Es una ciudad grande?'},
+                    {quien:'Héctor', en:'Yes, it is. It\'s very big.', es:'Sí. Es muy grande.'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha el diálogo 4 completo', url:''},
+                  {tipo:'actividad', rotulo:'Actividad — Tu presentación de tres líneas', texto:'Escribe tu presentación y apréndetela hasta que salga sin pensar. Tres líneas: <b>1)</b> Hello, my name is ______. <b>2)</b> I\'m from ______. <b>3)</b> Nice to meet you. Dila en voz alta diez veces. Esa presentación de tres líneas es, literalmente, la que vas a usar la próxima vez que conozcas a alguien en inglés.'}
+                ]
+              },
+              {
+                id:'c-ingles-m1-l5', titulo:'Lección 5 — How are you? y las palabras de cortesía',
+                bloques:[
+                  {tipo:'texto', texto:'En inglés la cortesía no es opcional ni decorativa: es parte de la gramática social. Una petición sin <i>please</i> no suena directa, suena grosera. Esta lección es corta en contenido y enorme en efecto, porque son las palabras que deciden si la gente te trata bien.'},
+                  {tipo:'titulo', texto:'How are you? y qué se contesta de verdad'},
+                  {tipo:'texto', texto:'Lo primero que hay que entender es que <b>How are you?</b> casi nunca es una pregunta real sobre tu salud. Es parte del saludo, como el «¿qué tal?» del español. Nadie espera que le cuentes tu vida. Se contesta corto y se devuelve.'},
+                  {tipo:'lista', items:[
+                    '<b>I\'m fine, thank you. And you?</b> — Bien, gracias. ¿Y tú? La respuesta clásica y siempre segura.',
+                    '<b>I\'m good, thanks.</b> — Bien, gracias. Más relajada, muy común.',
+                    '<b>Very well, thank you.</b> — Muy bien, gracias. Más formal.',
+                    '<b>Not bad.</b> — No me quejo. Neutra y honesta.',
+                    '<b>So-so.</b> — Más o menos. Úsala solo con gente de confianza.'
+                  ]},
+                  {tipo:'texto', texto:'Vas a escuchar también <b>How\'s it going?</b> y <b>What\'s up?</b>. Las dos significan más o menos «¿qué tal?» y son informales. A <i>What\'s up?</i> se le puede contestar simplemente <b>Not much. You?</b> (Nada nuevo. ¿Tú?).'},
+                  {tipo:'titulo', texto:'Las cinco palabras de cortesía'},
+                  {tipo:'lista', items:[
+                    '<b>Please</b> — por favor. Va al final de la petición: <i>Water, please.</i> No la omitas nunca al pedir algo.',
+                    '<b>Thank you</b> / <b>Thanks</b> — gracias. La segunda es más ligera, igual de correcta.',
+                    '<b>You\'re welcome</b> — de nada. Es la respuesta esperada a <i>thank you</i>.',
+                    '<b>Excuse me</b> — disculpe, para <u>llamar la atención</u> de alguien o pedir permiso de pasar.',
+                    '<b>Sorry</b> — perdón, para <u>disculparte</u> por algo que ya hiciste.'
+                  ]},
+                  {tipo:'destacado', texto:'<b>Excuse me o sorry?</b> Es la confusión número uno y se resuelve con una imagen: <b>excuse me</b> va <u>antes</u> de molestar (te acercas a preguntar algo, quieres pasar entre la gente). <b>Sorry</b> va <u>después</u> de molestar (le pisaste el pie a alguien, llegaste tarde). Antes: excuse me. Después: sorry.'},
+                  {tipo:'titulo', texto:'Pedir algo con educación'},
+                  {tipo:'texto', texto:'La fórmula más útil de todas, la que sirve en restaurantes, tiendas, oficinas y aviones, es <b>Can I have…, please?</b> (¿Me puede dar…, por favor?). También sirve <b>I would like…</b> (Quisiera…), que suena un poco más formal. Ambas te sacan de casi cualquier apuro.'},
+                  {tipo:'dialogo', titulo:'Diálogo 5 — En una cafetería', lineas:[
+                    {quien:'Empleada', en:'Good afternoon! How are you today?', es:'¡Buenas tardes! ¿Cómo está hoy?'},
+                    {quien:'Héctor', en:'I\'m fine, thank you. And you?', es:'Bien, gracias. ¿Y usted?'},
+                    {quien:'Empleada', en:'Very well, thanks. What can I get you?', es:'Muy bien, gracias. ¿Qué le sirvo?'},
+                    {quien:'Héctor', en:'Can I have a coffee, please?', es:'¿Me puede dar un café, por favor?'},
+                    {quien:'Empleada', en:'Sure. Anything else?', es:'Claro. ¿Algo más?'},
+                    {quien:'Héctor', en:'No, thank you. That\'s all.', es:'No, gracias. Es todo.'},
+                    {quien:'Empleada', en:'Here you are. Have a good day!', es:'Aquí tiene. ¡Que tenga buen día!'},
+                    {quien:'Héctor', en:'Thank you. You too!', es:'Gracias. ¡Igualmente!'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha el diálogo 5 completo', url:''},
+                  {tipo:'vocabulario', rotulo:'Vocabulario de la lección 5', palabras:[
+                    {en:'How are you?', es:'¿cómo estás?', ej:'Hi Ana, how are you?'},
+                    {en:'fine / good', es:'bien', ej:'I\'m fine, thank you.'},
+                    {en:'please', es:'por favor', ej:'A coffee, please.'},
+                    {en:'thank you / thanks', es:'gracias', ej:'Thank you very much.'},
+                    {en:'you\'re welcome', es:'de nada', ej:'Thanks! — You\'re welcome.'},
+                    {en:'excuse me', es:'disculpe (antes de molestar)', ej:'Excuse me, where is the bank?'},
+                    {en:'sorry', es:'perdón (después de molestar)', ej:'Sorry, I\'m late.'},
+                    {en:'Can I have…?', es:'¿me puede dar…?', ej:'Can I have the bill, please?'},
+                    {en:'anything else?', es:'¿algo más?', ej:'Anything else? — No, thank you.'},
+                    {en:'here you are', es:'aquí tiene', ej:'Here you are. Have a good day.'},
+                    {en:'you too', es:'igualmente', ej:'Have a good day! — You too!'}
+                  ]},
+                  {tipo:'actividad', rotulo:'Actividad — Pide cinco cosas', texto:'Practica en voz alta pidiendo cinco cosas distintas con la fórmula completa: <i>Can I have a coffee, please?</i> · <i>Can I have the bill, please?</i> (la cuenta) · <i>Can I have some water, please?</i> · <i>Can I have a menu, please?</i> · <i>Can I have a bag, please?</i> (una bolsa). Termina cada una con <b>thank you</b>. Esa secuencia completa (pedir, por favor, gracias) es la que te va a servir la próxima vez que estés frente a un mostrador.'}
+                ]
+              },
+              {
+                id:'c-ingles-m1-l6', titulo:'Lección 6 — Práctica integrada: tus primeros 30 segundos en inglés',
+                bloques:[
+                  {tipo:'texto', texto:'Esta lección no trae material nuevo. Trae el ensamble. Todo lo que viste en las cinco lecciones anteriores se junta aquí en una sola conversación completa, de las que ocurren de verdad, y en una serie de ejercicios para comprobar que ya lo tienes. Si terminas esta lección sintiéndote cómodo, el módulo cumplió su objetivo.'},
+                  {tipo:'titulo', texto:'Lo que ya sabes hacer'},
+                  {tipo:'lista', items:[
+                    'Saludar correctamente según la hora del día, y no confundir <i>good evening</i> con <i>good night</i>.',
+                    'Decir tu nombre de tres formas distintas y preguntar el de la otra persona.',
+                    'Pronunciar la <i>th</i>, la <i>h</i> aspirada y la <i>-s</i> final sin que se rompa la palabra.',
+                    'Usar <i>am, is, are</i> para decir quién eres, cómo estás y dónde estás.',
+                    'Deletrear tu nombre, tu apellido y tu correo electrónico.',
+                    'Decir de dónde eres, con país o con nacionalidad, y devolver la pregunta.',
+                    'Contestar <i>How are you?</i> y pedir algo con <i>please</i> y <i>thank you</i>.'
+                  ]},
+                  {tipo:'titulo', texto:'La conversación completa'},
+                  {tipo:'dialogo', titulo:'Diálogo 6 — Primer día en un curso, conociendo a un compañero', lineas:[
+                    {quien:'Emma', en:'Good morning! Is this seat free?', es:'¡Buenos días! ¿Este asiento está libre?'},
+                    {quien:'Héctor', en:'Good morning. Yes, it is. Please.', es:'Buenos días. Sí, lo está. Adelante.'},
+                    {quien:'Emma', en:'Thank you. My name is Emma.', es:'Gracias. Me llamo Emma.'},
+                    {quien:'Héctor', en:'Nice to meet you, Emma. I\'m Hector.', es:'Mucho gusto, Emma. Soy Héctor.'},
+                    {quien:'Emma', en:'Sorry, how do you spell that?', es:'Perdón, ¿cómo se escribe?'},
+                    {quien:'Héctor', en:'H - E - C - T - O - R.', es:'H - E - C - T - O - R.'},
+                    {quien:'Emma', en:'Got it. How are you today?', es:'Entendido. ¿Cómo estás hoy?'},
+                    {quien:'Héctor', en:'I\'m fine, thank you. And you?', es:'Bien, gracias. ¿Y tú?'},
+                    {quien:'Emma', en:'Very well, thanks. Where are you from?', es:'Muy bien, gracias. ¿De dónde eres?'},
+                    {quien:'Héctor', en:'I\'m from Mexico. And you?', es:'Soy de México. ¿Y tú?'},
+                    {quien:'Emma', en:'I\'m English. I\'m from London.', es:'Soy inglesa. Soy de Londres.'},
+                    {quien:'Héctor', en:'Nice! Excuse me, can I have a pen, please?', es:'¡Qué bien! Disculpa, ¿me puedes dar una pluma, por favor?'},
+                    {quien:'Emma', en:'Sure. Here you are.', es:'Claro. Aquí tienes.'},
+                    {quien:'Héctor', en:'Thank you very much.', es:'Muchas gracias.'},
+                    {quien:'Emma', en:'You\'re welcome. See you later!', es:'De nada. ¡Nos vemos al rato!'},
+                    {quien:'Héctor', en:'See you. Have a good day!', es:'Nos vemos. ¡Que tengas buen día!'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha la conversación completa', url:''},
+                  {tipo:'titulo', texto:'Ejercicio 1 — Completa las frases'},
+                  {tipo:'texto', texto:'Escríbelas en un cuaderno antes de ver la solución que viene más abajo.<br>1. Son las 3 de la tarde y llegas a una oficina: «________ , my name is…»<br>2. Alguien te dice su nombre. Contestas: «________ to meet you.»<br>3. Quieres saber de dónde es: «________ are you from?»<br>4. Eres de México: «I\'m ________ Mexico» o «I\'m ________».<br>5. Pides un café: «Can I ________ a coffee, ________?»<br>6. Alguien te da las gracias. Contestas: «________ welcome.»'},
+                  {tipo:'destacado', texto:'<b>Soluciones del ejercicio 1:</b> 1. Good afternoon · 2. Nice · 3. Where · 4. from / Mexican · 5. have / please · 6. You\'re'},
+                  {tipo:'titulo', texto:'Ejercicio 2 — Encuentra el error'},
+                  {tipo:'texto', texto:'Las seis frases tienen exactamente un error cada una. Corrígelas.<br>1. <i>Am Hector.</i><br>2. <i>I\'m from mexican.</i><br>3. <i>Good night!</i> (dicho al entrar a un restaurante a las 8 pm)<br>4. <i>She are my teacher.</i><br>5. <i>How do you call yourself?</i><br>6. <i>Sorry, where is the bank?</i> (para detener a un desconocido en la calle)'},
+                  {tipo:'destacado', texto:'<b>Soluciones del ejercicio 2:</b> 1. <i>I am Hector</i> — el pronombre nunca se quita. · 2. <i>I\'m from Mexico</i> o <i>I\'m Mexican</i> — nunca <i>from</i> + nacionalidad. · 3. <i>Good evening</i> — al llegar de noche. · 4. <i>She is my teacher</i> — con <i>she</i> va <i>is</i>. · 5. <i>What\'s your name?</i> — no se traduce palabra por palabra. · 6. <i>Excuse me, where is the bank?</i> — antes de molestar va <i>excuse me</i>.'},
+                  {tipo:'titulo', texto:'Ejercicio 3 — Traduce al inglés'},
+                  {tipo:'texto', texto:'1. Buenas tardes, me llamo Ana.<br>2. Mucho gusto. ¿De dónde eres?<br>3. Soy de Colombia. ¿Y tú?<br>4. ¿Cómo estás? — Bien, gracias.<br>5. ¿Me puede dar la cuenta, por favor?<br>6. Gracias. Que tenga buen día.'},
+                  {tipo:'destacado', texto:'<b>Soluciones del ejercicio 3:</b> 1. <i>Good afternoon, my name is Ana.</i> · 2. <i>Nice to meet you. Where are you from?</i> · 3. <i>I\'m from Colombia. And you?</i> · 4. <i>How are you? — I\'m fine, thank you.</i> · 5. <i>Can I have the bill, please?</i> · 6. <i>Thank you. Have a good day.</i>'},
+                  {tipo:'actividad', rotulo:'Actividad final — Grábate otra vez', texto:'Vuelve a grabarte, ahora con el diálogo 6 completo, haciendo los dos papeles. Cuando termines, <b>escucha primero la grabación de la lección 1 y luego esta</b>. Esa comparación es la prueba de que el módulo sirvió, y es la razón por la que te pedí guardar la primera. Si notas la diferencia, estás listo para el módulo 2.'},
+                  {tipo:'actividad', rotulo:'Antes de pasar a la evaluación', texto:'Repasa los bloques de <b>vocabulario</b> de las lecciones 1 a 5. Son 55 palabras y expresiones. No necesitas saberlas todas de memoria, pero sí reconocerlas al leerlas. La evaluación del módulo tiene 12 preguntas y necesitas <b>80%</b> para aprobar y avanzar.'}
+                ]
+              }
+            ],
+            quiz:{
+              titulo:'Evaluación del módulo 1',
+              preguntas:[
+                {p:'Son las 9 de la mañana y llegas a una oficina. ¿Qué dices?', ops:['Good evening','Good morning','Good night','Good afternoon'], correcta:1},
+                {p:'«Good night» se usa para…', ops:['Saludar al llegar de noche','Despedirse o irse a dormir','Preguntar la hora','Presentarte'], correcta:1},
+                {p:'¿Cómo preguntas el nombre de alguien?', ops:['How are you?','Where are you from?','What\'s your name?','How do you call yourself?'], correcta:2},
+                {p:'En «think», la th se pronuncia…', ops:['Como una t','Como una s','Con la lengua entre los dientes','Como una f'], correcta:2},
+                {p:'«Nice to meet you» significa…', ops:['Hasta luego','Mucho gusto','¿Cómo estás?','Buenas tardes'], correcta:1},
+                {p:'¿Cuál frase está bien escrita?', ops:['Am Hector','I am Hector','I Hector am','Hector am I'], correcta:1},
+                {p:'Completa: «She ____ my teacher.»', ops:['am','are','is','be'], correcta:2},
+                {p:'¿Cuál respuesta a «Where are you from?» es correcta?', ops:['I\'m from Mexican','I\'m from Mexico','I from Mexico','I\'m Mexico from'], correcta:1},
+                {p:'Quieres detener a un desconocido en la calle para preguntarle algo. Dices…', ops:['Sorry','Excuse me','Please','Thank you'], correcta:1},
+                {p:'Alguien te dice «Thank you». La respuesta esperada es…', ops:['You\'re welcome','Please','Excuse me','Nice to meet you'], correcta:0},
+                {p:'¿Cómo pides un café con educación?', ops:['Give me a coffee','A coffee','Can I have a coffee, please?','I want coffee now'], correcta:2},
+                {p:'En inglés, los países y nacionalidades se escriben…', ops:['Siempre con minúscula','Con mayúscula solo al inicio de la frase','Siempre con mayúscula','Como en español'], correcta:2}
+              ]
+            }
+          },
+          {
+            id:'c-ingles-m2', titulo:'Números, hora y fechas',
+            lecciones:[
+              {
+                id:'c-ingles-m2-l1', titulo:'Del 1 al 100 sin batallar',
+                bloques:[
+                  {tipo:'texto', texto:'Los números en inglés tienen tres tramos y cada uno sigue una regla distinta. Si entiendes los tres, ya te sabes los cien.'},
+                  {tipo:'lista', items:[
+                    'Del 1 al 12 se aprenden de memoria: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve.',
+                    'Del 13 al 19 se agrega -teen: thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen.',
+                    'Las decenas terminan en -ty: twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety.',
+                    'Lo intermedio se une con guion: twenty-one, thirty-five, sixty-eight.'
+                  ]},
+                  {tipo:'destacado', texto:'<b>El error más común:</b> confundir <i>fifteen</i> (15) con <i>fifty</i> (50). La diferencia está en dónde cae la fuerza: fif<b>TEEN</b> al final, <b>FIF</b>ty al principio.'}
+                ]
+              },
+              {
+                id:'c-ingles-m2-l2', titulo:'What time is it?',
+                bloques:[
+                  {tipo:'texto', texto:'Para decir la hora en inglés basta con una fórmula: la hora y luego los minutos. Seven fifteen son las 7:15. Ten thirty son las 10:30. Directo, sin rodeos.'},
+                  {tipo:'lista', items:[
+                    "It's seven o'clock — Son las siete en punto.",
+                    "It's half past eight — Son las ocho y media.",
+                    "It's a quarter past nine — Son las nueve y cuarto.",
+                    "It's a quarter to ten — Son cuarto para las diez."
+                  ]},
+                  {tipo:'dialogo', titulo:'Diálogo 2 — En la calle', lineas:[
+                    {quien:'A', en:'Excuse me, what time is it?', es:'Disculpe, ¿qué hora es?'},
+                    {quien:'B', en:"It's half past three.", es:'Son las tres y media.'},
+                    {quien:'A', en:'Thank you very much.', es:'Muchas gracias.'},
+                    {quien:'B', en:"You're welcome.", es:'De nada.'}
+                  ]},
+                  {tipo:'audio', rotulo:'Escucha el diálogo 2', url:''}
+                ]
+              }
+            ],
+            quiz:{
+              titulo:'Evaluación del módulo 2',
+              preguntas:[
+                {p:'¿Cómo se dice 15?', ops:['Fifty','Fifteen','Five teen','Fiveteen'], correcta:1},
+                {p:'¿Cómo se dice 43?', ops:['Four three','Fourty-three','Forty-three','Fourteen-three'], correcta:2},
+                {p:'Las 6:30 en inglés son…', ops:['Half past six','Half to six','Six and half','Quarter past six'], correcta:0},
+                {p:'«A quarter to ten» es…', ops:['10:15','9:45','10:45','9:15'], correcta:1},
+                {p:'La respuesta natural a «Thank you» es…', ops:["You're welcome","Please","Excuse me","Nice to meet you"], correcta:0}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id:'c-ia', nombre:'IA aplicada al trabajo (general)', color:'#14B8A6',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Usa inteligencia artificial para redactar, resumir, ordenar datos y resolver en minutos lo que hoy te toma horas.',
+        horas:16, precio:990, publicado:true, proximamente:false,
+        modulos:[
+          {
+            id:'c-ia-m1', titulo:'Qué es y qué no es la IA',
+            lecciones:[
+              {
+                id:'c-ia-m1-l1', titulo:'La idea en cinco minutos',
+                bloques:[
+                  {tipo:'texto', texto:'Una inteligencia artificial de texto no busca en internet ni consulta una base de datos con la respuesta correcta. Lo que hace es predecir, palabra por palabra, qué sigue en un texto, a partir de millones de ejemplos que ya leyó. Entender esto cambia por completo la forma en que le pides las cosas.'},
+                  {tipo:'destacado', texto:'<b>Consecuencia práctica:</b> la IA puede inventar con total seguridad. A eso se le llama alucinación. Nunca uses un dato, una cifra o una cita que te dio sin verificarla tú.'},
+                  {tipo:'titulo', texto:'Para qué sí sirve'},
+                  {tipo:'lista', items:[
+                    'Redactar borradores: correos, avisos, descripciones, publicaciones.',
+                    'Resumir textos largos y sacar los puntos clave.',
+                    'Reordenar información desordenada en tablas o listas.',
+                    'Traducir y ajustar el tono de un mensaje.',
+                    'Explicarte algo que no entiendes, con ejemplos a tu medida.'
+                  ]}
+                ]
+              },
+              {
+                id:'c-ia-m1-l2', titulo:'Cómo se pide bien',
+                bloques:[
+                  {tipo:'texto', texto:'Una instrucción vaga da un resultado vago. La diferencia entre un resultado inservible y uno que puedes usar tal cual casi siempre está en cuatro cosas que agregaste, o que se te olvidó agregar.'},
+                  {tipo:'lista', items:[
+                    'Papel: «Eres el encargado de atención a clientes de una escuela en línea».',
+                    'Tarea: «Redacta la respuesta a este correo de una mamá molesta».',
+                    'Contexto: pega el correo original, di qué pasó y qué puedes ofrecer.',
+                    'Formato: «Máximo 120 palabras, tono amable, sin tecnicismos, cierra con una pregunta».'
+                  ]},
+                  {tipo:'actividad', rotulo:'Hazlo hoy', texto:'Toma un correo real que tengas pendiente. Escribe la instrucción con las cuatro partes. Compara ese resultado con el que te da si solo escribes «contesta este correo».'}
+                ]
+              }
+            ],
+            quiz:{
+              titulo:'Evaluación del módulo 1',
+              preguntas:[
+                {p:'Una IA de texto principalmente…', ops:['Busca la respuesta en internet','Predice qué palabra sigue','Consulta una enciclopedia','Copia de una base de datos'], correcta:1},
+                {p:'Que la IA «alucine» significa que…', ops:['Se traba','Inventa información con seguridad','Se tarda mucho','Responde en otro idioma'], correcta:1},
+                {p:'¿Cuál NO es una buena tarea para la IA?', ops:['Resumir un texto largo','Redactar un borrador','Darte una cifra oficial sin verificar','Cambiar el tono de un mensaje'], correcta:2},
+                {p:'Las cuatro partes de una buena instrucción son…', ops:['Papel, tarea, contexto y formato','Saludo, tema, firma y fecha','Idioma, largo, tono y color','Pregunta, respuesta, ejemplo y cierre'], correcta:0},
+                {p:'Antes de enviar algo que redactó la IA debes…', ops:['Enviarlo tal cual','Revisarlo y verificar los datos','Pedirle que lo repita','Traducirlo'], correcta:1}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id:'c-office', nombre:'Computación y Office', color:'#5B21B6',
+        nivel:'Cursos libres de capacitación', familia:'Tecnología', periodoTipo:null, periodoNum:null,
+        desc:'Domina Windows, Word, Excel y el correo desde cero, con ejercicios que salen de trabajos reales.',
+        horas:24, precio:990, publicado:true, proximamente:false,
+        modulos:[
+          {
+            id:'c-office-m1', titulo:'Orden en la computadora',
+            lecciones:[
+              {
+                id:'c-office-m1-l1', titulo:'Archivos, carpetas y rutas',
+                bloques:[
+                  {tipo:'texto', texto:'Todo lo que guardas en una computadora es un archivo, y todo archivo vive dentro de una carpeta. La ruta es simplemente la dirección de ese archivo, escrita de lo general a lo particular.'},
+                  {tipo:'destacado', texto:'<b>Regla de oro para nombrar:</b> fecha al revés, luego el asunto. <i>2026-09-16 recibo luz.pdf</i>. Así se ordenan solos por fecha y nunca vuelves a buscar a ciegas.'},
+                  {tipo:'lista', items:[
+                    'Guardar es escribir en el disco. Si no guardas, se pierde.',
+                    'Guardar como crea una copia nueva y deja intacta la anterior.',
+                    'La papelera no borra: solo aparta. Ocupa el mismo espacio hasta vaciarla.',
+                    'La extensión (.docx, .pdf, .jpg) le dice a la computadora con qué programa abrirlo.'
+                  ]}
+                ]
+              }
+            ],
+            quiz:{
+              titulo:'Evaluación del módulo 1',
+              preguntas:[
+                {p:'La extensión de un archivo sirve para…', ops:['Decir su tamaño','Indicar con qué programa abrirlo','Protegerlo','Ordenarlo'], correcta:1},
+                {p:'«Guardar como» sirve para…', ops:['Borrar el archivo','Crear una copia nueva','Imprimir','Cerrar el programa'], correcta:1},
+                {p:'Al mandar algo a la papelera…', ops:['Se borra para siempre','Sigue ocupando espacio hasta vaciarla','Se comprime','Se respalda en la nube'], correcta:1},
+                {p:'La mejor forma de nombrar un archivo por fecha es…', ops:['16-09-2026 recibo','2026-09-16 recibo','recibo sept','recibo nuevo final'], correcta:1},
+                {p:'Una ruta es…', ops:['El nombre del archivo','La dirección donde vive el archivo','El tamaño del archivo','El programa que lo abre'], correcta:1}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id:'c-ia-finanzas', nombre:'IA para Finanzas', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Conciliaciones, reportes, análisis de cartera y automatización de tareas financieras con herramientas de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      },
+      {
+        id:'c-ia-manufactura', nombre:'IA para Manufactura', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Mantenimiento predictivo, control de calidad y optimización de línea de producción apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      },
+      {
+        id:'c-ia-oficina', nombre:'IA para la Oficina', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Correo, juntas, reportes y hojas de cálculo: cómo la IA le quita horas muertas al trabajo de oficina.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      },
+      {
+        id:'c-ia-arquitectura', nombre:'IA para Arquitectos', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Renders, propuestas de diseño, memorias de cálculo y presentaciones a cliente con apoyo de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      },
+      {
+        id:'c-ia-ventas', nombre:'IA para Ventas y Atención a Clientes', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Prospección, guiones de venta, respuestas de WhatsApp y seguimiento a clientes con ayuda de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      },
+      {
+        id:'c-ia-salud', nombre:'IA para el Sector Salud', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Documentación clínica, agenda, comunicación con pacientes y apoyo administrativo del consultorio con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+      }
+    ]
+  };
+}
+
+var BD = cargar() || semilla();
+
+/* Si en esta computadora quedaron guardados cursos de una versión anterior,
+   los cursos se reemplazan por los nuevos y se conservan alumnos, pagos,
+   inscripciones y avances. Así el contenido nuevo sí se ve. */
+if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
+  var fresca = semilla();
+  BD.cursos = fresca.cursos;
+  BD.config = BD.config || fresca.config;
+  BD.config.contenidoVersion = CONTENIDO_VERSION;
+  if(BD.config.minimoAprobatorio == null) BD.config.minimoAprobatorio = 80;
+}
+/* Compatibilidad con respaldos guardados antes de estos ajustes */
+if(!BD.biblioteca) BD.biblioteca = [];
+if(!BD.constancias) BD.constancias = [];
+if(!BD.dudas) BD.dudas = [];
+if(BD.config.whatsapp == null) BD.config.whatsapp = '';
+if(BD.config.urlPublica == null) BD.config.urlPublica = '';
+if(BD.config.slaDudasHoras == null) BD.config.slaDudasHoras = 24;
+if(BD.config.supabaseUrl == null) BD.config.supabaseUrl = '';
+if(BD.config.supabaseAnonKey == null) BD.config.supabaseAnonKey = '';
+if(BD.config.mpPublicKey == null) BD.config.mpPublicKey = '';
+if(BD.config.edgeFnCrearPreferencia == null) BD.config.edgeFnCrearPreferencia = '';
+for(var _i=0;_i<BD.usuarios.length;_i++) if(BD.usuarios[_i].foto == null) BD.usuarios[_i].foto = '';
+for(var _j=0;_j<BD.cursos.length;_j++){
+  var _c = BD.cursos[_j];
+  if(_c.nivel == null) _c.nivel = 'Cursos libres de capacitación';
+  if(_c.familia == null) _c.familia = 'General';
+  if(_c.periodoTipo === undefined) _c.periodoTipo = null;
+  if(_c.periodoNum === undefined) _c.periodoNum = null;
+  if(_c.proximamente == null) _c.proximamente = false;
+}
+guardar();
+
+var sesion = null;
+var estado = { vista:'', cursoId:null, moduloId:null, leccionId:null, edit:null };
+
+/* ---------------- Utilidades de datos ---------------- */
+function curso(id){ for(var i=0;i<BD.cursos.length;i++) if(BD.cursos[i].id===id) return BD.cursos[i]; return null; }
+function modulo(c,id){ for(var i=0;i<c.modulos.length;i++) if(c.modulos[i].id===id) return c.modulos[i]; return null; }
+function leccion(m,id){ for(var i=0;i<m.lecciones.length;i++) if(m.lecciones[i].id===id) return m.lecciones[i]; return null; }
+function usuario(id){ for(var i=0;i<BD.usuarios.length;i++) if(BD.usuarios[i].id===id) return BD.usuarios[i]; return null; }
+
+function avance(uid,cid){
+  if(!BD.avances[uid]) BD.avances[uid] = {};
+  if(!BD.avances[uid][cid]) BD.avances[uid][cid] = { lecciones:[], quizzes:{} };
+  return BD.avances[uid][cid];
+}
+function estaInscrito(uid,cid){
+  for(var i=0;i<BD.inscripciones.length;i++)
+    if(BD.inscripciones[i].usuarioId===uid && BD.inscripciones[i].cursoId===cid) return BD.inscripciones[i];
+  return null;
+}
+function totalLecciones(c){
+  var n=0; for(var i=0;i<c.modulos.length;i++) n += c.modulos[i].lecciones.length; return n;
+}
+function moduloAprobado(uid,c,m){
+  var a = avance(uid,c.id);
+  return (a.quizzes[m.id] != null) && (a.quizzes[m.id] >= BD.config.minimoAprobatorio);
+}
+function moduloDisponible(uid,c,idx){
+  if(idx===0) return true;
+  return moduloAprobado(uid,c,c.modulos[idx-1]);
+}
+function porcentaje(uid,c){
+  var a = avance(uid,c.id), tot = totalLecciones(c) + c.modulos.length, hechas = 0;
+  for(var i=0;i<a.lecciones.length;i++) hechas++;
+  for(var k in a.quizzes) if(a.quizzes[k] >= BD.config.minimoAprobatorio) hechas++;
+  return tot ? Math.min(100, Math.round(hechas*100/tot)) : 0;
+}
+function cursoCompleto(uid,c){
+  if(!c.modulos.length) return false;
+  for(var i=0;i<c.modulos.length;i++) if(!moduloAprobado(uid,c,c.modulos[i])) return false;
+  var a = avance(uid,c.id);
+  for(var j=0;j<c.modulos.length;j++)
+    for(var k=0;k<c.modulos[j].lecciones.length;k++)
+      if(a.lecciones.indexOf(c.modulos[j].lecciones[k].id) < 0) return false;
+  return true;
+}
+function pagadoPor(uid,cid){
+  var s=0; for(var i=0;i<BD.pagos.length;i++)
+    if(BD.pagos[i].usuarioId===uid && BD.pagos[i].cursoId===cid) s += Number(BD.pagos[i].monto)||0;
+  return s;
+}
+
+/* ---------------- Acceso ---------------- */
+var $ = function(id){ return document.getElementById(id); };
+
+$('tabEntrar').onclick = function(){
+  $('tabEntrar').classList.add('activa'); $('tabCrear').classList.remove('activa');
+  $('formEntrar').classList.remove('oculto'); $('formCrear').classList.add('oculto');
+};
+$('tabCrear').onclick = function(){
+  $('tabCrear').classList.add('activa'); $('tabEntrar').classList.remove('activa');
+  $('formCrear').classList.remove('oculto'); $('formEntrar').classList.add('oculto');
+};
+
+$('formEntrar').onsubmit = function(e){
+  e.preventDefault();
+  var correo = $('eCorreo').value.trim().toLowerCase(), pass = $('ePass').value;
+  var u = null;
+  for(var i=0;i<BD.usuarios.length;i++)
+    if(BD.usuarios[i].correo.toLowerCase()===correo) u = BD.usuarios[i];
+  if(!u || u.pass !== pass){
+    var err = $('errEntrar');
+    err.textContent = 'Ese correo o esa contraseña no coinciden. Revisa y vuelve a intentar.';
+    err.classList.remove('oculto');
+    return;
+  }
+  sesion = u; $('errEntrar').classList.add('oculto');
+  guardarSesion();
+  entrarApp();
+};
+
+$('formCrear').onsubmit = function(e){
+  e.preventDefault();
+  var correo = $('cCorreo').value.trim().toLowerCase();
+  for(var i=0;i<BD.usuarios.length;i++){
+    if(BD.usuarios[i].correo.toLowerCase()===correo){
+      var err = $('errCrear');
+      err.textContent = 'Ya existe una cuenta con ese correo. Entra con tu contraseña o escríbenos por WhatsApp.';
+      err.classList.remove('oculto');
+      return;
+    }
+  }
+  var u = {
+    id:'u-'+Date.now(), nombre:$('cNombre').value.trim(), correo:correo,
+    pass:$('cPass').value, rol:'alumno', tel:$('cTel').value.trim(),
+    alta:hoy(), folio:folio('IM'), foto:''
+  };
+  BD.usuarios.push(u); guardar();
+  sesion = u; $('errCrear').classList.add('oculto');
+  guardarSesion();
+  entrarApp();
+};
+
+$('btnSalir').onclick = function(){
+  sesion = null;
+  borrarSesion();
+  $('app').classList.add('oculto');
+  $('pantallaLogin').classList.remove('oculto');
+  $('formEntrar').reset(); $('formCrear').reset();
+};
+
+/* Recordar sesión entre recargas: necesario para que, al volver de pagar en
+   Mercado Pago (que recarga la página), el alumno no tenga que iniciar sesión
+   otra vez. Solo guarda el id de usuario, nunca la contraseña. */
+var LLAVE_SESION = 'institutoMara.sesion';
+function guardarSesion(){ try{ localStorage.setItem(LLAVE_SESION, sesion.id); }catch(e){} }
+function borrarSesion(){ try{ localStorage.removeItem(LLAVE_SESION); }catch(e){} }
+function sesionGuardada(){ try{ return localStorage.getItem(LLAVE_SESION); }catch(e){ return null; } }
+
+function entrarApp(){
+  $('pantallaLogin').classList.add('oculto');
+  $('app').classList.remove('oculto');
+  $('nomUsuario').textContent = sesion.nombre;
+  $('rolUsuario').textContent = sesion.rol === 'admin' ? 'Administrador' : 'Alumno';
+  pintarAvatar();
+  pintarNav();
+  var params = new URLSearchParams(location.search);
+  if(params.get('pago') === 'exito' && params.get('curso')){
+    var cid = params.get('curso');
+    if(sesion.rol==='alumno' && !estaInscrito(sesion.id,cid)) inscribirme(cid);
+    history.replaceState(null,'',location.pathname);
+    ir(sesion.rol === 'admin' ? 'admin-tablero' : 'aula', {cursoId:cid});
+    return;
+  }
+  ir(sesion.rol === 'admin' ? 'admin-tablero' : 'mis-cursos');
+}
+
+function pintarAvatar(){
+  var av = $('avatar');
+  if(sesion.foto){ av.innerHTML = '<img src="'+sesion.foto+'" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover">'; }
+  else { av.textContent = sesion.nombre.trim().charAt(0).toUpperCase(); }
+}
+
+function pintarNav(){
+  var items = sesion.rol === 'admin'
+    ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
+       ['admin-pagos','Pagos'],['admin-dudas', bandejaDudasEtiqueta()],['verificacion','Constancias'],
+       ['admin-ajustes','Ajustes']]
+    : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['constancias','Constancias'],
+       ['dudas','Dudas'],['mi-perfil','Mi perfil']];
+  var h = '';
+  for(var i=0;i<items.length;i++)
+    h += '<button data-v="'+items[i][0]+'">'+items[i][1]+'</button>';
+  $('nav').innerHTML = h;
+  var bs = $('nav').querySelectorAll('button');
+  for(var j=0;j<bs.length;j++)
+    bs[j].onclick = function(){ ir(this.getAttribute('data-v')); };
+}
+
+function ir(v, datos){
+  estado.vista = v;
+  if(datos) for(var k in datos) estado[k] = datos[k];
+  var bs = $('nav').querySelectorAll('button');
+  for(var i=0;i<bs.length;i++)
+    bs[i].classList.toggle('activa', bs[i].getAttribute('data-v')===v);
+  window.scrollTo(0,0);
+  pintar();
+}
+
+/* ---------------- Vistas de alumno ---------------- */
+function tapaCurso(c){
+  return '<div class="curso-tapa" style="background:linear-gradient(135deg,'+c.color+' 0%,#7C3AED 100%)">'+
+    '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" '+
+    'stroke-linecap="round" stroke-linejoin="round" opacity=".92">'+
+    '<path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>';
+}
+
+function vistaMisCursos(){
+  var ins = [], h = '';
+  for(var i=0;i<BD.inscripciones.length;i++)
+    if(BD.inscripciones[i].usuarioId===sesion.id) ins.push(BD.inscripciones[i]);
+
+  h += '<div class="seccion"><div class="encabezado-fila"><div>'+
+       '<h2>Hola, '+esc(sesion.nombre.split(' ')[0])+'</h2>'+
+       '<p class="sub">Aquí está todo lo que tienes en curso. Retoma donde te quedaste.</p></div>'+
+       '<button class="btn btn-linea" onclick="ir(\'catalogo\')">Ver catálogo</button></div>';
+
+  if(!ins.length){
+    h += '<div class="tarjeta vacio"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" '+
+         'stroke="#6D28D9" stroke-width="1.4"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>'+
+         '<path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>'+
+         '<p>Todavía no tienes ningún curso. Empieza por el catálogo.</p>'+
+         '<button class="btn btn-mor" style="margin-top:16px" onclick="ir(\'catalogo\')">Elegir un curso</button></div>';
+  } else {
+    var misCursos = [];
+    for(var k=0;k<ins.length;k++){ var cc = curso(ins[k].cursoId); if(cc) misCursos.push(cc); }
+    var grupos = agruparCursos(misCursos);
+    var varios = grupos.length > 1 || (grupos[0] && grupos[0].grupos.length > 1);
+    for(var g=0;g<grupos.length;g++){
+      if(varios) h += '<h3 style="margin:20px 0 4px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
+      for(var s=0;s<grupos[g].grupos.length;s++){
+        var sub = grupos[g].grupos[s];
+        if(varios) h += '<div style="margin:12px 0 8px;font-weight:700;color:var(--morado);font-size:.82rem;'+
+          'text-transform:uppercase;letter-spacing:.6px">'+esc(sub.titulo)+'</div>';
+        h += '<div class="rejilla rejilla-3">';
+        for(var c2=0;c2<sub.cursos.length;c2++){
+          var c = sub.cursos[c2];
+          var p = porcentaje(sesion.id,c), listo = cursoCompleto(sesion.id,c);
+          h += '<article class="curso-card">'+tapaCurso(c)+'<div class="curso-cuerpo">'+
+               '<span class="etiqueta '+(listo?'ok':'')+'">'+(listo?'Concluido':'En curso')+'</span>'+
+               '<h3 style="margin-top:10px">'+esc(c.nombre)+'</h3>'+
+               '<p>'+esc(c.desc)+'</p>'+
+               '<div class="avance-txt"><span>Avance</span><span>'+p+'%</span></div>'+
+               '<div class="avance"><i style="width:'+p+'%"></i></div>'+
+               '<button class="btn btn-mor" style="margin-top:16px;width:100%" '+
+               'onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">'+(p?'Continuar':'Comenzar')+'</button>'+
+               '</div></article>';
+        }
+        h += '</div>';
+      }
+    }
+  }
+  return h + '</div>';
+}
+
+/* Agrupa los cursos publicados o "próximamente" por nivel académico y, dentro de
+   cada nivel, por periodo (cuatrimestre/semestre) si aplica o por familia/materia
+   si no. Así, el día que se agreguen niveles tipo Bachillerato o Licenciatura, el
+   catálogo no se vuelve una lista plana de materias sueltas. */
+function agruparCursos(lista){
+  var niveles = {}, ordenNiveles = [];
+  for(var i=0;i<lista.length;i++){
+    var c = lista[i];
+    if(niveles[c.nivel] == null){ niveles[c.nivel] = {}; ordenNiveles.push(c.nivel); }
+    var clave = c.periodoTipo ? (c.periodoTipo+' '+c.periodoNum) : (c.familia||'General');
+    if(!niveles[c.nivel][clave]) niveles[c.nivel][clave] = [];
+    niveles[c.nivel][clave].push(c);
+  }
+  var out = [];
+  for(var n=0;n<ordenNiveles.length;n++){
+    var grupos = [];
+    for(var k in niveles[ordenNiveles[n]]) grupos.push({ titulo:k, cursos:niveles[ordenNiveles[n]][k] });
+    out.push({ nivel:ordenNiveles[n], grupos:grupos });
+  }
+  return out;
+}
+
+function tarjetaCurso(c){
+  var yaEsta = estaInscrito(sesion.id,c.id);
+  if(c.proximamente){
+    return '<article class="curso-card" style="opacity:.72">'+tapaCurso(c)+'<div class="curso-cuerpo">'+
+      '<span class="etiqueta alerta">Próximamente</span>'+
+      '<h3 style="margin-top:10px">'+esc(c.nombre)+'</h3><p>'+esc(c.desc)+'</p>'+
+      '<button class="btn btn-linea" style="width:100%" disabled>Muy pronto disponible</button>'+
+      '</div></article>';
+  }
+  return '<article class="curso-card">'+tapaCurso(c)+'<div class="curso-cuerpo">'+
+    '<span class="etiqueta tur">'+c.horas+' horas · '+c.modulos.length+' módulos</span>'+
+    '<h3 style="margin-top:10px">'+esc(c.nombre)+'</h3><p>'+esc(c.desc)+'</p>'+
+    '<div style="font-size:1.35rem;font-weight:800;color:var(--tinta);margin-bottom:14px">'+dinero(c.precio)+'</div>'+
+    (yaEsta
+      ? '<button class="btn btn-linea" style="width:100%" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Ya lo tienes · Entrar</button>'
+      : '<button class="btn btn-mor" style="width:100%" onclick="abrirPago(\''+c.id+'\')">Inscribirme y pagar</button>')+
+    '</div></article>';
+}
+
+function vistaCatalogo(){
+  var h = '<div class="seccion"><h2>Catálogo</h2>'+
+    '<p class="sub">Cursos libres de capacitación. Al concluirlos recibes constancia con folio y QR de verificación de Instituto Mara.</p>';
+  var publicados = [], proximos = [];
+  for(var i=0;i<BD.cursos.length;i++){
+    if(BD.cursos[i].publicado) publicados.push(BD.cursos[i]);
+    else if(BD.cursos[i].proximamente) proximos.push(BD.cursos[i]);
+  }
+  var grupos = agruparCursos(publicados);
+  for(var g=0;g<grupos.length;g++){
+    h += '<h3 style="margin:26px 0 4px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
+    for(var s=0;s<grupos[g].grupos.length;s++){
+      var sub = grupos[g].grupos[s];
+      h += '<div style="margin:14px 0 10px;font-weight:700;color:var(--morado);font-size:.85rem;'+
+        'text-transform:uppercase;letter-spacing:.6px">'+esc(sub.titulo)+'</div><div class="rejilla rejilla-3">';
+      for(var c=0;c<sub.cursos.length;c++) h += tarjetaCurso(sub.cursos[c]);
+      h += '</div>';
+    }
+  }
+  if(proximos.length){
+    var gp = agruparCursos(proximos);
+    for(var g2=0;g2<gp.length;g2++){
+      h += '<h3 style="margin:34px 0 4px;color:var(--tinta)">Próximamente — '+esc(gp[g2].nivel)+'</h3>';
+      for(var s2=0;s2<gp[g2].grupos.length;s2++){
+        var sub2 = gp[g2].grupos[s2];
+        h += '<div style="margin:14px 0 10px;font-weight:700;color:var(--morado);font-size:.85rem;'+
+          'text-transform:uppercase;letter-spacing:.6px">'+esc(sub2.titulo)+'</div><div class="rejilla rejilla-3">';
+        for(var c2=0;c2<sub2.cursos.length;c2++) h += tarjetaCurso(sub2.cursos[c2]);
+        h += '</div>';
+      }
+    }
+  }
+  return h + '</div>';
+}
+
+function inscribirme(cid){
+  BD.inscripciones.push({ id:'i-'+Date.now(), usuarioId:sesion.id, cursoId:cid,
+                          fecha:hoy(), estatus:'activa' });
+  guardar();
+  ir('aula',{cursoId:cid});
+}
+
+/* ---------------- Pago en línea (Mercado Pago) ----------------
+   Autoservicio: el alumno paga y entra sin esperar respuesta por WhatsApp.
+   Necesita la función de nube que crea la preferencia de pago (ver /backend).
+   Si todavía no está configurada, se ofrece la ruta manual por WhatsApp
+   para no dejar al alumno sin opción mientras se activa el cobro en línea. */
+function abrirPago(cid){
+  var c = curso(cid); if(!c) return;
+  var configurado = !!BD.config.edgeFnCrearPreferencia;
+  abrirModal('Inscripción a "'+esc(c.nombre)+'"',
+    '<p style="color:var(--gris);margin-bottom:16px">Precio: <b style="color:var(--tinta)">'+dinero(c.precio)+'</b> · '+c.horas+' horas</p>'+
+    (configurado
+      ? '<p style="margin-bottom:16px">Al pagar con Mercado Pago tu acceso se activa automáticamente, sin esperar confirmación.</p>'
+      : '<div class="aviso aviso-info">El cobro en línea todavía no está activado en esta copia de la plataforma '+
+        '(falta conectar la función de Mercado Pago en Ajustes). Mientras tanto, confirma tu pago por WhatsApp.</div>'),
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    (configurado
+      ? '<button class="btn btn-mor" onclick="pagarConMercadoPago(\''+cid+'\')">Pagar con Mercado Pago</button>'
+      : (BD.config.whatsapp
+          ? '<a class="btn btn-tur" target="_blank" href="https://wa.me/'+esc(BD.config.whatsapp)+'?text='+
+            encodeURIComponent('Hola, quiero inscribirme a "'+c.nombre+'" ('+dinero(c.precio)+')')+'">Confirmar por WhatsApp</a>'
+          : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>')));
+}
+
+function pagarConMercadoPago(cid){
+  var c = curso(cid);
+  var btn = event && event.target; if(btn) btn.setAttribute('disabled','disabled');
+  fetch(BD.config.edgeFnCrearPreferencia, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ cursoId:cid, cursoNombre:c.nombre, precio:c.precio,
+      usuarioId:sesion.id, usuarioCorreo:sesion.correo,
+      urlRegreso: (BD.config.urlPublica||location.origin+location.pathname) })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    if(d && d.init_point) location.href = d.init_point;
+    else alert('No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.');
+  })
+  .catch(function(){ alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
+}
+
+function vistaAula(){
+  var c = curso(estado.cursoId);
+  if(!c) return '<div class="seccion"><p>Ese curso ya no está disponible.</p></div>';
+  var a = avance(sesion.id,c.id), p = porcentaje(sesion.id,c);
+
+  var h = '<div class="seccion">'+
+    '<button class="btn btn-fantasma btn-sm" style="margin-bottom:14px" onclick="ir(\'mis-cursos\')">← Mis cursos</button>'+
+    '<div class="tarjeta" style="margin-bottom:26px;background:linear-gradient(135deg,var(--tinta),var(--morado));border:0;color:#fff">'+
+      '<h2 style="color:#fff;margin-bottom:6px">'+esc(c.nombre)+'</h2>'+
+      '<p style="color:#DDD6FE;max-width:60ch">'+esc(c.desc)+'</p>'+
+      '<div class="avance-txt" style="color:#C4B5FD;margin-top:20px"><span>Tu avance</span><span>'+p+'%</span></div>'+
+      '<div class="avance" style="background:rgba(255,255,255,.22)"><i style="width:'+p+'%"></i></div>'+
+    '</div>';
+
+  if(cursoCompleto(sesion.id,c)){
+    h += '<div class="aviso aviso-ok" style="display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap">'+
+         '<span><b>Terminaste el curso.</b> Tu constancia ya está lista.</span>'+
+         '<button class="btn btn-tur btn-sm" onclick="ir(\'constancia\',{cursoId:\''+c.id+'\'})">Ver constancia</button></div>';
+  }
+
+  for(var i=0;i<c.modulos.length;i++){
+    var m = c.modulos[i];
+    var disp = moduloDisponible(sesion.id,c,i), apro = moduloAprobado(sesion.id,c,m);
+    var clase = 'modulo' + (apro?' completo':'') + (disp?'':' bloqueado');
+    var vistas = 0;
+    for(var j=0;j<m.lecciones.length;j++)
+      if(a.lecciones.indexOf(m.lecciones[j].id) >= 0) vistas++;
+
+    h += '<section class="'+clase+'">'+
+      '<div class="modulo-cab" '+(disp?'onclick="alternarModulo(\''+m.id+'\')"':'')+'>'+
+        '<div class="modulo-num">'+(apro
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+          : (disp ? (i+1)
+                  : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>'))+
+        '</div>'+
+        '<div class="modulo-tit"><h4>'+esc(m.titulo)+'</h4>'+
+          '<span>'+m.lecciones.length+' lecciones · '+vistas+' vistas'+
+          (apro ? ' · evaluación aprobada con '+a.quizzes[m.id]+'%' :
+           (disp ? '' : ' · se abre al aprobar el módulo anterior'))+'</span></div>'+
+        (disp ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>' : '')+
+      '</div>';
+
+    if(disp){
+      h += '<div class="modulo-cuerpo" id="cuerpo-'+m.id+'">';
+      if(m.resumen) h += '<div class="modulo-resumen">'+esc(m.resumen)+'</div>';
+      for(var L=0;L<m.lecciones.length;L++){
+        var lec = m.lecciones[L], vista = a.lecciones.indexOf(lec.id) >= 0;
+        h += '<div class="leccion-item'+(vista?' vista':'')+'" '+
+          'onclick="ir(\'leccion\',{cursoId:\''+c.id+'\',moduloId:\''+m.id+'\',leccionId:\''+lec.id+'\'})">'+
+          '<span class="punto">'+(vista?'<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>':'')+'</span>'+
+          '<span style="flex:1">'+esc(lec.titulo)+'</span>'+
+          '<span style="font-size:.8rem;color:var(--gris)">'+lec.bloques.length+' bloques</span></div>';
+      }
+      if(m.quiz && m.quiz.preguntas.length){
+        h += '<div class="leccion-quiz" onclick="ir(\'quiz\',{cursoId:\''+c.id+'\',moduloId:\''+m.id+'\'})">'+
+          '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>'+
+          '<div style="flex:1"><b style="color:var(--tinta);font-size:.93rem">'+esc(m.quiz.titulo)+'</b>'+
+          '<div style="font-size:.8rem;color:var(--gris)">'+m.quiz.preguntas.length+' preguntas · se aprueba con '+BD.config.minimoAprobatorio+'%</div></div>'+
+          '<span class="etiqueta '+(apro?'ok':'alerta')+'">'+(apro?'Aprobada':'Pendiente')+'</span></div>';
+      }
+      h += '</div>';
+    }
+    h += '</section>';
+  }
+  return h + '</div>';
+}
+
+function alternarModulo(mid){
+  var el = $('cuerpo-'+mid);
+  if(el) el.classList.toggle('oculto');
+}
+
+function pintarBloque(b){
+  if(b.tipo==='titulo')     return '<h3 class="bloque bloque-titulo">'+esc(b.texto)+'</h3>';
+  if(b.tipo==='texto')      return '<div class="bloque bloque-texto"><p>'+b.texto+'</p></div>';
+  if(b.tipo==='destacado')  return '<div class="bloque bloque-destacado">'+b.texto+'</div>';
+  if(b.tipo==='lista'){
+    var li=''; for(var i=0;i<b.items.length;i++) li += '<li>'+b.items[i]+'</li>';
+    return '<div class="bloque bloque-lista"><ul>'+li+'</ul></div>';
+  }
+  if(b.tipo==='video'){
+    if(!b.url) return '';
+    var id = (b.url.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{6,})/)||[])[1] || '';
+    return '<div class="bloque bloque-video"><iframe src="https://www.youtube.com/embed/'+esc(id)+
+      '" allowfullscreen title="Video de la lección"></iframe></div>';
+  }
+  if(b.tipo==='imagen'){
+    if(!b.url) return '';
+    return '<figure class="bloque bloque-imagen"><img src="'+esc(b.url)+'" alt="'+esc(b.pie||'')+'">'+
+      (b.pie?'<figcaption>'+esc(b.pie)+'</figcaption>':'')+'</figure>';
+  }
+  if(b.tipo==='audio'){
+    return '<div class="bloque bloque-audio"><div class="rotulo">'+esc(b.rotulo||'Audio')+'</div>'+
+      (b.url ? '<audio controls src="'+esc(b.url)+'"></audio>'
+             : '<div class="aviso aviso-info" style="margin:0">Audio pendiente de grabar. Mientras tanto, lee el diálogo en voz alta siguiendo la pronunciación de la lección.</div>')+
+      '</div>';
+  }
+  if(b.tipo==='dialogo'){
+    var d = '<div class="bloque bloque-dialogo">';
+    if(b.titulo) d += '<div style="font-weight:700;color:var(--tinta);margin-bottom:14px">'+esc(b.titulo)+'</div>';
+    for(var j=0;j<b.lineas.length;j++){
+      var L = b.lineas[j];
+      d += '<div class="dialogo-linea"><span class="dialogo-quien">'+esc(L.quien)+':</span>'+
+           '<span><span style="font-weight:500">'+esc(L.en)+'</span><br>'+
+           '<span class="dialogo-es">'+esc(L.es)+'</span></span></div>';
+    }
+    return d + '</div>';
+  }
+  if(b.tipo==='actividad'){
+    return '<div class="bloque bloque-actividad"><div class="rotulo">'+esc(b.rotulo||'Actividad')+'</div>'+
+      '<div style="line-height:1.7">'+b.texto+'</div></div>';
+  }
+  if(b.tipo==='vocabulario'){
+    var v = '<div class="bloque bloque-vocab"><div class="rotulo">'+esc(b.rotulo||'Vocabulario de la lección')+'</div>';
+    var pal = b.palabras || [];
+    for(var k=0;k<pal.length;k++){
+      v += '<div class="vocab-fila"><div class="vocab-en">'+esc(pal[k].en)+'</div>'+
+           '<div class="vocab-es">'+esc(pal[k].es)+'</div>'+
+           (pal[k].ej ? '<div class="vocab-ej">'+esc(pal[k].ej)+'</div>' : '')+'</div>';
+    }
+    return v + '</div>';
+  }
+  if(b.tipo==='archivo'){
+    if(!b.url) return '';
+    var visor = urlVisor(b.url), fmt = (b.formato||'PDF').toUpperCase();
+    return '<div class="bloque bloque-archivo">'+
+      '<div class="archivo-cab"><div class="archivo-icono">'+esc(fmt.slice(0,4))+'</div>'+
+      '<div style="flex:1;min-width:160px"><b style="color:var(--tinta)">'+esc(b.titulo||'Documento de apoyo')+'</b>'+
+      (b.nota?'<div style="font-size:.85rem;color:var(--gris);margin-top:2px">'+esc(b.nota)+'</div>':'')+'</div>'+
+      '<a class="btn btn-linea btn-sm" href="'+esc(b.url)+'" target="_blank" rel="noopener">Abrir aparte</a></div>'+
+      (visor ? '<iframe class="archivo-visor" src="'+esc(visor)+'" title="'+esc(b.titulo||'Documento')+'" loading="lazy"></iframe>' : '')+
+      '</div>';
+  }
+  return '';
+}
+
+/* Convierte la liga que pegue el administrador en una liga que se puede
+   incrustar dentro de la lección, sin que el alumno salga de la plataforma. */
+function urlVisor(url){
+  if(!url) return '';
+  var u = String(url).trim();
+  var drive = u.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  if(drive) return 'https://drive.google.com/file/d/'+drive[1]+'/preview';
+  if(/docs\.google\.com\/(document|presentation|spreadsheets)/.test(u))
+    return u.replace(/\/(edit|view)[^]*$/, '/preview');
+  if(/^data:/.test(u)) return u;
+  if(/\.pdf($|\?)/i.test(u)) return u;
+  if(/\.(docx?|pptx?|xlsx?)($|\?)/i.test(u))
+    return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(u);
+  return u;
+}
+
+function vistaLeccion(){
+  var c = curso(estado.cursoId); if(!c) return '';
+  var m = modulo(c,estado.moduloId); if(!m) return '';
+  var lec = leccion(m,estado.leccionId); if(!lec) return '';
+  var a = avance(sesion.id,c.id), vista = a.lecciones.indexOf(lec.id) >= 0;
+  var idx = m.lecciones.indexOf(lec), sig = m.lecciones[idx+1];
+
+  var h = '<div class="seccion"><div class="lector">'+
+    '<div class="lector-cab">'+
+      '<button class="btn btn-fantasma btn-sm" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">← '+esc(c.nombre)+'</button>'+
+      '<span class="etiqueta">'+esc(m.titulo)+'</span>'+
+      (vista?'<span class="etiqueta ok">Vista</span>':'')+
+    '</div><h1>'+esc(lec.titulo)+'</h1>';
+
+  for(var i=0;i<lec.bloques.length;i++) h += pintarBloque(lec.bloques[i]);
+
+  h += '<div class="lector-pie">'+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap">'+
+    '<button class="btn btn-linea" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Volver al índice</button>'+
+    '<button class="btn btn-fantasma" onclick="preguntar(\''+c.id+'\',\''+m.id+'\',\''+lec.id+'\')">¿Dudas de esta lección? Pregunta aquí</button>'+
+    '</div>'+
+    '<button class="btn btn-mor" onclick="terminarLeccion(\''+lec.id+'\','+(sig?"'"+sig.id+"'":'null')+')">'+
+      (sig ? 'Marcar vista y continuar' : 'Marcar vista y volver')+'</button>'+
+    '</div></div></div>';
+  return h;
+}
+
+function terminarLeccion(lid, sigId){
+  var a = avance(sesion.id, estado.cursoId);
+  if(a.lecciones.indexOf(lid) < 0) a.lecciones.push(lid);
+  guardar();
+  if(sigId) ir('leccion',{leccionId:sigId});
+  else ir('aula');
+}
+
+/* ---------------- Evaluación ---------------- */
+var respuestas = {};
+
+function vistaQuiz(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId);
+  if(!c || !m || !m.quiz) return '';
+  respuestas = {};
+  var h = '<div class="seccion"><div class="quiz">'+
+    '<button class="btn btn-fantasma btn-sm" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">← Volver al curso</button>'+
+    '<h2 style="margin:14px 0 4px">'+esc(m.quiz.titulo)+'</h2>'+
+    '<p class="sub">'+m.quiz.preguntas.length+' preguntas. Necesitas '+BD.config.minimoAprobatorio+
+    '% para aprobar y abrir el siguiente módulo. Puedes repetirla las veces que necesites.</p>'+
+    '<div id="listaPreg">';
+  for(var i=0;i<m.quiz.preguntas.length;i++){
+    var q = m.quiz.preguntas[i];
+    h += '<div class="pregunta" id="preg-'+i+'"><div class="num">Pregunta '+(i+1)+'</div><h4>'+esc(q.p)+'</h4>';
+    for(var j=0;j<q.ops.length;j++){
+      h += '<label class="opcion" id="op-'+i+'-'+j+'">'+
+           '<input type="radio" name="q'+i+'" value="'+j+'" onchange="marcar('+i+','+j+','+q.ops.length+')">'+
+           '<span>'+esc(q.ops[j])+'</span></label>';
+    }
+    h += '</div>';
+  }
+  h += '</div><div id="avisoQuiz"></div>'+
+    '<button class="btn btn-mor" style="width:100%;margin-top:10px" id="btnCalificar" '+
+    'onclick="calificar()">Calificar mi examen</button></div></div>';
+  return h;
+}
+
+function marcar(i,j,n){
+  respuestas[i] = j;
+  for(var k=0;k<n;k++){
+    var el = $('op-'+i+'-'+k);
+    if(el) el.classList.toggle('sel', k===j);
+  }
+}
+
+function calificar(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId), qs = m.quiz.preguntas;
+  if(Object.keys(respuestas).length < qs.length){
+    $('avisoQuiz').innerHTML = '<div class="aviso aviso-error">Te faltan preguntas por contestar. '+
+      'Revisa antes de calificar.</div>';
+    return;
+  }
+  var buenas = 0;
+  for(var i=0;i<qs.length;i++){
+    var sel = respuestas[i], ok = (sel === qs[i].correcta);
+    if(ok) buenas++;
+    var elSel = $('op-'+i+'-'+sel);
+    if(elSel){ elSel.classList.remove('sel'); elSel.classList.add(ok?'correcta':'incorrecta'); }
+    if(!ok){
+      var elOk = $('op-'+i+'-'+qs[i].correcta);
+      if(elOk) elOk.classList.add('correcta');
+    }
+    var ins = $('preg-'+i).querySelectorAll('input');
+    for(var z=0;z<ins.length;z++) ins[z].disabled = true;
+  }
+  var pct = Math.round(buenas*100/qs.length);
+  var aprobo = pct >= BD.config.minimoAprobatorio;
+  var a = avance(sesion.id,c.id);
+  if(a.quizzes[m.id] == null || pct > a.quizzes[m.id]) a.quizzes[m.id] = pct;
+  guardar();
+
+  $('btnCalificar').classList.add('oculto');
+  $('avisoQuiz').innerHTML =
+    '<div class="tarjeta resultado '+(aprobo?'aprobado':'reprobado')+'">'+
+      '<div class="marcador">'+pct+'%</div>'+
+      '<h3>'+(aprobo?'Aprobaste':'Todavía no')+'</h3>'+
+      '<p>'+(aprobo
+        ? 'Contestaste bien '+buenas+' de '+qs.length+'. El siguiente módulo ya está abierto.'
+        : 'Contestaste bien '+buenas+' de '+qs.length+'. Necesitas '+BD.config.minimoAprobatorio+
+          '%. Abajo quedaron marcadas las respuestas correctas: repásalas y vuelve a intentarlo.')+'</p>'+
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
+        '<button class="btn btn-linea" onclick="ir(\'quiz\')">Repetir evaluación</button>'+
+        '<button class="btn btn-mor" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Volver al curso</button>'+
+      '</div></div>';
+  $('avisoQuiz').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+/* ---------------- Constancias ---------------- */
+
+/* El folio se genera una sola vez y se guarda en BD.constancias, junto con la
+   fecha real de conclusión (antes se recalculaba cada vez que se abría la
+   vista, lo cual movía la fecha). Esto también deja una lista consultable
+   por el administrador y exportable para el registro público de folios. */
+function asegurarConstancia(uid,cid){
+  for(var i=0;i<BD.constancias.length;i++)
+    if(BD.constancias[i].usuarioId===uid && BD.constancias[i].cursoId===cid) return BD.constancias[i];
+  var c = curso(cid), u = usuario(uid);
+  var n = BD.constancias.length + 1;
+  var rec = {
+    id:'const-'+Date.now(),
+    folio:'IM-'+new Date().getFullYear()+'-'+String(n).padStart(4,'0'),
+    usuarioId:uid, cursoId:cid,
+    nombreAlumno:u.nombre, nombreCurso:c.nombre, horas:c.horas,
+    fecha: hoy()
+  };
+  BD.constancias.push(rec); guardar();
+  return rec;
+}
+
+/* Codifica los datos de la constancia directamente en la URL que lleva el QR,
+   para que la verificación funcione aunque todavía no haya un backend en la
+   nube: cualquiera que escanee el código ve los datos tal cual se emitieron.
+   En cuanto Ajustes tenga la URL de Supabase, verificar.html además contrasta
+   el folio contra la base de datos real (ver /backend/README.md). */
+function urlVerificacion(rec, c){
+  var base = (BD.config.urlPublica || (location.origin + location.pathname.replace(/plataforma\/.*$/,''))) ;
+  base = base.replace(/\/$/,'');
+  var payload = { f:rec.folio, n:rec.nombreAlumno, c:rec.nombreCurso, h:rec.horas, fe:rec.fecha, niv:c?c.nivel:'' };
+  var d = '';
+  try{ d = btoa(unescape(encodeURIComponent(JSON.stringify(payload)))); }catch(e){ d=''; }
+  return base + '/verificar.html?f=' + encodeURIComponent(rec.folio) + '&d=' + encodeURIComponent(d);
+}
+
+function vistaConstancias(){
+  var h = '<div class="seccion"><h2>Mis constancias</h2>'+
+    '<p class="sub">Se generan solas al terminar todas las lecciones y aprobar todas las evaluaciones de un curso.</p>';
+  var hay = false, lista = '<div class="rejilla rejilla-3">';
+  for(var i=0;i<BD.inscripciones.length;i++){
+    if(BD.inscripciones[i].usuarioId !== sesion.id) continue;
+    var c = curso(BD.inscripciones[i].cursoId); if(!c) continue;
+    var listo = cursoCompleto(sesion.id,c);
+    if(!listo) continue;
+    hay = true;
+    lista += '<div class="tarjeta"><span class="etiqueta ok">Concluido</span>'+
+      '<h3 style="margin:10px 0 6px;color:var(--tinta)">'+esc(c.nombre)+'</h3>'+
+      '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">'+c.horas+' horas</p>'+
+      '<button class="btn btn-mor" style="width:100%" onclick="ir(\'constancia\',{cursoId:\''+c.id+'\'})">Ver y descargar</button></div>';
+  }
+  lista += '</div>';
+  if(!hay){
+    h += '<div class="tarjeta vacio"><p>Aún no tienes constancias. Termina un curso completo y aparecerá aquí.</p></div>';
+  } else h += lista;
+  return h + '</div>';
+}
+
+function vistaConstancia(){
+  var c = curso(estado.cursoId); if(!c) return '';
+  if(!cursoCompleto(sesion.id,c))
+    return '<div class="seccion"><div class="tarjeta vacio"><p>Esta constancia todavía no está disponible. '+
+           'Te falta terminar lecciones o aprobar evaluaciones.</p></div></div>';
+  var rec = asegurarConstancia(sesion.id, c.id);
+  var url = urlVerificacion(rec, c);
+  var qrId = 'qr-'+rec.id;
+  setTimeout(function(){
+    var cont = $(qrId);
+    if(cont && window.QRCode){ cont.innerHTML=''; new QRCode(cont, {text:url, width:104, height:104, colorDark:'#2E1065', colorLight:'#ffffff'}); }
+  }, 0);
+  return '<div class="seccion">'+
+    '<div class="no-imprimir" style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">'+
+      '<button class="btn btn-fantasma btn-sm" onclick="ir(\'constancias\')">← Mis constancias</button>'+
+      '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button></div>'+
+    '<div class="constancia">'+
+      '<svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom:6px"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>'+
+      '<div class="encabeza">Instituto Mara</div>'+
+      '<h1>Constancia</h1>'+
+      '<div class="otorga">se otorga la presente a</div>'+
+      '<div class="alumno">'+esc(rec.nombreAlumno)+'</div>'+
+      '<div class="otorga">por haber concluido satisfactoriamente el curso libre de capacitación</div>'+
+      '<div class="curso" style="margin-top:10px">'+esc(rec.nombreCurso)+'</div>'+
+      '<div class="meta">'+
+        '<div>Duración<b>'+rec.horas+' horas</b></div>'+
+        '<div>Fecha<b>'+fechaLarga(rec.fecha)+'</b></div>'+
+        '<div>Folio<b>'+rec.folio+'</b></div>'+
+      '</div>'+
+      '<div class="constancia-sellos">'+
+        '<div class="sello-firma"><div class="linea-firma"></div>Dirección Académica<br>Instituto Mara</div>'+
+        '<div class="sello-oficial"><div class="sello-anillo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span>VALIDEZ<br>CURRICULAR</span></div>'+
+        '<div class="sello-qr"><div id="'+qrId+'"></div><span>Escanea para verificar</span></div>'+
+      '</div>'+
+      '<div class="legal">Instituto Mara imparte cursos libres de capacitación. Esta constancia acredita '+
+      'la conclusión del programa descrito y no constituye un documento con validez oficial ante la '+
+      'Secretaría de Educación Pública: no cuenta con Reconocimiento de Validez Oficial de Estudios (RVOE), '+
+      'no otorga grado académico, certificado, diploma ni título profesional, y no es equivalente a estudios '+
+      'de tipo básico, medio superior o superior. La autenticidad de este documento puede verificarse con el '+
+      'folio indicado o escaneando el código QR, que muestra el historial de cursos del alumno en Instituto Mara.</div>'+
+    '</div></div>';
+}
+
+/* ---------------- Dudas (respuesta en máximo 24 horas) ---------------- */
+function horasTranscurridas(iso){ return (Date.now() - new Date(iso).getTime()) / 3600000; }
+function fechaHoraCorta(iso){
+  var d = new Date(iso);
+  return d.toLocaleDateString('es-MX',{day:'2-digit',month:'short'}) + ' ' +
+         d.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
+}
+function slaEtiqueta(d){
+  var sla = BD.config.slaDudasHoras || 24;
+  if(d.estatus === 'respondida'){
+    var horas = (new Date(d.fechaRespuesta)-new Date(d.fecha))/3600000;
+    return '<span class="etiqueta ok">Respondida en '+Math.round(horas)+' h</span>';
+  }
+  var transc = horasTranscurridas(d.fecha), restante = sla - transc;
+  if(restante <= 0) return '<span class="etiqueta" style="background:#FEE2E2;color:#991B1B">Fuera de tiempo — respóndela ya</span>';
+  if(restante <= 6) return '<span class="etiqueta alerta">Vence en '+Math.ceil(restante)+' h</span>';
+  return '<span class="etiqueta gris">Vence en '+Math.ceil(restante)+' h</span>';
+}
+function bandejaDudasEtiqueta(){
+  var n = 0; for(var i=0;i<BD.dudas.length;i++) if(BD.dudas[i].estatus==='pendiente') n++;
+  return n ? 'Dudas ('+n+')' : 'Dudas';
+}
+
+function preguntar(cid,mid,lid){
+  var c = curso(cid);
+  abrirModal('Pregunta sobre '+(c?esc(c.nombre):'tu curso'),
+    '<p style="color:var(--gris);margin-bottom:14px">Te respondemos en un máximo de '+
+    (BD.config.slaDudasHoras||24)+' horas. Sé lo más específico posible.</p>'+
+    '<div class="campo" style="margin:0"><label>Tu pregunta</label><textarea id="dq-txt" placeholder="Escribe tu duda aquí…"></textarea></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="enviarDuda(\''+cid+'\',\''+(mid||'')+'\',\''+(lid||'')+'\')">Enviar pregunta</button>');
+}
+function enviarDuda(cid,mid,lid){
+  var txt = $('dq-txt').value.trim();
+  if(!txt) { $('dq-txt').focus(); return; }
+  BD.dudas.push({ id:'d-'+Date.now(), usuarioId:sesion.id, cursoId:cid||null, moduloId:mid||null, leccionId:lid||null,
+    pregunta:txt, fecha:new Date().toISOString(), respuesta:'', fechaRespuesta:null, estatus:'pendiente' });
+  guardar(); cerrarModal();
+  abrirModal('Pregunta enviada','<p>Recibimos tu pregunta. Te respondemos en un máximo de '+
+    (BD.config.slaDudasHoras||24)+' horas; la verás en la sección <b>Dudas</b>.</p>',
+    '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+}
+
+function vistaDudas(){
+  var mias = [];
+  for(var i=0;i<BD.dudas.length;i++) if(BD.dudas[i].usuarioId===sesion.id) mias.push(BD.dudas[i]);
+  mias.sort(function(a,b){ return new Date(b.fecha)-new Date(a.fecha); });
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Dudas</h2>'+
+    '<p class="sub" style="margin:0">Respuesta garantizada en un máximo de '+(BD.config.slaDudasHoras||24)+' horas.</p></div>'+
+    '<button class="btn btn-mor" onclick="preguntar(null,null,null)">+ Nueva pregunta</button></div>';
+  if(!mias.length){ h += '<div class="tarjeta vacio"><p>Todavía no has hecho ninguna pregunta.</p></div>'; return h+'</div>'; }
+  for(var j=0;j<mias.length;j++){
+    var d = mias[j], c = curso(d.cursoId);
+    h += '<div class="tarjeta" style="margin-bottom:14px">'+
+      '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px">'+
+      '<span class="etiqueta">'+(c?esc(c.nombre):'General')+'</span>'+slaEtiqueta(d)+'</div>'+
+      '<p style="margin-bottom:8px"><b>Tú:</b> '+esc(d.pregunta)+'</p>'+
+      (d.estatus==='respondida'
+        ? '<p style="color:var(--gris)"><b style="color:var(--tinta)">Instituto Mara:</b> '+esc(d.respuesta)+'</p>'
+        : '<p style="color:var(--gris);font-style:italic">Aún sin respuesta.</p>')+
+      '<div style="font-size:.78rem;color:var(--gris);margin-top:8px">Enviada el '+fechaHoraCorta(d.fecha)+'</div>'+
+      '</div>';
+  }
+  return h + '</div>';
+}
+
+function vistaAdminDudas(){
+  var pend = [], resp = [];
+  for(var i=0;i<BD.dudas.length;i++)
+    (BD.dudas[i].estatus==='pendiente'?pend:resp).push(BD.dudas[i]);
+  pend.sort(function(a,b){ return new Date(a.fecha)-new Date(b.fecha); });
+  resp.sort(function(a,b){ return new Date(b.fechaRespuesta)-new Date(a.fechaRespuesta); });
+  var h = '<div class="seccion"><h2>Dudas de alumnos</h2>'+
+    '<p class="sub">Compromiso: responder en un máximo de '+(BD.config.slaDudasHoras||24)+' horas.</p>'+
+    '<h3 style="color:var(--tinta);margin-bottom:12px">Pendientes ('+pend.length+')</h3>';
+  if(!pend.length) h += '<div class="tarjeta vacio" style="margin-bottom:26px"><p>No hay preguntas pendientes. 🎉</p></div>';
+  for(var j=0;j<pend.length;j++){
+    var d = pend[j], u = usuario(d.usuarioId), c = curso(d.cursoId);
+    h += '<div class="tarjeta" style="margin-bottom:12px">'+
+      '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px">'+
+      '<span><b>'+esc(u?u.nombre:'—')+'</b> · '+(c?esc(c.nombre):'General')+'</span>'+slaEtiqueta(d)+'</div>'+
+      '<p style="margin-bottom:10px">'+esc(d.pregunta)+'</p>'+
+      '<div style="font-size:.78rem;color:var(--gris);margin-bottom:10px">Enviada el '+fechaHoraCorta(d.fecha)+'</div>'+
+      '<button class="btn btn-mor btn-sm" onclick="responderDuda(\''+d.id+'\')">Responder</button></div>';
+  }
+  if(resp.length){
+    h += '<h3 style="color:var(--tinta);margin:24px 0 12px">Ya respondidas</h3>';
+    for(var k=0;k<resp.length;k++){
+      var d2 = resp[k], u2 = usuario(d2.usuarioId), c2 = curso(d2.cursoId);
+      h += '<div class="tarjeta" style="margin-bottom:10px;opacity:.85">'+
+        '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px">'+
+        '<span><b>'+esc(u2?u2.nombre:'—')+'</b> · '+(c2?esc(c2.nombre):'General')+'</span>'+slaEtiqueta(d2)+'</div>'+
+        '<p style="margin-bottom:6px;color:var(--gris)"><b style="color:var(--tinta)">P:</b> '+esc(d2.pregunta)+'</p>'+
+        '<p style="color:var(--gris)"><b style="color:var(--tinta)">R:</b> '+esc(d2.respuesta)+'</p></div>';
+    }
+  }
+  return h + '</div>';
+}
+function responderDuda(id){
+  abrirModal('Responder pregunta',
+    '<div class="campo" style="margin:0"><label>Tu respuesta</label><textarea id="dr-txt" placeholder="Escribe la respuesta…"></textarea></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarRespuestaDuda(\''+id+'\')">Enviar respuesta</button>');
+}
+function guardarRespuestaDuda(id){
+  var txt = $('dr-txt').value.trim(); if(!txt){ $('dr-txt').focus(); return; }
+  for(var i=0;i<BD.dudas.length;i++){
+    if(BD.dudas[i].id===id){
+      BD.dudas[i].respuesta = txt; BD.dudas[i].fechaRespuesta = new Date().toISOString();
+      BD.dudas[i].estatus = 'respondida';
+      break;
+    }
+  }
+  guardar(); cerrarModal(); pintar(); pintarNav();
+}
+
+/* ---------------- Mi perfil (foto y contraseña del alumno) ---------------- */
+function vistaMiPerfil(){
+  return '<div class="seccion" style="max-width:640px"><h2>Mi perfil</h2>'+
+    '<div class="tarjeta" style="margin-bottom:20px;text-align:center">'+
+      '<div class="avatar" id="avatarPerfil" style="width:96px;height:96px;font-size:2rem;margin:0 auto 16px">'+
+      (sesion.foto ? '<img src="'+sesion.foto+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : esc(sesion.nombre.charAt(0).toUpperCase()))+
+      '</div>'+
+      '<label class="btn btn-linea" style="cursor:pointer">Cambiar foto de perfil'+
+      '<input type="file" accept="image/*" style="display:none" onchange="subirFotoPerfil(this)"></label>'+
+      (sesion.foto ? '<div style="margin-top:10px"><button class="btn btn-fantasma btn-sm" onclick="quitarFotoPerfil()">Quitar foto</button></div>' : '')+
+    '</div>'+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:14px">Mis datos</h3>'+
+      '<p style="margin-bottom:6px"><b>Nombre:</b> '+esc(sesion.nombre)+'</p>'+
+      '<p style="margin-bottom:6px"><b>Correo:</b> '+esc(sesion.correo)+'</p>'+
+      '<p><b>Folio de alumno:</b> '+esc(sesion.folio||'—')+'</p></div>'+
+    '<div class="tarjeta"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:14px">Cambiar contraseña</h3>'+
+      '<div class="campo"><label>Nueva contraseña</label><input type="password" id="mp-pass" placeholder="Mínimo 6 caracteres"></div>'+
+      '<button class="btn btn-mor" onclick="cambiarPassAlumno()">Guardar</button><div id="mp-aviso"></div></div>'+
+    '</div>';
+}
+function subirFotoPerfil(input){
+  var f = input.files[0]; if(!f) return;
+  if(!f.type.startsWith('image/')){ alert('Elige un archivo de imagen.'); return; }
+  var img = new Image(), lector = new FileReader();
+  lector.onload = function(){
+    img.onload = function(){
+      var lado = 320, cv = document.createElement('canvas'); cv.width = lado; cv.height = lado;
+      var ctx = cv.getContext('2d'), esc2 = Math.max(lado/img.width, lado/img.height);
+      var w = img.width*esc2, hh = img.height*esc2;
+      ctx.drawImage(img, (lado-w)/2, (lado-hh)/2, w, hh);
+      sesion.foto = cv.toDataURL('image/jpeg', 0.85);
+      guardar(); pintarAvatar(); pintar();
+    };
+    img.src = lector.result;
+  };
+  lector.readAsDataURL(f);
+}
+function quitarFotoPerfil(){ sesion.foto = ''; guardar(); pintarAvatar(); pintar(); }
+function cambiarPassAlumno(){
+  var p = $('mp-pass').value;
+  if(p.length < 6){
+    $('mp-aviso').innerHTML = '<div class="aviso aviso-error" style="margin-top:14px">Usa al menos 6 caracteres.</div>';
+    return;
+  }
+  sesion.pass = p; guardar(); $('mp-pass').value = '';
+  $('mp-aviso').innerHTML = '<div class="aviso aviso-ok" style="margin-top:14px">Contraseña actualizada.</div>';
+}
+
+/* ---------------- Registro público de constancias (admin) ---------------- */
+function vistaAdminVerificacion(){
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Constancias emitidas</h2>'+
+    '<p class="sub" style="margin:0">Cada QR incluye los datos de verificación. Descarga el registro '+
+    'para publicarlo también como respaldo en verificar.html.</p></div>'+
+    '<button class="btn btn-mor" onclick="descargarRegistroPublico()">Descargar registro público</button></div>'+
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+    '<th>Folio</th><th>Alumno</th><th>Curso</th><th>Horas</th><th>Fecha</th></tr></thead><tbody>';
+  if(!BD.constancias.length) h += '<tr><td colspan="5" class="vacio">Aún no se ha emitido ninguna constancia.</td></tr>';
+  for(var i=BD.constancias.length-1;i>=0;i--){
+    var r = BD.constancias[i];
+    h += '<tr><td><b>'+esc(r.folio)+'</b></td><td>'+esc(r.nombreAlumno)+'</td><td>'+esc(r.nombreCurso)+'</td>'+
+      '<td>'+r.horas+'</td><td>'+esc(r.fecha)+'</td></tr>';
+  }
+  return h + '</tbody></table></div></div></div>';
+}
+function descargarRegistroPublico(){
+  var b = new Blob([JSON.stringify(BD.constancias,null,2)], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(b);
+  a.download = 'registro-publico.json';
+  a.click();
+  setTimeout(function(){
+    alert('Sube este archivo a la raíz del sitio publicado (junto a verificar.html) cada vez que se emitan '+
+      'constancias nuevas, para que la búsqueda manual por folio también funcione ahí. Con Supabase conectado '+
+      'esto deja de ser necesario porque la verificación se hace en vivo contra la base de datos.');
+  }, 200);
+}
+
+/* ---------------- Modal ---------------- */
+function abrirModal(titulo, cuerpo, pie){
+  $('modales').innerHTML =
+    '<div class="modal-fondo" id="mFondo"><div class="modal">'+
+      '<div class="modal-cab"><h3>'+esc(titulo)+'</h3>'+
+      '<button class="cerrar" onclick="cerrarModal()">&times;</button></div>'+
+      '<div class="modal-cuerpo">'+cuerpo+'</div>'+
+      (pie ? '<div class="modal-pie">'+pie+'</div>' : '')+
+    '</div></div>';
+  $('mFondo').onclick = function(e){ if(e.target === this) cerrarModal(); };
+}
+function cerrarModal(){ $('modales').innerHTML = ''; }
+
+/* ---------------- Administración ---------------- */
+function vistaAdminTablero(){
+  var alumnos = 0, i;
+  for(i=0;i<BD.usuarios.length;i++) if(BD.usuarios[i].rol==='alumno') alumnos++;
+  var ingreso = 0;
+  for(i=0;i<BD.pagos.length;i++) ingreso += Number(BD.pagos[i].monto)||0;
+  var concluidos = 0;
+  for(i=0;i<BD.inscripciones.length;i++){
+    var c = curso(BD.inscripciones[i].cursoId);
+    if(c && cursoCompleto(BD.inscripciones[i].usuarioId,c)) concluidos++;
+  }
+
+  var h = '<div class="seccion"><h2>Tablero</h2>'+
+    '<p class="sub">El estado de la escuela en una pantalla. Se actualiza solo.</p>'+
+    '<div class="rejilla rejilla-4" style="margin-bottom:28px">'+
+      '<div class="metrica"><div class="rot">Alumnos</div><div class="val">'+alumnos+'</div><div class="pie">con cuenta creada</div></div>'+
+      '<div class="metrica"><div class="rot">Inscripciones</div><div class="val">'+BD.inscripciones.length+'</div><div class="pie">alumno × curso</div></div>'+
+      '<div class="metrica"><div class="rot">Cobrado</div><div class="val">'+dinero(ingreso)+'</div><div class="pie">bruto, antes de comisiones</div></div>'+
+      '<div class="metrica"><div class="rot">Concluidos</div><div class="val">'+concluidos+'</div><div class="pie">cursos terminados</div></div>'+
+    '</div>';
+
+  h += '<div class="encabezado-fila"><div><h2 style="font-size:1.2rem">Avance por alumno</h2>'+
+       '<p class="sub" style="margin:0">Dos cosas distintas en dos columnas distintas: cómo va estudiando '+
+       'y cómo va pagando. Un alumno puede haber terminado el curso y deber dinero.</p></div></div>'+
+       '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+       '<th>Alumno</th><th>Curso</th><th>Avance del curso</th><th>Estado del pago</th></tr></thead><tbody>';
+  if(!BD.inscripciones.length){
+    h += '<tr><td colspan="4" class="vacio">Todavía no hay inscripciones.</td></tr>';
+  }
+  for(i=0;i<BD.inscripciones.length;i++){
+    var ins = BD.inscripciones[i], u = usuario(ins.usuarioId), cu = curso(ins.cursoId);
+    if(!u || !cu) continue;
+    var p = porcentaje(u.id,cu), pag = pagadoPor(u.id,cu.id), saldo = cu.precio - pag;
+    var etEst = p>=100 ? 'ok' : (p>0 ? 'alerta' : 'gris');
+    var txEst = p>=100 ? 'Curso terminado' : (p>0 ? 'En curso' : 'Sin empezar');
+    var etPag = saldo<=0 ? 'ok' : (pag>0 ? 'alerta' : 'gris');
+    var txPag = saldo<=0 ? 'Pagado' : (pag>0 ? 'Pago parcial' : 'Sin pago');
+    h += '<tr><td><b>'+esc(u.nombre)+'</b><br><span style="color:var(--gris);font-size:.82rem">'+esc(u.correo)+'</span></td>'+
+      '<td>'+esc(cu.nombre)+'</td>'+
+      '<td style="min-width:190px"><div class="avance-txt" style="margin-bottom:5px">'+
+        '<span class="etiqueta '+etEst+'">'+txEst+'</span><span>'+p+'%</span></div>'+
+        '<div class="avance"><i style="width:'+p+'%"></i></div></td>'+
+      '<td style="min-width:170px"><span class="etiqueta '+etPag+'">'+txPag+'</span>'+
+        '<div style="margin-top:6px;font-size:.86rem">Pagado '+dinero(pag)+
+        '<br><span style="color:var(--gris);font-size:.8rem">Saldo '+dinero(saldo)+' de '+dinero(cu.precio)+'</span></div></td></tr>';
+  }
+  return h + '</tbody></table></div></div></div>';
+}
+
+var NIVELES = ['Cursos libres de capacitación','Bachillerato','Licenciatura'];
+var PERIODOS = ['','Cuatrimestre','Semestre'];
+
+function vistaAdminCursos(){
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Cursos</h2>'+
+    '<p class="sub" style="margin:0">Organizados por nivel y, dentro de cada nivel, por periodo o familia — así '+
+    'cuando se agregue Bachillerato o Licenciatura, cada materia queda en su cuatrimestre o semestre y no suelta.</p></div>'+
+    '<button class="btn btn-mor" onclick="nuevoCurso()">+ Nuevo curso</button></div>';
+  var grupos = agruparCursos(BD.cursos);
+  for(var g=0;g<grupos.length;g++){
+    h += '<h3 style="margin:22px 0 6px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
+    for(var s=0;s<grupos[g].grupos.length;s++){
+      var sub = grupos[g].grupos[s];
+      h += '<div style="margin:10px 0 8px;font-weight:700;color:var(--morado);font-size:.82rem;'+
+        'text-transform:uppercase;letter-spacing:.6px">'+esc(sub.titulo)+'</div>';
+      for(var k=0;k<sub.cursos.length;k++){
+        var c = sub.cursos[k], lec = totalLecciones(c), insc = 0;
+        for(var j=0;j<BD.inscripciones.length;j++) if(BD.inscripciones[j].cursoId===c.id) insc++;
+        h += '<div class="tarjeta tarjeta-sm" style="margin-bottom:10px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">'+
+          '<div style="width:44px;height:44px;border-radius:12px;background:'+c.color+';flex:none"></div>'+
+          '<div style="flex:1;min-width:200px"><b style="color:var(--tinta);font-size:1.02rem">'+esc(c.nombre)+'</b>'+
+            '<div style="font-size:.85rem;color:var(--gris)">'+c.modulos.length+' módulos · '+lec+' lecciones · '+
+            insc+' inscritos · '+dinero(c.precio)+'</div></div>'+
+          '<span class="etiqueta '+(c.proximamente?'alerta':(c.publicado?'ok':'gris'))+'">'+
+            (c.proximamente?'Próximamente':(c.publicado?'Publicado':'Borrador'))+'</span>'+
+          '<button class="btn btn-linea btn-sm" onclick="editarCurso(\''+c.id+'\')">Editar contenido</button>'+
+          '<button class="btn btn-fantasma btn-sm" onclick="datosCurso(\''+c.id+'\')">Datos</button>'+
+          '</div>';
+      }
+    }
+  }
+  return h + '</div>';
+}
+
+function opcionesNivel(sel){
+  var h=''; for(var i=0;i<NIVELES.length;i++) h += '<option'+(NIVELES[i]===sel?' selected':'')+'>'+NIVELES[i]+'</option>'; return h;
+}
+function opcionesPeriodo(sel){
+  var h=''; for(var i=0;i<PERIODOS.length;i++){ var v=PERIODOS[i]||''; h += '<option value="'+v+'"'+(v===sel?' selected':'')+'>'+(v||'No aplica (curso libre)')+'</option>'; } return h;
+}
+
+function nuevoCurso(){
+  abrirModal('Nuevo curso',
+    '<div class="campo"><label>Nombre del curso o materia</label><input id="nc-nom" placeholder="Ej. Contabilidad básica"></div>'+
+    '<div class="campo"><label>Descripción corta</label><textarea id="nc-desc" placeholder="Qué va a saber hacer el alumno al terminar."></textarea></div>'+
+    '<div class="fila"><div class="campo"><label>Nivel</label><select id="nc-niv">'+opcionesNivel('Cursos libres de capacitación')+'</select></div>'+
+    '<div class="campo"><label>Periodo</label><select id="nc-per">'+opcionesPeriodo('')+'</select></div></div>'+
+    '<div class="fila"><div class="campo"><label>Número de periodo</label><input type="number" id="nc-pnum" min="1" placeholder="Ej. 1"></div>'+
+    '<div class="campo"><label>Familia / categoría</label><input id="nc-fam" placeholder="Ej. Idiomas, Inteligencia Artificial…"></div></div>'+
+    '<div class="fila"><div class="campo"><label>Horas</label><input type="number" id="nc-hrs" value="20"></div>'+
+    '<div class="campo"><label>Precio</label><input type="number" id="nc-pre" value="890"></div></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarNuevoCurso()">Crear curso</button>');
+}
+function guardarNuevoCurso(){
+  var n = $('nc-nom').value.trim();
+  if(!n){ $('nc-nom').focus(); return; }
+  var c = { id:'c-'+Date.now(), nombre:n, desc:$('nc-desc').value.trim(),
+            nivel:$('nc-niv').value, periodoTipo:$('nc-per').value||null,
+            periodoNum:$('nc-pnum').value?Number($('nc-pnum').value):null,
+            familia:$('nc-fam').value.trim()||'General',
+            horas:Number($('nc-hrs').value)||0, precio:Number($('nc-pre').value)||0,
+            color:'#6D28D9', publicado:false, proximamente:false, modulos:[] };
+  BD.cursos.push(c); guardar(); cerrarModal();
+  editarCurso(c.id);
+}
+
+function datosCurso(cid){
+  var c = curso(cid);
+  abrirModal('Datos de «'+c.nombre+'»',
+    '<div class="campo"><label>Nombre</label><input id="dc-nom" value="'+esc(c.nombre)+'"></div>'+
+    '<div class="campo"><label>Descripción</label><textarea id="dc-desc">'+esc(c.desc)+'</textarea></div>'+
+    '<div class="fila"><div class="campo"><label>Nivel</label><select id="dc-niv">'+opcionesNivel(c.nivel)+'</select></div>'+
+    '<div class="campo"><label>Periodo</label><select id="dc-per">'+opcionesPeriodo(c.periodoTipo||'')+'</select></div></div>'+
+    '<div class="fila"><div class="campo"><label>Número de periodo</label><input type="number" id="dc-pnum" min="1" value="'+(c.periodoNum||'')+'"></div>'+
+    '<div class="campo"><label>Familia / categoría</label><input id="dc-fam" value="'+esc(c.familia||'')+'"></div></div>'+
+    '<div class="fila"><div class="campo"><label>Horas</label><input type="number" id="dc-hrs" value="'+c.horas+'"></div>'+
+    '<div class="campo"><label>Precio</label><input type="number" id="dc-pre" value="'+c.precio+'"></div></div>'+
+    '<div class="fila"><div class="campo"><label>Color</label><input type="color" id="dc-col" value="'+c.color+'" style="height:46px;padding:5px"></div>'+
+    '<div class="campo"><label>Estado</label><select id="dc-pub">'+
+      '<option value="1"'+(c.publicado?' selected':'')+'>Publicado</option>'+
+      '<option value="0"'+(!c.publicado?' selected':'')+'>Borrador</option>'+
+      '<option value="proximamente"'+(c.proximamente?' selected':'')+'>Próximamente (visible sin inscripción)</option></select></div></div>',
+    '<button class="btn btn-peligro" onclick="borrarCurso(\''+cid+'\')">Eliminar curso</button>'+
+    '<button class="btn btn-mor" onclick="guardarDatosCurso(\''+cid+'\')">Guardar</button>');
+}
+function guardarDatosCurso(cid){
+  var c = curso(cid);
+  c.nombre = $('dc-nom').value.trim(); c.desc = $('dc-desc').value.trim();
+  c.nivel = $('dc-niv').value; c.periodoTipo = $('dc-per').value||null;
+  c.periodoNum = $('dc-pnum').value?Number($('dc-pnum').value):null;
+  c.familia = $('dc-fam').value.trim()||'General';
+  c.horas = Number($('dc-hrs').value)||0; c.precio = Number($('dc-pre').value)||0;
+  c.color = $('dc-col').value;
+  var estado2 = $('dc-pub').value;
+  c.publicado = estado2 === '1'; c.proximamente = estado2 === 'proximamente';
+  guardar(); cerrarModal(); pintar();
+}
+function borrarCurso(cid){
+  if(!confirm('Se elimina el curso y todo su contenido. Los alumnos inscritos lo perderán. ¿Continuar?')) return;
+  for(var i=BD.cursos.length-1;i>=0;i--) if(BD.cursos[i].id===cid) BD.cursos.splice(i,1);
+  for(var j=BD.inscripciones.length-1;j>=0;j--) if(BD.inscripciones[j].cursoId===cid) BD.inscripciones.splice(j,1);
+  guardar(); cerrarModal(); ir('admin-cursos');
+}
+
+/* ------- Editor de estructura y bloques ------- */
+function editarCurso(cid){ ir('admin-editor',{cursoId:cid, moduloId:null, leccionId:null}); }
+
+function vistaAdminEditor(){
+  var c = curso(estado.cursoId);
+  if(!c) return '<div class="seccion"><p>Curso no encontrado.</p></div>';
+
+  if(estado.leccionId) return vistaEditorLeccion(c);
+
+  var h = '<div class="seccion">'+
+    '<button class="btn btn-fantasma btn-sm" onclick="ir(\'admin-cursos\')">← Cursos</button>'+
+    '<div class="encabezado-fila" style="margin-top:12px"><div><h2>'+esc(c.nombre)+'</h2>'+
+    '<p class="sub" style="margin:0">Arma el curso por módulos. Dentro de cada módulo van lecciones, '+
+    'y dentro de cada lección van los bloques de contenido.</p></div>'+
+    '<button class="btn btn-mor" onclick="nuevoModulo(\''+c.id+'\')">+ Módulo</button></div>';
+
+  if(!c.modulos.length)
+    h += '<div class="tarjeta vacio"><p>Este curso todavía no tiene módulos. Crea el primero.</p></div>';
+
+  for(var i=0;i<c.modulos.length;i++){
+    var m = c.modulos[i];
+    h += '<div class="tarjeta tarjeta-sm" style="margin-bottom:16px">'+
+      '<div class="arbol-item" style="border:0;margin:0 0 10px;padding:0;background:transparent">'+
+        '<div class="modulo-num">'+(i+1)+'</div>'+
+        '<div class="txt"><b>'+esc(m.titulo)+'</b>'+
+        '<span>'+m.lecciones.length+' lecciones · evaluación con '+
+        (m.quiz?m.quiz.preguntas.length:0)+' preguntas</span></div>'+
+        '<button class="mini" title="Subir" onclick="moverModulo(\''+c.id+'\','+i+',-1)">↑</button>'+
+        '<button class="mini" title="Bajar" onclick="moverModulo(\''+c.id+'\','+i+',1)">↓</button>'+
+        '<button class="mini" title="Renombrar" onclick="renombrarModulo(\''+c.id+'\',\''+m.id+'\')">✎</button>'+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarModulo(\''+c.id+'\',\''+m.id+'\')">✕</button>'+
+      '</div><div class="arbol-hijo">';
+
+    for(var j=0;j<m.lecciones.length;j++){
+      var L = m.lecciones[j];
+      h += '<div class="arbol-item"><div class="txt"><b>'+esc(L.titulo)+'</b>'+
+        '<span>'+L.bloques.length+' bloques</span></div>'+
+        '<button class="mini" title="Subir" onclick="moverLeccion(\''+c.id+'\',\''+m.id+'\','+j+',-1)">↑</button>'+
+        '<button class="mini" title="Bajar" onclick="moverLeccion(\''+c.id+'\',\''+m.id+'\','+j+',1)">↓</button>'+
+        '<button class="btn btn-linea btn-sm" onclick="ir(\'admin-editor\',{cursoId:\''+c.id+
+          '\',moduloId:\''+m.id+'\',leccionId:\''+L.id+'\'})">Editar bloques</button>'+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarLeccion(\''+c.id+'\',\''+m.id+'\',\''+L.id+'\')">✕</button>'+
+      '</div>';
+    }
+    h += '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">'+
+      '<button class="btn btn-linea btn-sm" onclick="nuevaLeccion(\''+c.id+'\',\''+m.id+'\')">+ Lección</button>'+
+      '<button class="btn btn-linea btn-sm" onclick="editarQuiz(\''+c.id+'\',\''+m.id+'\')">Editar evaluación</button>'+
+      '</div></div></div>';
+  }
+  return h + '</div>';
+}
+
+function nuevoModulo(cid){
+  var t = prompt('Título del módulo:');
+  if(!t) return;
+  var c = curso(cid);
+  c.modulos.push({ id:cid+'-m'+Date.now(), titulo:t.trim(), lecciones:[],
+                   quiz:{ titulo:'Evaluación de '+t.trim(), preguntas:[] } });
+  guardar(); pintar();
+}
+function renombrarModulo(cid,mid){
+  var c = curso(cid), m = modulo(c,mid);
+  var t = prompt('Nuevo título:', m.titulo);
+  if(t){ m.titulo = t.trim(); guardar(); pintar(); }
+}
+function borrarModulo(cid,mid){
+  if(!confirm('Se elimina el módulo con todas sus lecciones. ¿Continuar?')) return;
+  var c = curso(cid);
+  for(var i=c.modulos.length-1;i>=0;i--) if(c.modulos[i].id===mid) c.modulos.splice(i,1);
+  guardar(); pintar();
+}
+function moverModulo(cid,i,d){
+  var c = curso(cid), j = i+d;
+  if(j<0 || j>=c.modulos.length) return;
+  var t = c.modulos[i]; c.modulos[i] = c.modulos[j]; c.modulos[j] = t;
+  guardar(); pintar();
+}
+function nuevaLeccion(cid,mid){
+  var t = prompt('Título de la lección:');
+  if(!t) return;
+  var c = curso(cid), m = modulo(c,mid);
+  m.lecciones.push({ id:mid+'-l'+Date.now(), titulo:t.trim(), bloques:[] });
+  guardar(); pintar();
+}
+function borrarLeccion(cid,mid,lid){
+  if(!confirm('Se elimina la lección y su contenido. ¿Continuar?')) return;
+  var c = curso(cid), m = modulo(c,mid);
+  for(var i=m.lecciones.length-1;i>=0;i--) if(m.lecciones[i].id===lid) m.lecciones.splice(i,1);
+  guardar(); pintar();
+}
+function moverLeccion(cid,mid,i,d){
+  var c = curso(cid), m = modulo(c,mid), j = i+d;
+  if(j<0 || j>=m.lecciones.length) return;
+  var t = m.lecciones[i]; m.lecciones[i] = m.lecciones[j]; m.lecciones[j] = t;
+  guardar(); pintar();
+}
+
+/* ------- Editor de bloques de una lección -------
+   Diseño tomado de lo que hacen bien las plataformas del mercado:
+   pantalla partida con vista en vivo, bloques que se arrastran,
+   barra de formato y biblioteca de bloques reutilizables.        */
+var TIPOS = {
+  titulo:'Subtítulo', texto:'Párrafo', lista:'Lista', destacado:'Recuadro',
+  dialogo:'Diálogo', vocabulario:'Vocabulario', audio:'Audio', video:'Video',
+  imagen:'Imagen', archivo:'Archivo', actividad:'Actividad'
+};
+
+function vistaEditorLeccion(c){
+  var m = modulo(c,estado.moduloId), L = leccion(m,estado.leccionId);
+  if(!L) return '';
+  var h = '<div class="seccion">'+
+    '<button class="btn btn-fantasma btn-sm" onclick="ir(\'admin-editor\',{leccionId:null})">← '+esc(c.nombre)+'</button>'+
+    '<div class="encabezado-fila" style="margin-top:12px"><div>'+
+      '<span class="etiqueta">'+esc(m.titulo)+'</span>'+
+      '<h2 style="margin-top:8px">'+esc(L.titulo)+'</h2>'+
+      '<p class="sub" style="margin:0">Escribes a la izquierda y ves el resultado a la derecha. '+
+      'Todo se guarda solo, no hay botón de guardar.</p></div>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+      '<button class="btn btn-linea btn-sm cambiar-vista" id="btnVistaViva" onclick="alternarVistaViva()">Ver resultado</button>'+
+      '<button class="btn btn-linea btn-sm" onclick="renombrarLeccion()">Renombrar</button>'+
+      '<button class="btn btn-tur btn-sm" onclick="verComoAlumno()">Pantalla completa</button></div></div>'+
+    '<div class="editor-split" id="editorSplit"><div class="editor-col">';
+
+  if(!L.bloques.length)
+    h += '<div class="tarjeta vacio"><p>Lección vacía. Agrega el primer bloque abajo.</p></div>';
+
+  for(var i=0;i<L.bloques.length;i++){
+    var b = L.bloques[i];
+    h += '<div class="editor-bloque" id="eb-'+i+'"'+
+      ' ondragstart="arrastreInicio(event,'+i+')" ondragover="arrastreSobre(event,'+i+')"'+
+      ' ondragleave="arrastreSale('+i+')" ondrop="arrastreSoltar(event,'+i+')" ondragend="arrastreFin()">'+
+      '<div class="editor-bloque-cab">'+
+      '<span class="asa" title="Arrástralo para cambiarlo de lugar"'+
+      ' onmousedown="prenderArrastre('+i+')" onmouseup="apagarArrastre('+i+')">⠿</span>'+
+      '<span class="tipo">'+(TIPOS[b.tipo]||b.tipo)+'</span>'+
+      '<div class="acciones">'+
+        '<button class="mini" title="Subir" onclick="moverBloque('+i+',-1)">↑</button>'+
+        '<button class="mini" title="Bajar" onclick="moverBloque('+i+',1)">↓</button>'+
+        '<button class="mini" title="Duplicar este bloque" onclick="duplicarBloque('+i+')">⧉</button>'+
+        '<button class="mini" title="Guardar en mi biblioteca" onclick="aBiblioteca('+i+')">☆</button>'+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarBloque('+i+')">✕</button>'+
+      '</div></div><div class="editor-bloque-cuerpo">'+campoBloque(b,i)+'</div></div>';
+  }
+
+  h += '<div class="paleta-bloques"><span style="width:100%;font-size:.85rem;font-weight:600;'+
+       'color:var(--tinta);margin-bottom:4px">Agregar bloque</span>';
+  for(var t in TIPOS) h += '<button onclick="agregarBloque(\''+t+'\')">'+TIPOS[t]+'</button>';
+  h += '<button onclick="abrirBiblioteca()" style="background:var(--morado);color:#fff;'+
+       'border-color:var(--morado)">★ Mi biblioteca</button></div></div>'+
+    '<aside class="editor-vista"><div class="editor-vista-rot">Así lo ve el alumno</div>'+
+    '<div class="lector" id="vistaViva">'+vistaVivaHTML()+'</div></aside></div></div>';
+  return h;
+}
+
+/* ---- Vista en vivo ---- */
+function vistaVivaHTML(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId), L = leccion(m,estado.leccionId);
+  if(!L) return '';
+  var h = '<h1>'+esc(L.titulo)+'</h1>';
+  for(var i=0;i<L.bloques.length;i++) h += pintarBloque(L.bloques[i]);
+  return h;
+}
+var relojVista = null;
+function refrescarVista(){
+  clearTimeout(relojVista);
+  relojVista = setTimeout(function(){
+    var el = $('vistaViva');
+    if(el) el.innerHTML = vistaVivaHTML();
+  }, 320);
+}
+function alternarVistaViva(){
+  var s = $('editorSplit'), b = $('btnVistaViva');
+  if(!s) return;
+  s.classList.toggle('ver-vista');
+  if(b) b.textContent = s.classList.contains('ver-vista') ? 'Volver a editar' : 'Ver resultado';
+}
+
+/* ---- Arrastrar para reordenar ---- */
+var arrastraDe = null;
+function prenderArrastre(i){ var e = $('eb-'+i); if(e) e.draggable = true; }
+function apagarArrastre(i){ var e = $('eb-'+i); if(e) e.draggable = false; }
+function arrastreInicio(ev,i){
+  arrastraDe = i;
+  try { ev.dataTransfer.effectAllowed = 'move'; ev.dataTransfer.setData('text/plain', String(i)); } catch(e){}
+  var el = $('eb-'+i); if(el) el.classList.add('arrastrando');
+}
+function arrastreSobre(ev,i){
+  if(arrastraDe === null) return;
+  ev.preventDefault();
+  var el = $('eb-'+i); if(el && i !== arrastraDe) el.classList.add('encima');
+}
+function arrastreSale(i){ var el = $('eb-'+i); if(el) el.classList.remove('encima'); }
+function arrastreSoltar(ev,i){
+  ev.preventDefault();
+  if(arrastraDe === null || arrastraDe === i){ arrastreFin(); return; }
+  var bs = bloquesActuales();
+  var mov = bs.splice(arrastraDe,1)[0];
+  bs.splice(i, 0, mov);
+  arrastraDe = null;
+  guardar(); pintar();
+}
+function arrastreFin(){
+  arrastraDe = null;
+  var l = document.querySelectorAll('.editor-bloque');
+  for(var k=0;k<l.length;k++){ l[k].classList.remove('encima'); l[k].classList.remove('arrastrando'); l[k].draggable = false; }
+}
+
+/* ---- Barra de formato ---- */
+function barraFormato(id){
+  return '<div class="barra-formato">'+
+    '<button type="button" title="Negritas" onmousedown="event.preventDefault()" onclick="formato(\''+id+'\',\'b\')"><b>N</b></button>'+
+    '<button type="button" title="Cursivas" onmousedown="event.preventDefault()" onclick="formato(\''+id+'\',\'i\')"><i>C</i></button>'+
+    '<button type="button" title="Subrayado" onmousedown="event.preventDefault()" onclick="formato(\''+id+'\',\'u\')" style="text-decoration:underline">S</button>'+
+    '<button type="button" title="Insertar liga" onmousedown="event.preventDefault()" onclick="formato(\''+id+'\',\'liga\')">Liga</button>'+
+    '<button type="button" title="Cortar renglón" onmousedown="event.preventDefault()" onclick="formato(\''+id+'\',\'br\')">Renglón</button>'+
+    '</div>';
+}
+function formato(id, que){
+  var t = $(id); if(!t) return;
+  var ini = t.selectionStart, fin = t.selectionEnd, sel = t.value.slice(ini,fin), nuevo;
+  if(que === 'br') nuevo = '<br>';
+  else if(que === 'liga'){
+    var url = prompt('¿A qué dirección lleva la liga?','https://');
+    if(!url) return;
+    nuevo = '<a href="'+url+'" target="_blank">'+(sel || 'aquí')+'</a>';
+  } else nuevo = '<'+que+'>'+sel+'</'+que+'>';
+  t.value = t.value.slice(0,ini) + nuevo + t.value.slice(fin);
+  t.focus();
+  t.selectionStart = t.selectionEnd = ini + nuevo.length;
+  if(t.oninput) t.oninput();
+}
+
+/* ---- Campos de cada tipo de bloque ---- */
+function campoBloque(b,i){
+  var id = 'bt-'+i;
+  if(b.tipo === 'titulo')
+    return '<input id="'+id+'" value="'+esc(b.texto||'')+'" placeholder="Título de esta parte" '+
+           'oninput="setBloque('+i+',\'texto\',this.value)">';
+
+  if(b.tipo === 'texto' || b.tipo === 'destacado')
+    return barraFormato(id)+'<textarea id="'+id+'" rows="6" oninput="setBloque('+i+',\'texto\',this.value)">'+
+           esc(b.texto||'')+'</textarea>';
+
+  if(b.tipo === 'lista')
+    return '<textarea id="'+id+'" rows="5" placeholder="Un punto por renglón" '+
+           'oninput="setLista('+i+',this.value)">'+esc((b.items||[]).join('\n'))+'</textarea>'+
+           '<div class="pista">Un punto por renglón. También puedes usar &lt;b&gt;negritas&lt;/b&gt;.</div>';
+
+  if(b.tipo === 'dialogo'){
+    var txt = (b.lineas||[]).map(function(L){ return L.quien+' | '+L.en+' | '+L.es; }).join('\n');
+    return '<div class="campo" style="margin-bottom:10px"><label>Título del diálogo</label>'+
+      '<input value="'+esc(b.titulo||'')+'" oninput="setBloque('+i+',\'titulo\',this.value)"></div>'+
+      '<textarea id="'+id+'" rows="6" placeholder="Ana | Good morning | Buenos días" '+
+      'oninput="setDialogo('+i+',this.value)">'+esc(txt)+'</textarea>'+
+      '<div class="pista">Un renglón por línea, con este orden separado por barras: quién | inglés | español.</div>';
+  }
+
+  if(b.tipo === 'vocabulario'){
+    var vt = (b.palabras||[]).map(function(p){ return p.en+' | '+p.es+(p.ej?' | '+p.ej:''); }).join('\n');
+    return '<div class="campo" style="margin-bottom:10px"><label>Rótulo</label>'+
+      '<input value="'+esc(b.rotulo||'')+'" oninput="setBloque('+i+',\'rotulo\',this.value)"></div>'+
+      '<textarea id="'+id+'" rows="7" placeholder="thank you | gracias | Thank you very much." '+
+      'oninput="setVocabulario('+i+',this.value)">'+esc(vt)+'</textarea>'+
+      '<div class="pista">Un renglón por palabra: palabra | traducción | ejemplo. El ejemplo es opcional.</div>';
+  }
+
+  if(b.tipo === 'audio')
+    return '<div class="campo" style="margin-bottom:10px"><label>Rótulo</label>'+
+      '<input value="'+esc(b.rotulo||'')+'" oninput="setBloque('+i+',\'rotulo\',this.value)"></div>'+
+      '<div class="campo" style="margin-bottom:10px"><label>Liga del audio</label>'+
+      '<input value="'+esc(/^data:/.test(b.url||'') ? '(audio cargado desde tu computadora)' : (b.url||''))+'" '+
+      'placeholder="Déjalo vacío si aún no lo grabas" oninput="setBloque('+i+',\'url\',this.value)"></div>'+
+      '<div class="campo" style="margin:0"><label>O súbelo desde tu computadora (máx. 2 MB)</label>'+
+      '<input type="file" accept="audio/*" onchange="subirArchivo('+i+',\'url\',this,2048)"></div>'+
+      '<div class="pista">Para audios largos, súbelos a Drive o a YouTube y pega aquí la liga: no ocupan espacio de la plataforma.</div>';
+
+  if(b.tipo === 'video')
+    return '<div class="campo" style="margin:0"><label>Liga de YouTube</label>'+
+      '<input value="'+esc(b.url||'')+'" placeholder="https://www.youtube.com/watch?v=..." '+
+      'oninput="setBloque('+i+',\'url\',this.value)"></div>'+
+      '<div class="pista">Sube el video a YouTube como «no listado» y pega aquí la liga.</div>';
+
+  if(b.tipo === 'imagen')
+    return '<div class="campo" style="margin-bottom:10px"><label>Liga de la imagen</label>'+
+      '<input value="'+esc(/^data:/.test(b.url||'') ? '(imagen cargada desde tu computadora)' : (b.url||''))+'" '+
+      'oninput="setBloque('+i+',\'url\',this.value)"></div>'+
+      '<div class="campo" style="margin-bottom:10px"><label>O súbela desde tu computadora (máx. 800 KB)</label>'+
+      '<input type="file" accept="image/*" onchange="subirArchivo('+i+',\'url\',this,800)"></div>'+
+      '<div class="campo" style="margin:0"><label>Pie de foto</label>'+
+      '<input value="'+esc(b.pie||'')+'" oninput="setBloque('+i+',\'pie\',this.value)"></div>';
+
+  if(b.tipo === 'archivo'){
+    var fmts = ['PDF','WORD','PPT','EXCEL','OTRO'], sel = '';
+    for(var f=0;f<fmts.length;f++)
+      sel += '<option value="'+fmts[f]+'"'+((b.formato||'PDF')===fmts[f]?' selected':'')+'>'+fmts[f]+'</option>';
+    return '<div class="campo" style="margin-bottom:10px"><label>Título del documento</label>'+
+      '<input value="'+esc(b.titulo||'')+'" placeholder="Ej. Guía de estudio del módulo 1" '+
+      'oninput="setBloque('+i+',\'titulo\',this.value)"></div>'+
+      '<div class="fila"><div class="campo"><label>Formato</label>'+
+      '<select onchange="setBloque('+i+',\'formato\',this.value)">'+sel+'</select></div>'+
+      '<div class="campo"><label>Nota corta</label>'+
+      '<input value="'+esc(b.nota||'')+'" placeholder="Opcional" oninput="setBloque('+i+',\'nota\',this.value)"></div></div>'+
+      '<div class="campo" style="margin:0"><label>Liga del archivo</label>'+
+      '<input value="'+esc(b.url||'')+'" placeholder="Pega aquí la liga de Google Drive" '+
+      'oninput="setBloque('+i+',\'url\',this.value)"></div>'+
+      '<div class="pista"><b>Cómo se hace:</b> sube el PDF, Word o PowerPoint a tu Google Drive, '+
+      'dale clic derecho → Compartir → «Cualquier persona con el enlace» → Copiar enlace, y pégalo aquí. '+
+      'El alumno lo lee dentro de la lección, sin salirse de la plataforma y sin poder borrarlo.</div>';
+  }
+
+  if(b.tipo === 'actividad')
+    return '<div class="campo" style="margin-bottom:10px"><label>Rótulo</label>'+
+      '<input value="'+esc(b.rotulo||'')+'" oninput="setBloque('+i+',\'rotulo\',this.value)"></div>'+
+      barraFormato(id)+
+      '<textarea id="'+id+'" rows="5" oninput="setBloque('+i+',\'texto\',this.value)">'+esc(b.texto||'')+'</textarea>';
+
+  return '';
+}
+
+/* ---- Guardado de campos ---- */
+function bloquesActuales(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId), L = leccion(m,estado.leccionId);
+  return L.bloques;
+}
+function setBloque(i,campo,valor){
+  if(/^\(.*cargad[oa] desde tu computadora\)$/.test(valor)) return;
+  bloquesActuales()[i][campo] = valor; guardar(); refrescarVista();
+}
+function setLista(i,valor){
+  bloquesActuales()[i].items = valor.split('\n').filter(function(x){ return x.trim(); });
+  guardar(); refrescarVista();
+}
+function setDialogo(i,valor){
+  bloquesActuales()[i].lineas = valor.split('\n').filter(function(x){return x.trim();}).map(function(r){
+    var p = r.split('|');
+    return { quien:(p[0]||'').trim(), en:(p[1]||'').trim(), es:(p[2]||'').trim() };
+  });
+  guardar(); refrescarVista();
+}
+function setVocabulario(i,valor){
+  bloquesActuales()[i].palabras = valor.split('\n').filter(function(x){return x.trim();}).map(function(r){
+    var p = r.split('|');
+    return { en:(p[0]||'').trim(), es:(p[1]||'').trim(), ej:(p[2]||'').trim() };
+  });
+  guardar(); refrescarVista();
+}
+function subirArchivo(i,campo,input,maxKB){
+  var f = input.files && input.files[0];
+  if(!f) return;
+  if(f.size > maxKB*1024){
+    alert('Ese archivo pesa '+Math.round(f.size/1024)+' KB y el máximo que conviene guardar dentro de la '+
+          'plataforma es '+maxKB+' KB.\n\nPara algo más pesado: súbelo a tu Google Drive, compártelo como '+
+          '«cualquiera con el enlace» y pega aquí la liga. Así no ocupa espacio y carga más rápido.');
+    input.value = ''; return;
+  }
+  var r = new FileReader();
+  r.onload = function(){ bloquesActuales()[i][campo] = r.result; guardar(); pintar(); };
+  r.readAsDataURL(f);
+}
+
+/* ---- Agregar, duplicar, mover, borrar ---- */
+function agregarBloque(tipo){
+  var b = { tipo:tipo };
+  if(tipo === 'lista') b.items = ['Primer punto'];
+  else if(tipo === 'dialogo'){ b.titulo = 'Diálogo'; b.lineas = [{quien:'A',en:'',es:''}]; }
+  else if(tipo === 'vocabulario'){ b.rotulo = 'Vocabulario de la lección'; b.palabras = [{en:'',es:'',ej:''}]; }
+  else if(tipo === 'audio'){ b.rotulo = 'Escucha el audio'; b.url = ''; }
+  else if(tipo === 'archivo'){ b.titulo = 'Documento de apoyo'; b.formato = 'PDF'; b.url = ''; b.nota = ''; }
+  else if(tipo === 'video' || tipo === 'imagen') b.url = '';
+  else if(tipo === 'actividad'){ b.rotulo = 'Practica ahora'; b.texto = ''; }
+  else b.texto = '';
+  bloquesActuales().push(b); guardar(); pintar();
+}
+function duplicarBloque(i){
+  var bs = bloquesActuales();
+  bs.splice(i+1, 0, JSON.parse(JSON.stringify(bs[i])));
+  guardar(); pintar();
+}
+function borrarBloque(i){ bloquesActuales().splice(i,1); guardar(); pintar(); }
+function moverBloque(i,d){
+  var bs = bloquesActuales(), j = i+d;
+  if(j<0 || j>=bs.length) return;
+  var t = bs[i]; bs[i] = bs[j]; bs[j] = t; guardar(); pintar();
+}
+
+/* ---- Biblioteca de bloques reutilizables ---- */
+function aBiblioteca(i){
+  var b = JSON.parse(JSON.stringify(bloquesActuales()[i]));
+  var n = prompt('¿Con qué nombre lo guardo en tu biblioteca?', TIPOS[b.tipo] || b.tipo);
+  if(!n) return;
+  BD.biblioteca.push({ id:'bib-'+Date.now(), nombre:n.trim(), bloque:b });
+  guardar();
+  alert('Guardado. Lo vuelves a encontrar en el botón «Mi biblioteca».');
+}
+function abrirBiblioteca(){
+  var cuerpo = '';
+  if(!BD.biblioteca.length){
+    cuerpo = '<p class="sub">Tu biblioteca está vacía. Guarda cualquier bloque con el botón de la estrella '+
+             'y aquí lo vuelves a encontrar para reutilizarlo en cualquier otra lección, sin volver a capturarlo.</p>';
+  } else {
+    for(var i=0;i<BD.biblioteca.length;i++){
+      var it = BD.biblioteca[i];
+      cuerpo += '<div class="arbol-item"><div class="txt"><b>'+esc(it.nombre)+'</b>'+
+        '<span>'+(TIPOS[it.bloque.tipo] || it.bloque.tipo)+'</span></div>'+
+        '<button class="btn btn-mor btn-sm" onclick="insertarDeBiblioteca(\''+it.id+'\')">Insertar</button>'+
+        '<button class="mini rojo" title="Quitar de la biblioteca" onclick="borrarDeBiblioteca(\''+it.id+'\')">✕</button></div>';
+    }
+  }
+  abrirModal('Mi biblioteca de bloques', cuerpo,
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
+}
+function insertarDeBiblioteca(id){
+  for(var i=0;i<BD.biblioteca.length;i++){
+    if(BD.biblioteca[i].id === id){
+      bloquesActuales().push(JSON.parse(JSON.stringify(BD.biblioteca[i].bloque)));
+      guardar(); cerrarModal(); pintar(); return;
+    }
+  }
+}
+function borrarDeBiblioteca(id){
+  for(var i=BD.biblioteca.length-1;i>=0;i--) if(BD.biblioteca[i].id === id) BD.biblioteca.splice(i,1);
+  guardar(); cerrarModal(); abrirBiblioteca();
+}
+
+function renombrarLeccion(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId), L = leccion(m,estado.leccionId);
+  var t = prompt('Nuevo título:', L.titulo);
+  if(t){ L.titulo = t.trim(); guardar(); pintar(); }
+}
+function verComoAlumno(){
+  var v = estado.vista;
+  estado.volverA = v;
+  ir('vista-previa');
+}
+
+function vistaPrevia(){
+  var c = curso(estado.cursoId), m = modulo(c,estado.moduloId), L = leccion(m,estado.leccionId);
+  var h = '<div class="seccion"><div class="aviso aviso-info" style="max-width:800px;margin:0 auto 24px;'+
+    'display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">'+
+    '<span>Vista previa. Así lo ve el alumno.</span>'+
+    '<button class="btn btn-mor btn-sm" onclick="ir(\'admin-editor\')">Volver a editar</button></div>'+
+    '<div class="lector"><h1>'+esc(L.titulo)+'</h1>';
+  for(var i=0;i<L.bloques.length;i++) h += pintarBloque(L.bloques[i]);
+  return h + '</div></div>';
+}
+
+/* ------- Editor de evaluación ------- */
+function editarQuiz(cid,mid){
+  var c = curso(cid), m = modulo(c,mid);
+  if(!m.quiz) m.quiz = { titulo:'Evaluación de '+m.titulo, preguntas:[] };
+  var cuerpo = '<div class="campo"><label>Título de la evaluación</label>'+
+    '<input id="q-tit" value="'+esc(m.quiz.titulo)+'"></div>'+
+    '<div class="campo" style="margin-bottom:8px"><label>Preguntas</label>'+
+    '<div style="font-size:.82rem;color:var(--gris);line-height:1.7">Escribe una pregunta por bloque. '+
+    'En el primer renglón va la pregunta y en los siguientes las opciones. '+
+    'Marca la correcta poniéndole un asterisco al principio. Separa cada pregunta con una línea de tres guiones.</div></div>'+
+    '<textarea id="q-txt" style="min-height:280px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;'+
+    'font-size:.86rem">'+esc(quizATexto(m.quiz))+'</textarea>';
+  abrirModal('Evaluación — '+m.titulo, cuerpo,
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarQuiz(\''+cid+'\',\''+mid+'\')">Guardar evaluación</button>');
+}
+function quizATexto(q){
+  return q.preguntas.map(function(p){
+    var l = [p.p];
+    for(var i=0;i<p.ops.length;i++) l.push((i===p.correcta?'*':'')+p.ops[i]);
+    return l.join('\n');
+  }).join('\n---\n');
+}
+function guardarQuiz(cid,mid){
+  var c = curso(cid), m = modulo(c,mid);
+  m.quiz.titulo = $('q-tit').value.trim();
+  var bloques = $('q-txt').value.split(/\n-{3,}\n/);
+  var pregs = [];
+  for(var i=0;i<bloques.length;i++){
+    var ren = bloques[i].split('\n').filter(function(x){ return x.trim(); });
+    if(ren.length < 2) continue;
+    var p = { p:ren[0].trim(), ops:[], correcta:0 };
+    for(var j=1;j<ren.length;j++){
+      var t = ren[j].trim();
+      if(t.charAt(0)==='*'){ p.correcta = j-1; t = t.slice(1).trim(); }
+      p.ops.push(t);
+    }
+    pregs.push(p);
+  }
+  m.quiz.preguntas = pregs;
+  guardar(); cerrarModal(); pintar();
+}
+
+/* ------- Alumnos ------- */
+function vistaAdminAlumnos(){
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Alumnos</h2>'+
+    '<p class="sub" style="margin:0">Alta manual, inscripción a cursos y consulta de avance.</p></div>'+
+    '<button class="btn btn-mor" onclick="nuevoAlumno()">+ Alta de alumno</button></div>'+
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+    '<th>Nombre</th><th>Contacto</th><th>Alta</th><th>Cursos</th><th></th></tr></thead><tbody>';
+  var hay = false;
+  for(var i=0;i<BD.usuarios.length;i++){
+    var u = BD.usuarios[i];
+    if(u.rol !== 'alumno') continue;
+    hay = true;
+    var mis = [];
+    for(var j=0;j<BD.inscripciones.length;j++)
+      if(BD.inscripciones[j].usuarioId===u.id){
+        var cu = curso(BD.inscripciones[j].cursoId);
+        if(cu) mis.push(esc(cu.nombre)+' ('+porcentaje(u.id,cu)+'%)');
+      }
+    h += '<tr><td><b>'+esc(u.nombre)+'</b><br><span style="color:var(--gris);font-size:.8rem">'+
+      esc(u.folio||'')+'</span></td>'+
+      '<td>'+esc(u.correo)+'<br><span style="color:var(--gris);font-size:.8rem">'+esc(u.tel||'—')+'</span></td>'+
+      '<td>'+esc(u.alta)+'</td>'+
+      '<td>'+(mis.length ? mis.join('<br>') : '<span style="color:var(--gris)">sin cursos</span>')+'</td>'+
+      '<td style="white-space:nowrap">'+
+        '<button class="btn btn-linea btn-sm" onclick="inscribirAlumno(\''+u.id+'\')">Inscribir</button> '+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarAlumno(\''+u.id+'\')">✕</button></td></tr>';
+  }
+  if(!hay) h += '<tr><td colspan="5" class="vacio">Todavía no hay alumnos registrados.</td></tr>';
+  return h + '</tbody></table></div></div></div>';
+}
+
+function nuevoAlumno(){
+  abrirModal('Alta de alumno',
+    '<div class="campo"><label>Nombre completo</label><input id="na-nom"></div>'+
+    '<div class="fila"><div class="campo"><label>Correo</label><input type="email" id="na-cor"></div>'+
+    '<div class="campo"><label>WhatsApp</label><input id="na-tel"></div></div>'+
+    '<div class="campo"><label>Contraseña provisional</label><input id="na-pass" value="mara1234"></div>'+
+    '<div class="aviso aviso-info" style="margin:0">Dile al alumno que la cambie la primera vez que entre.</div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarNuevoAlumno()">Dar de alta</button>');
+}
+function guardarNuevoAlumno(){
+  var nom = $('na-nom').value.trim(), cor = $('na-cor').value.trim().toLowerCase();
+  if(!nom || !cor){ $('na-nom').focus(); return; }
+  BD.usuarios.push({ id:'u-'+Date.now(), nombre:nom, correo:cor, tel:$('na-tel').value.trim(),
+    pass:$('na-pass').value, rol:'alumno', alta:hoy(), folio:folio('IM'), foto:'' });
+  guardar(); cerrarModal(); pintar();
+}
+function borrarAlumno(uid){
+  if(!confirm('Se elimina el alumno, sus inscripciones y su avance. ¿Continuar?')) return;
+  for(var i=BD.usuarios.length-1;i>=0;i--) if(BD.usuarios[i].id===uid) BD.usuarios.splice(i,1);
+  for(var j=BD.inscripciones.length-1;j>=0;j--) if(BD.inscripciones[j].usuarioId===uid) BD.inscripciones.splice(j,1);
+  delete BD.avances[uid];
+  guardar(); pintar();
+}
+function inscribirAlumno(uid){
+  var ops = '';
+  for(var i=0;i<BD.cursos.length;i++)
+    ops += '<option value="'+BD.cursos[i].id+'">'+esc(BD.cursos[i].nombre)+'</option>';
+  abrirModal('Inscribir a '+usuario(uid).nombre,
+    '<div class="campo"><label>Curso</label><select id="ia-curso">'+ops+'</select></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarInscripcion(\''+uid+'\')">Inscribir</button>');
+}
+function guardarInscripcion(uid){
+  var cid = $('ia-curso').value;
+  if(!estaInscrito(uid,cid))
+    BD.inscripciones.push({ id:'i-'+Date.now(), usuarioId:uid, cursoId:cid, fecha:hoy(), estatus:'activa' });
+  guardar(); cerrarModal(); pintar();
+}
+
+/* ------- Pagos ------- */
+function vistaAdminPagos(){
+  var total = 0, i;
+  for(i=0;i<BD.pagos.length;i++) total += Number(BD.pagos[i].monto)||0;
+  var mes = hoy().slice(0,7), delMes = 0;
+  for(i=0;i<BD.pagos.length;i++) if(String(BD.pagos[i].fecha).slice(0,7)===mes) delMes += Number(BD.pagos[i].monto)||0;
+
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Pagos</h2>'+
+    '<p class="sub" style="margin:0">Registro de lo cobrado. Corte rápido del mes en curso.</p></div>'+
+    '<button class="btn btn-mor" onclick="nuevoPago()">+ Registrar pago</button></div>'+
+    '<div class="rejilla rejilla-4" style="margin-bottom:26px">'+
+      '<div class="metrica"><div class="rot">Total histórico</div><div class="val">'+dinero(total)+'</div></div>'+
+      '<div class="metrica"><div class="rot">Este mes</div><div class="val">'+dinero(delMes)+'</div><div class="pie">'+mes+'</div></div>'+
+      '<div class="metrica"><div class="rot">Movimientos</div><div class="val">'+BD.pagos.length+'</div></div>'+
+    '</div>'+
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+    '<th>Fecha</th><th>Alumno</th><th>Curso</th><th>Medio</th><th>Monto</th><th>Nota</th><th></th></tr></thead><tbody>';
+  if(!BD.pagos.length) h += '<tr><td colspan="7" class="vacio">Sin pagos registrados.</td></tr>';
+  for(i=BD.pagos.length-1;i>=0;i--){
+    var p = BD.pagos[i], u = usuario(p.usuarioId), cu = curso(p.cursoId);
+    h += '<tr><td>'+esc(p.fecha)+'</td><td>'+esc(u?u.nombre:'—')+'</td>'+
+      '<td>'+esc(cu?cu.nombre:'—')+'</td><td>'+esc(p.medio)+'</td>'+
+      '<td><b>'+dinero(p.monto)+'</b></td><td style="color:var(--gris)">'+esc(p.nota||'')+'</td>'+
+      '<td><button class="mini rojo" onclick="borrarPago(\''+p.id+'\')">✕</button></td></tr>';
+  }
+  return h + '</tbody></table></div></div></div>';
+}
+function nuevoPago(){
+  var ua = '', ca = '';
+  for(var i=0;i<BD.usuarios.length;i++)
+    if(BD.usuarios[i].rol==='alumno') ua += '<option value="'+BD.usuarios[i].id+'">'+esc(BD.usuarios[i].nombre)+'</option>';
+  for(var j=0;j<BD.cursos.length;j++)
+    ca += '<option value="'+BD.cursos[j].id+'">'+esc(BD.cursos[j].nombre)+'</option>';
+  abrirModal('Registrar pago',
+    '<div class="fila"><div class="campo"><label>Fecha</label><input type="date" id="np-fec" value="'+hoy()+'"></div>'+
+    '<div class="campo"><label>Monto</label><input type="number" id="np-mon" step="0.01"></div></div>'+
+    '<div class="campo"><label>Alumno</label><select id="np-usr">'+ua+'</select></div>'+
+    '<div class="campo"><label>Curso</label><select id="np-cur">'+ca+'</select></div>'+
+    '<div class="campo"><label>Medio de pago</label><select id="np-med">'+
+      '<option>Mercado Pago</option><option>Transferencia</option><option>Efectivo</option>'+
+      '<option>Depósito en tienda</option></select></div>'+
+    '<div class="campo" style="margin:0"><label>Nota</label><input id="np-not" placeholder="Opcional"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarPago()">Guardar pago</button>');
+}
+function guardarPago(){
+  var m = Number($('np-mon').value);
+  if(!m){ $('np-mon').focus(); return; }
+  BD.pagos.push({ id:'p-'+Date.now(), fecha:$('np-fec').value, usuarioId:$('np-usr').value,
+    cursoId:$('np-cur').value, monto:m, medio:$('np-med').value, nota:$('np-not').value.trim() });
+  guardar(); cerrarModal(); pintar();
+}
+function borrarPago(pid){
+  if(!confirm('¿Eliminar este movimiento?')) return;
+  for(var i=BD.pagos.length-1;i>=0;i--) if(BD.pagos[i].id===pid) BD.pagos.splice(i,1);
+  guardar(); pintar();
+}
+
+/* ------- Ajustes ------- */
+function vistaAdminAjustes(){
+  return '<div class="seccion" style="max-width:720px"><h2>Ajustes</h2>'+
+    '<p class="sub">Lo mínimo que debes revisar antes de abrir la escuela al público.</p>'+
+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
+    'margin-bottom:14px">Contraseña de administrador</h3>'+
+    '<div class="campo"><label>Nueva contraseña</label><input type="password" id="aj-pass" placeholder="Mínimo 8 caracteres"></div>'+
+    '<button class="btn btn-mor" onclick="cambiarPass()">Cambiar contraseña</button>'+
+    '<div id="aj-aviso"></div></div>'+
+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
+    'margin-bottom:14px">Calificación mínima aprobatoria</h3>'+
+    '<div class="campo"><label>Porcentaje para aprobar un módulo</label>'+
+    '<input type="number" id="aj-min" min="50" max="100" value="'+BD.config.minimoAprobatorio+'"></div>'+
+    '<button class="btn btn-mor" onclick="cambiarMinimo()">Guardar</button></div>'+
+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
+    'margin-bottom:8px">Contacto y sitio publicado</h3>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">El WhatsApp se usa como respaldo mientras '+
+    'el cobro en línea no esté activo, y la URL pública es la dirección donde vive el sitio ya publicado '+
+    '(para que el QR de las constancias apunte al lugar correcto).</p>'+
+    '<div class="fila"><div class="campo"><label>WhatsApp (con código de país, sin espacios)</label>'+
+    '<input id="aj-wa" placeholder="5214771234567" value="'+esc(BD.config.whatsapp)+'"></div>'+
+    '<div class="campo"><label>Horas máximas para responder dudas</label>'+
+    '<input type="number" id="aj-sla" min="1" max="72" value="'+BD.config.slaDudasHoras+'"></div></div>'+
+    '<div class="campo" style="margin:0"><label>URL pública del sitio</label>'+
+    '<input id="aj-url" placeholder="https://usuario.github.io/institutomara" value="'+esc(BD.config.urlPublica)+'"></div>'+
+    '<div style="margin-top:14px"><button class="btn btn-mor" onclick="guardarContacto()">Guardar</button></div></div>'+
+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
+    'margin-bottom:8px">Cobro en línea con Mercado Pago</h3>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">Requiere la función de nube que crea el '+
+    'pago (ver carpeta <code>/backend</code> del proyecto). Mientras no la conectes, el botón de inscripción '+
+    'ofrece el pago manual por WhatsApp.</p>'+
+    '<div class="campo"><label>URL de la función "crear preferencia" (Supabase Edge Function)</label>'+
+    '<input id="aj-fn" placeholder="https://TU-PROYECTO.functions.supabase.co/crear-preferencia" value="'+esc(BD.config.edgeFnCrearPreferencia)+'"></div>'+
+    '<div class="campo" style="margin:0"><label>Public key de Mercado Pago (opcional, solo informativo aquí)</label>'+
+    '<input id="aj-mp" value="'+esc(BD.config.mpPublicKey)+'"></div>'+
+    '<div style="margin-top:14px"><button class="btn btn-mor" onclick="guardarPagoConfig()">Guardar</button></div></div>'+
+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
+    'margin-bottom:8px">Respaldo</h3>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">Toda la información vive en este '+
+    'navegador. Descarga un respaldo cada semana y guárdalo en tu nube. Si cambias de computadora o '+
+    'borras el historial, restauras desde ese archivo.</p>'+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap">'+
+      '<button class="btn btn-mor" onclick="descargarRespaldo()">Descargar respaldo</button>'+
+      '<label class="btn btn-linea" style="cursor:pointer">Restaurar desde archivo'+
+      '<input type="file" accept=".json" style="display:none" onchange="restaurarRespaldo(this)"></label>'+
+    '</div></div>'+
+
+    '<div class="tarjeta"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:8px">Reiniciar</h3>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">Borra todo y regresa al contenido '+
+    'de ejemplo. Úsalo solo mientras estás probando.</p>'+
+    '<button class="btn btn-peligro" onclick="reiniciar()">Borrar todo y empezar de cero</button></div>'+
+    '</div>';
+}
+function cambiarPass(){
+  var p = $('aj-pass').value;
+  if(p.length < 8){
+    $('aj-aviso').innerHTML = '<div class="aviso aviso-error" style="margin-top:14px">Usa al menos 8 caracteres.</div>';
+    return;
+  }
+  sesion.pass = p; guardar();
+  $('aj-pass').value = '';
+  $('aj-aviso').innerHTML = '<div class="aviso aviso-ok" style="margin-top:14px">Listo. Tu nueva contraseña ya quedó.</div>';
+}
+function cambiarMinimo(){
+  var n = Number($('aj-min').value);
+  if(n>=50 && n<=100){ BD.config.minimoAprobatorio = n; guardar(); pintar(); }
+}
+function guardarContacto(){
+  BD.config.whatsapp = $('aj-wa').value.trim().replace(/[^\d]/g,'');
+  BD.config.slaDudasHoras = Number($('aj-sla').value)||24;
+  BD.config.urlPublica = $('aj-url').value.trim().replace(/\/$/,'');
+  guardar(); pintar();
+}
+function guardarPagoConfig(){
+  BD.config.edgeFnCrearPreferencia = $('aj-fn').value.trim();
+  BD.config.mpPublicKey = $('aj-mp').value.trim();
+  guardar(); pintar();
+}
+function descargarRespaldo(){
+  var b = new Blob([JSON.stringify(BD,null,2)], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(b);
+  a.download = 'respaldo-instituto-mara-'+hoy()+'.json';
+  a.click();
+}
+function restaurarRespaldo(input){
+  var f = input.files[0]; if(!f) return;
+  var r = new FileReader();
+  r.onload = function(){
+    try {
+      var d = JSON.parse(r.result);
+      if(!d.cursos || !d.usuarios) throw new Error('formato');
+      BD = d; guardar(); alert('Respaldo restaurado.'); pintar();
+    } catch(e){ alert('Ese archivo no parece un respaldo válido de Instituto Mara.'); }
+  };
+  r.readAsText(f);
+}
+function reiniciar(){
+  if(!confirm('Se borra todo: alumnos, pagos, avances y cursos. ¿Seguro?')) return;
+  BD = semilla(); guardar(); location.reload();
+}
+
+/* ---------------- Enrutador ---------------- */
+function pintar(){
+  var v = estado.vista, h = '';
+  if(v==='mis-cursos')          h = vistaMisCursos();
+  else if(v==='catalogo')       h = vistaCatalogo();
+  else if(v==='aula')           h = vistaAula();
+  else if(v==='leccion')        h = vistaLeccion();
+  else if(v==='quiz')           h = vistaQuiz();
+  else if(v==='constancias')    h = vistaConstancias();
+  else if(v==='constancia')     h = vistaConstancia();
+  else if(v==='admin-tablero')  h = vistaAdminTablero();
+  else if(v==='admin-cursos')   h = vistaAdminCursos();
+  else if(v==='admin-editor')   h = vistaAdminEditor();
+  else if(v==='vista-previa')   h = vistaPrevia();
+  else if(v==='admin-alumnos')  h = vistaAdminAlumnos();
+  else if(v==='admin-pagos')    h = vistaAdminPagos();
+  else if(v==='admin-ajustes')  h = vistaAdminAjustes();
+  else if(v==='mi-perfil')      h = vistaMiPerfil();
+  else if(v==='dudas')          h = vistaDudas();
+  else if(v==='admin-dudas')    h = vistaAdminDudas();
+  else if(v==='verificacion')   h = vistaAdminVerificacion();
+  $('vista').innerHTML = h;
+}
+
+/* ---------------- Arranque: mantener sesión iniciada ---------------- */
+(function(){
+  var uid = sesionGuardada();
+  if(uid){
+    var u = usuario(uid);
+    if(u){ sesion = u; entrarApp(); }
+  }
+})();
+</script>
+</body>
+</html>
