@@ -466,7 +466,7 @@ tbody tr:hover{background:var(--nube)}
 var LLAVE = 'institutoMara.v2';
 /* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
    se actualice en las computadoras donde la plataforma ya se había abierto. */
-var CONTENIDO_VERSION = 4;
+var CONTENIDO_VERSION = 5;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
 
 function guardar(){
@@ -1020,37 +1020,169 @@ function semilla(){
         id:'c-ia-finanzas', nombre:'IA para Finanzas', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Conciliaciones, reportes, análisis de cartera y automatización de tareas financieras con herramientas de IA.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       },
       {
         id:'c-ia-manufactura', nombre:'IA para Manufactura', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Mantenimiento predictivo, control de calidad y optimización de línea de producción apoyados en IA.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       },
       {
         id:'c-ia-oficina', nombre:'IA para la Oficina', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Correo, juntas, reportes y hojas de cálculo: cómo la IA le quita horas muertas al trabajo de oficina.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       },
       {
         id:'c-ia-arquitectura', nombre:'IA para Arquitectos', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Renders, propuestas de diseño, memorias de cálculo y presentaciones a cliente con apoyo de IA.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       },
       {
         id:'c-ia-ventas', nombre:'IA para Ventas y Atención a Clientes', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Prospección, guiones de venta, respuestas de WhatsApp y seguimiento a clientes con ayuda de IA.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       },
       {
         id:'c-ia-salud', nombre:'IA para el Sector Salud', color:'#0D9488',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Documentación clínica, agenda, comunicación con pacientes y apoyo administrativo del consultorio con IA.',
-        horas:0, precio:0, publicado:false, proximamente:true, modulos:[]
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-marketing', nombre:'IA para Marketing y Redes Sociales', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Calendarios de contenido, copys, imágenes y análisis de resultados de campañas con apoyo de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-emprendedores', nombre:'IA para Emprendedores y Pequeños Negocios', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Planes de negocio, control de gastos, atención a clientes y promoción del negocio apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-docentes', nombre:'IA para Docentes e Instructores', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Planeaciones, exámenes, rúbricas y material didáctico diseñados más rápido con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-rh', nombre:'IA para Recursos Humanos', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Filtrado de candidatos, descripciones de puesto, capacitación y clima laboral con ayuda de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-contadores', nombre:'IA para Contadores', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Clasificación de gastos, declaraciones, revisión de pólizas y reportes fiscales apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-abogados', nombre:'IA para Abogados', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Revisión de contratos, resúmenes de expedientes y redacción de escritos con apoyo de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-directivos', nombre:'IA para Directivos y Gerentes', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Reportes ejecutivos, análisis de indicadores, minutas y toma de decisiones apoyadas en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-atencion-cliente', nombre:'IA para Atención al Cliente', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Respuestas rápidas, chatbots, seguimiento de quejas y encuestas de satisfacción con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-compras', nombre:'IA para Compras y Abastecimiento', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Comparación de proveedores, cotizaciones, negociación y control de pedidos apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-logistica', nombre:'IA para Logística e Inventarios', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Rutas de entrega, control de existencias y pronóstico de demanda apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-proyectos', nombre:'IA para Gestión de Proyectos', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Planeación de tareas, minutas, seguimiento de avances y reportes de proyecto con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-inmobiliarias', nombre:'IA para Inmobiliarias', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Fichas técnicas, anuncios, seguimiento a prospectos y contratos de arrendamiento con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-ecommerce', nombre:'IA para Comercio Electrónico', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Descripciones de producto, fotos, precios, promociones y atención en tienda en línea con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-diseno', nombre:'IA para Diseño y Creación de Contenido', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Imágenes, video, guiones y piezas gráficas creadas y editadas más rápido con herramientas de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-turismo', nombre:'IA para Turismo y Hotelería', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Reservas, itinerarios personalizados, promoción de destinos y atención a huéspedes con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-estudiantes', nombre:'IA para Estudiantes e Investigación', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Búsqueda y organización de fuentes, resúmenes, fichas de estudio y apoyo para tesis con IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-programadores', nombre:'IA para Programadores', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Generación y revisión de código, documentación y pruebas apoyadas en asistentes de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-automatizacion', nombre:'Automatización con IA sin Programar', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Conecta correo, hojas de cálculo, WhatsApp y formularios con herramientas de automatización sin escribir código.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-construccion', nombre:'IA para Construcción y Obra', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Presupuestos, bitácoras de obra, cronogramas y control de materiales apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-campo', nombre:'IA para Agronegocios y Campo', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Registro de cosechas, control de insumos, clima y precios de mercado apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-freelance', nombre:'IA para Freelancers y Consultores Independientes', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Propuestas, cotizaciones, seguimiento a clientes y organización del tiempo apoyados en IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
+      },
+      {
+        id:'c-ia-callcenter', nombre:'IA para Call Centers y BPO', color:'#0D9488',
+        nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
+        desc:'Guiones de llamada, resúmenes de interacción y clasificación de tickets con apoyo de IA.',
+        horas:0, precio:0, publicado:false, proximamente:true, iaPorProfesion:true, modulos:[]
       }
     ]
   };
@@ -1239,8 +1371,8 @@ function pintarNav(){
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
        ['admin-pagos','Pagos'],['admin-dudas', bandejaDudasEtiqueta()],['verificacion','Constancias'],
        ['admin-ajustes','Ajustes']]
-    : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['constancias','Constancias'],
-       ['dudas','Dudas'],['mi-perfil','Mi perfil']];
+    : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
+       ['constancias','Constancias'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
   var h = '';
   for(var i=0;i<items.length;i++)
     h += '<button data-v="'+items[i][0]+'">'+items[i][1]+'</button>';
@@ -1363,7 +1495,7 @@ function vistaCatalogo(){
   var publicados = [], proximos = [];
   for(var i=0;i<BD.cursos.length;i++){
     if(BD.cursos[i].publicado) publicados.push(BD.cursos[i]);
-    else if(BD.cursos[i].proximamente) proximos.push(BD.cursos[i]);
+    else if(BD.cursos[i].proximamente && !BD.cursos[i].iaPorProfesion) proximos.push(BD.cursos[i]);
   }
   var grupos = agruparCursos(publicados);
   for(var g=0;g<grupos.length;g++){
@@ -1389,6 +1521,11 @@ function vistaCatalogo(){
       }
     }
   }
+  h += '<div class="tarjeta" style="margin-top:30px;background:linear-gradient(135deg,#0D9488 0%,#7C3AED 100%);color:#fff">'+
+       '<h3 style="color:#fff;margin-bottom:6px">¿Buscas IA aplicada a tu profesión?</h3>'+
+       '<p style="color:#fff;opacity:.92;margin-bottom:14px">Estamos preparando cursos de IA para más de 25 giros y profesiones: '+
+       'Marketing, Contadores, Abogados, Ventas, Turismo y muchos más. Búscalos y avísanos cuál quieres primero.</p>'+
+       '<button class="btn" style="background:#fff;color:var(--morado)" onclick="ir(\'ia-profesion\')">Ver IA por profesión</button></div>';
   return h + '</div>';
 }
 
@@ -1397,6 +1534,56 @@ function inscribirme(cid){
                           fecha:hoy(), estatus:'activa' });
   guardar();
   ir('aula',{cursoId:cid});
+}
+
+/* ---------------- IA aplicada según tu profesión ----------------
+   Catálogo dedicado de cursos de IA por giro/profesión. Se van llenando
+   poco a poco: mientras no tengan módulos quedan marcados "proximamente"
+   y se muestran igual que cualquier curso próximo, pero agrupados aquí
+   con buscador en vez de mezclarse con el catálogo general. */
+function cursosIAProfesion(){
+  var r = [];
+  for(var i=0;i<BD.cursos.length;i++) if(BD.cursos[i].iaPorProfesion) r.push(BD.cursos[i]);
+  r.sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
+  return r;
+}
+function normaliza(s){
+  return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+}
+function vistaIAProfesion(){
+  var h = '<div class="seccion">'+
+    '<h2>IA aplicada según tu profesión</h2>'+
+    '<p class="sub">Estamos construyendo un curso corto de inteligencia artificial para cada giro de trabajo. '+
+    'Busca tu profesión o navega la lista completa; los iremos abriendo poco a poco y aquí mismo vas a ver cuándo estén listos.</p>'+
+    '<div style="max-width:420px;margin:6px 0 22px">'+
+    '<input id="buscaIA" type="text" placeholder="Busca tu profesión, por ejemplo: contador, ventas, turismo..." '+
+    'oninput="filtrarIAProfesion()" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--linea);font-size:1rem">'+
+    '</div>'+
+    '<div id="gridIA" class="rejilla rejilla-3"></div>'+
+    '<p id="sinResultadosIA" class="sub" style="display:none;margin-top:14px">'+
+    'No encontramos esa profesión todavía. Escríbenos por WhatsApp y con gusto la agregamos a la lista.</p>'+
+    '</div>';
+  setTimeout(function(){ renderGridIA(''); }, 0);
+  return h;
+}
+function renderGridIA(filtro){
+  var cont = $('gridIA'); if(!cont) return;
+  var lista = cursosIAProfesion();
+  var f = normaliza(filtro);
+  if(f){
+    lista = lista.filter(function(c){
+      return normaliza(c.nombre).indexOf(f) >= 0 || normaliza(c.desc).indexOf(f) >= 0;
+    });
+  }
+  var vacio = $('sinResultadosIA');
+  if(vacio) vacio.style.display = lista.length ? 'none' : 'block';
+  var hh = '';
+  for(var i=0;i<lista.length;i++) hh += tarjetaCurso(lista[i]);
+  cont.innerHTML = hh;
+}
+function filtrarIAProfesion(){
+  var el = $('buscaIA');
+  renderGridIA(el ? el.value : '');
 }
 
 /* ---------------- Pago en línea (Mercado Pago) ----------------
@@ -2937,6 +3124,7 @@ function pintar(){
   var v = estado.vista, h = '';
   if(v==='mis-cursos')          h = vistaMisCursos();
   else if(v==='catalogo')       h = vistaCatalogo();
+  else if(v==='ia-profesion')   h = vistaIAProfesion();
   else if(v==='aula')           h = vistaAula();
   else if(v==='leccion')        h = vistaLeccion();
   else if(v==='quiz')           h = vistaQuiz();
