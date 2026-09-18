@@ -511,7 +511,7 @@ function semilla(){
       contenidoVersion: CONTENIDO_VERSION,
       creado: hoy(),
       whatsapp:'',                 /* ej: 5214771234567, sin signos ni espacios */
-      urlPublica:'',                /* ej: https://ezquerrahector.github.io/institutomara */
+      urlPublica:'https://ezquerrahector.github.io/institutomara',
       slaDudasHoras:24,
       /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
       supabaseUrl:'', supabaseAnonKey:'',
@@ -926,7 +926,11 @@ function semilla(){
         id:'c-ia', nombre:'IA aplicada al trabajo (general)', color:'#14B8A6',
         nivel:'Cursos libres de capacitación', familia:'Inteligencia Artificial aplicada', periodoTipo:null, periodoNum:null,
         desc:'Usa inteligencia artificial para redactar, resumir, ordenar datos y resolver en minutos lo que hoy te toma horas.',
-        horas:16, precio:990, publicado:true, proximamente:false,
+        /* En construcción: hoy solo tiene 1 módulo con 2 lecciones (no las 30 horas que en algún
+           momento se pensaron para este curso). Se deja como "próximamente" para no venderlo
+           incompleto; cuando el contenido esté a la altura del de Inglés, cambia esto a
+           publicado:true, proximamente:false desde Administración → Cursos → Datos. */
+        horas:16, precio:990, publicado:false, proximamente:true,
         modulos:[
           {
             id:'c-ia-m1', titulo:'Qué es y qué no es la IA',
@@ -977,7 +981,10 @@ function semilla(){
         id:'c-office', nombre:'Computación y Office', color:'#5B21B6',
         nivel:'Cursos libres de capacitación', familia:'Tecnología', periodoTipo:null, periodoNum:null,
         desc:'Domina Windows, Word, Excel y el correo desde cero, con ejercicios que salen de trabajos reales.',
-        horas:24, precio:990, publicado:true, proximamente:false,
+        /* En construcción: hoy solo tiene 1 módulo con 1 lección (ni siquiera entra todavía a
+           Word/Excel/PowerPoint). Igual que IA general, se deja "próximamente" hasta que el
+           contenido alcance el nivel del curso de Inglés. */
+        horas:24, precio:990, publicado:false, proximamente:true,
         modulos:[
           {
             id:'c-office-m1', titulo:'Orden en la computadora',
