@@ -510,7 +510,7 @@ function semilla(){
       minimoAprobatorio:80,
       contenidoVersion: CONTENIDO_VERSION,
       creado: hoy(),
-      whatsapp:'',                 /* ej: 5214771234567, sin signos ni espacios */
+      whatsapp:'528120282120',     /* ej: 5214771234567, sin signos ni espacios */
       urlPublica:'https://ezquerrahector.github.io/institutomara',
       slaDudasHoras:24,
       /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
@@ -1204,7 +1204,7 @@ if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
 if(!BD.biblioteca) BD.biblioteca = [];
 if(!BD.constancias) BD.constancias = [];
 if(!BD.dudas) BD.dudas = [];
-if(BD.config.whatsapp == null) BD.config.whatsapp = '';
+if(!BD.config.whatsapp) BD.config.whatsapp = '528120282120';
 if(BD.config.urlPublica == null) BD.config.urlPublica = '';
 if(BD.config.directorNombre == null) BD.config.directorNombre = '';
 if(BD.config.directorPuesto == null) BD.config.directorPuesto = 'Dirección Académica';
