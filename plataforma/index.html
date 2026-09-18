@@ -1617,7 +1617,8 @@ function pagarConMercadoPago(cid){
   var c = curso(cid);
   var btn = event && event.target; if(btn) btn.setAttribute('disabled','disabled');
   fetch(BD.config.edgeFnCrearPreferencia, {
-    method:'POST', headers:{'Content-Type':'application/json'},
+    method:'POST', headers:{'Content-Type':'application/json',
+      'Authorization':'Bearer '+BD.config.supabaseAnonKey, 'apikey':BD.config.supabaseAnonKey},
     body: JSON.stringify({ cursoId:cid, cursoNombre:c.nombre, precio:c.precio,
       usuarioId:sesion.id, usuarioCorreo:sesion.correo,
       urlRegreso: (BD.config.urlPublica||location.origin+location.pathname) })
