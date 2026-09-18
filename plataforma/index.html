@@ -514,8 +514,8 @@ function semilla(){
       urlPublica:'https://ezquerrahector.github.io/institutomara',
       slaDudasHoras:24,
       /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
-      supabaseUrl:'', supabaseAnonKey:'',
-      mpPublicKey:'', edgeFnCrearPreferencia:'', /* URL de la función que crea el pago */
+      supabaseUrl:'https://xvihjhfvwjgpesxpdtnl.supabase.co', supabaseAnonKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0',
+      mpPublicKey:'APP_USR-9fff8712-1312-4069-ad3c-598af5375a69', edgeFnCrearPreferencia:'https://xvihjhfvwjgpesxpdtnl.supabase.co/functions/v1/crear-preferencia', /* URL de la función que crea el pago */
       directorNombre:'', directorPuesto:'Dirección Académica'
     },
     biblioteca:[],
@@ -1205,6 +1205,10 @@ if(!BD.biblioteca) BD.biblioteca = [];
 if(!BD.constancias) BD.constancias = [];
 if(!BD.dudas) BD.dudas = [];
 if(!BD.config.whatsapp) BD.config.whatsapp = '528120282120';
+if(!BD.config.supabaseUrl) BD.config.supabaseUrl = 'https://xvihjhfvwjgpesxpdtnl.supabase.co';
+if(!BD.config.supabaseAnonKey) BD.config.supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+if(!BD.config.mpPublicKey) BD.config.mpPublicKey = 'APP_USR-9fff8712-1312-4069-ad3c-598af5375a69';
+if(!BD.config.edgeFnCrearPreferencia) BD.config.edgeFnCrearPreferencia = 'https://xvihjhfvwjgpesxpdtnl.supabase.co/functions/v1/crear-preferencia';
 if(BD.config.urlPublica == null) BD.config.urlPublica = '';
 if(BD.config.directorNombre == null) BD.config.directorNombre = '';
 if(BD.config.directorPuesto == null) BD.config.directorPuesto = 'Dirección Académica';
