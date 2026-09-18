@@ -331,6 +331,7 @@ tbody tr:hover{background:var(--nube)}
 .constancia-sellos{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;
   margin-top:38px;flex-wrap:wrap;text-align:center}
 .sello-firma{flex:1;min-width:170px;font-size:.78rem;color:var(--gris);line-height:1.5}
+.firma-nombre{font-family:Caveat,cursive;font-size:1.7rem;color:var(--tinta);margin-bottom:2px}
 .linea-firma{width:180px;max-width:100%;border-top:1.5px solid var(--tinta);margin:0 auto 8px}
 .sello-oficial{display:flex;flex-direction:column;align-items:center;gap:8px}
 .sello-anillo{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
@@ -514,7 +515,8 @@ function semilla(){
       slaDudasHoras:24,
       /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
       supabaseUrl:'', supabaseAnonKey:'',
-      mpPublicKey:'', edgeFnCrearPreferencia:'' /* URL de la función que crea el pago */
+      mpPublicKey:'', edgeFnCrearPreferencia:'', /* URL de la función que crea el pago */
+      directorNombre:'', directorPuesto:'Dirección Académica'
     },
     biblioteca:[],
     usuarios:[
@@ -1065,6 +1067,8 @@ if(!BD.constancias) BD.constancias = [];
 if(!BD.dudas) BD.dudas = [];
 if(BD.config.whatsapp == null) BD.config.whatsapp = '';
 if(BD.config.urlPublica == null) BD.config.urlPublica = '';
+if(BD.config.directorNombre == null) BD.config.directorNombre = '';
+if(BD.config.directorPuesto == null) BD.config.directorPuesto = 'Dirección Académica';
 if(BD.config.slaDudasHoras == null) BD.config.slaDudasHoras = 24;
 if(BD.config.supabaseUrl == null) BD.config.supabaseUrl = '';
 if(BD.config.supabaseAnonKey == null) BD.config.supabaseAnonKey = '';
@@ -1722,12 +1726,19 @@ function asegurarConstancia(uid,cid){
    En cuanto Ajustes tenga la URL de Supabase, verificar.html además contrasta
    el folio contra la base de datos real (ver /backend/README.md). */
 function urlVerificacion(rec, c){
-  var base = (BD.config.urlPublica || (location.origin + location.pathname.replace(/plataforma\/.*$/,''))) ;
-  base = base.replace(/\/$/,'');
   var payload = { f:rec.folio, n:rec.nombreAlumno, c:rec.nombreCurso, h:rec.horas, fe:rec.fecha, niv:c?c.nivel:'' };
   var d = '';
   try{ d = btoa(unescape(encodeURIComponent(JSON.stringify(payload)))); }catch(e){ d=''; }
-  return base + '/verificar.html?f=' + encodeURIComponent(rec.folio) + '&d=' + encodeURIComponent(d);
+  var qs = '?f=' + encodeURIComponent(rec.folio) + '&d=' + encodeURIComponent(d);
+  if(BD.config.urlPublica) return BD.config.urlPublica.replace(/\/$/,'') + '/verificar.html' + qs;
+  /* Todavía no se ha publicado el sitio (Ajustes → URL pública vacía). Se arma un
+     enlace relativo a este mismo archivo para que al menos funcione al probarlo
+     en esta misma computadora; un QR con una ruta de archivo local (file://) no
+     lo puede abrir el celular de otra persona, así que en cuanto publiques el
+     sitio en GitHub Pages, pega esa URL en Ajustes para que el QR sí sirva desde
+     cualquier celular. */
+  try{ return new URL('../verificar.html', location.href).href + qs; }
+  catch(e){ return 'verificar.html' + qs; }
 }
 
 function vistaConstancias(){
@@ -1762,12 +1773,31 @@ function vistaConstancia(){
   var qrId = 'qr-'+rec.id;
   setTimeout(function(){
     var cont = $(qrId);
-    if(cont && window.QRCode){ cont.innerHTML=''; new QRCode(cont, {text:url, width:104, height:104, colorDark:'#2E1065', colorLight:'#ffffff'}); }
+    if(!cont) return;
+    if(window.QRCode){
+      cont.innerHTML='';
+      new QRCode(cont, {text:url, width:104, height:104, colorDark:'#2E1065', colorLight:'#ffffff'});
+    } else {
+      /* La librería del QR no cargó (sin internet al abrir el archivo, por ejemplo).
+         Se deja el enlace visible y copiable para no dejar la constancia sin forma
+         de verificarse. */
+      cont.innerHTML = '<div style="font-size:.7rem;color:var(--gris);max-width:104px;word-break:break-all">'+
+        'QR no disponible sin conexión — usa el enlace de abajo</div>';
+    }
   }, 0);
+  var firmaNombre = BD.config.directorNombre || sesion.nombre;
+  var avisoQR = !BD.config.urlPublica
+    ? '<div class="aviso aviso-info no-imprimir" style="margin-bottom:18px">Todavía no configuras la '+
+      '<b>URL pública</b> en Ajustes, así que este QR solo abre en esta computadora. En cuanto publiques el '+
+      'sitio (GitHub Pages), pega esa URL en Ajustes y las constancias nuevas (o esta, al recargarla) ya '+
+      'traerán un QR que cualquier celular puede escanear.</div>'
+    : '';
   return '<div class="seccion">'+
+    avisoQR+
     '<div class="no-imprimir" style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">'+
       '<button class="btn btn-fantasma btn-sm" onclick="ir(\'constancias\')">← Mis constancias</button>'+
-      '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button></div>'+
+      '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button>'+
+      '<button class="btn btn-linea btn-sm" onclick="copiarEnlaceVerificacion(\''+esc(url)+'\')">Copiar enlace de verificación</button></div>'+
     '<div class="constancia">'+
       '<svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom:6px"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>'+
       '<div class="encabeza">Instituto Mara</div>'+
@@ -1782,7 +1812,8 @@ function vistaConstancia(){
         '<div>Folio<b>'+rec.folio+'</b></div>'+
       '</div>'+
       '<div class="constancia-sellos">'+
-        '<div class="sello-firma"><div class="linea-firma"></div>Dirección Académica<br>Instituto Mara</div>'+
+        '<div class="sello-firma"><div class="firma-nombre">'+esc(firmaNombre)+'</div><div class="linea-firma"></div>'+
+        esc(BD.config.directorPuesto||'Dirección Académica')+'<br>Instituto Mara</div>'+
         '<div class="sello-oficial"><div class="sello-anillo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span>VALIDEZ<br>CURRICULAR</span></div>'+
         '<div class="sello-qr"><div id="'+qrId+'"></div><span>Escanea para verificar</span></div>'+
       '</div>'+
@@ -1793,6 +1824,14 @@ function vistaConstancia(){
       'de tipo básico, medio superior o superior. La autenticidad de este documento puede verificarse con el '+
       'folio indicado o escaneando el código QR, que muestra el historial de cursos del alumno en Instituto Mara.</div>'+
     '</div></div>';
+}
+function copiarEnlaceVerificacion(url){
+  var listo = function(){
+    abrirModal('Enlace copiado','<p style="word-break:break-all">'+esc(url)+'</p>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(listo, listo);
+  else listo();
 }
 
 /* ---------------- Dudas (respuesta en máximo 24 horas) ---------------- */
@@ -2799,8 +2838,12 @@ function vistaAdminAjustes(){
     '<input id="aj-wa" placeholder="5214771234567" value="'+esc(BD.config.whatsapp)+'"></div>'+
     '<div class="campo"><label>Horas máximas para responder dudas</label>'+
     '<input type="number" id="aj-sla" min="1" max="72" value="'+BD.config.slaDudasHoras+'"></div></div>'+
-    '<div class="campo" style="margin:0"><label>URL pública del sitio</label>'+
+    '<div class="campo"><label>URL pública del sitio</label>'+
     '<input id="aj-url" placeholder="https://usuario.github.io/institutomara" value="'+esc(BD.config.urlPublica)+'"></div>'+
+    '<div class="fila" style="margin:0"><div class="campo"><label>Nombre de quien firma las constancias</label>'+
+    '<input id="aj-firma-nom" placeholder="Ej. Héctor Ezquerra" value="'+esc(BD.config.directorNombre)+'"></div>'+
+    '<div class="campo"><label>Puesto</label>'+
+    '<input id="aj-firma-puesto" placeholder="Dirección Académica" value="'+esc(BD.config.directorPuesto)+'"></div></div>'+
     '<div style="margin-top:14px"><button class="btn btn-mor" onclick="guardarContacto()">Guardar</button></div></div>'+
 
     '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
@@ -2849,6 +2892,8 @@ function guardarContacto(){
   BD.config.whatsapp = $('aj-wa').value.trim().replace(/[^\d]/g,'');
   BD.config.slaDudasHoras = Number($('aj-sla').value)||24;
   BD.config.urlPublica = $('aj-url').value.trim().replace(/\/$/,'');
+  BD.config.directorNombre = $('aj-firma-nom').value.trim();
+  BD.config.directorPuesto = $('aj-firma-puesto').value.trim() || 'Dirección Académica';
   guardar(); pintar();
 }
 function guardarPagoConfig(){
