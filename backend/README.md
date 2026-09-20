@@ -68,9 +68,30 @@ una sola vez (`npm install -g supabase`).
 supabase login
 supabase link --project-ref TU-PROJECT-REF   # está en la URL del proyecto
 supabase secrets set MP_ACCESS_TOKEN=APP_USR-tu-access-token
+supabase secrets set PRECIOS="$(cat backend/precios.json)"
 supabase functions deploy crear-preferencia
 supabase functions deploy webhook-mercadopago --no-verify-jwt
 ```
+
+### Los precios los pone el servidor, no el navegador
+
+`backend/precios.json` es la lista de precios oficial (`{"id-del-curso": precio}`).
+`crear-preferencia` **ignora** el precio que manda el navegador y cobra el que
+diga la tabla `cursos` de Supabase o, si esa tabla todavía no tiene datos, el de
+esta lista. Así nadie puede abrir las herramientas del navegador, cambiar el
+precio a $1 y pagar eso. `webhook-mercadopago` revisa lo mismo antes de dar
+acceso: si el monto pagado no alcanza el precio, registra el pago con la nota
+«REVISAR» y **no** inscribe al alumno.
+
+Cada vez que cambies un precio en Administración → Ajustes, actualiza también la
+lista y vuelve a subir el secreto:
+
+```bash
+supabase secrets set PRECIOS="$(cat backend/precios.json)"
+```
+
+Si un curso no aparece ni en la tabla `cursos` ni en `PRECIOS`, el cobro en
+línea no se crea y el alumno ve un aviso para inscribirse por WhatsApp.
 
 Al desplegar, la CLI te da la URL de cada función, algo como:
 
