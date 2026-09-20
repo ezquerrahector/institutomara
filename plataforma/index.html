@@ -400,12 +400,15 @@ tbody tr:hover{background:var(--nube)}
           <input type="password" id="ePass" autocomplete="current-password" required>
         </div>
         <button type="submit" class="btn btn-mor" style="width:100%">Entrar al aula</button>
+        <p style="text-align:center;margin-top:14px;font-size:.87rem">
+          <a href="#" onclick="olvideContrasena();return false;" style="color:var(--morado);font-weight:600">Olvidé mi contraseña</a>
+        </p>
       </form>
 
       <!-- Crear cuenta -->
       <form id="formCrear" class="oculto">
         <h2>Crea tu cuenta</h2>
-        <p>Solo toma un minuto. Después eliges tu curso.</p>
+        <p>Solo toma un minuto. Te mandamos un correo para confirmarla y después eliges tu curso.</p>
         <div id="errCrear" class="aviso aviso-error oculto"></div>
         <div class="campo">
           <label for="cNombre">Nombre completo</label>
@@ -462,6 +465,7 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
+<script src="nube.js?v=7"></script>
 <script src="interactivo.js?v=6"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
@@ -487,6 +491,9 @@ var memoria = null;               /* respaldo si el navegador bloquea localStora
 function guardar(){
   try { localStorage.setItem(LLAVE, JSON.stringify(BD)); }
   catch(e){ memoria = JSON.stringify(BD); }
+  /* Con cuentas en la nube, todo lo del alumno en sesión sube al servidor.
+     La subida se agrupa (ver nube.js) para no mandar una llamada por clic. */
+  if(window.NUBE && sesion && sesion.id) Nube.sincronizar(BD, sesion);
 }
 function cargar(){
   try {
@@ -1259,6 +1266,27 @@ guardar();
 var sesion = null;
 var estado = { vista:'', cursoId:null, moduloId:null, leccionId:null, edit:null };
 
+/* ---------------- Cuentas en la nube ----------------
+   Si hay proyecto de Supabase configurado, el aula usa cuentas reales: el
+   alumno se registra solo, confirma su correo, paga y entra desde cualquier
+   dispositivo. Si no lo hay, la app sigue funcionando guardada en el propio
+   navegador (modo demostración). */
+var NUBE = !!(window.Nube && Nube.iniciar(BD.config.supabaseUrl, BD.config.supabaseAnonKey));
+window.NUBE = NUBE;
+
+function avisoCaja(id, texto, clase){
+  var el = document.getElementById(id); if(!el) return;
+  if(!texto){ el.classList.add('oculto'); el.textContent = ''; return; }
+  el.className = 'aviso ' + (clase || 'aviso-error');
+  el.textContent = texto;
+  el.classList.remove('oculto');
+}
+function ocupado(form, si, texto){
+  var b = form.querySelector('button[type=submit]'); if(!b) return;
+  if(si){ b.dataset.txt = b.textContent; b.textContent = texto || 'Un momento…'; b.setAttribute('disabled','disabled'); }
+  else { b.textContent = b.dataset.txt || b.textContent; b.removeAttribute('disabled'); }
+}
+
 /* ---------------- Utilidades de datos ---------------- */
 function curso(id){ for(var i=0;i<BD.cursos.length;i++) if(BD.cursos[i].id===id) return BD.cursos[i]; return null; }
 function modulo(c,id){ for(var i=0;i<c.modulos.length;i++) if(c.modulos[i].id===id) return c.modulos[i]; return null; }
@@ -1322,28 +1350,72 @@ $('tabCrear').onclick = function(){
 $('formEntrar').onsubmit = function(e){
   e.preventDefault();
   var correo = $('eCorreo').value.trim().toLowerCase(), pass = $('ePass').value;
+  avisoCaja('errEntrar','');
+
+  if(NUBE){
+    ocupado(this, true, 'Entrando…');
+    var form = this;
+    Nube.entrar(correo, pass)
+      .then(function(){ return Nube.cargarAlumno(BD); })
+      .then(function(u){
+        sesion = u; guardar(); guardarSesion();
+        return (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null;
+      })
+      .then(function(){ ocupado(form, false); entrarApp(); })
+      .catch(function(err){ ocupado(form, false); avisoCaja('errEntrar', err.message); });
+    return;
+  }
+
   var u = null;
   for(var i=0;i<BD.usuarios.length;i++)
     if(BD.usuarios[i].correo.toLowerCase()===correo) u = BD.usuarios[i];
   if(!u || u.pass !== pass){
-    var err = $('errEntrar');
-    err.textContent = 'Ese correo o esa contraseña no coinciden. Revisa y vuelve a intentar.';
-    err.classList.remove('oculto');
+    avisoCaja('errEntrar','Ese correo o esa contraseña no coinciden. Revisa y vuelve a intentar.');
     return;
   }
-  sesion = u; $('errEntrar').classList.add('oculto');
+  sesion = u;
   guardarSesion();
   entrarApp();
 };
 
+function olvideContrasena(){
+  var correo = $('eCorreo').value.trim().toLowerCase();
+  if(!correo){ avisoCaja('errEntrar','Escribe primero tu correo y vuelve a tocar el enlace.'); $('eCorreo').focus(); return; }
+  if(!NUBE){ avisoCaja('errEntrar','En esta copia sin servidor, escríbenos por WhatsApp para recuperar tu acceso.'); return; }
+  Nube.recuperar(correo)
+    .then(function(){ avisoCaja('errEntrar','Te mandamos un correo para crear una contraseña nueva. Revisa tu bandeja y la carpeta de spam.','aviso-ok'); })
+    .catch(function(e){ avisoCaja('errEntrar', e.message); });
+}
+
 $('formCrear').onsubmit = function(e){
   e.preventDefault();
   var correo = $('cCorreo').value.trim().toLowerCase();
+  avisoCaja('errCrear','');
+
+  if(NUBE){
+    var form = this;
+    ocupado(form, true, 'Creando tu cuenta…');
+    Nube.registrar({ nombre:$('cNombre').value.trim(), correo:correo,
+                     tel:$('cTel').value.trim(), pass:$('cPass').value })
+      .then(function(r){
+        ocupado(form, false);
+        if(r.confirmar){
+          form.reset();
+          avisoCaja('errCrear','Listo. Te mandamos un correo a '+correo+' para confirmar tu cuenta: ábrelo y toca el enlace. '+
+                    'Si no llega en unos minutos, revisa la carpeta de spam.','aviso-ok');
+          return;
+        }
+        return Nube.cargarAlumno(BD).then(function(u){
+          sesion = u; guardar(); guardarSesion(); entrarApp();
+        });
+      })
+      .catch(function(err){ ocupado(form, false); avisoCaja('errCrear', err.message); });
+    return;
+  }
+
   for(var i=0;i<BD.usuarios.length;i++){
     if(BD.usuarios[i].correo.toLowerCase()===correo){
-      var err = $('errCrear');
-      err.textContent = 'Ya existe una cuenta con ese correo. Entra con tu contraseña o escríbenos por WhatsApp.';
-      err.classList.remove('oculto');
+      avisoCaja('errCrear','Ya existe una cuenta con ese correo. Entra con tu contraseña o escríbenos por WhatsApp.');
       return;
     }
   }
@@ -1353,12 +1425,13 @@ $('formCrear').onsubmit = function(e){
     alta:hoy(), folio:folio('IM'), foto:''
   };
   BD.usuarios.push(u); guardar();
-  sesion = u; $('errCrear').classList.add('oculto');
+  sesion = u;
   guardarSesion();
   entrarApp();
 };
 
 $('btnSalir').onclick = function(){
+  if(NUBE) Nube.salir();
   sesion = null;
   borrarSesion();
   $('app').classList.add('oculto');
@@ -1382,14 +1455,71 @@ function entrarApp(){
   pintarAvatar();
   pintarNav();
   var params = new URLSearchParams(location.search);
-  if(params.get('pago') === 'exito' && params.get('curso')){
-    var cid = params.get('curso');
-    if(sesion.rol==='alumno' && !estaInscrito(sesion.id,cid)) inscribirme(cid);
+  var pago = params.get('pago'), cid = params.get('curso');
+
+  if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
+    /* El acceso lo da el servidor cuando Mercado Pago confirma el pago, nunca
+       el navegador: aquí solo se espera a que aparezca. */
+    if(NUBE){ esperarAcceso(cid); return; }
+    if(sesion.rol==='alumno' && !estaInscrito(sesion.id,cid)) inscribirme(cid);
     ir(sesion.rol === 'admin' ? 'admin-tablero' : 'aula', {cursoId:cid});
     return;
   }
+  if(pago === 'pendiente' && cid){
+    history.replaceState(null,'',location.pathname);
+    abrirModal('Tu pago está en proceso',
+      '<p>Cuando pagas en efectivo (OXXO, farmacia o transferencia), Mercado Pago tarda en confirmar: '+
+      'normalmente unos minutos, a veces hasta 48 horas. En cuanto lo confirme, tu curso aparece solo '+
+      'en «Mis cursos»; no tienes que hacer nada más.</p>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+    ir('mis-cursos'); return;
+  }
+  if(pago === 'fallo'){
+    history.replaceState(null,'',location.pathname);
+    abrirModal('El pago no se completó',
+      '<p>Mercado Pago no pudo cobrar. Puedes intentar de nuevo con otra tarjeta o pagar en efectivo, '+
+      'o escribirnos por WhatsApp si prefieres que te ayudemos.</p>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+  }
+  /* Llegó desde el sitio público con un curso en mente */
+  if(cid && curso(cid) && sesion.rol === 'alumno'){
+    history.replaceState(null,'',location.pathname);
+    if(estaInscrito(sesion.id,cid)){ ir('aula',{cursoId:cid}); return; }
+    ir('catalogo'); setTimeout(function(){ abrirPago(cid); }, 250); return;
+  }
   ir(sesion.rol === 'admin' ? 'admin-tablero' : 'mis-cursos');
+}
+
+/* Tras pagar: el webhook de Mercado Pago inscribe al alumno en el servidor.
+   Aquí se consulta cada pocos segundos hasta que aparece (suele tardar 2 a 10
+   segundos con tarjeta). */
+function esperarAcceso(cid){
+  var c = curso(cid), intentos = 0;
+  ir('mis-cursos');
+  abrirModal('Activando tu acceso',
+    '<p>Ya recibimos tu pago'+(c ? ' de <b>'+esc(c.nombre)+'</b>' : '')+'. Estamos activando tu acceso, '+
+    'tarda unos segundos.</p><div class="aviso aviso-info" id="ea-aviso">Esperando confirmación…</div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
+
+  (function revisar(){
+    intentos++;
+    Nube.refrescarInscripciones(BD, sesion.id).then(function(){
+      guardar();
+      if(estaInscrito(sesion.id, cid)){
+        cerrarModal();
+        ir('aula', {cursoId:cid});
+        return;
+      }
+      if(intentos >= 12){
+        var el = $('ea-aviso');
+        if(el) el.innerHTML = 'Tu pago quedó registrado, pero la confirmación está tardando. '+
+          'Cierra esta ventana y vuelve a entrar en unos minutos; si sigue sin aparecer, escríbenos por WhatsApp.';
+        return;
+      }
+      setTimeout(revisar, 3000);
+    }).catch(function(){ if(intentos < 12) setTimeout(revisar, 4000); });
+  })();
 }
 
 function pintarAvatar(){
@@ -1562,6 +1692,22 @@ function vistaCatalogo(){
 }
 
 function inscribirme(cid){
+  var c = curso(cid);
+  if(NUBE){
+    /* Los cursos de paga se inscriben pagando: el servidor no acepta que el
+       navegador se dé de alta solo. */
+    if(c && Number(c.precio) > 0 && sesion.rol !== 'admin'){ abrirPago(cid); return; }
+    Nube.inscribir(sesion.id, cid).then(function(){
+      if(!estaInscrito(sesion.id,cid))
+        BD.inscripciones.push({ id:'i-'+Date.now(), usuarioId:sesion.id, cursoId:cid, fecha:hoy(), estatus:'activa' });
+      guardar();
+      ir('aula',{cursoId:cid});
+    }).catch(function(e){
+      abrirModal('No se pudo inscribir','<p>'+esc(e.message)+'</p>',
+        '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+    });
+    return;
+  }
   BD.inscripciones.push({ id:'i-'+Date.now(), usuarioId:sesion.id, cursoId:cid,
                           fecha:hoy(), estatus:'activa' });
   guardar();
@@ -2188,6 +2334,9 @@ function guardarRespuestaDuda(id){
       break;
     }
   }
+  if(NUBE) Nube.responderDuda(id, txt).catch(function(e){
+    console.warn('No se pudo guardar la respuesta en el servidor:', e.message);
+  });
   guardar(); cerrarModal(); pintar(); pintarNav();
 }
 
@@ -2233,6 +2382,17 @@ function cambiarPassAlumno(){
   var p = $('mp-pass').value;
   if(p.length < 6){
     $('mp-aviso').innerHTML = '<div class="aviso aviso-error" style="margin-top:14px">Usa al menos 6 caracteres.</div>';
+    return;
+  }
+  if(NUBE){
+    $('mp-aviso').innerHTML = '<div class="aviso aviso-info" style="margin-top:14px">Cambiando…</div>';
+    Nube.cambiarPass(p).then(function(){
+      $('mp-pass').value = '';
+      $('mp-aviso').innerHTML = '<div class="aviso aviso-ok" style="margin-top:14px">Contraseña actualizada. '+
+        'Úsala la próxima vez que entres.</div>';
+    }).catch(function(e){
+      $('mp-aviso').innerHTML = '<div class="aviso aviso-error" style="margin-top:14px">'+esc(e.message)+'</div>';
+    });
     return;
   }
   sesion.pass = p; guardar(); $('mp-pass').value = '';
@@ -2426,6 +2586,11 @@ function guardarDatosCurso(cid){
   c.color = $('dc-col').value;
   var estado2 = $('dc-pub').value;
   c.publicado = estado2 === '1'; c.proximamente = estado2 === 'proximamente';
+  /* El precio del cobro sale del servidor: al cambiarlo aquí, se copia allá. */
+  if(NUBE) Nube.guardarCurso(c).catch(function(e){
+    alert('El curso se guardó aquí, pero el precio no se pudo actualizar en el servidor: '+e.message+
+          '\nRevísalo antes de venderlo.');
+  });
   guardar(); cerrarModal(); pintar();
 }
 function borrarCurso(cid){
@@ -3005,6 +3170,16 @@ function vistaAdminAlumnos(){
 }
 
 function nuevoAlumno(){
+  if(NUBE){
+    abrirModal('Alta de alumno',
+      '<p>Con las cuentas en la nube, el alumno se registra solo desde el aula o desde el sitio: '+
+      'crea su cuenta, confirma su correo y paga. Tú no tienes que darlo de alta.</p>'+
+      '<div class="aviso aviso-info" style="margin:0">Si alguien te pagó por fuera (transferencia o efectivo), '+
+      'pídele que cree su cuenta y después inscríbelo tú desde esta misma lista con el botón «Inscribir», '+
+      'y registra el movimiento en Pagos.</div>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+    return;
+  }
   abrirModal('Alta de alumno',
     '<div class="campo"><label>Nombre completo</label><input id="na-nom"></div>'+
     '<div class="fila"><div class="campo"><label>Correo</label><input type="email" id="na-cor"></div>'+
@@ -3041,6 +3216,9 @@ function guardarInscripcion(uid){
   var cid = $('ia-curso').value;
   if(!estaInscrito(uid,cid))
     BD.inscripciones.push({ id:'i-'+Date.now(), usuarioId:uid, cursoId:cid, fecha:hoy(), estatus:'activa' });
+  if(NUBE) Nube.inscribir(uid, cid).catch(function(e){
+    alert('La inscripción se anotó aquí, pero no se pudo guardar en el servidor: '+e.message);
+  });
   guardar(); cerrarModal(); pintar();
 }
 
@@ -3092,8 +3270,12 @@ function nuevoPago(){
 function guardarPago(){
   var m = Number($('np-mon').value);
   if(!m){ $('np-mon').focus(); return; }
-  BD.pagos.push({ id:'p-'+Date.now(), fecha:$('np-fec').value, usuarioId:$('np-usr').value,
-    cursoId:$('np-cur').value, monto:m, medio:$('np-med').value, nota:$('np-not').value.trim() });
+  var nuevo = { id:'p-'+Date.now(), fecha:$('np-fec').value, usuarioId:$('np-usr').value,
+    cursoId:$('np-cur').value, monto:m, medio:$('np-med').value, nota:$('np-not').value.trim() };
+  BD.pagos.push(nuevo);
+  if(NUBE) Nube.registrarPago(nuevo).catch(function(e){
+    alert('El pago se anotó aquí, pero no se pudo guardar en el servidor: '+e.message);
+  });
   guardar(); cerrarModal(); pintar();
 }
 function borrarPago(pid){
@@ -3242,6 +3424,16 @@ function pintar(){
 
 /* ---------------- Arranque: mantener sesión iniciada ---------------- */
 (function(){
+  if(NUBE && Nube.haySesion()){
+    Nube.cargarAlumno(BD)
+      .then(function(u){
+        sesion = u; guardar();
+        return (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null;
+      })
+      .then(function(){ entrarApp(); })
+      .catch(function(){ /* la sesión venció: se queda en la pantalla de acceso */ });
+    return;
+  }
   var uid = sesionGuardada();
   if(uid){
     var u = usuario(uid);
