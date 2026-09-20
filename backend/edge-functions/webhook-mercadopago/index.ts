@@ -30,6 +30,25 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
 
+// Mismos precios de servidor que usa crear-preferencia (secreto PRECIOS).
+let PRECIOS: Record<string, number> = {};
+try {
+  PRECIOS = JSON.parse(Deno.env.get("PRECIOS") || "{}");
+} catch (_e) {
+  console.error("El secreto PRECIOS no es un JSON válido; se ignora.");
+}
+
+// Precio que el servidor espera por ese curso. null = no hay precio configurado.
+async function precioEsperado(cursoId: string): Promise<number | null> {
+  try {
+    const { data } = await supabase
+      .from("cursos").select("precio").eq("id", cursoId).maybeSingle();
+    if (data && data.precio != null && Number(data.precio) > 0) return Number(data.precio);
+  } catch (_e) { /* si la tabla no existe todavía, se usa la lista PRECIOS */ }
+  const p = PRECIOS[cursoId];
+  return p != null && Number(p) > 0 ? Number(p) : null;
+}
+
 serve(async (req) => {
   try {
     const url = new URL(req.url);
@@ -60,7 +79,14 @@ serve(async (req) => {
     const [usuarioId, cursoId] = String(pago.external_reference || "").split("::");
     if (!usuarioId || !cursoId) return new Response("sin referencia", { status: 200 });
 
-    // 2) Registrar el pago (evita duplicados si Mercado Pago reintenta el webhook).
+    // 2) Comprobar que lo pagado alcanza el precio que fija el servidor.
+    //    (Segundo candado: aunque alguien lograra crear una preferencia barata,
+    //     aquí no se le da acceso; el pago queda registrado para revisarlo.)
+    const monto = Number(pago.transaction_amount || 0);
+    const esperado = await precioEsperado(cursoId);
+    const montoSuficiente = esperado == null ? true : monto + 0.5 >= esperado;
+
+    // 3) Registrar el pago (evita duplicados si Mercado Pago reintenta el webhook).
     const { data: existente } = await supabase
       .from("pagos").select("id").eq("referencia_mp", String(pago.id)).maybeSingle();
 
@@ -68,14 +94,21 @@ serve(async (req) => {
       await supabase.from("pagos").insert({
         usuario_id: usuarioId,
         curso_id: cursoId,
-        monto: pago.transaction_amount,
+        monto,
         medio: "Mercado Pago",
         referencia_mp: String(pago.id),
-        nota: "Pago automático vía Checkout Pro",
+        nota: montoSuficiente
+          ? "Pago automático vía Checkout Pro"
+          : `REVISAR: pagó ${monto} y el curso cuesta ${esperado}. No se dio acceso.`,
       });
     }
 
-    // 3) Dar acceso automático al curso.
+    if (!montoSuficiente) {
+      console.error("Monto menor al precio", { cursoId, usuarioId, monto, esperado });
+      return new Response("monto insuficiente", { status: 200 });
+    }
+
+    // 4) Dar acceso automático al curso.
     await supabase.from("inscripciones").upsert(
       { usuario_id: usuarioId, curso_id: cursoId, estatus: "activa" },
       { onConflict: "usuario_id,curso_id" }
