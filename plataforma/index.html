@@ -1653,10 +1653,12 @@ function pagarConMercadoPago(cid){
   })
   .then(function(r){ return r.json(); })
   .then(function(d){
-    if(d && d.init_point) location.href = d.init_point;
-    else alert('No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.');
+    if(d && d.init_point){ location.href = d.init_point; return; }
+    if(btn) btn.removeAttribute('disabled');
+    alert((d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.');
   })
-  .catch(function(){ alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
+  .catch(function(){ if(btn) btn.removeAttribute('disabled');
+    alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
 }
 
 function vistaAula(){
