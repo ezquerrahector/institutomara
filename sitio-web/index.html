@@ -414,7 +414,7 @@ footer a:hover{color:#fff}
             <span class="antes">$1,190</span>
             <span class="ahora">$890</span> <span class="moneda">MXN</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="#inscripcion" class="btn btn-mor btn-ancho" data-curso="Inglés básico desde cero (A1)">Inscribirme</a>
+            <a href="../plataforma/index.html?curso=c-ingles" class="btn btn-mor btn-ancho">Inscribirme</a>
           </div>
         </div>
       </article>
@@ -437,7 +437,7 @@ footer a:hover{color:#fff}
           <div class="precio">
             <span class="ahora">$990</span> <span class="moneda">MXN</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="#inscripcion" class="btn btn-mor btn-ancho" data-curso="IA aplicada al trabajo">Inscribirme</a>
+            <a href="../plataforma/index.html?curso=c-ia" class="btn btn-mor btn-ancho">Inscribirme</a>
           </div>
         </div>
       </article>
@@ -460,7 +460,7 @@ footer a:hover{color:#fff}
           <div class="precio">
             <span class="ahora">$990</span> <span class="moneda">MXN</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="#inscripcion" class="btn btn-mor btn-ancho" data-curso="Computación y Office">Inscribirme</a>
+            <a href="../plataforma/index.html?curso=c-office" class="btn btn-mor btn-ancho">Inscribirme</a>
           </div>
         </div>
       </article>
@@ -483,7 +483,7 @@ footer a:hover{color:#fff}
           <div class="precio">
             <span class="ahora">$590</span> <span class="moneda">MXN c/u</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="#inscripcion" class="btn btn-mor btn-ancho" data-curso="IA según tu profesión">Inscribirme</a>
+            <a href="../plataforma/index.html" class="btn btn-mor btn-ancho">Elegir mi profesión</a>
           </div>
         </div>
       </article>
@@ -502,13 +502,13 @@ footer a:hover{color:#fff}
     <div class="pasos">
       <div class="paso">
         <div class="n">1</div>
-        <h3>Te inscribes</h3>
-        <p>Llenas el formulario y eliges cómo pagar: tarjeta, meses sin intereses, transferencia o efectivo en tienda.</p>
+        <h3>Creas tu cuenta</h3>
+        <p>Con tu correo y una contraseña, desde el celular. Confirmas el correo y ya estás dentro del aula.</p>
       </div>
       <div class="paso">
         <div class="n">2</div>
-        <h3>Recibes tu acceso</h3>
-        <p>Te llegan por WhatsApp y correo tu usuario y contraseña. Con tarjeta o SPEI, el mismo día.</p>
+        <h3>Eliges tu curso y pagas</h3>
+        <p>Tarjeta, meses sin intereses o efectivo en tiendas. Con tarjeta, tu acceso se abre en segundos.</p>
       </div>
       <div class="paso">
         <div class="n">3</div>
@@ -605,54 +605,47 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="sec-head centro">
       <div class="eyebrow">Inscripción</div>
-      <h2>Aparta tu lugar hoy</h2>
-      <p>Llena tus datos y te escribimos por WhatsApp con tu enlace de pago y tus accesos. Tarda menos de un minuto.</p>
+      <h2>Empieza hoy, en tres pasos</h2>
+      <p>Todo es en línea y automático: no tienes que esperar a que alguien te conteste.</p>
     </div>
 
-    <form class="inscribe" id="formIns">
-      <div class="campo">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Como aparece en tu identificación oficial">
+    <div class="pasos-ins">
+      <div class="paso-ins">
+        <div class="paso-num">1</div>
+        <h3>Crea tu cuenta</h3>
+        <p>Con tu correo y una contraseña. Te llega un correo para confirmarla; ábrelo y listo.</p>
       </div>
-      <div class="dos">
-        <div class="campo">
-          <label for="tel">WhatsApp (10 dígitos)</label>
-          <input type="tel" id="tel" name="tel" required pattern="[0-9]{10}" placeholder="5512345678">
-        </div>
-        <div class="campo">
-          <label for="correo">Correo electrónico</label>
-          <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
-        </div>
+      <div class="paso-ins">
+        <div class="paso-num">2</div>
+        <h3>Elige tu curso y paga</h3>
+        <p>Con tarjeta de crédito o débito, meses sin intereses o efectivo en tiendas, por Mercado Pago.</p>
       </div>
-      <div class="dos">
-        <div class="campo">
-          <label for="estado">Estado donde vives</label>
-          <input type="text" id="estado" name="estado" required placeholder="Ej. Jalisco">
-        </div>
-        <div class="campo">
-          <label for="curso">Curso que quieres</label>
-          <select id="curso" name="curso" required>
-            <option value="Inglés básico desde cero (A1)">Inglés básico A1 — $890</option>
-            <option value="IA aplicada al trabajo">IA aplicada al trabajo — $990</option>
-            <option value="Computación y Office">Computación y Office — $990</option>
-            <option value="IA según tu profesión">IA según tu profesión (elige tu profesión en el aula) — $590</option>
-          </select>
-        </div>
+      <div class="paso-ins">
+        <div class="paso-num">3</div>
+        <h3>Entra a estudiar</h3>
+        <p>Tu acceso se activa solo al confirmarse el pago. Estudias desde el celular, a tu ritmo, 12 meses.</p>
       </div>
-      <div class="campo">
-        <label for="pago">Cómo prefieres pagar</label>
-        <select id="pago" name="pago" required>
-          <option value="Tarjeta de crédito o débito">Tarjeta de crédito o débito</option>
-          <option value="Meses sin intereses">Meses sin intereses</option>
-          <option value="Transferencia SPEI">Transferencia SPEI</option>
-          <option value="Efectivo en tienda de conveniencia">Efectivo en tienda de conveniencia</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-mor btn-ancho btn-grande">Apartar mi lugar por WhatsApp</button>
-      <p class="nota-form">Al enviar aceptas que te contactemos por WhatsApp y correo. Tus datos se tratan conforme a nuestro aviso de privacidad y no se comparten con terceros.</p>
-    </form>
+    </div>
+
+    <div class="ins-cta">
+      <a href="../plataforma/index.html" class="btn btn-mor btn-grande">Crear mi cuenta y empezar</a>
+      <p class="nota-form">¿Ya tienes cuenta? <a href="../plataforma/index.html">Entra al aula</a>.<br>
+      ¿Prefieres que te ayudemos o pagar por transferencia?
+      <a href="https://wa.me/528120282120?text=Hola,%20quiero%20inscribirme%20a%20un%20curso%20de%20Instituto%20Mara" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
+    </div>
   </div>
 </section>
+
+<style>
+.pasos-ins{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-bottom:30px}
+.paso-ins{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:26px 22px}
+.paso-ins h3{font-size:1.05rem;color:var(--tinta);margin:14px 0 8px}
+.paso-ins p{color:var(--gris);font-size:.94rem;line-height:1.6}
+.paso-num{width:38px;height:38px;border-radius:50%;background:var(--morado);color:#fff;
+  display:grid;place-items:center;font-weight:800}
+.ins-cta{text-align:center}
+.ins-cta .nota-form{margin-top:16px}
+</style>
 
 <!-- ============ FAQ ============ -->
 <section id="preguntas">
@@ -764,31 +757,8 @@ menu.querySelectorAll('a').forEach(function(a){
   a.addEventListener('click', function(){ menu.classList.remove('abierto'); });
 });
 
-// ---- Preselecciona el curso al dar clic en la tarjeta ----
-document.querySelectorAll('[data-curso]').forEach(function(b){
-  b.addEventListener('click', function(){
-    var sel = document.getElementById('curso');
-    var v = b.getAttribute('data-curso');
-    for (var i=0;i<sel.options.length;i++){ if(sel.options[i].value===v){ sel.selectedIndex=i; } }
-  });
-});
-
-// ---- Envía la inscripción por WhatsApp (sin necesidad de servidor) ----
-var WHATSAPP = '528120282120';
-
-document.getElementById('formIns').addEventListener('submit', function(e){
-  e.preventDefault();
-  var d = new FormData(e.target);
-  var msg =
-    'NUEVA INSCRIPCIÓN — Instituto Mara\n\n' +
-    'Nombre: ' + d.get('nombre') + '\n' +
-    'WhatsApp: ' + d.get('tel') + '\n' +
-    'Correo: ' + d.get('correo') + '\n' +
-    'Estado: ' + d.get('estado') + '\n' +
-    'Curso: ' + d.get('curso') + '\n' +
-    'Forma de pago: ' + d.get('pago');
-  window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
-});
+// El botón de cada curso lleva directo al aula (plataforma/index.html?curso=…),
+// donde el alumno crea su cuenta, paga y entra sin que nadie intervenga.
 </script>
 </body>
 </html>
