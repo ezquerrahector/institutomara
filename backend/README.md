@@ -73,6 +73,15 @@ supabase functions deploy crear-preferencia
 supabase functions deploy webhook-mercadopago --no-verify-jwt
 ```
 
+### Paso extra: cuentas en la nube
+
+Después de `schema.sql`, ejecuta también `backend/nube.sql` (SQL Editor → Run). Eso
+crea el perfil del alumno automáticamente al registrarse, impide que alguien se
+regale un curso de paga y carga el catálogo en la tabla `cursos`. Luego, en
+Authentication → URL Configuration, pon como **Site URL** la dirección del aula
+publicada y agrega esa misma dirección con `/**` en **Redirect URLs**; si no, el
+enlace del correo de confirmación manda al alumno a otro lado.
+
 ### Los precios los pone el servidor, no el navegador
 
 `backend/precios.json` es la lista de precios oficial (`{"id-del-curso": precio}`).
@@ -83,8 +92,10 @@ precio a $1 y pagar eso. `webhook-mercadopago` revisa lo mismo antes de dar
 acceso: si el monto pagado no alcanza el precio, registra el pago con la nota
 «REVISAR» y **no** inscribe al alumno.
 
-Cada vez que cambies un precio en Administración → Ajustes, actualiza también la
-lista y vuelve a subir el secreto:
+La tabla `cursos` manda sobre la lista, y el aula la actualiza sola cuando cambias
+un precio desde Administración, así que normalmente no tienes que tocar nada más.
+El secreto `PRECIOS` es solo el respaldo por si la tabla se queda sin ese curso; si
+lo usas, vuelve a subirlo cuando cambies precios:
 
 ```bash
 supabase secrets set PRECIOS="$(cat backend/precios.json)"
