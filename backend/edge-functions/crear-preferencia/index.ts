@@ -169,6 +169,8 @@ serve(async (req) => {
         unit_price: precio,
       }],
       payer: { email: usuarioCorreo || undefined },
+      // Lo que ve el alumno en su estado de cuenta de la tarjeta.
+      statement_descriptor: "INSTITUTO MARA",
       // Instituto Mara identifica el pago con estos metadatos para que el
       // webhook sepa a quién inscribir en cuanto Mercado Pago confirme el pago.
       metadata: { curso_id: cursoId, usuario_id: usuarioId, monto: precio, cupon: codigoCupon },
