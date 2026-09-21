@@ -1376,9 +1376,9 @@ $('formEntrar').onsubmit = function(e){
       .then(function(){ return Nube.cargarAlumno(BD); })
       .then(function(u){
         sesion = u; guardar(); guardarSesion();
-        return (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null;
+        return Promise.all([ Nube.cargarCatalogo(BD), (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null ]);
       })
-      .then(function(){ ocupado(form, false); entrarApp(); })
+      .then(function(){ guardar(); ocupado(form, false); entrarApp(); })
       .catch(function(err){ ocupado(form, false); avisoCaja('errEntrar', err.message); });
     return;
   }
@@ -3611,6 +3611,15 @@ function pintar(){
 
 /* ---------------- Arranque: mantener sesión iniciada ---------------- */
 (function(){
+  if(NUBE){
+    /* Precios y estado de los cursos desde el servidor, en todos los
+       dispositivos. Si el aula ya está abierta, se vuelve a pintar. */
+    Nube.cargarCatalogo(BD).then(function(n){
+      if(!n) return;
+      guardar();
+      if(sesion && !$('app').classList.contains('oculto')) pintar();
+    });
+  }
   if(NUBE && Nube.haySesion()){
     Nube.cargarAlumno(BD)
       .then(function(u){

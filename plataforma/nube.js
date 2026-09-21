@@ -368,6 +368,40 @@ var Nube = {
       publicado:!!c.publicado, proximamente:!!c.proximamente }], 'id');
   },
 
+  /* El precio, el nombre y el estado de cada curso los manda el servidor
+     (tabla `cursos`), que es de donde se cobra. Así todos los dispositivos
+     muestran lo mismo aunque el administrador lo haya cambiado en otro lado.
+     Funciona sin sesión: los cursos publicados son de lectura pública. */
+  cargarCatalogo: function(BD){
+    var cab = { apikey: cfg.key };
+    var listo = (ses && Date.now() < ses.expira)
+      ? Promise.resolve(ses.access_token)
+      : (ses ? token().catch(function(){ return null; }) : Promise.resolve(null));
+    return listo.then(function(t){
+      cab.Authorization = 'Bearer ' + (t || cfg.key);
+      return fetch(cfg.url + '/rest/v1/cursos?select=id,nombre,descripcion,horas,precio,publicado,proximamente',
+                   { headers: cab });
+    }).then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(filas){
+        var n = 0;
+        for(var i=0;i<(filas||[]).length;i++){
+          var f = filas[i];
+          for(var j=0;j<BD.cursos.length;j++){
+            var c = BD.cursos[j];
+            if(c.id !== f.id) continue;
+            if(f.precio != null) c.precio = Number(f.precio);
+            if(f.horas != null) c.horas = Number(f.horas);
+            if(f.nombre) c.nombre = f.nombre;
+            if(f.descripcion) c.desc = f.descripcion;
+            c.publicado = !!f.publicado;
+            c.proximamente = !!f.proximamente;
+            n++;
+          }
+        }
+        return n;
+      }).catch(function(){ return 0; });
+  },
+
   /* ---------------------------- Cupones ----------------------------
      El alumno solo puede probar un código a la vez (la base valida y
      calcula el descuento); la lista completa la ve nada más el admin. */
