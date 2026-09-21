@@ -368,6 +368,32 @@ var Nube = {
       publicado:!!c.publicado, proximamente:!!c.proximamente }], 'id');
   },
 
+  /* ---------------------------- Cupones ----------------------------
+     El alumno solo puede probar un código a la vez (la base valida y
+     calcula el descuento); la lista completa la ve nada más el admin. */
+  validarCupon: function(codigo, cursoId){
+    return rest('rpc/aplicar_cupon', { metodo:'POST',
+      cuerpo:{ p_codigo: codigo, p_curso_id: cursoId } })
+      .then(function(f){ return Array.isArray(f) ? f[0] : f; });
+  },
+  listarCupones: function(){
+    return rest('cupones?select=*&order=creado_en.desc');
+  },
+  guardarCupon: function(c){
+    return upsert('cupones', [{ codigo:String(c.codigo).trim().toUpperCase(),
+      descripcion:c.descripcion || null, tipo:c.tipo, valor:Number(c.valor),
+      curso_id:c.cursoId || null, usos_max:c.usosMax == null ? null : Number(c.usosMax),
+      vence:c.vence || null, activo:c.activo !== false }], 'codigo');
+  },
+  cambiarCupon: function(codigo, cambios){
+    return rest('cupones?codigo=eq.' + encodeURIComponent(codigo),
+      { metodo:'PATCH', cuerpo:cambios, prefer:'return=minimal' });
+  },
+  borrarCupon: function(codigo){
+    return rest('cupones?codigo=eq.' + encodeURIComponent(codigo),
+      { metodo:'DELETE', prefer:'return=minimal' });
+  },
+
   registrarPago: function(p){
     return upsert('pagos', [{ usuario_id:p.usuarioId, curso_id:p.cursoId, monto:p.monto,
                               medio:p.medio || 'Manual', nota:p.nota || '', fecha:p.fecha }]);

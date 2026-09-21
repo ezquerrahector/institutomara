@@ -1271,7 +1271,12 @@ var estado = { vista:'', cursoId:null, moduloId:null, leccionId:null, edit:null 
    alumno se registra solo, confirma su correo, paga y entra desde cualquier
    dispositivo. Si no lo hay, la app sigue funcionando guardada en el propio
    navegador (modo demostración). */
-var NUBE = !!(window.Nube && Nube.iniciar(BD.config.supabaseUrl, BD.config.supabaseAnonKey));
+/* institutoMara.sinNube = '1' en el navegador fuerza el modo local (sirve para
+   demostraciones sin internet y para las pruebas automáticas del contenido). */
+var NUBE = (function(){
+  try { if(localStorage.getItem('institutoMara.sinNube') === '1') return false; } catch(e){}
+  return !!(window.Nube && Nube.iniciar(BD.config.supabaseUrl, BD.config.supabaseAnonKey));
+})();
 window.NUBE = NUBE;
 
 /* Con cuentas en la nube, lo que quedó guardado en este navegador (los alumnos
@@ -1543,8 +1548,8 @@ function pintarAvatar(){
 function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
-       ['admin-pagos','Pagos'],['admin-dudas', bandejaDudasEtiqueta()],['verificacion','Constancias'],
-       ['admin-ajustes','Ajustes']]
+       ['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
+       ['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
        ['constancias','Constancias'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
   var h = '';
@@ -1781,39 +1786,94 @@ function filtrarIAProfesion(){
    Necesita la función de nube que crea la preferencia de pago (ver /backend).
    Si todavía no está configurada, se ofrece la ruta manual por WhatsApp
    para no dejar al alumno sin opción mientras se activa el cobro en línea. */
+var cuponPago = null;   /* cupón aplicado a la compra que está en pantalla */
+
 function abrirPago(cid){
   var c = curso(cid); if(!c) return;
   var configurado = !!BD.config.edgeFnCrearPreferencia;
-  abrirModal('Inscripción a "'+esc(c.nombre)+'"',
-    '<p style="color:var(--gris);margin-bottom:16px">Precio: <b style="color:var(--tinta)">'+dinero(c.precio)+'</b> · '+c.horas+' horas</p>'+
+  cuponPago = null;
+
+  var cuerpo =
+    '<p style="color:var(--gris);margin-bottom:14px">Precio: <b id="pg-precio" style="color:var(--tinta)">'+
+      dinero(c.precio)+'</b> · '+c.horas+' horas</p>';
+
+  if(configurado && NUBE){
+    cuerpo +=
+      '<div class="campo" style="margin-bottom:12px"><label for="pg-cupon">¿Tienes un cupón de descuento?</label>'+
+      '<div style="display:flex;gap:8px;align-items:stretch">'+
+        '<input id="pg-cupon" placeholder="Escribe tu código" style="text-transform:uppercase">'+
+        '<button type="button" class="btn btn-linea" onclick="aplicarCupon(\''+cid+'\')">Aplicar</button>'+
+      '</div></div><div id="pg-aviso"></div>';
+  }
+
+  cuerpo += configurado
+    ? '<p style="margin-bottom:6px">Al pagar con Mercado Pago tu acceso se activa automáticamente, sin esperar confirmación.</p>'
+    : '<div class="aviso aviso-info">El cobro en línea todavía no está activado en esta copia de la plataforma '+
+      '(falta conectar la función de Mercado Pago en Ajustes). Mientras tanto, confirma tu pago por WhatsApp.</div>';
+
+  var pie = '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
     (configurado
-      ? '<p style="margin-bottom:16px">Al pagar con Mercado Pago tu acceso se activa automáticamente, sin esperar confirmación.</p>'
-      : '<div class="aviso aviso-info">El cobro en línea todavía no está activado en esta copia de la plataforma '+
-        '(falta conectar la función de Mercado Pago en Ajustes). Mientras tanto, confirma tu pago por WhatsApp.</div>'),
-    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
-    (configurado
-      ? '<button class="btn btn-mor" onclick="pagarConMercadoPago(\''+cid+'\')">Pagar con Mercado Pago</button>'
+      ? '<button id="pg-btn" class="btn btn-mor" onclick="pagarConMercadoPago(\''+cid+'\')">Pagar con Mercado Pago</button>'
       : (BD.config.whatsapp
           ? '<a class="btn btn-tur" target="_blank" href="https://wa.me/'+esc(BD.config.whatsapp)+'?text='+
             encodeURIComponent('Hola, quiero inscribirme a "'+c.nombre+'" ('+dinero(c.precio)+')')+'">Confirmar por WhatsApp</a>'
-          : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>')));
+          : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>'));
+
+  abrirModal('Inscripción a "'+esc(c.nombre)+'"', cuerpo, pie);
+}
+
+/* El descuento lo calcula el servidor: aquí solo se muestra el resultado. */
+function aplicarCupon(cid){
+  var campo = $('pg-cupon'), av = $('pg-aviso');
+  var codigo = (campo.value || '').trim();
+  if(!codigo){ campo.focus(); return; }
+  av.innerHTML = '<div class="aviso aviso-info">Revisando tu cupón…</div>';
+
+  Nube.validarCupon(codigo, cid).then(function(r){
+    var c = curso(cid);
+    if(!r || !r.valido){
+      cuponPago = null;
+      $('pg-precio').textContent = dinero(c.precio);
+      var b0 = $('pg-btn'); if(b0) b0.textContent = 'Pagar con Mercado Pago';
+      av.innerHTML = '<div class="aviso aviso-error">'+esc((r && r.motivo) || 'Ese cupón no se pudo aplicar.')+'</div>';
+      return;
+    }
+    var fin = Number(r.precio_final);
+    cuponPago = { codigo: codigo.toUpperCase(), precio: fin };
+    $('pg-precio').innerHTML = '<s style="color:var(--gris);font-weight:400">'+dinero(r.precio_original)+'</s> '+dinero(fin);
+    av.innerHTML = '<div class="aviso aviso-ok">'+esc(r.motivo || 'Cupón aplicado')+'. Ahorras '+dinero(r.descuento)+'.'+
+      (fin <= 0 ? ' Este cupón cubre el curso completo.' : '')+'</div>';
+    var b = $('pg-btn');
+    if(b) b.textContent = fin <= 0 ? 'Obtener mi acceso' : 'Pagar con Mercado Pago';
+  }).catch(function(e){
+    av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>';
+  });
 }
 
 function pagarConMercadoPago(cid){
-  var c = curso(cid);
-  var btn = event && event.target; if(btn) btn.setAttribute('disabled','disabled');
+  var btn = $('pg-btn') || (event && event.target);
+  if(btn) btn.setAttribute('disabled','disabled');
   fetch(BD.config.edgeFnCrearPreferencia, {
     method:'POST', headers:{'Content-Type':'application/json',
       'Authorization':'Bearer '+BD.config.supabaseAnonKey, 'apikey':BD.config.supabaseAnonKey},
-    body: JSON.stringify({ cursoId:cid, cursoNombre:c.nombre, precio:c.precio,
-      usuarioId:sesion.id, usuarioCorreo:sesion.correo,
+    body: JSON.stringify({ cursoId:cid, usuarioId:sesion.id, usuarioCorreo:sesion.correo,
+      cupon: cuponPago ? cuponPago.codigo : null,
       urlRegreso: (BD.config.urlPublica||location.origin+location.pathname) })
   })
   .then(function(r){ return r.json(); })
   .then(function(d){
+    /* Cupón que cubre el curso completo: el servidor ya inscribió al alumno. */
+    if(d && d.gratis){
+      Nube.refrescarInscripciones(BD, sesion.id).then(function(){
+        guardar(); cerrarModal(); ir('aula',{cursoId:cid});
+      });
+      return;
+    }
     if(d && d.init_point){ location.href = d.init_point; return; }
     if(btn) btn.removeAttribute('disabled');
-    alert((d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.');
+    var av = $('pg-aviso');
+    var msg = (d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.';
+    if(av) av.innerHTML = '<div class="aviso aviso-error">'+esc(msg)+'</div>'; else alert(msg);
   })
   .catch(function(){ if(btn) btn.removeAttribute('disabled');
     alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
@@ -3296,6 +3356,120 @@ function borrarPago(pid){
   guardar(); pintar();
 }
 
+/* ------- Cupones de descuento (admin) ------- */
+function vistaAdminCupones(){
+  if(!NUBE){
+    return '<div class="seccion"><h2>Cupones</h2>'+
+      '<div class="aviso aviso-info">Los cupones necesitan la conexión con el servidor. '+
+      'Conecta Supabase en Ajustes para usarlos.</div></div>';
+  }
+  setTimeout(cargarCupones, 30);
+  return '<div class="seccion"><div class="encabezado-fila"><div><h2>Cupones</h2>'+
+    '<p class="sub">Códigos de descuento para promociones, becas y cortesías. El descuento se aplica '+
+    'en el servidor, así que nadie puede alterarlo desde el navegador.</p></div>'+
+    '<button class="btn btn-mor" onclick="nuevoCupon()">Nuevo cupón</button></div>'+
+    '<div id="cup-lista"><p class="vacio">Cargando cupones…</p></div></div>';
+}
+
+function cargarCupones(){
+  var caja = $('cup-lista'); if(!caja) return;
+  Nube.listarCupones().then(function(filas){ pintarCupones(filas || []); })
+    .catch(function(e){
+      var c = $('cup-lista');
+      if(c) c.innerHTML = '<div class="aviso aviso-error">No se pudieron cargar los cupones: '+esc(e.message)+
+        '<br>Si es la primera vez, falta ejecutar <b>backend/cupones.sql</b> en Supabase.</div>';
+    });
+}
+
+function textoDescuento(c){
+  return c.tipo === 'porcentaje' ? (Number(c.valor)+'%') : dinero(c.valor);
+}
+
+function pintarCupones(filas){
+  var caja = $('cup-lista'); if(!caja) return;
+  if(!filas.length){
+    caja.innerHTML = '<div class="tarjeta"><p class="vacio">Todavía no hay cupones. '+
+      'Crea uno con el botón de arriba: sirve para descuentos de porcentaje, de monto fijo '+
+      'o para regalar un curso completo (100%).</p></div>';
+    return;
+  }
+  var h = '<div class="tarjeta" style="padding:0;overflow-x:auto"><table class="tabla"><thead><tr>'+
+    '<th>Código</th><th>Descuento</th><th>Curso</th><th>Usos</th><th>Vence</th><th>Estado</th><th></th>'+
+    '</tr></thead><tbody>';
+  for(var i=0;i<filas.length;i++){
+    var c = filas[i];
+    var cur = c.curso_id ? (curso(c.curso_id) ? curso(c.curso_id).nombre : c.curso_id) : 'Todos los cursos';
+    h += '<tr><td><b>'+esc(c.codigo)+'</b>'+(c.descripcion ? '<br><span style="color:var(--gris);font-size:.82rem">'+esc(c.descripcion)+'</span>' : '')+'</td>'+
+      '<td>'+textoDescuento(c)+'</td>'+
+      '<td>'+esc(cur)+'</td>'+
+      '<td>'+c.usos+(c.usos_max ? ' de '+c.usos_max : '')+'</td>'+
+      '<td>'+(c.vence ? fechaLarga(c.vence) : 'Sin vencimiento')+'</td>'+
+      '<td>'+(c.activo ? '<span style="color:#047857">Activo</span>' : '<span style="color:var(--gris)">Apagado</span>')+'</td>'+
+      '<td style="white-space:nowrap">'+
+        '<button class="btn btn-linea btn-sm" onclick="alternarCupon(\''+esc(c.codigo)+'\','+(c.activo?'false':'true')+')">'+
+          (c.activo ? 'Apagar' : 'Encender')+'</button> '+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarCupon(\''+esc(c.codigo)+'\')">✕</button>'+
+      '</td></tr>';
+  }
+  caja.innerHTML = h + '</tbody></table></div>';
+}
+
+function nuevoCupon(){
+  var ops = '<option value="">Todos los cursos</option>';
+  var lista = BD.cursos.slice().sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
+  for(var i=0;i<lista.length;i++)
+    ops += '<option value="'+lista[i].id+'">'+esc(lista[i].nombre)+'</option>';
+
+  abrirModal('Nuevo cupón',
+    '<div class="fila"><div class="campo"><label>Código</label>'+
+    '<input id="cu-cod" placeholder="BIENVENIDA20" style="text-transform:uppercase"></div>'+
+    '<div class="campo"><label>Descripción (la ve el alumno)</label>'+
+    '<input id="cu-desc" placeholder="20% de bienvenida"></div></div>'+
+    '<div class="fila"><div class="campo"><label>Tipo de descuento</label>'+
+    '<select id="cu-tipo"><option value="porcentaje">Porcentaje</option><option value="monto">Monto fijo en pesos</option></select></div>'+
+    '<div class="campo"><label>Valor</label><input type="number" id="cu-val" min="1" placeholder="20"></div></div>'+
+    '<div class="campo"><label>Curso al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
+    '<div class="fila"><div class="campo"><label>Usos máximos (vacío = sin límite)</label>'+
+    '<input type="number" id="cu-max" min="1" placeholder="50"></div>'+
+    '<div class="campo"><label>Vence el (opcional)</label><input type="date" id="cu-vence"></div></div>'+
+    '<div class="aviso aviso-info" style="margin:0">Para regalar un curso completo usa <b>Porcentaje</b> con valor <b>100</b>: '+
+    'el alumno no pasa por Mercado Pago, entra directo.</div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarCuponNuevo()">Crear cupón</button>');
+}
+
+function guardarCuponNuevo(){
+  var cod = ($('cu-cod').value||'').trim().toUpperCase();
+  var val = Number($('cu-val').value);
+  if(!cod){ $('cu-cod').focus(); return; }
+  if(!val || val <= 0){ $('cu-val').focus(); return; }
+  if($('cu-tipo').value === 'porcentaje' && val > 100){ alert('Un porcentaje no puede pasar de 100.'); return; }
+
+  Nube.guardarCupon({
+    codigo: cod, descripcion: ($('cu-desc').value||'').trim(),
+    tipo: $('cu-tipo').value, valor: val, cursoId: $('cu-curso').value || null,
+    usosMax: $('cu-max').value ? Number($('cu-max').value) : null,
+    vence: $('cu-vence').value || null, activo: true
+  }).then(function(){
+    cerrarModal(); pintar();
+  }).catch(function(e){
+    alert('No se pudo crear el cupón: '+e.message);
+  });
+}
+
+function alternarCupon(codigo, activo){
+  Nube.cambiarCupon(codigo, { activo: activo })
+    .then(cargarCupones)
+    .catch(function(e){ alert('No se pudo cambiar el cupón: '+e.message); });
+}
+
+function borrarCupon(codigo){
+  if(!confirm('¿Eliminar el cupón '+codigo+'? Los alumnos que ya lo usaron conservan su acceso.')) return;
+  Nube.borrarCupon(codigo)
+    .then(cargarCupones)
+    .catch(function(e){ alert('No se pudo eliminar el cupón: '+e.message); });
+}
+
 /* ------- Ajustes ------- */
 function vistaAdminAjustes(){
   return '<div class="seccion" style="max-width:720px"><h2>Ajustes</h2>'+
@@ -3426,6 +3600,7 @@ function pintar(){
   else if(v==='vista-previa')   h = vistaPrevia();
   else if(v==='admin-alumnos')  h = vistaAdminAlumnos();
   else if(v==='admin-pagos')    h = vistaAdminPagos();
+  else if(v==='admin-cupones')  h = vistaAdminCupones();
   else if(v==='admin-ajustes')  h = vistaAdminAjustes();
   else if(v==='mi-perfil')      h = vistaMiPerfil();
   else if(v==='dudas')          h = vistaDudas();
