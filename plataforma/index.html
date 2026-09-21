@@ -472,6 +472,7 @@ tbody tr:hover{background:var(--nube)}
 <script src="cursos/ia-profesiones.js?v=6"></script>
 <script src="cursos/office.js?v=6"></script>
 <script src="cursos/catalogo-2.js?v=7"></script>
+<script src="cursos/catalogo-3.js?v=8"></script>
 <script>
 /* =========================================================================
    INSTITUTO MARA — AULA VIRTUAL
@@ -1506,6 +1507,15 @@ function entrarApp(){
     if(estaInscrito(sesion.id,cid)){ ir('aula',{cursoId:cid}); return; }
     ir('catalogo'); setTimeout(function(){ abrirPago(cid); }, 250); return;
   }
+  if(cuponPendiente() && sesion.rol === 'alumno'){
+    history.replaceState(null,'',location.pathname);
+    ir('catalogo');
+    abrirModal('Tienes un cupón',
+      '<p>Tu cupón <b>'+esc(cuponPendiente())+'</b> ya está guardado. Elige tu curso y presiona «Inscribirme»: '+
+      'el descuento se aplica solo al momento de pagar.</p>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Ver cursos</button>');
+    return;
+  }
   ir(sesion.rol === 'admin' ? 'admin-tablero' : 'mis-cursos');
 }
 
@@ -1789,6 +1799,18 @@ function filtrarIAProfesion(){
    para no dejar al alumno sin opción mientras se activa el cobro en línea. */
 var cuponPago = null;   /* cupón aplicado a la compra que está en pantalla */
 
+/* Cupón compartido por enlace (…/plataforma/?cupon=CODIGO&curso=id). Se guarda
+   por si el alumno primero tiene que crear su cuenta o confirmar su correo. */
+var LLAVE_CUPON = 'institutoMara.cupon';
+(function(){
+  try{
+    var c = new URLSearchParams(location.search).get('cupon');
+    if(c) localStorage.setItem(LLAVE_CUPON, c.trim().toUpperCase());
+  }catch(e){}
+})();
+function cuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON) || ''; }catch(e){ return ''; } }
+function olvidarCuponPendiente(){ try{ localStorage.removeItem(LLAVE_CUPON); }catch(e){} }
+
 function abrirPago(cid){
   var c = curso(cid); if(!c) return;
   var configurado = !!BD.config.edgeFnCrearPreferencia;
@@ -1821,6 +1843,10 @@ function abrirPago(cid){
           : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>'));
 
   abrirModal('Inscripción a "'+esc(c.nombre)+'"', cuerpo, pie);
+
+  /* Si llegó con un cupón en el enlace, se escribe y se aplica solo. */
+  var pend = cuponPendiente();
+  if(pend && $('pg-cupon')){ $('pg-cupon').value = pend; aplicarCupon(cid); }
 }
 
 /* El descuento lo calcula el servidor: aquí solo se muestra el resultado. */
@@ -1836,7 +1862,9 @@ function aplicarCupon(cid){
       cuponPago = null;
       $('pg-precio').textContent = dinero(c.precio);
       var b0 = $('pg-btn'); if(b0) b0.textContent = 'Pagar con Mercado Pago';
-      av.innerHTML = '<div class="aviso aviso-error">'+esc((r && r.motivo) || 'Ese cupón no se pudo aplicar.')+'</div>';
+      av.innerHTML = '<div class="aviso aviso-error">'+esc((r && r.motivo) || 'Ese cupón no se pudo aplicar.')+
+        ' Si quieres pagar sin cupón, borra el código.</div>';
+      olvidarCuponPendiente();
       return;
     }
     var fin = Number(r.precio_final);
@@ -1853,7 +1881,15 @@ function aplicarCupon(cid){
 
 function pagarConMercadoPago(cid){
   var btn = $('pg-btn') || (event && event.target);
-  if(btn) btn.setAttribute('disabled','disabled');
+  var escrito = $('pg-cupon') ? ($('pg-cupon').value || '').trim().toUpperCase() : '';
+  if(escrito && (!cuponPago || cuponPago.codigo !== escrito)){
+    /* Escribió un cupón y no lo aplicó: primero se aplica para que vea el precio real. */
+    aplicarCupon(cid);
+    var av0 = $('pg-aviso');
+    if(av0) setTimeout(function(){ if(cuponPago) av0.innerHTML += '<div class="aviso aviso-info" style="margin-top:8px">Revisa el nuevo precio y vuelve a presionar el botón.</div>'; }, 900);
+    return;
+  }
+  if(btn){ btn.setAttribute('disabled','disabled'); btn.textContent = 'Un momento…'; }
   fetch(BD.config.edgeFnCrearPreferencia, {
     method:'POST', headers:{'Content-Type':'application/json',
       'Authorization':'Bearer '+BD.config.supabaseAnonKey, 'apikey':BD.config.supabaseAnonKey},
@@ -1865,18 +1901,27 @@ function pagarConMercadoPago(cid){
   .then(function(d){
     /* Cupón que cubre el curso completo: el servidor ya inscribió al alumno. */
     if(d && d.gratis){
+      olvidarCuponPendiente();
       Nube.refrescarInscripciones(BD, sesion.id).then(function(){
         guardar(); cerrarModal(); ir('aula',{cursoId:cid});
       });
       return;
     }
+    /* Candado extra: si el cupón cubría todo el curso, nunca se manda a cobrar. */
+    if(cuponPago && cuponPago.precio <= 0 && d && d.init_point){
+      if(btn){ btn.removeAttribute('disabled'); btn.textContent = 'Obtener mi acceso'; }
+      var avx = $('pg-aviso');
+      if(avx) avx.innerHTML = '<div class="aviso aviso-error">No se pudo aplicar tu cupón en este momento. '+
+        'No te vamos a cobrar: escríbenos por WhatsApp y te damos el acceso.</div>';
+      return;
+    }
     if(d && d.init_point){ location.href = d.init_point; return; }
-    if(btn) btn.removeAttribute('disabled');
+    if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Pagar con Mercado Pago'; }
     var av = $('pg-aviso');
     var msg = (d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.';
     if(av) av.innerHTML = '<div class="aviso aviso-error">'+esc(msg)+'</div>'; else alert(msg);
   })
-  .catch(function(){ if(btn) btn.removeAttribute('disabled');
+  .catch(function(){ if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Pagar con Mercado Pago'; }
     alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
 }
 
@@ -3396,8 +3441,12 @@ function textoDescuento(c){
   return c.tipo === 'porcentaje' ? (Number(c.valor)+'%') : dinero(c.valor);
 }
 
+var CUPONES = [];   /* última lista cargada (para editar y compartir) */
+function cuponPorCodigo(cod){ for(var i=0;i<CUPONES.length;i++) if(CUPONES[i].codigo===cod) return CUPONES[i]; return null; }
+
 function pintarCupones(filas){
   var caja = $('cup-lista'); if(!caja) return;
+  CUPONES = filas;
   if(!filas.length){
     caja.innerHTML = '<div class="tarjeta"><p class="vacio">Todavía no hay cupones. '+
       'Crea uno con el botón de arriba: sirve para descuentos de porcentaje, de monto fijo '+
@@ -3410,6 +3459,7 @@ function pintarCupones(filas){
   for(var i=0;i<filas.length;i++){
     var c = filas[i];
     var cur = c.curso_id ? (curso(c.curso_id) ? curso(c.curso_id).nombre : c.curso_id) : 'Todos los cursos';
+    var cod = esc(c.codigo).replace(/'/g,'&#39;');
     h += '<tr><td><b>'+esc(c.codigo)+'</b>'+(c.descripcion ? '<br><span style="color:var(--gris);font-size:.82rem">'+esc(c.descripcion)+'</span>' : '')+'</td>'+
       '<td>'+textoDescuento(c)+'</td>'+
       '<td>'+esc(cur)+'</td>'+
@@ -3417,55 +3467,122 @@ function pintarCupones(filas){
       '<td>'+(c.vence ? fechaLarga(c.vence) : 'Sin vencimiento')+'</td>'+
       '<td>'+(c.activo ? '<span style="color:#047857">Activo</span>' : '<span style="color:var(--gris)">Apagado</span>')+'</td>'+
       '<td style="white-space:nowrap">'+
-        '<button class="btn btn-linea btn-sm" onclick="alternarCupon(\''+esc(c.codigo)+'\','+(c.activo?'false':'true')+')">'+
+        '<button class="btn btn-mor btn-sm" onclick="compartirCupon(\''+cod+'\')">Compartir</button> '+
+        '<button class="btn btn-linea btn-sm" onclick="formCupon(\''+cod+'\')">Editar</button> '+
+        '<button class="btn btn-linea btn-sm" onclick="alternarCupon(\''+cod+'\','+(c.activo?'false':'true')+')">'+
           (c.activo ? 'Apagar' : 'Encender')+'</button> '+
-        '<button class="mini rojo" title="Eliminar" onclick="borrarCupon(\''+esc(c.codigo)+'\')">✕</button>'+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarCupon(\''+cod+'\')">✕</button>'+
       '</td></tr>';
   }
   caja.innerHTML = h + '</tbody></table></div>';
 }
 
-function nuevoCupon(){
+function nuevoCupon(){ formCupon(null); }
+
+/* Un solo formulario para crear y para editar. Al editar, el código no cambia
+   (es lo que el alumno ya tiene en la mano) y los usos ya hechos se conservan. */
+function formCupon(codigo){
+  var c = codigo ? cuponPorCodigo(codigo) : null;
   var ops = '<option value="">Todos los cursos</option>';
   var lista = BD.cursos.slice().sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
   for(var i=0;i<lista.length;i++)
-    ops += '<option value="'+lista[i].id+'">'+esc(lista[i].nombre)+'</option>';
+    ops += '<option value="'+lista[i].id+'"'+(c && c.curso_id===lista[i].id ? ' selected' : '')+'>'+esc(lista[i].nombre)+'</option>';
+  var v = function(x){ return x == null ? '' : esc(String(x)); };
 
-  abrirModal('Nuevo cupón',
+  abrirModal(c ? 'Editar cupón '+esc(c.codigo) : 'Nuevo cupón',
     '<div class="fila"><div class="campo"><label>Código</label>'+
-    '<input id="cu-cod" placeholder="BIENVENIDA20" style="text-transform:uppercase"></div>'+
+    (c ? '<input id="cu-cod" value="'+v(c.codigo)+'" disabled>'
+       : '<input id="cu-cod" placeholder="BIENVENIDA20" style="text-transform:uppercase">')+'</div>'+
     '<div class="campo"><label>Descripción (la ve el alumno)</label>'+
-    '<input id="cu-desc" placeholder="20% de bienvenida"></div></div>'+
+    '<input id="cu-desc" placeholder="20% de bienvenida" value="'+v(c && c.descripcion)+'"></div></div>'+
     '<div class="fila"><div class="campo"><label>Tipo de descuento</label>'+
-    '<select id="cu-tipo"><option value="porcentaje">Porcentaje</option><option value="monto">Monto fijo en pesos</option></select></div>'+
-    '<div class="campo"><label>Valor</label><input type="number" id="cu-val" min="1" placeholder="20"></div></div>'+
+    '<select id="cu-tipo"><option value="porcentaje">Porcentaje</option><option value="monto"'+(c && c.tipo==='monto' ? ' selected' : '')+'>Monto fijo en pesos</option></select></div>'+
+    '<div class="campo"><label>Valor</label><input type="number" id="cu-val" min="1" placeholder="20" value="'+v(c && c.valor)+'"></div></div>'+
     '<div class="campo"><label>Curso al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
     '<div class="fila"><div class="campo"><label>Usos máximos (vacío = sin límite)</label>'+
-    '<input type="number" id="cu-max" min="1" placeholder="50"></div>'+
-    '<div class="campo"><label>Vence el (opcional)</label><input type="date" id="cu-vence"></div></div>'+
+    '<input type="number" id="cu-max" min="1" placeholder="50" value="'+v(c && c.usos_max)+'"></div>'+
+    '<div class="campo"><label>Vence el (opcional)</label><input type="date" id="cu-vence" value="'+v(c && c.vence)+'"></div></div>'+
+    (c ? '<div class="aviso aviso-info" style="margin:0 0 10px">Lleva <b>'+c.usos+'</b> uso(s). '+
+         (c.usos_max && c.usos >= c.usos_max ? 'Ya llegó a su límite: sube los usos máximos para que vuelva a funcionar. ' : '')+
+         'Los alumnos que ya lo usaron conservan su acceso.</div>' : '')+
     '<div class="aviso aviso-info" style="margin:0">Para regalar un curso completo usa <b>Porcentaje</b> con valor <b>100</b>: '+
     'el alumno no pasa por Mercado Pago, entra directo.</div>',
     '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
-    '<button class="btn btn-mor" onclick="guardarCuponNuevo()">Crear cupón</button>');
+    '<button class="btn btn-mor" onclick="guardarCupon('+(c ? 'true' : 'false')+')">'+(c ? 'Guardar cambios' : 'Crear cupón')+'</button>');
 }
 
-function guardarCuponNuevo(){
+function guardarCupon(editando){
   var cod = ($('cu-cod').value||'').trim().toUpperCase();
   var val = Number($('cu-val').value);
   if(!cod){ $('cu-cod').focus(); return; }
+  if(!/^[A-Z0-9_-]{3,30}$/.test(cod)){ alert('El código solo puede llevar letras sin acento, números, guion y guion bajo (3 a 30 caracteres).'); return; }
   if(!val || val <= 0){ $('cu-val').focus(); return; }
   if($('cu-tipo').value === 'porcentaje' && val > 100){ alert('Un porcentaje no puede pasar de 100.'); return; }
+  if(!editando && cuponPorCodigo(cod)){ alert('Ya existe un cupón con ese código. Usa «Editar» para cambiarlo.'); return; }
 
-  Nube.guardarCupon({
-    codigo: cod, descripcion: ($('cu-desc').value||'').trim(),
-    tipo: $('cu-tipo').value, valor: val, cursoId: $('cu-curso').value || null,
-    usosMax: $('cu-max').value ? Number($('cu-max').value) : null,
-    vence: $('cu-vence').value || null, activo: true
-  }).then(function(){
-    cerrarModal(); pintar();
+  var datos = {
+    descripcion: ($('cu-desc').value||'').trim() || null,
+    tipo: $('cu-tipo').value, valor: val, curso_id: $('cu-curso').value || null,
+    usos_max: $('cu-max').value ? Number($('cu-max').value) : null,
+    vence: $('cu-vence').value || null
+  };
+  var accion = editando
+    ? Nube.cambiarCupon(cod, datos)
+    : Nube.guardarCupon({ codigo: cod, descripcion: datos.descripcion, tipo: datos.tipo, valor: val,
+        cursoId: datos.curso_id, usosMax: datos.usos_max, vence: datos.vence, activo: true });
+  accion.then(function(){
+    cerrarModal();
+    if(editando){ cargarCupones(); } else { pintar(); setTimeout(function(){ compartirCupon(cod); }, 600); }
   }).catch(function(e){
-    alert('No se pudo crear el cupón: '+e.message);
+    alert('No se pudo guardar el cupón: '+e.message);
   });
+}
+
+/* Mensaje listo para mandar por WhatsApp, correo o cualquier app. El enlace
+   abre el aula con el código ya puesto (y con el curso, si el cupón es de uno). */
+function mensajeCupon(c){
+  var base = location.origin + location.pathname;   /* la dirección del aula donde está el admin */
+  var enlace = base + '?cupon=' + encodeURIComponent(c.codigo) + (c.curso_id ? '&curso=' + encodeURIComponent(c.curso_id) : '');
+  var cur = c.curso_id && curso(c.curso_id) ? curso(c.curso_id) : null;
+  var que = (c.tipo === 'porcentaje' && Number(c.valor) >= 100)
+    ? (cur ? 'el curso «'+cur.nombre+'» sin costo' : 'un curso sin costo')
+    : textoDescuento(c) + ' de descuento en ' + (cur ? '«'+cur.nombre+'»' : 'el curso que elijas');
+  return 'Hola. Te comparto un cupón de Instituto Mara para ' + que + '.\n\n' +
+    'Código: ' + c.codigo + '\n' +
+    (c.vence ? 'Válido hasta el ' + fechaLarga(c.vence) + '.\n' : '') +
+    (c.usos_max ? 'Cupo limitado.\n' : '') +
+    '\nEntra aquí, crea tu cuenta y el cupón se aplica solo:\n' + enlace;
+}
+
+function compartirCupon(codigo){
+  var c = cuponPorCodigo(codigo);
+  if(!c){ cargarCupones(); return; }
+  var msg = mensajeCupon(c);
+  abrirModal('Compartir cupón '+esc(c.codigo),
+    (c.activo ? '' : '<div class="aviso aviso-error">Este cupón está apagado: enciéndelo antes de mandarlo.</div>')+
+    '<p style="color:var(--gris);margin-bottom:8px">Puedes cambiar el mensaje antes de mandarlo.</p>'+
+    '<textarea id="cu-msg" rows="9" style="width:100%;font:inherit">'+esc(msg)+'</textarea>'+
+    '<div class="campo" style="margin-top:10px"><label for="cu-tel">WhatsApp de la persona (opcional, 10 dígitos)</label>'+
+    '<input id="cu-tel" inputmode="tel" placeholder="4771234567"></div>'+
+    '<div id="cu-ok"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>'+
+    '<button class="btn btn-linea" onclick="copiarCupon()">Copiar</button>'+
+    (navigator.share ? '<button class="btn btn-linea" onclick="compartirCuponNativo()">Más apps</button>' : '')+
+    '<button class="btn btn-tur" onclick="cuponWhatsApp()">WhatsApp</button>');
+}
+function copiarCupon(){
+  var t = $('cu-msg').value;
+  var listo = function(){ $('cu-ok').innerHTML = '<div class="aviso aviso-ok" style="margin-top:8px">Copiado. Pégalo donde quieras.</div>'; };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(listo, function(){ $('cu-msg').select(); document.execCommand('copy'); listo(); });
+  else { $('cu-msg').select(); document.execCommand('copy'); listo(); }
+}
+function compartirCuponNativo(){
+  navigator.share({ title:'Cupón Instituto Mara', text: $('cu-msg').value }).catch(function(){});
+}
+function cuponWhatsApp(){
+  var tel = ($('cu-tel').value || '').replace(/\D/g,'');
+  if(tel.length === 10) tel = '52' + tel;
+  window.open('https://wa.me/' + tel + '?text=' + encodeURIComponent($('cu-msg').value), '_blank');
 }
 
 function alternarCupon(codigo, activo){
