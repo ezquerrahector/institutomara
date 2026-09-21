@@ -78,6 +78,10 @@ begin
     return query select false, 'Ese cupón no aplica a este curso.', p, 0::numeric, p;
     return;
   end if;
+  if c.curso_id is null and p_curso_id like 'r-%' then
+    return query select false, 'Las rutas ya tienen precio especial; este cupón es para programas individuales.', p, 0::numeric, p;
+    return;
+  end if;
 
   d := case when c.tipo = 'porcentaje'
             then round(p * least(c.valor, 100) / 100, 2)
