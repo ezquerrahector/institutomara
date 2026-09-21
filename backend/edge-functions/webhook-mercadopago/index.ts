@@ -92,22 +92,21 @@ serve(async (req) => {
     const esperado = (cupon && conCupon > 0) ? conCupon : deCatalogo;
     const montoSuficiente = esperado == null ? true : monto + 0.5 >= esperado;
 
-    // 3) Registrar el pago (evita duplicados si Mercado Pago reintenta el webhook).
-    const { data: existente } = await supabase
-      .from("pagos").select("id").eq("referencia_mp", String(pago.id)).maybeSingle();
-
-    if (!existente) {
-      await supabase.from("pagos").insert({
-        usuario_id: usuarioId,
-        curso_id: cursoId,
-        monto,
-        medio: "Mercado Pago",
-        referencia_mp: String(pago.id),
-        nota: montoSuficiente
-          ? "Pago automático vía Checkout Pro"
-          : `REVISAR: pagó ${monto} y el curso cuesta ${esperado}. No se dio acceso.`,
-      });
-    }
+    // 3) Registrar el pago una sola vez. Mercado Pago a veces manda dos avisos
+    //    del mismo pago casi al mismo tiempo; la referencia es única en la
+    //    tabla, así que el segundo aviso simplemente no inserta nada.
+    const { data: insertado, error: errPago } = await supabase.from("pagos").upsert({
+      usuario_id: usuarioId,
+      curso_id: cursoId,
+      monto,
+      medio: "Mercado Pago",
+      referencia_mp: String(pago.id),
+      nota: montoSuficiente
+        ? "Pago automático vía Checkout Pro"
+        : `REVISAR: pagó ${monto} y el curso cuesta ${esperado}. No se dio acceso.`,
+    }, { onConflict: "referencia_mp", ignoreDuplicates: true }).select("id");
+    if (errPago) console.error("No se pudo registrar el pago", pago.id, errPago.message);
+    const primeraVez = !errPago && Array.isArray(insertado) && insertado.length > 0;
 
     if (!montoSuficiente) {
       console.error("Monto menor al precio", { cursoId, usuarioId, monto, esperado });
@@ -121,7 +120,7 @@ serve(async (req) => {
     );
 
     // 5) Si se usó un cupón, contarle el uso (una sola vez por pago).
-    if (cupon && !existente) {
+    if (cupon && primeraVez) {
       const { error } = await supabase.rpc("canjear_cupon", {
         p_codigo: cupon, p_curso_id: cursoId, p_usuario: usuarioId,
       });
