@@ -132,6 +132,15 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit
 .curso-tapa{height:110px;display:grid;place-items:center;position:relative}
 .curso-tapa svg{opacity:.95}
 .curso-cuerpo{padding:20px;display:flex;flex-direction:column;flex:1}
+.ruta-card{border-color:var(--lila,#C4B5FD)}
+.ruta-lista{margin:4px 0 8px 18px;color:var(--tinta);font-size:.92rem;line-height:1.6}
+/* Lección de muestra (sin cuenta) */
+.muestra-barra{background:linear-gradient(135deg,var(--tinta),var(--morado));color:#fff;padding:12px 0}
+.muestra-barra .contenedor{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.muestra-barra b{font-size:1rem} .muestra-barra span{color:#DDD6FE;font-size:.88rem}
+.muestra-cta{margin-top:30px;padding:22px;border-radius:var(--r-lg);background:var(--lavanda,#EDE9FE);text-align:center}
+.muestra-cta h3{color:var(--tinta);margin-bottom:6px}
+.muestra-cta .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .curso-cuerpo h3{font-size:1.12rem;font-weight:700;color:var(--tinta);margin-bottom:6px;letter-spacing:-.3px}
 .curso-cuerpo p{font-size:.9rem;color:var(--gris);flex:1;margin-bottom:16px}
 .etiqueta{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
@@ -465,7 +474,7 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=7"></script>
+<script src="nube.js?v=8"></script>
 <script src="interactivo.js?v=7"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
@@ -473,6 +482,8 @@ tbody tr:hover{background:var(--nube)}
 <script src="cursos/office.js?v=6"></script>
 <script src="cursos/catalogo-2.js?v=7"></script>
 <script src="cursos/catalogo-3.js?v=8"></script>
+<script src="cursos/catalogo-4.js?v=9"></script>
+<script src="cursos/rutas.js?v=1"></script>
 <script>
 /* =========================================================================
    INSTITUTO MARA — AULA VIRTUAL
@@ -1502,6 +1513,12 @@ function entrarApp(){
       '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
   }
   /* Llegó desde el sitio público con un curso en mente */
+  if(cid && ruta(cid) && sesion.rol === 'alumno'){
+    history.replaceState(null,'',location.pathname);
+    ir('catalogo');
+    if(!rutaCompleta(ruta(cid))) setTimeout(function(){ abrirPago(cid); }, 250);
+    return;
+  }
   if(cid && curso(cid) && sesion.rol === 'alumno'){
     history.replaceState(null,'',location.pathname);
     if(estaInscrito(sesion.id,cid)){ ir('aula',{cursoId:cid}); return; }
@@ -1523,7 +1540,7 @@ function entrarApp(){
    Aquí se consulta cada pocos segundos hasta que aparece (suele tardar 2 a 10
    segundos con tarjeta). */
 function esperarAcceso(cid){
-  var c = curso(cid), intentos = 0;
+  var c = programa(cid), intentos = 0;
   ir('mis-cursos');
   abrirModal('Activando tu acceso',
     '<p>Ya recibimos tu pago'+(c ? ' de <b>'+esc(c.nombre)+'</b>' : '')+'. Estamos activando tu acceso, '+
@@ -1536,7 +1553,7 @@ function esperarAcceso(cid){
       guardar();
       if(estaInscrito(sesion.id, cid)){
         cerrarModal();
-        ir('aula', {cursoId:cid});
+        ir(curso(cid) ? 'aula' : 'mis-cursos', {cursoId:cid});
         return;
       }
       if(intentos >= 12){
@@ -1660,6 +1677,36 @@ function agruparCursos(lista){
   return out;
 }
 
+/* ---------------- Rutas de aprendizaje (paquetes) ----------------
+   Una ruta se compra como un programa más (id r-…); al confirmarse el pago,
+   el servidor inscribe al alumno en cada programa que incluye. */
+function ruta(id){
+  var R = window.RUTAS_MARA || [];
+  for(var i=0;i<R.length;i++) if(R[i].id === id) return R[i];
+  return null;
+}
+function programa(id){ return curso(id) || ruta(id); }
+function rutaCompleta(r){
+  for(var i=0;i<r.cursos.length;i++) if(!estaInscrito(sesion.id, r.cursos[i])) return false;
+  return true;
+}
+function tarjetaRuta(r){
+  var nombres = r.cursos.map(function(id){ var c = curso(id); return c ? c.nombre : id; });
+  var suma = r.cursos.reduce(function(a,id){ var c = curso(id); return a + (c ? Number(c.precio) : 0); }, 0);
+  var tiene = rutaCompleta(r);
+  return '<article class="curso-card ruta-card"><div class="curso-cuerpo">'+
+    '<span class="etiqueta tur">Ruta · '+r.cursos.length+' programas · '+r.horas+' horas</span>'+
+    '<h3 style="margin-top:10px">'+esc(r.nombre)+'</h3><p>'+esc(r.para)+'</p>'+
+    '<ul class="ruta-lista">'+nombres.map(function(n){ return '<li>'+esc(n)+'</li>'; }).join('')+'</ul>'+
+    '<div style="margin:6px 0 14px"><s style="color:var(--gris)">'+dinero(suma)+'</s> '+
+      '<span style="font-size:1.35rem;font-weight:800;color:var(--tinta)">'+dinero(r.precio)+'</span>'+
+      (suma > r.precio ? ' <span class="etiqueta ok">Ahorras '+dinero(suma - r.precio)+'</span>' : '')+'</div>'+
+    (tiene
+      ? '<button class="btn btn-linea" style="width:100%" onclick="ir(\'mis-cursos\')">Ya tienes estos programas</button>'
+      : '<button class="btn btn-mor" style="width:100%" onclick="abrirPago(\''+r.id+'\')">Comprar la ruta</button>')+
+    '</div></article>';
+}
+
 function tarjetaCurso(c){
   var yaEsta = estaInscrito(sesion.id,c.id);
   if(c.proximamente){
@@ -1686,6 +1733,12 @@ function vistaCatalogo(){
   for(var i=0;i<BD.cursos.length;i++){
     if(BD.cursos[i].publicado) publicados.push(BD.cursos[i]);
     else if(BD.cursos[i].proximamente && !BD.cursos[i].iaPorProfesion) proximos.push(BD.cursos[i]);
+  }
+  var rutas = (window.RUTAS_MARA || []).filter(function(r){ return r.publicado !== false; });
+  if(rutas.length){
+    h += '<h3 style="margin:26px 0 4px;color:var(--tinta)">Rutas de aprendizaje</h3>'+
+      '<p class="sub" style="margin-bottom:12px">Varios programas que se complementan, con precio especial por llevarlos juntos.</p>'+
+      '<div class="rejilla rejilla-3">'+rutas.map(tarjetaRuta).join('')+'</div>';
   }
   var grupos = agruparCursos(publicados);
   for(var g=0;g<grupos.length;g++){
@@ -1720,6 +1773,8 @@ function vistaCatalogo(){
 }
 
 function inscribirme(cid){
+  var r = ruta(cid);
+  if(r && !NUBE){ r.cursos.forEach(function(id){ if(!estaInscrito(sesion.id,id)) inscribirme(id); }); return; }
   var c = curso(cid);
   if(NUBE){
     /* Los cursos de paga se inscriben pagando: el servidor no acepta que el
@@ -1812,13 +1867,18 @@ function cuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON) || ''; 
 function olvidarCuponPendiente(){ try{ localStorage.removeItem(LLAVE_CUPON); }catch(e){} }
 
 function abrirPago(cid){
-  var c = curso(cid); if(!c) return;
+  var c = programa(cid); if(!c) return;
+  var esRuta = !curso(cid);
   var configurado = !!BD.config.edgeFnCrearPreferencia;
   cuponPago = null;
 
   var cuerpo =
     '<p style="color:var(--gris);margin-bottom:14px">Precio: <b id="pg-precio" style="color:var(--tinta)">'+
       dinero(c.precio)+'</b> · '+c.horas+' horas</p>';
+  if(esRuta){
+    cuerpo += '<p style="margin-bottom:6px">Incluye:</p><ul class="ruta-lista" style="margin-bottom:14px">'+
+      c.cursos.map(function(id){ var x = curso(id); return '<li>'+esc(x ? x.nombre : id)+'</li>'; }).join('')+'</ul>';
+  }
 
   if(configurado && NUBE){
     cuerpo +=
@@ -1857,7 +1917,7 @@ function aplicarCupon(cid){
   av.innerHTML = '<div class="aviso aviso-info">Revisando tu cupón…</div>';
 
   Nube.validarCupon(codigo, cid).then(function(r){
-    var c = curso(cid);
+    var c = programa(cid);
     if(!r || !r.valido){
       cuponPago = null;
       $('pg-precio').textContent = dinero(c.precio);
@@ -1903,7 +1963,7 @@ function pagarConMercadoPago(cid){
     if(d && d.gratis){
       olvidarCuponPendiente();
       Nube.refrescarInscripciones(BD, sesion.id).then(function(){
-        guardar(); cerrarModal(); ir('aula',{cursoId:cid});
+        guardar(); cerrarModal(); ir(curso(cid) ? 'aula' : 'mis-cursos', {cursoId:cid});
       });
       return;
     }
@@ -3737,8 +3797,60 @@ function pintar(){
   $('vista').innerHTML = h;
 }
 
+/* ---------------- Lección de muestra (sin cuenta) ----------------
+   …/plataforma/?muestra=ID abre la primera lección del programa para que
+   cualquiera la pruebe antes de comprar. No guarda nada ni necesita sesión. */
+function vistaMuestra(cid){
+  var c = curso(cid);
+  if(!c || !c.publicado || !c.modulos.length || !c.modulos[0].lecciones.length) return null;
+  var m = c.modulos[0], lec = c.muestra ? null : m.lecciones[0];
+  if(c.muestra) c.modulos.forEach(function(mm){ mm.lecciones.forEach(function(l){ if(l.id === c.muestra){ m = mm; lec = l; } }); });
+  if(!lec) lec = m.lecciones[0];
+  var total = c.modulos.reduce(function(a,mm){ return a + mm.lecciones.length; }, 0);
+  var sitio = '../sitio-web/index.html#programa-' + encodeURIComponent(c.id);
+  var comprar = 'index.html?curso=' + encodeURIComponent(c.id);
+  var h = '<div class="muestra-barra"><div class="contenedor"><div><b>Instituto Mara</b> · <span>Lección de muestra gratuita</span></div>'+
+    '<a class="btn btn-sm" style="background:#fff;color:var(--morado)" href="'+comprar+'">Inscribirme · '+dinero(c.precio)+'</a></div></div>'+
+    '<main class="contenedor"><div class="seccion"><div class="lector">'+
+    '<div class="lector-cab"><a class="btn btn-fantasma btn-sm" href="'+sitio+'">← Ver temario completo</a>'+
+    '<span class="etiqueta">'+esc(c.nombre)+'</span><span class="etiqueta tur">Gratis</span></div>'+
+    '<h1>'+esc(lec.titulo)+'</h1>';
+  if(window.MI){
+    var nEj = MI.contarEjercicios(lec);
+    h += '<div class="lec-meta"><span>⏱ '+MI.minutos(lec)+' min aprox.</span>'+
+      (nEj ? '<span>✎ '+nEj+' ejercicio'+(nEj>1?'s':'')+' interactivo'+(nEj>1?'s':'')+'</span>' : '')+
+      '<span>'+esc(m.titulo)+'</span></div>';
+  }
+  if(lec.objetivo) h += '<div class="lec-obj"><b>Al terminar esta lección vas a poder:</b> '+lec.objetivo+'</div>';
+  for(var i=0;i<lec.bloques.length;i++) h += pintarBloque(lec.bloques[i], i);
+  h += '<div class="muestra-cta"><h3>¿Te gustó? Así son las '+total+' lecciones del programa.</h3>'+
+    '<p style="color:var(--gris)">'+c.modulos.length+' módulos, evaluación en cada uno y constancia con folio al terminar. '+
+    'Pago único de '+dinero(c.precio)+' con acceso por 12 meses.</p>'+
+    '<div class="btns"><a class="btn btn-mor" href="'+comprar+'">Inscribirme</a>'+
+    '<a class="btn btn-linea" href="'+sitio+'">Ver temario completo</a></div></div>'+
+    '</div></div></main>';
+  return h;
+}
+function abrirMuestra(cid){
+  var h = vistaMuestra(cid);
+  if(!h) return false;
+  estado.vista = 'muestra';
+  $('pantallaLogin').classList.add('oculto');
+  $('app').classList.add('oculto');
+  var d = document.createElement('div'); d.id = 'muestra'; d.innerHTML = h;
+  document.body.appendChild(d);
+  document.title = 'Lección gratis · ' + curso(cid).nombre + ' — Instituto Mara';
+  return true;
+}
+
 /* ---------------- Arranque: mantener sesión iniciada ---------------- */
 (function(){
+  var pMuestra = new URLSearchParams(location.search).get('muestra');
+  if(pMuestra && abrirMuestra(pMuestra)){
+    if(NUBE) Nube.cargarCatalogo(BD).then(function(){ var el = $('muestra'); var h = vistaMuestra(pMuestra); if(el && h && !el.dataset.tocado) el.innerHTML = h; });
+    document.addEventListener('click', function(){ var el = $('muestra'); if(el) el.dataset.tocado = '1'; }, { once:true });
+    return;
+  }
   if(NUBE){
     /* Precios y estado de los cursos desde el servidor, en todos los
        dispositivos. Si el aula ya está abierta, se vuelve a pintar. */

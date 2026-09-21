@@ -397,6 +397,13 @@ var Nube = {
             c.proximamente = !!f.proximamente;
             n++;
           }
+          /* Rutas de aprendizaje (paquetes): precio y estado también del servidor */
+          var R = window.RUTAS_MARA || [];
+          for(var k=0;k<R.length;k++){
+            if(R[k].id !== f.id) continue;
+            if(f.precio != null) R[k].precio = Number(f.precio);
+            R[k].publicado = !!f.publicado;
+          }
         }
         return n;
       }).catch(function(){ return 0; });
