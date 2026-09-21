@@ -433,6 +433,10 @@ var Nube = {
                               medio:p.medio || 'Manual', nota:p.nota || '', fecha:p.fecha }]);
   },
 
+  borrarPago: function(id){
+    return rest('pagos?id=eq.' + encodeURIComponent(id), { metodo:'DELETE', prefer:'return=minimal' });
+  },
+
   responderDuda: function(id, respuesta){
     return rest('dudas?id=eq.' + id, { metodo:'PATCH',
       cuerpo:{ respuesta: respuesta, estatus:'respondida', fecha_respuesta: new Date().toISOString() },

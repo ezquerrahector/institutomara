@@ -3352,8 +3352,18 @@ function guardarPago(){
 }
 function borrarPago(pid){
   if(!confirm('¿Eliminar este movimiento?')) return;
-  for(var i=BD.pagos.length-1;i>=0;i--) if(BD.pagos[i].id===pid) BD.pagos.splice(i,1);
-  guardar(); pintar();
+  var quitar = function(){
+    for(var i=BD.pagos.length-1;i>=0;i--) if(BD.pagos[i].id===pid) BD.pagos.splice(i,1);
+    guardar(); pintar();
+  };
+  /* Con la nube, se borra primero en el servidor; si falla, no se toca nada aquí. */
+  if(NUBE){
+    Nube.borrarPago(pid).then(quitar).catch(function(e){
+      alert('No se pudo eliminar en el servidor: '+e.message);
+    });
+    return;
+  }
+  quitar();
 }
 
 /* ------- Cupones de descuento (admin) ------- */
