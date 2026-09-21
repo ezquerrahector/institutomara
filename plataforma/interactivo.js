@@ -531,68 +531,142 @@ MI.nota = function(id, v){
 
 /* ---- excel (hoja de cálculo de práctica) ----
    b.datos: matriz de filas; la primera fila son encabezados de columna (texto).
-   b.retos: [{celda:'B7', esperado:150, pista, explica}] — el alumno escribe una fórmula en esa celda.
-   Fórmulas admitidas: + - * / ^ ( ), referencias (B2), rangos (B2:B6) y las funciones
-   SUMA/SUM, PROMEDIO/AVERAGE, MIN, MAX, CONTAR/COUNT, REDONDEAR/ROUND, SI/IF.            */
+   b.retos: [{celda:'B7', esperado:150 | 'texto', formula, requiere, pista, explica}]
+   Fórmulas admitidas: + - * / ^ & ( ), comparaciones, referencias (B2, $B$2), rangos (B2:B6), textos
+   entre comillas y estas funciones (en español o inglés):
+     SUMA SUM · PROMEDIO AVERAGE · MIN · MAX · CONTAR COUNT · CONTARA COUNTA · REDONDEAR ROUND
+     ENTERO INT · ABS · SI IF · Y AND · O OR · NO NOT · SI.ERROR IFERROR
+     SUMAR.SI SUMIF · CONTAR.SI COUNTIF · PROMEDIO.SI AVERAGEIF
+     SUMAR.SI.CONJUNTO SUMIFS · CONTAR.SI.CONJUNTO COUNTIFS
+     BUSCARV VLOOKUP · BUSCARX XLOOKUP · INDICE INDEX · COINCIDIR MATCH
+     CONCATENAR CONCAT · IZQUIERDA LEFT · DERECHA RIGHT · EXTRAE MID · LARGO LEN
+     MAYUSC UPPER · MINUSC LOWER · ESPACIOS TRIM
+   VERDADERO/FALSO (TRUE/FALSE) valen 1/0.                                                   */
 function colNum(L){ var n=0; for(var i=0;i<L.length;i++) n = n*26 + (L.charCodeAt(i)-64); return n-1; }
 function colLetra(n){ var s=''; n++; while(n>0){ var m=(n-1)%26; s=String.fromCharCode(65+m)+s; n=Math.floor((n-1)/26); } return s; }
 function parsearCelda(ref){ var m = /^([A-Z]+)(\d+)$/.exec(ref); return m ? { c:colNum(m[1]), f:parseInt(m[2],10)-1 } : null; }
+var XL_NA = { error:'#N/A' };
+function xlNum(v){ if(typeof v === 'number') return v; if(v === '' || v == null) return NaN; return parseFloat(String(v).replace(/[$,\s]/g,'')); }
+function xlEsNum(v){ return typeof v === 'number' || (v !== '' && v != null && !isNaN(xlNum(v)) && /^[\s$\-+]*[\d.,]+\s*$/.test(String(v))); }
+function xlIgual(a, b){
+  if(xlEsNum(a) && xlEsNum(b)) return Math.abs(xlNum(a) - xlNum(b)) < 1e-9;
+  return String(a == null ? '' : a).trim().toUpperCase() === String(b == null ? '' : b).trim().toUpperCase();
+}
 MI.evaluarFormula = function(formula, hoja){
   var f = String(formula).trim();
   if(f.charAt(0) !== '=') throw new Error('La fórmula debe empezar con el signo =');
-  f = f.slice(1).toUpperCase().replace(/;/g, ',').replace(/\s+/g,'')
-       .replace(/\$?([A-Z]{1,2})\$?(\d+)/g, '$1$2');   /* $E$2 (referencia absoluta) se evalúa igual que E2 */
+  f = f.slice(1);
+  var partes = f.split('"');
+  if(partes.length % 2 === 0) throw new Error('Te falta cerrar unas comillas');
+
   function valor(ref){
     var p = parsearCelda(ref); if(!p) throw new Error('No entiendo la celda '+ref);
     var fila = hoja[p.f]; var v = fila ? fila[p.c] : undefined;
     if(v === '' || v == null) return 0;
     if(typeof v === 'number') return v;
-    var n = parseFloat(String(v).replace(/[$,\s]/g,''));
-    if(isNaN(n)) throw new Error('La celda '+ref+' tiene texto, no un número');
-    return n;
+    return xlEsNum(v) ? xlNum(v) : String(v);
   }
   function rango(a, b){
     var p = parsearCelda(a), q = parsearCelda(b), out = []; out.todos = [];
-    for(var r=Math.min(p.f,q.f); r<=Math.max(p.f,q.f); r++)
-      for(var c=Math.min(p.c,q.c); c<=Math.max(p.c,q.c); c++){
+    var f0 = Math.min(p.f,q.f), f1 = Math.max(p.f,q.f), c0 = Math.min(p.c,q.c), c1 = Math.max(p.c,q.c);
+    out.nf = f1 - f0 + 1; out.nc = c1 - c0 + 1;
+    for(var r=f0; r<=f1; r++)
+      for(var c=c0; c<=c1; c++){
         var v = hoja[r] ? hoja[r][c] : undefined;
         out.todos.push(v == null ? '' : v);
         if(typeof v === 'number') out.push(v);
-        else if(v !== '' && v != null && !isNaN(parseFloat(String(v).replace(/[$,\s]/g,'')))) out.push(parseFloat(String(v).replace(/[$,\s]/g,'')));
+        else if(xlEsNum(v)) out.push(xlNum(v));
       }
+    out.celda = function(fi, ci){ if(fi < 0 || ci < 0 || fi >= out.nf || ci >= out.nc) return XL_NA; var v = out.todos[fi*out.nc + ci]; return xlEsNum(v) ? xlNum(v) : v; };
     return out;
   }
-  var nombres = { 'SUMA':'S','SUM':'S','PROMEDIO':'P','AVERAGE':'P','MIN':'MN','MAX':'MX','CONTAR':'C','COUNT':'C','REDONDEAR':'R','ROUND':'R','SI':'IF_','IF':'IF_','SUMAR.SI':'SSI','SUMIF':'SSI','CONTAR.SI':'CSI','COUNTIF':'CSI' };
-  var js = f.replace(/([A-ZÁÉÍÓÚÑ.]+)\(/g, function(_,n){ if(!nombres[n]) throw new Error('Excel no reconoce la función '+n+' (#¿NOMBRE?)'); return nombres[n]+'('; })
-            .replace(/([A-Z]+\d+):([A-Z]+\d+)/g, function(_,a,b){ return 'RG("'+a+'","'+b+'")'; })
-            .replace(/(^|[^"A-Z_])([A-Z]{1,2}\d+)/g, function(_,pre,r){ return pre+'V("'+r+'")'; })
-            .replace(/\^/g,'**');
-  /* comparaciones fuera de comillas: = → ==, <> → != */
-  js = js.split('"').map(function(t,i){ return i%2 ? t : t.replace(/<>/g,'!=').replace(/([^<>!=])=([^=])/g,'$1==$2'); }).join('"');
-  if(/[^0-9+\-*/().,"A-Z_<>=!\s]/.test(js)) throw new Error('La fórmula tiene caracteres que no reconozco');
-  var planos = function(args){ var o=[]; for(var i=0;i<args.length;i++){ if(Array.isArray(args[i])) o = o.concat(args[i]); else o.push(args[i]); } return o; };
-  var F = {
-    V: valor, RG: rango,
-    S: function(){ return planos(arguments).reduce(function(a,b){return a+b;},0); },
-    P: function(){ var x = planos(arguments); if(!x.length) throw new Error('#¡DIV/0!'); return x.reduce(function(a,b){return a+b;},0)/x.length; },
-    MN: function(){ return Math.min.apply(null, planos(arguments)); },
-    MX: function(){ return Math.max.apply(null, planos(arguments)); },
-    C: function(){ return planos(arguments).length; },
-    R: function(x,d){ var k = Math.pow(10, d||0); return Math.round(x*k)/k; },
-    IF_: function(c,a,b){ return c ? a : b; },
-    SSI: function(rg, crit, rs){ var t = rg.todos, u = (rs||rg).todos, s = 0; for(var i=0;i<t.length;i++) if(cumple(t[i],crit)){ var n = parseFloat(String(u[i]).replace(/[$,\s]/g,'')); if(!isNaN(n)) s += n; } return s; },
-    CSI: function(rg, crit){ var t = rg.todos, n = 0; for(var i=0;i<t.length;i++) if(cumple(t[i],crit)) n++; return n; }
+  var nombres = {
+    'SUMA':'S','SUM':'S','PROMEDIO':'P','AVERAGE':'P','MIN':'MN','MAX':'MX','CONTAR':'C','COUNT':'C',
+    'CONTARA':'CA','COUNTA':'CA','REDONDEAR':'R','ROUND':'R','ENTERO':'ENT','INT':'ENT','ABS':'ABS_',
+    'SI':'IF_','IF':'IF_','Y':'Y_','AND':'Y_','O':'O_','OR':'O_','NO':'NO_','NOT':'NO_',
+    'SI.ERROR':'SIE','IFERROR':'SIE',
+    'SUMAR.SI':'SSI','SUMIF':'SSI','CONTAR.SI':'CSI','COUNTIF':'CSI','PROMEDIO.SI':'PSI','AVERAGEIF':'PSI',
+    'SUMAR.SI.CONJUNTO':'SSIC','SUMIFS':'SSIC','CONTAR.SI.CONJUNTO':'CSIC','COUNTIFS':'CSIC',
+    'BUSCARV':'BV','VLOOKUP':'BV','BUSCARX':'BX','XLOOKUP':'BX','INDICE':'IDX','INDEX':'IDX','COINCIDIR':'CO','MATCH':'CO',
+    'CONCATENAR':'CC','CONCAT':'CC','IZQUIERDA':'IZQ','LEFT':'IZQ','DERECHA':'DER','RIGHT':'DER','EXTRAE':'EXT','MID':'EXT',
+    'LARGO':'LAR','LEN':'LAR','MAYUSC':'MAY','UPPER':'MAY','MINUSC':'MINU','LOWER':'MINU','ESPACIOS':'ESP','TRIM':'ESP'
   };
+  for(var k=0; k<partes.length; k+=2){
+    var t = partes[k].toUpperCase().replace(/\s+/g,'').replace(/;/g, ',')
+                     .replace(/\$?([A-Z]{1,2})\$?(\d+)/g, '$1$2');       /* $E$2 se evalúa igual que E2 */
+    t = t.replace(/\b(VERDADERO|TRUE)\b(?!\()/g,'1').replace(/\b(FALSO|FALSE)\b(?!\()/g,'0');
+    t = t.replace(/&/g, '+""+');                                         /* unir textos */
+    t = t.replace(/<>/g,'!=').replace(/(^|[^<>!=])=(?!=)/g,'$1==');      /* comparaciones */
+    t = t.replace(/([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ.]*)\(/g, function(_,n){
+          if(!nombres[n]) throw new Error('Excel no reconoce la función '+n+' (#¿NOMBRE?)');
+          return nombres[n]+'('; })
+         .replace(/([A-Z]{1,2}\d+):([A-Z]{1,2}\d+)/g, function(_,a,b){ return 'RG("'+a+'","'+b+'")'; })
+         .replace(/(^|[^"A-Z_])([A-Z]{1,2}\d+)(?![A-Z_(])/g, function(_,pre,r){ return pre+'V("'+r+'")'; })
+         .replace(/\^/g,'**');
+    if(/[^0-9+\-*/().,"A-Z_<>=!\s]/.test(t)) throw new Error('La fórmula tiene caracteres que no reconozco');
+    partes[k] = t;
+  }
+  for(var j=1; j<partes.length; j+=2) partes[j] = partes[j].replace(/\\/g,'\\\\');
+  var js = partes.join('"');
+
+  var planos = function(args){ var o=[]; for(var i=0;i<args.length;i++){ if(Array.isArray(args[i])) o = o.concat(args[i]); else o.push(args[i]); } return o; };
+  var esErr = function(x){ return x === XL_NA || (typeof x === 'number' && !isFinite(x)); };
   function cumple(v, crit){
+    if(typeof crit === 'number') return xlIgual(v, crit);
     var m = /^(>=|<=|<>|>|<|=)?(.*)$/.exec(String(crit)), op = m[1] || '=', ref = m[2];
-    var nv = parseFloat(String(v).replace(/[$,\s]/g,'')), nr = parseFloat(ref);
-    if(!isNaN(nr) && !isNaN(nv)){ return op==='='?nv===nr: op==='<>'?nv!==nr: op==='>'?nv>nr: op==='<'?nv<nr: op==='>='?nv>=nr: nv<=nr; }
+    var nv = xlNum(v), nr = parseFloat(ref);
+    if(!isNaN(nr) && !isNaN(nv) && /^[\d.\-]+$/.test(ref)){ return op==='='?nv===nr: op==='<>'?nv!==nr: op==='>'?nv>nr: op==='<'?nv<nr: op==='>='?nv>=nr: nv<=nr; }
     var a = String(v).toUpperCase().trim(), b = String(ref).toUpperCase().trim();
     return op === '<>' ? a !== b : a === b;
   }
-  var fn = new Function('V','RG','S','P','MN','MX','C','R','IF_','SSI','CSI', 'return ('+js+');');
-  var r = fn(F.V,F.RG,F.S,F.P,F.MN,F.MX,F.C,F.R,F.IF_,F.SSI,F.CSI);
+  function todos(r){ return (r && r.todos) ? r.todos : [r]; }
+  function aproximada(lista, v){ var pos = -1; for(var i=0;i<lista.length;i++){ if(xlEsNum(lista[i]) && xlNum(lista[i]) <= xlNum(v)) pos = i; } return pos; }
+  var F = {
+    V: valor, RG: rango,
+    S: function(){ return planos(arguments).reduce(function(a,b){return a+(xlEsNum(b)?xlNum(b):0);},0); },
+    P: function(){ var x = planos(arguments).filter(xlEsNum); if(!x.length) throw new Error('#¡DIV/0!'); return x.reduce(function(a,b){return a+xlNum(b);},0)/x.length; },
+    MN: function(){ return Math.min.apply(null, planos(arguments).filter(xlEsNum).map(xlNum)); },
+    MX: function(){ return Math.max.apply(null, planos(arguments).filter(xlEsNum).map(xlNum)); },
+    C: function(){ return planos(arguments).filter(xlEsNum).length; },
+    CA: function(){ var n=0; for(var i=0;i<arguments.length;i++) n += todos(arguments[i]).filter(function(v){ return v !== '' && v != null; }).length; return n; },
+    R: function(x,d){ var k = Math.pow(10, d||0); return Math.round(x*k)/k; },
+    ENT: function(x){ return Math.floor(x); }, ABS_: function(x){ return Math.abs(x); },
+    IF_: function(c,a,b){ return c ? a : (b === undefined ? 0 : b); },
+    Y_: function(){ for(var i=0;i<arguments.length;i++) if(!arguments[i]) return 0; return 1; },
+    O_: function(){ for(var i=0;i<arguments.length;i++) if(arguments[i]) return 1; return 0; },
+    NO_: function(x){ return x ? 0 : 1; },
+    SIE: function(x, alt){ return esErr(x) ? alt : x; },
+    SSI: function(rg, crit, rs){ var t = rg.todos, u = (rs||rg).todos, s = 0; for(var i=0;i<t.length;i++) if(cumple(t[i],crit) && xlEsNum(u[i])) s += xlNum(u[i]); return s; },
+    CSI: function(rg, crit){ var t = rg.todos, n = 0; for(var i=0;i<t.length;i++) if(cumple(t[i],crit)) n++; return n; },
+    PSI: function(rg, crit, rp){ var t = rg.todos, u = (rp||rg).todos, s = 0, n = 0; for(var i=0;i<t.length;i++) if(cumple(t[i],crit) && xlEsNum(u[i])){ s += xlNum(u[i]); n++; } if(!n) throw new Error('#¡DIV/0!'); return s/n; },
+    SSIC: function(rs){ var args = arguments, u = rs.todos, s = 0;
+      for(var i=0;i<u.length;i++){ var ok = true; for(var a=1;a<args.length;a+=2) if(!cumple(args[a].todos[i], args[a+1])){ ok = false; break; } if(ok && xlEsNum(u[i])) s += xlNum(u[i]); } return s; },
+    CSIC: function(){ var args = arguments, n = 0, L = args[0].todos.length;
+      for(var i=0;i<L;i++){ var ok = true; for(var a=0;a<args.length;a+=2) if(!cumple(args[a].todos[i], args[a+1])){ ok = false; break; } if(ok) n++; } return n; },
+    BV: function(v, rg, col, ord){
+      var primera = []; for(var r=0;r<rg.nf;r++) primera.push(rg.celda(r,0));
+      var exacta = (ord === 0 || ord === false), pos = -1;
+      if(exacta){ for(var i=0;i<primera.length;i++) if(xlIgual(primera[i], v)){ pos = i; break; } }
+      else pos = aproximada(primera, v);
+      return pos < 0 ? XL_NA : rg.celda(pos, col-1);
+    },
+    BX: function(v, rb, rr, sino){ var a = rb.todos, b = rr.todos; for(var i=0;i<a.length;i++) if(xlIgual(a[i], v)){ var x = b[i]; return xlEsNum(x) ? xlNum(x) : x; } return sino === undefined ? XL_NA : sino; },
+    IDX: function(rg, fi, ci){ if(rg.nc === 1 && ci === undefined) return rg.celda(fi-1, 0); if(rg.nf === 1 && ci === undefined) return rg.celda(0, fi-1); return rg.celda(fi-1, (ci||1)-1); },
+    CO: function(v, rg, tipo){ var t = rg.todos; if(tipo === 0){ for(var i=0;i<t.length;i++) if(xlIgual(t[i], v)) return i+1; return XL_NA; } var p = aproximada(t, v); return p < 0 ? XL_NA : p+1; },
+    CC: function(){ var o = ''; for(var i=0;i<arguments.length;i++) o += todos(arguments[i]).join(''); return o; },
+    IZQ: function(t,n){ return String(t).slice(0, n === undefined ? 1 : n); },
+    DER: function(t,n){ n = (n === undefined ? 1 : n); return n ? String(t).slice(-n) : ''; },
+    EXT: function(t,i,n){ return String(t).substr(i-1, n); },
+    LAR: function(t){ return String(t).length; },
+    MAY: function(t){ return String(t).toUpperCase(); }, MINU: function(t){ return String(t).toLowerCase(); },
+    ESP: function(t){ return String(t).replace(/\s+/g,' ').trim(); }
+  };
+  var claves = Object.keys(F);
+  var fn = new Function(claves.join(','), 'return ('+js+');');
+  var r = fn.apply(null, claves.map(function(c){ return F[c]; }));
+  if(r === XL_NA) throw new Error('#N/A (no se encontró el valor que buscas)');
   if(typeof r === 'number' && !isFinite(r)) throw new Error('#¡DIV/0! (estás dividiendo entre cero)');
+  if(typeof r === 'boolean') r = r ? 1 : 0;
   return r;
 };
 function fmtNum(v){
@@ -663,7 +737,10 @@ MI.xlRevisar = function(id){
   if(reto.requiere && txt.toUpperCase().replace(/\s/g,'').indexOf(reto.requiere) < 0){
     fb.innerHTML = mal('El resultado sería '+fmtNum(r)+', pero en este ejercicio usa la función <b>'+e(reto.requiere.replace('(',''))+'</b>. '+(reto.pista||'')); return;
   }
-  if(typeof r === 'number' && Math.abs(r - reto.esperado) < 0.005){
+  var correcto = (typeof reto.esperado === 'number')
+    ? (typeof r === 'number' && Math.abs(r - reto.esperado) < 0.005)
+    : (String(r).trim().toUpperCase() === String(reto.esperado).trim().toUpperCase());
+  if(correcto){
     var p = parsearCelda(st.sel); if(!st.hoja[p.f]) st.hoja[p.f] = []; st.hoja[p.f][p.c] = r;
     st.ok[idx] = true; inp.value = '';
     fb.innerHTML = bien('<b>¡Correcto!</b> '+st.sel+' = '+fmtNum(r)+'. '+(reto.explica||''));
