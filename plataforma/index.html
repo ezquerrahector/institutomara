@@ -1274,6 +1274,18 @@ var estado = { vista:'', cursoId:null, moduloId:null, leccionId:null, edit:null 
 var NUBE = !!(window.Nube && Nube.iniciar(BD.config.supabaseUrl, BD.config.supabaseAnonKey));
 window.NUBE = NUBE;
 
+/* Con cuentas en la nube, lo que quedó guardado en este navegador (los alumnos
+   de ejemplo, inscripciones y avance de la versión anterior) ya no sirve: todo
+   viene del servidor. Se limpia una sola vez para que nadie entre como un
+   usuario de demostración ni vea datos que no son suyos. */
+if(NUBE && !BD.config.limpiezaNube){
+  BD.usuarios = []; BD.inscripciones = []; BD.avances = {};
+  BD.pagos = []; BD.constancias = []; BD.dudas = [];
+  BD.config.limpiezaNube = true;
+  try{ localStorage.removeItem('institutoMara.sesion'); }catch(e){}
+  guardar();
+}
+
 function avisoCaja(id, texto, clase){
   var el = document.getElementById(id); if(!el) return;
   if(!texto){ el.classList.add('oculto'); el.textContent = ''; return; }
