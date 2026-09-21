@@ -82,8 +82,14 @@ serve(async (req) => {
     // 2) Comprobar que lo pagado alcanza el precio que fija el servidor.
     //    (Segundo candado: aunque alguien lograra crear una preferencia barata,
     //     aquí no se le da acceso; el pago queda registrado para revisarlo.)
+    //    Si hubo cupón, lo que se espera es el precio ya con descuento, que el
+    //    propio servidor calculó al crear el cobro y dejó en los metadatos.
+    const meta = (pago.metadata || {}) as Record<string, unknown>;
+    const cupon = meta.cupon ? String(meta.cupon) : null;
     const monto = Number(pago.transaction_amount || 0);
-    const esperado = await precioEsperado(cursoId);
+    const deCatalogo = await precioEsperado(cursoId);
+    const conCupon = Number(meta.monto || 0);
+    const esperado = (cupon && conCupon > 0) ? conCupon : deCatalogo;
     const montoSuficiente = esperado == null ? true : monto + 0.5 >= esperado;
 
     // 3) Registrar el pago (evita duplicados si Mercado Pago reintenta el webhook).
@@ -113,6 +119,14 @@ serve(async (req) => {
       { usuario_id: usuarioId, curso_id: cursoId, estatus: "activa" },
       { onConflict: "usuario_id,curso_id" }
     );
+
+    // 5) Si se usó un cupón, contarle el uso (una sola vez por pago).
+    if (cupon && !existente) {
+      const { error } = await supabase.rpc("canjear_cupon", {
+        p_codigo: cupon, p_curso_id: cursoId, p_usuario: usuarioId,
+      });
+      if (error) console.error("No se pudo registrar el uso del cupón", cupon, error.message);
+    }
 
     return new Response("ok", { status: 200 });
   } catch (e) {
