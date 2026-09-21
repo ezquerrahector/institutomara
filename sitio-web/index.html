@@ -393,8 +393,8 @@ footer a:hover{color:#fff}
     </div>
 
     <div class="cifras" id="cifras">
-      <div><b id="cf-total">37</b><span>programas</span></div>
-      <div><b>3</b><span>diplomados</span></div>
+      <div><b id="cf-total">43</b><span>programas</span></div>
+      <div><b id="cf-dipl">6</b><span>diplomados</span></div>
       <div><b>Desde $590</b><span>pago único</span></div>
       <div><b>12 meses</b><span>de acceso</span></div>
     </div>
@@ -415,7 +415,7 @@ footer a:hover{color:#fff}
           </ul>
           <div class="precio"><span class="ahora" data-precio="d-tanatologia">$1,990</span> <span class="moneda">MXN</span>
             <small>Pago único · Constancia de Instituto Mara (no es certificación SEP/CONOCER)</small>
-            <a href="../plataforma/index.html?curso=d-tanatologia" class="btn btn-mor btn-ancho">Inscribirme</a></div>
+            <a href="../plataforma/index.html?curso=d-tanatologia" class="btn btn-mor btn-ancho">Inscribirme</a><a href="#programa-d-tanatologia" class="ver-temario">Ver temario completo</a></div>
         </div>
       </article>
       <article class="curso">
@@ -431,7 +431,7 @@ footer a:hover{color:#fff}
           </ul>
           <div class="precio"><span class="ahora" data-precio="d-nom035">$1,790</span> <span class="moneda">MXN</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="../plataforma/index.html?curso=d-nom035" class="btn btn-mor btn-ancho">Inscribirme</a></div>
+            <a href="../plataforma/index.html?curso=d-nom035" class="btn btn-mor btn-ancho">Inscribirme</a><a href="#programa-d-nom035" class="ver-temario">Ver temario completo</a></div>
         </div>
       </article>
       <article class="curso">
@@ -447,7 +447,7 @@ footer a:hover{color:#fff}
           </ul>
           <div class="precio"><span class="ahora" data-precio="d-adulto-mayor">$1,690</span> <span class="moneda">MXN</span>
             <small>Pago único · Acceso 12 meses</small>
-            <a href="../plataforma/index.html?curso=d-adulto-mayor" class="btn btn-mor btn-ancho">Inscribirme</a></div>
+            <a href="../plataforma/index.html?curso=d-adulto-mayor" class="btn btn-mor btn-ancho">Inscribirme</a><a href="#programa-d-adulto-mayor" class="ver-temario">Ver temario completo</a></div>
         </div>
       </article>
     </div>
@@ -493,17 +493,58 @@ footer a:hover{color:#fff}
 .of-card .of-pie span{font-size:13px;color:var(--gris)}
 .of-card a{font-size:14.5px;font-weight:700;color:var(--morado);text-decoration:none;white-space:nowrap}
 .of-vacio{color:var(--gris);margin-top:14px}
+.of-card h4 a{color:inherit;text-decoration:none}
+.of-card .of-ver{font-size:14px;font-weight:600;color:var(--turquesa-osc);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+.curso .ver-temario{display:block;text-align:center;margin-top:10px;font-size:14.5px;font-weight:600;color:var(--morado)}
+.ficha{position:fixed;inset:0;z-index:100;background:rgba(15,10,40,.55);display:flex;align-items:flex-start;justify-content:center;padding:32px 16px;overflow-y:auto}
+.ficha[hidden]{display:none}
+.ficha-panel{position:relative;background:#fff;border-radius:20px;max-width:760px;width:100%;padding:30px 30px 26px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.fi-cerrar{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--linea);background:#fff;font-size:17px;cursor:pointer;color:var(--tinta)}
+.fi-cargando{color:var(--gris);padding:30px 0;text-align:center}
+.fi-etq{font-size:12.5px;font-weight:700;color:var(--turquesa-osc);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;padding-right:44px}
+.ficha h2{font-size:1.6rem;line-height:1.25;color:var(--tinta);letter-spacing:-.02em;padding-right:44px}
+.fi-cifras{color:var(--gris);font-size:14.5px;margin-top:8px}
+.fi-compra{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--nube);border:1px solid var(--linea);border-radius:14px;padding:14px 16px;margin:18px 0}
+.fi-compra b{font-size:24px;color:var(--morado)} .fi-compra span{color:var(--gris);font-size:14px}
+.fi-compra small{display:block;color:var(--gris);font-size:13px;margin-top:2px}
+.fi-desc{font-size:16px;line-height:1.6;color:var(--tinta)}
+.ficha h3{font-size:1.1rem;color:var(--tinta);margin:24px 0 10px}
+.fi-aprende{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;padding:0}
+.fi-aprende li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.5;color:var(--tinta)}
+.fi-aprende li:before{content:"✓";position:absolute;left:0;top:0;color:var(--turquesa-osc);font-weight:800}
+.fi-temario details{border:1px solid var(--linea);border-radius:12px;margin-bottom:8px;background:#fff}
+.fi-temario summary{display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none}
+.fi-temario summary::-webkit-details-marker{display:none}
+.fi-temario summary b{display:block;font-size:15px;color:var(--tinta);line-height:1.35}
+.fi-temario summary small{color:var(--gris);font-size:13px}
+.fi-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--lavanda);color:var(--morado);display:grid;place-items:center;font-weight:800;font-size:14px}
+.fi-temario details p{padding:0 14px 6px 56px;color:var(--gris);font-size:14px;line-height:1.5}
+.fi-temario ol{padding:0 14px 14px 74px;color:var(--tinta);font-size:14.5px;line-height:1.7}
+.fi-incluye{padding-left:20px;font-size:14.5px;line-height:1.65;color:var(--tinta)}
+.fi-nota{margin-top:16px;font-size:13px;color:var(--gris);line-height:1.5}
+.fi-acciones{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media(max-width:640px){
+  .ficha{padding:0}
+  .ficha-panel{border-radius:0;min-height:100%;padding:22px 16px 90px}
+  .ficha h2{font-size:1.35rem}
+  .fi-aprende{grid-template-columns:1fr}
+  .fi-compra{position:sticky;bottom:10px;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.12);background:#fff}
+  .fi-temario ol{padding-left:44px} .fi-temario details p{padding-left:14px}
+}
 </style>
 
+<div class="ficha" id="ficha" hidden role="dialog" aria-modal="true" aria-labelledby="ficha-tit">
+  <div class="ficha-panel"><button type="button" class="fi-cerrar" aria-label="Cerrar">✕</button><div id="ficha-cuerpo"></div></div>
+</div>
 <script>
 /* Catálogo de la página principal. La lista viene incluida aquí (para que cargue
    al instante) y, si hay conexión con el servidor, se actualizan precios y se
    ocultan los cursos que ya no estén publicados. */
 (function(){
-  var OFERTA = [{"id":"c-ingles","n":"Inglés básico A1","f":"Idiomas","h":20,"p":890,"d":"Empieza de cero y termina presentándote, hablando de tu día, comprando, pidiendo en un restaurante y moviéndote por una ciudad. Con voz para escuchar…"},{"id":"c-ia","n":"IA aplicada al trabajo (general)","f":"IA aplicada","h":10,"p":990,"d":"Usa inteligencia artificial para redactar, resumir, ordenar datos, organizar tu semana y decidir mejor, sin tecnicismos y cuidando tu información…"},{"id":"c-ia-oficina","n":"IA para la Oficina","f":"IA por profesión","h":6,"p":590,"d":"Correo, juntas, reportes, presentaciones y hojas de cálculo: cómo la IA le quita horas muertas al trabajo de oficina. Con casos reales y plantillas…"},{"id":"c-ia-ventas","n":"IA para Ventas y Atención a Clientes","f":"IA por profesión","h":6,"p":590,"d":"Prospección, guiones de venta, manejo de objeciones, cotizaciones, seguimiento por WhatsApp y clientes molestos, con la IA como tu asistente…"},{"id":"c-ia-emprendedores","n":"IA para Emprendedores y Pequeños Negocios","f":"IA por profesión","h":6,"p":590,"d":"Valida tu idea, define tu propuesta, calcula precios, ordena tus números y promociona tu negocio en redes y WhatsApp con la IA como socio de trabajo."},{"id":"c-ia-finanzas","n":"IA para Finanzas","f":"IA por profesión","h":6,"p":590,"d":"Conciliaciones, reportes financieros, análisis de variaciones, flujo de efectivo y comunicación con dirección, usando IA con el rigor que exigen los…"},{"id":"c-ia-rh","n":"IA para Recursos Humanos","f":"IA por profesión","h":6,"p":590,"d":"Vacantes sin sesgos, filtrado de candidatos con criterio, entrevistas estructuradas, onboarding, evaluación de desempeño y comunicación interna, con…"},{"id":"c-ia-docentes","n":"IA para Docentes e Instructores","f":"IA por profesión","h":6,"p":590,"d":"Planeación de clases, materiales diferenciados, rúbricas, evaluación, retroalimentación y comunicación con familias, usando IA para ganar tiempo sin…"},{"id":"c-ia-salud","n":"IA para el Sector Salud","f":"IA por profesión","h":6,"p":590,"d":"Para personal administrativo y profesional de consultorios, clínicas y hospitales: agenda, comunicación con pacientes, materiales educativos…"},{"id":"c-ia-manufactura","n":"IA para Manufactura","f":"IA por profesión","h":6,"p":590,"d":"Instrucciones de trabajo, análisis de fallas, calidad, mantenimiento, reportes de turno y mejora continua en planta, usando IA con los datos y el…"},{"id":"c-ia-marketing","n":"IA para Marketing y Redes Sociales","f":"IA por profesión","h":6,"p":590,"d":"Estrategia de contenido, textos que venden, calendarios, anuncios, correos y análisis de resultados en redes sociales, usando IA sin perder la voz de…"},{"id":"c-ia-contadores","n":"IA para Contadores","f":"IA por profesión","h":6,"p":590,"d":"Despacho y área contable: atención a clientes, investigación fiscal verificada, papeles de trabajo, conciliaciones en Excel, comunicación de…"},{"id":"c-ia-directivos","n":"IA para Directivos y Gerentes","f":"IA por profesión","h":6,"p":590,"d":"Pensar mejor, decidir con más información, comunicar con claridad, dirigir juntas efectivas e impulsar la adopción de IA en tu equipo con reglas…"},{"id":"c-ia-atencion-cliente","n":"IA para Atención al Cliente","f":"IA por profesión","h":6,"p":590,"d":"Respuestas rápidas y humanas, base de conocimiento, manejo de quejas, encuestas de satisfacción y chatbots responsables, con IA como apoyo de tu…"},{"id":"c-ia-proyectos","n":"IA para Gestión de Proyectos","f":"IA por profesión","h":6,"p":590,"d":"Definir alcance, dividir el trabajo, planear, identificar riesgos, dar seguimiento y comunicar el avance de tus proyectos con apoyo de IA."},{"id":"c-ia-abogados","n":"IA para Abogados","f":"IA por profesión","h":6,"p":590,"d":"Revisión de contratos, resúmenes de expedientes, redacción de escritos, investigación jurídica verificada y comunicación con clientes, con IA y…"},{"id":"c-ia-compras","n":"IA para Compras y Abastecimiento","f":"IA por profesión","h":6,"p":590,"d":"Requisiciones claras, búsqueda y evaluación de proveedores, comparación de cotizaciones, negociación y seguimiento de pedidos con apoyo de IA."},{"id":"c-ia-logistica","n":"IA para Logística e Inventarios","f":"IA por profesión","h":6,"p":590,"d":"Control de inventarios, clasificación ABC, puntos de reorden, pronóstico sencillo de demanda, rutas de entrega y comunicación de incidencias con IA y…"},{"id":"c-ia-ecommerce","n":"IA para Comercio Electrónico","f":"IA por profesión","h":6,"p":590,"d":"Fichas de producto que venden, fotos, precios y márgenes, promociones, marketplaces, atención postventa y análisis de tu tienda en línea con IA."},{"id":"c-ia-inmobiliarias","n":"IA para Inmobiliarias","f":"IA por profesión","h":6,"p":590,"d":"Fichas y anuncios de propiedades, seguimiento a prospectos, visitas, análisis de precios, contratos de arrendamiento y comunicación con clientes, con…"},{"id":"c-ia-arquitectura","n":"IA para Arquitectos","f":"IA por profesión","h":6,"p":590,"d":"Renders, propuestas de diseño, memorias de cálculo y presentaciones a cliente con apoyo de IA."},{"id":"c-ia-diseno","n":"IA para Diseño y Creación de Contenido","f":"IA por profesión","h":6,"p":590,"d":"Imágenes, video, guiones y piezas gráficas creadas y editadas más rápido con herramientas de IA."},{"id":"c-ia-programadores","n":"IA para Programadores","f":"IA por profesión","h":6,"p":590,"d":"Generación y revisión de código, documentación y pruebas apoyadas en asistentes de IA."},{"id":"c-ia-automatizacion","n":"Automatización con IA sin Programar","f":"IA por profesión","h":6,"p":590,"d":"Conecta correo, hojas de cálculo, WhatsApp y formularios con herramientas de automatización sin escribir código."},{"id":"c-ia-freelance","n":"IA para Freelancers y Consultores Independientes","f":"IA por profesión","h":6,"p":590,"d":"Propuestas, cotizaciones, seguimiento a clientes y organización del tiempo apoyados en IA."},{"id":"c-ia-callcenter","n":"IA para Call Centers y BPO","f":"IA por profesión","h":6,"p":590,"d":"Guiones de llamada, resúmenes de interacción y clasificación de tickets con apoyo de IA."},{"id":"c-ia-turismo","n":"IA para Turismo y Hotelería","f":"IA por profesión","h":6,"p":590,"d":"Reservas, itinerarios personalizados, promoción de destinos y atención a huéspedes con IA."},{"id":"c-ia-estudiantes","n":"IA para Estudiantes e Investigación","f":"IA por profesión","h":6,"p":590,"d":"Búsqueda y organización de fuentes, resúmenes, fichas de estudio y apoyo para tesis con IA."},{"id":"c-ia-construccion","n":"IA para Construcción y Obra","f":"IA por profesión","h":6,"p":590,"d":"Presupuestos, bitácoras de obra, cronogramas y control de materiales apoyados en IA."},{"id":"c-ia-campo","n":"IA para Agronegocios y Campo","f":"IA por profesión","h":6,"p":590,"d":"Registro de cosechas, control de insumos, clima y precios de mercado apoyados en IA."},{"id":"c-office","n":"Computación y Office","f":"Tecnología","h":12,"p":990,"d":"Domina Windows, archivos, correo, la nube, Word, Excel y PowerPoint desde cero, con hojas de Excel de práctica dentro de las lecciones y un proyecto…"},{"id":"d-tanatologia","n":"Diplomado en Tanatología y Acompañamiento en el Duelo","f":"Diplomados","h":40,"p":1990,"d":"Aprende a acompañar con respeto a personas que enfrentan la muerte y el duelo: qué decir y qué no, cómo apoyar a familias y a niños, cuándo canalizar…"},{"id":"d-nom035","n":"Diplomado NOM-035: Factores de Riesgo Psicosocial en el Trabajo","f":"Diplomados","h":30,"p":1790,"d":"Aprende a cumplir la NOM-035-STPS-2018 paso a paso: obligaciones según el tamaño del centro de trabajo, Guías de referencia I, II y III, calificación…"},{"id":"c-pap","n":"Primeros Auxilios Psicológicos","f":"Salud y bienestar","h":10,"p":690,"d":"Aprende a dar apoyo humano inmediato a una persona en crisis (escuchar, calmar, cubrir necesidades y canalizar) y a reconocer cuándo derivar a…"},{"id":"c-excel-avanzado","n":"Excel Intermedio y Avanzado","f":"Tecnología","h":14,"p":990,"d":"Da el salto de las sumas a las fórmulas que piden en la oficina: referencias con $, SI anidados, BUSCARV, BUSCARX, INDICE y COINCIDIR…"},{"id":"c-ingles-a2","n":"Inglés A2 (pre-intermedio)","f":"Idiomas","h":20,"p":890,"d":"La continuación del Inglés A1: aprende a contar lo que hiciste, hablar de tus planes, comparar opciones, dar consejos y usar el inglés en tu trabajo…"},{"id":"d-adulto-mayor","n":"Diplomado en Cuidado del Adulto Mayor","f":"Diplomados","h":30,"p":1690,"d":"Aprende a cuidar a una persona mayor con dignidad y seguridad: higiene, movilidad, prevención de caídas, alimentación, organización de medicamentos y…"}];
+  var OFERTA = [{"id":"c-ingles","n":"Inglés básico A1","f":"Idiomas","h":20,"p":890,"d":"Empieza de cero y termina presentándote, hablando de tu día, comprando, pidiendo en un restaurante y moviéndote por una ciudad. Con voz para escuchar…"},{"id":"c-ia","n":"IA aplicada al trabajo (general)","f":"IA aplicada","h":10,"p":990,"d":"Usa inteligencia artificial para redactar, resumir, ordenar datos, organizar tu semana y decidir mejor, sin tecnicismos y cuidando tu información…"},{"id":"c-ia-oficina","n":"IA para la Oficina","f":"IA por profesión","h":6,"p":590,"d":"Correo, juntas, reportes, presentaciones y hojas de cálculo: cómo la IA le quita horas muertas al trabajo de oficina. Con casos reales y plantillas…"},{"id":"c-ia-ventas","n":"IA para Ventas y Atención a Clientes","f":"IA por profesión","h":6,"p":590,"d":"Prospección, guiones de venta, manejo de objeciones, cotizaciones, seguimiento por WhatsApp y clientes molestos, con la IA como tu asistente…"},{"id":"c-ia-emprendedores","n":"IA para Emprendedores y Pequeños Negocios","f":"IA por profesión","h":6,"p":590,"d":"Valida tu idea, define tu propuesta, calcula precios, ordena tus números y promociona tu negocio en redes y WhatsApp con la IA como socio de trabajo."},{"id":"c-ia-finanzas","n":"IA para Finanzas","f":"IA por profesión","h":6,"p":590,"d":"Conciliaciones, reportes financieros, análisis de variaciones, flujo de efectivo y comunicación con dirección, usando IA con el rigor que exigen los…"},{"id":"c-ia-rh","n":"IA para Recursos Humanos","f":"IA por profesión","h":6,"p":590,"d":"Vacantes sin sesgos, filtrado de candidatos con criterio, entrevistas estructuradas, onboarding, evaluación de desempeño y comunicación interna, con…"},{"id":"c-ia-docentes","n":"IA para Docentes e Instructores","f":"IA por profesión","h":6,"p":590,"d":"Planeación de clases, materiales diferenciados, rúbricas, evaluación, retroalimentación y comunicación con familias, usando IA para ganar tiempo sin…"},{"id":"c-ia-salud","n":"IA para el Sector Salud","f":"IA por profesión","h":6,"p":590,"d":"Para personal administrativo y profesional de consultorios, clínicas y hospitales: agenda, comunicación con pacientes, materiales educativos…"},{"id":"c-ia-manufactura","n":"IA para Manufactura","f":"IA por profesión","h":6,"p":590,"d":"Instrucciones de trabajo, análisis de fallas, calidad, mantenimiento, reportes de turno y mejora continua en planta, usando IA con los datos y el…"},{"id":"c-ia-marketing","n":"IA para Marketing y Redes Sociales","f":"IA por profesión","h":6,"p":590,"d":"Estrategia de contenido, textos que venden, calendarios, anuncios, correos y análisis de resultados en redes sociales, usando IA sin perder la voz de…"},{"id":"c-ia-contadores","n":"IA para Contadores","f":"IA por profesión","h":6,"p":590,"d":"Despacho y área contable: atención a clientes, investigación fiscal verificada, papeles de trabajo, conciliaciones en Excel, comunicación de…"},{"id":"c-ia-directivos","n":"IA para Directivos y Gerentes","f":"IA por profesión","h":6,"p":590,"d":"Pensar mejor, decidir con más información, comunicar con claridad, dirigir juntas efectivas e impulsar la adopción de IA en tu equipo con reglas…"},{"id":"c-ia-atencion-cliente","n":"IA para Atención al Cliente","f":"IA por profesión","h":6,"p":590,"d":"Respuestas rápidas y humanas, base de conocimiento, manejo de quejas, encuestas de satisfacción y chatbots responsables, con IA como apoyo de tu…"},{"id":"c-ia-proyectos","n":"IA para Gestión de Proyectos","f":"IA por profesión","h":6,"p":590,"d":"Definir alcance, dividir el trabajo, planear, identificar riesgos, dar seguimiento y comunicar el avance de tus proyectos con apoyo de IA."},{"id":"c-ia-abogados","n":"IA para Abogados","f":"IA por profesión","h":6,"p":590,"d":"Revisión de contratos, resúmenes de expedientes, redacción de escritos, investigación jurídica verificada y comunicación con clientes, con IA y…"},{"id":"c-ia-compras","n":"IA para Compras y Abastecimiento","f":"IA por profesión","h":6,"p":590,"d":"Requisiciones claras, búsqueda y evaluación de proveedores, comparación de cotizaciones, negociación y seguimiento de pedidos con apoyo de IA."},{"id":"c-ia-logistica","n":"IA para Logística e Inventarios","f":"IA por profesión","h":6,"p":590,"d":"Control de inventarios, clasificación ABC, puntos de reorden, pronóstico sencillo de demanda, rutas de entrega y comunicación de incidencias con IA y…"},{"id":"c-ia-ecommerce","n":"IA para Comercio Electrónico","f":"IA por profesión","h":6,"p":590,"d":"Fichas de producto que venden, fotos, precios y márgenes, promociones, marketplaces, atención postventa y análisis de tu tienda en línea con IA."},{"id":"c-ia-inmobiliarias","n":"IA para Inmobiliarias","f":"IA por profesión","h":6,"p":590,"d":"Fichas y anuncios de propiedades, seguimiento a prospectos, visitas, análisis de precios, contratos de arrendamiento y comunicación con clientes, con…"},{"id":"c-ia-arquitectura","n":"IA para Arquitectos","f":"IA por profesión","h":6,"p":590,"d":"Renders, propuestas de diseño, memorias de cálculo y presentaciones a cliente con apoyo de IA."},{"id":"c-ia-diseno","n":"IA para Diseño y Creación de Contenido","f":"IA por profesión","h":6,"p":590,"d":"Imágenes, video, guiones y piezas gráficas creadas y editadas más rápido con herramientas de IA."},{"id":"c-ia-programadores","n":"IA para Programadores","f":"IA por profesión","h":6,"p":590,"d":"Generación y revisión de código, documentación y pruebas apoyadas en asistentes de IA."},{"id":"c-ia-automatizacion","n":"Automatización con IA sin Programar","f":"IA por profesión","h":6,"p":590,"d":"Conecta correo, hojas de cálculo, WhatsApp y formularios con herramientas de automatización sin escribir código."},{"id":"c-ia-freelance","n":"IA para Freelancers y Consultores Independientes","f":"IA por profesión","h":6,"p":590,"d":"Propuestas, cotizaciones, seguimiento a clientes y organización del tiempo apoyados en IA."},{"id":"c-ia-callcenter","n":"IA para Call Centers y BPO","f":"IA por profesión","h":6,"p":590,"d":"Guiones de llamada, resúmenes de interacción y clasificación de tickets con apoyo de IA."},{"id":"c-ia-turismo","n":"IA para Turismo y Hotelería","f":"IA por profesión","h":6,"p":590,"d":"Reservas, itinerarios personalizados, promoción de destinos y atención a huéspedes con IA."},{"id":"c-ia-estudiantes","n":"IA para Estudiantes e Investigación","f":"IA por profesión","h":6,"p":590,"d":"Búsqueda y organización de fuentes, resúmenes, fichas de estudio y apoyo para tesis con IA."},{"id":"c-ia-construccion","n":"IA para Construcción y Obra","f":"IA por profesión","h":6,"p":590,"d":"Presupuestos, bitácoras de obra, cronogramas y control de materiales apoyados en IA."},{"id":"c-ia-campo","n":"IA para Agronegocios y Campo","f":"IA por profesión","h":6,"p":590,"d":"Registro de cosechas, control de insumos, clima y precios de mercado apoyados en IA."},{"id":"c-office","n":"Computación y Office","f":"Tecnología","h":12,"p":990,"d":"Domina Windows, archivos, correo, la nube, Word, Excel y PowerPoint desde cero, con hojas de Excel de práctica dentro de las lecciones y un proyecto…"},{"id":"d-tanatologia","n":"Diplomado en Tanatología y Acompañamiento en el Duelo","f":"Diplomados","h":40,"p":1990,"d":"Aprende a acompañar con respeto a personas que enfrentan la muerte y el duelo: qué decir y qué no, cómo apoyar a familias y a niños, cuándo canalizar…"},{"id":"d-nom035","n":"Diplomado NOM-035: Factores de Riesgo Psicosocial en el Trabajo","f":"Diplomados","h":30,"p":1790,"d":"Aprende a cumplir la NOM-035-STPS-2018 paso a paso: obligaciones según el tamaño del centro de trabajo, Guías de referencia I, II y III, calificación…"},{"id":"c-pap","n":"Primeros Auxilios Psicológicos","f":"Salud y bienestar","h":10,"p":690,"d":"Aprende a dar apoyo humano inmediato a una persona en crisis (escuchar, calmar, cubrir necesidades y canalizar) y a reconocer cuándo derivar a…"},{"id":"c-excel-avanzado","n":"Excel Intermedio y Avanzado","f":"Tecnología","h":14,"p":990,"d":"Da el salto de las sumas a las fórmulas que piden en la oficina: referencias con $, SI anidados, BUSCARV, BUSCARX, INDICE y COINCIDIR…"},{"id":"c-ingles-a2","n":"Inglés A2 (pre-intermedio)","f":"Idiomas","h":20,"p":890,"d":"La continuación del Inglés A1: aprende a contar lo que hiciste, hablar de tus planes, comparar opciones, dar consejos y usar el inglés en tu trabajo…"},{"id":"d-adulto-mayor","n":"Diplomado en Cuidado del Adulto Mayor","f":"Diplomados","h":30,"p":1690,"d":"Aprende a cuidar a una persona mayor con dignidad y seguridad: higiene, movilidad, prevención de caídas, alimentación, organización de medicamentos y…"},{"id":"c-inteligencia-emocional","n":"Inteligencia emocional y manejo del estrés","f":"Desarrollo humano","h":12,"p":790,"d":"Aprende a reconocer lo que sientes, calmarte antes de reaccionar, manejar el estrés del día a día y comunicarte mejor en el trabajo y en casa, con…"},{"id":"c-finanzas-personales","n":"Finanzas personales y salir de deudas","f":"Negocios y finanzas","h":16,"p":890,"d":"Aprende a saber en qué se va tu dinero, armar un presupuesto quincenal que sí se cumpla, entender el costo real de tus deudas y salir de ellas con un…"},{"id":"d-marketing-digital","n":"Diplomado en Marketing Digital y Redes Sociales para Negocios","f":"Diplomados","h":32,"p":1690,"d":"Arma la estrategia digital de tu negocio paso a paso: cliente ideal, WhatsApp Business y perfil de Google, contenido para redes, anuncios pagados y…"},{"id":"d-contabilidad-resico","n":"Diplomado en Contabilidad Básica, RESICO y Facturación CFDI 4.0","f":"Diplomados","h":32,"p":1890,"d":"Aprende a llevar las cuentas de tu negocio, leer tus números en hoja de cálculo, calcular tu ISR en el RESICO y tu IVA, y facturar bien en CFDI 4.0…"},{"id":"c-atencion-ventas","n":"Atención al cliente y ventas","f":"Negocios y finanzas","h":12,"p":790,"d":"Aprende a atender en mostrador, por teléfono y por WhatsApp, a resolver quejas con calma, a vender preguntando en lugar de presionar y a medir tus…"},{"id":"d-liderazgo","n":"Diplomado en Liderazgo para Mandos Medios","f":"Diplomados","h":30,"p":1690,"d":"Para supervisores, jefes de turno y coordinadores que acaban de subir de puesto: cómo dar instrucciones claras, retroalimentar, delegar, medir a tu…"}];
   var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co';
   var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
-  var ORDEN = ['Todos','Diplomados','Idiomas','Tecnología','Salud y bienestar','IA aplicada','IA por profesión','Recursos Humanos y empresa'];
+  var ORDEN = ['Todos','Diplomados','Negocios y finanzas','Idiomas','Tecnología','Salud y bienestar','Desarrollo humano','IA aplicada','IA por profesión','Recursos Humanos y empresa'];
   var filtro = 'Todos', texto = '', verTodo = false;
   function norm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
   function dinero(n){ return '$' + Number(n).toLocaleString('es-MX'); }
@@ -518,6 +559,7 @@ footer a:hover{color:#fff}
       return '<button type="button" role="tab" aria-selected="'+(k===filtro)+'" data-k="'+esc(k)+'">'+esc(k)+'<small>'+n+'</small></button>';
     }).join('');
     document.getElementById('cf-total').textContent = OFERTA.length;
+    document.getElementById('cf-dipl').textContent = cuenta['Diplomados'] || 0;
   }
   function pintar(){
     var q = norm(texto);
@@ -529,14 +571,17 @@ footer a:hover{color:#fff}
     /* En «Todos» sin búsqueda se muestran primero los más buscados, para no alargar la página */
     var total = lista.length, recortar = (filtro === 'Todos' && !q && !verTodo && total > 9);
     if(recortar){
-      var primero = ['c-ingles','c-excel-avanzado','c-ia','c-pap','c-ingles-a2','c-office','c-ia-oficina','c-ia-ventas','c-ia-emprendedores'];
+      var primero = ['c-ingles','c-excel-avanzado','c-finanzas-personales','c-ia','c-atencion-ventas','c-inteligencia-emocional','c-pap','c-office','c-ingles-a2'];
       lista = primero.map(function(id){ return OFERTA.filter(function(c){ return c.id === id; })[0]; }).filter(Boolean);
     }
     document.getElementById('of-mas').hidden = !recortar;
     document.getElementById('of-mas').textContent = 'Ver los ' + total + ' programas';
     document.getElementById('of-grid').innerHTML = lista.map(function(c){
-      return '<article class="of-card"><div class="of-fam">'+esc(c.f)+'</div><h4>'+esc(c.n)+'</h4>'+
-        '<p>'+esc(c.d)+'</p><div class="of-pie"><div><b>'+dinero(c.p)+'</b> <span>· '+c.h+' h</span></div>'+
+      return '<article class="of-card"><div class="of-fam">'+esc(c.f)+'</div>'+
+        '<h4><a href="#programa-'+esc(c.id)+'" class="of-tit">'+esc(c.n)+'</a></h4>'+
+        '<p>'+esc(c.d)+'</p>'+
+        '<a href="#programa-'+esc(c.id)+'" class="of-ver">Ver temario y detalles</a>'+
+        '<div class="of-pie"><div><b>'+dinero(c.p)+'</b> <span>· '+c.h+' h</span></div>'+
         '<a href="../plataforma/index.html?curso='+encodeURIComponent(c.id)+'">Inscribirme →</a></div></article>';
     }).join('');
   }
@@ -561,6 +606,67 @@ footer a:hover{color:#fff}
       });
       chips(); pintar();
     }).catch(function(){});
+
+  /* ---------- Ficha del programa: temario, qué aprenderás y cifras ----------
+     Se abre con #programa-ID (así el enlace se puede compartir y el botón
+     «atrás» del celular la cierra). El temario se carga solo al abrirla. */
+  var TEMARIOS = null;
+  function cargarTemarios(){
+    if(TEMARIOS) return Promise.resolve(TEMARIOS);
+    return fetch('temarios.json?v=' + OFERTA.length).then(function(r){ return r.json(); })
+      .then(function(t){ TEMARIOS = t; return t; });
+  }
+  function precioDe(id, def){ var o = OFERTA.filter(function(c){ return c.id === id; })[0]; return o ? o.p : def; }
+  var fichaEl = document.getElementById('ficha'), fichaCuerpo = document.getElementById('ficha-cuerpo');
+  function cerrarFicha(){ fichaEl.hidden = true; document.body.style.overflow = ''; }
+  function abrirFicha(id){
+    fichaCuerpo.innerHTML = '<p class="fi-cargando">Cargando temario…</p>';
+    fichaEl.hidden = false; document.body.style.overflow = 'hidden';
+    cargarTemarios().then(function(T){
+      var t = T[id];
+      if(!t){ fichaCuerpo.innerHTML = '<p class="fi-cargando">Ese programa ya no está disponible.</p>'; return; }
+      var p = precioDe(id, t.p), url = '../plataforma/index.html?curso=' + encodeURIComponent(id);
+      var cifras = [t.h + ' horas', t.s.mod + ' módulos', t.s.lec + ' lecciones', t.s.ej + ' ejercicios interactivos'];
+      if(t.s.xl) cifras.push(t.s.xl + ' retos en hoja de cálculo');
+      var h = '<div class="fi-cab"><div class="fi-etq">' + esc(t.tipo) + (t.f !== 'Diplomados' ? ' · ' + esc(t.f) : '') + '</div>' +
+        '<h2 id="ficha-tit">' + esc(t.n) + '</h2><p class="fi-cifras">' + cifras.map(esc).join(' · ') + '</p></div>' +
+        '<div class="fi-compra"><div><b>' + dinero(p) + '</b> <span>MXN · pago único</span><small>Acceso 12 meses · a tu ritmo, desde el celular</small></div>' +
+        '<a class="btn btn-mor" href="' + url + '">Inscribirme</a></div>' +
+        '<p class="fi-desc">' + esc(t.d) + '</p>';
+      if(t.a && t.a.length) h += '<h3>Lo que vas a aprender</h3><ul class="fi-aprende">' +
+        t.a.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+      h += '<h3>Temario</h3><div class="fi-temario">' + t.m.map(function(m, i){
+        return '<details' + (i === 0 ? ' open' : '') + '><summary><span class="fi-n">' + (i + 1) + '</span><span><b>' + esc(m.t) + '</b>' +
+          '<small>' + m.l.length + ' lecciones + evaluación</small></span></summary>' +
+          (m.r ? '<p>' + esc(m.r) + '</p>' : '') + '<ol>' + m.l.map(function(l){ return '<li>' + esc(l) + '</li>'; }).join('') + '</ol></details>';
+      }).join('') + '</div>' +
+        '<h3>Qué incluye</h3><ul class="fi-incluye">' +
+          '<li><b>Lecciones cortas e interactivas:</b> ejercicios que se califican al momento, no solo lectura.</li>' +
+          '<li><b>Evaluación al final de cada módulo</b> para comprobar lo que aprendiste.</li>' +
+          '<li><b>Constancia con folio verificable</b> de Instituto Mara al terminar.</li>' +
+          '<li><b>Dudas con el instructor</b> desde el aula.</li>' +
+          '<li><b>Avance guardado</b>: empiezas en el celular y sigues en la computadora.</li></ul>' +
+        '<p class="fi-nota">' + esc(t.tipo) + ' libre de capacitación. La constancia la emite Instituto Mara; no es un documento con validez oficial SEP ni una certificación CONOCER.</p>' +
+        '<div class="fi-acciones"><a class="btn btn-mor" href="' + url + '">Inscribirme por ' + dinero(p) + '</a>' +
+        '<button type="button" class="btn btn-linea" id="fi-compartir">Compartir</button></div>';
+      fichaCuerpo.innerHTML = h;
+      fichaCuerpo.scrollTop = 0;
+      document.getElementById('fi-compartir').onclick = function(){
+        var enlace = location.href.split('#')[0] + '#programa-' + id, txt = t.n + ' — Instituto Mara';
+        if(navigator.share) navigator.share({ title: txt, url: enlace }).catch(function(){});
+        else window.open('https://wa.me/?text=' + encodeURIComponent(txt + ': ' + enlace), '_blank');
+      };
+    }).catch(function(){ fichaCuerpo.innerHTML = '<p class="fi-cargando">No se pudo cargar el temario. Revisa tu conexión.</p>'; });
+  }
+  function segunHash(){
+    var m = /^#programa-(.+)$/.exec(location.hash);
+    if(m) abrirFicha(decodeURIComponent(m[1])); else if(!fichaEl.hidden) cerrarFicha();
+  }
+  function quitarHash(){ if(/^#programa-/.test(location.hash)) history.back(); else cerrarFicha(); }
+  window.addEventListener('hashchange', segunHash);
+  fichaEl.addEventListener('click', function(e){ if(e.target === fichaEl || e.target.closest('.fi-cerrar')) quitarHash(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !fichaEl.hidden) quitarHash(); });
+  segunHash();
 })();
 </script>
 
