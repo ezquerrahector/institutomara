@@ -498,7 +498,7 @@ tbody tr:hover{background:var(--nube)}
 var LLAVE = 'institutoMara.v2';
 /* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
    se actualice en las computadoras donde la plataforma ya se había abierto. */
-var CONTENIDO_VERSION = 6;
+var CONTENIDO_VERSION = 7;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
 
 function guardar(){
@@ -1248,6 +1248,17 @@ if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
   BD.config.contenidoVersion = CONTENIDO_VERSION;
   if(BD.config.minimoAprobatorio == null) BD.config.minimoAprobatorio = 80;
 }
+/* Programas nuevos publicados en /cursos/*.js: se agregan aunque el navegador
+   ya tuviera guardado el catálogo anterior (antes solo aparecían al subir
+   CONTENIDO_VERSION). */
+(function(){
+  var extra = window.CURSOS_MARA || [];
+  for(var i=0;i<extra.length;i++){
+    var ya = false;
+    for(var j=0;j<BD.cursos.length;j++) if(BD.cursos[j].id === extra[i].id){ ya = true; break; }
+    if(!ya) BD.cursos.push(JSON.parse(JSON.stringify(extra[i])));
+  }
+})();
 /* Compatibilidad con respaldos guardados antes de estos ajustes */
 if(!BD.biblioteca) BD.biblioteca = [];
 if(!BD.constancias) BD.constancias = [];
