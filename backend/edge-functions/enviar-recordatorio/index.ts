@@ -41,9 +41,9 @@ function html(d: { nombre: string; curso: string; avance: number; siguiente?: st
   const url = `${AULA}?curso=${encodeURIComponent(d.cursoId)}`;
   const primer = String(d.nombre || "").split(" ")[0];
   return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto;color:#2E1065">
-  <div style="background:linear-gradient(135deg,#2E1065,#6D28D9);color:#fff;padding:26px;border-radius:16px 16px 0 0">
-    <div style="font-size:13px;letter-spacing:2px;opacity:.85">INSTITUTO MARA</div>
-    <h1 style="margin:8px 0 0;font-size:24px">${e(primer)}, tu curso te está esperando</h1></div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse"><tr><td bgcolor="#4C1D95" style="background-color:#4C1D95;background-image:linear-gradient(135deg,#2E1065,#6D28D9);color:#ffffff;padding:26px;border-radius:16px 16px 0 0">
+    <div style="font-size:13px;letter-spacing:2px;color:#E9D5FF">INSTITUTO MARA</div>
+    <h1 style="margin:8px 0 0;font-size:24px;color:#ffffff">${e(primer)}, tu curso te está esperando</h1></td></tr></table>
   <div style="border:1px solid #E9E5F5;border-top:0;padding:24px;border-radius:0 0 16px 16px">
     <p style="font-size:16px;line-height:1.6">${d.avance > 0
       ? `Llevas <b>${d.avance}%</b> de <b>${e(d.curso)}</b>. ¡Vas muy bien! Con unos minutos hoy avanzas otra lección y te acercas a tu constancia.`
@@ -54,6 +54,14 @@ function html(d: { nombre: string; curso: string; avance: number; siguiente?: st
     <p style="text-align:center;margin:26px 0"><a href="${url}" style="background:#6D28D9;color:#fff;text-decoration:none;padding:14px 26px;border-radius:999px;font-weight:bold;font-size:16px">Continuar donde me quedé</a></p>
     <p style="font-size:13px;color:#6B6880">Tu avance se guarda solo: entra desde el celular o la computadora.
     ¿Tienes dudas? Pregúntale al instructor desde la lección.</p></div></div>`;
+}
+
+function texto(d: { nombre: string; curso: string; avance: number; siguiente?: string; cursoId: string }) {
+  const primer = String(d.nombre || "").split(" ")[0] || "Hola";
+  return `${primer}, tu curso te está esperando.\n\n` +
+    (d.avance > 0 ? `Llevas ${d.avance}% de ${d.curso}. ¡Vas muy bien!` : `Ya tienes tu lugar en ${d.curso} y tu primera lección te está esperando.`) +
+    (d.siguiente ? `\nTu siguiente lección: ${d.siguiente}` : "") +
+    `\n\nContinúa aquí: ${AULA}?curso=${encodeURIComponent(d.cursoId)}\n\nInstituto Mara`;
 }
 
 serve(async (req) => {
@@ -79,6 +87,7 @@ serve(async (req) => {
           to: [{ email: d.correo, name: d.nombre || "" }],
           subject: `${String(d.nombre || "").split(" ")[0] || "Hola"}, continúa ${d.curso} donde te quedaste`,
           htmlContent: html(d),
+          textContent: texto(d),
         }),
       });
       if (r.ok) {
