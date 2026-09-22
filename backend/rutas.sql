@@ -12,7 +12,11 @@ insert into cursos (id, nombre, descripcion, color, nivel, familia, periodo_tipo
   ('r-emprende', 'Ruta Emprende y Haz Crecer tu Negocio', 'Ordena tu dinero, lleva tus cuentas y tu RESICO sin miedo, y consigue clientes con marketing digital y redes sociales.', '#EA580C', 'Rutas', 'Rutas', null, null, 80, 2990, true, false),
   ('r-lider', 'Ruta Líder de Equipo y Recursos Humanos', 'Dirige a tu equipo con claridad, cumple la NOM-035 en tu centro de trabajo y maneja las emociones y el estrés propios y del equipo.', '#B45309', 'Rutas', 'Rutas', null, null, 72, 2890, true, false),
   ('r-cuidador', 'Ruta Cuidador y Acompañamiento', 'Cuida a una persona mayor con seguridad, da primeros auxilios psicológicos en una crisis y acompaña con respeto en la etapa final de la vida y el duelo.', '#7C3AED', 'Rutas', 'Rutas', null, null, 80, 2990, true, false),
-  ('r-ingles', 'Ruta Inglés A1 + A2', 'Los dos niveles de inglés seguidos: de presentarte y pedir en un restaurante a contar lo que hiciste, hablar de planes y usar el inglés en tu trabajo.', '#4F46E5', 'Rutas', 'Rutas', null, null, 40, 1390, true, false)
+  ('r-ingles', 'Ruta Inglés Completo: de cero a intermedio alto (A1 → B2)', 'Los cuatro niveles seguidos: A1 para presentarte y resolver lo básico, A2 para contar lo que hiciste y usar el inglés en tu trabajo, B1 para opinar, negociar planes y presentar una entrevista, y B2 para hablar con matices, negociar, presentar y escribir como profesional.', '#4F46E5', 'Rutas', 'Rutas', null, null, 92, 2490, true, false),
+  ('r-poliglota', 'Ruta Políglota Viajero: francés, italiano y portugués', 'Los tres cursos A1: francés, italiano y portugués de Brasil. Aprende a presentarte, moverte por la ciudad, comprar, comer en un restaurante y socializar, con voz nativa en cada frase y los falsos amigos que más confunden a los hispanohablantes.', '#DB2777', 'Rutas', 'Rutas', null, null, 72, 1990, true, false),
+  ('r-educadores', 'Ruta Educación, Crianza y Bienestar Infantil', 'Inclusión y neurodiversidad en el aula y en casa, salud emocional y señales de alerta en niños y adolescentes, y primeros auxilios psicológicos para responder en una crisis.', '#0EA5E9', 'Rutas', 'Rutas', null, null, 74, 3190, true, false),
+  ('r-vende', 'Ruta Vende en Línea y Haz Crecer tu Marca', 'Vende en WhatsApp Business, Mercado Libre y redes; atrae clientes con marketing digital y diseña tus publicaciones y tu marca con Canva y toma fotos de producto que venden con tu celular.', '#16A34A', 'Rutas', 'Rutas', null, null, 68, 2690, true, false),
+  ('r-psicologia', 'Ruta Psicología Clínica Basada en Evidencia', 'Evaluación y formulación de casos, Terapia Cognitivo-Conductual y terapias contextuales (ACT, DBT y activación conductual): del primer contacto con el paciente al plan de tratamiento con intervenciones basadas en evidencia.', '#7C3AED', 'Rutas', 'Rutas', null, null, 110, 4490, true, false)
 on conflict (id) do update set
   nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,
   nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas,
@@ -30,7 +34,7 @@ alter table rutas_cursos enable row level security;
 drop policy if exists "rutas_cursos lectura" on rutas_cursos;
 create policy "rutas_cursos lectura" on rutas_cursos for select using (true);
 
-delete from rutas_cursos where ruta_id in ('r-asistente', 'r-emprende', 'r-lider', 'r-cuidador', 'r-ingles');
+delete from rutas_cursos where ruta_id in ('r-asistente', 'r-emprende', 'r-lider', 'r-cuidador', 'r-ingles', 'r-poliglota', 'r-educadores', 'r-vende', 'r-psicologia');
 insert into rutas_cursos (ruta_id, curso_id, orden) values
   ('r-asistente', 'c-office', 1),
   ('r-asistente', 'c-excel-avanzado', 2),
@@ -45,7 +49,22 @@ insert into rutas_cursos (ruta_id, curso_id, orden) values
   ('r-cuidador', 'c-pap', 2),
   ('r-cuidador', 'd-tanatologia', 3),
   ('r-ingles', 'c-ingles', 1),
-  ('r-ingles', 'c-ingles-a2', 2);
+  ('r-ingles', 'c-ingles-a2', 2),
+  ('r-ingles', 'c-ingles-b1', 3),
+  ('r-ingles', 'c-ingles-b2', 4),
+  ('r-poliglota', 'c-frances-a1', 1),
+  ('r-poliglota', 'c-italiano-a1', 2),
+  ('r-poliglota', 'c-portugues-a1', 3),
+  ('r-educadores', 'd-neurodiversidad', 1),
+  ('r-educadores', 'd-infancia-adolescencia', 2),
+  ('r-educadores', 'c-pap', 3),
+  ('r-vende', 'c-venta-en-linea', 1),
+  ('r-vende', 'd-marketing-digital', 2),
+  ('r-vende', 'c-canva', 3),
+  ('r-vende', 'c-fotografia-producto', 4),
+  ('r-psicologia', 'd-evaluacion-clinica', 1),
+  ('r-psicologia', 'd-tcc', 2),
+  ('r-psicologia', 'd-terapias-contextuales', 3);
 
 -- Inscribirse a una ruta = inscribirse a cada programa que incluye
 create or replace function expandir_ruta()
