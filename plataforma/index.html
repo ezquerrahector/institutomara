@@ -133,6 +133,53 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit
 .curso-tapa svg{opacity:.95}
 .curso-cuerpo{padding:20px;display:flex;flex-direction:column;flex:1}
 .ruta-card{border-color:var(--lila,#C4B5FD)}
+.volver-sitio{display:inline-block;margin-bottom:14px;font-size:.92rem;font-weight:600;color:var(--morado);text-decoration:none}
+.volver-sitio:hover{text-decoration:underline}
+/* Catálogo con buscador y filtros */
+.cat-buscar{width:100%;padding:13px 18px;border:1.5px solid var(--linea);border-radius:999px;font:inherit;font-size:16px;background:#fff;margin:6px 0 4px}
+.cat-buscar:focus{outline:none;border-color:var(--morado)}
+.chips-aula{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}
+@media(max-width:700px){.chips-aula{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.chips-aula button{flex:none}}
+.chips-aula button{border:1.5px solid var(--linea);background:#fff;color:var(--tinta);padding:7px 13px;border-radius:999px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+.chips-aula button.on{background:var(--morado);border-color:var(--morado);color:#fff}
+.chips-aula small{opacity:.7;font-weight:500;margin-left:3px}
+.cat-tit{margin:26px 0 10px;color:var(--tinta);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cat-tit small{color:var(--gris);font-weight:500;font-size:.85rem}
+.cat-tit a{margin-left:auto;font-size:.9rem;color:var(--morado);font-weight:700;text-decoration:none}
+.cat-cuenta{color:var(--gris);margin:12px 0}
+.cat-card .cat-franja{height:8px}
+.cat-card .curso-cuerpo{gap:6px}
+.cat-fam{font-size:.72rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--turquesa-osc)}
+.cat-card h3{margin:0}
+.cat-desc{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.cat-meta{font-size:.85rem;color:var(--gris)}
+.cat-precio{font-size:1.3rem;font-weight:800;color:var(--tinta);margin:4px 0 8px}
+.cat-gratis{display:block;text-align:center;margin-top:8px;font-size:.9rem;font-weight:600;color:var(--morado)}
+/* Ficha del programa */
+.ficha-etq{font-size:.75rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--turquesa-osc)}
+.ficha-sub{margin:18px 0 8px;color:var(--tinta)}
+.ficha-aprende{list-style:none;padding:0;display:grid;gap:6px}
+.ficha-aprende li{padding-left:24px;position:relative;line-height:1.45}
+.ficha-aprende li:before{content:"✓";position:absolute;left:0;color:var(--turquesa-osc);font-weight:800}
+.ficha-mod{border:1px solid var(--linea);border-radius:12px;margin-bottom:8px;padding:10px 14px}
+.ficha-mod summary{cursor:pointer;font-weight:700;color:var(--tinta)}
+.ficha-mod summary small{color:var(--gris);font-weight:500}
+.ficha-mod ol{margin:8px 0 2px 20px;line-height:1.7}
+.ficha-precio{margin-top:16px;padding:14px 16px;background:var(--lavanda,#EDE9FE);border-radius:12px}
+.ficha-precio b{font-size:1.4rem;color:var(--morado)} .ficha-precio small{display:block;color:var(--gris)}
+/* Mis cursos compacto */
+.continuar{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#fff;border:0;margin-bottom:18px;flex-wrap:wrap}
+.continuar-txt{flex:1;min-width:220px} .continuar-txt span{font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;opacity:.85}
+.continuar h3{color:#fff;margin:4px 0} .continuar p{color:#EDE9FE;margin-bottom:10px} .continuar small{opacity:.85}
+.lista-mis{display:flex;flex-direction:column;gap:8px}
+.fila-mis{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;border:1px solid var(--linea);border-radius:14px;padding:12px 14px;font:inherit;cursor:pointer}
+.fila-mis:hover{border-color:var(--morado)}
+.fila-mis .punto{width:12px;height:12px;border-radius:50%;flex:none}
+.fila-mis-txt{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fila-mis-txt b{color:var(--tinta);font-size:.98rem}
+.fila-mis-txt .avance{height:6px;margin:0}
+.fila-mis-est{font-weight:700;color:var(--morado);font-size:.9rem;white-space:nowrap} .fila-mis-est.ok{color:#047857}
+.fila-mis .flecha{font-size:1.4rem;color:var(--gris)}
 .ruta-lista{margin:4px 0 8px 18px;color:var(--tinta);font-size:.92rem;line-height:1.6}
 /* Lección de muestra (sin cuenta) */
 .muestra-barra{background:linear-gradient(135deg,var(--tinta),var(--morado));color:#fff;padding:12px 0}
@@ -390,6 +437,8 @@ tbody tr:hover{background:var(--nube)}
 
   <div class="login-forma">
     <div class="login-caja">
+      <a class="volver-sitio" href="../sitio-web/index.html">← Volver a la página principal</a>
+      <div id="avisoAuth"></div>
       <div class="pestañas">
         <button id="tabEntrar" class="activa">Entrar</button>
         <button id="tabCrear">Crear cuenta</button>
@@ -450,13 +499,13 @@ tbody tr:hover{background:var(--nube)}
 <div id="app" class="oculto">
   <header class="barra no-imprimir">
     <div class="barra-in">
-      <div class="barra-logo">
+      <a class="barra-logo" href="../sitio-web/index.html" title="Ir a la página principal" style="text-decoration:none">
         <svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true">
           <path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95"
                 fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span>Instituto Mara</span>
-      </div>
+      </a>
       <nav class="barra-nav" id="nav"></nav>
       <div class="usuario-chip">
         <div class="avatar" id="avatar">?</div>
@@ -474,7 +523,7 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=8"></script>
+<script src="nube.js?v=9"></script>
 <script src="interactivo.js?v=7"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
@@ -483,6 +532,7 @@ tbody tr:hover{background:var(--nube)}
 <script src="cursos/catalogo-2.js?v=7"></script>
 <script src="cursos/catalogo-3.js?v=8"></script>
 <script src="cursos/catalogo-4.js?v=9"></script>
+<script src="cursos/catalogo-5.js?v=10"></script>
 <script src="cursos/rutas.js?v=1"></script>
 <script>
 /* =========================================================================
@@ -1388,6 +1438,27 @@ $('tabCrear').onclick = function(){
   $('formCrear').classList.remove('oculto'); $('formEntrar').classList.add('oculto');
 };
 
+/* Enlace de confirmación usado, vencido o abierto de nuevo en otro dispositivo */
+function avisoEnlaceCorreo(){
+  var er = window.Nube && Nube.errorEnlace; if(!er) return;
+  var caja = $('avisoAuth'); if(!caja) return;
+  caja.innerHTML = '<div class="aviso aviso-info" style="margin-bottom:14px">'+
+    '<b>Ese enlace ya no es válido.</b> Pasa cuando el enlace ya se usó (por ejemplo, si lo abriste antes en otro dispositivo) o cuando venció. '+
+    'Si ya habías confirmado tu correo, <b>entra con tu correo y contraseña</b>. Si no, escribe tu correo abajo y te mandamos un enlace nuevo.'+
+    '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><input id="reCorreo" type="email" placeholder="tu@correo.com" style="flex:1;min-width:180px">'+
+    '<button type="button" class="btn btn-mor btn-sm" onclick="reenviarCorreo()">Mandar enlace nuevo</button></div><div id="reAviso"></div></div>';
+}
+function reenviarCorreo(correoDado){
+  var correo = (correoDado || ($('reCorreo') && $('reCorreo').value) || ($('eCorreo') && $('eCorreo').value) || '').trim().toLowerCase();
+  var av = $('reAviso') || $('errEntrar');
+  if(!correo){ if($('reCorreo')) $('reCorreo').focus(); return; }
+  Nube.reenviarConfirmacion(correo).then(function(){
+    if(av) av.innerHTML = '<div class="aviso aviso-ok" style="margin-top:8px">Listo. Revisa tu correo (y la carpeta de spam) y abre el enlace nuevo. Puedes abrirlo en cualquier dispositivo.</div>';
+  }).catch(function(e){
+    if(av) av.innerHTML = '<div class="aviso aviso-error" style="margin-top:8px">'+esc(e.message)+'</div>';
+  });
+}
+
 $('formEntrar').onsubmit = function(e){
   e.preventDefault();
   var correo = $('eCorreo').value.trim().toLowerCase(), pass = $('ePass').value;
@@ -1403,7 +1474,11 @@ $('formEntrar').onsubmit = function(e){
         return Promise.all([ Nube.cargarCatalogo(BD), (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null ]);
       })
       .then(function(){ guardar(); ocupado(form, false); entrarApp(); })
-      .catch(function(err){ ocupado(form, false); avisoCaja('errEntrar', err.message); });
+      .catch(function(err){
+        ocupado(form, false); avisoCaja('errEntrar', err.message);
+        if(/confirmas tu correo/.test(err.message))
+          $('errEntrar').innerHTML += '<button type="button" class="btn btn-linea btn-sm" style="margin-top:8px" onclick="reenviarCorreo(\''+correo.replace(/'/g,'')+'\')">Mandarme otro correo de confirmación</button>';
+      });
     return;
   }
 
@@ -1603,6 +1678,9 @@ function pintarNav(){
 function ir(v, datos){
   estado.vista = v;
   if(datos) for(var k in datos) estado[k] = datos[k];
+  if((v === 'aula' || v === 'leccion') && estado.cursoId && sesion){
+    try{ localStorage.setItem('institutoMara.ultimo.' + sesion.id, estado.cursoId); }catch(e){}
+  }
   var bs = $('nav').querySelectorAll('button');
   for(var i=0;i<bs.length;i++)
     bs[i].classList.toggle('activa', bs[i].getAttribute('data-v')===v);
@@ -1618,52 +1696,79 @@ function tapaCurso(c){
     '<path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>';
 }
 
+/* Siguiente lección sin ver (para «Continuar donde te quedaste») */
+function siguienteLeccion(uid, c){
+  var a = avance(uid, c.id);
+  for(var i=0;i<c.modulos.length;i++)
+    for(var j=0;j<c.modulos[i].lecciones.length;j++){
+      var l = c.modulos[i].lecciones[j];
+      if(a.lecciones.indexOf(l.id) < 0) return { m:c.modulos[i], l:l };
+    }
+  return null;
+}
+var filtroMis = 'todos';
 function vistaMisCursos(){
-  var ins = [], h = '';
-  for(var i=0;i<BD.inscripciones.length;i++)
-    if(BD.inscripciones[i].usuarioId===sesion.id) ins.push(BD.inscripciones[i]);
-
-  h += '<div class="seccion"><div class="encabezado-fila"><div>'+
+  var mis = [];
+  for(var i=0;i<BD.inscripciones.length;i++){
+    var ins = BD.inscripciones[i];
+    if(ins.usuarioId !== sesion.id) continue;
+    var cc = curso(ins.cursoId); if(cc && mis.indexOf(cc) < 0) mis.push(cc);
+  }
+  var h = '<div class="seccion"><div class="encabezado-fila"><div>'+
        '<h2>Hola, '+esc(sesion.nombre.split(' ')[0])+'</h2>'+
-       '<p class="sub">Aquí está todo lo que tienes en curso. Retoma donde te quedaste.</p></div>'+
-       '<button class="btn btn-linea" onclick="ir(\'catalogo\')">Ver catálogo</button></div>';
+       '<p class="sub">Tus programas. Retoma justo donde te quedaste.</p></div>'+
+       '<button class="btn btn-linea" onclick="ir(\'catalogo\')">Explorar el catálogo</button></div>';
 
-  if(!ins.length){
-    h += '<div class="tarjeta vacio"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" '+
+  if(!mis.length){
+    return h + '<div class="tarjeta vacio"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" '+
          'stroke="#6D28D9" stroke-width="1.4"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>'+
          '<path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>'+
-         '<p>Todavía no tienes ningún curso. Empieza por el catálogo.</p>'+
-         '<button class="btn btn-mor" style="margin-top:16px" onclick="ir(\'catalogo\')">Elegir un curso</button></div>';
-  } else {
-    var misCursos = [];
-    for(var k=0;k<ins.length;k++){ var cc = curso(ins[k].cursoId); if(cc) misCursos.push(cc); }
-    var grupos = agruparCursos(misCursos);
-    var varios = grupos.length > 1 || (grupos[0] && grupos[0].grupos.length > 1);
-    for(var g=0;g<grupos.length;g++){
-      if(varios) h += '<h3 style="margin:20px 0 4px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
-      for(var s=0;s<grupos[g].grupos.length;s++){
-        var sub = grupos[g].grupos[s];
-        if(varios) h += '<div style="margin:12px 0 8px;font-weight:700;color:var(--morado);font-size:.82rem;'+
-          'text-transform:uppercase;letter-spacing:.6px">'+esc(sub.titulo)+'</div>';
-        h += '<div class="rejilla rejilla-3">';
-        for(var c2=0;c2<sub.cursos.length;c2++){
-          var c = sub.cursos[c2];
-          var p = porcentaje(sesion.id,c), listo = cursoCompleto(sesion.id,c);
-          h += '<article class="curso-card">'+tapaCurso(c)+'<div class="curso-cuerpo">'+
-               '<span class="etiqueta '+(listo?'ok':'')+'">'+(listo?'Concluido':'En curso')+'</span>'+
-               '<h3 style="margin-top:10px">'+esc(c.nombre)+'</h3>'+
-               '<p>'+esc(c.desc)+'</p>'+
-               '<div class="avance-txt"><span>Avance</span><span>'+p+'%</span></div>'+
-               '<div class="avance"><i style="width:'+p+'%"></i></div>'+
-               '<button class="btn btn-mor" style="margin-top:16px;width:100%" '+
-               'onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">'+(p?'Continuar':'Comenzar')+'</button>'+
-               '</div></article>';
-        }
-        h += '</div>';
-      }
-    }
+         '<p>Todavía no tienes ningún programa. Explora el catálogo: puedes probar una lección gratis antes de decidir.</p>'+
+         '<button class="btn btn-mor" style="margin-top:16px" onclick="ir(\'catalogo\')">Explorar el catálogo</button></div></div>';
   }
-  return h + '</div>';
+
+  /* El que abrió la última vez (o el más avanzado sin terminar) va hasta arriba */
+  var ultimo = null;
+  try{ ultimo = curso(localStorage.getItem('institutoMara.ultimo.' + sesion.id)); }catch(e){}
+  if(!ultimo || mis.indexOf(ultimo) < 0 || cursoCompleto(sesion.id, ultimo)){
+    ultimo = null;
+    mis.forEach(function(c){ if(!cursoCompleto(sesion.id,c) && (!ultimo || porcentaje(sesion.id,c) > porcentaje(sesion.id,ultimo))) ultimo = c; });
+  }
+  if(ultimo){
+    var sig = siguienteLeccion(sesion.id, ultimo), pu = porcentaje(sesion.id, ultimo);
+    h += '<div class="tarjeta continuar" style="background:linear-gradient(135deg,var(--tinta),'+ultimo.color+');">'+
+      '<div class="continuar-txt"><span>Continúa donde te quedaste</span><h3>'+esc(ultimo.nombre)+'</h3>'+
+      (sig ? '<p>Sigue: '+esc(sig.l.titulo)+'</p>' : '<p>Solo te falta la evaluación.</p>')+
+      '<div class="avance" style="background:rgba(255,255,255,.25)"><i style="width:'+pu+'%;background:#fff"></i></div>'+
+      '<small>'+pu+'% completado</small></div>'+
+      '<button class="btn" style="background:#fff;color:var(--morado)" onclick="'+
+        (sig ? 'ir(\'leccion\',{cursoId:\''+ultimo.id+'\',moduloId:\''+sig.m.id+'\',leccionId:\''+sig.l.id+'\'})'
+             : 'ir(\'aula\',{cursoId:\''+ultimo.id+'\'})')+'">Continuar</button></div>';
+  }
+
+  var nCurso = mis.filter(function(c){ return !cursoCompleto(sesion.id,c); }).length;
+  var fil = [['todos','Todos',mis.length],['curso','En curso',nCurso],['listos','Concluidos',mis.length-nCurso]];
+  if(mis.length > 3){
+    h += '<div class="chips-aula">'+fil.map(function(f){
+      return '<button class="'+(filtroMis===f[0]?'on':'')+'" onclick="filtroMis=\''+f[0]+'\';pintar()">'+f[1]+' <small>'+f[2]+'</small></button>';
+    }).join('')+'</div>';
+  }
+  var lista = mis.filter(function(c){
+    var ok = cursoCompleto(sesion.id,c);
+    return filtroMis === 'todos' || (filtroMis === 'curso' && !ok) || (filtroMis === 'listos' && ok);
+  });
+  h += '<div class="lista-mis">';
+  lista.forEach(function(c){
+    var p = porcentaje(sesion.id,c), listo = cursoCompleto(sesion.id,c);
+    h += '<button class="fila-mis" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">'+
+      '<span class="punto" style="background:'+c.color+'"></span>'+
+      '<span class="fila-mis-txt"><b>'+esc(c.nombre)+'</b>'+
+        '<span class="avance"><i style="width:'+p+'%"></i></span></span>'+
+      '<span class="fila-mis-est'+(listo?' ok':'')+'">'+(listo ? 'Concluido' : p+'%')+'</span>'+
+      '<span class="flecha">›</span></button>';
+  });
+  if(!lista.length) h += '<p class="vacio" style="padding:20px">No hay programas en este filtro.</p>';
+  return h + '</div></div>';
 }
 
 /* Agrupa los cursos publicados o "próximamente" por nivel académico y, dentro de
@@ -1714,10 +1819,16 @@ function tarjetaRuta(r){
       (suma > r.precio ? ' <span class="etiqueta ok">Ahorras '+dinero(suma - r.precio)+'</span>' : '')+'</div>'+
     (tiene
       ? '<button class="btn btn-linea" style="width:100%" onclick="ir(\'mis-cursos\')">Ya tienes estos programas</button>'
-      : '<button class="btn btn-mor" style="width:100%" onclick="abrirPago(\''+r.id+'\')">Comprar la ruta</button>')+
+      : '<button class="btn btn-mor" style="width:100%" onclick="verRuta(\''+r.id+'\')">Conocer la ruta</button>')+
     '</div></article>';
 }
 
+function famDe(c){
+  if(c.nivel === 'Diplomados') return 'Diplomados';
+  if(c.iaPorProfesion || /^c-ia-/.test(c.id)) return 'IA por profesión';
+  if(c.id === 'c-ia') return 'IA aplicada';
+  return c.familia || 'General';
+}
 function tarjetaCurso(c){
   var yaEsta = estaInscrito(sesion.id,c.id);
   if(c.proximamente){
@@ -1727,60 +1838,110 @@ function tarjetaCurso(c){
       '<button class="btn btn-linea" style="width:100%" disabled>Muy pronto disponible</button>'+
       '</div></article>';
   }
-  return '<article class="curso-card">'+tapaCurso(c)+'<div class="curso-cuerpo">'+
-    '<span class="etiqueta tur">'+c.horas+' horas · '+c.modulos.length+' módulos</span>'+
-    '<h3 style="margin-top:10px">'+esc(c.nombre)+'</h3><p>'+esc(c.desc)+'</p>'+
-    '<div style="font-size:1.35rem;font-weight:800;color:var(--tinta);margin-bottom:14px">'+dinero(c.precio)+'</div>'+
+  var lec = c.modulos.reduce(function(a,m){ return a + m.lecciones.length; }, 0);
+  return '<article class="curso-card cat-card">'+
+    '<div class="cat-franja" style="background:linear-gradient(90deg,'+c.color+',#7C3AED)"></div><div class="curso-cuerpo">'+
+    '<span class="cat-fam">'+esc(famDe(c))+'</span>'+
+    '<h3>'+esc(c.nombre)+'</h3><p class="cat-desc">'+esc(c.desc)+'</p>'+
+    '<div class="cat-meta">'+c.horas+' h · '+c.modulos.length+' módulos · '+lec+' lecciones</div>'+
+    '<div class="cat-precio">'+dinero(c.precio)+'</div>'+
     (yaEsta
       ? '<button class="btn btn-linea" style="width:100%" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Ya lo tienes · Entrar</button>'
-      : '<button class="btn btn-mor" style="width:100%" onclick="abrirPago(\''+c.id+'\')">Inscribirme y pagar</button>')+
+      : '<button class="btn btn-mor" style="width:100%" onclick="verPrograma(\''+c.id+'\')">Conocer el programa</button>'+
+        '<a class="cat-gratis" href="index.html?muestra='+encodeURIComponent(c.id)+'" target="_blank" rel="noopener">Probar una lección gratis</a>')+
     '</div></article>';
 }
 
+/* Ficha del programa dentro del aula: temario, qué aprenderás y opciones.
+   Primero se conoce el programa; el pago es un paso aparte y opcional. */
+function verPrograma(cid){
+  var c = curso(cid); if(!c) return;
+  var lec = 0, obj = [];
+  c.modulos.forEach(function(m){ m.lecciones.forEach(function(l){ lec++; if(l.objetivo) obj.push(l.objetivo.replace(/\.$/,'')); }); });
+  var paso = Math.max(1, obj.length / 6), aprende = [];
+  for(var i=0;i<obj.length && aprende.length<6;i+=paso){ var o = obj[Math.floor(i)]; aprende.push(o.charAt(0).toUpperCase()+o.slice(1)); }
+  var rutas = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && r.cursos.indexOf(cid) >= 0; });
+  var h = '<div class="ficha-etq">'+esc(c.nivel === 'Diplomados' ? 'Diplomado · '+(c.familia||'') : 'Curso · '+famDe(c))+'</div>'+
+    '<p style="color:var(--gris);margin:4px 0 12px">'+c.horas+' horas · '+c.modulos.length+' módulos · '+lec+' lecciones · evaluación por módulo · constancia con folio</p>'+
+    '<p style="margin-bottom:14px">'+esc(c.desc)+'</p>';
+  if(aprende.length) h += '<h4 class="ficha-sub">Lo que vas a aprender</h4><ul class="ficha-aprende">'+
+    aprende.map(function(a){ return '<li>'+esc(a)+'</li>'; }).join('')+'</ul>';
+  h += '<h4 class="ficha-sub">Temario</h4>'+c.modulos.map(function(m, i){
+    return '<details class="ficha-mod"'+(i===0?' open':'')+'><summary>'+esc(m.titulo)+' <small>'+m.lecciones.length+' lecciones</small></summary><ol>'+
+      m.lecciones.map(function(l){ return '<li>'+esc(l.titulo.replace(/^Lección\s+\d+\s*[—–-]\s*/,''))+'</li>'; }).join('')+'</ol></details>';
+  }).join('');
+  if(rutas.length) h += '<div class="aviso aviso-info" style="margin-top:14px">También viene en la <b>'+esc(rutas[0].nombre)+'</b> con precio especial. '+
+    '<a href="#" onclick="verRuta(\''+rutas[0].id+'\');return false">Ver la ruta</a></div>';
+  h += '<div class="ficha-precio"><div><b>'+dinero(c.precio)+'</b><small>Pago único · acceso 12 meses · a tu ritmo</small></div></div>';
+  abrirModal(c.nombre, h,
+    '<a class="btn btn-fantasma" href="index.html?muestra='+encodeURIComponent(c.id)+'" target="_blank" rel="noopener">Probar una lección gratis</a>'+
+    '<button class="btn btn-mor" onclick="abrirPago(\''+c.id+'\')">Quiero inscribirme</button>');
+}
+
+function verRuta(rid){
+  var r = ruta(rid); if(!r) return;
+  var suma = r.cursos.reduce(function(a,id){ var c = curso(id); return a + (c ? Number(c.precio) : 0); }, 0);
+  var h = '<p style="color:var(--gris);margin-bottom:10px">'+esc(r.para)+'</p><p style="margin-bottom:14px">'+esc(r.desc)+'</p>'+
+    '<h4 class="ficha-sub">Incluye '+r.cursos.length+' programas ('+r.horas+' horas)</h4><div class="lista-mis">'+
+    r.cursos.map(function(id){ var c = curso(id); if(!c) return '';
+      return '<button class="fila-mis" onclick="verPrograma(\''+id+'\')"><span class="punto" style="background:'+c.color+'"></span>'+
+        '<span class="fila-mis-txt"><b>'+esc(c.nombre)+'</b><small style="color:var(--gris)">'+c.horas+' h · '+dinero(c.precio)+
+        (estaInscrito(sesion.id,id)?' · ya lo tienes':'')+'</small></span><span class="flecha">›</span></button>'; }).join('')+'</div>'+
+    '<div class="ficha-precio"><div>'+(suma > r.precio ? '<s style="color:var(--gris)">'+dinero(suma)+'</s> ' : '')+'<b>'+dinero(r.precio)+'</b>'+
+    (suma > r.precio ? ' <span class="etiqueta ok">Ahorras '+dinero(suma-r.precio)+'</span>' : '')+
+    '<small>Pago único · acceso 12 meses a cada programa</small></div></div>';
+  abrirModal(r.nombre, h, rutaCompleta(r)
+    ? '<button class="btn btn-linea" onclick="cerrarModal();ir(\'mis-cursos\')">Ya tienes estos programas</button>'
+    : '<button class="btn btn-mor" onclick="abrirPago(\''+r.id+'\')">Quiero esta ruta</button>');
+}
+
+var filtroCat = { k:'Todos', q:'' };
 function vistaCatalogo(){
-  var h = '<div class="seccion"><h2>Catálogo</h2>'+
-    '<p class="sub">Cursos libres de capacitación. Al concluirlos recibes constancia con folio y QR de verificación de Instituto Mara.</p>';
-  var publicados = [], proximos = [];
-  for(var i=0;i<BD.cursos.length;i++){
-    if(BD.cursos[i].publicado) publicados.push(BD.cursos[i]);
-    else if(BD.cursos[i].proximamente && !BD.cursos[i].iaPorProfesion) proximos.push(BD.cursos[i]);
-  }
-  var rutas = (window.RUTAS_MARA || []).filter(function(r){ return r.publicado !== false; });
-  if(rutas.length){
-    h += '<h3 style="margin:26px 0 4px;color:var(--tinta)">Rutas de aprendizaje</h3>'+
-      '<p class="sub" style="margin-bottom:12px">Varios programas que se complementan, con precio especial por llevarlos juntos.</p>'+
+  var pub = BD.cursos.filter(function(c){ return c.publicado; });
+  var cuenta = {}; pub.forEach(function(c){ var f = famDe(c); cuenta[f] = (cuenta[f]||0) + 1; });
+  var orden = ['Diplomados','Negocios y finanzas','Administración y oficina','Idiomas','Tecnología','Salud y bienestar','Desarrollo humano','Recursos Humanos y empresa','IA aplicada','IA por profesión'];
+  var cats = ['Todos'];
+  if((window.RUTAS_MARA||[]).length) cats.push('Rutas');
+  orden.forEach(function(k){ if(cuenta[k]) cats.push(k); });
+  Object.keys(cuenta).forEach(function(k){ if(cats.indexOf(k) < 0) cats.push(k); });
+  var n = function(k){ return k === 'Todos' ? pub.length : k === 'Rutas' ? (window.RUTAS_MARA||[]).length : cuenta[k]; };
+  return '<div class="seccion"><h2>Catálogo</h2>'+
+    '<p class="sub">Conoce cada programa, prueba una lección gratis y decide con calma. Al terminar recibes constancia con folio y QR de verificación.</p>'+
+    '<input type="search" class="cat-buscar" id="cat-q" placeholder="Buscar: Excel, inglés, RESICO, duelo…" value="'+esc(filtroCat.q)+'" oninput="filtroCat.q=this.value;pintarCatalogo()">'+
+    '<div class="chips-aula" id="cat-chips">'+cats.map(function(k){
+      return '<button class="'+(filtroCat.k===k?'on':'')+'" onclick="filtroCat.k=\''+k+'\';document.querySelectorAll(\'#cat-chips button\').forEach(function(b){b.classList.remove(\'on\')});this.classList.add(\'on\');pintarCatalogo()">'+esc(k)+' <small>'+n(k)+'</small></button>';
+    }).join('')+'</div><div id="cat-res"></div></div>';
+}
+function normaliza(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+function pintarCatalogo(){
+  var caja = $('cat-res'); if(!caja) return;
+  var q = normaliza(filtroCat.q), k = filtroCat.k, h = '';
+  var rutas = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && (!q || normaliza(r.nombre+' '+r.desc).indexOf(q) >= 0); });
+  var pub = BD.cursos.filter(function(c){
+    return c.publicado && (k === 'Todos' || famDe(c) === k) && (!q || normaliza(c.nombre+' '+c.desc+' '+famDe(c)).indexOf(q) >= 0);
+  });
+  if((k === 'Todos' && !q && rutas.length) || k === 'Rutas'){
+    h += '<h3 class="cat-tit">Rutas de aprendizaje <small>varios programas con precio especial</small></h3>'+
       '<div class="rejilla rejilla-3">'+rutas.map(tarjetaRuta).join('')+'</div>';
   }
-  var grupos = agruparCursos(publicados);
-  for(var g=0;g<grupos.length;g++){
-    h += '<h3 style="margin:26px 0 4px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
-    for(var s=0;s<grupos[g].grupos.length;s++){
-      var sub = grupos[g].grupos[s];
-      h += '<div style="margin:14px 0 10px;font-weight:700;color:var(--morado);font-size:.85rem;'+
-        'text-transform:uppercase;letter-spacing:.6px">'+esc(sub.titulo)+'</div><div class="rejilla rejilla-3">';
-      for(var c=0;c<sub.cursos.length;c++) h += tarjetaCurso(sub.cursos[c]);
-      h += '</div>';
+  if(k !== 'Rutas'){
+    if(k === 'Todos' && !q){
+      /* Vista general: por categoría, con máximo 3 por fila de categoría y botón para ver todos */
+      var grupos = {}; pub.forEach(function(c){ var f = famDe(c); (grupos[f] = grupos[f] || []).push(c); });
+      ['Diplomados','Negocios y finanzas','Administración y oficina','Idiomas','Tecnología','Salud y bienestar','Desarrollo humano','Recursos Humanos y empresa','IA aplicada','IA por profesión']
+        .concat(Object.keys(grupos)).filter(function(f, i, a){ return grupos[f] && a.indexOf(f) === i; }).forEach(function(f){
+        var g = grupos[f];
+        h += '<h3 class="cat-tit">'+esc(f)+' <small>'+g.length+'</small>'+
+          (g.length > 3 ? '<a href="#" onclick="filtroCat.k=\''+f+'\';ir(\'catalogo\');return false">Ver todos ›</a>' : '')+'</h3>'+
+          '<div class="rejilla rejilla-3">'+g.slice(0,3).map(tarjetaCurso).join('')+'</div>';
+      });
+    } else {
+      h += '<p class="cat-cuenta">'+pub.length+(pub.length === 1 ? ' programa' : ' programas')+'</p>'+
+        (pub.length ? '<div class="rejilla rejilla-3">'+pub.map(tarjetaCurso).join('')+'</div>'
+                    : '<p class="vacio">No encontramos ese programa. Escríbenos por WhatsApp y dinos cuál buscas.</p>');
     }
   }
-  if(proximos.length){
-    var gp = agruparCursos(proximos);
-    for(var g2=0;g2<gp.length;g2++){
-      h += '<h3 style="margin:34px 0 4px;color:var(--tinta)">Próximamente — '+esc(gp[g2].nivel)+'</h3>';
-      for(var s2=0;s2<gp[g2].grupos.length;s2++){
-        var sub2 = gp[g2].grupos[s2];
-        h += '<div style="margin:14px 0 10px;font-weight:700;color:var(--morado);font-size:.85rem;'+
-          'text-transform:uppercase;letter-spacing:.6px">'+esc(sub2.titulo)+'</div><div class="rejilla rejilla-3">';
-        for(var c2=0;c2<sub2.cursos.length;c2++) h += tarjetaCurso(sub2.cursos[c2]);
-        h += '</div>';
-      }
-    }
-  }
-  h += '<div class="tarjeta" style="margin-top:30px;background:linear-gradient(135deg,#0D9488 0%,#7C3AED 100%);color:#fff">'+
-       '<h3 style="color:#fff;margin-bottom:6px">¿Buscas IA aplicada a tu profesión?</h3>'+
-       '<p style="color:#fff;opacity:.92;margin-bottom:14px">Estamos preparando cursos de IA para más de 25 giros y profesiones: '+
-       'Marketing, Contadores, Abogados, Ventas, Turismo y muchos más. Búscalos y avísanos cuál quieres primero.</p>'+
-       '<button class="btn" style="background:#fff;color:var(--morado)" onclick="ir(\'ia-profesion\')">Ver IA por profesión</button></div>';
-  return h + '</div>';
+  caja.innerHTML = h;
 }
 
 function inscribirme(cid){
@@ -1901,19 +2062,20 @@ function abrirPago(cid){
   }
 
   cuerpo += configurado
-    ? '<p style="margin-bottom:6px">Al pagar con Mercado Pago tu acceso se activa automáticamente, sin esperar confirmación.</p>'
+    ? '<p style="margin-bottom:6px">El pago se hace en la página segura de Mercado Pago: tarjeta de crédito o débito, OXXO o transferencia. '+
+      'En cuanto se confirma, tu acceso se activa solo.</p>'
     : '<div class="aviso aviso-info">El cobro en línea todavía no está activado en esta copia de la plataforma '+
       '(falta conectar la función de Mercado Pago en Ajustes). Mientras tanto, confirma tu pago por WhatsApp.</div>';
 
   var pie = '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
     (configurado
-      ? '<button id="pg-btn" class="btn btn-mor" onclick="pagarConMercadoPago(\''+cid+'\')">Pagar con Mercado Pago</button>'
+      ? '<button id="pg-btn" class="btn btn-mor" onclick="pagarConMercadoPago(\''+cid+'\')">Continuar al pago seguro</button>'
       : (BD.config.whatsapp
           ? '<a class="btn btn-tur" target="_blank" href="https://wa.me/'+esc(BD.config.whatsapp)+'?text='+
             encodeURIComponent('Hola, quiero inscribirme a "'+c.nombre+'" ('+dinero(c.precio)+')')+'">Confirmar por WhatsApp</a>'
           : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>'));
 
-  abrirModal('Inscripción a "'+esc(c.nombre)+'"', cuerpo, pie);
+  abrirModal('Inscripción: '+c.nombre, cuerpo, pie);
 
   /* Si llegó con un cupón en el enlace, se escribe y se aplica solo. */
   var pend = cuponPendiente();
@@ -1932,7 +2094,7 @@ function aplicarCupon(cid){
     if(!r || !r.valido){
       cuponPago = null;
       $('pg-precio').textContent = dinero(c.precio);
-      var b0 = $('pg-btn'); if(b0) b0.textContent = 'Pagar con Mercado Pago';
+      var b0 = $('pg-btn'); if(b0) b0.textContent = 'Continuar al pago seguro';
       av.innerHTML = '<div class="aviso aviso-error">'+esc((r && r.motivo) || 'Ese cupón no se pudo aplicar.')+
         ' Si quieres pagar sin cupón, borra el código.</div>';
       olvidarCuponPendiente();
@@ -1944,7 +2106,7 @@ function aplicarCupon(cid){
     av.innerHTML = '<div class="aviso aviso-ok">'+esc(r.motivo || 'Cupón aplicado')+'. Ahorras '+dinero(r.descuento)+'.'+
       (fin <= 0 ? ' Este cupón cubre el curso completo.' : '')+'</div>';
     var b = $('pg-btn');
-    if(b) b.textContent = fin <= 0 ? 'Obtener mi acceso' : 'Pagar con Mercado Pago';
+    if(b) b.textContent = fin <= 0 ? 'Obtener mi acceso' : 'Continuar al pago seguro';
   }).catch(function(e){
     av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>';
   });
@@ -1987,12 +2149,12 @@ function pagarConMercadoPago(cid){
       return;
     }
     if(d && d.init_point){ location.href = d.init_point; return; }
-    if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Pagar con Mercado Pago'; }
+    if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Continuar al pago seguro'; }
     var av = $('pg-aviso');
     var msg = (d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.';
     if(av) av.innerHTML = '<div class="aviso aviso-error">'+esc(msg)+'</div>'; else alert(msg);
   })
-  .catch(function(){ if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Pagar con Mercado Pago'; }
+  .catch(function(){ if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Continuar al pago seguro'; }
     alert('No se pudo conectar con el cobro en línea. Revisa tu conexión e intenta de nuevo.'); });
 }
 
@@ -3806,6 +3968,7 @@ function pintar(){
   else if(v==='admin-dudas')    h = vistaAdminDudas();
   else if(v==='verificacion')   h = vistaAdminVerificacion();
   $('vista').innerHTML = h;
+  if(v === 'catalogo') pintarCatalogo();
 }
 
 /* ---------------- Lección de muestra (sin cuenta) ----------------
@@ -3855,6 +4018,7 @@ function abrirMuestra(cid){
 }
 
 /* ---------------- Arranque: mantener sesión iniciada ---------------- */
+avisoEnlaceCorreo();
 (function(){
   var pMuestra = new URLSearchParams(location.search).get('muestra');
   if(pMuestra && abrirMuestra(pMuestra)){

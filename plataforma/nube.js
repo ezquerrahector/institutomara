@@ -141,6 +141,11 @@ var Nube = {
     ses = leerSesionLocal();
     /* Si el alumno llega desde el correo de confirmación, Supabase manda los
        tokens en el # de la dirección. Se guardan y se limpia la barra. */
+    if(location.hash && location.hash.indexOf('error') >= 0 && location.hash.indexOf('access_token=') < 0){
+      var pe = new URLSearchParams(location.hash.slice(1));
+      Nube.errorEnlace = { codigo: pe.get('error_code') || pe.get('error') || '', texto: pe.get('error_description') || '' };
+      history.replaceState(null, '', location.pathname + location.search);
+    }
     if(location.hash && location.hash.indexOf('access_token=') >= 0){
       var p = new URLSearchParams(location.hash.slice(1));
       if(p.get('access_token')){
@@ -153,6 +158,13 @@ var Nube = {
   },
 
   haySesion: function(){ return !!(ses && ses.refresh_token); },
+
+  /* Vuelve a mandar el correo de confirmación (el enlace anterior ya se usó o venció). */
+  reenviarConfirmacion: function(correo){
+    return auth('resend', { type:'signup', email: correo,
+      options:{ email_redirect_to: location.origin + location.pathname } },
+      '?redirect_to=' + encodeURIComponent(location.origin + location.pathname));
+  },
 
   /* Crear cuenta. Si el proyecto pide confirmar el correo (lo recomendado),
      regresa {confirmar:true} y el alumno todavía no entra. */
