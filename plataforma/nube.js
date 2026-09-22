@@ -125,7 +125,8 @@ function upsert(tabla, filas, conflicto){
 function perfilDesde(f){
   return { id:f.id, nombre:f.nombre, correo:f.correo, tel:f.telefono || '',
            rol:f.rol || 'alumno', alta:(f.creado_en||'').slice(0,10), folio:f.folio || '',
-           foto:f.foto_url || '', pass:'' };
+           foto:f.foto_url || '', pass:'', ultimoAcceso:f.ultimo_acceso || null, accesos:f.accesos || 0,
+           nombreConstancia:f.nombre_constancia || '' };
 }
 function perfilHacia(u){
   return { id:u.id, nombre:u.nombre, correo:u.correo, telefono:u.tel || null,
@@ -261,9 +262,22 @@ var Nube = {
       rest('avances?select=*'),
       rest('pagos?select=*&order=fecha.desc'),
       rest('constancias?select=*'),
-      rest('dudas?select=*&order=fecha.desc')
+      rest('dudas?select=*&order=fecha.desc'),
+      rest('recordatorios?select=usuario_id,curso_id,canal,enviado_en&order=enviado_en.desc&limit=2000').catch(function(){ return []; })
     ]).then(function(r){
-      var i, mios = {};
+      var i, mios = {}, enServidor = {};
+      for(i=0;i<r[0].length;i++) enServidor[r[0][i].id] = true;
+      /* Quien ya no existe en el servidor (por ejemplo, un alumno eliminado) se quita
+         también de aquí, con sus inscripciones y avance guardados en este navegador. */
+      for(i=BD.usuarios.length-1;i>=0;i--){
+        var uu = BD.usuarios[i];
+        if(!enServidor[uu.id]){
+          BD.usuarios.splice(i,1);
+          BD.inscripciones = BD.inscripciones.filter(function(x){ return x.usuarioId !== uu.id; });
+          if(BD.avances) delete BD.avances[uu.id];
+        }
+      }
+      BD.recordatorios = r[6] || [];
       for(i=0;i<BD.usuarios.length;i++) mios[BD.usuarios[i].id] = true;
       for(i=0;i<r[0].length;i++){
         var u = perfilDesde(r[0][i]);
@@ -454,6 +468,72 @@ var Nube = {
 
   borrarPago: function(id){
     return rest('pagos?id=eq.' + encodeURIComponent(id), { metodo:'DELETE', prefer:'return=minimal' });
+  },
+
+  registrarRecordatorio: function(usuarioId, cursoId, canal){
+    return rest('recordatorios', { metodo:'POST', prefer:'return=minimal',
+      cuerpo:{ usuario_id:usuarioId, curso_id:cursoId || null, canal:canal || 'whatsapp' } }).catch(function(){});
+  },
+
+  /* Último acceso del alumno (para el seguimiento del administrador) */
+  marcarAcceso: function(){
+    return rest('rpc/marcar_acceso', { metodo:'POST', cuerpo:{} }).catch(function(){});
+  },
+
+  /* Nombre que aparece en la constancia (el alumno para sí mismo o el admin para cualquiera) */
+  cambiarNombreConstancia: function(nombre, usuarioId){
+    var cuerpo = { p_nombre: nombre || '' };
+    if(usuarioId) cuerpo.p_usuario = usuarioId;
+    return rest('rpc/cambiar_nombre_constancia', { metodo:'POST', cuerpo:cuerpo });
+  },
+
+  /* El admin corrige datos de un alumno (nombre y teléfono; el correo va por funcionServidor) */
+  actualizarPerfil: function(usuarioId, cambios){
+    return rest('perfiles?id=eq.' + usuarioId, { metodo:'PATCH', prefer:'return=minimal', cuerpo:cambios });
+  },
+
+  /* Llama una función del servidor con la sesión del usuario (solo admin para estas) */
+  funcionServidor: function(nombre, cuerpo){
+    return token().then(function(t){
+      return fetch(cfg.url + '/functions/v1/' + nombre, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', apikey:cfg.key, Authorization:'Bearer ' + t },
+        body: JSON.stringify(cuerpo)
+      });
+    }).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(d){
+        if(r.status === 404) throw new Error('Falta publicar la función «'+nombre+'» en Supabase.');
+        if(!r.ok) throw new Error((d && d.error) || ('Error ' + r.status));
+        return d;
+      });
+    });
+  },
+
+  /* Cambiar el propio correo de acceso: Supabase manda confirmación al nuevo correo */
+  cambiarCorreoPropio: function(nuevo){
+    return token().then(function(t){
+      return fetch(cfg.url + '/auth/v1/user?redirect_to=' + encodeURIComponent(location.origin + location.pathname), {
+        method:'PUT',
+        headers:{ 'Content-Type':'application/json', apikey:cfg.key, Authorization:'Bearer ' + t },
+        body: JSON.stringify({ email: nuevo })
+      }).then(function(r){
+        return r.json().catch(function(){ return {}; }).then(function(d){
+          if(!r.ok) throw new Error(mensajeError(d));
+          return true;
+        });
+      });
+    });
+  },
+
+  /* Entrar sin contraseña: Supabase manda un enlace de acceso al correo */
+  enlaceAcceso: function(correo){
+    return auth('otp', { email: correo, create_user: false },
+      '?redirect_to=' + encodeURIComponent(location.origin + location.pathname));
+  },
+
+  /* Entrar con Google (se activa en Supabase → Authentication → Providers → Google) */
+  urlGoogle: function(){
+    return cfg.url + '/auth/v1/authorize?provider=google&redirect_to=' + encodeURIComponent(location.origin + location.pathname);
   },
 
   responderDuda: function(id, respuesta){

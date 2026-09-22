@@ -5,7 +5,7 @@
    la pronunciación se genera con la voz del propio navegador.
 
    Tipos de bloque que agrega este archivo:
-     escuchar    frases con botón ▶ (voz en inglés, normal y lenta)
+     escuchar    frases con botón ▶ (voz en el idioma del curso, normal y lenta)
      practica    preguntas de opción múltiple con explicación inmediata
      completar   escribir la palabra que falta
      relacionar  unir cada elemento con su pareja
@@ -45,7 +45,7 @@ function norm(s){
   return String(s||'').toLowerCase()
     .replace(/[‘’´`]/g,"'").replace(/[“”]/g,'"')
     .normalize('NFD').replace(/[̀-ͯ]/g,'')
-    .replace(/[.,;:!?¡¿"]/g,'').replace(/\s+/g,' ').trim();
+    .replace(/ß/g,'ss').replace(/[.,;:!?¡¿"«»]/g,'').replace(/\s+/g,' ').trim();
 }
 MI.norm = norm;
 function reg(b){
@@ -55,24 +55,39 @@ function reg(b){
 function $i(id){ return document.getElementById(id); }
 
 /* ---------------- Voz (texto a voz del navegador) ---------------- */
-var vozEn = null;
-function elegirVoz(){
-  if(!('speechSynthesis' in window)) return;
-  var vs = speechSynthesis.getVoices() || [], pref = ['Samantha','Google US English','Microsoft Aria','Microsoft Jenny','Alex','Karen','Daniel'];
+/* Idioma de la voz: lo fija cada curso con su campo `idioma` (ej. 'fr-FR').
+   Por defecto inglés de EE. UU., como los cursos de inglés. */
+MI.idioma = 'en-US';
+var vocesPorIdioma = {};
+var PREFERIDAS = {
+  en: ['Samantha','Google US English','Microsoft Aria','Microsoft Jenny','Alex','Karen','Daniel'],
+  fr: ['Amélie','Thomas','Google français','Microsoft Denise','Audrey'],
+  pt: ['Luciana','Google português do Brasil','Microsoft Francisca','Felipe'],
+  it: ['Alice','Google italiano','Microsoft Elsa','Luca'],
+  de: ['Anna','Google Deutsch','Microsoft Katja','Helena'],
+  es: ['Paulina','Google español de Estados Unidos','Microsoft Dalia','Mónica']
+};
+function elegirVoz(idioma){
+  if(!('speechSynthesis' in window)) return null;
+  idioma = idioma || MI.idioma;
+  if(vocesPorIdioma[idioma]) return vocesPorIdioma[idioma];
+  var base = idioma.slice(0,2).toLowerCase(), vs = speechSynthesis.getVoices() || [], pref = PREFERIDAS[base] || [];
+  var re = new RegExp('^' + base, 'i'), reExacto = new RegExp('^' + idioma.replace('-', '[-_]'), 'i');
   for(var p=0;p<pref.length;p++) for(var i=0;i<vs.length;i++)
-    if(vs[i].name.indexOf(pref[p])>=0 && /^en/i.test(vs[i].lang)){ vozEn = vs[i]; return; }
-  for(var j=0;j<vs.length;j++) if(/^en[-_]US/i.test(vs[j].lang)){ vozEn = vs[j]; return; }
-  for(var k=0;k<vs.length;k++) if(/^en/i.test(vs[k].lang)){ vozEn = vs[k]; return; }
+    if(vs[i].name.indexOf(pref[p])>=0 && re.test(vs[i].lang)) return (vocesPorIdioma[idioma] = vs[i]);
+  for(var j=0;j<vs.length;j++) if(reExacto.test(vs[j].lang)) return (vocesPorIdioma[idioma] = vs[j]);
+  for(var k=0;k<vs.length;k++) if(re.test(vs[k].lang)) return (vocesPorIdioma[idioma] = vs[k]);
+  return null;
 }
-if('speechSynthesis' in window){ elegirVoz(); speechSynthesis.onvoiceschanged = elegirVoz; }
+if('speechSynthesis' in window){ elegirVoz('en-US'); speechSynthesis.onvoiceschanged = function(){ vocesPorIdioma = {}; elegirVoz(); }; }
 MI.hayVoz = function(){ return 'speechSynthesis' in window; };
 
 MI.hablar = function(texto, lento, alTerminar){
   if(!('speechSynthesis' in window)){ alert('Tu navegador no puede reproducir voz. Prueba con Chrome o Safari actualizados.'); return; }
   speechSynthesis.cancel();
   var limpio = String(texto).replace(/<[^>]+>/g,'').replace(/\s*\/\s*/g,', ').replace(/…/g,'.');
-  var u = new SpeechSynthesisUtterance(limpio);
-  u.lang = 'en-US'; if(vozEn) u.voice = vozEn;
+  var u = new SpeechSynthesisUtterance(limpio), v = elegirVoz(MI.idioma);
+  u.lang = MI.idioma; if(v) u.voice = v;
   u.rate = lento ? 0.62 : 0.92;
   if(alTerminar) u.onend = alTerminar;
   speechSynthesis.speak(u);
@@ -333,7 +348,7 @@ MI.ordRevisar = function(id, i){
     fb.innerHTML = bien('<b>'+animo(i)+'</b> '+(it.explica||'')) + (b.voz ? '<div class="mi-oir">'+MI.botonVoz(it.frase,true)+' <span>Escúchala</span></div>' : '');
     if(Object.keys(st.ok).length === st.n){ $i('mi-'+id+'-tot').innerHTML = '<div class="mi-listo">✓ Ejercicio completado</div>'; marcarResuelto(id); }
   }else{
-    fb.innerHTML = mal('<b>Casi.</b> '+(it.pista || 'Revisa el orden: en inglés casi siempre va primero quién hace la acción y luego el verbo.'));
+    fb.innerHTML = mal('<b>Casi.</b> '+(it.pista || 'Revisa el orden: casi siempre va primero quién hace la acción y luego el verbo.'));
   }
 };
 
@@ -412,11 +427,11 @@ function prListo(id, i){
   var st = MI.estado[id]; st.ok[i] = true;
   if(Object.keys(st.ok).length === st.n){ $i('mi-'+id+'-tot').innerHTML = '<div class="mi-listo">✓ Practicaste todas las frases</div>'; marcarResuelto(id); }
 }
-MI.prManual = function(id, i){ $i('mi-'+id+'-'+i+'-fb').innerHTML = bien('Anotado. Repetir en voz alta es lo que más acelera tu inglés.'); prListo(id, i); };
+MI.prManual = function(id, i){ $i('mi-'+id+'-'+i+'-fb').innerHTML = bien('Anotado. Repetir en voz alta es lo que más acelera tu aprendizaje del idioma.'); prListo(id, i); };
 MI.grabar = function(id, i){
   var fr = MI.reg[id].frases[i], btn = $i('mi-'+id+'-'+i+'-mic'), fb = $i('mi-'+id+'-'+i+'-fb');
   try{ speechSynthesis.cancel(); }catch(x){}
-  var r = new Reco(); r.lang = 'en-US'; r.interimResults = false; r.maxAlternatives = 3;
+  var r = new Reco(); r.lang = MI.idioma; r.interimResults = false; r.maxAlternatives = 3;
   btn.classList.add('grabando'); btn.textContent = '● Escuchando… habla ahora';
   var termino = false;
   r.onresult = function(ev){

@@ -133,6 +133,15 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit
 .curso-tapa svg{opacity:.95}
 .curso-cuerpo{padding:20px;display:flex;flex-direction:column;flex:1}
 .ruta-card{border-color:var(--lila,#C4B5FD)}
+.alu{margin-bottom:12px;padding:16px 18px}
+.alu-cab{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.alu-nom{color:var(--tinta);font-size:1.02rem}
+.alu-meta{font-size:.82rem;color:var(--gris);margin-top:3px;overflow-wrap:anywhere}
+.alu-acc{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.alu-cursos{margin-top:12px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--linea);padding-top:10px}
+.alu-curso{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem}
+.alu-curso .punto{width:10px;height:10px;border-radius:50%;flex:none}
+.alu-cn{min-width:160px;flex:2;color:var(--tinta)}
 .volver-sitio{display:inline-block;margin-bottom:14px;font-size:.92rem;font-weight:600;color:var(--morado);text-decoration:none}
 .volver-sitio:hover{text-decoration:underline}
 /* Catálogo con buscador y filtros */
@@ -457,9 +466,14 @@ tbody tr:hover{background:var(--nube)}
           <label for="ePass">Contraseña</label>
           <input type="password" id="ePass" autocomplete="current-password" required>
         </div>
+        <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--gris);margin:-4px 0 14px;cursor:pointer">
+          <input type="checkbox" id="eRecordar" checked style="width:auto"> Recordar mi correo en este dispositivo</label>
         <button type="submit" class="btn btn-mor" style="width:100%">Entrar al aula</button>
-        <p style="text-align:center;margin-top:14px;font-size:.87rem">
-          <a href="#" onclick="olvideContrasena();return false;" style="color:var(--morado);font-weight:600">Olvidé mi contraseña</a>
+        <button type="button" id="btnGoogle" class="btn btn-linea oculto" style="width:100%;margin-top:10px" onclick="entrarConGoogle()">
+          <svg width="18" height="18" viewBox="0 0 48 48" style="vertical-align:-3px;margin-right:6px"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 38.2 44 33 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continuar con Google</button>
+        <p style="text-align:center;margin-top:14px;font-size:.87rem;display:flex;flex-direction:column;gap:8px">
+          <a href="#" onclick="entrarSinContrasena();return false;" style="color:var(--morado);font-weight:600">Entrar sin contraseña (te mando un enlace al correo)</a>
+          <a href="#" onclick="olvideContrasena();return false;" style="color:var(--gris)">Olvidé mi contraseña</a>
         </p>
       </form>
 
@@ -523,8 +537,8 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=9"></script>
-<script src="interactivo.js?v=7"></script>
+<script src="nube.js?v=10"></script>
+<script src="interactivo.js?v=8"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
 <script src="cursos/ia-profesiones.js?v=6"></script>
@@ -533,7 +547,10 @@ tbody tr:hover{background:var(--nube)}
 <script src="cursos/catalogo-3.js?v=8"></script>
 <script src="cursos/catalogo-4.js?v=9"></script>
 <script src="cursos/catalogo-5.js?v=10"></script>
-<script src="cursos/rutas.js?v=1"></script>
+<script src="cursos/catalogo-6.js?v=11"></script>
+<script src="cursos/catalogo-7.js?v=12"></script>
+<script src="cursos/catalogo-8.js?v=1"></script>
+<script src="cursos/rutas.js?v=4"></script>
 <script>
 /* =========================================================================
    INSTITUTO MARA — AULA VIRTUAL
@@ -549,6 +566,8 @@ var LLAVE = 'institutoMara.v2';
 /* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
    se actualice en las computadoras donde la plataforma ya se había abierto. */
 var CONTENIDO_VERSION = 7;
+/* Cambiar a true cuando Google esté activado en Supabase → Authentication → Providers */
+var LOGIN_GOOGLE = false;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
 
 function guardar(){
@@ -578,6 +597,8 @@ function fechaLarga(iso){
   var d = new Date(iso + 'T12:00:00');
   return d.getDate() + ' de ' + m[d.getMonth()] + ' de ' + d.getFullYear();
 }
+/* Texto de los cursos: se escapa todo excepto <b>, <i> y <br>, que sí se usan en el contenido */
+function seguro(s){ return esc(s).replace(/&lt;(\/?)(b|i|br)\s*\/?&gt;/gi, '<$1$2>'); }
 function esc(s){
   return String(s == null ? '' : s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -1438,6 +1459,32 @@ $('tabCrear').onclick = function(){
   $('formCrear').classList.remove('oculto'); $('formEntrar').classList.add('oculto');
 };
 
+/* ---- Entrar más rápido: recordar correo, enlace sin contraseña y Google ---- */
+(function(){
+  try{ var c = localStorage.getItem('institutoMara.correo'); if(c && $('eCorreo')) $('eCorreo').value = c; }catch(e){}
+  if(LOGIN_GOOGLE && $('btnGoogle')) $('btnGoogle').classList.remove('oculto');
+})();
+function recordarCorreo(correo){
+  try{
+    if($('eRecordar') && !$('eRecordar').checked){ localStorage.removeItem('institutoMara.correo'); return; }
+    localStorage.setItem('institutoMara.correo', correo);
+  }catch(e){}
+}
+function entrarSinContrasena(){
+  var correo = ($('eCorreo').value || '').trim().toLowerCase();
+  if(!correo){ avisoCaja('errEntrar','Escribe tu correo arriba y vuelve a tocar «Entrar sin contraseña».','aviso-info'); $('eCorreo').focus(); return; }
+  if(!NUBE){ avisoCaja('errEntrar','Esta opción necesita la conexión con el servidor.'); return; }
+  avisoCaja('errEntrar','Enviando enlace…','aviso-info');
+  Nube.enlaceAcceso(correo).then(function(){
+    recordarCorreo(correo);
+    avisoCaja('errEntrar','Listo. Abre el correo de Instituto Mara (revisa spam) y toca el enlace: entrarás directo, sin contraseña. El enlace sirve una sola vez.','aviso-ok');
+  }).catch(function(e){
+    avisoCaja('errEntrar', /not found|no user|signups not allowed/i.test(e.message)
+      ? 'No encontramos una cuenta con ese correo. Crea tu cuenta en la pestaña «Crear cuenta».' : e.message);
+  });
+}
+function entrarConGoogle(){ if(NUBE) location.href = Nube.urlGoogle(); }
+
 /* Enlace de confirmación usado, vencido o abierto de nuevo en otro dispositivo */
 function avisoEnlaceCorreo(){
   var er = window.Nube && Nube.errorEnlace; if(!er) return;
@@ -1468,7 +1515,7 @@ $('formEntrar').onsubmit = function(e){
     ocupado(this, true, 'Entrando…');
     var form = this;
     Nube.entrar(correo, pass)
-      .then(function(){ return Nube.cargarAlumno(BD); })
+      .then(function(){ recordarCorreo(correo); return Nube.cargarAlumno(BD); })
       .then(function(u){
         sesion = u; guardar(); guardarSesion();
         return Promise.all([ Nube.cargarCatalogo(BD), (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null ]);
@@ -1564,6 +1611,7 @@ function borrarSesion(){ try{ localStorage.removeItem(LLAVE_SESION); }catch(e){}
 function sesionGuardada(){ try{ return localStorage.getItem(LLAVE_SESION); }catch(e){ return null; } }
 
 function entrarApp(){
+  if(NUBE && !entrarApp._marcado){ entrarApp._marcado = true; Nube.marcarAcceso(); }
   $('pantallaLogin').classList.add('oculto');
   $('app').classList.remove('oculto');
   $('nomUsuario').textContent = sesion.nombre;
@@ -1857,7 +1905,7 @@ function tarjetaCurso(c){
 function verPrograma(cid){
   var c = curso(cid); if(!c) return;
   var lec = 0, obj = [];
-  c.modulos.forEach(function(m){ m.lecciones.forEach(function(l){ lec++; if(l.objetivo) obj.push(l.objetivo.replace(/\.$/,'')); }); });
+  c.modulos.forEach(function(m){ m.lecciones.forEach(function(l){ lec++; if(l.objetivo) obj.push(String(l.objetivo).replace(/<[^>]+>/g,'').replace(/\.$/,'')); }); });
   var paso = Math.max(1, obj.length / 6), aprende = [];
   for(var i=0;i<obj.length && aprende.length<6;i+=paso){ var o = obj[Math.floor(i)]; aprende.push(o.charAt(0).toUpperCase()+o.slice(1)); }
   var rutas = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && r.cursos.indexOf(cid) >= 0; });
@@ -1867,7 +1915,7 @@ function verPrograma(cid){
   if(aprende.length) h += '<h4 class="ficha-sub">Lo que vas a aprender</h4><ul class="ficha-aprende">'+
     aprende.map(function(a){ return '<li>'+esc(a)+'</li>'; }).join('')+'</ul>';
   h += '<h4 class="ficha-sub">Temario</h4>'+c.modulos.map(function(m, i){
-    return '<details class="ficha-mod"'+(i===0?' open':'')+'><summary>'+esc(m.titulo)+' <small>'+m.lecciones.length+' lecciones</small></summary><ol>'+
+    return '<details class="ficha-mod"'+(i===0?' open':'')+'><summary>'+seguro(m.titulo)+' <small>'+m.lecciones.length+' lecciones</small></summary><ol>'+
       m.lecciones.map(function(l){ return '<li>'+esc(l.titulo.replace(/^Lección\s+\d+\s*[—–-]\s*/,''))+'</li>'; }).join('')+'</ol></details>';
   }).join('');
   if(rutas.length) h += '<div class="aviso aviso-info" style="margin-top:14px">También viene en la <b>'+esc(rutas[0].nombre)+'</b> con precio especial. '+
@@ -2193,7 +2241,7 @@ function vistaAula(){
           : (disp ? (i+1)
                   : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>'))+
         '</div>'+
-        '<div class="modulo-tit"><h4>'+esc(m.titulo)+'</h4>'+
+        '<div class="modulo-tit"><h4>'+seguro(m.titulo)+'</h4>'+
           '<span>'+m.lecciones.length+' lecciones · '+vistas+' vistas'+
           (apro ? ' · evaluación aprobada con '+a.quizzes[m.id]+'%' :
            (disp ? '' : ' · se abre al aprobar el módulo anterior'))+'</span></div>'+
@@ -2202,7 +2250,7 @@ function vistaAula(){
 
     if(disp){
       h += '<div class="modulo-cuerpo" id="cuerpo-'+m.id+'">';
-      if(m.resumen) h += '<div class="modulo-resumen">'+esc(m.resumen)+'</div>';
+      if(m.resumen) h += '<div class="modulo-resumen">'+seguro(m.resumen)+'</div>';
       for(var L=0;L<m.lecciones.length;L++){
         var lec = m.lecciones[L], vista = a.lecciones.indexOf(lec.id) >= 0;
         h += '<div class="leccion-item'+(vista?' vista':'')+'" '+
@@ -2317,6 +2365,7 @@ function urlVisor(url){
 
 function vistaLeccion(){
   var c = curso(estado.cursoId); if(!c) return '';
+  if(window.MI) MI.idioma = c.idioma || 'en-US';
   var m = modulo(c,estado.moduloId); if(!m) return '';
   var lec = leccion(m,estado.leccionId); if(!lec) return '';
   var a = avance(sesion.id,c.id), vista = a.lecciones.indexOf(lec.id) >= 0;
@@ -2325,7 +2374,7 @@ function vistaLeccion(){
   var h = '<div class="seccion"><div class="lector">'+
     '<div class="lector-cab">'+
       '<button class="btn btn-fantasma btn-sm" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">← '+esc(c.nombre)+'</button>'+
-      '<span class="etiqueta">'+esc(m.titulo)+'</span>'+
+      '<span class="etiqueta">'+seguro(m.titulo)+'</span>'+
       (vista?'<span class="etiqueta ok">Vista</span>':'')+
     '</div><h1>'+esc(lec.titulo)+'</h1>';
   if(window.MI){
@@ -2372,11 +2421,11 @@ function vistaQuiz(){
     '<div id="listaPreg">';
   for(var i=0;i<m.quiz.preguntas.length;i++){
     var q = m.quiz.preguntas[i];
-    h += '<div class="pregunta" id="preg-'+i+'"><div class="num">Pregunta '+(i+1)+'</div><h4>'+esc(q.p)+'</h4>';
+    h += '<div class="pregunta" id="preg-'+i+'"><div class="num">Pregunta '+(i+1)+'</div><h4>'+seguro(q.p)+'</h4>';
     for(var j=0;j<q.ops.length;j++){
       h += '<label class="opcion" id="op-'+i+'-'+j+'">'+
            '<input type="radio" name="q'+i+'" value="'+j+'" onchange="marcar('+i+','+j+','+q.ops.length+')">'+
-           '<span>'+esc(q.ops[j])+'</span></label>';
+           '<span>'+seguro(q.ops[j])+'</span></label>';
     }
     h += '</div>';
   }
@@ -2451,7 +2500,7 @@ function asegurarConstancia(uid,cid){
     id:'const-'+Date.now(),
     folio:'IM-'+new Date().getFullYear()+'-'+String(n).padStart(4,'0'),
     usuarioId:uid, cursoId:cid,
-    nombreAlumno:u.nombre, nombreCurso:c.nombre, horas:c.horas,
+    nombreAlumno:(u.nombreConstancia || u.nombre), nombreCurso:c.nombre, horas:c.horas,
     fecha: hoy()
   };
   BD.constancias.push(rec); guardar();
@@ -2463,6 +2512,15 @@ function asegurarConstancia(uid,cid){
    nube: cualquiera que escanee el código ve los datos tal cual se emitieron.
    En cuanto Ajustes tenga la URL de Supabase, verificar.html además contrasta
    el folio contra la base de datos real (ver /backend/README.md). */
+/* Abre LinkedIn con la sección «Licencias y certificaciones» ya llena */
+function urlLinkedIn(rec, url){
+  var f = new Date((rec.fecha||hoy())+'T12:00:00');
+  return 'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME'+
+    '&name='+encodeURIComponent(rec.nombreCurso)+
+    '&organizationName='+encodeURIComponent('Instituto Mara')+
+    '&issueYear='+f.getFullYear()+'&issueMonth='+(f.getMonth()+1)+
+    '&certUrl='+encodeURIComponent(url)+'&certId='+encodeURIComponent(rec.folio);
+}
 function urlVerificacion(rec, c){
   var payload = { f:rec.folio, n:rec.nombreAlumno, c:rec.nombreCurso, h:rec.horas, fe:rec.fecha, niv:c?c.nivel:'' };
   var d = '';
@@ -2535,7 +2593,8 @@ function vistaConstancia(){
     '<div class="no-imprimir" style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">'+
       '<button class="btn btn-fantasma btn-sm" onclick="ir(\'constancias\')">← Mis constancias</button>'+
       '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button>'+
-      '<button class="btn btn-linea btn-sm" onclick="copiarEnlaceVerificacion(\''+esc(url)+'\')">Copiar enlace de verificación</button></div>'+
+      '<button class="btn btn-linea btn-sm" onclick="copiarEnlaceVerificacion(\''+esc(url)+'\')">Copiar enlace de verificación</button>'+
+      '<a class="btn btn-sm" style="background:#0A66C2;color:#fff" target="_blank" rel="noopener" href="'+esc(urlLinkedIn(rec, url))+'">Agregar a mi LinkedIn</a></div>'+
     '<div class="constancia">'+
       '<svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom:6px"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>'+
       '<div class="encabeza">Instituto Mara</div>'+
@@ -2552,7 +2611,7 @@ function vistaConstancia(){
       '<div class="constancia-sellos">'+
         '<div class="sello-firma"><div class="firma-nombre">'+esc(firmaNombre)+'</div><div class="linea-firma"></div>'+
         esc(BD.config.directorPuesto||'Dirección Académica')+'<br>Instituto Mara</div>'+
-        '<div class="sello-oficial"><div class="sello-anillo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span>VALIDEZ<br>CURRICULAR</span></div>'+
+        '<div class="sello-oficial"><div class="sello-anillo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span>FOLIO<br>VERIFICABLE</span></div>'+
         '<div class="sello-qr"><div id="'+qrId+'"></div><span>Escanea para verificar</span></div>'+
       '</div>'+
       '<div class="legal">Instituto Mara imparte cursos libres de capacitación. Esta constancia acredita '+
@@ -2703,13 +2762,41 @@ function vistaMiPerfil(){
       (sesion.foto ? '<div style="margin-top:10px"><button class="btn btn-fantasma btn-sm" onclick="quitarFotoPerfil()">Quitar foto</button></div>' : '')+
     '</div>'+
     '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:14px">Mis datos</h3>'+
-      '<p style="margin-bottom:6px"><b>Nombre:</b> '+esc(sesion.nombre)+'</p>'+
-      '<p style="margin-bottom:6px"><b>Correo:</b> '+esc(sesion.correo)+'</p>'+
-      '<p><b>Folio de alumno:</b> '+esc(sesion.folio||'—')+'</p></div>'+
+      '<div class="campo"><label>Nombre completo</label><input id="mp-nom" value="'+esc(sesion.nombre)+'"></div>'+
+      '<div class="campo"><label>WhatsApp</label><input id="mp-tel" type="tel" value="'+esc(sesion.tel||'')+'" placeholder="55 1234 5678"></div>'+
+      '<div class="campo"><label>Nombre como aparecerá en tus constancias</label>'+
+        '<input id="mp-const" value="'+esc(sesion.nombreConstancia||'')+'" placeholder="'+esc(sesion.nombre)+'">'+
+        '<small style="color:var(--gris)">Escríbelo con acentos y mayúsculas tal como lo quieres ver impreso. Si lo dejas vacío se usa tu nombre completo. '+
+        'Se actualizan también las constancias que ya tienes.</small></div>'+
+      '<p style="margin-bottom:12px;color:var(--gris);font-size:.9rem"><b>Folio de alumno:</b> '+esc(sesion.folio||'—')+'</p>'+
+      '<button class="btn btn-mor" onclick="guardarMisDatos()">Guardar mis datos</button><div id="md-aviso"></div></div>'+
+    '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:6px">Correo de acceso</h3>'+
+      '<p style="color:var(--gris);font-size:.9rem;margin-bottom:12px">Actual: <b>'+esc(sesion.correo)+'</b>. Si lo cambias, te llega un correo al nuevo para confirmarlo.</p>'+
+      '<div class="campo"><input id="mp-correo" type="email" placeholder="nuevo@correo.com"></div>'+
+      '<button class="btn btn-linea" onclick="cambiarMiCorreo()">Cambiar correo</button><div id="mc-aviso"></div></div>'+
     '<div class="tarjeta"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:14px">Cambiar contraseña</h3>'+
       '<div class="campo"><label>Nueva contraseña</label><input type="password" id="mp-pass" placeholder="Mínimo 6 caracteres"></div>'+
       '<button class="btn btn-mor" onclick="cambiarPassAlumno()">Guardar</button><div id="mp-aviso"></div></div>'+
     '</div>';
+}
+function guardarMisDatos(){
+  var nom = ($('mp-nom').value||'').trim(), tel = ($('mp-tel').value||'').trim(), cons = ($('mp-const').value||'').trim();
+  var av = $('md-aviso');
+  if(nom.length < 3){ av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">Escribe tu nombre completo.</div>'; return; }
+  sesion.nombre = nom; sesion.tel = tel; sesion.nombreConstancia = cons;
+  for(var i=0;i<BD.constancias.length;i++) if(BD.constancias[i].usuarioId === sesion.id) BD.constancias[i].nombreAlumno = cons || nom;
+  guardar(); pintarAvatar(); $('nomUsuario').textContent = sesion.nombre;
+  var fin = function(){ av.innerHTML = '<div class="aviso aviso-ok" style="margin-top:12px">Datos guardados.</div>'; };
+  if(NUBE) Nube.cambiarNombreConstancia(cons).then(fin).catch(function(e){ av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">'+esc(e.message)+'</div>'; });
+  else fin();
+}
+function cambiarMiCorreo(){
+  var c = ($('mp-correo').value||'').trim().toLowerCase(), av = $('mc-aviso');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c)){ av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">Ese correo no parece válido.</div>'; return; }
+  if(!NUBE){ sesion.correo = c; guardar(); av.innerHTML = '<div class="aviso aviso-ok" style="margin-top:12px">Correo actualizado.</div>'; return; }
+  Nube.cambiarCorreoPropio(c).then(function(){
+    av.innerHTML = '<div class="aviso aviso-ok" style="margin-top:12px">Te mandamos un correo a <b>'+esc(c)+'</b>. Ábrelo para confirmar el cambio; mientras tanto sigues entrando con tu correo actual.</div>';
+  }).catch(function(e){ av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">'+esc(e.message)+'</div>'; });
 }
 function subirFotoPerfil(input){
   var f = input.files[0]; if(!f) return;
@@ -2866,6 +2953,7 @@ function vistaAdminCursos(){
             insc+' inscritos · '+dinero(c.precio)+'</div></div>'+
           '<span class="etiqueta '+(c.proximamente?'alerta':(c.publicado?'ok':'gris'))+'">'+
             (c.proximamente?'Próximamente':(c.publicado?'Publicado':'Borrador'))+'</span>'+
+          '<button class="btn btn-mor btn-sm" title="Textos listos para vender este curso" onclick="textoVenta(\''+c.id+'\')">📣 Texto de venta</button>'+
           '<button class="btn btn-linea btn-sm" onclick="editarCurso(\''+c.id+'\')">Editar contenido</button>'+
           '<button class="btn btn-fantasma btn-sm" onclick="datosCurso(\''+c.id+'\')">Datos</button>'+
           '</div>';
@@ -2952,6 +3040,66 @@ function borrarCurso(cid){
 }
 
 /* ------- Editor de estructura y bloques ------- */
+/* ---------------- Textos de venta (WhatsApp, redes, estados) ---------------- */
+function urlSitio(){ return location.origin + location.pathname.replace(/plataforma\/[^\/]*$/, 'sitio-web/index.html'); }
+function sinEtiquetas(t){ return String(t||'').replace(/<[^>]+>/g,''); }
+function objetivosDe(c, m){
+  var lista = [];
+  (m ? [m] : c.modulos).forEach(function(mm){ mm.lecciones.forEach(function(l){ if(l.objetivo) lista.push(sinEtiquetas(l.objetivo).replace(/\.$/,'')); }); });
+  var paso = Math.max(1, lista.length / 4), r = [];
+  for(var i=0;i<lista.length && r.length<4;i+=paso){ var o = lista[Math.floor(i)]; r.push(o.charAt(0).toUpperCase()+o.slice(1)); }
+  return r;
+}
+function textosVenta(c, m){
+  var lec = c.modulos.reduce(function(a,x){ return a + x.lecciones.length; }, 0);
+  var tipo = c.nivel === 'Diplomados' ? 'Diplomado' : 'Curso';
+  var ficha = urlSitio() + '#programa-' + c.id, gratis = urlAula() + '?muestra=' + encodeURIComponent(c.id);
+  var obj = objetivosDe(c, m);
+  var ruta = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && r.cursos.indexOf(c.id) >= 0; })[0];
+  var modTit = m ? sinEtiquetas(m.titulo).replace(/^Módulo\s+\d+\s*[—–-]\s*/,'') : '';
+  var gancho = m
+    ? '¿Te gustaría dominar «'+modTit+'»? 🔥 Es uno de los módulos de *'+c.nombre+'* de Instituto Mara.'
+    : '🎓 *'+c.nombre+'*\n100% en línea · a tu ritmo · desde tu celular';
+  var wa = gancho+'\n\n'+(m ? '' : sinEtiquetas(c.desc)+'\n\n')+
+    '✅ '+(m ? 'En este módulo aprendes a:' : 'Lo que vas a lograr:')+'\n'+obj.map(function(o){ return '• '+o; }).join('\n')+'\n\n'+
+    '📚 '+c.modulos.length+' módulos · '+lec+' lecciones · '+c.horas+' horas\n'+
+    '✍️ Ejercicios prácticos que se califican al momento\n'+
+    '🏅 Constancia con folio y QR verificable, lista para tu CV y LinkedIn\n'+
+    '💳 Pago único de *'+dinero(c.precio)+'* (tarjeta, OXXO o transferencia) · acceso 12 meses\n'+
+    (ruta ? '💡 También viene en la «'+ruta.nombre+'» con precio especial.\n' : '')+
+    '\n👉 Prueba una lección *GRATIS* antes de decidir: '+gratis+'\n📋 Temario completo: '+ficha+'\n\n¿Te aparto tu lugar? Respóndeme y te ayudo a inscribirte hoy mismo 🙌';
+  var redes = (m ? '¿Quieres aprender a '+(obj[0]||modTit).replace(/^./, function(x){ return x.toLowerCase(); })+'? ' : '')+
+    '📣 '+tipo+' en línea: '+c.nombre+'\n\n'+sinEtiquetas(c.desc)+'\n\n'+
+    obj.slice(0,3).map(function(o){ return '✔ '+o; }).join('\n')+'\n\n'+
+    c.horas+' horas · a tu ritmo · constancia con folio verificable · '+dinero(c.precio)+' pago único.\n'+
+    'Prueba una lección gratis 👉 '+gratis+'\n\n#InstitutoMara #CapacitaciónEnLínea #'+(c.familia||'Cursos').replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ]/g,'')+' #AprendeEnLínea';
+  var estado = (m ? '🔥 '+modTit+'\n' : '🎓 '+c.nombre+'\n')+'100% en línea, a tu ritmo, con constancia ✅\nSolo '+dinero(c.precio)+' · prueba una lección GRATIS 👇\n'+gratis;
+  return [['WhatsApp directo', wa], ['Redes sociales', redes], ['Estado / historia', estado]];
+}
+function textoVenta(cid, mid){
+  var c = curso(cid); if(!c) return;
+  var m = mid ? modulo(c, mid) : null;
+  var T = textosVenta(c, m);
+  window._textosVenta = T;
+  abrirModal('📣 Texto de venta: '+(m ? sinEtiquetas(m.titulo) : c.nombre),
+    '<div class="chips-aula" id="tv-chips">'+T.map(function(t,i){ return '<button class="'+(i===0?'on':'')+'" onclick="cambiarTextoVenta('+i+',this)">'+t[0]+'</button>'; }).join('')+'</div>'+
+    '<textarea id="tv-txt" rows="14" style="width:100%;font:inherit;margin-top:6px">'+esc(T[0][1])+'</textarea>'+
+    '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">Puedes editarlo antes de mandarlo. Los * ponen el texto en negritas en WhatsApp.</p><div id="tv-ok"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>'+
+    '<button class="btn btn-linea" onclick="copiarTexto(\'tv-txt\',\'tv-ok\')">Copiar</button>'+
+    (navigator.share ? '<button class="btn btn-linea" onclick="navigator.share({text:$(\'tv-txt\').value}).catch(function(){})">Más apps</button>' : '')+
+    '<button class="btn btn-tur" onclick="window.open(\'https://wa.me/?text=\'+encodeURIComponent($(\'tv-txt\').value),\'_blank\')">WhatsApp</button>');
+}
+function cambiarTextoVenta(i, b){
+  $('tv-txt').value = window._textosVenta[i][1];
+  document.querySelectorAll('#tv-chips button').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on');
+}
+function copiarTexto(id, avisoId){
+  var t = $(id).value, listo = function(){ if($(avisoId)) $(avisoId).innerHTML = '<div class="aviso aviso-ok" style="margin-top:8px">Copiado. Pégalo donde quieras.</div>'; };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(listo, function(){ $(id).select(); document.execCommand('copy'); listo(); });
+  else { $(id).select(); document.execCommand('copy'); listo(); }
+}
+
 function editarCurso(cid){ ir('admin-editor',{cursoId:cid, moduloId:null, leccionId:null}); }
 
 function vistaAdminEditor(){
@@ -2975,11 +3123,12 @@ function vistaAdminEditor(){
     h += '<div class="tarjeta tarjeta-sm" style="margin-bottom:16px">'+
       '<div class="arbol-item" style="border:0;margin:0 0 10px;padding:0;background:transparent">'+
         '<div class="modulo-num">'+(i+1)+'</div>'+
-        '<div class="txt"><b>'+esc(m.titulo)+'</b>'+
+        '<div class="txt"><b>'+seguro(m.titulo)+'</b>'+
         '<span>'+m.lecciones.length+' lecciones · evaluación con '+
         (m.quiz?m.quiz.preguntas.length:0)+' preguntas</span></div>'+
         '<button class="mini" title="Subir" onclick="moverModulo(\''+c.id+'\','+i+',-1)">↑</button>'+
         '<button class="mini" title="Bajar" onclick="moverModulo(\''+c.id+'\','+i+',1)">↓</button>'+
+        '<button class="mini" title="Texto de venta de este módulo" onclick="textoVenta(\''+c.id+'\',\''+m.id+'\')">📣</button>'+
         '<button class="mini" title="Renombrar" onclick="renombrarModulo(\''+c.id+'\',\''+m.id+'\')">✎</button>'+
         '<button class="mini rojo" title="Eliminar" onclick="borrarModulo(\''+c.id+'\',\''+m.id+'\')">✕</button>'+
       '</div><div class="arbol-hijo">';
@@ -3085,7 +3234,7 @@ function vistaEditorLeccion(c){
   var h = '<div class="seccion">'+
     '<button class="btn btn-fantasma btn-sm" onclick="ir(\'admin-editor\',{leccionId:null})">← '+esc(c.nombre)+'</button>'+
     '<div class="encabezado-fila" style="margin-top:12px"><div>'+
-      '<span class="etiqueta">'+esc(m.titulo)+'</span>'+
+      '<span class="etiqueta">'+seguro(m.titulo)+'</span>'+
       '<h2 style="margin-top:8px">'+esc(L.titulo)+'</h2>'+
       '<p class="sub" style="margin:0">Escribes a la izquierda y ves el resultado a la derecha. '+
       'Todo se guarda solo, no hay botón de guardar.</p></div>'+
@@ -3490,34 +3639,186 @@ function guardarQuiz(cid,mid){
 }
 
 /* ------- Alumnos ------- */
-function vistaAdminAlumnos(){
-  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Alumnos</h2>'+
-    '<p class="sub" style="margin:0">Alta manual, inscripción a cursos y consulta de avance.</p></div>'+
-    '<button class="btn btn-mor" onclick="nuevoAlumno()">+ Alta de alumno</button></div>'+
-    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
-    '<th>Nombre</th><th>Contacto</th><th>Alta</th><th>Cursos</th><th></th></tr></thead><tbody>';
-  var hay = false;
-  for(var i=0;i<BD.usuarios.length;i++){
-    var u = BD.usuarios[i];
-    if(u.rol !== 'alumno') continue;
-    hay = true;
-    var mis = [];
-    for(var j=0;j<BD.inscripciones.length;j++)
-      if(BD.inscripciones[j].usuarioId===u.id){
-        var cu = curso(BD.inscripciones[j].cursoId);
-        if(cu) mis.push(esc(cu.nombre)+' ('+porcentaje(u.id,cu)+'%)');
-      }
-    h += '<tr><td><b>'+esc(u.nombre)+'</b><br><span style="color:var(--gris);font-size:.8rem">'+
-      esc(u.folio||'')+'</span></td>'+
-      '<td>'+esc(u.correo)+'<br><span style="color:var(--gris);font-size:.8rem">'+esc(u.tel||'—')+'</span></td>'+
-      '<td>'+esc(u.alta)+'</td>'+
-      '<td>'+(mis.length ? mis.join('<br>') : '<span style="color:var(--gris)">sin cursos</span>')+'</td>'+
-      '<td style="white-space:nowrap">'+
-        '<button class="btn btn-linea btn-sm" onclick="inscribirAlumno(\''+u.id+'\')">Inscribir</button> '+
-        '<button class="mini rojo" title="Eliminar" onclick="borrarAlumno(\''+u.id+'\')">✕</button></td></tr>';
+/* ---------------- Alumnos: seguimiento, recordatorios y datos ---------------- */
+function haceCuanto(iso){
+  if(!iso) return 'Nunca';
+  var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  if(d <= 0){ var h = Math.floor((Date.now() - new Date(iso).getTime()) / 3600000); return h <= 0 ? 'Hace un momento' : 'Hace '+h+' h'; }
+  if(d === 1) return 'Ayer';
+  if(d < 30) return 'Hace '+d+' días';
+  var m = Math.floor(d/30); return 'Hace '+m+(m===1?' mes':' meses');
+}
+function diasSin(iso){ return iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : 9999; }
+/* Cursos de un alumno con su avance */
+function cursosDe(uid){
+  var r = [];
+  for(var j=0;j<BD.inscripciones.length;j++){
+    if(BD.inscripciones[j].usuarioId !== uid) continue;
+    var c = curso(BD.inscripciones[j].cursoId); if(!c) continue;
+    r.push({ c:c, p:porcentaje(uid,c), listo:cursoCompleto(uid,c) });
   }
-  if(!hay) h += '<tr><td colspan="5" class="vacio">Todavía no hay alumnos registrados.</td></tr>';
-  return h + '</tbody></table></div></div></div>';
+  return r;
+}
+function ultimoRecordatorio(uid){
+  var R = BD.recordatorios || [];
+  for(var i=0;i<R.length;i++) if(R[i].usuario_id === uid) return R[i];
+  return null;
+}
+var filtroAlu = { k:'todos', q:'' };
+function vistaAdminAlumnos(){
+  var alumnos = BD.usuarios.filter(function(u){ return u.rol === 'alumno'; });
+  var pend = 0, activos = 0, inactivos = 0, conc = 0;
+  alumnos.forEach(function(u){
+    var cs = cursosDe(u.id), tienePend = cs.some(function(x){ return !x.listo; });
+    if(tienePend) pend++;
+    if(cs.some(function(x){ return x.listo; })) conc++;
+    if(diasSin(u.ultimoAcceso) <= 7) activos++; else if(tienePend) inactivos++;
+  });
+  var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Alumnos</h2>'+
+    '<p class="sub" style="margin:0">Seguimiento, recordatorios, datos y cursos de cada alumno.</p></div>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+    (pend ? '<button class="btn btn-mor" onclick="recordarTodos()">✉ Recordar a todos los pendientes ('+pend+')</button>' : '')+
+    '<button class="btn btn-linea" onclick="nuevoAlumno()">+ Alta</button></div></div>'+
+    '<div class="rejilla rejilla-4" style="margin-bottom:18px">'+
+      '<div class="metrica"><div class="rot">Alumnos</div><div class="val">'+alumnos.length+'</div></div>'+
+      '<div class="metrica"><div class="rot">Entraron en 7 días</div><div class="val">'+activos+'</div></div>'+
+      '<div class="metrica"><div class="rot">Pendientes sin entrar +7 días</div><div class="val" style="color:#B45309">'+inactivos+'</div></div>'+
+      '<div class="metrica"><div class="rot">Con curso concluido</div><div class="val" style="color:#047857">'+conc+'</div></div></div>'+
+    '<input type="search" class="cat-buscar" placeholder="Buscar por nombre, correo o teléfono" value="'+esc(filtroAlu.q)+'" oninput="filtroAlu.q=this.value;pintarAlumnos()">'+
+    '<div class="chips-aula" id="alu-chips">'+[['todos','Todos'],['pendientes','Con curso pendiente'],['inactivos','Sin entrar +7 días'],['concluidos','Concluyeron'],['sincurso','Sin cursos']].map(function(f){
+      return '<button class="'+(filtroAlu.k===f[0]?'on':'')+'" onclick="filtroAlu.k=\''+f[0]+'\';document.querySelectorAll(\'#alu-chips button\').forEach(function(b){b.classList.remove(\'on\')});this.classList.add(\'on\');pintarAlumnos()">'+f[1]+'</button>';
+    }).join('')+'</div><div id="alu-lista"></div></div>';
+  setTimeout(pintarAlumnos, 0);
+  return h;
+}
+function pintarAlumnos(){
+  var caja = $('alu-lista'); if(!caja) return;
+  var q = normaliza(filtroAlu.q);
+  var lista = BD.usuarios.filter(function(u){
+    if(u.rol !== 'alumno') return false;
+    if(q && normaliza(u.nombre+' '+u.correo+' '+(u.tel||'')).indexOf(q) < 0) return false;
+    var cs = cursosDe(u.id), pend = cs.some(function(x){ return !x.listo; });
+    if(filtroAlu.k === 'pendientes') return pend;
+    if(filtroAlu.k === 'inactivos') return pend && diasSin(u.ultimoAcceso) > 7;
+    if(filtroAlu.k === 'concluidos') return cs.some(function(x){ return x.listo; });
+    if(filtroAlu.k === 'sincurso') return !cs.length;
+    return true;
+  }).sort(function(a,b){ return String(b.ultimoAcceso||'').localeCompare(String(a.ultimoAcceso||'')); });
+  if(!lista.length){ caja.innerHTML = '<div class="tarjeta vacio"><p>No hay alumnos en este filtro.</p></div>'; return; }
+  caja.innerHTML = lista.map(function(u){
+    var cs = cursosDe(u.id), rec = ultimoRecordatorio(u.id), ds = diasSin(u.ultimoAcceso);
+    var pagado = BD.pagos.filter(function(x){ return x.usuarioId === u.id; }).reduce(function(a,x){ return a + (Number(x.monto)||0); }, 0);
+    var estado = !cs.length ? ['gris','Sin cursos'] : cs.every(function(x){ return x.listo; }) ? ['ok','Concluyó'] : ds > 7 ? ['alerta','Inactivo'] : ['tur','Activo'];
+    return '<div class="tarjeta alu">'+
+      '<div class="alu-cab"><div class="avatar" style="width:42px;height:42px;flex:none">'+(u.foto ? '<img src="'+u.foto+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : esc((u.nombre||'?').charAt(0).toUpperCase()))+'</div>'+
+        '<div style="flex:1;min-width:0"><b class="alu-nom">'+esc(u.nombre)+'</b> <span class="etiqueta '+estado[0]+'">'+estado[1]+'</span>'+
+        '<div class="alu-meta">'+esc(u.correo)+(u.tel ? ' · '+esc(u.tel) : '')+' · folio '+esc(u.folio||'—')+'</div>'+
+        '<div class="alu-meta">Último acceso: <b>'+haceCuanto(u.ultimoAcceso)+'</b>'+(u.accesos ? ' · '+u.accesos+' accesos' : '')+
+          ' · Alta: '+esc(u.alta||'—')+' · Pagado: <b>'+dinero(pagado)+'</b>'+
+          (rec ? ' · Último recordatorio: '+haceCuanto(rec.enviado_en)+' ('+esc(rec.canal)+')' : '')+'</div></div>'+
+        '<div class="alu-acc"><button class="btn btn-linea btn-sm" onclick="editarAlumno(\''+u.id+'\')">Editar datos</button>'+
+        '<button class="btn btn-linea btn-sm" onclick="inscribirAlumno(\''+u.id+'\')">Inscribir</button>'+
+        '<button class="mini rojo" title="Eliminar" onclick="borrarAlumno(\''+u.id+'\')">✕</button></div></div>'+
+      (cs.length ? '<div class="alu-cursos">'+cs.map(function(x){
+        return '<div class="alu-curso"><span class="punto" style="background:'+x.c.color+'"></span><span class="alu-cn">'+esc(x.c.nombre)+'</span>'+
+          '<span class="avance" style="flex:1;min-width:60px;margin:0"><i style="width:'+x.p+'%"></i></span><b style="min-width:42px;text-align:right">'+x.p+'%</b>'+
+          (x.listo ? '<span class="etiqueta ok">Concluido</span>'
+                   : '<button class="btn btn-fantasma btn-sm" onclick="recordarAlumno(\''+u.id+'\',\''+x.c.id+'\')">🔔 Recordar</button>')+'</div>';
+      }).join('')+'</div>' : '')+
+    '</div>';
+  }).join('');
+}
+
+/* Datos que lleva el recordatorio: curso, avance y siguiente lección */
+function datosRecordatorio(u, c){
+  var sig = siguienteLeccion(u.id, c);
+  return { usuarioId:u.id, correo:u.correo, nombre:u.nombre, curso:c.nombre, cursoId:c.id,
+           avance:porcentaje(u.id,c), siguiente: sig ? sig.l.titulo.replace(/^Lección\s+\d+\s*[—–-]\s*/,'') : '' };
+}
+function urlAula(){ return location.origin + location.pathname; }
+function textoRecordatorioWA(d){
+  return 'Hola '+String(d.nombre||'').split(' ')[0]+' 👋 Soy de Instituto Mara. '+
+    (d.avance > 0 ? 'Vas en '+d.avance+'% de *'+d.curso+'* ¡vas muy bien! 💪\n\n' : 'Ya tienes tu lugar en *'+d.curso+'* y tu primera lección te está esperando 🚀\n\n')+
+    (d.siguiente ? 'Tu siguiente lección es «'+d.siguiente+'». ' : '')+'Con 10 minutos hoy avanzas y te acercas a tu constancia 🏅\n\n'+
+    'Entra aquí y continúa donde te quedaste: '+urlAula()+'?curso='+encodeURIComponent(d.cursoId)+'\n\n¿Alguna duda? Respóndeme por aquí y te ayudo.';
+}
+var recPendiente = null;
+function recordarAlumno(uid, cid){
+  var u = usuario(uid), c = curso(cid); if(!u || !c) return;
+  var d = datosRecordatorio(u, c), tel = String(u.tel||'').replace(/\D/g,''); if(tel.length === 10) tel = '52'+tel;
+  recPendiente = d;
+  abrirModal('Recordatorio para '+u.nombre,
+    '<p style="margin-bottom:10px">Va en <b>'+d.avance+'%</b> de <b>'+esc(c.nombre)+'</b>'+(d.siguiente ? '. Sigue: <i>'+esc(d.siguiente)+'</i>' : '')+'.</p>'+
+    '<label style="font-weight:600">Mensaje para WhatsApp (puedes editarlo)</label>'+
+    '<textarea id="rec-msg" rows="8" style="width:100%;font:inherit;margin-top:6px">'+esc(textoRecordatorioWA(d))+'</textarea><div id="rec-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>'+
+    (NUBE ? '<button class="btn btn-linea" onclick="enviarRecordatorios([recPendiente])">✉ Enviar por correo</button>' : '')+
+    '<button class="btn btn-tur" onclick="recordatorioWA(\''+tel+'\',\''+uid+'\',\''+cid+'\')">WhatsApp</button>');
+}
+function recordatorioWA(tel, uid, cid){
+  window.open('https://wa.me/'+tel+'?text='+encodeURIComponent($('rec-msg').value), '_blank');
+  if(NUBE) Nube.registrarRecordatorio(uid, cid, 'whatsapp').then(function(r){ (BD.recordatorios = BD.recordatorios||[]).unshift({usuario_id:uid, curso_id:cid, canal:'whatsapp', enviado_en:new Date().toISOString()}); });
+}
+function pendientesParaRecordar(){
+  var lista = [];
+  BD.usuarios.forEach(function(u){
+    if(u.rol !== 'alumno' || !u.correo) return;
+    cursosDe(u.id).forEach(function(x){ if(!x.listo) lista.push(datosRecordatorio(u, x.c)); });
+  });
+  return lista;
+}
+function recordarTodos(){
+  var lista = pendientesParaRecordar();
+  var alumnos = {}; lista.forEach(function(d){ alumnos[d.usuarioId] = 1; });
+  abrirModal('Recordar a todos los pendientes',
+    '<p>Se enviará un correo personalizado a <b>'+Object.keys(alumnos).length+' alumnos</b> ('+lista.length+' cursos sin terminar) '+
+    'con su avance, su siguiente lección y un botón para continuar.</p>'+
+    '<div class="aviso aviso-info" style="margin:12px 0 0">Si un alumno tiene dos cursos pendientes, recibe un correo por cada uno.</div><div id="rec-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" id="rec-todos" onclick="enviarRecordatorios(pendientesParaRecordar())">Enviar '+lista.length+' recordatorios</button>');
+}
+function enviarRecordatorios(lista){
+  var av = $('rec-aviso');
+  if(av) av.innerHTML = '<div class="aviso aviso-info" style="margin-top:12px">Enviando…</div>';
+  Nube.funcionServidor('enviar-recordatorio', { lista: lista }).then(function(r){
+    var ahora = new Date().toISOString();
+    lista.forEach(function(d){ (BD.recordatorios = BD.recordatorios||[]).unshift({usuario_id:d.usuarioId, curso_id:d.cursoId, canal:'correo', enviado_en:ahora}); });
+    if(av) av.innerHTML = '<div class="aviso aviso-ok" style="margin-top:12px">Listo: se enviaron '+r.enviados+' correo(s).'+
+      (r.fallas && r.fallas.length ? ' No se pudieron enviar: '+esc(r.fallas.join(', ')) : '')+'</div>';
+    pintarAlumnos();
+  }).catch(function(e){
+    if(av) av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">'+esc(e.message)+'</div>';
+  });
+}
+
+/* Corregir datos de un alumno (nombre, WhatsApp, nombre en constancia y correo) */
+function editarAlumno(uid){
+  var u = usuario(uid); if(!u) return;
+  abrirModal('Datos de '+u.nombre,
+    '<div class="campo"><label>Nombre completo</label><input id="ea-nom" value="'+esc(u.nombre)+'"></div>'+
+    '<div class="fila"><div class="campo"><label>WhatsApp</label><input id="ea-tel" value="'+esc(u.tel||'')+'"></div>'+
+    '<div class="campo"><label>Correo de acceso</label><input id="ea-cor" type="email" value="'+esc(u.correo)+'"></div></div>'+
+    '<div class="campo"><label>Nombre en la constancia</label><input id="ea-const" value="'+esc(u.nombreConstancia||'')+'" placeholder="'+esc(u.nombre)+'">'+
+    '<small style="color:var(--gris)">Vacío = usa el nombre completo. Se actualizan también las constancias ya emitidas.</small></div>'+
+    '<div id="ea-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+
+    '<button class="btn btn-mor" onclick="guardarAlumno(\''+uid+'\')">Guardar cambios</button>');
+}
+function guardarAlumno(uid){
+  var u = usuario(uid), av = $('ea-aviso');
+  var nom = $('ea-nom').value.trim(), tel = $('ea-tel').value.trim(), cor = $('ea-cor').value.trim().toLowerCase(), cons = $('ea-const').value.trim();
+  if(nom.length < 3){ $('ea-nom').focus(); return; }
+  var err = function(e){ av.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">'+esc(e.message)+'</div>'; };
+  var aplicar = function(){
+    u.nombre = nom; u.tel = tel; u.nombreConstancia = cons; u.correo = cor;
+    BD.constancias.forEach(function(k){ if(k.usuarioId === uid) k.nombreAlumno = cons || nom; });
+    guardar(); cerrarModal(); pintar();
+  };
+  if(!NUBE){ aplicar(); return; }
+  av.innerHTML = '<div class="aviso aviso-info" style="margin-top:12px">Guardando…</div>';
+  var tareas = [ Nube.actualizarPerfil(uid, { nombre:nom, telefono:tel || null }), Nube.cambiarNombreConstancia(cons, uid) ];
+  if(cor !== u.correo) tareas.push(Nube.funcionServidor('admin-usuarios', { accion:'correo', usuarioId:uid, correo:cor }));
+  Promise.all(tareas).then(aplicar).catch(err);
 }
 
 function nuevoAlumno(){
@@ -3548,7 +3849,17 @@ function guardarNuevoAlumno(){
   guardar(); cerrarModal(); pintar();
 }
 function borrarAlumno(uid){
-  if(!confirm('Se elimina el alumno, sus inscripciones y su avance. ¿Continuar?')) return;
+  var u = usuario(uid);
+  if(!confirm('Se elimina la cuenta de '+(u?u.nombre:'este alumno')+' por completo: su acceso, inscripciones, avance y constancias. '+
+    'Los pagos se conservan en el registro. Esto no se puede deshacer. ¿Continuar?')) return;
+  if(NUBE){
+    Nube.funcionServidor('admin-usuarios', { accion:'borrar', usuarioId:uid }).then(function(){ quitarAlumnoLocal(uid); })
+      .catch(function(e){ alert('No se pudo eliminar: '+e.message); });
+    return;
+  }
+  quitarAlumnoLocal(uid);
+}
+function quitarAlumnoLocal(uid){
   for(var i=BD.usuarios.length-1;i>=0;i--) if(BD.usuarios[i].id===uid) BD.usuarios.splice(i,1);
   for(var j=BD.inscripciones.length-1;j>=0;j--) if(BD.inscripciones[j].usuarioId===uid) BD.inscripciones.splice(j,1);
   delete BD.avances[uid];
@@ -3774,17 +4085,22 @@ function guardarCupon(editando){
 /* Mensaje listo para mandar por WhatsApp, correo o cualquier app. El enlace
    abre el aula con el código ya puesto (y con el curso, si el cupón es de uno). */
 function mensajeCupon(c){
-  var base = location.origin + location.pathname;   /* la dirección del aula donde está el admin */
+  var base = location.origin + location.pathname;
   var enlace = base + '?cupon=' + encodeURIComponent(c.codigo) + (c.curso_id ? '&curso=' + encodeURIComponent(c.curso_id) : '');
   var cur = c.curso_id && curso(c.curso_id) ? curso(c.curso_id) : null;
-  var que = (c.tipo === 'porcentaje' && Number(c.valor) >= 100)
-    ? (cur ? 'el curso «'+cur.nombre+'» sin costo' : 'un curso sin costo')
-    : textoDescuento(c) + ' de descuento en ' + (cur ? '«'+cur.nombre+'»' : 'el curso que elijas');
-  return 'Hola. Te comparto un cupón de Instituto Mara para ' + que + '.\n\n' +
-    'Código: ' + c.codigo + '\n' +
-    (c.vence ? 'Válido hasta el ' + fechaLarga(c.vence) + '.\n' : '') +
-    (c.usos_max ? 'Cupo limitado.\n' : '') +
-    '\nEntra aquí, crea tu cuenta y el cupón se aplica solo:\n' + enlace;
+  var gratis = c.tipo === 'porcentaje' && Number(c.valor) >= 100;
+  var ahorro = cur ? (c.tipo === 'porcentaje' ? Math.round(cur.precio * Math.min(100, Number(c.valor)) / 100) : Math.min(Number(c.valor), cur.precio)) : 0;
+  var cab = gratis
+    ? '🎁 *¡Tienes un regalo!* '+(cur ? 'El '+(cur.nivel === 'Diplomados' ? 'diplomado' : 'curso')+' *'+cur.nombre+'* es tuyo sin costo.' : 'Un curso de Instituto Mara, sin costo, el que tú elijas.')
+    : '🔥 *'+textoDescuento(c)+' de descuento* '+(cur ? 'en *'+cur.nombre+'*' : 'en el curso que elijas de Instituto Mara')+(cur && ahorro ? ' (te ahorras '+dinero(ahorro)+')' : '')+'.';
+  var obj = cur ? objetivosDe(cur).slice(0,3) : [];
+  return cab + '\n\n' +
+    (obj.length ? '✅ Vas a aprender a:\n' + obj.map(function(o){ return '• '+o; }).join('\n') + '\n\n' : '') +
+    '📱 100% en línea, a tu ritmo, desde el celular\n🏅 Constancia con folio y QR verificable para tu CV y LinkedIn\n\n' +
+    '🎟 Tu código: *' + c.codigo + '*\n' +
+    (c.vence ? '⏰ Válido solo hasta el ' + fechaLarga(c.vence) + '.\n' : '') +
+    (c.usos_max ? '⚠️ Lugares limitados: solo ' + c.usos_max + (c.usos_max == 1 ? ' persona puede usarlo' : ' personas pueden usarlo') + '.\n' : '') +
+    '\n👉 Actívalo aquí (se aplica solo): ' + enlace + '\n\nNo lo dejes pasar 😉';
 }
 
 function compartirCupon(codigo){
@@ -3977,6 +4293,7 @@ function pintar(){
 function vistaMuestra(cid){
   var c = curso(cid);
   if(!c || !c.publicado || !c.modulos.length || !c.modulos[0].lecciones.length) return null;
+  if(window.MI) MI.idioma = c.idioma || 'en-US';
   var m = c.modulos[0], lec = c.muestra ? null : m.lecciones[0];
   if(c.muestra) c.modulos.forEach(function(mm){ mm.lecciones.forEach(function(l){ if(l.id === c.muestra){ m = mm; lec = l; } }); });
   if(!lec) lec = m.lecciones[0];
@@ -3993,7 +4310,7 @@ function vistaMuestra(cid){
     var nEj = MI.contarEjercicios(lec);
     h += '<div class="lec-meta"><span>⏱ '+MI.minutos(lec)+' min aprox.</span>'+
       (nEj ? '<span>✎ '+nEj+' ejercicio'+(nEj>1?'s':'')+' interactivo'+(nEj>1?'s':'')+'</span>' : '')+
-      '<span>'+esc(m.titulo)+'</span></div>';
+      '<span>'+seguro(m.titulo)+'</span></div>';
   }
   if(lec.objetivo) h += '<div class="lec-obj"><b>Al terminar esta lección vas a poder:</b> '+lec.objetivo+'</div>';
   for(var i=0;i<lec.bloques.length;i++) h += pintarBloque(lec.bloques[i], i);
