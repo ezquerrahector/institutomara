@@ -630,7 +630,7 @@ function semillaBase(){
       contenidoVersion: CONTENIDO_VERSION,
       creado: hoy(),
       whatsapp:'528120282120',     /* ej: 5214771234567, sin signos ni espacios */
-      urlPublica:'https://ezquerrahector.github.io/institutomara',
+      urlPublica:'https://institutomara.com',
       slaDudasHoras:24,
       /* --- Se llenan cuando conectes el backend en la nube (ver /backend) --- */
       supabaseUrl:'https://xvihjhfvwjgpesxpdtnl.supabase.co', supabaseAnonKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0',
@@ -1340,6 +1340,8 @@ if(!BD.config.supabaseAnonKey) BD.config.supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIs
 if(!BD.config.mpPublicKey) BD.config.mpPublicKey = 'APP_USR-9fff8712-1312-4069-ad3c-598af5375a69';
 if(!BD.config.edgeFnCrearPreferencia) BD.config.edgeFnCrearPreferencia = 'https://xvihjhfvwjgpesxpdtnl.supabase.co/functions/v1/crear-preferencia';
 if(BD.config.urlPublica == null) BD.config.urlPublica = '';
+/* Dominio propio: la dirección vieja de GitHub pasa a institutomara.com */
+if(/ezquerrahector\.github\.io/.test(BD.config.urlPublica||'')) BD.config.urlPublica = 'https://institutomara.com';
 if(BD.config.directorNombre == null) BD.config.directorNombre = '';
 if(BD.config.directorPuesto == null) BD.config.directorPuesto = 'Dirección Académica';
 if(BD.config.slaDudasHoras == null) BD.config.slaDudasHoras = 24;
@@ -2176,7 +2178,7 @@ function pagarConMercadoPago(cid){
       'Authorization':'Bearer '+BD.config.supabaseAnonKey, 'apikey':BD.config.supabaseAnonKey},
     body: JSON.stringify({ cursoId:cid, usuarioId:sesion.id, usuarioCorreo:sesion.correo,
       cupon: cuponPago ? cuponPago.codigo : null,
-      urlRegreso: (BD.config.urlPublica||location.origin+location.pathname) })
+      urlRegreso: location.origin+location.pathname })
   })
   .then(function(r){ return r.json(); })
   .then(function(d){
