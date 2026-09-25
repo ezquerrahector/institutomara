@@ -416,9 +416,19 @@ tbody tr:hover{background:var(--nube)}
 .sello-qr span{font-size:.68rem;color:var(--gris);max-width:120px}
 @media(max-width:640px){.constancia-sellos{justify-content:center}}
 @media print{
+  @page{size:letter portrait;margin:10mm}
   body{background:#fff}
   .barra,.no-imprimir{display:none !important}
-  .constancia{border-color:#2E1065;box-shadow:none}
+  #vista.contenedor{max-width:none;margin:0;padding:0}
+  #vista>.seccion{padding:0}
+  .constancia{width:100%;max-width:none;margin:0;padding:8mm;
+    border:2mm solid #2E1065;box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  .constancia>svg{width:24mm;height:24mm}
+  .constancia h1{font-size:30pt;margin:3mm 0 2mm}
+  .constancia .alumno{font-size:22pt;line-height:1.2;margin:4mm 0;padding:0 3mm}
+  .constancia .meta{margin-top:6mm;gap:8mm}
+  .constancia-sellos{margin-top:6mm}
+  .constancia .legal{margin-top:6mm;padding-top:4mm;font-size:8pt;line-height:1.45}
 }
 </style>
 </head>
