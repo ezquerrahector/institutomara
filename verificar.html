@@ -51,15 +51,16 @@ button{border:0;background:var(--morado);color:#fff;font-weight:700;border-radiu
 </div>
 <script>
 function $(id){ return document.getElementById(id); }
+function escapar(t){ return String(t == null ? '' : t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 function pintar(ok, datos){
   if(ok){
     $('resultado').innerHTML =
       '<div class="resultado valido"><div class="marca">✔ Constancia válida</div>'+
-      '<div class="dato"><span>Alumno</span><b>'+datos.n+'</b></div>'+
-      '<div class="dato"><span>Curso</span><b>'+datos.c+'</b></div>'+
-      '<div class="dato"><span>Duración</span><b>'+datos.h+' horas</b></div>'+
-      '<div class="dato"><span>Fecha</span><b>'+datos.fe+'</b></div>'+
-      '<div class="dato"><span>Folio</span><b>'+datos.f+'</b></div></div>';
+      '<div class="dato"><span>Alumno</span><b>'+escapar(datos.n)+'</b></div>'+
+      '<div class="dato"><span>Curso</span><b>'+escapar(datos.c)+'</b></div>'+
+      '<div class="dato"><span>Duración</span><b>'+escapar(datos.h)+' horas</b></div>'+
+      '<div class="dato"><span>Fecha</span><b>'+escapar(datos.fe)+'</b></div>'+
+      '<div class="dato"><span>Folio</span><b>'+escapar(datos.f)+'</b></div></div>';
   } else {
     $('resultado').innerHTML =
       '<div class="resultado invalido"><div class="marca">✕ No se encontró ese folio</div>'+
@@ -68,13 +69,15 @@ function pintar(ok, datos){
   }
 }
 
+var SUPABASE_URL = 'https://xvihjhfvwjgpesxpdtnl.supabase.co';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
 /* 1) Si la URL trae los datos codificados (como los pone el QR de la plataforma),
       se muestran directo, sin necesitar conexión a ningún servidor. */
 var params = new URLSearchParams(location.search);
 var d = params.get('d');
 if(d){
   try{
-    var datos = JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(d)))));
+    var datos = JSON.parse(decodeURIComponent(escape(atob(d))));
     pintar(true, datos);
   }catch(e){ pintar(false); }
 } else if(params.get('f')){
@@ -85,8 +88,7 @@ if(d){
       conectado (ver /backend/README.md); si no, cae al registro público
       (registro-publico.json) que el administrador exporta y sube junto a
       este archivo cada vez que se emiten constancias nuevas. */
-var SUPABASE_URL = '';     // pégala aquí cuando conectes el backend, ej: 'https://xxxx.supabase.co'
-var SUPABASE_ANON_KEY = '';
+
 
 function buscarPorFolio(folio){
   folio = (folio||'').trim().toUpperCase();
