@@ -4452,7 +4452,15 @@ avisoEnlaceCorreo();
         return (u.rol === 'admin') ? Nube.cargarAdmin(BD) : null;
       })
       .then(function(){ entrarApp(); })
-      .catch(function(){ /* la sesión venció: se queda en la pantalla de acceso */ });
+      .catch(function(){
+        avisoCaja('errEntrar', 'No se pudo recuperar la sesión del servidor. Inicia sesión para consultar tus datos actualizados.');
+      });
+    return;
+  }
+  // Una sesión local antigua no autentica una cuenta de Supabase.
+  // No abrir el aula con avances en caché cuando falta la sesión del servidor.
+  if(NUBE){
+    if(sesionGuardada()) avisoCaja('errEntrar', 'Tu sesión del servidor terminó. Inicia sesión para consultar tus datos actualizados.');
     return;
   }
   var uid = sesionGuardada();
