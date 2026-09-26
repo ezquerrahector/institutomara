@@ -412,7 +412,7 @@ tbody tr:hover{background:var(--nube)}
   background:radial-gradient(circle at 35% 30%,var(--turquesa),var(--turquesa-osc));
   border:3px double #fff;box-shadow:0 0 0 2px var(--turquesa-osc),0 6px 14px rgba(13,148,136,.35)}
 .sello-oficial span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3}
-.sello-qr{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:120px}
+.sello-qr{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:156px}
 .sello-qr span{font-size:.68rem;color:var(--gris);max-width:120px}
 @media(max-width:640px){.constancia-sellos{justify-content:center}}
 @media print{
@@ -427,6 +427,7 @@ tbody tr:hover{background:var(--nube)}
   .constancia h1{font-size:30pt;margin:3mm 0 2mm}
   .constancia .alumno{font-size:22pt;line-height:1.2;margin:4mm 0;padding:0 3mm}
   .constancia .meta{margin-top:6mm;gap:8mm}
+  .constancia .meta>div{min-width:0;overflow-wrap:anywhere}
   .constancia-sellos{margin-top:6mm}
   .constancia .legal{margin-top:6mm;padding-top:4mm;font-size:8pt;line-height:1.45}
 }
@@ -1722,7 +1723,7 @@ function pintarAvatar(){
 function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
-       ['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
+       ['admin-reactivacion','Invitaciones'],['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
        ['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
        ['constancias','Constancias'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
@@ -2507,10 +2508,10 @@ function asegurarConstancia(uid,cid){
   for(var i=0;i<BD.constancias.length;i++)
     if(BD.constancias[i].usuarioId===uid && BD.constancias[i].cursoId===cid) return BD.constancias[i];
   var c = curso(cid), u = usuario(uid);
-  var n = BD.constancias.length + 1;
+  var n = crypto.randomUUID().replace(/-/g,'').toUpperCase();
   var rec = {
     id:'const-'+Date.now(),
-    folio:'IM-'+new Date().getFullYear()+'-'+String(n).padStart(4,'0'),
+    folio:'IM-'+new Date().getFullYear()+'-'+n,
     usuarioId:uid, cursoId:cid,
     nombreAlumno:(u.nombreConstancia || u.nombre), nombreCurso:c.nombre, horas:c.horas,
     fecha: hoy()
@@ -2534,19 +2535,26 @@ function urlLinkedIn(rec, url){
     '&certUrl='+encodeURIComponent(url)+'&certId='+encodeURIComponent(rec.folio);
 }
 function urlVerificacion(rec, c){
-  var payload = { f:rec.folio, n:rec.nombreAlumno, c:rec.nombreCurso, h:rec.horas, fe:rec.fecha, niv:c?c.nivel:'' };
-  var d = '';
-  try{ d = btoa(unescape(encodeURIComponent(JSON.stringify(payload)))); }catch(e){ d=''; }
-  var qs = '?f=' + encodeURIComponent(rec.folio) + '&d=' + encodeURIComponent(d);
-  if(BD.config.urlPublica) return BD.config.urlPublica.replace(/\/$/,'') + '/verificar.html' + qs;
-  /* Todavía no se ha publicado el sitio (Ajustes → URL pública vacía). Se arma un
-     enlace relativo a este mismo archivo para que al menos funcione al probarlo
-     en esta misma computadora; un QR con una ruta de archivo local (file://) no
-     lo puede abrir el celular de otra persona, así que en cuanto publiques el
-     sitio en GitHub Pages, pega esa URL en Ajustes para que el QR sí sirva desde
-     cualquier celular. */
-  try{ return new URL('../verificar.html', location.href).href + qs; }
-  catch(e){ return 'verificar.html' + qs; }
+  var base = BD.config.urlPublica || new URL('../', location.href).href;
+  var destino = new URL('verificar.html', base.replace(/\/+$/, '') + '/');
+  destino.searchParams.set('f', rec.folio);
+  // Las constancias en la nube se consultan por folio, sin datos personales en la URL.
+  if(!NUBE){
+    var datos = {f:rec.folio,n:rec.nombreAlumno,c:rec.nombreCurso,h:rec.horas,fe:rec.fecha,niv:c?c.nivel:''};
+    destino.searchParams.set('d', btoa(unescape(encodeURIComponent(JSON.stringify(datos)))));
+  }
+  return destino.href;
+}
+function dibujarQR(cont, url){
+  cont.innerHTML = '';
+  if(!window.QRCode){ cont.textContent = 'No se pudo cargar el QR. Recarga la página.'; return; }
+  // SVG: módulos enteros, negro sobre blanco y margen silencioso de cuatro módulos.
+  var modelo = document.createElement('div');
+  var qr = new QRCode(modelo, {text:url,width:256,height:256,correctLevel:QRCode.CorrectLevel.M});
+  var matriz = qr._oQRCode, n = matriz.getModuleCount(), trazos = [];
+  for(var y=0;y<n;y++) for(var x=0;x<n;x++)
+    if(matriz.isDark(y,x)) trazos.push('M'+(x+4)+' '+(y+4)+'h1v1h-1z');
+  cont.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 '+(n+8)+' '+(n+8)+'" role="img" aria-label="Código QR de verificación" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="white"/><path d="'+trazos.join('')+'" fill="black"/></svg>';
 }
 
 function vistaConstancias(){
@@ -2572,29 +2580,25 @@ function vistaConstancias(){
 }
 
 function vistaConstancia(){
-  var c = curso(estado.cursoId); if(!c) return '';
-  if(!cursoCompleto(sesion.id,c))
-    return '<div class="seccion"><div class="tarjeta vacio"><p>Esta constancia todavía no está disponible. '+
-           'Te falta terminar lecciones o aprobar evaluaciones.</p></div></div>';
-  var rec = asegurarConstancia(sesion.id, c.id);
-  var url = urlVerificacion(rec, c);
-  var qrId = 'qr-'+rec.id;
+  var admin = sesion && sesion.rol === 'admin';
+  var rec = admin && estado.constanciaId ? BD.constancias.find(function(r){ return r.id === estado.constanciaId; }) : null;
+  var c = curso(rec ? rec.cursoId : estado.cursoId);
+  if(!rec){
+    if(admin || !c || !cursoCompleto(sesion.id,c))
+      return '<div class="seccion"><p>Esta constancia todavía no está disponible.</p></div>';
+    rec = asegurarConstancia(sesion.id, c.id);
+  }
+  var url = urlVerificacion(rec, c), qrId = 'qr-'+rec.id;
   setTimeout(function(){
-    var cont = $(qrId);
-    if(!cont) return;
-    if(window.QRCode){
-      cont.innerHTML='';
-      new QRCode(cont, {text:url, width:104, height:104, colorDark:'#2E1065', colorLight:'#ffffff'});
-    } else {
-      /* La librería del QR no cargó (sin internet al abrir el archivo, por ejemplo).
-         Se deja el enlace visible y copiable para no dejar la constancia sin forma
-         de verificarse. */
-      cont.innerHTML = '<div style="font-size:.7rem;color:var(--gris);max-width:104px;word-break:break-all">'+
-        'QR no disponible sin conexión — usa el enlace de abajo</div>';
-    }
+    var cont = $(qrId); if(!cont) return;
+    cont.textContent = 'Preparando verificación…';
+    var lista = NUBE ? Nube.asegurarConstanciaPublicada(rec) : Promise.resolve();
+    lista.then(function(){ dibujarQR(cont, url); }).catch(function(){
+      cont.textContent = 'No se pudo publicar la verificación. Recarga e intenta nuevamente.';
+    });
   }, 0);
   var firmaNombre = BD.config.directorNombre || sesion.nombre;
-  var avisoQR = !BD.config.urlPublica
+  var avisoQR = location.protocol === 'file:' && !BD.config.urlPublica
     ? '<div class="aviso aviso-info no-imprimir" style="margin-bottom:18px">Todavía no configuras la '+
       '<b>URL pública</b> en Ajustes, así que este QR solo abre en esta computadora. En cuanto publiques el '+
       'sitio (GitHub Pages), pega esa URL en Ajustes y las constancias nuevas (o esta, al recargarla) ya '+
@@ -2603,10 +2607,10 @@ function vistaConstancia(){
   return '<div class="seccion">'+
     avisoQR+
     '<div class="no-imprimir" style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">'+
-      '<button class="btn btn-fantasma btn-sm" onclick="ir(\'constancias\')">← Mis constancias</button>'+
+      '<button class="btn btn-fantasma btn-sm" onclick="ir(\''+(admin?'verificacion':'constancias')+'\')">← Constancias</button>'+
       '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button>'+
       '<button class="btn btn-linea btn-sm" onclick="copiarEnlaceVerificacion(\''+esc(url)+'\')">Copiar enlace de verificación</button>'+
-      '<a class="btn btn-sm" style="background:#0A66C2;color:#fff" target="_blank" rel="noopener" href="'+esc(urlLinkedIn(rec, url))+'">Agregar a mi LinkedIn</a></div>'+
+      (admin ? '' : '<a class="btn btn-sm" style="background:#0A66C2;color:#fff" target="_blank" rel="noopener" href="'+esc(urlLinkedIn(rec, url))+'">Agregar a mi LinkedIn</a>')+'</div>'+
     '<div class="constancia">'+
       '<svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom:6px"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>'+
       '<div class="encabeza">Instituto Mara</div>'+
@@ -2851,17 +2855,18 @@ function cambiarPassAlumno(){
 
 /* ---------------- Registro público de constancias (admin) ---------------- */
 function vistaAdminVerificacion(){
+  if(!sesion || sesion.rol !== 'admin') return '';
   var h = '<div class="seccion"><div class="encabezado-fila"><div><h2>Constancias emitidas</h2>'+
     '<p class="sub" style="margin:0">Cada QR incluye los datos de verificación. Descarga el registro '+
     'para publicarlo también como respaldo en verificar.html.</p></div>'+
     '<button class="btn btn-mor" onclick="descargarRegistroPublico()">Descargar registro público</button></div>'+
     '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
-    '<th>Folio</th><th>Alumno</th><th>Curso</th><th>Horas</th><th>Fecha</th></tr></thead><tbody>';
-  if(!BD.constancias.length) h += '<tr><td colspan="5" class="vacio">Aún no se ha emitido ninguna constancia.</td></tr>';
+    '<th>Folio</th><th>Alumno</th><th>Curso</th><th>Horas</th><th>Fecha</th><th>Constancia</th></tr></thead><tbody>';
+  if(!BD.constancias.length) h += '<tr><td colspan="6" class="vacio">Aún no se ha emitido ninguna constancia.</td></tr>';
   for(var i=BD.constancias.length-1;i>=0;i--){
     var r = BD.constancias[i];
     h += '<tr><td><b>'+esc(r.folio)+'</b></td><td>'+esc(r.nombreAlumno)+'</td><td>'+esc(r.nombreCurso)+'</td>'+
-      '<td>'+r.horas+'</td><td>'+esc(r.fecha)+'</td></tr>';
+      '<td>'+r.horas+'</td><td>'+esc(r.fecha)+'</td><td><button class="btn btn-linea btn-sm" onclick="ir(\'constancia\',{constanciaId:\''+esc(r.id)+'\'})">Ver / descargar</button></td></tr>';
   }
   return h + '</tbody></table></div></div></div>';
 }
@@ -3651,6 +3656,71 @@ function guardarQuiz(cid,mid){
 }
 
 /* ------- Alumnos ------- */
+/* Invitaciones: administración controla cada envío y la programación. */
+var reactivacionSeleccion = null;
+function filtroInvitaciones(id){
+ id=id||'re-filtro';
+ return '<label for="'+id+'">¿A quién excluir?</label><select id="'+id+'"><option value="no">Excluir a cualquiera con una inscripción activa</option><option value="si">Permitir también a quienes concluyeron todos sus cursos activos</option></select><p class="sub">La conclusión se confirma con una constancia emitida. En una ruta deben estar concluidos todos sus cursos.</p>';
+}
+function invitarAlumno(uid){
+ if(!sesion || sesion.rol!=='admin')return;
+ reactivacionSeleccion={usuarioId:uid||null,ids:[],incluirConcluidos:false};
+ abrirModal(uid?'Invitar a un alumno':'Invitar a todos los elegibles',filtroInvitaciones()+
+  '<p>Mensaje: Te invitamos a descubrir tu próximo curso en Instituto Mara. Explora los programas y elige el que se adapte a tus intereses.</p><div id="re-preview"></div>',
+  '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button><button class="btn btn-mor" onclick="previsualizarInvitacion()">Revisar destinatarios</button>');
+}
+function previsualizarInvitacion(){
+ var seleccion=reactivacionSeleccion, caja=$('re-preview');
+ seleccion.incluirConcluidos=$('re-filtro').value==='si';
+ caja.textContent='Consultando inscripciones…';
+ Nube.funcionServidor('reactivacion',{accion:'previsualizar',usuarioId:seleccion.usuarioId,incluirConcluidos:seleccion.incluirConcluidos}).then(function(r){
+  seleccion.ids=r.candidatos.slice(0,100).map(function(u){return u.id;});
+  caja.innerHTML='<p><b>'+r.total+' destinatario(s) elegible(s)</b>. Se excluyen las invitaciones ya intentadas hoy.</p>'+
+   (r.total?'<p>'+r.candidatos.slice(0,100).map(function(u){return esc(u.nombre);}).join(', ')+'</p><button class="btn btn-mor" id="re-enviar" onclick="enviarInvitaciones()">Enviar correo a '+seleccion.ids.length+'</button>':'')+
+   (r.total?'<p>WhatsApp manual (abre un mensaje por alumno):</p>'+r.candidatos.slice(0,100).map(function(u){return '<button class="btn btn-linea btn-sm" onclick="whatsappInvitacion(\''+esc(u.id)+'\')">'+esc(u.nombre)+'</button>';}).join(''):'')+
+   (r.total>100?'<p>Se procesan hasta 100 por envío. Vuelve a revisar para continuar con los restantes.</p>':'');
+ }).catch(function(e){caja.textContent=e.message;});
+}
+function enviarInvitaciones(){
+ var seleccion=reactivacionSeleccion, caja=$('re-preview'), boton=$('re-enviar');
+ if(boton)boton.disabled=true;
+ Nube.funcionServidor('reactivacion',{accion:'enviar',usuarioId:seleccion.usuarioId,ids:seleccion.ids,incluirConcluidos:seleccion.incluirConcluidos}).then(function(r){
+  caja.textContent='Enviados: '+r.enviados.length+'. Fallidos: '+r.fallas.length+'. Omitidos: '+r.omitidos.length+'.';
+ }).catch(function(e){caja.textContent=e.message;});
+}
+function whatsappInvitacion(uid){
+ var s=reactivacionSeleccion,u=usuario(uid);if(!u||!s.ids.includes(u.id))return;
+ var tel=String(u.tel||'').replace(/\D/g,'');if(tel.length===10)tel='52'+tel;
+ if(!tel){alert('El alumno no tiene un número de WhatsApp registrado.');return;}
+ var texto='Hola '+String(u.nombre||'').split(' ')[0]+', te invitamos a descubrir tu próximo curso en Instituto Mara. Explora los programas y elige el que se adapte a tus intereses: '+urlAula();
+ window.open('https://wa.me/'+tel+'?text='+encodeURIComponent(texto),'_blank','noopener');
+}
+function vistaAdminReactivacion(){
+ if(!sesion||sesion.rol!=='admin')return '';
+ setTimeout(cargarReactivacion,0);
+ return '<div class="seccion"><h2>Invitaciones y recordatorios automáticos</h2><p>Correo automático y envíos manuales por correo o WhatsApp.</p><button class="btn btn-mor" onclick="invitarAlumno(null)">Invitar a todos</button><div id="re-config">Cargando configuración…</div></div>';
+}
+function cargarReactivacion(){
+ Nube.configReactivacion().then(function(r){
+  var c=r[0];
+  $('re-config').innerHTML='<div class="tarjeta" style="margin-top:20px"><h3>Programación por correo</h3>'+
+   '<label><input id="re-activo" type="checkbox" '+(c.activo?'checked':'')+'> Activar recordatorios automáticos</label>'+
+   '<div class="campo"><label>Días desde el registro antes del primer correo</label><input id="re-dias" type="number" min="1" max="365" value="'+c.dias_iniciales+'"></div>'+
+   '<div class="campo"><label>Días entre correos</label><input id="re-intervalo" type="number" min="1" max="365" value="'+c.intervalo_dias+'"></div>'+
+   '<div class="campo"><label>Máximo de correos automáticos por alumno</label><input id="re-max" type="number" min="1" max="20" value="'+c.max_envios+'"></div>'+filtroInvitaciones('re-auto-filtro')+
+   '<button class="btn btn-mor" onclick="guardarReactivacion()">Guardar configuración</button><div id="re-estado"></div></div><div id="re-historial"></div>';
+  $('re-auto-filtro').value=c.incluir_concluidos?'si':'no';
+  return Nube.historialReactivacion();
+ }).then(function(rows){
+  $('re-historial').innerHTML='<h3>Últimos intentos de envío</h3>'+rows.map(function(r){var u=usuario(r.usuario_id);return '<p>'+esc(u?u.nombre:r.usuario_id)+' · '+esc(r.creado_en)+' · '+esc(r.estado)+(r.detalle?' · '+esc(r.detalle):'')+'</p>';}).join('');
+ }).catch(function(e){$('re-config').textContent='No se pudo cargar: '+e.message;});
+}
+function guardarReactivacion(){
+ var c={activo:$('re-activo').checked,dias_iniciales:Number($('re-dias').value),intervalo_dias:Number($('re-intervalo').value),max_envios:Number($('re-max').value),incluir_concluidos:$('re-auto-filtro').value==='si'};
+ if(!Number.isInteger(c.dias_iniciales)||c.dias_iniciales<1||c.dias_iniciales>365||!Number.isInteger(c.intervalo_dias)||c.intervalo_dias<1||c.intervalo_dias>365||!Number.isInteger(c.max_envios)||c.max_envios<1||c.max_envios>20){$('re-estado').textContent='Revisa los límites de cada campo.';return;}
+ Nube.guardarReactivacion(c).then(function(){$('re-estado').textContent='Configuración guardada.';}).catch(function(e){$('re-estado').textContent=e.message;});
+}
+
 /* ---------------- Alumnos: seguimiento, recordatorios y datos ---------------- */
 function haceCuanto(iso){
   if(!iso) return 'Nunca';
@@ -3730,6 +3800,7 @@ function pintarAlumnos(){
           (rec ? ' · Último recordatorio: '+haceCuanto(rec.enviado_en)+' ('+esc(rec.canal)+')' : '')+'</div></div>'+
         '<div class="alu-acc"><button class="btn btn-linea btn-sm" onclick="editarAlumno(\''+u.id+'\')">Editar datos</button>'+
         '<button class="btn btn-linea btn-sm" onclick="inscribirAlumno(\''+u.id+'\')">Inscribir</button>'+
+        (NUBE ? '<button class="btn btn-linea btn-sm" onclick="invitarAlumno(\''+u.id+'\')">Invitar a un curso</button>' : '')+
         '<button class="mini rojo" title="Eliminar" onclick="borrarAlumno(\''+u.id+'\')">✕</button></div></div>'+
       (cs.length ? '<div class="alu-cursos">'+cs.map(function(x){
         return '<div class="alu-curso"><span class="punto" style="background:'+x.c.color+'"></span><span class="alu-cn">'+esc(x.c.nombre)+'</span>'+
@@ -4010,11 +4081,11 @@ function pintarCupones(filas){
     return;
   }
   var h = '<div class="tarjeta" style="padding:0;overflow-x:auto"><table class="tabla"><thead><tr>'+
-    '<th>Código</th><th>Descuento</th><th>Curso</th><th>Usos</th><th>Vence</th><th>Estado</th><th></th>'+
+    '<th>Código</th><th>Descuento</th><th>Curso o ruta</th><th>Usos</th><th>Vence</th><th>Estado</th><th></th>'+
     '</tr></thead><tbody>';
   for(var i=0;i<filas.length;i++){
     var c = filas[i];
-    var cur = c.curso_id ? (curso(c.curso_id) ? curso(c.curso_id).nombre : c.curso_id) : 'Todos los cursos';
+    var cur = c.curso_id ? (programa(c.curso_id) ? programa(c.curso_id).nombre : c.curso_id) : 'Todos los cursos';
     var cod = esc(c.codigo).replace(/'/g,'&#39;');
     h += '<tr><td><b>'+esc(c.codigo)+'</b>'+(c.descripcion ? '<br><span style="color:var(--gris);font-size:.82rem">'+esc(c.descripcion)+'</span>' : '')+'</td>'+
       '<td>'+textoDescuento(c)+'</td>'+
@@ -4039,8 +4110,8 @@ function nuevoCupon(){ formCupon(null); }
    (es lo que el alumno ya tiene en la mano) y los usos ya hechos se conservan. */
 function formCupon(codigo){
   var c = codigo ? cuponPorCodigo(codigo) : null;
-  var ops = '<option value="">Todos los cursos</option>';
-  var lista = BD.cursos.slice().sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
+  var ops = '<option value="">Todos los cursos individuales (no rutas)</option>';
+  var lista = BD.cursos.concat(window.RUTAS_MARA||[]).filter(function(c,i,a){ return a.findIndex(function(x){ return x.id===c.id; })===i; }).sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
   for(var i=0;i<lista.length;i++)
     ops += '<option value="'+lista[i].id+'"'+(c && c.curso_id===lista[i].id ? ' selected' : '')+'>'+esc(lista[i].nombre)+'</option>';
   var v = function(x){ return x == null ? '' : esc(String(x)); };
@@ -4054,7 +4125,7 @@ function formCupon(codigo){
     '<div class="fila"><div class="campo"><label>Tipo de descuento</label>'+
     '<select id="cu-tipo"><option value="porcentaje">Porcentaje</option><option value="monto"'+(c && c.tipo==='monto' ? ' selected' : '')+'>Monto fijo en pesos</option></select></div>'+
     '<div class="campo"><label>Valor</label><input type="number" id="cu-val" min="1" placeholder="20" value="'+v(c && c.valor)+'"></div></div>'+
-    '<div class="campo"><label>Curso al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
+    '<div class="campo"><label>Curso o ruta al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
     '<div class="fila"><div class="campo"><label>Usos máximos (vacío = sin límite)</label>'+
     '<input type="number" id="cu-max" min="1" placeholder="50" value="'+v(c && c.usos_max)+'"></div>'+
     '<div class="campo"><label>Vence el (opcional)</label><input type="date" id="cu-vence" value="'+v(c && c.vence)+'"></div></div>'+
@@ -4099,13 +4170,13 @@ function guardarCupon(editando){
 function mensajeCupon(c){
   var base = location.origin + location.pathname;
   var enlace = base + '?cupon=' + encodeURIComponent(c.codigo) + (c.curso_id ? '&curso=' + encodeURIComponent(c.curso_id) : '');
-  var cur = c.curso_id && curso(c.curso_id) ? curso(c.curso_id) : null;
+  var cur = c.curso_id && programa(c.curso_id) ? programa(c.curso_id) : null;
   var gratis = c.tipo === 'porcentaje' && Number(c.valor) >= 100;
   var ahorro = cur ? (c.tipo === 'porcentaje' ? Math.round(cur.precio * Math.min(100, Number(c.valor)) / 100) : Math.min(Number(c.valor), cur.precio)) : 0;
   var cab = gratis
-    ? '🎁 *¡Tienes un regalo!* '+(cur ? 'El '+(cur.nivel === 'Diplomados' ? 'diplomado' : 'curso')+' *'+cur.nombre+'* es tuyo sin costo.' : 'Un curso de Instituto Mara, sin costo, el que tú elijas.')
+    ? '🎁 *¡Tienes un regalo!* '+(cur ? 'El '+(ruta(cur.id) ? 'programa' : cur.nivel === 'Diplomados' ? 'diplomado' : 'curso')+' *'+cur.nombre+'* es tuyo sin costo.' : 'Un curso de Instituto Mara, sin costo, el que tú elijas.')
     : '🔥 *'+textoDescuento(c)+' de descuento* '+(cur ? 'en *'+cur.nombre+'*' : 'en el curso que elijas de Instituto Mara')+(cur && ahorro ? ' (te ahorras '+dinero(ahorro)+')' : '')+'.';
-  var obj = cur ? objetivosDe(cur).slice(0,3) : [];
+  var obj = cur && cur.modulos ? objetivosDe(cur).slice(0,3) : [];
   return cab + '\n\n' +
     (obj.length ? '✅ Vas a aprender a:\n' + obj.map(function(o){ return '• '+o; }).join('\n') + '\n\n' : '') +
     '📱 100% en línea, a tu ritmo, desde el celular\n🏅 Constancia con folio y QR verificable para tu CV y LinkedIn\n\n' +
@@ -4287,6 +4358,7 @@ function pintar(){
   else if(v==='admin-cursos')   h = vistaAdminCursos();
   else if(v==='admin-editor')   h = vistaAdminEditor();
   else if(v==='vista-previa')   h = vistaPrevia();
+  else if(v==='admin-reactivacion') h = vistaAdminReactivacion();
   else if(v==='admin-alumnos')  h = vistaAdminAlumnos();
   else if(v==='admin-pagos')    h = vistaAdminPagos();
   else if(v==='admin-cupones')  h = vistaAdminCupones();
