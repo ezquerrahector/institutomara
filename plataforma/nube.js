@@ -480,6 +480,22 @@ var Nube = {
     return rest('rpc/marcar_acceso', { metodo:'POST', cuerpo:{} }).catch(function(){});
   },
 
+  configReactivacion: function(){ return rest('reactivacion_config?id=eq.true&select=*'); },
+  guardarReactivacion: function(c){ return rest('reactivacion_config?id=eq.true',{metodo:'PATCH',cuerpo:c,prefer:'return=minimal'}); },
+  historialReactivacion: function(){ return rest('reactivacion_envios?select=*&order=creado_en.desc&limit=50'); },
+  asegurarConstanciaPublicada: function(k){
+    return rest('constancias?folio=eq.'+encodeURIComponent(k.folio)+'&select=folio,usuario_id').then(function(rows){
+      if(rows.length){
+        if(rows[0].usuario_id !== k.usuarioId) throw new Error('El folio pertenece a otra constancia.');
+        return;
+      }
+      return rest('constancias?on_conflict=folio', {metodo:'POST', prefer:'resolution=ignore-duplicates,return=minimal', cuerpo:{
+        folio:k.folio,usuario_id:k.usuarioId,curso_id:k.cursoId,nombre_alumno:k.nombreAlumno,
+        nombre_curso:k.nombreCurso,horas:k.horas,fecha:k.fecha
+      }});
+    });
+  },
+
   /* Nombre que aparece en la constancia (el alumno para sí mismo o el admin para cualquiera) */
   cambiarNombreConstancia: function(nombre, usuarioId){
     var cuerpo = { p_nombre: nombre || '' };
@@ -581,7 +597,7 @@ function enviar(BD, u){
              nombre_alumno:k.nombreAlumno, nombre_curso:k.nombreCurso,
              horas:k.horas, fecha:k.fecha };
   });
-  if(cons.length) tareas.push(upsert('constancias', cons, 'folio'));
+  if(cons.length) tareas.push(Promise.all(filtrar(BD.constancias,u.id).map(Nube.asegurarConstanciaPublicada)));
 
   /* dudas nuevas (las que todavía no tienen id del servidor) */
   var dudasNuevas = filtrar(BD.dudas, u.id).filter(function(q){ return !q.subida; });
