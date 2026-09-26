@@ -548,7 +548,7 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=10"></script>
+<script src="nube.js?v=11"></script>
 <script src="interactivo.js?v=8"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
@@ -2556,6 +2556,19 @@ function dibujarQR(cont, url){
     if(matriz.isDark(y,x)) trazos.push('M'+(x+4)+' '+(y+4)+'h1v1h-1z');
   cont.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 '+(n+8)+' '+(n+8)+'" role="img" aria-label="Código QR de verificación" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="white"/><path d="'+trazos.join('')+'" fill="black"/></svg>';
 }
+function prepararQR(cont, rec, url){
+  cont.textContent = 'Preparando verificación…';
+  return Promise.resolve().then(function(){
+    if(NUBE) return Nube.asegurarConstanciaPublicada(rec);
+  }).then(function(){
+    try { dibujarQR(cont, url); }
+    catch(e){
+      cont.textContent = 'No se pudo generar el QR: '+e.message;
+    }
+  }, function(e){
+    cont.textContent = 'No se pudo publicar la verificación: '+e.message+'. Recarga e intenta nuevamente.';
+  });
+}
 
 function vistaConstancias(){
   var h = '<div class="seccion"><h2>Mis constancias</h2>'+
@@ -2591,11 +2604,7 @@ function vistaConstancia(){
   var url = urlVerificacion(rec, c), qrId = 'qr-'+rec.id;
   setTimeout(function(){
     var cont = $(qrId); if(!cont) return;
-    cont.textContent = 'Preparando verificación…';
-    var lista = NUBE ? Nube.asegurarConstanciaPublicada(rec) : Promise.resolve();
-    lista.then(function(){ dibujarQR(cont, url); }).catch(function(){
-      cont.textContent = 'No se pudo publicar la verificación. Recarga e intenta nuevamente.';
-    });
+    prepararQR(cont, rec, url);
   }, 0);
   var firmaNombre = BD.config.directorNombre || sesion.nombre;
   var avisoQR = location.protocol === 'file:' && !BD.config.urlPublica
