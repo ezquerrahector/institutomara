@@ -1,6 +1,6 @@
 # Cuaderno de trabajo — Persuasión y comunicación ética
 
-Borrador para revisión. 60 horas estimadas de trabajo, pendientes de pilotaje. No publicado.
+60 horas estimadas de trabajo activo. El tiempo real puede variar; incluye lectura, práctica, retos, evaluaciones y proyecto.
 
 ## Cómo trabajar
 
