@@ -784,6 +784,8 @@ P.clave = function(b, id){
 
 /* ---------------- Tiempo estimado de una lección ---------------- */
 MI.minutos = function(lec){
+  // La dedicación editorial incluye el taller; los cursos anteriores conservan el cálculo automático.
+  if(Number.isFinite(lec.minutosEstimados) && lec.minutosEstimados > 0) return Math.round(lec.minutosEstimados);
   var palabras = 0, ejercicios = 0;
   function cuenta(x){
     if(x == null) return;
