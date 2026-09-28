@@ -549,7 +549,7 @@ tbody tr:hover{background:var(--nube)}
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
 <script src="nube.js?v=11"></script>
-<script src="interactivo.js?v=diplomados-20260927"></script>
+<script src="interactivo.js?v=calidad-20260928"></script>
 <script src="cursos/ingles-a1.js?v=6"></script>
 <script src="cursos/ia-general.js?v=6"></script>
 <script src="cursos/ia-profesiones.js?v=6"></script>
@@ -561,8 +561,8 @@ tbody tr:hover{background:var(--nube)}
 <script src="cursos/catalogo-6.js?v=11"></script>
 <script src="cursos/catalogo-7.js?v=12"></script>
 <script src="cursos/catalogo-8.js?v=1"></script>
-<script src="cursos/persuasion-etica.js?v=1"></script>
-<script src="cursos/estoicismo-vida-moderna.js?v=1"></script>
+<script src="cursos/persuasion-etica.js?v=calidad-20260928"></script>
+<script src="cursos/estoicismo-vida-moderna.js?v=calidad-20260928"></script>
 <script src="cursos/rutas.js?v=5"></script>
 <script>
 /* =========================================================================
@@ -1339,7 +1339,15 @@ if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
   var extra = window.CURSOS_MARA || [];
   for(var i=0;i<extra.length;i++){
     var ya = false;
-    for(var j=0;j<BD.cursos.length;j++) if(BD.cursos[j].id === extra[i].id){ ya = true; break; }
+    for(var j=0;j<BD.cursos.length;j++) if(BD.cursos[j].id === extra[i].id){
+      ya = true;
+      // Actualiza sólo el contenido editorial versionado. Conserva pagos, avances y datos comerciales.
+      if(extra[i].revisionContenido && Number(extra[i].revisionContenido) > Number(BD.cursos[j].revisionContenido||0)){
+        BD.cursos[j].modulos = JSON.parse(JSON.stringify(extra[i].modulos));
+        ['nivel','familia','periodoTipo','periodoNum','revisionContenido'].forEach(function(k){ BD.cursos[j][k]=extra[i][k]; });
+      }
+      break;
+    }
     if(!ya) BD.cursos.push(JSON.parse(JSON.stringify(extra[i])));
   }
 })();
@@ -2964,7 +2972,19 @@ function vistaAdminCursos(){
     '<p class="sub" style="margin:0">Organizados por nivel y, dentro de cada nivel, por periodo o familia — así '+
     'cuando se agregue Bachillerato o Licenciatura, cada materia queda en su cuatrimestre o semestre y no suelta.</p></div>'+
     '<button class="btn btn-mor" onclick="nuevoCurso()">+ Nuevo curso</button></div>';
-  var grupos = agruparCursos(BD.cursos);
+  h += '<div class="campo" style="margin:18px 0"><label for="admin-curso-buscar">Buscar cursos por nombre o área</label><input id="admin-curso-buscar" type="search" placeholder="Por ejemplo: estoicismo o persuasión" oninput="filtrarAdminCursos(this.value)"></div>'+
+    '<p id="admin-curso-cantidad" class="sub" role="status">'+BD.cursos.length+' cursos</p><div id="admin-curso-resultados">'+listaAdminCursos(BD.cursos)+'</div>';
+  return h + '</div>';
+}
+function filtrarAdminCursos(valor){
+  var q=normaliza(valor).trim();
+  var lista=BD.cursos.filter(function(c){return normaliza(c.nombre+' '+(c.familia||'')+' '+(c.nivel||'')).indexOf(q)!==-1;});
+  $('admin-curso-cantidad').textContent=lista.length+' '+(lista.length===1?'curso':'cursos');
+  $('admin-curso-resultados').innerHTML=listaAdminCursos(lista);
+}
+function listaAdminCursos(lista){
+  if(!lista.length) return '<p>No se encontraron cursos. Prueba otra palabra.</p>';
+  var h='', grupos = agruparCursos(lista);
   for(var g=0;g<grupos.length;g++){
     h += '<h3 style="margin:22px 0 6px;color:var(--tinta)">'+esc(grupos[g].nivel)+'</h3>';
     for(var s=0;s<grupos[g].grupos.length;s++){
@@ -2988,7 +3008,7 @@ function vistaAdminCursos(){
       }
     }
   }
-  return h + '</div>';
+  return h;
 }
 
 function opcionesNivel(sel){

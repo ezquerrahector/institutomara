@@ -144,7 +144,7 @@ MI.esInteractivo = function(t){ return ['practica','completar','relacionar','ord
 
 MI.pintar = function(b, pos){
   var f = P[b.tipo]; if(!f) return '';
-  var id = reg(b); MI.pos[id] = pos;
+  var id = reg(b); MI.pos[id] = b.posicionOriginal != null ? b.posicionOriginal : pos;
   return f(b, id);
 };
 
@@ -357,7 +357,7 @@ P.tarjetas = function(b, id){
   var ts = b.tarjetas || [];
   MI.estado[id] = { i:0, orden:ts.map(function(_,k){return k;}), repasar:[], sabidas:0, vuelta:false };
   return '<div class="bloque mi mi-tarjetas" id="mi-'+id+'">'+cab(b,'Tarjetas de repaso','❏')+
-    '<div class="mi-ins" style="margin:-4px 0 12px">Mira el frente, intenta recordar la respuesta y después voltea la tarjeta. Sé honesto contigo: las que no te sabías vuelven al final.</div>'+
+    '<div class="mi-ins" style="margin:-4px 0 12px">'+e(b.instrucciones || 'Mira el frente, intenta recordar la respuesta y después voltea la tarjeta. Sé honesto contigo: las que no te sabías vuelven al final.')+'</div>'+
     '<div id="mi-'+id+'-caja">'+tarjetaHTML(id)+'</div></div>';
 };
 function tarjetaHTML(id){
@@ -368,10 +368,20 @@ function tarjetaHTML(id){
       return '<div class="mi-tj-ronda">Otra vuelta solo con las '+st.orden.length+' que te costaron.</div>'+tarjetaHTML(id);
     }
     marcarResuelto(id);
-    return '<div class="mi-listo" style="text-align:center;padding:22px">✓ Terminaste el mazo. Te sabes las '+ts.length+' tarjetas.'+
+    return '<div class="mi-listo" style="text-align:center;padding:22px">'+(b.guiado ? '✓ Revisaste los '+ts.length+' casos. Esto registra tu repaso, no una calificación de aprendizaje.' : '✓ Terminaste el mazo. Te sabes las '+ts.length+' tarjetas.')+
       '<div style="margin-top:12px"><button type="button" class="mi-ver" onclick="MI.tjReiniciar('+id+')">Repasar otra vez</button></div></div>';
   }
   var t = ts[st.orden[st.i]], frente = t.frente, dorso = t.reverso;
+  if(b.guiado){
+    return '<div class="mi-repaso-guiado" style="border:1px solid var(--linea);border-radius:12px;padding:18px;background:#fff;color:var(--tinta);overflow-wrap:anywhere">'+
+      '<p style="font-weight:700">Caso '+(st.i+1)+' de '+st.orden.length+'</p>'+
+      '<p style="white-space:pre-line;line-height:1.6">'+e(frente)+'</p>'+
+      (st.vuelta ? '<div style="border-top:2px solid var(--turquesa);margin-top:16px;padding-top:12px"><strong>Respuesta orientativa</strong><p style="line-height:1.6">'+e(dorso)+'</p><p style="line-height:1.6">'+e(t.ej||'')+'</p></div>' : '')+
+      '<div class="mi-tj-acc" style="flex-wrap:wrap">'+(st.vuelta
+        ? '<button type="button" class="mi-ver" onclick="MI.tjSig('+id+',false)">Repasar de nuevo</button><button type="button" class="mi-rev" onclick="MI.tjSig('+id+',true)">Lo comprendí</button>'
+        : '<button type="button" class="mi-rev" onclick="MI.tjVoltear('+id+')">Ver respuesta</button>')+'</div></div>';
+  }
+
   return '<div class="mi-tj-pos">Tarjeta '+(st.i+1)+' de '+st.orden.length+'</div>'+
     '<div class="mi-tj'+(st.vuelta?' vuelta':'')+'" onclick="MI.tjVoltear('+id+')"><div class="mi-tj-in">'+
       '<div class="mi-tj-cara frente"><div class="mi-tj-txt">'+e(frente)+'</div><div class="mi-tj-pista">Toca para voltear</div></div>'+
