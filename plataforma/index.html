@@ -431,6 +431,32 @@ tbody tr:hover{background:var(--nube)}
   .constancia-sellos{margin-top:6mm}
   .constancia .legal{margin-top:6mm;padding-top:4mm;font-size:8pt;line-height:1.45}
 }
+
+/* Logros y festejos */
+.logro-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:9999;
+  background:var(--tinta,#2E1065);color:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 10px 30px rgba(0,0,0,.25);
+  font-size:.93rem;max-width:min(92vw,460px);transition:all .35s ease;text-align:center;line-height:1.4}
+.logro-toast.ver{opacity:1;transform:translateX(-50%) translateY(0)}
+.logro-toast b{color:#FDE68A}
+.festejo{position:relative;overflow:hidden;text-align:left;border:2px solid #A7F3D0;background:linear-gradient(160deg,#ECFDF5,#fff 60%)}
+.festejo h3{margin:4px 0 6px;font-size:1.25rem}
+.festejo ul{margin:10px 0 4px;padding-left:0;list-style:none}
+.festejo li{padding:6px 0 6px 30px;position:relative;border-bottom:1px dashed #D1FAE5;font-size:.93rem}
+.festejo li:before{content:'✓';position:absolute;left:4px;top:5px;width:20px;height:20px;border-radius:50%;background:#10B981;color:#fff;
+  font-size:.75rem;display:flex;align-items:center;justify-content:center;font-weight:700}
+.festejo .grande{font-size:2.4rem;line-height:1}
+.confeti{position:fixed;top:-12px;width:9px;height:14px;z-index:9998;pointer-events:none;border-radius:2px;animation:caer linear forwards}
+@keyframes caer{to{transform:translateY(105vh) rotate(720deg);opacity:.9}}
+.racha{display:inline-flex;align-items:center;gap:6px;background:#FEF3C7;color:#92400E;border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:600}
+@media (prefers-reduced-motion: reduce){.confeti{display:none}.logro-toast{transition:none}}
+
+.cita-clasica{border-left:4px solid var(--morado,#7C3AED);padding:6px 0 6px 14px;margin:2px 0 10px}
+.cita-clasica .cita-tx{font-family:Georgia,'Times New Roman',serif;font-size:1.12rem;line-height:1.5;font-style:italic;color:var(--tinta,#2E1065)}
+.cita-clasica .cita-fuente{font-size:.82rem;color:var(--gris,#6B7280);margin-top:6px}
+details.modelo{background:#F5F3FF;border:1px solid #DDD6FE;border-radius:12px;padding:10px 14px}
+details.modelo summary{cursor:pointer;font-weight:600;color:var(--morado,#7C3AED);list-style:none}
+details.modelo summary::-webkit-details-marker{display:none}
+details.modelo[open] summary{margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -548,22 +574,22 @@ tbody tr:hover{background:var(--nube)}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=11"></script>
-<script src="interactivo.js?v=calidad-20260928"></script>
-<script src="cursos/ingles-a1.js?v=6"></script>
-<script src="cursos/ia-general.js?v=6"></script>
-<script src="cursos/ia-profesiones.js?v=6"></script>
-<script src="cursos/office.js?v=6"></script>
-<script src="cursos/catalogo-2.js?v=7"></script>
-<script src="cursos/catalogo-3.js?v=8"></script>
-<script src="cursos/catalogo-4.js?v=9"></script>
-<script src="cursos/catalogo-5.js?v=10"></script>
-<script src="cursos/catalogo-6.js?v=11"></script>
-<script src="cursos/catalogo-7.js?v=12"></script>
-<script src="cursos/catalogo-8.js?v=1"></script>
-<script src="cursos/persuasion-etica.js?v=calidad-20260928"></script>
-<script src="cursos/estoicismo-vida-moderna.js?v=calidad-20260928"></script>
-<script src="cursos/rutas.js?v=5"></script>
+<script src="nube.js?v=20260929"></script>
+<script src="interactivo.js?v=20260929"></script>
+<script src="cursos/ingles-a1.js?v=20260929"></script>
+<script src="cursos/ia-general.js?v=20260929"></script>
+<script src="cursos/ia-profesiones.js?v=20260929"></script>
+<script src="cursos/office.js?v=20260929"></script>
+<script src="cursos/catalogo-2.js?v=20260929"></script>
+<script src="cursos/catalogo-3.js?v=20260929"></script>
+<script src="cursos/catalogo-4.js?v=20260929"></script>
+<script src="cursos/catalogo-5.js?v=20260929"></script>
+<script src="cursos/catalogo-6.js?v=20260929"></script>
+<script src="cursos/catalogo-7.js?v=20260929"></script>
+<script src="cursos/catalogo-8.js?v=20260929"></script>
+<script src="cursos/persuasion-etica.js?v=20260929"></script>
+<script src="cursos/estoicismo-vida-moderna.js?v=20260929"></script>
+<script src="cursos/rutas.js?v=20260929"></script>
 <script>
 /* =========================================================================
    INSTITUTO MARA — AULA VIRTUAL
@@ -578,7 +604,7 @@ tbody tr:hover{background:var(--nube)}
 var LLAVE = 'institutoMara.v2';
 /* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
    se actualice en las computadoras donde la plataforma ya se había abierto. */
-var CONTENIDO_VERSION = 7;
+var CONTENIDO_VERSION = 8;
 /* Cambiar a true cuando Google esté activado en Supabase → Authentication → Providers */
 var LOGIN_GOOGLE = false;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
@@ -1344,7 +1370,7 @@ if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
       // Actualiza sólo el contenido editorial versionado. Conserva pagos, avances y datos comerciales.
       if(extra[i].revisionContenido && Number(extra[i].revisionContenido) > Number(BD.cursos[j].revisionContenido||0)){
         BD.cursos[j].modulos = JSON.parse(JSON.stringify(extra[i].modulos));
-        ['nivel','familia','periodoTipo','periodoNum','revisionContenido'].forEach(function(k){ BD.cursos[j][k]=extra[i][k]; });
+        ['nivel','familia','periodoTipo','periodoNum','horas','desc','revisionContenido'].forEach(function(k){ BD.cursos[j][k]=extra[i][k]; });
       }
       break;
     }
@@ -2239,6 +2265,7 @@ function vistaAula(){
     '<div class="tarjeta" style="margin-bottom:26px;background:linear-gradient(135deg,var(--tinta),var(--morado));border:0;color:#fff">'+
       '<h2 style="color:#fff;margin-bottom:6px">'+esc(c.nombre)+'</h2>'+
       '<p style="color:#DDD6FE;max-width:60ch">'+esc(c.desc)+'</p>'+
+      (rachaActual() >= 2 ? '<div style="margin-top:12px"><span class="racha">🔥 '+rachaActual()+' días seguidos estudiando</span></div>' : '')+
       '<div class="avance-txt" style="color:#C4B5FD;margin-top:20px"><span>Tu avance</span><span>'+p+'%</span></div>'+
       '<div class="avance" style="background:rgba(255,255,255,.22)"><i style="width:'+p+'%"></i></div>'+
     '</div>';
@@ -2421,10 +2448,67 @@ function vistaLeccion(){
   return h;
 }
 
+/* ---------------- Logros: avisos, racha y festejos ---------------- */
+function mostrarLogro(html){
+  var t = document.createElement('div'); t.className = 'logro-toast'; t.innerHTML = html;
+  document.body.appendChild(t);
+  requestAnimationFrame(function(){ t.classList.add('ver'); });
+  setTimeout(function(){ t.classList.remove('ver'); setTimeout(function(){ t.remove(); }, 400); }, 3600);
+}
+function lanzarConfeti(){
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var col = ['#7C3AED','#10B981','#F59E0B','#EC4899','#3B82F6','#FDE68A'];
+  for(var k=0;k<70;k++){
+    var c = document.createElement('i'); c.className = 'confeti';
+    c.style.left = (Math.random()*100)+'vw'; c.style.background = col[k%col.length];
+    c.style.animationDuration = (1.8+Math.random()*1.8)+'s'; c.style.animationDelay = (Math.random()*.5)+'s';
+    document.body.appendChild(c); setTimeout((function(x){ return function(){ x.remove(); }; })(c), 4200);
+  }
+}
+/* Días distintos con estudio (se guarda en el navegador). Devuelve la racha actual. */
+function registrarDiaEstudio(){
+  try{
+    var k = 'institutoMara.dias.'+(sesion?sesion.id:'x'), dias = JSON.parse(localStorage.getItem(k)||'[]');
+    var hoy = new Date(); var f = function(d){ return d.toISOString().slice(0,10); };
+    if(dias.indexOf(f(hoy)) < 0){ dias.push(f(hoy)); if(dias.length>400) dias = dias.slice(-400); localStorage.setItem(k, JSON.stringify(dias)); }
+    var n = 0, d = new Date(hoy);
+    while(dias.indexOf(f(d)) >= 0){ n++; d.setDate(d.getDate()-1); }
+    return n;
+  }catch(e){ return 0; }
+}
+function rachaActual(){
+  try{
+    var dias = JSON.parse(localStorage.getItem('institutoMara.dias.'+(sesion?sesion.id:'x'))||'[]');
+    var f = function(d){ return d.toISOString().slice(0,10); }, d = new Date(), n = 0;
+    if(dias.indexOf(f(d)) < 0) d.setDate(d.getDate()-1);
+    while(dias.indexOf(f(d)) >= 0){ n++; d.setDate(d.getDate()-1); }
+    return n;
+  }catch(e){ return 0; }
+}
+function aMayuscula(t){ t = String(t||'').replace(/<[^>]+>/g,'').trim().replace(/\.$/,''); return t.charAt(0).toUpperCase()+t.slice(1); }
+/* Lista de "lo que ya sabes hacer" a partir de los objetivos de las lecciones */
+function logrosDeModulo(m){
+  var h = '<ul>';
+  for(var i=0;i<m.lecciones.length;i++)
+    h += '<li>'+esc(aMayuscula(m.lecciones[i].objetivo || m.lecciones[i].titulo))+'</li>';
+  return h + '</ul>';
+}
+
 function terminarLeccion(lid, sigId){
-  var a = avance(sesion.id, estado.cursoId);
-  if(a.lecciones.indexOf(lid) < 0) a.lecciones.push(lid);
+  var a = avance(sesion.id, estado.cursoId), nueva = a.lecciones.indexOf(lid) < 0;
+  if(nueva) a.lecciones.push(lid);
   guardar();
+  var racha = registrarDiaEstudio();
+  if(nueva){
+    var c = curso(estado.cursoId), m = modulo(c, estado.moduloId), vistas = 0;
+    for(var j=0;j<m.lecciones.length;j++) if(a.lecciones.indexOf(m.lecciones[j].id) >= 0) vistas++;
+    var frases = ['¡Bien hecho!','¡Vas muy bien!','¡Una más!','¡Excelente avance!','¡Sigue así!'];
+    var msg = '<b>'+frases[a.lecciones.length % frases.length]+'</b> Llevas '+vistas+' de '+m.lecciones.length+
+      ' lecciones del módulo · '+porcentaje(sesion.id,c)+'% del curso';
+    if(!sigId && m.quiz && m.quiz.preguntas.length) msg = '<b>¡Terminaste las lecciones del módulo!</b> Ya puedes presentar la evaluación.';
+    if(racha >= 2) msg += '<br>🔥 Racha de '+racha+' días estudiando';
+    mostrarLogro(msg);
+  }
   if(sigId) ir('leccion',{leccionId:sigId});
   else ir('aula');
 }
@@ -2432,6 +2516,11 @@ function terminarLeccion(lid, sigId){
 /* ---------------- Evaluación ---------------- */
 var respuestas = {};
 
+function mezclaAzar(a){
+  var r = a.slice();
+  for(var i=r.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=r[i]; r[i]=r[j]; r[j]=t; }
+  return r;
+}
 function vistaQuiz(){
   var c = curso(estado.cursoId), m = modulo(c,estado.moduloId);
   if(!c || !m || !m.quiz) return '';
@@ -2442,10 +2531,15 @@ function vistaQuiz(){
     '<p class="sub">'+m.quiz.preguntas.length+' preguntas. Necesitas '+BD.config.minimoAprobatorio+
     '% para aprobar y abrir el siguiente módulo. Puedes repetirla las veces que necesites.</p>'+
     '<div id="listaPreg">';
-  for(var i=0;i<m.quiz.preguntas.length;i++){
-    var q = m.quiz.preguntas[i];
-    h += '<div class="pregunta" id="preg-'+i+'"><div class="num">Pregunta '+(i+1)+'</div><h4>'+seguro(q.p)+'</h4>';
-    for(var j=0;j<q.ops.length;j++){
+  /* Cada intento baraja el orden de las preguntas y de sus opciones. Los id
+     conservan el índice original, así que calificar() no cambia. */
+  var ordenP = mezclaAzar(m.quiz.preguntas.map(function(_,k){ return k; }));
+  for(var pos=0;pos<ordenP.length;pos++){
+    var i = ordenP[pos], q = m.quiz.preguntas[i];
+    h += '<div class="pregunta" id="preg-'+i+'"><div class="num">Pregunta '+(pos+1)+'</div><h4>'+seguro(q.p)+'</h4>';
+    var ordenO = mezclaAzar(q.ops.map(function(_,k){ return k; }));
+    for(var oj=0;oj<ordenO.length;oj++){
+      var j = ordenO[oj];
       h += '<label class="opcion" id="op-'+i+'-'+j+'">'+
            '<input type="radio" name="q'+i+'" value="'+j+'" onchange="marcar('+i+','+j+','+q.ops.length+')">'+
            '<span>'+seguro(q.ops[j])+'</span></label>';
@@ -2477,22 +2571,50 @@ function calificar(){
   for(var i=0;i<qs.length;i++){
     var sel = respuestas[i], ok = (sel === qs[i].correcta);
     if(ok) buenas++;
-    var elSel = $('op-'+i+'-'+sel);
-    if(elSel){ elSel.classList.remove('sel'); elSel.classList.add(ok?'correcta':'incorrecta'); }
-    if(!ok){
-      var elOk = $('op-'+i+'-'+qs[i].correcta);
-      if(elOk) elOk.classList.add('correcta');
-    }
     var ins = $('preg-'+i).querySelectorAll('input');
     for(var z=0;z<ins.length;z++) ins[z].disabled = true;
   }
   var pct = Math.round(buenas*100/qs.length);
   var aprobo = pct >= BD.config.minimoAprobatorio;
+  /* Solo al aprobar se muestran las respuestas correctas. Si no aprueba, se
+     marcan las preguntas que fallaron sin revelar la respuesta: así repetir la
+     evaluación exige repasar y no solo memorizar la posición de la opción. */
+  for(var r=0;r<qs.length;r++){
+    var s2 = respuestas[r], bien2 = (s2 === qs[r].correcta), elS = $('op-'+r+'-'+s2);
+    if(aprobo){
+      if(elS){ elS.classList.remove('sel'); elS.classList.add(bien2?'correcta':'incorrecta'); }
+      if(!bien2){ var elOk = $('op-'+r+'-'+qs[r].correcta); if(elOk) elOk.classList.add('correcta'); }
+    } else if(!bien2){
+      if(elS){ elS.classList.remove('sel'); elS.classList.add('incorrecta'); }
+    } else if(elS){ elS.classList.remove('sel'); }
+  }
   var a = avance(sesion.id,c.id);
   if(a.quizzes[m.id] == null || pct > a.quizzes[m.id]) a.quizzes[m.id] = pct;
   guardar();
 
   $('btnCalificar').classList.add('oculto');
+  if(aprobo){
+    registrarDiaEstudio();
+    var terminado = cursoCompleto(sesion.id, c), idxM = c.modulos.indexOf(m), sigM = c.modulos[idxM+1];
+    $('avisoQuiz').innerHTML =
+      '<div class="tarjeta festejo">'+
+        '<div class="grande">'+(terminado?'🎓':'🎉')+'</div>'+
+        '<h3>'+(terminado ? '¡Terminaste '+esc(c.nombre)+'!' : '¡Aprobaste el módulo con '+pct+'%!')+'</h3>'+
+        '<p style="margin:0;color:var(--gris)">'+(terminado
+          ? 'Lo lograste. Esto es lo que aprendiste a hacer en este último módulo:'
+          : 'Contestaste bien '+buenas+' de '+qs.length+'. Esto es lo que ya sabes hacer:')+'</p>'+
+        logrosDeModulo(m)+
+        (terminado ? '<p style="margin-top:12px"><b>Tu constancia con folio verificable ya está lista.</b> Compártela: te lo ganaste.</p>'
+                   : (sigM ? '<p style="margin-top:12px">Siguiente: <b>'+seguro(sigM.titulo)+'</b></p>' : ''))+
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">'+
+          (terminado ? '<button class="btn btn-tur" onclick="ir(\'constancia\',{cursoId:\''+c.id+'\'})">Ver mi constancia</button>'
+                     : '<button class="btn btn-mor" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Continuar con el curso</button>')+
+          '<button class="btn btn-linea" onclick="document.getElementById(\'listaPreg\').scrollIntoView({behavior:\'smooth\'})">Revisar mis respuestas</button>'+
+        '</div></div>';
+    lanzarConfeti();
+    $('avisoQuiz').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
   $('avisoQuiz').innerHTML =
     '<div class="tarjeta resultado '+(aprobo?'aprobado':'reprobado')+'">'+
       '<div class="marcador">'+pct+'%</div>'+
@@ -2500,7 +2622,8 @@ function calificar(){
       '<p>'+(aprobo
         ? 'Contestaste bien '+buenas+' de '+qs.length+'. El siguiente módulo ya está abierto.'
         : 'Contestaste bien '+buenas+' de '+qs.length+'. Necesitas '+BD.config.minimoAprobatorio+
-          '%. Abajo quedaron marcadas las respuestas correctas: repásalas y vuelve a intentarlo.')+'</p>'+
+          '%. Quedaron marcadas en rojo las preguntas que fallaste. Repasa las lecciones del módulo y vuelve a intentarlo: '+
+          'las preguntas y las opciones cambian de orden en cada intento.')+'</p>'+
       '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
         '<button class="btn btn-linea" onclick="ir(\'quiz\')">Repetir evaluación</button>'+
         '<button class="btn btn-mor" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Volver al curso</button>'+

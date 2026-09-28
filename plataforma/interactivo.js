@@ -175,13 +175,18 @@ P.practica = function(b, id){
   var qs = b.preguntas || [];
   MI.estado[id] = { ok:{}, n:qs.length };
   var h = '<div class="bloque mi mi-practica" id="mi-'+id+'">'+cab(b,'Comprueba lo que aprendiste','?');
+  function azar(n){ var r=[]; for(var k=0;k<n;k++) r.push(k); for(var x=n-1;x>0;x--){ var y=Math.floor(Math.random()*(x+1)); var t=r[x]; r[x]=r[y]; r[y]=t; } return r; }
   for(var i=0;i<qs.length;i++){
     var q = qs[i];
     h += '<div class="mi-preg" id="mi-'+id+'-'+i+'"><div class="mi-p">'+
       (qs.length>1?'<span class="mi-n">'+(i+1)+'</span>':'')+q.p+
       (q.voz ? ' '+MI.botonVoz(q.voz,true) : '')+'</div><div class="mi-ops">';
-    for(var j=0;j<q.ops.length;j++)
-      h += '<button type="button" class="mi-op" onclick="MI.elegir('+id+','+i+','+j+')">'+q.ops[j]+'</button>';
+    /* Opciones en orden aleatorio; el botón conserva el índice original. */
+    var ord = azar(q.ops.length);
+    for(var oj=0;oj<ord.length;oj++){
+      var j = ord[oj];
+      h += '<button type="button" class="mi-op" id="mi-'+id+'-'+i+'-o'+j+'" onclick="MI.elegir('+id+','+i+','+j+')">'+q.ops[j]+'</button>';
+    }
     h += '</div><div class="mi-exp" id="mi-'+id+'-'+i+'-fb"></div></div>';
   }
   h += '<div class="mi-marcador" id="mi-'+id+'-tot"></div>';
@@ -191,14 +196,14 @@ MI.elegir = function(id, i, j){
   var b = MI.reg[id], q = b.preguntas[i], st = MI.estado[id];
   var caja = $i('mi-'+id+'-'+i), bs = caja.querySelectorAll('.mi-op');
   if(st.ok[i]) return;
-  var correcto = (j === q.correcta);
-  bs[j].classList.add(correcto ? 'ok' : 'no');
+  var correcto = (j === q.correcta), bj = $i('mi-'+id+'-'+i+'-o'+j) || bs[j];
+  bj.classList.add(correcto ? 'ok' : 'no');
   if(correcto){
     st.ok[i] = true;
     for(var k=0;k<bs.length;k++) bs[k].disabled = true;
     $i('mi-'+id+'-'+i+'-fb').innerHTML = bien('<b>'+animo(i)+'</b> '+(q.explica||''));
   }else{
-    bs[j].disabled = true;
+    bj.disabled = true;
     $i('mi-'+id+'-'+i+'-fb').innerHTML = mal('<b>Todavía no.</b> '+(q.pista || 'Vuelve a leer la opción con calma y prueba otra.'));
   }
   var n = Object.keys(st.ok).length;
