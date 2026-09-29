@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: los gastos sin factura</b><br>Fernando tiene una cafetería en Xalapa. Lleva un registro en la hoja de cálculo, pero la mitad de sus compras son en el mercado, sin factura. Al final del mes descubre que casi $9,000 de gastos no tienen CFDI, así que no puede acreditar ese IVA ni tiene soporte si el SAT le pregunta.<br>Seis columnas bastan para un buen registro: fecha, concepto, tipo, categoría, monto y si tiene CFDI. Así ves a tiempo qué te falta.",
+"p": [
+["¿Qué columna le ayuda a detectar el problema a tiempo?", "¿Tiene CFDI?", "Hora de la compra", "Nombre del vendedor", "Marcar qué gastos tienen factura te deja actuar antes del cierre."],
+["Para sumar gastos de insumos sin factura usarías…", "SUMAR.SI.CONJUNTO con dos condiciones", "PROMEDIO", "CONTAR", "Dos condiciones: categoría = insumos y CFDI = no."],
+["¿Qué puede hacer con los proveedores del mercado?", "Preguntar quién sí factura y concentrar ahí sus compras", "Dejar de registrar esas compras", "Inventar facturas", "Con proveedores que facturan, recupera el IVA y tiene soporte."]
+],
+"comp": ["Cómo se compra", "«Al que tenga más barato, factura o no.»", "«Comparo precio más IVA recuperable: a veces el que factura sale mejor, y además tengo soporte.»"],
+"refl": "Diseña el registro de ingresos y gastos de un negocio que conozcas: sus categorías y cómo resumirías el mes con SUMAR.SI.",
+"pl": ["Registro mensual con resumen", "REGISTRO — [Mes]\nFecha | Concepto | Tipo (ingreso/gasto) | Categoría | Monto | ¿CFDI? (sí/no)\n\nRESUMEN\nIngresos: [=SUMAR.SI(C:C,\"ingreso\",E:E)]\nGastos: [=SUMAR.SI(C:C,\"gasto\",E:E)]\nGastos de insumos: [=SUMAR.SI(D:D,\"insumos\",E:E)]\nGastos sin CFDI: [=SUMAR.SI.CONJUNTO(E:E,C:C,\"gasto\",F:F,\"no\")]\n% de gastos sin CFDI: [ ]"]
+},
+{
+"caso": "<b>Caso: los $3,480 que nadie sabía de dónde venían</b><br>Una escuela de música en León compara su registro con el estado de cuenta: el banco dice $3,480 más que su hoja. Nadie sabe por qué. Después de revisar, hay un depósito de un alumno que no se anotó, una comisión de la terminal que no se registró y un cheque a un proveedor que aún no se cobra.<br>Conciliar es explicar cada diferencia entre tu registro y el banco. Una cuenta solo para el negocio lo hace mucho más fácil.",
+"p": [
+["El depósito del alumno no anotado se corrige…", "sumándolo a tu registro", "restándolo del banco", "ignorándolo", "Es un ingreso real que faltaba en tu registro."],
+["La comisión de la terminal se…", "resta en tu registro", "suma al banco", "anota como ingreso", "Es un gasto que el banco ya cobró."],
+["El cheque al proveedor aún no cobrado…", "se resta al saldo del banco para conciliar", "se cancela", "se suma a tu registro", "Es un pago pendiente que el banco todavía no refleja."]
+],
+"comp": ["Cómo se oye al cierre de mes", "«Es poquita la diferencia, ahí se va.»", "«La diferencia de $3,480 se explica con tres partidas; ya corregí el registro y dejé anotado el cheque pendiente.»"],
+"refl": "Escribe los pasos que seguirías para conciliar un mes de un negocio pequeño, desde descargar el estado de cuenta hasta explicar la última diferencia.",
+"pl": ["Conciliación bancaria sencilla", "CONCILIACIÓN — [Mes]\nSaldo según banco: $[ ]\n+ Depósitos en tránsito: $[ ]\n− Pagos emitidos no cobrados: $[ ]\n= Saldo bancario ajustado: $[ ]\n\nSaldo según mi registro: $[ ]\n+ Depósitos no registrados: $[ ]\n− Comisiones e intereses no registrados: $[ ]\n= Saldo del registro ajustado: $[ ]\n\nDiferencia (debe ser 0): [ ]\nDepósitos no identificados por investigar: [ ]"]
+},
+{
+"caso": "<b>Caso: el aviso que se perdió en el buzón</b><br>Claudia es fotógrafa en RESICO en Puebla. No revisaba su buzón tributario porque «el SAT nunca le escribe». Tenía una notificación de meses atrás sobre una declaración omitida; cuando se dio cuenta, el plazo para aclarar ya había corrido.<br>El buzón tributario es obligatorio en el RESICO, y no revisarlo no detiene los plazos. Tres fechas fijas ordenan el mes: día 5, día 17 y abril.",
+"p": [
+["¿Qué error cometió Claudia?", "No revisar su buzón tributario", "Estar en el RESICO", "Tener una e.firma", "Las notificaciones corren aunque no las leas."],
+["¿Qué pasa el día 17 de cada mes?", "Vence el pago de impuestos del mes anterior", "Vence la declaración anual", "Vencen los complementos de pago", "Día 17: ISR e IVA del mes anterior."],
+["¿Cada cuánto conviene revisar el buzón?", "Cada semana", "Una vez al año", "Solo cuando llega un correo", "Una revisión semanal toma dos minutos."]
+],
+"comp": ["Cómo se organiza", "«El SAT nunca me escribe, para qué entro.»", "«Los lunes reviso el buzón; el 5 emito complementos; el 17 pago; en marzo junto todo para la anual de abril.»"],
+"refl": "Arma el calendario fiscal de un año para una persona en RESICO: fechas mensuales, anual, renovación de e.firma y revisiones del buzón.",
+"pl": ["Calendario fiscal RESICO", "CALENDARIO FISCAL — [Año]\nCada semana: revisar buzón tributario (día: [ ])\nCada mes:\n• Día 5: complementos de pago del mes anterior\n• Día 17: pago de ISR RESICO e IVA del mes anterior\n• Último día: factura global (si aplica) y conciliación\nCada año:\n• Abril: declaración anual\n• [Mes]: renovar e.firma (vence [fecha])\nMis recordatorios en el celular: [ ]"]
+},
+{
+"caso": "<b>Caso: el contador que recibía una bolsa de tickets</b><br>Raúl tiene una empresa de mantenimiento en Monterrey que ya contrató a cuatro personas. Cada mes le lleva a su contador una bolsa con tickets y facturas revueltas. El contador tarda, le cobra extra y Raúl nunca sabe qué se declaró. Un día le llega un requerimiento del SAT y no tiene los acuses.<br>Un contador conviene cuando creces, contratas o recibes algo del SAT. Entrégale un paquete ordenado y pide siempre acuses y líneas de captura: la responsabilidad sigue siendo tuya.",
+"p": [
+["¿Por qué Raúl ya necesita contador?", "Porque contrató personal y su negocio creció", "Porque tiene muchos tickets", "No lo necesita", "Nómina y crecimiento traen obligaciones nuevas."],
+["¿Qué debe pedirle al contador cada mes?", "Acuses de las declaraciones y líneas de captura", "Solo el recibo de honorarios", "Nada, confía en él", "Los acuses prueban qué se declaró y cuándo."],
+["¿Qué le ahorra tiempo y dinero con el contador?", "Entregar un paquete mensual ordenado", "Llevarle todo a fin de año", "Cambiar de contador cada mes", "El orden baja el tiempo de trabajo del contador."]
+],
+"comp": ["Cómo se trabaja con el contador", "«Ahí te dejo la bolsa, tú sabes.»", "«Aquí está mi paquete del mes: registro, facturas emitidas y recibidas, estado de cuenta y conciliación. ¿Me mandas los acuses cuando declares?»"],
+"refl": "Escribe cinco preguntas para entrevistar a un contador antes de contratarlo y qué respuesta esperarías en cada una.",
+"pl": ["Paquete mensual para el contador", "PAQUETE MENSUAL — [Mes]\n□ Registro de ingresos y gastos\n□ Facturas emitidas (XML) y complementos de pago\n□ Facturas recibidas (XML)\n□ Estado de cuenta bancario y conciliación\n□ Nómina del mes (si aplica)\n□ Notificaciones del buzón tributario\n\nLo que recibo de regreso:\n□ Acuses de declaraciones  □ Líneas de captura  □ Resumen: cuánto pagué y por qué"]
+}
+],
+"labs": [
+{
+"t": "Ordenar las cuentas de una fonda",
+"obj": "poner en orden las cuentas de un negocio que nunca ha llevado registros: clasificar, armar el catálogo y proyectar el flujo.",
+"esc": "Tu tía <b>Lupita</b> tiene una fonda en Pachuca desde hace 8 años. Te da una caja de zapatos con tickets, notas de proveedores y su libreta. Quiere saber si «de verdad le va bien» y si le alcanza para comprar una estufa nueva de $35,000 en dos meses.",
+"e": [
+["<b>Escena 1 — La caja de zapatos.</b> Hay tickets del mercado, recibos de luz y gas, pagos a la ayudante, el súper de la casa y la colegiatura del nieto.", "Escribe cómo clasificarías todo en ingresos, costos, gastos y retiros, y qué harías con lo personal."],
+["<b>Escena 2 — El catálogo.</b> Lupita no entiende de cuentas contables.", "Diseña un catálogo de no más de 15 cuentas pensado para su fonda y explícalo en palabras sencillas."],
+["<b>Escena 3 — La estufa.</b> Vende unos $3,000 diarios, 26 días al mes, y cada semana paga proveedores, gas y a su ayudante.", "Escribe cómo proyectarías el flujo de 8 semanas para saber si le alcanza la estufa."],
+["<b>Escena 4 — La plática.</b> Lupita se siente regañada cuando le hablas de números.", "Escribe cómo le presentarías lo que encontraste para que se anime a seguir registrando."]
+],
+"p": [
+["La colegiatura del nieto es…", "un retiro de la dueña", "un gasto de la fonda", "un costo de ventas", "Es personal, no para operar el negocio."],
+["Para saber si le alcanza la estufa, lo más útil es…", "el flujo de efectivo proyectado", "el catálogo de cuentas", "la constancia fiscal", "El flujo dice cuándo tendrá el dinero disponible."],
+["Si el flujo sale negativo en la semana 6…", "puede posponer la compra, dar un anticipo o buscar pagos a plazos", "debe cerrar la fonda", "no importa", "El flujo sirve para decidir a tiempo."]
+],
+"pl": ["Primer orden de un negocio", "PRIMER ORDEN — [Negocio]\n1. Separar lo personal de lo del negocio\n2. Clasificar: ingresos · costos · gastos · retiros\n3. Catálogo de 10 a 15 cuentas\n4. Registro diario de 6 columnas\n5. Flujo de 8 semanas\n6. Primera conclusión: ¿gana? ¿le alcanza? ¿qué cambiar?"]
+},
+{
+"t": "Los números de una taquería que quiere crecer",
+"obj": "armar estados financieros, margen y punto de equilibrio para decidir si abrir una segunda sucursal.",
+"esc": "Asesoras a <b>Tacos El Güero</b>, en Hermosillo. Vende $180,000 al mes sin IVA, su costo de insumos es de $72,000 y sus gastos fijos de $70,000. El dueño quiere abrir una segunda sucursal con renta de $18,000 y dos empleados más.",
+"e": [
+["<b>Escena 1 — El estado de resultados.</b> El dueño cree que gana «como $100,000».", "Arma el estado de resultados del mes y explícale cuánto gana de verdad."],
+["<b>Escena 2 — El margen.</b> La orden se vende a $90 y le cuesta $36 en insumos.", "Calcula el margen en pesos y en porcentaje y di si le conviene subir el precio a $95."],
+["<b>Escena 3 — El punto de equilibrio de la sucursal.</b> Los costos fijos de la sucursal serían de $42,000 al mes.", "Calcula cuántas órdenes al mes y al día necesita la sucursal para no perder (abre 26 días)."],
+["<b>Escena 4 — La decisión.</b> El dueño te pregunta: «¿la abro o no?».", "Escribe tu recomendación con los números y dos condiciones para abrirla."]
+],
+"p": [
+["Utilidad de operación de la sucursal actual:", "$38,000", "$108,000", "$110,000", "180,000 − 72,000 − 70,000 = 38,000."],
+["Margen por orden con precio $90 y costo $36:", "$54 y 60%", "$54 y 54%", "$36 y 40%", "54 ÷ 90 = 0.60."],
+["Punto de equilibrio de la sucursal nueva:", "Unas 778 órdenes al mes, cerca de 30 al día", "Unas 467 órdenes al mes", "Unas 1,167 órdenes al mes", "42,000 ÷ 54 ≈ 778; ÷ 26 ≈ 30."]
+],
+"pl": ["Decisión de crecimiento", "¿ABRO OTRA SUCURSAL?\nUtilidad actual: $[ ]\nMargen por unidad: $[ ] ([ ]%)\nCostos fijos nuevos: $[ ]\nPunto de equilibrio nuevo: [ ] unidades/mes · [ ] al día\n¿Es realista esa venta diaria en la nueva zona?: [ ]\nInversión inicial: $[ ]   Meses para recuperarla: [ ]\nRecomendación y condiciones: [ ]"]
+},
+{
+"t": "El mes fiscal de una diseñadora en RESICO",
+"obj": "calcular el ISR y el IVA de un mes completo con ingresos de personas físicas y morales, retenciones y gastos.",
+"esc": "<b>Sofía</b> es diseñadora gráfica en RESICO en Guadalajara. En octubre cobró, sin IVA: $15,000 de una persona física, $30,000 de una empresa (que le retuvo ISR e IVA) y $5,000 de ventas de plantillas en línea. Pagó $4,000 más IVA de software con factura.",
+"e": [
+["<b>Escena 1 — El ISR.</b> Su total cobrado cae en el renglón de 1.10% de la tabla mensual.", "Calcula su ISR del mes, la retención que le hizo la empresa y cuánto le queda por pagar."],
+["<b>Escena 2 — El IVA.</b> Todo lo que vende está al 16%.", "Calcula su IVA trasladado, el acreditable, lo retenido por la empresa (dos terceras partes del IVA de esa factura) y el IVA a pagar."],
+["<b>Escena 3 — La factura a crédito.</b> La empresa le pagará otro proyecto hasta diciembre.", "Explica cómo debe facturarlo y cuándo declarará ese ingreso."],
+["<b>Escena 4 — El calendario.</b> Sofía siempre paga tarde.", "Escribe su rutina mensual con fechas para no volver a atrasarse."]
+],
+"p": [
+["ISR del mes antes de retenciones ($50,000 × 1.10%):", "$550", "$500", "$5,500", "50,000 × 0.011 = 550."],
+["Retención de ISR de la empresa (1.25% de $30,000):", "$375", "$300", "$3,750", "30,000 × 0.0125 = 375."],
+["El proyecto de diciembre se factura…", "PPD con forma 99, y el ingreso se declara cuando se cobre", "PUE en octubre", "hasta que pague, sin factura antes", "En el RESICO se paga sobre lo cobrado, documentado con el complemento."]
+],
+"pl": ["Hoja del mes fiscal", "MES FISCAL — [Mes] — RESICO\nIngresos cobrados sin IVA: $[ ]\nISR (tasa [ ]%): $[ ]\n− Retenciones ISR: $[ ]\n= ISR a pagar: $[ ]\n\nIVA trasladado: $[ ]\n− IVA acreditable: $[ ]\n− IVA retenido: $[ ]\n= IVA a pagar: $[ ]\n\nPagar antes del día 17 · Guardar acuse y línea de captura"]
+},
+{
+"t": "Una semana de facturación sin errores",
+"obj": "resolver los casos de facturación más frecuentes de una semana real: receptor, método de pago, complementos, cancelación y global.",
+"esc": "Eres la auxiliar administrativa de <b>Refaccionaria La Paz</b>, en Tijuana. En una sola semana tienes: un cliente nuevo que dicta sus datos, una venta a crédito a 30 días, un pago parcial de una factura anterior, una factura con el RFC mal escrito y todas las ventas de mostrador sin factura.",
+"e": [
+["<b>Escena 1 — El cliente nuevo.</b> Te dicta su razón social por teléfono.", "Escribe qué le pides y cómo verificas sus datos antes de timbrar."],
+["<b>Escena 2 — La venta a crédito.</b> Te pagará en 30 días.", "Escribe cómo la facturas y qué harás cuando pague."],
+["<b>Escena 3 — La factura con RFC mal escrito.</b> El cliente ya la recibió.", "Escribe los pasos para corregirla, incluido el motivo de cancelación."],
+["<b>Escena 4 — El mostrador.</b> Vendiste $28,000 sin factura en la semana.", "Escribe cómo y cuándo emites la factura global."]
+],
+"p": [
+["Venta a 30 días:", "PPD, forma 99, y complemento al cobrar", "PUE con transferencia", "Sin factura hasta que pague", "El método sigue al momento del pago."],
+["Corregir una factura con RFC mal:", "Emitir la correcta y cancelar la anterior con motivo 01", "Cancelar con motivo 03", "Editar el XML", "El XML timbrado no se edita."],
+["La factura global lleva…", "RFC XAXX010101000, régimen 616 y uso S01", "El RFC del cliente más frecuente", "El RFC del negocio", "Son los datos del público en general."]
+],
+"pl": ["Bitácora semanal de facturación", "FACTURACIÓN — Semana [ ]\nFolio | Cliente | PUE/PPD | Forma | Total | ¿Complemento pendiente? | ¿Cancelada? (motivo)\n\nGlobal de la semana: $[ ] · folio [ ]\nPendientes para el día 5: [ ]\nErrores de la semana y su causa: [ ]"]
+},
+{
+"t": "El tablero contable y fiscal de tu negocio",
+"obj": "integrar todo el diplomado en el tablero contable y fiscal de un negocio real, listo para usarse cada mes.",
+"esc": "Este es tu proyecto final. Vas a construir el <b>tablero contable y fiscal</b> de tu propio negocio o, si no tienes uno, de un negocio que conozcas bien (una tienda, un taller, una estética, un consultorio). Al terminar tendrás una herramienta que puedes usar cada mes o mostrar como ejemplo de tu trabajo.",
+"e": [
+["<b>Parte 1 — Registro y catálogo.</b> Con lo del módulo 1.", "Describe el negocio y escribe su catálogo de cuentas y las categorías de su registro de ingresos y gastos."],
+["<b>Parte 2 — Estados financieros y decisiones.</b> Con lo del módulo 2.", "Arma (con datos reales o aproximados) el estado de resultados de un mes, el margen de tres productos y el punto de equilibrio con su meta diaria."],
+["<b>Parte 3 — Impuestos.</b> Con lo del módulo 3.", "Escribe el régimen del negocio, cómo se calculan su ISR y su IVA del mes y qué retenciones podría tener."],
+["<b>Parte 4 — Facturación y control.</b> Con lo de los módulos 4 y 5.", "Escribe su rutina de facturación, su conciliación mensual y su calendario fiscal del año."]
+],
+"p": [
+["¿Qué separa primero al ordenar un negocio?", "Lo personal de lo del negocio", "Los ingresos de los activos", "El IVA del ISR", "Sin esa separación, ningún número es confiable."],
+["La utilidad y el flujo de efectivo…", "responden preguntas distintas: si ganas y si te alcanza hoy", "son lo mismo", "solo le sirven al contador", "Necesitas los dos."],
+["En el RESICO, el ISR se paga sobre…", "ingresos cobrados sin IVA", "la utilidad", "lo facturado aunque no se haya cobrado", "Por eso importan los complementos de pago."],
+["¿Qué evita la mayoría de errores de facturación?", "Datos tomados de la constancia y revisión antes de timbrar", "Facturar rápido", "Cancelar seguido", "El error nace en la captura."],
+["Tu constancia de este diplomado te permite…", "llevar el control contable y fiscal básico dentro de los límites que estudiaste", "firmar como contador público", "dar asesoría fiscal profesional", "No sustituye la asesoría de un contador público."]
+],
+"pl": ["Índice del tablero contable y fiscal", "TABLERO CONTABLE Y FISCAL\n[Negocio] · [Elaboró] · [Fecha]\n\n1. Datos del negocio y régimen fiscal\n2. Catálogo de cuentas\n3. Registro mensual de ingresos y gastos (6 columnas)\n4. Estado de resultados y balance\n5. Margen por producto y punto de equilibrio\n6. Flujo de efectivo de 8 semanas\n7. Cálculo mensual de ISR e IVA\n8. Control de facturas PPD y complementos\n9. Conciliación bancaria\n10. Calendario fiscal del año y paquete para el contador"]
+}
+]
+}

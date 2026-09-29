@@ -1,0 +1,92 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: la e.firma que tenía el sobrino</b><br>Marisol vende ropa por Instagram en Guadalajara. Su sobrino le «dio de alta en el SAT» y se quedó con su e.firma y su contraseña para «ayudarle». Ahora el sobrino se fue a trabajar a otra ciudad, Marisol no sabe en qué régimen está y necesita su constancia para que un cliente le pida factura.<br>RFC, contraseña, e.firma y constancia son cuatro llaves con usos distintos. La e.firma equivale a tu firma autógrafa: nadie más debe tenerla.",
+"p": [
+["¿Qué riesgo corre Marisol?", "Que alguien más firme trámites en su nombre con su e.firma", "Ninguno, es su familiar", "Que le cambien su RFC", "La e.firma tiene la misma validez que tu firma."],
+["¿Dónde ve Marisol su régimen fiscal?", "En su constancia de situación fiscal", "En su credencial del INE", "En su estado de cuenta bancario", "La constancia muestra régimen, domicilio fiscal y obligaciones."],
+["¿Qué debe hacer primero?", "Recuperar el control de su contraseña y e.firma, y guardarlas ella", "Pedirle al sobrino que regrese", "Abrir otro RFC", "Tus llaves fiscales son tu responsabilidad."]
+],
+"comp": ["Cómo se oye al pedir ayuda", "«Ten mi e.firma y mi contraseña, tú encárgate.»", "«Te doy acceso solo para esto y yo guardo mi e.firma. Cuando termines, cambio mi contraseña.»"],
+"refl": "Haz una lista de tus llaves fiscales (o las de alguien que conozcas): cuál tienes, dónde está guardada, cuándo vence y quién más tiene acceso. Escribe qué cambiarías.",
+"pl": ["Control de llaves fiscales", "MIS LLAVES FISCALES\nRFC: [ ]\nRégimen(es) en la constancia: [ ]\nContraseña del SAT: guardada en [ ]  Último cambio: [ ]\ne.firma: archivo .key y .cer guardados en [ ]  Vence: [ ]\nConstancia de situación fiscal: última descarga [ ]\nBuzón tributario: correo registrado [ ]\n\nQuién tiene acceso y para qué: [ ]\nRecordatorio de renovación de e.firma: [un mes antes de vencer]"]
+},
+{
+"caso": "<b>Caso: el socio que quería entrar al RESICO</b><br>Jorge es plomero independiente en Monterrey y factura unos $60,000 al mes. Un conocido le dijo que se pase al RESICO porque «pagas poquito». Jorge además es socio de una pequeña empresa de construcción con sus hermanos.<br>El RESICO para personas físicas tiene requisitos: límite de ingresos al año y, en general, no pueden entrar quienes son socios de personas morales. Revisa tu caso con tu contador antes de cambiarte.",
+"p": [
+["¿Qué dato de Jorge puede impedirle entrar al RESICO?", "Ser socio de una persona moral", "Ser plomero", "Facturar $60,000 al mes", "En general, los socios de personas morales no pueden tributar en el RESICO."],
+["En el RESICO, el ISR se calcula…", "sobre ingresos cobrados, sin deducciones", "sobre la utilidad después de gastos", "sobre lo que deposita en el banco cada mes", "Por eso la tasa es baja: no se restan gastos."],
+["¿Qué pasa si omites pagos en el RESICO?", "Puedes salir del régimen", "Nada, se acumulan", "Te bajan la tasa", "Tres pagos omitidos te sacan del régimen."]
+],
+"comp": ["Cómo se toma la decisión", "«Me dijeron que en el RESICO se paga poquito, cámbiame.»", "«Antes de cambiarme, revisemos si cumplo los requisitos, cuánto pagaría en cada régimen y qué obligaciones tendría.»"],
+"refl": "Escribe las preguntas que le harías a un contador antes de decidir si te conviene el RESICO, y explica por qué cada una importa.",
+"pl": ["¿Puedo y me conviene el RESICO?", "REVISIÓN RESICO (personas físicas)\n□ Mis ingresos del año no pasan el límite ($3,500,000)\n□ No soy socio de una persona moral (revisar excepciones con contador)\n□ Mi actividad está permitida en el régimen\n□ Tengo e.firma vigente y buzón tributario activo\n\nComparación estimada:\nRégimen actual: ISR estimado $[ ]\nRESICO: ingresos cobrados × tasa = $[ ]\nObligaciones: pago mensual día 17 · anual en abril · facturar todo\n\nDecisión y fecha: [ ]"]
+},
+{
+"caso": "<b>Caso: la tasa aplicada por escalones</b><br>Paty es diseñadora en RESICO en Mérida. En septiembre cobró $40,000 sin IVA. Calculó su ISR como si fuera una tabla progresiva: una parte a una tasa, otra parte a otra. También olvidó que una empresa le retuvo 1.25% en una factura de $20,000.<br>En el RESICO la tasa del renglón que te toca se aplica al total del mes, y luego restas las retenciones que te hicieron personas morales.",
+"p": [
+["Si su renglón es 1.10%, su ISR del mes antes de retenciones es…", "$440", "$4,400", "$400", "40,000 × 0.011 = 440."],
+["La retención que le hizo la empresa fue de…", "$250", "$500", "$200", "20,000 × 0.0125 = 250."],
+["Su ISR a pagar queda en…", "$190", "$440", "$690", "440 − 250 = 190."]
+],
+"comp": ["Cómo se calcula", "«Aplico la tasa por partes, como en la tabla de sueldos.»", "«Busco el renglón que le toca a mis $40,000, aplico esa tasa a todo y resto la retención de 1.25%.»"],
+"refl": "Explica paso a paso, como si se lo enseñaras a alguien que acaba de entrar al RESICO, cómo calcular su ISR del mes con la tabla y las retenciones.",
+"pl": ["Cálculo mensual de ISR RESICO", "ISR RESICO — [Mes]\nTabla (hoja «Tasas»): Límite inferior | Tasa\n\nIngresos cobrados sin IVA: $[ ]\nTasa: [=BUSCARV(B1,Tasas!A:B,2,VERDADERO)]\nISR del mes: [=B1*B2]\nRetenciones de personas morales (1.25%): $[ ]\nISR A PAGAR: [=MAX(0,B3−B4)]\nFecha límite: día 17 del mes siguiente\n\nVerifica la tabla vigente en la Ley del ISR y en el SAT."]
+},
+{
+"caso": "<b>Caso: el IVA de los libros y el de las libretas</b><br>Una papelería de Oaxaca vende libros (tasa 0%), cuadernos (16%) y también da clases de regularización. La dueña nunca separó las tasas: cobra 16% a todo en el ticket y declara a ojo. Además, un despacho le pagó unas clases y le retuvo IVA.<br>IVA a pagar = trasladado − acreditable − retenido. Y 16%, 0% y exento no son lo mismo: con 0% sí acreditas; con exento, no.",
+"p": [
+["¿Cuál es el error con los libros?", "Cobrarles 16% cuando su tasa es 0%", "Venderlos sin ticket", "No tener suficientes", "Cada producto tiene su tasa; cobrar de más también es un error."],
+["IVA trasladado $8,000, acreditable $3,000, retenido $1,000. El IVA a pagar es…", "$4,000", "$5,000", "$12,000", "8,000 − 3,000 − 1,000 = 4,000."],
+["¿Qué diferencia hay entre 0% y exento?", "Con 0% puedes acreditar el IVA de tus compras; con exento, no", "Ninguna, las dos son sin IVA", "Exento es solo para empresas grandes", "Por eso importa clasificar bien."]
+],
+"comp": ["Cómo se configura el punto de venta", "«A todo le pongo 16% y ya.»", "«Libros al 0%, papelería al 16% y cada servicio con su tratamiento. Así el ticket, la factura y la declaración coinciden.»"],
+"refl": "Toma cinco productos o servicios de un negocio que conozcas. Investiga o pregunta qué tasa de IVA le toca a cada uno y escribe cómo afectaría eso a su declaración.",
+"pl": ["Cálculo mensual de IVA", "IVA — [Mes]\nIVA trasladado (lo que cobraste, 16%): $[ ]\nIVA de ventas a 0%: $0 (sí permite acreditar)\nIVA acreditable (lo que pagaste con factura, relacionado con actividades gravadas): $[ ]\nIVA retenido por clientes: $[ ]\nIVA A PAGAR: [=trasladado − acreditable − retenido]\nSi sale negativo: saldo a favor $[ ]\nFecha límite: día 17 del mes siguiente"]
+},
+{
+"caso": "<b>Caso: la factura rechazada tres veces</b><br>Beto tiene un taller de refacciones en Toluca. Un cliente corporativo le pidió factura y le dictó los datos por teléfono. El sistema la rechazó: el nombre no coincidía (tenía «S.A. de C.V.» de más), el código postal era el de la sucursal y el régimen estaba mal. Tres intentos después, el cliente se molestó.<br>En CFDI 4.0, nombre, RFC, código postal y régimen del receptor deben coincidir con los del SAT. Pídelos de la constancia de situación fiscal.",
+"p": [
+["¿Qué debió pedir Beto antes de facturar?", "La constancia de situación fiscal reciente del cliente", "Una copia del INE del comprador", "El comprobante de domicilio de la sucursal", "La constancia tiene los datos exactos que valida el SAT."],
+["El código postal que va en la factura es…", "el del domicilio fiscal del receptor", "el de la sucursal donde compró", "el del taller de Beto", "Debe coincidir con el registrado ante el SAT."],
+["¿Quién decide el uso del CFDI?", "El cliente, de forma compatible con su régimen", "Quien factura, según le convenga", "El SAT automáticamente", "El uso lo indica el receptor."]
+],
+"comp": ["Cómo se pide la información", "«Díctame tus datos para la factura.»", "«¿Me compartes tu constancia de situación fiscal reciente? Con ella la factura sale bien a la primera.»"],
+"refl": "Redacta el mensaje de WhatsApp que enviarías a tus clientes nuevos para pedirles sus datos de facturación de forma clara y amable.",
+"pl": ["Ficha de datos fiscales del cliente", "DATOS FISCALES DEL CLIENTE (de su constancia)\nNombre o razón social (exacto, sin régimen societario si así viene en la constancia): [ ]\nRFC: [ ]\nCódigo postal del domicilio fiscal: [ ]\nRégimen fiscal: [clave y nombre]\nUso del CFDI que indica el cliente: [ ]\nCorreo para enviar PDF y XML: [ ]\nFecha de la constancia: [ ]   Actualizar cada: [ ]"]
+},
+{
+"caso": "<b>Caso: la factura PUE que no estaba pagada</b><br>Una agencia de eventos en Cancún facturó $50,000 a un hotel con método PUE, aunque el hotel pagaría en tres partes. El hotel pagó dos meses después. Por el RESICO, la agencia declaró el ingreso en el mes equivocado y no emitió complementos de pago.<br>PUE si ya te pagaron todo; PPD (con forma de pago 99) si te pagarán después o en partes. Por cada pago de una factura PPD se emite un complemento.",
+"p": [
+["¿Qué método correspondía?", "PPD, con forma de pago 99", "PUE con forma de pago 03", "Cualquiera, da igual", "Si el pago es posterior o en partes, es PPD."],
+["Cuando el hotel haga cada pago, la agencia debe…", "emitir un complemento de pago", "hacer una factura nueva", "cancelar la original", "El complemento documenta cada cobro."],
+["¿Por qué importa en el RESICO?", "Porque el complemento prueba cuándo cobraste, y eso define cuándo pagas ISR", "Porque el RESICO no permite PPD", "No importa en el RESICO", "En el RESICO pagas sobre ingresos cobrados."]
+],
+"comp": ["Cómo se factura", "«Pongo PUE para que se vea pagada.»", "«Como pagarán en tres partes, la hago PPD con forma 99 y emito un complemento por cada pago.»"],
+"refl": "Describe tres ventas de un negocio que conozcas (una pagada al momento, una a crédito, una en parcialidades) y escribe qué método y forma de pago le pondrías a cada factura.",
+"pl": ["Control de facturas PPD y complementos", "FACTURAS PPD POR COBRAR\nFolio | Cliente | Fecha | Total | Pagado | Saldo | Complementos emitidos | Próximo pago\n[ ] | [ ] | [ ] | [ ] | [ ] | [=D2−E2] | [ ] | [ ]\n\nRegla: por cada pago recibido, emite el complemento a más tardar el día 5 del mes siguiente."]
+},
+{
+"caso": "<b>Caso: la factura global que nunca se hizo</b><br>Una panadería de Morelia vende casi todo al público en general, sin factura. La dueña cancelaba facturas «para corregir» sin elegir el motivo y nunca emitía factura global de sus ventas de mostrador. En una revisión, sus ingresos del banco no cuadraban con lo facturado.<br>La factura global ampara tus ventas sin factura del periodo. Y cada cancelación lleva su motivo correcto; muchas requieren que el cliente la acepte.",
+"p": [
+["¿Qué ampara la factura global?", "Las ventas al público en general que no se facturaron individualmente", "Solo las ventas con tarjeta", "Las compras a proveedores", "Con el RFC genérico y el uso S01."],
+["Si una factura tenía un error y la vas a sustituir, el motivo de cancelación es…", "01, con relación a la nueva factura", "03, operación no realizada", "04, factura global", "Primero emites la correcta y cancelas la anterior relacionándola."],
+["¿Por qué no cuadraban banco y facturas?", "Porque las ventas de mostrador no estaban facturadas en la global", "Porque vendía mucho", "Porque el banco se equivocó", "Todo ingreso debe estar amparado por un CFDI."]
+],
+"comp": ["Cómo se corrige una factura", "«La cancelo y ya, luego veo.»", "«Emito la factura correcta, cancelo la anterior con motivo 01 relacionándola, y le aviso al cliente para que acepte.»"],
+"refl": "Escribe la rutina de cierre semanal o mensual de un negocio de mostrador para emitir su factura global a tiempo y sin errores.",
+"pl": ["Guía de cancelación y factura global", "CANCELACIÓN — MOTIVOS\n01 Comprobante emitido con errores con relación (primero emite el que sustituye)\n02 Comprobante emitido con errores sin relación\n03 No se llevó a cabo la operación\n04 Operación nominativa relacionada en una factura global\n\nFACTURA GLOBAL\nRFC receptor: XAXX010101000 · Régimen: 616 · Uso: S01\nPeriodicidad: [diaria / semanal / mensual]\nVentas del periodo sin factura: $[ ]\nFecha de emisión: [ ]"]
+},
+{
+"caso": "<b>Caso: la tasa de IVA equivocada en el catálogo</b><br>Una tienda en línea de productos naturales en Guadalajara configuró todos sus productos al 16% en su sistema de facturación, incluidos alimentos que tienen tasa 0%. Cada factura salía con IVA de más y los clientes empresariales las regresaban. Además, capturaban los RFC de memoria.<br>La mayoría de los errores vienen de datos viejos o capturados de memoria. Una rutina de revisión antes de timbrar evita casi todos.",
+"p": [
+["¿Dónde conviene corregir la tasa de IVA?", "En el catálogo de productos del sistema, una sola vez", "En cada factura a mano", "Pidiéndole al cliente que no la tome en cuenta", "Corregir la fuente evita repetir el error."],
+["¿Qué se revisa en la vista previa antes de timbrar?", "Datos del receptor, uso, método y forma de pago, tasas e importes", "Solo el total", "Solo el logotipo", "Una revisión de un minuto ahorra cancelaciones."],
+["Después de timbrar, ¿qué se hace?", "Enviar PDF y XML al cliente y guardar tu copia", "Solo enviar el PDF", "Nada, el SAT la guarda", "El XML es la factura; el PDF es su representación."]
+],
+"comp": ["Cómo se oye la rutina", "«Ya me sé los datos, la saco rápido.»", "«Reviso constancia, tasas y método, veo la vista previa, timbro, mando PDF y XML y archivo mi copia.»"],
+"refl": "Escribe tu propia lista de verificación de facturación de cinco pasos, pensada para un negocio que conozcas.",
+"pl": ["Lista de verificación antes de timbrar", "ANTES DE TIMBRAR\n□ Datos del receptor tomados de su constancia (nombre, RFC, CP, régimen)\n□ Uso del CFDI indicado por el cliente\n□ Método: PUE (ya pagado) o PPD (pago posterior, forma 99)\n□ Forma de pago correcta\n□ Clave de producto y unidad\n□ Tasa de IVA correcta en cada concepto\n□ Importes y descuentos revisados en la vista previa\nDESPUÉS\n□ Enviar PDF y XML  □ Guardar copia  □ Registrar en control de cobranza"]
+}
+]
+}

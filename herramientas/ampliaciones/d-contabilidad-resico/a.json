@@ -1,0 +1,96 @@
+{
+"id": "d-contabilidad-resico",
+"horas": 30,
+"desc": "Aprende a llevar las cuentas de tu negocio, leer tus números en hoja de cálculo, calcular tu ISR en el RESICO y tu IVA, y facturar bien en CFDI 4.0. Incluye 20 casos de negocios mexicanos (taquerías, estéticas, talleres, tiendas en línea) con decisiones guiadas, 4 laboratorios y un proyecto final en el que armas el tablero contable y fiscal de un negocio real. Es práctico y para personas físicas con negocios pequeños; no sustituye la asesoría de un contador público.",
+"aprender": "Armar el tablero contable y fiscal de un negocio real: registro, estados financieros, punto de equilibrio, cálculo de impuestos y calendario del año",
+"talleres": [
+{
+"caso": "<b>Caso: «el negocio va bien porque siempre hay dinero en la caja»</b><br>Doña Rosa tiene una fonda en Pachuca. Siempre hay billetes en la caja, así que cree que le va bien. Nunca anota nada. Cuando su hijo le pregunta cuánto gana al mes, no sabe; cuando el banco le pide números para un crédito, tampoco.<br>La contabilidad no es solo para el SAT: te dice cómo va tu negocio. Y todo se ordena con una ecuación: lo que tienes salió de lo que debes o de lo que es tuyo.",
+"p": [
+["¿Qué le falta a doña Rosa para saber si gana?", "Registrar ingresos, costos y gastos", "Tener más dinero en la caja", "Abrir una cuenta de ahorro", "Ver dinero en la caja no dice cuánto quedó después de pagar todo."],
+["Si la fonda tiene $80,000 en activos y debe $30,000, su capital es…", "$50,000", "$110,000", "$30,000", "Capital = Activo − Pasivo = 80,000 − 30,000."],
+["¿Para qué más le sirve la contabilidad además del SAT?", "Para decidir precios, pedir crédito y saber si el negocio crece", "Solo para pagar menos impuestos", "Para nada más", "Los números ordenados ayudan a tomar decisiones."]
+],
+"comp": ["Cómo se oye cuando preguntan cuánto ganas", "«Pues siempre hay dinero en la caja, yo creo que bien.»", "«Este mes vendí $62,000, gasté $48,000 entre insumos, renta y sueldos, y me quedaron $14,000.»"],
+"refl": "Piensa en un negocio pequeño que conozcas (el tuyo, el de un familiar o uno de tu colonia). Escribe tres activos, dos pasivos y cómo calcularías su capital.",
+"pl": ["La ecuación de tu negocio", "LA FOTO DE MI NEGOCIO — [Fecha]\n\nLO QUE TENGO (Activo)\nEfectivo y bancos: $[ ]\nInventario: $[ ]\nEquipo (estufa, refrigerador, computadora…): $[ ]\nLo que me deben: $[ ]\nTOTAL ACTIVO: $[ ]\n\nLO QUE DEBO (Pasivo)\nProveedores: $[ ]\nPréstamos y tarjetas: $[ ]\nTOTAL PASIVO: $[ ]\n\nLO QUE ES MÍO (Capital) = Activo − Pasivo = $[ ]"]
+},
+{
+"caso": "<b>Caso: la estética que «gastaba» en su casa</b><br>Karla tiene una estética en Toluca. En su hoja de gastos del mes anotó tintes y shampoo, la renta del local, la luz… y también el súper de su casa, la colegiatura de su hija y la gasolina del fin de semana. Según su hoja, el negocio pierde dinero.<br>Ingreso es lo que cobras, costo es lo que pagas por lo que vendes y gasto es lo que pagas para operar. Lo que sacas para tu casa es retiro del dueño, no gasto del negocio.",
+"p": [
+["El súper de la casa de Karla es…", "un retiro del dueño", "un gasto de operación", "un costo de ventas", "No es un gasto para operar el negocio."],
+["Los tintes que usa en cada servicio son…", "costo de lo que vende", "gasto de administración", "retiro del dueño", "Se consumen directamente al dar el servicio."],
+["La renta del local es…", "un gasto de operación", "un costo de ventas", "un activo", "Se paga para operar, venda o no venda."]
+],
+"comp": ["Cómo se ve la hoja de gastos", "«Gastos del mes: tintes, renta, luz, súper, colegiatura y gasolina.»", "«Costos: tintes y shampoo. Gastos: renta, luz, internet. Retiros del dueño: súper, colegiatura y gasolina personal.»"],
+"refl": "Escribe diez movimientos de dinero de un negocio que conozcas y clasifica cada uno como ingreso, costo, gasto o retiro del dueño.",
+"pl": ["Clasificación de movimientos", "MOVIMIENTOS DEL MES — [Negocio]\nFecha | Concepto | Monto | Tipo (ingreso/costo/gasto/retiro)\n[ ] | [ ] | [ ] | [ ]\n\nResumen con SUMAR.SI:\nIngresos: [=SUMAR.SI(D:D,\"ingreso\",C:C)]\nCostos: [=SUMAR.SI(D:D,\"costo\",C:C)]\nGastos: [=SUMAR.SI(D:D,\"gasto\",C:C)]\nUtilidad: [Ingresos − Costos − Gastos]\nRetiros del dueño (aparte): [=SUMAR.SI(D:D,\"retiro\",C:C)]"]
+},
+{
+"caso": "<b>Caso: la compra a crédito que «no afectaba nada»</b><br>Don Memo tiene una ferretería en Celaya. Compró $20,000 de mercancía a crédito a 30 días. Como no salió dinero, no lo anotó. A fin de mes, su inventario no cuadra y no sabe cuánto le debe a su proveedor.<br>En la partida doble cada movimiento afecta al menos dos cuentas y siempre cuadra. Comprar a crédito sube el inventario y sube lo que debes, aunque no salga un peso.",
+"p": [
+["¿Qué dos cuentas afecta la compra a crédito?", "Inventario (sube) y proveedores (sube)", "Caja (baja) e inventario (sube)", "Ninguna, porque no se pagó", "Tienes más mercancía y más deuda."],
+["Cuando pague los $20,000 al proveedor…", "baja proveedores y baja bancos", "sube el inventario otra vez", "sube el capital", "Pagar una deuda reduce lo que tienes y lo que debes."],
+["¿Cuántas cuentas bastan para empezar un catálogo?", "Entre 15 y 25, numeradas por grupo", "Más de 200, como una empresa grande", "Tres: entradas, salidas y saldo", "Un catálogo sencillo y ordenado es suficiente para un negocio pequeño."]
+],
+"comp": ["Cómo se registra", "«No salió dinero, así que no hay nada que anotar.»", "«Cargo a inventario $20,000; abono a proveedores $20,000. Cuadra.»"],
+"refl": "Escribe cómo registrarías con partida doble estos tres movimientos: vender $3,000 en efectivo, pagar $1,500 de luz y recibir un préstamo de $10,000.",
+"pl": ["Catálogo de cuentas para negocio pequeño", "CATÁLOGO DE CUENTAS\n100 ACTIVO: 101 Caja · 102 Bancos · 103 Clientes · 104 Inventario · 110 Mobiliario y equipo\n200 PASIVO: 201 Proveedores · 202 Préstamos · 203 Impuestos por pagar\n300 CAPITAL: 301 Capital del dueño · 302 Retiros del dueño · 303 Utilidad del ejercicio\n400 INGRESOS: 401 Ventas · 402 Otros ingresos\n500 COSTOS: 501 Costo de ventas\n600 GASTOS: 601 Renta · 602 Luz y agua · 603 Sueldos · 604 Publicidad · 605 Comisiones bancarias\n\nRegistro: Fecha | Cuenta de cargo | Cuenta de abono | Monto | Concepto"]
+},
+{
+"caso": "<b>Caso: vendió mucho y no pudo pagar la nómina</b><br>Una empresa de uniformes escolares en Puebla tuvo su mejor temporada: vendió $400,000 en julio. Pero las escuelas pagan a 60 días. En agosto no tuvo con qué pagar la nómina ni la tela del siguiente pedido, y tuvo que pedir un préstamo caro.<br>La utilidad dice si ganas; el flujo de efectivo dice si te alcanza para pagar hoy. Proyectarlo semana a semana avisa a tiempo.",
+"p": [
+["¿Por qué se quedó sin dinero si vendió mucho?", "Porque cobraba a 60 días y tenía que pagar antes", "Porque no tuvo utilidad", "Porque vendió muy barato", "Ganar en papel no es tener efectivo hoy."],
+["Saldo inicial $50,000, entradas $30,000, salidas $95,000. El saldo final es…", "−$15,000", "$175,000", "$15,000", "50,000 + 30,000 − 95,000 = −15,000: faltará dinero."],
+["¿Qué medida protege el flujo en este caso?", "Pedir anticipo a las escuelas y negociar plazo con el proveedor de tela", "Vender más a crédito", "Comprar más inventario por si acaso", "Anticipos y plazos de pago acercan entradas y alejan salidas."]
+],
+"comp": ["Cómo se negocia con la escuela", "«Sí, páguenme cuando puedan.»", "«Para arrancar su pedido les pido 50% de anticipo y el resto a la entrega; así garantizo la tela y la fecha.»"],
+"refl": "Proyecta el flujo de cuatro semanas de un negocio que conozcas: saldo inicial, entradas y salidas de cada semana. Señala en qué semana faltaría dinero y qué harías.",
+"pl": ["Flujo de efectivo semanal", "FLUJO DE EFECTIVO — [Mes]\nConcepto | Semana 1 | Semana 2 | Semana 3 | Semana 4\nSaldo inicial | [ ] | [=B7] | [=C7] | [=D7]\nCobros de clientes | [ ] | [ ] | [ ] | [ ]\nOtras entradas | [ ] | [ ] | [ ] | [ ]\nPagos a proveedores | [ ] | [ ] | [ ] | [ ]\nNómina, renta y servicios | [ ] | [ ] | [ ] | [ ]\nSaldo final | [=B2+B3+B4−B5−B6] | [ ] | [ ] | [ ]\n\nSemáforo: [=SI(B7<0,\"Falta dinero\",SI(B7<10000,\"Cuidado\",\"Bien\"))]"]
+},
+{
+"caso": "<b>Caso: las ventas con IVA</b><br>Luis tiene un taller de computadoras en Querétaro. En su estado de resultados puso ventas por $116,000 del mes, que es lo que entró al banco. Con eso calculó una utilidad bonita. Su contador le dijo que $16,000 de eso no eran suyos.<br>El estado de resultados responde si ganaste o perdiste en un periodo, y siempre se arma con ventas sin IVA: el IVA que cobras es del SAT.",
+"p": [
+["Si entraron $116,000 con IVA al 16%, las ventas sin IVA son…", "$100,000", "$116,000", "$97,440", "116,000 ÷ 1.16 = 100,000."],
+["Ventas $100,000, costo $55,000. La utilidad bruta es…", "$45,000", "$155,000", "$55,000", "Utilidad bruta = Ventas − Costo."],
+["Si los gastos de operación son $30,000, la utilidad de operación es…", "$15,000", "$45,000", "$25,000", "45,000 − 30,000 = 15,000."]
+],
+"comp": ["Cómo se presenta", "«Vendí $116,000 este mes, me fue muy bien.»", "«Vendí $100,000 sin IVA, con utilidad bruta de 45% y una utilidad de operación de $15,000.»"],
+"refl": "Arma el estado de resultados de un mes de un negocio que conozcas (aunque sea con números aproximados) y escribe dos conclusiones.",
+"pl": ["Estado de resultados mensual", "ESTADO DE RESULTADOS — [Negocio] — [Mes]\nVentas (sin IVA) | $[ ]\n− Costo de ventas | $[ ]\n= UTILIDAD BRUTA | $[ ]   Margen bruto: [=B3/B1]\n− Renta | $[ ]\n− Sueldos | $[ ]\n− Servicios | $[ ]\n− Publicidad | $[ ]\n− Otros gastos | $[ ]\n= UTILIDAD DE OPERACIÓN | $[ ]   Margen de operación: [ ]\n\nConclusión: [ ]"]
+},
+{
+"caso": "<b>Caso: la bodega llena y la cuenta vacía</b><br>Una distribuidora de dulces en San Luis Potosí tiene un balance con activo de $900,000. Pero $700,000 son inventario, y buena parte son dulces de temporada que no se vendieron. En el banco hay $15,000 y a proveedores les debe $120,000 para la próxima semana.<br>El balance es la foto de un día. Además de que cuadre, revisa la liquidez, el inventario parado y si tu capital crece.",
+"p": [
+["¿Qué problema muestra el balance?", "Poca liquidez: mucho inventario y poco efectivo para pagar deudas cercanas", "Que la empresa es muy grande", "Que debe demasiado a largo plazo", "Los activos no sirven para pagar si no se convierten en efectivo."],
+["Total activo $900,000, pasivo $120,000. El capital es…", "$780,000", "$1,020,000", "$120,000", "Capital = 900,000 − 120,000."],
+["¿Qué harías con el inventario de temporada parado?", "Promociones o paquetes para convertirlo en efectivo antes de que pierda valor", "Guardarlo hasta el próximo año sin revisar", "Comprar más para tener surtido", "El inventario parado es dinero dormido."]
+],
+"comp": ["Cómo se lee el balance", "«Tenemos $900,000 en activos, estamos muy bien.»", "«Tenemos $900,000, pero $700,000 están en bodega. Con $15,000 en el banco no alcanzamos a pagar $120,000 la próxima semana.»"],
+"refl": "Escribe tres preguntas que le harías a un balance antes de decir que un negocio va bien, y por qué cada una.",
+"pl": ["Balance sencillo con lectura", "BALANCE GENERAL — [Negocio] — al [fecha]\nACTIVO: Bancos $[ ] · Clientes $[ ] · Inventario $[ ] · Equipo $[ ] · TOTAL $[ ]\nPASIVO: Proveedores $[ ] · Préstamos $[ ] · Impuestos $[ ] · TOTAL $[ ]\nCAPITAL: $[ ] (= Activo − Pasivo)\n\nLECTURA\nLiquidez (bancos + clientes ÷ pasivo de corto plazo): [ ]\nInventario sin movimiento en 90 días: $[ ]\n¿Creció el capital contra el mes anterior?: [ ]"]
+},
+{
+"caso": "<b>Caso: «le subo 30% y ya»</b><br>Ana hace pasteles en Mexicali. Un pastel le cuesta $300 y lo vende a $390, «le subo 30%». Cree que su margen es 30%. Cuando saca cuentas, ve que su margen real es menor y que no le alcanza para pagar a su ayudante.<br>Margen % = margen en pesos ÷ precio. Si quieres un margen, el precio se calcula como costo ÷ (1 − margen).",
+"p": [
+["Con costo $300 y precio $390, el margen % real es…", "23%", "30%", "39%", "90 ÷ 390 ≈ 0.23."],
+["Para tener 30% de margen con costo $300, el precio es…", "$428.57", "$390", "$330", "300 ÷ (1 − 0.30) = 428.57."],
+["¿Por qué importa la diferencia?", "Porque subir 30% al costo no da 30% de margen sobre el precio", "Porque el cliente paga menos", "No importa, es lo mismo", "Son bases distintas: costo y precio."]
+],
+"comp": ["Cómo se fija el precio", "«Le subo 30% a lo que me cuesta y ya.»", "«Quiero 40% de margen para cubrir a mi ayudante y ganar: precio = 300 ÷ 0.60 = $500.»"],
+"refl": "Elige tres productos o servicios de un negocio que conozcas. Calcula su margen actual y el precio que necesitarían para un margen de 40%.",
+"pl": ["Calculadora de margen y precio", "MARGEN Y PRECIO\nProducto | Costo | Precio actual | Margen $ | Margen % | Margen deseado | Precio sugerido\n[Pastel] | [300] | [390] | [=C2−B2] | [=D2/C2] | [40%] | [=B2/(1−F2)]\n\nCosto incluye: insumos [ ] + empaque [ ] + comisión de pago [ ] + mano de obra directa [ ]"]
+},
+{
+"caso": "<b>Caso: la taquería que abría toda la semana sin saber su meta</b><br>Una taquería en Culiacán paga $36,000 al mes de renta, sueldos y luz. Cada orden se vende a $80 y le cuesta $35 en insumos. El dueño no sabe cuántas órdenes necesita vender para no perder; solo siente que «unos días va bien y otros mal».<br>Punto de equilibrio = costos fijos ÷ (precio − costo variable). Dividido entre los días de trabajo, da una meta diaria clara.",
+"p": [
+["¿Cuántas órdenes al mes necesita para no perder?", "800", "450", "1,029", "36,000 ÷ (80 − 35) = 800."],
+["Si abre 25 días al mes, su meta diaria es…", "32 órdenes", "45 órdenes", "20 órdenes", "800 ÷ 25 = 32."],
+["Si la renta sube $4,500, el punto de equilibrio…", "sube a 900 órdenes", "baja", "no cambia", "40,500 ÷ 45 = 900."]
+],
+"comp": ["Cómo se oye en la junta con el equipo", "«A ver si hoy nos va bien.»", "«Necesitamos 32 órdenes al día para cubrir los gastos. Todo lo que pase de ahí es ganancia. Vamos a llevar la cuenta en el pizarrón.»"],
+"refl": "Calcula el punto de equilibrio de un negocio que conozcas y escribe dos acciones para bajarlo.",
+"pl": ["Punto de equilibrio y meta diaria", "PUNTO DE EQUILIBRIO\nCostos fijos mensuales: renta [ ] + sueldos [ ] + servicios [ ] + otros [ ] = $[ ]\nPrecio promedio por venta: $[ ]\nCosto variable por venta: $[ ]\nMargen de contribución: [=precio − costo variable]\n\nPunto de equilibrio (unidades): [=costos fijos / margen]\nPunto de equilibrio ($): [=unidades × precio]\nDías de trabajo al mes: [ ]\nMETA DIARIA: [=unidades / días]"]
+}
+]
+}
