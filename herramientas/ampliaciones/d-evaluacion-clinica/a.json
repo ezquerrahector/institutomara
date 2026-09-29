@@ -1,0 +1,96 @@
+{
+"id": "d-evaluacion-clinica",
+"horas": 30,
+"desc": "Para psicólogos con cédula y estudiantes de los últimos semestres que no saben por dónde empezar cuando llega un paciente. Aprende a conducir la primera consulta, evaluar el estado mental y el riesgo, usar la CIE-11 y el DSM-5-TR con criterio, formular el caso con el modelo de las 5 P, medir resultados sesión a sesión y documentar bien tu expediente. Incluye 20 casos clínicos ficticios con decisiones guiadas, 4 laboratorios de simulación de consulta y un proyecto final en el que integras la evaluación completa de un caso, del encuadre al informe. No sustituye la supervisión clínica.",
+"aprender": "Integrar la evaluación completa de un caso ficticio: encuadre, entrevista, estado mental, riesgo, tamizaje, diagnóstico diferencial, formulación con las 5 P, plan, medición, notas e informe",
+"talleres": [
+{
+"caso": "<b>Caso ficticio: la sesión sin encuadre</b><br>Una psicóloga recién titulada en Puebla atendió a Karina, de 28 años, sin acordar nada al inicio. Las sesiones duraban lo que «hiciera falta», Karina le escribía a cualquier hora por WhatsApp y un día llegó su mamá pidiendo saber «qué le pasa a su hija». La psicóloga no sabía qué responder.<br>El encuadre (objetivo, tiempo, honorarios, modalidad, contacto y confidencialidad) se acuerda desde la primera sesión.",
+"p": [
+["¿Qué faltó al inicio?", "Un encuadre claro: duración, contacto, honorarios y confidencialidad", "Más empatía", "Un diagnóstico", "El encuadre da seguridad a ambos."],
+["¿Qué responde a la mamá de una paciente adulta?", "Que no puede compartir información sin autorización de Karina", "Todo lo que sabe", "Un resumen breve", "La confidencialidad protege a la paciente adulta."],
+["¿Qué incluye el recorrido del caso?", "Consulta, evaluación, diagnóstico, formulación y plan", "Solo escuchar", "Diagnóstico y alta", "Es un proceso con etapas."]
+],
+"comp": ["Cómo se hace el encuadre", "«Platicamos lo que necesites, me escribes cuando quieras.»", "«Nos veremos los martes, 50 minutos, en línea o presencial. El costo es [ ]. Puedes escribirme para cambios de cita de lunes a viernes de 9 a 6; en crisis, llama al 911 o a la Línea de la Vida. Lo que hablemos es confidencial, con algunos límites que te explico ahora.»"],
+"refl": ["Redacta el guion de encuadre que usarías en tu primera sesión, con los seis elementos.", "Escribe cómo responderías a un familiar que pide información de un paciente adulto sin su autorización."],
+"pl": ["Encuadre de primera sesión", "ENCUADRE\nObjetivo de las primeras sesiones: evaluación ([ ] sesiones)\nDuración y frecuencia: [ ]\nHonorarios y cancelaciones: [ ]\nModalidad: [presencial / en línea] y cómo se protege la privacidad\nContacto entre sesiones: [canal, horario, para qué sí y para qué no]\nConfidencialidad y límites: riesgo · maltrato · orden judicial\nEn crisis: 911 · Línea de la Vida 800 911 2000"]
+},
+{
+"caso": "<b>Caso ficticio: el adolescente que no quería estar ahí</b><br>Los papás de Diego, de 15 años, en Monterrey, lo llevaron a consulta. El psicólogo pidió a los papás que firmaran el consentimiento y comenzó la sesión con Diego sin explicarle nada. Diego se quedó callado y al final preguntó: «¿Les vas a contar todo a mis papás?». El psicólogo dijo «claro, son tus papás».<br>En menores: consentimiento del tutor más asentimiento del menor. La confidencialidad tiene límites y se explican desde el inicio a ambos.",
+"p": [
+["¿Qué faltó con Diego?", "Explicarle el proceso y pedir su asentimiento", "Nada, los papás firmaron", "Un regalo", "El menor también participa en la decisión."],
+["¿Qué debió responder a «¿les vas a contar todo?»", "Qué se comparte, qué no y en qué casos habría que avisar por su seguridad", "«Claro, son tus papás»", "«Nada, nunca»", "Límites claros para todos."],
+["¿El consentimiento es un trámite de una vez?", "No: es un proceso que se conversa, documenta y renueva si cambia el procedimiento", "Sí, se firma y ya", "Solo es para adultos", "Proceso, no papel."]
+],
+"comp": ["Cómo se explica la confidencialidad a Diego", "«Claro, les voy a contar todo, son tus papás.»", "«Lo que platiquemos es entre tú y yo. A tus papás les cuento, contigo presente o con tu permiso, cómo vamos en general. Solo les diría algo sin tu permiso si tu vida o la de alguien más está en riesgo, y te avisaría antes.»"],
+"refl": ["Redacta cómo explicarías la confidencialidad y sus límites a un adolescente y a sus papás, en palabras que ambos entiendan.", "Escribe los elementos que debe tener un consentimiento informado para evaluación psicológica."],
+"pl": ["Consentimiento y asentimiento", "CONSENTIMIENTO INFORMADO (evaluación)\nQué se hará: entrevistas, cuestionarios, [ ]\nPara qué: [ ]\nDuración estimada: [ ]\nBeneficios y posibles molestias: [ ]\nConfidencialidad y límites: [ ]\nDerecho a preguntar y a retirarse: [ ]\nFirma del paciente o tutor: [ ]\nASENTIMIENTO DEL MENOR: «Me explicaron para qué es esto y estoy de acuerdo.» [ ]\nFecha y renovación si cambia el procedimiento: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: «me siento mal»</b><br>Javier, de 42 años, en Querétaro, dice en la primera sesión: «Me siento mal, no sé, todo está mal». El psicólogo pasó 50 minutos escuchando sin estructura. Al final no sabía desde cuándo, qué tan intenso, en qué áreas afectaba ni si había riesgo. Javier se fue sin saber si volvería.<br>La entrevista semiestructurada combina guía y flexibilidad; la seguridad va primero. Convierte el motivo expresado en un motivo clínico. La alianza se construye desde la primera sesión.",
+"p": [
+["¿Qué debe explorarse sí o sí en la primera sesión?", "El riesgo", "La infancia completa", "Los sueños", "La seguridad siempre va primero."],
+["Convertir «me siento mal» en motivo clínico es precisar…", "qué, desde cuándo, cuánto, dónde y con qué impacto", "el diagnóstico", "la causa en la infancia", "Así se hace evaluable."],
+["¿Qué ayuda a que Javier regrese?", "Acordar metas iniciales y explicar qué sigue", "No decir nada", "Darle un diagnóstico rápido", "La alianza incluye vínculo, metas y tareas."]
+],
+"comp": ["Cómo se precisa el motivo", "«Ajá… sigue contándome.» (50 minutos)", "«Cuando dices que todo está mal, ¿qué es lo que más te pesa? ¿Desde cuándo? Del 0 al 10, ¿qué tanto? ¿Cómo afecta tu trabajo, tu casa, tu sueño? ¿Has pensado en hacerte daño?»"],
+"refl": ["Escribe tu guion de primera entrevista semiestructurada con las secciones y dos preguntas clave de cada una.", "Convierte tres motivos de consulta vagos en motivos clínicos precisos."],
+"pl": ["Guion de primera entrevista", "PRIMERA ENTREVISTA\n1. Bienvenida y encuadre\n2. Motivo expresado (palabras del paciente)\n3. Motivo clínico: qué · desde cuándo · cuánto (0–10) · dónde · impacto\n4. Riesgo: suicidio · violencia · consumo · maltrato\n5. Historia breve relevante\n6. Recursos y apoyos\n7. Expectativas y metas iniciales\n8. Qué sigue (evaluación, próximas sesiones)"]
+},
+{
+"caso": "<b>Caso ficticio: la pareja y el secreto</b><br>Una pareja en Guadalajara llega por «problemas de comunicación». En la sesión conjunta, ella habla poco y mira a su pareja antes de responder. Él contesta por ella. El psicólogo decide seguir con sesiones de pareja «para mejorar la comunicación».<br>La historia clínica se centra en lo relevante. Con adolescentes, tiempo a solas. En parejas y familias, observa el sistema; ante sospecha de violencia, evalúa por separado.",
+"p": [
+["¿Qué señales sugieren evaluar por separado?", "Ella habla poco, mira antes de responder y él contesta por ella", "Que llegaron juntos", "Que tienen problemas de comunicación", "Pueden ser señales de control."],
+["¿Por qué no seguir solo con sesiones conjuntas?", "Porque si hay violencia, la terapia de pareja puede aumentar el riesgo", "Porque es más caro", "Porque no funciona nunca", "La seguridad va antes que la modalidad."],
+["¿Cómo se introduce la sesión individual sin alertar?", "Como parte habitual de la evaluación con ambos", "Diciéndole a él que sospechas", "Sin avisar", "Estándar para ambos, sin exponer."]
+],
+"comp": ["Cómo se propone la sesión individual", "«Seguimos con sesiones de pareja para mejorar su comunicación.»", "«Como parte de la evaluación, siempre tengo una sesión individual con cada uno. La próxima semana te veo a ti el martes y a ti el jueves.»"],
+"refl": ["Escribe las preguntas de tamizaje de violencia que harías en una sesión individual, de forma segura y respetuosa.", "Escribe qué adaptaciones haces en la entrevista cuando atiendes a un adolescente, a una pareja y a una familia."],
+"pl": ["Historia clínica y adaptaciones", "HISTORIA CLÍNICA (lo relevante para el motivo)\nIdentificación · motivo · padecimiento actual · antecedentes personales, familiares, médicos y de consumo · desarrollo · escolaridad y trabajo · relaciones · recursos · riesgo\n\nADAPTACIONES\nAdolescentes: tiempo a solas · confidencialidad explicada a todos\nParejas: sesión individual con cada uno · tamizaje de violencia por separado\nFamilias: observar el sistema: quién habla, alianzas, reglas"]
+},
+{
+"caso": "<b>Caso ficticio: «paciente loca y agresiva»</b><br>En una nota de un centro comunitario en Tijuana se lee: «Paciente loca, agresiva, no coopera, piensa cosas raras». Otra psicóloga revisa a la misma paciente y escribe: «Mujer de 35 años, aliño descuidado, contacto visual escaso, habla en voz alta y rápida, cambia de tema con frecuencia, refiere que sus vecinos la vigilan por la televisión, orientada en tiempo y lugar».<br>El examen del estado mental es una fotografía del momento. Redacta observaciones, no juicios ni etiquetas.",
+"p": [
+["¿Qué problema tiene la primera nota?", "Usa juicios y etiquetas en lugar de observaciones", "Es muy corta", "No tiene fecha", "Las etiquetas no describen ni ayudan."],
+["«Refiere que sus vecinos la vigilan por la televisión» corresponde al área de…", "contenido del pensamiento", "apariencia", "orientación", "Es lo que la persona piensa y cree."],
+["«Orientada en tiempo y lugar» corresponde a…", "cognición / sensorio", "afecto", "lenguaje", "Evalúa orientación, atención, memoria."]
+],
+"comp": ["Cómo se redacta", "«Paciente loca, agresiva, no coopera.»", "«Aliño descuidado. Habla rápido y en voz alta, discurso con cambios de tema frecuentes. Refiere ideas de ser vigilada por vecinos. Orientada en tiempo, lugar y persona. Juicio de su situación: parcial.»"],
+"refl": ["Redacta un examen del estado mental completo de un paciente ficticio con lenguaje observable, en todas las áreas.", "Reescribe cinco frases con etiquetas que hayas leído o escuchado como observaciones clínicas."],
+"pl": ["Examen del estado mental", "EXAMEN DEL ESTADO MENTAL — [fecha]\nApariencia: [ ]\nActitud y conducta: [ ]\nLenguaje: velocidad, volumen, coherencia [ ]\nÁnimo (lo que refiere) y afecto (lo que observas): [ ]\nPensamiento: curso y contenido [ ]\nPercepción: [ ]\nCognición: orientación, atención, memoria [ ]\nJuicio e introspección: [ ]\nRiesgo: [ ]\nSolo observaciones; nada de etiquetas."]
+},
+{
+"caso": "<b>Caso ficticio: la pregunta que no se hizo</b><br>Mario, de 55 años, en Saltillo, perdió su empleo hace tres meses y su esposa lo dejó. En la primera consulta habló de su tristeza. El psicólogo no preguntó por riesgo «para no darle ideas». A la semana, la esposa llamó para decir que Mario había regalado sus herramientas y escrito cartas de despedida.<br>Explora riesgo en toda primera consulta. Riesgo inminente: no dejes sola a la persona y activa el 911 o urgencias; Línea de la Vida 800 911 2000. Plan de seguridad, derivación, documentación y supervisión el mismo día.",
+"p": [
+["¿Preguntar por suicidio «da ideas»?", "No: es un mito; preguntar directamente facilita pedir ayuda", "Sí", "A veces", "La evidencia no respalda ese temor."],
+["Regalar pertenencias y escribir cartas de despedida son…", "señales de alto riesgo que requieren acción inmediata", "conductas normales tras un divorcio", "señales de mejoría", "Se activa el protocolo el mismo día."],
+["¿Qué incluye el protocolo ante riesgo?", "Plan de seguridad, derivación, documentación y supervisión el mismo día", "Esperar a la siguiente sesión", "Solo anotarlo", "Actuar, registrar y consultar."]
+],
+"comp": ["Cómo se pregunta por el riesgo", "(No pregunta) «Bueno, nos vemos la próxima semana.»", "«Con todo lo que has perdido estos meses, muchas personas piensan en morir o en quitarse la vida. ¿Has tenido esos pensamientos? ¿Has pensado cómo? ¿Tienes acceso a algo con qué hacerlo?»"],
+"refl": ["Escribe las preguntas de tamizaje de riesgo de suicidio, violencia, consumo y maltrato que harías en una primera consulta.", "Escribe el protocolo que seguirías si detectas riesgo inminente en tu consultorio: pasos, a quién llamas y qué documentas."],
+"pl": ["Tamizaje de riesgo y plan de seguridad", "TAMIZAJE DE RIESGO\nSuicidio: ideación · plan · medios · intentos previos · factores protectores\nViolencia hacia otros: [ ]\nConsumo: sustancia, frecuencia, cantidad [ ]\nMaltrato (recibido o ejercido; menores o adultos mayores): [ ]\n\nPLAN DE SEGURIDAD\n1. Señales de alerta · 2. Estrategias propias · 3. Personas y lugares que distraen · 4. Personas a quien pedir ayuda · 5. Profesionales: [ ] · Línea de la Vida 800 911 2000 · 911 · 6. Hacer seguro el entorno\nDocumentación y supervisión el mismo día."]
+},
+{
+"caso": "<b>Caso ficticio: el PHQ-9 de 22</b><br>Una psicóloga en León aplicó el PHQ-9 a Teresa, de 36 años, y obtuvo 22. Le dijo: «Tienes depresión severa». No revisó el reactivo 9, donde Teresa marcó 1 («varios días»). Tampoco exploró si hubo un duelo reciente, consumo o problemas de tiroides.<br>PHQ-9 y GAD-7 son tamizajes breves y de uso libre. Cualquier puntaje mayor que 0 en el reactivo 9 obliga a evaluar riesgo ese día. Un puntaje alto orienta; no sustituye el diagnóstico.",
+"p": [
+["Un PHQ-9 de 22 indica…", "síntomas depresivos en rango severo según el tamizaje, que orientan la evaluación", "diagnóstico confirmado de depresión mayor", "que no hay problema", "Tamizaje ≠ diagnóstico."],
+["El 1 en el reactivo 9 obliga a…", "evaluar el riesgo ese mismo día", "esperar la siguiente sesión", "nada, es bajo", "Cualquier valor mayor que 0."],
+["¿Qué más debió explorar?", "Duelo, consumo y posibles causas médicas", "Solo el puntaje", "La personalidad", "El diagnóstico diferencial es parte de la evaluación."]
+],
+"comp": ["Cómo se comunica el resultado", "«Tienes depresión severa.»", "«Tu cuestionario muestra muchos síntomas de tristeza y cansancio, en un nivel alto. Esto no es un diagnóstico todavía; vamos a entender mejor qué pasa. Y marcaste que algunos días has pensado en morir: hablemos de eso ahora.»"],
+"refl": ["Califica un PHQ-9 y un GAD-7 ficticios, escribe su interpretación como tamizaje y lo que harías después.", "Escribe cómo explicarías a un paciente la diferencia entre un cuestionario de tamizaje y un diagnóstico."],
+"pl": ["Calificación de PHQ-9 y GAD-7", "PHQ-9 (9 reactivos, 0–3 cada uno)\nTotal: [=SUMA(B2:B10)]\nRango: [=SI(T>=20,\"Severo\",SI(T>=15,\"Moderadamente severo\",SI(T>=10,\"Moderado\",SI(T>=5,\"Leve\",\"Mínimo\"))))]\nReactivo 9: [ ] → [=SI(B10>0,\"Evaluar riesgo HOY\",\"\")]\n\nGAD-7 (7 reactivos, 0–3)\nTotal: [ ] · Rango: 5 leve · 10 moderado · 15 severo\n\nRecordatorio: tamizaje, no diagnóstico."]
+},
+{
+"caso": "<b>Caso ficticio: la prueba traducida de internet</b><br>Un psicólogo en Culiacán descargó una prueba de personalidad en inglés, la tradujo él mismo y comparó los puntajes de sus pacientes con normas de población estadounidense. Con eso concluyó que una paciente tenía «rasgos patológicos». Además, un paciente de 70 años con olvidos recientes y desorientación no fue derivado a nadie.<br>Un instrumento estandarizado necesita confiabilidad, validez y baremos adecuados. Prefiere pruebas validadas en población mexicana. Deriva a neuropsicología, psiquiatría o medicina cuando las señales lo indiquen.",
+"p": [
+["¿Qué problema tiene traducir la prueba uno mismo?", "Se pierde la validez: la traducción y adaptación requieren estudios", "Ninguno", "Que tarda mucho", "Una traducción casera no es un instrumento validado."],
+["¿Por qué importan los baremos mexicanos?", "Porque el mismo puntaje puede significar cosas distintas en otra población", "No importan", "Porque lo pide la ley", "La comparación debe ser con población semejante."],
+["El paciente de 70 años con olvidos recientes y desorientación…", "debe derivarse a valoración médica y neuropsicológica", "tiene depresión", "está bien para su edad", "Puede haber causas médicas o neurocognitivas."]
+],
+"comp": ["Cómo se elige el instrumento", "«Descargué esta prueba y la traduje, sirve igual.»", "«Voy a usar una versión validada en población mexicana, con sus baremos, y si no la hay, lo reporto como límite de la evaluación.»"],
+"refl": ["Escribe cómo evaluarías si un instrumento es adecuado para tu paciente: confiabilidad, validez, baremos y derechos de uso.", "Escribe cinco señales que te harían derivar a neuropsicología, psiquiatría o medicina."],
+"pl": ["Revisión de un instrumento", "INSTRUMENTO: [ ]\nQué mide: [ ]\nConfiabilidad reportada: [ ]\nValidez (estudios): [ ]\nBaremos: población [ ] · ¿mexicana? [sí/no]\nDerechos de uso: [libre / con licencia]\nFormación requerida para aplicarlo: [ ]\nLímites para este paciente: [ ]\n\nDERIVAR A: neuropsicología [ ] · psiquiatría [ ] · medicina [ ]"]
+}
+]
+}

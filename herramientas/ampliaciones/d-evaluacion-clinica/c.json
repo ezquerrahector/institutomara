@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso ficticio: «que se sienta mejor»</b><br>Un psicólogo en Hermosillo escribió como objetivo terapéutico de Julia, de 32 años, con ansiedad social: «que se sienta mejor y tenga más confianza». Eligió una técnica que vio en un video. A los tres meses nadie sabía si había avance. Su supervisora le pidió reescribir el objetivo a partir de la formulación y elegir una intervención con evidencia para ansiedad social.<br>Objetivos SMART: específicos, medibles, alcanzables, relevantes y con tiempo. Elige intervenciones con evidencia para el problema y dentro de tu formación. El plan ataca primero los perpetuantes clave.",
+"p": [
+["¿Qué le falta a «que se sienta mejor»?", "Ser específico, medible y con plazo", "Más entusiasmo", "Un diagnóstico", "No se puede verificar."],
+["¿De dónde debe salir el objetivo?", "De la formulación, en especial de los perpetuantes", "Del gusto del terapeuta", "De una técnica de moda", "El plan ataca lo que mantiene el problema."],
+["¿Dónde consultar intervenciones con evidencia?", "Guías como NICE o las de la APA", "Redes sociales", "Un video popular", "Fuentes con revisión de evidencia."]
+],
+"comp": ["Cómo se escribe el objetivo", "«Que se sienta mejor y tenga más confianza.»", "«En 12 semanas, Julia participará al menos una vez en cada junta semanal de trabajo (hoy: 0 de 4 al mes), con ansiedad tolerable de 6/10 o menos.»"],
+"refl": ["Escribe tres objetivos SMART para un caso ficticio a partir de sus perpetuantes, y la intervención con evidencia que usarías para cada uno.", "Escribe cómo decidirías si una intervención está dentro de tu formación o si necesitas supervisión o derivar."],
+"pl": ["Plan de tratamiento", "PLAN DE TRATAMIENTO — [caso ficticio]\nPerpetuante | Objetivo SMART | Intervención con evidencia | Fuente | Medición\n[ ] | [ ] | [ ] | [NICE / APA] | [ ]\n\nDentro de mi formación: [sí/no] · Supervisión: [ ] · Derivación: [ ]\nRevisión del plan: sesión [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: la paciente que «iba bien»</b><br>Una psicóloga en Toluca atendía a Lorena, de 39 años, sin medir nada. Sentía que «iba bien» porque Lorena sonreía en las sesiones. En la sesión 10 aplicó el PHQ-9 por primera vez: 19, igual que en la entrevista inicial. Otro colega mide cada sesión y, en la sesión 4, vio que su paciente empeoraba y ajustó el plan a tiempo.<br>Medir sesión a sesión detecta a tiempo el estancamiento o el empeoramiento. Respuesta: reducción de 50% o más; remisión en el PHQ-9: menos de 5. Comparte los resultados con el paciente.",
+"p": [
+["¿Qué error cometió la psicóloga?", "Confiar en su impresión sin medir", "Aplicar el PHQ-9", "Atender a Lorena", "La impresión clínica puede engañar."],
+["Si el PHQ-9 inicial es 20 y ahora es 9, hubo…", "respuesta (reducción de 55%), pero no remisión", "remisión", "ningún cambio", "20 → 9 es 55% menos; remisión es menos de 5."],
+["¿Para qué compartir los resultados con el paciente?", "Para decidir juntos y ajustar el plan", "No hace falta", "Para presumir", "La medición es una herramienta compartida."]
+],
+"comp": ["Cómo se revisan los datos", "«Te veo muy bien, sigamos igual.»", "«Tu puntaje empezó en 20 y hoy está en 9: bajó más de la mitad. Todavía no llegamos a menos de 5. ¿Qué crees que te ha ayudado y qué falta?»"],
+"refl": ["Con datos ficticios de 10 sesiones, calcula el porcentaje de cambio, indica si hay respuesta y remisión, y escribe qué decisión tomarías.", "Escribe cómo introducirías la medición sesión a sesión con un paciente que desconfía de los cuestionarios."],
+"pl": ["Seguimiento de resultados", "SEGUIMIENTO — [caso ficticio]\nSesión | PHQ-9 | GAD-7 | Ítem 9\n1 | [ ] | [ ] | [ ]\n…\n% de cambio PHQ-9: [=(B2-B11)/B2]\nRespuesta: [=SI((B2-B11)/B2>=0.5,\"Sí\",\"No\")]\nRemisión: [=SI(B11<5,\"Sí\",\"No\")]\nAlerta de empeoramiento: [=SI(B11>B2,\"Revisar plan\",\"\")]"]
+},
+{
+"caso": "<b>Caso ficticio: las notas en el celular</b><br>Un psicólogo en Culiacán tomaba notas de sus sesiones en la aplicación de notas de su celular, sin contraseña, con nombres completos y detalles de la vida sexual de sus pacientes. Un día perdió el celular. Otra colega escribe notas SOAP breves en un sistema con acceso restringido, con fecha, hora, nombre y firma, y tiene aviso de privacidad firmado.<br>SOAP y DAP son formatos breves y objetivos. La NOM-004-SSA3-2012 es referencia para el expediente. La salud mental es dato sensible: aviso de privacidad, consentimiento expreso, derechos ARCO y resguardo seguro.",
+"p": [
+["¿Qué riesgo creó el psicólogo?", "Exponer datos personales sensibles de sus pacientes", "Ninguno", "Perder tiempo", "La información de salud mental es sensible."],
+["En una nota SOAP, «A» es…", "el análisis o valoración clínica", "la agenda", "el antecedente", "Subjetivo, Objetivo, Análisis, Plan."],
+["¿Qué debe tener cada nota?", "Fecha, hora, nombre y firma de quien la elabora", "Solo la fecha", "Opiniones personales del terapeuta", "Requisitos básicos del expediente."]
+],
+"comp": ["Cómo se escribe una nota", "«Llegó mal otra vez, habló de su ex, le dije que lo dejara.»", "«S: refiere tristeza 7/10 tras discusión con expareja. O: afecto triste, llanto, orientada, niega ideación suicida. A: exacerbación ligada a contacto con expareja; se sostiene formulación. P: trabajar límites; PHQ-9 próxima sesión.»"],
+"refl": ["Redacta una nota SOAP y una DAP de la misma sesión ficticia.", "Escribe las medidas de resguardo que aplicarías a tu expediente (físico y digital) y cómo atenderías una solicitud de derechos ARCO."],
+"pl": ["Nota SOAP y resguardo", "NOTA SOAP — [fecha, hora]\nS (lo que refiere): [ ]\nO (lo que observas y mides): [ ]\nA (análisis clínico): [ ]\nP (plan): [ ]\nElaboró: [nombre, cédula, firma]\n\nRESGUARDO\n□ Aviso de privacidad y consentimiento expreso firmados\n□ Acceso restringido y contraseña\n□ Sin datos en apps personales\n□ Conservación mínima de 5 años (referencia NOM-004-SSA3-2012)\n□ Procedimiento ARCO: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: el informe para la escuela</b><br>Una escuela en Querétaro pidió a una psicóloga un informe sobre Tomás, de 10 años, para decidir apoyos en el aula. La psicóloga entregó seis páginas con puntajes brutos, términos técnicos, detalles del divorcio de los papás y la frase «probable trastorno de personalidad». La maestra no entendió qué hacer y la familia se sintió expuesta.<br>El informe responde a una pregunta concreta para un destinatario concreto, con lenguaje claro y límites explícitos.",
+"p": [
+["¿Cuál era la pregunta que debía responder el informe?", "Qué apoyos necesita Tomás en el aula", "Toda la historia familiar", "Su diagnóstico de personalidad", "El informe se ajusta a la pregunta."],
+["¿Qué información sobraba para la escuela?", "Los detalles del divorcio de los papás", "Las recomendaciones", "Las fortalezas de Tomás", "Solo se comparte lo necesario y autorizado."],
+["«Probable trastorno de personalidad» en un niño de 10 años es…", "inadecuado e irresponsable en un informe escolar", "un buen resumen", "necesario", "Además de dañino, no responde a la pregunta."]
+],
+"comp": ["Cómo se escribe la conclusión", "«Puntaje T=68 en escala X; probable trastorno de personalidad.»", "«Tomás muestra dificultad para concentrarse en tareas largas y se frustra con la escritura. Se recomienda: instrucciones de una en una, tareas divididas, tiempo extra y evaluación oral. Este informe se basa en tres sesiones y no sustituye una evaluación neuropsicológica.»"],
+"refl": ["Redacta un informe psicológico breve para una escuela sobre un caso ficticio, con pregunta, método, resultados, conclusiones, recomendaciones y límites.", "Escribe qué información de la evaluación NO incluirías en ese informe y por qué."],
+"pl": ["Estructura del informe psicológico", "INFORME PSICOLÓGICO\nDestinatario: [ ]   Pregunta a responder: [ ]\nDatos de identificación (mínimos): [ ]\nMétodo: entrevistas, instrumentos, fechas\nResultados relevantes para la pregunta: [ ]\nConclusiones (lenguaje claro): [ ]\nRecomendaciones concretas: [ ]\nLímites de la evaluación: [ ]\nAutorización de la familia/paciente: [ ]\nFirma, cédula, fecha"]
+}
+],
+"labs": [
+{
+"t": "La primera consulta simulada",
+"obj": "conducir una primera consulta completa: encuadre, consentimiento, motivo clínico, historia y alianza.",
+"esc": "Simulación. Llega a tu consultorio en León <b>Patricia</b> (caso ficticio), de 44 años, maestra, divorciada, con dos hijos adolescentes. Dice: «Ya no puedo con todo, me siento agotada y lloro por todo». Viene porque su hermana insistió.",
+"e": [
+["<b>Escena 1 — El encuadre.</b> Patricia pregunta cuántas sesiones necesitará y si le vas a contar algo a su hermana.", "Escribe cómo haces el encuadre y explicas la confidencialidad."],
+["<b>Escena 2 — El motivo.</b> «Ya no puedo con todo».", "Escribe las preguntas para convertirlo en un motivo clínico preciso."],
+["<b>Escena 3 — La historia.</b> Tienes 20 minutos para lo relevante.", "Escribe qué áreas de la historia clínica priorizas y por qué."],
+["<b>Escena 4 — El cierre.</b> Faltan 5 minutos.", "Escribe cómo cierras la sesión cuidando la alianza y explicando qué sigue."]
+],
+"p": [
+["Ante «¿cuántas sesiones?», lo más honesto es…", "explicar que primero harán una evaluación de unas sesiones y luego acordarán el plan", "prometer un número exacto", "no responder", "Encuadre realista."],
+["¿Qué no puede faltar en esta primera consulta?", "La exploración del riesgo", "Toda la infancia", "El diagnóstico definitivo", "Seguridad primero."],
+["Para cuidar la alianza al cerrar…", "resumir lo escuchado, acordar una meta inicial y explicar qué sigue", "dejar tarea larga", "dar un diagnóstico", "Vínculo, metas y tareas."]
+],
+"pl": ["Checklist de primera consulta", "PRIMERA CONSULTA\n□ Encuadre y consentimiento\n□ Confidencialidad y límites\n□ Motivo clínico preciso\n□ Riesgo\n□ Historia relevante\n□ Recursos\n□ Meta inicial y qué sigue"]
+},
+{
+"t": "Evaluar estado mental y riesgo",
+"obj": "describir el estado mental, tamizar riesgo y actuar según el protocolo en un caso con señales de alerta.",
+"esc": "Simulación. <b>Raúl</b> (caso ficticio), de 23 años, estudiante en Guadalajara, llega desaliñado, habla muy poco, mira al piso y responde con monosílabos. Su PHQ-9 es 23 con 2 en el reactivo 9. Dice que «ya nada tiene sentido» y que tiene medicamentos de su abuela en casa.",
+"e": [
+["<b>Escena 1 — El estado mental.</b> Observas a Raúl durante la entrevista.", "Redacta su examen del estado mental con lenguaje observable."],
+["<b>Escena 2 — El riesgo.</b> PHQ-9 con 2 en el reactivo 9 y acceso a medicamentos.", "Escribe las preguntas de evaluación de riesgo y tu estimación del nivel."],
+["<b>Escena 3 — El protocolo.</b> Raúl dice que ha pensado en tomarse las pastillas «tal vez este fin».", "Escribe los pasos que sigues en ese momento, incluido a quién llamas."],
+["<b>Escena 4 — La documentación.</b> Al final del día.", "Escribe la nota de la sesión y qué harás en supervisión."]
+],
+"p": [
+["Un plan con medio disponible y plazo cercano indica…", "riesgo alto que requiere acción inmediata", "riesgo bajo", "nada", "Plan, medios y plazo elevan el riesgo."],
+["¿Qué haces con el acceso a los medicamentos?", "Trabajar con Raúl y su red para que queden fuera de su alcance hoy", "Nada", "Pedirle que no los tome", "Restringir medios es parte del plan."],
+["Si el riesgo es inminente…", "no lo dejas solo y activas el 911 o urgencias", "le das cita para la próxima semana", "le das el número y se va solo", "Seguridad inmediata."]
+],
+"pl": ["Protocolo de riesgo en consultorio", "RIESGO — [caso ficticio]\nEEM: [ ]\nIdeación · plan · medios · plazo · intentos previos · protectores\nNivel: [bajo / moderado / alto / inminente]\nAcciones: no dejar solo · red de apoyo · restringir medios · 911 / urgencias · Línea de la Vida 800 911 2000\nDocumentación: [nota]\nSupervisión: mismo día"]
+},
+{
+"t": "Del diagnóstico diferencial a la comunicación del diagnóstico",
+"obj": "aplicar diagnóstico diferencial, manejar comorbilidad y comunicar un diagnóstico de forma respetuosa.",
+"esc": "Simulación. <b>Silvia</b> (caso ficticio), de 52 años, en Mérida, tiene insomnio, irritabilidad, ataques de calor, ansiedad y tristeza desde hace cinco meses. Toma cuatro tazas de café al día y dos copas de vino cada noche «para dormir». Su madre murió hace ocho meses.",
+"e": [
+["<b>Escena 1 — Explicaciones alternativas.</b> Hay varios factores posibles.", "Escribe al menos cinco explicaciones alternativas del cuadro y cómo evaluarías cada una."],
+["<b>Escena 2 — La comorbilidad.</b> Ansiedad, tristeza, consumo y duelo se mezclan.", "Escribe cómo priorizas qué atender primero."],
+["<b>Escena 3 — El diagnóstico.</b> Tras la evaluación, concluyes un diagnóstico provisional.", "Escribe cómo lo registras y qué falta para confirmarlo."],
+["<b>Escena 4 — La comunicación.</b> Silvia pregunta: «¿Estoy loca?».", "Escribe cómo le comunicas el diagnóstico sin etiquetar."]
+],
+"p": [
+["Los ataques de calor y el insomnio a los 52 años sugieren…", "descartar causas médicas, como la transición menopáusica, con valoración médica", "un trastorno de ansiedad seguro", "nada", "Causas médicas primero."],
+["El duelo de ocho meses…", "es una explicación que debe considerarse antes de concluir otro trastorno", "no tiene relación", "siempre es patológico", "Reacciones esperables en el diferencial."],
+["Ante «¿estoy loca?», respondes…", "con lenguaje claro, normalizando y conectando con su historia", "con los criterios del manual", "que sí", "Diagnosticar sin etiquetar."]
+],
+"pl": ["Diagnóstico diferencial y comunicación", "CASO — [ficticio]\nExplicaciones alternativas y cómo evaluarlas: [ ]\nPrioridad de atención: [ ]\nDiagnóstico provisional y lo que falta: [ ]\nDerivaciones: [medicina, adicciones]\nFrases para comunicarlo: [ ]"]
+},
+{
+"t": "Formular un caso con las 5 P y contrastar hipótesis",
+"obj": "construir la formulación integrativa, plantear hipótesis contrastables y redactar el mapa del caso.",
+"esc": "Simulación. <b>Omar</b> (caso ficticio), de 36 años, en Monterrey, gerente de ventas, tiene explosiones de enojo en el trabajo y en casa desde que lo ascendieron hace un año. Su padre era muy exigente y crítico. Duerme cinco horas, toma café todo el día y no delega. Su esposa lo apoya y él quiere «ser un buen jefe y un buen papá».",
+"e": [
+["<b>Escena 1 — Las 5 P.</b> Tienes la información de dos sesiones.", "Organiza el caso con las 5 P."],
+["<b>Escena 2 — Las miradas.</b> Quieres enriquecer la formulación.", "Agrega una observación cognitivo-conductual, una contextual, una sistémica y una psicodinámica."],
+["<b>Escena 3 — Las hipótesis.</b> Piensas que el enojo sube con la falta de sueño o con las juntas de resultados.", "Escribe dos hipótesis contrastables y el autorregistro para probarlas."],
+["<b>Escena 4 — El mapa.</b> Vas a supervisión mañana.", "Redacta el mapa del caso de una página."]
+],
+"p": [
+["El padre exigente y crítico es un factor…", "predisponente", "precipitante", "protector", "Historia que aumenta la vulnerabilidad."],
+["El ascenso hace un año es…", "precipitante", "perpetuante", "predisponente", "Marca el inicio."],
+["No delegar y dormir poco son…", "perpetuantes", "protectores", "predisponentes", "Mantienen el problema hoy."]
+],
+"pl": ["Mapa del caso", "MAPA — [ficticio]\n5 P: [ ]\nCuatro miradas: [ ]\nHipótesis y autorregistro: [ ]\nRiesgo: [ ]\nImplicaciones para el tratamiento: [ ]\nPreguntas para supervisión: [ ]"]
+},
+{
+"t": "La evaluación completa de un caso",
+"obj": "integrar todo el diplomado en la evaluación completa de un caso ficticio, del encuadre al informe, lista para llevar a supervisión.",
+"esc": "Este es tu proyecto final. Vas a construir un <b>caso clínico ficticio completo</b> (inventa a la persona; no uses datos de pacientes reales) y a documentar su evaluación de principio a fin. Al terminar tendrás un expediente modelo que puedes llevar a supervisión o usar como muestra de tu forma de trabajar.",
+"e": [
+["<b>Parte 1 — Primera consulta.</b> Con lo del módulo 1.", "Escribe el encuadre, el consentimiento informado, el motivo clínico y la historia clínica relevante del caso."],
+["<b>Parte 2 — Evaluación.</b> Con lo del módulo 2.", "Escribe el examen del estado mental, el tamizaje de riesgo con su plan, y los resultados del PHQ-9, GAD-7 u otros instrumentos justificados."],
+["<b>Parte 3 — Diagnóstico y formulación.</b> Con lo de los módulos 3 y 4.", "Escribe el diagnóstico diferencial, el diagnóstico (provisional o definitivo), las 5 P con las cuatro miradas, dos hipótesis contrastables y el mapa del caso."],
+["<b>Parte 4 — Plan y documentación.</b> Con lo del módulo 5.", "Escribe objetivos SMART, intervenciones con evidencia, el plan de medición sesión a sesión, una nota SOAP modelo y un informe breve para un destinatario concreto."]
+],
+"p": [
+["El encuadre se establece…", "desde la primera sesión", "al final de la terapia", "solo si el paciente lo pide", "Da seguridad a ambos."],
+["Un 1 en el reactivo 9 del PHQ-9 obliga a…", "evaluar el riesgo ese día", "esperar", "nada", "Cualquier valor mayor que 0."],
+["La formulación explica…", "por qué esta persona, por qué ahora y qué mantiene el problema", "solo el diagnóstico", "la personalidad", "Las 5 P."],
+["Una nota clínica debe ser…", "breve, objetiva, con fecha, hora, nombre y firma", "larga y con opiniones", "opcional", "Formato SOAP o DAP."],
+["Tu constancia de este diplomado…", "no sustituye la supervisión clínica ni la formación profesional", "te habilita para evaluar sin cédula", "certifica tu competencia clínica", "Descríbela con precisión."]
+],
+"pl": ["Índice del expediente modelo", "EXPEDIENTE MODELO — CASO FICTICIO\n[Elaboró] · [Fecha]\n\n1. Encuadre y consentimiento informado\n2. Motivo clínico e historia clínica\n3. Examen del estado mental\n4. Tamizaje de riesgo y plan de seguridad\n5. Instrumentos y resultados\n6. Diagnóstico diferencial y diagnóstico\n7. Formulación: 5 P y cuatro miradas\n8. Hipótesis y mapa del caso\n9. Plan de tratamiento y medición\n10. Nota SOAP modelo e informe"]
+}
+]
+}
