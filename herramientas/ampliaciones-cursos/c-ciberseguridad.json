@@ -1,0 +1,99 @@
+{
+  "id": "c-ciberseguridad",
+  "extras": {},
+  "practicas": [
+    {
+      "modulo": 0,
+      "t": "La semana de Maribel: SMS, llamadas y mensajes",
+      "obj": "Reconocer en casos reales las señales de fraude por SMS, llamada y WhatsApp, y decidir qué hacer en cada uno.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Maribel tiene una tienda de regalos y envolturas en Puebla. Vende por WhatsApp y envía pedidos por paquetería, así que recibe muchos avisos de envíos y pagos. En una sola semana le llega esto:<br><br>• <b>Lunes:</b> un SMS: «Su paquete no pudo ser entregado por dirección incompleta. Pague $28 de reenvío aquí: paqueteria-mx-envios.com».<br>• <b>Miércoles:</b> una llamada «del departamento de fraudes de su banco»: el asesor ya sabe su nombre y los últimos cuatro dígitos de su tarjeta.<br>• <b>Jueves:</b> un WhatsApp de su proveedora de listones, desde su número de siempre: «Amiga, te llegó un código de 6 números por error, ¿me lo reenvías?».<br>• <b>Viernes:</b> un correo que dice venir de una plataforma de ventas: «Tu cuenta será suspendida en 24 horas; confirma tus datos de cobro».<br><br>Tu reto: ayúdala a decidir, mensaje por mensaje, qué hacer. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"Antes de responder, recuerda la idea central del módulo: el estafador rara vez rompe un sistema; <b>te empuja a actuar rápido</b>. Por eso, más que memorizar cada tipo de fraude, conviene reconocer las <b>señales</b> que se repiten: prisa, un enlace o un teléfono que viene dentro del mismo mensaje, un cobro pequeño que parece inofensivo, alguien que pide un código, o un conocido que de pronto pide algo raro.<br><br>Un detalle importante del miércoles: que el asesor sepa tu nombre y los últimos cuatro dígitos de tu tarjeta <b>no prueba nada</b>. Esos datos aparecen en tickets, en bases de datos filtradas o en compras que hiciste en otros sitios. Lo que confirma que una llamada es real no es lo que el otro sabe de ti, sino que <b>tú llames</b> al número oficial."},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"Lunes. Maribel sí está esperando un paquete. ¿Qué le conviene hacer con el SMS del reenvío de $28?","ops":["Pagar los $28 porque es poco dinero y sí espera un paquete","No abrir el enlace y rastrear el envío con su número de guía en el sitio oficial de la paquetería, escrito por ella misma","Contestar el SMS para pedir más información"],"correcta":1,"explica":"El monto pequeño es la carnada: lo que buscan son los datos de tu tarjeta. Esperar un paquete de verdad hace que el engaño funcione mejor, por eso se verifica con la guía y por el canal que tú eliges."},
+          {"p":"Miércoles. El «asesor» sabe su nombre y los últimos cuatro dígitos de la tarjeta, y le pide confirmar el código que le va a llegar. Lo más seguro es…","ops":["Colgar y marcar ella misma al número que viene al reverso de su tarjeta","Dar el código, porque ya demostró que es del banco","Pedirle al asesor su nombre completo y número de empleado antes de dar el código"],"correcta":0,"explica":"Pedir un nombre o un número de empleado no sirve: el estafador puede inventarlos. Ningún banco te pide por teléfono el código que te envió."},
+          {"p":"Jueves. El mensaje llega del número de siempre de su proveedora. ¿Qué es lo más probable?","ops":["Que la proveedora de verdad se equivocó al escribir su número","Que sea un error de WhatsApp","Que alguien ya robó el WhatsApp de la proveedora y ahora quiere el de Maribel"],"correcta":2,"explica":"Así se roban cuentas en cadena. Lo correcto es no enviar el código y llamarle por teléfono a la proveedora para avisarle."},
+          {"p":"Viernes. ¿Qué detalle del correo es la señal más clara de riesgo?","ops":["Que venga en español","El plazo de 24 horas y la petición de confirmar datos de cobro desde el mismo correo","Que mencione una plataforma que ella sí usa"],"correcta":1,"explica":"Urgencia más enlace para capturar datos es la fórmula típica. Si tienes duda, entra a la plataforma escribiendo tú la dirección o desde su app, nunca desde el correo."}
+        ]},
+        {"tipo":"relacionar","rotulo":"Relaciona la señal con el riesgo","pares":[
+          ["Un cobro pequeño de reenvío con enlace en SMS","Robo de datos de tu tarjeta en una página falsa"],
+          ["Alguien pide el código de 6 dígitos que te llegó","Robo de tu cuenta de WhatsApp"],
+          ["El «banco» te pide transferir a una cuenta segura","Te hacen mover tu propio dinero al estafador"],
+          ["Un «asesor» te pide instalar una app para ver tu pantalla","Control de tu celular y de tu banca móvil"],
+          ["Un conocido pide dinero desde un número nuevo","Suplantación de un familiar o amigo"],
+          ["Un correo trae un archivo comprimido para «ver tu multa»","Programa malicioso en tu equipo"]
+        ]},
+        {"tipo":"comparar","titulo":"Cómo responde Maribel el jueves","mal":"«Ay, claro, amiga, aquí va: 482 913.» Diez minutos después, sus clientas reciben mensajes pidiendo depósitos para «un pedido urgente».","bien":"No envía el código. Le llama por teléfono a su proveedora: «Oye, me llegó un mensaje raro desde tu WhatsApp pidiéndome un código; creo que te lo robaron». Luego revisa que su propio PIN de verificación en dos pasos esté activo."},
+        {"tipo":"completar","rotulo":"Completa","items":[
+          {"frase":"Para rastrear un paquete uso mi número de ___ en el sitio oficial de la paquetería.","resp":["guía","guia"]},
+          {"frase":"Si alguien dice ser del banco, cuelgo y marco al número que viene al ___ de mi tarjeta.","resp":["reverso","dorso"]},
+          {"frase":"Un código que me llegó a mí nunca se ___ con nadie.","resp":["comparte","reenvía","reenvia","da"]}
+        ]},
+        {"tipo":"reflexion","rotulo":"Tu propia semana","pregunta":"Revisa los SMS, correos y mensajes que recibiste en los últimos siete días. Elige dos que te parezcan sospechosos (o, si no hay, dos que recuerdes de antes) y escribe para cada uno: qué señal tenía y qué hiciste o harías ahora.","ayuda":"Mensaje 1: SMS de… La señal fue… Lo correcto es…"},
+        {"tipo":"plantilla","rotulo":"Aviso para tus clientes y contactos","texto":"Aviso importante de [nombre de tu negocio]:\nNunca te pediremos códigos de verificación ni contraseñas.\nNuestros únicos datos para pago son los que te damos en persona o en [canal oficial].\nSi recibes un mensaje a nuestro nombre pidiendo depósitos urgentes o a otra cuenta, no pagues y llámanos al [teléfono fijo o alterno].\nGracias por cuidarte y cuidarnos.","nota":"Cópiala y adáptala. Publícala como mensaje fijado o en tu estado de WhatsApp."},
+        {"tipo":"clave","items":["Un cobro pequeño o un dato tuyo que el otro ya conoce no prueban que el mensaje sea legítimo.","Verifica siempre por el canal que tú eliges: la guía en el sitio oficial, el número al reverso de la tarjeta, la app que tú abres.","Si un conocido te pide un código o dinero de forma rara, llámale antes de hacer nada."]}
+      ]
+    },
+    {
+      "modulo": 1,
+      "t": "Blindaje en una tarde: el WhatsApp de la taquería",
+      "obj": "Aplicar paso a paso la verificación en dos pasos y un plan de recuperación en las cuentas de un pequeño negocio.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Don Ramiro tiene una taquería en Guadalajara que recibe la mitad de sus pedidos por WhatsApp Business. Su sobrina Karla le ayuda con Facebook e Instagram. El mes pasado a un taquero vecino le robaron el WhatsApp: el estafador pidió depósitos a sus clientes durante dos días y el negocio perdió pedidos y confianza. Don Ramiro le pide a Karla que dedique una tarde a <b>blindar las cuentas del negocio</b>. Tú la vas a acompañar. Calcula de 30 a 40 minutos."},
+        {"tipo":"tabla","titulo":"Inventario de cuentas de la taquería","encabezados":["Cuenta","Quién la usa","¿Tiene dos pasos?","Prioridad"],"filas":[["WhatsApp Business del negocio","Don Ramiro y Karla","No","Alta: ahí llegan los pedidos y los pagos"],["Correo del negocio","Karla","No","Alta: recupera todas las demás cuentas"],["Facebook e Instagram","Karla","Solo Instagram","Media"],["Banca móvil del negocio","Don Ramiro","Sí (token en la app)","Alta, ya protegida"],["Cuenta de la app de entregas","Don Ramiro","No sabe","Media: revisar"]],"nota":"Empieza por el correo y por WhatsApp: si pierdes el correo, puedes perder todo lo que depende de él."},
+        {"tipo":"pasos","rotulo":"Lo que hace Karla esa tarde","pasos":["Cambia la contraseña del <b>correo del negocio</b> por una frase larga y única, y activa en él la <b>verificación en dos pasos</b> desde la sección de seguridad de la cuenta.","Guarda los <b>códigos de respaldo</b> del correo (si el servicio los ofrece) impresos en un sobre, en el cajón con llave de la caja.","En WhatsApp Business entra a <b>Ajustes</b> → <b>Cuenta</b> → <b>Verificación en dos pasos</b> → <b>Activar</b> (así aparecen al momento de escribir), escribe un PIN de 6 dígitos que no sea fecha ni 123456 y agrega el correo del negocio.","Anota el PIN en el mismo sobre; solo lo conocen Don Ramiro y ella.","Activa los dos pasos en <b>Facebook</b> y revisa que sigan activos en <b>Instagram</b>, de preferencia con app autenticadora.","En cada cuenta revisa los <b>dispositivos conectados</b> y cierra sesión en los que no reconozca.","Pega junto a la caja la regla del negocio: «Aquí nadie comparte códigos, ni con la familia»."]},
+        {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+          {"frase":"Primero protejo el correo que recupera todo","es":"Por qué el correo va antes que las redes"},
+          {"frase":"El PIN de WhatsApp tiene seis dígitos","es":"Dato del segundo paso en WhatsApp"},
+          {"frase":"Nadie comparte códigos ni con la familia","es":"La regla pegada junto a la caja"}
+        ]},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"Karla solo tiene tiempo para proteger una cuenta hoy. ¿Cuál elige primero?","ops":["Instagram, porque tiene más seguidores","El correo del negocio, porque con él se recuperan las demás cuentas","La app de entregas, porque es la más nueva"],"correcta":1,"explica":"Quien controla tu correo puede restablecer las contraseñas de casi todo lo demás."},
+          {"p":"¿Dónde conviene guardar el PIN de WhatsApp y los códigos de respaldo?","ops":["En un sobre en un lugar seguro del negocio, fuera del celular","En un mensaje enviado a sí mismos por WhatsApp","En una nota pegada en la pantalla de la caja"],"correcta":0,"explica":"Si pierdes o te roban el celular, lo que guardaste solo ahí se va con él."},
+          {"p":"Al revisar dispositivos conectados, Karla ve una sesión de Facebook abierta en una computadora de Tijuana que no conoce. ¿Qué hace?","ops":["Nada, puede ser un error de ubicación","Esperar a ver si publica algo raro","Cerrar esa sesión, cambiar la contraseña y confirmar que los dos pasos estén activos"],"correcta":2,"explica":"Una sesión que no reconoces se trata como intrusión hasta que se demuestre lo contrario."}
+        ]},
+        {"tipo":"completar","rotulo":"Completa","items":[
+          {"frase":"Los códigos de ___ sirven para entrar a tu cuenta si pierdes el celular.","resp":["respaldo","recuperación","recuperacion"]},
+          {"frase":"Una app ___ genera códigos que cambian cada 30 segundos.","resp":["autenticadora","de autenticación","de autenticacion"]},
+          {"frase":"Si veo una sesión que no reconozco, la ___ y cambio la contraseña.","resp":["cierro","cierra"]}
+        ]},
+        {"tipo":"comparar","titulo":"La regla de los códigos en el negocio","mal":"«Karla, pásame el código que te llegó, es para entrar a la app de entregas desde mi celular.» Karla lo manda por WhatsApp sin preguntar, porque es su tío.","bien":"Don Ramiro y Karla acuerdan que los códigos no se dictan ni se reenvían: quien necesita entrar lo hace con su propio acceso o se sientan juntos frente al mismo celular."},
+        {"tipo":"reflexion","rotulo":"Tu inventario","pregunta":"Haz tu propio inventario: escribe las cinco cuentas más importantes de tu negocio o de tu casa, quién las usa, si tienen dos pasos y cuál vas a proteger primero esta semana.","ayuda":"1. Correo principal: lo uso yo; dos pasos: no. Lo activo el…"},
+        {"tipo":"clave","items":["Protege primero el correo: es la llave de recuperación de casi todas tus cuentas.","Activa el PIN de WhatsApp y guarda los códigos de respaldo fuera del celular.","En un negocio, la regla es simple: los códigos no se comparten, ni con la familia."]}
+      ]
+    },
+    {
+      "modulo": 3,
+      "t": "La llamada a la estética y el plan de la familia",
+      "obj": "Responder con calma a una extorsión telefónica, saber a qué número llamar y armar un plan familiar concreto.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Lety tiene una estética en Toluca. Un martes a mediodía suena el teléfono del local: un hombre, con tono amenazante, dice que «tiene vigilado el negocio», que sabe que su hijo Emilio sale de la prepa a las dos y que, si no deposita $15,000 en la próxima hora, «algo le va a pasar». Le exige no colgar. Lety tiene una clienta en la silla y a su mamá, doña Chelo, de 72 años, en la recepción. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"La mayoría de estas llamadas son <b>extorsiones a distancia</b>: quien llama no tiene a nadie ni está cerca. Su única arma es el miedo y que no cuelgues, para que no puedas comprobar que tu familiar está bien. Por eso los datos que dan (un nombre, una escuela, un horario) suelen salir de redes sociales o de lo que tú misma les dices en la conversación.<br><br>Recuerda los números: <b>911</b> para emergencias o si crees que hay un riesgo real; <b>089</b> para denunciar de forma anónima, incluida la extorsión; <b>088</b> para la atención ciudadana de la Guardia Nacional. Si además hubo un cargo o una transferencia, tu banco y la <b>CONDUSEF</b> (al momento de escribir, 55 5340 0999) te orientan con la aclaración."},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"El hombre insiste en que Lety no cuelgue. ¿Qué es lo primero que le conviene hacer?","ops":["Seguir en la línea para no provocarlo","Colgar y llamar directamente a Emilio o a alguien que esté con él","Negociar una cantidad menor"],"correcta":1,"explica":"Mantenerte en la línea es parte del truco: te impide comprobar que tu familiar está bien."},
+          {"p":"Emilio no contesta porque está en clase. ¿Qué hace Lety?","ops":["Llamar a la escuela o a otro contacto que pueda confirmar que está bien, y reportar al 911 si sigue la duda","Depositar para no arriesgarse","Volver a marcar al extorsionador para pedirle una prueba"],"correcta":0,"explica":"Un segundo contacto de confianza (escuela, amigo, otro familiar) está en el plan familiar justo para este momento."},
+          {"p":"Ya confirmó que Emilio está bien. Para reportar la llamada sin dar su nombre, marca al…","ops":["088","089","911"],"correcta":1,"explica":"El 089 es la línea de denuncia anónima. El 911 es para emergencias en curso."},
+          {"p":"Al día siguiente llega otro mensaje: «Sabemos dónde está tu local». ¿Qué conviene?","ops":["Contestar para demostrar que no tiene miedo","Borrar el mensaje y olvidarlo","No contestar, guardar capturas con fecha y número, y reportarlo"],"correcta":2,"explica":"Las capturas sirven como evidencia si decides denunciar. Contestar solo les da más información."}
+        ]},
+        {"tipo":"tarjetas","rotulo":"Qué hacer y qué no, en voz alta","tarjetas":[
+          {"frente":"«No cuelgue o le va peor.»","reverso":"Cuelga. Tu prioridad es localizar a tu familiar por otro medio."},
+          {"frente":"«Dígame cómo se llama su hijo.»","reverso":"No des nombres ni datos: ellos buscan que tú los completes."},
+          {"frente":"«Compre tarjetas de tiempo aire y dícteme los números.»","reverso":"No compres ni dictes nada. Es una forma de pago que no se recupera."},
+          {"frente":"«Ya sabemos dónde vive.»","reverso":"Guarda el número y la hora, y repórtalo al 089 o al 911 si hay riesgo."},
+          {"frente":"«Soy tu nieto, abue, no le digas a nadie.»","reverso":"Pide la palabra clave familiar. Si no la sabe, cuelga y llama a tu nieto."}
+        ]},
+        {"tipo":"relacionar","rotulo":"¿A dónde acudo?","pares":[
+          ["Crees que hay un riesgo real en este momento","911"],
+          ["Quieres denunciar una extorsión sin dar tu nombre","089"],
+          ["Atención ciudadana de la Guardia Nacional","088"],
+          ["El banco no resolvió tu aclaración por un cargo","CONDUSEF"],
+          ["Quieres presentar una denuncia formal","Fiscalía o Ministerio Público"]
+        ]},
+        {"tipo":"comparar","titulo":"Doña Chelo contesta el teléfono","mal":"«¿Emilio? ¿Mi nieto Emilio, el de la prepa de la avenida? ¿Qué le pasó?» Sin querer, le confirmó al extorsionador el nombre y la escuela.","bien":"«¿Quién habla? … No doy información por teléfono.» Cuelga, avisa a Lety y juntas siguen el plan: localizar a Emilio, guardar el número y reportar."},
+        {"tipo":"reflexion","rotulo":"Tu plan familiar","pregunta":"Escribe el plan de tu familia para una llamada de extorsión: quién llama a quién, un segundo contacto por cada persona (escuela, trabajo, amigo), dónde está anotado y qué número marcan si no localizan a alguien.","ayuda":"Si llaman diciendo que tienen a ___, yo cuelgo y marco a ___. Si no contesta, llamo a ___…"},
+        {"tipo":"plantilla","rotulo":"Tarjeta para la recepción del negocio","texto":"SI LLAMAN PARA AMENAZAR O PEDIR DINERO\n1. No des nombres, horarios ni datos de nadie.\n2. Cuelga, aunque insistan.\n3. Avisa a [nombre del responsable] y localicen a la persona mencionada: [teléfono] / segundo contacto: [teléfono].\n4. Anota número, hora y lo que dijeron. No borres mensajes.\n5. Riesgo real: 911. Denuncia anónima: 089.\nPalabra clave de la familia: la sabes tú, no la escribas aquí.","nota":"Cópiala, adáptala y pégala junto al teléfono del negocio o de la casa."},
+        {"tipo":"clave","items":["En una extorsión telefónica, colgar y localizar a tu familiar por otro medio es lo primero.","911 para riesgo real, 089 para denuncia anónima, 088 para la Guardia Nacional.","Un plan familiar escrito, con segundos contactos y palabra clave, quita el poder al miedo."]}
+      ]
+    }
+  ]
+}

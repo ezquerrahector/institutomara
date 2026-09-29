@@ -1,0 +1,95 @@
+{
+  "id": "c-canva",
+  "extras": {},
+  "practicas": [
+    {
+      "modulo": 0,
+      "t": "Reto de jerarquía y contraste: la paletería",
+      "obj": "Diagnosticar y corregir la jerarquía y el contraste de una publicación real antes de abrir Canva.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Don Aurelio tiene una paletería en Morelia y quiere anunciar su promoción de verano: <b>3 paletas de agua por $50</b>, de lunes a jueves, de 4 a 8 de la tarde. Su nieta le hizo esta publicación:<br><br>• Fondo: foto de muchas paletas de colores, con mucho detalle.<br>• Texto encima, todo en blanco y del mismo tamaño: «Paletería El Nevado · Promoción · 3 paletas de agua por $50 · Lunes a jueves · 4 a 8 pm · Calle Abasolo 214 · Síguenos».<br>• Abajo, un sticker de sol, uno de estrellas y un marco con brillos.<br><br>Los clientes le preguntan por WhatsApp «¿cuánto cuesta?» aunque el precio está en la imagen. Tu reto: encontrar por qué y proponer la versión corregida. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"Cuando alguien ve tu publicación, le dedica uno o dos segundos. En ese tiempo su ojo necesita saber <b>qué mirar primero</b>. Eso es la <b>jerarquía</b>: decidir un orden (lo más importante, lo segundo, el detalle) y marcarlo con tamaño, grosor, color y espacio.<br><br>El <b>contraste</b> es la diferencia entre el texto y lo que tiene detrás. Texto claro sobre una foto con muchos colores casi siempre pierde. Se arregla con un recuadro sólido o semitransparente detrás del texto, con una foto más sencilla o moviendo el texto a una zona lisa de la imagen.<br><br>Una prueba rápida: aleja el celular a la distancia del brazo o entrecierra los ojos. Lo que alcances a leer es lo que tu cliente leerá."},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"¿Por qué los clientes preguntan el precio si ya está en la imagen?","ops":["Porque el precio tiene el mismo tamaño que todo lo demás y se pierde sobre la foto","Porque a la gente no le gusta leer","Porque falta un sticker que señale el precio"],"correcta":0,"explica":"Sin jerarquía ni contraste, el dato clave se ve igual que la dirección o el «Síguenos»."},
+          {"p":"En esta promoción, ¿qué debería verse primero?","ops":["El nombre de la paletería","La dirección","«3 paletas de agua por $50»"],"correcta":2,"explica":"El nombre ya aparece en el perfil. Lo que mueve a comprar es la oferta; nombre y dirección pueden ir más pequeños."},
+          {"p":"¿Cuál es la mejor forma de mejorar el contraste del texto blanco?","ops":["Ponerle un contorno de tres colores","Colocar un recuadro sólido oscuro detrás del bloque de texto o usar una foto con una zona lisa","Hacer el texto más delgado para que se vea elegante"],"correcta":1,"explica":"Un fondo liso detrás del texto resuelve la lectura sin llenar el diseño de efectos."},
+          {"p":"¿Qué haces con el sol, las estrellas y el marco con brillos?","ops":["Los quitas o dejas uno solo si ayuda al mensaje","Los agrandas para que llamen más la atención","Agregas dos más para equilibrar"],"correcta":0,"explica":"El espacio vacío también comunica: le da aire a lo importante."}
+        ]},
+        {"tipo":"relacionar","rotulo":"Relaciona el problema con la solución","pares":[
+          ["Todo el texto del mismo tamaño","Agrandar la oferta y reducir lo secundario"],
+          ["Texto blanco sobre una foto con mucho detalle","Recuadro sólido detrás del texto"],
+          ["Siete datos compitiendo en la imagen","Dejar tres datos y mover el resto a la descripción"],
+          ["Stickers y marcos por todos lados","Quitar adornos y dejar espacio libre"],
+          ["Dirección pegada a la orilla","Alejar los textos del borde"]
+        ]},
+        {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+          {"frase":"Primero la oferta después el horario","es":"Orden de lectura de la promoción"},
+          {"frase":"El espacio vacío le da aire al mensaje","es":"Por qué quitar adornos"}
+        ]},
+        {"tipo":"comparar","titulo":"La promoción de Don Aurelio","mal":"Foto recargada de fondo, siete líneas de texto blanco del mismo tamaño, tres stickers y la dirección pegada a la orilla.","bien":"Una foto de tres paletas sobre fondo liso a un lado; al otro, un recuadro azul marino con «3 × $50» enorme, debajo «Paletas de agua · Lun a jue, 4 a 8 pm» más pequeño y hasta abajo, con margen, «Abasolo 214»."},
+        {"tipo":"reflexion","rotulo":"Tu diagnóstico","pregunta":"Toma la última publicación de tu negocio (o de uno que conozcas). Escribe en orden qué debería verse primero, segundo y tercero, y qué cambiarías de tamaño, color o fondo para lograrlo.","ayuda":"Primero debería verse… hoy se pierde porque… Lo cambiaría así…"},
+        {"tipo":"clave","items":["Jerarquía: decide qué se lee primero y márcalo con tamaño, grosor y espacio.","Contraste: si el texto está sobre una foto con detalle, ponle un fondo liso detrás.","Menos datos y menos adornos hacen que el dato importante sí se vea."]}
+      ]
+    },
+    {
+      "modulo": 1,
+      "t": "Reto de tamaños: una promo, cuatro formatos",
+      "obj": "Elegir el tamaño correcto para cada lugar de publicación y adaptar un mismo diseño sin que se corte nada.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Ximena tiene una florería en Querétaro y prepara la campaña del Día de las Madres: <b>arreglo de 12 rosas a $650 con entrega a domicilio</b>. Necesita la misma promoción para el feed de Instagram, el feed de Facebook, una historia y su estado de WhatsApp. Su error del año pasado: hizo todo en un solo tamaño y en la historia se cortó el teléfono. Tu reto: planear las medidas y adaptar el diseño. Calcula de 30 a 40 minutos."},
+        {"tipo":"tabla","titulo":"Las cuatro medidas del reto (en píxeles)","encabezados":["Medida","Proporción","Forma","Dónde la usa Ximena"],"filas":[["1080 × 1080","1:1","Cuadrada","Feed de Facebook y respaldo para Instagram"],["1080 × 1350","4:5","Vertical corta","Feed de Instagram (ocupa más pantalla que la cuadrada)"],["1080 × 1440","3:4","Vertical intermedia","Feed de Instagram, pensando en cómo se ve la cuadrícula del perfil"],["1080 × 1920","9:16","Vertical completa","Historia y estado de WhatsApp"]],"nota":"Las redes cambian sus recomendaciones de vez en cuando; revisa la medida vigente antes de una campaña grande."},
+        {"tipo":"texto","texto":"Adaptar no es estirar. Si jalas un diseño cuadrado hasta hacerlo vertical, las fotos y las letras se deforman. Lo correcto es <b>crear un diseño nuevo con la medida correcta</b> y reacomodar los mismos elementos.<br><br>Una idea práctica: trabaja con una <b>zona segura</b>. Pon lo indispensable (oferta, precio y contacto) en el centro del diseño, lejos de las orillas. En las historias y estados, la parte de arriba y la de abajo quedan tapadas por el nombre, la barra de respuesta y los botones de la app."},
+        {"tipo":"pasos","rotulo":"Adapta la promo en Canva (versión gratuita)","pasos":["Termina primero la versión cuadrada de <b>1080 × 1080</b>, con tu foto, la oferta, el precio y el WhatsApp.","En la pantalla de inicio, crea un diseño nuevo con <b>tamaño personalizado</b> y escribe el ancho y el alto de la siguiente medida (por ejemplo, 1080 × 1350). Así se llama la opción al momento de escribir; si no la ves, busca la plantilla por su nombre, como «Historia de Instagram».","Regresa al diseño cuadrado, selecciona todos los elementos, <b>cópialos</b> y <b>pégalos</b> en el diseño nuevo.","<b>Reacomoda</b>: agranda la foto para llenar el espacio extra y sube o baja los textos. No estires los elementos desde un solo lado.","Repite con <b>1080 × 1440</b> y con <b>1080 × 1920</b>. En la de 9:16 deja libre la franja de arriba y la de abajo.","Revisa las cuatro en tu celular y confirma que el precio y el teléfono se leen completos en todas."]},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"¿Qué medida usa Ximena para su estado de WhatsApp?","ops":["1080 × 1350","1080 × 1080","1080 × 1920"],"correcta":2,"explica":"Historias y estados son verticales completos: 9:16."},
+          {"p":"Para que la promo ocupe más pantalla en el feed de Instagram que una cuadrada, le conviene…","ops":["Una vertical de 4:5 o 3:4","Una horizontal","Cualquiera: todas ocupan lo mismo"],"correcta":0,"explica":"Las verticales ocupan más alto en la pantalla del celular que la cuadrada."},
+          {"p":"En la versión de historia, ¿dónde pone el teléfono para WhatsApp?","ops":["Hasta abajo, pegado a la orilla, para que no estorbe","En la zona central, con margen suficiente arriba y abajo","Hasta arriba, junto al nombre del perfil"],"correcta":1,"explica":"Arriba y abajo la app pone su propia información y botones que pueden taparlo."}
+        ]},
+        {"tipo":"relacionar","rotulo":"Relaciona la medida con su proporción","pares":[
+          ["1080 × 1080","1:1"],
+          ["1080 × 1350","4:5"],
+          ["1080 × 1440","3:4"],
+          ["1080 × 1920","9:16"]
+        ]},
+        {"tipo":"completar","rotulo":"Completa","items":[
+          {"frase":"Una historia de 9:16 mide 1080 × ___ píxeles.","resp":["1920"]},
+          {"frase":"La publicación vertical de 4:5 mide 1080 × ___ píxeles.","resp":["1350"]},
+          {"frase":"Lo indispensable va en la zona ___, lejos de las orillas.","resp":["segura","central","centro"]}
+        ]},
+        {"tipo":"comparar","titulo":"Adaptar la promo a historia","mal":"Ximena toma la imagen cuadrada y la estira hacia arriba y hacia abajo: las rosas se ven alargadas, la letra se deforma y el WhatsApp queda debajo de la barra de respuesta.","bien":"Crea un diseño nuevo de 1080 × 1920, pega los elementos, pone la foto grande arriba del centro, la oferta en medio y el WhatsApp con margen amplio sobre la franja inferior."},
+        {"tipo":"reflexion","rotulo":"Tu plan de medidas","pregunta":"Escribe en qué lugares publicas tu negocio (feed, historias, estados, impresos) y qué medida usarás para cada uno en tu próxima promoción. Marca cuál harás primero para después adaptar las demás.","ayuda":"Feed de Instagram: 1080 × … Estado de WhatsApp: … Empiezo por…"},
+        {"tipo":"plantilla","rotulo":"Lista de revisión por formato","texto":"Promoción: [nombre]\n[ ] 1080 × 1080 (1:1): oferta, precio y contacto legibles\n[ ] 1080 × 1350 (4:5): foto reacomodada, nada estirado\n[ ] 1080 × 1440 (3:4): revisado cómo se ve en la cuadrícula del perfil\n[ ] 1080 × 1920 (9:16): franja superior e inferior libres\n[ ] Revisé las cuatro en mi celular antes de publicar","nota":"Cópiala y adáptala."},
+        {"tipo":"clave","items":["Cada lugar de publicación tiene su medida: 1:1, 4:5, 3:4 o 9:16.","Adaptar es crear un diseño nuevo y reacomodar, nunca estirar.","Lo indispensable va al centro, lejos de las orillas."]}
+      ]
+    },
+    {
+      "modulo": 2,
+      "t": "Reto de pieza completa: la estética canina",
+      "obj": "Diseñar, revisar y corregir una pieza de principio a fin aplicando jerarquía, contraste, tamaño y revisión antes de publicar.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Fer abrió una estética canina en Mérida y quiere un carrusel de 4 láminas en formato 1080 × 1350 para explicar su paquete de baño y corte: <b>$380 perro chico, $480 mediano</b>, con cita por WhatsApp. Ya tiene su paleta (verde bosque, crema y un acento amarillo) y fotos reales de perros atendidos con permiso de sus dueños. Tu reto: planear las láminas, detectar errores en su primer borrador y dejarlo listo para publicar. Calcula de 30 a 40 minutos."},
+        {"tipo":"tabla","titulo":"El primer borrador de Fer","encabezados":["Lámina","Lo que puso","Lo que falla"],"filas":[["1. Portada","«Estética canina Patitas Felices, servicios profesionales para tu mascota con amor y dedicación desde 2025»","Frase larga que no promete nada concreto"],["2. Qué incluye","Baño, corte, uñas y oídos, en letra de 18 puntos gris claro sobre fondo crema","Poco contraste y letra chica"],["3. Precios","Precios en verde bosque, del mismo tamaño que el texto","El dato clave no destaca"],["4. Cierre","«Síguenos»","No dice cómo agendar"]]},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"¿Cuál portada engancha mejor?","ops":["«Patitas Felices: calidad y amor»","«Baño y corte para tu perro desde $380 en Mérida»","«Bienvenidos a nuestra página»"],"correcta":1,"explica":"Una portada clara dice qué ofreces y un dato que interese, en pocas palabras."},
+          {"p":"En la lámina de precios, ¿qué color le das a las cantidades?","ops":["El mismo verde del resto del texto","Un color distinto en cada precio","El acento amarillo sobre fondo verde bosque, con buen tamaño"],"correcta":2,"explica":"El acento se reserva para lo que debe llamar la atención; sobre fondo oscuro, el amarillo contrasta bien."},
+          {"p":"Antes de publicar, ¿qué revisa Fer número por número?","ops":["Precios y teléfono de WhatsApp","Solo los colores","El nombre de las fuentes"],"correcta":0,"explica":"Un número mal escrito cuesta clientes; los colores se notan a simple vista."}
+        ]},
+        {"tipo":"tarjetas","rotulo":"Pregúntate antes de publicar","tarjetas":[
+          {"frente":"¿Qué se lee primero en cada lámina?","reverso":"Debe ser la idea principal de esa lámina, no el logo ni un adorno."},
+          {"frente":"¿Se lee a la distancia del brazo?","reverso":"Si tienes que acercar el celular, sube el tamaño o el contraste."},
+          {"frente":"¿Todas las láminas se ven de la misma familia?","reverso":"Mismos colores, misma letra y el número de lámina en la misma esquina."},
+          {"frente":"¿Las fotos son tuyas y con permiso?","reverso":"Usa fotos reales de tu trabajo y pide permiso a los dueños de las mascotas o a las personas que aparecen."},
+          {"frente":"¿La última lámina dice qué hacer?","reverso":"Una llamada a la acción concreta con el número de WhatsApp completo."}
+        ]},
+        {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+          {"frase":"Agenda tu cita por WhatsApp hoy","es":"Llamada a la acción de la última lámina"},
+          {"frase":"Una idea clara en cada lámina","es":"Regla del carrusel"}
+        ]},
+        {"tipo":"comparar","titulo":"La lámina 2, antes y después","mal":"Cuatro servicios en un párrafo de letra gris claro de 18 puntos sobre fondo crema, pegado a la orilla.","bien":"Título «Qué incluye» grande en verde bosque; abajo, cuatro renglones con un ícono sencillo cada uno (baño, corte, uñas, oídos) en letra oscura de buen tamaño y con margen amplio."},
+        {"tipo":"reflexion","rotulo":"Tu carrusel","pregunta":"Planea un carrusel de 4 láminas para un producto o servicio tuyo: escribe el texto exacto de cada lámina, qué dato va con el color de acento y cuál es la llamada a la acción final.","ayuda":"Lámina 1 (portada): … Lámina 2: … Lámina 3 (acento en…): … Lámina 4: Agenda o pide por…"},
+        {"tipo":"plantilla","rotulo":"Guion de carrusel de 4 láminas","texto":"Formato: 1080 × 1350 (4:5)\nLámina 1 · Portada: [qué ofreces + dato que interese]\nLámina 2 · Qué incluye o cómo funciona: [3 a 4 renglones cortos]\nLámina 3 · Precio o beneficio clave: [dato en color de acento]\nLámina 4 · Acción: [Pide / Agenda por WhatsApp] [número completo]\nRevisión: [ ] precios [ ] teléfono [ ] ortografía [ ] fotos propias o con permiso","nota":"Cópiala y adáptala."},
+        {"tipo":"clave","items":["Cada lámina tiene una sola idea y un orden de lectura claro.","El color de acento se reserva para el dato que vende.","Antes de publicar: legibilidad, precios, teléfono y permisos de las fotos."]}
+      ]
+    }
+  ]
+}

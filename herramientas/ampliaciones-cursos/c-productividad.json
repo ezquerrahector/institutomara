@@ -1,0 +1,98 @@
+{
+  "id": "c-productividad",
+  "extras": {},
+  "practicas": [
+    {
+      "modulo": 0,
+      "t": "El día de la papelería: diagnóstico con números",
+      "obj": "Analizar el registro de un día real de trabajo, calcular a dónde se va el tiempo y elegir el primer cambio.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Doña Rosa tiene una papelería frente a una secundaria en Aguascalientes. Atiende el mostrador, imprime tareas, contesta pedidos por WhatsApp y surte con su proveedor. Siente que «no le alcanza el día» y cierra tarde casi siempre. Su hija le ayudó a anotar, durante un martes normal, cada actividad con sus minutos. Tu reto: convertir ese registro en un diagnóstico y proponer el primer cambio. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"Un registro sirve cuando lo conviertes en <b>pocas cifras que te obligan a decidir</b>. No se trata de juzgar a Doña Rosa, sino de separar el tiempo que genera ventas (atender clientes, imprimir) del que se va en cosas que se pueden reducir: buscar lo que no está en su lugar, revisar mensajes a cada rato o salir varias veces al proveedor.<br><br>Fíjate en dos categorías que suelen esconderse: <b>desorden</b> (minutos buscando cosas) y <b>mensajes</b> (pedidos y conversaciones personales mezclados). Ninguna parece grave por separado, pero juntas pueden ser casi un turno a la semana."},
+        {"tipo":"excel","rotulo":"El martes de Doña Rosa","datos":[
+          ["Actividad","Categoría","Minutos","","Resumen","Minutos"],
+          ["Atender mostrador","Clientes",240,"","Clientes",360],
+          ["Contestar WhatsApp de pedidos","Mensajes",95,"","Mensajes",""],
+          ["Buscar productos en la bodega","Desorden",50,"","Desorden",""],
+          ["Ir al proveedor","Traslados",70,"","Total del día",""],
+          ["Revisar redes sin objetivo","Distracción",45,"","% en mensajes",""],
+          ["Imprimir y engargolar tareas","Clientes",120,"","¿Qué atacar primero?",""],
+          ["Contestar WhatsApp personal","Mensajes",40,"","",""],
+          ["Buscar tickets y notas","Desorden",25,"","",""]
+        ],"retos":[
+          {"celda":"F3","formula":"=SUMAR.SI(B2:B9,E3,C2:C9)","esperado":135,"texto":"<b>F3</b>: suma los minutos de la categoría Mensajes. F2 ya tiene el ejemplo de Clientes.","requiere":"SUMAR.SI(","pista":"=SUMAR.SI(B2:B9,E3,C2:C9)"},
+          {"celda":"F4","formula":"=SUMAR.SI(B2:B9,E4,C2:C9)","esperado":75,"texto":"<b>F4</b>: suma los minutos de la categoría Desorden.","requiere":"SUMAR.SI(","pista":"=SUMAR.SI(B2:B9,E4,C2:C9)"},
+          {"celda":"F5","formula":"=SUMA(C2:C9)","esperado":685,"texto":"<b>F5</b>: total de minutos registrados en el día.","requiere":"SUMA(","pista":"=SUMA(C2:C9)"},
+          {"celda":"F6","formula":"=REDONDEAR(F3/F5*100,1)","esperado":19.7,"texto":"<b>F6</b>: porcentaje del día que se fue en mensajes, redondeado a un decimal.","requiere":"REDONDEAR(","pista":"=REDONDEAR(F3/F5*100,1)"},
+          {"celda":"F7","formula":"=SI(F4>60,\"Ordenar bodega\",\"Sin cambio\")","esperado":"Ordenar bodega","texto":"<b>F7</b>: si el desorden pasa de 60 minutos, escribe «Ordenar bodega»; si no, «Sin cambio».","requiere":"SI(","pista":"=SI(F4>60,\"Ordenar bodega\",\"Sin cambio\")"}
+        ]},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"Con los resultados, ¿qué afirmación es correcta?","ops":["Casi una quinta parte del día se va en mensajes","Los traslados son lo que más tiempo le quita","El desorden no llega a una hora"],"correcta":0,"explica":"135 de 685 minutos son cerca del 20 %. El desorden suma 75 minutos, más de una hora."},
+          {"p":"¿Qué cambio concreto ataca el desorden?","ops":["Llegar una hora más temprano","Dedicar una tarde a acomodar la bodega por tipo de producto y etiquetar anaqueles","Comprar una segunda impresora"],"correcta":1,"explica":"Llegar antes solo alarga el día; ordenar elimina la causa de los minutos perdidos buscando."},
+          {"p":"Para los mensajes, ¿qué le recomiendas?","ops":["Contestar cada mensaje en cuanto llega","Dejar de usar WhatsApp para pedidos","Revisar pedidos en horarios fijos, dejar un mensaje automático y separar lo personal para después del cierre"],"correcta":2,"explica":"Agrupar mensajes en horarios fijos reduce las interrupciones sin perder ventas."}
+        ]},
+        {"tipo":"completar","rotulo":"Completa","items":[
+          {"frase":"Para sumar solo los minutos de una categoría uso la función ___.","resp":["SUMAR.SI","sumar.si"]},
+          {"frase":"Los minutos buscando cosas fuera de su lugar entran en la categoría ___.","resp":["Desorden","desorden"]},
+          {"frase":"Revisar mensajes en horarios fijos reduce las ___.","resp":["interrupciones","distracciones"]}
+        ]},
+        {"tipo":"comparar","titulo":"Cómo presenta el diagnóstico la hija de Doña Rosa","mal":"«Mamá, pierdes mucho tiempo en el celular y la bodega es un desastre.»","bien":"«Mamá, el martes se fueron 135 minutos en mensajes y 75 buscando cosas. Si ordenamos la bodega el domingo y contestas pedidos a las 11, 2 y 6, podrías cerrar a tu hora.»"},
+        {"tipo":"reflexion","rotulo":"Tu primer cambio","pregunta":"Con tu propio registro (o con un día que recuerdes bien), escribe las dos categorías que más tiempo te quitan sin generar resultados, cuántos minutos suman y un cambio concreto que harás esta semana.","ayuda":"Categoría 1: … minutos. Categoría 2: … minutos. Esta semana voy a…"},
+        {"tipo":"clave","items":["Un registro vale cuando lo resumes en pocas cifras que te obligan a decidir.","Los minutos de desorden y de mensajes parecen pocos, pero juntos pesan mucho.","Elige un solo cambio concreto y mide de nuevo en una semana."]}
+      ]
+    },
+    {
+      "modulo": 1,
+      "t": "Abril del contador: priorizar en temporada alta",
+      "obj": "Clasificar pendientes con la matriz de Eisenhower y armar un día con bloques de tiempo en una temporada de mucha carga.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Arturo es contador independiente en Celaya. En abril sus clientes personas físicas presentan su declaración anual y todos quieren que sea «ya». Además tiene dos hijos, da una clase los sábados y es tesorero de la mesa directiva de su colonia. Este lunes su lista tiene doce pendientes y siente que no avanzará en ninguno. Tu reto: ayudarle a priorizar y a acomodar su día. Calcula de 30 a 40 minutos."},
+        {"tipo":"tabla","titulo":"Algunos pendientes de Arturo","encabezados":["Pendiente","¿Urgente?","¿Importante?"],"filas":[["Declaración anual de un cliente con fecha límite esta semana","Sí","Sí"],["Preparar el material de su clase del sábado","No","Sí"],["Contestar un grupo de WhatsApp de la colonia sobre el color de la barda","Sí","No"],["Revisar videos de ofertas de laptops","No","No"],["Actualizar su lista de precios para el resto del año","No","Sí"],["Recoger constancias en papel con un cliente que no sabe enviarlas por correo","Sí","No"]],"nota":"Las fechas del SAT pueden cambiar; verifica siempre el calendario vigente en el portal oficial."},
+        {"tipo":"relacionar","rotulo":"Relaciona el pendiente con la acción","pares":[
+          ["Declaración de un cliente que vence esta semana","Hacer ya"],
+          ["Preparar la clase del sábado","Agendar"],
+          ["Recoger constancias en papel","Delegar"],
+          ["Revisar videos de ofertas de laptops","Eliminar"]
+        ]},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"El grupo de la colonia exige respuesta sobre el color de la barda. ¿Qué hace Arturo?","ops":["Lo resuelve de inmediato porque es urgente","Delega o responde en su horario de mensajes con una frase corta","Sale del grupo sin avisar"],"correcta":1,"explica":"Es urgente para otros pero no importante para sus metas: se delega o se atiende en un horario acotado."},
+          {"p":"¿Cuándo conviene poner su bloque de trabajo profundo para las declaraciones?","ops":["En la hora en la que suele tener más energía, con el celular en silencio","Entre mensaje y mensaje, cuando se pueda","Al final del día, cuando ya acabó todo lo demás"],"correcta":0,"explica":"Las tareas que requieren concentración van en el bloque de mayor energía, protegido de interrupciones."},
+          {"p":"Un cliente nuevo le escribe el martes: «¿Me haces la anual? La tengo para mañana». Arturo ya tiene el día lleno. ¿Qué es lo más sano?","ops":["Aceptar y desvelarse","Ignorar el mensaje","Decir con claridad qué fecha sí puede ofrecer o recomendar a otro colega"],"correcta":2,"explica":"Decir que no, o que sí con condiciones, protege a los clientes que ya se comprometió a atender."},
+          {"p":"Actualizar su lista de precios no es urgente. ¿Qué pasa si nunca la agenda?","ops":["Nada, porque no es urgente","Sigue cobrando precios viejos todo el año sin darse cuenta","Se actualiza sola"],"correcta":1,"explica":"Lo importante y no urgente es lo que más se posterga y lo que más cuesta a largo plazo."}
+        ]},
+        {"tipo":"plantilla","rotulo":"El lunes de Arturo en bloques","texto":"7:30 – 8:00  Revisar lista y elegir 3 prioridades\n8:00 – 10:30  Bloque profundo: [declaración con fecha límite]\n10:30 – 10:45  Descanso\n10:45 – 11:15  Mensajes y llamadas (todo junto)\n11:15 – 13:00  Bloque: [segunda prioridad]\n13:00 – 14:00  Comida\n14:00 – 15:00  Pendientes cortos y lo delegado\n15:00 – 15:30  Espacio libre para imprevistos\n15:30 – 16:00  Mensajes y cierre: anotar pendientes de mañana","nota":"Cópiala y adáptala a tus horarios reales."},
+        {"tipo":"comparar","titulo":"El inicio del día","mal":"Arturo abre el correo y el WhatsApp a las 7:30 «para ver qué hay». A las 10 ha contestado veinte mensajes y no ha abierto la declaración que vence.","bien":"Arturo revisa su lista, elige tres prioridades y a las 8 empieza la declaración con el celular en silencio. A las 10:45 contesta todo junto."},
+        {"tipo":"reflexion","rotulo":"Tu temporada alta","pregunta":"Piensa en la época del año con más carga en tu trabajo o en tu casa. Escribe qué pendientes clasificarías como «Delegar» o «Eliminar» durante esas semanas y a quién o cómo los delegarías.","ayuda":"Mi temporada alta es… Durante esas semanas voy a delegar… y voy a dejar de…"},
+        {"tipo":"clave","items":["En temporada alta, lo urgente de otros no debe comerse lo importante tuyo.","El trabajo profundo va en tu mejor horario, con el celular en silencio.","Decir que no, o que sí con fecha, también es una forma de cumplir."]}
+      ]
+    },
+    {
+      "modulo": 3,
+      "t": "El taller que se organizó en 15 minutos",
+      "obj": "Aplicar una junta breve con acuerdos claros y una revisión semanal en un equipo pequeño.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Beto tiene un taller mecánico en Monterrey con tres mecánicos y una recepcionista, Nayeli. Los lunes hacen una «junta» que dura una hora, empieza tarde y termina sin acuerdos. Los coches se entregan con retraso porque nadie sabe qué refacción se pidió y los mecánicos se quejan de que siempre salen tarde. Tu reto: convertir esa junta en una de 15 minutos y agregar una revisión semanal de Beto. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"Una junta corta funciona si tiene <b>siempre la misma estructura</b>: qué se entrega esta semana, qué está atorado y quién hace qué y para cuándo. Todo lo demás (quejas largas, temas de una sola persona) se atiende aparte.<br><br>La <b>revisión semanal</b> es la cita de Beto consigo mismo: 30 minutos el viernes para ver qué se cumplió, qué quedó pendiente y cuáles son las tres prioridades de la semana siguiente. Es lo que evita que el lunes empiece a ciegas."},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"Uno de los mecánicos empieza a contar un problema largo con un cliente. ¿Qué hace Beto?","ops":["Dejar que termine aunque la junta se alargue","Anotarlo como tema pendiente y verlo con él al terminar","Pedirle que no vuelva a traer problemas a la junta"],"correcta":1,"explica":"El tema no se ignora, se mueve a otro momento para que la junta siga siendo breve."},
+          {"p":"¿Cuál de estos acuerdos está completo?","ops":["«Hay que pedir las balatas»","«Alguien revise lo de las balatas»","«Nayeli pide las balatas del sedán gris hoy antes de las 12 y avisa en el grupo»"],"correcta":2,"explica":"Un acuerdo claro dice qué, quién y para cuándo."},
+          {"p":"¿Qué revisa Beto en su revisión semanal del viernes?","ops":["Lo que se cumplió, lo pendiente y las tres prioridades de la siguiente semana","Solo las ventas","Los mensajes que no contestó"],"correcta":0,"explica":"La revisión semanal cierra la semana y prepara la siguiente."}
+        ]},
+        {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+          {"frase":"Qué se entrega esta semana","es":"Primera pregunta de la junta"},
+          {"frase":"Quién hace qué y para cuándo","es":"Cómo se cierra cada acuerdo"}
+        ]},
+        {"tipo":"tarjetas","rotulo":"Reglas de la junta de 15 minutos","tarjetas":[
+          {"frente":"¿A qué hora empieza?","reverso":"A la hora exacta, aunque falte alguien. Se hace de pie, junto al pizarrón."},
+          {"frente":"¿Qué se ve?","reverso":"Entregas de la semana, lo que está atorado y los acuerdos."},
+          {"frente":"¿Dónde quedan los acuerdos?","reverso":"En el pizarrón del taller y en el grupo de trabajo, con nombre y fecha."},
+          {"frente":"¿Qué pasa con los temas largos?","reverso":"Se anotan y se ven después, solo con quien corresponde."}
+        ]},
+        {"tipo":"comparar","titulo":"El lunes en el taller","mal":"Empiezan a las 9:20, hablan de todo y a las 10:15 se levantan sin saber quién pide la refacción del sedán gris ni cuándo se entrega la camioneta.","bien":"A las 9 en punto, de pie junto al pizarrón: cinco entregas de la semana, dos pendientes atorados y cuatro acuerdos con nombre y hora. A las 9:15 cada quien está en su bahía."},
+        {"tipo":"reflexion","rotulo":"Tu junta o tu revisión","pregunta":"Elige una junta que tengas (en el trabajo, en la escuela de tus hijos o en tu colonia) y escribe cómo la harías en 15 minutos: las tres preguntas fijas, quién anota y dónde quedan los acuerdos. Si no tienes juntas, escribe el día y la hora de tu revisión semanal y sus tres preguntas.","ayuda":"Mi junta de 15 minutos: 1) … 2) … 3) … Anota: … Los acuerdos quedan en…"},
+        {"tipo":"plantilla","rotulo":"Revisión semanal de 30 minutos","texto":"Viernes [hora]\n1. Lo que sí se cumplió esta semana: [ ]\n2. Lo que quedó pendiente y por qué: [ ]\n3. Pendientes que puedo delegar o eliminar: [ ]\n4. Mis 3 prioridades de la próxima semana: [ ] [ ] [ ]\n5. Citas y fechas límite que vienen: [ ]","nota":"Cópiala y adáptala; ponla como evento repetido en tu calendario."},
+        {"tipo":"clave","items":["Una junta corta tiene siempre la misma estructura y termina con acuerdos: qué, quién y cuándo.","Los temas largos se anotan y se atienden aparte.","La revisión semanal cierra la semana y te deja listas tus tres prioridades."]}
+      ]
+    }
+  ]
+}

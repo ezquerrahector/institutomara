@@ -1,0 +1,200 @@
+{
+ "id": "c-office",
+ "extras": {
+  "c-office-m1-l2": [
+   {"tipo":"completar","rotulo":"Completa el atajo","items":[
+    {"frase":"Para cambiar entre las ventanas abiertas mantienes Alt y presionas ___.","resp":["Tab","tab","TAB"]},
+    {"frase":"Para esconder todo y ver el escritorio usas Windows + ___.","resp":["D","d"]},
+    {"frase":"Windows + flecha a la ___ acomoda la ventana en la mitad izquierda de la pantalla.","resp":["izquierda","Izquierda"]},
+    {"frase":"El botón que esconde una ventana en la barra de tareas sin cerrarla se llama ___.","resp":["Minimizar","minimizar"]}]},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"Estás capturando en Excel los datos de una factura que te llegó por correo y cambias de ventana a cada rato. ¿Qué te conviene?","ops":["Cerrar el correo cada vez que terminas un dato","Poner el correo a un lado y el Excel al otro con Windows + flechas","Imprimir la factura"],"correcta":1,"explica":"Con las dos ventanas lado a lado copias sin perder el lugar."},
+    {"p":"Cerraste una ventana de Word y apareció «¿Desea guardar los cambios?». Todavía necesitas lo que escribiste. ¿Qué eliges?","ops":["No guardar","Cancelar y revisar","Guardar"],"correcta":2,"explica":"Guardar conserva los cambios. Si dudas, Cancelar te regresa al documento sin perder nada."}]}
+  ],
+  "c-office-m2-l3": [
+   {"tipo":"tarjetas","rotulo":"Conceptos de la nube (toca para ver)","tarjetas":[
+    {"frente":"Sincronizar","reverso":"La carpeta de tu computadora y la de la nube se mantienen iguales: lo que cambias en una aparece en la otra cuando hay internet."},
+    {"frente":"Historial de versiones","reverso":"OneDrive y Google Drive guardan versiones anteriores de muchos archivos. Si alguien borró una parte, puedes regresar a una versión de ayer."},
+    {"frente":"Compartir con correos específicos","reverso":"Solo las personas que escribes pueden abrir el archivo, aunque el enlace se reenvíe a otras."},
+    {"frente":"Quitar acceso","reverso":"Cuando alguien deja el proyecto o la empresa, entra a Compartir y elimina su permiso."}]},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"Un compañero borró por error media hoja del Excel compartido de inventario. ¿Qué intentas primero?","ops":["Volver a capturar todo desde cero","Regresar a una versión anterior desde el historial de versiones","Borrar el archivo y crear otro"],"correcta":1,"explica":"El historial de versiones existe justo para esto."},
+    {"p":"Una practicante terminó su servicio y todavía tiene permiso de Editor en la carpeta de clientes. ¿Qué haces?","ops":["Le quitas el acceso","Lo dejas por si regresa","Le cambias el permiso a Comentarista"],"correcta":0,"explica":"Quien ya no participa no debe conservar acceso a datos de la empresa."}]}
+  ],
+  "c-office-m3-l1": [
+   {"tipo":"completar","rotulo":"Atajos de Word en español","items":[
+    {"frase":"Para poner en negrita el texto seleccionado usas Ctrl + ___.","resp":["N","n"]},
+    {"frase":"Para poner en cursiva usas Ctrl + ___.","resp":["K","k"]},
+    {"frase":"Para subrayar usas Ctrl + ___.","resp":["S","s"]},
+    {"frase":"Para guardar el documento usas Ctrl + ___.","resp":["G","g"]}]},
+   {"tipo":"comparar","titulo":"El mismo aviso","mal":"«AVISO!!! en rojo, subrayado, negrita, tamaño 28, con tres tipos de letra y dos Enter entre cada renglón»","bien":"«Título AVISO en negrita tamaño 18, texto en una sola fuente tamaño 12, justificado y con espaciado después de cada párrafo»"}
+  ],
+  "c-office-m4-l2": [
+   {"tipo":"practica","rotulo":"¿Qué función usas?","preguntas":[
+    {"p":"Tienes los gastos de caja chica de la semana en C2:C15 y quieres saber cuánto se gastó en total.","ops":["=PROMEDIO(C2:C15)","=SUMA(C2:C15)","=MAX(C2:C15)"],"correcta":1},
+    {"p":"Quieres saber cuál fue el gasto más pequeño de la semana.","ops":["=MIN(C2:C15)","=CONTAR(C2:C15)","=SUMA(C2:C15)"],"correcta":0},
+    {"p":"Tu fórmula de total dice =SUMA(C2:C16), pero en C16 está el propio total. ¿Qué pasa?","ops":["Nada, Excel lo ignora","Se redondea","Excel marca una referencia circular porque la fórmula se incluye a sí misma"],"correcta":2,"explica":"Cuida que el rango no incluya la celda donde escribes la fórmula."}]}
+  ]
+ },
+ "practicas": [
+  {"modulo":0,"t":"Ordena la computadora del despacho","obj":"Organizar archivos, usar atajos y detectar un correo fraudulento en un caso real de oficina.",
+   "bloques":[
+    {"tipo":"destacado","texto":"<b>El caso:</b> entras como auxiliar administrativo al <b>Despacho Contable Arroyo</b>, en Puebla. La computadora que te asignan tiene 63 archivos sueltos en el Escritorio: facturas en PDF, estados de cuenta, fotos de recibos y documentos con nombres como «escaneo (4).pdf». Tu jefa, la contadora Laura, te pide tres cosas para el viernes: 1) ordenar todo por cliente y por año, 2) dejar la computadora protegida y 3) avisarle si llega algo sospechoso. Esa misma mañana llega un correo que dice ser del SAT con un archivo comprimido «para evitar una multa»."},
+    {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+     {"p":"¿Qué estructura de carpetas te conviene para el despacho?","ops":["Una carpeta por cliente y, dentro, una carpeta por año","Una sola carpeta llamada «Varios»","Dejar todo en el Escritorio y buscarlo con el mouse"],"correcta":0,"explica":"Cliente → año te permite encontrar cualquier documento en tres clics."},
+     {"p":"El archivo «escaneo (4).pdf» es la factura de papelería de enero de 2026 del cliente Ferretería Gómez. ¿Qué nombre le pones?","ops":["factura","2026-01-15 factura papelería Ferretería Gómez.pdf","Ferretería Gómez nuevo FINAL.pdf"],"correcta":1,"explica":"Fecha al revés + asunto: se ordena solo y se entiende sin abrirlo."},
+     {"p":"Llega el correo «SAT: evite una multa, descargue el archivo adjunto .zip». ¿Qué haces?","ops":["Lo abro rápido para no pagar multa","Lo reenvío a todo el despacho para que estén enterados","No abro el adjunto, se lo reporto a mi jefa y reviso cualquier aviso entrando yo mismo a sat.gob.mx"],"correcta":2,"explica":"Urgencia, amenaza y un archivo comprimido son señales clásicas de fraude. Entra tú a la página oficial."},
+     {"p":"Te levantas a una junta de 20 minutos. La computadora tiene datos fiscales de clientes. ¿Qué haces?","ops":["La bloqueo con Windows + L","La apago y la vuelvo a prender","Minimizo todas las ventanas"],"correcta":0,"explica":"Bloquear es inmediato y nadie ve tu información mientras no estás."}]},
+    {"tipo":"relacionar","rotulo":"Relaciona la situación con lo que haces","pares":[
+     ["Borraste por error la carpeta de un cliente","Papelera de reciclaje → Restaurar"],
+     ["Quieres cambiar el nombre del archivo seleccionado","Tecla F2"],
+     ["Pasas del Excel al correo sin cerrar nada","Alt + Tab"],
+     ["Te equivocaste al renombrar un archivo","Ctrl + Z"],
+     ["Buscas un archivo del que solo recuerdas el cliente","Cuadro de búsqueda del Explorador de archivos"]]},
+    {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+     {"frase":"Crea una carpeta por cliente y año","es":"La estructura del despacho"},
+     {"frase":"Nombra cada archivo con la fecha al revés","es":"La regla para nombrar"}]},
+    {"tipo":"completar","rotulo":"Completa","items":[
+     {"frase":"En la ruta Documentos > Clientes > Ferretería Gómez > 2026, la carpeta 2026 está dentro de la carpeta ___.","resp":["Ferretería Gómez","Ferreteria Gomez","ferretería gómez","ferreteria gomez"]},
+     {"frase":"Un archivo que termina en .xlsx se abre con ___.","resp":["Excel","excel"]},
+     {"frase":"Para bloquear la computadora usas Windows + ___.","resp":["L","l"]},
+     {"frase":"Una contraseña segura es larga y ___ se repite en otras cuentas.","resp":["no","No","nunca","Nunca"]}]},
+    {"tipo":"comparar","titulo":"El Escritorio del despacho","mal":"«63 íconos en el Escritorio: escaneo (4).pdf, documento nuevo.docx, IMG_2231.jpg, factura final FINAL.pdf»","bien":"«Una carpeta Clientes con subcarpetas por cliente y año; archivos como 2026-01-15 factura papelería Ferretería Gómez.pdf»"},
+    {"tipo":"pasos","rotulo":"Hazlo en tu computadora","pasos":["Abre el Explorador de archivos (Windows + E) y entra a Documentos.","Crea la carpeta «Práctica despacho» y, dentro, dos carpetas de clientes inventados.","Dentro de cada cliente crea la carpeta 2026.","Crea un documento vacío, renómbralo con F2 usando la regla fecha + asunto y muévelo a su carpeta arrastrándolo.","Bórralo, búscalo en la Papelera de reciclaje y restáuralo.","Bloquea la computadora con Windows + L y vuelve a entrar."]},
+    {"tipo":"reflexion","rotulo":"Tu propia estructura","pregunta":"Escribe cómo organizarías las carpetas de tu trabajo o de tus trámites personales: qué carpetas principales tendrías, qué subcarpetas y cómo nombrarías los archivos.","ayuda":"Mis carpetas principales serían… dentro de cada una… y nombraría los archivos así…"},
+    {"tipo":"reflexion","rotulo":"Tu plan de seguridad","pregunta":"Escribe tres acciones concretas que harás esta semana para proteger tu computadora o tu celular (contraseñas, bloqueo, respaldos o correos sospechosos).","ayuda":"1) Voy a… 2) Voy a… 3) Voy a…"},
+    {"tipo":"plantilla","rotulo":"Estructura de carpetas para una oficina","texto":"Documentos\n  Clientes\n    [Nombre del cliente]\n      [Año]\n        [aaaa-mm-dd] [tipo de documento] [asunto].pdf\n  Administración\n    Facturas de proveedores\n    Nómina y recibos\n    Contratos\n  Plantillas\n  Respaldos\n    [aaaa-mm] respaldo mensual","nota":"Cópiala y adáptala a tu trabajo."},
+    {"tipo":"clave","items":["Carpetas por tema y año, y archivos con fecha al revés + asunto.","F2 renombra, Ctrl + Z deshace y la Papelera te salva de un borrado.","Ante urgencias por correo, no abras adjuntos: entra tú a la página oficial."]}
+   ]},
+  {"modulo":1,"t":"Cotiza con tres proveedores","obj":"Buscar, escribir correos, compartir en la nube y agendar una videollamada para una compra real.",
+   "bloques":[
+    {"tipo":"destacado","texto":"<b>El caso:</b> trabajas en compras de <b>Acabados Tapatíos</b>, una tienda de pisos en Guadalajara. El gerente, don Ernesto, necesita 200 m² de piso cerámico para remodelar la sala de exhibición. Te pide: 1) pedir cotización a tres proveedores sin que se enteren entre ellos, 2) guardar las tres cotizaciones en una carpeta de la nube que él pueda ver pero no modificar, y 3) agendar una videollamada de 15 minutos con el proveedor elegido para acordar la fecha de entrega."},
+    {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+     {"p":"Vas a mandar la misma solicitud a los tres proveedores en un solo correo. ¿Dónde pones sus direcciones?","ops":["En Para, las tres juntas","En CCO, y tu propio correo en Para","En CC"],"correcta":1,"explica":"CCO oculta a cada destinatario los correos de los demás."},
+     {"p":"¿Qué asunto le pones al correo?","ops":["Solicitud de cotización: 200 m² de piso cerámico — Acabados Tapatíos","Hola","URGENTE!!!"],"correcta":0,"explica":"El asunto dice qué necesitas y de quién viene; así se encuentra después."},
+     {"p":"Don Ernesto debe ver las cotizaciones, pero no cambiarlas. ¿Qué permiso le das en la carpeta?","ops":["Editor","Cualquier persona con el enlace","Lector, compartido solo con su correo"],"correcta":2},
+     {"p":"En la videollamada vas a mostrar la tabla comparativa de precios. ¿Qué compartes?","ops":["Solo la ventana del Excel con la comparación","Toda la pantalla con tu correo abierto","Nada, lo lees en voz alta"],"correcta":0}]},
+    {"tipo":"ordenar","rotulo":"Ordena el correo","items":[
+     {"frase":"Buen día, le solicito una cotización formal","es":"El saludo y la petición"},
+     {"frase":"Le agradeceré su respuesta antes del jueves","es":"La fecha límite"},
+     {"frase":"Quedo atento a sus comentarios, saludos cordiales","es":"El cierre"}]},
+    {"tipo":"completar","rotulo":"Completa","items":[
+     {"frase":"Para buscar solo en sitios del gobierno de México escribes site:___ junto a tu búsqueda.","resp":["gob.mx",".gob.mx"]},
+     {"frase":"El campo ___ oculta a cada destinatario los correos de los demás.","resp":["CCO","cco"]},
+     {"frase":"Si cerraste una pestaña del navegador por error, la recuperas con Ctrl + Shift + ___.","resp":["T","t"]},
+     {"frase":"Un permiso de ___ deja ver y descargar el archivo, pero no cambiarlo.","resp":["Lector","lector","Ver","ver"]}]},
+    {"tipo":"relacionar","rotulo":"Relaciona la tarea con la herramienta","pares":[
+     ["Guardar las cotizaciones donde el gerente las vea","Carpeta compartida en OneDrive o Drive"],
+     ["Pedir la cotización formal","Correo con asunto claro"],
+     ["Acordar la entrega en 15 minutos","Videollamada con enlace en la invitación"],
+     ["Encontrar la ficha técnica del piso","Buscador con palabras precisas y filetype:pdf"],
+     ["Silenciar el ruido de la bodega mientras escuchas","Botón de micrófono"]]},
+    {"tipo":"comparar","titulo":"El cuerpo del correo","mal":"«quiero precio de piso manda rapido»","bien":"«Buen día. Le solicito cotización de 200 m² de piso cerámico de 60 × 60 cm, color gris, con entrega en Guadalajara. Le agradeceré incluir precio por m², tiempo de entrega y condiciones de pago antes del jueves 8. Saludos cordiales.»"},
+    {"tipo":"pasos","rotulo":"Hazlo con tus cuentas","pasos":["Escribe un correo de prueba a ti mismo con el asunto y el cuerpo del caso; pon otra cuenta tuya en CCO.","Revisa en la otra cuenta que no se vea quién más lo recibió.","Crea en OneDrive o Drive la carpeta «Cotizaciones piso» y sube tres archivos cualquiera.","Comparte la carpeta con otra cuenta tuya como Lector y comprueba que no puede editar.","Crea una invitación de videollamada de 15 minutos en tu calendario y revisa que el enlace aparezca en la invitación."]},
+    {"tipo":"reflexion","rotulo":"Tu correo real","pregunta":"Piensa en un correo que tengas que mandar esta semana (a un cliente, un proveedor o una escuela). Escribe su asunto y las tres frases principales del cuerpo.","ayuda":"Asunto: … / Saludo y petición: … / Datos o fecha límite: … / Cierre: …"},
+    {"tipo":"plantilla","rotulo":"Correo para pedir cotización","texto":"Asunto: Solicitud de cotización: [producto o servicio] — [tu empresa]\n\nBuen día, [nombre o área]:\n\nLe solicito una cotización formal de [cantidad y descripción], con entrega en [ciudad o dirección].\n\nLe agradeceré incluir:\n- Precio unitario y total con IVA desglosado\n- Tiempo de entrega\n- Condiciones de pago\n\nSi es posible, envíela antes del [fecha].\n\nQuedo atento a sus comentarios.\n\n[Tu nombre]\n[Puesto] · [Teléfono]","nota":"Cópiala y adáptala."},
+    {"tipo":"clave","items":["CCO para varios destinatarios que no se conocen entre sí.","Comparte con el permiso mínimo que funcione y solo con correos específicos.","En videollamadas comparte una ventana, no toda la pantalla."]}
+   ]},
+  {"modulo":2,"t":"La circular del condominio","obj":"Armar en Word un documento oficial con estilos, tabla, encabezado, revisión y PDF.",
+   "bloques":[
+    {"tipo":"destacado","texto":"<b>El caso:</b> apoyas en la administración del condominio <b>Residencial Los Olivos</b>, en Querétaro. Hay que avisar a 120 departamentos que se lavarán las cisternas: la torre A el lunes 13, la torre B el martes 14 y la torre C el miércoles 15, de 9:00 a 14:00, sin agua en ese horario. La circular debe llevar el logotipo en el encabezado, una tabla con las fechas, la firma del administrador y la revisión del presidente del comité antes de enviarse en PDF por correo y pegarse impresa en cada elevador."},
+    {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+     {"p":"¿Cómo presentas las fechas de cada torre?","ops":["En un párrafo largo separado con comas","En una tabla de tres columnas: Torre, Día y Horario","Con espacios de la barra espaciadora para alinear"],"correcta":1,"explica":"La tabla se lee de un vistazo y no se desacomoda en otra computadora."},
+     {"p":"El logotipo del condominio debe salir en todas las hojas. ¿Dónde lo pones?","ops":["En el encabezado","En la primera línea de cada página","En el pie, junto al número de página y en todas las hojas copiado a mano"],"correcta":0},
+     {"p":"El presidente del comité quiere ver qué cambias en su texto. ¿Qué activas?","ops":["Guardar como PDF","Control de cambios","Cambiar la fuente"],"correcta":1},
+     {"p":"¿En qué formato se envía la circular a los condóminos?","ops":["PDF","Word editable","Una foto de la pantalla"],"correcta":0,"explica":"El PDF se ve igual en cualquier celular y nadie lo modifica por accidente."}]},
+    {"tipo":"relacionar","rotulo":"Relaciona la herramienta de Word con su uso en la circular","pares":[
+     ["Estilo Título 1","El título «Aviso de lavado de cisternas»"],
+     ["Encabezado","El logotipo que se repite en cada hoja"],
+     ["Insertar tabla","Las fechas y horarios por torre"],
+     ["Control de cambios","La revisión del presidente del comité"],
+     ["Guardar como PDF","El archivo que se manda por correo"]]},
+    {"tipo":"pasos","rotulo":"Arma la circular","pasos":["Abre un documento en blanco y escribe todo el texto sin formato: título, dos párrafos, los datos de las tres torres y la firma.","Aplica el estilo Título 1 al título.","Convierte los datos de las torres en una tabla de 3 columnas y 4 filas (una de encabezados).","Inserta una imagen cualquiera en el encabezado como si fuera el logotipo.","Activa Control de cambios, cambia una hora y observa cómo queda marcada; luego acepta el cambio.","Revisa ortografía con F7 y lee en voz alta fechas y horarios.","Guárdala como PDF con el nombre «2026-10-06 circular lavado cisternas.pdf»."]},
+    {"tipo":"comparar","titulo":"El primer párrafo de la circular","mal":"«Por medio de la presente se les informa a todos y cada uno de los señores condóminos que, en virtud de los trabajos de mantenimiento que se tienen programados, habrá una suspensión temporal…»","bien":"«Lavaremos las cisternas de las tres torres. En tu torre no habrá agua el día indicado en la tabla, de 9:00 a 14:00. Te sugerimos guardar agua la noche anterior.»"},
+    {"tipo":"completar","rotulo":"Completa","items":[
+     {"frase":"Para revisar la ortografía de todo el documento presionas la tecla ___.","resp":["F7","f7"]},
+     {"frase":"Dentro de una tabla, la tecla ___ te lleva a la siguiente celda.","resp":["Tab","tab","TAB"]},
+     {"frase":"Para que Word arme un índice automático, los títulos deben tener un ___ de Título.","resp":["estilo","Estilo"]}]},
+    {"tipo":"reflexion","rotulo":"Tu documento","pregunta":"Piensa en un documento que hagas seguido (un aviso, un oficio, un reporte). Escribe qué partes tiene y qué herramienta de Word usarías para cada una.","ayuda":"El título con… las fechas en… el logotipo en… y lo enviaría en…"},
+    {"tipo":"plantilla","rotulo":"Circular breve","texto":"[Logotipo en el encabezado]\n\nAVISO: [asunto en pocas palabras]\n\n[Ciudad], a [fecha]\n\nEstimados [destinatarios]:\n\n[Qué va a pasar, cuándo y a quién afecta, en dos o tres renglones.]\n\n[Tabla: Grupo | Día | Horario]\n\n[Qué deben hacer ellos: recomendación concreta.]\n\nPara dudas: [teléfono o correo].\n\nAtentamente,\n[Nombre]\n[Cargo]","nota":"Cópiala y adáptala."},
+    {"tipo":"clave","items":["Escribe primero, da formato después: estilos para títulos y tablas para datos.","Lo que se repite en cada hoja va en el encabezado o el pie.","Revisa con Control de cambios y envía en PDF."]}
+   ]},
+  {"modulo":3,"t":"Inventario de regreso a clases","obj":"Calcular importes, alertas de pedido y resúmenes en Excel para una papelería.",
+   "bloques":[
+    {"tipo":"destacado","texto":"<b>El caso:</b> es agosto en <b>Papelería La Pluma</b>, en Morelia, y el regreso a clases llena la tienda. La dueña, doña Rosa, te pasa la hoja de la semana y quiere saber: ¿cuánto vendimos?, ¿cuánto fue de cuadernos?, ¿qué productos hay que pedir porque ya están debajo del mínimo? y ¿cuánto cuestan las mochilas con el descuento de temporada?"},
+    {"tipo":"excel","rotulo":"Ventas y existencias de la semana","instruccion":"Resuelve los retos en orden: los últimos usan resultados de los primeros.","datos":[
+     ["Producto","Categoría","Precio","Vendidas","Importe","Existencia","Mínimo","Pedir","","Indicador","Valor"],
+     ["Cuaderno profesional","Cuadernos",45,120,"",35,50,"","","Venta total",""],
+     ["Cuaderno forma francesa","Cuadernos",32,85,"",60,40,"OK","","Venta de Cuadernos",""],
+     ["Caja de colores 12","Arte",68,40,2720,12,15,"Pedir","","Productos a pedir",""],
+     ["Lápiz del 2","Escritura",6,300,1800,250,100,"OK","","Más piezas vendidas",""],
+     ["Pluma azul","Escritura",8,260,2080,90,100,"","","Importe promedio",""],
+     ["Pegamento en barra","Arte",22,75,1650,30,20,"OK","","",""]],
+     "retos":[
+     {"celda":"E2","formula":"=C2*D2","esperado":5400,"texto":"<b>E2</b>: importe del cuaderno profesional (precio × vendidas).","pista":"Multiplica C2 por D2."},
+     {"celda":"E3","formula":"=C3*D3","esperado":2720,"texto":"<b>E3</b>: importe del cuaderno forma francesa.","pista":"La misma fórmula, una fila abajo."},
+     {"celda":"H2","formula":"=SI(F2<G2,\"Pedir\",\"OK\")","esperado":"Pedir","requiere":"SI(","texto":"<b>H2</b>: escribe «Pedir» si la existencia es menor que el mínimo; si no, «OK».","pista":"=SI(condición, texto si sí, texto si no). Los textos van entre comillas."},
+     {"celda":"H6","formula":"=SI(F6<G6,\"Pedir\",\"OK\")","esperado":"Pedir","requiere":"SI(","texto":"<b>H6</b>: la misma alerta para la pluma azul.","pista":"Compara F6 contra G6."},
+     {"celda":"K2","formula":"=SUMA(E2:E7)","esperado":16370,"requiere":"SUMA(","texto":"<b>K2</b>: venta total de la semana.","pista":"Suma la columna Importe de E2 a E7."},
+     {"celda":"K3","formula":"=SUMAR.SI(B2:B7,\"Cuadernos\",E2:E7)","esperado":8120,"requiere":"SUMAR.SI(","texto":"<b>K3</b>: venta solo de la categoría Cuadernos.","pista":"=SUMAR.SI(rango de categorías, criterio, rango de importes)."},
+     {"celda":"K4","formula":"=CONTAR.SI(H2:H7,\"Pedir\")","esperado":3,"requiere":"CONTAR.SI(","texto":"<b>K4</b>: ¿cuántos productos hay que pedir?","pista":"Cuenta cuántas veces aparece Pedir en H2:H7."},
+     {"celda":"K5","formula":"=MAX(D2:D7)","esperado":300,"requiere":"MAX(","texto":"<b>K5</b>: la mayor cantidad de piezas vendidas de un producto."},
+     {"celda":"K6","formula":"=PROMEDIO(E2:E7)","esperado":2728.3333,"requiere":"PROMEDIO(","texto":"<b>K6</b>: importe promedio por producto.","explica":"Con formato de moneda se ve como $2,728.33."}]},
+    {"tipo":"excel","rotulo":"Descuento de temporada","instruccion":"El descuento está en una sola celda (E2) para cambiarlo fácil.","datos":[
+     ["Producto","Precio","Precio con descuento","","Descuento"],
+     ["Mochila escolar",450,"","",0.15],
+     ["Lonchera",180,"","",""],
+     ["Juego de geometría",65,"","",""]],
+     "retos":[
+     {"celda":"C2","formula":"=B2*(1-$E$2)","esperado":382.5,"requiere":"$E$2","texto":"<b>C2</b>: precio de la mochila con el descuento de E2 fijado con $.","pista":"=B2*(1-$E$2): pagas el 100% menos el descuento."},
+     {"celda":"C3","formula":"=B3*(1-$E$2)","esperado":153,"requiere":"$E$2","texto":"<b>C3</b>: la misma fórmula copiada a la lonchera."},
+     {"celda":"C4","formula":"=B4*(1-$E$2)","esperado":55.25,"requiere":"$E$2","texto":"<b>C4</b>: el juego de geometría.","explica":"Si doña Rosa cambia el descuento a 20% en E2, los tres precios se corrigen solos."}]},
+    {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+     {"p":"Doña Rosa quiere cambiar el descuento de 15% a 20%. ¿Qué haces?","ops":["Reescribes las tres fórmulas","Cambias solo la celda E2","Borras la columna y la vuelves a hacer"],"correcta":1,"explica":"Para eso fijaste E2 con $: un solo cambio actualiza todo."},
+     {"p":"La fórmula =SUMAR.SI(B2:B7,«Cuaderno»,E2:E7) da 0. ¿Por qué?","ops":["La categoría se escribe Cuadernos, con s, y el criterio no coincide","SUMAR.SI no suma importes","Falta el signo $"],"correcta":0,"explica":"El criterio debe coincidir exactamente con lo que dice la columna."},
+     {"p":"Quieres ver solo los productos marcados como Pedir sin borrar los demás. Usas…","ops":["Ordenar de la A a la Z","Eliminar filas","Filtro en la columna Pedir"],"correcta":2},
+     {"p":"Para mostrar a doña Rosa qué categoría vendió más, la gráfica adecuada es…","ops":["Barras o columnas por categoría","Líneas","Una tabla de 300 filas"],"correcta":0}]},
+    {"tipo":"completar","rotulo":"Escribe la fórmula","items":[
+     {"frase":"Para sumar solo los importes de la categoría Arte usas la función ___.","resp":["SUMAR.SI","sumar.si","SUMIF","sumif"]},
+     {"frase":"Para fijar la celda E2 al copiar una fórmula la escribes como ___.","resp":["$E$2","$e$2"]},
+     {"frase":"La tecla que agrega los signos $ mientras editas la fórmula es ___.","resp":["F4","f4"]}]},
+    {"tipo":"comparar","titulo":"Cómo reportarle a doña Rosa","mal":"«Te mando el Excel, ahí viene todo.»","bien":"«Vendimos $16,370 esta semana; la mitad fue de cuadernos ($8,120). Hay que pedir 3 productos: cuaderno profesional, caja de colores y pluma azul.»"},
+    {"tipo":"reflexion","rotulo":"Tu propia hoja","pregunta":"Piensa en una lista que llevas en papel o en tu cabeza (gastos de la casa, pedidos, inventario, cobranza). Escribe qué columnas tendría en Excel y qué dos fórmulas le pondrías.","ayuda":"Las columnas serían… y usaría SUMA para… y SI para…"},
+    {"tipo":"plantilla","rotulo":"Encabezados para un control de inventario","texto":"Producto | Categoría | Precio | Vendidas | Importe (=Precio*Vendidas) | Existencia | Mínimo | Pedir (=SI(Existencia<Mínimo,«Pedir»,«OK»))\n\nResumen:\nVenta total = SUMA(columna Importe)\nVenta por categoría = SUMAR.SI(columna Categoría, [categoría], columna Importe)\nProductos a pedir = CONTAR.SI(columna Pedir, «Pedir»)","nota":"Cópiala y adáptala. En Excel escribe los textos de las fórmulas entre comillas normales."},
+    {"tipo":"clave","items":["Una fórmula en la primera fila y la copias: los importes y alertas salen solos.","SI para alertas, SUMAR.SI y CONTAR.SI para resumir por categoría.","Los valores que cambian (descuento, IVA) van en una celda fija con $."]}
+   ]},
+  {"modulo":4,"t":"Presenta el cierre del trimestre","obj":"Preparar los números en Excel y convertirlos en una presentación breve y clara.",
+   "bloques":[
+    {"tipo":"destacado","texto":"<b>El caso:</b> trabajas en <b>Viajes Monte Albán</b>, una agencia pequeña en Oaxaca. El lunes hay junta con los dos socios y tienes 10 minutos para presentar cómo cerró el trimestre julio-septiembre: cuántos paquetes se vendieron por destino, cuánto ingresó y qué destino conviene promover. Tienes los datos en Excel y debes armar una presentación de 5 diapositivas."},
+    {"tipo":"excel","rotulo":"Los números de la presentación","datos":[
+     ["Destino","Paquetes","Ingreso","Participación"],
+     ["Huatulco",137,342500,""],
+     ["Chiapas",45,125100,""],
+     ["Ciudad de México",82,98400,""],
+     ["Pueblos Mágicos de Oaxaca",124,186000,""],
+     ["Total","","",""]],
+     "retos":[
+     {"celda":"B6","formula":"=SUMA(B2:B5)","esperado":388,"requiere":"SUMA(","texto":"<b>B6</b>: total de paquetes vendidos."},
+     {"celda":"C6","formula":"=SUMA(C2:C5)","esperado":752000,"requiere":"SUMA(","texto":"<b>C6</b>: ingreso total del trimestre."},
+     {"celda":"D2","formula":"=C2/$C$6","esperado":0.4555,"requiere":"$C$6","texto":"<b>D2</b>: qué parte del ingreso aporta Huatulco (ingreso ÷ total fijo con $).","pista":"=C2/$C$6. Luego darías formato de porcentaje.","explica":"0.4555 con formato de porcentaje se ve como 45.5%."},
+     {"celda":"D5","formula":"=C5/$C$6","esperado":0.2473,"requiere":"$C$6","texto":"<b>D5</b>: participación de Pueblos Mágicos de Oaxaca."},
+     {"celda":"D3","formula":"=C3/$C$6","esperado":0.1664,"requiere":"$C$6","texto":"<b>D3</b>: participación de Chiapas."},
+     {"celda":"D4","formula":"=C4/$C$6","esperado":0.1309,"requiere":"$C$6","texto":"<b>D4</b>: participación de Ciudad de México."},
+     {"celda":"D6","formula":"=SUMA(D2:D5)","esperado":1,"requiere":"SUMA(","texto":"<b>D6</b>: comprueba que las participaciones suman 1 (100%).","explica":"Si no da 100%, falta un destino o el total está mal."}]},
+    {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+     {"p":"¿Qué título le pones a la diapositiva con la gráfica de ingresos?","ops":["«Ingresos por destino»","«Huatulco aportó 45% del ingreso del trimestre»","«Gráfico 1»"],"correcta":1,"explica":"El título que dice la conclusión se entiende aunque nadie lea la gráfica."},
+     {"p":"Pueblos Mágicos vendió casi tantos paquetes como Huatulco, pero ingresó menos. ¿Cómo lo muestras?","ops":["Barras de paquetes e ingreso por destino, lado a lado","Un pastel con 3D","Una tabla con todas las ventas del trimestre"],"correcta":0},
+     {"p":"Tienes 10 minutos y 5 diapositivas. ¿Qué pones en la última?","ops":["Todas las cifras otra vez","Un agradecimiento con muchas animaciones","La recomendación: qué destino promover y qué necesitas de los socios"],"correcta":2},
+     {"p":"Los socios revisarán la presentación después desde el celular. ¿Cómo se la mandas?","ops":["El archivo en PDF","Una foto de cada diapositiva","El Excel con los datos"],"correcta":0}]},
+    {"tipo":"ordenar","rotulo":"Ordena las palabras","items":[
+     {"frase":"Primero la conclusión y después los datos","es":"La regla de la diapositiva principal"},
+     {"frase":"Una idea principal por cada diapositiva","es":"La regla del contenido"}]},
+    {"tipo":"pasos","rotulo":"Arma las 5 diapositivas","pasos":["Diapositiva 1: título «Cierre del trimestre julio-septiembre» y tu nombre.","Diapositiva 2: el total en grande: 388 paquetes y $752,000.","Diapositiva 3: gráfica de barras de ingreso por destino, copiada desde Excel, con el título que dice la conclusión.","Diapositiva 4: la comparación de paquetes contra ingreso de Pueblos Mágicos.","Diapositiva 5: tu recomendación en una frase y lo que pides a los socios.","Escribe en las notas del orador lo que dirás en cada una y ensaya con F5 midiendo el tiempo.","Exporta a PDF para enviarla."]},
+    {"tipo":"comparar","titulo":"La diapositiva de ingresos","mal":"«Una tabla con 12 columnas, letra de 10 puntos, fondo con foto de playa y el título Ingresos»","bien":"«Barras ordenadas de mayor a menor, letra de 24 o más, fondo liso y el título Huatulco aportó 45% del ingreso»"},
+    {"tipo":"reflexion","rotulo":"Tu recomendación","pregunta":"Con los datos del caso, escribe en dos frases qué destino recomendarías promover el próximo trimestre y por qué.","ayuda":"Recomiendo promover… porque… Para lograrlo necesitamos…"},
+    {"tipo":"reflexion","rotulo":"Tu presentación real","pregunta":"Piensa en una presentación que tengas que dar (en tu trabajo, escuela o comunidad). Escribe el título de cada una de sus 5 diapositivas.","ayuda":"1) … 2) … 3) … 4) … 5) …"},
+    {"tipo":"plantilla","rotulo":"Guion de 5 diapositivas","texto":"1. Portada: [tema] · [periodo] · [tu nombre]\n2. El dato principal: [número grande] + [comparación]\n3. La evidencia: [gráfica] con título que dice la conclusión\n4. El hallazgo: [qué llama la atención y por qué]\n5. La recomendación: [qué propones] + [qué necesitas de ellos] + [fecha]","nota":"Cópiala y adáptala."},
+    {"tipo":"clave","items":["Primero preparas los números en Excel; luego eliges qué diapositiva los cuenta.","Títulos con la conclusión y una idea por diapositiva.","Cierra con una recomendación y comparte en PDF."]}
+   ]}
+ ]
+}

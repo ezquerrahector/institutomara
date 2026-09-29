@@ -1,0 +1,44 @@
+{
+ "id": "c-ia",
+ "practicas": [
+  {"modulo":1,"t":"Un lunes de trabajo con IA, de principio a fin","obj":"Redactar instrucciones completas, proteger datos, verificar lo que responde la IA y detectar alucinaciones en un caso real de oficina.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: el lunes de Mariana</b><br>Mariana es auxiliar administrativa en una distribuidora de productos de limpieza en Puebla. Este lunes su jefe le pide tres cosas antes de las 2 de la tarde: 1) un aviso por WhatsApp para 40 clientes sobre el <b>ajuste de precios del 8%</b> que empieza el día 1 del próximo mes; 2) contestar la queja de una tienda de abarrotes a la que le llegó un pedido incompleto; y 3) un párrafo para la junta sobre «lo que dice la ley» de avisar aumentos. Mariana abre su asistente de IA y escribe: <i>«Hazme un aviso de aumento de precios»</i>."},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"¿Qué le falta a la instrucción «Hazme un aviso de aumento de precios»?","ops":["Nada, la IA ya sabe lo que necesita","Contexto y formato: a quién va, cuánto sube, desde cuándo, tono y largo para WhatsApp","Solo decirle «por favor»"],"correcta":1,"explica":"Sin contexto la IA inventa datos o escribe un texto genérico. Papel · Tarea · Contexto · Formato."},
+    {"p":"Para contestar la queja, Mariana quiere pegar el correo de la tienda, que trae nombre del dueño, RFC, teléfono y número de pedido. ¿Qué hace?","ops":["Lo pega tal cual para que la respuesta sea exacta","No usa la IA para nada","Quita nombre, RFC, teléfono y número de pedido, y usa «el cliente» o «pedido X»"],"correcta":2,"explica":"La IA no necesita datos personales para redactar bien. Anonimiza y después completa tú los datos reales."},
+    {"p":"La IA responde que «la ley obliga a avisar los aumentos con 30 días de anticipación, según una norma oficial» y da un número y un año. Ese dato es…","ops":["Rojo: dato legal que se verifica en fuente oficial antes de usarlo","Verde: suena muy seguro y trae número","Amarillo: se puede usar si el jefe no pregunta"],"correcta":0,"explica":"Leyes, normas y plazos son terreno de alucinación. Verifica en la fuente oficial (por ejemplo, PROFECO o el Diario Oficial) o con el área legal."},
+    {"p":"El aviso quedó bien, pero dice «estimado cliente» y suena muy acartonado. ¿Qué le pides?","ops":["«Vuelve a escribirlo»","«Mantén todo igual, pero cambia el saludo por uno cercano, como hablamos con nuestros clientes»","Empezar una conversación nueva y explicar todo otra vez"],"correcta":1,"explica":"El ajuste quirúrgico conserva lo que ya te gustaba."}
+   ]},
+   {"tipo":"ordenar","rotulo":"Arma la instrucción completa","items":[
+    {"frase":"Eres el encargado de atención a clientes","es":"Papel"},
+    {"frase":"Redacta un aviso de ajuste de precios","es":"Tarea"},
+    {"frase":"Máximo cuatro renglones para WhatsApp","es":"Formato"}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona la señal con lo que puede estar pasando","pares":[
+    ["Cita una norma con número que no encuentras en ninguna fuente oficial","Posible alucinación: verificar antes de usar"],
+    ["Sumó 40 facturas y da un total redondo","Cuenta que conviene rehacer en Excel"],
+    ["Te pide tu contraseña para «revisar tu correo»","Riesgo de seguridad: nunca la compartas"],
+    ["El texto usa palabras que no se dicen en México","Pedirle español de México natural"],
+    ["Menciona un precio de la competencia «de hoy»","Dato que puede estar desactualizado"]
+   ]},
+   {"tipo":"completar","rotulo":"Completa","items":[
+    {"frase":"Una IA de texto predice palabras; cuando inventa con seguridad, decimos que ___.","resp":["alucina","alucinó","alucinacion","alucinación"]},
+    {"frase":"Antes de pegar un correo, quita nombres, teléfonos y RFC: es decir, lo ___.","resp":["anonimizas","anonimizo","anonimiza"]},
+    {"frase":"Las cuatro partes de una buena instrucción son papel, tarea, contexto y ___.","resp":["formato"]},
+    {"frase":"Tú sigues siendo ___ de lo que envías, aunque lo haya escrito la IA.","resp":["responsable"]}
+   ]},
+   {"tipo":"tarjetas","rotulo":"Preguntas para verificar una respuesta","tarjetas":[
+    {"frente":"¿Es un dato legal, fiscal, médico o una cifra oficial?","reverso":"Verifica en la fuente oficial o con un especialista antes de usarlo."},
+    {"frente":"¿Trae nombres, fechas, montos o referencias exactas?","reverso":"Compáralos contra tus documentos. Si cita una fuente, búscala tú."},
+    {"frente":"¿Hizo cuentas?","reverso":"Rehazlas en Excel o en la calculadora."},
+    {"frente":"¿Suena demasiado seguro sobre algo que nadie te confirmó?","reverso":"Pregúntale: «¿De dónde sale ese dato? ¿Qué tan seguro es?» y verifica igual."},
+    {"frente":"¿Va a leerlo un cliente o tu jefe?","reverso":"Léelo completo en voz alta antes de enviarlo: tú firmas lo que mandas."}
+   ]},
+   {"tipo":"comparar","titulo":"La misma petición, antes y después","mal":"«Hazme un aviso de aumento de precios.»","bien":"«Eres el encargado de atención a clientes de una distribuidora de productos de limpieza en Puebla. Redacta un aviso por WhatsApp para tiendas de abarrotes que nos compran cada semana: a partir del día 1 del próximo mes nuestros precios suben 8% por aumento de costos. Agradece su preferencia y ofrece enviar la lista nueva. Tono cercano y respetuoso, de usted, máximo 4 renglones, sin «estimado cliente».»"},
+   {"tipo":"reflexion","rotulo":"Escribe tu instrucción para la queja","pregunta":"Escribe la instrucción completa (papel, tarea, contexto y formato) que Mariana usaría para contestar la queja del pedido incompleto, con los datos ya anonimizados y diciendo qué solución ofrece la empresa.","ayuda":"Eres… Redacta… Contexto: el cliente (tienda de abarrotes) recibió el pedido X incompleto… Ofrecemos… Formato: correo de máximo … palabras, tono…"},
+   {"tipo":"reflexion","rotulo":"Tu propio lunes","pregunta":"Piensa en una tarea real de tu semana que harías con IA. Escribe: qué datos quitarías antes de pegar la información, qué partes de la respuesta marcarías en rojo para verificar y dónde las verificarías.","ayuda":"La tarea es… Quitaría… Verificaría… en…"},
+   {"tipo":"plantilla","rotulo":"Lista de revisión antes de enviar algo hecho con IA","texto":"ANTES DE PEDIR\n[ ] Mi instrucción tiene papel, tarea, contexto y formato.\n[ ] Quité nombres, teléfonos, RFC, direcciones, contraseñas y datos bancarios.\n[ ] Uso la herramienta que autoriza mi empresa.\n\nANTES DE ENVIAR\n[ ] Marqué en rojo leyes, impuestos, cifras oficiales y datos de salud, y los verifiqué en: [fuente]\n[ ] Rehice las cuentas en Excel.\n[ ] Revisé nombres, fechas y montos contra mis documentos.\n[ ] Busqué yo mismo cada fuente o referencia que citó.\n[ ] Lo leí completo y suena como yo.\n\nSI ALGO NO CUADRA: le pregunto de dónde sale el dato y verifico por mi cuenta.","nota":"Cópiala y tenla junto a tu computadora."},
+   {"tipo":"clave","items":["Instrucción completa: papel, tarea, contexto y formato.","Anonimiza antes de pegar; nunca contraseñas ni datos bancarios.","Leyes, cifras y referencias: verifica en la fuente. Una respuesta segura no es una respuesta cierta."]}
+  ]}
+ ]
+}

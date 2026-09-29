@@ -1,0 +1,134 @@
+{
+ "id": "c-portugues-a1",
+ "practicas": [
+  {"modulo":3,"t":"Clientes brasileños en tu tienda","obj":"Atender en portugués a clientes brasileños: saludar, dar precios en pesos, cobrar con tarjeta y dar una dirección sencilla.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: la tienda de Lupita</b><br>Lupita atiende una tienda de artesanías en San Miguel de Allende. Un sábado entran Fernanda y Gustavo, una pareja de Curitiba que viaja por el Bajío. Hablan poco español, pero se nota que quieren comprar. Lupita decide atenderlos en portugués con lo que ya sabe: saludo, <i>tem</i>, números, <i>fica</i> y frases de cortesía. En esta práctica te pones en su lugar."},
+   {"tipo":"vocabulario","rotulo":"Palabras de la tienda","palabras":[
+    {"en":"o preço","es":"el precio","ej":"Qual é o preço deste prato?"},
+    {"en":"barato / caro","es":"barato / caro","ej":"Este colar é barato."},
+    {"en":"o cartão","es":"la tarjeta","ej":"Aceitamos cartão de crédito."},
+    {"en":"o troco","es":"el cambio (dinero que se devuelve)","ej":"Aqui está o seu troco."},
+    {"en":"a sacola","es":"la bolsa (de compras)","ej":"Quer uma sacola?"},
+    {"en":"o desconto","es":"el descuento","ej":"Tem desconto à vista?"},
+    {"en":"experimentar","es":"probarse (ropa, zapatos)","ej":"Posso experimentar?"},
+    {"en":"o caixa","es":"la caja (donde se paga)","ej":"O caixa fica ali."}
+   ]},
+   {"tipo":"dialogo","titulo":"Diálogo — Una tienda de artesanías en San Miguel de Allende","lineas":[
+    {"quien":"Lupita","en":"Boa tarde! Posso ajudar?","es":"¡Buenas tardes! ¿Les ayudo?"},
+    {"quien":"Fernanda","en":"Boa tarde! Quanto custa este prato de cerâmica?","es":"¡Buenas tardes! ¿Cuánto cuesta este plato de cerámica?"},
+    {"quien":"Lupita","en":"Custa quatrocentos pesos. Tem também este menor, de duzentos e cinquenta.","es":"Cuesta cuatrocientos pesos. También está este más chico, de doscientos cincuenta."},
+    {"quien":"Fernanda","en":"Que lindo! Vou levar os dois. Vocês aceitam cartão?","es":"¡Qué bonito! Me llevo los dos. ¿Aceptan tarjeta?"},
+    {"quien":"Lupita","en":"Aceitamos, sim. Débito ou crédito?","es":"Sí, aceptamos. ¿Débito o crédito?"},
+    {"quien":"Gustavo","en":"Crédito. Com licença, tem uma farmácia aqui perto?","es":"Crédito. Disculpe, ¿hay una farmacia cerca?"},
+    {"quien":"Lupita","en":"Tem, sim. Fica na esquina, do lado do banco. Dá pra ir a pé.","es":"Sí, hay. Está en la esquina, junto al banco. Se puede ir caminando."},
+    {"quien":"Fernanda","en":"Muito obrigada! Até logo.","es":"¡Muchas gracias! Hasta luego."},
+    {"quien":"Lupita","en":"De nada! Boa viagem!","es":"¡De nada! ¡Buen viaje!"}
+   ]},
+   {"tipo":"practica","rotulo":"¿Entendiste la venta?","preguntas":[
+    {"p":"¿Cuánto cuesta el plato más chico?","ops":["Cuatrocientos pesos","Doscientos cincuenta pesos","Cincuenta pesos"],"correcta":1,"explica":"<i>duzentos e cinquenta</i> = 250."},
+    {"p":"<i>Vou levar os dois</i> significa…","ops":["Me llevo los dos","Voy a llevar a los dos niños","Vuelvo en dos horas"],"correcta":0,"explica":"<b>levar</b> en una tienda = llevarse, comprar."},
+    {"p":"Un cliente te pregunta <i>Tem desconto?</i> Te está pidiendo…","ops":["el cambio","una bolsa","un descuento"],"correcta":2},
+    {"p":"Para decir «Sí, aceptamos tarjeta», Lupita dice…","ops":["Aceitamos, sim.","Sim, aceptamos tarjeta.","Tem cartão, sim."],"correcta":0,"explica":"En Brasil se contesta repitiendo el verbo: <i>Aceitamos, sim</i>, <i>Tem, sim</i>."}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona la palabra con su significado","voz":true,"pares":[
+    ["o troco","el cambio (dinero)"],
+    ["a sacola","la bolsa de compras"],
+    ["o caixa","la caja para pagar"],
+    ["o desconto","el descuento"],
+    ["experimentar","probarse ropa"],
+    ["o cartão","la tarjeta"]
+   ]},
+   {"tipo":"completar","rotulo":"Completa lo que dice Lupita","voz":true,"items":[
+    {"frase":"Este colar ___ trezentos pesos.","resp":["custa"],"es":"Este collar cuesta trescientos pesos."},
+    {"frase":"Aceitamos cartão de ___ e de débito.","resp":["crédito","credito"],"es":"Aceptamos tarjeta de crédito y de débito."},
+    {"frase":"A farmácia ___ na esquina.","resp":["fica","está"],"es":"La farmacia está en la esquina."},
+    {"frase":"Aqui está o seu ___.","resp":["troco"],"es":"Aquí está su cambio."},
+    {"frase":"Quer uma ___?","resp":["sacola"],"es":"¿Quiere una bolsa?"}
+   ]},
+   {"tipo":"escuchar","rotulo":"Escucha lo que dicen los clientes","frases":[
+    {"en":"Tem em outro tamanho?","pron":"tẽi ẽi ôutru tamáñu","es":"¿Lo hay en otra talla?"},
+    {"en":"Posso experimentar?","pron":"pósu isperimẽtár","es":"¿Me lo puedo probar?"},
+    {"en":"Está muito caro. Tem desconto?","pron":"istá mũintu káru. tẽi djiskõtu","es":"Está muy caro. ¿Hay descuento?"},
+    {"en":"Vou levar este.","pron":"vôu levár éschi","es":"Me llevo este."},
+    {"en":"Onde fica o caixa?","pron":"õdji fíka u káisha","es":"¿Dónde está la caja?"}
+   ]},
+   {"tipo":"pronunciar","rotulo":"Atiende en voz alta","frases":[
+    {"en":"Boa tarde! Posso ajudar?","pron":"bóa tárdji! pósu ayudár","es":"¡Buenas tardes! ¿Le ayudo?"},
+    {"en":"Custa quatrocentos pesos.","pron":"kústa kwatrusẽtus pézus","es":"Cuesta cuatrocientos pesos."},
+    {"en":"Aceitamos cartão de crédito.","pron":"aseitãmus kartãu dji krédjitu","es":"Aceptamos tarjeta de crédito."},
+    {"en":"Aqui está o seu troco.","pron":"akí istá u séu trôku","es":"Aquí está su cambio."},
+    {"en":"Muito obrigada e boa viagem!","pron":"mũintu obrigáda i bóa viáyẽi","es":"¡Muchas gracias y buen viaje!"}
+   ]},
+   {"tipo":"ordenar","rotulo":"Arma las frases de la venta","voz":true,"items":[
+    {"frase":"Este prato custa quatrocentos pesos","es":"Este plato cuesta cuatrocientos pesos"},
+    {"frase":"Tem uma farmácia aqui perto?","es":"¿Hay una farmacia cerca?"},
+    {"frase":"Vou levar os dois, obrigada","es":"Me llevo los dos, gracias"}
+   ]},
+   {"tipo":"reflexion","rotulo":"Tu propia venta","pregunta":"Imagina que clientes brasileños entran a tu negocio (o a uno que conozcas). Escribe en portugués cinco frases: el saludo, el precio de dos productos en pesos, cómo pueden pagar, dónde queda un lugar cercano y la despedida. Luego léelas en voz alta cuidando las nasales de <i>cartão</i> y el «dji» de <i>de</i>.","ayuda":"Boa tarde! Posso ajudar? / … custa … pesos. / Aceitamos… / A farmácia fica… / Obrigada e boa viagem!"},
+   {"tipo":"clave","items":["Precios: <i>Quanto custa? — Custa … pesos</i>.","Contesta repitiendo el verbo: <i>Aceitamos, sim. Tem, sim</i>.","<b>troco</b> = cambio · <b>sacola</b> = bolsa · <b>caixa</b> = caja · <b>experimentar</b> = probarse."]}
+  ]},
+  {"modulo":4,"t":"Un viaje de trabajo a São Paulo","obj":"Resolver en portugués un viaje de trabajo: hotel, traslado, conocer a un cliente, contar cómo te fue y pagar la comida.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: Daniel en la Paulista</b><br>Daniel trabaja en ventas para una empresa de autopartes de Monterrey. Viaja dos días a <b>São Paulo</b> para conocer a Renata, compradora de un cliente brasileño. Llega de noche al hotel, al día siguiente toma un taxi a la <b>Avenida Paulista</b>, tiene la reunión y después comen en un <i>restaurante por quilo</i>. Necesita pedir la <b>nota fiscal</b> (la factura) para comprobar sus gastos."},
+   {"tipo":"vocabulario","rotulo":"Palabras del viaje de trabajo","palabras":[
+    {"en":"o voo","es":"el vuelo","ej":"O voo chegou atrasado."},
+    {"en":"a reunião","es":"la junta, la reunión","ej":"A reunião é às dez."},
+    {"en":"a empresa","es":"la empresa","ej":"Eu trabalho numa empresa de Monterrey."},
+    {"en":"o almoço","es":"la comida del mediodía","ej":"Vamos almoçar juntos?"},
+    {"en":"a nota fiscal","es":"la factura","ej":"Pode me dar a nota fiscal?"},
+    {"en":"o recibo","es":"el recibo, el comprobante","ej":"Preciso do recibo do táxi."},
+    {"en":"Combinado!","es":"¡Quedamos! ¡Trato hecho!","ej":"Amanhã às nove? Combinado!"}
+   ]},
+   {"tipo":"dialogo","titulo":"Diálogo — Oficina de un cliente en la Avenida Paulista","lineas":[
+    {"quien":"Renata","en":"Bom dia! Você é o Daniel?","es":"¡Buenos días! ¿Tú eres Daniel?"},
+    {"quien":"Daniel","en":"Sou eu. Muito prazer, Renata.","es":"Soy yo. Mucho gusto, Renata."},
+    {"quien":"Renata","en":"O prazer é meu! Como foi o voo?","es":"¡El gusto es mío! ¿Cómo estuvo el vuelo?"},
+    {"quien":"Daniel","en":"Foi tranquilo, obrigado. Cheguei ontem à noite.","es":"Tranquilo, gracias. Llegué anoche."},
+    {"quien":"Renata","en":"E o hotel? Você gostou?","es":"¿Y el hotel? ¿Te gustó?"},
+    {"quien":"Daniel","en":"Gostei muito. Fica pertinho daqui.","es":"Me gustó mucho. Está cerquita de aquí."},
+    {"quien":"Renata","en":"Que bom! Depois da reunião vamos almoçar? Tem um restaurante por quilo ótimo aqui do lado.","es":"¡Qué bien! ¿Después de la junta vamos a comer? Hay un restaurante por kilo muy bueno aquí al lado."},
+    {"quien":"Daniel","en":"Vamos, sim! Combinado.","es":"¡Claro que sí! Quedamos."}
+   ]},
+   {"tipo":"practica","rotulo":"Decide en el viaje","preguntas":[
+    {"p":"Renata pregunta <i>Como foi o voo?</i> Le contestas…","ops":["Foi ótimo, obrigado.","Estou ótimo o voo.","É tranquilo, obrigado."],"correcta":0,"explica":"Te pregunta en pasado (<i>foi</i>), así que contestas en pasado: <i>Foi…</i>"},
+    {"p":"Necesitas la factura de la comida. Dices…","ops":["Pode me dar a fatura?","Pode me dar a nota fiscal?","Pode me dar a propina?"],"correcta":1,"explica":"En Brasil la factura de un consumo es la <b>nota fiscal</b>. Y recuerda: <i>propina</i> es soborno."},
+    {"p":"En el restaurante por quilo quieres saber cuánto fue. Preguntas…","ops":["Quanto custou o quilo de você?","Quanto tempo demora?","Quanto deu?"],"correcta":2,"explica":"<i>Quanto deu?</i> es la forma natural de preguntar el total al pagar."},
+    {"p":"Renata propone: <i>Amanhã às nove?</i> Para aceptar dices…","ops":["Combinado!","Combinação!","Está combinando."],"correcta":0}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona la frase con su significado","voz":true,"pares":[
+    ["Como foi o voo?","¿Cómo estuvo el vuelo?"],
+    ["Cheguei ontem à noite.","Llegué anoche."],
+    ["Quanto deu?","¿Cuánto fue?"],
+    ["Pode me dar a nota fiscal?","¿Me da la factura?"],
+    ["Fica pertinho daqui.","Está cerquita de aquí."],
+    ["Combinado!","¡Quedamos!"]
+   ]},
+   {"tipo":"escuchar","rotulo":"Escucha frases del viaje","frases":[
+    {"en":"Como foi o voo?","pron":"kómu foi u vôu","es":"¿Cómo estuvo el vuelo?"},
+    {"en":"Vamos almoçar depois da reunião?","pron":"vãmus aumosár depóis da jeuniãu","es":"¿Vamos a comer después de la junta?"},
+    {"en":"Quanto deu?","pron":"kwãtu dêu","es":"¿Cuánto fue?"},
+    {"en":"O táxi já chegou.","pron":"u táksi yá shegôu","es":"El taxi ya llegó."},
+    {"en":"Boa viagem de volta!","pron":"bóa viáyẽi dji vóuta","es":"¡Buen viaje de regreso!"}
+   ]},
+   {"tipo":"pronunciar","rotulo":"Resuelve el viaje en voz alta","frases":[
+    {"en":"Eu tenho uma reserva em nome de Daniel Ortiz.","pron":"éu tẽñu úma jezérva ẽi nõmi dji daniéu ortís","es":"Tengo una reservación a nombre de Daniel Ortiz."},
+    {"en":"Para a Avenida Paulista, por favor.","pron":"pára a avenída paulísta, pur favór","es":"A la Avenida Paulista, por favor."},
+    {"en":"Cheguei ontem à noite.","pron":"shegêi õtẽi a nóichi","es":"Llegué anoche."},
+    {"en":"A reunião foi muito boa.","pron":"a jeuniãu foi mũintu bóa","es":"La junta estuvo muy bien."},
+    {"en":"Pode me dar a nota fiscal?","pron":"pódji mi dar a nóta fiskáu","es":"¿Me puede dar la factura?"}
+   ]},
+   {"tipo":"completar","rotulo":"Completa el mensaje de Daniel a su jefe","voz":true,"items":[
+    {"frase":"Eu ___ ontem à noite em São Paulo.","resp":["cheguei"],"es":"Llegué anoche a São Paulo."},
+    {"frase":"A reunião ___ muito boa.","resp":["foi"],"es":"La junta estuvo muy bien."},
+    {"frase":"Depois nós ___ num restaurante por quilo.","resp":["almoçamos","almocamos"],"es":"Después comimos en un restaurante por kilo."},
+    {"frase":"Amanhã eu ___ voltar para Monterrey.","resp":["vou"],"es":"Mañana voy a regresar a Monterrey."}
+   ]},
+   {"tipo":"ordenar","rotulo":"Arma las frases del viaje","voz":true,"items":[
+    {"frase":"Eu trabalho numa empresa de Monterrey","es":"Trabajo en una empresa de Monterrey"},
+    {"frase":"A reunião foi muito boa","es":"La junta estuvo muy bien"},
+    {"frase":"Vamos almoçar depois da reunião?","es":"¿Vamos a comer después de la junta?"}
+   ]},
+   {"tipo":"reflexion","rotulo":"Tu reporte del viaje","pregunta":"Escribe en portugués un mensaje de cinco o seis frases a Renata después del viaje: agradece la reunión, cuenta cuándo llegaste y qué te gustó de São Paulo, menciona la comida y propón el siguiente paso (una llamada o una visita).","ayuda":"Oi, Renata! Muito obrigado pela reunião. Eu cheguei… Eu gostei muito de… O almoço foi… Vamos marcar uma ligação na…? Abraço!"},
+   {"tipo":"clave","items":["Pasado para contar el viaje: <i>cheguei, foi, gostei, almoçamos</i>.","Pagar y comprobar: <i>Quanto deu? Pode me dar a nota fiscal?</i>","Aceptar un plan: <i>Vamos, sim! Combinado!</i>"]}
+  ]}
+ ]
+}

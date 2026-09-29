@@ -1,0 +1,281 @@
+[
+ {
+  "id": "c-aleman-a1",
+  "m": 0,
+  "l": 0,
+  "b": 2,
+  "buscar": "\"auf víder-seen\"",
+  "reemplazar": "\"auf víder-zéen\"",
+  "motivo": "En «Wiedersehen» la s inicial de sílaba ante vocal es sonora; el propio curso la transcribe con «z» (zíben, zint)."
+ },
+ {
+  "id": "c-aleman-a1",
+  "m": 0,
+  "l": 0,
+  "b": 7,
+  "buscar": "\"pron\":\"auf víder-seen\"",
+  "reemplazar": "\"pron\":\"auf víder-zéen\"",
+  "motivo": "Misma corrección: s sonora de «Wiedersehen», coherente con la clave del curso."
+ },
+ {
+  "id": "c-aleman-a1",
+  "m": 0,
+  "l": 4,
+  "b": 1,
+  "buscar": "\"ch (tras e, i, ü, ö, ä)\"",
+  "reemplazar": "\"ch (tras e, i, ä, ö, ü, ei, eu o consonante)\"",
+  "motivo": "El ejemplo «Milch» tiene ch tras consonante (l); la regla omitía ese caso y los diptongos ei/eu (ich-Laut)."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 0,
+  "l": 3,
+  "b": 3,
+  "buscar": "\"vu zét frãsés\"",
+  "reemplazar": "\"vu zét frãséz\"",
+  "motivo": "«française» se pronuncia [fʁɑ̃sɛz]: la s final (ante e) suena como z."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 1,
+  "l": 2,
+  "b": 0,
+  "buscar": "sí («fransés»)",
+  "reemplazar": "sí, y como z («franséz»)",
+  "motivo": "«française» termina en sonido [z], no [s]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 1,
+  "l": 2,
+  "b": 5,
+  "buscar": "la s se pronuncia: «fransés»",
+  "reemplazar": "la s se pronuncia, como z: «franséz»",
+  "motivo": "«française» termina en sonido [z], no [s]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 1,
+  "l": 2,
+  "b": 7,
+  "buscar": "el é frãsés",
+  "reemplazar": "el é frãséz",
+  "motivo": "«française» termina en sonido [z], no [s]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 1,
+  "l": 0,
+  "b": 1,
+  "buscar": "\"dis-nöf\"",
+  "reemplazar": "\"diz-nöf\"",
+  "motivo": "«dix-neuf» se pronuncia [diznœf]: la x de dix suena z ante la n."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 1,
+  "l": 0,
+  "b": 3,
+  "buscar": "shãmbr katr",
+  "reemplazar": "shãbr katr",
+  "motivo": "En «chambre» la m solo nasaliza la vocal (no se pronuncia); el curso ya usa «shãbr» en otras frases."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 2,
+  "l": 4,
+  "b": 7,
+  "buscar": "müsík",
+  "reemplazar": "müzík",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «musique» = [myzik]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 3,
+  "l": 1,
+  "b": 1,
+  "buscar": "dösiém",
+  "reemplazar": "döziém",
+  "motivo": "«deuxième» = [døzjɛm]: la x entre vocales suena z."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 0,
+  "b": 6,
+  "buscar": "vudré reservé",
+  "reemplazar": "vudré rezervé",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «réserver» = [ʁezɛʁve]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 0,
+  "b": 6,
+  "buscar": "ün reservasiõ",
+  "reemplazar": "ün rezervasiõ",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «réservation» = [ʁezɛʁvasjɔ̃]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 0,
+  "b": 6,
+  "buscar": "klimatisasiõ",
+  "reemplazar": "klimatizasiõ",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «climatisation» = [klimatizasjɔ̃]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"yé visité\"",
+  "reemplazar": "\"yé vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"tü a visité\"",
+  "reemplazar": "\"tü a vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"il a visité\"",
+  "reemplazar": "\"il a vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"nu zavõ visité\"",
+  "reemplazar": "\"nu zavõ vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"vu zavé visité\"",
+  "reemplazar": "\"vu zavé vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 1,
+  "buscar": "\"il zõ visité\"",
+  "reemplazar": "\"il zõ vizité\"",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-frances-a1",
+  "m": 4,
+  "l": 2,
+  "b": 4,
+  "buscar": "iér yé visité",
+  "reemplazar": "iér yé vizité",
+  "motivo": "En francés la s entre vocales suena como z (s sonora); el curso usa «z» para ese sonido. «visité» = [vizite]."
+ },
+ {
+  "id": "c-italiano-a1",
+  "m": 0,
+  "l": 0,
+  "b": 1,
+  "buscar": "como la «lli» de «millón» dicha despacio",
+  "reemplazar": "parecida a la «li» de «familia» dicha en un solo golpe (no como la «ll» de «llave»)",
+  "motivo": "En México «millón» se dice «miyón»: la referencia lleva a pronunciar gli como «y». El sonido [ʎ] se acerca más a «li» en un solo golpe."
+ },
+ {
+  "id": "c-italiano-a1",
+  "m": 0,
+  "l": 4,
+  "b": 2,
+  "buscar": "como «lli» en «millón»",
+  "reemplazar": "parecida a la «li» de «familia», en un solo golpe",
+  "motivo": "Misma corrección: para un hispanohablante yeísta «millón» suena «miyón», lo que induce a pronunciar gli como «y»."
+ },
+ {
+  "id": "c-italiano-a1",
+  "m": 4,
+  "l": 0,
+  "b": 6,
+  "buscar": "lashiáre",
+  "reemplazar": "lash-sháre",
+  "motivo": "En «lasciare» la i solo marca el sonido sh (no se pronuncia) y sc entre vocales es sh doble: [laʃˈʃaːre]."
+ },
+ {
+  "id": "c-italiano-a1",
+  "m": 4,
+  "l": 2,
+  "b": 4,
+  "buscar": "bel-líssimo",
+  "reemplazar": "bel-lís-simo",
+  "motivo": "«bellissimo» también lleva ss doble; se marca con guion según la clave del curso."
+ },
+ {
+  "id": "c-portugues-a1",
+  "m": 1,
+  "l": 2,
+  "b": 7,
+  "buscar": "brazileira",
+  "reemplazar": "braziléira",
+  "motivo": "Falta la tilde de la sílaba tónica (bra-zi-LEI-ra) en la pronunciación aproximada."
+ },
+ {
+  "id": "c-ingles-kids",
+  "m": 4,
+  "l": 3,
+  "b": 1,
+  "buscar": "gud áfternun",
+  "reemplazar": "gud afternún",
+  "motivo": "En «afternoon» el acento va en la última sílaba (after-NOON), como en el curso de Inglés A1."
+ },
+ {
+  "id": "c-ingles-a2",
+  "m": 3,
+  "l": 2,
+  "b": 7,
+  "buscar": "uórri",
+  "reemplazar": "uéri",
+  "motivo": "«worry» se pronuncia [ˈwɝi] (EE. UU.) / [ˈwʌri] (RU); «uórri» con rr vibrante induce un error."
+ },
+ {
+  "id": "c-ingles-b1",
+  "m": 3,
+  "l": 2,
+  "b": 7,
+  "buscar": "complént",
+  "reemplazar": "compléint",
+  "motivo": "«complaint» tiene diptongo /eɪ/: «compléint»."
+ },
+ {
+  "id": "c-ingles-b1",
+  "m": 3,
+  "l": 2,
+  "b": 7,
+  "buscar": "apólochais",
+  "reemplazar": "apóloyais",
+  "motivo": "«apologize» lleva /dʒ/ sonora; el curso la aproxima con «y» (G = «yí»), no con «ch» sorda."
+ },
+ {
+  "id": "c-ingles-servicio",
+  "m": 2,
+  "l": 3,
+  "b": 5,
+  "buscar": "{\"en\":\"The ship is ready to ship.\",\"es\":\"El barco está listo para zarpar.\"}",
+  "reemplazar": "{\"en\":\"The sheep is on the ship.\",\"es\":\"La oveja está en el barco.\"}",
+  "motivo": "La lección anuncia el contraste ship/sheep, pero la frase no contiene «sheep»; además «ready to ship» significa «listo para enviarse», no «listo para zarpar»."
+ }
+]

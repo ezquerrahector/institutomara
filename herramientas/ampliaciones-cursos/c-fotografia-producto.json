@@ -1,0 +1,32 @@
+{
+  "id": "c-fotografia-producto",
+  "extras": {},
+  "practicas": [
+    {
+      "modulo": 1,
+      "t": "Las velas de Paulina: luz, fondo y vidrio",
+      "obj": "Diagnosticar y resolver problemas de luz, fondo y reflejos en una sesión casera con productos en vaso de vidrio.",
+      "bloques": [
+        {"tipo":"destacado","texto":"<b>El caso.</b> Paulina hace velas aromáticas de cera de soya en vasos de vidrio ámbar y las vende por Instagram y en un bazar de fin de semana en Oaxaca. Toma sus fotos a las 8 de la noche en la mesa de la cocina, con el foco del techo, sobre un mantel de flores. Sus clientas le escriben: «¿La vela es café o naranja?» y «¿Qué tamaño tiene?». Tiene una ventana grande que da al poniente, cartulinas blancas, papel albanene y una placa de unicel. Tu reto: planear su nueva sesión con esos materiales. Calcula de 30 a 40 minutos."},
+        {"tipo":"texto","texto":"Repasa lo que ya sabes de este módulo aplicado al caso. La luz del foco del techo es amarilla y cae desde arriba: pinta de naranja el vidrio ámbar y deja la etiqueta en sombra. La <b>luz de ventana</b> de día es más neutra y llega de lado, lo que da volumen. Una ventana al poniente recibe <b>sol directo por la tarde</b>, así que conviene fotografiar en la mañana o poner el albanene como difusor.<br><br>El vidrio refleja todo lo que tiene enfrente: la ventana, el celular y la cocina. Por eso se rodea de cartulinas blancas y se revisa cada foto buscando reflejos. Y el mantel de flores compite con la etiqueta: un <b>fondo liso</b> deja que el producto sea el protagonista."},
+        {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+          {"p":"¿Por qué las clientas no saben si la vela es café o naranja?","ops":["Porque la cera de soya no se puede fotografiar","Porque el foco amarillo cambia el color del vidrio ámbar","Porque el celular no tiene suficientes megapíxeles"],"correcta":1,"explica":"La luz cálida del foco tiñe el producto; con luz de día y el balance de blancos correcto, el color se parece al real."},
+          {"p":"Su ventana da al poniente. ¿Cuándo conviene la sesión?","ops":["En la mañana o al mediodía, con luz indirecta, o por la tarde con el albanene como difusor","A las 5 de la tarde con el sol entrando directo, sin nada más","En la noche, con todas las luces prendidas"],"correcta":0,"explica":"El sol directo da brillos duros y sombras marcadas; la luz indirecta o difusa es la que buscas."},
+          {"p":"En el vidrio se ve reflejado el celular de Paulina. ¿Qué hace?","ops":["Lo deja: nadie lo va a notar","Sube la saturación para disimularlo","Cambia un poco el ángulo y rodea la vela con cartulinas blancas hasta que desaparezca"],"correcta":2,"explica":"Los reflejos se resuelven al tomar la foto, moviendo el ángulo y controlando lo que el vidrio tiene enfrente."},
+          {"p":"Para que se entienda el tamaño, ¿qué foto agrega?","ops":["Una foto de la vela junto a una taza o en la mano, con el mismo fondo","Una foto más cerca de la etiqueta","Una foto con zoom digital"],"correcta":0,"explica":"Un objeto conocido al lado da escala; el detalle de la etiqueta es otra foto distinta."}
+        ]},
+        {"tipo":"relacionar","rotulo":"Relaciona el problema con la solución casera","pares":[
+          ["Sol directo con sombras duras","Papel albanene como difusor"],
+          ["Un costado de la vela sale oscuro","Cartulina blanca como rebotador"],
+          ["Mantel de flores que distrae","Fondo infinito de cartulina en curva"],
+          ["Reflejo de la cocina en el vidrio","Cartulinas blancas alrededor de la vela"],
+          ["Color naranja que no es el real","Luz de día y foco apagado"]
+        ]},
+        {"tipo":"comparar","titulo":"La foto principal de la vela","mal":"De noche, bajo el foco, sobre el mantel de flores: el vidrio se ve naranja, la etiqueta queda en sombra y en el vaso se reflejan la estufa y el celular.","bien":"A las 11 de la mañana, junto a la ventana con albanene, sobre fondo infinito de cartulina blanca, con una cartulina rebotando luz del lado opuesto. El ámbar se ve como es, la etiqueta se lee y el vidrio solo refleja blanco."},
+        {"tipo":"reflexion","rotulo":"Tu set para mañana","pregunta":"Describe dónde y a qué hora harás tu próxima sesión: qué ventana usarás, hacia dónde da, qué materiales pondrás como difusor, rebotador y fondo, y cómo evitarás reflejos si tu producto brilla.","ayuda":"Usaré la ventana de… que da al… A las… Difusor: … Rebotador: … Fondo: …"},
+        {"tipo":"plantilla","rotulo":"Hoja de sesión casera","texto":"Producto: [ ]\nHora y ventana: [ ] (orientación: [ ])\nFoco del cuarto: apagado [ ]\nDifusor: [ ]  Rebotador: [ ]  Fondo: [ ]\nFotos: principal [ ] escala [ ] detalle [ ] en uso [ ]\nRevisión en cada foto: color real [ ] sin reflejos [ ] etiqueta legible [ ] fondo limpio [ ]","nota":"Cópiala y adáptala; llénala antes de cada sesión."},
+        {"tipo":"clave","items":["El color real depende de la luz: ventana de día y foco apagado.","El vidrio refleja lo que tiene enfrente; contrólalo con cartulinas y con el ángulo.","Un fondo liso y una foto de escala responden las dudas antes de que el cliente pregunte."]}
+      ]
+    }
+  ]
+}

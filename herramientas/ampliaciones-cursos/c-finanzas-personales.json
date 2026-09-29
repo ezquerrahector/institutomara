@@ -1,0 +1,979 @@
+{
+ "id": "c-finanzas-personales",
+ "extras": {},
+ "practicas": [
+  {
+   "modulo": 1,
+   "t": "Presupuesto con ingreso variable",
+   "obj": "Construir un presupuesto sobre un ingreso base conservador y apartar los excedentes de los meses buenos.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Rodrigo es estilista independiente en Mérida. No tiene sueldo fijo: hay meses de bodas y graduaciones y meses flojos. En los meses buenos gasta de más y en los flojos pide prestado. Sus ingresos netos de los últimos seis meses fueron: abril $14,500; mayo $11,200; junio $9,800; julio $16,300; agosto $12,700; septiembre $10,600. Sus gastos esenciales son de unos $9,500 al mes. Vas a ayudarle a armar un presupuesto que funcione <b>también</b> en el mes flojo."
+    },
+    {
+     "tipo": "texto",
+     "texto": "La idea es sencilla: el presupuesto se arma sobre un <b>ingreso base</b> conservador (aquí, el mes más bajo). Todo lo que entre por encima de esa base se aparta en un sobre de «nivelación» y sirve para completar los meses flojos. Así, Rodrigo vive como si ganara lo mismo cada mes."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Ingreso base y sobre de nivelación de Rodrigo",
+     "datos": [
+      [
+       "Mes",
+       "Ingreso neto",
+       "Excedente sobre la base"
+      ],
+      [
+       "Abril",
+       14500,
+       ""
+      ],
+      [
+       "Mayo",
+       11200,
+       ""
+      ],
+      [
+       "Junio",
+       9800,
+       ""
+      ],
+      [
+       "Julio",
+       16300,
+       ""
+      ],
+      [
+       "Agosto",
+       12700,
+       ""
+      ],
+      [
+       "Septiembre",
+       10600,
+       ""
+      ],
+      [
+       "Promedio",
+       "",
+       ""
+      ],
+      [
+       "Mes más bajo (base)",
+       "",
+       ""
+      ],
+      [
+       "Total para el sobre en 6 meses",
+       "",
+       ""
+      ],
+      [
+       "Gastos esenciales al mes",
+       9500,
+       ""
+      ],
+      [
+       "¿La base cubre lo esencial?",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "B8",
+       "formula": "=REDONDEAR(PROMEDIO(B2:B7),0)",
+       "esperado": 12517,
+       "requiere": "PROMEDIO(",
+       "texto": "<b>B8</b>: ingreso promedio de los seis meses, redondeado a pesos.",
+       "pista": "=REDONDEAR(PROMEDIO(B2:B7),0)"
+      },
+      {
+       "celda": "B9",
+       "formula": "=MIN(B2:B7)",
+       "esperado": 9800,
+       "requiere": "MIN(",
+       "texto": "<b>B9</b>: el mes más bajo con MIN. Esa será la base del presupuesto."
+      },
+      {
+       "celda": "C2",
+       "formula": "=SI(B2>$B$9,B2-$B$9,0)",
+       "esperado": 4700,
+       "requiere": "SI(",
+       "texto": "<b>C2</b>: con SI, si el ingreso de abril supera la base, el excedente es la diferencia; si no, 0. Fija la base con $B$9.",
+       "pista": "=SI(B2>$B$9,B2-$B$9,0)"
+      },
+      {
+       "celda": "C5",
+       "formula": "=SI(B5>$B$9,B5-$B$9,0)",
+       "esperado": 6500,
+       "requiere": "SI(",
+       "texto": "<b>C5</b>: la misma fórmula para julio."
+      },
+      {
+       "celda": "B10",
+       "formula": "=SUMA(B2:B7)-6*B9",
+       "esperado": 16300,
+       "requiere": "SUMA(",
+       "texto": "<b>B10</b>: todo lo que entró por encima de la base en 6 meses: la suma de ingresos menos 6 veces la base."
+      },
+      {
+       "celda": "B12",
+       "formula": "=SI(B9>=B11,\"Sí\",\"No\")",
+       "esperado": "Sí",
+       "requiere": "SI(",
+       "texto": "<b>B12</b>: escribe «Sí» si la base alcanza para los gastos esenciales y «No» si no.",
+       "explica": "La base de $9,800 cubre lo esencial con $300 de margen, y en medio año el sobre de nivelación habría juntado $16,300. Si Rodrigo hubiera presupuestado con el promedio ($12,517), en junio y septiembre le habrían faltado más de $2,000."
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "¿Por qué Rodrigo no debería presupuestar con su mejor mes (julio, $16,300)?",
+       "ops": [
+        "Porque el SAT lo prohíbe",
+        "Porque los meses flojos lo obligarían a pedir prestado para cubrir lo planeado",
+        "Porque en julio los precios suben"
+       ],
+       "correcta": 1,
+       "explica": "Si fijas tus gastos con el mes alto, cada mes bajo abre un hueco que suele llenarse con crédito."
+      },
+      {
+       "p": "En agosto entran $12,700. Con base de $9,800, ¿cuánto va al sobre de nivelación?",
+       "ops": [
+        "$2,900",
+        "$12,700",
+        "$3,200"
+       ],
+       "correcta": 0,
+       "explica": "12,700 − 9,800 = 2,900."
+      },
+      {
+       "p": "Llega un mes de $8,500, por debajo de la base. ¿Qué hace Rodrigo?",
+       "ops": [
+        "Usa la tarjeta para completar",
+        "Recorta la despensa a la mitad",
+        "Toma $1,300 del sobre de nivelación para completar su base"
+       ],
+       "correcta": 2,
+       "explica": "Para eso existe el sobre: completa los meses flojos sin deuda."
+      },
+      {
+       "p": "Además del sobre de nivelación, ¿qué otro apartado le conviene a alguien con ingreso variable?",
+       "ops": [
+        "Un fondo de emergencia más grande, de 6 meses o más",
+        "Ninguno; el sobre de nivelación basta para todo",
+        "Un crédito preaprobado como respaldo"
+       ],
+       "correcta": 0,
+       "explica": "La nivelación resuelve la variación normal; el fondo de emergencia cubre lo imprevisto, como una lesión que le impida trabajar."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa",
+     "items": [
+      {
+       "frase": "Con ingreso variable, el presupuesto se arma sobre un ingreso ___ conservador.",
+       "resp": [
+        "base"
+       ]
+      },
+      {
+       "frase": "Para encontrar el mes más bajo en la hoja usas la función ___.",
+       "resp": [
+        "MIN",
+        "min"
+       ]
+      },
+      {
+       "frase": "Lo que entra por encima de la base se aparta en un sobre de ___.",
+       "resp": [
+        "nivelación",
+        "nivelacion"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "El mismo julio de $16,300",
+     "malTitulo": "Sin base",
+     "mal": "«¡Qué buen mes! Me compro la secadora profesional y salimos a cenar; agosto ya veremos.»",
+     "bienTitulo": "Con base",
+     "bien": "«Vivo con mis $9,800 de siempre, aparto $6,500 al sobre de nivelación y, si en tres meses el sobre sigue sano, compro la secadora de contado.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu ingreso base",
+     "pregunta": "Escribe tus ingresos netos de los últimos tres a seis meses (si tu sueldo es fijo, incluye bonos, horas extra o ventas extra). ¿Cuál sería tu ingreso base y cuánto habrías podido apartar por encima de él?",
+     "ayuda": "Mis ingresos fueron… Mi base sería $… Habría apartado $…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Mi presupuesto quincenal sobre ingreso base",
+     "texto": "Ingreso base mensual: $[ ] (quincena: $[ ])\nQuincena 1 — renta y fijos que vencen: $[ ]\nQuincena 1 — despensa y transporte: $[ ]\nQuincena 2 — servicios y pagos: $[ ]\nQuincena 2 — despensa y transporte: $[ ]\nAhorro que aparto al cobrar: $[ ]\nSobre de nivelación (todo lo que entre arriba de la base): saldo actual $[ ]\nRegla: si una quincena entra menos que la base, tomo del sobre y no de la tarjeta.",
+     "nota": "Ajusta tu base cada seis meses con tus datos más recientes."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Con ingreso variable, presupuesta sobre una base conservadora, como el mes más bajo.",
+      "Lo que entre por encima de la base va a un sobre de nivelación.",
+      "El sobre cubre los meses flojos; el fondo de emergencia, lo imprevisto."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 2,
+   "t": "Tres formas de pagar la misma lavadora",
+   "obj": "Comparar el costo total y el CAT de varias formas de compra a plazos antes de firmar.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> A Valeria, en Monterrey, se le descompuso la lavadora. La que le gusta cuesta <b>$8,999 de contado</b>. Le ofrecen tres caminos (cifras de ejemplo para practicar): A) crédito de la tienda con <b>52 pagos semanales de $259</b>; B) un préstamo personal de <b>12 pagos mensuales de $905</b>; C) su tarjeta de crédito a <b>12 meses sin intereses de $750</b>. El vendedor insiste: «Con la A son solo 259 pesitos a la semana». Vas a comparar el costo real."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "¿Cuánto cuesta en realidad cada opción?",
+     "datos": [
+      [
+       "Opción",
+       "Pago",
+       "Número de pagos",
+       "Total pagado",
+       "Costo extra",
+       "CAT aproximado (ejemplo)"
+      ],
+      [
+       "A. Crédito de tienda",
+       259,
+       52,
+       "",
+       "",
+       1.34
+      ],
+      [
+       "B. Préstamo personal",
+       905,
+       12,
+       "",
+       "",
+       0.43
+      ],
+      [
+       "C. Tarjeta a 12 MSI",
+       750,
+       12,
+       "",
+       "",
+       0
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Precio de contado",
+       8999,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Opción con menor total",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "D2",
+       "formula": "=B2*C2",
+       "esperado": 13468,
+       "texto": "<b>D2</b>: total pagado con la opción A: pago × número de pagos."
+      },
+      {
+       "celda": "D3",
+       "formula": "=B3*C3",
+       "esperado": 10860,
+       "texto": "<b>D3</b>: total pagado con la opción B."
+      },
+      {
+       "celda": "D4",
+       "formula": "=B4*C4",
+       "esperado": 9000,
+       "texto": "<b>D4</b>: total pagado con la opción C."
+      },
+      {
+       "celda": "E2",
+       "formula": "=D2-$B$6",
+       "esperado": 4469,
+       "texto": "<b>E2</b>: costo extra de la opción A frente al contado. Fija el precio con $B$6.",
+       "pista": "=D2-$B$6"
+      },
+      {
+       "celda": "E3",
+       "formula": "=D3-$B$6",
+       "esperado": 1861,
+       "texto": "<b>E3</b>: costo extra de la opción B."
+      },
+      {
+       "celda": "B8",
+       "formula": "=INDICE(A2:A4,COINCIDIR(MIN(D2:D4),D2:D4,0))",
+       "esperado": "C. Tarjeta a 12 MSI",
+       "requiere": "COINCIDIR(",
+       "texto": "<b>B8</b>: con INDICE, COINCIDIR y MIN, escribe el nombre de la opción con el menor total pagado.",
+       "pista": "=INDICE(A2:A4,COINCIDIR(MIN(D2:D4),D2:D4,0))",
+       "explica": "Los «259 pesitos» terminan costando $4,469 más que el contado: casi la mitad del precio, con un CAT aproximado de 134%. Los MSI salen más baratos <b>solo si</b> Valeria paga completo cada mes; si se atrasa o paga solo el mínimo, pueden generarse intereses y comisiones. Cifras de ejemplo: con ofertas reales, compara el CAT y el total a pagar que te informen por escrito."
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "El vendedor destaca que el pago semanal es «muy bajito». ¿Qué dato debe pedir Valeria para comparar?",
+       "ops": [
+        "El color de la lavadora a crédito",
+        "El total a pagar y el CAT de la oferta",
+        "Cuántas personas ya compraron así"
+       ],
+       "correcta": 1,
+       "explica": "Un pago pequeño con muchos plazos puede esconder un total mucho mayor; el CAT y el total a pagar lo muestran."
+      },
+      {
+       "p": "¿Cuándo los meses sin intereses dejan de ser la opción más barata?",
+       "ops": [
+        "Cuando Valeria se atrasa o no cubre completo lo que le corresponde cada mes",
+        "Nunca: son gratis en cualquier caso",
+        "Cuando la compra es en Monterrey"
+       ],
+       "correcta": 0,
+       "explica": "Los MSI no generan intereses mientras pagues puntual lo que corresponde. Un atraso puede traer intereses, comisiones y afectar tu historial. Lee las condiciones de tu contrato."
+      },
+      {
+       "p": "Valeria ya usa 90% del límite de su tarjeta y el mes pasado solo pagó el mínimo. ¿Qué es más prudente?",
+       "ops": [
+        "Sumar los MSI, porque son gratis",
+        "Pedir otra tarjeta para tener más límite",
+        "No sumar otra compra a plazos y valorar opciones como una lavadora más barata, una reparación o ahorrar unas semanas"
+       ],
+       "correcta": 2,
+       "explica": "Con la tarjeta casi al tope y pagando el mínimo, cualquier cargo adicional es arriesgado. La mejor comparación incluye la opción de no endeudarse."
+      },
+      {
+       "p": "¿Dónde puede Valeria verificar a una institución y comparar productos de crédito antes de firmar?",
+       "ops": [
+        "En los comentarios de una red social",
+        "En las herramientas de la CONDUSEF, como el SIPRES y sus simuladores y comparativos",
+        "Solo con lo que diga el vendedor"
+       ],
+       "correcta": 1,
+       "explica": "La CONDUSEF tiene herramientas públicas para verificar entidades y comparar productos. El Banco de México también explica el CAT en su sitio."
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "Relaciona",
+     "pares": [
+      [
+       "Pago semanal pequeño a muchos plazos",
+       "Puede esconder un total mucho mayor que el contado"
+      ],
+      [
+       "CAT",
+       "Costo anual total para comparar créditos del mismo tipo"
+      ],
+      [
+       "Meses sin intereses",
+       "Sin intereses solo si pagas puntual lo que corresponde"
+      ],
+      [
+       "Total a pagar por escrito",
+       "El dato que debes ver antes de firmar"
+      ],
+      [
+       "SIPRES de la CONDUSEF",
+       "Verificar que la institución esté registrada"
+      ]
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Dos preguntas al vendedor",
+     "malTitulo": "Pregunta que no ayuda",
+     "mal": "«¿De cuánto me queda el pago a la semana?»",
+     "bienTitulo": "Pregunta que protege",
+     "bien": "«¿Cuál es el total que voy a pagar, cuál es el CAT y qué pasa si me atraso un pago? ¿Me lo da por escrito?»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu próxima compra a plazos",
+     "pregunta": "Piensa en la próxima compra grande que tengas en mente. Escribe el precio de contado y, si ya tienes alguna oferta a plazos, calcula el total a pagar (pago × número de pagos) y el costo extra. ¿Te sigue conviniendo?",
+     "ayuda": "Quiero comprar… de contado cuesta $… a plazos pagaría $… en total, es decir $… de más. Decido…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Antes de firmar un crédito",
+     "texto": "Producto o crédito: [ ]\nPrecio de contado: $[ ]\nPago: $[ ] cada [semana/quincena/mes] × [ ] pagos\nTotal a pagar: $[ ] → Costo extra: $[ ]\nCAT informado: [ ]%  (lo comparo con créditos del mismo tipo y plazo)\nComisiones y seguros obligatorios: [ ]\n¿Qué pasa si me atraso?: [ ]\nInstitución verificada en el SIPRES de la CONDUSEF: [sí/no]\n¿Cabe el pago en mi presupuesto sin tocar mi colchón?: [sí/no]",
+     "nota": "Si no puedes llenar todos los campos, todavía no estás listo para firmar."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Compara el total a pagar y el CAT, no el pago semanal.",
+      "Los MSI solo son gratis si pagas puntual lo que corresponde.",
+      "Verifica a la institución en la CONDUSEF y pide todo por escrito."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 3,
+   "t": "Interés compuesto, GAT e inflación",
+   "obj": "Calcular cómo crece un ahorro con interés compuesto y comparar opciones por GAT, rendimiento real y disponibilidad.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Alejandra es enfermera en Hermosillo. Ya tiene <b>$20,000</b> en su fondo de emergencia y quiere empezar a ahorrar <b>$1,500 al mes</b> para el enganche de un auto dentro de 5 años. Encontró tres opciones de ahorro con distintas GAT (cifras de ejemplo). No sabe cuál conviene para cada dinero. Aquí no se trata de elegir una institución, sino de aprender a comparar."
+    },
+    {
+     "tipo": "tarjetas",
+     "rotulo": "Conceptos para comparar ahorro",
+     "tarjetas": [
+      {
+       "frente": "GAT nominal",
+       "reverso": "Ganancia Anual Total: el rendimiento anual que informa un producto de ahorro o inversión, antes de impuestos. Sirve para comparar productos parecidos."
+      },
+      {
+       "frente": "GAT real",
+       "reverso": "La GAT nominal descontando la inflación estimada. Te dice si tu dinero gana o pierde poder de compra."
+      },
+      {
+       "frente": "Interés compuesto",
+       "reverso": "Los intereses se suman al saldo y generan nuevos intereses. Con tiempo, la diferencia se vuelve grande."
+      },
+      {
+       "frente": "Disponibilidad",
+       "reverso": "Cuándo puedes sacar tu dinero. El fondo de emergencia necesita disponibilidad inmediata; una meta a 5 años puede esperar."
+      },
+      {
+       "frente": "Protección del IPAB",
+       "reverso": "Los depósitos bancarios están protegidos hasta 400 mil UDIS por persona y por banco. En otras entidades la protección es distinta: verifícala."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Compara tres opciones de ejemplo para los $20,000",
+     "datos": [
+      [
+       "Opción",
+       "GAT nominal (ejemplo)",
+       "Disponibilidad",
+       "Rendimiento real aprox.",
+       "¿Le gana a la inflación?",
+       "Saldo en 3 años"
+      ],
+      [
+       "A. Cuenta de ahorro",
+       0.02,
+       "Inmediata",
+       "",
+       "",
+       ""
+      ],
+      [
+       "B. Inversión a 28 días",
+       0.075,
+       "Cada 28 días",
+       "",
+       "",
+       ""
+      ],
+      [
+       "C. Plazo fijo a 1 año",
+       0.09,
+       "Cada año",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Capital",
+       20000,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Inflación supuesta",
+       0.04,
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "D2",
+       "formula": "=B2-$B$6",
+       "esperado": -0.02,
+       "texto": "<b>D2</b>: rendimiento real aproximado = GAT nominal − inflación supuesta. Fija la inflación con $B$6.",
+       "pista": "=B2-$B$6"
+      },
+      {
+       "celda": "D3",
+       "formula": "=B3-$B$6",
+       "esperado": 0.035,
+       "texto": "<b>D3</b>: rendimiento real aproximado de la opción B."
+      },
+      {
+       "celda": "E2",
+       "formula": "=SI(D2>0,\"Sí\",\"No\")",
+       "esperado": "No",
+       "requiere": "SI(",
+       "texto": "<b>E2</b>: con SI, «Sí» si el rendimiento real es positivo; si no, «No»."
+      },
+      {
+       "celda": "F2",
+       "formula": "=REDONDEAR($B$5*(1+B2)^3,2)",
+       "esperado": 21224.16,
+       "requiere": "^",
+       "texto": "<b>F2</b>: saldo en 3 años con interés compuesto anual: capital × (1 + GAT) elevado a 3, redondeado a centavos.",
+       "pista": "=REDONDEAR($B$5*(1+B2)^3,2)"
+      },
+      {
+       "celda": "F3",
+       "formula": "=REDONDEAR($B$5*(1+B3)^3,2)",
+       "esperado": 24845.94,
+       "requiere": "^",
+       "texto": "<b>F3</b>: saldo en 3 años de la opción B."
+      },
+      {
+       "celda": "F4",
+       "formula": "=REDONDEAR($B$5*(1+B4)^3,2)",
+       "esperado": 25900.58,
+       "requiere": "^",
+       "texto": "<b>F4</b>: saldo en 3 años de la opción C.",
+       "explica": "La opción C deja casi $4,700 más que la A en 3 años, pero su dinero no está disponible cuando quieras. Por eso no se elige solo por GAT: el fondo de emergencia necesita disponibilidad; una meta de largo plazo puede buscar más rendimiento. Estas cifras son un simplificado de ejemplo."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "El ahorro mensual para el enganche",
+     "datos": [
+      [
+       "Dato",
+       "Valor"
+      ],
+      [
+       "Aportación mensual",
+       1500
+      ],
+      [
+       "Tasa anual de ejemplo",
+       0.08
+      ],
+      [
+       "Años",
+       5
+      ],
+      [
+       "Total que aportas",
+       ""
+      ],
+      [
+       "Saldo al final con interés compuesto mensual",
+       ""
+      ],
+      [
+       "Intereses ganados",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "B5",
+       "formula": "=B2*B4*12",
+       "esperado": 90000,
+       "texto": "<b>B5</b>: lo que Alejandra aporta de su bolsillo: aportación × años × 12."
+      },
+      {
+       "celda": "B6",
+       "formula": "=REDONDEAR(B2*((1+B3/12)^(B4*12)-1)/(B3/12),2)",
+       "esperado": 110215.28,
+       "requiere": "REDONDEAR(",
+       "texto": "<b>B6</b>: saldo final de aportaciones mensuales: aportación × ((1 + tasa ÷ 12) elevado a los meses − 1) ÷ (tasa ÷ 12). Redondea a centavos.",
+       "pista": "=REDONDEAR(B2*((1+B3/12)^(B4*12)-1)/(B3/12),2). Cuida los paréntesis: primero la potencia, luego la resta y al final la división."
+      },
+      {
+       "celda": "B7",
+       "formula": "=B6-B5",
+       "esperado": 20215.28,
+       "texto": "<b>B7</b>: intereses ganados = saldo final − total aportado.",
+       "explica": "Aportó $90,000 y el interés compuesto sumó unos $20,200 más. La tasa es un supuesto para practicar; en la vida real cambia, se pagan impuestos y hay que descontar la inflación."
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "¿Dónde conviene que Alejandra mantenga su fondo de emergencia de $20,000?",
+       "ops": [
+        "En la opción con mayor GAT aunque no pueda sacarlo en un año",
+        "En una opción con disponibilidad inmediata o casi inmediata, aunque rinda menos",
+        "En efectivo en su casa, para tenerlo a la mano"
+       ],
+       "correcta": 1,
+       "explica": "El fondo de emergencia existe para usarse rápido. Para la meta del enganche sí puede considerar opciones con plazo."
+      },
+      {
+       "p": "Una opción ofrece GAT nominal de 3% y la inflación supuesta es 4%. En términos reales, el dinero…",
+       "ops": [
+        "Gana 7%",
+        "Queda igual",
+        "Pierde alrededor de 1% de poder de compra al año"
+       ],
+       "correcta": 2,
+       "explica": "3% − 4% ≈ −1%. Por eso se revisa también la GAT real."
+      },
+      {
+       "p": "Alguien le ofrece «4% mensual garantizado» si mete sus ahorros hoy. ¿Qué hace?",
+       "ops": [
+        "Desconfía y verifica a la empresa en la CONDUSEF y la CNBV antes de cualquier depósito",
+        "Aprovecha antes de que se acabe la promoción",
+        "Mete solo la mitad del fondo"
+       ],
+       "correcta": 0,
+       "explica": "Rendimientos altos, rápidos y «garantizados» son señal típica de fraude."
+      },
+      {
+       "p": "¿Qué explica que el saldo de B6 sea mayor que lo aportado?",
+       "ops": [
+        "La inflación",
+        "El interés compuesto: los intereses también generan intereses",
+        "Una comisión a favor"
+       ],
+       "correcta": 1,
+       "explica": "Cada mes el interés se suma al saldo y el mes siguiente también gana."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa",
+     "items": [
+      {
+       "frase": "GAT significa Ganancia Anual ___.",
+       "resp": [
+        "Total"
+       ]
+      },
+      {
+       "frase": "La GAT ___ descuenta la inflación estimada.",
+       "resp": [
+        "real"
+       ]
+      },
+      {
+       "frase": "En la hoja de cálculo, para elevar a una potencia usas el símbolo ___.",
+       "resp": [
+        "^"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Dos formas de elegir dónde ahorrar",
+     "malTitulo": "Solo por rendimiento",
+     "mal": "«Meto todo, incluido mi fondo de emergencia, a la opción que paga más, aunque no pueda sacarlo en un año.»",
+     "bienTitulo": "Por objetivo",
+     "bien": "«El fondo de emergencia va donde tenga disponibilidad inmediata. Lo del enganche, que no usaré en 5 años, puede ir a plazo. En ambos casos comparo GAT nominal y real, comisiones y protección de mis depósitos.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu propia comparación",
+     "pregunta": "Busca en los estados de cuenta o en la app de tu cuenta de ahorro la GAT nominal y la GAT real que te informan. Escríbelas y di si tu dinero le está ganando o no a la inflación. ¿Qué dinero tuyo necesita disponibilidad y cuál podría esperar?",
+     "ayuda": "Mi cuenta informa GAT nominal de …% y GAT real de …%. Mi dinero de emergencia… Mi dinero para metas largas…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Comparador de opciones de ahorro",
+     "texto": "Objetivo del dinero: [emergencia / meta de [ ] años]\nOpción 1: GAT nominal [ ]% · GAT real [ ]% · disponibilidad [ ] · comisiones [ ] · protección [ ]\nOpción 2: GAT nominal [ ]% · GAT real [ ]% · disponibilidad [ ] · comisiones [ ] · protección [ ]\nInstitución verificada en CONDUSEF: [sí/no]\nElijo: [ ] porque [ ]",
+     "nota": "Compara solo productos del mismo tipo y plazo, con información oficial y vigente."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Interés compuesto: los intereses se suman al saldo y también ganan.",
+      "Compara por GAT nominal y real, disponibilidad, comisiones y protección.",
+      "Elige según el objetivo del dinero, no solo por el rendimiento más alto."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 4,
+   "t": "Revisión anual de la familia Hernández",
+   "obj": "Comparar dos pólizas con deducible y coaseguro, detectar un intento de fraude y cerrar el año con un plan.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Óscar y Lucía Hernández viven en Puebla con sus dos hijos. Ella trabaja por su cuenta y no tiene seguridad social; él sí. Cada enero hacen una revisión de su dinero. Este año tienen tres temas: elegir entre dos pólizas de gastos médicos para Lucía (cifras de ejemplo), un mensaje sospechoso que le llegó a Óscar y su plan para los próximos 90 días."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "¿Qué póliza le cuesta menos a Lucía si hay una hospitalización?",
+     "datos": [
+      [
+       "Póliza",
+       "Prima anual",
+       "Deducible",
+       "Coaseguro",
+       "Tope de coaseguro",
+       "Pagas en el siniestro",
+       "Costo total del año"
+      ],
+      [
+       "Póliza 1",
+       18000,
+       20000,
+       0.1,
+       30000,
+       "",
+       ""
+      ],
+      [
+       "Póliza 2",
+       12500,
+       35000,
+       0.2,
+       40000,
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Gasto de la hospitalización",
+       150000,
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Ahorro en prima de la póliza 2",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Menor costo total si hay siniestro",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "F2",
+       "formula": "=C2+MIN(D2*($B$5-C2),E2)",
+       "esperado": 33000,
+       "requiere": "MIN(",
+       "texto": "<b>F2</b>: lo que paga Lucía con la póliza 1 = deducible + el menor entre (coaseguro × (gasto − deducible)) y el tope de coaseguro.",
+       "pista": "=C2+MIN(D2*($B$5-C2),E2)"
+      },
+      {
+       "celda": "F3",
+       "formula": "=C3+MIN(D3*($B$5-C3),E3)",
+       "esperado": 58000,
+       "requiere": "MIN(",
+       "texto": "<b>F3</b>: lo mismo con la póliza 2."
+      },
+      {
+       "celda": "G2",
+       "formula": "=B2+F2",
+       "esperado": 51000,
+       "texto": "<b>G2</b>: costo total del año con la póliza 1 = prima + lo que paga en el siniestro."
+      },
+      {
+       "celda": "G3",
+       "formula": "=B3+F3",
+       "esperado": 70500,
+       "texto": "<b>G3</b>: costo total del año con la póliza 2."
+      },
+      {
+       "celda": "B7",
+       "formula": "=B2-B3",
+       "esperado": 5500,
+       "texto": "<b>B7</b>: ¿cuánto se ahorra en prima con la póliza 2 en un año sin siniestros?"
+      },
+      {
+       "celda": "B8",
+       "formula": "=INDICE(A2:A3,COINCIDIR(MIN(G2:G3),G2:G3,0))",
+       "esperado": "Póliza 1",
+       "requiere": "COINCIDIR(",
+       "texto": "<b>B8</b>: con INDICE, COINCIDIR y MIN, escribe qué póliza tiene el menor costo total si hay hospitalización.",
+       "explica": "La póliza 2 ahorra $5,500 de prima en un año tranquilo, pero con una hospitalización de $150,000 le costaría $19,500 más. La pregunta clave es: ¿podrían pagar $58,000 de su bolsillo sin endeudarse? Cifras de ejemplo; en pólizas reales revisa condiciones generales, exclusiones y periodos de espera."
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "Los Hernández tienen $25,000 de fondo de emergencia. Con eso en mente, ¿qué póliza es más prudente?",
+       "ops": [
+        "La póliza 2, porque la prima es más barata",
+        "La póliza 1, porque lo que pagarían en una hospitalización se acerca más a lo que pueden cubrir",
+        "Ninguna, porque los seguros nunca pagan"
+       ],
+       "correcta": 1,
+       "explica": "Un deducible alto solo conviene si tienes con qué pagarlo. Con $25,000 ahorrados, $58,000 de su bolsillo los llevaría a deuda."
+      },
+      {
+       "p": "A Óscar le llega un SMS: «Su cuenta será bloqueada hoy. Ingrese aquí para validar sus datos» con un enlace. ¿Qué hace?",
+       "ops": [
+        "Entra al enlace rápido para evitar el bloqueo",
+        "Responde el SMS con su número de cliente",
+        "No abre el enlace; entra a su banco por la app oficial o llama al número de su tarjeta"
+       ],
+       "correcta": 2,
+       "explica": "Urgencia más enlace es la combinación típica del phishing. Tu banco no te pide validar datos por un enlace de SMS."
+      },
+      {
+       "p": "¿Qué conviene revisar primero antes de contratar un seguro de vida para Óscar?",
+       "ops": [
+        "Si ya tiene un seguro de vida como prestación en su trabajo y por cuánto",
+        "La póliza más cara del mercado",
+        "Si su vecino ya tiene uno"
+       ],
+       "correcta": 0,
+       "explica": "Muchos empleos incluyen un seguro de vida. Saber qué ya tienes evita pagar doble o quedarte corto."
+      },
+      {
+       "p": "Al cerrar su revisión, ¿qué dato les dice si su año fue mejor que el anterior?",
+       "ops": [
+        "Cuántas compras hicieron",
+        "Su límite de crédito",
+        "Su patrimonio neto comparado con el del año pasado"
+       ],
+       "correcta": 2,
+       "explica": "Activos menos pasivos: si subió, avanzaron."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa",
+     "items": [
+      {
+       "frase": "La parte del gasto que pagas antes de que pague la aseguradora es el ___.",
+       "resp": [
+        "deducible"
+       ]
+      },
+      {
+       "frase": "El porcentaje del gasto que te toca después del deducible es el ___.",
+       "resp": [
+        "coaseguro"
+       ]
+      },
+      {
+       "frase": "Una prima más barata suele venir con un deducible más ___.",
+       "resp": [
+        "alto",
+        "grande"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Dos formas de elegir una póliza",
+     "malTitulo": "Solo por la prima",
+     "mal": "«Me quedo con la más barata al mes; total, ojalá nunca la use.»",
+     "bienTitulo": "Por el peor escenario que puedo pagar",
+     "bien": "«Calculo cuánto pagaría yo en una hospitalización con cada póliza y elijo la que no me obliga a endeudarme. Leo exclusiones y periodos de espera antes de firmar.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu revisión de protección",
+     "pregunta": "Escribe qué seguros tienes hoy (incluidos los de tu trabajo), su suma asegurada si la conoces y quiénes son tus beneficiarios. ¿Qué hueco de protección detectas y qué harás este mes para cerrarlo?",
+     "ayuda": "Tengo… con suma asegurada de… Mis beneficiarios son… El hueco que veo es… Este mes voy a…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Mi revisión financiera anual",
+     "texto": "Fecha de la revisión: [ ]\nPatrimonio neto hoy: $[ ] · hace un año: $[ ]\nDeudas pagadas este año: [ ]\nFondo de emergencia: $[ ] = [ ] meses de gastos esenciales\nSeguros vigentes y beneficiarios revisados: [ ]\nAfore localizada y beneficiarios al día: [sí/no]\nReporte de Crédito Especial revisado: [sí/no]\nAlertas de movimientos activadas: [sí/no]\nTres metas para este año: 1) [ ] 2) [ ] 3) [ ]",
+     "nota": "Ponle fecha fija, por ejemplo la primera semana de enero, y hazla en pareja o en familia si comparten gastos."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Compara pólizas por lo que pagarías en el peor escenario, no solo por la prima.",
+      "Urgencia más enlace o código: cuelga y entra por el canal oficial.",
+      "Una revisión anual con fecha fija mantiene tu plan vivo."
+     ]
+    }
+   ]
+  }
+ ]
+}

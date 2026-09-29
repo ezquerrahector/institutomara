@@ -1,0 +1,247 @@
+{
+ "id": "d-adulto-mayor",
+ "extras": {
+  "d-adulto-mayor-m4-l4": [
+   {"tipo":"excel","rotulo":"Practica: horario y registro de tomas de don Anselmo","datos":[
+    ["Medicamento (como dice la receta)","Primera toma (hora, 24 h)","Cada cuántas horas (según receta)","Tomas al día"],
+    ["Medicamento A (presión)",8,12,""],
+    ["Medicamento B (azúcar)",9,24,""],
+    ["Medicamento C (colesterol)",21,24,""],
+    ["Día","Toma de las 8:00","Toma de las 20:00",""],
+    ["Lunes","Sí","Sí",""],
+    ["Martes","Sí","No",""],
+    ["Miércoles","Sí","Sí",""],
+    ["Jueves","Sí","Sí",""],
+    ["Viernes","No","Sí",""],
+    ["Sábado","Sí","Sí",""],
+    ["Domingo","Sí","Sí",""],
+    ["Hora de la 2.ª toma del medicamento A","","",""],
+    ["Tomas del medicamento A registradas como Sí","","",""],
+    ["Tomas programadas en la semana","","",""],
+    ["Porcentaje de cumplimiento","","",""],
+    ["¿Qué hago?","","",""]
+   ],"retos":[
+    {"celda":"D2","formula":"=24/C2","esperado":2,"texto":"<b>D2</b>: calcula cuántas tomas al día lleva el medicamento A (24 horas entre el intervalo de la receta).","pista":"=24/C2"},
+    {"celda":"B13","formula":"=B2+C2","esperado":20,"texto":"<b>B13</b>: calcula a qué hora toca la segunda toma del medicamento A (primera toma más el intervalo).","pista":"=B2+C2"},
+    {"celda":"B14","formula":"=CONTAR.SI(B6:C12,\"Sí\")","esperado":12,"texto":"<b>B14</b>: cuenta cuántas tomas del medicamento A se marcaron con «Sí» en la semana.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(B6:C12,\"Sí\")"},
+    {"celda":"B15","formula":"=CONTARA(B6:C12)","esperado":14,"texto":"<b>B15</b>: cuenta cuántas tomas había programadas (todas las casillas llenas del registro).","requiere":"CONTARA(","pista":"=CONTARA(B6:C12)"},
+    {"celda":"B16","formula":"=REDONDEAR(B14/B15*100,0)","esperado":86,"texto":"<b>B16</b>: calcula el porcentaje de cumplimiento, redondeado a entero.","requiere":"REDONDEAR(","pista":"=REDONDEAR(B14/B15*100,0)"},
+    {"celda":"B17","formula":"=SI(B16<100,\"Llevar el registro al médico\",\"Semana completa\")","esperado":"Llevar el registro al médico","texto":"<b>B17</b>: si el cumplimiento es menor a 100, escribe «Llevar el registro al médico»; si no, «Semana completa».","requiere":"SI(","pista":"=SI(B16<100,\"Llevar el registro al médico\",\"Semana completa\")"}
+   ]},
+   {"tipo":"practica","rotulo":"Lee tu hoja","preguntas":[
+    {"p":"El martes en la noche no se tomó el medicamento A. El miércoles en la mañana tú…","ops":["Le das dos pastillas juntas para reponer","Das la dosis normal, anotas el olvido y preguntas al médico o farmacéutico si hay que hacer algo más","Suspendes el medicamento hasta la próxima consulta"],"correcta":1,"explica":"Nunca se duplica ni se suspende por tu cuenta. Cada medicamento tiene su propia indicación para olvidos."},
+    {"p":"El registro muestra dos olvidos en la semana, ambos en días distintos. Lo más útil es…","ops":["Borrarlos para que el hijo no se preocupe","Cambiar el horario de las pastillas a uno más cómodo sin avisar","Buscar el patrón (¿quién estaba?, ¿sonó la alarma?) y llevar la hoja a la consulta"],"correcta":2,"explica":"El registro honesto sirve para encontrar la causa y para que el médico decida con datos."}
+   ]}
+  ]
+ },
+ "practicas": [
+  {"modulo":0,"t":"Observar, anotar y avisar con respeto","obj":"Distinguir cambios esperados de señales de alarma y comunicarte con la familia sin quitarle a la persona su dignidad.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: don Evaristo y las llaves</b><br>Empiezas a acompañar por las tardes a <b>don Evaristo</b>, de 79 años, en Morelia. Enviudó hace un año, vive con su hijo Julián y todavía hace las compras en el mercado. En tu primera semana notas que camina más despacio que en las fotos del año pasado, que a veces olvida el nombre del vecino y luego lo recuerda, y que el jueves llegó a la casa sin saber bien cómo había regresado. Julián te pide: «Quítale las llaves y no lo dejes salir; de todos modos ya no entiende»."},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"Que camine más despacio que hace un año y olvide un nombre que luego recuerda…","ops":["Son cambios frecuentes con la edad; los anotas y sigues observando","Son señales de demencia que debes diagnosticar tú","Obligan a llamar al 911"],"correcta":0,"explica":"Lo gradual suele ser parte del envejecimiento. Lo anotas para comparar después."},
+    {"p":"El jueves regresó sin saber bien cómo llegó. ¿Qué haces?","ops":["Nada, a cualquiera le pasa","Lo anotas con fecha y hora y le pides a Julián que lo consulten con el médico pronto","Le dices a don Evaristo que ya no puede salir nunca"],"correcta":1,"explica":"Perderse o desorientarse en un camino conocido es una señal de alarma que se consulta. El diagnóstico lo hace el médico."},
+    {"p":"«Ya no entiende». ¿Qué respuesta respeta su autonomía y cuida su seguridad?","ops":["Quitarle las llaves a escondidas","Hablar solo con Julián y decidir por él","Platicar con don Evaristo y Julián juntos: por ahora ir acompañado al mercado mientras lo revisa el médico"],"correcta":2,"explica":"La persona participa en las decisiones sobre su vida. Una medida temporal y acordada protege sin humillar."},
+    {"p":"Mientras hablas con Julián, don Evaristo está en la misma sala. Tú…","ops":["Lo incluyes en la conversación y le preguntas su opinión","Bajas la voz para que no escuche","Hablas de él en tercera persona como si no estuviera"],"correcta":0,"explica":"Hablar de alguien frente a él como si no estuviera es una forma de trato indigno."}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona lo que observas con lo que haces","pares":[
+    ["Camina más lento que hace un año","Lo anoto y animo a que siga activo"],
+    ["Confusión que apareció hoy de golpe","Atención médica hoy; 911 si no responde o empeora"],
+    ["Ardor al orinar y fiebre","Aviso a la familia y consulta médica el mismo día"],
+    ["Moretones que no explica y miedo a un familiar","Busco orientación en el DIF; 911 si hay peligro inmediato"],
+    ["Olvida un nombre y lo recuerda después","Es frecuente con la edad; sigo observando"]
+   ]},
+   {"tipo":"completar","rotulo":"Completa","items":[
+    {"frase":"Tu tarea es observar, anotar y ___ a tiempo.","resp":["avisar"]},
+    {"frase":"Lo normal del envejecimiento llega poco a ___; lo brusco es alerta.","resp":["poco"]},
+    {"frase":"Si la persona no responde o no despierta, llamas al ___.","resp":["911"]},
+    {"frase":"Las decisiones sobre su vida se toman ___ ella, no a sus espaldas.","resp":["con"]}
+   ]},
+   {"tipo":"tarjetas","rotulo":"Frases de trato digno","tarjetas":[
+    {"frente":"Te dan ganas de decirle «mi rey» o «abuelito» a alguien que acabas de conocer.","reverso":"Pregúntale cómo le gusta que le digan: «¿Le digo don Evaristo o prefiere otro nombre?»."},
+    {"frente":"Quieres ayudarle a abotonarse la camisa porque tarda.","reverso":"Dale tiempo y ofrece: «¿Le ayudo con los de arriba o prefiere hacerlo usted?»."},
+    {"frente":"Te pregunta lo mismo por tercera vez.","reverso":"Contesta con calma, como si fuera la primera; no digas «ya le dije»."},
+    {"frente":"La familia decide un cambio en su rutina.","reverso":"Explícale el cambio a él primero y escucha qué opina."}
+   ]},
+   {"tipo":"comparar","titulo":"Cómo se oye el reporte a la familia","mal":"«Su papá ya está chocheando, yo que usted le quitaba todo.»","bien":"«Esta semana noté que camina más lento y que el jueves regresó desorientado del mercado. Lo anoté con fecha. Les sugiero consultarlo pronto con su médico y, mientras, acompañarlo al mercado. Él está de acuerdo.»"},
+   {"tipo":"reflexion","rotulo":"Tu reporte de la semana","pregunta":"Escribe el reporte que le darías a Julián sobre la primera semana: tres hechos observados (con fecha), una señal que te preocupa, qué propones y qué opina don Evaristo.","ayuda":"Esta semana observé que… El jueves… Me preocupa… Propongo… Don Evaristo dice que…"},
+   {"tipo":"plantilla","rotulo":"Reporte semanal a la familia","texto":"PERSONA: [ ]   SEMANA DEL: [ ] AL [ ]\n\nLO QUE VA BIEN\n• [ ]\n\nCAMBIOS QUE OBSERVÉ (con fecha y hora)\n• [ ]\n\nSEÑALES QUE ME PREOCUPAN\n• [ ]  → ¿Se avisó al médico? [sí / no]\n\nLO QUE PROPONGO\n• [ ]\n\nLO QUE OPINA LA PERSONA CUIDADA\n• [ ]\n\nACUERDOS Y RESPONSABLES\n• [ ]","nota":"Cópiala y adáptala a tu lugar de trabajo."},
+   {"tipo":"clave","items":["Gradual: anotar y observar. Brusco o nuevo: consulta; si es grave, 911.","Tú observas y avisas; el diagnóstico es del médico.","Las decisiones se toman con la persona, no a sus espaldas."]}
+  ]},
+  {"modulo":1,"t":"Una mañana de cuidado con doña Josefina","obj":"Organizar higiene, cambios de posición y revisión de piel, y usar un registro para saber cuándo avisar.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: la piel que avisa</b><br><b>Doña Josefina</b>, de 85 años, vive en Aguascalientes con su nieta Daniela. Desde una fractura de cadera pasa buena parte del día en cama o en su silla de ruedas, y tiene débil el brazo izquierdo. Su enfermera del centro de salud indicó cambiarla de posición <b>aproximadamente cada 2 horas</b> y revisar la piel en cada cambio. Daniela lleva un registro, pero los fines de semana se le pasan las horas. Te toca revisar el registro del sábado y organizar la mañana del lunes."},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"Para vestir a doña Josefina, que tiene débil el brazo izquierdo, empiezas por…","ops":["El brazo derecho","El brazo izquierdo","La cabeza, siempre"],"correcta":1,"explica":"Se viste primero el lado débil y se desviste primero el fuerte."},
+    {"p":"¿Quién define cada cuánto se cambia de posición?","ops":["Daniela, según su tiempo libre","La propia doña Josefina, cuando se queje","El personal de salud; aquí, su enfermera"],"correcta":2,"explica":"La frecuencia la indica el equipo de salud según la persona."},
+    {"p":"En un cambio de posición ves una zona roja en el sacro que no se quita al quitar la presión. Tú…","ops":["Alivias la presión en esa zona, mantienes la piel limpia y seca y avisas hoy","Das masaje fuerte para activar la circulación","Pones talco y sigues igual"],"correcta":0,"explica":"No se masajea ni se usa talco en piel dañada; se alivia la presión y se avisa el mismo día."},
+    {"p":"Para bañarla con seguridad el lunes, lo primero es…","ops":["Abrir el agua caliente mientras la desvistes","Tener todo a la mano antes: toalla, ropa, jabón y silla de baño","Pedirle que se sostenga del toallero"],"correcta":1,"explica":"Preparar todo antes evita dejarla sola ni un momento."}
+   ]},
+   {"tipo":"excel","rotulo":"Registro de cambios de posición del sábado","datos":[
+    ["Hora (24 h)","Posición","Horas desde el cambio anterior","¿Zona roja que no se quita?"],
+    [8,"Boca arriba","","No"],
+    [10,"De lado derecho",2,"No"],
+    [12,"Silla de ruedas",2,"No"],
+    [15,"De lado izquierdo",3,"Sí"],
+    [17,"Boca arriba",2,"No"],
+    [20,"De lado derecho",3,"Sí"],
+    ["Intervalo más largo (horas)","","",""],
+    ["Intervalos de más de 2 horas","","",""],
+    ["Revisiones con zona roja","","",""],
+    ["¿Qué hago?","","",""]
+   ],"retos":[
+    {"celda":"C8","formula":"=MAX(C3:C7)","esperado":3,"texto":"<b>C8</b>: encuentra el intervalo más largo entre cambios de posición.","requiere":"MAX(","pista":"=MAX(C3:C7)"},
+    {"celda":"C9","formula":"=CONTAR.SI(C3:C7,\">2\")","esperado":2,"texto":"<b>C9</b>: cuenta cuántos intervalos pasaron de 2 horas.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(C3:C7,\">2\")"},
+    {"celda":"D10","formula":"=CONTAR.SI(D2:D7,\"Sí\")","esperado":2,"texto":"<b>D10</b>: cuenta en cuántas revisiones apareció una zona roja que no se quita.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(D2:D7,\"Sí\")"},
+    {"celda":"D11","formula":"=SI(D10>0,\"Avisar hoy a enfermería\",\"Seguir vigilando\")","esperado":"Avisar hoy a enfermería","texto":"<b>D11</b>: si hubo al menos una zona roja, escribe «Avisar hoy a enfermería»; si no, «Seguir vigilando».","requiere":"SI(","pista":"=SI(D10>0,\"Avisar hoy a enfermería\",\"Seguir vigilando\")"}
+   ]},
+   {"tipo":"ordenar","rotulo":"Ordena las reglas de la mañana","items":[
+    {"frase":"Primero preparo todo y nunca la dejo sola","es":"Antes del baño"},
+    {"frase":"Visto primero el brazo débil","es":"Vestido"},
+    {"frase":"Reviso su piel en cada cambio de posición","es":"Prevención de úlceras"}
+   ]},
+   {"tipo":"completar","rotulo":"Completa","items":[
+    {"frase":"La temperatura del agua se prueba con tu ___ o antebrazo.","resp":["codo"]},
+    {"frase":"Para moverla en la cama se levanta; no se ___ sobre la sábana.","resp":["arrastra"]},
+    {"frase":"Un pañal húmedo se cambia de ___ para proteger la piel.","resp":["inmediato","inmediata"]}
+   ]},
+   {"tipo":"comparar","titulo":"Cómo se oye el aviso","mal":"«Tiene una manchita roja, pero seguro no es nada; el lunes vemos.»","bien":"«El sábado a las 15:00 y a las 20:00 le vi una zona roja en el sacro que no se quita. Hubo dos intervalos de 3 horas. Ya le quité la presión de esa zona; ¿qué me indica hacer?»"},
+   {"tipo":"reflexion","rotulo":"Planea la mañana del lunes","pregunta":"Escribe el horario de la mañana del lunes de doña Josefina (8:00 a 14:00): cambios de posición, baño, vestido, desayuno y revisión de piel, y qué le propondrías a Daniela para que no se pasen las horas el fin de semana.","ayuda":"8:00 … / 10:00 … / Para el fin de semana propongo…"},
+   {"tipo":"plantilla","rotulo":"Registro de cambios de posición y piel","texto":"PERSONA: [ ]   FECHA: [ ]\nFRECUENCIA INDICADA POR EL PERSONAL DE SALUD: cada [ ] horas\n\nHORA | POSICIÓN | ¿PIEL LIMPIA Y SECA? | ¿ZONA ROJA QUE NO SE QUITA? (dónde) | INICIALES\n[ ]  | [ ]      | [ ]                  | [ ]                                 | [ ]\n\nALARMA DEL CELULAR PROGRAMADA: [sí / no]\nSI HAY ZONA ROJA, AMPOLLA O HERIDA: aviso hoy a [nombre y teléfono].","nota":"Cópiala y úsala en tus acompañamientos."},
+   {"tipo":"clave","items":["La frecuencia de cambios la indica el personal de salud; una alarma ayuda a cumplirla.","Zona roja que no se quita: aliviar presión y avisar el mismo día.","Se viste primero el lado débil; en el baño, todo listo antes y nunca sola."]}
+  ]},
+  {"modulo":2,"t":"El registro de caídas de don Tomás","obj":"Usar un registro de caídas para encontrar patrones y llevar información útil al médico.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: seis caídas en tres meses</b><br><b>Don Tomás</b>, de 84 años, vive en Celaya con su esposa, doña Irma. Usa andadera dentro de la casa, pero de noche va al baño sin ella «porque son tres pasos». Su hija anotó cada caída en una libreta y te la comparte. Por suerte ninguna fue grave, pero la última vez se golpeó la cabeza con el buró; se veía bien y no avisaron a nadie. Tiene cita con su médico la próxima semana."},
+   {"tipo":"excel","rotulo":"Analiza el registro de caídas","datos":[
+    ["Fecha","Hora (24 h)","Lugar","¿Se mareó antes?","¿Usaba andadera?"],
+    ["3 feb",23,"Baño","Sí","No"],
+    ["19 feb",14,"Cocina","No","Sí"],
+    ["2 mar",2,"Recámara","Sí","No"],
+    ["21 mar",4,"Baño","Sí","No"],
+    ["8 abr",11,"Patio","No","Sí"],
+    ["27 abr",1,"Baño","No","No"],
+    ["Total de caídas","","","",""],
+    ["Caídas en el baño","","","",""],
+    ["Caídas de noche (21:00 a 5:59)","","","",""],
+    ["Caídas sin andadera","","","",""],
+    ["Caídas con mareo antes","","","",""]
+   ],"retos":[
+    {"celda":"B8","formula":"=CONTARA(A2:A7)","esperado":6,"texto":"<b>B8</b>: cuenta el total de caídas registradas.","requiere":"CONTARA(","pista":"=CONTARA(A2:A7)"},
+    {"celda":"B9","formula":"=CONTAR.SI(C2:C7,\"Baño\")","esperado":3,"texto":"<b>B9</b>: cuenta cuántas caídas fueron en el baño.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(C2:C7,\"Baño\")"},
+    {"celda":"B10","formula":"=CONTAR.SI(B2:B7,\">=21\")+CONTAR.SI(B2:B7,\"<6\")","esperado":4,"texto":"<b>B10</b>: cuenta las caídas de noche: las de las 21 h o más, más las de antes de las 6 h.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(B2:B7,\">=21\")+CONTAR.SI(B2:B7,\"<6\")"},
+    {"celda":"B11","formula":"=CONTAR.SI(E2:E7,\"No\")","esperado":4,"texto":"<b>B11</b>: cuenta cuántas veces se cayó sin usar la andadera.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(E2:E7,\"No\")"},
+    {"celda":"B12","formula":"=CONTAR.SI(D2:D7,\"Sí\")","esperado":3,"texto":"<b>B12</b>: cuenta cuántas veces se mareó antes de caer.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(D2:D7,\"Sí\")"}
+   ]},
+   {"tipo":"practica","rotulo":"Lee el patrón","preguntas":[
+    {"p":"¿Qué patrón destaca en el registro?","ops":["Se cae sobre todo de día en el patio","Se cae sobre todo de noche, camino al baño y sin andadera","Las caídas no tienen ningún patrón"],"correcta":1,"explica":"Cuatro de seis fueron de noche y tres en el baño: ahí se concentran las medidas."},
+    {"p":"Tres veces se mareó antes de caer. ¿Qué haces con ese dato?","ops":["Lo llevas al médico, junto con la lista de medicamentos","Le das algo dulce cada vez que se levante","Le quitas por tu cuenta la pastilla de la presión"],"correcta":0,"explica":"El mareo puede tener que ver con la presión o con medicamentos; lo revisa el médico. Tú no ajustas dosis."},
+    {"p":"La última caída tuvo golpe en la cabeza y «se veía bien». Lo correcto era…","ops":["No decir nada para no preocupar","Esperar a la cita de la próxima semana","Avisar al médico; y llamar al 911 si aparece somnolencia, vómito, confusión o dolor de cabeza intenso"],"correcta":2,"explica":"Un golpe en la cabeza siempre se avisa, aunque la persona se vea bien."},
+    {"p":"¿Qué medida responde mejor al patrón nocturno?","ops":["Luz de noche en el camino, andadera junto a la cama y piso despejado","Que no tome agua en todo el día para no ir al baño","Amarrarlo a la cama para que no se levante"],"correcta":0,"explica":"Se adapta el entorno. Restringir líquidos sin indicación o usar amarres pone en riesgo su salud y su dignidad."}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona el hallazgo con la medida","pares":[
+    ["Caídas de noche camino al baño","Luz de noche y camino despejado"],
+    ["Camina sin andadera «porque son tres pasos»","Andadera siempre al alcance de la cama"],
+    ["Se marea al levantarse","Levantarse en tres tiempos y avisarlo al médico"],
+    ["Piso del baño liso y mojado","Tapete antiderrapante y barras firmes"],
+    ["Golpe en la cabeza al caer","Avisar al médico aunque se vea bien"]
+   ]},
+   {"tipo":"comparar","titulo":"Cómo se oye en la consulta","mal":"«Se cae a cada rato, doctor, ya está grande.»","bien":"«Se cayó seis veces en tres meses: cuatro de noche, tres en el baño, cuatro sin andadera y tres con mareo antes. Aquí está la lista de sus medicamentos. La última vez se pegó en la cabeza.»"},
+   {"tipo":"reflexion","rotulo":"Tu plan para don Tomás","pregunta":"Con los números de tu hoja, escribe tres cambios para la casa de don Tomás, cómo se los propondrías a él sin regañarlo y las tres preguntas que la familia debería llevar a la consulta.","ayuda":"Cambio 1… / Se lo diría así: «…» / Pregunta para el médico: …"},
+   {"tipo":"plantilla","rotulo":"Resumen de caídas para la consulta","texto":"PERSONA: [ ]   PERIODO: [ ] AL [ ]\n\nTOTAL DE CAÍDAS: [ ]\nDE NOCHE: [ ]   EN EL BAÑO: [ ]   SIN AYUDA TÉCNICA: [ ]\nCON MAREO ANTES: [ ]   CON GOLPE EN LA CABEZA: [ ]\n\nMEDICAMENTOS ACTUALES: [lista completa]\nLENTES (fecha de graduación): [ ]\n\nPREGUNTAS PARA EL MÉDICO\n1. [ ]\n2. [ ]\n3. [ ]\n\nCAMBIOS QUE YA HICIMOS EN CASA: [ ]","nota":"Cópiala y llévala a la cita."},
+   {"tipo":"clave","items":["Un registro con hora, lugar y circunstancias revela el patrón de las caídas.","El mareo y los medicamentos se revisan con el médico; tú no cambias dosis.","Golpe en la cabeza: siempre se avisa; con somnolencia, vómito o confusión, 911."]}
+  ]},
+  {"modulo":3,"t":"Líquidos y comida de don Anselmo","obj":"Llevar un registro de líquidos, compararlo con la indicación del médico y reconocer cuándo pedir ayuda.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: la jarra que no baja</b><br><b>Don Anselmo</b>, de 88 años, vive en Tuxtla Gutiérrez con su hija Leticia. Hace calor, casi no pide agua y últimamente tose un poco al tomar líquidos muy rápido. En la última consulta su médico indicó que tome <b>al menos 1,500 ml de líquidos al día</b> y que avisen si la tos al beber continúa. Leticia te pide llevar el registro del martes y decirle si vamos bien."},
+   {"tipo":"tabla","titulo":"Valores de referencia generales (no sustituyen la indicación de su médico)","encabezados":["Tema","Referencia general","Quién decide en su caso"],"filas":[
+    ["Líquidos al día","Muchas guías sugieren alrededor de 1.5 a 2 litros para personas mayores sin restricción, contando agua, caldos y alimentos con agua","Su médico; si tiene problemas del corazón o del riñón puede indicar un límite"],
+    ["Color de la orina","Clara o amarillo pálido suele indicar buena hidratación","Si es oscura y escasa, se ofrece líquido y se consulta"],
+    ["Un vaso común","Alrededor de 200 a 250 ml","Mide con una taza medidora el vaso que usa en casa"]
+   ],"nota":"Si hay indicación de limitar líquidos, la cifra del médico es un máximo, no una meta a superar."},
+   {"tipo":"excel","rotulo":"Registro de líquidos del martes","datos":[
+    ["Hora","Bebida o alimento","ml"],
+    ["08:00","Café con leche",200],
+    ["10:00","Agua simple",200],
+    ["12:00","Agua de jamaica sin azúcar",250],
+    ["14:00","Caldo de pollo",200],
+    ["16:00","Gelatina",100],
+    ["18:00","Agua simple",150],
+    ["20:00","Té de manzanilla",150],
+    ["Total del día","",""],
+    ["Cantidad que indicó su médico (mínimo)","",1500],
+    ["Faltan (ml)","",""],
+    ["Promedio por toma (ml)","",""],
+    ["Resultado","",""]
+   ],"retos":[
+    {"celda":"C9","formula":"=SUMA(C2:C8)","esperado":1250,"texto":"<b>C9</b>: suma todos los mililitros que tomó en el día.","requiere":"SUMA(","pista":"=SUMA(C2:C8)"},
+    {"celda":"C11","formula":"=C10-C9","esperado":250,"texto":"<b>C11</b>: calcula cuántos mililitros faltan para llegar a lo que indicó su médico.","pista":"=C10-C9"},
+    {"celda":"C12","formula":"=REDONDEAR(PROMEDIO(C2:C8),0)","esperado":179,"texto":"<b>C12</b>: calcula el promedio de mililitros por toma, redondeado a entero.","requiere":"PROMEDIO(","pista":"=REDONDEAR(PROMEDIO(C2:C8),0)"},
+    {"celda":"C13","formula":"=SI(C9>=C10,\"Meta del médico cumplida\",\"Ofrecer más líquidos y avisar\")","esperado":"Ofrecer más líquidos y avisar","texto":"<b>C13</b>: si el total llega a lo indicado, escribe «Meta del médico cumplida»; si no, «Ofrecer más líquidos y avisar».","requiere":"SI(","pista":"=SI(C9>=C10,\"Meta del médico cumplida\",\"Ofrecer más líquidos y avisar\")"}
+   ]},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"Faltan 250 ml y son las 21:00. ¿Qué es lo más razonable?","ops":["Darle un litro de agua de golpe antes de dormir","Ofrecer un vaso ahora, anotarlo y mañana repartir mejor las tomas durante el día","No hacer nada porque ya casi llega"],"correcta":1,"explica":"Los líquidos se reparten a lo largo del día; beber mucho de golpe de noche también aumenta las idas al baño y el riesgo de caídas."},
+    {"p":"Tose cuando toma líquidos rápido. Tú…","ops":["Le das los líquidos con popote y más rápido","Le espesas el agua con lo que venden en la farmacia, sin preguntar","Lo sientas derecho, das sorbos pequeños y avisas al médico, como te indicó"],"correcta":2,"explica":"La tos al beber puede ser dificultad para tragar. Cambiar texturas o usar espesantes es decisión del médico o del especialista."},
+    {"p":"En la tarde lo notas somnoliento, con la boca seca y casi no ha orinado. Tú…","ops":["Buscas atención médica pronto; si no responde bien, llamas al 911","Lo dejas dormir y revisas mañana","Le das café cargado para despertarlo"],"correcta":0,"explica":"Somnolencia con señales de deshidratación es una señal de alarma."}
+   ]},
+   {"tipo":"tarjetas","rotulo":"Ideas para ofrecer líquidos sin pelear","tarjetas":[
+    {"frente":"Dice que no tiene sed.","reverso":"Ofrece sin preguntar «¿quieres?»: «Le traje su agua de jamaica; ¿la tomamos mientras vemos el noticiero?»."},
+    {"frente":"No quiere tomar para no ir al baño.","reverso":"Reparte en la mañana y la tarde, y deja el camino al baño iluminado y libre."},
+    {"frente":"Se aburre del agua simple.","reverso":"Alterna agua de fruta sin azúcar, caldos, gelatina y fruta con agua, según su dieta."},
+    {"frente":"Se le olvida tomar.","reverso":"Deja una jarra medida a la vista y una alarma cada dos horas; anota cada vaso."}
+   ]},
+   {"tipo":"comparar","titulo":"Cómo se oye el reporte a Leticia","mal":"«Tomó poquita agua, pero así es él.»","bien":"«El martes tomó 1,250 ml; su médico pidió al menos 1,500. Faltaron 250. Tosió dos veces al tomar rápido; lo anoté y hay que avisarle al médico. Mañana repartimos un vaso cada dos horas.»"},
+   {"tipo":"reflexion","rotulo":"El plan del miércoles","pregunta":"Escribe el plan de líquidos del miércoles para don Anselmo: horarios, bebidas y alimentos con su cantidad aproximada para llegar a lo indicado, cómo cuidarás que no tosa al beber y qué señales te harían pedir ayuda.","ayuda":"8:00 … ml / 10:00 … ml … Para que no tosa… Pido ayuda si…"},
+   {"tipo":"plantilla","rotulo":"Registro diario de líquidos","texto":"PERSONA: [ ]   FECHA: [ ]\nINDICACIÓN DEL MÉDICO: [mínimo / máximo] [ ] ml al día\n\nHORA | BEBIDA O ALIMENTO | ML | ¿TOSIÓ AL BEBER?\n[ ]  | [ ]               | [ ]| [ ]\n\nTOTAL DEL DÍA: [ ] ml\nORINA (color y veces): [ ]\n\nAVISO AL MÉDICO SI: tos al beber que continúa, orina escasa u oscura, no llega a lo indicado.\nURGENCIAS O 911 SI: confusión, somnolencia intensa o no orina en muchas horas.","nota":"Cópiala y úsala en tus acompañamientos."},
+   {"tipo":"clave","items":["La cantidad de líquidos la indica el médico; si es un límite, no se rebasa.","Repartir los líquidos durante el día funciona mejor que insistir de golpe.","Tos al beber: sentado derecho, sorbos pequeños y aviso al médico; sin espesantes por tu cuenta."]}
+  ]},
+  {"modulo":4,"t":"Registro de signos y señales de alarma","obj":"Registrar signos con orden, compararlos con las cifras que indicó el médico y decidir entre anotar, consultar o llamar al 911.","bloques":[
+   {"tipo":"destacado","texto":"<b>Caso: la libreta de doña Socorro</b><br><b>Doña Socorro</b>, de 80 años, vive en Hermosillo. Tiene presión alta y diabetes. Su médico le pidió a su hijo Arturo medir la presión y la glucosa en ayunas cada mañana, y le dejó por escrito: <b>avisar si la presión de arriba (sistólica) pasa de 160, si la glucosa baja de 70 o si hay temperatura de 38 °C o más</b>. Arturo anota todo, pero no sabe leer la semana. El sábado doña Socorro amaneció más confundida que de costumbre."},
+   {"tipo":"tabla","titulo":"Valores de referencia generales (el médico define las metas de cada persona)","encabezados":["Signo","Referencia general en adultos","Importante en personas mayores"],"filas":[
+    ["Temperatura","Alrededor de 36 a 37 °C; a partir de 38 °C suele considerarse fiebre","Una infección puede dar poca fiebre o ninguna; la confusión nueva también cuenta"],
+    ["Presión arterial","Por debajo de 120/80 mmHg se considera normal; muchas guías consideran alta a partir de 140/90","El médico fija una meta individual según su salud y sus medicamentos"],
+    ["Frecuencia cardiaca en reposo","Entre 60 y 100 latidos por minuto","Algunos medicamentos la bajan; pregunta qué es lo esperado para ella"],
+    ["Glucosa","Por debajo de 70 mg/dL se considera glucosa baja","La meta de glucosa la define su médico; ten por escrito su plan para glucosa baja"]
+   ],"nota":"Estas cifras son orientativas. Usa siempre las cifras de aviso que el médico dejó por escrito para esa persona."},
+   {"tipo":"excel","rotulo":"Lee la semana de doña Socorro","datos":[
+    ["Día","Presión sistólica","Presión diastólica","Glucosa en ayunas (mg/dL)","Temperatura (°C)"],
+    ["Lunes",138,82,118,36.5],
+    ["Martes",142,85,124,36.6],
+    ["Miércoles",165,92,131,36.4],
+    ["Jueves",150,88,66,36.7],
+    ["Viernes",144,84,112,37.1],
+    ["Sábado",136,80,109,37.9],
+    ["Promedio","","","",""],
+    ["Valor más alto","","","",""],
+    ["Días fuera de la cifra de aviso","","","",""],
+    ["¿Aviso al médico?","","","",""]
+   ],"retos":[
+    {"celda":"B8","formula":"=REDONDEAR(PROMEDIO(B2:B7),0)","esperado":146,"texto":"<b>B8</b>: calcula el promedio de la presión sistólica de la semana, redondeado a entero.","requiere":"PROMEDIO(","pista":"=REDONDEAR(PROMEDIO(B2:B7),0)"},
+    {"celda":"E9","formula":"=MAX(E2:E7)","esperado":37.9,"texto":"<b>E9</b>: encuentra la temperatura más alta de la semana.","requiere":"MAX(","pista":"=MAX(E2:E7)"},
+    {"celda":"B10","formula":"=CONTAR.SI(B2:B7,\">160\")","esperado":1,"texto":"<b>B10</b>: cuenta los días en que la sistólica pasó de 160 (la cifra que dejó el médico).","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(B2:B7,\">160\")"},
+    {"celda":"D10","formula":"=CONTAR.SI(D2:D7,\"<70\")","esperado":1,"texto":"<b>D10</b>: cuenta los días en que la glucosa bajó de 70.","requiere":"CONTAR.SI(","pista":"=CONTAR.SI(D2:D7,\"<70\")"},
+    {"celda":"B11","formula":"=SI(O(B10>0,D10>0),\"Sí, con la hoja de la semana\",\"Seguir registrando\")","esperado":"Sí, con la hoja de la semana","texto":"<b>B11</b>: si hubo algún día fuera de la cifra de aviso en presión o en glucosa, escribe «Sí, con la hoja de la semana»; si no, «Seguir registrando».","requiere":"O(","pista":"=SI(O(B10>0,D10>0),\"Sí, con la hoja de la semana\",\"Seguir registrando\")"}
+   ]},
+   {"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+    {"p":"El miércoles la sistólica fue 165 y ella se sentía bien. Lo correcto es…","ops":["Darle media pastilla más de la presión","Anotarlo, repetir la medición después de reposar como te enseñaron y avisar al médico como indicó","Ignorarlo porque se sentía bien"],"correcta":1,"explica":"El cuidador no ajusta dosis. Si además hubiera dolor de pecho, falta de aire o cara caída, sería 911."},
+    {"p":"El jueves la glucosa fue 66 y estaba despierta y tragaba bien. Tú…","ops":["Sigues el plan para glucosa baja que dejó su médico, vuelves a medir y avisas","Le aplicas más insulina","Esperas a la consulta del próximo mes"],"correcta":0,"explica":"Por eso se pide el plan por escrito. Si estuviera muy somnolienta o no pudiera tragar, no se le da nada por la boca y se llama al 911."},
+    {"p":"El sábado tuvo 37.9 °C y está más confundida que de costumbre. ¿Qué haces?","ops":["Nada: no llegó a 38 °C","Le das un antibiótico que quedó de otra ocasión","Consulta médica ese mismo día; al 911 si no responde, se pone muy somnolienta o empeora"],"correcta":2,"explica":"En personas mayores una infección puede dar poca fiebre; la confusión nueva es señal de alarma aunque el termómetro no llegue a 38."},
+    {"p":"¿Quién decide la meta de presión de doña Socorro?","ops":["Su médico","Arturo, con lo que leyó en internet","Tú, según la tabla general"],"correcta":0,"explica":"Las cifras generales orientan; la meta individual es del médico."}
+   ]},
+   {"tipo":"relacionar","rotulo":"Relaciona la señal con la acción","pares":[
+    ["Cara caída y brazo débil de golpe","Llamar al 911 y anotar la hora"],
+    ["Dolor de pecho con sudor frío","Llamar al 911 sin esperar"],
+    ["Confusión nueva con 37.9 °C","Consulta médica hoy mismo"],
+    ["Presión sobre la cifra de aviso, sin otros síntomas","Anotar, volver a medir y avisar al médico"],
+    ["Glucosa baja y no puede tragar","911; nada por la boca"],
+    ["Presión dentro de lo que indicó el médico","Registrar y seguir la rutina"]
+   ]},
+   {"tipo":"completar","rotulo":"Completa","items":[
+    {"frase":"Las cifras de aviso de cada persona las define su ___.","resp":["médico","medico","médica","medica"]},
+    {"frase":"El cuidador nunca ajusta la ___ de un medicamento.","resp":["dosis"]},
+    {"frase":"Si hay confusión nueva, cuenta como alarma aunque no haya ___ alta.","resp":["fiebre","temperatura"]},
+    {"frase":"Si no puede tragar, no se le da nada por la ___.","resp":["boca"]}
+   ]},
+   {"tipo":"comparar","titulo":"Cómo se oye el aviso al médico","mal":"«Doctor, mi mamá anda rara y la presión a veces le sale alta.»","bien":"«Doctor, esta semana su sistólica promedió 146; el miércoles llegó a 165. El jueves la glucosa fue 66 y seguimos su plan. Hoy sábado tiene 37.9 °C y está más confundida que de costumbre desde la mañana. ¿La llevo a urgencias o a consulta hoy?»"},
+   {"tipo":"reflexion","rotulo":"Tu tarjeta de cifras de aviso","pregunta":"Escribe la tarjeta que pegarías en el refrigerador de una persona mayor que conozcas (o de doña Socorro): qué se mide y a qué hora, las cifras de aviso que dejó el médico (o las preguntas para pedírselas), qué hacer ante cada una y cuándo llamar al 911.","ayuda":"Medimos… a las… / Avisar al médico si… / Llamar al 911 si…"},
+   {"tipo":"plantilla","rotulo":"Hoja semanal de signos","texto":"PERSONA: [ ]   SEMANA DEL: [ ]\nCIFRAS DE AVISO QUE DEJÓ EL MÉDICO (por escrito):\n• Presión: avisar si [ ]\n• Glucosa: avisar si [ ]   Plan para glucosa baja: [ ]\n• Temperatura: avisar si [ ]\n\nDÍA | HORA | PRESIÓN | GLUCOSA | TEMPERATURA | ¿CÓMO SE VE? (ánimo, confusión)\n[ ] | [ ]  | [ ]     | [ ]     | [ ]         | [ ]\n\n911 DE INMEDIATO: cara caída, brazo débil, habla alterada, dolor de pecho, falta de aire, no responde, glucosa baja con somnolencia o sin poder tragar.","nota":"Cópiala y adáptala a tu lugar de trabajo."},
+   {"tipo":"clave","items":["Las tablas generales orientan; las cifras de aviso las define el médico para cada persona.","Tú registras, comparas y avisas; nunca ajustas dosis ni diagnosticas.","Señales de alarma graves: 911 sin esperar. Confusión nueva cuenta aunque no haya fiebre."]}
+  ]}
+ ]
+}

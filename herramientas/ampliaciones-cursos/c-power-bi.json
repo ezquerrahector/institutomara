@@ -1,0 +1,1689 @@
+{
+ "id": "c-power-bi",
+ "extras": {
+  "c-power-bi-m1-l2": [
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Te pasan un reporte con una hoja por mes (Julio, Agosto, Septiembre) y columnas de importe con el mismo formato. ¿Qué haces antes de analizar?",
+      "ops": [
+       "Juntar todo en una sola tabla con una columna Mes",
+       "Hacer tres tablas dinámicas y sumarlas a mano",
+       "Combinar celdas para que se vea ordenado"
+      ],
+      "correcta": 0,
+      "explica": "Una sola tabla con una fila por registro es la base de cualquier resumen."
+     },
+     {
+      "p": "La columna Código postal trae valores como 03100 y 76000. ¿Cómo la tratas?",
+      "ops": [
+       "Como número, para poder sumarla",
+       "Como texto (clave), para no perder el cero inicial",
+       "Como fecha"
+      ],
+      "correcta": 1,
+      "explica": "Un código no se suma y, si lo tomas como número, 03100 se vuelve 3100."
+     },
+     {
+      "p": "En Importe hay celdas que dicen «ver nota». ¿Qué conviene?",
+      "ops": [
+       "Dejarlas así",
+       "Escribir 0 en su lugar aunque sí hubo venta",
+       "Dejar la celda vacía y pasar la nota a una columna de Observaciones"
+      ],
+      "correcta": 2
+     }
+    ]
+   }
+  ],
+  "c-power-bi-m4-l1": [
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Al elegir tu tabla de Excel en Power BI quieres limpiarla antes de usarla. ¿Qué botón presionas?",
+      "ops": [
+       "Cargar",
+       "Transformar datos",
+       "Publicar"
+      ],
+      "correcta": 1,
+      "explica": "Transformar datos abre el Editor de Power Query; Cargar la manda tal como está."
+     },
+     {
+      "p": "Cada mes llega un archivo nuevo con el mismo formato. ¿Por qué ayuda Power Query?",
+      "ops": [
+       "Porque repite solos los pasos aplicados al actualizar",
+       "Porque borra el archivo anterior",
+       "Porque cambia los colores del reporte"
+      ],
+      "correcta": 0
+     },
+     {
+      "p": "El icono junto a la columna Importe indica texto (ABC). ¿Qué pasa si lo dejas así?",
+      "ops": [
+       "Nada, Power BI lo adivina",
+       "Se vuelve fecha",
+       "No podrás sumarla bien: cámbiale el tipo a número decimal"
+      ],
+      "correcta": 2
+     }
+    ]
+   }
+  ],
+  "c-power-bi-m5-l2": [
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La gerente ve que Sur vendió $22,100 y se alarma, pero el segmentador de Mes estaba en una sola semana. ¿Qué lo habría evitado?",
+      "ops": [
+       "Mostrar claramente la selección activa en el tablero",
+       "Quitar todos los segmentadores",
+       "Usar un gráfico de pastel"
+      ],
+      "correcta": 0
+     },
+     {
+      "p": "¿Cuántos segmentadores conviene en un tablero de ventas para celular?",
+      "ops": [
+       "Diez, para que filtre todo",
+       "De 2 a 4, siempre en el mismo lugar",
+       "Ninguno"
+      ],
+      "correcta": 1
+     },
+     {
+      "p": "Eliges Sucursal = Norte en el segmentador. ¿Qué pasa con la medida [Ventas Totales]?",
+      "ops": [
+       "Sigue mostrando el total de todas",
+       "Marca error",
+       "Se recalcula solo para Norte"
+      ],
+      "correcta": 2,
+      "explica": "Es el contexto de filtro en manos del usuario."
+     }
+    ]
+   }
+  ]
+ },
+ "practicas": [
+  {
+   "modulo": 0,
+   "t": "Del archivo sucio a la primera respuesta",
+   "obj": "Aterrizar una petición, revisar la calidad de los datos y limpiarlos antes de resumir.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso:</b> <b>Pinturas Color Vivo</b> tiene tres sucursales en Querétaro: Centro, Juriquilla y El Marqués. El gerente comercial te manda la exportación del punto de venta con un mensaje: «sácame cuánto vende cada sucursal». Al abrirla ves nombres capturados de mil formas («juriquilla », « el marqués», «CENTRO») y una venta con «N/D» en el importe. Antes de responder, aterriza la pregunta y limpia los datos."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "¿Cuál es la mejor versión de la petición del gerente?",
+       "ops": [
+        "¿Cómo andamos?",
+        "¿Cuánto vendió cada sucursal en la primera semana de octubre y cuál quedó por debajo de su meta?",
+        "Hazme gráficas de todo"
+       ],
+       "correcta": 1,
+       "explica": "Dice qué medir, en qué periodo, con qué detalle y contra qué comparar."
+      },
+      {
+       "p": "CONTARA de la columna Importe da 8 y CONTAR da 7. ¿Qué significa?",
+       "ops": [
+        "Hay una celda con texto en lugar de número",
+        "Hay una venta duplicada",
+        "Falta una sucursal"
+       ],
+       "correcta": 0
+      },
+      {
+       "p": "«Juriquilla», «juriquilla » y « Juriquilla» aparecen en la misma columna. ¿Qué haces antes de resumir?",
+       "ops": [
+        "Nada, Excel las junta solo",
+        "Borrar las filas mal escritas",
+        "Crear una columna limpia con MAYUSC(ESPACIOS(…)) y resumir sobre ella"
+       ],
+       "correcta": 2
+      },
+      {
+       "p": "La venta con «N/D» en Importe: ¿qué es lo correcto?",
+       "ops": [
+        "Escribir un importe estimado para que cuadre",
+        "Dejarla vacía, anotar el caso en Observaciones y preguntar a la sucursal el dato real",
+        "Borrar la fila sin avisar"
+       ],
+       "correcta": 1
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Limpia y resume la exportación",
+     "datos": [
+      [
+       "Folio",
+       "Sucursal capturada",
+       "Importe",
+       "Sucursal limpia",
+       "",
+       "Revisión",
+       "Resultado"
+      ],
+      [
+       2001,
+       " Juriquilla",
+       1850,
+       "",
+       "",
+       "Celdas con algo en Importe",
+       ""
+      ],
+      [
+       2002,
+       "juriquilla ",
+       920,
+       "JURIQUILLA",
+       "",
+       "Celdas con número",
+       ""
+      ],
+      [
+       2003,
+       "Centro",
+       "N/D",
+       "CENTRO",
+       "",
+       "Textos colados",
+       ""
+      ],
+      [
+       2004,
+       "CENTRO",
+       2640,
+       "CENTRO",
+       "",
+       "Ventas de Juriquilla (limpia)",
+       ""
+      ],
+      [
+       2005,
+       "Juriquilla",
+       1310,
+       "JURIQUILLA",
+       "",
+       "Ventas de Centro (limpia)",
+       ""
+      ],
+      [
+       2006,
+       " el marqués",
+       780,
+       "EL MARQUÉS",
+       "",
+       "",
+       ""
+      ],
+      [
+       2007,
+       "El  Marqués",
+       1500,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       2008,
+       "Centro ",
+       2210,
+       "CENTRO",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "D2",
+       "formula": "=MAYUSC(ESPACIOS(B2))",
+       "esperado": "JURIQUILLA",
+       "requiere": "ESPACIOS(",
+       "texto": "<b>D2</b>: limpia el nombre de B2: quita espacios de sobra y pásalo a mayúsculas.",
+       "pista": "Anida las dos funciones: primero ESPACIOS y por fuera MAYUSC."
+      },
+      {
+       "celda": "D8",
+       "formula": "=MAYUSC(ESPACIOS(B8))",
+       "esperado": "EL MARQUÉS",
+       "requiere": "ESPACIOS(",
+       "texto": "<b>D8</b>: limpia «El  Marqués» (tiene doble espacio en medio).",
+       "explica": "ESPACIOS deja un solo espacio entre palabras."
+      },
+      {
+       "celda": "G2",
+       "formula": "=CONTARA(C2:C9)",
+       "esperado": 8,
+       "requiere": "CONTARA(",
+       "texto": "<b>G2</b>: cuántas celdas de Importe tienen algo."
+      },
+      {
+       "celda": "G3",
+       "formula": "=CONTAR(C2:C9)",
+       "esperado": 7,
+       "requiere": "CONTAR(",
+       "texto": "<b>G3</b>: cuántas celdas de Importe tienen número."
+      },
+      {
+       "celda": "G4",
+       "formula": "=G2-G3",
+       "esperado": 1,
+       "texto": "<b>G4</b>: cuántas celdas tienen texto colado (la diferencia)."
+      },
+      {
+       "celda": "G5",
+       "formula": "=SUMAR.SI(D2:D9,\"JURIQUILLA\",C2:C9)",
+       "esperado": 4080,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>G5</b>: ventas de Juriquilla usando la columna limpia (D).",
+       "pista": "Rango de criterio D2:D9, criterio JURIQUILLA entre comillas, rango a sumar C2:C9."
+      },
+      {
+       "celda": "G6",
+       "formula": "=SUMAR.SI(D2:D9,\"CENTRO\",C2:C9)",
+       "esperado": 4850,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>G6</b>: ventas de Centro con la columna limpia.",
+       "explica": "La venta con N/D no se suma: repórtalo junto con el total para que nadie crea que está completo."
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "¿Qué tipo de dato es cada columna?",
+     "pares": [
+      [
+       "Folio 2004",
+       "Clave o código"
+      ],
+      [
+       "Importe 2,640",
+       "Número"
+      ],
+      [
+       "Juriquilla",
+       "Texto"
+      ],
+      [
+       "07/10/2026",
+       "Fecha"
+      ],
+      [
+       "¿Pagó con tarjeta? Sí",
+       "Verdadero o falso"
+      ]
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa",
+     "items": [
+      {
+       "frase": "Si CONTARA y ___ no coinciden en una columna de importes, hay textos colados.",
+       "resp": [
+        "CONTAR",
+        "contar"
+       ]
+      },
+      {
+       "frase": "MAYUSC(ESPACIOS(« el marqués»)) devuelve ___.",
+       "resp": [
+        "EL MARQUÉS",
+        "EL MARQUES",
+        "el marqués"
+       ]
+      },
+      {
+       "frase": "IZQUIERDA(«QRO-JUR-0145»,3) devuelve ___.",
+       "resp": [
+        "QRO",
+        "qro"
+       ]
+      },
+      {
+       "frase": "EXTRAE(«QRO-JUR-0145»,5,3) devuelve ___.",
+       "resp": [
+        "JUR",
+        "jur"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "La respuesta al gerente",
+     "mal": "«Juriquilla vendió $1,850, juriquilla $920 y Juriquilla $1,310; Centro no sé porque hay un N/D.»",
+     "bien": "«Juriquilla: $4,080. Centro: $4,850 sin contar el folio 2003, que viene sin importe; ya lo pedí a la sucursal. El Marqués: $2,280.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Aterriza una petición real",
+     "pregunta": "Escribe una petición vaga que hayas recibido o hecho en tu trabajo («sácame las ventas», «cómo vamos») y reescríbela como pregunta de negocio: quién la usa, qué decisión toma, qué periodo, contra qué se compara y con qué detalle.",
+     "ayuda": "La petición era… La pregunta de negocio es… y sirve para decidir…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Ficha para aterrizar una petición",
+     "texto": "Quién lo pidió: [nombre y puesto]\nPregunta de negocio: [qué, dónde, cuándo, con qué detalle]\nDecisión que tomará: [surtir, cambiar precio, reforzar sucursal…]\nPeriodo: [fechas]\nComparación: [mes anterior, meta, mismo mes del año pasado]\nFuente de datos: [sistema o archivo]\nProblemas de calidad encontrados: [textos colados, nombres distintos, vacíos]\nFecha de entrega: [día]",
+     "nota": "Cópiala y llénala antes de abrir el archivo."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Primero la pregunta de negocio; después el archivo.",
+      "Revisa la calidad: CONTARA contra CONTAR y nombres escritos igual.",
+      "Limpia en una columna nueva y reporta lo que no pudiste completar."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 1,
+   "t": "Resumen mensual de una cadena de zapaterías",
+   "obj": "Resumir por sucursal y mes, calcular variación, participación y ranking, y encontrar la sucursal que más creció.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso:</b> <b>Zapaterías Paso Firme</b> tiene tres tiendas en León (Centro, Norte y Poniente) y vende dos líneas: Dama y Caballero. La directora quiere un resumen de agosto contra septiembre para la junta del lunes: cuánto vendió cada tienda, cuánto creció, qué lugar ocupa y cuál fue la que más creció. Tienes la tabla con una fila por tienda, línea y mes."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Resumen de Paso Firme: agosto contra septiembre",
+     "datos": [
+      [
+       "Mes",
+       "Sucursal",
+       "Línea",
+       "Importe",
+       "",
+       "Sucursal",
+       "Agosto",
+       "Septiembre",
+       "Variación",
+       "Lugar sep"
+      ],
+      [
+       "Ago",
+       "Centro",
+       "Dama",
+       58200,
+       "",
+       "Centro",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Ago",
+       "Centro",
+       "Caballero",
+       41300,
+       "",
+       "Norte",
+       66600,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Ago",
+       "Norte",
+       "Dama",
+       36500,
+       "",
+       "Poniente",
+       72400,
+       77100,
+       0.0649,
+       2
+      ],
+      [
+       "Ago",
+       "Norte",
+       "Caballero",
+       30100,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Ago",
+       "Poniente",
+       "Dama",
+       44800,
+       "",
+       "Indicador",
+       "Valor",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Ago",
+       "Poniente",
+       "Caballero",
+       27600,
+       "",
+       "Participación de Norte en septiembre",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Centro",
+       "Dama",
+       55900,
+       "",
+       "Sucursal que más creció",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Centro",
+       "Caballero",
+       39800,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Norte",
+       "Dama",
+       42300,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Norte",
+       "Caballero",
+       33700,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Poniente",
+       "Dama",
+       47200,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sep",
+       "Poniente",
+       "Caballero",
+       29900,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "G2",
+       "formula": "=SUMAR.SI.CONJUNTO($D$2:$D$13,$B$2:$B$13,F2,$A$2:$A$13,\"Ago\")",
+       "esperado": 99500,
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "texto": "<b>G2</b>: ventas de Centro en agosto (sucursal de F2 y mes Ago).",
+       "pista": "Primero el rango a sumar ($D$2:$D$13); luego sucursal con F2 y mes con Ago entre comillas."
+      },
+      {
+       "celda": "H2",
+       "formula": "=SUMAR.SI.CONJUNTO($D$2:$D$13,$B$2:$B$13,F2,$A$2:$A$13,\"Sep\")",
+       "esperado": 95700,
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "texto": "<b>H2</b>: ventas de Centro en septiembre."
+      },
+      {
+       "celda": "H3",
+       "formula": "=SUMAR.SI.CONJUNTO($D$2:$D$13,$B$2:$B$13,F3,$A$2:$A$13,\"Sep\")",
+       "esperado": 76000,
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "texto": "<b>H3</b>: ventas de Norte en septiembre."
+      },
+      {
+       "celda": "I2",
+       "formula": "=(H2-G2)/G2",
+       "esperado": -0.0382,
+       "texto": "<b>I2</b>: variación de Centro: (septiembre − agosto) ÷ agosto.",
+       "pista": "Los paréntesis importan. También sirve =H2/G2-1.",
+       "explica": "−0.0382 con formato de porcentaje es −3.8%: Centro cayó."
+      },
+      {
+       "celda": "I3",
+       "formula": "=(H3-G3)/G3",
+       "esperado": 0.1411,
+       "texto": "<b>I3</b>: variación de Norte."
+      },
+      {
+       "celda": "J2",
+       "formula": "=CONTAR.SI($H$2:$H$4,\">\"&H2)+1",
+       "esperado": 1,
+       "requiere": "CONTAR.SI(",
+       "texto": "<b>J2</b>: lugar de Centro en septiembre (cuántas vendieron más que ella, más 1).",
+       "pista": "El criterio une el signo mayor que con la celda: «>»&H2."
+      },
+      {
+       "celda": "J3",
+       "formula": "=CONTAR.SI($H$2:$H$4,\">\"&H3)+1",
+       "esperado": 3,
+       "requiere": "CONTAR.SI(",
+       "texto": "<b>J3</b>: lugar de Norte en septiembre."
+      },
+      {
+       "celda": "G7",
+       "formula": "=H3/SUMA($H$2:$H$4)",
+       "esperado": 0.3055,
+       "requiere": "SUMA(",
+       "texto": "<b>G7</b>: participación de Norte en la venta de septiembre (Norte ÷ total del mes).",
+       "explica": "30.5% del total, aunque quedó en tercer lugar."
+      },
+      {
+       "celda": "G8",
+       "formula": "=INDICE(F2:F4,COINCIDIR(MAX(I2:I4),I2:I4,0))",
+       "esperado": "Norte",
+       "requiere": "COINCIDIR(",
+       "texto": "<b>G8</b>: el nombre de la sucursal con la variación más alta, con INDICE y COINCIDIR.",
+       "pista": "=INDICE(nombres, COINCIDIR(MAX(variaciones), variaciones, 0))"
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "Norte creció 14.1% y quedó en tercer lugar. ¿Qué frase es correcta?",
+       "ops": [
+        "Norte es la que más vende",
+        "Norte es la que más creció en proporción, pero sigue siendo la que menos vende",
+        "Norte cayó en septiembre"
+       ],
+       "correcta": 1
+      },
+      {
+       "p": "Centro vende más que todas, pero cayó 3.8%. ¿Qué haces en el reporte?",
+       "ops": [
+        "Lo destacas y propones revisar qué línea cayó (Dama o Caballero)",
+        "Lo ocultas porque sigue en primer lugar",
+        "Lo quitas del reporte"
+       ],
+       "correcta": 0,
+       "explica": "La caída del líder pesa en pesos: 3,800 pesos menos."
+      },
+      {
+       "p": "La suma de las participaciones de septiembre debe dar…",
+       "ops": [
+        "La variación total",
+        "Lo mismo que agosto",
+        "100%"
+       ],
+       "correcta": 2
+      },
+      {
+       "p": "Para saber qué línea explica la caída de Centro, ¿qué fórmula agregas?",
+       "ops": [
+        "SUMAR.SI.CONJUNTO con tres criterios: sucursal, mes y línea",
+        "PROMEDIO de toda la columna Importe",
+        "CONTARA de la columna Línea"
+       ],
+       "correcta": 0
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa",
+     "items": [
+      {
+       "frase": "Variación % = (actual − anterior) ÷ ___.",
+       "resp": [
+        "anterior",
+        "Anterior"
+       ]
+      },
+      {
+       "frase": "Participación % = parte ÷ ___.",
+       "resp": [
+        "total",
+        "Total"
+       ]
+      },
+      {
+       "frase": "En SUMAR.SI.CONJUNTO, el rango a ___ va primero.",
+       "resp": [
+        "sumar",
+        "Sumar"
+       ]
+      },
+      {
+       "frase": "Si el margen pasa de 30% a 33%, subió 3 puntos ___.",
+       "resp": [
+        "porcentuales",
+        "Porcentuales"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "La frase para la junta",
+     "mal": "«Norte subió 14%, entonces ya es nuestra mejor tienda.»",
+     "bien": "«Norte fue la que más creció (+14.1%, $9,400 más), pero sigue en tercer lugar. Centro, la que más vende, cayó 3.8%: revisemos la línea Dama, que bajó $2,300.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu resumen",
+     "pregunta": "Con los datos del caso, escribe en tres líneas el mensaje para la directora: qué pasó, qué tienda preocupa y qué propones revisar.",
+     "ayuda": "En septiembre… La tienda que preocupa es… porque… Propongo revisar…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Resumen mensual por sucursal",
+     "texto": "Sucursal | Mes anterior | Mes actual | Variación % | Participación % | Lugar\n[Nombre] | =SUMAR.SI.CONJUNTO(importe, sucursal, [celda], mes, [anterior]) | =SUMAR.SI.CONJUNTO(importe, sucursal, [celda], mes, [actual]) | =(actual-anterior)/anterior | =actual/total del mes | =CONTAR.SI(columna actual, mayor que la celda)+1\n\nIndicadores:\nSucursal que más creció: =INDICE(nombres, COINCIDIR(MAX(variaciones), variaciones, 0))\nComprobación: suma del resumen = suma de los datos",
+     "nota": "Cópiala y adáptala a tus columnas."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Resume con SUMAR.SI.CONJUNTO tomando los criterios de celdas y rangos fijos con $.",
+      "Acompaña cada variación con los pesos y con el lugar que ocupa.",
+      "INDICE + COINCIDIR te dicen quién tiene el máximo o el mínimo."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 2,
+   "t": "Inventario de una refaccionaria",
+   "obj": "Revisar con fórmulas lo que mostraría una tabla dinámica de inventario y elegir el visual correcto para cada pregunta.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso:</b> <b>Refaccionaria El Pistón</b> tiene dos sucursales en el área de Monterrey: Apodaca y San Nicolás. El encargado de compras quiere saber, antes de hacer el pedido del lunes, cuántas piezas hay por sucursal y categoría, cuánto dinero hay invertido en inventario y cuántos productos están por debajo de su mínimo. Tú armas la tabla dinámica y la compruebas con fórmulas."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Comprueba la tabla dinámica de inventario",
+     "datos": [
+      [
+       "Sucursal",
+       "Categoría",
+       "Producto",
+       "Existencia",
+       "Mínimo",
+       "Costo unitario",
+       "Estado",
+       "",
+       "Resumen",
+       "Valor"
+      ],
+      [
+       "Apodaca",
+       "Frenos",
+       "Balatas delanteras",
+       14,
+       20,
+       380,
+       "",
+       "",
+       "Piezas de Frenos en Apodaca",
+       ""
+      ],
+      [
+       "Apodaca",
+       "Filtros",
+       "Filtro de aceite",
+       60,
+       40,
+       95,
+       "OK",
+       "",
+       "Piezas en San Nicolás",
+       ""
+      ],
+      [
+       "Apodaca",
+       "Aceites",
+       "Aceite 5W-30 1 L",
+       85,
+       100,
+       145,
+       "Resurtir",
+       "",
+       "Inversión en Aceites",
+       ""
+      ],
+      [
+       "San Nicolás",
+       "Frenos",
+       "Balatas delanteras",
+       26,
+       20,
+       380,
+       "OK",
+       "",
+       "Productos a resurtir en Apodaca",
+       ""
+      ],
+      [
+       "San Nicolás",
+       "Filtros",
+       "Filtro de aire",
+       18,
+       25,
+       160,
+       "",
+       "",
+       "Productos a resurtir en total",
+       ""
+      ],
+      [
+       "San Nicolás",
+       "Aceites",
+       "Aceite 5W-30 1 L",
+       130,
+       100,
+       145,
+       "OK",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Apodaca",
+       "Frenos",
+       "Líquido de frenos",
+       22,
+       15,
+       120,
+       "OK",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "G2",
+       "formula": "=SI(D2<E2,\"Resurtir\",\"OK\")",
+       "esperado": "Resurtir",
+       "requiere": "SI(",
+       "texto": "<b>G2</b>: escribe Resurtir si la existencia es menor que el mínimo; si no, OK."
+      },
+      {
+       "celda": "G6",
+       "formula": "=SI(D6<E6,\"Resurtir\",\"OK\")",
+       "esperado": "Resurtir",
+       "requiere": "SI(",
+       "texto": "<b>G6</b>: el mismo estado para el filtro de aire."
+      },
+      {
+       "celda": "J2",
+       "formula": "=SUMAR.SI.CONJUNTO(D2:D8,A2:A8,\"Apodaca\",B2:B8,\"Frenos\")",
+       "esperado": 36,
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "texto": "<b>J2</b>: piezas de Frenos en Apodaca (lo que verías en la celda Apodaca × Frenos de la tabla dinámica).",
+       "pista": "Suma Existencia con dos condiciones: sucursal y categoría."
+      },
+      {
+       "celda": "J3",
+       "formula": "=SUMAR.SI(A2:A8,\"San Nicolás\",D2:D8)",
+       "esperado": 174,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>J3</b>: total de piezas en San Nicolás (el total de fila)."
+      },
+      {
+       "celda": "J4",
+       "formula": "=SUMAR.SI(B2:B8,\"Aceites\",D2:D8)*145",
+       "esperado": 31175,
+       "texto": "<b>J4</b>: dinero invertido en Aceites: piezas de Aceites × costo de $145.",
+       "pista": "Suma las piezas de Aceites y multiplícalas por 145 (las dos sucursales tienen el mismo costo)."
+      },
+      {
+       "celda": "J5",
+       "formula": "=CONTAR.SI.CONJUNTO(A2:A8,\"Apodaca\",G2:G8,\"Resurtir\")",
+       "esperado": 2,
+       "requiere": "CONTAR.SI.CONJUNTO(",
+       "texto": "<b>J5</b>: cuántos productos hay que resurtir en Apodaca."
+      },
+      {
+       "celda": "J6",
+       "formula": "=CONTAR.SI(G2:G8,\"Resurtir\")",
+       "esperado": 3,
+       "requiere": "CONTAR.SI(",
+       "texto": "<b>J6</b>: cuántos productos hay que resurtir en total.",
+       "explica": "Si tu tabla dinámica dice otra cosa, revisa que la hayas actualizado y que los estados estén escritos igual."
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "En la tabla dinámica quieres una fila por sucursal y una columna por categoría, con la suma de Existencia. ¿Dónde va Existencia?",
+       "ops": [
+        "Filas",
+        "Valores",
+        "Filtros"
+       ],
+       "correcta": 1
+      },
+      {
+       "p": "La tabla dinámica muestra 150 piezas en Apodaca, pero tus fórmulas dan 181. Agregaste una fila ayer. ¿Qué pasó?",
+       "ops": [
+        "La tabla dinámica no se actualizó",
+        "Las fórmulas están mal",
+        "Apodaca tiene piezas negativas"
+       ],
+       "correcta": 0,
+       "explica": "Clic derecho → Actualizar, y usa Tabla (Ctrl + T) para que el rango crezca solo."
+      },
+      {
+       "p": "Quieres comparar la inversión de las tres categorías. ¿Qué gráfico usas?",
+       "ops": [
+        "Pastel con efecto 3D",
+        "Líneas",
+        "Barras ordenadas de mayor a menor"
+       ],
+       "correcta": 2
+      },
+      {
+       "p": "El título de la gráfica de productos a resurtir debería decir…",
+       "ops": [
+        "«Apodaca tiene 2 de los 3 productos por resurtir»",
+        "«Inventario»",
+        "«Gráfico 2»"
+       ],
+       "correcta": 0
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "Relaciona el visual con su uso",
+     "pares": [
+      [
+       "Tarjeta",
+       "Un solo número: inversión total en inventario"
+      ],
+      [
+       "Barras ordenadas",
+       "Comparar existencias por categoría"
+      ],
+      [
+       "Líneas",
+       "Ver cómo cambió la existencia semana a semana"
+      ],
+      [
+       "Matriz",
+       "Sucursal en filas, categoría en columnas, con totales"
+      ],
+      [
+       "Segmentación de datos",
+       "Que el usuario elija una sola sucursal"
+      ],
+      [
+       "Dispersión",
+       "Ver si los productos más caros rotan menos"
+      ]
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "La gráfica para el encargado de compras",
+     "mal": "«Pastel 3D con los 7 productos, colores parecidos y el título Inventario»",
+     "bien": "«Barras horizontales de existencia contra mínimo por producto, en rojo los que están debajo, y el título 3 productos por resurtir, 2 en Apodaca»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu tabla dinámica",
+     "pregunta": "Piensa en una tabla de tu trabajo (ventas, inventario, cobranza, asistencias). Escribe qué campo pondrías en Filas, cuál en Columnas, cuál en Valores y cuál en Filtros, y qué pregunta contestaría.",
+     "ayuda": "Filas: … Columnas: … Valores: … Filtros: … Contesta la pregunta…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Revisión de una tabla dinámica antes de enviarla",
+     "texto": "[ ] Los datos están en una Tabla (Ctrl + T) y la tabla dinámica está actualizada.\n[ ] Valores dice «Suma de…» y no «Cuenta de…».\n[ ] El total general coincide con la suma de los datos: [total de datos] = [total de la tabla dinámica].\n[ ] Los nombres de sucursal y categoría están escritos igual en todos los registros.\n[ ] La gráfica responde una pregunta y su título dice la conclusión: [título].\n[ ] Barras con eje desde cero y sin efectos 3D.",
+     "nota": "Cópiala y úsala en cada reporte."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Una tabla dinámica se comprueba con SUMAR.SI.CONJUNTO y se actualiza antes de presentar.",
+      "Cada pregunta tiene su visual: tarjeta, barras, líneas, matriz o dispersión.",
+      "En inventario, marca con una regla clara (existencia contra mínimo) lo que hay que resurtir."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 3,
+   "t": "Modelo y medidas de una cadena de cafeterías",
+   "obj": "Armar un modelo en estrella, elegir la función DAX correcta y comprobar sus resultados con fórmulas.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso:</b> <b>Cafeterías Grano de Altura</b> tiene dos locales en Xalapa: Centro y Ánimas. El dueño quiere un reporte en Power BI con ventas totales, ventas por categoría (Bebidas y Panadería), ventas de mayoreo (pedidos de 10 piezas o más para oficinas) y ticket promedio. Tienes dos tablas: <b>Ventas</b> (una fila por ticket con la clave del producto y la cantidad) y <b>Productos</b> (una fila por producto con su categoría y precio)."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el modelo",
+     "preguntas": [
+      {
+       "p": "¿Cuál es la tabla de hechos en este modelo?",
+       "ops": [
+        "Productos",
+        "Ventas",
+        "Ninguna: todo debe ir en una sola tabla"
+       ],
+       "correcta": 1,
+       "explica": "Ventas registra eventos (tickets); Productos los describe."
+      },
+      {
+       "p": "Quieres una columna Categoría dentro de la tabla Ventas, traída de Productos por la relación. ¿Qué función usas en la columna calculada?",
+       "ops": [
+        "RELATED(Productos[Categoría])",
+        "SUM(Productos[Categoría])",
+        "DIVIDE(Productos[Categoría])"
+       ],
+       "correcta": 0,
+       "explica": "RELATED trae un valor del lado «uno» de la relación, como un BUSCARV."
+      },
+      {
+       "p": "El dueño quiere [Ventas Totales] que cambie al elegir un local en el segmentador. ¿Qué creas?",
+       "ops": [
+        "Una columna calculada en Ventas",
+        "Una tabla nueva por cada local",
+        "Una medida"
+       ],
+       "correcta": 2,
+       "explica": "Las medidas se calculan según el contexto de filtro; las columnas calculadas se calculan fila por fila al actualizar."
+      },
+      {
+       "p": "Eliges la categoría Panadería en un segmentador que viene de la tabla Productos y la tarjeta de Ventas Totales cambia. ¿Por qué?",
+       "ops": [
+        "Porque la relación de uno a varios lleva el filtro de Productos a Ventas",
+        "Porque Power BI copia las ventas a Productos",
+        "Porque la medida tiene escrita la palabra Panadería"
+       ],
+       "correcta": 0
+      },
+      {
+       "p": "¿Qué devuelve Ventas mayoreo = CALCULATE([Ventas Totales], FILTER(Ventas, Ventas[Cantidad] >= 10))?",
+       "ops": [
+        "El número de tickets con 10 piezas o más",
+        "La suma del importe solo de los tickets con 10 piezas o más",
+        "El promedio de las cantidades"
+       ],
+       "correcta": 1
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Las medidas del reporte, comprobadas en hoja de cálculo",
+     "datos": [
+      [
+       "Ticket",
+       "Local",
+       "Clave",
+       "Cantidad",
+       "Importe",
+       "Categoría",
+       "",
+       "Clave",
+       "Producto",
+       "Categoría",
+       "Precio"
+      ],
+      [
+       "T01",
+       "Centro",
+       "C02",
+       2,
+       "",
+       "",
+       "",
+       "C01",
+       "Americano",
+       "Bebidas",
+       38
+      ],
+      [
+       "T02",
+       "Centro",
+       "P02",
+       12,
+       216,
+       "Panadería",
+       "",
+       "C02",
+       "Capuchino",
+       "Bebidas",
+       52
+      ],
+      [
+       "T03",
+       "Ánimas",
+       "C01",
+       3,
+       114,
+       "Bebidas",
+       "",
+       "P01",
+       "Pan de elote",
+       "Panadería",
+       35
+      ],
+      [
+       "T04",
+       "Ánimas",
+       "P01",
+       10,
+       350,
+       "Panadería",
+       "",
+       "P02",
+       "Concha",
+       "Panadería",
+       18
+      ],
+      [
+       "T05",
+       "Centro",
+       "C01",
+       1,
+       38,
+       "Bebidas",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "T06",
+       "Ánimas",
+       "C02",
+       4,
+       208,
+       "Bebidas",
+       "",
+       "Medida (equivalente)",
+       "Valor",
+       "",
+       ""
+      ],
+      [
+       "T07",
+       "Centro",
+       "P01",
+       2,
+       70,
+       "Panadería",
+       "",
+       "Ventas Totales (SUM)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "T08",
+       "Ánimas",
+       "P02",
+       15,
+       270,
+       "Panadería",
+       "",
+       "Ventas Centro (CALCULATE)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Ventas mayoreo (CALCULATE + FILTER)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Ventas Panadería (con RELATED)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Ticket promedio (DIVIDE)",
+       "",
+       "",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Ticket promedio Oriente, sin ventas (DIVIDE)",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "E2",
+       "formula": "=D2*BUSCARV(C2,$H$2:$K$5,4,FALSO)",
+       "esperado": 104,
+       "requiere": "BUSCARV(",
+       "texto": "<b>E2</b>: importe del ticket T01: cantidad × precio traído de Productos (lo que haría RELATED(Productos[Precio])).",
+       "pista": "Busca C2 en $H$2:$K$5, columna 4, con FALSO."
+      },
+      {
+       "celda": "F2",
+       "formula": "=BUSCARV(C2,$H$2:$K$5,3,FALSO)",
+       "esperado": "Bebidas",
+       "requiere": "BUSCARV(",
+       "texto": "<b>F2</b>: categoría del ticket T01 (equivalente de RELATED(Productos[Categoría]))."
+      },
+      {
+       "celda": "I8",
+       "formula": "=SUMA(E2:E9)",
+       "esperado": 1370,
+       "requiere": "SUMA(",
+       "texto": "<b>I8</b>: Ventas Totales = SUM(Ventas[Importe])."
+      },
+      {
+       "celda": "I9",
+       "formula": "=SUMAR.SI(B2:B9,\"Centro\",E2:E9)",
+       "esperado": 428,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>I9</b>: ventas del local Centro (CALCULATE con filtro de local)."
+      },
+      {
+       "celda": "I10",
+       "formula": "=SUMAR.SI(D2:D9,\">=10\",E2:E9)",
+       "esperado": 836,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>I10</b>: ventas de tickets con 10 piezas o más (CALCULATE + FILTER sobre Cantidad).",
+       "pista": "El criterio es mayor o igual que 10, escrito entre comillas."
+      },
+      {
+       "celda": "I11",
+       "formula": "=SUMAR.SI(F2:F9,\"Panadería\",E2:E9)",
+       "esperado": 906,
+       "requiere": "SUMAR.SI(",
+       "texto": "<b>I11</b>: ventas de Panadería usando la columna Categoría que trajiste con BUSCARV."
+      },
+      {
+       "celda": "I12",
+       "formula": "=SI.ERROR(I8/CONTARA(A2:A9),0)",
+       "esperado": 171.25,
+       "requiere": "SI.ERROR(",
+       "texto": "<b>I12</b>: ticket promedio = ventas ÷ número de tickets, protegido contra división entre cero."
+      },
+      {
+       "celda": "I13",
+       "formula": "=SI.ERROR(SUMAR.SI(B2:B9,\"Oriente\",E2:E9)/CONTAR.SI(B2:B9,\"Oriente\"),0)",
+       "esperado": 0,
+       "requiere": "SI.ERROR(",
+       "texto": "<b>I13</b>: ticket promedio de un local Oriente que aún no vende.",
+       "explica": "Sin SI.ERROR daría #¡DIV/0!. DIVIDE en DAX hace lo mismo: devuelve vacío o el valor alterno que le pongas como tercer argumento."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Completa la fórmula DAX",
+     "items": [
+      {
+       "frase": "Categoría = ___(Productos[Categoría])   (columna calculada en Ventas)",
+       "resp": [
+        "RELATED",
+        "related"
+       ]
+      },
+      {
+       "frase": "Ticket promedio = ___([Ventas Totales], [Número de tickets])",
+       "resp": [
+        "DIVIDE",
+        "divide"
+       ]
+      },
+      {
+       "frase": "Ventas mayoreo = CALCULATE([Ventas Totales], ___(Ventas, Ventas[Cantidad] >= 10))",
+       "resp": [
+        "FILTER",
+        "filter"
+       ]
+      },
+      {
+       "frase": "Ventas mayoreo = ___([Ventas Totales], FILTER(Ventas, Ventas[Cantidad] >= 10))",
+       "resp": [
+        "CALCULATE",
+        "calculate"
+       ]
+      },
+      {
+       "frase": "Importe calculado = ___(Ventas, Ventas[Cantidad] * RELATED(Productos[Precio]))",
+       "resp": [
+        "SUMX",
+        "sumx"
+       ]
+      },
+      {
+       "frase": "Clientes distintos = ___(Ventas[IdCliente])",
+       "resp": [
+        "DISTINCTCOUNT",
+        "distinctcount"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "Relaciona la función DAX con lo que hace",
+     "pares": [
+      [
+       "RELATED",
+       "Trae un valor de la tabla del lado «uno» de la relación"
+      ],
+      [
+       "FILTER",
+       "Devuelve solo las filas de una tabla que cumplen una condición"
+      ],
+      [
+       "SUMX",
+       "Calcula una expresión fila por fila y suma los resultados"
+      ],
+      [
+       "DISTINCTCOUNT",
+       "Cuenta valores distintos de una columna"
+      ],
+      [
+       "AVERAGE",
+       "Promedia una columna de números"
+      ]
+     ]
+    },
+    {
+     "tipo": "pasos",
+     "rotulo": "Hazlo en Power BI Desktop",
+     "pasos": [
+      "Carga las tablas Ventas y Productos desde tu libro de Excel y revisa en Power Query que Cantidad y Precio sean números.",
+      "En la vista de modelo, arrastra Clave de Productos sobre Clave de Ventas y comprueba que la relación quede de uno a varios.",
+      "En la tabla Ventas, crea una columna nueva con la fórmula Categoría = RELATED(Productos[Categoría]).",
+      "Crea la medida Ventas Totales = SUM(Ventas[Importe]) y dale formato de moneda.",
+      "Crea la medida Ventas mayoreo con CALCULATE y FILTER, y la de Ticket promedio con DIVIDE.",
+      "Pon cada medida en una tarjeta y agrega un segmentador de Local: comprueba que los números coincidan con tu hoja de cálculo."
+     ],
+     "nota": "Si tu versión muestra los menús con otros nombres, busca la acción equivalente: crear columna, crear medida y ver el modelo."
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Dónde calcular Ventas Totales",
+     "mal": "«Una columna calculada Total en Ventas que repite la suma de todo en cada fila, y otra columna para cada local.»",
+     "bien": "«Una sola medida Ventas Totales = SUM(Ventas[Importe]) que cambia con cada segmentador; CALCULATE solo cuando necesitas un filtro fijo, como mayoreo.»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu modelo",
+     "pregunta": "Piensa en los datos de tu trabajo. Escribe cuál sería tu tabla de hechos, cuáles tus dimensiones, por qué columna se relacionan y dos medidas que crearías.",
+     "ayuda": "Hechos: … Dimensiones: … Se relacionan por… Medidas: … y …"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Medidas base para un reporte de ventas",
+     "texto": "Ventas Totales = SUM(Ventas[Importe])\nNúmero de tickets = COUNTROWS(Ventas)\nTicket promedio = DIVIDE([Ventas Totales], [Número de tickets])\nVentas mayoreo = CALCULATE([Ventas Totales], FILTER(Ventas, Ventas[Cantidad] >= [mínimo de piezas]))\n% mayoreo = DIVIDE([Ventas mayoreo], [Ventas Totales])\n\nColumna calculada en Ventas:\nCategoría = RELATED([Dimensión][Categoría])",
+     "nota": "Cópiala y cambia los nombres de tablas y columnas por los tuyos."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Hechos al centro, dimensiones alrededor, relaciones de uno a varios por la clave.",
+      "RELATED trae datos de la dimensión; las medidas (SUM, CALCULATE, DIVIDE) se recalculan con cada filtro.",
+      "Comprueba tus medidas contra una cuenta hecha a mano antes de publicar."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 4,
+   "t": "Tablero de inventario para una ferretería",
+   "obj": "Calcular los KPI de inventario, definir el semáforo y diseñar la página del tablero.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso:</b> <b>Ferreterías La Tuerca</b>, en Aguascalientes, pierde ventas porque a veces se acaba el cemento y, al mismo tiempo, tiene dinero parado en herramientas que casi no se venden. El director quiere un tablero que revise cada mañana en su celular: cuánto dinero hay en inventario, cuántos días alcanza cada producto con la venta diaria promedio y cuáles están en rojo."
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Los KPI del tablero de inventario",
+     "datos": [
+      [
+       "Producto",
+       "Existencia",
+       "Venta diaria promedio",
+       "Costo unitario",
+       "Valor",
+       "Días de cobertura",
+       "Semáforo",
+       "",
+       "Indicador",
+       "Valor"
+      ],
+      [
+       "Tornillo 1/4 caja",
+       40,
+       5,
+       85,
+       "",
+       "",
+       "",
+       "",
+       "Valor del inventario",
+       ""
+      ],
+      [
+       "Cemento 50 kg",
+       120,
+       30,
+       210,
+       "",
+       "",
+       "",
+       "",
+       "Productos en rojo",
+       ""
+      ],
+      [
+       "Pintura vinílica 19 L",
+       18,
+       1.5,
+       1450,
+       26100,
+       12,
+       "Amarillo",
+       "",
+       "% de productos en rojo",
+       ""
+      ],
+      [
+       "Cinta de aislar",
+       300,
+       12,
+       14,
+       4200,
+       25,
+       "Verde",
+       "",
+       "Producto con menos días",
+       ""
+      ],
+      [
+       "Taladro 1/2 pulgada",
+       6,
+       0.5,
+       1890,
+       11340,
+       12,
+       "Amarillo",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "E2",
+       "formula": "=B2*D2",
+       "esperado": 3400,
+       "texto": "<b>E2</b>: valor del inventario de tornillos (existencia × costo)."
+      },
+      {
+       "celda": "E3",
+       "formula": "=B3*D3",
+       "esperado": 25200,
+       "texto": "<b>E3</b>: valor del inventario de cemento."
+      },
+      {
+       "celda": "F2",
+       "formula": "=B2/C2",
+       "esperado": 8,
+       "texto": "<b>F2</b>: días de cobertura de tornillos (existencia ÷ venta diaria promedio)."
+      },
+      {
+       "celda": "F3",
+       "formula": "=B3/C3",
+       "esperado": 4,
+       "texto": "<b>F3</b>: días de cobertura del cemento."
+      },
+      {
+       "celda": "G2",
+       "formula": "=SI(F2<7,\"Rojo\",SI(F2<15,\"Amarillo\",\"Verde\"))",
+       "esperado": "Amarillo",
+       "requiere": "SI(",
+       "texto": "<b>G2</b>: semáforo: Rojo si alcanza para menos de 7 días, Amarillo si es menos de 15, Verde si es más.",
+       "pista": "Anida dos SI: =SI(F2<7, Rojo, SI(F2<15, Amarillo, Verde)), con los textos entre comillas."
+      },
+      {
+       "celda": "G3",
+       "formula": "=SI(F3<7,\"Rojo\",SI(F3<15,\"Amarillo\",\"Verde\"))",
+       "esperado": "Rojo",
+       "requiere": "SI(",
+       "texto": "<b>G3</b>: semáforo del cemento."
+      },
+      {
+       "celda": "J2",
+       "formula": "=SUMA(E2:E6)",
+       "esperado": 70240,
+       "requiere": "SUMA(",
+       "texto": "<b>J2</b>: valor total del inventario (la tarjeta principal)."
+      },
+      {
+       "celda": "J3",
+       "formula": "=CONTAR.SI(G2:G6,\"Rojo\")",
+       "esperado": 1,
+       "requiere": "CONTAR.SI(",
+       "texto": "<b>J3</b>: cuántos productos están en rojo."
+      },
+      {
+       "celda": "J4",
+       "formula": "=J3/CONTARA(A2:A6)",
+       "esperado": 0.2,
+       "texto": "<b>J4</b>: qué porcentaje de los productos está en rojo.",
+       "explica": "0.2 con formato de porcentaje es 20%."
+      },
+      {
+       "celda": "J5",
+       "formula": "=INDICE(A2:A6,COINCIDIR(MIN(F2:F6),F2:F6,0))",
+       "esperado": "Cemento 50 kg",
+       "requiere": "INDICE(",
+       "texto": "<b>J5</b>: el producto con menos días de cobertura.",
+       "pista": "=INDICE(productos, COINCIDIR(MIN(días), días, 0))"
+      }
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el tablero",
+     "preguntas": [
+      {
+       "p": "¿Qué va en la tarjeta más grande, arriba a la izquierda?",
+       "ops": [
+        "La tabla de todos los productos",
+        "Valor del inventario: $70,240, con su comparación contra la semana pasada",
+        "El logotipo de la ferretería"
+       ],
+       "correcta": 1
+      },
+      {
+       "p": "La pintura vale $26,100 y alcanza para 12 días; el cemento vale $25,200 y alcanza para 4. ¿Cuál atiendes primero?",
+       "ops": [
+        "El cemento, porque se acaba antes y pierde ventas",
+        "La pintura, porque vale más",
+        "Ninguno, los dos están en amarillo"
+       ],
+       "correcta": 0
+      },
+      {
+       "p": "El director revisa el tablero desde el celular. ¿Cómo muestras el semáforo?",
+       "ops": [
+        "Con un texto largo que explique cada producto",
+        "Con 12 gráficas pequeñas",
+        "Con colores en una tabla corta ordenada de menos a más días"
+       ],
+       "correcta": 2
+      },
+      {
+       "p": "¿Qué segmentador le sirve al director en este tablero?",
+       "ops": [
+        "Categoría o sucursal",
+        "Color de la gráfica",
+        "Nombre del archivo"
+       ],
+       "correcta": 0
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "Relaciona la pregunta del director con el elemento del tablero",
+     "pares": [
+      [
+       "¿Cuánto dinero tengo en inventario?",
+       "Tarjeta con el valor total"
+      ],
+      [
+       "¿Qué se me va a acabar primero?",
+       "Tabla ordenada por días de cobertura con semáforo"
+      ],
+      [
+       "¿En qué categoría tengo más dinero parado?",
+       "Barras de valor por categoría"
+      ],
+      [
+       "¿Cómo ha cambiado la existencia de cemento?",
+       "Líneas por día"
+      ],
+      [
+       "Quiero ver solo la sucursal Norte",
+       "Segmentación de datos por sucursal"
+      ]
+     ]
+    },
+    {
+     "tipo": "pasos",
+     "rotulo": "Arma la página en Power BI Desktop",
+     "pasos": [
+      "Crea las medidas de valor de inventario y de productos en rojo, y comprueba que den lo mismo que tu hoja.",
+      "Coloca arriba de 3 a 4 tarjetas: valor del inventario, productos en rojo y porcentaje en rojo.",
+      "Debajo, agrega una tabla con producto, días de cobertura y semáforo, ordenada de menos a más días.",
+      "Aplica colores según el valor de la columna Semáforo (formato condicional) para que el rojo salte a la vista.",
+      "Agrega un segmentador de categoría o sucursal a un lado y deja visible qué está seleccionado.",
+      "Revisa la vista para teléfono y deja solo lo que el director necesita cada mañana.",
+      "Pon la fecha de corte y la fuente: «Existencias al cierre de ayer, sistema de inventario»."
+     ],
+     "nota": "Si no encuentras un menú con ese nombre exacto, busca la acción en el panel de formato del visual."
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "La tarjeta de inventario",
+     "mal": "«$70,240» solo, sin fecha ni comparación.",
+     "bien": "«$70,240 en inventario · 1 producto en rojo (cemento: 4 días) · datos al cierre de ayer»"
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu semáforo",
+     "pregunta": "Elige un indicador de tu trabajo (inventario, cobranza, entregas, ventas) y define su semáforo: qué valor es rojo, cuál amarillo y cuál verde, y qué acción tomas en cada color.",
+     "ayuda": "Indicador: … Rojo si… (acción…) Amarillo si… (acción…) Verde si…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Diseño de un tablero de inventario",
+     "texto": "Usuario: [quién lo ve y desde qué dispositivo]\nPregunta principal: [qué se me va a acabar y cuánto dinero tengo parado]\n\nArriba (tarjetas): [valor del inventario] · [productos en rojo] · [% en rojo] · [comparación contra semana anterior]\nEn medio: [barras de valor por categoría] · [línea de existencia del producto clave]\nAbajo: [tabla por días de cobertura con semáforo]\nSegmentadores: [categoría] · [sucursal]\nReglas del semáforo: Rojo < [ ] días · Amarillo < [ ] días · Verde el resto\nFecha de corte y fuente: [ ]",
+     "nota": "Cópiala y llénala antes de abrir Power BI."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Un tablero de inventario responde qué se acaba primero y cuánto dinero hay parado.",
+      "Días de cobertura = existencia ÷ venta diaria promedio; el semáforo convierte el número en acción.",
+      "Arriba las tarjetas, abajo el detalle, y siempre fecha de corte y fuente."
+     ]
+    }
+   ]
+  }
+ ]
+}

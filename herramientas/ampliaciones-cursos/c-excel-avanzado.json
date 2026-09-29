@@ -1,0 +1,2204 @@
+{
+ "id": "c-excel-avanzado",
+ "extras": {
+  "c-excel-avanzado-m2-l3": [
+   {
+    "tipo": "texto",
+    "texto": "<b>Práctica extra.</b> Un despacho contable de Querétaro mide cuánto le deja cada hora trabajada por cliente. Un cliente nuevo todavía no tiene horas registradas, así que la división fallaría."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Honorarios por hora de un despacho",
+    "instruccion": "Protege las divisiones con SI.ERROR y marca a los clientes poco rentables.",
+    "datos": [
+     [
+      "Cliente",
+      "Honorarios del mes",
+      "Horas trabajadas",
+      "Pesos por hora",
+      "Rentable"
+     ],
+     [
+      "Muebles Rústicos del Centro",
+      18500,
+      22,
+      "",
+      ""
+     ],
+     [
+      "Clínica Dental Sonríe",
+      9600,
+      16,
+      "",
+      ""
+     ],
+     [
+      "Taller Mecánico Hnos. Luna",
+      7200,
+      0,
+      "",
+      ""
+     ],
+     [
+      "Constructora Bernal",
+      24000,
+      30,
+      "",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "D2",
+      "formula": "=SI.ERROR(REDONDEAR(B2/C2,2),\"Sin horas\")",
+      "esperado": 840.91,
+      "texto": "<b>D2</b>: pesos por hora del primer cliente, a 2 decimales; si falla, «Sin horas».",
+      "requiere": "SI.ERROR(",
+      "pista": "=SI.ERROR(REDONDEAR(B2/C2,2),\"Sin horas\")"
+     },
+     {
+      "celda": "D4",
+      "formula": "=SI.ERROR(REDONDEAR(B4/C4,2),\"Sin horas\")",
+      "esperado": "Sin horas",
+      "texto": "<b>D4</b>: el taller aún no tiene horas registradas.",
+      "requiere": "SI.ERROR("
+     },
+     {
+      "celda": "D3",
+      "formula": "=SI.ERROR(REDONDEAR(B3/C3,2),\"Sin horas\")",
+      "esperado": 600,
+      "texto": "<b>D3</b>: pesos por hora de la clínica.",
+      "requiere": "SI.ERROR("
+     },
+     {
+      "celda": "E3",
+      "formula": "=SI(D3>=700,\"Sí\",\"Revisar tarifa\")",
+      "esperado": "Revisar tarifa",
+      "texto": "<b>E3</b>: «Sí» si deja 700 pesos por hora o más; si no, «Revisar tarifa».",
+      "requiere": "SI(",
+      "pista": "=SI(D3>=700,\"Sí\",\"Revisar tarifa\")",
+      "explica": "La clínica deja 600 por hora: el despacho debería renegociar o reducir horas."
+     },
+     {
+      "celda": "D5",
+      "formula": "=SI.ERROR(REDONDEAR(B5/C5,2),\"Sin horas\")",
+      "esperado": 800,
+      "texto": "<b>D5</b>: pesos por hora de la constructora.",
+      "requiere": "SI.ERROR("
+     }
+    ]
+   }
+  ],
+  "c-excel-avanzado-m3-l1": [
+   {
+    "tipo": "texto",
+    "texto": "<b>Práctica extra.</b> El área de Recursos Humanos de una empresa de logística en Toluca consulta el tabulador de sueldos por clave de puesto."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Tabulador de sueldos por puesto",
+    "instruccion": "Tabulador en A:C. Consulta desde la zona E:G.",
+    "datos": [
+     [
+      "Clave de puesto",
+      "Puesto",
+      "Sueldo mensual",
+      "",
+      "Clave buscada",
+      "Puesto",
+      "Sueldo"
+     ],
+     [
+      "LOG-01",
+      "Auxiliar de almacén",
+      10800,
+      "",
+      "LOG-03",
+      "",
+      ""
+     ],
+     [
+      "LOG-02",
+      "Montacarguista",
+      13200,
+      "",
+      "LOG-05",
+      "",
+      ""
+     ],
+     [
+      "LOG-03",
+      "Supervisor de turno",
+      19500,
+      "",
+      "LOG-08",
+      "",
+      ""
+     ],
+     [
+      "LOG-04",
+      "Coordinador de rutas",
+      24800,
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "LOG-05",
+      "Jefe de almacén",
+      31000,
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "F2",
+      "formula": "=BUSCARV(E2,$A$2:$C$6,2,FALSO)",
+      "esperado": "Supervisor de turno",
+      "texto": "<b>F2</b>: nombre del puesto de la clave de E2.",
+      "requiere": "BUSCARV(",
+      "pista": "=BUSCARV(E2,$A$2:$C$6,2,FALSO)"
+     },
+     {
+      "celda": "G2",
+      "formula": "=BUSCARV(E2,$A$2:$C$6,3,FALSO)",
+      "esperado": 19500,
+      "texto": "<b>G2</b>: sueldo mensual de ese puesto.",
+      "requiere": "BUSCARV(",
+      "pista": "Columna 3 del tabulador."
+     },
+     {
+      "celda": "G3",
+      "formula": "=BUSCARV(E3,$A$2:$C$6,3,FALSO)",
+      "esperado": 31000,
+      "texto": "<b>G3</b>: sueldo de la clave de E3.",
+      "requiere": "BUSCARV("
+     },
+     {
+      "celda": "F4",
+      "formula": "=SI.ERROR(BUSCARV(E4,$A$2:$C$6,2,FALSO),\"Clave inexistente\")",
+      "esperado": "Clave inexistente",
+      "texto": "<b>F4</b>: la clave LOG-08 no existe. Muestra «Clave inexistente».",
+      "requiere": "SI.ERROR(",
+      "pista": "=SI.ERROR(BUSCARV(E4,$A$2:$C$6,2,FALSO),\"Clave inexistente\")"
+     }
+    ]
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Comprueba",
+    "preguntas": [
+     {
+      "p": "Si en la práctica anterior olvidas FALSO y buscas LOG-08, BUSCARV…",
+      "ops": [
+       "Muestra #N/A",
+       "Puede traer el último puesto del tabulador sin avisar",
+       "Muestra 0"
+      ],
+      "correcta": 1,
+      "explica": "Sin FALSO la búsqueda es aproximada: devuelve la última clave «menor o igual», un dato equivocado que parece correcto."
+     },
+     {
+      "p": "Copias =BUSCARV(E2,A2:C6,3,FALSO) hacia abajo sin $. En la fila 4 el rango queda…",
+      "ops": [
+       "A2:C6",
+       "A4:C8",
+       "E4:G8"
+      ],
+      "correcta": 1,
+      "explica": "Sin $, el rango se recorre dos filas y deja fuera las primeras claves del tabulador."
+     }
+    ]
+   }
+  ],
+  "c-excel-avanzado-m3-l3": [
+   {
+    "tipo": "texto",
+    "texto": "<b>Práctica extra.</b> En cuentas por pagar de una comercializadora de Mérida, las facturas llegan con el RFC del proveedor. El catálogo tiene el nombre en la columna A y el RFC en la B: BUSCARV no puede traer datos a la izquierda, BUSCARX sí."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Proveedores por RFC",
+    "instruccion": "Catálogo en A:C. Busca por RFC en la zona E:G.",
+    "datos": [
+     [
+      "Proveedor",
+      "RFC",
+      "Días de crédito",
+      "",
+      "RFC de la factura",
+      "Proveedor",
+      "Días de crédito"
+     ],
+     [
+      "Empaques del Sureste",
+      "ESU150312KL4",
+      30,
+      "",
+      "PYU180921QA2",
+      "",
+      ""
+     ],
+     [
+      "Plásticos Yucatecos",
+      "PYU180921QA2",
+      45,
+      "",
+      "ESU150312KL4",
+      "",
+      ""
+     ],
+     [
+      "Transportes Peninsulares",
+      "TPE110605MX8",
+      15,
+      "",
+      "AGR200101ZZ9",
+      "",
+      ""
+     ],
+     [
+      "Cartonera Maya",
+      "CMA090817RT1",
+      60,
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "F2",
+      "formula": "=BUSCARX(E2,$B$2:$B$5,$A$2:$A$5)",
+      "esperado": "Plásticos Yucatecos",
+      "texto": "<b>F2</b>: nombre del proveedor del RFC de E2 (está a la izquierda del RFC).",
+      "requiere": "BUSCARX(",
+      "pista": "=BUSCARX(E2,$B$2:$B$5,$A$2:$A$5)"
+     },
+     {
+      "celda": "G2",
+      "formula": "=BUSCARX(E2,$B$2:$B$5,$C$2:$C$5)",
+      "esperado": 45,
+      "texto": "<b>G2</b>: días de crédito de ese proveedor.",
+      "requiere": "BUSCARX("
+     },
+     {
+      "celda": "G3",
+      "formula": "=BUSCARX(E3,$B$2:$B$5,$C$2:$C$5)",
+      "esperado": 30,
+      "texto": "<b>G3</b>: días de crédito del RFC de E3.",
+      "requiere": "BUSCARX("
+     },
+     {
+      "celda": "F4",
+      "formula": "=BUSCARX(E4,$B$2:$B$5,$A$2:$A$5,\"No registrado\")",
+      "esperado": "No registrado",
+      "texto": "<b>F4</b>: el RFC de E4 no está en el catálogo. Muestra «No registrado».",
+      "requiere": "BUSCARX(",
+      "pista": "Usa el cuarto argumento de BUSCARX.",
+      "explica": "Antes de pagar a un proveedor no registrado, cuentas por pagar debe darlo de alta y validar su constancia fiscal."
+     }
+    ]
+   }
+  ],
+  "c-excel-avanzado-m3-l4": [
+   {
+    "tipo": "texto",
+    "texto": "<b>Práctica extra.</b> Una tienda de uniformes escolares en Celaya tiene su lista de precios por prenda (filas) y talla (columnas). Arma la consulta para el mostrador."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Precios de uniformes por prenda y talla",
+    "instruccion": "Tabla de precios en A1:E4; datos del pedido en H:I.",
+    "datos": [
+     [
+      "Prenda / Talla",
+      "Talla 6-8",
+      "Talla 10-12",
+      "Talla 14-16",
+      "Adulto",
+      "",
+      "",
+      "Dato",
+      "Valor"
+     ],
+     [
+      "Playera polo",
+      165,
+      185,
+      205,
+      230,
+      "",
+      "",
+      "Prenda",
+      "Pants deportivo"
+     ],
+     [
+      "Pants deportivo",
+      290,
+      320,
+      355,
+      390,
+      "",
+      "",
+      "Talla",
+      "Talla 14-16"
+     ],
+     [
+      "Suéter",
+      340,
+      370,
+      410,
+      450,
+      "",
+      "",
+      "Piezas",
+      3
+     ],
+     [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Fila",
+      ""
+     ],
+     [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Columna",
+      ""
+     ],
+     [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Precio unitario",
+      ""
+     ],
+     [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Importe",
+      ""
+     ],
+     [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Suéter adulto (una fórmula)",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "I5",
+      "formula": "=COINCIDIR(I2,A2:A4,0)",
+      "esperado": 2,
+      "texto": "<b>I5</b>: posición de la prenda de I2 en A2:A4.",
+      "requiere": "COINCIDIR(",
+      "pista": "=COINCIDIR(I2,A2:A4,0)"
+     },
+     {
+      "celda": "I6",
+      "formula": "=COINCIDIR(I3,B1:E1,0)",
+      "esperado": 3,
+      "texto": "<b>I6</b>: posición de la talla de I3 en B1:E1.",
+      "requiere": "COINCIDIR("
+     },
+     {
+      "celda": "I7",
+      "formula": "=INDICE(B2:E4,I5,I6)",
+      "esperado": 355,
+      "texto": "<b>I7</b>: precio unitario del cruce.",
+      "requiere": "INDICE(",
+      "pista": "=INDICE(B2:E4,I5,I6)"
+     },
+     {
+      "celda": "I8",
+      "formula": "=I4*I7",
+      "esperado": 1065,
+      "texto": "<b>I8</b>: importe del pedido."
+     },
+     {
+      "celda": "I9",
+      "formula": "=INDICE(B2:E4,COINCIDIR(\"Suéter\",A2:A4,0),COINCIDIR(\"Adulto\",B1:E1,0))",
+      "esperado": 450,
+      "texto": "<b>I9</b>: precio del suéter talla adulto en una sola fórmula, escribiendo los textos entre comillas.",
+      "requiere": "INDICE(",
+      "pista": "=INDICE(B2:E4,COINCIDIR(\"Suéter\",A2:A4,0),COINCIDIR(\"Adulto\",B1:E1,0))"
+     }
+    ]
+   }
+  ],
+  "c-excel-avanzado-m4-l1": [
+   {
+    "tipo": "texto",
+    "texto": "<b>Práctica extra.</b> Una distribuidora de León controla los viáticos de sus áreas. Contraloría pide totales por área y concepto, y cuántos gastos superan el tope que requiere autorización."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Bitácora de viáticos de marzo",
+    "instruccion": "Base en A:D. Responde en la columna H.",
+    "datos": [
+     [
+      "Fecha",
+      "Área",
+      "Concepto",
+      "Monto",
+      "",
+      "",
+      "Pregunta",
+      "Resultado"
+     ],
+     [
+      "03/03",
+      "Ventas",
+      "Hospedaje",
+      1850,
+      "",
+      "",
+      "Hospedaje de Ventas",
+      ""
+     ],
+     [
+      "05/03",
+      "Ventas",
+      "Alimentos",
+      640,
+      "",
+      "",
+      "Gastos de Compras (cuántos)",
+      ""
+     ],
+     [
+      "07/03",
+      "Compras",
+      "Casetas",
+      420,
+      "",
+      "",
+      "Gastos de más de 1,000 (cuántos)",
+      ""
+     ],
+     [
+      "12/03",
+      "Ventas",
+      "Hospedaje",
+      2100,
+      "",
+      "",
+      "Alimentos de todas las áreas",
+      ""
+     ],
+     [
+      "14/03",
+      "Compras",
+      "Alimentos",
+      380,
+      "",
+      "",
+      "Ventas: gastos de más de 1,000 (monto)",
+      ""
+     ],
+     [
+      "19/03",
+      "Compras",
+      "Hospedaje",
+      1500,
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "24/03",
+      "Ventas",
+      "Casetas",
+      560,
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "H2",
+      "formula": "=SUMAR.SI.CONJUNTO(D2:D8,B2:B8,\"Ventas\",C2:C8,\"Hospedaje\")",
+      "esperado": 3950,
+      "texto": "<b>H2</b>: total de hospedaje del área de Ventas.",
+      "requiere": "SUMAR.SI.CONJUNTO(",
+      "pista": "=SUMAR.SI.CONJUNTO(D2:D8,B2:B8,\"Ventas\",C2:C8,\"Hospedaje\")"
+     },
+     {
+      "celda": "H3",
+      "formula": "=CONTAR.SI(B2:B8,\"Compras\")",
+      "esperado": 3,
+      "texto": "<b>H3</b>: cuántos gastos registró Compras.",
+      "requiere": "CONTAR.SI("
+     },
+     {
+      "celda": "H4",
+      "formula": "=CONTAR.SI(D2:D8,\">1000\")",
+      "esperado": 3,
+      "texto": "<b>H4</b>: cuántos gastos superan 1,000 pesos.",
+      "requiere": "CONTAR.SI(",
+      "pista": "Criterio entre comillas: \">1000\"."
+     },
+     {
+      "celda": "H5",
+      "formula": "=SUMAR.SI(C2:C8,\"Alimentos\",D2:D8)",
+      "esperado": 1020,
+      "texto": "<b>H5</b>: total de alimentos de todas las áreas.",
+      "requiere": "SUMAR.SI("
+     },
+     {
+      "celda": "H6",
+      "formula": "=SUMAR.SI.CONJUNTO(D2:D8,B2:B8,\"Ventas\",D2:D8,\">1000\")",
+      "esperado": 3950,
+      "texto": "<b>H6</b>: monto de los gastos de Ventas mayores a 1,000.",
+      "requiere": "SUMAR.SI.CONJUNTO(",
+      "pista": "El mismo rango D2:D8 puede ser el que se suma y también un rango de criterio.",
+      "explica": "Son los dos hospedajes de Ventas: los que debería haber autorizado la gerencia."
+     }
+    ]
+   }
+  ]
+ },
+ "practicas": [
+  {
+   "modulo": 0,
+   "t": "Lista de precios de una imprenta",
+   "obj": "Construir una lista de precios con margen, IVA y descuentos por volumen usando referencias absolutas y mixtas.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Imprenta Tinta Viva, en Aguascalientes, arma cada mes su lista de precios a mano y cada vendedor cotiza distinto. Rebeca, la dueña, te pide una hoja donde el <b>margen</b> y el <b>IVA</b> vivan en celdas de parámetros, para cambiarlos una sola vez y que toda la lista se actualice. También quiere un cuadro de precios por volumen que se llene copiando una sola fórmula. Tienes 40 minutos."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide antes de escribir",
+     "preguntas": [
+      {
+       "p": "El margen de 45% está en H2 y lo usarás en todas las filas. En la fórmula lo escribes como…",
+       "ops": [
+        "H2",
+        "H$2",
+        "$H$2"
+       ],
+       "correcta": 2,
+       "explica": "Con $H$2 la referencia no se mueve ni al copiar hacia abajo ni hacia la derecha. H$2 también funcionaría hacia abajo, pero $H$2 es la forma segura para un parámetro."
+      },
+      {
+       "p": "Precio sin IVA = costo más 45%. ¿Cuál fórmula es correcta para B2 = costo?",
+       "ops": [
+        "=B2*(1+$H$2)",
+        "=B2+$H$2",
+        "=B2*$H$2"
+       ],
+       "correcta": 0,
+       "explica": "Multiplicar por (1 + margen) suma el 45% al costo. =B2+$H$2 sumaría 0.45 pesos y =B2*$H$2 daría solo el 45%."
+      },
+      {
+       "p": "Rebeca quiere que los precios queden en pesos y centavos exactos para la factura. Conviene…",
+       "ops": [
+        "Solo cambiar el formato a dos decimales",
+        "Redondear con REDONDEAR(…,2) en la fórmula",
+        "Escribir los precios a mano"
+       ],
+       "correcta": 1,
+       "explica": "El formato solo cambia lo que ves; el valor sigue con muchos decimales y los totales pueden diferir por centavos. REDONDEAR cambia el valor."
+      },
+      {
+       "p": "En el cuadro por volumen, la fórmula =$B3*C$2 se copia a la derecha. ¿Qué parte cambia?",
+       "ops": [
+        "La C de C$2",
+        "La B de $B3",
+        "El 2 de C$2"
+       ],
+       "correcta": 0,
+       "explica": "La columna de C$2 está libre, así que avanza a D y E. $B3 fija la columna B y C$2 fija la fila 2."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Lista de precios con margen e IVA",
+     "instruccion": "Margen en H2 e IVA en H3. Las filas 3 y 4 ya están calculadas como referencia; completa las filas 2 y 5.",
+     "datos": [
+      [
+       "Producto",
+       "Costo",
+       "Precio sin IVA",
+       "IVA",
+       "Precio con IVA",
+       "",
+       "Parámetro",
+       "Valor"
+      ],
+      [
+       "Tarjetas de presentación (millar)",
+       380,
+       "",
+       "",
+       "",
+       "",
+       "Margen",
+       0.45
+      ],
+      [
+       "Volantes media carta (millar)",
+       610,
+       884.5,
+       141.52,
+       1026.02,
+       "",
+       "IVA",
+       0.16
+      ],
+      [
+       "Lona impresa 1 × 2 m",
+       455,
+       659.75,
+       105.56,
+       765.31,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Sello autoentintable",
+       235,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "C2",
+       "formula": "=REDONDEAR(B2*(1+$H$2),2)",
+       "esperado": 551,
+       "texto": "<b>C2</b>: precio sin IVA de las tarjetas: costo más el margen de H2, redondeado a 2 decimales.",
+       "requiere": "$H$2",
+       "pista": "=REDONDEAR(B2*(1+$H$2),2)"
+      },
+      {
+       "celda": "D2",
+       "formula": "=REDONDEAR(C2*$H$3,2)",
+       "esperado": 88.16,
+       "texto": "<b>D2</b>: IVA de las tarjetas con la tasa de H3, redondeado a 2 decimales.",
+       "requiere": "$H$3",
+       "pista": "Multiplica el precio sin IVA por $H$3."
+      },
+      {
+       "celda": "E2",
+       "formula": "=C2+D2",
+       "esperado": 639.16,
+       "texto": "<b>E2</b>: precio con IVA de las tarjetas.",
+       "pista": "Suma precio sin IVA más IVA."
+      },
+      {
+       "celda": "C5",
+       "formula": "=REDONDEAR(B5*(1+$H$2),2)",
+       "esperado": 340.75,
+       "texto": "<b>C5</b>: precio sin IVA del sello. Es la misma fórmula de C2 copiada tres filas abajo.",
+       "requiere": "$H$2",
+       "pista": "Solo cambia B2 por B5; $H$2 se queda igual.",
+       "explica": "Si hubieras escrito H2 sin $, al copiar se habría convertido en H5, que está vacía."
+      },
+      {
+       "celda": "D5",
+       "formula": "=REDONDEAR(C5*$H$3,2)",
+       "esperado": 54.52,
+       "texto": "<b>D5</b>: IVA del sello.",
+       "requiere": "$H$3",
+       "pista": "=REDONDEAR(C5*$H$3,2)"
+      },
+      {
+       "celda": "E5",
+       "formula": "=C5+D5",
+       "esperado": 395.27,
+       "texto": "<b>E5</b>: precio con IVA del sello.",
+       "explica": "Prueba mental: si Rebeca cambia el margen en H2 a 0.5, toda la lista se recalcula sin tocar una sola fórmula."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Cuadro de precios por volumen",
+     "instruccion": "Precio por pieza = precio base × factor del volumen. Una sola fórmula con referencias mixtas llena todo el cuadro.",
+     "datos": [
+      [
+       "Producto",
+       "Precio base por pieza",
+       "100 a 499 pzas",
+       "500 a 999 pzas",
+       "1000 o más pzas"
+      ],
+      [
+       "Factor →",
+       "",
+       1,
+       0.9,
+       0.82
+      ],
+      [
+       "Tarjeta de presentación",
+       1.2,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Volante media carta",
+       0.85,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Etiqueta adhesiva",
+       0.6,
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "C3",
+       "formula": "=REDONDEAR($B3*C$2,2)",
+       "esperado": 1.2,
+       "texto": "<b>C3</b>: precio de la tarjeta en el rango de 100 a 499 piezas. Fija la columna B y la fila 2.",
+       "requiere": "$B3",
+       "pista": "=REDONDEAR($B3*C$2,2)"
+      },
+      {
+       "celda": "D3",
+       "formula": "=REDONDEAR($B3*D$2,2)",
+       "esperado": 1.08,
+       "texto": "<b>D3</b>: la misma fórmula copiada una columna a la derecha.",
+       "requiere": "D$2",
+       "pista": "Al copiar, C$2 se vuelve D$2 y $B3 no cambia."
+      },
+      {
+       "celda": "D4",
+       "formula": "=REDONDEAR($B4*D$2,2)",
+       "esperado": 0.77,
+       "texto": "<b>D4</b>: volante, 500 a 999 piezas.",
+       "requiere": "$B4",
+       "pista": "Ahora la fila del producto es la 4."
+      },
+      {
+       "celda": "E5",
+       "formula": "=REDONDEAR($B5*E$2,2)",
+       "esperado": 0.49,
+       "texto": "<b>E5</b>: etiqueta, 1000 piezas o más.",
+       "requiere": "$B5",
+       "explica": "Con la fórmula de C3 bien anclada, en tu Excel bastaría copiarla a todo el cuadro C3:E5."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Escribe la referencia correcta",
+     "items": [
+      {
+       "frase": "Parámetro de IVA en H3 que no debe moverse al copiar en ninguna dirección: ___",
+       "resp": [
+        "$H$3",
+        "$h$3"
+       ]
+      },
+      {
+       "frase": "Precio base en la columna B que se copia hacia la derecha pero debe cambiar de fila: ___3",
+       "resp": [
+        "$B",
+        "$b"
+       ]
+      },
+      {
+       "frase": "Factor en la fila 2 que se copia hacia abajo pero debe cambiar de columna: C___",
+       "resp": [
+        "$2"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Dónde vive el margen",
+     "mal": "«=REDONDEAR(B2*1.45,2)» en cada fila. Si el margen cambia a 50%, hay que corregir fórmula por fórmula y alguna se queda con el valor viejo.",
+     "bien": "«=REDONDEAR(B2*(1+$H$2),2)» con el margen en H2. Cambias un número y toda la lista queda al día."
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tus parámetros",
+     "pregunta": "Piensa en una hoja que uses en tu trabajo o negocio. Escribe tres números que hoy están escritos dentro de las fórmulas y que deberían vivir en una celda de parámetros, y en qué celda los pondrías.",
+     "ayuda": "Parámetro 1: la tasa de … que hoy está en … la pondría en …"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Bloque de parámetros para tus hojas",
+     "texto": "PARÁMETROS (no escribir fórmulas aquí)\nMargen de utilidad: [ ]\nTasa de IVA: [ ] (verifica la tasa vigente en el portal del SAT)\nTipo de cambio del día: [ ]\nFecha de actualización: [ ]\nResponsable: [ ]\n\nRegla: toda fórmula que use estos valores los llama con $ (ej. $H$2).",
+     "nota": "Cópiala y adáptala."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Los parámetros (margen, IVA, tasas) viven en celdas y se llaman con $.",
+      "Referencias mixtas ($B3, C$2) llenan un cuadro de doble entrada con una sola fórmula.",
+      "REDONDEAR cambia el valor; el formato solo cambia cómo se ve."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 1,
+   "t": "Bonos y alertas de una flotilla",
+   "obj": "Aplicar SI anidado, Y, O, NO y SI.ERROR a las reglas reales de bonos y control de combustible de una empresa de transporte.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Transportes Sierra Madre, en Monterrey, mueve carga a Saltillo y Nuevo Laredo. Cada trimestre, Recursos Humanos calcula a mano el nivel y el bono de sus operadores, y el área de mantenimiento revisa el rendimiento de combustible unidad por unidad. Te pasan las reglas por escrito y te piden convertirlas en fórmulas que nadie tenga que interpretar."
+    },
+    {
+     "tipo": "tabla",
+     "titulo": "Reglas que te entregó Recursos Humanos",
+     "encabezados": [
+      "Regla",
+      "Condición"
+     ],
+     "filas": [
+      [
+       "Nivel del operador",
+       "40,000 km o más = Élite; 30,000 km o más = Estándar; menos = Inicial"
+      ],
+      [
+       "Bono de puntualidad",
+       "Sí, solo si tiene 0 retardos <b>y</b> 0 incidencias"
+      ],
+      [
+       "Revisión con supervisor",
+       "Revisar si tiene 2 o más retardos <b>o</b> 2 o más incidencias; si no, OK"
+      ],
+      [
+       "Historial",
+       "Limpio si <b>no</b> tiene incidencias; si no, Con incidencia"
+      ]
+     ]
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "Para el nivel con tres categorías y condiciones de «o más», el primer SI debe preguntar…",
+       "ops": [
+        "B2>=30000",
+        "B2>=40000",
+        "B2<30000"
+       ],
+       "correcta": 1,
+       "explica": "Con «mayor o igual» se empieza por el umbral más alto; si preguntas primero por 30,000, un operador de 41,200 km quedaría como Estándar."
+      },
+      {
+       "p": "Un operador tiene 0 retardos y 1 incidencia. Con la regla de bono, ¿qué resulta?",
+       "ops": [
+        "Sí, porque no tiene retardos",
+        "No, porque Y exige que se cumplan las dos condiciones",
+        "Error"
+       ],
+       "correcta": 1,
+       "explica": "Y devuelve VERDADERO solo si todas las condiciones se cumplen. Basta una incidencia para perder el bono."
+      },
+      {
+       "p": "Delia tiene 1 retardo y 2 incidencias. Con la regla de revisión obtiene…",
+       "ops": [
+        "Revisar",
+        "OK",
+        "Estándar"
+       ],
+       "correcta": 0,
+       "explica": "O devuelve VERDADERO si al menos una condición se cumple: 2 incidencias bastan."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Nivel, bono y revisión de operadores",
+     "instruccion": "Aplica las reglas de la tabla anterior. Escribe los textos exactamente como aparecen en las reglas.",
+     "datos": [
+      [
+       "Operador",
+       "Km del trimestre",
+       "Retardos",
+       "Incidencias",
+       "Nivel",
+       "¿Bono puntualidad?",
+       "¿Revisión?",
+       "Historial"
+      ],
+      [
+       "Arturo Garza",
+       38500,
+       0,
+       0,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Beatriz Treviño",
+       29800,
+       2,
+       0,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "César Villarreal",
+       41200,
+       0,
+       1,
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Delia Cantú",
+       24300,
+       1,
+       2,
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "E2",
+       "formula": "=SI(B2>=40000,\"Élite\",SI(B2>=30000,\"Estándar\",\"Inicial\"))",
+       "esperado": "Estándar",
+       "texto": "<b>E2</b>: nivel de Arturo con dos SI anidados, empezando por el umbral más alto.",
+       "requiere": "SI(",
+       "pista": "=SI(B2>=40000,\"Élite\",SI(B2>=30000,\"Estándar\",\"Inicial\"))"
+      },
+      {
+       "celda": "E4",
+       "formula": "=SI(B4>=40000,\"Élite\",SI(B4>=30000,\"Estándar\",\"Inicial\"))",
+       "esperado": "Élite",
+       "texto": "<b>E4</b>: nivel de César.",
+       "requiere": "SI(",
+       "pista": "La misma fórmula con B4."
+      },
+      {
+       "celda": "F2",
+       "formula": "=SI(Y(C2=0,D2=0),\"Sí\",\"No\")",
+       "esperado": "Sí",
+       "texto": "<b>F2</b>: ¿Arturo gana el bono de puntualidad? Usa Y.",
+       "requiere": "Y(",
+       "pista": "=SI(Y(C2=0,D2=0),\"Sí\",\"No\")"
+      },
+      {
+       "celda": "G5",
+       "formula": "=SI(O(C5>=2,D5>=2),\"Revisar\",\"OK\")",
+       "esperado": "Revisar",
+       "texto": "<b>G5</b>: ¿Delia va a revisión?",
+       "requiere": "O("
+      },
+      {
+       "celda": "H4",
+       "formula": "=SI(NO(D4>0),\"Limpio\",\"Con incidencia\")",
+       "esperado": "Con incidencia",
+       "texto": "<b>H4</b>: historial de César. Usa NO para invertir la condición «tiene incidencias».",
+       "requiere": "NO(",
+       "pista": "=SI(NO(D4>0),\"Limpio\",\"Con incidencia\")",
+       "explica": "NO(D4>0) es VERDADERO cuando D4 es 0. César tiene 1 incidencia, así que su historial no está limpio."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Rendimiento de combustible por unidad",
+     "instruccion": "La unidad T-103 estuvo todo el mes en taller: 0 km y 0 litros. Evita que el reporte muestre #¡DIV/0!.",
+     "datos": [
+      [
+       "Unidad",
+       "Km del mes",
+       "Litros",
+       "Km por litro",
+       "Alerta"
+      ],
+      [
+       "T-101",
+       9800,
+       3920,
+       "",
+       ""
+      ],
+      [
+       "T-102",
+       11250,
+       4100,
+       "",
+       ""
+      ],
+      [
+       "T-103",
+       0,
+       0,
+       "",
+       ""
+      ],
+      [
+       "T-104",
+       8600,
+       3950,
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "D2",
+       "formula": "=SI.ERROR(REDONDEAR(B2/C2,2),\"En taller\")",
+       "esperado": 2.5,
+       "texto": "<b>D2</b>: km por litro de T-101, redondeado a 2 decimales y protegido con SI.ERROR («En taller» si falla).",
+       "requiere": "SI.ERROR(",
+       "pista": "=SI.ERROR(REDONDEAR(B2/C2,2),\"En taller\")"
+      },
+      {
+       "celda": "D4",
+       "formula": "=SI.ERROR(REDONDEAR(B4/C4,2),\"En taller\")",
+       "esperado": "En taller",
+       "texto": "<b>D4</b>: T-103, la unidad que no salió.",
+       "requiere": "SI.ERROR(",
+       "pista": "La división 0/0 da error; SI.ERROR muestra el texto.",
+       "explica": "El mensaje dice por qué no hay dato. Un 0 haría pensar que la unidad gasta muchísimo."
+      },
+      {
+       "celda": "D5",
+       "formula": "=SI.ERROR(REDONDEAR(B5/C5,2),\"En taller\")",
+       "esperado": 2.18,
+       "texto": "<b>D5</b>: km por litro de T-104.",
+       "requiere": "SI.ERROR("
+      },
+      {
+       "celda": "E5",
+       "formula": "=SI(Y(B5>0,D5<2.3),\"Revisar motor\",\"OK\")",
+       "esperado": "Revisar motor",
+       "texto": "<b>E5</b>: alerta de T-104: «Revisar motor» si circuló (km mayor a 0) y rinde menos de 2.3 km por litro; si no, «OK».",
+       "requiere": "Y(",
+       "pista": "=SI(Y(B5>0,D5<2.3),\"Revisar motor\",\"OK\")",
+       "explica": "T-104 recorrió menos kilómetros que T-101 con casi los mismos litros: mantenimiento debe revisarla."
+      }
+     ]
+    },
+    {
+     "tipo": "relacionar",
+     "rotulo": "Regla de negocio → función",
+     "pares": [
+      [
+       "Tres niveles según kilómetros",
+       "SI anidado"
+      ],
+      [
+       "Bono solo si cumple todas las condiciones",
+       "Y"
+      ],
+      [
+       "Revisión si cumple cualquiera de las condiciones",
+       "O"
+      ],
+      [
+       "Invertir una condición",
+       "NO"
+      ],
+      [
+       "Mostrar un texto cuando la división falla",
+       "SI.ERROR"
+      ]
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Proteger la división",
+     "mal": "«=SI.ERROR(B4/C4,0)»: T-103 aparece con 0 km por litro y el promedio de la flotilla baja sin razón.",
+     "bien": "«=SI.ERROR(REDONDEAR(B4/C4,2),\"En taller\")»: el reporte explica la ausencia y PROMEDIO ignora el texto."
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tus reglas en fórmula",
+     "pregunta": "Escribe una regla de tu trabajo que hoy se decide «a ojo» (un bono, una autorización, un descuento) y tradúcela a una fórmula con SI, Y u O.",
+     "ayuda": "Regla: se autoriza si … y … · Fórmula: =SI(Y(…,…),…,…)"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Ficha para documentar una regla",
+     "texto": "Nombre de la regla: [ ]\nQuién la definió y cuándo: [ ]\nCondiciones (todas / alguna): [ ]\nResultado si se cumple: [ ]\nResultado si no se cumple: [ ]\nQué pasa si falta un dato: [ ]\nFórmula: [ ]",
+     "nota": "Cópiala y adáptala. Guárdala en una hoja «Reglas» dentro del mismo archivo."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "SI anidado de mayor a menor cuando la condición es «o más».",
+      "Y exige todas las condiciones; O basta con una; NO invierte.",
+      "SI.ERROR con un mensaje claro es mejor que un 0 que distorsiona promedios."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 2,
+   "t": "Cotizador de una refaccionaria",
+   "obj": "Armar un cotizador que busca precios en un catálogo, aplica descuento por volumen y cruza servicio y tipo de cliente.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Refaccionaria Los Arcos, en Guadalajara, atiende mostrador, talleres y flotillas. Hoy el vendedor busca cada clave en una lista impresa y a veces cobra precios viejos. Te piden un cotizador: el vendedor escribe la clave y la cantidad, y la hoja trae descripción y precio; además, aplica el descuento por volumen y el precio del servicio según el tipo de cliente."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Elige la búsqueda",
+     "preguntas": [
+      {
+       "p": "Traer el precio de una refacción a partir de su clave, que está en la primera columna del catálogo. Usas…",
+       "ops": [
+        "BUSCARV con coincidencia aproximada",
+        "BUSCARV con FALSO",
+        "COINCIDIR solo"
+       ],
+       "correcta": 1,
+       "explica": "Las claves se buscan exactas. Con coincidencia aproximada, una clave inexistente traería el precio de otra."
+      },
+      {
+       "p": "El descuento depende del importe de la compra: desde 2,000 un 3%, desde 5,000 un 5%… Usas…",
+       "ops": [
+        "BUSCARV con VERDADERO sobre una tabla ordenada de menor a mayor",
+        "BUSCARV con FALSO",
+        "BUSCARX sin cuarto argumento"
+       ],
+       "correcta": 0,
+       "explica": "Un importe como 7,350 no aparece tal cual en la tabla: la búsqueda aproximada ubica el rango que le corresponde."
+      },
+      {
+       "p": "El precio de un servicio depende del servicio (filas) y del tipo de cliente (columnas). Usas…",
+       "ops": [
+        "BUSCARV exacta",
+        "SUMAR.SI",
+        "INDICE con dos COINCIDIR"
+       ],
+       "correcta": 2,
+       "explica": "Es una búsqueda de doble entrada: COINCIDIR da la fila y la columna, INDICE trae el cruce."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Pedido de un taller",
+     "instruccion": "El catálogo está en A:D. El vendedor capturó claves y cantidades en F:G. Completa la cotización.",
+     "datos": [
+      [
+       "Clave",
+       "Descripción",
+       "Línea",
+       "Precio",
+       "",
+       "Clave pedida",
+       "Cantidad",
+       "Descripción",
+       "Precio",
+       "Importe"
+      ],
+      [
+       "R-201",
+       "Balatas delanteras",
+       "Frenos",
+       685,
+       "",
+       "R-204",
+       2,
+       "",
+       "",
+       ""
+      ],
+      [
+       "R-202",
+       "Filtro de aceite",
+       "Motor",
+       118,
+       "",
+       "R-202",
+       6,
+       "",
+       "",
+       ""
+      ],
+      [
+       "R-203",
+       "Bujía de iridio",
+       "Encendido",
+       245,
+       "",
+       "R-209",
+       1,
+       "",
+       "",
+       ""
+      ],
+      [
+       "R-204",
+       "Amortiguador trasero",
+       "Suspensión",
+       1340,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "R-205",
+       "Banda de distribución",
+       "Motor",
+       890,
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "H2",
+       "formula": "=BUSCARV(F2,$A$2:$D$6,2,FALSO)",
+       "esperado": "Amortiguador trasero",
+       "texto": "<b>H2</b>: descripción de la clave de F2 con BUSCARV exacta.",
+       "requiere": "BUSCARV(",
+       "pista": "=BUSCARV(F2,$A$2:$D$6,2,FALSO)"
+      },
+      {
+       "celda": "I2",
+       "formula": "=BUSCARV(F2,$A$2:$D$6,4,FALSO)",
+       "esperado": 1340,
+       "texto": "<b>I2</b>: precio de esa clave (columna 4 del catálogo).",
+       "requiere": "BUSCARV(",
+       "pista": "Mismo rango, columna 4."
+      },
+      {
+       "celda": "J2",
+       "formula": "=G2*I2",
+       "esperado": 2680,
+       "texto": "<b>J2</b>: importe de la línea.",
+       "pista": "Cantidad por precio."
+      },
+      {
+       "celda": "H4",
+       "formula": "=BUSCARX(F4,$A$2:$A$6,$B$2:$B$6,\"Clave no existe\")",
+       "esperado": "Clave no existe",
+       "texto": "<b>H4</b>: la clave R-209 no está en el catálogo. Con BUSCARX muestra «Clave no existe».",
+       "requiere": "BUSCARX(",
+       "pista": "=BUSCARX(F4,$A$2:$A$6,$B$2:$B$6,\"Clave no existe\")",
+       "explica": "El vendedor ve de inmediato que la clave está mal capturada, en lugar de un #N/A."
+      },
+      {
+       "celda": "I4",
+       "formula": "=SI.ERROR(BUSCARV(F4,$A$2:$D$6,4,FALSO),0)",
+       "esperado": 0,
+       "texto": "<b>I4</b>: precio de R-209 con BUSCARV protegido con SI.ERROR (0 si no existe), para que el total no se rompa.",
+       "requiere": "SI.ERROR(",
+       "pista": "=SI.ERROR(BUSCARV(F4,$A$2:$D$6,4,FALSO),0)",
+       "explica": "Un #N/A en una línea haría que la SUMA del total también diera #N/A."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Descuento por volumen y precio de servicio",
+     "instruccion": "Tabla de descuentos en A:B (ordenada de menor a mayor), precios de servicio en D:G y datos de la cotización en I:J.",
+     "datos": [
+      [
+       "Compra desde",
+       "% desc.",
+       "",
+       "Servicio / Cliente",
+       "Mostrador",
+       "Taller",
+       "Flotilla",
+       "",
+       "Dato",
+       "Valor"
+      ],
+      [
+       0,
+       0,
+       "",
+       "Afinación",
+       1450,
+       1280,
+       1150,
+       "",
+       "Importe de refacciones",
+       7350
+      ],
+      [
+       2000,
+       0.03,
+       "",
+       "Frenos",
+       1890,
+       1690,
+       1520,
+       "",
+       "% de descuento",
+       ""
+      ],
+      [
+       5000,
+       0.05,
+       "",
+       "Suspensión",
+       2650,
+       2380,
+       2150,
+       "",
+       "Descuento en pesos",
+       ""
+      ],
+      [
+       10000,
+       0.08,
+       "",
+       "Alineación",
+       650,
+       560,
+       490,
+       "",
+       "Servicio",
+       "Frenos"
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Tipo de cliente",
+       "Flotilla"
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Fila del servicio",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Columna del cliente",
+       ""
+      ],
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Precio del servicio",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "J3",
+       "formula": "=BUSCARV(J2,$A$2:$B$5,2,VERDADERO)",
+       "esperado": 0.05,
+       "texto": "<b>J3</b>: % de descuento que corresponde al importe de J2 (búsqueda aproximada).",
+       "requiere": "BUSCARV(",
+       "pista": "=BUSCARV(J2,$A$2:$B$5,2,VERDADERO)",
+       "explica": "7,350 cae en el rango que empieza en 5,000."
+      },
+      {
+       "celda": "J4",
+       "formula": "=J2*J3",
+       "esperado": 367.5,
+       "texto": "<b>J4</b>: descuento en pesos."
+      },
+      {
+       "celda": "J7",
+       "formula": "=COINCIDIR(J5,D2:D5,0)",
+       "esperado": 2,
+       "texto": "<b>J7</b>: ¿en qué fila de D2:D5 está el servicio de J5?",
+       "requiere": "COINCIDIR(",
+       "pista": "=COINCIDIR(J5,D2:D5,0)"
+      },
+      {
+       "celda": "J8",
+       "formula": "=COINCIDIR(J6,E1:G1,0)",
+       "esperado": 3,
+       "texto": "<b>J8</b>: ¿en qué columna de E1:G1 está el tipo de cliente de J6?",
+       "requiere": "COINCIDIR(",
+       "pista": "Busca en los encabezados."
+      },
+      {
+       "celda": "J9",
+       "formula": "=INDICE(E2:G5,J7,J8)",
+       "esperado": 1520,
+       "texto": "<b>J9</b>: precio del servicio en el cruce.",
+       "requiere": "INDICE(",
+       "pista": "=INDICE(E2:G5,J7,J8)",
+       "explica": "Cambia J6 a «Taller» en tu Excel y verás cómo el precio del servicio se ajusta solo."
+      }
+     ]
+    },
+    {
+     "tipo": "tarjetas",
+     "rotulo": "Repaso rápido: ¿qué hace cada argumento?",
+     "tarjetas": [
+      {
+       "frente": "BUSCARV(…, …, 4, FALSO): el 4",
+       "reverso": "El número de columna del rango que quieres traer."
+      },
+      {
+       "frente": "BUSCARV(…, …, 2, VERDADERO)",
+       "reverso": "Búsqueda aproximada: exige la primera columna ordenada de menor a mayor."
+      },
+      {
+       "frente": "BUSCARX: el cuarto argumento",
+       "reverso": "Lo que se muestra si no encuentra el valor."
+      },
+      {
+       "frente": "COINCIDIR(…, …, 0)",
+       "reverso": "Devuelve la posición exacta del dato en la lista."
+      },
+      {
+       "frente": "INDICE(tabla, fila, columna)",
+       "reverso": "Devuelve el contenido del cruce."
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Anclar el catálogo",
+     "mal": "«=BUSCARV(F2,A2:D6,4,FALSO)» copiada hacia abajo: en la fila 3 el rango se vuelve A3:D7, deja fuera R-201 y puede dar #N/A.",
+     "bien": "«=BUSCARV(F2,$A$2:$D$6,4,FALSO)»: el catálogo queda fijo y la fórmula se copia sin sorpresas."
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu catálogo",
+     "pregunta": "¿Qué lista de tu trabajo consultas a mano (precios, tarifas, empleados, clientes)? Describe cómo sería su cotizador: qué capturaría el usuario, qué traería la hoja y con qué función.",
+     "ayuda": "El usuario captura … y la hoja trae … con BUSCARV/BUSCARX/INDICE…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Estructura de un cotizador",
+     "texto": "Hoja Catálogo: [clave] [descripción] [precio] [fecha de actualización]\nHoja Tablas: [descuentos por volumen, ordenados de menor a mayor]\nHoja Cotización:\n  Cliente: [ ]   Tipo de cliente: [ ]\n  Clave | Cantidad | Descripción (BUSCARX) | Precio (BUSCARX) | Importe\n  Subtotal: [ ]  % descuento (BUSCARV aproximada): [ ]  Total: [ ]",
+     "nota": "Cópiala y adáptala."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Claves: búsqueda exacta. Rangos de montos: búsqueda aproximada con tabla ordenada.",
+      "Ancla el catálogo con $ y protege las claves inexistentes con BUSCARX o SI.ERROR.",
+      "Doble entrada: INDICE con dos COINCIDIR."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 3,
+   "t": "Cobranza y base de alumnos de una escuela",
+   "obj": "Resumir la cobranza con funciones condicionales y limpiar una base de alumnos con funciones de texto.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Academia de Idiomas Cholula tiene dos planteles en Puebla: Angelópolis y Centro. La coordinadora administrativa necesita, cada 10 del mes, saber cuánto se cobró, cuánto falta y en qué plantel; además, la base de alumnos llegó con nombres en mayúsculas y minúsculas mezcladas y espacios de más. Tu tarea: el resumen de cobranza y la limpieza, sin tocar los datos originales."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "Cobrado en Angelópolis (plantel = Angelópolis y estatus = Pagado). Usas…",
+       "ops": [
+        "SUMAR.SI",
+        "CONTAR.SI.CONJUNTO",
+        "SUMAR.SI.CONJUNTO"
+       ],
+       "correcta": 2,
+       "explica": "Son dos condiciones y quieres sumar montos: SUMAR.SI.CONJUNTO. CONTAR.SI.CONJUNTO contaría alumnos, no pesos."
+      },
+      {
+       "p": "En SUMAR.SI.CONJUNTO, el primer argumento es…",
+       "ops": [
+        "El rango que se suma",
+        "El primer rango de criterios",
+        "El criterio"
+       ],
+       "correcta": 0,
+       "explica": "A diferencia de SUMAR.SI, en SUMAR.SI.CONJUNTO el rango a sumar va primero."
+      },
+      {
+       "p": "El nombre «  maría fernanda   ruiz » debe quedar «MARÍA FERNANDA RUIZ». La fórmula es…",
+       "ops": [
+        "=ESPACIOS(MAYUSC(A2))",
+        "=MAYUSC(A2)",
+        "=IZQUIERDA(A2,20)"
+       ],
+       "correcta": 0,
+       "explica": "MAYUSC convierte a mayúsculas y ESPACIOS quita los espacios de las orillas y deja uno solo entre palabras. El orden de anidación no cambia el resultado aquí."
+      },
+      {
+       "p": "La matrícula tiene el formato PUE-A-1112. La letra del plantel (A) empieza en la posición…",
+       "ops": [
+        "4",
+        "5",
+        "6"
+       ],
+       "correcta": 1,
+       "explica": "P-U-E-guion ocupa las posiciones 1 a 4; la letra está en la 5: =EXTRAE(B2,5,1)."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Cobranza de colegiaturas de septiembre",
+     "instruccion": "Base en A:E. Responde cada indicador en la columna H.",
+     "datos": [
+      [
+       "Matrícula",
+       "Plantel",
+       "Nivel",
+       "Estatus",
+       "Monto",
+       "",
+       "Indicador",
+       "Valor"
+      ],
+      [
+       "PUE-A-1112",
+       "Angelópolis",
+       "Básico",
+       "Pagado",
+       2350,
+       "",
+       "Cobrado en Angelópolis",
+       ""
+      ],
+      [
+       "PUE-C-1087",
+       "Centro",
+       "Intermedio",
+       "Pendiente",
+       2600,
+       "",
+       "Pendientes en Centro (alumnos)",
+       ""
+      ],
+      [
+       "PUE-A-1140",
+       "Angelópolis",
+       "Avanzado",
+       "Pagado",
+       2900,
+       "",
+       "Total pendiente de cobro",
+       ""
+      ],
+      [
+       "PUE-C-1093",
+       "Centro",
+       "Básico",
+       "Pagado",
+       2350,
+       "",
+       "Colegiatura promedio pagada",
+       ""
+      ],
+      [
+       "PUE-A-1151",
+       "Angelópolis",
+       "Intermedio",
+       "Pendiente",
+       2600,
+       "",
+       "% de cobranza",
+       ""
+      ],
+      [
+       "PUE-C-1101",
+       "Centro",
+       "Avanzado",
+       "Pagado",
+       2900,
+       "",
+       "",
+       ""
+      ],
+      [
+       "PUE-A-1158",
+       "Angelópolis",
+       "Básico",
+       "Pendiente",
+       2350,
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "H2",
+       "formula": "=SUMAR.SI.CONJUNTO(E2:E8,B2:B8,\"Angelópolis\",D2:D8,\"Pagado\")",
+       "esperado": 5250,
+       "texto": "<b>H2</b>: monto cobrado en Angelópolis (dos condiciones).",
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "pista": "=SUMAR.SI.CONJUNTO(E2:E8,B2:B8,\"Angelópolis\",D2:D8,\"Pagado\")"
+      },
+      {
+       "celda": "H3",
+       "formula": "=CONTAR.SI.CONJUNTO(B2:B8,\"Centro\",D2:D8,\"Pendiente\")",
+       "esperado": 1,
+       "texto": "<b>H3</b>: cuántos alumnos de Centro tienen la colegiatura pendiente.",
+       "requiere": "CONTAR.SI.CONJUNTO(",
+       "pista": "Rango de criterio, criterio, rango de criterio, criterio."
+      },
+      {
+       "celda": "H4",
+       "formula": "=SUMAR.SI(D2:D8,\"Pendiente\",E2:E8)",
+       "esperado": 7550,
+       "texto": "<b>H4</b>: total pendiente de cobro (una sola condición).",
+       "requiere": "SUMAR.SI(",
+       "pista": "=SUMAR.SI(D2:D8,\"Pendiente\",E2:E8)"
+      },
+      {
+       "celda": "H5",
+       "formula": "=PROMEDIO.SI(D2:D8,\"Pagado\",E2:E8)",
+       "esperado": 2625,
+       "texto": "<b>H5</b>: colegiatura promedio de los pagos recibidos.",
+       "requiere": "PROMEDIO.SI(",
+       "pista": "Misma estructura que SUMAR.SI."
+      },
+      {
+       "celda": "H6",
+       "formula": "=REDONDEAR(SUMAR.SI(D2:D8,\"Pagado\",E2:E8)/SUMA(E2:E8),4)",
+       "esperado": 0.5817,
+       "texto": "<b>H6</b>: % de cobranza: lo pagado entre el total facturado, redondeado a 4 decimales.",
+       "requiere": "REDONDEAR(",
+       "pista": "=REDONDEAR(SUMAR.SI(D2:D8,\"Pagado\",E2:E8)/SUMA(E2:E8),4)",
+       "explica": "Con formato de porcentaje se verá como 58.17%. Es el dato que la coordinadora reporta a dirección."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Limpiar la base de alumnos",
+     "instruccion": "No corrijas la columna A: arma columnas limpias con fórmulas. La matrícula válida tiene 10 caracteres.",
+     "datos": [
+      [
+       "Nombre capturado",
+       "Matrícula",
+       "Nombre limpio",
+       "Plantel",
+       "Consecutivo",
+       "Clave corta",
+       "¿Matrícula válida?"
+      ],
+      [
+       "  maría fernanda   ruiz ",
+       "PUE-A-1112",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "JOSÉ luis  PÉREZ",
+       "PUE-C-1087",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "ana sofía TORRES ",
+       "PUE-C-187",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "C2",
+       "formula": "=MAYUSC(ESPACIOS(A2))",
+       "esperado": "MARÍA FERNANDA RUIZ",
+       "texto": "<b>C2</b>: nombre en mayúsculas y sin espacios de más.",
+       "requiere": "ESPACIOS(",
+       "pista": "=MAYUSC(ESPACIOS(A2))"
+      },
+      {
+       "celda": "D2",
+       "formula": "=EXTRAE(B2,5,1)",
+       "esperado": "A",
+       "texto": "<b>D2</b>: letra del plantel (1 carácter desde la posición 5).",
+       "requiere": "EXTRAE(",
+       "pista": "=EXTRAE(B2,5,1)"
+      },
+      {
+       "celda": "E2",
+       "formula": "=DERECHA(B2,4)",
+       "esperado": "1112",
+       "texto": "<b>E2</b>: consecutivo (los 4 últimos caracteres).",
+       "requiere": "DERECHA("
+      },
+      {
+       "celda": "F2",
+       "formula": "=CONCATENAR(D2,\"-\",E2)",
+       "esperado": "A-1112",
+       "texto": "<b>F2</b>: clave corta con CONCATENAR: letra, guion y consecutivo.",
+       "requiere": "CONCATENAR(",
+       "pista": "=CONCATENAR(D2,\"-\",E2)"
+      },
+      {
+       "celda": "G4",
+       "formula": "=SI(LARGO(B4)=10,\"Sí\",\"Revisar\")",
+       "esperado": "Revisar",
+       "texto": "<b>G4</b>: valida la matrícula del tercer alumno.",
+       "requiere": "LARGO(",
+       "explica": "Al consecutivo le falta un dígito: 9 caracteres en lugar de 10. Mejor detectarlo aquí que en la constancia."
+      }
+     ]
+    },
+    {
+     "tipo": "completar",
+     "rotulo": "Escribe la función que falta",
+     "items": [
+      {
+       "frase": "Contar alumnos que cumplen dos condiciones: ___",
+       "resp": [
+        "CONTAR.SI.CONJUNTO",
+        "contar.si.conjunto",
+        "COUNTIFS"
+       ]
+      },
+      {
+       "frase": "Quitar espacios de las orillas y dobles: ___",
+       "resp": [
+        "ESPACIOS",
+        "espacios",
+        "TRIM"
+       ]
+      },
+      {
+       "frase": "Contar cuántos caracteres tiene un texto: ___",
+       "resp": [
+        "LARGO",
+        "largo",
+        "LEN"
+       ]
+      }
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "Criterios que se pueden cambiar",
+     "mal": "Escribir «Angelópolis» dentro de la fórmula y copiarla para Centro cambiando el texto a mano.",
+     "bien": "Poner el plantel en una celda (por ejemplo J1) y usar =SUMAR.SI.CONJUNTO(E2:E8,B2:B8,J1,D2:D8,\"Pagado\"). Cambias J1 y el resumen cambia."
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tu base sucia",
+     "pregunta": "Piensa en una lista que recibes de otra área o de clientes. Escribe los tres problemas de captura más comunes y qué función usarías para cada uno.",
+     "ayuda": "Problema 1: nombres con espacios de más → ESPACIOS…"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Resumen mensual de cobranza",
+     "texto": "Mes: [ ]\nFacturado total: [ =SUMA(…) ]\nCobrado: [ SUMAR.SI con estatus Pagado ]\nPendiente: [ SUMAR.SI con estatus Pendiente ]\n% de cobranza: [ cobrado / facturado ]\nPor plantel o sucursal: [ SUMAR.SI.CONJUNTO con plantel en una celda y estatus Pagado ]\nAcciones de seguimiento: [ ]",
+     "nota": "Cópiala y adáptala."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "SUMAR.SI.CONJUNTO pone primero el rango a sumar; SUMAR.SI lo pone al final.",
+      "Limpia con fórmulas en columnas nuevas y conserva el dato original.",
+      "LARGO es una validación rápida para claves con longitud fija."
+     ]
+    }
+   ]
+  },
+  {
+   "modulo": 4,
+   "t": "Tablero de una cadena de neverías",
+   "obj": "Calcular los indicadores de un tablero bimestral y su semáforo contra meta, listos para montar en tu Excel.",
+   "bloques": [
+    {
+     "tipo": "destacado",
+     "texto": "<b>El caso.</b> Nevería La Ceiba tiene tres sucursales en Mérida (Centro, Norte y Oriente) y vende en mostrador y con entrega a domicilio. El dueño quiere revisar cada dos meses un tablero con la venta total, cuánto pesa el canal a domicilio, el ticket promedio y un semáforo por sucursal contra su meta. Calcula los indicadores aquí y después arma el tablero en tu Excel."
+    },
+    {
+     "tipo": "practica",
+     "rotulo": "Decide en el caso",
+     "preguntas": [
+      {
+       "p": "Para el ticket promedio del bimestre divides…",
+       "ops": [
+        "La venta total entre el número de sucursales",
+        "La venta total entre el total de tickets",
+        "La venta más alta entre los tickets"
+       ],
+       "correcta": 1,
+       "explica": "El ticket promedio es cuánto gasta en promedio cada cliente: pesos vendidos entre número de tickets."
+      },
+      {
+       "p": "Quieres saber qué sucursal tuvo el registro de venta más alto. Combinas…",
+       "ops": [
+        "SUMA con CONTAR",
+        "MAX con INDICE + COINCIDIR",
+        "SUMAR.SI con PROMEDIO"
+       ],
+       "correcta": 1,
+       "explica": "MAX encuentra el monto; COINCIDIR su posición; INDICE trae la sucursal de esa posición."
+      },
+      {
+       "p": "El semáforo del tablero debe ponerse con…",
+       "ops": [
+        "Formato condicional que lea el % de avance",
+        "Color de relleno pintado a mano",
+        "Una tabla dinámica"
+       ],
+       "correcta": 0,
+       "explica": "El formato condicional cambia solo al actualizar los datos; el color a mano se queda viejo."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Base de ventas del bimestre",
+     "instruccion": "Base en A:E. Calcula cada indicador en la columna H.",
+     "datos": [
+      [
+       "Mes",
+       "Sucursal",
+       "Canal",
+       "Tickets",
+       "Venta",
+       "",
+       "Indicador",
+       "Valor"
+      ],
+      [
+       "Julio",
+       "Centro",
+       "Mostrador",
+       2140,
+       128400,
+       "",
+       "Venta total",
+       ""
+      ],
+      [
+       "Julio",
+       "Norte",
+       "Mostrador",
+       1860,
+       117200,
+       "",
+       "Venta de Centro en agosto",
+       ""
+      ],
+      [
+       "Julio",
+       "Oriente",
+       "Domicilio",
+       640,
+       51200,
+       "",
+       "Ticket promedio",
+       ""
+      ],
+      [
+       "Julio",
+       "Centro",
+       "Domicilio",
+       410,
+       32800,
+       "",
+       "Registro de venta más alto",
+       ""
+      ],
+      [
+       "Agosto",
+       "Centro",
+       "Mostrador",
+       2310,
+       139900,
+       "",
+       "Sucursal de ese registro",
+       ""
+      ],
+      [
+       "Agosto",
+       "Norte",
+       "Mostrador",
+       1720,
+       108300,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Agosto",
+       "Oriente",
+       "Domicilio",
+       700,
+       56700,
+       "",
+       "",
+       ""
+      ],
+      [
+       "Agosto",
+       "Oriente",
+       "Mostrador",
+       980,
+       60800,
+       "",
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "H2",
+       "formula": "=SUMA(E2:E9)",
+       "esperado": 695300,
+       "texto": "<b>H2</b>: venta total del bimestre.",
+       "requiere": "SUMA("
+      },
+      {
+       "celda": "H3",
+       "formula": "=SUMAR.SI.CONJUNTO(E2:E9,A2:A9,\"Agosto\",B2:B9,\"Centro\")",
+       "esperado": 139900,
+       "texto": "<b>H3</b>: venta de Centro en agosto (dos condiciones).",
+       "requiere": "SUMAR.SI.CONJUNTO(",
+       "pista": "Primero el rango de ventas, luego mes y sucursal."
+      },
+      {
+       "celda": "H4",
+       "formula": "=REDONDEAR(H2/SUMA(D2:D9),2)",
+       "esperado": 64.62,
+       "texto": "<b>H4</b>: ticket promedio: venta total entre total de tickets, a 2 decimales.",
+       "requiere": "REDONDEAR(",
+       "pista": "=REDONDEAR(H2/SUMA(D2:D9),2)"
+      },
+      {
+       "celda": "H5",
+       "formula": "=MAX(E2:E9)",
+       "esperado": 139900,
+       "texto": "<b>H5</b>: el registro de venta más alto.",
+       "requiere": "MAX("
+      },
+      {
+       "celda": "H6",
+       "formula": "=INDICE(B2:B9,COINCIDIR(H5,E2:E9,0))",
+       "esperado": "Centro",
+       "texto": "<b>H6</b>: la sucursal de ese registro, con INDICE y COINCIDIR.",
+       "requiere": "COINCIDIR(",
+       "pista": "=INDICE(B2:B9,COINCIDIR(H5,E2:E9,0))",
+       "explica": "Si mañana otra sucursal supera ese monto, el nombre cambia solo."
+      }
+     ]
+    },
+    {
+     "tipo": "excel",
+     "rotulo": "Semáforo contra meta por sucursal",
+     "instruccion": "Avance = venta / meta. Verde: 100% o más. Amarillo: 90% o más. Rojo: menos de 90%. Norte ya está calculada como ejemplo.",
+     "datos": [
+      [
+       "Sucursal",
+       "Venta del bimestre",
+       "Meta",
+       "% de avance",
+       "Semáforo"
+      ],
+      [
+       "Centro",
+       301100,
+       290000,
+       "",
+       ""
+      ],
+      [
+       "Norte",
+       225500,
+       250000,
+       0.902,
+       "Amarillo"
+      ],
+      [
+       "Oriente",
+       168700,
+       200000,
+       "",
+       ""
+      ],
+      [
+       "Total",
+       "",
+       740000,
+       "",
+       ""
+      ]
+     ],
+     "retos": [
+      {
+       "celda": "D2",
+       "formula": "=REDONDEAR(B2/C2,4)",
+       "esperado": 1.0383,
+       "texto": "<b>D2</b>: % de avance de Centro, a 4 decimales.",
+       "requiere": "REDONDEAR("
+      },
+      {
+       "celda": "E2",
+       "formula": "=SI(D2>=1,\"Verde\",SI(D2>=0.9,\"Amarillo\",\"Rojo\"))",
+       "esperado": "Verde",
+       "texto": "<b>E2</b>: color del semáforo de Centro.",
+       "requiere": "SI(",
+       "pista": "=SI(D2>=1,\"Verde\",SI(D2>=0.9,\"Amarillo\",\"Rojo\"))"
+      },
+      {
+       "celda": "D4",
+       "formula": "=REDONDEAR(B4/C4,4)",
+       "esperado": 0.8435,
+       "texto": "<b>D4</b>: % de avance de Oriente.",
+       "requiere": "REDONDEAR("
+      },
+      {
+       "celda": "E4",
+       "formula": "=SI(D4>=1,\"Verde\",SI(D4>=0.9,\"Amarillo\",\"Rojo\"))",
+       "esperado": "Rojo",
+       "texto": "<b>E4</b>: semáforo de Oriente.",
+       "requiere": "SI("
+      },
+      {
+       "celda": "B5",
+       "formula": "=SUMA(B2:B4)",
+       "esperado": 695300,
+       "texto": "<b>B5</b>: venta total de la cadena.",
+       "requiere": "SUMA("
+      },
+      {
+       "celda": "D5",
+       "formula": "=REDONDEAR(B5/C5,4)",
+       "esperado": 0.9396,
+       "texto": "<b>D5</b>: % de avance de toda la cadena.",
+       "requiere": "REDONDEAR(",
+       "explica": "La cadena va en 93.96%: Centro compensa en parte, pero Oriente es el foco de la siguiente reunión."
+      }
+     ]
+    },
+    {
+     "tipo": "pasos",
+     "rotulo": "Móntalo en tu Excel",
+     "pasos": [
+      "Copia la base de ventas a una hoja Datos y conviértela en tabla con Ctrl + T.",
+      "En una hoja Cálculos, escribe los indicadores de esta práctica apuntando a la tabla.",
+      "Aplica formato condicional (Inicio → Formato condicional → Conjuntos de iconos) a la columna de % de avance.",
+      "Inserta una tabla dinámica de venta por sucursal y canal, con su gráfico de columnas.",
+      "En la hoja Tablero, coloca 4 tarjetas: venta total, % a domicilio, ticket promedio y avance de la cadena."
+     ]
+    },
+    {
+     "tipo": "comparar",
+     "titulo": "El título del gráfico",
+     "mal": "«Ventas por sucursal julio-agosto»: describe el gráfico, pero no dice qué pasó.",
+     "bien": "«Oriente va 16 puntos abajo de su meta; Centro ya la superó»: el lector entiende la conclusión en tres segundos."
+    },
+    {
+     "tipo": "reflexion",
+     "rotulo": "Tus cuatro tarjetas",
+     "pregunta": "Si tuvieras que presentar cada mes un tablero de una sola pantalla en tu trabajo, ¿qué cuatro indicadores pondrías, con qué fórmula saldría cada uno y qué umbrales usarías para el semáforo?",
+     "ayuda": "Tarjeta 1: … = SUMAR.SI(…) · Verde si … Amarillo si …"
+    },
+    {
+     "tipo": "plantilla",
+     "rotulo": "Ficha de indicador para tu tablero",
+     "texto": "Indicador: [ ]\nPregunta que responde: [ ]\nFórmula: [ ]\nFuente de los datos: [hoja / tabla]\nMeta: [ ]\nSemáforo: Verde ≥ [ ] · Amarillo ≥ [ ] · Rojo < [ ]\nFrecuencia de actualización: [ ]\nResponsable: [ ]",
+     "nota": "Cópiala y adáptala: una ficha por tarjeta del tablero."
+    },
+    {
+     "tipo": "clave",
+     "items": [
+      "Primero los indicadores con fórmula; después el diseño del tablero.",
+      "Semáforo: SI anidado para la lógica y formato condicional para el color.",
+      "Un buen título de gráfico dice la conclusión, no solo el tema."
+     ]
+    }
+   ]
+  }
+ ]
+}
