@@ -1,0 +1,48 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: «vender más este mes»</b><br>El gerente de una sucursal bancaria en León le puso a su equipo la meta «vender más tarjetas este mes». A mitad de mes nadie sabía si iban bien o mal. Otro gerente, en la sucursal vecina, puso «colocar 40 tarjetas de crédito del 1 al 30 de junio, 8 por ejecutivo», y revisaba el avance cada lunes.<br>SMART: específico, medible, alcanzable, relevante y con tiempo. Sin número y sin fecha no hay objetivo, hay deseo.",
+"p": [
+["¿Qué le falta a «vender más tarjetas este mes»?", "Un número concreto y cómo se medirá", "Una fecha", "Un tono motivador", "«Más» no se puede verificar."],
+["Si el año pasado colocaron 20 tarjetas al mes, una meta de 200 sería…", "poco alcanzable y desmotivaría", "SMART", "demasiado fácil", "Un objetivo imposible desmotiva tanto como uno vago."],
+["¿Por qué revisar cada lunes?", "Para corregir a tiempo durante el mes", "Para regañar", "No hace falta", "El seguimiento convierte la meta en acción."]
+],
+"comp": ["Cómo se escribe la meta", "«Vender más tarjetas este mes.»", "«Colocar 40 tarjetas de crédito del 1 al 30 de junio (8 por ejecutivo). Revisión cada lunes a las 9.»"],
+"refl": ["Convierte tres metas vagas de un equipo que conozcas en objetivos SMART.", "Para uno de esos objetivos, escribe cómo lo repartirías entre las personas del equipo y cómo darías seguimiento semanal."],
+"pl": ["Objetivo SMART del equipo", "OBJETIVO SMART\nEspecífico (qué exactamente): [ ]\nMedible (número): [ ]\nAlcanzable (comparado con el histórico): [ ]\nRelevante (a qué resultado del negocio aporta): [ ]\nTiempo (fecha límite): [ ]\n\nObjetivo final: [ ]\nReparto por persona: [ ]\nRevisión: [día y hora]"]
+},
+{
+"caso": "<b>Caso: «encárgate del inventario»</b><br>La jefa de una farmacia en Hermosillo le dijo a su auxiliar: «Encárgate del inventario». La auxiliar pensó que solo tenía que contar. Cuando encontró medicamentos caducados, no supo si podía sacarlos de venta o tenía que preguntar. Esperó a la jefa, que estaba de vacaciones, y un cliente se llevó un producto caducado.<br>Delegar es encargar un resultado con autoridad, recursos y seguimiento. Aclara el nivel: investiga, recomienda, decide y avisa, actúa y avisa, o actúa.",
+"p": [
+["¿Qué faltó al delegar?", "Aclarar el nivel de autoridad y el resultado esperado", "Más tiempo", "Un bono", "La auxiliar no sabía qué podía decidir."],
+["¿Qué nivel convenía para sacar caducados de venta?", "Actúa y avisa", "Investiga y reporta", "Recomienda y espera", "Es urgente y la regla es clara."],
+["En la matriz de Eisenhower, el inventario mensual es…", "importante no urgente: agendarlo o delegarlo con fecha", "urgente y no importante", "ni urgente ni importante", "Si no se agenda, se vuelve urgente."]
+],
+"comp": ["Cómo se delega", "«Encárgate del inventario.»", "«Te encargo el inventario mensual: contar, comparar con el sistema y sacar de venta lo caducado. Lo caducado lo retiras tú y me avisas. Lo demás me lo presentas el viernes.»"],
+"refl": ["Elige tres tareas que podrías delegar (o que delega un jefe que conozcas) y escribe para cada una: a quién, qué resultado, qué nivel de autoridad y cuándo revisarás.", "Ordena tus pendientes de esta semana en la matriz de Eisenhower y escribe qué vas a delegar o eliminar."],
+"pl": ["Hoja de delegación", "DELEGACIÓN\nTarea: [ ]\nA quién: [ ]\nResultado esperado: [ ]\nNivel: □ Investiga y reporta □ Recomienda □ Decide y avisa □ Actúa y avisa □ Actúa\nRecursos y accesos: [ ]\nFecha de entrega: [ ]  Revisiones: [ ]\n\nEISENHOWER: Hacer ya · Agendar · Delegar · Eliminar"]
+},
+{
+"caso": "<b>Caso: el semáforo que nadie entendía</b><br>La supervisora de un call center en Mérida llevaba los indicadores de su equipo en la cabeza: «Pedro va bien, Ana va mal». Cuando RH le pidió datos para decidir un bono, no los tenía. Una compañera le armó una hoja con meta, real, porcentaje de cumplimiento y semáforo; descubrieron que Ana cumplía 96% y Pedro 78%, al revés de lo que ella creía.<br>Tres indicadores básicos: cumplimiento, calidad y asistencia. El dato abre la conversación; no la sustituye.",
+"p": [
+["Si la meta es 250 llamadas y Pedro hizo 195, su cumplimiento es…", "78%", "22%", "128%", "195 ÷ 250 = 0.78."],
+["¿Qué muestra el caso?", "Que la percepción del jefe puede equivocarse sin datos", "Que Pedro es mal trabajador", "Que los datos no sirven", "Los datos corrigen sesgos."],
+["Con el dato de Pedro, lo siguiente es…", "una conversación 1 a 1 para entender qué pasa", "un acta administrativa", "ignorarlo", "El dato abre la conversación."]
+],
+"comp": ["Cómo se usa el dato", "«Pedro, vas muy mal, ponte las pilas.»", "«Pedro, este mes llevas 78% de la meta; en abril ibas en 95%. ¿Qué cambió? Cuéntame.»"],
+"refl": ["Diseña los tres indicadores de un equipo que conozcas (cumplimiento, calidad, asistencia): qué medirías y de dónde sacarías el dato.", "Escribe la fórmula del semáforo que usarías y los umbrales, y explica por qué esos."],
+"pl": ["Tablero del equipo", "TABLERO DEL EQUIPO — [Mes]\nPersona | Meta | Real | % cumplimiento | Semáforo | Errores de calidad | Faltas\n[ ] | [ ] | [ ] | [=C2/B2] | [=SI(D2>=0.95,\"Verde\",SI(D2>=0.8,\"Amarillo\",\"Rojo\"))] | [ ] | [ ]\nPromedio del equipo: [=PROMEDIO(D2:D10)]\nPersonas en rojo: [=CONTAR.SI(E2:E10,\"Rojo\")]\nMínimo: [=MIN(D2:D10)]"]
+},
+{
+"caso": "<b>Caso: el plan de mejora que era un despido anunciado</b><br>Un jefe de mantenimiento en una planta de Silao decidió que un técnico «ya no servía». Le dio un «plan de mejora» con metas imposibles en dos semanas, sin capacitación, y le dijo que si no cumplía «se iba». No habló con RH. El técnico, en realidad, no sabía usar el equipo nuevo que llegó hacía un mes.<br>Antes de actuar, diagnostica: ¿sabe qué se espera?, ¿sabe hacerlo?, ¿puede?, ¿quiere? El plan de mejora busca que la persona mejore y se trabaja con RH.",
+"p": [
+["¿Cuál era la causa real del bajo desempeño?", "No sabía usar el equipo nuevo", "Falta de ganas", "Mala actitud", "Si no sabe, la solución es capacitar."],
+["¿Qué falló en el «plan de mejora»?", "Metas imposibles, sin apoyo y sin RH", "Que era por escrito", "Que tenía fechas", "Un plan real da apoyo, metas alcanzables y seguimiento."],
+["¿Puede el jefe despedir por su cuenta?", "No: se trabaja con RH y conforme a la ley", "Sí, siempre", "Solo si está enojado", "Los despidos tienen implicaciones legales."]
+],
+"comp": ["Cómo se abre la 1 a 1", "«Ya no sirves, tienes dos semanas o te vas.»", "«Desde que llegó el equipo nuevo, tus órdenes cerradas bajaron de 12 a 7 por semana. ¿Qué se te complica? ¿Qué necesitas para dominarlo?»"],
+"refl": ["Aplica las cuatro preguntas de diagnóstico (¿sabe qué se espera?, ¿sabe?, ¿puede?, ¿quiere?) a un caso de bajo desempeño que conozcas, y escribe qué harías según la respuesta.", "Escribe la agenda de tus juntas 1 a 1 de 20 minutos y con qué frecuencia las harías."],
+"pl": ["Plan de mejora", "PLAN DE MEJORA — [Persona]\nSituación con datos: [ ]\nDiagnóstico: ¿sabe qué se espera? [ ] ¿sabe? [ ] ¿puede? [ ] ¿quiere? [ ]\nMeta alcanzable: [ ]\nApoyo que daré: [capacitación, acompañamiento, recursos]\nRevisiones: [fechas]\nRH enterado: [nombre, fecha]\n\nAGENDA 1 A 1 (20 min): cómo estás · avances · obstáculos · retroalimentación · acuerdos"]
+}
+]
+}
