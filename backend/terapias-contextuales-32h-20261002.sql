@@ -1,0 +1,5 @@
+-- Diplomado en Terapias Contextuales: ACT, DBT y Activación Conductual: ampliado a 32 horas reales (opción B).
+BEGIN;
+UPDATE cursos SET horas=32, descripcion='Da el paso de la TCC clásica al enfoque contextual: análisis funcional, formulación con la matriz ACT, los seis procesos de la terapia de aceptación y compromiso, las habilidades de la DBT, la activación conductual, la psicoterapia analítica funcional y el mindfulness con evidencia. Incluye 24 casos clínicos ficticios con decisiones guiadas, 5 laboratorios de simulación de sesión y un proyecto final en el que integras la formulación, el plan de intervención y la medición de un caso completo, con hojas de cálculo para medir el avance. Es para psicólogos con cédula, estudiantes avanzados de psicología y psicoterapeutas cognitivo-conductuales. Da fundamentos y técnicas; no sustituye la formación clínica supervisada ni las certificaciones de cada modelo, y no habilita para ejercer la psicoterapia.' WHERE id='d-terapias-contextuales';
+UPDATE cursos SET horas=75 WHERE id='r-psicologia';
+COMMIT;

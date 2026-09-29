@@ -1,0 +1,198 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso ficticio: «haz cosas que te gusten»</b><br>Alberto, de 52 años, en Saltillo, tiene depresión desde que lo jubilaron. Su médico le dijo «haga cosas que le gusten» y no funcionó: no le gusta nada. Con activación conductual, él y su terapeuta revisaron qué hacía antes que tenía valor para él: enseñarle carpintería a su nieto, caminar con su compadre. Empezaron con 15 minutos en el taller los martes y registraron ánimo antes y después.<br>La activación conductual analiza la función de la evitación y la reemplaza por acciones con valor. TRAP describe el patrón de evitación; TRAC, la alternativa.",
+"p": [
+["¿Por qué no funcionó «haga cosas que le gusten»?", "Porque en la depresión el placer anticipado baja; se elige por valor y función, no por ganas", "Porque Alberto es flojo", "Porque no tenía tiempo", "La acción precede a la motivación."],
+["En TRAP, la «A» es…", "la respuesta de evitación (Avoidance)", "la actividad agradable", "la aceptación", "Trigger, Response, Avoidance Pattern."],
+["¿Por qué empezar con 15 minutos?", "Para que sea alcanzable y se pueda construir sobre el éxito", "Porque es lo máximo permitido", "Porque no importa", "Pasos pequeños y graduales."]
+],
+"comp": ["Cómo se programa la actividad", "«Haga cosas que le gusten.»", "«Martes 10 a. m.: 15 minutos en el taller lijando la tabla para el banco de tu nieto. Anota tu ánimo del 0 al 10 antes y después.»"],
+"refl": "Programa una semana de activación conductual para Alberto con cinco actividades guiadas por valores, graduadas, y la forma de registrar ánimo y cumplimiento.",
+"pl": ["Programación de actividades con registro", "ACTIVACIÓN CONDUCTUAL — Semana [ ] — [caso ficticio]\nDía | Actividad | Valor | Minutos | ¿Hecha? (1/0) | Ánimo antes | Ánimo después | Cambio\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [=G2-F2]\n% cumplimiento: [=PROMEDIO(E2:E8)]\nCambio promedio de ánimo en actividades hechas: [=PROMEDIO.SI(E2:E8,1,H2:H8)]\nTRAP: Detonante [ ] → Respuesta [ ] → Evitación [ ]\nTRAC: Detonante [ ] → Respuesta [ ] → Afrontamiento alternativo [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: la rumiación en la cama</b><br>Laura, de 36 años, en Tlaxcala, programó salir a caminar a las 7 a. m. No lo hizo tres días: se quedó en la cama «pensando por qué está así». Dice que necesita «entender primero» para poder actuar. En la sesión, el terapeuta pregunta: «Cuando te quedas pensando por qué estás así, ¿eso te acerca o te aleja de caminar?».<br>La rumiación se analiza como conducta: ¿te acerca o te aleja de actuar? Gradúa las actividades y empieza con pocos minutos.",
+"p": [
+["Desde la activación conductual, la rumiación se ve como…", "una conducta que puede funcionar como evitación", "un síntoma que se debe eliminar primero", "una forma de resolver problemas", "Se analiza su función."],
+["¿Qué ajuste harías a la meta de caminar?", "Graduarla: ponerse los tenis y salir 5 minutos", "Aumentarla a una hora", "Quitarla", "Lo alcanzable construye el hábito."],
+["«Necesito entender primero para actuar» es…", "una regla que puede mantener la inactividad", "una verdad", "una meta SMART", "La acción puede venir antes del entendimiento."]
+],
+"comp": ["Cómo se responde a «necesito entender primero»", "«Tienes razón, sigamos analizando por qué estás así.»", "«Entender es valioso. Y noto que esperar a entender te deja en la cama. ¿Qué tal si probamos al revés: 5 minutos afuera y vemos qué pasa con el entender?»"],
+"refl": "Escribe cinco obstáculos frecuentes en la activación conductual (incluida la rumiación) y cómo responderías a cada uno en sesión.",
+"pl": ["Obstáculos y respuestas", "OBSTÁCULO → RESPUESTA\nNo tengo ganas → la acción va antes que las ganas; paso más pequeño\nNo lo disfruté → ¿qué valor atendiste?; el placer puede tardar\nRumiación → ¿te acerca o te aleja? Anotarla como conducta en el registro\nTodo o nada → graduar: 5 minutos cuentan\nOlvido → recordatorio y horario fijo\nMi obstáculo más frecuente en este caso: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: lo que pasa en la sesión</b><br>Ernesto, de 40 años, en Guadalajara, consulta porque «nadie lo toma en cuenta» en el trabajo ni en casa. En sesión habla sin pausas, cambia de tema cuando la terapeuta intenta decir algo y, cuando ella le comparte cómo se siente al escucharlo, se ríe y dice «no te lo tomes personal». Tres sesiones después, por primera vez, le pregunta: «¿Tú qué piensas de lo que te conté?».<br>La FAP usa la relación terapéutica como laboratorio: CCR1 son problemas, CCR2 mejoras y CCR3 interpretaciones, dentro de la sesión.",
+"p": [
+["Hablar sin pausas y no dejar hablar a la terapeuta es…", "una CCR1: el problema ocurriendo en la sesión", "una CCR2", "una CCR3", "Es la misma conducta que le cuesta afuera."],
+["«¿Tú qué piensas de lo que te conté?» es…", "una CCR2: una mejora en la sesión", "una CCR1", "una CCR3", "Hay que notarla y reforzarla de forma natural."],
+["¿Qué requisito ético tiene compartir tu reacción en FAP?", "Consentimiento, propósito terapéutico, límites claros y supervisión", "Ninguno", "Hacerlo siempre", "La cercanía auténtica se cuida."]
+],
+"comp": ["Cómo se refuerza la CCR2", "(Sigue con el tema sin notarlo.)", "«Me gusta mucho que me preguntes. Siento que me estás dejando entrar a la conversación. ¿Cómo fue para ti hacerlo?»"],
+"refl": "Escribe tres CCR1 y tres posibles CCR2 para un caso ficticio con dificultades interpersonales, y cómo responderías a cada CCR2 en la sesión.",
+"pl": ["Registro de conductas clínicamente relevantes", "FAP — [caso ficticio]\nProblema afuera: [ ]\nCCR1 en sesión (el problema aquí): [ ]\nCCR2 en sesión (la mejora aquí): [ ]\nCCR3 (cómo lo explica la persona): [ ]\nMi respuesta a la CCR2: [natural, cálida, contingente]\nConsentimiento para usar la relación: [sí, fecha]\nSupervisión: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: el taller de mindfulness para todos</b><br>Una clínica en Cancún ofrece un taller de mindfulness a todos sus pacientes. Una paciente con trauma reciente tuvo recuerdos intrusivos intensos durante un escaneo corporal largo con los ojos cerrados. Otro paciente, en un episodio depresivo grave, se sintió peor por «no poder concentrarse». Un tercero, con depresión recurrente en remisión, se benefició mucho.<br>El mindfulness tiene efectos reales pero modestos. MBCT previene recaídas en depresión recurrente; no es para el episodio agudo grave. En psicosis, trauma y depresión aguda, adapta o no lo uses.",
+"p": [
+["¿Para quién tiene su evidencia más clara la MBCT?", "Personas con depresión recurrente en remisión, para prevenir recaídas", "Cualquier paciente", "Episodio depresivo agudo grave", "Población específica."],
+["¿Qué adaptación ayudaría a la paciente con trauma?", "Prácticas breves, ojos abiertos, anclas externas y libertad de detenerse", "Escaneos más largos", "Obligarla a seguir", "La seguridad va primero."],
+["¿Cómo describirías honestamente el mindfulness?", "Una práctica con efectos reales pero modestos, útil en ciertos casos", "Una cura para la ansiedad", "Una pérdida de tiempo", "Sin inflar ni despreciar la evidencia."]
+],
+"comp": ["Cómo se ofrece la práctica", "«Cierren los ojos, 45 minutos de escaneo corporal; esto cura la ansiedad.»", "«Vamos a probar 3 minutos con ojos abiertos, notando los pies en el piso. Puedes parar cuando quieras. Si aparece algo difícil, me avisas.»"],
+"refl": "Escribe para qué pacientes ficticios recomendarías, adaptarías o no usarías una práctica de mindfulness, y cómo sería la adaptación en cada caso.",
+"pl": ["Decisión sobre mindfulness", "MINDFULNESS — ¿USAR, ADAPTAR O NO?\nUsar: depresión recurrente en remisión (MBCT) · estrés (MBSR) · [ ]\nAdaptar: trauma (breve, ojos abiertos, anclas externas, control de la persona) · ansiedad alta · [ ]\nNo usar o posponer: psicosis activa · depresión aguda grave · crisis\nExplicación honesta al paciente: [ ]\nFuente de evidencia consultada: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: «a mí me gusta la ACT»</b><br>Un terapeuta en Morelia aplica ACT a todos sus pacientes porque «es lo que mejor maneja». Recibe a Tomás, de 30 años, con consumo diario de cristal y episodios de desconfianza intensa hacia sus vecinos. Le propone ejercicios de defusión para «los pensamientos paranoicos».<br>Elige por formulación, evidencia y preferencias de la persona. Ante riesgo, psicosis o consumo grave, la seguridad y la atención médica van primero. Derivar cuando no dominas la intervención es una decisión ética.",
+"p": [
+["¿Qué debió priorizar el terapeuta?", "La evaluación médica y de riesgo, y la atención especializada en consumo", "Ejercicios de defusión", "Clarificar valores", "La seguridad y la atención médica van primero."],
+["¿Cuál es el criterio para elegir la intervención?", "La formulación, la evidencia y las preferencias de la persona", "La preferencia del terapeuta", "La moda", "No por gusto del terapeuta."],
+["Derivar a otro servicio es…", "una decisión ética cuando el caso rebasa tu competencia o requiere otro nivel de atención", "un fracaso", "abandonar al paciente", "Se deriva acompañando."]
+],
+"comp": ["Cómo se decide", "«Hagamos defusión con esos pensamientos paranoicos.»", "«Por el consumo diario y la desconfianza intensa, lo primero es una valoración médica y en adicciones. Te acompaño a encontrar ese servicio y, cuando esté estable, vemos si la terapia contextual te ayuda.»"],
+"refl": "Escribe un árbol de decisión breve para elegir entre ACT, DBT, activación conductual o derivación, a partir de la formulación y las señales de riesgo.",
+"pl": ["Elegir la intervención", "ELEGIR LA INTERVENCIÓN\n1. ¿Riesgo suicida, psicosis, consumo grave, condición médica? → seguridad, atención médica, derivación.\n2. Formulación: ¿qué mantiene el problema?\n   • Evitación experiencial amplia → ACT\n   • Desregulación emocional con autolesiones → DBT (programa completo si es posible)\n   • Depresión con inactividad → activación conductual\n   • Problemas interpersonales que aparecen en sesión → FAP\n3. Evidencia para esa población.\n4. Preferencias de la persona.\n5. ¿Lo domino? Si no: supervisión o derivación."]
+},
+{
+"caso": "<b>Caso ficticio: el PHQ-9 que no bajaba</b><br>Una terapeuta en León mide cada sesión el PHQ-9 y el GAD-7 de su paciente Rosa, de 47 años. En 8 sesiones, el PHQ-9 pasó de 18 a 16. La terapeuta sentía que «iba muy bien». Además, en la sesión 6, el total fue 14, pero la pregunta sobre pensamientos de muerte subió de 0 a 2.<br>Cambio confiable de referencia: 6 puntos en PHQ-9 y 4 en GAD-7. Revisa siempre la pregunta sobre pensamientos de muerte, aunque el total sea bajo.",
+"p": [
+["¿Un cambio de 18 a 16 en el PHQ-9 es confiable?", "No: la referencia es 6 puntos", "Sí", "Depende del día", "Dos puntos pueden ser variación normal."],
+["¿Qué debió hacer la terapeuta en la sesión 6?", "Evaluar el riesgo por el aumento en la pregunta de muerte, aunque el total bajara", "Nada, el total bajó", "Esperar a la sesión 8", "El ítem de muerte se revisa siempre."],
+["Si a las 8 sesiones no hay cambio confiable…", "revisar la formulación y llevar el caso a supervisión", "seguir igual", "terminar la terapia", "Los datos orientan decisiones."]
+],
+"comp": ["Cómo se revisan los datos en sesión", "«Vas muy bien, seguimos igual.»", "«En 8 sesiones tu puntaje bajó 2 puntos; eso todavía no es un cambio claro. Quiero revisar contigo qué no está funcionando. Y noto que esta semana marcaste pensamientos de muerte: hablemos de eso primero.»"],
+"refl": "Con datos ficticios de 8 sesiones, calcula el cambio en PHQ-9 y GAD-7, marca si es confiable y escribe qué decisión tomarías.",
+"pl": ["Medición sesión a sesión", "MEDICIÓN — [caso ficticio]\nSesión | PHQ-9 | Ítem 9 (muerte) | GAD-7 | Alianza (0–10)\n1 | [ ] | [ ] | [ ] | [ ]\n…\nCambio PHQ-9: [=B2-B9] → [=SI(B2-B9>=6,\"Cambio confiable\",\"Sin cambio confiable\")]\nCambio GAD-7: [=D2-D9] → [=SI(D2-D9>=4,\"Cambio confiable\",\"Sin cambio confiable\")]\nAlerta de riesgo: [=SI(MAX(C2:C9)>0,\"Evaluar riesgo\",\"\")]\nAlerta de alianza: [=SI(E9<7,\"Revisar alianza\",\"\")]"]
+},
+{
+"caso": "<b>Caso ficticio: «certificado en ACT»</b><br>Una psicóloga recién egresada en Culiacán tomó un curso en línea de 20 horas y en su publicidad pone «Psicóloga certificada en ACT y DBT». Atiende a una adolescente con autolesiones sin supervisión y sin explicar a la familia los límites de la confidencialidad. Cuando la adolescente le cuenta que tiene un plan para hacerse daño, la psicóloga no sabe si puede decírselo a los papás.<br>El código ético exige competencia: ofrece solo lo que dominas o trabájalo con supervisión. No existe certificación oficial en ACT. Consentimiento informado, confidencialidad y sus límites se explican desde el inicio.",
+"p": [
+["¿Qué error hay en su publicidad?", "Describir de forma engañosa su formación: no existe certificación oficial en ACT y la de DBT la otorga un organismo específico", "Ninguno", "Que usa redes", "La honestidad sobre la formación es un deber ético."],
+["¿Qué debió explicar desde el inicio?", "Los límites de la confidencialidad, incluido el riesgo para la vida", "Nada", "Solo el costo", "El consentimiento informado incluye estos límites."],
+["Ante un plan para hacerse daño de una adolescente…", "priorizar su seguridad, informar a quienes deben protegerla y activar la ruta de riesgo", "guardar el secreto", "esperar a la siguiente sesión", "El riesgo inminente es un límite de la confidencialidad."]
+],
+"comp": ["Cómo se describe la formación", "«Psicóloga certificada en ACT y DBT.»", "«Psicóloga con cédula [número]. Formación en terapias contextuales (diplomado de 32 horas en Instituto Mara) y supervisión clínica con [nombre].»"],
+"refl": "Redacta el apartado de confidencialidad y sus límites de un consentimiento informado para adolescentes y sus familias, en lenguaje claro.",
+"pl": ["Consentimiento y límites de competencia", "CONSENTIMIENTO INFORMADO (extracto)\nQué ofrezco: [enfoque, frecuencia, duración aproximada]\nMi formación: [cédula, formación real, supervisión]\nConfidencialidad: lo que hablamos es privado, excepto cuando hay riesgo para tu vida o la de otros, maltrato o una orden judicial.\nEn esos casos, avisaré a: [ ]\nMedición: usaremos cuestionarios breves cada sesión.\n\nMIS LÍMITES DE COMPETENCIA\nLo que domino: [ ] · Lo que hago con supervisión: [ ] · Lo que derivo: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio integrador: Andrés, 29 años</b><br>Andrés, de 29 años, en Querétaro, consulta por «ansiedad y tristeza». Desde que lo cambiaron de puesto evita las juntas, trabaja de noche para no cruzarse con su jefe, bebe los fines de semana «para olvidar» y se aisló de sus amigos. Dice que valora «ser buen papá» y «hacer bien mi trabajo». PHQ-9 inicial: 17; GAD-7: 15; sin ideas de muerte actuales.<br>Un caso integrado une análisis funcional, valores, intervención con evidencia y medición. Si los datos no muestran cambio, revisa la formulación y consulta en supervisión.",
+"p": [
+["¿Qué patrón central sugiere el caso?", "Evitación experiencial que alivia a corto plazo y cuesta en sus valores", "Falta de motivación", "Un problema con su jefe solamente", "Varias conductas con la misma función."],
+["¿Qué dato requiere evaluación adicional antes de intervenir?", "El consumo de alcohol de los fines de semana", "Que es papá", "Su puesto", "Se evalúa su nivel y riesgo."],
+["¿Cómo sabrás si la intervención funciona?", "Midiendo PHQ-9, GAD-7 y acciones con valor en cada sesión", "Si Andrés dice que se siente mejor una vez", "Si el terapeuta lo percibe", "Datos repetidos, no impresiones."]
+],
+"comp": ["Cómo se presenta la formulación a Andrés", "«Tienes ansiedad y depresión; te voy a enseñar a pensar positivo.»", "«Lo que veo es que evitar las juntas, trabajar de noche y beber te alivian en el momento, y a la vez te alejan de ser el papá y el profesional que quieres ser. Te propongo trabajar en eso y medir juntos cada semana.»"],
+"refl": ["Escribe la formulación completa de Andrés: ABC funcional de dos conductas, matriz ACT y procesos del hexaflex implicados.", "Escribe el plan de intervención de 10 sesiones con qué harías en cada bloque, qué medirías y qué harías si en la sesión 6 no hay cambio confiable."],
+"pl": ["Plan de caso integrado", "CASO INTEGRADO — [ficticio]\nAnálisis funcional (2 conductas): [ ]\nMatriz ACT: [ ]\nProcesos de inflexibilidad: [ ]\nValores: [ ]\nIntervención (bloques): 1–2 [ ] · 3–5 [ ] · 6–8 [ ] · 9–10 [ ]\nMedición: PHQ-9 · GAD-7 · acciones con valor · alianza\nRiesgo: evaluado en cada sesión\nSi no hay cambio confiable en la sesión 6: revisar formulación y supervisión\nÉtica: consentimiento · confidencialidad · límites · derivación"]
+}
+],
+"labs": [
+{
+"t": "Primera entrevista con enfoque contextual",
+"obj": "conducir una primera entrevista que explore la función de la conducta, los valores y los límites de tu competencia.",
+"esc": "Simulación. Llega a tu consultorio en Puebla <b>Gabriela</b> (caso ficticio), de 31 años, enfermera. Dice: «Quiero que me quites la ansiedad; ya probé de todo». Evita manejar en carretera, dejó de visitar a su familia en otro estado y toma ansiolíticos que le receta su médico.",
+"e": [
+["<b>Escena 1 — La petición.</b> Gabriela quiere que «le quites la ansiedad».", "Escribe cómo respondes, validando su petición y abriendo el enfoque contextual sin prometer eliminar la ansiedad."],
+["<b>Escena 2 — La función.</b> Exploras qué hace cuando aparece la ansiedad.", "Escribe cinco preguntas para identificar la función de su evitación."],
+["<b>Escena 3 — Los valores.</b> Te cuenta que extraña a su familia.", "Escribe cómo exploras lo que le importa sin volverlo una meta."],
+["<b>Escena 4 — El encuadre.</b> Te pregunta si puede dejar el ansiolítico.", "Escribe qué le respondes sobre la medicación y cómo explicas tu formación y tus límites."]
+],
+"p": [
+["Ante «quítame la ansiedad», es más honesto…", "explicar que trabajarán en que la ansiedad no dirija su vida, sin prometer eliminarla", "prometer que desaparecerá", "decir que no se puede hacer nada", "Honestidad y esperanza realista."],
+["Sobre dejar el ansiolítico…", "es decisión médica: debe consultarlo con quien se lo receta", "puedes decirle que lo deje", "no es tema de la terapia", "No está dentro de tu competencia."],
+["Una buena pregunta funcional es…", "«¿Qué pasa con la ansiedad cuando decides no manejar?»", "«¿Por qué eres tan ansiosa?»", "«¿Desde niña eres así?»", "Explora consecuencias inmediatas."]
+],
+"pl": ["Guía de primera entrevista contextual", "PRIMERA ENTREVISTA\n1. Motivo en palabras de la persona\n2. Evaluación de riesgo\n3. Qué hace cuando aparece el malestar (función)\n4. Alivio inmediato y costo a largo plazo\n5. Lo que le importa\n6. Medicación y atención médica (coordinación)\n7. Encuadre: formación, límites, confidencialidad, medición\n8. Acuerdo inicial"]
+},
+{
+"t": "Formular un caso con análisis funcional y matriz",
+"obj": "construir un análisis funcional y una matriz ACT a partir de registros de un caso ficticio.",
+"esc": "Tienes tres semanas de registros de <b>Héctor Manuel</b> (caso ficticio), de 27 años, estudiante en Monterrey: 14 episodios de ansiedad social; en 11 evitó (alivio promedio de 5 puntos) y en 3 se acercó (alivio de 1 punto, pero al día siguiente su malestar fue 2 puntos menor). Dice que valora «aprender» y «tener amigos».",
+"e": [
+["<b>Escena 1 — El análisis funcional.</b> Revisas los registros.", "Escribe la hipótesis funcional de la evitación con antecedentes, conducta y consecuencias."],
+["<b>Escena 2 — La matriz.</b> Llenan juntos los cuatro cuadrantes.", "Escribe la matriz ACT completa."],
+["<b>Escena 3 — La pregunta de viabilidad.</b> Héctor dice que evitar «le funciona».", "Escribe cómo usas sus propios datos para explorar la viabilidad."],
+["<b>Escena 4 — La devolución.</b> Presentas la formulación.", "Escribe cómo le explicas la formulación en lenguaje sencillo."]
+],
+"p": [
+["El alivio de 5 puntos al evitar explica…", "por qué la evitación se mantiene", "que evitar es lo mejor", "nada", "Reforzamiento negativo inmediato."],
+["Los datos del día siguiente sugieren…", "que acercarse tiene beneficios a mediano plazo", "que acercarse no sirve", "que el registro está mal", "Por eso se contrastan corto y largo plazo."],
+["¿Por dónde empieza la matriz?", "Por lo que le importa", "Por la ansiedad", "Por la evitación", "Los valores dan dirección."]
+],
+"pl": ["Formulación del caso", "FORMULACIÓN — [ficticio]\nHipótesis funcional: cuando [A], hace [B], lo que produce [C inmediata] y a largo plazo [C largo plazo]\nMatriz ACT: [4 cuadrantes]\nDatos que la sostienen: [ ]\nDevolución en lenguaje sencillo: [ ]"]
+},
+{
+"t": "Sesiones de ACT: de la defusión a la acción",
+"obj": "aplicar defusión, contacto con el presente, valores y acción comprometida en una secuencia de sesiones.",
+"esc": "Acompañas a <b>Elena</b> (caso ficticio), de 50 años, en Oaxaca, maestra de primaria. Dice: «Ya estoy vieja para cambiar de escuela, aunque aquí me siento muy mal». Pasa las noches pensando en lo que dijo la directora. Valora «enseñar con alegría».",
+"e": [
+["<b>Escena 1 — La defusión.</b> «Ya estoy vieja para cambiar» aparece cada vez que piensa en su futuro.", "Escribe un ejercicio de defusión adaptado a Elena."],
+["<b>Escena 2 — El presente.</b> En la sesión se va a lo que dijo la directora.", "Escribe cómo la traes al presente dentro de la sesión."],
+["<b>Escena 3 — Los valores.</b> «Enseñar con alegría».", "Escribe tres acciones pequeñas alineadas con ese valor en su escuela actual."],
+["<b>Escena 4 — La medición.</b> Aplicaste el cuestionario de valores al inicio.", "Escribe cómo medirás la brecha importancia-congruencia en 6 semanas y qué harías con el resultado."]
+],
+"p": [
+["«Ya estoy vieja para cambiar» se trabaja con…", "defusión: verlo como un pensamiento, no como un hecho", "debate racional", "ignorándolo", "Cambia la relación con el pensamiento."],
+["Una acción comprometida para Elena sería…", "«Esta semana, el miércoles, hago con mi grupo la actividad de cuentos que me gusta»", "«Ser más feliz»", "«Cambiar de escuela»", "Concreta, pequeña y con fecha."],
+["La brecha importancia-congruencia…", "orienta dónde actuar; decide la persona", "diagnostica", "es un test clínico validado", "Es una herramienta de conversación."]
+],
+"pl": ["Secuencia de sesiones ACT", "SECUENCIA ACT — [ficticio]\nSesión 1–2: formulación, desesperanza creativa\nSesión 3–4: defusión y aceptación\nSesión 5: presente y yo como contexto\nSesión 6–7: valores\nSesión 8+: acción comprometida y medición\nMedición: AAQ-II, brecha de valores, acciones cumplidas"]
+},
+{
+"t": "Habilidades DBT en una semana de crisis",
+"obj": "aplicar validación, tarjeta diaria, jerarquía de objetivos, habilidades de crisis y manejo del riesgo en un caso con desregulación emocional.",
+"esc": "Acompañas a <b>Sofía</b> (caso ficticio), de 21 años, en Guadalajara, en un programa con habilidades DBT. Esta semana tuvo una ruptura amorosa. Su tarjeta diaria muestra impulsos de autolesión de 4 y 5 dos días, un episodio de autolesión superficial y uso de STOP un día. En la sesión llega diciendo que «todo es su culpa».",
+"e": [
+["<b>Escena 1 — La agenda.</b> Sofía quiere hablar de su ex.", "Escribe cómo ordenas la sesión según la jerarquía de objetivos."],
+["<b>Escena 2 — El análisis en cadena.</b> Revisan el día de la autolesión.", "Escribe los eslabones principales y dónde pudo usar una habilidad."],
+["<b>Escena 3 — La evaluación de riesgo.</b> Dice «a veces pienso que sería mejor no estar».", "Escribe cómo evalúas el riesgo y actualizas el plan de seguridad."],
+["<b>Escena 4 — Validación y cambio.</b> «Todo es mi culpa».", "Escribe una respuesta dialéctica que valide y abra el cambio."]
+],
+"p": [
+["¿Qué va primero en la sesión?", "La conducta de autolesión y el riesgo", "La ruptura", "La tarea de la semana", "Jerarquía: lo que amenaza la vida."],
+["Ante «sería mejor no estar», lo correcto es…", "preguntar directo, evaluar el riesgo y actualizar el plan de seguridad", "seguir con la agenda", "cambiar de tema", "Riesgo inminente: 911 y no dejarla sola."],
+["Una respuesta dialéctica sería…", "«Tiene sentido que te sientas así después de la ruptura, y a la vez vamos a ver qué parte sí depende de ti»", "«No es tu culpa, olvídalo»", "«Sí, fue tu culpa»", "Aceptación y cambio."]
+],
+"pl": ["Sesión DBT en crisis", "SESIÓN — [ficticio]\n1. Tarjeta diaria: impulsos, conductas, habilidades\n2. Jerarquía: amenaza la vida → interfiere → calidad de vida\n3. Análisis en cadena: vulnerabilidad → detonante → eslabones → conducta → consecuencias\n4. Habilidades para cada eslabón\n5. Evaluación de riesgo y plan de seguridad (911 · 800 911 2000)\n6. Tarea y coaching"]
+},
+{
+"t": "Activación conductual y FAP con un paciente deprimido",
+"obj": "programar activación conductual, resolver obstáculos, trabajar CCR en sesión y medir el avance.",
+"esc": "Acompañas a <b>Raúl</b> (caso ficticio), de 58 años, en Mérida, viudo desde hace un año. Dejó de ir a su club de dominó, pasa el día viendo televisión y en sesión responde con monosílabos y dice «da igual». PHQ-9: 19. Sin ideas de muerte actuales. Valora «ser buen abuelo».",
+"e": [
+["<b>Escena 1 — La programación.</b> Primera semana de activación.", "Escribe tres actividades graduadas guiadas por su valor, con día, hora y minutos."],
+["<b>Escena 2 — El obstáculo.</b> No hizo ninguna: «no tenía ganas».", "Escribe tu respuesta y el ajuste al plan."],
+["<b>Escena 3 — La sesión.</b> Raúl responde «da igual» a todo, y en un momento te cuenta con detalle una anécdota de su esposa.", "Identifica la CCR1 y la CCR2 y escribe cómo respondes a la CCR2."],
+["<b>Escena 4 — La medición.</b> En la sesión 6 su PHQ-9 es 12.", "Calcula el cambio, di si es confiable y escribe qué decides."]
+],
+"p": [
+["El cambio de 19 a 12 en el PHQ-9 es…", "confiable: 7 puntos, más que la referencia de 6", "no confiable", "empeoramiento", "19 − 12 = 7."],
+["Ante «no tenía ganas», lo más útil es…", "recordar que la acción va antes que las ganas y hacer el paso más pequeño", "suspender la activación", "regañarlo", "Graduar y reforzar el intento."],
+["Contar con detalle la anécdota de su esposa es…", "una posible CCR2: se abre en la relación terapéutica", "una CCR1", "un síntoma", "Se nota y se refuerza con calidez."]
+],
+"pl": ["Plan de activación con FAP y medición", "PLAN — [ficticio]\nActividades graduadas por valor: [ ]\nObstáculos y ajustes: [ ]\nCCR1 / CCR2 observadas y respuesta: [ ]\nPHQ-9 por sesión y cambio confiable: [ ]\nRiesgo revisado cada sesión: [ ]"]
+},
+{
+"t": "Formulación, plan y medición de un caso completo",
+"obj": "integrar todo el diplomado en la formulación, el plan de intervención y la medición de un caso clínico ficticio completo, con sus decisiones éticas.",
+"esc": "Este es tu proyecto final. Vas a construir un <b>caso clínico ficticio completo</b> (inventa a la persona; no uses datos de pacientes reales) y a desarrollar su formulación contextual, el plan de intervención, la medición y las decisiones éticas. Al terminar tendrás un documento que puedes llevar a supervisión o usar como muestra de tu forma de trabajar.",
+"e": [
+["<b>Parte 1 — El caso y la evaluación.</b> Con lo de los módulos 1 y 2.", "Describe a la persona ficticia, el motivo de consulta, la evaluación de riesgo, dos ABC funcionales y la matriz ACT."],
+["<b>Parte 2 — La formulación.</b> Con lo de los módulos 2 y 3.", "Escribe los procesos del hexaflex implicados, los valores y la hipótesis de qué mantiene el problema."],
+["<b>Parte 3 — La intervención.</b> Con lo de los módulos 3 a 5.", "Elige y justifica la intervención (ACT, DBT, activación conductual, FAP o combinación) y describe el plan por sesiones."],
+["<b>Parte 4 — Medición y ética.</b> Con lo del módulo 6.", "Escribe los instrumentos y su frecuencia, qué harás si no hay cambio confiable, tu consentimiento informado, tus límites de competencia y cuándo derivarías."]
+],
+"p": [
+["El análisis funcional busca…", "qué mantiene la conducta", "la causa en la infancia", "el diagnóstico", "Función, no solo forma."],
+["La intervención se elige por…", "formulación, evidencia y preferencias de la persona", "gusto del terapeuta", "moda", "Criterio clínico y ético."],
+["Si en la sesión 6 no hay cambio confiable…", "revisas la formulación y llevas el caso a supervisión", "sigues igual", "das de alta", "Los datos guían decisiones."],
+["Ante riesgo suicida inminente…", "no dejas sola a la persona, llamas al 911 y activas la red de apoyo", "esperas a la siguiente sesión", "lo trabajas con defusión", "La seguridad va primero."],
+["Tu constancia de este diplomado…", "da fundamentos y técnicas; no certifica en ACT ni DBT ni habilita para ejercer psicoterapia", "te certifica en ACT", "equivale a la formación intensiva en DBT", "Descríbela con precisión."]
+],
+"pl": ["Índice del caso integrado", "CASO CLÍNICO FICTICIO — PROYECTO FINAL\n[Elaboró] · [Fecha]\n\n1. Persona ficticia y motivo de consulta\n2. Evaluación de riesgo\n3. Análisis funcional (2 ABC)\n4. Matriz ACT y procesos del hexaflex\n5. Valores\n6. Hipótesis de mantenimiento\n7. Intervención elegida y justificación\n8. Plan por sesiones\n9. Medición (instrumentos, frecuencia, cambio confiable)\n10. Ética: consentimiento, confidencialidad, límites de competencia, derivación y supervisión"]
+}
+]
+}

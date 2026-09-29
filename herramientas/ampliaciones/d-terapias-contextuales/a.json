@@ -1,0 +1,96 @@
+{
+"id": "d-terapias-contextuales",
+"horas": 32,
+"desc": "Da el paso de la TCC clásica al enfoque contextual: análisis funcional, formulación con la matriz ACT, los seis procesos de la terapia de aceptación y compromiso, las habilidades de la DBT, la activación conductual, la psicoterapia analítica funcional y el mindfulness con evidencia. Incluye 24 casos clínicos ficticios con decisiones guiadas, 5 laboratorios de simulación de sesión y un proyecto final en el que integras la formulación, el plan de intervención y la medición de un caso completo, con hojas de cálculo para medir el avance. Es para psicólogos con cédula, estudiantes avanzados de psicología y psicoterapeutas cognitivo-conductuales. Da fundamentos y técnicas; no sustituye la formación clínica supervisada ni las certificaciones de cada modelo, y no habilita para ejercer la psicoterapia.",
+"aprender": "Integrar en un caso ficticio completo el análisis funcional, la formulación con la matriz ACT, el plan de intervención contextual, la medición sesión a sesión y las decisiones éticas",
+"talleres": [
+{
+"caso": "<b>Caso ficticio: «quiero dejar de tener pensamientos negativos»</b><br>Rodrigo, de 34 años, ingeniero en Monterrey, llega a consulta pidiendo «eliminar» sus pensamientos de fracaso. Lleva dos años de TCC clásica: registra, cuestiona y reestructura sus pensamientos con disciplina, pero dice que «entre más los peleo, más aparecen» y ha dejado de presentar proyectos en el trabajo por miedo a que «salga el pensamiento».<br>El enfoque contextual se fija más en la función de la conducta y en la relación con la experiencia interna que en su contenido.",
+"p": [
+["Desde el enfoque contextual, ¿qué observarías primero?", "La función de su lucha con los pensamientos y lo que ha dejado de hacer", "Si sus pensamientos son racionales", "Cuántos pensamientos tiene al día", "La pregunta es qué le cuesta la lucha en su vida."],
+["¿Qué dato del caso sugiere evitación experiencial?", "Dejó de presentar proyectos para no sentir el pensamiento", "Que es ingeniero", "Que hizo TCC", "Evita situaciones valiosas para no contactar la experiencia interna."],
+["¿Implica esto que la TCC clásica «estaba mal»?", "No: el enfoque contextual es otra forma de intervenir, útil según la formulación", "Sí, siempre falla", "Sí, la tercera generación la reemplaza", "Las generaciones conviven; se elige por formulación y evidencia."]
+],
+"comp": ["Cómo se oye la pregunta clínica", "«Vamos a buscar la evidencia a favor y en contra de ese pensamiento.»", "«Llevas dos años peleando con ese pensamiento. ¿Qué te ha costado esa pelea? ¿Qué harías distinto si el pensamiento pudiera estar ahí sin mandarte?»"],
+"refl": "Escribe cómo formularías el caso de Rodrigo desde la TCC clásica y desde el enfoque contextual, y qué pregunta harías en cada caso en la primera sesión.",
+"pl": ["Comparación de enfoques en un caso", "CASO: [iniciales ficticias]\nTCC clásica — foco: [contenido del pensamiento] · técnica: [ ] · meta: [ ]\nContextual — foco: [función, relación con la experiencia] · técnica: [ ] · meta: [ ]\n¿Qué ha dejado de hacer la persona?: [ ]\n¿Qué le importa?: [ ]\nMis límites: sin certificación en ACT/DBT; supervisión: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: dos conductas iguales, funciones distintas</b><br>Dos pacientes de un consultorio en Guadalajara faltan a sus clases de la universidad. Ana falta porque las clases de la mañana le generan ansiedad intensa y quedarse en casa la alivia de inmediato. Luis falta porque su pareja le pide que se quede y, cuando lo hace, recibe atención y afecto. La conducta tiene la misma forma, pero no la misma función.<br>Analiza para qué sirve la conducta. El reforzamiento negativo mantiene muchas conductas problema porque alivia de inmediato.",
+"p": [
+["¿Qué mantiene la conducta de Ana?", "Reforzamiento negativo: evita o reduce la ansiedad", "Reforzamiento positivo", "Castigo", "Retirar un estímulo aversivo aumenta la conducta."],
+["¿Qué mantiene la conducta de Luis?", "Reforzamiento positivo social: atención y afecto", "Reforzamiento negativo", "Extinción", "Se agrega un estímulo apetitivo."],
+["¿Por qué importa distinguirlas?", "Porque la intervención cambia según la función", "No importa, se trata igual", "Porque cambia el diagnóstico", "Misma forma, distinta intervención."]
+],
+"comp": ["Cómo se describe la conducta", "«Ambos faltan a clases por falta de motivación.»", "«Ana: faltar reduce su ansiedad a corto plazo (R−). Luis: faltar le da atención de su pareja (R+). Las dos conductas cuestan a largo plazo en sus metas académicas.»"],
+"refl": "Elige una conducta cotidiana (propia o de un caso ficticio) y describe dos funciones posibles, con el proceso de reforzamiento que la mantendría en cada caso.",
+"pl": ["Forma contra función", "CONDUCTA: [descripción observable]\nFunción posible 1: [ ] · proceso: R+ / R− / castigo / extinción\nFunción posible 2: [ ] · proceso: [ ]\n¿Qué consecuencia inmediata aparece?: [ ]\n¿Qué costo a largo plazo?: [ ]\nDatos que confirmarían cada hipótesis: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: la técnica que «funcionaba» en el consultorio</b><br>Un psicólogo en Puebla aplica una técnica de respiración con todos sus pacientes porque «siempre funciona». En sesión, la ansiedad baja. Pero una paciente la usa para escapar de cada conversación difícil con su jefe y su vida laboral se ha reducido. Otro colega le vende a sus pacientes el mindfulness como «la cura de la ansiedad».<br>El contextualismo funcional juzga por lo que funciona para una meta en su contexto. Presenta la evidencia sin inflarla y mide resultados con cada persona.",
+"p": [
+["¿Para qué meta no está funcionando la respiración en esa paciente?", "Para acercarse a lo que le importa en el trabajo", "Para bajar la ansiedad en sesión", "Para respirar mejor", "El criterio es la viabilidad respecto a sus valores."],
+["¿Qué problema tiene vender el mindfulness como «cura»?", "Infla la evidencia: sus efectos son reales pero modestos y dependen de la población", "Ninguno", "Que es muy barato", "La honestidad sobre la evidencia es un deber ético."],
+["¿Cómo saber si una intervención funciona con una persona concreta?", "Midiendo resultados con ella a lo largo de las sesiones", "Porque tiene evidencia general", "Porque al terapeuta le gusta", "La evidencia general orienta; la medición individual confirma."]
+],
+"comp": ["Cómo se presenta una intervención", "«Esta técnica siempre funciona, te vas a curar.»", "«Esta práctica tiene evidencia en personas con dificultades parecidas a las tuyas. Vamos a probarla y a medir cada semana si te ayuda a hacer lo que te importa.»"],
+"refl": "Escribe cómo explicarías a un paciente, con honestidad, qué evidencia tiene la intervención que le propones y cómo van a saber si le funciona.",
+"pl": ["Viabilidad y evidencia", "INTERVENCIÓN: [ ]\nEvidencia (población, tamaño de efecto aproximado, fuente): [ ]\nLo que NO promete: [ ]\nMeta de la persona (en sus palabras): [ ]\n¿La intervención la acerca a esa meta en su contexto? [ ]\nMedición: [instrumento breve, frecuencia]\nFuente consultada y fecha: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: el consultorio que ofrecía de todo</b><br>Un centro de psicología en Querétaro anuncia en redes «ACT, DBT, FAP, MBSR, MBCT y compasión». Una paciente con autolesiones frecuentes llega pidiendo «DBT». El centro solo tiene sesiones individuales semanales; no hay grupo de habilidades, ni coaching telefónico, ni equipo de consulta.<br>ACT, DBT, FAP, activación conductual, MBSR, MBCT y CFT comparten el enfoque contextual pero difieren en objetivo y formato. DBT estándar incluye cuatro componentes.",
+"p": [
+["¿Qué le falta al centro para ofrecer DBT estándar?", "Grupo de habilidades, coaching telefónico y equipo de consulta", "Más publicidad", "Un consultorio más grande", "La DBT estándar tiene cuatro componentes."],
+["¿Qué sería honesto decirle a la paciente?", "Qué componentes pueden ofrecer, cuáles no y opciones de derivación", "Que sí dan DBT completa", "Que no pueden atenderla sin explicar", "La transparencia protege a la paciente."],
+["MBSR y MBCT son…", "programas grupales de 8 semanas", "terapias individuales breves", "técnicas de relajación de una sesión", "Tienen formato y población específicos."]
+],
+"comp": ["Cómo responde el centro", "«Sí, aquí hacemos DBT.»", "«Podemos darte sesiones individuales con habilidades de DBT, pero no tenemos el programa completo. Por la frecuencia de las autolesiones, te recomendamos un programa con todos los componentes; te damos opciones y, mientras, hacemos un plan de seguridad.»"],
+"refl": "Elige tres terapias del panorama contextual y escribe para cada una: objetivo principal, formato y población donde tiene mejor evidencia.",
+"pl": ["Panorama de terapias contextuales", "TERAPIA | Objetivo | Formato | Población con mejor evidencia\nACT | flexibilidad psicológica | individual o grupal | [ ]\nDBT | [ ] | 4 componentes | [ ]\nActivación conductual | [ ] | [ ] | [ ]\nFAP | [ ] | relación terapéutica | [ ]\nMBSR / MBCT | [ ] | grupal, 8 semanas | [ ]\nCFT | vergüenza y autocrítica | [ ] | evidencia en desarrollo\nLo que yo puedo ofrecer con mi formación: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: el «ataque de ansiedad» del domingo</b><br>Mariana, de 29 años, en Mérida, cuenta que los domingos en la tarde tiene «ataques de ansiedad». Al hacer el ABC funcional aparece un patrón: el antecedente es pensar en la junta de los lunes con su jefa; la conducta es quedarse en la cama viendo series y cancelar la preparación; la consecuencia inmediata es alivio; a largo plazo llega al lunes sin preparar, se siente peor y su jefa la cuestiona.<br>Separa consecuencias inmediatas (suelen mantener la conducta) y a largo plazo (suelen mostrar el costo).",
+"p": [
+["¿Qué mantiene la conducta de quedarse en la cama?", "El alivio inmediato de la ansiedad", "El costo del lunes", "La jefa", "La consecuencia inmediata suele mantener la conducta."],
+["¿Cuál es el antecedente interno?", "Pensar en la junta con su jefa", "El domingo", "Las series", "Hay antecedentes externos e internos."],
+["¿Qué harías antes de dar por buena la hipótesis?", "Confirmarla con varios registros", "Aplicar la intervención de inmediato", "Preguntar a la jefa", "Una hipótesis se sostiene con datos repetidos."]
+],
+"comp": ["Cómo se registra", "«Tuvo un ataque de ansiedad el domingo.»", "«A: domingo 5 p. m., piensa en la junta (interno), casa sola (externo). B: se queda en cama, cancela preparar. C inmediata: alivio 8→4. C largo plazo: llega sin preparar, ansiedad 9 el lunes, crítica de la jefa.»"],
+"refl": "Haz un ABC funcional de un episodio (ficticio o propio) con antecedentes internos y externos, conducta observable y consecuencias a corto y largo plazo.",
+"pl": ["ABC funcional", "ABC FUNCIONAL — [episodio]\nA externos: [lugar, hora, personas]\nA internos: [pensamientos, emociones, sensaciones]\nB (conducta observable): [ ]\nC corto plazo: [ ] · malestar antes [0–10] → después [0–10]\nC largo plazo: [ ]\nHipótesis de función: [ ]\nRegistros que la confirman: [ ]"]
+},
+{
+"caso": "<b>Caso ficticio: todo por no sentir</b><br>Jorge, de 41 años, en Tijuana, evita manejar desde un choque, dejó de ir a reuniones familiares porque «ahí siempre sale el tema», toma dos cervezas cada noche «para relajarme» y cambia de tema cuando su esposa le pregunta cómo está. Dice: «Estoy bien, solo no quiero sentirme mal».<br>La evitación experiencial es luchar contra la experiencia interna aunque cueste en la vida. Evalúa rigidez, frecuencia y costo. La pregunta de viabilidad contrasta el alivio inmediato con el costo a largo plazo.",
+"p": [
+["¿Toda evitación es problemática?", "No: preocupa cuando es rígida, frecuente y costosa", "Sí, siempre", "Nunca", "Evitar a veces es adaptativo."],
+["¿Qué pregunta de viabilidad harías?", "«Cuando has hecho todo esto para no sentirte mal, ¿cómo te ha funcionado a largo plazo?»", "«¿Por qué eres así?»", "«¿No crees que exageras?»", "Invita a la persona a evaluar por su experiencia."],
+["¿Qué dato requiere evaluación adicional?", "El consumo diario de alcohol", "Que no quiere manejar", "Que cambia de tema", "Puede requerir evaluación y, si aplica, atención especializada."]
+],
+"comp": ["Cómo se explora la evitación", "«Tienes que enfrentar tus miedos ya.»", "«Me cuentas varias formas de no sentirte mal: no manejar, no ir a las comidas, las cervezas, cambiar de tema. En el corto plazo alivian. ¿Qué te han costado en lo que te importa?»"],
+"refl": "Escribe cinco formas de evitación experiencial de Jorge y, para cada una, su alivio inmediato y su costo a largo plazo. Marca cuál trabajarías primero y por qué.",
+"pl": ["Inventario de evitación y viabilidad", "INVENTARIO DE EVITACIÓN\nConducta | ¿Qué evita sentir? | Alivio inmediato (0–10) | Costo a largo plazo | Frecuencia | Rigidez (1–5)\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ]\n\nPregunta de viabilidad: «¿Cómo te ha funcionado a largo plazo?»\nEvaluación adicional necesaria: [consumo, riesgo, salud]"]
+},
+{
+"caso": "<b>Caso ficticio: la matriz de Lucía</b><br>Lucía, de 26 años, en Cancún, dice que quiere «ser mejor mamá y volver a estudiar». Cuando piensa en inscribirse aparece «no soy capaz» y siente un nudo en el estómago; entonces pospone, revisa redes y se queda despierta hasta tarde. Juntas llenan la matriz ACT empezando por lo que le importa.<br>La matriz cruza sentidos/mente con alejamiento/acercamiento. Se empieza por lo que importa y termina en conductas de acercamiento. Complementa, no sustituye, la entrevista y la evaluación de riesgo.",
+"p": [
+["¿En qué cuadrante va «no soy capaz»?", "Abajo a la izquierda: experiencia interna que aparece como obstáculo", "Arriba a la derecha", "Abajo a la derecha", "Es mente, en el lado de alejamiento."],
+["«Revisar redes y posponer» va en…", "arriba a la izquierda: conductas de alejamiento", "abajo a la derecha", "arriba a la derecha", "Son conductas observables que la alejan."],
+["¿Por dónde se empieza a llenar la matriz?", "Por lo que le importa (abajo a la derecha)", "Por los pensamientos negativos", "Por las conductas problema", "Lo que importa da dirección al resto."]
+],
+"comp": ["Cómo se introduce la matriz", "«Vamos a analizar tus pensamientos negativos.»", "«Hagamos un mapa. Empecemos por aquí abajo a la derecha: ¿quién y qué te importa? Luego vemos qué aparece adentro cuando vas hacia eso, y qué haces entonces.»"],
+"refl": "Llena la matriz ACT completa de Lucía (o de un caso ficticio tuyo) y escribe dos conductas de acercamiento pequeñas y concretas para la próxima semana.",
+"pl": ["Matriz ACT", "MATRIZ ACT — [caso ficticio]\n                ALEJAMIENTO            |          ACERCAMIENTO\nSENTIDOS  Arriba izq.: qué hago para alejarme [ ] | Arriba der.: qué hago o haría para acercarme [ ]\nMENTE     Abajo izq.: qué aparece adentro [ ]      | Abajo der.: quién y qué me importa [ ]\n\nOrden: abajo der. → abajo izq. → arriba izq. → arriba der.\nNo sustituye: entrevista · evaluación de riesgo · análisis funcional"]
+},
+{
+"caso": "<b>Caso ficticio: el registro que mostró el patrón</b><br>Fernando, de 38 años, en León, registró durante tres semanas cada vez que sentía ansiedad social: la situación, si evitó o se acercó, y su malestar antes y después. Al ordenar los datos en una hoja de cálculo, vieron que la evitación bajaba el malestar 4 puntos de inmediato, pero que los días que se acercó, el malestar del día siguiente era menor.<br>El registro funcional convierte episodios sueltos en patrones. CONTAR.SI y PROMEDIO.SI muestran con datos el alivio de la evitación frente al acercamiento. Los registros son datos sensibles: protégelos.",
+"p": [
+["¿Qué muestra el alivio de 4 puntos al evitar?", "Por qué se mantiene la evitación: alivia de inmediato", "Que evitar es lo mejor", "Que el registro está mal", "El alivio inmediato refuerza la evitación."],
+["Para promediar el malestar posterior solo en episodios de evitación se usa…", "PROMEDIO.SI", "CONTAR", "SUMA", "Promedio con una condición."],
+["¿Cómo se protege el registro?", "Con acceso restringido, sin nombres completos y según el aviso de privacidad", "Compartiéndolo en la nube pública", "Imprimiéndolo y dejándolo en la recepción", "Son datos personales sensibles de salud."]
+],
+"comp": ["Cómo se revisa el registro con el paciente", "«Ya ves, tienes que dejar de evitar.»", "«Mira lo que muestran tus datos: evitar te baja 4 puntos en el momento. Y los días que te acercaste, al día siguiente estuviste 2 puntos más tranquilo. ¿Qué te dice eso?»"],
+"refl": "Diseña un registro funcional de tres semanas para un caso ficticio y escribe las fórmulas para comparar el alivio de la evitación contra el acercamiento.",
+"pl": ["Registro funcional en hoja de cálculo", "REGISTRO FUNCIONAL — [iniciales ficticias] (confidencial)\nFecha | Situación | Conducta (Evitó / Se acercó) | Malestar antes | Malestar después | Alivio\n[ ] | [ ] | [ ] | [ ] | [ ] | [=D2-E2]\n\nEpisodios de evitación: [=CONTAR.SI(C:C,\"Evitó\")]\nAlivio promedio al evitar: [=PROMEDIO.SI(C:C,\"Evitó\",F:F)]\nAlivio promedio al acercarse: [=PROMEDIO.SI(C:C,\"Se acercó\",F:F)]"]
+}
+]
+}
