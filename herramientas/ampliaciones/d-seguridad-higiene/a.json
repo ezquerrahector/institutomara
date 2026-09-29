@@ -1,0 +1,96 @@
+{
+"id": "d-seguridad-higiene",
+"horas": 30,
+"desc": "Aprende a identificar peligros, evaluar riesgos y organizar la seguridad de tu centro de trabajo con las principales normas de la STPS: comisión de seguridad e higiene, equipo de protección personal, incendios, señalización, químicos, ergonomía, ruido, emergencias e investigación de accidentes. Incluye 20 casos de talleres, fábricas y comercios mexicanos con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas el programa de seguridad de un centro de trabajo real, con matrices e indicadores en hoja de cálculo. Para supervisores, RH, EHS, comisiones y dueños de pymes. No sustituye la asesoría de un especialista.",
+"aprender": "Armar el programa de seguridad y salud de un centro de trabajo real: normas aplicables, matriz de riesgos, comisión, emergencias, indicadores y calendario",
+"talleres": [
+{
+"caso": "<b>Caso: «nomás fue un susto»</b><br>En una carpintería de Tlaquepaque con 12 trabajadores, a un ayudante se le zafó una tabla de la sierra circular y le pasó rozando la cara. No se lastimó. El dueño dijo «nomás fue un susto, sigan trabajando». Tres semanas después, otra tabla salió disparada en la misma sierra y le rompió la nariz a otro trabajador.<br>Un incidente es un aviso gratis: muestra dónde va a ocurrir el siguiente accidente. Registrarlo e investigarlo cuesta poco; ignorarlo sale caro.",
+"p": [
+["¿Qué fue el primer evento de la sierra?", "Un incidente: pudo lastimar y no lo hizo", "Un accidente de trabajo, porque hubo riesgo", "Nada que registrar, porque no hubo lesión", "Un incidente se registra aunque no haya lesión: es la señal de alerta más barata que existe."],
+["El segundo evento, con la nariz rota, es…", "un accidente de trabajo", "una enfermedad de trabajo", "un incidente grave", "Fue una lesión repentina en ejercicio del trabajo: accidente de trabajo."],
+["¿Qué debió pasar después del primer evento?", "Registrarlo, revisar la sierra y la forma de trabajar, y corregir", "Pedirle al ayudante que tenga más cuidado", "Esperar a ver si vuelve a pasar", "Pedir cuidado no cambia la condición insegura. La causa estaba en la máquina o el método."]
+],
+"comp": ["Cómo se oye en el taller", "«Nomás fue un susto, sigan trabajando.»", "«Paren esa sierra. Vamos a anotar qué pasó y revisar por qué salió la tabla antes de volver a usarla.»"],
+"refl": "Piensa en un lugar de trabajo que conozcas. Escribe tres incidentes que hayan ocurrido o que puedan ocurrir ahí, y qué accidente anunciaría cada uno.",
+"pl": ["Registro rápido de incidentes", "REGISTRO DE INCIDENTES\nFecha: [ ]   Hora: [ ]   Área: [ ]\nQuién lo reporta: [ ]\n\n¿Qué pasó? (en una o dos frases): [ ]\n¿Qué pudo haber pasado?: [ ]\n¿Máquina, herramienta o sustancia involucrada?: [ ]\n\nAcción inmediata tomada: [ ]\nAcción para que no se repita: [ ]\nResponsable: [ ]   Fecha compromiso: [ ]\n\nNadie será sancionado por reportar un incidente."]
+},
+{
+"caso": "<b>Caso: la NOM que ya no existía</b><br>Una consultora independiente le entregó a una panificadora de Puebla un «manual de EPP» que citaba una norma sustituida años atrás. El gerente lo imprimió y lo archivó. En una visita, el cliente corporativo al que le venden pan pidió ver su cumplimiento y notó que el documento citaba una versión que ya no estaba vigente.<br>Las normas se actualizan. Antes de usar cualquier formato, confirma en el DOF cuál es la versión vigente y lee su campo de aplicación, sus definiciones y sus obligaciones.",
+"p": [
+["¿Qué debió revisar primero el gerente?", "La versión vigente de la norma en el DOF", "Que el manual estuviera bien encuadernado", "Que la consultora tuviera cédula profesional", "El dato más básico de cumplimiento es citar la norma vigente."],
+["Al leer una NOM, ¿qué conviene revisar antes de las obligaciones?", "El campo de aplicación y las definiciones", "Solo los transitorios", "Los apéndices informativos", "El campo de aplicación te dice si te aplica; las definiciones evitan malas interpretaciones."],
+["¿Qué va por encima de una NOM en el marco legal?", "La LFT y el Reglamento Federal de Seguridad y Salud en el Trabajo", "Los manuales de la empresa", "Las guías de proveedores de equipo de seguridad", "El marco baja en escalones: Constitución, LFT, Reglamento y NOM."]
+],
+"comp": ["Cómo se oye con el cliente", "«Sí cumplimos, aquí está el manual que nos hicieron.»", "«Estas son las normas que nos aplican en su versión vigente, y esta es la evidencia de cada una.»"],
+"refl": "Elige una norma de la STPS que aplique a un trabajo que conozcas. Escribe cómo confirmarías que es la versión vigente y qué tres partes leerías primero.",
+"pl": ["Ficha de lectura de una NOM", "FICHA DE LECTURA\nNorma: [clave y nombre]\nFecha de publicación en el DOF: [ ]   ¿Vigente? [sí/no, fecha de consulta]\n\nCampo de aplicación: ¿me aplica? [ ] ¿Por qué?: [ ]\nTres definiciones clave: 1. [ ] 2. [ ] 3. [ ]\n\nObligaciones del patrón (resumen):\n• [ ]\n• [ ]\nObligaciones de los trabajadores:\n• [ ]\n\nRegistros o evidencias que pide: [ ]\nPeriodicidad (mensual, anual…): [ ]"]
+},
+{
+"caso": "<b>Caso: la lista copiada del vecino</b><br>Un taller de pintura automotriz en Aguascalientes copió la lista de normas de un restaurante vecino porque «las dos somos pymes». La lista no incluía nada de sustancias químicas, a pesar de que en el taller se usan solventes, pinturas y thinner todos los días, ni de ventilación.<br>Las normas aplican según lo que haces, no según el tamaño del negocio. Un taller de pintura necesita revisar químicos, incendios, EPP y ventilación aunque tenga cinco trabajadores.",
+"p": [
+["¿Por qué falla la lista copiada?", "Porque las normas dependen de las actividades, no del tamaño", "Porque el restaurante es más grande", "Porque cada estado tiene su propia lista oficial", "Dos pymes del mismo tamaño pueden tener riesgos totalmente distintos."],
+["¿Qué norma le falta sin duda al taller de pintura?", "La de sustancias químicas peligrosas con el SGA", "La de trabajos en altura", "La de recipientes sujetos a presión de calderas", "Solventes y pinturas son sustancias químicas peligrosas: hojas de datos y señalización."],
+["¿Qué normas aplican a casi cualquier centro de trabajo?", "Incendios, EPP, comisión, señalización, servicios preventivos y NOM-035", "Solo la NOM-035", "Ninguna si hay menos de 15 trabajadores", "Hay un grupo de normas que aplica prácticamente a todos."]
+],
+"comp": ["Cómo se arma la lista", "«Somos pyme, copiamos la lista de otra pyme.»", "«Recorrimos el taller, anotamos cada actividad y sustancia, y de ahí sacamos qué normas nos aplican.»"],
+"refl": "Recorre mentalmente un centro de trabajo que conozcas. Escribe cinco actividades o sustancias que ahí se manejen y qué norma revisarías por cada una.",
+"pl": ["Lista de normas aplicables", "LISTA DE NORMAS APLICABLES\nCentro de trabajo: [ ]   Fecha: [ ]\n\nActividad o condición observada | Norma que revisar | ¿Tenemos evidencia? (sí/no/parcial)\n[Uso de extintores y material combustible] | [NOM-002] | [ ]\n[Entrega de EPP] | [NOM-017] | [ ]\n[Comisión de seguridad] | [NOM-019] | [ ]\n[Señalización] | [NOM-026] | [ ]\n[Servicios preventivos] | [NOM-030] | [ ]\n[Factores psicosociales] | [NOM-035] | [ ]\n[ ] | [ ] | [ ]\n\nPrioridad: empezar por las que no tienen evidencia y tienen mayor riesgo."]
+},
+{
+"caso": "<b>Caso: el inspector toca la puerta</b><br>Llega un inspector de la STPS a una empacadora de Celaya. La encargada de RH corre por las carpetas: los extintores sí se revisan, pero las bitácoras están en el celular del de mantenimiento; la comisión existe, pero las actas están en otra oficina; nadie sabe dónde quedó el último simulacro.<br>La evidencia ordenada por norma es la mitad del cumplimiento. Medir tu porcentaje antes que el inspector te dice dónde estás parado.",
+"p": [
+["¿Cuál fue el problema principal?", "La evidencia existía pero no estaba ordenada ni a la mano", "Que no hacían nada de seguridad", "Que el inspector llegó sin avisar, lo cual es ilegal", "Lo que no se puede mostrar durante la inspección es como si no se hubiera hecho."],
+["¿Cómo se calcula un porcentaje de cumplimiento?", "Requisitos cumplidos entre requisitos revisados", "Normas aplicables entre normas totales de la STPS", "Número de extintores entre número de trabajadores", "Es una proporción simple que puedes calcular por norma y en total."],
+["¿Qué es el PASST?", "Un programa voluntario de la STPS para implantar un sistema de seguridad y salud", "Una multa por incumplimiento", "Un formato del IMSS para accidentes", "El Programa de Autogestión es voluntario y reconoce a quienes avanzan en su sistema."]
+],
+"comp": ["Cómo se oye al recibir al inspector", "«Espéreme, déjeme ver dónde tenemos eso…»", "«Bienvenido. Aquí está nuestro expediente ordenado por norma; dígame por cuál quiere empezar.»"],
+"refl": "Escribe cómo organizarías el expediente de seguridad de un centro de trabajo para que cualquier persona encuentre la evidencia de cada norma en menos de cinco minutos.",
+"pl": ["Autodiagnóstico previo a la inspección", "AUTODIAGNÓSTICO DE CUMPLIMIENTO\nFecha: [ ]   Revisó: [ ]\n\nNorma | Requisitos revisados | Cumplidos | % | Dónde está la evidencia\nNOM-002 | [ ] | [ ] | [=C/B] | [carpeta / liga]\nNOM-017 | [ ] | [ ] | [ ] | [ ]\nNOM-019 | [ ] | [ ] | [ ] | [ ]\nNOM-026 | [ ] | [ ] | [ ] | [ ]\nNOM-030 | [ ] | [ ] | [ ] | [ ]\nTOTAL | [suma] | [suma] | [%] |\n\nTres pendientes más urgentes:\n1. [ ]  Responsable: [ ]  Fecha: [ ]\n2. [ ]\n3. [ ]"]
+},
+{
+"caso": "<b>Caso: la comisión de papel</b><br>En una maquiladora de ropa de Tehuacán, la comisión de seguridad e higiene tiene acta de constitución y firmas. Pero los recorridos los hace una sola persona, llena el formato en la oficina y nadie revisa si lo que se encontró se corrigió. El mismo cable pelado aparece en tres actas seguidas.<br>La comisión es paritaria y existe para verificar y dar seguimiento. Un hallazgo que se repite en tres actas es la prueba de que la comisión solo firma.",
+"p": [
+["¿Qué significa que la comisión sea paritaria?", "Que tiene representantes del patrón y de los trabajadores en igual número", "Que tiene igual número de hombres y mujeres", "Que se reúne en pares de semanas", "Paritaria es con representación equilibrada de ambas partes."],
+["El cable pelado en tres actas indica que…", "no se da seguimiento a los hallazgos", "los recorridos se hacen muy seguido", "el cable no es peligroso", "La comisión sirve cuando lo encontrado se corrige, con responsable y fecha."],
+["¿Qué debe llevar cada hallazgo del recorrido?", "Responsable, fecha compromiso y verificación de cierre", "Solo la firma de quien recorrió", "Una foto para redes sociales", "Sin responsable y fecha, el hallazgo se queda en el papel."]
+],
+"comp": ["Cómo se oye en la reunión de la comisión", "«Ya firmamos el acta del trimestre, pasemos a lo siguiente.»", "«Antes de firmar, revisemos los pendientes del acta anterior: ¿qué se cerró, qué no y por qué?»"],
+"refl": "Redacta el orden del día de una reunión de la comisión de seguridad e higiene que empiece por revisar los pendientes del recorrido anterior.",
+"pl": ["Acta de recorrido con seguimiento", "ACTA DE RECORRIDO — COMISIÓN DE SEGURIDAD E HIGIENE\nFecha: [ ]   Áreas recorridas: [ ]\nIntegrantes (patrón / trabajadores): [ ]\n\nPENDIENTES DEL RECORRIDO ANTERIOR\nHallazgo | Responsable | ¿Cerrado? | Evidencia\n[ ] | [ ] | [sí/no] | [ ]\n\nHALLAZGOS NUEVOS\nNo. | Condición o acto inseguro | Área | Riesgo (alto/medio/bajo) | Acción | Responsable | Fecha\n1 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\n\nFirmas de los integrantes: [ ]"]
+},
+{
+"caso": "<b>Caso: el programa sin dueños</b><br>Una cadena de tres farmacias en Morelia hizo su diagnóstico de seguridad. Encontró extintores vencidos, un botiquín vacío y un almacén con cajas hasta el techo. Lo convirtió en un programa de 15 acciones, pero todas dicen «Responsable: gerencia» y «Fecha: 2026». Seis meses después solo se cerraron dos.<br>Cada acción necesita una persona responsable con nombre, una fecha concreta y una evidencia de cierre. Así el avance se puede medir con acciones cerradas entre totales.",
+"p": [
+["¿Por qué se cerraron tan pocas acciones?", "Porque no tenían responsables con nombre ni fechas concretas", "Porque eran demasiado caras", "Porque las farmacias no están obligadas a cumplir", "«Gerencia» y «2026» no obligan a nadie a nada."],
+["Si hay 15 acciones y se cerraron 6, el avance es…", "40%", "60%", "6%", "6 ÷ 15 = 0.40, es decir, 40%."],
+["¿Qué sirve como evidencia de cierre del botiquín?", "La lista de contenido revisada con fecha y firma", "Que el gerente diga que ya se compró", "El ticket de compra solamente", "La evidencia demuestra que la acción quedó hecha en el lugar, no solo que se pagó."]
+],
+"comp": ["Cómo se escribe una acción", "«Responsable: gerencia. Fecha: 2026. Mejorar el almacén.»", "«Responsable: Laura Pérez. Fecha: 15 de marzo. Bajar las cajas a no más de 1.5 m y liberar el pasillo. Evidencia: foto y recorrido.»"],
+"refl": "Toma tres problemas de seguridad que hayas visto en algún lugar y escríbelos como acciones con responsable, fecha y evidencia de cierre.",
+"pl": ["Programa de seguridad y salud (formato de seguimiento)", "PROGRAMA DE SEGURIDAD Y SALUD — [Centro de trabajo] — [Año]\nResponsable de servicios preventivos: [ ]\n\nNo. | Hallazgo del diagnóstico | Acción | Norma | Responsable | Fecha | Evidencia de cierre | Estado\n1 | [ ] | [ ] | [ ] | [nombre] | [dd/mm] | [ ] | [abierta/cerrada]\n2 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\n\nAvance = acciones cerradas ÷ acciones totales = [ ]%\nRevisión mensual con: [ ]"]
+},
+{
+"caso": "<b>Caso: todo es «alto»</b><br>El jefe de mantenimiento de una fábrica de plásticos en Querétaro llenó su matriz de riesgos y calificó 42 de 45 peligros como «alto». Con todo en rojo, la dirección no supo por dónde empezar y no aprobó nada. Revisando, resultó que usó escalas distintas en cada área y calificó por intuición.<br>Riesgo es probabilidad por consecuencia, con la misma escala para todos. Una matriz que no distingue prioridades no sirve para decidir.",
+"p": [
+["¿Cuál fue el error principal de la matriz?", "Usar escalas distintas y calificar por intuición", "Tener demasiados peligros identificados", "Usar hoja de cálculo en lugar de papel", "Sin una escala común, los resultados no se pueden comparar."],
+["Si la probabilidad es 4 y la consecuencia 5, el riesgo es…", "20", "9", "45", "Riesgo = probabilidad × consecuencia = 4 × 5 = 20."],
+["Para un peligro con riesgo alto, ¿qué control se intenta primero?", "Eliminar o sustituir el peligro", "Entregar equipo de protección personal", "Poner un letrero de advertencia", "La jerarquía de controles empieza por eliminar y termina en el EPP."]
+],
+"comp": ["Cómo se presenta a la dirección", "«Tenemos 42 riesgos altos, hay que atender todo.»", "«Tenemos 5 riesgos altos con la misma escala; estos son los controles y el costo de cada uno. Empecemos por aquí.»"],
+"refl": "Elige tres peligros de un lugar de trabajo que conozcas. Califica probabilidad y consecuencia del 1 al 5, calcula el riesgo y propón un control para el más alto usando la jerarquía de controles.",
+"pl": ["Matriz de riesgos básica", "MATRIZ DE RIESGOS — [Área]\nEscala de probabilidad (1–5): 1 casi imposible · 3 posible · 5 casi seguro\nEscala de consecuencia (1–5): 1 sin lesión · 3 incapacidad temporal · 5 muerte o incapacidad permanente\n\nPeligro | Probabilidad | Consecuencia | Riesgo (=P×C) | Nivel | Control propuesto (jerarquía)\n[ ] | [ ] | [ ] | [ ] | [=SI(D2>=15,\"Alto\",SI(D2>=8,\"Medio\",\"Bajo\"))] | [ ]\n\nJerarquía: eliminar → sustituir → ingeniería → administrativos → EPP"]
+},
+{
+"caso": "<b>Caso: «este año tuvimos menos accidentes»</b><br>Una constructora de Mérida presumió que bajó de 8 a 6 accidentes. Pero en ese año pasó de 40 a 20 trabajadores por falta de obras. Al calcular el índice de frecuencia con las horas-hombre trabajadas, la tasa en realidad subió.<br>Los números absolutos engañan cuando cambia el tamaño de la plantilla. Compara siempre con índices calculados con la misma fórmula.",
+"p": [
+["¿Por qué engaña comparar 8 contra 6 accidentes?", "Porque cambió el número de trabajadores y las horas trabajadas", "Porque 6 es menor que 8", "Porque los accidentes de obra no cuentan", "La exposición cambió a la mitad: hay que dividir entre horas-hombre."],
+["¿Cómo se calculan las horas-hombre trabajadas?", "Trabajadores × horas trabajadas en el periodo", "Trabajadores × días del año", "Accidentes × horas de incapacidad", "HHT es la base de exposición para los índices."],
+["El índice de gravedad usa…", "los días perdidos por accidente", "el número de extintores", "los accidentes sin incapacidad", "IG = días perdidos × 1,000,000 ÷ HHT."]
+],
+"comp": ["Cómo se reporta", "«Bajamos los accidentes de 8 a 6.»", "«Con la mitad de personal, nuestro índice de frecuencia subió; tenemos que revisar qué cambió en las obras.»"],
+"refl": "Explica con tus palabras, como si se lo dijeras a un dueño de negocio, por qué conviene medir índices en lugar de contar accidentes. Usa el caso de la constructora.",
+"pl": ["Hoja de índices de accidentes", "ÍNDICES DE ACCIDENTES\nPeriodo | Trabajadores | Horas por trabajador | HHT | Accidentes | Días perdidos | IF | IG\n[2025] | [40] | [2,300] | [=B2*C2] | [8] | [ ] | [=E2*1000000/D2] | [=F2*1000000/D2]\n[2026] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\n\nCambio del IF: [=(G3-G2)/G2]\nConclusión: [ ]"]
+}
+]
+}

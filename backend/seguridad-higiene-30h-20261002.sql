@@ -1,0 +1,4 @@
+-- Diplomado en Seguridad e Higiene en el Trabajo (Normas STPS): ampliado a 30 horas reales (opción B).
+BEGIN;
+UPDATE cursos SET horas=30, descripcion='Aprende a identificar peligros, evaluar riesgos y organizar la seguridad de tu centro de trabajo con las principales normas de la STPS: comisión de seguridad e higiene, equipo de protección personal, incendios, señalización, químicos, ergonomía, ruido, emergencias e investigación de accidentes. Incluye 20 casos de talleres, fábricas y comercios mexicanos con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas el programa de seguridad de un centro de trabajo real, con matrices e indicadores en hoja de cálculo. Para supervisores, RH, EHS, comisiones y dueños de pymes. No sustituye la asesoría de un especialista.' WHERE id='d-seguridad-higiene';
+COMMIT;

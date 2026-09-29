@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: la brigada que solo existía en el turno de día</b><br>Una planta de alimentos en Irapuato trabaja tres turnos. Formó sus brigadas de incendio, evacuación y primeros auxilios con personal de oficina, que solo está de 8 a 5. Un conato de incendio a las 2 de la mañana encontró al turno nocturno sin nadie capacitado, sin saber dónde estaba el punto de reunión.<br>El plan de emergencias dice quién hace qué antes de que pase, en todos los turnos, con suplentes.",
+"p": [
+["¿Cuál fue la falla del plan?", "Las brigadas no cubrían todos los turnos", "Que había demasiados brigadistas", "Que el incendio fue de noche", "El riesgo existe las 24 horas; las brigadas también."],
+["¿Qué incluye un plan de emergencias?", "Brigadas, rutas, puntos de reunión y quién hace qué", "Solo el número del 911", "La lista de extintores", "El plan organiza la respuesta completa."],
+["Además de la STPS, ¿qué más revisar?", "Lo que pide protección civil de tu estado y municipio", "Solo las normas del IMSS", "Nada más", "Protección civil tiene sus propios requisitos locales."]
+],
+"comp": ["Cómo se forma una brigada", "«Que la hagan los de oficina, son los que tienen tiempo.»", "«Necesitamos al menos dos brigadistas capacitados por turno y un suplente por cada uno.»"],
+"refl": "Diseña las brigadas de un centro de trabajo con dos turnos: cuántas personas por brigada y turno, cómo elegirlas y cómo las capacitarías.",
+"pl": ["Directorio de brigadas por turno", "BRIGADAS DE EMERGENCIA — [Centro de trabajo]\nBrigada | Turno | Titular | Suplente | Capacitación (fecha) | Ubicación del equipo\nIncendio | [Matutino] | [ ] | [ ] | [ ] | [ ]\nIncendio | [Nocturno] | [ ] | [ ] | [ ] | [ ]\nEvacuación | [ ] | [ ] | [ ] | [ ] | [ ]\nPrimeros auxilios | [ ] | [ ] | [ ] | [ ] | [ ]\nBúsqueda y rescate | [ ] | [ ] | [ ] | [ ] | [ ]\n\nPunto de reunión: [ ]   Teléfonos: 911 · [protección civil local] · [ ]"]
+},
+{
+"caso": "<b>Caso: el simulacro «perfecto»</b><br>Una escuela particular de Toluca hizo su simulacro de incendio. Todos salieron en orden, se tomó foto y se subió a redes. Nadie midió el tiempo ni contó a las personas contra la lista del día. Después se supo que dos maestras se quedaron en la sala de juntas porque no escucharon la alarma.<br>Un simulacro se mide: tiempos por área y conteo de personas. Y debe terminar con algo corregido.",
+"p": [
+["¿Qué faltó en el simulacro?", "Medir tiempos y contar a las personas contra la lista", "Tomar más fotos", "Hacerlo en horario de clases", "Sin medición no sabes si funcionó."],
+["Las maestras que no escucharon la alarma indican…", "un hallazgo que debe corregirse, por ejemplo alarma audible en todas las salas", "que ellas fallaron", "que el simulacro salió bien", "Cada simulacro debe dejar al menos una acción de mejora."],
+["¿Qué documento debe quedar del simulacro?", "Un acta con resultados y acciones de mejora", "Una publicación en redes", "La lista de asistencia a la escuela", "El acta es la evidencia del simulacro y de lo que se aprendió."]
+],
+"comp": ["Cómo se reporta el simulacro", "«Salió perfecto, todos salieron en orden.»", "«Evacuamos en 3 minutos 40 segundos; faltaron dos personas en la sala de juntas porque la alarma no se oye ahí. Instalamos una bocina esta semana.»"],
+"refl": "Planea un simulacro de evacuación para un lugar que conozcas: escenario, quién observa, qué se mide y cómo se registra.",
+"pl": ["Evaluación de simulacro", "EVALUACIÓN DE SIMULACRO\nFecha: [ ]   Hora de alarma: [ ]   Escenario: [ ]\n\nÁrea | Personas según lista | Personas contadas | Diferencia | Hora de llegada al punto | Tiempo (min)\n[ ] | [ ] | [ ] | [=B2-C2] | [ ] | [ ]\nTOTAL | [ ] | [ ] | [ ] | | [máximo]\n\nObservaciones de los evaluadores: [ ]\nAcciones de mejora | Responsable | Fecha\n[ ] | [ ] | [ ]"]
+},
+{
+"caso": "<b>Caso: «el trabajador se distrajo»</b><br>En un almacén de Tijuana, un montacarguista golpeó un rack y le cayó una caja a un compañero. El reporte dice: «Causa: el trabajador se distrajo. Acción: se le levantó un acta administrativa». Al preguntar los porqués, apareció que el pasillo era más angosto de lo que pedía el montacargas, que no había espejo en la esquina y que el operador llevaba 11 horas trabajando por falta de personal.<br>Se investiga para prevenir, no para culpar. Casi siempre se suman varias causas.",
+"p": [
+["¿Qué falla tiene el reporte original?", "Se quedó en culpar a la persona y no buscó las causas raíz", "Que no puso la hora exacta", "Que levantó un acta", "«Se distrajo» es un síntoma; los porqués llevan a las condiciones."],
+["Las 11 horas de trabajo son una causa…", "de organización del trabajo", "sin relación con el accidente", "que solo depende del trabajador", "El cansancio por jornadas largas es una causa organizacional."],
+["¿Qué muestra el árbol de causas?", "Que varias causas se suman para producir el accidente", "Quién tiene la culpa", "El costo del accidente", "El árbol hace visible cómo se combinan las causas."]
+],
+"comp": ["Cómo se escribe la conclusión", "«Causa: el trabajador se distrajo. Acción: acta administrativa.»", "«Causas: pasillo angosto, esquina sin visibilidad y jornada de 11 horas. Acciones: ampliar pasillo, instalar espejo y contratar apoyo en temporada alta.»"],
+"refl": "Toma un accidente o incidente que conozcas (en el trabajo o en casa) y aplica los 5 porqués hasta llegar a una causa que se pueda corregir.",
+"pl": ["Investigación con 5 porqués", "INVESTIGACIÓN DE ACCIDENTE\nFecha: [ ]   Área: [ ]   Lesionado: [ ]   Investigó: [ ]\n\nQué pasó: [ ]\n\n¿Por qué? 1. [ ]\n¿Por qué? 2. [ ]\n¿Por qué? 3. [ ]\n¿Por qué? 4. [ ]\n¿Por qué? 5. [ ]\n\nCausas (pueden ser varias): [ ]\nAcción | Responsable | Fecha | Evidencia\n[ ] | [ ] | [ ] | [ ]\n\nEsta investigación busca prevenir, no culpar."]
+},
+{
+"caso": "<b>Caso: el aviso que nunca llegó</b><br>Un trabajador de una cocina industrial en Culiacán se quemó el brazo con aceite. Lo llevaron al IMSS, pero la empresa no llenó su parte del aviso de accidente. Semanas después, el trabajador tuvo problemas para que el accidente se reconociera como de trabajo. Además, la empresa no volvió a revisar su programa anual de seguridad desde enero.<br>El aviso de accidente inicia el trámite ante el IMSS y el patrón debe llenar y firmar su parte en tiempo. Confirma siempre el plazo vigente.",
+"p": [
+["¿Qué perjudicó al trabajador?", "Que el patrón no llenara su parte del aviso de accidente", "Que fue al IMSS", "Que el aceite estaba caliente", "Sin el aviso, se complica reconocer el riesgo de trabajo."],
+["¿Qué sí debes confirmar siempre?", "El plazo vigente del aviso con el IMSS y la autoridad laboral", "El número de trabajadores del turno", "La marca del aceite", "Los plazos pueden cambiar: confírmalos en fuentes oficiales."],
+["¿Cada cuánto revisar el avance del programa anual?", "Cada mes: hechas, atrasadas y porcentaje de avance", "Solo en enero", "Cuando llegue una inspección", "El seguimiento mensual evita sorpresas a fin de año."]
+],
+"comp": ["Cómo se oye en RH", "«Ya lo llevamos al IMSS, allá que lo arreglen.»", "«Hoy mismo llenamos nuestra parte del aviso, la firmamos y guardamos copia en el expediente del accidente.»"],
+"refl": "Escribe la lista de pasos que seguiría RH el mismo día de un accidente de trabajo, desde la atención médica hasta el archivo del expediente.",
+"pl": ["Tablero mensual del programa anual", "PROGRAMA ANUAL DE SEGURIDAD — SEGUIMIENTO\nMes | Actividades programadas | Hechas | Atrasadas | % avance\n[Ene] | [ ] | [ ] | [=B2-C2] | [=C2/B2]\n[Feb] | [ ] | [ ] | [ ] | [ ]\nACUMULADO | [suma] | [suma] | [ ] | [ ]\n\nAtrasadas y plan para recuperarlas: [ ]\n\nChecklist del día del accidente:\n□ Atención médica  □ Aviso al IMSS (parte del patrón)  □ Resguardar el lugar\n□ Iniciar investigación  □ Expediente con copia de todo"]
+}
+],
+"labs": [
+{
+"t": "El diagnóstico legal de un taller",
+"obj": "hacer el primer diagnóstico de seguridad de un centro de trabajo: tipo de riesgos, normas aplicables, evidencia existente y prioridades.",
+"esc": "Te contratan como asesor externo en <b>Talleres Hernández</b>, un taller mecánico y de hojalatería de Guadalajara con 14 trabajadores: 6 mecánicos, 4 hojalateros y pintores, 2 en refacciones y 2 en oficina. Hace un mes un mecánico se cortó con una lámina y el dueño quiere «ponerse al día antes de que venga la STPS».",
+"e": [
+["<b>Escena 1 — El recorrido.</b> Ves solventes sin etiqueta, un compresor sin mantenimiento registrado, extintores sin revisión mensual y trabajadores sin lentes al esmerilar.", "Escribe las cinco condiciones de riesgo que anotarías y a qué norma se relaciona cada una."],
+["<b>Escena 2 — La lista de normas.</b> El dueño cree que por tener menos de 15 trabajadores «casi nada le aplica».", "Explícale en un párrafo por qué sí le aplican normas y cuáles serían las primeras cinco."],
+["<b>Escena 3 — El accidente del mes pasado.</b> Nadie lo registró ni investigó.", "Escribe qué harías hoy con ese accidente: registro, investigación y acciones."],
+["<b>Escena 4 — Las prioridades.</b> El dueño tiene presupuesto para tres cosas este mes.", "Elige las tres acciones que harías primero y justifica por qué esas."]
+],
+"p": [
+["¿Qué define las normas que le aplican al taller?", "Sus actividades, equipos y sustancias", "Su número de trabajadores", "Su giro fiscal", "Las normas se ligan a lo que se hace."],
+["Con presupuesto limitado, ¿qué atiendes primero?", "Los riesgos altos que pueden causar lesiones graves pronto", "Lo más barato", "Los carteles y señalización de toda la nave", "La matriz de riesgos ordena prioridades."],
+["El accidente no registrado del mes pasado…", "se registra e investiga ahora para prevenir el siguiente", "ya no importa", "se oculta para no tener problemas", "Siempre se puede aprender de un accidente pasado."]
+],
+"pl": ["Diagnóstico inicial en una hoja", "DIAGNÓSTICO INICIAL — [Centro de trabajo]\nGiro y actividades: [ ]   Trabajadores: [ ]   Turnos: [ ]\n\nRiesgos observados | Norma relacionada | Evidencia existente | Prioridad\n[ ] | [ ] | [ ] | [alta/media/baja]\n\nAccidentes e incidentes del último año: [ ]\nTres acciones de este mes:\n1. [ ]  2. [ ]  3. [ ]\nSiguiente revisión: [fecha]"]
+},
+{
+"t": "Organizar la seguridad de una planta mediana",
+"obj": "integrar la comisión, construir la matriz de riesgos y calcular los índices de una planta para presentar un programa a la dirección.",
+"esc": "Eres la nueva coordinadora de seguridad de <b>Plásticos del Bajío</b>, en Silao, con 80 trabajadores en tres turnos. El año pasado hubo 9 accidentes con 120 días perdidos. Hay una comisión que no se reúne desde hace un año y ningún diagnóstico formal.",
+"e": [
+["<b>Escena 1 — La comisión.</b> El sindicato dice que la empresa elige a «los suyos» para la comisión.", "Escribe cómo integrarías una comisión paritaria legítima y cuándo harías el primer recorrido."],
+["<b>Escena 2 — La matriz.</b> Identificas 30 peligros entre inyectoras, molinos, montacargas y químicos.", "Explica la escala que usarías y cómo presentarías los cinco riesgos más altos."],
+["<b>Escena 3 — Los índices.</b> La planta trabajó alrededor de 185,000 horas-hombre el año pasado.", "Calcula el índice de frecuencia y el de gravedad y explica qué le dirías a la dirección."],
+["<b>Escena 4 — El programa.</b> La dirección pide «un plan que se pueda medir».", "Escribe cinco acciones del programa con responsable, fecha e indicador."]
+],
+"p": [
+["Con 9 accidentes y 185,000 HHT, el IF es aproximadamente…", "48.6", "4.86", "486", "9 × 1,000,000 ÷ 185,000 ≈ 48.6."],
+["Una comisión legítima se integra…", "con representantes de trabajadores elegidos por ellos y del patrón", "solo con personal de confianza", "con quien quiera participar sin acta", "La paridad y la legitimidad le dan fuerza a la comisión."],
+["¿Qué hace medible un programa?", "Responsables, fechas e indicadores por acción", "Que sea largo y detallado", "Que tenga muchas fotos", "Sin indicador no hay forma de saber si avanzó."]
+],
+"pl": ["Presentación a la dirección", "PRESENTACIÓN DE SEGURIDAD — [Planta]\n1. Dónde estamos: IF [ ], IG [ ], accidentes [ ], días perdidos [ ]\n2. Los cinco riesgos más altos: [ ]\n3. Comisión: integrantes y calendario de recorridos\n4. Programa: acción · responsable · fecha · indicador\n5. Qué necesitamos de la dirección: [presupuesto / decisiones]\n6. Cómo mediremos el avance: [tablero mensual]"]
+},
+{
+"t": "Riesgos químicos, máquinas y fuego en una misma nave",
+"obj": "aplicar las normas de EPP, incendios, maquinaria, químicos y altura en un recorrido completo por una nave industrial.",
+"esc": "Recorres la nave de <b>Muebles Finos del Norte</b>, en Durango, con la comisión de seguridad. Hay sierras, lijadoras, cabina de barniz, un tapanco donde se guardan tableros a tres metros de altura y mucho aserrín en el piso.",
+"e": [
+["<b>Escena 1 — El aserrín.</b> Hay aserrín acumulado junto a los tableros eléctricos y un extintor detrás de un mueble.", "Escribe las acciones inmediatas de incendio y orden que ordenarías."],
+["<b>Escena 2 — La cabina de barniz.</b> Los barnizadores usan cubrebocas de tela y los botes no tienen etiqueta.", "Escribe qué revisarías en las HDS y qué EPP y señalización pedirías."],
+["<b>Escena 3 — La sierra.</b> Le quitaron la guarda porque «estorbaba para cortes chicos».", "Escribe cómo abordarías al operador y qué control propondrías."],
+["<b>Escena 4 — El tapanco.</b> Suben por una escalera sin barandal a tres metros para bajar tableros.", "Escribe qué medidas de trabajo en altura pedirías y en qué orden."]
+],
+"p": [
+["Quitar la guarda de una sierra es…", "una condición insegura que debe corregirse de inmediato", "aceptable si el operador tiene experiencia", "una mejora de productividad", "La guarda existe para evitar amputaciones."],
+["Para vapores de barniz, un cubrebocas de tela…", "no protege: se requiere el respirador que indique la HDS", "es suficiente", "protege si se cambia diario", "El EPP respiratorio se elige según el contaminante."],
+["El tapanco a tres metros requiere…", "tratarse como trabajo en altura con barandales, acceso seguro y análisis", "solo cuidado al subir", "un letrero de precaución", "Más de 1.80 m es trabajo en altura."]
+],
+"pl": ["Lista de verificación del recorrido", "RECORRIDO DE VERIFICACIÓN — [Nave]\n□ Extintores visibles, accesibles y revisados (NOM-002)\n□ Orden y limpieza, sin acumulación de combustibles\n□ Guardas y paros de emergencia en máquinas (NOM-004)\n□ Químicos con HDS y etiqueta SGA (NOM-018)\n□ EPP adecuado y en uso (NOM-017)\n□ Accesos y protecciones en alturas (NOM-009)\n□ Señalización correcta (NOM-026)\n\nHallazgos, responsables y fechas: [ ]"]
+},
+{
+"t": "Salud ocupacional en un centro de distribución",
+"obj": "evaluar cargas, ruido, iluminación, factores psicosociales y primeros auxilios en un centro de distribución y proponer controles.",
+"esc": "Asesoras a <b>Distribuidora Occidente</b>, un centro de distribución en Zapopan con 60 trabajadores. Hay quejas de dolor de espalda, una banda transportadora muy ruidosa, un andén poco iluminado en el turno nocturno y rotación alta de personal.",
+"e": [
+["<b>Escena 1 — Las cajas.</b> Se cargan cajas de 30 kilos a mano, del piso al camión, cientos de veces por turno.", "Escribe cómo evaluarías el puesto y tres controles, del más eficaz al menos eficaz."],
+["<b>Escena 2 — La banda.</b> Los trabajadores gritan para hablarse junto a la banda.", "Escribe qué medirías y qué harías según el resultado."],
+["<b>Escena 3 — El andén.</b> En la noche, un montacargas casi atropella a un trabajador por falta de luz.", "Escribe cómo verificarías la iluminación y qué propondrías."],
+["<b>Escena 4 — La rotación.</b> En salidas, la gente dice que el jefe grita y que las jornadas se alargan sin aviso.", "Escribe qué harías con esto desde la NOM-035."]
+],
+"p": [
+["Si hay que gritar para hablarse, probablemente…", "el ruido es alto y conviene medirlo", "el ambiente es normal", "los trabajadores exageran", "Tener que gritar a un metro es señal de ruido elevado."],
+["El control más eficaz para las cajas de 30 kilos es…", "una ayuda mecánica o reducir el peso por caja", "capacitar en técnicas de levantamiento", "dar fajas", "Ingeniería antes que capacitación y EPP."],
+["Las quejas de gritos y jornadas son…", "posibles factores de riesgo psicosocial que deben atenderse", "problemas personales", "algo que no toca a la empresa", "Liderazgo negativo y jornadas son factores de la NOM-035."]
+],
+"pl": ["Plan de salud ocupacional", "PLAN DE SALUD OCUPACIONAL — [Centro]\nTema | Hallazgo | Medición o evaluación | Control propuesto | Responsable | Fecha\nCargas (NOM-036-1) | [ ] | [ ] | [ ] | [ ] | [ ]\nRuido (NOM-011) | [ ] | [ ] | [ ] | [ ] | [ ]\nIluminación (NOM-025) | [ ] | [ ] | [ ] | [ ] | [ ]\nPsicosocial (NOM-035) | [ ] | [ ] | [ ] | [ ] | [ ]\nPrimeros auxilios | [ ] | [ ] | [ ] | [ ] | [ ]"]
+},
+{
+"t": "El programa de seguridad de tu centro de trabajo",
+"obj": "integrar todo el diplomado en el programa de seguridad y salud de un centro de trabajo real, listo para presentarse a una dirección o a una comisión.",
+"esc": "Este es tu proyecto final. Vas a armar el <b>programa de seguridad y salud</b> de tu propio centro de trabajo o, si no trabajas en una empresa, de uno que conozcas bien (un taller, una tienda, una escuela, una cocina). Al terminar tendrás un documento que puedes presentar a una dirección o usar como muestra de tu trabajo.",
+"e": [
+["<b>Parte 1 — Diagnóstico y normas.</b> Con lo del módulo 1.", "Describe el centro de trabajo (giro, trabajadores, turnos, áreas) y escribe su lista de normas aplicables con la evidencia que hoy existe."],
+["<b>Parte 2 — Matriz y organización.</b> Con lo del módulo 2.", "Escribe los cinco riesgos más altos de tu matriz, con su control, y cómo integrarías o reactivarías la comisión."],
+["<b>Parte 3 — Controles y salud.</b> Con lo de los módulos 3 y 4.", "Escribe las medidas de EPP, incendios, químicos, cargas y primeros auxilios que necesita tu centro de trabajo."],
+["<b>Parte 4 — Emergencias, indicadores y calendario.</b> Con lo del módulo 5.", "Escribe tu plan de brigadas, la fecha del próximo simulacro, los indicadores que medirás (IF, IG, % de avance) y el calendario de 12 meses."]
+],
+"p": [
+["¿Qué define las normas aplicables de tu centro?", "Sus actividades, equipos y sustancias", "Solo el número de trabajadores", "Lo que tenga una empresa vecina del mismo tamaño", "Las normas se ligan a lo que se hace."],
+["¿Qué hace útil tu matriz de riesgos?", "Una escala común que distingue prioridades", "Que todo salga en rojo", "Que tenga muchos peligros", "Una matriz sirve para decidir por dónde empezar."],
+["¿Qué orden sigue la jerarquía de controles?", "Eliminar, sustituir, ingeniería, administrativos, EPP", "EPP, capacitación y letreros", "Letreros, EPP, eliminar", "El EPP es la última barrera, no la primera."],
+["¿Cómo sabrás si tu programa funciona?", "Con indicadores medidos cada mes", "Si no llega la STPS", "Si nadie se queja", "Lo que no se mide no se puede mejorar."],
+["Tu constancia de este diplomado te permite…", "organizar y dar seguimiento a la seguridad dentro de los límites que estudiaste", "emitir dictámenes como unidad de verificación", "sustituir al médico del trabajo", "Es una constancia de un diplomado libre; no te acredita como unidad de verificación."]
+],
+"pl": ["Índice del programa de seguridad y salud", "PROGRAMA DE SEGURIDAD Y SALUD EN EL TRABAJO\n[Centro de trabajo] · [Elaboró] · [Fecha]\n\n1. Datos del centro de trabajo y diagnóstico\n2. Normas aplicables y evidencia\n3. Comisión de seguridad e higiene y calendario de recorridos\n4. Matriz de riesgos y controles\n5. EPP, incendios, maquinaria y químicos\n6. Salud ocupacional: cargas, ruido, iluminación, NOM-035, primeros auxilios\n7. Plan de emergencias, brigadas y simulacros\n8. Investigación de accidentes y avisos\n9. Indicadores (IF, IG, % de avance)\n10. Calendario de 12 meses con responsables"]
+}
+]
+}

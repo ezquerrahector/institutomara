@@ -1,0 +1,92 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: los lentes en la bolsa</b><br>En un taller de herrería de Saltillo, el dueño compró lentes de seguridad para todos. Los soldadores los traen colgados del cuello o en la bolsa, porque se empañan y rayan. Nadie les explicó cuándo usarlos ni se revisó si eran los adecuados para esmerilar. Además, el letrero de «uso obligatorio de lentes» está en color rojo, como si fuera una prohibición.<br>El EPP se elige a partir del riesgo de cada puesto, se entrega con capacitación y se reemplaza. Y las señales tienen colores con significado: azul obliga, rojo prohíbe.",
+"p": [
+["¿Qué faltó en la entrega de lentes?", "Analizar el riesgo por puesto, elegir el modelo adecuado y capacitar", "Comprar una marca más cara", "Pedir a los trabajadores que firmen de recibido", "Sin análisis ni capacitación, el EPP termina en la bolsa."],
+["Una señal de obligación («uso obligatorio de lentes») es de color…", "azul", "rojo", "amarillo", "Azul obliga; rojo prohíbe o marca equipo contra incendio; amarillo advierte; verde indica condición segura."],
+["Los lentes se empañan y rayan. ¿Qué harías?", "Revisar otro modelo adecuado al trabajo y reemplazar los dañados", "Dejar que cada quien decida si los usa", "Multar a quien no los use", "El EPP debe ser adecuado y estar en buen estado; si no sirve, no se usa."]
+],
+"comp": ["Cómo se entrega el EPP", "«Ahí están los lentes, úsenlos.»", "«Estos lentes protegen de las chispas del esmeril. Se usan desde que prendes la máquina. Si se rayan, me los cambias aquí y te doy otros.»"],
+"refl": "Elige un puesto que conozcas. Escribe sus riesgos principales, el EPP que necesita y cómo lo entregarías para que de verdad se use.",
+"pl": ["Control de entrega de EPP", "CONTROL DE ENTREGA DE EPP\nPuesto: [ ]   Riesgos del puesto: [ ]\n\nTrabajador | EPP entregado | Fecha de entrega | ¿Capacitado en su uso? | Fecha de reemplazo | Firma\n[ ] | [lentes contra impacto] | [ ] | [sí/no] | [ ] | [ ]\n[ ] | [guantes de carnaza] | [ ] | [ ] | [ ] | [ ]\n\nRevisión mensual del estado del EPP: [responsable]"]
+},
+{
+"caso": "<b>Caso: el extintor detrás de las cajas</b><br>En una papelería mayorista de Monterrey, el extintor está bien cargado, pero quedó tapado por cajas de cuadernos durante la temporada de regreso a clases. En la misma bodega hay cartón acumulado junto a una extensión eléctrica sobrecargada. El encargado dice que «el extintor está vigente».<br>Tener el extintor no basta: debe estar visible, accesible y revisado cada mes. El orden y la limpieza reducen la carga de fuego y liberan las rutas.",
+"p": [
+["¿Cuál es el problema con el extintor?", "No está accesible ni visible aunque esté cargado", "Que está vencido", "Que debería estar en la oficina", "Un extintor tapado no sirve en una emergencia."],
+["¿Qué método ayuda a quitar el cartón acumulado y ordenar?", "Las 5S", "Los 5 porqués", "La matriz de Eisenhower", "Las 5S: clasificar, ordenar, limpiar, estandarizar y mantener."],
+["¿Con qué NO se debe apagar un fuego en equipo eléctrico?", "Con agua", "Con un extintor de CO₂", "Con un extintor de polvo químico seco apto para ese tipo de fuego", "El agua conduce la electricidad."]
+],
+"comp": ["Cómo se oye en la revisión mensual", "«El extintor está vigente, ya lo revisamos.»", "«Está cargado, pero lo tapan las cajas. Liberamos un metro alrededor, lo señalizamos y quitamos el cartón junto a la extensión.»"],
+"refl": "Diseña la revisión mensual de extintores de un negocio pequeño: qué revisar en cada uno, quién lo hace y dónde queda registrado.",
+"pl": ["Bitácora mensual de extintores", "BITÁCORA MENSUAL DE EXTINTORES — [Mes]\nNo. | Ubicación | Tipo (clase de fuego) | ¿Visible y accesible? | ¿Manómetro en verde? | ¿Sello y seguro? | Fecha de recarga | Revisó\n1 | [ ] | [ ] | [sí/no] | [sí/no] | [sí/no] | [ ] | [ ]\n\nObservaciones y acciones: [ ]\n\n5S de la zona: clasificar [ ] · ordenar [ ] · limpiar [ ] · estandarizar [ ] · mantener [ ]"]
+},
+{
+"caso": "<b>Caso: «nomás le iba a quitar la basurita»</b><br>En una fábrica de tortillas de León, un operador metió la mano para quitar un pedazo de masa atorado en la máquina. La había apagado con el botón de paro, pero otro compañero la volvió a encender sin saber que había alguien dentro. El operador sufrió una lesión en los dedos.<br>El botón de paro no es suficiente. Antes de cualquier intervención se bloquea la energía y se etiqueta, para que nadie pueda encender la máquina mientras alguien trabaja en ella.",
+"p": [
+["¿Qué debió hacerse antes de meter la mano?", "Bloquear la fuente de energía y colocar una etiqueta", "Avisar en voz alta a los compañeros", "Apagar con el botón de paro", "El bloqueo físico impide que alguien encienda la máquina por error."],
+["¿Quién debe hacer mantenimiento eléctrico?", "Personal autorizado, con el equipo desenergizado y equipo dieléctrico", "Cualquiera que sepa un poco de electricidad", "El operador de la máquina, porque la conoce", "La NOM-029 pide personal autorizado y condiciones seguras."],
+["¿Qué le falta a la máquina según la NOM-004?", "Análisis de riesgos, protectores y procedimientos", "Un color más llamativo", "Un contador de producción", "Cada máquina necesita protecciones, procedimientos y capacitación."]
+],
+"comp": ["Cómo se oye antes de intervenir", "«Nomás la apago tantito y le quito la basurita.»", "«Voy a destrabarla: corto la energía, pongo mi candado y mi etiqueta, y compruebo que no arranca antes de meter la mano.»"],
+"refl": "Escribe, paso a paso, el procedimiento de bloqueo y etiquetado para una máquina que conozcas (una revolvedora, una sierra, una licuadora industrial).",
+"pl": ["Procedimiento de bloqueo y etiquetado", "BLOQUEO Y ETIQUETADO — [Máquina]\n1. Avisar a los afectados: [quiénes]\n2. Apagar con el control normal.\n3. Aislar la energía: [interruptor / válvula / otra fuente]\n4. Colocar candado personal y etiqueta con nombre y fecha.\n5. Liberar energía acumulada: [resortes, presión, partes en movimiento].\n6. Comprobar que no arranca: [prueba].\n7. Hacer el trabajo.\n8. Retirar herramientas, avisar y quitar el candado (solo quien lo puso).\n\nAutorizados para esta máquina: [ ]"]
+},
+{
+"caso": "<b>Caso: el garrafón sin etiqueta</b><br>En una empresa de limpieza de Cancún, el supervisor rellena garrafones de agua con cloro concentrado y otro producto desengrasante para repartirlos en los hoteles. No tienen etiqueta. Una trabajadora nueva mezcló los dos para «que limpie mejor» y se intoxicó con los gases. En otra área, un trabajador limpia vidrios a cuatro metros sobre una escalera sin arnés.<br>Cada químico necesita su hoja de datos de seguridad y su recipiente señalizado con el SGA. Y más de 1.80 metros es trabajo en altura.",
+"p": [
+["¿Qué debía tener cada garrafón?", "La etiqueta con el nombre del producto y sus pictogramas del SGA", "Solo el nombre escrito a mano", "Una tapa de color", "Sin identificación, cualquiera puede mezclar o confundir un químico."],
+["¿Dónde se consulta qué productos no deben mezclarse?", "En la hoja de datos de seguridad (HDS)", "En la etiqueta del precio", "En internet, en cualquier foro", "La HDS de 16 secciones incluye estabilidad y reactividad."],
+["Limpiar vidrios a cuatro metros es…", "trabajo en altura: requiere análisis, equipo revisado y anclaje", "trabajo normal si la escalera es firme", "responsabilidad solo del trabajador", "Más de 1.80 m es trabajo en altura según la NOM-009."]
+],
+"comp": ["Cómo se reparte el producto", "«Ahí está el garrafón, es el de siempre.»", "«Este es cloro, tiene su etiqueta y su pictograma de corrosión. Nunca se mezcla con el desengrasante: suelta gases tóxicos.»"],
+"refl": "Elige tres productos químicos que se usen en un trabajo que conozcas (limpieza, taller, salón de belleza). Escribe qué pictograma crees que tiene cada uno y cómo buscarías su HDS.",
+"pl": ["Inventario de sustancias químicas", "INVENTARIO DE SUSTANCIAS QUÍMICAS — [Área]\nProducto | Uso | Cantidad | Pictogramas SGA | ¿HDS disponible? | ¿Recipiente etiquetado? | EPP requerido | Incompatible con\n[Cloro] | [Desinfección] | [ ] | [corrosión] | [sí/no] | [sí/no] | [guantes, lentes] | [ ]\n\nUbicación de las HDS: [ ]   Responsable: [ ]"]
+},
+{
+"caso": "<b>Caso: los bultos de 50 kilos</b><br>En una forrajera de Zacatecas, dos trabajadores descargan bultos de alimento de 50 kilos del camión y los estiban a la altura de la cabeza. Uno tiene 52 años y lleva meses con dolor de espalda. El dueño dice que «así es el trabajo del campo».<br>La NOM-036-1 pide evaluar el manejo manual de cargas por puesto. Primero se reduce el peso y se usan ayudas mecánicas; capacitar en técnica es complemento, no la solución.",
+"p": [
+["¿Qué control conviene intentar primero?", "Reducir el peso por bulto o usar ayudas mecánicas como un diablito o banda", "Capacitar en cómo levantar bien", "Darle faja al trabajador", "La jerarquía de controles también aplica a la ergonomía."],
+["¿Por qué importa la edad del trabajador?", "Porque la referencia de masa máxima es menor fuera del rango de 18 a 45 años", "Porque los mayores trabajan más lento", "No importa, la carga es la misma para todos", "Verifica en el DOF los límites vigentes por edad y sexo."],
+["Estibar a la altura de la cabeza es un problema porque…", "aumenta el esfuerzo y el riesgo de lesión en hombros y espalda", "se ve desordenado", "ocupa más espacio", "La altura y la distancia del cuerpo cambian mucho el riesgo."]
+],
+"comp": ["Cómo se oye al dueño", "«Así es el trabajo del campo, siempre se ha hecho así.»", "«Si compramos un diablito y estibamos a la altura de la cintura, cuidamos la espalda de todos y descargamos igual de rápido.»"],
+"refl": "Describe un puesto donde se carguen cosas (bodega, cocina, tienda). Propón dos controles de ingeniería y uno administrativo para reducir el riesgo.",
+"pl": ["Evaluación rápida de manejo de cargas", "MANEJO MANUAL DE CARGAS — [Puesto]\nCarga | Peso (kg) | Veces por turno | Altura de origen y destino | Distancia recorrida | ¿Supera la referencia? | Control propuesto\n[Bulto] | [50] | [ ] | [piso → cabeza] | [ ] | [sí/no] | [ ]\n\nTrabajadores del puesto (edad y sexo, solo para comparar con la referencia): [ ]\nAyudas mecánicas disponibles: [ ]"]
+},
+{
+"caso": "<b>Caso: la costurera que ya no oye bien</b><br>En un taller de mezclilla de Tehuacán hay 40 máquinas trabajando al mismo tiempo. Una costurera con diez años ahí dice que ya no escucha la televisión en su casa. Al fondo del taller, donde se hacen los acabados finos, solo hay dos focos y las trabajadoras fuerzan la vista.<br>El ruido y la iluminación se miden y se comparan contra límites. La NOM-011 pide un programa de conservación de la audición desde cierto nivel, y la NOM-025 fija mínimos de luz según la tarea.",
+"p": [
+["¿Qué indica lo que cuenta la costurera?", "Una posible pérdida auditiva por exposición al ruido, que debe evaluarse", "Que necesita una televisión más grande", "Que es parte normal de la edad", "La exposición prolongada al ruido puede dañar la audición; se mide y se canaliza."],
+["Si el ruido sube 3 dB, el tiempo permitido…", "se reduce a la mitad", "se duplica", "no cambia", "Cada 3 dB más, la mitad del tiempo."],
+["Para el acabado fino, ¿qué se compara?", "Los lux medidos contra el mínimo de la NOM-025 para esa tarea", "El número de focos contra el número de trabajadoras", "La luz del taller contra la luz de la oficina", "El mínimo depende de la tarea: las de precisión piden más luz."]
+],
+"comp": ["Cómo se oye en la supervisión", "«Siempre ha habido ruido aquí, ya se acostumbran.»", "«Vamos a medir el ruido por área; si pasa del nivel de acción, entregamos protección auditiva y hacemos audiometrías.»"],
+"refl": "Diseña cómo medirías el ruido y la luz en un taller: en qué puntos, a qué hora, con qué equipo y qué harías con los resultados.",
+"pl": ["Comparación de mediciones con BUSCARV", "MEDICIONES DE ILUMINACIÓN\nTabla de mínimos (hoja «Mínimos»): Tarea | Lux mínimo\n\nPunto | Área | Tarea | Lux medido | Lux mínimo | ¿Cumple?\n1 | [Acabados] | [Precisión] | [ ] | [=BUSCARV(C2,Mínimos!A:B,2,FALSO)] | [=SI(D2>=E2,\"Sí\",\"No\")]\n\nMEDICIONES DE RUIDO\nPunto | dB(A) | Horas de exposición | ¿Nivel de acción? | Acción\n[ ] | [ ] | [ ] | [=SI(B2>=85,\"Sí\",\"No\")] | [ ]"]
+},
+{
+"caso": "<b>Caso: la encuesta que nadie vio</b><br>Una distribuidora de refacciones de Hermosillo con 35 trabajadores aplicó los cuestionarios de la NOM-035. Salió que el almacén tiene cargas excesivas y jornadas largas. El informe se guardó en un cajón. Seis meses después, dos almacenistas renunciaron y uno se quejó de malos tratos del jefe.<br>Evaluar sin actuar no sirve. Con más de 15 trabajadores, la empresa debe identificar y analizar los factores de riesgo, y tomar medidas.",
+"p": [
+["¿Qué obligación se incumplió?", "Tomar medidas a partir de los resultados", "Aplicar los cuestionarios", "Tener una política escrita en el comedor", "La evaluación es el inicio, no el final."],
+["La queja de malos tratos debe…", "atenderse por el mecanismo de quejas y revisarse la conducta del jefe", "ignorarse porque el trabajador ya se va", "resolverse despidiendo a quien se quejó", "Los mecanismos de queja protegen a quien reporta."],
+["Si un trabajador muestra síntomas de un trastorno, ¿qué haces?", "Canalizarlo a un profesional de la salud", "Diagnosticarlo tú con el cuestionario", "Pedirle que tome vacaciones", "La NOM-035 no convierte a RH en clínico."]
+],
+"comp": ["Cómo se oye en la junta de resultados", "«Ya aplicamos la encuesta, ya cumplimos.»", "«El almacén salió con cargas excesivas. Propongo un turno de apoyo en temporada alta y revisar el trato del jefe. Medimos en tres meses.»"],
+"refl": "Con los resultados del caso (cargas excesivas y jornadas largas en el almacén), escribe tres medidas concretas con responsable y cómo medirías si funcionaron.",
+"pl": ["Obligaciones NOM-035 por tamaño", "NOM-035 — ¿QUÉ ME TOCA?\nNúmero de trabajadores del centro: [ ]\n\nTodos: política, medidas de prevención, identificar a expuestos a acontecimientos traumáticos severos (Guía I), difusión.\nDe 16 a 50: además, identificar y analizar factores de riesgo (Guía II) y entorno.\nMás de 50: además, Guía III, evaluación del entorno organizacional y programa de intervención.\n\nMis pendientes: 1. [ ] 2. [ ] 3. [ ]\nVerifica los detalles en la norma publicada en el DOF."]
+},
+{
+"caso": "<b>Caso: el botiquín del 2019</b><br>En una tienda de abarrotes de Oaxaca, una empleada se cortó con la rebanadora de jamón. Abrieron el botiquín: había dos curitas, un frasco de alcohol vacío y medicamentos caducados desde 2019. Otro compañero quiso darle un analgésico «para el dolor».<br>El botiquín se revisa cada mes. En primeros auxilios se protege, se avisa al 911 y se socorre según tu capacitación; no se dan medicamentos.",
+"p": [
+["¿Qué es lo primero ante el corte?", "Protegerte, controlar el sangrado con presión directa y pedir ayuda si es grave", "Buscar un analgésico", "Lavar la herida con alcohol", "Presión directa con gasa limpia controla la mayoría de los sangrados."],
+["¿Por qué no darle el analgésico?", "Porque los primeros auxilios no incluyen dar medicamentos", "Porque estaba caducado", "Porque es caro", "Dar medicamentos no es parte de los primeros auxilios: puede haber alergias o contraindicaciones."],
+["¿Cada cuánto se revisa el botiquín?", "Cada mes, con cantidades mínimas y caducidades", "Cuando se ocupe", "Una vez al año en la inspección", "La revisión mensual evita encontrarlo vacío en la emergencia."]
+],
+"comp": ["Cómo se oye en el momento", "«¡Rápido, denle una pastilla y alcohol!»", "«Tú, presiona aquí con esta gasa. Tú, llama al 911 si no para. Yo busco quién la lleva a la clínica.»"],
+"refl": "Escribe los pasos que seguiría el personal de un negocio pequeño si alguien sufre un corte profundo, desde el momento del accidente hasta que la persona recibe atención.",
+"pl": ["Control mensual del botiquín", "CONTROL DEL BOTIQUÍN — [Ubicación] — [Mes]\nArtículo | Cantidad mínima | Cantidad actual | Caducidad | ¿Reponer?\nGasas estériles | [ ] | [ ] | [ ] | [ ]\nVendas elásticas | [ ] | [ ] | [ ] | [ ]\nGuantes desechables | [ ] | [ ] | [ ] | [ ]\nCinta adhesiva | [ ] | [ ] | [ ] | [ ]\nSolución para lavar heridas | [ ] | [ ] | [ ] | [ ]\n\nNo incluir medicamentos de uso oral.\nRevisó: [ ]   Teléfonos de emergencia visibles: [sí/no]"]
+}
+]
+}
