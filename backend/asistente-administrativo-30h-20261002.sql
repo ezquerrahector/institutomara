@@ -1,0 +1,4 @@
+-- Diplomado de Asistente Administrativo y Recepción: ampliado a 30 horas reales (opción B).
+BEGIN;
+UPDATE cursos SET horas=30, descripcion='Prepárate para conseguir tu primer empleo de oficina o recepción, o para subir de puesto. Aprende a atender en persona y por teléfono, tomar recados completos, llevar agendas, redactar correos, minutas y oficios, archivar sin perder nada, manejar caja chica, viáticos e inventario en hoja de cálculo, revisar que una factura traiga bien los datos y usar herramientas de oficina e IA con responsabilidad. Incluye 20 casos de oficinas, consultorios y escuelas mexicanas con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas tu manual de puesto y tu portafolio de documentos, además de plantillas de CV y carta de presentación.' WHERE id='d-asistente-administrativo';
+COMMIT;

@@ -1,0 +1,92 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: el contrato que apareció en la carpeta de «Varios»</b><br>Un despacho contable en Celaya tardó dos horas en encontrar el contrato de un cliente que el SAT pedía. Estaba en una carpeta llamada «Varios 2», en papel, y en la computadora había tres copias con nombres distintos. Nadie había escrito las reglas del archivo.<br>Un buen archivo permite que cualquiera encuentre un documento en menos de un minuto. Elige un método según el tipo de documento, escribe las reglas y usa la misma estructura en papel y en digital.",
+"p": [
+["¿Qué método conviene para expedientes de clientes?", "Alfabético o numérico por cliente", "Por color de carpeta", "En «Varios»", "El método se elige según cómo se buscan los documentos."],
+["¿Por qué usar la misma estructura en papel y en digital?", "Para que quien busque sepa dónde está en ambos", "Porque se ve bonito", "No importa", "Una sola lógica evita confusiones."],
+["Antes de destruir documentos viejos…", "se confirma la política de conservación", "se tiran si ocupan espacio", "se queman", "Algunos documentos deben conservarse por años."]
+],
+"comp": ["Cómo se nombra una carpeta", "«Varios 2»", "«Clientes / 0045_Hernández_Construcciones / 2026 / Contratos»"],
+"refl": ["Diseña la estructura de archivo (carpetas y subcarpetas) de una oficina que conozcas, en papel y en digital.", "Escribe las cinco reglas de archivo que pegarías junto al archivero para que todos las sigan."],
+"pl": ["Estructura de archivo", "ESTRUCTURA DE ARCHIVO — [Oficina]\n01_Administración / Contratos · Facturas · Nómina\n02_Clientes / [Número_Nombre] / [Año] / Contratos · Correspondencia\n03_Proveedores / [Nombre] / Cotizaciones · Órdenes de compra\n04_Recursos Humanos / Expedientes (confidencial)\n\nREGLAS\n1. Nada se guarda en «Varios».\n2. Mismas carpetas en papel y en la nube.\n3. [ ]\nConservación: consultar [responsable] antes de destruir."]
+},
+{
+"caso": "<b>Caso: «presupuesto_final_final_ahora_si.docx»</b><br>En una agencia de publicidad de la Ciudad de México, se envió al cliente el presupuesto equivocado. En la carpeta había «presupuesto_final», «presupuesto_final2», «presupuesto_final_final» y «presupuesto_bueno». Nadie sabía cuál era el último.<br>Regla de nombres: AAAA-MM-DD_Tipo_Asunto_vNN, sin acentos ni espacios. «Final» solo cuando ya se firmó o envió. En hoja de cálculo, & arma los nombres sin errores.",
+"p": [
+["¿Qué nombre sigue la regla?", "2026-05-12_Presupuesto_ClienteSol_v03", "presupuesto final bueno", "Presupuesto Cliente Sol (2)", "Fecha, tipo, asunto y versión con dos dígitos."],
+["¿Por qué la fecha al revés (AAAA-MM-DD)?", "Porque así los archivos se ordenan solos por fecha", "Porque es más elegante", "Porque lo pide el SAT", "El orden alfabético coincide con el cronológico."],
+["Para armar el nombre con celdas de fecha, tipo y asunto se usa…", "&, CONCATENAR o TEXTO para la fecha", "SUMA", "BUSCARV", "Ejemplo: =TEXTO(A2,\"aaaa-mm-dd\")&\"_\"&B2&\"_\"&C2."]
+],
+"comp": ["Cómo se ve la carpeta", "«presupuesto_final, presupuesto_final2, presupuesto_bueno»", "«2026-05-10_Presupuesto_ClienteSol_v01, …_v02, 2026-05-12_Presupuesto_ClienteSol_v03_final»"],
+"refl": "Renombra con la regla diez archivos reales o inventados de tu computadora o de una oficina, y escribe la fórmula que armaría esos nombres en una hoja de cálculo.",
+"pl": ["Regla de nombres y fórmula", "REGLA: AAAA-MM-DD_Tipo_Asunto_vNN\nSin acentos, sin espacios, sin «final» hasta que se firme o envíe.\n\nHOJA DE NOMBRES\nFecha | Tipo | Asunto | Versión | Nombre\n[ ] | [Oficio] | [ ] | [3] | [=TEXTO(A2,\"aaaa-mm-dd\")&\"_\"&B2&\"_\"&C2&\"_v\"&TEXTO(D2,\"00\")]"]
+},
+{
+"caso": "<b>Caso: la junta de la que nadie recordaba nada</b><br>Una escuela en San Luis Potosí tuvo una junta con padres para organizar el festival. Hubo muchas ideas, pero la minuta decía: «Se platicó del festival. Se acordó organizarlo bien». Dos semanas después nadie había rentado sillas y cada quien creía que le tocaba a otro.<br>Minuta: quién estuvo, qué se acordó, quién lo hace y para cuándo. Un acuerdo concreto es acción + responsable + fecha límite.",
+"p": [
+["«Se acordó organizarlo bien» es…", "un acuerdo vago, sin acción, responsable ni fecha", "un buen acuerdo", "un acta formal", "No se puede verificar."],
+["Un acuerdo concreto sería…", "«Rentar 200 sillas: Sra. López, antes del 10 de junio»", "«Ver lo de las sillas»", "«Alguien consigue sillas»", "Acción + responsable + fecha."],
+["¿En qué se distingue un acta de una minuta?", "El acta es más formal y a veces tiene requisitos legales", "Son lo mismo", "La minuta es más larga", "Pide el formato de acta a quien corresponda."]
+],
+"comp": ["Cómo se escribe el acuerdo", "«Se platicó del festival. Se acordó organizarlo bien.»", "«Acuerdo 1: rentar 200 sillas — Sra. López — 10 de junio. Acuerdo 2: programa del festival — Mtra. Díaz — 5 de junio.»"],
+"refl": ["Escribe la minuta de una junta real o imaginaria (de trabajo, escuela o vecinos) con al menos cinco acuerdos concretos.", "Escribe el mensaje con el que enviarías esa minuta el mismo día a los asistentes."],
+"pl": ["Minuta de junta", "MINUTA — [Tema]\nFecha: [ ]   Hora: [ ]   Lugar o liga: [ ]\nAsistentes: [ ]\nObjetivo de la junta: [ ]\n\nTEMAS TRATADOS (resumen breve)\n1. [ ]\n\nACUERDOS\nNo. | Acción | Responsable | Fecha límite\n1 | [ ] | [ ] | [ ]\n\nPróxima junta: [ ]   Elaboró: [ ]"]
+},
+{
+"caso": "<b>Caso: el jefe con tres juntas a la misma hora</b><br>El gerente de una distribuidora en Chihuahua llegó a su oficina y tenía una junta con un cliente, otra con su equipo y una llamada con el banco, las tres a las 10. Además, debía volar a Monterrey a las 2 y nadie había reservado hotel. Su asistente anotaba todo en una libreta y en su celular, por separado.<br>Agenda con márgenes de 15 minutos; juntas con objetivo, invitación, confirmación y minuta; viajes con itinerario, reservaciones y facturas. Oficio hacia fuera con folio; memorándum hacia dentro.",
+"p": [
+["¿Qué causó el empalme de juntas?", "Llevar la agenda en varios lugares sin uno central", "El jefe", "Los clientes", "Una sola agenda compartida evita empalmes."],
+["¿Cuándo se confirma una junta?", "Un día antes", "Una semana antes", "No se confirma", "La confirmación reduce cancelaciones de último momento."],
+["Para avisar al personal un cambio de horario interno se usa…", "un memorándum o circular", "un oficio con folio a otra empresa", "una factura", "El memorándum es comunicación interna."]
+],
+"comp": ["Cómo se prepara el viaje", "«Ya tiene su vuelo, lo demás lo ve allá.»", "«Itinerario: vuelo 2:10 p. m. (confirmado), traslado al hotel (reservado, factura a nombre de la empresa), junta 5 p. m. con dirección y contacto. Regreso el jueves 9 a. m.»"],
+"refl": ["Organiza la agenda de un día de un jefe con cinco compromisos, dejando márgenes, y escribe el correo de invitación a una de las juntas con su orden del día.", "Redacta un memorándum interno y un oficio externo sobre el mismo tema (por ejemplo, cambio de domicilio de la empresa)."],
+"pl": ["Itinerario de viaje y oficio", "ITINERARIO — [Nombre] — [Destino]\nIda: [aerolínea, vuelo, hora, confirmación]\nHotel: [nombre, dirección, confirmación, facturar a: ]\nTraslados: [ ]\nAgenda: [hora — reunión — contacto — dirección]\nRegreso: [ ]\nViáticos autorizados: $[ ]\n\nOFICIO\nFolio: [ ]  Fecha: [ ]\nAsunto: [ ]\n[Destinatario, cargo, empresa]\n[Cuerpo breve]\nAtentamente, [firma, cargo]"]
+},
+{
+"caso": "<b>Caso: la caja chica que nunca cuadraba</b><br>En una clínica veterinaria de Mazatlán, la caja chica tiene un fondo de $3,000. Cada viernes falta dinero y nadie sabe por qué: hay vales sin firma, tickets sin fecha y préstamos «para el camión» que no se anotan.<br>Caja chica de fondo fijo: efectivo + comprobantes = fondo. El arqueo cuenta el efectivo, suma los gastos y compara. Cualquier diferencia se reporta por escrito.",
+"p": [
+["Fondo $3,000; efectivo $1,150; comprobantes $1,700. El resultado es…", "faltante de $150", "sobrante de $150", "cuadra", "1,150 + 1,700 = 2,850; faltan 150."],
+["¿Qué hacer con los préstamos «para el camión»?", "No se prestan de la caja chica; si la política lo permite, se documentan con vale firmado", "Olvidarlos", "Anotarlos de memoria", "Todo lo que sale debe tener comprobante."],
+["¿Qué comprobante es mejor?", "Factura a nombre de la empresa", "Ticket sin fecha", "Nota a mano sin firma", "La factura es el comprobante más sólido."]
+],
+"comp": ["Cómo se reporta la diferencia", "«Faltan como 150, ahí lo repongo yo.»", "«Arqueo del viernes: faltante de $150. Hay dos vales sin firma por ese monto. Anexo el detalle y propongo firmar todo vale al momento.»"],
+"refl": "Escribe las reglas de uso de una caja chica para una oficina pequeña: quién la maneja, qué se puede pagar, qué comprobantes se aceptan y cada cuánto se arquea.",
+"pl": ["Arqueo de caja chica", "ARQUEO — [Fecha]\nFondo fijo: $[3,000]\nEfectivo contado (billetes y monedas): $[ ]\nComprobantes: [=SUMA(gastos)]\nTotal: [=B2+B3]\nResultado: [=SI(B4=B1,\"Cuadra\",SI(B4<B1,\"Faltante de \"&B1−B4,\"Sobrante de \"&B4−B1))]\n\nGastos: Fecha | Concepto | Monto | ¿Factura? | Firma\nFirmas del arqueo: [ ]"]
+},
+{
+"caso": "<b>Caso: los viáticos comprobados con servilletas</b><br>Un vendedor de una empresa de agroquímicos en Culiacán regresó de una gira de cinco días. Para comprobar sus gastos trajo tickets de gasolina, dos facturas y varias notas escritas en servilletas. Pidió que le reembolsaran $2,300 más de lo autorizado.<br>Viáticos: solicitud autorizada, anticipo, facturas durante el viaje y comprobación al regresar. SUMAR.SI suma por categoría o por «con factura»; SI revisa topes.",
+"p": [
+["¿Cuándo se piden las facturas?", "Durante el viaje, en cada gasto", "Al regresar", "Nunca", "Después es difícil conseguirlas."],
+["Si el anticipo fue $6,000 y comprobó $7,400 autorizados, la empresa…", "le debe $1,400", "le cobra $1,400", "no hace nada", "Comprobó más de lo que recibió, dentro de lo autorizado."],
+["Los límites fiscales de deducción…", "los revisa el contador; tú cuidas que todo esté comprobado", "los decides tú", "no existen", "Tu trabajo es que la comprobación esté completa."]
+],
+"comp": ["Cómo se entrega la comprobación", "«Aquí están mis papelitos, me deben como $2,300.»", "«Comprobación de la gira a Sinaloa: anticipo $6,000, gastos con factura $7,100, sin factura $300. Excede el tope de alimentos en $200; anexo la justificación.»"],
+"refl": ["Arma la comprobación de viáticos de un viaje imaginario de tres días con al menos ocho gastos, y calcula quién le debe a quién.", "Escribe la política breve de viáticos que propondrías a una empresa pequeña."],
+"pl": ["Comprobación de viáticos", "COMPROBACIÓN DE VIÁTICOS\nViajero: [ ]  Destino: [ ]  Fechas: [ ]  Anticipo: $[ ]\nFecha | Concepto | Categoría | Monto | ¿Factura?\nTotal por categoría: [=SUMAR.SI(C:C,\"Alimentos\",D:D)]\nTotal con factura: [=SUMAR.SI(E:E,\"Sí\",D:D)]\nTope de alimentos: $[ ] → [=SI(total>tope,\"Excede\",\"OK\")]\nDiferencia: [=anticipo−total] → [=SI(dif<0,\"La empresa reembolsa\",\"El viajero devuelve\")]"]
+},
+{
+"caso": "<b>Caso: sin hojas para imprimir el día de la auditoría</b><br>En una empresa de seguridad privada en Querétaro se acabaron las hojas y el tóner el día de la auditoría del cliente. Nadie llevaba inventario de papelería: compraban «cuando se acababa», con el primer proveedor que contestara y sin orden de compra. A fin de mes, además, llegó una factura por material que nunca recibieron.<br>Flujo de compra: requisición, cotizaciones, orden de compra, recepción, factura y pago. Existencia = inicial + entradas − salidas; con SI marcas qué llegó al mínimo.",
+"p": [
+["¿Qué evita quedarse sin tóner?", "Un punto de reorden: cuando la existencia llega al mínimo, se pide", "Comprar mucho de una vez", "Pedir cuando se acaba", "El mínimo cubre el tiempo que tarda en llegar."],
+["¿Qué documento prueba lo que se pidió?", "La orden de compra", "La cotización", "El recado", "La orden de compra es el compromiso formal."],
+["La factura por material que no llegó…", "no se paga hasta revisarla contra la orden de compra y la recepción", "se paga para no quedar mal", "se tira", "Se compara orden, recepción y factura."]
+],
+"comp": ["Cómo se compra", "«¡Se acabó el tóner! Compren donde sea.»", "«El tóner llegó a su mínimo de 2. Mandé requisición con tres cotizaciones; con la aprobada emito orden de compra y al recibir reviso contra la orden.»"],
+"refl": "Arma el inventario de papelería de una oficina con diez artículos, su mínimo y la fórmula que marca qué pedir. Escribe cómo sería el flujo de compra de uno de ellos.",
+"pl": ["Inventario de papelería", "INVENTARIO — [Mes]\nArtículo | Inicial | Entradas | Salidas | Existencia | Mínimo | ¿Pedir?\nHojas carta (paquete) | [ ] | [ ] | [ ] | [=B2+C2−D2] | [5] | [=SI(E2<=F2,\"Pedir\",\"\")]\nTóner | [ ] | [ ] | [ ] | [ ] | [2] | [ ]\nArtículos por pedir: [=CONTAR.SI(G:G,\"Pedir\")]\n\nFLUJO: requisición → 3 cotizaciones → orden de compra → recepción → factura → pago"]
+},
+{
+"caso": "<b>Caso: la factura con el código postal de la sucursal</b><br>Una auxiliar en una cadena de gimnasios en León recibió la factura de un proveedor de equipo. El RFC estaba bien, pero el nombre venía con «S.A. de C.V.», el código postal era el de la sucursal y el uso del CFDI no correspondía. Ella la mandó a pagar. El contador la rechazó un mes después.<br>En CFDI 4.0, los datos del receptor deben coincidir con la constancia de situación fiscal. Si algo no coincide, se pide cancelación y nueva factura por escrito.",
+"p": [
+["¿Contra qué se revisan los datos del receptor?", "Contra la constancia de situación fiscal de la empresa", "Contra la factura anterior", "Contra la tarjeta de presentación", "La constancia es la fuente oficial."],
+["¿Qué código postal debe llevar?", "El del domicilio fiscal", "El de la sucursal que compró", "Cualquiera de la empresa", "Debe coincidir con el registrado ante el SAT."],
+["Si la factura trae un error, ¿qué haces?", "Pedir por escrito la cancelación y una nueva factura", "Corregirla con pluma", "Pagarla igual", "Una factura con error se sustituye."]
+],
+"comp": ["Cómo se pide la corrección", "«Oiga, la factura salió mal, a ver si la cambia.»", "«Buen día. La factura folio 1234 trae el código postal de la sucursal; el fiscal es 37000 y el uso correcto es G03. ¿Nos apoya con la cancelación y una nueva? Adjunto nuestra constancia.»"],
+"refl": ["Escribe la lista de revisión que aplicarías a cada factura recibida antes de mandarla a pago.", "Redacta el correo para pedir la corrección de una factura con dos errores."],
+"pl": ["Revisión de CFDI recibido", "REVISIÓN DE FACTURA RECIBIDA\nFolio: [ ]   Proveedor: [ ]\n□ RFC del receptor igual al de la constancia\n□ Nombre exacto, sin régimen de capital\n□ Código postal del domicilio fiscal\n□ Régimen fiscal correcto\n□ Uso del CFDI indicado por la empresa\n□ Coincide con la orden de compra y lo recibido\n□ PUE o PPD según cómo se pagará\nResultado: □ Aprobada para pago  □ Solicitar corrección (fecha: )\nDudas fiscales → contador"]
+}
+]
+}

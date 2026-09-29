@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: el archivo compartido «con cualquiera que tenga el enlace»</b><br>En una inmobiliaria de Mérida, la asistente compartió la carpeta de contratos con un cliente usando «cualquiera con el enlace puede editar». El cliente reenvió el enlace a su abogado, este a un conocido, y alguien borró un contrato. Además, dos asesores agendaron visitas a la misma casa a la misma hora porque cada uno usaba su propio calendario.<br>Comparte con personas concretas y el permiso justo. Calendario compartido para no empalmar y formularios para registrar datos sin capturarlos a mano.",
+"p": [
+["¿Qué permiso debió dar?", "Solo al correo del cliente y solo lectura, a un documento, no a toda la carpeta", "Editar a cualquiera con el enlace", "Ninguno", "El permiso justo protege los documentos."],
+["¿Qué evita el empalme de visitas?", "Un calendario compartido del equipo", "Que cada quien use su libreta", "Llamarse antes de cada visita", "Todos ven la disponibilidad real."],
+["Google Workspace y Microsoft 365…", "hacen lo mismo con distinto nombre", "no tienen nada en común", "son solo para empresas grandes", "Aprende la idea, no el botón."]
+],
+"comp": ["Cómo se comparte un documento", "«Te mando el enlace de la carpeta, ahí está todo.»", "«Te compartí solo el contrato de tu casa, en modo lectura, a tu correo. Si necesitas otro documento, me dices.»"],
+"refl": ["Revisa los archivos que compartes (o que comparte una oficina que conozcas) y escribe cuáles tienen permisos de más y cómo los corregirías.", "Diseña un formulario para una necesidad real de oficina (solicitud de vacaciones, registro de visitas, pedido de papelería) con sus preguntas."],
+"pl": ["Equivalencias y reglas para compartir", "EQUIVALENCIAS\nGoogle Docs ↔ Word · Hojas de cálculo ↔ Excel · Drive ↔ OneDrive · Calendar ↔ Outlook · Forms ↔ Forms · Meet ↔ Teams\n\nREGLAS PARA COMPARTIR\n1. A personas concretas, no «a cualquiera con el enlace».\n2. Permiso mínimo: ver < comentar < editar.\n3. Documento, no carpeta completa, si solo necesita uno.\n4. Revisión mensual de accesos: quitar los que ya no se usan."]
+},
+{
+"caso": "<b>Caso: todo es urgente</b><br>Mariana, asistente de dirección en una empresa de alimentos en Irapuato, empieza el día con 25 pendientes en papelitos pegados a la pantalla. Cada vez que alguien le pide algo, lo empieza. Al final del día, lo que el director necesitaba para la junta con el banco quedó a medias.<br>Una sola lista de pendientes. Urgente e importante: hazlo ya; importante no urgente: agéndalo antes de que arda. Si te piden algo nuevo, di en qué estás y deja que tu jefe elija la prioridad.",
+"p": [
+["¿Dónde va la presentación para el banco de mañana?", "Urgente e importante: hacerla primero", "Importante no urgente", "Ni urgente ni importante", "Tiene fecha cercana y alto impacto."],
+["Actualizar el directorio de proveedores (sin fecha) es…", "importante no urgente: agendarlo", "urgente e importante", "eliminable", "Si no se agenda, algún día arderá."],
+["Si un gerente le pide algo nuevo, Mariana debe…", "decir en qué está y pedir que su jefe defina la prioridad", "dejar todo y hacerlo", "decir que no", "Así la prioridad la decide quien tiene la visión completa."]
+],
+"comp": ["Cómo se responde a un pedido nuevo", "«Sí, ahorita lo hago.» (y deja la presentación)", "«Con gusto. Estoy terminando la presentación del banco para las 5. ¿Lo necesitas antes o puede ser mañana a primera hora?»"],
+"refl": ["Escribe todos tus pendientes de esta semana (del trabajo, la escuela o la casa) en una sola lista y clasifícalos en la matriz urgente/importante.", "Escribe tres frases que usarías para negociar prioridades con un jefe sin sonar grosera."],
+"pl": ["Matriz de prioridades del día", "PENDIENTES — [Fecha]\nPendiente | ¿Urgente? | ¿Importante? | Cuadrante | Hora\n[ ] | [sí/no] | [sí/no] | [=SI(Y(B2=\"sí\",C2=\"sí\"),\"1 Hacer ya\",SI(C2=\"sí\",\"2 Agendar\",SI(B2=\"sí\",\"3 Delegar o resolver rápido\",\"4 Eliminar\")))] | [ ]\n\nTres cosas que sí o sí termino hoy: 1. [ ] 2. [ ] 3. [ ]"]
+},
+{
+"caso": "<b>Caso: la lista de pacientes en la herramienta de IA</b><br>Una recepcionista de un laboratorio clínico en Puebla quería mandar recordatorios más amables. Copió la lista de pacientes con nombres, teléfonos y estudios pendientes en una herramienta de IA gratuita y le pidió «escribe un mensaje para cada uno». Días después, un paciente pidió saber qué datos suyos tenía el laboratorio y nadie supo a quién canalizarlo.<br>La IA hace borradores; tú revisas. No pegues datos personales en herramientas no aprobadas. Si alguien ejerce sus derechos ARCO, se canaliza con el responsable.",
+"p": [
+["¿Cómo pudo usar la IA sin exponer datos?", "Pidiendo una plantilla general con espacios para nombre y fecha, sin pegar la lista", "Pegando solo la mitad de la lista", "No hay forma", "La IA sirve para el borrador; los datos se ponen después, fuera de ella."],
+["Los estudios de laboratorio de un paciente son…", "datos sensibles de salud", "datos públicos", "datos sin importancia", "Requieren protección especial."],
+["¿Qué son los derechos ARCO?", "Acceso, rectificación, cancelación y oposición sobre los datos personales", "Un tipo de archivo", "Una norma de seguridad industrial", "Se atienden conforme al aviso de privacidad, con el responsable designado."]
+],
+"comp": ["Cómo se pide a la IA", "«Aquí está mi lista de 80 pacientes con sus estudios, escríbeles a cada uno.»", "«Escribe un recordatorio amable de 40 palabras para un paciente que tiene un estudio pendiente, con espacios [NOMBRE] y [FECHA]. Sin mencionar el tipo de estudio.»"],
+"refl": "Escribe tres tareas de oficina en las que usarías IA para hacer borradores y, para cada una, qué datos nunca pondrías y cómo revisarías el resultado.",
+"pl": ["Uso responsable de IA en la oficina", "IA EN LA OFICINA\nSÍ: borradores de correos, avisos, minutas a partir de tus notas sin datos personales, ideas, corrección de estilo.\nNO: datos personales de clientes o pacientes, información confidencial, contraseñas, contratos completos en herramientas no aprobadas.\nREVISIÓN: datos correctos · tono · ortografía · que no invente nada.\nDerechos ARCO: canalizar a [responsable de datos personales]."]
+},
+{
+"caso": "<b>Caso: la extensión que nunca existió</b><br>La recepcionista de una universidad en Toluca busca extensiones en una lista impresa de hace dos años. Transfiere llamadas a personas que ya no trabajan ahí. Su coordinadora armó un directorio en hoja de cálculo con BUSCARV, pero cuando escribe un nombre que no está, sale #N/D y la recepcionista cree que «se descompuso».<br>BUSCARV con FALSO trae la extensión exacta; SI.ERROR evita el #N/D. Un buen día en recepción empieza con lista, recados completos y agenda confirmada.",
+"p": [
+["¿Qué argumento de BUSCARV busca coincidencia exacta?", "FALSO", "VERDADERO", "0.5", "Con FALSO, busca exactamente el valor."],
+["¿Qué muestra =SI.ERROR(BUSCARV(A2,Directorio!A:C,3,FALSO),\"No encontrado\")?", "La extensión o, si no existe, «No encontrado»", "Siempre «No encontrado»", "Un error", "SI.ERROR reemplaza el #N/D por un mensaje claro."],
+["¿Cada cuánto actualizar el directorio?", "Cada vez que hay altas o bajas de personal, con revisión mensual", "Cada dos años", "Nunca", "Un directorio viejo genera transferencias perdidas."]
+],
+"comp": ["Cómo se ve la búsqueda", "«#N/D»", "«Nombre: Laura Pérez → Área: Servicios Escolares → Ext. 2140» o «No encontrado: pregunta a Recursos Humanos»"],
+"refl": ["Arma un directorio de diez personas con nombre, área, extensión y correo, y escribe las fórmulas para buscar por nombre sin que aparezca #N/D.", "Escribe tu rutina de los primeros 20 minutos del día en una recepción."],
+"pl": ["Directorio con BUSCARV", "DIRECTORIO (hoja «Directorio»)\nNombre | Área | Extensión | Correo\n\nBUSCADOR\nEscribe el nombre: [A2]\nÁrea: [=SI.ERROR(BUSCARV(A2,Directorio!A:D,2,FALSO),\"No encontrado\")]\nExtensión: [=SI.ERROR(BUSCARV(A2,Directorio!A:D,3,FALSO),\"No encontrado\")]\nCorreo: [=SI.ERROR(BUSCARV(A2,Directorio!A:D,4,FALSO),\"No encontrado\")]\n\nRUTINA DE APERTURA: lista del día · agenda confirmada · recados pendientes · correo · área limpia"]
+}
+],
+"labs": [
+{
+"t": "Conseguir el puesto",
+"obj": "preparar una postulación completa para una vacante real: lectura de la vacante, CV, carta y entrevista.",
+"esc": "Encontraste esta vacante: <b>«Auxiliar administrativo — Grupo Médico del Valle, León. Requisitos: atención a pacientes, agenda de citas, manejo de caja chica, hoja de cálculo intermedia, redacción. Horario de 8 a 4. Ofrecemos prestaciones de ley.»</b> Tienes experiencia en una tienda de ropa y en la oficina de tu tío.",
+"e": [
+["<b>Escena 1 — La vacante.</b> La lees tres veces.", "Escribe las palabras clave de la vacante y qué experiencia tuya responde a cada una."],
+["<b>Escena 2 — El CV.</b> Tu CV actual es genérico.", "Escribe el perfil y tres logros adaptados a esta vacante."],
+["<b>Escena 3 — La carta.</b> Te piden una carta de presentación.", "Redacta la carta en máximo 150 palabras."],
+["<b>Escena 4 — La entrevista.</b> Te preguntan: «¿Por qué dejaste tu último empleo?» y «¿Cómo manejarías a un paciente molesto por la espera?».", "Escribe tus respuestas a las dos preguntas."]
+],
+"p": [
+["¿Qué experiencia de la tienda de ropa sirve aquí?", "Atención a clientes, manejo de caja y trato con personas molestas", "Ninguna", "Solo la de doblar ropa", "Las habilidades se transfieren entre puestos."],
+["Ante «¿por qué dejaste tu último empleo?», conviene…", "responder breve y positivo, sin hablar mal de nadie", "contar los problemas con tu jefe", "no contestar", "Enfócate en lo que buscas ahora."],
+["Después de la entrevista…", "envías un mensaje breve de agradecimiento el mismo día", "esperas sin hacer nada", "llamas diario", "El agradecimiento te distingue."]
+],
+"pl": ["Postulación completa", "POSTULACIÓN — [Empresa y puesto]\n□ Palabras clave de la vacante\n□ CV adaptado (una página)\n□ Carta de presentación (máx. 150 palabras)\n□ Tres ejemplos con situación, acción y resultado\n□ Dos preguntas para la empresa\n□ Mensaje de agradecimiento\nFecha de envío: [ ]  Seguimiento: [ ]"]
+},
+{
+"t": "Una mañana en la recepción de un consultorio",
+"obj": "resolver situaciones simultáneas de atención presencial, teléfono, recados, citas, correo y quejas.",
+"esc": "Son las 9:00 en la recepción del <b>Consultorio Pediátrico Dra. Salas</b>, en Guadalajara. Hay cuatro mamás esperando, suena el teléfono, llega un proveedor de vacunas y una mamá se acerca molesta porque su cita era a las 8:30.",
+"e": [
+["<b>Escena 1 — Todo al mismo tiempo.</b> Teléfono, proveedor y mamá molesta, a la vez.", "Escribe en qué orden atiendes y qué dices a cada uno para que nadie se sienta ignorado."],
+["<b>Escena 2 — El recado.</b> Llama el pediatra de guardia de un hospital para hablar con la doctora, que está en consulta.", "Escribe el recado completo."],
+["<b>Escena 3 — La queja.</b> La mamá dice que es la tercera vez que la hacen esperar.", "Escribe cómo la atiendes, paso a paso, y qué seguimiento das."],
+["<b>Escena 4 — El correo.</b> Debes avisar por correo a todos los pacientes del día siguiente que la doctora llegará 30 minutos tarde.", "Redacta el correo."]
+],
+"p": [
+["Con alguien frente a ti y el teléfono sonando…", "saludas con la mirada, contestas y pides un momento a quien llama si es necesario", "ignoras el teléfono", "ignoras a la persona", "Nadie debe sentirse ignorado."],
+["El correo a los pacientes debe ir…", "con copia oculta para no exponer los correos de todos", "con todos en «Para»", "desde tu correo personal", "Los correos de los pacientes son datos personales."],
+["Para saber si el retraso es frecuente, ¿qué usarías?", "El control de citas con CONTAR.SI por estado y hora real de atención", "La memoria", "Una encuesta anual", "Los datos ayudan a proponer cambios."]
+],
+"pl": ["Bitácora de recepción", "BITÁCORA — [Fecha]\nHora | Situación | Qué hice | Pendiente | Responsable\n\nRecados entregados: [ ]\nQuejas del día y seguimiento: [ ]\nCitas: asistió [ ] · canceló [ ] · no asistió [ ]"]
+},
+{
+"t": "Poner orden en una oficina desordenada",
+"obj": "organizar el archivo, los nombres de archivo, las minutas y la agenda de una oficina que perdió el control.",
+"esc": "Entras como asistente a <b>Constructora Ruiz</b>, en Querétaro. El archivo físico está en cajas, la carpeta compartida tiene 900 archivos con nombres como «doc1» o «final2», las juntas no tienen minuta y el director tiene citas empalmadas cada semana.",
+"e": [
+["<b>Escena 1 — El archivo.</b> Hay contratos de obra, facturas, planos, expedientes de personal y correspondencia.", "Escribe la estructura de carpetas (física y digital) y el método de cada tipo de documento."],
+["<b>Escena 2 — Los nombres.</b> Tienes 900 archivos mal nombrados.", "Escribe la regla de nombres y cómo organizarías el trabajo de renombrar sin detener la oficina."],
+["<b>Escena 3 — Las juntas.</b> El director quiere que los acuerdos se cumplan.", "Escribe el proceso de juntas: invitación, confirmación, minuta y seguimiento de acuerdos."],
+["<b>Escena 4 — La agenda.</b> El director usa su celular, tú una libreta y el socio otro calendario.", "Propón cómo unificar la agenda y las reglas para agendar."]
+],
+"p": [
+["¿Qué documentos van con acceso restringido?", "Los expedientes de personal", "Los planos públicos", "El directorio", "Contienen datos personales."],
+["Para 900 archivos, conviene…", "empezar por los de uso frecuente y aplicar la regla a todo lo nuevo desde hoy", "renombrar todo en un día", "dejarlos así", "Orden progresivo sin detener el trabajo."],
+["Un acuerdo sin fecha…", "no se puede verificar; debe llevar fecha límite", "es suficiente", "es un acta", "Acción + responsable + fecha."]
+],
+"pl": ["Plan de orden en 30 días", "PLAN DE ORDEN — [Oficina]\nSemana 1: estructura de carpetas y reglas escritas\nSemana 2: regla de nombres y archivos frecuentes\nSemana 3: agenda única y reglas para agendar\nSemana 4: proceso de juntas y seguimiento de acuerdos\nIndicador: tiempo para encontrar un documento [antes / después]"]
+},
+{
+"t": "Cierre de mes administrativo",
+"obj": "hacer el cierre administrativo del mes: arqueo, viáticos, inventario, compras y revisión de facturas.",
+"esc": "Es el último día del mes en <b>Distribuidora Norte</b>, en Saltillo. Tu jefa te pide: arquear la caja chica ($4,000 de fondo), revisar la comprobación de viáticos de un vendedor, actualizar el inventario de papelería y revisar tres facturas de proveedores antes de pagarlas.",
+"e": [
+["<b>Escena 1 — La caja chica.</b> Cuentas $980 en efectivo y $2,870 en comprobantes; hay un vale de $150 sin firma.", "Escribe el resultado del arqueo y cómo lo reportas."],
+["<b>Escena 2 — Los viáticos.</b> Anticipo $5,000; comprobó $4,600, de los cuales $500 no tienen factura.", "Escribe quién le debe a quién y qué observaciones haces."],
+["<b>Escena 3 — El inventario.</b> Quedan 3 paquetes de hojas (mínimo 5) y 1 tóner (mínimo 2).", "Escribe la requisición y el flujo de compra."],
+["<b>Escena 4 — Las facturas.</b> Una trae el código postal de la sucursal y otra cobra 10 cajas cuando llegaron 8.", "Escribe qué haces con cada una."]
+],
+"p": [
+["Resultado del arqueo:", "Faltante de $150", "Cuadra", "Sobrante de $150", "980 + 2,870 = 3,850; faltan 150."],
+["En los viáticos, el vendedor…", "devuelve $400", "recibe $400", "no debe nada", "5,000 − 4,600 = 400 a devolver."],
+["La factura de 10 cajas cuando llegaron 8…", "no se paga hasta que se corrija o se reciba lo faltante", "se paga completa", "se paga la mitad", "Se compara orden, recepción y factura."]
+],
+"pl": ["Cierre de mes administrativo", "CIERRE DE MES — [Mes]\n□ Arqueo de caja chica y reposición\n□ Comprobaciones de viáticos\n□ Inventario de papelería y requisición\n□ Facturas recibidas revisadas contra orden y recepción\n□ Facturas con error: solicitud de corrección enviada\n□ Reporte a la jefa con diferencias y pendientes"]
+},
+{
+"t": "Tu manual de puesto y tu portafolio de documentos",
+"obj": "integrar todo el diplomado en tu manual de puesto y en un portafolio de documentos que puedas mostrar en una entrevista o usar desde el primer día.",
+"esc": "Este es tu proyecto final. Vas a armar el <b>manual de puesto de asistente administrativa o recepcionista</b> para un lugar real o que conozcas bien (consultorio, escuela, despacho, empresa, hotel), y un <b>portafolio</b> con tus documentos modelo. Al terminar tendrás algo concreto que mostrar a un empleador.",
+"e": [
+["<b>Parte 1 — El puesto y tu postulación.</b> Con lo del módulo 1.", "Escribe las funciones del puesto, tus reglas de confidencialidad y tu CV de una página adaptado a ese lugar."],
+["<b>Parte 2 — Atención y comunicación.</b> Con lo del módulo 2.", "Escribe el protocolo de atención presencial y telefónica, el formato de recado, un correo modelo y el procedimiento de quejas."],
+["<b>Parte 3 — Documentos y organización.</b> Con lo del módulo 3.", "Escribe la estructura de archivo, la regla de nombres, una minuta modelo y un oficio modelo."],
+["<b>Parte 4 — Administración y herramientas.</b> Con lo de los módulos 4 y 5.", "Escribe las reglas de caja chica, el inventario con punto de reorden, la revisión de facturas, las reglas para compartir archivos y el uso responsable de IA."]
+],
+"p": [
+["¿Qué hace valioso tu portafolio en una entrevista?", "Que muestra documentos concretos que sabes hacer", "Que sea largo", "Que tenga muchos colores", "Demuestra en lugar de solo decir."],
+["Un recado completo incluye…", "para quién, de quién, teléfono confirmado, mensaje, acción, urgencia, hora y quién lo tomó", "solo el nombre", "solo el teléfono", "Así nadie tiene que volver a preguntar."],
+["En el arqueo, efectivo + comprobantes debe ser igual a…", "el fondo fijo", "las ventas del día", "cero", "Si no, hay faltante o sobrante."],
+["Una factura con datos que no coinciden con la constancia…", "se pide corregir antes de pagar", "se paga", "se archiva", "Los datos deben coincidir con el SAT."],
+["Tu constancia de este diplomado es…", "una constancia libre de Instituto Mara, no validez SEP ni certificación CONOCER", "un título técnico", "una certificación oficial", "Dilo así en tu CV."]
+],
+"pl": ["Índice del manual y portafolio", "MANUAL DE PUESTO Y PORTAFOLIO\n[Lugar] · [Tu nombre] · [Fecha]\n\n1. Funciones del puesto y reglas de confidencialidad\n2. CV y carta de presentación\n3. Protocolo de atención presencial y telefónica\n4. Formatos: recado, registro de visitantes, control de citas\n5. Correo, minuta, oficio y memorándum modelo\n6. Estructura de archivo y regla de nombres\n7. Caja chica, viáticos, inventario y compras\n8. Revisión de facturas\n9. Herramientas, permisos e IA responsable\n10. Directorio con BUSCARV"]
+}
+]
+}

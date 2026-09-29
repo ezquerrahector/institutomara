@@ -25,7 +25,9 @@ function pregunta([p, bien, m1, m2, explica]) {
   for (let i = ops.length - 1; i > 0; i--) { const j = Math.floor(azar() * (i + 1)); [ops[i], ops[j]] = [ops[j], ops[i]]; }
   return { p, ops, correcta: ops.indexOf(bien), explica };
 }
-const plantilla = ([rotulo, texto], nota) => ({ tipo: 'plantilla', rotulo, texto, nota });
+// Dentro de las fórmulas ([=…]) el signo menos debe ser ASCII para que funcionen al copiarlas.
+const formulas = t => t.replace(/\[=[^\]]*\]/g, f => f.replace(/−/g, '-'));
+const plantilla = ([rotulo, texto], nota) => ({ tipo: 'plantilla', rotulo, texto: formulas(texto), nota });
 
 function taller(t) {
   return [

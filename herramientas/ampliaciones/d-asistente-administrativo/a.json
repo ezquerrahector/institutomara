@@ -1,0 +1,96 @@
+{
+"id": "d-asistente-administrativo",
+"horas": 30,
+"desc": "Prepárate para conseguir tu primer empleo de oficina o recepción, o para subir de puesto. Aprende a atender en persona y por teléfono, tomar recados completos, llevar agendas, redactar correos, minutas y oficios, archivar sin perder nada, manejar caja chica, viáticos e inventario en hoja de cálculo, revisar que una factura traiga bien los datos y usar herramientas de oficina e IA con responsabilidad. Incluye 20 casos de oficinas, consultorios y escuelas mexicanas con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas tu manual de puesto y tu portafolio de documentos, además de plantillas de CV y carta de presentación.",
+"aprender": "Armar tu manual de puesto y tu portafolio de documentos de oficina, listos para mostrar en una entrevista o aplicar desde el primer día",
+"talleres": [
+{
+"caso": "<b>Caso: la recepcionista que «solo contestaba el teléfono»</b><br>Liliana entró como recepcionista a un consultorio de ortodoncia en Zapopan. Pensó que su trabajo era contestar el teléfono. En su primera semana le pidieron confirmar citas del día siguiente, cobrar, pedir facturas a proveedores y cuidar que nadie viera los expedientes en el mostrador. Se sintió rebasada.<br>Recepción y asistencia administrativa tienen el mismo corazón: ordenar, atender y dar seguimiento. Cada lugar pide cuidados distintos.",
+"p": [
+["¿Qué cuidado especial tiene un consultorio?", "La agenda de citas y la confidencialidad de los expedientes", "Tener revistas nuevas", "El inventario de dulces", "La información de salud de los pacientes es confidencial."],
+["¿Qué habría ayudado a Liliana en su primera semana?", "Pedir una lista de funciones y hacer su propia lista de pendientes diaria", "Esperar a que le expliquen todo", "Hacer solo lo que le gusta", "Tomar la iniciativa de ordenar sus funciones reduce el estrés."],
+["¿Qué validez tiene la constancia de este diplomado?", "Es una constancia libre de Instituto Mara, no validez SEP ni certificación CONOCER", "Es un título profesional", "Es una certificación oficial", "Conviene decirlo con claridad en tu CV."]
+],
+"comp": ["Cómo se oye al empezar", "«Yo nomás contesto el teléfono.»", "«Mis funciones son recibir pacientes, confirmar citas, cobrar, pedir facturas y cuidar los expedientes. Cada mañana reviso mi lista y la agenda del día.»"],
+"refl": ["Elige un tipo de lugar (consultorio, despacho, escuela, hotel, agencia) y escribe diez funciones reales de su recepción o asistencia administrativa.", "Escribe cuáles de esas funciones ya sabes hacer y cuáles te toca aprender en este diplomado."],
+"pl": ["Descripción de funciones del puesto", "FUNCIONES DEL PUESTO — [Lugar]\nAtención: [recibir, contestar, canalizar]\nAgenda: [citas, confirmaciones, juntas]\nDocumentos: [correos, oficios, archivo]\nAdministración: [caja chica, compras, facturas]\nCuidados especiales del lugar: [confidencialidad, datos de menores, seguridad]\nA quién reporto: [ ]\nHerramientas que uso: [ ]"]
+},
+{
+"caso": "<b>Caso: la plática en el elevador</b><br>Andrea es asistente en un despacho de abogados en Monterrey. En el elevador comentó con una amiga, sin decir nombres, que «el señor del divorcio famoso vino hoy». Alguien la escuchó, supo de quién hablaba y lo publicó en redes. Otro día, un proveedor le ofreció una canasta navideña «para que le ayude con los pagos».<br>Lo que conoces por tu trabajo no se cuenta ni se deja ver. Regalos a cambio de favores son un riesgo de ética.",
+"p": [
+["¿Qué error cometió Andrea en el elevador?", "Comentar información del trabajo que permitió identificar a un cliente", "Hablar con una amiga", "Usar el elevador", "Aunque no digas nombres, los detalles pueden identificar a alguien."],
+["¿Qué hacer con la canasta del proveedor?", "Consultar la política de regalos y no aceptarla si es a cambio de favores", "Aceptarla, es Navidad", "Pedir una más grande", "Un regalo condicionado compromete tu trabajo."],
+["¿Qué incluye la imagen profesional en recepción?", "Limpieza, orden, puntualidad y el celular guardado", "Ropa de marca", "Maquillaje llamativo", "Eres la primera impresión del lugar."]
+],
+"comp": ["Cómo se responde al proveedor", "«Ay, gracias, sí le ayudo con sus pagos.»", "«Muchas gracias, pero por política no puedo aceptarlo. Sus pagos siguen el proceso normal; con gusto le digo en qué etapa van.»"],
+"refl": "Escribe cinco situaciones de riesgo de confidencialidad o ética que podrían pasarle a una recepcionista y cómo respondería en cada una.",
+"pl": ["Reglas personales de confidencialidad", "MIS REGLAS DE CONFIDENCIALIDAD\n1. No comento casos, clientes ni pacientes fuera del trabajo, aunque no diga nombres.\n2. Pantalla bloqueada al levantarme.\n3. Nada de documentos a la vista en el mostrador.\n4. Por teléfono no doy datos de otra persona sin verificar.\n5. Papel confidencial: a trituradora, no al bote.\n6. Regalos: consulto la política antes de aceptar.\nDudas: las consulto con [ ]"]
+},
+{
+"caso": "<b>Caso: el mismo CV para todas</b><br>Pedro mandó su CV a 40 vacantes de auxiliar administrativo en Puebla y nadie le llamó. Su CV tiene tres páginas, una foto de fiesta, un correo «el_pedrin_chido@…» y dice «responsable, puntual y con ganas de aprender». Una vacante pedía «control de caja chica y Excel intermedio» y él lo había hecho en su trabajo anterior, pero no lo puso.<br>Lee la vacante como pista: sus palabras clave van en tu CV. Describe logros con números y verbos.",
+"p": [
+["¿Qué debió cambiar primero?", "Adaptar el CV a cada vacante con sus palabras clave", "Mandarlo a más vacantes", "Ponerle colores", "Si la vacante pide caja chica y tú la manejaste, dilo."],
+["¿Cuál es una buena forma de describir experiencia?", "«Controlé una caja chica de $5,000 con arqueo semanal sin diferencias»", "«Responsable y puntual»", "«Hice muchas cosas en la oficina»", "Verbo + qué + número o resultado."],
+["Una «agencia» te pide $800 para agendarte entrevistas. Eso es…", "una señal de fraude: nadie serio cobra por entrevistar o contratar", "normal", "una inversión", "Desconfía de cualquier cobro por conseguir empleo."]
+],
+"comp": ["Cómo se describe la experiencia", "«Responsable, puntual y con ganas de aprender.»", "«Atendí a 60 clientes diarios en mostrador, controlé la caja chica con arqueo semanal y organicé el archivo de 800 expedientes.»"],
+"refl": ["Busca una vacante real de asistente o recepción y escribe sus cinco palabras clave más importantes.", "Redacta tres logros para tu CV con verbo, acción y número, pensados para esa vacante."],
+"pl": ["CV de una página", "NOMBRE COMPLETO\nCiudad · Teléfono · correo profesional (nombre.apellido@…)\n\nPERFIL (2 líneas con palabras clave de la vacante)\n[ ]\n\nEXPERIENCIA\n[Puesto] — [Empresa] — [Fechas]\n• [Verbo + qué + número]\n• [ ]\n\nHABILIDADES: [hoja de cálculo nivel ___, facturación, atención telefónica…]\nFORMACIÓN: [escolaridad] · Diplomado de Asistente Administrativo y Recepción (constancia de Instituto Mara)"]
+},
+{
+"caso": "<b>Caso: «háblame de ti»</b><br>En su entrevista para recepcionista de un hotel en Cancún, Carla contestó a «háblame de ti» con su historia desde la primaria. Cuando le preguntaron por una situación difícil con un cliente, dijo «no me ha pasado». Al final, le preguntaron si tenía dudas y dijo «no, ninguna». Otra candidata, con menos experiencia, se quedó con el puesto.<br>Prepara tres ejemplos con situación, acción y resultado, y dos preguntas para ellos. Carta corta y hecha para esa vacante.",
+"p": [
+["¿Cómo conviene responder «háblame de ti»?", "Un minuto: quién eres, tu experiencia relevante y por qué te interesa el puesto", "Tu historia completa", "Solo tu nombre", "Breve y enfocado en el puesto."],
+["Ante «cuéntame de una situación difícil», lo mejor es…", "un ejemplo con situación, acción y resultado", "decir que nunca te ha pasado", "hablar mal de un jefe anterior", "Demuestra cómo actúas."],
+["Al final, ¿qué preguntar?", "Algo del puesto, como «¿cómo sería un día típico?»", "Solo el sueldo y las vacaciones", "Nada", "Hacer preguntas muestra interés."]
+],
+"comp": ["Cómo se contesta la pregunta difícil", "«No, nunca me ha pasado nada difícil.»", "«En la tienda, un cliente llegó molesto por un cobro doble (situación). Lo escuché, revisé el ticket y pedí el reembolso con mi supervisora (acción). Se fue tranquilo y regresó la semana siguiente (resultado).»"],
+"refl": ["Escribe tres ejemplos con situación, acción y resultado de tu vida laboral, escolar o familiar que puedas contar en una entrevista.", "Redacta una carta de presentación de máximo 150 palabras para una vacante real."],
+"pl": ["Preparación de entrevista", "PREPARACIÓN DE ENTREVISTA — [Empresa]\n«Háblame de ti» (1 minuto): [ ]\nEjemplo 1 (atención a cliente): situación [ ] · acción [ ] · resultado [ ]\nEjemplo 2 (organización): [ ]\nEjemplo 3 (error y aprendizaje): [ ]\nMis preguntas: 1. [ ] 2. [ ]\nLlevo: CV impreso, identificación, pluma\nDespués: mensaje de agradecimiento el mismo día"]
+},
+{
+"caso": "<b>Caso: la señora que esperó sin que nadie la mirara</b><br>En la recepción de una notaría en Querétaro, la recepcionista estaba en una llamada larga con un proveedor. Una señora entró, se paró frente al mostrador y esperó cuatro minutos sin que nadie la mirara. Se sentó molesta. Luego la recepcionista transfirió una llamada sin decir a quién y la llamada se cortó.<br>Que nadie se sienta ignorado: saluda con la mirada aunque estés en una llamada. Transfiere diciendo a quién y por qué.",
+"p": [
+["¿Qué debió hacer al ver entrar a la señora?", "Saludarla con la mirada o un gesto y pedirle un momento", "Terminar la llamada primero sin mirarla", "Colgarle al proveedor", "Un gesto dice «ya te vi, enseguida te atiendo»."],
+["Un saludo telefónico completo incluye…", "buenos días, nombre del lugar, tu nombre y en qué puedes ayudar", "solo «¿bueno?»", "el nombre del jefe", "El saludo completo da confianza."],
+["Si pones a alguien en espera, regresas cada…", "30 a 40 segundos", "5 minutos", "cuando se acabe la música", "Regresar muestra que no lo olvidaste."]
+],
+"comp": ["Cómo se transfiere", "«Espéreme… [transfiere sin avisar].»", "«Le comunico con la licenciada Ruiz, de escrituras, que es quien lleva su trámite. Si se corta, su extensión es la 214.»"],
+"refl": "Escribe el guion completo de atención telefónica para un lugar que conozcas: saludo, espera, transferencia, toma de recado y despedida.",
+"pl": ["Protocolo de atención", "PROTOCOLO — [Lugar]\nPRESENCIAL: mirar y saludar al entrar · «Buenos días, bienvenido a [ ]» · ofrecer asiento si hay espera\nTELÉFONO: «Buenos días, [lugar], le atiende [nombre], ¿en qué le puedo ayudar?»\nESPERA: pedir permiso · regresar cada 30–40 s · ofrecer devolver la llamada\nTRANSFERIR: decir a quién, por qué y dar la extensión\nDESPEDIDA: «¿Hay algo más en que pueda ayudarle? Que tenga buen día.»"]
+},
+{
+"caso": "<b>Caso: el recado «te habló alguien»</b><br>El director de una escuela en Morelia encontró en su escritorio un papelito: «Te habló el de los uniformes, que le hables». No decía nombre, teléfono, hora ni qué quería. Era el proveedor avisando que el pedido llegaría tarde. Se enteraron cuando los niños ya estaban formados para la foto. Además, nadie sabía cuántas citas con padres se habían perdido ese mes.<br>Un recado completo no deja dudas. Repite el teléfono en voz alta. Y CONTAR.SI te dice cuántas citas se cumplieron, cancelaron o se perdieron.",
+"p": [
+["¿Qué dato se equivoca más en un recado?", "El número de teléfono", "El nombre del día", "La hora", "Repítelo en voz alta para confirmarlo."],
+["¿Qué le faltaba al recado?", "Nombre, empresa, teléfono, mensaje concreto, urgencia, hora y quién lo tomó", "Solo la fecha", "Una carita feliz", "Un recado completo permite actuar sin volver a preguntar."],
+["Para contar citas con estado «No asistió» se usa…", "CONTAR.SI", "SUMA", "PROMEDIO", "CONTAR.SI cuenta celdas que cumplen una condición."]
+],
+"comp": ["Cómo se toma el recado", "«Te habló el de los uniformes, que le hables.»", "«Para: Director. De: Jorge Ramírez, Uniformes del Centro. Tel. 443 123 4567 (confirmado). Mensaje: el pedido llega el jueves, no el martes. Urgente: sí, por la foto. 10:40 a. m. Tomó: Rosa.»"],
+"refl": ["Escribe tres recados completos a partir de llamadas imaginarias en una escuela, un consultorio y una empresa.", "Arma la fórmula para contar citas asistidas, canceladas y no asistidas, y escribe qué harías si las inasistencias pasan de 15%."],
+"pl": ["Formato de recado y control de citas", "RECADO\nPara: [ ]   De: [ ]   Empresa: [ ]\nTeléfono (repetido en voz alta): [ ]\nMensaje: [ ]\nAcción: □ Llamar  □ Le llamará  □ Solo aviso   Urgencia: □ Alta □ Normal\nFecha y hora: [ ]   Tomó: [ ]\n\nCONTROL DE CITAS\nFecha | Nombre | Estado (Asistió/Canceló/No asistió)\nAsistió: [=CONTAR.SI(C:C,\"Asistió\")]\nNo asistió: [=CONTAR.SI(C:C,\"No asistió\")]\n% inasistencia: [=B2/CONTARA(C2:C200)]"]
+},
+{
+"caso": "<b>Caso: el correo que se fue a todos</b><br>Rodrigo, asistente en una constructora de Tijuana, mandó la lista de sueldos al director por correo, pero eligió por error la lista de «todos». Otro día envió una cotización con el asunto «Hola» y sin adjunto. Además, contesta a clientes desde su WhatsApp personal a las 11 de la noche.<br>Correo claro: asunto concreto, mensaje breve, petición y firma. Revisa destinatario, adjunto y ortografía antes de enviar. El WhatsApp de empresa, con el número de la empresa y en horario.",
+"p": [
+["¿Qué se revisa antes de enviar un correo?", "Destinatario, adjunto y ortografía", "Solo el asunto", "Nada, se puede corregir después", "Un correo enviado no se regresa."],
+["Un buen asunto para la cotización es…", "«Cotización de cimentación — Obra Las Palmas — 12 de mayo»", "«Hola»", "«Urgente!!!»", "El asunto dice de qué trata y ayuda a encontrarlo."],
+["¿Por qué no usar su WhatsApp personal?", "Porque la comunicación y los datos del cliente deben quedar en el número de la empresa y en horario", "Porque es más caro", "No hay problema", "Si deja la empresa, los clientes se van con él."]
+],
+"comp": ["Cómo se escribe el correo", "«Asunto: Hola. Aquí está lo que me pidió. Saludos.» (sin adjunto)", "«Asunto: Cotización de cimentación — Obra Las Palmas. Buen día, ing. Soto: le comparto la cotización solicitada (adjunta, PDF). ¿Me confirma si la revisamos el jueves? Saludos, Rodrigo Mena, Asistente de Dirección, ext. 105.»"],
+"refl": "Redacta tres correos formales: una cotización enviada a un cliente, una solicitud de información a un proveedor y un aviso interno de cambio de horario.",
+"pl": ["Estructura de correo formal", "Asunto: [tema concreto — referencia — fecha]\n\nBuen día, [nombre y título]:\n\n[Una frase de contexto.]\n[Mensaje principal en 2 a 4 líneas.]\n[Petición clara con fecha: «¿Me confirma antes del…?»]\n\nSaludos cordiales,\n[Nombre]\n[Puesto] · [Empresa]\n[Teléfono y extensión]\n\nAntes de enviar: □ destinatario □ adjunto □ ortografía □ copia a quien corresponde"]
+},
+{
+"caso": "<b>Caso: el visitante que nadie sabía que seguía adentro</b><br>En un corporativo de Guadalajara, un «técnico de la copiadora» entró sin registro, recorrió oficinas y se llevó una laptop. Nadie sabía a quién visitaba. El mismo día, un cliente llegó gritando porque su pedido llevaba dos semanas de retraso, y la recepcionista le respondió: «Eso no es mi área».<br>Recepción es puerta de seguridad: registra quién entra, a quién visita y a qué hora sale. Ante una queja: escuchar, disculparte, solucionar o canalizar, y dar seguimiento.",
+"p": [
+["¿Qué debió pasar con el técnico?", "Registrarlo, confirmar con el área que lo esperaba y acompañarlo", "Dejarlo pasar porque traía uniforme", "Pedirle su credencial y quedársela", "Confirmar la visita evita que entre cualquiera."],
+["¿Qué datos pedir a un visitante?", "Solo los necesarios: nombre, empresa, a quién visita y hora", "Copia de su INE y CURP", "Su dirección personal", "No copies credenciales sin una política que lo respalde."],
+["«Eso no es mi área» ante una queja…", "enciende más al cliente; hay que escuchar y canalizar con seguimiento", "es correcto", "cierra el tema", "Aunque no lo resuelvas tú, eres responsable de canalizar."]
+],
+"comp": ["Cómo se atiende la queja", "«Eso no es mi área.»", "«Entiendo su molestia y le ofrezco una disculpa. Ahora mismo llamo al encargado de pedidos para que le diga la fecha exacta. Mientras, ¿gusta sentarse?»"],
+"refl": ["Diseña el procedimiento de registro de visitantes de una oficina: qué datos, quién autoriza, gafete y salida.", "Escribe cómo atenderías una queja fuerte en recepción, paso a paso, hasta el seguimiento."],
+"pl": ["Registro de visitantes y queja", "REGISTRO DE VISITANTES\nFecha | Nombre | Empresa | A quién visita | ¿Confirmado? | Gafete | Entrada | Salida\n\nQUEJA EN RECEPCIÓN\n1. Escuchar sin interrumpir\n2. Disculparse por la experiencia\n3. Solucionar o canalizar (a quién: [ ])\n4. Decir qué sigue y cuándo\n5. Seguimiento: [fecha y responsable]"]
+}
+]
+}
