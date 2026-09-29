@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: 100,000 vistas y ninguna venta</b><br>Una marca de salsas artesanales en Oaxaca celebró que un video llegó a 100,000 vistas. Ese mes vendió lo mismo de siempre. En cambio, un anuncio discreto con 3,000 impresiones generó 40 clics y 8 pedidos por WhatsApp.<br>Mide lo que paga la renta: costo por cliente, conversión y ventas. Calcula tú las métricas en una hoja para no depender de cómo las presenta cada plataforma.",
+"p": [
+["El CTR del anuncio discreto es…", "1.3%", "40%", "8%", "40 ÷ 3,000 ≈ 0.013."],
+["Si el anuncio costó $400, el costo por pedido (CPA) es…", "$50", "$10", "$400", "400 ÷ 8 = 50."],
+["¿Qué métrica es de vanidad en este caso?", "Las 100,000 vistas sin ventas", "El costo por pedido", "La tasa de conversión", "Vistas sin ventas no pagan la renta."]
+],
+"comp": ["Cómo se reporta el mes", "«¡Tuvimos 100,000 vistas!»", "«El video dio alcance, pero no ventas. El anuncio dio 8 pedidos a $50 cada uno, con margen de $120 por pedido. Metemos más ahí.»"],
+"refl": ["Toma los datos de un mes (reales o aproximados) de un negocio que conozcas y calcula CTR, CPC, CPA y tasa de conversión.", "Escribe cuáles de las métricas que ese negocio revisa hoy son de vanidad y cuáles cambiarías."],
+"pl": ["Hoja de métricas", "MÉTRICAS — [Mes]\nCanal | Impresiones | Clics | Gasto | Mensajes | Ventas | CTR | CPC | CPA | Conversión\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [=C2/B2] | [=D2/C2] | [=D2/F2] | [=F2/E2]\n\nMétricas de vanidad (no decidir con ellas): seguidores, likes, vistas sin acción"]
+},
+{
+"caso": "<b>Caso: el anuncio con ROAS de 2 que perdía dinero</b><br>Una tienda en línea de accesorios para celular en Guadalajara estaba feliz: su anuncio tenía un ROAS de 2 (por cada peso, dos de ventas). Pero su margen es de 30%. Al sacar cuentas, cada venta del anuncio les costaba más de lo que dejaba.<br>ROAS = ventas ÷ gasto; ROAS de equilibrio = 1 ÷ margen. Con SI conviertes la regla en una decisión automática.",
+"p": [
+["Con margen de 30%, el ROAS de equilibrio es…", "3.33", "2", "0.30", "1 ÷ 0.30 ≈ 3.33."],
+["Con ROAS de 2 y margen de 30%, el anuncio…", "pierde dinero", "gana dinero", "queda en equilibrio", "2 es menor que 3.33."],
+["¿Qué podría justificar mantener un anuncio debajo del equilibrio?", "Que los clientes regresen a comprar y su valor total lo compense", "Que tenga muchos likes", "Nada", "Revisa el contexto: clientes que regresan y ventas reales."]
+],
+"comp": ["Cómo se lee el ROAS", "«ROAS de 2, ¡duplicamos lo invertido!»", "«ROAS de 2 con margen de 30% es perder: necesitamos al menos 3.33. Pausamos o mejoramos la oferta.»"],
+"refl": "Calcula el ROAS de equilibrio de un negocio que conozcas y escribe la fórmula SI con la que decidirías mantener, vigilar o pausar un anuncio.",
+"pl": ["Decisión automática con ROAS", "ROAS — [Mes]\nMargen: [30%]   ROAS de equilibrio: [=1/B1]\n\nAnuncio | Gasto | Ventas | ROAS | Decisión\n[ ] | [ ] | [ ] | [=C4/B4] | [=SI(D4>=$B$2*1.2,\"Mantener\",SI(D4>=$B$2,\"Vigilar\",\"Pausar\"))]"]
+},
+{
+"caso": "<b>Caso: el dueño que no sabía qué canal le traía clientes</b><br>Una escuela de inglés en Querétaro recibe alumnos por Facebook, Google, volantes y recomendación. Gasta en todos, pero no pregunta a los alumnos cómo llegaron. Le toca recortar presupuesto y no sabe qué cortar.<br>SUMAR.SI por canal más el costo por cliente te dicen qué canal rinde más. Un plan de 90 días convierte eso en acción con revisión semanal.",
+"p": [
+["¿Qué dato le falta registrar?", "Por qué canal llegó cada alumno", "La edad de los alumnos", "El color favorito", "Sin origen, no hay costo por canal."],
+["Si Google costó $6,000 y trajo 12 alumnos, y los volantes $3,000 con 2 alumnos…", "Google rinde más: $500 por alumno contra $1,500", "los volantes rinden más porque son más baratos", "dan igual", "Compara costo por cliente, no gasto total."],
+["Un plan de 90 días se organiza en…", "bases, probar y ajustar, con revisión semanal", "un solo anuncio grande", "publicar diario sin medir", "Tres etapas de un mes cada una."]
+],
+"comp": ["Cómo se decide el recorte", "«Quitemos Google, que es lo más caro.»", "«Google nos cuesta $500 por alumno y los volantes $1,500. Recortamos volantes y reforzamos recomendación con un descuento para quien traiga a otro.»"],
+"refl": ["Arma el tablero por canal de un negocio que conozcas con gasto, clientes y costo por cliente, y escribe qué canal reforzarías y cuál recortarías.", "Escribe el plan de 90 días de ese negocio: qué harás cada mes y qué revisarás cada semana."],
+"pl": ["Tablero por canal y plan de 90 días", "TABLERO — [Mes]\nRegistro: Fecha | Cliente | Canal | Venta\nResumen:\nCanal | Gasto | Clientes [=CONTAR.SI(C:C,canal)] | Ventas [=SUMAR.SI(C:C,canal,D:D)] | Costo por cliente\n\nPLAN DE 90 DÍAS\nMes 1 — Bases: [perfil, WhatsApp, reseñas, calendario]\nMes 2 — Probar: [anuncio de prueba, 2 formatos de contenido]\nMes 3 — Ajustar: [reforzar lo que rinde, cortar lo que no]\nRevisión semanal: [día y hora]"]
+},
+{
+"caso": "<b>Caso: el sorteo que salió caro</b><br>Una tienda de electrónica en Hermosillo publicó un sorteo: «Gana una pantalla. Solo comenta y comparte». No explicó fechas, condiciones ni cómo se elegiría al ganador. Usó una canción comercial de fondo y la foto de una modelo descargada de internet. Además, pidió a los participantes su teléfono y dirección en un formulario, sin aviso de privacidad.<br>Si recabas datos personales, necesitas aviso de privacidad. La publicidad debe ser veraz y las promociones deben tener condiciones claras. Fotos, música e imagen de personas: propias, con licencia o con permiso.",
+"p": [
+["¿Qué faltó en el sorteo?", "Bases claras: fechas, condiciones y cómo se elige al ganador", "Más participantes", "Un premio más grande", "Las promociones deben tener condiciones claras y verificables."],
+["La foto de la modelo descargada de internet…", "puede violar derechos de autor y de imagen", "es libre porque está en internet", "está bien si se da crédito", "Estar en internet no significa que se pueda usar."],
+["¿Qué necesitaba el formulario?", "Un aviso de privacidad", "Más campos", "Una foto del participante", "Recabar datos personales exige aviso de privacidad."]
+],
+"comp": ["Cómo se publica una promoción", "«Gana una pantalla, solo comenta y comparte.»", "«Sorteo de una pantalla de 50 pulgadas del 1 al 15 de junio. Participan mayores de edad que sigan la cuenta y comenten. Ganador por sorteo en vivo el 16 de junio. Bases completas y aviso de privacidad en [liga].»"],
+"refl": ["Revisa las publicaciones recientes de un negocio que conozcas y escribe tres posibles problemas legales (datos, veracidad o derechos) y cómo corregirlos.", "Redacta las bases de una promoción sencilla para ese negocio."],
+"pl": ["Revisión legal antes de publicar", "ANTES DE PUBLICAR\n□ ¿Pido datos personales? → aviso de privacidad visible\n□ ¿Hay datos sensibles (salud, etc.)? → evítalos o consentimiento expreso\n□ Precio total, con impuestos y cargos\n□ Promoción con vigencia, condiciones y restricciones\n□ Características comprobables, sin exagerar\n□ Fotos y música propias o con licencia\n□ Permiso por escrito de las personas que aparecen\n□ Nada de reseñas falsas"]
+}
+],
+"labs": [
+{
+"t": "La estrategia de una cafetería nueva",
+"obj": "definir cliente ideal, propuesta de valor, embudo, objetivos y presupuesto de un negocio que empieza desde cero en digital.",
+"esc": "<b>Café Tierra</b> abrió hace dos meses en una colonia de oficinas en Puebla. La dueña, Mariana, tiene $4,000 al mes para marketing y dice: «Quiero que me conozca todo Puebla». Hoy vende 60 cafés diarios, con ticket promedio de $75 y margen de 65%.",
+"e": [
+["<b>Escena 1 — El cliente ideal.</b> Mariana nota que en la mañana llegan oficinistas con prisa y en la tarde estudiantes que se quedan horas.", "Describe dos clientes ideales y decide en cuál concentrarías el primer mes y por qué."],
+["<b>Escena 2 — La propuesta.</b> Su lona dice «El mejor café de Puebla».", "Redacta una propuesta de valor comprobable para el cliente que elegiste."],
+["<b>Escena 3 — Los objetivos.</b> Mariana quiere «vender más».", "Escribe dos objetivos SMART para los próximos 90 días."],
+["<b>Escena 4 — El presupuesto.</b> Tiene $4,000 al mes.", "Reparte el presupuesto y calcula cuánto puede pagar por conseguir un cliente, considerando que un oficinista puede comprar 3 veces por semana."]
+],
+"p": [
+["El costo máximo por cliente en su primera compra es de…", "$48.75", "$75", "$26.25", "75 × 0.65 = 48.75."],
+["«Que me conozca todo Puebla» es…", "un deseo, no un objetivo SMART", "un objetivo SMART", "una propuesta de valor", "No es específico, ni medible, ni tiene fecha."],
+["Si un oficinista compra 3 veces por semana, su valor en un mes es…", "mucho mayor que una compra, lo que justifica pagar más por conseguirlo", "igual a una compra", "irrelevante", "El valor de la lealtad cambia el cálculo."]
+],
+"pl": ["Estrategia en una página", "ESTRATEGIA DIGITAL — [Negocio]\nCliente ideal: [ ]\nPropuesta de valor: [ ]\nEmbudo y etapa más débil: [ ]\nObjetivos SMART (90 días): 1. [ ] 2. [ ]\nPresupuesto mensual y reparto: [ ]\nCosto máximo por cliente: $[ ]"]
+},
+{
+"t": "Que te encuentren y te puedan escribir",
+"obj": "armar la presencia básica de un negocio local: perfil de Google, WhatsApp Business, página sencilla y sistema de reseñas.",
+"esc": "Asesoras a <b>Plomería Rápida Hernández</b>, en Mérida. El dueño trabaja con su celular personal, no aparece en Google Maps, no tiene página y sus clientes lo encuentran por recomendación. Quiere crecer sin gastar mucho.",
+"e": [
+["<b>Escena 1 — Google.</b> El dueño atiende a domicilio en toda la ciudad, sin local.", "Escribe cómo configurarías su perfil de Google (tipo de negocio, zona, categorías, fotos)."],
+["<b>Escena 2 — WhatsApp.</b> Recibe 20 mensajes diarios mezclados con los de su familia.", "Escribe la configuración de WhatsApp Business: mensajes automáticos, respuestas rápidas y etiquetas."],
+["<b>Escena 3 — La página.</b> Tiene $2,000 para una página.", "Describe la página que le recomendarías, sección por sección."],
+["<b>Escena 4 — Las reseñas.</b> Tiene muchos clientes contentos pero cero reseñas.", "Escribe cómo y cuándo pediría reseñas, y el mensaje exacto."]
+],
+"p": [
+["Un negocio sin local que atiende a domicilio en Google…", "se configura con zona de servicio sin mostrar dirección", "no puede tener perfil", "debe inventar una dirección", "Google permite negocios con área de servicio."],
+["¿Cuándo pedir la reseña al plomero?", "Justo al terminar un trabajo bien hecho, con la liga por WhatsApp", "Un mes después", "Antes de empezar el trabajo", "El mejor momento es la satisfacción inmediata."],
+["¿Qué debe estar arriba en su página?", "Qué resuelve, zona y botón de WhatsApp", "Su biografía", "Una galería de 50 fotos", "Lo primero lleva a la acción."]
+],
+"pl": ["Presencia básica en 30 días", "PRESENCIA BÁSICA — [Negocio]\nSemana 1: perfil de Google completo\nSemana 2: WhatsApp Business configurado\nSemana 3: página sencilla con botón de WhatsApp\nSemana 4: pedir reseñas a los últimos 20 clientes\nIndicadores: vistas del perfil · llamadas · mensajes · reseñas"]
+},
+{
+"t": "Un mes de contenido para una estética",
+"obj": "planear un mes de contenido con pilares, formatos, textos AIDA, fotos y apoyo responsable de IA.",
+"esc": "<b>Estética Brillo</b>, en León, tiene 1,200 seguidores y publica cuando se acuerda. La dueña, Lety, tiene tres horas a la semana para redes y un celular. Sus servicios estrella: tinte, keratina y peinados para eventos.",
+"e": [
+["<b>Escena 1 — Los pilares.</b> Lety solo publica fotos de «antes y después».", "Define cuatro pilares de contenido y explica qué aporta cada uno."],
+["<b>Escena 2 — El calendario.</b> Tiene tres horas a la semana.", "Arma el calendario de cuatro semanas con formatos que quepan en ese tiempo."],
+["<b>Escena 3 — El video.</b> Quiere promover la keratina.", "Escribe el guion de un video de 30 segundos con gancho y llamado a la acción."],
+["<b>Escena 4 — La IA.</b> Su sobrina le sugiere que la IA le haga todo.", "Escribe cómo usaría la IA Lety, qué revisaría y qué nunca le daría."]
+],
+"p": [
+["Con tres horas a la semana, lo más sensato es…", "2 o 3 publicaciones semanales sostenibles", "2 publicaciones diarias", "publicar solo en temporada de bodas", "La constancia realista gana."],
+["El «antes y después» de una clienta requiere…", "su permiso para usar su imagen", "nada", "solo taparle los ojos", "La imagen de las personas necesita consentimiento."],
+["¿Qué formato conviene para explicar los cuidados después de la keratina?", "Un carrusel que la clienta pueda guardar", "Una historia que desaparece", "Un anuncio de Google", "El carrusel sirve para enseñar."]
+],
+"pl": ["Mes de contenido", "MES DE CONTENIDO — [Negocio]\nPilares: [1] [2] [3] [4]\nSemana | Publicación 1 | Publicación 2 | Historias\n1 | [ ] | [ ] | [ ]\n2 | [ ] | [ ] | [ ]\n3 | [ ] | [ ] | [ ]\n4 | [ ] | [ ] | [ ]\nTiempo por semana: [ ] h · Permisos de imagen: [ ]"]
+},
+{
+"t": "La primera campaña pagada de una tienda en línea",
+"obj": "decidir si conviene anunciarse, configurar una campaña de prueba y diseñar una prueba A/B con decisión por costo por venta.",
+"esc": "<b>Barro Vivo</b> vende piezas de barro negro de Oaxaca en línea. Ticket promedio de $650, margen de 45%. Tiene tienda en línea, responde en menos de una hora y ya vende 30 piezas al mes por recomendación. Quiere invertir $3,000 en su primera campaña.",
+"e": [
+["<b>Escena 1 — ¿Listo?</b> Revisas su tienda, sus tiempos y sus reseñas.", "Escribe si está lista para anunciarse y qué ajustarías antes."],
+["<b>Escena 2 — La campaña.</b> Vende a todo el país.", "Configura objetivo, público, presupuesto diario y duración."],
+["<b>Escena 3 — La prueba A/B.</b> No sabe si funciona mejor una foto de estudio o un video del artesano trabajando.", "Diseña la prueba y define cómo elegirás al ganador."],
+["<b>Escena 4 — La decisión.</b> A los 10 días, A gastó $1,500 y vendió 4 piezas; B gastó $1,500 y vendió 7.", "Calcula el costo por venta y el ROAS de cada versión y decide."]
+],
+"p": [
+["El costo máximo por venta es…", "$292.50", "$650", "$357.50", "650 × 0.45 = 292.50."],
+["El costo por venta de B es…", "Unos $214: rentable", "$1,500", "Unos $375: no rentable", "1,500 ÷ 7 ≈ 214, menor que 292.50."],
+["El ROAS de A es…", "Unos 1.73, debajo del equilibrio de 2.22", "4.55", "3.03", "4 × 650 = 2,600; 2,600 ÷ 1,500 ≈ 1.73."]
+],
+"pl": ["Informe de campaña de prueba", "CAMPAÑA DE PRUEBA — [Negocio]\nObjetivo · público · presupuesto · duración: [ ]\nVersión | Gasto | Ventas | Ingresos | Costo por venta | ROAS | Decisión\nA | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nB | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nCosto máximo por venta: $[ ]  ROAS de equilibrio: [ ]\nSiguiente prueba: [ ]"]
+},
+{
+"t": "El plan de marketing digital de 90 días de tu negocio",
+"obj": "integrar todo el diplomado en el plan de marketing digital de 90 días de un negocio real, listo para ejecutarse y medirse.",
+"esc": "Este es tu proyecto final. Vas a armar el <b>plan de marketing digital de 90 días</b> de tu propio negocio o, si no tienes uno, de un negocio que conozcas bien (una tienda, un consultorio, un taller, un restaurante). Al terminar tendrás un plan que puedes ejecutar o presentar como muestra de tu trabajo.",
+"e": [
+["<b>Parte 1 — Estrategia.</b> Con lo del módulo 1.", "Escribe el cliente ideal, la propuesta de valor, el embudo con su etapa más débil, dos objetivos SMART y el presupuesto con el costo máximo por cliente."],
+["<b>Parte 2 — Presencia.</b> Con lo del módulo 2.", "Escribe cómo quedarán el perfil de Google, WhatsApp Business, la página y el sistema de reseñas."],
+["<b>Parte 3 — Contenido y anuncios.</b> Con lo de los módulos 3 y 4.", "Escribe los pilares, el calendario del primer mes y la primera campaña de prueba con su prueba A/B."],
+["<b>Parte 4 — Medición y cuidado legal.</b> Con lo del módulo 5.", "Escribe las métricas de tu tablero, la regla con la que decidirás pausar o mantener y tu revisión legal antes de publicar."]
+],
+"p": [
+["¿Qué va primero en el plan?", "Cliente ideal y propuesta de valor", "Los anuncios", "El logotipo", "Sin saber a quién le hablas, el resto se desperdicia."],
+["¿Cuándo empezar a pagar anuncios?", "Cuando el embudo funciona: respondes rápido y la oferta es clara", "Desde el primer día", "Nunca", "El anuncio acelera lo que ya funciona."],
+["¿Con qué métrica decides si un anuncio se queda?", "Costo por cliente o ROAS contra su punto de equilibrio", "Likes", "Seguidores nuevos", "Decide con lo que paga la renta."],
+["Tu revisión legal incluye…", "aviso de privacidad, publicidad veraz y derechos de imágenes y música", "solo el logotipo", "nada si eres negocio pequeño", "Las obligaciones aplican a todos."],
+["Tu constancia de este diplomado te permite…", "planear, ejecutar y medir marketing digital con bases sólidas", "garantizar ventas a tus clientes", "certificarte como agencia oficial de Meta o Google", "Nadie garantiza ventas: se prueba, se mide y se mejora."]
+],
+"pl": ["Índice del plan de 90 días", "PLAN DE MARKETING DIGITAL — 90 DÍAS\n[Negocio] · [Elaboró] · [Fecha]\n\n1. Cliente ideal y propuesta de valor\n2. Embudo, objetivos SMART y presupuesto\n3. Presencia: Google, WhatsApp Business, página y reseñas\n4. Pilares y calendario de contenido\n5. Campaña de prueba y prueba A/B\n6. Tablero de métricas y reglas de decisión\n7. Revisión legal\n8. Calendario de 90 días con revisión semanal"]
+}
+]
+}
