@@ -37,6 +37,7 @@ for(const c of cursos){
 // textos repetidos entre cursos distintos
 for(const [k,v] of Object.entries(textos)){const cs=new Set(v.map(x=>x.split('/')[0]));if(v.length>1)add(null,`texto repetido ${v.length} veces (${[...cs].join(', ')}): «${k.replace(/<[^>]+>/g,'').slice(0,60)}…»`)}
 // rutas
+{const vis=new Set();for(const r of window.RUTAS_MARA){if(vis.has(r.id))add(null,'ruta repetida '+r.id);vis.add(r.id)}}
 for(const r of window.RUTAS_MARA){const cs=r.cursos.map(i=>cursos.find(c=>c.id===i));
  if(cs.some(x=>!x)){add(null,`ruta ${r.id}: curso inexistente ${r.cursos.filter((i,k)=>!cs[k])}`);continue}
  const suma=cs.reduce((a,c)=>a+c.precio,0),h=cs.reduce((a,c)=>a+c.horas,0);
