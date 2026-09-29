@@ -1,0 +1,96 @@
+{
+"id": "d-proyectos",
+"horas": 30,
+"desc": "Para quienes «les tocó» un proyecto sin formación formal: abrir una sucursal, organizar un evento, lanzar una app o implementar un sistema. Aprende a definir alcance, armar cronograma y ruta crítica, presupuestar, manejar riesgos, trabajar con Scrum y Kanban, medir avance con valor ganado en hoja de cálculo y cerrar bien. Incluye 20 casos de proyectos reales en empresas mexicanas con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas el plan completo de un proyecto tuyo. Te da bases para certificaciones como PMP o Scrum Master, que otorgan organismos externos y no este diplomado.",
+"aprender": "Armar el plan completo de un proyecto real: acta, EDT, cronograma con ruta crítica, presupuesto, riesgos, tablero de seguimiento y plan de cierre",
+"talleres": [
+{
+"caso": "<b>Caso: «el proyecto» que nunca terminaba</b><br>A Mónica, coordinadora de una clínica dental en Saltillo, le pidieron «hacerse cargo de las redes sociales». Lo llamaron proyecto, pero nunca tuvo fecha de fin ni entregable definido: publicar diario es operación. Mientras tanto, la migración al nuevo sistema de citas, que sí es un proyecto, nadie la dirigía.<br>Un proyecto es temporal, crea algo único y tiene recursos limitados. La operación se repite. Confundirlos hace que los proyectos reales se queden sin dueño.",
+"p": [
+["¿Cuál de las dos tareas es un proyecto?", "Migrar al nuevo sistema de citas", "Publicar en redes todos los días", "Las dos por igual", "La migración tiene inicio, fin y un resultado único."],
+["¿Qué convertiría lo de redes en un proyecto?", "Definir un entregable con fecha, como «lanzar la nueva línea gráfica el 30 de junio»", "Publicar más veces al día", "Contratar a alguien", "Un resultado único con fecha de término lo vuelve proyecto."],
+["¿Qué pasa cuando nadie dirige un proyecto real?", "Se atora porque nadie decide ni da seguimiento", "Avanza solo", "Se vuelve operación", "Sin dueño, el proyecto flota."]
+],
+"comp": ["Cómo se oye al asignar", "«Encárgate de lo de las redes, es tu proyecto.»", "«Tu proyecto es implementar el nuevo sistema de citas antes del 15 de agosto; las redes son parte de tu operación diaria.»"],
+"refl": "Haz dos listas con tu trabajo actual (o uno que conozcas): tareas de operación y proyectos. Elige un proyecto y escribe su resultado único y su fecha de término.",
+"pl": ["¿Proyecto u operación?", "PROYECTO U OPERACIÓN\nTarea | ¿Tiene fin definido? | ¿Crea algo único? | ¿Recursos limitados? | Es…\n[ ] | [sí/no] | [sí/no] | [sí/no] | [proyecto/operación]\n\nMi proyecto principal:\nResultado único: [ ]\nFecha de término: [ ]\nQuién lo pidió: [ ]"]
+},
+{
+"caso": "<b>Caso: «¿y si también le agregamos…?»</b><br>Un despacho de arquitectos en Querétaro remodela una oficina en 8 semanas con $600,000. A la mitad, el cliente pide cambiar el piso por uno más caro y agregar una sala de juntas. El jefe de obra dice que sí a todo para no molestar al cliente. Al final, la obra se atrasó cinco semanas y costó 30% más.<br>Alcance, tiempo y costo están atados: si mueves uno, se mueven los otros. Ante un cambio, ofrece opciones con su costo.",
+"p": [
+["¿Qué error cometió el jefe de obra?", "Aceptar cambios de alcance sin ajustar tiempo ni costo", "Atender al cliente", "Hacer una remodelación", "Decir «sí» a todo rompe la triple restricción."],
+["¿Qué debió responder al cliente?", "Opciones con su impacto: más tiempo, más dinero o quitar otra cosa", "«No se puede»", "«Sí, sin problema»", "Opciones claras permiten decidir al cliente con información."],
+["¿En qué fase está el proyecto cuando llega el cambio?", "Ejecución, con monitoreo y control", "Inicio", "Cierre", "El control de cambios funciona durante todo el proyecto, sobre todo en ejecución."]
+],
+"comp": ["Cómo se responde al cambio", "«Claro, lo que usted diga.»", "«Podemos hacer la sala de juntas: son tres semanas y $90,000 más, o la dejamos para una segunda etapa. ¿Qué prefiere?»"],
+"refl": ["Escribe tres opciones que ofrecerías a un cliente que pide agregar algo a un proyecto a la mitad, con su impacto en tiempo y costo.", "Recuerda un proyecto que se haya atrasado o encarecido. Escribe qué cambio de alcance lo provocó y cómo se debió manejar."],
+"pl": ["Respuesta a un cambio de alcance", "SOLICITUD DE CAMBIO\nQué se pide: [ ]\nQuién lo pide: [ ]\n\nOpción A — Hacerlo ahora: +[ ] días · +$[ ]\nOpción B — Hacerlo en otra etapa: sin impacto actual\nOpción C — Cambiarlo por otra cosa del alcance: quitar [ ]\n\nRecomendación: [ ]\nDecide: [nombre con autoridad]   Fecha: [ ]"]
+},
+{
+"caso": "<b>Caso: el proyecto de tres jefes</b><br>Una cadena de gimnasios en Mérida lanzó su app. El director comercial, la gerente de operaciones y el dueño daban instrucciones distintas al desarrollador. Nadie firmó qué incluía la app ni quién decidía. Tres meses después, había tres versiones del menú y ninguna aprobada.<br>El acta de constitución autoriza el proyecto, nombra al patrocinador y da autoridad al líder. Incluye un objetivo medible y lo que no entra en el alcance.",
+"p": [
+["¿Qué faltó al arrancar?", "Un acta de constitución con roles y alcance", "Más desarrolladores", "Un logotipo nuevo", "Sin acta, cada jefe cree que decide."],
+["¿Quién suele firmar el acta como patrocinador?", "Quien pone los recursos y tiene autoridad, como el dueño", "El desarrollador", "El cliente final", "El patrocinador respalda y autoriza."],
+["«Tener una app bonita» como objetivo es…", "poco medible: falta qué, cuánto y cuándo", "perfecto", "demasiado ambicioso", "Un buen objetivo se puede verificar."]
+],
+"comp": ["Cómo se escribe el objetivo", "«Tener una app bonita para los socios.»", "«Lanzar en tiendas, antes del 1 de marzo, una app para reservar clases, con 1,000 socios registrados en el primer mes.»"],
+"refl": "Redacta el acta de constitución de una página para un proyecto que conozcas: objetivo medible, patrocinador, líder, alcance, fuera de alcance y fecha.",
+"pl": ["Acta de constitución de una página", "ACTA DE CONSTITUCIÓN\nProyecto: [ ]\nPatrocinador: [ ]   Líder del proyecto: [ ]\nObjetivo medible: [qué + cuánto + cuándo]\nIncluye: [ ]\nNO incluye: [ ]\nPresupuesto aprobado: $[ ]   Fecha de término: [ ]\nPrincipales riesgos: [ ]\nAutoridad del líder: [qué puede decidir sin consultar]\nFirma del patrocinador: [ ]   Fecha: [ ]"]
+},
+{
+"caso": "<b>Caso: el sindicato que apareció al final</b><br>Una planta de autopartes en Silao implementó un nuevo sistema de turnos rotativos. El equipo planeó con Producción y RH, pero nunca habló con el sindicato. Una semana antes del arranque, el sindicato se opuso y el proyecto se congeló dos meses.<br>Un interesado es quien afecta al proyecto o se ve afectado por él. Clasificarlos por poder e interés desde el inicio evita sorpresas al final.",
+"p": [
+["El sindicato era un interesado de…", "alto poder y alto interés: gestionar de cerca", "bajo poder: solo informar", "ningún tipo", "Podía detener el proyecto y le afectaba directamente."],
+["¿Cuándo se debió identificar al sindicato?", "Desde el inicio, al mapear interesados", "Una semana antes del arranque", "Al cierre", "Un interesado olvidado aparece como problema."],
+["A un interesado con bajo poder y alto interés conviene…", "mantenerlo informado", "ignorarlo", "pedirle que apruebe todo", "La estrategia cambia según el cuadrante."]
+],
+"comp": ["Cómo se oye en la planeación", "«Esto es de Producción y RH, los demás se enteran después.»", "«¿Quién más se ve afectado por los nuevos turnos? Invitemos al sindicato desde la segunda junta.»"],
+"refl": "Mapea los interesados de un proyecto que conozcas: escribe al menos seis, su poder, su interés y qué harás con cada uno.",
+"pl": ["Mapa de interesados", "MAPA DE INTERESADOS — [Proyecto]\nInteresado | Qué le importa | Poder (1–5) | Interés (1–5) | Cuadrante | Estrategia | Responsable\n[ ] | [ ] | [ ] | [ ] | [=SI(Y(C2>=3,D2>=3),\"Gestionar de cerca\",SI(C2>=3,\"Mantener satisfecho\",SI(D2>=3,\"Mantener informado\",\"Monitorear\")))] | [ ] | [ ]"]
+},
+{
+"caso": "<b>Caso: la boda sin música</b><br>Una organizadora de eventos en San Miguel de Allende armó la lista de pendientes de una boda: salón, banquete, flores, invitaciones. Dos días antes descubrió que nadie había contratado la música ni el permiso municipal para el evento en jardín. La lista no partía de los entregables, sino de lo que se le iba ocurriendo.<br>La EDT parte el alcance en entregables y paquetes de trabajo verificables. La regla del 100% dice que no falte ni sobre trabajo.",
+"p": [
+["¿Qué herramienta habría evitado el olvido?", "Una EDT que parta del evento completo en entregables", "Una lista más larga", "Un calendario bonito", "La EDT obliga a cubrir el 100% del alcance."],
+["En una EDT, «Música» sería…", "un entregable con sus paquetes de trabajo (contratar, prueba de sonido, lista de canciones)", "una actividad suelta", "algo fuera del alcance", "Cada entregable se desglosa hasta paquetes verificables."],
+["El permiso municipal olvidado muestra que…", "hay entregables de gestión o legales que también deben estar en la EDT", "no era necesario", "lo debía tramitar la novia", "La EDT incluye todo el trabajo, no solo lo visible."]
+],
+"comp": ["Cómo se arma la lista", "«Voy apuntando lo que me acuerde.»", "«Parto de la boda completa en seis entregables y desgloso cada uno hasta tareas que alguien pueda terminar en días.»"],
+"refl": "Arma la EDT de un proyecto que conozcas en tres niveles: proyecto, entregables y paquetes de trabajo. Agrega lo que no incluye el alcance.",
+"pl": ["EDT en texto", "EDT — [Proyecto]\n1. [Entregable 1]\n   1.1 [Paquete de trabajo]\n   1.2 [ ]\n2. [Entregable 2]\n   2.1 [ ]\n3. Gestión del proyecto\n   3.1 Permisos y contratos\n   3.2 Seguimiento\n\nFuera del alcance: [ ]\nRegla del 100%: ¿falta algo? ¿sobra algo? [ ]"]
+},
+{
+"caso": "<b>Caso: la sucursal que no abrió a tiempo</b><br>Una farmacia en Hermosillo planeó abrir su sucursal nueva en 10 semanas. El líder revisaba todas las actividades por igual. La que se atrasó fue la instalación eléctrica, que no tenía holgura porque de ella dependía todo lo demás; se abrió con tres semanas de retraso.<br>La ruta crítica es la cadena de actividades más larga y no tiene holgura. Ahí se concentra el seguimiento.",
+"p": [
+["¿Qué es la holgura?", "Cuánto puede atrasarse una actividad sin atrasar el proyecto", "El dinero que sobra", "El tiempo de descanso del equipo", "Las actividades críticas tienen holgura cero."],
+["Si A dura 3 días, B depende de A y dura 5, y C depende de A y dura 2, y D depende de B y C y dura 1, la duración total es…", "9 días", "11 días", "6 días", "Ruta A-B-D: 3 + 5 + 1 = 9; C tiene holgura de 3 días."],
+["¿Dónde debió poner más atención el líder?", "En las actividades de la ruta crítica, como la instalación eléctrica", "En las actividades más baratas", "En las actividades que más le gustan", "Un día de atraso en la ruta crítica es un día de atraso del proyecto."]
+],
+"comp": ["Cómo se oye en la junta", "«Todo va más o menos bien.»", "«La instalación eléctrica está en ruta crítica y va dos días atrasada: si no la recuperamos, abrimos dos días tarde. Propongo un segundo electricista.»"],
+"refl": "Toma cinco actividades de un proyecto que conozcas, escribe su duración y sus dependencias, y encuentra su ruta crítica.",
+"pl": ["Cronograma con ruta crítica", "CRONOGRAMA\nID | Actividad | Duración | Predecesoras | Inicio temprano | Fin temprano | Holgura | ¿Crítica?\nA | [ ] | [3] | - | [0] | [=E2+C2] | [ ] | [ ]\nB | [ ] | [5] | A | [=MAX(fin de A)] | [=E3+C3] | [ ] | [ ]\nC | [ ] | [2] | A | [ ] | [ ] | [ ] | [ ]\nD | [ ] | [1] | B, C | [=MAX(F3,F4)] | [ ] | [ ] | [ ]\nDuración total: [=MAX(F:F)]\nCrítica: [=SI(G2=0,\"Sí\",\"No\")]"]
+},
+{
+"caso": "<b>Caso: el presupuesto sin colchón</b><br>Una escuela en Aguascalientes presupuestó $250,000 para renovar su laboratorio de cómputo. Sumó equipos, instalación y muebles al peso. Cuando el tipo de cambio subió y se descubrió que el cableado necesitaba cambiarse, no había margen. El director tuvo que pedir dinero extra a la junta de padres, que se molestó.<br>Presupuesto = suma de paquetes de trabajo + reserva de contingencia. Si el total excede lo aprobado, se negocia antes de empezar.",
+"p": [
+["¿Qué le faltó al presupuesto?", "Una reserva de contingencia para imprevistos", "Más equipos", "Un diagrama de Gantt", "Los imprevistos son esperables; la reserva los absorbe."],
+["Si los paquetes suman $250,000 y la reserva es 10%, el presupuesto es…", "$275,000", "$250,000", "$260,000", "250,000 × 1.10 = 275,000."],
+["El Gantt sirve para…", "dibujar el cronograma ya calculado", "calcular el presupuesto", "reemplazar la ruta crítica", "Primero se calcula; luego se dibuja."]
+],
+"comp": ["Cómo se presenta el presupuesto", "«Son $250,000 exactos.»", "«Son $250,000 de trabajo más $25,000 de contingencia por tipo de cambio y cableado. Si no los usamos, se regresan.»"],
+"refl": "Arma el presupuesto de un proyecto pequeño que conozcas, por paquete de trabajo, y justifica el porcentaje de contingencia que elegiste.",
+"pl": ["Presupuesto con contingencia", "PRESUPUESTO — [Proyecto]\nPaquete de trabajo | Cantidad | Costo unitario | Subtotal\n[ ] | [ ] | [ ] | [=B2*C2]\nSuma de paquetes: [=SUMA(D:D)]\nContingencia ([10]%): [=D10*0.10]\nPRESUPUESTO TOTAL: [=D10+D11]\nAprobado: $[ ]   Diferencia: [ ]\nRiesgos que cubre la contingencia: [ ]"]
+},
+{
+"caso": "<b>Caso: el riesgo que ya era problema</b><br>Un equipo organiza un congreso médico en Puebla. En su lista de riesgos escribió «el ponente principal cancela». Nadie tenía plan ni responsable. Dos semanas antes, el ponente canceló. Ya no era riesgo, era problema, y el equipo improvisó con prisa.<br>Riesgo es lo que podría pasar; problema es lo que ya pasó. Puntaje = probabilidad × impacto, y cada riesgo lleva respuesta y responsable.",
+"p": [
+["¿Qué respuesta habría servido para ese riesgo?", "Mitigar: tener un ponente suplente confirmado", "Aceptar sin hacer nada", "Evitar el congreso", "Un suplente reduce el impacto si ocurre."],
+["Probabilidad 3 e impacto 5 dan un puntaje de…", "15", "8", "2", "3 × 5 = 15."],
+["Contratar un seguro de cancelación del salón es…", "transferir el riesgo", "evitar el riesgo", "aceptar el riesgo", "El impacto económico pasa a la aseguradora."]
+],
+"comp": ["Cómo se escribe un riesgo", "«Riesgo: que cancele el ponente.»", "«Riesgo: el ponente principal cancela (P3 × I5 = 15). Respuesta: confirmar suplente antes del 1 de mayo. Responsable: Ana.»"],
+"refl": ["Escribe los cinco riesgos principales de un proyecto que conozcas, con su puntaje, su respuesta y su responsable.", "Escoge el riesgo de mayor puntaje y escribe cómo sabrías, con anticipación, que está por convertirse en problema."],
+"pl": ["Matriz de riesgos del proyecto", "RIESGOS — [Proyecto]\nRiesgo | Probabilidad (1–5) | Impacto (1–5) | Puntaje | Prioridad | Respuesta (evitar/mitigar/transferir/aceptar) | Acción | Responsable | Señal de alerta\n[ ] | [ ] | [ ] | [=B2*C2] | [=SI(D2>=15,\"Alta\",SI(D2>=8,\"Media\",\"Baja\"))] | [ ] | [ ] | [ ] | [ ]"]
+}
+]
+}

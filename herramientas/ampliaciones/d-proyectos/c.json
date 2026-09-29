@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: el proyecto que nunca se cerró</b><br>Una empresa de logística en Nuevo Laredo implementó un sistema de rastreo. Funcionó, el equipo se dispersó y nadie firmó la aceptación. Seis meses después, el proveedor seguía cobrando soporte del proyecto, el área de operaciones decía que «eso no era suyo» y los errores del arranque se repitieron en el siguiente proyecto.<br>Cerrar es aceptar por escrito, entregar a operación y cerrar contratos. Las lecciones aprendidas buscan causas y acciones, no culpables, y se guardan donde el siguiente proyecto las encuentre.",
+"p": [
+["¿Qué faltó para cerrar formalmente?", "Aceptación por escrito, entrega a operación y cierre de contratos", "Una fiesta de cierre", "Un último correo al equipo", "Sin cierre formal, el proyecto sigue costando."],
+["¿Por qué se repitieron los errores?", "Porque no se documentaron ni se guardaron las lecciones aprendidas", "Porque el nuevo equipo era peor", "Porque el sistema era malo", "Lo aprendido se pierde si no se registra donde se consulte."],
+["Una buena sesión de lecciones aprendidas pregunta…", "qué funcionó, qué no, por qué y qué haremos distinto", "quién tuvo la culpa", "cuánto ganó el proveedor", "Busca causas y acciones concretas."]
+],
+"comp": ["Cómo se cierra", "«Ya funciona, cada quien a lo suyo.»", "«Firmemos la aceptación, entreguemos el manual a operaciones, cerremos el contrato de implementación y hagamos una sesión de una hora de lecciones aprendidas.»"],
+"refl": "Escribe tres lecciones aprendidas de un proyecto en el que hayas participado (en el trabajo, la escuela o la familia), cada una con su causa y la acción para el siguiente proyecto.",
+"pl": ["Acta de cierre y lecciones aprendidas", "ACTA DE CIERRE — [Proyecto]\nEntregables aceptados: [ ]   Aceptó: [nombre y firma]   Fecha: [ ]\nEntregado a operación: [área y responsable]\nContratos cerrados: [ ]\nPresupuesto final vs. aprobado: $[ ] / $[ ]\nFecha real vs. planeada: [ ] / [ ]\n\nLECCIONES APRENDIDAS\nQué pasó | Causa | Qué haremos distinto | Dónde queda guardado\n[ ] | [ ] | [ ] | [ ]"]
+},
+{
+"caso": "<b>Caso: la tienda en línea con fecha de lanzamiento fija</b><br>Una marca de ropa de Guadalajara quiere lanzar su tienda en línea para el Buen Fin: la fecha no se mueve. El contrato con la paquetería, el alta en el banco y la sesión de fotos tienen plazos claros. En cambio, el diseño del sitio y las promociones dependen de lo que respondan los clientes en las pruebas.<br>En un enfoque híbrido, lo estable se planea de forma predictiva y lo incierto se trabaja en ciclos ágiles, con hitos fijos entre los Sprints.",
+"p": [
+["¿Qué parte conviene planear de forma predictiva?", "Contratos, alta bancaria y sesión de fotos", "El diseño del sitio", "Las promociones", "Tienen plazos y pasos conocidos."],
+["¿Qué parte conviene trabajar en Sprints?", "El diseño del sitio y las promociones, probando con clientes", "El contrato con la paquetería", "La fecha del Buen Fin", "Son inciertos y se benefician de probar pronto."],
+["El Buen Fin en este proyecto es…", "un hito fijo que ordena todo lo demás", "un riesgo", "una historia de usuario", "Los hitos fijos pueden convivir con Sprints."]
+],
+"comp": ["Cómo se decide el enfoque", "«Somos ágiles, todo en Sprints.»", "«Lo legal y logístico va en un cronograma con fechas; el sitio y las promociones, en Sprints de una semana hasta el hito del Buen Fin.»"],
+"refl": "Divide un proyecto que conozcas en partes predictivas y partes ágiles, y dibuja en texto cómo se conectan con los hitos fijos.",
+"pl": ["Plan híbrido", "PLAN HÍBRIDO — [Proyecto]\nHitos fijos: [fecha 1: ] [fecha 2: ]\n\nParte predictiva (cronograma):\nActividad | Inicio | Fin | Responsable\n[ ] | [ ] | [ ] | [ ]\n\nParte ágil (Sprints de [ ] semanas):\nSprint | Objetivo del Sprint | Hito que alimenta\n1 | [ ] | [ ]\n2 | [ ] | [ ]"]
+},
+{
+"caso": "<b>Caso: la herramienta de moda que nadie usó</b><br>El gerente de un despacho contable en Puebla contrató una plataforma de gestión de proyectos muy completa después de ver un video. Configurarla tomó un mes; el equipo siguió usando WhatsApp y una hoja de cálculo compartida. Al año, pagaban licencias que nadie abría.<br>Empieza con herramientas que tu equipo ya usa y cambia cuando el proceso lo pida. Las certificaciones como PMP o PSM las otorgan organismos externos: este diplomado te da bases.",
+"p": [
+["¿Qué debió hacer el gerente primero?", "Definir el proceso y probarlo con herramientas que el equipo ya usa", "Comprar más licencias", "Obligar a todos a usar la plataforma", "La herramienta sigue al proceso, no al revés."],
+["¿Qué conviene verificar al elegir una herramienta?", "Los planes y precios vigentes al momento de elegir", "Solo cuántos seguidores tiene en redes", "Que sea la más cara", "Los planes cambian con frecuencia."],
+["¿Quién otorga la certificación PMP?", "Un organismo externo (PMI), no este diplomado", "Instituto Mara", "La SEP", "Este diplomado prepara bases; la certificación es de terceros."]
+],
+"comp": ["Cómo se elige la herramienta", "«Vi un video, compremos esta que tiene de todo.»", "«Llevemos tres semanas el tablero en una hoja compartida. Si el equipo lo usa y se queda corto, probamos una herramienta con plan gratuito.»"],
+"refl": "Escribe tu plan profesional de los próximos 12 meses en gestión de proyectos: qué herramienta aprenderás, en qué proyecto real practicarás y si buscarás alguna certificación.",
+"pl": ["Comparador de herramientas", "COMPARADOR — Herramientas de proyectos\nCriterio | Hoja de cálculo | [Herramienta A] | [Herramienta B]\n¿La sabe usar el equipo? | [ ] | [ ] | [ ]\nTablero Kanban | [ ] | [ ] | [ ]\nGantt / fechas | [ ] | [ ] | [ ]\nPlan gratuito o costo por usuario (verificado el [fecha]) | [ ] | [ ] | [ ]\nFunciona en celular | [ ] | [ ] | [ ]\nDecisión: [ ]"]
+},
+{
+"caso": "<b>Caso: la segunda sucursal sin plan</b><br>El dueño de una paletería en Morelia abrió su segunda sucursal «sobre la marcha»: rentó el local antes de ver el permiso de uso de suelo, contrató personal un mes antes de tener el equipo y no calculó cuánto necesitaba vender. Abrió dos meses tarde y con 40% más de gasto.<br>Un proyecto se gestiona de inicio a cierre con las mismas pocas herramientas bien usadas: acta, EDT, cronograma, riesgos, seguimiento y cierre.",
+"p": [
+["¿Qué herramienta habría evitado rentar sin permiso?", "La EDT y la ruta crítica: el permiso antecede a la renta", "Un tablero Kanban", "La retrospectiva", "Las dependencias ordenan qué va primero."],
+["Contratar personal un mes antes del equipo muestra…", "falta de cronograma con dependencias", "buena anticipación", "exceso de presupuesto", "Cada actividad debe empezar cuando su predecesora termina."],
+["Si hubiera medido CPI, ¿qué habría visto?", "Un CPI menor que 1 desde temprano, avisando del sobrecosto", "Un CPI de 1", "Nada útil", "El valor ganado da alertas a tiempo."]
+],
+"comp": ["Cómo se planea la sucursal", "«Vamos resolviendo sobre la marcha.»", "«Primero permiso, luego contrato de renta, obra, equipo, contratación y apertura. Presupuesto con 10% de contingencia y seguimiento semanal.»"],
+"refl": "Escribe los primeros diez pasos, en orden y con dependencias, para abrir una segunda sucursal de un negocio que conozcas.",
+"pl": ["Plan de proyecto en una hoja", "PLAN EN UNA HOJA — [Proyecto]\nObjetivo medible: [ ]\nPatrocinador / líder: [ ]\nEntregables (EDT nivel 1): [ ]\nHitos y fechas: [ ]\nRuta crítica: [ ]\nPresupuesto + contingencia: $[ ]\nTres riesgos principales y su respuesta: [ ]\nCómo mediré el avance: semáforo semanal y valor ganado\nCriterio de cierre: [ ]"]
+}
+],
+"labs": [
+{
+"t": "Arrancar un proyecto que nadie definió",
+"obj": "convertir un encargo ambiguo en un proyecto con objetivo, roles, acta e interesados.",
+"esc": "Trabajas en <b>Hospital San Rafael</b>, en Querétaro. Tu director te dice en el pasillo: «Encárgate de lo de las citas en línea, que los pacientes ya lo piden». No hay presupuesto definido, ni fecha, ni sabes quién decide.",
+"e": [
+["<b>Escena 1 — El encargo.</b> Solo tienes una frase del director.", "Escribe las cinco preguntas que le harías al director para convertir el encargo en un proyecto."],
+["<b>Escena 2 — El acta.</b> El director responde: quiere citas en línea para consulta externa antes de diciembre, con presupuesto de $400,000.", "Redacta el objetivo medible, lo que incluye y lo que no incluye."],
+["<b>Escena 3 — Los interesados.</b> Aparecen recepción, médicos, sistemas, finanzas, pacientes y la aseguradora.", "Clasifícalos por poder e interés y escribe tu estrategia con los tres más importantes."],
+["<b>Escena 4 — El choque.</b> Los médicos dicen que no quieren «que cualquiera les llene la agenda».", "Escribe cómo manejarías esta resistencia sin perder el objetivo."]
+],
+"p": [
+["¿Qué documento autoriza el proyecto y da autoridad al líder?", "El acta de constitución", "La EDT", "La minuta", "El acta formaliza el arranque."],
+["Los médicos, respecto al proyecto, tienen…", "alto poder y alto interés", "bajo poder y bajo interés", "bajo poder y alto interés", "Pueden frenar la adopción y les afecta directamente."],
+["«Citas en línea para consulta externa antes del 1 de diciembre» es…", "un objetivo con qué y cuándo; falta una medida de éxito", "un objetivo vago", "un riesgo", "Agrégale una meta medible, como porcentaje de citas en línea."]
+],
+"pl": ["Kit de arranque de proyecto", "KIT DE ARRANQUE\n1. Preguntas al patrocinador: objetivo, fecha, presupuesto, quién decide, qué NO incluye\n2. Acta de constitución de una página\n3. Mapa de interesados con estrategia\n4. Primera junta: agenda y acuerdos\n5. Siguiente paso: EDT"]
+},
+{
+"t": "Planear la apertura de una cafetería",
+"obj": "desglosar el alcance, calcular la ruta crítica, presupuestar con contingencia y priorizar riesgos de un proyecto completo.",
+"esc": "Eres la líder del proyecto <b>Café La Parroquia</b>, una cafetería nueva en Xalapa. Tienes 12 semanas y $900,000 para abrir: permisos, obra, equipo, personal, menú y lanzamiento en redes.",
+"e": [
+["<b>Escena 1 — La EDT.</b> El dueño tiene una lista desordenada de 40 pendientes.", "Arma la EDT en tres niveles con los seis entregables principales."],
+["<b>Escena 2 — La ruta crítica.</b> Permisos (3 semanas), obra (5, después de permisos), equipo (2, después de obra), personal (4, puede empezar en la semana 4), menú (3, en paralelo) y capacitación (1, después de equipo y personal).", "Calcula la duración total, la ruta crítica y la holgura del menú."],
+["<b>Escena 3 — El presupuesto.</b> Los paquetes suman $840,000.", "Decide la contingencia, justifícala y di si cabe en lo aprobado."],
+["<b>Escena 4 — Los riesgos.</b> Te preocupan: retraso en permisos, aumento del precio del equipo importado y que el barista estrella no llegue.", "Califica cada riesgo, elige su respuesta y asigna responsable."]
+],
+"p": [
+["Duración total del proyecto:", "11 semanas", "12 semanas", "18 semanas", "Permisos 3 + obra 5 + equipo 2 + capacitación 1 = 11."],
+["Con contingencia de 7% sobre $840,000, el presupuesto es…", "$898,800: cabe en lo aprobado", "$940,000: no cabe", "$840,000", "840,000 × 1.07 = 898,800."],
+["Comprar el equipo con precio fijado en pesos desde ahora es…", "mitigar o transferir el riesgo cambiario", "aceptar el riesgo", "evitar el proyecto", "Fijar el precio reduce la exposición al tipo de cambio."]
+],
+"pl": ["Plan de apertura", "PLAN DE APERTURA — [Negocio]\nEDT: [ ]\nCronograma y ruta crítica: [ ]\nHolguras: [ ]\nPresupuesto por paquete + contingencia: [ ]\nRiesgos (P × I), respuesta y responsable: [ ]\nFecha de apertura con margen: [ ]"]
+},
+{
+"t": "Un equipo que quiere trabajar con Scrum",
+"obj": "organizar el trabajo de un equipo con Scrum y Kanban: roles, eventos, historias de usuario, estimación y límites de trabajo en curso.",
+"esc": "Te piden acompañar al equipo de <b>AgroApp</b>, una startup de Culiacán que hace una app para que productores reporten plagas. Son cinco personas, trabajan sin orden, todo es urgente y el fundador cambia prioridades cada día.",
+"e": [
+["<b>Escena 1 — Los roles.</b> El fundador quiere ser Product Owner y Scrum Master a la vez.", "Explica por qué conviene separar esas responsabilidades y quién propondrías para cada una."],
+["<b>Escena 2 — El backlog.</b> Las ideas están en un chat: «que funcione sin internet», «fotos de la plaga», «mapa», «alertas».", "Convierte tres ideas en historias de usuario con criterios de aceptación."],
+["<b>Escena 3 — La velocidad.</b> En los tres primeros Sprints terminaron 18, 21 y 24 puntos. Quedan 126 puntos para la versión 1.", "Calcula cuántos Sprints faltan y qué le dirías al fundador sobre la fecha de lanzamiento."],
+["<b>Escena 4 — Las urgencias.</b> El fundador mete trabajo nuevo a mitad del Sprint.", "Escribe una regla de trabajo, usando el Objetivo del Sprint y el límite de trabajo en curso, para manejar estas urgencias."]
+],
+"p": [
+["Velocidad del equipo:", "21 puntos", "24 puntos", "18 puntos", "(18 + 21 + 24) ÷ 3 = 21."],
+["Sprints restantes con 126 puntos:", "6", "5", "7", "126 ÷ 21 = 6."],
+["El Product Owner es responsable de…", "maximizar el valor del producto y ordenar el Product Backlog", "hacer la Daily", "programar", "El Product Owner decide prioridades; no dirige al equipo técnico."]
+],
+"pl": ["Arranque de Scrum", "ARRANQUE DE SCRUM — [Equipo]\nProduct Owner: [ ]  Scrum Master: [ ]  Developers: [ ]\nObjetivo del Producto: [ ]\nDuración del Sprint: [ ]\nDefinición de Terminado: [ ]\nProduct Backlog inicial (top 5 historias): [ ]\nVelocidad inicial estimada: [ ]\nRegla de urgencias: [ ]\nTablero: columnas y límites WIP: [ ]"]
+},
+{
+"t": "Rescatar un proyecto atrasado",
+"obj": "diagnosticar un proyecto en problemas con semáforo y valor ganado, controlar sus cambios y comunicar con honestidad.",
+"esc": "Te acaban de asignar el proyecto <b>Implementación ERP Grupo Tovar</b>, en Monterrey, que ya lleva cuatro meses. Presupuesto total: $3,000,000. A hoy se debía llevar $1,800,000 de trabajo; lo terminado vale $1,350,000 y se han gastado $1,700,000. El líder anterior reportaba verde.",
+"e": [
+["<b>Escena 1 — El diagnóstico.</b> Tienes los números del corte.", "Calcula SPI, CPI y EAC, y explica en dos renglones qué significan."],
+["<b>Escena 2 — Los cambios.</b> Encuentras 11 cambios pedidos por correo a los consultores, ninguno aprobado.", "Escribe qué harás con esos cambios y cómo los controlarás de aquí en adelante."],
+["<b>Escena 3 — La junta con el patrocinador.</b> Tienes 15 minutos con el director general.", "Escribe lo que le dirías: situación, causas, opciones y la decisión que necesitas."],
+["<b>Escena 4 — El equipo.</b> El equipo está desmotivado y cree que «todo se va a caer».", "Escribe cómo reorganizarías las juntas y la comunicación para recuperar el control."]
+],
+"p": [
+["SPI del proyecto:", "0.75", "0.79", "1.33", "1,350,000 ÷ 1,800,000 = 0.75."],
+["CPI del proyecto:", "Aproximadamente 0.79", "0.75", "1.26", "1,350,000 ÷ 1,700,000 ≈ 0.79."],
+["EAC si todo sigue igual:", "Unos $3.8 millones", "$3 millones", "$2.4 millones", "3,000,000 ÷ 0.79 ≈ 3,780,000."]
+],
+"pl": ["Informe de rescate", "INFORME DE RESCATE — [Proyecto]\nSituación: SPI [ ] · CPI [ ] · EAC $[ ]\nCausas principales: [ ]\nCambios no controlados: [número y su impacto]\nOpciones:\nA. [recortar alcance] — impacto [ ]\nB. [más tiempo] — impacto [ ]\nC. [más presupuesto] — impacto [ ]\nRecomendación: [ ]\nDecisión que necesito y fecha: [ ]"]
+},
+{
+"t": "El plan completo de tu proyecto",
+"obj": "integrar todo el diplomado en el plan completo de un proyecto real, listo para presentarse a un patrocinador o usarse como muestra de tu trabajo.",
+"esc": "Este es tu proyecto final. Vas a armar el <b>plan completo de un proyecto</b> que tengas en tus manos o que quieras emprender: abrir un negocio, implementar un sistema, organizar un evento, remodelar, lanzar un producto. Al terminar tendrás un documento que puedes presentar a quien lo patrocine.",
+"e": [
+["<b>Parte 1 — Arranque.</b> Con lo del módulo 1.", "Escribe el acta de constitución de tu proyecto y su mapa de interesados con estrategia."],
+["<b>Parte 2 — Planeación.</b> Con lo del módulo 2.", "Escribe la EDT, el cronograma con ruta crítica, el presupuesto con contingencia y los cinco riesgos principales."],
+["<b>Parte 3 — Enfoque.</b> Con lo de los módulos 3 y 5.", "Decide qué partes serán predictivas y cuáles ágiles, y describe cómo organizarás el trabajo del equipo (Sprints, tablero, límites)."],
+["<b>Parte 4 — Control y cierre.</b> Con lo del módulo 4.", "Escribe cómo medirás el avance (semáforo y valor ganado), tu procedimiento de cambios, tu plan de comunicación y tu criterio de cierre."]
+],
+"p": [
+["¿Qué le da autoridad al líder del proyecto?", "El acta de constitución firmada por el patrocinador", "Su puesto en el organigrama", "La EDT", "El acta formaliza la autoridad."],
+["¿Dónde concentras tu seguimiento?", "En la ruta crítica y los riesgos de mayor puntaje", "En todas las tareas por igual", "En lo más fácil", "Ahí se decide la fecha y el costo."],
+["Un SPI de 0.9 y un CPI de 1.1 indican…", "algo de atraso, pero dentro del presupuesto", "adelanto y sobrecosto", "que todo va perfecto", "SPI menor que 1 = atraso; CPI mayor que 1 = rendimiento del gasto."],
+["Un cambio pedido por un gerente se…", "registra, evalúa y lo decide quien tiene autoridad", "hace de inmediato", "ignora", "El control de cambios protege al proyecto."],
+["Tu constancia de este diplomado…", "te da bases prácticas; las certificaciones PMP o PSM las otorgan organismos externos", "equivale a la certificación PMP", "te certifica como Scrum Master", "Es una constancia de un diplomado libre de Instituto Mara."]
+],
+"pl": ["Índice del plan de proyecto", "PLAN DE PROYECTO\n[Proyecto] · [Líder] · [Fecha]\n\n1. Acta de constitución\n2. Mapa de interesados\n3. EDT y fuera de alcance\n4. Cronograma y ruta crítica\n5. Presupuesto con contingencia\n6. Matriz de riesgos\n7. Enfoque (predictivo, ágil o híbrido) y organización del equipo\n8. Tablero de seguimiento: semáforo y valor ganado\n9. Control de cambios y plan de comunicación\n10. Criterio de cierre y lecciones aprendidas"]
+}
+]
+}

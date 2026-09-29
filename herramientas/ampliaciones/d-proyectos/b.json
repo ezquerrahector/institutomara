@@ -1,0 +1,92 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: el manual de 200 páginas</b><br>Una aseguradora en la Ciudad de México quería una app para reportar siniestros. El área de sistemas pasó seis meses escribiendo un manual de requisitos de 200 páginas antes de mostrarle algo al usuario. Cuando por fin presentó un prototipo, los ajustadores dijeron que en campo no podían llenar tantos campos desde el celular.<br>El enfoque ágil conviene cuando el alcance es incierto: entregas algo pequeño pronto y aprendes. El predictivo conviene cuando el alcance es claro y cambiar es caro.",
+"p": [
+["¿Qué valor del Manifiesto Ágil se ignoró?", "Colaboración con el cliente sobre negociación contractual", "Procesos y herramientas sobre individuos", "Seguir un plan sobre responder al cambio", "Se trabajó meses sin hablar con el usuario."],
+["¿Qué habría sido mejor?", "Mostrar un prototipo pequeño a los ajustadores en pocas semanas", "Escribir un manual más largo", "Contratar más programadores", "La retroalimentación temprana evita construir lo que no sirve."],
+["¿Para qué proyecto conviene más un enfoque predictivo?", "Construir un puente con planos aprobados", "Diseñar una app nueva sin saber qué quiere el usuario", "Probar un producto nuevo en el mercado", "Cuando cambiar es caro y el alcance es claro, se planea antes."]
+],
+"comp": ["Cómo se oye al arrancar", "«Primero documentamos todo y en seis meses les enseñamos.»", "«En dos semanas les enseñamos una pantalla para reportar un choque; con lo que nos digan, seguimos.»"],
+"refl": "Elige dos proyectos que conozcas y decide para cada uno si conviene un enfoque ágil o predictivo. Justifica con la incertidumbre del alcance y el costo de cambiar.",
+"pl": ["¿Ágil o predictivo?", "DECIDIR EL ENFOQUE — [Proyecto]\n¿Qué tan claro es el alcance hoy? (1 nada – 5 totalmente): [ ]\n¿Qué tan caro es cambiar a la mitad? (1 barato – 5 carísimo): [ ]\n¿Se puede entregar en partes útiles? [sí/no]\n¿El cliente puede revisar seguido? [sí/no]\n\nTendencia: alcance incierto + cambio barato + entregas parciales → ágil\nalcance claro + cambio caro → predictivo\nDecisión: [ ]"]
+},
+{
+"caso": "<b>Caso: la Daily de una hora</b><br>Un equipo de desarrollo en Guadalajara «adoptó Scrum». Su Daily dura una hora porque el jefe pide reporte individual, el Product Owner no asiste a nada y nunca hacen Retrospective «porque no hay tiempo». Después de cinco Sprints, siguen cometiendo los mismos errores.<br>La Guía Scrum 2020 define tres responsabilidades, cinco eventos y tres artefactos. La Daily dura 15 minutos y es para que los Developers planeen su día.",
+"p": [
+["¿Cuánto debe durar la Daily Scrum?", "15 minutos", "Una hora", "Lo que haga falta", "Es corta y la usan los Developers para inspeccionar el avance hacia el Objetivo del Sprint."],
+["¿Qué evento les ayudaría a dejar de repetir errores?", "La Sprint Retrospective", "La Sprint Review", "La Daily", "La Retrospective busca mejorar cómo trabaja el equipo."],
+["¿Por qué importa que el Product Owner participe?", "Porque decide qué aporta más valor y ordena el Product Backlog", "Porque es el jefe del equipo", "No importa", "Sin Product Owner, nadie prioriza."]
+],
+"comp": ["Cómo se oye la Daily", "«A ver, cada uno dígame qué hizo ayer con detalle.»", "«Objetivo del Sprint: pagos con tarjeta. ¿Qué nos falta para lograrlo y qué nos está frenando? Los detalles técnicos, después.»"],
+"refl": "Diseña el calendario de un Sprint de dos semanas para un equipo que conozcas: cuándo y cuánto dura cada evento y quién participa.",
+"pl": ["Calendario de un Sprint de 2 semanas", "SPRINT [número] — Objetivo del Sprint: [ ]\nDía 1: Sprint Planning ([hasta 4 h]) — Scrum Team completo\nDías 1–10: Daily Scrum (15 min, [hora]) — Developers\nDía 10: Sprint Review ([hasta 2 h]) — Scrum Team + interesados\nDía 10: Sprint Retrospective ([hasta 1.5 h]) — Scrum Team\n\nProduct Owner: [ ]   Scrum Master: [ ]   Developers: [ ]\nDefinición de Terminado: [ ]"]
+},
+{
+"caso": "<b>Caso: «que el sistema sea fácil de usar»</b><br>El Product Owner de una tienda en línea de artesanías en Oaxaca escribió la historia: «El sistema debe ser fácil de usar». Los Developers no sabían cuándo estaba terminada. Además, el equipo estimó 40 puntos por Sprint, pero en los últimos tres Sprints terminó 22, 25 y 19.<br>Una historia se escribe como «Como… quiero… para…» con criterios de aceptación comprobables. Los Sprints restantes se calculan con la velocidad real, no con la deseada.",
+"p": [
+["¿Qué le falta a la historia?", "Un usuario, una necesidad, un beneficio y criterios de aceptación comprobables", "Más palabras", "Una fecha de entrega", "«Fácil de usar» no se puede comprobar."],
+["La velocidad real del equipo es…", "22 puntos", "40 puntos", "25 puntos", "(22 + 25 + 19) ÷ 3 = 22."],
+["Si faltan 110 puntos, ¿cuántos Sprints faltan?", "5", "3", "4", "110 ÷ 22 = 5."]
+],
+"comp": ["Cómo se escribe la historia", "«El sistema debe ser fácil de usar.»", "«Como compradora desde el celular, quiero pagar en máximo tres pantallas, para no abandonar mi compra. Criterios: tres pantallas o menos; acepta tarjeta y OXXO; confirma por correo.»"],
+"refl": "Escribe tres historias de usuario con criterios de aceptación para un producto o servicio que conozcas (una app, una página web, un trámite).",
+"pl": ["Historia de usuario y pronóstico", "HISTORIA DE USUARIO\nComo [tipo de usuario], quiero [acción], para [beneficio].\nCriterios de aceptación:\n1. Dado [contexto], cuando [acción], entonces [resultado].\n2. [ ]\nPuntos: [ ]\n\nPRONÓSTICO\nPuntos por Sprint (últimos 3): [ ] [ ] [ ]\nVelocidad: [=PROMEDIO(B2:D2)]\nPuntos pendientes: [ ]\nSprints restantes: [=REDONDEAR.MAS(B6/B5,0)]"]
+},
+{
+"caso": "<b>Caso: todo «en proceso», nada terminado</b><br>El área de mercadotecnia de una universidad en Monterrey tiene un tablero con 32 tarjetas en la columna «En proceso» y solo 3 en «Terminado» en el mes. Cada diseñador empieza cosas nuevas cada vez que alguien le pide algo urgente.<br>Kanban visualiza el flujo, y el límite de trabajo en curso obliga a terminar antes de empezar. Menos cosas a la vez significa más cosas terminadas.",
+"p": [
+["¿Qué problema muestra el tablero?", "Demasiado trabajo en curso y poco terminado", "Poco trabajo", "Que el tablero está mal dibujado", "32 en proceso y 3 terminadas indican un cuello de botella."],
+["¿Qué harías primero?", "Poner un límite de trabajo en curso por persona o por columna", "Agregar más columnas", "Contratar a otro diseñador", "El límite obliga a terminar antes de jalar algo nuevo."],
+["Kanban y Scrum…", "se pueden combinar", "son incompatibles", "son lo mismo", "Muchos equipos usan un tablero Kanban dentro de sus Sprints."]
+],
+"comp": ["Cómo se oye al recibir un pedido urgente", "«Sí, ahorita lo empiezo.»", "«Tengo tres cosas en curso, que es mi límite. ¿Cuál de estas pausamos para empezar la tuya?»"],
+"refl": "Diseña el tablero Kanban de un equipo que conozcas: columnas, límites de trabajo en curso y una regla para las urgencias.",
+"pl": ["Tablero Kanban con límites", "TABLERO — [Equipo]\nColumna | Límite WIP | Tarjetas actuales | ¿Rebasa?\nPor hacer | - | [ ] | -\nEn proceso | [6] | [ ] | [=SI(C3>B3,\"Rebasa\",\"OK\")]\nEn revisión | [3] | [ ] | [ ]\nTerminado | - | [ ] | -\n\nRegla de urgencias: [máximo 1 tarjeta urgente a la vez; entra si sale otra]"]
+},
+{
+"caso": "<b>Caso: la junta de los lunes que duraba toda la mañana</b><br>El equipo que implementa un sistema de inventarios en una cadena de ferreterías en Culiacán se reúne cada lunes de 9 a 12. Se discute de todo, nadie toma notas y los mismos pendientes salen cada semana. Varios empezaron a faltar.<br>Una junta de seguimiento es corta, con agenda, acuerdos, responsables y fechas. Los temas técnicos largos van en reuniones aparte, y la minuta sale el mismo día.",
+"p": [
+["¿Qué haría más útil la junta?", "Agenda, límite de tiempo, acuerdos con responsable y minuta", "Hacerla más larga", "Invitar a más personas", "La estructura evita que se diluya."],
+["Un tema técnico que genera discusión larga…", "se agenda en una reunión aparte con quienes se necesitan", "se discute hasta resolverlo", "se ignora", "Así la junta de seguimiento no se come la mañana."],
+["¿Cuándo se envía la minuta?", "El mismo día", "El viernes", "Solo si alguien la pide", "Mientras más pronto, más útil."]
+],
+"comp": ["Cómo se abre la junta", "«Bueno, ¿qué hay de nuevo?»", "«Tenemos 30 minutos: pendientes de la semana pasada, avance contra plan, riesgos nuevos y acuerdos. Lo técnico de la base de datos lo vemos aparte el miércoles.»"],
+"refl": "Escribe la agenda de una junta de seguimiento de 30 minutos para un proyecto que conozcas y la minuta de ejemplo que saldría de ella.",
+"pl": ["Agenda y minuta de seguimiento", "JUNTA DE SEGUIMIENTO — [Proyecto] — [Fecha]\nDuración: 30 min\n1. Pendientes de la junta anterior (5 min)\n2. Avance contra plan: semáforo (10 min)\n3. Riesgos y problemas nuevos (10 min)\n4. Acuerdos (5 min)\n\nMINUTA\nAcuerdo | Responsable | Fecha\n[ ] | [ ] | [ ]\nTemas para reunión aparte: [ ]\nEnviada el: [mismo día]"]
+},
+{
+"caso": "<b>Caso: el verde que se volvió rojo de golpe</b><br>El líder de la implementación de un sistema de nómina en un hospital de León reportó «verde» durante dos meses, aunque sabía que la migración de datos iba atrasada. Pensaba que se iba a recuperar. A una semana del arranque, reportó «rojo»: ya no había forma de corregir y el arranque se movió un mes.<br>Un rojo temprano y honesto vale más que un verde falso. El semáforo compara el avance real contra el planeado con umbrales acordados.",
+"p": [
+["¿Qué error cometió el líder?", "Ocultar el atraso reportando verde", "Usar un semáforo", "Hacer una migración de datos", "El semáforo sirve para decidir a tiempo, no para quedar bien."],
+["Planeado 60%, real 45%: diferencia de −15 puntos. Con umbral de −10 para rojo, está en…", "rojo", "amarillo", "verde", "−15 es peor que −10."],
+["¿Qué significa un amarillo?", "Hay desviación, pero el equipo puede corregirla", "Todo va bien", "Se necesita una decisión de la dirección", "El rojo pide decisión; el amarillo, corrección."]
+],
+"comp": ["Cómo se reporta", "«Vamos bien, ya casi.»", "«La migración va 15 puntos debajo del plan: rojo. Si agregamos a una persona de sistemas dos semanas, llegamos. Necesito esa decisión hoy.»"],
+"refl": "Arma el semáforo de cinco actividades de un proyecto que conozcas con su avance planeado y real, y escribe la decisión que pedirías para cada rojo.",
+"pl": ["Reporte de semáforo", "SEMÁFORO — [Proyecto] — Semana [ ]\nActividad | % planeado | % real | Diferencia | Estado | Acción\n[ ] | [ ] | [ ] | [=C2−B2] | [=SI(D2<=−10,\"Rojo\",SI(D2<=−5,\"Amarillo\",\"Verde\"))] | [ ]\n\nUmbrales acordados con el equipo: amarillo desde [−5], rojo desde [−10]\nDecisiones que necesito: [ ]"]
+},
+{
+"caso": "<b>Caso: «vamos a la mitad»</b><br>Una constructora en Mérida tiene un proyecto de $2,000,000 (BAC). A la semana 10 debía llevar $1,000,000 de trabajo (PV). Lo realmente terminado vale $800,000 (EV) y se han gastado $1,000,000 (AC). El residente dice «vamos a la mitad, todo bien».<br>SPI = EV ÷ PV y CPI = EV ÷ AC; menor que 1 es alerta. EAC = BAC ÷ CPI estima cuánto costará si todo sigue igual.",
+"p": [
+["El SPI es…", "0.80: vamos atrasados", "1.25: vamos adelantados", "1.00: a tiempo", "800,000 ÷ 1,000,000 = 0.80."],
+["El CPI es…", "0.80: gastamos más de lo que avanzamos", "1.25", "1.00", "800,000 ÷ 1,000,000 = 0.80."],
+["Si todo sigue igual, el costo final estimado (EAC) es…", "$2,500,000", "$2,000,000", "$1,600,000", "2,000,000 ÷ 0.80 = 2,500,000."]
+],
+"comp": ["Cómo se reporta al cliente", "«Vamos a la mitad, todo bien.»", "«Llevamos 80% de lo que debíamos y cada peso rinde 80 centavos. Si no corregimos, terminaremos en $2.5 millones. Propongo estas tres medidas.»"],
+"refl": ["Calcula PV, EV, AC, SPI, CPI y EAC de un proyecto que inventes o conozcas, y escribe qué le dirías al patrocinador.", "Escribe dos acciones que mejorarían el CPI y dos que mejorarían el SPI, y explica cuál de las dos cosas atenderías primero."],
+"pl": ["Valor ganado paso a paso", "VALOR GANADO — [Proyecto] — Corte [fecha]\nBAC (presupuesto total): $[ ]\nPV (valor planeado a la fecha): $[ ]\nEV (valor del trabajo terminado): $[ ]\nAC (costo real): $[ ]\nSPI: [=EV/PV]   → [=SI(SPI<1,\"Atrasado\",\"A tiempo o adelantado\")]\nCPI: [=EV/AC]   → [=SI(CPI<1,\"Sobrecosto\",\"En presupuesto\")]\nEAC: [=BAC/CPI]\nDiferencia contra presupuesto: [=EAC−BAC]"]
+},
+{
+"caso": "<b>Caso: el alcance que creció solito</b><br>En la implementación de un punto de venta para una cadena de panaderías en Toluca, cada gerente pidió «un reportito más» directamente al programador. Nadie lo registró. Al final había 14 reportes nuevos, el proyecto se atrasó dos meses y el patrocinador preguntó por qué, sin que hubiera una sola decisión documentada.<br>Todo cambio se registra, se evalúa y lo decide quien tiene autoridad. La corrupción del alcance es crecer sin más tiempo ni dinero.",
+"p": [
+["¿Qué es lo que ocurrió?", "Corrupción del alcance", "Buena atención al cliente", "Un riesgo aceptado", "El alcance creció sin control ni ajuste de tiempo y costo."],
+["¿Quién debe aprobar un cambio?", "Quien tiene autoridad según el acta, como el patrocinador", "El programador", "El gerente que lo pide", "La autoridad para cambiar el alcance se define desde el inicio."],
+["Un plan de comunicación define…", "qué se comunica, a quién, cómo y cada cuánto", "solo los correos del líder", "el chat del equipo", "Así cada interesado recibe lo que necesita."]
+],
+"comp": ["Cómo se oye con el gerente", "«Sí, ahorita te hago el reportito.»", "«Anótalo en la solicitud de cambio; evaluamos cuánto tiempo toma y el patrocinador decide si entra en esta etapa.»"],
+"refl": "Diseña el procedimiento de control de cambios de un proyecto que conozcas en cinco pasos, y un plan de comunicación con cuatro interesados.",
+"pl": ["Registro de cambios y plan de comunicación", "REGISTRO DE CAMBIOS\nNo. | Fecha | Solicitante | Cambio | Impacto alcance/tiempo/costo | Decisión | Decidió\n[ ] | [ ] | [ ] | [ ] | [ ] | [aprobado/rechazado/diferido] | [ ]\n\nPLAN DE COMUNICACIÓN\nQué | A quién | Cómo | Cada cuánto | Responsable\nSemáforo | Patrocinador | Correo | Semanal | [ ]\nAvances | Gerentes | Junta | Quincenal | [ ]"]
+}
+]
+}

@@ -1,0 +1,4 @@
+-- Diplomado en Gestión de Proyectos y Metodologías Ágiles: ampliado a 30 horas reales (opción B).
+BEGIN;
+UPDATE cursos SET horas=30, descripcion='Para quienes «les tocó» un proyecto sin formación formal: abrir una sucursal, organizar un evento, lanzar una app o implementar un sistema. Aprende a definir alcance, armar cronograma y ruta crítica, presupuestar, manejar riesgos, trabajar con Scrum y Kanban, medir avance con valor ganado en hoja de cálculo y cerrar bien. Incluye 20 casos de proyectos reales en empresas mexicanas con decisiones guiadas, 4 laboratorios de simulación y un proyecto final en el que armas el plan completo de un proyecto tuyo. Te da bases para certificaciones como PMP o Scrum Master, que otorgan organismos externos y no este diplomado.' WHERE id='d-proyectos';
+COMMIT;
