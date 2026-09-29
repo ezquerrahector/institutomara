@@ -1,0 +1,181 @@
+{
+"id": "diplomado-persuasion-etica",
+"horas": 32,
+"desc": "Aprende a convencer sin manipular: escuchar lo que la otra persona necesita, argumentar con datos, manejar objeciones, escribir mensajes claros y presentar con confianza. Con ejemplos de «así no / así sí», frases listas para usar en ventas, trabajo en equipo y atención a clientes, 9 laboratorios de simulación con casos mexicanos, un proyecto final y un cuaderno de práctica en PDF.",
+"aprender": "Resolver simulaciones completas de persuasión ética en ventas, trabajo y comunidad, desde auditar un mensaje hasta cerrar una conversación con respeto",
+"talleres": [],
+"labs": [
+{
+"t": "Auditar una campaña de una tienda",
+"obj": "auditar mensajes reales de venta para separar la persuasión legítima de la presión artificial y proponer versiones éticas.",
+"esc": "Te piden revisar la campaña de fin de mes de <b>Muebles Casa Bella</b>, en León. Los anuncios dicen: «¡ÚLTIMAS HORAS! Solo quedan 3 salas», «El 95% de nuestros clientes recomienda» (sin fuente) y «Si no compras hoy, te arrepentirás». La bodega tiene 40 salas.",
+"e": [
+["<b>Escena 1 — La urgencia.</b> «¡Últimas horas! Solo quedan 3 salas».", "Explica por qué es presión artificial y redacta un aviso con urgencia real."],
+["<b>Escena 2 — La cifra.</b> «El 95% recomienda».", "Escribe qué preguntas harías sobre esa cifra y cómo la reformularías si no hay evidencia."],
+["<b>Escena 3 — La emoción.</b> «Te arrepentirás».", "Reformula el mensaje sin miedo ni vergüenza, destacando un beneficio verdadero."],
+["<b>Escena 4 — La propuesta al dueño.</b> El dueño teme vender menos.", "Escribe cómo le explicarías por qué la versión ética conviene al negocio a mediano plazo."]
+],
+"p": [
+["«Solo quedan 3» cuando hay 40 es…", "información falsa que presiona la decisión", "persuasión legítima", "una técnica aceptable", "La urgencia debe ser real."],
+["Una cifra sin fuente…", "debe verificarse o retirarse", "puede usarse si suena bien", "es siempre falsa", "Evidencia antes de afirmar."],
+["¿Qué gana el negocio con mensajes honestos?", "Confianza, recomendaciones y menos reclamos", "Nada", "Menos ventas siempre", "La credibilidad se acumula."]
+],
+"pl": ["Matriz de auditoría de mensajes", "AUDITORÍA\nAfirmación | Tipo (hecho, opinión, promesa) | Evidencia | Condición omitida | Riesgo | Versión ética\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ]"]
+},
+{
+"t": "Entrevista de descubrimiento con un cliente",
+"obj": "preparar y conducir una entrevista de descubrimiento que revele objetivos y restricciones antes de proponer.",
+"esc": "Vendes software de punto de venta en <b>Mérida</b>. Te reúnes con doña Martha, dueña de dos papelerías, que dice: «Nomás quiero ver precios». Su sobrino le recomendó otro sistema.",
+"e": [
+["<b>Escena 1 — Las preguntas.</b> Tienes 15 minutos.", "Escribe ocho preguntas abiertas y neutrales para entender su situación."],
+["<b>Escena 2 — La escucha.</b> Doña Martha dice que «las computadoras la confunden» y que pierde dinero en inventario.", "Escribe cómo parafraseas y verificas lo que entendiste."],
+["<b>Escena 3 — Los interlocutores.</b> El sobrino opina y la contadora decide si se paga.", "Haz el mapa de interlocutores y qué necesita cada uno."],
+["<b>Escena 4 — La propuesta.</b> Con lo que sabes, adapta tu propuesta.", "Escribe una propuesta de tres renglones que responda a sus objetivos y restricciones."]
+],
+"p": [
+["«¿Verdad que le urge un sistema?» es…", "una pregunta dirigida", "una pregunta neutral", "una buena apertura", "Sugiere la respuesta."],
+["Parafrasear sirve para…", "verificar que entendiste antes de proponer", "repetir por repetir", "presionar", "Evita propuestas equivocadas."],
+["El sobrino, en la decisión, es…", "un influenciador que conviene escuchar", "alguien a quien ignorar", "quien paga", "Mapa de roles."]
+],
+"pl": ["Guía de descubrimiento", "DESCUBRIMIENTO — [Cliente]\nObjetivos: [ ]\nRestricciones (tiempo, dinero, habilidades): [ ]\nQuién decide · quién paga · quién usa · quién influye: [ ]\nLo que entendí (parafraseo verificado): [ ]\nPropuesta adaptada: [ ]"]
+},
+{
+"t": "Una objeción con dos explicaciones",
+"obj": "analizar una resistencia desde creencias, atención y sesgos, y diseñar una prueba reversible en lugar de insistir.",
+"esc": "En una clínica veterinaria de <b>Toluca</b> quieres implementar recordatorios de vacunas por WhatsApp. La recepcionista con más antigüedad dice: «Eso no sirve, la gente no lee los mensajes». Los demás la siguen.",
+"e": [
+["<b>Escena 1 — Dos explicaciones.</b> ¿Por qué se opone?", "Escribe dos explicaciones alternativas de su objeción y qué dato permitiría distinguirlas."],
+["<b>Escena 2 — La atención.</b> Tu propuesta original es un documento de 4 páginas.", "Resume la propuesta en una apertura de 60 palabras."],
+["<b>Escena 3 — Tu propio sesgo.</b> Estás convencido de que funcionará.", "Escribe dos datos que te harían revisar tu conclusión."],
+["<b>Escena 4 — La prueba reversible.</b> Nadie quiere arriesgarse.", "Diseña una prueba de un mes, pequeña y reversible, con su indicador."]
+],
+"p": [
+["Una prueba reversible reduce la resistencia porque…", "baja el costo de equivocarse", "obliga a todos", "evita medir", "Se puede deshacer."],
+["¿Por qué buscar datos que te contradigan?", "Para reducir tu propio sesgo de confirmación", "Para perder la discusión", "No sirve", "Pensamiento crítico."],
+["La recepcionista puede oponerse por…", "miedo a más trabajo o experiencia previa real", "mala fe siempre", "ignorancia", "Explicaciones alternativas."]
+],
+"pl": ["Plan de prueba reversible", "PRUEBA — [Mejora]\nObjeción y dos explicaciones: [ ]\nDato que las distingue: [ ]\nPrueba (duración, alcance): [ ]\nIndicador: [ ] · Referencia actual: [ ]\nCómo se revierte si no funciona: [ ]"]
+},
+{
+"t": "Una propuesta con evidencia",
+"obj": "construir una propuesta argumentada con fuentes evaluadas, cifras bien comparadas y la mejor objeción respondida.",
+"esc": "Propones a la dirección de una <b>escuela secundaria en Puebla</b> cambiar el horario de entrada de 7:00 a 7:30. Tienes un artículo de un periódico, un estudio sobre sueño adolescente y datos de retardos de tu escuela: 180 retardos al mes en 2025, 150 en 2026.",
+"e": [
+["<b>Escena 1 — El argumento.</b> Tienes que convencer en una página.", "Escribe el argumento con afirmación, razón, evidencia, supuesto y límite."],
+["<b>Escena 2 — Las fuentes.</b> Artículo de periódico y estudio.", "Haz las fichas de ambas fuentes y di cuál pesa más y por qué."],
+["<b>Escena 3 — Las cifras.</b> Los retardos bajaron de 180 a 150.", "Calcula la diferencia absoluta y relativa y escribe dos explicaciones alternativas."],
+["<b>Escena 4 — La objeción.</b> «Los papás entran a trabajar a las 7:30».", "Escribe la mejor versión de esa objeción y tu respuesta."]
+],
+"p": [
+["La diferencia relativa de 180 a 150 es…", "una reducción de 16.7%", "30%", "20%", "30 ÷ 180 ≈ 0.167."],
+["¿Qué falacia sería «si no cambiamos el horario, los alumnos reprobarán todo»?", "Pendiente resbaladiza o exageración", "Argumento válido", "Evidencia", "Consecuencia extrema sin sustento."],
+["Responder a la mejor objeción…", "fortalece la propuesta", "la debilita", "no hace falta", "Muestra que la pensaste."]
+],
+"pl": ["Propuesta de una página", "PROPUESTA\nAfirmación: [ ]\nRazones: [ ]\nEvidencia (fuentes con ficha): [ ]\nCifras: absoluta [ ] · relativa [ ] · explicaciones alternativas [ ]\nMejor objeción y respuesta: [ ]\nLímites: [ ]\nPetición concreta: [ ]"]
+},
+{
+"t": "Reparar la confianza después de un error",
+"obj": "presentarse con honestidad, convertir promesas en compromisos verificables y reparar un error públicamente.",
+"esc": "Eres coordinador de una <b>agencia de viajes en Cancún</b>. Prometiste a un grupo de 20 personas «el mejor hotel y cero problemas». Por un error de reservación, 5 personas quedaron en otro hotel la primera noche. El grupo está molesto en el chat.",
+"e": [
+["<b>Escena 1 — El aviso.</b> Tienes que escribir en el chat del grupo.", "Redacta el aviso de corrección con hechos, efecto, acción, plazo y seguimiento."],
+["<b>Escena 2 — Las promesas.</b> «El mejor hotel y cero problemas».", "Reformula esas promesas como compromisos verificables para futuros grupos."],
+["<b>Escena 3 — Los testimonios.</b> Quieres usar comentarios de viajes anteriores en tu página.", "Escribe qué permiso necesitas y cómo presentarías un caso sin exagerar."],
+["<b>Escena 4 — Tu presentación.</b> Te presentas con un grupo nuevo.", "Redacta una presentación de 120 palabras separando experiencia, evidencia y límites."]
+],
+"p": [
+["Un buen aviso de corrección…", "reconoce hechos y efecto, dice qué se hará y cuándo", "minimiza el problema", "culpa al hotel", "Responsabilidad concreta."],
+["«Cero problemas» es…", "una promesa no verificable que daña la credibilidad", "un compromiso sólido", "un dato", "Compromete lo que no controlas."],
+["Usar el comentario de un cliente requiere…", "su permiso y contexto honesto", "nada", "cambiarle el nombre y ya", "Consentimiento."]
+],
+"pl": ["Aviso de corrección", "AVISO\nQué pasó (hechos): [ ]\nA quién afectó y cómo: [ ]\nQué hacemos ahora: [ ]\nPlazo: [ ]\nSeguimiento: [quién, cuándo]\nCompromiso para que no se repita: [ ]"]
+},
+{
+"t": "La misma propuesta para tres personas",
+"obj": "adaptar un mensaje claro y completo a tres interlocutores con alternativas, costos y encuadres honestos.",
+"esc": "Propones instalar paneles solares en una <b>pequeña fábrica de tortillas en Hermosillo</b>. Debes presentarlo a la encargada de producción (le preocupa que no se detenga la máquina), al dueño (le preocupa la inversión) y al contador (le preocupan los números y la factura).",
+"e": [
+["<b>Escena 1 — La idea central.</b> Todo en una frase.", "Escribe la idea central y la estructura de un correo de cinco párrafos."],
+["<b>Escena 2 — Las alternativas.</b> Paneles, cambio de tarifa o no hacer nada.", "Construye una tabla de tres alternativas con costo, tiempo, ventajas y límites."],
+["<b>Escena 3 — Los encuadres.</b> Beneficio y riesgo.", "Redacta una versión orientada al beneficio y otra al riesgo, ambas honestas."],
+["<b>Escena 4 — Las tres versiones.</b> Producción, dueño y contador.", "Escribe el primer párrafo adaptado a cada uno."]
+],
+"p": [
+["Incluir «no hacer nada» como alternativa…", "da una comparación honesta", "debilita la propuesta", "no sirve", "Decisión informada."],
+["Un encuadre honesto…", "resalta un aspecto verdadero sin ocultar el resto", "exagera", "omite costos", "Encuadre ≠ engaño."],
+["Adaptar el mensaje a cada persona es…", "legítimo si el contenido es el mismo y verdadero", "manipulación", "mentir", "Misma verdad, distinto énfasis."]
+],
+"pl": ["Mensaje para tres interlocutores", "IDEA CENTRAL: [ ]\nAlternativas: A [ ] · B [ ] · C (no hacer nada) [ ]\nProducción — le importa: [ ] · primer párrafo: [ ]\nDueño — le importa: [ ] · primer párrafo: [ ]\nContador — le importa: [ ] · primer párrafo: [ ]"]
+},
+{
+"t": "Una historia que sí se puede contar",
+"obj": "escribir una historia persuasiva responsable, acompañada de evidencia, con emoción sin explotación y con consentimiento.",
+"esc": "Una <b>fundación de Oaxaca</b> que da becas a jóvenes indígenas quiere una campaña de donativos. Tienen la historia de Rosa, becaria que hoy es enfermera, y fotos de niños en su comunidad. Alguien propone: «Pongamos fotos tristes de los niños para que la gente done más».",
+"e": [
+["<b>Escena 1 — La historia.</b> Rosa aceptó contar su historia.", "Escribe una historia de seis frases con escena, tensión y resolución."],
+["<b>Escena 2 — La evidencia.</b> Una historia no demuestra que el programa funcione.", "Escribe dos datos que acompañarían la historia y de dónde saldrían."],
+["<b>Escena 3 — La emoción.</b> La propuesta de «fotos tristes».", "Explica por qué es explotación y propone una alternativa digna."],
+["<b>Escena 4 — El consentimiento.</b> Rosa y los niños.", "Diseña la ficha de autorización para Rosa y explica qué necesitarías para usar imágenes de menores."]
+],
+"p": [
+["Usar fotos tristes de niños para provocar culpa es…", "explotación emocional que afecta su dignidad", "buena estrategia", "necesario", "Emoción sin explotación."],
+["La historia de Rosa…", "ilustra, pero no demuestra por sí sola el impacto del programa", "es evidencia suficiente", "no sirve", "Historia y evidencia cumplen funciones distintas."],
+["Para imágenes de menores se necesita…", "autorización de sus tutores y cuidado de su identidad", "nada si son de una comunidad", "solo pedirles permiso a los niños", "Protección especial."]
+],
+"pl": ["Historia responsable", "HISTORIA (6 frases): escena · tensión · decisión · resolución · aprendizaje · invitación\nDatos que la acompañan: [ ]\nEmoción que busco y por qué es digna: [ ]\nAUTORIZACIÓN: canal · contenido · identidad (nombre, foto, voz) · vigencia · derecho a retirar"]
+},
+{
+"t": "Cinco objeciones seguidas",
+"obj": "manejar objeciones de costo, tiempo, evidencia, experiencia previa y una negativa final, explorando antes de responder y cerrando con respeto.",
+"esc": "Ofreces un <b>servicio de contabilidad para pequeños negocios en Saltillo</b>. Don Héctor, dueño de un taller mecánico, escucha tu propuesta y responde con cinco objeciones seguidas.",
+"e": [
+["<b>Escena 1 — «Está muy caro».</b>", "Escribe una pregunta para explorar qué significa «caro» para él y una respuesta con opciones."],
+["<b>Escena 2 — «No tengo tiempo para juntar papeles».</b>", "Escribe cómo validas sin conceder y qué propones para reducir su tiempo."],
+["<b>Escena 3 — «¿Y cómo sé que funciona?» y «Ya me fue mal con otro contador».</b>", "Escribe qué evidencia ofreces y cómo respondes a su mala experiencia."],
+["<b>Escena 4 — «No, gracias».</b>", "Escribe un cierre respetuoso y, si él lo pide, un seguimiento para el mes siguiente."]
+],
+"p": [
+["Ante «está muy caro», primero…", "preguntar comparado con qué y qué le preocupa del costo", "bajar el precio", "insistir", "Explorar antes de responder."],
+["Validar una objeción significa…", "reconocer que tiene sentido sin aceptar automáticamente su conclusión", "darle la razón en todo", "ignorarla", "Validar ≠ conceder."],
+["Ante un «no» definitivo…", "se acepta, se agradece y se deja la puerta abierta solo si él la quiere", "se insiste tres veces más", "se enoja uno", "Respeto a la decisión."]
+],
+"pl": ["Guía de objeciones", "OBJECIÓN | Pregunta para explorar | Validación | Respuesta u opción\nCosto | [ ] | [ ] | [ ]\nTiempo | [ ] | [ ] | [ ]\nEvidencia | [ ] | [ ] | [ ]\nExperiencia previa | [ ] | [ ] | [ ]\nNegativa final | — | [ ] | Cierre: [ ]"]
+},
+{
+"t": "Una propuesta en tres canales",
+"obj": "adaptar una propuesta a correo, mensaje breve y exposición de tres minutos, cuidando voz, lenguaje no verbal y accesibilidad.",
+"esc": "Coordinas voluntarios de una <b>colecta de víveres en Guadalajara</b>. Necesitas invitar a una empresa a donar, recordar a los voluntarios su turno por WhatsApp y exponer los resultados en tres minutos ante la asociación de colonos.",
+"e": [
+["<b>Escena 1 — El correo.</b> A la empresa.", "Redacta el correo con asunto y la versión breve para mensajería."],
+["<b>Escena 2 — La exposición.</b> Tres minutos ante colonos.", "Escribe el guion de 180 palabras y marca las pausas."],
+["<b>Escena 3 — El lenguaje no verbal.</b> Un colono se cruza de brazos mientras hablas.", "Escribe tres explicaciones posibles y qué harías."],
+["<b>Escena 4 — La gráfica.</b> Quieres mostrar los kilos recolectados por semana.", "Describe la diapositiva: título, unidades, periodo y una conclusión limitada."]
+],
+"p": [
+["Brazos cruzados significa…", "algo que no puedes saber sin preguntar: frío, comodidad o desacuerdo", "rechazo seguro", "aburrimiento seguro", "Interpretación contextual."],
+["Un mensaje de WhatsApp eficaz es…", "breve, con fecha, hora, lugar y qué hacer", "largo y con muchos emojis", "sin detalles", "Claridad."],
+["Una gráfica accesible tiene…", "título, unidades, periodo y conclusión clara", "muchos colores", "solo números", "Legibilidad."]
+],
+"pl": ["Una propuesta, tres canales", "CORREO: asunto [ ] · 5 párrafos [ ]\nMENSAJE: [máx. 40 palabras con fecha, hora, lugar y acción]\nEXPOSICIÓN (3 min): apertura [ ] · 3 puntos [ ] · petición [ ] · pausas marcadas\nDIAPOSITIVA: título [ ] · unidades [ ] · periodo [ ] · conclusión [ ]"]
+},
+{
+"t": "Tu intervención persuasiva completa",
+"obj": "integrar todo el diplomado en una intervención persuasiva real, preparada, simulada, medida y revisada con criterios éticos.",
+"esc": "Este es tu proyecto final. Vas a preparar una <b>intervención persuasiva real</b>: una propuesta en tu trabajo, una venta, una invitación a tu comunidad o una petición importante. Al terminar tendrás una versión inicial, una versión final y un registro de resultados que puedes mostrar como evidencia de tu forma de comunicar.",
+"e": [
+["<b>Parte 1 — Ética y audiencia.</b> Con lo de los módulos 1 a 3.", "Escribe tu objetivo, la auditoría ética de tu mensaje inicial, el perfil de tu audiencia con sus restricciones y dos explicaciones de la resistencia que esperas."],
+["<b>Parte 2 — Argumento y credibilidad.</b> Con lo de los módulos 4 y 5.", "Escribe tu argumento con evidencia evaluada, la mejor objeción y tu respuesta, y tus compromisos verificables."],
+["<b>Parte 3 — Mensaje e historia.</b> Con lo de los módulos 6 y 7.", "Escribe tu mensaje con alternativas y encuadre honesto, y una historia responsable si aplica."],
+["<b>Parte 4 — Conversación, canales y medición.</b> Con lo de los módulos 8 a 10.", "Escribe tus respuestas a cinco preguntas difíciles, las versiones para dos canales y el registro con indicador, referencia, periodo y explicación alternativa."]
+],
+"p": [
+["La persuasión ética…", "respeta que la otra persona decida libremente con información completa", "busca que digan que sí a toda costa", "oculta lo que no conviene", "Decisión informada."],
+["Antes de proponer, conviene…", "descubrir objetivos y restricciones de la audiencia", "hablar más", "bajar el precio", "Escuchar primero."],
+["Un argumento sólido incluye…", "afirmación, razones, evidencia, supuestos y límites", "solo emoción", "solo datos", "Estructura completa."],
+["Ante un no definitivo…", "se acepta y se cierra con respeto", "se presiona", "se ignora", "Libertad del otro."],
+["Tu constancia de este diplomado…", "es de Instituto Mara y acredita tu práctica en comunicación ética", "es un título oficial", "certifica que siempre convencerás", "Nadie garantiza resultados."]
+],
+"pl": ["Índice de la intervención persuasiva", "INTERVENCIÓN PERSUASIVA — PROYECTO FINAL\n[Nombre] · [Fecha]\n\n1. Objetivo y auditoría ética del mensaje inicial\n2. Audiencia: objetivos, restricciones, interlocutores\n3. Resistencias previstas y prueba reversible\n4. Argumento, fuentes y mejor objeción\n5. Credibilidad y compromisos verificables\n6. Mensaje, alternativas y encuadre\n7. Historia responsable (si aplica)\n8. Preguntas difíciles y objeciones\n9. Versiones por canal\n10. Registro de resultados y revisión final"]
+}
+]
+}
