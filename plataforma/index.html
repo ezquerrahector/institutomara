@@ -538,7 +538,9 @@ details.modelo[open] summary{margin-bottom:8px}
           </div>
         </div>
         <button type="submit" class="btn btn-mor" style="width:100%">Crear mi cuenta</button>
+        <button type="button" id="btnGoogle2" class="btn btn-linea oculto" style="width:100%;margin-top:10px" onclick="entrarConGoogle()">Crear mi cuenta con Google</button>
         <p style="font-size:.78rem;color:var(--gris);margin-top:14px;line-height:1.6">
+          Al crear tu cuenta aceptas los <a href="../sitio-web/legal/terminos.html" target="_blank" style="color:var(--morado)">Términos y condiciones</a> y el <a href="../sitio-web/legal/privacidad.html" target="_blank" style="color:var(--morado)">Aviso de privacidad</a>.
           Instituto Mara imparte cursos libres de capacitación. No cuentan con RVOE ni otorgan grado académico.
         </p>
       </form>
@@ -606,7 +608,7 @@ var LLAVE = 'institutoMara.v2';
    se actualice en las computadoras donde la plataforma ya se había abierto. */
 var CONTENIDO_VERSION = 8;
 /* Cambiar a true cuando Google esté activado en Supabase → Authentication → Providers */
-var LOGIN_GOOGLE = false;
+var LOGIN_GOOGLE = true;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
 
 function guardar(){
@@ -1511,7 +1513,7 @@ $('tabCrear').onclick = function(){
 /* ---- Entrar más rápido: recordar correo, enlace sin contraseña y Google ---- */
 (function(){
   try{ var c = localStorage.getItem('institutoMara.correo'); if(c && $('eCorreo')) $('eCorreo').value = c; }catch(e){}
-  if(LOGIN_GOOGLE && $('btnGoogle')) $('btnGoogle').classList.remove('oculto');
+  if(LOGIN_GOOGLE && $('btnGoogle')) $('btnGoogle').classList.remove('oculto'); if(LOGIN_GOOGLE && $('btnGoogle2')) $('btnGoogle2').classList.remove('oculto');
 })();
 function recordarCorreo(correo){
   try{
