@@ -17,7 +17,7 @@ const LLAVE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const BREVO = Deno.env.get("BREVO_API_KEY") || "";
 const REMITENTE = Deno.env.get("CORREO_REMITENTE") || "";
 const NOMBRE = Deno.env.get("NOMBRE_REMITENTE") || "Instituto Mara";
-const AULA = Deno.env.get("URL_AULA") || "https://ezquerrahector.github.io/institutomara/plataforma/index.html";
+const AULA = Deno.env.get("URL_AULA") || "https://institutomara.com/plataforma/index.html";
 const CORS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",

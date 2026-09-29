@@ -24,7 +24,7 @@ table{{border-collapse:collapse;width:100%;font-size:.95rem}}td,th{{border:1px s
 
 PRIV='''<p>Este aviso explica qué datos personales recabamos en Instituto Mara, para qué los usamos y cómo puedes ejercer tus derechos, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (DOF, 20 de marzo de 2025).</p>
 <h2>1. Quién es responsable de tus datos</h2>
-<p><strong>Héctor Ezquerra</strong>, persona física que opera la marca <strong>Instituto Mara</strong>, con domicilio en León, Guanajuato, México. Contacto para temas de privacidad: <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> · WhatsApp <a href="https://wa.me/528120282120">81 2028 2120</a>.</p>
+<p><strong>Instituto Mara</strong>, escuela que presta sus servicios 100 % en línea desde México. Contacto para temas de privacidad: <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> · WhatsApp <a href="https://wa.me/528120282120">81 2028 2120</a>.</p>
 <h2>2. Qué datos recabamos</h2>
 <ul>
 <li><strong>Identificación y contacto:</strong> nombre, nombre para tu constancia, correo electrónico y, si nos lo das, número de WhatsApp.</li>
@@ -60,7 +60,7 @@ PRIV='''<p>Este aviso explica qué datos personales recabamos en Instituto Mara,
 <p>Publicaremos cualquier cambio en esta misma página, con su fecha de actualización, y te avisaremos por correo si el cambio es importante.</p>
 <div class="caja">Si consideras que tu derecho a la protección de datos fue vulnerado, puedes acudir a la autoridad competente en la materia, que conforme a la ley vigente es la Secretaría Anticorrupción y Buen Gobierno.</div>'''
 
-TERM='''<p>Al crear una cuenta o inscribirte a un curso de <strong>Instituto Mara</strong> aceptas estos términos. Instituto Mara es operado por Héctor Ezquerra, persona física, con domicilio en León, Guanajuato, México. Contacto: <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> · WhatsApp 81 2028 2120.</p>
+TERM='''<p>Al crear una cuenta o inscribirte a un curso de <strong>Instituto Mara</strong> aceptas estos términos. Instituto Mara presta sus servicios 100 % en línea desde México. Contacto: <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> · WhatsApp 81 2028 2120.</p>
 <h2>1. Qué ofrecemos</h2>
 <p>Cursos, diplomados y rutas de capacitación <strong>libres</strong>, 100% en línea, con lecciones, ejercicios interactivos, evaluaciones y una <strong>constancia de Instituto Mara</strong> con folio y código QR al terminar.</p>
 <div class="caja"><strong>Validez.</strong> Son cursos libres de formación para el trabajo. <strong>No cuentan con Reconocimiento de Validez Oficial de Estudios (RVOE) de la SEP</strong> ni con registro ante el CONOCER. La constancia acredita la capacitación y las horas cursadas; no es un certificado, título ni grado académico. Los diplomados de psicología y salud no habilitan para ejercer la psicoterapia ni para diagnosticar; los de temas legales, laborales o fiscales no sustituyen la asesoría de un profesional.</div>
