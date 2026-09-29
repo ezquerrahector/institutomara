@@ -1,0 +1,137 @@
+{
+"talleres": [
+{
+"caso": "<b>Caso: la plática anual que nadie recordaba</b><br>Una secundaria en Pachuca organiza cada año una plática de dos horas sobre «salud emocional» con un conferencista. Los alumnos la olvidan en una semana. Una maestra de 1.º, en cambio, empezó a dedicar 10 minutos cada lunes a una rutina: nombrar cómo llegan, una actividad corta de respiración y un reto de la semana para practicar una habilidad. A los tres meses, su grupo resolvía mejor los conflictos.<br>La prevención funciona con rutinas cortas y constantes. Cinco habilidades socioemocionales: autoconocimiento, autorregulación, conciencia social, relaciones y decisiones responsables.",
+"p": [
+["¿Por qué funcionó mejor la rutina de la maestra?", "Porque era corta, constante y se practicaba", "Porque era más divertida", "Porque tenía un conferencista", "La práctica repetida construye habilidades."],
+["«Nombrar cómo llego hoy» trabaja…", "autoconocimiento", "decisiones responsables", "conciencia social", "Reconocer la propia emoción es el primer paso."],
+["¿Cómo se escriben las normas del programa?", "En positivo y pocas", "Con muchas prohibiciones", "Las pone solo el adulto sin explicar", "Pocas normas claras en positivo."]
+],
+"comp": ["Cómo se ve la prevención", "«Una plática de dos horas al año y listo.»", "«Cada lunes, 10 minutos: ¿cómo llego? (semáforo de emociones), respiración de 1 minuto y reto de la semana: ‹esta semana escucho sin interrumpir›.»"],
+"refl": ["Diseña una rutina semanal de 10 minutos para un grupo o una familia que trabaje las cinco habilidades socioemocionales a lo largo de un mes.", "Escribe cómo involucrarías a las familias en ese programa."],
+"pl": ["Programa de bienestar de un mes", "PROGRAMA DE BIENESTAR — [Grupo / familia]\nRutina semanal (10 min): ¿cómo llego? · respiración · reto de la semana\nSemana 1 — Autoconocimiento: [ ]\nSemana 2 — Autorregulación: [ ]\nSemana 3 — Conciencia social: [ ]\nSemana 4 — Relaciones y decisiones responsables: [ ]\nNormas (en positivo): 1. [ ] 2. [ ] 3. [ ]\nFamilias: [cómo participan]"]
+},
+{
+"caso": "<b>Caso: «anda muy rara»</b><br>La orientadora de una secundaria en Culiacán canalizó a Paulina con una psicóloga. Su nota decía: «Anda muy rara, creo que tiene algo». La psicóloga no pudo usar esa información. Otra orientadora llevó un registro de tres semanas: cuántos días faltó, cuántos episodios de llanto, a qué hora, qué los detonó y qué la calmó. La psicóloga dijo que ese registro le ahorró semanas.<br>Canaliza con datos: qué, cuándo, cuánto dura, qué tan intenso y qué lo calma. Cuida la confidencialidad y verifica la cédula de quien atienda al menor.",
+"p": [
+["¿Qué le faltaba a la nota «anda muy rara»?", "Hechos concretos: qué, cuándo, cuánto y qué la calma", "Un diagnóstico", "Más adjetivos", "Los datos ayudan a decidir."],
+["Para saber el promedio de duración de los episodios se usa…", "PROMEDIO o PROMEDIO.SI", "CONTAR", "BUSCARV", "PROMEDIO.SI calcula el promedio que cumple una condición."],
+["Antes de canalizar con un profesional, conviene…", "verificar su cédula profesional", "revisar sus redes sociales", "preguntar solo su precio", "La cédula se consulta en el registro oficial."]
+],
+"comp": ["Cómo se escribe la nota de canalización", "«Anda muy rara, creo que tiene algo.»", "«En 3 semanas: 5 faltas, 7 episodios de llanto (promedio 20 min), 5 de ellos después de Educación Física. Se calma cuando habla con su amiga Ana. Duerme poco, según la familia.»"],
+"refl": ["Diseña un registro de observación de tres semanas para una conducta que te preocupe, con las columnas necesarias.", "Con datos inventados, escribe las fórmulas para contar episodios, calcular su duración promedio y la intensidad máxima."],
+"pl": ["Registro de observación para especialistas", "REGISTRO — [Iniciales] (confidencial)\nFecha | Hora | Qué pasó (hecho) | Duración (min) | Intensidad (1–5) | Detonante | Qué ayudó\n\nRESUMEN\nEpisodios: [=CONTAR(D:D)]\nDuración promedio: [=PROMEDIO(D:D)]\nDuración promedio tras Ed. Física: [=PROMEDIO.SI(F:F,\"Ed. Física\",D:D)]\nIntensidad máxima: [=MAX(E:E)]\nTotal de minutos: [=SUMA(D:D)]\nProfesional al que se canaliza: [nombre] · cédula verificada [sí/no]"]
+},
+{
+"caso": "<b>Caso: buscar el teléfono en plena crisis</b><br>En una primaria de Oaxaca, un alumno tuvo una crisis y dijo que quería hacerse daño. La maestra buscó en internet «teléfono de ayuda» y encontró números que no funcionaban. Pasaron 20 minutos. Esa misma maestra llevaba meses durmiendo mal y con ganas de llorar después de clases, pero pensaba que «no tenía tiempo para ella».<br>Ten tu directorio de canalización listo, verificado y visible. Cuidarte te permite acompañar mejor; pedir ayuda también aplica para ti.",
+"p": [
+["¿Qué habría ahorrado los 20 minutos?", "Un directorio verificado y visible", "Buscar más rápido", "Llamar a un familiar", "En crisis no hay tiempo para buscar."],
+["¿Qué números no pueden faltar?", "911, Línea de la Vida 800 911 2000, 088 y la Procuraduría de Protección del DIF", "Solo el de la dirección", "El de una pizzería", "Son los contactos esenciales."],
+["El malestar prolongado de la maestra…", "es una razón para buscar apoyo para ella también", "no importa", "es parte del trabajo", "Quien cuida también necesita cuidado."]
+],
+"comp": ["Cómo se prepara la escuela", "(En la crisis) «¿Alguien sabe a qué número se llama?»", "El directorio está impreso junto al teléfono de la dirección, en la sala de maestros y en el celular de cada docente, verificado cada inicio de ciclo."],
+"refl": ["Arma tu directorio de canalización con al menos ocho contactos de tu localidad y verifica que funcionen.", "Escribe tu plan de autocuidado: señales de alerta propias, qué te recarga y a quién pedirías ayuda."],
+"pl": ["Directorio de canalización", "DIRECTORIO — [Escuela / localidad] — verificado el [fecha]\nEmergencia: 911\nCrisis emocional (24 h): Línea de la Vida 800 911 2000\nCiberdelitos: 088\nProcuraduría de Protección del DIF: [ ]\nCentro de salud / hospital cercano: [ ]\nPsicología (cédula verificada): [ ]\nUSAER / orientación: [ ]\nDirección de la escuela: [ ]\n\nAUTOCUIDADO: mis señales [ ] · qué me recarga [ ] · a quién pido ayuda [ ]"]
+},
+{
+"caso": "<b>Caso: Diego después de la crisis</b><br>Diego, de 14 años, en Monterrey, expresó que quería hacerse daño. La escuela actuó bien ese día: no lo dejó solo, avisó a la familia y lo canalizaron. Pero después, todo volvió a la normalidad: nadie le preguntó cómo seguía, sus maestros no sabían nada y regresó al mismo grupo donde lo molestaban.<br>Después de la crisis viene el seguimiento: protocolo escolar, especialista, registro y más protección.",
+"p": [
+["¿Qué faltó después de la crisis?", "Seguimiento: contacto con la familia y el especialista, apoyo en la escuela y atender el acoso", "Nada, ya se canalizó", "Un castigo para que no se repita", "La crisis es el inicio, no el final."],
+["¿Qué información necesitan sus maestros?", "Lo necesario para apoyarlo, con permiso de la familia y cuidando la confidencialidad", "Todo el detalle de la crisis", "Nada", "Confidencialidad con propósito."],
+["Regresar al grupo donde lo molestaban…", "mantiene un factor de riesgo que debe atenderse", "no importa", "le ayuda a ser fuerte", "Sumar protección incluye quitar riesgos."]
+],
+"comp": ["Cómo se da seguimiento", "«Ya lo atendieron, caso cerrado.»", "«Plan de seguimiento: contacto semanal con la familia, orientadora como adulto de referencia, atención al acoso del grupo, avisos a sus maestros con lo necesario y revisión en un mes.»"],
+"refl": ["Escribe un plan de seguimiento de un mes para un adolescente que tuvo una señal roja: acciones, responsables y fechas.", "Escribe qué pondrías en el protocolo de tu escuela o espacio para que el seguimiento no dependa de la memoria de una persona."],
+"pl": ["Plan de seguimiento después de una señal roja", "SEGUIMIENTO — [Iniciales] (confidencial)\nFecha de la señal: [ ]   Canalizado a: [ ]\nAdulto de referencia en la escuela: [ ]\nContacto con la familia: [frecuencia]\nApoyos en la escuela: [ ]\nRiesgos a atender (acoso, carga, etc.): [ ]\nQuién sabe qué (con permiso): [ ]\nRevisiones: [semana 1] [semana 2] [mes 1]\nSi vuelve una señal roja: ruta del mismo día."]
+}
+],
+"labs": [
+{
+"t": "Conocer a un grupo nuevo",
+"obj": "aplicar lo que sabes del desarrollo emocional, el apego, la regulación y los factores de protección al recibir a un grupo.",
+"esc": "Recibes el grupo de <b>2.º de primaria</b> en una escuela de Puebla, con 28 niños de 7 años. En la primera semana ves a una niña que llora cada mañana al separarse de su mamá, un niño que se enoja y avienta cosas cuando pierde, un niño muy callado que no habla con nadie y una niña que acaba de llegar de otro estado.",
+"e": [
+["<b>Escena 1 — La separación.</b> La niña llora cada mañana.", "Escribe si te parece esperable para la edad y cómo acompañarías la separación."],
+["<b>Escena 2 — El enojo.</b> El niño avienta cosas cuando pierde un juego.", "Escribe cómo aplicarías la corregulación en el momento y qué harías después."],
+["<b>Escena 3 — El niño callado.</b> No habla con nadie.", "Escribe qué observarías durante dos semanas antes de decidir si preocupa."],
+["<b>Escena 4 — La niña nueva.</b> Llegó por cambio de trabajo de su papá.", "Escribe tres acciones para sumar protección en su primer mes."]
+],
+"p": [
+["Llanto al separarse a los 7 años durante la primera semana…", "puede ser esperado; preocupa si persiste y limita su vida", "es siempre un trastorno", "se ignora", "Duración e impacto deciden."],
+["Ante el enojo, lo primero es…", "ayudarlo a calmarse; la plática va después", "explicarle por qué está mal aventar", "castigarlo", "Primero calma, luego razones."],
+["Para la niña nueva, una acción de protección es…", "asignarle un compañero guía y ser su adulto de referencia", "esperar a que se adapte sola", "ponerla al frente para que se presente sin aviso", "Pequeñas acciones suman seguridad."]
+],
+"pl": ["Mapa emocional del grupo", "MAPA DEL GRUPO — [Grado]\nAlumno (iniciales) | Observación | Esperable para la edad (sí/no) | Protección que sumaré | Revisar el\n\nRutina de bienvenida: [ ]\nAdultos de referencia disponibles: [ ]"]
+},
+{
+"t": "Una semana de señales de alerta",
+"obj": "clasificar señales con el semáforo y decidir la acción de cada una, incluida una señal roja.",
+"esc": "Eres orientadora en una <b>secundaria de Querétaro</b>. En una semana recibes: un alumno que no ha dormido bien por los exámenes; una alumna que desde hace tres semanas llora en el baño y dejó el equipo de voleibol; un alumno que cuenta que su papá le grita todos los días; y un mensaje de una alumna que dice «ya no aguanto, quiero desaparecer».",
+"e": [
+["<b>Escena 1 — El semáforo.</b> Tienes las cuatro situaciones.", "Clasifica cada una en verde, amarillo o rojo y justifica."],
+["<b>Escena 2 — La señal roja.</b> La alumna del mensaje está en su salón.", "Escribe lo que haces en los siguientes 30 minutos, paso a paso."],
+["<b>Escena 3 — La alumna que llora.</b> Nadie en su casa lo sabe.", "Escribe cómo hablarías con ella y con su familia."],
+["<b>Escena 4 — Los gritos del papá.</b> El alumno te pide que no digas nada.", "Escribe qué le respondes y qué ruta sigues."]
+],
+"p": [
+["El mensaje «quiero desaparecer» es…", "rojo: actuar el mismo día sin dejarla sola", "amarillo", "verde", "Señal roja."],
+["Llorar en el baño por tres semanas y dejar el voleibol es…", "amarillo, o rojo si hay otras señales: registrar y canalizar pronto", "verde", "nada", "Persiste y afecta su vida."],
+["Ante «no digas nada», respondes…", "que no puedes prometer secreto cuando hay algo que lo pone en riesgo, y que lo acompañarás", "que sí guardarás el secreto", "que no te importa", "La protección va antes que el secreto."]
+],
+"pl": ["Bitácora semanal de orientación", "BITÁCORA — Semana [ ] (confidencial)\nIniciales | Señal | Color | Acción | Responsable | Fecha de seguimiento\n\nRojas atendidas el mismo día: [ ]\nAvisos a familias: [ ]\nCanalizaciones: [ ]\nReportes a autoridad: [ ]"]
+},
+{
+"t": "Riesgos actuales en una secundaria",
+"obj": "responder a situaciones de acoso, pantallas, noviazgo y protección en línea con los protocolos y las instancias correctas.",
+"esc": "Eres parte del comité de convivencia de una <b>secundaria en Guadalajara</b>. En un mes se presentan: un video burlándose de un alumno que circula en un grupo de WhatsApp; varios padres que se quejan de que sus hijos no duermen por el celular; una alumna cuyo novio la amenaza con publicar una foto; y un alumno de 1.º que platica con un «amigo» de 17 años que conoció en un juego y le pide que se vean.",
+"e": [
+["<b>Escena 1 — El video.</b> Ya lo vieron 200 alumnos.", "Escribe qué haces con el video, con el alumno afectado y con quienes lo compartieron."],
+["<b>Escena 2 — Las pantallas.</b> Los padres piden que la escuela «haga algo».", "Diseña una propuesta de taller para familias con registro y acuerdos."],
+["<b>Escena 3 — La amenaza.</b> La alumna está muy asustada.", "Escribe cómo la acompañas y a quién avisas."],
+["<b>Escena 4 — El encuentro.</b> El alumno de 1.º ya quedó de verse el sábado.", "Escribe qué haces hoy mismo."]
+],
+"p": [
+["Con el video de burla, lo correcto es…", "no reenviarlo, pedir que se elimine, proteger al alumno y aplicar el protocolo", "reenviarlo a los papás para que lo vean", "ignorarlo", "Reenviar amplía el daño."],
+["La amenaza de publicar una foto íntima de una menor…", "es un delito: no se reenvía la imagen, se avisa al 088 y a la autoridad", "es un problema de pareja", "se resuelve hablando con el novio", "Requiere aviso a las instancias correspondientes."],
+["El encuentro del sábado con el «amigo» de 17…", "es urgente: avisar hoy a la familia y a la autoridad; si hay peligro inmediato, 911", "puede esperar al lunes", "no es asunto de la escuela", "Señales de grooming con intento de encuentro."]
+],
+"pl": ["Protocolo de riesgos actuales", "PROTOCOLO — [Escuela]\nAcoso y ciberacoso: creer · proteger · no confrontar · no reenviar · avisar · seguimiento\nPantallas: registro familiar · acuerdos · sueño primero\nNoviazgo: nombrar el control · acompañar · avisar si hay amenaza o violencia\nGrooming: no culpar · no borrar ni reenviar · anotar datos · 088 · 911 si hay peligro\nInstancia de la escuela: [ ] · Procuraduría de Protección del DIF: [ ]"]
+},
+{
+"t": "Acompañar a una familia en una situación difícil",
+"obj": "escuchar, poner límites sin violencia, dar primeros auxilios psicológicos y seguir la ruta de derechos con una familia.",
+"esc": "Eres maestra de 5.º en una primaria de <b>Aguascalientes</b>. Emiliano, de 11 años, llega sin tarea, con sueño y se enoja por todo. Su mamá, en la entrevista, dice que ella «le pega porque ya no sabe qué hacer» y llora porque el papá se fue. Emiliano te dijo ayer que «a veces es mejor no estar».",
+"e": [
+["<b>Escena 1 — La frase de Emiliano.</b> Lo dijo ayer, al final del día.", "Escribe qué haces hoy a primera hora, paso a paso."],
+["<b>Escena 2 — La mamá.</b> Te cuenta que le pega y llora.", "Escribe cómo la escuchas, cómo le explicas el límite legal y qué alternativas le ofreces."],
+["<b>Escena 3 — El reporte.</b> Hay castigo corporal repetido.", "Escribe la ruta que sigues y cómo lo explicas a la mamá sin romper el vínculo."],
+["<b>Escena 4 — El aula.</b> Emiliano sigue con enojo y sueño.", "Escribe los límites sin violencia y el apoyo que darás en el salón."]
+],
+"p": [
+["La frase «a veces es mejor no estar» requiere…", "actuar el mismo día: preguntar directo, no dejarlo solo y avisar", "esperar a ver si lo repite", "decirle que no piense eso", "Es una señal roja."],
+["Ante el castigo corporal que cuenta la mamá…", "escuchar, explicar que la ley lo prohíbe, ofrecer apoyo y seguir la ruta de aviso", "ignorarlo porque es su mamá", "regañarla", "La obligación de avisar existe, con respeto y sin juicio."],
+["En el aula, con Emiliano…", "límites firmes y amables, rutinas y un adulto de referencia", "castigos más fuertes", "ignorar la conducta", "Seguridad y estructura."]
+],
+"pl": ["Plan de acompañamiento familiar", "PLAN — [Iniciales] (confidencial)\nSeñal roja: acciones del mismo día [ ]\nEntrevista con la familia: escucha · límite legal · alternativas (disciplina positiva, apoyo para la mamá)\nRuta de aviso: dirección · Procuraduría de Protección del DIF\nApoyo en el aula: [ ]\nCanalizaciones: [ ]\nSeguimiento: [fechas]"]
+},
+{
+"t": "El plan de bienestar y canalización de tu espacio",
+"obj": "integrar todo el diplomado en el plan de bienestar y canalización de tu escuela, grupo o familia, listo para aplicarse y compartirse.",
+"esc": "Este es tu proyecto final. Vas a armar el <b>plan de bienestar y canalización</b> del espacio donde convives con niñas, niños o adolescentes: tu grupo, tu escuela, tu guardería, tu parroquia o tu familia. Al terminar tendrás un documento que puedes presentar a la dirección o compartir con otros adultos.",
+"e": [
+["<b>Parte 1 — Conocer y proteger.</b> Con lo del módulo 1.", "Describe el espacio y a los niños o adolescentes (edades, contexto), los factores de riesgo y de protección más comunes y quiénes son los adultos de referencia."],
+["<b>Parte 2 — Detectar.</b> Con lo de los módulos 2 y 3.", "Escribe tu semáforo de alerta adaptado a las edades de tu espacio, incluyendo acoso, pantallas y riesgos en línea, y el registro de observación que usarás."],
+["<b>Parte 3 — Acompañar.</b> Con lo del módulo 4.", "Escribe tus normas en positivo, cómo escucharás y validarás, cómo actuarás ante una señal roja y la ruta de reporte ante sospecha de maltrato."],
+["<b>Parte 4 — Prevenir y canalizar.</b> Con lo del módulo 5.", "Escribe tu programa de bienestar de un mes, tu directorio verificado y tu plan de autocuidado."]
+],
+"p": [
+["Tu papel en este plan es…", "detectar, acompañar, prevenir y canalizar", "diagnosticar y tratar", "resolver todo solo", "No sustituyes a los profesionales."],
+["Ante la duda sobre el color de una señal…", "eliges el más alto", "eliges el más bajo", "esperas", "La seguridad va primero."],
+["Ante una señal de riesgo suicida…", "preguntas directo, no prometes secreto, no dejas solo y buscas ayuda el mismo día", "esperas a la próxima semana", "cambias de tema", "Línea de la Vida 800 911 2000 y 911."],
+["Ante una sospecha de maltrato…", "escuchas, anotas, avisas a la dirección y reportas a la Procuraduría de Protección del DIF", "interrogas al niño", "confrontas a la familia", "Sin investigar por tu cuenta."],
+["Tu constancia de este diplomado…", "te prepara para detectar, acompañar y canalizar; no para diagnosticar ni dar tratamiento", "te habilita como psicólogo infantil", "es una certificación oficial", "Es un diplomado libre de Instituto Mara."]
+],
+"pl": ["Índice del plan de bienestar y canalización", "PLAN DE BIENESTAR Y CANALIZACIÓN\n[Espacio] · [Elaboró] · [Fecha]\n\n1. Contexto: edades, factores de riesgo y protección\n2. Adultos de referencia\n3. Semáforo de alerta adaptado y registro de observación\n4. Normas en positivo y disciplina sin violencia\n5. Escucha y validación\n6. Ruta ante señal roja y riesgo suicida\n7. Ruta ante sospecha de maltrato\n8. Protocolo de acoso y riesgos en línea\n9. Programa de bienestar de un mes\n10. Directorio verificado y plan de autocuidado"]
+}
+]
+}
