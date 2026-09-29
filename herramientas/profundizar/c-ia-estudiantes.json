@@ -1,0 +1,1362 @@
+{
+ "id": "c-ia-estudiantes",
+ "horas": 10,
+ "aprender": [
+  "Usar la IA en situaciones académicas avanzadas sin que haga la tarea por ti: análisis de datos sin inventar resultados, exposiciones y trabajo en equipo, y escritos personales para becas o intercambios.",
+  "Detectar errores plantados en un día simulado de estudio y armar tu kit académico: biblioteca de prompts para aprender, política personal de integridad, lista de verificación antes de entregar y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "Le pides a la IA que te explique la diferencia entre correlación y causalidad con ejemplos.",
+   "op": "Uso deshonesto solo si no citas los ejemplos"
+  },
+  {
+   "p": "Le pides que escriba las conclusiones de tu tesis a partir del título.",
+   "op": "Uso legítimo si después cambias algunas palabras"
+  },
+  {
+   "p": "Le pegas tu párrafo y le pides que te diga si se entiende y qué está confuso.",
+   "op": "Uso deshonesto porque la IA leyó tu trabajo"
+  },
+  {
+   "p": "Le pides el resumen de un artículo que no leíste y lo citas en tu marco teórico.",
+   "op": "Uso legítimo si el resumen es muy detallado"
+  },
+  {
+   "p": "La IA te resume un capítulo que no abriste y mañana hay discusión en clase. Lo más probable es que…",
+   "op": "Puedas discutirlo igual si memorizas el resumen"
+  },
+  {
+   "p": "El resumen menciona un dato que no recuerdas haber visto en el texto. Tú…",
+   "op": "Le preguntas a la IA de qué página salió y lo usas"
+  },
+  {
+   "p": "Pedir que separe «lo que el autor afirma» de «lo que propone» sirve para…",
+   "op": "Que el resumen suene más académico"
+  },
+  {
+   "p": "La IA te da 8 referencias con autor, año, revista y páginas. Tú…",
+   "op": "Usas las que tengan DOI sin abrirlas"
+  },
+  {
+   "p": "No encuentras una de las referencias por ningún lado. Eso significa que…",
+   "op": "Hay que citarla como «comunicación personal»"
+  },
+  {
+   "p": "La mejor forma de confirmar un artículo es…",
+   "op": "Ver si otra IA da la misma referencia"
+  },
+  {
+   "p": "Parafraseas bien pero no pones la cita. Eso es…",
+   "op": "Correcto si la idea es muy conocida en tu carrera"
+  },
+  {
+   "p": "En la ficha, un dato que no está en tus notas…",
+   "op": "Se completa con lo que diga el resumen de la IA"
+  },
+  {
+   "p": "Le pides a la IA «10 referencias en APA sobre motivación escolar». Lo más probable es que…",
+   "op": "Solo fallen las cursivas y la puntuación"
+  },
+  {
+   "p": "La forma correcta de usar la IA con APA es…",
+   "op": "Pedirle las referencias y corregir tú el formato"
+  },
+  {
+   "p": "El formato final de tu tesis se revisa contra…",
+   "op": "El formato que usó un compañero el semestre pasado"
+  },
+  {
+   "p": "«El impacto de la tecnología en la sociedad» como tema de tesis está…",
+   "op": "Bien, si se le agrega «en el siglo XXI»"
+  },
+  {
+   "p": "La IA propone una metodología que requiere 400 encuestas y tú tienes 6 semanas. Tú…",
+   "op": "Inventas parte de las respuestas para llegar a 400"
+  },
+  {
+   "p": "El índice final lo aprueba…",
+   "op": "El compañero que ya se tituló"
+  },
+  {
+   "p": "Le pides a la IA que reescriba tu párrafo «bonito» y lo pegas tal cual. Eso…",
+   "op": "Está bien si el tema lo elegiste tú"
+  },
+  {
+   "p": "Un entregable útil en el cronograma es…",
+   "op": "«Ponerme al corriente con la tesis»"
+  },
+  {
+   "p": "Un cronograma realista incluye…",
+   "op": "Todas las semanas con la misma carga, sin holgura"
+  },
+  {
+   "p": "Con la bibliografía que le pasó su compañero, Alejandra debe…",
+   "op": "Usar solo las referencias que tengan DOI"
+  },
+  {
+   "p": "Con 40 PDF y 10 semanas, lo sensato es…",
+   "op": "Pedir a la IA que resuma los 40 y citar los resúmenes"
+  },
+  {
+   "p": "Su asesor la recibe una vez al mes. En el cronograma…",
+   "op": "Deja todas las dudas para la última cita"
+  },
+  {
+   "p": "Si declara el uso de IA en su metodología, debe decir…",
+   "op": "Que la usó para todo, para no tener problemas"
+  }
+ ],
+ "extras": {
+  "c-ia-estudiantes-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Daniela estudia Enfermería en una universidad pública de Guadalajara. El programa de su materia dice: «IA permitida para lluvia de ideas y repaso; prohibida para redactar trabajos evaluados; todo uso se declara»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Pide a la IA 20 preguntas de repaso para el examen de Farmacología a partir de sus apuntes.",
+      "ops": [
+       "Permitido: es repaso",
+       "Prohibido: es un examen",
+       "Permitido solo si no lo declara"
+      ],
+      "correcta": 0,
+      "explica": "El programa permite el repaso; según su regla, lo declara si forma parte de un trabajo."
+     },
+     {
+      "p": "Pide a la IA que redacte la introducción de su reporte de prácticas.",
+      "ops": [
+       "Permitido si lo corrige",
+       "Prohibido según el programa",
+       "Permitido si cambia el tono"
+      ],
+      "correcta": 1,
+      "explica": "Redactar trabajos evaluados está prohibido en esa materia."
+     },
+     {
+      "p": "Usó la IA para una lluvia de ideas del tema de su ensayo. ¿Qué hace?",
+      "ops": [
+       "Nada, fueron solo ideas",
+       "Lo declara con precisión",
+       "Lo declara como «apoyo general»"
+      ],
+      "correcta": 1,
+      "explica": "El programa pide declarar todo uso; la precisión evita malentendidos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Declaración",
+    "malTitulo": "Vaga",
+    "mal": "«Se usó IA como apoyo.»",
+    "bienTitulo": "Precisa",
+    "bien": "«Usé un asistente de IA para una lluvia de ideas de posibles temas; la selección del tema, la búsqueda de fuentes y la redacción son mías.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu materia más estricta",
+    "pregunta": "Escribe qué dice sobre la IA la materia con la regla más estricta de este semestre y cómo vas a cumplirla.",
+    "ayuda": "La regla dice… / Voy a…"
+   }
+  ],
+  "c-ia-estudiantes-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Iván estudia Economía en Monterrey y le dejaron un artículo en inglés de 25 páginas. Pidió a la IA una traducción explicada. En los resultados, la IA tradujo «statistically significant» como «muy importante»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene esa traducción?",
+      "ops": [
+       "Ninguno, es lo mismo",
+       "Cambia el sentido: significativo en estadística no quiere decir importante",
+       "Solo es cuestión de estilo"
+      ],
+      "correcta": 1,
+      "explica": "Un término técnico mal traducido cambia la conclusión del autor."
+     },
+     {
+      "p": "¿Qué hace Iván con los términos técnicos?",
+      "ops": [
+       "Los verifica en el texto original y en su material de clase",
+       "Confía en la traducción",
+       "Los omite"
+      ],
+      "correcta": 0,
+      "explica": "La IA ayuda a abrir el texto; los términos se comprueban."
+     },
+     {
+      "p": "Mañana hay discusión del artículo. Lo que le permite participar es…",
+      "ops": [
+       "Haber leído el texto con apoyo de la IA y tomar notas propias",
+       "Llevar el resumen de la IA impreso",
+       "Leer solo las conclusiones traducidas"
+      ],
+      "correcta": 0,
+      "explica": "Discutir requiere haber leído y pensado el texto."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Los términos técnicos se verifican en el texto ___.",
+      "resp": [
+       "original"
+      ],
+      "pista": "El que escribió el autor."
+     },
+     {
+      "frase": "La IA abre el texto; la ___ sigue siendo tuya.",
+      "resp": [
+       "lectura"
+      ],
+      "pista": "Lo que no puedes delegar."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus términos",
+    "pregunta": "Elige un texto de esta semana y anota 3 términos técnicos que verificarás en el original o en tu material de clase.",
+    "ayuda": "1) … / 2) … / 3) …"
+   }
+  ],
+  "c-ia-estudiantes-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Karla estudia Contaduría en Puebla y tiene examen de Costos en 5 días. Pensaba releer los apuntes cada noche. Tiene 2 horas diarias."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué plan funciona mejor?",
+      "ops": [
+       "Releer los apuntes 5 noches",
+       "Fichas y ejercicios de práctica desde sus apuntes, con repaso de lo que falló cada día",
+       "Ver videos del tema"
+      ],
+      "correcta": 1,
+      "explica": "Autoevaluarse y repetir lo que falló supera a la relectura."
+     },
+     {
+      "p": "Le pide a la IA ejercicios de costos. ¿Qué le da?",
+      "ops": [
+       "Sus apuntes y los tipos de ejercicio que vio en clase",
+       "Solo el nombre de la materia",
+       "El examen del año pasado para que lo resuelva"
+      ],
+      "correcta": 0,
+      "explica": "Así los ejercicios se parecen a lo que le van a evaluar."
+     },
+     {
+      "p": "La IA corrige un ejercicio de Karla y su resultado no coincide con el del libro. Karla…",
+      "ops": [
+       "Confía en la IA",
+       "Revisa el procedimiento con el libro o con su profesor",
+       "Promedia los dos resultados"
+      ],
+      "correcta": 1,
+      "explica": "La IA también se equivoca al calcular; el libro y el profesor son la referencia."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Día y actividad",
+    "pares": [
+     [
+      "Día 1",
+      "Fichas de conceptos y primer intento de ejercicios"
+     ],
+     [
+      "Día 2",
+      "Repaso de lo que falló y ejercicios nuevos"
+     ],
+     [
+      "Día 4",
+      "Simulacro con tiempo"
+     ],
+     [
+      "Día 5",
+      "Repaso ligero de las fichas difíciles"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu plan de 5 días",
+    "pregunta": "Escribe tu plan para tu próximo examen: qué harás cada día y qué material le darás a la IA.",
+    "ayuda": "Día 1: … / Día 2: … / … / Material: …"
+   }
+  ],
+  "c-ia-estudiantes-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Sofía usa un asistente de IA con búsqueda web para su trabajo de Comunicación. Le dio 6 enlaces: dos blogs sin autor, un artículo de revista científica, un documento de un organismo oficial, una nota de periódico y un artículo cuyo enlace no abre."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué fuentes son más sólidas para su marco teórico?",
+      "ops": [
+       "Los blogs, porque son fáciles de leer",
+       "El artículo científico y el documento oficial, después de abrirlos y leerlos",
+       "Todas, porque las encontró la IA"
+      ],
+      "correcta": 1,
+      "explica": "Se prioriza lo académico y oficial, siempre verificado."
+     },
+     {
+      "p": "¿Qué hace con el enlace que no abre?",
+      "ops": [
+       "Lo cita igual",
+       "Busca el título exacto; si no aparece, lo descarta",
+       "Cita la página principal del sitio"
+      ],
+      "correcta": 1,
+      "explica": "Si no puede abrirlo, no puede citarlo."
+     },
+     {
+      "p": "La nota de periódico sirve para…",
+      "ops": [
+       "Un dato de contexto, citándola como nota de prensa",
+       "Sustentar la teoría",
+       "Nada, nunca se usa"
+      ],
+      "correcta": 0,
+      "explica": "Cada tipo de fuente tiene su lugar."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Petición de fuentes",
+    "malTitulo": "Delegar",
+    "mal": "«Dame fuentes para mi marco teórico.»",
+    "bienTitulo": "Buscar tú con estrategia",
+    "bien": "«Dame términos de búsqueda en español e inglés sobre mi tema. Voy a buscar en la biblioteca digital de mi universidad y en un buscador académico.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión de fuentes",
+    "pregunta": "Escribe los 3 criterios con los que decidirás si una fuente entra a tu trabajo.",
+    "ayuda": "Entra si… / Entra si… / No entra si…"
+   }
+  ],
+  "c-ia-estudiantes-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Ricardo pidió a la IA que ordenara sus notas en fichas. Al revisar, ve que la IA «mejoró» una cita textual: cambió «resulta indispensable» por «es fundamental» y dejó las comillas y la página."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema hay?",
+      "ops": [
+       "Ninguno, dice lo mismo",
+       "Una cita textual debe ser exacta; con comillas no se puede cambiar ni una palabra",
+       "Solo falta cambiar la página"
+      ],
+      "correcta": 1,
+      "explica": "Las comillas prometen las palabras exactas del autor."
+     },
+     {
+      "p": "¿Cómo lo evita la próxima vez?",
+      "ops": [
+       "Pide que copie las citas tal como se las da y las compara con el original",
+       "Deja de usar citas textuales",
+       "Pide a la IA que mejore todas las citas"
+      ],
+      "correcta": 0,
+      "explica": "La instrucción ayuda; la comparación con el original es la garantía."
+     },
+     {
+      "p": "Si Ricardo prefiere sus propias palabras, lo correcto es…",
+      "ops": [
+       "Parafrasear de verdad y citar al autor sin comillas",
+       "Dejar las comillas con sus palabras",
+       "No citar"
+      ],
+      "correcta": 0,
+      "explica": "Paráfrasis real con cita, sin comillas."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Una cita entre comillas reproduce las palabras ___ del autor.",
+      "resp": [
+       "exactas",
+       "textuales",
+       "originales"
+      ],
+      "pista": "Sin cambiar ninguna."
+     },
+     {
+      "frase": "Cada ficha se compara con el texto ___ antes de usarla.",
+      "resp": [
+       "original",
+       "fuente"
+      ],
+      "pista": "De donde salió la cita."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu control de citas",
+    "pregunta": "Revisa 3 citas textuales de un trabajo tuyo contra el original y anota qué encontraste.",
+    "ayuda": "Cita 1: … / Cita 2: … / Cita 3: …"
+   }
+  ],
+  "c-ia-estudiantes-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Mónica revisa la lista de referencias que armó con ayuda de la IA sobre datos que ella verificó. Encuentra: un DOI escrito como «doi: 10.xxxx», un artículo de 3 autores citado en el texto con los tres apellidos y una referencia cuyo año no coincide con el PDF."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "En APA 7, el DOI se presenta como…",
+      "ops": [
+       "Enlace completo que empieza con https://doi.org/",
+       "«DOI:» seguido del número",
+       "No se incluye"
+      ],
+      "correcta": 0,
+      "explica": "APA 7 presenta el DOI como enlace."
+     },
+     {
+      "p": "El artículo de 3 autores en el texto se cita…",
+      "ops": [
+       "Con los tres apellidos la primera vez",
+       "Con el primer apellido y et al. desde la primera mención",
+       "Solo con el año"
+      ],
+      "correcta": 1,
+      "explica": "En APA 7, con tres o más autores se usa et al. desde la primera cita."
+     },
+     {
+      "p": "El año no coincide con el PDF. Mónica…",
+      "ops": [
+       "Deja el de la IA",
+       "Usa el del documento que abrió",
+       "Pone los dos"
+      ],
+      "correcta": 1,
+      "explica": "El documento verificado manda."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cita en el texto",
+    "malTitulo": "Incorrecta en APA 7",
+    "mal": "«(García, López y Pérez, 2021)» en la primera mención",
+    "bienTitulo": "Correcta",
+    "bien": "«(García et al., 2021)» desde la primera mención"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión APA",
+    "pregunta": "Revisa 3 referencias de un trabajo tuyo contra la guía de APA y tu manual de titulación y anota qué corregiste.",
+    "ayuda": "Referencia 1: … / 2: … / 3: …"
+   }
+  ],
+  "c-ia-estudiantes-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Paulina estudia Psicología en León y quiere investigar «uso de redes sociales y horas de sueño en estudiantes de preparatoria de León». La IA le propone aplicar una encuesta en línea a 300 alumnos la próxima semana."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué falta considerar antes de aplicar la encuesta?",
+      "ops": [
+       "Nada, ya tiene tema",
+       "Que los participantes son menores de edad: se requiere autorización de la escuela, consentimiento de madres, padres o tutores y la revisión que pida su universidad",
+       "Solo imprimir las encuestas"
+      ],
+      "correcta": 1,
+      "explica": "Investigar con menores exige permisos y cuidados éticos que la IA no gestiona por ti."
+     },
+     {
+      "p": "¿Cómo cuida los datos de los participantes?",
+      "ops": [
+       "Encuesta anónima y datos guardados de forma segura",
+       "Pide nombre y teléfono para dar seguimiento",
+       "Sube las respuestas a la IA con nombres para analizarlas"
+      ],
+      "correcta": 0,
+      "explica": "Lo mínimo necesario, sin identificar a nadie."
+     },
+     {
+      "p": "Con 6 semanas, ¿qué tamaño de estudio es viable?",
+      "ops": [
+       "El que su asesor apruebe según tiempo, permisos y acceso",
+       "300 alumnos porque lo dijo la IA",
+       "Toda la población de preparatorias de León"
+      ],
+      "correcta": 0,
+      "explica": "La viabilidad la decide con su asesor."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pregunta de investigación",
+    "malTitulo": "Enorme",
+    "mal": "«¿Cómo afectan las redes sociales a los jóvenes?»",
+    "bienTitulo": "Acotada",
+    "bien": "«¿Qué relación hay entre las horas de uso de redes sociales y las horas de sueño reportadas por estudiantes de 5.º semestre de una preparatoria de León en el ciclo actual?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu pregunta acotada",
+    "pregunta": "Escribe tu pregunta de investigación con población, lugar y periodo, y anota qué permisos o cuidados éticos necesita.",
+    "ayuda": "Pregunta: … / Permisos: …"
+   }
+  ],
+  "c-ia-estudiantes-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Emilio lleva dos semanas sin escribir el capítulo 2 y le pide a la IA «escríbeme el capítulo 2 a partir de mis fichas, luego yo lo corrijo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué no es buena idea?",
+      "ops": [
+       "Porque el texto dejaría de ser suyo y viola la integridad académica",
+       "Porque la IA escribe despacio",
+       "Porque las fichas son pocas"
+      ],
+      "correcta": 0,
+      "explica": "La redacción del capítulo es parte de lo que se evalúa."
+     },
+     {
+      "p": "¿Qué sí puede pedirle para desatorarse?",
+      "ops": [
+       "Un esquema de preguntas guía para cada apartado a partir de su índice",
+       "El capítulo completo con otro estilo",
+       "Que lo escriba en inglés y él lo traduce"
+      ],
+      "correcta": 0,
+      "explica": "Preguntas guía ayudan a arrancar sin sustituir la escritura."
+     },
+     {
+      "p": "Una meta útil para mañana es…",
+      "ops": [
+       "«Escribir 400 palabras feas del apartado 2.1»",
+       "«Avanzar el capítulo»",
+       "«Inspirarme»"
+      ],
+      "correcta": 0,
+      "explica": "Una meta concreta y pequeña rompe el bloqueo."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Primero escribo feo y ___; después reviso.",
+      "resp": [
+       "completo",
+       "rápido",
+       "rapido"
+      ],
+      "pista": "Sin detenerte a corregir."
+     },
+     {
+      "frase": "La IA me hace ___ guía; la redacción es mía.",
+      "resp": [
+       "preguntas"
+      ],
+      "pista": "Lo que me ayuda a arrancar."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu siguiente sesión",
+    "pregunta": "Escribe cuándo será tu siguiente sesión de escritura, cuántas palabras escribirás y qué le pedirás a la IA después.",
+    "ayuda": "Día y hora: … / Palabras: … / Después le pediré…"
+   }
+  ],
+  "c-ia-estudiantes-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> semana 5 del plan de Alejandra: lleva 12 fichas, 2 referencias del compañero resultaron inexistentes y va 1,500 palabras atrás de su meta."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace con las palabras atrasadas?",
+      "ops": [
+       "Recalcula las palabras por semana y ajusta el cronograma",
+       "Pide a la IA que escriba las 1,500 palabras",
+       "Abandona la meta"
+      ],
+      "correcta": 0,
+      "explica": "Ajustar el plan es parte del plan."
+     },
+     {
+      "p": "Con las referencias inexistentes…",
+      "ops": [
+       "Las quita y busca fuentes reales para esas ideas",
+       "Las deja porque se ven bien",
+       "Las cambia por otras que invente la IA"
+      ],
+      "correcta": 0,
+      "explica": "Nada entra sin haberlo abierto."
+     },
+     {
+      "p": "Para la cita con su asesor lleva…",
+      "ops": [
+       "Avance, dudas concretas y el cronograma ajustado",
+       "Solo disculpas",
+       "Nada, que él pregunte"
+      ],
+      "correcta": 0,
+      "explica": "Una cita preparada rinde más."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Mensaje al asesor",
+    "malTitulo": "Vago",
+    "mal": "«Voy un poco atrasada, ¿lo vemos en la cita?»",
+    "bienTitulo": "Preparado",
+    "bien": "«Llevo 12 fichas y el apartado 2.1. Descarté 2 referencias que no existen. Traigo 3 dudas sobre el enfoque del apartado 2.2 y un cronograma ajustado.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu ajuste",
+    "pregunta": "Escribe cómo ajustarías tu plan si vas atrasado en una entrega real.",
+    "ayuda": "Voy atrasado en… / Ajustaré…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: datos, exposiciones y escritos personales",
+   "r": "Tres situaciones donde la tentación de delegar es mayor: analizar datos, presentar y trabajar en equipo, y escribir textos personales para becas o intercambios.",
+   "lecciones": [
+    {
+     "t": "Datos y estadística sin inventar resultados",
+     "obj": "Usar la IA para entender el análisis de tus datos sin fabricar resultados ni exponer a los participantes.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La IA puede explicarte qué prueba estadística conviene, cómo leer una tabla o qué significa un resultado. Lo que no puede hacer es <b>darte resultados de datos que no tiene</b>: si le pides «un valor de p para mi estudio», lo inventa. Los cálculos se hacen en tu hoja de cálculo o programa con tus datos reales, y los datos de participantes se trabajan sin nombres, como marca la ética de investigación y la Ley Federal de Protección de Datos Personales en Posesión de los Particulares cuando aplica."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con datos",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Inventa resultados o valores de p",
+         "Calcula con tus datos; la IA solo explica"
+        ],
+        [
+         "Confunde correlación con causalidad",
+         "Redacta con cuidado: «se asocia con»"
+        ],
+        [
+         "Suma o promedia mal",
+         "Verifica en la hoja"
+        ],
+        [
+         "Sugiere pedir datos personales innecesarios",
+         "Recoge lo mínimo y de forma anónima"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Resultados de tu encuesta (anónima)",
+       "datos": [
+        [
+         "Participante",
+         "Horas de estudio semanales",
+         "Aprobó"
+        ],
+        [
+         "P1",
+         6,
+         "Sí"
+        ],
+        [
+         "P2",
+         2,
+         "No"
+        ],
+        [
+         "P3",
+         8,
+         "Sí"
+        ],
+        [
+         "P4",
+         4,
+         "Sí"
+        ],
+        [
+         "P5",
+         1,
+         "No"
+        ],
+        [
+         "P6",
+         5,
+         "Sí"
+        ],
+        [
+         "Promedio de horas",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B8",
+         "formula": "=PROMEDIO(B2:B7)",
+         "texto": "<b>B8</b>: promedio de horas de estudio.",
+         "requiere": "PROMEDIO(",
+         "esperado": 4.333333333333333
+        },
+        {
+         "celda": "C8",
+         "formula": "=PROMEDIO.SI(C2:C7,\"Sí\",B2:B7)",
+         "texto": "<b>C8</b>: promedio de horas de quienes aprobaron.",
+         "requiere": "PROMEDIO.SI(",
+         "pista": "=PROMEDIO.SI(C2:C7,‹Sí›,B2:B7) con comillas rectas",
+         "explica": "Quienes aprobaron estudian más horas en promedio, pero con 6 participantes solo puedes decir que «se asocia», no que una cosa cause la otra.",
+         "esperado": 5.75
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Le pides a la IA el valor de p de tu estudio sin darle datos. Te lo da. Eso es…",
+         "ops": [
+          "Un resultado inventado que no puedes usar",
+          "Un buen estimado",
+          "Válido si lo declaras"
+         ],
+         "correcta": 0,
+         "explica": "Sin datos no hay resultado; usarlo sería fabricar datos."
+        },
+        {
+         "p": "Con 6 participantes encuentras que quienes estudian más aprobaron. Escribes…",
+         "ops": [
+          "«Estudiar más causa aprobar»",
+          "«En esta muestra, estudiar más horas se asoció con aprobar»",
+          "«Está comprobado que…»"
+         ],
+         "correcta": 1,
+         "explica": "Una asociación en una muestra pequeña no prueba causalidad."
+        },
+        {
+         "p": "Para que la IA te explique tu tabla de resultados le compartes…",
+         "ops": [
+          "La tabla anónima",
+          "La base con nombres y correos",
+          "Nada, que suponga"
+         ],
+         "correcta": 0,
+         "explica": "Anónima y con lo mínimo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tus datos",
+       "pregunta": "Escribe qué datos recogerás (o recogiste) en tu trabajo, cómo los mantendrás anónimos y qué le pedirás a la IA que te explique.",
+       "ayuda": "Datos: … / Anonimato: … / Le pediré que me explique…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Explícame mi análisis",
+       "texto": "Estoy haciendo un trabajo de [carrera] con esta pregunta [pegar]. Tengo estos resultados que calculé yo [pegar tabla anónima]. Explícame en lenguaje sencillo qué significan, qué NO puedo concluir con ellos y qué limitaciones debo mencionar. No recalcules ni agregues cifras."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA explica; los resultados salen de tus datos.",
+        "Asociación no es causalidad.",
+        "Datos anónimos y mínimos."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Exposiciones, exámenes orales y trabajo en equipo",
+     "obj": "Prepararte para exponer y defender tu trabajo con IA como entrenador, y acordar su uso en equipo.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La IA es un buen sparring: te hace preguntas difíciles, simula un sinodal exigente y te ayuda a ensayar. Lo que no puede es exponer por ti ni hacer que entiendas lo que no estudiaste. En equipo, el reto es otro: si un integrante entrega una parte hecha con IA sin declararla, <b>la responsabilidad es de todo el equipo</b>. Por eso conviene acordar desde el inicio cómo se usará y cómo se declarará según la política de la escuela."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes al usar IA para exponer y en equipo",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Leer diapositivas redactadas por la IA sin entenderlas",
+         "Arma tus diapositivas con tus ideas y ensaya"
+        ],
+        [
+         "Solo ensayar preguntas fáciles",
+         "Pide preguntas críticas del nivel de tu jurado"
+        ],
+        [
+         "No acordar reglas en equipo",
+         "Acuerdo escrito desde el inicio"
+        ],
+        [
+         "Pegar partes sin revisar la de los demás",
+         "Revisión cruzada antes de entregar"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Para ensayar tu examen profesional, le pides a la IA…",
+         "ops": [
+          "Que simule un sinodal y te haga preguntas críticas sobre tu trabajo",
+          "Que te dé las respuestas para memorizar",
+          "Que escriba tu discurso completo"
+         ],
+         "correcta": 0,
+         "explica": "Ensayar con preguntas difíciles te prepara de verdad."
+        },
+        {
+         "p": "Un integrante del equipo entregó su sección generada con IA sin declararlo. El equipo…",
+         "ops": [
+          "Lo entrega igual",
+          "Habla con él, aplica el acuerdo y rehace o declara según la política de la escuela",
+          "Lo denuncia sin hablar con él"
+         ],
+         "correcta": 1,
+         "explica": "El trabajo es de todos; se resuelve antes de entregar."
+        },
+        {
+         "p": "Tus diapositivas deben…",
+         "ops": [
+          "Tener tus ideas en pocas palabras que puedas explicar",
+          "Tener párrafos completos para leer",
+          "Ser las que dio la IA"
+         ],
+         "correcta": 0,
+         "explica": "Lo que se evalúa es tu dominio del tema."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Uso de la IA y objetivo",
+       "pares": [
+        [
+         "Simular sinodal",
+         "Anticipar preguntas difíciles"
+        ],
+        [
+         "Revisar claridad de tu guion",
+         "Detectar partes confusas"
+        ],
+        [
+         "Cronometrar tu ensayo",
+         "Ajustar a los minutos disponibles"
+        ],
+        [
+         "Acuerdo de equipo",
+         "Reglas y declaración de uso"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu acuerdo de equipo",
+       "pregunta": "Escribe 4 reglas de uso de IA para tu próximo trabajo en equipo, incluida cómo declararán su uso.",
+       "ayuda": "1) … / 2) … / 3) … / 4) Declaramos así…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Simulador de sinodal",
+       "texto": "Actúa como sinodal exigente de un examen de [carrera]. Mi trabajo trata de [resumen en 5 líneas escrito por mí]. Hazme una pregunta a la vez, de metodología, resultados y limitaciones. Espera mi respuesta, dime qué faltó y pasa a la siguiente. No me des respuestas modelo."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA entrena; tú expones.",
+        "En equipo, reglas y declaración acordadas desde el inicio.",
+        "Diapositivas con tus ideas, no con textos para leer."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Becas, intercambios y escritos personales",
+     "obj": "Preparar cartas de motivación y ensayos personales que sean tuyos, usando la IA solo para retroalimentación.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Una carta de motivación o un ensayo para beca, intercambio o posgrado evalúa justo lo que la IA no tiene: <b>tu historia, tus razones y tu voz</b>. Muchas convocatorias piden que el texto sea de autoría propia, y un comité lee cientos de cartas genéricas. Usa la IA para ordenar ideas, detectar partes confusas y practicar la entrevista, no para escribir. Revisa siempre los requisitos de la convocatoria oficial: fechas, extensión y documentos cambian cada año."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en escritos personales",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Frases genéricas que podría firmar cualquiera",
+         "Cambia por ejemplos de tu vida"
+        ],
+        [
+         "Inventa logros o experiencias",
+         "Solo lo que es verdad y puedes demostrar"
+        ],
+        [
+         "Afirma requisitos de convocatorias pasadas",
+         "Verifica en la convocatoria oficial vigente"
+        ],
+        [
+         "Suena igual que otras cartas",
+         "Escribe tú el borrador desde cero"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Para tu carta de motivación, la IA te sirve para…",
+         "ops": [
+          "Escribirla completa",
+          "Señalar partes confusas o genéricas de tu borrador",
+          "Inventar logros que suenen bien"
+         ],
+         "correcta": 1,
+         "explica": "Tu borrador, su retroalimentación."
+        },
+        {
+         "p": "La IA agregó a tu carta que «dirigiste un proyecto internacional». No es cierto. Tú…",
+         "ops": [
+          "Lo quitas: solo va lo que es verdad",
+          "Lo dejas, nadie lo revisará",
+          "Lo cambias por «participé»"
+         ],
+         "correcta": 0,
+         "explica": "Afirmar algo falso en una postulación puede anularla."
+        },
+        {
+         "p": "La fecha límite de la convocatoria la confirmas en…",
+         "ops": [
+          "La respuesta de la IA",
+          "La convocatoria oficial vigente",
+          "Un grupo de redes"
+         ],
+         "correcta": 1,
+         "explica": "Fechas y requisitos cambian cada año."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Frase de motivación",
+       "malTitulo": "Genérica",
+       "mal": "«Siempre me ha apasionado aprender y crecer como persona.»",
+       "bienTitulo": "Tuya",
+       "bien": "«Desde que di clases de regularización a niños de mi colonia en Irapuato, quiero estudiar cómo se enseñan las matemáticas en primaria.»"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu historia",
+       "pregunta": "Escribe 3 experiencias reales que expliquen por qué quieres esa beca, intercambio o posgrado.",
+       "ayuda": "1) Cuando… / 2) … / 3) …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Retroalimentación de tu carta",
+       "texto": "Te pego el borrador de mi carta de motivación para [programa] que escribí yo [pegar]. No la reescribas. Dime: 1) qué frases suenan genéricas, 2) dónde falta un ejemplo concreto, 3) si responde a lo que pide la convocatoria [pegar requisitos], 4) 3 preguntas que me podría hacer el comité en la entrevista."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu historia y tu voz son lo que se evalúa.",
+        "La IA retroalimenta; no escribe ni inventa.",
+        "Requisitos y fechas, en la convocatoria oficial."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Si pides a la IA un valor de p sin darle tus datos…",
+     "ops": [
+      "Es un estimado confiable",
+      "Lo inventa y no puedes usarlo",
+      "Es válido si lo declaras",
+      "Es correcto si la IA es reciente"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Con una muestra pequeña, lo correcto es escribir…",
+     "ops": [
+      "«X causa Y»",
+      "«Está comprobado»",
+      "«En esta muestra, X se asoció con Y»",
+      "«Siempre ocurre»"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Para ensayar tu examen profesional con IA…",
+     "ops": [
+      "Le pides preguntas críticas, una a la vez",
+      "Le pides las respuestas modelo",
+      "Le pides tu discurso",
+      "No sirve"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si un integrante entrega su parte hecha con IA sin declararlo…",
+     "ops": [
+      "Es su problema",
+      "El equipo lo resuelve antes de entregar, según su acuerdo y la política de la escuela",
+      "Se entrega igual",
+      "Se borra su nombre"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En una carta de motivación, la IA puede…",
+     "ops": [
+      "Escribirla completa",
+      "Inventar logros",
+      "Cambiar tu historia",
+      "Señalar frases genéricas de tu borrador"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Los requisitos de una convocatoria se verifican en…",
+     "ops": [
+      "La convocatoria oficial vigente",
+      "La IA",
+      "Un video",
+      "La carta de un amigo"
+     ],
+     "correcta": 0
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado de estudio con errores plantados que debes detectar y la construcción de tu kit académico con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de estudio con IA",
+     "obj": "Detectar errores de contenido, integridad y cálculo en el trabajo académico real con IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a acompañar a <b>Diego</b>, estudiante de 7.º semestre de Ingeniería Industrial en Querétaro, durante un día de trabajo con IA. En cada escena hay al menos un error plantado. Detéctalo y escribe cómo lo corregirías."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 8:00.</b> Diego pide a la IA el resumen de un artículo sobre tiempos de espera en líneas de producción. El resumen dice que «la mejora fue de 45%». Diego subraya el dato para su marco teórico; en el artículo, que no ha abierto, el dato real es 25%."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "¿Qué error hay y qué paso le faltó a Diego?",
+       "ayuda": "El error… / Le faltó…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:00.</b> Su compañera de equipo le manda la sección de metodología: «la hice con IA, quedó perfecta, no hay que decir nada». La entrega es a las 14:00."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "¿Qué debe hacer el equipo antes de entregar?",
+       "ayuda": "Primero… / Después…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 15:00.</b> Diego pega en la IA los datos de su encuesta con los nombres de los 40 trabajadores que respondieron. La IA le devuelve «promedio de satisfacción 8.9» y «el programa causó el aumento de productividad». En su hoja, el promedio es 7.9."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Señala los tres errores de esta escena y cómo los corriges.",
+       "ayuda": "1) Datos… / 2) Promedio… / 3) Causalidad…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 20:00.</b> Diego pide a la IA «5 referencias en APA sobre manufactura esbelta» y las pega en su bibliografía. Una tiene un DOI que no lleva a ningún artículo. Su declaración de uso de IA dice: «Se usó IA como apoyo»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "¿Qué hace con las referencias y cómo reescribes su declaración?",
+       "ayuda": "Referencias: … / Declaración: «…»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 1, el dato correcto sale de…",
+         "ops": [
+          "El resumen de la IA",
+          "El artículo original",
+          "Un promedio de ambos"
+         ],
+         "correcta": 1,
+         "explica": "Todo dato se comprueba en el original."
+        },
+        {
+         "p": "En la escena 3, la frase correcta sería…",
+         "ops": [
+          "«El programa causó el aumento»",
+          "«En esta muestra, la productividad aumentó después del programa»",
+          "«Está comprobado»"
+         ],
+         "correcta": 1,
+         "explica": "Sin diseño experimental, no se afirma causalidad."
+        },
+        {
+         "p": "En la escena 4, con las referencias…",
+         "ops": [
+          "Las deja todas",
+          "Busca y abre cada una; quita las que no existan",
+          "Cambia los DOI"
+         ],
+         "correcta": 1,
+         "explica": "Ninguna referencia entra sin abrirla."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Todo dato se comprueba en el original.",
+        "En equipo, la integridad es de todos.",
+        "Datos anónimos, cálculos en la hoja y referencias abiertas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit académico con IA",
+     "obj": "Construir tu kit personal para estudiar e investigar con IA sin que haga la tarea por ti.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso con un kit que puedas usar este semestre: biblioteca de prompts para aprender, política personal de integridad, lista de verificación antes de entregar y un entregable real. Escribe cada pieza y ordénalas con el índice."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 1 — Biblioteca de prompts",
+       "pregunta": "Escribe tus 5 prompts para aprender (no para que la IA haga la tarea) con campos entre corchetes.",
+       "ayuda": "1) Explicar: … / 2) Fichas: … / 3) Estrategia de búsqueda: … / 4) Revisor: … / 5) Sinodal: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 2 — Política personal de integridad",
+       "pregunta": "Redacta 5 reglas personales: qué dice tu escuela, qué sí harás con IA, qué nunca, cómo declararás su uso y cómo protegerás datos de participantes.",
+       "ayuda": "1) Mi escuela… / 2) Sí… / 3) Nunca… / 4) Declaro así… / 5) Datos…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 3 — Lista de verificación",
+       "pregunta": "Escribe 6 preguntas que te harás antes de entregar cualquier trabajo.",
+       "ayuda": "¿Abrí cada fuente? / ¿Las citas textuales son exactas? / ¿Declaré el uso de IA? / …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 4 — Entregable real",
+       "pregunta": "Elige una entrega real de este semestre y escribe tu plan: qué harás tú, qué te ayudará a revisar la IA, fechas y cómo lo declararás.",
+       "ayuda": "Entrega: … / Yo haré… / La IA revisará… / Fechas: … / Declaración: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT ACADÉMICO CON IA — [Tu nombre, carrera, semestre, escuela]\nFecha: [ ]\n\n1. Biblioteca de prompts para aprender (5): [ ]\n2. Política personal de integridad (5 reglas): [ ]\n   Lo que dice mi escuela sobre IA: [ ]\n3. Lista de verificación antes de entregar (6 preguntas): [ ]\n4. Entregable real: [ ]  Fechas: [ ]  Declaración de uso: [ ]\n\nPrincipio: la IA me explica, me pregunta y me revisa; leer, pensar y escribir me toca a mí.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso!</b> Tienes un método para aprender más rápido con IA sin dejar de aprender: fuentes verificadas, datos reales, uso declarado y tu voz en cada entrega."
+      },
+      {
+       "tipo": "clave",
+       "titulo": "Tu kit académico con IA",
+       "items": [
+        "Prompts para aprender, no para sustituirte.",
+        "Política de integridad y lista antes de entregar.",
+        "Un entregable real con uso declarado."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Si el resumen de la IA y el artículo original no coinciden en un dato…",
+     "ops": [
+      "Usas el del resumen",
+      "Promedias",
+      "Usas el del artículo original",
+      "No usas ninguno"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Una sección hecha con IA sin declarar por una compañera…",
+     "ops": [
+      "Se entrega sin decir nada",
+      "Se revisa en equipo y se rehace o declara según la política",
+      "Es problema solo de ella",
+      "Se usa si quedó bien"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Para analizar una encuesta con IA, los datos van…",
+     "ops": [
+      "Anónimos",
+      "Con nombres para dar contexto",
+      "Con correos",
+      "Con fotos"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "«Se usó IA como apoyo» es una declaración…",
+     "ops": [
+      "Precisa",
+      "Obligatoria en todas las escuelas",
+      "Vaga: falta decir qué hizo la IA y qué hiciste tú",
+      "Innecesaria"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Tu lista de verificación antes de entregar incluye…",
+     "ops": [
+      "¿Abrí cada fuente y declaré el uso de IA?",
+      "¿Usé muchas palabras?",
+      "¿Lo revisó un detector?",
+      "¿La IA dijo que está bien?"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Lo que la IA no puede hacer por ti es…",
+     "ops": [
+      "Explicar un concepto",
+      "Hacerte preguntas de práctica",
+      "Leer, pensar y responder tu pregunta de investigación",
+      "Revisar la claridad de tu párrafo"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1417 @@
+{
+ "id": "c-ia-logistica",
+ "horas": 10,
+ "aprender": [
+  "Medir y mejorar la operación de almacén y transporte —productividad de surtido, costo por entrega y pedidos a tiempo y completos— con tu hoja de cálculo y la IA como apoyo, sin inventar datos ni requisitos.",
+  "Armar tu kit logístico con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "Los productos «A» suelen ser…",
+   "op": "Los que tienen más piezas en existencia"
+  },
+  {
+   "p": "A los productos «A» conviene…",
+   "op": "Contarlos solo en el inventario anual"
+  },
+  {
+   "p": "Si el proveedor ahora tarda 10 días en lugar de 7, el punto de reorden…",
+   "op": "Se queda igual, solo cambia la fecha de entrega"
+  },
+  {
+   "p": "El stock de seguridad sirve para…",
+   "op": "Aprovechar descuentos por volumen"
+  },
+  {
+   "p": "Cuando un conteo no cuadra, antes de ajustar el sistema…",
+   "op": "Repites el conteo hasta que coincida con el sistema"
+  },
+  {
+   "p": "Un promedio móvil de 3 meses sirve para…",
+   "op": "Sustituir el conocimiento del negocio"
+  },
+  {
+   "p": "Si hubo una promoción extraordinaria en un mes…",
+   "op": "La borras del historial para siempre"
+  },
+  {
+   "p": "Si ya tienes mucho inventario, el pedido…",
+   "op": "Se mantiene igual que el mes pasado"
+  },
+  {
+   "p": "La temporada alta se prepara…",
+   "op": "Cuando el inventario ya se agotó"
+  },
+  {
+   "p": "Un producto sin movimiento en 12 meses…",
+   "op": "Se reordena para no quedarse sin él"
+  },
+  {
+   "p": "Una ruta sugerida por IA la validas contra…",
+   "op": "La ruta que usó el chofer el año pasado"
+  },
+  {
+   "p": "Agrupar entregas por zona sirve para…",
+   "op": "Poder cargar más de la capacidad de la unidad"
+  },
+  {
+   "p": "¿Cuándo avisar de un retraso?",
+   "op": "Solo si el retraso pasa de una semana"
+  },
+  {
+   "p": "Un aviso de retraso incluye…",
+   "op": "La explicación técnica completa del problema"
+  },
+  {
+   "p": "El dinero para evitar faltantes de clase A puede salir de…",
+   "op": "Reducir el stock de seguridad de los artículos A"
+  },
+  {
+   "p": "El indicador de entregas es…",
+   "op": "Kilómetros recorridos por día"
+  }
+ ],
+ "extras": {
+  "c-ia-logistica-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una ferretería mayorista en Toluca le pidió a la IA su clasificación ABC y le pasó el número de piezas vendidas en el año. Resultado: tornillos, taquetes y rondanas quedaron como «A»; los taladros y las escaleras, como «C»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué salió mal?",
+      "ops": [
+       "Nada, los tornillos se venden mucho",
+       "Clasificó por piezas y no por valor consumido (piezas × costo)",
+       "Faltaron artículos"
+      ],
+      "correcta": 1,
+      "explica": "ABC se hace por el valor que mueve cada artículo, no por el número de piezas."
+     },
+     {
+      "p": "Para corregirlo, en tu hoja calculas…",
+      "ops": [
+       "Piezas vendidas × costo unitario de cada artículo",
+       "Solo el precio de venta",
+       "El promedio de piezas"
+      ],
+      "correcta": 0,
+      "explica": "Con el valor consumido, los taladros suben a A y la tornillería baja."
+     },
+     {
+      "p": "¿Qué le pides a la IA después de corregir la clasificación?",
+      "ops": [
+       "Que invente el costo de lo que falta",
+       "Que proponga políticas de conteo y reorden por clase",
+       "Que vuelva a clasificar de memoria"
+      ],
+      "correcta": 1,
+      "explica": "La IA propone políticas; los cálculos quedan en tu hoja."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la regla",
+    "items": [
+     {
+      "frase": "La clasificación ABC ordena por ___ consumido en el año.",
+      "resp": [
+       "valor",
+       "Valor"
+      ],
+      "pista": "Piezas × costo."
+     },
+     {
+      "frase": "Los artículos «___» se cuentan con más frecuencia.",
+      "resp": [
+       "A",
+       "a"
+      ],
+      "pista": "La clase más valiosa."
+     },
+     {
+      "frase": "Revisas la clasificación al menos una vez al ___.",
+      "resp": [
+       "año",
+       "trimestre",
+       "semestre"
+      ],
+      "pista": "Los consumos cambian."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu clasificación",
+    "pregunta": "Anota 3 artículos de tu almacén que creas que son «A» por valor consumido y cómo los controlas hoy. ¿Qué cambiarías?",
+    "ayuda": "1. … 2. … 3. … / Hoy los controlo… / Cambiaría…"
+   }
+  ],
+  "c-ia-logistica-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una refaccionaria en Hermosillo vende 25 filtros de aceite al día. Su proveedor pasó de 7 a 12 días de entrega, pero el punto de reorden sigue en el sistema como 25 × 7 + 100 = 275. La IA, al revisar el caso, dice que «no hace falta cambiarlo si el stock de seguridad es suficiente»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Con 12 días de entrega, el nuevo punto de reorden es…",
+      "ops": [
+       "275",
+       "400",
+       "300"
+      ],
+      "correcta": 1,
+      "explica": "25 × 12 + 100 = 400. Con 275 te quedas sin filtros unos 5 días antes de que llegue el pedido."
+     },
+     {
+      "p": "¿Qué haces con la opinión de la IA?",
+      "ops": [
+       "La sigues",
+       "La compruebas con la fórmula y tus datos reales",
+       "Le preguntas otra vez hasta que cambie"
+      ],
+      "correcta": 1,
+      "explica": "La regla la aplicas tú con los tiempos reales del proveedor."
+     },
+     {
+      "p": "¿Qué dato conviene revisar además del tiempo promedio?",
+      "ops": [
+       "Qué tan seguido el proveedor se retrasa y cuántos días",
+       "El color de la caja",
+       "El precio de venta"
+      ],
+      "correcta": 0,
+      "explica": "La variación en tiempos es lo que cubre el stock de seguridad."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Mensaje al área de compras",
+    "malTitulo": "Vago",
+    "mal": "«Oigan, creo que hay que pedir antes.»",
+    "bienTitulo": "Con dato",
+    "bien": "«El proveedor de filtros pasó de 7 a 12 días. Propongo subir el punto de reorden de 275 a 400 piezas desde hoy y revisarlo en un mes.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus tiempos reales",
+    "pregunta": "Elige un artículo importante y anota su consumo diario, el tiempo real de entrega del proveedor y su punto de reorden actual. ¿Está bien calculado?",
+    "ayuda": "Artículo… / Consumo diario… / Días de entrega reales… / Reorden actual… / Debería ser…"
+   }
+  ],
+  "c-ia-logistica-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en el almacén de una distribuidora de cosméticos en Puebla, el conteo cíclico de un labial clase A muestra 18 piezas menos que el sistema. La IA, al redactar el reporte, sugiere «ajustar el inventario para cuadrar y cerrar el conteo del día»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces primero?",
+      "ops": [
+       "Ajusto para cuadrar",
+       "Investigo: recuento, movimientos pendientes de captura, ubicaciones cercanas y devoluciones",
+       "Culpo al turno anterior"
+      ],
+      "correcta": 1,
+      "explica": "Ajustar sin investigar borra la pista de lo que pasó."
+     },
+     {
+      "p": "Un artículo pequeño y valioso con faltante recurrente…",
+      "ops": [
+       "Merece revisar controles de acceso y resguardo",
+       "Se ignora",
+       "Se deja de contar"
+      ],
+      "correcta": 0,
+      "explica": "Sin acusar a nadie, revisas controles del proceso."
+     },
+     {
+      "p": "Si al final sí procede ajustar…",
+      "ops": [
+       "Lo haces tú sin avisar",
+       "Se ajusta con autorización y se registra la causa",
+       "Se deja la diferencia para siempre"
+      ],
+      "correcta": 1,
+      "explica": "Todo ajuste lleva autorización y causa documentada."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Registro de la diferencia",
+    "malTitulo": "Sin causa",
+    "mal": "«Ajuste −18 piezas, ya cuadra.»",
+    "bienTitulo": "Documentado",
+    "bien": "«Labial L-204: −18 piezas. Recuento confirmado. Revisadas 3 ubicaciones vecinas y devoluciones del día: sin hallazgo. Ajuste autorizado por la gerencia; se propone resguardo en jaula para clase A.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu diferencia más común",
+    "pregunta": "¿Qué diferencia de inventario se repite en tu operación y cuál crees que es su causa? Escribe cómo la comprobarías antes de ajustar.",
+    "ayuda": "La diferencia es… / Hipótesis de causa… / La compruebo con…"
+   }
+  ],
+  "c-ia-logistica-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una distribuidora de útiles escolares en León vendió 900, 950, 4,200 y 1,000 cajas de cuadernos de mayo a agosto. La IA sugiere pronosticar septiembre con el promedio de junio a agosto: ≈2,050 cajas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene ese pronóstico?",
+      "ops": [
+       "Ninguno",
+       "Incluye el pico de regreso a clases de julio y lo infla",
+       "Usa muy pocos meses"
+      ],
+      "correcta": 1,
+      "explica": "Un mes extraordinario jala el promedio: se analiza aparte."
+     },
+     {
+      "p": "Una base más razonable para septiembre sería…",
+      "ops": [
+       "El promedio de meses normales, ajustado con lo que sabes del mercado",
+       "4,200, el mes más alto",
+       "Cero, ya pasó la temporada"
+      ],
+      "correcta": 0,
+      "explica": "Separas el pico y ajustas con conocimiento del negocio."
+     },
+     {
+      "p": "¿Qué dato confirmaría tu ajuste?",
+      "ops": [
+       "Las ventas de septiembre de años anteriores",
+       "La opinión de la IA",
+       "Las ventas de un competidor inventadas"
+      ],
+      "correcta": 0,
+      "explica": "El historial del mismo mes es tu mejor referencia."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "Un mes con promoción o temporada se analiza ___ del promedio.",
+      "resp": [
+       "aparte",
+       "separado",
+       "fuera"
+      ],
+      "pista": "No lo mezclas."
+     },
+     {
+      "frase": "El pronóstico base se ajusta con conocimiento del ___.",
+      "resp": [
+       "negocio",
+       "mercado",
+       "cliente"
+      ],
+      "pista": "Lo que sabes tú."
+     },
+     {
+      "frase": "Los datos ___ son tuyos; la IA no los inventa.",
+      "resp": [
+       "históricos",
+       "historicos",
+       "reales"
+      ],
+      "pista": "Ventas pasadas."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus meses raros",
+    "pregunta": "¿Qué meses de tu historial están inflados o deprimidos por algo extraordinario y cómo los tratarías al pronosticar?",
+    "ayuda": "Mes… por… / Lo trato así: …"
+   }
+  ],
+  "c-ia-logistica-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una juguetería con 4 sucursales en Guadalajara prepara el fin de año. La IA armó un plan por semanas con fechas de campañas de descuento «confirmadas» y una recomendación de «pedir el doble que el año pasado de todo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Las fechas de las campañas de descuento del plan…",
+      "ops": [
+       "Se usan tal cual",
+       "Se verifican en la fuente oficial o con tus proveedores y cadenas",
+       "Se adelantan una semana"
+      ],
+      "correcta": 1,
+      "explica": "La IA puede dar fechas de otro año."
+     },
+     {
+      "p": "«Pedir el doble de todo»…",
+      "ops": [
+       "Es prudente",
+       "No tiene base: el pedido sale de pronóstico por artículo, inventario y stock de seguridad",
+       "Solo aplica a los C"
+      ],
+      "correcta": 1,
+      "explica": "Cada artículo con su cálculo; si no, sobreinventario en unos y faltantes en otros."
+     },
+     {
+      "p": "Para el espacio en almacén, lo útil que puede hacer la IA es…",
+      "ops": [
+       "Calcular los metros cúbicos exactos de memoria",
+       "Armar la lista de preguntas y el formato para estimar espacio con tus medidas reales",
+       "Rentar la bodega"
+      ],
+      "correcta": 1,
+      "explica": "Ella organiza; las medidas son tuyas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Instrucción de compra",
+    "malTitulo": "Genérica",
+    "mal": "«Pidan el doble que el año pasado.»",
+    "bienTitulo": "Por artículo",
+    "bien": "«Para los 40 artículos A: pedido = pronóstico de diciembre + stock de seguridad − inventario. Para B y C, 1.2 veces lo vendido el año pasado, revisando en noviembre.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu calendario de temporada",
+    "pregunta": "Escribe las 3 fechas clave de tu temporada alta y, para cada una, con cuántas semanas de anticipación debes pedir.",
+    "ayuda": "Fecha 1… pedir en la semana… / Fecha 2… / Fecha 3…"
+   }
+  ],
+  "c-ia-logistica-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una distribuidora de accesorios para celular en la Ciudad de México tiene 6,000 fundas de modelos que ya casi nadie usa. La IA sugiere «destruirlas y deducirlas como pérdida este mes»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la sugerencia fiscal de la IA?",
+      "ops": [
+       "La aplicas",
+       "La llevas a contabilidad: la baja y su tratamiento fiscal los define ella",
+       "La ignoras y guardas las fundas"
+      ],
+      "correcta": 1,
+      "explica": "Las bajas y deducciones tienen requisitos que revisa contabilidad."
+     },
+     {
+      "p": "Antes de destruir, conviene revisar…",
+      "ops": [
+       "Devolución al proveedor, venta a otro canal o paquete con otros productos",
+       "Nada",
+       "Si caben en otra bodega"
+      ],
+      "correcta": 0,
+      "explica": "Recuperar algo es mejor que perder todo."
+     },
+     {
+      "p": "¿Cómo priorizas los artículos lentos?",
+      "ops": [
+       "Por orden alfabético",
+       "Por valor inmovilizado: cantidad × costo",
+       "Por antigüedad del proveedor"
+      ],
+      "correcta": 1,
+      "explica": "Atacas primero donde está el dinero parado."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "El valor inmovilizado es cantidad × ___ unitario.",
+      "resp": [
+       "costo",
+       "Costo"
+      ],
+      "pista": "Lo que te costó."
+     },
+     {
+      "frase": "Una baja de inventario se revisa con ___.",
+      "resp": [
+       "contabilidad",
+       "Contabilidad",
+       "el contador"
+      ],
+      "pista": "El área que registra."
+     },
+     {
+      "frase": "El inventario lento se revisa cada ___.",
+      "resp": [
+       "trimestre",
+       "mes"
+      ],
+      "pista": "Frecuencia sugerida en la lección."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu inventario parado",
+    "pregunta": "Anota tus 3 artículos con más valor inmovilizado y una salida posible para cada uno.",
+    "ayuda": "1. … valor… salida… / 2. … / 3. …"
+   }
+  ],
+  "c-ia-logistica-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una purificadora en Tlaquepaque reparte garrafones a 28 negocios. La IA propuso una ruta ordenada por colonia, pero puso primero a una fonda que recibe de 1 a 3 p. m. y al final a una escuela que solo recibe de 7 a 9 a. m."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué restricción ignoró la IA?",
+      "ops": [
+       "La capacidad",
+       "Las ventanas de recepción de los clientes",
+       "El color de la camioneta"
+      ],
+      "correcta": 1,
+      "explica": "La ventana de horario es una restricción dura."
+     },
+     {
+      "p": "¿Qué parte de la propuesta sí te sirve?",
+      "ops": [
+       "El agrupamiento por colonias",
+       "Los tiempos de traslado que calculó",
+       "El orden exacto"
+      ],
+      "correcta": 0,
+      "explica": "La IA agrupa; el orden y los tiempos los da la herramienta de mapas."
+     },
+     {
+      "p": "Para que la IA no repita el error, en el prompt…",
+      "ops": [
+       "Le das las ventanas como restricción obligatoria",
+       "Le pides que se apure",
+       "Le quitas datos"
+      ],
+      "correcta": 0,
+      "explica": "Lo que no le dices como restricción, no lo respeta."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Instrucción a la IA",
+    "malTitulo": "Incompleta",
+    "mal": "«Ordena estas 28 entregas por cercanía.»",
+    "bienTitulo": "Con restricciones",
+    "bien": "«Agrupa estas 28 entregas por zona respetando: ventanas de recepción (columna B), capacidad de 120 garrafones por camioneta y prioridad a escuelas. No calcules tiempos: los verifico en el mapa.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus restricciones de ruta",
+    "pregunta": "Escribe las 4 restricciones que siempre debe respetar una ruta en tu operación (horarios, capacidad, accesos, prioridad).",
+    "ayuda": "1. … 2. … 3. … 4. …"
+   }
+  ],
+  "c-ia-logistica-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un bloqueo carretero detuvo tres camiones de una paquetería regional en Veracruz. No hay fecha segura de liberación. La IA redactó el aviso a clientes: «Su pedido llegará mañana sin falta»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el aviso?",
+      "ops": [
+       "Promete una fecha que no puedes asegurar",
+       "Es muy corto",
+       "No tiene logotipo"
+      ],
+      "correcta": 0,
+      "explica": "Una promesa falsa convierte un retraso en un segundo incumplimiento."
+     },
+     {
+      "p": "¿Qué incluye un buen aviso en este caso?",
+      "ops": [
+       "Causa breve, que aún no hay fecha segura y cuándo darás la siguiente actualización",
+       "Una disculpa larga",
+       "Detalles del bloqueo y opiniones"
+      ],
+      "correcta": 0,
+      "explica": "Si no hay fecha, compromete la hora de la próxima actualización."
+     },
+     {
+      "p": "En el reporte interno, «el bloqueo durará 2 días» es…",
+      "ops": [
+       "Un hecho",
+       "Una hipótesis que se marca como tal",
+       "Irrelevante"
+      ],
+      "correcta": 1,
+      "explica": "Hechos y supuestos van separados."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Aviso de retraso",
+    "malTitulo": "Promesa sin base",
+    "mal": "«Su pedido llegará mañana sin falta.»",
+    "bienTitulo": "Honesto y útil",
+    "bien": "«Tu pedido está detenido por un bloqueo carretero en la ruta a Xalapa. Aún no tenemos fecha segura; te escribimos mañana a las 10 a. m. con una actualización. Si lo necesitas antes, te ofrecemos recogerlo en nuestra sucursal cuando llegue.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu aviso listo",
+    "pregunta": "Redacta el aviso de retraso que usarías ante la causa más común en tu operación, con espacio para la siguiente actualización.",
+    "ayuda": "Causa típica… / Aviso: …"
+   }
+  ],
+  "c-ia-logistica-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dos meses después del plan, la distribuidora de limpieza ya casi no tiene faltantes, pero su proveedor del desengrasante (artículo A) anuncia que por mantenimiento de planta tardará 20 días en lugar de 8. La IA propone «pedir 3 meses de inventario de todo por si acaso»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué artículos requieren acción?",
+      "ops": [
+       "Todos",
+       "Los que surte ese proveedor, empezando por los A",
+       "Solo los C"
+      ],
+      "correcta": 1,
+      "explica": "La contingencia se enfoca donde está el riesgo."
+     },
+     {
+      "p": "Para el desengrasante, el nuevo punto de reorden…",
+      "ops": [
+       "Sube, porque aumentan los días de entrega",
+       "Baja",
+       "No cambia"
+      ],
+      "correcta": 0,
+      "explica": "Más días de entrega = más consumo que cubrir mientras llega."
+     },
+     {
+      "p": "¿Cómo financias el pedido extra sin inflar todo?",
+      "ops": [
+       "Con el dinero liberado del inventario lento",
+       "Con un préstamo automático",
+       "Pidiendo 3 meses de todo"
+      ],
+      "correcta": 0,
+      "explica": "La lógica del caso integrador sigue aplicando."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta a la contingencia",
+    "malTitulo": "Por miedo",
+    "mal": "«Pidan 3 meses de todo.»",
+    "bienTitulo": "Enfocada",
+    "bien": "«Recalcular el reorden del desengrasante con 20 días, adelantar un pedido extra de ese artículo y avisar a los 5 clientes que más lo compran. El resto sigue igual.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu contingencia",
+    "pregunta": "Si tu proveedor más importante duplicara su tiempo de entrega mañana, ¿qué 3 acciones tomarías y en qué orden?",
+    "ayuda": "1. … 2. … 3. …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Operación avanzada: almacén, transporte y servicio",
+   "r": "Medir la productividad del almacén, calcular el costo por entrega y controlar los pedidos a tiempo y completos, con la IA para organizar y comunicar.",
+   "lecciones": [
+    {
+     "t": "Productividad y exactitud en el almacén",
+     "obj": "Medir líneas surtidas por hora y exactitud de surtido, y ordenar el almacén por rotación sin que la IA invente datos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un almacén se mide con dos preguntas: ¿qué tan rápido surte? (<b>líneas por hora</b>) y ¿qué tan bien? (<b>exactitud</b>: pedidos sin error ÷ pedidos surtidos). La mayor ganancia suele venir de acomodar: los artículos que más se mueven, cerca de la zona de embarque y a la altura de la cintura. La IA te ayuda a proponer el acomodo y a preparar la junta; los datos salen de tu sistema."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> un CEDIS de abarrotes en Monterrey tiene tres surtidores en el turno matutino. El gerente quiere saber quién necesita apoyo y si el acomodo actual los está frenando."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Surtido del turno",
+       "datos": [
+        [
+         "Surtidor",
+         "Líneas surtidas",
+         "Horas trabajadas",
+         "Pedidos con error",
+         "Pedidos surtidos"
+        ],
+        [
+         "S-1",
+         540,
+         6,
+         2,
+         60
+        ],
+        [
+         "S-2",
+         390,
+         6,
+         1,
+         48
+        ],
+        [
+         "S-3",
+         600,
+         6,
+         9,
+         66
+        ],
+        [
+         "Total",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=SUMA(B2:B4)",
+         "esperado": 1530,
+         "texto": "<b>B5</b>: líneas surtidas en el turno.",
+         "requiere": "SUMA(",
+         "pista": "=SUMA(B2:B4)"
+        },
+        {
+         "celda": "F2",
+         "formula": "=B2/C2",
+         "esperado": 90,
+         "texto": "<b>F2</b>: líneas por hora de S-1."
+        },
+        {
+         "celda": "F4",
+         "formula": "=B4/C4",
+         "esperado": 100,
+         "texto": "<b>F4</b>: líneas por hora de S-3."
+        },
+        {
+         "celda": "G4",
+         "formula": "=1-D4/E4",
+         "esperado": 0.8636363636,
+         "texto": "<b>G4</b>: exactitud de S-3 = 1 − pedidos con error ÷ pedidos surtidos.",
+         "pista": "=1-D4/E4",
+         "explica": "S-3 es el más rápido (100 líneas por hora), pero su exactitud es ≈86%. Velocidad sin exactitud genera devoluciones: la conversación con él es sobre método, no sobre ritmo."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Acomodo por rotación",
+       "texto": "Te paso mis artículos (clave, descripción genérica, líneas surtidas al mes, peso aproximado) y el croquis de mi almacén en texto (pasillos, niveles, zona de embarque): [pegar]. Propón qué artículos van en la zona dorada (cerca de embarque, altura de cintura) y cuáles al fondo o arriba. Considera peso y seguridad: lo pesado nunca en niveles altos. No inventes medidas: si te falta un dato, pregúntame."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en almacén:</b> suponer medidas de racks y pasillos, recomendar alturas de estiba o cargas sin conocer tu equipo, y calcular productividades con datos que no le diste. Capacidades de carga y reglas de seguridad salen del fabricante del rack y de tu área de seguridad; si hay una NOM aplicable, verifica el requisito vigente."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "S-3 surte más líneas por hora pero tiene más errores. Lo primero es…",
+         "ops": [
+          "Ponerlo de ejemplo al equipo",
+          "Revisar con él dónde se equivoca: ubicación, etiqueta o método",
+          "Bajarle el ritmo sin hablar"
+         ],
+         "correcta": 1,
+         "explica": "El dato abre una conversación de proceso, no un castigo."
+        },
+        {
+         "p": "La IA propone poner cajas de 25 kg en el nivel más alto «por espacio». Tú…",
+         "ops": [
+          "Aceptas",
+          "Lo corriges: lo pesado va abajo por seguridad",
+          "Lo dejas a criterio del surtidor"
+         ],
+         "correcta": 1,
+         "explica": "Seguridad antes que espacio."
+        },
+        {
+         "p": "Para medir si el nuevo acomodo funcionó, comparas…",
+         "ops": [
+          "Líneas por hora y exactitud antes y después",
+          "Cuántos artículos cambiaste de lugar",
+          "La opinión del gerente"
+         ],
+         "correcta": 0,
+         "explica": "Mides el mismo indicador antes y después."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu zona dorada",
+       "pregunta": "Anota 5 artículos de alta rotación en tu almacén y dónde están hoy. ¿Cuáles moverías más cerca de embarque?",
+       "ayuda": "1. … está en… / 2. … / Movería…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Líneas por hora y exactitud, siempre juntas.",
+        "Alta rotación cerca de embarque; lo pesado abajo.",
+        "Capacidades y seguridad: del fabricante y tu área de seguridad."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Costo por entrega y documentación del transporte",
+     "obj": "Calcular el costo por entrega de tu flota, compararlo con un servicio externo y preparar la documentación del traslado verificando el requisito vigente.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchas empresas no saben cuánto les cuesta cada entrega. Súmale todo a una ruta —combustible, casetas, sueldo del chofer y ayudante, mantenimiento— y divídelo entre las entregas del día. Con ese número puedes decidir si conviene tu camioneta, una paquetería o un fletero para ciertas zonas. La IA te ayuda a no olvidar conceptos y a preparar la comparación; las cifras salen de tus facturas y bitácoras."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una distribuidora de productos de limpieza en Querétaro reparte con camioneta propia a San Juan del Río los martes. Un fletero ofrece hacer esa ruta por $95 por entrega."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Costo de la ruta del martes",
+       "datos": [
+        [
+         "Concepto",
+         "Monto (MXN)"
+        ],
+        [
+         "Combustible",
+         1450
+        ],
+        [
+         "Casetas",
+         380
+        ],
+        [
+         "Chofer y ayudante (día)",
+         1600
+        ],
+        [
+         "Mantenimiento prorrateado",
+         420
+        ],
+        [
+         "Costo de la ruta",
+         ""
+        ],
+        [
+         "Entregas del día",
+         32
+        ],
+        [
+         "Costo por entrega",
+         ""
+        ],
+        [
+         "Tarifa del fletero por entrega",
+         95
+        ],
+        [
+         "Decisión",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B6",
+         "formula": "=SUMA(B2:B5)",
+         "esperado": 3850,
+         "texto": "<b>B6</b>: costo total de la ruta.",
+         "requiere": "SUMA(",
+         "pista": "=SUMA(B2:B5)"
+        },
+        {
+         "celda": "B8",
+         "formula": "=B6/B7",
+         "esperado": 120.3125,
+         "texto": "<b>B8</b>: costo por entrega = costo de la ruta ÷ entregas."
+        },
+        {
+         "celda": "B10",
+         "formula": "=SI(B8>B9,\"Evaluar fletero\",\"Mantener propia\")",
+         "esperado": "Evaluar fletero",
+         "texto": "<b>B10</b>: con SI, si tu costo por entrega es mayor que la tarifa del fletero escribe «Evaluar fletero»; si no, «Mantener propia».",
+         "requiere": "SI(",
+         "pista": "=SI(B8>B9,«Evaluar fletero»,«Mantener propia») con comillas rectas",
+         "explica": "Tu costo es ≈$120 por entrega contra $95. Vale la pena evaluar al fletero, sumando también su puntualidad, el trato con tus clientes y qué pasa con la camioneta ese día."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Documentación del traslado: verifica el requisito vigente.</b> Si trasladas mercancía por carretera, revisa si aplica el complemento Carta Porte del CFDI y qué datos exige; verifica el requisito vigente en el sitio del SAT y con tu contador. No tomes de la IA si un viaje lo requiere o no."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Comparar flota propia contra un tercero",
+       "texto": "Mi ruta de [día] a [zona] cuesta [costo por entrega ya calculado] con [número] entregas. Un tercero ofrece [tarifa y condiciones]. Hazme una tabla para comparar más allá del precio: puntualidad, manejo de devoluciones, cobro contra entrega, seguro de la mercancía, imagen ante el cliente, qué pasa con mi unidad y chofer, y documentación que debe entregarme. Termina con 5 preguntas que debo hacerle antes de decidir. No inventes tarifas del mercado."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que «ese tipo de traslado no requiere Carta Porte». Tú…",
+         "ops": [
+          "Le crees",
+          "Verificas el requisito vigente en el SAT y con tu contador",
+          "Preguntas al chofer"
+         ],
+         "correcta": 1,
+         "explica": "Los requisitos fiscales del traslado se confirman en fuente oficial."
+        },
+        {
+         "p": "El fletero es más barato por entrega. Antes de decidir revisas…",
+         "ops": [
+          "Solo el precio",
+          "Puntualidad, seguro de la mercancía y manejo de devoluciones",
+          "El color de sus unidades"
+         ],
+         "correcta": 1,
+         "explica": "El precio es un criterio, no el único."
+        },
+        {
+         "p": "Si ese día tu camioneta ya no sale a San Juan del Río, el ahorro real depende de…",
+         "ops": [
+          "Qué haces con la unidad y el personal ese día",
+          "Nada más",
+          "La opinión de la IA"
+         ],
+         "correcta": 0,
+         "explica": "Si el chofer sigue cobrando, el ahorro no es el que parece."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu ruta más cara",
+       "pregunta": "Elige una ruta de tu operación y lista los conceptos que sumarías para su costo por entrega y de dónde sacarías cada dato.",
+       "ayuda": "Ruta… / Conceptos: … / Fuente de cada dato: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Costo por entrega = costo de la ruta ÷ entregas.",
+        "Compara con un tercero más allá del precio.",
+        "Carta Porte y documentación: verifica el requisito vigente."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Pedidos a tiempo y completos (OTIF)",
+     "obj": "Calcular el porcentaje de pedidos entregados a tiempo y completos, encontrar la causa de las fallas y comunicar el indicador con la IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Para tu cliente, un pedido está bien solo si llegó <b>a tiempo y completo</b>. El indicador se conoce como OTIF (por sus siglas en inglés: on time, in full). Si mides solo puntualidad, un pedido que llegó a tiempo pero con 3 cajas faltantes cuenta como éxito, y tu cliente no opina lo mismo."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una comercializadora de frutas y verduras en Culiacán surte a 6 restaurantes. Su reporte dice «95% de entregas a tiempo», pero dos clientes se quejan de faltantes cada semana."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Pedidos de la semana",
+       "datos": [
+        [
+         "Pedido",
+         "A tiempo",
+         "Completo"
+        ],
+        [
+         "P-01",
+         "Sí",
+         "Sí"
+        ],
+        [
+         "P-02",
+         "Sí",
+         "No"
+        ],
+        [
+         "P-03",
+         "No",
+         "Sí"
+        ],
+        [
+         "P-04",
+         "Sí",
+         "Sí"
+        ],
+        [
+         "P-05",
+         "Sí",
+         "No"
+        ],
+        [
+         "P-06",
+         "Sí",
+         "Sí"
+        ],
+        [
+         "Pedidos a tiempo y completos",
+         "",
+         ""
+        ],
+        [
+         "OTIF",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B8",
+         "formula": "=CONTAR.SI.CONJUNTO(B2:B7,\"Sí\",C2:C7,\"Sí\")",
+         "esperado": 3,
+         "texto": "<b>B8</b>: cuántos pedidos fueron a tiempo Y completos.",
+         "requiere": "CONTAR.SI.CONJUNTO(",
+         "pista": "=CONTAR.SI.CONJUNTO(B2:B7,«Sí»,C2:C7,«Sí») con comillas rectas"
+        },
+        {
+         "celda": "B9",
+         "formula": "=B8/CONTARA(A2:A7)",
+         "esperado": 0.5,
+         "texto": "<b>B9</b>: OTIF = pedidos a tiempo y completos ÷ total de pedidos.",
+         "pista": "=B8/CONTARA(A2:A7)",
+         "explica": "5 de 6 llegaron a tiempo (83%), pero solo 3 llegaron a tiempo y completos: OTIF de 50%. Los faltantes, no la puntualidad, son el problema."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Analizar las fallas de OTIF",
+       "texto": "Estas son las fallas de la semana, ya identificadas (sin nombres de clientes): [pedido, tipo de falla: tarde o incompleto, artículo, causa anotada]. Agrúpalas por causa probable (faltante en almacén, error de surtido, retraso de proveedor, ruta, captura del pedido), distingue hechos de hipótesis y propón una acción por causa con responsable. No calcules porcentajes: ya los tengo."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con indicadores:</b> confundir «a tiempo» con «a tiempo y completo», calcular porcentajes con el total equivocado y presentar metas «estándar de la industria» sin fuente. Tu meta la define tu empresa con tus clientes."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Tu reporte dice 95% a tiempo y el cliente se queja. Lo más probable es que…",
+         "ops": [
+          "El cliente exagera",
+          "Estás midiendo solo puntualidad y no pedidos completos",
+          "El indicador está perfecto"
+         ],
+         "correcta": 1,
+         "explica": "OTIF muestra lo que el cliente vive."
+        },
+        {
+         "p": "La IA propone una meta de OTIF «estándar de la industria de 98%». Tú…",
+         "ops": [
+          "La adoptas",
+          "La defines con tu historial y lo acordado con tus clientes",
+          "La subes a 100%"
+         ],
+         "correcta": 1,
+         "explica": "Sin fuente, no es un estándar: es un número."
+        },
+        {
+         "p": "Para atacar los incompletos, lo primero es revisar…",
+         "ops": [
+          "Qué artículos faltan y por qué: inventario, surtido o captura",
+          "El horario de los choferes",
+          "El logotipo del camión"
+         ],
+         "correcta": 0,
+         "explica": "La causa está antes de que salga el camión."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu OTIF",
+       "pregunta": "¿Mides hoy pedidos a tiempo y completos? Escribe cómo obtendrías cada dato y quién lo registraría.",
+       "ayuda": "A tiempo lo obtengo de… / Completo lo obtengo de… / Lo registra… / Meta inicial…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "OTIF = a tiempo Y completo ÷ total de pedidos.",
+        "Medir solo puntualidad esconde los faltantes.",
+        "Metas con tu historial y tus clientes, no «estándares» sin fuente."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La exactitud de surtido se calcula como…",
+     "ops": [
+      "Líneas ÷ horas",
+      "1 − pedidos con error ÷ pedidos surtidos",
+      "Pedidos ÷ surtidores",
+      "Errores × 100"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En el acomodo por rotación, los artículos pesados van…",
+     "ops": [
+      "En niveles bajos",
+      "En el nivel más alto",
+      "Donde haya espacio",
+      "Junto a la puerta"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Costo por entrega =",
+     "ops": [
+      "Combustible ÷ kilómetros",
+      "Tarifa del fletero × 2",
+      "Costo total de la ruta ÷ entregas",
+      "Sueldo del chofer"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA dice que un traslado no requiere Carta Porte…",
+     "ops": [
+      "Verificas el requisito vigente en el SAT y con tu contador",
+      "Le crees",
+      "Le preguntas al cliente",
+      "No haces nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "OTIF mide pedidos…",
+     "ops": [
+      "Entregados en la mañana",
+      "Facturados",
+      "Con descuento",
+      "A tiempo y completos"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Con 3 pedidos a tiempo y completos de 6, el OTIF es…",
+     "ops": [
+      "83%",
+      "50%",
+      "30%",
+      "100%"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una meta «estándar de la industria» sin fuente…",
+     "ops": [
+      "Se adopta",
+      "Se duplica",
+      "No se usa: la meta sale de tu historial y tus clientes",
+      "Se publica"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado en un centro de distribución con errores de la IA que debes detectar y tu kit logístico personal.",
+   "lecciones": [
+    {
+     "t": "Simulación: un jueves en el CEDIS",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en logística: cálculos falsos, datos personales expuestos, promesas sin base y requisitos inventados.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres supervisora de un centro de distribución de abarrotes en Monterrey y usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de que llegue a un cliente, a un chofer o a tu gerente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 7:00 a. m. Reporte de reorden.</b> La IA te entrega la lista de artículos a pedir. Uno aparece con «inventario: −40 piezas» y otro con «punto de reorden: 180» cuando tu fórmula da 330 (30 al día × 9 días + 60 de seguridad)."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "¿Qué dos errores ves, qué dicen de los datos y cómo los corriges antes de mandar el pedido?",
+       "ayuda": "Error 1: … significa que… / Error 2: … / Corrijo…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 9:30 a. m. Rutas.</b> Un compañero exportó la base de clientes con nombre del dueño, celular personal y domicilio particular, y quiere pegarla completa en una IA pública para que «haga las rutas»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "¿Qué datos no deben ir a la IA y cómo preparas la información para agrupar rutas sin exponerlos?",
+       "ayuda": "No pego… / En su lugar uso… / La herramienta autorizada es…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 1:00 p. m. Aviso a clientes.</b> Un camión se descompuso. La IA redactó para 14 clientes: «Su pedido llegará hoy antes de las 6 p. m. garantizado». El taller aún no da diagnóstico y no hay unidad de reemplazo confirmada."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Reescribe el aviso sin promesas sin base y con un compromiso que sí puedas cumplir.",
+       "ayuda": "Aviso: … / Me comprometo a…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Traslado a otra ciudad.</b> Mañana sale un embarque a Saltillo. La IA te dice: «Para ese viaje no necesitas Carta Porte porque es mercancía propia» y en tu reporte del día escribe «OTIF de la semana: 97%» cuando tu hoja dice 81%."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Qué haces con la afirmación sobre la Carta Porte y cómo corriges el reporte?",
+       "ayuda": "Sobre la Carta Porte… / En el reporte escribo…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Un inventario negativo en el reporte indica…",
+         "ops": [
+          "Que todo está bien",
+          "Un error de captura o de movimientos que se investiga antes de pedir",
+          "Que hay que pedir el doble"
+         ],
+         "correcta": 1,
+         "explica": "No existen −40 piezas en un anaquel."
+        },
+        {
+         "p": "Para agrupar rutas con IA usas…",
+         "ops": [
+          "La base completa con celulares personales",
+          "Zona, ventana de horario y volumen, sin datos personales",
+          "Los domicilios particulares de los dueños"
+         ],
+         "correcta": 1,
+         "explica": "Solo lo necesario para la tarea."
+        },
+        {
+         "p": "Con un camión descompuesto y sin diagnóstico, al cliente le…",
+         "ops": [
+          "Garantizas la hora",
+          "Avisas y te comprometes a una hora de actualización",
+          "No dices nada hasta mañana"
+         ],
+         "correcta": 1,
+         "explica": "Comprometes lo que controlas."
+        },
+        {
+         "p": "Sobre la Carta Porte del embarque a Saltillo…",
+         "ops": [
+          "Verificas el requisito vigente en el SAT y con tu contador",
+          "Sigues a la IA",
+          "Preguntas al chofer"
+         ],
+         "correcta": 0,
+         "explica": "Los requisitos fiscales del traslado no se toman de la IA."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Revisa cifras imposibles antes de actuar.",
+        "Datos personales fuera de la IA; solo lo necesario.",
+        "Ni promesas ni requisitos sin base: verifica el requisito vigente."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit logístico con IA",
+     "obj": "Construir tu kit logístico personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Convierte el curso en un <b>kit que uses desde mañana</b>. Responde cada paso con tu almacén, tus rutas y tus artículos reales (sin datos de clientes)."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más usarás (políticas ABC, plan de conteo, ajuste de pronóstico, inventario lento, agrupar rutas, aviso de retraso, acomodo, OTIF) y adáptalos a tu operación.",
+       "ayuda": "1. … 2. … 3. … 4. … 5. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tus 5 reglas: qué nunca pegas en una IA (datos de clientes, domicilios, precios pactados), cómo usas claves y qué herramienta está autorizada en tu empresa.",
+       "ayuda": "Nunca pego… / Uso claves como… / Herramienta autorizada: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe 6 puntos que revisas antes de usar cualquier cálculo, ruta o aviso hecho con IA.",
+       "ayuda": "□ ¿Cifras calculadas en mi hoja? □ ¿Sin inventarios negativos ni datos imposibles? □ ¿Rutas con ventanas y capacidad? □ ¿Avisos sin promesas sin base? □ ¿Requisitos fiscales y NOM verificados en fuente oficial? □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real: tu clasificación ABC con políticas, tus puntos de reorden recalculados, un plan de temporada o tu tablero de OTIF. Pega la versión final revisada.",
+       "ayuda": "Entregable: … / Lo presento a… el…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit logístico",
+       "texto": "KIT LOGÍSTICO CON IA — [tu nombre] — [almacén o empresa] — [fecha]\n\n1. Clasificación ABC y políticas por clase: [ ]\n2. Puntos de reorden de artículos A: [ ]\n3. Biblioteca de prompts: conteo [ ], pronóstico [ ], inventario lento [ ], rutas [ ], avisos [ ]\n4. Política de datos y herramienta autorizada: [ ]\n5. Lista de verificación: [ ]\n6. Indicadores: exactitud, costo por entrega, OTIF [ ]\n7. Entregable real: [ ]\n8. Próxima revisión del kit: [fecha]",
+       "nota": "Actualízala cuando cambien tus proveedores, tus rutas o tus artículos A."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tu operación.",
+        "Política de datos y lista de verificación.",
+        "Un entregable real con indicadores."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un «inventario: −40 piezas» en un reporte…",
+     "ops": [
+      "Se usa para pedir",
+      "Se ignora",
+      "Indica un error que se investiga antes de pedir",
+      "Es normal"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Para agrupar rutas con IA le das…",
+     "ops": [
+      "Nombres y celulares de los clientes",
+      "Zona, ventana y volumen, sin datos personales",
+      "Domicilios particulares",
+      "La base completa"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si no tienes fecha segura de entrega, en el aviso…",
+     "ops": [
+      "Te comprometes a una hora de actualización",
+      "Garantizas una hora",
+      "No avisas",
+      "Culpas al taller"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Los requisitos de Carta Porte de un embarque se…",
+     "ops": [
+      "Toman de la IA",
+      "Deciden por costumbre",
+      "Omiten si la mercancía es propia",
+      "Verifican vigentes en el SAT y con tu contador"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Si la IA reporta un OTIF distinto al de tu hoja…",
+     "ops": [
+      "Usas el de la IA",
+      "Usas el de tu hoja, que puedes revisar",
+      "Promedias",
+      "No reportas"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En logística, la responsabilidad de la decisión final es…",
+     "ops": [
+      "De la IA",
+      "Del chofer",
+      "Tuya y de tu empresa",
+      "Del cliente"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

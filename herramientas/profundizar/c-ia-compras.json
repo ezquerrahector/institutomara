@@ -1,0 +1,1370 @@
+{
+ "id": "c-ia-compras",
+ "horas": 10,
+ "aprender": [
+  "Aplicar IA a compras especializadas —análisis de gasto, contratación de servicios e importaciones— con costo total y riesgo de proveedor, sin inventar datos ni requisitos.",
+  "Armar tu kit de compras con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "Una especificación vaga provoca…",
+   "op": "Entregas más rápidas"
+  },
+  {
+   "p": "¿Quién define las características técnicas?",
+   "op": "El proveedor que cotice más barato"
+  },
+  {
+   "p": "Una RFQ bien hecha pide a todos los proveedores…",
+   "op": "Solo el precio total, sin desglose"
+  },
+  {
+   "p": "Incluir fecha límite y vigencia de la cotización sirve para…",
+   "op": "Evitar que el área usuaria cambie la especificación"
+  },
+  {
+   "p": "Los pesos de los criterios se definen…",
+   "op": "Cuando el proveedor favorito ya entregó su cotización"
+  },
+  {
+   "p": "A: $100 con flete incluido. B: $95 + $8 de flete. Por costo total conviene…",
+   "op": "Da igual: el precio de lista es el que cuenta"
+  },
+  {
+   "p": "Al comparar cotizaciones, además del precio suma…",
+   "op": "Solo el descuento por pronto pago"
+  },
+  {
+   "p": "La garantía de 3 años acordada no aparece en la orden. Tú…",
+   "op": "La pides por correo después de recibir el equipo"
+  },
+  {
+   "p": "Un buen reclamo a proveedor incluye…",
+   "op": "Una amenaza de demanda para que responda rápido"
+  },
+  {
+   "p": "Si el proveedor no responde en el plazo…",
+   "op": "Retienes todos sus pagos sin avisar"
+  },
+  {
+   "p": "Si el indicador de entregas a tiempo baja de 95% a 80%…",
+   "op": "Esperas al siguiente trimestre para ver si mejora solo"
+  },
+  {
+   "p": "El proveedor más barato no incluye garantía en sitio. Tú…",
+   "op": "Le pides a la IA que decida por ti"
+  },
+  {
+   "p": "Los pesos de la matriz se definen…",
+   "op": "Al firmar la orden de compra"
+  }
+ ],
+ "extras": {
+  "c-ia-compras-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un hospital privado de Querétaro pide «uniformes para enfermería, de buena calidad». Le pides a la IA una especificación y te regresa una tabla muy completa que incluye «tela antibacterial certificada bajo norma oficial» y «entrega en 5 días». Nadie del área mencionó una norma ni un plazo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la norma que agregó la IA?",
+      "ops": [
+       "La dejo: suena profesional",
+       "La quito y pregunto al área usuaria si existe un requisito; si lo hay, verifica el requisito vigente en la fuente oficial",
+       "La cambio por otra norma parecida"
+      ],
+      "correcta": 1,
+      "explica": "Una norma inventada en la especificación deja fuera proveedores o te obliga a pagar algo que nadie pidió."
+     },
+     {
+      "p": "Las tallas y cantidades por talla las define…",
+      "ops": [
+       "La jefatura de enfermería con compras",
+       "La IA con un promedio nacional",
+       "El proveedor según su inventario"
+      ],
+      "correcta": 0,
+      "explica": "El área usuaria conoce a su personal; compras lo convierte en especificación."
+     },
+     {
+      "p": "Para reducir el riesgo de calidad conviene pedir…",
+      "ops": [
+       "Fotos del catálogo",
+       "Muestras físicas y prueba de lavado antes de adjudicar",
+       "Solo el precio unitario"
+      ],
+      "correcta": 1,
+      "explica": "Una muestra real vale más que cualquier descripción."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Especificación de uniformes",
+    "malTitulo": "Con supuestos de la IA",
+    "mal": "«Uniforme antibacterial certificado, entrega en 5 días, tallas surtidas.»",
+    "bienTitulo": "Validada con el área",
+    "bien": "«180 filipinas y 180 pantalones en tallas según tabla anexa; tela y color según muestra aprobada por enfermería; entrega en almacén del hospital a 4 semanas de la orden; muestra previa obligatoria.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu requisición más vaga",
+    "pregunta": "Toma una requisición real que te haya llegado incompleta este mes (sin datos confidenciales) y reescríbela como especificación. Marca con [PREGUNTAR] lo que todavía no sabes.",
+    "ayuda": "Requisición original: … / Especificación: cantidad…, características…, entrega… / [PREGUNTAR]: …"
+   }
+  ],
+  "c-ia-compras-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una planta de alimentos en Irapuato pidió cotización de control de plagas sin formato de respuesta. Un proveedor cotizó por visita, otro por metro cuadrado y otro con iguala mensual que «incluye todo». Nadie puede decir cuál es más barato."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué faltó en la solicitud?",
+      "ops": [
+       "Un formato único de respuesta con unidad de cobro definida",
+       "Más proveedores",
+       "Un precio objetivo"
+      ],
+      "correcta": 0,
+      "explica": "Si todos cotizan en la misma unidad (por ejemplo, costo mensual por el alcance descrito), comparar es inmediato."
+     },
+     {
+      "p": "«Incluye todo» en la iguala mensual…",
+      "ops": [
+       "Es la mejor oferta",
+       "Se pide por escrito: qué áreas, cuántas visitas, qué productos y qué reportes",
+       "Se acepta si el precio es bajo"
+      ],
+      "correcta": 1,
+      "explica": "«Todo» no es un alcance. Pide el detalle antes de comparar."
+     },
+     {
+      "p": "¿Qué puedes pedirle a la IA en este punto?",
+      "ops": [
+       "Que adivine el precio por metro cuadrado de cada proveedor",
+       "Que elija al ganador",
+       "Que convierta las tres respuestas a una misma tabla y marque qué dato falta en cada una"
+      ],
+      "correcta": 2,
+      "explica": "La IA ordena y detecta huecos; los precios los aclaras con cada proveedor."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Parte de la solicitud de un servicio",
+    "pares": [
+     [
+      "Alcance",
+      "Áreas, frecuencia y actividades incluidas"
+     ],
+     [
+      "Entregables",
+      "Reportes, bitácoras y certificados de cada visita"
+     ],
+     [
+      "Unidad de cobro",
+      "Costo mensual por el alcance descrito"
+     ],
+     [
+      "Criterios de evaluación",
+      "Cómo vas a decidir, dicho desde el inicio"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu formato de respuesta",
+    "pregunta": "Diseña la tabla de respuesta que pedirías en tu próxima solicitud de cotización: columnas, unidad de cobro y qué condiciones deben llenar todos.",
+    "ayuda": "Columnas: … / Unidad de cobro: … / Condiciones obligatorias: …"
+   }
+  ],
+  "c-ia-compras-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una constructora en Mérida busca un nuevo proveedor de varilla. Le preguntas a la IA por uno de los candidatos y responde: «Es un proveedor confiable, con más de 20 años en el mercado y certificaciones de calidad». No cita ninguna fuente."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cómo tratas esa respuesta de la IA?",
+      "ops": [
+       "Como dato confirmado",
+       "Como algo que debes comprobar con documentos del proveedor y fuentes oficiales",
+       "Como suficiente si el precio es bueno"
+      ],
+      "correcta": 1,
+      "explica": "La IA puede mezclar o inventar datos de empresas. La evidencia la pide compras."
+     },
+     {
+      "p": "Un documento útil para revisar la situación fiscal del proveedor es…",
+      "ops": [
+       "Su opinión de cumplimiento de obligaciones fiscales emitida por el SAT",
+       "Una captura de su página web",
+       "La recomendación de un vendedor"
+      ],
+      "correcta": 0,
+      "explica": "Además, revisa en el sitio del SAT que no aparezca en la lista de contribuyentes del artículo 69-B."
+     },
+     {
+      "p": "Las certificaciones que dice tener el proveedor…",
+      "ops": [
+       "Se dan por hechas",
+       "Se piden en copia vigente y se revisan con quien las emite",
+       "Se ignoran"
+      ],
+      "correcta": 1,
+      "explica": "Un certificado vencido o de otra razón social no te protege."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la verificación",
+    "items": [
+     {
+      "frase": "Pido la constancia de situación ___ para confirmar RFC y domicilio.",
+      "resp": [
+       "fiscal",
+       "Fiscal"
+      ],
+      "pista": "La emite el SAT."
+     },
+     {
+      "frase": "Llamo a dos ___ de clientes actuales del proveedor.",
+      "resp": [
+       "referencias",
+       "referencia"
+      ],
+      "pista": "Otras empresas que ya le compran."
+     },
+     {
+      "frase": "Guardo la evidencia en el ___ del proveedor.",
+      "resp": [
+       "expediente",
+       "archivo",
+       "legajo"
+      ],
+      "pista": "Carpeta con todos sus documentos."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lista de verificación de proveedores",
+    "pregunta": "Escribe los 5 documentos o comprobaciones que pedirías antes de dar de alta a un proveedor nuevo en tu empresa y dónde verificarías cada uno.",
+    "ayuda": "1. … se verifica en… 2. … 3. … 4. … 5. …"
+   }
+  ],
+  "c-ia-compras-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un despacho contable en Monterrey decide entre comprar 6 multifuncionales o arrendarlas. La IA armó una tabla y concluyó «conviene comprar porque el precio es menor», pero no consideró tóner, mantenimiento ni el costo por página."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le falta al análisis?",
+      "ops": [
+       "Nada, el precio es lo que importa",
+       "El costo de operación: consumibles, mantenimiento y páginas impresas al mes",
+       "El color de los equipos"
+      ],
+      "correcta": 1,
+      "explica": "En equipos que consumen insumos, el costo de operar suele pesar más que el precio."
+     },
+     {
+      "p": "¿Quién hace la suma del costo total a 3 años?",
+      "ops": [
+       "La IA, de memoria",
+       "Tu hoja de cálculo con cifras de las cotizaciones",
+       "El proveedor de arrendamiento"
+      ],
+      "correcta": 1,
+      "explica": "La IA te recuerda conceptos; los números van a la hoja con su fuente."
+     },
+     {
+      "p": "Si el arrendamiento incluye mantenimiento y tóner, para compararlo…",
+      "ops": [
+       "Sumas esos conceptos a la opción de compra",
+       "Comparas solo la renta contra el precio",
+       "Descartas el arrendamiento"
+      ],
+      "correcta": 0,
+      "explica": "Compara alcances iguales: lo que uno incluye, el otro lo tiene que sumar."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Conclusión del comparativo",
+    "malTitulo": "Por precio",
+    "mal": "«Comprar cuesta $96,000 y rentar $3,500 al mes: conviene comprar.»",
+    "bienTitulo": "Por costo total",
+    "bien": "«A 3 años, comprar cuesta $96,000 más $2,100 al mes de tóner y servicio; rentar cuesta $3,500 al mes con todo incluido. Comparo ambos totales y el riesgo de fallas.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu próxima compra con costo total",
+    "pregunta": "Elige una compra próxima y lista los conceptos que sumarías además del precio (flete, instalación, consumibles, mantenimiento, capacitación, garantía).",
+    "ayuda": "Compra: … / Conceptos: … / Horizonte de tiempo: …"
+   }
+  ],
+  "c-ia-compras-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> tu proveedor de cajas de cartón en Guadalajara anuncia un aumento de 12% «por el alza del papel». Tú compras 40,000 cajas al mes y tienes una cotización alternativa 6% más cara que tu precio actual, con entrega en 3 semanas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es tu MAAN en este caso?",
+      "ops": [
+       "Aceptar el 12%",
+       "La cotización alternativa 6% arriba de tu precio actual",
+       "Dejar de comprar cajas"
+      ],
+      "correcta": 1,
+      "explica": "Tu mejor alternativa marca hasta dónde aceptas: arriba de 6% ya te conviene cambiar, considerando el costo del cambio."
+     },
+     {
+      "p": "Antes de responder al aumento, lo primero es…",
+      "ops": [
+       "Pedir el desglose del aumento y desde cuándo aplica",
+       "Aceptar para no dañar la relación",
+       "Amenazar con cambiar de proveedor"
+      ],
+      "correcta": 0,
+      "explica": "Un aumento sin desglose no se puede evaluar ni negociar."
+     },
+     {
+      "p": "Una concesión de bajo costo para ti podría ser…",
+      "ops": [
+       "Pagar de contado",
+       "Programar pedidos trimestrales para darle certeza de volumen",
+       "Aceptar 12% a cambio de nada"
+      ],
+      "correcta": 1,
+      "explica": "Certeza de volumen es valiosa para él y te cuesta poco si tu consumo es estable."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta al aumento",
+    "malTitulo": "Reactiva",
+    "mal": "«Es inaceptable. Si no lo retiran nos vamos con otro proveedor.»",
+    "bienTitulo": "Preparada",
+    "bien": "«Entendemos la presión del papel. Para evaluarlo, compártenos el desglose y la fecha de aplicación. Podemos programar pedidos trimestrales si llegamos a un ajuste razonable.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu plan ante un aumento",
+    "pregunta": "Piensa en el proveedor que más probablemente te suba precios este año. Escribe tu objetivo, tu límite, tu MAAN y una concesión.",
+    "ayuda": "Proveedor: … / Objetivo: … / Límite: … / MAAN: … / Concesión: …"
+   }
+  ],
+  "c-ia-compras-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> negociaste refacciones para montacargas con entrega en tu almacén de Celaya, crédito a 45 días y penalización de 2% por semana de retraso. Le pides a la IA que compare los correos con la orden de compra que armó el auxiliar."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La orden dice «entrega en planta del proveedor». Eso significa que…",
+      "ops": [
+       "No pasa nada",
+       "Tú pagarías el flete y asumirías el riesgo del traslado: hay que corregirla",
+       "El proveedor igual entrega"
+      ],
+      "correcta": 1,
+      "explica": "El lugar de entrega define quién paga y quién asume el riesgo."
+     },
+     {
+      "p": "La IA reporta «crédito a 30 días» en la orden y cita el correo del 12 de mayo, que dice 45. Tú…",
+      "ops": [
+       "Corriges la orden a 45 días",
+       "Dejas 30, lo dijo la IA",
+       "Borras el plazo"
+      ],
+      "correcta": 0,
+      "explica": "Por eso pides que cite de dónde sale cada dato: puedes comprobarlo en segundos."
+     },
+     {
+      "p": "La penalización por retraso no aparece en la orden. ¿Qué haces?",
+      "ops": [
+       "Nada, ya se habló",
+       "La agregas con su redacción exacta antes de enviarla",
+       "La pones en un correo aparte después"
+      ],
+      "correcta": 1,
+      "explica": "Lo que no está en el documento es difícil de exigir."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la revisión",
+    "items": [
+     {
+      "frase": "Cada dato de la orden debe coincidir con lo ___ por escrito.",
+      "resp": [
+       "acordado",
+       "negociado",
+       "pactado"
+      ],
+      "pista": "Lo que quedó en correos o minutas."
+     },
+     {
+      "frase": "Pido a la IA que ___ la fuente de cada diferencia.",
+      "resp": [
+       "cite",
+       "indique",
+       "señale"
+      ],
+      "pista": "Que diga de dónde sale."
+     },
+     {
+      "frase": "La orden la firma quien tiene la ___ para comprometer a la empresa.",
+      "resp": [
+       "autorización",
+       "facultad",
+       "autoridad"
+      ],
+      "pista": "Según tu política de compras."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión de órdenes",
+    "pregunta": "Escribe los 6 campos que siempre revisarías en una orden de compra antes de enviarla al proveedor.",
+    "ayuda": "1. Precio… 2. Cantidad… 3. Lugar de entrega… 4. … 5. … 6. …"
+   }
+  ],
+  "c-ia-compras-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un proveedor de etiquetas entregó solo 70% del pedido y con el color fuera del tono aprobado. La IA redactó un reclamo que dice: «Exigimos reposición inmediata o procederemos legalmente y los boletinaremos con otros clientes»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el borrador?",
+      "ops": [
+       "Ninguno, así responden rápido",
+       "Amenaza y exhibe al proveedor en lugar de presentar hechos y una petición concreta",
+       "Es muy corto"
+      ],
+      "correcta": 1,
+      "explica": "Un reclamo firme se sostiene con hechos, no con amenazas."
+     },
+     {
+      "p": "¿Qué evidencia adjuntas?",
+      "ops": [
+       "Solo tu opinión",
+       "La orden de compra, la muestra aprobada y fotos del material recibido con fecha",
+       "El correo del área usuaria molesta"
+      ],
+      "correcta": 1,
+      "explica": "Orden, muestra y fotos permiten que el proveedor actúe sin discutir."
+     },
+     {
+      "p": "La petición del reclamo debe incluir…",
+      "ops": [
+       "Qué solicitas (reposición o nota de crédito) y fecha compromiso",
+       "Un descuento en todos los pedidos futuros",
+       "Nada: que el proveedor proponga"
+      ],
+      "correcta": 0,
+      "explica": "Sin petición concreta y plazo, el reclamo se queda en queja."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cierre del reclamo",
+    "malTitulo": "Amenaza",
+    "mal": "«Si no responden hoy procederemos legalmente.»",
+    "bienTitulo": "Petición con plazo",
+    "bien": "«Solicitamos reposición de las 3,000 etiquetas faltantes y de las 1,200 fuera de tono con la muestra aprobada, a más tardar el viernes 14. Confírmennos por este medio antes del miércoles.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu último incumplimiento",
+    "pregunta": "Recuerda un incumplimiento real de un proveedor (sin nombres). Redacta el párrafo de hechos y la petición con plazo como lo enviarías hoy.",
+    "ayuda": "Hechos: orden…, acordado…, recibido… / Petición: … / Plazo: …"
+   }
+  ],
+  "c-ia-compras-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la gerente te pide el tiempo de ciclo promedio del mes. Le pegaste a la IA cinco requisiciones (12, 8, 21, 10 y 9 días de requisición a entrega) y respondió «el promedio es de 9 días». En tu hoja de cálculo, =PROMEDIO() da 12."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué cifra reportas?",
+      "ops": [
+       "La de la IA, 9 días",
+       "La de tu hoja, 12 días, porque puedes revisar cómo se calculó",
+       "Un promedio de las dos"
+      ],
+      "correcta": 1,
+      "explica": "La IA puede equivocarse en aritmética; la hoja deja rastro."
+     },
+     {
+      "p": "La requisición de 21 días jala el promedio. Lo siguiente es…",
+      "ops": [
+       "Quitarla para que se vea mejor",
+       "Revisar en qué etapa se atoró: autorización, cotización o entrega",
+       "Culpar al proveedor"
+      ],
+      "correcta": 1,
+      "explica": "El indicador sirve para encontrar dónde se pierde el tiempo."
+     },
+     {
+      "p": "Para la junta, la IA puede ayudarte a…",
+      "ops": [
+       "Recalcular el promedio",
+       "Redactar el resumen con tus cifras ya calculadas",
+       "Inventar la meta del área"
+      ],
+      "correcta": 1,
+      "explica": "Tú calculas, ella redacta."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Frase del reporte",
+    "malTitulo": "Sin base",
+    "mal": "«El tiempo de ciclo está bien, alrededor de 9 días.»",
+    "bienTitulo": "Con dato y acción",
+    "bien": "«Tiempo de ciclo de marzo: 12 días en promedio (5 requisiciones). R-103 tardó 21 días por autorización pendiente; propongo autorización por monto para compras menores.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu indicador más útil",
+    "pregunta": "¿Qué indicador de compras te pediría hoy tu jefe y con qué datos lo calcularías cada mes?",
+    "ayuda": "Indicador: … / Datos: … / Meta: … / Frecuencia: …"
+   }
+  ],
+  "c-ia-compras-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> ya adjudicaste las 35 laptops. En la entrega, 5 equipos llegan con un modelo distinto: mismo procesador, pero 8 GB de memoria en lugar de 16. El proveedor dice que «es equivalente» y la IA, al revisar la ficha, opina que «para uso comercial es suficiente»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué manda en esta decisión?",
+      "ops": [
+       "La opinión de la IA",
+       "La especificación aprobada y la orden de compra",
+       "Lo que diga el proveedor"
+      ],
+      "correcta": 1,
+      "explica": "Si la orden dice 16 GB, lo recibido no cumple, aunque «alcance»."
+     },
+     {
+      "p": "¿Qué haces con los 5 equipos?",
+      "ops": [
+       "Los recibes en silencio",
+       "Los rechazas o documentas la excepción con autorización del área usuaria y ajuste de precio",
+       "Los repartes a los que menos se quejen"
+      ],
+      "correcta": 1,
+      "explica": "Cualquier excepción se documenta y se autoriza; si no, se rechaza."
+     },
+     {
+      "p": "¿Dónde registras el incumplimiento?",
+      "ops": [
+       "En el indicador de calidad del proveedor",
+       "En ningún lado para no afectar la relación",
+       "En redes sociales"
+      ],
+      "correcta": 0,
+      "explica": "Así la próxima evaluación usa datos reales."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Mensaje al proveedor",
+    "malTitulo": "Ambiguo",
+    "mal": "«Nos llegaron unas laptops raras, ¿qué onda?»",
+    "bienTitulo": "Preciso",
+    "bien": "«En la entrega de la OC 2481 recibimos 5 equipos con 8 GB de memoria; la orden especifica 16 GB. Solicitamos su sustitución a más tardar el día 20 o su propuesta por escrito para evaluarla con el área usuaria.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu criterio de recepción",
+    "pregunta": "Escribe 4 puntos que revisarías al recibir una compra importante antes de firmar de recibido.",
+    "ayuda": "1. Modelo y características contra la orden… 2. Cantidad… 3. … 4. …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Compras especializadas: gasto, servicios e importaciones",
+   "r": "Analizar el gasto para priorizar, contratar servicios con niveles de servicio medibles y comparar compras de importación con costo puesto en almacén y riesgo de proveedor.",
+   "lecciones": [
+    {
+     "t": "Análisis de gasto: dónde se va el dinero",
+     "obj": "Clasificar el gasto por categoría y proveedor para decidir dónde negociar primero, sin que la IA invente categorías ni cifras.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Antes de negociar, necesitas saber <b>dónde está el dinero</b>. El análisis de gasto toma las compras de un año (proveedor, categoría, monto) y responde tres preguntas: ¿en qué categorías se va la mayor parte?, ¿con cuántos proveedores?, ¿dónde hay compras fuera de contrato? La IA te ayuda a limpiar descripciones y proponer categorías; tu hoja de cálculo suma y ordena."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una fábrica de botanas en Celaya compró $1.58 millones el año pasado a 6 proveedores indirectos. El director quiere saber en qué categoría concentrar la negociación de este año."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Gasto anual por categoría",
+       "datos": [
+        [
+         "Proveedor",
+         "Categoría",
+         "Gasto anual"
+        ],
+        [
+         "P-01",
+         "Empaque",
+         840000
+        ],
+        [
+         "P-02",
+         "MRO",
+         120000
+        ],
+        [
+         "P-03",
+         "Empaque",
+         310000
+        ],
+        [
+         "P-04",
+         "Limpieza",
+         95000
+        ],
+        [
+         "P-05",
+         "MRO",
+         65000
+        ],
+        [
+         "P-06",
+         "Empaque",
+         150000
+        ],
+        [
+         "Total",
+         "",
+         ""
+        ],
+        [
+         "Gasto en Empaque",
+         "",
+         ""
+        ],
+        [
+         "% del gasto en Empaque",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "C8",
+         "formula": "=SUMA(C2:C7)",
+         "esperado": 1580000,
+         "texto": "<b>C8</b>: gasto total del año.",
+         "requiere": "SUMA(",
+         "pista": "=SUMA(C2:C7)"
+        },
+        {
+         "celda": "C9",
+         "formula": "=SUMAR.SI(B2:B7,\"Empaque\",C2:C7)",
+         "esperado": 1300000,
+         "texto": "<b>C9</b>: gasto total en la categoría Empaque.",
+         "requiere": "SUMAR.SI(",
+         "pista": "=SUMAR.SI(B2:B7,«Empaque»,C2:C7) con comillas rectas"
+        },
+        {
+         "celda": "C10",
+         "formula": "=C9/C8",
+         "esperado": 0.8227848101,
+         "texto": "<b>C10</b>: porcentaje del gasto que es Empaque.",
+         "explica": "Empaque es 82% del gasto con 3 proveedores: ahí una consolidación o una negociación por volumen mueve la aguja. En Limpieza, un 10% de ahorro apenas son $9,500."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Limpiar y clasificar el gasto",
+       "texto": "Te paso un listado de compras del año SIN datos de contacto ni RFC: [descripción de la compra, proveedor en clave, monto]. 1) Propón máximo 8 categorías y asigna cada renglón a una. 2) Marca con [REVISAR] las descripciones ambiguas en lugar de adivinar. 3) No sumes ni calcules porcentajes: yo lo hago en mi hoja. 4) Sugiere 3 preguntas que debería hacerle al área usuaria de cada categoría grande."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en análisis de gasto:</b> sumar mal listados largos, inventar una categoría para algo que no entendió, mezclar montos con y sin IVA, y afirmar «ahorros típicos de la industria» sin fuente. Si ves un porcentaje de ahorro que no calculaste tú, bórralo."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que «en empaque se suele ahorrar 15% al consolidar». Tú…",
+         "ops": [
+          "Lo pones en tu presentación",
+          "Lo tratas como hipótesis y estimas el ahorro con cotizaciones reales",
+          "Lo subes a 20% para motivar"
+         ],
+         "correcta": 1,
+         "explica": "Un ahorro sin fuente no va en una propuesta al director."
+        },
+        {
+         "p": "Algunos montos del listado incluyen IVA y otros no. Antes de sumar…",
+         "ops": [
+          "Los homologas a la misma base",
+          "Los sumas así",
+          "Le pides a la IA que lo corrija de memoria"
+         ],
+         "correcta": 0,
+         "explica": "Sumar bases distintas te da un total falso."
+        },
+        {
+         "p": "Un renglón dice «varios» por $48,000. Tú…",
+         "ops": [
+          "Lo pones en Otros",
+          "Lo marcas [REVISAR] y preguntas qué se compró",
+          "Lo borras"
+         ],
+         "correcta": 1,
+         "explica": "Un «varios» grande suele esconder compras fuera de contrato."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu mapa de gasto",
+       "pregunta": "Con lo que sabes de tu empresa, escribe tus 3 categorías de mayor gasto, cuántos proveedores tiene cada una y cuál atacarías primero y por qué.",
+       "ayuda": "1. Categoría… proveedores… / 2. … / 3. … / Atacaría primero… porque…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Primero el mapa de gasto, después la negociación.",
+        "La IA limpia y clasifica; la hoja suma con la misma base.",
+        "Ahorros «típicos» sin fuente no se presentan."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Contratar servicios con niveles medibles",
+     "obj": "Convertir un servicio (limpieza, vigilancia, mantenimiento) en alcance, niveles de servicio y penalizaciones medibles, revisando requisitos legales en la fuente oficial.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Comprar un servicio es más difícil que comprar un producto: no lo puedes revisar en el andén. Por eso se contrata con <b>alcance</b> (qué, dónde, cuándo), <b>niveles de servicio</b> (cómo se mide que se cumplió) y <b>consecuencias</b> (qué pasa si no). La IA es buena para proponer indicadores medibles y detectar huecos en un contrato; las cifras y cláusulas las valida tu área legal."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> un corporativo en Querétaro contrató mantenimiento de aire acondicionado con 60 servicios programados al mes. El contrato dice: si cumple menos de 90% de los servicios, se aplica una penalización de 5% sobre la factura del mes."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Nivel de servicio y penalización",
+       "datos": [
+        [
+         "Mes",
+         "Programados",
+         "Cumplidos",
+         "Factura mensual"
+        ],
+        [
+         "Julio",
+         60,
+         57,
+         48000
+        ],
+        [
+         "Agosto",
+         60,
+         51,
+         48000
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "E2",
+         "formula": "=C2/B2",
+         "esperado": 0.95,
+         "texto": "<b>E2</b>: nivel de servicio de julio (cumplidos ÷ programados)."
+        },
+        {
+         "celda": "E3",
+         "formula": "=C3/B3",
+         "esperado": 0.85,
+         "texto": "<b>E3</b>: nivel de servicio de agosto."
+        },
+        {
+         "celda": "F3",
+         "formula": "=SI(E3<0.9,D3*0.05,0)",
+         "esperado": 2400,
+         "texto": "<b>F3</b>: con SI, penalización de agosto: si el nivel es menor a 0.9, 5% de la factura; si no, 0.",
+         "requiere": "SI(",
+         "pista": "=SI(E3<0.9,D3*0.05,0)",
+         "explica": "Julio cumplió 95%: sin penalización. Agosto cayó a 85%: se aplican $2,400. La cifra sale del contrato, no de una negociación de pasillo."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Del servicio al alcance medible",
+       "texto": "Voy a contratar el servicio de [limpieza / vigilancia / mantenimiento] para [instalación, horario, superficie o equipos]. Propón: 1) alcance en tabla (actividad, frecuencia, área), 2) 5 niveles de servicio medibles con fórmula y fuente del dato, 3) entregables mensuales (bitácora, reporte, evidencia), 4) preguntas que debo hacerle a mi área legal sobre penalizaciones y requisitos del proveedor. No redactes cláusulas legales definitivas ni cites leyes."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Requisitos del proveedor de servicios:</b> si el servicio es especializado, revisa si el proveedor debe estar inscrito en el padrón de prestadoras de servicios especializados (REPSE) de la STPS; verifica el requisito vigente en el sitio oficial y con tu área legal. La IA no sustituye esa revisión."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Nivel de servicio",
+       "malTitulo": "No medible",
+       "mal": "«El proveedor dará un servicio de excelente calidad y atención oportuna.»",
+       "bienTitulo": "Medible",
+       "bien": "«Atención de fallas en máximo 4 horas hábiles desde el reporte en la bitácora; se mide mensualmente como % de reportes atendidos en tiempo.»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "«Limpieza impecable» como nivel de servicio…",
+         "ops": [
+          "Es suficiente",
+          "No se puede medir: se cambia por una lista de verificación con calificación",
+          "Se deja para no discutir"
+         ],
+         "correcta": 1,
+         "explica": "Lo que no se mide no se puede exigir."
+        },
+        {
+         "p": "La IA incluyó una cláusula que cita un artículo de ley. Tú…",
+         "ops": [
+          "La copias",
+          "La marcas para revisión de tu área legal",
+          "La borras sin decir nada"
+         ],
+         "correcta": 1,
+         "explica": "Las citas legales se verifican en la fuente oficial y con legal."
+        },
+        {
+         "p": "El dato para medir el nivel de servicio debe salir de…",
+         "ops": [
+          "La percepción del jefe de área",
+          "Un registro acordado: bitácora, sistema o lista firmada",
+          "Lo que reporte el proveedor sin evidencia"
+         ],
+         "correcta": 1,
+         "explica": "Acuerda desde el contrato de dónde sale cada dato."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu servicio contratado",
+       "pregunta": "Elige un servicio que tu empresa contrata hoy. Escribe 3 niveles de servicio medibles que pedirías y de dónde sacarías cada dato.",
+       "ayuda": "Servicio: … / Nivel 1: … medido con… / Nivel 2: … / Nivel 3: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Alcance, nivel de servicio medible y consecuencia.",
+        "Cada indicador con fórmula y fuente acordada.",
+        "Requisitos del proveedor y cláusulas: verifica el requisito vigente con legal."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Compras de importación y riesgo de proveedor",
+     "obj": "Comparar una compra de importación contra una nacional con costo puesto en almacén, tiempos y riesgos, sin tomar requisitos aduaneros de la IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un precio en dólares puede verse barato hasta que sumas flete internacional, seguro, contribuciones, gastos de despacho, flete nacional y semanas de tránsito. El <b>costo puesto en almacén</b> es lo que realmente te cuesta tener la mercancía en tu bodega. La IA te ayuda a no olvidar conceptos y a preparar preguntas para tu agente aduanal; los montos y los requisitos salen de él y de fuentes oficiales."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una empacadora en Sinaloa necesita una selladora. Un fabricante extranjero cotiza 12,000 USD; un distribuidor nacional, $290,000 con entrega en 2 semanas e instalación incluida."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Costo puesto en almacén",
+       "instruccion": "El tipo de cambio es un dato de ejercicio: en la vida real, verifica el vigente en fuente oficial.",
+       "datos": [
+        [
+         "Concepto",
+         "Valor"
+        ],
+        [
+         "Precio del equipo (USD)",
+         12000
+        ],
+        [
+         "Tipo de cambio del ejercicio (MXN por USD)",
+         18.5
+        ],
+        [
+         "Flete internacional y seguro (MXN)",
+         21000
+        ],
+        [
+         "Contribuciones y despacho según tu agente aduanal (MXN)",
+         38000
+        ],
+        [
+         "Flete nacional (MXN)",
+         6500
+        ],
+        [
+         "Costo puesto en almacén (MXN)",
+         ""
+        ],
+        [
+         "Cotización nacional instalada (MXN)",
+         290000
+        ],
+        [
+         "Diferencia nacional − importado",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B7",
+         "formula": "=B2*B3+B4+B5+B6",
+         "esperado": 287500,
+         "texto": "<b>B7</b>: costo puesto en almacén = precio × tipo de cambio + fletes, seguro, contribuciones y despacho."
+        },
+        {
+         "celda": "B9",
+         "formula": "=B8-B7",
+         "esperado": 2500,
+         "texto": "<b>B9</b>: cuánto más cuesta la opción nacional.",
+         "pista": "=B8-B7",
+         "explica": "Solo $2,500 de diferencia. La importación tarda más semanas, depende del tipo de cambio y no incluye instalación: con esos riesgos, la nacional probablemente gana."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Reglas aduaneras, permisos y contribuciones: verifica el requisito vigente.</b> Fracción arancelaria, regulaciones no arancelarias, certificados de origen o NOM de etiquetado cambian y dependen del producto. Consulta a tu agente aduanal y las fuentes oficiales; nunca tomes esos datos de la IA."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Preparar la conversación con tu agente aduanal",
+       "texto": "Voy a importar [descripción general del producto, sin datos del proveedor] desde [país] por [vía]. Hazme una lista de: 1) conceptos de costo que debo pedirle cotizar a mi agente aduanal y al transportista, 2) documentos que suele pedir un agente para cotizar, 3) preguntas sobre tiempos y riesgos. No me digas fracciones, tasas ni requisitos: esos los confirmo con mi agente y en fuentes oficiales."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que el arancel de tu producto es 0%. Tú…",
+         "ops": [
+          "Lo usas en tu comparativo",
+          "Verificas el requisito vigente con tu agente aduanal",
+          "Lo redondeas a 5% por si acaso"
+         ],
+         "correcta": 1,
+         "explica": "Las tasas y requisitos dependen de la clasificación del producto; los confirma tu agente."
+        },
+        {
+         "p": "Tienes un solo proveedor para un insumo crítico importado. Lo prudente es…",
+         "ops": [
+          "Nada, siempre ha cumplido",
+          "Tener un plan de contingencia: inventario de seguridad y un proveedor alterno evaluado",
+          "Cambiarlo de inmediato"
+         ],
+         "correcta": 1,
+         "explica": "Proveedor único + tránsito largo = riesgo alto de paro."
+        },
+        {
+         "p": "Para comparar con la opción nacional, la importada debe incluir…",
+         "ops": [
+          "Solo el precio en dólares",
+          "Costo puesto en almacén, tiempo de entrega e instalación",
+          "El precio con descuento"
+         ],
+         "correcta": 1,
+         "explica": "Compara lo mismo contra lo mismo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu insumo más riesgoso",
+       "pregunta": "¿Qué insumo de tu empresa pararía la operación si faltara una semana? Escribe su riesgo principal y dos acciones de contingencia.",
+       "ayuda": "Insumo: … / Riesgo: … / Acción 1: … / Acción 2: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Costo puesto en almacén, no precio en dólares.",
+        "Aranceles, permisos y NOM: verifica el requisito vigente con tu agente aduanal.",
+        "Proveedor único = plan de contingencia."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "El análisis de gasto sirve para…",
+     "ops": [
+      "Decidir dónde negociar primero",
+      "Elegir al proveedor más simpático",
+      "Calcular el IVA",
+      "Firmar contratos"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si Empaque suma $1,300,000 de $1,580,000, representa aproximadamente…",
+     "ops": [
+      "18%",
+      "50%",
+      "82%",
+      "130%"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un nivel de servicio bien definido tiene…",
+     "ops": [
+      "Un adjetivo como «excelente»",
+      "Solo la firma del proveedor",
+      "Un precio",
+      "Fórmula, meta y fuente del dato"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Si un proveedor de servicios especializados debe estar en el REPSE…",
+     "ops": [
+      "Lo confirma la IA",
+      "No importa",
+      "Verificas el requisito vigente en la fuente oficial y con legal",
+      "Lo decide el proveedor"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un arancel que te dio la IA…",
+     "ops": [
+      "Se usa tal cual",
+      "Se redondea",
+      "Se verifica con tu agente aduanal",
+      "Se ignora el concepto"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Con un proveedor único de un insumo crítico conviene…",
+     "ops": [
+      "Comprar todo de golpe",
+      "Plan de contingencia con proveedor alterno e inventario de seguridad",
+      "No hacer nada",
+      "Cambiarlo cada mes"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día de compras simulado con errores de la IA que debes detectar y tu kit personal de compras con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un lunes en compras de una planta de alimentos",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en compras: cifras mal sumadas, datos de proveedores inventados, información confidencial expuesta y condiciones no autorizadas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres comprador de una planta de alimentos en Celaya y usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado. Encuéntralo antes de que llegue al proveedor, al área usuaria o a tu jefe."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 8:30 a. m. Comparativo de cotizaciones.</b> La IA armó la tabla de tres cotizaciones de charolas de plástico y recomienda al proveedor B «por ser 8% más barato». Revisas: el proveedor A cotizó con IVA incluido y B y C sin IVA. Además, B no incluye flete."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "¿Qué errores tiene el comparativo y cómo lo rehaces para que sea válido?",
+       "ayuda": "Error 1: … / Error 2: … / Lo rehago así: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:30 a. m. Proveedor nuevo.</b> Pides un resumen de un proveedor nuevo de charolas. La IA responde que «cuenta con certificación de inocuidad vigente y cumple la NOM aplicable». Además, un compañero te sugiere pegar la constancia fiscal completa del proveedor y su estado de cuenta en la IA para que «lo analice»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "¿Qué afirmaciones no puedes usar, cómo las verificas y qué documentos no pegas en una herramienta no autorizada?",
+       "ayuda": "No uso… / Verifico con… / No pego… porque…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 1:00 p. m. Negociación.</b> Le pides a la IA un correo para negociar con el proveedor A. El borrador ofrece «exclusividad por 2 años y pago de contado» a cambio de 10% de descuento. Tu política de compras no permite exclusividades y tu empresa paga a 30 días."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "¿Qué quitas del correo y qué concesiones sí podrías ofrecer dentro de tu política?",
+       "ayuda": "Quito… / Puedo ofrecer… / Mi límite es…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Orden de compra y reporte.</b> La IA armó la orden con «entrega el 30 de marzo» (acordaste el 15) y en el reporte semanal escribió «ahorro logrado: 18%», pero tu cálculo con cotizaciones da 6%."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "Corrige la orden y reescribe la frase del reporte con la cifra correcta y su base de cálculo.",
+       "ayuda": "En la orden… / En el reporte: «Ahorro de …% calculado contra…»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 1, antes de recomendar un proveedor…",
+         "ops": [
+          "Homologas IVA y sumas el flete a quien no lo incluye",
+          "Confías en el 8%",
+          "Eliges al más barato de la tabla"
+         ],
+         "correcta": 0,
+         "explica": "Sin la misma base, el comparativo engaña."
+        },
+        {
+         "p": "En la escena 2, la certificación y la NOM…",
+         "ops": [
+          "Se dan por buenas",
+          "Se piden en documento vigente y se verifica el requisito vigente en la fuente oficial",
+          "Se omiten"
+         ],
+         "correcta": 1,
+         "explica": "La IA no sabe si un certificado existe o está vigente."
+        },
+        {
+         "p": "En la escena 3, la exclusividad…",
+         "ops": [
+          "Se ofrece si da descuento",
+          "Se quita porque tu política no la permite",
+          "Se cambia a 1 año"
+         ],
+         "correcta": 1,
+         "explica": "No ofreces lo que no estás autorizado a dar."
+        },
+        {
+         "p": "En la escena 4, el ahorro que reportas es…",
+         "ops": [
+          "El 18% de la IA",
+          "El 6% de tu cálculo con su base",
+          "Un promedio de ambos"
+         ],
+         "correcta": 1,
+         "explica": "Un ahorro inflado se descubre en la siguiente revisión y te cuesta credibilidad."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Mismas bases antes de comparar.",
+        "Certificados, NOM y datos del proveedor: con documentos y fuente oficial.",
+        "Ni concesiones ni cifras que no autorizaste o calculaste."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de compras con IA",
+     "obj": "Construir tu kit personal de compras con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Convierte el curso en un <b>kit que uses desde mañana</b>. Responde cada paso con tus categorías, tus proveedores (en clave) y tus procesos reales."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más usarás (especificación, solicitud de cotización, comparativo, ensayo de negociación, revisión de orden, reclamo o análisis de gasto) y adáptalos a tus categorías.",
+       "ayuda": "1. … 2. … 3. … 4. … 5. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tus 5 reglas: qué nunca pegas en una IA (contratos, precios negociados, datos fiscales o bancarios), cómo anonimizas proveedores y qué herramienta te autoriza tu empresa.",
+       "ayuda": "Nunca pego… / Anonimizo con claves P-01… / Herramienta autorizada: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe 6 puntos que revisas antes de enviar cualquier comparativo, orden o correo hecho con IA.",
+       "ayuda": "□ ¿Misma base de IVA y alcance? □ ¿Cifras calculadas en la hoja? □ ¿Condiciones iguales a lo acordado? □ ¿Sin concesiones no autorizadas? □ ¿Normas y requisitos verificados en fuente oficial? □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real de tu trabajo: una solicitud de cotización, un comparativo de costo total, un análisis de gasto o un contrato de servicio con niveles medibles. Pega la versión final revisada.",
+       "ayuda": "Entregable: … / Lo uso con… el…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit de compras",
+       "texto": "KIT DE COMPRAS CON IA — [tu nombre] — [empresa o área] — [fecha]\n\n1. Mapa de gasto: categorías principales [ ]\n2. Biblioteca de prompts: especificación [ ], solicitud [ ], comparativo [ ], negociación [ ], orden [ ], reclamo [ ]\n3. Política de datos y herramienta autorizada: [ ]\n4. Límites de negociación y concesiones autorizadas: [ ]\n5. Lista de verificación: [ ]\n6. Indicadores y metas: [ ]\n7. Entregable real: [ ]\n8. Próxima revisión del kit: [fecha]",
+       "nota": "Actualízala cuando cambie tu política de compras o tus categorías."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tus categorías reales.",
+        "Política de datos, límites de concesión y lista de verificación.",
+        "Un entregable real y una meta medible."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Una cotización con IVA y otra sin IVA…",
+     "ops": [
+      "Se homologan antes de comparar",
+      "Se comparan tal cual",
+      "Se promedian",
+      "Se descartan"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La IA afirma que un proveedor cumple una NOM. Tú…",
+     "ops": [
+      "Lo copias al expediente",
+      "Pides el documento y verificas el requisito vigente en la fuente oficial",
+      "Lo das por hecho si el precio es bueno",
+      "Se lo preguntas otra vez a la IA"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La constancia fiscal y el estado de cuenta de un proveedor…",
+     "ops": [
+      "Se pegan en cualquier IA",
+      "Se publican",
+      "Se envían a otros proveedores",
+      "Solo van a herramientas autorizadas por tu empresa, o no se usan"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una concesión que tu política no permite…",
+     "ops": [
+      "Se ofrece si cierra el trato",
+      "Se ofrece con descuento",
+      "No se ofrece",
+      "Se pide a la IA que la autorice"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El ahorro que reportas debe…",
+     "ops": [
+      "Calcularse en tu hoja con su base explícita",
+      "Ser el que calculó la IA",
+      "Redondearse hacia arriba",
+      "Omitirse"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En compras, la responsabilidad de la decisión final es…",
+     "ops": [
+      "De la IA",
+      "Del proveedor",
+      "Tuya y de tu empresa",
+      "De nadie"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

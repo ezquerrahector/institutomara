@@ -1,0 +1,1387 @@
+{
+ "id": "c-ia-abogados",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA con verificación en litigio civil y mercantil, amparo, materia laboral y familiar, y derecho corporativo, detectando los errores típicos de cada especialidad.",
+  "Construir tu kit personal de despacho: biblioteca de prompts, política de datos, lista de verificación de citas y un entregable real revisado."
+ ],
+ "terceras": [
+  {
+   "p": "La IA te da una tesis con número de registro. Antes de citarla…",
+   "op": "Le pido a la IA que confirme que existe y la cito"
+  },
+  {
+   "p": "¿Para qué es más segura la IA en investigación jurídica?",
+   "op": "Dar el sentido final de un criterio aplicable"
+  },
+  {
+   "p": "Un plazo procesal que te da la IA…",
+   "op": "Se usa si coincide con lo que recuerda un colega"
+  },
+  {
+   "p": "Contrato con nombres, RFC y domicilios reales en una IA gratuita",
+   "op": "Sí, si al final borras la conversación"
+  },
+  {
+   "p": "Cláusula tipo sin datos de nadie",
+   "op": "Solo si el cliente firma una autorización"
+  },
+  {
+   "p": "Resumen de hechos con «Parte A» y «Parte B»",
+   "op": "No, hay que poner al menos las iniciales reales"
+  },
+  {
+   "p": "Pedir el número de cláusula sirve para…",
+   "op": "Que la IA no cometa errores de interpretación"
+  },
+  {
+   "p": "La revisión de la IA es…",
+   "op": "Un dictamen válido si el contrato es sencillo"
+  },
+  {
+   "p": "La IA redactó una cláusula de confidencialidad. Antes de usarla…",
+   "op": "Le pides que la haga más larga para que proteja más"
+  },
+  {
+   "p": "Pedir «tres versiones: favorable al cliente, neutral y conciliadora» sirve para…",
+   "op": "Que el cliente elija sin tu recomendación"
+  },
+  {
+   "p": "Un resumen de expediente hecho con IA es útil para…",
+   "op": "Presentarlo como constancia ante el juzgado"
+  },
+  {
+   "p": "Para cada dato importante del resumen pides…",
+   "op": "Que la IA indique qué tan segura está, sin página"
+  },
+  {
+   "p": "Pedir los argumentos de la contraparte sirve para…",
+   "op": "Copiar sus argumentos en tu escrito"
+  },
+  {
+   "p": "El control de plazos del despacho debe tener…",
+   "op": "Solo la fecha en que se recibió el asunto"
+  },
+  {
+   "p": "Si la IA calcula un plazo procesal…",
+   "op": "Le restas un día por seguridad y lo usas"
+  },
+  {
+   "p": "La IA dice que una cláusula de penalización «es nula». Tú…",
+   "op": "La eliminas de la contrapropuesta sin decir por qué"
+  },
+  {
+   "p": "Al cliente le explicas…",
+   "op": "Solo el fundamento técnico, para que confíe"
+  }
+ ],
+ "extras": {
+  "c-ia-abogados-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Mariana, asociada de un despacho en Querétaro, le pide a un asistente de IA criterios sobre la prescripción de la acción cambiaria. Recibe tres «tesis» con rubro y registro digital. Al buscarlas en el Semanario Judicial de la Federación descubre que la primera no existe, la segunda es una tesis aislada que la IA presentó como jurisprudencia y la tercera existe, pero su rubro no coincide con lo que la IA le atribuyó."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La primera tesis no aparece con ese registro ni buscando por rubro. ¿Qué haces?",
+      "ops": [
+       "La cito con la leyenda «según registro»",
+       "La descarto y lo anoto en el control de verificación",
+       "Le pido a la IA otro número de registro para la misma tesis"
+      ],
+      "correcta": 1,
+      "explica": "Si no aparece en la fuente oficial, no existe para efectos de tu escrito. Pedir otro número solo genera otra invención."
+     },
+     {
+      "p": "La segunda es una tesis aislada presentada como jurisprudencia. ¿Qué importa de esa diferencia?",
+      "ops": [
+       "Cambia su fuerza: no es de aplicación obligatoria como la jurisprudencia",
+       "Nada, ambas se citan igual",
+       "Que las aisladas no se pueden mencionar nunca"
+      ],
+      "correcta": 0,
+      "explica": "Puedes usar una tesis aislada como criterio orientador, pero presentarla como jurisprudencia es un error que la contraparte o el juzgador detectan."
+     },
+     {
+      "p": "La tercera existe, pero el contenido que la IA le atribuyó no coincide. Tú…",
+      "ops": [
+       "Uso el resumen de la IA, la tesis sí existe",
+       "Cito solo el rubro y omito el texto",
+       "Leo la tesis completa y argumento con lo que realmente dice"
+      ],
+      "correcta": 2,
+      "explica": "Que exista el registro no significa que diga lo que la IA afirma. Lo que se cita es el texto oficial."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pedir criterios",
+    "malTitulo": "Invita a inventar",
+    "mal": "«Dame 5 jurisprudencias con registro digital sobre prescripción de la acción cambiaria.»",
+    "bienTitulo": "Orienta la búsqueda",
+    "bien": "«¿Qué conceptos, palabras clave y ordenamientos debo usar para buscar en el Semanario Judicial criterios sobre prescripción de la acción cambiaria? No me des registros; yo los busco.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu control de verificación",
+    "pregunta": "Diseña las columnas de tu registro de verificación de citas (por ejemplo: cita, fuente oficial, fecha de consulta, quién verificó, resultado). ¿Quién de tu equipo lo llenaría y en qué momento del flujo?",
+    "ayuda": "Columnas: … / Lo llena … antes de …"
+   }
+  ],
+  "c-ia-abogados-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un pasante de un despacho familiar en Puebla quiere mejorar la redacción de un escrito de divorcio. Lo copia completo en una IA gratuita desde su celular: nombres de los cónyuges, de dos menores, la escuela a la que asisten, domicilio y los ingresos del padre. Te lo cuenta orgulloso porque «quedó mucho mejor redactado»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el problema principal?",
+      "ops": [
+       "Se compartieron datos de clientes y de menores con un tercero sin autorización",
+       "Que la redacción de la IA no tiene estilo jurídico",
+       "Que lo hizo desde el celular y no desde la computadora"
+      ],
+      "correcta": 0,
+      "explica": "El riesgo es la confidencialidad: datos del cliente y de niñas o niños, que requieren protección reforzada, salieron del despacho."
+     },
+     {
+      "p": "¿Qué haces primero?",
+      "ops": [
+       "Lo regañas y no dices nada más",
+       "Documentas qué se compartió, revisas la configuración de la cuenta y lo comunicas al socio responsable",
+       "Le pides que vuelva a pegarlo para que la IA lo borre"
+      ],
+      "correcta": 1,
+      "explica": "Se atiende como un incidente: qué salió, dónde, qué se puede mitigar y quién decide si se informa al cliente."
+     },
+     {
+      "p": "¿Cómo evitas que se repita?",
+      "ops": [
+       "Prohibiendo cualquier uso de IA en el despacho",
+       "Confiando en que ya aprendió",
+       "Política escrita, herramienta autorizada y capacitación con ejemplos de anonimización"
+      ],
+      "correcta": 2,
+      "explica": "La prohibición total suele llevar al uso a escondidas. Funciona mejor una regla clara, una herramienta autorizada y práctica."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Anonimiza el párrafo",
+    "items": [
+     {
+      "frase": "«Los menores Sofía y Diego asisten al Colegio Montessori de Cholula» → «Los ___ asisten a una escuela privada de la zona»",
+      "resp": [
+       "menores",
+       "hijos",
+       "niños",
+       "hijos menores"
+      ]
+     },
+     {
+      "frase": "«El señor Ramírez percibe $48,500 mensuales» → «El padre percibe ingresos ___ comprobables»",
+      "resp": [
+       "mensuales",
+       "fijos",
+       "regulares"
+      ]
+     },
+     {
+      "frase": "«Domicilio en Calle Reforma 214, Col. Centro» → «domicilio en la ___ de residencia»",
+      "resp": [
+       "ciudad",
+       "localidad",
+       "zona"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla escrita",
+    "pregunta": "Redacta en tres líneas la regla que pondrías en la política del despacho sobre asuntos familiares y datos de menores con herramientas de IA.",
+    "ayuda": "En asuntos familiares, nadie en el despacho… / Solo se permite… / Si ocurre un error…"
+   }
+  ],
+  "c-ia-abogados-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un cliente de Mérida, dueño de una ferretería demandado por un proveedor, te escribe por WhatsApp un sábado: «Licenciado, ¿cuánto va a tardar esto y cuánto voy a tener que pagar?». Le pides a la IA un borrador de respuesta y te propone: «Tranquilo, estos juicios suelen durar unos 6 meses y lo más probable es que paguemos mucho menos de lo que piden»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué frase del borrador es la más riesgosa?",
+      "ops": [
+       "«Tranquilo»",
+       "«Lo más probable es que paguemos mucho menos»",
+       "«Licenciado» en el saludo"
+      ],
+      "correcta": 1,
+      "explica": "Es una promesa de resultado sin sustento. Si no ocurre, el cliente la recordará textualmente."
+     },
+     {
+      "p": "Sobre la duración del juicio, lo más honesto es…",
+      "ops": [
+       "Explicar las etapas, qué las alarga y cuándo podrás dar un estimado mejor",
+       "Dar el plazo que dijo la IA",
+       "No contestar hasta el lunes sin avisar"
+      ],
+      "correcta": 0,
+      "explica": "La duración depende del juzgado, las pruebas y los recursos. Explicar etapas da certeza sin prometer fechas."
+     },
+     {
+      "p": "¿Qué conviene agregar al mensaje?",
+      "ops": [
+       "Una tesis que respalde tu postura",
+       "El número de expediente completo para que lo guarde",
+       "Qué necesitas de él esta semana y cuándo se reúnen"
+      ],
+      "correcta": 2,
+      "explica": "El cliente se tranquiliza con próximos pasos concretos, no con tecnicismos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta al cliente",
+    "malTitulo": "Promete",
+    "mal": "«Estos juicios duran unos 6 meses y seguro pagamos mucho menos.»",
+    "bienTitulo": "Da certeza sin prometer",
+    "bien": "«Hoy estamos en la etapa de contestar la demanda. Después vienen pruebas y alegatos; el tiempo depende del juzgado. El martes le explico opciones, incluido un posible convenio. Para entonces necesito las facturas y los correos con el proveedor.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus frases prohibidas",
+    "pregunta": "Escribe tres frases que la IA suele proponer y que tú no permitirías en un mensaje a clientes, y cómo las reemplazarías.",
+    "ayuda": "«Seguro ganamos» → «…»"
+   }
+  ],
+  "c-ia-abogados-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una pyme de Monterrey va a contratar el desarrollo de su sistema de inventarios. Revisas con IA el contrato de prestación de servicios del proveedor (anonimizado). La tabla de la IA califica como «riesgo bajo» una pena convencional a cargo del cliente por cancelar, no menciona quién es titular del código fuente y no detecta que el contrato no dice qué pasa con los datos del cliente al terminar."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué omisión es más grave para tu cliente?",
+      "ops": [
+       "Que no se diga quién es titular del código y de los desarrollos",
+       "Que el contrato no tenga índice",
+       "Que use la palabra «prestador» en lugar de «proveedor»"
+      ],
+      "correcta": 0,
+      "explica": "Sin cláusula de titularidad o licencia, el cliente puede pagar un sistema que no puede modificar ni llevar a otro proveedor."
+     },
+     {
+      "p": "La IA calificó la pena por cancelación como riesgo bajo. Tú…",
+      "ops": [
+       "Aceptas la calificación porque viene en la tabla",
+       "La revisas contra el monto total y el calendario de pagos",
+       "La eliminas sin negociar"
+      ],
+      "correcta": 1,
+      "explica": "La calificación de riesgo de la IA es una sugerencia; el riesgo real depende del monto, del momento en que se cancele y del contexto del cliente."
+     },
+     {
+      "p": "¿Qué pides a la IA en una segunda pasada?",
+      "ops": [
+       "Que reescriba todo el contrato",
+       "Que confirme que el contrato es válido",
+       "Que liste cláusulas típicas de desarrollo de software que no aparecen: titularidad, datos, soporte y salida"
+      ],
+      "correcta": 2,
+      "explica": "Pedir lo que falta por tipo de contrato es donde la IA más ayuda en una revisión."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Omisión y consecuencia",
+    "pares": [
+     [
+      "Sin cláusula de titularidad del desarrollo",
+      "El cliente depende del proveedor para cualquier cambio"
+     ],
+     [
+      "Sin regla de devolución de datos",
+      "Al terminar, la información queda en manos del proveedor"
+     ],
+     [
+      "Sin niveles de servicio",
+      "No hay forma objetiva de reclamar fallas"
+     ],
+     [
+      "Sin plan de salida",
+      "Cambiar de proveedor cuesta tiempo y dinero"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lista por tipo de contrato",
+    "pregunta": "Elige el tipo de contrato que más revisas y escribe las 5 cláusulas que siempre deberían estar, para agregarlas a tu prompt de revisión.",
+    "ayuda": "Tipo de contrato: … / 1. … 2. …"
+   }
+  ],
+  "c-ia-abogados-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> te piden un convenio de confidencialidad para que una empresa de alimentos de Guadalajara comparta sus recetas con un posible maquilador. La IA entrega un borrador limpio, pero incluye «conforme al artículo 163 bis de la ley de propiedad industrial», una pena convencional de «10 veces el valor del contrato» y una vigencia «perpetua»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con el artículo que citó la IA?",
+      "ops": [
+       "Lo dejo, suena correcto",
+       "Lo sustituyo por [FUNDAMENTO: VERIFICAR] y busco en el texto vigente",
+       "Cambio el número por otro parecido"
+      ],
+      "correcta": 1,
+      "explica": "Un número de artículo generado por la IA puede no existir o regular otra cosa. Se verifica en el texto vigente antes de dejarlo."
+     },
+     {
+      "p": "La pena de «10 veces el valor del contrato» en un convenio sin precio…",
+      "ops": [
+       "Es un monto sin base; hay que definir una cantidad o un método claro",
+       "Es perfecta porque asusta a la contraparte",
+       "No importa, casi nunca se cobra"
+      ],
+      "correcta": 0,
+      "explica": "Si no hay valor del contrato, la cláusula queda indeterminada y abre discusión. Además, las penas excesivas pueden reducirse."
+     },
+     {
+      "p": "Sobre la vigencia «perpetua» de la confidencialidad, lo mejor es…",
+      "ops": [
+       "Dejarla, protege más",
+       "Quitar la cláusula de vigencia",
+       "Definir un plazo razonable y excepciones para información que se vuelva pública"
+      ],
+      "correcta": 2,
+      "explica": "Un plazo claro y excepciones bien redactadas suelen negociarse mejor y dan más certeza."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Instrucción de redacción",
+    "malTitulo": "Abierta",
+    "mal": "«Hazme un NDA fuerte.»",
+    "bienTitulo": "Acotada",
+    "bien": "«Redacta un convenio de confidencialidad en México entre una empresa de alimentos (divulgante) y un maquilador (receptor). Define información confidencial, excepciones, uso permitido, devolución, plazo de [X] años y pena convencional de [monto]. No cites artículos; marca [FUNDAMENTO: VERIFICAR].»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu cláusula frecuente",
+    "pregunta": "Escribe el prompt completo que usarías para la cláusula que más redactas, con parte protegida, límites y marcadores de verificación.",
+    "ayuda": "Redacta una cláusula de … a favor de … con … No cites …"
+   }
+  ],
+  "c-ia-abogados-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> heredas un juicio ordinario mercantil de otro despacho: un expediente digitalizado de más de 500 fojas. La cronología de la IA es útil, pero al revisar descubres que tomó la fecha de presentación de la contestación como si fuera la fecha del acuerdo que la tuvo por presentada, y que atribuyó a la actora un documento que ofreció la demandada."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué importa confundir fecha de presentación y fecha de acuerdo?",
+      "ops": [
+       "Porque cambia el cómputo de términos que dependen de la notificación",
+       "Porque el acuerdo siempre es el mismo día",
+       "No importa, la diferencia es de días"
+      ],
+      "correcta": 0,
+      "explica": "Los términos corren según notificaciones y acuerdos; un día de diferencia puede significar un término vencido."
+     },
+     {
+      "p": "¿Cómo corriges el método para el resto del expediente?",
+      "ops": [
+       "Pides un resumen más corto",
+       "Pides a la IA columnas separadas: fecha de promoción, fecha de acuerdo, fecha de notificación y foja",
+       "Dejas de usar la IA"
+      ],
+      "correcta": 1,
+      "explica": "Separar las fechas obliga a la IA a distinguirlas y a ti te permite verificarlas foja por foja."
+     },
+     {
+      "p": "El documento atribuido a la parte equivocada se detecta…",
+      "ops": [
+       "Preguntándole a la IA si está segura",
+       "Revisando solo las primeras 20 fojas",
+       "Cotejando la foja citada en la cronología con la constancia"
+      ],
+      "correcta": 2,
+      "explica": "Por eso cada dato lleva foja: el cotejo es rápido y sale de la constancia, no de la memoria."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Columnas de una cronología procesal",
+    "items": [
+     {
+      "frase": "Fecha de promoción, fecha de acuerdo, fecha de ___ y foja.",
+      "resp": [
+       "notificación",
+       "notificacion"
+      ]
+     },
+     {
+      "frase": "Cada hecho debe indicar qué ___ lo ofreció o lo promovió.",
+      "resp": [
+       "parte"
+      ]
+     },
+     {
+      "frase": "Lo que no tiene respaldo en una constancia se marca como sin ___.",
+      "resp": [
+       "respaldo",
+       "soporte",
+       "evidencia"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu formato de cronología",
+    "pregunta": "Escribe las columnas de cronología que usarías en tu materia y qué fecha es la crítica para tus términos.",
+    "ayuda": "En mi materia la fecha crítica es… / Columnas: …"
+   }
+  ],
+  "c-ia-abogados-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> preparas una sesión de mediación en un centro de justicia alternativa por un adeudo entre dos socios de un restaurante en Toluca. Pides a la IA que actúe como el abogado de la otra parte, pero en el ensayo cede a la primera propuesta y acepta todo. Así no te prepara para nada."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué la IA cedió tan rápido?",
+      "ops": [
+       "Porque tu propuesta era perfecta",
+       "Porque no le diste intereses, límites ni estilo de la contraparte",
+       "Porque la mediación no se puede ensayar"
+      ],
+      "correcta": 1,
+      "explica": "Sin datos de intereses y límites, la IA tiende a ser complaciente. Hay que darle un papel con resistencia."
+     },
+     {
+      "p": "¿Qué instrucción mejora el ensayo?",
+      "ops": [
+       "«Sé más difícil»",
+       "«Ayúdame a ganar»",
+       "«Tu cliente necesita liquidez en 30 días, no acepta quitas mayores a X y desconfía de mi cliente. Negocia con firmeza y no cedas sin algo a cambio»"
+      ],
+      "correcta": 2,
+      "explica": "Intereses, límites y actitud concretos producen un ensayo realista."
+     },
+     {
+      "p": "Al terminar el ensayo, lo más útil es pedir…",
+      "ops": [
+       "Una evaluación de tus concesiones y los argumentos que no respondiste",
+       "Un acta de acuerdo lista para firmar",
+       "Que la IA diga quién tiene la razón"
+      ],
+      "correcta": 0,
+      "explica": "El valor del ensayo es detectar lo que no preparaste, no producir el acuerdo."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Papel para la IA",
+    "malTitulo": "Complaciente",
+    "mal": "«Actúa como la otra parte en una mediación por un adeudo.»",
+    "bienTitulo": "Realista",
+    "bien": "«Actúa como abogado del socio acreedor. Su interés: recuperar el capital en menos de 6 meses. Su límite: no acepta quitas sobre intereses. Su estilo: desconfiado. Responde una intervención a la vez y cede solo a cambio de garantías.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu próxima negociación",
+    "pregunta": "Escribe el papel que le darías a la IA para ensayar tu próxima negociación real: interés, límite, estilo y qué la haría ceder.",
+    "ayuda": "Interés: … / Límite: … / Estilo: … / Cede si…"
+   }
+  ],
+  "c-ia-abogados-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el despacho usa una hoja de control de asuntos. Una asociada pidió a la IA el término para un recurso y le dio una fecha contando días naturales, sin descontar fines de semana ni días inhábiles del tribunal. La fecha quedó capturada así en la hoja."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es la regla correcta para capturar una fecha límite?",
+      "ops": [
+       "La calcula la IA y la revisa el cliente",
+       "La calcula el abogado con la ley aplicable y el calendario oficial de días inhábiles",
+       "Se captura la más cercana posible sin revisar"
+      ],
+      "correcta": 1,
+      "explica": "El cómputo depende de la ley procesal, de la fecha de notificación y del calendario del órgano; eso lo verifica el abogado."
+     },
+     {
+      "p": "Una alerta automática en la hoja sirve para…",
+      "ops": [
+       "Avisar con anticipación; no sustituye el cálculo del término",
+       "Calcular el término por ti",
+       "Notificar al juzgado"
+      ],
+      "correcta": 0,
+      "explica": "La hoja solo compara fechas; si la fecha capturada está mal, la alerta también."
+     },
+     {
+      "p": "¿Qué control adicional evita el error del caso?",
+      "ops": [
+       "Que nadie use IA para plazos",
+       "Capturar dos fechas por si acaso",
+       "Doble verificación: quien captura y otra persona que coteja con la constancia de notificación"
+      ],
+      "correcta": 2,
+      "explica": "La doble verificación es simple y detecta la mayoría de errores de cómputo."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Reglas del control de plazos",
+    "items": [
+     {
+      "frase": "La fecha límite la calcula el ___ con la ley aplicable.",
+      "resp": [
+       "abogado",
+       "abogada",
+       "responsable"
+      ]
+     },
+     {
+      "frase": "El cómputo empieza a partir de la ___ que corresponda según la ley.",
+      "resp": [
+       "notificación",
+       "notificacion"
+      ]
+     },
+     {
+      "frase": "Los días ___ del tribunal se descuentan conforme al calendario oficial.",
+      "resp": [
+       "inhábiles",
+       "inhabiles"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu doble verificación",
+    "pregunta": "Describe quién calcula y quién coteja los términos en tu despacho o práctica, y en qué momento se captura la fecha en el control.",
+    "ayuda": "Calcula… / Coteja… / Se captura cuando…"
+   }
+  ],
+  "c-ia-abogados-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso continúa:</b> el arrendador del local de la cafetería responde a tu contrapropuesta con un nuevo contrato. Pides a la IA una tabla de cambios entre versiones. La tabla detecta el nuevo incremento de renta, pero no ve que el arrendador cambió «el arrendatario podrá» por «el arrendatario deberá» en la cláusula de mejoras, ni que eliminó la opción de subarrendar."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué la IA puede pasar por alto cambios de una palabra?",
+      "ops": [
+       "Porque compara el sentido general y no siempre cada palabra",
+       "Porque los cambios pequeños no importan",
+       "Porque el contrato era muy corto"
+      ],
+      "correcta": 0,
+      "explica": "Un «podrá» por «deberá» cambia una facultad por una obligación. Para eso existe la comparación de versiones del procesador de textos."
+     },
+     {
+      "p": "¿Qué método es más confiable?",
+      "ops": [
+       "Solo la tabla de la IA",
+       "Solo leer la nueva versión de corrido",
+       "Comparación de documentos del procesador de textos y después la IA para explicar el efecto de cada cambio"
+      ],
+      "correcta": 2,
+      "explica": "La herramienta de comparación detecta cada cambio; la IA ayuda a explicar su efecto al cliente."
+     },
+     {
+      "p": "La eliminación de la opción de subarrendar le importa al cliente porque…",
+      "ops": [
+       "No tiene ningún efecto",
+       "Limita su salida si el negocio no funciona y quiere ceder el local",
+       "Solo afecta al arrendador"
+      ],
+      "correcta": 1,
+      "explica": "En un plazo de 5 años, la posibilidad de subarrendar o ceder es una salida importante para el arrendatario."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Cambio de palabra, cambio de efecto",
+    "pares": [
+     [
+      "«podrá» → «deberá»",
+      "Una facultad se vuelve obligación"
+     ],
+     [
+      "«días» → «días naturales»",
+      "El plazo se acorta en la práctica"
+     ],
+     [
+      "«razonable» → «a juicio del arrendador»",
+      "La decisión queda en una sola parte"
+     ],
+     [
+      "«y» → «o»",
+      "Basta cumplir una condición en lugar de todas"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu método de comparación",
+    "pregunta": "Escribe en 3 pasos cómo revisarás desde hoy una segunda versión de un contrato que te envía la contraparte.",
+    "ayuda": "1. Comparo con… 2. Pido a la IA… 3. Verifico…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: litigio, laboral, familiar y corporativo",
+   "r": "Cómo cambia el uso responsable de la IA en cada rama: los errores típicos que comete en litigio y amparo, en materia laboral y familiar, y en derecho corporativo, con prompts y controles específicos.",
+   "lecciones": [
+    {
+     "t": "Litigio civil, mercantil y amparo",
+     "obj": "Usar la IA para estructurar demandas, contestaciones y conceptos de violación sin confiar en sus citas, plazos ni códigos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En litigio, la IA ayuda a ordenar hechos, detectar huecos probatorios y estructurar escritos largos. El problema es que <b>México tiene códigos procesales distintos según la materia y la entidad</b>, y la IA tiende a mezclar reglas: aplica el código de otro estado, confunde la vía ordinaria con la ejecutiva o usa reglas de amparo que cambiaron con reformas. Además, en materia civil y familiar hay entidades que ya aplican el Código Nacional de Procedimientos Civiles y Familiares y otras que siguen con su código local: <b>verifica qué ordenamiento rige en tu entidad y en tu asunto</b>."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en litigio",
+       "encabezados": [
+        "Error",
+        "Cómo se ve",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Código equivocado",
+         "Cita el código de otra entidad o uno abrogado",
+         "Pide que no cite artículos y verifica tú el ordenamiento aplicable"
+        ],
+        [
+         "Vía equivocada",
+         "Propone vía ordinaria para un título de crédito o al revés",
+         "Confirma la vía con el documento base y la ley"
+        ],
+        [
+         "Plazos genéricos",
+         "«Tienes 15 días» sin decir desde cuándo ni de qué ley",
+         "Cómputo tuyo con la notificación y el calendario oficial"
+        ],
+        [
+         "Tesis superadas",
+         "Criterio que fue interrumpido o superado por contradicción",
+         "Revisa en el Semanario si la tesis sigue vigente"
+        ],
+        [
+         "Hechos agregados",
+         "Rellena la narrativa con detalles que el cliente no dio",
+         "Cada hecho debe tener un documento o dicho del cliente"
+        ]
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Prompt para estructurar una contestación",
+       "malTitulo": "Pide lo que no debe",
+       "mal": "«Contesta esta demanda con todos los artículos y jurisprudencias aplicables.»",
+       "bienTitulo": "Pide estructura",
+       "bien": "«Con estos hechos anonimizados y esta demanda, propón la estructura de la contestación: respuesta a cada hecho (acepto, niego, ni afirmo ni niego), excepciones que debo analizar y pruebas que necesito para cada una. Marca [FUNDAMENTO: VERIFICAR] donde iría un artículo.»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA propone una excepción de prescripción con un plazo concreto. Tú…",
+         "ops": [
+          "La incluyes, el plazo suena lógico",
+          "Verificas el plazo en la ley aplicable y calculas desde la fecha que corresponde",
+          "La descartas porque viene de la IA"
+         ],
+         "correcta": 1,
+         "explica": "La idea puede ser correcta; el plazo y el momento en que empieza a correr se verifican siempre."
+        },
+        {
+         "p": "En un amparo, la IA redacta conceptos de violación muy largos y genéricos. Lo mejor es…",
+         "ops": [
+          "Pedirle que los vincule a cada acto reclamado y a la parte concreta de la resolución",
+          "Usarlos, entre más largo mejor",
+          "Pedir que agregue más tesis"
+         ],
+         "correcta": 0,
+         "explica": "Los conceptos de violación deben combatir consideraciones concretas; lo genérico suele declararse inoperante."
+        },
+        {
+         "p": "¿Qué sí puedes delegar con tranquilidad a la IA en litigio?",
+         "ops": [
+          "Elegir la vía procesal",
+          "Calcular términos",
+          "Convertir la narrativa del cliente en una lista de hechos numerados con el documento que prueba cada uno"
+         ],
+         "correcta": 2,
+         "explica": "Ordenar hechos y vincularlos a pruebas ahorra tiempo y tú lo verificas contra los documentos."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu escrito más frecuente",
+       "pregunta": "¿Qué escrito de litigio redactas más seguido? Escribe qué partes delegarías a la IA (estructura, hechos, lenguaje) y cuáles nunca (vía, términos, fundamentos).",
+       "ayuda": "Escrito: … / Delego: … / Nunca delego: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Mapa de hechos y pruebas",
+       "texto": "Con esta narrativa del cliente (anonimizada): [pegar] y estos documentos: [lista], elabora una tabla: número de hecho, hecho redactado en una frase, documento o testigo que lo prueba, y [SIN PRUEBA] si no hay respaldo. Después lista las preguntas que debo hacerle al cliente para cubrir los hechos sin prueba. No cites artículos ni tesis.",
+       "nota": "Cópiala y adáptala a tu materia."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Verifica qué código procesal rige en tu entidad y asunto.",
+        "La IA estructura hechos y pruebas; tú eliges la vía y calculas términos.",
+        "Toda tesis se revisa en el Semanario, incluida su vigencia."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Materia laboral y familiar: datos sensibles y cálculos",
+     "obj": "Aplicar la IA en asuntos laborales y familiares cuidando datos sensibles, el sistema de justicia laboral vigente y la verificación de cálculos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Laboral y familiar comparten dos rasgos: <b>los datos son especialmente sensibles</b> (salud, ingresos, menores, conflictos de pareja) y <b>los clientes preguntan por dinero</b>: finiquitos, liquidaciones, pensiones. Con la reforma laboral de 2019, los conflictos individuales pasan en general por conciliación prejudicial ante los centros de conciliación y después por tribunales laborales del Poder Judicial; la IA a veces sigue hablando de las Juntas de Conciliación y Arbitraje como si fueran la regla. En familiar rige el interés superior de la niñez: los datos de niñas y niños no se comparten con herramientas públicas bajo ninguna circunstancia."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en laboral y familiar",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Sistema desactualizado",
+         "Recomienda demandar directamente ante una Junta",
+         "Verifica la etapa y la autoridad competente vigentes"
+        ],
+        [
+         "Cifras de otro año",
+         "Usa un salario mínimo o una UMA que ya no está vigente",
+         "Consulta la cifra vigente en la fuente oficial"
+        ],
+        [
+         "Cálculos con base incorrecta",
+         "Mezcla salario diario y salario integrado",
+         "Haz el cálculo en tu hoja y verifica la base aplicable"
+        ],
+        [
+         "Tono inadecuado",
+         "Mensajes fríos o alarmistas en conflictos familiares",
+         "Pide tono sereno y revisa cada frase"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Prestaciones proporcionales (ejercicio ilustrativo)",
+       "datos": [
+        [
+         "Concepto",
+         "Valor"
+        ],
+        [
+         "Salario diario",
+         450
+        ],
+        [
+         "Días trabajados en el año",
+         219
+        ],
+        [
+         "Días de aguinaldo (mínimo legal)",
+         15
+        ],
+        [
+         "Días de vacaciones del periodo",
+         12
+        ],
+        [
+         "Aguinaldo proporcional",
+         ""
+        ],
+        [
+         "Vacaciones proporcionales",
+         ""
+        ],
+        [
+         "Prima vacacional 25%",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B6",
+         "formula": "=B2*B4*B3/365",
+         "esperado": 4050,
+         "texto": "<b>B6</b>: aguinaldo proporcional = salario diario × días de aguinaldo × días trabajados ÷ 365.",
+         "pista": "=B2*B4*B3/365"
+        },
+        {
+         "celda": "B7",
+         "formula": "=REDONDEAR(B2*B5*B3/365,2)",
+         "esperado": 3240,
+         "texto": "<b>B7</b>: vacaciones proporcionales con el mismo método, redondeadas a 2 decimales.",
+         "requiere": "REDONDEAR(",
+         "pista": "=REDONDEAR(B2*B5*B3/365,2)"
+        },
+        {
+         "celda": "B8",
+         "formula": "=B7*0.25",
+         "esperado": 810,
+         "texto": "<b>B8</b>: prima vacacional del 25% sobre las vacaciones.",
+         "explica": "Es un ejercicio de mecánica. En un caso real verificas la antigüedad, la tabla de vacaciones vigente, el salario base aplicable y si el contrato o el contrato colectivo dan más."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Un trabajador despedido pregunta qué hacer. La IA le sugiere demandar ante la Junta de Conciliación y Arbitraje. Tú…",
+         "ops": [
+          "Verificas la etapa vigente: en general, primero conciliación prejudicial ante el centro de conciliación",
+          "Sigues la sugerencia",
+          "Le dices que espere un año"
+         ],
+         "correcta": 0,
+         "explica": "Con la reforma de 2019, la conciliación prejudicial es la regla general, con excepciones que debes revisar en la ley."
+        },
+        {
+         "p": "La IA calculó una liquidación con un salario mínimo de otro año. Lo correcto es…",
+         "ops": [
+          "Ajustar a ojo",
+          "Tomar la cifra vigente de la fuente oficial y rehacer el cálculo en tu hoja",
+          "Dejarla, la diferencia es mínima"
+         ],
+         "correcta": 1,
+         "explica": "Las cifras oficiales cambian cada año; un cálculo con la cifra equivocada es un error profesional."
+        },
+        {
+         "p": "En un asunto de guarda y custodia, ¿qué puedes usar con IA?",
+         "ops": [
+          "El expediente completo en una IA gratuita",
+          "Los reportes escolares de los niños",
+          "Una descripción general sin nombres ni datos para ordenar argumentos"
+         ],
+         "correcta": 2,
+         "explica": "Solo información que no identifique a nadie, y nada de documentos de los menores."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu hoja de cálculos",
+       "pregunta": "¿Qué cálculo haces con más frecuencia (finiquito, pensión, intereses)? Escribe las columnas de tu hoja y de qué fuente oficial sale cada cifra variable.",
+       "ayuda": "Cálculo: … / Columnas: … / Cifra variable: … sale de …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Conceptos por analizar",
+       "texto": "En un asunto [laboral/familiar] con estas características generales (sin nombres): [descripción], lista los conceptos jurídicos y económicos que debo analizar, la información que necesito del cliente para cada uno y los documentos que debo pedir. No calcules montos ni cites artículos; marca [VERIFICAR] donde haya cifras oficiales.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Datos de salud, ingresos y menores nunca van a herramientas públicas.",
+        "Verifica la autoridad y etapa vigentes tras la reforma laboral.",
+        "Los cálculos se hacen en tu hoja con cifras oficiales vigentes."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Corporativo y cumplimiento: due diligence, actas y privacidad",
+     "obj": "Usar la IA para revisar volúmenes de documentos corporativos y preparar actas y avisos sin trasladar reglas de otros países ni inventar requisitos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En corporativo la IA brilla con el volumen: revisar decenas de contratos en una due diligence, preparar el orden del día de una asamblea o comparar estatutos. Sus errores típicos son otros: <b>importa conceptos de derecho estadounidense</b> (board, bylaws, consideration), <b>inventa quórums y mayorías</b> que en realidad dependen de la ley de sociedades y de los estatutos, y redacta avisos de privacidad genéricos que no reflejan lo que la empresa realmente hace con los datos."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en corporativo",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Quórum y mayorías inventados",
+         "Léelos en los estatutos y en la ley aplicable"
+        ],
+        [
+         "Figuras de otro país",
+         "Pide terminología mexicana: asamblea, consejo de administración, comisario"
+        ],
+        [
+         "Due diligence incompleta",
+         "Lista de documentos definida por ti antes de empezar"
+        ],
+        [
+         "Aviso de privacidad genérico",
+         "Parte del inventario real de datos y finalidades de la empresa"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA redacta un acta con «el Board aprobó por mayoría simple de los directores presentes». Tú…",
+         "ops": [
+          "La dejas, se entiende",
+          "Traduces a consejo de administración y verificas quórum y mayoría en los estatutos",
+          "Cambias solo la palabra Board"
+         ],
+         "correcta": 1,
+         "explica": "No es solo terminología: el quórum y la mayoría salen de los estatutos y la ley, no de la IA."
+        },
+        {
+         "p": "En una due diligence de 80 contratos, el mejor uso de la IA es…",
+         "ops": [
+          "Extraer datos clave de cada contrato a una tabla que tú verificas por muestreo y en los de riesgo alto",
+          "Que emita la opinión legal final",
+          "Revisar solo los 10 primeros"
+         ],
+         "correcta": 0,
+         "explica": "La extracción ahorra horas; la verificación se concentra donde está el riesgo."
+        },
+        {
+         "p": "Un aviso de privacidad hecho por la IA sin información de la empresa…",
+         "ops": [
+          "Sirve si es largo",
+          "Es suficiente para cumplir",
+          "No refleja los datos y finalidades reales; hay que partir del inventario de datos"
+         ],
+         "correcta": 2,
+         "explica": "El aviso debe describir lo que la empresa realmente hace con los datos; verifica los requisitos en la ley vigente."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Término importado → término mexicano",
+       "pares": [
+        [
+         "Board of directors",
+         "Consejo de administración"
+        ],
+        [
+         "Shareholders meeting",
+         "Asamblea de accionistas"
+        ],
+        [
+         "Bylaws",
+         "Estatutos sociales"
+        ],
+        [
+         "Auditor de la sociedad (vigilancia)",
+         "Comisario"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu lista de due diligence",
+       "pregunta": "Escribe los 8 datos que extraerías de cada contrato en una due diligence de tu práctica (por ejemplo: partes, vigencia, cambio de control, penas).",
+       "ayuda": "1. … 2. … 3. …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Extracción para due diligence",
+       "texto": "De este contrato (herramienta autorizada, operación confidencial): [pegar], extrae en una fila: tipo de contrato, partes (por rol), vigencia y renovación, monto o contraprestación, cláusula de cambio de control (sí/no y número), causales de terminación, penas, jurisdicción y riesgos para una compra de la empresa. Cita el número de cláusula de cada dato. Si un dato no está, escribe [NO LOCALIZADO].",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Terminología y figuras mexicanas, no importadas.",
+        "Quórums y mayorías salen de estatutos y ley.",
+        "Extracción con cláusula citada; verificación donde está el riesgo."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Antes de redactar una demanda civil con apoyo de IA, lo primero es confirmar…",
+     "ops": [
+      "Qué IA es más rápida",
+      "Qué código procesal rige en tu entidad y asunto",
+      "Cuántas tesis puede dar la IA",
+      "El número de páginas"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una tesis que aparece como superada por contradicción…",
+     "ops": [
+      "Se cita igual",
+      "Se ignora sin leer",
+      "Obliga a buscar y leer el criterio que la superó",
+      "Es jurisprudencia obligatoria"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "En general, tras la reforma laboral de 2019, un conflicto individual inicia con…",
+     "ops": [
+      "Conciliación prejudicial ante el centro de conciliación",
+      "Demanda ante la Junta de Conciliación y Arbitraje",
+      "Queja ante la PROFECO",
+      "Amparo directo"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA calcula una prestación con una cifra oficial de otro año…",
+     "ops": [
+      "Se acepta",
+      "Se redondea",
+      "Se pide a la IA que la actualice",
+      "Se rehace el cálculo con la cifra vigente de la fuente oficial"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Datos de niñas y niños en un asunto familiar…",
+     "ops": [
+      "Se pueden usar anonimizando solo el apellido",
+      "Nunca van a herramientas públicas",
+      "Se usan si el padre lo autoriza por WhatsApp",
+      "Son iguales a cualquier dato"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "El quórum de una asamblea se toma de…",
+     "ops": [
+      "Lo que proponga la IA",
+      "Un modelo de internet",
+      "Los estatutos y la ley aplicable",
+      "La costumbre del despacho"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real en el despacho con errores plantados para detectar, y la construcción de tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: un martes en el despacho",
+     "obj": "Detectar errores plantados de la IA en cuatro momentos de un día de trabajo real y decidir cómo corregirlos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a vivir un día de trabajo de Andrea, abogada en un despacho mediano de León, Guanajuato. En cada escena la IA le ayuda, y en cada escena hay por lo menos un error plantado. Lee con atención, encuentra el error y escribe qué haría Andrea antes de seguir."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 8:30 a.m. Correos del cliente.</b> Andrea pide a la herramienta autorizada del despacho que resuma 14 correos de un cliente industrial sobre un incumplimiento de proveedor. El resumen dice: «El proveedor entregó 3 lotes con defecto; el cliente pagó el 100% el 12 de agosto». En el correo original, el cliente escribió que pagó el 60% y que retuvo el resto por los defectos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "¿Cuál es el error, qué consecuencia tendría en la estrategia y qué instrucción agregarías al prompt de resumen para que no se repita?",
+       "ayuda": "El error es… / Consecuencia: … / Agregaría: «Cita el correo y la fecha de cada…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:00 a.m. Investigación.</b> Para fundar la reclamación, Andrea pide criterios sobre vicios ocultos en compraventa mercantil. La IA entrega dos tesis con rubro, registro digital y época. En el Semanario, un registro corresponde a una tesis sobre arrendamiento y el otro no existe."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "Describe paso a paso qué hace Andrea con cada registro y cómo debe replantear la consulta a la IA para que le sirva de verdad.",
+       "ayuda": "Registro 1: … / Registro 2: … / Nueva consulta: «¿Qué palabras clave…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 1:30 p.m. Borrador de demanda.</b> Con los hechos ya corregidos, la IA propone un borrador. En el capítulo de derecho cita artículos del código de procedimientos civiles de otra entidad, y en los hechos agrega que «el proveedor reconoció el defecto por teléfono», algo que nadie mencionó."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Identifica los dos errores, di cuál es más peligroso frente al juzgado y explica cómo lo detectarías con tu mapa de hechos y pruebas.",
+       "ayuda": "Error 1: … / Error 2: … / Más peligroso: … porque…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 6:00 p.m. Mensaje al cliente.</b> Andrea pide un mensaje para informar al director del cliente. La IA escribe: «Tenemos un caso muy sólido; con la demanda que presentaremos el viernes el proveedor tendrá que pagar todo, más daños». El director lo reenviará a su consejo."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "Reescribe el mensaje para el director: qué está pasando, qué sigue, qué riesgos hay y qué necesitas de él, sin promesas.",
+       "ayuda": "Director: esta semana… / El viernes… / Riesgos: … / Necesito…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Qué error del día tenía mayor riesgo de pasar inadvertido?",
+         "ops": [
+          "El dato del pago cambiado en el resumen, porque se ve plausible",
+          "El tono del mensaje",
+          "El formato de la tabla"
+         ],
+         "correcta": 0,
+         "explica": "Los datos cambiados dentro de un resumen correcto en lo general son los más difíciles de detectar; por eso se pide cita de la fuente."
+        },
+        {
+         "p": "¿Qué control habría evitado el error de la escena 3?",
+         "ops": [
+          "Pedir un borrador más largo",
+          "Mapa de hechos con prueba de cada hecho y [FUNDAMENTO: VERIFICAR] en lugar de artículos",
+          "Usar otra IA"
+         ],
+         "correcta": 1,
+         "explica": "Si cada hecho debe tener prueba y la IA no cita artículos, ambos errores quedan fuera desde el diseño."
+        },
+        {
+         "p": "El mensaje de la escena 4 era riesgoso sobre todo porque…",
+         "ops": [
+          "Era muy corto",
+          "No tenía saludo",
+          "Prometía un resultado y sería leído por terceros"
+         ],
+         "correcta": 2,
+         "explica": "Una promesa escrita que circula en el consejo del cliente se vuelve un problema si el resultado es otro."
+        },
+        {
+         "p": "¿Qué tienen en común los cuatro errores?",
+         "ops": [
+          "Todos suenan verosímiles y solo se detectan cotejando con la fuente",
+          "Todos son de ortografía",
+          "Ninguno importa si el cliente no se entera"
+         ],
+         "correcta": 0,
+         "explica": "La IA produce texto convincente; el cotejo con la fuente es el hábito que protege al abogado y al cliente."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Los errores más peligrosos son los plausibles.",
+        "Cada dato con su fuente; cada hecho con su prueba.",
+        "Nada de promesas en mensajes que circularán."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit jurídico con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real revisado.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Este proyecto convierte el curso en herramientas que vas a usar el lunes. Trabaja con tu práctica real: tu materia, tu tipo de clientes y tus escritos frecuentes. Al terminar tendrás cuatro piezas y un entregable probado. Guarda todo en un solo documento del despacho."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "1. Tu biblioteca de prompts",
+       "pregunta": "Escribe tus 3 prompts base: uno de investigación que no pida citas, uno de revisión o redacción de documentos y uno de comunicación con clientes. Cada uno con marcadores [ ] y la instrucción de no inventar.",
+       "ayuda": "Investigación: … / Documentos: … / Clientes: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "2. Tu política de datos",
+       "pregunta": "Redacta tu política en 5 reglas: herramientas autorizadas, qué nunca se sube, cómo se anonimiza, qué pasa si alguien comete un error y cómo informas a clientes sobre el uso de IA.",
+       "ayuda": "Regla 1: Solo usamos… / Regla 2: Nunca subimos…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "3. Tu lista de verificación",
+       "pregunta": "Escribe la lista de verificación que aplicarás a todo texto producido con IA antes de que salga del despacho: citas, artículos, plazos, hechos, cifras y promesas.",
+       "ayuda": "☐ Toda tesis leída en el Semanario… ☐ Artículos en texto vigente… ☐ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "4. Tu entregable real",
+       "pregunta": "Aplica tu kit a un asunto real (anonimizado): produce con IA un documento de trabajo, pásalo por tu lista y anota qué errores encontraste y cuánto tiempo ahorraste frente a hacerlo sin IA.",
+       "ayuda": "Documento: … / Errores encontrados: … / Tiempo: antes … ahora …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit jurídico con IA",
+       "texto": "KIT JURÍDICO CON IA — [despacho o nombre] — versión [fecha]\n\n1. Política de datos y herramientas autorizadas\n   - Herramientas autorizadas: [ ]\n   - Nunca se sube: [ ]\n   - Anonimización: [ ]\n   - Incidentes: [a quién se avisa y cómo]\n2. Biblioteca de prompts\n   - Investigación sin citas: [ ]\n   - Revisión de contratos por tipo: [ ]\n   - Redacción con [FUNDAMENTO: VERIFICAR]: [ ]\n   - Cronologías con foja: [ ]\n   - Mensajes a clientes sin promesas: [ ]\n3. Lista de verificación antes de enviar\n   ☐ Tesis leídas en el Semanario Judicial y vigentes\n   ☐ Artículos en el texto vigente\n   ☐ Plazos calculados por el abogado\n   ☐ Hechos con prueba\n   ☐ Cifras de fuente oficial\n   ☐ Sin promesas de resultado\n4. Registro de verificación de citas [enlace]\n5. Entregable de prueba y lecciones aprendidas [ ]\n6. Responsable de actualizar el kit: [ ] · Próxima revisión: [ ]",
+       "nota": "Cópiala y adáptala; revísala cada trimestre."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso!</b> La IA acelera tu trabajo en todas las especialidades; tu criterio jurídico, la verificación en el Semanario Judicial y en el texto vigente, y el secreto profesional siguen siendo tuyos."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Kit en un solo documento: política, prompts, lista y registro.",
+        "Pruébalo con un entregable real y mide el ahorro.",
+        "Actualízalo cada trimestre con los errores que encuentres."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "En la escena 1, el error del resumen se habría evitado pidiendo…",
+     "ops": [
+      "Un resumen más corto",
+      "Que cite el correo y la fecha de cada dato",
+      "Un tono más formal",
+      "Que la IA revise dos veces"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si un registro digital lleva a una tesis sobre otro tema…",
+     "ops": [
+      "Se cita porque existe",
+      "Se cambia el rubro",
+      "Se descarta y se replantea la búsqueda",
+      "Se cita como aislada"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un hecho que la IA agregó y nadie mencionó…",
+     "ops": [
+      "Se elimina y se revisa el resto contra el mapa de hechos",
+      "Se deja si ayuda",
+      "Se confirma con la IA",
+      "Se pasa a pie de página"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un mensaje que el cliente reenviará a su consejo debe…",
+     "ops": [
+      "Prometer el mejor resultado",
+      "Incluir todas las tesis",
+      "Ser informal",
+      "Explicar situación, riesgos y siguientes pasos sin promesas"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "La política de datos del kit debe incluir…",
+     "ops": [
+      "Solo la lista de IA de moda",
+      "Herramientas autorizadas, qué nunca se sube, anonimización e incidentes",
+      "Contraseñas del despacho",
+      "Nada escrito"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La lista de verificación se aplica…",
+     "ops": [
+      "A todo texto producido con IA antes de que salga",
+      "Solo a demandas",
+      "Solo si hay tiempo",
+      "Cuando el cliente lo pide"
+     ],
+     "correcta": 0
+    }
+   ]
+  }
+ ]
+}

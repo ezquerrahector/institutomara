@@ -1,0 +1,1170 @@
+{
+ "id": "c-ia-diseno",
+ "horas": 10,
+ "aprender": [
+  "Resolver encargos avanzados con IA: fotografía de catálogo honesta, exploración de identidad visual sin imitar marcas ni estilos de artistas vivos, y uso de voces, rostros y avatares con autorización por escrito.",
+  "Armar tu kit de diseño con IA: biblioteca de prompts, política de datos y derechos, revisión de licencias de uso comercial por herramienta, lista de verificación y una pieza real lista para entregar."
+ ],
+ "terceras": [
+  {
+   "p": "Tu imagen salió bien pero con letras deformes encima. La solución más rápida es…",
+   "op": "Pedirle a la IA que escriba el texto más grande"
+  },
+  {
+   "p": "Cada intento te sale con un estilo distinto. Probablemente…",
+   "op": "Necesitas un plan más caro de la herramienta"
+  },
+  {
+   "p": "Para que tus piezas se vean de la misma familia…",
+   "op": "Usas un filtro distinto en cada pieza"
+  },
+  {
+   "p": "Necesitas la misma promoción en cuatro formatos. Lo más eficiente es…",
+   "op": "Hacer solo el formato horizontal y estirarlo"
+  },
+  {
+   "p": "El logotipo del cliente…",
+   "op": "Se toma de una captura de pantalla de su página"
+  },
+  {
+   "p": "Una pieza con seis renglones de texto en una historia…",
+   "op": "Se arregla bajando la letra a tamaño mínimo"
+  },
+  {
+   "p": "Un cliente restaurantero quiere fotos de sus platillos. Generar los platillos con IA…",
+   "op": "Está bien si los platillos se ven más grandes que los reales"
+  },
+  {
+   "p": "Antes de vender piezas hechas con una herramienta de IA…",
+   "op": "Le preguntas a la misma IA si puedes venderlas"
+  },
+  {
+   "p": "Usar el rostro de una clienta feliz generado con IA…",
+   "op": "Basta con cambiarle el color de cabello"
+  },
+  {
+   "p": "Una imagen «al estilo de» un ilustrador vivo, vendida a un cliente…",
+   "op": "Es válida si no escribes su nombre en la pieza"
+  },
+  {
+   "p": "La IA te entregó un guion con frases como «potencia tu experiencia». Tú…",
+   "op": "Le agregas más frases así para que suene experto"
+  },
+  {
+   "p": "Un video de 40 segundos debe llevar…",
+   "op": "Una introducción de la empresa de 15 segundos"
+  },
+  {
+   "p": "El llamado a la acción va…",
+   "op": "Solo en la descripción del video"
+  },
+  {
+   "p": "La transcripción escribió «dos mil» en lugar de «doce mil». Si lo publicas así…",
+   "op": "Solo afecta el alcance del video"
+  },
+  {
+   "p": "Usar una voz sintética que imite a una persona real…",
+   "op": "Es libre si la persona es famosa"
+  },
+  {
+   "p": "La mayoría de la gente ve videos…",
+   "op": "Solo en computadora"
+  },
+  {
+   "p": "Producir por lotes significa…",
+   "op": "Contratar a varias personas para cada video"
+  },
+  {
+   "p": "El calendario que te arma la IA…",
+   "op": "Se usa igual para todos tus clientes"
+  },
+  {
+   "p": "La parte donde la IA ahorra más tiempo suele ser…",
+   "op": "La aprobación del cliente"
+  },
+  {
+   "p": "Produces el triple de rápido gracias a la IA. Si cobras por hora…",
+   "op": "Ganas lo mismo, no cambia nada"
+  },
+  {
+   "p": "Tu cotización no dice cuántas revisiones incluye. Lo más probable es que…",
+   "op": "El cliente pague cada cambio sin discutir"
+  },
+  {
+   "p": "Las licencias de las herramientas que usas…",
+   "op": "Las paga siempre el cliente sin avisarle"
+  },
+  {
+   "p": "El dueño no tiene logotipo en buena calidad. Tú…",
+   "op": "Usas una fuente parecida a la de una marca famosa"
+  },
+  {
+   "p": "Para las fotos de los tacos conviene…",
+   "op": "Usar fotos de tacos de un banco de imágenes"
+  },
+  {
+   "p": "El dueño manda cambios a las once de la noche, todos los días. La solución es…",
+   "op": "Aplicar sus cambios sin decir nada"
+  },
+  {
+   "p": "Con $7,500 al mes y 16 piezas, lo primero que calculas es…",
+   "op": "Cuántas herramientas nuevas puedes contratar"
+  }
+ ],
+ "extras": {
+  "c-ia-diseno-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una pastelería de Morelia te pide imágenes para su temporada de pasteles de tres leches. Su dueña escribe: «Hazlos al estilo de» y nombra a una ilustradora mexicana muy conocida que sigue publicando. Tu primer prompt fue «pastel bonito estilo ilustración» y cada resultado salió distinto."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La petición «al estilo de» esa ilustradora…",
+      "ops": [
+       "Se acepta, es un halago",
+       "Se propone un estilo propio descrito con técnica, trazo y paleta, sin nombrar a nadie",
+       "Se acepta si cambias un poco los colores"
+      ],
+      "correcta": 1,
+      "explica": "Imitar a una artista viva identificable es un riesgo legal y ético; describes el estilo con tus palabras."
+     },
+     {
+      "p": "Para que los resultados sean consistentes, al prompt le falta…",
+      "ops": [
+       "Encuadre, luz, paleta y formato",
+       "La palabra «bonito»",
+       "Pedir 20 variantes"
+      ],
+      "correcta": 0,
+      "explica": "Sin esas partes, la herramienta decide sola en cada intento."
+     },
+     {
+      "p": "El pastel de la imagen…",
+      "ops": [
+       "Puede ser cualquier pastel atractivo",
+       "Debe parecerse al que realmente venden si se usa para vender",
+       "No importa si es ilustración"
+      ],
+      "correcta": 1,
+      "explica": "Si la pieza vende un producto, no debe prometer algo distinto a lo que se entrega."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo pedir el estilo",
+    "malTitulo": "Imitando a una artista",
+    "mal": "«Pastel de tres leches al estilo de [ilustradora famosa].»",
+    "bienTitulo": "Estilo descrito",
+    "bien": "«Ilustración plana con trazo grueso de tinta, texturas de papel, paleta rosa palo, crema y café; pastel de tres leches con fresas, plano frontal, fondo liso, formato 4:5, sin texto.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu estilo descrito",
+    "pregunta": "Describe en una línea el estilo visual de tu marca o de un cliente usando técnica, trazo, textura y paleta, sin nombrar a ningún artista ni marca.",
+    "ayuda": "Técnica… / Trazo… / Textura… / Paleta…"
+   }
+  ],
+  "c-ia-diseno-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una agencia de viajes de Cancún publicó su promoción «Tulum 3 días desde $4,990» en historia, post, portada y volante. En la historia, el precio quedó hasta abajo, tapado por la barra de respuesta; en la portada horizontal, el recorte cortó la mitad del logotipo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "El precio en la historia debió ir…",
+      "ops": [
+       "Hasta arriba, junto al nombre de la cuenta",
+       "Al centro, dentro del margen de seguridad",
+       "Hasta abajo, más grande"
+      ],
+      "correcta": 1,
+      "explica": "Arriba y abajo quedan tapados por la interfaz de la app."
+     },
+     {
+      "p": "El logotipo cortado en la portada se evita…",
+      "ops": [
+       "Colocándolo al final en cada formato desde el archivo original",
+       "Pidiéndole a la IA que lo redibuje completo",
+       "Haciéndolo más pequeño en la imagen generada"
+      ],
+      "correcta": 0,
+      "explica": "El logotipo se pone al final, en su posición segura, desde el archivo original."
+     },
+     {
+      "p": "«Desde $4,990» en la pieza…",
+      "ops": [
+       "Se publica sin revisar",
+       "Se revisa contra la tarifa real y sus condiciones antes de publicar",
+       "Se redondea a $5,000"
+      ],
+      "correcta": 1,
+      "explica": "Un precio publicado es un compromiso con el cliente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Precio en la historia",
+    "malTitulo": "Tapado",
+    "mal": "«Tulum 3 días desde $4,990» en la franja inferior, debajo de la barra de respuesta.",
+    "bienTitulo": "Visible",
+    "bien": "«Tulum 3 días desde $4,990» al centro, con margen arriba y abajo, y el logotipo colocado al final desde el archivo original."
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión por formato",
+    "pregunta": "Escribe los 3 puntos que vas a revisar en cada formato antes de entregar una adaptación.",
+    "ayuda": "Historia: … / Post: … / Portada: …"
+   }
+  ],
+  "c-ia-diseno-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una marca de salsas de Monterrey te pide una mascota «parecida» a un personaje de caricatura famoso, pero con sombrero. Tú generaste bocetos con el plan gratuito de una herramienta de IA y no revisaste si ese plan permite uso comercial."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La mascota «parecida» al personaje famoso…",
+      "ops": [
+       "Se hace con cambios pequeños",
+       "Se diseña un personaje original a partir de la historia de la marca",
+       "Se hace si el cliente firma que se responsabiliza"
+      ],
+      "correcta": 1,
+      "explica": "Un parecido reconocible con un personaje protegido es un riesgo para ti y para tu cliente."
+     },
+     {
+      "p": "Antes de entregar algo hecho con esa herramienta…",
+      "ops": [
+       "Revisas en sus términos vigentes si tu plan permite uso comercial",
+       "Asumes que todo lo generado es tuyo",
+       "Le preguntas a la IA"
+      ],
+      "correcta": 0,
+      "explica": "Las condiciones cambian por herramienta, por plan y con el tiempo."
+     },
+     {
+      "p": "Para dejar constancia conviene…",
+      "ops": [
+       "No decir nada al cliente",
+       "Guardar qué herramienta y qué plan usaste y la fecha en que revisaste los términos",
+       "Borrar los bocetos"
+      ],
+      "correcta": 1,
+      "explica": "Un registro simple te ayuda si luego hay dudas sobre los derechos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Mascota de la marca",
+    "malTitulo": "Parecida a un personaje famoso",
+    "mal": "«El mismo personaje de caricatura, pero con sombrero y un chile en la mano.»",
+    "bienTitulo": "Original",
+    "bien": "«Un chile serrano con bigote de abuelo regiomontano, inspirado en la receta familiar de la marca; trazo y paleta propios.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu registro de herramientas",
+    "pregunta": "Haz una lista de las herramientas de IA que usas, el plan que tienes y si revisaste su licencia de uso comercial. ¿Cuál revisas esta semana?",
+    "ayuda": "Herramienta… plan… uso comercial: sí / no revisado…"
+   }
+  ],
+  "c-ia-diseno-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una escuela de natación de Hermosillo quiere un video de 30 segundos para inscribir niños en verano. La IA propuso: «Bienvenidos a Acuática Hermosillo, líderes en excelencia acuática desde 2010…» y un desarrollo con 7 ideas distintas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "El inicio del guion…",
+      "ops": [
+       "Funciona, presenta la marca",
+       "Se cambia por un gancho que hable del problema de los papás",
+       "Se alarga para explicar la historia"
+      ],
+      "correcta": 1,
+      "explica": "Los primeros tres segundos son para frenar el dedo, no para presentarse."
+     },
+     {
+      "p": "Un gancho honesto para esta escuela sería…",
+      "ops": [
+       "«Tu hijo va a ser campeón olímpico»",
+       "«¿Tu hijo ya sabe qué hacer si cae al agua?»",
+       "«La mejor escuela del país»"
+      ],
+      "correcta": 1,
+      "explica": "Toca una preocupación real sin prometer lo que no se puede."
+     },
+     {
+      "p": "Las 7 ideas se reducen a…",
+      "ops": [
+       "Máximo 3: seguridad, maestros certificados y horario de verano",
+       "Todas, más rápido",
+       "Una sola frase de 30 segundos"
+      ],
+      "correcta": 0,
+      "explica": "En 30 segundos caben pocas ideas bien contadas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Primeros tres segundos",
+    "malTitulo": "Presentación",
+    "mal": "«Bienvenidos a Acuática Hermosillo, líderes en excelencia acuática desde 2010.»",
+    "bienTitulo": "Gancho",
+    "bien": "«¿Tu hijo ya sabe qué hacer si cae a la alberca?» (toma de un niño flotando con su maestra)"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus ganchos",
+    "pregunta": "Escribe 3 ganchos de menos de 12 palabras para un video de tu negocio o de un cliente, cada uno con una preocupación real de su público.",
+    "ayuda": "1… 2… 3…"
+   }
+  ],
+  "c-ia-diseno-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una mueblería de Guadalajara grabó un video de su venta de salas. Los subtítulos automáticos escribieron «18 meses sin intereses» como «ocho meses», el nombre de la colonia mal y el teléfono con un dígito cambiado. Además, el dueño quiere que la locución la haga una voz sintética «igualita» a la de un locutor de radio famoso."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Lo primero que revisas en los subtítulos es…",
+      "ops": [
+       "La tipografía",
+       "Precios, plazos, nombres y teléfono",
+       "La música"
+      ],
+      "correcta": 1,
+      "explica": "Son los datos que generan reclamos o hacen que no te encuentren."
+     },
+     {
+      "p": "La voz «igualita» al locutor famoso…",
+      "ops": [
+       "Se hace, es solo una voz",
+       "No se hace sin su autorización: se usa una voz sintética genérica o una persona contratada",
+       "Se hace si no se dice su nombre"
+      ],
+      "correcta": 1,
+      "explica": "Imitar la voz de una persona real identificable requiere su autorización."
+     },
+     {
+      "p": "Antes de usar la voz sintética en un anuncio pagado…",
+      "ops": [
+       "Revisas que la licencia de la herramienta permita uso comercial",
+       "Nada",
+       "Le preguntas a la voz"
+      ],
+      "correcta": 0,
+      "explica": "Las voces sintéticas también tienen condiciones de uso por plan."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la revisión",
+    "items": [
+     {
+      "frase": "Los subtítulos automáticos se revisan a ___ antes de publicar.",
+      "resp": [
+       "mano"
+      ]
+     },
+     {
+      "frase": "Imitar la voz de una persona real requiere su ___.",
+      "resp": [
+       "autorización",
+       "permiso",
+       "consentimiento"
+      ]
+     },
+     {
+      "frase": "Antes de usar una voz sintética en anuncios revisas su licencia de uso ___.",
+      "resp": [
+       "comercial"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión de subtítulos",
+    "pregunta": "Escribe tu lista de 5 cosas que revisas en cada subtítulo antes de publicar un video.",
+    "ayuda": "1. Precios… 2. Teléfono… 3. …"
+   }
+  ],
+  "c-ia-diseno-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una creadora de contenido de recetas en Puebla publica 16 videos al mes. Improvisando, cada video le toma 75 minutos. Con guiones por lote hechos con IA y un día de grabación, baja a 30 minutos por video."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuántas horas al mes le tomaba improvisando?",
+      "ops": [
+       "20 horas",
+       "12 horas",
+       "75 horas"
+      ],
+      "correcta": 0,
+      "explica": "16 × 75 ÷ 60 = 20 horas."
+     },
+     {
+      "p": "¿Cuántas horas libera con el lote?",
+      "ops": [
+       "8 horas",
+       "12 horas",
+       "20 horas"
+      ],
+      "correcta": 1,
+      "explica": "En lote son 16 × 30 ÷ 60 = 8 horas; libera 20 − 8 = 12."
+     },
+     {
+      "p": "Las recetas que la IA propone para el calendario…",
+      "ops": [
+       "Se publican sin probarlas",
+       "Se prueban en su cocina antes de grabar",
+       "Se copian de otro canal"
+      ],
+      "correcta": 1,
+      "explica": "Lo que se enseña en cámara tiene que funcionar de verdad."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo organiza su semana",
+    "malTitulo": "Improvisando",
+    "mal": "«Cada día pienso, grabo, edito y publico un video.»",
+    "bienTitulo": "Por lotes",
+    "bien": "«Lunes guiones del mes con IA y revisados; martes grabo todo; miércoles edito y reviso subtítulos; jueves programo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus minutos reales",
+    "pregunta": "Mide cuánto te toma hoy una pieza de principio a fin y escribe cuánto crees que tardarías en lote. ¿Qué día harías cada tarea?",
+    "ayuda": "Hoy tardo… / En lote… / Lunes… martes…"
+   }
+  ],
+  "c-ia-diseno-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un diseñador independiente de Querétaro cobra $6,000 al mes a una inmobiliaria. Calcula 10 horas a $300 por hora y $800 de licencias. Su cotización no dice cuántas revisiones incluye, y este mes el cliente pidió 4 rondas extra de unas 2 horas cada una."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál era su margen previsto?",
+      "ops": [
+       "$2,200",
+       "$3,000",
+       "$5,200"
+      ],
+      "correcta": 0,
+      "explica": "6,000 − (10 × 300) − 800 = $2,200."
+     },
+     {
+      "p": "Con las 8 horas extra de revisiones, su margen queda en…",
+      "ops": [
+       "$2,200",
+       "−$200",
+       "$1,400"
+      ],
+      "correcta": 1,
+      "explica": "8 × 300 = $2,400 extra de su tiempo: 2,200 − 2,400 = −$200. Perdió dinero."
+     },
+     {
+      "p": "Para el próximo mes, lo más útil es…",
+      "ops": [
+       "Cobrar por hora",
+       "Dejar de aceptar revisiones",
+       "Definir 2 rondas por escrito y cotizar las extra"
+      ],
+      "correcta": 2,
+      "explica": "El límite por escrito protege el margen y ordena al cliente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cláusula de revisiones",
+    "malTitulo": "Sin límite",
+    "mal": "«Incluye los cambios que necesites.»",
+    "bienTitulo": "Con límite",
+    "bien": "«Incluye 2 rondas de revisión por pieza, con comentarios en un solo mensaje. Cada ronda adicional se cotiza en $600.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu margen real",
+    "pregunta": "Toma tu último proyecto y calcula su margen real contando las horas de revisiones. ¿Qué cambias en tu siguiente cotización?",
+    "ayuda": "Cobré… / Horas reales… / Licencias… / Margen… / Cambio…"
+   }
+  ],
+  "c-ia-diseno-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una boutique de ropa de San Luis Potosí aprobó un brief de 6 preguntas. Al ver la primera propuesta respondió: «No me convence, hazlo más moderno». No hay referencias visuales ni quedó claro quién aprueba: opinan la dueña, su hija y la encargada."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Al brief le faltó…",
+      "ops": [
+       "Referencias visuales y quién aprueba",
+       "Más colores",
+       "El precio de la ropa"
+      ],
+      "correcta": 0,
+      "explica": "Sin referencias ni una persona que decide, los comentarios se vuelven infinitos."
+     },
+     {
+      "p": "Ante «hazlo más moderno» respondes…",
+      "ops": [
+       "Haciendo 10 versiones nuevas",
+       "Con preguntas concretas y 2 o 3 referencias para que elija",
+       "Ignorando el comentario"
+      ],
+      "correcta": 1,
+      "explica": "Convertir una opinión vaga en decisiones concretas ahorra rondas."
+     },
+     {
+      "p": "Las referencias que te mande el cliente…",
+      "ops": [
+       "Se copian tal cual",
+       "Se usan para entender lo que le gusta, sin reproducir marcas ni obras ajenas",
+       "Se generan con IA idénticas"
+      ],
+      "correcta": 1,
+      "explica": "Una referencia orienta; no es una pieza para calcar."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta al comentario vago",
+    "malTitulo": "A ciegas",
+    "mal": "«Va, te mando otra versión más moderna.»",
+    "bienTitulo": "Dirigida",
+    "bien": "«Para acertar: ¿moderno es menos texto, colores más neutros o tipografía más delgada? Te mando 3 referencias; dime cuál se acerca y quién da la aprobación final.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus preguntas del brief",
+    "pregunta": "Escribe las 3 preguntas que vas a agregar a tu brief para evitar comentarios vagos.",
+    "ayuda": "1… 2… 3…"
+   }
+  ],
+  "c-ia-diseno-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una cafetería de especialidad en Xalapa cumple su primer mes contigo. Las publicaciones con fotos reales de su barra tuvieron el doble de guardados que las ilustraciones generadas, un video con subtítulos sin revisar tenía mal el horario y la dueña quiere que el mes 2 incluya una ilustración de su local «como las de» un ilustrador famoso."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Para el mes 2, las fotos reales de la barra…",
+      "ops": [
+       "Se reducen, las ilustraciones son más rápidas",
+       "Se mantienen y se aumentan: funcionaron mejor",
+       "Se sustituyen por imágenes generadas parecidas"
+      ],
+      "correcta": 1,
+      "explica": "Los datos del mes 1 deciden el mes 2."
+     },
+     {
+      "p": "El horario mal escrito en el subtítulo…",
+      "ops": [
+       "Se corrige y se agrega a tu lista de revisión",
+       "No importa, ya pasó",
+       "Se deja en el video"
+      ],
+      "correcta": 0,
+      "explica": "Un dato de contacto mal publicado cuesta clientes."
+     },
+     {
+      "p": "La ilustración «como las de» ese ilustrador…",
+      "ops": [
+       "Se hace igual",
+       "Se hace sin decirle a nadie",
+       "Se propone un estilo propio o se contrata a un ilustrador que acepte el encargo"
+      ],
+      "correcta": 2,
+      "explica": "No se imita a un artista vivo; se crea un estilo propio o se trabaja con alguien que lo haga con su autoría."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Propuesta para el mes 2",
+    "malTitulo": "Sin datos",
+    "mal": "«Seguimos igual y agregamos la ilustración como la de ese ilustrador.»",
+    "bienTitulo": "Con datos",
+    "bien": "«Más fotos reales de la barra, revisión de datos en subtítulos y una ilustración con estilo propio del café.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu reporte del mes",
+    "pregunta": "Escribe 3 aprendizajes del último mes con un cliente (o tu marca) y la decisión que tomarás en cada uno.",
+    "ayuda": "Aprendí… / Decido…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Encargos avanzados: catálogo, identidad visual y personas reales",
+   "r": "Fotografía de catálogo con IA sin engañar, exploración de identidad visual sin imitar marcas ni artistas, y voces, rostros y avatares con autorización por escrito.",
+   "lecciones": [
+    {
+     "t": "Fotografía de catálogo con IA sin engañar",
+     "obj": "Planear un catálogo con fotos reales del producto y fondos o ambientaciones con IA, sin alterar el producto.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un catálogo de tienda en línea necesita muchas fotos coherentes entre sí. La combinación que funciona es: <b>producto fotografiado de verdad</b>, siempre con la misma luz y el mismo ángulo, y la IA para quitar o cambiar fondos, crear ambientaciones y mantener la consistencia. Lo que nunca cambia la IA es el producto: su color, tamaño, textura y acabados deben ser los reales."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una marca de huaraches de cuero de Jalisco te encarga su catálogo: 40 modelos, 3 fotos por modelo. Propones una sesión real de todo el catálogo y usar la IA solo para fondos, sombras y consistencia entre fotos."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en fotos de producto:</b> cambiar el tono del cuero o de la tela, «alisar» costuras y texturas, agregar herrajes que no existen, deformar logotipos del propio producto y generar pies o manos con dedos de más. Compara cada foto final con el producto en la mano."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Guía de estilo del catálogo",
+       "texto": "Redacta una guía de estilo para el catálogo de [marca]: fondo (color exacto y textura), ángulos obligatorios por producto (frente, lateral, detalle), distancia y altura de cámara, luz, sombra, márgenes y formato de exportación. Agrega una regla: la IA solo puede modificar el fondo y la ambientación; el producto no se altera en color, forma ni textura."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "En la foto retocada, el cuero café se ve rojizo. Tú…",
+         "ops": [
+          "Lo dejas, se ve más atractivo",
+          "Corriges el color comparándolo con el producto real",
+          "Cambias la ficha a «rojizo»"
+         ],
+         "correcta": 1,
+         "explica": "El color en pantalla debe acercarse lo más posible al real."
+        },
+        {
+         "p": "La ambientación generada muestra el huarache en una playa famosa con el logotipo de un hotel…",
+         "ops": [
+          "Se rehace sin logotipos ni lugares identificables de terceros",
+          "Se usa, es solo fondo",
+          "Se usa si el logotipo es pequeño"
+         ],
+         "correcta": 0,
+         "explica": "Marcas ajenas en la imagen pueden causar problemas a tu cliente."
+        },
+        {
+         "p": "Antes de entregar, confirmas que tu plan de la herramienta de fondos…",
+         "ops": [
+          "Es el más caro",
+          "Tiene muchas funciones",
+          "Permite uso comercial de las imágenes"
+         ],
+         "correcta": 2,
+         "explica": "Sin esa revisión, tu cliente podría no tener derecho a usar su catálogo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu regla de catálogo",
+       "pregunta": "Escribe qué parte de una foto de producto sí haces con IA y cuál siempre es real, y cómo lo verificas antes de entregar.",
+       "ayuda": "Con IA: … / Siempre real: … / Verifico…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Producto real; fondo, sombras y consistencia con IA.",
+        "Compara cada foto final con el producto en la mano.",
+        "Sin marcas ajenas y con licencia de uso comercial revisada."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Identidad visual y logotipos: explorar sin imitar",
+     "obj": "Usar la IA para explorar direcciones visuales de una marca y llegar a un logotipo original, vectorizado y revisado antes de su registro.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La IA es útil para explorar: generar muchas direcciones de color, forma y tipografía en poco tiempo para platicar con el cliente. Pero un logotipo final debe ser <b>original, simple, vectorial y revisado</b>. Una imagen generada rara vez es un vector limpio, puede parecerse a marcas existentes y sus derechos dependen de la herramienta. Por eso la IA explora y tú diseñas la versión final. Si el cliente quiere registrar su marca, que consulte los requisitos vigentes en el sitio del IMPI."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> un taller de bicicletas de Oaxaca quiere logotipo nuevo. Te manda 3 logotipos de marcas deportivas famosas y dice: «algo así, pero con una bici»."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Las 3 marcas famosas de referencia sirven para…",
+         "ops": [
+          "Copiar su forma con una bici",
+          "Entender qué le gusta (simpleza, dinamismo) y buscar una forma propia",
+          "Generar con IA algo idéntico"
+         ],
+         "correcta": 1,
+         "explica": "Una referencia orienta el gusto; no se reproduce."
+        },
+        {
+         "p": "Una propuesta generada por IA le encanta al cliente. Antes de entregarla…",
+         "ops": [
+          "Buscas parecidos con marcas existentes y la rediseñas en vector",
+          "La entregas en PNG",
+          "La registras tú"
+         ],
+         "correcta": 0,
+         "explica": "Revisión de parecidos y versión vectorial limpia son parte del trabajo."
+        },
+        {
+         "p": "El registro de la marca ante el IMPI…",
+         "ops": [
+          "Lo garantiza la IA",
+          "Se consulta con requisitos vigentes del IMPI y, si hace falta, con un especialista",
+          "No existe en México"
+         ],
+         "correcta": 1,
+         "explica": "El registro tiene requisitos y costos que se verifican en la fuente oficial."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en identidad visual:</b> producir símbolos parecidos a marcas conocidas, letras deformes en el nombre, archivos que no se pueden escalar y tipografías que parecen gratuitas pero no lo son. Revisa la licencia de cada tipografía que uses."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Exploración de identidad sin imitar",
+       "texto": "Para [negocio] en [ciudad], cuyo cliente es [descripción] y cuya personalidad es [3 adjetivos], propón 5 direcciones visuales distintas. Para cada una: concepto en una frase, forma del símbolo, paleta con 3 colores, tipo de letra (familia genérica: serif, sans, manuscrita) y dónde se vería mejor. No uses ni imites marcas, personajes ni estilos de artistas vivos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu proceso de logotipo",
+       "pregunta": "Escribe los pasos que seguirías con un cliente desde la exploración con IA hasta entregar el logotipo final, incluyendo la revisión de parecidos y de licencias.",
+       "ayuda": "1. Exploro… 2. Elegimos… 3. Dibujo… 4. Reviso…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA explora; el logotipo final es original y vectorial.",
+        "Referencias para entender gustos, no para copiar.",
+        "Revisa parecidos, licencias de tipografía y requisitos del IMPI."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Voces, rostros y avatares: consentimiento por escrito",
+     "obj": "Usar voces sintéticas, rostros y avatares en piezas comerciales solo con autorización por escrito y licencias revisadas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Las herramientas de IA ya permiten clonar una voz, animar una foto o crear un presentador virtual. En trabajos comerciales, la regla es simple: <b>si se reconoce a una persona real, necesitas su autorización por escrito</b>, con qué uso, en qué canales y por cuánto tiempo. Si no hay persona real, usa voces y avatares genéricos cuya licencia de uso comercial hayas revisado. Y si el cliente pide que el público sepa que es IA, o la plataforma lo exige, se indica."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una agencia inmobiliaria de Mérida quiere que su asesora estrella «presente» 20 videos de casas sin grabarlos: clonar su voz y animar su foto. La asesora trabaja por comisión y podría dejar la agencia en unos meses."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Para clonar su voz y animar su foto necesitas…",
+         "ops": [
+          "Que la agencia lo apruebe",
+          "Autorización por escrito de la asesora, con usos, canales y plazo",
+          "Nada, trabaja ahí"
+         ],
+         "correcta": 1,
+         "explica": "La voz y la imagen son de la persona, no de la empresa."
+        },
+        {
+         "p": "Si la asesora deja la agencia…",
+         "ops": [
+          "Los videos siguen para siempre",
+          "Se aplica lo pactado: el acuerdo debe decir qué pasa con los videos al terminar",
+          "Se le cambia la cara"
+         ],
+         "correcta": 1,
+         "explica": "El plazo y la terminación se acuerdan desde el inicio."
+        },
+        {
+         "p": "Si la asesora no acepta…",
+         "ops": [
+          "Se usa una voz y un avatar genéricos con licencia comercial revisada",
+          "Se clona de todos modos",
+          "Se usa la voz de otra compañera sin decirle"
+         ],
+         "correcta": 0,
+         "explica": "Sin autorización no hay uso; la alternativa genérica funciona."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Autorización de uso de voz e imagen",
+       "texto": "AUTORIZACIÓN DE USO DE VOZ E IMAGEN CON HERRAMIENTAS DE IA\nYo, [nombre], autorizo a [empresa] a usar mi [voz / imagen / ambas] para crear con herramientas de inteligencia artificial: [tipo de piezas].\nCanales: [ ]\nVigencia: del [ ] al [ ]\nQué pasa al terminar la vigencia o la relación laboral: [ ]\nLo que no se permite: [ ]\nRevisión previa: [sí / no]\nContraprestación, si aplica: [ ]\nFirma y fecha: [ ]",
+       "nota": "Formato de referencia. Para un uso importante, pide revisión a un abogado."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu política de personas reales",
+       "pregunta": "Escribe 4 reglas que vas a seguir cuando un cliente te pida usar la voz o el rostro de una persona real con IA.",
+       "ayuda": "1. Autorización por escrito… 2. … 3. … 4. …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Persona reconocible = autorización por escrito.",
+        "Usos, canales, plazo y terminación desde el inicio.",
+        "Sin permiso: voces y avatares genéricos con licencia comercial revisada."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "En una foto de catálogo retocada con IA, el producto…",
+     "ops": [
+      "Puede mejorarse",
+      "Se ve exactamente como es: color, forma y textura reales",
+      "Puede cambiar de color",
+      "Puede ser generado"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un cliente te manda logotipos de marcas famosas como referencia. Tú…",
+     "ops": [
+      "Copias su forma",
+      "Las usas para entender gustos y diseñas algo original",
+      "Generas algo idéntico con IA",
+      "Rechazas el proyecto"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un logotipo final debe ser…",
+     "ops": [
+      "Un PNG generado",
+      "Original, simple, vectorial y revisado",
+      "Parecido a una marca conocida",
+      "Hecho solo por la IA"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Los requisitos para registrar una marca en México se consultan en…",
+     "ops": [
+      "La IA",
+      "Un foro",
+      "El sitio oficial del IMPI",
+      "Ningún lado"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Clonar la voz de una persona real para un anuncio requiere…",
+     "ops": [
+      "Nada si trabaja contigo",
+      "Que se parezca poco",
+      "Su autorización por escrito con usos, canales y plazo",
+      "Solo avisarle"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si no hay autorización de la persona…",
+     "ops": [
+      "Se usa voz o avatar genérico con licencia comercial revisada",
+      "Se clona de todos modos",
+      "Se usa otra persona sin avisar",
+      "Se cambia un poco la voz"
+     ],
+     "correcta": 0
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día real en un estudio de diseño con errores plantados de la IA para detectar, y tu kit personal de diseño con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un miércoles en un estudio de diseño",
+     "obj": "Detectar en un día simulado los errores típicos al crear con IA: imitación de marcas y estilos de artistas vivos, licencias sin revisar, datos mal transcritos y personas reales sin autorización.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Trabajas en un estudio de diseño pequeño en Guadalajara con cuatro clientes activos. Usas herramientas de IA todo el día. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de entregar."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 9:00 a. m. Logotipo para una panadería.</b> La propuesta favorita del cliente salió de una herramienta de IA. Al revisarla, el símbolo es casi idéntico al de una cadena de cafeterías internacional, y el archivo es una imagen que se pixela al ampliarla."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "¿Qué le dices al cliente y cómo llegas a un logotipo que sí puedas entregar?",
+       "ayuda": "Le explico… / Rediseño… / Entrego en…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:00 a. m. Campaña para una marca de café.</b> Un compañero generó 12 ilustraciones con el prompt «al estilo de» un ilustrador japonés vivo muy famoso, usando la cuenta gratuita de una herramienta cuyos términos nadie ha leído. El cliente ya las aprobó."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "Explica los dos problemas de estas piezas y qué propones al cliente aunque ya las haya aprobado.",
+       "ayuda": "Problema 1… / Problema 2… / Propongo…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 2:00 p. m. Video para una agencia de autos seminuevos.</b> Los subtítulos automáticos dicen «enganche desde $9,900» cuando el guion dice $19,900, y la locución usa una voz sintética que suena igual a la de un actor de doblaje conocido."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "¿Qué corriges antes de publicar y con qué voz sustituyes la locución?",
+       "ayuda": "Corrijo… / La voz será…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Catálogo de joyería.</b> Para ahorrar la sesión, la IA generó los anillos «a partir de» fotos del celular: se ven más brillantes y con piedras más grandes que las reales. Además, para el brief, pegaste en un asistente público el contrato del cliente con precios de sus proveedores."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Cómo rehaces el catálogo y qué cambias en tu forma de trabajar con información confidencial del cliente?",
+       "ayuda": "El catálogo… / Con la información del cliente…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 1, el logotipo casi idéntico al de otra marca…",
+         "ops": [
+          "Se entrega si al cliente le gusta",
+          "Se rediseña original y en vector, tras revisar parecidos",
+          "Se cambia solo el color"
+         ],
+         "correcta": 1,
+         "explica": "El parecido con otra marca es un riesgo para el cliente, aunque le guste."
+        },
+        {
+         "p": "En la escena 2, lo correcto es…",
+         "ops": [
+          "Proponer rehacerlas con un estilo propio descrito y en una herramienta con licencia comercial revisada",
+          "Entregarlas porque ya se aprobaron",
+          "Quitar solo la firma"
+         ],
+         "correcta": 0,
+         "explica": "La aprobación del cliente no elimina los riesgos."
+        },
+        {
+         "p": "En la escena 4, los anillos generados…",
+         "ops": [
+          "Se usan, se ven mejor",
+          "Se usan con una nota pequeña",
+          "Se sustituyen por fotos reales; la IA solo para fondos y consistencia"
+         ],
+         "correcta": 2,
+         "explica": "Un producto que se ve distinto al real engaña al comprador."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Nada de marcas, personajes ni estilos de artistas vivos.",
+        "Licencia de uso comercial revisada por herramienta y plan.",
+        "Datos revisados, personas con autorización y producto real."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de diseño con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos y derechos, registro de licencias, lista de verificación y una pieza real lista para entregar.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso con un kit que puedas usar con tu próximo cliente. Cada reflexión es una pieza; al final las juntas en un índice. Trabaja con un proyecto real (tuyo o de un cliente) y con herramientas cuyos términos hayas leído."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 1: tu biblioteca de prompts",
+       "pregunta": "Escribe tus 5 prompts base (imagen con estructura, adaptación a formatos, guion de video, locución y calendario), cada uno con tu paleta y tu estilo descrito sin nombrar artistas ni marcas.",
+       "ayuda": "1. Imagen: … 2. Formatos: … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 2: tu política de datos y derechos",
+       "pregunta": "Escribe 6 reglas: qué información de clientes nunca pegas en herramientas públicas, qué nunca imitas (marcas, personajes, estilos de artistas vivos, voces y rostros reales) y cómo registras la licencia de uso comercial de cada herramienta.",
+       "ayuda": "Nunca pego… / Nunca imito… / Registro de licencias: herramienta, plan, fecha de revisión…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 3: tu lista de verificación antes de entregar",
+       "pregunta": "Escribe tu lista de 8 puntos para revisar cualquier pieza hecha con IA antes de entregarla.",
+       "ayuda": "1. Manos, ojos y texto. 2. Sin marcas ajenas. 3. Producto real. 4. Licencia revisada…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 4: tu entregable real",
+       "pregunta": "Describe una pieza real que vas a entregar: prompt usado, qué hiciste tú y qué la IA, formatos, revisión aplicada y cotización por paquete.",
+       "ayuda": "Pieza… / Prompt… / Yo hice… / La IA hizo… / Precio…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE DISEÑO Y CONTENIDO CON IA — [tu nombre o estudio]\nActualizado: [fecha]\n\n1. Estilo propio descrito (técnica, trazo, paleta): [ ]\n2. Biblioteca de prompts: [ ]\n3. Política de datos y derechos: [ ]\n4. Registro de herramientas: herramienta | plan | uso comercial sí/no | fecha de revisión\n   [ ]\n5. Formato de autorización de voz e imagen: [ ]\n6. Lista de verificación antes de entregar: [ ]\n7. Cotización por paquete y cláusula de revisiones: [ ]\n8. Pieza modelo: [ ]",
+       "nota": "Cópiala, llénala y revisa el registro de licencias cada vez que cambies de plan o de herramienta."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit: prompts, política de datos y derechos, registro de licencias y lista de verificación.",
+        "La IA hace las horas mecánicas; tu criterio y tu palabra deciden.",
+        "Nada de imitar marcas, personajes ni artistas vivos."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un logotipo generado casi idéntico al de otra marca…",
+     "ops": [
+      "Se entrega si al cliente le gusta",
+      "Se rediseña original y en vector",
+      "Se cambia de color",
+      "Se registra rápido"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Piezas «al estilo de» un ilustrador vivo ya aprobadas por el cliente…",
+     "ops": [
+      "Se entregan",
+      "Se entregan sin firma",
+      "Se propone rehacerlas con estilo propio",
+      "Se venden a otro cliente"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Antes de entregar piezas de una herramienta de IA revisas…",
+     "ops": [
+      "Que su licencia de uso comercial cubra tu plan",
+      "El número de filtros",
+      "Su popularidad",
+      "Nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una voz sintética que suena igual a un actor conocido, sin su permiso…",
+     "ops": [
+      "Se usa",
+      "Se usa con otro nombre",
+      "Se usa en redes pequeñas",
+      "Se sustituye por una voz genérica con licencia o una persona contratada"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Pegar el contrato del cliente con precios de proveedores en una IA pública…",
+     "ops": [
+      "No se hace",
+      "Está bien para el brief",
+      "Está bien si borras el nombre",
+      "Está bien de noche"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad de una pieza entregada con ayuda de IA es…",
+     "ops": [
+      "De la herramienta",
+      "Del cliente",
+      "Tuya",
+      "De nadie"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

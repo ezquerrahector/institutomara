@@ -1,0 +1,249 @@
+{
+ "id": "c-ia-directivos",
+ "horas": 10,
+ "aprender": [
+  "Resolver con IA situaciones directivas avanzadas (crisis, estrategia y análisis competitivo, gobierno de la IA a escala) detectando los errores y sesgos típicos de la IA en cada una.",
+  "Construir tu kit directivo personal: biblioteca de prompts, reglas de datos para tu equipo, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  { "p": "Un premortem sirve para…", "op": "Calcular el presupuesto final del proyecto" },
+  { "p": "Incluir «no hacer nada» como opción sirve para…", "op": "Justificar posponer la decisión indefinidamente" },
+  { "p": "La responsabilidad de la decisión es…", "op": "Compartida en partes iguales con la herramienta" },
+  { "p": "Tres cotizaciones con precios muy distintos: lo primero que revisas es…", "op": "Cuál proveedor respondió más rápido" },
+  { "p": "Antes de una iniciativa que cambia el trabajo de varias áreas conviene…", "op": "Lanzarla primero y ajustar según las quejas" },
+  { "p": "El ensayo de negociación con IA sirve para…", "op": "Conocer la oferta real que hará la contraparte" },
+  { "p": "«Algunas iniciativas serán reprogramadas en función de prioridades» es…", "op": "Transparente, porque no oculta información" },
+  { "p": "Al comunicar una mala noticia, ¿dices lo que aún no sabes?", "op": "No, digo lo que probablemente pasará" },
+  { "p": "Minutas de juntas internas con IA", "op": "Impacto bajo, esfuerzo alto" },
+  { "p": "Chatbot que responde a clientes sin revisión desde el día 1", "op": "Impacto bajo: descartar para siempre" },
+  { "p": "La política de IA la revisan…", "op": "Solo el área que más usa la IA" },
+  { "p": "Decidir automáticamente a quién despedir con IA está…", "op": "En amarillo, con revisión posterior" }
+ ],
+ "extras": {
+  "c-ia-directivos-m1-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> Laura dirige operaciones en una planta de autopartes en Saltillo. Debe decidir si abre un segundo turno para atender un nuevo contrato. Le pidió a un asistente de IA «ayúdame a decidir» y en la primera respuesta la IA recomendó abrirlo, con argumentos muy convincentes." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Cuál es el riesgo de que la IA recomiende en la primera respuesta?", "ops": ["Que la respuesta sea muy corta", "Que Laura ancle su análisis en esa recomendación y deje de ver opciones", "Que la IA se equivoque de ortografía"], "correcta": 1, "explica": "El anclaje es un sesgo real: la primera opción que ves pesa más. Por eso el memo pide opciones y criterios antes de la recomendación." },
+    { "p": "¿Qué opción debe estar sí o sí en el memo?", "ops": ["No abrir el turno y negociar plazos con el cliente, como línea base", "Abrir tres turnos", "Cerrar la planta"], "correcta": 0, "explica": "«No hacer nada» o su variante realista es la línea base contra la que se comparan las demás." },
+    { "p": "La IA estima que «el segundo turno se paga en 8 meses». ¿Qué haces con esa cifra?", "ops": ["La presento al consejo", "La redondeo a 1 año", "La trato como hipótesis y pido a finanzas el cálculo con datos reales"], "correcta": 2, "explica": "La IA no tiene tus costos. Toda cifra que sostenga la decisión se calcula con datos de la empresa." }
+   ]},
+   { "tipo": "comparar", "titulo": "Pedir ayuda para decidir", "malTitulo": "Invita a anclarte", "mal": "«¿Debo abrir un segundo turno? Dame tu recomendación.»", "bienTitulo": "Estructura primero", "bien": "«Estoy decidiendo cómo atender un contrato que aumenta 35% la demanda. Dame 4 opciones incluida no abrir turno, criterios con peso sugerido, riesgos de cada una y qué datos me faltan. No recomiendes todavía.»" },
+   { "tipo": "reflexion", "rotulo": "Tu memo en 5 renglones", "pregunta": "Toma la decisión que escribiste en esta lección y redacta el memo en 5 renglones: pregunta, 4 opciones, 3 criterios, el mayor riesgo y el dato que te falta.", "ayuda": "Pregunta: ¿Debemos…? Opciones: … Criterios: … Riesgo principal: … Me falta: …" }
+  ],
+  "c-ia-directivos-m1-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> el director comercial de una cadena de tiendas de mascotas en Querétaro recibió un estudio de mercado de 60 páginas (autorizado para usarse con la herramienta de la empresa). El resumen de la IA dice: «El mercado crece 12% anual (p. 34)». Al abrir la página 34, el 12% corresponde solo al segmento de alimento premium." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué te enseña este error?", "ops": ["Que las citas de página sirven para detectar exactamente este tipo de error", "Que no hay que pedir citas", "Que la IA inventa todo"], "correcta": 0, "explica": "La cita no garantiza que el dato esté bien interpretado, pero te permite verificarlo en segundos." },
+    { "p": "¿Qué datos del resumen verificas siempre en el original?", "ops": ["Ninguno si hay citas", "Las cifras y afirmaciones que usarás para decidir o presentar", "Solo los títulos"], "correcta": 1, "explica": "No necesitas verificar todo: sí todo lo que sostiene una decisión o llega a otra persona." },
+    { "p": "¿Cómo mejoras el prompt para la próxima vez?", "ops": ["Pidiendo un resumen más corto", "Pidiendo que no cite", "Pidiendo que indique a qué segmento, periodo y base corresponde cada cifra"], "correcta": 2, "explica": "Segmento, periodo y base son las tres fuentes más comunes de confusión en cifras de mercado." }
+   ]},
+   { "tipo": "comparar", "titulo": "Una cifra en tu presentación", "malTitulo": "Sin contexto", "mal": "«El mercado crece 12% anual.»", "bienTitulo": "Con contexto verificado", "bien": "«El segmento de alimento premium crece 12% anual (estudio, p. 34); el mercado total crece menos. Nuestra oportunidad está en ese segmento.»" },
+   { "tipo": "reflexion", "rotulo": "Tu documento pendiente", "pregunta": "Elige un documento largo que tengas pendiente de leer. Escribe el prompt de resumen que usarás, incluyendo qué cifras pedirás con segmento, periodo y página.", "ayuda": "Resume… Para cada cifra indica segmento, periodo, base y página…" }
+  ],
+  "c-ia-directivos-m1-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> vas a implementar un nuevo sistema de gestión (ERP) en una empresa de 300 personas en Aguascalientes. La IA te entregó un mapa de involucrados: dirección, finanzas, sistemas y ventas. No incluyó al almacén, que será el área más afectada, ni a los supervisores de turno." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Por qué la IA omitió al almacén?", "ops": ["Porque el almacén no importa", "Porque es un error del sistema", "Porque solo trabaja con los roles que le describes; no conoce tu operación"], "correcta": 2, "explica": "El mapa es tan bueno como la lista que le das. Tú aportas el conocimiento de la organización." },
+    { "p": "¿Qué preguntas agregas para cada involucrado?", "ops": ["Qué gana, qué pierde, qué le preocupa y qué objeción tendrá", "Cuánto gana de sueldo", "Qué opina del director"], "correcta": 0, "explica": "Es la estructura del mapa de stakeholders; los sueldos y opiniones personales no aportan y exponen datos." },
+    { "p": "Los supervisores temen perder control con el nuevo sistema. ¿Cuál es el mejor paso?", "ops": ["Anunciarles la fecha de arranque", "Hablar con ellos antes, escuchar sus objeciones e involucrarlos en las pruebas", "Pedirle a la IA que les escriba un correo motivador"], "correcta": 1, "explica": "La IA te ayuda a preparar la conversación; la conversación la tienes tú." }
+   ]},
+   { "tipo": "relacionar", "rotulo": "Involucrado y lo que más le preocupa", "pares": [["Almacén", "Más captura y errores en las primeras semanas"], ["Supervisores de turno", "Perder control y visibilidad sobre su equipo"], ["Finanzas", "Cierre mensual durante la migración"], ["Ventas", "Retrasos en pedidos y facturación a clientes"]] },
+   { "tipo": "reflexion", "rotulo": "Tu involucrado olvidado", "pregunta": "En tu iniciativa más importante, ¿qué área o grupo podría estar olvidado? Escribe qué gana, qué pierde y cómo lo involucrarías.", "ayuda": "Grupo: … Gana: … Pierde: … Lo involucro con…" }
+  ],
+  "c-ia-directivos-m2-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> la dirección de una aseguradora en la Ciudad de México decidió que el equipo regrese a la oficina 4 días por semana. Pediste a la IA el mensaje y te propone: «En aras de fortalecer nuestra cultura colaborativa, hemos decidido optimizar nuestro esquema de trabajo híbrido»." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué problema tiene la frase de la IA?", "ops": ["Ninguno, es formal", "Esconde el cambio real detrás de palabras vagas", "Es muy corta"], "correcta": 1, "explica": "«Optimizar el esquema» no dice qué cambia. El equipo lo leerá como evasión." },
+    { "p": "¿Qué debe decir el mensaje en las primeras dos líneas?", "ops": ["Qué cambia, desde cuándo y por qué", "La historia de la empresa", "Un agradecimiento general"], "correcta": 0, "explica": "Lo primero que busca la gente es qué le pasa a ella. Dilo directo." },
+    { "p": "Varias personas se mudaron lejos durante el trabajo remoto. ¿Qué incluyes?", "ops": ["Nada, es su problema", "Una promesa de excepciones para todos", "Reconocer el impacto y explicar cómo se revisarán casos particulares"], "correcta": 2, "explica": "Reconocer el impacto sin prometer lo que no decidiste es la base de un mensaje honesto." }
+   ]},
+   { "tipo": "comparar", "titulo": "Anunciar el regreso a oficina", "malTitulo": "Evasivo", "mal": "«En aras de fortalecer nuestra cultura colaborativa, hemos decidido optimizar nuestro esquema de trabajo híbrido.»", "bienTitulo": "Directo", "bien": "«A partir del 3 de noviembre trabajaremos en oficina de lunes a jueves. Lo decidimos porque los proyectos con clientes se están retrasando. Sé que para algunos implica traslados largos: cada caso se revisa con su jefe antes del 20 de octubre.»" },
+   { "tipo": "reflexion", "rotulo": "Tu anuncio difícil", "pregunta": "Escribe las primeras 3 líneas de un anuncio difícil que tengas pendiente: qué cambia, por qué y cómo reconoces el impacto.", "ayuda": "A partir de… Lo decidimos porque… Sé que…" }
+  ],
+  "c-ia-directivos-m2-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> la revisión mensual de resultados de una constructora en Mérida dura 2 horas y rara vez termina con decisiones. Grabaron la última junta (con aviso a los asistentes) y la IA generó la minuta. Entre los acuerdos aparece «Compras renegociará el contrato de acero antes del viernes»; nadie de Compras recuerda haber aceptado eso." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué haces con ese acuerdo?", "ops": ["Lo dejo, la IA escuchó la grabación", "Lo borro sin decir nada", "Lo valido con los asistentes antes de enviar la minuta"], "correcta": 2, "explica": "La IA puede convertir una sugerencia en un compromiso. Los acuerdos se confirman con quien los asume." },
+    { "p": "¿Qué cambio haría más efectiva la junta mensual?", "ops": ["Agenda con decisiones a tomar, material previo de 1 página y cierre con responsables y fechas", "Hacerla más larga", "Quitar la agenda para que fluya"], "correcta": 0, "explica": "Es la estructura de la junta con decisión de esta lección." },
+    { "p": "Para grabar y transcribir juntas con IA, ¿qué es indispensable?", "ops": ["Que nadie se entere", "Avisar a los asistentes y usar una herramienta autorizada por la empresa", "Usar cualquier aplicación gratuita"], "correcta": 1, "explica": "Grabar implica datos personales y posibles temas confidenciales: aviso y herramienta autorizada." }
+   ]},
+   { "tipo": "relacionar", "rotulo": "Elemento de la minuta y cómo se valida", "pares": [["Acuerdos", "Confirmados por quien los asume"], ["Responsables", "Nombre y área, aceptados en la junta"], ["Fechas", "Acordadas explícitamente, no sugeridas"], ["Pendientes sin dueño", "Se asignan antes de cerrar la junta"]] },
+   { "tipo": "reflexion", "rotulo": "Tu junta más larga", "pregunta": "Elige la junta recurrente que más tiempo consume en tu agenda. Rediséñala: objetivo, duración, material previo y cómo cerrará con decisiones.", "ayuda": "Junta: … Objetivo: … Duración: … Material previo: … Cierre: …" }
+  ],
+  "c-ia-directivos-m2-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> una gerente de tu equipo pegó en un asistente de IA gratuito las evaluaciones de desempeño de sus 6 colaboradores, con nombres, para que le redactara la retroalimentación. Uno de los textos dice: «Juan tiene una personalidad conflictiva que afecta al equipo»." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Cuál es el primer problema?", "ops": ["Que el texto es muy largo", "Que subió evaluaciones con nombres a una herramienta no autorizada", "Que no usó el modelo 70-20-10"], "correcta": 1, "explica": "Es un incidente de datos de personal. Se atiende según la política y se refuerza la regla con el equipo." },
+    { "p": "¿Qué problema tiene la frase sobre Juan?", "ops": ["Etiqueta la personalidad en lugar de describir conductas observables", "Ninguno, es honesta", "Es demasiado suave"], "correcta": 0, "explica": "La retroalimentación útil describe hechos: qué pasó, cuándo y qué efecto tuvo. Las etiquetas generan defensa." },
+    { "p": "¿Cómo debió pedir ayuda la gerente?", "ops": ["Con nombres para que sea personalizado", "Sin pedir ayuda", "Describiendo conductas sin datos identificables y pidiendo un borrador que ella ajusta"], "correcta": 2, "explica": "Roles y conductas, no personas identificables: la IA ayuda con la estructura y el tono." }
+   ]},
+   { "tipo": "comparar", "titulo": "Retroalimentación", "malTitulo": "Etiqueta", "mal": "«Tienes una personalidad conflictiva que afecta al equipo.»", "bienTitulo": "Conducta observable", "bien": "«En las últimas tres juntas de proyecto interrumpiste a tus compañeros al presentar. El efecto es que dejan de proponer ideas. ¿Qué crees que pasa en esos momentos y qué podemos acordar?»" },
+   { "tipo": "reflexion", "rotulo": "Tu retroalimentación pendiente", "pregunta": "Escribe una retroalimentación que tengas pendiente usando conducta observable, efecto y pregunta abierta, sin etiquetas.", "ayuda": "En… (situación) hiciste… (conducta). El efecto fue… ¿Qué…?" }
+  ],
+  "c-ia-directivos-m3-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> el director de una empresa de servicios de limpieza en Monterrey pidió a la IA casos de uso para su área. La tabla que recibió dice que la IA «ahorraría 40% del tiempo» en cotizaciones, reportes y reclutamiento, e incluye «filtrar candidatos automáticamente» como victoria rápida." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué haces con el «40% de ahorro»?", "ops": ["Lo presento a dirección", "Lo cambio por 30% por prudencia", "Lo trato como hipótesis y lo mido en un piloto con horas reales"], "correcta": 2, "explica": "La IA no conoce tus procesos. El ahorro se mide, no se supone." },
+    { "p": "«Filtrar candidatos automáticamente» como victoria rápida…", "ops": ["Es un error: decisiones sobre personas son de alto riesgo y van en rojo", "Es correcto: ahorra mucho tiempo", "Es de bajo impacto"], "correcta": 0, "explica": "Puede discriminar sin que lo notes y afecta derechos de las personas. No es victoria rápida." },
+    { "p": "¿Cuál sí es una victoria rápida razonable para esta empresa?", "ops": ["Responder quejas de clientes sin revisión", "Plantillas de cotización y reportes internos revisados por una persona", "Decidir despidos por productividad"], "correcta": 1, "explica": "Bajo riesgo, alto volumen y con revisión humana: el perfil ideal para empezar." }
+   ]},
+   { "tipo": "completar", "rotulo": "Completa", "items": [
+    { "frase": "Las primeras aplicaciones de IA deben ser de alto impacto y bajo ___.", "resp": ["riesgo", "Riesgo"] },
+    { "frase": "El ahorro de tiempo no se supone: se ___ en un piloto.", "resp": ["mide", "Mide"] }
+   ]},
+   { "tipo": "reflexion", "rotulo": "Tu caso de uso en rojo", "pregunta": "Identifica en tu área una tarea que alguien podría querer automatizar con IA y que debería estar en rojo. Escribe por qué y qué alternativa segura propondrías.", "ayuda": "Tarea: … Riesgo: … Alternativa: …" }
+  ],
+  "c-ia-directivos-m3-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> tres semanas después de publicar la política de IA en una empresa de distribución en Toluca, descubres que un vendedor subió la base de clientes (nombres, teléfonos, compras) a una herramienta gratuita para que le escribiera mensajes personalizados. Lo hizo de buena fe." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué haces primero?", "ops": ["Despedirlo de inmediato", "Ignorarlo porque fue de buena fe", "Activar el procedimiento de incidentes con sistemas y jurídico para evaluar el alcance"], "correcta": 2, "explica": "Primero se contiene y se evalúa el incidente con quien sabe. Las consecuencias se definen después, según la política." },
+    { "p": "¿Qué te dice este caso sobre la política?", "ops": ["Que publicarla no basta: hay que capacitar con ejemplos y ofrecer una alternativa autorizada", "Que la política es inútil", "Que hay que prohibir toda la IA"], "correcta": 0, "explica": "El vendedor tenía una necesidad real. Si no hay alternativa autorizada, la gente busca una por su cuenta." },
+    { "p": "¿Cómo comunicas el caso al equipo?", "ops": ["Con nombre del vendedor como ejemplo", "Sin nombres: qué pasó, por qué es riesgoso y qué herramienta usar en su lugar", "No lo comunicas"], "correcta": 1, "explica": "El aprendizaje colectivo sirve más que el castigo público y protege a la persona." }
+   ]},
+   { "tipo": "relacionar", "rotulo": "Situación y semáforo", "pares": [["Resumir un artículo público para el equipo", "Verde"], ["Borrador de correo a un cliente con revisión antes de enviar", "Amarillo"], ["Subir la base de clientes a una herramienta gratuita", "Rojo"], ["Lluvia de ideas para una campaña interna", "Verde, sin datos confidenciales"]] },
+   { "tipo": "reflexion", "rotulo": "Tu alternativa autorizada", "pregunta": "¿Qué necesidad real de tu equipo podría llevar a alguien a usar IA sin autorización? Escribe qué alternativa autorizada le darías y cómo la comunicarías.", "ayuda": "Necesidad: … Alternativa: … La comunico con…" }
+  ],
+  "c-ia-directivos-m3-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> terminaron los 90 días del piloto comercial. Los datos reales: 6 horas ahorradas por persona al mes (no 10), 2 propuestas con errores de precio que se detectaron en revisión, y 9 de 12 personas quieren seguir. La IA te propone la conclusión «el piloto superó las expectativas»." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué haces con la conclusión de la IA?", "ops": ["La uso, suena bien", "La reescribo con los datos reales: menos horas de lo esperado, riesgos detectados y buena adopción", "Omito los errores de precio"], "correcta": 1, "explica": "El consejo confía en ti si presentas los resultados como fueron, incluidos los problemas." },
+    { "p": "Los 2 errores de precio se detectaron en revisión. ¿Qué te dicen?", "ops": ["Que la revisión humana funcionó y debe mantenerse", "Que hay que quitar la revisión", "Que la IA es inútil"], "correcta": 0, "explica": "El control hizo su trabajo. Es un argumento para escalar con reglas, no sin ellas." },
+    { "p": "¿Qué decisión solicitas al consejo?", "ops": ["Detener todo", "Escalar a toda la empresa sin cambios", "Ajustar y escalar gradualmente con revisión obligatoria y nueva medición a 90 días"], "correcta": 2, "explica": "Resultados positivos pero menores a lo esperado, con riesgos controlados: ajustar y escalar con medición." }
+   ]},
+   { "tipo": "comparar", "titulo": "Conclusión del piloto", "malTitulo": "Optimista sin datos", "mal": "«El piloto superó las expectativas y recomendamos llevar la IA a toda la empresa.»", "bienTitulo": "Honesta con datos", "bien": "«Ahorro real: 6 h por persona al mes (meta: 10). La revisión detectó 2 errores de precio antes de enviarse. 9 de 12 quieren seguir. Recomendamos escalar a otras 2 áreas con revisión obligatoria y medir de nuevo en 90 días.»" },
+   { "tipo": "reflexion", "rotulo": "Tu conclusión honesta", "pregunta": "Escribe la conclusión de un proyecto reciente de tu área (con o sin IA) en 4 renglones: meta, resultado real, problema detectado y decisión que solicitas.", "ayuda": "Meta: … Real: … Problema: … Solicito: …" }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones directivas avanzadas",
+   "r": "Gestión de crisis, estrategia y análisis competitivo, y gobierno de la IA a escala: cómo usar la IA en cada situación, qué errores y sesgos comete y cómo detectarlos. Tres lecciones y una evaluación.",
+   "lecciones": [
+    {
+     "t": "Gestión de crisis y comunicación bajo presión",
+     "obj": "usar la IA para organizar las primeras horas de una crisis y preparar comunicados, sin que prometa, admita o invente lo que no corresponde.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Una crisis (un accidente en planta, una falla de producto, un incidente de datos, una publicación viral) exige hacer muchas cosas bien en poco tiempo. La IA es útil para <b>no olvidar pasos</b>, preparar un primer mensaje, anticipar preguntas y ordenar a quién informar. Sus riesgos son específicos: puede <b>prometer lo que no has decidido</b>, <b>aceptar culpas con implicaciones legales</b>, rellenar hechos que aún no conoces o usar un tono que se lee frío. En una crisis, todo comunicado externo pasa por jurídico y por quien la empresa designe como vocero." },
+      { "tipo": "plantilla", "rotulo": "Primeras horas de una crisis", "texto": "Somos una empresa de [giro, tamaño]. Ocurrió [descripción de hechos confirmados, sin datos personales]. Lo que aún no sabemos: [lista]. Ayúdame a preparar: 1) un checklist de las primeras 4 horas (personas afectadas, autoridades, equipo de crisis, registro de hechos), 2) la lista de involucrados a informar en orden de prioridad, 3) un mensaje inicial breve que diga lo que sabemos, lo que estamos haciendo y cuándo volveremos a informar, 4) las 10 preguntas más difíciles que nos harán. No afirmes causas, no prometas compensaciones y no admitas responsabilidades: eso lo decide la dirección con jurídico." },
+      { "tipo": "tabla", "titulo": "Errores comunes de la IA en crisis", "encabezados": ["Error", "Ejemplo", "Qué haces"], "filas": [["Promete de más", "«Todos los afectados serán compensados»", "Solo compromisos aprobados por dirección"], ["Afirma causas", "«La falla se debió a un error humano»", "Causas solo cuando la investigación las confirme"], ["Rellena hechos", "Menciona cifras de afectados que no le diste", "Cada dato del mensaje sale del registro de hechos"], ["Tono corporativo", "«Lamentamos cualquier inconveniente»", "Reconoce a las personas afectadas con claridad"]] },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+       { "p": "Una falla en el sistema de cobro de tu empresa duplicó cargos a clientes. El borrador de la IA dice «reembolsaremos en 24 horas». Nadie lo ha decidido. ¿Qué haces?", "ops": ["Lo dejo, calma a los clientes", "Lo cambio por lo que sí sabes: estamos identificando los cargos y daremos una fecha de reembolso a más tardar mañana", "Quito toda mención del reembolso"], "correcta": 1, "explica": "Un plazo prometido y no cumplido agrava la crisis. Di lo que sabes y cuándo volverás a informar." },
+       { "p": "¿Quién aprueba el comunicado externo?", "ops": ["Dirección con jurídico y el vocero designado", "Quien lo redactó con la IA", "El área de sistemas"], "correcta": 0, "explica": "En una crisis, cada palabra puede tener consecuencias legales y de reputación." },
+       { "p": "¿Para qué te sirve más la IA en las primeras 4 horas?", "ops": ["Para decidir las compensaciones", "Para hablar con los medios", "Para no olvidar pasos, ordenar involucrados y anticipar preguntas"], "correcta": 2, "explica": "Bajo presión se olvidan cosas. Un checklist y una lista de preguntas te dan orden." }
+      ]},
+      { "tipo": "comparar", "titulo": "Mensaje inicial", "malTitulo": "Frío y con promesas", "mal": "«Lamentamos cualquier inconveniente. El problema ya está resuelto y todos serán compensados.»", "bienTitulo": "Claro y responsable", "bien": "«Hoy a las 10 h detectamos cargos duplicados a algunos clientes. Ya detuvimos el proceso y estamos identificando cada caso. Mañana a las 12 h informaremos cómo y cuándo se hará el reembolso. Sabemos que esto afecta tu economía y lo estamos atendiendo como prioridad.»" },
+      { "tipo": "reflexion", "rotulo": "Tu crisis probable", "pregunta": "¿Cuál es la crisis más probable en tu empresa o área? Escribe quién forma el equipo de crisis, a quién informas primero y las 3 frases que nunca pondrías en el primer mensaje.", "ayuda": "Crisis probable: … Equipo: … Informo primero a… Nunca diría: 1… 2… 3…" },
+      { "tipo": "clave", "items": ["La IA ordena pasos, involucrados y preguntas.", "Nada de causas, promesas o culpas sin decisión de dirección y jurídico.", "Mensaje: qué sabemos, qué hacemos, cuándo informamos."] }
+     ]
+    },
+    {
+     "t": "Estrategia y análisis competitivo",
+     "obj": "usar la IA para estructurar análisis estratégicos y evaluar opciones con criterios ponderados, verificando cada dato de mercado.",
+     "bloques": [
+      { "tipo": "texto", "texto": "En estrategia la IA es buena para <b>estructurar</b> (FODA, escenarios, preguntas que faltan) y para <b>retarte</b> (actuar como competidor o como consejero escéptico). Es mala para los <b>datos de mercado</b>: puede inventar participaciones, citar estudios inexistentes, mencionar competidores que ya no operan o dar cifras de otro país. Además tiene un sesgo complaciente: tiende a darte la razón si tu pregunta ya sugiere la respuesta. Pídele explícitamente que argumente en contra." },
+      { "tipo": "plantilla", "rotulo": "El competidor que te ataca", "texto": "Actúa como el director de estrategia de un competidor de [tipo de empresa] en [ciudad o región]. Conoces nuestro modelo: [descripción general, sin datos confidenciales]. 1) ¿Cuáles son nuestras 3 debilidades más explotables? 2) ¿Qué harías en los próximos 12 meses para quitarnos clientes? 3) ¿Qué señales tempranas veríamos? Después, cambia de papel y dime cómo nos defenderías. No uses cifras de mercado: si necesitas una, escribe [dato por verificar]." },
+      { "tipo": "tabla", "titulo": "Errores comunes de la IA en estrategia", "encabezados": ["Error", "Ejemplo", "Qué haces"], "filas": [["Datos de mercado inventados", "«El competidor tiene 23% de participación»", "Fuentes públicas verificables: INEGI, reportes de la empresa, cámaras"], ["Complacencia", "Te da la razón con tu propia hipótesis", "Pides que argumente en contra"], ["Información vieja", "Menciona una empresa que ya cerró o cambió de dueño", "Verificas el estado actual"], ["Recetas genéricas", "«Invierte en transformación digital»", "Pides acciones con costo, responsable y plazo"]] },
+      { "tipo": "excel", "rotulo": "Evaluar opciones con criterios ponderados", "datos": [["Criterio", "Peso", "Abrir sucursal", "Venta en línea", "Alianza con distribuidor"], ["Rentabilidad", 0.4, 7, 6, 5], ["Riesgo (10 = bajo)", 0.3, 4, 7, 8], ["Rapidez", 0.3, 3, 8, 7], ["Puntaje", "", "", "", ""], ["Mejor opción", "", "", "", ""]], "retos": [
+       { "celda": "C5", "formula": "=B2*C2+B3*C3+B4*C4", "esperado": 5, "texto": "<b>C5</b>: puntaje ponderado de «Abrir sucursal» (peso × calificación de cada criterio, sumados).", "pista": "=B2*C2+B3*C3+B4*C4" },
+       { "celda": "D5", "formula": "=B2*D2+B3*D3+B4*D4", "esperado": 6.9, "texto": "<b>D5</b>: puntaje de «Venta en línea»." },
+       { "celda": "E5", "formula": "=B2*E2+B3*E3+B4*E4", "esperado": 6.5, "texto": "<b>E5</b>: puntaje de «Alianza con distribuidor»." },
+       { "celda": "B6", "formula": "=INDICE(C1:E1,COINCIDIR(MAX(C5:E5),C5:E5,0))", "esperado": "Venta en línea", "requiere": "COINCIDIR(", "texto": "<b>B6</b>: nombre de la opción con mayor puntaje (INDICE + COINCIDIR + MAX).", "pista": "=INDICE(C1:E1,COINCIDIR(MAX(C5:E5),C5:E5,0))", "explica": "La matriz ordena la discusión, no la sustituye. Si cambias el peso de rentabilidad a 0.6, ¿cambia la opción ganadora? Esa es tu prueba de sensibilidad." }
+      ]},
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+       { "p": "La IA afirma que tu principal competidor «tiene 23% del mercado regional». ¿Qué haces?", "ops": ["Lo verifico en una fuente pública o lo quito de la presentación", "Lo uso, suena preciso", "Lo redondeo a 25%"], "correcta": 0, "explica": "Las participaciones de mercado son de los datos que más inventa la IA." },
+       { "p": "Preguntas «¿verdad que abrir en Querétaro es buena idea?» y la IA está de acuerdo. ¿Qué valor tiene esa respuesta?", "ops": ["Mucho, confirma tu análisis", "Poco: la pregunta sugería la respuesta; pide argumentos en contra", "Ninguno, la IA no sabe de Querétaro"], "correcta": 1, "explica": "Formula preguntas neutrales o pide explícitamente al abogado del diablo." },
+       { "p": "¿Quién define los pesos de la matriz de criterios?", "ops": ["La IA", "El proveedor de la herramienta", "El equipo directivo según la estrategia de la empresa"], "correcta": 2, "explica": "Los pesos reflejan prioridades de negocio: es una decisión directiva." }
+      ]},
+      { "tipo": "reflexion", "rotulo": "Tu abogado del diablo", "pregunta": "Escribe la hipótesis estratégica más importante de tu área para el próximo año y los 3 argumentos más fuertes en su contra (puedes pedírselos a la IA y luego filtrarlos tú).", "ayuda": "Hipótesis: … En contra: 1… 2… 3… Lo que cambia en mi plan: …" },
+      { "tipo": "clave", "items": ["La IA estructura y reta; los datos de mercado se verifican.", "Pide argumentos en contra para romper la complacencia.", "Matriz ponderada con pesos definidos por dirección y prueba de sensibilidad."] }
+     ]
+    },
+    {
+     "t": "Gobierno de la IA a escala",
+     "obj": "definir cómo se decide, se supervisa y se mide el uso de IA en tu organización cuando pasa de piloto a práctica común.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Cuando la IA pasa de un piloto a varias áreas, la pregunta cambia de «¿sirve?» a «¿cómo la gobernamos?». Gobernar no es burocracia: es tener claro <b>quién aprueba nuevos usos</b>, <b>qué riesgos se revisan</b> (datos personales, confidencialidad, sesgo en decisiones sobre personas, propiedad intelectual, errores frente a clientes), <b>cómo se capacita</b> y <b>cómo se mide</b>. En México, el tratamiento de datos personales debe cumplir la ley de protección de datos vigente; revísalo con jurídico antes de cualquier uso con datos de clientes o colaboradores." },
+      { "tipo": "tabla", "titulo": "Piezas del gobierno de IA", "encabezados": ["Pieza", "Qué define"], "filas": [["Responsable o comité", "Quién aprueba nuevos casos de uso y herramientas"], ["Registro de casos de uso", "Qué se usa, en qué área, con qué datos y qué riesgo"], ["Revisión de riesgos", "Datos personales, confidencialidad, sesgo, clientes, propiedad intelectual"], ["Capacitación", "Qué debe saber cada rol antes de usar IA"], ["Medición", "Horas, calidad, incidentes y satisfacción por caso de uso"]] },
+      { "tipo": "plantilla", "rotulo": "Ficha de aprobación de un caso de uso", "texto": "Diseña una ficha de una página para solicitar la aprobación de un nuevo caso de uso de IA en [empresa]. Campos: área solicitante, tarea, beneficio esperado y cómo se medirá, datos que se usarían (clasificados en públicos, internos, confidenciales o personales), herramienta propuesta, riesgo para clientes o personas, revisión humana prevista, responsable y fecha de revisión. Agrega una guía de 5 preguntas para quien aprueba." },
+      { "tipo": "tabla", "titulo": "Errores comunes de la IA al hablar de su propia adopción", "encabezados": ["Error", "Ejemplo", "Qué haces"], "filas": [["Promete productividad genérica", "«Aumentará 40% la productividad»", "Mides por caso de uso"], ["Ignora a las personas", "Plan sin capacitación ni manejo de resistencias", "Incluyes capacitación y comunicación"], ["Minimiza riesgos legales", "«No hay problema con datos personales si son internos»", "Lo revisas con jurídico"], ["Supone herramientas", "Afirma funciones o precios de productos", "Lo confirmas con el proveedor y sistemas"]] },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+       { "p": "Recursos humanos quiere usar IA para clasificar candidatos por «ajuste cultural». ¿Qué ruta sigue?", "ops": ["Se aprueba como victoria rápida", "Se aprueba si el proveedor dice que no tiene sesgos", "Pasa por revisión de riesgos: es una decisión sobre personas con posible sesgo y requiere jurídico y revisión humana"], "correcta": 2, "explica": "Decisiones sobre personas están en rojo por defecto. Se revisan con cuidado y nunca se automatizan sin supervisión." },
+       { "p": "Tres áreas usan tres herramientas distintas sin que nadie lo sepa. ¿Qué pieza falta?", "ops": ["Un registro de casos de uso y un responsable que apruebe herramientas", "Más licencias", "Prohibir la IA"], "correcta": 0, "explica": "Sin registro no puedes gestionar riesgos ni aprovechar lo que ya funciona." },
+       { "p": "¿Cómo mides el éxito de la IA a escala?", "ops": ["Por número de licencias compradas", "Por caso de uso: horas, calidad, incidentes y satisfacción", "Por cuántas veces se menciona en juntas"], "correcta": 1, "explica": "La medición por caso de uso te dice qué escalar, qué ajustar y qué detener." }
+      ]},
+      { "tipo": "relacionar", "rotulo": "Riesgo y control", "pares": [["Datos personales de clientes", "Revisión con jurídico y herramienta autorizada"], ["Sesgo en decisiones sobre personas", "Revisión humana y prohibición de decisiones automáticas"], ["Errores frente a clientes", "Revisión antes de enviar"], ["Herramientas no autorizadas", "Registro de casos de uso y alternativa oficial"]] },
+      { "tipo": "reflexion", "rotulo": "Tu modelo de gobierno", "pregunta": "Escribe cómo sería el gobierno de IA de tu área o empresa: quién aprueba, qué registro llevarías, qué capacitación mínima y qué 3 métricas revisarías cada trimestre.", "ayuda": "Aprueba: … Registro: … Capacitación mínima: … Métricas: 1… 2… 3…" },
+      { "tipo": "clave", "items": ["Gobierno = responsable, registro, riesgos, capacitación y medición.", "Decisiones sobre personas: revisión humana y jurídico.", "Mide por caso de uso para escalar, ajustar o detener."] }
+     ]
+    }
+   ],
+   "quiz": [
+    { "p": "En el mensaje inicial de una crisis, la IA escribe «todos serán compensados». Nadie lo ha decidido. ¿Qué haces?", "ops": ["Lo dejo para calmar", "Lo quito y comunico solo lo que sabemos y cuándo informaremos", "Lo cambio a «la mayoría»", "Lo publico y luego lo corrijo"], "correcta": 1 },
+    { "p": "El comunicado externo en una crisis lo aprueban…", "ops": ["Quien lo redactó", "La IA", "Sistemas", "Dirección con jurídico y el vocero designado"], "correcta": 3 },
+    { "p": "Una participación de mercado que da la IA sin fuente…", "ops": ["Se verifica en fuente pública o se quita", "Se usa redondeada", "Se cita como «estimación de IA»", "Se comparte en redes"], "correcta": 0 },
+    { "p": "Para romper el sesgo complaciente de la IA…", "ops": ["Le pides que esté de acuerdo", "Haces preguntas más largas", "Le pides argumentos en contra de tu hipótesis", "Usas otra herramienta"], "correcta": 2 },
+    { "p": "En una matriz de criterios ponderados, los pesos los define…", "ops": ["La IA", "El equipo directivo", "El proveedor", "El promedio del mercado"], "correcta": 1 },
+    { "p": "Clasificar candidatos por «ajuste cultural» con IA…", "ops": ["Es victoria rápida", "Está permitido si es interno", "Requiere revisión de riesgos, jurídico y supervisión humana", "No requiere revisión"], "correcta": 2 },
+    { "p": "Un registro de casos de uso sirve para…", "ops": ["Saber qué se usa, dónde, con qué datos y qué riesgo", "Comprar más licencias", "Evaluar a las personas", "Nada"], "correcta": 0 }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un lunes en la dirección con errores plantados de la IA que debes detectar, y la construcción de tu kit directivo personal: biblioteca de prompts, reglas de datos, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: un lunes en la dirección",
+     "obj": "detectar los errores típicos de la IA en cuatro situaciones reales de un directivo y decidir cómo corregirlos.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Eres director general adjunto de una empresa de alimentos procesados en Guadalajara con 450 personas. Hoy es lunes y usas el asistente de IA autorizado por la empresa. En cada escena la IA te ayuda, pero hay <b>al menos un error plantado</b>. Léela con ojo crítico y escribe qué corregirías." },
+      { "tipo": "texto", "texto": "<b>Escena 1 — 8:00 h.</b> Pides un resumen del reporte trimestral de ventas (40 páginas) para la junta de las 9. El resumen dice: «Ventas +11% vs. año anterior (p. 6); la línea de botanas es la de mayor crecimiento (p. 14)». En la página 6, el 11% corresponde solo al canal de autoservicio; el total creció 4%." },
+      { "tipo": "reflexion", "rotulo": "Escena 1: ¿qué corriges?", "pregunta": "Corrige el resumen con la cifra correcta y escribe qué cambiarías en tu prompt para que la IA indique el alcance de cada cifra.", "ayuda": "Corrección: Ventas totales +4%; autoservicio +11% (p. 6)… En el prompt agregaría…" },
+      { "tipo": "texto", "texto": "<b>Escena 2 — 10:30 h.</b> Se decidió cerrar la línea de conservas en marzo. Pides a la IA el mensaje para el personal y el borrador incluye: «Queremos tranquilizarlos: nadie perderá su empleo». La dirección aún no ha definido qué pasará con las 35 personas de esa línea." },
+      { "tipo": "reflexion", "rotulo": "Escena 2: ¿qué corriges?", "pregunta": "Reescribe el mensaje en 5 renglones: qué cambia, por qué, qué sabes y qué no sobre las personas afectadas, y cuándo volverás a informar.", "ayuda": "En marzo cerraremos… porque… Sobre las 35 personas de la línea: aún estamos… El… les informaré…" },
+      { "tipo": "texto", "texto": "<b>Escena 3 — 13:00 h.</b> Pides comparar tres propuestas de empaque. La tabla de la IA recomienda al proveedor B por ser «30% más barato e incluir garantía de 2 años». Al revisar, B no incluye el diseño gráfico que A y C sí incluyen, y su propuesta no menciona ninguna garantía." },
+      { "tipo": "reflexion", "rotulo": "Escena 3: ¿qué corriges?", "pregunta": "Explica los dos errores de la comparación, cómo harías comparables las propuestas y qué pedirías a cada proveedor antes de decidir.", "ayuda": "Error 1: … Error 2: … Para compararlas… Pediría a cada proveedor…" },
+      { "tipo": "texto", "texto": "<b>Escena 4 — 17:00 h.</b> El gerente de recursos humanos te propone: «Con la IA podemos calificar automáticamente las 400 solicitudes de la vacante de operadores y entrevistar solo a las 20 mejores. Ya lo probé con la herramienta gratuita y los currículos reales, y funciona»." },
+      { "tipo": "reflexion", "rotulo": "Escena 4: ¿qué corriges?", "pregunta": "Identifica los problemas de la propuesta (datos, sesgo, supervisión) y escribe tu respuesta al gerente con una alternativa que sí puedas aprobar.", "ayuda": "Problemas: 1… 2… 3… Respuesta: Gracias por buscar cómo ahorrar tiempo; antes de… propongo…" },
+      { "tipo": "practica", "rotulo": "Revisión del día", "preguntas": [
+       { "p": "¿Qué tienen en común las escenas 1 y 3?", "ops": ["La IA presentó datos fuera de contexto o inexistentes como hechos", "Ambas son errores de ortografía", "Ambas se resuelven pidiendo respuestas más cortas"], "correcta": 0, "explica": "Alcance de una cifra y condiciones de una propuesta: todo lo que sostiene una decisión se verifica en el original." },
+       { "p": "En la escena 2, ¿por qué «nadie perderá su empleo» es grave?", "ops": ["Porque es muy largo", "Porque es una promesa que la dirección no ha tomado y que puede romperse", "Porque no es motivador"], "correcta": 1, "explica": "Una promesa rota destruye la confianza más que una verdad difícil." },
+       { "p": "En la escena 4, ¿cuál es la primera acción?", "ops": ["Aprobar el piloto porque ya funciona", "Pedir más solicitudes", "Detener el uso con currículos reales en la herramienta gratuita y tratarlo como incidente de datos"], "correcta": 2, "explica": "Hubo datos personales en una herramienta no autorizada y una decisión sobre personas sin supervisión: dos rojos." }
+      ]},
+      { "tipo": "clave", "items": ["Cifras con alcance, página y verificación en el original.", "Sin promesas que la dirección no ha tomado.", "Decisiones sobre personas y datos personales: rojo hasta revisión."] }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit directivo con IA",
+     "obj": "construir tu kit personal de trabajo con IA como directivo, listo para usar desde la próxima semana.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Tu proyecto final es un kit que puedas usar el lunes. Tiene cuatro piezas: <b>una biblioteca de prompts</b> para decidir, comunicar y dirigir; <b>reglas de datos</b> para ti y tu equipo; <b>una lista de verificación</b> antes de enviar o decidir con apoyo de IA, y <b>un entregable real</b> hecho con ese método. Escríbelo en las reflexiones; al final tendrás un índice para armarlo." },
+      { "tipo": "reflexion", "rotulo": "Paso 1: biblioteca de prompts", "pregunta": "Escribe los 5 prompts que más usarás como directivo (memo de decisión, premortem, resumen, mensaje difícil, junta, abogado del diablo…), cada uno con su nombre, cuándo lo usas y qué información nunca debe llevar.", "ayuda": "1. «Memo de decisión» — uso: decisiones de más de $… — nunca: datos de personas… 2. …" },
+      { "tipo": "reflexion", "rotulo": "Paso 2: reglas de datos para tu equipo", "pregunta": "Redacta en 6 a 8 renglones las reglas de datos para tu equipo: herramientas autorizadas, información que nunca se sube, cómo describir casos sin identificar personas y qué hacer ante un error.", "ayuda": "Autorizadas: … Nunca: … Describimos roles y conductas, no… Si alguien sube algo por error: …" },
+      { "tipo": "reflexion", "rotulo": "Paso 3: lista de verificación", "pregunta": "Escribe tu lista de 6 a 8 puntos antes de enviar un mensaje, presentar al consejo o decidir con apoyo de IA.", "ayuda": "□ Cada cifra verificada en el original, con alcance. □ Sin promesas no decididas. □ Pedí argumentos en contra. □ …" },
+      { "tipo": "reflexion", "rotulo": "Paso 4: tu entregable real", "pregunta": "Elige un entregable real de esta semana (memo, mensaje al equipo, agenda de junta, presentación). Escribe qué prompt usaste, qué corregiste de la respuesta de la IA y qué decisión o acción produjo.", "ayuda": "Entregable: … Prompt: … Correcciones: … Resultado: …" },
+      { "tipo": "plantilla", "rotulo": "Índice de tu kit directivo con IA", "texto": "KIT DIRECTIVO CON IA — [tu nombre / área] — versión [fecha]\n\n1. Biblioteca de prompts\n   Decidir: [memo, premortem, abogado del diablo]\n   Comunicar: [prioridades, mala noticia, crisis]\n   Dirigir: [junta, retroalimentación, plan de desarrollo]\n2. Reglas de datos del equipo\n   Herramientas autorizadas: [ ]\n   Información que no se sube: [ ]\n   Cómo describir casos sin identificar personas: [ ]\n   Qué hacer ante un incidente: [ ]\n3. Lista de verificación antes de enviar o decidir\n   □ [ ] □ [ ] □ [ ] □ [ ] □ [ ] □ [ ]\n4. Gobierno y medición\n   [casos de uso activos, responsable, métricas trimestrales]\n5. Entregable modelo\n   [prompt, correcciones, decisión o acción que produjo]", "nota": "Cópiala en un documento, llénala con tus reflexiones y compártela con tu equipo." },
+      { "tipo": "clave", "items": ["Tu kit: prompts, reglas de datos, verificación y un entregable real.", "La IA te ayuda a pensar, comunicar y medir; tú decides.", "Revisa tu kit cada trimestre con los resultados."] }
+     ]
+    }
+   ],
+   "quiz": [
+    { "p": "Un resumen de la IA atribuye al total una cifra que en el original es de un solo canal. ¿Qué lo habría prevenido?", "ops": ["Pedir un resumen más corto", "No pedir citas", "Pedir alcance, periodo y página de cada cifra y verificar en el original", "Usar otra IA"], "correcta": 2 },
+    { "p": "Un borrador incluye «nadie perderá su empleo» sin que la dirección lo haya decidido. ¿Qué haces?", "ops": ["Lo quito y digo lo que sé, lo que no y cuándo informaré", "Lo dejo para tranquilizar", "Lo cambio a «casi nadie»", "Lo envío y luego aclaro"], "correcta": 0 },
+    { "p": "Dos propuestas con precios muy distintos: antes de elegir la más barata…", "ops": ["Pido descuento a la cara", "Elijo la más barata", "Pregunto a la IA cuál conviene", "Verifico que el alcance y las condiciones sean comparables"], "correcta": 3 },
+    { "p": "Calificar automáticamente solicitudes de empleo con IA gratuita y currículos reales es…", "ops": ["Victoria rápida", "Un incidente de datos y una decisión sobre personas sin supervisión", "Aceptable si ahorra tiempo", "Responsabilidad de la IA"], "correcta": 1 },
+    { "p": "¿Qué pieza del kit define qué información nunca sube tu equipo?", "ops": ["La biblioteca de prompts", "El entregable modelo", "Las reglas de datos del equipo", "El índice"], "correcta": 2 },
+    { "p": "La lista de verificación se aplica…", "ops": ["Antes de enviar, presentar o decidir con apoyo de IA", "Una vez al año", "Solo con el consejo", "Cuando hay tiempo"], "correcta": 0 },
+    { "p": "La responsabilidad de una decisión tomada con apoyo de IA es…", "ops": ["De la IA", "Del proveedor", "Compartida con el equipo de sistemas", "Del directivo que decide"], "correcta": 3 }
+   ]
+  }
+ ]
+}

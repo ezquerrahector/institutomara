@@ -1,0 +1,1398 @@
+{
+ "id": "c-ia-ecommerce",
+ "horas": 10,
+ "aprender": [
+  "Manejar inventario de temporada, detectar pedidos de riesgo y medir si tus anuncios dentro del marketplace dejan utilidad, con la IA como apoyo y comisiones siempre verificadas en cada plataforma.",
+  "Armar tu kit de comercio electrónico con IA: biblioteca de prompts, política de datos de clientes, lista de verificación antes de publicar y una ficha real lista para subir."
+ ],
+ "terceras": [
+  {
+   "p": "La IA escribió «resistente al agua» y tú no lo sabes. Tú…",
+   "op": "Lo cambio por «resiste salpicaduras», suena más seguro"
+  },
+  {
+   "p": "Un buen título incluye…",
+   "op": "Adjetivos como «increíble» y «el mejor»"
+  },
+  {
+   "p": "La foto principal en un marketplace normalmente…",
+   "op": "Es una ambientación con varios productos juntos"
+  },
+  {
+   "p": "Una imagen generada con IA que muestra algo que el producto no tiene…",
+   "op": "Es válida si pones «imagen ilustrativa» en letra chica"
+  },
+  {
+   "p": "Las palabras clave se eligen pensando en…",
+   "op": "Las palabras más técnicas del fabricante"
+  },
+  {
+   "p": "Si vendes en $500 y el marketplace cobra 15% + $70 de envío, te quedan antes de costo…",
+   "op": "$430"
+  },
+  {
+   "p": "Para fijar precio primero calculas…",
+   "op": "El precio más bajo del marketplace para ganarle"
+  },
+  {
+   "p": "Un 20% de descuento sobre un margen de 25% deja…",
+   "op": "45% de ganancia"
+  },
+  {
+   "p": "Antes de lanzar una promoción calculas…",
+   "op": "Cuántos seguidores nuevos vas a ganar"
+  },
+  {
+   "p": "Si empiezas con poco presupuesto, suele convenir…",
+   "op": "Abrir el canal con más comisión, porque vende más"
+  },
+  {
+   "p": "La respuesta que redacta la IA a una queja se revisa para…",
+   "op": "Que suene más firme y el cliente desista"
+  },
+  {
+   "p": "Para el Buen Fin, el precio «antes»…",
+   "op": "Es el precio más alto que tuvo en el año"
+  },
+  {
+   "p": "Si un producto no vende en el marketplace pero sí en tu tienda…",
+   "op": "Le subes el precio en tu tienda para igualar"
+  }
+ ],
+ "extras": {
+  "c-ia-ecommerce-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una marca de jabones artesanales de Oaxaca pidió a la IA fichas para 12 productos. Le dio: ingredientes, peso (120 g), aroma y forma de uso. La IA entregó títulos atractivos, pero agregó «hipoalergénico», «elimina el acné» y «100% orgánico certificado». La marca no tiene pruebas de nada de eso ni certificación orgánica."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Elimina el acné» en la ficha…",
+      "ops": [
+       "Se deja porque los clientes lo buscan",
+       "Se quita: es una promesa de salud que no puedes respaldar",
+       "Se cambia a «ayuda contra el acné»"
+      ],
+      "correcta": 1,
+      "explica": "Suavizar la frase sigue siendo una promesa de salud. Las reglas de publicidad de cosméticos se revisan en el sitio oficial de COFEPRIS."
+     },
+     {
+      "p": "«100% orgánico certificado» sin certificado…",
+      "ops": [
+       "Se quita; si hay ingredientes orgánicos, se nombran sin decir «certificado»",
+       "Se deja si casi todo es natural",
+       "Se pone solo en la descripción larga"
+      ],
+      "correcta": 0,
+      "explica": "Una certificación es un dato comprobable: si no la tienes, no la anuncias."
+     },
+     {
+      "p": "Para que la IA no vuelva a inventar, el prompt debe…",
+      "ops": [
+       "Pedirle que sea más creativa",
+       "Pedirle que exagere menos",
+       "Decir: usa solo estos datos y marca [FALTA DATO] lo que no tengas"
+      ],
+      "correcta": 2,
+      "explica": "Una instrucción concreta y un marcador visible hacen fácil encontrar lo que falta."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Viñeta de beneficio",
+    "malTitulo": "Inventada",
+    "mal": "«Hipoalergénico y elimina el acné en 7 días.»",
+    "bienTitulo": "Respaldada",
+    "bien": "«Hecho con aceite de coco y avena; barra de 120 g que rinde alrededor de un mes de uso diario (según nuestras pruebas en casa).»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu ficha sin inventos",
+    "pregunta": "Toma la ficha de uno de tus productos y subraya cada afirmación. Anota cuáles puedes respaldar con un dato, cuáles quitas y cuáles verificas.",
+    "ayuda": "Respaldo con dato: … / Quito: … / Verifico con el proveedor: …"
+   }
+  ],
+  "c-ia-ecommerce-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un taller de cerámica de Puebla vende tazas pintadas a mano. Para ahorrar, generó con IA fotos de las tazas en una cocina elegante. En las imágenes, la taza se ve más grande, el esmalte perfecto y el azul más brillante que el real. En un mes recibió 9 devoluciones con el mismo comentario: «no es lo que vi»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué conviene hacer con esas fotos?",
+      "ops": [
+       "Dejarlas, pero bajar el precio",
+       "Sustituir la principal por una foto real y usar la IA solo para el fondo o la ambientación",
+       "Agregar más fotos generadas desde otros ángulos"
+      ],
+      "correcta": 1,
+      "explica": "El producto debe verse como es; la IA puede ayudar con el fondo, no con la pieza."
+     },
+     {
+      "p": "Para evitar «pensé que era más grande»…",
+      "ops": [
+       "Una foto con referencia de tamaño y las medidas en la ficha",
+       "Un filtro que resalte los colores",
+       "Poner «tamaño aproximado» sin medidas"
+      ],
+      "correcta": 0,
+      "explica": "La referencia visual y las medidas en centímetros resuelven la duda antes de comprar."
+     },
+     {
+      "p": "Una pieza pintada a mano tiene variaciones. En la ficha…",
+      "ops": [
+       "Lo ocultas para que no piensen que es defecto",
+       "Lo dices claro y muestras 2 o 3 piezas reales distintas",
+       "Pones solo la pieza más bonita"
+      ],
+      "correcta": 1,
+      "explica": "Avisarlo convierte la variación en parte del valor artesanal y evita reclamos."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Toma y el reclamo que evita",
+    "pares": [
+     [
+      "Taza junto a una mano o una cuchara",
+      "«Era más chica de lo que pensé»"
+     ],
+     [
+      "Acercamiento al esmalte",
+      "«No sabía que tenía textura»"
+     ],
+     [
+      "Foto con luz natural sin filtro",
+      "«El color no es el mismo»"
+     ],
+     [
+      "Contenido de la caja",
+      "«No venía el platito»"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla de fotos",
+    "pregunta": "Escribe qué parte de tus fotos sí puede hacer o ajustar la IA y qué parte debe ser siempre real en tu tienda.",
+    "ayuda": "La IA puede… / Siempre real: …"
+   }
+  ],
+  "c-ia-ecommerce-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de refacciones para bicicleta en Querétaro publicó sus cámaras como «Cámara para bicicleta de alta calidad». Casi nadie las encontraba. Al escribir en el buscador del marketplace aparecían sugerencias como «cámara rodada 26», «cámara 700x25 válvula presta» y «cámara bici montaña 29»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le falta al título?",
+      "ops": [
+       "La palabra «premium»",
+       "Rodada o medida y tipo de válvula, que es como busca el ciclista",
+       "El nombre de la tienda"
+      ],
+      "correcta": 1,
+      "explica": "Quien compra una cámara sabe su medida y la busca así."
+     },
+     {
+      "p": "La IA propone 20 palabras clave. Antes de usarlas…",
+      "ops": [
+       "Las confirmas con las sugerencias del buscador y con lo que preguntan tus clientes",
+       "Las pones todas en el título",
+       "Eliges las más largas"
+      ],
+      "correcta": 0,
+      "explica": "El buscador y tus clientes te dicen cómo buscan de verdad."
+     },
+     {
+      "p": "Repetir «cámara bicicleta» cinco veces en la descripción…",
+      "ops": [
+       "Mejora mucho la posición",
+       "Es obligatorio",
+       "Se lee mal y no sustituye un título preciso"
+      ],
+      "correcta": 2,
+      "explica": "Las palabras clave van de forma natural; el cliente también lee."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa el título",
+    "items": [
+     {
+      "frase": "Cámara para bicicleta rodada ___ válvula presta, para ruta 700x25",
+      "resp": [
+       "700",
+       "700c",
+       "700C"
+      ]
+     },
+     {
+      "frase": "Antes de publicar, valida las palabras con las sugerencias del ___ del marketplace.",
+      "resp": [
+       "buscador",
+       "buscador interno"
+      ]
+     },
+     {
+      "frase": "Si el cliente busca «chamarra», tu título no debe decir solo ___.",
+      "resp": [
+       "chaqueta"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus búsquedas reales",
+    "pregunta": "Escribe en el buscador de tu marketplace el nombre de tu producto principal y anota las 5 sugerencias que aparecen. ¿Cuáles faltan en tu título?",
+    "ayuda": "Sugerencias: 1… 2… / Me falta incluir…"
+   }
+  ],
+  "c-ia-ecommerce-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una artesana de Mérida vende bolsas tejidas en $650 en un marketplace. Datos: costo de la bolsa $280, envío $95, empaque $20 y una comisión <b>de ejemplo</b> de 17% (la real la toma del centro de vendedores de su plataforma). La IA le dijo que «le quedan unos $370 por bolsa»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuánto le queda realmente por bolsa?",
+      "ops": [
+       "$370",
+       "$255.50",
+       "$144.50"
+      ],
+      "correcta": 2,
+      "explica": "650 − 110.50 de comisión − 95 − 280 − 20 = $144.50. La IA solo restó el costo."
+     },
+     {
+      "p": "¿Qué error cometió la IA?",
+      "ops": [
+       "Olvidó comisión, envío y empaque",
+       "Usó una comisión muy alta",
+       "Ninguno, la cifra es correcta"
+      ],
+      "correcta": 0,
+      "explica": "Restó solo el costo de la bolsa; los «mordiscos» del canal no aparecieron."
+     },
+     {
+      "p": "La comisión de 17% del caso…",
+      "ops": [
+       "Es la oficial de todos los marketplaces",
+       "Es de ejemplo: la real se toma del centro de vendedores y cambia por categoría",
+       "La calcula la IA"
+      ],
+      "correcta": 1,
+      "explica": "Las comisiones cambian por plataforma, categoría y fecha; siempre se verifican."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo le pides el cálculo a la IA",
+    "malTitulo": "Abierto",
+    "mal": "«¿Cuánto me queda si vendo mi bolsa en $650?»",
+    "bienTitulo": "Con datos y tu hoja",
+    "bien": "«Arma una hoja con: precio 650, costo 280, envío 95, empaque 20 y comisión como celda editable (hoy 17%). Dame las fórmulas; yo reviso el resultado.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu producto más vendido",
+    "pregunta": "Calcula con tus datos reales cuánto te queda de tu producto más vendido en cada canal donde lo vendes.",
+    "ayuda": "Precio… − costo… − comisión (verificada en…)… − envío… − empaque… = …"
+   }
+  ],
+  "c-ia-ecommerce-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de velas aromáticas de Monterrey vende cada vela en $300. Su costo total por vela (producto, empaque y envío promedio) es $165, así que gana $135. La IA le sugirió un «2x1 para diciembre, porque los 2x1 venden muchísimo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Con el 2x1, en cada paquete de 2 velas por $300…",
+      "ops": [
+       "Gana $135",
+       "Pierde $30",
+       "Gana $105"
+      ],
+      "correcta": 1,
+      "explica": "Cobra 300 y le cuestan 2 × 165 = 330: pierde $30 por paquete."
+     },
+     {
+      "p": "Si cambia a «segunda vela a mitad de precio» (2 por $450)…",
+      "ops": [
+       "Gana $120 por paquete",
+       "Pierde $30",
+       "Gana $270"
+      ],
+      "correcta": 0,
+      "explica": "450 − 330 = $120: menos que dos ventas sueltas, pero con ganancia y ticket más alto."
+     },
+     {
+      "p": "La mejor forma de decidir entre promociones es…",
+      "ops": [
+       "Elegir la que la IA dice que vende más",
+       "Copiar la de la competencia",
+       "Calcular el margen de cada una y medir el resultado real"
+      ],
+      "correcta": 2,
+      "explica": "La idea puede venir de la IA; la decisión sale de tu margen y tus datos."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Promoción y su efecto en el margen",
+    "pares": [
+     [
+      "2x1",
+      "Regalas un producto completo"
+     ],
+     [
+      "Segunda pieza a mitad de precio",
+      "Regalas medio producto, subes el ticket"
+     ],
+     [
+      "Envío gratis desde $999",
+      "Absorbes el envío solo en compras grandes"
+     ],
+     [
+      "Regalo de muestra",
+      "Cuesta poco y da a probar otro producto"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu próxima promoción",
+    "pregunta": "Elige una promoción para tu tienda y calcula cuánto ganas por pedido con ella, con tus costos reales.",
+    "ayuda": "Promoción: … / Cobro… / Me cuesta… / Me queda…"
+   }
+  ],
+  "c-ia-ecommerce-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una marca de ropa infantil de Guadalajara abrió al mismo tiempo tienda propia, dos marketplaces, Instagram y catálogo de WhatsApp. Con dos personas, tardan hasta 2 días en contestar preguntas, un marketplace le bajó la reputación por envíos tardíos y el inventario no cuadra entre canales."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué conviene hacer primero?",
+      "ops": [
+       "Abrir un tercer marketplace para vender más",
+       "Concentrarse en los canales que sí puede atender bien y pausar el resto",
+       "Contratar anuncios en todos"
+      ],
+      "correcta": 1,
+      "explica": "Un canal mal atendido cuesta reputación; es mejor crecer por pasos."
+     },
+     {
+      "p": "La IA puede ayudar a…",
+      "ops": [
+       "Redactar respuestas tipo a las preguntas frecuentes, que ellas revisan",
+       "Contestar sola a todos los clientes sin revisión",
+       "Decidir qué reglas del marketplace aplican"
+      ],
+      "correcta": 0,
+      "explica": "Las respuestas tipo ahorran tiempo; la revisión y las reglas vienen de ellas y del centro de ayuda."
+     },
+     {
+      "p": "El inventario que no cuadra entre canales provoca…",
+      "ops": [
+       "Más ventas",
+       "Nada importante",
+       "Vender piezas que ya no tienes y cancelar pedidos"
+      ],
+      "correcta": 2,
+      "explica": "Las cancelaciones afectan la reputación en marketplaces y la confianza del cliente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Plan de canales",
+    "malTitulo": "Todo a la vez",
+    "mal": "«Estamos en todos lados; ya veremos cómo atendemos.»",
+    "bienTitulo": "Por etapas",
+    "bien": "«Tres meses en tienda propia y un marketplace, con respuesta en menos de 12 horas. Si lo sostenemos, abrimos el siguiente canal.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus canales",
+    "pregunta": "Anota en qué canales vendes hoy, cuánto tardas en responder en cada uno y cuál pausarías o reforzarías.",
+    "ayuda": "Canal… responde en… / Pauso o refuerzo…"
+   }
+  ],
+  "c-ia-ecommerce-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda en línea de audífonos en la Ciudad de México recibe este mensaje: «Los audífonos dejaron de cargar a los 10 días». La IA redactó: «Lamentamos informarle que no aceptamos devoluciones de productos abiertos». La tienda sí ofrece garantía de 6 meses por fallas de fábrica."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué está mal en la respuesta de la IA?",
+      "ops": [
+       "Es muy corta",
+       "Confunde devolución por gusto con una falla cubierta por la garantía",
+       "Nada, así es la política"
+      ],
+      "correcta": 1,
+      "explica": "Una falla de fábrica se atiende con la garantía. Revisa además los derechos del consumidor vigentes en el sitio de Profeco."
+     },
+     {
+      "p": "La respuesta correcta…",
+      "ops": [
+       "Reconoce el problema, explica cómo aplicar la garantía y da los pasos",
+       "Pide que compre otros",
+       "Sugiere que lo cargue mejor"
+      ],
+      "correcta": 0,
+      "explica": "Claridad y pasos concretos: qué envía, a dónde, en cuánto tiempo."
+     },
+     {
+      "p": "Para que la IA no vuelva a responder así…",
+      "ops": [
+       "Le pides ser más amable",
+       "Le das tu política real de devoluciones y garantía en el prompt",
+       "Dejas que improvise"
+      ],
+      "correcta": 1,
+      "explica": "Si no le das tu política, la IA inventa una."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta a una falla",
+    "malTitulo": "Improvisada",
+    "mal": "«No aceptamos devoluciones de productos abiertos.»",
+    "bienTitulo": "Con tu política",
+    "bien": "«Qué mal que dejaron de cargar. Están en garantía: mándanos una foto o video de la falla y tu número de pedido; te enviamos guía de envío sin costo y el cambio sale en máximo 5 días hábiles.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus respuestas tipo",
+    "pregunta": "Escribe las 3 situaciones de postventa más frecuentes en tu tienda y la regla real que aplicas en cada una, para dársela a la IA.",
+    "ayuda": "1. Situación… regla… 2. … 3. …"
+   }
+  ],
+  "c-ia-ecommerce-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de café de especialidad de Chiapas tuvo en septiembre 1,800 visitas, 36 pedidos y 6 devoluciones. Casi todas las devoluciones dicen «pedí molido y llegó en grano». La IA sugirió «invertir más en anuncios para subir las ventas»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es su tasa de conversión?",
+      "ops": [
+       "2%",
+       "5%",
+       "0.2%"
+      ],
+      "correcta": 0,
+      "explica": "36 ÷ 1,800 = 0.02, es decir 2%."
+     },
+     {
+      "p": "Su tasa de devolución es…",
+      "ops": [
+       "6%",
+       "Alrededor de 17%",
+       "36%"
+      ],
+      "correcta": 1,
+      "explica": "6 ÷ 36 = 0.167: una de cada seis compras regresa."
+     },
+     {
+      "p": "¿Qué atiende primero?",
+      "ops": [
+       "Más anuncios, como dijo la IA",
+       "Bajar el precio",
+       "El error de molienda: revisar la ficha, el selector y el surtido"
+      ],
+      "correcta": 2,
+      "explica": "Más anuncios llevarían más pedidos con el mismo error. Primero se arregla la causa."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa las fórmulas",
+    "items": [
+     {
+      "frase": "Conversión con pedidos en C2 y visitas en B2: ___",
+      "resp": [
+       "=C2/B2"
+      ]
+     },
+     {
+      "frase": "Tasa de devolución con devoluciones en D2 y pedidos en C2: ___",
+      "resp": [
+       "=D2/C2"
+      ]
+     },
+     {
+      "frase": "Ticket promedio con venta total en E2 y pedidos en C2: ___",
+      "resp": [
+       "=E2/C2"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus números del mes",
+    "pregunta": "Calcula tu conversión y tu tasa de devolución del último mes y escribe la causa principal que ves detrás de cada una.",
+    "ayuda": "Conversión… porque… / Devolución… porque…"
+   }
+  ],
+  "c-ia-ecommerce-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de juguetes didácticos de madera en León terminó su temporada fuerte. Vendió 420 pedidos, pero 3 productos concentraron el 70% de las ventas, 2 se agotaron el primer día y uno tuvo muchas devoluciones por piezas pequeñas no mencionadas en la ficha. Le pide a la IA un «reporte de resultados»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Para el reporte, la IA debe recibir…",
+      "ops": [
+       "Solo la pregunta «¿cómo nos fue?»",
+       "Datos exportados de la tienda sin datos personales de clientes",
+       "La lista completa de clientes con direcciones"
+      ],
+      "correcta": 1,
+      "explica": "Con datos agregados basta; los datos personales no se pegan en herramientas públicas."
+     },
+     {
+      "p": "El producto con devoluciones por piezas pequeñas…",
+      "ops": [
+       "Se corrige la ficha: edad recomendada y advertencia de piezas pequeñas visible",
+       "Se deja igual, ya pasó la temporada",
+       "Se baja de precio"
+      ],
+      "correcta": 0,
+      "explica": "Es información de seguridad que el comprador necesita antes de comprar."
+     },
+     {
+      "p": "Los 2 productos agotados el primer día indican…",
+      "ops": [
+       "Que había que subirles el precio",
+       "Que la ficha era mala",
+       "Que hay que revisar el pronóstico de inventario para la próxima temporada"
+      ],
+      "correcta": 2,
+      "explica": "Agotarse el primer día es venta perdida: el aprendizaje es de inventario."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Hallazgo y acción",
+    "pares": [
+     [
+      "Producto agotado el primer día",
+      "Pedir más al proveedor con anticipación"
+     ],
+     [
+      "Devoluciones por información faltante",
+      "Corregir la ficha"
+     ],
+     [
+      "Tres productos con 70% de las ventas",
+      "Destacarlos y crear paquetes con ellos"
+     ],
+     [
+      "Producto sin ventas",
+      "Revisar ficha, precio o retirarlo"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu cierre de temporada",
+    "pregunta": "Escribe los 3 aprendizajes de tu última temporada fuerte y la acción concreta que harás con cada uno.",
+    "ayuda": "Aprendí… / Voy a…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas del comercio electrónico",
+   "r": "Inventario de temporada, pedidos de riesgo y anuncios dentro del marketplace: cómo usar la IA para ordenar datos y decidir con tus números reales.",
+   "lecciones": [
+    {
+     "t": "Inventario y temporadas sin quedarte sin producto",
+     "obj": "Calcular días de inventario y decidir cuándo pedir al proveedor antes de una temporada, usando la IA para ordenar datos sin que invente demanda.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En comercio electrónico, quedarte sin producto en plena temporada es vender a la competencia; quedarte con demasiado es tener dinero parado. Dos datos te ayudan: <b>días de inventario</b> (existencias ÷ venta diaria promedio) y <b>tiempo de entrega del proveedor</b>. Si los días de inventario son menos que lo que tarda tu proveedor, ya vas tarde. La IA te ayuda a ordenar tus ventas históricas y a preparar pedidos; la demanda sale de tus datos, no de lo que la IA «cree» que venderás."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una tienda en línea de uniformes escolares en Toluca prepara el regreso a clases. Su proveedor tarda de 15 a 20 días en surtir. Quiere saber qué tallas pedir ya."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Qué pides ya?",
+       "datos": [
+        [
+         "Producto",
+         "Existencias",
+         "Venta diaria promedio",
+         "Días de entrega del proveedor",
+         "Días de inventario",
+         "Acción"
+        ],
+        [
+         "Playera polo talla 8",
+         240,
+         12,
+         15,
+         "",
+         ""
+        ],
+        [
+         "Falda talla 10",
+         90,
+         9,
+         15,
+         "",
+         ""
+        ],
+        [
+         "Suéter talla 12",
+         60,
+         2,
+         20,
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "E2",
+         "formula": "=B2/C2",
+         "esperado": 20,
+         "texto": "<b>E2</b>: días de inventario de la playera = existencias ÷ venta diaria.",
+         "pista": "=B2/C2"
+        },
+        {
+         "celda": "E3",
+         "formula": "=B3/C3",
+         "esperado": 10,
+         "texto": "<b>E3</b>: días de inventario de la falda.",
+         "pista": "=B3/C3"
+        },
+        {
+         "celda": "F3",
+         "formula": "=SI(E3<D3,\"Pedir ya\",\"Sin urgencia\")",
+         "esperado": "Pedir ya",
+         "requiere": "SI(",
+         "texto": "<b>F3</b>: con SI, si los días de inventario son menos que los días de entrega escribe «Pedir ya»; si no, «Sin urgencia».",
+         "pista": "=SI(E3<D3,«Pedir ya»,«Sin urgencia») con comillas rectas",
+         "explica": "A la falda le quedan 10 días y el proveedor tarda 15: si no pide hoy, se agota antes de que llegue el surtido."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con inventario:</b> inventar tendencias («este año las ventas subirán 40%»), usar promedios de otros negocios, olvidar que en temporada la venta diaria sube y sumar mal cuando le pegas tablas largas. Pídele que ordene y explique; los cálculos van en tu hoja."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Pedido de temporada",
+       "texto": "Estas son mis ventas por producto y talla de la misma temporada del año pasado (sin datos de clientes): [pegar tabla]. Mi proveedor tarda [días]. 1) Ordena los productos del que más al que menos vendió. 2) Señala cuáles se agotaron antes de terminar la temporada. 3) Propón preguntas que debo hacerme antes de decidir cantidades. No inventes crecimientos ni tendencias; si falta un dato, marca [FALTA DATO]."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que «este año venderás 40% más». Tú…",
+         "ops": [
+          "Pides la fuente; si no hay, planeas con tus datos históricos",
+          "Pides 40% más de todo",
+          "Le pides otra cifra más alta"
+         ],
+         "correcta": 0,
+         "explica": "Un crecimiento sin fuente es una suposición."
+        },
+        {
+         "p": "Un producto tiene 30 días de inventario y el proveedor tarda 10…",
+         "ops": [
+          "Pides hoy",
+          "No hay urgencia por ahora; lo revisas cada semana",
+          "Lo retiras"
+         ],
+         "correcta": 1,
+         "explica": "Tienes margen, pero la venta diaria puede subir en temporada: se revisa seguido."
+        },
+        {
+         "p": "Para calcular la venta diaria de temporada conviene usar…",
+         "ops": [
+          "Un promedio de todo el año",
+          "La venta diaria del mismo periodo del año anterior",
+          "La cifra que diga la IA"
+         ],
+         "correcta": 1,
+         "explica": "En temporada la venta cambia; compara contra el mismo periodo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu temporada",
+       "pregunta": "Elige tus 3 productos principales y calcula sus días de inventario hoy. ¿Cuál pedirías esta semana?",
+       "ayuda": "Producto… días… proveedor tarda… / Pido…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Días de inventario = existencias ÷ venta diaria.",
+        "Si son menos que la entrega del proveedor, ya vas tarde.",
+        "La demanda sale de tus datos, no de tendencias inventadas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Pedidos de riesgo, contracargos y datos de pago",
+     "obj": "Detectar señales de un pedido sospechoso con un puntaje sencillo y proteger los datos de pago de tus clientes, sin que la IA decida sola.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un contracargo ocurre cuando el titular de una tarjeta desconoce una compra y el banco le regresa el dinero: tú pierdes la venta y el producto. Ninguna señal aislada prueba un fraude (un regalo se envía a otra dirección, por ejemplo), pero varias juntas justifican revisar a mano antes de enviar. La IA te ayuda a redactar tu lista de señales y mensajes de verificación; la decisión es tuya y de tu procesador de pagos."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una tienda en línea de celulares reacondicionados en Tijuana recibió en una noche tres pedidos de equipos caros, con cuentas recién creadas y envío urgente a direcciones distintas a la de facturación."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Puntaje de revisión (1 = sí hay señal)",
+       "datos": [
+        [
+         "Pedido",
+         "Cuenta nueva",
+         "Envío distinto a facturación",
+         "Monto alto",
+         "Varias tarjetas intentadas",
+         "Puntaje",
+         "Decisión"
+        ],
+        [
+         "Pedido 1041",
+         1,
+         1,
+         1,
+         1,
+         "",
+         ""
+        ],
+        [
+         "Pedido 1042",
+         0,
+         1,
+         0,
+         0,
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "F2",
+         "formula": "=SUMA(B2:E2)",
+         "esperado": 4,
+         "requiere": "SUMA(",
+         "texto": "<b>F2</b>: puntaje del pedido 1041.",
+         "pista": "=SUMA(B2:E2)"
+        },
+        {
+         "celda": "F3",
+         "formula": "=SUMA(B3:E3)",
+         "esperado": 1,
+         "requiere": "SUMA(",
+         "texto": "<b>F3</b>: puntaje del pedido 1042.",
+         "pista": "=SUMA(B3:E3)"
+        },
+        {
+         "celda": "G2",
+         "formula": "=SI(F2>=3,\"Revisar a mano\",\"Enviar\")",
+         "esperado": "Revisar a mano",
+         "requiere": "SI(",
+         "texto": "<b>G2</b>: con SI, si el puntaje es 3 o más escribe «Revisar a mano»; si no, «Enviar».",
+         "pista": "=SI(F2>=3,«Revisar a mano»,«Enviar») con comillas rectas",
+         "explica": "El 1042 solo tiene una señal (puede ser un regalo). El 1041 junta cuatro: se revisa antes de enviar, sin acusar al cliente."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en este tema:</b> sugerir pedir el número completo de tarjeta o el código de seguridad por WhatsApp o correo (nunca se pide), redactar mensajes acusatorios y afirmar reglas de contracargos que dependen de tu banco o procesador. Los datos de tarjeta solo los captura el procesador de pagos, nunca tú ni la IA."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Mensaje de verificación amable",
+       "texto": "Redacta un mensaje breve y amable para un cliente cuyo pedido [número] queremos confirmar antes de enviar. Pide solo: confirmar la dirección de entrega y un teléfono de contacto. No pidas datos de tarjeta, códigos ni contraseñas, no insinúes fraude y explica que es una revisión de rutina para proteger su compra."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Un pedido tiene envío a otra dirección y nada más raro…",
+         "ops": [
+          "Se cancela",
+          "Se envía con normalidad: una señal sola no indica fraude",
+          "Se pide la tarjeta por foto"
+         ],
+         "correcta": 1,
+         "explica": "Muchos regalos se envían a otra dirección."
+        },
+        {
+         "p": "La IA sugiere pedir foto de la tarjeta por WhatsApp para verificar…",
+         "ops": [
+          "No se hace: expone datos de pago",
+          "Se hace solo con pedidos grandes",
+          "Se hace si el cliente acepta"
+         ],
+         "correcta": 0,
+         "explica": "Los datos de tarjeta solo los maneja el procesador de pagos."
+        },
+        {
+         "p": "Las reglas para disputar un contracargo se consultan en…",
+         "ops": [
+          "La IA",
+          "Un foro de vendedores",
+          "Tu banco o procesador de pagos"
+         ],
+         "correcta": 2,
+         "explica": "Cada procesador tiene su proceso y sus plazos."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu protocolo",
+       "pregunta": "Escribe las 4 señales que revisarías en tus pedidos y qué haces cuando se juntan 3 o más.",
+       "ayuda": "Señales: … / Si hay 3 o más: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Varias señales juntas = revisar a mano, sin acusar.",
+        "Nunca pedir datos de tarjeta, códigos ni contraseñas.",
+        "Reglas de contracargo: de tu banco o procesador."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Anuncios dentro del marketplace: ¿dejan utilidad?",
+     "obj": "Calcular el retorno de la inversión publicitaria y la utilidad después de anuncios, para decidir si una campaña dentro del marketplace conviene.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchos marketplaces venden espacios de anuncio dentro de su buscador. La métrica que suelen mostrar es el <b>ROAS</b>: ventas atribuidas ÷ gasto en anuncios. Un ROAS de 4 suena muy bien («por cada peso, vendí cuatro»), pero ventas no es utilidad. Si tu margen antes de anuncios es 30%, necesitas un ROAS mayor a 1 ÷ 0.30 ≈ 3.3 solo para no perder. La IA te ayuda a redactar títulos y a leer reportes; la cuenta final la haces tú."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una tienda de artículos de cocina en Puebla gastó $4,500 en anuncios dentro de un marketplace y el reporte dice $18,000 en ventas atribuidas. Su margen antes de anuncios, ya descontada una comisión <b>de ejemplo</b> y el envío, es 30%."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Cuánto dejó la campaña?",
+       "datos": [
+        [
+         "Concepto",
+         "Monto"
+        ],
+        [
+         "Ventas atribuidas a anuncios",
+         18000
+        ],
+        [
+         "Gasto en anuncios",
+         4500
+        ],
+        [
+         "ROAS",
+         ""
+        ],
+        [
+         "Margen antes de anuncios",
+         0.3
+        ],
+        [
+         "Utilidad antes de anuncios",
+         ""
+        ],
+        [
+         "Utilidad después de anuncios",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B4",
+         "formula": "=B2/B3",
+         "esperado": 4,
+         "texto": "<b>B4</b>: ROAS = ventas ÷ gasto."
+        },
+        {
+         "celda": "B6",
+         "formula": "=B2*B5",
+         "esperado": 5400,
+         "texto": "<b>B6</b>: utilidad antes de anuncios = ventas × margen."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B6-B3",
+         "esperado": 900,
+         "texto": "<b>B7</b>: utilidad después de anuncios.",
+         "explica": "Un ROAS de 4 dejó solo $900. Con un ROAS de 3 habría perdido dinero. Por eso se mide la utilidad, no solo las ventas."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con anuncios:</b> celebrar el ROAS sin hablar de margen, confundir ventas atribuidas con ventas nuevas (algunas habrían llegado sin anuncio), afirmar costos por clic «típicos» que no existen y describir funciones de la plataforma que ya cambiaron. Las reglas y costos vigentes están en el centro de vendedores."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Lectura del reporte de anuncios",
+       "texto": "Este es el reporte de mis anuncios del mes en [marketplace], sin datos de clientes: [pegar tabla por producto: gasto, clics, ventas atribuidas]. Mi margen antes de anuncios por producto es: [pegar]. 1) Indica qué productos tienen ROAS por debajo de 1 ÷ margen. 2) Sugiere qué pausar y qué probar. No calcules utilidades: dime qué fórmulas uso en mi hoja."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Con margen de 25%, el ROAS mínimo para no perder es…",
+         "ops": [
+          "1",
+          "4",
+          "2.5"
+         ],
+         "correcta": 1,
+         "explica": "1 ÷ 0.25 = 4. Por debajo de eso, el anuncio te cuesta más de lo que deja."
+        },
+        {
+         "p": "Un producto con ROAS 6 y margen 40%…",
+         "ops": [
+          "Deja utilidad: 6 es mayor que 1 ÷ 0.40 = 2.5",
+          "Pierde dinero",
+          "No se puede saber nada"
+         ],
+         "correcta": 0,
+         "explica": "Supera con holgura su punto de equilibrio."
+        },
+        {
+         "p": "La IA dice que «el costo por clic típico es $2». Tú…",
+         "ops": [
+          "Lo usas para tu presupuesto",
+          "Lo revisas en tu propio reporte y en el centro de vendedores",
+          "Lo duplicas por seguridad"
+         ],
+         "correcta": 1,
+         "explica": "Los costos dependen de la categoría y la competencia; tu reporte es la fuente."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu punto de equilibrio",
+       "pregunta": "Con el margen real de tu producto principal, calcula el ROAS mínimo para no perder y compáralo con el de tu última campaña (si tuviste).",
+       "ayuda": "Margen… / ROAS mínimo = 1 ÷ … = … / Mi campaña tuvo…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "ROAS = ventas ÷ gasto; utilidad = ventas × margen − gasto.",
+        "ROAS mínimo = 1 ÷ margen.",
+        "Costos y reglas de anuncios: de tu reporte y del centro de vendedores."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Días de inventario =",
+     "ops": [
+      "Venta diaria ÷ existencias",
+      "Existencias ÷ venta diaria promedio",
+      "Existencias × precio",
+      "Días del mes ÷ ventas"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si los días de inventario son menos que el tiempo de entrega del proveedor…",
+     "ops": [
+      "Ya vas tarde: pides hoy",
+      "Esperas a que se agote",
+      "Subes el precio",
+      "No pasa nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un crecimiento de ventas que la IA afirma sin fuente…",
+     "ops": [
+      "Se usa para pedir más",
+      "Se reduce a la mitad",
+      "Se trata como suposición y planeas con tus datos",
+      "Se publica"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Ante un pedido con varias señales de riesgo…",
+     "ops": [
+      "Se cancela y se acusa al cliente",
+      "Se envía sin revisar",
+      "Se pide la tarjeta por WhatsApp",
+      "Se revisa a mano con un mensaje amable antes de enviar"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Los datos completos de tarjeta de un cliente…",
+     "ops": [
+      "Solo los captura el procesador de pagos",
+      "Se piden por correo",
+      "Se guardan en tu hoja",
+      "Se pegan en la IA para verificar"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "ROAS significa…",
+     "ops": [
+      "Utilidad ÷ ventas",
+      "Ventas atribuidas ÷ gasto en anuncios",
+      "Clics ÷ impresiones",
+      "Gasto ÷ pedidos"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Con margen de 20%, el ROAS mínimo para no perder es…",
+     "ops": [
+      "2",
+      "3",
+      "5",
+      "20"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Las comisiones y costos de anuncios de un marketplace…",
+     "ops": [
+      "Son iguales en todas las plataformas",
+      "Los define la IA",
+      "Se verifican en el centro de vendedores; en ejemplos son solo de referencia",
+      "No cambian nunca"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día real en una tienda en línea con errores plantados de la IA para detectar, y tu kit personal de comercio electrónico con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un lunes después del Buen Fin",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en comercio electrónico: especificaciones inventadas, comisiones sin verificar, imágenes con marcas ajenas y datos personales expuestos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres responsable de la tienda en línea de una marca de ropa deportiva de Monterrey. Es el lunes después del Buen Fin, hay 300 pedidos por surtir y usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de que llegue al cliente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 9:00 a. m. Fichas nuevas.</b> Pides a la IA fichas para 5 leggings nuevos con los datos del proveedor (poliéster y elastano, tallas CH a G). La ficha dice: «Tela antibacterial certificada, protección UV 50+ y no transparenta nunca»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "¿Qué afirmaciones quitas o verificas antes de publicar y a quién le preguntas?",
+       "ayuda": "Quito… / Pregunto al proveedor… / Publico solo…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:00 a. m. Precios para la siguiente campaña.</b> La IA armó la tabla de márgenes con una comisión de 10% «porque es la comisión estándar de los marketplaces». En tu hoja, la comisión <b>de ejemplo</b> que capturaste para tu categoría es 18%, y no la has confirmado este mes."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "Explica el riesgo de usar esa tabla y qué pasos sigues para tener la comisión correcta.",
+       "ayuda": "El riesgo es… / Primero reviso en… / Luego…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 2:00 p. m. Imagen para la campaña.</b> Generaste con IA una imagen de ambientación: una corredora con tus leggings en un parque. En los tenis aparece un logotipo muy parecido al de una marca deportiva famosa, y la imagen imita el estilo de un fotógrafo conocido que sigue en activo. No revisaste si tu plan de la herramienta permite uso comercial."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Enumera los problemas de esta imagen y cómo la rehaces para poder usarla en tu tienda.",
+       "ayuda": "Problemas: … / La rehago así: … / Reviso la licencia en…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Postventa.</b> Para ahorrar tiempo, un compañero exportó los 300 pedidos con nombre, dirección, teléfono y correo y los pegó en un asistente de IA público para que «redacte mensajes personalizados». Además, la IA propone publicar 20 reseñas de ejemplo «mientras llegan las reales»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Qué haces con los datos que ya se pegaron y cómo resuelves los mensajes y las reseñas de forma correcta?",
+       "ayuda": "Con los datos… / Los mensajes los hago con… / Las reseñas…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 1, «protección UV 50+»…",
+         "ops": [
+          "Se publica solo si el proveedor lo respalda con una prueba",
+          "Se deja porque es ropa deportiva",
+          "Se cambia a «protección UV» sin número"
+         ],
+         "correcta": 0,
+         "explica": "Una cifra técnica es una promesa comprobable; sin respaldo no va."
+        },
+        {
+         "p": "En la escena 2, la comisión correcta sale de…",
+         "ops": [
+          "La IA",
+          "El promedio de internet",
+          "El centro de vendedores de tu plataforma, para tu categoría y fecha"
+         ],
+         "correcta": 2,
+         "explica": "Las comisiones de los ejemplos son de referencia; la real se verifica."
+        },
+        {
+         "p": "En la escena 3, la imagen…",
+         "ops": [
+          "Se usa si nadie lo nota",
+          "Se rehace sin logotipos ni estilo de un artista vivo y tras revisar la licencia de uso comercial",
+          "Se usa pixelando el logotipo"
+         ],
+         "correcta": 1,
+         "explica": "Marcas ajenas, estilos de artistas vivos y licencias sin revisar son riesgos que no se corren."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Especificaciones: solo las respaldadas.",
+        "Comisiones y licencias: verificadas en la fuente.",
+        "Datos de clientes fuera de herramientas públicas; reseñas solo reales."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de comercio electrónico con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación antes de publicar y una ficha real lista para subir.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a cerrar el curso con un kit que puedas usar mañana. Cada reflexión es una pieza del kit; al final las juntas en un índice. Trabaja con un producto real de tu tienda (o de una tienda que conozcas) y con datos que puedas comprobar."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 1: tu biblioteca de prompts",
+       "pregunta": "Escribe tus 5 prompts de uso frecuente (ficha, palabras clave, fotos, promoción y postventa), cada uno con tus datos fijos y el marcador [FALTA DATO].",
+       "ayuda": "1. Ficha: … 2. Palabras clave: … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 2: tu política de datos",
+       "pregunta": "Escribe en 5 reglas qué datos nunca pegas en una herramienta de IA pública (clientes, pagos, proveedores, costos) y cómo trabajas en su lugar.",
+       "ayuda": "Nunca pego… / En su lugar uso…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 3: tu lista de verificación antes de publicar",
+       "pregunta": "Escribe tu lista de 8 puntos para revisar cualquier ficha, imagen o promoción que haya pasado por la IA.",
+       "ayuda": "1. Cada característica tiene respaldo. 2. Comisión verificada en… 3. Imagen sin marcas ajenas y con licencia de uso comercial revisada…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 4: tu entregable real",
+       "pregunta": "Escribe la ficha completa de un producto real: título, 5 viñetas, descripción, qué incluye y preguntas frecuentes, más su utilidad por canal con tus datos.",
+       "ayuda": "Título: … / Viñetas: … / Utilidad en tienda propia: … / En marketplace: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE COMERCIO ELECTRÓNICO CON IA — [nombre de tu tienda]\nActualizado: [fecha]\n\n1. Biblioteca de prompts\n   - Ficha de producto: [ ]\n   - Palabras clave: [ ]\n   - Guion de fotos: [ ]\n   - Promoción: [ ]\n   - Postventa y devoluciones: [ ]\n2. Política de datos (nunca pego…): [ ]\n3. Lista de verificación antes de publicar: [ ]\n4. Hoja de márgenes por canal (comisiones verificadas el [fecha]): [ ]\n5. Ficha modelo: [ ]\n6. Métricas que reviso cada semana: conversión [ ] devolución [ ] ticket [ ]",
+       "nota": "Cópiala, llénala y revísala cada vez que cambien las reglas de tus plataformas."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit: prompts, política de datos, lista de verificación y ficha modelo.",
+        "La IA produce borradores; los datos reales y la revisión son tuyos.",
+        "Revisa comisiones, reglas y licencias cada vez que cambien."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Una ficha dice «protección UV 50+» y el proveedor no lo respalda. Tú…",
+     "ops": [
+      "Lo publicas",
+      "Lo quitas o pides la prueba al proveedor",
+      "Lo cambias a 30+",
+      "Lo pones en la foto"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La IA usa una «comisión estándar de 10%». Lo correcto es…",
+     "ops": [
+      "Usarla",
+      "Verificar la comisión vigente de tu categoría en el centro de vendedores",
+      "Promediarla con 18%",
+      "Ignorar comisiones"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una imagen generada con un logotipo parecido al de una marca famosa…",
+     "ops": [
+      "Se puede usar si es pequeño",
+      "Se usa pixelada",
+      "Se rehace sin marcas ajenas",
+      "Se usa solo en redes"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Antes de usar comercialmente imágenes de una herramienta de IA…",
+     "ops": [
+      "Revisas su licencia de uso comercial y tu plan",
+      "No hace falta nada",
+      "Le preguntas a la IA si se puede",
+      "Esperas a que alguien reclame"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Pegar la base de pedidos con direcciones y teléfonos en una IA pública…",
+     "ops": [
+      "Está bien si es para mensajes",
+      "Está bien sin correos",
+      "Está bien de noche",
+      "No se hace"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Reseñas «de ejemplo» mientras llegan las reales…",
+     "ops": [
+      "No se publican: solo reseñas auténticas",
+      "Se publican con nombres falsos",
+      "Se publican sin estrellas",
+      "Se publican una semana"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Tu lista de verificación antes de publicar sirve para…",
+     "ops": [
+      "Hacer más lento el trabajo",
+      "Que la IA apruebe",
+      "Revisar siempre lo mismo antes de que algo llegue al cliente",
+      "Nada"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La responsabilidad de lo que publica tu tienda con ayuda de IA es…",
+     "ops": [
+      "De la IA",
+      "Del marketplace",
+      "Tuya",
+      "Del proveedor"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

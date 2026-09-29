@@ -1,0 +1,1406 @@
+{
+ "id": "c-ia-docentes",
+ "horas": 10,
+ "aprender": [
+  "Resolver situaciones avanzadas del aula con IA: inclusión y ajustes razonables, evaluación formativa con datos del grupo y enseñar a tus alumnos a usar la IA con integridad académica.",
+  "Detectar errores plantados en un día simulado de clases y armar tu kit docente: biblioteca de prompts, política de datos de alumnos, lista de verificación y una unidad lista para aplicar."
+ ],
+ "terceras": [
+  {
+   "p": "¿Qué objetivo está mejor escrito?",
+   "op": "«Que aprendan todo sobre la célula y le echen ganas»"
+  },
+  {
+   "p": "¿Qué información aporta más a la planeación?",
+   "op": "El número de páginas del libro de texto"
+  },
+  {
+   "p": "Una actividad de inicio sirve para…",
+   "op": "Dictar el resumen completo del tema"
+  },
+  {
+   "p": "Si una actividad propuesta requiere internet y tu escuela no tiene…",
+   "op": "La dejo de tarea para que la hagan en casa"
+  },
+  {
+   "p": "«Presenta un buen trabajo»",
+   "op": "Observable, porque todos saben qué es un buen trabajo"
+  },
+  {
+   "p": "«Incluye al menos 3 fuentes citadas con autor y año»",
+   "op": "Vago, porque no dice qué fuentes usar"
+  },
+  {
+   "p": "«Muestra interés»",
+   "op": "Observable, porque se nota en la actitud"
+  },
+  {
+   "p": "Antes de aplicar un examen generado con IA…",
+   "op": "Le pido a la IA que lo revise otra vez"
+  },
+  {
+   "p": "Un buen distractor…",
+   "op": "Es más largo que la respuesta correcta"
+  },
+  {
+   "p": "Para usar IA con trabajos de alumnos…",
+   "op": "Uso solo el nombre de pila del alumno"
+  },
+  {
+   "p": "Una retroalimentación útil incluye…",
+   "op": "La calificación y la comparación con el mejor del grupo"
+  },
+  {
+   "p": "Por mensaje a la familia de un alumno con problemas de conducta…",
+   "op": "Envío un resumen generado por la IA de lo que pasó"
+  },
+  {
+   "p": "Los detectores de texto hecho con IA…",
+   "op": "Son confiables si marcan más de 90%"
+  },
+  {
+   "p": "Una tarea resistente a copiar…",
+   "op": "Pide un ensayo más largo que el año pasado"
+  },
+  {
+   "p": "¿Qué haces con el examen que generó la IA?",
+   "op": "Lo aplico y corrijo después los reactivos que fallen"
+  },
+  {
+   "p": "¿Cómo nombras a los alumnos al usar IA con sus trabajos?",
+   "op": "Con su número de lista y nombre"
+  }
+ ],
+ "extras": {
+  "c-ia-docentes-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la maestra Liliana, de 4.º de primaria en Oaxaca, pidió a la IA una planeación de 50 minutos sobre fracciones. El borrador suma 70 minutos de actividades, pide que cada alumno use una tableta (su escuela no tiene) y cita un «aprendizaje esperado» que no aparece en su programa analítico."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué ajusta primero?",
+      "ops": [
+       "Los tiempos: la clase dura 50 minutos",
+       "El color de la hoja de trabajo",
+       "Nada, la IA ya lo alineó"
+      ],
+      "correcta": 0,
+      "explica": "Una planeación que no cabe en el tiempo real no se puede aplicar; la IA suele sobrecargar."
+     },
+     {
+      "p": "Sobre el «aprendizaje esperado» que no está en su programa…",
+      "ops": [
+       "Lo deja porque suena oficial",
+       "Lo sustituye por el contenido y el proceso de aprendizaje tal como aparecen en su programa",
+       "Lo combina con el suyo"
+      ],
+      "correcta": 1,
+      "explica": "La alineación se hace con el documento oficial que usa la escuela, pegado tal cual."
+     },
+     {
+      "p": "Para la actividad con tabletas…",
+      "ops": [
+       "Pide una alternativa con material impreso o concreto",
+       "Pide a los alumnos que traigan celular",
+       "La deja de tarea"
+      ],
+      "correcta": 0,
+      "explica": "Las actividades se adaptan a los recursos reales del grupo."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Tu petición a la IA",
+    "malTitulo": "Sin contexto",
+    "mal": "«Hazme una planeación de fracciones para cuarto.»",
+    "bienTitulo": "Con contexto real",
+    "bien": "«4.º de primaria, 50 minutos, 32 alumnos, sin dispositivos. Contenido de mi programa: [pegar]. Propón inicio, desarrollo y cierre con tiempos que sumen 50 minutos y material concreto.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus restricciones",
+    "pregunta": "Escribe las 4 restricciones reales de tu grupo que siempre debes incluir en tu petición a la IA.",
+    "ayuda": "Tiempo: … / Recursos: … / Grupo: … / Programa: …"
+   }
+  ],
+  "c-ia-docentes-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una telesecundaria de Chiapas, el maestro Andrés tiene un alumno que llegó este ciclo y habla tseltal como primera lengua, y una alumna con baja visión. Pide a la IA adaptar la lectura de Ciencias sobre el ciclo del agua."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Para la alumna con baja visión, una adaptación útil es…",
+      "ops": [
+       "Letra grande, buen contraste y esquemas con pocos elementos",
+       "Quitarle la lectura",
+       "Darle el doble de texto"
+      ],
+      "correcta": 0,
+      "explica": "Se ajusta el formato, no se reduce la expectativa de aprendizaje."
+     },
+     {
+      "p": "Para el alumno hablante de tseltal, la traducción de la IA…",
+      "ops": [
+       "Es suficiente tal cual",
+       "Sirve como apoyo, pero la valida alguien que hable la lengua y se apoya en imágenes",
+       "Se evita; que aprenda en español sin apoyo"
+      ],
+      "correcta": 1,
+      "explica": "Las traducciones automáticas a lenguas originarias pueden fallar; la validación y los apoyos visuales ayudan."
+     },
+     {
+      "p": "Al simplificar, la IA escribió que «el agua se evapora solo en verano». Tú…",
+      "ops": [
+       "Lo corriges: la evaporación ocurre todo el año",
+       "Lo dejas, es más sencillo así",
+       "Lo cambias por «a veces»"
+      ],
+      "correcta": 0,
+      "explica": "Simplificar no es cambiar el hecho; revisa cada versión."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la regla",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Adaptar un material cambia el formato, no baja la ___ de aprendizaje.",
+      "resp": [
+       "expectativa",
+       "meta",
+       "exigencia"
+      ],
+      "pista": "Lo que esperas que logre."
+     },
+     {
+      "frase": "Toda versión simplificada se ___ antes de imprimirla.",
+      "resp": [
+       "revisa",
+       "lee",
+       "verifica"
+      ],
+      "pista": "Tu paso de control."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu adaptación",
+    "pregunta": "Elige un material de esta semana y escribe qué adaptación harías para un alumno concreto (sin nombre) y cómo comprobarías que la versión no cambió los hechos.",
+    "ayuda": "Material: … / Alumno 1 necesita… / Lo compruebo con…"
+   }
+  ],
+  "c-ia-docentes-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el profesor Hugo, de Química en una preparatoria de Guadalajara, pidió a la IA 8 actividades sobre reacciones. Una propone mezclar cloro y vinagre en el salón «para ver el gas»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace con esa actividad?",
+      "ops": [
+       "La descarta: mezclar cloro con ácidos libera un gas tóxico",
+       "La hace con ventanas abiertas",
+       "La deja de tarea"
+      ],
+      "correcta": 0,
+      "explica": "La IA puede proponer actividades peligrosas; la seguridad la decide el docente con los protocolos del laboratorio."
+     },
+     {
+      "p": "Una alternativa segura sería…",
+      "ops": [
+       "Bicarbonato con vinagre en cantidades pequeñas y con lentes de protección",
+       "La misma mezcla en menor cantidad",
+       "Solo leer sobre el tema"
+      ],
+      "correcta": 0,
+      "explica": "Es una reacción común de bajo riesgo que permite observar gas."
+     },
+     {
+      "p": "Antes de usar cualquier práctica propuesta por la IA…",
+      "ops": [
+       "La comparas con el manual de seguridad de tu laboratorio",
+       "La haces tú primero en casa",
+       "Confías si la IA dice que es segura"
+      ],
+      "correcta": 0,
+      "explica": "El manual y el reglamento de tu escuela mandan."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Petición de actividades",
+    "malTitulo": "Abierta",
+    "mal": "«Dame experimentos impactantes de reacciones químicas.»",
+    "bienTitulo": "Con criterios",
+    "bien": "«Dame 5 actividades de reacciones químicas para 2.º semestre, con materiales caseros de bajo riesgo, 20 minutos cada una, y señala el equipo de protección necesario. Excluye sustancias tóxicas o inflamables.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu filtro",
+    "pregunta": "Escribe los 3 criterios con los que descartas una actividad que te propone la IA.",
+    "ayuda": "Descarto si… / Descarto si… / Descarto si…"
+   }
+  ],
+  "c-ia-docentes-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la maestra Rosa, de Ciencias en una secundaria de Monterrey, pidió una rúbrica para un proyecto de maqueta del sistema solar. La IA le dio 4 criterios: ortografía (40%), limpieza (30%), creatividad (20%) y contenido científico (10%)."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el problema principal?",
+      "ops": [
+       "El peso de los criterios no refleja el objetivo científico",
+       "Tiene pocos criterios",
+       "Tiene porcentajes"
+      ],
+      "correcta": 0,
+      "explica": "Si el objetivo es comprender el sistema solar, el contenido científico debe pesar más."
+     },
+     {
+      "p": "¿Qué descriptor de «contenido científico» es observable?",
+      "ops": [
+       "«Demuestra conocimiento del tema»",
+       "«Representa los 8 planetas en orden y explica 2 diferencias entre planetas rocosos y gaseosos»",
+       "«Hace un trabajo completo»"
+      ],
+      "correcta": 1,
+      "explica": "Se puede verificar viendo la maqueta y escuchando la explicación."
+     },
+     {
+      "p": "«Creatividad» como criterio…",
+      "ops": [
+       "Se elimina siempre",
+       "Se describe con algo observable, como una solución original para representar tamaños o distancias",
+       "Se califica según el gusto del docente"
+      ],
+      "correcta": 1,
+      "explica": "Hasta la creatividad puede describirse con conductas observables."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "El criterio que más pesa en la rúbrica debe estar ligado al ___ de aprendizaje.",
+      "resp": [
+       "objetivo",
+       "propósito",
+       "proposito"
+      ],
+      "pista": "Lo que deben lograr."
+     },
+     {
+      "frase": "Un descriptor útil se puede ___ en el producto o la presentación.",
+      "resp": [
+       "observar",
+       "ver",
+       "verificar",
+       "comprobar"
+      ],
+      "pista": "Lo contrario de suponer."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus pesos",
+    "pregunta": "Escribe los criterios y porcentajes de la rúbrica de tu próximo proyecto y justifica el que más pesa.",
+    "ayuda": "Criterio 1: …% / Criterio 2: …% / Pesa más porque…"
+   }
+  ],
+  "c-ia-docentes-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el profesor Joel, de Historia en una secundaria de Puebla, generó con IA un examen de 15 reactivos sobre la Revolución Mexicana. Al revisarlo encuentra: «La Revolución Mexicana inició en 1917», un reactivo con dos respuestas correctas y la correcta casi siempre en la opción c."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«La Revolución Mexicana inició en 1917» es…",
+      "ops": [
+       "Correcto",
+       "Incorrecto: inició en 1910; en 1917 se promulgó la Constitución",
+       "Una cuestión de interpretación"
+      ],
+      "correcta": 1,
+      "explica": "La IA mezcla fechas cercanas; resuelve y verifica cada reactivo con tu libro de texto."
+     },
+     {
+      "p": "Con el reactivo que tiene dos respuestas correctas…",
+      "ops": [
+       "Lo reescribe para que solo una sea defendible",
+       "Acepta ambas al calificar y lo deja así",
+       "Lo aplica y ve qué pasa"
+      ],
+      "correcta": 0,
+      "explica": "Un reactivo ambiguo no mide lo que quieres medir."
+     },
+     {
+      "p": "Si la correcta casi siempre es la c…",
+      "ops": [
+       "No importa",
+       "Redistribuye las posiciones de las respuestas correctas",
+       "Pone todas en la a"
+      ],
+      "correcta": 1,
+      "explica": "Los alumnos detectan patrones; varía la posición."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Distractores",
+    "malTitulo": "Absurdos",
+    "mal": "«¿Quién encabezó el Plan de San Luis? a) Francisco I. Madero b) Un astronauta c) Nadie d) El alumno»",
+    "bienTitulo": "Plausibles",
+    "bien": "«¿Quién encabezó el Plan de San Luis? a) Francisco I. Madero b) Venustiano Carranza c) Emiliano Zapata d) Porfirio Díaz»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión",
+    "pregunta": "Escribe los 4 puntos que revisarás en cada examen generado con IA antes de aplicarlo.",
+    "ayuda": "1) Resuelvo… / 2) … / 3) … / 4) …"
+   }
+  ],
+  "c-ia-docentes-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la maestra Claudia, de preparatoria en Mérida, tiene 35 ensayos por retroalimentar y piensa pegarlos completos, con nombre y matrícula, en un asistente de IA gratuito para que «califique solo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué cambia primero?",
+      "ops": [
+       "Nada, así ahorra tiempo",
+       "Quita nombre y matrícula y usa «Alumno 1, Alumno 2»",
+       "Pega solo los de los alumnos mayores de edad"
+      ],
+      "correcta": 1,
+      "explica": "Los trabajos con datos personales no van a herramientas no autorizadas por la escuela."
+     },
+     {
+      "p": "Sobre «que califique solo»…",
+      "ops": [
+       "La calificación la decide ella con la rúbrica; la IA puede ayudar a redactar comentarios a partir de sus notas",
+       "La IA califica mejor porque no se cansa",
+       "Promedia su calificación con la de la IA"
+      ],
+      "correcta": 0,
+      "explica": "La evaluación es responsabilidad del docente."
+     },
+     {
+      "p": "Una forma eficiente y segura de trabajar es…",
+      "ops": [
+       "Leer cada ensayo, anotar 2 o 3 observaciones y pedir a la IA que las redacte con tono cálido",
+       "Pedirle a la IA que invente comentarios generales para todos",
+       "Pegar solo el primer párrafo de cada ensayo con nombre"
+      ],
+      "correcta": 0,
+      "explica": "Tus observaciones son la base; la IA solo pule la redacción."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Petición a la IA",
+    "malTitulo": "Delegar la evaluación",
+    "mal": "«Califica estos 35 ensayos del 1 al 10.»",
+    "bienTitulo": "Apoyo a tu criterio",
+    "bien": "«Alumno 12. Mis notas: tesis clara, faltan ejemplos en el párrafo 3, buena conclusión. Redacta un comentario de 60 palabras: logro, mejora concreta y ánimo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu flujo",
+    "pregunta": "Describe en 4 pasos cómo retroalimentarás el próximo paquete de trabajos con IA sin datos personales.",
+    "ayuda": "1) Leo… / 2) Anoto… / 3) Pido a la IA… / 4) Reviso…"
+   }
+  ],
+  "c-ia-docentes-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la directora de una primaria pública en Toluca pide a un docente redactar con IA un aviso para la kermés. El borrador dice: «La aportación de $200 es obligatoria para recibir boletas»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el aviso?",
+      "ops": [
+       "Ninguno",
+       "En escuela pública, las aportaciones son voluntarias y no pueden condicionar servicios como la entrega de boletas",
+       "Falta el costo de los antojitos"
+      ],
+      "correcta": 1,
+      "explica": "La IA no conoce tus reglas; el docente revisa que el aviso respete la normativa y lo que acordó la escuela."
+     },
+     {
+      "p": "¿Cómo queda mejor?",
+      "ops": [
+       "«Su aportación voluntaria nos ayuda a mejorar la escuela. ¡Gracias por participar!»",
+       "«Quien no aporte no participa»",
+       "«Aporte $200 o pase a dirección»"
+      ],
+      "correcta": 0,
+      "explica": "Tono cordial y sin condicionar."
+     },
+     {
+      "p": "Un padre responde al aviso con una queja sobre otro alumno. Tú…",
+      "ops": [
+       "Contestas en el grupo de WhatsApp",
+       "Le propones hablarlo en persona o por un canal privado",
+       "Pegas la queja en la IA con nombres para responder"
+      ],
+      "correcta": 1,
+      "explica": "Los asuntos de otros alumnos no se tratan en grupo ni en herramientas de IA."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Aviso de kermés",
+    "malTitulo": "Condiciona",
+    "mal": "«Aportación obligatoria de $200 para entregar boletas.»",
+    "bienTitulo": "Invita",
+    "bien": "«Kermés el viernes 14 de 10:00 a 13:00. La aportación es voluntaria. Si pueden apoyar con un platillo, avisen a su docente antes del miércoles.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu aviso",
+    "pregunta": "Escribe un aviso real que mandarás a familias y revisa que no condicione nada, que sea claro y que tenga fecha límite.",
+    "ayuda": "Qué: … / Cuándo: … / Qué hacer: … / Fecha límite: …"
+   }
+  ],
+  "c-ia-docentes-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dos ensayos de 3.º de secundaria se parecen mucho y un detector marca uno con «92% generado por IA». Un colega sugiere poner cero a ambos alumnos."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces primero?",
+      "ops": [
+       "Pones cero con base en el detector",
+       "Platicas con cada alumno sobre su proceso y le pides que explique sus ideas",
+       "Lo publicas en el grupo para dar ejemplo"
+      ],
+      "correcta": 1,
+      "explica": "El detector no es prueba; la conversación sobre el proceso sí da información."
+     },
+     {
+      "p": "Que los dos ensayos se parezcan puede deberse a…",
+      "ops": [
+       "Varias causas: trabajo en equipo, misma fuente, uso de IA; hay que averiguar",
+       "Solo a copia",
+       "Solo a IA"
+      ],
+      "correcta": 0,
+      "explica": "Antes de sancionar, se investiga con justicia."
+     },
+     {
+      "p": "Para la próxima tarea, una mejora de diseño es…",
+      "ops": [
+       "Pedir un borrador en clase y una reflexión sobre qué cambió",
+       "Prohibir computadoras en casa",
+       "Usar otro detector"
+      ],
+      "correcta": 0,
+      "explica": "El proceso visible hace más difícil sustituir el aprendizaje."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Situación y respuesta justa",
+    "pares": [
+     [
+      "El detector marca 92%",
+      "No se usa como prueba"
+     ],
+     [
+      "Sospecha de copia",
+      "Conversación sobre el proceso"
+     ],
+     [
+      "Alumno declara que usó IA para ideas",
+      "Se valora según las reglas del grupo"
+     ],
+     [
+      "Tarea fácil de sustituir con IA",
+      "Rediseño con borrador y contexto local"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu protocolo justo",
+    "pregunta": "Escribe los 3 pasos que seguirás cuando sospeches que un trabajo no es del alumno.",
+    "ayuda": "1) … / 2) … / 3) …"
+   }
+  ],
+  "c-ia-docentes-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> a la mitad de la unidad, la evaluación diagnóstica muestra que 14 de 38 alumnos no alcanzaron el objetivo de la primera semana. Tienes 4 sesiones antes del proyecto final."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la planeación?",
+      "ops": [
+       "Sigues igual para no atrasarte",
+       "Ajustas: una sesión de reforzamiento con materiales diferenciados",
+       "Eliminas el proyecto"
+      ],
+      "correcta": 1,
+      "explica": "La evaluación formativa sirve para ajustar la enseñanza."
+     },
+     {
+      "p": "Para preparar el reforzamiento con IA, le das…",
+      "ops": [
+       "El objetivo y los errores más comunes que observaste, sin nombres",
+       "La lista con nombres y calificaciones",
+       "Nada, que adivine"
+      ],
+      "correcta": 0,
+      "explica": "Los errores observados son el mejor insumo."
+     },
+     {
+      "p": "¿Qué proporción del grupo no alcanzó el objetivo?",
+      "ops": [
+       "Alrededor de 37%",
+       "Alrededor de 14%",
+       "Alrededor de 60%"
+      ],
+      "correcta": 0,
+      "explica": "14 ÷ 38 ≈ 0.37."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "La evaluación ___ sirve para ajustar la enseñanza a tiempo.",
+      "resp": [
+       "formativa",
+       "diagnóstica",
+       "diagnostica",
+       "continua"
+      ],
+      "pista": "La que ocurre durante el proceso."
+     },
+     {
+      "frase": "A la IA le das los ___ comunes, no los nombres de los alumnos.",
+      "resp": [
+       "errores"
+      ],
+      "pista": "Lo que observaste en las respuestas."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu ajuste",
+    "pregunta": "Escribe qué harías en tu siguiente sesión si un tercio del grupo no alcanzó el objetivo.",
+    "ayuda": "Si un tercio no lo logra, haré…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: inclusión, evaluación con datos e integridad",
+   "r": "Tres situaciones que exigen criterio docente: ajustes razonables para la inclusión, seguimiento del grupo con datos y enseñar a tus alumnos a usar la IA con integridad académica.",
+   "lecciones": [
+    {
+     "t": "Inclusión y ajustes razonables sin etiquetar a nadie",
+     "obj": "Usar IA para preparar ajustes y materiales accesibles sin diagnosticar ni exponer datos de alumnos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En el enfoque de inclusión que usan las escuelas mexicanas se habla de <b>barreras para el aprendizaje y la participación</b>: lo que se ajusta es el entorno, el material o la forma de evaluar, no se «etiqueta» al alumno. La IA ayuda a preparar lecturas fáciles, apoyos visuales, instrucciones por pasos y formas alternativas de demostrar lo aprendido. Lo que no hace es diagnosticar: si sospechas una condición, se canaliza con el área de apoyo (USAER, psicología escolar u orientación) y con la familia, según el protocolo de tu escuela."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Ajustes para una barrera concreta",
+       "texto": "Doy [materia] en [grado]. Un alumno enfrenta esta barrera en clase: [describe lo que observas, sin nombre ni diagnóstico: se pierde con instrucciones largas, no alcanza a copiar del pizarrón, le cuesta leer textos extensos]. Tema de la semana: [tema]. Propón 5 ajustes concretos para el material, la instrucción y la evaluación que mantengan el mismo objetivo de aprendizaje. No sugieras diagnósticos ni etiquetas."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en inclusión",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Sugiere que el alumno «podría tener» una condición",
+         "Lo borras: el docente no diagnostica; se canaliza"
+        ],
+        [
+         "Baja el objetivo en lugar de ajustar el camino",
+         "Mantén el objetivo y ajusta el formato"
+        ],
+        [
+         "Usa lenguaje que etiqueta o estereotipa",
+         "Describe barreras y apoyos, no a la persona"
+        ],
+        [
+         "Propone apoyos que tu escuela no tiene",
+         "Pide opciones con tus recursos reales"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA responde: «Por lo que describes, el alumno podría tener TDAH». Tú…",
+         "ops": [
+          "Se lo comentas a la familia",
+          "Descartas esa parte y, si hay preocupación, canalizas según el protocolo",
+          "Lo anotas en su expediente"
+         ],
+         "correcta": 1,
+         "explica": "Ni la IA ni el docente diagnostican; se canaliza con el área de apoyo."
+        },
+        {
+         "p": "Para pedir ajustes a la IA describes…",
+         "ops": [
+          "La barrera que observas en clase, sin nombre",
+          "El nombre y el historial del alumno",
+          "El diagnóstico que te contó la familia"
+         ],
+         "correcta": 0,
+         "explica": "Lo observable basta y protege al alumno."
+        },
+        {
+         "p": "Un ajuste razonable para quien no alcanza a copiar del pizarrón es…",
+         "ops": [
+          "Darle una hoja con el esquema para completar",
+          "Pedirle que copie más rápido",
+          "Exentarlo del tema"
+         ],
+         "correcta": 0,
+         "explica": "Se ajusta el medio, no el aprendizaje."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Cómo describes la situación",
+       "malTitulo": "Etiqueta",
+       "mal": "«Tengo un alumno flojo y distraído, seguro tiene algo.»",
+       "bienTitulo": "Barrera observable",
+       "bien": "«Un alumno pierde el hilo cuando doy más de dos instrucciones seguidas y deja la actividad a la mitad.»"
+      },
+      {
+       "tipo": "completar",
+       "rotulo": "Completa",
+       "instruccion": "Escribe la palabra que falta.",
+       "items": [
+        {
+         "frase": "Se describe la ___ que el alumno enfrenta, no una etiqueta.",
+         "resp": [
+          "barrera",
+          "dificultad",
+          "situación",
+          "situacion"
+         ],
+         "pista": "Lo que le impide aprender o participar."
+        },
+        {
+         "frase": "Si hay preocupación, el docente ___ con el área de apoyo según el protocolo.",
+         "resp": [
+          "canaliza",
+          "consulta",
+          "comunica",
+          "acude"
+         ],
+         "pista": "Lo contrario de diagnosticar."
+        },
+        {
+         "frase": "El ajuste cambia el formato y mantiene el mismo ___ de aprendizaje.",
+         "resp": [
+          "objetivo",
+          "propósito",
+          "proposito"
+         ],
+         "pista": "Lo que debe lograr."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Solicitud de apoyo al área de inclusión",
+       "texto": "Redacta una solicitud breve y respetuosa al área de apoyo de mi escuela [USAER, psicología u orientación] a partir de mis observaciones [pegar hechos observables, sin nombre: qué pasa, en qué actividades, desde cuándo, qué ajustes ya probé y qué resultado tuvieron]. No incluyas diagnósticos, etiquetas ni suposiciones sobre la familia. Cierra pidiendo una reunión para acordar apoyos. Yo agrego el nombre del alumno en el sistema de la escuela."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu ajuste",
+       "pregunta": "Describe una barrera que observas en tu grupo (sin nombres) y escribe 3 ajustes que probarás durante dos semanas.",
+       "ayuda": "Barrera: … / Ajuste 1: … / Ajuste 2: … / Ajuste 3: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Se ajusta el entorno, no se etiqueta al alumno.",
+        "La IA prepara apoyos; nunca diagnostica.",
+        "Si hay preocupación, se canaliza según el protocolo."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Evaluación formativa: leer los datos del grupo",
+     "obj": "Analizar resultados del grupo en tu hoja de cálculo y usar la IA para planear el reforzamiento.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Después de un examen o una actividad, los datos del grupo te dicen qué reforzar. La hoja de cálculo hace las cuentas; la IA te ayuda a interpretar patrones y a preparar el reforzamiento. Dos reglas: <b>los datos van sin nombres</b> (Alumno 1, Alumno 2) y <b>los cálculos los haces en la hoja</b>, porque la IA puede equivocarse al promediar o contar."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Resultados del examen de la unidad",
+       "datos": [
+        [
+         "Alumno",
+         "Aciertos 1-5",
+         "Aciertos 6-10",
+         "Calificación"
+        ],
+        [
+         "Alumno 1",
+         5,
+         4,
+         9
+        ],
+        [
+         "Alumno 2",
+         3,
+         2,
+         5
+        ],
+        [
+         "Alumno 3",
+         4,
+         3,
+         7
+        ],
+        [
+         "Alumno 4",
+         2,
+         3,
+         5
+        ],
+        [
+         "Alumno 5",
+         5,
+         5,
+         10
+        ],
+        [
+         "Alumno 6",
+         4,
+         2,
+         6
+        ],
+        [
+         "Promedio",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Alumnos con menos de 6",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "D8",
+         "formula": "=PROMEDIO(D2:D7)",
+         "texto": "<b>D8</b>: promedio del grupo.",
+         "requiere": "PROMEDIO(",
+         "esperado": 7
+        },
+        {
+         "celda": "D9",
+         "formula": "=CONTAR.SI(D2:D7,\"<6\")",
+         "texto": "<b>D9</b>: cuántos alumnos sacaron menos de 6.",
+         "requiere": "CONTAR.SI(",
+         "pista": "=CONTAR.SI(D2:D7,‹<6›) con comillas rectas",
+         "esperado": 2
+        },
+        {
+         "celda": "B8",
+         "formula": "=PROMEDIO(B2:B7)",
+         "texto": "<b>B8</b>: promedio de aciertos en los reactivos 1 a 5.",
+         "esperado": 3.8333333333333335
+        },
+        {
+         "celda": "C8",
+         "formula": "=PROMEDIO(C2:C7)",
+         "texto": "<b>C8</b>: promedio de aciertos en los reactivos 6 a 10.",
+         "explica": "El bloque 6-10 tiene menos aciertos: ahí está el tema a reforzar. Con ese dato, y sin nombres, le pides a la IA actividades de reforzamiento.",
+         "esperado": 3.1666666666666665
+        }
+       ]
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con datos del grupo",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Promedia mal o cuenta de más",
+         "Calcula en la hoja"
+        ],
+        [
+         "Saca conclusiones sobre alumnos concretos",
+         "Trabaja con patrones del grupo"
+        ],
+        [
+         "Propone «reprobar» o «etiquetar» a partir de una sola prueba",
+         "Una evaluación formativa sirve para ajustar la enseñanza"
+        ],
+        [
+         "Inventa causas del bajo resultado",
+         "Las causas las observas tú en clase"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Para que la IA te ayude a interpretar resultados, le compartes…",
+         "ops": [
+          "La tabla con nombres",
+          "Los promedios por bloque de reactivos, sin nombres",
+          "Las fotos de los exámenes"
+         ],
+         "correcta": 1,
+         "explica": "Los patrones del grupo bastan."
+        },
+        {
+         "p": "Si el bloque de reactivos 6-10 tiene menos aciertos, lo primero es…",
+         "ops": [
+          "Revisar si los reactivos estaban bien hechos y qué tema miden",
+          "Bajar la calificación del grupo",
+          "Repetir el examen igual"
+         ],
+         "correcta": 0,
+         "explica": "A veces el problema está en el reactivo, no en el aprendizaje."
+        },
+        {
+         "p": "La IA dice que el promedio es 7.5 y tu hoja dice 7. Tú…",
+         "ops": [
+          "Usas el de la hoja y revisas la fórmula",
+          "Usas el de la IA",
+          "Promedias ambos"
+         ],
+         "correcta": 0,
+         "explica": "La hoja con fórmulas verificadas manda."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Reforzamiento a partir de los datos",
+       "texto": "En mi grupo de [grado], el tema [tema] tuvo menos aciertos. Los errores más frecuentes que vi fueron: [error 1], [error 2]. Propón una sesión de reforzamiento de [minutos] con: una explicación con otro enfoque, 2 actividades por niveles y 5 preguntas de salida para comprobar si ya se entendió. No uses datos de alumnos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tus datos",
+       "pregunta": "Escribe qué dato de tu última evaluación te dice qué reforzar y qué harás en la próxima sesión.",
+       "ayuda": "El dato es… / Reforzaré… / Lo comprobaré con…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Datos sin nombres; cálculos en la hoja.",
+        "Busca el patrón por tema o bloque de reactivos.",
+        "La evaluación formativa sirve para ajustar la enseñanza."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Enseñar a tus alumnos a usar la IA con integridad",
+     "obj": "Diseñar actividades donde tus alumnos aprendan a usar la IA para aprender, verificar y declarar su uso.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Tus alumnos van a usar IA. La pregunta es si aprenden a usarla para <b>aprender</b> o para <b>evitar aprender</b>. Una buena práctica es enseñarlo de forma explícita: cuándo sirve (explicar, dar ejemplos, generar preguntas de práctica), cuándo no (hacer la tarea por ellos), cómo verificar lo que dice y cómo declarar su uso según la política de tu escuela. En grados menores, el docente usa la herramienta frente al grupo; revisa también la edad mínima que piden los términos de cada herramienta."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Actividad: cazar errores de la IA",
+       "texto": "Prepara una actividad de 30 minutos para [grado] sobre [tema]: un texto breve generado con IA que contenga 3 errores de contenido que yo verificaré [o: pego un texto con errores que yo marqué]. Los alumnos, en equipos, deben encontrar los errores usando su libro de texto, corregirlos y explicar cómo los detectaron. Incluye una hoja de trabajo y una pregunta de cierre sobre por qué hay que verificar."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes al enseñar uso de IA",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Prohibir sin explicar",
+         "Da reglas claras con sus razones"
+        ],
+        [
+         "Permitir sin reglas",
+         "Define cuándo sí, cuándo no y cómo se declara"
+        ],
+        [
+         "Evaluar solo el producto final",
+         "Evalúa también el proceso"
+        ],
+        [
+         "Confiar en detectores",
+         "Conversa sobre el proceso con el alumno"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Un alumno pide a la IA que le explique la fotosíntesis con un ejemplo de su huerto. Eso es…",
+         "ops": [
+          "Uso para aprender, válido si lo permiten las reglas del grupo",
+          "Trampa siempre",
+          "Plagio"
+         ],
+         "correcta": 0,
+         "explica": "Pedir explicaciones es de los usos más formativos."
+        },
+        {
+         "p": "Una alumna entrega un resumen hecho por la IA sin declararlo. Según tu acuerdo de grupo…",
+         "ops": [
+          "Conversas con ella, aplicas lo acordado y le pides rehacer con su proceso",
+          "La exhibes frente al grupo",
+          "No haces nada"
+         ],
+         "correcta": 0,
+         "explica": "Reglas claras, consecuencias acordadas y un enfoque formativo."
+        },
+        {
+         "p": "Una declaración de uso de IA útil dice…",
+         "ops": [
+          "«Usé IA»",
+          "«Pedí a la IA 5 preguntas de práctica; las respuestas y el texto son míos»",
+          "«No usé nada» aunque sí la usó"
+         ],
+         "correcta": 1,
+         "explica": "La declaración precisa dice qué hizo la IA y qué hizo el alumno."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Uso de la IA y cómo se ve en clase",
+       "pares": [
+        [
+         "Aprender",
+         "Pedir una explicación con otro ejemplo"
+        ],
+        [
+         "Practicar",
+         "Generar preguntas y responderlas sin ayuda"
+        ],
+        [
+         "Revisar",
+         "Pedir que señale qué no se entiende de su texto"
+        ],
+        [
+         "Hacer trampa",
+         "Entregar como propio un texto generado"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu acuerdo",
+       "pregunta": "Escribe las 4 reglas de uso de IA para tu grupo, incluida la forma de declarar su uso según la política de tu escuela.",
+       "ayuda": "1) Se vale… / 2) No se vale… / 3) Se declara así… / 4) Si no se respeta…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Formato de declaración para alumnos",
+       "texto": "DECLARACIÓN DE USO DE IA — [Nombre de la tarea]\n¿Usaste IA? [Sí / No]\n¿Para qué? [explicar un concepto / preguntas de práctica / revisar mi redacción / otro: ]\n¿Qué hice yo? [ ]\n¿Qué verifiqué y dónde? [ ]\nFirma: [ ]",
+       "nota": "Cópiala y adáptala a la política de tu escuela."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Enseña de forma explícita: aprender sí, sustituir no.",
+        "Verificar y declarar son parte de la tarea.",
+        "Reglas con razones y consecuencias acordadas."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "En el enfoque de inclusión, lo que se ajusta es…",
+     "ops": [
+      "El diagnóstico del alumno",
+      "El entorno, el material o la forma de evaluar",
+      "La calificación mínima",
+      "El número de alumnos"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si la IA sugiere que un alumno «podría tener» una condición, tú…",
+     "ops": [
+      "Lo comentas con la familia como diagnóstico",
+      "Lo anotas en la boleta",
+      "Descartas esa parte y canalizas si hay preocupación",
+      "Le pides a la IA más detalles"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Para analizar resultados del grupo con IA compartes…",
+     "ops": [
+      "Promedios por tema sin nombres",
+      "La lista con nombres y calificaciones",
+      "Fotos de los exámenes",
+      "Las matrículas"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA y tu hoja dan promedios distintos…",
+     "ops": [
+      "Usas el de la IA",
+      "Promedias los dos",
+      "Preguntas al grupo",
+      "Usas la hoja y revisas la fórmula"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una declaración de uso de IA útil…",
+     "ops": [
+      "Dice qué hizo la IA y qué hizo el alumno",
+      "Solo dice «usé IA»",
+      "Es opcional siempre",
+      "La redacta la IA"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En grados menores, lo recomendable es que…",
+     "ops": [
+      "Cada alumno use la IA solo en casa",
+      "El docente use la herramienta frente al grupo y revise la edad mínima de sus términos",
+      "Se prohíba mencionar la IA",
+      "Los alumnos creen sus propias cuentas"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado de clases con errores plantados que debes detectar y la construcción de tu kit docente con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de clases con IA",
+     "obj": "Detectar errores pedagógicos, de datos y de integridad en el trabajo real con IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a acompañar al <b>profesor Ramiro</b>, docente de Matemáticas en una secundaria de Puebla, durante un día de trabajo con IA. En cada escena hay al menos un error plantado. Léela, detéctalo y escribe cómo lo corregirías."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 7:00.</b> Ramiro revisa la planeación que le dio la IA para 2.º grado. El contenido que cita corresponde a 1.º grado, y el cierre propone «examen de 30 minutos» en una clase de 50 que ya tiene 40 minutos de actividades."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "¿Qué errores hay y cómo pedirías la corrección a la IA?",
+       "ayuda": "Errores: … / Le pediría: «…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:00.</b> Ramiro va a imprimir un examen de 10 reactivos generado con IA. El reactivo 4 pregunta «¿Cuánto es 3/4 + 1/4?» con opciones a) 1, b) 4/8, c) 4/4, d) 3/16, y marca como correcta solo la c."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "¿Qué problema tiene el reactivo 4 y cómo lo reescribirías?",
+       "ayuda": "El problema es… / Reescrito: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 13:00.</b> Para redactar un mensaje a una familia, Ramiro pegó en la IA el nombre del alumno y sus calificaciones. La IA sugirió incluir: «su hijo presenta posibles rasgos de dislexia». Ramiro está por enviarlo por WhatsApp."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "¿Qué dos errores hay y qué debería decir el mensaje?",
+       "ayuda": "Error 1: … / Error 2: … / Mensaje: «…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 16:00.</b> Ramiro revisa tareas. Un detector marca una con «88% IA» y él escribe cero. En su hoja, el promedio del grupo aparece como 8.4, pero la fórmula toma también la fila del encabezado y la de «Promedio del grupo anterior»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "¿Qué harías con la tarea marcada y cómo corriges el promedio?",
+       "ayuda": "Tarea: … / Fórmula correcta: …"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 2, 3/4 + 1/4 es igual a…",
+         "ops": [
+          "4/8",
+          "1, que también se puede escribir 4/4: el reactivo tiene dos respuestas correctas",
+          "3/16"
+         ],
+         "correcta": 1,
+         "explica": "a) y c) son equivalentes; el reactivo debe tener una sola respuesta defendible."
+        },
+        {
+         "p": "En la escena 3, lo correcto es…",
+         "ops": [
+          "Enviar el mensaje tal cual",
+          "Quitar la sugerencia de diagnóstico, no usar datos del alumno en la IA y citar a la familia en persona",
+          "Solo quitar el nombre"
+         ],
+         "correcta": 1,
+         "explica": "Ni la IA ni el docente diagnostican, y lo delicado se habla en persona."
+        },
+        {
+         "p": "En la escena 4, ante la tarea marcada por el detector…",
+         "ops": [
+          "Se mantiene el cero",
+          "Conversa con el alumno sobre su proceso antes de decidir",
+          "Se sube a 5"
+         ],
+         "correcta": 1,
+         "explica": "El detector no es prueba."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Revisa alineación, tiempos y respuestas de todo lo que genera la IA.",
+        "Datos de alumnos fuera de la IA; nada de diagnósticos.",
+        "Integridad con conversación, no con detectores."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit docente con IA",
+     "obj": "Construir tu kit personal listo para tu siguiente unidad.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso con un kit que puedas usar el lunes y compartir con tu academia o colegiado: biblioteca de prompts, política de datos de alumnos, lista de verificación y una unidad real con su evaluación. Escribe cada pieza en su espacio y ordénalas con el índice."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 1 — Biblioteca de prompts",
+       "pregunta": "Escribe tus 5 prompts de uso frecuente con campos entre corchetes: planeación, material diferenciado, rúbrica, reactivos y retroalimentación.",
+       "ayuda": "1) Planeación: … / 2) Material: … / 3) Rúbrica: … / 4) Reactivos: … / 5) Retroalimentación: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 2 — Política de datos de alumnos",
+       "pregunta": "Redacta 5 reglas: qué nunca pegas en la IA, cómo nombras a los alumnos, qué herramientas autorizó tu escuela, qué temas se tratan solo en persona y cómo das a conocer a tus alumnos la política de integridad.",
+       "ayuda": "1) Nunca… / 2) Nombro… / 3) Autorizadas: … / 4) En persona: … / 5) Integridad: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 3 — Lista de verificación",
+       "pregunta": "Escribe 6 preguntas que harás antes de usar en clase cualquier material generado con IA.",
+       "ayuda": "¿Está alineado a mi programa? / ¿Cabe en el tiempo? / ¿Resolví cada reactivo? / …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 4 — Unidad real",
+       "pregunta": "Describe la unidad que aplicarás: objetivo observable, 3 actividades, producto final, cómo lo evaluarás y cómo incluirás un borrador en clase y la declaración de uso de IA.",
+       "ayuda": "Objetivo: … / Actividades: … / Producto: … / Evaluación: … / Integridad: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DOCENTE CON IA — [Tu nombre, materia, grado, escuela]\nFecha: [ ]\n\n1. Biblioteca de prompts (5): [ ]\n2. Política de datos de alumnos (5 reglas): [ ]\n   Herramientas autorizadas por mi escuela: [ ]\n3. Lista de verificación antes de usar material (6 preguntas): [ ]\n4. Unidad real: objetivo [ ] actividades [ ] producto [ ] rúbrica [ ]\n   Borrador en clase: [ ]  Declaración de uso de IA: [ ]\n\nPrincipios: la IA me da borradores; el criterio pedagógico y la evaluación son míos; los datos de mis alumnos no van a herramientas no autorizadas.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso!</b> Tienes un método para ganar tiempo con IA sin perder tu criterio: contexto real, revisión de todo lo generado, datos protegidos e integridad académica enseñada con el ejemplo."
+      },
+      {
+       "tipo": "clave",
+       "titulo": "Tu kit docente con IA",
+       "items": [
+        "Prompts con contexto real de tu grupo.",
+        "Política de datos y lista de verificación.",
+        "Una unidad lista con evaluación e integridad académica."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Una planeación de la IA cita contenidos de otro grado. Tú…",
+     "ops": [
+      "La aplicas igual",
+      "Pegas el contenido de tu programa y pides que la ajuste",
+      "Cambias de grado",
+      "Le pides a la IA que confirme"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un reactivo con opciones «1» y «4/4» para 3/4 + 1/4…",
+     "ops": [
+      "Está bien hecho",
+      "Mide mejor",
+      "Tiene dos respuestas correctas y se reescribe",
+      "Solo es difícil"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA sugiere escribir a la familia que su hijo tiene «posibles rasgos» de una condición…",
+     "ops": [
+      "Se elimina y se cita a la familia en persona",
+      "Se envía con cuidado",
+      "Se envía solo a la mamá",
+      "Se suaviza con «tal vez»"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una fórmula de promedio que incluye filas que no son alumnos…",
+     "ops": [
+      "Da un resultado correcto",
+      "Se corrige para tomar solo el rango de alumnos",
+      "No importa",
+      "Se reemplaza por el cálculo de la IA"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En tu unidad, una forma de cuidar la integridad académica es…",
+     "ops": [
+      "Usar un detector",
+      "Borrador en clase y declaración de uso de IA",
+      "Prohibir tareas",
+      "Dejar solo exámenes"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La responsabilidad pedagógica del material usado en clase es…",
+     "ops": [
+      "De la IA",
+      "Del proveedor de la herramienta",
+      "De la dirección",
+      "Del docente"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,281 @@
+{
+  "id": "c-ia-emprendedores",
+  "horas": 10,
+  "aprender": [
+    "Vender en marketplaces cuidando comisiones y margen, anticipar tu flujo de efectivo en temporada alta y responder reseñas y quejas con apoyo de IA.",
+    "Detectar los errores de la IA en publicaciones, costeos, mensajes a clientes y resúmenes de números, y armar tu kit emprendedor con política de datos."
+  ],
+  "terceras": [
+    { "p": "¿Qué prueba demuestra mejor que tu idea funciona?", "op": "Que la IA calificó tu idea con 9 de 10" },
+    { "p": "En las entrevistas, al principio…", "op": "Ofrece un descuento para que te digan que sí" },
+    { "p": "La IA dice que tu idea es «excelente y con gran potencial». Tú…", "op": "Lo tomas como validación suficiente para invertir" },
+    { "p": "¿Cuál es una propuesta de valor clara?", "op": "«El mejor servicio al mejor precio»" },
+    { "p": "Antes de usar un nombre, verificas…", "op": "Que suene bien en inglés" },
+    { "p": "La renta del local es un costo…", "op": "Por unidad vendida" },
+    { "p": "La caja en que entregas cada pastel es un costo…", "op": "Fijo mensual" },
+    { "p": "Si no incluyes tu sueldo en los costos…", "op": "Tu precio queda más alto de lo necesario" },
+    { "p": "¿Quién debe hacer los cálculos del precio?", "op": "Copiar el precio de la competencia sin calcular" },
+    { "p": "Lo primero para ordenar tus números es…", "op": "Contratar un despacho de auditoría" },
+    { "p": "Pasaste fotos de tickets a tabla con la IA. Antes de cerrar el mes…", "op": "Tiro los tickets porque ya están en la tabla" },
+    { "p": "La IA te dice la tasa exacta que pagarías en un régimen. Tú…", "op": "La publico en mis redes para ayudar a otros" },
+    { "p": "¿Para qué es más útil la IA en temas fiscales?", "op": "Elegir por ti el régimen definitivo" },
+    { "p": "El CFDI es…", "op": "Un régimen fiscal" },
+    { "p": "Lo que más hace crecer una cuenta es…", "op": "Comprar seguidores" },
+    { "p": "¿Puedes publicar una imagen generada con IA como si fuera tu producto?", "op": "Sí, si pones muchos hashtags" },
+    { "p": "Una reseña de cliente en tus redes…", "op": "Se puede inventar si el producto es bueno" },
+    { "p": "Las respuestas rápidas sirven para…", "op": "Bloquear a clientes insistentes" },
+    { "p": "La IA agregó «sin gluten» a un producto que sí tiene gluten.", "op": "Lo aclaro solo si alguien pregunta" },
+    { "p": "Antes de producir 200 frascos, Mariana debe…", "op": "Rentar un local más grande" },
+    { "p": "Para fijar el precio de cada salsa…", "op": "Pregunta a sus amigos cuánto pagarían" },
+    { "p": "Para las fotos del catálogo…", "op": "Fotos de salsas de otras marcas" },
+    { "p": "¿Cómo sabrá si el lanzamiento funcionó?", "op": "Por lo que opine su familia" }
+  ],
+  "extras": {
+    "c-ia-emprendedores-m1-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Iván quiere abrir en Zacatecas un servicio de lavado de tenis a domicilio. Publicó una encuesta en su Facebook personal: 84 «me encanta» y 30 comentarios de «¡yo te contrato!». La IA le dijo que la idea tenía «gran potencial». Nadie ha pagado todavía." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué tanto validan los 84 «me encanta»?", "ops": ["Mucho: es una muestra grande", "Poco: son conocidos y no pagaron nada", "Validan el precio"], "correcta": 1, "explica": "El interés de conocidos no es disposición a pagar." },
+        { "p": "¿Cuál es la siguiente prueba más barata y fuerte?", "ops": ["Rentar un local", "Ofrecer 10 lavados con pago por adelantado a desconocidos en un grupo de la colonia", "Comprar máquinas profesionales"], "correcta": 1, "explica": "Cobro anticipado a desconocidos es validación real con riesgo mínimo." },
+        { "p": "¿Cómo conviene usar a la IA ahora?", "ops": ["Pedirle que actúe como inversionista crítico y liste supuestos", "Pedirle que confirme que la idea es buena", "No usarla"], "correcta": 0, "explica": "Úsala como socio crítico, no como porrista." }
+      ] },
+      { "tipo": "comparar", "titulo": "Señal de validación", "malTitulo": "Débil", "mal": "«30 personas comentaron que me contratarían.»", "bienTitulo": "Fuerte", "bien": "«12 personas que no me conocen pagaron $150 por adelantado y 5 ya pidieron un segundo servicio.»" },
+      { "tipo": "reflexion", "rotulo": "Tu prueba con dinero", "pregunta": "Diseña una prueba en la que alguien que no te conoce tenga que pagar o dejar anticipo por tu idea. Escribe dónde la harás, a qué precio y qué número te dirá que sí funciona.", "ayuda": "Ofreceré… en… a $… Si logro … pagos, sigo." }
+    ],
+    "c-ia-emprendedores-m1-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Daniela tiene en Veracruz un negocio de clases de natación para bebés. Le pidió a la IA propuestas de valor y le salió: «Brindamos experiencias acuáticas innovadoras de excelencia para toda la familia». Para el nombre, la IA sugirió «AquaKids», que ya usa una escuela de natación en la misma ciudad." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué problema tiene la propuesta de la IA?", "ops": ["Es muy corta", "Usa palabras vacías y no dice para quién ni qué problema resuelve", "No tiene precio"], "correcta": 1, "explica": "«Innovadoras» y «excelencia» no distinguen a nadie." },
+        { "p": "¿Qué haces con el nombre «AquaKids»?", "ops": ["Lo uso, la IA lo propuso", "Lo descarto: otro negocio similar lo usa en la misma ciudad", "Le agrego un número"], "correcta": 1, "explica": "La IA no puede garantizar que un nombre esté libre; tú verificas en internet, redes e IMPI." },
+        { "p": "¿Cuál es una mejor propuesta?", "ops": ["«Clases de natación de calidad»", "«Clases de 30 minutos para bebés de 6 a 36 meses con agua a 32 °C y grupos de máximo 5, en Boca del Río»", "«La mejor escuela del mundo»"], "correcta": 1, "explica": "Dice para quién, qué obtiene y qué la distingue." }
+      ] },
+      { "tipo": "relacionar", "rotulo": "Completa la fórmula de propuesta", "pares": [
+        ["Para…", "mamás y papás de bebés de 6 a 36 meses"],
+        ["que…", "quieren que su bebé pierda el miedo al agua"],
+        ["ofrecemos…", "clases de 30 minutos con agua temperada y grupos de 5"],
+        ["a diferencia de…", "clubes con grupos grandes y alberca fría"]
+      ] }
+    ],
+    "c-ia-emprendedores-m1-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Tomás quiere vender muebles de madera reciclada en Tijuana. Llenó el lienzo con la IA y quedaron «Por definir»: canales, relación con clientes y costos. En la casilla de ingresos, la IA había escrito por su cuenta «ventas estimadas de $120,000 al mes», un dato que Tomás nunca le dio." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué haces con las ventas estimadas de $120,000?", "ops": ["Las dejo como meta", "Las borro y escribo «Por definir»: la IA las inventó", "Las divido entre dos"], "correcta": 1, "explica": "Si no es tu dato, no va en tu lienzo." },
+        { "p": "Con «Costos» por definir, ¿puede Tomás fijar precios?", "ops": ["Sí, copiando a la competencia", "Todavía no: primero necesita sus costos", "Sí, lo que diga la IA"], "correcta": 1, "explica": "Sin costos no sabe si gana o pierde con cada venta." },
+        { "p": "¿Cuál es el siguiente paso más urgente?", "ops": ["Resolver cómo lo va a encontrar el cliente (canales)", "Diseñar el logotipo", "Imprimir tarjetas"], "correcta": 0, "explica": "Las casillas por definir son su lista de tareas; sin canales no hay ventas." }
+      ] },
+      { "tipo": "completar", "rotulo": "Completa", "items": [
+        { "frase": "Si la IA no tiene un dato, en el lienzo debe escribir «Por ___».", "resp": ["definir", "Definir"] },
+        { "frase": "Las casillas vacías del lienzo son tu lista de ___.", "resp": ["tareas", "pendientes", "Tareas"] }
+      ] }
+    ],
+    "c-ia-emprendedores-m2-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Lupita vende tamales en Toluca. Su costo variable por docena es $180 y sus costos fijos del mes son $9,000 (incluido su sueldo). Vende 150 docenas al mes. La IA le sugirió: «para ganar 40%, multiplica tu costo por 1.40»." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Cuánto es su parte de costos fijos por docena?", "ops": ["$60", "$90", "$45"], "correcta": 0, "explica": "$9,000 ÷ 150 = $60." },
+        { "p": "Con costo total de $240, ¿qué precio deja 40% de margen sobre el precio?", "ops": ["$336 (240 × 1.40)", "$400 (240 ÷ 0.60)", "$280"], "correcta": 1, "explica": "Margen sobre precio: costo ÷ (1 − 0.40). Multiplicar por 1.40 da 40% sobre el costo, que es menos ganancia sobre el precio." },
+        { "p": "¿Qué haces con la fórmula que dio la IA?", "ops": ["La uso tal cual", "Le pregunto si su 40% es sobre costo o sobre precio y hago la cuenta en Excel", "La ignoro y pongo precio a ojo"], "correcta": 1, "explica": "La confusión entre margen sobre costo y sobre precio es un error frecuente." }
+      ] },
+      { "tipo": "excel", "rotulo": "Precio de la docena", "datos": [["Concepto", "Valor"], ["Costo variable por docena", 180], ["Costos fijos del mes", 9000], ["Docenas al mes", 150], ["Costo total por docena", ""], ["Precio con 40% sobre el precio", ""]], "retos": [
+        { "celda": "B5", "formula": "=B2+B3/B4", "esperado": 240, "texto": "<b>B5</b>: costo variable + (fijos ÷ docenas)." },
+        { "celda": "B6", "formula": "=B5/0.6", "esperado": 400, "texto": "<b>B6</b>: costo total ÷ 0.60.", "explica": "Luego compáralo con el mercado: si nadie paga $400, revisa costos o volumen." }
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu margen real", "pregunta": "Revisa tu precio actual: ¿el margen que creías tener es sobre el costo o sobre el precio? Escribe tu costo total, tu precio y el margen real sobre el precio.", "ayuda": "Costo total: $… Precio: $… Margen real = (precio − costo) ÷ precio = …" }
+    ],
+    "c-ia-emprendedores-m2-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Karla tiene una estética en Culiacán. Paga la renta del local y la luz de su casa con la misma tarjeta. Le pidió a la IA que pasara 40 fotos de tickets a tabla; en la tabla aparece un ticket de $1,850 como $18.50 y otro repetido." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué problema de fondo tiene Karla?", "ops": ["Que no usa un sistema caro", "Mezcla gastos del negocio y personales", "Que va a la estética muy temprano"], "correcta": 1, "explica": "Si todo sale de la misma tarjeta, nunca sabrá cuánto gana el negocio." },
+        { "p": "¿Cómo detecta errores como el de $18.50?", "ops": ["Comparando el total de la tabla con la suma de los tickets o el estado de cuenta", "Pidiéndole a la IA que se revise sola", "No hace falta"], "correcta": 0, "explica": "Un cuadre contra una fuente independiente atrapa errores de captura." },
+        { "p": "¿Qué hace con el ticket repetido?", "ops": ["Lo deja", "Lo elimina después de confirmarlo con la foto", "Lo suma dos veces"], "correcta": 1, "explica": "Duplicados inflan los gastos; se confirman contra el original." }
+      ] },
+      { "tipo": "comparar", "titulo": "Cierre de mes", "malTitulo": "Confiado", "mal": "«La IA me pasó los tickets; ya cerré el mes.»", "bienTitulo": "Con cuadre", "bien": "«La IA pasó 40 tickets a tabla; comparé el total contra mi estado de cuenta, corregí un monto y quité un duplicado.»" }
+    ],
+    "c-ia-emprendedores-m2-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Samuel diseña páginas web como independiente en Cuernavaca. Le pidió a la IA qué régimen le conviene y recibió una respuesta muy segura con porcentajes, límites de ingreso y la afirmación «no necesitas emitir facturas si tus clientes no te las piden»." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué hace Samuel con los porcentajes y límites?", "ops": ["Los usa para su declaración", "Los confirma en sat.gob.mx o con un contador", "Los publica en su blog"], "correcta": 1, "explica": "Tasas y límites cambian y dependen de cada caso." },
+        { "p": "La afirmación sobre no emitir facturas…", "ops": ["Es cierta porque la dijo la IA", "Es una duda clave para su contador; no la da por hecha", "Solo aplica en diciembre"], "correcta": 1, "explica": "Las obligaciones de emitir comprobantes se confirman en fuente oficial o con un profesional." },
+        { "p": "¿Para qué sí le sirve la respuesta de la IA?", "ops": ["Para entender los conceptos y preparar preguntas", "Para presentar su declaración", "Para reemplazar al contador"], "correcta": 0, "explica": "Explicar y preparar preguntas es donde la IA más ayuda en temas fiscales." }
+      ] },
+      { "tipo": "comparar", "titulo": "Pregunta a la IA", "malTitulo": "Busca una orden", "mal": "«¿Qué régimen me conviene? Dime exactamente cuánto voy a pagar.»", "bienTitulo": "Busca entender", "bien": "«Explícame qué regímenes podrían aplicar a un diseñador independiente, qué debo confirmar con un contador y qué documentos llevo a la cita.»" }
+    ],
+    "c-ia-emprendedores-m3-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Ana tiene una florería en San Luis Potosí. Pidió a la IA un calendario para noviembre y diciembre: 12 publicaciones, 9 de ellas de promoción y 3 con imágenes de arreglos generados con IA que ella no puede reproducir. El Día de Muertos no aparece." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué falla en la mezcla de contenido?", "ops": ["Demasiadas promociones y nada de detrás de cámaras, útil o clientes", "Tiene muy pocas promociones", "Nada"], "correcta": 0, "explica": "Solo promociones cansa; la mezcla genera confianza y ventas." },
+        { "p": "¿Qué hace con los arreglos generados con IA?", "ops": ["Los publica como propios", "Los sustituye por fotos reales de sus arreglos", "Los publica sin precio"], "correcta": 1, "explica": "Si el cliente pide lo que vio y no se lo puedes hacer, pierdes su confianza." },
+        { "p": "¿Qué fecha importante omitió la IA para una florería?", "ops": ["Día de Muertos (flor de cempasúchil)", "El Buen Fin de marzo", "Ninguna"], "correcta": 0, "explica": "Siempre dale a la IA las fechas clave de tu giro y tu región." }
+      ] },
+      { "tipo": "comparar", "titulo": "Publicación", "malTitulo": "Solo promoción", "mal": "«¡20% de descuento en arreglos! Pide ya.»", "bienTitulo": "Detrás de cámaras con llamado", "bien": "«Así armamos a las 6 am los arcos de cempasúchil para tu altar 🌼 Apártalo por WhatsApp antes del 30 de octubre.»" },
+      { "tipo": "reflexion", "rotulo": "Tus fechas clave", "pregunta": "Escribe las 6 fechas del año más importantes para tu negocio en tu región y qué tipo de publicación harías para cada una.", "ayuda": "Fecha: … Publicación: …" }
+    ],
+    "c-ia-emprendedores-m3-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso:</b> Beto vende refacciones para bicicleta en Durango por WhatsApp Business. La IA le escribió respuestas rápidas; en /envio puso «envío gratis a todo el país en 24 horas», aunque Beto solo entrega en la ciudad y cobra $60." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué hace con la respuesta /envio?", "ops": ["La deja porque atrae clientes", "La corrige con su zona y costo reales", "La borra y no dice nada de envíos"], "correcta": 1, "explica": "Una promesa falsa se convierte en queja y mala reseña." },
+        { "p": "¿Qué información le faltó darle a la IA?", "ops": ["Zona de entrega, costo y tiempos reales", "Su color favorito", "Su RFC"], "correcta": 0, "explica": "Si no le das datos reales, la IA rellena con suposiciones." },
+        { "p": "Un cliente pide una pieza que no está en el catálogo. La IA sugiere responder «sí la tenemos». ¿Qué haces?", "ops": ["Respondo sí y luego veo", "Reviso inventario antes de confirmar", "No contesto"], "correcta": 1, "explica": "Confirma existencia antes de prometer." }
+      ] },
+      { "tipo": "completar", "rotulo": "Completa", "items": [
+        { "frase": "Antes de usar una respuesta rápida, verifico que zona, costo y ___ sean reales.", "resp": ["tiempos", "tiempo", "tiempos de entrega"] },
+        { "frase": "Si la IA inventa una característica, la ___ antes de publicar.", "resp": ["corrijo", "quito", "borro"] }
+      ] }
+    ],
+    "c-ia-emprendedores-m3-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Caso paralelo:</b> Jorge hace pan de masa madre en Querétaro y quiere lanzar una suscripción semanal (pan a domicilio cada sábado). Tiene $8,000 y 30 días. La IA le propuso gastar $6,000 en anuncios pagados la primera semana, antes de validar si alguien quiere suscribirse." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué riesgo tiene gastar $6,000 en anuncios la primera semana?", "ops": ["Ninguno", "Gastar casi todo el presupuesto sin saber si hay demanda", "Que lleguen demasiados clientes"], "correcta": 1, "explica": "Primero valida con preventa; después invierte en lo que funcionó." },
+        { "p": "¿Qué indicador le dice si la suscripción funciona?", "ops": ["Likes de la publicación", "Cuántos suscriptores renuevan después del primer mes", "Cuántas veces compartieron la foto"], "correcta": 1, "explica": "La renovación muestra valor real." },
+        { "p": "¿Qué parte del plan debe costear primero en Excel?", "ops": ["El costo por entrega a domicilio incluido en el precio de la suscripción", "El logotipo", "Las tarjetas de presentación"], "correcta": 0, "explica": "El envío semanal puede comerse el margen si no se calcula." }
+      ] },
+      { "tipo": "comparar", "titulo": "Uso del presupuesto", "malTitulo": "Todo al inicio", "mal": "«$6,000 en anuncios la semana 1.»", "bienTitulo": "Por etapas", "bien": "«Semana 1: preventa a 20 conocidos de conocidos ($0). Semana 2: $1,500 en anuncios a la colonia con mejor respuesta. Semanas 3-4: invertir más solo si 60% renueva.»" }
+    ]
+  },
+  "modulos": [
+    {
+      "t": "Situaciones avanzadas del negocio",
+      "r": "Vender en marketplaces sin perder margen, prever tu flujo de efectivo en temporada alta y manejar reseñas y quejas con apoyo de IA.",
+      "lecciones": [
+        {
+          "t": "Marketplaces y tienda en línea: comisiones y margen",
+          "obj": "Calcular si te conviene vender en un marketplace considerando comisiones y envío, y escribir fichas de producto con IA sin inventar características.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Vender en un marketplace o en una tienda en línea te da clientes que no te conocen, pero cobra: comisión por venta, costo de envío, a veces cuota mensual. Muchos emprendedores descubren tarde que vendían con pérdida. Las comisiones y reglas <b>cambian y dependen de la categoría</b>: consulta siempre las vigentes en el sitio oficial de cada plataforma. La IA te ayuda a armar la hoja y a redactar fichas; Excel hace las cuentas." },
+            { "tipo": "excel", "rotulo": "¿Cuánto te queda por venta?", "datos": [["Concepto", "Valor"], ["Costo total por unidad", 85], ["Envío que absorbes", 40], ["Comisión de la plataforma (ejemplo)", 0.15], ["Precio de venta", 250], ["Comisión en pesos", ""], ["Ganancia por unidad", ""], ["Margen sobre el precio", ""]], "retos": [
+              { "celda": "B6", "formula": "=B5*B4", "esperado": 37.5, "texto": "<b>B6</b>: comisión en pesos = precio × porcentaje." },
+              { "celda": "B7", "formula": "=B5-B2-B3-B6", "esperado": 87.5, "texto": "<b>B7</b>: ganancia = precio − costo − envío − comisión." },
+              { "celda": "B8", "formula": "=REDONDEAR(B7/B5,2)", "esperado": 0.35, "requiere": "REDONDEAR(", "texto": "<b>B8</b>: margen sobre el precio, redondeado a 2 decimales.", "explica": "35%: menos que el 40% que tendrías vendiendo directo. Decide si el volumen extra lo compensa." }
+            ] },
+            { "tipo": "plantilla", "rotulo": "Ficha de producto", "texto": "Escribe la ficha de [producto] para una tienda en línea. Datos reales: [medidas, material, peso, contenido, cuidados, tiempo de entrega]. Dame: título de máximo 60 caracteres con las palabras que buscaría un cliente, 5 viñetas de beneficios basadas SOLO en mis datos, y 3 preguntas frecuentes con respuesta. No inventes certificaciones, garantías ni características." },
+            { "tipo": "tabla", "titulo": "Errores comunes de la IA en fichas y precios", "encabezados": ["La IA…", "Tú…"], "filas": [
+              ["Afirma comisiones o reglas de la plataforma", "Las consultas en el sitio oficial del marketplace."],
+              ["Agrega «hecho a mano», «orgánico» o «hipoalergénico» sin que lo digas", "Borras toda característica que no puedas demostrar."],
+              ["Olvida el envío o la comisión al calcular ganancia", "Haces la cuenta completa en Excel."]
+            ] },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "La IA escribió que tu crema es «dermatológicamente probada». No tienes estudios. ¿Qué haces?", "ops": ["La dejo", "La quito", "La cambio a «casi probada»"], "correcta": 1, "explica": "Una afirmación que no puedes demostrar engaña al cliente y te expone a quejas." },
+              { "p": "¿De dónde tomas la comisión para tu hoja?", "ops": ["De lo que dijo la IA", "Del sitio oficial de la plataforma, para tu categoría", "De un video de hace dos años"], "correcta": 1, "explica": "Cambian y varían por categoría." },
+              { "p": "Con 35% de margen en el marketplace y 40% directo, ¿qué conviene?", "ops": ["Decidir con números: volumen extra, costo de conseguir clientes y capacidad", "Salirse siempre del marketplace", "Bajar el precio"], "correcta": 0, "explica": "Menor margen puede convenir si trae ventas que no tendrías." }
+            ] },
+            { "tipo": "clave", "items": ["Ganancia = precio − costo − envío − comisión.", "Comisiones y reglas: en el sitio oficial.", "Fichas solo con características reales."] }
+          ]
+        },
+        {
+          "t": "Flujo de efectivo y temporada alta",
+          "obj": "Anticipar semana a semana si tendrás dinero suficiente en temporada alta, cuando compras insumos antes de vender.",
+          "bindex": 0,
+          "bloques": [
+            { "tipo": "texto", "texto": "Un negocio puede ser rentable y aun así quedarse sin dinero: en temporada alta (Día de Muertos, Navidad, 14 de febrero, regreso a clases) compras insumos semanas antes de cobrar. El <b>flujo de efectivo</b> es la cuenta semana a semana de lo que entra y sale. La IA te ayuda a armar la hoja y a pensar escenarios; tú capturas tus cifras." },
+            { "tipo": "excel", "rotulo": "Flujo de 4 semanas antes de Navidad", "datos": [["Semana", "Entradas", "Salidas", "Saldo final"], ["Saldo inicial", "", "", 20000], ["Semana 1", 18000, 26000, ""], ["Semana 2", 15000, 31000, ""], ["Semana 3", 38000, 12000, 22000], ["Semana 4", 45000, 15000, 52000], ["Semanas con saldo negativo", "", "", ""]], "retos": [
+              { "celda": "D3", "formula": "=D2+B3-C3", "esperado": 12000, "texto": "<b>D3</b>: saldo = saldo anterior + entradas − salidas." },
+              { "celda": "D4", "formula": "=D3+B4-C4", "esperado": -4000, "texto": "<b>D4</b>: saldo de la semana 2." },
+              { "celda": "D7", "formula": "=CONTAR.SI(D3:D6,\"<0\")", "esperado": 1, "requiere": "CONTAR.SI(", "texto": "<b>D7</b>: con CONTAR.SI, cuenta las semanas en negativo.", "explica": "En la semana 2 te faltan $4,000 aunque el mes cierre con $52,000. Prevenlo: anticipo de clientes, pagar a proveedores en dos partes o comprar por etapas." }
+            ] },
+            { "tipo": "plantilla", "rotulo": "Escenarios de temporada", "texto": "Tengo un negocio de [giro] y viene [temporada]. Te doy mi flujo semanal ya calculado en Excel: [tabla]. Sin recalcular, dime: en qué semana estoy más apretado, 5 formas de cubrir ese hueco sin endeudarme caro (anticipos, preventa, negociar pagos, comprar por etapas) y qué riesgo tiene cada una." },
+            { "tipo": "tabla", "titulo": "Errores comunes de la IA con el flujo", "encabezados": ["La IA…", "Tú…"], "filas": [
+              ["Confunde ganancia del mes con dinero disponible cada semana", "Revisas el saldo semana por semana."],
+              ["Sugiere un crédito sin mencionar su costo total", "Comparas el costo anual total y lees el contrato."],
+              ["Supone que vas a vender igual que el año pasado", "Usas un escenario conservador además del optimista."]
+            ] },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "El mes cierra con $52,000, pero la semana 2 queda en −$4,000. ¿Qué significa?", "ops": ["Que todo está bien", "Que habrá una semana sin dinero para pagar, aunque el mes gane", "Que el negocio no es rentable"], "correcta": 1, "explica": "Rentabilidad y liquidez son cosas distintas." },
+              { "p": "¿Cuál es la forma más barata de cubrir ese hueco?", "ops": ["Pedir anticipo en pedidos navideños", "Una tarjeta de crédito con disposición en efectivo", "No pagar al proveedor"], "correcta": 0, "explica": "El anticipo de clientes no cuesta intereses y además valida la demanda." },
+              { "p": "La IA recomienda un préstamo en línea «rápido». Tú…", "ops": ["Lo solicitas ya", "Revisas costo total, requisitos y que la institución esté autorizada antes de decidir", "Le pasas tus datos bancarios a la IA"], "correcta": 1, "explica": "Verifica en fuentes oficiales y nunca compartas datos bancarios con la IA." }
+            ] },
+            { "tipo": "clave", "items": ["Rentable no es lo mismo que tener dinero cada semana.", "Flujo semanal para la temporada alta.", "Cubre huecos primero con anticipos y compras por etapas."] }
+          ]
+        },
+        {
+          "t": "Reseñas, quejas y clientes difíciles",
+          "obj": "Responder reseñas y quejas con IA de forma profesional, sin exponer datos del cliente ni prometer lo que no puedes cumplir.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Una mala reseña respondida bien puede generar más confianza que diez buenas. Las respuestas públicas las leen tus futuros clientes, no solo quien se quejó. La IA te ayuda a bajar el enojo del texto y a ordenar la respuesta; tú decides qué ofreces y cuidas no publicar datos personales del cliente ni detalles de su pedido." },
+            { "tipo": "plantilla", "rotulo": "Responder una reseña negativa", "texto": "Recibí esta reseña pública (sin nombre del cliente): [texto]. Lo que pasó según mis registros: [hechos]. Lo que puedo ofrecer: [opciones reales]. Escribe una respuesta pública de máximo 70 palabras: agradece, reconoce sin culpar al cliente, explica en una frase lo que haremos y invita a continuar por mensaje privado. No incluyas datos del pedido ni del cliente." },
+            { "tipo": "tabla", "titulo": "Errores comunes de la IA con reseñas", "encabezados": ["La IA…", "Tú…"], "filas": [
+              ["Contesta a la defensiva o discute en público", "Pides tono cordial y mueves el caso a privado."],
+              ["Menciona datos del pedido o del cliente", "Quitas todo dato personal de la respuesta."],
+              ["Ofrece compensaciones que no decidiste", "Solo ofreces lo que tú autorizas."],
+              ["Te sugiere escribir reseñas positivas falsas", "Nunca: pides reseñas reales a clientes reales."]
+            ] },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "Un cliente escribe que su pastel llegó aplastado. La mejor respuesta pública…", "ops": ["Explica que fue culpa del repartidor externo", "Se disculpa, dice qué harán y lo invita a mensaje privado para reponerlo", "No se contesta"], "correcta": 1, "explica": "Soluciones, no culpables; los detalles, en privado." },
+              { "p": "La IA propone pedir a familiares reseñas de 5 estrellas. ¿Qué haces?", "ops": ["Lo hago, todos lo hacen", "No: pido reseñas a clientes reales después de su compra", "Escribo yo las reseñas"], "correcta": 1, "explica": "Las reseñas falsas engañan al consumidor y dañan tu reputación." },
+              { "p": "Un cliente amenaza con quejarse ante Profeco. Tú…", "ops": ["Respondes con calma, revisas qué ofreciste y buscas solución; si hace falta, asesoría profesional", "Lo bloqueas", "Le pides a la IA que redacte una amenaza"], "correcta": 0, "explica": "Documenta lo acordado y busca resolver; la IA no sustituye asesoría legal." }
+            ] },
+            { "tipo": "comparar", "titulo": "Respuesta pública", "malTitulo": "A la defensiva", "mal": "«Señora, usted recogió el pedido tarde, no es nuestra culpa.»", "bienTitulo": "Profesional", "bien": "«Gracias por avisarnos y lamentamos que tu pedido no llegara como esperabas. Queremos resolverlo: escríbenos por mensaje directo y lo revisamos hoy mismo.»" },
+            { "tipo": "reflexion", "rotulo": "Tu reseña difícil", "pregunta": "Toma una reseña o queja real (o una que temes recibir) y escribe tu respuesta pública en máximo 70 palabras, sin datos del cliente.", "ayuda": "Gracias por… Lamentamos… Vamos a… Escríbenos…" },
+            { "tipo": "clave", "items": ["Respuesta pública breve; detalles en privado.", "Sin datos del cliente ni promesas no autorizadas.", "Nunca reseñas falsas."] }
+          ]
+        }
+      ],
+      "quiz": [
+        { "p": "Tu ganancia por venta en un marketplace es…", "ops": ["Precio − costo", "Precio − costo − envío − comisión", "Precio × comisión", "El precio completo"], "correcta": 1 },
+        { "p": "Las comisiones de una plataforma se consultan…", "ops": ["En la IA", "En el sitio oficial de la plataforma", "En un video viejo", "Con un amigo"], "correcta": 1 },
+        { "p": "La IA agrega «orgánico» a tu ficha sin que lo sea. Tú…", "ops": ["Lo quitas", "Lo dejas", "Lo pones en letra chica", "Subes el precio"], "correcta": 0 },
+        { "p": "Un negocio rentable puede quedarse sin dinero cuando…", "ops": ["Compra insumos semanas antes de cobrar", "Vende mucho y cobra al contado", "Tiene pocos gastos", "Nunca"], "correcta": 0 },
+        { "p": "La forma más barata de cubrir un hueco de flujo suele ser…", "ops": ["Disposición en efectivo de la tarjeta", "Anticipos de clientes o preventa", "Préstamo sin revisar", "Dejar de pagar impuestos"], "correcta": 1 },
+        { "p": "Una reseña negativa se responde…", "ops": ["Discutiendo en público", "Con disculpa, solución y paso a privado", "Borrándola", "Con datos del pedido del cliente"], "correcta": 1 },
+        { "p": "Pedir reseñas de 5 estrellas a familiares que no compraron es…", "ops": ["Buena estrategia", "Engañoso; solo reseñas reales", "Obligatorio", "Neutral"], "correcta": 1 }
+      ]
+    },
+    {
+      "t": "Laboratorio y proyecto final",
+      "r": "Un día de trabajo simulado en un negocio real con errores plantados por la IA y la construcción de tu kit emprendedor.",
+      "lecciones": [
+        {
+          "t": "Simulación: un día en tu negocio con IA",
+          "obj": "Detectar errores de la IA en publicaciones, costeos, mensajes a clientes y resúmenes de números antes de que lleguen a tus clientes.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Rodrigo tiene una cafetería de especialidad en Morelia con venta de café en grano por WhatsApp. Hoy usa la IA en cuatro momentos del día. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes de publicar, cobrar o decidir." },
+            { "tipo": "destacado", "texto": "<b>Escena 1 · 8:00 am — La publicación.</b> Rodrigo pidió un texto para lanzar su nuevo café de Chiapas. La IA escribió: «Nuestro café orgánico certificado ayuda a controlar la gastritis y acelera el metabolismo ☕». La imagen sugerida es una foto generada de una cafetería que no es la suya. Rodrigo no tiene certificación orgánica." },
+            { "tipo": "reflexion", "rotulo": "Escena 1: ¿qué encontraste?", "pregunta": "Enumera las afirmaciones que Rodrigo no debe publicar y reescribe el texto con información real.", "ayuda": "No puede decir… porque… Texto corregido: …" },
+            { "tipo": "destacado", "texto": "<b>Escena 2 · 11:00 am — El precio.</b> El costo total de una bolsa de 250 g es $120. Rodrigo quiere 40% de margen sobre el precio. La IA calculó: «Precio sugerido: $168 (120 × 1.40)»." },
+            { "tipo": "reflexion", "rotulo": "Escena 2: ¿qué encontraste?", "pregunta": "Calcula el precio correcto para 40% de margen sobre el precio y explica en una frase la diferencia con lo que propuso la IA.", "ayuda": "Precio = 120 ÷ 0.60 = … La IA calculó 40% sobre el costo, que…" },
+            { "tipo": "destacado", "texto": "<b>Escena 3 · 2:00 pm — WhatsApp.</b> Rodrigo pidió a la IA respuestas rápidas nuevas. En /envio dice «envío gratis a todo Morelia en 30 minutos» (él cobra $45 y entrega en 2 horas) y en /precios aparece la lista de precios del año pasado. Además, para segmentar promociones, pegó en la IA la lista de 300 clientes con nombre, teléfono y dirección." },
+            { "tipo": "reflexion", "rotulo": "Escena 3: ¿qué encontraste?", "pregunta": "Corrige las dos respuestas rápidas y explica cómo segmentaría a sus clientes sin exponer sus datos personales.", "ayuda": "/envio: … /precios: … Para segmentar sin datos personales…" },
+            { "tipo": "destacado", "texto": "<b>Escena 4 · 7:00 pm — El resumen del mes.</b> Rodrigo pegó su resumen ya calculado: ventas $96,000, gastos $71,000 (incluido su sueldo). La IA escribió: «¡Excelente mes! Tu ganancia fue de $96,000. Te recomendamos contratar a dos personas más»." },
+            { "tipo": "reflexion", "rotulo": "Escena 4: ¿qué encontraste?", "pregunta": "Escribe la ganancia real del mes, explica el error de la IA y decide qué harías antes de contratar.", "ayuda": "Ganancia real = 96,000 − 71,000 = … La IA confundió… Antes de contratar…" },
+            { "tipo": "practica", "rotulo": "Revisión del día", "preguntas": [
+              { "p": "Escena 1: ¿qué puede publicar Rodrigo?", "ops": ["Que ayuda con la gastritis", "El origen, el tueste y las notas de sabor reales, con foto de su cafetería", "Que es orgánico certificado"], "correcta": 1, "explica": "Nada de beneficios para la salud ni certificaciones que no tiene." },
+              { "p": "Escena 2: ¿cuál es el precio con 40% de margen sobre el precio?", "ops": ["$168", "$200", "$180"], "correcta": 1, "explica": "$120 ÷ 0.60 = $200. Con $168 el margen real sería menos de 29%." },
+              { "p": "Escena 3: la lista de clientes pegada en la IA…", "ops": ["No pasa nada", "Expuso datos personales; debió segmentar con datos anónimos o dentro de herramientas autorizadas", "Está bien porque son sus clientes"], "correcta": 1, "explica": "Nombres, teléfonos y direcciones son datos personales." },
+              { "p": "Escena 4: la ganancia real del mes es…", "ops": ["$96,000", "$25,000", "$71,000"], "correcta": 1, "explica": "Vender no es ganar: $96,000 − $71,000 = $25,000." }
+            ] },
+            { "tipo": "clave", "items": ["Nada de beneficios de salud ni certificaciones que no tienes.", "Margen sobre precio = costo ÷ (1 − margen).", "Promesas y precios reales; datos de clientes fuera de la IA; ventas no son ganancia."] }
+          ]
+        },
+        {
+          "t": "Proyecto final: tu kit emprendedor con IA",
+          "obj": "Construir tu biblioteca de prompts, tu política de datos, tu lista de verificación y un entregable real de tu negocio.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Cierra el curso armando tu <b>kit emprendedor con IA</b>: lo que vas a usar cada semana en tu negocio. Trabaja con tu negocio real (o con la idea que estás validando). Guarda todo en un solo documento con fecha." },
+            { "tipo": "reflexion", "rotulo": "Paso 1 · Tu biblioteca de prompts", "pregunta": "Elige las 6 plantillas del curso que más usarás (socio crítico, propuesta de valor, costeo, clasificar gastos, calendario, WhatsApp, ficha de producto, flujo, reseñas…) y adapta cada una con los datos fijos de tu negocio: giro, ciudad, cliente, tono.", "ayuda": "1. Calendario: Tengo una [giro] en [ciudad]… 2. …" },
+            { "tipo": "reflexion", "rotulo": "Paso 2 · Tu política de datos", "pregunta": "Escribe 5 reglas sobre qué nunca pegas en la IA (datos de clientes, cuentas bancarias, contraseñas, RFC de terceros) y qué sí puedes compartir.", "ayuda": "Nunca pego… Sí puedo compartir… Si dudo…" },
+            { "tipo": "reflexion", "rotulo": "Paso 3 · Tu lista de verificación", "pregunta": "Arma tu lista de 8 puntos para revisar todo lo que la IA te prepare antes de publicarlo o usarlo (características reales, salud, precios vigentes, promesas de envío, cálculos en Excel, datos fiscales confirmados, fotos reales, datos personales).", "ayuda": "Antes de publicar reviso: 1) … 2) … 3) …" },
+            { "tipo": "reflexion", "rotulo": "Paso 4 · Tu entregable real", "pregunta": "Produce con tu kit algo real para tu negocio esta semana (calendario de publicaciones, hoja de costeo o flujo de temporada), pásalo por tu lista y anota qué corregiste.", "ayuda": "Entregable: … La IA propuso… Corregí… Lo uso a partir de…" },
+            { "tipo": "plantilla", "rotulo": "Índice de tu kit", "texto": "KIT EMPRENDEDOR CON IA — [nombre del negocio] — versión [fecha]\n\n1. Datos fijos del negocio (giro, ciudad, cliente, propuesta de valor, tono)\n2. Biblioteca de prompts\n   2.1 Socio crítico · 2.2 Costeo · 2.3 Gastos · 2.4 Flujo de temporada · 2.5 Calendario · 2.6 WhatsApp · 2.7 Fichas · 2.8 Reseñas\n3. Política de datos (5 reglas)\n4. Lista de verificación antes de publicar (8 puntos)\n5. Hojas de Excel: costeo, gastos, flujo, marketplace\n6. Entregable real revisado: [ ]\n7. Preguntas pendientes para mi contador: [ ]\n8. Próxima revisión del kit: [fecha]", "nota": "Cópiala y adáptala." },
+            { "tipo": "destacado", "texto": "<b>¡Terminaste el curso completo!</b> La IA es un socio de trabajo incansable; las decisiones, los números verificados y la confianza de tus clientes dependen de ti." },
+            { "tipo": "clave", "items": ["Datos fijos del negocio + prompts adaptados.", "Política de datos y lista de verificación.", "Un entregable real cada semana."] }
+          ]
+        }
+      ],
+      "quiz": [
+        { "p": "La IA escribe que tu café «ayuda con la gastritis». Tú…", "ops": ["Lo publicas", "Lo quitas: no haces afirmaciones de salud", "Lo pones con asterisco", "Lo traduces"], "correcta": 1 },
+        { "p": "Con costo de $120 y 40% de margen sobre precio, el precio es…", "ops": ["$168", "$160", "$200", "$240"], "correcta": 2 },
+        { "p": "Una respuesta rápida que promete envío gratis que no das…", "ops": ["Atrae clientes", "Se corrige con zona, costo y tiempo reales", "Se deja hasta que alguien se queje", "Es obligatoria"], "correcta": 1 },
+        { "p": "Pegar tu lista de clientes con teléfonos y direcciones en la IA…", "ops": ["Expone datos personales", "Es la mejor forma de segmentar", "No tiene riesgo", "Es obligatorio"], "correcta": 0 },
+        { "p": "Ventas de $96,000 y gastos de $71,000 dejan una ganancia de…", "ops": ["$96,000", "$71,000", "$167,000", "$25,000"], "correcta": 3 },
+        { "p": "Tu kit emprendedor incluye…", "ops": ["Prompts adaptados, política de datos y lista de verificación", "Solo el logotipo", "Contraseñas de tus cuentas", "Nada"], "correcta": 0 },
+        { "p": "Un dato fiscal que te dio la IA para tu kit…", "ops": ["Va directo a tu declaración", "Queda como pregunta para confirmar con tu contador o el SAT", "Se ignora siempre", "Se publica"], "correcta": 1 }
+      ]
+    }
+  ]
+}

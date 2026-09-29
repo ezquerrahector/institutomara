@@ -1,0 +1,1268 @@
+{
+ "id": "c-ia-manufactura",
+ "horas": 10,
+ "aprender": [
+  "Resolver situaciones avanzadas de planta con IA —OEE, análisis de riesgos de tarea y cambios de modelo— con datos reales de tu operación y requisitos verificados.",
+  "Armar tu kit de manufactura con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "La IA escribió «temperatura de 180 °C» y tú nunca se lo dijiste. Tú…",
+   "op": "Lo redondeo a 200 °C por seguridad"
+  },
+  {
+   "p": "Un paso bien escrito empieza con…",
+   "op": "El nombre del operador responsable"
+  },
+  {
+   "p": "La mejor prueba de una IT es…",
+   "op": "Que la IA confirme que está completa"
+  },
+  {
+   "p": "¿Qué sección evita más sorpresas al siguiente turno?",
+   "op": "El resumen de producción del mes"
+  },
+  {
+   "p": "Los porcentajes del reporte se calculan en…",
+   "op": "Una estimación a ojo del supervisor"
+  },
+  {
+   "p": "La contención (D3) sirve para…",
+   "op": "Cerrar el reporte lo antes posible"
+  },
+  {
+   "p": "La D4 debe incluir causa de ocurrencia y…",
+   "op": "De costo"
+  },
+  {
+   "p": "Si la IA pone una fecha de cierre que no le diste…",
+   "op": "La adelanto para quedar bien con el cliente"
+  },
+  {
+   "p": "La frecuencia de lubricación de una máquina sale de…",
+   "op": "Lo que haga el turno anterior"
+  },
+  {
+   "p": "Las bitácoras sirven para…",
+   "op": "Calificar a los técnicos por número de reportes"
+  },
+  {
+   "p": "La IA sugiere que la rebaba «seguramente es por el material». Tú…",
+   "op": "Lo pones como causa raíz en el A3"
+  },
+  {
+   "p": "El indicador de éxito del plan debe ser…",
+   "op": "Número de acciones abiertas en el plan"
+  }
+ ],
+ "extras": {
+  "c-ia-manufactura-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una planta de inyección de plástico en Querétaro, el técnico dictó cómo arrancar la máquina 7. La IA entregó una IT impecable que incluye «presión de inyección: 800 bar» y «usar guantes de nitrilo». El técnico nunca mencionó ninguno de los dos."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la presión de 800 bar?",
+      "ops": [
+       "La dejo, suena técnica",
+       "La quito y pongo el valor de la hoja de proceso aprobada",
+       "La promedio con la del molde anterior"
+      ],
+      "correcta": 1,
+      "explica": "Parámetros de proceso: solo de la hoja de proceso o la especificación."
+     },
+     {
+      "p": "¿Y con el equipo de protección que agregó?",
+      "ops": [
+       "Lo valido con el área de seguridad e higiene",
+       "Lo dejo, más protección no hace daño",
+       "Lo borro"
+      ],
+      "correcta": 0,
+      "explica": "El EPP correcto lo define seguridad según el riesgo; un guante equivocado puede ser peligroso."
+     },
+     {
+      "p": "Para evitar que la IA agregue valores, en el prompt pides…",
+      "ops": [
+       "Que sea más creativa",
+       "Que marque [DATO FALTANTE] en lugar de suponer",
+       "Que use valores típicos"
+      ],
+      "correcta": 1,
+      "explica": "Así ves los huecos en lugar de valores inventados."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Prompt para la IT",
+    "malTitulo": "Abierto",
+    "mal": "«Convierte esta explicación en una instrucción de trabajo completa.»",
+    "bienTitulo": "Con límites",
+    "bien": "«Convierte esta explicación en una IT. Usa solo los valores que te doy; donde falte un parámetro o el EPP escribe [DATO FALTANTE]. No agregues normas ni valores típicos.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu IT con huecos",
+    "pregunta": "Toma una instrucción de trabajo de tu planta (sin datos del cliente) y anota qué valores técnicos tiene y de qué documento sale cada uno. ¿Alguno no tiene fuente?",
+    "ayuda": "Valor 1… sale de… / Valor 2… / Sin fuente: …"
+   }
+  ],
+  "c-ia-manufactura-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el supervisor del segundo turno anotó a mano: «L2: 918 de 900. Prensa 4 hace ruido raro, mantenimiento no vino. Casi se cae una tarima en el pasillo B». La IA le devolvió un reporte limpio: producción, calidad y la frase «turno sin incidentes de seguridad». El ruido de la prensa no aparece."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué error es más grave?",
+      "ops": [
+       "El formato",
+       "Decir «sin incidentes» cuando hubo un casi accidente",
+       "La ortografía"
+      ],
+      "correcta": 1,
+      "explica": "Un casi accidente es información de seguridad que debe reportarse."
+     },
+     {
+      "p": "El ruido de la prensa 4 va en…",
+      "ops": [
+       "Pendientes para el siguiente turno, con estado «sin atender»",
+       "Ningún lado, no es producción",
+       "La portada"
+      ],
+      "correcta": 0,
+      "explica": "Justo esa nota evita una falla mayor en el siguiente turno."
+     },
+     {
+      "p": "Para que no vuelva a pasar, en el prompt pides…",
+      "ops": [
+       "Que resuma más",
+       "Que incluya todas las notas y marque [confirmar] lo dudoso",
+       "Que quite lo negativo"
+      ],
+      "correcta": 1,
+      "explica": "El resumen no puede perder hechos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Sección de seguridad",
+    "malTitulo": "Suavizada",
+    "mal": "«Turno sin incidentes de seguridad.»",
+    "bienTitulo": "Fiel a las notas",
+    "bien": "«Casi accidente: tarima inestable a punto de caer en pasillo B, sin lesionados. Se retiró la tarima. Pendiente: revisar estiba con almacén.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu reporte de turno",
+    "pregunta": "Revisa tu último reporte de turno (o uno que recibiste). ¿Qué información importante se perdió o se suavizó? Escribe cómo lo reportarías hoy.",
+    "ayuda": "Se perdió… / Lo reportaría así: …"
+   }
+  ],
+  "c-ia-manufactura-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una planta de arneses en Chihuahua, la IA generó una microlección para operadores nuevos de engargolado de terminales. Entre las 5 preguntas de verificación viene: «¿Cuál es la fuerza mínima de tensión de la terminal? Respuesta: 50 N». Ese valor no aparece en la IT."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con esa pregunta?",
+      "ops": [
+       "La uso, suena bien",
+       "La corrijo con el valor de la especificación o la quito",
+       "La dejo sin respuesta"
+      ],
+      "correcta": 1,
+      "explica": "Enseñar un valor inventado es peor que no enseñarlo."
+     },
+     {
+      "p": "¿Quién valida la microlección antes de darla?",
+      "ops": [
+       "El supervisor y calidad",
+       "Solo la IA",
+       "El operador nuevo"
+      ],
+      "correcta": 0,
+      "explica": "Calidad confirma que lo que se enseña coincide con el estándar."
+     },
+     {
+      "p": "La mejor forma de comprobar que el operador aprendió es…",
+      "ops": [
+       "Un examen escrito largo",
+       "Observar la operación en su estación con la lista de conductas",
+       "Preguntarle si entendió"
+      ],
+      "correcta": 1,
+      "explica": "Conductas observables en estación, como viste en la lección."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pregunta de verificación",
+    "malTitulo": "Con dato inventado",
+    "mal": "«¿Cuál es la fuerza mínima de tensión? 50 N.»",
+    "bienTitulo": "Con referencia al estándar",
+    "bien": "«¿Dónde consultas la fuerza mínima de tensión de esta terminal y qué haces si la prueba no la cumple? (Respuesta: en la hoja de especificación de la estación; separas y avisas a calidad.)»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu microlección",
+    "pregunta": "Elige una operación de tu área y escribe 3 preguntas de verificación que remitan al estándar en lugar de pedir datos de memoria.",
+    "ayuda": "1. … 2. … 3. …"
+   }
+  ],
+  "c-ia-manufactura-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una planta de pintura electrostática en Saltillo tiene burbujas en 4% de las piezas. En el primer «¿por qué?», alguien respondió «por humedad» y la IA concluyó: «Causa raíz: humedad. Acción: instalar deshumidificador»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué falló en el análisis?",
+      "ops": [
+       "Nada",
+       "Se detuvo en el primer porqué y convirtió una hipótesis en conclusión",
+       "Faltaron colores"
+      ],
+      "correcta": 1,
+      "explica": "Una sola respuesta sin evidencia no es causa raíz."
+     },
+     {
+      "p": "¿Qué dato confirmaría o descartaría la humedad?",
+      "ops": [
+       "Comparar el % de burbujas en días húmedos y secos con registro de humedad",
+       "La opinión del gerente",
+       "Otra respuesta de la IA"
+      ],
+      "correcta": 0,
+      "explica": "La evidencia del piso decide."
+     },
+     {
+      "p": "Antes de comprar el deshumidificador conviene…",
+      "ops": [
+       "Revisar las otras 6M: pretratamiento, horno, pintura, método",
+       "Comprarlo de inmediato",
+       "Culpar al proveedor de pintura"
+      ],
+      "correcta": 0,
+      "explica": "Una inversión sin causa comprobada puede no resolver nada."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Conclusión del análisis",
+    "malTitulo": "Prematura",
+    "mal": "«Causa raíz: humedad.»",
+    "bienTitulo": "Hipótesis con prueba",
+    "bien": "«Hipótesis principal: humedad en la pieza antes del horno. Prueba: registrar humedad y % de burbujas por turno durante 2 semanas. Otras hipótesis abiertas: temperatura del horno y pretratamiento.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu problema recurrente",
+    "pregunta": "Escribe un problema recurrente de tu área y la causa que «todo mundo sabe». ¿Qué dato la confirmaría o la descartaría?",
+    "ayuda": "Problema… / Causa que se da por hecho… / La compruebo con…"
+   }
+  ],
+  "c-ia-manufactura-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un cliente automotriz rechazó 120 piezas con rosca dañada. Para ganar tiempo, un ingeniero pegó en una IA pública el plano del cliente con número de parte y el reporte de rechazo. La IA devolvió un 8D con D4 «Causa: herramienta desgastada» y «Fecha de cierre: 15 de junio»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema de información hay?",
+      "ops": [
+       "Ninguno",
+       "Se subió información confidencial del cliente a una herramienta no autorizada",
+       "El 8D es muy largo"
+      ],
+      "correcta": 1,
+      "explica": "Planos y números de parte suelen estar protegidos por contrato."
+     },
+     {
+      "p": "A la D4 le falta…",
+      "ops": [
+       "La causa de no detección: por qué no lo detectamos antes de enviar",
+       "Un logotipo",
+       "Nada"
+      ],
+      "correcta": 0,
+      "explica": "La D4 explica por qué ocurrió y por qué se escapó."
+     },
+     {
+      "p": "La fecha de cierre que puso la IA…",
+      "ops": [
+       "Se deja",
+       "Se cambia por la real o por [pendiente]",
+       "Se adelanta"
+      ],
+      "correcta": 1,
+      "explica": "Nada que no hayas dado."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa el 8D",
+    "items": [
+     {
+      "frase": "La D4 incluye causa de ocurrencia y de no ___.",
+      "resp": [
+       "detección",
+       "deteccion"
+      ],
+      "pista": "Por qué se escapó."
+     },
+     {
+      "frase": "La información del cliente se usa solo en herramientas ___ por la empresa.",
+      "resp": [
+       "autorizadas",
+       "aprobadas"
+      ],
+      "pista": "Con permiso."
+     },
+     {
+      "frase": "Lo que falta en el reporte se marca como [___].",
+      "resp": [
+       "pendiente",
+       "Pendiente"
+      ],
+      "pista": "Marcador del 8D."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla de confidencialidad",
+    "pregunta": "Escribe qué documentos de tus clientes nunca pegarías en una IA pública y cómo prepararías la información para usarla de forma segura.",
+    "ayuda": "Nunca pego… / Antes de usar la IA quito… / Herramienta autorizada: …"
+   }
+  ],
+  "c-ia-manufactura-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el Pareto del mes por número de piezas pone primero la rebaba (420) y hasta el final «color» (60). El gerente de finanzas señala que cada pieza con rebaba se retrabaja por $8, mientras que cada pieza con falla de color se tira y cuesta $180."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué defecto cuesta más en el mes?",
+      "ops": [
+       "Rebaba: 420 × $8 = $3,360",
+       "Color: 60 × $180 = $10,800",
+       "Cuestan igual"
+      ],
+      "correcta": 1,
+      "explica": "Por costo, el orden del Pareto cambia."
+     },
+     {
+      "p": "¿Qué Pareto usas para priorizar?",
+      "ops": [
+       "Solo el de piezas",
+       "Los dos: por frecuencia y por costo, y decides con ambos",
+       "El que diga la IA"
+      ],
+      "correcta": 1,
+      "explica": "Frecuencia y costo cuentan historias distintas."
+     },
+     {
+      "p": "¿Quién calcula el Pareto por costo?",
+      "ops": [
+       "Tu hoja de cálculo con el costo real de cada defecto",
+       "La IA de memoria",
+       "Nadie"
+      ],
+      "correcta": 0,
+      "explica": "La IA interpreta; la hoja calcula."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Prioridad en la junta",
+    "malTitulo": "Solo frecuencia",
+    "mal": "«Atacamos la rebaba porque es el defecto número uno.»",
+    "bienTitulo": "Frecuencia y costo",
+    "bien": "«Por piezas, la rebaba es 47%; por costo, el color es el más caro ($10,800 al mes). Proponemos un proyecto para cada uno, empezando por color.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu Pareto por costo",
+    "pregunta": "Elige 3 defectos de tu línea y estima cuánto cuesta cada pieza defectuosa (retrabajo o desperdicio). ¿Cambia tu prioridad?",
+    "ayuda": "Defecto 1… piezas… costo por pieza… / Defecto 2… / Cambia porque…"
+   }
+  ],
+  "c-ia-manufactura-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el compresor principal de una planta de alimentos en Guadalajara tuvo 3 paros en el trimestre. La IA ordenó la bitácora y agregó al plan preventivo «cambiar rodamientos cada 3 meses», que no está en el manual del fabricante."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con esa actividad?",
+      "ops": [
+       "La incluyo como obligatoria",
+       "La marco como «sugerencia» y la valida el jefe de mantenimiento con el fabricante",
+       "La borro sin revisarla"
+      ],
+      "correcta": 1,
+      "explica": "Las sugerencias se distinguen de lo que dice el manual."
+     },
+     {
+      "p": "Los 3 paros fueron por «sobretemperatura». Lo siguiente es…",
+      "ops": [
+       "Revisar la causa con el técnico: ventilación, filtros, aceite",
+       "Cambiar el compresor",
+       "Ignorarlo"
+      ],
+      "correcta": 0,
+      "explica": "El síntoma repetido apunta a una causa que se investiga."
+     },
+     {
+      "p": "Para que el preventivo funcione, cada actividad necesita…",
+      "ops": [
+       "Frecuencia, responsable y registro de cumplimiento",
+       "Solo el nombre",
+       "Una foto bonita"
+      ],
+      "correcta": 0,
+      "explica": "Sin responsable y registro, el preventivo no pasa."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Actividad en el plan",
+    "malTitulo": "Sin fuente",
+    "mal": "«Cambiar rodamientos cada 3 meses.»",
+    "bienTitulo": "Con fuente y estado",
+    "bien": "«Revisar temperatura de descarga semanalmente (manual, sección de mantenimiento). Sugerencia por historial: inspección de rodamientos trimestral, pendiente de validar con el fabricante.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu equipo con fallas repetidas",
+    "pregunta": "Escribe el síntoma que más se repite en la bitácora de uno de tus equipos y la pregunta que le harías al técnico para llegar a la causa.",
+    "ayuda": "Equipo… / Síntoma repetido… / Pregunta…"
+   }
+  ],
+  "c-ia-manufactura-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el A3 que armó un ingeniero con la IA dice en «Meta»: «Reducir el scrap 50%». En «Situación actual»: «El scrap es alto». En «Seguimiento»: «Se revisará periódicamente»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le falta a la meta?",
+      "ops": [
+       "Nada",
+       "Valor actual, valor objetivo y fecha",
+       "Un color"
+      ],
+      "correcta": 1,
+      "explica": "Una meta sin base ni fecha no se puede verificar."
+     },
+     {
+      "p": "«El scrap es alto» debe cambiarse por…",
+      "ops": [
+       "Un dato: % de scrap y su costo en un periodo",
+       "Una opinión más fuerte",
+       "Nada"
+      ],
+      "correcta": 0,
+      "explica": "La situación actual se describe con datos."
+     },
+     {
+      "p": "«Se revisará periódicamente» se cambia por…",
+      "ops": [
+       "Indicador, frecuencia y responsable",
+       "Una promesa",
+       "Un correo"
+      ],
+      "correcta": 0,
+      "explica": "Seguimiento concreto o no hay seguimiento."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Meta del A3",
+    "malTitulo": "Sin base",
+    "mal": "«Reducir el scrap 50%.»",
+    "bienTitulo": "Verificable",
+    "bien": "«Reducir el scrap de la línea 2 de 6.2% (promedio enero a marzo) a 3% para el 30 de junio, medido semanalmente en el reporte de calidad.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu meta con dato",
+    "pregunta": "Reescribe la meta de un proyecto de mejora de tu área con valor actual, objetivo, fecha e indicador.",
+    "ayuda": "De … a … para el … medido con…"
+   }
+  ],
+  "c-ia-manufactura-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dos semanas después del plan de la línea 3, el rechazo por rebaba bajó de 5% a 3% en una semana. La IA redacta el reporte al gerente: «Problema resuelto, se recomienda cerrar el proyecto»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Se puede cerrar el proyecto?",
+      "ops": [
+       "Sí, bajó",
+       "Todavía no: una semana no confirma la tendencia y la meta no se ha alcanzado",
+       "Sí, lo dijo la IA"
+      ],
+      "correcta": 1,
+      "explica": "Se verifica con varias semanas y contra la meta."
+     },
+     {
+      "p": "¿Qué incluye un buen reporte de avance?",
+      "ops": [
+       "Dato antes y después, periodo, meta y siguiente paso",
+       "Solo «ya mejoró»",
+       "Las opiniones del turno"
+      ],
+      "correcta": 0,
+      "explica": "El gerente decide con datos."
+     },
+     {
+      "p": "Si la mejora se sostiene, el siguiente paso es…",
+      "ops": [
+       "Actualizar la IT y capacitar a los tres turnos",
+       "Olvidar el tema",
+       "Quitar la contención de inmediato sin revisar"
+      ],
+      "correcta": 0,
+      "explica": "Estandarizar evita que el problema regrese."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Reporte al gerente",
+    "malTitulo": "Prematuro",
+    "mal": "«Problema resuelto, cerramos.»",
+    "bienTitulo": "Con evidencia",
+    "bien": "«Rechazo por rebaba: de 5% a 3% en la primera semana. Meta: 1.5% sostenido 4 semanas. Seguimos midiendo; la IT actualizada se capacita en los tres turnos esta semana.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu criterio de cierre",
+    "pregunta": "¿Con qué dato y por cuánto tiempo darías por cerrado un proyecto de mejora en tu planta?",
+    "ayuda": "Indicador… / Valor meta… / Durante… semanas / Además estandarizo…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos avanzados en planta: OEE, seguridad y cambios de modelo",
+   "r": "Medir la efectividad del equipo, analizar riesgos de tarea y reducir tiempos de cambio de modelo, con la IA para ordenar y comunicar y los datos del piso para decidir.",
+   "lecciones": [
+    {
+     "t": "OEE: disponibilidad, rendimiento y calidad",
+     "obj": "Calcular la efectividad global del equipo (OEE) con datos del turno y usar la IA para interpretar pérdidas sin inventar cifras.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "El <b>OEE</b> resume en un número cuánto de lo que el equipo podría producir se convirtió en piezas buenas. Se calcula como <b>disponibilidad × rendimiento × calidad</b>: disponibilidad (tiempo que operó ÷ tiempo planeado), rendimiento (piezas producidas ÷ piezas que debió producir en ese tiempo) y calidad (piezas buenas ÷ piezas producidas). Lo valioso no es el número final, sino saber cuál de las tres pérdidas pesa más."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una troqueladora en una planta de autopartes en Silao tenía 450 minutos planeados en el turno. Estuvo parada 90 minutos. Su ritmo ideal es 2 piezas por minuto; produjo 612 piezas, de las cuales 18 fueron rechazo."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "OEE del turno",
+       "datos": [
+        [
+         "Concepto",
+         "Valor"
+        ],
+        [
+         "Tiempo planeado (min)",
+         450
+        ],
+        [
+         "Tiempo de paro (min)",
+         90
+        ],
+        [
+         "Ritmo ideal (piezas por min)",
+         2
+        ],
+        [
+         "Piezas producidas",
+         612
+        ],
+        [
+         "Piezas con rechazo",
+         18
+        ],
+        [
+         "Disponibilidad",
+         ""
+        ],
+        [
+         "Rendimiento",
+         ""
+        ],
+        [
+         "Calidad",
+         ""
+        ],
+        [
+         "OEE",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B7",
+         "formula": "=(B2-B3)/B2",
+         "esperado": 0.8,
+         "texto": "<b>B7</b>: disponibilidad = (tiempo planeado − paros) ÷ tiempo planeado."
+        },
+        {
+         "celda": "B8",
+         "formula": "=B5/((B2-B3)*B4)",
+         "esperado": 0.85,
+         "texto": "<b>B8</b>: rendimiento = piezas producidas ÷ (tiempo operando × ritmo ideal)."
+        },
+        {
+         "celda": "B9",
+         "formula": "=(B5-B6)/B5",
+         "esperado": 0.9705882353,
+         "texto": "<b>B9</b>: calidad = piezas buenas ÷ piezas producidas."
+        },
+        {
+         "celda": "B10",
+         "formula": "=B7*B8*B9",
+         "esperado": 0.66,
+         "texto": "<b>B10</b>: OEE = disponibilidad × rendimiento × calidad.",
+         "pista": "=B7*B8*B9",
+         "explica": "OEE ≈ 66%. Disponibilidad 80%, rendimiento 85% y calidad 97%: la pérdida más grande son los 90 minutos de paro. Ahí empieza la conversación, no en calidad."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Interpretar el OEE",
+       "texto": "Estos son los componentes de OEE de la [máquina] en las últimas [semanas], ya calculados: [disponibilidad, rendimiento, calidad por semana] y las causas de paro registradas: [lista con minutos]. Sin recalcular: 1) ¿cuál pérdida pesa más y por qué?, 2) 3 hipótesis por pérdida principal en las 6M con el dato que las confirmaría, 3) un resumen de 5 renglones para la junta de arranque. No uses cifras que no te di ni «OEE de clase mundial»."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con OEE:</b> mezclar tiempo planeado con tiempo calendario, usar el ritmo real en lugar del ideal, calcular con datos que no le diste y comparar contra un «OEE de clase mundial» sin fuente. Define con tu planta qué cuenta como tiempo planeado y usa siempre la misma regla."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Disponibilidad 80%, rendimiento 85%, calidad 97%. ¿Dónde atacas primero?",
+         "ops": [
+          "Calidad",
+          "Paros que bajan la disponibilidad",
+          "Nada, está bien"
+         ],
+         "correcta": 1,
+         "explica": "La pérdida más grande es la que más OEE libera."
+        },
+        {
+         "p": "La IA dice que tu OEE «debería ser 85% como en las mejores plantas». Tú…",
+         "ops": [
+          "Lo pones como meta",
+          "Defines la meta con tu historial y tu plan de mejora",
+          "Lo reportas como dato"
+         ],
+         "correcta": 1,
+         "explica": "Una referencia sin fuente no es tu meta."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu equipo crítico",
+       "pregunta": "Elige un equipo de tu planta. ¿Qué dato tienes hoy para cada componente del OEE y cuál te falta registrar?",
+       "ayuda": "Disponibilidad: … / Rendimiento: … / Calidad: … / Me falta…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "OEE = disponibilidad × rendimiento × calidad.",
+        "Lo útil es saber qué pérdida pesa más.",
+        "Misma regla de tiempo planeado; metas con tu historial."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Análisis de riesgos de tarea y casi accidentes",
+     "obj": "Usar la IA para estructurar un análisis de riesgos de una tarea y reportar casi accidentes, validando controles y requisitos con seguridad e higiene.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un <b>análisis de riesgos de la tarea</b> divide una actividad en pasos, identifica qué puede lastimar a alguien en cada uno y define controles. La IA es muy útil para no olvidar peligros y para redactar; lo que no puede hacer es ver tu estación, medir tu ruido ni decidir qué equipo de protección es el correcto. Eso lo valida el área de seguridad e higiene."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> en una planta metalmecánica en Apodaca, el cambio de rollo de lámina en la troqueladora lo hacen dos operadores con montacargas. La semana pasada hubo un casi accidente: el rollo se deslizó al bajarlo."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Estructurar el análisis de riesgos",
+       "texto": "Voy a analizar la tarea [descripción de la tarea, sin nombres]. Pasos como los hacemos hoy: [lista]. Para cada paso propón: peligros posibles (mecánicos, ergonómicos, eléctricos, de caída de objetos, etc.), qué podría pasar y controles en este orden: eliminar, sustituir, controles de ingeniería, controles administrativos y equipo de protección. Marca [VALIDAR CON SEGURIDAD] en cada control. No cites normas ni valores límite."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Normas de seguridad: verifica el requisito vigente.</b> Las NOM de la STPS aplicables a tu actividad (maquinaria, montacargas, ruido, equipo de protección) las identifica y verifica tu área de seguridad e higiene en la fuente oficial. Si la IA cita una norma o un valor límite, verifica el requisito vigente antes de usarlo."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Reporte de casi accidente",
+       "malTitulo": "Sin información útil",
+       "mal": "«Casi se cae un rollo, nadie salió herido, todo bien.»",
+       "bienTitulo": "Con hechos y acción",
+       "bien": "«Durante el cambio de rollo en la troqueladora 2, el rollo se deslizó 20 cm al bajarlo con montacargas. Sin lesionados. Condición: la cuna no tenía topes. Acción inmediata: maniobra suspendida hasta instalar topes. Responsable: mantenimiento, jueves.»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA propone como control principal «que los operadores tengan más cuidado». Tú…",
+         "ops": [
+          "Lo aceptas",
+          "Buscas primero controles que eliminen o aíslen el peligro",
+          "Lo pones en un letrero y listo"
+         ],
+         "correcta": 1,
+         "explica": "El cuidado es necesario, pero los controles de ingeniería protegen aunque alguien se distraiga."
+        },
+        {
+         "p": "La IA cita una NOM con un número de artículo específico. Tú…",
+         "ops": [
+          "La copias al análisis",
+          "Verificas el requisito vigente con seguridad e higiene en la fuente oficial",
+          "La borras"
+         ],
+         "correcta": 1,
+         "explica": "Normas y artículos se confirman en la fuente oficial."
+        },
+        {
+         "p": "Un casi accidente…",
+         "ops": [
+          "No se reporta porque nadie se lastimó",
+          "Se reporta: es la oportunidad de corregir antes de un accidente",
+          "Se comenta en el pasillo"
+         ],
+         "correcta": 1,
+         "explica": "Los casi accidentes son información preventiva valiosa."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu tarea de riesgo",
+       "pregunta": "Elige una tarea de riesgo en tu área. Escribe sus pasos principales, el peligro más serio y el control más fuerte que podrías proponer.",
+       "ayuda": "Tarea… / Pasos… / Peligro principal… / Control propuesto…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Pasos → peligros → controles, del más fuerte al más débil.",
+        "La IA estructura; seguridad e higiene valida.",
+        "NOM y valores límite: verifica el requisito vigente."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Cambios de modelo más rápidos",
+     "obj": "Separar actividades internas y externas de un cambio de modelo, calcular el tiempo que puede ahorrarse y documentar el nuevo estándar con la IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Durante un cambio de modelo, la máquina está parada. La técnica conocida como SMED propone separar las actividades <b>internas</b> (solo se pueden hacer con la máquina parada) de las <b>externas</b> (se pueden hacer antes o después: traer el molde, preparar herramientas, llenar formatos). Pasar externas fuera del paro es la ganancia más rápida. La IA te ayuda a clasificar actividades a partir de tu video o tus notas y a escribir el nuevo estándar."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> en una planta de envases en Tlaxcala, el cambio de molde de la sopladora tarda 95 minutos. El equipo cronometró las actividades y las clasificó."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Cambio de molde cronometrado",
+       "instruccion": "La columna C ya está clasificada; completa los cálculos.",
+       "datos": [
+        [
+         "Actividad",
+         "Minutos",
+         "Tipo"
+        ],
+        [
+         "Buscar el molde en almacén",
+         20,
+         "Externa"
+        ],
+        [
+         "Desmontar molde anterior",
+         15,
+         "Interna"
+        ],
+        [
+         "Buscar herramientas",
+         10,
+         "Externa"
+        ],
+        [
+         "Montar molde nuevo",
+         20,
+         "Interna"
+        ],
+        [
+         "Ajustar y primeras piezas",
+         25,
+         "Interna"
+        ],
+        [
+         "Llenar formato de cambio",
+         5,
+         "Externa"
+        ],
+        [
+         "Tiempo total del cambio",
+         95,
+         ""
+        ],
+        [
+         "Minutos que pueden salir del paro",
+         "",
+         ""
+        ],
+        [
+         "Nuevo tiempo de paro",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B9",
+         "formula": "=SUMAR.SI(C2:C7,\"Externa\",B2:B7)",
+         "esperado": 35,
+         "texto": "<b>B9</b>: minutos de actividades externas.",
+         "requiere": "SUMAR.SI(",
+         "pista": "=SUMAR.SI(C2:C7,«Externa»,B2:B7) con comillas rectas"
+        },
+        {
+         "celda": "B10",
+         "formula": "=B8-B9",
+         "esperado": 60,
+         "texto": "<b>B10</b>: nuevo tiempo de paro si las externas se hacen antes o después.",
+         "pista": "=B8-B9",
+         "explica": "De 95 a 60 minutos sin comprar nada: solo preparando el molde, las herramientas y el formato mientras la máquina sigue trabajando. El siguiente paso es reducir el ajuste de 25 minutos."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Clasificar un cambio de modelo",
+       "texto": "Te paso la lista de actividades de un cambio de modelo con sus minutos, tal como las cronometramos: [lista]. Para cada una propón si es interna o externa, y por qué. Marca [VERIFICAR EN PISO] cuando no sea obvio. Después redacta una lista de preparación previa al cambio (qué debe estar listo antes de parar la máquina). No cambies los tiempos ni agregues actividades."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en cambios de modelo:</b> clasificar como externa una actividad que por seguridad debe hacerse con la máquina bloqueada, prometer tiempos «típicos» de otras plantas y omitir la verificación de primeras piezas. Cualquier cambio al método se valida con seguridad y calidad antes de estandarizarlo."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Buscar el molde en almacén con la máquina parada es…",
+         "ops": [
+          "Una actividad externa que debe hacerse antes del paro",
+          "Interna",
+          "Inevitable"
+         ],
+         "correcta": 0,
+         "explica": "El molde debe estar junto a la máquina antes de pararla."
+        },
+        {
+         "p": "La IA clasifica como externa «aflojar sujeciones del molde con la máquina en marcha». Tú…",
+         "ops": [
+          "Lo aceptas, ahorra tiempo",
+          "Lo rechazas: por seguridad se hace con la máquina parada y bloqueada",
+          "Lo pruebas en el siguiente turno"
+         ],
+         "correcta": 1,
+         "explica": "Ningún ahorro de tiempo justifica un riesgo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu cambio de modelo",
+       "pregunta": "Elige un cambio de modelo o preparación de tu área y anota 3 actividades que hoy se hacen con la máquina parada pero podrían hacerse antes.",
+       "ayuda": "1. … 2. … 3. … / Ahorro estimado: … min"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Internas con la máquina parada; externas antes o después.",
+        "Pasar externas fuera del paro es la ganancia más rápida.",
+        "Seguridad y calidad validan el nuevo estándar."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "OEE se calcula como…",
+     "ops": [
+      "Disponibilidad + rendimiento + calidad",
+      "Disponibilidad × rendimiento × calidad",
+      "Piezas buenas ÷ turno",
+      "Paros ÷ tiempo"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si la IA compara tu OEE con uno «de clase mundial» sin fuente…",
+     "ops": [
+      "Lo adoptas como meta",
+      "Lo reportas",
+      "Lo ignoras como meta y usas tu historial",
+      "Lo duplicas"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "En un análisis de riesgos, el control más fuerte suele ser…",
+     "ops": [
+      "Tener más cuidado",
+      "Un letrero",
+      "El equipo de protección",
+      "Eliminar o aislar el peligro"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Las NOM aplicables a una tarea…",
+     "ops": [
+      "Las verifica seguridad e higiene en la fuente oficial",
+      "Las da la IA",
+      "No aplican a casi accidentes",
+      "Las define el operador"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En SMED, una actividad externa es la que…",
+     "ops": [
+      "Hace un proveedor",
+      "Se puede hacer con la máquina en marcha, antes o después del paro",
+      "Es peligrosa",
+      "Se hace fuera de la planta"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si 35 minutos de 95 son externos, el nuevo paro puede bajar a…",
+     "ops": [
+      "35 minutos",
+      "95 minutos",
+      "60 minutos",
+      "130 minutos"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado en planta con errores de la IA que debes detectar y tu kit personal de manufactura con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un miércoles en una planta de autopartes",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en planta: especificaciones inventadas, información confidencial expuesta, reportes suavizados y conclusiones sin evidencia.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres ingeniera de procesos en una planta de autopartes en Silao y usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado. Encuéntralo antes de que llegue al piso, al cliente o a tu gerente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 7:30 a. m. Instrucción de trabajo.</b> Actualizaste con la IA la IT del atornillado de un soporte. El paso 5 dice «Aprieta a 25 N·m» y el paso 7 «Usa guantes anticorte». La hoja de especificación del cliente dice 18 N·m y tú no mencionaste guantes."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "¿Qué cambias en la IT, con qué documento y a quién consultas?",
+       "ayuda": "Paso 5: … según… / Paso 7: … lo valida… / Antes de liberar la IT…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:00 a. m. Análisis de una queja.</b> Un compañero quiere pegar en una IA pública el plano del cliente con número de parte, la carta de reclamo y los resultados dimensionales para que «haga el 8D rápido»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "¿Qué información no debe salir a esa herramienta y cómo puedes usar la IA de forma segura para este 8D?",
+       "ayuda": "No se pega… / Uso la herramienta autorizada o quito… / La IA me ayuda con…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 2:00 p. m. Reporte de turno y OEE.</b> La IA resumió el turno: «OEE 82%, sin incidentes». Tu hoja da 66% y en las notas del supervisor hay un casi accidente con el montacargas."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Reescribe las dos frases del resumen con los datos correctos y la información de seguridad.",
+       "ayuda": "OEE: … (disponibilidad…, rendimiento…, calidad…) / Seguridad: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Cierre del 8D.</b> La IA redactó la D6: «Acciones implementadas y verificadas con éxito; cero defectos desde el 3 de mayo». Las acciones se implementaron ayer y aún no hay datos de verificación."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Qué pones en la D6 y qué evidencia necesitas antes de declarar verificadas las acciones?",
+       "ayuda": "D6: implementado el… / Verificación: pendiente hasta… / Evidencia necesaria: …"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "El torque de la IT sale de…",
+         "ops": [
+          "La IA",
+          "La hoja de especificación del cliente",
+          "El operador con más experiencia"
+         ],
+         "correcta": 1,
+         "explica": "Especificaciones: siempre del documento controlado."
+        },
+        {
+         "p": "El plano del cliente y la carta de reclamo…",
+         "ops": [
+          "Van a cualquier IA si es urgente",
+          "Solo a herramientas autorizadas o sin identificadores",
+          "Se reenvían al proveedor de la IA"
+         ],
+         "correcta": 1,
+         "explica": "Información del cliente con cuidado, siempre."
+        },
+        {
+         "p": "«Sin incidentes» cuando hubo un casi accidente es…",
+         "ops": [
+          "Un error que se corrige en el reporte",
+          "Aceptable si nadie se lastimó",
+          "Un detalle menor"
+         ],
+         "correcta": 0,
+         "explica": "Los casi accidentes se reportan."
+        },
+        {
+         "p": "Declarar verificada una acción implementada ayer…",
+         "ops": [
+          "Está bien si la acción es buena",
+          "No procede: se verifica con datos de un periodo suficiente",
+          "Lo decide la IA"
+         ],
+         "correcta": 1,
+         "explica": "Verificar es comprobar con evidencia."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Especificaciones y EPP: de documentos y de seguridad, nunca de la IA.",
+        "Información del cliente solo en herramientas autorizadas.",
+        "Reportes fieles y verificaciones con datos."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de manufactura con IA",
+     "obj": "Construir tu kit personal de manufactura con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Convierte el curso en un <b>kit que uses desde mañana</b> en tu planta. Responde cada paso con tus procesos, tus equipos y tus indicadores reales (sin información confidencial del cliente)."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más usarás (IT, reporte de turno, microlección, 5 porqués, 8D, Pareto, bitácora, A3, OEE, análisis de riesgos, cambio de modelo) y adáptalos a tu planta.",
+       "ayuda": "1. … 2. … 3. … 4. … 5. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tus 5 reglas: qué nunca pegas en una IA (planos, números de parte, reportes de cliente, datos de personal), cómo quitas identificadores y qué herramienta autoriza tu empresa.",
+       "ayuda": "Nunca pego… / Quito… / Herramienta autorizada: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe 6 puntos que revisas antes de liberar cualquier documento hecho con IA.",
+       "ayuda": "□ ¿Valores técnicos con fuente controlada? □ ¿EPP y controles validados por seguridad? □ ¿Cálculos hechos en la hoja? □ ¿Nada inventado: [pendiente] y [completar]? □ ¿NOM verificadas en fuente oficial? □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real: una IT, un 8D, un A3, un análisis de riesgos o tu cálculo de OEE con plan de acción. Pega la versión final revisada.",
+       "ayuda": "Entregable: … / Lo revisan… / Se libera el…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit de manufactura",
+       "texto": "KIT DE MANUFACTURA CON IA — [tu nombre] — [planta o área] — [fecha]\n\n1. Biblioteca de prompts: IT [ ], turno [ ], causa raíz [ ], 8D [ ], A3 [ ], OEE [ ], riesgos [ ], cambio de modelo [ ]\n2. Política de datos y herramienta autorizada: [ ]\n3. Fuentes de valores técnicos (planos, hojas de proceso, manuales): [ ]\n4. Lista de verificación: [ ]\n5. Indicadores: OEE, % rechazo, paros, tiempo de cambio [ ]\n6. Entregable real: [ ]\n7. Próxima revisión del kit: [fecha]",
+       "nota": "Actualízala cuando cambien tus procesos, tus clientes o tu herramienta autorizada."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tu planta.",
+        "Política de datos, fuentes técnicas y lista de verificación.",
+        "Un entregable real listo para liberar."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un torque en la IT que difiere de la especificación del cliente…",
+     "ops": [
+      "Se deja si lo dio la IA",
+      "Se promedia",
+      "Se corrige con la hoja de especificación",
+      "Se consulta al operador"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El plano del cliente puede usarse con IA…",
+     "ops": [
+      "En cualquier herramienta",
+      "Solo en herramientas autorizadas o sin identificadores",
+      "Nunca con nadie",
+      "Si es urgente"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si tu hoja da OEE 66% y la IA dice 82%…",
+     "ops": [
+      "Reportas 66% con sus componentes",
+      "Reportas 82%",
+      "Promedias",
+      "No reportas"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una acción correctiva se declara verificada cuando…",
+     "ops": [
+      "Se implementa",
+      "La IA lo dice",
+      "Pasa un día",
+      "Hay datos de un periodo suficiente que lo demuestran"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Tu política de datos del kit define…",
+     "ops": [
+      "Qué nunca pegas y qué herramienta está autorizada",
+      "Solo tus prompts favoritos",
+      "El color del reporte",
+      "Nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En planta, la responsabilidad de liberar un documento es…",
+     "ops": [
+      "De la IA",
+      "Del cliente",
+      "Tuya y de las áreas que lo validan",
+      "De nadie"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

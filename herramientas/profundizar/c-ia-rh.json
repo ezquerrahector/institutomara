@@ -1,0 +1,1287 @@
+{
+ "id": "c-ia-rh",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA en relaciones laborales, cumplimiento normativo y analítica de personas sin discriminar (LFT art. 133 y artículo 1.º constitucional) y verificando toda norma en su texto vigente.",
+  "Construir tu kit de RH con IA: biblioteca de prompts, política de datos del personal, lista de verificación contra sesgos y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "«Experiencia de 2 años en nómina con CONTPAQi».",
+   "op": "Válido solo si además se pide una edad máxima"
+  },
+  {
+   "p": "«Edad de 25 a 35 años».",
+   "op": "Válido si el puesto es de ventas"
+  },
+  {
+   "p": "«Buena presentación».",
+   "op": "Válido si se aclara «indispensable»"
+  },
+  {
+   "p": "«Disponibilidad para viajar 2 veces al mes».",
+   "op": "Válido solo para candidatos solteros"
+  },
+  {
+   "p": "¿Cuándo defines los criterios de evaluación?",
+   "op": "Después de la primera entrevista"
+  },
+  {
+   "p": "Antes de usar IA con currículums…",
+   "op": "Solo quito el teléfono y dejo lo demás"
+  },
+  {
+   "p": "Pedir a la IA que cite la evidencia de cada calificación sirve para…",
+   "op": "Que la IA decida sola a quién entrevistar"
+  },
+  {
+   "p": "Una entrevista estructurada significa…",
+   "op": "Preguntas distintas según la edad del candidato"
+  },
+  {
+   "p": "«Cuéntame de una vez en que resolviste un conflicto con un cliente» es una pregunta…",
+   "op": "Hipotética"
+  },
+  {
+   "p": "Las respuestas sobre políticas (vacaciones, pagos) las escribe…",
+   "op": "El jefe directo de memoria"
+  },
+  {
+   "p": "Un buen plan de onboarding incluye…",
+   "op": "Solo el curso de inducción en línea"
+  },
+  {
+   "p": "Una microcapacitación eficaz termina con…",
+   "op": "La firma de enterado sin más"
+  },
+  {
+   "p": "Los resultados de desempeño que usas para detectar necesidades deben estar…",
+   "op": "Ordenados por antigüedad con nombre"
+  },
+  {
+   "p": "El modelo situación–conducta–impacto sirve para…",
+   "op": "Calificar la personalidad del colaborador"
+  },
+  {
+   "p": "La IA agrega un hecho que tú no observaste. Tú…",
+   "op": "Lo dejo si suena probable"
+  },
+  {
+   "p": "«Se implementarán ajustes en los esquemas operativos» es…",
+   "op": "Una frase recomendable para cambios delicados"
+  },
+  {
+   "p": "«¿Qué tan excelente es tu jefe?» es una pregunta…",
+   "op": "Abierta"
+  },
+  {
+   "p": "Antes de analizar comentarios con IA…",
+   "op": "Quito solo los comentarios negativos"
+  },
+  {
+   "p": "La IA concluye «la gente se va por el sueldo» pero los comentarios hablan sobre todo de horarios. Tú…",
+   "op": "Promedias ambas conclusiones"
+  },
+  {
+   "p": "El indicador principal del plan sería…",
+   "op": "Número de vacantes publicadas"
+  }
+ ],
+ "extras": {
+  "c-ia-rh-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un centro de distribución en Celaya necesita auxiliares de almacén. El gerente pidió a una IA el anuncio y lo publicó: «Solicitamos hombres de 20 a 35 años, fuertes, sin tatuajes, con secundaria terminada». En una semana llegan quejas en redes. La LFT (art. 133) prohíbe negarse a aceptar trabajadores por género, edad, apariencia y otros motivos, y el artículo 1.º de la Constitución prohíbe toda discriminación."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué requisitos del anuncio son discriminatorios?",
+      "ops": [
+       "Solo «secundaria terminada»",
+       "Sexo, rango de edad y «sin tatuajes»",
+       "Ninguno, es un almacén"
+      ],
+      "correcta": 1,
+      "explica": "Sexo, edad y apariencia no se relacionan con la capacidad de hacer el trabajo; la escolaridad, si el puesto la requiere, sí puede pedirse."
+     },
+     {
+      "p": "Si el puesto implica cargar cajas con frecuencia, ¿cómo se redacta?",
+      "ops": [
+       "«Hombres fuertes»",
+       "«Complexión robusta»",
+       "Describir la tarea: manejo frecuente de cajas de hasta [X] kg con equipo de apoyo"
+      ],
+      "correcta": 2,
+      "explica": "Se describe la función y sus condiciones; cualquier persona que pueda realizarla puede postularse."
+     },
+     {
+      "p": "¿Qué le pides a la IA después de corregir el anuncio?",
+      "ops": [
+       "Que revise frases que excluyan por edad, género, apariencia u otra característica",
+       "Que lo haga más llamativo con emojis",
+       "Que agregue «sexo indistinto» y deje el resto"
+      ],
+      "correcta": 0,
+      "explica": "Una revisión explícita de sesgos es parte del proceso; tú decides el texto final."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Anuncio de almacén",
+    "malTitulo": "Excluye",
+    "mal": "«Solicitamos hombres de 20 a 35 años, fuertes, sin tatuajes.»",
+    "bienTitulo": "Describe el puesto",
+    "bien": "«Auxiliar de almacén: recepción y acomodo de mercancía, manejo frecuente de cajas de hasta 20 kg con carretilla, turno matutino. Secundaria terminada. Ofrecemos prestaciones de ley, comedor y capacitación en montacargas.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu anuncio corregido",
+    "pregunta": "Toma un requisito de algún anuncio de tu empresa que describa a la persona en lugar de la tarea y reescríbelo como función del puesto.",
+    "ayuda": "Antes: «…» / Ahora: «…»"
+   }
+  ],
+  "c-ia-rh-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una empresa de software en Guadalajara prueba una herramienta que califica currículums. El «top 10» sale integrado por personas de dos universidades privadas, todas con menos de 8 años de haber egresado y ninguna con periodos sin empleo. Nadie le pidió a la herramienta que filtrara por edad ni por universidad."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué está pasando?",
+      "ops": [
+       "La herramienta encontró a los mejores",
+       "Hay sesgo por variables sustitutas: el año de egreso funciona como edad",
+       "Es casualidad"
+      ],
+      "correcta": 1,
+      "explica": "Aunque no se pida la edad, datos como el año de egreso la revelan; la herramienta reproduce el sesgo."
+     },
+     {
+      "p": "Los periodos sin empleo en un CV…",
+      "ops": [
+       "Pueden reflejar cuidados familiares o maternidad; penalizarlos puede discriminar",
+       "Siempre indican bajo desempeño",
+       "Deben descartarse automáticamente"
+      ],
+      "correcta": 0,
+      "explica": "Un hueco laboral no dice nada del desempeño; si importa, se pregunta de forma neutral en la entrevista."
+     },
+     {
+      "p": "¿Qué ajuste haces al proceso?",
+      "ops": [
+       "Dejar que la herramienta decida pero revisar el top 3",
+       "Cambiar de herramienta y repetir igual",
+       "Quitar año de egreso, fotos y datos personales y evaluar contra la matriz de criterios con evidencia"
+      ],
+      "correcta": 2,
+      "explica": "Evaluar contra criterios del puesto, sin datos que revelen características protegidas, y con revisión humana de cada decisión."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Variable sustituta y lo que revela",
+    "pares": [
+     [
+      "Año de egreso",
+      "Edad aproximada"
+     ],
+     [
+      "Colonia o municipio de residencia",
+      "Nivel socioeconómico"
+     ],
+     [
+      "Fotografía",
+      "Apariencia, sexo y origen"
+     ],
+     [
+      "Periodos sin empleo",
+      "Posibles responsabilidades de cuidado"
+     ],
+     [
+      "Nombre de la escuela",
+      "Acceso económico, no capacidad"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus datos a ocultar",
+    "pregunta": "Lista los datos que quitarías de los CV de tu empresa antes de evaluarlos y explica qué característica podría revelar cada uno.",
+    "ayuda": "Quitaría: … porque revela …"
+   }
+  ],
+  "c-ia-rh-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un jefe de sucursal bancaria en Hermosillo usó la IA para su guía de entrevista de cajeros. La guía incluye «¿Con quién vives y quién cuida a tus hijos cuando trabajas?». Además, al resumir sus notas, la IA escribió «candidata con poca energía, tal vez no aguante el ritmo», algo que él nunca anotó."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La pregunta sobre quién cuida a los hijos…",
+      "ops": [
+       "Es válida para saber si tendrá faltas",
+       "Se sustituye por una neutral sobre disponibilidad de horario, igual para todos",
+       "Solo se hace a mujeres"
+      ],
+      "correcta": 1,
+      "explica": "Indaga vida familiar y suele usarse para descartar mujeres. Lo que importa al puesto es la disponibilidad para el horario, preguntada igual a todos."
+     },
+     {
+      "p": "«Poca energía, tal vez no aguante el ritmo»…",
+      "ops": [
+       "Se elimina: es una suposición sin evidencia",
+       "Se deja porque la IA lo percibió",
+       "Se cambia por «muy tranquila»"
+      ],
+      "correcta": 0,
+      "explica": "La IA no estuvo en la entrevista. Solo cuenta la evidencia observada contra la rúbrica."
+     },
+     {
+      "p": "¿Qué instrucción agregas al prompt del resumen?",
+      "ops": [
+       "«Sé más breve»",
+       "«Incluye tu impresión personal»",
+       "«Usa solo mis notas, cita cada evidencia y marca sin evidencia donde no haya datos»"
+      ],
+      "correcta": 2,
+      "explica": "Limitar a las notas y pedir cita evita que la IA complete con suposiciones."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Pregunta indebida → pregunta neutral",
+    "items": [
+     {
+      "frase": "«¿Tienes hijos pequeños?» → «¿Tienes ___ para el horario de 9 a 6 de lunes a sábado?»",
+      "resp": [
+       "disponibilidad"
+      ]
+     },
+     {
+      "frase": "«¿Cuántos años tienes?» → «¿Cuánta ___ tienes manejando efectivo?»",
+      "resp": [
+       "experiencia"
+      ]
+     },
+     {
+      "frase": "«¿Estás sano?» → «¿Puedes realizar las funciones ___ del puesto que te describí?»",
+      "resp": [
+       "esenciales",
+       "principales"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu guía revisada",
+    "pregunta": "Revisa la guía de entrevista que usa tu empresa y escribe las preguntas que quitarías o reescribirías, con su versión neutral.",
+    "ayuda": "Quito: «…» → Uso: «…»"
+   }
+  ],
+  "c-ia-rh-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un centro de atención telefónica en Aguascalientes contrata 25 agentes en esquema híbrido. RH pidió a la IA la guía de bienvenida y la publicó sin revisar. La guía dice que «el bono de puntualidad es del 10%» (la empresa no tiene ese bono) y que «las vacaciones se toman cuando el agente quiera» (la política real exige solicitarlas con 15 días de anticipación)."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el riesgo de publicar políticas inventadas?",
+      "ops": [
+       "Ninguno, nadie lee la guía",
+       "Solo un problema de imagen",
+       "Los empleados pueden exigir lo que la empresa comunicó por escrito"
+      ],
+      "correcta": 2,
+      "explica": "Lo que la empresa comunica por escrito genera expectativas y puede usarse como prueba en un conflicto."
+     },
+     {
+      "p": "¿Qué haces ahora?",
+      "ops": [
+       "Corriges la guía, avisas a los 25 agentes qué cambió y por qué, y revisas el resto del documento",
+       "Borras la guía sin avisar",
+       "Dejas el bono para no generar molestia"
+      ],
+      "correcta": 0,
+      "explica": "Corregir con transparencia reduce el daño; también se revisa todo el documento, no solo el error visible."
+     },
+     {
+      "p": "Los mínimos legales, como las vacaciones, se toman de…",
+      "ops": [
+       "Lo que diga la IA",
+       "El texto vigente de la LFT y las políticas internas de la empresa",
+       "Lo que hace la competencia"
+      ],
+      "correcta": 1,
+      "explica": "La IA puede tener cifras desactualizadas; la ley vigente y tus políticas son la fuente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Guía del nuevo empleado",
+    "malTitulo": "Inventa",
+    "mal": "«Redacta la guía de bienvenida con nuestras políticas de vacaciones, bonos y horarios.»",
+    "bienTitulo": "Estructura y deja espacios",
+    "bien": "«Redacta la estructura de la guía de bienvenida para agentes híbridos con secciones y preguntas frecuentes. Deja [POLÍTICA: RH COMPLETA] en vacaciones, bonos, horarios y pagos. No inventes cifras ni reglas.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión de documentos",
+    "pregunta": "Escribe quién en tu empresa debe validar cada sección de un documento de bienvenida (políticas, prestaciones, seguridad, sistemas) antes de publicarlo.",
+    "ayuda": "Políticas: … / Prestaciones: … / Seguridad: … / Sistemas: …"
+   }
+  ],
+  "c-ia-rh-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una planta de autopartes en Silao quiere convertir su procedimiento de operación segura de montacargas en una microcapacitación. La IA lo resume muy bien, pero en la lista de pasos juntó «revisar frenos y claxon» con «arrancar» en un solo paso y omitió «verificar que no haya personas en el área de maniobra»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué este error es más grave que uno de redacción?",
+      "ops": [
+       "Porque el curso queda más corto",
+       "Porque omite un paso de seguridad que puede provocar un accidente",
+       "No es grave, el operador ya sabe"
+      ],
+      "correcta": 1,
+      "explica": "En capacitación de seguridad, un paso omitido o mal ordenado es un riesgo físico real."
+     },
+     {
+      "p": "¿Quién valida el contenido antes de impartirlo?",
+      "ops": [
+       "El responsable de seguridad e higiene contra el procedimiento oficial",
+       "La IA en una segunda revisión",
+       "El participante más antiguo"
+      ],
+      "correcta": 0,
+      "explica": "RH produce el formato; el dueño técnico del procedimiento valida el contenido."
+     },
+     {
+      "p": "¿Qué instrucción evita el problema?",
+      "ops": [
+       "«Hazlo más breve»",
+       "«Agrega ejemplos»",
+       "«Conserva todos los pasos de seguridad en su orden original, sin fusionarlos; si algo no está claro, pregúntame»"
+      ],
+      "correcta": 2,
+      "explica": "Pedir fidelidad explícita al procedimiento reduce la simplificación peligrosa."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Reglas para capacitación técnica",
+    "items": [
+     {
+      "frase": "Los pasos de seguridad se conservan en su ___ original.",
+      "resp": [
+       "orden"
+      ]
+     },
+     {
+      "frase": "El contenido técnico lo valida el ___ del procedimiento.",
+      "resp": [
+       "dueño",
+       "responsable"
+      ]
+     },
+     {
+      "frase": "Si la capacitación se registra ante la STPS, verificas los ___ vigentes.",
+      "resp": [
+       "requisitos",
+       "formatos"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu procedimiento crítico",
+    "pregunta": "Elige un procedimiento crítico de tu empresa que convertirías en microcapacitación y escribe quién lo validaría y qué pasos no se pueden simplificar.",
+    "ayuda": "Procedimiento: … / Valida: … / Pasos intocables: …"
+   }
+  ],
+  "c-ia-rh-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una supervisora de una cadena de farmacias en Culiacán le da a la IA sus notas sobre un colaborador: tres retardos en marzo y dos cortes de caja con diferencias. La IA convierte las notas en retroalimentación, pero agrega: «parece que atraviesa problemas personales que afectan su desempeño»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La frase sobre «problemas personales»…",
+      "ops": [
+       "Muestra empatía, se deja",
+       "Se cambia por «problemas familiares»",
+       "Se elimina: es especulación sobre la vida privada"
+      ],
+      "correcta": 2,
+      "explica": "La retroalimentación se basa en conductas observables; suponer causas personales es invasivo y no se puede sostener."
+     },
+     {
+      "p": "¿Qué sí debe incluir la retroalimentación?",
+      "ops": [
+       "Fechas de los retardos, diferencias en cortes y su impacto en el equipo",
+       "Comparaciones con otros empleados por nombre",
+       "Una advertencia de despido"
+      ],
+      "correcta": 0,
+      "explica": "Situación, conducta e impacto con hechos concretos."
+     },
+     {
+      "p": "Si en la conversación el colaborador comparte un tema personal o de salud, tú…",
+      "ops": [
+       "Lo registras en tu prompt para la próxima vez",
+       "Escuchas, ofreces los apoyos disponibles y no lo compartes con la IA",
+       "Se lo comentas al equipo"
+      ],
+      "correcta": 1,
+      "explica": "Es información sensible: se trata con discreción y fuera de herramientas de IA."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Retroalimentación",
+    "malTitulo": "Especula",
+    "mal": "«Parece que atraviesas problemas personales que afectan tu desempeño.»",
+    "bienTitulo": "Describe hechos",
+    "bien": "«En marzo llegaste tarde el 4, el 11 y el 19, y en dos cortes hubo diferencias. Eso dejó la caja sin cubrir en la apertura. ¿Qué necesitas para llegar a tiempo y cuadrar el corte?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lista de frases a quitar",
+    "pregunta": "Escribe tres frases que la IA podría agregar a una evaluación y que tú eliminarías por especulativas o sesgadas, con su versión basada en hechos.",
+    "ayuda": "«…» → «…»"
+   }
+  ],
+  "c-ia-rh-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dirección pide un comunicado sobre la reforma a la LFT que reduce la jornada a 40 horas de forma gradual (el calendario que circula va de 2027 a 2030). La IA redacta: «A partir de enero todos trabajaremos 40 horas y se eliminan los sábados». Nadie ha revisado el texto publicado ni cómo aplica a los turnos de la empresa."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces antes de comunicar fechas y condiciones?",
+      "ops": [
+       "Uso las fechas de la IA",
+       "Verifico el texto vigente publicado en el DOF y su régimen transitorio, con apoyo jurídico",
+       "Copio el comunicado de otra empresa"
+      ],
+      "correcta": 1,
+      "explica": "Las fechas, la gradualidad y las condiciones salen del texto vigente, no de la IA ni de notas periodísticas."
+     },
+     {
+      "p": "«Se eliminan los sábados» es un problema porque…",
+      "ops": [
+       "Es una decisión de organización de turnos que la empresa aún no ha tomado",
+       "Es demasiado informal",
+       "No tiene ningún problema"
+      ],
+      "correcta": 0,
+      "explica": "La forma de redistribuir la jornada es una decisión interna; comunicarla antes de definirla genera expectativas y conflictos."
+     },
+     {
+      "p": "Mientras se define la aplicación, lo más adecuado es…",
+      "ops": [
+       "No decir nada hasta el último día",
+       "Prometer que nada cambiará",
+       "Informar que la empresa analiza la reforma, cuándo dará detalles y a quién preguntar"
+      ],
+      "correcta": 2,
+      "explica": "Un comunicado honesto sobre el proceso reduce rumores sin prometer lo que aún no se decide."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Comunicado sobre la jornada",
+    "malTitulo": "Afirma sin verificar",
+    "mal": "«A partir de enero todos trabajaremos 40 horas y se eliminan los sábados.»",
+    "bienTitulo": "Honesto y verificable",
+    "bien": "«Se aprobó una reforma que reduce gradualmente la jornada laboral. Estamos revisando el texto vigente y cómo aplica a cada turno. El 15 de mayo compartiremos el plan. Dudas con RH, ext. 110.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu protocolo de cambios normativos",
+    "pregunta": "Escribe los pasos que seguiría tu empresa desde que se publica un cambio a la LFT hasta que se comunica al personal: quién verifica el texto vigente, quién decide y quién comunica.",
+    "ayuda": "1. Verifica… 2. Decide… 3. Comunica…"
+   }
+  ],
+  "c-ia-rh-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una clínica privada en Morelia aplicó su encuesta de clima a 38 personas. En el reporte de la IA aparece «el 60% del personal está insatisfecho con su jefe», pero solo 5 comentarios abiertos mencionaban al jefe. Además, el área de laboratorio tiene 3 personas y sus comentarios aparecen separados en el reporte."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿De dónde debería salir un porcentaje de satisfacción con el jefe?",
+      "ops": [
+       "De la cuenta de comentarios abiertos",
+       "De las respuestas de la escala a las preguntas de liderazgo",
+       "De la impresión de la IA"
+      ],
+      "correcta": 1,
+      "explica": "Los comentarios abiertos ilustran; los porcentajes salen de las preguntas cerradas y de cuántas personas respondieron."
+     },
+     {
+      "p": "Mostrar por separado un área de 3 personas…",
+      "ops": [
+       "Rompe el anonimato; se agrupa con otras áreas",
+       "Está bien si no hay nombres",
+       "Es obligatorio para ser precisos"
+      ],
+      "correcta": 0,
+      "explica": "Con grupos tan pequeños se puede identificar quién dijo qué. Se define un tamaño mínimo de grupo para reportar."
+     },
+     {
+      "p": "¿Qué pides a la IA para corregir el reporte?",
+      "ops": [
+       "Que lo haga más positivo",
+       "Que quite los comentarios negativos",
+       "Que distinga resultados de escala y comentarios, e indique cuántas respuestas sostienen cada afirmación"
+      ],
+      "correcta": 2,
+      "explica": "Cada afirmación del reporte debe decir en cuántas respuestas se basa."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Dato del reporte y su fuente correcta",
+    "pares": [
+     [
+      "Porcentaje de satisfacción",
+      "Preguntas cerradas con escala"
+     ],
+     [
+      "Temas de preocupación",
+      "Comentarios abiertos agrupados"
+     ],
+     [
+      "Comparación entre áreas",
+      "Solo áreas con el tamaño mínimo acordado"
+     ],
+     [
+      "Cita representativa",
+      "Comentario textual sin datos que identifiquen"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla de anonimato",
+    "pregunta": "Define el tamaño mínimo de grupo que usarías para reportar resultados de clima en tu empresa y qué harías con las áreas más pequeñas.",
+    "ayuda": "Mínimo de … personas. Las áreas menores se agrupan con…"
+   }
+  ],
+  "c-ia-rh-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso continúa:</b> RH presenta a dirección el diagnóstico de rotación de vendedores. La IA propone como acción estrella «un modelo que prediga qué vendedor va a renunciar para no invertir en su capacitación». Un gerente de tienda aplaude la idea."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el problema de esa acción?",
+      "ops": [
+       "Que es cara",
+       "Etiqueta a personas por predicciones y les niega desarrollo; puede ser discriminatoria",
+       "Que no se puede hacer en Excel"
+      ],
+      "correcta": 1,
+      "explica": "Negar capacitación por una predicción individual castiga a personas por lo que un modelo supone, con riesgo de discriminación."
+     },
+     {
+      "p": "¿Qué uso de los datos sí es adecuado?",
+      "ops": [
+       "Analizar patrones agregados por tienda, turno y etapa para corregir causas",
+       "Publicar el ranking de «riesgo de renuncia»",
+       "Compartir la lista con los gerentes"
+      ],
+      "correcta": 0,
+      "explica": "El análisis agregado ayuda a mejorar condiciones sin etiquetar a nadie."
+     },
+     {
+      "p": "¿Cómo respondes al gerente?",
+      "ops": [
+       "Le das la razón para evitar conflicto",
+       "Ignoras el comentario",
+       "Explicas el riesgo y propones acciones sobre las causas detectadas, con su indicador"
+      ],
+      "correcta": 2,
+      "explica": "Postura clara con alternativa concreta; así se mantiene el foco en las causas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Uso de datos de rotación",
+    "malTitulo": "Etiqueta personas",
+    "mal": "«Modelo que prediga qué vendedor renunciará para no capacitarlo.»",
+    "bienTitulo": "Corrige causas",
+    "bien": "«Análisis por tienda y turno: 70% de las bajas tempranas ocurren en el turno de cierre de dos tiendas. Acción: rotación de turnos y mentor en tienda. Indicador: bajas antes de 90 días.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu línea ética",
+    "pregunta": "Escribe dos usos de datos del personal que tu área nunca haría con IA y dos que sí, con su propósito.",
+    "ayuda": "Nunca: … / Sí: … para …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: relaciones laborales, cumplimiento y analítica",
+   "r": "Uso responsable de la IA en actas e investigaciones internas, en cambios normativos y en indicadores de personal, con los errores típicos de cada situación y cómo controlarlos.",
+   "lecciones": [
+    {
+     "t": "Relaciones laborales: actas e investigaciones internas",
+     "obj": "Usar la IA para estructurar actas administrativas e investigaciones internas sin presumir culpabilidad, agregar hechos ni exponer datos sensibles.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Actas administrativas, quejas por acoso o investigaciones por faltas son de los documentos más delicados de RH: pueden terminar en un juicio laboral y afectan a personas reales. La LFT obliga a los patrones a contar con un protocolo para prevenir la discriminación por razones de género y atender casos de violencia, acoso u hostigamiento sexual. La IA ayuda a estructurar el documento y a preparar entrevistas neutrales, pero <b>tiende a redactar conclusiones antes de tener evidencia</b>, a agregar detalles y a usar un tono acusatorio."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en relaciones laborales",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Presume culpabilidad («el trabajador incurrió en…»)",
+         "Redacción de hechos y versiones, sin conclusiones"
+        ],
+        [
+         "Agrega hechos o testigos",
+         "Solo lo que consta en declaraciones y documentos"
+        ],
+        [
+         "Cita artículos o causales de despido",
+         "Fundamento lo valida el área jurídica en el texto vigente"
+        ],
+        [
+         "Datos de víctimas en la conversación",
+         "Nunca en herramientas no autorizadas; usa roles («persona que reporta»)"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA redacta un acta: «Se comprobó que el trabajador robó mercancía». Aún no hay investigación. Tú…",
+         "ops": [
+          "Lo dejas, así queda claro",
+          "Reescribes como hechos observados y versiones de cada parte",
+          "Cambias «robó» por «tomó»"
+         ],
+         "correcta": 1,
+         "explica": "El acta documenta hechos y declaraciones; la conclusión llega al final de un proceso con evidencia."
+        },
+        {
+         "p": "Para preparar la entrevista a la persona que presentó una queja de acoso, pides a la IA…",
+         "ops": [
+          "Preguntas abiertas, neutrales y sin revictimizar, usando roles y no nombres",
+          "Que evalúe si la persona dice la verdad",
+          "Que redacte la sanción"
+         ],
+         "correcta": 0,
+         "explica": "La IA puede ayudar a formular preguntas respetuosas; la valoración la hace el comité o responsable designado."
+        },
+        {
+         "p": "La IA sugiere «causal de rescisión» con un artículo específico. Tú…",
+         "ops": [
+          "La usas porque tiene artículo",
+          "La copias al acta",
+          "Marcas [FUNDAMENTO: JURÍDICO VALIDA] y lo revisa el área legal en el texto vigente"
+         ],
+         "correcta": 2,
+         "explica": "El fundamento de una rescisión es una decisión jurídica con consecuencias; no se toma de la IA."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu formato de acta",
+       "pregunta": "Escribe las secciones que debe tener un acta administrativa en tu empresa y qué parte nunca redactarías con IA.",
+       "ayuda": "Secciones: … / Nunca con IA: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Estructura de investigación interna",
+       "texto": "Con esta descripción general (sin nombres, con roles como [PERSONA QUE REPORTA], [PERSONA SEÑALADA], [TESTIGO 1]): [hechos reportados], propón: 1) plan de investigación con pasos y plazos internos, 2) preguntas abiertas y neutrales para cada rol, 3) documentos o registros a revisar, 4) medidas de protección provisionales a considerar. No saques conclusiones ni cites artículos; marca [JURÍDICO VALIDA] donde haga falta fundamento.",
+       "nota": "Cópiala y adáptala a tu protocolo."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Hechos y versiones, nunca conclusiones anticipadas.",
+        "Roles en lugar de nombres; datos sensibles fuera de la IA.",
+        "El fundamento lo valida el área jurídica."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Cumplimiento y cambios normativos",
+     "obj": "Usar la IA para entender y comunicar cambios normativos laborales sin afirmar fechas, cifras ni obligaciones que no verificaste en el texto vigente.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "RH vive entre cambios: la reforma de subcontratación de 2021 y el registro de prestadoras de servicios especializados, la NOM-035 sobre factores de riesgo psicosocial, el aumento de vacaciones de 2023 y la reforma a la LFT que reduce gradualmente la jornada a 40 horas, con un calendario que va de 2027 a 2030. <b>La IA puede estar desactualizada o mezclar propuestas con textos aprobados.</b> Úsala para resumir un texto que tú le das y para preparar preguntas y comunicados; las fechas, cifras y obligaciones se verifican en el texto vigente publicado en el DOF."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en cumplimiento",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Información desactualizada",
+         "Describe la subcontratación como antes de 2021",
+         "Pídele que resuma el texto que tú pegas"
+        ],
+        [
+         "Propuesta presentada como ley",
+         "Una iniciativa comentada en medios como si estuviera vigente",
+         "Verifica publicación en el DOF y régimen transitorio"
+        ],
+        [
+         "Cifras de otro año",
+         "Salario mínimo o UMA anteriores",
+         "Consulta la cifra vigente en la fuente oficial"
+        ],
+        [
+         "Obligaciones inventadas",
+         "Plazos o formatos que la norma no pide",
+         "Cada obligación con artículo o numeral que tú leíste"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "¿Cuál es la forma más segura de usar la IA con una reforma?",
+         "ops": [
+          "Preguntarle qué dice la reforma",
+          "Pegar el texto publicado y pedirle un resumen con referencia a cada artículo",
+          "Pedirle que busque en redes"
+         ],
+         "correcta": 1,
+         "explica": "Si le das el texto, el resumen se puede cotejar punto por punto."
+        },
+        {
+         "p": "Sobre la jornada de 40 horas, tu comunicado interno debe…",
+         "ops": [
+          "Basarse en el texto vigente y su calendario, y en decisiones que la empresa ya tomó",
+          "Usar el calendario que dio la IA",
+          "Esperar a que el personal pregunte"
+         ],
+         "correcta": 0,
+         "explica": "Solo se comunica lo verificado y lo decidido; lo demás se presenta como en análisis."
+        },
+        {
+         "p": "Para el diagnóstico de la NOM-035, la IA te puede ayudar a…",
+         "ops": [
+          "Sustituir el cuestionario oficial",
+          "Diagnosticar a cada trabajador",
+          "Organizar el plan de trabajo y redactar la comunicación, verificando los requisitos en la norma"
+         ],
+         "correcta": 2,
+         "explica": "La norma define los instrumentos y obligaciones; la IA apoya en la organización y la comunicación."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu radar normativo",
+       "pregunta": "Escribe los tres cambios normativos que más impactan a tu empresa este año, la fuente oficial donde los verificas y quién decide cómo se aplican.",
+       "ayuda": "1. … — fuente: … — decide: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Resumen de cambio normativo para dirección",
+       "texto": "Con este texto publicado (pegado completo): [texto vigente], prepara para dirección: 1) qué cambia, en 5 viñetas con el artículo de cada una, 2) fechas de entrada en vigor según transitorios, 3) a qué áreas y turnos de nuestra empresa podría afectar [descripción general], 4) decisiones que la empresa debe tomar, 5) preguntas para el área jurídica. No agregues nada que no esté en el texto; marca [VERIFICAR] cualquier duda.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA resume el texto que tú le das.",
+        "Fechas y obligaciones: texto vigente y transitorios en el DOF.",
+        "Comunica lo verificado y lo decidido; lo demás, como en análisis."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Analítica de personas: indicadores sin etiquetar a nadie",
+     "obj": "Calcular e interpretar rotación y otros indicadores con apoyo de la IA, usando datos agregados y sin decisiones automatizadas sobre personas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Rotación, ausentismo, tiempo de cobertura de vacantes: los indicadores de RH convencen a dirección cuando están bien calculados. La IA te ayuda a elegir fórmulas, interpretar y presentar, pero <b>se equivoca en la base</b> (divide entre la plantilla final en lugar de la promedio), <b>confunde correlación con causa</b> y a veces propone usos que etiquetan a personas. Regla: indicadores agregados por área, turno o etapa; ninguna decisión individual basada solo en un modelo."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Rotación del trimestre",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Plantilla al inicio",
+         80
+        ],
+        [
+         "Plantilla al final",
+         76
+        ],
+        [
+         "Bajas del trimestre",
+         12
+        ],
+        [
+         "Plantilla promedio",
+         ""
+        ],
+        [
+         "Rotación %",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=PROMEDIO(B2:B3)",
+         "esperado": 78,
+         "texto": "<b>B5</b>: plantilla promedio del trimestre.",
+         "requiere": "PROMEDIO(",
+         "pista": "=PROMEDIO(B2:B3)"
+        },
+        {
+         "celda": "B6",
+         "formula": "=REDONDEAR(B4/B5*100,1)",
+         "esperado": 15.4,
+         "texto": "<b>B6</b>: rotación en porcentaje con un decimal (bajas ÷ plantilla promedio × 100).",
+         "requiere": "REDONDEAR(",
+         "pista": "=REDONDEAR(B4/B5*100,1)",
+         "explica": "15.4% en un trimestre. Si la IA dividiera entre la plantilla final (76), daría 15.8%; con plantillas que cambian mucho, la diferencia crece."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA afirma: «Las tiendas con más capacitación tienen más rotación; la capacitación provoca renuncias». Tú…",
+         "ops": [
+          "Lo presentas a dirección",
+          "Recortas capacitación",
+          "Buscas otras explicaciones: quizá se capacita más donde hay más ingresos nuevos"
+         ],
+         "correcta": 2,
+         "explica": "Una correlación no prueba causa; hay que revisar qué otra variable explica ambos datos."
+        },
+        {
+         "p": "Para calcular rotación con apoyo de IA, le compartes…",
+         "ops": [
+          "Totales agregados por área y mes",
+          "La base con nombres, sueldos y motivos personales",
+          "Los expedientes completos"
+         ],
+         "correcta": 0,
+         "explica": "Para el indicador bastan cifras agregadas; los datos personales no son necesarios."
+        },
+        {
+         "p": "¿Qué uso de un indicador es adecuado?",
+         "ops": [
+          "Negar un ascenso porque el área tiene alta rotación",
+          "Priorizar dónde intervenir primero con acciones sobre las causas",
+          "Evaluar a cada persona por la rotación de su área"
+         ],
+         "correcta": 1,
+         "explica": "Los indicadores orientan decisiones sobre procesos y áreas, no sobre personas en lo individual."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu tablero mínimo",
+       "pregunta": "Elige tres indicadores para tu tablero de RH, escribe cómo se calcula cada uno y qué nivel de agregación usarías para no identificar a nadie.",
+       "ayuda": "1. … = … ÷ … por área/mes"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Interpretación de indicadores",
+       "texto": "Estos son mis indicadores agregados del trimestre (sin datos personales): [tabla por área y mes]. Explica tendencias, compara áreas, sugiere tres hipótesis de causa para cada hallazgo y qué dato necesitaría para confirmarlas o descartarlas. No afirmes causas como hechos ni propongas decisiones sobre personas en lo individual.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Rotación = bajas ÷ plantilla promedio.",
+        "Correlación no es causa: formula hipótesis y verifica.",
+        "Datos agregados; nada de decisiones automáticas sobre personas."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un acta administrativa redactada con IA debe…",
+     "ops": [
+      "Concluir la culpabilidad desde el inicio",
+      "Documentar hechos y versiones sin conclusiones anticipadas",
+      "Incluir la opinión de la IA",
+      "Citar todas las causales posibles"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En una investigación por acoso, los nombres de las personas…",
+     "ops": [
+      "Se sustituyen por roles y no van a herramientas no autorizadas",
+      "Se pegan para mayor precisión",
+      "Se publican en el reporte",
+      "Se comparten con el equipo"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Las fechas de entrada en vigor de una reforma laboral se verifican en…",
+     "ops": [
+      "Lo que diga la IA",
+      "Notas de redes sociales",
+      "Los artículos transitorios del texto publicado en el DOF",
+      "Un correo de un proveedor"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Sobre la reducción gradual de la jornada a 40 horas, lo correcto es…",
+     "ops": [
+      "Comunicar el calendario de la IA",
+      "Prometer fechas para calmar al personal",
+      "Ignorarla hasta 2030",
+      "Verificar el texto vigente y comunicar solo lo verificado y decidido"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Rotación del periodo =",
+     "ops": [
+      "Bajas ÷ plantilla promedio",
+      "Bajas ÷ plantilla final",
+      "Ingresos − bajas",
+      "Plantilla ÷ bajas"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA afirma que una variable causa otra por una correlación…",
+     "ops": [
+      "Se acepta",
+      "Se buscan otras explicaciones y datos para confirmar",
+      "Se presenta como hecho",
+      "Se elimina el indicador"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real en RH con errores plantados para detectar, y la construcción de tu kit personal: biblioteca de prompts, política de datos del personal, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: un lunes en RH",
+     "obj": "Detectar errores plantados de la IA en cuatro momentos de un día de trabajo de RH y decidir cómo corregirlos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a acompañar a Rocío, coordinadora de RH de una planta de 300 personas en Silao, Guanajuato, durante un lunes. En cada escena usa IA y en cada una hay al menos un error plantado. Encuéntralo y escribe qué haría Rocío antes de seguir."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 8:30 a.m. Vacante urgente.</b> Rocío pide a la IA el anuncio para técnico de mantenimiento. El texto final dice: «Buscamos recién egresado, dinámico, de preferencia varón, para integrarse a un equipo joven»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "Identifica todas las frases discriminatorias, explica qué característica excluye cada una y reescribe el requisito en función del puesto.",
+       "ayuda": "«Recién egresado» excluye… / «Equipo joven»… / Requisito correcto: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:30 a.m. Filtrado.</b> Llegaron 90 CV. La herramienta autorizada los ordena contra la matriz, pero Rocío nota que todos los candidatos con periodos sin empleo quedaron al final, aunque cumplen los criterios técnicos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "¿Qué sesgo está operando, a quién podría afectar y qué cambiarías en la matriz o en el prompt para corregirlo?",
+       "ayuda": "El sesgo es… / Afecta a… / Cambiaría…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 1:00 p.m. Acta administrativa.</b> Un supervisor reporta una discusión en el área de pintura. Rocío pide a la IA el borrador del acta. El borrador dice: «El trabajador agredió verbalmente al supervisor, lo que constituye falta de probidad; se procede a la rescisión». Además menciona a un testigo que nadie ha entrevistado."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Enumera los errores del borrador y reescribe el primer párrafo como documentación de hechos y versiones.",
+       "ayuda": "Errores: 1. … 2. … 3. … / Párrafo: «El [fecha], a las [hora], en…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p.m. Comunicado.</b> Dirección pide informar al personal sobre la reforma de la jornada de 40 horas. La IA redacta: «A partir del próximo mes la jornada será de 40 horas para todos y se pagará igual». La empresa no ha revisado el texto vigente ni decidido cómo reorganizará turnos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "Reescribe el comunicado para que sea honesto sobre lo que se sabe, lo que se está analizando y cuándo habrá información, sin afirmar fechas no verificadas.",
+       "ayuda": "Se aprobó… / Estamos revisando… / El [fecha] compartiremos… / Dudas con…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Qué error era más difícil de ver?",
+         "ops": [
+          "El anuncio de la escena 1",
+          "El orden de los CV en la escena 2, porque parecía aplicar la matriz",
+          "El saludo del comunicado"
+         ],
+         "correcta": 1,
+         "explica": "Un sesgo dentro de un proceso que parece objetivo es el más difícil de detectar; por eso se revisan los resultados por grupos."
+        },
+        {
+         "p": "¿Qué tienen en común las escenas 3 y 4?",
+         "ops": [
+          "La IA afirmó algo que nadie había verificado ni decidido",
+          "Ambas eran urgentes",
+          "Ninguna tenía errores graves"
+         ],
+         "correcta": 0,
+         "explica": "Conclusiones y fechas sin verificar: la IA completa con lo que suena probable."
+        },
+        {
+         "p": "¿Qué hábito protege a Rocío en todas las escenas?",
+         "ops": [
+          "Usar una IA distinta en cada tarea",
+          "Escribir más rápido",
+          "Revisar contra criterios del puesto, evidencia y texto vigente antes de publicar o firmar"
+         ],
+         "correcta": 2,
+         "explica": "El cotejo con la fuente y con criterios objetivos es el control común."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Los sesgos se esconden en procesos que parecen objetivos.",
+        "Hechos y evidencia antes que conclusiones.",
+        "Solo se comunica lo verificado y lo decidido."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de RH con IA",
+     "obj": "Construir tu kit personal de RH con IA: biblioteca de prompts, política de datos del personal, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Este proyecto convierte el curso en herramientas para tu área. Trabaja con tu realidad: tu empresa, tus puestos y tus procesos. Al terminar tendrás cuatro piezas en un solo documento que puedes compartir con tu equipo."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "1. Tu biblioteca de prompts",
+       "pregunta": "Escribe tus 4 prompts base: vacante incluyente, evaluación de CV contra matriz, retroalimentación con hechos y comunicado sensible. Cada uno con marcadores [ ] e instrucciones de no inventar ni incluir criterios discriminatorios.",
+       "ayuda": "Vacante: … / CV: … / Retroalimentación: … / Comunicado: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "2. Tu política de datos del personal",
+       "pregunta": "Redacta 5 reglas: herramientas autorizadas, datos que nunca se suben (salud, sueldos individuales, quejas, datos de candidatos), cómo se anonimiza, tamaño mínimo de grupo para reportes y qué hacer ante un error.",
+       "ayuda": "Regla 1: … / Regla 2: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "3. Tu lista de verificación",
+       "pregunta": "Escribe la lista que aplicarás antes de publicar o firmar cualquier texto hecho con IA: no discriminación (LFT art. 133 y art. 1.º constitucional), hechos con evidencia, normas en texto vigente, cifras oficiales y datos personales.",
+       "ayuda": "☐ Sin requisitos de edad, sexo, estado civil o apariencia ☐ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "4. Tu entregable real",
+       "pregunta": "Aplica el kit a una tarea real de esta semana (una vacante, un plan de onboarding, un comunicado o un reporte): anota qué errores encontraste con tu lista y cuánto tiempo ahorraste.",
+       "ayuda": "Tarea: … / Errores detectados: … / Tiempo: antes … ahora …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit de RH con IA",
+       "texto": "KIT DE RH CON IA — [empresa o área] — versión [fecha]\n\n1. Política de datos del personal\n   - Herramientas autorizadas: [ ]\n   - Nunca se sube: [ ]\n   - Anonimización y tamaño mínimo de grupo: [ ]\n   - Qué hacer ante un error: [ ]\n2. Biblioteca de prompts\n   - Perfil y vacante incluyente: [ ]\n   - Matriz y evaluación de CV: [ ]\n   - Guía de entrevista estructurada: [ ]\n   - Onboarding y microcapacitación: [ ]\n   - Retroalimentación con hechos: [ ]\n   - Comunicado sensible y cambios normativos: [ ]\n   - Indicadores agregados: [ ]\n3. Lista de verificación antes de publicar o firmar\n   ☐ Sin criterios discriminatorios\n   ☐ Hechos con evidencia\n   ☐ Normas verificadas en el texto vigente\n   ☐ Cifras de fuente oficial\n   ☐ Sin datos personales en herramientas no autorizadas\n4. Entregable de prueba y lecciones aprendidas: [ ]\n5. Responsable del kit: [ ] · Próxima revisión: [ ]",
+       "nota": "Cópiala y adáptala; revísala cada trimestre o cuando cambie la ley."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso!</b> La IA acelera todo el ciclo de RH; la no discriminación, la evidencia, la verificación de normas en su texto vigente y el cuidado de los datos del personal siguen siendo tu responsabilidad."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Kit en un documento: política, prompts y lista.",
+        "Pruébalo con una tarea real y mide el ahorro.",
+        "Actualízalo cuando cambie la ley o encuentres errores nuevos."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "«Recién egresado» en un anuncio puede…",
+     "ops": [
+      "Excluir por edad de forma indirecta",
+      "Mejorar la calidad de candidatos",
+      "Ser obligatorio",
+      "No tener efecto"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la herramienta relega a todos los CV con periodos sin empleo…",
+     "ops": [
+      "Es correcto",
+      "Revisas el sesgo y ajustas criterios y prompt",
+      "Los descartas",
+      "Pides más CV"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un acta que menciona a un testigo no entrevistado…",
+     "ops": [
+      "Está completa",
+      "Se firma igual",
+      "Contiene un hecho agregado que debe eliminarse",
+      "Es más sólida"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un comunicado sobre un cambio legal aún en análisis debe…",
+     "ops": [
+      "Afirmar fechas para dar certeza",
+      "Esperar a que haya rumores",
+      "Copiar el texto de la IA",
+      "Decir qué se sabe, qué se analiza y cuándo habrá información"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "La lista de verificación del kit incluye revisar la no discriminación conforme a…",
+     "ops": [
+      "LFT art. 133 y artículo 1.º constitucional",
+      "Solo el reglamento interior",
+      "Lo que diga la IA",
+      "Ninguna norma"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "El kit de RH con IA se mantiene útil si…",
+     "ops": [
+      "Nunca se modifica",
+      "Se revisa cuando cambia la ley o aparecen errores nuevos",
+      "Lo actualiza la IA sola",
+      "Lo usa solo el director"
+     ],
+     "correcta": 1
+    }
+   ]
+  }
+ ]
+}

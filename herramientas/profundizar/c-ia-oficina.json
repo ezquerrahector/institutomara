@@ -1,0 +1,1363 @@
+{
+ "id": "c-ia-oficina",
+ "horas": 10,
+ "aprender": [
+  "Resolver con IA situaciones de oficina más complejas: correos difíciles, hojas de control con BUSCARV y SUMAR.SI, y la organización de eventos y viajes de trabajo.",
+  "Detectar errores de la IA en resúmenes, minutas, fórmulas y presentaciones, y armar tu kit personal de oficina con política de datos incluida."
+ ],
+ "terceras": [
+  {
+   "p": "Tienes 6 correos pendientes. ¿Qué es más eficiente?",
+   "op": "Pedirle a un compañero que los conteste por ti"
+  },
+  {
+   "p": "¿Puedes darle a una IA pública la contraseña de tu correo del trabajo para que lo revise?",
+   "op": "Sí, siempre que la cambies al día siguiente"
+  },
+  {
+   "p": "Las respuestas tipo conviene guardarlas en…",
+   "op": "Un archivo en el escritorio de tu computadora personal"
+  },
+  {
+   "p": "Una agenda útil incluye…",
+   "op": "La lista de asistentes y nada más"
+  },
+  {
+   "p": "Durante la junta anotas sobre todo…",
+   "op": "Solo lo que dice el jefe"
+  },
+  {
+   "p": "Jorge tiene un pendiente sin fecha. En la minuta…",
+   "op": "Se elimina el pendiente"
+  },
+  {
+   "p": "¿Qué parte le falta a este aviso? «Se cambia el horario de comedor.»",
+   "op": "Solo el logotipo de la empresa"
+  },
+  {
+   "p": "La técnica de «anticipar preguntas» sirve para…",
+   "op": "Evitar que alguien lea el aviso"
+  },
+  {
+   "p": "¿Qué va primero en un reporte ejecutivo?",
+   "op": "Los anexos con todas las tablas"
+  },
+  {
+   "p": "Los números del reporte deben venir de…",
+   "op": "Un cálculo aproximado de memoria"
+  },
+  {
+   "p": "«Resultados satisfactorios en términos generales» es…",
+   "op": "Redacción con datos concretos"
+  },
+  {
+   "p": "¿Qué defines primero?",
+   "op": "La plantilla de diseño"
+  },
+  {
+   "p": "Una diapositiva con 12 renglones de texto…",
+   "op": "Se lee en voz alta completa"
+  },
+  {
+   "p": "La mejor prueba de un procedimiento es…",
+   "op": "Que lo apruebe la IA"
+  },
+  {
+   "p": "Cada paso debería empezar con…",
+   "op": "Una fecha"
+  },
+  {
+   "p": "Para que la IA te ayude con una base de clientes sin exponer datos…",
+   "op": "Le mandas la base por correo a tu cuenta personal primero"
+  },
+  {
+   "p": "Antes de quitar duplicados…",
+   "op": "Ordenas la hoja por colores"
+  },
+  {
+   "p": "En la tabla dinámica, el campo numérico va en…",
+   "op": "Filtros"
+  },
+  {
+   "p": "Para ver cómo cambió algo en el tiempo usas una gráfica de…",
+   "op": "Dispersión"
+  },
+  {
+   "p": "Una sucursal escribe «Sucursal Norte», otra «SUC. NORTE» y otra «norte». Primero…",
+   "op": "Borro las filas de la sucursal que escribió distinto"
+  },
+  {
+   "p": "El reporte dice que la sucursal Centro vendió $1.2 millones y tu tabla dice $1.18.",
+   "op": "Promedio las dos cifras"
+  },
+  {
+   "p": "Para el aviso por WhatsApp de metas…",
+   "op": "Mando una foto de la hoja de Excel"
+  }
+ ],
+ "extras": {
+  "c-ia-oficina-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Claudia es asistente de compras en una empresa de empaques en Tlaquepaque. Regresó de vacaciones con 140 correos. Le pidió a la IA el resumen de un hilo de 25 mensajes con un proveedor de cartón. La IA dijo: «Se acordó un descuento de 8% a partir de octubre». En el hilo, el proveedor solo escribió «lo reviso con mi gerente»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué pasó con el «descuento de 8%»?",
+      "ops": [
+       "La IA convirtió una propuesta en acuerdo; hay que verificar en el hilo",
+       "Es una decisión confirmada",
+       "Es un error del proveedor"
+      ],
+      "correcta": 0,
+      "explica": "Los resúmenes a veces dan por cerrado lo que sigue abierto. Revisa el último mensaje antes de actuar."
+     },
+     {
+      "p": "¿Qué parte del hilo conviene releer siempre tú misma?",
+      "ops": [
+       "Solo las firmas",
+       "Los últimos 2 o 3 correos y cualquier cifra o fecha",
+       "Nada, el resumen basta"
+      ],
+      "correcta": 1,
+      "explica": "Cifras, fechas y compromisos se confirman en el texto original."
+     },
+     {
+      "p": "El hilo incluye datos bancarios del proveedor. Antes de pegarlo en la IA…",
+      "ops": [
+       "Los dejo, la IA no los guarda",
+       "Pego solo esa parte",
+       "Los borro o reemplazo por [DATO]"
+      ],
+      "correcta": 2,
+      "explica": "Quita datos bancarios y personales; al resumen no le hacen falta."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Instrucción de resumen",
+    "malTitulo": "Abierta",
+    "mal": "«Resume este hilo.»",
+    "bienTitulo": "Con control",
+    "bien": "«Resume este hilo. Distingue entre lo DECIDIDO (con quién lo confirmó) y lo PROPUESTO sin confirmar. Cita la frase exacta de cada cifra o fecha.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regreso de vacaciones",
+    "pregunta": "Escribe tu propio protocolo para ponerte al día después de varios días fuera: qué hilos resumes con IA, qué revisas tú y qué datos quitas antes de pegar.",
+    "ayuda": "Resumo con IA… Reviso yo… Quito siempre…"
+   }
+  ],
+  "c-ia-oficina-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> en una agencia aduanal de Nuevo Laredo, Héctor tiene una junta semanal de 60 minutos con 8 personas que casi siempre se alarga y termina sin acuerdos. Sus notas de la última: «revisar tarifas / ¿quién llama a la naviera? / pendiente capacitación VUCEM / se habló del aguinaldo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué falta en las notas para hacer una buena minuta?",
+      "ops": [
+       "Quién hace cada pendiente y para cuándo",
+       "El nombre de la sala",
+       "La hora exacta en que habló cada persona"
+      ],
+      "correcta": 0,
+      "explica": "Sin responsable y fecha, un pendiente es solo un deseo."
+     },
+     {
+      "p": "Con esas notas, la IA escribe «Luis llamará a la naviera el jueves». ¿Qué haces?",
+      "ops": [
+       "La dejo, suena lógico",
+       "La marco [por confirmar]: nadie lo acordó",
+       "Le aviso a Luis que ya le tocó"
+      ],
+      "correcta": 1,
+      "explica": "La IA completa huecos con suposiciones; lo que no se acordó va como [por confirmar]."
+     },
+     {
+      "p": "Para que la junta no se alargue, en la agenda conviene…",
+      "ops": [
+       "Poner más temas",
+       "Quitar la hora de término",
+       "Asignar tiempo y decisión esperada a cada tema"
+      ],
+      "correcta": 2,
+      "explica": "Tiempo y decisión por tema obligan a cerrar."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Clasifica cada nota",
+    "pares": [
+     [
+      "«Se aprueba cambiar de naviera en enero»",
+      "D: decisión"
+     ],
+     [
+      "«Ana manda tarifas el lunes»",
+      "P: pendiente"
+     ],
+     [
+      "«¿Aplica el nuevo requisito a importaciones temporales?»",
+      "?: duda abierta"
+     ],
+     [
+      "«Se comentó el clima de la semana»",
+      "No va en la minuta"
+     ]
+    ]
+   }
+  ],
+  "c-ia-oficina-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> en un hospital privado de Puebla, el área administrativa debe avisar que a partir del 1 de diciembre el estacionamiento del personal se cambia al nivel -2 y que se requiere tarjetón nuevo. La primera versión de la IA dice: «Se informa que habrá modificaciones en el estacionamiento. Favor de estar atentos»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el aviso de la IA?",
+      "ops": [
+       "No dice qué cambia, desde cuándo, qué hacer ni a quién preguntar",
+       "Es demasiado corto para WhatsApp",
+       "No tiene emojis"
+      ],
+      "correcta": 0,
+      "explica": "«Estar atentos» genera decenas de preguntas por chat."
+     },
+     {
+      "p": "El personal de guardia nocturna no revisa el correo. ¿Qué canal agregas?",
+      "ops": [
+       "Ninguno; que se enteren después",
+       "Aviso impreso en el acceso del personal y mensaje en el grupo de su turno",
+       "Un correo más largo"
+      ],
+      "correcta": 1,
+      "explica": "Adaptar al canal es parte del mensaje."
+     },
+     {
+      "p": "¿Qué dato NO debes pegar en la IA para redactar el aviso?",
+      "ops": [
+       "La fecha del cambio",
+       "El nivel del estacionamiento",
+       "La lista de placas y nombres de cada empleado"
+      ],
+      "correcta": 2,
+      "explica": "Placas y nombres son datos personales que el aviso no necesita."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Aviso",
+    "malTitulo": "Vago",
+    "mal": "«Habrá modificaciones en el estacionamiento. Favor de estar atentos.»",
+    "bienTitulo": "Completo",
+    "bien": "«Desde el lunes 1 de diciembre, el personal se estaciona en el nivel -2. Recoge tu tarjetón nuevo en Recursos Humanos del 24 al 28 de noviembre, de 8 a 16 h. Dudas: ext. 310.»"
+   }
+  ],
+  "c-ia-oficina-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Fernando, coordinador de mantenimiento en una planta de Saltillo, entrega su reporte mensual. Sus datos: 42 órdenes de trabajo, 37 cerradas, tiempo promedio de respuesta 6.5 horas (meta 4), 2 paros de línea. La IA redactó: «El área mostró un desempeño sólido, con un cumplimiento destacado y áreas de oportunidad menores»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué dato debería ir en el resumen de 3 renglones?",
+      "ops": [
+       "Que el tiempo de respuesta (6.5 h) superó la meta de 4 h y hubo 2 paros",
+       "Que el área es sólida",
+       "El número de empleados del área"
+      ],
+      "correcta": 0,
+      "explica": "Lo que dirección necesita saber primero es lo que no salió y su impacto."
+     },
+     {
+      "p": "37 de 42 órdenes cerradas es un cumplimiento de…",
+      "ops": [
+       "Exactamente 90%",
+       "Aproximadamente 88%",
+       "Aproximadamente 95%"
+      ],
+      "correcta": 1,
+      "explica": "37 ÷ 42 ≈ 0.88. Calcúlalo en tu hoja, no lo pidas de memoria a la IA."
+     },
+     {
+      "p": "«Desempeño sólido con áreas de oportunidad menores» es…",
+      "ops": [
+       "Una redacción ejecutiva",
+       "Un indicador",
+       "Una frase vaga que maquilla un incumplimiento"
+      ],
+      "correcta": 2,
+      "explica": "Con un indicador 60% por encima de la meta, «menores» no es honesto."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Resumen del mes",
+    "malTitulo": "Maquillado",
+    "mal": "«Desempeño sólido con áreas de oportunidad menores.»",
+    "bienTitulo": "Ejecutivo",
+    "bien": "«Cerramos 37 de 42 órdenes (88%). El tiempo de respuesta fue de 6.5 h contra meta de 4 h y hubo 2 paros de línea. Proponemos un técnico de guardia en el segundo turno.»"
+   }
+  ],
+  "c-ia-oficina-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Mónica, de Recursos Humanos en una cadena de tiendas de ropa en Hermosillo, presentará al comité en 10 minutos la propuesta de un programa de capacitación. La IA le propuso 14 diapositivas, títulos como «Antecedentes» y «Contexto», y una cifra: «el 73% de los empleados capacitados permanece más tiempo en la empresa», sin fuente."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Para 10 minutos, ¿cuántas diapositivas son razonables?",
+      "ops": [
+       "Entre 5 y 7, una idea por diapositiva",
+       "14 o más para que se vea completo",
+       "Una sola con todo el texto"
+      ],
+      "correcta": 0,
+      "explica": "Con 14 diapositivas en 10 minutos no hay tiempo para la discusión que necesitas."
+     },
+     {
+      "p": "¿Qué haces con la cifra del 73%?",
+      "ops": [
+       "La uso; suena convincente",
+       "La quito o la reemplazo por un dato verificable de la empresa o de una fuente citada",
+       "La redondeo a 75%"
+      ],
+      "correcta": 1,
+      "explica": "Las cifras sin fuente pueden ser inventadas; usa tu rotación real si la tienes."
+     },
+     {
+      "p": "¿Cuál es un mejor título que «Antecedentes»?",
+      "ops": [
+       "«Contexto general»",
+       "«Diapositiva 2»",
+       "«Perdemos 3 de cada 10 vendedores antes de 6 meses»"
+      ],
+      "correcta": 2,
+      "explica": "El título dice la idea; así, quien solo lea los títulos entiende la propuesta."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "De tema a idea",
+    "pares": [
+     [
+      "«Antecedentes»",
+      "«La rotación nos cuesta 2 semanas de venta por vacante»"
+     ],
+     [
+      "«Propuesta»",
+      "«Un programa de 4 semanas reduce la curva de aprendizaje»"
+     ],
+     [
+      "«Costos»",
+      "«El programa cuesta menos que 3 reemplazos al año»"
+     ],
+     [
+      "«Siguientes pasos»",
+      "«Pedimos aprobar un piloto en 2 tiendas en enero»"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu cifra sin fuente",
+    "pregunta": "Revisa tu última presentación: ¿qué cifra usaste sin fuente clara? Escribe de dónde la sacarías hoy o cómo la reemplazarías con un dato propio.",
+    "ayuda": "La cifra era… La fuente real sería…"
+   }
+  ],
+  "c-ia-oficina-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> en un despacho contable de Mérida, la única persona que sabe dar de alta a un cliente nuevo en el sistema interno se va de incapacidad por maternidad. Dictó el proceso en 5 minutos y la IA lo ordenó en 9 pasos. Un auxiliar lo probó y se atoró en el paso 6: «Configura el perfil según corresponda»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el paso 6?",
+      "ops": [
+       "Es vago: no dice qué opciones elegir ni según qué",
+       "Es demasiado corto",
+       "Empieza con verbo"
+      ],
+      "correcta": 0,
+      "explica": "«Según corresponda» esconde el criterio que solo conocía la persona experta."
+     },
+     {
+      "p": "¿Cómo se corrige mejor?",
+      "ops": [
+       "Dejando que el auxiliar adivine",
+       "Pidiendo a la experta el criterio y agregando una tabla de casos",
+       "Pidiendo a la IA que invente el criterio"
+      ],
+      "correcta": 1,
+      "explica": "El conocimiento está en la persona; la IA solo lo ordena."
+     },
+     {
+      "p": "¿Qué dato NO debe aparecer en el procedimiento?",
+      "ops": [
+       "El nombre del menú donde se da de alta",
+       "El orden de los pasos",
+       "Las contraseñas del sistema"
+      ],
+      "correcta": 2,
+      "explica": "Las contraseñas nunca van en manuales ni en la IA; se gestionan por separado."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "La mejor prueba de un procedimiento es que otra persona lo ___ sin ayuda.",
+      "resp": [
+       "siga",
+       "haga",
+       "realice"
+      ]
+     },
+     {
+      "frase": "Frases como «según corresponda» esconden un ___ que hay que escribir.",
+      "resp": [
+       "criterio",
+       "Criterio"
+      ]
+     },
+     {
+      "frase": "Cada procedimiento guardado lleva la ___ de su última actualización.",
+      "resp": [
+       "fecha",
+       "Fecha"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu «según corresponda»",
+    "pregunta": "Busca en un manual o proceso de tu área una instrucción vaga y reescríbela con el criterio explícito (si pasa A, haz X; si pasa B, haz Y).",
+    "ayuda": "Instrucción vaga: … Si… entonces… Si no…"
+   }
+  ],
+  "c-ia-oficina-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Rogelio, en una distribuidora de material eléctrico en Celaya, recibió una lista de 2,300 clientes con teléfonos en formatos distintos y nombres de colonia escritos de muchas maneras. Le pidió a la IA una fórmula y le dio una con SUSTITUIR que solo quita guiones, pero algunos teléfonos traen espacios y paréntesis."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La fórmula quita guiones pero no espacios ni paréntesis. ¿Qué haces?",
+      "ops": [
+       "Le muestro a la IA 5 ejemplos reales de formatos (con números ficticios) y le pido una fórmula que cubra todos",
+       "Corrijo 2,300 teléfonos a mano",
+       "La aplico así"
+      ],
+      "correcta": 0,
+      "explica": "Con ejemplos representativos, la IA ajusta la fórmula; tú compruebas en una muestra."
+     },
+     {
+      "p": "Antes de aplicar la fórmula a toda la columna…",
+      "ops": [
+       "Borro la columna original",
+       "La pruebo en 20 filas y reviso",
+       "La aplico directo en la hoja original"
+      ],
+      "correcta": 1,
+      "explica": "Prueba en muestra y trabaja en copia."
+     },
+     {
+      "p": "«Col. Centro», «CENTRO» y «Centro » son la misma colonia. ¿Qué conviene?",
+      "ops": [
+       "Dejarlo así",
+       "Borrar las repetidas",
+       "Estandarizar con ESPACIOS, NOMPROPIO y una tabla de equivalencias"
+      ],
+      "correcta": 2,
+      "explica": "Estandarizar evita que un conteo por colonia las separe."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pedir la fórmula",
+    "malTitulo": "Sin contexto",
+    "mal": "«Dame una fórmula para limpiar teléfonos.»",
+    "bienTitulo": "Con ejemplos y versión",
+    "bien": "«Uso Excel 2019 en español. Mis teléfonos vienen así (ficticios): 477-123-4567, (477) 123 4567, 477 1234567. Quiero 10 dígitos sin símbolos. Dame la fórmula y dime cómo probarla.»"
+   }
+  ],
+  "c-ia-oficina-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Sandra lleva el control de viáticos de una empresa de ingeniería en Villahermosa. Armó una tabla dinámica de gasto por proyecto y por mes. La IA le propuso una gráfica de pastel con 18 proyectos y la conclusión «el proyecto Dos Bocas concentra la mayor parte del gasto», aunque en la tabla el mayor es otro proyecto."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué gráfica conviene para comparar 18 proyectos?",
+      "ops": [
+       "Barras ordenadas de mayor a menor",
+       "Pastel",
+       "Dispersión"
+      ],
+      "correcta": 0,
+      "explica": "Un pastel con 18 partes no se lee; las barras ordenadas sí."
+     },
+     {
+      "p": "La conclusión de la IA no coincide con la tabla. ¿Qué haces?",
+      "ops": [
+       "Uso la conclusión, la IA leyó mejor",
+       "Corrijo la conclusión con el dato de la tabla",
+       "Quito la tabla"
+      ],
+      "correcta": 1,
+      "explica": "Excel calcula; la IA redacta y a veces se equivoca al leer tablas."
+     },
+     {
+      "p": "Para ver la tendencia del gasto por mes usas…",
+      "ops": [
+       "Pastel",
+       "Una tabla sin gráfica",
+       "Líneas"
+      ],
+      "correcta": 2,
+      "explica": "La evolución en el tiempo se ve mejor en líneas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Título de gráfica",
+    "malTitulo": "Descriptivo",
+    "mal": "«Gasto de viáticos por proyecto»",
+    "bienTitulo": "Con conclusión",
+    "bien": "«Tres proyectos concentran 60% de los viáticos del semestre»"
+   }
+  ],
+  "c-ia-oficina-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso paralelo:</b> en una cadena de 5 ópticas en Chihuahua, el cierre de mes lo hace una sola persona y le toma 3 días. Este mes la IA le ayudó a terminar en día y medio, pero el gerente encontró que en el reporte la sucursal Nombre de Dios aparecía dos veces con cifras distintas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Dónde es más probable que esté el origen del error?",
+      "ops": [
+       "En la limpieza de datos: el nombre de sucursal no se estandarizó",
+       "En la gráfica",
+       "En el correo al gerente"
+      ],
+      "correcta": 0,
+      "explica": "Dos escrituras del mismo nombre generan dos filas en la tabla dinámica."
+     },
+     {
+      "p": "¿Qué agregarías al flujo para que no se repita?",
+      "ops": [
+       "Nada, fue mala suerte",
+       "Una verificación: total del reporte = total de la base limpia",
+       "Otra gráfica"
+      ],
+      "correcta": 1,
+      "explica": "Un cuadre de totales detecta duplicados y omisiones."
+     },
+     {
+      "p": "El gerente pide saber cuánto tiempo ahorró la IA. ¿Qué respondes?",
+      "ops": [
+       "«Mucho»",
+       "«La IA hizo todo»",
+       "«De 3 días a día y medio; el ahorro mayor fue en redactar el reporte»"
+      ],
+      "correcta": 2,
+      "explica": "Dato concreto y dónde estuvo el ahorro."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa tu flujo",
+    "items": [
+     {
+      "frase": "Antes de la tabla dinámica, ___ los nombres de sucursal.",
+      "resp": [
+       "estandarizo",
+       "estandarizas",
+       "limpio",
+       "unifico"
+      ]
+     },
+     {
+      "frase": "El total del reporte debe ser igual al total de la ___ limpia.",
+      "resp": [
+       "base",
+       "Base",
+       "tabla"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu cuadre",
+    "pregunta": "Escribe los 3 cuadres o verificaciones que harás antes de enviar tu próximo reporte de cierre.",
+    "ayuda": "1. Total… 2. Número de… 3. …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas de oficina",
+   "r": "Correos difíciles, hojas de control con BUSCARV y SUMAR.SI, y organización de eventos y viajes de trabajo con apoyo de IA.",
+   "lecciones": [
+    {
+     "t": "Correos difíciles: quejas, negativas y cobranza amable",
+     "obj": "Redactar con IA respuestas firmes y cordiales a quejas, negativas y recordatorios de pago, sin prometer lo que no puedes cumplir.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Los correos que más cuesta escribir son los que llevan tensión: un cliente molesto, un «no» a una petición, un recordatorio de pago. La IA es muy buena para bajar el tono emocional y ordenar el mensaje. Tu trabajo es cuidar dos cosas: <b>no prometer</b> lo que la empresa no autorizó y <b>no pegar</b> datos del cliente que no hacen falta."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Respuesta a un correo difícil",
+       "texto": "Te pego un correo (sin nombres ni datos personales) de [cliente / proveedor / compañero]: [texto]. Lo que la empresa SÍ puede ofrecer: [opciones autorizadas]. Lo que NO puede: [límites]. Redacta una respuesta en español de México: reconoce la situación en una frase, explica lo que sí haremos con fecha, di con claridad lo que no es posible y cierra con el siguiente paso. Tono cordial y firme. No prometas nada fuera de lo autorizado."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en correos difíciles",
+       "encabezados": [
+        "La IA…",
+        "Tú…"
+       ],
+       "filas": [
+        [
+         "Ofrece reembolsos, descuentos o fechas que nadie autorizó",
+         "Le das la lista exacta de lo autorizado y revisas cada compromiso."
+        ],
+        [
+         "Se disculpa en exceso o acepta culpas que no están claras",
+         "Reconoces la molestia sin admitir responsabilidad que no está comprobada."
+        ],
+        [
+         "Cita leyes o derechos del consumidor de forma genérica",
+         "Si hace falta, lo revisa el área jurídica."
+        ],
+        [
+         "Suena demasiado formal o robótica",
+         "Le pides que lo diga como lo diría una persona del área."
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA escribió «le reembolsaremos el 100% en 24 horas», pero tu política es cambio de producto. ¿Qué haces?",
+         "ops": [
+          "Lo quito y ofrezco lo autorizado",
+          "Lo dejo para calmar al cliente",
+          "Lo cambio a 48 horas"
+         ],
+         "correcta": 0,
+         "explica": "Un compromiso escrito obliga a la empresa; solo ofreces lo autorizado."
+        },
+        {
+         "p": "Un proveedor lleva 45 días sin pagar una factura de servicio. El primer recordatorio debe ser…",
+         "ops": [
+          "Amenazante",
+          "Cordial, con número de factura, monto, fecha de vencimiento y datos para pagar",
+          "Un mensaje de WhatsApp sin datos"
+         ],
+         "correcta": 1,
+         "explica": "La cobranza amable facilita pagar; se escala después si no hay respuesta."
+        },
+        {
+         "p": "Para redactar la respuesta a una queja, ¿qué datos del cliente necesita la IA?",
+         "ops": [
+          "Nombre, teléfono y número de cliente",
+          "Su historial completo de compras",
+          "Ninguno: basta con describir la situación"
+         ],
+         "correcta": 2,
+         "explica": "Describes el caso con [CLIENTE] y personalizas al final en tu correo."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Decir que no",
+       "malTitulo": "Seco",
+       "mal": "«No es posible atender su solicitud.»",
+       "bienTitulo": "Firme y útil",
+       "bien": "«Entendemos la urgencia. No podemos adelantar la entrega al viernes porque el material llega el lunes; sí podemos enviarle el martes a primera hora sin costo de flete. ¿Le confirmo así?»"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Dale a la IA lo que sí y lo que no está autorizado.",
+        "Revisa cada compromiso antes de enviar.",
+        "Describe el caso sin datos personales."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Hojas de control: BUSCARV, SUMAR.SI y CONTAR.SI",
+     "obj": "Usar la IA para entender y construir fórmulas de búsqueda y conteo en hojas de control, verificando los resultados tú mismo.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchas hojas de oficina son de control: pendientes por área, gastos por categoría, solicitudes por estatus. Tres fórmulas resuelven la mayoría: <b>BUSCARV</b> (traer un dato de otra tabla), <b>SUMAR.SI</b> (sumar lo que cumple una condición) y <b>CONTAR.SI</b> (contar cuántos cumplen). La IA te las explica con tu caso; tú las pruebas con datos que conoces."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Explícame la fórmula",
+       "texto": "Uso Excel [versión] en español. Mi hoja tiene estas columnas (datos ficticios): [encabezados y 3 filas de ejemplo]. Quiero [qué quieres saber, p. ej. cuánto gastó cada área]. Dame la fórmula exacta con separador de coma, explícame cada parte en palabras sencillas y dime cómo compruebo que el resultado es correcto."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Control de solicitudes de compra",
+       "datos": [
+        [
+         "Folio",
+         "Área",
+         "Monto",
+         "Estatus"
+        ],
+        [
+         "C-101",
+         "Ventas",
+         4500,
+         "Pagada"
+        ],
+        [
+         "C-102",
+         "Almacén",
+         12800,
+         "Pendiente"
+        ],
+        [
+         "C-103",
+         "Ventas",
+         2300,
+         "Pendiente"
+        ],
+        [
+         "C-104",
+         "RH",
+         1900,
+         "Pagada"
+        ],
+        [
+         "C-105",
+         "Almacén",
+         7600,
+         "Pagada"
+        ],
+        [
+         "Gasto de Almacén",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Solicitudes pendientes",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Monto del folio C-104",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "C7",
+         "formula": "=SUMAR.SI(B2:B6,\"Almacén\",C2:C6)",
+         "esperado": 20400,
+         "requiere": "SUMAR.SI(",
+         "texto": "<b>C7</b>: suma el monto de las solicitudes de Almacén.",
+         "pista": "=SUMAR.SI(rango del área,\"Almacén\",rango del monto)"
+        },
+        {
+         "celda": "C8",
+         "formula": "=CONTAR.SI(D2:D6,\"Pendiente\")",
+         "esperado": 2,
+         "requiere": "CONTAR.SI(",
+         "texto": "<b>C8</b>: cuenta las solicitudes con estatus Pendiente."
+        },
+        {
+         "celda": "C9",
+         "formula": "=BUSCARV(\"C-104\",A2:C6,3,FALSO)",
+         "esperado": 1900,
+         "requiere": "BUSCARV(",
+         "texto": "<b>C9</b>: con BUSCARV trae el monto del folio C-104 (columna 3 del rango).",
+         "explica": "FALSO pide coincidencia exacta; sin él, BUSCARV puede traer un dato equivocado sin avisar."
+        }
+       ]
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con fórmulas",
+       "encabezados": [
+        "Error",
+        "Cómo lo detectas"
+       ],
+       "filas": [
+        [
+         "Usa punto y coma o coma según otra configuración",
+         "Excel marca error de sintaxis; pide la versión con tu separador."
+        ],
+        [
+         "Propone funciones que tu versión no tiene",
+         "Dile tu versión exacta de Excel."
+        ],
+        [
+         "Olvida FALSO en BUSCARV",
+         "Prueba con un folio que conoces."
+        ],
+        [
+         "El rango no incluye la última fila",
+         "Revisa que el rango llegue hasta el final de los datos."
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te da =SUMAR.SI(B2:B5,\"Almacén\",C2:C5) y tus datos llegan a la fila 6. ¿Qué pasa?",
+         "ops": [
+          "Deja fuera la última fila y el total sale menor",
+          "Funciona igual",
+          "Excel marca error"
+         ],
+         "correcta": 0,
+         "explica": "Un rango corto no marca error: simplemente suma de menos."
+        },
+        {
+         "p": "¿Cómo compruebas una fórmula nueva?",
+         "ops": [
+          "Confiando en la explicación de la IA",
+          "Con un caso que puedes calcular a mano",
+          "Aplicándola a toda la hoja sin revisar"
+         ],
+         "correcta": 1,
+         "explica": "Si el resultado coincide con tu cuenta en un caso pequeño, puedes extenderla."
+        },
+        {
+         "p": "Para contar cuántas solicitudes están pagadas usas…",
+         "ops": [
+          "SUMA",
+          "BUSCARV",
+          "CONTAR.SI"
+         ],
+         "correcta": 2,
+         "explica": "CONTAR.SI cuenta las celdas que cumplen una condición."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "BUSCARV trae, SUMAR.SI suma con condición, CONTAR.SI cuenta.",
+        "Pide fórmulas con tu versión y tu separador.",
+        "Comprueba con un caso que puedas calcular a mano."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Organizar eventos y viajes de trabajo",
+     "obj": "Planear con IA un evento o viaje de trabajo con lista de verificación, cronograma y comparativo de cotizaciones, verificando todo dato externo.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Organizar una capacitación, una convención de ventas o el viaje de un equipo implica decenas de detalles. La IA arma rápido la <b>lista de verificación</b>, el <b>cronograma hacia atrás</b> y el <b>comparativo de cotizaciones</b>. Lo que nunca debes tomar de la IA sin verificar: precios, horarios de vuelos, disponibilidad de hoteles o requisitos de viaje; esos cambian y se confirman con el proveedor o la fuente oficial."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Plan del evento",
+       "texto": "Voy a organizar [tipo de evento] para [número] personas en [ciudad], el [fecha], con presupuesto de [monto]. Hazme: 1) lista de verificación por categorías (sede, alimentos, equipo audiovisual, transporte, materiales, invitaciones, permisos), 2) cronograma hacia atrás desde la fecha del evento con responsable por rol, 3) una tabla para comparar cotizaciones con los criterios que debo pedir a cada proveedor. No incluyas precios ni proveedores reales: yo cotizo."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA al planear",
+       "encabezados": [
+        "La IA…",
+        "Tú…"
+       ],
+       "filas": [
+        [
+         "Menciona precios o tarifas «aproximadas»",
+         "Pides cotización por escrito al proveedor."
+        ],
+        [
+         "Recomienda hoteles o salones que quizá ya no existen",
+         "Verificas directamente con el lugar."
+        ],
+        [
+         "Olvida restricciones alimentarias o accesibilidad",
+         "Preguntas a los asistentes con un formulario."
+        ],
+        [
+         "No considera días festivos o temporadas altas",
+         "Revisas el calendario y la ocupación local."
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que el salón «cuesta alrededor de $18,000». ¿Qué haces?",
+         "ops": [
+          "Pido cotización por escrito y uso esa cifra",
+          "Lo pongo en el presupuesto",
+          "Le resto 10% por si acaso"
+         ],
+         "correcta": 0,
+         "explica": "Solo las cotizaciones reales entran al presupuesto."
+        },
+        {
+         "p": "Para el registro de asistentes, ¿qué datos pides?",
+         "ops": [
+          "CURP, domicilio y fecha de nacimiento de todos",
+          "Solo los necesarios: nombre, área, restricciones alimentarias y necesidades de accesibilidad",
+          "Ninguno"
+         ],
+         "correcta": 1,
+         "explica": "Pide lo mínimo necesario y guárdalo en herramientas autorizadas."
+        },
+        {
+         "p": "Un evento en Guadalajara durante una feria internacional importante…",
+         "ops": [
+          "No cambia nada",
+          "Es más barato",
+          "Puede tener hoteles llenos y tarifas más altas: reserva con anticipación"
+         ],
+         "correcta": 2,
+         "explica": "Las temporadas altas locales afectan disponibilidad y costos; confírmalo con los hoteles."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "¿Cuándo se hace?",
+       "pares": [
+        [
+         "Reservar sede",
+         "8 semanas antes"
+        ],
+        [
+         "Enviar invitaciones",
+         "4 semanas antes"
+        ],
+        [
+         "Confirmar número final de asistentes",
+         "1 semana antes"
+        ],
+        [
+         "Enviar encuesta de satisfacción",
+         "Al día siguiente del evento"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu próximo evento",
+       "pregunta": "Elige un evento o viaje de trabajo próximo y escribe las 5 cosas que la IA te puede adelantar y las 3 que tú debes confirmar directamente.",
+       "ayuda": "La IA me adelanta… Yo confirmo…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Lista de verificación y cronograma hacia atrás con IA.",
+        "Precios, horarios y disponibilidad: solo confirmados.",
+        "Datos de asistentes: los mínimos necesarios."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA ofrece en un correo un reembolso que tu empresa no autoriza. Tú…",
+     "ops": [
+      "Lo dejas",
+      "Lo quitas y ofreces solo lo autorizado",
+      "Lo reduces a la mitad",
+      "Lo mandas con copia a tu jefe"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un buen recordatorio de pago incluye…",
+     "ops": [
+      "Número de factura, monto, vencimiento y cómo pagar",
+      "Amenazas",
+      "Solo un saludo",
+      "La historia del cliente"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Para sumar el gasto de un área usas…",
+     "ops": [
+      "CONTAR.SI",
+      "BUSCARV",
+      "PROMEDIO",
+      "SUMAR.SI"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "En BUSCARV, el argumento FALSO sirve para…",
+     "ops": [
+      "Ocultar la fórmula",
+      "Sumar",
+      "Coincidencia exacta",
+      "Contar"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si el rango de una fórmula no incluye la última fila…",
+     "ops": [
+      "Excel marca error siempre",
+      "El resultado sale incompleto sin avisar",
+      "No pasa nada",
+      "Se borra la fila"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un precio de salón que te da la IA…",
+     "ops": [
+      "Se confirma con cotización por escrito",
+      "Va directo al presupuesto",
+      "Es exacto",
+      "Se redondea"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Al registrar asistentes a un evento pides…",
+     "ops": [
+      "Todos sus datos personales",
+      "Su contraseña",
+      "Nada",
+      "Solo los datos necesarios"
+     ],
+     "correcta": 3
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día de oficina simulado con errores plantados por la IA y la construcción de tu kit personal de oficina.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de oficina con IA",
+     "obj": "Detectar errores de la IA en un resumen, una minuta, una fórmula y una presentación antes de enviarlos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres asistente de la dirección comercial de una empresa de productos de limpieza en Monterrey, con 3 gerentes regionales. Hoy usarás la IA en cuatro momentos del día. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes de que salga de tu escritorio."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 · 9:00 am — El hilo del cliente.</b> Pediste resumen de un hilo de 18 correos con una cadena de supermercados. La IA escribió: «El cliente aceptó el nuevo precio de $86 por caja y confirmó el pedido de 1,200 cajas para el 15». En el hilo, el comprador escribió: «El precio de $86 lo tengo que subir a comité; mientras, apártenme 1,200 cajas»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué encontraste?",
+       "pregunta": "Escribe qué afirmó la IA que no está confirmado y cómo redactarías el resumen correcto para tu director.",
+       "ayuda": "La IA dio por hecho… En realidad… Resumen correcto: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 · 11:30 am — La minuta.</b> Tus notas: «D: se lanza promoción en noviembre / P: gerente Norte cotiza exhibidores / P: ¿quién habla con mercadotecnia? / ?: presupuesto de muestras». La minuta de la IA dice: «Pendientes: gerente Norte cotiza exhibidores (viernes 14); gerente Sur habla con mercadotecnia (lunes 17). Presupuesto de muestras: $50,000 aprobado»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué encontraste?",
+       "pregunta": "Enumera lo que la IA inventó en la minuta y reescribe la tabla de pendientes correctamente.",
+       "ayuda": "Inventó… Pendiente 1: … Pendiente 2: [por confirmar]… Duda abierta: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 · 2:00 pm — La fórmula.</b> Tienes ventas por región en las filas 2 a 31. La IA te dio <code>=SUMAR.SI(A2:A30,\"Norte\",C2:C30)</code> para el total de la región Norte y el resultado no cuadra con el total que te mandó el gerente. Además, para «ahorrar tiempo», un compañero pegó en la IA pública la base completa con nombres y teléfonos de los clientes."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué encontraste?",
+       "pregunta": "Explica por qué no cuadra el total, escribe la fórmula correcta y qué harías con la base que se pegó en la IA.",
+       "ayuda": "No cuadra porque… Fórmula: … Sobre la base…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 · 5:00 pm — La presentación.</b> Para la junta de mañana, la IA preparó 6 diapositivas. La tercera tiene el título «Ventas» y una cifra: «el mercado de productos de limpieza en México crece 15% anual». La quinta dice «Cumplimos la meta», pero tu tabla muestra 96% de la meta."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué encontraste?",
+       "pregunta": "Corrige los títulos de las diapositivas 3 y 5 y decide qué haces con la cifra del mercado.",
+       "ayuda": "Diapositiva 3: … Diapositiva 5: … La cifra del mercado…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Escena 1: el precio de $86…",
+         "ops": [
+          "Está pendiente de comité del cliente",
+          "Está aceptado",
+          "Fue rechazado"
+         ],
+         "correcta": 0,
+         "explica": "La IA convirtió un «lo subo a comité» en «aceptó»."
+        },
+        {
+         "p": "Escena 2: el presupuesto de muestras de $50,000…",
+         "ops": [
+          "Fue aprobado en la junta",
+          "Es una duda abierta; la IA lo inventó",
+          "Es un pendiente del gerente Norte"
+         ],
+         "correcta": 1,
+         "explica": "En tus notas era «?»: duda abierta sin cifra."
+        },
+        {
+         "p": "Escena 3: ¿cuál es la fórmula correcta?",
+         "ops": [
+          "=SUMA(C2:C30)",
+          "=CONTAR.SI(A2:A31,\"Norte\")",
+          "=SUMAR.SI(A2:A31,\"Norte\",C2:C31)"
+         ],
+         "correcta": 2,
+         "explica": "El rango debe llegar a la fila 31; el original dejaba fuera la última."
+        },
+        {
+         "p": "Escena 4: la diapositiva «Cumplimos la meta» con 96%…",
+         "ops": [
+          "Debe decir «Alcanzamos 96% de la meta»",
+          "Está bien, es casi",
+          "Se quita la cifra"
+         ],
+         "correcta": 0,
+         "explica": "El título dice la idea con el dato real."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Propuesta no es acuerdo: revisa el texto original.",
+        "Lo que no se acordó va [por confirmar].",
+        "Rangos completos, cifras con fuente y títulos con el dato real."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de oficina con IA",
+     "obj": "Construir tu biblioteca de prompts, tu política de datos, tu lista de verificación y un entregable real de tu trabajo.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Para cerrar, vas a armar tu <b>kit personal de oficina con IA</b>: lo que usarás cada semana. Trabaja con tus tareas reales. Guarda todo en un solo documento o carpeta con fecha, para revisarlo cada trimestre."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1 · Tu biblioteca de prompts",
+       "pregunta": "Elige las 6 plantillas del curso que más usarás (hilos, respuestas tipo, minuta, aviso, reporte, presentación, procedimiento, fórmulas, evento…) y adapta cada una a tu puesto, tu empresa y tu tono.",
+       "ayuda": "1. Minuta: … 2. Reporte mensual: … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2 · Tu política de datos",
+       "pregunta": "Escribe 5 reglas sobre qué nunca pegas en una IA (datos de clientes, contraseñas, sueldos, contratos), qué sí, y cuál es la herramienta autorizada por tu empresa.",
+       "ayuda": "Nunca pego… Sí puedo… Si tengo duda pregunto a… La herramienta autorizada es…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3 · Tu lista de verificación",
+       "pregunta": "Arma tu lista de 8 puntos para revisar cualquier texto o archivo hecho con IA antes de enviarlo (acuerdos vs. propuestas, fechas, cifras, rangos de fórmulas, compromisos, datos personales, tono).",
+       "ayuda": "Antes de enviar: 1) … 2) … 3) …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4 · Tu entregable real",
+       "pregunta": "Haz con tu kit una tarea real de esta semana (minuta, reporte, aviso o presentación), pásala por tu lista de verificación y anota qué corregiste y cuánto tiempo ahorraste.",
+       "ayuda": "Tarea: … La IA propuso… Corregí… Antes me tomaba… Ahora…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE OFICINA CON IA — [tu nombre y puesto] — versión [fecha]\n\n1. Biblioteca de prompts\n   1.1 Resumen de hilos · 1.2 Respuestas tipo · 1.3 Agenda y minuta · 1.4 Avisos · 1.5 Reporte ejecutivo · 1.6 Presentación · 1.7 Procedimientos · 1.8 Fórmulas · 1.9 [otro]\n2. Política de datos (5 reglas) y herramienta autorizada: [ ]\n3. Lista de verificación antes de enviar (8 puntos)\n4. Hojas de control con fórmulas probadas: [nombres de archivo]\n5. Entregable real revisado y tiempo ahorrado: [ ]\n6. Próxima revisión del kit: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso completo!</b> La IA te quita horas de redacción y orden; la verificación, el criterio y el cuidado de los datos siguen siendo tuyos."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tu puesto.",
+        "Política de datos y lista de verificación siempre a la mano.",
+        "Mide el tiempo ahorrado con tareas reales."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "El resumen de la IA dice «el cliente aceptó», pero el cliente escribió «lo subo a comité». El estado real es…",
+     "ops": [
+      "Aceptado",
+      "Rechazado",
+      "Pendiente de confirmación",
+      "Cancelado"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "En una minuta, un dato que nadie acordó va como…",
+     "ops": [
+      "Acuerdo",
+      "[por confirmar]",
+      "Se inventa",
+      "Se omite sin avisar"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Datos en filas 2 a 31 y fórmula con rango hasta la 30. El total…",
+     "ops": [
+      "Deja fuera la fila 31",
+      "Sale correcto",
+      "Marca error",
+      "Se duplica"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una cifra de mercado sin fuente en tu presentación…",
+     "ops": [
+      "Se deja",
+      "Se redondea",
+      "Se pone en rojo",
+      "Se verifica en una fuente citable o se quita"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Tu política de datos para IA incluye…",
+     "ops": [
+      "Tus contraseñas",
+      "Nada",
+      "Qué nunca pegas y la herramienta autorizada",
+      "Solo el nombre de tu jefe"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "«Cumplimos la meta» con 96% de avance es un título…",
+     "ops": [
+      "Correcto",
+      "Exagerado: debe decir el dato real",
+      "Neutral",
+      "Obligatorio"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Tu kit de oficina se revisa…",
+     "ops": [
+      "Cada trimestre o cuando cambien tus herramientas",
+      "Nunca",
+      "Solo si te lo pide tu jefe",
+      "Una vez al año por obligación"
+     ],
+     "correcta": 0
+    }
+   ]
+  }
+ ]
+}

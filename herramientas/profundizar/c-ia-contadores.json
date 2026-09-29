@@ -1,0 +1,1511 @@
+{
+ "id": "c-ia-contadores",
+ "horas": 10,
+ "aprender": [
+  "Resolver con IA casos por especialidad contable (personas físicas y plataformas, nómina, personas morales y auditoría) detectando los errores típicos que comete la IA en cada uno.",
+  "Construir tu kit contable personal: biblioteca de prompts, política de datos del despacho, lista de verificación y un entregable real listo para usar."
+ ],
+ "terceras": [
+  {
+   "p": "La IA te dice «según el artículo 113-E de la LISR…». Tú…",
+   "op": "Le pido a la IA que confirme si el artículo existe y con eso lo uso"
+  },
+  {
+   "p": "¿Para qué es más segura la IA en materia fiscal?",
+   "op": "Elegir el régimen fiscal definitivo del cliente"
+  },
+  {
+   "p": "Si la IA no sabe algo con certeza, lo ideal es que…",
+   "op": "Dé la respuesta más probable sin advertirlo"
+  },
+  {
+   "p": "«Persona física con actividad empresarial, ingresos entre 1 y 2 millones, giro restaurantes.»",
+   "op": "No, porque menciona el giro"
+  },
+  {
+   "p": "«El Dr. Ramírez del consultorio de la calle Madero, con RFC RAM…»",
+   "op": "Sí, porque el RFC no está completo"
+  },
+  {
+   "p": "La IA agrega un hallazgo que tú no encontraste. Tú…",
+   "op": "Lo dejo pero lo marco como menor"
+  },
+  {
+   "p": "El encabezado de una cédula incluye…",
+   "op": "Solo el nombre del cliente y la fecha de impresión"
+  },
+  {
+   "p": "Para revisar 800 XML de un cliente…",
+   "op": "Reviso una muestra de 10 a ojo y doy por buena la revisión"
+  },
+  {
+   "p": "Las reglas de uso de CFDI y método de pago…",
+   "op": "Se toman de la última respuesta del proveedor de facturación"
+  },
+  {
+   "p": "La fecha límite de entrega interna de documentos debe ser…",
+   "op": "Un día después del plazo oficial, por si hay prórroga"
+  },
+  {
+   "p": "Un cambio fiscal del ejercicio que te resume la IA…",
+   "op": "Se comunica si otra IA da la misma respuesta"
+  }
+ ],
+ "extras": {
+  "c-ia-contadores-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Mariana, auxiliar de un despacho en Querétaro, le preguntó a un asistente de IA qué gastos médicos puede deducir un cliente en su declaración anual. La respuesta llegó en segundos, con un tope exacto, un artículo citado y una regla de la Resolución Miscelánea con número. Suena impecable. Antes de mandarla al cliente, te la pasa para revisión."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa la respuesta de la IA",
+    "preguntas": [
+     {
+      "p": "La respuesta incluye un tope de deducciones con cifra exacta. ¿Qué haces con ese número?",
+      "ops": [
+       "Lo uso porque la IA lo dio con mucha seguridad",
+       "Lo confirmo en la ley vigente y en sat.gob.mx antes de usarlo",
+       "Lo redondeo para que se vea más prudente"
+      ],
+      "correcta": 1,
+      "explica": "Los topes, tasas y límites cambian y la IA puede mezclar ejercicios. Toda cifra fiscal se confirma en el texto vigente de la ley o en sat.gob.mx; verifica la cifra vigente en sat.gob.mx aunque la respuesta suene segura."
+     },
+     {
+      "p": "La IA cita «la regla 3.17.x de la RMF». No encuentras esa regla en la RMF vigente. ¿Qué concluyes?",
+      "ops": [
+       "Que probablemente la cita es incorrecta o de otro año y no la uso",
+       "Que la regla existe pero el SAT la escondió",
+       "Que puedo citarla porque el número se ve formal"
+      ],
+      "correcta": 0,
+      "explica": "Si una regla o artículo no aparece en el texto vigente publicado en el DOF, no existe para efectos de tu trabajo. La IA inventa números con formato verosímil."
+     },
+     {
+      "p": "El cliente quiere la respuesta hoy y tú aún no verificas. ¿Qué le dices?",
+      "ops": [
+       "Le mando la respuesta de la IA con un «salvo error u omisión»",
+       "No le contesto hasta tener todo",
+       "Le explico el tratamiento general y le confirmo cifras y requisitos en cuanto los verifique"
+      ],
+      "correcta": 2,
+      "explica": "Puedes orientar en términos generales sin comprometer cifras. Lo que no has verificado no se envía como definitivo, aunque lleve una leyenda."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo preguntar sobre deducciones",
+    "malTitulo": "Invita a inventar",
+    "mal": "«¿Cuánto puede deducir mi cliente de gastos médicos?»",
+    "bienTitulo": "Invita a verificar",
+    "bien": "«Explícame en términos generales qué requisitos suelen revisarse para deducir gastos médicos de una persona física en su declaración anual, qué disposiciones debo consultar y qué partes pudieron cambiar recientemente. No me des cifras ni números de artículo si no estás seguro.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu protocolo de verificación",
+    "pregunta": "Escribe tu protocolo de 3 pasos para verificar cualquier respuesta fiscal de una IA antes de usarla con un cliente (dónde buscas, qué anotas en el papel de trabajo y quién revisa).",
+    "ayuda": "1. Identifico cada cifra, artículo o plazo… 2. Lo confirmo en… 3. Anoto la fuente y fecha de consulta en…"
+   }
+  ],
+  "c-ia-contadores-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en un despacho de Mérida, un practicante quiere ahorrar tiempo y pregunta si puede pegar en un asistente de IA gratuito el estado de cuenta de un cliente (una tienda de materiales) para que le clasifique 300 movimientos en ingresos, gastos y traspasos. Tú eres responsable de la política de datos."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Puede pegar el estado de cuenta tal cual en la herramienta gratuita?",
+      "ops": [
+       "Sí, porque es solo para clasificar",
+       "No: tiene nombre, número de cuenta y movimientos identificables del cliente",
+       "Sí, si después borra la conversación"
+      ],
+      "correcta": 1,
+      "explica": "Borrar la conversación no garantiza nada sobre lo que ya se envió. Un estado de cuenta identifica al cliente y a sus contrapartes; solo va a herramientas autorizadas."
+     },
+     {
+      "p": "¿Cuál es la alternativa más útil sin exponer datos?",
+      "ops": [
+       "Pedirle a la IA que diseñe reglas de clasificación en Excel con 10 movimientos ficticios de ejemplo",
+       "Mandar solo la mitad del estado de cuenta",
+       "Pegarlo y pedir a la IA que no lo guarde"
+      ],
+      "correcta": 0,
+      "explica": "La IA diseña el método (palabras clave, SI, BUSCARV con catálogo de conceptos) y tu hoja de cálculo lo aplica a los datos reales en tu equipo."
+     },
+     {
+      "p": "El despacho contrata una versión empresarial de un asistente de IA. ¿Ya se puede subir cualquier dato?",
+      "ops": [
+       "Sí, lo empresarial es seguro por definición",
+       "Solo si el cliente no se entera",
+       "Solo lo que la política del despacho autorice, tras revisar las condiciones de privacidad del contrato"
+      ],
+      "correcta": 2,
+      "explica": "Una licencia empresarial mejora las condiciones, pero la política interna define qué datos, quién y para qué. Revisa el contrato y documenta la decisión."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Dato sensible y cómo sustituirlo",
+    "pares": [
+     [
+      "RFC del cliente",
+      "Clave interna, p. ej. C-014"
+     ],
+     [
+      "Razón social",
+      "Giro y tamaño aproximado"
+     ],
+     [
+      "Importe exacto de ingresos",
+      "Rango de ingresos"
+     ],
+     [
+      "Número de cuenta bancaria",
+      "Se elimina por completo"
+     ],
+     [
+      "Domicilio fiscal",
+      "Estado o región"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus datos intocables",
+    "pregunta": "Lista los 5 datos de tus clientes que nunca subirías a una herramienta no autorizada y, junto a cada uno, el sustituto que usarás para poder consultar el caso con la IA.",
+    "ayuda": "1. RFC → clave interna C-… 2. …"
+   }
+  ],
+  "c-ia-contadores-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la dueña de una estética en Aguascalientes te escribe alarmada: «Me llegó algo al buzón tributario, ¿me van a embargar?». Ya revisaste el aviso: es un recordatorio general, no un requerimiento. Le pides a la IA que convierta tu explicación técnica en un mensaje tranquilo y claro."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa el mensaje que propuso la IA",
+    "preguntas": [
+     {
+      "p": "La IA agregó «tienes 10 días para responder», dato que no estaba en tu texto. ¿Qué haces?",
+      "ops": [
+       "Lo borro: el aviso no pide respuesta y la IA inventó el plazo",
+       "Lo dejo para que la clienta se apure",
+       "Lo cambio a 15 días para dar margen"
+      ],
+      "correcta": 0,
+      "explica": "La plantilla decía «no agregues datos que no estén en mi texto». Cualquier plazo que no venga de tu revisión del documento se elimina."
+     },
+     {
+      "p": "¿Qué tono conviene en este mensaje?",
+      "ops": [
+       "Técnico, para que vea que sabes",
+       "Tranquilizador pero preciso: qué es, qué no es y qué sigue",
+       "Muy breve: «no pasa nada»"
+      ],
+      "correcta": 1,
+      "explica": "Minimizar sin explicar genera desconfianza; tecnicismos generan más miedo. Explica qué recibió, qué significa y qué harás tú."
+     },
+     {
+      "p": "La clienta pregunta después si puede dejar de revisar su buzón tributario. ¿Qué le respondes?",
+      "ops": [
+       "Que sí, porque tú lo revisas siempre",
+       "Que solo si no tiene deudas",
+       "Que debe tenerlo habilitado y acordar contigo quién lo revisa y cada cuándo"
+      ],
+      "correcta": 2,
+      "explica": "El buzón es un medio oficial de comunicación con el SAT. Acordar por escrito quién lo revisa evita que un aviso importante pase desapercibido."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Responder a una clienta asustada",
+    "malTitulo": "Frío y confuso",
+    "mal": "«Se trata de una comunicación de carácter informativo emitida a través del medio electrónico previsto en el CFF, sin efectos vinculantes.»",
+    "bienTitulo": "Claro y tranquilo",
+    "bien": "«Tranquila, ya lo revisé: es un recordatorio general que el SAT manda a muchos contribuyentes, no es un cobro ni una multa. No tienes que hacer nada; yo lo dejo anotado en tu expediente. Si llega algo que requiera respuesta, te aviso el mismo día.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu mensaje de calma",
+    "pregunta": "Piensa en el aviso o trámite que más asusta a tus clientes. Escribe el mensaje que les mandarías: qué es, qué no es, qué sigue y quién lo hace.",
+    "ayuda": "Tranquilo, ya lo revisé: es… No es… Lo que sigue es…"
+   }
+  ],
+  "c-ia-contadores-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en la conciliación bancaria de un cliente en León ya marcaste con 1 o 0 si cada depósito aparece en el auxiliar. La IA te propuso fórmulas para resumir lo pendiente y asegura que «ya están probadas». Tienes 1,400 movimientos del mes."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La IA te da una fórmula con punto y coma como separador y tu Excel marca error. ¿Qué pasa probablemente?",
+      "ops": [
+       "La IA inventó una función",
+       "La configuración regional usa otro separador; lo ajusto y vuelvo a probar",
+       "El archivo está dañado"
+      ],
+      "correcta": 1,
+      "explica": "Según la configuración regional, Excel usa coma o punto y coma entre argumentos. Dile a la IA cuál usas desde el prompt."
+     },
+     {
+      "p": "La IA asegura que «la fórmula está probada y funciona». ¿Qué haces?",
+      "ops": [
+       "La pruebo con casos que conozco antes de aplicarla",
+       "La aplico a todo el mes",
+       "Le pido que lo jure"
+      ],
+      "correcta": 0,
+      "explica": "La IA no ejecutó nada en tu archivo. La prueba con casos conocidos es tu control."
+     },
+     {
+      "p": "Dos depósitos tienen el mismo importe y distinta referencia. Si la fórmula cruza solo por importe…",
+      "ops": [
+       "No importa, el total cuadra",
+       "Es más rápido y suficiente",
+       "Puede marcar como encontrado un depósito que no lo está"
+      ],
+      "correcta": 2,
+      "explica": "Por eso el prompt original pedía cruzar por referencia e importe. Un cruce solo por importe esconde diferencias."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la fórmula",
+    "items": [
+     {
+      "frase": "Para sumar los importes no encontrados uso =___(C2:C1401,0,B2:B1401).",
+      "resp": [
+       "SUMAR.SI",
+       "sumar.si"
+      ]
+     },
+     {
+      "frase": "Para contar cuántas partidas siguen pendientes uso =___(C2:C1401,0).",
+      "resp": [
+       "CONTAR.SI",
+       "contar.si"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu fórmula de la semana",
+    "pregunta": "Elige un cálculo repetitivo de tu trabajo. Escribe el prompt con el que pedirás la fórmula a la IA, incluyendo columnas, versión de Excel y el caso de prueba con el resultado que ya conoces.",
+    "ayuda": "Uso Excel en español con separador… Tengo las columnas… Necesito… Mi caso de prueba es…"
+   }
+  ],
+  "c-ia-contadores-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> revisaste la cédula de depreciación de una constructora de Hermosillo. Encontraste dos equipos que se siguen depreciando aunque se vendieron en junio. Le diste a la IA tus hallazgos para redactar la conclusión y te devolvió un texto muy profesional que termina con «sin excepciones relevantes»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa la conclusión",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene la frase «sin excepciones relevantes»?",
+      "ops": [
+       "Ninguno, suena profesional",
+       "Contradice tus hallazgos: sí hay una excepción",
+       "Es demasiado corta"
+      ],
+      "correcta": 1,
+      "explica": "La IA tiende a cerrar con frases estándar. Una conclusión que contradice los hallazgos es un error grave en un papel de trabajo."
+     },
+     {
+      "p": "La IA calculó «un efecto aproximado de $85,000». Tú no le diste esa cifra. ¿Qué haces?",
+      "ops": [
+       "Calculo el efecto en la cédula y uso mi cifra",
+       "La dejo porque es aproximada",
+       "Promedio su cifra con la mía"
+      ],
+      "correcta": 0,
+      "explica": "Las cifras del papel de trabajo salen de tus cálculos con soporte, nunca de una estimación de la IA."
+     },
+     {
+      "p": "¿Qué debe incluir la conclusión corregida?",
+      "ops": [
+       "Solo que hay errores",
+       "Qué se revisó, el hallazgo con monto calculado, su efecto y la recomendación",
+       "Una disculpa al cliente"
+      ],
+      "correcta": 1,
+      "explica": "Es la estructura de la plantilla de la lección: alcance, hallazgo con monto, efecto y recomendación."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Conclusión de la cédula de depreciación",
+    "malTitulo": "Generada sin revisar",
+    "mal": "«Se revisó la depreciación del ejercicio conforme a la normatividad aplicable, sin excepciones relevantes.»",
+    "bienTitulo": "Revisada por ti",
+    "bien": "«Se revisó la depreciación de enero a diciembre de los 38 activos del auxiliar. Dos equipos vendidos en junio se siguieron depreciando de julio a diciembre; el efecto calculado en la cédula DEP-3 es de $[monto]. Recomendación: dar de baja los activos, reversar el exceso y conciliar mensualmente altas y bajas.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión de conclusiones",
+    "pregunta": "Escribe 4 preguntas que te harás siempre antes de aceptar una conclusión redactada por la IA en un papel de trabajo.",
+    "ayuda": "1. ¿Cada hallazgo está en mi cédula? 2. ¿Hay cifras que yo no calculé? 3. …"
+   }
+  ],
+  "c-ia-contadores-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una distribuidora de Guadalajara te pide revisar 1,200 CFDI recibidos del trimestre. Los pasaste a Excel en tu equipo. Algunas facturas llevan retenciones, así que la validación simple «total = subtotal + IVA» marca falsos errores. Prueba la validación corregida con 4 facturas."
+   },
+   {
+    "tipo": "excel",
+    "rotulo": "Validación aritmética con retenciones",
+    "datos": [
+     [
+      "Folio",
+      "Subtotal",
+      "IVA",
+      "Retenciones",
+      "Total",
+      "Diferencia",
+      "¿Revisar? (1/0)"
+     ],
+     [
+      "F-01",
+      10000,
+      1600,
+      0,
+      11600,
+      0,
+      0
+     ],
+     [
+      "F-02",
+      20000,
+      3200,
+      3000,
+      20200,
+      0,
+      0
+     ],
+     [
+      "F-03",
+      5000,
+      800,
+      0,
+      5900,
+      "",
+      ""
+     ],
+     [
+      "Total a revisar",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "retos": [
+     {
+      "celda": "F4",
+      "formula": "=E4-(B4+C4-D4)",
+      "esperado": 100,
+      "texto": "<b>F4</b>: diferencia de F-03 = total − (subtotal + IVA − retenciones).",
+      "pista": "=E4-(B4+C4-D4)"
+     },
+     {
+      "celda": "G4",
+      "formula": "=SI(F4<>0,1,0)",
+      "esperado": 1,
+      "requiere": "SI(",
+      "texto": "<b>G4</b>: 1 si la diferencia de F-03 es distinta de cero.",
+      "pista": "=SI(F4<>0,1,0)",
+      "explica": "F-03 tiene $100 de diferencia: se aclara con el proveedor antes de registrarla. Sin la columna de retenciones, F-02 habría salido como error falso."
+     }
+    ]
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué la validación simple marcaba F-02 como error?",
+      "ops": [
+       "Porque el proveedor facturó mal",
+       "Porque no restaba las retenciones",
+       "Porque el IVA estaba en otra columna"
+      ],
+      "correcta": 1,
+      "explica": "Pide a la IA validaciones que contemplen impuestos trasladados y retenidos. Un falso positivo en 1,200 facturas te hace perder horas."
+     },
+     {
+      "p": "Hay facturas con método PPD y no encuentras su complemento de pago. ¿Qué haces?",
+      "ops": [
+       "Las marco para revisar con el proveedor y confirmo las reglas vigentes del SAT",
+       "Las deduzco igual",
+       "Las borro del listado"
+      ],
+      "correcta": 0,
+      "explica": "Las facturas en parcialidades o diferidas requieren su complemento cuando se pagan. Confirma el tratamiento en la documentación vigente del SAT."
+     },
+     {
+      "p": "Una factura del listado aparece con estatus cancelado. ¿Qué implica?",
+      "ops": [
+       "Nada, ya se registró",
+       "Que el IVA se duplica",
+       "Que no debe tomarse como soporte y hay que aclararlo con el proveedor"
+      ],
+      "correcta": 2,
+      "explica": "Un CFDI cancelado no ampara la operación. La validación de estatus es de las más valiosas."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus validaciones clave",
+    "pregunta": "Escribe las 3 validaciones de CFDI que más errores te detectarían con tus clientes actuales y la fórmula o regla con que harías cada una.",
+    "ayuda": "1. Total vs. subtotal + IVA − retenciones: =… 2. Estatus cancelado: … 3. …"
+   }
+  ],
+  "c-ia-contadores-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un despacho en Puebla con 3 auxiliares y 40 clientes quiere repartir mejor la carga del mes. La IA armó el tablero de obligaciones y además llenó por su cuenta las fechas límite de cada obligación. Antes de compartirlo con el equipo, lo revisas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La IA llenó las fechas límite de todas las obligaciones. ¿Qué haces con ellas?",
+      "ops": [
+       "Las borro y las capturo del calendario oficial y la ley vigente",
+       "Las dejo porque casi siempre son iguales",
+       "Les resto un día por seguridad"
+      ],
+      "correcta": 0,
+      "explica": "Plazos, prórrogas y días inhábiles cambian. Las fechas se toman del calendario oficial; verifica la cifra vigente en sat.gob.mx."
+     },
+     {
+      "p": "¿Qué conviene agregar al tablero para anticipar cuellos de botella?",
+      "ops": [
+       "Colores más llamativos",
+       "Un conteo de pendientes por responsable y semana",
+       "El nombre completo de cada cliente"
+      ],
+      "correcta": 1,
+      "explica": "Con CONTAR.SI.CONJUNTO ves la carga de cada persona y redistribuyes antes de que se venza algo."
+     },
+     {
+      "p": "¿Cómo identificas a los clientes en el tablero compartido?",
+      "ops": [
+       "Con RFC completo para no confundirlos",
+       "Con el nombre comercial",
+       "Con clave interna; la relación clave-cliente vive en un archivo restringido"
+      ],
+      "correcta": 2,
+      "explica": "El tablero circula por todo el equipo; la clave interna reduce la exposición de datos."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "Para contar los pendientes de una persona con dos condiciones uso ___.",
+      "resp": [
+       "CONTAR.SI.CONJUNTO",
+       "contar.si.conjunto"
+      ]
+     },
+     {
+      "frase": "Las fechas límite del tablero se toman del calendario ___ y de la ley vigente.",
+      "resp": [
+       "oficial",
+       "Oficial"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu tablero",
+    "pregunta": "Escribe las columnas que tendría el tablero de tu despacho o área, qué alerta automática le pondrías y quién lo actualiza cada semana.",
+    "ayuda": "Columnas: clave, régimen… Alerta: =SI(…) Actualiza: …"
+   }
+  ],
+  "c-ia-contadores-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un médico con consultorio propio en Monterrey te pide cotizar su contabilidad. La IA redactó una propuesta muy vendedora que incluye la frase «con nosotros pagarás hasta 30% menos impuestos» y no menciona qué servicios quedan fuera."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa la propuesta",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la promesa de «30% menos impuestos»?",
+      "ops": [
+       "La dejo, atrae clientes",
+       "La elimino: es una promesa sin sustento que te compromete",
+       "La cambio a 20% para ser prudente"
+      ],
+      "correcta": 1,
+      "explica": "No puedes prometer un ahorro fiscal sin conocer al cliente. Además genera expectativas que después se vuelven conflicto."
+     },
+     {
+      "p": "¿Qué servicio conviene listar como «no incluido» para este cliente?",
+      "ops": [
+       "Atender revisiones o requerimientos del SAT",
+       "La contabilidad mensual",
+       "El envío del resumen de impuestos"
+      ],
+      "correcta": 0,
+      "explica": "Revisiones, regularizaciones y trámites extraordinarios suelen cotizarse aparte. Escribirlo evita malentendidos."
+     },
+     {
+      "p": "El cliente lleva 3 meses sin pagar honorarios. Además del mensaje, ¿qué conviene?",
+      "ops": [
+       "Dejar de presentar sus declaraciones sin avisar",
+       "Publicar su adeudo en redes",
+       "Una llamada para acordar un plan de pago y dejarlo por escrito"
+      ],
+      "correcta": 2,
+      "explica": "El mensaje abre la conversación; el acuerdo por escrito la cierra. Nunca dejes de cumplir sin haber avisado formalmente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Propuesta para el consultorio",
+    "malTitulo": "Promete de más",
+    "mal": "«Con nosotros pagarás hasta 30% menos impuestos y te olvidarás del SAT para siempre.»",
+    "bienTitulo": "Clara y honesta",
+    "bien": "«Llevamos tu contabilidad mensual, presentamos tus declaraciones y te enviamos cada mes un resumen de lo que pagaste y por qué. Revisamos que tus deducciones cumplan requisitos. No incluye: atención de revisiones del SAT ni ejercicios atrasados, que cotizamos aparte.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus no incluidos",
+    "pregunta": "Escribe la lista de «no incluidos» de tu servicio más común y la frase con la que explicarías al cliente por qué se cobran aparte.",
+    "ayuda": "No incluye: 1… 2… 3… Se cotizan aparte porque…"
+   }
+  ],
+  "c-ia-contadores-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> terminó la temporada de anuales. Del despacho de 75 clientes, 9 declaraciones se presentaron en los últimos dos días y 3 clientes se quejaron de no saber qué enviar. Vas a usar la IA para hacer una revisión posterior («qué aprendimos») con el equipo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué información le das a la IA para ayudarte con la revisión posterior?",
+      "ops": [
+       "El listado de clientes con nombre y RFC",
+       "Hechos anonimizados: cuántos llegaron tarde, por qué y qué mensajes se enviaron",
+       "Nada, que ella imagine qué pasó"
+      ],
+      "correcta": 1,
+      "explica": "Para analizar el proceso no necesitas identificar a nadie: bastan hechos, cantidades y causas."
+     },
+     {
+      "p": "La IA propone como causa «falta de compromiso del equipo», sin que tú lo mencionaras. ¿Qué haces?",
+      "ops": [
+       "Lo descarto y me quedo con las causas que sí tienen evidencia",
+       "Lo incluyo en el reporte",
+       "Se lo comunico al equipo"
+      ],
+      "correcta": 0,
+      "explica": "La IA completa huecos con explicaciones plausibles. En una revisión posterior solo cuentan causas con evidencia."
+     },
+     {
+      "p": "¿Qué acción concreta ataca mejor el problema de los 3 clientes que no sabían qué enviar?",
+      "ops": [
+       "Mandarles más recordatorios iguales",
+       "Cobrarles una multa",
+       "Una lista de documentos por tipo de cliente, enviada con fecha interna y confirmación de recibido"
+      ],
+      "correcta": 2,
+      "explica": "Si el problema fue de claridad, la solución es un mensaje más claro y personalizado, no más volumen."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Problema de la temporada y acción",
+    "pares": [
+     [
+      "Documentos que llegan tarde",
+      "Fecha interna anticipada con recordatorio escalonado"
+     ],
+     [
+      "Clientes que no saben qué enviar",
+      "Lista por tipo de cliente"
+     ],
+     [
+      "Carga concentrada en una persona",
+      "Tablero con pendientes por responsable"
+     ],
+     [
+      "Dudas repetidas del mismo tema",
+      "Mensaje modelo verificado"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu revisión posterior",
+    "pregunta": "Escribe los 3 problemas de tu última temporada fuerte (anuales, cierre o auditoría) y la acción concreta con IA que aplicarías a cada uno la próxima vez.",
+    "ayuda": "Problema 1: … → Acción: … con la plantilla…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad contable",
+   "r": "Personas físicas y plataformas digitales, nómina y seguridad social, personas morales y auditoría: cómo usar la IA en cada especialidad, qué errores comete y cómo detectarlos. Tres lecciones y una evaluación.",
+   "lecciones": [
+    {
+     "t": "Personas físicas, RESICO y plataformas digitales",
+     "obj": "usar la IA para organizar y explicar la información de personas físicas y vendedores en plataformas sin delegarle cifras ni criterios fiscales.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Las personas físicas son la mayoría de los clientes de un despacho pequeño: profesionistas, pequeños comercios, contribuyentes en RESICO y cada vez más personas que venden o prestan servicios por plataformas digitales. Son clientes con mucha duda y poco tiempo. La IA te ayuda a <b>ordenar su información, explicarle sus obligaciones y preparar listas de documentos</b>. Lo que no hace por ti es decidir su régimen, calcular su impuesto ni confirmar límites y tasas."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Plataformas digitales:</b> las plataformas retienen ISR e IVA a quienes venden o prestan servicios a través de ellas. Para 2026 la retención de ISR de plataformas es de 2.5%; verifica la cifra vigente en sat.gob.mx y el tratamiento que aplica a cada tipo de actividad antes de usarla con un cliente."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Ordenar la información de un vendedor en plataformas",
+       "texto": "Tengo un cliente persona física (sin datos identificables) que vende productos por [número] plataformas digitales y además tiene ventas directas. Ayúdame a:\n1) Diseñar una hoja de cálculo para concentrar por mes: plataforma, ingresos, retenciones de ISR e IVA según las constancias, y ventas directas.\n2) Hacer la lista de documentos que debo pedirle cada mes.\n3) Redactar un mensaje sencillo para explicarle qué son las retenciones y por qué debe descargar sus constancias.\nNo incluyas tasas, límites ni fechas: yo los agrego después de verificarlos."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con personas físicas",
+       "encabezados": [
+        "Error",
+        "Cómo se ve",
+        "Cómo lo detectas"
+       ],
+       "filas": [
+        [
+         "Mezcla regímenes",
+         "Aplica reglas de actividad empresarial general a un cliente en RESICO",
+         "Verifica qué régimen tiene en su constancia de situación fiscal"
+        ],
+        [
+         "Cifras de otro año",
+         "Da un límite de ingresos o una tasa que ya cambió",
+         "Toda cifra: verifica la cifra vigente en sat.gob.mx"
+        ],
+        [
+         "Da por hecho que no hay otros ingresos",
+         "Ignora sueldos, rentas o intereses del mismo cliente",
+         "Pregunta al cliente por todas sus fuentes de ingreso"
+        ],
+        [
+         "Confunde retención con pago definitivo",
+         "Dice que la retención de la plataforma «ya cubre todo»",
+         "Revisa si la retención es definitiva o a cuenta según el caso"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Constancias contra registros",
+       "datos": [
+        [
+         "Plataforma",
+         "Ingresos",
+         "Retención ISR constancia",
+         "Retención ISR registrada",
+         "Diferencia"
+        ],
+        [
+         "Plataforma A",
+         48000,
+         1200,
+         1200,
+         ""
+        ],
+        [
+         "Plataforma B",
+         31000,
+         775,
+         620,
+         ""
+        ],
+        [
+         "Plataforma C",
+         12500,
+         312.5,
+         312.5,
+         ""
+        ],
+        [
+         "Total",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "E3",
+         "formula": "=C3-D3",
+         "esperado": 155,
+         "texto": "<b>E3</b>: diferencia entre la retención de la constancia y la registrada de la plataforma B."
+        },
+        {
+         "celda": "C5",
+         "formula": "=SUMA(C2:C4)",
+         "esperado": 2287.5,
+         "requiere": "SUMA(",
+         "texto": "<b>C5</b>: retenciones totales según constancias.",
+         "explica": "Datos ficticios. La plataforma B tiene $155 de diferencia: se corrige el registro con la constancia como soporte. Que los montos coincidan con una tasa no sustituye revisar la constancia."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "Una clienta vende ropa por dos plataformas y además da clases particulares. La IA le dice que «las retenciones ya cubren todos sus impuestos». Tú…",
+         "ops": [
+          "Lo acepto, la IA conoce las reglas",
+          "Reviso todas sus fuentes de ingreso y si las retenciones son definitivas o a cuenta en su caso",
+          "Le digo que no declare las clases"
+         ],
+         "correcta": 1,
+         "explica": "La IA simplifica de más. Con varias fuentes de ingreso el tratamiento cambia; revísalo en la ley vigente."
+        },
+        {
+         "p": "La IA te da el límite de ingresos para tributar en RESICO. ¿Qué haces?",
+         "ops": [
+          "Lo verifico en la ley vigente y en sat.gob.mx antes de decir nada",
+          "Lo uso en la propuesta",
+          "Lo publico en redes del despacho"
+         ],
+         "correcta": 0,
+         "explica": "Límites y tasas son zona roja: verifica la cifra vigente en sat.gob.mx."
+        },
+        {
+         "p": "¿Para qué es más útil la IA con estos clientes?",
+         "ops": [
+          "Para elegir su régimen",
+          "Para calcular su pago definitivo",
+          "Para ordenar su información y explicarle sus obligaciones con un lenguaje claro"
+         ],
+         "correcta": 2,
+         "explica": "Orden, listas y explicaciones claras ahorran mucho tiempo; el criterio fiscal sigue siendo tuyo."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu cliente de plataformas",
+       "pregunta": "Piensa en un cliente persona física con varias fuentes de ingreso. Escribe la lista de documentos que le pedirías cada mes y el mensaje de 3 renglones con que se la enviarías.",
+       "ayuda": "Documentos: 1. Constancias de retención de… 2. … Mensaje: Hola, para tu declaración de este mes necesito…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA ordena y explica; régimen, cifras y retenciones se verifican en fuente oficial.",
+        "Pregunta siempre por todas las fuentes de ingreso.",
+        "Constancias de retención = soporte para conciliar."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Nómina y seguridad social",
+     "obj": "apoyarte en la IA para revisar incidencias, documentar procesos y explicar el recibo de nómina, sin delegarle cálculos de ISR ni cuotas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La nómina combina tres cosas que la IA maneja mal si no la vigilas: <b>cifras que cambian cada año</b> (salarios mínimos, UMA, tablas de ISR, cuotas), <b>datos personales sensibles</b> de los trabajadores y <b>cálculos encadenados</b> donde un error pequeño se multiplica. Úsala para lo que hace bien: listas de revisión, explicaciones para el trabajador, procedimientos de incidencias y fórmulas que tú pruebas."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Dónde se verifica cada dato",
+       "encabezados": [
+        "Dato",
+        "Fuente oficial"
+       ],
+       "filas": [
+        [
+         "Salario mínimo",
+         "Resolución de la CONASAMI publicada en el DOF"
+        ],
+        [
+         "UMA",
+         "Valor que publica el INEGI en el DOF"
+        ],
+        [
+         "Tablas y tarifas de ISR",
+         "Ley y anexos vigentes; sat.gob.mx"
+        ],
+        [
+         "Cuotas obrero-patronales",
+         "Ley del Seguro Social vigente e imss.gob.mx"
+        ],
+        [
+         "Aportaciones de vivienda",
+         "infonavit.org.mx"
+        ]
+       ],
+       "nota": "Si la IA te da alguno de estos valores, verifica la cifra vigente en sat.gob.mx o en la fuente de la tabla."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Checklist de revisión de nómina",
+       "texto": "Soy responsable de la nómina [quincenal/semanal] de una empresa de [giro] con [número] trabajadores. Diseña un checklist de revisión antes de timbrar: incidencias capturadas (faltas, incapacidades, horas extra, vacaciones), altas, bajas y modificaciones de salario, comparación contra la nómina anterior con variaciones mayores a [x]%, percepciones y deducciones inusuales, y cuadre del total a dispersar contra el banco. Para cada punto: qué reviso, contra qué documento y quién firma. No incluyas tasas, tablas ni cifras."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en nómina",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Valores desactualizados",
+         "Usa el salario mínimo o la UMA de otro año",
+         "Tomas el valor de la fuente oficial vigente"
+        ],
+        [
+         "Tablas de ISR inventadas o viejas",
+         "Reproduce una tarifa con límites que no coinciden",
+         "Usas la tabla del sistema de nómina, actualizada"
+        ],
+        [
+         "Confunde conceptos",
+         "Trata igual el salario diario y el salario base de cotización",
+         "Revisas la definición en la ley"
+        ],
+        [
+         "Pide datos de más",
+         "Te sugiere pegar la nómina completa para «revisarla»",
+         "Nunca subes datos de trabajadores a herramientas no autorizadas"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Incidencias de la quincena",
+       "datos": [
+        [
+         "Clave",
+         "Salario diario",
+         "Días periodo",
+         "Faltas",
+         "Días pagados",
+         "Sueldo del periodo"
+        ],
+        [
+         "T-01",
+         420,
+         15,
+         0,
+         15,
+         6300
+        ],
+        [
+         "T-02",
+         380,
+         15,
+         2,
+         13,
+         4940
+        ],
+        [
+         "T-03",
+         510,
+         15,
+         1,
+         "",
+         ""
+        ],
+        [
+         "Total",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "E4",
+         "formula": "=C4-D4",
+         "esperado": 14,
+         "texto": "<b>E4</b>: días pagados de T-03 (días del periodo − faltas)."
+        },
+        {
+         "celda": "F4",
+         "formula": "=B4*E4",
+         "esperado": 7140,
+         "texto": "<b>F4</b>: sueldo del periodo de T-03 (salario diario × días pagados).",
+         "explica": "Salarios ficticios. Este cálculo es solo el sueldo base; percepciones, deducciones, ISR y cuotas los calcula tu sistema de nómina con tablas vigentes."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "Un trabajador pregunta por qué su neto bajó esta quincena. ¿Cómo te ayuda la IA?",
+         "ops": [
+          "Redactando una explicación clara del recibo a partir de los conceptos que tú ya revisaste",
+          "Calculando de nuevo su ISR",
+          "Leyendo su recibo con nombre y CURP"
+         ],
+         "correcta": 0,
+         "explica": "Tú identificas la causa en el recibo (faltas, préstamo, cambio de tabla); la IA la explica en lenguaje sencillo, sin datos personales."
+        },
+        {
+         "p": "La IA te da el valor de la UMA para calcular un tope. ¿Dónde lo confirmas?",
+         "ops": [
+          "En otra IA",
+          "En la publicación oficial del INEGI en el DOF",
+          "En un foro de contadores"
+         ],
+         "correcta": 1,
+         "explica": "La UMA la publica el INEGI cada año. Ninguna cifra de nómina se toma de la IA sin verificar."
+        },
+        {
+         "p": "La nómina de esta quincena es 18% mayor que la anterior sin altas registradas. ¿Qué haces?",
+         "ops": [
+          "Timbro, seguro es por horas extra",
+          "Le pido a la IA que lo explique",
+          "Reviso incidencias y salarios trabajador por trabajador antes de timbrar"
+         ],
+         "correcta": 2,
+         "explica": "Una variación grande sin causa conocida es una alerta. La comparación contra la nómina anterior es uno de los controles más útiles."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu control de nómina",
+       "pregunta": "Escribe los 5 puntos de revisión que agregarías hoy a tu proceso de nómina (o al de tu cliente) y quién sería responsable de cada uno.",
+       "ayuda": "1. Comparar total contra la nómina anterior — responsable: … 2. …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Salarios mínimos, UMA, tablas y cuotas: siempre de fuente oficial vigente.",
+        "La IA arma checklists y explicaciones; el sistema de nómina calcula.",
+        "Datos de trabajadores nunca en herramientas no autorizadas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Personas morales, auditoría y requerimientos",
+     "obj": "usar la IA para planear revisiones, analizar variaciones y organizar la atención de un requerimiento sin perder el control de plazos, cifras y soporte.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Con personas morales el trabajo es más estructurado: cierre mensual, estados financieros, dictámenes o revisiones, y de vez en cuando un requerimiento o una carta invitación de la autoridad. La IA aporta en tres frentes: <b>planear</b> (programas de revisión, cuestionarios de control interno), <b>analizar</b> (diseñar pruebas y fórmulas de variación) y <b>organizar</b> (índices de documentos, cronogramas de respuesta). Las normas contables se verifican en las NIF vigentes del CINIF y los plazos en el propio documento de la autoridad y en la ley."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Programa de revisión",
+       "texto": "Voy a revisar el rubro de [cuentas por pagar / inventarios / ingresos] de una persona moral de [giro] con [tamaño]. Diseña un programa de revisión: objetivos, riesgos típicos del rubro, procedimientos (analíticos y sustantivos), documentos soporte a solicitar, tamaño de muestra sugerido y cómo documentar cada procedimiento en cédulas. Si mencionas una NIF, indica que debo verificarla en el texto vigente del CINIF."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Organizar un requerimiento",
+       "texto": "Mi cliente (anonimizado) recibió un requerimiento de información de la autoridad fiscal que solicita: [lista de lo que pide, sin datos identificables]. Ayúdame a: 1) convertir la solicitud en una lista de documentos con responsable interno, 2) proponer un cronograma de trabajo hacia atrás desde la fecha límite que yo te indico: [fecha], 3) hacer un índice para el expediente de respuesta. No interpretes plazos ni fundamentos: los confirmo yo en el documento y en la ley."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con personas morales",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Cita NIF o boletines derogados",
+         "Menciona normas que ya fueron sustituidas",
+         "Verificas en las NIF vigentes del CINIF"
+        ],
+        [
+         "Inventa plazos de respuesta",
+         "«Tienes 15 días hábiles» sin leer el documento",
+         "El plazo sale del requerimiento y de la ley"
+        ],
+        [
+         "Explica variaciones sin evidencia",
+         "«El aumento se debe a mayor actividad comercial»",
+         "Pides soporte al cliente antes de concluir"
+        ],
+        [
+         "Muestra sin criterio",
+         "Sugiere una muestra sin considerar el riesgo del rubro",
+         "Aplicas la metodología de muestreo del despacho"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Analítica de variaciones",
+       "datos": [
+        [
+         "Cuenta",
+         "Año anterior",
+         "Año actual",
+         "Variación %",
+         "¿Investigar? (1/0)"
+        ],
+        [
+         "Proveedores",
+         1850000,
+         2405000,
+         "",
+         ""
+        ],
+        [
+         "Acreedores diversos",
+         320000,
+         336000,
+         5,
+         0
+        ],
+        [
+         "Impuestos por pagar",
+         210000,
+         147000,
+         -30,
+         1
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "D2",
+         "formula": "=REDONDEAR((C2-B2)/B2*100,1)",
+         "esperado": 30,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>D2</b>: variación % de proveedores, redondeada a 1 decimal."
+        },
+        {
+         "celda": "E2",
+         "formula": "=SI(ABS(D2)>10,1,0)",
+         "esperado": 1,
+         "requiere": "SI(",
+         "texto": "<b>E2</b>: 1 si la variación absoluta de proveedores es mayor a 10%.",
+         "pista": "=SI(ABS(D2)>10,1,0)",
+         "explica": "Cifras ficticias. Impuestos por pagar bajó 30%: también rebasa el umbral. Las dos variaciones se investigan con soporte; el umbral lo define la materialidad de tu revisión, no la IA."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "La IA explica que proveedores subió 30% «por mayor actividad comercial». ¿Qué haces?",
+         "ops": [
+          "Lo pongo en la cédula como explicación",
+          "Lo trato como hipótesis y pido al cliente antigüedad de saldos y compras del periodo",
+          "Lo ignoro y no investigo"
+         ],
+         "correcta": 1,
+         "explica": "Una explicación sin evidencia es solo una hipótesis. La conclusión se apoya en documentos."
+        },
+        {
+         "p": "Llega un requerimiento y la IA indica un plazo de respuesta. ¿De dónde tomas el plazo?",
+         "ops": [
+          "Del propio requerimiento y de la ley vigente",
+          "De la IA",
+          "De lo que se acostumbra en el despacho"
+         ],
+         "correcta": 0,
+         "explica": "El plazo que cuenta es el que establece el documento y la ley. Un error aquí puede costarle mucho al cliente."
+        },
+        {
+         "p": "La IA cita un boletín contable que ya no está vigente. ¿Qué te dice eso de su respuesta?",
+         "ops": [
+          "Nada, los boletines siguen igual",
+          "Que la respuesta es de mejor calidad",
+          "Que debes revisar todo el fundamento contra las NIF vigentes"
+         ],
+         "correcta": 2,
+         "explica": "Un fundamento viejo es señal de que la IA mezcló épocas; revisa todo lo demás con la misma lupa."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu próxima revisión",
+       "pregunta": "Elige un rubro que revisarás pronto. Escribe los 3 riesgos principales, el procedimiento que harías para cada uno y qué parte le pedirías a la IA.",
+       "ayuda": "Rubro: … Riesgo 1: … → Procedimiento: … → IA: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA planea, analiza y organiza; las NIF y los plazos se verifican en fuente oficial.",
+        "Una explicación de variación sin soporte es hipótesis.",
+        "Requerimientos: lista, responsables e índice; plazos del documento."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA te da una tasa de retención para plataformas digitales. ¿Qué haces?",
+     "ops": [
+      "La uso tal cual",
+      "La verifico en fuente oficial vigente antes de aplicarla",
+      "La promedio con la del año pasado",
+      "La redondeo"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Para conciliar retenciones de plataformas, el soporte es…",
+     "ops": [
+      "La respuesta de la IA",
+      "Un estado de cuenta cualquiera",
+      "La constancia de retenciones de la plataforma",
+      "El recuerdo del cliente"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El valor de la UMA se confirma en…",
+     "ops": [
+      "La publicación oficial del INEGI en el DOF",
+      "La IA",
+      "Un foro",
+      "La nómina anterior"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una nómina 18% mayor que la anterior sin altas registradas…",
+     "ops": [
+      "Se timbra",
+      "Se explica con IA",
+      "Se ignora",
+      "Se revisa trabajador por trabajador antes de timbrar"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una explicación de variación que da la IA sin evidencia es…",
+     "ops": [
+      "Una conclusión",
+      "Una hipótesis que requiere soporte",
+      "Un hallazgo",
+      "Un dictamen"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "El plazo para responder un requerimiento se toma de…",
+     "ops": [
+      "La costumbre",
+      "La IA",
+      "El documento de la autoridad y la ley vigente",
+      "El cliente"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Con clientes personas físicas, la IA aporta más en…",
+     "ops": [
+      "Ordenar información y explicar obligaciones",
+      "Elegir su régimen",
+      "Calcular su impuesto definitivo",
+      "Firmar su declaración"
+     ],
+     "correcta": 0
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real en el despacho con errores plantados de la IA que debes detectar, y la construcción de tu kit contable personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de marzo en el despacho",
+     "obj": "detectar los errores típicos de la IA en cuatro situaciones reales de trabajo contable y decidir cómo corregirlos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Es martes de marzo en un despacho de Celaya, en plena temporada de anuales de personas morales. Tú coordinas el trabajo y usas un asistente de IA autorizado por el despacho. En cada escena la IA te entrega algo útil, pero con <b>al menos un error plantado</b>. Léela con ojo de revisor y escribe qué corregirías antes de continuar."
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 1 — 8:30 h.</b> Un cliente escribe por WhatsApp preguntando si puede deducir la camioneta que compró para su negocio. Pediste a la IA un borrador de respuesta y te propone: «Claro, puedes deducir el 100% de inmediato y además recuperar el IVA completo. Tienes hasta el 30 de abril para hacerlo». El mensaje suena amable y seguro."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "Señala cada afirmación del borrador que no puedes enviar sin verificar y escribe la respuesta que sí mandarías al cliente hoy.",
+       "ayuda": "Afirmaciones a verificar: 1… 2… 3… Mi respuesta: Hola, gracias por avisar; para confirmarte si y cómo se deduce necesito…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 2 — 10:00 h.</b> Tu auxiliar usó una fórmula que dio la IA para conciliar bancos. El resumen dice «todas las partidas conciliadas». Al revisar ves que la fórmula busca solo por importe, y en el mes hubo 14 depósitos de $5,000 exactos con referencias distintas."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "Explica por qué el resultado no es confiable, cómo corregirías la fórmula y qué prueba harías antes de dar por buena la conciliación.",
+       "ayuda": "No es confiable porque… La fórmula debe cruzar por… Probaría con…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 3 — 13:00 h.</b> Pides a la IA un resumen de los cambios fiscales del año que afectan a tus clientes. Te entrega una lista ordenada que incluye «la nueva regla 2.7.1.99 de la RMF, vigente desde enero, que elimina la obligación de enviar la contabilidad electrónica». Nadie en el despacho había oído de ese cambio."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Describe cómo verificarías esa regla, qué harías si no la encuentras y cómo evitarías que un dato así llegue a un boletín para clientes.",
+       "ayuda": "Buscaría en… Si no aparece… Para el boletín, la regla del despacho será…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 4 — 17:00 h.</b> Le diste a la IA tus hallazgos de la revisión de ingresos de un cliente para redactar la conclusión. El texto final incluye un tercer hallazgo que tú no encontraste («posible omisión de ingresos por ventas en efectivo») y un total de diferencias de $184,000, cuando tu cédula suma $148,000."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "Escribe la conclusión corregida con solo tus dos hallazgos, el total correcto y la recomendación, y anota qué aprendiste para tu próximo prompt.",
+       "ayuda": "Se revisaron los ingresos de… Hallazgo 1… Hallazgo 2… Total según cédula ING-2: $148,000. Recomendación… Aprendizaje: en el prompt agregaré…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Qué tienen en común los errores de las 4 escenas?",
+         "ops": [
+          "Todos son de ortografía",
+          "La IA afirmó con seguridad datos que no le diste o que no verificó",
+          "Todos se deben a que la herramienta era gratuita"
+         ],
+         "correcta": 1,
+         "explica": "Plazos, porcentajes, reglas, hallazgos y totales aparecieron sin fuente. Tu trabajo es separar lo que tú aportaste de lo que la IA agregó."
+        },
+        {
+         "p": "En la escena 2, ¿cuál es la corrección de fondo?",
+         "ops": [
+          "Cruzar por referencia e importe y probar con casos conocidos",
+          "Pedirle a la IA que confirme que está bien",
+          "Revisar solo los depósitos mayores"
+         ],
+         "correcta": 0,
+         "explica": "El error estaba en el diseño del cruce. Sin llave única (referencia + importe) cualquier resumen es engañoso."
+        },
+        {
+         "p": "En la escena 4, la cifra de $184,000 frente a $148,000 muestra que…",
+         "ops": [
+          "La IA redondeó",
+          "Hay que promediar",
+          "La cifra del papel de trabajo sale de tu cédula, no del texto de la IA"
+         ],
+         "correcta": 2,
+         "explica": "Una transposición de dígitos es un error clásico. Coteja cada cifra del texto contra la cédula antes de firmar."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Todo lo que la IA agrega sin fuente se verifica o se borra.",
+        "Cifras del entregable = cifras de tu cédula.",
+        "Fórmulas: llave correcta y caso de prueba."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit contable con IA",
+     "obj": "construir tu kit personal de trabajo con IA, listo para usar en tu despacho o área contable desde la próxima semana.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Tu proyecto final es un kit que puedas abrir el lunes y usar. Tiene cuatro piezas: <b>una biblioteca de prompts</b> probados, <b>una política de datos</b> para ti o tu despacho, <b>una lista de verificación</b> antes de enviar cualquier cosa hecha con IA y <b>un entregable real</b> producido con ese método. Escríbelo en las reflexiones; al final tendrás un índice para armarlo en un solo documento."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: biblioteca de prompts",
+       "pregunta": "Escribe los 5 prompts que más vas a usar (adaptados de este curso o nuevos), cada uno con su nombre, para qué sirve y qué datos NO debe llevar.",
+       "ayuda": "1. «Explicación para cliente» — sirve para… — nunca incluir: RFC, nombre… 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: política de datos",
+       "pregunta": "Redacta tu política de datos en 6 a 8 renglones: herramientas autorizadas, datos prohibidos, cómo anonimizar, quién aprueba excepciones y qué hacer si alguien sube algo por error.",
+       "ayuda": "Herramientas autorizadas: … Nunca se sube: … Anonimizamos así: … Si ocurre un error: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: lista de verificación",
+       "pregunta": "Escribe tu lista de verificación de 6 a 8 puntos que aplicarás antes de enviar a un cliente o firmar cualquier documento hecho con apoyo de IA.",
+       "ayuda": "□ Cada cifra coincide con mi cédula o sistema. □ Cada artículo, regla, tasa o plazo está verificado en fuente oficial con fecha. □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Elige un entregable real de esta semana (un mensaje a clientes, una cédula, un tablero, una propuesta). Escribe qué prompt usaste, qué corregiste de la respuesta de la IA y cuánto tiempo te ahorraste.",
+       "ayuda": "Entregable: … Prompt: … Correcciones: 1… 2… Tiempo antes: … Tiempo ahora: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit contable con IA",
+       "texto": "KIT CONTABLE CON IA — [tu nombre / despacho] — versión [fecha]\n\n1. Biblioteca de prompts\n   1.1 [nombre] — uso: [ ] — datos prohibidos: [ ]\n   1.2 … 1.5\n2. Política de datos\n   Herramientas autorizadas: [ ]\n   Datos que nunca se suben: [ ]\n   Cómo anonimizamos: [ ]\n   Excepciones y quién aprueba: [ ]\n3. Lista de verificación antes de enviar\n   □ [ ] □ [ ] □ [ ] □ [ ] □ [ ] □ [ ]\n4. Fuentes oficiales de consulta\n   sat.gob.mx · DOF · imss.gob.mx · INEGI (UMA) · NIF vigentes del CINIF\n5. Entregable modelo\n   [descripción, prompt usado, correcciones, tiempo ahorrado]\n6. Medición\n   [horas ahorradas, errores detectados, fecha de revisión]",
+       "nota": "Cópiala en un documento y llénala con tus reflexiones. Revísala cada inicio de temporada."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit: prompts, política de datos, lista de verificación y un entregable real.",
+        "Mide el tiempo ahorrado y los errores detectados.",
+        "Actualízalo cuando cambien las reglas o tus herramientas."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un borrador de la IA promete al cliente que puede deducir el 100% de una compra. ¿Qué haces antes de enviarlo?",
+     "ops": [
+      "Lo envío con una leyenda de «salvo error»",
+      "Verifico el tratamiento en fuente oficial vigente y corrijo",
+      "Lo mando porque el cliente tiene prisa",
+      "Pido a la IA que lo confirme"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una conciliación que cruza solo por importe…",
+     "ops": [
+      "Es suficiente si el total cuadra",
+      "Es la más precisa",
+      "Puede dar por conciliadas partidas que no lo están",
+      "No necesita prueba"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Una regla de la RMF que la IA menciona y no encuentras en el texto vigente…",
+     "ops": [
+      "No se usa ni se comunica",
+      "Se incluye en el boletín con aviso",
+      "Se cita porque suena formal",
+      "Se consulta con otra IA y se usa"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la conclusión redactada por la IA tiene un total distinto al de tu cédula…",
+     "ops": [
+      "Promedias",
+      "Manda la IA",
+      "Lo dejas si la diferencia es pequeña",
+      "Manda tu cédula y corriges el texto"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "La lista de verificación del kit se aplica…",
+     "ops": [
+      "Solo con clientes grandes",
+      "Una vez al año",
+      "Antes de enviar o firmar cualquier documento hecho con apoyo de IA",
+      "Cuando sobra tiempo"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La mejor medida para saber si tu kit funciona es…",
+     "ops": [
+      "Horas ahorradas y errores detectados antes de enviar",
+      "Cuántos prompts tienes",
+      "Cuántas herramientas usas",
+      "Si a la IA le gusta"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad profesional del trabajo hecho con IA es…",
+     "ops": [
+      "De la IA",
+      "Compartida con el proveedor de la herramienta",
+      "Del cliente",
+      "Del contador que lo firma o lo envía"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

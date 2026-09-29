@@ -1,0 +1,1296 @@
+{
+ "id": "c-ia-callcenter",
+ "horas": 10,
+ "aprender": [
+  "Calcular y leer juntos AHT, FCR y CSAT, y usar IA para calibrar la calidad y preparar coaching sin juicios ni datos personales.",
+  "Armar tu kit personal de call center con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "«Redacta un correo para Juan Pérez, cuenta 4455-8821, que reclama un cargo de $1,240»",
+   "op": "Sí, si después borras la conversación"
+  },
+  {
+   "p": "«Dame 3 formas amables de decirle a un usuario que su reembolso tarda 10 días hábiles»",
+   "op": "Solo si agregas el nombre del usuario"
+  },
+  {
+   "p": "Subir la captura del sistema con el expediente del cliente para que la IA lo resuma…",
+   "op": "Se puede si es una campaña interna"
+  },
+  {
+   "p": "Tu supervisor no te ha dicho nada sobre usar IA. Tú…",
+   "op": "La usas solo fuera del horario de llamadas"
+  },
+  {
+   "p": "La IA te propone quitar el aviso obligatorio porque «alarga la llamada». Tú…",
+   "op": "Lo resumes en una frase más corta"
+  },
+  {
+   "p": "Un guion suena natural cuando…",
+   "op": "Se lee palabra por palabra sin pausas"
+  },
+  {
+   "p": "Confirmar con el usuario lo que quedó acordado sirve para…",
+   "op": "Cumplir un trámite que el usuario no nota"
+  },
+  {
+   "p": "El usuario exige un reembolso que tu campaña no autoriza. Tú…",
+   "op": "Le pides que llame mañana con otro agente"
+  },
+  {
+   "p": "Si la IA te sugiere un plazo («en 48 horas») que no viene en tu política…",
+   "op": "Lo dices como plazo aproximado"
+  },
+  {
+   "p": "Pedirle al usuario molesto que repita todo desde el principio…",
+   "op": "Solo molesta si la llamada dura más de 10 minutos"
+  },
+  {
+   "p": "«Cliente grosero, no entiende nada» en el sistema es…",
+   "op": "Obligatorio si el usuario gritó"
+  },
+  {
+   "p": "La IA rellenó tu nota con un plazo que tú no mencionaste. Tú…",
+   "op": "Lo cambias por uno más corto"
+  },
+  {
+   "p": "La nota de cierre se escribe pensando en…",
+   "op": "La IA que después la va a resumir"
+  },
+  {
+   "p": "Tipificar todo como «otros» provoca que…",
+   "op": "Calidad califique mejor la llamada"
+  },
+  {
+   "p": "Si ninguna categoría aplica bien al caso…",
+   "op": "Dejas el campo vacío"
+  },
+  {
+   "p": "El motivo que más se repite en tu turno sirve para…",
+   "op": "Saber a qué agente culpar del volumen"
+  },
+  {
+   "p": "Una calificación baja en «notas» normalmente significa…",
+   "op": "Que el usuario se quejó del agente"
+  },
+  {
+   "p": "Antes de pegar una transcripción en una IA…",
+   "op": "Le quitas solo el nombre del usuario"
+  },
+  {
+   "p": "La retroalimentación de la IA sobre tu llamada…",
+   "op": "Se envía a calidad como evaluación oficial"
+  },
+  {
+   "p": "Tu TMO bajó 2 minutos y los recontactos subieron 30%. Eso indica…",
+   "op": "Que los usuarios quedaron más satisfechos"
+  },
+  {
+   "p": "Un abandono alto en el horario pico se resuelve sobre todo con…",
+   "op": "Pausar las encuestas de satisfacción"
+  },
+  {
+   "p": "Cerrar un ticket sin resolver para que no cuente como recontacto es…",
+   "op": "Aceptable si el usuario no llama ese mismo día"
+  },
+  {
+   "p": "Un agente con TMO más alto que el equipo…",
+   "op": "Debe cortar sus llamadas a 5 minutos"
+  },
+  {
+   "p": "Una propuesta de mejora convence cuando…",
+   "op": "La firma todo el equipo aunque no traiga datos"
+  },
+  {
+   "p": "Los nombres de tus compañeros en una IA pública…",
+   "op": "Se pegan solo con el nombre de pila"
+  },
+  {
+   "p": "Para bajar el abandono de la tarde, lo primero es…",
+   "op": "Quitar el aviso obligatorio para acortar llamadas"
+  },
+  {
+   "p": "Los cuatro usuarios que llamaron tres veces indican un problema de…",
+   "op": "Volumen normal de la campaña"
+  },
+  {
+   "p": "Quieres que la IA te ayude con la queja formal. Le pegas…",
+   "op": "La grabación de la llamada"
+  },
+  {
+   "p": "Tu propuesta al supervisor debe incluir…",
+   "op": "Los nombres de los agentes que fallaron"
+  }
+ ],
+ "extras": {
+  "c-ia-callcenter-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una campaña de cobranza preventiva de una mueblería, un agente quiere que la IA le escriba 50 recordatorios de pago personalizados. Tiene abierta la hoja con nombre, teléfono, saldo y fecha de vencimiento de cada usuario."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le puede pedir a la IA?",
+      "ops": [
+       "Que personalice los 50 mensajes con la hoja completa",
+       "Una plantilla con [NOMBRE], [SALDO] y [FECHA] que luego llena el sistema",
+       "Que busque el teléfono de quien no tenga"
+      ],
+      "correcta": 1,
+      "explica": "La IA redacta la plantilla; los datos se combinan en el sistema autorizado."
+     },
+     {
+      "p": "Si la herramienta de IA no está autorizada para la campaña…",
+      "ops": [
+       "No la usa, ni siquiera para la plantilla",
+       "La usa solo para la plantilla",
+       "La usa desde su celular"
+      ],
+      "correcta": 0,
+      "explica": "Sin autorización, la herramienta no se usa en la campaña."
+     },
+     {
+      "p": "Un recordatorio de cobranza nunca debe…",
+      "ops": [
+       "Indicar la fecha de vencimiento",
+       "Ofrecer los canales de pago",
+       "Amenazar o exhibir la deuda ante terceros"
+      ],
+      "correcta": 2,
+      "explica": "La cobranza se hace con respeto; verifica las reglas vigentes de tu campaña y de la autoridad que aplique."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El prompt del recordatorio",
+    "malTitulo": "Con datos",
+    "mal": "«Escribe un recordatorio para Rosa Méndez, 55 1234 5678, que debe $3,480 del comedor desde el 5 de mayo.»",
+    "bienTitulo": "Con marcadores",
+    "bien": "«Escribe un recordatorio de pago amable de 50 palabras con los campos [NOMBRE], [SALDO] y [FECHA], y los canales de pago de la tienda.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus marcadores",
+    "pregunta": "Escribe la lista de marcadores que usarás en tu campaña en lugar de datos reales y un prompt de tu trabajo diario reescrito con ellos.",
+    "ayuda": "Marcadores: [CLIENTE], [FOLIO]… / Prompt: …"
+   }
+  ],
+  "c-ia-callcenter-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una campaña de soporte de internet residencial, la parte flexible del guion para pedir que reinicien el módem dice: «Procederemos a efectuar un reinicio del equipo de telecomunicaciones ubicado en su domicilio». Los usuarios preguntan «¿cuál equipo?» y la llamada se alarga."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La versión hablada más clara es…",
+      "ops": [
+       "«Vamos a reiniciar el equipo de telecomunicaciones»",
+       "«Proceda a desenergizar el dispositivo»",
+       "«Busque la cajita con lucecitas donde conecta el internet y desconéctela un minuto»"
+      ],
+      "correcta": 2,
+      "explica": "Describe lo que el usuario ve y lo que debe hacer, en palabras de todos los días."
+     },
+     {
+      "p": "El aviso de grabación al inicio de la llamada…",
+      "ops": [
+       "No se toca, aunque la IA proponga acortarlo",
+       "Se reescribe más corto",
+       "Se omite en soporte técnico"
+      ],
+      "correcta": 0,
+      "explica": "Es parte obligatoria del guion."
+     },
+     {
+      "p": "Para saber si la nueva versión funciona…",
+      "ops": [
+       "Le preguntas a la IA",
+       "Revisas si bajan las preguntas de «¿cuál equipo?» y la duración de ese paso",
+       "La dejas sin medir"
+      ],
+      "correcta": 1,
+      "explica": "El cambio se valida con llamadas reales."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "La parte ___ del guion no se edita con IA.",
+      "resp": [
+       "obligatoria"
+      ]
+     },
+     {
+      "frase": "Un buen guion se escribe para ser ___, no leído.",
+      "resp": [
+       "hablado",
+       "dicho"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu frase acartonada",
+    "pregunta": "Copia una frase de la parte flexible de tu guion que los usuarios no entienden a la primera y escribe dos versiones habladas.",
+    "ayuda": "Hoy dice: … / Versión 1: … / Versión 2: …"
+   }
+  ],
+  "c-ia-callcenter-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una campaña de telefonía móvil, un usuario descubre que le cobran un paquete de datos que dice no haber contratado. Grita que quiere a un supervisor y amenaza con cambiarse de compañía. Tu campaña te autoriza a levantar una aclaración y a dar el plazo oficial del proceso."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Tu primera respuesta es…",
+      "ops": [
+       "«Tiene razón en querer que se aclare ese cargo; déjeme ver el detalle»",
+       "«Todos los paquetes se aceptan por mensaje, seguro lo aceptó»",
+       "«Un supervisor no le va a decir nada distinto»"
+      ],
+      "correcta": 0,
+      "explica": "Reconoces el motivo y te pones a revisar, sin discutir."
+     },
+     {
+      "p": "Si insiste en el supervisor después de ofrecerle la aclaración…",
+      "ops": [
+       "Le dices que no hay supervisores disponibles",
+       "Escalas de forma ordenada con la nota del caso lista",
+       "Lo transfieres sin decirle nada"
+      ],
+      "correcta": 1,
+      "explica": "Pedir supervisor es su derecho; tu trabajo es que el escalamiento sea ordenado."
+     },
+     {
+      "p": "La IA te propone decir «le bonificamos el paquete hoy mismo». Tú…",
+      "ops": [
+       "Lo dices para calmarlo",
+       "Lo dices como posibilidad",
+       "No lo dices: no está autorizado"
+      ],
+      "correcta": 2,
+      "explica": "Solo ofreces lo autorizado: la aclaración y su plazo oficial."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Ante la amenaza de cambiarse de compañía",
+    "malTitulo": "Discute",
+    "mal": "«Usted está en su derecho, pero le aviso que en todas las compañías pasa lo mismo.»",
+    "bienTitulo": "Resuelve",
+    "bien": "«Entiendo que así no quiera seguir. Lo que sí puedo hacer ahora es levantar la aclaración de ese cargo; le doy el folio y el plazo del proceso.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu escalamiento",
+    "pregunta": "Escribe cómo escalas una llamada en tu campaña: qué intentas antes, qué dejas en la nota y qué le dices al usuario mientras lo transfieres.",
+    "ayuda": "Antes intento… / En la nota dejo… / Le digo…"
+   }
+  ],
+  "c-ia-callcenter-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un usuario llama por tercera vez por un cambio de plan. Las dos notas anteriores dicen: «Se atendió solicitud» y «Se le dio información». Nadie sabe qué plan pidió ni qué se le prometió."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué faltó en las notas anteriores?",
+      "ops": [
+       "Adjetivos sobre el usuario",
+       "Qué pidió, qué se hizo y qué sigue",
+       "La hora exacta de la llamada"
+      ],
+      "correcta": 1,
+      "explica": "Sin esos puntos, el siguiente agente empieza de cero."
+     },
+     {
+      "p": "Tus notas rápidas dicen «cambio plan, no aplica, 3 meses permanencia». Le pides a la IA…",
+      "ops": [
+       "Ordenarlas en los 4 puntos sin agregar nada",
+       "Completarlas con lo que suele pasar",
+       "Que invente el plan que pidió"
+      ],
+      "correcta": 0,
+      "explica": "La IA ordena; lo que no está en tus notas va como [FALTA DATO]."
+     },
+     {
+      "p": "Si la IA escribe «el usuario aceptó la explicación» y tú no lo registraste…",
+      "ops": [
+       "Lo dejas porque suena bien",
+       "Lo cambias a «parece que aceptó»",
+       "Lo borras"
+      ],
+      "correcta": 2,
+      "explica": "Solo va lo que pasó y tú registraste."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Nota del cambio de plan",
+    "malTitulo": "Vacía",
+    "mal": "«Se le dio información.»",
+    "bienTitulo": "Útil",
+    "bien": "«Titular pide cambio a plan menor. Se verificó: le faltan 3 meses de permanencia. Se informó que el cambio procede al terminar ese plazo. Pendiente: sin acción hasta [FECHA]; si llama antes, no aplica cambio.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu nota de hoy",
+    "pregunta": "Toma una nota que hayas escrito esta semana (sin datos personales) y reescríbela en los 4 puntos.",
+    "ayuda": "Pidió… / Se verificó… / Se hizo… / Sigue…"
+   }
+  ],
+  "c-ia-callcenter-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una campaña de una aerolínea de bajo costo, el catálogo tiene 12 tipificaciones. Este mes, 38% de los casos quedaron como «Información general», y el cliente corporativo pregunta por qué no le reportan cuántas llamadas son por cambios de vuelo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Información general» tan alto indica…",
+      "ops": [
+       "Que los usuarios solo quieren platicar",
+       "Que la campaña va bien",
+       "Que se tipifica por comodidad y se pierde el motivo real"
+      ],
+      "correcta": 2,
+      "explica": "Una categoría comodín tan grande esconde los motivos que sí importan."
+     },
+     {
+      "p": "Un usuario pregunta cuánto cuesta cambiar su vuelo y lo cambia. Se tipifica como…",
+      "ops": [
+       "Cambio de vuelo",
+       "Información general",
+       "Otros"
+      ],
+      "correcta": 0,
+      "explica": "Se tipifica por lo que resolvió la llamada."
+     },
+     {
+      "p": "Con la IA puedes…",
+      "ops": [
+       "Pegarle las grabaciones para que tipifique",
+       "Practicar casos descritos sin datos con tu catálogo",
+       "Cambiar el catálogo sin avisar"
+      ],
+      "correcta": 1,
+      "explica": "La IA sirve para practicar criterios; el catálogo lo define la campaña."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Caso y tipificación",
+    "pares": [
+     [
+      "Quiere mover su vuelo a otra fecha",
+      "Cambio de vuelo"
+     ],
+     [
+      "Pregunta cuántas maletas incluye su tarifa",
+      "Equipaje"
+     ],
+     [
+      "Su vuelo se canceló y pide opciones",
+      "Cancelación por la aerolínea"
+     ],
+     [
+      "No le llegó el pase de abordar",
+      "Documentos de viaje"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu categoría comodín",
+    "pregunta": "¿Qué categoría de tu catálogo se usa como comodín? Escribe 3 casos que hoy caen ahí y la categoría correcta de cada uno.",
+    "ayuda": "Comodín: … / Caso 1 → …"
+   }
+  ],
+  "c-ia-callcenter-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una agente sacó 72 en su monitoreo. El evaluador anotó: «no verificó identidad antes de dar el saldo» y «no confirmó acuerdos». Ella quiere usar la IA para preparar su plan de mejora."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué punto es más grave?",
+      "ops": [
+       "No confirmar acuerdos",
+       "Dar el saldo sin verificar identidad",
+       "Los dos pesan igual siempre"
+      ],
+      "correcta": 1,
+      "explica": "Dar información sin verificar expone al usuario; en muchas cédulas es un error crítico."
+     },
+     {
+      "p": "A la IA le pega…",
+      "ops": [
+       "Los dos comentarios del evaluador y los criterios, sin datos de la llamada",
+       "La grabación completa",
+       "La cédula con su nombre y número de empleado"
+      ],
+      "correcta": 0,
+      "explica": "Para un plan de mejora basta con los hallazgos y los criterios."
+     },
+     {
+      "p": "Un buen plan de mejora incluye…",
+      "ops": [
+       "Promesas de sacar 100",
+       "Quejas sobre el evaluador",
+       "Una acción concreta por hallazgo y cómo lo va a practicar"
+      ],
+      "correcta": 2,
+      "explica": "Acción concreta y práctica, no intenciones."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Plan de mejora",
+    "malTitulo": "Intención",
+    "mal": "«Voy a poner más atención en mis llamadas.»",
+    "bienTitulo": "Acción",
+    "bien": "«Antes de dar cualquier dato, hago las preguntas de verificación del procedimiento. Al cerrar, repito folio y plazo. Lo practico 5 veces con el simulador antes de mi turno.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu plan de mejora",
+    "pregunta": "Toma el último hallazgo de calidad que te hicieron y escribe una acción concreta y cómo la vas a practicar esta semana.",
+    "ayuda": "Hallazgo: … / Acción: … / Práctica: …"
+   }
+  ],
+  "c-ia-callcenter-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en la campaña de una cadena de cines, el abandono del día fue 6%, pero entre 12:00 y 14:00, cuando salen los estrenos, llegó a 15%. En la junta alguien propone «que todos bajen su TMO»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "El problema principal está en…",
+      "ops": [
+       "El TMO de todos los agentes",
+       "La franja de 12:00 a 14:00 de los estrenos",
+       "El turno de la noche"
+      ],
+      "correcta": 1,
+      "explica": "El promedio del día esconde el pico. Se ataca donde está."
+     },
+     {
+      "p": "Una acción razonable es…",
+      "ops": [
+       "Ajustar comidas y descansos para tener más gente en ese pico",
+       "Cortar llamadas a 3 minutos",
+       "Quitar el menú del conmutador"
+      ],
+      "correcta": 0,
+      "explica": "El abandono en picos es sobre todo de personal disponible."
+     },
+     {
+      "p": "Bajar el TMO a la fuerza probablemente…",
+      "ops": [
+       "Resuelve el pico",
+       "No cambia nada",
+       "Sube los recontactos y las quejas"
+      ],
+      "correcta": 2,
+      "explica": "Cortar llamadas mueve el problema a otro indicador."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "El promedio del día puede ___ un pico de abandono.",
+      "resp": [
+       "esconder",
+       "ocultar"
+      ]
+     },
+     {
+      "frase": "Abandono = (recibidas − atendidas) ÷ ___.",
+      "resp": [
+       "recibidas"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu pico",
+    "pregunta": "¿En qué franja de tu turno se concentran las llamadas? Escribe qué pasa en esa franja y una acción que no dependa de «hablar más rápido».",
+    "ayuda": "Franja: … / Pasa que… / Acción: …"
+   }
+  ],
+  "c-ia-callcenter-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una campaña de un banco digital, 30% de las llamadas del turno son para desbloquear la app después de cambiar de celular. El paso a paso existe, pero no está en ningún mensaje automático."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es la propuesta con más sustento?",
+      "ops": [
+       "«Hay muchas llamadas de la app»",
+       "«Los usuarios no saben usar su celular»",
+       "«30% de las llamadas son de desbloqueo; con una guía enviada al detectar el cambio de equipo bajaría ese volumen»"
+      ],
+      "correcta": 2,
+      "explica": "Dato, acción e indicador a revisar."
+     },
+     {
+      "p": "¿Quién tendría que ejecutar esa acción?",
+      "ops": [
+       "El área que administra los mensajes de la app, con aprobación del cliente corporativo",
+       "Cada agente por su cuenta",
+       "La IA"
+      ],
+      "correcta": 0,
+      "explica": "Una propuesta nombra al responsable real."
+     },
+     {
+      "p": "Al pedirle a la IA que redacte la propuesta, le das…",
+      "ops": [
+       "El nombre del banco y capturas de la app",
+       "Tus números ya calculados y la acción, sin nombre del cliente corporativo",
+       "Los folios de los usuarios"
+      ],
+      "correcta": 1,
+      "explica": "Solo datos agregados y propios."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Propuesta al supervisor",
+    "malTitulo": "Sin dato",
+    "mal": "«Deberíamos hacer algo con las llamadas de la app, son muchísimas.»",
+    "bienTitulo": "Con dato",
+    "bien": "«El 30% de las llamadas del turno son de desbloqueo tras cambio de celular. Propongo una guía automática al detectar el cambio de equipo. Revisamos en un mes si baja ese porcentaje.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu propuesta",
+    "pregunta": "Escribe una propuesta de mejora de tu campaña en 4 renglones: dato, problema, acción con responsable e indicador a revisar.",
+    "ayuda": "Dato: … / Problema: … / Acción: … / Indicador: …"
+   }
+  ],
+  "c-ia-callcenter-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Un mes después:</b> en el turno de la tarde el abandono bajó a 5% al mover descansos, pero el TMO volvió a 7 minutos porque se agregó un paso de verificación nuevo que pidió el cliente corporativo. Tu supervisor pregunta si eso está mal."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿El TMO de 7 minutos es un problema?",
+      "ops": [
+       "Sí, siempre hay que bajarlo",
+       "No necesariamente: el nuevo paso es obligatorio y hay que ajustar la meta",
+       "Sí, hay que saltarse la verificación"
+      ],
+      "correcta": 1,
+      "explica": "Si el proceso cambia, la meta se revisa con el cliente corporativo."
+     },
+     {
+      "p": "Para explicarlo en la junta, muestras…",
+      "ops": [
+       "Solo el TMO",
+       "Tu opinión",
+       "El TMO antes y después del paso nuevo, y que la resolución no bajó"
+      ],
+      "correcta": 2,
+      "explica": "Los indicadores se leen juntos."
+     },
+     {
+      "p": "La IA puede ayudarte a…",
+      "ops": [
+       "Redactar la explicación con tus números ya calculados",
+       "Recalcular el TMO con datos de los agentes",
+       "Cambiar el guion obligatorio"
+      ],
+      "correcta": 0,
+      "explica": "Redactar sí; los números y el guion no."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Explicación en la junta",
+    "malTitulo": "Defensiva",
+    "mal": "«El TMO subió porque nos pusieron más trabajo.»",
+    "bienTitulo": "Con datos",
+    "bien": "«El TMO pasó de 5.8 a 7 minutos desde que entró la verificación nueva; la resolución en primer contacto se mantuvo. Propongo revisar la meta de TMO con el cliente.»"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Operación avanzada: AHT, FCR, CSAT y calidad",
+   "r": "AHT completo, resolución en el primer contacto y satisfacción leídos juntos, y calibración de calidad con coaching sin juicios.",
+   "lecciones": [
+    {
+     "t": "AHT completo: conversación, espera y trabajo posterior",
+     "obj": "Calcular el AHT con sus tres componentes y detectar cuando la IA o un reporte lo calculan incompleto o proponen bajarlo con atajos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "El <b>AHT</b> (tiempo promedio de atención, que en muchos pisos se llama TMO) no es solo lo que hablas. Incluye tres partes: <b>conversación</b>, <b>espera</b> (cuando pones al usuario en hold) y <b>trabajo posterior</b> (notas, tipificación, trámites al colgar). AHT = (conversación + espera + trabajo posterior) ÷ llamadas atendidas. Si solo miras la conversación, el número sale más bajo y engaña."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con el AHT:</b> calcularlo solo con minutos hablados, inventar «el estándar de la industria» para tu campaña y sugerir atajos como saltarse la verificación o dejar las notas para después. La meta de AHT la fija tu campaña, no la IA."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "El AHT del equipo",
+       "datos": [
+        [
+         "Concepto",
+         "Minutos"
+        ],
+        [
+         "Conversación",
+         2400
+        ],
+        [
+         "Espera (hold)",
+         360
+        ],
+        [
+         "Trabajo posterior",
+         540
+        ],
+        [
+         "Llamadas atendidas",
+         600
+        ],
+        [
+         "AHT completo",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B6",
+         "formula": "=(B2+B3+B4)/B5",
+         "esperado": 5.5,
+         "texto": "<b>B6</b>: AHT = (conversación + espera + trabajo posterior) ÷ llamadas.",
+         "pista": "=(B2+B3+B4)/B5"
+        },
+        {
+         "celda": "B7",
+         "formula": "=B2/B5",
+         "esperado": 4,
+         "texto": "<b>B7</b>: el número engañoso: solo conversación ÷ llamadas.",
+         "pista": "=B2/B5",
+         "explica": "4 contra 5.5 minutos: un reporte con solo conversación esconde 1.5 minutos por llamada, casi todo en trabajo posterior."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Entiende tu AHT",
+       "texto": "Estos son los minutos de mi equipo, ya calculados y sin nombres: conversación [ ], espera [ ], trabajo posterior [ ], llamadas atendidas [ ]. Mi AHT calculado es [ ]. Explícame qué componente pesa más y dame 3 preguntas para investigar por qué, sin proponer saltarse pasos obligatorios ni inventar metas."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "El trabajo posterior es alto. Una causa probable es…",
+         "ops": [
+          "Que el usuario habla mucho",
+          "Un sistema lento o una tipificación confusa",
+          "La música de espera"
+         ],
+         "correcta": 1,
+         "explica": "El trabajo posterior depende de lo que pasa al colgar: captura, sistema y catálogo."
+        },
+        {
+         "p": "La IA sugiere bajar el AHT saltándose la verificación. Tú…",
+         "ops": [
+          "Lo descartas: es un paso obligatorio",
+          "Lo pruebas un día",
+          "Lo haces solo con usuarios frecuentes"
+         ],
+         "correcta": 0,
+         "explica": "Un atajo que expone datos no es una mejora."
+        },
+        {
+         "p": "Un reporte dice AHT de 4 minutos y solo usa minutos hablados. Tú…",
+         "ops": [
+          "Lo celebras",
+          "Lo copias en tu propuesta",
+          "Lo recalculas con espera y trabajo posterior"
+         ],
+         "correcta": 2,
+         "explica": "El AHT completo lleva los tres componentes."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "AHT = (conversación + espera + trabajo posterior) ÷ llamadas.",
+        "Solo minutos hablados da un AHT engañoso.",
+        "La meta la fija la campaña; nada de atajos que salten lo obligatorio."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "FCR y CSAT: resolución y satisfacción leídas juntas",
+     "obj": "Calcular FCR y CSAT, leerlos junto con el AHT y usar IA para explicar cambios sin inventar causas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "El <b>FCR</b> (resolución en el primer contacto) es el porcentaje de casos resueltos sin que el usuario tenga que volver: resueltos al primer contacto ÷ casos. El <b>CSAT</b> (satisfacción) suele medirse con una encuesta de 1 a 5: respuestas con 4 o 5 ÷ total de respuestas. La definición exacta la fija tu campaña. Juntos dicen algo que el AHT no: si el usuario quedó resuelto y conforme."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> en una campaña de citas de servicio para una agencia automotriz en Querétaro, la semana 2 tuvo menos casos, pero el supervisor quiere saber si mejoró o solo bajó el volumen."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "FCR y CSAT por semana",
+       "datos": [
+        [
+         "Semana",
+         "Casos",
+         "Resueltos 1er contacto",
+         "Encuestas",
+         "Calificación 4 o 5"
+        ],
+        [
+         "Semana 1",
+         800,
+         560,
+         120,
+         84
+        ],
+        [
+         "Semana 2",
+         760,
+         570,
+         110,
+         88
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "F2",
+         "formula": "=C2/B2",
+         "esperado": 0.7,
+         "texto": "<b>F2</b>: FCR de la semana 1.",
+         "pista": "=C2/B2"
+        },
+        {
+         "celda": "F3",
+         "formula": "=C3/B3",
+         "esperado": 0.75,
+         "texto": "<b>F3</b>: FCR de la semana 2.",
+         "pista": "=C3/B3"
+        },
+        {
+         "celda": "G3",
+         "formula": "=E3/D3",
+         "esperado": 0.8,
+         "texto": "<b>G3</b>: CSAT de la semana 2 (4 o 5 ÷ encuestas).",
+         "pista": "=E3/D3",
+         "explica": "FCR sube de 70% a 75% y el CSAT de la semana 2 es 80% (la semana 1 fue 70%). Mejoró la resolución, no solo bajó el volumen."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con FCR y CSAT:</b> contar las calificaciones de 3 como satisfechas, afirmar causas («subió porque el equipo está más motivado») sin datos y comparar con cifras de otras industrias. Pídele que explique, no que adivine."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "De 200 encuestas, 140 son 4 o 5 y 30 son 3. El CSAT es…",
+         "ops": [
+          "70%",
+          "85%",
+          "15%"
+         ],
+         "correcta": 0,
+         "explica": "140 ÷ 200. Los 3 no cuentan como satisfechos."
+        },
+        {
+         "p": "FCR alto y CSAT bajo sugiere revisar…",
+         "ops": [
+          "Solo el AHT",
+          "El trato y los tiempos de espera",
+          "El catálogo de tipificaciones"
+         ],
+         "correcta": 1,
+         "explica": "El caso se resuelve, pero la experiencia no convence."
+        },
+        {
+         "p": "La IA dice que el CSAT subió «por la motivación del equipo». Tú…",
+         "ops": [
+          "Lo pones en el reporte",
+          "Lo cambias por «por el clima laboral»",
+          "Lo quitas: es una causa sin datos"
+         ],
+         "correcta": 2,
+         "explica": "Las causas se investigan; no se suponen."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "FCR = resueltos al primer contacto ÷ casos.",
+        "CSAT = respuestas 4 o 5 ÷ total de respuestas (según tu campaña).",
+        "AHT, FCR y CSAT se leen juntos; las causas se investigan."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Calibración de calidad y coaching sin juicios",
+     "obj": "Preparar con IA una sesión de calibración y un plan de coaching basado en la cédula, sin juicios personales ni datos identificables.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Si dos evaluadores califican la misma llamada con 90 y con 68, el problema no es el agente: es que la cédula se interpreta distinto. La <b>calibración</b> es la sesión donde evaluadores y supervisores califican la misma llamada, comparan y acuerdan criterios. El <b>coaching</b> es la conversación con el agente para mejorar un punto concreto."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> en un BPO de Monterrey, dos evaluadores calificaron la misma llamada de una campaña de seguros de auto: uno puso 90 y otro 68. La diferencia está en «verificación» y «cierre»."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Prepara la calibración",
+       "texto": "Estos son los criterios de nuestra cédula: [pegar]. Dos evaluadores calificaron la misma llamada (transcripción ya sin datos personales ni nombre del cliente corporativo) así: evaluador A [calificación y comentarios], evaluador B [calificación y comentarios]. Dime en qué criterios difieren, qué parte de la cédula admite dos lecturas y propón 3 preguntas para acordar el criterio. No agregues criterios que no estén en la cédula."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en calidad:</b> agregar criterios que tu cédula no tiene, poner etiquetas a la persona («poco comprometido», «flojo») y proponer calificaciones como si fueran oficiales. El coaching se basa en conductas observables de la llamada."
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Juicio vs. conducta observable",
+       "pares": [
+        [
+         "«Es flojo»",
+         "«No hizo el trabajo posterior en 4 de 10 llamadas»"
+        ],
+        [
+         "«No le importa el usuario»",
+         "«Interrumpió al usuario 3 veces antes del sondeo»"
+        ],
+        [
+         "«Es descuidado»",
+         "«Dio el saldo antes de verificar identidad»"
+        ],
+        [
+         "«Tiene mala actitud»",
+         "«No confirmó folio ni plazo al cerrar»"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Si dos evaluadores difieren mucho, lo primero es…",
+         "ops": [
+          "Promediar las calificaciones",
+          "Calibrar el criterio de la cédula",
+          "Repetir la evaluación con otro agente"
+         ],
+         "correcta": 1,
+         "explica": "La diferencia está en el criterio, no en la llamada."
+        },
+        {
+         "p": "Para preparar el coaching, a la IA le das…",
+         "ops": [
+          "Los hallazgos de la cédula sin nombre ni número de empleado",
+          "El expediente del agente",
+          "La grabación completa"
+         ],
+         "correcta": 0,
+         "explica": "Solo lo necesario, sin datos identificables."
+        },
+        {
+         "p": "Un coaching útil termina con…",
+         "ops": [
+          "Una advertencia",
+          "Una calificación nueva",
+          "Una acción concreta y cuándo se revisa"
+         ],
+         "correcta": 2,
+         "explica": "Acción y seguimiento."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu coaching",
+       "pregunta": "Escribe un hallazgo de calidad como conducta observable (no juicio), la acción que propondrías y cuándo la revisarías.",
+       "ayuda": "Conducta: … / Acción: … / Revisión: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Calibrar es acordar cómo se lee la cédula.",
+        "Coaching con conductas observables, no etiquetas.",
+        "La IA no agrega criterios ni califica oficialmente."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "AHT =",
+     "ops": [
+      "Conversación ÷ llamadas",
+      "(Conversación + espera + trabajo posterior) ÷ llamadas",
+      "Llamadas ÷ minutos",
+      "Espera ÷ conversación"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "De 110 encuestas, 88 son 4 o 5. El CSAT es…",
+     "ops": [
+      "88%",
+      "110%",
+      "22%",
+      "80%"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "AHT baja y FCR baja al mismo tiempo sugiere…",
+     "ops": [
+      "Que se cortan llamadas sin resolver",
+      "Una mejora real",
+      "Más encuestas",
+      "Nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Dos evaluadores califican la misma llamada con 90 y 68. Se necesita…",
+     "ops": [
+      "Sancionar al agente",
+      "Calibrar el criterio",
+      "Promediar",
+      "Ignorarlo"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "«Es flojo» en un coaching es…",
+     "ops": [
+      "Una conducta observable",
+      "Un criterio de la cédula",
+      "Un juicio que se cambia por conducta observable",
+      "Un dato útil"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La meta de AHT de tu campaña la fija…",
+     "ops": [
+      "La IA",
+      "El estándar de otra industria",
+      "Cada agente",
+      "Tu campaña con el cliente corporativo"
+     ],
+     "correcta": 3
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado como líder de equipo con errores plantados de la IA para detectar, y la construcción de tu kit personal de call center con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: tu primer día como líder de equipo",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en la operación: indicadores mal calculados, guiones mutilados, juicios y datos personales.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Te acaban de promover a líder de equipo en un BPO de Monterrey, en una campaña de soporte de una tienda departamental. Usas un asistente de IA para ir más rápido. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de que llegue a la junta, al guion o a tu equipo."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 7:30 a. m. Reporte para la junta.</b> Le das a la IA los minutos de ayer: conversación 1,980, espera 330, trabajo posterior 420, llamadas atendidas 550. Te responde: «AHT de 3.6 minutos, excelente, por debajo del estándar de la industria»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "Calcula el AHT correcto y explica los dos errores del reporte de la IA.",
+       "ayuda": "AHT correcto: … / Error 1: … / Error 2: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:00 a. m. Guion nuevo.</b> Pediste a la IA pulir el guion de devoluciones. La versión nueva suena mucho mejor, pero ya no aparece el aviso de privacidad del inicio y la verificación quedó como «si hay tiempo, confirma los datos»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "¿Qué partes del guion no se podían tocar? Escribe qué devuelves a su versión original y qué cambios de la IA sí conservas.",
+       "ayuda": "Se restaura… / Se conserva…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 1:00 p. m. Retroalimentación a un agente.</b> Un compañero te pasa lo que usó para preparar un coaching: pegó en una IA pública el nombre completo del agente, su número de empleado y sus calificaciones. El texto que salió dice: «Pedro es flojo y no le interesa el trabajo»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Señala los dos problemas y reescribe la retroalimentación con conductas observables.",
+       "ayuda": "Problema 1: … / Problema 2: … / Retroalimentación: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 5:00 p. m. Satisfacción del día.</b> De 200 encuestas: 90 calificaron 5, 50 calificaron 4, 30 calificaron 3 y 30 calificaron 1 o 2. La IA reporta «CSAT de 85%, subió porque el equipo está más motivado»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "Calcula el CSAT con la definición de 4 o 5 y explica qué parte del reporte no puedes usar.",
+       "ayuda": "CSAT: … / No uso… porque…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "El AHT correcto de la escena 1 es aproximadamente…",
+         "ops": [
+          "3.6 minutos",
+          "5 minutos",
+          "4.2 minutos"
+         ],
+         "correcta": 1,
+         "explica": "(1,980 + 330 + 420) ÷ 550 = 2,730 ÷ 550 ≈ 4.96."
+        },
+        {
+         "p": "En la escena 2, la verificación…",
+         "ops": [
+          "Se restaura como obligatoria",
+          "Se deja opcional",
+          "Se mueve al final de la llamada"
+         ],
+         "correcta": 0,
+         "explica": "Lo obligatorio no se edita."
+        },
+        {
+         "p": "El CSAT correcto de la escena 4 es…",
+         "ops": [
+          "85%",
+          "45%",
+          "70%"
+         ],
+         "correcta": 2,
+         "explica": "(90 + 50) ÷ 200 = 70%. La IA contó los 3 y además inventó la causa."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "AHT con sus tres componentes y sin «estándares» inventados.",
+        "Aviso y verificación obligatorios no se tocan.",
+        "Coaching sin datos identificables ni etiquetas; causas con datos."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de call center con IA",
+     "obj": "Construir tu kit personal para usar IA en el piso: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Ahora conviertes el curso en un <b>kit que uses en tu siguiente turno</b>. Responde cada paso con tu campaña real en mente."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más vas a usar (guion, nota de cierre, tipificación, indicadores, calibración) y adáptalos a tu campaña.",
+       "ayuda": "1. … 2. … 3. … 4. … 5. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tus 5 reglas: qué nunca pegas, qué marcadores usas, qué herramienta está autorizada por escrito y a quién preguntas.",
+       "ayuda": "Nunca pego… / Uso [CLIENTE], [FOLIO]… / Autorizada: … / Pregunto a…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe 6 puntos que revisas antes de usar cualquier texto o número que te dio la IA.",
+       "ayuda": "□ ¿Lo obligatorio intacto? □ ¿AHT con 3 componentes? □ ¿Sin plazos inventados? □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real: un reporte de AHT, FCR y CSAT de tu equipo, una propuesta de mejora o una guía de notas de cierre. Pega la versión final revisada.",
+       "ayuda": "Entregable: … / Lo presento a… el…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE CALL CENTER CON IA — [tu nombre] — [campaña, sin nombre del cliente corporativo] — [fecha]\n\n1. Herramienta autorizada y para qué: [ ]\n2. Política de datos (5 reglas): [ ]\n3. Biblioteca de prompts: guion [ ], nota de cierre [ ], tipificación [ ], indicadores [ ], calibración [ ]\n4. Lista de verificación: [ ]\n5. Indicadores que reviso y cómo se calculan: AHT [ ], FCR [ ], CSAT [ ], abandono [ ]\n6. Entregable real: [ ]\n7. Próxima revisión del kit: [fecha]",
+       "nota": "Guárdala donde tu campaña permita y actualízala cuando cambie el guion o la cédula."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tu campaña y herramienta autorizada.",
+        "Política de datos y lista de verificación siempre.",
+        "Un entregable real con indicadores bien calculados."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Con conversación 1,980, espera 330, trabajo posterior 420 y 550 llamadas, el AHT es aprox…",
+     "ops": [
+      "3.6 minutos",
+      "4.2 minutos",
+      "5 minutos",
+      "6.3 minutos"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA quita la verificación del guion «para hacerlo más ágil»…",
+     "ops": [
+      "La restauras: es obligatoria",
+      "La dejas opcional",
+      "La mueves al final",
+      "La resumes"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Pegar nombre y número de empleado de un agente en una IA pública…",
+     "ops": [
+      "Está bien si es para ayudarlo",
+      "No se hace: se usan marcadores",
+      "Está bien sin apellido",
+      "Lo decide el agente"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Con 90 de 5, 50 de 4, 30 de 3 y 30 de 1 o 2, el CSAT (4 o 5) es…",
+     "ops": [
+      "85%",
+      "45%",
+      "90%",
+      "70%"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una causa que la IA afirma sin datos…",
+     "ops": [
+      "Se quita o se investiga",
+      "Se reporta",
+      "Se reescribe más formal",
+      "Se promedia"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad de lo que dices y registras con ayuda de IA es…",
+     "ops": [
+      "De la IA",
+      "Del cliente corporativo",
+      "De calidad",
+      "Tuya"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1525 @@
+{
+ "id": "c-ia-atencion-cliente",
+ "horas": 10,
+ "aprender": [
+  "Resolver con IA casos avanzados de posventa: garantías, reembolsos, quejas que escalan a Profeco o a reseñas públicas y seguimiento proactivo.",
+  "Armar tu kit personal de servicio con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "Las políticas en las respuestas tipo las define…",
+   "op": "El agente que conteste primero"
+  },
+  {
+   "p": "«A la brevedad posible» es mejor cambiarlo por…",
+   "op": "«En cuanto sea humanamente posible»"
+  },
+  {
+   "p": "Explicar una política de devolución con varios pasos y documentos",
+   "op": "Un mensaje de voz de 20 segundos"
+  },
+  {
+   "p": "Un cliente molesto comenta en Facebook",
+   "op": "Borrar el comentario sin contestar"
+  },
+  {
+   "p": "«La paquetería tuvo la culpa, no nosotros» es…",
+   "op": "Una forma rápida de cerrar el caso"
+  },
+  {
+   "p": "Lo que más tranquiliza es…",
+   "op": "Un cupón de descuento sin fecha de solución"
+  },
+  {
+   "p": "Una encuesta efectiva tiene…",
+   "op": "Solo preguntas abiertas y largas"
+  },
+  {
+   "p": "«¿Qué tan excelente fue nuestro servicio?» es una pregunta…",
+   "op": "Abierta"
+  },
+  {
+   "p": "El indicador principal es…",
+   "op": "Mensajes enviados por agente al día"
+  },
+  {
+   "p": "Las quejas por entrega tardía se resuelven sobre todo con…",
+   "op": "Respuestas automáticas más rápidas"
+  }
+ ],
+ "extras": {
+  "c-ia-atencion-cliente-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de refacciones para bicicleta en Querétaro recibe cada semana unas 25 preguntas de «¿cuándo me llega mi reembolso?». Hoy cada agente contesta distinto: uno dice «en unos días», otro «cuando el banco quiera» y otro promete «mañana». La política real: el reembolso se solicita al banco en 2 días hábiles después de recibir la pieza devuelta; el tiempo en que se refleja depende del banco de cada cliente."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La respuesta tipo sobre reembolsos debe decir…",
+      "ops": [
+       "«En unos días lo tienes»",
+       "Que lo solicitamos al banco en 2 días hábiles tras recibir la pieza y que el reflejo depende de su banco",
+       "«Mañana sin falta»"
+      ],
+      "correcta": 1,
+      "explica": "Es lo único que la tienda controla y puede cumplir. Prometer una fecha que depende del banco genera la siguiente queja."
+     },
+     {
+      "p": "La IA propone agregar «y te regalamos un cupón de 10%». Tú…",
+      "ops": [
+       "Lo quitas: esa compensación no está en la política",
+       "Lo dejas, suena amable",
+       "Lo cambias a 5% para no regalar tanto"
+      ],
+      "correcta": 0,
+      "explica": "La IA no define compensaciones. Si la empresa no la autorizó, se borra."
+     },
+     {
+      "p": "¿Qué campo conviene dejar como variable en la respuesta tipo?",
+      "ops": [
+       "El nombre del banco del cliente",
+       "El saludo completo",
+       "[FECHA DE RECEPCIÓN] de la pieza devuelta"
+      ],
+      "correcta": 2,
+      "explica": "Con la fecha de recepción el cliente puede calcular cuándo se solicitó el reembolso. El banco no lo sabes ni lo necesitas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta tipo de reembolso",
+    "malTitulo": "Vaga",
+    "mal": "«Hola, tu reembolso está en proceso y se verá reflejado pronto. Gracias por tu paciencia.»",
+    "bienTitulo": "Concreta",
+    "bien": "«Hola, [NOMBRE]. Recibimos tu pieza el [FECHA DE RECEPCIÓN] y pedimos tu reembolso al banco el [FECHA DE SOLICITUD]. El tiempo en que aparece depende de tu banco; si en 10 días hábiles no lo ves, escríbeme y lo reviso contigo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu pregunta más repetida",
+    "pregunta": "Elige la pregunta de posventa que más recibes (reembolso, garantía, cambio, factura). Escribe la política real en 2 renglones y tu respuesta tipo con campos entre corchetes.",
+    "ayuda": "Política real: … / Respuesta: Hola, [NOMBRE]. …"
+   }
+  ],
+  "c-ia-atencion-cliente-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un fabricante de colchones en Toluca pasó por la plantilla 30 conversaciones sobre garantía. La IA marcó [VALIDAR] en tres puntos: si la garantía cubre manchas, si se necesita el ticket original y si el técnico va a domicilio o el cliente lleva el colchón. Tres agentes contestaban tres cosas distintas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Quién decide la respuesta oficial sobre si se necesita el ticket original?",
+      "ops": [
+       "La IA, según lo que suele pasar en otras empresas",
+       "El agente con más antigüedad",
+       "El responsable de garantías, con la póliza en la mano"
+      ],
+      "correcta": 2,
+      "explica": "La respuesta sale del documento de garantía y de quien lo administra, no de la costumbre ni de la IA."
+     },
+     {
+      "p": "Mientras se define la respuesta sobre manchas, los agentes deben…",
+      "ops": [
+       "Decir que se revisará el caso y dar fecha de respuesta",
+       "Contestar lo que crean más probable",
+       "Negar la garantía para no arriesgar"
+      ],
+      "correcta": 0,
+      "explica": "Una respuesta honesta con fecha es mejor que una improvisada que luego hay que desmentir."
+     },
+     {
+      "p": "Una vez definida la respuesta oficial, lo siguiente es…",
+      "ops": [
+       "Guardarla en el correo del supervisor",
+       "Publicarla en la base y avisar al equipo del cambio",
+       "Esperar a la siguiente revisión anual"
+      ],
+      "correcta": 1,
+      "explica": "Si no se publica ni se avisa, cada agente seguirá contestando a su manera."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Qué va en cada artículo de la base",
+    "pares": [
+     [
+      "Pregunta frecuente",
+      "Respuesta corta y oficial en 3 renglones"
+     ],
+     [
+      "Guía paso a paso",
+      "Pasos numerados para tramitar una garantía"
+     ],
+     [
+      "Criterio de decisión",
+      "Cuándo sí y cuándo no aplica un cambio"
+     ],
+     [
+      "Registro de cambios",
+      "Qué se actualizó, cuándo y quién lo aprobó"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu primer [VALIDAR]",
+    "pregunta": "Escribe una pregunta de posventa en la que tu equipo hoy contesta distinto. ¿Quién debería definir la respuesta oficial y para qué fecha?",
+    "ayuda": "Pregunta: … / La decide: … / Fecha: …"
+   }
+  ],
+  "c-ia-atencion-cliente-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una panadería de Mérida con pedidos a domicilio entregó el sábado 14 pasteles con el mensaje de otro cliente. El domingo ya hay tres comentarios públicos en su página, seis mensajes de WhatsApp y dos correos pidiendo reembolso. La dueña quiere contestar a todos hoy, cada quien por su canal."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "En los comentarios públicos, la respuesta ideal…",
+      "ops": [
+       "Explica con detalle el error de la cocina y los reembolsos",
+       "Reconoce el error en una frase y pide seguir por mensaje privado",
+       "Se omite para que no crezca la conversación"
+      ],
+      "correcta": 1,
+      "explica": "En público: breve, empático y a privado. Los detalles de cada pedido no se ventilan."
+     },
+     {
+      "p": "A quien pidió reembolso por correo le mandas…",
+      "ops": [
+       "Un correo con número de caso, qué se reembolsa y en qué fecha",
+       "Un emoji de disculpa",
+       "Un enlace a la política general sin más"
+      ],
+      "correcta": 0,
+      "explica": "El correo es el canal para algo completo y rastreable."
+     },
+     {
+      "p": "Al prompt para redactar los mensajes le pegas…",
+      "ops": [
+       "La lista de los 14 clientes con teléfono para que personalice",
+       "Las capturas de los chats tal cual",
+       "La situación y la solución, sin nombres ni teléfonos"
+      ],
+      "correcta": 2,
+      "explica": "La IA redacta con la situación; los datos de cada cliente se llenan después en tu sistema."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "En redes, a un cliente molesto se le responde breve y se le lleva a ___.",
+      "resp": [
+       "privado",
+       "mensaje privado",
+       "inbox"
+      ]
+     },
+     {
+      "frase": "Para algo con pasos, montos y fechas, el mejor canal es el ___.",
+      "resp": [
+       "correo",
+       "correo electrónico",
+       "email"
+      ]
+     },
+     {
+      "frase": "En WhatsApp conviene un ___ por mensaje.",
+      "resp": [
+       "tema",
+       "asunto"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu error por canal",
+    "pregunta": "Piensa en un error reciente de tu negocio. Escribe cómo lo comunicarías en dos canales distintos: la versión pública y la versión privada.",
+    "ayuda": "Público: … / Privado: …"
+   }
+  ],
+  "c-ia-atencion-cliente-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de accesorios para celular en Tijuana envió por segunda vez una funda equivocada al mismo cliente. Él escribe: «Ya es la segunda vez. No sé si son incompetentes o qué». La tienda puede enviar la funda correcta hoy con entrega en 2 días y reembolsarle el envío de la primera devolución."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Aplica ACRES al caso",
+    "preguntas": [
+     {
+      "p": "El paso «comprender» en este caso suena así…",
+      "ops": [
+       "«Tiene razón en estar molesto: es la segunda vez y le hicimos perder tiempo»",
+       "«Estas cosas pasan en temporada alta»",
+       "«Lamentamos cualquier inconveniente»"
+      ],
+      "correcta": 0,
+      "explica": "Nombra el problema concreto (la segunda vez), sin minimizarlo ni usar frases genéricas."
+     },
+     {
+      "p": "El paso «resolver» debe incluir…",
+      "ops": [
+       "«Estamos viendo qué pasó»",
+       "«Hoy sale la funda correcta y le llega el jueves»",
+       "«Le prometemos que no volverá a pasar»"
+      ],
+      "correcta": 1,
+      "explica": "Solución con fecha. Prometer que nunca volverá a pasar no depende del agente."
+     },
+     {
+      "p": "Para el «seguimiento», lo más útil es…",
+      "ops": [
+       "Pedirle que califique el servicio de inmediato",
+       "Esperar a que él vuelva a escribir",
+       "Escribirle el jueves para confirmar que llegó bien"
+      ],
+      "correcta": 2,
+      "explica": "El seguimiento cierra el ciclo; la encuesta va después de que el problema quedó resuelto."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta al cliente de la funda",
+    "malTitulo": "Genérica",
+    "mal": "«Lamentamos cualquier inconveniente que esto le haya ocasionado. Su caso fue turnado al área correspondiente.»",
+    "bienTitulo": "ACRES",
+    "bien": "«Gracias por avisarnos y tiene toda la razón: es la segunda vez y le hicimos perder tiempo. Hoy sale su funda correcta y le llega el jueves. Le reembolsamos el envío de la devolución anterior. El jueves le escribo para confirmar que llegó bien.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu queja repetida",
+    "pregunta": "Escribe una queja real de un cliente al que le falló algo dos veces y redacta la respuesta con los 5 pasos de ACRES.",
+    "ayuda": "Agradecer: … / Comprender: … / Resolver: … / Extra: … / Seguimiento: …"
+   }
+  ],
+  "c-ia-atencion-cliente-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una agencia de viajes en Oaxaca canceló un tour a Hierve el Agua por lluvia. Una clienta llama furiosa: viajó desde Monterrey solo para eso y dice que nadie le avisó. La agencia puede reprogramar para mañana o devolver el importe del tour."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Tu primera frase es…",
+      "ops": [
+       "«Señora, la lluvia no es culpa de la agencia»",
+       "«Entiendo: viajó hasta acá para esto y no le avisamos a tiempo»",
+       "«Cálmese para que la pueda ayudar»"
+      ],
+      "correcta": 1,
+      "explica": "Primero validas su molestia y reconoces la falla real: el aviso tardío."
+     },
+     {
+      "p": "Cuando ya bajó el tono, ofreces…",
+      "ops": [
+       "Las dos opciones reales: reprogramar mañana o devolver el importe",
+       "Una disculpa y nada más",
+       "Un tour distinto que no está autorizado"
+      ],
+      "correcta": 0,
+      "explica": "Opciones concretas y autorizadas; ella elige."
+     },
+     {
+      "p": "En el simulador de cliente difícil, este caso sirve para practicar…",
+      "ops": [
+       "Cómo cobrar penalización por cancelación",
+       "Cómo explicar la meteorología",
+       "Cómo reconocer una falla propia sin culpar al clima"
+      ],
+      "correcta": 2,
+      "explica": "El clima no es la falla; el aviso tardío sí. Practicar esa distinción cambia la conversación."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Lo que dice la clienta y lo que necesita oír",
+    "pares": [
+     [
+      "«¡Nadie me avisó!»",
+      "Reconocer el aviso tardío"
+     ],
+     [
+      "«Viajé desde Monterrey para esto»",
+      "Validar lo que invirtió en venir"
+     ],
+     [
+      "«Quiero mi dinero»",
+      "La opción de devolución con fecha"
+     ],
+     [
+      "«Voy a publicar esto»",
+      "Respeto a su decisión y la solución de todos modos"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu frase que enciende",
+    "pregunta": "Escribe una frase que tú o tu equipo dicen seguido y que enciende al cliente. Reescríbela en una versión que calme y practícala hoy con el simulador.",
+    "ayuda": "Hoy digo: … / Mejor: …"
+   }
+  ],
+  "c-ia-atencion-cliente-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una tienda de ropa en línea en Puebla recibió 62 quejas en el mes. La IA las agrupó así: «talla no corresponde» (27), «tela distinta a la foto» (14), «llegó tarde» (12), «otros» (9). La gerente quiere saber qué atacar primero."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Talla no corresponde» es un síntoma. Una causa raíz probable es…",
+      "ops": [
+       "Que los clientes no saben medirse",
+       "Que la guía de tallas no coincide con las medidas reales de las prendas",
+       "Que la paquetería dobla mal la ropa"
+      ],
+      "correcta": 1,
+      "explica": "Culpar al cliente no es causa raíz. Hay que medir prendas contra la guía publicada."
+     },
+     {
+      "p": "¿Qué porcentaje del total son quejas de talla?",
+      "ops": [
+       "Casi 44%",
+       "27%",
+       "Casi 62%"
+      ],
+      "correcta": 0,
+      "explica": "27 ÷ 62 ≈ 0.435. Casi la mitad de las quejas salen de un solo problema."
+     },
+     {
+      "p": "¿Qué área debe recibir la propuesta de mejora de tallas?",
+      "ops": [
+       "Servicio al cliente, para disculparse mejor",
+       "Mercadotecnia, para cambiar fotos",
+       "Compras o producto, que define medidas y guía"
+      ],
+      "correcta": 2,
+      "explica": "La mejora vive donde se origina el problema."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "Las quejas se agrupan por causa ___, no por síntoma.",
+      "resp": [
+       "raíz",
+       "raiz"
+      ]
+     },
+     {
+      "frase": "Un grupo llamado «otros» muy grande indica que falta ___ mejor las quejas.",
+      "resp": [
+       "clasificar",
+       "tipificar",
+       "agrupar"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu causa raíz",
+    "pregunta": "Toma la queja más común de tu negocio. Escribe el síntoma, la causa raíz probable, el área responsable y una acción que la reduciría.",
+    "ayuda": "Síntoma: … / Causa: … / Área: … / Acción: …"
+   }
+  ],
+  "c-ia-atencion-cliente-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un taller mecánico en Saltillo envía una encuesta después de cada servicio. Solo contesta 1 de cada 20 clientes. La primera pregunta es: «¿Qué tan rápido y amable fue nuestro personal?» y la encuesta tiene 9 preguntas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene la primera pregunta?",
+      "ops": [
+       "Pregunta dos cosas a la vez: rapidez y amabilidad",
+       "Es demasiado corta",
+       "No tiene emojis"
+      ],
+      "correcta": 0,
+      "explica": "Si alguien fue amable pero lento, no sabe qué contestar. Una pregunta, un tema."
+     },
+     {
+      "p": "Para subir la tasa de respuesta, lo primero es…",
+      "ops": [
+       "Agregar más preguntas para que parezca seria",
+       "Enviarla tres veces al día",
+       "Reducirla a 3 preguntas que se contesten en 1 minuto"
+      ],
+      "correcta": 2,
+      "explica": "Menos preguntas, más respuestas."
+     },
+     {
+      "p": "¿Cuándo conviene enviarla?",
+      "ops": [
+       "Un mes después del servicio",
+       "El mismo día que el cliente recoge su auto",
+       "Antes de hacer el servicio"
+      ],
+      "correcta": 1,
+      "explica": "Con la experiencia fresca, el cliente recuerda y contesta más."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pregunta de la encuesta",
+    "malTitulo": "Doble",
+    "mal": "«¿Qué tan rápido y amable fue nuestro personal?»",
+    "bienTitulo": "Un tema",
+    "bien": "«Del 1 al 5, ¿qué tan satisfecho quedaste con el tiempo de entrega de tu auto?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu encuesta",
+    "pregunta": "Escribe tu encuesta posventa de 3 preguntas (una de calificación, un por qué y una de mejora) y el momento exacto en que la enviarías.",
+    "ayuda": "1. … 2. … 3. … / La envío cuando…"
+   }
+  ],
+  "c-ia-atencion-cliente-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un gimnasio en Culiacán puso un asistente automático en WhatsApp. Un socio escribió «quiero cancelar mi membresía» y el bot le contestó con los horarios de clases y un cupón. El socio volvió a escribir tres veces y terminó publicando la captura."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué regla de automatización falló?",
+      "ops": [
+       "Avisar que es un asistente",
+       "Ofrecer siempre hablar con una persona en temas delicados",
+       "Responder rápido"
+      ],
+      "correcta": 1,
+      "explica": "Una cancelación es un trámite que requiere a una persona o un proceso claro, no un cupón."
+     },
+     {
+      "p": "La respuesta correcta del bot a «quiero cancelar» es…",
+      "ops": [
+       "Explicar cómo se cancela o pasar con una persona en ese momento",
+       "Ofrecer un descuento hasta que desista",
+       "Ignorar el mensaje y mandar promociones"
+      ],
+      "correcta": 0,
+      "explica": "Retener está bien si lo hace una persona; bloquear la salida genera quejas públicas."
+     },
+     {
+      "p": "Para detectar este error antes de que se hiciera público servía…",
+      "ops": [
+       "Apagar el bot los fines de semana",
+       "Más emojis en las respuestas",
+       "La revisión semanal de conversaciones"
+      ],
+      "correcta": 2,
+      "explica": "Revisar conversaciones reales muestra dónde el bot atora a los clientes."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta del bot a «quiero cancelar»",
+    "malTitulo": "Atrapa",
+    "mal": "«¡Hola! Te compartimos nuestros horarios de clases y un cupón de 20% en tu siguiente mes. 💪»",
+    "bienTitulo": "Da salida",
+    "bien": "«Soy el asistente automático del gimnasio. Para cancelar tu membresía te paso con una persona del equipo ahora mismo; también puedes hacerlo en recepción. ¿Te comunico?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu salida a humano",
+    "pregunta": "Lista 3 mensajes que, si llegan a tu canal automático, deben pasar de inmediato a una persona. Explica por qué en una línea cada uno.",
+    "ayuda": "1. … porque … 2. … 3. …"
+   }
+  ],
+  "c-ia-atencion-cliente-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Seis semanas después:</b> la tienda de artículos para el hogar ya responde en 2 horas en promedio, pero las reseñas negativas no bajaron tanto. Al revisar, la mitad de las reseñas malas son de clientes que recibieron respuesta rápida… sin solución."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué indicador falta junto al tiempo de respuesta?",
+      "ops": [
+       "Número de mensajes enviados",
+       "Seguidores en redes",
+       "Casos resueltos en el primer contacto"
+      ],
+      "correcta": 2,
+      "explica": "Responder rápido sin resolver solo mueve la queja de lugar."
+     },
+     {
+      "p": "Las respuestas tipo que contestan pero no resuelven se detectan…",
+      "ops": [
+       "Leyendo casos con reseña mala y viendo qué respuesta recibieron",
+       "Contando palabras de cada respuesta",
+       "Preguntándole a la IA si son buenas"
+      ],
+      "correcta": 0,
+      "explica": "El análisis se hace con casos reales, no con opiniones."
+     },
+     {
+      "p": "El siguiente paso razonable es…",
+      "ops": [
+       "Apagar las respuestas automáticas",
+       "Revisar las respuestas tipo que no llevan siguiente paso concreto",
+       "Pedir reseñas positivas a familiares"
+      ],
+      "correcta": 1,
+      "explica": "La respuesta tipo sin siguiente paso deja al cliente igual que antes."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Rápido no es resuelto",
+    "malTitulo": "Rápida y vacía",
+    "mal": "«¡Hola! Ya tenemos tu caso, en breve te damos respuesta.»",
+    "bienTitulo": "Rápida y útil",
+    "bien": "«Hola, ya tengo tu caso. Tu pedido quedó en la paquetería de tu ciudad; lo entregan mañana. Si mañana a las 6 no llega, te reenvío uno sin costo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Rápido y resuelto",
+    "pregunta": "Revisa 3 respuestas recientes de tu equipo que fueron rápidas. ¿Cuál dejó al cliente sin siguiente paso concreto? Reescríbela con solución y fecha.",
+    "ayuda": "Respuesta original: … / Le faltó… / Versión con solución: …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos avanzados de posventa y quejas",
+   "r": "Garantías y reembolsos sin improvisar, quejas que escalan a Profeco o a reseñas públicas, y posventa proactiva para recuperar al cliente.",
+   "lecciones": [
+    {
+     "t": "Garantías, cambios y reembolsos sin improvisar",
+     "obj": "Responder solicitudes de garantía y reembolso con la política real, sin que la IA invente plazos ni derechos, y detectar productos con más fallas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La posventa es donde se gana o se pierde al cliente. Quien compró ya confió en ti; si su producto falla y la respuesta es confusa, siente que lo engañaron. Las solicitudes de garantía, cambio y reembolso tienen algo en común: <b>dependen de documentos</b> (la póliza de garantía, la política de devoluciones, el ticket) y de reglas que tu empresa ya definió. La IA te ayuda a explicarlas claro, pero no puede decidirlas."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Tres solicitudes que se confunden",
+       "encabezados": [
+        "Solicitud",
+        "Qué pide el cliente",
+        "Qué revisas antes de contestar"
+       ],
+       "filas": [
+        [
+         "Garantía",
+         "Que reparen o cambien un producto que falló",
+         "Póliza: vigencia, qué cubre, qué no, cómo se tramita"
+        ],
+        [
+         "Cambio",
+         "Otra talla, color o modelo",
+         "Política de cambios: plazo, estado del producto, ticket"
+        ],
+        [
+         "Reembolso",
+         "Que le devuelvan su dinero",
+         "Política de devoluciones y forma de pago original"
+        ]
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en posventa:</b> inventar plazos «por ley», citar artículos que no existen o que no aplican al caso, prometer reembolsos inmediatos y mezclar garantía con devolución. En México, los derechos del consumidor están en la Ley Federal de Protección al Consumidor y la autoridad es Profeco. Si un texto menciona la ley, verifica en el sitio oficial de Profeco o con el área legal de tu empresa antes de enviarlo."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Respuesta a solicitud de garantía",
+       "texto": "Soy agente de posventa de [giro]. Un cliente reporta (sin datos personales): [falla y fecha de compra aproximada]. Esta es nuestra póliza de garantía: [pegar texto de la póliza]. Esta es nuestra política de cambios y devoluciones: [pegar]. Redacta una respuesta que: 1) diga si aplica garantía, cambio o reembolso según ESOS documentos, 2) explique los pasos y lo que el cliente debe tener a la mano, 3) dé el tiempo que marca la póliza. No cites leyes ni artículos. Si los documentos no resuelven el caso, escribe [CONSULTAR CON RESPONSABLE DE GARANTÍAS] en lugar de decidir tú."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Lo que la IA escribió vs. lo que se envía",
+       "malTitulo": "Inventado",
+       "mal": "«Por ley tiene derecho a la devolución total de su dinero en un plazo de 30 días, conforme a la ley vigente.»",
+       "bienTitulo": "Según la póliza",
+       "bien": "«Su licuadora tiene garantía de 1 año según la póliza que viene en la caja. Tráigala a la sucursal con el ticket o su factura; la revisamos y en máximo 5 días hábiles le decimos si se repara o se cambia.»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Una clienta pide reembolso de una batidora que falló a los 8 meses. La póliza cubre reparación o cambio por 1 año. Tú…",
+         "ops": [
+          "Le ofreces el reembolso para evitar la queja",
+          "Le explicas que aplica garantía (reparación o cambio) y los pasos",
+          "Le dices que ya pasó el plazo de devolución y no hay nada que hacer"
+         ],
+         "correcta": 1,
+         "explica": "Pide reembolso, pero lo que aplica es la garantía. Explicarlo bien evita una negativa injusta y una promesa que no toca."
+        },
+        {
+         "p": "La IA agregó a tu respuesta un número de artículo de la ley que nadie verificó. Tú…",
+         "ops": [
+          "Lo dejas, da seriedad",
+          "Lo cambias por «según la ley»",
+          "Lo quitas y, si hace falta mencionar la ley, lo verificas antes con legal o en Profeco"
+         ],
+         "correcta": 2,
+         "explica": "Una cita legal mal usada compromete a la empresa. Sin verificación, no va."
+        },
+        {
+         "p": "Si la póliza no dice nada del caso (por ejemplo, daño por variación de voltaje)…",
+         "ops": [
+          "Escribes [CONSULTAR CON RESPONSABLE DE GARANTÍAS] y das fecha de respuesta",
+          "Decides tú lo que parezca justo",
+          "Le pides a la IA que decida"
+         ],
+         "correcta": 0,
+         "explica": "Lo que no está escrito lo decide quien administra la garantía."
+        },
+        {
+         "p": "¿Qué diferencia a un cambio de una garantía?",
+         "ops": [
+          "Ninguna, son lo mismo",
+          "El cambio es por preferencia (talla, color); la garantía, por falla",
+          "La garantía solo aplica en tiendas físicas"
+         ],
+         "correcta": 1,
+         "explica": "Confundirlos lleva a pedir requisitos equivocados al cliente."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Qué producto falla más?",
+       "datos": [
+        [
+         "Producto",
+         "Vendidos",
+         "Reclamos de garantía"
+        ],
+        [
+         "Licuadora",
+         820,
+         41
+        ],
+        [
+         "Batidora",
+         430,
+         9
+        ],
+        [
+         "Freidora de aire",
+         610,
+         55
+        ],
+        [
+         "Total",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=SUMA(B2:B4)",
+         "esperado": 1860,
+         "requiere": "SUMA(",
+         "texto": "<b>B5</b>: total de productos vendidos.",
+         "pista": "=SUMA(B2:B4)"
+        },
+        {
+         "celda": "C5",
+         "formula": "=SUMA(C2:C4)",
+         "esperado": 105,
+         "requiere": "SUMA(",
+         "texto": "<b>C5</b>: total de reclamos de garantía.",
+         "pista": "=SUMA(C2:C4)"
+        },
+        {
+         "celda": "D4",
+         "formula": "=C4/B4",
+         "esperado": 0.09016393442622951,
+         "texto": "<b>D4</b>: tasa de reclamos de la freidora (reclamos ÷ vendidos).",
+         "pista": "=C4/B4"
+        },
+        {
+         "celda": "D5",
+         "formula": "=C5/B5",
+         "esperado": 0.056451612903225805,
+         "texto": "<b>D5</b>: tasa de reclamos de todos los productos.",
+         "pista": "=C5/B5",
+         "explica": "La freidora falla en 9 de cada 100 ventas contra 5.6 del total. Ese dato va a compras o al proveedor: el mejor mensaje de garantía no arregla un producto defectuoso."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Qué pedirle al cliente en cada solicitud",
+       "pares": [
+        [
+         "Garantía por falla",
+         "Póliza o comprobante de compra y descripción de la falla"
+        ],
+        [
+         "Cambio de talla",
+         "Producto sin uso, con etiquetas, dentro del plazo de cambios"
+        ],
+        [
+         "Reembolso por pago con tarjeta",
+         "Solicitud dentro del plazo y reembolso a la misma tarjeta"
+        ],
+        [
+         "Producto dañado en el envío",
+         "Fotos del empaque y del producto al recibirlo"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu política en claro",
+       "pregunta": "Toma la póliza de garantía o la política de devoluciones de tu empresa. Escribe en 5 renglones, en lenguaje de cliente, qué cubre, qué no, qué debe traer y cuánto tarda.",
+       "ayuda": "Cubre… / No cubre… / Trae… / Tarda…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Garantía (falla), cambio (preferencia) y reembolso (dinero) no son lo mismo.",
+        "La IA explica la póliza; no inventa plazos ni cita leyes sin verificar.",
+        "La tasa de reclamos por producto se lleva a compras o al proveedor."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Quejas que escalan: Profeco, reseñas públicas y amenazas",
+     "obj": "Manejar con IA una queja que ya salió de tu canal (reseña pública, amenaza de Profeco) con un expediente ordenado y respuestas que no empeoren la situación.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Hay quejas que no se quedan en el chat: el cliente publica una reseña de una estrella, etiqueta a la marca o dice «los voy a demandar en Profeco». En ese momento el objetivo cambia: además de resolver, necesitas <b>no empeorar</b> la situación y tener el caso documentado. La IA ayuda a ordenar la cronología y a bajar el tono de tus respuestas; las decisiones sobre compensaciones o conciliaciones las toma quien tiene autoridad."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una mueblería de Guadalajara entregó un comedor con una pata rota. El cliente esperó 3 semanas la reposición, nadie le dio fecha y publicó una reseña de una estrella con fotos. Hoy escribe: «Si mañana no tengo respuesta, voy a Profeco»."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Qué hacer y qué evitar cuando la queja escala",
+       "encabezados": [
+        "Haz",
+        "Evita"
+       ],
+       "filas": [
+        [
+         "Responder la reseña en público, breve y con empatía",
+         "Discutir los hechos en público o exhibir datos del cliente"
+        ],
+        [
+         "Contactarlo en privado con una solución y fecha",
+         "Pedirle que borre la reseña a cambio de algo"
+        ],
+        [
+         "Armar la cronología del caso con fechas",
+         "Responder con amenazas legales"
+        ],
+        [
+         "Escalar a quien puede autorizar la solución",
+         "Prometer compensaciones sin autorización"
+        ],
+        [
+         "Tomar con seriedad la mención de Profeco",
+         "Tratarla como un berrinche"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Cronología del caso",
+       "texto": "Con estas notas de mi sistema (sin nombre, teléfono ni domicilio del cliente; usa [CLIENTE] y el número de pedido interno [PEDIDO]): [pegar notas]. Arma una cronología en tabla: fecha, qué pasó, quién intervino, qué se le prometió al cliente y si se cumplió. Al final, resume en 3 renglones dónde falló el proceso. No agregues hechos que no estén en las notas; si falta una fecha, escribe [SIN FECHA]."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Respuesta pública a una reseña negativa",
+       "texto": "Esta es una reseña pública negativa sobre nuestro negocio (sin nombre del cliente): [pegar]. Lo que pasó realmente: [hechos]. Lo que ya estamos haciendo: [acción y fecha]. Redacta una respuesta pública de máximo 50 palabras que: agradezca, reconozca lo que sí fallamos, diga que ya lo contactamos en privado y no dé detalles de su pedido. Sin excusas, sin tono legal, sin pedirle que cambie su reseña."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA aquí:</b> escribir en tono de abogado («nos reservamos el derecho…»), admitir responsabilidades legales que nadie ha evaluado, sugerir pedir que borren la reseña a cambio de un descuento, o inventar cómo funciona el procedimiento de Profeco. Si el cliente presenta una queja formal, tu empresa recibirá la notificación y el área responsable decide cómo atender la conciliación; verifica el procedimiento vigente en el sitio oficial de Profeco."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "La primera acción hoy es…",
+         "ops": [
+          "Contestar la reseña con la versión de la mueblería",
+          "Contactar al cliente en privado con una fecha de reposición autorizada",
+          "Esperar a ver si de verdad va a Profeco"
+         ],
+         "correcta": 1,
+         "explica": "Lo que calma es la solución con fecha. La respuesta pública viene después y es breve."
+        },
+        {
+         "p": "La IA sugiere ofrecer 15% de descuento si borra la reseña. Tú…",
+         "ops": [
+          "Lo descartas: condicionar una compensación a borrar la reseña daña más la reputación",
+          "Lo aceptas, es rápido",
+          "Lo subes a 20% para asegurar"
+         ],
+         "correcta": 0,
+         "explica": "Condicionar la ayuda a borrar opiniones suele salir peor si se hace público. Si hay compensación, se da por la falla."
+        },
+        {
+         "p": "¿Para qué sirve la cronología?",
+         "ops": [
+          "Para publicarla y demostrar que el cliente exagera",
+          "Para mandarla al cliente como prueba",
+          "Para que quien decide vea qué se prometió y qué no se cumplió"
+         ],
+         "correcta": 2,
+         "explica": "Es un documento interno para decidir bien y para atender una posible conciliación."
+        },
+        {
+         "p": "El cliente menciona Profeco. La actitud correcta es…",
+         "ops": [
+          "Tomarlo en serio, resolver y escalar el caso a quien corresponde",
+          "Responder que no le tienes miedo",
+          "Dejar de contestarle"
+         ],
+         "correcta": 0,
+         "explica": "Es un derecho del consumidor. Resolver antes de que proceda es lo mejor para ambos."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Respuesta pública a la reseña del comedor",
+       "malTitulo": "Defensiva",
+       "mal": "«Lamentamos su experiencia. Le informamos que los tiempos de reposición dependen del fabricante y están indicados en nuestros términos y condiciones.»",
+       "bienTitulo": "Empática y breve",
+       "bien": "«Gracias por contarlo y tiene razón: tres semanas sin fecha no es aceptable. Ya lo contactamos en privado para resolver la reposición esta semana.»"
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Señal y acción",
+       "pares": [
+        [
+         "Reseña pública con fotos",
+         "Respuesta breve en público y solución en privado"
+        ],
+        [
+         "«Voy a Profeco»",
+         "Escalar a quien autoriza y documentar el caso"
+        ],
+        [
+         "El cliente etiqueta a la marca en redes",
+         "Mover la conversación a mensaje privado"
+        ],
+        [
+         "Promesa incumplida en el historial",
+         "Reconocerla y dar una fecha que sí se pueda cumplir"
+        ],
+        [
+         "Cliente pide hablar con el dueño",
+         "Escalamiento ordenado con la cronología lista"
+        ]
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu protocolo de escalamiento",
+       "pregunta": "Escribe tu protocolo para una queja que escala: quién responde en público, quién contacta en privado, quién autoriza compensaciones y en cuánto tiempo debe pasar cada cosa.",
+       "ayuda": "Público: … / Privado: … / Autoriza: … / Tiempos: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Cuando la queja escala: resolver, no empeorar y documentar.",
+        "Respuesta pública breve; detalles y solución en privado.",
+        "Nada de pedir que borren reseñas ni de tono legal inventado por la IA."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Posventa proactiva: avisar antes de que reclamen",
+     "obj": "Usar IA para avisos proactivos de incidencias y seguimientos posventa, y medir si el cliente resuelto vuelve a comprar.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La mejor queja es la que no llega. Cuando sabes que algo va a fallar (un retraso del proveedor, un lote con defecto, un cambio de horario), avisar primero cambia todo: el cliente pasa de «me fallaron» a «me avisaron». La posventa proactiva también incluye el <b>seguimiento después de resolver</b>: confirmar que la solución funcionó y medir si ese cliente regresa."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una óptica en Puebla sabe que 40 pedidos de lentes graduados se van a retrasar una semana porque el laboratorio cambió de proveedor de micas. Ningún cliente ha reclamado todavía."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Aviso proactivo de incidencia",
+       "texto": "Tenemos esta incidencia: [qué pasa, sin datos de clientes]. Afecta a [número] pedidos. Nueva fecha realista: [fecha confirmada]. Lo que ofrecemos: [opciones autorizadas: esperar, cancelar con reembolso, alternativa]. Redacta: 1) un WhatsApp de máximo 60 palabras que avise antes de que el cliente pregunte, reconozca la molestia y dé las opciones; 2) una respuesta tipo para quien conteste molesto; 3) un mensaje de confirmación para cuando el pedido esté listo. No prometas fechas distintas a la que te di."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Aviso de retraso",
+       "malTitulo": "Tarde y vago",
+       "mal": "(El cliente pregunta el día de entrega) «Hubo un problema con el laboratorio, estamos viendo cuándo quedan.»",
+       "bienTitulo": "Proactivo y claro",
+       "bien": "«Hola, [NOMBRE]. Te aviso antes de tu fecha: tus lentes se retrasan una semana por un cambio en el laboratorio. Nueva fecha: [FECHA]. Si prefieres cancelar, te reembolsamos completo. Una disculpa por la espera.»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA en avisos proactivos:</b> suavizar tanto el mensaje que no se entiende que hay un retraso, agregar «estará listo en tiempo récord» u otras promesas, y culpar al proveedor por nombre. El cliente no necesita saber de quién fue la culpa; necesita la fecha nueva y sus opciones."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "¿Cuándo se manda el aviso a los 40 clientes?",
+         "ops": [
+          "En cuanto se confirma la nueva fecha",
+          "El día en que debían recoger",
+          "Solo a quien pregunte"
+         ],
+         "correcta": 0,
+         "explica": "Avisar primero es lo que convierte el problema en confianza."
+        },
+        {
+         "p": "En el aviso, el nombre del laboratorio que falló…",
+         "ops": [
+          "Se incluye para que quede claro que no fue la óptica",
+          "No hace falta: el cliente necesita fecha y opciones",
+          "Se pone en mayúsculas"
+         ],
+         "correcta": 1,
+         "explica": "Culpar a terceros suena a excusa y no ayuda al cliente."
+        },
+        {
+         "p": "Una semana después de entregar, el seguimiento pregunta…",
+         "ops": [
+          "Si quiere comprar otros lentes",
+          "Si puede dejar una reseña de 5 estrellas",
+          "Si los lentes le quedaron bien y ve cómodo"
+         ],
+         "correcta": 2,
+         "explica": "Primero confirmas que el problema quedó resuelto; lo demás viene después."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿El cliente resuelto regresa?",
+       "datos": [
+        [
+         "Caso",
+         "Días para resolver",
+         "¿Volvió a comprar?"
+        ],
+        [
+         "P-01",
+         2,
+         "Sí"
+        ],
+        [
+         "P-02",
+         6,
+         "No"
+        ],
+        [
+         "P-03",
+         1,
+         "Sí"
+        ],
+        [
+         "P-04",
+         9,
+         "No"
+        ],
+        [
+         "P-05",
+         3,
+         "Sí"
+        ],
+        [
+         "P-06",
+         4,
+         "Sí"
+        ],
+        [
+         "Resumen",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B8",
+         "formula": "=PROMEDIO(B2:B7)",
+         "esperado": 4.166666666666667,
+         "requiere": "PROMEDIO(",
+         "texto": "<b>B8</b>: días promedio para resolver.",
+         "pista": "=PROMEDIO(B2:B7)"
+        },
+        {
+         "celda": "C8",
+         "formula": "=CONTAR.SI(C2:C7,\"Sí\")",
+         "esperado": 4,
+         "requiere": "CONTAR.SI(",
+         "texto": "<b>C8</b>: cuántos clientes volvieron a comprar.",
+         "pista": "=CONTAR.SI(C2:C7,«Sí») con comillas rectas y acento"
+        },
+        {
+         "celda": "B9",
+         "formula": "=CONTAR.SI(B2:B7,\"<=3\")",
+         "esperado": 3,
+         "requiere": "CONTAR.SI(",
+         "texto": "<b>B9</b>: cuántos casos se resolvieron en 3 días o menos.",
+         "pista": "=CONTAR.SI(B2:B7,«<=3») con comillas rectas",
+         "explica": "Los 3 casos resueltos en 3 días o menos volvieron a comprar; los de 6 y 9 días, no. Con 6 casos no es una prueba, pero es una pista que vale la pena medir con más datos."
+        }
+       ]
+      },
+      {
+       "tipo": "completar",
+       "rotulo": "Completa",
+       "items": [
+        {
+         "frase": "El aviso proactivo se envía ___ de que el cliente pregunte.",
+         "resp": [
+          "antes"
+         ]
+        },
+        {
+         "frase": "El seguimiento posventa confirma que la solución ___.",
+         "resp": [
+          "funcionó",
+          "funciono",
+          "sirvió",
+          "sirvio"
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu aviso proactivo",
+       "pregunta": "Piensa en una incidencia que se repite en tu negocio (retraso, falta de inventario, cambio de horario). Escribe el aviso proactivo con fecha y opciones, y cuándo lo enviarías.",
+       "ayuda": "Incidencia: … / Aviso: … / Lo envío cuando…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Seguimiento después de resolver",
+       "texto": "Redacta un mensaje de seguimiento para enviar [días] días después de resolver una queja de [tipo de queja, sin datos del cliente]. Debe: confirmar que la solución funcionó, ofrecer ayuda si no, y agradecer la paciencia. Máximo 40 palabras. Sin promociones ni petición de reseña en este mensaje."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Avisar antes de que reclamen convierte un problema en confianza.",
+        "Fecha nueva y opciones; sin culpar a terceros ni promesas extra.",
+        "Mide si el cliente resuelto vuelve: días para resolver y recompra."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un cliente pide reembolso por un producto que falló dentro de la garantía. Lo que aplica según la póliza es…",
+     "ops": [
+      "Reembolso inmediato siempre",
+      "Nada, porque ya lo usó",
+      "Reparación o cambio según lo que diga la póliza",
+      "Lo que decida la IA"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA cita un artículo de ley en tu respuesta, tú…",
+     "ops": [
+      "Lo quitas o lo verificas con legal o en Profeco antes de enviar",
+      "Lo dejas para dar seriedad",
+      "Lo pones en negritas",
+      "Lo cambias por otro artículo"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si 55 de 610 freidoras tienen reclamo, la tasa es aproximadamente…",
+     "ops": [
+      "5.5%",
+      "9%",
+      "55%",
+      "61%"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Ante una reseña pública negativa, la respuesta pública debe…",
+     "ops": [
+      "Explicar todos los detalles del pedido",
+      "Pedir que la borre a cambio de un descuento",
+      "Citar los términos y condiciones",
+      "Ser breve, reconocer la falla y llevar a privado"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "La cronología de un caso escalado sirve para…",
+     "ops": [
+      "Que quien decide vea qué se prometió y qué no se cumplió",
+      "Publicarla en redes",
+      "Mandarla al cliente como prueba",
+      "Sustituir la solución"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un aviso proactivo de retraso incluye…",
+     "ops": [
+      "El nombre del proveedor que falló",
+      "Una promesa de «tiempo récord»",
+      "La fecha nueva y las opciones del cliente",
+      "Solo una disculpa"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El seguimiento después de resolver una queja pregunta primero…",
+     "ops": [
+      "Si quiere dejar reseña",
+      "Si la solución funcionó",
+      "Si quiere comprar más",
+      "Nada: no se hace"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Cuando un cliente menciona Profeco, lo correcto es…",
+     "ops": [
+      "Ignorarlo",
+      "Responder con amenazas legales",
+      "Pedirle que no lo haga a cambio de algo",
+      "Tomarlo en serio, resolver y escalar a quien corresponde"
+     ],
+     "correcta": 3
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real de posventa con errores plantados de la IA para detectar, y la construcción de tu kit personal de servicio con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un lunes en la posventa de una marca de calzado",
+     "obj": "Detectar en un día de trabajo simulado los errores típicos de la IA en servicio: datos personales, plazos inventados, cifras falsas y promesas del bot.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Trabajas en servicio al cliente de una marca de calzado de León que vende en línea a todo el país. Es lunes y el fin de semana dejó pendientes. Usas un asistente de IA para ir más rápido. En cada escena hay <b>al menos un error</b> plantado: tu trabajo es encontrarlo antes de que llegue al cliente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 9:10 a. m. Garantía de unas botas.</b> Un cliente de Hermosillo dice que la suela de sus botas se despegó a los 4 meses. Le pides a la IA una respuesta y te entrega: «Por ley, todo calzado tiene garantía de 6 meses y usted tiene derecho a un par nuevo o a la devolución total en 24 horas». La póliza de la marca dice: 6 meses contra defectos de fabricación; se revisa el par en 5 días hábiles y, si procede, se repara o se cambia."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "Señala los errores de la respuesta de la IA y reescríbela según la póliza real.",
+       "ayuda": "Errores: … / Respuesta corregida: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 10:30 a. m. Reembolso atorado.</b> Tu compañera te pasa su prompt para que lo uses igual: «Redacta un correo para Mariana Solís, calle Hidalgo 214, colonia Centro, tel. 477 123 4567, tarjeta terminación 8812, que reclama que su reembolso de $1,390 no llega». La respuesta de la IA quedó muy bien escrita."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "¿Cuál es el problema con este prompt, aunque el correo haya quedado bien? Reescribe el prompt de forma segura.",
+       "ayuda": "El problema es… / Prompt seguro: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 12:00 p. m. Reporte de quejas del fin de semana.</b> Pegaste 38 quejas anonimizadas y pediste agruparlas. La IA responde: «El 63% de las quejas son por talla, lo que coincide con el promedio de la industria del calzado. Un cliente escribió: ‹Nunca más les compro, son unos estafadores›». Revisas y encuentras 17 quejas de talla, y ninguna dice «estafadores»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Calcula el porcentaje real de quejas de talla y explica qué otras dos cosas del reporte no puedes usar y por qué.",
+       "ayuda": "Porcentaje real: … / No uso… porque…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 4:30 p. m. El asistente automático.</b> Revisas las conversaciones del bot del fin de semana. A un cliente que escribió «me cobraron dos veces» el bot le respondió: «¡Listo! Ya procesamos tu reembolso, lo verás hoy mismo 😊». Nadie del equipo revisó ese caso."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Qué reglas de automatización se rompieron? Escribe el mensaje que le mandas hoy al cliente y el cambio que pides en el bot.",
+       "ayuda": "Reglas rotas: … / Mensaje al cliente: … / Cambio en el bot: …"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 1, lo correcto sobre la garantía es…",
+         "ops": [
+          "Revisión en 5 días hábiles y reparación o cambio si procede",
+          "Par nuevo en 24 horas",
+          "Devolución total por ley"
+         ],
+         "correcta": 0,
+         "explica": "Lo que manda es la póliza de la marca, no lo que la IA supone de la ley."
+        },
+        {
+         "p": "En la escena 2, aunque el correo quedó bien…",
+         "ops": [
+          "Solo sobra la terminación de la tarjeta",
+          "Nombre, domicilio, teléfono y tarjeta nunca debieron ir en el prompt",
+          "No hay problema si la herramienta es conocida"
+         ],
+         "correcta": 1,
+         "explica": "El resultado bonito no corrige que los datos ya salieron. Se usan marcadores."
+        },
+        {
+         "p": "En la escena 3, 17 de 38 quejas de talla son aproximadamente…",
+         "ops": [
+          "63%",
+          "38%",
+          "45%"
+         ],
+         "correcta": 2,
+         "explica": "17 ÷ 38 ≈ 0.447. La IA inventó la cifra, la comparación con la industria y la cita."
+        },
+        {
+         "p": "En la escena 4, el bot falló porque…",
+         "ops": [
+          "Prometió un reembolso sin revisión y no pasó el caso a una persona",
+          "Usó un emoji",
+          "Contestó en fin de semana"
+         ],
+         "correcta": 0,
+         "explica": "Un cobro doble va a una persona; un bot no promete reembolsos."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La póliza manda, no lo que la IA supone de la ley.",
+        "Un buen resultado no justifica datos personales en el prompt.",
+        "Cifras, comparaciones y citas se verifican contra tus datos; el bot no promete."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de servicio con IA",
+     "obj": "Construir tu kit personal para usar IA en servicio al cliente: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Terminaste el recorrido: respuestas tipo, base de conocimiento, canales, quejas, análisis, encuestas, automatización y casos de posventa. Ahora lo conviertes en un <b>kit que uses mañana</b>. Responde cada paso pensando en tu trabajo real; al final tendrás un documento que puedes compartir con tu equipo o tu supervisor."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más vas a usar y adáptalos a tu negocio: cambia los corchetes por tu giro, tus canales y tus políticas reales.",
+       "ayuda": "1. Respuesta tipo para… 2. Queja con ACRES para… 3. Garantía según póliza… 4. Aviso proactivo de… 5. Análisis de quejas del mes…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tu política personal de datos en 5 reglas: qué nunca pegas en una IA, qué marcadores usas, qué herramienta está autorizada en tu empresa y a quién preguntas si hay duda.",
+       "ayuda": "Nunca pego… / Uso [NOMBRE], [PEDIDO]… / Herramienta autorizada: … / Si dudo, pregunto a…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe tu lista de 6 a 8 puntos que revisas antes de enviar cualquier texto que te ayudó a escribir la IA.",
+       "ayuda": "□ ¿Plazos según política? □ ¿Sin leyes citadas sin verificar? □ ¿Sin compensaciones no autorizadas? □ ¿Siguiente paso con fecha? □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real con tu kit: un set de 5 respuestas tipo de posventa, un análisis de las quejas del mes o un aviso proactivo. Pega aquí la versión final ya revisada con tu lista.",
+       "ayuda": "Entregable: … / Lo revisé con… / Lo voy a usar en…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 5: cómo vas a medir",
+       "pregunta": "Elige 2 indicadores para saber si tu kit funciona (tiempo de primera respuesta, casos resueltos en el primer contacto, satisfacción, recompra después de una queja) y escribe cómo y cada cuánto los revisas.",
+       "ayuda": "Indicador 1: … se revisa cada… / Indicador 2: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit de servicio con IA",
+       "texto": "KIT DE SERVICIO CON IA — [tu nombre] — [empresa / giro] — [fecha]\n\n1. Biblioteca de prompts\n   1.1 Respuesta tipo: [ ]\n   1.2 Queja con ACRES: [ ]\n   1.3 Garantía / cambio / reembolso según póliza: [ ]\n   1.4 Aviso proactivo: [ ]\n   1.5 Análisis de quejas: [ ]\n2. Política de datos (5 reglas): [ ]\n3. Lista de verificación antes de enviar: [ ]\n4. Protocolo de escalamiento (quién responde, quién autoriza, en cuánto tiempo): [ ]\n5. Entregable real: [ ]\n6. Indicadores y frecuencia de revisión: [ ]\n7. Próxima actualización del kit: [fecha]",
+       "nota": "Cópiala en un documento compartido y actualízala cada vez que cambie una política."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Recuerda:</b> la IA te ayuda a escribir más rápido y más claro. La política, la solución y la responsabilidad con el cliente siguen siendo tuyas y de tu empresa."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts adaptados a tu negocio, no genéricos.",
+        "Política de datos y lista de verificación antes de cada envío.",
+        "Un entregable real y dos indicadores para saber si funciona."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Si la IA afirma una garantía «por ley» distinta a tu póliza, tú…",
+     "ops": [
+      "Usas la de la IA",
+      "Respondes según la póliza y verificas cualquier mención legal",
+      "Ofreces la más generosa",
+      "Preguntas al cliente cuál prefiere"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un prompt con nombre, domicilio y tarjeta del cliente…",
+     "ops": [
+      "Está bien si el resultado quedó bien escrito",
+      "Está bien si borras el correo después",
+      "Nunca debió escribirse así; se usan marcadores",
+      "Está bien con clientes frecuentes"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si el reporte de la IA dice «63%» y tus datos dan 45%…",
+     "ops": [
+      "Usas tu cálculo y descartas lo que no está en los datos",
+      "Promedias ambos",
+      "Usas el de la IA",
+      "No reportas nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una cita textual de un cliente que no aparece en las quejas…",
+     "ops": [
+      "Se usa si suena real",
+      "Se atribuye a «un cliente»",
+      "Se deja entre comillas",
+      "Se elimina: es inventada"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Un bot que promete un reembolso sin revisión…",
+     "ops": [
+      "Ahorra tiempo al equipo",
+      "Compromete a la empresa; el caso debe pasar a una persona",
+      "Solo es problema en fin de semana",
+      "Está bien si usa emojis"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Tu biblioteca de prompts debe estar…",
+     "ops": [
+      "Adaptada a tu giro, canales y políticas reales",
+      "Copiada tal cual del curso",
+      "En manos de la IA",
+      "Guardada sin revisar"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La lista de verificación se aplica…",
+     "ops": [
+      "Solo a quejas graves",
+      "Una vez al mes",
+      "Antes de enviar cualquier texto hecho con IA",
+      "Solo si el supervisor lo pide"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La responsabilidad de lo que se le responde al cliente es…",
+     "ops": [
+      "De la herramienta de IA",
+      "Del cliente",
+      "De nadie si fue automático",
+      "Tuya y de tu empresa"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

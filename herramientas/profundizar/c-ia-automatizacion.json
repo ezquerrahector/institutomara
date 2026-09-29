@@ -1,0 +1,1398 @@
+{
+ "id": "c-ia-automatizacion",
+ "horas": 10,
+ "aprender": [
+  "Automatizar la captura de facturas y comprobantes, las aprobaciones con varias personas y calcular si una automatización se paga sola, con ficha de mantenimiento para cada flujo.",
+  "Detectar errores plantados en un día real de automatizaciones y armar tu kit: inventario de tareas, biblioteca de prompts, política de datos, lista antes de encender y un flujo real documentado."
+ ],
+ "terceras": [],
+ "extras": {
+  "c-ia-automatizacion-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Paola es recepcionista de una clínica veterinaria en Querétaro. Hizo su lista de tareas: pasar las citas del teléfono a la agenda en línea (30 al día), mandar el recordatorio de vacuna a cada dueño (unos 15 por semana, con la fecha que ya está en el expediente digital), decidir si se atiende de urgencia a una mascota que llega sin cita, y hacer el inventario anual de medicamentos en papel."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es la mejor primera candidata para automatizar?",
+      "ops": [
+       "El inventario anual",
+       "El recordatorio de vacuna: repetitivo, frecuente, con regla clara y el dato ya está en el expediente digital",
+       "La decisión de urgencias"
+      ],
+      "correcta": 1,
+      "explica": "Cumple las cuatro señales. El inventario es anual y en papel; la urgencia depende del criterio clínico."
+     },
+     {
+      "p": "¿Qué hace la automatización con los casos de urgencia?",
+      "ops": [
+       "Decide sola según la especie",
+       "Nada, no se puede tocar",
+       "Junta los datos de la mascota y avisa al veterinario, que es quien decide"
+      ],
+      "correcta": 2,
+      "explica": "Las decisiones con criterio no se automatizan: se preparan."
+     },
+     {
+      "p": "Las citas llegan por teléfono. ¿Qué tendría que cambiar para automatizar su captura?",
+      "ops": [
+       "Que la cita se registre en un formulario o agenda digital desde el inicio",
+       "Nada, se automatiza igual",
+       "Contratar más recepcionistas"
+      ],
+      "correcta": 0,
+      "explica": "Si el origen no es digital, primero se digitaliza la captura."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Tarea de la clínica y qué hacer",
+    "pares": [
+     [
+      "Recordatorio de vacuna",
+      "Automatizar completa, con revisión la primera semana"
+     ],
+     [
+      "Atender una urgencia sin cita",
+      "Preparar la información; decide el veterinario"
+     ],
+     [
+      "Inventario anual en papel",
+      "Dejarlo a mano por ahora"
+     ],
+     [
+      "Citas que llegan por teléfono",
+      "Primero pasar la captura a un formulario o agenda"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lista de tareas",
+    "pregunta": "Escribe 5 tareas de tu semana y marca en cada una las cuatro señales (repetitiva, frecuente, reglas claras, digital). Elige la que cumple las cuatro.",
+    "ayuda": "1) … R F C D / 2) … / La ganadora es…"
+   }
+  ],
+  "c-ia-automatizacion-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una inmobiliaria en Cancún armó un flujo: cuando alguien llena el formulario de interés en un departamento, se crea una fila en la hoja y se avisa al asesor. La condición dice «si el presupuesto es mayor a $2,000,000 O la zona es Zona Hotelera, avisar al asesor senior». En una semana el asesor senior recibió 140 avisos, incluidos rentas de $15,000 al mes en Zona Hotelera."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué está mal en la condición?",
+      "ops": [
+       "Usa O cuando el criterio era que se cumplan las dos cosas: debía ser Y",
+       "El disparador",
+       "La hoja de cálculo"
+      ],
+      "correcta": 0,
+      "explica": "Con O basta una de las dos; con Y deben cumplirse ambas. Es el error de condición más común."
+     },
+     {
+      "p": "Además del presupuesto, ¿qué campo le falta al formulario para filtrar bien?",
+      "ops": [
+       "El color favorito",
+       "Si busca compra o renta",
+       "La hora del día"
+      ],
+      "correcta": 1,
+      "explica": "Sin ese campo el flujo no puede distinguir una renta de una compra."
+     },
+     {
+      "p": "¿Qué hace el equipo antes de volver a encender el flujo corregido?",
+      "ops": [
+       "Lo enciende directo",
+       "Lo borra y empieza otro",
+       "Lo prueba con datos inventados que cubran las combinaciones: compra cara, renta cara, compra barata en otra zona"
+      ],
+      "correcta": 2,
+      "explica": "Una condición se prueba con los casos que debe dejar pasar y con los que debe detener."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La condición",
+    "malTitulo": "Con O",
+    "mal": "«Presupuesto mayor a $2,000,000 O zona igual a Zona Hotelera» — cualquier renta en esa zona dispara el aviso.",
+    "bienTitulo": "Con Y y el campo que faltaba",
+    "bien": "«Operación igual a compra Y presupuesto mayor a $2,000,000 Y zona igual a Zona Hotelera» — solo llegan los prospectos para los que existe el asesor senior."
+   }
+  ],
+  "c-ia-automatizacion-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una escuela de idiomas en Morelia armó su flujo de inscripción: formulario, fila en la hoja, correo de bienvenida y aviso a coordinación. Lo probaron dos veces con datos normales y lo encendieron. La primera semana: una mamá mandó el formulario tres veces porque no vio respuesta y recibió tres bienvenidas; un alumno escribió su correo con un espacio al final y nunca le llegó nada."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué prueba se saltaron?",
+      "ops": [
+       "La del color del correo",
+       "Los datos rotos: envíos repetidos, espacios, campos vacíos",
+       "Ninguna, fue mala suerte"
+      ],
+      "correcta": 1,
+      "explica": "Probar solo con datos normales deja fuera justo lo que pasa en la vida real."
+     },
+     {
+      "p": "¿Cómo se evitan las tres bienvenidas?",
+      "ops": [
+       "Revisando si el correo ya existe en la hoja antes de enviar, y avisando en pantalla que el registro se recibió",
+       "Pidiendo a la gente que no lo mande dos veces",
+       "Quitando la bienvenida"
+      ],
+      "correcta": 0,
+      "explica": "Una condición de «ya registrado» y un mensaje claro de confirmación evitan los duplicados."
+     },
+     {
+      "p": "El correo con un espacio al final…",
+      "ops": [
+       "Es culpa del alumno",
+       "No se puede evitar",
+       "Se limpia en el flujo antes de usarlo, o el formulario valida el formato del correo"
+      ],
+      "correcta": 2,
+      "explica": "Limpiar espacios y validar el formato son pasos baratos que evitan fallas silenciosas."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la lista de pruebas",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Mandar el mismo formulario dos veces prueba el manejo de ___.",
+      "resp": [
+       "duplicados",
+       "repetidos",
+       "duplicado"
+      ],
+      "pista": "Registros iguales."
+     },
+     {
+      "frase": "Un correo con un espacio al final se corrige quitando los ___ sobrantes.",
+      "resp": [
+       "espacios",
+       "espacio"
+      ],
+      "pista": "Lo que no se ve."
+     },
+     {
+      "frase": "La persona debe ver en pantalla que su registro se ___.",
+      "resp": [
+       "recibió",
+       "recibio",
+       "guardó",
+       "guardo",
+       "envió",
+       "envio"
+      ],
+      "pista": "Confirmación inmediata."
+     }
+    ]
+   }
+  ],
+  "c-ia-automatizacion-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una refaccionaria en Hermosillo creó una regla: todo correo que diga «pago» se archiva en la carpeta Pagos y se avisa a cobranza. En dos semanas la carpeta tenía avisos del banco, publicidad de «meses sin intereses», un reclamo de un cliente que decía «ya hice el pago y no me llegó la pieza» y los comprobantes reales de clientes."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué pasó con el reclamo del cliente?",
+      "ops": [
+       "Nada grave",
+       "Se archivó como pago y nadie de atención a clientes lo vio",
+       "Llegó a ventas"
+      ],
+      "correcta": 1,
+      "explica": "Las reglas por palabra clave atrapan de más; un reclamo archivado es un cliente perdido."
+     },
+     {
+      "p": "¿Cómo mejoran la regla?",
+      "ops": [
+       "Combinar remitente o asunto más específico, y correrla una semana solo etiquetando antes de archivar",
+       "Agregar más palabras clave",
+       "Quitar la regla"
+      ],
+      "correcta": 0,
+      "explica": "Criterios más precisos y una semana de prueba sin archivar muestran qué atrapa de más."
+     },
+     {
+      "p": "Si agregan un paso de IA que clasifique por contenido, el reclamo debe ir a…",
+      "ops": [
+       "Pagos",
+       "Publicidad",
+       "Una categoría de queja que avise a una persona"
+      ],
+      "correcta": 2,
+      "explica": "La IA puede distinguir intención; lo que parezca queja va a revisión humana."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La regla de pagos",
+    "malTitulo": "Por palabra suelta",
+    "mal": "«Si el correo contiene pago, archivar en Pagos.»",
+    "bienTitulo": "Específica y probada",
+    "bien": "«Si el asunto contiene comprobante de pago Y trae archivo adjunto, etiquetar Pagos y avisar a cobranza. Primera semana: solo etiquetar, sin archivar, y revisar qué cayó.»"
+   }
+  ],
+  "c-ia-automatizacion-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una empresa de banquetes en Guadalajara lleva sus eventos en una hoja: arriba tiene el logo y el título en celdas combinadas, los eventos de cada mes separados por una fila en blanco con el nombre del mes, y un renglón de totales al final de cada mes. Quieren que el formulario de cotización agregue filas solas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué va a pasar si conectan el formulario a esa hoja tal cual?",
+      "ops": [
+       "Funcionará perfecto",
+       "Solo se verá distinta",
+       "La herramienta se confundirá con el título, las filas en blanco y los totales intercalados"
+      ],
+      "correcta": 2,
+      "explica": "Una hoja armada como reporte no sirve como base de datos."
+     },
+     {
+      "p": "¿Qué solución conservan el reporte bonito y la automatización?",
+      "ops": [
+       "Una hoja de datos como tabla limpia y otra hoja aparte para el reporte con totales por mes",
+       "Borrar el reporte",
+       "Pedirle a la IA que adivine las filas"
+      ],
+      "correcta": 0,
+      "explica": "Datos en una tabla; reportes y gráficas en otra hoja que lee de ella."
+     },
+     {
+      "p": "El mes de cada evento se obtiene…",
+      "ops": [
+       "De la fila en blanco con el nombre del mes",
+       "De una columna de fecha del evento en cada fila",
+       "Escribiéndolo a mano en el color de la celda"
+      ],
+      "correcta": 1,
+      "explica": "Un dato por celda y una columna por tipo de dato; el mes se calcula de la fecha."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Problema de la hoja y arreglo",
+    "pares": [
+     [
+      "Título en celdas combinadas arriba",
+      "Encabezados en la fila 1, título en otra hoja"
+     ],
+     [
+      "Fila en blanco con el nombre del mes",
+      "Columna de fecha en cada registro"
+     ],
+     [
+      "Renglón de totales entre los datos",
+      "Totales en la hoja de reporte"
+     ],
+     [
+      "Eventos cancelados borrados",
+      "Columna de estado con «cancelado»"
+     ]
+    ]
+   }
+  ],
+  "c-ia-automatizacion-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una estética en Tijuana quiere mandar recordatorios de cita por mensajería. La dueña tiene tres listas: clientas que agendaron en línea y marcaron la casilla de recordatorios, números que le pasó una conocida de otro negocio, y clientas antiguas que nunca aceptaron nada. Además quiere conectar su número personal con una extensión gratuita que encontró."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿A quién le puede mandar recordatorios automáticos?",
+      "ops": [
+       "A las tres listas",
+       "A las clientas que agendaron y aceptaron los recordatorios",
+       "A las clientas antiguas porque ya la conocen"
+      ],
+      "correcta": 1,
+      "explica": "El consentimiento para este uso es la condición. La lista ajena no se usa."
+     },
+     {
+      "p": "¿Qué riesgo tiene la extensión gratuita con su número personal?",
+      "ops": [
+       "Ninguno",
+       "Que los mensajes salgan con faltas",
+       "Que la plataforma bloquee su número por usar una herramienta no oficial"
+      ],
+      "correcta": 2,
+      "explica": "Si el negocio depende de los mensajes, se usa la vía oficial de la plataforma."
+     },
+     {
+      "p": "Una clienta responde «ya no quiero mensajes». El flujo…",
+      "ops": [
+       "La marca en la hoja y la excluye de todo envío desde ese momento",
+       "Le manda una promoción de despedida",
+       "La ignora"
+      ],
+      "correcta": 0,
+      "explica": "La salida fácil y respetada es parte del diseño."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa las reglas",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Antes de mandar mensajes automáticos necesitas el ___ de la persona.",
+      "resp": [
+       "consentimiento",
+       "permiso"
+      ],
+      "pista": "Que haya aceptado."
+     },
+     {
+      "frase": "Una lista de números que te pasó otro negocio ___ se usa.",
+      "resp": [
+       "no"
+      ],
+      "pista": "Dos letras."
+     },
+     {
+      "frase": "Quien pide que ya no le escriban se marca en la columna de ___ y se excluye.",
+      "resp": [
+       "estado",
+       "baja",
+       "bajas"
+      ],
+      "pista": "Donde anotas su situación."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus contactos",
+    "pregunta": "Revisa de dónde salieron los contactos a los que quieres mandar mensajes automáticos. Escribe cuáles tienen consentimiento, cuáles no y cómo vas a pedirlo a partir de hoy.",
+    "ayuda": "Con consentimiento… / Sin consentimiento… / Lo voy a pedir en…"
+   }
+  ],
+  "c-ia-automatizacion-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una agencia de viajes en Oaxaca usa un paso de IA para extraer, de los correos de clientes, la fecha de salida y el número de personas. Un cliente escribió «salimos el 03/04, somos 4 adultos y 2 niños». La IA guardó la fecha como 4 de marzo y el número de personas como 4. En la hoja, la columna de fecha tiene formatos mezclados."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le faltó al prompt de extracción?",
+      "ops": [
+       "Pedir más creatividad",
+       "Indicar el formato de fecha de México (día/mes), la salida exacta AAAA-MM-DD y sumar adultos y niños en campos separados",
+       "Pedir que responda en inglés"
+      ],
+      "correcta": 1,
+      "explica": "Las fechas numéricas son ambiguas; el prompt debe fijar cómo interpretarlas y cómo entregarlas."
+     },
+     {
+      "p": "¿Qué validación agregas después del paso de IA?",
+      "ops": [
+       "Ninguna",
+       "Que el correo tenga saludo",
+       "Que la fecha sea futura y esté en el formato pedido, y que personas sea un número razonable; si no, a revisión humana"
+      ],
+      "correcta": 2,
+      "explica": "La condición después del paso de IA atrapa lo que no encaja antes de escribir basura en la hoja."
+     },
+     {
+      "p": "Si el correo no trae fecha clara, la IA debe responder…",
+      "ops": [
+       "Una marca fija como SIN_FECHA, para que el flujo lo mande a revisión",
+       "Una fecha aproximada",
+       "La fecha de hoy"
+      ],
+      "correcta": 0,
+      "explica": "La categoría de escape evita que la IA invente un dato para llenar el campo."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El prompt de extracción",
+    "malTitulo": "Abierto",
+    "mal": "«Saca la fecha y las personas de este correo.»",
+    "bienTitulo": "Acotado",
+    "bien": "«Las fechas vienen en formato mexicano día/mes. Responde solo en este formato: FECHA=AAAA-MM-DD; ADULTOS=número; NINOS=número. Si falta un dato o es ambiguo, escribe SIN_DATO en ese campo. No expliques nada.»"
+   }
+  ],
+  "c-ia-automatizacion-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una tienda de accesorios para celular en Puebla tiene un flujo que crea la orden de envío cuando se marca «pagado» en la hoja. Un día el servicio de paquetería no respondió, la herramienta reintentó y además alguien reactivó el flujo a mano: 23 pedidos se enviaron dos veces. Ese mes también se acabaron las operaciones del plan el día 24."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué evita que el mismo pedido se procese dos veces?",
+      "ops": [
+       "Rezar",
+       "Una columna de «ya procesado» que el flujo revisa antes y marca después de crear la orden",
+       "Apagar los reintentos"
+      ],
+      "correcta": 1,
+      "explica": "La marca de procesado hace que repetir el flujo no duplique el efecto."
+     },
+     {
+      "p": "¿Qué hacen primero con los 23 pedidos duplicados?",
+      "ops": [
+       "Cancelar las órdenes repetidas con la paquetería antes de que salgan y avisar a los clientes si hace falta",
+       "Esperar a que regresen",
+       "Nada, ya salieron"
+      ],
+      "correcta": 0,
+      "explica": "Primero se atiende a mano el daño; luego se corrige la causa."
+     },
+     {
+      "p": "¿Qué conviene revisar para no quedarse sin operaciones el día 24?",
+      "ops": [
+       "Cambiar de herramienta de inmediato",
+       "Correr el flujo solo de noche",
+       "Cuántas operaciones consume cada pedido y si el filtro está al inicio del flujo"
+      ],
+      "correcta": 2,
+      "explica": "Filtrar antes y quitar pasos innecesarios suele ahorrar más que subir de plan."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Falla y prevención",
+    "pares": [
+     [
+      "Pedidos enviados dos veces",
+      "Marca de «ya procesado»"
+     ],
+     [
+      "Flujo detenido sin que nadie lo note",
+      "Aviso de falla al dueño del flujo"
+     ],
+     [
+      "Operaciones agotadas antes de fin de mes",
+      "Filtrar al inicio y medir operaciones por pedido"
+     ],
+     [
+      "Servicio externo caído",
+      "Reintentos con límite y revisión a mano del lote"
+     ]
+    ]
+   }
+  ],
+  "c-ia-automatizacion-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Tres meses después, la dueña de la papelería quiere saber si la automatización valió la pena. La hoja muestra 2,100 solicitudes con fecha de captura y de respuesta, y estado ganada o perdida. El encargado dice que «se siente más rápido», pero nadie ha sacado números."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué indicador muestra mejor si respondieron más rápido?",
+      "ops": [
+       "Cuántas filas tiene la hoja",
+       "El número de pasos del flujo",
+       "El tiempo promedio entre captura y respuesta, comparado con antes"
+      ],
+      "correcta": 2,
+      "explica": "El objetivo del caso era contestar antes; se mide con la diferencia de fechas."
+     },
+     {
+      "p": "¿Qué dato necesitan para comparar con «antes»?",
+      "ops": [
+       "Una muestra de cuánto tardaban cuando usaban la libreta, aunque sea estimada con registros de esas semanas",
+       "Ninguno",
+       "La opinión del encargado"
+      ],
+      "correcta": 0,
+      "explica": "Sin línea base no hay comparación; si no existe, se reconstruye con lo que haya."
+     },
+     {
+      "p": "La IA les propone un resumen con «aumento de 300% en ventas». Nadie calculó eso. Ellos…",
+      "ops": [
+       "Lo publican",
+       "Lo borran y solo reportan lo que calcularon en la hoja",
+       "Lo redondean a 200%"
+      ],
+      "correcta": 1,
+      "explica": "Las cifras salen de la hoja, nunca de la redacción de la IA."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El reporte a la dueña",
+    "malTitulo": "Impresión",
+    "mal": "«Se siente más rápido y la gente está contenta.»",
+    "bienTitulo": "Con datos",
+    "bien": "«Respuesta promedio: de 22 a 3 horas. Solicitudes ganadas: 38% frente a 29% del trimestre anterior. Dos caídas del flujo, resueltas en menos de un día.»"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: documentos, aprobaciones y costo-beneficio",
+   "r": "Captura de facturas y comprobantes, flujos de aprobación con varias personas, y cómo decidir si una automatización se paga sola y quién la mantiene.",
+   "lecciones": [
+    {
+     "t": "Facturas y comprobantes: de la bandeja a la hoja",
+     "obj": "Automatizar la captura de facturas y comprobantes validando montos y datos, sin confiar a ciegas en lo que extrae la IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Capturar facturas de proveedores y comprobantes de pago es una de las tareas más repetitivas de cualquier negocio. Cuando la factura es un CFDI, lo más confiable es tomar los datos del <b>archivo XML</b>, que es el comprobante fiscal: trae RFC, subtotal, impuestos y total en campos fijos. El PDF es una representación impresa; extraer de ahí con IA funciona, pero puede confundir montos, leer mal un RFC o tomar el subtotal por el total. Para comprobantes de transferencia o tickets, que no traen XML, el paso de IA es útil, siempre con validación."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes al extraer de documentos",
+       "encabezados": [
+        "La IA o el flujo…",
+        "Consecuencia",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Toma el subtotal como total",
+         "Pagas o registras de menos",
+         "Validar que subtotal + impuestos = total"
+        ],
+        [
+         "Lee mal una letra del RFC",
+         "El registro no cuadra con el proveedor",
+         "Comparar contra tu catálogo de proveedores"
+        ],
+        [
+         "Confunde el separador de miles con decimales",
+         "$1,250.00 se guarda como 1.25",
+         "Pedir el número sin separadores y validar el rango"
+        ],
+        [
+         "Procesa la misma factura dos veces",
+         "Doble registro o doble pago",
+         "Revisar el folio fiscal antes de agregar la fila"
+        ],
+        [
+         "Inventa un dato que no viene en el documento",
+         "Filas con datos falsos",
+         "Pedir SIN_DATO cuando falte y mandarlo a revisión"
+        ]
+       ],
+       "nota": "Las reglas fiscales y de comprobantes cambian; confirma los requisitos vigentes con tu contador y en el portal del SAT."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Prompt de extracción de comprobantes",
+       "texto": "Eres un extractor de datos. Vas a recibir el texto de un comprobante de pago o ticket de [tipo de negocio]. Responde ÚNICAMENTE en este formato, una línea por campo: FECHA=AAAA-MM-DD; MONTO=número sin separadores de miles y con punto decimal; REFERENCIA=texto; EMISOR=texto. Las fechas numéricas vienen en formato mexicano día/mes. Si un campo no aparece o es ambiguo, escribe SIN_DATO. No expliques nada ni agregues campos. Texto: {{contenido del comprobante}}"
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Valida las facturas antes de registrarlas",
+       "datos": [
+        [
+         "Folio",
+         "Subtotal",
+         "IVA",
+         "Total leído",
+         "Revisión"
+        ],
+        [
+         "A-1021",
+         10000,
+         1600,
+         11600,
+         ""
+        ],
+        [
+         "A-1022",
+         2500,
+         400,
+         2500,
+         ""
+        ],
+        [
+         "A-1023",
+         8450,
+         1352,
+         9802,
+         "OK"
+        ],
+        [
+         "Facturas a revisar",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "E2",
+         "formula": "=SI(ABS(B2+C2-D2)<0.01,\"OK\",\"REVISAR\")",
+         "esperado": "OK",
+         "requiere": "SI(",
+         "texto": "<b>E2</b>: escribe OK si subtotal + IVA coincide con el total leído; si no, REVISAR.",
+         "pista": "=SI(ABS(B2+C2-D2)<0.01,«OK»,«REVISAR») con comillas rectas"
+        },
+        {
+         "celda": "E3",
+         "formula": "=SI(ABS(B3+C3-D3)<0.01,\"OK\",\"REVISAR\")",
+         "esperado": "REVISAR",
+         "requiere": "SI(",
+         "texto": "<b>E3</b>: la misma validación para la segunda factura."
+        },
+        {
+         "celda": "B5",
+         "formula": "=CONTAR.SI(E2:E4,\"REVISAR\")",
+         "esperado": 1,
+         "requiere": "CONTAR.SI(",
+         "texto": "<b>B5</b>: cuántas facturas quedaron para revisión.",
+         "explica": "La A-1022 trae como total lo que en realidad es el subtotal: el error típico de leer el PDF. Esa fila no se registra hasta que una persona la revise contra el XML."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Tienes el PDF y el XML de un CFDI. ¿De dónde tomas los datos?",
+         "ops": [
+          "Del PDF con IA, es más fácil",
+          "Del XML, que trae los datos en campos fijos",
+          "De la foto del ticket"
+         ],
+         "correcta": 1,
+         "explica": "El XML es el comprobante fiscal y sus campos no dependen de cómo se vea el PDF."
+        },
+        {
+         "p": "El flujo recibió la misma factura por correo y por mensajería. ¿Qué evita el doble registro?",
+         "ops": [
+          "Buscar el folio fiscal en la hoja antes de agregar la fila",
+          "Revisar al final del mes",
+          "Nada, se corrige después"
+         ],
+         "correcta": 0,
+         "explica": "El folio fiscal identifica al comprobante; si ya existe, no se agrega otra vez."
+        },
+        {
+         "p": "La IA extrajo un monto de 1.25 de un comprobante de $1,250.00. ¿Qué faltó?",
+         "ops": [
+          "Nada",
+          "Pedirle más creatividad",
+          "Pedir el número sin separadores de miles y validar que esté en un rango razonable"
+         ],
+         "correcta": 2,
+         "explica": "El formato fijo y la validación de rango atrapan la confusión de separadores."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tus comprobantes",
+       "pregunta": "Describe cómo llegan hoy las facturas o comprobantes a tu trabajo (correo, mensajería, papel) y escribe las 3 validaciones que pondrías antes de registrar cada uno.",
+       "ayuda": "Llegan por… / Validación 1… 2… 3… / Si no pasa, se manda a…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Si hay XML, los datos salen del XML; el PDF es respaldo.",
+        "Subtotal + impuestos = total, y folio único antes de registrar.",
+        "Lo que no cuadra va a revisión humana, no a la hoja."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Aprobaciones con varias personas",
+     "obj": "Diseñar flujos de aprobación por monto con recordatorios, escalamiento y registro de quién aprobó, cuidando los datos personales.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchas tareas no son de una sola persona: una compra que aprueba el jefe, un permiso que autoriza RH, un descuento que valida el gerente. Aquí la automatización no decide: <b>lleva la solicitud a la persona correcta, le recuerda, escala si no contesta y deja registro</b>. El error más común es armar el flujo feliz (alguien pide, el jefe aprueba) y olvidar qué pasa cuando el jefe está de vacaciones o nunca contesta."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Piezas de un flujo de aprobación",
+       "encabezados": [
+        "Pieza",
+        "Qué define",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Regla de ruta",
+         "Quién aprueba según el caso",
+         "Hasta $10,000 el jefe de área; más, dirección"
+        ],
+        [
+         "Plazo",
+         "Cuánto espera antes de recordar",
+         "24 horas hábiles"
+        ],
+        [
+         "Escalamiento",
+         "A quién va si no hay respuesta",
+         "Suplente designado o jefe inmediato"
+        ],
+        [
+         "Registro",
+         "Qué se guarda de cada decisión",
+         "Quién, cuándo, aprobado o rechazado y comentario"
+        ],
+        [
+         "Aviso al solicitante",
+         "Cómo se entera del resultado",
+         "Correo o mensaje con el estado y el siguiente paso"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Diseñar tu flujo de aprobación",
+       "texto": "Quiero automatizar la aprobación de [tipo de solicitud] en [tipo de empresa]. Solicitudes al mes: [número]. Reglas: [quién aprueba según monto o tipo]. Herramientas: [formulario, hoja, correo, chat del equipo]. Diseña el flujo con Disparador / Condición / Acción e incluye: 1) la ruta según las reglas, 2) recordatorio y escalamiento si no hay respuesta en [plazo], 3) qué se registra de cada decisión, 4) cómo se entera el solicitante, 5) qué pasa si el aprobador está de vacaciones. Señala qué datos personales viajan en el flujo y cuáles se pueden quitar."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Datos personales en el flujo.</b> Una solicitud de permiso puede traer motivos médicos o familiares; una de reembolso, datos bancarios. Pide en el formulario solo lo que el aprobador necesita, no mandes esos datos a un paso de IA si no hace falta, limita quién ve la hoja y cumple el aviso de privacidad de tu empresa. Las obligaciones concretas las define la ley de protección de datos personales vigente: confírmalas con tu área legal."
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Situación y pieza del flujo que la resuelve",
+       "pares": [
+        [
+         "El director está de viaje una semana",
+         "Escalamiento a un suplente"
+        ],
+        [
+         "Nadie sabe quién autorizó una compra",
+         "Registro de cada decisión"
+        ],
+        [
+         "El solicitante pregunta a diario cómo va",
+         "Aviso automático del estado"
+        ],
+        [
+         "Una compra chica llega a dirección",
+         "Regla de ruta por monto"
+        ],
+        [
+         "La solicitud trae datos médicos que nadie necesita",
+         "Pedir solo lo necesario en el formulario"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "El jefe no contesta una solicitud en tres días. El flujo debería…",
+         "ops": [
+          "Aprobarla sola",
+          "Recordar al jefe en el plazo acordado y, si sigue sin respuesta, escalar al suplente",
+          "Borrarla"
+         ],
+         "correcta": 1,
+         "explica": "Aprobar por silencio es riesgoso; el escalamiento lleva la decisión a otra persona autorizada."
+        },
+        {
+         "p": "Quieres que la IA resuma cada solicitud para el aprobador. ¿Qué cuidas?",
+         "ops": [
+          "Mandarle solo los campos necesarios, sin datos sensibles que no ayuden a decidir",
+          "Mandarle todo el formulario",
+          "Que el resumen apruebe solo"
+         ],
+         "correcta": 0,
+         "explica": "Datos mínimos y la decisión siempre en una persona."
+        },
+        {
+         "p": "Una aprobación debe dejar registro de…",
+         "ops": [
+          "Solo el monto",
+          "Nada, basta el correo",
+          "Quién decidió, cuándo, qué decidió y su comentario"
+         ],
+         "correcta": 2,
+         "explica": "Sin registro no puedes auditar ni resolver dudas después."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu flujo de aprobación",
+       "pregunta": "Elige una aprobación de tu trabajo (compras, permisos, descuentos, reembolsos) y escribe su regla de ruta, el plazo, el escalamiento y qué se registra.",
+       "ayuda": "Aprobación de… / Ruta: … / Plazo: … / Escala a: … / Se registra: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La automatización lleva, recuerda, escala y registra; la persona decide.",
+        "Siempre un suplente para cuando el aprobador no está.",
+        "Solo los datos necesarios viajan en el flujo."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "¿Se paga sola? Costo-beneficio y mantenimiento",
+     "obj": "Calcular si una automatización recupera su costo y dejar documentado quién la mantiene y qué hacer cuando falla.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Una automatización cuesta: el plan de la herramienta, las horas para armarla y las horas para mantenerla. Se paga sola cuando el tiempo que ahorra vale más que eso. El otro costo escondido es la <b>dependencia de una persona</b>: si el flujo vive en la cuenta personal de quien lo armó y esa persona se va, el flujo se cae y nadie sabe cómo estaba hecho. Por eso cada flujo lleva una ficha y vive en una cuenta del negocio."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Cuánto tarda en pagarse?",
+       "datos": [
+        [
+         "Concepto",
+         "Valor"
+        ],
+        [
+         "Minutos que tomaba cada vez a mano",
+         6
+        ],
+        [
+         "Veces al mes",
+         400
+        ],
+        [
+         "Costo por hora de quien lo hacía",
+         120
+        ],
+        [
+         "Costo mensual de la herramienta",
+         900
+        ],
+        [
+         "Horas para armarla",
+         20
+        ],
+        [
+         "Ahorro mensual en pesos",
+         ""
+        ],
+        [
+         "Ganancia neta al mes",
+         ""
+        ],
+        [
+         "Meses para recuperar las horas de armado",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B7",
+         "formula": "=B2*B3/60*B4",
+         "esperado": 4800,
+         "texto": "<b>B7</b>: ahorro mensual = minutos × veces ÷ 60 × costo por hora."
+        },
+        {
+         "celda": "B8",
+         "formula": "=B7-B5",
+         "esperado": 3900,
+         "texto": "<b>B8</b>: ganancia neta al mes = ahorro − costo de la herramienta."
+        },
+        {
+         "celda": "B9",
+         "formula": "=REDONDEAR(B6*B4/B8,1)",
+         "esperado": 0.6,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B9</b>: meses para recuperar el armado = horas de armado × costo por hora ÷ ganancia neta, con 1 decimal.",
+         "explica": "Menos de un mes: conviene. Son tus estimaciones: si la tarea se hace 40 veces al mes y no 400, el resultado cambia por completo. Confirma el costo real del plan en tu cuenta, porque los precios cambian."
+        }
+       ]
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Ficha de cada flujo",
+       "encabezados": [
+        "Campo",
+        "Por qué"
+       ],
+       "filas": [
+        [
+         "Nombre y propósito",
+         "Que cualquiera sepa qué hace en una frase"
+        ],
+        [
+         "Dueño y suplente",
+         "Quién responde si falla"
+        ],
+        [
+         "Cuenta donde vive",
+         "Debe ser una cuenta del negocio, no personal"
+        ],
+        [
+         "Disparador, condiciones y acciones",
+         "Para poder reconstruirlo"
+        ],
+        [
+         "Cuentas y hojas conectadas",
+         "Lo que se rompe si cambian contraseñas o columnas"
+        ],
+        [
+         "Qué hacer si falla",
+         "Pasos y a quién avisar"
+        ],
+        [
+         "Fecha de última revisión",
+         "Para que no se quede olvidado"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Documenta tu flujo con IA",
+       "texto": "Te describo una automatización que armé: [propósito, disparador, condiciones, acciones, herramientas y hojas conectadas]. Escribe una ficha de una página con: nombre, propósito en una frase, dueño [nombre] y suplente [nombre], cuenta donde vive, pasos numerados, cuentas y columnas de las que depende, las 5 fallas más probables y qué hacer en cada una, y una lista de revisión mensual. No inventes pasos que no te describí; si falta algo, escribe [COMPLETAR]."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Una tarea de 5 minutos que haces 3 veces al mes…",
+         "ops": [
+          "Se automatiza ya",
+          "Probablemente no se paga sola: el armado y el plan cuestan más que el ahorro",
+          "Se automatiza con IA"
+         ],
+         "correcta": 1,
+         "explica": "15 minutos al mes rara vez justifican horas de armado y un plan mensual."
+        },
+        {
+         "p": "El flujo de facturas vive en la cuenta personal del becario que se va el viernes. Lo prioritario es…",
+         "ops": [
+          "Moverlo a una cuenta del negocio y documentarlo antes de que se vaya",
+          "Despedirlo antes",
+          "Esperar a que falle"
+         ],
+         "correcta": 0,
+         "explica": "Un flujo que depende de una persona desaparece con ella."
+        },
+        {
+         "p": "La IA te dice que tu automatización «ahorra 40 horas al mes». Tú…",
+         "ops": [
+          "Lo pones en el reporte",
+          "Lo duplicas",
+          "Lo calculas con tus minutos y frecuencias reales en la hoja"
+         ],
+         "correcta": 2,
+         "explica": "Las cifras salen de tus datos, no de la redacción de la IA."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu cálculo",
+       "pregunta": "Con tus números reales, calcula cuánto ahorraría al mes la automatización que elegiste y en cuánto tiempo se pagaría. Escribe también quién será su dueño y su suplente.",
+       "ayuda": "Minutos… Veces al mes… Costo por hora… Ahorro… Se paga en… Dueño… Suplente…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Ahorro = minutos × veces ÷ 60 × costo por hora; réstale el plan.",
+        "Cada flujo en una cuenta del negocio, con dueño, suplente y ficha.",
+        "Las cifras de ahorro salen de tu hoja, no de la IA."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Si tienes el XML y el PDF de un CFDI, los datos se toman de…",
+     "ops": [
+      "El PDF",
+      "El XML",
+      "Una foto",
+      "El correo"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una validación básica antes de registrar una factura es…",
+     "ops": [
+      "Que tenga logo",
+      "Que subtotal + impuestos = total",
+      "Que sea de este mes",
+      "Ninguna"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Para no registrar dos veces la misma factura revisas…",
+     "ops": [
+      "El folio fiscal",
+      "El color del PDF",
+      "La hora del correo",
+      "El remitente"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En un flujo de aprobación, si el aprobador no contesta…",
+     "ops": [
+      "Se aprueba solo",
+      "Se borra",
+      "Se recuerda y se escala a un suplente",
+      "Se espera indefinidamente"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Los datos personales en un flujo de aprobación…",
+     "ops": [
+      "Se mandan todos",
+      "Se limitan a lo necesario",
+      "Se publican",
+      "No importan"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Ahorro mensual en pesos =",
+     "ops": [
+      "Minutos × veces ÷ 60 × costo por hora",
+      "Costo del plan × 2",
+      "Horas de armado × veces",
+      "Veces ÷ minutos"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un flujo debe vivir en…",
+     "ops": [
+      "La cuenta personal de quien lo armó",
+      "Cualquier cuenta",
+      "Una cuenta del negocio, con dueño y suplente",
+      "El celular del jefe"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La ficha de un flujo sirve para…",
+     "ops": [
+      "Decorar",
+      "Que otra persona pueda entenderlo, mantenerlo y repararlo",
+      "Cobrar más",
+      "Nada"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día real de automatizaciones con errores plantados que debes detectar, y la construcción de tu kit personal de automatización con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de automatizaciones con IA",
+     "obj": "Detectar errores de consentimiento, validación, estructura de la hoja y monitoreo en flujos con IA antes de que afecten a clientes.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Ernesto administra una clínica dental en Toluca. Hace un mes armó varias automatizaciones con ayuda de un asistente de IA y hoy le toca revisarlas. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes de que le cueste un paciente, una multa o una semana de trabajo perdido."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 · 8:30 am — Los recordatorios.</b> El flujo manda recordatorios de cita por mensajería. Ernesto agregó al envío una lista de 600 números que le compartió un laboratorio dental «para promociones». La plantilla dice «Hola [NOMBRE], te esperamos mañana» y en la hoja 40 pacientes no tienen nombre capturado. El flujo usa su número personal conectado con una extensión gratuita."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué encontraste?",
+       "pregunta": "Enumera los tres errores de la escena y escribe cómo corregirías cada uno.",
+       "ayuda": "Error 1: la lista… → … / Error 2: el nombre vacío… → … / Error 3: el número… → …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 · 11:00 am — El paso de IA.</b> Un paso de IA clasifica los mensajes de pacientes en CITA, PAGO u OTRO, y el flujo escribe la categoría en la hoja. Esta mañana la IA respondió «Esto parece una emergencia: el paciente reporta sangrado después de una extracción» y el flujo lo guardó como texto en la columna de categoría. Nadie recibió aviso."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué encontraste?",
+       "pregunta": "Explica qué le faltó al diseño del paso de IA y cómo debió llegar ese mensaje a una persona.",
+       "ayuda": "Faltó… Después del paso de IA debió haber… Los mensajes de salud urgentes deben…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 · 1:00 pm — La hoja.</b> La asistente insertó una columna «Seguro médico» entre «Teléfono» y «Fecha de cita», combinó las celdas del encabezado para que se viera bonito y borró las citas canceladas para limpiar. Desde el martes, el flujo escribe las fechas de cita en la columna del seguro."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué encontraste?",
+       "pregunta": "Escribe qué cambios rompieron el flujo, cómo se repara y qué reglas de la hoja vas a proteger para que no vuelva a pasar.",
+       "ayuda": "Se rompió porque… Se repara… Voy a proteger…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 · 5:00 pm — El flujo que nadie vio caer.</b> El flujo que manda las solicitudes de presupuesto al correo del doctor lleva 9 días sin correr: la conexión caducó cuando cambiaron la contraseña del correo. No hay aviso de falla configurado. El flujo vive en la cuenta personal del sobrino de Ernesto, que ya no trabaja en la clínica. El asistente de IA sugiere «crear un flujo nuevo desde cero»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué encontraste?",
+       "pregunta": "Escribe en orden lo que haría Ernesto hoy: qué atiende primero, cómo recupera el flujo y qué deja configurado para que no se repita.",
+       "ayuda": "Primero… Después… Para que no se repita: aviso de falla, cuenta del negocio, ficha…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Escena 1: la lista de 600 números del laboratorio…",
+         "ops": [
+          "Se usa solo una vez",
+          "No se usa: no dieron consentimiento a la clínica",
+          "Se usa si el mensaje es amable"
+         ],
+         "correcta": 1,
+         "explica": "El consentimiento es para quien lo pidió y para ese uso; la lista ajena no se usa."
+        },
+        {
+         "p": "Escena 2: ¿qué habría evitado el problema?",
+         "ops": [
+          "Una condición después del paso de IA que valide la respuesta y mande lo que no encaje, y cualquier mención de salud urgente, a una persona de inmediato",
+          "Un modelo más caro",
+          "Quitar la categoría OTRO"
+         ],
+         "correcta": 0,
+         "explica": "Salida acotada, validación y ruta humana para lo urgente."
+        },
+        {
+         "p": "Escena 3: las citas canceladas…",
+         "ops": [
+          "Se borran para limpiar",
+          "Se mueven a otra hoja a mano",
+          "Se marcan en una columna de estado, sin borrar filas"
+         ],
+         "correcta": 2,
+         "explica": "Borrar filas rompe referencias y deja sin historial."
+        },
+        {
+         "p": "Escena 4: lo primero que atiende Ernesto es…",
+         "ops": [
+          "Crear un flujo nuevo desde cero",
+          "Revisar a mano las solicitudes de presupuesto de los últimos 9 días y contestarlas",
+          "Llamar al sobrino"
+         ],
+         "correcta": 1,
+         "explica": "Primero se atiende lo que se quedó atorado; luego se reautoriza la conexión, se configura el aviso y se mueve a una cuenta del negocio."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Consentimiento y campos completos antes de enviar mensajes.",
+        "Paso de IA con salida acotada, validación y ruta humana para lo urgente.",
+        "Hoja protegida, aviso de falla y cada flujo en una cuenta del negocio."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de automatización con IA",
+     "obj": "Construir tu inventario de tareas, tu biblioteca de prompts, tu política de datos, tu lista antes de encender y un flujo real documentado.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso armando tu <b>kit de automatización con IA</b>: lo que vas a usar cada vez que quieras quitarte una tarea de encima. Trabaja con tu trabajo real. Guarda todo en un solo documento con fecha, en una carpeta del negocio o del equipo, no solo en tu computadora."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1 · Tu inventario de tareas",
+       "pregunta": "Lista 8 tareas repetitivas de tu trabajo con cuántas veces al mes las haces y cuántos minutos te toman. Marca las que cumplen las cuatro señales y ordénalas por ahorro mensual.",
+       "ayuda": "1) … veces/mes … minutos … señales … / Prioridad: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2 · Tu biblioteca de prompts",
+       "pregunta": "Adapta a tu trabajo las plantillas que más usarás: mapear un proceso, describir el flujo, revisar antes de encender, clasificador dentro del flujo, extracción de comprobantes, aprobación y ficha del flujo.",
+       "ayuda": "1. Mapear proceso: Trabajo en [mi puesto] en [mi negocio]… 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3 · Tu política de datos y consentimiento",
+       "pregunta": "Escribe 5 reglas: qué datos pueden pasar por un paso de IA, qué datos nunca, quién puede editar las hojas, cómo pides consentimiento para mensajes y cómo atiendes a quien pide que ya no le escriban.",
+       "ayuda": "1) A la IA solo mando… 2) Nunca… 3) Editan la hoja… 4) El consentimiento se pide en… 5) Las bajas…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4 · Tu lista antes de encender",
+       "pregunta": "Arma tu lista de 10 puntos para revisar cada flujo antes de encenderlo: pruebas con datos falsos y rotos, duplicados, condición, validación después de la IA, hoja como tabla, aviso de falla, dueño y suplente, cuenta del negocio, costo y ficha.",
+       "ayuda": "Antes de encender reviso: 1) … 2) … 3) …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 5 · Tu flujo real",
+       "pregunta": "Arma esta semana la automatización número uno de tu inventario, pásala por tu lista, escribe su ficha y anota qué corregiste de lo que te propuso la IA.",
+       "ayuda": "Flujo… Disparador… Condición… Acciones… Pruebas… Corregí… Dueño y suplente…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE AUTOMATIZACIÓN CON IA — [nombre / área] — versión [fecha]\n\n1. Inventario de tareas priorizado por ahorro mensual\n2. Biblioteca de prompts\n   2.1 Mapear proceso · 2.2 Describir flujo · 2.3 Revisar antes de encender\n   2.4 Clasificador · 2.5 Extracción de comprobantes · 2.6 Aprobación · 2.7 Ficha del flujo\n3. Política de datos y consentimiento (5 reglas)\n4. Lista antes de encender (10 puntos)\n5. Fichas de mis flujos (dueño, suplente, cuenta, fallas)\n6. Hoja de costo-beneficio\n7. Flujo real documentado: [nombre y enlace]\n8. Revisión mensual del historial de ejecuciones: [día]\n9. Próxima revisión del kit: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso completo!</b> Automatizar no es encender flujos: es elegir bien la tarea, diseñarla, probarla con datos rotos, vigilarla y documentarla para que no dependa de ti. La IA es un paso más del flujo; la responsabilidad de lo que sale hacia tus clientes sigue siendo tuya."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Inventario priorizado y biblioteca de prompts adaptada a tu trabajo.",
+        "Política de datos, lista antes de encender y ficha de cada flujo.",
+        "Un flujo real funcionando, documentado y con dueño."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Una lista de números que te compartió otro negocio…",
+     "ops": [
+      "Se usa para promociones",
+      "Se usa solo una vez",
+      "No se usa sin consentimiento de esas personas",
+      "Se usa si el mensaje es corto"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA responde algo fuera de las categorías esperadas, el flujo debe…",
+     "ops": [
+      "Guardarlo tal cual",
+      "Mandarlo a revisión humana",
+      "Borrarlo",
+      "Repetir hasta que salga bien"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un mensaje de un paciente que menciona un síntoma urgente…",
+     "ops": [
+      "Va de inmediato a una persona",
+      "Se clasifica como OTRO y se espera",
+      "Se contesta con una plantilla",
+      "Se archiva"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Insertar una columna en medio de la hoja conectada puede…",
+     "ops": [
+      "Mejorar el flujo",
+      "No tener efecto",
+      "Hacer que el flujo escriba datos en la columna equivocada",
+      "Duplicar el plan"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un flujo que falla sin aviso durante 9 días se atiende primero…",
+     "ops": [
+      "Creando uno nuevo",
+      "Procesando a mano lo que se quedó atorado",
+      "Cambiando de herramienta",
+      "Borrando el historial"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Tu kit de automatización se guarda…",
+     "ops": [
+      "En una carpeta del negocio, con fecha y versión",
+      "Solo en tu computadora",
+      "En el chat de la IA",
+      "No se guarda"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad de lo que un flujo con IA envía a tus clientes es…",
+     "ops": [
+      "De la herramienta",
+      "De la IA",
+      "Del cliente",
+      "Tuya y de tu negocio"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

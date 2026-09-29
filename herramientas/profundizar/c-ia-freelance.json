@@ -1,0 +1,1433 @@
+{
+ "id": "c-ia-freelance",
+ "horas": 10,
+ "aprender": [
+  "Preparar contratos y acuerdos de confidencialidad con IA para revisarlos con un abogado, planear tu flujo de efectivo con ingresos irregulares y subir tu tarifa o decir que no con argumentos.",
+  "Detectar errores plantados en un día real de trabajo independiente con IA y armar tu kit: biblioteca de prompts, política de datos de clientes, lista de verificación y una propuesta real."
+ ],
+ "terceras": [
+  {
+   "p": "La IA te propone poner «más de 200 clientes satisfechos» y tú llevas 18. Tú…",
+   "op": "Lo cambias por «más de 100», que suena menos exagerado"
+  },
+  {
+   "p": "Una oferta específica sirve sobre todo para…",
+   "op": "Poder ofrecer muchos servicios distintos a la vez"
+  },
+  {
+   "p": "Tu especialidad la descubres viendo…",
+   "op": "Lo que la IA te sugiera como lo más rentable"
+  },
+  {
+   "p": "Si bajas tus horas facturables de 70 a 50 al mes, tu tarifa por hora…",
+   "op": "Se queda igual"
+  },
+  {
+   "p": "Cobrar por iguala sin decir qué incluye suele terminar en…",
+   "op": "Menos trabajo por el mismo dinero"
+  },
+  {
+   "p": "Publicar el logo de un cliente en tu portafolio sin avisarle…",
+   "op": "Está bien si solo lo publicas en tu cuenta personal"
+  },
+  {
+   "p": "El mejor momento para prospectar es…",
+   "op": "Solo al inicio de cada año"
+  },
+  {
+   "p": "Un mensaje en frío funciona mejor cuando…",
+   "op": "Incluye tu lista de precios completa"
+  },
+  {
+   "p": "Una propuesta sin fecha de vigencia…",
+   "op": "Obliga al cliente a decidir más rápido"
+  },
+  {
+   "p": "«Manejo de redes sociales» como entregable es…",
+   "op": "Claro si el cliente ya te conoce"
+  },
+  {
+   "p": "La sección «no incluye» sirve para…",
+   "op": "Subir el precio sin que el cliente lo note"
+  },
+  {
+   "p": "La IA te calculó el total de la cotización y no revisaste. Eso es…",
+   "op": "Aceptable si la cantidad se ve razonable"
+  },
+  {
+   "p": "Estimas las horas de un proyecto nuevo con base en…",
+   "op": "Lo que tardó el freelancer anterior, según el cliente"
+  },
+  {
+   "p": "Entregar los archivos finales antes de cobrar el saldo…",
+   "op": "Obliga al cliente a pagar ese mismo día"
+  },
+  {
+   "p": "El cliente pide una quinta ronda de cambios y tu propuesta decía tres. Lo mejor es…",
+   "op": "Negarte a hacer más cambios sin explicarle por qué"
+  },
+  {
+   "p": "Una aprobación por WhatsApp del cliente…",
+   "op": "Solo sirve si además la manda por correo"
+  },
+  {
+   "p": "Si el cliente tarda tres semanas en aprobar, la fecha de entrega…",
+   "op": "Se cancela junto con el proyecto automáticamente"
+  },
+  {
+   "p": "Mandar un avance corto cada semana, aunque no haya novedades grandes…",
+   "op": "Solo sirve cuando hay avances grandes que mostrar"
+  },
+  {
+   "p": "El bloque de negocio (prospección y cobranza)…",
+   "op": "Se deja para el fin de semana"
+  },
+  {
+   "p": "Planear la semana al 100% de tus horas disponibles…",
+   "op": "Te asegura terminar antes de tiempo"
+  },
+  {
+   "p": "Un proyecto que te deja menos por hora que tu tarifa…",
+   "op": "Se compensa subiéndole la tarifa a otro cliente sin avisar"
+  },
+  {
+   "p": "El primer recordatorio de pago conviene enviarlo…",
+   "op": "Solo cuando ya pasaron 15 días de atraso"
+  },
+  {
+   "p": "Para saber si un cliente te conviene necesitas registrar…",
+   "op": "Cuántos mensajes te manda al día"
+  },
+  {
+   "p": "La clienta pide «un estimado rápido» por WhatsApp antes de que definan nada. Tú…",
+   "op": "Le dices que no das ningún precio sin contrato firmado"
+  },
+  {
+   "p": "Quiere todo «para la próxima semana» y tú calculaste 45 horas. Lo correcto es…",
+   "op": "Rechazar el proyecto de inmediato"
+  },
+  {
+   "p": "Como ya la dejaron plantada antes, ella pide no pagar anticipo. Tú…",
+   "op": "Empiezas sin anticipo y le cobras todo al final"
+  },
+  {
+   "p": "A media obra pide agregar una tienda en línea. Eso es…",
+   "op": "Un error tuyo por no haberlo previsto, así que va sin costo"
+  }
+ ],
+ "extras": {
+  "c-ia-freelance-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Tania es traductora independiente en Monterrey. En su perfil dice «Traducciones de todo tipo, inglés y francés, precios accesibles». Revisando sus últimos 10 trabajos, 7 fueron manuales técnicos y fichas de seguridad para empresas de la industria de autopartes. La IA le propuso: «Traductora certificada con 15 años de experiencia en el sector automotriz». Tania tiene 6 años y no tiene certificación."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es la especialidad de Tania según sus datos?",
+      "ops": [
+       "Traducción literaria",
+       "Traducción técnica para la industria de autopartes",
+       "Traducción de todo tipo"
+      ],
+      "correcta": 1,
+      "explica": "7 de 10 trabajos recientes apuntan a un nicho claro."
+     },
+     {
+      "p": "¿Qué hace con la frase de la IA?",
+      "ops": [
+       "La publica, suena más profesional",
+       "Quita solo la palabra «certificada»",
+       "Corrige años y quita la certificación: solo publica lo que puede comprobar"
+      ],
+      "correcta": 2,
+      "explica": "Inventar credenciales puede costarle clientes y, en algunos casos, problemas legales."
+     },
+     {
+      "p": "¿Qué dato haría más creíble su presentación?",
+      "ops": [
+       "Un ejemplo real, con permiso del cliente, del tipo de documento que traduce",
+       "Un precio más bajo",
+       "Muchos adjetivos"
+      ],
+      "correcta": 0,
+      "explica": "Evidencia concreta vale más que adjetivos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El perfil de Tania",
+    "malTitulo": "Vago e inflado",
+    "mal": "«Traductora certificada con 15 años de experiencia en todo tipo de textos. Precios accesibles.»",
+    "bienTitulo": "Específico y real",
+    "bien": "«Traduzco manuales técnicos y fichas de seguridad del inglés al español para proveedores de autopartes. 6 años trabajando con plantas del norte del país.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus últimos 10 trabajos",
+    "pregunta": "Lista tus últimos 10 trabajos con tipo de cliente y tipo de entregable. Marca en qué te repites y escribe tu frase de presentación con solo datos comprobables.",
+    "ayuda": "1) … 2) … / Me repito en… / Mi frase: Hago… para…"
+   }
+  ],
+  "c-ia-freelance-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Óscar es fotógrafo de producto en León. Cobra $350 la hora «porque así cobraba su amigo». Gasta $7,000 al mes en equipo, software y transporte, necesita ganar $24,000 y, contando edición, cotizaciones y traslados, solo factura unas 55 horas al mes. Un cliente le ofrece una iguala de $8,000 al mes por «las fotos que se vayan necesitando»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es la tarifa por hora con sustento de Óscar, sin colchón?",
+      "ops": [
+       "$350",
+       "Unos $564: (7,000 + 24,000) ÷ 55",
+       "$436: 24,000 ÷ 55"
+      ],
+      "correcta": 1,
+      "explica": "Gastos más lo que necesita ganar, entre horas facturables: 31,000 ÷ 55 ≈ 564."
+     },
+     {
+      "p": "¿Qué le falta a la oferta de iguala?",
+      "ops": [
+       "Nada, es dinero seguro",
+       "Que sea más alta",
+       "Definir cuántas sesiones o fotos incluye al mes, tiempos de entrega y qué se cobra aparte"
+      ],
+      "correcta": 2,
+      "explica": "Una iguala sin límite se vuelve disponibilidad total por un monto fijo."
+     },
+     {
+      "p": "Si la iguala incluye 20 horas al mes, ¿cuánto debería cobrar como mínimo con su tarifa sin colchón?",
+      "ops": [
+       "Unos $11,280",
+       "$8,000",
+       "$7,000"
+      ],
+      "correcta": 0,
+      "explica": "20 × 564 ≈ 11,280. Con $8,000 estaría cobrando unos $400 por hora."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Situación y forma de cobro",
+    "pares": [
+     [
+      "Asesoría abierta sin alcance claro",
+      "Por hora, con tope acordado"
+     ],
+     [
+      "Sesión de 30 productos con fondo blanco que ya dominas",
+      "Por proyecto"
+     ],
+     [
+      "Cliente que necesita fotos cada semana",
+      "Iguala con límite de sesiones"
+     ],
+     [
+      "Proyecto nuevo que nunca has hecho",
+      "Por hora o por etapas, hasta conocer tus tiempos"
+     ]
+    ]
+   }
+  ],
+  "c-ia-freelance-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Rebeca hace contabilidad de redes para consultorios en Mérida. Le pidió a la IA 50 mensajes de primer contacto para mandar a una lista de consultorios que sacó de un directorio. La IA escribió 50 mensajes casi iguales que empiezan con «Estimado profesional de la salud» y prometen «triplicar sus pacientes en 30 días»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el problema principal de los mensajes?",
+      "ops": [
+       "Son muy cortos",
+       "No tienen ninguna observación real de cada consultorio y prometen un resultado que no puede garantizar",
+       "Están en español"
+      ],
+      "correcta": 1,
+      "explica": "Suenan a plantilla y la promesa no es comprobable."
+     },
+     {
+      "p": "¿Qué conviene más en su bloque de prospección de 2 horas?",
+      "ops": [
+       "Investigar 8 consultorios y escribir 8 mensajes con una observación concreta de cada uno",
+       "Mandar los 50 mensajes iguales",
+       "Esperar a que la busquen"
+      ],
+      "correcta": 0,
+      "explica": "Pocos mensajes personalizados suelen responderse más que muchos genéricos."
+     },
+     {
+      "p": "¿Qué hace con la promesa de «triplicar pacientes»?",
+      "ops": [
+       "La deja, llama la atención",
+       "La cambia por «duplicar»",
+       "La quita y habla de lo que sí hace, con un ejemplo real si lo tiene"
+      ],
+      "correcta": 2,
+      "explica": "Nada de promesas de resultados ni cifras inventadas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El mensaje de Rebeca",
+    "malTitulo": "Masivo",
+    "mal": "«Estimado profesional de la salud: le ayudamos a triplicar sus pacientes en 30 días con estrategias digitales.»",
+    "bienTitulo": "Con observación",
+    "bien": "«Hola, doctora. Vi que su página no tiene horario ni forma de agendar, y en sus reseñas dos pacientes lo mencionan. Ayudo a consultorios a publicar horarios y citas en línea. ¿Le parece si platicamos 15 minutos el martes?»"
+   }
+  ],
+  "c-ia-freelance-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Mauricio es desarrollador web en Querétaro. Una escuela de natación le pidió «una página bonita». Su propuesta de cuatro páginas explica tecnologías, metodologías ágiles y su trayectoria, y al final dice «Inversión: $18,000». No dice qué páginas lleva el sitio, si incluye textos y fotos, ni cuánto dura. La escuela contestó «déjame lo platico con mi socio»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le faltó a la propuesta de Mauricio?",
+      "ops": [
+       "Más tecnologías",
+       "Entregables contables, tiempos, qué no incluye, vigencia y siguiente paso",
+       "Más páginas"
+      ],
+      "correcta": 1,
+      "explica": "El cliente no sabe qué recibe ni cuándo, así que no puede decir que sí."
+     },
+     {
+      "p": "¿Cómo queda un entregable contable para este caso?",
+      "ops": [
+       "«Página bonita y moderna»",
+       "«Presencia digital completa»",
+       "«Sitio de 5 secciones (inicio, horarios, precios, galería, contacto con mapa), adaptado a celular»"
+      ],
+      "correcta": 2,
+      "explica": "Se puede contar, revisar y cerrar."
+     },
+     {
+      "p": "¿Qué debería decir la sección de qué no incluye?",
+      "ops": [
+       "Redacción de textos, fotografías, dominio y hospedaje, si no van incluidos",
+       "Nada, se ve mal",
+       "Todo lo que Mauricio no sabe hacer"
+      ],
+      "correcta": 0,
+      "explica": "Justo lo que el cliente podría suponer incluido."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la propuesta",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Un entregable útil se puede ___: 5 secciones, 12 publicaciones, 3 videos.",
+      "resp": [
+       "contar",
+       "medir"
+      ],
+      "pista": "Tiene número."
+     },
+     {
+      "frase": "La propuesta cierra con la ___ del precio y el siguiente paso.",
+      "resp": [
+       "vigencia"
+      ],
+      "pista": "Hasta cuándo es válida."
+     },
+     {
+      "frase": "Lo que el cliente podría suponer incluido va en la sección de qué ___ incluye.",
+      "resp": [
+       "no"
+      ],
+      "pista": "Dos letras."
+     }
+    ]
+   }
+  ],
+  "c-ia-freelance-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Lucía es ilustradora en la Ciudad de México. Le pidió a la IA «cotiza 12 ilustraciones para un libro infantil». La IA respondió con $6,000 en total «según precios promedio del mercado» y agregó «como persona física no necesitas facturar». Lucía sabe que cada ilustración le toma unas 5 horas y su tarifa es de $550."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuánto serían los honorarios con sus propios datos?",
+      "ops": [
+       "$6,000",
+       "$33,000: 12 × 5 × 550",
+       "$27,500"
+      ],
+      "correcta": 1,
+      "explica": "60 horas por $550. La cifra de la IA no sale de ningún dato de Lucía."
+     },
+     {
+      "p": "¿Qué hace con la afirmación sobre facturar?",
+      "ops": [
+       "La ignora y lo consulta con su contador: la IA no es fuente fiscal",
+       "La cree",
+       "La incluye en la cotización"
+      ],
+      "correcta": 0,
+      "explica": "Las obligaciones fiscales dependen de su régimen y situación; las confirma su contador."
+     },
+     {
+      "p": "¿Qué más debe llevar la cotización de un libro?",
+      "ops": [
+       "Nada más",
+       "Solo el total",
+       "Rondas de ajustes, formato de entrega, uso y derechos de las ilustraciones, anticipo y vigencia"
+      ],
+      "correcta": 2,
+      "explica": "En ilustración, el uso y los derechos cambian el precio; se acuerdan por escrito."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La cotización de Lucía",
+    "malTitulo": "Hecha por la IA",
+    "mal": "«12 ilustraciones: $6,000 según precios promedio del mercado.»",
+    "bienTitulo": "Con sus números",
+    "bien": "«12 ilustraciones a color para libro infantil, 2 rondas de ajustes, archivos para imprenta. Honorarios: $33,000. Anticipo 40% para iniciar, saldo contra entrega de archivos finales. Vigencia: 15 días.»"
+   }
+  ],
+  "c-ia-freelance-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Gerardo hizo el video institucional de una constructora en Chihuahua. La propuesta incluía «un video de 2 minutos con 2 rondas de ajustes». Ya van cuatro rondas, ahora piden una versión vertical de 30 segundos para redes y cambiar la música «por una más alegre». El gerente escribe: «ya casi, nada más esto»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La versión vertical de 30 segundos es…",
+      "ops": [
+       "Un ajuste incluido",
+       "Un nuevo entregable que se cotiza aparte",
+       "Un favor obligatorio"
+      ],
+      "correcta": 1,
+      "explica": "Otro formato y otra duración es otro entregable."
+     },
+     {
+      "p": "¿Cómo responde a la ronda cinco?",
+      "ops": [
+       "Recuerda con amabilidad que el alcance incluía 2 rondas y cotiza las adicionales antes de hacerlas",
+       "La hace sin decir nada",
+       "Deja de contestar"
+      ],
+      "correcta": 0,
+      "explica": "Recordar el alcance por escrito y cotizar evita perder la ganancia de a poquito."
+     },
+     {
+      "p": "¿Qué le pide a la IA para ese mensaje?",
+      "ops": [
+       "Un mensaje que amenace con cobrar todo",
+       "Un mensaje que se disculpe por cobrar",
+       "Un mensaje breve, amable y firme que cite lo acordado y ofrezca opciones con precio"
+      ],
+      "correcta": 2,
+      "explica": "Tono amable y firme, con el acuerdo y las opciones a la vista."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Petición del cliente y qué es",
+    "pares": [
+     [
+      "Cambiar el tono de un texto dentro del video",
+      "Ajuste dentro de las rondas"
+     ],
+     [
+      "Versión vertical de 30 segundos",
+      "Nuevo entregable, se cotiza"
+     ],
+     [
+      "Rehacer el guion con otra idea",
+      "Cambio de concepto, se cotiza aparte"
+     ],
+     [
+      "Ronda de ajustes número cinco",
+      "Ronda adicional, se cotiza"
+     ]
+    ]
+   }
+  ],
+  "c-ia-freelance-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Adriana es consultora de recursos humanos en Guadalajara y tiene tres clientes activos. Su lunes: 4 llamadas repartidas entre 9 am y 6 pm, un manual de inducción que entrega el jueves, dos cotizaciones pendientes y un cliente que le escribe a diario pidiendo estatus. Le pidió a la IA un plan y la IA acomodó 52 horas de trabajo en sus 40 horas disponibles."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué está mal en el plan de la IA?",
+      "ops": [
+       "Nada, se puede",
+       "Que usó bloques de 2 horas",
+       "Acomoda más horas de las que tiene y no deja bloque de respaldo"
+      ],
+      "correcta": 2,
+      "explica": "Un plan imposible se rompe el martes. Algo se renegocia desde hoy."
+     },
+     {
+      "p": "¿Qué hace con las 4 llamadas repartidas?",
+      "ops": [
+       "Las agrupa en un bloque de contacto, por ejemplo martes y jueves en la tarde",
+       "Las deja como están",
+       "Las cancela"
+      ],
+      "correcta": 0,
+      "explica": "Las llamadas repartidas rompen los bloques de producción."
+     },
+     {
+      "p": "¿Cómo atiende al cliente que pide estatus a diario?",
+      "ops": [
+       "Le contesta cada vez",
+       "Le manda un avance fijo cada viernes con qué está listo, qué sigue y qué necesita de él",
+       "Lo ignora"
+      ],
+      "correcta": 1,
+      "explica": "Un avance semanal predecible reduce los mensajes de «¿cómo vamos?»."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La semana de Adriana",
+    "malTitulo": "Todo cabe",
+    "mal": "52 horas acomodadas en 40, llamadas en medio de cada mañana, sin bloque de respaldo ni de negocio.",
+    "bienTitulo": "Lo que sí cabe",
+    "bien": "Producción del manual en las mañanas, llamadas agrupadas martes y jueves en la tarde, bloque de negocio el miércoles, respaldo el viernes vacío, y 12 horas renegociadas desde el lunes con el cliente menos urgente."
+   }
+  ],
+  "c-ia-freelance-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Iván diseña empaques en Puebla. Un cliente le debe $22,000 desde hace 25 días. Iván le pidió a la IA un mensaje «para que ya pague» y la IA escribió: «Si no paga hoy, procederé legalmente y lo reportaré a buró de crédito». En su cotización no se acordó ninguna consecuencia por atraso."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué no manda ese mensaje?",
+      "ops": [
+       "Porque es muy largo",
+       "Amenaza con acciones que no acordó ni consultó con un abogado y rompe la relación de golpe",
+       "Porque no tiene saludo"
+      ],
+      "correcta": 1,
+      "explica": "Antes de hablar de acciones legales se consulta a un abogado. La IA no es asesoría jurídica."
+     },
+     {
+      "p": "¿Qué mensaje conviene a los 25 días?",
+      "ops": [
+       "Firme y con datos: folio, monto, fecha acordada, entregables recibidos y una propuesta de plan de pago",
+       "Uno que pida perdón por cobrar",
+       "Ninguno, esperar"
+      ],
+      "correcta": 0,
+      "explica": "Firmeza con datos y una salida concreta."
+     },
+     {
+      "p": "¿Qué cambia Iván en sus próximas cotizaciones?",
+      "ops": [
+       "Nada",
+       "Cobrar el doble",
+       "Fecha de pago, recordatorio previo y pausa de trabajos acordada por escrito"
+      ],
+      "correcta": 2,
+      "explica": "La cobranza se planea desde la cotización."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "El mensaje de cobranza",
+    "malTitulo": "Amenaza improvisada",
+    "mal": "«Si no paga hoy, procederé legalmente y lo reportaré a buró de crédito.»",
+    "bienTitulo": "Firme y con datos",
+    "bien": "«Hola, Luis. Te escribo por la cotización F-118 por $22,000, con pago acordado el 5 de marzo; los archivos se entregaron el 1 de marzo. ¿Podemos cerrar el pago esta semana o prefieres dividirlo en dos pagos, el 20 y el 30?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu cobranza pendiente",
+    "pregunta": "Si hoy tienes un pago atrasado, escribe el mensaje con folio, monto, fecha acordada, entregables y una propuesta de plan. Si no tienes, escribe la cláusula de pago que agregarás a tu siguiente cotización.",
+    "ayuda": "Hola… folio… monto… fecha… Te propongo… / Cláusula: El pago…"
+   }
+  ],
+  "c-ia-freelance-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Seis semanas después, la cafetería de Puebla ya tiene su página y sus redes. La dueña quiere seguir con «las redes cada mes» y pregunta cuánto sería. Tus horas reales del proyecto fueron 58, no 45, y tu tarifa sigue en $600."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué aprendes de las 58 horas reales?",
+      "ops": [
+       "Que la próxima cotización de un proyecto parecido usa tus horas reales",
+       "Nada, ya se cobró",
+       "Que debes cobrarle la diferencia ahora"
+      ],
+      "correcta": 0,
+      "explica": "La diferencia se aprende, no se cobra retroactivamente si no se acordó."
+     },
+     {
+      "p": "¿Cómo cotizas la iguala mensual?",
+      "ops": [
+       "Un monto fijo sin decir qué incluye",
+       "Con entregables contables al mes, horas estimadas, límite de cambios y qué se cobra aparte",
+       "Por hora sin tope"
+      ],
+      "correcta": 1,
+      "explica": "Una iguala sin límite se vuelve disponibilidad total."
+     },
+     {
+      "p": "¿Qué pides antes de publicar el caso en tu portafolio?",
+      "ops": [
+       "Nada",
+       "Que te pague más",
+       "Permiso de la dueña para usar su nombre y su trabajo"
+      ],
+      "correcta": 2,
+      "explica": "El permiso protege la relación y tu reputación."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la lección",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "La próxima vez cotizas con tus horas ___, no con las que estimaste.",
+      "resp": [
+       "reales"
+      ],
+      "pista": "Las que registraste."
+     },
+     {
+      "frase": "Una iguala dice qué ___ al mes y qué se cobra aparte.",
+      "resp": [
+       "incluye",
+       "entregas",
+       "entrego"
+      ],
+      "pista": "El alcance mensual."
+     },
+     {
+      "frase": "Antes de publicar el caso en tu portafolio pides ___.",
+      "resp": [
+       "permiso",
+       "autorización",
+       "autorizacion"
+      ],
+      "pista": "Al cliente."
+     }
+    ]
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas del independiente",
+   "r": "Contratos y confidencialidad con IA sin sustituir al abogado, flujo de efectivo con ingresos irregulares e impuestos con tu contador, y cómo subir tu tarifa o decir que no.",
+   "lecciones": [
+    {
+     "t": "Contratos, confidencialidad y derechos de tu trabajo",
+     "obj": "Usar la IA para preparar el borrador de un contrato de servicios y detectar cláusulas riesgosas, sabiendo qué revisar con un abogado y qué información del cliente no se pega.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchos independientes trabajan solo con la propuesta y un «va, empieza». Funciona hasta que algo sale mal. Un contrato de servicios sencillo deja claro el alcance, los pagos, qué pasa si alguien cancela y <b>de quién son los derechos del trabajo</b>. La IA es útil para armar el borrador y para explicarte en palabras simples lo que dice un contrato que te mandan. No sustituye al abogado: la revisión final, sobre todo en proyectos grandes, la hace un profesional."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Cláusulas que conviene revisar con lupa",
+       "encabezados": [
+        "Cláusula",
+        "Qué cuidar",
+        "Error común de la IA"
+       ],
+       "filas": [
+        [
+         "Alcance y entregables",
+         "Que coincida con tu propuesta",
+         "Lo describe en términos generales que no se pueden medir"
+        ],
+        [
+         "Pagos",
+         "Montos, fechas, anticipo y qué pasa con el atraso",
+         "Pone plazos o penalizaciones que no acordaste"
+        ],
+        [
+         "Cancelación",
+         "Qué se paga si el cliente cancela a medias",
+         "La omite o la deja solo a favor de una parte"
+        ],
+        [
+         "Derechos del trabajo",
+         "Cuándo pasan al cliente y para qué usos",
+         "Cede todos los derechos desde la firma, antes de que te paguen"
+        ],
+        [
+         "Confidencialidad",
+         "Qué información es confidencial y por cuánto tiempo",
+         "Te prohíbe mostrar el trabajo en tu portafolio sin que lo notes"
+        ],
+        [
+         "Ley y tribunales",
+         "Qué leyes y qué ciudad aplican",
+         "Cita leyes de otro país o artículos que no existen"
+        ]
+       ],
+       "nota": "Esto no es asesoría legal. Las reglas de contratos y de derechos de autor tienen matices; consulta a un abogado para tu caso."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Borrador de contrato para revisar con abogado",
+       "texto": "Arma el borrador de un contrato de prestación de servicios profesionales en México entre [yo, profesión] y [tipo de cliente, sin nombre real]. Datos: entregables [lista contable], rondas de ajustes [número], honorarios [monto], anticipo [%] y saldo [cuándo], vigencia [fechas], qué pasa si el cliente cancela [lo que propongo], los derechos del trabajo pasan al cliente [cuándo: al recibir el pago total] para [usos], puedo mostrar el trabajo en mi portafolio [sí/no, con qué condición]. Lenguaje claro. No cites artículos de ley específicos. Al final lista los puntos que debo revisar con un abogado."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Lo que el cliente te confía no va al chat.</b> Si firmaste un acuerdo de confidencialidad, o simplemente el cliente te compartió sus ventas, su lista de clientes o su estrategia, eso no se pega en una herramienta de IA pública. Sustituye nombres y cifras por marcadores como [CLIENTE] o [VENTAS DEL MES], o trabaja con una herramienta que tu cliente haya aprobado."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "El contrato que te mandó el cliente dice que los derechos pasan a él «desde la firma». ¿Qué propones?",
+         "ops": [
+          "Que pasen al recibir el pago total",
+          "Nada, es normal",
+          "Que nunca pasen"
+         ],
+         "correcta": 0,
+         "explica": "Si los derechos se ceden antes del pago, pierdes tu principal respaldo si no te pagan. Revísalo con un abogado."
+        },
+        {
+         "p": "La IA cita «el artículo 34 de la ley de servicios freelance». ¿Qué haces?",
+         "ops": [
+          "Lo dejas, suena formal",
+          "Lo quitas y verificas en fuente oficial o con un abogado cualquier referencia legal",
+          "Le cambias el número"
+         ],
+         "correcta": 1,
+         "explica": "La IA puede inventar leyes y artículos. Toda referencia legal se verifica."
+        },
+        {
+         "p": "Quieres que la IA mejore la estrategia de ventas de tu cliente, que tiene confidencialidad firmada. Le pegas…",
+         "ops": [
+          "El documento completo con sus cifras",
+          "Solo las cifras",
+          "Una versión con marcadores en lugar de nombres, clientes y cifras reales"
+         ],
+         "correcta": 2,
+         "explica": "La información confidencial no sale de tu control; los marcadores permiten trabajar igual."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu contrato",
+       "pregunta": "Revisa el último contrato o acuerdo que firmaste (o el que usarás). Escribe qué dice sobre pagos, cancelación, derechos del trabajo y portafolio, y qué le preguntarías a un abogado.",
+       "ayuda": "Pagos… Cancelación… Derechos… Portafolio… Le preguntaría al abogado…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA arma el borrador; un abogado revisa lo importante.",
+        "Derechos del trabajo al recibir el pago total, por escrito.",
+        "La información confidencial del cliente no se pega en la IA."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Ingresos irregulares, impuestos y tu colchón",
+     "obj": "Planear el flujo de efectivo de un independiente, apartar para impuestos con el criterio de tu contador y saber cuántos meses aguantas sin clientes.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "El independiente no tiene quincena: un mes cobra $60,000 y el siguiente $9,000. El error típico es gastar al ritmo del mes bueno. La solución es separar desde que entra cada pago: <b>una parte para impuestos, una para tu colchón y lo demás para tu sueldo</b>. Cuánto apartar para impuestos depende de tu régimen fiscal y de tus deducciones. Hay personas físicas que tributan en regímenes como el RESICO o el de actividades empresariales y profesionales, entre otros: cuál te conviene, qué tasas aplican y qué puedes deducir cambia con tu situación y con las reglas vigentes, así que <b>verifica con tu contador</b>. No se lo preguntes a la IA."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Tu flujo de un trimestre",
+       "datos": [
+        [
+         "Mes",
+         "Cobrado",
+         "Gastos del mes"
+        ],
+        [
+         "Julio",
+         58000,
+         31000
+        ],
+        [
+         "Agosto",
+         12000,
+         31000
+        ],
+        [
+         "Septiembre",
+         34000,
+         31000
+        ],
+        [
+         "Total del trimestre",
+         104000,
+         93000
+        ],
+        [
+         "Apartado para impuestos (porcentaje de ejemplo, defínelo con tu contador)",
+         0.12,
+         ""
+        ],
+        [
+         "Disponible después del apartado",
+         "",
+         ""
+        ],
+        [
+         "Resultado del trimestre",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B7",
+         "formula": "=B5*(1-B6)",
+         "esperado": 91520,
+         "texto": "<b>B7</b>: lo que queda después de apartar el porcentaje de impuestos."
+        },
+        {
+         "celda": "B8",
+         "formula": "=B7-C5",
+         "esperado": -1480,
+         "texto": "<b>B8</b>: disponible menos gastos del trimestre.",
+         "explica": "Aunque julio se vio excelente, después del apartado el trimestre quedó $1,480 abajo. Si en julio hubieras gastado al ritmo de ese mes, agosto habría dolido todavía más. El 12% es solo un ejemplo: tu porcentaje real lo defines con tu contador."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Cuántos meses aguantas sin clientes?",
+       "datos": [
+        [
+         "Concepto",
+         "Pesos"
+        ],
+        [
+         "Ahorro disponible hoy",
+         45000
+        ],
+        [
+         "Gastos fijos del mes (personales y del trabajo)",
+         31000
+        ],
+        [
+         "Meses de colchón",
+         ""
+        ],
+        [
+         "Meta: meses de colchón que quieres",
+         3
+        ],
+        [
+         "Te falta ahorrar",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B4",
+         "formula": "=REDONDEAR(B2/B3,1)",
+         "esperado": 1.5,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B4</b>: meses de colchón = ahorro ÷ gastos fijos, con 1 decimal."
+        },
+        {
+         "celda": "B6",
+         "formula": "=MAX(B5*B3-B2,0)",
+         "esperado": 48000,
+         "requiere": "MAX(",
+         "texto": "<b>B6</b>: cuánto te falta para la meta (si ya la cumpliste, 0).",
+         "explica": "Te faltan $48,000 para aguantar tres meses sin ingresos. Con un colchón así, puedes decir que no a un proyecto que no conviene sin entrar en pánico."
+        }
+       ]
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en dinero e impuestos del independiente",
+       "encabezados": [
+        "La IA…",
+        "Tú…"
+       ],
+       "filas": [
+        [
+         "Afirma qué régimen te conviene o qué tasa pagas",
+         "Lo consultas con tu contador con tus datos reales"
+        ],
+        [
+         "Dice que algo «es deducible» sin conocer tu régimen",
+         "Preguntas a tu contador antes de contar con esa deducción"
+        ],
+        [
+         "Da fechas de declaraciones o límites de ingresos",
+         "Verificas las vigentes con tu contador o en el portal del SAT"
+        ],
+        [
+         "Calcula tus impuestos a partir de tu descripción",
+         "Usas la hoja para planear el apartado; el cálculo lo hace tu contador"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te dice «como ganas menos de cierto monto, te conviene el RESICO». Tú…",
+         "ops": [
+          "Te cambias de régimen",
+          "Lo tomas como una pregunta para tu contador, con tus ingresos y gastos reales",
+          "Lo compartes en redes"
+         ],
+         "correcta": 1,
+         "explica": "El régimen conveniente depende de tu situación y de las reglas vigentes: verifica con tu contador."
+        },
+        {
+         "p": "Julio fue tu mejor mes. Lo más sano es…",
+         "ops": [
+          "Gastar al ritmo de julio",
+          "Tomarte vacaciones con todo",
+          "Apartar impuestos y colchón, y pagarte un sueldo fijo del resto"
+         ],
+         "correcta": 2,
+         "explica": "El sueldo fijo te protege de los meses flojos."
+        },
+        {
+         "p": "Tienes 1.5 meses de colchón y un cliente te ofrece un proyecto que te deja $250 por hora. Tu tarifa es $600. Te ayuda…",
+         "ops": [
+          "Saber tu colchón y tu meta, para decidir con números y no con miedo",
+          "Aceptar cualquier cosa",
+          "Pedirle a la IA que decida"
+         ],
+         "correcta": 0,
+         "explica": "El colchón te da margen para decidir; la decisión es tuya."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu reparto",
+       "pregunta": "Escribe cómo vas a repartir cada pago que entre: qué porcentaje para impuestos (según lo que te diga tu contador), cuánto para tu colchón, cuánto es tu sueldo fijo y las preguntas que le llevarás a tu contador.",
+       "ayuda": "Impuestos: …% (confirmar con mi contador) / Colchón: … / Sueldo fijo: $… / Preguntas: 1) … 2) …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Separa impuestos, colchón y sueldo desde que entra cada pago.",
+        "RESICO, actividad empresarial u otro régimen: verifica con tu contador.",
+        "Tu colchón en meses te permite decir que no con números."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Subir tu tarifa y decir que no",
+     "obj": "Preparar con IA el aviso de aumento de tarifa y las respuestas para rechazar o redirigir proyectos que no te convienen, con argumentos y sin quemar la relación.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Dos conversaciones que casi todo independiente pospone: <b>avisar que sube tu tarifa</b> y <b>decir que no</b>. Las dos se vuelven más fáciles con números (tu tarifa real, tu colchón, lo que te dejó cada cliente) y con un mensaje preparado con calma. La IA redacta bien este tipo de mensajes si le das el contexto; lo que no debe hacer es inventar razones ni exagerar."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Cuándo subir tarifa y cuándo decir que no",
+       "encabezados": [
+        "Señal",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Tu agenda está llena varios meses seguidos",
+         "Subes la tarifa a clientes nuevos y avisas con anticipación a los actuales"
+        ],
+        [
+         "Un cliente te deja muy por debajo de tu tarifa real",
+         "Le propones nuevo precio o menos alcance; si no, cierras la relación con cuidado"
+        ],
+        [
+         "El proyecto no es de tu especialidad",
+         "Lo rechazas o recomiendas a alguien de confianza"
+        ],
+        [
+         "El cliente no acepta anticipo ni alcance por escrito",
+         "Dices que no: el riesgo es todo tuyo"
+        ],
+        [
+         "Tus gastos subieron desde tu último cálculo",
+         "Recalculas en la hoja y ajustas"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Aviso de aumento de tarifa",
+       "texto": "Escribe un mensaje para avisar a [tipo de cliente, con cuánto tiempo trabajando juntos] que mi tarifa pasa de [monto actual] a [monto nuevo] a partir de [fecha, con al menos 30 días de anticipación]. Contexto real: [por qué: gastos, más especialización, agenda llena]. El mensaje debe: agradecer la relación sin exagerar, dar el nuevo monto y la fecha, decir qué se mantiene igual, ofrecer una alternativa si el presupuesto no alcanza (menos entregables o frecuencia) y cerrar con disposición a platicarlo. Máximo 8 renglones, español de México, sin disculparse de más ni inventar razones."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Decir que no",
+       "malTitulo": "Excusa",
+       "mal": "«Uy, qué pena, ahorita ando súper saturado, a ver si más adelante…» — y el cliente vuelve a escribir en dos semanas.",
+       "bienTitulo": "Claro y útil",
+       "bien": "«Gracias por pensar en mí. Este proyecto no es mi especialidad y no te daría el resultado que buscas. Te recomiendo a Carla, que hace justo eso. Si más adelante necesitas [lo que sí haces], con gusto platicamos.»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA agregó al aviso de aumento «debido a la inflación del 20%». Tú no diste esa cifra. Tú…",
+         "ops": [
+          "La dejas, suena convincente",
+          "La cambias por 10%",
+          "La quitas y explicas solo tus razones reales"
+         ],
+         "correcta": 2,
+         "explica": "Una cifra inventada daña tu credibilidad si el cliente la revisa."
+        },
+        {
+         "p": "Tu cliente más antiguo paga $400 la hora y tu tarifa real es $600. ¿Qué conviene?",
+         "ops": [
+          "Avisar con anticipación del nuevo precio y ofrecer menos alcance si no le alcanza",
+          "Subirle sin avisar en la siguiente factura",
+          "Seguir igual para siempre"
+         ],
+         "correcta": 0,
+         "explica": "Anticipación y alternativa cuidan la relación y tu ganancia."
+        },
+        {
+         "p": "Te piden un proyecto que no es tu especialidad. Lo más profesional es…",
+         "ops": [
+          "Aceptarlo y aprender sobre la marcha sin decir nada",
+          "Decir que no con claridad y, si puedes, recomendar a alguien de confianza",
+          "No contestar"
+         ],
+         "correcta": 1,
+         "explica": "Un no claro con recomendación deja la puerta abierta para lo que sí haces."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu aviso",
+       "pregunta": "Recalcula tu tarifa con tus gastos actuales. Escribe a qué cliente le avisarías primero del nuevo precio, con qué fecha y qué alternativa le ofrecerías.",
+       "ayuda": "Mi tarifa real hoy: $… / Cliente… / Fecha de aviso… / Nueva tarifa desde… / Alternativa…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Subir tarifa: con números, anticipación y una alternativa.",
+        "Decir que no con claridad es más profesional que una excusa.",
+        "La IA redacta; las razones y las cifras son tuyas y reales."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Los derechos de tu trabajo conviene que pasen al cliente…",
+     "ops": [
+      "Desde la firma",
+      "Al recibir el pago total",
+      "Nunca",
+      "Cuando la IA lo diga"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si la IA cita un artículo de ley en tu contrato…",
+     "ops": [
+      "Lo verificas en fuente oficial o con un abogado",
+      "Lo dejas",
+      "Lo copias en todos tus contratos",
+      "Lo cambias de número"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Información confidencial de tu cliente en la IA…",
+     "ops": [
+      "Se pega completa",
+      "Se pega si es poca",
+      "Se sustituye por marcadores o se usa una herramienta aprobada por el cliente",
+      "Se pega sin nombres pero con cifras reales"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Tu régimen fiscal (RESICO, actividad empresarial u otro) lo decides…",
+     "ops": [
+      "Con lo que diga la IA",
+      "Con tu contador, con tus datos reales",
+      "Con lo que usa otro freelancer",
+      "Al azar"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Meses de colchón =",
+     "ops": [
+      "Gastos ÷ ahorro",
+      "Ahorro × gastos",
+      "Ahorro ÷ gastos fijos del mes",
+      "Ingresos ÷ 12"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "En tu mejor mes lo más sano es…",
+     "ops": [
+      "Gastar al ritmo de ese mes",
+      "Apartar impuestos y colchón y pagarte sueldo fijo",
+      "No apartar nada",
+      "Prestar dinero"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un aviso de aumento de tarifa debe llevar…",
+     "ops": [
+      "Una cifra de inflación que suene fuerte",
+      "Solo el monto nuevo",
+      "Una disculpa larga",
+      "Monto nuevo, fecha con anticipación y una alternativa"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Para rechazar un proyecto que no es tu especialidad…",
+     "ops": [
+      "Das una excusa vaga",
+      "Lo dices con claridad y recomiendas a alguien",
+      "Dejas de contestar",
+      "Lo aceptas y lo subcontratas sin avisar"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día real de trabajo independiente con IA con errores plantados que debes detectar, y la construcción de tu kit personal de independiente con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de trabajo independiente con IA",
+     "obj": "Detectar errores de la IA en propuestas, cotizaciones, contratos y mensajes de cobranza antes de mandarlos a un cliente.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Fernanda es consultora de mercadotecnia independiente en Aguascalientes. Hoy usa un asistente de IA en cuatro momentos del día. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes de enviar, firmar o cobrar."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 · 9:00 am — La propuesta.</b> Para una propuesta a una cadena de gimnasios, Fernanda pegó en la IA el reporte de ventas y la base de clientes de su cliente anterior, una tienda deportiva con la que firmó confidencialidad, «para que tome ideas». La propuesta generada dice: «Con nuestra metodología, la tienda deportiva aumentó 180% sus ventas en tres meses». Fernanda nunca midió eso."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué encontraste?",
+       "pregunta": "Enumera los dos errores de la escena, qué debe hacer Fernanda con lo que ya pegó y cómo reescribiría el caso de éxito con datos reales.",
+       "ayuda": "Error 1… Error 2… Lo que ya pegó… Caso de éxito corregido: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 · 12:00 pm — La cotización.</b> Fernanda le dio a la IA: 40 horas a $650 y $4,500 de gastos directos, anticipo del 50%. La IA escribió: «Honorarios $26,000. Total $26,000. Anticipo $13,000. Nota: como persona física en RESICO no debes cobrar IVA». Fernanda no le dijo su régimen."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué encontraste?",
+       "pregunta": "Calcula el total y el anticipo correctos y explica qué hace Fernanda con la nota sobre el IVA.",
+       "ayuda": "Total = 26,000 + 4,500 = … Anticipo = … La nota fiscal… verifica con tu contador…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 · 3:00 pm — El contrato.</b> La IA armó el contrato. Dice: «El cliente adquiere todos los derechos del material desde la firma de este contrato», «El prestador no podrá mostrar el trabajo en ningún medio» y «En caso de cancelación, el cliente no pagará los trabajos realizados». Fernanda quería mostrar el trabajo en su portafolio."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué encontraste?",
+       "pregunta": "Reescribe las tres cláusulas como a Fernanda le convienen y escribe qué le preguntaría a un abogado antes de firmar.",
+       "ayuda": "Derechos: … Portafolio: … Cancelación: … Preguntas al abogado: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 · 6:00 pm — La cobranza.</b> Un cliente tiene 10 días de atraso en el saldo. La IA redactó: «Última advertencia. Si no pagas mañana, publicaré en redes que eres un mal cliente y te demandaré». Además, Fernanda ya le había entregado los archivos finales."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué encontraste?",
+       "pregunta": "Reescribe el mensaje de cobranza con datos y una salida, y anota qué cambiará en su proceso para no entregar archivos finales antes del saldo.",
+       "ayuda": "Hola… folio… monto… fecha acordada… Te propongo… / En mi proceso cambio…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Escena 1: ¿qué hace Fernanda con la información de la tienda que pegó?",
+         "ops": [
+          "Nada, ya está hecho",
+          "Revisa las condiciones de la herramienta y de su acuerdo de confidencialidad, y valora avisar a su cliente según lo acordado",
+          "La vuelve a pegar en otro chat"
+         ],
+         "correcta": 1,
+         "explica": "Violar una confidencialidad es serio; se atiende con lo que diga el acuerdo, y si hay duda, con un abogado."
+        },
+        {
+         "p": "Escena 2: el total correcto de la cotización es…",
+         "ops": [
+          "$30,500",
+          "$26,000",
+          "$13,000"
+         ],
+         "correcta": 0,
+         "explica": "Honorarios $26,000 + gastos $4,500 = $30,500; el anticipo del 50% es $15,250."
+        },
+        {
+         "p": "Escena 2: la nota sobre RESICO e IVA…",
+         "ops": [
+          "Se deja, suena técnica",
+          "Se cambia por otra tasa",
+          "Se quita y se verifica con su contador"
+         ],
+         "correcta": 2,
+         "explica": "La IA no conoce su régimen ni su situación; lo fiscal se verifica con su contador."
+        },
+        {
+         "p": "Escena 3: la cláusula de derechos debe decir que pasan al cliente…",
+         "ops": [
+          "Desde la firma",
+          "Al recibir el pago total, y con permiso para mostrar el trabajo en su portafolio si así lo acuerdan",
+          "Nunca"
+         ],
+         "correcta": 1,
+         "explica": "Así conserva su respaldo si no le pagan y protege su portafolio."
+        },
+        {
+         "p": "Escena 4: amenazar con exhibir al cliente en redes…",
+         "ops": [
+          "Presiona y funciona",
+          "Es aceptable si ya pasó un mes",
+          "Daña la relación y puede traerle problemas; se cobra con datos y, si hace falta, se consulta a un abogado"
+         ],
+         "correcta": 2,
+         "explica": "Firmeza con datos y asesoría profesional, no amenazas improvisadas."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Nada confidencial de un cliente va a la IA, y nada inventado va a la propuesta.",
+        "Las cuentas salen de tu hoja; lo fiscal, de tu contador.",
+        "Contratos con derechos contra pago y cobranza con datos, no con amenazas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de independiente con IA",
+     "obj": "Construir tu biblioteca de prompts, tu política de datos de clientes, tu lista de verificación y una propuesta real revisada con ella.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso armando tu <b>kit de independiente con IA</b>: lo que vas a usar con cada cliente, del primer mensaje al último pago. Trabaja con tu negocio real. Guárdalo en un solo documento con fecha y revísalo cada trimestre, cuando actualices tu tarifa."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1 · Tu biblioteca de prompts",
+       "pregunta": "Elige las 7 plantillas del curso que más usarás (oferta, sustentar precio, primer contacto, propuesta, cotización, alcance, semana, avance, recordatorios de pago, contrato, aviso de tarifa) y adapta cada una con tus datos fijos: especialidad, tipo de cliente, tarifa, anticipo, rondas de ajustes y tono.",
+       "ayuda": "1. Propuesta: Soy [mi especialidad] y trabajo con [mi tipo de cliente]… 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2 · Tu política de datos de clientes",
+       "pregunta": "Escribe 5 reglas sobre qué información de tus clientes nunca pegas en la IA (confidencialidad, cifras, bases de clientes, contraseñas de sus cuentas), cómo la sustituyes y qué haces si algo se filtra.",
+       "ayuda": "Nunca pego… La sustituyo con… Si algo se filtra…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3 · Tu lista de verificación",
+       "pregunta": "Arma tu lista de 8 puntos para revisar todo lo que la IA te prepare antes de enviarlo: cifras y logros reales, montos calculados en tu hoja, entregables contables, qué no incluye, vigencia, cláusulas de derechos y cancelación, nada fiscal sin tu contador y tono de cobranza.",
+       "ayuda": "Antes de enviar reviso: 1) … 2) … 3) …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4 · Tu entregable real",
+       "pregunta": "Prepara con tu kit una propuesta y cotización reales para un cliente actual o próximo, pásala por tu lista y anota qué corregiste de lo que propuso la IA.",
+       "ayuda": "Cliente… La IA propuso… Corregí… Total… Anticipo… Vigencia…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE INDEPENDIENTE CON IA — [nombre] — versión [fecha]\n\n1. Datos fijos (especialidad, cliente ideal, frase de presentación, tarifa, anticipo, rondas)\n2. Biblioteca de prompts\n   2.1 Primer contacto · 2.2 Propuesta · 2.3 Cotización · 2.4 Alcance y cambios\n   2.5 Avance semanal · 2.6 Recordatorios de pago · 2.7 Contrato · 2.8 Aviso de tarifa\n3. Política de datos de clientes (5 reglas)\n4. Lista de verificación antes de enviar (8 puntos)\n5. Hojas: tarifa, cotización, rentabilidad por proyecto, flujo y colchón\n6. Preguntas pendientes para mi contador: [ ]\n7. Puntos para revisar con un abogado: [ ]\n8. Entregable real revisado: [ ]\n9. Próxima revisión del kit y de mi tarifa: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso completo!</b> La IA te ahorra horas de redacción; tu kit te protege de cobrar mal, prometer de más y exponer a tus clientes. Las cifras salen de tu hoja, lo fiscal de tu contador, lo legal de tu abogado, y la responsabilidad frente a tu cliente es tuya."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Biblioteca de prompts con tus datos fijos.",
+        "Política de datos de clientes y lista de verificación antes de enviar.",
+        "Una propuesta real revisada y fecha para actualizar tu tarifa."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "El reporte de ventas de un cliente con confidencialidad firmada…",
+     "ops": [
+      "Se pega en la IA para tomar ideas",
+      "No se pega; se usan marcadores o nada",
+      "Se pega sin el nombre del cliente pero con las cifras",
+      "Se comparte con otro cliente"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un caso de éxito en tu propuesta lleva…",
+     "ops": [
+      "Cifras que suenen bien",
+      "Solo adjetivos",
+      "Resultados reales que puedes comprobar, con permiso del cliente",
+      "Lo que proponga la IA"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Honorarios $26,000 y gastos $4,500. El anticipo del 50% del total es…",
+     "ops": [
+      "$15,250",
+      "$13,000",
+      "$30,500",
+      "$2,250"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA te dice qué impuestos cobrar según tu régimen…",
+     "ops": [
+      "Lo aplicas",
+      "Lo publicas",
+      "Lo ignoras siempre",
+      "Lo verificas con tu contador"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una cláusula que te prohíbe mostrar el trabajo en tu portafolio…",
+     "ops": [
+      "Se acepta sin leer",
+      "Se negocia antes de firmar si te importa el portafolio",
+      "Es ilegal",
+      "No importa"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Para cobrar un saldo atrasado conviene…",
+     "ops": [
+      "Un mensaje con datos y una propuesta de plan de pago",
+      "Exhibir al cliente en redes",
+      "Amenazar con demanda sin asesoría",
+      "No decir nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Tu kit de independiente se revisa…",
+     "ops": [
+      "Nunca",
+      "Solo si pierdes un cliente",
+      "Cada trimestre, junto con tu tarifa",
+      "Cuando la IA lo pida"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

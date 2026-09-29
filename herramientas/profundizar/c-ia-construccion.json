@@ -1,0 +1,1394 @@
+{
+ "id": "c-ia-construccion",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA en colados y trabajos estructurales, remodelaciones en espacios habitados y estimaciones con empresas, detectando los errores típicos de cada situación y sabiendo qué valida el responsable de obra.",
+  "Construir tu kit de obra con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu obra."
+ ],
+ "terceras": [
+  {
+   "p": "La IA te devolvió el catálogo con una cantidad que tú nunca mediste.",
+   "op": "La redondeo hacia arriba por seguridad y la dejo"
+  },
+  {
+   "p": "El cliente dice «nada más es pintar». Al hacer el levantamiento tú…",
+   "op": "Cotizo pintura y agrego un 30% por si acaso"
+  },
+  {
+   "p": "La IA te dio un precio de $4,200 por m³ de concreto premezclado para tu ciudad.",
+   "op": "Lo uso si coincide con lo que pagué hace dos años"
+  },
+  {
+   "p": "Un precio unitario incluye…",
+   "op": "Material y utilidad, sin mano de obra"
+  },
+  {
+   "p": "El costo directo de tu presupuesto es…",
+   "op": "Lo que cobra la cuadrilla por toda la obra"
+  },
+  {
+   "p": "Se retrasa una actividad de la ruta crítica…",
+   "op": "Solo se retrasa esa actividad y las demás siguen igual"
+  },
+  {
+   "p": "El material de una etapa se pide…",
+   "op": "Todo junto al inicio de la obra, sin importar la etapa"
+  },
+  {
+   "p": "Una incidencia en la bitácora se escribe…",
+   "op": "Al final de la obra, cuando ya se sabe cómo terminó"
+  },
+  {
+   "p": "Las fotos de obra sirven sobre todo para…",
+   "op": "Publicarlas en redes como publicidad"
+  },
+  {
+   "p": "Llevas 40% de obra ejecutada y 70% cobrado. Eso significa que…",
+   "op": "Ya puedes retirar la utilidad de toda la obra"
+  },
+  {
+   "p": "El avance físico se mide…",
+   "op": "Por el dinero que ya se gastó en material"
+  },
+  {
+   "p": "El cliente tiene que elegir los pisos y no decide. En el reporte…",
+   "op": "Elijo yo los pisos para no atrasarme"
+  },
+  {
+   "p": "Llevas 25% más block del presupuestado y la obra va a la mitad.",
+   "op": "Le cobro la diferencia al cliente sin revisar"
+  },
+  {
+   "p": "El material se da por recibido cuando…",
+   "op": "El proveedor manda la foto de la carga"
+  },
+  {
+   "p": "El desperdicio de material…",
+   "op": "Lo absorbe siempre el proveedor"
+  },
+  {
+   "p": "La IA te redactó el acuerdo de destajo. Antes de que lo firmen…",
+   "op": "Le agrego más cláusulas de la IA para que sea más largo"
+  },
+  {
+   "p": "El destajo debe decir siempre…",
+   "op": "El número de días que va a tardar, nada más"
+  },
+  {
+   "p": "Una lista de verificación de seguridad hecha con IA…",
+   "op": "Se imprime y se pega en la obra sin revisarla"
+  },
+  {
+   "p": "Con 55% ejecutado y 78% cobrado, tu siguiente cobro…",
+   "op": "Se pide completo para compensar las lluvias"
+  },
+  {
+   "p": "Los seis días de lluvia sirven para justificar el atraso solo si…",
+   "op": "La IA confirma que llovió en esa ciudad"
+  },
+  {
+   "p": "El block va 25% arriba y nadie sabe por qué. Primero…",
+   "op": "Cambio de proveedor de block"
+  }
+ ],
+ "extras": {
+  "c-ia-construccion-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el dueño de una farmacia en Hermosillo te pide cotizar «nada más cambiar el piso» de 85 m². La IA convirtió tus notas en un catálogo con un solo concepto: «suministro y colocación de piso, 85 m²». No aparecen el retiro del piso existente, la nivelación, el zoclo, el acarreo de escombro ni el trabajo en horario nocturno que pidió el cliente para no cerrar."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué pasa si cotizas solo el concepto que armó la IA?",
+      "ops": [
+       "Nada, los demás van incluidos",
+       "Retiro, nivelación, zoclo y acarreo los terminas pagando tú",
+       "El cliente los paga aparte automáticamente"
+      ],
+      "correcta": 1,
+      "explica": "Lo que no está en el catálogo no está cotizado."
+     },
+     {
+      "p": "El horario nocturno…",
+      "ops": [
+       "Se cotiza porque cambia rendimientos, pagos y logística",
+       "No cambia nada",
+       "Se cobra solo si el cliente se queja"
+      ],
+      "correcta": 0,
+      "explica": "Trabajar de noche afecta el costo de la mano de obra, la iluminación y el acarreo."
+     },
+     {
+      "p": "¿Qué le pides a la IA después del primer catálogo?",
+      "ops": [
+       "Que ponga precios",
+       "Que decida la cantidad de zoclo",
+       "Una lista de conceptos que suelen olvidarse en cambios de piso para revisarla en sitio"
+      ],
+      "correcta": 2,
+      "explica": "La IA sirve para no olvidar conceptos; tú mides y confirmas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Catálogo de un cambio de piso",
+    "malTitulo": "Incompleto",
+    "mal": "«1. Suministro y colocación de piso — 85 m².»",
+    "bienTitulo": "Completo",
+    "bien": "«1. Retiro de piso existente — m². 2. Nivelación con mortero — m². 3. Suministro y colocación de piso — m². 4. Zoclo — m. 5. Acarreo de escombro — lote. 6. Trabajo en horario nocturno — lote.»"
+   }
+  ],
+  "c-ia-construccion-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> pediste a la IA el desglose del precio unitario de aplanado de mezcla en Tuxtla Gutiérrez. Te dio una tabla con precios «de referencia» de cemento, arena y cal, un rendimiento de la cuadrilla que no has medido nunca y no incluyó andamio, aunque el muro mide 6 metros de alto."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Los precios «de referencia»…",
+      "ops": [
+       "Se borran y se llenan con tus cotizaciones con fecha",
+       "Se usan si parecen razonables",
+       "Se usan con un 10% más"
+      ],
+      "correcta": 0,
+      "explica": "Los precios dependen de tu ciudad, tu proveedor y la semana."
+     },
+     {
+      "p": "El rendimiento de la cuadrilla…",
+      "ops": [
+       "Se usa el de la IA",
+       "Se calcula promediando internet",
+       "Se toma de lo que tu cuadrilla hace realmente, medido en obras anteriores"
+      ],
+      "correcta": 2,
+      "explica": "El rendimiento es el dato que más mueve el precio unitario y es propio de tu gente."
+     },
+     {
+      "p": "El andamio que falta para un muro de 6 metros…",
+      "ops": [
+       "No importa",
+       "Se agrega como equipo al precio unitario o como concepto aparte",
+       "Lo pone el cliente"
+      ],
+      "correcta": 1,
+      "explica": "Trabajar en altura requiere equipo y más tiempo; si no se cotiza, lo pagas tú."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Precio unitario propio",
+    "items": [
+     {
+      "frase": "Los precios de insumos salen de tus ___ con fecha.",
+      "resp": [
+       "cotizaciones",
+       "cotizacion",
+       "cotización"
+      ]
+     },
+     {
+      "frase": "El ___ de la cuadrilla se mide en tus obras.",
+      "resp": [
+       "rendimiento"
+      ]
+     },
+     {
+      "frase": "El andamio entra en el precio unitario como ___.",
+      "resp": [
+       "equipo"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-construccion-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la cotización que redactó la IA para una barda perimetral en Toluca dice: «precio fijo sin importar aumentos de materiales», «garantía de por vida» y no trae vigencia. La obra empezaría en dos meses."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Precio fijo sin importar aumentos»…",
+      "ops": [
+       "Se deja, da confianza",
+       "Se cambia por una vigencia de la cotización y una cláusula de ajuste si inicia después",
+       "Se cambia por «precio sujeto a cambios sin aviso»"
+      ],
+      "correcta": 1,
+      "explica": "Con materiales que cambian de precio, una cotización sin vigencia te deja sin margen."
+     },
+     {
+      "p": "«Garantía de por vida»…",
+      "ops": [
+       "Se sustituye por una garantía con plazo y qué cubre, por escrito",
+       "Es normal en bardas",
+       "Se deja porque nadie la reclama"
+      ],
+      "correcta": 0,
+      "explica": "Una garantía sin plazo ni alcance es una promesa imposible de cumplir."
+     },
+     {
+      "p": "¿Quién decide los términos de la cotización?",
+      "ops": [
+       "La IA",
+       "El cliente",
+       "Tú; la IA solo los redacta"
+      ],
+      "correcta": 2,
+      "explica": "Plazos, garantías y ajustes son decisiones de tu negocio."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Condiciones de la cotización",
+    "malTitulo": "Te amarra",
+    "mal": "«Precio fijo sin importar aumentos. Garantía de por vida.»",
+    "bienTitulo": "Te protege",
+    "bien": "«Vigencia: 15 días. Si la obra inicia después, los precios se actualizan con cotización. Garantía de 12 meses por defectos de mano de obra; no cubre mal uso ni daños por terceros.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus condiciones estándar",
+    "pregunta": "Escribe las condiciones que tendrá toda cotización tuya: vigencia, anticipo, forma de pago, garantía y ajuste de precios.",
+    "ayuda": "Vigencia: … / Anticipo: … / Garantía: … / Ajuste: …"
+   }
+  ],
+  "c-ia-construccion-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el programa de obra que armó la IA para una casa en Culiacán pone las instalaciones eléctricas después de los aplanados, programa el descimbrado de la losa tres días después del colado «por regla general» y no considera que la obra coincide con la temporada de lluvias."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Las instalaciones después de los aplanados…",
+      "ops": [
+       "Están bien, así se ahorra tiempo",
+       "Obligan a ranurar lo terminado: las tuberías van antes de aplanar",
+       "Da igual el orden"
+      ],
+      "correcta": 1,
+      "explica": "La secuencia lógica evita retrabajos."
+     },
+     {
+      "p": "El tiempo de descimbrado «por regla general»…",
+      "ops": [
+       "Se sustituye por lo que indique el responsable estructural y el proyecto",
+       "Se usa, es lo común",
+       "Se reduce para ganar tiempo"
+      ],
+      "correcta": 0,
+      "explica": "El descimbrado depende del diseño, del concreto y de las condiciones; lo indica quien responde por la estructura."
+     },
+     {
+      "p": "La temporada de lluvias…",
+      "ops": [
+       "No se considera",
+       "Se considera solo si llueve",
+       "Se incluye como holgura en las actividades a la intemperie"
+      ],
+      "correcta": 2,
+      "explica": "Si sabes que viene, se programa con margen; no es sorpresa."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Programa con criterio",
+    "items": [
+     {
+      "frase": "Las tuberías se colocan ___ de aplanar.",
+      "resp": [
+       "antes"
+      ]
+     },
+     {
+      "frase": "El descimbrado lo indica el responsable ___.",
+      "resp": [
+       "estructural",
+       "de obra"
+      ]
+     },
+     {
+      "frase": "La temporada de lluvias se programa como ___.",
+      "resp": [
+       "holgura",
+       "margen"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-construccion-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un ayudante se cortó la mano con una esmeriladora en una obra de Aguascalientes. Dictaste lo que pasó y la IA escribió en la bitácora: «Accidente por descuido del trabajador, sin mayor importancia». No registró la hora, si traía guantes, qué atención recibió ni quién lo vio."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Por descuido del trabajador»…",
+      "ops": [
+       "Se deja, fue su culpa",
+       "Se cambia por «por causa desconocida»",
+       "Se elimina: la bitácora registra hechos, no culpas"
+      ],
+      "correcta": 2,
+      "explica": "Las conclusiones sobre causas se hacen después, con la investigación del accidente."
+     },
+     {
+      "p": "¿Qué datos deben quedar?",
+      "ops": [
+       "Hora, actividad, qué pasó, equipo de protección que traía, atención médica recibida y testigos",
+       "Solo el nombre",
+       "Solo la fecha"
+      ],
+      "correcta": 0,
+      "explica": "Con esos datos puedes atender al trabajador, cumplir los avisos que correspondan y prevenir que se repita."
+     },
+     {
+      "p": "«Sin mayor importancia»…",
+      "ops": [
+       "Se deja para no alarmar",
+       "Se elimina: la gravedad la valora el médico",
+       "Se cambia por «leve»"
+      ],
+      "correcta": 1,
+      "explica": "Una herida que parece menor puede complicarse; la bitácora no minimiza."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Registro del accidente",
+    "malTitulo": "Opina",
+    "mal": "«Accidente por descuido del trabajador, sin mayor importancia.»",
+    "bienTitulo": "Registra",
+    "bien": "«Mié 9, 11:40. J. R., ayudante, se cortó la mano izquierda al cortar varilla con esmeriladora. Traía lentes; guantes no. Se le dio primeros auxilios y se le llevó a atención médica a las 12:05. Testigos: M. L. y A. S. Se suspende el corte hasta revisar equipo y procedimiento.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu protocolo de accidente",
+    "pregunta": "Escribe los pasos que seguirás si alguien se lastima en tu obra: atención, a quién avisas, qué registras y qué revisas antes de reanudar.",
+    "ayuda": "1. Atender… 2. Avisar a… 3. Registrar… 4. Revisar…"
+   }
+  ],
+  "c-ia-construccion-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> le pediste a la IA el reporte semanal de una bodega en Celaya. Como le diste la fecha de inicio y la de entrega, calculó el avance por días transcurridos: «avance de 70%». Por conceptos, tu avance físico real es de 52%."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué avance reportas?",
+      "ops": [
+       "El 52% medido por conceptos",
+       "El 70%, que se ve mejor",
+       "Un promedio de 61%"
+      ],
+      "correcta": 0,
+      "explica": "El tiempo transcurrido no es avance; si reportas 70%, el cliente pagará y exigirá con base en un número falso."
+     },
+     {
+      "p": "¿Cómo explicas la diferencia entre tiempo y avance?",
+      "ops": [
+       "No la explicas",
+       "Culpas a la cuadrilla",
+       "Muestras el atraso, sus causas registradas en bitácora y el plan para recuperarlo"
+      ],
+      "correcta": 2,
+      "explica": "Con datos y plan conservas la confianza del cliente."
+     },
+     {
+      "p": "¿Qué instrucción agregas al prompt del reporte?",
+      "ops": [
+       "«Hazlo optimista»",
+       "«Usa solo el avance por concepto que te doy; no lo calcules con fechas»",
+       "«Redondea hacia arriba»"
+      ],
+      "correcta": 1,
+      "explica": "Si no se lo prohíbes, la IA completa con el dato que sí tiene."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Dato y de dónde sale",
+    "pares": [
+     [
+      "Avance físico",
+      "Medición por concepto en obra"
+     ],
+     [
+      "Causas del atraso",
+      "Bitácora con fechas"
+     ],
+     [
+      "Dinero cobrado",
+      "Tus recibos y transferencias"
+     ],
+     [
+      "Nueva fecha de entrega",
+      "Programa ajustado con tiempos de tu cuadrilla"
+     ]
+    ]
+   }
+  ],
+  "c-ia-construccion-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> esperas una olla de concreto premezclado para colar una losa en Querétaro. Llega con una hora de retraso, la remisión indica una resistencia distinta a la que pediste y el operador te dice que «es lo mismo». El laboratorio que iba a tomar muestras todavía no llega."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La remisión con otra resistencia…",
+      "ops": [
+       "No se acepta sin consultarlo con el responsable de obra",
+       "Se acepta, es lo mismo",
+       "Se acepta y se descuenta después"
+      ],
+      "correcta": 0,
+      "explica": "La resistencia especificada es un dato del proyecto estructural; no se cambia por conveniencia."
+     },
+     {
+      "p": "El retraso de la olla…",
+      "ops": [
+       "No importa",
+       "Se anota en bitácora con la hora de salida de planta y de llegada, y se consulta si el concreto sigue siendo aceptable",
+       "Se compensa agregando agua"
+      ],
+      "correcta": 1,
+      "explica": "El tiempo afecta al concreto; agregar agua en obra altera su resistencia."
+     },
+     {
+      "p": "El laboratorio no ha llegado…",
+      "ops": [
+       "Se cuela y ya",
+       "Se toman fotos en lugar de muestras",
+       "Se espera o se reprograma: sin muestreo no hay forma de comprobar la resistencia"
+      ],
+      "correcta": 2,
+      "explica": "El muestreo es la evidencia de que el concreto cumple."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Qué revisas al recibir concreto",
+    "pares": [
+     [
+      "Remisión",
+      "Resistencia y volumen pedidos"
+     ],
+     [
+      "Hora de salida de planta",
+      "Tiempo transcurrido hasta la descarga"
+     ],
+     [
+      "Muestreo del laboratorio",
+      "Evidencia de la resistencia"
+     ],
+     [
+      "Bitácora",
+      "Registro de todo lo anterior con firma"
+     ]
+    ]
+   }
+  ],
+  "c-ia-construccion-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> pediste a la IA la plática de seguridad del lunes para una obra de tres niveles en Puebla. El texto dice: «El arnés es opcional por debajo de 5 metros» y «los andamios pueden armarse sin base si el piso está firme». Ninguna de las dos afirmaciones tiene fuente."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con esas dos afirmaciones?",
+      "ops": [
+       "Las dejas, suenan lógicas",
+       "Las quitas y verificas los criterios en la norma de seguridad vigente con un especialista",
+       "Las cambias por otras cifras"
+      ],
+      "correcta": 1,
+      "explica": "Las reglas de trabajo en altura vienen de la normatividad de seguridad y salud en el trabajo aplicable, no de un chat."
+     },
+     {
+      "p": "¿Para qué sí te sirve la IA en la plática de seguridad?",
+      "ops": [
+       "Para ordenar temas, redactar en lenguaje sencillo y preparar preguntas para la cuadrilla",
+       "Para fijar las reglas",
+       "Para firmar la lista de asistencia"
+      ],
+      "correcta": 0,
+      "explica": "La IA ayuda a comunicar; el contenido técnico se valida."
+     },
+     {
+      "p": "Después de la plática…",
+      "ops": [
+       "Se archiva",
+       "Se da por cumplida la seguridad",
+       "Se registra asistencia y se verifica en obra que se aplica"
+      ],
+      "correcta": 2,
+      "explica": "La plática sirve si se ve en el andamio y en el equipo de cada quien."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Plática de seguridad",
+    "malTitulo": "Inventada",
+    "mal": "«El arnés es opcional por debajo de 5 metros.»",
+    "bienTitulo": "Verificada",
+    "bien": "«Hoy trabajamos en el tercer nivel. Antes de subir: revisamos barandales, amarres del andamio y el arnés de cada quien. Si algo falta, no se sube. Las reglas las revisó nuestro responsable de seguridad.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus temas de seguridad",
+    "pregunta": "Escribe los cuatro temas de seguridad que más riesgo tienen en tu obra actual y quién valida el contenido de cada plática.",
+    "ayuda": "1. Altura — valida… 2. …"
+   }
+  ],
+  "c-ia-construccion-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso continúa:</b> ya en la entrega, el cliente dice que no pagará el último 10% hasta que «todo quede perfecto». Pides a la IA una lista de pendientes y te devuelve 40 puntos genéricos de cualquier casa, varios que no aplican (alberca, elevador) y otros que ya se entregaron."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿De dónde sale la lista de pendientes?",
+      "ops": [
+       "De la lista genérica de la IA",
+       "De un recorrido con el cliente, punto por punto, con fotos",
+       "De lo que diga el maestro"
+      ],
+      "correcta": 1,
+      "explica": "Una lista de pendientes solo sirve si refleja lo que el cliente ve en su casa."
+     },
+     {
+      "p": "«Hasta que todo quede perfecto»…",
+      "ops": [
+       "Se convierte en una lista cerrada con fechas; al cerrarla, se paga",
+       "Se acepta tal cual",
+       "Se ignora"
+      ],
+      "correcta": 0,
+      "explica": "Un criterio subjetivo nunca termina; una lista firmada sí."
+     },
+     {
+      "p": "Lo que ya se entregó y el cliente vuelve a reclamar…",
+      "ops": [
+       "Se rehace sin discutir",
+       "Se discute por mensajes",
+       "Se muestra con la minuta o foto de entrega fechada"
+      ],
+      "correcta": 2,
+      "explica": "La documentación de la obra es tu respaldo."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Cierre de obra",
+    "items": [
+     {
+      "frase": "La lista de pendientes sale de un ___ con el cliente.",
+      "resp": [
+       "recorrido"
+      ]
+     },
+     {
+      "frase": "Cada pendiente lleva fecha y ___.",
+      "resp": [
+       "responsable",
+       "foto"
+      ]
+     },
+     {
+      "frase": "Al cerrar la lista firmada se libera el último ___.",
+      "resp": [
+       "pago"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: estructura, remodelación habitada y estimaciones",
+   "r": "Cómo usar la IA en colados y trabajos estructurales, en remodelaciones con gente viviendo o trabajando en el lugar y en estimaciones con empresas, reconociendo los errores típicos de cada situación.",
+   "lecciones": [
+    {
+     "t": "Colados y trabajos estructurales",
+     "obj": "Usar la IA para planear colados y organizar la documentación sin tomar de ella dosificaciones, armados ni tiempos que corresponden al proyecto estructural.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En estructura, un error no se corrige con pintura. La IA responde con seguridad cuánta varilla lleva una losa, qué proporción de cemento y grava usar o en cuántos días se descimbra, pero <b>no conoce tu proyecto, tu suelo ni tu concreto</b>. Esas decisiones están en los planos estructurales, en la memoria de cálculo y en las indicaciones del Director Responsable de Obra o perito que corresponda en tu municipio. Usa la IA para planear el día del colado, calcular volúmenes con tus medidas, preparar listas de revisión y ordenar la documentación."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en estructura",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Armados «típicos» para una losa o trabe",
+         "Planos estructurales firmados"
+        ],
+        [
+         "Dosificaciones de concreto hecho en obra",
+         "Especificación del proyecto y responsable de obra"
+        ],
+        [
+         "Tiempos de descimbrado «por regla general»",
+         "Indicación del responsable estructural"
+        ],
+        [
+         "Sugerir que se agregue agua para trabajar mejor",
+         "Revenimiento especificado; nunca se agrega agua sin autorización"
+        ],
+        [
+         "Omitir el muestreo del concreto",
+         "Programa de pruebas con laboratorio"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Volumen y pedido de concreto",
+       "instruccion": "Medidas de práctica. El porcentaje de desperdicio lo defines tú con tu experiencia.",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Largo de la losa (m)",
+         8
+        ],
+        [
+         "Ancho de la losa (m)",
+         6
+        ],
+        [
+         "Espesor (m)",
+         0.12
+        ],
+        [
+         "Volumen teórico (m³)",
+         ""
+        ],
+        [
+         "Desperdicio (tu %)",
+         0.05
+        ],
+        [
+         "Volumen a pedir (m³)",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=B2*B3*B4",
+         "esperado": 5.76,
+         "texto": "<b>B5</b>: volumen teórico = largo × ancho × espesor."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B5*(1+B6)",
+         "esperado": 6.048,
+         "texto": "<b>B7</b>: volumen a pedir = volumen teórico × (1 + desperdicio).",
+         "explica": "Unos 6 m³. El espesor y la resistencia salen del plano estructural; confirma con tu proveedor cómo redondea el pedido y ten un plan si el volumen no alcanza."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "El maestro pregunta cuánta varilla lleva la trabe y la IA da un armado. Tú…",
+         "ops": [
+          "Le das el armado de la IA",
+          "Revisas el plano estructural y, si hay duda, consultas al responsable",
+          "Pones una varilla más por seguridad"
+         ],
+         "correcta": 1,
+         "explica": "El armado es del proyecto; improvisarlo es un riesgo que no se ve hasta que falla."
+        },
+        {
+         "p": "¿Para qué te sirve la IA el día del colado?",
+         "ops": [
+          "Para decidir la resistencia",
+          "Para aprobar la cimbra",
+          "Para armar la lista de revisión previa: cimbra, armado, instalaciones, personal, equipo, laboratorio y clima"
+         ],
+         "correcta": 2,
+         "explica": "Una buena lista evita colar con algo pendiente."
+        },
+        {
+         "p": "La IA sugiere agregar agua al concreto para que «corra mejor». Tú…",
+         "ops": [
+          "No lo permites: cambia la resistencia",
+          "Lo haces con poca agua",
+          "Lo haces si hace calor"
+         ],
+         "correcta": 0,
+         "explica": "El agua de más debilita el concreto; cualquier ajuste lo autoriza el responsable."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Pedirle ayuda a la IA con un colado",
+       "malTitulo": "Peligroso",
+       "mal": "«¿Cuánta varilla y qué proporción de concreto lleva una losa de 8 × 6?»",
+       "bienTitulo": "Útil",
+       "bien": "«Con este plano [descripción sin datos del cliente], arma la lista de revisión previa al colado y el programa del día: horarios, personal, equipo, laboratorio y plan si llueve.»"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Plan del día de colado",
+       "texto": "Voy a colar [elemento] de [volumen] m³ en [ciudad], con concreto [premezclado / hecho en obra] según especificación del proyecto. Arma el plan del día: lista de revisión previa (cimbra, armado revisado por el responsable, instalaciones ahogadas, niveles), personal y funciones, equipo, hora de llegada de ollas, muestreo del laboratorio, qué hacer si llueve o si se retrasa una olla, y registro en bitácora. No propongas resistencias, armados, dosificaciones ni tiempos de descimbrado: esos los define el proyecto.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Armados, resistencias y descimbrado: del proyecto y del responsable de obra.",
+        "Volumen = largo × ancho × espesor, más tu desperdicio.",
+        "Sin muestreo no hay prueba de la resistencia."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Remodelación con gente viviendo o trabajando",
+     "obj": "Planear con IA remodelaciones en espacios habitados o en operación, cuidando a los ocupantes, a los vecinos y las reglas del inmueble.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Remodelar una casa con la familia dentro, un consultorio que no puede cerrar o un departamento en condominio es otra obra: hay horarios, polvo, ruido, vecinos, administración y cosas que no se ven hasta que abres. La IA ayuda muchísimo a <b>planear por etapas, redactar avisos y listas de protección</b>. Lo que no sabe es qué hay dentro de los muros, qué permite el reglamento de tu condominio ni si ese muro que el cliente quiere tirar carga algo."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en remodelación habitada",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Suponer que un muro se puede demoler",
+         "Revisión del responsable estructural antes de tocarlo"
+        ],
+        [
+         "Ignorar el reglamento del condominio",
+         "Leerlo y avisar a la administración antes de iniciar"
+        ],
+        [
+         "Programas que no consideran a los ocupantes",
+         "Etapas por zona y horarios acordados"
+        ],
+        [
+         "Olvidar instalaciones ocultas",
+         "Detección y calas antes de ranurar o demoler"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Remodelas la cocina de un departamento. Antes de empezar…",
+         "ops": [
+          "Revisas el reglamento del condominio y avisas a la administración y vecinos",
+          "Empiezas y avisas si alguien se queja",
+          "Solo avisas al portero"
+         ],
+         "correcta": 0,
+         "explica": "Muchas obras en condominio se detienen por no cumplir horarios o avisos."
+        },
+        {
+         "p": "El cliente vive en la casa durante la obra. El programa…",
+         "ops": [
+          "Es igual que en una casa vacía",
+          "Se hace por etapas y zonas, con áreas protegidas y horarios acordados",
+          "Se hace todo al mismo tiempo para terminar rápido"
+         ],
+         "correcta": 1,
+         "explica": "Planear por zonas protege a la familia y evita conflictos."
+        },
+        {
+         "p": "Al ranurar un muro aparece una tubería de gas que no estaba en ningún plano. Tú…",
+         "ops": [
+          "Sigues con cuidado",
+          "Tapas y sigues",
+          "Detienes el trabajo en esa zona y llamas al especialista de gas"
+         ],
+         "correcta": 2,
+         "explica": "Ante instalaciones de riesgo, se para y se revisa."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Situación y medida",
+       "pares": [
+        [
+         "Polvo en casa habitada",
+         "Sellado de la zona y protección de muebles"
+        ],
+        [
+         "Vecinos de condominio",
+         "Aviso con fechas y horarios de ruido"
+        ],
+        [
+         "Consultorio que no puede cerrar",
+         "Trabajo por etapas y fuera de horario de consulta"
+        ],
+        [
+         "Muro que el cliente quiere tirar",
+         "Revisión estructural antes de demoler"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Aviso a vecinos y plan por etapas",
+       "texto": "Voy a remodelar [espacio] en [tipo de inmueble: casa habitada, departamento en condominio, local en operación] durante [semanas]. Redacta: 1) un aviso breve y amable para vecinos y administración con fechas, horarios de trabajos ruidosos, contacto y medidas de limpieza; 2) un plan por etapas que indique qué zona se trabaja, cómo se protege el resto y qué necesita el ocupante en cada etapa. No incluyas horarios permitidos ni reglas del condominio: déjalos como [SEGÚN REGLAMENTO] para que yo los confirme.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Reglamento y aviso a la administración antes de iniciar.",
+        "Etapas por zona cuando hay gente dentro.",
+        "Lo que aparece dentro del muro se detiene y se revisa."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Estimaciones y cobranza con empresas",
+     "obj": "Preparar estimaciones con apoyo de la IA aplicando lo que dice tu contrato, sin suponer porcentajes ni reglas que no están escritas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cuando trabajas para una empresa o una constructora más grande, el cobro se hace por <b>estimaciones</b>: periodos en los que presentas lo ejecutado con números generadores, fotos y soporte. Del importe estimado se suelen descontar la <b>amortización del anticipo</b> y, si el contrato lo prevé, una <b>retención</b> o fondo de garantía. Los porcentajes, plazos y documentos los define tu contrato. La IA ayuda a armar la carátula, revisar que no falte soporte y redactar las aclaraciones; lo que no debe hacer es inventar porcentajes o «reglas legales» que no están en tu contrato."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Tu estimación del periodo",
+       "instruccion": "Porcentajes de práctica: los reales son los de tu contrato.",
+       "datos": [
+        [
+         "Concepto",
+         "Monto"
+        ],
+        [
+         "Obra ejecutada en el periodo ($)",
+         480000
+        ],
+        [
+         "% de anticipo del contrato",
+         0.3
+        ],
+        [
+         "Amortización del anticipo",
+         ""
+        ],
+        [
+         "% de retención del contrato",
+         0.05
+        ],
+        [
+         "Retención",
+         ""
+        ],
+        [
+         "Neto a cobrar antes de IVA",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B4",
+         "formula": "=B2*B3",
+         "esperado": 144000,
+         "texto": "<b>B4</b>: amortización = ejecutado × % de anticipo."
+        },
+        {
+         "celda": "B6",
+         "formula": "=B2*B5",
+         "esperado": 24000,
+         "texto": "<b>B6</b>: retención = ejecutado × % de retención."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B2-B4-B6",
+         "esperado": 312000,
+         "texto": "<b>B7</b>: neto = ejecutado − amortización − retención.",
+         "explica": "De $480,000 ejecutados cobras $312,000 antes de IVA. Si planeaste tu flujo con los $480,000 completos, te faltará dinero para la nómina y el material del siguiente periodo."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA agregó a tu carátula una «retención legal del 10%». Tu contrato dice 5%. Tú…",
+         "ops": [
+          "Aplicas el 5% del contrato y quitas la mención «legal»",
+          "Aplicas el 10%",
+          "Aplicas ambos"
+         ],
+         "correcta": 0,
+         "explica": "Los descuentos salen del contrato, no de lo que la IA supone."
+        },
+        {
+         "p": "El supervisor rechaza tu estimación por falta de soporte. Lo más común es que falten…",
+         "ops": [
+          "Colores en la carátula",
+          "Números generadores, fotos fechadas o notas de bitácora de los conceptos cobrados",
+          "Firmas del maestro de obra"
+         ],
+         "correcta": 1,
+         "explica": "Cada cantidad cobrada necesita soporte verificable."
+        },
+        {
+         "p": "Un concepto extra que ejecutaste sin autorización…",
+         "ops": [
+          "Se cobra en la estimación normal",
+          "Se cobra con otro nombre",
+          "Primero se autoriza como concepto extraordinario según el contrato"
+         ],
+         "correcta": 2,
+         "explica": "Sin autorización, la empresa puede negarse a pagarlo."
+        }
+       ]
+      },
+      {
+       "tipo": "completar",
+       "rotulo": "Estimación sin sorpresas",
+       "items": [
+        {
+         "frase": "Los porcentajes de anticipo y retención salen del ___.",
+         "resp": [
+          "contrato"
+         ]
+        },
+        {
+         "frase": "Cada cantidad cobrada lleva sus números ___.",
+         "resp": [
+          "generadores"
+         ]
+        },
+        {
+         "frase": "Neto = ejecutado − amortización − ___.",
+         "resp": [
+          "retención",
+          "retencion"
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu flujo por estimación",
+       "pregunta": "Con tu contrato actual o uno reciente, escribe los porcentajes de anticipo y retención y calcula cuánto cobras realmente de cada $100,000 ejecutados.",
+       "ayuda": "Anticipo …% / Retención …% / De $100,000 cobro $…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Revisión de estimación antes de enviarla",
+       "texto": "Revisa esta estimación antes de que la envíe [pega carátula y lista de conceptos con cantidades, sin datos de la empresa ni montos del contrato si no son necesarios]. Dime: 1) qué conceptos no tienen soporte (generador, foto o nota de bitácora); 2) si alguna cantidad acumulada supera lo contratado; 3) si hay conceptos que parecen extraordinarios; 4) qué aclaraciones conviene redactar. No agregues porcentajes, retenciones ni reglas que no estén en lo que te doy.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Neto = ejecutado − amortización − retención, según contrato.",
+        "Cada cantidad con generador, foto o bitácora.",
+        "Extraordinarios: autorizados antes de cobrarlos."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "El armado de una trabe se toma de…",
+     "ops": [
+      "La IA",
+      "El plano estructural del proyecto",
+      "La costumbre del maestro",
+      "Otra obra parecida"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Agregar agua al concreto en obra para que «corra mejor»…",
+     "ops": [
+      "Mejora la resistencia",
+      "Es necesario en calor",
+      "Altera la resistencia y requiere autorización",
+      "No tiene efecto"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Volumen de una losa =",
+     "ops": [
+      "Largo × ancho × espesor",
+      "Largo + ancho + espesor",
+      "Largo × ancho",
+      "Área ÷ espesor"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Antes de remodelar un departamento en condominio…",
+     "ops": [
+      "Se empieza y luego se avisa",
+      "Solo se avisa al cliente",
+      "No hace falta nada",
+      "Se revisa el reglamento y se avisa a la administración"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Si al ranurar aparece una tubería de gas no prevista…",
+     "ops": [
+      "Se detiene y se llama al especialista",
+      "Se tapa y se sigue",
+      "Se mueve con cuidado",
+      "Se ignora"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Los porcentajes de amortización y retención de una estimación salen de…",
+     "ops": [
+      "La IA",
+      "La costumbre",
+      "Otro contratista",
+      "Tu contrato"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Neto a cobrar de la estimación =",
+     "ops": [
+      "Ejecutado + anticipo",
+      "Ejecutado − amortización − retención",
+      "Ejecutado × retención",
+      "Anticipo − retención"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real de obra con errores plantados para detectar, y la construcción de tu kit personal de obra con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día como residente de obra",
+     "obj": "Detectar errores de la IA en el trabajo diario de una obra antes de que cuesten dinero, tiempo o seguridad.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres residente de una obra de cuatro departamentos en Saltillo. Durante el día usas un asistente de IA en cada tarea y en cada escena hay por lo menos un error plantado. Encuéntralo, di qué harías y escribe tu respuesta antes de pasar a la siguiente."
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 1 — 7:30 a.m.</b> Le dictaste a la IA las notas del arranque del día. En la bitácora aparece: «Se recibieron 300 blocks». Tu nota decía «llegó el block, falta contarlo». Además registró «clima: soleado», aunque tú no dijiste nada del clima y está nublado."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "Escribe qué corriges en la bitácora y qué instrucción agregas a tu prompt para que no vuelva a pasar.",
+       "ayuda": "Corrijo… / Agrego al prompt: «…»"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 2 — 10:00 a.m.</b> Para colar la losa del segundo nivel mañana, la IA te armó la lista de revisión. Incluye «descimbrar a los 3 días» y «si el concreto llega espeso, agregar agua». No menciona al laboratorio."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "Enumera los errores de la lista y escribe cómo quedarían corregidos y quién define cada punto.",
+       "ayuda": "Error: … → Corrección: … → Lo define: …"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 3 — 1:00 p.m.</b> Preparas la estimación del mes para la desarrolladora. Pegaste en un asistente público el contrato completo con nombres, RFC, cuenta bancaria y montos. La carátula resultante aplica una «retención legal del 10%» y tu contrato dice 5%."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Identifica los dos problemas (de datos y de contenido) y escribe qué harás distinto.",
+       "ayuda": "Datos: … / Contenido: … / Desde hoy…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 4 — 5:30 p.m.</b> El reporte semanal que redactó la IA dice: «La obra va al 75% y se entregará en tiempo». Tu avance medido por conceptos es 61% y llevas cinco días de atraso por lluvia registrados en bitácora."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "Reescribe el párrafo del reporte con los datos reales y el plan para recuperar el atraso.",
+       "ayuda": "«Avance físico medido: …% Atraso: … días por… Plan: …»"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Cuál error de la escena 2 pone en riesgo la estructura?",
+         "ops": [
+          "Olvidar al laboratorio y agregar agua al concreto sin autorización",
+          "El formato de la lista",
+          "La hora del colado"
+         ],
+         "correcta": 0,
+         "explica": "El agua cambia la resistencia y sin muestreo no hay forma de comprobarla."
+        },
+        {
+         "p": "En la escena 3, ¿qué no debió subirse a un asistente público?",
+         "ops": [
+          "El número de conceptos",
+          "El contrato con nombres, RFC y cuenta bancaria",
+          "El mes de la estimación"
+         ],
+         "correcta": 1,
+         "explica": "Datos fiscales, bancarios y contratos no van a herramientas públicas."
+        },
+        {
+         "p": "En la escena 1, «300 blocks recibidos»…",
+         "ops": [
+          "Es correcto porque ese era el pedido",
+          "Se deja hasta mañana",
+          "Se corrige: el material se registra hasta contarlo y firmar"
+         ],
+         "correcta": 2,
+         "explica": "Registrar lo que no se contó rompe el control de material."
+        },
+        {
+         "p": "¿Qué tienen en común los cuatro errores?",
+         "ops": [
+          "La IA completó o supuso datos que nadie verificó",
+          "Se usó una herramienta cara",
+          "Faltó rapidez"
+         ],
+         "correcta": 0,
+         "explica": "La defensa siempre es la misma: comparar contra lo medido, lo contratado y lo especificado."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Bitácora: solo lo que se dijo y se verificó.",
+        "Estructura: lo define el proyecto y el responsable de obra.",
+        "Contratos y datos personales, nunca en herramientas públicas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de obra con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu obra.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Terminas armando tu propio kit con una obra real o reciente. La idea es que el lunes lo uses: que tu bitácora, tus cotizaciones y tus reportes salgan más rápido y mejor revisados."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "1. Tu biblioteca de prompts",
+       "pregunta": "Elige los cinco prompts del curso que más usarás (catálogo, precio unitario, cotización, programa, bitácora, reporte, destajo, colado, estimación) y adáptalos. Escribe el título de cada uno y la instrucción anti-inventos que agregaste.",
+       "ayuda": "1. Bitácora desde notas de voz — agregué: «…» 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "2. Tu política de datos",
+       "pregunta": "Escribe en cinco reglas qué información nunca subes a herramientas públicas (clientes, trabajadores, contratos, cuentas) y cómo la sustituyes.",
+       "ayuda": "1. Nombres de clientes y trabajadores → [CLIENTE], [TRABAJADOR 1]. 2. … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "3. Tu lista de verificación",
+       "pregunta": "Escribe la lista que aplicarás a todo lo que produzca la IA antes de enviarlo o firmarlo: cantidades, precios, datos estructurales, normas de seguridad, porcentajes de contrato y promesas de fecha.",
+       "ayuda": "☐ Cantidades contra mi levantamiento ☐ Precios con cotización y fecha ☐ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "4. Tu entregable real",
+       "pregunta": "Produce con IA un entregable real de tu obra (cotización, bitácora de la semana, reporte al cliente o estimación), revísalo con tu lista y escribe qué corregiste y cuánto tiempo te ahorró.",
+       "ayuda": "Entregable: … / Corregí: 1) … 2) … / Tiempo ahorrado: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE OBRA CON IA — [tu nombre o empresa]\n1. Biblioteca de prompts: [catálogo] [precio unitario] [cotización] [programa] [bitácora] [reporte semanal] [destajo] [plan de colado] [estimación]\n2. Política de datos: [qué nunca se sube] [cómo se anonimiza] [quién revisa]\n3. Lista de verificación: [cantidades medidas] [precios cotizados con fecha] [estructura según proyecto] [seguridad según norma vigente] [porcentajes según contrato]\n4. Límites: [estructura → responsable de obra y calculista] [seguridad → especialista y norma vigente] [trámites → municipio]\n5. Entregable de muestra: [archivo] [fecha] [qué se corrigió]\nÚltima actualización: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit se usa el lunes, no se archiva.",
+        "Lo medido, lo cotizado y lo contratado mandan sobre lo que diga la IA.",
+        "La responsabilidad de la obra es tuya y de quienes firman."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA registra en bitácora un material que no se ha contado…",
+     "ops": [
+      "Se deja",
+      "Se corrige hasta contarlo y firmar",
+      "Se promedia",
+      "Se borra la entrada completa del día"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un «descimbrar a los 3 días» sugerido por la IA…",
+     "ops": [
+      "Es una regla general válida",
+      "Se usa si hace calor",
+      "Se sustituye por lo que indique el responsable estructural",
+      "Se reduce a 2 días"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El contrato con RFC y cuenta bancaria en un asistente público…",
+     "ops": [
+      "No se sube: se usan marcadores y solo lo necesario",
+      "Está bien si es rápido",
+      "Se sube solo una vez",
+      "Se sube si es de una empresa grande"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un reporte que dice «75% de avance» cuando mediste 61%…",
+     "ops": [
+      "Se envía para no alarmar",
+      "Se ajusta a 70%",
+      "Se corrige con el avance medido y el plan de recuperación",
+      "Se omite el avance"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Tu política de datos define…",
+     "ops": [
+      "Qué información nunca sale a herramientas públicas",
+      "Cuánto cobras",
+      "Qué proveedores usas",
+      "El horario de la cuadrilla"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La lista de verificación se aplica…",
+     "ops": [
+      "Solo en obras grandes",
+      "Una vez al mes",
+      "Solo a cotizaciones",
+      "A todo lo que produce la IA antes de enviarlo o firmarlo"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "La responsabilidad de la obra es…",
+     "ops": [
+      "De la herramienta de IA",
+      "Tuya y de quienes firman",
+      "Del proveedor de concreto",
+      "Del cliente"
+     ],
+     "correcta": 1
+    }
+   ]
+  }
+ ]
+}

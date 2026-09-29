@@ -1,0 +1,1359 @@
+{
+ "id": "c-ia-arquitectura",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA en remodelación e interiorismo, locales comerciales, análisis para desarrolladores y coordinación de trámites e ingenierías, detectando los errores típicos de cada situación.",
+  "Construir tu kit de arquitecto con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu despacho."
+ ],
+ "terceras": [
+  {
+   "p": "El cliente dijo «quiero algo moderno». Para el programa eso…",
+   "op": "Significa que decides tú el estilo sin preguntarle más"
+  },
+  {
+   "p": "La IA ordenó tus notas y agregó un cuarto de servicio que el cliente nunca pidió. Tú…",
+   "op": "Lo dejas y lo cobras como extra si lo aprueba en obra"
+  },
+  {
+   "p": "El programa arquitectónico conviene…",
+   "op": "Mandarlo por audio para que sea más rápido"
+  },
+  {
+   "p": "El cliente pide que le mandes la imagen de IA a su constructor para cotizar. Tú…",
+   "op": "Se la mandas con una nota de que los metros son aproximados"
+  },
+  {
+   "p": "La imagen generada muestra un volado de 8 metros sin apoyos. Eso…",
+   "op": "Se resuelve con una viga más gruesa que tú propones a ojo"
+  },
+  {
+   "p": "La IA te dice cuántos metros puedes construir en una colonia. Tú…",
+   "op": "Lo comparas con otra IA y usas el promedio"
+  },
+  {
+   "p": "Las medidas del terreno las tomas de…",
+   "op": "El anuncio con el que se vendió el terreno"
+  },
+  {
+   "p": "Si el predio no tiene factibilidad de drenaje…",
+   "op": "Se sustituye siempre con una fosa y no cambia nada más"
+  },
+  {
+   "p": "El render devuelto tiene una ventana que tu proyecto no tiene. Tú…",
+   "op": "Agregas la ventana a los planos para que coincidan"
+  },
+  {
+   "p": "Partir de tu propio modelo sirve para…",
+   "op": "Que la IA calcule la estructura del proyecto"
+  },
+  {
+   "p": "Antes de entregar un render revisas…",
+   "op": "Que tenga la resolución más alta posible"
+  },
+  {
+   "p": "El cliente cambia el programa cuando el ejecutivo va al 70%. Si tu propuesta no dice nada…",
+   "op": "La ley te obliga a cobrar el doble"
+  },
+  {
+   "p": "Limitar el número de revisiones por etapa sirve para…",
+   "op": "Entregar más rápido aunque el cliente no esté de acuerdo"
+  },
+  {
+   "p": "La sección «no incluye» de la propuesta…",
+   "op": "Solo hace falta en proyectos de más de 500 m²"
+  },
+  {
+   "p": "La IA te da «$X por m² de muro» para tu ciudad. Eso…",
+   "op": "Sirve si le sumas 10% por inflación"
+  },
+  {
+   "p": "Las cantidades del catálogo salen de…",
+   "op": "Un catálogo de una obra parecida sin revisar"
+  },
+  {
+   "p": "Un precio unitario debe aclarar…",
+   "op": "Solo el nombre del proveedor"
+  },
+  {
+   "p": "El cliente pide por WhatsApp mover un muro. Lo correcto es…",
+   "op": "Moverlo y cobrarlo en la estimación final sin avisar"
+  },
+  {
+   "p": "La minuta de obra se envía…",
+   "op": "Solo al cliente, al terminar el mes"
+  },
+  {
+   "p": "La IA convirtió tus notas en minuta y agregó un acuerdo que no existió. Tú…",
+   "op": "Lo marcas en gris para que se note menos"
+  },
+  {
+   "p": "«Confiamos en ti, haz lo que creas mejor» significa…",
+   "op": "Que puedes saltarte el anteproyecto e ir al ejecutivo"
+  },
+  {
+   "p": "Los $2,900,000 de presupuesto se contrastan con…",
+   "op": "El precio de venta de casas parecidas en la zona"
+  },
+  {
+   "p": "El tercer cambio de programa se maneja con…",
+   "op": "Un descuento en el siguiente pago para mantener la relación"
+  },
+  {
+   "p": "Las imágenes que trajo la familia sirven para…",
+   "op": "Pedirle a la IA el proyecto ejecutivo de esas casas"
+  }
+ ],
+ "extras": {
+  "c-ia-arquitectura-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dos socios de un despacho contable en Monterrey te encargan remodelar su oficina de 140 m². En la junta uno dijo «somos 8 y en tres años seremos 12» y el otro «queremos una sala de juntas chica». Pegas tus notas a la IA y el programa que devuelve trae 12 estaciones de trabajo desde hoy, una sala de juntas para 20 personas y un área de archivo muerto que nadie mencionó."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuántas estaciones de trabajo van en el programa?",
+      "ops": [
+       "12, porque es lo que tendrán",
+       "8 hoy, con crecimiento a 12 como decisión que el cliente confirma",
+       "10, un punto medio"
+      ],
+      "correcta": 1,
+      "explica": "El crecimiento es un dato del cliente que se convierte en decisión: construir hoy para 12 o dejar previsto el espacio. No lo decide la IA."
+     },
+     {
+      "p": "La sala de juntas para 20 personas…",
+      "ops": [
+       "Se corrige a «sala chica» y se pregunta cuántas personas usan la sala normalmente",
+       "Se deja, más grande siempre es mejor",
+       "Se elimina del programa"
+      ],
+      "correcta": 0,
+      "explica": "La IA exageró lo que se dijo. Se regresa al dato del cliente y se pregunta la cifra concreta."
+     },
+     {
+      "p": "El archivo muerto que nadie mencionó…",
+      "ops": [
+       "Se queda porque todo despacho contable tiene uno",
+       "Se borra sin preguntar",
+       "Va como [PENDIENTE]: puede ser necesario, pero lo confirma el cliente"
+      ],
+      "correcta": 2,
+      "explica": "La IA completó con lo típico del giro. Puede ser una buena pregunta, no un dato."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Programa sin inventos",
+    "items": [
+     {
+      "frase": "Lo que la IA agrega y el cliente no dijo va como ___.",
+      "resp": [
+       "[PENDIENTE]",
+       "PENDIENTE",
+       "pendiente"
+      ]
+     },
+     {
+      "frase": "Un crecimiento futuro se presenta como una ___ que toma el cliente.",
+      "resp": [
+       "decisión",
+       "decision"
+      ]
+     },
+     {
+      "frase": "Antes de dibujar, el programa se autoriza por ___.",
+      "resp": [
+       "escrito",
+       "correo"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu instrucción anti-inventos",
+    "pregunta": "Escribe la instrucción exacta que agregarás a tus prompts de programa para que la IA separe lo que dijo el cliente de lo que ella sugiere.",
+    "ayuda": "«Separa en dos columnas: lo que dijo el cliente y … »"
+   }
+  ],
+  "c-ia-arquitectura-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la dueña de un restaurante en Oaxaca quedó encantada con una imagen de IA que muestra una terraza en la azotea con pérgola y vista a los templos. Quiere publicarla hoy en redes como «así será nuestro nuevo espacio». Aún no revisas si el inmueble permite construir en la azotea ni si la estructura soporta la carga."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le recomiendas sobre publicarla?",
+      "ops": [
+       "Que la publique, genera expectativa",
+       "Que no la publique como proyecto hasta verificar que se puede construir",
+       "Que la publique sin texto"
+      ],
+      "correcta": 1,
+      "explica": "Publicar una promesa que tal vez no se puede cumplir expone a la clienta y a ti ante sus comensales."
+     },
+     {
+      "p": "¿Qué hay que verificar antes de hablar de la terraza?",
+      "ops": [
+       "Normativa municipal y de protección del inmueble, y revisión estructural",
+       "Solo el presupuesto",
+       "Solo que le guste al chef"
+      ],
+      "correcta": 0,
+      "explica": "En zonas con protección patrimonial puede haber autorizaciones adicionales, y una terraza agrega carga que revisa un estructurista."
+     },
+     {
+      "p": "Si decide publicar algo, ¿qué texto propones?",
+      "ops": [
+       "«Así será nuestro nuevo espacio»",
+       "Ninguno",
+       "«Imagen de referencia de ambiente; el proyecto está en desarrollo»"
+      ],
+      "correcta": 2,
+      "explica": "La leyenda protege a la clienta y deja claro que no es el proyecto."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Publicación de una imagen de IA",
+    "malTitulo": "Promete",
+    "mal": "«¡Así será nuestra nueva terraza con vista a los templos! Muy pronto.»",
+    "bienTitulo": "Honesta",
+    "bien": "«Estamos soñando nuestro nuevo espacio. Imagen de referencia de ambiente; el proyecto y sus permisos están en proceso.»"
+   }
+  ],
+  "c-ia-arquitectura-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un cliente compró una casa antigua en el centro de San Miguel de Allende para convertirla en hotel boutique. Le preguntó a un asistente de IA y este le contestó: «Puedes construir hasta tres niveles y cambiar la fachada si respetas el color». El centro de esa ciudad está dentro de una zona de monumentos históricos, donde las intervenciones requieren autorizaciones adicionales a las municipales."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La respuesta de la IA sobre niveles y fachada…",
+      "ops": [
+       "Se usa como punto de partida del anteproyecto",
+       "Se descarta como dato: se consulta al municipio y a la autoridad de patrimonio que corresponda",
+       "Se confirma con otra IA"
+      ],
+      "correcta": 1,
+      "explica": "En zonas protegidas las reglas son específicas del inmueble y la zona; la IA no las conoce."
+     },
+     {
+      "p": "¿Qué documento pides primero?",
+      "ops": [
+       "Constancia o dictamen de uso de suelo y la información de protección del inmueble",
+       "Fotos de hoteles parecidos",
+       "La opinión de un vecino"
+      ],
+      "correcta": 0,
+      "explica": "Primero lo que se puede hacer; después lo que se quiere hacer."
+     },
+     {
+      "p": "¿Cómo usas la IA en este caso?",
+      "ops": [
+       "Para saber cuántos niveles autorizan",
+       "Para decidir el giro",
+       "Para armar la lista de trámites y preguntas que llevarás a cada ventanilla"
+      ],
+      "correcta": 2,
+      "explica": "La IA organiza; la autoridad y los documentos responden."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Documento y lo que te dice",
+    "pares": [
+     [
+      "Escrituras",
+      "Propietario, superficie y colindancias legales"
+     ],
+     [
+      "Levantamiento en sitio",
+      "Medidas reales, niveles y lo construido"
+     ],
+     [
+      "Constancia de uso de suelo",
+      "Giro permitido y coeficientes"
+     ],
+     [
+      "Información de protección patrimonial",
+      "Si hay autorizaciones adicionales para intervenir"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus ventanillas",
+    "pregunta": "Escribe las ventanillas y documentos que consultas en tu municipio antes de dibujar, en orden, y cuánto tardan normalmente.",
+    "ayuda": "1. … — tarda … 2. …"
+   }
+  ],
+  "c-ia-arquitectura-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> presentas una casa en León. El render nocturno generado sobre tu modelo muestra luminarias empotradas en toda la fachada que no están en el proyecto eléctrico, árboles de ocho metros que tardarían muchos años en crecer y personas de escala dibujadas más pequeñas, lo que hace ver la sala más amplia de lo que es."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Las luminarias de fachada que no están en el proyecto…",
+      "ops": [
+       "Se quitan del render o se agregan al proyecto y al presupuesto si el cliente las quiere",
+       "Se dejan, son un detalle",
+       "Se dejan y se cobran después"
+      ],
+      "correcta": 0,
+      "explica": "Lo que aparece en el render el cliente lo da por incluido."
+     },
+     {
+      "p": "Las personas de escala más pequeñas…",
+      "ops": [
+       "Son un recurso válido de presentación",
+       "Distorsionan la percepción del tamaño: se corrigen a escala real",
+       "No importan"
+      ],
+      "correcta": 1,
+      "explica": "Si el cliente siente la sala más grande en el render, se decepciona en obra."
+     },
+     {
+      "p": "Los árboles de ocho metros…",
+      "ops": [
+       "Se dejan, algún día crecerán",
+       "Se borran todos",
+       "Se muestran con el tamaño de plantación o se anota «vegetación a futuro, ilustrativa»"
+      ],
+      "correcta": 2,
+      "explica": "Aclarar el tiempo y el alcance de la vegetación evita una expectativa falsa."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Nota en la lámina de render",
+    "malTitulo": "Sin aclarar",
+    "mal": "Render nocturno con iluminación, árboles maduros y mobiliario, sin ninguna nota.",
+    "bienTitulo": "Aclarado",
+    "bien": "«Render ilustrativo. Iluminación exterior según proyecto eléctrico. Vegetación representada a 10 años. Mobiliario no incluido en el alcance.»"
+   }
+  ],
+  "c-ia-arquitectura-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> presentarás la ampliación de un colegio particular en Puebla ante su comité. La memoria descriptiva que redactó la IA dice: «El proyecto cumple con toda la normativa de accesibilidad y protección civil» y «reduce 40% el consumo de energía». No has hecho estudio energético y el dictamen de protección civil aún no se tramita."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Cumple con toda la normativa»…",
+      "ops": [
+       "Se deja, suena profesional",
+       "Se cambia por «se diseñó conforme a…» y se lista qué falta verificar o dictaminar",
+       "Se quita toda mención a normativa"
+      ],
+      "correcta": 1,
+      "explica": "Afirmar cumplimiento sin dictamen es una promesa que no puedes respaldar."
+     },
+     {
+      "p": "El «40% de ahorro de energía»…",
+      "ops": [
+       "Se elimina o se sustituye por las estrategias de diseño, sin porcentaje",
+       "Se deja porque es un promedio conocido",
+       "Se baja a 20%"
+      ],
+      "correcta": 0,
+      "explica": "Sin un estudio no hay cifra. Puedes describir lo que hiciste: orientación, ventilación cruzada, protección solar."
+     },
+     {
+      "p": "Ante un comité, ¿qué refuerza tu credibilidad?",
+      "ops": [
+       "Afirmaciones rotundas",
+       "Imágenes impactantes",
+       "Decir con claridad qué está verificado y qué sigue en trámite"
+      ],
+      "correcta": 2,
+      "explica": "Un comité toma decisiones con información; la honestidad sobre lo pendiente genera confianza."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Una frase de la memoria",
+    "malTitulo": "Sin respaldo",
+    "mal": "«El proyecto cumple con toda la normativa y reduce 40% el consumo de energía.»",
+    "bienTitulo": "Respaldada",
+    "bien": "«El diseño considera circulaciones accesibles, salidas de emergencia y ventilación cruzada. El dictamen de protección civil y la revisión de accesibilidad se tramitarán en la etapa de proyecto ejecutivo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus frases prohibidas",
+    "pregunta": "Escribe tres afirmaciones que la IA suele meter en memorias y presentaciones y que no firmarás sin respaldo, y cómo las reescribirás.",
+    "ayuda": "«…» → «…»"
+   }
+  ],
+  "c-ia-arquitectura-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> pides a la IA una propuesta de honorarios para un local comercial en Guadalajara. El borrador incluye «supervisión ilimitada», «incluye todas las licencias y permisos» y cita un porcentaje «según el arancel del colegio de arquitectos» que no sabes de dónde salió."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Supervisión ilimitada»…",
+      "ops": [
+       "Se cambia por un número de visitas y su duración",
+       "Se deja, da confianza",
+       "Se deja y se cobra aparte si se excede"
+      ],
+      "correcta": 0,
+      "explica": "Lo ilimitado no tiene precio; el alcance se define en visitas concretas."
+     },
+     {
+      "p": "«Incluye todas las licencias y permisos»…",
+      "ops": [
+       "Es estándar",
+       "Se deja porque el cliente lo pide",
+       "Se aclara qué gestionas tú y qué derechos y pagos corren por cuenta del cliente"
+      ],
+      "correcta": 2,
+      "explica": "Los derechos de trámite y los tiempos de la autoridad no los controlas; se escriben por separado."
+     },
+     {
+      "p": "El porcentaje «según el arancel»…",
+      "ops": [
+       "Se usa tal cual",
+       "Se verifica en el documento oficial del colegio o se quita la referencia",
+       "Se cambia por otro porcentaje similar"
+      ],
+      "correcta": 1,
+      "explica": "Citar un documento que no revisaste puede dejarte en evidencia frente al cliente."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Alcance sin huecos",
+    "items": [
+     {
+      "frase": "La supervisión se define en número de ___.",
+      "resp": [
+       "visitas",
+       "visita"
+      ]
+     },
+     {
+      "frase": "Los derechos de trámite los paga el ___.",
+      "resp": [
+       "cliente",
+       "propietario"
+      ]
+     },
+     {
+      "frase": "Toda cita a un arancel se verifica en el documento ___.",
+      "resp": [
+       "oficial",
+       "original"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-arquitectura-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> revisas el catálogo de conceptos que armó la IA para una casa en Mérida. Faltan la impermeabilización de azotea y las pruebas de hermeticidad de las instalaciones hidráulicas, y la especificación del firme dice solo «firme de concreto», sin espesor, resistencia ni refuerzo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La impermeabilización que falta…",
+      "ops": [
+       "Se agrega: en una zona de lluvias intensas es un concepto indispensable",
+       "La pone el cliente después",
+       "No hace falta en losas nuevas"
+      ],
+      "correcta": 0,
+      "explica": "Un concepto que no está no se cotiza y después alguien lo paga."
+     },
+     {
+      "p": "«Firme de concreto» sin más datos…",
+      "ops": [
+       "Es suficiente para cotizar",
+       "Deja que cada contratista cotice lo que quiera: se especifica espesor, resistencia y refuerzo según proyecto",
+       "Se deja al criterio del maestro"
+      ],
+      "correcta": 1,
+      "explica": "Sin especificación, las cotizaciones no son comparables."
+     },
+     {
+      "p": "¿De dónde sale la resistencia del concreto a especificar?",
+      "ops": [
+       "De lo que proponga la IA",
+       "Del concreto más barato",
+       "Del proyecto estructural firmado por el responsable"
+      ],
+      "correcta": 2,
+      "explica": "La especificación estructural la define el calculista, no un asistente."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Especificación de un concepto",
+    "malTitulo": "Vaga",
+    "mal": "«Firme de concreto en planta baja.»",
+    "bienTitulo": "Cotizable",
+    "bien": "«Firme de concreto en planta baja, espesor, resistencia y refuerzo según plano estructural E-02; incluye preparación y compactación de base, cimbra de fronteras y curado.»"
+   }
+  ],
+  "c-ia-arquitectura-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> tu cliente vive en Estados Unidos y sigue la obra en Oaxaca por notas de voz. En la última dijo: «lo del cambio de cancelería vamos a ver, mándame precio». La minuta que armó la IA dice: «El cliente autoriza el cambio de cancelería»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Vamos a ver, mándame precio» significa…",
+      "ops": [
+       "Autorización",
+       "Solicitud de cotización, no autorización",
+       "Rechazo"
+      ],
+      "correcta": 1,
+      "explica": "La IA interpretó de más. En una minuta se registra lo que se dijo, no lo que se supone."
+     },
+     {
+      "p": "¿Cómo queda el punto en la minuta?",
+      "ops": [
+       "«Cliente solicita cotización del cambio de cancelería. Pendiente: enviar orden de cambio con costo y tiempo»",
+       "«Cliente autoriza cambio»",
+       "Se omite hasta que decida"
+      ],
+      "correcta": 0,
+      "explica": "Queda registrado el pendiente con responsable."
+     },
+     {
+      "p": "Con un cliente a distancia, la autorización se obtiene…",
+      "ops": [
+       "Con una nota de voz ambigua",
+       "Cuando regrese a México",
+       "Por escrito sobre la orden de cambio con costo y tiempo, aunque sea por correo o mensaje"
+      ],
+      "correcta": 2,
+      "explica": "La distancia no cambia la regla: autorización clara y por escrito."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Minuta fiel",
+    "items": [
+     {
+      "frase": "Una minuta registra lo que se ___, no lo que se supone.",
+      "resp": [
+       "dijo",
+       "acordó",
+       "acordo"
+      ]
+     },
+     {
+      "frase": "«Mándame precio» es una solicitud de ___.",
+      "resp": [
+       "cotización",
+       "cotizacion",
+       "precio"
+      ]
+     },
+     {
+      "frase": "Todo pendiente lleva ___ y fecha.",
+      "resp": [
+       "responsable"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla para notas de voz",
+    "pregunta": "Escribe la regla que agregarás a tu prompt de minutas para que la IA no convierta dudas del cliente en acuerdos.",
+    "ayuda": "«Solo registra como acuerdo lo que… Si hay duda, escribe…»"
+   }
+  ],
+  "c-ia-arquitectura-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso continúa:</b> ya con la obra en acabados, la familia quiere agregar un tercer nivel para rentarlo. La casa se calculó para dos niveles. Le preguntaron a un asistente de IA y les contestó: «Una losa de vigueta y bovedilla normalmente aguanta otro nivel si refuerzas los castillos»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La respuesta de la IA sobre la losa…",
+      "ops": [
+       "No tiene ningún valor técnico: se revisa con el estructurista y el responsable de obra",
+       "Es correcta en general",
+       "Se aplica si el maestro está de acuerdo"
+      ],
+      "correcta": 0,
+      "explica": "Cimentación, muros y losas se calcularon para cierta carga; un nivel más cambia todo el análisis."
+     },
+     {
+      "p": "Además de la estructura, el tercer nivel requiere revisar…",
+      "ops": [
+       "Solo el color de la fachada",
+       "Coeficientes de uso de suelo, licencia y, si es para renta, el uso autorizado",
+       "Nada más"
+      ],
+      "correcta": 1,
+      "explica": "Más metros y otro uso pueden requerir nuevos permisos."
+     },
+     {
+      "p": "¿Cómo lo comunicas a la familia?",
+      "ops": [
+       "Les dices que sí para no perder el trabajo",
+       "Les dices que no sin explicar",
+       "Les explicas qué estudios y trámites se necesitan, cuánto cuestan y cuánto tardan, antes de decidir"
+      ],
+      "correcta": 2,
+      "explica": "Una respuesta profesional da el camino para decidir con información."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta a la familia",
+    "malTitulo": "Irresponsable",
+    "mal": "«Sí se puede, nada más reforzamos castillos.»",
+    "bienTitulo": "Profesional",
+    "bien": "«Antes de decidir necesitamos una revisión estructural de la casa actual y confirmar en el municipio si se permite el nivel y el uso de renta. Les mando costo y tiempo de ambos esta semana.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu límite técnico",
+    "pregunta": "Escribe en qué preguntas de tus clientes siempre responderás «eso lo revisa el especialista» y a quién los canalizas en cada caso.",
+    "ayuda": "Estructura → … / Instalaciones → … / Normativa → …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: remodelación, comercio y trámites",
+   "r": "Cómo usar la IA en remodelaciones e interiorismo, en locales comerciales y análisis para desarrolladores, y en la coordinación de trámites e ingenierías, reconociendo los errores típicos de cada situación.",
+   "lecciones": [
+    {
+     "t": "Remodelación e interiorismo en espacios existentes",
+     "obj": "Usar la IA para planear remodelaciones sin suponer lo que no se ve: estructura, instalaciones ocultas y estado real del inmueble.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En una remodelación, lo más caro es lo que no se ve: un muro que parecía divisorio y resulta de carga, una tubería que pasa justo donde va la isla de la cocina, una humedad escondida detrás del lambrín. La IA trabaja con lo que le describes o con una foto, así que <b>no sabe qué hay dentro de los muros</b>. Úsala para ordenar el levantamiento, preparar la lista de calas y sondeos, redactar alternativas para el cliente y hacer imágenes de ambiente de los acabados; las decisiones estructurales las toma quien calcula y firma."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en remodelación",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Dar por hecho que un muro «se puede quitar»",
+         "Revisión estructural y, si hace falta, cala en sitio"
+        ],
+        [
+         "Imágenes que eliminan columnas o bajantes existentes",
+         "Levantamiento con todos los elementos fijos marcados"
+        ],
+        [
+         "Suponer instalaciones en buen estado",
+         "Prueba de instalaciones y revisión con un especialista"
+        ],
+        [
+         "Proponer acabados sin considerar humedad o salitre",
+         "Diagnóstico del muro antes de elegir acabado"
+        ],
+        [
+         "Olvidar reglas del condominio o permisos de remodelación",
+         "Reglamento interno y trámite municipal que aplique"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Plan de levantamiento para remodelar",
+       "texto": "Voy a remodelar [tipo de espacio: departamento, casa, local] de [m²] construido aproximadamente en [década], en [ciudad]. El cliente quiere [cambios: abrir cocina, mover baño, cambiar pisos]. Hazme una lista de lo que debo verificar en sitio antes de proponer: elementos que podrían ser estructurales, instalaciones que pueden pasar por los muros o pisos a intervenir, señales de humedad, reglas del condominio y trámites que podrían aplicar. Para cada punto dime cómo se verifica y quién debe confirmarlo. No me digas qué muros se pueden quitar: eso lo decide el especialista."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "El cliente quiere abrir la cocina quitando un muro. La IA dice que «parece divisorio». Tú…",
+         "ops": [
+          "Lo quitas si el maestro está de acuerdo",
+          "Pides revisión estructural antes de proponerlo como definitivo",
+          "Le preguntas a otra IA"
+         ],
+         "correcta": 1,
+         "explica": "Que un muro parezca divisorio no prueba nada; puede recibir carga de la losa o de otro nivel."
+        },
+        {
+         "p": "La imagen de IA del baño remodelado desapareció una bajante que pasa por la esquina. Tú…",
+         "ops": [
+          "Corriges la imagen para que muestre la bajante o su forro",
+          "La dejas, es ilustrativa",
+          "Prometes moverla después"
+         ],
+         "correcta": 0,
+         "explica": "Si la imagen omite un elemento fijo, el cliente cree que desaparecerá."
+        },
+        {
+         "p": "En un departamento, antes de demoler algo revisas…",
+         "ops": [
+          "Solo el presupuesto",
+          "Solo la opinión del cliente",
+          "El reglamento del condominio, los horarios permitidos y si la administración pide aviso o autorización"
+         ],
+         "correcta": 2,
+         "explica": "Muchas obras en condominio se detienen por no avisar a la administración."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Propuesta al cliente",
+       "malTitulo": "Suposición",
+       "mal": "«Quitamos este muro y queda una cocina abierta con isla.»",
+       "bienTitulo": "Condicionada",
+       "bien": "«Proponemos abrir la cocina. Antes de confirmar, el estructurista revisará si el muro recibe carga; si la recibe, la alternativa es un vano con refuerzo que él defina.»"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Alternativas para el cliente",
+       "texto": "Con este levantamiento [pega medidas, elementos fijos y observaciones] y lo que pide el cliente [pega], redacta tres alternativas de distribución: A) sin tocar elementos que podrían ser estructurales, B) con cambios moderados, C) con cambios mayores que requieren revisión estructural. Para cada una di qué se gana, qué se pierde y qué hay que verificar antes. No afirmes que algún muro se puede quitar. Lenguaje claro para el cliente.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA no ve dentro de los muros.",
+        "Lo estructural lo decide quien calcula y firma.",
+        "Alternativas condicionadas, no promesas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Locales comerciales y análisis para desarrolladores",
+     "obj": "Usar la IA para ordenar requisitos de un giro comercial y preparar análisis de cabida con números verificables.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En un local comercial el cliente no compra metros: compra un negocio que tiene que abrir a tiempo. Eso implica trámites de funcionamiento, revisiones de protección civil y, según el giro, requisitos sanitarios o de accesibilidad. Con un desarrollador la pregunta es otra: <b>cuántos metros vendibles salen del terreno y a qué costo</b>. La IA ayuda a hacer la lista de requisitos por giro y a estructurar el análisis; los requisitos reales salen de la autoridad de cada municipio y los números de tus planos y cotizaciones."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Cabida y costo por m² vendible",
+       "instruccion": "Cifras de práctica. Tus valores salen de la constancia, del anteproyecto y de cotizaciones.",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Área construida total (m²)",
+         1200
+        ],
+        [
+         "Eficiencia (vendible ÷ construida)",
+         0.8
+        ],
+        [
+         "Área vendible (m²)",
+         ""
+        ],
+        [
+         "Costo total estimado de obra ($)",
+         16800000
+        ],
+        [
+         "Costo por m² vendible ($)",
+         ""
+        ],
+        [
+         "Costo por m² construido ($)",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B4",
+         "formula": "=B2*B3",
+         "esperado": 960,
+         "texto": "<b>B4</b>: área vendible = área construida × eficiencia."
+        },
+        {
+         "celda": "B6",
+         "formula": "=B5/B4",
+         "esperado": 17500,
+         "texto": "<b>B6</b>: costo por m² vendible = costo total ÷ área vendible."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B5/B2",
+         "esperado": 14000,
+         "texto": "<b>B7</b>: costo por m² construido = costo total ÷ área construida.",
+         "explica": "$14,000 por m² construido, pero $17,500 por cada m² que se puede vender. Circulaciones, muros y áreas comunes no se venden; por eso el desarrollador decide con el costo por m² vendible."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Un cliente abrirá una cafetería. La IA le lista requisitos «para abrir en México». Tú…",
+         "ops": [
+          "Los usas como lista de preguntas y confirmas cada uno con el municipio de ese local",
+          "Los das por buenos",
+          "Le dices que no hace falta ningún trámite"
+         ],
+         "correcta": 0,
+         "explica": "Los trámites de funcionamiento cambian por municipio y giro."
+        },
+        {
+         "p": "El desarrollador quiere una eficiencia de 90% en un edificio con elevador, escaleras y pasillos. Tú…",
+         "ops": [
+          "La aceptas",
+          "Le pides a la IA que la justifique",
+          "Revisas con el anteproyecto cuánto ocupan realmente las circulaciones y le das el dato real"
+         ],
+         "correcta": 2,
+         "explica": "La eficiencia sale del dibujo, no de un deseo."
+        },
+        {
+         "p": "Para comparar dos terrenos, el dato más útil es…",
+         "ops": [
+          "El precio del terreno",
+          "El costo por m² vendible de cada uno con su propio anteproyecto",
+          "Cuál está más bonito"
+         ],
+         "correcta": 1,
+         "explica": "Un terreno barato con baja cabida puede salir más caro por m² vendible."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Pregunta y quién la responde",
+       "pares": [
+        [
+         "¿Se permite este giro en el local?",
+         "Municipio, con la constancia de uso de suelo"
+        ],
+        [
+         "¿Qué pide protección civil para abrir?",
+         "La unidad de protección civil que corresponda"
+        ],
+        [
+         "¿Cuántos m² vendibles salen?",
+         "Tu anteproyecto medido"
+        ],
+        [
+         "¿Cuánto cuesta construirlo?",
+         "Presupuesto con cotizaciones locales"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Análisis de cabida para desarrollador",
+       "texto": "Con estos datos [superficie del terreno, coeficientes de la constancia, niveles permitidos, anteproyecto con áreas por nivel, costo estimado de obra], arma una tabla de cabida por nivel: área construida, área de circulaciones y comunes, área vendible y eficiencia. Calcula el costo por m² construido y por m² vendible. Marca [VERIFICAR] cada dato que no venga de un documento. No propongas precios de venta ni cifras de mercado.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Requisitos por giro: se confirman en el municipio.",
+        "Vendible = construida × eficiencia real del dibujo.",
+        "El desarrollador decide con el costo por m² vendible."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Trámites, ingenierías y responsables de obra",
+     "obj": "Coordinar ingenierías y trámites con apoyo de la IA, sabiendo qué firma cada responsable y qué nunca se le pregunta a un asistente.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un proyecto ejecutivo no es solo arquitectura: lleva cálculo estructural, instalaciones hidráulicas, sanitarias, eléctricas y, según el caso, gas, aire acondicionado o protección contra incendio. Muchos municipios piden además un <b>Director Responsable de Obra (DRO)</b> o <b>perito responsable</b>, y en ciertas obras corresponsables por especialidad. Los nombres y requisitos cambian de un lugar a otro. La IA es excelente para armar la matriz de coordinación, los calendarios de entregas y las listas de verificación; <b>no calcula, no dictamina y no firma</b>. Todo número estructural sale de una memoria de cálculo firmada, y toda regla, del reglamento vigente de tu municipio."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te propone el peralte de una viga «por regla práctica». Tú…",
+         "ops": [
+          "Lo usas en el anteproyecto como definitivo",
+          "Lo usas solo como referencia de dibujo y el estructurista define la sección",
+          "Lo ignoras y pones el que se vea mejor"
+         ],
+         "correcta": 1,
+         "explica": "Un predimensionamiento puede orientar el dibujo; la sección definitiva la da el cálculo firmado."
+        },
+        {
+         "p": "La IA cita «el artículo 124 del reglamento de construcción» de tu ciudad. Tú…",
+         "ops": [
+          "Lo buscas en el reglamento vigente antes de usarlo",
+          "Lo copias en la memoria",
+          "Lo citas como «según la IA»"
+         ],
+         "correcta": 0,
+         "explica": "Los asistentes inventan artículos y números con toda seguridad."
+        },
+        {
+         "p": "¿Quién responde ante la autoridad por la seguridad de la obra?",
+         "ops": [
+          "El asistente de IA",
+          "El cliente",
+          "El responsable de obra y los corresponsables que firmaron, según el reglamento local"
+         ],
+         "correcta": 2,
+         "explica": "La firma implica responsabilidad; por eso nunca se delega en una herramienta."
+        },
+        {
+         "p": "Para coordinar ingenierías, la IA es más útil para…",
+         "ops": [
+          "Armar la matriz de entregas, responsables y fechas",
+          "Calcular la cimentación",
+          "Aprobar planos"
+         ],
+         "correcta": 0,
+         "explica": "Ordenar quién entrega qué y cuándo ahorra semanas de retrasos."
+        }
+       ]
+      },
+      {
+       "tipo": "completar",
+       "rotulo": "Quién hace qué",
+       "items": [
+        {
+         "frase": "Las secciones estructurales definitivas salen de la memoria de ___ firmada.",
+         "resp": [
+          "cálculo",
+          "calculo"
+         ]
+        },
+        {
+         "frase": "Todo artículo que cite la IA se verifica en el ___ vigente.",
+         "resp": [
+          "reglamento"
+         ]
+        },
+        {
+         "frase": "La IA ordena, redacta y organiza, pero no ___.",
+         "resp": [
+          "firma",
+          "calcula",
+          "dictamina"
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Pedirle ayuda a la IA con la estructura",
+       "malTitulo": "Peligroso",
+       "mal": "«Dime qué armado lleva una losa de 6 × 5 metros.»",
+       "bienTitulo": "Útil",
+       "bien": "«Hazme la lista de información que necesita mi estructurista para calcular una casa de dos niveles: planos, estudio de mecánica de suelos, cargas de uso y lo que falte.»"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu red de responsables",
+       "pregunta": "Escribe quién firma cada ingeniería en tus proyectos y qué responsable de obra pide tu municipio, con el dato de dónde lo verificaste.",
+       "ayuda": "Estructura: … / Instalaciones: … / Responsable de obra: … / Fuente: reglamento de …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Matriz de coordinación de ingenierías",
+       "texto": "Arma una matriz de coordinación para el proyecto [tipo y m²] con estas especialidades [estructura, hidrosanitaria, eléctrica, gas, otras]: para cada una indica qué información necesita de arquitectura, qué entrega, en qué formato, fecha compromiso, quién la revisa y quién la firma. Agrega una lista de choques típicos entre especialidades para revisar en planos (bajantes contra vigas, ductos contra losas, tableros contra muros). No incluyas cálculos, dimensiones ni artículos de reglamento.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La IA coordina; los especialistas calculan y firman.",
+        "Todo artículo citado se verifica en el reglamento vigente.",
+        "Responsables de obra según tu municipio, nunca según un chat."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "En una remodelación, si la IA dice que un muro «parece divisorio»…",
+     "ops": [
+      "Se puede quitar",
+      "Se pide revisión estructural antes de decidir",
+      "Se refuerza con castillos",
+      "Se ignora"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una imagen de IA que omite una bajante existente…",
+     "ops": [
+      "Se corrige para mostrar el elemento fijo",
+      "Está bien, es ilustrativa",
+      "Obliga a mover la bajante",
+      "Se envía sin revisar"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Área vendible =",
+     "ops": [
+      "Área construida ÷ eficiencia",
+      "Terreno × niveles",
+      "Área construida × eficiencia",
+      "Costo ÷ terreno"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Los requisitos para abrir un local se confirman con…",
+     "ops": [
+      "La IA",
+      "El proveedor de mobiliario",
+      "Otro arquitecto",
+      "La autoridad del municipio donde está el local"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Si la IA cita un artículo de reglamento…",
+     "ops": [
+      "Se verifica en el reglamento vigente antes de usarlo",
+      "Se copia tal cual",
+      "Se cita como fuente",
+      "Se omite siempre el reglamento"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La sección definitiva de una viga la define…",
+     "ops": [
+      "La IA con regla práctica",
+      "El maestro de obra",
+      "El cálculo estructural firmado",
+      "El cliente"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Para coordinar ingenierías, la IA sirve para…",
+     "ops": [
+      "Firmar planos",
+      "Armar la matriz de entregas, responsables y fechas",
+      "Aprobar la licencia",
+      "Calcular cargas"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real de despacho con errores plantados para detectar, y la construcción de tu kit personal de arquitecto con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día en el despacho",
+     "obj": "Detectar errores de la IA en el trabajo diario de un despacho de arquitectura antes de que lleguen al cliente o a la obra.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a vivir un día de trabajo en un despacho pequeño de Querétaro. En cada escena usaste un asistente de IA y hay por lo menos un error plantado. Tu trabajo es encontrarlo y decir qué harías. Lee cada escena con calma y escribe tu respuesta antes de pasar a la siguiente."
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 1 — 8:30 a.m.</b> Pegaste a la IA tus notas de la junta con una pareja que quiere construir en un fraccionamiento. El programa que devolvió incluye «cochera para 3 autos», «estudio con baño completo» y «terreno de 250 m²». En tus notas dice «dos autos, a veces viene la suegra», no se habla de estudio y el terreno, según la escritura que te enviaron, mide 232 m²."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "Enumera los errores del programa y escribe cómo quedaría cada punto corregido.",
+       "ayuda": "Error 1: … → Corrección: … / Error 2: …"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 2 — 11:00 a.m.</b> Generaste un render sobre tu modelo para la fachada. La imagen se ve espectacular, pero agregó un balcón en el segundo nivel que no existe, y el fraccionamiento tiene un reglamento interno que limita los materiales de fachada; en el render aparece un recubrimiento que no revisaste contra ese reglamento."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "Escribe qué corriges antes de enviar el render y qué documento revisas.",
+       "ayuda": "Corrijo… / Reviso en el reglamento del fraccionamiento…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 3 — 2:00 p.m.</b> Le preguntaste a la IA la restricción frontal que aplica en ese fraccionamiento. Contestó: «Según el artículo 87 del reglamento municipal, la restricción frontal es de 3 metros». Estás a punto de mandar el anteproyecto con esa medida."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Escribe qué haces con el dato antes de enviar el anteproyecto y dónde lo verificas.",
+       "ayuda": "Antes de enviar… Lo verifico en… con…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 4 — 6:00 p.m.</b> Para la propuesta de honorarios pegaste en un asistente público el nombre completo de la pareja, su domicilio, su RFC y una foto de la escritura. La propuesta resultante incluye «supervisión semanal durante toda la obra» y un monto calculado con 210 m², aunque el programa corregido suma 180 m²."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "Identifica los dos problemas (de datos y de contenido) y escribe qué harás distinto desde mañana.",
+       "ayuda": "Datos: … / Contenido: … / Desde mañana…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Cuál fue el error más grave de la escena 3?",
+         "ops": [
+          "Usar la IA para preguntar",
+          "Estar a punto de usar un artículo y una medida sin verificarlos en el reglamento vigente",
+          "Escribir la medida en metros"
+         ],
+         "correcta": 1,
+         "explica": "Un dato normativo sin verificar puede invalidar un anteproyecto o una licencia."
+        },
+        {
+         "p": "En la escena 4, ¿qué no debió subirse a un asistente público?",
+         "ops": [
+          "El RFC, el domicilio y la escritura de los clientes",
+          "El número de m²",
+          "El nombre del despacho"
+         ],
+         "correcta": 0,
+         "explica": "Los datos personales de clientes no van a herramientas públicas; se usan marcadores como [CLIENTE]."
+        },
+        {
+         "p": "El balcón que agregó el render…",
+         "ops": [
+          "Es un detalle menor",
+          "Se deja si al cliente le gusta",
+          "Se corrige porque el cliente asumirá que existe"
+         ],
+         "correcta": 2,
+         "explica": "Lo que aparece en la imagen se vuelve expectativa."
+        },
+        {
+         "p": "¿Qué patrón comparten los cuatro errores?",
+         "ops": [
+          "La IA completó o supuso datos que nadie verificó",
+          "Se usó la herramienta equivocada",
+          "Faltó velocidad"
+         ],
+         "correcta": 0,
+         "explica": "En todos los casos la solución es la misma: comparar contra la fuente real antes de enviar."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Todo programa se compara contra tus notas y documentos.",
+        "Todo dato normativo se verifica en el reglamento vigente.",
+        "Datos personales de clientes, nunca en herramientas públicas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de arquitecto con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu despacho.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Terminas el curso armando tu propio kit. No es un ejercicio: es lo que vas a usar la próxima semana. Trabaja con un proyecto real (o uno reciente) y guarda todo en una carpeta que puedas compartir con tu equipo."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "1. Tu biblioteca de prompts",
+       "pregunta": "Elige los cinco prompts del curso que más usarás (programa, referencias, render, memoria, honorarios, catálogo, minuta, coordinación) y adáptalos a tu forma de trabajar. Escribe el título de cada uno y la instrucción anti-inventos que agregaste.",
+       "ayuda": "1. Programa desde notas — agregué: «…» 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "2. Tu política de datos",
+       "pregunta": "Escribe en cinco reglas qué información de clientes y proyectos nunca subes a herramientas públicas y cómo la sustituyes.",
+       "ayuda": "1. Nombres y RFC → [CLIENTE]. 2. Escrituras y planos con dirección → … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "3. Tu lista de verificación",
+       "pregunta": "Escribe la lista de verificación que aplicarás a todo lo que produzca la IA antes de enviarlo: datos, medidas, normativa, promesas, cifras y alcances.",
+       "ayuda": "Antes de enviar reviso: ☐ medidas contra levantamiento ☐ … ☐ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "4. Tu entregable real",
+       "pregunta": "Produce con IA un entregable real de un proyecto actual (programa, memoria, propuesta de honorarios o minuta), revísalo con tu lista y escribe qué corregiste.",
+       "ayuda": "Entregable: … / Corregí: 1) … 2) … / Tiempo que me ahorró: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE ARQUITECTO CON IA — [nombre del despacho]\n1. Biblioteca de prompts: [programa] [referencias] [render sobre modelo] [memoria] [honorarios] [catálogo] [minuta] [coordinación]\n2. Política de datos: [qué nunca se sube] [cómo se anonimiza] [quién revisa]\n3. Lista de verificación antes de enviar: [medidas] [normativa verificada] [cifras cotizadas] [alcances] [leyendas de imágenes]\n4. Límites: [estructura → estructurista] [normativa → reglamento y municipio] [responsable de obra según municipio]\n5. Entregable de muestra: [archivo] [fecha] [qué se corrigió]\nÚltima actualización: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit se usa la próxima semana, no se archiva.",
+        "Política de datos y lista de verificación antes que velocidad.",
+        "La firma y la responsabilidad profesional son tuyas."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Si el programa que devuelve la IA trae un espacio que el cliente no pidió…",
+     "ops": [
+      "Se deja",
+      "Se marca como pendiente y se pregunta",
+      "Se cobra aparte",
+      "Se dibuja igual"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un render que agrega un balcón inexistente…",
+     "ops": [
+      "Se corrige antes de enviarlo",
+      "Se envía con disculpa",
+      "Es aceptable",
+      "Obliga a construir el balcón"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una medida de restricción que dio la IA con número de artículo…",
+     "ops": [
+      "Es confiable si trae artículo",
+      "Se usa si otra IA coincide",
+      "Se ignora siempre",
+      "Se verifica en el reglamento vigente y con el municipio"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "El RFC y la escritura del cliente en un asistente público…",
+     "ops": [
+      "Están bien si es rápido",
+      "No se suben: se usan marcadores",
+      "Se suben solo de noche",
+      "Se suben si el cliente no se entera"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Tu política de datos sirve para…",
+     "ops": [
+      "Decidir qué información nunca sale a herramientas públicas",
+      "Cobrar más",
+      "Evitar usar IA",
+      "Hacer renders"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La lista de verificación se aplica…",
+     "ops": [
+      "Solo a proyectos grandes",
+      "Cuando hay tiempo",
+      "A todo lo que produce la IA antes de enviarlo",
+      "Solo a renders"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La responsabilidad profesional de lo que entregas es…",
+     "ops": [
+      "De la herramienta",
+      "Compartida con la IA",
+      "Del cliente",
+      "Tuya y de quienes firman"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

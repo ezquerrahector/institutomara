@@ -1,0 +1,1463 @@
+{
+ "id": "c-ia-salud",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA en situaciones reales de hospital, consultorio privado y salud pública sin cruzar las líneas rojas: la IA no diagnostica ni prescribe y los datos de pacientes nunca van a herramientas públicas.",
+  "Detectar errores plantados en un día simulado de trabajo y armar tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real para tu clínica."
+ ],
+ "terceras": [
+  {
+   "p": "Redactar un recordatorio general de vacunación para la sala de espera.",
+   "op": "De riesgo solo si el texto lo firma el médico"
+  },
+  {
+   "p": "Pegar el resumen clínico de la paciente con su nombre para que la IA sugiera tratamiento.",
+   "op": "Seguro si después borras la conversación"
+  },
+  {
+   "p": "Preparar un folleto sobre cuidados después de una extracción dental, que el dentista revisa.",
+   "op": "De riesgo, aunque no lleve datos de ningún paciente"
+  },
+  {
+   "p": "Preguntar a la IA qué dosis darle a un niño de 20 kg con fiebre.",
+   "op": "Seguro si la IA cita una guía clínica"
+  },
+  {
+   "p": "«Paciente de 34 años con enfermedad rara X, única en el municipio de Y.»",
+   "op": "Sí, porque ya no aparece el nombre"
+  },
+  {
+   "p": "«Paciente adulto con cita reprogramada tres veces reclama por la espera.»",
+   "op": "No: falta quitar que fueron tres reprogramaciones"
+  },
+  {
+   "p": "La IA te da una referencia bibliográfica. Antes de citarla…",
+   "op": "Le pido a la IA que confirme que es real"
+  },
+  {
+   "p": "La fuente de verdad para una decisión clínica es…",
+   "op": "El consenso de lo que dicen varios asistentes de IA"
+  },
+  {
+   "p": "Recordatorio:",
+   "op": "«Le recordamos su cita mañana a las 10:00 para revisar sus resultados de laboratorio.»"
+  },
+  {
+   "p": "Indicaciones para un estudio de laboratorio con ayuno las define…",
+   "op": "Recepción, con base en lo que suele pedirse"
+  },
+  {
+   "p": "La IA agregó «puede tomar té de manzanilla» que el médico no indicó. Tú…",
+   "op": "Lo dejo y agrego «consulte a su médico»"
+  },
+  {
+   "p": "El nivel de lectura recomendado para materiales a pacientes es…",
+   "op": "Universitario, para que suene profesional"
+  },
+  {
+   "p": "Queja por 2 horas de espera. ¿La IA puede ayudarte a redactar la respuesta?",
+   "op": "Sí, pegando el expediente para dar contexto"
+  },
+  {
+   "p": "Queja sobre un diagnóstico equivocado…",
+   "op": "Se responde desde recepción con una disculpa general"
+  },
+  {
+   "p": "Para analizar la agenda con IA compartes…",
+   "op": "La agenda completa, pero solo con iniciales"
+  },
+  {
+   "p": "El indicador principal del plan es…",
+   "op": "Cuántos prompts usó el equipo en el mes"
+  }
+ ],
+ "extras": {
+  "c-ia-salud-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la directora de una clínica privada de medicina familiar en Querétaro pide a Paola, coordinadora de enfermería, una lista de tareas donde el equipo pueda usar IA a partir del lunes. Algunas propuestas del equipo son buenas; otras cruzan una línea roja."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Recepción quiere que la IA redacte el guion para llamadas de confirmación de citas.",
+      "ops": [
+       "Adelante: es comunicación general sin datos de pacientes",
+       "Solo si el guion incluye el motivo de cada consulta",
+       "No: cualquier uso de IA con pacientes está prohibido"
+      ],
+      "correcta": 0,
+      "explica": "Un guion general no identifica a nadie ni toma decisiones clínicas; lo revisa la coordinación y listo."
+     },
+     {
+      "p": "Una enfermera propone preguntar a la IA si puede combinar dos medicamentos en un paciente hospitalizado.",
+      "ops": [
+       "Sí, si le da la edad y el peso exactos",
+       "No: es una decisión clínica; se consulta al médico y la fuente farmacológica",
+       "Sí, si después lo anota en el expediente"
+      ],
+      "correcta": 1,
+      "explica": "La interacción entre medicamentos de un paciente real es decisión clínica: la toma el médico con fuentes clínicas verificadas."
+     },
+     {
+      "p": "Un médico quiere dictar su nota de evolución a un asistente de IA gratuito para ahorrar tiempo.",
+      "ops": [
+       "Sí, porque la nota la firma él",
+       "Sí, si borra la conversación al final",
+       "No: la nota con datos del paciente solo va al sistema que la institución autorizó"
+      ],
+      "correcta": 2,
+      "explica": "La nota de evolución forma parte del expediente clínico; su contenido es confidencial y no se procesa en herramientas públicas."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La petición al equipo",
+    "malTitulo": "Sin límites",
+    "mal": "«Usen la IA para todo lo que les ahorre tiempo, incluidas las notas y las dudas de medicamentos.»",
+    "bienTitulo": "Con líneas rojas",
+    "bien": "«Usen la IA para avisos, guiones, materiales que un médico revisa y procesos administrativos. Nada de datos de pacientes en herramientas públicas y ninguna pregunta de diagnóstico o dosis.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu semáforo",
+    "pregunta": "Clasifica 6 tareas de tu área en verde (IA sin datos de pacientes), amarillo (IA con revisión profesional obligatoria) y rojo (nunca con IA).",
+    "ayuda": "Verde: … / Amarillo: … / Rojo: …"
+   }
+  ],
+  "c-ia-salud-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> Rodrigo, del área de facturación de un hospital en Aguascalientes, necesita redactar una carta de aclaración a una aseguradora que rechazó un reembolso. Tiene en su escritorio el expediente, la póliza y la factura, y quiere pedir ayuda a un asistente de IA."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Rodrigo escribe «hospitalización del 12 al 15 de marzo». ¿Qué conviene?",
+      "ops": [
+       "Dejarlo así, las fechas no identifican a nadie",
+       "Cambiarlo por «hospitalización de 3 días»",
+       "Agregar también la hora de ingreso para que sea claro"
+      ],
+      "correcta": 1,
+      "explica": "Las fechas exactas se cruzan con otros registros; la duración basta para redactar la carta."
+     },
+     {
+      "p": "Quiere subir una foto de la receta para que la IA entienda el caso.",
+      "ops": [
+       "No: la receta lleva nombre, médico y datos clínicos",
+       "Sí, si recorta el nombre del paciente",
+       "Sí, porque es un documento que el paciente ya tiene"
+      ],
+      "correcta": 0,
+      "explica": "Una imagen puede llevar membrete, cédula, fecha y diagnóstico; describe la situación con palabras."
+     },
+     {
+      "p": "¿Qué descripción está bien anonimizada?",
+      "ops": [
+       "«Señor de 61 años, único paciente con hemofilia del hospital»",
+       "«Paciente adulto, cirugía programada, falta el informe médico en el expediente de la aseguradora»",
+       "«Paciente con póliza 55120, operado el 12 de marzo»"
+      ],
+      "correcta": 1,
+      "explica": "Describe el problema administrativo sin datos ni combinaciones que permitan saber quién es."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Cambia el dato por una etiqueta segura",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "«Operada el 3 de mayo» → «cirugía hace dos ___»",
+      "resp": [
+       "meses",
+       "semanas",
+       "mes"
+      ],
+      "pista": "Una duración aproximada."
+     },
+     {
+      "frase": "«Póliza 88213 de la aseguradora» → «póliza de gastos ___ mayores»",
+      "resp": [
+       "médicos",
+       "medicos"
+      ],
+      "pista": "El tipo de seguro, sin número."
+     },
+     {
+      "frase": "«Vive en la colonia Centro de Silao» → «reside en el ___»",
+      "resp": [
+       "estado",
+       "municipio",
+       "Bajío",
+       "bajio",
+       "bajío"
+      ],
+      "pista": "Una zona amplia, no la colonia."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus identificadores",
+    "pregunta": "Revisa un formato real de tu área (sin copiarlo aquí) y anota qué campos identifican al paciente y qué etiqueta genérica usarías para cada uno.",
+    "ayuda": "Campo: … → etiqueta: …"
+   }
+  ],
+  "c-ia-salud-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la doctora Canul, médica general en Mérida, prepara una sesión académica para su clínica sobre manejo de hipertensión. Un asistente de IA le entrega un resumen que dice «según la guía mexicana de 2023…» y cita tres artículos con autor y revista."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace con la frase «según la guía mexicana de 2023»?",
+      "ops": [
+       "La busca en el Catálogo Maestro de Guías de Práctica Clínica y confirma versión y recomendación",
+       "La deja, porque la IA menciona el año",
+       "La cambia por «según la literatura» para no comprometerse"
+      ],
+      "correcta": 0,
+      "explica": "Las guías de práctica clínica mexicanas se consultan en su catálogo oficial; la versión y el texto se confirman ahí."
+     },
+     {
+      "p": "Dos de las tres referencias no aparecen en PubMed ni en la revista. ¿Qué hace?",
+      "ops": [
+       "Las cita porque tienen autor y revista",
+       "Las elimina: probablemente son inventadas",
+       "Pide a la IA que le dé el DOI de cada una"
+      ],
+      "correcta": 1,
+      "explica": "Una referencia que no existe en la fuente no se usa, aunque parezca perfecta; pedirle el DOI a la IA no la vuelve real."
+     },
+     {
+      "p": "La IA mezcló una meta de presión arterial de una guía extranjera. Lo correcto es…",
+      "ops": [
+       "Presentar ambas como equivalentes",
+       "Usar la de la guía que ella verificó y decir de dónde sale",
+       "Promediar las dos metas"
+      ],
+      "correcta": 1,
+      "explica": "Cada recomendación va con su fuente; la IA mezcla países y versiones sin avisar."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo pedir ayuda para la sesión",
+    "malTitulo": "Riesgoso",
+    "mal": "«Dame la guía mexicana de hipertensión resumida con 5 referencias.»",
+    "bienTitulo": "Seguro",
+    "bien": "«Te pego el texto de la guía que descargué del catálogo oficial. Resúmelo en 10 diapositivas para médicos generales, citando la sección de cada recomendación. No agregues nada que no esté en el texto.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu fuente oficial",
+    "pregunta": "Anota las 3 fuentes oficiales que usas o usarás para verificar lo clínico en tu área y dónde se consultan.",
+    "ayuda": "1) … se consulta en … / 2) … / 3) …"
+   }
+  ],
+  "c-ia-salud-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un consultorio dental en Monterrey pidió a la IA una serie de mensajes de WhatsApp. Uno dice: «Hola, [NOMBRE], mañana es su sesión de ortodoncia a las 17:00; recuerde que tiene un saldo pendiente de $3,500»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el mensaje?",
+      "ops": [
+       "Ninguno: es claro y breve",
+       "Revela el tratamiento y un adeudo a quien vea el teléfono",
+       "Le falta el diagnóstico completo"
+      ],
+      "correcta": 1,
+      "explica": "Tratamiento y saldo son información que no necesita viajar en un recordatorio; el cobro se trata en persona o por un canal privado."
+     },
+     {
+      "p": "¿Cuál es la mejor versión?",
+      "ops": [
+       "«Hola, [NOMBRE]. Le recordamos su cita mañana a las 17:00 con la Dra. Garza. Responda SÍ para confirmar.»",
+       "«Hola, [NOMBRE]. Mañana es su ajuste de brackets; traiga su pago.»",
+       "«Hola. Recuerde su tratamiento de ortodoncia mañana.»"
+      ],
+      "correcta": 0,
+      "explica": "Fecha, hora y profesional: lo mínimo para confirmar sin exponer nada."
+     },
+     {
+      "p": "Un paciente responde por WhatsApp preguntando si puede tomar un analgésico antes de su cita. Recepción…",
+      "ops": [
+       "Responde con lo que sugiera la IA",
+       "Le pasa la pregunta a la dentista y responde lo que ella indique",
+       "Le dice que tome el que tenga en casa"
+      ],
+      "correcta": 1,
+      "explica": "Cualquier indicación sobre medicamentos la da el profesional; recepción solo canaliza."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Recordatorio",
+    "malTitulo": "Expone de más",
+    "mal": "«Mañana 17:00: sesión de ortodoncia. Saldo pendiente $3,500.»",
+    "bienTitulo": "Lo mínimo",
+    "bien": "«Mañana 17:00, cita con la Dra. Garza. Responda SÍ para confirmar o NO para reprogramar.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus respuestas rápidas",
+    "pregunta": "Escribe 3 respuestas rápidas para tu recepción con campos [NOMBRE], [FECHA], [HORA] y una frase que canalice cualquier duda clínica al profesional.",
+    "ayuda": "1) … / 2) … / 3) … / Duda clínica: «…»"
+   }
+  ],
+  "c-ia-salud-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la enfermera de una clínica de medicina familiar en Hermosillo convierte en folleto las indicaciones que escribió el cirujano para el cuidado de una herida después de una cirugía menor. La IA entrega un texto claro, pero agregó «aplique pomada antibiótica dos veces al día» y «puede bañarse normalmente desde el primer día»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace con las dos frases agregadas?",
+      "ops": [
+       "Las deja, parecen razonables",
+       "Las quita y las marca para que el cirujano confirme",
+       "Las cambia por «consulte a su médico»"
+      ],
+      "correcta": 1,
+      "explica": "Ninguna estaba en las indicaciones originales; solo el cirujano decide si se incluyen."
+     },
+     {
+      "p": "¿Quién aprueba el folleto antes de entregarlo?",
+      "ops": [
+       "La enfermera, porque lo redactó",
+       "El cirujano o el profesional responsable del contenido",
+       "La IA, porque lo generó con cuidado"
+      ],
+      "correcta": 1,
+      "explica": "El contenido clínico lo valida quien lo indicó."
+     },
+     {
+      "p": "Para reducir que la IA agregue cosas, conviene pedir…",
+      "ops": [
+       "«Hazlo más completo»",
+       "«No agregues indicaciones que no estén en el texto y lista lo que cambiaste»",
+       "«Usa tu conocimiento médico para mejorarlo»"
+      ],
+      "correcta": 1,
+      "explica": "Pedir la lista de cambios facilita la revisión, aunque no la sustituye."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Lenguaje claro",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "«Acuda a urgencias si presenta fiebre» se entiende mejor como «Vaya a ___ si tiene fiebre».",
+      "resp": [
+       "urgencias"
+      ],
+      "pista": "El servicio al que debe ir."
+     },
+     {
+      "frase": "Todo folleto para pacientes lo ___ el profesional antes de entregarse.",
+      "resp": [
+       "aprueba",
+       "revisa",
+       "valida",
+       "autoriza"
+      ],
+      "pista": "El último paso antes de imprimir."
+     },
+     {
+      "frase": "La IA simplifica el ___; el contenido lo aporta el médico.",
+      "resp": [
+       "lenguaje",
+       "texto",
+       "redacción",
+       "redaccion"
+      ],
+      "pista": "Lo que sí le toca a la IA."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu folleto",
+    "pregunta": "Elige una indicación frecuente de tu área y escribe cómo pedirías a la IA la versión en lenguaje claro y quién la aprobaría.",
+    "ayuda": "Indicación: … / Prompt: … / La aprueba: …"
+   }
+  ],
+  "c-ia-salud-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un laboratorio de análisis clínicos en Toluca recibe una reseña pública de una estrella: «Me hicieron esperar una hora y además mi resultado de glucosa salió mal, tuve que repetirlo en otro lado». La gerente quiere responder hoy."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "En la respuesta pública, ¿qué no debe aparecer?",
+      "ops": [
+       "Una disculpa por la espera",
+       "Datos del estudio o confirmar que esa persona es paciente con tal resultado",
+       "Un contacto para atenderla en privado"
+      ],
+      "correcta": 1,
+      "explica": "Responder en público con datos clínicos o confirmando detalles expone información de salud; se lleva a un canal privado."
+     },
+     {
+      "p": "La parte del «resultado salió mal» se atiende…",
+      "ops": [
+       "Con la plantilla de la IA",
+       "Canalizándola al responsable sanitario o al área de calidad del laboratorio",
+       "Explicando en la reseña que los valores varían"
+      ],
+      "correcta": 1,
+      "explica": "Una duda sobre la calidad de un resultado es clínica: la revisa el responsable, no una plantilla."
+     },
+     {
+      "p": "¿Qué le pides a la IA?",
+      "ops": [
+       "Una respuesta breve, empática, sin datos clínicos, que invite a contacto privado",
+       "Una respuesta que explique por qué el resultado fue correcto",
+       "Una respuesta que ponga en duda la reseña"
+      ],
+      "correcta": 0,
+      "explica": "La IA ayuda con el tono; los hechos y la canalización los decides tú."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta pública",
+    "malTitulo": "Expone y discute",
+    "mal": "«Revisamos su estudio de glucosa y el valor fue correcto; la variación se debe a que no respetó el ayuno.»",
+    "bienTitulo": "Empática y privada",
+    "bien": "«Lamentamos la espera y su experiencia. Queremos revisarlo con usted: escríbanos a calidad@[laboratorio] o llame al [teléfono] y lo atiende directamente nuestra responsable de calidad.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu protocolo de reseñas",
+    "pregunta": "Escribe en 3 pasos qué hace tu equipo ante una reseña pública que mezcla una queja administrativa y una clínica.",
+    "ayuda": "1) … / 2) … / 3) …"
+   }
+  ],
+  "c-ia-salud-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una clínica de fisioterapia en León pidió a la IA analizar su agenda del trimestre. La IA concluyó que «los lunes tienen 30% de inasistencias» y propuso cancelar las citas de lunes a primera hora."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Antes de actuar, ¿qué haces con el 30%?",
+      "ops": [
+       "Lo recalculo en mi hoja de cálculo con los datos originales",
+       "Lo acepto, la IA ya hizo el cálculo",
+       "Le pregunto a la IA si está segura"
+      ],
+      "correcta": 0,
+      "explica": "La IA puede equivocarse en operaciones; los indicadores se calculan en la hoja."
+     },
+     {
+      "p": "Si confirmas que los lunes a las 8:00 faltan más, la mejor primera medida es…",
+      "ops": [
+       "Cancelar ese horario",
+       "Reforzar la confirmación el domingo y ofrecer lista de espera",
+       "Cobrar una multa sin avisar"
+      ],
+      "correcta": 1,
+      "explica": "Primero se prueban medidas de bajo costo y se mide el efecto."
+     },
+     {
+      "p": "¿Qué datos le compartiste a la IA?",
+      "ops": [
+       "Totales por día y hora, sin nombres",
+       "La agenda exportada con nombres y teléfonos",
+       "Los expedientes de los pacientes que faltan"
+      ],
+      "correcta": 0,
+      "explica": "Para ver patrones bastan datos agregados."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Problema de agenda y medida",
+    "pares": [
+     [
+      "Muchas faltas un día fijo",
+      "Confirmación reforzada el día anterior"
+     ],
+     [
+      "Huecos por cancelaciones de último momento",
+      "Lista de espera activa"
+     ],
+     [
+      "Esperas largas en la tarde",
+      "Bloques de horario más realistas"
+     ],
+     [
+      "Pacientes que llegan sin estudios",
+      "Indicaciones claras en el mensaje de confirmación"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu indicador",
+    "pregunta": "Elige un indicador de agenda de tu área, escribe su valor actual (o cómo lo medirás) y la meta a 60 días.",
+    "ayuda": "Indicador: … / Hoy: … / Meta: …"
+   }
+  ],
+  "c-ia-salud-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un hospital privado en Celaya pidió a la IA el protocolo de «paciente que se desvanece en la sala de espera». El borrador incluye: «el personal de recepción coloca oxígeno y toma la presión»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene ese paso?",
+      "ops": [
+       "Ninguno, así se gana tiempo",
+       "Asigna a personal no médico una acción clínica",
+       "Le falta indicar la marca del equipo"
+      ],
+      "correcta": 1,
+      "explica": "El personal no médico avisa, pide ayuda y sigue el protocolo; las acciones clínicas las realiza personal capacitado y autorizado."
+     },
+     {
+      "p": "¿Quién valida la parte de urgencias del protocolo?",
+      "ops": [
+       "El responsable médico",
+       "La coordinación administrativa",
+       "La IA"
+      ],
+      "correcta": 0,
+      "explica": "Lo relativo a urgencias siempre lo valida el responsable médico."
+     },
+     {
+      "p": "Qué sí puede hacer recepción en el protocolo:",
+      "ops": [
+       "Decidir si el paciente necesita traslado",
+       "Avisar de inmediato al personal médico según el código interno y despejar el área",
+       "Dar un medicamento para que se reponga"
+      ],
+      "correcta": 1,
+      "explica": "Avisar rápido y facilitar la atención es lo que corresponde a recepción."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Paso del protocolo",
+    "malTitulo": "Invade lo clínico",
+    "mal": "«Recepción coloca oxígeno y toma la presión.»",
+    "bienTitulo": "Rol correcto",
+    "bien": "«Recepción activa el aviso interno de urgencia, llama al médico de guardia, despeja el área y anota la hora del aviso.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu paso crítico",
+    "pregunta": "Escribe el paso de tu protocolo de urgencias que corresponde al personal no médico y a quién le pedirás que lo valide.",
+    "ayuda": "Paso: … / Lo valida: …"
+   }
+  ],
+  "c-ia-salud-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> después de 30 días del plan, la clínica de especialidades bajó las inasistencias de 20% a 15%, pero las quejas por espera siguen igual. La dirección pregunta si el plan funcionó."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cómo resumes el resultado?",
+      "ops": [
+       "El plan fracasó",
+       "Inasistencias mejoraron 5 puntos; la espera requiere otra medida",
+       "Todo mejoró"
+      ],
+      "correcta": 1,
+      "explica": "Cada indicador se reporta por separado."
+     },
+     {
+      "p": "Para atacar la espera, un paso razonable es…",
+      "ops": [
+       "Medir la espera por turno y ajustar los bloques de horario",
+       "Pedir a la IA que redacte más disculpas",
+       "Dejar de registrar las quejas"
+      ],
+      "correcta": 0,
+      "explica": "Primero se mide dónde se genera la espera."
+     },
+     {
+      "p": "Para el reporte a la dirección, la IA sirve para…",
+      "ops": [
+       "Redactar el resumen a partir de tus cifras ya verificadas",
+       "Inventar las cifras que faltan",
+       "Decidir qué médicos deben atender menos pacientes"
+      ],
+      "correcta": 0,
+      "explica": "La IA redacta; las cifras son tuyas y verificadas."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa el reporte",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Un plan se evalúa comparando indicadores ___ y después.",
+      "resp": [
+       "antes"
+      ],
+      "pista": "El punto de partida."
+     },
+     {
+      "frase": "Si un indicador no mejora, se cambia la ___, no se deja de medir.",
+      "resp": [
+       "medida",
+       "acción",
+       "accion",
+       "estrategia"
+      ],
+      "pista": "Lo que hiciste para mejorarlo."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu siguiente ajuste",
+    "pregunta": "Escribe qué indicador de tu plan revisarías a los 30 días y qué harías si no mejora.",
+    "ayuda": "A los 30 días reviso… / Si no mejora…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por área: hospital, consultorio privado y salud pública",
+   "r": "Situaciones avanzadas en tres entornos: hospital y enfermería, consultorio y farmacia, y promoción de la salud en comunidades, con los errores típicos de la IA en cada uno.",
+   "lecciones": [
+    {
+     "t": "Hospital y enfermería: entrega de turno, insumos y capacitación",
+     "obj": "Usar IA para formatos, capacitación e insumos del hospital sin meter datos de pacientes ni decisiones clínicas.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En un hospital, la IA es útil lejos de la cama del paciente: formatos en blanco, capacitación del personal, control de insumos, avisos internos y minutas. Lo que ocurre con cada paciente se registra en el expediente clínico, que según la <b>NOM-004-SSA3-2012</b> es confidencial y se maneja solo por personal autorizado en los sistemas de la institución. Si tu hospital no autorizó una herramienta de IA para información clínica, ahí no entra nada del paciente."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en el hospital",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Inventa un protocolo «institucional» que tu hospital no tiene",
+         "Usa solo los manuales de tu institución como fuente"
+        ],
+        [
+         "Mezcla normas de otros países",
+         "Verifica en la norma oficial mexicana aplicable"
+        ],
+        [
+         "Sugiere dosis o diluciones en un material de capacitación",
+         "Lo clínico lo aporta y valida el responsable del servicio"
+        ],
+        [
+         "Redacta ejemplos con nombres y camas que parecen reales",
+         "Pide ejemplos ficticios y genéricos"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Una jefa de piso quiere que la IA resuma las notas de enfermería del turno para la entrega.",
+         "ops": [
+          "Adelante, si quita los nombres",
+          "No en una herramienta pública: la entrega se hace en el sistema autorizado",
+          "Adelante, si imprime el resumen y borra la conversación"
+         ],
+         "correcta": 1,
+         "explica": "Las notas son parte del expediente; su resumen se hace donde la institución lo autoriza."
+        },
+        {
+         "p": "Para capacitar en lavado de manos, la IA puede…",
+         "ops": [
+          "Convertir el procedimiento oficial del hospital en un taller de 10 minutos",
+          "Crear un procedimiento nuevo con su propio criterio",
+          "Cambiar los tiempos del procedimiento para hacerlo más fácil"
+         ],
+         "correcta": 0,
+         "explica": "La fuente es el procedimiento oficial; la IA solo lo vuelve didáctico."
+        },
+        {
+         "p": "Un material de capacitación incluye una dilución de medicamento que la IA propuso.",
+         "ops": [
+          "Se deja, es solo para capacitación",
+          "Se quita o lo valida el responsable del servicio con la fuente oficial",
+          "Se cambia por una cifra redonda"
+         ],
+         "correcta": 1,
+         "explica": "Incluso en capacitación, lo clínico lo valida el responsable."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Cobertura de insumos del servicio",
+       "datos": [
+        [
+         "Insumo",
+         "Existencia",
+         "Consumo diario",
+         "Días de cobertura"
+        ],
+        [
+         "Guantes (cajas)",
+         36,
+         3,
+         12
+        ],
+        [
+         "Jeringas 5 ml",
+         400,
+         80,
+         ""
+        ],
+        [
+         "Cubrebocas (cajas)",
+         10,
+         4,
+         ""
+        ],
+        [
+         "Insumos con 5 días o menos",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "D3",
+         "formula": "=B3/C3",
+         "texto": "<b>D3</b>: días de cobertura de jeringas (existencia ÷ consumo diario), como en la fila de guantes.",
+         "pista": "=B3/C3",
+         "esperado": 5
+        },
+        {
+         "celda": "D4",
+         "formula": "=B4/C4",
+         "texto": "<b>D4</b>: días de cobertura de cubrebocas.",
+         "esperado": 2.5
+        },
+        {
+         "celda": "D5",
+         "formula": "=CONTAR.SI(D2:D4,\"<=5\")",
+         "texto": "<b>D5</b>: cuántos insumos tienen 5 días de cobertura o menos.",
+         "requiere": "CONTAR.SI(",
+         "pista": "=CONTAR.SI(D2:D4,‹<=5›) con comillas rectas",
+         "explica": "Jeringas y cubrebocas: esos van primero en el pedido. La IA puede redactar el correo al almacén, pero el número sale de tu hoja.",
+         "esperado": 2
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu servicio",
+       "pregunta": "Escribe 2 tareas de tu servicio (formatos, capacitación, insumos o avisos) que harías con IA y qué parte validaría el responsable.",
+       "ayuda": "Tarea 1: … la valida … / Tarea 2: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Microcapacitación desde un procedimiento oficial",
+       "texto": "Te pego el procedimiento oficial de mi hospital sobre [tema administrativo o de seguridad: lavado de manos, manejo de RPBI, identificación del paciente] [pegar]. Conviértelo en una capacitación de 10 minutos para [personal]: 3 ideas clave, un caso ficticio sin datos reales, 5 preguntas de repaso con respuesta. No cambies ni agregues pasos al procedimiento; si algo es ambiguo, márcalo como [CONSULTAR]."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Lo del paciente vive en el expediente y el sistema autorizado.",
+        "La IA hace formatos en blanco, capacitación e insumos.",
+        "Lo clínico, aun en capacitación, lo valida el responsable."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Consultorio privado y farmacia: cobros, aseguradoras y reputación",
+     "obj": "Ordenar la parte administrativa del consultorio con IA y cuidar lo que se publica, sin recomendar tratamientos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En el consultorio privado, el médico o dentista suele ser también administrador: cobra, factura, trata con aseguradoras y cuida su reputación en línea. La IA ayuda a ordenar ingresos, redactar cartas y preparar contenido para redes. Dos cuidados: la <b>publicidad de servicios de salud está regulada</b> en México (Ley General de Salud y su reglamento en materia de publicidad, bajo vigilancia de COFEPRIS), así que nada de promesas de curación ni testimonios engañosos; y en farmacia, <b>la IA nunca recomienda medicamentos</b> a un cliente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Fiscal, con tu contador.</b> Las reglas de facturación y de deducción de gastos médicos cambian. Por ejemplo, para que un paciente pueda deducir honorarios médicos, el pago debe cumplir requisitos como hacerse por medios electrónicos y estar facturado. Verifica los requisitos vigentes en el SAT o con tu contador antes de publicarlos."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Contenido para redes sin promesas",
+       "texto": "Soy [especialidad] en [ciudad]. Propón 8 publicaciones informativas para redes sobre [tema de prevención general]. Reglas: sin promesas de curación ni resultados garantizados, sin testimonios de pacientes, sin antes y después, sin recomendar medicamentos. Cada publicación con una idea, una frase de llamada a consulta y la nota «Información general; no sustituye la consulta». Yo verifico cada dato con una fuente oficial."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en el consultorio",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Escribe «cura garantizada» o «sin dolor 100%»",
+         "Quita promesas; revisa el reglamento de publicidad"
+        ],
+        [
+         "Afirma requisitos fiscales viejos o de otro país",
+         "Verifica con el SAT o tu contador"
+        ],
+        [
+         "Sugiere un medicamento en una respuesta a un cliente de farmacia",
+         "La recomendación la hace el médico con receta"
+        ],
+        [
+         "Redacta una carta a la aseguradora con datos clínicos de más",
+         "Solo lo necesario, en el canal seguro de la aseguradora"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA propone el texto «Elimina tu dolor de espalda en 3 sesiones, garantizado».",
+         "ops": [
+          "Se publica, atrae pacientes",
+          "Se cambia: no se prometen resultados",
+          "Se publica con letra chica"
+         ],
+         "correcta": 1,
+         "explica": "La publicidad en salud no promete resultados; cada caso es distinto."
+        },
+        {
+         "p": "Un cliente de farmacia pide por WhatsApp «algo para la tos de mi hijo». El dependiente…",
+         "ops": [
+          "Copia lo que sugiera la IA",
+          "Recomienda acudir con un médico o consultar al farmacéutico responsable según la política de la farmacia",
+          "Envía una lista de jarabes"
+         ],
+         "correcta": 1,
+         "explica": "La IA no recomienda medicamentos; y menos para un menor sin valoración."
+        },
+        {
+         "p": "Para la carta a la aseguradora, la IA recibe…",
+         "ops": [
+          "El expediente completo",
+          "La situación administrativa anonimizada y los documentos que faltan",
+          "Las notas del médico con nombre"
+         ],
+         "correcta": 1,
+         "explica": "La carta final con datos se arma en tu sistema; la IA solo ayuda con la redacción."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Ingresos de la semana del consultorio",
+       "datos": [
+        [
+         "Día",
+         "Forma de pago",
+         "Monto"
+        ],
+        [
+         "Lunes",
+         "Tarjeta",
+         2400
+        ],
+        [
+         "Lunes",
+         "Efectivo",
+         800
+        ],
+        [
+         "Martes",
+         "Transferencia",
+         1600
+        ],
+        [
+         "Miércoles",
+         "Tarjeta",
+         3200
+        ],
+        [
+         "Jueves",
+         "Efectivo",
+         1200
+        ],
+        [
+         "Viernes",
+         "Transferencia",
+         2000
+        ],
+        [
+         "Total semana",
+         "",
+         ""
+        ],
+        [
+         "Pagos electrónicos",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "C8",
+         "formula": "=SUMA(C2:C7)",
+         "texto": "<b>C8</b>: total cobrado en la semana.",
+         "requiere": "SUMA(",
+         "esperado": 11200
+        },
+        {
+         "celda": "C9",
+         "formula": "=SUMAR.SI(B2:B7,\"<>Efectivo\",C2:C7)",
+         "texto": "<b>C9</b>: total cobrado por medios distintos al efectivo.",
+         "requiere": "SUMAR.SI(",
+         "pista": "=SUMAR.SI(B2:B7,‹<>Efectivo›,C2:C7) con comillas",
+         "esperado": 9200
+        },
+        {
+         "celda": "D9",
+         "formula": "=REDONDEAR(C9/C8,2)",
+         "texto": "<b>D9</b>: proporción de pagos electrónicos, redondeada a 2 decimales.",
+         "requiere": "REDONDEAR(",
+         "explica": "Más de 80% ya es electrónico. Ese dato te ayuda a platicar con tu contador sobre facturación; la IA puede hacer la gráfica, no el cálculo.",
+         "esperado": 0.82
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Publicación en redes",
+       "malTitulo": "Promete",
+       "mal": "«Tratamiento definitivo para la migraña. ¡Resultados garantizados!»",
+       "bienTitulo": "Informa",
+       "bien": "«¿Dolores de cabeza frecuentes? Llevar un diario de cuándo aparecen ayuda a tu médico a valorarte. Información general; no sustituye la consulta.»"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu consultorio",
+       "pregunta": "Escribe qué tarea administrativa de tu consultorio o farmacia harás con IA esta semana y qué regla pondrás para lo que se publica en redes.",
+       "ayuda": "Tarea: … / Regla de publicación: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Publicidad en salud: informar, no prometer.",
+        "Lo fiscal se verifica en el SAT o con tu contador.",
+        "La IA nunca recomienda medicamentos a un cliente."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Salud pública y promoción en comunidades",
+     "obj": "Preparar campañas, materiales y reportes de salud pública con IA, cuidando pertinencia cultural y datos agregados.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En centros de salud, jurisdicciones sanitarias y organizaciones civiles, la IA ayuda a preparar campañas de vacunación o prevención, guiones para brigadas, carteles, encuestas y reportes. Tres riesgos propios: <b>mensajes que no se entienden en la comunidad</b>, <b>traducciones automáticas a lenguas indígenas poco confiables</b> y <b>datos personales en listas de beneficiarios</b>. Para reportes, la IA recibe cifras agregadas, nunca listas con nombres o CURP."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Guion para brigada de salud",
+       "texto": "Voy a una brigada de [tema: vacunación, detección, prevención] en [localidad, tipo de comunidad]. El contenido técnico está en este material oficial [pegar]. Redacta un guion de 2 minutos para explicar a las familias qué ofrecemos, a quién va dirigido, qué deben traer y a dónde acudir después. Lenguaje sencillo, respetuoso y sin tecnicismos. No agregues información clínica que no esté en el material."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en salud pública",
+       "encabezados": [
+        "Error",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Traduce a una lengua indígena con errores de sentido",
+         "Valida con hablantes o intérpretes de la comunidad"
+        ],
+        [
+         "Usa ejemplos urbanos que no aplican en la localidad",
+         "Pide ejemplos con el contexto real"
+        ],
+        [
+         "Afirma esquemas o edades de vacunación desactualizados",
+         "Verifica en la fuente oficial vigente de la Secretaría de Salud"
+        ],
+        [
+         "Calcula coberturas con errores",
+         "Calcula en la hoja con tus datos"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Necesitas un cartel en náhuatl para una campaña en la Huasteca.",
+         "ops": [
+          "Usas la traducción automática tal cual",
+          "Pides el borrador y lo validan hablantes o intérpretes de la comunidad",
+          "Lo dejas solo en español"
+         ],
+         "correcta": 1,
+         "explica": "Las lenguas originarias tienen variantes; la validación comunitaria evita errores y es una forma de respeto."
+        },
+        {
+         "p": "Para el reporte mensual de la brigada, la IA recibe…",
+         "ops": [
+          "La lista de beneficiarios con CURP",
+          "Totales por localidad y grupo de edad",
+          "Fotos de las cartillas"
+         ],
+         "correcta": 1,
+         "explica": "Para redactar un reporte bastan cifras agregadas."
+        },
+        {
+         "p": "La IA dice que una vacuna se aplica a cierta edad. Tú…",
+         "ops": [
+          "Lo verificas en la fuente oficial vigente antes de imprimir",
+          "Lo imprimes, suena correcto",
+          "Lo cambias por «consulte a su médico»"
+         ],
+         "correcta": 0,
+         "explica": "Esquemas y edades se verifican en la fuente oficial vigente."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Avance de la campaña por localidad",
+       "datos": [
+        [
+         "Localidad",
+         "Meta",
+         "Aplicadas",
+         "Avance"
+        ],
+        [
+         "Localidad A",
+         400,
+         352,
+         0.88
+        ],
+        [
+         "Localidad B",
+         250,
+         160,
+         ""
+        ],
+        [
+         "Localidad C",
+         180,
+         171,
+         0.95
+        ],
+        [
+         "Localidades bajo 80%",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "D3",
+         "formula": "=C3/B3",
+         "texto": "<b>D3</b>: avance de la localidad B (aplicadas ÷ meta).",
+         "pista": "=C3/B3",
+         "esperado": 0.64
+        },
+        {
+         "celda": "D5",
+         "formula": "=CONTAR.SI(D2:D4,\"<0.8\")",
+         "texto": "<b>D5</b>: cuántas localidades van por debajo de 80%.",
+         "requiere": "CONTAR.SI(",
+         "explica": "La localidad B va en 64%: ahí se enfoca la siguiente brigada. La IA puede proponer el mensaje; tú decides la ruta.",
+         "esperado": 1
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu campaña",
+       "pregunta": "Diseña en 4 renglones una campaña breve para tu comunidad o institución: tema, material oficial de base, mensaje principal y quién valida el texto.",
+       "ayuda": "Tema: … / Fuente oficial: … / Mensaje: … / Valida: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Reporte mensual con cifras agregadas",
+       "texto": "Estas son las cifras verificadas de la campaña del mes [pegar tabla con totales por localidad, sin nombres]. Redacta un reporte de una página para la jurisdicción: resumen de avance, localidades rezagadas, causas que yo observé [pegar observaciones] y 3 acciones para el siguiente mes. No recalcules ni agregues cifras."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Mensajes sencillos y fieles al material oficial.",
+        "Lenguas indígenas: validación con la comunidad.",
+        "Reportes con cifras agregadas, calculadas por ti."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "En el hospital, las notas de enfermería de un paciente…",
+     "ops": [
+      "Se resumen en cualquier asistente de IA si se quita el nombre",
+      "Se registran y manejan en el sistema que autorizó la institución",
+      "Se pueden compartir por mensaje para agilizar",
+      "Las redacta la IA y la enfermera firma"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Un material de capacitación incluye una dilución propuesta por la IA. Lo correcto es…",
+     "ops": [
+      "Dejarla porque es solo capacitación",
+      "Que el responsable del servicio la valide con la fuente oficial o quitarla",
+      "Redondear la cifra",
+      "Pedir a la IA una segunda opinión"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "En publicidad de servicios de salud se evita…",
+     "ops": [
+      "Dar un teléfono de contacto",
+      "Informar horarios",
+      "Prometer resultados o curación garantizada",
+      "Publicar consejos generales de prevención"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Un cliente de farmacia pide a quien atiende una recomendación para la tos de su hijo. La IA…",
+     "ops": [
+      "Sugiere un jarabe común",
+      "No recomienda medicamentos; se canaliza con el médico o el farmacéutico responsable",
+      "Da la dosis por peso",
+      "Recomienda un remedio casero"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Para un cartel en lengua indígena, la traducción de la IA…",
+     "ops": [
+      "Es suficiente si el texto es corto",
+      "Se imprime y se corrige después",
+      "Se evita siempre usar lenguas indígenas",
+      "Se valida con hablantes o intérpretes de la comunidad"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Para redactar el reporte de una campaña, la IA recibe…",
+     "ops": [
+      "La lista de beneficiarios",
+      "Fotos de las cartillas",
+      "Cifras agregadas que tú verificaste",
+      "Las CURP para evitar duplicados"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado en una clínica con errores plantados que debes detectar, y la construcción de tu kit personal de IA en salud.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día con IA en la clínica",
+     "obj": "Detectar errores de privacidad, clínicos y de cálculo en el trabajo real con IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vas a acompañar a <b>Mariana</b>, coordinadora administrativa de una clínica de especialidades en Puebla, durante un día de trabajo con IA. En cada escena hay al menos un error plantado. Léela, detecta qué está mal y escribe cómo lo corregirías antes de pasar a la siguiente."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 8:00.</b> Mariana pide a la IA los recordatorios del día. El borrador dice: «Hola, [NOMBRE]. Mañana a las 9:00 es su consulta de seguimiento de diabetes con el Dr. Salas. Traiga sus resultados de hemoglobina glucosilada». Mariana está por programar el envío a 60 pacientes."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "¿Qué error hay en el recordatorio y cómo queda la versión correcta?",
+       "ayuda": "El error es… / Versión correcta: «…»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:00.</b> El cardiólogo le pidió convertir sus indicaciones en un folleto. La IA entrega un texto claro que agrega «si olvida una dosis, tome dos juntas al día siguiente» y «puede suspender el medicamento cuando se sienta bien». Una recepcionista propone imprimir 200 copias ya."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "¿Qué frases no pueden salir así y qué pasos siguen antes de imprimir?",
+       "ayuda": "Frases problemáticas: … / Antes de imprimir: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 14:00.</b> Mariana pega en la IA los totales del mes: 1,250 citas y 200 inasistencias. La IA responde: «La tasa de inasistencia fue de 25%, muy por encima del mes anterior (18%)». Mariana va a presentar ese dato a la dirección a las 16:00."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Recalcula la tasa de inasistencia, explica el error y escribe cómo presentarías el dato correcto.",
+       "ayuda": "200 ÷ 1,250 = … / El error fue… / Presentaré…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 17:00.</b> Un médico residente le comenta que, para ir más rápido, pegó el resumen clínico de un paciente con nombre y número de expediente en un asistente de IA gratuito desde su celular. Además, la presentación para la dirección cita «un estudio del IMSS de 2024» que nadie ha visto."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "¿Qué haces con el incidente de datos y con la cita del estudio? Escribe los pasos según las reglas de tu institución.",
+       "ayuda": "Incidente: aviso a… / Estudio: …"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "200 inasistencias en 1,250 citas equivalen a…",
+         "ops": [
+          "16%",
+          "25%",
+          "20%"
+         ],
+         "correcta": 0,
+         "explica": "200 ÷ 1,250 = 0.16. Siempre recalcula en tu hoja."
+        },
+        {
+         "p": "Las frases agregadas en el folleto de la escena 2…",
+         "ops": [
+          "Se quedan si el médico no las nota",
+          "Se eliminan y el cardiólogo revisa y aprueba el folleto",
+          "Se suavizan con «según su criterio»"
+         ],
+         "correcta": 1,
+         "explica": "Son indicaciones clínicas no dadas por el médico, y además peligrosas."
+        },
+        {
+         "p": "Ante el incidente de la escena 4, lo primero es…",
+         "ops": [
+          "Ignorarlo, ya pasó",
+          "Avisar al responsable de datos o a la dirección según el protocolo interno",
+          "Pedirle al residente que borre la conversación y no decir nada"
+         ],
+         "correcta": 1,
+         "explica": "Los incidentes con datos personales se reportan según el procedimiento de la institución; ocultarlos agrava el riesgo."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Revisa cada salida: privacidad, contenido clínico y cifras.",
+        "Los incidentes de datos se reportan, no se esconden.",
+        "Ninguna cita entra a una presentación sin verificarla."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de IA para salud",
+     "obj": "Construir tu kit personal listo para usar en tu clínica, consultorio u hospital.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso con un kit que puedas usar desde mañana y mostrar a tu jefe o equipo. Tiene cuatro piezas: biblioteca de prompts, política de datos, lista de verificación y un entregable real con su indicador. Escribe cada pieza en su espacio; al final tendrás un índice para ordenarlas."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 1 — Biblioteca de prompts",
+       "pregunta": "Escribe tus 5 prompts de uso frecuente, adaptados a tu puesto, con campos entre corchetes y sin datos de pacientes.",
+       "ayuda": "1) Recordatorios: … / 2) Folleto: … / 3) Queja: … / 4) Agenda: … / 5) …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 2 — Política de datos",
+       "pregunta": "Redacta tu política de datos en 5 reglas: qué nunca se pega en una herramienta pública, cómo anonimizas, qué herramientas autorizó tu institución, dónde vive la información clínica y a quién avisas si hay un incidente.",
+       "ayuda": "1) Nunca… / 2) Para anonimizar… / 3) Herramientas autorizadas: … / 4) Lo clínico vive en… / 5) Incidentes: aviso a…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 3 — Lista de verificación",
+       "pregunta": "Escribe la lista de 6 preguntas que harás antes de usar o enviar cualquier texto generado con IA.",
+       "ayuda": "¿Tiene datos de pacientes? / ¿Incluye algo clínico no indicado por el profesional? / ¿Las cifras están recalculadas? / …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Pieza 4 — Entregable real y medición",
+       "pregunta": "Elige un entregable real para tu lugar de trabajo (set de mensajes, folleto, protocolo, reporte o campaña): descríbelo, anota quién lo revisa y aprueba, y define el indicador que mostrará si funcionó, con valor inicial y meta.",
+       "ayuda": "Entregable: … / Lo aprueba: … / Indicador: … / Hoy: … / Meta: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE IA PARA SALUD — [Tu nombre, puesto, institución]\nFecha: [ ]\n\n1. Biblioteca de prompts (5): [ ]\n2. Política de datos (5 reglas): [ ]\n   Herramientas autorizadas por mi institución: [ ]\n   Aviso de incidentes a: [ ]\n3. Lista de verificación antes de enviar (6 preguntas): [ ]\n4. Entregable real: [ ]  Revisa y aprueba: [ ]\n   Indicador: [ ]  Valor inicial: [ ]  Meta: [ ]  Revisión: [ ]\n\nLíneas rojas: la IA no diagnostica ni prescribe; los datos de pacientes no van a herramientas públicas; la responsabilidad profesional es mía.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso!</b> Ahora tienes un método para usar IA en la operación y la comunicación en salud: proteger datos, dejar lo clínico al profesional con fuentes oficiales y medir resultados."
+      },
+      {
+       "tipo": "clave",
+       "titulo": "Tu kit de salud con IA",
+       "items": [
+        "Biblioteca de prompts sin datos de pacientes.",
+        "Política de datos y lista de verificación antes de enviar.",
+        "Un entregable real aprobado y un indicador para medir."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un recordatorio que dice «su consulta de seguimiento de diabetes» es un error porque…",
+     "ops": [
+      "Es demasiado largo",
+      "Revela información de salud a quien vea el teléfono",
+      "No incluye el costo",
+      "No lleva emojis"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "200 inasistencias en 1,250 citas son…",
+     "ops": [
+      "25%",
+      "20%",
+      "16%",
+      "12%"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la IA agrega a un folleto «puede suspender el medicamento cuando se sienta bien»…",
+     "ops": [
+      "Se elimina y el médico revisa el folleto completo",
+      "Se deja con letra chica",
+      "Se cambia por «pregunte en farmacia»",
+      "Se imprime y se corrige en la siguiente edición"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un residente pegó datos de un paciente en un asistente gratuito. Lo correcto es…",
+     "ops": [
+      "No decir nada",
+      "Borrar la conversación y seguir",
+      "Pedir a la IA que olvide los datos",
+      "Reportarlo según el protocolo de la institución"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una presentación cita un estudio que nadie ha visto. Tú…",
+     "ops": [
+      "Lo dejas, suena oficial",
+      "Lo buscas en la fuente; si no aparece, lo quitas",
+      "Cambias el año",
+      "Pides a la IA el enlace y confías en él"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La responsabilidad profesional de lo que se entrega a pacientes es…",
+     "ops": [
+      "De la herramienta de IA",
+      "Del proveedor de la herramienta",
+      "De la persona y del profesional que lo aprueba",
+      "De nadie si fue un borrador"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+  "id": "c-ia-ventas",
+  "horas": 10,
+  "aprender": [
+    "Calificar prospectos, negociar concesiones con contrapartida y leer tu embudo de ventas con tasas de conversión, con la IA como apoyo y sin inventar datos.",
+    "Armar tu kit comercial con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+  ],
+  "terceras": [
+    { "p": "¿Por qué importa conocer las palabras que usa tu cliente?", "op": "Para corregirle la forma de hablar" },
+    { "p": "La IA te da un perfil muy completo. Antes de usarlo…", "op": "Le pido a la IA que lo confirme" },
+    { "p": "¿Qué información es adecuada investigar?", "op": "Las publicaciones personales de su familia" },
+    { "p": "¿Cuál es una pregunta abierta?", "op": "«¿Ya tienen proveedor?»" },
+    { "p": "La IA dice que la empresa «acaba de abrir 3 sucursales». Antes de mencionarlo…", "op": "Lo menciono como rumor" },
+    { "p": "Un buen primer mensaje habla principalmente de…", "op": "El precio de tu producto" },
+    { "p": "¿Qué petición es más fácil de aceptar?", "op": "«¿Me compra el paquete completo?»" },
+    { "p": "Un seguimiento efectivo…", "op": "Repite el mismo mensaje cada día" },
+    { "p": "¿En qué etapa deberías pasar más tiempo?", "op": "Presentación del catálogo" },
+    { "p": "Un buen cierre de llamada es…", "op": "«Cualquier cosa, aquí estoy»" },
+    { "p": "Ante «lo voy a pensar», lo mejor es…", "op": "«El precio sube mañana, decídase hoy»" },
+    { "p": "El primer paso ante una objeción es…", "op": "Explicar por qué se equivoca" },
+    { "p": "¿Por qué ofrecer 2 o 3 opciones?", "op": "Para cobrar siempre la más cara" },
+    { "p": "La IA agregó «garantía de satisfacción del 100%» que no ofreces.", "op": "La cambio a «garantía del 90%»" },
+    { "p": "¿Qué mensaje de seguimiento es mejor?", "op": "«Solo para recordarte que sigo esperando tu respuesta»" },
+    { "p": "Un seguimiento planeado sirve para…", "op": "Presionar para cerrar el mismo día" },
+    { "p": "«Causas ajenas a nosotros» suena…", "op": "Cercano" },
+    { "p": "Lo que más tranquiliza a un cliente molesto es…", "op": "Un descuento en su próxima compra sin resolver la actual" },
+    { "p": "¿A quién contactas primero?", "op": "A los que compraban menos, para empezar fácil" },
+    { "p": "Un buen mensaje de reactivación…", "op": "«Última oportunidad: si no compras hoy te damos de baja»" },
+    { "p": "Para compartir la lista con la IA…", "op": "Pego solo nombres y teléfonos, sin montos" }
+  ],
+  "extras": {
+    "c-ia-ventas-m1-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> una empresa de software de nómina en Aguascalientes pidió a la IA su cliente ideal sin darle datos. Salió «corporativos de más de 500 empleados con área de TI». Pero sus 5 mejores clientes son negocios de 15 a 60 empleados, sin área de TI, que hacían la nómina en hojas de cálculo." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué perfil usa el equipo de ventas?", "ops": ["El de la IA, suena más grande", "El que sale de sus mejores clientes reales", "Una mezcla de los dos"], "correcta": 1, "explica": "El perfil sale de quién te compra y se queda, no de lo que suena atractivo." },
+        { "p": "Una palabra que probablemente usa ese cliente es…", "ops": ["«Se me van las tardes cuadrando la nómina»", "«Necesitamos integrar el ERP»", "«Buscamos escalabilidad empresarial»"], "correcta": 0, "explica": "Un dueño de negocio pequeño habla de su tiempo y sus errores, no de términos de TI." },
+        { "p": "Para validar el perfil, lo mejor es…", "ops": ["Pedirle a la IA que lo revise otra vez", "Publicarlo en redes", "Platicar con 2 o 3 clientes actuales"], "correcta": 2, "explica": "Conversaciones reales confirman o corrigen el perfil." }
+      ] },
+      { "tipo": "comparar", "titulo": "Perfil del cliente ideal", "malTitulo": "Supuesto", "mal": "«Corporativos con área de TI que buscan soluciones de nómina escalables.»", "bienTitulo": "Basado en datos", "bien": "«Dueños de negocios de 15 a 60 empleados que hacen la nómina en hojas de cálculo y temen equivocarse en los cálculos.»" },
+      { "tipo": "reflexion", "rotulo": "Tu perfil con datos", "pregunta": "Anota qué tienen en común tus 5 mejores clientes (sin nombres) y compáralo con el perfil que usas hoy. ¿Qué corriges?", "ayuda": "Tienen en común… / Hoy uso… / Corrijo…" }
+    ],
+    "c-ia-ventas-m1-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> vendes mantenimiento de montacargas a naves industriales en Silao. El brief de la IA dice que tu prospecto «opera 3 turnos y tiene 40 montacargas». En su página solo dice que es una empresa de autopartes con una nave de 12,000 m²." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "Los «40 montacargas»…", "ops": ["Los menciono en la cita para impresionar", "No los menciono; los pregunto", "Los pongo en la propuesta"], "correcta": 1, "explica": "Es un dato no verificado. Convertirlo en pregunta te da la información real." },
+        { "p": "Una buena pregunta abierta para la cita es…", "ops": ["«¿Cómo manejan hoy el mantenimiento de sus montacargas y qué pasa cuando uno se para?»", "«¿Tienen montacargas?»", "«¿Les interesa un mantenimiento?»"], "correcta": 0, "explica": "Abre la conversación y lleva al impacto de una falla." },
+        { "p": "Buscar en redes el perfil personal del gerente de planta…", "ops": ["Sirve para romper el hielo", "Es parte del brief", "No se hace: se investigan empresas y roles"], "correcta": 2, "explica": "La investigación es de la empresa y del rol, no de la vida privada." }
+      ] },
+      { "tipo": "completar", "rotulo": "Completa", "items": [
+        { "frase": "Un dato que la IA no puede respaldar se convierte en una ___ para la cita.", "resp": ["pregunta"] },
+        { "frase": "Solo se investiga información ___ de la empresa.", "resp": ["pública", "publica"] }
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu dato por verificar", "pregunta": "Prepara el brief de un prospecto real y marca qué datos verificaste y cuáles convertiste en pregunta.", "ayuda": "Verificado: … / Lo voy a preguntar: …" }
+    ],
+    "c-ia-ventas-m1-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> una agencia de marketing digital en Mérida quiere escribir a hoteles boutique del centro. La IA le propuso: «Somos la agencia número 1 del sureste y garantizamos duplicar sus reservaciones en 30 días»." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué problema tiene el mensaje?", "ops": ["Es muy corto", "Habla de la agencia y promete un resultado que nadie puede garantizar", "No tiene emojis"], "correcta": 1, "explica": "Una promesa así es un compromiso tuyo y además suena a spam." },
+        { "p": "Un «algo sobre él» adecuado es…", "ops": ["«Vi que su terraza aparece en muchas fotos de huéspedes»", "«Sé que tuvieron malas reseñas»", "«Mi primo se hospedó ahí»"], "correcta": 0, "explica": "Algo público, positivo y relacionado con lo que vendes." },
+        { "p": "Una petición pequeña para un hotel es…", "ops": ["«Firmemos un contrato de 12 meses»", "«Mándeme sus estados financieros»", "«¿Le comparto en 15 minutos 3 ideas para su página?»"], "correcta": 2, "explica": "Fácil de aceptar y útil para ellos." }
+      ] },
+      { "tipo": "comparar", "titulo": "Primer mensaje al hotel", "malTitulo": "Promesa inflada", "mal": "«Somos la agencia número 1 del sureste y garantizamos duplicar sus reservaciones en 30 días.»", "bienTitulo": "Habla del hotel", "bien": "«Hola, Mariana. Su terraza aparece en muchas fotos de huéspedes. Varios hoteles del centro no aprovechan eso en su página. ¿Le comparto en 15 minutos 3 ideas concretas?»" },
+      { "tipo": "reflexion", "rotulo": "Tu promesa inflada", "pregunta": "Revisa tu último mensaje de primer contacto. ¿Hay alguna promesa que no podrías garantizar? Reescríbelo con la fórmula del curso.", "ayuda": "Promesa: … / Mensaje nuevo: …" }
+    ],
+    "c-ia-ventas-m2-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> vendes paneles solares a negocios en Hermosillo. Tienes una llamada con el dueño de una tortillería que usa refrigeración y máquina todo el día. Él solo quiere «saber cuánto cuesta»." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "Antes de dar precio, preguntas…", "ops": ["«¿Cuánto paga de luz al bimestre y cómo ha cambiado?»", "«¿Tiene techo?»", "«¿Ya conoce los paneles?»"], "correcta": 0, "explica": "Es la pregunta de situación e impacto que da contexto al precio." },
+        { "p": "La pregunta de impacto en este caso es…", "ops": ["«¿Le gusta el color de los paneles?»", "«¿Qué haría con ese dinero si su recibo bajara?»", "«¿Cuántos empleados tiene?»"], "correcta": 1, "explica": "Pone el beneficio en sus palabras y en su negocio." },
+        { "p": "La IA estima «ahorro de 95% garantizado». Tú…", "ops": ["Lo dices en la llamada", "Lo redondeas a 90%", "No lo dices: el ahorro depende de su consumo y se calcula con su recibo"], "correcta": 2, "explica": "Ninguna cifra de ahorro se promete sin cálculo con datos reales." }
+      ] },
+      { "tipo": "comparar", "titulo": "Cuando piden precio de entrada", "malTitulo": "Precio al aire", "mal": "«Un sistema le sale en unos 150 mil pesos.»", "bienTitulo": "Descubre primero", "bien": "«Con gusto se lo doy. Para no darle un número equivocado, ¿me dice cuánto paga de luz al bimestre? Con eso le digo qué tamaño le conviene y cuánto cuesta.»" },
+      { "tipo": "reflexion", "rotulo": "Tu respuesta a «¿cuánto cuesta?»", "pregunta": "Escribe cómo respondes cuando un prospecto pide precio en el primer minuto, con una pregunta de descubrimiento incluida.", "ayuda": "Con gusto… Para darle el número correcto, ¿…?" }
+    ],
+    "c-ia-ventas-m2-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> vendes cursos de seguridad industrial a fábricas de Ciudad Juárez. El gerente de recursos humanos te dice: «Eso ya lo hacemos internamente». En el juego de roles, la IA insiste con esa objeción." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "Tu primera respuesta es…", "ops": ["«Nuestros instructores son mejores»", "«Qué bien que ya lo tengan cubierto»", "«Entonces no le interesa»"], "correcta": 1, "explica": "Reconoces antes de preguntar." },
+        { "p": "Luego preguntas…", "ops": ["«¿Qué parte de la capacitación interna les cuesta más sostener?»", "«¿Cuánto les pagan a sus instructores?»", "«¿Por qué no nos contrataron antes?»"], "correcta": 0, "explica": "Buscas la preocupación real sin atacar lo que ya tienen." },
+        { "p": "Si responde que todo funciona bien…", "ops": ["Insistes tres veces más", "Bajas el precio", "Agradeces y propones volver a platicar en una fecha concreta"], "correcta": 2, "explica": "No toda objeción se vence hoy; se deja la puerta abierta." }
+      ] },
+      { "tipo": "relacionar", "rotulo": "Objeción y pregunta para entenderla", "pares": [
+        ["«Ya lo hacemos internamente»", "«¿Qué parte les cuesta más sostener?»"],
+        ["«No es buen momento»", "«¿Qué tendría que pasar para que lo fuera?»"],
+        ["«Tengo que consultarlo»", "«¿Quién más participa y qué le va a preguntar?»"],
+        ["«Su competencia es más barata»", "«¿Qué incluye esa propuesta?»"]
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu objeción de «ya lo tenemos»", "pregunta": "Escribe la versión de «ya tenemos proveedor» que más escuchas y tu respuesta con reconocer–preguntar–responder–confirmar.", "ayuda": "Objeción: … / Reconozco… / Pregunto… / Respondo… / Confirmo…" }
+    ],
+    "c-ia-ventas-m2-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> un servicio de banquetes para eventos corporativos en la CDMX prepara una propuesta para una comida de 120 personas. La IA escribió «precio con IVA incluido» en las tres opciones, aunque la lista de precios de la empresa es antes de IVA." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué haces con «IVA incluido»?", "ops": ["Lo dejas, se ve más atractivo", "Lo corriges: los precios son más IVA y se indica claro", "Lo quitas y no mencionas el IVA"], "correcta": 1, "explica": "Un error de IVA en la propuesta es una diferencia de dinero real con el cliente." },
+        { "p": "La opción «recomendada» debe ser…", "ops": ["La que mejor resuelve lo que el cliente contó", "La más cara", "La más barata"], "correcta": 0, "explica": "La recomendación se basa en su problema, no en tu comisión." },
+        { "p": "Antes de enviar, revisas…", "ops": ["Solo la ortografía", "Solo el total", "Precios, impuestos, vigencia y lo que incluye cada opción"], "correcta": 2, "explica": "Todo lo que compromete dinero se revisa línea por línea." }
+      ] },
+      { "tipo": "completar", "rotulo": "Completa", "items": [
+        { "frase": "Precios, impuestos y garantías siempre los defines ___.", "resp": ["tú", "tu", "yo"] },
+        { "frase": "Toda propuesta indica hasta cuándo es válida: su ___.", "resp": ["vigencia"] }
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu revisión de propuesta", "pregunta": "Escribe la lista de 5 cosas que revisas en toda propuesta antes de enviarla.", "ayuda": "1. Precios… 2. Impuestos… 3. …" }
+    ],
+    "c-ia-ventas-m3-l1": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> enviaste hace 10 días una propuesta de uniformes a la directora de un colegio en Puebla. Solo contestó «gracias, lo reviso». El ciclo escolar empieza en 6 semanas y la confección toma 4." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "Tu siguiente mensaje aporta…", "ops": ["Un recordatorio de que sigues esperando", "La fecha límite real para tener uniformes a tiempo", "Un descuento sin que lo pida"], "correcta": 1, "explica": "La fecha límite es información útil para ella, no presión inventada." },
+        { "p": "Mencionar que la confección toma 4 semanas es…", "ops": ["Un dato real que le ayuda a decidir", "Urgencia falsa", "Innecesario"], "correcta": 0, "explica": "Es urgencia real, basada en tu proceso." },
+        { "p": "Si en 3 semanas no hay respuesta, envías…", "ops": ["Un mensaje molesto", "Nada, nunca más", "El cierre amable: «¿Lo dejamos para el próximo ciclo?»"], "correcta": 2, "explica": "Libera a la directora y suele provocar una respuesta." }
+      ] },
+      { "tipo": "comparar", "titulo": "Seguimiento al colegio", "malTitulo": "Reclama", "mal": "«Buenas tardes, ¿ya pudo revisar la propuesta? Quedo en espera.»", "bienTitulo": "Aporta", "bien": "«Buenas tardes, directora. Para tener los uniformes antes del inicio de clases necesitaríamos confirmar a más tardar el viernes 20; la confección toma 4 semanas. ¿Le resuelvo alguna duda antes?»" },
+      { "tipo": "reflexion", "rotulo": "Tu urgencia real", "pregunta": "Piensa en una propuesta abierta tuya. ¿Qué fecha real (entrega, temporada, producción) le ayudaría al cliente a decidir? Escribe el mensaje.", "ayuda": "Fecha real: … / Mensaje: …" }
+    ],
+    "c-ia-ventas-m3-l2": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>El caso:</b> distribuyes papelería a oficinas en Monterrey. Un cliente de 3 años recibió un pedido incompleto justo la semana en que debe renovar su contrato anual. Escribe: «Así no sé si renovamos»." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "Lo primero es…", "ops": ["Resolver el faltante con fecha y reconocer la falla", "Mandar la propuesta de renovación con descuento", "Explicar que fue culpa del almacén"], "correcta": 0, "explica": "No hay renovación posible con la queja abierta." },
+        { "p": "La renovación se retoma…", "ops": ["En el mismo mensaje de disculpa", "Nunca: ya se perdió", "Después de confirmar que el faltante llegó bien"], "correcta": 2, "explica": "Primero se cierra la queja; después se habla de negocio." },
+        { "p": "Si la IA sugiere ofrecer 20% de descuento en la renovación…", "ops": ["Lo ofreces para asegurar", "Lo consultas: los descuentos los autoriza tu empresa", "Lo subes a 25%"], "correcta": 1, "explica": "Compensaciones y descuentos no los define la IA." }
+      ] },
+      { "tipo": "comparar", "titulo": "Respuesta al cliente que duda en renovar", "malTitulo": "Vende encima de la queja", "mal": "«Una disculpa. Por cierto, si renueva hoy le damos 10% de descuento.»", "bienTitulo": "Resuelve primero", "bien": "«Tiene razón, el pedido llegó incompleto y justo en una semana importante. Mañana antes de las 12 le entregamos lo que faltó. En cuanto lo tenga, le llamo para ver cómo le fue y platicar de la renovación.»" },
+      { "tipo": "reflexion", "rotulo": "Tu cliente en riesgo", "pregunta": "¿Tienes un cliente con una queja abierta cerca de una recompra o renovación? Escribe qué resuelves primero y cuándo retomas la venta.", "ayuda": "Resuelvo… / Retomo la venta cuando…" }
+    ],
+    "c-ia-ventas-m3-l3": [
+      { "tipo": "titulo", "texto": "Taller práctico" },
+      { "tipo": "destacado", "texto": "<b>Un mes después:</b> de los 60 clientes inactivos de insumos de limpieza contactaste a 45, respondieron 18, agendaste 11 visitas y recuperaste 7. Tu gerente pregunta qué hacer el siguiente mes." },
+      { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+        { "p": "¿Qué porcentaje de los contactados respondió?", "ops": ["18%", "30%", "40%"], "correcta": 2, "explica": "18 ÷ 45 = 0.4." },
+        { "p": "La etapa que más clientes pierde es…", "ops": ["De contactados a respuesta", "De visitas a recuperados", "Ninguna"], "correcta": 0, "explica": "De 45 a 18: ahí conviene probar otro mensaje o canal." },
+        { "p": "Los 15 clientes que no contactaste…", "ops": ["Se descartan", "Se contactan el siguiente mes, empezando por los de mayor potencial", "Se pasan a otro vendedor sin revisar"], "correcta": 1, "explica": "Siguen siendo oportunidad; el orden lo da su potencial." }
+      ] },
+      { "tipo": "comparar", "titulo": "Reporte al gerente", "malTitulo": "Sensación", "mal": "«Me fue bien, varios clientes regresaron.»", "bienTitulo": "Con datos", "bien": "«Contacté 45, respondieron 18 (40%), visité 11 y recuperé 7. El mayor tropiezo es la respuesta al primer mensaje: el próximo mes pruebo otra versión con los 15 pendientes.»" }
+    ]
+  },
+  "modulos": [
+    {
+      "t": "Prospección y cierre avanzados",
+      "r": "Calificar prospectos antes de invertir tiempo, negociar concesiones con contrapartida y leer tu embudo con tasas de conversión.",
+      "lecciones": [
+        {
+          "t": "Calificar prospectos antes de invertir tiempo",
+          "obj": "Ordenar una lista de prospectos con criterios de necesidad, presupuesto, decisión y tiempo, sin que la IA invente datos ni recopile datos personales.",
+          "bloques": [
+            { "tipo": "texto", "texto": "No todos los prospectos merecen el mismo tiempo. Calificar es revisar, con lo que sabes, cuatro cosas: <b>necesidad</b> (¿tiene el problema que resuelves?), <b>presupuesto</b> (¿puede pagarlo?), <b>decisión</b> (¿hablas con quien decide?) y <b>tiempo</b> (¿quiere resolverlo pronto?). Se le conoce como BANT por sus siglas en inglés. La IA te ayuda a ordenar notas y preparar preguntas; el puntaje sale de lo que tú averiguaste." },
+            { "tipo": "destacado", "texto": "<b>El caso:</b> una distribuidora de refrigeradores comerciales en Monterrey juntó 120 tarjetas en una feria de abarrotes. El vendedor tiene 2 semanas y quiere saber a quién llamar primero." },
+            { "tipo": "excel", "rotulo": "Puntaje de prospectos (0 a 3 por criterio)", "datos": [["Prospecto", "Necesidad", "Presupuesto", "Decide", "Tiempo"], ["Abarrotes A", 3, 2, 3, 2], ["Minisúper B", 1, 1, 0, 1], ["Cremería C", 3, 3, 1, 2]], "retos": [
+              { "celda": "F2", "formula": "=SUMA(B2:E2)", "esperado": 10, "requiere": "SUMA(", "texto": "<b>F2</b>: puntaje total de Abarrotes A.", "pista": "=SUMA(B2:E2)" },
+              { "celda": "F4", "formula": "=SUMA(B4:E4)", "esperado": 9, "requiere": "SUMA(", "texto": "<b>F4</b>: puntaje total de Cremería C.", "pista": "=SUMA(B4:E4)" },
+              { "celda": "G4", "formula": "=SI(D4<2,\"Buscar a quien decide\",\"Llamar\")", "esperado": "Buscar a quien decide", "requiere": "SI(", "texto": "<b>G4</b>: con SI, si «Decide» es menor a 2 escribe «Buscar a quien decide»; si no, «Llamar».", "pista": "=SI(D4<2,«Buscar a quien decide»,«Llamar») con comillas rectas", "explica": "Cremería C tiene buen puntaje, pero no hablas con quien decide. Tu siguiente paso ahí no es la propuesta: es llegar a esa persona." }
+            ] },
+            { "tipo": "destacado", "texto": "<b>Errores comunes de la IA al prospectar:</b> inventar tamaño, ventas o sucursales de una empresa, armar listas con teléfonos o correos personales y calificar con suposiciones. Si llamas o escribes con publicidad a consumidores, revisa las reglas del Registro Público para Evitar Publicidad (REPEP) en el sitio oficial de Profeco." },
+            { "tipo": "plantilla", "rotulo": "Preguntas para calificar", "texto": "Vendo [producto] a [tipo de negocio]. De este prospecto sé (sin datos personales): [lo que anotaste]. Dame 4 preguntas naturales para una primera llamada, una por criterio: necesidad, presupuesto, quién decide y tiempo. No supongas lo que no te dije; marca con [AVERIGUAR] cada criterio sin información." },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "Un prospecto tiene la necesidad, pero hablas con alguien que no decide. Tú…", "ops": ["Envías la propuesta de todos modos", "Buscas que te presente con quien decide", "Lo descartas"], "correcta": 1, "explica": "La propuesta sin quien decide suele quedarse en un cajón." },
+              { "p": "La IA asigna «presupuesto 3» a un prospecto del que no sabes nada. Tú…", "ops": ["Lo cambias a [AVERIGUAR]", "Lo dejas", "Lo subes a prioridad"], "correcta": 0, "explica": "El puntaje sale de lo que averiguaste, no de suposiciones." },
+              { "p": "Pedirle a la IA el celular personal del dueño…", "ops": ["Ahorra tiempo", "Está bien si es público en redes", "No se hace: usas los canales de contacto de la empresa"], "correcta": 2, "explica": "Prospectas empresas y roles por sus canales, no datos personales." }
+            ] },
+            { "tipo": "clave", "items": ["Necesidad, presupuesto, decisión y tiempo antes de invertir horas.", "El puntaje sale de lo averiguado; lo demás es [AVERIGUAR].", "Nada de datos personales; revisa REPEP si contactas consumidores."] }
+          ]
+        },
+        {
+          "t": "Negociar sin regalar el margen",
+          "obj": "Preparar una negociación con IA: qué puedes conceder, qué pides a cambio y cómo cerrar, sin descuentos no autorizados ni urgencia falsa.",
+          "bloques": [
+            { "tipo": "texto", "texto": "En la negociación, la regla que protege tu margen es sencilla: <b>no concedas sin recibir algo a cambio</b>. Si el cliente pide descuento, puedes pedir volumen, pago anticipado, un contrato más largo o una fecha de entrega más flexible. Lo que puedes conceder y hasta dónde lo define tu empresa; la IA te ayuda a preparar opciones y frases." },
+            { "tipo": "destacado", "texto": "<b>El caso:</b> una fábrica de uniformes industriales en Celaya cotizó 800 camisolas. Compras del cliente pide 15% de descuento «o nos vamos con otro». Tu gerente autoriza hasta 6% si el pedido sube a 1,000 piezas o si pagan 50% por adelantado." },
+            { "tipo": "plantilla", "rotulo": "Prepara tu negociación", "texto": "Voy a negociar la venta de [producto] con [tipo de cliente]. Precio cotizado: [ ]. El cliente pide: [ ]. Lo que mi empresa me autoriza a conceder: [lista con límites]. Lo que puedo pedir a cambio: [volumen, pago anticipado, plazo, etc.]. Dame 3 escenarios de respuesta (cada concesión con su contrapartida) y frases para cerrar cada uno. No propongas descuentos, fechas ni condiciones fuera de lo que te di." },
+            { "tipo": "destacado", "texto": "<b>Errores comunes de la IA en negociación:</b> proponer descuentos mayores a los autorizados, inventar urgencias («el precio sube mañana») y prometer fechas de entrega que producción no confirmó." },
+            { "tipo": "comparar", "titulo": "Ante «15% o nos vamos»", "malTitulo": "Concede sin pedir", "mal": "«Está bien, le dejo el 15% para no perderlo.»", "bienTitulo": "Concesión con contrapartida", "bien": "«Entiendo que necesitan mejorar el precio. Si el pedido sube a 1,000 piezas o nos adelantan 50%, puedo mejorar el precio 6%. ¿Cuál de las dos les acomoda?»" },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "El cliente acepta subir a 1,000 piezas. Tú…", "ops": ["Aplicas el 6% autorizado y cierras con fecha de pedido", "Le das 15% por la buena voluntad", "Pides autorización para 10%"], "correcta": 0, "explica": "Cumples lo que ofreciste y cierras con un siguiente paso concreto." },
+              { "p": "La IA sugiere decir «este precio solo vale hoy». No es cierto. Tú…", "ops": ["Lo dices para acelerar", "Lo dices una sola vez", "No lo dices: la urgencia falsa daña la confianza"], "correcta": 2, "explica": "Si existe una fecha real (producción, temporada), úsala; si no, no se inventa." },
+              { "p": "Si el cliente dice que otro proveedor da 15% menos…", "ops": ["Igualas el precio de inmediato", "Preguntas qué incluye esa cotización", "Dices que es mentira"], "correcta": 1, "explica": "Comparas lo comparable: calidad, tiempos, condiciones." }
+            ] },
+            { "tipo": "reflexion", "rotulo": "Tu mapa de concesiones", "pregunta": "Escribe 3 cosas que puedes conceder en tu trabajo (con su límite) y qué pides a cambio de cada una.", "ayuda": "Concedo… hasta… a cambio de…" },
+            { "tipo": "clave", "items": ["Ninguna concesión sin contrapartida.", "Los límites los pone tu empresa, no la IA.", "Urgencia real sí; urgencia inventada, nunca."] }
+          ]
+        },
+        {
+          "t": "Tu embudo y tu pronóstico con datos",
+          "obj": "Calcular tasas de conversión de tu embudo y estimar cuánta prospección necesitas, sin aceptar pronósticos inventados por la IA.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Tu embudo es el camino de prospecto a cliente: contactos, citas, propuestas y cierres. Con las <b>tasas de conversión</b> entre etapas sabes dónde se te van las ventas y cuánta prospección necesitas para llegar a tu meta. La IA puede explicar tus números; el cálculo sale de tu registro." },
+            { "tipo": "destacado", "texto": "<b>El caso:</b> un vendedor de sistemas de punto de venta para cafeterías en la CDMX registró su trimestre: 200 contactos, 40 citas, 20 propuestas y 6 cierres. Su meta del siguiente trimestre es 9 cierres." },
+            { "tipo": "excel", "rotulo": "El embudo del trimestre", "datos": [["Etapa", "Cantidad"], ["Contactos", 200], ["Citas", 40], ["Propuestas", 20], ["Cierres", 6]], "retos": [
+              { "celda": "C3", "formula": "=B3/B2", "esperado": 0.2, "texto": "<b>C3</b>: conversión de contactos a citas.", "pista": "=B3/B2" },
+              { "celda": "C5", "formula": "=B5/B4", "esperado": 0.3, "texto": "<b>C5</b>: conversión de propuestas a cierres.", "pista": "=B5/B4" },
+              { "celda": "B7", "formula": "=9/(B5/B2)", "esperado": 300, "texto": "<b>B7</b>: contactos necesarios para 9 cierres si las tasas se mantienen (9 ÷ (cierres ÷ contactos)).", "pista": "=9/(B5/B2)", "explica": "Con 3 cierres por cada 100 contactos, 9 cierres piden unos 300 contactos. O mejoras una tasa, o subes la prospección." }
+            ] },
+            { "tipo": "destacado", "texto": "<b>Errores comunes de la IA con el embudo:</b> asignar probabilidades de cierre sin base («este cliente tiene 90%»), comparar con tasas «de la industria» que no vienen de ningún lado y proyectar crecimientos que no están en tus datos." },
+            { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+              { "p": "Si la conversión de contactos a citas es 20% y la de propuestas a cierres 30%, conviene atacar primero…", "ops": ["La etapa con la caída más grande que puedas influir", "Solo el cierre", "Nada: los números están bien"], "correcta": 0, "explica": "El embudo muestra dónde se pierde más; ahí buscas mejorar mensaje, calificación o propuesta." },
+              { "p": "La IA dice que un prospecto «cerrará con 90% de probabilidad». Tú…", "ops": ["Lo pones en el pronóstico", "Lo usas tal cual en tu junta", "Lo ignoras y usas tus tasas reales"], "correcta": 2, "explica": "El pronóstico sale de tu historial, no de una cifra inventada." },
+              { "p": "Para 9 cierres con las mismas tasas necesitas unos…", "ops": ["200 contactos", "300 contactos", "900 contactos"], "correcta": 1, "explica": "9 ÷ 0.03 = 300." }
+            ] },
+            { "tipo": "plantilla", "rotulo": "Explica tu embudo", "texto": "Estos son mis números del periodo, ya calculados: contactos [ ], citas [ ], propuestas [ ], cierres [ ] y mis tasas de conversión [ ]. Mi meta es [ ] cierres. Explícame en qué etapa pierdo más, 3 hipótesis de por qué y qué medir para comprobarlas. No inventes probabilidades ni tasas de la industria." },
+            { "tipo": "clave", "items": ["Tasa de conversión = etapa siguiente ÷ etapa anterior.", "Meta ÷ tasa total = prospección necesaria.", "Pronósticos con tu historial, no con probabilidades inventadas."] }
+          ]
+        }
+      ],
+      "quiz": [
+        { "p": "Calificar un prospecto es revisar…", "ops": ["Su color favorito", "Su historial personal", "Solo su tamaño", "Necesidad, presupuesto, decisión y tiempo"], "correcta": 3 },
+        { "p": "Si la IA pone un puntaje sin información…", "ops": ["Lo cambias a [AVERIGUAR]", "Lo dejas", "Lo promedias", "Lo subes"], "correcta": 0 },
+        { "p": "Ante una petición de descuento, la regla es…", "ops": ["Darlo para no perder", "No conceder sin contrapartida", "Negarlo siempre", "Dar el doble"], "correcta": 1 },
+        { "p": "Decir «este precio solo vale hoy» cuando no es cierto…", "ops": ["Acelera sanamente", "Es obligatorio", "Es urgencia falsa y daña la confianza", "Da igual"], "correcta": 2 },
+        { "p": "Con 40 citas de 200 contactos, la conversión es…", "ops": ["40%", "5%", "20%", "80%"], "correcta": 2 },
+        { "p": "Con 6 cierres de 200 contactos, para 9 cierres necesitas unos…", "ops": ["300 contactos", "270 contactos", "450 contactos", "900 contactos"], "correcta": 0 }
+      ]
+    },
+    {
+      "t": "Laboratorio y proyecto final",
+      "r": "Un día simulado de ventas con errores plantados de la IA para detectar, y la construcción de tu kit comercial con IA.",
+      "lecciones": [
+        {
+          "t": "Simulación: un martes vendiendo seguridad para negocios",
+          "obj": "Detectar en un día simulado los errores típicos de la IA en ventas: datos inventados, datos personales, condiciones no autorizadas y urgencia falsa.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Eres ejecutiva de ventas de una empresa de cámaras y alarmas para negocios en Puebla. Usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de que llegue al cliente." },
+            { "tipo": "destacado", "texto": "<b>Escena 1 — 9:00 a. m. Brief de prospecto.</b> Pides un brief de una cadena de papelerías. La IA escribe: «Tiene 12 sucursales, facturó 40 millones el año pasado y su dueño busca vender la empresa». En su página solo aparecen 4 sucursales." },
+            { "tipo": "reflexion", "rotulo": "Escena 1: ¿qué corriges?", "pregunta": "¿Qué datos no puedes usar y qué harías con cada uno en tu cita?", "ayuda": "No uso… / Lo convierto en pregunta: …" },
+            { "tipo": "destacado", "texto": "<b>Escena 2 — 11:00 a. m. Lista de prospección.</b> Un compañero compró una base con celulares personales de 900 dueños de negocios y te pide pegarla en la IA para redactar mensajes masivos por WhatsApp." },
+            { "tipo": "reflexion", "rotulo": "Escena 2: ¿qué corriges?", "pregunta": "Explica los problemas de esta idea y propón una forma correcta de prospectar a esos negocios.", "ayuda": "Problemas: … / Mejor: …" },
+            { "tipo": "destacado", "texto": "<b>Escena 3 — 2:00 p. m. Propuesta.</b> La IA armó una propuesta de 8 cámaras con «instalación gratis, 20% de descuento por pronto pago y garantía de por vida». Tu lista de precios no incluye nada de eso." },
+            { "tipo": "reflexion", "rotulo": "Escena 3: ¿qué corriges?", "pregunta": "¿Qué quitas de la propuesta y qué revisas antes de enviarla?", "ayuda": "Quito… / Reviso…" },
+            { "tipo": "destacado", "texto": "<b>Escena 4 — 5:00 p. m. Seguimiento y pronóstico.</b> La IA redactó: «Solo hoy: mañana el precio sube 30%». Además, en tu reporte puso a este cliente con «90% de probabilidad de cierre». No hay aumento programado y tu tasa histórica de propuesta a cierre es 30%." },
+            { "tipo": "reflexion", "rotulo": "Escena 4: ¿qué corriges?", "pregunta": "Reescribe el seguimiento sin urgencia falsa y corrige cómo reportas a este cliente en tu pronóstico.", "ayuda": "Mensaje: … / En el pronóstico lo pongo como…" },
+            { "tipo": "practica", "rotulo": "Revisión del día", "preguntas": [
+              { "p": "En la escena 1, «12 sucursales»…", "ops": ["Se usa: lo dijo la IA", "No se usa; su página muestra 4 y lo demás se pregunta o se verifica", "Se redondea a 10"], "correcta": 1, "explica": "Datos sin fuente no van a la cita ni a la propuesta." },
+              { "p": "En la escena 3, la garantía de por vida…", "ops": ["Se quita: no está en tus condiciones", "Se deja, vende", "Se cambia a 20 años"], "correcta": 0, "explica": "Cada condición es un compromiso de tu empresa." },
+              { "p": "En la escena 4, el cliente va en el pronóstico con…", "ops": ["90%", "100%", "Tu tasa histórica, no la cifra de la IA"], "correcta": 2, "explica": "El pronóstico sale de tu historial." }
+            ] },
+            { "tipo": "clave", "items": ["Datos del prospecto: verificados o convertidos en pregunta.", "Nada de bases con datos personales en la IA.", "Condiciones autorizadas, urgencia real y pronóstico con tu historial."] }
+          ]
+        },
+        {
+          "t": "Proyecto final: tu kit comercial con IA",
+          "obj": "Construir tu kit personal para vender con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+          "bloques": [
+            { "tipo": "texto", "texto": "Convierte el curso en un <b>kit que uses esta semana</b>. Responde cada paso con tu producto y tus clientes reales." },
+            { "tipo": "reflexion", "rotulo": "Paso 1: tu biblioteca de prompts", "pregunta": "Elige los 5 prompts del curso que más vas a usar (brief, primer mensaje, objeciones, propuesta, negociación o embudo) y adáptalos a tu producto.", "ayuda": "1. … 2. … 3. … 4. … 5. …" },
+            { "tipo": "reflexion", "rotulo": "Paso 2: tu política de datos", "pregunta": "Escribe tus 5 reglas: qué nunca pegas en una IA, qué investigas y qué no, qué marcadores usas y qué herramienta te autoriza tu empresa.", "ayuda": "Nunca pego… / Investigo solo… / Uso [CLIENTE]… / Autorizada: …" },
+            { "tipo": "reflexion", "rotulo": "Paso 3: tu lista de verificación", "pregunta": "Escribe 6 puntos que revisas antes de enviar cualquier mensaje o propuesta hecha con IA.", "ayuda": "□ ¿Datos del prospecto verificados? □ ¿Precios e impuestos correctos? □ ¿Sin garantías ni descuentos no autorizados? □ ¿Sin urgencia falsa? □ …" },
+            { "tipo": "reflexion", "rotulo": "Paso 4: tu entregable real", "pregunta": "Produce un entregable real: una secuencia de prospección, una propuesta o tu embudo con metas del siguiente mes. Pega la versión final revisada.", "ayuda": "Entregable: … / Lo uso con… el…" },
+            { "tipo": "plantilla", "rotulo": "Índice de tu kit comercial", "texto": "KIT COMERCIAL CON IA — [tu nombre] — [producto / giro] — [fecha]\n\n1. Cliente ideal (con datos reales): [ ]\n2. Biblioteca de prompts: brief [ ], primer mensaje [ ], objeciones [ ], propuesta [ ], negociación [ ]\n3. Política de datos y herramienta autorizada: [ ]\n4. Límites de concesión autorizados: [ ]\n5. Lista de verificación: [ ]\n6. Embudo: tasas actuales y meta [ ]\n7. Entregable real: [ ]\n8. Próxima revisión del kit: [fecha]", "nota": "Actualízala cuando cambien tus precios, tus condiciones o tu producto." },
+            { "tipo": "clave", "items": ["Prompts adaptados a tu producto y cliente ideal.", "Política de datos, límites de concesión y lista de verificación.", "Un entregable real y tu embudo con metas."] }
+          ]
+        }
+      ],
+      "quiz": [
+        { "p": "Un dato del prospecto que la IA no puede respaldar…", "ops": ["Se usa en la cita", "Se pone en la propuesta", "Se verifica o se convierte en pregunta", "Se redondea"], "correcta": 2 },
+        { "p": "Pegar una base con celulares personales en una IA para mensajes masivos…", "ops": ["No se hace", "Está bien si es comprada", "Está bien de noche", "Está bien sin nombres"], "correcta": 0 },
+        { "p": "Una garantía que la IA agregó y tu empresa no ofrece…", "ops": ["Se deja", "Se quita antes de enviar", "Se reduce", "Se pone en letra chica"], "correcta": 1 },
+        { "p": "«Solo hoy: mañana sube el precio» sin aumento real es…", "ops": ["Buena práctica", "Obligatorio", "Neutral", "Urgencia falsa"], "correcta": 3 },
+        { "p": "La probabilidad de cierre en tu pronóstico sale de…", "ops": ["La IA", "Tu intuición", "Tu historial de conversión", "El cliente"], "correcta": 2 },
+        { "p": "La responsabilidad de lo que prometes con ayuda de IA es…", "ops": ["Tuya y de tu empresa", "De la IA", "Del cliente", "De nadie"], "correcta": 0 }
+      ]
+    }
+  ]
+}

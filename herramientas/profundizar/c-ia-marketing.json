@@ -1,0 +1,241 @@
+{
+"id": "c-ia-marketing",
+"horas": 10,
+"aprender": [
+"Trabajar con creadores de contenido, repartir un presupuesto de campaña con tu embudo real y producir contenido largo para buscadores sin datos inventados ni plagio, usando la IA como apoyo.",
+"Armar tu kit de marketing con IA: biblioteca de prompts, política de datos, lista de verificación antes de publicar y una pieza real lista para usar."
+],
+"terceras": [
+{"p": "Los pilares de contenido son…", "op": "Las redes sociales donde publicas"},
+{"p": "¿Qué proporción de promociones es razonable?", "op": "Ninguna: en redes no se vende"},
+{"p": "En una prueba A/B cambias…", "op": "La audiencia y el texto juntos, para ahorrar tiempo"},
+{"p": "¿Quién decide qué anuncio ganó?", "op": "El que tenga más comentarios positivos"},
+{"p": "«¡¡¡GRATIS!!! OFERTA ÚNICA!!!»", "op": "Buen asunto si lo mandas de noche"},
+{"p": "«Tu afinación de octubre con 20% menos»", "op": "Demasiado corto para funcionar"},
+{"p": "¿Puedes pedirle a la IA 10 reseñas de clientes para publicarlas?", "op": "Sí, si les pones nombres comunes"},
+{"p": "Lo primero ante una crisis es…", "op": "Publicar una promoción para cambiar el tema"},
+{"p": "La métrica principal de esta campaña es…", "op": "Seguidores nuevos"},
+{"p": "«Últimas 20 piezas» solo se publica si…", "op": "La competencia hace lo mismo"}
+],
+"extras": {
+"c-ia-marketing-m1-l1": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> un estudio de yoga en Querétaro pidió a la IA describir a su audiencia. Resultado: «mujeres de 18 a 24 años, universitarias, que buscan contenido de tendencias». Sus estadísticas de Instagram dicen otra cosa: 70% de sus seguidores tiene entre 35 y 54 años y las clases más llenas son las de las 7 a. m. y las de espalda baja."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"¿Con qué audiencia planea su contenido?","ops":["La de la IA, para rejuvenecer la marca","La de sus estadísticas y sus alumnas reales","Una mezcla al 50%"],"correcta":1,"explica":"La descripción de la IA era una hipótesis; los datos la corrigieron."},
+{"p":"Un pilar que tiene sentido para esa audiencia es…","ops":["Retos virales de baile","Rutinas cortas para la espalda de quien trabaja sentado","Noticias de famosos"],"correcta":1,"explica":"Sale de lo que llena sus clases: dolor de espalda y horario temprano."},
+{"p":"Para validar los pilares nuevos conviene…","ops":["Preguntarle otra vez a la IA","Publicar 4 semanas y revisar guardados y mensajes por pilar","Copiar a un estudio famoso"],"correcta":1,"explica":"Una prueba corta con métricas por pilar te dice qué funciona."}]},
+{"tipo":"relacionar","rotulo":"Pilar y ejemplo para el estudio","pares":[["Consejos útiles","«3 estiramientos para después de 8 horas sentada»"],["Detrás de cámaras","La maestra preparando el salón a las 6:30 a. m."],["Confianza","Testimonio real de una alumna, con permiso"],["Promoción","Primera clase sin costo en octubre"]]},
+{"tipo":"reflexion","rotulo":"Tu audiencia real","pregunta":"Abre las estadísticas de tu red principal y anota edad, ciudad y horario con más actividad. Compáralo con la audiencia que tenías en mente. ¿Qué cambias en tus pilares?","ayuda":"Mis datos dicen… / Yo creía… / Cambio…"}
+],
+"c-ia-marketing-m1-l2": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una ferretería familiar de Hermosillo, con 40 años en el mismo barrio, pidió posts a la IA sin guía de voz. Le salieron textos como «Potencia tus proyectos con soluciones disruptivas 🚀». Sus clientes son maestros de obra y vecinos que le hablan al dueño por su nombre."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"El problema principal de esos textos es…","ops":["Que tienen pocos emojis","Que no suenan a la ferretería ni a sus clientes","Que son muy cortos"],"correcta":1,"explica":"La voz tiene que sonar a quien atiende en el mostrador."},
+{"p":"Para la guía de voz, la ferretería debería darle a la IA…","ops":["Frases reales del mostrador y 5 publicaciones que les funcionaron","El perfil de una marca grande que admira","Nada, que la IA decida"],"correcta":0,"explica":"Los ejemplos reales enseñan el tono mejor que cualquier adjetivo."},
+{"p":"Una palabra prohibida razonable en su guía sería…","ops":["«Tornillo»","«Vecino»","«Disruptivo»"],"correcta":2,"explica":"Nadie en ese mostrador habla así."}]},
+{"tipo":"comparar","titulo":"Mismo aviso, dos voces","malTitulo":"Voz de la IA sin guía","mal":"«Potencia tus proyectos con nuestras soluciones integrales en impermeabilización 🚀»","bienTitulo":"Voz de la ferretería","bien":"«Ya viene el tiempo de lluvias. Si tu azotea goteó el año pasado, pásate y te explicamos qué impermeabilizante te conviene y cuánto necesitas.»"},
+{"tipo":"reflexion","rotulo":"Tus palabras prohibidas","pregunta":"Escribe 5 palabras o frases que tu marca nunca usaría y 5 que sí usa tu cliente cuando te habla.","ayuda":"Nunca: … / Sí: …"}
+],
+"c-ia-marketing-m1-l3": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una heladería de Mérida pidió a la IA su calendario de julio. La IA incluyó un «Día Nacional del Helado» con fecha que nadie pudo confirmar, un post con un personaje de caricatura famoso comiendo helado y una canción de moda de fondo para un reel."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"La fecha del «Día Nacional del Helado»…","ops":["Se usa, la IA lo sabe","Se verifica en una fuente confiable o se quita","Se cambia a otro día"],"correcta":1,"explica":"La IA puede inventar o confundir fechas; se confirma antes de planear."},
+{"p":"El personaje de caricatura famoso…","ops":["Se sustituye por algo propio: su heladero, sus sabores, su local","Se usa si se ve pequeño","Se usa porque es homenaje"],"correcta":0,"explica":"Los personajes de terceros requieren permiso de quien tiene los derechos."},
+{"p":"La canción de moda en el reel…","ops":["Se usa cualquier canción que se escuche en la radio","Se descarga de internet","Se elige de la biblioteca autorizada de la red o de música con licencia"],"correcta":2,"explica":"La música tiene derechos; las redes ofrecen bibliotecas con condiciones propias que conviene leer."}]},
+{"tipo":"completar","rotulo":"Completa la regla","items":[
+{"frase":"Las fechas que propone la IA se ___ antes de publicar.","resp":["verifican","confirman","revisan"]},
+{"frase":"Usar un personaje de otra marca requiere ___ de quien tiene los derechos.","resp":["permiso","autorización","licencia"]},
+{"frase":"La música del reel se elige de una biblioteca con ___ para ese uso.","resp":["licencia","permiso","autorización"]}]},
+{"tipo":"reflexion","rotulo":"Tu mes con fechas verificadas","pregunta":"Escribe 3 fechas importantes para tu negocio el próximo mes y dónde vas a verificar cada una.","ayuda":"Fecha… la verifico en… / …"}
+],
+"c-ia-marketing-m2-l1": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una clínica veterinaria de Puebla pidió a la IA un copy con PAS para su servicio de limpieza dental para perros. El texto terminaba: «Resultados garantizados: tu perro vivirá 5 años más». La clínica no tiene ningún dato que respalde eso."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"«Vivirá 5 años más»…","ops":["Se deja, motiva a agendar","Se quita: es una promesa que no puede comprobar","Se cambia a «vivirá más»"],"correcta":1,"explica":"Suavizarla sigue siendo prometer lo que no se puede comprobar."},
+{"p":"Una agitación honesta para este servicio sería…","ops":["«Si no lo haces, tu perro morirá»","«El mal aliento puede ser señal de sarro; revisarlo a tiempo evita tratamientos más largos»","«Todos los perros tienen enfermedades ocultas»"],"correcta":1,"explica":"Agitar es recordar el problema real, no asustar con exageraciones."},
+{"p":"Para que la IA no vuelva a exagerar, en el prompt pides…","ops":["Más creatividad","Usar solo beneficios que te doy y no prometer resultados","Frases más cortas"],"correcta":1,"explica":"Límites claros en el prompt evitan promesas que no puedes cumplir."}]},
+{"tipo":"comparar","titulo":"Cierre del copy","malTitulo":"Promesa inventada","mal":"«Resultados garantizados: tu perro vivirá 5 años más.»","bienTitulo":"Beneficio real","bien":"«Revisión y limpieza con anestesia y monitoreo, el mismo día. Agenda por WhatsApp y te explicamos el procedimiento antes.»"},
+{"tipo":"reflexion","rotulo":"Tus promesas","pregunta":"Revisa tus últimos 3 copys y anota cada promesa. ¿Cuál puedes comprobar y cuál reescribes?","ayuda":"Promesa… la compruebo con… / Reescribo…"}
+],
+"c-ia-marketing-m2-l2": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una escuela de inglés en León probó dos anuncios. El A tenía foto de alumnos, texto de precio y audiencia de 18 a 30 años. El B tenía video de una clase, texto de beneficio y audiencia de 25 a 45. Con $2,000 cada uno, A logró 40 registros y B 80. El dueño concluye: «el video funciona mejor»."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"¿Puede concluir que el video ganó?","ops":["Sí, B tuvo el doble","No: cambió imagen, texto y audiencia a la vez","Sí, si la IA lo confirma"],"correcta":1,"explica":"Con tres variables distintas no sabes cuál hizo la diferencia."},
+{"p":"¿Cuál es el costo por registro de B?","ops":["$25","$50","$40"],"correcta":0,"explica":"2,000 ÷ 80 = $25 por registro. El de A es 2,000 ÷ 40 = $50."},
+{"p":"La siguiente prueba bien hecha sería…","ops":["Cambiar todo otra vez","B contra B con foto en vez de video, misma audiencia y texto","Subir el presupuesto sin probar"],"correcta":1,"explica":"Una variable a la vez: así aprendes qué funciona."}]},
+{"tipo":"relacionar","rotulo":"Qué probar y qué mantener igual","pares":[["Probar el formato","Mismo texto y misma audiencia"],["Probar el texto","Misma imagen y misma audiencia"],["Probar la audiencia","Mismo anuncio completo"],["Probar el llamado a la acción","Todo lo demás idéntico"]]},
+{"tipo":"reflexion","rotulo":"Tu próxima prueba","pregunta":"Diseña una prueba A/B para tu negocio: qué variable cambias, qué mantienes igual y con qué métrica decides.","ayuda":"Cambio… / Mantengo… / Decido con…"}
+],
+"c-ia-marketing-m2-l3": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una óptica de Saltillo compró una lista de 5,000 correos «de personas interesadas en lentes» y le pidió a la IA una campaña para enviarla. Además, quiere mandar la promoción por WhatsApp a todos los contactos del celular del negocio."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"La lista comprada…","ops":["Se usa, ya la pagaron","No se usa: esas personas no dieron su consentimiento a la óptica","Se usa solo una vez"],"correcta":1,"explica":"Sin consentimiento hay riesgo legal y te marcan como spam."},
+{"p":"Una forma correcta de hacer crecer su lista es…","ops":["Pedir en mostrador y en su sitio que se suscriban, con aviso de privacidad","Copiar correos de otras ópticas","Pedir a la IA correos de la ciudad"],"correcta":0,"explica":"Una lista propia con consentimiento funciona mejor y es legal."},
+{"p":"Por WhatsApp, la promoción se envía…","ops":["A todos los contactos del celular","A grupos de vecinos","Solo a quienes aceptaron recibir promociones, con opción de baja"],"correcta":2,"explica":"Consentimiento y opción de baja, siempre."}]},
+{"tipo":"comparar","titulo":"Cómo invitar a suscribirse","malTitulo":"Sin consentimiento","mal":"«Te agregamos a nuestra lista de promociones.»","bienTitulo":"Con consentimiento","bien":"«¿Quieres recibir un recordatorio cuando toque tu revisión anual y nuestras promociones? Máximo 2 mensajes al mes; te das de baja cuando quieras.»"},
+{"tipo":"reflexion","rotulo":"Tu lista","pregunta":"Escribe cómo vas a pedir consentimiento en tu negocio (dónde, con qué frase y cómo registras la baja).","ayuda":"Lo pido en… / Frase: … / La baja la registro…"}
+],
+"c-ia-marketing-m3-l1": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> un gimnasio de Culiacán celebra: en el mes sus reels tuvieron 3 veces más «me gusta». Pero las inscripciones bajaron de 60 a 42. La IA, al leer el reporte, concluyó: «excelente mes, sigan con los reels de retos virales»."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"¿Fue un buen mes para el negocio?","ops":["Sí, subieron los «me gusta»","No: la métrica del objetivo, inscripciones, bajó 30%","No se puede saber"],"correcta":1,"explica":"(60 − 42) ÷ 60 = 0.30. Los «me gusta» no pagan la renta."},
+{"p":"Para que la IA no concluya al revés, en el prompt…","ops":["Le dices cuál es tu objetivo y tu métrica principal","Le pides que sea optimista","Le das solo los «me gusta»"],"correcta":0,"explica":"Sin objetivo, la IA juzga con cualquier métrica."},
+{"p":"La siguiente decisión razonable es…","ops":["Más retos virales","Dejar de publicar","Revisar qué publicaciones generaron mensajes o visitas y probar más de esas"],"correcta":2,"explica":"Se sigue la pista de lo que movió la métrica del objetivo."}]},
+{"tipo":"completar","rotulo":"Completa las fórmulas","items":[
+{"frase":"Variación de inscripciones con el mes anterior en B2 y el actual en C2: ___","resp":["=(C2-B2)/B2","=C2/B2-1"]},
+{"frase":"Tasa de clics con clics en C2 e impresiones en B2: ___","resp":["=C2/B2"]},
+{"frase":"Costo por inscripción con gasto en D2 e inscripciones en E2: ___","resp":["=D2/E2"]}]},
+{"tipo":"reflexion","rotulo":"Tu métrica del mes","pregunta":"Escribe tu objetivo de este mes, la métrica que lo mide y su valor del mes pasado.","ayuda":"Objetivo… / Métrica… / Mes pasado…"}
+],
+"c-ia-marketing-m3-l2": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> un restaurante de mariscos en Mazatlán recibe un video que se está compartiendo: un pedido a domicilio llegó frío, 1 hora y 20 minutos tarde, y nadie contestó el teléfono. La IA propone responder: «Nuestros estándares de calidad son los más altos de la ciudad; seguramente fue un caso aislado»."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"¿Qué falla en la respuesta de la IA?","ops":["Es muy corta","Se defiende y minimiza en lugar de reconocer y dar solución","Le faltan emojis"],"correcta":1,"explica":"En una crisis, defenderse sin conocer los hechos empeora las cosas."},
+{"p":"Lo primero que hace el restaurante es…","ops":["Borrar los comentarios","Verificar qué pasó con ese pedido y pausar publicaciones programadas","Publicar una promoción"],"correcta":1,"explica":"Pausa y hechos antes de responder."},
+{"p":"Una buena respuesta pública…","ops":["Reconoce el error, ofrece solución y lleva el detalle a privado","Pide que borren el video","Culpa al repartidor"],"correcta":0,"explica":"Responsabilidad, solución y seguimiento en privado."}]},
+{"tipo":"comparar","titulo":"Respuesta en la crisis","malTitulo":"Defensiva","mal":"«Nuestros estándares son los más altos; seguramente fue un caso aislado.»","bienTitulo":"Responsable","bien":"«Tienes razón: tu pedido llegó tarde y frío, y no te contestamos. Ya revisamos qué pasó. Te escribimos por mensaje para reponerlo y te contamos qué cambiamos en las entregas.»"},
+{"tipo":"reflexion","rotulo":"Tu protocolo de crisis","pregunta":"Escribe quién responde en tu negocio si hay una queja viral, en cuánto tiempo y con qué primera frase.","ayuda":"Responde… / En menos de… / Primera frase: …"}
+],
+"c-ia-marketing-m3-l3": [
+{"tipo":"titulo","texto":"Taller práctico"},
+{"tipo":"destacado","texto":"<b>El caso:</b> una papelería de Aguascalientes quiere que el regreso a clases sea su mejor temporada. Tiene lista de útiles de 15 escuelas cercanas, Facebook, WhatsApp Business y $4,000 para anuncios. La IA le propuso «lista de útiles oficial de la SEP» como gancho principal."},
+{"tipo":"practica","rotulo":"Decide en el caso","preguntas":[
+{"p":"«Lista de útiles oficial de la SEP»…","ops":["Se usa, es buen gancho","Se quita: no la tiene, y sugiere un respaldo que no existe","Se usa sin el logotipo"],"correcta":1,"explica":"No se insinúa un aval oficial que no tienes."},
+{"p":"La métrica principal de la campaña es…","ops":["Listas surtidas o apartadas","Seguidores","Reproducciones de reels"],"correcta":0,"explica":"Es lo que se convierte en venta."},
+{"p":"Un buen mensaje de difusión a clientes que aceptaron promociones…","ops":["Lista completa de precios en 20 renglones","«Mándanos la foto de tu lista y te la entregamos surtida»; con opción de baja","Un audio de 3 minutos"],"correcta":1,"explica":"Corto, útil y con llamado a la acción claro."}]},
+{"tipo":"relacionar","rotulo":"Semana y contenido","pares":[["Semana 1","Expectativa: «¿ya tienes la lista?»"],["Semana 2","Cómo funciona: manda foto y te la surtimos"],["Semana 3","Paquetes por grado con precio real"],["Semana 4","Últimos días y horario extendido"]]},
+{"tipo":"reflexion","rotulo":"Tu gancho honesto","pregunta":"Escribe el gancho principal de tu próxima campaña de temporada y verifica que todo lo que promete sea cierto.","ayuda":"Gancho: … / Lo que promete: … / Es cierto porque…"}
+]
+},
+"modulos": [
+{
+"t": "Situaciones avanzadas de marketing",
+"r": "Colaboraciones con creadores de contenido, presupuesto de campaña con tu embudo real y contenido largo para buscadores, con la IA como apoyo y sin datos inventados.",
+"lecciones": [
+{
+"t": "Creadores de contenido y colaboraciones",
+"obj": "Elegir y medir colaboraciones con creadores por costo por clic y costo por venta, con publicidad identificada y acuerdos por escrito.",
+"bloques": [
+{"tipo":"texto","texto":"Trabajar con creadores de contenido puede acercarte a una audiencia nueva, pero muchos seguidores no garantizan ventas. Se mide igual que un anuncio: <b>costo por clic</b> y <b>costo por venta</b>, con enlaces o cupones propios para cada creador. Además, la colaboración pagada debe identificarse como publicidad; revisa las reglas de cada red y las disposiciones vigentes de Profeco. La IA te ayuda a preparar el acuerdo y el brief; los números salen de tus enlaces y cupones."},
+{"tipo":"destacado","texto":"<b>El caso:</b> una marca de salsas artesanales de Jalisco probó con dos creadores: una con 80 mil seguidores y otro con 9 mil, especializado en cocina casera. A cada uno le dio un cupón distinto."},
+{"tipo":"excel","rotulo":"¿Quién vendió mejor?","datos":[["Creador","Costo","Clics medidos","Ventas con su cupón","Costo por clic","Costo por venta"],["Creadora A (80 mil)",12000,1500,24,"",""],["Creador B (9 mil)",3000,700,15,"",""]],"retos":[
+{"celda":"E2","formula":"=B2/C2","esperado":8,"texto":"<b>E2</b>: costo por clic de la creadora A."},
+{"celda":"F2","formula":"=B2/D2","esperado":500,"texto":"<b>F2</b>: costo por venta de la creadora A."},
+{"celda":"F3","formula":"=B3/D3","esperado":200,"texto":"<b>F3</b>: costo por venta del creador B.","explica":"B cuesta $200 por venta contra $500 de A. Una audiencia pequeña y afín puede vender más barato que una grande."}]},
+{"tipo":"destacado","texto":"<b>Errores comunes de la IA con creadores:</b> inventar cifras de seguidores o de «engagement» de una persona, proponer guiones que ocultan que es publicidad, sugerir pedirle al creador que use música o personajes sin permiso y redactar acuerdos sin derechos de uso claros. Los datos se piden al creador, con capturas de sus estadísticas."},
+{"tipo":"plantilla","rotulo":"Brief y acuerdo con un creador","texto":"Redacta un brief y los puntos de acuerdo para una colaboración con un creador de contenido para [marca]. Incluye: objetivo, mensaje clave, qué no puede decir (promesas no comprobables), formato y fechas, cupón o enlace propio, identificación clara como publicidad, quién aprueba antes de publicar, pago, por cuánto tiempo y en qué canales puede la marca reutilizar el contenido, y qué estadísticas me comparte al terminar. No inventes datos del creador."},
+{"tipo":"practica","rotulo":"Decide","preguntas":[
+{"p":"La IA te dice que un creador tiene «8% de engagement». Tú…","ops":["Lo usas en tu reporte","Le pides al creador capturas de sus estadísticas","Lo redondeas a 10%"],"correcta":1,"explica":"La IA no tiene acceso a sus estadísticas; el creador sí."},
+{"p":"El creador propone no decir que es colaboración pagada…","ops":["Se acepta, se ve más natural","Se acepta solo en historias","No se acepta: la publicidad se identifica"],"correcta":2,"explica":"Ocultarlo engaña a su audiencia y puede violar reglas de la red."},
+{"p":"Para reutilizar su video en tus anuncios necesitas…","ops":["Que esté acordado por escrito, con canales y plazo","Nada, ya lo pagaste","Solo avisarle"],"correcta":0,"explica":"Los derechos de uso se pactan; no se suponen."}]},
+{"tipo":"reflexion","rotulo":"Tu colaboración","pregunta":"Describe un creador que tenga sentido para tu marca, cómo medirías su resultado y qué pondrías por escrito.","ayuda":"Creador… porque… / Mido con… / Por escrito: …"},
+{"tipo":"clave","items":["Seguidores no son ventas: mide costo por clic y por venta.","Publicidad identificada y acuerdos por escrito.","Datos del creador: de sus estadísticas, no de la IA."]}
+]
+},
+{
+"t": "Presupuesto de campaña con tu embudo real",
+"obj": "Estimar mensajes, ventas e ingreso de una campaña a partir de tu historial y repartir el presupuesto sin cifras inventadas.",
+"bloques": [
+{"tipo":"texto","texto":"Un presupuesto de anuncios no se decide con «lo que se sienta bien». Se construye con tu <b>embudo</b>: cuánto te cuesta un mensaje (o clic, o registro), qué porcentaje de esos mensajes compra y cuánto deja cada venta. Con esas tres cifras de tu historial puedes estimar el resultado antes de gastar. La IA te ayuda a armar la hoja y a proponer escenarios; los porcentajes deben ser tuyos."},
+{"tipo":"destacado","texto":"<b>El caso:</b> una tienda de muebles de jardín en Cuernavaca tiene $8,000 para anuncios en marzo. De sus campañas anteriores sabe que cada mensaje le cuesta unos $20, que 10% de los mensajes compra y que su ticket promedio es $650."},
+{"tipo":"excel","rotulo":"Del presupuesto al ingreso","datos":[["Etapa","Valor"],["Presupuesto del mes",8000],["Costo por mensaje (histórico)",20],["Mensajes esperados",""],["% de mensajes que compran (histórico)",0.1],["Ventas esperadas",""],["Ticket promedio",650],["Ingreso esperado",""]],"retos":[
+{"celda":"B4","formula":"=B2/B3","esperado":400,"texto":"<b>B4</b>: mensajes esperados = presupuesto ÷ costo por mensaje."},
+{"celda":"B6","formula":"=B4*B5","esperado":40,"texto":"<b>B6</b>: ventas esperadas = mensajes × porcentaje que compra."},
+{"celda":"B8","formula":"=B6*B7","esperado":26000,"texto":"<b>B8</b>: ingreso esperado = ventas × ticket promedio.","explica":"$26,000 de ingreso con $8,000 de anuncios. Antes de celebrar, réstale costo de producto y envío: el ingreso no es utilidad."}]},
+{"tipo":"destacado","texto":"<b>Errores comunes de la IA con presupuestos:</b> usar tasas de conversión «promedio de la industria» sin fuente, prometer resultados («con $8,000 tendrás 100 ventas»), olvidar que al subir mucho el presupuesto el costo por mensaje suele cambiar y confundir ingreso con utilidad."},
+{"tipo":"plantilla","rotulo":"Escenarios de campaña","texto":"Con mi historial (costo por mensaje [ ], % que compra [ ], ticket promedio [ ], margen [ ]%), arma una hoja con tres escenarios: pesimista, base y optimista, variando solo el costo por mensaje y el % que compra en ±20%. Dame las fórmulas para mensajes, ventas, ingreso y utilidad después de anuncios. No uses cifras de la industria."},
+{"tipo":"practica","rotulo":"Decide","preguntas":[
+{"p":"La IA propone usar «una conversión promedio de 5% en México». Tú…","ops":["La usas","Usas tu propio historial; si no tienes, haces una prueba pequeña primero","La duplicas"],"correcta":1,"explica":"Un promedio sin fuente no describe tu negocio."},
+{"p":"Si duplicas el presupuesto…","ops":["Las ventas se duplican seguro","El costo por mensaje puede cambiar: se prueba por etapas","No cambia nada"],"correcta":1,"explica":"El embudo no escala en línea recta; se mide."},
+{"p":"Un ingreso esperado de $26,000…","ops":["Es tu ganancia","Es lo que cobra la plataforma","Todavía no descuenta producto, envío ni anuncios"],"correcta":2,"explica":"Ingreso no es utilidad."}]},
+{"tipo":"reflexion","rotulo":"Tu embudo","pregunta":"Escribe tus tres cifras de embudo (costo por resultado, % que compra, ticket) y de dónde sale cada una.","ayuda":"Costo por… sale de… / % que compra… / Ticket…"},
+{"tipo":"clave","items":["Presupuesto → resultados → ventas → ingreso, con tu historial.","Sin cifras de la industria inventadas.","Ingreso no es utilidad."]}
+]
+},
+{
+"t": "Contenido largo y buscadores sin plagio ni datos inventados",
+"obj": "Producir artículos y preguntas frecuentes útiles para buscadores con la IA, verificando datos, citas y originalidad.",
+"bloques": [
+{"tipo":"texto","texto":"Un artículo en tu sitio o una sección de preguntas frecuentes puede atraer visitas durante meses si responde lo que tu cliente busca. La IA acelera el borrador, pero tiene tres riesgos: <b>inventar datos o citas</b>, <b>parecerse demasiado a textos ajenos</b> y producir contenido genérico que no aporta nada. La regla: la IA estructura y redacta; tú aportas experiencia real, verificas cada cifra y revisas que sea original."},
+{"tipo":"destacado","texto":"<b>El caso:</b> una empresa de paneles solares en Hermosillo pidió a la IA un artículo «¿Cuánto ahorro con paneles solares?». El borrador dice: «Según un estudio, los hogares ahorran 95% en su recibo» y cita a un «experto» con nombre y cargo que nadie encuentra."},
+{"tipo":"practica","rotulo":"Decide","preguntas":[
+{"p":"El «estudio» del 95%…","ops":["Se deja, suena convincente","Se busca la fuente original; si no existe, se quita","Se cambia a 90%"],"correcta":1,"explica":"Una cifra sin fuente verificable no se publica."},
+{"p":"La cita del experto que nadie encuentra…","ops":["Se quita: la IA pudo haberla inventado","Se deja sin apellido","Se atribuye a la empresa"],"correcta":0,"explica":"Una cita inventada daña tu credibilidad y puede afectar a una persona real."},
+{"p":"El aporte que solo la empresa puede dar es…","ops":["Definiciones de diccionario","Casos reales de sus instalaciones, con permiso y sin datos personales","Más palabras clave"],"correcta":1,"explica":"La experiencia propia es lo que hace útil y distinto el artículo."}]},
+{"tipo":"relacionar","rotulo":"Riesgo y cómo lo controlas","pares":[["Cifra sin fuente","Buscar la fuente original o quitarla"],["Cita de una persona","Confirmar que existe y que lo dijo"],["Párrafo muy parecido a otro sitio","Reescribir con tu experiencia"],["Contenido genérico","Agregar casos y datos propios"]]},
+{"tipo":"plantilla","rotulo":"Borrador de artículo con límites","texto":"Escribe un borrador de artículo de 700 palabras para [negocio] que responda: [pregunta que hace tu cliente]. Estructura: respuesta corta al inicio, explicación, 3 casos que yo te doy [pegar casos sin datos personales], preguntas frecuentes y llamado a la acción. No incluyas estadísticas ni citas: donde haga falta un dato escribe [DATO POR VERIFICAR]. Español de México, claro, sin relleno."},
+{"tipo":"reflexion","rotulo":"Tu primer artículo","pregunta":"Escribe la pregunta que más te hacen tus clientes y 3 experiencias propias que meterías en el artículo.","ayuda":"Pregunta: … / Experiencias: 1… 2… 3…"},
+{"tipo":"clave","items":["La IA estructura; tú aportas experiencia y verificas.","Nada de cifras ni citas sin fuente.","Original y útil antes que largo."]}
+]
+}
+],
+"quiz": [
+{"p":"Para medir a un creador de contenido usas…","ops":["Sus seguidores","Costo por clic y costo por venta con cupón o enlace propio","Los «me gusta» del post","Lo que diga la IA"],"correcta":1},
+{"p":"Una colaboración pagada con un creador…","ops":["Se identifica como publicidad","Se oculta para que se vea natural","Solo se identifica si lo pide la red","No necesita nada"],"correcta":0},
+{"p":"Reutilizar el video del creador en tus anuncios requiere…","ops":["Nada","Pagar más siempre","Acuerdo por escrito de canales y plazo","Avisar después"],"correcta":2},
+{"p":"Mensajes esperados =","ops":["Presupuesto × costo por mensaje","Presupuesto ÷ costo por mensaje","Ventas ÷ ticket","Ticket × mensajes"],"correcta":1},
+{"p":"Una tasa de conversión «promedio de la industria» que da la IA sin fuente…","ops":["Se usa en el presupuesto","Se duplica","Se promedia con la tuya","Se sustituye por tu historial o por una prueba pequeña"],"correcta":3},
+{"p":"Un ingreso esperado de campaña…","ops":["Es utilidad","No descuenta producto, envío ni anuncios","Lo paga la plataforma","Es garantizado"],"correcta":1},
+{"p":"Una cita de un «experto» en un artículo generado con IA…","ops":["Se confirma que existe y que lo dijo, o se quita","Se deja si suena bien","Se atribuye a la empresa","Se traduce"],"correcta":0},
+{"p":"Lo que hace valioso un artículo frente a miles iguales es…","ops":["Que sea muy largo","Muchas palabras clave repetidas","La experiencia y los casos reales del negocio","Que lo escriba la IA"],"correcta":2}
+]
+},
+{
+"t": "Laboratorio y proyecto final",
+"r": "Un día real de marketing con errores plantados de la IA para detectar, y tu kit personal de marketing con IA.",
+"lecciones": [
+{
+"t": "Simulación: un jueves en una agencia pequeña",
+"obj": "Detectar en un día simulado los errores típicos de la IA en marketing: datos personales expuestos, promesas y cifras inventadas, imágenes con marcas o estilos ajenos y reportes engañosos.",
+"bloques": [
+{"tipo":"texto","texto":"Trabajas en una agencia pequeña en Ciudad de México que lleva las redes de tres clientes: una pastelería, un despacho de arquitectura y una tienda de bicicletas. Usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado: encuéntralo antes de que llegue al cliente o a su audiencia."},
+{"tipo":"destacado","texto":"<b>Escena 1 — 9:00 a. m. Segmentar la lista.</b> Para una campaña de la pastelería, una compañera pegó en un asistente de IA público el archivo con nombre, teléfono, fecha de cumpleaños y dirección de 2,300 clientes y le pidió «agruparlos por colonia»."},
+{"tipo":"reflexion","rotulo":"Escena 1: ¿qué corriges?","pregunta":"¿Qué problema hay y cómo harías la segmentación sin exponer datos personales?","ayuda":"El problema es… / Lo haría con… / Avisaría a…"},
+{"tipo":"destacado","texto":"<b>Escena 2 — 11:00 a. m. Copy del despacho.</b> La IA escribió: «El 87% de las casas diseñadas por arquitectos se venden 30% más caras» y «Premio Nacional de Arquitectura 2024». El despacho no tiene ese premio y nadie sabe de dónde salen los porcentajes."},
+{"tipo":"reflexion","rotulo":"Escena 2: ¿qué corriges?","pregunta":"Reescribe el copy sin datos inventados, con beneficios que el despacho sí puede comprobar.","ayuda":"Quito… / Pregunto al cliente… / Nuevo copy: …"},
+{"tipo":"destacado","texto":"<b>Escena 3 — 2:00 p. m. Imagen de la tienda de bicicletas.</b> Generaste con IA una ilustración para la campaña de primavera. Pediste que fuera «al estilo de» un ilustrador contemporáneo muy conocido, y en la bicicleta aparece el logotipo de una marca famosa que la tienda no vende. Usas el plan gratuito de la herramienta y no leíste sus condiciones de uso comercial."},
+{"tipo":"reflexion","rotulo":"Escena 3: ¿qué corriges?","pregunta":"Enumera los tres problemas de la imagen y cómo la rehaces.","ayuda":"1… 2… 3… / La rehago con un prompt que…"},
+{"tipo":"destacado","texto":"<b>Escena 4 — 5:00 p. m. Reporte mensual.</b> La IA armó el reporte de la pastelería: «El alcance creció 200% y el ROI de la campaña fue de 450%». Solo le diste alcance y «me gusta»; no hay datos de ventas. Además, sugiere cerrar con «Nuestros clientes nos califican con 5 estrellas» sin reseñas que lo respalden."},
+{"tipo":"reflexion","rotulo":"Escena 4: ¿qué corriges?","pregunta":"¿Qué cifras quitas del reporte, qué datos pides al cliente y cómo presentas honestamente el mes?","ayuda":"Quito… / Pido… / Presento…"},
+{"tipo":"practica","rotulo":"Revisión del día","preguntas":[
+{"p":"En la escena 1, segmentar por colonia se hace…","ops":["En la IA pública, es más rápido","En tu hoja o tu herramienta de clientes, sin subir datos personales a una IA pública","Mandando la lista por correo"],"correcta":1,"explica":"Los datos personales de clientes no van a herramientas públicas."},
+{"p":"En la escena 3, la imagen se rehace…","ops":["Sin estilo de artista vivo, sin marcas ajenas y tras revisar la licencia de uso comercial","Solo quitando el logotipo","Igual, pero en otra herramienta"],"correcta":0,"explica":"Son tres riesgos distintos y se corrigen los tres."},
+{"p":"En la escena 4, el ROI de 450%…","ops":["Se deja, al cliente le gustará","Se redondea","Se quita: no hay datos de ventas para calcularlo"],"correcta":2,"explica":"Una cifra que no puedes calcular no va en un reporte."}]},
+{"tipo":"clave","items":["Datos de clientes fuera de herramientas públicas.","Cifras, premios y reseñas: solo comprobables.","Imágenes sin marcas ni estilos de artistas vivos, con licencia revisada."]}
+]
+},
+{
+"t": "Proyecto final: tu kit de marketing con IA",
+"obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación antes de publicar y una pieza real lista para usar.",
+"bloques": [
+{"tipo":"texto","texto":"Cierra el curso con un kit que puedas usar la próxima semana. Cada reflexión es una pieza; al final las juntas en un índice. Trabaja con tu marca (o con una que conozcas bien) y con datos que puedas comprobar."},
+{"tipo":"reflexion","rotulo":"Pieza 1: tu biblioteca de prompts","pregunta":"Escribe tus 5 prompts de uso frecuente (pilares, copy con fórmula, variantes de anuncio, correo o difusión y análisis del mes), cada uno con tu guía de voz y el marcador [DATO POR VERIFICAR].","ayuda":"1. Pilares: … 2. Copy: … 3. …"},
+{"tipo":"reflexion","rotulo":"Pieza 2: tu política de datos y de derechos","pregunta":"Escribe 6 reglas: qué datos nunca pegas en una IA pública y qué nunca publicas (música, personajes, marcas, estilos de artistas vivos, rostros sin permiso) y cómo revisas la licencia de uso comercial de cada herramienta.","ayuda":"Nunca pego… / Nunca publico… / Licencias: reviso…"},
+{"tipo":"reflexion","rotulo":"Pieza 3: tu lista de verificación antes de publicar","pregunta":"Escribe tu lista de 8 puntos para revisar cualquier pieza que haya pasado por la IA.","ayuda":"1. Suena a mi guía de voz. 2. Cada promesa es comprobable. 3. Fechas verificadas…"},
+{"tipo":"reflexion","rotulo":"Pieza 4: tu entregable real","pregunta":"Escribe una pieza real lista para publicar (copy, correo o guion) con su métrica de éxito y la fecha en que la revisarás.","ayuda":"Pieza: … / Métrica: … / La reviso el…"},
+{"tipo":"plantilla","rotulo":"Índice de tu kit","texto":"KIT DE MARKETING CON IA — [marca]\nActualizado: [fecha]\n\n1. Audiencia validada con datos: [ ]\n2. Pilares y porcentajes: [ ]\n3. Guía de voz (palabras sí / no): [ ]\n4. Biblioteca de prompts: [ ]\n5. Política de datos y de derechos (música, imágenes, personajes, licencias): [ ]\n6. Lista de verificación antes de publicar: [ ]\n7. Métrica principal y cómo la mido: [ ]\n8. Pieza modelo: [ ]","nota":"Cópiala, llénala y revísala cada mes."},
+{"tipo":"clave","items":["Tu kit: prompts, política de datos y derechos, lista de verificación y pieza modelo.","La IA produce variantes; la estrategia, la verdad y los datos son tuyos.","Revisa licencias y reglas de cada plataforma cuando cambien."]}
+]
+}
+],
+"quiz": [
+{"p":"Pegar la base de clientes con teléfonos y direcciones en una IA pública…","ops":["Está bien si es para segmentar","No se hace","Está bien sin cumpleaños","Está bien si la IA es de pago"],"correcta":1},
+{"p":"Un premio que la IA agregó al copy y el cliente no tiene…","ops":["Se quita","Se deja si suena creíble","Se cambia de año","Se pone en letra chica"],"correcta":0},
+{"p":"Pedir una imagen «al estilo de» un ilustrador vivo para una campaña…","ops":["Es un homenaje","Está bien si no dices su nombre","No se hace: se define un estilo propio","Está bien en plan de pago"],"correcta":2},
+{"p":"Antes de usar comercialmente una imagen generada…","ops":["Esperas a que alguien reclame","Revisas la licencia de uso comercial de la herramienta y de tu plan","Preguntas a la IA","Nada"],"correcta":1},
+{"p":"Un ROI en el reporte sin datos de ventas…","ops":["Se estima","Se deja","Se quita","Se redondea"],"correcta":2},
+{"p":"«Nuestros clientes nos califican con 5 estrellas» sin reseñas que lo respalden…","ops":["Se publica","Se cambia a 4.9","Se usa solo en anuncios","No se publica"],"correcta":3},
+{"p":"Tu lista de verificación antes de publicar sirve para…","ops":["Revisar siempre lo mismo antes de que algo salga","Hacerlo más lento","Que la IA apruebe","Nada"],"correcta":0},
+{"p":"La responsabilidad de lo que publica tu marca con ayuda de IA es…","ops":["De la IA","De la red social","Tuya y de tu marca","Del creador de contenido"],"correcta":2}
+]
+}
+]
+}

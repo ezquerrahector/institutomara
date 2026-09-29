@@ -1,0 +1,1559 @@
+{
+ "id": "c-ia-proyectos",
+ "horas": 10,
+ "aprender": [
+  "Aplicar Scrum según la Guía Scrum 2020, controlar cambios y medir avance con valor ganado (CPI y SPI) apoyándote en la IA.",
+  "Detectar los errores típicos que la IA comete en cronogramas, reportes y presupuestos, y armar tu kit personal de gestión de proyectos."
+ ],
+ "terceras": [
+  {
+   "p": "Una tarea de «hacer el sistema» de 3 meses…",
+   "op": "Se deja así y se revisa al final del proyecto"
+  },
+  {
+   "p": "¿Quién valida la duración de una tarea?",
+   "op": "El patrocinador, aunque no conozca el trabajo"
+  },
+  {
+   "p": "¿Cuántas personas deben tener la A en un entregable?",
+   "op": "Una por cada área involucrada"
+  },
+  {
+   "p": "Alguien que solo necesita enterarse del resultado es…",
+   "op": "C"
+  },
+  {
+   "p": "Una tarea de la ruta crítica se retrasa 3 días…",
+   "op": "Solo se retrasa esa tarea; el final no se mueve"
+  },
+  {
+   "p": "Una tarea con holgura…",
+   "op": "Es la que más cuesta del proyecto"
+  },
+  {
+   "p": "Retraso de 4 días en ruta crítica con plan de recuperación",
+   "op": "Rojo"
+  },
+  {
+   "p": "Retraso que ya mueve la fecha de entrega sin solución",
+   "op": "Amarillo"
+  },
+  {
+   "p": "¿Qué tarea suele olvidarse y es crítica en un cambio de sistema?",
+   "op": "Cambiar el nombre del proyecto"
+  },
+  {
+   "p": "¿Quién tiene la A de la aprobación final?",
+   "op": "El proveedor externo"
+  }
+ ],
+ "extras": {
+  "c-ia-proyectos-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Lucía coordina en una clínica privada de Mérida la apertura de un área de rehabilitación. El director le dijo por pasillo: «Que quede lista para enero, algo bonito y funcional». Lucía le pidió a la IA el acta con la plantilla y obtuvo un borrador con varios [DEFINIR]: presupuesto, número de cubículos, quién aprueba el mobiliario y si incluye contratar personal."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace Lucía con los [DEFINIR] del borrador?",
+      "ops": [
+       "Los convierte en preguntas concretas para una reunión corta con el director",
+       "Los llena ella con cifras razonables para no molestar al director",
+       "Los borra para que el acta se vea terminada"
+      ],
+      "correcta": 0,
+      "explica": "Los huecos son exactamente lo que falta acordar. Inventarlos o borrarlos traslada el problema a la mitad del proyecto."
+     },
+     {
+      "p": "«Algo bonito y funcional» como objetivo es…",
+      "ops": [
+       "Suficiente, porque todos entienden la idea",
+       "Un objetivo vago que hay que volver SMART",
+       "Un criterio de éxito medible"
+      ],
+      "correcta": 1,
+      "explica": "No dice cuántos cubículos, con qué presupuesto ni para qué fecha exacta; nadie podría decir si se cumplió."
+     },
+     {
+      "p": "¿Qué conviene poner en «fuera de alcance» si nadie ha hablado de contratar fisioterapeutas?",
+      "ops": [
+       "Nada, porque no se mencionó",
+       "Todo lo que no sea mobiliario, incluida la obra",
+       "Contratación de personal, salvo que el director diga lo contrario"
+      ],
+      "correcta": 2,
+      "explica": "Hacerlo explícito obliga a decidir: o se incluye con presupuesto, o queda fuera por escrito."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Criterio de éxito",
+    "malTitulo": "Subjetivo",
+    "mal": "«Que el director quede contento con el área.»",
+    "bienTitulo": "Verificable",
+    "bien": "«Área con 6 cubículos operando el 15 de enero, dentro de $850,000, con aviso de funcionamiento presentado y personal capacitado en el uso del equipo.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus [DEFINIR]",
+    "pregunta": "Toma un proyecto que te encargaron de palabra. Escribe las 3 preguntas que le harías al patrocinador para cerrar los huecos del acta.",
+    "ayuda": "1. ¿Cuál es el presupuesto máximo…? 2. ¿Quién aprueba…? 3. ¿Incluye…?"
+   }
+  ],
+  "c-ia-proyectos-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> una cadena de 12 farmacias en Aguascalientes va a instalar terminales de cobro con tarjeta en todas sus sucursales. La IA propuso una EDT con 3 fases: «Compra», «Instalación» y «Arranque». Dentro de «Instalación» aparece una sola tarea: «Instalar terminales en sucursales (40 días)»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene la tarea «Instalar terminales en sucursales (40 días)»?",
+      "ops": [
+       "Es demasiado grande para dar seguimiento; conviene dividirla por sucursal o por grupo",
+       "Ninguno: una tarea larga es más fácil de controlar",
+       "Debería durar exactamente 5 días aunque no alcance"
+      ],
+      "correcta": 0,
+      "explica": "Dividirla por sucursal o por grupos de 3 permite ver avance real y detectar atrasos pronto."
+     },
+     {
+      "p": "¿Qué tarea es más probable que falte en esta EDT?",
+      "ops": [
+       "Elegir el color de las terminales",
+       "Capacitar a cajeros y probar cobros reales antes del arranque",
+       "Cambiar el logotipo de la cadena"
+      ],
+      "correcta": 1,
+      "explica": "Capacitación y pruebas son las tareas que la IA y las personas olvidan con más frecuencia."
+     },
+     {
+      "p": "La IA estimó 2 días por sucursal. ¿Cómo lo validas?",
+      "ops": [
+       "Lo acepto porque la IA conoce muchos proyectos",
+       "Lo multiplico por dos para estar seguro, sin preguntar",
+       "Lo pregunto al técnico o proveedor que hará la instalación"
+      ],
+      "correcta": 2,
+      "explica": "Quien ejecuta sabe cuánto tarda; un colchón sin datos no sustituye la validación."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la EDT",
+    "items": [
+     {
+      "frase": "El código 2.3.1 indica una ___ dentro del entregable 2.3.",
+      "resp": [
+       "tarea",
+       "Tarea",
+       "actividad"
+      ]
+     },
+     {
+      "frase": "Las tareas de la EDT no deberían durar más de ___ días.",
+      "resp": [
+       "5",
+       "cinco"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu tarea gigante",
+    "pregunta": "Busca en tu trabajo una tarea «gigante» (más de 2 semanas) y divídela en 4 o 5 tareas de 5 días o menos, cada una con un entregable visible.",
+    "ayuda": "Tarea gigante: … 1) … 2) … 3) …"
+   }
+  ],
+  "c-ia-proyectos-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> en una universidad de Puebla se va a lanzar una maestría en línea. La IA propuso esta RACI para el entregable «Plan de estudios aprobado»: Coordinadora académica = A, Director de posgrado = A, Docentes = R, Área jurídica = I, Control escolar = I."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué error tiene la matriz?",
+      "ops": [
+       "Tiene dos A para el mismo entregable",
+       "Tiene demasiadas I",
+       "Los docentes no deberían tener R"
+      ],
+      "correcta": 0,
+      "explica": "Con dos A nadie sabe quién da el sí final. Se deja una A y la otra persona pasa a C."
+     },
+     {
+      "p": "El área jurídica debe revisar el plan antes de enviarlo a la autoridad educativa. ¿Qué letra le corresponde?",
+      "ops": [
+       "I",
+       "C",
+       "A"
+      ],
+      "correcta": 1,
+      "explica": "Si debe opinar antes, es Consultada; si solo se entera después, sería Informada."
+     },
+     {
+      "p": "Una docente aparece con R en 14 de 16 entregables. ¿Qué haces?",
+      "ops": [
+       "Nada; es señal de compromiso",
+       "Le quito todas las R",
+       "Lo marco como conflicto de carga y redistribuyo"
+      ],
+      "correcta": 2,
+      "explica": "Exceso de R en una persona es un cuello de botella y un riesgo si se enferma o renuncia."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "¿Qué letra RACI?",
+    "pares": [
+     [
+      "Redacta el reglamento del programa",
+      "R"
+     ],
+     [
+      "Firma el visto bueno final",
+      "A"
+     ],
+     [
+      "Da su opinión antes de publicar",
+      "C"
+     ],
+     [
+      "Recibe el aviso ya aprobado",
+      "I"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu RACI rápida",
+    "pregunta": "Elige un entregable de tu área y escribe quién es R, A, C e I. ¿Hay alguien con más de una A o algún entregable sin dueño?",
+    "ayuda": "Entregable: … R: … A: … C: … I: …"
+   }
+  ],
+  "c-ia-proyectos-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> una constructora de Querétaro remodela una sucursal bancaria. La IA armó el cronograma a partir del lunes 14 de septiembre con días hábiles de lunes a viernes. Al revisarlo, el residente de obra nota que una tarea crítica («colado de firme») cae el miércoles 16 de septiembre, día de descanso obligatorio, y que el cronograma supone que la cuadrilla trabaja sábados completos."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la tarea que cae en día de descanso obligatorio?",
+      "ops": [
+       "Recorro la tarea y reviso si mueve la ruta crítica",
+       "La dejo; la IA ya consideró el calendario",
+       "La elimino del cronograma"
+      ],
+      "correcta": 0,
+      "explica": "La IA no siempre considera días festivos ni calendarios de la empresa: verifica fechas contra el calendario real."
+     },
+     {
+      "p": "El cronograma supone sábados completos y el contrato de la cuadrilla es de lunes a viernes. ¿Qué implica?",
+      "ops": [
+       "Nada, los sábados se pueden negociar después",
+       "El plan es optimista; hay que recalcular con la jornada real",
+       "Que la obra terminará antes"
+      ],
+      "correcta": 1,
+      "explica": "Un supuesto de jornada equivocado hace que todas las fechas se vean más cercanas de lo que son."
+     },
+     {
+      "p": "La tarea «instalación de mobiliario» tiene 4 días de holgura. Si se atrasa 2 días…",
+      "ops": [
+       "Se atrasa todo el proyecto 2 días",
+       "Se vuelve la ruta crítica de inmediato",
+       "No mueve la fecha final, pero consume parte de su margen"
+      ],
+      "correcta": 2,
+      "explica": "Mientras el atraso sea menor que la holgura, la fecha final no cambia; conviene vigilarla."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Instrucción a la IA",
+    "malTitulo": "Incompleta",
+    "mal": "«Hazme el cronograma de la obra.»",
+    "bienTitulo": "Con restricciones reales",
+    "bien": "«Hazme el cronograma desde el lunes 14 de septiembre, jornada de lunes a viernes, excluyendo días de descanso obligatorio en México; marca la ruta crítica y dime qué fechas debo confirmar con el calendario de la empresa.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu calendario real",
+    "pregunta": "Anota las restricciones de calendario que tu IA debería conocer para tu próximo proyecto: días festivos, vacaciones del equipo, cierres de mes, temporadas altas.",
+    "ayuda": "Festivos: … Vacaciones: … Cierres: …"
+   }
+  ],
+  "c-ia-proyectos-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> una empresa de alimentos en Guadalajara lanzará una línea de botanas saludables en 6 meses. Con la plantilla, la IA listó 12 riesgos. Tres llaman la atención: «el proveedor único de empaque biodegradable podría no surtir» (probabilidad 4, impacto 5), «cambio en la norma de etiquetado» (probabilidad 2, impacto 4) y «rotación del jefe de planta» (probabilidad 3, impacto 3)."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál de los tres riesgos tiene mayor severidad?",
+      "ops": [
+       "Proveedor único de empaque (20)",
+       "Cambio en la norma de etiquetado (8)",
+       "Rotación del jefe de planta (9)"
+      ],
+      "correcta": 0,
+      "explica": "Severidad = probabilidad × impacto: 4 × 5 = 20."
+     },
+     {
+      "p": "Buscar y homologar un segundo proveedor de empaque es una respuesta de…",
+      "ops": [
+       "Aceptar",
+       "Mitigar",
+       "Transferir"
+      ],
+      "correcta": 1,
+      "explica": "Reduce la probabilidad de quedarte sin empaque y el impacto si falla el primero."
+     },
+     {
+      "p": "La IA escribió que la norma de etiquetado «cambiará en marzo». ¿Qué haces?",
+      "ops": [
+       "Lo tomo como hecho y ajusto el plan",
+       "Lo borro para no preocupar al patrocinador",
+       "Lo verifico en la fuente oficial antes de incluirlo"
+      ],
+      "correcta": 2,
+      "explica": "Fechas y normas se verifican en fuente oficial; la IA puede inventar o confundir."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa",
+    "items": [
+     {
+      "frase": "Un riesgo con probabilidad 3 e impacto 4 tiene severidad ___.",
+      "resp": [
+       "12",
+       "doce"
+      ]
+     },
+     {
+      "frase": "Contratar una fianza de cumplimiento con el proveedor es ___ el riesgo.",
+      "resp": [
+       "transferir",
+       "Transferir"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu riesgo principal",
+    "pregunta": "Escribe el riesgo más severo de un proyecto tuyo con probabilidad, impacto, respuesta (evitar, mitigar, transferir o aceptar), acción y dueño.",
+    "ayuda": "Riesgo: … P: … I: … Respuesta: … Acción: … Dueño: …"
+   }
+  ],
+  "c-ia-proyectos-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Ernesto lleva el proyecto de renovación del centro de datos de una aseguradora en la Ciudad de México. Le pidió a la IA un resumen de su presupuesto y la IA escribió: «Se ha ejercido 62% del presupuesto y el proyecto va en línea». Ernesto revisa su hoja: lleva 62% ejercido, pero solo 45% del trabajo terminado."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Es correcto decir que el proyecto «va en línea»?",
+      "ops": [
+       "No: gastó más de lo que corresponde al avance logrado",
+       "Sí, porque el porcentaje ejercido es menor a 100%",
+       "Sí, si el patrocinador no pregunta"
+      ],
+      "correcta": 0,
+      "explica": "Comparar solo gasto contra presupuesto total oculta el problema; hay que compararlo contra el avance real (lo verás a fondo en el módulo 4)."
+     },
+     {
+      "p": "¿De dónde deben salir las cifras del resumen?",
+      "ops": [
+       "De la estimación de la IA",
+       "De la hoja de control de Ernesto",
+       "Del promedio de proyectos parecidos"
+      ],
+      "correcta": 1,
+      "explica": "La IA redacta; las cifras vienen de tu control."
+     },
+     {
+      "p": "La contingencia se usó para pagar un bono al equipo. ¿Qué problema hay?",
+      "ops": [
+       "Ninguno, es dinero del proyecto",
+       "Que el bono fue pequeño",
+       "La contingencia es para imprevistos; usarla así deja al proyecto sin colchón"
+      ],
+      "correcta": 2,
+      "explica": "La contingencia se reserva para riesgos que se materializan y su uso se documenta."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Resumen de presupuesto",
+    "malTitulo": "Engañoso",
+    "mal": "«Se ha ejercido 62% del presupuesto y el proyecto va en línea.»",
+    "bienTitulo": "Honesto",
+    "bien": "«Llevamos 62% ejercido con 45% de avance verificado: el gasto va adelantado al trabajo. Revisaremos compromisos pendientes y presentaremos un ajuste el viernes.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu control",
+    "pregunta": "¿Tu control de presupuesto distingue entre comprometido y ejercido? Escribe qué columnas le faltan y cuándo lo vas a actualizar.",
+    "ayuda": "Me falta… Lo actualizo cada…"
+   }
+  ],
+  "c-ia-proyectos-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Paola lidera la migración de la app de pedidos de una distribuidora de refacciones en Monterrey. Sus notas de la semana: «backend listo; pruebas con 5 vendedores detectaron 11 fallas, 3 graves; proveedor de mapas no ha entregado credenciales (bloquea la ruta crítica desde hace 6 días); presupuesto al 48% con 50% de avance». La IA redactó el reporte con semáforo verde."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué color corresponde al estado general?",
+      "ops": [
+       "Amarillo o rojo, según haya plan para el bloqueo del proveedor",
+       "Verde, porque el backend ya está listo",
+       "Sin color hasta que termine el proyecto"
+      ],
+      "correcta": 0,
+      "explica": "Un bloqueo de 6 días en ruta crítica no es verde; si hay plan de recuperación es amarillo, si mueve la fecha sin solución, rojo."
+     },
+     {
+      "p": "¿Qué decisión conviene pedir al patrocinador?",
+      "ops": [
+       "Que felicite al equipo",
+       "Que escale con el proveedor de mapas o autorice una alternativa",
+       "Que apruebe el color del botón de pago"
+      ],
+      "correcta": 1,
+      "explica": "La sección de decisiones sirve para destrabar lo que el líder no puede resolver solo."
+     },
+     {
+      "p": "¿Cómo reportas las 11 fallas?",
+      "ops": [
+       "No las menciono para no alarmar",
+       "Solo digo que hubo «algunos detalles»",
+       "Con número, gravedad y plan: 3 graves con fecha de corrección"
+      ],
+      "correcta": 2,
+      "explica": "Dato concreto más acción genera confianza; «algunos detalles» es maquillaje."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Riesgo en el reporte",
+    "malTitulo": "Sin dueño",
+    "mal": "«Existe un posible retraso por temas del proveedor.»",
+    "bienTitulo": "Con acción y dueño",
+    "bien": "«Proveedor de mapas sin credenciales desde hace 6 días (ruta crítica). Acción: llamada de escalamiento con su gerente el martes. Dueña: Paola. Si el jueves no hay credenciales, la entrega se mueve 1 semana.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu semáforo honesto",
+    "pregunta": "Escribe el estado real de un proyecto tuyo esta semana: color, razón en una frase, riesgo principal con acción y dueño, y una decisión que necesitas.",
+    "ayuda": "Color: … Porque… Riesgo: … Decisión que necesito: …"
+   }
+  ],
+  "c-ia-proyectos-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> terminó la implementación de un sistema de citas en línea para una red de laboratorios en León. Se entregó 3 semanas tarde y 8% arriba del presupuesto, pero las citas en línea ya son 40% del total. En la sesión de lecciones aprendidas, el gerente de sistemas empieza: «Todo fue culpa de operaciones, que nunca mandó los horarios a tiempo»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cómo rediriges el comentario del gerente de sistemas?",
+      "ops": [
+       "Lo convierto en hecho y causa: «los horarios llegaron 2 semanas tarde; ¿qué haríamos distinto para tenerlos antes?»",
+       "Le doy la razón para evitar conflicto",
+       "Le pido que salga de la sesión"
+      ],
+      "correcta": 0,
+      "explica": "Se habla de hechos, causas y acciones futuras, no de culpables."
+     },
+     {
+      "p": "¿Qué dato NO puede faltar en el informe de cierre?",
+      "ops": [
+       "Solo el logro del 40% de citas en línea",
+       "El retraso y el sobrecosto reales comparados con el plan",
+       "La opinión personal del líder sobre cada persona"
+      ],
+      "correcta": 1,
+      "explica": "El cierre compara resultados contra plan, lo bueno y lo que no salió."
+     },
+     {
+      "p": "Le pides a la IA el informe de cierre y agrega «ahorro estimado de $1.2 millones» que tú no le diste. ¿Qué haces?",
+      "ops": [
+       "Lo dejo porque suena bien",
+       "Lo redondeo a $1 millón",
+       "Lo quito: solo van mis cifras verificadas"
+      ],
+      "correcta": 2,
+      "explica": "La instrucción era usar solo tus cifras; un dato inventado destruye la credibilidad del informe."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "De queja a lección",
+    "pares": [
+     [
+      "«Operaciones nunca mandó nada»",
+      "Definir fecha límite y responsable de insumos en el acta"
+     ],
+     [
+      "«El proveedor cambió de técnico tres veces»",
+      "Pedir en contrato continuidad del personal clave"
+     ],
+     [
+      "«Nadie probó con usuarios reales»",
+      "Incluir pruebas con usuarios en la EDT"
+     ],
+     [
+      "«Nos enteramos tarde del sobrecosto»",
+      "Revisar presupuesto cada semana con disponible real"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu recomendación",
+    "pregunta": "Escribe una lección aprendida de un proyecto pasado en formato «Pasó… causa… la próxima vez…», sin nombres de personas.",
+    "ayuda": "Pasó… La causa fue… La próxima vez…"
+   }
+  ],
+  "c-ia-proyectos-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso paralelo:</b> un hotel boutique en Oaxaca de 40 habitaciones cambiará su sistema de reservaciones antes de la temporada de la Guelaguetza. El dueño quiere que «todo esté listo en 6 semanas» y la IA propuso un plan que deja la capacitación de recepción para la última semana, junto con la migración de reservaciones ya confirmadas."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué riesgo es más severo en este plan?",
+      "ops": [
+       "Migrar reservaciones confirmadas en temporada alta sin pruebas ni personal capacitado",
+       "Que el logotipo del sistema no combine",
+       "Que la capacitación sea demasiado temprana"
+      ],
+      "correcta": 0,
+      "explica": "Perder o duplicar reservaciones en temporada alta tiene impacto altísimo."
+     },
+     {
+      "p": "¿Qué respuesta al riesgo propones primero?",
+      "ops": [
+       "Aceptar y esperar que salga bien",
+       "Mitigar: adelantar pruebas y capacitación, y migrar en un periodo de baja ocupación",
+       "Transferir el riesgo a los huéspedes"
+      ],
+      "correcta": 1,
+      "explica": "Reordenar el plan reduce probabilidad e impacto."
+     },
+     {
+      "p": "El dueño insiste en 6 semanas sin cambiar nada. ¿Qué haces como líder?",
+      "ops": [
+       "Acepto en silencio y reporto verde",
+       "Renuncio al proyecto",
+       "Documento el riesgo, propongo opciones y dejo que decida con información"
+      ],
+      "correcta": 2,
+      "explica": "El patrocinador decide, pero con los riesgos por escrito y alternativas claras."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Negociar la fecha",
+    "malTitulo": "Sin opciones",
+    "mal": "«No se puede en 6 semanas.»",
+    "bienTitulo": "Con opciones",
+    "bien": "«En 6 semanas es posible si migramos solo reservaciones nuevas y dejamos las ya confirmadas en el sistema anterior hasta agosto. Si quiere todo migrado, necesitamos 8 semanas.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus opciones",
+    "pregunta": "Piensa en una fecha imposible que te hayan pedido. Escribe dos opciones que podrías haber ofrecido (reducir alcance, agregar recursos o mover fecha).",
+    "ayuda": "Opción A: … Opción B: …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: agilidad, control y proveedores",
+   "r": "Scrum según la Guía Scrum 2020, control de cambios con valor ganado y selección y gestión de proveedores, con la IA como apoyo y tú como responsable.",
+   "lecciones": [
+    {
+     "t": "Proyectos ágiles con Scrum e IA",
+     "obj": "Aplicar los eventos, responsabilidades y artefactos de Scrum tal como los define la Guía Scrum 2020 y usar la IA para preparar el backlog sin romper el marco.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "No todos los proyectos se pueden planear completos desde el día uno. Cuando el producto se va descubriendo (una app, un servicio nuevo, un portal para clientes), conviene trabajar en ciclos cortos y ajustar. <b>Scrum</b> es el marco más usado para eso. Su referencia oficial es la <b>Guía Scrum</b>, cuya versión vigente es la de noviembre de 2020, escrita por Ken Schwaber y Jeff Sutherland; es breve y gratuita en scrumguides.org, e incluye traducción al español."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Scrum en una tabla (Guía Scrum 2020)",
+       "encabezados": [
+        "Elemento",
+        "Qué dice la guía"
+       ],
+       "filas": [
+        [
+         "Sprint",
+         "Evento de duración fija de <b>un mes o menos</b>; uno empieza inmediatamente después de que termina el anterior."
+        ],
+        [
+         "Sprint Planning",
+         "Inicia el Sprint; máximo <b>8 horas</b> para un Sprint de un mes (menos si el Sprint es más corto)."
+        ],
+        [
+         "Daily Scrum",
+         "<b>15 minutos</b>, todos los días hábiles del Sprint, para los Developers."
+        ],
+        [
+         "Sprint Review",
+         "Máximo <b>4 horas</b> para un Sprint de un mes; se revisa el resultado con los interesados."
+        ],
+        [
+         "Sprint Retrospective",
+         "Máximo <b>3 horas</b> para un Sprint de un mes; cierra el Sprint."
+        ],
+        [
+         "Responsabilidades",
+         "Product Owner (una persona, no un comité), Scrum Master y Developers. Equipo de 10 personas o menos, por lo general."
+        ],
+        [
+         "Artefactos y compromisos",
+         "Product Backlog → Objetivo del Producto; Sprint Backlog → Objetivo del Sprint; Incremento → Definición de Terminado."
+        ]
+       ],
+       "nota": "La guía de 2020 habla de «responsabilidades» (accountabilities), no de «roles», y de «Developers» en lugar de «equipo de desarrollo». Consulta el texto completo en scrumguides.org."
+      },
+      {
+       "tipo": "titulo",
+       "texto": "Dónde ayuda la IA (y dónde no)"
+      },
+      {
+       "tipo": "texto",
+       "texto": "La IA es muy útil para <b>redactar elementos del Product Backlog</b> (por ejemplo, en formato de historia de usuario), proponer criterios de aceptación, dividir elementos grandes y preparar la agenda de los eventos. No decide prioridades: el orden del Product Backlog es responsabilidad del Product Owner. Tampoco estima por el equipo: quienes hacen el trabajo, los Developers, son quienes dimensionan."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Refinar el Product Backlog",
+       "texto": "Soy Product Owner de [producto] para [tipo de usuario]. El Objetivo del Producto es: [objetivo]. Te pego ideas sueltas del backlog:\n[lista]\n\n1) Redacta cada idea como historia de usuario (Como [usuario] quiero [acción] para [beneficio]).\n2) Propón 3 a 5 criterios de aceptación verificables para cada una.\n3) Señala las historias demasiado grandes para un Sprint y propón cómo dividirlas.\n4) NO las ordenes ni las estimes: eso lo decidimos el Product Owner y los Developers.\nSi algo contradice la Guía Scrum 2020, avísame."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con Scrum",
+       "encabezados": [
+        "La IA dice…",
+        "Lo correcto según la Guía 2020"
+       ],
+       "filas": [
+        [
+         "«Sprints de 6 semanas para proyectos grandes»",
+         "Un Sprint dura un mes o menos."
+        ],
+        [
+         "«El Daily Scrum dura de 30 a 60 minutos»",
+         "Dura 15 minutos."
+        ],
+        [
+         "«El Scrum Master asigna las tareas del día»",
+         "Los Developers se organizan para lograr el Objetivo del Sprint."
+        ],
+        [
+         "«Un comité funge como Product Owner»",
+         "El Product Owner es una persona; puede representar a muchos interesados."
+        ],
+        [
+         "«Se extiende el Sprint si no se terminó»",
+         "El Sprint no se alarga; lo pendiente regresa al Product Backlog."
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Comprueba con la Guía 2020",
+       "preguntas": [
+        {
+         "p": "Una empresa de software en Guadalajara propone Sprints de 6 semanas. Según la guía…",
+         "ops": [
+          "No es Scrum: el Sprint dura un mes o menos",
+          "Es válido si el proyecto es grande",
+          "Solo es válido con permiso del Scrum Master"
+         ],
+         "correcta": 0,
+         "explica": "La guía fija el límite de un mes; Sprints más cortos generan más ciclos de aprendizaje."
+        },
+        {
+         "p": "¿Quién ordena el Product Backlog?",
+         "ops": [
+          "El Scrum Master",
+          "El Product Owner",
+          "Los Developers por votación"
+         ],
+         "correcta": 1,
+         "explica": "El Product Owner es responsable de ordenar el Product Backlog, aunque puede delegar el trabajo."
+        },
+        {
+         "p": "El Daily Scrum de tu equipo dura 45 minutos. ¿Qué pasa?",
+         "ops": [
+          "Está bien si todos hablan",
+          "Es normal en equipos grandes",
+          "Se excede: debe durar 15 minutos"
+         ],
+         "correcta": 2,
+         "explica": "Los temas largos se tratan después con las personas involucradas."
+        },
+        {
+         "p": "Al final del Sprint quedó una historia sin cumplir la Definición de Terminado. ¿Qué se hace?",
+         "ops": [
+          "Regresa al Product Backlog para reconsiderarla",
+          "Se alarga el Sprint dos días",
+          "Se entrega como terminada"
+         ],
+         "correcta": 0,
+         "explica": "Si no cumple la Definición de Terminado, no forma parte del Incremento."
+        }
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Cuántos Sprints faltan?",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Puntos Sprint 1",
+         21
+        ],
+        [
+         "Puntos Sprint 2",
+         18
+        ],
+        [
+         "Puntos Sprint 3",
+         24
+        ],
+        [
+         "Puntos Sprint 4",
+         19
+        ],
+        [
+         "Velocidad promedio",
+         ""
+        ],
+        [
+         "Puntos pendientes en backlog",
+         164
+        ],
+        [
+         "Sprints estimados",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B6",
+         "formula": "=PROMEDIO(B2:B5)",
+         "esperado": 20.5,
+         "requiere": "PROMEDIO(",
+         "texto": "<b>B6</b>: velocidad promedio de los 4 Sprints.",
+         "pista": "=PROMEDIO(B2:B5)"
+        },
+        {
+         "celda": "B8",
+         "formula": "=B7/B6",
+         "esperado": 8,
+         "texto": "<b>B8</b>: Sprints estimados = pendientes ÷ velocidad.",
+         "explica": "Es un pronóstico, no una promesa: cambia si cambia el backlog o el equipo. Los puntos de historia son una práctica común, no un requisito de la Guía Scrum."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "¿Scrum o plan tradicional?",
+       "pregunta": "Elige un proyecto tuyo y decide si conviene Scrum o un plan tradicional con ruta crítica. Justifica en 3 frases: ¿el alcance está claro desde el inicio?, ¿el cliente puede revisar avances cada pocas semanas?, ¿hay un equipo estable de 10 personas o menos?",
+       "ayuda": "Mi proyecto: … Me conviene… porque…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Sprint de un mes o menos; Daily de 15 minutos.",
+        "Product Owner ordena; Developers estiman y se organizan.",
+        "La IA redacta y divide historias; no prioriza ni estima por el equipo."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Control de cambios y valor ganado",
+     "obj": "Evaluar solicitudes de cambio con su impacto en alcance, tiempo y costo, y medir el desempeño del proyecto con valor ganado (CPI y SPI).",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Todo proyecto recibe cambios: «¿y si le agregamos…?». El problema no es el cambio, sino aceptarlo sin medir su impacto. Un <b>control de cambios</b> sencillo exige que cada solicitud se escriba, se evalúe (alcance, tiempo, costo, riesgo) y la apruebe quien tiene la A del proyecto. Así el alcance crece solo cuando alguien decidió pagar el precio."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Evaluar una solicitud de cambio",
+       "texto": "Tengo este proyecto: [objetivo, fecha fin, presupuesto, ruta crítica en 3 líneas]. Recibí esta solicitud de cambio: [descripción, quién la pide y por qué].\nAyúdame a evaluar: 1) qué entregables y tareas se afectan, 2) impacto en tiempo (¿toca la ruta crítica?), 3) impacto en costo con las tarifas que te doy: [tarifas], 4) riesgos nuevos, 5) tres opciones: aceptar completo, aceptar parcialmente o posponer a una fase 2. Marca [VERIFICAR] donde estés suponiendo."
+      },
+      {
+       "tipo": "titulo",
+       "texto": "Valor ganado en cuatro números"
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Indicadores básicos",
+       "encabezados": [
+        "Sigla",
+        "Nombre",
+        "Qué significa"
+       ],
+       "filas": [
+        [
+         "PV",
+         "Valor planeado",
+         "Cuánto trabajo, en pesos, debías llevar a esta fecha según el plan."
+        ],
+        [
+         "EV",
+         "Valor ganado",
+         "Cuánto trabajo, en pesos presupuestados, realmente terminaste."
+        ],
+        [
+         "AC",
+         "Costo real",
+         "Cuánto gastaste realmente para lograr ese trabajo."
+        ],
+        [
+         "CPI = EV ÷ AC",
+         "Índice de desempeño del costo",
+         "Menor que 1: cada peso gastado produce menos de lo planeado."
+        ],
+        [
+         "SPI = EV ÷ PV",
+         "Índice de desempeño del cronograma",
+         "Menor que 1: vas atrasado respecto al plan."
+        ]
+       ],
+       "nota": "Son las fórmulas estándar de la gestión del valor ganado. Tus cifras de avance deben venir de entregables verificados, no de percepciones."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Valor ganado de la obra",
+       "datos": [
+        [
+         "Indicador",
+         "Monto"
+        ],
+        [
+         "Presupuesto total (BAC)",
+         1200000
+        ],
+        [
+         "Valor planeado a la fecha (PV)",
+         500000
+        ],
+        [
+         "Valor ganado (EV)",
+         420000
+        ],
+        [
+         "Costo real (AC)",
+         460000
+        ],
+        [
+         "CPI",
+         ""
+        ],
+        [
+         "SPI",
+         ""
+        ],
+        [
+         "Variación de costo (EV − AC)",
+         ""
+        ],
+        [
+         "Estimación al término (BAC ÷ CPI)",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B6",
+         "formula": "=REDONDEAR(B4/B5,2)",
+         "esperado": 0.91,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B6</b>: CPI redondeado a 2 decimales.",
+         "pista": "=REDONDEAR(B4/B5,2)"
+        },
+        {
+         "celda": "B7",
+         "formula": "=REDONDEAR(B4/B3,2)",
+         "esperado": 0.84,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B7</b>: SPI redondeado a 2 decimales."
+        },
+        {
+         "celda": "B8",
+         "formula": "=B4-B5",
+         "esperado": -40000,
+         "texto": "<b>B8</b>: variación de costo."
+        },
+        {
+         "celda": "B9",
+         "formula": "=REDONDEAR(B2/(B4/B5),0)",
+         "esperado": 1314286,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B9</b>: estimación al término sin redondear el CPI intermedio (usa B4/B5 dentro de la fórmula).",
+         "explica": "Si el desempeño de costo sigue igual, el proyecto terminaría en cerca de $1.31 millones: unos $114 mil arriba del presupuesto. Es momento de actuar, no de esperar."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Interpreta",
+       "preguntas": [
+        {
+         "p": "CPI = 1.08 y SPI = 0.90. ¿Cómo va el proyecto?",
+         "ops": [
+          "Sobre presupuesto y adelantado",
+          "Bajo presupuesto pero atrasado",
+          "Perfecto en todo"
+         ],
+         "correcta": 1,
+         "explica": "CPI mayor que 1 = rinde el dinero; SPI menor que 1 = va atrás del plan."
+        },
+        {
+         "p": "La IA calculó el SPI como AC ÷ PV. ¿Qué haces?",
+         "ops": [
+          "Lo acepto; es parecido",
+          "Uso el que dé un número más bonito",
+          "Lo corrijo: SPI = EV ÷ PV"
+         ],
+         "correcta": 2,
+         "explica": "Confundir siglas es un error frecuente de la IA; revisa cada fórmula en tu hoja."
+        },
+        {
+         "p": "El director pide agregar un módulo de reportes a mitad del proyecto. ¿Qué haces primero?",
+         "ops": [
+          "Registro la solicitud y evalúo impacto en tiempo, costo y riesgo antes de aceptarla",
+          "Lo agrego y veo cómo sale",
+          "Lo rechazo sin analizar"
+         ],
+         "correcta": 0,
+         "explica": "El control de cambios no dice que no: pone precio a la decisión."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu cambio más caro",
+       "pregunta": "Recuerda un cambio que aceptaste sin evaluar. Escribe qué impacto real tuvo en tiempo y costo y qué habrías preguntado con la plantilla de evaluación.",
+       "ayuda": "El cambio fue… Costó… Habría preguntado…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Todo cambio se registra, se evalúa y lo decide la A.",
+        "CPI = EV ÷ AC; SPI = EV ÷ PV.",
+        "El avance se mide con entregables terminados, no con percepciones."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proveedores, interesados y escalamiento",
+     "obj": "Comparar propuestas de proveedores con una matriz ponderada, mapear a los interesados y escalar problemas a tiempo con apoyo de la IA.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Muchos proyectos dependen de terceros: un proveedor de software, una constructora, un despacho. Elegir bien y administrar la relación es parte del trabajo del líder. La IA ayuda a <b>armar criterios de evaluación</b>, comparar propuestas largas y preparar conversaciones difíciles, pero la decisión y la revisión del contrato siguen siendo tuyas y de tu área jurídica."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Comparar propuestas",
+       "texto": "Te pego el resumen de 3 propuestas de proveedores para [proyecto], sin datos confidenciales ni precios pactados en secreto: [resumen]. Hazme una tabla comparativa con: alcance incluido, lo que NO incluyen, plazo, garantía, soporte posterior, forma de pago y supuestos ocultos. Después propón 5 criterios de evaluación con pesos que sumen 100% y dime qué preguntas hacerle a cada proveedor antes de decidir. No elijas por mí."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Matriz ponderada de proveedores",
+       "datos": [
+        [
+         "Criterio",
+         "Peso",
+         "Proveedor A",
+         "Proveedor B"
+        ],
+        [
+         "Precio",
+         0.35,
+         8,
+         6
+        ],
+        [
+         "Experiencia comprobable",
+         0.25,
+         6,
+         9
+        ],
+        [
+         "Plazo",
+         0.2,
+         7,
+         8
+        ],
+        [
+         "Soporte posterior",
+         0.2,
+         5,
+         9
+        ],
+        [
+         "Puntaje ponderado",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Recomendado",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "C6",
+         "formula": "=B2*C2+B3*C3+B4*C4+B5*C5",
+         "esperado": 6.7,
+         "texto": "<b>C6</b>: puntaje ponderado de A (peso × calificación de cada criterio, sumados)."
+        },
+        {
+         "celda": "D6",
+         "formula": "=B2*D2+B3*D3+B4*D4+B5*D5",
+         "esperado": 7.75,
+         "texto": "<b>D6</b>: puntaje ponderado de B."
+        },
+        {
+         "celda": "C7",
+         "formula": "=SI(C6>D6,\"A\",\"B\")",
+         "esperado": "B",
+         "requiere": "SI(",
+         "texto": "<b>C7</b>: con SI, muestra la letra del proveedor con mayor puntaje.",
+         "explica": "B gana aunque es más caro: pesan su experiencia y su soporte. Si cambias los pesos, puede cambiar la decisión; por eso se acuerdan antes de ver precios."
+        }
+       ]
+      },
+      {
+       "tipo": "titulo",
+       "texto": "Mapa de interesados"
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Poder e interés",
+       "encabezados": [
+        "Cuadrante",
+        "Cómo gestionarlo"
+       ],
+       "filas": [
+        [
+         "Mucho poder, mucho interés",
+         "Gestionar de cerca: involucrar en decisiones clave."
+        ],
+        [
+         "Mucho poder, poco interés",
+         "Mantener satisfecho: información breve y a tiempo."
+        ],
+        [
+         "Poco poder, mucho interés",
+         "Mantener informado: avances frecuentes y escucha."
+        ],
+        [
+         "Poco poder, poco interés",
+         "Monitorear: comunicación general."
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Mapa y plan de comunicación",
+       "texto": "Para el proyecto [descripción], estos son los interesados por rol (sin nombres): [lista de roles y lo que sé de cada uno]. Clasifícalos en la matriz poder-interés, explica por qué, y arma un plan de comunicación: qué necesita saber cada uno, por qué canal, con qué frecuencia y quién del proyecto se encarga."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA con proveedores",
+       "encabezados": [
+        "Error",
+        "Qué haces tú"
+       ],
+       "filas": [
+        [
+         "Resume una propuesta y omite exclusiones importantes",
+         "Lees la sección de exclusiones del documento original."
+        ],
+        [
+         "Da por hecho que una garantía o penalización existe",
+         "La confirmas en el contrato con tu área jurídica."
+        ],
+        [
+         "Recomienda al proveedor más barato sin criterios",
+         "Usas la matriz ponderada acordada antes de ver precios."
+        ],
+        [
+         "Propone subir el contrato completo a una herramienta pública",
+         "Compartes solo resúmenes sin datos confidenciales."
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Una fábrica de autopartes en Silao elige proveedor de mantenimiento. ¿Cuándo se definen los pesos de la matriz?",
+         "ops": [
+          "Después de ver quién ofrece el precio más bajo",
+          "Los define la IA al final",
+          "Antes de abrir las propuestas"
+         ],
+         "correcta": 2,
+         "explica": "Definirlos antes evita acomodar la evaluación a un favorito."
+        },
+        {
+         "p": "El director de finanzas tiene mucho poder y poco interés en el día a día del proyecto. ¿Cómo lo gestionas?",
+         "ops": [
+          "Lo mantengo satisfecho con información breve y a tiempo",
+          "Lo invito a todas las juntas diarias",
+          "No le informo nada"
+         ],
+         "correcta": 0,
+         "explica": "Mucho poder, poco interés: resúmenes breves y decisiones puntuales."
+        },
+        {
+         "p": "El proveedor lleva 2 semanas sin responder un bloqueo de ruta crítica. ¿Qué haces?",
+         "ops": [
+          "Espero una semana más para no incomodar",
+          "Escalo por escrito a su gerente y aviso al patrocinador con el impacto en fechas",
+          "Lo resuelvo yo sin decirle a nadie"
+         ],
+         "correcta": 1,
+         "explica": "Escalar a tiempo, con hechos e impacto, es parte del trabajo del líder."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Correo de escalamiento",
+       "malTitulo": "Emocional",
+       "mal": "«Ya estamos hartos de que no respondan, esto es inaceptable.»",
+       "bienTitulo": "Con hechos e impacto",
+       "bien": "«Desde el 3 de marzo solicitamos las credenciales de producción (3 correos y 2 llamadas). Es una tarea de ruta crítica: cada día de atraso mueve la entrega final. Solicitamos respuesta antes del viernes o una llamada con su gerente de cuenta.»"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tus interesados",
+       "pregunta": "Haz el mapa poder-interés de un proyecto tuyo con al menos 5 roles y escribe qué harás distinto con el que tiene más poder.",
+       "ayuda": "Mucho poder y mucho interés: … Con … voy a…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Pesos de la matriz antes de ver propuestas.",
+        "Mapa poder-interés para decidir cómo comunicar.",
+        "Escala a tiempo con hechos, impacto y fecha."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Según la Guía Scrum 2020, un Sprint dura…",
+     "ops": [
+      "Exactamente 2 semanas",
+      "Un mes o menos",
+      "Lo que decida el cliente",
+      "Entre 1 y 3 meses"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "El Daily Scrum dura…",
+     "ops": [
+      "15 minutos",
+      "30 minutos",
+      "1 hora",
+      "Lo necesario"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "¿Quién es responsable de ordenar el Product Backlog?",
+     "ops": [
+      "El Scrum Master",
+      "El comité directivo",
+      "Los Developers",
+      "El Product Owner"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "CPI = 0.90 significa que…",
+     "ops": [
+      "Vas adelantado",
+      "Llevas 90% del proyecto",
+      "Por cada peso gastado obtienes 90 centavos de trabajo planeado",
+      "Ahorraste 10%"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "El SPI se calcula como…",
+     "ops": [
+      "AC ÷ PV",
+      "EV ÷ PV",
+      "EV ÷ AC",
+      "PV ÷ BAC"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Ante una solicitud de cambio, lo primero es…",
+     "ops": [
+      "Registrarla y evaluar su impacto",
+      "Aceptarla para quedar bien",
+      "Rechazarla siempre",
+      "Pedirle a la IA que decida"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Los pesos de una matriz de proveedores se definen…",
+     "ops": [
+      "Después de ver precios",
+      "Cuando el proveedor los sugiere",
+      "Al firmar el contrato",
+      "Antes de abrir las propuestas"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Un interesado con mucho poder y poco interés se…",
+     "ops": [
+      "Ignora",
+      "Invita a todas las juntas",
+      "Mantiene satisfecho con información breve",
+      "Sustituye"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real con errores plantados por la IA y la construcción de tu kit personal de gestión de proyectos.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día como líder de proyecto",
+     "obj": "Detectar errores de la IA en cronogramas, reportes, matrices y presupuestos antes de que lleguen al patrocinador.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres líder del proyecto de apertura de un centro de distribución en Toluca para una comercializadora de electrodomésticos. Patrocinador: el director de operaciones. Plazo: 5 meses. Presupuesto: $4.8 millones. Hoy usarás la IA en cuatro momentos del día. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes de que salga de tu escritorio."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 · 8:30 am — El cronograma.</b> Pediste a la IA actualizar el cronograma. Resultado: «Instalación de racks: del 14 al 25 de septiembre (10 días hábiles). Pruebas de montacargas: inician el 16 de septiembre. Ruta crítica: obra civil → racks → sistema de inventarios → arranque». Además, puso las pruebas de montacargas antes de que existan racks instalados."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué encontraste?",
+       "pregunta": "Anota los errores que ves en el cronograma (fechas, dependencias, calendario) y cómo le pedirías a la IA que lo corrija.",
+       "ayuda": "Error 1: el 16 de septiembre… Error 2: las pruebas dependen de… Instrucción corregida: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 · 11:00 am — El reporte semanal.</b> Tus notas: «Obra civil 5 días atrasada por lluvias; la constructora propone turno extra el sábado; costo del turno sin aprobar; permiso municipal de uso de suelo aún en trámite». La IA escribió: «🟢 Estado verde. La obra avanza conforme a lo planeado. No se requieren decisiones del patrocinador esta semana»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué encontraste?",
+       "pregunta": "Reescribe el estado del reporte con el color correcto, el riesgo principal con acción y dueño, y las decisiones que sí necesitas del patrocinador.",
+       "ayuda": "🟡 porque… Riesgo: permiso… Decisiones: aprobar el turno extra de…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 · 1:30 pm — La RACI y los datos.</b> Para armar la matriz RACI, un compañero pegó en una IA pública la plantilla de personal con nombres, CURP y sueldos. La IA devolvió una RACI donde el entregable «Arranque de operación» tiene la A en el director de operaciones y también en el gerente del centro, y el área de seguridad e higiene no aparece en ningún entregable."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué encontraste?",
+       "pregunta": "Enumera los problemas de esta escena (de datos y de la matriz) y escribe qué harías hoy mismo con cada uno.",
+       "ayuda": "Datos: … Matriz: … Hoy hago…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 · 5:00 pm — El resumen para dirección.</b> Tu hoja dice: valor planeado $2,000,000, valor ganado $1,700,000, costo real $1,900,000. La IA redactó: «CPI de 1.12 y SPI de 0.85: vamos por debajo del presupuesto y ligeramente atrasados. Según la normativa vigente de construcción, el retraso está dentro del margen permitido»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué encontraste?",
+       "pregunta": "Calcula tú el CPI y el SPI con los datos, compara con lo que dijo la IA y señala qué otra afirmación del resumen no debes enviar sin verificar.",
+       "ayuda": "CPI = 1,700,000 ÷ 1,900,000 = … SPI = … La frase sobre la normativa…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Escena 1: ¿cuál es el error de fechas más claro?",
+         "ops": [
+          "Que los racks tarden 10 días hábiles",
+          "Que la ruta crítica incluya obra civil",
+          "Que las pruebas inicien el 16 de septiembre, día de descanso obligatorio, y antes de tener racks"
+         ],
+         "correcta": 2,
+         "explica": "Dos errores en uno: calendario (festivo) y dependencia (no puedes probar montacargas en racks que no existen)."
+        },
+        {
+         "p": "Escena 2: ¿qué color corresponde?",
+         "ops": [
+          "Amarillo, con decisión pendiente sobre el turno extra y seguimiento al permiso",
+          "Verde",
+          "Sin color porque la lluvia no es culpa de nadie"
+         ],
+         "correcta": 0,
+         "explica": "Hay retraso en ruta crítica con plan de recuperación que requiere aprobación: amarillo, y el patrocinador sí debe decidir."
+        },
+        {
+         "p": "Escena 3: ¿qué es lo más urgente?",
+         "ops": [
+          "Ajustar los colores de la matriz",
+          "Atender la exposición de datos personales según la política de la empresa y rehacer la RACI con roles, sin datos",
+          "Agregar más letras I"
+         ],
+         "correcta": 1,
+         "explica": "Nombres, CURP y sueldos son datos personales; se reporta según la política interna y no se repite. Después se corrige la doble A y el hueco de seguridad."
+        },
+        {
+         "p": "Escena 4: ¿cuál es el CPI correcto?",
+         "ops": [
+          "1.12",
+          "0.85",
+          "0.89"
+         ],
+         "correcta": 2,
+         "explica": "1,700,000 ÷ 1,900,000 ≈ 0.89: vas sobre presupuesto, no por debajo. El SPI de 0.85 sí es correcto."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Revisa fechas, dependencias y festivos.",
+        "El semáforo lo decides tú con datos.",
+        "Recalcula CPI y SPI en tu hoja; verifica toda afirmación normativa."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit personal de gestión con IA",
+     "obj": "Construir tu biblioteca de prompts, tu política de datos, tu lista de verificación y un entregable real de tu proyecto.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Este es el cierre del curso. En lugar de un examen más, vas a construir algo que usarás el lunes: tu <b>kit personal de gestión de proyectos con IA</b>. Trabaja sobre un proyecto real (actual o próximo). Si no tienes uno, usa un proyecto de tu área que conozcas bien. Guarda todo en una carpeta o documento con el nombre del kit."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1 · Tu proyecto y tu biblioteca de prompts",
+       "pregunta": "Describe tu proyecto en una línea (objetivo SMART y fecha). Luego elige las 6 plantillas del curso que más usarás (acta, EDT, RACI, cronograma, riesgos, reporte, cambios, proveedores, Scrum…) y adapta cada una a tu proyecto con tus propias restricciones (calendario, tarifas, roles).",
+       "ayuda": "1. Acta: … 2. Reporte semanal: … 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2 · Tu política de datos",
+       "pregunta": "Escribe 5 reglas sobre qué SÍ y qué NO compartes con herramientas de IA en tus proyectos (datos personales, contratos, precios, información de clientes), y qué herramienta autorizada usa tu empresa.",
+       "ayuda": "Nunca comparto… Solo comparto… Si tengo duda… La herramienta autorizada es…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3 · Tu lista de verificación",
+       "pregunta": "Arma tu lista de 8 a 10 puntos que revisarás antes de enviar cualquier documento hecho con IA (fechas, cifras, semáforo, fórmulas de valor ganado, citas de normas, datos personales…).",
+       "ayuda": "Antes de enviar reviso: 1) … 2) … 3) …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4 · Tu entregable real",
+       "pregunta": "Produce con tu kit un entregable real de tu proyecto (acta, matriz de riesgos o reporte semanal), pásalo por tu lista de verificación y escribe qué corregiste respecto al borrador de la IA.",
+       "ayuda": "Entregable: … La IA propuso… Yo corregí… Tiempo que me tomó: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE GESTIÓN DE PROYECTOS CON IA — [tu nombre] — versión [fecha]\n\n1. Proyecto de referencia: [nombre y objetivo SMART]\n2. Biblioteca de prompts:\n   2.1 Acta · 2.2 EDT · 2.3 RACI · 2.4 Cronograma · 2.5 Riesgos · 2.6 Reporte semanal · 2.7 Cambios · 2.8 Proveedores · 2.9 [otro]\n3. Política de datos (5 reglas) y herramienta autorizada: [ ]\n4. Lista de verificación antes de enviar (8-10 puntos)\n5. Hojas de cálculo: presupuesto con comprometido, valor ganado, matriz ponderada\n6. Entregable real revisado: [nombre del archivo]\n7. Próxima revisión del kit: [fecha, en 3 meses]",
+       "nota": "Cópiala y adáptala. Revisa el kit cada trimestre: las herramientas cambian, tus criterios se afinan."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso completo!</b> La IA te ahorra horas de documentación y te ayuda a ver riesgos antes, pero la responsabilidad de cada fecha, cifra y decisión es tuya. Ese criterio es lo que hace a un buen líder de proyecto."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Un kit vivo: prompts adaptados, política de datos y lista de verificación.",
+        "Cada entregable pasa por tu revisión antes de salir.",
+        "La IA documenta y anticipa; tú decides y respondes."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA agenda una tarea crítica el 16 de septiembre. ¿Qué haces?",
+     "ops": [
+      "La dejo",
+      "La recorro porque es día de descanso obligatorio y reviso el impacto en la ruta crítica",
+      "La borro",
+      "La paso al fin de semana sin avisar"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Con EV = 1,700,000 y AC = 1,900,000, el CPI es aproximadamente…",
+     "ops": [
+      "0.89",
+      "1.12",
+      "0.85",
+      "1.00"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un compañero pegó nombres, CURP y sueldos en una IA pública. Lo correcto es…",
+     "ops": [
+      "Ignorarlo",
+      "Pedirle que también pegue direcciones",
+      "Borrar la conversación y no decir nada",
+      "Reportarlo según la política de la empresa y trabajar solo con roles"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una tarea de pruebas programada antes de que exista lo que se va a probar es un error de…",
+     "ops": [
+      "Presupuesto",
+      "Comunicación",
+      "Dependencias",
+      "Formato"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La IA dice «según la normativa vigente» sin citar cuál. Tú…",
+     "ops": [
+      "La citas igual",
+      "La verificas en fuente oficial o la quitas",
+      "La pones en negritas",
+      "La traduces"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Tu política de datos para IA debe incluir…",
+     "ops": [
+      "Qué sí y qué no compartes y qué herramienta está autorizada",
+      "Tus contraseñas",
+      "Solo el nombre de la IA",
+      "Nada, la IA ya protege todo"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Tu kit de proyectos se revisa…",
+     "ops": [
+      "Nunca",
+      "Solo si falla un proyecto",
+      "Cuando cambie el logo",
+      "Periódicamente, por ejemplo cada trimestre"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

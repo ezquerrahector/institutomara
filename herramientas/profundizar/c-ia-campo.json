@@ -1,0 +1,1452 @@
+{
+ "id": "c-ia-campo",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA en hortalizas y frutales de exportación, ganadería, crédito, seguro y apoyos al campo, detectando los errores típicos de cada situación y sabiendo qué confirman la etiqueta, el agrónomo y el veterinario.",
+  "Construir tu kit del campo con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu unidad de producción."
+ ],
+ "terceras": [
+  {
+   "p": "Registras «se aplicó fertilizante» sin cantidad ni lote.",
+   "op": "Sirve si al final del ciclo sumas las facturas"
+  },
+  {
+   "p": "La IA llenó en la bitácora una cantidad que tú no dictaste.",
+   "op": "La cambio por la dosis que venía en el costal"
+  },
+  {
+   "p": "La mejor forma de registrar en plena jornada es…",
+   "op": "Pedirle al comprador que lleve la cuenta"
+  },
+  {
+   "p": "Le pides a la IA qué producto aplicar contra una plaga.",
+   "op": "Sirve si luego lo compras en la tienda de siempre"
+  },
+  {
+   "p": "Tienes 40 litros de un producto en bodega y aplicaste 12 sin anotar.",
+   "op": "Compras 12 litros más para reponer sin contar"
+  },
+  {
+   "p": "Registrar las hectáreas tratadas sirve para…",
+   "op": "Cumplir con el comprador, nada más"
+  },
+  {
+   "p": "Trabajas tú y tu familia todo el ciclo y no se anota ningún jornal.",
+   "op": "El costo sale alto porque la familia gasta más"
+  },
+  {
+   "p": "Un insumo que pesa el 39% de tu costo…",
+   "op": "Se sustituye por el más barato sin consultar"
+  },
+  {
+   "p": "Le preguntas a la IA si va a llover el jueves en tu municipio.",
+   "op": "Le pregunto dos veces y me quedo con la respuesta repetida"
+  },
+  {
+   "p": "Pegarle el pronóstico a la IA sirve para…",
+   "op": "Que el pronóstico sea más exacto"
+  },
+  {
+   "p": "El plan de la semana que te devuelve la IA…",
+   "op": "Se manda a la cuadrilla sin revisar"
+  },
+  {
+   "p": "La IA te dice con seguridad qué enfermedad es y qué aplicar.",
+   "op": "Aplico la mitad de la dosis por si acaso"
+  },
+  {
+   "p": "Lo más útil que puedes mandarle a tu técnico es…",
+   "op": "El nombre del producto que sugirió la IA"
+  },
+  {
+   "p": "Anotar el porcentaje de plantas afectadas sirve para…",
+   "op": "Pedir un descuento al proveedor de semilla"
+  },
+  {
+   "p": "Una fuga o una bomba mal ajustada…",
+   "op": "Solo afecta si el agua es de pozo"
+  },
+  {
+   "p": "Para comparar dos lotes de distinto tamaño usas…",
+   "op": "El número de costales de semilla"
+  },
+  {
+   "p": "El lote que más regaste rindió más. Eso…",
+   "op": "Significa que hay que regar el doble en todos"
+  },
+  {
+   "p": "Un comprador ofrece $200 más por tonelada pero el flete corre por tu cuenta y cuesta $350 por tonelada.",
+   "op": "Da igual, se compensa con el volumen"
+  },
+  {
+   "p": "Le preguntas a la IA a cómo está el precio esta semana en tu región.",
+   "op": "Uso el precio del año pasado que me dé"
+  },
+  {
+   "p": "Un comprador paga más pero a 60 días y ya te quedó mal antes.",
+   "op": "Le vendes todo para que se comprometa"
+  },
+  {
+   "p": "No anotaste los jornales de tu familia. Eso hace que…",
+   "op": "El rendimiento por hectárea suba"
+  },
+  {
+   "p": "Un lote rindió mucho menos. Lo primero es…",
+   "op": "Dejar de sembrar ese lote"
+  },
+  {
+   "p": "Para comparar las dos ofertas de compra hay que…",
+   "op": "Elegir al comprador que pague más rápido, sin calcular"
+  },
+  {
+   "p": "El número que dice si el ciclo funcionó es…",
+   "op": "Las toneladas totales cosechadas"
+  }
+ ],
+ "extras": {
+  "c-ia-campo-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el encargado de una huerta de aguacate en Uruapan te manda notas de voz. En una dice: «Mañana toca el fungicida en la huerta 2, ya está el producto en la bodega». La bitácora que armó la IA registra: «Hoy: aplicación de fungicida en huerta 2». Al día siguiente llovió y la aplicación no se hizo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál fue el error de la IA?",
+      "ops": [
+       "Convertir una labor planeada en una labor realizada",
+       "Usar el nombre de la huerta",
+       "Anotar la fecha"
+      ],
+      "correcta": 0,
+      "explica": "Plan y hecho son registros distintos; mezclarlos arruina el historial de aplicaciones."
+     },
+     {
+      "p": "¿Por qué importa tanto en una aplicación?",
+      "ops": [
+       "No importa",
+       "Porque el historial de aplicaciones define intervalos antes de cosechar y lo revisan compradores y auditores",
+       "Solo por orden"
+      ],
+      "correcta": 1,
+      "explica": "Una aplicación registrada que no ocurrió, o al revés, puede llevar a cosechar en un momento equivocado."
+     },
+     {
+      "p": "¿Qué instrucción agregas al prompt?",
+      "ops": [
+       "«Resume todo en una línea»",
+       "«Completa lo que falte»",
+       "«Separa en dos listas: labores realizadas hoy y labores planeadas; si hay duda, pregúntame»"
+      ],
+      "correcta": 2,
+      "explica": "Separar plan y hecho, y pedir que pregunte en la duda, evita el error."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Bitácora fiel",
+    "items": [
+     {
+      "frase": "«Mañana toca» es una labor ___, no realizada.",
+      "resp": [
+       "planeada",
+       "programada",
+       "pendiente"
+      ]
+     },
+     {
+      "frase": "Si hay duda, la IA debe ___ antes de registrar.",
+      "resp": [
+       "preguntar",
+       "preguntarme"
+      ]
+     },
+     {
+      "frase": "Una aplicación se registra cuando ya se ___.",
+      "resp": [
+       "hizo",
+       "aplicó",
+       "aplico",
+       "realizó",
+       "realizo"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-campo-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de tomate en Sinaloa le preguntó a un asistente de IA la dosis de un insecticida. La IA contestó con una dosis por hectárea y «intervalo de seguridad de 3 días». Al revisar la etiqueta, el producto ni siquiera tiene al tomate entre sus cultivos autorizados."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué manda sobre dosis, cultivos e intervalo de seguridad?",
+      "ops": [
+       "La respuesta de la IA",
+       "La etiqueta autorizada del producto y la recomendación del agrónomo",
+       "Lo que usa el vecino"
+      ],
+      "correcta": 1,
+      "explica": "La etiqueta indica cultivos, dosis, intervalo antes de cosecha, reentrada y protección; el agrónomo la aplica a tu caso."
+     },
+     {
+      "p": "Si el cultivo no aparece en la etiqueta…",
+      "ops": [
+       "No se usa ese producto en ese cultivo; se consulta alternativa con el agrónomo",
+       "Se usa a media dosis",
+       "Se usa si la IA lo recomienda"
+      ],
+      "correcta": 0,
+      "explica": "Usarlo fuera de etiqueta puede dejar residuos no permitidos y hacer que rechacen la cosecha."
+     },
+     {
+      "p": "¿Para qué sí sirve la IA con agroquímicos?",
+      "ops": [
+       "Para recetar",
+       "Para calcular la dosis",
+       "Para armar tu registro de aplicaciones y la lista de preguntas para el agrónomo"
+      ],
+      "correcta": 2,
+      "explica": "Registrar y preguntar bien, sí; recetar, nunca."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pregunta a la IA sobre una plaga",
+    "malTitulo": "Peligrosa",
+    "mal": "«¿Qué dosis de este insecticida le pongo al tomate?»",
+    "bienTitulo": "Útil",
+    "bien": "«Ayúdame a preparar la consulta para mi agrónomo: cultivo, etapa, plaga observada, % de plantas afectadas, aplicaciones previas con fecha y días que faltan para cosechar.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lectura de etiqueta",
+    "pregunta": "Toma la etiqueta de un producto que uses y escribe dónde vienen: cultivos autorizados, dosis, intervalo de seguridad, reentrada y equipo de protección.",
+    "ayuda": "Producto: … / Cultivos: … / Intervalo: … / Reentrada: … / Equipo: …"
+   }
+  ],
+  "c-ia-campo-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de maíz de temporal en los Altos de Jalisco pidió a la IA completar su hoja de costos. La IA agregó una renta de tierra «promedio en Jalisco» que no sabe de dónde salió, y no incluyó los intereses del crédito de avío con el que compró la semilla y el fertilizante."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La renta «promedio en Jalisco»…",
+      "ops": [
+       "Se usa, es un promedio",
+       "Se sustituye por lo que pagas o lo que te pagarían por rentar tu tierra en tu zona",
+       "Se elimina del costo"
+      ],
+      "correcta": 1,
+      "explica": "La renta es de tu zona y tu tierra; si es propia, se usa lo que te pagarían por rentarla."
+     },
+     {
+      "p": "Los intereses del crédito de avío…",
+      "ops": [
+       "Se agregan como costo del ciclo con los datos de tu contrato",
+       "No son costo de producción",
+       "Los paga el gobierno"
+      ],
+      "correcta": 0,
+      "explica": "El dinero prestado cuesta; si no lo cuentas, el costo por hectárea sale bajo."
+     },
+     {
+      "p": "¿Qué le pides a la IA al completar costos?",
+      "ops": [
+       "Que ponga cifras promedio",
+       "Que calcule tu ganancia",
+       "Que te pregunte por cada tipo de costo sin inventar montos"
+      ],
+      "correcta": 2,
+      "explica": "La IA te ayuda a no olvidar; los números son tuyos."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Costos completos",
+    "items": [
+     {
+      "frase": "Si la tierra es propia, se usa lo que te pagarían por ___.",
+      "resp": [
+       "rentarla",
+       "renta"
+      ]
+     },
+     {
+      "frase": "Los intereses del crédito son un ___ del ciclo.",
+      "resp": [
+       "costo",
+       "gasto"
+      ]
+     },
+     {
+      "frase": "Los montos de la hoja de costos salen de tus ___.",
+      "resp": [
+       "registros",
+       "notas",
+       "facturas"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-campo-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de sorgo en Tamaulipas le pregunta a la IA: «¿Puedo aplicar herbicida mañana?». La IA contesta: «Sí, las condiciones son ideales». No le dio ningún pronóstico y el servicio meteorológico anuncia rachas de viento fuertes para mañana en su zona."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La respuesta «condiciones ideales»…",
+      "ops": [
+       "Es confiable",
+       "Es inventada: la IA no tenía el pronóstico",
+       "Es confiable si es de mañana"
+      ],
+      "correcta": 1,
+      "explica": "Sin datos pegados, la IA contesta lo que suena bien."
+     },
+     {
+      "p": "Con viento fuerte, una aplicación…",
+      "ops": [
+       "Se reprograma: el producto puede derivar a otros cultivos, casas o cuerpos de agua",
+       "Se hace temprano sin revisar",
+       "Se hace con más producto"
+      ],
+      "correcta": 0,
+      "explica": "La etiqueta y el técnico indican las condiciones de aplicación; con viento se pierde producto y se daña lo de al lado."
+     },
+     {
+      "p": "¿Cómo debió preguntar?",
+      "ops": [
+       "Igual, pero dos veces",
+       "Pidiendo a otra IA",
+       "Pegando el pronóstico oficial y las condiciones de la etiqueta, y pidiendo el mejor día de la semana"
+      ],
+      "correcta": 2,
+      "explica": "Con datos reales, la IA ayuda a acomodar; tú decides."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Dato y dónde lo consultas",
+    "pares": [
+     [
+      "Pronóstico de lluvia y viento",
+      "Servicio meteorológico oficial y estación cercana"
+     ],
+     [
+      "Condiciones para aplicar",
+      "Etiqueta del producto y técnico"
+     ],
+     [
+      "Estado del cultivo",
+      "Tu recorrido en campo"
+     ],
+     [
+      "Plan de la semana",
+      "La IA con los datos que tú le pegas"
+     ]
+    ]
+   }
+  ],
+  "c-ia-campo-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de chile en Zacatecas subió la foto de una hoja amarillenta a una aplicación con IA. La respuesta: «Es un virus; arranca las plantas afectadas y aplica este producto a todo el lote». El técnico de la zona no ha visitado la parcela."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con el «diagnóstico» de la aplicación?",
+      "ops": [
+       "Lo tomas como una posibilidad y armas el reporte para el técnico",
+       "Arrancas las plantas hoy",
+       "Aplicas el producto a todo el lote"
+      ],
+      "correcta": 0,
+      "explica": "Un amarillamiento puede tener muchas causas; la foto de una hoja no alcanza."
+     },
+     {
+      "p": "¿Qué información ayuda más al técnico?",
+      "ops": [
+       "Solo la foto",
+       "La respuesta de la aplicación",
+       "Fotos de planta completa y del lote, distribución, % afectado, fechas, riegos y aplicaciones previas"
+      ],
+      "correcta": 2,
+      "explica": "El patrón en el lote y la historia de manejo orientan el diagnóstico."
+     },
+     {
+      "p": "Mientras llega el técnico…",
+      "ops": [
+       "No haces nada",
+       "Marcas las plantas afectadas, registras el avance y evitas aplicar sin recomendación",
+       "Aplicas algo preventivo"
+      ],
+      "correcta": 1,
+      "explica": "Documentar el avance sirve para decidir; aplicar a ciegas puede empeorar el problema."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Mensaje al técnico",
+    "malTitulo": "Sin datos",
+    "mal": "«Ingeniero, la app dice que es virus, ¿qué le echo?»",
+    "bienTitulo": "Completo",
+    "bien": "«Ingeniero: chile, 45 días después del trasplante. Hojas nuevas amarillentas en manchones del lado norte, 10% de plantas. Riego ayer; última aplicación hace 12 días. Le mando fotos de plantas y del lote. ¿Cuándo puede venir?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu contacto técnico",
+    "pregunta": "Escribe a quién acudes cuando aparece un problema sanitario (técnico, agrónomo, junta local o comité de sanidad) y qué información le mandarás siempre.",
+    "ayuda": "Contacto: … / Le mando: fotos de…, fechas de…"
+   }
+  ],
+  "c-ia-campo-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de nogal en Chihuahua bombea con motor eléctrico. Pidió a la IA un programa de riego y le respondió «riega 2 horas diarias» sin preguntar el cultivo, el suelo, el gasto de la bomba ni la etapa. También le dijo cuánto cuesta el kilowatt-hora «en tarifa agrícola»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "«Riega 2 horas diarias»…",
+      "ops": [
+       "Es una buena regla",
+       "No se basa en nada de tu huerta: el programa se define con tu técnico y tus datos",
+       "Se usa en temporada de calor"
+      ],
+      "correcta": 1,
+      "explica": "La necesidad de agua depende del cultivo, la etapa, el suelo y el clima."
+     },
+     {
+      "p": "El costo del kilowatt-hora que dio la IA…",
+      "ops": [
+       "Se sustituye por el de tu recibo de luz",
+       "Se usa como referencia",
+       "Es el mismo para todos"
+      ],
+      "correcta": 0,
+      "explica": "Tu tarifa y tus cargos están en tu recibo."
+     },
+     {
+      "p": "¿Qué dato de tu bitácora de riego ayuda más a detectar fallas?",
+      "ops": [
+       "El nombre del regador",
+       "El color del agua",
+       "Horas de bombeo por lote comparadas semana contra semana"
+      ],
+      "correcta": 2,
+      "explica": "Si las horas suben sin razón, hay fuga, falla o cambio en el pozo."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Dato del riego y su fuente",
+    "pares": [
+     [
+      "Necesidad de agua del cultivo",
+      "Técnico con datos de tu huerta"
+     ],
+     [
+      "Costo de la energía",
+      "Tu recibo de luz"
+     ],
+     [
+      "Horas de bombeo",
+      "Tu bitácora de riego"
+     ],
+     [
+      "Consumo del motor",
+      "Medición en campo"
+     ]
+    ]
+   }
+  ],
+  "c-ia-campo-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de frijol en Zacatecas le pidió a la IA comparar su rendimiento con «el promedio del estado». La IA escribió: «El promedio estatal es de 1.8 t/ha; estás por encima». No citó fuente ni año, y el productor ya lo iba a poner en una solicitud de apoyo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "El «promedio estatal» de la IA…",
+      "ops": [
+       "Se usa porque suena lógico",
+       "Se redondea",
+       "No se usa hasta verificarlo en la estadística oficial, con año y tipo de cultivo (riego o temporal)"
+      ],
+      "correcta": 2,
+      "explica": "Las estadísticas agrícolas oficiales se publican por cultivo, ciclo, modalidad y año; un número sin fuente no se cita."
+     },
+     {
+      "p": "Para una solicitud de apoyo, tus rendimientos…",
+      "ops": [
+       "Salen de tus registros de cosecha y ventas",
+       "Se pueden estimar con la IA",
+       "Se ponen altos para calificar"
+      ],
+      "correcta": 0,
+      "explica": "Lo que declaras debe poder comprobarse con tus boletas, notas o facturas."
+     },
+     {
+      "p": "¿Qué sí puede hacer la IA con tus rendimientos?",
+      "ops": [
+       "Inventar un promedio de comparación",
+       "Ordenar tus datos por lote y ciclo y preparar la tabla para la solicitud",
+       "Subirlos a internet"
+      ],
+      "correcta": 1,
+      "explica": "Ordenar y presentar tus datos, sí; agregar cifras externas sin fuente, no."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Cifras con fuente",
+    "items": [
+     {
+      "frase": "Un promedio estatal se cita con fuente y ___.",
+      "resp": [
+       "año",
+       "fecha"
+      ]
+     },
+     {
+      "frase": "El rendimiento se compara con el mismo cultivo y la misma ___ (riego o temporal).",
+      "resp": [
+       "modalidad"
+      ]
+     },
+     {
+      "frase": "Lo que declaras se comprueba con boletas, notas o ___.",
+      "resp": [
+       "facturas",
+       "factura"
+      ]
+     }
+    ]
+   }
+  ],
+  "c-ia-campo-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un productor de limón en Colima cerró por WhatsApp la venta de 30 toneladas. Pidió a la IA un contrato sencillo de compraventa. El borrador trae precio y volumen, pero no dice la calidad o calibre aceptado, quién decide la merma o el rechazo, dónde se entrega ni la fecha de pago."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué falta que más pleitos causa?",
+      "ops": [
+       "El nombre del producto",
+       "La calidad aceptada y cómo se determinan merma y rechazo",
+       "El logotipo"
+      ],
+      "correcta": 1,
+      "explica": "La mayoría de los descuentos se discuten en la báscula; si no está escrito, gana el comprador."
+     },
+     {
+      "p": "La fecha de pago…",
+      "ops": [
+       "Se escribe con día concreto y forma de pago",
+       "Se deja en «a la brevedad»",
+       "No hace falta"
+      ],
+      "correcta": 0,
+      "explica": "Un plazo concreto es lo que puedes reclamar."
+     },
+     {
+      "p": "¿Quién revisa el borrador antes de firmar?",
+      "ops": [
+       "Nadie, es sencillo",
+       "Solo el comprador",
+       "Tú, y si el monto es importante, un abogado o tu organización de productores"
+      ],
+      "correcta": 2,
+      "explica": "La IA redacta; tú decides y, si hay mucho en juego, alguien con experiencia legal lo revisa."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cláusula de calidad",
+    "malTitulo": "Abierta",
+    "mal": "«El producto deberá ser de buena calidad.»",
+    "bienTitulo": "Medible",
+    "bien": "«Se acepta limón [calibre y características acordadas]. La merma y el rechazo se determinan en presencia de ambas partes en el punto de entrega, con registro fotográfico. El pago se hace por transferencia a más tardar el [fecha].»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus condiciones de venta",
+    "pregunta": "Escribe las cinco condiciones que siempre pondrás por escrito al vender tu cosecha.",
+    "ayuda": "1. Calidad… 2. Merma y rechazo… 3. Entrega… 4. Pago… 5. …"
+   }
+  ],
+  "c-ia-campo-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso continúa:</b> para el siguiente ciclo quieres pedir un crédito. Le pides a la IA que redacte la descripción de tu unidad de producción y escribe: «rendimientos promedio de 7.5 t/ha en todos los lotes, sin incidencias sanitarias y con mercado asegurado». Tus registros dicen otra cosa."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Los rendimientos de 7.5 t/ha en todos los lotes…",
+      "ops": [
+       "Se dejan para calificar",
+       "Se cambian por tus rendimientos reales por lote, con su soporte",
+       "Se quitan todos los números"
+      ],
+      "correcta": 1,
+      "explica": "Declarar datos falsos en una solicitud de crédito te expone a rechazo y a problemas más serios."
+     },
+     {
+      "p": "«Mercado asegurado»…",
+      "ops": [
+       "Solo se escribe si tienes un contrato o acuerdo que lo respalde",
+       "Siempre se pone",
+       "Se cambia por «mercado garantizado»"
+      ],
+      "correcta": 0,
+      "explica": "Una afirmación así se respalda con documentos."
+     },
+     {
+      "p": "¿Qué le pides a la IA en su lugar?",
+      "ops": [
+       "Que exagere un poco",
+       "Que busque los requisitos del crédito",
+       "Que redacte solo con los datos que le das y marque [SOPORTE] donde se necesite documento"
+      ],
+      "correcta": 2,
+      "explica": "Así la solicitud es honesta y sabes qué documentos juntar."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Solicitud honesta",
+    "items": [
+     {
+      "frase": "Cada cifra de la solicitud lleva su ___.",
+      "resp": [
+       "soporte",
+       "documento",
+       "comprobante"
+      ]
+     },
+     {
+      "frase": "Los requisitos del crédito se consultan con la ___.",
+      "resp": [
+       "institución",
+       "institucion",
+       "financiera"
+      ]
+     },
+     {
+      "frase": "La IA redacta solo con los datos que tú le ___.",
+      "resp": [
+       "das",
+       "pegas",
+       "doy"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu carpeta de soporte",
+    "pregunta": "Escribe qué documentos tienes hoy para comprobar tus rendimientos, costos y ventas del último ciclo, y cuáles te faltan.",
+    "ayuda": "Tengo: … / Me faltan: …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: exportación, ganadería y financiamiento",
+   "r": "Cómo usar la IA en hortalizas y frutales para exportación, en ganadería y en crédito, seguro y apoyos, reconociendo los errores típicos de cada situación y quién confirma cada dato.",
+   "lecciones": [
+    {
+     "t": "Hortalizas y frutales para exportación",
+     "obj": "Usar la IA para llevar registros de trazabilidad y preparar auditorías sin tomar de ella límites de residuos, productos autorizados ni requisitos de certificación.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Vender a exportación o a cadenas grandes exige registros impecables: qué se aplicó, cuándo, en qué lote, quién cosechó, de qué lote salió cada caja. Los compradores revisan que se respeten los <b>intervalos de seguridad</b> de la etiqueta y los <b>límites máximos de residuos</b> del país de destino, y muchas veces piden una certificación de inocuidad. La IA ayuda mucho a ordenar registros y preparar auditorías, pero <b>inventa con seguridad</b> límites de residuos, productos autorizados y requisitos de certificación. Esos datos salen de la etiqueta, del comprador, del organismo certificador y de las autoridades sanitarias, y los interpreta tu agrónomo."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en exportación",
+       "encabezados": [
+        "Error",
+        "Control"
+       ],
+       "filas": [
+        [
+         "Afirmar límites de residuos de un país",
+         "Fuente oficial del país destino y el comprador"
+        ],
+        [
+         "Decir que un producto está autorizado para un cultivo",
+         "Etiqueta autorizada y agrónomo"
+        ],
+        [
+         "Listar requisitos de una certificación",
+         "Documentos vigentes del organismo certificador"
+        ],
+        [
+         "Calcular fechas de cosecha sin el intervalo de la etiqueta",
+         "Registro de aplicaciones y etiqueta de cada producto"
+        ]
+       ]
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Ya se puede cosechar ese lote?",
+       "instruccion": "Días de práctica. El intervalo real viene en la etiqueta de cada producto y lo confirma tu agrónomo.",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Día del ciclo de la última aplicación",
+         58
+        ],
+        [
+         "Día del ciclo planeado para cosechar",
+         63
+        ],
+        [
+         "Días entre aplicación y cosecha",
+         ""
+        ],
+        [
+         "Intervalo de seguridad de la etiqueta (días)",
+         7
+        ],
+        [
+         "¿Se puede cosechar ese día?",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B4",
+         "formula": "=B3-B2",
+         "esperado": 5,
+         "texto": "<b>B4</b>: días entre la última aplicación y la cosecha planeada."
+        },
+        {
+         "celda": "B6",
+         "formula": "=SI(B4>=B5,\"SI\",\"NO\")",
+         "esperado": "NO",
+         "requiere": "SI(",
+         "texto": "<b>B6</b>: escribe una fórmula con SI que diga «SI» cuando los días alcancen el intervalo y «NO» cuando no.",
+         "pista": "=SI(B4>=B5,…,…)",
+         "explica": "Faltan dos días: cosechar el día 63 rompería el intervalo de la etiqueta. Con tu registro de aplicaciones, este cálculo se hace por lote y por producto antes de programar la cosecha."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te da el límite de residuos de un producto para exportar a otro país. Tú…",
+         "ops": [
+          "Lo confirmas con la fuente oficial del país destino, el comprador y tu agrónomo",
+          "Lo usas",
+          "Lo usas con un margen"
+         ],
+         "correcta": 0,
+         "explica": "Los límites cambian por país, producto y cultivo, y se actualizan."
+        },
+        {
+         "p": "Un auditor pide el historial de aplicaciones de un lote. Te sirve…",
+         "ops": [
+          "Tu memoria",
+          "Tu registro de aplicaciones con fecha, producto, dosis, lote y responsable",
+          "Un resumen que redacte la IA sin tus registros"
+         ],
+         "correcta": 1,
+         "explica": "La trazabilidad se demuestra con registros hechos en el momento."
+        },
+        {
+         "p": "¿Cómo te ayuda la IA a preparar una auditoría?",
+         "ops": [
+          "Inventando registros faltantes",
+          "Diciéndote que ya cumples",
+          "Revisando tus registros contra la lista del certificador para encontrar huecos"
+         ],
+         "correcta": 2,
+         "explica": "Encontrar huecos antes de la auditoría, sí; rellenarlos con datos inventados, jamás."
+        }
+       ]
+      },
+      {
+       "tipo": "relacionar",
+       "rotulo": "Dato y quién lo confirma",
+       "pares": [
+        [
+         "Cultivos y dosis autorizados",
+         "Etiqueta y agrónomo"
+        ],
+        [
+         "Límites de residuos del destino",
+         "Fuente oficial del país y comprador"
+        ],
+        [
+         "Requisitos de certificación",
+         "Organismo certificador"
+        ],
+        [
+         "Historial de aplicaciones",
+         "Tus registros de campo"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Registro de trazabilidad por lote",
+       "texto": "Diséñame un registro de trazabilidad para [cultivo] en [número] lotes, llenable desde el celular: por lote, aplicaciones (fecha, producto como viene en etiqueta, dosis, responsable, intervalo de seguridad según etiqueta, fecha más próxima permitida para cosechar), cosechas (fecha, cuadrilla, cajas o kilos, destino) y una columna de verificación. Agrega una hoja que revise que ninguna cosecha quede antes de la fecha permitida. No propongas productos, dosis ni intervalos: déjalos en blanco para llenarlos con la etiqueta.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Intervalos y dosis: de la etiqueta y el agrónomo.",
+        "Límites de residuos y certificación: de las fuentes oficiales y el comprador.",
+        "La IA ordena y revisa huecos; nunca rellena registros."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Ganadería: registros de hato y pesajes",
+     "obj": "Llevar registros de hato y calcular la ganancia de peso con apoyo de la IA, dejando sanidad y medicamentos al médico veterinario.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En ganadería también se decide con números: cuántos animales tienes, cuánto pesan, cuánto ganan por día, cuánto te cuesta alimentarlos. La IA te ayuda a pasar tus notas de pesaje a una tabla, a calcular la <b>ganancia diaria de peso</b> y a preparar tus registros de identificación y movilización. Lo que <b>no</b> hace es diagnosticar ni recetar: vacunas, desparasitantes, antibióticos, dosis y tiempos de retiro antes de vender leche o carne los define el médico veterinario con la etiqueta del producto. Un animal enfermo se atiende con el veterinario, no con un chat."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Ganancia diaria de peso",
+       "instruccion": "Pesos de práctica. Usa los de tu báscula.",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Peso al inicio (kg)",
+         280
+        ],
+        [
+         "Peso al final (kg)",
+         352
+        ],
+        [
+         "Días entre pesajes",
+         60
+        ],
+        [
+         "Kilos ganados",
+         ""
+        ],
+        [
+         "Ganancia diaria (kg/día)",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=B3-B2",
+         "esperado": 72,
+         "texto": "<b>B5</b>: kilos ganados = peso final − peso inicial."
+        },
+        {
+         "celda": "B6",
+         "formula": "=B5/B4",
+         "esperado": 1.2,
+         "texto": "<b>B6</b>: ganancia diaria = kilos ganados ÷ días.",
+         "explica": "1.2 kg por día. Si comparas este dato entre lotes o entre dietas, sabes qué manejo rinde más; si un animal gana mucho menos que el resto, es señal para que lo revise el veterinario."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Un becerro está decaído y la IA sugiere un antibiótico y una dosis. Tú…",
+         "ops": [
+          "Lo aplicas",
+          "Llamas al veterinario; la IA no receta",
+          "Aplicas media dosis"
+         ],
+         "correcta": 1,
+         "explica": "Un medicamento mal elegido o mal dosificado pone en riesgo al animal y deja residuos en leche o carne."
+        },
+        {
+         "p": "Los tiempos de retiro antes de vender leche o carne salen de…",
+         "ops": [
+          "La etiqueta del medicamento y el veterinario",
+          "La IA",
+          "La costumbre del rancho"
+         ],
+         "correcta": 0,
+         "explica": "Cada producto indica su tiempo de retiro; vender antes puede causar rechazo y riesgos a la salud."
+        },
+        {
+         "p": "¿Para qué te sirve la IA en tus registros de hato?",
+         "ops": [
+          "Para diagnosticar",
+          "Para decidir qué vender",
+          "Para ordenar pesajes, identificación, partos y tratamientos que indicó el veterinario"
+         ],
+         "correcta": 2,
+         "explica": "Registrar bien es donde la IA ahorra más tiempo."
+        }
+       ]
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Pedir ayuda sobre un animal enfermo",
+       "malTitulo": "Peligroso",
+       "mal": "«Mi vaca tiene fiebre y no come, ¿qué le inyecto?»",
+       "bienTitulo": "Útil",
+       "bien": "«Ayúdame a ordenar lo que le voy a decir al veterinario: animal, arete, edad, síntomas, desde cuándo, qué come, tratamientos previos con fecha.»"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Registro de hato",
+       "texto": "Diséñame un registro de hato para [número] cabezas de [tipo: engorda, cría, leche], llenable desde el celular: identificación (arete oficial y número interno), sexo, fecha de nacimiento o ingreso, pesajes con fecha, ganancia diaria calculada, partos, tratamientos indicados por el veterinario (fecha, producto, quién lo indicó, fin del tiempo de retiro) y movilizaciones. Agrega un resumen por lote. No propongas medicamentos, dosis ni calendarios de vacunación: déjalos en blanco para que los indique el veterinario.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Ganancia diaria = kilos ganados ÷ días.",
+        "Diagnóstico, medicamentos y retiros: del veterinario y la etiqueta.",
+        "La IA ordena registros; no receta."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Crédito, seguro y apoyos",
+     "obj": "Preparar solicitudes de crédito, seguro o apoyos con ayuda de la IA, verificando requisitos y cifras en la institución y calculando el costo real del dinero.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "El crédito de avío, el seguro agrícola o ganadero y los programas de apoyo pueden salvar un ciclo, pero cada institución tiene sus requisitos, fechas y condiciones, y <b>los programas públicos cambian de un año a otro</b>. La IA suele dar requisitos, montos y fechas de ventanilla que ya no existen o que nunca existieron. Úsala para ordenar tu carpeta, redactar la descripción de tu unidad con tus datos reales y calcular el costo del crédito con las condiciones que te den por escrito; los requisitos y las cifras oficiales los confirmas directamente con la institución, la financiera o la aseguradora."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Lo que te cuesta el crédito de avío",
+       "instruccion": "Condiciones de práctica. Usa la tasa y el plazo de tu contrato; pregunta además por comisiones y seguros.",
+       "datos": [
+        [
+         "Dato",
+         "Valor"
+        ],
+        [
+         "Monto del crédito ($)",
+         200000
+        ],
+        [
+         "Tasa de interés anual",
+         0.14
+        ],
+        [
+         "Meses del crédito",
+         6
+        ],
+        [
+         "Intereses del ciclo",
+         ""
+        ],
+        [
+         "Hectáreas financiadas",
+         10
+        ],
+        [
+         "Costo del crédito por hectárea",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=B2*B3*B4/12",
+         "esperado": 14000,
+         "texto": "<b>B5</b>: intereses = monto × tasa anual × meses ÷ 12."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B5/B6",
+         "esperado": 1400,
+         "texto": "<b>B7</b>: costo del crédito por hectárea.",
+         "explica": "$1,400 por hectárea que van a tu hoja de costos. Es un cálculo simple de interés; tu contrato puede tener comisiones, seguros o una forma de cálculo distinta: pide el costo total por escrito."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te lista los requisitos de un programa de apoyo de este año. Tú…",
+         "ops": [
+          "Los das por buenos",
+          "Los confirmas en la convocatoria oficial vigente o en la ventanilla",
+          "Los usas si coinciden con los del año pasado"
+         ],
+         "correcta": 1,
+         "explica": "Las reglas de los programas cambian cada año."
+        },
+        {
+         "p": "Para comparar dos créditos, usas…",
+         "ops": [
+          "El costo total por escrito de cada uno: tasa, comisiones, seguros y plazo",
+          "La tasa que recuerda la IA",
+          "El que te den más rápido"
+         ],
+         "correcta": 0,
+         "explica": "Una tasa baja con comisiones altas puede salir más cara."
+        },
+        {
+         "p": "¿Qué te conviene pedirle a la IA para tu solicitud?",
+         "ops": [
+          "Que calcule si te aprueban",
+          "Que mejore tus números",
+          "Que ordene tu carpeta y marque qué documento soporta cada dato"
+         ],
+         "correcta": 2,
+         "explica": "Una carpeta completa y honesta acelera el trámite."
+        }
+       ]
+      },
+      {
+       "tipo": "completar",
+       "rotulo": "Dinero con papeles",
+       "items": [
+        {
+         "frase": "Intereses = monto × tasa anual × meses ÷ ___.",
+         "resp": [
+          "12",
+          "doce"
+         ]
+        },
+        {
+         "frase": "Los requisitos de un programa se confirman en la ___ vigente.",
+         "resp": [
+          "convocatoria",
+          "ventanilla"
+         ]
+        },
+        {
+         "frase": "El costo del crédito se agrega a tu hoja de ___.",
+         "resp": [
+          "costos",
+          "costo"
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu financiamiento",
+       "pregunta": "Escribe con quién financias o aseguras tu producción, qué condiciones tienes por escrito y qué dato te falta preguntar.",
+       "ayuda": "Institución: … / Tengo por escrito: … / Me falta preguntar: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Carpeta de solicitud",
+       "texto": "Voy a solicitar [crédito de avío / seguro / apoyo] para [cultivo o ganado] en [superficie o cabezas] en [municipio]. Arma una lista de verificación de mi carpeta con: documentos de identidad y de la tierra o el hato que suelen pedir, registros de producción y ventas de ciclos anteriores, costos del ciclo, y preguntas que debo hacer a la institución. Para cada punto indica [CONFIRMAR CON LA INSTITUCIÓN]. Redacta además una descripción de mi unidad solo con estos datos reales: [pega tus datos]. No inventes requisitos, montos, tasas ni fechas.",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Requisitos y fechas: en la convocatoria vigente o la institución.",
+        "Intereses = monto × tasa × meses ÷ 12, más comisiones por escrito.",
+        "Solicitud con datos reales y soporte."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "El intervalo de seguridad antes de cosechar se toma de…",
+     "ops": [
+      "La IA",
+      "La etiqueta del producto y el agrónomo",
+      "El comprador",
+      "La costumbre"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Si faltan días para cumplir el intervalo de la etiqueta…",
+     "ops": [
+      "Se cosecha igual",
+      "Se lava el producto",
+      "Se reprograma la cosecha de ese lote",
+      "Se vende a otro comprador"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Los límites de residuos del país destino se confirman con…",
+     "ops": [
+      "La fuente oficial de ese país y el comprador",
+      "La IA",
+      "Un foro",
+      "El vecino"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Ganancia diaria de peso =",
+     "ops": [
+      "Peso final × días",
+      "Días ÷ kilos ganados",
+      "Peso inicial ÷ días",
+      "Kilos ganados ÷ días"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Un animal enfermo se atiende con…",
+     "ops": [
+      "Lo que sugiera la IA",
+      "El médico veterinario",
+      "El producto más barato",
+      "Media dosis de antibiótico"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Los requisitos de un programa de apoyo se confirman en…",
+     "ops": [
+      "La convocatoria vigente o la ventanilla",
+      "La IA",
+      "La lista del año pasado",
+      "Redes sociales"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Intereses de un crédito simple =",
+     "ops": [
+      "Monto ÷ tasa",
+      "Monto + tasa × meses",
+      "Monto × tasa anual × meses ÷ 12",
+      "Tasa × meses"
+     ],
+     "correcta": 2
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real en el campo con errores plantados para detectar, y la construcción de tu kit personal del campo con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día en la unidad de producción",
+     "obj": "Detectar errores de la IA en el trabajo diario del campo antes de que cuesten una cosecha, una venta o un rechazo.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Administras una unidad de 20 hectáreas de hortalizas en el Bajío. Durante el día usas un asistente de IA en cada tarea y en cada escena hay por lo menos un error plantado. Encuéntralo, di qué harías y escribe tu respuesta antes de pasar a la siguiente."
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 1 — 6:30 a.m.</b> Dictaste tus notas de ayer. En la bitácora que armó la IA dice: «Lote 3: aplicación de fungicida, 2 L/ha». Tu nota decía «el lote 3 lo aplicamos el jueves, ya está el producto», y nunca dijiste la dosis."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1",
+       "pregunta": "Escribe qué corriges en la bitácora y qué instrucción agregas al prompt.",
+       "ayuda": "Corrijo… / Agrego: «…»"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 2 — 9:00 a.m.</b> Aparecieron manchas en las hojas del lote 1. Le preguntaste a la IA y te respondió el nombre de una enfermedad, una mezcla de dos productos con dosis y «puedes cosechar en 3 días»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2",
+       "pregunta": "Enumera lo que no debes tomar de esa respuesta y escribe qué harás en su lugar y a quién llamas.",
+       "ayuda": "No tomo: … / En su lugar: reporte con… / Llamo a…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 3 — 1:00 p.m.</b> Planeas la cosecha y la venta. Sin pegarle datos, le preguntaste a la IA si lloverá esta semana y a cómo está el producto. Contestó: «No se esperan lluvias; el precio en tu región está en $6,200 por tonelada»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3",
+       "pregunta": "Escribe de dónde sacarás el pronóstico y el precio, y cómo usarás después a la IA con esos datos.",
+       "ayuda": "Pronóstico de… / Precio con… / Luego le pego a la IA…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 4 — 6:00 p.m.</b> Preparas una solicitud de crédito. Subiste a un asistente público fotos de tu INE, tu CURP, el título de la parcela y tu estado de cuenta. El borrador dice «rendimiento promedio de 45 t/ha» aunque tus boletas del último ciclo dan 32."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4",
+       "pregunta": "Identifica los dos problemas (de datos personales y de contenido) y escribe qué harás distinto desde mañana.",
+       "ayuda": "Datos: … / Contenido: … / Desde mañana…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "En la escena 2, ¿qué parte es más peligrosa?",
+         "ops": [
+          "El nombre de la enfermedad",
+          "La mezcla con dosis y el «puedes cosechar en 3 días»",
+          "Que mencionó el lote"
+         ],
+         "correcta": 1,
+         "explica": "Dosis, mezclas e intervalos vienen de la etiqueta y el agrónomo; seguir a la IA puede dañar el cultivo o causar rechazo por residuos."
+        },
+        {
+         "p": "En la escena 4, ¿qué no debió subirse a un asistente público?",
+         "ops": [
+          "INE, CURP, título de la parcela y estado de cuenta",
+          "El nombre del cultivo",
+          "El número de hectáreas"
+         ],
+         "correcta": 0,
+         "explica": "Documentos de identidad, propiedad y bancarios no van a herramientas públicas."
+        },
+        {
+         "p": "En la escena 1, la dosis «2 L/ha»…",
+         "ops": [
+          "Se deja porque es la común",
+          "Se cambia por la de la etiqueta",
+          "Se borra: la aplicación aún no ocurre y la dosis no la dictaste"
+         ],
+         "correcta": 2,
+         "explica": "La IA registró como hecha una labor planeada y además inventó la dosis."
+        },
+        {
+         "p": "¿Qué tienen en común los cuatro errores?",
+         "ops": [
+          "La IA completó o supuso datos que nadie verificó",
+          "Se usó un celular viejo",
+          "Faltó rapidez"
+         ],
+         "correcta": 0,
+         "explica": "La defensa siempre es la misma: tus registros, la etiqueta, el técnico y las fuentes oficiales."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Bitácora: separa lo planeado de lo realizado.",
+        "Dosis, mezclas e intervalos: etiqueta y agrónomo, nunca la IA.",
+        "Documentos personales y bancarios, jamás en herramientas públicas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit del campo con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real de tu unidad de producción.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Terminas armando tu propio kit con tu parcela, tu huerta o tu rancho. La idea es que el próximo ciclo lo uses desde el primer día y que cualquiera de tu equipo pueda seguirlo."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "1. Tu biblioteca de prompts",
+       "pregunta": "Elige los cinco prompts del curso que más usarás (bitácora, aplicaciones, costos, plan con pronóstico, reporte al técnico, riego, rendimiento, ofertas, trazabilidad, hato, carpeta de crédito) y adáptalos. Escribe el título de cada uno y la instrucción anti-inventos que agregaste.",
+       "ayuda": "1. Bitácora desde nota de voz — agregué: «…» 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "2. Tu política de datos",
+       "pregunta": "Escribe en cinco reglas qué información nunca subes a herramientas públicas (identificaciones, títulos, cuentas, datos de trabajadores y compradores) y cómo la sustituyes.",
+       "ayuda": "1. INE y CURP → nunca. 2. Nombres de compradores → [COMPRADOR A]. 3. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "3. Tu lista de verificación",
+       "pregunta": "Escribe la lista que aplicarás a todo lo que produzca la IA antes de usarlo: cantidades y dosis, fechas, clima, precios, cifras oficiales y promesas en documentos.",
+       "ayuda": "☐ Dosis e intervalos contra etiqueta ☐ Pronóstico de fuente oficial ☐ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "4. Tu entregable real",
+       "pregunta": "Produce con IA un entregable real (bitácora de la semana, hoja de costos, comparación de ofertas, registro de hato o carpeta de crédito), revísalo con tu lista y escribe qué corregiste y cuánto tiempo te ahorró.",
+       "ayuda": "Entregable: … / Corregí: 1) … 2) … / Tiempo ahorrado: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DEL CAMPO CON IA — [nombre de la unidad de producción]\n1. Biblioteca de prompts: [bitácora] [aplicaciones] [costos] [plan con pronóstico] [reporte al técnico] [riego] [rendimiento] [ofertas] [trazabilidad] [hato] [carpeta de crédito]\n2. Política de datos: [qué nunca se sube] [cómo se anonimiza] [quién revisa]\n3. Lista de verificación: [dosis e intervalos según etiqueta] [pronóstico oficial] [precios de compradores] [cifras con fuente] [solicitudes con soporte]\n4. Límites: [recetas y diagnósticos → agrónomo o técnico] [animales → veterinario] [requisitos → institución]\n5. Entregable de muestra: [archivo] [fecha] [qué se corrigió]\nÚltima actualización: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit se usa desde el primer día del ciclo.",
+        "La etiqueta, el técnico y las fuentes oficiales mandan sobre la IA.",
+        "Las decisiones y la responsabilidad son del productor."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA registra como hecha una aplicación que solo estaba planeada…",
+     "ops": [
+      "Se deja",
+      "Se corrige y se separa lo planeado de lo realizado",
+      "Se borra todo el día",
+      "Se registra con otra fecha"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una mezcla de productos con dosis sugerida por la IA…",
+     "ops": [
+      "Se aplica",
+      "Se aplica a media dosis",
+      "Se prueba en un lote",
+      "No se usa: la recomendación es del agrónomo con la etiqueta"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "El pronóstico y el precio de la semana los obtienes de…",
+     "ops": [
+      "La fuente oficial y tus compradores",
+      "La IA",
+      "El almanaque",
+      "El año pasado"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La INE y el estado de cuenta en un asistente público…",
+     "ops": [
+      "Están bien si es rápido",
+      "Se suben solo una vez",
+      "No se suben nunca",
+      "Se suben si es para un crédito"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "En una solicitud de crédito, los rendimientos…",
+     "ops": [
+      "Se redondean hacia arriba",
+      "Salen de tus boletas y registros",
+      "Los estima la IA",
+      "Se copian del promedio estatal"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La lista de verificación se aplica…",
+     "ops": [
+      "A todo lo que produce la IA antes de usarlo",
+      "Solo a las ventas",
+      "Una vez por ciclo",
+      "Solo si hay auditoría"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Las decisiones de la unidad de producción son…",
+     "ops": [
+      "De la IA",
+      "Del comprador",
+      "Del proveedor de insumos",
+      "Del productor, con su técnico y sus registros"
+     ],
+     "correcta": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "id": "c-ia-inmobiliarias",
+ "horas": 10,
+ "aprender": [
+  "Aplicar la IA con veracidad en crédito hipotecario, operaciones con inversionistas y cumplimiento (identificación de clientes, prevención de lavado de dinero y datos personales), detectando los errores típicos de cada situación.",
+  "Construir tu kit inmobiliario con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  { "p": "La IA escribió «a 5 minutos del centro» y no lo mediste. Tú…", "op": "Lo cambio por «muy cerca del centro»" },
+  { "p": "Los m² de construcción salen de…", "op": "Lo que recuerde el propietario" },
+  { "p": "El mismo inmueble en portal y en Instagram…", "op": "Lleva datos distintos para ver cuál funciona" },
+  { "p": "Usar IA para quitar una grieta visible en la foto…", "op": "Es aceptable si se repara antes de escriturar" },
+  { "p": "El amueblado virtual se publica…", "op": "Solo en portales, nunca en redes" },
+  { "p": "Un prospecto que escribe a las 9 p.m. y le respondes al día siguiente a mediodía…", "op": "Valora más que no lo presiones" },
+  { "p": "El primer mensaje de respuesta debería…", "op": "Pedir sus datos completos antes de contestar" },
+  { "p": "Ante «está muy caro», lo primero es…", "op": "Ofrecer otra propiedad más barata" },
+  { "p": "Para comparar inmuebles de distinto tamaño usas…", "op": "El número de recámaras" },
+  { "p": "Los comparables más útiles son…", "op": "Los que el propietario elija" },
+  { "p": "Un contrato de arrendamiento redactado con IA…", "op": "Se valida si ambas partes están de acuerdo" },
+  { "p": "Al pegar datos en la IA para el contrato…", "op": "Pegas solo la CURP y el domicilio" },
+  { "p": "Un recordatorio de pago amable conviene enviarlo…", "op": "El mismo día del vencimiento a medianoche" },
+  { "p": "El propietario insiste en $3.4 millones. Tú…", "op": "Publicas a $3.4 millones y bajas sin avisarle" },
+  { "p": "La casa tiene una humedad visible. En las fotos…", "op": "La dejas fuera del encuadre sin mencionarla" }
+ ],
+ "extras": {
+  "c-ia-inmobiliarias-m1-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> captas un departamento en Mérida. El propietario dice que tiene «140 metros». La escritura indica 118 m² de construcción más una terraza descubierta de 22 m². La ficha de la IA dice «140 m² de construcción» y agrega «alberca y gimnasio», porque así lo anuncia el desarrollo, aunque la alberca sigue en obra." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Cómo se presentan los metros en la ficha?", "ops": ["140 m², como dice el propietario", "118 m² de construcción y 22 m² de terraza descubierta, según escritura", "130 m², un promedio"], "correcta": 1, "explica": "Se separa lo construido de lo descubierto, con la fuente documental. Mezclarlos es la queja más común en la visita." },
+    { "p": "La alberca que sigue en obra…", "ops": ["Se menciona como «alberca en construcción, entrega estimada según el desarrollador»", "Se anuncia como terminada", "Se omite el tema aunque pregunten"], "correcta": 0, "explica": "Se informa el estado real y de quién es el compromiso de entrega." },
+    { "p": "¿Qué instrucción evita que la IA complete con datos del desarrollo?", "ops": ["«Hazla atractiva»", "«Agrega amenidades comunes de la zona»", "«Usa solo los datos que te doy y marca [PENDIENTE] lo demás»"], "correcta": 2, "explica": "La IA tiende a completar con lo típico; hay que prohibirlo explícitamente." }
+   ] },
+   { "tipo": "completar", "rotulo": "Ficha veraz", "items": [
+    { "frase": "Los m² de construcción se toman de la ___ o del plano.", "resp": ["escritura", "escrituras"] },
+    { "frase": "Una terraza descubierta se reporta ___ de la construcción.", "resp": ["aparte", "separada", "separado"] },
+    { "frase": "Una amenidad en obra se anuncia como «en ___».", "resp": ["construcción", "construccion", "obra"] }
+   ] },
+   { "tipo": "reflexion", "rotulo": "Tus datos de riesgo", "pregunta": "Escribe los tres datos de tus fichas que más discusiones generan con los compradores y de qué documento los tomarás desde hoy.", "ayuda": "1. … — documento: … 2. …" }
+  ],
+  "c-ia-inmobiliarias-m1-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> una propietaria de un departamento en renta en la Ciudad de México te pide que el anuncio diga «solo profesionistas solteros, sin niños, de preferencia extranjeros». Le pides el anuncio a la IA con esas indicaciones y la IA las incluye sin advertencia. El artículo 1.º constitucional prohíbe la discriminación y la legislación local también la sanciona." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué partes del pedido son discriminatorias?", "ops": ["Estado civil, tener hijos y nacionalidad", "Solo «de preferencia extranjeros»", "Ninguna, es su propiedad"], "correcta": 0, "explica": "Excluir por estado civil, por tener hijos o por origen nacional es discriminación, aunque el inmueble sea privado." },
+    { "p": "¿Qué sí puede pedir la propietaria?", "ops": ["Que sean menores de 40", "Que no tengan religión", "Requisitos objetivos: comprobante de ingresos, referencias, aval o póliza y respetar el reglamento del edificio"], "correcta": 2, "explica": "La capacidad de pago y el cumplimiento de reglas se pueden evaluar igual para todas las personas." },
+    { "p": "¿Cómo se lo planteas a la propietaria?", "ops": ["Publicas lo que pide", "Explicas el riesgo legal y propones filtros objetivos que protegen su renta", "Rechazas la captación sin explicar"], "correcta": 1, "explica": "Postura clara y una alternativa que cuida su interés real: cobrar a tiempo y cuidar el inmueble." }
+   ] },
+   { "tipo": "comparar", "titulo": "Anuncio de renta", "malTitulo": "Discrimina", "mal": "«Solo profesionistas solteros, sin niños, de preferencia extranjeros.»", "bienTitulo": "Requisitos objetivos", "bien": "«Requisitos: ingresos comprobables de 3 veces la renta, dos referencias, póliza jurídica o aval, y apego al reglamento del condominio. Mascotas según reglamento.»" },
+   { "tipo": "reflexion", "rotulo": "Tus requisitos objetivos", "pregunta": "Escribe la lista de requisitos objetivos que usarás en tus anuncios de renta y cómo responderás cuando un propietario pida filtros discriminatorios.", "ayuda": "Requisitos: … / Respuesta al propietario: «…»" }
+  ],
+  "c-ia-inmobiliarias-m1-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> un desarrollo en preventa en Puerto Vallarta te entrega imágenes generadas con IA: vista al mar desde todas las recámaras, áreas verdes maduras y alberca terminada. Aún no hay obra por encima del segundo piso y algunas unidades dan a la calle trasera." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Cómo publicas los renders?", "ops": ["Como fotos del desarrollo", "Con leyenda «imagen ilustrativa, generada digitalmente; puede variar del producto final»", "Sin leyenda, todos lo hacen"], "correcta": 1, "explica": "La leyenda evita que el comprador tome la imagen como promesa." },
+    { "p": "Un comprador pregunta por una unidad que da a la calle trasera. Tú…", "ops": ["Le informas la orientación real y le muestras el plano de esa unidad", "Le enseñas el render con vista al mar", "Le dices que todas tienen vista"], "correcta": 0, "explica": "Cada unidad se describe con su plano y orientación; el render es general." },
+    { "p": "¿Qué documento debe respaldar lo prometido en preventa?", "ops": ["El render", "Un mensaje de WhatsApp del vendedor", "El contrato con especificaciones, planos y fechas de entrega"], "correcta": 2, "explica": "Lo que se promete se documenta en el contrato; la publicidad debe coincidir con él." }
+   ] },
+   { "tipo": "comparar", "titulo": "Publicación de preventa", "malTitulo": "Engaña", "mal": "«Todas las unidades con vista al mar. ¡Alberca lista!» (render sin leyenda)", "bienTitulo": "Veraz", "bien": "«Render ilustrativo. Unidades con vista al mar: 12 de 30, según plano. Alberca: entrega estimada según contrato del desarrollador.»" },
+   { "tipo": "reflexion", "rotulo": "Tu leyenda estándar", "pregunta": "Redacta la leyenda que pondrás desde hoy en renders, amueblados virtuales y fotos editadas, y dónde irá en cada canal.", "ayuda": "Leyenda: «…» / En portal: … / En redes: …" }
+  ],
+  "c-ia-inmobiliarias-m2-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> una inmobiliaria de Querétaro conectó un asistente de IA a su WhatsApp para contestar de noche. Un prospecto preguntó si podía comprar con Infonavit y si el precio incluía gastos de escrituración. El asistente respondió «Sí a todo, y el trámite tarda una semana». Ninguna de las tres cosas estaba confirmada." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué debe contestar el asistente cuando no tiene el dato?", "ops": ["Lo más probable", "Que no tiene ese dato, que un asesor lo confirmará y a qué hora", "Nada"], "correcta": 1, "explica": "Un asistente automático debe limitarse a información aprobada y derivar lo demás." },
+    { "p": "Los gastos de escrituración…", "ops": ["Los estima y confirma el notario; no se prometen desde un chat", "Siempre los paga el vendedor", "Están incluidos en todo precio"], "correcta": 0, "explica": "Dependen de la operación, la entidad y el notario; se informan con cotización." },
+    { "p": "¿Qué haces con el prospecto al día siguiente?", "ops": ["No mencionas el error", "Le dices que el asistente se equivocó y lo culpas a él", "Corriges con claridad lo que no estaba confirmado y le das la información verificada"], "correcta": 2, "explica": "Corregir pronto conserva la confianza; si esperas a la firma, la pierdes." }
+   ] },
+   { "tipo": "completar", "rotulo": "Reglas del asistente automático", "items": [
+    { "frase": "El asistente solo responde con información ___ por la inmobiliaria.", "resp": ["aprobada", "autorizada", "verificada"] },
+    { "frase": "Precio, crédito y gastos los confirma un ___.", "resp": ["asesor", "agente"] },
+    { "frase": "Si no sabe algo, dice que no tiene el dato y ___ la conversación.", "resp": ["deriva", "canaliza", "transfiere"] }
+   ] },
+   { "tipo": "reflexion", "rotulo": "Tus respuestas aprobadas", "pregunta": "Escribe las cinco preguntas más frecuentes de tus prospectos y cuáles puede responder un asistente automático y cuáles solo un asesor.", "ayuda": "1. … → asistente / asesor" }
+  ],
+  "c-ia-inmobiliarias-m2-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> preparas la visita de una pareja interesada en una casa en Zapopan. El guion de la IA incluye: «Destaque que la zona tiene una plusvalía garantizada del 10% anual» y «mencione que pronto abrirá una estación de tren cerca». No tienes fuente de ninguna de las dos afirmaciones." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué haces con la «plusvalía garantizada del 10%»?", "ops": ["La quito: nadie puede garantizar plusvalía", "La dejo porque motiva la compra", "La bajo a 5% para que sea creíble"], "correcta": 0, "explica": "Una garantía de plusvalía es una promesa que no puedes cumplir; si el comprador la usa para decidir, es un problema serio." },
+    { "p": "La estación de tren «que pronto abrirá»…", "ops": ["Se menciona como rumor", "Se omite siempre", "Solo se menciona con fuente oficial del proyecto y su estado real"], "correcta": 2, "explica": "Las obras públicas cambian de fecha o se cancelan; se cita la fuente y el avance." },
+    { "p": "¿Qué sí puedes decir sobre el valor de la zona?", "ops": ["Que siempre sube", "Datos de operaciones y precios por m² recientes, con su fuente y fecha", "Lo que opina la IA"], "correcta": 1, "explica": "Datos históricos con fuente informan sin prometer." }
+   ] },
+   { "tipo": "comparar", "titulo": "Hablar del valor de la zona", "malTitulo": "Promete", "mal": "«Aquí la plusvalía está garantizada: 10% cada año.»", "bienTitulo": "Informa", "bien": "«En esta colonia, las casas similares se ofrecieron en promedio a $21,000 por m² este año, según mis comparables. No puedo garantizar cómo evolucionará el valor.»" },
+   { "tipo": "reflexion", "rotulo": "Tus frases prohibidas", "pregunta": "Escribe tres frases de venta que la IA suele sugerir y que no dirás en una visita, y cómo las reemplazarás con datos.", "ayuda": "«…» → «…»" }
+  ],
+  "c-ia-inmobiliarias-m2-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> pides a la IA que te ayude a elegir comparables para una casa en Aguascalientes. En la lista aparecen: una casa de otra colonia con otro nivel de precios, un anuncio de hace tres años y dos casas con precio de oferta que llevan ocho meses publicadas sin venderse." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "El anuncio de hace tres años…", "ops": ["Se usa igual, la casa es parecida", "Se descarta o se usa solo como referencia histórica", "Se ajusta con un porcentaje que propone la IA"], "correcta": 1, "explica": "Los comparables deben ser recientes; uno viejo distorsiona el promedio." },
+    { "p": "Las casas publicadas ocho meses sin venderse indican…", "ops": ["Que su precio de oferta probablemente está por encima del mercado", "Que el mercado sube", "Nada relevante"], "correcta": 0, "explica": "Precio de oferta no es precio de cierre; mucho tiempo publicado sugiere precio alto." },
+    { "p": "¿Qué pides a la IA para mejorar el análisis?", "ops": ["Más comparables de cualquier zona", "Que decida el precio final", "Una tabla que separe oferta y cierre, con fecha, colonia y días publicados"], "correcta": 2, "explica": "Separar oferta y cierre y ver antigüedad hace el análisis defendible ante el propietario." }
+   ] },
+   { "tipo": "relacionar", "rotulo": "Comparable y qué tan útil es", "pares": [
+    ["Venta cerrada hace 2 meses, misma colonia", "Muy útil"],
+    ["Oferta actual, misma colonia, 30 días publicada", "Útil como referencia de competencia"],
+    ["Oferta con 8 meses publicada", "Señal de precio alto"],
+    ["Anuncio de otra colonia", "Poco comparable"]
+   ] },
+   { "tipo": "reflexion", "rotulo": "Tus criterios de comparables", "pregunta": "Define tus criterios para aceptar un comparable: distancia o colonia, antigüedad máxima, rango de m² y tipo de dato (oferta o cierre).", "ayuda": "Colonia: … / Antigüedad máxima: … / m²: … / Tipo: …" }
+  ],
+  "c-ia-inmobiliarias-m3-l1": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> un borrador de contrato de arrendamiento de un local en Puebla, hecho con IA, incluye: «el arrendador podrá entrar al local en cualquier momento sin aviso», «el depósito de tres meses no será reembolsable en ningún caso» y referencias a un código civil de otro estado." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "La cláusula de entrada «en cualquier momento sin aviso»…", "ops": ["Protege al arrendador, se deja", "Genera conflicto y puede ser abusiva; se propone acceso con aviso previo y horario", "Se elimina sin sustituirla"], "correcta": 1, "explica": "El arrendador necesita revisar el inmueble, pero con aviso y condiciones razonables." },
+    { "p": "Las referencias a un código civil de otro estado…", "ops": ["Se sustituyen y el abogado verifica la legislación del estado donde está el inmueble", "No importan", "Se dejan porque todos los códigos son iguales"], "correcta": 0, "explica": "El arrendamiento se rige por la legislación local; un código equivocado puede invalidar lo que pretendes." },
+    { "p": "El depósito «no reembolsable en ningún caso»…", "ops": ["Es estándar", "Se deja si el inquilino firma", "Contradice la función del depósito en garantía; lo revisa el abogado"], "correcta": 2, "explica": "El depósito garantiza obligaciones; qué se descuenta y cuándo se devuelve debe quedar claro y ser válido según la ley local." }
+   ] },
+   { "tipo": "comparar", "titulo": "Cláusula de acceso", "malTitulo": "Abusiva", "mal": "«El arrendador podrá entrar al local en cualquier momento sin aviso.»", "bienTitulo": "Equilibrada", "bien": "«El arrendador podrá inspeccionar el local con aviso por escrito de 48 horas, en horario hábil y acompañado del arrendatario, salvo emergencias que pongan en riesgo el inmueble.»" },
+   { "tipo": "reflexion", "rotulo": "Tus cláusulas a revisar", "pregunta": "Escribe las tres cláusulas de tus contratos de arrendamiento que siempre pedirás al abogado revisar con la legislación de tu estado.", "ayuda": "1. … 2. … 3. …" }
+  ],
+  "c-ia-inmobiliarias-m3-l2": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso:</b> un inquilino de una casa en Saltillo lleva 20 días de atraso. El propietario, molesto, pide a la IA un mensaje «que lo asuste». La IA escribe: «Si no paga en 48 horas cambiaremos la chapa y cortaremos la luz y el agua»." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "Cambiar la chapa o cortar servicios por cuenta propia…", "ops": ["Es una medida rápida y válida", "Es válido si se avisa antes", "No procede: la recuperación del inmueble y el cobro se hacen por la vía legal"], "correcta": 2, "explica": "Las medidas de hecho exponen al propietario y al administrador a responsabilidades; el camino es el convenio o la vía legal." },
+    { "p": "¿Qué mensaje conviene enviar?", "ops": ["Firme y respetuoso: monto, fecha, opciones de pago y siguiente paso formal", "Uno con amenazas para que pague rápido", "Ninguno, directo a demanda"], "correcta": 0, "explica": "Un mensaje claro abre la puerta a un convenio y sirve como constancia." },
+    { "p": "¿Quién define el siguiente paso legal?", "ops": ["La IA", "El propietario con asesoría de un abogado", "El administrador por su cuenta"], "correcta": 1, "explica": "Las acciones legales dependen del contrato y la ley local; las decide el propietario con asesoría." }
+   ] },
+   { "tipo": "comparar", "titulo": "Mensaje por renta vencida", "malTitulo": "Amenaza", "mal": "«Si no paga en 48 horas cambiaremos la chapa y cortaremos la luz y el agua.»", "bienTitulo": "Firme y legal", "bien": "«Hola [NOMBRE]: la renta de [MES] por [MONTO] tiene 20 días de atraso. ¿Podemos acordar hoy una fecha de pago? Si no hay respuesta al [FECHA], el propietario iniciará las acciones previstas en el contrato.»" },
+   { "tipo": "reflexion", "rotulo": "Tu protocolo de atraso", "pregunta": "Escribe tu protocolo de cobranza de rentas por días de atraso (3, 10, 20, 30) con el mensaje y la acción de cada etapa.", "ayuda": "Día 3: … / Día 10: … / Día 20: … / Día 30: …" }
+  ],
+  "c-ia-inmobiliarias-m3-l3": [
+   { "tipo": "titulo", "texto": "Taller práctico" },
+   { "tipo": "destacado", "texto": "<b>El caso continúa:</b> llega una oferta de $2.95 millones con crédito bancario. El propietario pregunta cuánto recibirá. La IA contesta: «Recibirá $2.95 millones». No considera tu comisión, los impuestos que correspondan por la venta ni la cancelación de una hipoteca que aún tiene la casa." },
+   { "tipo": "practica", "rotulo": "Decide en el caso", "preguntas": [
+    { "p": "¿Qué debe saber el propietario antes de aceptar?", "ops": ["Solo el precio", "Solo la fecha de firma", "Un estimado neto: precio menos comisión, saldo de hipoteca y costos, con los impuestos que calcule el notario"], "correcta": 2, "explica": "El propietario decide con el neto, no con el precio; los impuestos los determina el notario según su situación." },
+    { "p": "La hipoteca vigente del vendedor…", "ops": ["Debe liquidarse o cancelarse para escriturar; se coordina con el banco y el notario", "No afecta la venta", "La asume el comprador automáticamente"], "correcta": 0, "explica": "El inmueble debe quedar libre de gravámenes o la operación debe estructurarse con el banco." },
+    { "p": "¿Cómo usas la IA en este punto?", "ops": ["Para calcular impuestos definitivos", "Para preparar la lista de documentos y preguntas al notario y al banco", "Para decidir si se acepta la oferta"], "correcta": 1, "explica": "La IA organiza el proceso; las cifras oficiales las dan el notario y el banco." }
+   ] },
+   { "tipo": "relacionar", "rotulo": "Concepto y quién lo confirma", "pares": [
+    ["Impuestos por la venta", "Notario"],
+    ["Saldo de la hipoteca", "Banco acreedor"],
+    ["Comisión", "Contrato de intermediación"],
+    ["Libertad de gravamen", "Registro Público de la Propiedad"]
+   ] },
+   { "tipo": "reflexion", "rotulo": "Tu hoja del neto", "pregunta": "Escribe las líneas que tendrá tu estimado de «lo que recibe el vendedor» y quién confirma cada cifra.", "ayuda": "Precio … − comisión … − saldo de hipoteca … − … = neto estimado" }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: crédito, inversión y cumplimiento",
+   "r": "Cómo usar la IA con veracidad cuando hay crédito hipotecario, cuando atiendes a inversionistas y cuando aplican obligaciones de identificación de clientes, prevención de lavado de dinero y datos personales.",
+   "lecciones": [
+    {
+     "t": "Crédito hipotecario, Infonavit y Fovissste",
+     "obj": "Usar la IA para explicar procesos de crédito y preparar documentos sin afirmar tasas, montos ni requisitos que no verificaste en la fuente oficial.",
+     "bloques": [
+      { "tipo": "texto", "texto": "La mayoría de las compras de vivienda en México usan algún crédito: bancario, Infonavit, Fovissste o combinaciones. Los compradores te preguntan cuánto les prestan, cuánto pagarán y cuánto tarda. <b>La IA responde con seguridad cifras que cambian seguido</b> (tasas, montos máximos, requisitos, programas) o que ya no existen. Úsala para explicar el proceso, armar listas de documentos y preparar preguntas; las cifras salen de los simuladores y canales oficiales de cada institución." },
+      { "tipo": "tabla", "titulo": "Errores comunes de la IA en crédito", "encabezados": ["Error", "Control"], "filas": [
+       ["Tasas o montos «típicos» presentados como ciertos", "Simulador oficial del banco, Infonavit o Fovissste"],
+       ["Programas que cambiaron o terminaron", "Verifica en el portal oficial de la institución"],
+       ["Requisitos incompletos", "Lista oficial de la institución y del notario"],
+       ["Tiempos de trámite prometidos", "Informa rangos y dependencias, sin prometer fechas"]
+      ] },
+      { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+       { "p": "Un comprador pregunta cuánto le presta Infonavit. La IA da una cifra. Tú…", "ops": ["Se la das", "Le pides que consulte su precalificación en el portal oficial o lo acompañas a hacerlo", "Le das una cifra un poco menor por seguridad"], "correcta": 1, "explica": "El monto depende de datos del trabajador y de reglas vigentes; solo la institución lo determina." },
+       { "p": "¿Para qué es útil la IA en un trámite de crédito?", "ops": ["Explicar etapas y preparar la lista de documentos para que el comprador llegue completo", "Determinar si el crédito será aprobado", "Calcular la tasa final"], "correcta": 0, "explica": "Ordenar el proceso ahorra idas y vueltas; la aprobación y la tasa son de la institución." },
+       { "p": "Para comparar créditos bancarios con tu cliente, usas…", "ops": ["La tasa más baja que mencione la IA", "La mensualidad que te dijo otro asesor", "Las cotizaciones oficiales de cada banco con su costo anual total"], "correcta": 2, "explica": "El comparativo se hace con cotizaciones formales y el costo total, no con cifras genéricas." }
+      ] },
+      { "tipo": "completar", "rotulo": "Crédito con veracidad", "items": [
+       { "frase": "El monto de crédito lo determina la ___, no la IA.", "resp": ["institución", "institucion", "financiera"] },
+       { "frase": "Las cifras se consultan en el ___ oficial de cada institución.", "resp": ["simulador", "portal"] },
+       { "frase": "Los tiempos de trámite se informan como ___, sin prometer fechas.", "resp": ["rangos", "estimados", "rango"] }
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu guía de crédito", "pregunta": "Escribe los pasos del proceso de compra con crédito que más ves en tu zona, qué documentos pide cada etapa y dónde verificas las cifras.", "ayuda": "1. Precalificación en… 2. … / Documentos: … / Cifras en: …" },
+      { "tipo": "plantilla", "rotulo": "Explicación de proceso de crédito", "texto": "Explica a un comprador sin experiencia el proceso para comprar una vivienda con [crédito bancario / Infonavit / Fovissste / crédito conyugal o combinado] en México: etapas en orden, qué documentos suele pedir cada etapa y qué hace el notario. No des tasas, montos, porcentajes ni plazos: donde vayan, escribe [CONSULTAR EN SIMULADOR OFICIAL]. Máximo 250 palabras, tono claro.", "nota": "Cópiala y adáptala." },
+      { "tipo": "clave", "items": ["La IA explica el proceso; la institución da las cifras.", "Simuladores y cotizaciones oficiales para comparar.", "Rangos de tiempo, nunca fechas prometidas."] }
+     ]
+    },
+    {
+     "t": "Inversionistas: renta tradicional, vacacional y preventa",
+     "obj": "Preparar análisis para inversionistas con supuestos explícitos y verificables, sin prometer ocupación, plusvalía ni rendimientos.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Los inversionistas preguntan por números: cuánto renta, qué ocupación tendrá, cuánto vale en la entrega de una preventa. La IA arma análisis en segundos, pero <b>usa supuestos optimistas</b> (ocupación alta todo el año), <b>olvida gastos</b> (limpieza, comisiones de plataformas, mantenimiento, predial, amueblado) y <b>no sabe si el reglamento del condominio permite rentas por noche</b>. Tu trabajo: supuestos explícitos, con fuente, y escenarios." },
+      { "tipo": "excel", "rotulo": "Renta vacacional vs. tradicional (escenario)", "datos": [["Supuesto", "Valor"], ["Tarifa por noche", 1400], ["Noches del año", 365], ["Ocupación estimada", 0.55], ["Ingreso bruto vacacional", ""], ["Gastos operativos (proporción)", 0.35], ["Ingreso neto vacacional", ""], ["Renta tradicional anual", 132000], ["Opción con mayor ingreso neto", ""]], "retos": [
+       { "celda": "B5", "formula": "=B2*B3*B4", "esperado": 281050, "texto": "<b>B5</b>: ingreso bruto = tarifa × noches × ocupación.", "pista": "=B2*B3*B4" },
+       { "celda": "B7", "formula": "=B5*(1-B6)", "esperado": 182682.5, "texto": "<b>B7</b>: ingreso neto después de gastos operativos.", "pista": "=B5*(1-B6)" },
+       { "celda": "B9", "formula": "=SI(B7>B8,\"Vacacional\",\"Tradicional\")", "esperado": "Vacacional", "texto": "<b>B9</b>: escribe Vacacional si su ingreso neto supera a la renta tradicional; si no, Tradicional.", "requiere": "SI(", "pista": "=SI(B7>B8,\"Vacacional\",\"Tradicional\")", "explica": "Gana la vacacional en este escenario, pero depende de la ocupación supuesta. Prueba con 35%: el resultado cambia. Además, confirma que el reglamento del condominio permita rentas por noche." }
+      ] },
+      { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+       { "p": "La IA supone 80% de ocupación todo el año. Tú…", "ops": ["La usas, es la de la IA", "Presentas escenarios con ocupaciones distintas y explicas de dónde sale cada supuesto", "La subes a 90% para cerrar la venta"], "correcta": 1, "explica": "Un análisis serio muestra escenarios y la fuente de cada supuesto." },
+       { "p": "Antes de recomendar renta vacacional en un departamento, verificas…", "ops": ["El reglamento del condominio y las reglas locales aplicables", "Solo la tarifa de la zona", "La opinión de la IA"], "correcta": 0, "explica": "Muchos condominios o municipios limitan las rentas por noche; eso cambia todo el análisis." },
+       { "p": "En una preventa, la IA escribe «su inversión valdrá 30% más en la entrega». Tú…", "ops": ["La dejas si el desarrollador lo dice", "La cambias a 20%", "La eliminas y explicas riesgos: plazos de obra, precio de mercado y contrato"], "correcta": 2, "explica": "Nadie puede garantizar el valor futuro; lo que se informa son datos, riesgos y lo que dice el contrato." }
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tus supuestos por escrito", "pregunta": "Para una propiedad de inversión que manejes, escribe los supuestos de tu análisis (ocupación, tarifa o renta, gastos) y la fuente de cada uno.", "ayuda": "Ocupación: … fuente: … / Tarifa: … / Gastos: …" },
+      { "tipo": "plantilla", "rotulo": "Análisis para inversionista", "texto": "Con estos datos y supuestos (con fuente): [precio, renta o tarifa, ocupación, gastos, comisión de plataforma, predial, mantenimiento, reglamento del condominio], prepara un análisis para un inversionista con tres escenarios (conservador, base, optimista): ingreso bruto, gastos, ingreso neto y rendimiento neto sobre el precio. Muestra cada supuesto y su fuente. No prometas plusvalía ni rendimientos; incluye una sección de riesgos.", "nota": "Cópiala y adáptala." },
+      { "tipo": "clave", "items": ["Supuestos explícitos con fuente y escenarios.", "Reglamento del condominio antes de recomendar renta por noche.", "Sin promesas de plusvalía ni rendimiento."] }
+     ]
+    },
+    {
+     "t": "Cumplimiento: identificación de clientes, lavado de dinero y datos personales",
+     "obj": "Usar la IA para ordenar procesos de cumplimiento sin afirmar umbrales ni obligaciones que no verificaste y sin exponer datos de clientes.",
+     "bloques": [
+      { "tipo": "texto", "texto": "La intermediación en compraventa de inmuebles es una de las actividades que la ley contra el lavado de dinero considera vulnerables. Eso implica, según la operación, identificar al cliente, conservar documentación y presentar avisos cuando se rebasan ciertos umbrales. Además, manejas identificaciones, comprobantes y estados de cuenta protegidos por la ley de datos personales. <b>La IA inventa umbrales, plazos y formatos</b>; verifica siempre en el portal oficial de prevención de lavado de dinero del SAT y con tu asesor de cumplimiento." },
+      { "tipo": "tabla", "titulo": "Errores comunes de la IA en cumplimiento", "encabezados": ["Error", "Control"], "filas": [
+       ["Umbrales de avisos con cifras inventadas o viejas", "Portal oficial de prevención de lavado de dinero del SAT"],
+       ["Obligaciones de otro país", "Pide solo el marco mexicano y verifícalo"],
+       ["Pedir que subas identificaciones para «validarlas»", "Nunca se suben documentos de clientes a herramientas no autorizadas"],
+       ["Aviso de privacidad genérico", "Debe reflejar qué datos tratas y para qué"]
+      ] },
+      { "tipo": "practica", "rotulo": "Decide", "preguntas": [
+       { "p": "La IA te dice el monto a partir del cual debes presentar un aviso. Tú…", "ops": ["Lo verificas en el portal oficial y con tu asesor, porque se expresa en unidades que cambian", "Lo anotas en tu procedimiento", "Lo redondeas"], "correcta": 0, "explica": "Los umbrales y obligaciones se toman de la fuente oficial vigente, no de la IA." },
+       { "p": "Un cliente te envía su INE y estado de cuenta por WhatsApp. Tú…", "ops": ["Los pegas en la IA para llenar el expediente", "Los guardas en el expediente con acceso restringido y no los subes a herramientas no autorizadas", "Los reenvías al grupo del equipo"], "correcta": 1, "explica": "Son datos personales y financieros; se resguardan con acceso limitado." },
+       { "p": "¿Para qué sí te sirve la IA en cumplimiento?", "ops": ["Para decidir si una operación es sospechosa", "Para sustituir al asesor de cumplimiento", "Para convertir tu procedimiento interno en una lista de verificación por operación"], "correcta": 2, "explica": "La IA ordena y redacta; las decisiones de cumplimiento son del responsable designado." }
+      ] },
+      { "tipo": "relacionar", "rotulo": "Tema y fuente de verificación", "pares": [
+       ["Actividades vulnerables y avisos", "Portal oficial de prevención de lavado de dinero del SAT"],
+       ["Aviso de privacidad", "Ley de protección de datos personales vigente"],
+       ["Publicidad de vivienda", "Normas y criterios de PROFECO vigentes"],
+       ["Situación registral del inmueble", "Registro Público de la Propiedad"]
+      ] },
+      { "tipo": "reflexion", "rotulo": "Tu expediente de cliente", "pregunta": "Escribe qué documentos integras en el expediente de cada cliente, dónde se guardan, quién tiene acceso y cuánto tiempo se conservan según tu asesor.", "ayuda": "Documentos: … / Se guardan en: … / Acceso: … / Conservación: …" },
+      { "tipo": "plantilla", "rotulo": "Lista de verificación por operación", "texto": "Convierte este procedimiento interno de identificación de clientes (sin datos de ningún cliente): [pegar procedimiento] en una lista de verificación por operación de compraventa o renta: documentos a recabar, quién revisa, dónde se guarda, cuándo consultar al responsable de cumplimiento. No agregues umbrales, montos ni plazos que no estén en mi procedimiento; marca [VERIFICAR EN FUENTE OFICIAL] donde falten.", "nota": "Cópiala y adáptala con tu asesor." },
+      { "tipo": "clave", "items": ["Umbrales y obligaciones: portal oficial del SAT y asesor.", "Documentos de clientes nunca a herramientas no autorizadas.", "La IA convierte tu procedimiento en listas; tú decides."] }
+     ]
+    }
+   ],
+   "quiz": [
+    { "p": "Cuánto presta Infonavit a un comprador lo determina…", "ops": ["La IA", "La institución con los datos del trabajador y reglas vigentes", "El asesor inmobiliario", "El vendedor"], "correcta": 1 },
+    { "p": "Para comparar créditos bancarios usas…", "ops": ["Cotizaciones oficiales con su costo total", "La tasa que mencione la IA", "La mensualidad de un conocido", "El anuncio más llamativo"], "correcta": 0 },
+    { "p": "Un análisis para inversionista debe incluir…", "ops": ["Una plusvalía garantizada", "Solo el escenario optimista", "Supuestos con fuente, escenarios y riesgos", "La opinión de la IA como dato"], "correcta": 2 },
+    { "p": "Antes de recomendar renta por noche en un condominio…", "ops": ["Solo revisas tarifas", "Preguntas a la IA", "Asumes que se permite", "Revisas el reglamento del condominio y las reglas locales"], "correcta": 3 },
+    { "p": "Los umbrales para avisos de prevención de lavado de dinero se verifican en…", "ops": ["El portal oficial del SAT y con el asesor de cumplimiento", "La respuesta de la IA", "Un foro de agentes", "El contrato de intermediación"], "correcta": 0 },
+    { "p": "La identificación oficial de un cliente…", "ops": ["Se sube a la IA para validarla", "Se guarda en el expediente con acceso restringido", "Se comparte en el grupo del equipo", "Se publica con la ficha"], "correcta": 1 }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día real en una inmobiliaria con errores plantados para detectar, y la construcción de tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: un sábado de guardia",
+     "obj": "Detectar errores plantados de la IA en cuatro momentos de un día de trabajo inmobiliario y decidir cómo corregirlos.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Acompañarás a Jorge, asesor de una inmobiliaria en León, Guanajuato, durante su guardia de sábado. En cada escena usa IA y en cada una hay al menos un error plantado. Encuéntralo y escribe qué haría Jorge antes de seguir." },
+      { "tipo": "destacado", "texto": "<b>Escena 1 — 9:00 a.m. Nueva captación.</b> Jorge pide a la IA la ficha y el anuncio de una casa. El anuncio dice: «Casa de 210 m² a 5 minutos de la Plaza Mayor, con estudio y cuarto de servicio». La escritura indica 180 m² de construcción; el «estudio» es la cochera techada y Jorge nunca midió el tiempo a la plaza." },
+      { "tipo": "reflexion", "rotulo": "Escena 1", "pregunta": "Enumera los errores del anuncio y reescríbelo con datos verificados y [PENDIENTE] donde falte información.", "ayuda": "Errores: 1. … 2. … 3. … / Anuncio corregido: «…»" },
+      { "tipo": "destacado", "texto": "<b>Escena 2 — 11:30 a.m. Prospecto por WhatsApp.</b> El asistente automático le respondió a un prospecto: «Con su crédito le alcanza sin problema y el vendedor acepta bajar $200,000». El vendedor nunca autorizó ninguna rebaja." },
+      { "tipo": "reflexion", "rotulo": "Escena 2", "pregunta": "¿Qué dos promesas hizo el asistente, qué riesgo tiene cada una y qué mensaje le envía Jorge al prospecto para corregir?", "ayuda": "Promesa 1: … riesgo: … / Promesa 2: … / Mensaje: «…»" },
+      { "tipo": "destacado", "texto": "<b>Escena 3 — 2:00 p.m. Precio para el propietario.</b> La IA prepara el análisis de comparables. Usa cuatro casas: dos son precios de oferta de hace más de un año y una está en un fraccionamiento con vigilancia y alberca, a diferencia de la casa de Jorge. Concluye: «Precio recomendado: $3.3 millones»." },
+      { "tipo": "reflexion", "rotulo": "Escena 3", "pregunta": "Explica qué comparables descartarías o ajustarías y por qué, y cómo presentarías el precio al propietario con datos defendibles.", "ayuda": "Descarto: … porque… / Ajusto: … / Al propietario le diré: …" },
+      { "tipo": "destacado", "texto": "<b>Escena 4 — 6:00 p.m. Cobranza.</b> Un propietario le pide a Jorge un mensaje para un inquilino con 15 días de atraso. La IA redacta: «Le informamos que el lunes cambiaremos la chapa si no liquida su adeudo». Jorge está cansado y casi lo envía." },
+      { "tipo": "reflexion", "rotulo": "Escena 4", "pregunta": "Reescribe el mensaje de cobranza de forma firme, respetuosa y legal, con monto, fecha y siguiente paso formal.", "ayuda": "Hola [NOMBRE]: … / ¿Podemos acordar…? / Si no…" },
+      { "tipo": "practica", "rotulo": "Revisión del día", "preguntas": [
+       { "p": "¿Qué error de la escena 1 era más fácil de pasar por alto?", "ops": ["Llamar «estudio» a la cochera techada, porque suena a detalle de redacción", "El título del anuncio", "El uso de mayúsculas"], "correcta": 0, "explica": "Nombrar mal un espacio parece menor, pero cambia lo que el comprador espera ver en la visita." },
+       { "p": "¿Qué control habría evitado la escena 2?", "ops": ["Un asistente más rápido", "Limitar el asistente a respuestas aprobadas y derivar precio y crédito a un asesor", "Responder solo de día"], "correcta": 1, "explica": "Precio, rebajas y crédito nunca los define un asistente automático." },
+       { "p": "¿Qué tienen en común las cuatro escenas?", "ops": ["Todas eran urgentes", "Ninguna afectaba al cliente", "La IA afirmó o prometió algo sin fuente; el control es cotejar con documentos y autorizaciones"], "correcta": 2, "explica": "Veracidad y autorización: los dos filtros que protegen tu reputación." }
+      ] },
+      { "tipo": "clave", "items": ["Datos de documentos, no de la IA ni de la memoria.", "Precio, rebajas y crédito solo con autorización y fuente oficial.", "Cobranza firme, respetuosa y por la vía legal."] }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit inmobiliario con IA",
+     "obj": "Construir tu kit personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      { "tipo": "texto", "texto": "Este proyecto convierte el curso en herramientas para tu operación diaria. Trabaja con tu realidad: tu ciudad, tu tipo de propiedades y tus clientes. Al terminar tendrás cuatro piezas en un solo documento para ti o tu equipo." },
+      { "tipo": "reflexion", "rotulo": "1. Tu biblioteca de prompts", "pregunta": "Escribe tus 4 prompts base: ficha y anuncio veraz, respuesta y calificación de prospectos, análisis de comparables y mensaje a inquilinos o propietarios. Cada uno con marcadores [ ] y la instrucción de no agregar datos.", "ayuda": "Ficha: … / Prospectos: … / Comparables: … / Mensajes: …" },
+      { "tipo": "reflexion", "rotulo": "2. Tu política de datos", "pregunta": "Redacta 5 reglas: herramientas autorizadas, qué documentos de clientes nunca se suben, cómo se usan marcadores, dónde se guardan los expedientes y qué hacer ante un error.", "ayuda": "Regla 1: … / Regla 2: …" },
+      { "tipo": "reflexion", "rotulo": "3. Tu lista de verificación", "pregunta": "Escribe la lista que aplicarás antes de publicar un anuncio, enviar un análisis o firmar un documento hecho con IA: m² y datos legales, leyendas de imágenes, promesas, cifras de crédito, requisitos no discriminatorios y revisión legal.", "ayuda": "☐ m² según escritura ☐ Imágenes con leyenda ☐ …" },
+      { "tipo": "reflexion", "rotulo": "4. Tu entregable real", "pregunta": "Aplica el kit a una propiedad real: produce con IA su ficha, anuncio y análisis de precio, pásalos por tu lista y anota qué errores encontraste y cuánto tiempo ahorraste.", "ayuda": "Propiedad: … / Errores detectados: … / Tiempo: antes … ahora …" },
+      { "tipo": "plantilla", "rotulo": "Índice de tu kit inmobiliario con IA", "texto": "KIT INMOBILIARIO CON IA — [inmobiliaria o nombre] — versión [fecha]\n\n1. Política de datos\n   - Herramientas autorizadas: [ ]\n   - Nunca se sube: identificaciones, estados de cuenta, escrituras con datos [ ]\n   - Marcadores: [ARRENDADOR], [COMPRADOR], [MONTO]\n   - Expedientes: dónde y quién accede [ ]\n2. Biblioteca de prompts\n   - Ficha técnica con [PENDIENTE]: [ ]\n   - Anuncios por canal: [ ]\n   - Respuesta y seguimiento a prospectos: [ ]\n   - Comparables y explicación de precio: [ ]\n   - Análisis para inversionista con escenarios: [ ]\n   - Mensajes a inquilinos y reporte a propietarios: [ ]\n3. Lista de verificación\n   ☐ Datos de documentos y visita\n   ☐ Imágenes con leyenda cuando corresponda\n   ☐ Sin promesas de plusvalía, crédito ni rebajas\n   ☐ Requisitos objetivos, sin discriminación\n   ☐ Cifras de crédito y cumplimiento de fuente oficial\n   ☐ Contratos revisados por abogado\n4. Entregable de prueba y lecciones aprendidas: [ ]\n5. Responsable del kit: [ ] · Próxima revisión: [ ]", "nota": "Cópiala y adáptala; revísala cada trimestre." },
+      { "tipo": "destacado", "texto": "<b>¡Terminaste el curso!</b> La IA te ayuda a promocionar, dar seguimiento, analizar y documentar; la veracidad, la fuente oficial, la no discriminación y la revisión legal protegen a tus clientes y a tu reputación." },
+      { "tipo": "clave", "items": ["Kit en un documento: política, prompts y lista.", "Pruébalo con una propiedad real y mide el ahorro.", "Actualízalo con cada error nuevo que detectes."] }
+     ]
+    }
+   ],
+   "quiz": [
+    { "p": "Llamar «estudio» a una cochera techada en un anuncio…", "ops": ["Es un detalle de redacción", "Crea una expectativa falsa que se descubre en la visita", "Aumenta el valor", "Es obligatorio"], "correcta": 1 },
+    { "p": "Un asistente automático de WhatsApp puede…", "ops": ["Autorizar rebajas", "Confirmar créditos", "Responder información aprobada y derivar lo demás a un asesor", "Fijar el precio"], "correcta": 2 },
+    { "p": "Un comparable de oferta de hace más de un año…", "ops": ["Se descarta o se usa solo como referencia histórica", "Es el más confiable", "Define el precio", "Se usa sin cambios"], "correcta": 0 },
+    { "p": "Ante un inquilino con atraso, lo correcto es…", "ops": ["Cambiar la chapa", "Cortar servicios", "Publicar su deuda", "Mensaje firme y respetuoso con fecha y siguiente paso formal"], "correcta": 3 },
+    { "p": "La lista de verificación del kit se aplica…", "ops": ["Solo a contratos", "Antes de publicar, enviar o firmar cualquier texto hecho con IA", "Cuando hay tiempo", "Solo si el cliente lo pide"], "correcta": 1 },
+    { "p": "El kit se mantiene útil si…", "ops": ["Se actualiza con los errores nuevos que detectas", "Nunca cambia", "Lo actualiza la IA sola", "Se guarda sin usar"], "correcta": 0 }
+   ]
+  }
+ ]
+}

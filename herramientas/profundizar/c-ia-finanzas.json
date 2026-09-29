@@ -1,0 +1,1253 @@
+{
+ "id": "c-ia-finanzas",
+ "horas": 10,
+ "aprender": [
+  "Resolver con IA situaciones avanzadas de finanzas (tesorería y crédito, presupuesto y pronóstico, controles de pago y prevención de fraude) detectando los errores típicos de la IA en cada una.",
+  "Construir tu kit financiero personal: biblioteca de prompts, política de datos, lista de verificación de cifras y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "Redactar el comentario de por qué los gastos de marketing subieron 18% (dato ya calculado).",
+   "op": "Solo si la IA recalcula primero el 18%"
+  },
+  {
+   "p": "Calcular los intereses moratorios de 40 facturas vencidas.",
+   "op": "Que la IA estime un promedio y lo multiplique por 40"
+  },
+  {
+   "p": "Pegar el balance interno del trimestre en una IA gratuita.",
+   "op": "Sí, si lo hago desde mi celular personal"
+  },
+  {
+   "p": "Una buena explicación para no financieros termina con…",
+   "op": "La fórmula completa del indicador"
+  },
+  {
+   "p": "Al simplificar un concepto, lo que no puede cambiar es…",
+   "op": "La longitud del texto"
+  },
+  {
+   "p": "Un buen comentario de variación responde…",
+   "op": "Solo si la variación es favorable o desfavorable"
+  },
+  {
+   "p": "La IA escribe «probablemente por estacionalidad» sin que tú lo dijeras. Tú…",
+   "op": "Lo dejo, pero agrego «según análisis»"
+  },
+  {
+   "p": "¿Cuál es mejor título?",
+   "op": "«Resultados del mes de septiembre»"
+  },
+  {
+   "p": "La diapositiva de decisiones solicitadas va…",
+   "op": "En los anexos, por si alguien pregunta"
+  },
+  {
+   "p": "El cruce de 800 movimientos bancarios lo hace mejor…",
+   "op": "Una revisión visual de los movimientos más grandes"
+  },
+  {
+   "p": "La IA sugiere que una diferencia «probablemente es comisión bancaria». Tú…",
+   "op": "La registro como comisión y la reviso el próximo mes"
+  },
+  {
+   "p": "¿Por qué 13 semanas?",
+   "op": "Porque es el plazo que exigen los bancos para cualquier crédito"
+  },
+  {
+   "p": "El escenario pesimista cambia sobre todo…",
+   "op": "El saldo inicial de la semana 1"
+  },
+  {
+   "p": "Un análisis de sensibilidad responde…",
+   "op": "Cuál fue el resultado real del año pasado"
+  },
+  {
+   "p": "¿Quién calcula VNA y TIR?",
+   "op": "El proveedor que vende la máquina"
+  },
+  {
+   "p": "La IA propone «descuento de 3% por pronto pago». Antes de recomendarlo…",
+   "op": "Pregunto a la IA si es buena idea"
+  },
+  {
+   "p": "El mensaje principal para dirección es…",
+   "op": "«La proyección de flujo presenta variaciones en el periodo»"
+  }
+ ],
+ "extras": {
+  "c-ia-finanzas-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> eres analista en una empresa de alimentos en Monterrey. El director te pide en una hora un análisis de por qué subieron los gastos. Un compañero pegó el auxiliar de gastos en un asistente de IA gratuito y te pasa la respuesta: totales por rubro, variaciones y conclusiones."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál es el primer problema de lo que hizo tu compañero?",
+      "ops": [
+       "Que la respuesta es muy larga",
+       "Que subió información interna a una herramienta no autorizada",
+       "Que no usó gráficas"
+      ],
+      "correcta": 1,
+      "explica": "Antes de revisar la calidad, hay un incidente de datos. Se reporta según la política y no se repite."
+     },
+     {
+      "p": "¿Puedes usar los totales por rubro que calculó la IA?",
+      "ops": [
+       "No: los recalculo en Excel o el sistema y solo uso esas cifras",
+       "Sí, si se ven razonables",
+       "Sí, redondeados"
+      ],
+      "correcta": 0,
+      "explica": "Excel y el sistema calculan. Una cifra de la IA solo sirve como referencia para comparar."
+     },
+     {
+      "p": "¿Para qué sí te sirve la IA en la hora que tienes?",
+      "ops": [
+       "Para decidir qué gastos recortar",
+       "Para calcular el presupuesto del próximo año",
+       "Para redactar el comentario una vez que tienes las cifras y las causas"
+      ],
+      "correcta": 2,
+      "explica": "Con números verificados y causas confirmadas, la IA te ahorra tiempo en la redacción."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pedir ayuda sin exponer información",
+    "malTitulo": "Expone y delega el cálculo",
+    "mal": "«Te pego el auxiliar de gastos de la empresa. Dime cuánto gastamos por rubro y por qué subió.»",
+    "bienTitulo": "Protege y delega la redacción",
+    "bien": "«Tengo estas variaciones ya calculadas en Excel (cifras redondeadas, sin nombres): viáticos +22%, fletes +15%, mantenimiento −8%. Causas confirmadas: [causas]. Redacta un comentario de 80 palabras para dirección con la estructura qué pasó, por qué y qué hacemos.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu regla de la hora urgente",
+    "pregunta": "Escribe la regla que seguirás cuando te pidan un análisis urgente: qué haces en Excel, qué le pides a la IA y qué nunca subes.",
+    "ayuda": "Primero calculo en… Después pido a la IA… Nunca subo…"
+   }
+  ],
+  "c-ia-finanzas-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en una comercializadora de Puebla evalúan un crédito de $600,000 a 24 meses con tasa anual de 18%. La IA te dio la fórmula <code>=PAGO(18%, 24, -600000)</code> para el pago mensual. El resultado se ve altísimo y sospechas algo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa la fórmula",
+    "preguntas": [
+     {
+      "p": "¿Qué error tiene la fórmula de la IA?",
+      "ops": [
+       "Usa la tasa anual con periodos mensuales; debe ser 18%/12",
+       "El monto debería ser positivo",
+       "PAGO no existe en Excel en español"
+      ],
+      "correcta": 0,
+      "explica": "Si los pagos son mensuales, la tasa también debe ser mensual. Es uno de los errores más comunes en fórmulas generadas."
+     },
+     {
+      "p": "¿Cómo confirmas que la fórmula corregida es correcta?",
+      "ops": [
+       "Le pregunto a la IA si ya está bien",
+       "La comparo con el simulador del banco o con una tabla de amortización que conozco",
+       "Veo si el resultado se ve razonable"
+      ],
+      "correcta": 1,
+      "explica": "El caso de prueba con un resultado conocido es tu control, no la opinión de la IA."
+     },
+     {
+      "p": "La cotización del banco incluye comisiones y seguro. ¿Qué dato usas para comparar créditos?",
+      "ops": [
+       "Solo la tasa anual",
+       "El pago mensual sin comisiones",
+       "El costo total del crédito, incluyendo comisiones, según la información oficial del banco"
+      ],
+      "correcta": 2,
+      "explica": "La tasa sola no dice todo. Compara el costo total con la información que el banco está obligado a darte y verifícala en su documentación."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la fórmula corregida",
+    "items": [
+     {
+      "frase": "Pago mensual: =PAGO(18%/___, 24, -600000)",
+      "resp": [
+       "12"
+      ]
+     },
+     {
+      "frase": "Antes de usar la fórmula en el modelo, la compruebo con un caso de ___ con resultado conocido.",
+      "resp": [
+       "prueba",
+       "Prueba"
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu fórmula riesgosa",
+    "pregunta": "¿Qué fórmula de tu trabajo tendría más impacto si estuviera mal? Escribe el caso de prueba con el que la comprobarías y dónde conseguirías el resultado esperado.",
+    "ayuda": "Fórmula: … Caso de prueba: … Resultado esperado según…"
+   }
+  ],
+  "c-ia-finanzas-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> el gerente de ventas de una distribuidora en Guadalajara quiere dar 10% de descuento a todos los clientes para cerrar el trimestre. El margen bruto de la empresa es de 25%. Le pides a la IA una explicación para él y te propone un texto lleno de términos como «elasticidad» y «contribución marginal»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le pides a la IA para mejorar la explicación?",
+      "ops": [
+       "Que la haga más técnica para que se vea sólida",
+       "Que use un ejemplo con números sencillos y una analogía de su trabajo diario",
+       "Que la haga más larga"
+      ],
+      "correcta": 1,
+      "explica": "El gerente decide con ejemplos concretos: cuánto hay que vender de más para ganar lo mismo."
+     },
+     {
+      "p": "La IA escribe que «con 10% de descuento hay que vender 10% más para compensar». ¿Es correcto con margen de 25%?",
+      "ops": [
+       "No: con 25% de margen, un 10% de descuento exige vender bastante más; lo calculo en Excel",
+       "Sí, siempre es proporcional",
+       "Sí, si el descuento es temporal"
+      ],
+      "correcta": 0,
+      "explica": "De cada $100 quedaban $25; con descuento quedan $15. Para ganar lo mismo hay que vender alrededor de 67% más. La IA simplificó mal: el número sale de tu hoja."
+     },
+     {
+      "p": "¿Cómo terminas el mensaje al gerente?",
+      "ops": [
+       "Con la definición de margen bruto",
+       "Con una advertencia de que no se puede",
+       "Con una acción: alternativas como descuento solo a clientes clave o por volumen"
+      ],
+      "correcta": 2,
+      "explica": "Una buena explicación para no financieros termina con algo que la persona puede hacer."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Explicar el efecto del descuento",
+    "malTitulo": "Técnico",
+    "mal": "«Dada la contribución marginal de 25%, una reducción de precio de 10% requiere un incremento de volumen sustancial para mantener la utilidad bruta.»",
+    "bienTitulo": "Claro",
+    "bien": "«Hoy, de cada $100 que vendes nos quedan $25. Con 10% de descuento nos quedan $15. Para ganar lo mismo tendrías que vender casi 70% más. Propuesta: descuento solo a los 10 clientes que compran por volumen.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu explicación con números",
+    "pregunta": "Elige una decisión comercial u operativa que hayas visto en tu empresa con efecto en margen o flujo. Escribe la explicación en 4 renglones con un ejemplo de $100 y una acción.",
+    "ayuda": "De cada $100… Si hacemos… nos quedan… Propuesta: …"
+   }
+  ],
+  "c-ia-finanzas-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> cierre de agosto en una cadena de farmacias del Bajío. Mandaste a la IA la tabla de real contra presupuesto con variaciones calculadas, pero olvidaste incluir la instrucción de «causa por confirmar». Los 6 comentarios que devolvió se leen muy bien… y 4 tienen causas que nadie te dijo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa los comentarios",
+    "preguntas": [
+     {
+      "p": "Un comentario dice «ventas −6% por menor afluencia en temporada de lluvias». Nadie te dio esa causa. ¿Qué haces?",
+      "ops": [
+       "La dejo, suena lógica",
+       "La cambio por «causa por confirmar con el área comercial» y pregunto",
+       "La borro junto con la variación"
+      ],
+      "correcta": 1,
+      "explica": "Una causa plausible no es una causa confirmada. Preguntar al área es parte del proceso de cierre."
+     },
+     {
+      "p": "Otro comentario recalcula la variación y da −7.2% en lugar de −6.8% de tu tabla. ¿Qué cifra va al reporte?",
+      "ops": [
+       "La de tu tabla, calculada en Excel",
+       "La de la IA, que es más reciente",
+       "Un promedio"
+      ],
+      "correcta": 0,
+      "explica": "Por eso la plantilla dice «no las recalcules». Si la IA cambia una cifra, manda Excel."
+     },
+     {
+      "p": "¿Qué cambias en tu proceso para el próximo cierre?",
+      "ops": [
+       "Dejar de usar IA en variaciones",
+       "Pedir comentarios más cortos",
+       "Usar siempre la plantilla completa con «causa por confirmar» y cotejar cifras antes de enviar"
+      ],
+      "correcta": 2,
+      "explica": "La plantilla ya tenía la protección; el error fue omitirla. Guarda tus prompts probados para no reescribirlos cada mes."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Variación y pregunta para el área",
+    "pares": [
+     [
+      "Ventas por debajo del presupuesto",
+      "¿Qué sucursales o líneas explican la diferencia?"
+     ],
+     [
+      "Gastos de fletes arriba",
+      "¿Hubo envíos urgentes o cambio de tarifa?"
+     ],
+     [
+      "Nómina arriba sin altas",
+      "¿Hubo horas extra, bonos o ajustes salariales?"
+     ],
+     [
+      "Mermas arriba",
+      "¿Qué productos y por qué causa: caducidad, daño o robo?"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus preguntas de cierre",
+    "pregunta": "Escribe las 3 preguntas que harás a las áreas cada cierre para confirmar causas de variaciones antes de redactar con IA.",
+    "ayuda": "1. ¿Qué pasó en… 2. … 3. …"
+   }
+  ],
+  "c-ia-finanzas-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> preparas la presentación del trimestre de una fábrica de muebles en Jalisco. La IA te propuso 5 diapositivas con títulos como «Ventas», «Gastos» y «Flujo», y una gráfica de pastel para comparar real contra presupuesto por rubro."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Revisa la propuesta",
+    "preguntas": [
+     {
+      "p": "¿Qué cambias en los títulos?",
+      "ops": [
+       "Nada, son claros",
+       "Los hago más cortos",
+       "Los convierto en conclusiones, por ejemplo «El flujo cubrió la inversión sin usar crédito»"
+      ],
+      "correcta": 2,
+      "explica": "Un título-conclusión le dice al director qué ver antes de leer la gráfica."
+     },
+     {
+      "p": "¿Qué gráfica usas para real contra presupuesto por rubro?",
+      "ops": [
+       "Barras agrupadas",
+       "Pastel",
+       "Dispersión"
+      ],
+      "correcta": 0,
+      "explica": "El pastel muestra proporciones de un total, no comparaciones entre dos series."
+     },
+     {
+      "p": "La IA simuló 5 preguntas del director. Una es sobre un dato que no tienes. ¿Qué haces?",
+      "ops": [
+       "Invento una respuesta aproximada",
+       "Consigo el dato antes de la junta o preparo cuándo lo tendrás",
+       "Quito esa diapositiva"
+      ],
+      "correcta": 1,
+      "explica": "Para eso sirven las preguntas difíciles: te muestran huecos a tiempo."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Título de diapositiva",
+    "malTitulo": "Tema",
+    "mal": "«Gastos de operación del trimestre»",
+    "bienTitulo": "Conclusión",
+    "bien": "«Los gastos crecieron 9%, pero 6 puntos vienen de la nueva planta y se recuperan en 2027»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus títulos-conclusión",
+    "pregunta": "Reescribe como conclusiones los títulos de las 3 diapositivas más importantes de tu último reporte.",
+    "ayuda": "Antes: «Ventas» → Ahora: «…»"
+   }
+  ],
+  "c-ia-finanzas-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> conciliación de la cuenta bancaria principal de una empresa de transporte en Querétaro. Quedaron 5 partidas sin cruzar. La IA, con la descripción de cada una (sin datos del banco ni de clientes), propuso clasificaciones. Tú decides qué se acepta."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "La IA clasifica un depósito de $12,300 como «depósito en tránsito». Hoy es día 10 y el depósito se registró en libros el día 28 del mes anterior. ¿Qué haces?",
+      "ops": [
+       "Lo acepto como en tránsito",
+       "Lo investigo: un depósito en tránsito normalmente aparece en el banco en pocos días",
+       "Lo cancelo en libros"
+      ],
+      "correcta": 1,
+      "explica": "Una partida en tránsito que no aparece después de días es una alerta. La clasificación de la IA no sustituye la evidencia."
+     },
+     {
+      "p": "Un cargo bancario de $348 sin registro en libros. La IA sugiere «comisión». ¿Qué necesitas para registrarlo?",
+      "ops": [
+       "El detalle del cargo en el estado de cuenta o la notificación del banco",
+       "Nada, es poco dinero",
+       "Que la IA lo confirme"
+      ],
+      "correcta": 0,
+      "explica": "El monto no cambia la regla: sin evidencia no hay partida aclarada."
+     },
+     {
+      "p": "¿Quién firma la conciliación como revisor?",
+      "ops": [
+       "La misma persona que la preparó",
+       "La IA",
+       "Una persona distinta con autorización, según el checklist de cierre"
+      ],
+      "correcta": 2,
+      "explica": "La segregación de funciones sigue igual aunque uses IA."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Partida y evidencia",
+    "pares": [
+     [
+      "Depósito en tránsito",
+      "Ficha de depósito y aparición en el banco días después"
+     ],
+     [
+      "Cheque en circulación",
+      "Póliza de cheque y cobro posterior"
+     ],
+     [
+      "Comisión no registrada",
+      "Detalle del cargo en el estado de cuenta"
+     ],
+     [
+      "Error de captura",
+      "Póliza original y póliza de corrección"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus partidas eternas",
+    "pregunta": "¿Qué partida lleva más tiempo sin aclararse en tu conciliación (o en una típica)? Escribe qué evidencia necesitas, a quién se la pides y la fecha límite.",
+    "ayuda": "Partida: … Evidencia: … Responsable: … Fecha: …"
+   }
+  ],
+  "c-ia-finanzas-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una empresa de materiales para construcción en León proyecta su flujo a 13 semanas suponiendo que cobra a 30 días. Al revisar la antigüedad de saldos de los últimos 6 meses, los clientes pagan en promedio a 52 días. La IA, al cuestionar supuestos, no lo detectó porque no le diste ese dato."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué supuesto de cobranza usas en el escenario base?",
+      "ops": [
+       "30 días, el plazo de crédito pactado",
+       "El promedio real observado, alrededor de 52 días",
+       "15 días, para presionar a cobranza"
+      ],
+      "correcta": 1,
+      "explica": "El escenario base usa el comportamiento real. El plazo pactado es un objetivo, no un supuesto."
+     },
+     {
+      "p": "¿Por qué la IA no detectó el problema?",
+      "ops": [
+       "Porque solo puede cuestionar la información que le das",
+       "Porque es mala en finanzas",
+       "Porque el flujo era muy largo"
+      ],
+      "correcta": 0,
+      "explica": "Si le das los días reales de cobro junto con el supuesto, la IA puede señalar la diferencia. Dale datos de contraste."
+     },
+     {
+      "p": "Con 22 días más de cobro, ¿qué pasa típicamente con el flujo?",
+      "ops": [
+       "Nada, las ventas son las mismas",
+       "Mejora",
+       "Se retrasan entradas y aparecen semanas con saldo más bajo"
+      ],
+      "correcta": 2,
+      "explica": "El mismo ingreso llega más tarde: por eso la utilidad no es efectivo."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Pedir que cuestione supuestos",
+    "malTitulo": "Sin contraste",
+    "mal": "«Mis supuestos: cobro a 30 días, pagos a 45 días. ¿Están bien?»",
+    "bienTitulo": "Con datos reales",
+    "bien": "«Supuestos: cobro a 30 días, pagos a 45. Datos reales de 6 meses: cobro promedio 52 días, pago promedio 38. ¿Qué supuestos contradicen los datos y cómo cambiaría el escenario base?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus supuestos de contraste",
+    "pregunta": "Escribe los 3 supuestos de tu flujo o presupuesto que más dependen del comportamiento real y qué dato histórico usarías para contrastarlos.",
+    "ayuda": "Supuesto: … Dato real: … Dónde lo obtengo: …"
+   }
+  ],
+  "c-ia-finanzas-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una empresa de logística en Tlaxcala debe decidir entre comprar 3 camiones o arrendarlos. Le diste a la IA los datos y, aunque le pediste no calcular, respondió «la compra tiene una TIR de 19.4%, conviene comprar»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con la TIR de 19.4%?",
+      "ops": [
+       "La uso en la recomendación",
+       "La calculo en Excel con los flujos y uso solo mi resultado",
+       "La redondeo a 19%"
+      ],
+      "correcta": 1,
+      "explica": "La IA no ejecutó un modelo con tus flujos. Excel calcula; la IA estructura."
+     },
+     {
+      "p": "¿Qué variable suele olvidarse al comparar compra contra arrendamiento?",
+      "ops": [
+       "Mantenimiento, seguros y valor de rescate al final",
+       "El color de los camiones",
+       "La marca del arrendador"
+      ],
+      "correcta": 0,
+      "explica": "Pide a la IA la lista de variables faltantes: es donde más aporta."
+     },
+     {
+      "p": "El tratamiento fiscal de la compra y del arrendamiento…",
+      "ops": [
+       "Lo decide la IA",
+       "Es igual en ambos casos",
+       "Se revisa con el área fiscal o el contador con las disposiciones vigentes"
+      ],
+      "correcta": 2,
+      "explica": "Deducciones y requisitos cambian; si usas alguna cifra fiscal, verifica la cifra vigente en sat.gob.mx."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Recomendación de compra o arrendamiento",
+    "malTitulo": "Débil",
+    "mal": "«Conviene comprar porque la TIR es alta.»",
+    "bienTitulo": "Sólida",
+    "bien": "«Recomendamos arrendar: el costo total a 5 años es similar, pero conservamos $2.1 M de caja en un año con semanas de saldo ajustado. Si la tasa del crédito bajara 3 puntos, la compra sería mejor opción.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus variables olvidadas",
+    "pregunta": "Para una decisión de inversión de tu empresa, escribe las variables que normalmente se olvidan y el prompt con el que pedirías a la IA que te ayude a encontrarlas.",
+    "ayuda": "Variables: … Prompt: Estamos evaluando… ¿qué variables faltan…?"
+   }
+  ],
+  "c-ia-finanzas-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> dirección aprobó tu recomendación de la alerta de liquidez: negociar 30 días más con el proveedor y ofrecer descuento por pronto pago a tres clientes. Pasó un mes. Ahora usas la IA para preparar el seguimiento: qué funcionó, qué no y qué sigue."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué datos necesitas antes de pedir a la IA el reporte de seguimiento?",
+      "ops": [
+       "Ninguno, que la IA estime",
+       "Solo la opinión del equipo",
+       "Flujo real contra proyectado de las semanas 1 a 4 y el costo real de los descuentos"
+      ],
+      "correcta": 2,
+      "explica": "El seguimiento compara lo prometido con lo real, con cifras de Excel o del sistema."
+     },
+     {
+      "p": "Solo uno de los tres clientes tomó el descuento. ¿Cómo lo reportas?",
+      "ops": [
+       "Con el dato real, su efecto en el flujo y la acción siguiente",
+       "No lo menciono",
+       "Digo que la estrategia funcionó en general"
+      ],
+      "correcta": 0,
+      "explica": "Un reporte honesto con acción siguiente genera más confianza que uno que maquilla."
+     },
+     {
+      "p": "La IA propone concluir «la liquidez está resuelta». La semana 9 aún se ve ajustada. ¿Qué escribes?",
+      "ops": [
+       "Lo que dijo la IA",
+       "«Resolvimos las semanas 5 a 7; la semana 9 sigue en vigilancia y proponemos…»",
+       "Nada sobre la semana 9"
+      ],
+      "correcta": 1,
+      "explica": "La conclusión debe coincidir con la proyección actualizada, no con el optimismo del texto."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Sección del seguimiento y contenido",
+    "pares": [
+     [
+      "Mensaje principal",
+      "Qué se resolvió y qué sigue abierto"
+     ],
+     [
+      "Real vs. proyectado",
+      "Diferencias por semana con causa"
+     ],
+     [
+      "Costo de las medidas",
+      "Descuentos y cargos financieros reales"
+     ],
+     [
+      "Siguiente paso",
+      "Acción, responsable y fecha"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu seguimiento",
+    "pregunta": "Piensa en una decisión financiera reciente. Escribe el mensaje principal de su seguimiento en 3 renglones: qué se prometió, qué pasó y qué sigue.",
+    "ayuda": "Prometimos… Pasó… Siguiente paso: …"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas de finanzas",
+   "r": "Tesorería y crédito, presupuesto y pronóstico, y controles de pago con prevención de fraude: cómo usar la IA en cada situación, qué errores comete y cómo detectarlos. Tres lecciones y una evaluación.",
+   "lecciones": [
+    {
+     "t": "Tesorería, cartera y crédito bancario",
+     "obj": "usar la IA para preparar la gestión de cartera y la negociación bancaria sin delegarle tasas, costos ni condiciones.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Tesorería vive de tres preguntas: <b>¿cuándo entra el dinero?, ¿cuándo sale? y ¿cuánto cuesta financiar la diferencia?</b> La IA te ayuda a preparar la estrategia de cobranza, a ordenar las cotizaciones de los bancos y a ensayar la negociación. Donde falla: confunde tasas nominales con efectivas, inventa condiciones de productos bancarios y usa datos de mercado viejos. Tasas de referencia, tipo de cambio e inflación se consultan en Banxico e INEGI; condiciones de un crédito, en el contrato y la documentación del banco."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Comparar ofertas de crédito",
+       "texto": "Tengo [número] ofertas de crédito de bancos distintos para capital de trabajo (sin nombres de la empresa). Datos de cada una: [monto, plazo, tasa, comisiones, garantías, seguros, condiciones de pago anticipado]. 1) Arma una tabla comparativa. 2) Señala qué datos faltan para comparar el costo total. 3) Dame las fórmulas de Excel para calcular el pago y el costo total de cada una; yo las calculo. 4) Prepara 5 preguntas para negociar con cada banco. No supongas tasas ni comisiones que no te di."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en tesorería",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Confunde tasas",
+         "Trata una tasa anual como mensual o nominal como efectiva",
+         "Revisas cómo expresa la tasa el contrato"
+        ],
+        [
+         "Datos de mercado viejos",
+         "Usa un tipo de cambio o tasa de referencia de otro año",
+         "Consultas Banxico el día que lo necesitas"
+        ],
+        [
+         "Inventa condiciones",
+         "«Este tipo de crédito no cobra comisión por pago anticipado»",
+         "Lo confirmas en el contrato del banco"
+        ],
+        [
+         "Ignora garantías",
+         "Compara solo tasas",
+         "Incluyes garantías y obligaciones de hacer y no hacer"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "La IA dice que una oferta tiene «tasa de 1.5%» y la otra «de 16%». ¿Qué revisas primero?",
+         "ops": [
+          "Si ambas están expresadas en el mismo periodo y tipo de tasa",
+          "Cuál es menor",
+          "Cuál banco es más grande"
+         ],
+         "correcta": 0,
+         "explica": "Una tasa mensual y una anual no se comparan directo. Homologa antes de decidir."
+        },
+        {
+         "p": "Necesitas el tipo de cambio para valuar un pasivo en dólares al cierre. ¿De dónde lo tomas?",
+         "ops": [
+          "De la IA",
+          "De la fuente oficial que use tu política contable, como la publicación del Banco de México",
+          "Del tipo de cambio de la semana pasada"
+         ],
+         "correcta": 1,
+         "explica": "Los datos de mercado cambian a diario; la IA no los conoce al momento."
+        },
+        {
+         "p": "Para ensayar la negociación con el banco, ¿cómo te ayuda mejor la IA?",
+         "ops": [
+          "Firmando la carta de solicitud",
+          "Diciéndote qué tasa te darán",
+          "Actuando como ejecutivo del banco con objeciones realistas"
+         ],
+         "correcta": 2,
+         "explica": "El ensayo te prepara para las objeciones; las condiciones reales las da el banco."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tasas, tipo de cambio y condiciones: de Banxico, INEGI y el contrato del banco.",
+        "Homologa tasas antes de comparar.",
+        "La IA ordena ofertas y ensaya negociaciones; Excel calcula."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Presupuesto y pronóstico con supuestos explícitos",
+     "obj": "construir un presupuesto o pronóstico con apoyo de IA dejando cada supuesto documentado, contrastado y con su fuente.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un presupuesto es un conjunto de supuestos convertidos en números. El problema no suele estar en las fórmulas, sino en <b>supuestos no escritos o sin fuente</b>. La IA es excelente para hacer la lista de supuestos que faltan, proponer los impulsores de cada rubro y redactar la memoria del presupuesto. No debe darte inflación, tipo de cambio ni incrementos salariales de memoria: esos datos vienen de Banxico, INEGI o tus propios contratos, con fecha de consulta."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Mapa de supuestos del presupuesto",
+       "texto": "Estoy armando el presupuesto [anual/trimestral] de una empresa de [giro] con [tamaño]. Rubros: [lista]. Para cada rubro dame: 1) el impulsor principal (por ejemplo, unidades vendidas, plantilla, metros cuadrados), 2) los supuestos que necesito definir, 3) la fuente donde debería obtener cada dato externo, 4) una pregunta para validar el supuesto con el área responsable. No propongas cifras de inflación, tipo de cambio ni aumentos: déjalas como [dato por obtener]."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en presupuestos",
+       "encabezados": [
+        "Error",
+        "Ejemplo",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "Estacionalidad inventada",
+         "«Diciembre suele ser 30% mayor»",
+         "Usas tu histórico de ventas por mes"
+        ],
+        [
+         "Datos macro de memoria",
+         "Inflación o tipo de cambio de otro año",
+         "Consultas Banxico o INEGI y anotas la fecha"
+        ],
+        [
+         "Crecimiento lineal",
+         "Aplica el mismo porcentaje a todos los rubros",
+         "Cada rubro con su impulsor"
+        ],
+        [
+         "Olvida lo que no se repite",
+         "Proyecta un ingreso extraordinario como recurrente",
+         "Separas partidas no recurrentes"
+        ]
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "La IA propone un aumento de 8% en todos los gastos «por inflación». ¿Qué haces?",
+         "ops": [
+          "Lo aplico, es prudente",
+          "Defino cada rubro con su impulsor y uso el dato oficial vigente de inflación solo donde aplique",
+          "Uso 10% para tener colchón"
+         ],
+         "correcta": 1,
+         "explica": "No todos los gastos crecen con la inflación: renta por contrato, nómina por negociación, fletes por volumen."
+        },
+        {
+         "p": "¿Qué debe acompañar a cada supuesto en tu presupuesto?",
+         "ops": [
+          "Su fuente, fecha y responsable que lo validó",
+          "Un color",
+          "Nada, basta el número"
+         ],
+         "correcta": 0,
+         "explica": "Cuando dirección pregunte «¿de dónde sale esto?», la respuesta ya está escrita."
+        },
+        {
+         "p": "El año pasado hubo una venta extraordinaria a gobierno. La IA la incluye en la base de crecimiento. ¿Qué haces?",
+         "ops": [
+          "La dejo, fue venta real",
+          "La duplico por optimismo",
+          "La separo como no recurrente y proyecto aparte si hay evidencia de repetirse"
+         ],
+         "correcta": 2,
+         "explica": "Mezclar partidas extraordinarias en la base infla todo el presupuesto."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Presupuesto = supuestos documentados con fuente y fecha.",
+        "Cada rubro con su impulsor, no un porcentaje general.",
+        "Datos macro de Banxico o INEGI, nunca de memoria de la IA."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Controles de pago y prevención de fraude",
+     "obj": "reforzar los controles de pagos a proveedores frente a fraudes que usan correos o documentos falsos, y usar la IA y tu hoja de cálculo para detectar anomalías.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Con herramientas de IA, los defraudadores redactan correos impecables, imitan el estilo de un proveedor o de un director e incluso clonan voces. El fraude más común en finanzas sigue siendo el mismo: <b>un «cambio de cuenta bancaria» del proveedor o una «instrucción urgente» del director</b>. La defensa no es tecnológica: es un control que nadie se salta. La IA te ayuda a documentar el procedimiento, capacitar al equipo y diseñar pruebas en tu hoja de cálculo para detectar pagos duplicados o inusuales."
+      },
+      {
+       "tipo": "pasos",
+       "rotulo": "Control para cambios de cuenta bancaria",
+       "pasos": [
+        "Ningún cambio de cuenta se acepta solo por correo, aunque venga del dominio correcto.",
+        "Se confirma con una llamada al contacto registrado en el expediente, nunca al teléfono del correo.",
+        "Un segundo responsable autoriza el cambio en el sistema.",
+        "El primer pago a la nueva cuenta se revisa antes de liberarse.",
+        "Toda instrucción «urgente y confidencial» de pago se valida por un canal distinto."
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Capacitación antifraude para el equipo",
+       "texto": "Diseña una capacitación de 20 minutos para el equipo de cuentas por pagar de una empresa de [giro] sobre fraudes de cambio de cuenta e instrucciones falsas de directivos. Incluye: 3 ejemplos de correos sospechosos (ficticios), las señales de alerta, el procedimiento de verificación de nuestra empresa [pegar pasos] y un mini examen de 5 preguntas. Lenguaje sencillo y sin culpar a nadie."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Detectar posibles duplicados",
+       "datos": [
+        [
+         "Proveedor",
+         "Factura",
+         "Importe",
+         "Veces que aparece la factura"
+        ],
+        [
+         "P-07",
+         "A-1520",
+         48300,
+         ""
+        ],
+        [
+         "P-12",
+         "B-0877",
+         15600,
+         ""
+        ],
+        [
+         "P-07",
+         "A-1520",
+         48300,
+         ""
+        ],
+        [
+         "P-03",
+         "C-2291",
+         9900,
+         ""
+        ],
+        [
+         "Pagos en revisión",
+         "",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "D2",
+         "formula": "=CONTAR.SI(B2:B5,B2)",
+         "esperado": 2,
+         "requiere": "CONTAR.SI(",
+         "texto": "<b>D2</b>: cuántas veces aparece la factura A-1520 en la lista.",
+         "pista": "=CONTAR.SI(B2:B5,B2)"
+        },
+        {
+         "celda": "C6",
+         "formula": "=SUMAR.SI(B2:B5,\"A-1520\",C2:C5)",
+         "esperado": 96600,
+         "requiere": "SUMAR.SI(",
+         "texto": "<b>C6</b>: importe total programado para la factura A-1520.",
+         "explica": "Datos ficticios. La misma factura aparece dos veces: $48,300 se pagarían de más. En la vida real combinas proveedor, factura e importe para la prueba."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide en el caso",
+       "preguntas": [
+        {
+         "p": "Llega un correo del dominio correcto del proveedor pidiendo cambiar su cuenta porque «cambiaron de banco». ¿Qué haces?",
+         "ops": [
+          "Lo cambio, el dominio es correcto",
+          "Llamo al contacto registrado en el expediente para confirmar y sigo el control",
+          "Respondo el correo preguntando si es verdad"
+         ],
+         "correcta": 1,
+         "explica": "Un correo puede venir de una cuenta comprometida. La confirmación va por un canal que tú ya tenías."
+        },
+        {
+         "p": "El director te llama con una voz idéntica a la suya pidiendo un pago urgente y confidencial. ¿Qué haces?",
+         "ops": [
+          "Cuelgo y lo confirmo por el canal interno establecido antes de pagar",
+          "Pago, es el director",
+          "Pago la mitad"
+         ],
+         "correcta": 0,
+         "explica": "Las voces se pueden clonar. Ningún pago urgente se libera sin la validación del procedimiento."
+        },
+        {
+         "p": "¿Para qué usas la IA en este tema?",
+         "ops": [
+          "Para autorizar pagos",
+          "Para revisar los estados de cuenta reales en una herramienta pública",
+          "Para documentar el procedimiento, capacitar al equipo y diseñar pruebas de detección"
+         ],
+         "correcta": 2,
+         "explica": "La IA acelera la documentación y la capacitación; la autorización sigue siendo de personas con facultades."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Cambio de cuenta = llamada al contacto registrado + segunda autorización.",
+        "Urgente y confidencial = validar por otro canal.",
+        "Pruebas de duplicados con CONTAR.SI en tu hoja de cálculo."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Antes de comparar dos tasas de crédito debes…",
+     "ops": [
+      "Elegir la más baja",
+      "Homologar periodo y tipo de tasa",
+      "Preguntar a la IA cuál conviene",
+      "Redondearlas"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "El tipo de cambio para valuar un pasivo al cierre se toma de…",
+     "ops": [
+      "La fuente oficial que indique tu política contable",
+      "La IA",
+      "La semana anterior",
+      "Un promedio"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Cada supuesto del presupuesto debe tener…",
+     "ops": [
+      "Un color",
+      "Un porcentaje general",
+      "La aprobación de la IA",
+      "Fuente, fecha y responsable que lo validó"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Una venta extraordinaria del año pasado en la base del presupuesto…",
+     "ops": [
+      "Se separa como no recurrente",
+      "Se duplica",
+      "Se deja igual",
+      "Se reparte entre todos los meses"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un correo del proveedor pide cambiar su cuenta bancaria. El control correcto es…",
+     "ops": [
+      "Responder el correo",
+      "Aceptarlo si el dominio es correcto",
+      "Llamar al contacto registrado y pedir segunda autorización",
+      "Esperar a que insista"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Para detectar facturas duplicadas en tu lista de pagos usas…",
+     "ops": [
+      "PROMEDIO",
+      "CONTAR.SI",
+      "MAX",
+      "PAGO"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Una simulación de un día de cierre con errores plantados de la IA que debes detectar, y la construcción de tu kit financiero personal: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+   "lecciones": [
+    {
+     "t": "Simulación: día de cierre en una distribuidora",
+     "obj": "detectar los errores típicos de la IA en cuatro situaciones reales de un cierre financiero y decidir cómo corregirlos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Es el tercer día hábil del cierre de septiembre en una distribuidora de abarrotes de Querétaro. Eres gerente de finanzas y usas el asistente de IA autorizado por la empresa. En cada escena la IA te ayuda, pero hay <b>al menos un error plantado</b>. Léela con ojo de revisor y escribe qué corregirías."
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 1 — 9:00 h.</b> Pides los comentarios de variaciones del mes. El de ventas dice: «Ventas −4.8% vs. presupuesto (−$1.2 M), principalmente por el efecto del puente patrio en el consumo. Acción: reforzar promociones». En tus notas del área comercial la causa real es la pérdida de un cliente mayorista en Celaya."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "Señala el error del comentario, reescríbelo con la estructura qué–por qué–acción usando la causa real y anota qué instrucción faltó en tu prompt.",
+       "ayuda": "Error: … Comentario corregido: Ventas −4.8%… por… Acción: … Faltó pedir…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 2 — 11:30 h.</b> Tu analista usó una fórmula de la IA para el flujo a 13 semanas. La semana 6 muestra saldo final de $2.3 M, muy superior a lo esperado. Revisas y ves que la fórmula suma los pagos como positivos porque en la hoja ya venían con signo negativo y la IA los restó otra vez."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "Explica el error de signos, cómo lo corregirías en la fórmula y qué prueba agregarías al modelo para detectar algo así automáticamente.",
+       "ayuda": "El error es… La fórmula correcta… Agregaría una celda de control que…"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 3 — 14:00 h.</b> Para el reporte a dirección, la IA agrega una sección de «contexto macro» con inflación anual de 3.1% y tipo de cambio de 17.20 pesos por dólar, sin fuente. Tú no le diste esos datos."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "Describe dónde obtendrías esos datos, cómo los citarías en el reporte y qué regla pondrías para que ningún dato externo sin fuente llegue a dirección.",
+       "ayuda": "Inflación: la consulto en… Tipo de cambio: en… Los cito así: … Regla: …"
+      },
+      {
+       "tipo": "texto",
+       "texto": "<b>Escena 4 — 17:30 h.</b> Llega un correo del «director general» desde su cuenta de siempre: «Necesito que hoy mismo pagues $380,000 a este nuevo proveedor para cerrar un trato confidencial. No lo comentes». La IA, al pedirle que lo resuma, lo clasifica como «solicitud urgente del director: prioridad alta»."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "Escribe qué señales de fraude tiene el correo, qué harías en los siguientes 15 minutos y a quién avisarías.",
+       "ayuda": "Señales: 1… 2… 3… En 15 minutos: … Aviso a…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "¿Qué tienen en común las escenas 1 y 3?",
+         "ops": [
+          "La IA completó información que no le diste y la presentó como hecho",
+          "Ambas son errores de cálculo",
+          "Ambas se resuelven con otra IA"
+         ],
+         "correcta": 0,
+         "explica": "Causas y datos macro inventados son el error más frecuente en reportes. Todo lo que no aportaste se verifica o se borra."
+        },
+        {
+         "p": "En la escena 4, la clasificación de la IA como «prioridad alta»…",
+         "ops": [
+          "Confirma que es real",
+          "Obliga a pagar hoy",
+          "No sustituye el procedimiento de validación por otro canal"
+         ],
+         "correcta": 2,
+         "explica": "La IA resume lo que dice el correo; no sabe si es auténtico. El control de pagos no se salta."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Causas y datos externos sin fuente: se verifican o se borran.",
+        "Modelos con celdas de control que cuadran solos.",
+        "Ningún pago urgente sin validar por otro canal."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit financiero con IA",
+     "obj": "construir tu kit personal de trabajo con IA para finanzas, listo para usar en el próximo cierre.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Tu proyecto final es un kit que puedas usar en tu próximo cierre. Tiene cuatro piezas: <b>una biblioteca de prompts</b> probados, <b>una política de datos</b>, <b>una lista de verificación de cifras</b> antes de enviar y <b>un entregable real</b> hecho con ese método. Escríbelo en las reflexiones; al final tendrás un índice para armarlo en un solo documento."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: biblioteca de prompts",
+       "pregunta": "Escribe los 5 prompts que más usarás en finanzas (variaciones, reporte, supuestos, fórmulas, explicación a no financieros), cada uno con su nombre, cuándo lo usas y qué información nunca debe llevar.",
+       "ayuda": "1. «Comentarios de variaciones» — uso: cierre mensual — nunca: saldos bancarios reales… 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: política de datos",
+       "pregunta": "Redacta tu política de datos en 6 a 8 renglones: herramientas autorizadas, qué información financiera no se sube, cómo trabajar con cifras redondeadas o ficticias y qué hacer si alguien sube algo por error.",
+       "ayuda": "Autorizadas: … Nunca: estados financieros no públicos, saldos… Alternativa: … Si ocurre: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: lista de verificación de cifras",
+       "pregunta": "Escribe tu lista de 6 a 8 puntos que aplicarás antes de enviar cualquier reporte o análisis hecho con apoyo de IA.",
+       "ayuda": "□ Cada cifra del texto coincide con Excel o el sistema. □ Cada causa está confirmada con el área. □ Datos externos con fuente y fecha. □ …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Elige un entregable real (comentarios del cierre, presentación, flujo, análisis de decisión). Escribe qué prompt usaste, qué corregiste de la respuesta de la IA y cuánto tiempo te ahorraste.",
+       "ayuda": "Entregable: … Prompt: … Correcciones: … Tiempo antes / ahora: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit financiero con IA",
+       "texto": "KIT FINANCIERO CON IA — [tu nombre / área] — versión [fecha]\n\n1. Biblioteca de prompts\n   1.1 [nombre] — uso: [ ] — nunca incluir: [ ]\n   1.2 … 1.5\n2. Política de datos\n   Herramientas autorizadas: [ ]\n   Información que no se sube: [ ]\n   Cómo trabajamos con cifras ficticias o redondeadas: [ ]\n   Qué hacer ante un error: [ ]\n3. Lista de verificación de cifras\n   □ [ ] □ [ ] □ [ ] □ [ ] □ [ ] □ [ ]\n4. Fuentes de datos externos\n   Banxico (tasas, tipo de cambio) · INEGI (inflación) · sat.gob.mx (disposiciones fiscales) · contratos bancarios\n5. Controles del modelo\n   [celdas de control, casos de prueba]\n6. Entregable modelo y medición\n   [prompt, correcciones, horas ahorradas, errores detectados]",
+       "nota": "Cópiala en un documento y llénala con tus reflexiones. Revísala al inicio de cada trimestre."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Tu kit: prompts, política de datos, verificación de cifras y un entregable real.",
+        "Excel calcula; la IA explica, estructura y cuestiona.",
+        "Mide horas ahorradas y errores detectados."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La IA atribuye una variación a una causa que no le diste. ¿Qué haces?",
+     "ops": [
+      "La dejo si suena lógica",
+      "La sustituyo por la causa confirmada o por «causa por confirmar»",
+      "La borro junto con la variación",
+      "Le pido otra causa"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Una celda de control en un modelo de flujo sirve para…",
+     "ops": [
+      "Dar formato",
+      "Esconder errores",
+      "Detectar automáticamente cuando las cifras no cuadran",
+      "Sustituir la revisión"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La inflación y el tipo de cambio para un reporte se toman de…",
+     "ops": [
+      "INEGI y Banxico, con fecha de consulta",
+      "La IA",
+      "El reporte del año pasado",
+      "Una red social"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Un correo urgente y confidencial del director pidiendo un pago…",
+     "ops": [
+      "Se paga si viene de su cuenta",
+      "Se paga la mitad",
+      "Se ignora sin avisar",
+      "Se valida por otro canal antes de cualquier pago"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "¿Qué pieza del kit te protege de enviar cifras distintas a las de Excel?",
+     "ops": [
+      "La lista de verificación de cifras",
+      "La biblioteca de prompts",
+      "El índice",
+      "La política de datos"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad de un reporte hecho con apoyo de IA es…",
+     "ops": [
+      "De la IA",
+      "Del proveedor de la herramienta",
+      "De quien lo elabora y lo firma",
+      "De dirección"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}

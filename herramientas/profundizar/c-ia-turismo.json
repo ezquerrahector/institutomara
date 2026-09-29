@@ -1,0 +1,1193 @@
+{
+ "id": "c-ia-turismo",
+ "horas": 10,
+ "aprender": [
+  "Resolver casos especializados de turismo con IA —grupos y bodas destino, costeo de tours y atención a huéspedes internacionales— con tarifas, requisitos y traducciones verificadas.",
+  "Armar tu kit turístico con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real."
+ ],
+ "terceras": [
+  {
+   "p": "La IA escribió «traslados incluidos» y tú no los cotizaste. Tú…",
+   "op": "Lo dejas y los cobras aparte al llegar"
+  },
+  {
+   "p": "El precio del hotel para esas fechas lo obtienes de…",
+   "op": "La tarifa que pagaste la temporada pasada"
+  },
+  {
+   "p": "Margen =",
+   "op": "Precio al cliente − anticipo"
+  },
+  {
+   "p": "Un huésped apartó por WhatsApp sin que le mandaras la política. Llega y reclama. Lo que faltó fue…",
+   "op": "Pedirle una reseña antes de llegar"
+  },
+  {
+   "p": "Le preguntas a la IA cuántos días de cancelación marca la ley para hoteles. Lo correcto es…",
+   "op": "Usar lo que hace la competencia sin revisarlo"
+  },
+  {
+   "p": "La IA puso 4 actividades en un mismo día en puntos alejados. Tú…",
+   "op": "Quitas los tiempos de traslado para que quepa"
+  },
+  {
+   "p": "El precio del tour que aparece en el itinerario…",
+   "op": "Lo redondeas hacia abajo para que se vea atractivo"
+  },
+  {
+   "p": "Una opción de respaldo si llueve sirve para…",
+   "op": "Cobrar un cargo extra al grupo"
+  },
+  {
+   "p": "El aire acondicionado falla y no hay habitación para cambiar. Lo mejor es…",
+   "op": "Ofrecer una noche gratis sin consultar a nadie"
+  },
+  {
+   "p": "La IA propuso ofrecer una noche gratis como compensación. Tú…",
+   "op": "Ofreces dos noches para asegurar la reseña"
+  },
+  {
+   "p": "La reseña dice algo que sabes que es falso. Lo mejor es…",
+   "op": "Pedir a la plataforma que la borre sin responder"
+  },
+  {
+   "p": "El mejor momento para pedir la reseña es…",
+   "op": "Antes de que el huésped haga el check-in"
+  },
+  {
+   "p": "Ofrecer un descuento a cambio de una reseña de 5 estrellas…",
+   "op": "Está bien si el descuento es pequeño"
+  },
+  {
+   "p": "«A 5 minutos de la playa» sin haberlo medido…",
+   "op": "Se cambia a «cerca de todo»"
+  },
+  {
+   "p": "Una foto generada con IA de una alberca que no tienes…",
+   "op": "Se permite si la foto es muy parecida a la real"
+  },
+  {
+   "p": "Ocupación =",
+   "op": "Ingreso ÷ noches disponibles"
+  },
+  {
+   "p": "Vender más noches a menor precio…",
+   "op": "Nunca conviene en temporada baja"
+  },
+  {
+   "p": "Antes de bajar el precio conviene probar…",
+   "op": "Subir la tarifa de fin de semana"
+  },
+  {
+   "p": "Para llenar martes y miércoles, la primera opción debería ser…",
+   "op": "Cerrar esas noches para ahorrar personal"
+  },
+  {
+   "p": "Las fotos del perfil tienen 4 años y ya remodelaron. Lo correcto es…",
+   "op": "Dejar las fotos anteriores hasta la siguiente temporada"
+  },
+  {
+   "p": "Tarda 12 horas en contestar WhatsApp. La solución más rápida es…",
+   "op": "Contestar solo los mensajes con fechas"
+  }
+ ],
+ "extras": {
+  "c-ia-turismo-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> una agencia en Oaxaca cotiza para 8 amigos 4 noches en Huatulco. El hotel le confirmó $2,400 por noche por habitación doble. La IA armó la cotización como «$2,400 por persona por noche» y agregó «desayuno incluido», que el hotel no confirmó."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Con 4 habitaciones dobles, el hospedaje por persona por noche es…",
+      "ops": [
+       "$2,400",
+       "$1,200",
+       "$4,800"
+      ],
+      "correcta": 1,
+      "explica": "La tarifa es por habitación: $2,400 ÷ 2 = $1,200 por persona por noche."
+     },
+     {
+      "p": "¿Qué haces con el desayuno?",
+      "ops": [
+       "Lo dejas, suena bien",
+       "Lo quitas o lo confirmas con el hotel antes de enviar",
+       "Lo cobras aparte al llegar"
+      ],
+      "correcta": 1,
+      "explica": "Lo que no confirmaste no se ofrece."
+     },
+     {
+      "p": "Para evitar el error, en el prompt indicas…",
+      "ops": [
+       "Si cada tarifa es por persona o por habitación y la ocupación",
+       "Solo el destino",
+       "Que la IA calcule los precios"
+      ],
+      "correcta": 0,
+      "explica": "Sin ese dato, la IA supone."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Renglón de hospedaje",
+    "malTitulo": "Ambiguo",
+    "mal": "«Hospedaje: $2,400 con desayuno.»",
+    "bienTitulo": "Claro",
+    "bien": "«Hospedaje: 4 habitaciones dobles, 4 noches, $2,400 por habitación por noche ($1,200 por persona). Solo habitación, sin alimentos.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu renglón más confuso",
+    "pregunta": "¿Qué concepto de tus cotizaciones genera más dudas o reclamos? Reescríbelo aclarando unidad, ocupación y qué no incluye.",
+    "ayuda": "Concepto… / Así lo escribo ahora: …"
+   }
+  ],
+  "c-ia-turismo-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un hostal en San Cristóbal de las Casas usa respuestas base hechas con la IA. En la de mascotas escribió «¡Claro, somos pet friendly!», aunque el hostal no acepta mascotas. Un huésped llegó con su perro."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué falló?",
+      "ops": [
+       "El huésped",
+       "Nadie revisó la respuesta base contra las reglas reales del hostal",
+       "El WhatsApp"
+      ],
+      "correcta": 1,
+      "explica": "Cada respuesta base se revisa una vez contra tus reglas antes de usarla."
+     },
+     {
+      "p": "¿Qué haces con el huésped que ya llegó?",
+      "ops": [
+       "Lo rechazas sin más",
+       "Reconoces el error, buscas una solución razonable y cumples lo que el mensaje prometió o compensas",
+       "Le dices que debió preguntar"
+      ],
+      "correcta": 1,
+      "explica": "El error fue del negocio; la solución también."
+     },
+     {
+      "p": "Para que no se repita…",
+      "ops": [
+       "Corriges la respuesta base y la marcas como revisada",
+       "Dejas de usar respuestas base",
+       "Le pides a la IA que se acuerde"
+      ],
+      "correcta": 0,
+      "explica": "Una biblioteca revisada es la que protege."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta base de mascotas",
+    "malTitulo": "Sin revisar",
+    "mal": "«¡Claro, somos pet friendly! Tráelo.»",
+    "bienTitulo": "Revisada",
+    "bien": "«Por ahora no recibimos mascotas. Si te sirve, cerca hay una pensión para perros que otros huéspedes nos han recomendado; te paso sus datos.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu respuesta base de riesgo",
+    "pregunta": "¿Qué respuesta base podría meterte en problemas si dice algo incorrecto (mascotas, niños, estacionamiento, accesibilidad)? Escríbela verificada.",
+    "ayuda": "Tema… / Respuesta verificada: …"
+   }
+  ],
+  "c-ia-turismo-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la dueña de unas cabañas en Mazamitla dio sus reglas: anticipo de 50%, cancelación con más de 15 días: se devuelve el anticipo menos $500; con menos de 15 días: se da crédito para otra fecha. La IA redactó: «Cancela cuando quieras con reembolso del 100%»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema tiene el texto?",
+      "ops": [
+       "Ninguno, es amable",
+       "Cambió la política: promete un reembolso que la dueña no autorizó",
+       "Es muy largo"
+      ],
+      "correcta": 1,
+      "explica": "La IA redacta; la política la decide el negocio."
+     },
+     {
+      "p": "Un huésped cancela 20 días antes con un anticipo de $3,000. Según la política real, se le devuelve…",
+      "ops": [
+       "$3,000",
+       "$2,500",
+       "Nada"
+      ],
+      "correcta": 1,
+      "explica": "Más de 15 días: anticipo menos $500."
+     },
+     {
+      "p": "Si cancela 5 días antes…",
+      "ops": [
+       "Se le devuelve todo",
+       "Recibe crédito para otra fecha",
+       "Pierde todo sin aviso"
+      ],
+      "correcta": 1,
+      "explica": "Menos de 15 días: crédito, según la política."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Texto de la política",
+    "malTitulo": "Redactado por la IA sin control",
+    "mal": "«Cancela cuando quieras con reembolso del 100%.»",
+    "bienTitulo": "Fiel a las reglas del negocio",
+    "bien": "«Para apartar se deja 50%. Si cancelas con más de 15 días, te devolvemos el anticipo menos $500. Con menos de 15 días, te damos crédito para otra fecha.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu política revisada",
+    "pregunta": "Escribe tu política de cancelación en 3 renglones claros y compárala con lo que hoy dicen tus mensajes. ¿Coinciden?",
+    "ayuda": "Mi política: … / Mis mensajes dicen: … / Corrijo…"
+   }
+  ],
+  "c-ia-turismo-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un operador en Mérida arma un día de cenotes para una familia con una abuela de 78 años. La IA propuso tres cenotes a los que se baja por escaleras largas, marcó uno como «abierto los lunes, entrada libre» y calculó 20 minutos entre dos puntos que están a más de una hora."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué ajustas primero por el perfil?",
+      "ops": [
+       "Cenotes con acceso fácil y pocas escaleras",
+       "Más cenotes para aprovechar",
+       "Nada"
+      ],
+      "correcta": 0,
+      "explica": "El perfil manda: accesibilidad antes que cantidad."
+     },
+     {
+      "p": "«Abierto los lunes, entrada libre»…",
+      "ops": [
+       "Se verifica con el cenote o su sitio oficial antes de enviar",
+       "Se deja",
+       "Se cambia a «abierto siempre»"
+      ],
+      "correcta": 0,
+      "explica": "Horarios y precios cambian; se confirman."
+     },
+     {
+      "p": "Los tiempos de traslado los tomas de…",
+      "ops": [
+       "La IA",
+       "Una herramienta de mapas y tu experiencia en la ruta",
+       "El cliente"
+      ],
+      "correcta": 1,
+      "explica": "La IA no conoce distancias reales."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Día del itinerario",
+    "malTitulo": "Genérico",
+    "mal": "«Día 2: tres cenotes increíbles, entrada libre, todos cerca.»",
+    "bienTitulo": "Para este grupo",
+    "bien": "«Día 2: un cenote con acceso por rampa y área de descanso (horario y entrada confirmados el lunes), comida regional y regreso al hotel a las 4 p. m. para descansar.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu perfil más difícil",
+    "pregunta": "¿Qué perfil de viajero te cuesta más atender (adultos mayores, niños pequeños, personas con discapacidad)? Escribe 3 criterios que siempre aplicarías.",
+    "ayuda": "Perfil… / Criterio 1… / 2… / 3…"
+   }
+  ],
+  "c-ia-turismo-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> en un hotel boutique en Guanajuato capital, una pareja se queja a las 11 p. m. del ruido de una callejoneada. No hay habitaciones libres en la parte trasera. La IA sugiere responder: «Le regalamos la noche y una cena»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué puedes ofrecer?",
+      "ops": [
+       "Lo que autorizó la gerencia para estos casos: por ejemplo, tapones y cambio de habitación al día siguiente",
+       "Lo que propuso la IA",
+       "Nada, es la ciudad"
+      ],
+      "correcta": 0,
+      "explica": "La compensación sale de tu lista autorizada."
+     },
+     {
+      "p": "En tus mensajes previos a la llegada conviene…",
+      "ops": [
+       "Avisar que en el centro hay eventos nocturnos y qué habitaciones son más tranquilas",
+       "Ocultarlo",
+       "Prometer silencio total"
+      ],
+      "correcta": 0,
+      "explica": "Lo que se avisa antes no se convierte en queja."
+     },
+     {
+      "p": "La queja se registra para…",
+      "ops": [
+       "Detectar el patrón y ajustar la asignación de habitaciones",
+       "Nada",
+       "Culpar al recepcionista"
+      ],
+      "correcta": 0,
+      "explica": "El registro te dice qué corregir."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta en el momento",
+    "malTitulo": "Sin control",
+    "mal": "«Le regalamos la noche y una cena.»",
+    "bienTitulo": "Dentro de lo autorizado",
+    "bien": "«Tiene razón, esta noche hay callejoneada hasta la medianoche. Le traigo tapones ahora y mañana le cambio a una habitación interior sin costo. ¿Le parece bien?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu lista de compensaciones",
+    "pregunta": "Escribe las 4 compensaciones que tu negocio autoriza, de menor a mayor, y quién puede aprobar cada una.",
+    "ayuda": "1. … aprueba… / 2. … / 3. … / 4. …"
+   }
+  ],
+  "c-ia-turismo-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un huésped dejó 2 estrellas diciendo que la regadera no calentaba. La IA redactó la respuesta: «Estimado huésped de la habitación 12: según nuestras cámaras, usted llegó a las 2 a. m. y el calentador funcionaba»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué dato no debe aparecer en la respuesta pública?",
+      "ops": [
+       "El número de habitación y lo que muestran las cámaras",
+       "El agradecimiento",
+       "La invitación a escribir"
+      ],
+      "correcta": 0,
+      "explica": "En público no se exponen datos del huésped."
+     },
+     {
+      "p": "Antes de responder, verificas…",
+      "ops": [
+       "Con mantenimiento y el turno si el calentador tuvo falla ese día",
+       "Nada",
+       "Con la IA"
+      ],
+      "correcta": 0,
+      "explica": "Tu versión debe estar confirmada."
+     },
+     {
+      "p": "El tono correcto es…",
+      "ops": [
+       "Defensivo",
+       "Sereno: reconoces lo que sí falló y explicas qué harás",
+       "Irónico"
+      ],
+      "correcta": 1,
+      "explica": "Quien lee evalúa cómo respondes."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Respuesta a la reseña de la regadera",
+    "malTitulo": "Expone al huésped",
+    "mal": "«Estimado huésped de la habitación 12: según nuestras cámaras, usted llegó a las 2 a. m.»",
+    "bienTitulo": "Serena y privada",
+    "bien": "«Gracias por avisarnos. Ese día el calentador tuvo una falla que ya reparamos y ahora lo revisamos cada mañana. Nos gustaría escucharle: escríbanos a reservas@…»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu respuesta pendiente",
+    "pregunta": "Elige una reseña negativa reciente (tuya o de un negocio similar) y escribe una respuesta de máximo 80 palabras sin datos del huésped.",
+    "ayuda": "Respuesta: …"
+   }
+  ],
+  "c-ia-turismo-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la IA armó el calendario de marzo de un hotel en Pátzcuaro e incluyó «el Festival de la Mariposa Dorada, 12 de marzo», que nadie en el pueblo conoce, y el texto «a 2 minutos a pie de la plaza», sin medir."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con el festival?",
+      "ops": [
+       "Lo publicas",
+       "Lo verificas con fuentes locales; si no existe, lo quitas",
+       "Lo cambias de fecha"
+      ],
+      "correcta": 1,
+      "explica": "Una fecha falsa te cuesta credibilidad."
+     },
+     {
+      "p": "«A 2 minutos a pie»…",
+      "ops": [
+       "Se mide caminando o en el mapa y se escribe lo real",
+       "Se deja",
+       "Se cambia a «a un paso»"
+      ],
+      "correcta": 0,
+      "explica": "Distancias reales, siempre."
+     },
+     {
+      "p": "En el prompt del calendario debiste…",
+      "ops": [
+       "Darle solo fechas locales que tú confirmaste",
+       "Pedirle que invente eventos",
+       "Dejarlo libre"
+      ],
+      "correcta": 0,
+      "explica": "Lo que no le das, lo inventa."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Publicación del calendario",
+    "malTitulo": "Sin verificar",
+    "mal": "«¡No te pierdas el Festival de la Mariposa Dorada este 12 de marzo, a 2 minutos del hotel!»",
+    "bienTitulo": "Verificada",
+    "bien": "«Este fin de semana hay tianguis de artesanías en la plaza, a 6 minutos caminando del hotel. Pregúntanos por el recorrido de talleres de la zona.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tus fechas reales",
+    "pregunta": "Escribe 5 fechas o eventos reales de tu destino para los próximos 3 meses y dónde confirmaste cada uno.",
+    "ayuda": "1. … confirmado en… / 2. … / 3. … / 4. … / 5. …"
+   }
+  ],
+  "c-ia-turismo-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> un hotel de 20 habitaciones en Valle de Bravo tuvo en octubre 62% de ocupación con tarifa promedio de $1,900. La IA sugiere «bajar la tarifa a $1,500 porque así la ocupación subirá a 85%», sin ningún dato que lo respalde."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué haces con el 85%?",
+      "ops": [
+       "Lo tomas como promesa",
+       "Lo tratas como supuesto sin base y lo contrastas con tu historial",
+       "Lo publicas"
+      ],
+      "correcta": 1,
+      "explica": "Nadie sabe cuánto subirá la ocupación: es una apuesta."
+     },
+     {
+      "p": "Con 62% y $1,900, el ingreso por noche disponible es aprox…",
+      "ops": [
+       "$1,178",
+       "$1,900",
+       "$3,064"
+      ],
+      "correcta": 0,
+      "explica": "0.62 × 1,900 = $1,178."
+     },
+     {
+      "p": "Si bajas a $1,500 y llegas a 70%, el ingreso por noche disponible…",
+      "ops": [
+       "Sube",
+       "Baja a $1,050",
+       "Queda igual"
+      ],
+      "correcta": 1,
+      "explica": "0.70 × 1,500 = $1,050: vendes más y ganas menos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Recomendación a la dueña",
+    "malTitulo": "Sin datos",
+    "mal": "«Bajemos a $1,500, la ocupación subirá a 85%.»",
+    "bienTitulo": "Con números y prueba",
+    "bien": "«Hoy dejamos $1,178 por noche disponible. Propongo probar un paquete de 2 noches entre semana con desayuno a $1,800 por noche durante un mes y medir ocupación e ingreso por noche disponible.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu decisión de precio",
+    "pregunta": "Piensa en tu última promoción. Escribe cuál fue tu ingreso por noche disponible (o por lugar disponible) antes y después. ¿Funcionó?",
+    "ayuda": "Antes… / Después… / Conclusión…"
+   }
+  ],
+  "c-ia-turismo-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>El caso:</b> la posada del caso ya lanzó su paquete entre semana. Para acelerar, la IA le sugiere a la dueña «pedir a familiares y amigos que dejen reseñas de 5 estrellas» y «publicar fotos de la alberca del hotel vecino como si fueran propias»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Pedir reseñas a familiares que no se hospedaron…",
+      "ops": [
+       "Es mala práctica y puede violar las reglas de la plataforma",
+       "Es una buena idea",
+       "Está bien si son pocas"
+      ],
+      "correcta": 0,
+      "explica": "Las reseñas deben venir de huéspedes reales."
+     },
+     {
+      "p": "¿Qué haces con las fotos de la alberca vecina?",
+      "ops": [
+       "Las usas",
+       "No las usas: muestras solo lo que el huésped encontrará",
+       "Las usas sin decir nada"
+      ],
+      "correcta": 1,
+      "explica": "Una foto engañosa garantiza reclamos."
+     },
+     {
+      "p": "La forma legítima de juntar reseñas más rápido es…",
+      "ops": [
+       "Pedirla el día de la salida a cada huésped satisfecho",
+       "Comprarlas",
+       "Escribirlas tú"
+      ],
+      "correcta": 0,
+      "explica": "Constancia en pedir, no atajos."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Plan para reseñas",
+    "malTitulo": "Atajo",
+    "mal": "«Que la familia deje 20 reseñas de 5 estrellas esta semana.»",
+    "bienTitulo": "Legítimo",
+    "bien": "«Pedir la reseña en persona el día de la salida y por WhatsApp esa tarde con la liga directa, a cada huésped del paquete entre semana.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu plan de reseñas",
+    "pregunta": "Escribe cómo y cuándo pedirás reseñas a partir de mañana, y quién del equipo lo hará.",
+    "ayuda": "Momento… / Canal… / Responsable… / Meta del mes…"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Casos por especialidad: grupos, tours y huéspedes internacionales",
+   "r": "Manejar bloqueos de habitaciones para grupos y eventos, costear tours con punto de equilibrio y atender a huéspedes en otro idioma sin perder precisión.",
+   "lecciones": [
+    {
+     "t": "Grupos y bodas destino: bloqueos y listas de habitaciones",
+     "obj": "Controlar un bloqueo de habitaciones para un grupo o evento, con fecha de liberación y seguimiento, usando la IA para organizar y comunicar.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cuando un grupo o una boda aparta habitaciones, el hotel suele dar un <b>bloqueo</b>: un número de habitaciones reservadas a una tarifa especial hasta una <b>fecha de liberación</b>. Después de esa fecha, lo que no se confirmó regresa a la venta o genera cargos, según el contrato. El trabajo es vigilar cuántas se han confirmado y avisar a tiempo. La IA te ayuda a armar la lista de habitaciones, los recordatorios y los mensajes; las condiciones salen del contrato con el hotel."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> una agencia en Guadalajara organiza una boda en Puerto Vallarta. Bloqueó 40 habitaciones; el contrato dice que si a la fecha de liberación hay menos de 80% confirmado, las no confirmadas se liberan sin cargo, y si quieren conservarlas hay que renegociar."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Seguimiento del bloqueo",
+       "datos": [
+        [
+         "Semana",
+         "Bloqueadas",
+         "Confirmadas"
+        ],
+        [
+         "8 semanas antes",
+         40,
+         14
+        ],
+        [
+         "6 semanas antes",
+         40,
+         22
+        ],
+        [
+         "4 semanas antes",
+         40,
+         29
+        ],
+        [
+         "Decisión",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=SI(C4/B4<0.8,\"Liberar o renegociar\",\"Mantener bloqueo\")",
+         "esperado": "Liberar o renegociar",
+         "texto": "<b>B5</b>: con SI, si el confirmado a 4 semanas (C4 ÷ B4) es menor a 0.8 escribe «Liberar o renegociar»; si no, «Mantener bloqueo».",
+         "requiere": "SI(",
+         "pista": "=SI(C4/B4<0.8,«Liberar o renegociar»,«Mantener bloqueo») con comillas rectas",
+         "explica": "Van 29 de 40, es decir 72.5%: toca hablar con los novios y el hotel antes de la fecha de liberación, no después."
+        }
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Lista de habitaciones y recordatorios",
+       "texto": "Organiza esta lista de invitados que ya confirmaron hospedaje (solo nombre de pila e inicial, tipo de habitación, noches) en una tabla por tipo de habitación y fechas de llegada. Después redacta: 1) recordatorio para quienes no han confirmado con la fecha límite [fecha], 2) mensaje a los novios con el avance, 3) correo al hotel pidiendo confirmar la fecha de liberación. No cambies tarifas ni condiciones: usa solo las del contrato que te pego [condiciones]."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA con grupos:</b> inventar condiciones de contrato («el hotel suele dar 30 días de gracia»), sumar mal habitaciones por tipo y mezclar tarifas por persona y por habitación. Las condiciones del bloqueo se leen en el contrato firmado, no se suponen."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA dice que «normalmente los hoteles no cobran las habitaciones no usadas». Tú…",
+         "ops": [
+          "Le crees",
+          "Revisas el contrato del bloqueo",
+          "Se lo dices a los novios"
+         ],
+         "correcta": 1,
+         "explica": "Cada contrato tiene sus propias condiciones."
+        },
+        {
+         "p": "A 4 semanas llevas 72.5% confirmado. Lo oportuno es…",
+         "ops": [
+          "Esperar a la fecha de liberación",
+          "Hablar ya con los novios y el hotel",
+          "Confirmar todas por tu cuenta"
+         ],
+         "correcta": 1,
+         "explica": "Antes de la fecha tienes opciones; después, no."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Bloqueo + fecha de liberación = seguimiento semanal.",
+        "Condiciones del contrato, nunca supuestas.",
+        "Datos mínimos de los invitados en la IA."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Costear tours y actividades con punto de equilibrio",
+     "obj": "Calcular el costo por persona y el mínimo de participantes de un tour, y preparar su ficha con requisitos verificados.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Un tour tiene costos <b>fijos</b> (camioneta, guía, combustible: se pagan salga con 3 o con 12 personas) y <b>variables</b> (entradas, comida, seguro por persona). Con esos dos datos y tu precio sabes cuántas personas necesitas para no perder: el <b>punto de equilibrio</b>. La IA te ayuda a no olvidar costos y a redactar la ficha; la hoja de cálculo hace las cuentas."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> un operador en San Miguel de Allende quiere lanzar un recorrido a viñedos. Costos fijos por salida: $4,800. Costo variable por persona: $350. Precio: $950 por persona."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Punto de equilibrio del tour",
+       "datos": [
+        [
+         "Concepto",
+         "Valor (MXN)"
+        ],
+        [
+         "Costos fijos por salida",
+         4800
+        ],
+        [
+         "Costo variable por persona",
+         350
+        ],
+        [
+         "Precio por persona",
+         950
+        ],
+        [
+         "Personas para no perder",
+         ""
+        ],
+        [
+         "Personas en la salida",
+         12
+        ],
+        [
+         "Ganancia de la salida",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B5",
+         "formula": "=B2/(B4-B3)",
+         "esperado": 8,
+         "texto": "<b>B5</b>: punto de equilibrio = costos fijos ÷ (precio − costo variable)."
+        },
+        {
+         "celda": "B7",
+         "formula": "=B6*(B4-B3)-B2",
+         "esperado": 2400,
+         "texto": "<b>B7</b>: ganancia con 12 personas = personas × (precio − variable) − fijos.",
+         "pista": "=B6*(B4-B3)-B2",
+         "explica": "Con 8 personas no pierdes ni ganas; con 12 ganas $2,400. Por eso la ficha del tour debe decir «mínimo 8 personas» y qué pasa si no se llega."
+        }
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Permisos y requisitos: verifica el requisito vigente.</b> Guías acreditados, seguros para pasajeros, permisos para áreas naturales protegidas o para transporte turístico dependen de la actividad y el lugar. Verifica el requisito vigente con la autoridad correspondiente; la IA no sabe qué te aplica."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Ficha del tour",
+       "texto": "Redacta la ficha de mi tour [nombre] con estos datos verificados: duración, punto de salida, qué incluye, qué no incluye, qué llevar, nivel de esfuerzo, mínimo de [número] personas y qué pasa si no se alcanza (cambio de fecha o reembolso), política de cancelación [la mía]. Tono claro, máximo 200 palabras. No agregues requisitos legales, horarios ni precios que no te di."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Si sube el costo de la camioneta, el punto de equilibrio…",
+         "ops": [
+          "Sube",
+          "Baja",
+          "No cambia"
+         ],
+         "correcta": 0,
+         "explica": "Más costos fijos = más personas para no perder."
+        },
+        {
+         "p": "La IA dice que «para ese recorrido no necesitas ningún permiso». Tú…",
+         "ops": [
+          "Le crees",
+          "Verificas el requisito vigente con la autoridad correspondiente",
+          "Lo pones en la ficha"
+         ],
+         "correcta": 1,
+         "explica": "Los permisos dependen de la actividad y el lugar."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu producto",
+       "pregunta": "Elige un tour, paquete o experiencia que vendas. Anota sus costos fijos, variables y precio. ¿Cuál es tu mínimo para no perder?",
+       "ayuda": "Fijos… / Variables por persona… / Precio… / Mínimo…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Punto de equilibrio = fijos ÷ (precio − variable).",
+        "La ficha dice el mínimo y qué pasa si no se alcanza.",
+        "Permisos y seguros: verifica el requisito vigente."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Huéspedes internacionales y traducciones con IA",
+     "obj": "Usar la IA para atender en otro idioma cuidando que precios, políticas y condiciones se traduzcan sin cambiar su sentido.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "La IA traduce rápido y con buen tono, y eso abre la puerta a huéspedes que no hablan español. El riesgo está en los detalles: una política que en la traducción se vuelve más generosa, un «no incluye» que se pierde o una cifra que cambia de formato. Para mensajes del día a día basta revisar; para políticas, contratos o condiciones de pago, compara la traducción con el original frase por frase o pide que la revise alguien que domine el idioma."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>El caso:</b> un hotel en Tulum recibe muchas reservas de huéspedes de habla inglesa. Tradujo su política con la IA y la versión en inglés dice «full refund at any time», cuando la original dice «reembolso total con 7 días de anticipación»."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Traducir y verificar",
+       "texto": "Traduce al [idioma] este mensaje para un huésped: [texto]. Reglas: conserva exactamente cifras, fechas, horarios y condiciones; no agregues beneficios ni cambies el sentido de ninguna restricción. Después, haz una retrotraducción al español para que yo compare frase por frase, y marca con [REVISAR] cualquier término que pueda entenderse de dos formas."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Política traducida",
+       "malTitulo": "Traducción que cambia el sentido",
+       "mal": "«Full refund at any time.»",
+       "bienTitulo": "Fiel al original",
+       "bien": "«Full refund if you cancel at least 7 days before arrival.»"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Errores comunes de la IA al traducir en turismo:</b> suavizar restricciones, cambiar formatos de fecha (día/mes contra mes/día), convertir monedas sin que se lo pidas y omitir el «no incluye». Revisa siempre cifras, fechas y condiciones en la retrotraducción."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Para verificar una política traducida…",
+         "ops": [
+          "Confías en la IA",
+          "Pides retrotraducción y comparas frase por frase, o la revisa alguien que domine el idioma",
+          "La mandas y ves qué pasa"
+         ],
+         "correcta": 1,
+         "explica": "Las condiciones no se dejan a la suerte."
+        },
+        {
+         "p": "Un huésped te manda por chat la foto de su pasaporte para el registro. Tú…",
+         "ops": [
+          "La pegas en la IA para que la lea",
+          "La manejas solo en tu sistema de registro, nunca en una IA pública",
+          "La reenvías al grupo del equipo"
+         ],
+         "correcta": 1,
+         "explica": "Documentos de identidad solo en tus sistemas autorizados."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Traduce con reglas: cifras y condiciones intactas.",
+        "Retrotraducción o revisión humana para políticas.",
+        "Documentos de identidad, fuera de la IA."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "La fecha de liberación de un bloqueo indica…",
+     "ops": [
+      "Cuándo llega el grupo",
+      "Hasta cuándo se sostienen las habitaciones no confirmadas",
+      "El día de pago del hotel",
+      "La fecha de la boda"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Con 29 de 40 habitaciones confirmadas, el porcentaje es…",
+     "ops": [
+      "29%",
+      "40%",
+      "72.5%",
+      "80%"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Punto de equilibrio de un tour =",
+     "ops": [
+      "Costos fijos ÷ (precio − costo variable)",
+      "Precio × personas",
+      "Costos fijos × precio",
+      "Precio ÷ costo variable"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA dice que tu tour no requiere permisos…",
+     "ops": [
+      "Lo pones en la ficha",
+      "Le preguntas otra vez",
+      "Lo ignoras",
+      "Verificas el requisito vigente con la autoridad"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Para verificar una política traducida…",
+     "ops": [
+      "Retrotraducción y comparación frase por frase",
+      "Confías en la IA",
+      "Solo revisas la ortografía",
+      "La mandas sin revisar"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La foto del pasaporte de un huésped…",
+     "ops": [
+      "Se pega en la IA",
+      "Solo se maneja en tus sistemas autorizados",
+      "Se publica",
+      "Se reenvía al equipo"
+     ],
+     "correcta": 1
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día simulado en un hotel con errores de la IA que debes detectar y tu kit turístico personal.",
+   "lecciones": [
+    {
+     "t": "Simulación: un sábado en un hotel boutique",
+     "obj": "Detectar en un día simulado los errores típicos de la IA en turismo: cifras mal calculadas, servicios o políticas inventadas, promoción engañosa y datos de huéspedes expuestos.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Eres gerente de un hotel boutique de 14 habitaciones en San Miguel de Allende y usas un asistente de IA todo el día. En cada escena hay <b>al menos un error</b> plantado. Encuéntralo antes de que llegue a un huésped, a una plataforma o a tu dueño."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 — 9:00 a. m. Cotización de grupo.</b> La IA armó la cotización de 6 habitaciones para una boda: «6 habitaciones × 2 noches × $3,200 = $32,400, traslados incluidos». Tú no cotizaste traslados."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué corriges?",
+       "pregunta": "Rehaz la cuenta y di qué quitas o confirmas antes de enviar.",
+       "ayuda": "Cuenta correcta: … / Traslados: … / Antes de enviar reviso…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 — 11:30 a. m. Huésped internacional.</b> Una huésped canadiense pregunta por la política de cancelación. La traducción de la IA dice «free cancellation up to 24 hours before», y tu política es 7 días."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué corriges?",
+       "pregunta": "Reescribe la frase en inglés fiel a tu política y explica cómo verificarás traducciones de aquí en adelante.",
+       "ayuda": "Frase correcta: … / Verifico con…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 — 3:00 p. m. Promoción.</b> Para la publicación del fin de semana, la IA generó una imagen de una terraza con alberca «para inspirar» y escribió «a 2 minutos del Jardín Principal». El hotel no tiene alberca y nadie ha medido la distancia."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué corriges?",
+       "pregunta": "¿Qué cambias en la imagen y en el texto para que la publicación sea honesta y siga vendiendo?",
+       "ayuda": "Imagen: … / Distancia: … / Mensaje final: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 — 7:00 p. m. Registro y reseña.</b> Recepción pegó en la IA fotos de pasaportes de 3 huéspedes «para que llene el registro». Además, la IA respondió una reseña negativa mencionando el número de habitación y el horario de llegada del huésped."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué corriges?",
+       "pregunta": "¿Qué reglas de datos se rompieron y cómo corriges la respuesta a la reseña?",
+       "ayuda": "Regla rota 1: … / Regla rota 2: … / Respuesta corregida: …"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "6 habitaciones × 2 noches × $3,200 es…",
+         "ops": [
+          "$32,400",
+          "$38,400",
+          "$19,200"
+         ],
+         "correcta": 1,
+         "explica": "6 × 2 × 3,200 = 38,400. Los cálculos van en tu hoja."
+        },
+        {
+         "p": "La política traducida debe…",
+         "ops": [
+          "Decir lo mismo que el original, con los mismos días",
+          "Ser más flexible para atraer extranjeros",
+          "Omitir la cancelación"
+         ],
+         "correcta": 0,
+         "explica": "Una traducción no cambia condiciones."
+        },
+        {
+         "p": "Una imagen de alberca que no existe…",
+         "ops": [
+          "Se publica «para inspirar»",
+          "No se usa: muestras la propiedad real",
+          "Se usa si es pequeña"
+         ],
+         "correcta": 1,
+         "explica": "Lo que muestras es lo que prometes."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Cuentas en tu hoja; servicios solo si están confirmados.",
+        "Traducciones fieles, promoción honesta.",
+        "Datos e identificaciones de huéspedes, fuera de la IA."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit turístico con IA",
+     "obj": "Construir tu kit personal de turismo con IA: biblioteca de prompts, política de datos, lista de verificación y un entregable real.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Convierte el curso en un <b>kit que uses desde mañana</b>. Responde cada paso con tu negocio, tus tarifas y tu destino reales (sin datos de huéspedes)."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1: tu biblioteca de prompts",
+       "pregunta": "Elige los 5 prompts del curso que más usarás (cotización, respuestas base, políticas, itinerario, quejas, reseñas, calendario, ficha de tour, bloqueo de grupo, traducción) y adáptalos a tu negocio.",
+       "ayuda": "1. … 2. … 3. … 4. … 5. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2: tu política de datos",
+       "pregunta": "Escribe tus 5 reglas: qué nunca pegas en una IA (identificaciones, tarjetas, teléfonos y datos de huéspedes), cómo nombras a los huéspedes en tus prompts y qué herramienta está autorizada.",
+       "ayuda": "Nunca pego… / Uso [NOMBRE]… / Herramienta autorizada: …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3: tu lista de verificación",
+       "pregunta": "Escribe 6 puntos que revisas antes de enviar cualquier cotización, mensaje o publicación hecha con IA.",
+       "ayuda": "□ ¿Tarifas confirmadas y por persona o por habitación? □ ¿Qué no incluye? □ ¿Política igual a la real, también en otro idioma? □ ¿Horarios, distancias y eventos verificados? □ ¿Fotos reales? □ ¿Sin datos del huésped? …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4: tu entregable real",
+       "pregunta": "Produce un entregable real: tu biblioteca de respuestas base revisada, una cotización tipo, la ficha de un tour o tu calendario del mes verificado. Pega la versión final.",
+       "ayuda": "Entregable: … / Lo uso a partir del…"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit turístico",
+       "texto": "KIT TURÍSTICO CON IA — [tu nombre] — [negocio y destino] — [fecha]\n\n1. Respuestas base revisadas: [ ]\n2. Biblioteca de prompts: cotización [ ], itinerario [ ], quejas [ ], reseñas [ ], calendario [ ], traducción [ ]\n3. Políticas por escrito (anticipo, cancelación, cambios) en español y otros idiomas: [ ]\n4. Política de datos y herramienta autorizada: [ ]\n5. Lista de compensaciones autorizadas: [ ]\n6. Lista de verificación: [ ]\n7. Números: ocupación, tarifa promedio, ingreso por noche disponible [ ]\n8. Entregable real: [ ]\n9. Próxima revisión del kit: [fecha]",
+       "nota": "Actualízala cuando cambien tus tarifas, tus políticas o tu temporada."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Prompts y respuestas base adaptados a tu negocio.",
+        "Política de datos, compensaciones y lista de verificación.",
+        "Un entregable real listo para usar."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "6 habitaciones × 2 noches × $3,200 =",
+     "ops": [
+      "$32,400",
+      "$19,200",
+      "$38,400",
+      "$6,400"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Si la traducción de tu política da más días de cancelación que el original…",
+     "ops": [
+      "Corriges la traducción para que diga lo mismo",
+      "La dejas, atrae clientes",
+      "Cambias tu política",
+      "La quitas"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Para promover tu hotel usas…",
+     "ops": [
+      "Imágenes generadas de espacios ideales",
+      "Fotos reales y distancias medidas",
+      "Fotos de hoteles vecinos",
+      "Solo texto sin revisar"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Responder una reseña con el número de habitación del huésped…",
+     "ops": [
+      "Da credibilidad",
+      "Es obligatorio",
+      "Es buena práctica",
+      "Expone datos del huésped: no se hace"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Tu lista de verificación del kit incluye revisar…",
+     "ops": [
+      "Tarifas, políticas, horarios, fotos y datos del huésped",
+      "Solo la ortografía",
+      "El color del logotipo",
+      "Nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "En turismo, la responsabilidad de lo que prometes al huésped es…",
+     "ops": [
+      "De la IA",
+      "Tuya y de tu negocio",
+      "De la plataforma",
+      "Del huésped"
+     ],
+     "correcta": 1
+    }
+   ]
+  }
+ ]
+}

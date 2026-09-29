@@ -1,0 +1,1419 @@
+{
+ "id": "c-ia-programadores",
+ "horas": 10,
+ "aprender": [
+  "Revisar la seguridad, las licencias y el manejo de secretos del código generado por IA, y usarla para refactorizar y migrar con una red de pruebas.",
+  "Detectar errores plantados en un día real de desarrollo con IA y armar tu kit de programador: biblioteca de prompts, política de datos, lista de revisión y un PR revisado."
+ ],
+ "terceras": [],
+ "extras": {
+  "c-ia-programadores-m1-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Daniela trabaja en el backend de una aseguradora en Querétaro. Escribió en el chat: «hazme una función que valide la CURP». La IA le devolvió una expresión regular en JavaScript que acepta cualquier combinación de 18 letras y números, usa una sintaxis que su versión de Node no soporta y lanza una excepción genérica cuando la CURP viene vacía. El proyecto usa TypeScript con una librería de validación que ya estaba instalada."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le faltó a la petición de Daniela para que el resultado sirviera?",
+      "ops": [
+       "Pedirlo en inglés",
+       "Versión de Node, TypeScript, la librería de validación instalada y ejemplos de CURP válidas e inválidas inventadas",
+       "Pedir que el código fuera más corto"
+      ],
+      "correcta": 1,
+      "explica": "Sin versión ni librerías, la IA elige por su cuenta; sin ejemplos de entrada, no sabe qué casos debe rechazar."
+     },
+     {
+      "p": "Para probar la validación, Daniela pega ejemplos de CURP…",
+      "ops": [
+       "Inventados que respeten el formato, incluidos algunos mal formados a propósito",
+       "De tres asegurados reales para que sea exacto",
+       "De su propia familia, porque son de confianza"
+      ],
+      "correcta": 0,
+      "explica": "La CURP es un dato personal. Ejemplos inventados con el mismo formato sirven igual para razonar."
+     },
+     {
+      "p": "La IA aceptó cualquier combinación de 18 caracteres. ¿Qué pregunta de seguimiento destapa el problema?",
+      "ops": [
+       "«¿Estás seguro?»",
+       "«Hazla más rápida»",
+       "«Explica en 3 renglones qué supuestos tomaste sobre la estructura de la CURP y qué casos rechaza»"
+      ],
+      "correcta": 2,
+      "explica": "Pedir los supuestos obliga a que aparezca que solo validó la longitud y no la estructura."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "La petición de Daniela",
+    "malTitulo": "Sin contexto",
+    "mal": "«Hazme una función que valide la CURP.»",
+    "bienTitulo": "Con contexto",
+    "bien": "«TypeScript 5 sobre Node 20, ya usamos [librería de validación]. Función que valide la estructura de la CURP y devuelva un error claro si viene vacía o mal formada. Ejemplos inventados válidos: […]; inválidos: […]. Sin dependencias nuevas. Explica en 3 renglones qué supuestos tomaste.»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu petición reescrita",
+    "pregunta": "Toma la última petición de código que le hiciste a un asistente y reescríbela con lenguaje y versión, librerías instaladas, un ejemplo de entrada inventado, restricciones y la instrucción de explicar supuestos.",
+    "ayuda": "Estoy en… con… Necesito… Entrada de ejemplo… Restricciones… Explica…"
+   }
+  ],
+  "c-ia-programadores-m1-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Emilio, de una empresa de logística en Monterrey, pidió una función que calcule los días de atraso de cada factura. La IA entregó código limpio y comentado: toma la fecha de vencimiento como texto, la convierte con la zona horaria del servidor, resta la fecha de hoy y, si algo falla, atrapa la excepción y devuelve 0. El servidor de producción corre en UTC y las facturas vencen a medianoche hora del centro de México."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué problema de fondo tiene devolver 0 cuando algo falla?",
+      "ops": [
+       "Ninguno, así no truena",
+       "Una factura con fecha mal capturada aparecería como «al corriente» y nadie se enteraría",
+       "Hace el código más lento"
+      ],
+      "correcta": 1,
+      "explica": "Un error silenciado se convierte en un dato falso. Es mejor fallar con un mensaje claro o marcar el registro para revisión."
+     },
+     {
+      "p": "¿Qué caso borde revisas primero por la diferencia de zona horaria?",
+      "ops": [
+       "Facturas que vencen el día de hoy, consultadas en la noche",
+       "Facturas de montos muy grandes",
+       "Facturas con muchas partidas"
+      ],
+      "correcta": 0,
+      "explica": "Entre las 18:00 y la medianoche del centro de México el servidor en UTC ya está en el día siguiente y puede sumar un día de atraso."
+     },
+     {
+      "p": "¿Cuál de los 6 pasos de revisión atrapaba este error antes de producción?",
+      "ops": [
+       "Revisar el costo",
+       "Revisar las dependencias",
+       "Probar los bordes: fechas de corte y zona horaria"
+      ],
+      "correcta": 2,
+      "explica": "Las fechas de corte y la zona horaria están en la lista de bordes que siempre se prueban."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Lo que ves en el código y el riesgo",
+    "pares": [
+     [
+      "Un bloque que atrapa todas las excepciones y no hace nada",
+      "Errores invisibles que se vuelven datos falsos"
+     ],
+     [
+      "Fechas convertidas con la zona del servidor",
+      "Un día de más o de menos en fechas de corte"
+     ],
+     [
+      "Una consulta a la base dentro de un ciclo",
+      "Lentitud cuando crece el volumen"
+     ],
+     [
+      "Una llamada a un servicio externo sin límite de tiempo",
+      "El proceso se queda colgado si el servicio no responde"
+     ]
+    ]
+   }
+  ],
+  "c-ia-programadores-m1-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Jorge trabaja en una fintech en la Ciudad de México. Para que el asistente integrado en su editor le ayudara con un error de conexión, dejó abiertos el archivo docker-compose y el .env del proyecto. El asistente del editor puede tomar como contexto los archivos abiertos. Además, en el chat pegó el log del error, que incluía el correo y el número de cuenta de un cliente."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "Jorge no copió el .env en el chat, solo lo tenía abierto. ¿Qué hace?",
+      "ops": [
+       "Nada, no lo pegó",
+       "Revisa si la herramienta pudo enviarlo como contexto; si hay duda, trata las credenciales como expuestas, las rota y avisa al responsable",
+       "Cierra el archivo y sigue trabajando"
+      ],
+      "correcta": 1,
+      "explica": "Si no puedes asegurar que no salió, aplicas la regla dura: credencial expuesta es credencial rotada."
+     },
+     {
+      "p": "¿Qué configuración conviene revisar en el asistente del editor?",
+      "ops": [
+       "La opción para excluir archivos y carpetas del contexto, como .env, llaves y certificados",
+       "El tema de colores",
+       "El idioma de las respuestas"
+      ],
+      "correcta": 0,
+      "explica": "Muchos asistentes permiten excluir archivos del contexto. Verifica cómo se hace en la documentación oficial de tu herramienta y la política de tu empresa."
+     },
+     {
+      "p": "El log con correo y número de cuenta del cliente…",
+      "ops": [
+       "Se puede pegar si la conversación es privada",
+       "Se pega completo porque el error depende de esos datos",
+       "Se limpia sustituyendo esos datos por marcadores antes de pegarlo, y se reporta según la política de la empresa si ya se pegó"
+      ],
+      "correcta": 2,
+      "explica": "Los datos personales y financieros se sustituyen por marcadores; si ya salieron, se reporta al área responsable."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la regla",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "Los archivos .env y las llaves privadas se ___ del contexto del asistente del editor.",
+      "resp": [
+       "excluyen",
+       "excluye",
+       "sacan",
+       "quitan"
+      ],
+      "pista": "Lo contrario de incluir."
+     },
+     {
+      "frase": "Si no puedes asegurar que una credencial no salió, la tratas como ___.",
+      "resp": [
+       "expuesta",
+       "comprometida",
+       "filtrada"
+      ],
+      "pista": "Como si ya la hubiera visto alguien más."
+     },
+     {
+      "frase": "En el log, el correo del cliente se reemplaza por un ___ como [CORREO].",
+      "resp": [
+       "marcador",
+       "placeholder",
+       "comodín",
+       "comodin"
+      ],
+      "pista": "Una etiqueta entre corchetes."
+     }
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu configuración",
+    "pregunta": "Revisa hoy la configuración del asistente que usas en tu editor y escribe qué archivos y carpetas vas a excluir del contexto y cómo lo verificaste.",
+    "ayuda": "Uso… / Voy a excluir: .env, … / Lo verifiqué en…"
+   }
+  ],
+  "c-ia-programadores-m2-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Mariana entró a una caja de ahorro en León. Le toca modificar una función PHP de hace 12 años llamada calcularInteres, sin pruebas ni documentación. Tiene números sueltos como 0.0125 y 365, y un if que resta un día cuando el mes es febrero. La IA le explicó: «calcula el interés mensual con tasa de 1.25% y ajusta febrero por ser mes corto»."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué tanto puede confiar Mariana en la explicación del ajuste de febrero?",
+      "ops": [
+       "Totalmente, la IA leyó el código",
+       "Describe lo que hace el código; por qué existe ese ajuste lo tiene que confirmar con el área de crédito",
+       "Nada, la IA no entiende PHP"
+      ],
+      "correcta": 1,
+      "explica": "La IA dice qué hace la línea, no por qué se decidió. La intención la confirma quien conoce la regla del negocio."
+     },
+     {
+      "p": "Antes de cambiar la tasa, ¿qué hace primero?",
+      "ops": [
+       "Pedirle a la IA pruebas que fijen el resultado actual con varios montos y fechas, incluido febrero",
+       "Cambiar la tasa y probar un caso",
+       "Reescribir la función en otro lenguaje"
+      ],
+      "correcta": 0,
+      "explica": "Las pruebas del comportamiento actual son la red que le avisa si su cambio altera algo que otros sistemas esperan."
+     },
+     {
+      "p": "¿Qué le conviene pedir con [SUPOSICIÓN]?",
+      "ops": [
+       "Que traduzca el código a inglés",
+       "Que haga el código más corto",
+       "Que marque qué representa cada número suelto cuando lo está infiriendo por el nombre de la función"
+      ],
+      "correcta": 2,
+      "explica": "Así separa lo que el código dice de lo que el modelo imagina sobre el 0.0125 y el 365."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Lo que llevas a la junta",
+    "malTitulo": "Sin preparación",
+    "mal": "«No entendí la función de intereses, ¿alguien sabe qué hace?»",
+    "bienTitulo": "Con preguntas concretas",
+    "bien": "«¿El 0.0125 es la tasa mensual vigente o una histórica? ¿El ajuste de febrero es regla del negocio o se agregó por un bug? ¿Qué otros procesos leen este resultado?»"
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu código legado",
+    "pregunta": "Elige una función de tu proyecto que nadie quiera tocar. Escribe las 3 preguntas que le harías al equipo y las 3 pruebas del comportamiento actual que escribirías antes de modificarla.",
+    "ayuda": "Preguntas: 1)… 2)… 3)… / Pruebas: 1)… 2)… 3)…"
+   }
+  ],
+  "c-ia-programadores-m2-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Una tienda en línea de Mérida tiene un error intermitente: los lunes entre 9 y 10 de la mañana el servicio de pedidos devuelve «timeout». Rodrigo pegó el error y pidió «arréglalo». La IA propuso subir el tiempo de espera de 5 a 60 segundos. Rodrigo lo aplicó y el lunes siguiente los pedidos tardaron casi un minuto en confirmar."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hizo mal Rodrigo con la IA?",
+      "ops": [
+       "Pidió el arreglo sin reproducir ni pedir hipótesis; la IA atacó el síntoma",
+       "Usó la IA un lunes",
+       "Nada, el arreglo era correcto"
+      ],
+      "correcta": 0,
+      "explica": "Subir el tiempo de espera esconde el síntoma; la causa sigue ahí."
+     },
+     {
+      "p": "¿Qué dato le ayuda más a formular hipótesis?",
+      "ops": [
+       "El color del error en la consola",
+       "Que solo pasa los lunes a la misma hora, y qué procesos corren en ese horario",
+       "El nombre del programador que escribió el servicio"
+      ],
+      "correcta": 1,
+      "explica": "El patrón de horario apunta a algo programado: un respaldo, un reporte semanal o una carga masiva."
+     },
+     {
+      "p": "Encontró que un reporte semanal bloquea la tabla de pedidos. ¿Qué deja al terminar?",
+      "ops": [
+       "Un comentario en el código",
+       "Nada, ya se arregló",
+       "Una prueba o un monitoreo que alerte si la consulta de pedidos vuelve a tardar más de lo normal"
+      ],
+      "correcta": 2,
+      "explica": "La prueba o alerta de regresión evita que el problema regrese sin que nadie lo note."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Síntoma y primera hipótesis a comprobar",
+    "pares": [
+     [
+      "Falla solo a cierta hora",
+      "Un proceso programado que compite por recursos"
+     ],
+     [
+      "Falla solo con ciertos clientes",
+      "Un dato con formato distinto en esos registros"
+     ],
+     [
+      "Falla después de un despliegue",
+      "El cambio que se subió ese día"
+     ],
+     [
+      "Falla solo en producción, no en local",
+      "Diferencias de configuración, versión o volumen de datos"
+     ]
+    ]
+   }
+  ],
+  "c-ia-programadores-m2-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Ana le pidió a la IA el README de una API interna describiéndola de memoria. El resultado se veía profesional: instrucciones de instalación con un comando de script que no existe en el proyecto, una variable de entorno que el código nunca lee y un endpoint de «healthcheck» que nadie programó. Un compañero nuevo perdió una tarde intentando levantarlo."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Cuál fue el error de origen?",
+      "ops": [
+       "Usar la IA para documentar",
+       "Generar la documentación a partir de su descripción y no del código y la configuración reales",
+       "Escribir el README en español"
+      ],
+      "correcta": 1,
+      "explica": "Sin el código real, la IA completa con lo que suele verse en proyectos parecidos."
+     },
+     {
+      "p": "¿Cómo verifica Ana el README corregido?",
+      "ops": [
+       "Le pide a la IA que confirme que está bien",
+       "Lo lee en voz alta",
+       "Sigue las instrucciones desde cero en una máquina o contenedor limpio, tal como lo haría alguien nuevo"
+      ],
+      "correcta": 2,
+      "explica": "La prueba de una guía de instalación es seguirla al pie de la letra en un ambiente limpio."
+     },
+     {
+      "p": "En el changelog, la IA escribió «mejoras de rendimiento» para un cambio que solo renombró variables. Ana…",
+      "ops": [
+       "Lo corrige: el changelog describe lo que el diff realmente cambió",
+       "Lo deja, suena bien",
+       "Lo borra todo"
+      ],
+      "correcta": 0,
+      "explica": "Un changelog que exagera hace que el equipo busque mejoras donde no las hay."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Cómo pides el README",
+    "malTitulo": "De memoria",
+    "mal": "«Escribe el README de mi API de clientes, tiene login, CRUD y reportes.»",
+    "bienTitulo": "Desde el código",
+    "bien": "«Te pego package.json, el archivo de rutas y el ejemplo de .env con valores falsos. Escribe el README solo con lo que aparece ahí. Donde falte información, escribe [REVISAR] y no inventes comandos ni variables.»"
+   }
+  ],
+  "c-ia-programadores-m3-l1": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Luis pidió pruebas para una función de descuentos por volumen de una distribuidora de Guadalajara: 5% desde 100 piezas y 10% desde 500. La IA generó 8 pruebas que pasan, pero calculan el resultado esperado con la misma fórmula de la función. Ninguna prueba usa exactamente 100 ni 500 piezas y ninguna usa cantidad cero."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Por qué no sirven pruebas que calculan el esperado con la misma fórmula?",
+      "ops": [
+       "Porque son lentas",
+       "Porque son muy largas",
+       "Porque si la fórmula está mal, la prueba también y siempre pasan"
+      ],
+      "correcta": 2,
+      "explica": "Una prueba que copia la lógica no detecta el error. El esperado se escribe a mano: 100 piezas de $10 con 5% da $950."
+     },
+     {
+      "p": "¿Qué valores faltan probar sí o sí?",
+      "ops": [
+       "99, 100, 499 y 500 piezas, además de cero y negativo",
+       "Solo 1,000 piezas",
+       "Valores aleatorios"
+      ],
+      "correcta": 0,
+      "explica": "Los errores de «mayor que» contra «mayor o igual que» aparecen justo en los límites."
+     },
+     {
+      "p": "¿Cómo compruebas que tus pruebas sí atrapan errores?",
+      "ops": [
+       "Contando cuántas pruebas hay",
+       "Cambiando a propósito el 100 por 101 en la función y viendo si alguna prueba falla",
+       "Preguntándole a la IA"
+      ],
+      "correcta": 1,
+      "explica": "Si metes un error a propósito y nada falla, tus pruebas no protegen esa parte."
+     }
+    ]
+   },
+   {
+    "tipo": "completar",
+    "rotulo": "Completa la regla",
+    "instruccion": "Escribe la palabra que falta.",
+    "items": [
+     {
+      "frase": "El resultado esperado de una prueba se escribe a ___, no con la misma fórmula del código.",
+      "resp": [
+       "mano"
+      ],
+      "pista": "Calculado por ti."
+     },
+     {
+      "frase": "Los errores de mayor que contra mayor o igual aparecen en los valores ___.",
+      "resp": [
+       "límite",
+       "limite",
+       "frontera",
+       "borde"
+      ],
+      "pista": "Justo en 100 y en 500."
+     },
+     {
+      "frase": "Si metes un error a propósito y ninguna prueba ___, tus pruebas no protegen esa parte.",
+      "resp": [
+       "falla",
+       "truena"
+      ],
+      "pista": "Lo que debería pasar."
+     }
+    ]
+   }
+  ],
+  "c-ia-programadores-m3-l2": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> Sofía desarrolla una plataforma de reservaciones en la nube para restaurantes de Puebla. La IA le sugirió tres paquetes: uno para manejar fechas que sí existe y es muy usado, uno para generar PDF que existe pero tiene una licencia de tipo AGPL, y uno para validar RFC con un nombre que no aparece en el registro oficial."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué hace con el paquete de validar RFC?",
+      "ops": [
+       "Lo instala desde el enlace que dio la IA",
+       "No lo instala; busca una opción real o escribe una validación propia con pruebas",
+       "Le pregunta a la IA si es seguro"
+      ],
+      "correcta": 1,
+      "explica": "Si no aparece en el registro oficial, no existe o es sospechoso. La IA no puede confirmar su propia invención."
+     },
+     {
+      "p": "¿Por qué la licencia del paquete de PDF merece revisión con el área legal?",
+      "ops": [
+       "Porque algunas licencias como la AGPL pueden obligar a ofrecer el código fuente a quienes usan el servicio por red, y la plataforma es en la nube",
+       "Porque las licencias libres son ilegales",
+       "Porque cobra por descarga"
+      ],
+      "correcta": 0,
+      "explica": "El alcance exacto depende de cómo la uses. Confírmalo con legal o con la política de licencias de tu empresa."
+     },
+     {
+      "p": "El paquete de fechas es popular y confiable. ¿Qué revisas de todos modos?",
+      "ops": [
+       "Nada",
+       "El color del logo",
+       "Que el nombre sea exacto letra por letra, su licencia y la auditoría de vulnerabilidades del gestor de paquetes"
+      ],
+      "correcta": 2,
+      "explica": "Hasta los paquetes populares se verifican: los nombres casi idénticos son un ataque común."
+     }
+    ]
+   },
+   {
+    "tipo": "relacionar",
+    "rotulo": "Hallazgo y decisión",
+    "pares": [
+     [
+      "Paquete que no aparece en el registro oficial",
+      "No se instala"
+     ],
+     [
+      "Licencia que puede obligarte a liberar tu código",
+      "Consulta con legal antes de usarla"
+     ],
+     [
+      "Vulnerabilidad conocida en la versión sugerida",
+      "Usar una versión corregida o buscar alternativa"
+     ],
+     [
+      "Resuelve algo que hace la librería estándar",
+      "Evitar la dependencia"
+     ]
+    ]
+   },
+   {
+    "tipo": "reflexion",
+    "rotulo": "Tu inventario",
+    "pregunta": "Revisa las dependencias directas de tu proyecto y anota cuáles tienen una licencia que no conoces o que tu empresa no ha aprobado. Escribe a quién le vas a preguntar.",
+    "ayuda": "Dependencia… / Licencia… / Le pregunto a…"
+   }
+  ],
+  "c-ia-programadores-m3-l3": [
+   {
+    "tipo": "titulo",
+    "texto": "Taller práctico"
+   },
+   {
+    "tipo": "destacado",
+    "texto": "<b>Caso:</b> El endpoint de pedidos se entregó el viernes. El lunes, un cliente de Oaxaca subió un CSV exportado desde una hoja de cálculo en Windows: los nombres con ñ y acentos se guardaron como símbolos raros, y la primera columna no se reconoció porque el archivo traía una marca invisible al inicio. El jefe pide un análisis del incidente para el martes."
+   },
+   {
+    "tipo": "practica",
+    "rotulo": "Decide en el caso",
+    "preguntas": [
+     {
+      "p": "¿Qué le pegas a la IA para analizar el incidente?",
+      "ops": [
+       "El archivo real del cliente",
+       "Un CSV inventado que reproduzca el problema de codificación y el mensaje de error sin datos del cliente",
+       "Nada, la IA no sirve para esto"
+      ],
+      "correcta": 1,
+      "explica": "Puedes reproducir la codificación y la marca inicial con datos inventados; el archivo real se queda en casa."
+     },
+     {
+      "p": "¿Qué caso borde faltó en las pruebas del viernes?",
+      "ops": [
+       "Archivos con otra codificación de caracteres y con marca de inicio",
+       "Archivos muy pequeños",
+       "Archivos con nombre largo"
+      ],
+      "correcta": 0,
+      "explica": "Los archivos exportados desde distintas herramientas y sistemas pueden venir con codificaciones diferentes: es un borde clásico de volumen y texto."
+     },
+     {
+      "p": "El análisis del incidente debe centrarse en…",
+      "ops": [
+       "Quién tuvo la culpa",
+       "Culpar a la IA",
+       "Qué pasó, por qué no lo atrapamos, qué se corrigió y qué prueba evita que se repita"
+      ],
+      "correcta": 2,
+      "explica": "Un análisis sin culpables se enfoca en mejorar el proceso y deja una prueba de regresión."
+     }
+    ]
+   },
+   {
+    "tipo": "comparar",
+    "titulo": "Análisis del incidente",
+    "malTitulo": "Sin aprendizaje",
+    "mal": "«La IA generó mal el código y el cliente subió un archivo raro. Ya quedó.»",
+    "bienTitulo": "Con aprendizaje",
+    "bien": "«El lector de CSV suponía una sola codificación. No lo atrapamos porque las pruebas usaban archivos creados en Linux. Se agregó detección de codificación y de marca inicial, dos pruebas nuevas y una fila de ejemplo con ñ.»"
+   }
+  ]
+ },
+ "modulos": [
+  {
+   "t": "Situaciones avanzadas: seguridad, licencias y refactor",
+   "r": "Revisión de seguridad del código generado, secretos fuera del prompt y del repositorio, licencias del código sugerido, y refactor y migraciones con una red de pruebas.",
+   "lecciones": [
+    {
+     "t": "Revisión de seguridad del código generado",
+     "obj": "Detectar las fallas de seguridad más comunes en código generado por IA y pedir la revisión de forma que el asistente trabaje a tu favor.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Los asistentes aprendieron de enormes cantidades de código público, y mucho de ese código es inseguro. Por eso tienden a repetir patrones frágiles cuando no les pides otra cosa: consultas armadas pegando texto, datos del usuario que se usan sin validar, contraseñas guardadas con algoritmos débiles, permisos que solo se revisan en la pantalla y no en el servidor. <b>La seguridad no llega sola: la pides, la revisas y la pruebas.</b> Una buena referencia pública para orientar tu revisión es el OWASP Top 10; consulta su versión vigente en el sitio oficial del proyecto."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores de seguridad comunes en código generado",
+       "encabezados": [
+        "La IA suele…",
+        "Por qué es un riesgo",
+        "Qué pides o corriges"
+       ],
+       "filas": [
+        [
+         "Armar consultas SQL concatenando lo que escribe el usuario",
+         "Inyección: alguien puede leer o borrar datos",
+         "Consultas parametrizadas o el ORM que ya usas"
+        ],
+        [
+         "Validar solo en el formulario de la página",
+         "Cualquiera puede llamar a tu API sin pasar por la página",
+         "Validación también en el servidor"
+        ],
+        [
+         "Revisar que el usuario inició sesión, pero no si el registro es suyo",
+         "Un cliente puede ver pedidos de otro cambiando el número en la URL",
+         "Verificar autorización en cada consulta"
+        ],
+        [
+         "Escribir la llave de API en el código «para que funcione»",
+         "Queda en el historial del repositorio para siempre",
+         "Leerla de variables de entorno o de un gestor de secretos"
+        ],
+        [
+         "Registrar en logs el cuerpo completo de la petición",
+         "Datos personales y contraseñas quedan en los logs",
+         "Registrar solo lo necesario y enmascarar datos sensibles"
+        ],
+        [
+         "Proponer algoritmos de hash rápidos para contraseñas",
+         "Se pueden romper por fuerza bruta",
+         "Usar la función para contraseñas que recomiende tu framework"
+        ]
+       ]
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Revisión de seguridad con IA",
+       "texto": "Actúa como revisor de seguridad. Te pego una función en [lenguaje y framework, versión]. Ya reemplacé credenciales y datos reales por marcadores. Revisa solo seguridad y dime, para cada hallazgo: 1) la línea, 2) qué ataque o fuga permite, 3) qué tan grave es (alta, media, baja) y por qué, 4) la corrección usando lo que ya tiene el framework, sin dependencias nuevas. Revisa en especial: entrada del usuario sin validar, consultas armadas con texto, autorización por registro, secretos en el código, datos sensibles en logs y manejo de errores que expone detalles internos. Si no encuentras nada en un punto, dilo explícitamente. Código: [pegar]."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Pide también el ataque, no solo el arreglo.</b> Cuando la IA te describe cómo se explotaría el hallazgo, puedes convertirlo en una prueba automatizada: un usuario A que intenta leer el pedido del usuario B debe recibir un error. Esa prueba se queda en tu proyecto y protege el endpoint aunque alguien lo reescriba después."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "Tablero de hallazgos antes de aprobar el PR",
+       "datos": [
+        [
+         "Hallazgo",
+         "Severidad",
+         "Estado"
+        ],
+        [
+         "Consulta armada con texto",
+         "Alta",
+         "Abierto"
+        ],
+        [
+         "Token escrito en el código",
+         "Alta",
+         "Corregido"
+        ],
+        [
+         "Log con correo del cliente",
+         "Media",
+         "Abierto"
+        ],
+        [
+         "Mensaje de error con ruta interna",
+         "Baja",
+         "Abierto"
+        ],
+        [
+         "Falta validar autorización por registro",
+         "Alta",
+         "Abierto"
+        ],
+        [
+         "Hallazgos de severidad alta",
+         3,
+         " "
+        ],
+        [
+         "Altos que siguen abiertos",
+         "",
+         " "
+        ],
+        [
+         "Decisión del PR",
+         "",
+         " "
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B8",
+         "formula": "=CONTAR.SI.CONJUNTO(B2:B6,\"Alta\",C2:C6,\"Abierto\")",
+         "esperado": 2,
+         "requiere": "CONTAR.SI.CONJUNTO(",
+         "texto": "<b>B8</b>: cuántos hallazgos altos siguen abiertos.",
+         "pista": "Dos condiciones: severidad y estado."
+        },
+        {
+         "celda": "B9",
+         "formula": "=SI(B8>0,\"BLOQUEAR\",\"APROBAR\")",
+         "esperado": "BLOQUEAR",
+         "requiere": "SI(",
+         "texto": "<b>B9</b>: escribe BLOQUEAR si queda algún alto abierto; si no, APROBAR.",
+         "explica": "Con dos hallazgos altos abiertos, el PR no se aprueba aunque la fecha apriete. La regla la fija tu equipo; lo importante es que sea explícita y no se negocie a las 6 de la tarde."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te dio un endpoint que revisa que haya sesión iniciada y devuelve el pedido por número. ¿Qué falta?",
+         "ops": [
+          "Nada, ya hay sesión",
+          "Verificar que el pedido pertenezca al usuario que lo pide",
+          "Agregar un comentario"
+         ],
+         "correcta": 1,
+         "explica": "Sin autorización por registro, cualquier usuario con sesión puede ver pedidos ajenos cambiando el número."
+        },
+        {
+         "p": "La IA propone validar el RFC solo en el formulario de la página. Tú…",
+         "ops": [
+          "Agregas la validación también en el servidor",
+          "Lo aceptas, la página ya valida",
+          "Quitas la validación"
+         ],
+         "correcta": 0,
+         "explica": "Una API se puede llamar sin pasar por la página. El servidor valida siempre."
+        },
+        {
+         "p": "Le preguntas a la IA si su propio código es seguro y responde «sí, sigue las mejores prácticas». Eso…",
+         "ops": [
+          "Es suficiente para aprobar",
+          "Te ahorra la revisión",
+          "No sustituye tu revisión con una lista concreta ni las pruebas de seguridad"
+         ],
+         "correcta": 2,
+         "explica": "Una afirmación general no es evidencia. Pide hallazgos línea por línea y conviértelos en pruebas."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu endpoint",
+       "pregunta": "Elige un endpoint de tu proyecto y revísalo con las seis filas de la tabla. Escribe cada hallazgo con su severidad y la prueba que agregarías.",
+       "ayuda": "Endpoint… / Hallazgo 1: … severidad … prueba … / Hallazgo 2: …"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "La seguridad se pide, se revisa y se prueba; no llega sola.",
+        "Autorización por registro y validación en el servidor, siempre.",
+        "Convierte cada hallazgo en una prueba que se queda en el proyecto."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Secretos fuera del prompt y del repositorio; licencias del código sugerido",
+     "obj": "Mantener credenciales fuera del chat, del código y del historial, y decidir qué hacer cuando el código sugerido puede venir de un proyecto con licencia.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "En el Módulo 1 viste qué no se pega en el chat. Aquí sube un nivel: <b>el secreto tampoco debe vivir en el código que la IA genera ni en tu repositorio</b>. Cuando le pides a un asistente «conéctate a la base», suele escribir la cadena de conexión directo en el archivo para que el ejemplo corra. Si tú la completas con la real y haces commit, el secreto queda en el historial aunque luego lo borres. El patrón correcto: el código lee variables de entorno o un gestor de secretos, el archivo .env está en el .gitignore y el repositorio solo trae un .env.example con valores falsos."
+      },
+      {
+       "tipo": "pasos",
+       "rotulo": "Secretos fuera del prompt, del código y del historial",
+       "pasos": [
+        "<b>En el prompt:</b> pides el código usando nombres de variables (DB_URL, PAGOS_TOKEN), nunca los valores.",
+        "<b>En el código:</b> la función lee el valor del entorno y falla con un mensaje claro si no existe, sin imprimir el valor.",
+        "<b>En el repositorio:</b> .env en el .gitignore y un .env.example con valores falsos para que otros sepan qué configurar.",
+        "<b>Antes del commit:</b> un escáner de secretos en tu flujo (en un gancho de pre-commit o en la integración continua) que bloquee llaves y tokens.",
+        "<b>Si ya se subió:</b> rotas la credencial primero; limpiar el historial viene después y no sustituye la rotación.",
+        "<b>En el editor:</b> excluyes del contexto del asistente los archivos de secretos, llaves y certificados."
+       ]
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Licencias: lo que conviene saber (no es asesoría legal)",
+       "encabezados": [
+        "Situación",
+        "Riesgo",
+        "Qué haces"
+       ],
+       "filas": [
+        [
+         "La IA te da un bloque largo idéntico a una librería conocida, con su encabezado de licencia",
+         "Copiar código con licencia te obliga a cumplir sus condiciones",
+         "Usa la librería oficial como dependencia o reescribe con tu propio diseño; consulta la política de tu empresa"
+        ],
+        [
+         "El fragmento trae un aviso de licencia copyleft (como GPL o AGPL)",
+         "Puede obligarte a liberar tu código o a ofrecerlo a quienes usan tu servicio",
+         "Consulta al área legal antes de integrarlo"
+        ],
+        [
+         "La licencia es permisiva (como MIT o Apache 2.0)",
+         "Suelen pedir conservar el aviso de copyright y la licencia",
+         "Conserva los avisos y registra la dependencia"
+        ],
+        [
+         "Tu contrato dice que el código es propiedad del cliente",
+         "Mezclar código de terceros sin registro complica la entrega",
+         "Documenta el origen de todo lo que no escribiste"
+        ],
+        [
+         "Tu empresa tiene política sobre asistentes de IA",
+         "Usar uno no aprobado puede violarla",
+         "Usa solo las herramientas y configuraciones aprobadas"
+        ]
+       ],
+       "nota": "Las reglas de licencias y de propiedad intelectual tienen matices. Para decisiones concretas, consulta al área legal de tu empresa o a un abogado especializado."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Pedir código que lea secretos del entorno",
+       "texto": "Estoy en [lenguaje y versión] con [framework]. Necesito [qué hace] conectándome a [servicio]. Reglas: 1) las credenciales se leen de las variables de entorno [NOMBRE_VAR_1] y [NOMBRE_VAR_2]; no escribas valores de ejemplo reales en el código, 2) si falta una variable, falla con un mensaje que diga cuál falta sin mostrar ningún valor, 3) no registres en logs ni en errores el contenido de las credenciales, 4) dame también el .env.example con valores falsos y la línea para el .gitignore. Si usas código de alguna librería o proyecto conocido, dime cuál y su licencia."
+      },
+      {
+       "tipo": "comparar",
+       "titulo": "Cómo queda la conexión",
+       "malTitulo": "Secreto en el código",
+       "mal": "const conexion = conectar(«postgres://admin:Clave2024@prod-db:5432/ventas») — funciona en tu máquina, se sube al repositorio y ahí se queda en el historial.",
+       "bienTitulo": "Secreto en el entorno",
+       "bien": "const url = process.env.DB_URL; si no existe, se detiene con «Falta DB_URL». El repositorio solo trae .env.example con DB_URL=postgres://usuario:clave@host:5432/base."
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "Subiste por error un token al repositorio y lo borraste en el siguiente commit. ¿Ya está resuelto?",
+         "ops": [
+          "Sí, ya no está en el código",
+          "No: sigue en el historial; lo rotas de inmediato y avisas al responsable",
+          "Sí, si el repositorio es privado"
+         ],
+         "correcta": 1,
+         "explica": "El historial conserva el valor. La rotación es lo único que lo deja inservible."
+        },
+        {
+         "p": "La IA te entrega 80 líneas idénticas a una librería conocida, con su aviso de licencia GPL. ¿Qué haces?",
+         "ops": [
+          "Borras el aviso y lo usas",
+          "Lo usas tal cual, lo generó la IA",
+          "No lo integras sin revisarlo con legal; valoras usar la librería oficial o escribir tu propia versión"
+         ],
+         "correcta": 2,
+         "explica": "Que lo haya generado la IA no cambia las condiciones de la licencia del código original."
+        },
+        {
+         "p": "¿Para qué sirve el .env.example?",
+         "ops": [
+          "Para que otros sepan qué variables configurar, con valores falsos",
+          "Para guardar las credenciales reales en el repositorio",
+          "Para que la IA lea tus secretos"
+         ],
+         "correcta": 0,
+         "explica": "Documenta la configuración sin exponer valores reales."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu repositorio",
+       "pregunta": "Busca en tu repositorio cadenas que parezcan contraseñas, tokens o cadenas de conexión (incluido el historial si tienes una herramienta para ello). Escribe qué encontraste y qué harás: rotar, mover a variables de entorno o agregar un escáner.",
+       "ayuda": "Busqué con… / Encontré… / Voy a rotar… / Agregaré el escáner en…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Secretos fuera del prompt, del código y del historial.",
+        "Credencial subida = credencial rotada; limpiar el historial no basta.",
+        "Código con aviso de licencia no se integra sin revisar la licencia."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Refactor, migraciones y pruebas a escala con IA",
+     "obj": "Usar la IA para refactorizar y migrar código en pasos pequeños, con una red de pruebas y medición de lo que queda sin cubrir.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Los asistentes son muy buenos para tareas grandes y mecánicas: renombrar en muchos archivos, pasar de callbacks a async/await, subir la versión de un framework, partir una función gigante. El riesgo es proporcional: <b>un cambio de 40 archivos generado en un minuto es imposible de revisar bien</b>. La regla es la misma de siempre, a escala: primero la red de pruebas, luego cambios pequeños que se puedan revisar, uno por commit, y las pruebas corriendo después de cada uno."
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Plan de refactor por pasos",
+       "texto": "Quiero refactorizar [módulo o función] en [lenguaje y versión]. Objetivo: [qué quieres lograr: separar responsabilidades, quitar duplicado, migrar a nueva versión]. Restricciones: el comportamiento visible no cambia, sin dependencias nuevas, cada paso debe poder revisarse en menos de 15 minutos. Antes de escribir código: 1) propón las pruebas que fijan el comportamiento actual, 2) divide el refactor en pasos pequeños numerados, cada uno con qué archivos toca y cómo verifico que nada se rompió, 3) señala qué pasos tienen más riesgo. No escribas el código hasta que te diga «paso 1»."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Errores comunes de la IA en refactors y migraciones",
+       "encabezados": [
+        "La IA…",
+        "Consecuencia",
+        "Tú…"
+       ],
+       "filas": [
+        [
+         "Cambia el comportamiento «para mejorarlo» sin avisar",
+         "Otros sistemas que dependían del comportamiento viejo fallan",
+         "Exiges que el comportamiento visible no cambie y lo compruebas con pruebas"
+        ],
+        [
+         "Mezcla la versión vieja y la nueva de una API del framework",
+         "Código que compila a medias o avisos de funciones obsoletas",
+         "Le das la versión exacta y comparas con la guía oficial de migración"
+        ],
+        [
+         "Escribe una migración de base de datos sin forma de revertirla",
+         "Si falla en producción no hay regreso limpio",
+         "Pides la migración de ida y la de regreso, y la pruebas en una copia"
+        ],
+        [
+         "Borra código que parece sin uso",
+         "Se rompe algo que se llamaba de forma dinámica o desde otro servicio",
+         "Buscas usos en todo el sistema antes de borrar"
+        ],
+        [
+         "Actualiza pruebas para que pasen con el código nuevo",
+         "La red de seguridad deja de proteger",
+         "Las pruebas del comportamiento actual no se tocan durante el refactor"
+        ]
+       ]
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Migraciones de base de datos: siempre con regreso y en copia.</b> Antes de correr una migración generada por IA, pídele la de regreso, córrelas ambas en una copia con volumen parecido al real y mide cuánto tardan. Una migración que bloquea una tabla grande por varios minutos en horario de operación es un incidente, aunque el SQL sea correcto."
+      },
+      {
+       "tipo": "excel",
+       "rotulo": "¿Cuánto del módulo cubren tus pruebas?",
+       "datos": [
+        [
+         "Archivo",
+         "Funciones",
+         "Con prueba"
+        ],
+        [
+         "pedidos",
+         12,
+         9
+        ],
+        [
+         "facturas",
+         8,
+         3
+        ],
+        [
+         "clientes",
+         10,
+         8
+        ],
+        [
+         "reportes",
+         6,
+         1
+        ],
+        [
+         "Total",
+         36,
+         21
+        ],
+        [
+         "Cobertura por funciones",
+         "",
+         ""
+        ],
+        [
+         "Archivo con menos funciones probadas",
+         "",
+         ""
+        ]
+       ],
+       "retos": [
+        {
+         "celda": "B7",
+         "formula": "=REDONDEAR(C6/B6,2)",
+         "esperado": 0.58,
+         "requiere": "REDONDEAR(",
+         "texto": "<b>B7</b>: proporción de funciones con prueba (con prueba ÷ funciones), redondeada a 2 decimales."
+        },
+        {
+         "celda": "B8",
+         "formula": "=INDICE(A2:A5,COINCIDIR(MIN(C2:C5),C2:C5,0))",
+         "esperado": "reportes",
+         "requiere": "COINCIDIR(",
+         "texto": "<b>B8</b>: el nombre del archivo con menos funciones probadas.",
+         "pista": "=INDICE(nombres,COINCIDIR(MIN(con prueba),con prueba,0))",
+         "explica": "Reportes tiene 1 de 6 funciones con prueba: antes de refactorizarlo, esa es la red que falta. Contar funciones con prueba es una medida gruesa; úsala para decidir por dónde empezar, no como garantía."
+        }
+       ]
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Decide",
+       "preguntas": [
+        {
+         "p": "La IA te entrega el refactor completo de 40 archivos en una sola respuesta. ¿Qué haces?",
+         "ops": [
+          "Lo aplicas completo, las pruebas dirán",
+          "Lo descartas y le pides dividirlo en pasos pequeños revisables, uno por commit",
+          "Lo revisas por encima"
+         ],
+         "correcta": 1,
+         "explica": "Un cambio que no puedes revisar a fondo no se integra, aunque las pruebas pasen."
+        },
+        {
+         "p": "Durante el refactor, una prueba del comportamiento actual falla y la IA propone ajustar la prueba. Tú…",
+         "ops": [
+          "Ajustas la prueba",
+          "Borras la prueba",
+          "Investigas: la prueba avisó que el refactor cambió el comportamiento"
+         ],
+         "correcta": 2,
+         "explica": "Durante un refactor las pruebas del comportamiento actual no se tocan: si fallan, el cambio alteró algo."
+        },
+        {
+         "p": "La IA propone borrar una función que «nadie usa». Antes de borrarla…",
+         "ops": [
+          "Buscas usos en todo el sistema, incluidas llamadas dinámicas y otros servicios",
+          "La borras",
+          "Le preguntas a la IA si se usa"
+         ],
+         "correcta": 0,
+         "explica": "La IA solo ve lo que le pegaste; puede haber llamadas desde otros repositorios o por nombre."
+        }
+       ]
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Tu siguiente refactor",
+       "pregunta": "Elige una parte de tu código que quieras refactorizar. Escribe las pruebas que la fijan hoy, los pasos pequeños en que la dividirías y cuál es el paso de más riesgo.",
+       "ayuda": "Parte… / Pruebas actuales… / Pasos: 1)… 2)… 3)… / Paso de más riesgo…"
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Primero la red de pruebas; luego pasos pequeños, uno por commit.",
+        "Las pruebas del comportamiento actual no se ajustan durante el refactor.",
+        "Migraciones con regreso, probadas en una copia con volumen real."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Un endpoint verifica la sesión pero no que el registro pertenezca al usuario. El riesgo es…",
+     "ops": [
+      "Que sea lento",
+      "Que un usuario vea datos de otro cambiando el identificador",
+      "Que falle la sesión",
+      "Ninguno"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La validación de datos del usuario debe hacerse…",
+     "ops": [
+      "Solo en el formulario",
+      "Solo en la base",
+      "También en el servidor",
+      "Nunca"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Subiste un token al repositorio y lo borraste en el siguiente commit. Lo correcto es…",
+     "ops": [
+      "Rotarlo de inmediato",
+      "Nada, ya se borró",
+      "Hacer el repositorio privado",
+      "Cambiarle el nombre a la variable"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "El archivo que sí va en el repositorio para documentar la configuración es…",
+     "ops": [
+      "El .env real",
+      "Un respaldo de la base",
+      "Un .env.example con valores falsos",
+      "El historial del chat"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "La IA te entrega código idéntico a una librería con aviso de licencia GPL. Antes de integrarlo…",
+     "ops": [
+      "Borras el aviso",
+      "Lo revisas con legal o usas la librería oficial",
+      "Lo integras porque lo generó la IA",
+      "Le cambias los nombres"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "Durante un refactor, una prueba del comportamiento actual falla. Eso indica…",
+     "ops": [
+      "Que la prueba está mal",
+      "Que hay que borrarla",
+      "Que el refactor cambió el comportamiento",
+      "Que todo va bien"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Una migración de base generada por IA se corre primero…",
+     "ops": [
+      "En una copia, con su migración de regreso",
+      "Directo en producción",
+      "Solo en la máquina de la IA",
+      "Sin probar"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Si la IA afirma que su código «sigue las mejores prácticas de seguridad»…",
+     "ops": [
+      "Ya se puede aprobar",
+      "Basta con eso",
+      "Se ignora la revisión",
+      "Sigues revisando con una lista concreta y pruebas"
+     ],
+     "correcta": 3
+    }
+   ]
+  },
+  {
+   "t": "Laboratorio y proyecto final",
+   "r": "Un día real de desarrollo con IA con errores plantados que debes detectar, y la construcción de tu kit personal de programador con IA.",
+   "lecciones": [
+    {
+     "t": "Simulación: un día de desarrollo con IA",
+     "obj": "Detectar errores de seguridad, dependencias, pruebas y documentación en el trabajo generado con IA antes de que lleguen al repositorio.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Karla es desarrolladora en una empresa de software para farmacias en Guadalajara. Hoy tiene que agregar el registro de devoluciones al sistema. Usa un asistente de IA en cuatro momentos del día. En cada escena hay al menos un error plantado. Tu trabajo: encontrarlo antes del commit."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 1 · 9:00 am — La petición.</b> Karla escribió: «Hazme el endpoint de devoluciones en Express. Así está mi configuración para que sepas cómo conectarte:» y pegó su archivo .env completo, con la cadena de conexión de producción y el token del servicio de facturación. Para dar contexto agregó tres devoluciones reales con nombre del cliente y medicamento."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 1: ¿qué encontraste?",
+       "pregunta": "Enumera lo que Karla no debió pegar, qué tiene que hacer ahora y reescribe la petición correctamente.",
+       "ayuda": "No debió pegar… Ahora tiene que… Petición corregida: Estoy en Node [versión] con Express…"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 2 · 11:30 am — El código.</b> La IA entregó el endpoint. Arma la consulta así: «SELECT * FROM ventas WHERE folio = '» + req.body.folio + «'». No revisa que la venta pertenezca a la sucursal del usuario. Para generar el comprobante sugiere instalar un paquete llamado pdf-recibos-mx que Karla nunca había oído."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 2: ¿qué encontraste?",
+       "pregunta": "Escribe los tres hallazgos con su severidad y la corrección de cada uno.",
+       "ayuda": "Hallazgo 1: … severidad … corrección … / Hallazgo 2: … / Hallazgo 3: …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 3 · 3:00 pm — Las pruebas.</b> Karla pidió pruebas. La IA generó cinco: todas con devoluciones de 1 pieza de una venta existente, y una de ellas comprueba que devolver más piezas de las vendidas «funciona correctamente» y devuelve 200. No hay prueba de folio inexistente ni de un usuario de otra sucursal."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 3: ¿qué encontraste?",
+       "pregunta": "Explica qué está mal en la batería de pruebas y escribe los nombres de 4 pruebas que faltan.",
+       "ayuda": "El problema es… La prueba de más piezas… Faltan: 1) … 2) … 3) … 4) …"
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>Escena 4 · 6:00 pm — El PR.</b> La IA redactó la descripción: «Se agrega el endpoint de devoluciones. Probado con 10 mil registros. Sin riesgos». Karla solo corrió las cinco pruebas de la escena 3. Además, el diff incluye una función de formato de fechas de 60 líneas con un encabezado de licencia de otro proyecto."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Escena 4: ¿qué encontraste?",
+       "pregunta": "Reescribe la descripción del PR con lo que realmente se probó, los riesgos y qué debe revisar con cuidado quien lo apruebe. Di qué harás con la función con licencia.",
+       "ayuda": "Qué cambia… Cómo se probó… Riesgos… Revisar con cuidado… Sobre la función con licencia…"
+      },
+      {
+       "tipo": "practica",
+       "rotulo": "Revisión del día",
+       "preguntas": [
+        {
+         "p": "Escena 1: ¿qué hace Karla primero?",
+         "ops": [
+          "Borra la conversación",
+          "Rota la cadena de conexión y el token, y avisa al responsable",
+          "Sigue trabajando, era un chat privado"
+         ],
+         "correcta": 1,
+         "explica": "Credencial pegada es credencial rotada. Las devoluciones reales también se reportan según la política de datos de la empresa."
+        },
+        {
+         "p": "Escena 2: ¿cuál es el hallazgo más grave?",
+         "ops": [
+          "La consulta armada con texto del usuario, que permite inyección",
+          "El nombre del endpoint",
+          "Que el código no tenga comentarios"
+         ],
+         "correcta": 0,
+         "explica": "La inyección permite leer o alterar datos. La falta de autorización por sucursal es el segundo hallazgo alto."
+        },
+        {
+         "p": "Escena 2: el paquete pdf-recibos-mx…",
+         "ops": [
+          "Se instala porque lo sugirió la IA",
+          "Se instala si tiene nombre en español",
+          "Se busca en el registro oficial antes de cualquier cosa; si no aparece, no se instala"
+         ],
+         "correcta": 2,
+         "explica": "Paquete desconocido se verifica en el registro oficial, nunca preguntándole a la misma IA."
+        },
+        {
+         "p": "Escena 3: la prueba que acepta devolver más piezas de las vendidas…",
+         "ops": [
+          "Está bien, el endpoint responde",
+          "Está fijando un bug como si fuera correcto: debe esperar un error",
+          "Sobra"
+         ],
+         "correcta": 1,
+         "explica": "Una prueba que aprueba un comportamiento incorrecto protege al bug."
+        },
+        {
+         "p": "Escena 4: «Probado con 10 mil registros» en el PR…",
+         "ops": [
+          "Se borra: el PR solo dice lo que de verdad se probó",
+          "Se deja, se ve profesional",
+          "Se cambia por 5 mil"
+         ],
+         "correcta": 0,
+         "explica": "Una descripción de PR que miente sobre las pruebas engaña a quien lo aprueba."
+        }
+       ]
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Nada de .env ni datos reales en el prompt: nombres de variables y datos inventados.",
+        "Inyección, autorización y paquetes desconocidos se revisan en cada entrega.",
+        "El PR dice exactamente lo que se probó, y el código con licencia se revisa antes de integrarlo."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "Proyecto final: tu kit de programador con IA",
+     "obj": "Construir tu biblioteca de prompts, tu política de datos y secretos, tu lista de revisión y un PR real revisado con ella.",
+     "bloques": [
+      {
+       "tipo": "texto",
+       "texto": "Cierra el curso armando tu <b>kit de programador con IA</b>: lo que vas a usar en cada tarea. Trabaja con tu proyecto real. Guárdalo en el repositorio del equipo (por ejemplo, en una carpeta de documentación) o en tu gestor de notas, con fecha y versión, para que lo puedas actualizar cuando cambien tus herramientas."
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 1 · Tu biblioteca de prompts",
+       "pregunta": "Elige las 6 plantillas del curso que más usarás (petición de código, anonimizar, explicar legado, depuración guiada, pruebas de verdad, commit y PR, revisión de seguridad, refactor por pasos) y adapta cada una con los datos fijos de tu proyecto: lenguaje, versión, framework, librerías, estilo del equipo.",
+       "ayuda": "1. Petición de código: Estoy en [lenguaje y versión de mi proyecto] con… 2. …"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 2 · Tu política de datos y secretos",
+       "pregunta": "Escribe 6 reglas de lo que nunca pegas en un asistente y de dónde viven los secretos en tu proyecto (variables de entorno, gestor de secretos, .gitignore, escáner, exclusiones del editor). Incluye qué haces si algo se filtra.",
+       "ayuda": "Nunca pego… Los secretos viven en… Si algo se filtra: 1) rotar 2) avisar a…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 3 · Tu lista de revisión y tus reglas de pruebas",
+       "pregunta": "Arma tu lista de 10 puntos para revisar todo código generado antes del commit (entender cada línea, dependencias en el registro oficial, licencias, camino feliz, bordes, inyección, autorización por registro, secretos, logs y costo) y agrega tus reglas de pruebas: qué bordes siempre pides, cómo escribes el esperado y qué no se toca durante un refactor.",
+       "ayuda": "Antes del commit reviso: 1) … 2) … / En pruebas siempre pido… El esperado lo escribo… Durante un refactor no…"
+      },
+      {
+       "tipo": "reflexion",
+       "rotulo": "Paso 4 · Tu entregable real",
+       "pregunta": "Haz esta semana una tarea real con el asistente (una función, una corrección o un refactor pequeño), pásala por tu lista de revisión, escribe el PR con la plantilla y anota qué corregiste de lo que propuso la IA.",
+       "ayuda": "Tarea… La IA propuso… Corregí… Hallazgos de seguridad… Pruebas agregadas… PR: …"
+      },
+      {
+       "tipo": "plantilla",
+       "rotulo": "Índice de tu kit",
+       "texto": "KIT DE PROGRAMADOR CON IA — [nombre] — versión [fecha]\n\n1. Datos fijos del proyecto (lenguaje, versión, framework, librerías, estilo del equipo)\n2. Biblioteca de prompts\n   2.1 Petición de código · 2.2 Anonimizar · 2.3 Explicar legado · 2.4 Depuración guiada\n   2.5 Pruebas de verdad · 2.6 Commit y PR · 2.7 Revisión de seguridad · 2.8 Refactor por pasos\n3. Política de datos y secretos (6 reglas + qué hacer si algo se filtra)\n4. Lista de revisión antes del commit (10 puntos)\n5. Reglas de pruebas\n6. Herramientas de IA aprobadas por mi empresa y su configuración (exclusiones del editor)\n7. Licencias: a quién consulto y qué licencias están aprobadas\n8. Entregable real revisado: [enlace al PR]\n9. Próxima revisión del kit: [fecha]",
+       "nota": "Cópiala y adáptala."
+      },
+      {
+       "tipo": "destacado",
+       "texto": "<b>¡Terminaste el curso completo!</b> El asistente te hace más rápido; tu kit te hace confiable. La responsabilidad del código que subes es tuya: por eso lo entiendes, lo pruebas, lo revisas en seguridad y licencias, y nunca le pegas lo que no se debe pegar."
+      },
+      {
+       "tipo": "clave",
+       "items": [
+        "Biblioteca de prompts con los datos fijos de tu proyecto.",
+        "Política de datos y secretos, lista de revisión y reglas de pruebas por escrito.",
+        "Un PR real revisado con tu kit, y fecha para actualizarlo."
+       ]
+      }
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "p": "Para que la IA sepa cómo conectarte a la base, le das…",
+     "ops": [
+      "El .env completo",
+      "La cadena de conexión real",
+      "Los nombres de las variables de entorno",
+      "Una captura del servidor"
+     ],
+     "correcta": 2
+    },
+    {
+     "p": "Una consulta armada pegando lo que escribe el usuario permite…",
+     "ops": [
+      "Inyección",
+      "Mejor rendimiento",
+      "Validación automática",
+      "Nada"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "Una prueba que acepta devolver más piezas de las vendidas…",
+     "ops": [
+      "Protege el sistema",
+      "Fija un bug como si fuera correcto",
+      "Es la ideal",
+      "Mide rendimiento"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "La descripción del PR debe decir…",
+     "ops": [
+      "Lo que suena mejor",
+      "Lo que la IA propuso",
+      "Solo el título",
+      "Lo que de verdad se probó y los riesgos"
+     ],
+     "correcta": 3
+    },
+    {
+     "p": "Tu política de secretos incluye, si algo se filtra…",
+     "ops": [
+      "Borrar la conversación y seguir",
+      "Rotar la credencial y avisar al responsable",
+      "Esperar a ver si pasa algo",
+      "Cambiar de herramienta de IA"
+     ],
+     "correcta": 1
+    },
+    {
+     "p": "El kit de programador con IA se guarda…",
+     "ops": [
+      "Con fecha y versión, para actualizarlo",
+      "Solo en tu memoria",
+      "En el chat de la IA",
+      "No se guarda"
+     ],
+     "correcta": 0
+    },
+    {
+     "p": "La responsabilidad del código que subes generado con IA es…",
+     "ops": [
+      "Del proveedor de la IA",
+      "Del revisor únicamente",
+      "Tuya",
+      "De nadie"
+     ],
+     "correcta": 2
+    }
+   ]
+  }
+ ]
+}
