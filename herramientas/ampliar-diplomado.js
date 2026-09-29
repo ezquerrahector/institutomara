@@ -61,9 +61,9 @@ const idx = lineas.findIndex(l => l.startsWith('window.CURSOS_MARA.push({"id":"'
 const c = JSON.parse(lineas[idx].slice('window.CURSOS_MARA.push('.length, lineas[idx].lastIndexOf(')')));
 if (c.modulos.some(m => m.lecciones.some(l => /-lab$/.test(l.id)))) throw new Error(amp.id + ' ya estaba ampliado');
 const lecs = c.modulos.flatMap(m => m.lecciones);
-if (amp.talleres.length !== lecs.length) throw new Error(`Talleres: ${amp.talleres.length}, lecciones: ${lecs.length}`);
+if (amp.talleres.length && amp.talleres.length !== lecs.length) throw new Error(`Talleres: ${amp.talleres.length}, lecciones: ${lecs.length}`);
 if (amp.labs.length !== c.modulos.length) throw new Error(`Laboratorios: ${amp.labs.length}, módulos: ${c.modulos.length}`);
-lecs.forEach((l, i) => {
+if (amp.talleres.length) lecs.forEach((l, i) => {
   let k = l.bloques.map(b => b.tipo).lastIndexOf('clave');
   if (k < 0) k = l.bloques.length;
   l.bloques.splice(k, 0, ...taller(amp.talleres[i]));
