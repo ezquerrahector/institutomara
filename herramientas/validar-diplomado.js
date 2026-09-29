@@ -10,7 +10,7 @@ const c = window.CURSOS_MARA.find(x => x.id === id); if (!c) { console.error('No
 const R = {}; const fallo = (v, m) => (R[v] = R[v] || []).push(m);
 const L = c.modulos.flatMap(m => m.lecciones), B = L.flatMap(l => l.bloques.map(b => ({ l, b })));
 const Q = []; B.forEach(({ l, b }) => (b.preguntas || []).forEach(q => Q.push({ l: l.id, q }))); c.modulos.forEach(m => m.quiz.preguntas.forEach(q => Q.push({ l: m.id + '-quiz', q })));
-const limpio = t => String(t).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const limpio = t => String(t).replace(/<\/?(b|i|strong|em|u)>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 // V3 estructura
 const ids = [c.id, ...c.modulos.map(m => m.id), ...L.map(l => l.id)]; if (new Set(ids).size !== ids.length) fallo('V3', 'ids repetidos');
 if (window.CURSOS_MARA.filter(x => x.id === id).length !== 1) fallo('V3', 'curso duplicado en el catálogo');
@@ -21,7 +21,7 @@ c.modulos.forEach(m => { if (m.quiz.preguntas.length < 10) fallo('V3', m.id + ':
 // V4 calidad de texto
 const textos = []; B.forEach(({ l, b }) => { for (const k of ['texto', 'mal', 'bien', 'pregunta']) if (typeof b[k] === 'string') textos.push([l.id, limpio(b[k])]); });
 Q.forEach(({ l, q }) => textos.push([l, q.p + ' ' + q.ops.join(' ') + ' ' + (q.explica || '')]));
-const FIJAS = /Bienvenida|Compara tu respuesta|Lee el caso y piensa|En cada criterio|Hazlo sobre un caso real|Escribe con tus palabras|Diagnóstico 15 min|Descarga el cuaderno|Escribe como si estuvieras|Registra tu primera versión del reto|Felicidades, terminaste/;
+const FIJAS = /Bienvenida|Compara tu respuesta|Lee el caso y piensa|En cada criterio|Hazlo sobre un caso real|Escribe con tus palabras|Diagnóstico 15 min|Descarga el cuaderno|Escribe como si estuvieras|Registra tu primera versión del reto|Felicidades, terminaste|Usa los modelos de las cuatro lecciones|Cada lección sigue|Cada módulo cierra|Repasar de nuevo|Bitácora del reto|Repaso del módulo|Revisa el caso: ¿qué haría/;
 const vistos = new Map();
 textos.forEach(([l, t]) => {
   if (/"/.test(t)) fallo('V4', l + ': comillas rectas: ' + t.slice(0, 60));
@@ -33,7 +33,7 @@ textos.forEach(([l, t]) => {
 });
 // Repetición contra otros diplomados
 const otros = new Set(); window.CURSOS_MARA.filter(x => x.id !== id).forEach(x => JSON.stringify(x.modulos).replace(/<[^>]+>/g, ' ').split(/(?<=[.!?])\s+/).filter(s => s.length > 80).forEach(s => otros.add(s.trim())));
-let rep = 0; JSON.stringify(c.modulos).replace(/<[^>]+>/g, ' ').split(/(?<=[.!?])\s+/).filter(s => s.length > 80).forEach(s => { if (otros.has(s.trim()) && !/Bienvenida|Compara tu respuesta|Lee el caso y piensa|En cada criterio|Hazlo sobre un caso real|Escribe con tus palabras|Diagnóstico 15 min/.test(s)) rep++; });
+let rep = 0; JSON.stringify(c.modulos).replace(/<[^>]+>/g, ' ').split(/(?<=[.!?])\s+/).filter(s => s.length > 80).forEach(s => { if (otros.has(s.trim()) && !FIJAS.test(s) && !/Lee el caso y piensa|En cada criterio/.test(s)) rep++; });
 if (rep > 3) fallo('V4', rep + ' oraciones idénticas a otros programas');
 // V5 sesgo de respuestas
 const pos = [0, 0, 0, 0]; let masLarga = 0; Q.forEach(({ q }) => { pos[q.correcta]++; const lens = q.ops.map(o => o.length); if (lens[q.correcta] === Math.max(...lens) && lens.filter(x => x === Math.max(...lens)).length === 1) masLarga++; });

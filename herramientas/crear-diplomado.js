@@ -48,7 +48,7 @@ const P5 = (q, d, n) => { req(Array.isArray(q) && q.length === 5, d + ': pregunt
 });
 const todo = JSON.stringify(S);
 req(!/"[^"]*\\"[^"]*"/.test(todo.replace(/<[^>]+>/g, '')), 'comillas dobles rectas dentro de textos: usa «»');
-req(!/\b(TODO|lorem|xxx)\b/i.test(todo), 'texto provisional');
+req(!/\bTODO\b|lorem ipsum|\bxxx\b/.test(todo), 'texto provisional');
 if (errores.length) { console.error('ERRORES (' + errores.length + '):\n' + errores.slice(0, 60).join('\n')); process.exit(1); }
 
 // ---------- Construcción ----------
