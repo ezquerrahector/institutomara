@@ -1,0 +1,708 @@
+{
+  "modulos": [
+    {
+      "t": "La pericial psicológica I: planteamiento y evaluación",
+      "r": "Aprendes cómo se acepta un encargo pericial, cómo se conduce una entrevista forense, qué pueden y qué no pueden decir los instrumentos, y por qué toda conclusión debe apoyarse en varias fuentes y en hipótesis alternativas.",
+      "lecciones": [
+        {
+          "t": "Aceptar el encargo y encuadrar la evaluación",
+          "obj": "Decidir si aceptar un encargo pericial y explicar a la persona evaluada el propósito y los límites de la evaluación.",
+          "texto": [
+            "Antes de la primera entrevista hay decisiones que definen la calidad del trabajo. La primera es la <b>competencia:</b> ¿tengo la formación y la experiencia para responder esta pregunta con esta población? Evaluar a una niña de cinco años, a un adulto mayor con deterioro cognitivo o a una persona indígena que habla una lengua distinta exige preparación específica y, a veces, apoyo de intérpretes. La segunda son los <b>conflictos de interés:</b> relaciones previas con alguna de las partes, amistad con abogados del caso o haber sido terapeuta de la persona evaluada.",
+            "La tercera decisión son los <b>honorarios.</b> Las guías de la Asociación Estadounidense de Psicología para la práctica forense, una referencia internacional, desaconsejan cobrar en función del resultado del caso, porque eso crea un incentivo para inclinar las conclusiones. Lo recomendable es acordar por escrito el pago por el trabajo realizado, sin importar si el dictamen favorece o no a quien lo solicita, y estar dispuesto a explicarlo en juicio si te lo preguntan.",
+            "Ya frente a la persona evaluada viene el <b>encuadre:</b> explicar quién solicitó la evaluación, para qué se usará, que no es terapia, que lo que diga puede aparecer en el dictamen y ser leído por las partes y el tribunal, y cuáles son sus derechos. Si la evaluación es voluntaria, se obtiene consentimiento informado; si la ordenó una autoridad, al menos se informa con claridad. Cuando se evalúa a una persona imputada, conviene recordar que tiene derecho a guardar silencio y a consultar a su defensa, derechos que la Constitución reconoce.",
+            "Un buen encuadre se dice en lenguaje sencillo, se comprueba que la persona lo entendió pidiéndole que lo explique con sus palabras y se deja por escrito, con su firma cuando sea posible. Si alguien se niega a participar, esa negativa se respeta y se documenta. Estas decisiones pueden parecer trámites, pero son lo que permite que una evaluación sea ética, defendible en audiencia y respetuosa con personas que muchas veces atraviesan uno de los peores momentos de su vida."
+          ],
+          "comparar": [
+            "Así no: «No te preocupes, aquí todo es confidencial; cuéntame con confianza.»",
+            "Así sí: «Esto no es terapia: lo que me digas puede aparecer en el dictamen que leerán el tribunal y las partes.»"
+          ],
+          "caso": "Caso ficticio: Rocío, psicóloga con especialidad forense de 40 años en Zacatecas, recibe de un despacho la propuesta de evaluar a un hombre imputado por fraude. El despacho ofrece pagarle el doble si el dictamen «ayuda a ganar». Además, Rocío descubre que la esposa del imputado fue su compañera en la universidad.",
+          "p": [
+            [
+              "¿Qué debería hacer Rocío con la propuesta de honorarios?",
+              "Rechazar el pago ligado al resultado y acordar tarifa por trabajo",
+              "Aceptar, siempre que su dictamen sea técnicamente impecable",
+              "Aceptar, pero no mencionarlo si le preguntan en el juicio",
+              "Un pago condicionado al resultado crea un incentivo para inclinar las conclusiones, por buena que sea la técnica. Ocultarlo agravaría el problema: los honorarios pueden preguntarse en juicio y deben poder explicarse con transparencia."
+            ],
+            [
+              "¿Qué hacer con la relación previa con la esposa del imputado?",
+              "Valorarla como posible conflicto de interés y, en su caso, declinar",
+              "Ignorarla, porque no evaluará a la esposa sino al imputado",
+              "Aprovecharla para obtener información adicional del caso",
+              "Una relación personal con alguien cercano a la persona evaluada puede afectar la imparcialidad o su apariencia. Ignorarla o usarla para obtener información compromete la ética y la credibilidad del dictamen."
+            ],
+            [
+              "Si Rocío acepta el caso, ¿qué debe explicar primero al imputado?",
+              "Quién pidió la evaluación, para qué se usará y sus derechos",
+              "Que todo lo que diga quedará en estricta confidencialidad",
+              "Que colaborar con la evaluación mejorará su situación jurídica",
+              "El encuadre informa el propósito, el destino de la información y los derechos, como guardar silencio y consultar a su defensa. Prometer confidencialidad sería falso, y sugerir beneficios jurídicos es una presión indebida."
+            ]
+          ],
+          "completar": [
+            "Las guías forenses desaconsejan que los ___ dependan del resultado del caso.",
+            "honorarios"
+          ],
+          "relacionar": [
+            ["Competencia", "Tener formación para evaluar a esa población y esa pregunta"],
+            ["Conflicto de interés", "Haber sido terapeuta de la persona que ahora se evalúa"],
+            ["Encuadre", "Explicar quién pidió la evaluación y para qué se usará"],
+            ["Honorarios no condicionados", "Cobrar por el trabajo, gane o pierda quien contrata"]
+          ],
+          "refl": "Redacta tu guion de encuadre para una evaluación ficticia. 1) Escribe en lenguaje sencillo (máximo 150 palabras) lo que dirías al inicio: quién solicita, para qué, límites de confidencialidad, derechos y qué pasará con la información. 2) Escribe cómo comprobarías que la persona entendió. 3) Describe cómo documentarías una negativa a participar.",
+          "modelo": "Modelo: «Soy psicóloga y me pidió esta evaluación la fiscalía para conocer cómo estás después de los hechos que denunciaste. No es terapia: lo que me cuentes lo incluiré en un informe que leerán el Ministerio Público, la defensa y el tribunal. Puedes pedir pausas, no contestar algo o terminar cuando quieras. ¿Me explicas con tus palabras para qué es esta entrevista?» Si se niega, anoto fecha, hora y sus razones, le pido firmar y lo informo. Es buena porque es clara, no promete lo que no puede cumplir y comprueba la comprensión.",
+          "plantilla": [
+            "Encuadre de la evaluación forense",
+            "Me llamo [nombre], soy [profesión]. Esta evaluación la solicitó [autoridad o parte] para [propósito].\nNo es terapia. Lo que me digas puede aparecer en un informe que leerán [destinatarios].\nTienes derecho a [pausas, no responder, consultar a tu defensa, terminar].\n¿Me explicas con tus palabras para qué es esta entrevista? [respuesta]\nFirma o constancia de negativa: [..]"
+          ],
+          "clave": [
+            "Antes de aceptar, revisa competencia, conflictos de interés y honorarios no condicionados al resultado.",
+            "El encuadre explica quién pide la evaluación, para qué, los límites de la confidencialidad y los derechos de la persona.",
+            "Nunca prometas confidencialidad que no puedes cumplir ni beneficios por colaborar."
+          ]
+        },
+        {
+          "t": "La entrevista forense con personas adultas",
+          "obj": "Conducir una entrevista forense que obtenga información amplia y confiable sin contaminar el relato.",
+          "texto": [
+            "La entrevista es la herramienta central de la evaluación forense, y también la que más puede fallar. Su objetivo no es confirmar lo que ya dice el expediente, sino obtener información propia, amplia y lo menos influida posible. Por eso suele ser <b>semiestructurada:</b> sigue una guía de temas, como antecedentes, hechos, síntomas, funcionamiento antes y después, pero deja espacio para que la persona narre con sus palabras.",
+            "La regla de oro es ir de lo abierto a lo cerrado. Empieza con invitaciones <b>abiertas</b> como «Cuéntame qué pasó ese día» o «¿Qué más recuerdas?», que producen relatos más ricos y menos influidos. Después usa preguntas de seguimiento sobre lo que la persona mencionó: «Dijiste que llegó un vecino, ¿qué hizo?». Deja para el final las preguntas cerradas, y evita las sugestivas, que contienen la respuesta, como «¿Verdad que te amenazó con un cuchillo?». Si introduces un dato que la persona no dijo, ya no sabrás si después lo recuerda por haberlo vivido o por haberlo escuchado de ti.",
+            "Para testigos adultos, la <b>entrevista cognitiva,</b> desarrollada por Fisher y Geiselman, es una de las técnicas con más respaldo: pide recrear mentalmente el contexto, informar cualquier detalle aunque parezca poco importante y relatar sin interrupciones, lo que suele aumentar la información correcta sin elevar mucho los errores. En evaluaciones clínico-forenses también se exploran síntomas, historia de vida, consumo de sustancias, estresores y apoyos, siempre contrastando con otras fuentes.",
+            "Entrevistar a víctimas exige cuidado adicional. Conviene explicar que puede pedir pausas, no forzar detalles que no son necesarios para la pregunta pericial y cerrar la sesión con calma, sin dejar a la persona desbordada. Si en la entrevista aparece riesgo actual, como ideas suicidas o amenazas, la prioridad es su seguridad: activar los protocolos de la institución y ofrecer el 911 o la Línea de la Vida, 800 911 2000. Registrar las preguntas tal como se hicieron permite que otros verifiquen que no hubo sugestión."
+          ],
+          "comparar": [
+            "Así no: «Entonces te golpeó primero y luego te quitó el celular, ¿verdad?»",
+            "Así sí: «Cuéntame con tus palabras qué pasó, desde el principio y sin prisa.»"
+          ],
+          "caso": "Caso ficticio: Fernando, psicólogo de 31 años en Tuxtla Gutiérrez, entrevista a una mujer de 58 años que presenció un asalto en un mercado. Como ya leyó la denuncia, empieza preguntando: «El asaltante era alto y traía gorra roja, ¿cierto?». La mujer duda y luego asiente.",
+          "p": [
+            [
+              "¿Qué problema tiene la pregunta de Fernando?",
+              "Es sugestiva: introduce datos que la testigo no mencionó",
+              "Es demasiado abierta y no permite obtener detalles",
+              "Es correcta, porque confirma lo que ya está en la denuncia",
+              "La pregunta contiene la respuesta y puede incorporar datos ajenos a la memoria de la testigo. Lejos de ser demasiado abierta, es cerrada y dirigida; y confirmar la denuncia no es el objetivo de la entrevista."
+            ],
+            [
+              "¿Cómo debió empezar Fernando?",
+              "Con una invitación abierta a relatar lo que vio",
+              "Con preguntas de sí o no para ahorrar tiempo",
+              "Leyéndole la denuncia para refrescar su memoria",
+              "Las invitaciones abiertas obtienen relatos más amplios y menos contaminados. Las preguntas cerradas limitan la información y leer la denuncia expone a la testigo a datos que podrían mezclarse con su recuerdo."
+            ],
+            [
+              "¿Qué técnica tiene respaldo para entrevistar a testigos adultos?",
+              "La entrevista cognitiva",
+              "La entrevista confrontativa",
+              "El interrogatorio por repetición",
+              "La entrevista cognitiva aumenta la información correcta con pocos errores adicionales. Confrontar o repetir la misma pregunta varias veces presiona a la persona y puede llevarla a cambiar su respuesta sin que haya recordado algo nuevo."
+            ]
+          ],
+          "completar": [
+            "En la entrevista forense se empieza con invitaciones ___ y se dejan para el final las preguntas cerradas.",
+            "abiertas"
+          ],
+          "refl": "Escribe una guía breve para entrevistar a un testigo adulto de un hecho ficticio (por ejemplo, un choque en una avenida). 1) Redacta tu frase de inicio y tres invitaciones abiertas. 2) Escribe dos preguntas de seguimiento que dependan de lo que la persona diga. 3) Escribe dos preguntas sugestivas que evitarías y reescríbelas de forma neutral.",
+          "modelo": "Modelo: «Inicio: “Gracias por venir. Quiero entender lo que viste; si no sabes o no recuerdas algo, dímelo con toda confianza”. Invitaciones: “Cuéntame desde que llegaste a la esquina”, “¿Qué más pasó?”, “Háblame más de lo que escuchaste”. Seguimiento: “Mencionaste un claxon, ¿qué pasó justo después?”. Sugestiva evitada: “El camión se pasó el alto, ¿verdad?”; neutral: “¿Cómo estaba el semáforo, si lo viste?”.» Es buena porque respeta el orden de lo abierto a lo cerrado y permite decir «no sé».",
+          "plantilla": [
+            "Guía de entrevista semiestructurada",
+            "Encuadre: [texto]\nPermiso para decir «no sé» y «no entiendo»: [frase]\nRelato libre: «Cuéntame [tema] desde el principio»\nSeguimiento: «Mencionaste [dato], cuéntame más sobre eso»\nPreguntas específicas finales: [solo si hacen falta, sin sugerir]\nCierre: [agradecimiento, dudas, apoyo disponible]"
+          ],
+          "clave": [
+            "La entrevista forense va de lo abierto a lo cerrado y evita las preguntas sugestivas.",
+            "La entrevista cognitiva tiene respaldo para obtener más información correcta de testigos adultos.",
+            "Si aparece riesgo actual, la seguridad de la persona es prioridad."
+          ]
+        },
+        {
+          "t": "Instrumentos psicológicos y sus límites",
+          "obj": "Elegir y describir con honestidad instrumentos psicológicos en una evaluación forense.",
+          "texto": [
+            "Las pruebas psicológicas son herramientas para obtener información estandarizada, no oráculos. Para que una prueba sea útil en un contexto forense debe tener <b>confiabilidad</b> (mide de forma consistente), <b>validez</b> (mide lo que dice medir y sirve para la conclusión que se quiere sacar) y <b>normas</b> adecuadas (datos de comparación de una población parecida a la persona evaluada). Una prueba validada en otro país puede no funcionar igual en una trabajadora agrícola de Sinaloa o en un joven de la sierra tarahumara.",
+            "Además, la prueba debe ser <b>pertinente</b> a la pregunta. Si te preguntan por síntomas de estrés postraumático, sirven entrevistas estructuradas y escalas de síntomas con respaldo; un test de inteligencia no responde esa pregunta. En contextos legales son especialmente útiles los inventarios que incluyen escalas de validez, que ayudan a detectar respuestas al azar, exageración o minimización. Aun así, un resultado es una pieza de información que debe contrastarse con la entrevista y las demás fuentes.",
+            "Hay límites que conviene conocer. Muchas técnicas proyectivas, como interpretar dibujos o relatos a partir de láminas, no tienen respaldo suficiente para las conclusiones que a veces se les atribuyen en juicios, como afirmar que alguien fue víctima de abuso por los detalles de un dibujo. No existe una prueba que determine si un hecho ocurrió, ni un «perfil psicológico» que pruebe que alguien es agresor o víctima. Las revisiones de Lilienfeld y colaboradores documentaron estas limitaciones con detalle.",
+            "En el dictamen, describe cada instrumento: qué mide, por qué lo elegiste, si tiene adaptación o normas mexicanas, cómo se aplicó y qué limitaciones tiene para esta persona. Respeta los derechos de autor y las condiciones de uso, que suelen restringir la aplicación a profesionales con formación. En juicio te preguntarán por estas decisiones; la mejor defensa es haberlas tomado con criterio y poder explicarlas en palabras sencillas."
+          ],
+          "comparar": [
+            "Así no: «El dibujo de la casa sin ventanas demuestra que la niña fue víctima de abuso.»",
+            "Así sí: «Ninguna prueba determina si ocurrió un hecho; los resultados se contrastan con la entrevista y otras fuentes.»"
+          ],
+          "caso": "Caso ficticio: Beatriz, psicóloga de 44 años en Morelia, revisa un dictamen de otra perita que concluye que un hombre «tiene el perfil de un agresor» porque su prueba de personalidad mostró impulsividad. El dictamen no menciona normas, validez ni otras fuentes. La defensa le pide su opinión técnica.",
+          "p": [
+            [
+              "¿Cuál es la principal debilidad del dictamen que revisa Beatriz?",
+              "Concluye sobre un hecho a partir de un rasgo, sin otras fuentes",
+              "Usa una prueba de personalidad en lugar de una proyectiva",
+              "No incluye suficientes pruebas para llegar a esa conclusión",
+              "Un rasgo como la impulsividad no prueba que alguien haya cometido un hecho, y la conclusión carece de contraste con otras fuentes. Cambiar a una proyectiva empeoraría el problema, y sumar pruebas no corrige un error de razonamiento."
+            ],
+            [
+              "¿Qué debería describir un dictamen sobre cada instrumento aplicado?",
+              "Qué mide, por qué se eligió, sus normas y sus limitaciones",
+              "Su nombre comercial, su costo y la editorial que lo publica",
+              "Las respuestas textuales de la persona a cada reactivo",
+              "Explicar qué mide, su pertinencia, sus normas y sus limitaciones permite valorar la prueba. El costo es irrelevante, y reproducir reactivos puede violar derechos de autor y la privacidad de la persona."
+            ],
+            [
+              "¿Qué característica hace más útil un inventario en contextos legales?",
+              "Que incluya escalas de validez de las respuestas",
+              "Que sea breve y fácil de aplicar en diez minutos",
+              "Que su interpretación no requiera formación",
+              "Las escalas de validez ayudan a detectar respuestas al azar, exageradas o minimizadas, algo frecuente cuando hay incentivos. La brevedad no garantiza calidad, y toda prueba requiere formación para interpretarse."
+            ]
+          ],
+          "completar": [
+            "Una prueba tiene ___ cuando mide lo que dice medir y sirve para la conclusión que se quiere sacar.",
+            "validez"
+          ],
+          "relacionar": [
+            ["Confiabilidad", "La prueba da resultados consistentes al medir"],
+            ["Validez", "La prueba mide lo que dice medir"],
+            ["Normas", "Datos de comparación de una población parecida"],
+            ["Pertinencia", "La prueba ayuda a responder la pregunta planteada"],
+            ["Escalas de validez", "Detectan respuestas al azar, exageradas o minimizadas"]
+          ],
+          "refl": "Analiza críticamente un instrumento. 1) Elige una prueba psicológica que conozcas o investiga una (su nombre, qué mide y en qué población se construyó). 2) Busca si tiene adaptación o normas para México y anota la fuente. 3) Escribe para qué pregunta forense sería pertinente, para cuál no y qué limitaciones mencionarías en un dictamen.",
+          "modelo": "Modelo: «Elegí una escala de síntomas de estrés postraumático. Mide la frecuencia e intensidad de síntomas en el último mes; se construyó con población estadounidense. Encontré un artículo de validación con adultos mexicanos, que citaría. Sería pertinente para describir síntomas en una víctima de asalto; no lo sería para decidir si el asalto ocurrió. Limitaciones: es autoinforme, puede exagerarse o minimizarse y debe contrastarse con entrevista y otras fuentes.» Es buena porque separa pertinencia y límites, y basa la adaptación en una fuente verificable.",
+          "plantilla": [
+            "Ficha técnica del instrumento",
+            "Nombre: [..] · Qué mide: [..]\nPoblación de origen: [..] · Normas o adaptación mexicana: [sí/no, fuente]\nPregunta a la que ayuda a responder: [..]\nPregunta a la que no responde: [..]\nLimitaciones para esta persona: [idioma, escolaridad, condición, contexto]\nCómo contrastaré sus resultados: [fuentes]"
+          ],
+          "clave": [
+            "Una prueba útil en lo forense es confiable, válida, con normas adecuadas y pertinente a la pregunta.",
+            "Ninguna prueba determina si un hecho ocurrió ni existe un perfil que pruebe quién es agresor o víctima.",
+            "Explica en el dictamen por qué elegiste cada instrumento y cuáles son sus límites."
+          ]
+        },
+        {
+          "t": "Fuentes múltiples e hipótesis alternativas",
+          "obj": "Integrar varias fuentes de información y contrastar hipótesis rivales antes de concluir.",
+          "texto": [
+            "Una conclusión forense sólida nunca descansa en una sola fuente. La práctica recomendada es la <b>triangulación:</b> combinar entrevistas con la persona evaluada, pruebas psicológicas, revisión del expediente, documentos como historiales médicos o escolares, y entrevistas a terceros, también llamadas <b>fuentes colaterales,</b> como familiares, docentes o compañeros de trabajo. Cuando varias fuentes independientes apuntan en la misma dirección, la conclusión gana solidez; cuando se contradicen, esa contradicción es un hallazgo que hay que explicar, no esconder.",
+            "La segunda práctica es formular <b>hipótesis</b> alternativas desde el inicio. Si una persona presenta ansiedad intensa después de un asalto, ¿podría explicarse también por síntomas previos, por otros estresores como un despido o una pérdida, por el propio proceso judicial o por una exageración motivada por una compensación? El objetivo no es desconfiar de la persona, sino poner a prueba la explicación principal. Una hipótesis que sobrevive al contraste con sus rivales es mucho más defendible que una que nunca se cuestionó.",
+            "Tercera práctica: distinguir con claridad tres niveles en tu razonamiento. Los <b>datos</b> son lo observado o reportado: «refiere dormir cuatro horas», «el expediente médico registra una consulta por insomnio en 2023». Las <b>inferencias</b> son lo que interpretas a partir de ellos: «el insomnio parece anterior a los hechos». Las <b>conclusiones</b> responden la pregunta psicolegal con el grado de certeza que permiten los datos. Mezclar niveles es una fuente frecuente de errores y de contrainterrogatorios difíciles.",
+            "Por último, sé transparente con lo que no pudiste hacer: si no te permitieron entrevistar a un familiar clave, si faltaba un expediente o si la persona no habla bien el español y no hubo intérprete. Nombrar las limitaciones no debilita tu dictamen; lo hace honesto y permite que el tribunal pondere su alcance. Un buen dictamen dice qué se sabe, con qué fuentes, con qué seguridad y qué quedó pendiente."
+          ],
+          "comparar": [
+            "Así no: «Con la entrevista y una prueba confirmé lo que decía la denuncia; no hacía falta más.»",
+            "Así sí: «Contrasté la entrevista, dos pruebas, el expediente médico y a dos terceros, y descarté explicaciones alternativas.»"
+          ],
+          "caso": "Caso ficticio: Paola, perita de 37 años en Veracruz, evalúa a un joven de 24 años que reporta ansiedad y pesadillas tras un asalto en su trabajo. En la entrevista él dice que antes estaba bien, pero un expediente médico muestra una consulta por ansiedad dos años antes. Además, fue despedido un mes después del asalto.",
+          "p": [
+            [
+              "¿Cómo debería tratar Paola la consulta previa por ansiedad?",
+              "Como un dato que obliga a analizar la historia de los síntomas",
+              "Como prueba de que el joven miente y exagera su estado emocional actual",
+              "Como un detalle irrelevante, porque el asalto fue más grave",
+              "La consulta previa es información que debe integrarse: los síntomas pudieron empeorar tras el asalto o tener otro origen. No demuestra por sí sola que mienta, y descartarla sin análisis sería un sesgo."
+            ],
+            [
+              "¿Qué hipótesis alternativa debe considerar Paola además del asalto?",
+              "El despido como estresor que también explicaría síntomas",
+              "Que el asalto no ocurrió, porque hay síntomas previos",
+              "Que los síntomas son un rasgo fijo de su personalidad",
+              "El despido posterior es un estresor que podría contribuir a los síntomas y debe ponderarse. Decidir si el asalto ocurrió no le corresponde, y atribuir los síntomas a un rasgo fijo carece de fundamento."
+            ],
+            [
+              "¿Cuál de estas frases es una inferencia y no un dato?",
+              "Los síntomas parecen haberse intensificado tras el asalto",
+              "El joven refiere dormir cuatro horas cada noche",
+              "El expediente registra una consulta previa por ansiedad",
+              "Una inferencia interpreta los datos. Las otras dos frases describen lo reportado por el joven y lo registrado en un documento: son datos que sirven de base a la inferencia."
+            ]
+          ],
+          "completar": [
+            "Formular ___ alternativas desde el inicio permite poner a prueba la explicación principal.",
+            "hipótesis"
+          ],
+          "relacionar": [
+            ["Dato", "El expediente registra una consulta en 2023"],
+            ["Inferencia", "El insomnio parece anterior a los hechos"],
+            ["Conclusión", "Respuesta a la pregunta psicolegal con su grado de certeza"],
+            ["Fuente colateral", "Entrevista a la jefa directa del evaluado"]
+          ],
+          "refl": "Toma el caso de Paola o uno inventado. 1) Enumera las fuentes que consultarías y por qué cada una. 2) Escribe la hipótesis principal y al menos tres hipótesis alternativas. 3) Para cada hipótesis, describe qué dato la apoyaría y qué dato la debilitaría.",
+          "modelo": "Modelo: «Fuentes: dos entrevistas con el joven, una escala de síntomas con escalas de validez, expediente médico, entrevista a su madre y a un compañero. Hipótesis principal: los síntomas se intensificaron tras el asalto. Alternativas: ansiedad previa sin cambio; el despido como causa principal; exageración por la demanda. Apoya la principal que el compañero describa cambios claros después del asalto; la debilita que la madre relate los mismos síntomas desde hace años.» Es buena porque cada hipótesis tiene criterios observables para ponerla a prueba.",
+          "plantilla": [
+            "Matriz de hipótesis",
+            "Pregunta psicolegal: [..]\nHipótesis principal: [..] · Datos a favor: [..] · Datos en contra: [..]\nHipótesis alternativa 1: [..] · A favor: [..] · En contra: [..]\nHipótesis alternativa 2: [..] · A favor: [..] · En contra: [..]\nFuentes consultadas y pendientes: [..]\nConclusión provisional y grado de certeza: [..]"
+          ],
+          "clave": [
+            "Triangula: entrevistas, pruebas, documentos y fuentes colaterales.",
+            "Formula hipótesis alternativas y busca datos que podrían refutar tu explicación principal.",
+            "Distingue datos, inferencias y conclusiones, y nombra las limitaciones."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Diseña el plan completo de una evaluación forense para un caso ficticio: desde la decisión de aceptar el encargo hasta la matriz de hipótesis, pasando por el encuadre, la guía de entrevista y la selección justificada de instrumentos.",
+        "entregable": "Un plan de evaluación de dos páginas con: análisis de competencia y conflictos, guion de encuadre, guía de entrevista semiestructurada, ficha de dos instrumentos, lista de fuentes colaterales y matriz con tres hipótesis.",
+        "criterios": "Revisa: el encuadre no promete confidencialidad ni beneficios, la guía va de lo abierto a lo cerrado sin preguntas sugestivas, cada instrumento es pertinente y tiene sus límites declarados, y la matriz incluye datos que podrían refutar la hipótesis principal."
+      },
+      "lab": {
+        "t": "Plan de evaluación en un caso laboral",
+        "obj": "Planear una evaluación forense completa, ética y con fuentes múltiples en un conflicto laboral.",
+        "esc": "<b>Tomás,</b> chofer de reparto de 47 años en Celaya, fue asaltado a mano armada durante su ruta. Meses después demanda a la empresa por un riesgo de trabajo y refiere miedo intenso a conducir. Su abogada solicita una evaluación psicológica y te pide que diseñes el plan como parte de un ejercicio formativo del despacho.",
+        "e": [
+          ["Escena 1: la abogada propone pagar un bono si el tribunal laboral reconoce la incapacidad.", "Consigna: redacta tu respuesta sobre honorarios y describe cómo harías el encuadre con Tomás al inicio de la evaluación."],
+          ["Escena 2: vas a entrevistar a Tomás sobre el asalto y su vida antes y después.", "Consigna: escribe la guía de entrevista con tres invitaciones abiertas, dos preguntas de seguimiento y los temas de historia que explorarías."],
+          ["Escena 3: debes elegir instrumentos para describir sus síntomas y la validez de sus respuestas.", "Consigna: justifica qué tipo de instrumentos usarías, qué pedirías sobre normas mexicanas y qué limitaciones anotarías."],
+          ["Escena 4: la empresa te envía un reporte que dice que Tomás tuvo dos accidentes menores antes del asalto.", "Consigna: formula tres hipótesis alternativas, indica qué fuentes colaterales consultarías y cómo integrarías este reporte."]
+        ],
+        "p": [
+          [
+            "¿Qué respuesta sobre el bono es coherente con la ética forense?",
+            "Cobrar una tarifa fija por el trabajo, sin importar el resultado",
+            "Aceptar el bono si el dictamen se entrega antes del plazo",
+            "Aceptar el bono y declararlo solo si el tribunal lo pregunta",
+            "Los honorarios ligados al resultado crean un incentivo para inclinar las conclusiones. No importa la puntualidad ni si se declara después: el problema es el incentivo mismo."
+          ],
+          [
+            "¿Cómo integrar el reporte de accidentes previos?",
+            "Como dato que se contrasta con otras fuentes y con la cronología",
+            "Como prueba de que Tomás ya tenía miedo a conducir antes del asalto",
+            "Como información irrelevante, porque proviene de la contraparte",
+            "El reporte es una fuente más: puede ser relevante o no, y se valora frente a otras fuentes y a la cronología. No prueba por sí solo un miedo previo, y descartarlo por su origen sería un sesgo."
+          ],
+          [
+            "¿Qué tipo de instrumento es más útil en este contexto?",
+            "Un inventario con escalas de validez y normas adecuadas",
+            "Una prueba proyectiva que revele su miedo inconsciente a conducir",
+            "Un test de inteligencia para descartar que exagere",
+            "Cuando hay una demanda con posible compensación, las escalas de validez ayudan a detectar respuestas exageradas o minimizadas. Las proyectivas carecen de respaldo para esa conclusión, y un test de inteligencia no responde la pregunta."
+          ]
+        ],
+        "pl": [
+          "Plan de evaluación forense",
+          "Pregunta psicolegal: [..]\nCompetencia y conflictos revisados: [..] · Honorarios acordados: [tarifa por trabajo]\nEncuadre: [guion breve]\nEntrevistas: [con quién, cuántas, temas]\nInstrumentos: [nombre, qué mide, normas, límites]\nFuentes colaterales y documentos: [..]\nHipótesis principal y alternativas: [..]\nLimitaciones previstas: [..]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una perita de Monterrey recibe un encargo para evaluar a una niña de cuatro años, pero nunca ha trabajado con primera infancia. ¿Qué debe hacer?",
+          "Declinar o buscar supervisión de alguien con esa competencia",
+          "Aceptar y aplicar las pruebas que usa con adolescentes",
+          "Aceptar si los padres firman que están de acuerdo",
+          "Aceptar y compensar con una entrevista más larga"
+        ],
+        [
+          "Al iniciar una evaluación en Puebla, una persona imputada pregunta si lo que diga «queda entre nosotros». ¿Qué responde el perito?",
+          "Que no: puede aparecer en el dictamen y que puede consultar a su defensa",
+          "Que sí, porque el secreto profesional protege toda la información",
+          "Que sí, salvo que confiese un delito, que tendría que denunciar",
+          "Que depende de lo que diga, y que se lo explicará al final"
+        ],
+        [
+          "En una entrevista en Tampico, ¿cuál es la mejor pregunta para iniciar el relato de un testigo?",
+          "«Cuéntame qué viste, desde el principio.»",
+          "«El coche era gris, ¿verdad que sí?»",
+          "«¿Estás seguro de lo que viste?»",
+          "«¿Por qué no llamaste a la policía?»"
+        ],
+        [
+          "Una perita de Durango interpreta un dibujo infantil como prueba de abuso. ¿Qué dice la evidencia?",
+          "Esas interpretaciones no tienen respaldo suficiente para esa conclusión",
+          "Los dibujos son la prueba más confiable en niñas y niños pequeños",
+          "Es válido si el dibujo se complementa con otro dibujo semejante",
+          "Es válido si la perita tiene más de diez años de experiencia"
+        ],
+        [
+          "Un perito de Hermosillo solo entrevistó a la persona evaluada y no revisó documentos. ¿Qué principio incumplió?",
+          "La triangulación con fuentes múltiples",
+          "La inmediación del proceso penal",
+          "El derecho a guardar silencio",
+          "La publicidad de la evaluación"
+        ],
+        [
+          "En un dictamen de Mérida se lee: «Refiere pesadillas tres veces por semana». ¿Qué es esa frase?",
+          "Un dato reportado por la persona",
+          "Una inferencia de la perita",
+          "La conclusión del dictamen",
+          "Una hipótesis alternativa"
+        ],
+        [
+          "Una prueba de ansiedad se construyó con universitarios de otro país. Se aplicará a una mujer rarámuri. ¿Qué es lo más importante?",
+          "Verificar si hay normas o adaptación adecuadas y anotar límites",
+          "Aplicarla igual, porque la ansiedad es universal en su expresión",
+          "Traducirla de manera informal y comparar con normas originales",
+          "Aplicarla solo a la mitad de los reactivos para evitar cansancio"
+        ],
+        [
+          "Una víctima en Pachuca expresa durante la entrevista que ha pensado en quitarse la vida. ¿Qué es prioritario?",
+          "Su seguridad: activar protocolos y ofrecer ayuda inmediata",
+          "Terminar primero la evaluación para no perder información valiosa",
+          "Anotarlo en el dictamen y continuar con las pruebas",
+          "Suspender y reprogramar la cita para dentro de un mes"
+        ],
+        [
+          "Un perito de Oaxaca no pudo entrevistar al padre de la persona evaluada. ¿Qué debe hacer en su dictamen?",
+          "Señalarlo como limitación y explicar su posible efecto",
+          "Omitirlo, porque podría restar fuerza a sus conclusiones",
+          "Suponer lo que habría dicho con base en otros relatos",
+          "Suspender el dictamen hasta que el padre acepte hablar"
+        ],
+        [
+          "Una perita de Saltillo encuentra que la evaluada reporta síntomas desde antes de los hechos. ¿Qué hipótesis debe analizar?",
+          "Que los síntomas sean previos y hayan cambiado o no tras los hechos",
+          "Que la evaluada mintió en la denuncia y los hechos no ocurrieron",
+          "Que los síntomas previos anulan cualquier daño relacionado",
+          "Que la evaluación está contaminada y debe repetirse desde cero"
+        ]
+      ]
+    },
+    {
+      "t": "La pericial psicológica II: simulación, dictamen y juicio oral",
+      "r": "Aprendes a considerar la simulación y la disimulación sin etiquetar a nadie, a redactar un dictamen claro y defendible, y a explicarlo con honestidad en el interrogatorio y el contrainterrogatorio.",
+      "lecciones": [
+        {
+          "t": "Simulación y disimulación",
+          "obj": "Reconocer indicadores de simulación y disimulación y valorarlos con prudencia dentro de una evaluación integral.",
+          "texto": [
+            "En contextos legales las personas tienen incentivos para mostrarse de cierta manera. La <b>simulación</b> es la producción intencional de síntomas falsos o muy exagerados motivada por un beneficio externo, como una compensación económica, evitar una responsabilidad o conseguir una licencia. No es un diagnóstico de trastorno mental, sino una conducta que puede o no estar presente. La <b>disimulación</b> es lo contrario: ocultar o minimizar problemas para parecer más sano o más apto, algo frecuente en disputas de custodia o en evaluaciones para obtener un beneficio penitenciario.",
+            "Entre ambos extremos hay matices: la exageración de síntomas reales, la minimización por vergüenza o miedo, o respuestas inconsistentes por cansancio o por no entender las preguntas. Por eso los especialistas, como Rogers y sus colaboradores, recomiendan no pensar en «simula o no simula», sino en qué tan válida es la información disponible y por qué.",
+            "¿Cómo se explora? Con estrategias que tienen respaldo: síntomas raros que casi nadie con un trastorno real reporta, combinaciones improbables de síntomas, severidad indiscriminada (decir que se tiene todo en grado extremo), inconsistencias entre lo que la persona dice y lo que se observa o reportan terceros, y pruebas diseñadas para evaluar la validez de síntomas o de rendimiento. Los inventarios con escalas de validez aportan otra pieza. En el ámbito hispano, el Sistema de Evaluación Global de Arce y Fariña integra la valoración del daño y el control de la simulación.",
+            "La prudencia es clave. Ningún indicador aislado prueba que alguien simula, y una víctima genuina puede tener un relato desordenado o síntomas atípicos. Etiquetar a alguien como simulador sin sustento puede causarle un daño enorme; ignorar la posibilidad puede engañar al tribunal. La conclusión responsable describe los indicadores encontrados, su consistencia entre fuentes y las explicaciones alternativas, y evita términos como «mentiroso»."
+          ],
+          "comparar": [
+            "Así no: «Obtuvo una puntuación alta en una escala de validez: es un simulador.»",
+            "Así sí: «Hay indicadores de posible sobredimensión de síntomas que analizo junto con la entrevista y otras fuentes.»"
+          ],
+          "caso": "Caso ficticio: Arturo, perito de 49 años en Guadalajara, evalúa a una mujer de 35 años que demanda a una aseguradora tras un accidente vial. Ella reporta todos los síntomas de una lista en grado máximo, incluidos algunos muy raros, pero su hermana cuenta que ha vuelto a trabajar y a salir con amistades.",
+          "p": [
+            [
+              "¿Qué conclusión es más responsable para Arturo?",
+              "Describir indicadores de posible exageración y contrastarlos con otras fuentes",
+              "Concluir que la mujer simula, porque sus respuestas son muy extremas",
+              "Descartar la simulación, porque las víctimas de accidentes siempre sufren",
+              "Los indicadores sugieren revisar la validez, pero ninguno aislado prueba simulación. Tampoco puede descartarse por principio: la conclusión responsable integra fuentes y alternativas."
+            ],
+            [
+              "¿Qué estrategia de detección aparece en el relato de la mujer?",
+              "Severidad indiscriminada y síntomas raros",
+              "Minimización de síntomas por vergüenza",
+              "Un relato desordenado típico del trauma",
+              "Reportar casi todo en grado máximo, incluidos síntomas poco comunes, corresponde a la severidad indiscriminada y los síntomas raros. No hay minimización, y el desorden del relato no es lo que describe el caso."
+            ],
+            [
+              "¿En qué contexto es más probable la disimulación?",
+              "En una disputa de custodia, para parecer más apto",
+              "En una demanda para obtener una compensación",
+              "En una evaluación para justificar una incapacidad",
+              "En la custodia hay incentivo para mostrarse más sano. En las demandas de compensación o incapacidad el incentivo va en sentido contrario, hacia la exageración."
+            ]
+          ],
+          "completar": [
+            "La ___ consiste en ocultar o minimizar problemas para parecer más sano o más apto.",
+            "disimulación"
+          ],
+          "relacionar": [
+            ["Simulación", "Fingir síntomas para obtener una compensación"],
+            ["Disimulación", "Ocultar problemas en una disputa de custodia"],
+            ["Severidad indiscriminada", "Reportar casi todo en grado extremo"],
+            ["Síntomas raros", "Describir malestares que casi nadie refiere"]
+          ],
+          "refl": "Analiza un caso ficticio en el que haya un incentivo externo (una indemnización, una custodia, un permiso). 1) Describe qué incentivo hay y hacia dónde empujaría: exagerar o minimizar. 2) Enumera tres indicadores que buscarías y en qué fuentes. 3) Redacta una conclusión prudente para el escenario en que encuentras indicadores mixtos.",
+          "modelo": "Modelo: «Caso: un padre en disputa de custodia en Toluca. Incentivo a minimizar problemas de consumo de alcohol. Indicadores: escalas de validez que sugieran respuestas defensivas, contradicciones entre lo que dice y lo que reportan la escuela y su expareja, y ausencia de problemas comunes que casi todas las personas reconocen. Conclusión: “Se observan indicadores de un estilo de respuesta defensivo, parcialmente consistentes con otras fuentes; los resultados sobre consumo deben interpretarse con cautela”.» Es buena porque identifica el incentivo, usa varias fuentes y evita etiquetas.",
+          "plantilla": [
+            "Valoración de la validez de la información",
+            "Incentivo externo identificado: [..] · Dirección esperada: [exagerar / minimizar]\nIndicadores encontrados: [..] · Fuente de cada uno: [..]\nConsistencia entre fuentes: [alta / media / baja]\nExplicaciones alternativas: [cansancio, comprensión, trauma, cultura]\nConclusión prudente: «Se observan [indicadores], [consistentes / no consistentes] con [fuentes]; por ello [alcance de las conclusiones]»"
+          ],
+          "clave": [
+            "La simulación es producir o exagerar síntomas por un incentivo externo; la disimulación, ocultarlos o minimizarlos.",
+            "Ningún indicador aislado prueba simulación: se integran varias fuentes y explicaciones alternativas.",
+            "Describe indicadores y su consistencia; evita etiquetas como «mentiroso»."
+          ]
+        },
+        {
+          "t": "La estructura del dictamen",
+          "obj": "Organizar un dictamen psicológico claro, completo y defendible.",
+          "texto": [
+            "El dictamen es el documento en el que la persona perita comunica su trabajo. No hay un formato único obligatorio para todo el país, y cada institución puede tener el suyo, pero los manuales de referencia coinciden en una estructura básica: datos generales del caso y de quien firma, la <b>pregunta</b> planteada, las <b>fuentes y la metodología</b> (con fechas, duración de las entrevistas, instrumentos y documentos revisados), los antecedentes relevantes, los resultados por fuente, el análisis que integra la información y contrasta hipótesis, las <b>conclusiones</b> que responden a la pregunta y las <b>limitaciones</b> del estudio.",
+            "El lenguaje importa. El dictamen lo leerán jueces, abogados y a veces las propias personas evaluadas, que no son psicólogos. Escribe con frases cortas, explica cada término técnico la primera vez que aparezca y evita la jerga innecesaria. En lugar de «presenta rasgos de personalidad con tendencia a la labilidad afectiva», es más útil «sus emociones cambian con rapidez; por ejemplo, pasó del llanto a la risa dos veces en diez minutos».",
+            "Separa con claridad lo que la persona dijo, lo que observaste, lo que arrojaron las pruebas y lo que interpretas. Las conclusiones deben poder rastrearse hacia los datos: si alguien lee tu conclusión, debería encontrar en el cuerpo del documento de dónde salió. Evita copiar y pegar interpretaciones automáticas de programas de calificación, que describen perfiles genéricos y no a la persona evaluada.",
+            "Cuida la privacidad: incluye solo la información necesaria para responder la pregunta. Detalles íntimos irrelevantes pueden dañar a la persona evaluada o a terceros y no aportan al proceso. Termina con conclusiones proporcionadas, que respondan lo preguntado sin ir más allá: si no puedes responder algo con los datos disponibles, dilo. Firma con tu nombre y número de cédula, y conserva todos los materiales que respaldan el documento."
+          ],
+          "comparar": [
+            "Así no: «Presenta un perfil psicopatológico compatible con la victimización referida, corroborado por el test.»",
+            "Así sí: «Refiere pesadillas y evitación desde el asalto; su madre y su jefa describen los mismos cambios desde entonces.»"
+          ],
+          "caso": "Caso ficticio: Karina, psicóloga de 34 años en Querétaro, termina su primer dictamen. Tiene 25 páginas: incluye la interpretación automática completa de dos pruebas, detalles de la vida sexual de la persona evaluada que no se relacionan con la pregunta y una conclusión que dice «la víctima dice la verdad».",
+          "p": [
+            [
+              "¿Qué debería eliminar primero Karina?",
+              "La afirmación de que la víctima dice la verdad",
+              "La sección de metodología y fuentes consultadas",
+              "La sección de limitaciones del estudio pericial",
+              "Afirmar la veracidad excede lo que la psicología puede concluir y es una decisión del tribunal. La metodología y las limitaciones son partes esenciales que dan transparencia al dictamen."
+            ],
+            [
+              "¿Qué hacer con los detalles íntimos no relacionados con la pregunta?",
+              "Omitirlos para proteger la privacidad de la persona",
+              "Incluirlos en un anexo reservado del dictamen",
+              "Resumirlos para que no ocupen tanto espacio",
+              "Si no se relacionan con la pregunta, no deben aparecer: pueden dañar a la persona sin aportar al proceso. Moverlos a un anexo o resumirlos no resuelve el problema de fondo."
+            ],
+            [
+              "¿Qué problema tiene pegar la interpretación automática de las pruebas?",
+              "Describe perfiles genéricos y no a la persona evaluada",
+              "Hace el dictamen demasiado técnico para las partes",
+              "Viola siempre el derecho de autor de las pruebas",
+              "Los reportes automáticos describen a quienes obtienen puntuaciones similares, no a esa persona en su contexto. Su lenguaje técnico es un problema menor, y el derecho de autor depende de las condiciones de uso."
+            ]
+          ],
+          "completar": [
+            "Nombrar las ___ del estudio permite al tribunal ponderar el alcance de las conclusiones.",
+            "limitaciones"
+          ],
+          "relacionar": [
+            ["Pregunta planteada", "Lo que se solicitó evaluar, en palabras de quien lo pidió"],
+            ["Metodología", "Fechas, entrevistas, instrumentos y documentos revisados"],
+            ["Análisis", "Integración de fuentes y contraste de hipótesis"],
+            ["Conclusiones", "Respuesta proporcionada a lo que se preguntó"],
+            ["Limitaciones", "Lo que no pudo hacerse y cómo afecta el alcance"]
+          ],
+          "refl": "Reescribe un párrafo técnico. 1) Escribe un párrafo de dictamen ficticio lleno de jerga (o toma uno de un libro). 2) Reescríbelo en lenguaje claro, con un ejemplo observable. 3) Revisa tu versión: ¿se distingue lo dicho, lo observado, los resultados y la interpretación? Marca cada frase con D, O, R o I.",
+          "modelo": "Modelo: «Original: “Se evidencia sintomatología ansiosa de etiología postraumática con afectación en áreas de funcionamiento”. Versión clara: “La señora refiere que desde el asalto duerme cuatro horas y no sale sola de casa (D). Durante la entrevista se sobresaltó dos veces con ruidos de la calle (O). En una escala de síntomas obtuvo un puntaje en el rango alto para población mexicana (R). Estos datos son consistentes con síntomas de estrés postraumático que afectan su vida diaria (I)”.» Es buena porque cada afirmación se rastrea a su fuente y cualquiera puede entenderla.",
+          "plantilla": [
+            "Esqueleto de dictamen",
+            "1. Datos generales y perito (nombre, cédula)\n2. Pregunta planteada: [texto literal]\n3. Fuentes y metodología: [fechas, entrevistas, instrumentos, documentos]\n4. Antecedentes relevantes: [..]\n5. Resultados por fuente: [entrevista / pruebas / terceros / documentos]\n6. Análisis e hipótesis alternativas: [..]\n7. Conclusiones: [respuesta proporcionada]\n8. Limitaciones: [..]\n9. Firma y fecha"
+          ],
+          "clave": [
+            "Un dictamen claro incluye pregunta, metodología, resultados, análisis, conclusiones y limitaciones.",
+            "Escribe para personas que no son psicólogas: frases cortas, términos explicados y ejemplos observables.",
+            "Incluye solo la información necesaria y que cada conclusión pueda rastrearse a sus datos."
+          ]
+        },
+        {
+          "t": "El interrogatorio directo: explicar con claridad",
+          "obj": "Preparar la explicación oral de un dictamen para el interrogatorio de la parte que ofreció la pericial.",
+          "texto": [
+            "En el juicio oral, la parte que ofreció la pericial interroga primero a la persona perita. Este <b>interrogatorio directo</b> tiene tres momentos. Primero la <b>acreditación:</b> preguntas sobre tu formación, experiencia y cédula, para que el tribunal sepa por qué tu opinión es especializada. Después el método: qué hiciste, con quién, cuántas veces, qué instrumentos usaste y por qué. Por último, los hallazgos y las conclusiones, con sus limitaciones.",
+            "Hablar no es leer. El tribunal necesita entender tu razonamiento, así que conviene preparar explicaciones breves de los conceptos centrales con ejemplos cotidianos. Por ejemplo: «Una escala de validez funciona como un control de calidad de las respuestas: nos avisa si alguien contestó al azar o exageró». Mira al tribunal cuando respondes, aunque la pregunta la haga un abogado; habla con un ritmo pausado y usa las mismas palabras que en tu dictamen para no crear contradicciones aparentes.",
+            "Preparar el directo con la parte que te ofreció es legítimo: repasar el orden de los temas, anticipar dudas y revisar que entiendes las preguntas. Lo que no es legítimo es acordar respuestas que no reflejan tu trabajo o callar hallazgos incómodos. Si en la preparación te piden suavizar una limitación o exagerar una conclusión, tu respuesta debe ser clara: el dictamen dice lo que dice.",
+            "Algunas prácticas ayudan: llevar tu dictamen y tus notas, que podrás consultar para apoyar la memoria si el tribunal lo permite; decir «no lo sé» o «eso está fuera de lo que evalué» cuando corresponda; y pedir que te repitan una pregunta si no la entendiste. La credibilidad de una perita no depende de parecer infalible, sino de mostrar que su método fue cuidadoso, que conoce sus límites y que sus conclusiones se desprenden de los datos."
+          ],
+          "comparar": [
+            "Así no: «Como consta en mi dictamen, página 14, se aplicó el instrumento y se obtuvieron puntuaciones T significativas.»",
+            "Así sí: «Apliqué un cuestionario de síntomas; sus respuestas fueron más altas que las del 95 % de las personas con quienes se compara.»"
+          ],
+          "caso": "Caso ficticio: Omar, perito de 38 años en Aguascalientes, declarará mañana. El fiscal le pide en la preparación que no mencione que no pudo entrevistar a la madre de la víctima, porque «la defensa lo va a usar». Omar tiene la limitación anotada en su dictamen.",
+          "p": [
+            [
+              "¿Cómo debe responder Omar a la petición del fiscal?",
+              "Mantener la limitación y explicarla si se la preguntan",
+              "Omitirla en el directo, ya que consta en el dictamen",
+              "Aceptar, porque la preparación con la parte es legítima",
+              "La preparación es legítima, pero no incluye ocultar hallazgos. La limitación forma parte de su trabajo y debe sostenerla con honestidad; omitirla estratégicamente afecta su credibilidad y la del proceso."
+            ],
+            [
+              "¿Qué debería explicar primero Omar en el directo?",
+              "Su formación y experiencia, para acreditarse",
+              "Sus conclusiones, para no perder la atención",
+              "Las limitaciones, para adelantarse a la defensa",
+              "El directo suele iniciar con la acreditación, que permite valorar la especialidad del perito. Después vienen el método y las conclusiones; las limitaciones se explican dentro de ese recorrido."
+            ],
+            [
+              "¿Qué debe hacer Omar si no recuerda un dato específico?",
+              "Pedir consultar su dictamen para apoyar la memoria",
+              "Dar una cifra aproximada para no parecer inseguro",
+              "Pedir al fiscal que responda en su lugar esa parte",
+              "Consultar su documento para apoyar la memoria es una práctica prevista. Inventar una cifra puede crear contradicciones, y el fiscal no puede declarar por el perito."
+            ]
+          ],
+          "completar": [
+            "El interrogatorio directo suele empezar con la ___ de la persona perita: formación, experiencia y cédula.",
+            "acreditación"
+          ],
+          "refl": "Prepara tu explicación oral. 1) Elige una conclusión de un dictamen ficticio y explícala en voz alta en no más de un minuto, como si hablaras con alguien que no es psicólogo; escríbela después. 2) Redacta una analogía cotidiana para un concepto técnico (validez, confiabilidad, hipótesis alternativa). 3) Escribe cómo dirías «no lo sé» de forma profesional.",
+          "modelo": "Modelo: «Conclusión: “La joven presenta síntomas de estrés postraumático que, por su cronología y lo que describen su madre y su maestra, se relacionan con el asalto; no pude descartar por completo la influencia de un duelo reciente”. Analogía: “La confiabilidad es como una báscula: si te pesas tres veces seguidas, debe marcar lo mismo”. “No lo sé”: “Eso no formó parte de mi evaluación, así que no puedo responderlo con fundamento”.» Es buena porque es clara, incluye la limitación y usa un ejemplo fácil de recordar.",
+          "plantilla": [
+            "Guion de interrogatorio directo",
+            "Acreditación: [formación, experiencia, cédula, relación con este tipo de casos]\nPregunta que respondí: [..]\nMétodo en tres frases: [..]\nHallazgos principales con un ejemplo: [..]\nConclusión y grado de certeza: [..]\nLimitaciones que mencionaré: [..]\nAnalogías preparadas: [..]"
+          ],
+          "clave": [
+            "El directo recorre acreditación, método y conclusiones con sus limitaciones.",
+            "Explica, no leas: frases cortas, ejemplos y la misma terminología del dictamen.",
+            "Prepararte con la parte es válido; acordar respuestas u ocultar hallazgos, no."
+          ]
+        },
+        {
+          "t": "El contrainterrogatorio: sostener sin defender",
+          "obj": "Responder con serenidad y honestidad a un contrainterrogatorio, reconociendo límites sin abandonar lo que sí sustentan los datos.",
+          "texto": [
+            "Después del directo viene el <b>contrainterrogatorio,</b> en el que la parte contraria busca mostrar debilidades en tu trabajo. El CNPP establece que las preguntas <b>sugestivas,</b> las que contienen la respuesta, solo se permiten a la contraparte en el contrainterrogatorio. También prohíbe preguntas ambiguas, conclusivas, impertinentes, argumentativas, ofensivas o que busquen coaccionar a quien declara (artículo 373). Las objeciones las hacen las partes y las resuelve el tribunal: la persona perita no objeta, pero sí puede pedir que le aclaren una pregunta.",
+            "Las líneas de ataque son previsibles: tu formación («¿Cuántos casos como este ha evaluado?»), tu método («¿Por qué no entrevistó al padre?»), tus instrumentos («¿Esa prueba tiene normas mexicanas?»), tu imparcialidad («¿Cuánto le pagaron?») y la literatura («¿Conoce estudios que dicen lo contrario?»). Si preparaste bien tu dictamen, cada pregunta tiene una respuesta honesta: a veces confirma tu decisión, a veces reconoce un límite.",
+            "Algunas reglas prácticas ayudan. Escucha la pregunta completa antes de responder. Si te piden «sí o no» y la respuesta necesita matiz, responde lo que puedas y, si el tribunal lo permite, añade la precisión mínima necesaria. Reconoce los límites reales sin dramatizarlos: «Es cierto, no entrevisté al padre; por eso mis conclusiones se refieren al estado de la niña y no a la dinámica completa». No discutas, no te enojes y no intentes ganar: tu función no es derrotar a la contraparte, sino ayudar al tribunal a valorar tu trabajo.",
+            "Un error frecuente es pasar a la defensiva y endurecer conclusiones que antes eran prudentes. Otro es ceder en todo por nerviosismo y abandonar lo que los datos sí sostienen. El equilibrio está en lo que podríamos llamar <i>sostener sin defender:</i> mantener lo que tu método respalda, aceptar lo que no, y hacerlo con el mismo tono tranquilo durante toda la audiencia."
+          ],
+          "comparar": [
+            "Así no: «Con todo respeto, licenciado, usted no es psicólogo y no entiende mi trabajo.»",
+            "Así sí: «Es correcto, esa prueba no tiene normas mexicanas; por eso la usé solo como apoyo y la contrasté con otras fuentes.»"
+          ],
+          "caso": "Caso ficticio: Daniela, perita de 41 años en Cancún, es contrainterrogada por la defensa: «Usted solo vio a la víctima dos veces, ¿verdad? Y en tan poco tiempo se atreve a decir que tiene un daño psíquico, ¿no es así?». Daniela siente que la están ridiculizando y quiere responder con dureza.",
+          "p": [
+            [
+              "¿Qué respuesta refleja mejor el principio de sostener sin defender?",
+              "Confirmar las dos sesiones y explicar qué otras fuentes consultó",
+              "Responder que el número de sesiones no le corresponde cuestionarlo",
+              "Admitir que dos sesiones no bastan y retirar sus conclusiones",
+              "Reconocer el dato y explicar la triangulación sostiene lo que el método respalda. Descalificar la pregunta rompe el tono profesional, y retirar conclusiones sustentadas por nerviosismo abandona lo que los datos sí apoyan."
+            ],
+            [
+              "¿Puede la defensa formular preguntas sugestivas a Daniela?",
+              "Sí, porque está en contrainterrogatorio",
+              "No, están prohibidas en todo el juicio",
+              "Solo si el tribunal lo autoriza por escrito",
+              "El CNPP permite las preguntas sugestivas a la contraparte en el contrainterrogatorio. Siguen prohibidas las ambiguas, argumentativas u ofensivas, entre otras."
+            ],
+            [
+              "Si Daniela considera que una pregunta es ofensiva, ¿qué puede hacer?",
+              "Responder con calma o pedir aclaración; las objeciones son de las partes",
+              "Objetar la pregunta directamente ante el tribunal de enjuiciamiento",
+              "Negarse a responder hasta que la defensa se disculpe por la pregunta",
+              "La perita no es parte, así que no objeta; la parte que la ofreció puede hacerlo y el tribunal resuelve. Negarse a responder por su cuenta puede afectar su declaración."
+            ]
+          ],
+          "completar": [
+            "Las preguntas ___ solo se permiten a la contraparte durante el contrainterrogatorio.",
+            "sugestivas"
+          ],
+          "relacionar": [
+            ["Ataque a la formación", "¿Cuántos casos como este ha evaluado?"],
+            ["Ataque al método", "¿Por qué no entrevistó al padre?"],
+            ["Ataque a los instrumentos", "¿Esa prueba tiene normas mexicanas?"],
+            ["Ataque a la imparcialidad", "¿Cuánto le pagaron por este dictamen?"]
+          ],
+          "refl": "Prepárate para un contrainterrogatorio. 1) Escribe cinco preguntas difíciles que podrían hacerte sobre un dictamen ficticio (una por cada línea de ataque). 2) Redacta una respuesta honesta y breve para cada una. 3) Identifica cuál de tus respuestas reconoce un límite y cuál sostiene una decisión, y explica por qué.",
+          "modelo": "Modelo: «Pregunta: “¿Esa prueba tiene normas mexicanas?”. Respuesta: “No; por eso no la usé para conclusiones, solo para orientar la entrevista”. Pregunta: “¿Cuánto le pagaron?”. Respuesta: “Cobré una tarifa fija por hora de trabajo, que no depende del resultado del juicio”. Pregunta: “¿Por qué no entrevistó al padre?”. Respuesta: “Lo solicité por escrito y no se presentó; lo anoté como limitación”.» Es buena porque cada respuesta es breve, verificable y no se pone a la defensiva.",
+          "plantilla": [
+            "Preparación de contrainterrogatorio",
+            "Formación: pregunta probable [..] · respuesta [..]\nMétodo: pregunta probable [..] · respuesta [..]\nInstrumentos: pregunta probable [..] · respuesta [..]\nImparcialidad: pregunta probable [..] · respuesta [..]\nLiteratura: pregunta probable [..] · respuesta [..]\nLímites que reconoceré sin dramatizar: [..]\nLo que los datos sí sostienen: [..]"
+          ],
+          "clave": [
+            "En el contrainterrogatorio la contraparte puede hacer preguntas sugestivas; las objeciones las hacen las partes.",
+            "Escucha completo, responde con honestidad, reconoce límites reales y no discutas.",
+            "Sostener sin defender: mantén lo que el método respalda y acepta lo que no."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Escribe el esqueleto de un dictamen ficticio y prepárate para defenderlo: redacta sus secciones principales en lenguaje claro, incluye una valoración prudente de la validez de la información y ensaya en voz alta el directo y el contrainterrogatorio.",
+        "entregable": "Un dictamen breve (tres páginas) con todas las secciones, una tabla de validez de la información, un guion de directo de un minuto y cinco pares de preguntas y respuestas de contrainterrogatorio.",
+        "criterios": "Revisa: cada conclusión se rastrea a sus datos, la valoración de simulación o disimulación evita etiquetas y usa varias fuentes, el guion del directo explica sin leer, y las respuestas del contrainterrogatorio reconocen límites sin abandonar lo que los datos sostienen."
+      },
+      "lab": {
+        "t": "Del dictamen al juicio oral",
+        "obj": "Integrar validez de la información, redacción del dictamen y declaración en juicio en un mismo caso.",
+        "esc": "<b>Leticia,</b> mujer de 52 años en Irapuato, fue víctima de un robo con violencia en su tienda. La asesoría jurídica ofrece una pericial psicológica sobre su estado emocional. En este laboratorio formativo tomas el papel de la perita, desde el análisis de resultados hasta la audiencia.",
+        "e": [
+          ["Escena 1: en una escala, Leticia reporta síntomas intensos; su hija dice que ya no abre la tienda sola y que despierta gritando. Una escala de validez sale en rango limítrofe.", "Consigna: redacta un párrafo que valore la validez de la información con prudencia, integrando las tres fuentes."],
+          ["Escena 2: debes redactar la sección de conclusiones del dictamen.", "Consigna: escribe conclusiones proporcionadas, en lenguaje claro, que respondan la pregunta sin pronunciarse sobre la responsabilidad del imputado."],
+          ["Escena 3: la asesora jurídica te prepara para el directo y te pide «sonar más segura» y no mencionar la escala limítrofe.", "Consigna: escribe tu respuesta a la asesora y tu guion de directo de un minuto."],
+          ["Escena 4: en el contrainterrogatorio, la defensa pregunta: «Si su propia prueba dice que exagera, ¿cómo puede afirmar que tiene daño?».", "Consigna: redacta tu respuesta en no más de cinco líneas, reconociendo el límite y explicando lo que sí sostienen los datos."]
+        ],
+        "p": [
+          [
+            "¿Cómo describir la escala de validez limítrofe en el dictamen?",
+            "Como un dato que invita a la cautela y se integra con otras fuentes",
+            "Como prueba de que Leticia exagera sus síntomas de forma intencional",
+            "Como un resultado sin importancia que no conviene mencionar",
+            "Un resultado limítrofe no demuestra exageración intencional, pero tampoco debe ocultarse: se reporta y se pondera con la entrevista y lo que describe la hija."
+          ],
+          [
+            "¿Qué debe evitar la sección de conclusiones?",
+            "Pronunciarse sobre la responsabilidad del imputado",
+            "Referirse a la cronología de los síntomas",
+            "Mencionar las fuentes que las respaldan",
+            "La responsabilidad penal es una cuestión jurídica. Explicar la cronología y señalar las fuentes son parte de unas conclusiones rastreables y proporcionadas."
+          ],
+          [
+            "¿Qué respuesta a la pregunta de la defensa es más adecuada?",
+            "Explicar que el resultado es limítrofe, no concluyente, y qué otras fuentes coinciden",
+            "Negar que la escala indique algo y pedir que se retire la pregunta",
+            "Reconocer que la escala invalida el dictamen y retirar sus conclusiones",
+            "La respuesta honesta precisa lo que dice la escala y muestra la convergencia de otras fuentes. Negar el dato o retirar conclusiones sustentadas son los dos errores típicos del contrainterrogatorio."
+          ]
+        ],
+        "pl": [
+          "Tarjeta de audiencia de la perita",
+          "Pregunta respondida: [..]\nConclusión en una frase: [..]\nFuentes que la respaldan: [..]\nIndicadores de validez y cómo los interpreté: [..]\nLímites que reconozco: [..]\nFrases de apoyo: «Eso no formó parte de mi evaluación» · «¿Podría repetir la pregunta?» · «Puedo consultar mi dictamen para precisar la fecha»"
+        ]
+      },
+      "quiz": [
+        [
+          "Un hombre en Toluca evaluado para obtener una pensión reporta síntomas que casi ningún paciente real describe. ¿Qué indica?",
+          "Un indicador que obliga a revisar la validez con otras fuentes",
+          "Que simula, porque esos síntomas no existen en la clínica",
+          "Que padece un trastorno raro que requiere otra evaluación",
+          "Nada relevante, porque cada persona vive los síntomas distinto"
+        ],
+        [
+          "En una disputa de custodia en León, una madre niega cualquier dificultad, incluso las más comunes. ¿Qué estilo podría reflejar?",
+          "Un estilo defensivo o de disimulación que conviene contrastar",
+          "Una salud mental excepcional que favorece su custodia",
+          "Una simulación de síntomas para obtener la custodia",
+          "Un trastorno de personalidad que debe diagnosticarse"
+        ],
+        [
+          "¿Qué frase es adecuada en la conclusión de un dictamen en Tuxtla Gutiérrez?",
+          "«Presenta síntomas de ansiedad que, por su cronología y otras fuentes, se relacionan con los hechos»",
+          "«La evaluada dice la verdad sobre los hechos que denunció ante la fiscalía del estado»",
+          "«El imputado es responsable del daño psíquico que presenta la víctima evaluada»",
+          "«La evaluada presenta un perfil psicológico típico de las víctimas de delitos violentos»"
+        ],
+        [
+          "Un perito de Tlaxcala pega en su dictamen el reporte automático de una prueba. ¿Qué problema principal tiene?",
+          "Describe perfiles genéricos y no a la persona evaluada",
+          "Hace que el dictamen sea demasiado largo para el tribunal",
+          "Impide que la contraparte conozca los resultados obtenidos",
+          "Obliga a que el perito explique la prueba en la audiencia"
+        ],
+        [
+          "En un juicio en Zacatecas, la defensa pregunta a una perita: «¿Usted cobró por este dictamen, verdad?». ¿Cómo responde?",
+          "Confirmarlo y explicar que fue una tarifa fija por su trabajo",
+          "Negarse a responder, porque sus honorarios son privados",
+          "Decir que lo hizo de forma gratuita para evitar suspicacias",
+          "Pedir al tribunal que declare improcedente la pregunta"
+        ],
+        [
+          "Durante el directo en Culiacán, una perita no recuerda cuántas entrevistas hizo. ¿Qué es lo más adecuado?",
+          "Pedir consultar su dictamen para precisar el dato",
+          "Responder que fueron varias, sin precisar el número",
+          "Estimar un número razonable para no parecer insegura",
+          "Pedir que la pregunta se haga más tarde en el juicio"
+        ],
+        [
+          "El contrainterrogador en Mexicali pregunta a un perito: «¿Conoce estudios que contradicen su método?». ¿Qué respuesta es mejor?",
+          "Reconocer que existe debate y explicar por qué eligió ese método",
+          "Afirmar que no existe ningún estudio que contradiga su método",
+          "Responder que la literatura académica no es tema del juicio",
+          "Pedir a la contraparte que cite primero los estudios exactos"
+        ],
+        [
+          "¿Quién puede objetar una pregunta argumentativa durante el contrainterrogatorio de una perita en Chihuahua?",
+          "La parte que la ofreció, y el tribunal resuelve",
+          "La propia perita, porque la pregunta la afecta",
+          "Cualquier persona del público en la sala",
+          "Solo el juez de control que conoció antes el caso"
+        ],
+        [
+          "Una perita de Colima escribe: «Presenta labilidad afectiva con componentes disfóricos». ¿Cómo mejorar la frase?",
+          "Describir con un ejemplo observable qué emociones mostró y cuándo",
+          "Agregar la puntuación exacta de la prueba entre paréntesis",
+          "Citar el manual diagnóstico que define esos términos",
+          "Eliminarla, porque las emociones no son relevantes en juicio"
+        ],
+        [
+          "Antes de la audiencia en Mérida, un abogado pide a su perito que diga que está «completamente seguro». El dictamen tiene limitaciones. ¿Qué hace el perito?",
+          "Sostiene el grado de certeza que permiten sus datos",
+          "Acepta, porque el abogado conoce mejor la estrategia",
+          "Acepta, pero solo si el tribunal no le pregunta nada",
+          "Retira su dictamen para no comprometer al abogado"
+        ]
+      ]
+    }
+  ]
+}

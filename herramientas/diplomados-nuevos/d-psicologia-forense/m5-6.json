@@ -1,0 +1,707 @@
+{
+  "modulos": [
+    {
+      "t": "Testimonio y memoria",
+      "r": "Entiendes por qué la memoria reconstruye en lugar de grabar, cómo se contamina un relato, cómo se entrevista a niñas, niños y adolescentes con protocolos basados en evidencia y qué pueden y no pueden decir las técnicas de análisis del testimonio.",
+      "lecciones": [
+        {
+          "t": "La memoria reconstruye: falsos recuerdos y desinformación",
+          "obj": "Explicar cómo funciona la memoria de hechos vividos y qué factores pueden distorsionarla.",
+          "texto": [
+            "Solemos imaginar la memoria como una cámara que graba y reproduce. La investigación muestra otra cosa: recordar es <b>reconstruir.</b> Cada vez que evocamos un hecho, lo armamos de nuevo con fragmentos de lo que percibimos, lo que sabemos, lo que esperamos y lo que escuchamos después. Esto no significa que los recuerdos sean inventados; la mayoría de lo que recordamos de lo esencial es razonablemente correcto. Significa que los detalles son vulnerables y que la forma en que se pregunta influye en lo que se recuerda.",
+            "Elizabeth Loftus y John Palmer mostraron en 1974 que cambiar una sola palabra de la pregunta modificaba los recuerdos: quienes veían un choque y luego escuchaban «¿a qué velocidad iban cuando se estrellaron?» estimaban velocidades más altas que quienes escuchaban «se golpearon», y una semana después reportaban con más frecuencia vidrios rotos que no existían. Este <b>efecto de desinformación</b> se ha replicado muchas veces: información posterior al hecho, venga de preguntas, noticias o conversaciones, puede mezclarse con el recuerdo original.",
+            "La investigación fue más lejos. En el estudio de Loftus y Pickrell de 1995, los investigadores presentaron a personas adultas un supuesto recuerdo de infancia, haberse perdido en un centro comercial, como si lo hubiera contado un familiar; tras repasarlo en entrevistas, alrededor de una cuarta parte llegó a recordarlo total o parcialmente, aunque nunca ocurrió. Los <b>falsos recuerdos</b> pueden sentirse vívidos y la persona puede relatarlos con total sinceridad: no está mintiendo, cree lo que dice. Por eso la sinceridad de alguien no garantiza la exactitud de su recuerdo.",
+            "Otros factores influyen: el estrés extremo, la presencia de un arma que acapara la atención, la distancia y la iluminación, el tiempo transcurrido y las veces que se ha contado la historia. La confianza de un testigo también engaña: puede crecer con el tiempo y con la retroalimentación, aunque la exactitud no cambie. Para el trabajo forense, esto se traduce en reglas concretas: registrar el primer relato lo antes posible, preguntar sin introducir información y valorar cómo se obtuvo cada versión antes de interpretarla."
+          ],
+          "comparar": [
+            "Así no: «Lo recuerda con muchísima seguridad, así que seguro fue exactamente así.»",
+            "Así sí: «Revisemos cómo y cuándo se obtuvo su primer relato y qué información recibió después.»"
+          ],
+          "caso": "Caso ficticio: Ernesto, jubilado de 67 años en Mazatlán, presenció un choque. Esa tarde vio en redes un video del accidente con comentarios que culpaban a un taxista. Tres semanas después declara con mucha seguridad que el taxi «venía volando», aunque su primera llamada al 911 solo mencionó «un coche blanco».",
+          "p": [
+            [
+              "¿Qué fenómeno puede explicar el cambio en el relato de Ernesto?",
+              "El efecto de desinformación posterior al hecho",
+              "Una mentira deliberada para perjudicar al taxista",
+              "Una recuperación natural de detalles con el tiempo",
+              "La información de redes pudo mezclarse con su recuerdo original. No hay datos de que mienta: puede creer sinceramente lo que dice. Y la memoria no suele ganar detalles exactos con el paso de semanas."
+            ],
+            [
+              "¿Qué versión tiene más valor para analizar lo que Ernesto percibió?",
+              "La primera, registrada antes de ver el video",
+              "La última, porque es la más detallada",
+              "La que exprese con mayor seguridad",
+              "La primera versión es la menos expuesta a información posterior. Más detalle o más seguridad no implican más exactitud, sobre todo si hubo contacto con otras versiones."
+            ],
+            [
+              "¿Qué implica que Ernesto hable con total sinceridad?",
+              "Que cree lo que dice, aunque podría no ser exacto",
+              "Que su recuerdo es exacto, porque no hay motivo para mentir",
+              "Que su recuerdo es falso, porque cambió con el tiempo",
+              "Sinceridad y exactitud son cosas distintas. Un falso recuerdo se vive como real; al mismo tiempo, un cambio en el relato no convierte automáticamente todo el recuerdo en falso."
+            ]
+          ],
+          "completar": [
+            "El efecto de ___ ocurre cuando información posterior al hecho se mezcla con el recuerdo original.",
+            "desinformación"
+          ],
+          "relacionar": [
+            ["Efecto de desinformación", "Una noticia posterior se mezcla con el recuerdo"],
+            ["Falso recuerdo", "Recordar con viveza un episodio que no ocurrió"],
+            ["Efecto del arma", "La atención se concentra en el objeto amenazante"],
+            ["Confianza inflada", "La seguridad crece con los comentarios de otros"]
+          ],
+          "refl": "Explora tu propia memoria. 1) Elige un hecho público o familiar que recuerdes con claridad y escribe lo que recuerdas. 2) Busca una fuente independiente (una foto, una noticia, otra persona) y anota coincidencias y diferencias. 3) Escribe qué información posterior pudo influir en tu recuerdo y qué aprendiste para valorar testimonios ajenos.",
+          "modelo": "Modelo: «Recordaba que en la fiesta de mi abuela llovió y que mi tío llegó tarde. En las fotos no hay lluvia: el patio está seco. Mi tía me dijo que la lluvia fue en otra fiesta ese mismo año. Probablemente mezclé dos eventos al escuchar anécdotas familiares. Aprendí que puedo estar segura y equivocarme en detalles, así que al valorar un testimonio debo preguntar qué escuchó la persona después y buscar la primera versión.» Es buena porque contrasta con fuentes externas y extrae una regla aplicable.",
+          "plantilla": [
+            "Cronología de un testimonio",
+            "Hecho: [fecha y lugar]\nPrimera versión: [cuándo, ante quién, cómo se registró, contenido]\nInformación posterior recibida: [noticias, redes, conversaciones, preguntas]\nVersiones siguientes: [cambios y cuándo aparecieron]\nFactores del momento: [estrés, arma, distancia, luz, duración]\nValoración: [qué detalles son más confiables y por qué]"
+          ],
+          "clave": [
+            "La memoria reconstruye: lo esencial suele conservarse, pero los detalles son vulnerables.",
+            "La información posterior puede mezclarse con el recuerdo y crear detalles o episodios falsos que se viven como reales.",
+            "La seguridad y la sinceridad de un testigo no garantizan la exactitud: importa cómo se obtuvo cada versión."
+          ]
+        },
+        {
+          "t": "Sugestionabilidad y entrevistas que contaminan",
+          "obj": "Identificar las prácticas de entrevista que aumentan la sugestionabilidad y reemplazarlas por alternativas seguras.",
+          "texto": [
+            "La <b>sugestionabilidad</b> es el grado en que una persona incorpora a su relato información o expectativas que vienen de quien pregunta. Todas las personas somos sugestionables en alguna medida, pero la investigación, sintetizada por Stephen Ceci y Maggie Bruck, muestra que niñas y niños en edad preescolar lo son especialmente, sobre todo cuando se combinan varias prácticas inadecuadas en entrevistas repetidas.",
+            "¿Cuáles son esas prácticas? Hacer la misma pregunta varias veces, lo que puede llevar a un niño a cambiar su respuesta porque interpreta que la primera no era la correcta. Introducir información que el niño no mencionó. Crear estereotipos sobre una persona antes de la entrevista, como «es alguien malo que hace cosas feas». Premiar ciertas respuestas y mostrar desagrado ante otras. Presionar con frases como «tus amigos ya me contaron». Y pedir que imagine o «haga como si» algo hubiera pasado. En estudios controlados, estas prácticas combinadas llevaron a algunos niños a relatar con detalle hechos que nunca ocurrieron.",
+            "Esto no significa que los niños mientan ni que su testimonio sea inútil. La misma investigación muestra que, entrevistados con preguntas abiertas, sin presión y sin información previa, incluso niños pequeños pueden dar relatos exactos y valiosos. El problema no es la edad en sí, sino la entrevista. También los adultos son vulnerables en contextos de presión, cansancio o aislamiento, como algunos interrogatorios prolongados, y personas con discapacidad intelectual pueden requerir ajustes especiales.",
+            "Para el trabajo forense, la conclusión es doble. Primero, al evaluar un testimonio, reconstruye la historia de las entrevistas previas: quién preguntó, cuántas veces, cómo y qué se dijo al niño antes. Segundo, si te toca entrevistar, evita cada práctica contaminante, graba la entrevista y documenta lo que ocurrió antes. Tanto descartar un testimonio infantil sin análisis como aceptarlo sin revisar cómo se obtuvo pueden producir injusticias graves."
+          ],
+          "comparar": [
+            "Así no: «¿Seguro que no te hizo nada? Piensa bien. Tu hermana ya me dijo que sí.»",
+            "Así sí: «Si no sabes o no te acuerdas, está bien decirlo. Cuéntame lo que tú recuerdas.»"
+          ],
+          "caso": "Caso ficticio: Ximena, de 5 años, en Colima, contó a su maestra que un niño mayor la empujó en el recreo. Antes de la evaluación, su mamá, preocupada, le preguntó lo mismo muchas veces durante una semana, le dijo que ese niño era «malo» y la felicitaba cada vez que añadía algo nuevo. Ahora Ximena relata varios hechos más.",
+          "p": [
+            [
+              "¿Qué debería hacer primero quien evalúe el relato de Ximena?",
+              "Reconstruir cómo y cuántas veces se le preguntó antes",
+              "Concluir que todo lo que cuenta es falso por la presión",
+              "Aceptar los hechos nuevos, porque los niños no inventan",
+              "La historia de las entrevistas previas es clave para interpretar el relato. Ni el descarte automático ni la aceptación automática tienen respaldo: ambos ignoran cómo se obtuvo la información."
+            ],
+            [
+              "¿Qué prácticas contaminantes aparecen en el caso?",
+              "Preguntas repetidas, estereotipo y refuerzo selectivo",
+              "Preguntas abiertas y un entorno de confianza",
+              "Uso de muñecos y dibujos durante la conversación",
+              "La madre repitió preguntas, describió al niño como malo y premió los agregados. Las preguntas abiertas no contaminan, y el caso no menciona muñecos ni dibujos."
+            ],
+            [
+              "¿Qué afirma la investigación sobre el testimonio infantil?",
+              "Puede ser exacto si la entrevista es adecuada",
+              "Es poco confiable antes de los doce años",
+              "Es confiable sin importar cómo se obtenga",
+              "La calidad de la entrevista es el factor decisivo. No hay una edad por debajo de la cual el testimonio sea inútil, pero tampoco es inmune a la sugestión."
+            ]
+          ],
+          "completar": [
+            "La ___ es el grado en que una persona incorpora a su relato información o expectativas de quien pregunta.",
+            "sugestionabilidad"
+          ],
+          "relacionar": [
+            ["Preguntas repetidas", "Cambiar la respuesta porque se cree que la primera estaba mal"],
+            ["Estereotipo inducido", "Decir al niño que alguien es malo antes de preguntarle"],
+            ["Refuerzo selectivo", "Felicitar solo cuando el niño agrega algo"],
+            ["Presión de pares", "Decir que sus amigos ya contaron lo que pasó"]
+          ],
+          "refl": "Detecta y corrige. 1) Escribe un diálogo ficticio de cinco preguntas entre una persona adulta y un niño sobre un hecho cotidiano (por ejemplo, quién rompió un vaso), con al menos tres prácticas contaminantes. 2) Señala cada práctica. 3) Reescribe el diálogo con preguntas seguras.",
+          "modelo": "Modelo: «Original: “Fue tu primo, ¿verdad?” (sugestiva); “¿Seguro? Piénsalo otra vez” (repetición); “Si me dices la verdad te doy un dulce” (recompensa). Versión segura: “Encontré un vaso roto. ¿Qué sabes de eso?”, “¿Qué más pasó?”, “Si no sabes, está bien decirlo”.» Es buena porque identifica cada práctica y la sustituye por una invitación abierta que no sugiere quién fue ni premia una respuesta.",
+          "plantilla": [
+            "Historial de entrevistas previas",
+            "Revelación inicial: [a quién, cuándo, con qué palabras]\nEntrevistas posteriores: [quién, fecha, duración, registro]\nPrácticas de riesgo detectadas: [repetición, sugestión, estereotipo, refuerzo, presión, imaginación]\nCambios en el relato y cuándo ocurrieron: [..]\nValoración: [qué partes del relato están menos expuestas a contaminación]"
+          ],
+          "clave": [
+            "Todas las personas somos sugestionables; niñas y niños pequeños lo son más ante entrevistas inadecuadas y repetidas.",
+            "Preguntas repetidas, estereotipos, refuerzo selectivo y presión pueden producir relatos detallados de hechos que no ocurrieron.",
+            "Con entrevistas adecuadas, el testimonio infantil puede ser exacto: la clave está en cómo se obtuvo."
+          ]
+        },
+        {
+          "t": "Entrevistar a niñas, niños y adolescentes: el protocolo NICHD",
+          "obj": "Describir la estructura del protocolo NICHD y por qué mejora la calidad de las entrevistas a menores de edad.",
+          "texto": [
+            "El protocolo del Instituto Nacional de Salud Infantil y Desarrollo Humano de Estados Unidos, conocido como <b>NICHD</b> por sus siglas en inglés, es una guía estructurada para entrevistar a niñas, niños y adolescentes que pudieron vivir o presenciar hechos delictivos. Michael Lamb y su equipo revisaron años de investigación en varios países y encontraron que, con este protocolo, los entrevistadores usan muchas más invitaciones abiertas y obtienen relatos más amplios y precisos que con entrevistas libres.",
+            "Su estructura avanza por fases. En la <b>introducción,</b> quien entrevista se presenta, explica su función y establece reglas básicas: está bien decir «no sé», «no entiendo» o corregir al entrevistador. Después viene el <b>rapport,</b> una conversación sobre temas del niño para que se sienta cómodo. Sigue la <b>práctica narrativa,</b> en la que el niño relata un evento neutro reciente, como su último cumpleaños, respondiendo a invitaciones abiertas; así aprende el estilo de la entrevista y se conoce su nivel de lenguaje. En la versión revisada del protocolo, el rapport se construye antes de explicar las reglas básicas y el apoyo emocional se mantiene durante toda la entrevista.",
+            "Luego se hace la <b>transición</b> al tema de forma no sugestiva, con preguntas como «Cuéntame por qué viniste a hablar conmigo hoy». En la fase sustantiva se privilegian las invitaciones abiertas («Cuéntame más sobre eso»); después, preguntas directivas sobre lo que el niño mencionó («¿Dónde estabas cuando eso pasó?») y, solo si es necesario, preguntas de opción limitada. Se cierra agradeciendo el esfuerzo y hablando de un tema neutral.",
+            "En México, el CNPP prevé medidas especiales para recibir el testimonio de niñas, niños y adolescentes víctimas (artículo 366), como el apoyo de familiares o peritos especializados y técnicas audiovisuales que eviten la confrontación con la persona imputada, y el Protocolo para juzgar con perspectiva de infancia y adolescencia de la Suprema Corte recomienda evitar entrevistas repetidas y grabarlas. Aplicar el protocolo NICHD exige formación específica, práctica supervisada y revisión de grabaciones; esta lección te permite reconocer una buena entrevista, no sustituir esa capacitación. Si un niño revela una situación de riesgo actual, la prioridad es su protección: dar aviso a la autoridad competente y, en emergencia, llamar al 911."
+          ],
+          "comparar": [
+            "Así no: «¿Tu tío te hizo daño? Dime sí o no.»",
+            "Así sí: «Cuéntame por qué viniste a hablar conmigo hoy.»"
+          ],
+          "caso": "Caso ficticio: Rebeca, psicóloga de 35 años en un centro de atención a víctimas de Tepic, prepara la entrevista de un niño de 9 años que presenció una pelea violenta entre adultos en su calle. Su jefa le sugiere ir directo al tema para no cansarlo, sin reglas básicas ni práctica narrativa.",
+          "p": [
+            [
+              "¿Qué argumento puede dar Rebeca para no saltarse las primeras fases?",
+              "Enseñan al niño el estilo narrativo y reducen errores",
+              "Sirven para que el niño confíe y acepte lo que se le diga",
+              "Son un requisito formal sin efecto en la calidad del relato",
+              "Las reglas básicas y la práctica narrativa preparan al niño para relatar con detalle y corregir al entrevistador. No buscan que acepte sugerencias, y la investigación muestra que sí mejoran la calidad."
+            ],
+            [
+              "¿Qué pregunta es adecuada para la transición al tema?",
+              "«Cuéntame por qué viniste a hablar conmigo hoy»",
+              "«¿Viste cuando el señor golpeó a tu vecino?»",
+              "«Tu mamá me dijo lo que viste; ¿es cierto?»",
+              "Una transición no sugestiva invita al niño a introducir el tema con sus palabras. Las otras dos introducen información o presionan con lo que dijo un adulto."
+            ],
+            [
+              "¿Qué tipo de pregunta debe predominar en la fase sustantiva?",
+              "Invitaciones abiertas del tipo «Cuéntame más»",
+              "Preguntas de sí o no para obtener precisión",
+              "Preguntas de opción múltiple sobre detalles",
+              "Las invitaciones abiertas producen relatos más amplios y exactos. Las preguntas cerradas y de opción limitada se reservan para el final y solo cuando son necesarias."
+            ]
+          ],
+          "completar": [
+            "En la práctica ___ del protocolo NICHD, el niño relata un evento neutro para aprender el estilo de la entrevista.",
+            "narrativa"
+          ],
+          "relacionar": [
+            ["Introducción", "Explicar que está bien decir «no sé» o «no entiendo»"],
+            ["Rapport", "Conversar sobre los intereses del niño"],
+            ["Práctica narrativa", "Relatar con detalle su último cumpleaños"],
+            ["Transición", "Invitar a contar por qué vino a la entrevista"],
+            ["Cierre", "Agradecer su esfuerzo y hablar de un tema neutral"]
+          ],
+          "refl": "Diseña una práctica narrativa, sin tocar ningún tema delicado. 1) Elige un evento neutro (una fiesta, un paseo, un día de escuela) y escribe cinco invitaciones abiertas en secuencia para que una niña de 8 años lo relate. 2) Escribe las reglas básicas en lenguaje infantil. 3) Explica por qué cada invitación es abierta y no sugiere contenido.",
+          "modelo": "Modelo: «Reglas: “Si no sabes algo, dime ‘no sé’. Si no entiendes, dime ‘no entiendo’. Si me equivoco, corrígeme”. Invitaciones: “Cuéntame todo lo que pasó en tu último paseo, desde que te levantaste”; “¿Y luego qué pasó?”; “Dijiste que fueron al río, cuéntame más de eso”; “Piensa en el momento del almuerzo y cuéntame lo que pasó”; “¿Hay algo más?”.» Es buena porque cada invitación retoma palabras de la niña y ninguna introduce información nueva.",
+          "plantilla": [
+            "Estructura de entrevista NICHD (para reconocerla)",
+            "1. Introducción: presentación y función\n2. Reglas básicas: «no sé», «no entiendo», «corrígeme»\n3. Rapport: [tema del niño]\n4. Práctica narrativa: «Cuéntame [evento neutro]» y seguimiento abierto\n5. Transición no sugestiva: «Cuéntame por qué viniste hoy»\n6. Fase sustantiva: invitaciones abiertas → directivas → opción limitada solo si hace falta\n7. Cierre: agradecimiento y tema neutral"
+          ],
+          "clave": [
+            "El protocolo NICHD estructura la entrevista en fases y privilegia las invitaciones abiertas.",
+            "Las reglas básicas y la práctica narrativa mejoran la calidad del relato; no son trámites.",
+            "Aplicarlo exige formación y supervisión; ante un riesgo actual, la protección del niño es prioridad."
+          ]
+        },
+        {
+          "t": "Valorar un testimonio: análisis de contenido e identificación",
+          "obj": "Explicar qué evalúan las técnicas de análisis del testimonio, sus límites y las buenas prácticas en identificación de personas.",
+          "texto": [
+            "Una pregunta frecuente en juicios es si un relato tiene las características de uno basado en la experiencia. La técnica más conocida es el <b>análisis de contenido</b> basado en criterios, conocido como CBCA, que forma parte de un procedimiento más amplio llamado análisis de validez de la declaración, o SVA. Revisa si el relato tiene estructura lógica, cantidad de detalles, descripción de interacciones, reproducción de conversaciones, complicaciones inesperadas y otros rasgos que suelen aparecer con más frecuencia en relatos de hechos vividos.",
+            "La investigación muestra que estos criterios distinguen relatos verdaderos de inventados <b>por encima del azar,</b> pero con errores importantes. Su desempeño depende de la edad y el lenguaje de la persona, de la calidad de la entrevista, del tiempo transcurrido y de si alguien preparó el relato. Por eso el SVA incluye una lista de validez que considera, por ejemplo, la sugestión previa o los motivos para declarar. En el ámbito hispano, el Sistema de Evaluación Global de Arce y Fariña integra estos análisis con la evaluación del daño y el control de la simulación. Ninguna de estas técnicas decide si el hecho ocurrió: aporta información que el tribunal valora junto con el resto de la prueba.",
+            "Otra área clave es la identificación de personas. Las identificaciones erróneas por testigos sinceros son una causa documentada de condenas injustas. Las recomendaciones basadas en evidencia, como las publicadas por Gary Wells y colaboradores en 2020, incluyen realizar el reconocimiento con un procedimiento <b>doble ciego,</b> en el que quien lo conduce no sabe quién es el sospechoso; advertir al testigo que el responsable podría no estar; usar personas de relleno parecidas a la descripción; y registrar de inmediato qué tan seguro se siente el testigo, antes de cualquier comentario.",
+            "La lección de fondo es la humildad técnica. Decir «este relato es verdadero» o «este testigo miente» está fuera de lo que la psicología puede afirmar. Lo que sí puedes hacer es describir las condiciones en que se obtuvo el testimonio, sus características, los factores que pudieron afectarlo y el grado de confianza que permiten los datos."
+          ],
+          "comparar": [
+            "Así no: «Aplicando los criterios de contenido, concluyo que el relato de la adolescente es verdadero.»",
+            "Así sí: «El relato presenta varias características asociadas a hechos vividos; su valoración depende también de cómo se obtuvo y de otras pruebas.»"
+          ],
+          "caso": "Caso ficticio: en Ensenada, una mujer de 29 años identificó a un hombre en un reconocimiento de personas tras un asalto. El agente que condujo el procedimiento sabía quién era el sospechoso, le dijo «fíjese bien en el tercero» y, cuando ella lo señaló, respondió «muy bien, era él». En juicio, ella dice estar «cien por ciento segura».",
+          "p": [
+            [
+              "¿Qué fallas tuvo el reconocimiento?",
+              "No fue doble ciego y hubo sugerencia y confirmación",
+              "Se hizo con personas de relleno parecidas al sospechoso",
+              "La testigo no conocía al sospechoso antes del asalto",
+              "El agente conocía al sospechoso, señaló a uno y confirmó la elección, lo que puede alterar la decisión y la confianza. Usar rellenos parecidos es una buena práctica, y no conocer al sospechoso es lo esperable."
+            ],
+            [
+              "¿Qué valor tiene la seguridad que la testigo expresa en juicio?",
+              "Limitado, porque pudo aumentar por la confirmación del agente",
+              "Alto, porque la seguridad refleja la exactitud del recuerdo",
+              "Nulo, porque cualquier testigo de un asalto se equivoca",
+              "La retroalimentación confirmatoria infla la confianza sin mejorar la exactitud; por eso importa la confianza registrada en el momento. Tampoco es correcto afirmar que todos los testigos se equivocan."
+            ],
+            [
+              "¿Qué puede concluir un análisis de contenido de un relato?",
+              "Si presenta características asociadas a hechos vividos",
+              "Si el hecho ocurrió tal como lo describe la persona",
+              "Si la persona declarante tiene motivos para mentir",
+              "El análisis describe rasgos del relato con un margen de error. Decidir si el hecho ocurrió corresponde al tribunal, y los motivos se valoran en la lista de validez, no con los criterios de contenido."
+            ]
+          ],
+          "completar": [
+            "En un reconocimiento ___ ciego, quien conduce el procedimiento no sabe quién es el sospechoso.",
+            "doble"
+          ],
+          "refl": "Evalúa un procedimiento. 1) Escribe cómo se haría un reconocimiento de personas ideal para un caso ficticio de robo, paso a paso. 2) Enumera tres errores que podrían contaminarlo y cómo prevenirlos. 3) Redacta en tres líneas cómo describirías, en un dictamen, los límites de un análisis de contenido de un relato.",
+          "modelo": "Modelo: «Pasos: un agente que no conoce al sospechoso conduce el reconocimiento; se advierte a la testigo que el responsable podría no estar; se presentan seis personas parecidas a su descripción; se registra su elección y su confianza de inmediato, sin comentarios. Errores: señalar a alguien, confirmar la elección, repetir el reconocimiento con el mismo sospechoso. Límites: “El análisis describe características del relato con un margen de error; no determina si el hecho ocurrió y debe valorarse con el resto de la prueba”.» Es buena porque traduce la evidencia en pasos concretos.",
+          "plantilla": [
+            "Revisión de un reconocimiento de personas",
+            "¿Fue doble ciego? [sí/no]\n¿Se advirtió que el responsable podría no estar? [sí/no]\n¿Los rellenos coinciden con la descripción? [sí/no]\n¿Se registró la confianza de inmediato? [sí/no, texto]\n¿Hubo comentarios o confirmación posterior? [sí/no]\n¿Reconocimientos previos con el mismo sospechoso? [sí/no]\nValoración: [..]"
+          ],
+          "clave": [
+            "El análisis de contenido distingue relatos por encima del azar, pero con errores: no decide si el hecho ocurrió.",
+            "Las identificaciones erróneas por testigos sinceros son una causa documentada de condenas injustas.",
+            "Buenas prácticas: doble ciego, advertencia de que el responsable podría no estar, rellenos parecidos y registro inmediato de la confianza."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Elabora una guía de buenas prácticas para obtener y valorar testimonios en tu contexto (escuela, institución, organización o despacho), basada en lo que la investigación sabe sobre memoria, sugestión y entrevista.",
+        "entregable": "Una guía de dos páginas con: cinco reglas para registrar la primera versión, una lista de prácticas contaminantes a evitar, la estructura de una entrevista a menores (para reconocerla y canalizar), y una lista de revisión para reconocimientos de personas.",
+        "criterios": "Revisa: las reglas se basan en hallazgos de investigación, la lista de prácticas contaminantes incluye ejemplos concretos, la sección de menores aclara que requiere formación especializada y prioriza la protección, y la lista de reconocimientos incluye doble ciego y registro inmediato de la confianza."
+      },
+      "lab": {
+        "t": "Revisar una entrevista a un niño testigo",
+        "obj": "Analizar la calidad de una entrevista infantil y de un reconocimiento, y proponer mejoras basadas en evidencia.",
+        "esc": "<b>Santiago,</b> niño de 8 años en Saltillo, vio desde su ventana cómo un hombre golpeaba a su vecino en la calle. Un agente lo entrevistó dos veces en su casa y después se le mostraron fotografías para identificar al agresor. La asesoría jurídica del vecino te pide, como ejercicio formativo, analizar la calidad de ese material.",
+        "e": [
+          ["Escena 1: la transcripción muestra que el agente empezó así: «Tu mamá dice que viste al señor del taller pegarle a tu vecino, ¿verdad?».", "Consigna: identifica los problemas de esa pregunta y reescribe el inicio de la entrevista con reglas básicas y una transición no sugestiva."],
+          ["Escena 2: en la segunda entrevista, el agente repitió tres veces «¿Seguro que traía un palo?» hasta que Santiago dijo que sí.", "Consigna: explica cómo afecta la repetición al valor de ese detalle y qué dirías sobre él en un análisis técnico."],
+          ["Escena 3: la primera versión de Santiago, anotada por una vecina el mismo día, dice: «Un señor con gorra le pegó y se fue corriendo».", "Consigna: compara esta versión con las posteriores y explica qué partes del relato están menos expuestas a contaminación."],
+          ["Escena 4: para la identificación, le mostraron a Santiago una sola foto, la del dueño del taller.", "Consigna: explica por qué ese procedimiento es riesgoso y describe cómo debió hacerse."]
+        ],
+        "p": [
+          [
+            "¿Qué problema principal tiene la primera pregunta del agente?",
+            "Introduce a un sospechoso y el hecho antes del relato del niño",
+            "Es demasiado abierta para un niño de ocho años de edad",
+            "Menciona a la mamá, lo que da confianza y mejora el relato",
+            "La pregunta aporta información que el niño no ha dicho y presiona con la versión de un adulto. No es abierta, y mencionar lo que dijo otra persona es una forma de presión, no de apoyo."
+          ],
+          [
+            "¿Qué valor tiene el detalle del palo que Santiago aceptó tras la repetición?",
+            "Es poco confiable, porque apareció tras preguntas repetidas",
+            "Es confiable, porque el niño terminó confirmándolo",
+            "Es irrelevante, porque los niños no recuerdan objetos",
+            "Un detalle que aparece solo después de repetir la pregunta puede reflejar complacencia y no memoria. Los niños sí pueden recordar objetos cuando se les pregunta de forma abierta."
+          ],
+          [
+            "¿Cómo debió hacerse la identificación?",
+            "Con varias fotos parecidas, doble ciego y advertencia previa",
+            "Con la foto del sospechoso y la de su hermano, para comparar",
+            "Con una sola foto, pero sin decir el nombre de la persona",
+            "Mostrar una sola foto sugiere quién es el sospechoso. Las buenas prácticas incluyen varias personas parecidas, un conductor que no sabe quién es el sospechoso y la advertencia de que el responsable podría no estar."
+          ]
+        ],
+        "pl": [
+          "Análisis de calidad de una entrevista infantil",
+          "Registro: [grabación / transcripción / notas]\nEntrevistas previas y personas que preguntaron: [..]\nReglas básicas explicadas: [sí/no]\nTransición: [sugestiva / no sugestiva, texto]\nTipos de pregunta predominantes: [abiertas / directivas / cerradas / sugestivas]\nDetalles surgidos tras repetición o sugerencia: [..]\nPrimera versión disponible: [texto, fecha]\nConclusión técnica: [calidad y limitaciones]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una testigo en Querétaro vio noticias sobre un robo antes de declarar y ahora incluye detalles que solo aparecían ahí. ¿Qué fenómeno puede explicarlo?",
+          "El efecto de desinformación",
+          "La mentira deliberada",
+          "La memoria fotográfica",
+          "El efecto de primacía"
+        ],
+        [
+          "Un testigo en Durango dice estar «totalmente seguro» meses después, aunque dudó en su primer reconocimiento. ¿Qué es más razonable?",
+          "Dar más peso a la duda registrada al inicio que a la seguridad actual",
+          "Dar más peso a su seguridad actual, porque tuvo tiempo de reflexionar",
+          "Descartar por completo su testimonio, porque cambió de opinión",
+          "Pedirle que repita el reconocimiento con el mismo sospechoso"
+        ],
+        [
+          "Una maestra en Mérida pregunta cinco veces a un niño si alguien lo lastimó, hasta que dice que sí. ¿Qué práctica usó?",
+          "Preguntas repetidas, que aumentan la sugestionabilidad",
+          "Una invitación abierta adecuada para su edad",
+          "Una técnica de rapport recomendada por protocolos",
+          "Una práctica narrativa sobre un evento neutro"
+        ],
+        [
+          "Según la investigación, ¿qué determina más la exactitud del testimonio de una niña de seis años en Toluca?",
+          "La calidad de la entrevista con la que se obtuvo",
+          "Su edad, que lo vuelve poco confiable siempre",
+          "La seguridad con que ella relate lo ocurrido",
+          "Que su relato coincida con el de su madre"
+        ],
+        [
+          "En una entrevista en Oaxaca, ¿qué frase corresponde a las reglas básicas del protocolo NICHD?",
+          "«Si no sabes algo, está bien decir “no sé”.»",
+          "«Tienes que contarme todo lo que pasó hoy.»",
+          "«Tu papá ya me explicó lo que ocurrió.»",
+          "«Sé valiente y di la verdad sobre él.»"
+        ],
+        [
+          "Un entrevistador en Puebla pregunta primero a una adolescente por su equipo de futbol favorito. ¿Qué fase es?",
+          "Rapport",
+          "Transición",
+          "Fase sustantiva",
+          "Cierre"
+        ],
+        [
+          "Una perita en Tijuana aplica criterios de contenido a un relato y encuentra muchos de ellos. ¿Qué puede concluir?",
+          "Que el relato tiene características asociadas a hechos vividos, con margen de error",
+          "Que el hecho ocurrió, porque el relato cumple con la mayoría de los criterios",
+          "Que la persona declarante es honesta en general y en cualquier contexto",
+          "Que no se necesita revisar cómo se obtuvo el relato ni otras pruebas"
+        ],
+        [
+          "En un reconocimiento en Cuernavaca, el agente sabe quién es el sospechoso. ¿Qué riesgo hay?",
+          "Que influya, aun sin querer, en la elección del testigo",
+          "Ninguno, si el agente tiene experiencia en reconocimientos",
+          "Que el testigo se ponga nervioso y no elija a nadie",
+          "Que el procedimiento tarde más de lo necesario"
+        ],
+        [
+          "Un niño de 7 años en Villahermosa revela durante una entrevista que sigue en peligro en casa. ¿Qué es prioritario?",
+          "Su protección: dar aviso a la autoridad y activar protocolos",
+          "Terminar la entrevista para no perder la calidad y fluidez del relato",
+          "Registrar la revelación y evaluarla en el dictamen final",
+          "Preguntar más detalles para confirmar si es verdad"
+        ],
+        [
+          "Un abogado de Monterrey afirma que un falso recuerdo solo puede deberse a una mentira. ¿Qué responde la evidencia?",
+          "Un falso recuerdo puede vivirse como real y relatarse con sinceridad",
+          "Es cierto, porque la memoria registra los hechos como una grabación fiel",
+          "Es cierto en adultos, aunque no en niñas y niños pequeños",
+          "Es cierto si el recuerdo falso incluye muchos detalles vívidos"
+        ]
+      ]
+    },
+    {
+      "t": "Víctimas: daño psíquico, violencia y familia",
+      "r": "Estudias la victimología y la revictimización, cómo se evalúa el daño psíquico, cómo abordar la violencia familiar y de género, y cómo aportar a decisiones de custodia y convivencia con criterios científicos y cautela ante conceptos sin respaldo.",
+      "lecciones": [
+        {
+          "t": "Victimología y revictimización",
+          "obj": "Reconocer las formas de victimización y las prácticas que evitan revictimizar durante una evaluación.",
+          "texto": [
+            "La <b>victimología</b> estudia a las víctimas de delitos y de violaciones a derechos humanos: cómo les afecta lo ocurrido, qué necesitan y cómo responden las instituciones. Distingue la victimización primaria, que es el daño causado directamente por el hecho, de la victimización <b>secundaria,</b> también llamada revictimización, que es el daño adicional que producen las instituciones y las personas que deberían ayudar: esperas interminables, preguntas que culpan, entrevistas repetidas, trato frío o exposición pública.",
+            "En México, la Ley General de Víctimas, publicada en 2013, reconoce derechos como la atención, la asistencia, el acceso a la justicia, la verdad y la reparación integral, y creó la Comisión Ejecutiva de Atención a Víctimas, con comisiones equivalentes en los estados. Para quien evalúa, esto significa que la víctima no es un objeto de estudio: es una persona con derechos a la que se debe información, respeto y un trato que no agrave su situación.",
+            "Hay mitos que la evaluación debe evitar. Uno es el de la «víctima ideal», que supone que toda víctima llora, denuncia de inmediato y recuerda todo con orden. Las reacciones son muy variadas: hay personas serenas, otras enojadas, otras que tardan años en revelar lo ocurrido, sobre todo en violencia sexual o familiar. Revelar tarde, mostrar calma o tener lagunas no es, por sí mismo, indicio de mentira. Otro mito es que la víctima «provocó» el hecho por su ropa, su horario o su conducta: esa idea desplaza la responsabilidad de quien agredió.",
+            "Prácticas que previenen la revictimización: coordinarse para que la persona no repita su relato más veces de las necesarias, explicar cada paso, permitir pausas y compañía de confianza cuando no interfiera con la evaluación, evitar preguntas que culpen («¿por qué no gritaste?»), cuidar el lenguaje del dictamen y proteger datos personales. Y, cuando corresponda, orientar sobre servicios de atención: la comisión de víctimas de su estado, el 911 en emergencias o la Línea de la Vida, 800 911 2000."
+          ],
+          "comparar": [
+            "Así no: «Si de verdad fue tan grave, ¿por qué tardó dos años en denunciar?»",
+            "Así sí: «Muchas personas tardan en contar lo que vivieron; me interesa entender qué pasó en ese tiempo.»"
+          ],
+          "caso": "Caso ficticio: Marisol, de 26 años, en León, denunció un asalto sexual un año después de ocurrido. Ya declaró ante la policía, ante el Ministerio Público y ante un médico. Ahora una perita debe evaluar su estado psicológico y una compañera sugiere pedirle «otra vez el relato completo, para verificar si coincide».",
+          "p": [
+            [
+              "¿Qué conviene hacer respecto al relato de los hechos?",
+              "Revisar las declaraciones previas y preguntar solo lo necesario",
+              "Pedir de nuevo el relato completo para comparar versiones",
+              "Evitar cualquier mención de los hechos durante la evaluación",
+              "Revisar lo ya registrado y limitar las preguntas a lo que la evaluación requiere reduce la revictimización. Pedir el relato completo otra vez con fines de comparación la expone sin necesidad, y omitir por completo el tema impediría responder la pregunta pericial."
+            ],
+            [
+              "¿Qué significa que Marisol haya denunciado un año después?",
+              "Por sí solo, no indica nada sobre la veracidad",
+              "Es un indicio de que el hecho quizá no ocurrió así",
+              "Indica que el daño psicológico fue leve",
+              "Revelar tarde es frecuente en violencia sexual por miedo, vergüenza o dependencia. No es indicio de falsedad ni de menor daño; su contexto se explora sin juzgar."
+            ],
+            [
+              "¿Qué tipo de victimización produce una institución que culpa a la víctima?",
+              "Victimización secundaria",
+              "Victimización primaria",
+              "Victimización reparadora",
+              "La secundaria es el daño adicional causado por la respuesta institucional o social. La primaria es el daño del hecho mismo; «victimización reparadora» no es un concepto de la disciplina."
+            ]
+          ],
+          "completar": [
+            "La victimización ___ es el daño adicional que producen las instituciones que deberían ayudar.",
+            "secundaria"
+          ],
+          "relacionar": [
+            ["Victimización primaria", "Daño causado directamente por el hecho"],
+            ["Victimización secundaria", "Entrevistas repetidas y trato que culpa"],
+            ["Mito de la víctima ideal", "Suponer que toda víctima llora y denuncia de inmediato"],
+            ["Reparación integral", "Derecho reconocido por la Ley General de Víctimas"]
+          ],
+          "refl": "Revisa un proceso desde la mirada de la víctima. 1) Elige un trámite que conozcas (una denuncia, una consulta médica, un proceso escolar o laboral) y describe tres momentos en que alguien podría sentirse revictimizado. 2) Propón un cambio concreto para cada uno. 3) Reescribe tres preguntas que culpan para que sean respetuosas y útiles.",
+          "modelo": "Modelo: «Trámite: denuncia por robo en una agencia del Ministerio Público. Momentos: esperar cuatro horas sin información; que el agente diga “¿para qué anda con el celular en la mano?”; repetir el relato a tres personas distintas. Cambios: informar tiempos de espera, capacitar en lenguaje sin culpa, tomar una sola declaración completa y compartirla. Preguntas reescritas: “¿Por qué no gritaste?” → “¿Qué recuerdas de lo que hiciste en ese momento?”.» Es buena porque combina mejoras institucionales y de lenguaje.",
+          "plantilla": [
+            "Lista de prevención de revictimización",
+            "¿Revisé las declaraciones previas antes de preguntar? [sí/no]\n¿Pregunto solo lo necesario para la pregunta pericial? [sí/no]\n¿Expliqué cada paso y el derecho a pausas? [sí/no]\n¿Evito preguntas que culpan? [ejemplo reescrito]\n¿Protejo datos personales en el dictamen? [sí/no]\nServicios de apoyo informados: [comisión de víctimas, 911, Línea de la Vida 800 911 2000]"
+          ],
+          "clave": [
+            "La victimización secundaria es el daño que causan las instituciones y personas que deberían ayudar.",
+            "No existe una forma única de reaccionar: revelar tarde o mostrar calma no indica mentira.",
+            "Evaluar sin revictimizar implica preguntar solo lo necesario, explicar, cuidar el lenguaje y proteger datos."
+          ]
+        },
+        {
+          "t": "Daño psíquico: lesión y secuelas",
+          "obj": "Describir qué se evalúa en el daño psíquico y cómo se distingue la lesión de la secuela.",
+          "texto": [
+            "El <b>daño psíquico</b> se refiere a las consecuencias psicológicas negativas que un hecho violento produce en una persona. Enrique Echeburúa, Paz de Corral y Pedro Amor propusieron una distinción muy usada en el ámbito hispano. La <b>lesión psíquica</b> es la alteración clínica aguda que sufre la víctima y que puede medirse: síntomas de ansiedad, depresión, estrés postraumático o problemas de adaptación que, con tiempo, apoyo o tratamiento, pueden remitir. Las <b>secuelas</b> emocionales son la estabilización del daño: cambios duraderos que persisten y afectan la vida de la persona de forma prolongada.",
+            "La distinción importa porque tiene consecuencias distintas en la reparación del daño y en el pronóstico. Para valorarla se exploran la intensidad de los síntomas, su duración, el grado en que afectan el funcionamiento diario, como trabajo, estudios, relaciones o autocuidado, y la respuesta a la atención recibida. Un dictamen útil describe también qué tratamiento podría necesitar la persona y durante cuánto tiempo, información valiosa para quien decide la reparación.",
+            "Una pieza central es la <b>línea base:</b> cómo funcionaba la persona antes del hecho. Sin ella no se puede estimar qué cambió. También hay que analizar el nexo entre el hecho y los síntomas: la cronología, otros estresores, problemas previos que pudieron agravarse y las llamadas concausas. Que alguien tuviera dificultades previas no anula el daño: puede significar que el hecho las intensificó, algo que también debe describirse.",
+            "No toda víctima desarrolla un trastorno. Muchas personas muestran malestar intenso al principio y se recuperan, en buena medida gracias a sus redes de apoyo; esto se conoce como resiliencia y no significa que el hecho no fuera grave. La ausencia de un diagnóstico no prueba que el delito no ocurrió, y la presencia de síntomas no prueba que sí ocurrió: el daño psíquico describe consecuencias, no reconstruye hechos."
+          ],
+          "comparar": [
+            "Así no: «No cumple criterios de estrés postraumático, por lo tanto no hubo agresión.»",
+            "Así sí: «No presenta un trastorno, pero sí cambios en su sueño y en su trabajo desde los hechos, con buena red de apoyo.»"
+          ],
+          "caso": "Caso ficticio: Gilberto, maestro de 55 años en Chilpancingo, fue víctima de un secuestro exprés hace ocho meses. Tuvo ansiedad intensa las primeras semanas, recibió atención psicológica y hoy volvió a trabajar, aunque evita salir de noche. Antes del hecho, había tenido un episodio de depresión tras la muerte de su padre.",
+          "p": [
+            [
+              "¿Cómo debe tratarse el episodio de depresión previo?",
+              "Como parte de la línea base, para analizar qué cambió",
+              "Como prueba de que los síntomas actuales no se deben al hecho",
+              "Como un dato privado que no debe aparecer en el dictamen",
+              "Los antecedentes forman parte de la línea base y permiten valorar qué cambió. No anulan el daño, y omitirlos debilitaría el análisis del nexo causal; se describen con el cuidado necesario."
+            ],
+            [
+              "La evitación de salir de noche que persiste meses después, ¿qué podría indicar?",
+              "Un cambio duradero que conviene valorar como posible secuela",
+              "Un rasgo de personalidad ajeno a los hechos que vivió",
+              "Una exageración, porque ya regresó a trabajar",
+              "Un cambio que persiste y afecta su vida puede ser una secuela o una lesión que no ha remitido; se valora con duración y funcionamiento. Volver a trabajar no demuestra exageración."
+            ],
+            [
+              "¿Qué información de pronóstico es útil incluir en el dictamen?",
+              "Qué atención podría necesitar y por cuánto tiempo",
+              "La pena que debería recibir la persona responsable",
+              "La cantidad exacta de dinero de la reparación",
+              "La estimación de atención necesaria ayuda a quien decide la reparación. La pena y el monto de la reparación son decisiones jurídicas."
+            ]
+          ],
+          "completar": [
+            "Las ___ emocionales son la estabilización del daño: cambios duraderos que persisten en el tiempo.",
+            "secuelas"
+          ],
+          "refl": "Describe la línea base y el cambio. 1) Para un caso ficticio de una víctima de robo en su casa, describe su funcionamiento previo en cuatro áreas (sueño, trabajo, relaciones, actividades). 2) Describe los cambios posteriores en esas mismas áreas. 3) Enumera dos estresores adicionales que considerarías y cómo los distinguirías del efecto del robo.",
+          "modelo": "Modelo: «Antes: dormía siete horas, trabajaba de tiempo completo, visitaba a su hermana cada domingo y corría tres veces por semana. Después: duerme cuatro horas y revisa las cerraduras varias veces cada noche, pidió cambio a turno matutino, dejó de visitar a su hermana porque no quiere dejar la casa sola y no ha vuelto a correr. Estresores adicionales: una deuda reciente y la enfermedad de su madre; los distinguiría por la cronología y porque los síntomas giran en torno a la seguridad del hogar.» Es buena porque compara las mismas áreas antes y después y analiza alternativas.",
+          "plantilla": [
+            "Valoración del daño psíquico",
+            "Línea base (antes del hecho): sueño [..] · trabajo o estudio [..] · relaciones [..] · actividades [..]\nCambios posteriores: [mismas áreas]\nSíntomas, intensidad y duración: [..]\nOtros estresores y antecedentes: [..]\nClasificación provisional: [lesión psíquica / secuela / ambas / sin daño clínico significativo]\nAtención recomendada y pronóstico: [..]"
+          ],
+          "clave": [
+            "La lesión psíquica es la alteración aguda que puede remitir; la secuela, el cambio que persiste.",
+            "Sin línea base no se puede saber qué cambió: los antecedentes no anulan el daño, ayudan a describirlo.",
+            "El daño psíquico describe consecuencias; no prueba ni descarta que el hecho ocurriera."
+          ]
+        },
+        {
+          "t": "Violencia familiar y de género",
+          "obj": "Evaluar situaciones de violencia familiar y de género con perspectiva de género y prioridad en la seguridad.",
+          "texto": [
+            "La Ley General de Acceso de las Mujeres a una Vida Libre de Violencia, publicada en 2007 y que tras una reforma reciente se denomina «de Violencias», reconoce distintos tipos de violencia, entre ellos la psicológica, la física, la patrimonial, la económica y la sexual, y distintas modalidades, como la familiar. Los códigos penales y civiles de cada estado regulan la violencia familiar con sus propias definiciones, así que conviene revisar la norma local vigente.",
+            "Evaluar con <b>perspectiva de género</b> no significa suponer culpables, sino identificar desigualdades de poder que influyen en los hechos y en su relato. La Suprema Corte cuenta con un protocolo para juzgar con perspectiva de género que orienta este análisis. Un concepto útil es el de <b>control</b> coercitivo, propuesto por Evan Stark: un patrón de conductas que aíslan, vigilan, humillan y restringen la autonomía de una persona, aunque no siempre haya golpes. Mirar solo el episodio más reciente puede ocultar ese patrón; por eso se explora la historia de la relación.",
+            "Algunas ideas populares tienen poco respaldo o se aplican mal. El llamado «ciclo de la violencia» describe la experiencia de muchas mujeres, pero no todas las relaciones violentas siguen esas fases. Exigir que la víctima tenga síntomas visibles para creer que hubo violencia es un error, y también lo es suponer que si regresó con su pareja «no era tan grave»: la dependencia económica, el miedo, los hijos y las amenazas explican muchas decisiones.",
+            "La prioridad en cualquier evaluación es la <b>seguridad.</b> Antes de profundizar, se explora si hay riesgo actual: amenazas de muerte, acceso a armas, intentos de estrangulamiento, aumento reciente de la violencia o una separación en curso, momentos asociados a mayor peligro. Si hay riesgo, se activan los protocolos de la institución y se informa sobre medidas de protección, refugios y el 911. Esa ley general ordena evitar la mediación y la conciliación en casos de violencia, por ser inviables en una relación de sometimiento (artículo 8, fracción IV); verifica también la norma local antes de recomendar cualquier procedimiento conjunto."
+          ],
+          "comparar": [
+            "Así no: «No tiene moretones y regresó con él; no parece que haya violencia.»",
+            "Así sí: «Exploraré la historia de la relación, el control, el miedo y los riesgos actuales, además del último episodio.»"
+          ],
+          "caso": "Caso ficticio: Alejandra, de 33 años, en Cuautitlán Izcalli, pide el divorcio. Refiere que su esposo revisa su celular, controla todo el dinero y la ha amenazado con llevarse a los niños, pero nunca la ha golpeado. En la entrevista menciona que la semana pasada él le dijo que «si lo deja, no va a vivir para contarlo».",
+          "p": [
+            [
+              "¿Qué debe hacer primero quien la evalúa?",
+              "Explorar el riesgo actual y activar medidas de protección",
+              "Terminar la evaluación y luego valorar la amenaza",
+              "Proponer una mediación para reducir el conflicto",
+              "Una amenaza de muerte en plena separación es un indicador de alto riesgo: la seguridad va primero. Postergarla o proponer mediación en un contexto de violencia puede poner en peligro a Alejandra."
+            ],
+            [
+              "¿Qué concepto describe mejor la conducta del esposo?",
+              "Control coercitivo",
+              "Conflicto de pareja común",
+              "Violencia cruzada",
+              "Vigilar, controlar el dinero y amenazar con quitarle a los hijos forman un patrón de control que restringe su autonomía. No es un conflicto ordinario ni hay datos de violencia mutua."
+            ],
+            [
+              "¿Qué implica que no haya golpes?",
+              "Que puede haber violencia psicológica y económica grave",
+              "Que la situación no califica como violencia familiar",
+              "Que la amenaza debe tomarse como una expresión de enojo",
+              "La ley reconoce la violencia psicológica, económica y patrimonial. La ausencia de golpes no descarta la violencia, y una amenaza de muerte debe tomarse en serio."
+            ]
+          ],
+          "completar": [
+            "El ___ coercitivo es un patrón de conductas que aíslan, vigilan y restringen la autonomía de una persona.",
+            "control"
+          ],
+          "relacionar": [
+            ["Violencia psicológica", "Humillaciones y amenazas constantes"],
+            ["Violencia económica", "Controlar todo el dinero y negar gastos básicos"],
+            ["Violencia patrimonial", "Destruir o retener documentos y bienes"],
+            ["Indicador de alto riesgo", "Amenaza de muerte durante una separación"]
+          ],
+          "refl": "Diseña una exploración de seguridad. 1) Escribe cinco preguntas respetuosas para explorar riesgo actual en un caso ficticio de violencia familiar. 2) Explica qué harías si las respuestas indican alto riesgo, incluidos los números de ayuda. 3) Redacta cómo explicarías a la persona que la prioridad es su seguridad sin presionarla a tomar decisiones.",
+          "modelo": "Modelo: «Preguntas: “¿Te ha amenazado con hacerte daño o matarte?”, “¿Tiene acceso a armas?”, “¿Alguna vez te ha apretado el cuello?”, “¿La violencia ha aumentado en los últimos meses?”, “¿Cómo reaccionaría si supiera que te vas a separar?”. Si hay alto riesgo: activo el protocolo institucional, informo sobre medidas de protección y refugios, y le doy el 911. Explicación: “Tu seguridad y la de tus hijos es lo más importante; tú decides los pasos, y quiero que sepas qué opciones tienes”.» Es buena porque combina preguntas específicas, acción clara y respeto a su autonomía.",
+          "plantilla": [
+            "Exploración de seguridad en violencia familiar",
+            "Amenazas de muerte o daño: [sí/no, detalles]\nAcceso a armas: [sí/no]\nIntentos de estrangulamiento: [sí/no]\nAumento reciente de la violencia: [sí/no]\nSeparación en curso o próxima: [sí/no]\nNiñas y niños expuestos: [sí/no]\nAcciones: [protocolo, medidas de protección, refugio, 911]"
+          ],
+          "clave": [
+            "La violencia familiar incluye formas psicológicas, económicas y patrimoniales, no solo golpes.",
+            "La perspectiva de género analiza desigualdades de poder y patrones de control, no supone culpables.",
+            "La seguridad va primero: explora el riesgo actual y activa protocolos antes de profundizar."
+          ]
+        },
+        {
+          "t": "Custodia y convivencia con criterio científico",
+          "obj": "Aportar información útil para decisiones de custodia y convivencia, con cautela ante conceptos sin respaldo científico.",
+          "texto": [
+            "En los juicios de guarda y custodia o de convivencias, la pregunta de fondo es qué arreglo protege mejor el <b>interés</b> superior de cada niña, niño o adolescente. La Ley General de los Derechos de Niñas, Niños y Adolescentes reconoce su derecho a ser escuchados y a que su opinión se tome en cuenta según su edad y madurez. Escuchar no significa que el niño decida ni que se le pida elegir entre sus padres, algo que puede cargarlo con un conflicto de lealtades.",
+            "Una evaluación útil describe las necesidades del niño, su vínculo con cada adulto, las capacidades de crianza de cada progenitor, como supervisión, afecto, límites y apoyo escolar, la calidad de la comunicación entre los adultos y cualquier riesgo. Antes que nada se explora si hay violencia: cuando la hay, las recomendaciones sobre convivencia deben priorizar la seguridad, por ejemplo con convivencias supervisadas.",
+            "Aquí aparece un tema polémico: el llamado «síndrome de alienación parental», propuesto por Richard Gardner en los años ochenta. No figura como diagnóstico en el DSM-5-TR ni en la CIE-11, y ha sido criticado por falta de respaldo empírico y porque, en la práctica, se ha usado para desacreditar denuncias de violencia o abuso. En México, la Suprema Corte, al resolver la acción de inconstitucionalidad 11/2016 sobre el Código Civil de Oaxaca, aceptó que la ley describa como conducta la manipulación de un progenitor contra el otro, pero invalidó que se sancionara en automático con la suspensión o pérdida de la patria potestad. Los criterios judiciales y las leyes de cada estado siguen cambiando: verifica el texto vigente.",
+            "Esto no quiere decir que los adultos nunca influyan en los niños: a veces lo hacen, con comentarios hostiles o dificultando la convivencia, y eso puede describirse. Pero se describe con conductas concretas y datos verificables, no con un «síndrome». Un niño puede rechazar a un progenitor por muchas razones: violencia vivida, crianza muy dura, conflictos de lealtad, influencia de otro adulto o una combinación. La tarea es investigar cuál explica mejor cada caso, sin partir de una etiqueta."
+          ],
+          "comparar": [
+            "Así no: «El niño rechaza al padre, así que la madre le causó alienación parental.»",
+            "Así sí: «Exploré varias explicaciones del rechazo: experiencias con el padre, conflicto entre adultos y comentarios de la madre.»"
+          ],
+          "caso": "Caso ficticio: en Puebla, Rodrigo, de 10 años, se niega a ir con su padre los fines de semana. El padre sostiene que la madre «lo alienó» y pide un dictamen que lo confirme. La madre afirma que el niño vio cómo el padre la empujó durante una discusión el año pasado.",
+          "p": [
+            [
+              "¿Cuál es el primer paso adecuado?",
+              "Explorar si hay violencia y riesgo antes de otras hipótesis",
+              "Confirmar la alienación, porque el niño rechaza al padre",
+              "Pedir al niño que elija con cuál de los dos quiere vivir",
+              "Ante una alegación de violencia, la seguridad se explora primero. Partir de una etiqueta o pedir al niño que elija puede exponerlo a riesgo o a un conflicto de lealtades."
+            ],
+            [
+              "¿Qué dice la evidencia sobre el «síndrome de alienación parental»?",
+              "No es un diagnóstico reconocido y carece de respaldo suficiente",
+              "Es un diagnóstico reconocido en los principales manuales internacionales",
+              "Es un trastorno comprobado que afecta solo a los niños mayores",
+              "No figura como diagnóstico en el DSM-5-TR ni en la CIE-11 y ha sido criticado por su falta de respaldo. Las influencias de un adulto pueden existir, pero se describen con conductas concretas."
+            ],
+            [
+              "¿Qué significa escuchar a Rodrigo en este proceso?",
+              "Conocer su opinión sin que tenga que decidir",
+              "Que su preferencia defina quién tendrá la custodia",
+              "Preguntarle si prefiere a su padre o a su madre",
+              "Escuchar implica considerar su opinión según su edad y madurez, sin cargarlo con la decisión. Pedirle que elija entre sus padres lo pone en medio del conflicto."
+            ]
+          ],
+          "completar": [
+            "En custodia y convivencia, la pregunta de fondo es qué arreglo protege mejor el ___ superior del niño.",
+            "interés"
+          ],
+          "relacionar": [
+            ["Interés superior de la niñez", "Criterio central para decidir la custodia"],
+            ["Derecho a ser escuchado", "Conocer su opinión según su edad y madurez"],
+            ["Conflicto de lealtades", "Sentir que querer a un progenitor traiciona al otro"],
+            ["Convivencia supervisada", "Contacto con apoyo profesional cuando hay riesgo"]
+          ],
+          "refl": "Construye una lista de hipótesis para un caso ficticio en el que una niña rechaza a uno de sus progenitores. 1) Enumera al menos cuatro explicaciones posibles del rechazo. 2) Para cada una, escribe qué datos la apoyarían y qué fuentes consultarías. 3) Redacta cómo explicarías a los padres, sin tecnicismos, por qué no partirás de una etiqueta.",
+          "modelo": "Modelo: «Explicaciones: violencia vivida o presenciada con ese progenitor; crianza muy dura o poco sensible; conflicto de lealtades por la hostilidad entre adultos; comentarios del otro progenitor que dañan la imagen del primero. Datos y fuentes: relato de la niña con preguntas abiertas, escuela, pediatra, observación de la convivencia, historia de denuncias. Explicación a los padres: “Mi trabajo es entender qué necesita su hija; voy a revisar varias explicaciones y a describir lo que observe, sin poner etiquetas a nadie”.» Es buena porque abre hipótesis y define fuentes para cada una.",
+          "plantilla": [
+            "Evaluación en custodia y convivencia",
+            "Exploración de violencia y riesgo: [resultado]\nNecesidades del niño: [emocionales, escolares, de salud]\nVínculo con cada adulto: [..]\nCapacidades de crianza de cada progenitor: [..]\nComunicación entre adultos: [..]\nOpinión del niño (sin pedirle elegir): [..]\nHipótesis del rechazo, si existe: [..]\nRecomendaciones centradas en el niño: [..]"
+          ],
+          "clave": [
+            "El interés superior de la niñez orienta la evaluación; escuchar al niño no es pedirle que decida.",
+            "El «síndrome de alienación parental» no es un diagnóstico reconocido y carece de respaldo suficiente.",
+            "Las influencias de los adultos se describen con conductas concretas, después de descartar violencia y riesgo."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Elabora un protocolo personal para evaluar a víctimas y familias sin revictimizar: incluye cómo explorar la seguridad, cómo valorar el daño psíquico con línea base, cómo abordar la violencia con perspectiva de género y cómo aportar en custodia sin etiquetas.",
+        "entregable": "Un protocolo de dos páginas con una lista de prevención de revictimización, una hoja de exploración de seguridad, una plantilla de línea base y cambios, y una matriz de hipótesis para casos de rechazo a un progenitor.",
+        "criterios": "Revisa: la seguridad aparece antes de cualquier otra exploración e incluye números de ayuda, la valoración del daño distingue lesión y secuela con línea base, el enfoque de género analiza patrones de control sin suponer culpables, y la matriz de custodia evita el «síndrome de alienación parental» y describe conductas concretas."
+      },
+      "lab": {
+        "t": "Evaluación en un juicio familiar con alegaciones cruzadas",
+        "obj": "Integrar seguridad, daño psíquico, perspectiva de género y escucha de la niñez en un caso familiar complejo.",
+        "esc": "<b>Ana María,</b> de 38 años, y <b>Julio,</b> de 41, se divorcian en Puebla. Tienen dos hijos, de 7 y 11 años. Ella refiere años de insultos, control del dinero y un empujón reciente; él afirma que ella pone a los niños en su contra. En este laboratorio formativo analizas cómo debería plantearse la evaluación que ordenó el juzgado familiar.",
+        "e": [
+          ["Escena 1: en la primera entrevista, Ana María dice que desde que presentó la demanda Julio la sigue en su auto al salir del trabajo.", "Consigna: escribe cómo explorarías el riesgo actual y qué acciones tomarías si confirmas indicadores de alto riesgo."],
+          ["Escena 2: Ana María refiere insomnio y miedo constante; su hermana dice que antes era muy sociable.", "Consigna: describe cómo valorarías su daño psíquico con línea base y qué hipótesis alternativas considerarías."],
+          ["Escena 3: el hijo de 11 años dice que no quiere ver a su papá «porque grita mucho»; el de 7 dice que lo extraña.", "Consigna: explica cómo escucharías a cada niño sin pedirles elegir y cómo reportarías sus opiniones."],
+          ["Escena 4: el abogado de Julio pide que el dictamen concluya que hay «síndrome de alienación parental».", "Consigna: redacta una respuesta técnica y respetuosa que explique por qué no usarás esa etiqueta y cómo describirás, si existen, las influencias de los adultos."]
+        ],
+        "p": [
+          [
+            "¿Qué indica que Julio siga a Ana María tras presentar la demanda?",
+            "Un posible indicador de riesgo en una separación en curso",
+            "Una reacción esperable que no requiere ninguna medida",
+            "Una prueba de que Ana María exagera la situación",
+            "La vigilancia durante una separación puede asociarse a mayor riesgo y debe explorarse. Minimizarla o interpretarla como exageración deja sin atender un posible peligro."
+          ],
+          [
+            "¿Cómo reportar opiniones distintas de los dos niños?",
+            "Describir cada opinión, su contexto y lo que necesita cada niño",
+            "Promediar las dos opiniones y recomendar la custodia compartida",
+            "Dar prioridad a la opinión del mayor por tener más edad",
+            "Cada niño tiene su propia experiencia y necesidades; se describen por separado. Promediar o dar prioridad automática al mayor ignora el análisis individual que exige el interés superior."
+          ],
+          [
+            "¿Qué respuesta técnica es adecuada ante la petición del abogado?",
+            "Describir conductas concretas observadas, sin usar la etiqueta",
+            "Aceptar la etiqueta si el niño mayor rechaza al padre",
+            "Usar la etiqueta, pero entre comillas y con una nota",
+            "El término no tiene respaldo como diagnóstico. Si hay influencias de algún adulto, se describen con conductas verificables; usar la etiqueta, aun con matices, introduce un concepto sin sustento."
+          ]
+        ],
+        "pl": [
+          "Hoja de trabajo del caso familiar",
+          "Riesgo actual: [indicadores y acciones]\nDaño psíquico de cada adulto: [línea base, cambios, hipótesis]\nPatrones de control o violencia: [conductas concretas]\nOpinión de cada niño y su contexto: [..]\nNecesidades de cada niño: [..]\nInfluencias de adultos observadas: [conductas, fuentes]\nRecomendaciones centradas en la seguridad y el interés superior: [..]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una víctima de robo en Aguascalientes muestra calma durante la entrevista. ¿Qué conclusión es válida?",
+          "Ninguna sobre la veracidad: las reacciones son muy variadas",
+          "Que el robo probablemente no la afectó de manera importante",
+          "Que es probable que haya exagerado la gravedad del hecho",
+          "Que necesita una segunda entrevista para comprobar su relato"
+        ],
+        [
+          "En Cancún, un agente pregunta a una víctima de violencia sexual «¿por qué salió sola tan tarde?». ¿Qué produce esa pregunta?",
+          "Revictimización, porque traslada la culpa a la víctima",
+          "Información útil sobre las circunstancias del hecho",
+          "Una evaluación de riesgo con perspectiva de género",
+          "Una práctica aceptable si se hace con amabilidad"
+        ],
+        [
+          "Un hombre en Saltillo tuvo ansiedad intensa tras un asalto y a los dos meses se recuperó con apoyo familiar. ¿Cómo se describe?",
+          "Una lesión psíquica que remitió, sin secuelas aparentes",
+          "Una secuela emocional permanente que requiere pensión",
+          "Ausencia de daño, porque no quedó ningún diagnóstico",
+          "Una simulación, porque la recuperación fue rápida"
+        ],
+        [
+          "Una perita de Hermosillo encuentra que la evaluada tenía síntomas depresivos antes del delito. ¿Qué debe hacer?",
+          "Describir la línea base y analizar si los síntomas se agravaron",
+          "Descartar el daño, porque los síntomas son anteriores al delito",
+          "Omitir el antecedente para no perjudicar a la evaluada",
+          "Atribuir todos los síntomas al delito, porque son los más graves"
+        ],
+        [
+          "Una mujer en Morelia no tiene lesiones físicas, pero su pareja controla su dinero y la aísla. ¿Qué es correcto?",
+          "Puede tratarse de violencia económica y psicológica",
+          "No hay violencia familiar sin agresiones físicas",
+          "Es un conflicto de pareja que se resuelve en mediación",
+          "Solo es violencia si ella presenta síntomas clínicos"
+        ],
+        [
+          "Durante una evaluación en Ciudad Juárez, una mujer dice que su expareja tiene un arma y la amenazó de muerte ayer. ¿Qué hace la evaluadora?",
+          "Prioriza su seguridad, activa protocolos e informa sobre el 911",
+          "Continúa con las pruebas y lo registra en la sección de hallazgos",
+          "Le recomienda hablar con su expareja para calmar la situación",
+          "Espera a terminar el dictamen para informar al juzgado"
+        ],
+        [
+          "Una niña de 9 años en Xalapa dice que no quiere ver a su madre. ¿Cuál es el enfoque correcto?",
+          "Investigar varias explicaciones posibles del rechazo",
+          "Concluir que el padre la manipuló contra su madre",
+          "Recomendar que se respete siempre lo que ella diga",
+          "Pedirle que elija con quién prefiere vivir"
+        ],
+        [
+          "Un abogado de Guadalajara pide que un dictamen diagnostique «síndrome de alienación parental». ¿Qué responde la perita?",
+          "Que no es un diagnóstico reconocido y describirá conductas concretas",
+          "Que lo diagnosticará si encuentra que el niño rechaza a un progenitor",
+          "Que solo puede diagnosticarlo un psiquiatra con especialidad infantil",
+          "Que lo incluirá como hipótesis principal para no descartarlo"
+        ],
+        [
+          "Una víctima en Tlaxcala ha declarado tres veces. ¿Qué práctica reduce la revictimización en la evaluación?",
+          "Revisar esas declaraciones y preguntar solo lo necesario",
+          "Pedir el relato completo otra vez para compararlo",
+          "Evitar hablar de los hechos para no incomodarla",
+          "Tomarle una nueva declaración completa para el expediente pericial"
+        ],
+        [
+          "En un juicio de convivencias en Chihuahua hay indicios de violencia del padre. ¿Qué recomendación es más coherente?",
+          "Convivencias con medidas de seguridad, como supervisión",
+          "Convivencias libres para no afectar el vínculo con el padre",
+          "Suspender todo contacto sin analizar las necesidades del niño",
+          "Dejar que los padres acuerden solos cómo serán las visitas"
+        ]
+      ]
+    }
+  ]
+}
