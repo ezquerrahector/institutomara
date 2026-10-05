@@ -245,13 +245,47 @@ var Nube = {
         rest('avances?select=*&usuario_id=eq.' + uid),
         rest('pagos?select=*&usuario_id=eq.' + uid),
         rest('constancias?select=*&usuario_id=eq.' + uid),
-        rest('dudas?select=*&usuario_id=eq.' + uid)
+        rest('dudas?select=*&usuario_id=eq.' + uid),
+        /* Membresía, regalos comprados y descuentos de recompra (si las tablas ya existen) */
+        rest('membresias?select=*&usuario_id=eq.' + uid + '&order=creado_en.desc').catch(function(){ return []; }),
+        rest('regalos?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc').catch(function(){ return []; }),
+        rest('recompras?select=*&usuario_id=eq.' + uid).catch(function(){ return []; }),
+        Nube.cargarAjustes(BD).catch(function(){ return null; })
       ]).then(function(r){
         Nube.volcar(BD, { inscripciones:r[0], avances:r[1], pagos:r[2], constancias:r[3], dudas:r[4] });
+        BD.membresias = r[5] || []; BD.regalos = r[6] || []; BD.recompras = r[7] || [];
         ultimoEnvio = huella(BD, u);
         return u;
       });
     });
+  },
+
+  /* Ajustes globales (firma de constancias, precios de membresía, descuento de
+     recompra). Se leen con la llave pública: no requieren sesión. */
+  cargarAjustes: function(BD){
+    if(!activa()) return Promise.resolve(null);
+    return fetch(cfg.url + '/rest/v1/ajustes?id=eq.true&select=*', { headers:{ apikey:cfg.key, Authorization:'Bearer ' + cfg.key } })
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(f){ if(f && f[0]){ BD.ajustes = f[0]; } return BD.ajustes || null; });
+  },
+  guardarAjustes: function(cambios){
+    cambios.actualizado_en = new Date().toISOString();
+    return rest('ajustes?id=eq.true', { metodo:'PATCH', cuerpo:cambios, prefer:'return=representation' });
+  },
+  adminTienda: function(){
+    return Promise.all([
+      rest('membresias?select=*&order=creado_en.desc&limit=500'),
+      rest('regalos?select=*&order=creado_en.desc&limit=500'),
+      rest('recompras?select=*&order=creado_en.desc&limit=500'),
+      rest('cupones?select=codigo,usos,vence&or=(codigo.like.VUELVE-*,codigo.like.REGALO-*)&limit=2000')
+    ]).then(function(r){ return { membresias:r[0], regalos:r[1], recompras:r[2], cupones:r[3] }; });
+  },
+  recargarMembresia: function(BD, uid){
+    return Promise.all([
+      rest('membresias?select=*&usuario_id=eq.' + uid + '&order=creado_en.desc'),
+      rest('regalos?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc'),
+      rest('inscripciones?select=*&usuario_id=eq.' + uid)
+    ]).then(function(r){ BD.membresias = r[0] || []; BD.regalos = r[1] || []; Nube.volcar(BD, { inscripciones:r[2] }); });
   },
 
   /* El administrador ve a todos: alumnos, inscripciones, pagos y dudas. */

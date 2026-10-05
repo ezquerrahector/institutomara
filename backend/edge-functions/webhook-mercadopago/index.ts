@@ -49,23 +49,94 @@ async function precioEsperado(cursoId: string): Promise<number | null> {
   return p != null && Number(p) > 0 ? Number(p) : null;
 }
 
+
+const URL_SB = Deno.env.get("SUPABASE_URL")!;
+const LLAVE_SRV = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+/* Llama a la función «tienda» con la llave de servicio (entregas de regalo y estado de membresías). */
+async function tienda(cuerpo: Record<string, unknown>) {
+  try {
+    await fetch(`${URL_SB}/functions/v1/tienda`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: LLAVE_SRV, Authorization: `Bearer ${LLAVE_SRV}` },
+      body: JSON.stringify(cuerpo),
+    });
+  } catch (e) { console.error("tienda", String(e)); }
+}
+function codigoRegalo() {
+  const a = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let s = "";
+  for (const x of crypto.getRandomValues(new Uint8Array(7))) s += a[x % a.length];
+  return `REGALO-${s}`;
+}
+/* Pago aprobado de un regalo: crea el cupón de un solo uso y lo entrega (o lo deja programado). */
+async function pagoDeRegalo(pago: any, regaloId: string) {
+  const { data: r } = await supabase.from("regalos").select("*").eq("id", regaloId).maybeSingle();
+  if (!r) return "regalo no encontrado";
+  if (r.estado !== "pendiente_pago") return "regalo ya procesado";
+  const monto = Number(pago.transaction_amount || 0);
+  if (monto + 0.5 < Number(r.monto || 0)) {
+    await supabase.from("pagos").insert({ usuario_id: r.comprador_id, curso_id: r.curso_id, monto, medio: "Mercado Pago",
+      referencia_mp: String(pago.id), nota: `REVISAR regalo: pagó ${monto} de ${r.monto}` });
+    return "monto insuficiente";
+  }
+  const codigo = codigoRegalo();
+  const vence = new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10);
+  const { error: e1 } = await supabase.from("cupones").insert({ codigo, descripcion: `Regalo para ${r.para_nombre}`,
+    tipo: "porcentaje", valor: 100, curso_id: r.curso_id, usos_max: 1, vence });
+  if (e1) { console.error("cupón de regalo", e1.message); return "error cupón"; }
+  await supabase.from("regalos").update({ estado: "pagado", codigo, mp_pago_id: String(pago.id) }).eq("id", r.id);
+  await supabase.from("pagos").upsert({ usuario_id: r.comprador_id, curso_id: r.curso_id, monto, medio: "Mercado Pago",
+    referencia_mp: String(pago.id), nota: `Regalo para ${r.para_nombre} (${codigo})` }, { onConflict: "referencia_mp", ignoreDuplicates: true });
+  await tienda({ accion: "entregar", regaloId: r.id });
+  return "ok";
+}
+/* Pago aprobado de una membresía (anual en Checkout Pro, o cobro mensual de una suscripción). */
+async function pagoDeMembresia(pago: any, uid: string, plan: string) {
+  const monto = Number(pago.transaction_amount || 0);
+  const { data: aj } = await supabase.from("ajustes").select("*").eq("id", true).maybeSingle();
+  const esperado = plan === "anual" ? Number(aj?.precio_anual) : plan === "total" ? Number(aj?.precio_total) : Number(aj?.precio_esencial);
+  const { data: ins } = await supabase.from("pagos").upsert({ usuario_id: uid, curso_id: null, monto, medio: "Mercado Pago",
+    referencia_mp: String(pago.id), nota: monto + 0.5 >= esperado ? `Membresía ${plan}` : `REVISAR membresía ${plan}: pagó ${monto} de ${esperado}` },
+    { onConflict: "referencia_mp", ignoreDuplicates: true }).select("id");
+  if (!(Array.isArray(ins) && ins.length)) return "pago ya registrado";
+  if (monto + 0.5 < esperado) return "monto insuficiente";
+  if (plan === "anual") {
+    const { data: prev } = await supabase.from("membresias").select("*").eq("usuario_id", uid).in("estado", ["activa", "cancelada"])
+      .order("vigente_hasta", { ascending: false }).limit(1);
+    const base = prev && prev[0] && new Date(prev[0].vigente_hasta) > new Date() ? new Date(prev[0].vigente_hasta) : new Date();
+    base.setDate(base.getDate() + 365);
+    await supabase.from("membresias").insert({ usuario_id: uid, plan: "anual", estado: "activa", monto, inicio: new Date().toISOString(), vigente_hasta: base.toISOString() });
+  } else {
+    const { data: mems } = await supabase.from("membresias").select("mp_preapproval_id").eq("usuario_id", uid).eq("plan", plan).not("mp_preapproval_id", "is", null);
+    for (const m of mems || []) await tienda({ accion: "preapproval", id: m.mp_preapproval_id });
+  }
+  return "ok";
+}
+
 serve(async (req) => {
   try {
     const url = new URL(req.url);
-    const topic = url.searchParams.get("topic") || url.searchParams.get("type");
-    const id = url.searchParams.get("id") || url.searchParams.get("data.id");
+    const body = req.method === "POST" ? await req.json().catch(() => ({})) : {};
+    const topic = url.searchParams.get("topic") || url.searchParams.get("type") || body?.type || body?.topic || "";
+    const id = url.searchParams.get("id") || url.searchParams.get("data.id") || body?.data?.id || body?.id;
 
-    // Mercado Pago también puede mandar el id en el cuerpo (notificaciones nuevas).
-    let paymentId = id;
-    if (!paymentId && req.method === "POST") {
-      const body = await req.json().catch(() => ({}));
-      paymentId = body?.data?.id || body?.id;
+    // Suscripciones (membresías mensuales)
+    if (topic === "preapproval" || topic === "subscription_preapproval") {
+      if (id) await tienda({ accion: "preapproval", id: String(id) });
+      return new Response("ok", { status: 200 });
     }
-    if (topic !== "payment" && !paymentId) {
-      return new Response("ok", { status: 200 }); // otros eventos: se ignoran sin error
+    if (topic === "subscription_authorized_payment" || topic === "authorized_payment") {
+      if (id) {
+        const ra = await fetch(`https://api.mercadopago.com/authorized_payments/${id}`, { headers: { Authorization: `Bearer ${MP_ACCESS_TOKEN}` } });
+        const ap = await ra.json().catch(() => ({}));
+        if (ra.ok && ap.preapproval_id) await tienda({ accion: "preapproval", id: String(ap.preapproval_id) });
+      }
+      return new Response("ok", { status: 200 });
     }
 
-    // 1) Confirmar el pago directo con Mercado Pago (fuente de verdad real).
+    const paymentId = id;
+    if (topic && topic !== "payment") return new Response("ok", { status: 200 });
+    if (!paymentId) return new Response("ok", { status: 200 });
+
     const r = await fetch(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
       headers: { Authorization: `Bearer ${MP_ACCESS_TOKEN}` },
     });
@@ -76,6 +147,9 @@ serve(async (req) => {
       return new Response("pago no aprobado todavía", { status: 200 });
     }
 
+    const ref = String(pago.external_reference || "");
+    if (ref.startsWith("regalo::")) return new Response(await pagoDeRegalo(pago, ref.split("::")[1]), { status: 200 });
+    if (ref.startsWith("mem::")) { const [, uidM, planM] = ref.split("::"); return new Response(await pagoDeMembresia(pago, uidM, planM), { status: 200 }); }
     const [usuarioId, cursoId] = String(pago.external_reference || "").split("::");
     if (!usuarioId || !cursoId) return new Response("sin referencia", { status: 200 });
 

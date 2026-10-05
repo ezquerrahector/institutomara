@@ -406,6 +406,9 @@ tbody tr:hover{background:var(--nube)}
   margin-top:38px;flex-wrap:wrap;text-align:center}
 .sello-firma{flex:1;min-width:170px;font-size:.78rem;color:var(--gris);line-height:1.5}
 .firma-nombre{font-family:Caveat,cursive;font-size:1.7rem;color:var(--tinta);margin-bottom:2px}
+.firma-img{display:block;max-width:190px;max-height:72px;margin:0 auto -6px;object-fit:contain}
+.firma-espacio{height:46px}
+.firma-quien{color:var(--tinta);font-size:.82rem}
 .linea-firma{width:180px;max-width:100%;border-top:1.5px solid var(--tinta);margin:0 auto 8px}
 .sello-oficial{display:flex;flex-direction:column;align-items:center;gap:8px}
 .sello-anillo{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
@@ -576,7 +579,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20260929"></script>
+<script src="nube.js?v=20261005"></script>
 <script src="interactivo.js?v=20260929"></script>
 <script src="cursos/ingles-a1.js?v=20261004"></script>
 <script src="cursos/ia-general.js?v=20261004"></script>
@@ -1464,7 +1467,15 @@ function avance(uid,cid){
 }
 function estaInscrito(uid,cid){
   for(var i=0;i<BD.inscripciones.length;i++)
-    if(BD.inscripciones[i].usuarioId===uid && BD.inscripciones[i].cursoId===cid) return BD.inscripciones[i];
+    if(BD.inscripciones[i].usuarioId===uid && BD.inscripciones[i].cursoId===cid){
+      var ins = BD.inscripciones[i];
+      /* Inscripción hecha con membresía: solo da acceso mientras la membresía esté vigente
+         (si ya terminó el programa, conserva su avance y su constancia). */
+      if(ins.estatus === 'membresia' && !membresiaCubre(cid) && !(sesion && sesion.rol === 'admin')){
+        var c = curso(cid); if(!(c && cursoCompleto(uid,c))) return null;
+      }
+      return ins;
+    }
   return null;
 }
 function totalLecciones(c){
@@ -1672,6 +1683,9 @@ function entrarApp(){
   pintarNav();
   var params = new URLSearchParams(location.search);
   var pago = params.get('pago'), cid = params.get('curso');
+  if(params.get('membresia') || params.get('regalo')){ if(regresoTienda(params)) return; }
+  var irA = params.get('ir');
+  if((irA === 'membresia' || irA === 'regalos') && sesion.rol === 'alumno'){ history.replaceState(null,'',location.pathname); ir(irA); return; }
 
   if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
@@ -1704,6 +1718,9 @@ function entrarApp(){
     ir('catalogo');
     if(!rutaCompleta(ruta(cid))) setTimeout(function(){ abrirPago(cid); }, 250);
     return;
+  }
+  if(cid && programa(cid) && sesion.rol === 'alumno' && params.get('regalar')){
+    history.replaceState(null,'',location.pathname); ir('regalos'); setTimeout(function(){ abrirRegalo(cid); }, 250); return;
   }
   if(cid && curso(cid) && sesion.rol === 'alumno'){
     history.replaceState(null,'',location.pathname);
@@ -1763,9 +1780,9 @@ function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
        ['admin-reactivacion','Invitaciones'],['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
-       ['verificacion','Constancias'],['admin-ajustes','Ajustes']]
+       ['admin-tienda','Membresías y regalos'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
-       ['constancias','Constancias'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
+       ['membresia','Membresía'],['constancias','Constancias'],['regalos','Regalar'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
   var h = '';
   for(var i=0;i<items.length;i++)
     h += '<button data-v="'+items[i][0]+'">'+items[i][1]+'</button>';
@@ -1947,7 +1964,8 @@ function tarjetaCurso(c){
     '<div class="cat-precio">'+dinero(c.precio)+'</div>'+
     (yaEsta
       ? '<button class="btn btn-linea" style="width:100%" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">Ya lo tienes · Entrar</button>'
-      : '<button class="btn btn-mor" style="width:100%" onclick="verPrograma(\''+c.id+'\')">Conocer el programa</button>'+
+      : (membresiaCubre(c.id) ? '<span class="etiqueta ok" style="align-self:flex-start;margin-bottom:6px">Incluido en tu membresía</span>' : '')+
+        '<button class="btn btn-mor" style="width:100%" onclick="verPrograma(\''+c.id+'\')">Conocer el programa</button>'+
         '<a class="cat-gratis" href="index.html?muestra='+encodeURIComponent(c.id)+'" target="_blank" rel="noopener">Probar una lección gratis</a>')+
     '</div></article>';
 }
@@ -1973,9 +1991,13 @@ function verPrograma(cid){
   if(rutas.length) h += '<div class="aviso aviso-info" style="margin-top:14px">También viene en la <b>'+esc(rutas[0].nombre)+'</b> con precio especial. '+
     '<a href="#" onclick="verRuta(\''+rutas[0].id+'\');return false">Ver la ruta</a></div>';
   h += '<div class="ficha-precio"><div><b>'+dinero(c.precio)+'</b><small>Pago único · acceso 12 meses · a tu ritmo</small></div></div>';
+  h += avisoMembresiaFicha(c);
   abrirModal(c.nombre, h,
     '<a class="btn btn-fantasma" href="index.html?muestra='+encodeURIComponent(c.id)+'" target="_blank" rel="noopener">Probar una lección gratis</a>'+
-    '<button class="btn btn-mor" onclick="abrirPago(\''+c.id+'\')">Quiero inscribirme</button>');
+    '<button class="btn btn-linea" onclick="abrirRegalo(\''+c.id+'\')">🎁 Regalar</button>'+
+    (membresiaCubre(c.id)
+      ? '<button class="btn btn-mor" onclick="empezarConMembresia(\''+c.id+'\')">Empezar con mi membresía</button>'
+      : '<button class="btn btn-mor" onclick="abrirPago(\''+c.id+'\')">Quiero inscribirme</button>'));
 }
 
 function verRuta(rid){
@@ -2175,6 +2197,8 @@ function abrirPago(cid){
             encodeURIComponent('Hola, quiero inscribirme a "'+c.nombre+'" ('+dinero(c.precio)+')')+'">Confirmar por WhatsApp</a>'
           : '<button class="btn btn-mor" onclick="inscribirme(\''+cid+'\');cerrarModal()">Inscribirme (sin pago registrado)</button>'));
 
+  if(!esRuta) cuerpo += '<p style="margin-top:12px;font-size:.9rem;color:var(--gris)">¿Es para otra persona? <a href="#" onclick="abrirRegalo(\''+cid+'\');return false">Regálalo</a>. '+
+    '¿Quieres todo el catálogo? <a href="#" onclick="cerrarModal();ir(\'membresia\');return false">Conoce la membresía</a> desde '+dinero(ajuste('precio_esencial',249))+' al mes.</p>';
   abrirModal('Inscripción: '+c.nombre, cuerpo, pie);
 
   /* Si llegó con un cupón en el enlace, se escribe y se aplica solo. */
@@ -2735,6 +2759,8 @@ function vistaConstancia(){
   if(!rec){
     if(admin || !c || !cursoCompleto(sesion.id,c))
       return '<div class="seccion"><p>Esta constancia todavía no está disponible.</p></div>';
+    var bloqueo = constanciaBloqueadaPorMembresia(c);
+    if(bloqueo) return '<div class="seccion"><div class="tarjeta"><h3>¡Terminaste '+esc(c.nombre)+'! 🎉</h3><p style="margin-top:8px">'+bloqueo+'</p></div></div>';
     rec = asegurarConstancia(sesion.id, c.id);
   }
   var url = urlVerificacion(rec, c), qrId = 'qr-'+rec.id;
@@ -2742,7 +2768,10 @@ function vistaConstancia(){
     var cont = $(qrId); if(!cont) return;
     prepararQR(cont, rec, url);
   }, 0);
-  var firmaNombre = BD.config.directorNombre || sesion.nombre;
+  var firmaNombre = ajuste('director_nombre', BD.config.directorNombre || '');
+  var firmaPuesto = ajuste('director_puesto', BD.config.directorPuesto || 'Dirección Académica');
+  var firmaImg = ajuste('firma_img', '');
+  if(!admin) setTimeout(function(){ ofrecerRecompra(c.id); }, 0);
   var avisoQR = location.protocol === 'file:' && !BD.config.urlPublica
     ? '<div class="aviso aviso-info no-imprimir" style="margin-bottom:18px">Todavía no configuras la '+
       '<b>URL pública</b> en Ajustes, así que este QR solo abre en esta computadora. En cuanto publiques el '+
@@ -2756,6 +2785,7 @@ function vistaConstancia(){
       '<button class="btn btn-mor btn-sm" onclick="window.print()">Imprimir o guardar en PDF</button>'+
       '<button class="btn btn-linea btn-sm" onclick="copiarEnlaceVerificacion(\''+esc(url)+'\')">Copiar enlace de verificación</button>'+
       (admin ? '' : '<a class="btn btn-sm" style="background:#0A66C2;color:#fff" target="_blank" rel="noopener" href="'+esc(urlLinkedIn(rec, url))+'">Agregar a mi LinkedIn</a>')+'</div>'+
+    '<div id="recompra-caja" class="no-imprimir"></div>'+
     '<div class="constancia">'+
       '<svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom:6px"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg>'+
       '<div class="encabeza">Instituto Mara</div>'+
@@ -2770,8 +2800,9 @@ function vistaConstancia(){
         '<div>Folio<b>'+rec.folio+'</b></div>'+
       '</div>'+
       '<div class="constancia-sellos">'+
-        '<div class="sello-firma"><div class="firma-nombre">'+esc(firmaNombre)+'</div><div class="linea-firma"></div>'+
-        esc(BD.config.directorPuesto||'Dirección Académica')+'<br>Instituto Mara</div>'+
+        '<div class="sello-firma">'+(firmaImg ? '<img class="firma-img" src="'+esc(firmaImg)+'" alt="Firma">' : '<div class="firma-espacio"></div>')+
+        '<div class="linea-firma"></div>'+(firmaNombre ? '<b class="firma-quien">'+esc(firmaNombre)+'</b><br>' : '')+
+        esc(firmaPuesto)+'<br>Instituto Mara</div>'+
         '<div class="sello-oficial"><div class="sello-anillo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span>FOLIO<br>VERIFICABLE</span></div>'+
         '<div class="sello-qr"><div id="'+qrId+'"></div><span>Escanea para verificar</span></div>'+
       '</div>'+
@@ -4389,8 +4420,10 @@ function borrarCupon(codigo){
 
 /* ------- Ajustes ------- */
 function vistaAdminAjustes(){
+  setTimeout(pintarAjustesGlobales, 0);
   return '<div class="seccion" style="max-width:720px"><h2>Ajustes</h2>'+
     '<p class="sub">Lo mínimo que debes revisar antes de abrir la escuela al público.</p>'+
+    '<div id="aj-globales"><div class="tarjeta" style="margin-bottom:20px">Cargando firma y precios…</div></div>'+
 
     '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
     'margin-bottom:14px">Contraseña de administrador</h3>'+
@@ -4415,10 +4448,7 @@ function vistaAdminAjustes(){
     '<input type="number" id="aj-sla" min="1" max="72" value="'+BD.config.slaDudasHoras+'"></div></div>'+
     '<div class="campo"><label>URL pública del sitio</label>'+
     '<input id="aj-url" placeholder="https://usuario.github.io/institutomara" value="'+esc(BD.config.urlPublica)+'"></div>'+
-    '<div class="fila" style="margin:0"><div class="campo"><label>Nombre de quien firma las constancias</label>'+
-    '<input id="aj-firma-nom" placeholder="Ej. Diego Ramírez" value="'+esc(BD.config.directorNombre)+'"></div>'+
-    '<div class="campo"><label>Puesto</label>'+
-    '<input id="aj-firma-puesto" placeholder="Dirección Académica" value="'+esc(BD.config.directorPuesto)+'"></div></div>'+
+
     '<div style="margin-top:14px"><button class="btn btn-mor" onclick="guardarContacto()">Guardar</button></div></div>'+
 
     '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);'+
@@ -4467,8 +4497,6 @@ function guardarContacto(){
   BD.config.whatsapp = $('aj-wa').value.trim().replace(/[^\d]/g,'');
   BD.config.slaDudasHoras = Number($('aj-sla').value)||24;
   BD.config.urlPublica = $('aj-url').value.trim().replace(/\/$/,'');
-  BD.config.directorNombre = $('aj-firma-nom').value.trim();
-  BD.config.directorPuesto = $('aj-firma-puesto').value.trim() || 'Dirección Académica';
   guardar(); pintar();
 }
 function guardarPagoConfig(){
@@ -4524,8 +4552,366 @@ function pintar(){
   else if(v==='dudas')          h = vistaDudas();
   else if(v==='admin-dudas')    h = vistaAdminDudas();
   else if(v==='verificacion')   h = vistaAdminVerificacion();
+  else if(v==='membresia')      h = vistaMembresia();
+  else if(v==='regalos')        h = vistaRegalos();
+  else if(v==='admin-tienda')   h = vistaAdminTienda();
   $('vista').innerHTML = h;
   if(v === 'catalogo') pintarCatalogo();
+}
+
+/* ============================================================================
+   Membresías, regalos, descuento de recompra y ajustes globales
+   (la lógica de cobro vive en la función de servidor «tienda»)
+   ========================================================================== */
+function ajuste(k, def){
+  var a = BD.ajustes || {};
+  return (a[k] === undefined || a[k] === null || a[k] === '') ? def : a[k];
+}
+var PLANES_MEM = {
+  esencial:{ nombre:'Esencial', periodo:'al mes', incluye:'Todos los cursos (sin diplomados ni rutas)' },
+  total:{ nombre:'Total', periodo:'al mes', incluye:'Todo el catálogo: cursos y diplomados' },
+  anual:{ nombre:'Anual Total', periodo:'al año', incluye:'Todo el catálogo durante 12 meses, con un solo pago' }
+};
+function precioPlan(p){ return Number(ajuste(p==='esencial'?'precio_esencial':p==='total'?'precio_total':'precio_anual', p==='esencial'?249:p==='total'?449:3990)); }
+function membresiasMias(){ return (BD.membresias||[]).filter(function(m){ return sesion && m.usuario_id === sesion.id; }); }
+function membresiaVigente(){
+  var ahora = Date.now(), mejor = null;
+  membresiasMias().forEach(function(m){
+    if((m.estado === 'activa' || m.estado === 'cancelada') && m.vigente_hasta && new Date(m.vigente_hasta).getTime() >= ahora){
+      if(!mejor || (mejor.plan === 'esencial' && m.plan !== 'esencial')) mejor = m;
+    }
+  });
+  return mejor;
+}
+function membresiaCubre(cid){
+  var m = membresiaVigente(); if(!m) return false;
+  if(m.plan === 'total' || m.plan === 'anual') return true;
+  var c = curso(cid);
+  return !!(c && !ruta(cid) && c.nivel !== 'Diplomados');
+}
+function avisoMembresiaFicha(c){
+  if(membresiaCubre(c.id)) return '<div class="aviso aviso-ok" style="margin-top:14px">Este programa está <b>incluido en tu membresía</b>. Empieza cuando quieras.</div>';
+  if(membresiaVigente()) return '<div class="aviso aviso-info" style="margin-top:14px">Tu membresía Esencial no incluye diplomados. <a href="#" onclick="cerrarModal();ir(\'membresia\');return false">Cámbiate a Total</a> para tenerlo incluido.</div>';
+  return '<div class="aviso aviso-info" style="margin-top:14px">También viene incluido en la <b>membresía Total</b>: todo el catálogo por '+dinero(precioPlan('total'))+' al mes. <a href="#" onclick="cerrarModal();ir(\'membresia\');return false">Conocer la membresía</a></div>';
+}
+function empezarConMembresia(cid){
+  var b = event && event.target; if(b){ b.disabled = true; b.textContent = 'Un momento…'; }
+  Nube.funcionServidor('tienda', { accion:'inscribir_membresia', cursoId:cid })
+    .then(function(){ return Nube.refrescarInscripciones(BD, sesion.id); })
+    .then(function(){ guardar(); cerrarModal(); ir('aula', {cursoId:cid}); })
+    .catch(function(e){ if(b){ b.disabled = false; b.textContent = 'Empezar con mi membresía'; } alert(e.message); });
+}
+function inscripcionPropia(cid){
+  for(var i=0;i<BD.inscripciones.length;i++) if(BD.inscripciones[i].usuarioId===sesion.id && BD.inscripciones[i].cursoId===cid) return BD.inscripciones[i];
+  return null;
+}
+/* Diplomados tomados con membresía: la constancia se libera tras cierta antigüedad. */
+function constanciaBloqueadaPorMembresia(c){
+  var ins = inscripcionPropia(c.id);
+  if(!ins || ins.estatus !== 'membresia' || c.nivel !== 'Diplomados') return '';
+  var dias = Number(ajuste('dias_constancia_diplomado', 60)), inicio = null;
+  membresiasMias().forEach(function(m){ if(m.inicio && (!inicio || new Date(m.inicio) < inicio)) inicio = new Date(m.inicio); });
+  if(!inicio) return 'Tu constancia se libera cuando tu membresía tenga '+dias+' días de antigüedad.';
+  var libre = new Date(inicio.getTime() + dias*864e5);
+  if(libre <= new Date()) return '';
+  return 'Ya terminaste todo el diplomado. Como lo tomaste con tu membresía, la constancia de los diplomados se libera a los '+dias+
+    ' días de membresía: podrás descargarla a partir del <b>'+fechaLarga(libre.toISOString().slice(0,10))+'</b>. Mantén tu membresía activa hasta esa fecha.';
+}
+
+/* ---------- Descuento de recompra: al tener la constancia, se ofrece el siguiente programa ---------- */
+function ofrecerRecompra(cid){
+  var caja = $('recompra-caja'); if(!caja || !NUBE || !sesion || sesion.rol === 'admin') return;
+  var pintarCaja = function(r){
+    if(!r || !r.codigo || r.usado) return;
+    var vence = r.vence ? ' Válido hasta el '+fechaLarga(String(r.vence).slice(0,10))+'.' : '';
+    caja.innerHTML = '<div class="aviso aviso-ok" style="margin-bottom:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">'+
+      '<div style="flex:1;min-width:220px">🎁 <b>¡Felicidades!</b> Tu siguiente curso o diplomado tiene <b>'+Number(r.pct)+'% de descuento</b>. '+
+      'Código personal: <b>'+esc(r.codigo)+'</b>.'+vence+' Un solo uso.</div>'+
+      '<button class="btn btn-mor btn-sm" onclick="usarCuponRecompra(\''+esc(r.codigo)+'\')">Elegir mi siguiente programa</button></div>';
+  };
+  Nube.funcionServidor('tienda', { accion:'recompra', cursoId:cid }).then(pintarCaja).catch(function(){});
+}
+function usarCuponRecompra(codigo){
+  try{ localStorage.setItem(LLAVE_CUPON, codigo); }catch(e){}
+  ir('catalogo');
+  abrirModal('Tu descuento ya está guardado', '<p>Elige tu siguiente programa y presiona «Quiero inscribirme»: el código <b>'+esc(codigo)+'</b> se aplica solo al pagar.</p>',
+    '<button class="btn btn-mor" onclick="cerrarModal()">Ver programas</button>');
+}
+
+/* ---------- Membresía ---------- */
+function vistaMembresia(){
+  if(NUBE && !vistaMembresia._sync){ vistaMembresia._sync = true;
+    Nube.funcionServidor('tienda', { accion:'sincronizar' }).then(function(r){
+      if(r && r.membresias){ BD.membresias = r.membresias; guardar(); if(estado.vista === 'membresia') pintar(); }
+    }).catch(function(){}); }
+  var m = membresiaVigente(), h = '<div class="seccion"><h2>Membresía Instituto Mara</h2>'+
+    '<p class="sub">Un pago mensual y estudias todo lo que quieras, a tu ritmo, con constancia en cada programa que termines. Cancelas cuando quieras.</p>';
+  if(m){
+    var p = PLANES_MEM[m.plan] || { nombre:m.plan };
+    h += '<div class="tarjeta" style="margin-bottom:22px;border:2px solid var(--morado)"><span class="etiqueta ok">'+(m.estado==='cancelada'?'Cancelada · vigente hasta su fecha':'Activa')+'</span>'+
+      '<h3 style="margin:10px 0 6px;color:var(--tinta)">Tu membresía '+esc(p.nombre)+'</h3>'+
+      '<p style="color:var(--gris)">'+esc(p.incluye||'')+'. Vigente hasta el <b>'+fechaLarga(String(m.vigente_hasta).slice(0,10))+'</b>'+(m.estado==='activa' && m.plan!=='anual' ? ' (se renueva sola)' : '')+'.</p>'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn btn-mor" onclick="ir(\'catalogo\')">Explorar programas incluidos</button>'+
+      (m.estado==='activa' && m.mp_preapproval_id ? '<button class="btn btn-fantasma" onclick="confirmarCancelarMembresia()">Cancelar renovación</button>' : '')+'</div></div>';
+  }
+  var pend = membresiasMias().filter(function(x){ return x.estado === 'pendiente'; })[0];
+  if(pend && !m) h += '<div class="aviso aviso-info" style="margin-bottom:18px">Tenemos una solicitud de membresía '+esc((PLANES_MEM[pend.plan]||{}).nombre||'')+' esperando la confirmación de Mercado Pago. Si ya autorizaste el cobro, se activa en unos minutos.</div>';
+  var dias = Number(ajuste('dias_constancia_diplomado', 60));
+  h += '<div class="rejilla rejilla-3">'+['esencial','total','anual'].map(function(k){
+    var p = PLANES_MEM[k], dest = k === 'total';
+    var lista = k === 'esencial'
+      ? ['Más de 50 cursos: idiomas, Excel, IA, salud, negocios','IA para tu profesión (28 cursos)','Constancia con folio en cada curso','Cancelas cuando quieras']
+      : ['Todos los cursos y los '+(BD.cursos.filter(function(c){return c.nivel==='Diplomados';}).length||17)+' diplomados','Programas nuevos sin costo extra','Constancia con folio en cada programa','Diplomados: constancia a partir de '+dias+' días de membresía'];
+    if(k === 'anual') lista = ['Todo lo de Total durante 12 meses','Un solo pago, sin cobros mensuales','Ahorras '+dinero(precioPlan('total')*12 - precioPlan('anual'))+' contra pagar mes a mes','Diplomados: constancia a partir de '+dias+' días'];
+    var actual = m && m.plan === k;
+    return '<div class="tarjeta" style="display:flex;flex-direction:column;gap:10px;'+(dest?'border:2px solid var(--morado);':'')+'">'+
+      (dest ? '<span class="etiqueta ok" style="align-self:flex-start">La más elegida</span>' : '')+
+      '<h3 style="color:var(--tinta)">'+p.nombre+'</h3>'+
+      '<div><b style="font-size:2rem;color:var(--morado)">'+dinero(precioPlan(k))+'</b> <span style="color:var(--gris)">'+p.periodo+'</span></div>'+
+      '<ul style="padding-left:18px;color:var(--tinta);line-height:1.7;flex:1">'+lista.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'+
+      (actual ? '<button class="btn btn-linea" disabled>Tu plan actual</button>'
+              : '<button class="btn '+(dest?'btn-mor':'btn-linea')+'" onclick="suscribirse(\''+k+'\')">'+(k==='anual'?'Pagar el año':'Suscribirme')+'</button>')+
+      '</div>';
+  }).join('')+'</div>'+
+  '<p style="color:var(--gris);font-size:.88rem;margin-top:16px">El cobro mensual es automático con Mercado Pago (tarjeta de crédito o débito) y lo cancelas desde esta página. '+
+  'Al cancelar conservas el acceso hasta el fin del periodo pagado. Tus avances y constancias son tuyos para siempre. '+
+  'La anual se paga una vez (tarjeta, OXXO o transferencia) y no se renueva sola.</p></div>';
+  return h;
+}
+function suscribirse(plan){
+  if(!NUBE){ alert('El cobro en línea no está disponible en esta copia.'); return; }
+  var p = PLANES_MEM[plan];
+  var cuerpo = '<p>Plan <b>'+p.nombre+'</b>: '+dinero(precioPlan(plan))+' '+p.periodo+'. '+esc(p.incluye)+'.</p>';
+  if(plan !== 'anual') cuerpo += '<div class="campo" style="margin-top:12px"><label for="mem-correo">Correo de tu cuenta de Mercado Pago</label>'+
+    '<input id="mem-correo" type="email" value="'+esc(sesion.correo)+'"><small style="color:var(--gris)">Mercado Pago pide que la suscripción se autorice con la cuenta de este correo. Si usas otro correo en Mercado Pago, cámbialo aquí.</small></div>'+
+    '<p style="font-size:.9rem;color:var(--gris)">Se cobra automáticamente cada mes. Cancelas cuando quieras desde «Membresía».</p>';
+  cuerpo += '<div id="mem-aviso"></div>';
+  abrirModal('Membresía '+p.nombre, cuerpo, '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="mem-btn" class="btn btn-mor" onclick="irASuscripcion(\''+plan+'\')">Continuar a Mercado Pago</button>');
+}
+function irASuscripcion(plan){
+  var b = $('mem-btn'); b.disabled = true; b.textContent = 'Un momento…';
+  Nube.funcionServidor('tienda', { accion:'membresia', plan:plan, correoMP: $('mem-correo') ? $('mem-correo').value.trim() : '', urlRegreso: location.origin+location.pathname })
+    .then(function(d){ if(d && d.init_point) location.href = d.init_point; else throw new Error('No se pudo iniciar la suscripción.'); })
+    .catch(function(e){ b.disabled = false; b.textContent = 'Continuar a Mercado Pago'; $('mem-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+function confirmarCancelarMembresia(){
+  abrirModal('¿Cancelar la renovación?', '<p>Ya no se te cobrará el siguiente mes. Conservas el acceso hasta la fecha de vigencia y tus avances y constancias se quedan contigo.</p><div id="mem-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">No, mantenerla</button><button id="mem-btn" class="btn btn-peligro" onclick="cancelarMembresia()">Sí, cancelar</button>');
+}
+function cancelarMembresia(){
+  var b = $('mem-btn'); b.disabled = true;
+  Nube.funcionServidor('tienda', { accion:'cancelar_membresia' })
+    .then(function(){ return Nube.recargarMembresia(BD, sesion.id); })
+    .then(function(){ guardar(); cerrarModal(); pintar(); })
+    .catch(function(e){ b.disabled = false; $('mem-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+
+/* ---------- Regalos ---------- */
+function abrirRegalo(cid){
+  var c = programa(cid); if(!c) return;
+  if(!NUBE){ alert('Los regalos necesitan el cobro en línea.'); return; }
+  var hoyIso = new Date(Date.now() - new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+  abrirModal('🎁 Regalar: '+c.nombre,
+    '<p style="color:var(--gris);margin-bottom:12px">Tú pagas '+dinero(c.precio)+' y la otra persona recibe su acceso con un mensaje tuyo. Su código vale 12 meses.</p>'+
+    '<div class="fila"><div class="campo"><label for="rg-nom">Nombre de quien recibe *</label><input id="rg-nom" maxlength="120"></div>'+
+    '<div class="campo"><label for="rg-de">Tu nombre (como lo verá)</label><input id="rg-de" maxlength="120" value="'+esc(sesion.nombre)+'"></div></div>'+
+    '<div class="fila"><div class="campo"><label for="rg-correo">Su correo</label><input id="rg-correo" type="email" placeholder="para enviarle el regalo"></div>'+
+    '<div class="campo"><label for="rg-tel">Su WhatsApp</label><input id="rg-tel" type="tel" placeholder="10 dígitos"></div></div>'+
+    '<div class="campo"><label for="rg-msg">Mensaje (opcional)</label><textarea id="rg-msg" maxlength="600" rows="3" placeholder="¡Feliz cumpleaños! Sé que este diplomado te va a encantar."></textarea></div>'+
+    '<div class="campo"><label for="rg-fecha">¿Cuándo le llega el correo?</label><input id="rg-fecha" type="date" min="'+hoyIso+'" value="'+hoyIso+'">'+
+    '<small style="color:var(--gris)">Con su correo, se lo enviamos ese día. Además, al pagar tendrás un botón para mandárselo tú por WhatsApp cuando quieras.</small></div>'+
+    '<div id="rg-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="rg-btn" class="btn btn-mor" onclick="pagarRegalo(\''+cid+'\')">Pagar el regalo</button>');
+}
+function pagarRegalo(cid){
+  var nom = $('rg-nom').value.trim(), correo = $('rg-correo').value.trim(), tel = $('rg-tel').value.replace(/\D/g,'');
+  var av = $('rg-aviso');
+  if(!nom){ av.innerHTML = '<div class="aviso aviso-error">Escribe el nombre de quien recibe el regalo.</div>'; return; }
+  if(!correo && !tel){ av.innerHTML = '<div class="aviso aviso-error">Escribe su correo o su WhatsApp para poder entregarle el regalo.</div>'; return; }
+  if(tel.length === 10) tel = '52' + tel;
+  var b = $('rg-btn'); b.disabled = true; b.textContent = 'Un momento…';
+  Nube.funcionServidor('tienda', { accion:'regalo', cursoId:cid, paraNombre:nom, paraCorreo:correo, paraTel:tel, mensaje:$('rg-msg').value.trim(),
+      deNombre:$('rg-de').value.trim(), entregarEn:$('rg-fecha').value, urlRegreso: location.origin+location.pathname })
+    .then(function(d){ if(d && d.init_point) location.href = d.init_point; else throw new Error('No se pudo iniciar el pago.'); })
+    .catch(function(e){ b.disabled = false; b.textContent = 'Pagar el regalo'; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+var ESTADO_REGALO = { pendiente_pago:'Esperando pago', pagado:'Pagado · se entrega en su fecha', enviado:'Entregado', canjeado:'Ya lo activó 🎉', cancelado:'Cancelado' };
+function enlaceRegalo(r){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(r.codigo) + '&curso=' + encodeURIComponent(r.curso_id); }
+function textoRegalo(r){
+  var c = programa(r.curso_id);
+  return '🎁 *¡' + r.para_nombre + ', tienes un regalo!* ' + (r.de_nombre ? r.de_nombre + ' te regaló' : 'Te regalaron') + ' *' + (c ? c.nombre : 'un programa') + '* en Instituto Mara: 100% en línea, a tu ritmo y con constancia al terminar.\n\n' +
+    (r.mensaje ? '💌 «' + r.mensaje + '»\n\n' : '') + '🎟 Tu código: *' + r.codigo + '* (válido 12 meses)\n👉 Actívalo aquí: ' + enlaceRegalo(r);
+}
+function whatsappRegalo(id){
+  var r = (BD.regalos||[]).filter(function(x){ return x.id === id; })[0]; if(!r || !r.codigo) return;
+  var tel = String(r.para_tel||'').replace(/\D/g,'');
+  window.open('https://wa.me/' + tel + '?text=' + encodeURIComponent(textoRegalo(r)), '_blank', 'noopener');
+}
+function copiarRegalo(id){
+  var r = (BD.regalos||[]).filter(function(x){ return x.id === id; })[0]; if(!r || !r.codigo) return;
+  try{ navigator.clipboard.writeText(textoRegalo(r)); alert('Mensaje copiado. Pégalo donde quieras.'); }catch(e){ prompt('Copia el mensaje:', textoRegalo(r)); }
+}
+function tarjetaRegalo(r){
+  var c = programa(r.curso_id);
+  return '<div class="tarjeta"><span class="etiqueta '+(r.estado==='pendiente_pago'?'alerta':'ok')+'">'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</span>'+
+    '<h3 style="margin:10px 0 4px;color:var(--tinta)">'+esc(c ? c.nombre : r.curso_id)+'</h3>'+
+    '<p style="color:var(--gris);font-size:.92rem">Para <b>'+esc(r.para_nombre)+'</b>'+(r.para_correo?' · '+esc(r.para_correo):'')+(r.entregar_en?' · entrega '+fechaLarga(String(r.entregar_en).slice(0,10)):'')+'</p>'+
+    (r.codigo ? '<p style="margin:10px 0">Código: <b>'+esc(r.codigo)+'</b></p><div style="display:flex;gap:8px;flex-wrap:wrap">'+
+      '<button class="btn btn-sm" style="background:#25D366;color:#fff" onclick="whatsappRegalo(\''+r.id+'\')">Enviar por WhatsApp</button>'+
+      '<button class="btn btn-linea btn-sm" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button></div>' : '')+'</div>';
+}
+function vistaRegalos(){
+  var mios = (BD.regalos||[]).filter(function(r){ return r.comprador_id === sesion.id && r.estado !== 'pendiente_pago'; });
+  return '<div class="seccion"><h2>Regala un curso o diplomado</h2>'+
+    '<p class="sub">Elige el programa en el catálogo y presiona «🎁 Regalar». Quien lo recibe obtiene un correo con tu mensaje y un código; también puedes mandárselo tú por WhatsApp.</p>'+
+    '<button class="btn btn-mor" style="margin-bottom:22px" onclick="ir(\'catalogo\')">Elegir un programa para regalar</button>'+
+    (mios.length ? '<h3 style="margin-bottom:12px;color:var(--tinta)">Tus regalos</h3><div class="rejilla rejilla-3">'+mios.map(tarjetaRegalo).join('')+'</div>'
+                 : '<div class="tarjeta vacio"><p>Todavía no has regalado ningún programa.</p></div>')+'</div>';
+}
+
+/* Regreso desde Mercado Pago (membresía o regalo) */
+function regresoTienda(params){
+  var mem = params.get('membresia'), reg = params.get('regalo'), id = params.get('id');
+  history.replaceState(null,'',location.pathname);
+  if(mem){
+    ir('membresia');
+    if(mem === 'fallo') abrirModal('El pago no se completó', '<p>Mercado Pago no pudo cobrar. Puedes intentar de nuevo con otra tarjeta.</p>', '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+    else {
+      abrirModal('¡Gracias! Estamos activando tu membresía', '<p>En cuanto Mercado Pago confirme el cobro (normalmente unos segundos) se activa sola y todo el catálogo incluido queda abierto para ti.</p><div id="mem-espera" class="aviso aviso-info">Esperando confirmación…</div>',
+        '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>');
+      var n = 0, t = setInterval(function(){
+        n++;
+        Nube.funcionServidor('tienda', { accion:'sincronizar' }).then(function(r){
+          if(r && r.membresias){ BD.membresias = r.membresias; guardar(); }
+          if(membresiaVigente()){ clearInterval(t); var el = $('mem-espera'); if(el){ el.className = 'aviso aviso-ok'; el.textContent = '¡Listo! Tu membresía está activa.'; } pintar(); }
+        }).catch(function(){});
+        if(n > 12){ clearInterval(t); var el2 = $('mem-espera'); if(el2) el2.textContent = 'La confirmación está tardando. Se activará sola; puedes cerrar esta ventana.'; }
+      }, 5000);
+    }
+    return true;
+  }
+  if(reg){
+    ir('regalos');
+    if(reg === 'fallo'){ abrirModal('El pago no se completó', '<p>Mercado Pago no pudo cobrar el regalo. Puedes intentarlo de nuevo.</p>', '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>'); return true; }
+    abrirModal('🎁 ¡Tu regalo está casi listo!', '<div id="rg-espera" class="aviso aviso-info">Esperando la confirmación del pago…</div>', '<button class="btn btn-mor" onclick="cerrarModal()">Cerrar</button>');
+    var k = 0, tt = setInterval(function(){
+      k++;
+      Nube.recargarMembresia(BD, sesion.id).then(function(){
+        guardar();
+        var r = (BD.regalos||[]).filter(function(x){ return x.id === id; })[0];
+        if(r && r.codigo){
+          clearInterval(tt);
+          var el = $('rg-espera');
+          if(el) el.outerHTML = '<p>'+(r.para_correo ? (r.estado === 'enviado' ? 'Ya le enviamos el correo a <b>'+esc(r.para_correo)+'</b>.' : 'Le llegará el correo a <b>'+esc(r.para_correo)+'</b> el '+fechaLarga(String(r.entregar_en).slice(0,10))+'.') : '')+
+            ' También puedes mandárselo tú ahora:</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">'+
+            '<button class="btn" style="background:#25D366;color:#fff" onclick="whatsappRegalo(\''+r.id+'\')">Enviar por WhatsApp</button>'+
+            '<button class="btn btn-linea" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button></div>';
+          pintar();
+        }
+      }).catch(function(){});
+      if(k > 24){ clearInterval(tt); var e3 = $('rg-espera'); if(e3) e3.textContent = 'Si pagaste en efectivo, el regalo se activa cuando Mercado Pago confirme. Lo verás en «Regalar».'; }
+    }, 5000);
+    return true;
+  }
+  return false;
+}
+
+/* ---------- Ajustes globales (solo administración) ---------- */
+function pintarAjustesGlobales(){
+  var caja = $('aj-globales'); if(!caja) return;
+  var dibujar = function(){
+    var img = ajuste('firma_img','');
+    caja.innerHTML =
+      '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:8px">Firma de las constancias</h3>'+
+      '<p style="color:var(--gris);font-size:.9rem;margin-bottom:14px">Aparece en todas las constancias, para todos los alumnos.</p>'+
+      '<div class="fila" style="margin:0"><div class="campo"><label>Nombre de quien firma</label><input id="ag-nom" value="'+esc(ajuste('director_nombre',''))+'" placeholder="Nombre y apellidos"></div>'+
+      '<div class="campo"><label>Cargo</label><input id="ag-puesto" value="'+esc(ajuste('director_puesto','Dirección Académica'))+'"></div></div>'+
+      '<div class="campo"><label>Imagen de la firma</label><div id="ag-firma-prev" style="background:#fff;border:1px dashed var(--linea);border-radius:12px;padding:12px;text-align:center;min-height:70px">'+
+        (img ? '<img src="'+esc(img)+'" style="max-height:80px;max-width:100%">' : '<span style="color:var(--gris)">Sin imagen</span>')+'</div>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><label class="btn btn-linea btn-sm" style="cursor:pointer">Subir imagen de mi firma<input type="file" accept="image/*" style="display:none" onchange="subirFirma(this)"></label>'+
+      (img ? '<button class="btn btn-fantasma btn-sm" onclick="quitarFirma()">Quitar</button>' : '')+'</div>'+
+      '<small style="color:var(--gris)">Firma con tinta oscura sobre papel blanco y toma una foto de cerca con buena luz; el fondo blanco se vuelve transparente solo.</small></div>'+
+      '<button class="btn btn-mor" onclick="guardarAjustesGlobales()">Guardar firma</button><div id="ag-aviso1"></div></div>'+
+      '<div class="tarjeta" style="margin-bottom:20px"><h3 style="font-size:1.05rem;color:var(--tinta);margin-bottom:8px">Membresías y descuentos</h3>'+
+      '<p style="color:var(--gris);font-size:.9rem;margin-bottom:14px">Los precios nuevos aplican a quien se suscriba desde ahora; las suscripciones existentes conservan su precio.</p>'+
+      '<div class="fila"><div class="campo"><label>Esencial (mensual, cursos)</label><input id="ag-p1" type="number" min="1" value="'+precioPlan('esencial')+'"></div>'+
+      '<div class="campo"><label>Total (mensual, todo)</label><input id="ag-p2" type="number" min="1" value="'+precioPlan('total')+'"></div>'+
+      '<div class="campo"><label>Anual Total (pago único)</label><input id="ag-p3" type="number" min="1" value="'+precioPlan('anual')+'"></div></div>'+
+      '<div class="campo"><label>Días de membresía para liberar la constancia de un diplomado</label><input id="ag-dias" type="number" min="0" max="365" value="'+Number(ajuste('dias_constancia_diplomado',60))+'"></div>'+
+      '<div class="fila"><div class="campo"><label>Descuento al terminar un programa (%)</label><input id="ag-rpct" type="number" min="5" max="90" value="'+Number(ajuste('recompra_pct',40))+'"></div>'+
+      '<div class="campo"><label>Vigencia del descuento (días)</label><input id="ag-rdias" type="number" min="1" max="90" value="'+Number(ajuste('recompra_dias',15))+'"></div>'+
+      '<div class="campo"><label>Recordatorio al día</label><input id="ag-rrec" type="number" min="1" max="89" value="'+Number(ajuste('recompra_recordatorio_dia',10))+'"></div></div>'+
+      '<button class="btn btn-mor" onclick="guardarAjustesGlobales()">Guardar precios y descuentos</button><div id="ag-aviso2"></div></div>';
+  };
+  if(NUBE) Nube.cargarAjustes(BD).then(function(){ guardar(); dibujar(); }).catch(dibujar); else dibujar();
+}
+var firmaNueva = null;
+function subirFirma(input){
+  var f = input.files && input.files[0]; if(!f) return;
+  var lector = new FileReader();
+  lector.onload = function(){
+    var im = new Image();
+    im.onload = function(){
+      var esc0 = Math.min(1, 700 / im.width, 260 / im.height), w = Math.round(im.width*esc0), h = Math.round(im.height*esc0);
+      var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+      var cx = cv.getContext('2d'); cx.drawImage(im, 0, 0, w, h);
+      var d = cx.getImageData(0, 0, w, h), px = d.data, minX = w, minY = h, maxX = 0, maxY = 0;
+      for(var i=0;i<px.length;i+=4){
+        var lum = 0.299*px[i] + 0.587*px[i+1] + 0.114*px[i+2];
+        if(lum > 185){ px[i+3] = 0; } else { var p = i/4, x = p % w, y = (p - x) / w; if(x<minX)minX=x; if(x>maxX)maxX=x; if(y<minY)minY=y; if(y>maxY)maxY=y; px[i]=Math.min(px[i],60); px[i+1]=Math.min(px[i+1],60); px[i+2]=Math.min(px[i+2],90); }
+      }
+      cx.putImageData(d, 0, 0);
+      if(maxX <= minX || maxY <= minY){ alert('No encontramos trazos en la imagen. Usa una foto de la firma en tinta oscura sobre papel blanco.'); return; }
+      var m = 8, cw = maxX - minX + 2*m, ch = maxY - minY + 2*m, cv2 = document.createElement('canvas'); cv2.width = cw; cv2.height = ch;
+      cv2.getContext('2d').drawImage(cv, minX - m, minY - m, cw, ch, 0, 0, cw, ch);
+      firmaNueva = cv2.toDataURL('image/png');
+      if(firmaNueva.length > 380000){ alert('La imagen quedó muy pesada. Recórtala más cerca de la firma.'); firmaNueva = null; return; }
+      $('ag-firma-prev').innerHTML = '<img src="'+firmaNueva+'" style="max-height:80px;max-width:100%"><br><small style="color:var(--gris)">Vista previa · presiona «Guardar firma»</small>';
+    };
+    im.src = lector.result;
+  };
+  lector.readAsDataURL(f);
+}
+function quitarFirma(){ firmaNueva = ''; $('ag-firma-prev').innerHTML = '<span style="color:var(--gris)">Sin imagen · presiona «Guardar firma»</span>'; }
+function guardarAjustesGlobales(){
+  var c = {
+    director_nombre: $('ag-nom').value.trim(), director_puesto: $('ag-puesto').value.trim() || 'Dirección Académica',
+    precio_esencial: Number($('ag-p1').value), precio_total: Number($('ag-p2').value), precio_anual: Number($('ag-p3').value),
+    dias_constancia_diplomado: Number($('ag-dias').value), recompra_pct: Number($('ag-rpct').value),
+    recompra_dias: Number($('ag-rdias').value), recompra_recordatorio_dia: Number($('ag-rrec').value)
+  };
+  if(firmaNueva !== null) c.firma_img = firmaNueva || null;
+  if(!(c.precio_esencial > 0 && c.precio_total > 0 && c.precio_anual > 0)){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">Revisa los precios.</div>'; return; }
+  if(c.recompra_recordatorio_dia >= c.recompra_dias){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">El recordatorio debe llegar antes de que venza el descuento.</div>'; return; }
+  Nube.guardarAjustes(c).then(function(f){
+    if(f && f[0]) BD.ajustes = f[0]; firmaNueva = null; guardar();
+    ['ag-aviso1','ag-aviso2'].forEach(function(id){ var el = $(id); if(el) el.innerHTML = '<div class="aviso aviso-ok">Guardado.</div>'; });
+  }).catch(function(e){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+
+/* ---------- Administración: membresías, regalos y recompras ---------- */
+function vistaAdminTienda(){
+  setTimeout(function(){
+    Nube.adminTienda().then(function(d){
+      var caja = $('at-datos'); if(!caja) return;
+      var ahora = Date.now(), nombre = function(id){ var u = usuario(id); return u ? u.nombre : String(id).slice(0,8); };
+      var activas = d.membresias.filter(function(m){ return (m.estado==='activa'||m.estado==='cancelada') && new Date(m.vigente_hasta).getTime() >= ahora; });
+      var mrr = activas.filter(function(m){ return m.estado==='activa' && m.plan!=='anual'; }).reduce(function(a,m){ return a + Number(m.monto||0); }, 0);
+      var usados = {}; d.cupones.forEach(function(c){ usados[c.codigo] = c.usos > 0; });
+      var conv = d.recompras.filter(function(r){ return usados[r.codigo]; }).length;
+      caja.innerHTML = '<div class="rejilla rejilla-3" style="margin-bottom:22px">'+
+        '<div class="tarjeta"><b style="font-size:1.8rem;color:var(--morado)">'+activas.length+'</b><p>membresías vigentes</p></div>'+
+        '<div class="tarjeta"><b style="font-size:1.8rem;color:var(--morado)">'+dinero(mrr)+'</b><p>ingreso mensual recurrente</p></div>'+
+        '<div class="tarjeta"><b style="font-size:1.8rem;color:var(--morado)">'+conv+' / '+d.recompras.length+'</b><p>descuentos de recompra usados</p></div></div>'+
+        '<h3 style="margin:10px 0">Membresías</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Alumno</th><th>Plan</th><th>Estado</th><th>Vigente hasta</th><th>Monto</th></tr>'+
+        d.membresias.map(function(m){ return '<tr><td>'+esc(nombre(m.usuario_id))+'</td><td>'+esc((PLANES_MEM[m.plan]||{}).nombre||m.plan)+'</td><td>'+esc(m.estado)+'</td><td>'+(m.vigente_hasta?fechaLarga(String(m.vigente_hasta).slice(0,10)):'—')+'</td><td>'+(m.monto?dinero(m.monto):'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
+        '<h3 style="margin:22px 0 10px">Regalos</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Compró</th><th>Para</th><th>Programa</th><th>Entrega</th><th>Estado</th><th>Código</th></tr>'+
+        d.regalos.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.comprador_id))+'</td><td>'+esc(r.para_nombre)+'<br><small>'+esc(r.para_correo||r.para_tel||'')+'</small></td><td>'+esc(c?c.nombre:r.curso_id)+'</td><td>'+esc(r.entregar_en||'')+'</td><td>'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</td><td>'+esc(r.codigo||'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
+        '<h3 style="margin:22px 0 10px">Descuentos de recompra enviados</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Alumno</th><th>Terminó</th><th>Código</th><th>¿Lo usó?</th></tr>'+
+        d.recompras.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.usuario_id))+'</td><td>'+esc(c?c.nombre:r.curso_id)+'</td><td>'+esc(r.codigo)+'</td><td>'+(usados[r.codigo]?'Sí':'No')+'</td></tr>'; }).join('')+'</table></div></div>';
+    }).catch(function(e){ var caja = $('at-datos'); if(caja) caja.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+  }, 0);
+  return '<div class="seccion"><h2>Membresías, regalos y recompras</h2><p class="sub">Precios y porcentajes se cambian en Ajustes.</p><div id="at-datos">Cargando…</div></div>';
 }
 
 /* ---------------- Lección de muestra (sin cuenta) ----------------

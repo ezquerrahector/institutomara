@@ -160,7 +160,7 @@ const recorta = (t, n) => { if (t.length <= n) return t; const s = t.slice(0, n)
 const sPath = path.join(RAIZ, 'sitio-web/index.html'); let html = fs.readFileSync(sPath, 'utf8');
 function upsert(nombre, obj) { const re = new RegExp('var ' + nombre + ' = (\\[.*?\\]);', 's'); const arr = JSON.parse(html.match(re)[1]);
   const i = arr.findIndex(x => x.id === obj.id); if (i >= 0) arr[i] = obj; else arr.push(obj); html = html.replace(re, () => 'var ' + nombre + ' = ' + JSON.stringify(arr) + ';'); }
-upsert('OFERTA', { id: S.id, n: S.nombre, f: 'Diplomados', h: HORAS, p: PRECIO, d: recorta(S.desc, 148) });
+upsert('OFERTA', { id: S.id, n: S.nombre, f: 'Diplomados', h: HORAS, p: PRECIO, d: recorta(S.desc, 148), a: S.area || 'Desarrollo humano' });
 upsert('DESTACADOS', { id: S.id, n: S.nombre, tipo: 'Diplomado', h: HORAS, p: PRECIO, color: S.color, d: recorta(S.desc, 128), a: S.aprender.slice(0, 3), nuevo: true });
 fs.writeFileSync(sPath, html);
 const tPath = path.join(RAIZ, 'sitio-web/temarios.json'), T = JSON.parse(fs.readFileSync(tPath, 'utf8'));
