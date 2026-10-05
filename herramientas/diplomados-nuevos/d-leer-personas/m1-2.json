@@ -1,353 +1,814 @@
-{ "modulos": [
 {
-  "t": "Fundamentos: qué significa leer a una persona",
-  "r": "Descubre qué tan bien comprendemos a los demás según la investigación, por qué nos equivocamos y el método que usarás en todo el diplomado: observar, formular hipótesis, preguntar y verificar, y ajustar.",
-  "lecciones": [
+ "modulos": [
+  {
+   "t": "Fundamentos: qué significa leer a una persona",
+   "r": "Descubre qué tan bien comprendemos a los demás según la investigación, por qué nos equivocamos y el método que usarás en todo el diplomado: observar, formular hipótesis, preguntar y verificar, y ajustar.",
+   "lecciones": [
     {
-      "t": "Leer a alguien no es adivinar: el método de las cuatro fases",
-      "obj": "Explicar qué significa leer a una persona con precisión y aplicar las cuatro fases del método a una situación cotidiana.",
-      "texto": [
-        "En la conversación diaria, «leer a las personas» suena a un talento casi mágico: mirar a alguien unos segundos y saber qué piensa. La psicología lo plantea de otra manera. Leer a una persona es construir una idea razonable de lo que piensa, siente y necesita, y de cómo suele decidir, a partir de lo que dice, lo que hace y la situación en la que está. Esa idea siempre es provisional, porque la mente ajena no se ve: sólo tenemos pistas.",
-        "Por eso este diplomado usa un método de cuatro fases. <b>Observar:</b> registrar hechos concretos (qué dijo, qué hizo, cuándo y dónde) antes de interpretarlos. <b>Formular hipótesis:</b> proponer dos o tres explicaciones posibles, no una sola. <b>Preguntar y verificar:</b> buscar información que confirme o descarte cada hipótesis, casi siempre conversando con la persona. <b>Ajustar:</b> cambiar tu lectura y tu forma de tratarla según lo que descubriste.",
-        "La diferencia entre observar e interpretar sostiene todo lo demás. «Llegó veinte minutos tarde y no saludó» es una observación. «No le importa el equipo» es una interpretación. Cuando saltas directo a la interpretación, tu mente deja de recoger datos y empieza a coleccionar pruebas de lo que ya decidiste. Separar ambos pasos te protege de conclusiones injustas y te deja algo que sí puedes comprobar.",
-        "Leer bien no es un fin en sí mismo. Sirve para comunicarte mejor, resolver conflictos, atender clientes, acompañar a tu familia y tomar decisiones con menos malentendidos. También tiene un límite ético que recorrerás a lo largo del curso: comprender a alguien no te da derecho a etiquetarlo, a manipularlo ni a decidir por él."
+     "t": "Leer a alguien no es adivinar: el método de las cuatro fases",
+     "obj": "Explicar qué significa leer a una persona con precisión y aplicar las cuatro fases del método a una situación cotidiana.",
+     "texto": [
+      "En la conversación diaria, «leer a las personas» suena a un talento casi mágico: mirar a alguien unos segundos y saber qué piensa. La psicología lo plantea de otra manera. Leer a una persona es construir una idea razonable de lo que piensa, siente y necesita, y de cómo suele decidir, a partir de lo que dice, lo que hace y la situación en la que está. Esa idea siempre es provisional, porque la mente ajena no se ve: sólo tenemos pistas.",
+      "Por eso este diplomado usa un método de cuatro fases. <b>Observar:</b> registrar hechos concretos (qué dijo, qué hizo, cuándo y dónde) antes de interpretarlos. <b>Formular hipótesis:</b> proponer dos o tres explicaciones posibles, no una sola. <b>Preguntar y verificar:</b> buscar información que confirme o descarte cada hipótesis, casi siempre conversando con la persona. <b>Ajustar:</b> cambiar tu lectura y tu forma de tratarla según lo que descubriste.",
+      "La diferencia entre observar e interpretar sostiene todo lo demás. «Llegó veinte minutos tarde y no saludó» es una observación. «No le importa el equipo» es una interpretación. Cuando saltas directo a la interpretación, tu mente deja de recoger datos y empieza a coleccionar pruebas de lo que ya decidiste. Separar ambos pasos te protege de conclusiones injustas y te deja algo que sí puedes comprobar.",
+      "Leer bien no es un fin en sí mismo. Sirve para comunicarte mejor, resolver conflictos, atender clientes, acompañar a tu familia y tomar decisiones con menos malentendidos. También tiene un límite ético que recorrerás a lo largo del curso: comprender a alguien no te da derecho a etiquetarlo, a manipularlo ni a decidir por él."
+     ],
+     "comparar": [
+      "«Así no: “Ya sé lo que pasa: no me contestó porque está enojado conmigo.”»",
+      "«Así sí: “No me contesta desde ayer; puede estar ocupado, molesto o sin señal. Le voy a preguntar si todo está bien.”»"
+     ],
+     "caso": "Caso ficticio: Gerardo, supervisor de 38 años en una planta de autopartes de Saltillo, nota que Brenda, operadora con buen desempeño, dejó de participar en las juntas de arranque de turno desde hace dos semanas. Un compañero le asegura que «seguro ya se quiere ir». Gerardo debe decidir cómo actuar.",
+     "p": [
+      [
+       "¿Qué debería hacer Gerardo primero, según el método de cuatro fases?",
+       "Anotar con precisión qué cambió en la conducta de Brenda y desde cuándo",
+       "Aceptar la explicación del compañero, que conoce a Brenda desde hace más tiempo que él",
+       "Pedir a recursos humanos que prepare un reemplazo antes de que ella presente su renuncia",
+       "Observar hechos concretos es la primera fase: sin ellos, cualquier interpretación es una suposición. La opinión del compañero es sólo una hipótesis más, y preparar un reemplazo actúa sobre una conclusión que nadie ha verificado."
       ],
-      "comparar": [
-        "«Así no: “Ya sé lo que pasa: no me contestó porque está enojado conmigo.”»",
-        "«Así sí: “No me contesta desde ayer; puede estar ocupado, molesto o sin señal. Le voy a preguntar si todo está bien.”»"
+      [
+       "¿Cuál es un buen conjunto de hipótesis para Gerardo?",
+       "Busca otro empleo, vive un problema fuera del trabajo o algo en las juntas la incomoda",
+       "Busca otro empleo, porque es la explicación más frecuente cuando alguien se aísla en el trabajo",
+       "Está molesta con él, pues los cambios repentinos de conducta suelen ser reacciones hacia el jefe directo",
+       "Formular varias hipótesis evita casarse con la primera. Las otras respuestas eligen una sola explicación y la justifican con una generalización que no se ha comprobado en este caso."
       ],
-      "caso": "Caso ficticio: Gerardo, supervisor de 38 años en una planta de autopartes de Saltillo, nota que Brenda, operadora con buen desempeño, dejó de participar en las juntas de arranque de turno desde hace dos semanas. Un compañero le asegura que «seguro ya se quiere ir». Gerardo debe decidir cómo actuar.",
-      "p": [
-        ["¿Qué debería hacer Gerardo primero, según el método de cuatro fases?", "Anotar con precisión qué cambió en la conducta de Brenda y desde cuándo", "Aceptar la explicación del compañero, que conoce a Brenda desde hace más tiempo que él", "Pedir a recursos humanos que prepare un reemplazo antes de que ella presente su renuncia", "Observar hechos concretos es la primera fase: sin ellos, cualquier interpretación es una suposición. La opinión del compañero es sólo una hipótesis más, y preparar un reemplazo actúa sobre una conclusión que nadie ha verificado."],
-        ["¿Cuál es un buen conjunto de hipótesis para Gerardo?", "Busca otro empleo, vive un problema fuera del trabajo o algo en las juntas la incomoda", "Busca otro empleo, porque es la explicación más frecuente cuando alguien se aísla en el trabajo", "Está molesta con él, pues los cambios repentinos de conducta suelen ser reacciones hacia el jefe directo", "Formular varias hipótesis evita casarse con la primera. Las otras respuestas eligen una sola explicación y la justifican con una generalización que no se ha comprobado en este caso."],
-        ["¿Qué forma de verificar es más adecuada?", "Platicar a solas con Brenda, mencionar el cambio que notó y preguntarle cómo está", "Observarla dos semanas más sin decir nada, para reunir pruebas suficientes de lo que ocurre", "Preguntar a sus compañeros de línea qué saben de su vida personal y de sus planes", "La fuente más directa es la propia persona, en privado y sin acusar. Esperar en silencio prolonga el problema, y preguntar a terceros sobre su vida personal invade su privacidad y alimenta rumores."]
-      ],
-      "completar": ["Leer a una persona es construir una idea razonable y ___ de lo que piensa, siente y necesita.", "provisional"],
-      "relacionar": [
-        ["Observar", "Anotar que llegó tarde tres días seguidos"],
-        ["Formular hipótesis", "Pensar en tres causas posibles del cambio"],
-        ["Preguntar y verificar", "Preguntarle en privado cómo se ha sentido"],
-        ["Ajustar", "Cambiar el horario de la junta después de escucharla"],
-        ["Interpretar sin datos", "Concluir de inmediato que no le importa el equipo"]
-      ],
-      "refl": "Elige una situación reciente en la que interpretaste la conducta de alguien de tu familia, tu trabajo o tus amistades. 1) Escribe sólo los hechos observables, sin adjetivos. 2) Escribe la interpretación que hiciste en ese momento. 3) Propón otras dos hipótesis posibles. 4) Redacta una pregunta respetuosa con la que podrías verificarlas.",
-      "modelo": "Modelo: «Hechos: mi cuñado no vino a la comida del domingo, avisó una hora antes y no explicó el motivo. Mi interpretación: sigue resentido por la discusión de diciembre. Otras hipótesis: tuvo un problema de trabajo que no quiso contar; se sintió incómodo porque iba a estar su exesposa. Pregunta: “Te extrañamos el domingo, ¿todo bien?”» Es buena porque separa hechos de interpretación, propone hipótesis distintas entre sí y cierra con una pregunta abierta que no acusa.",
-      "plantilla": ["Mi lectura en cuatro fases", "Persona y situación: [quién, dónde, cuándo]\n1. Observo (hechos, sin adjetivos): [qué dijo o hizo]\n2. Hipótesis posibles: A) [ ] B) [ ] C) [ ]\n3. Cómo voy a verificar: [pregunta o dato que buscaré]\n4. Ajuste después de verificar: [qué cambio en mi lectura y en mi trato]"],
-      "clave": [
-        "Leer a una persona es construir hipótesis sobre su mente a partir de pistas, no adivinar.",
-        "Separar la observación de la interpretación es el primer paso para no juzgar de más.",
-        "El método del diplomado tiene cuatro fases: observar, formular hipótesis, preguntar y verificar, y ajustar."
+      [
+       "¿Qué forma de verificar es más adecuada?",
+       "Platicar a solas con Brenda, mencionar el cambio que notó y preguntarle cómo está",
+       "Observarla dos semanas más sin decir nada, para reunir pruebas suficientes de lo que ocurre",
+       "Preguntar a sus compañeros de línea qué saben de su vida personal y de sus planes",
+       "La fuente más directa es la propia persona, en privado y sin acusar. Esperar en silencio prolonga el problema, y preguntar a terceros sobre su vida personal invade su privacidad y alimenta rumores."
       ]
+     ],
+     "completar": [
+      "Leer a una persona es construir una idea razonable y ___ de lo que piensa, siente y necesita.",
+      "provisional"
+     ],
+     "relacionar": [
+      [
+       "Observar",
+       "Anotar que llegó tarde tres días seguidos"
+      ],
+      [
+       "Formular hipótesis",
+       "Pensar en tres causas posibles del cambio"
+      ],
+      [
+       "Preguntar y verificar",
+       "Preguntarle en privado cómo se ha sentido"
+      ],
+      [
+       "Ajustar",
+       "Cambiar el horario de la junta después de escucharla"
+      ],
+      [
+       "Interpretar sin datos",
+       "Concluir de inmediato que no le importa el equipo"
+      ]
+     ],
+     "refl": "Elige una situación reciente en la que interpretaste la conducta de alguien de tu familia, tu trabajo o tus amistades. 1) Escribe sólo los hechos observables, sin adjetivos. 2) Escribe la interpretación que hiciste en ese momento. 3) Propón otras dos hipótesis posibles. 4) Redacta una pregunta respetuosa con la que podrías verificarlas.",
+     "modelo": "Modelo: «Hechos: mi cuñado no vino a la comida del domingo, avisó una hora antes y no explicó el motivo. Mi interpretación: sigue resentido por la discusión de diciembre. Otras hipótesis: tuvo un problema de trabajo que no quiso contar; se sintió incómodo porque iba a estar su exesposa. Pregunta: “Te extrañamos el domingo, ¿todo bien?”» Es buena porque separa hechos de interpretación, propone hipótesis distintas entre sí y cierra con una pregunta abierta que no acusa.",
+     "plantilla": [
+      "Mi lectura en cuatro fases",
+      "Persona y situación: [quién, dónde, cuándo]\n1. Observo (hechos, sin adjetivos): [qué dijo o hizo]\n2. Hipótesis posibles: A) [ ] B) [ ] C) [ ]\n3. Cómo voy a verificar: [pregunta o dato que buscaré]\n4. Ajuste después de verificar: [qué cambio en mi lectura y en mi trato]"
+     ],
+     "clave": [
+      "Leer a una persona es construir hipótesis sobre su mente a partir de pistas, no adivinar.",
+      "Separar la observación de la interpretación es el primer paso para no juzgar de más.",
+      "El método del diplomado tiene cuatro fases: observar, formular hipótesis, preguntar y verificar, y ajustar."
+     ]
     },
     {
-      "t": "Qué tan buenos somos: la investigación sobre precisión empática",
-      "obj": "Describir qué ha medido la investigación sobre precisión empática y qué factores la aumentan o la reducen.",
-      "texto": [
-        "El psicólogo William Ickes y su equipo estudiaron durante años la <b>precisión empática:</b> la capacidad de inferir con exactitud lo que otra persona piensa y siente en un momento concreto. Su método era ingenioso. Dos personas conversaban de forma espontánea mientras se les grababa; después, cada una veía el video, lo detenía donde recordaba haber pensado o sentido algo y lo anotaba. Luego la otra persona veía los mismos momentos e intentaba adivinar esos pensamientos. Así se comparaba la inferencia con lo que realmente había pasado por la mente del otro.",
-        "Los resultados son una lección de humildad. En un estudio con parejas de hombres, los desconocidos obtuvieron en promedio alrededor de 20 puntos en una escala de 0 a 100, y los amigos cerca de 30. Conocer a alguien ayuda, pero aun entre amigos la mayor parte de lo que el otro piensa se nos escapa. Otros trabajos mostraron que la confianza que tenemos en nuestra lectura suele crecer más que nuestro acierto real.",
-        "¿De qué depende la precisión? De la información disponible (lo que la persona expresa), del conocimiento previo que tienes de ella, de tu motivación para entenderla y de la retroalimentación. En varios estudios, las diferencias entre hombres y mujeres se reducían mucho cuando se motivaba a todos por igual, lo que sugiere que el esfuerzo pesa tanto como el talento. Y cuando las personas recibían retroalimentación sobre lo que el otro en verdad pensaba, mejoraban.",
-        "La conclusión práctica es doble. Primero, desconfía de la sensación de «ya sé lo que piensa»: es una hipótesis, no un dato. Segundo, la precisión se entrena. Mejora cuando pones atención, cuando la otra persona habla con libertad y cuando comparas tu lectura con lo que ella misma te dice."
+     "t": "Qué tan buenos somos: la investigación sobre precisión empática",
+     "obj": "Describir qué ha medido la investigación sobre precisión empática y qué factores la aumentan o la reducen.",
+     "texto": [
+      "El psicólogo William Ickes y su equipo estudiaron durante años la <b>precisión empática:</b> la capacidad de inferir con exactitud lo que otra persona piensa y siente en un momento concreto. Su método era ingenioso. Dos personas conversaban de forma espontánea mientras se les grababa; después, cada una veía el video, lo detenía donde recordaba haber pensado o sentido algo y lo anotaba. Luego la otra persona veía los mismos momentos e intentaba adivinar esos pensamientos. Así se comparaba la inferencia con lo que realmente había pasado por la mente del otro.",
+      "Los resultados son una lección de humildad. En un estudio con hombres que conversaban en pares, los desconocidos obtuvieron en promedio alrededor de 20 puntos en una escala de 0 a 100, y los amigos cerca de 30. Conocer a alguien ayuda, pero aun entre amigos la mayor parte de lo que el otro piensa se nos escapa. Además, lo seguras que las personas se sentían de su habilidad para leer a otros casi no se relacionaba con su acierto real.",
+      "¿De qué depende la precisión? De la información disponible (lo que la persona expresa), del conocimiento previo que tienes de ella, de tu motivación para entenderla y de la retroalimentación. En varios estudios, las diferencias entre hombres y mujeres se reducían mucho cuando se motivaba a todos por igual, lo que sugiere que el esfuerzo pesa tanto como el talento. Y cuando las personas recibían retroalimentación sobre lo que el otro en verdad pensaba, mejoraban.",
+      "La conclusión práctica es doble. Primero, desconfía de la sensación de «ya sé lo que piensa»: es una hipótesis, no un dato. Segundo, la precisión se entrena. Mejora cuando pones atención, cuando la otra persona habla con libertad y cuando comparas tu lectura con lo que ella misma te dice."
+     ],
+     "comparar": [
+      "«Así no: “Llevamos quince años de casados; no necesito preguntarle, ya sé lo que quiere para su cumpleaños.”»",
+      "«Así sí: “Creo que le gustaría algo tranquilo, pero el año pasado me equivoqué. Voy a darle dos opciones y ver cuál le entusiasma.”»"
+     ],
+     "caso": "Caso ficticio: Rosalba, de 52 años, es orientadora en una secundaria de Tuxtla Gutiérrez. Presume que con veinte años de experiencia «sabe lo que un alumno siente con sólo verlo». Una colega le cuenta que un estudiante al que Rosalba describió como «flojo y desinteresado» en realidad trabaja de noche para ayudar en su casa.",
+     "p": [
+      [
+       "¿Qué enseñanza de la investigación sobre precisión empática aplica mejor a Rosalba?",
+       "Sentirse muy seguro de leer bien a otros casi no predice el acierto real",
+       "La experiencia profesional garantiza una lectura acertada de los estudiantes que atiende a diario",
+       "Las mujeres tienen una capacidad natural mayor para leer emociones que los hombres de su edad",
+       "Los estudios muestran que sentirse hábil para leer a otros casi no se relaciona con acertar. La experiencia ayuda, pero no garantiza nada, y las diferencias entre sexos se reducían al igualar la motivación."
       ],
-      "comparar": [
-        "«Así no: “Llevamos quince años de casados; no necesito preguntarle, ya sé lo que quiere para su cumpleaños.”»",
-        "«Así sí: “Creo que le gustaría algo tranquilo, pero el año pasado me equivoqué. Voy a darle dos opciones y ver cuál le entusiasma.”»"
+      [
+       "¿Qué factor aumentaría más la precisión de Rosalba con sus alumnos?",
+       "Conversar con ellos y comparar su lectura con lo que ellos le cuentan",
+       "Observarlos con más atención en el patio para detectar gestos que revelen lo que sienten",
+       "Leer los reportes de conducta de otros ciclos escolares antes de conocer a cada grupo",
+       "La retroalimentación directa, es decir, lo que la persona dice de sí misma, mejora la precisión. Observar más sin preguntar mantiene las suposiciones, y los reportes previos pueden sesgar su primera impresión."
       ],
-      "caso": "Caso ficticio: Rosalba, de 52 años, es orientadora en una secundaria de Tuxtla Gutiérrez. Presume que con veinte años de experiencia «sabe lo que un alumno siente con sólo verlo». Una colega le cuenta que un estudiante al que Rosalba describió como «flojo y desinteresado» en realidad trabaja de noche para ayudar en su casa.",
-      "p": [
-        ["¿Qué enseñanza de la investigación sobre precisión empática aplica mejor a Rosalba?", "La confianza en la propia lectura puede crecer más que el acierto real", "La experiencia profesional garantiza una lectura acertada de los estudiantes que atiende a diario", "Las mujeres tienen una capacidad natural mayor para leer emociones que los hombres de su edad", "Los estudios muestran que sentirse seguro de una lectura no equivale a acertar. La experiencia ayuda, pero no garantiza nada, y las diferencias entre sexos se reducían al igualar la motivación."],
-        ["¿Qué factor aumentaría más la precisión de Rosalba con sus alumnos?", "Conversar con ellos y comparar su lectura con lo que ellos le cuentan", "Observarlos con más atención en el patio para detectar gestos que revelen lo que sienten", "Leer los reportes de conducta de otros ciclos escolares antes de conocer a cada grupo", "La retroalimentación directa, es decir, lo que la persona dice de sí misma, mejora la precisión. Observar más sin preguntar mantiene las suposiciones, y los reportes previos pueden sesgar su primera impresión."],
-        ["¿Cómo debería interpretar Rosalba la puntuación de 30 sobre 100 entre amigos?", "Aun con personas cercanas, gran parte de lo que piensan se nos escapa", "Leer a otros es inútil, así que conviene dejar de intentarlo en el trabajo", "Los amigos mienten sobre lo que piensan y por eso los estudios muestran cifras bajas", "La cifra muestra un límite real incluso con personas conocidas. No significa que sea inútil intentarlo, sino que hay que verificar; y el estudio no midió mentiras, sino inferencias."]
-      ],
-      "completar": ["La capacidad de inferir con exactitud lo que otra persona piensa y siente se llama precisión ___.", "empática"],
-      "relacionar": [
-        ["Información disponible", "Que la persona hable con libertad de lo que le pasa"],
-        ["Conocimiento previo", "Saber cómo reaccionó tu amiga en situaciones parecidas"],
-        ["Motivación", "Poner atención genuina porque te importa entenderla"],
-        ["Retroalimentación", "Comparar tu suposición con lo que ella misma te dice"]
-      ],
-      "refl": "Haz un pequeño experimento de precisión empática. 1) Elige a una persona cercana y, antes de hablar con ella, escribe qué crees que piensa sobre un tema concreto (su trabajo, un plan familiar, una decisión reciente). 2) Anota qué tan seguro estás, de 0 a 10. 3) Pregúntale con calma y escribe su respuesta. 4) Compara: ¿en qué acertaste, en qué no y qué te sorprendió?",
-      "modelo": "Modelo: «Pensé que mi hermano estaba contento con su nuevo trabajo en Querétaro; seguridad: 8. Al preguntarle me dijo que el sueldo le gusta, pero se siente solo y extraña a sus hijos. Acerté en lo económico y fallé en lo emocional. Me sorprendió que mi seguridad fuera tan alta: me basé en sus fotos en redes.» Es buena porque registra la predicción antes de preguntar, mide la confianza, compara con la fuente directa y descubre de dónde salió el error.",
-      "plantilla": ["Experimento de precisión empática", "Persona: [nombre]\nTema: [sobre qué voy a inferir]\nMi predicción antes de preguntar: [ ]\nSeguridad (0 a 10): [ ]\nLo que me respondió: [ ]\nAcerté en: [ ]\nMe equivoqué en: [ ]\nDe dónde salió mi error: [suposición, redes, experiencias pasadas]"],
-      "clave": [
-        "En los estudios de Ickes, aun los amigos captaban sólo una parte de lo que el otro pensaba.",
-        "Sentirse seguro de una lectura no significa acertar.",
-        "La precisión mejora con información, motivación, conocimiento previo y retroalimentación."
+      [
+       "¿Cómo debería interpretar Rosalba que, en los estudios de Ickes, aun los amigos obtuvieran cerca de 30 sobre 100?",
+       "Aun con personas cercanas, gran parte de lo que piensan se nos escapa",
+       "Leer a otros es inútil, así que conviene dejar de intentarlo en el trabajo",
+       "Los amigos mienten sobre lo que piensan y por eso los estudios muestran cifras bajas",
+       "La cifra muestra un límite real incluso con personas conocidas. No significa que sea inútil intentarlo, sino que hay que verificar; y el estudio no midió mentiras, sino inferencias."
       ]
+     ],
+     "completar": [
+      "La capacidad de inferir con exactitud lo que otra persona piensa y siente se llama precisión ___.",
+      "empática"
+     ],
+     "relacionar": [
+      [
+       "Información disponible",
+       "Que la persona hable con libertad de lo que le pasa"
+      ],
+      [
+       "Conocimiento previo",
+       "Saber cómo reaccionó tu amiga en situaciones parecidas"
+      ],
+      [
+       "Motivación",
+       "Poner atención genuina porque te importa entenderla"
+      ],
+      [
+       "Retroalimentación",
+       "Comparar tu suposición con lo que ella misma te dice"
+      ]
+     ],
+     "refl": "Haz un pequeño experimento de precisión empática. 1) Elige a una persona cercana y, antes de hablar con ella, escribe qué crees que piensa sobre un tema concreto (su trabajo, un plan familiar, una decisión reciente). 2) Anota qué tan seguro estás, de 0 a 10. 3) Pregúntale con calma y escribe su respuesta. 4) Compara: ¿en qué acertaste, en qué no y qué te sorprendió?",
+     "modelo": "Modelo: «Pensé que mi hermano estaba contento con su nuevo trabajo en Querétaro; seguridad: 8. Al preguntarle me dijo que el sueldo le gusta, pero se siente solo y extraña a sus hijos. Acerté en lo económico y fallé en lo emocional. Me sorprendió que mi seguridad fuera tan alta: me basé en sus fotos en redes.» Es buena porque registra la predicción antes de preguntar, mide la confianza, compara con la fuente directa y descubre de dónde salió el error.",
+     "plantilla": [
+      "Experimento de precisión empática",
+      "Persona: [nombre]\nTema: [sobre qué voy a inferir]\nMi predicción antes de preguntar: [ ]\nSeguridad (0 a 10): [ ]\nLo que me respondió: [ ]\nAcerté en: [ ]\nMe equivoqué en: [ ]\nDe dónde salió mi error: [suposición, redes, experiencias pasadas]"
+     ],
+     "clave": [
+      "En los estudios de Ickes, aun los amigos captaban sólo una parte de lo que el otro pensaba.",
+      "Sentirse seguro de una lectura no significa acertar.",
+      "La precisión mejora con información, motivación, conocimiento previo y retroalimentación."
+     ]
     },
     {
-      "t": "Teoría de la mente: cómo imaginamos lo que pasa en otra cabeza",
-      "obj": "Reconocer los errores egocéntricos que distorsionan cómo imaginamos la mente de otras personas.",
-      "texto": [
-        "La <b>teoría de la mente</b> es la capacidad de entender que otras personas tienen creencias, deseos, intenciones y conocimientos distintos de los tuyos. Se desarrolla en la infancia y la usamos todo el tiempo sin notarlo: cuando explicas una ruta, cuando decides si alguien entendió una broma o cuando anticipas cómo reaccionará tu jefa ante una noticia. Es una herramienta poderosa, pero trabaja con un punto de partida inevitable: tu propia mente.",
-        "Nicholas Epley, investigador de la Universidad de Chicago, resume así el problema: usamos lo que nosotros pensamos y sentimos como referencia para imaginar a los demás, y luego corregimos poco. De ahí salen errores frecuentes. La <b>ilusión de transparencia</b> es creer que tus emociones se notan más de lo que en realidad se notan: sientes que todos vieron tus nervios, y casi nadie lo percibió. La <b>maldición del conocimiento</b> es la dificultad para imaginar cómo ve algo quien no sabe lo que tú sabes: por eso los expertos explican con saltos y siglas.",
-        "Otro error es el <b>egocentrismo en los mensajes escritos.</b> En estudios sobre correo electrónico, quienes escribían con ironía confiaban en que el tono se entendería, pero los lectores lo captaban con mucha menos frecuencia de lo que los autores esperaban. Tú escuchas tu voz al escribir; quien lee, no.",
-        "Estos sesgos no se eliminan con buena voluntad, porque no se sienten como errores: se sienten como obviedades. Lo que sí funciona es tomar medidas concretas. Pregúntate «¿qué sabe esta persona que yo no sé, y qué sé yo que ella no sabe?», explica pensando en alguien que llega sin contexto y, cuando algo importe, confirma cómo lo entendió la otra persona."
+     "t": "Teoría de la mente: cómo imaginamos lo que pasa en otra cabeza",
+     "obj": "Reconocer los errores egocéntricos que distorsionan cómo imaginamos la mente de otras personas.",
+     "texto": [
+      "La <b>teoría de la mente</b> es la capacidad de entender que otras personas tienen creencias, deseos, intenciones y conocimientos distintos de los tuyos. Se desarrolla en la infancia y la usamos todo el tiempo sin notarlo: cuando explicas una ruta, cuando decides si alguien entendió una broma o cuando anticipas cómo reaccionará tu jefa ante una noticia. Es una herramienta poderosa, pero trabaja con un punto de partida inevitable: tu propia mente.",
+      "Nicholas Epley, investigador de la Universidad de Chicago, resume así el problema: usamos lo que nosotros pensamos y sentimos como referencia para imaginar a los demás, y luego corregimos poco. De ahí salen errores frecuentes. La <b>ilusión de transparencia</b> es creer que tus emociones se notan más de lo que en realidad se notan: sientes que todos vieron tus nervios, y casi nadie lo percibió. La <b>maldición del conocimiento</b> es la dificultad para imaginar cómo ve algo quien no sabe lo que tú sabes: por eso los expertos explican con saltos y siglas.",
+      "Otro error es el <b>egocentrismo en los mensajes escritos.</b> En estudios sobre correo electrónico, quienes escribían con ironía confiaban en que el tono se entendería, pero los lectores lo captaban con mucha menos frecuencia de lo que los autores esperaban. Tú escuchas tu voz al escribir; quien lee, no.",
+      "Estos sesgos no se eliminan con buena voluntad, porque no se sienten como errores: se sienten como obviedades. Lo que sí funciona es tomar medidas concretas. Pregúntate «¿qué sabe esta persona que yo no sé, y qué sé yo que ella no sabe?», explica pensando en alguien que llega sin contexto y, cuando algo importe, confirma cómo lo entendió la otra persona."
+     ],
+     "comparar": [
+      "«Así no: mandar al equipo “Ya saben qué hacer con lo de ayer” y molestarte porque nadie lo hizo.»",
+      "«Así sí: “Sobre la reunión de ayer: Lalo actualiza la lista de precios y Vero la envía a clientes el jueves. ¿Alguna duda?”»"
+     ],
+     "caso": "Caso ficticio: Ximena, de 29 años, es ingeniera de sistemas en Guadalajara. Capacita a personal de ventas para usar una aplicación nueva. Al terminar pregunta «¿quedó claro?», todos asienten y al día siguiente la mitad no puede registrar un pedido. Ximena piensa que no pusieron atención.",
+     "p": [
+      [
+       "¿Qué error de teoría de la mente explica mejor lo que le pasó a Ximena?",
+       "La maldición del conocimiento: le cuesta imaginar la aplicación desde quien no la conoce",
+       "La ilusión de transparencia: creyó que su entusiasmo por la aplicación era evidente para todo el grupo",
+       "El error de atribución: pensó que el grupo de ventas no sabía usar computadoras",
+       "Ximena conoce la aplicación a fondo y explica desde ahí, sin ver los pasos que para otros no son obvios. La ilusión de transparencia se refiere a las emociones propias, y el caso no muestra un juicio sobre habilidades informáticas."
       ],
-      "comparar": [
-        "«Así no: mandar al equipo “Ya saben qué hacer con lo de ayer” y molestarte porque nadie lo hizo.»",
-        "«Así sí: “Sobre la reunión de ayer: Lalo actualiza la lista de precios y Vero la envía a clientes el jueves. ¿Alguna duda?”»"
+      [
+       "¿Qué cambio mejoraría más la próxima capacitación?",
+       "Pedir que cada persona registre un pedido de prueba mientras ella observa",
+       "Preguntar al final, en voz más alta, si quedó claro y si alguien tiene dudas",
+       "Enviar después un manual detallado con los términos técnicos correctos de la aplicación",
+       "Ver a las personas hacer la tarea verifica la comprensión real. Preguntar «¿quedó claro?» invita a asentir por pena, y un manual técnico repite el problema de explicar desde el conocimiento experto."
       ],
-      "caso": "Caso ficticio: Ximena, de 29 años, es ingeniera de sistemas en Guadalajara. Capacita a personal de ventas para usar una aplicación nueva. Al terminar pregunta «¿quedó claro?», todos asienten y al día siguiente la mitad no puede registrar un pedido. Ximena piensa que no pusieron atención.",
-      "p": [
-        ["¿Qué error de teoría de la mente explica mejor lo que le pasó a Ximena?", "La maldición del conocimiento: le cuesta imaginar la aplicación desde quien no la conoce", "La ilusión de transparencia: creyó que su entusiasmo por la aplicación era evidente para todo el grupo", "El error de atribución: pensó que el grupo de ventas no sabía usar computadoras", "Ximena conoce la aplicación a fondo y explica desde ahí, sin ver los pasos que para otros no son obvios. La ilusión de transparencia se refiere a las emociones propias, y el caso no muestra un juicio sobre habilidades informáticas."],
-        ["¿Qué cambio mejoraría más la próxima capacitación?", "Pedir que cada persona registre un pedido de prueba mientras ella observa", "Preguntar al final, en voz más alta, si quedó claro y si alguien tiene dudas", "Enviar después un manual detallado con los términos técnicos correctos de la aplicación", "Ver a las personas hacer la tarea verifica la comprensión real. Preguntar «¿quedó claro?» invita a asentir por pena, y un manual técnico repite el problema de explicar desde el conocimiento experto."],
-        ["¿Qué interpretación de Ximena conviene revisar?", "Que no pusieron atención, cuando pudo faltar información que para ella era obvia", "Que la aplicación es difícil, porque ninguna aplicación nueva se aprende en una sola sesión", "Que el grupo mintió al asentir, porque en realidad nunca quiso aprender la aplicación", "La explicación «no pusieron atención» culpa al grupo sin considerar el propio punto ciego. Las otras dos respuestas también son conclusiones sin verificar, y la de la mentira atribuye mala intención sin datos."]
-      ],
-      "completar": ["Creer que tus emociones se notan más de lo que en realidad se notan se llama ilusión de ___.", "transparencia"],
-      "refl": "Revisa un mensaje o una explicación que diste esta semana y que no salió como esperabas (una instrucción de trabajo, un audio, un chat familiar). 1) Transcribe lo que dijiste o escribiste. 2) Señala qué información dabas por sabida. 3) Identifica si hubo maldición del conocimiento, ilusión de transparencia o egocentrismo en lo escrito. 4) Reescribe el mensaje para alguien que llega sin contexto.",
-      "modelo": "Modelo: «Escribí en el grupo de padres: “Ya saben, lo del festival como el año pasado”. Daba por sabido qué se hizo el año pasado, y hay tres familias nuevas. Fue maldición del conocimiento. Versión nueva: “Para el festival del 10 de mayo, cada familia lleva un platillo para compartir y una silla; llegamos a las 9:30. Si es su primer año, con gusto les explico.”» Es buena porque identifica el supuesto oculto, nombra el error y reescribe con datos concretos para quien no tiene contexto.",
-      "plantilla": ["Revisión de mensajes sin contexto", "Mensaje original: [ ]\nLo que di por sabido: [ ]\nQuién podría no saberlo: [ ]\nError probable: [maldición del conocimiento / ilusión de transparencia / tono escrito]\nMensaje reescrito: [qué, quién, cuándo, dónde, cómo]\nCómo confirmaré que se entendió: [pregunta o acción]"],
-      "clave": [
-        "Imaginamos la mente ajena a partir de la nuestra y corregimos menos de lo necesario.",
-        "La maldición del conocimiento y la ilusión de transparencia se sienten como obviedades, no como errores.",
-        "La mejor defensa es preguntarte qué sabe la otra persona y confirmar cómo entendió tu mensaje."
+      [
+       "¿Qué interpretación de Ximena conviene revisar?",
+       "Que no pusieron atención, cuando pudo faltar información que para ella era obvia",
+       "Que la aplicación es difícil, porque ninguna aplicación nueva se aprende en una sola sesión",
+       "Que el grupo mintió al asentir, porque en realidad nunca quiso aprender la aplicación",
+       "La explicación «no pusieron atención» culpa al grupo sin considerar el propio punto ciego. Las otras dos respuestas también son conclusiones sin verificar, y la de la mentira atribuye mala intención sin datos."
       ]
+     ],
+     "completar": [
+      "Creer que tus emociones se notan más de lo que en realidad se notan se llama ilusión de ___.",
+      "transparencia"
+     ],
+     "refl": "Revisa un mensaje o una explicación que diste esta semana y que no salió como esperabas (una instrucción de trabajo, un audio, un chat familiar). 1) Transcribe lo que dijiste o escribiste. 2) Señala qué información dabas por sabida. 3) Identifica si hubo maldición del conocimiento, ilusión de transparencia o egocentrismo en lo escrito. 4) Reescribe el mensaje para alguien que llega sin contexto.",
+     "modelo": "Modelo: «Escribí en el grupo de padres: “Ya saben, lo del festival como el año pasado”. Daba por sabido qué se hizo el año pasado, y hay tres familias nuevas. Fue maldición del conocimiento. Versión nueva: “Para el festival del 10 de mayo, cada familia lleva un platillo para compartir y una silla; llegamos a las 9:30. Si es su primer año, con gusto les explico.”» Es buena porque identifica el supuesto oculto, nombra el error y reescribe con datos concretos para quien no tiene contexto.",
+     "plantilla": [
+      "Revisión de mensajes sin contexto",
+      "Mensaje original: [ ]\nLo que di por sabido: [ ]\nQuién podría no saberlo: [ ]\nError probable: [maldición del conocimiento / ilusión de transparencia / tono escrito]\nMensaje reescrito: [qué, quién, cuándo, dónde, cómo]\nCómo confirmaré que se entendió: [pregunta o acción]"
+     ],
+     "clave": [
+      "Imaginamos la mente ajena a partir de la nuestra y corregimos menos de lo necesario.",
+      "La maldición del conocimiento y la ilusión de transparencia se sienten como obviedades, no como errores.",
+      "La mejor defensa es preguntarte qué sabe la otra persona y confirmar cómo entendió tu mensaje."
+     ]
     },
     {
-      "t": "Ponerse en los zapatos del otro no basta: obtener su perspectiva",
-      "obj": "Distinguir entre imaginar la perspectiva de alguien y obtenerla directamente, y usar preguntas para lograr lo segundo.",
-      "texto": [
-        "El consejo más repetido para entender a alguien es «ponte en sus zapatos». Suena sensato, y en parte lo es: imaginar la situación del otro reduce el egocentrismo y aumenta la disposición a ayudar. Pero ¿mejora la exactitud? Tal Eyal, Mary Steffel y Nicholas Epley lo pusieron a prueba en 25 experimentos publicados en 2018. Pidieron a las personas que imaginaran la perspectiva del otro antes de predecir sus emociones, sus opiniones o sus preferencias, y compararon sus aciertos con los de quienes no recibían esa instrucción.",
-        "El resultado sorprendió: imaginar la perspectiva ajena no aumentó la precisión de manera consistente, y en algunos casos la redujo. Las personas se esforzaban más y se sentían más seguras, pero no acertaban más. Lo que sí mejoró la exactitud fue lo que los autores llamaron <b>obtener la perspectiva:</b> preguntar directamente a la otra persona y escuchar su respuesta.",
-        "La razón es sencilla. Cuando imaginas los zapatos del otro, los rellenas con tus propios pies: tus valores, tu historia, tus gustos. Si la persona es muy distinta de ti, por edad, cultura, oficio o experiencia de vida, tu imaginación te lleva lejos de su realidad. Preguntar, en cambio, trae información nueva que no estaba en tu cabeza.",
-        "Esto no significa que imaginar sea inútil. Sirve para ablandar un juicio severo y para formular mejores hipótesis. El error es quedarte ahí. En el método del diplomado, imaginar alimenta la fase de hipótesis; preguntar y escuchar es la fase de verificación. Una buena pregunta abierta, del tipo «¿cómo lo viviste tú?» o «¿qué es lo más importante para ti en esto?», vale más que diez minutos de suponer."
+     "t": "Ponerse en los zapatos del otro no basta: obtener su perspectiva",
+     "obj": "Distinguir entre imaginar la perspectiva de alguien y obtenerla directamente, y usar preguntas para lograr lo segundo.",
+     "texto": [
+      "El consejo más repetido para entender a alguien es «ponte en sus zapatos». Suena sensato, y en parte lo es: imaginar la situación del otro reduce el egocentrismo y aumenta la disposición a ayudar. Pero ¿mejora la exactitud? Tal Eyal, Mary Steffel y Nicholas Epley lo pusieron a prueba en 25 experimentos publicados en 2018. Pidieron a las personas que imaginaran la perspectiva del otro antes de predecir sus emociones, sus opiniones o sus preferencias, y compararon sus aciertos con los de quienes no recibían esa instrucción.",
+      "El resultado sorprendió: imaginar la perspectiva ajena no aumentó la precisión de manera consistente, y en algunos casos la redujo. Las personas se esforzaban más y a veces se sentían más seguras, pero no acertaban más. Lo que sí mejoró la exactitud fue lo que los autores llamaron <b>obtener la perspectiva:</b> preguntar directamente a la otra persona y escuchar su respuesta.",
+      "La razón es sencilla. Cuando imaginas los zapatos del otro, los rellenas con tus propios pies: tus valores, tu historia, tus gustos. Si la persona es muy distinta de ti, por edad, cultura, oficio o experiencia de vida, tu imaginación te lleva lejos de su realidad. Preguntar, en cambio, trae información nueva que no estaba en tu cabeza.",
+      "Esto no significa que imaginar sea inútil. Sirve para ablandar un juicio severo y para formular mejores hipótesis. El error es quedarte ahí. En el método del diplomado, imaginar alimenta la fase de hipótesis; preguntar y escuchar es la fase de verificación. Una buena pregunta abierta, del tipo «¿cómo lo viviste tú?» o «¿qué es lo más importante para ti en esto?», vale más que diez minutos de suponer."
+     ],
+     "comparar": [
+      "«Así no: “Si yo fuera tu mamá, estaría feliz de ir a vivir con nosotros; ya le dije que se mude.”»",
+      "«Así sí: “Mamá, estamos pensando en que vivas con nosotros. ¿Qué te preocupa y qué te gustaría a ti?”»"
+     ],
+     "caso": "Caso ficticio: Arturo, de 45 años, dueño de una cafetería en Mérida, quiere premiar a su equipo por un buen trimestre. Se imagina en su lugar y decide organizar una comida el domingo en su casa. Dos de sus cinco empleados le dicen que no podrán ir y él se siente decepcionado.",
+     "p": [
+      [
+       "¿Qué error cometió Arturo al elegir el premio?",
+       "Imaginó lo que él querría en lugar de preguntar qué valoraba su equipo",
+       "Eligió un premio demasiado modesto para el esfuerzo que hizo el equipo durante el trimestre",
+       "Organizó la comida sin presupuesto suficiente y el equipo lo notó de inmediato",
+       "Arturo se puso en sus zapatos, pero los rellenó con sus propios gustos. No hay datos de que el premio fuera modesto o de un problema de presupuesto: faltó obtener la perspectiva del equipo."
       ],
-      "comparar": [
-        "«Así no: “Si yo fuera tu mamá, estaría feliz de ir a vivir con nosotros; ya le dije que se mude.”»",
-        "«Así sí: “Mamá, estamos pensando en que vivas con nosotros. ¿Qué te preocupa y qué te gustaría a ti?”»"
+      [
+       "¿Qué pregunta ayudaría más a Arturo a obtener la perspectiva de su equipo?",
+       "¿Qué tipo de reconocimiento les resultaría más útil o agradable?",
+       "¿Verdad que les gustaría una comida para celebrar juntos este buen trimestre?",
+       "¿Prefieren la comida el domingo en la tarde o el sábado en la noche en mi casa?",
+       "Una pregunta abierta deja espacio para respuestas que Arturo no imaginó, como un día libre o un bono. Las otras dos ya incluyen la respuesta que él espera y sólo permiten matizarla."
       ],
-      "caso": "Caso ficticio: Arturo, de 45 años, dueño de una cafetería en Mérida, quiere premiar a su equipo por un buen trimestre. Se imagina en su lugar y decide organizar una comida el domingo en su casa. Dos de sus cinco empleados le dicen que no podrán ir y él se siente decepcionado.",
-      "p": [
-        ["¿Qué error cometió Arturo al elegir el premio?", "Imaginó lo que él querría en lugar de preguntar qué valoraba su equipo", "Eligió un premio demasiado modesto para el esfuerzo que hizo el equipo durante el trimestre", "Organizó la comida sin presupuesto suficiente y el equipo lo notó de inmediato", "Arturo se puso en sus zapatos, pero los rellenó con sus propios gustos. No hay datos de que el premio fuera modesto o de un problema de presupuesto: faltó obtener la perspectiva del equipo."],
-        ["¿Qué pregunta ayudaría más a Arturo a obtener la perspectiva de su equipo?", "¿Qué tipo de reconocimiento les resultaría más útil o agradable?", "¿Verdad que les gustaría una comida para celebrar juntos este buen trimestre?", "¿Prefieren la comida el domingo en la tarde o el sábado en la noche en mi casa?", "Una pregunta abierta deja espacio para respuestas que Arturo no imaginó, como un día libre o un bono. Las otras dos ya incluyen la respuesta que él espera y sólo permiten matizarla."],
-        ["¿Qué papel cumple imaginar la perspectiva de otros dentro del método del diplomado?", "Ayuda a formular hipótesis que después se verifican preguntando", "Sustituye a la conversación cuando la persona es de confianza y conocemos su historia", "Es el paso final, que confirma si la lectura inicial fue correcta o no", "Imaginar genera ideas sobre lo que el otro podría sentir, pero no las comprueba. No sustituye la conversación ni confirma nada: la verificación viene de preguntar y escuchar."]
-      ],
-      "completar": ["Según Eyal, Steffel y Epley, la precisión mejora al ___ la perspectiva, es decir, al preguntar directamente.", "obtener"],
-      "relacionar": [
-        ["Imaginar la perspectiva", "Pensar cómo te sentirías tú en su lugar"],
-        ["Obtener la perspectiva", "Preguntarle qué es lo más importante para ella"],
-        ["Egocentrismo", "Suponer que a todos les gusta lo mismo que a ti"],
-        ["Pregunta cerrada que sugiere", "¿Verdad que prefieres quedarte en casa?"],
-        ["Pregunta abierta", "¿Cómo te gustaría pasar ese día?"]
-      ],
-      "refl": "Piensa en una decisión que afecta a otra persona y que estás por tomar (un regalo, un cambio en el trabajo, un plan familiar). 1) Escribe lo que imaginas que esa persona preferiría y por qué. 2) Redacta dos preguntas abiertas para obtener su perspectiva. 3) Si es posible, hazlas y anota qué respondió. 4) Explica qué habrías decidido mal si sólo hubieras imaginado.",
-      "modelo": "Modelo: «Iba a inscribir a mi papá, de 70 años, a un taller de computación porque yo creo que le haría bien. Preguntas: “¿Qué te gustaría aprender este año?” y “¿Qué te aburre o te cansa de las clases?”. Respondió que quiere aprender a hacer videollamadas con sus nietos, pero sin salón ni horarios fijos. Habría pagado un curso largo que no quería.» Es buena porque distingue la suposición de la respuesta real, usa preguntas abiertas y muestra el costo concreto de sólo imaginar.",
-      "plantilla": ["De imaginar a obtener la perspectiva", "Decisión: [qué voy a decidir]\nPersona afectada: [quién]\nLo que imagino que prefiere: [ ]\nPregunta abierta 1: [¿Qué…? / ¿Cómo…?]\nPregunta abierta 2: [¿Qué es lo más importante para ti en…?]\nLo que respondió: [ ]\nDecisión ajustada: [ ]"],
-      "clave": [
-        "Imaginar la perspectiva ajena no aumentó la precisión de forma consistente en 25 experimentos.",
-        "Preguntar y escuchar, es decir, obtener la perspectiva, sí mejoró la exactitud.",
-        "Imaginar sirve para formular hipótesis; preguntar sirve para verificarlas."
+      [
+       "¿Qué papel cumple imaginar la perspectiva de otros dentro del método del diplomado?",
+       "Ayuda a formular hipótesis que después se verifican preguntando",
+       "Sustituye a la conversación cuando la persona es de confianza y conocemos su historia",
+       "Es el paso final, que confirma si la lectura inicial fue correcta o no",
+       "Imaginar genera ideas sobre lo que el otro podría sentir, pero no las comprueba. No sustituye la conversación ni confirma nada: la verificación viene de preguntar y escuchar."
       ]
+     ],
+     "completar": [
+      "Según Eyal, Steffel y Epley, la precisión mejora al ___ la perspectiva, es decir, al preguntar directamente.",
+      "obtener"
+     ],
+     "relacionar": [
+      [
+       "Imaginar la perspectiva",
+       "Pensar cómo te sentirías tú en su lugar"
+      ],
+      [
+       "Obtener la perspectiva",
+       "Preguntarle qué es lo más importante para ella"
+      ],
+      [
+       "Egocentrismo",
+       "Suponer que a todos les gusta lo mismo que a ti"
+      ],
+      [
+       "Pregunta cerrada que sugiere",
+       "¿Verdad que prefieres quedarte en casa?"
+      ],
+      [
+       "Pregunta abierta",
+       "¿Cómo te gustaría pasar ese día?"
+      ]
+     ],
+     "refl": "Piensa en una decisión que afecta a otra persona y que estás por tomar (un regalo, un cambio en el trabajo, un plan familiar). 1) Escribe lo que imaginas que esa persona preferiría y por qué. 2) Redacta dos preguntas abiertas para obtener su perspectiva. 3) Si es posible, hazlas y anota qué respondió. 4) Explica qué habrías decidido mal si sólo hubieras imaginado.",
+     "modelo": "Modelo: «Iba a inscribir a mi papá, de 70 años, a un taller de computación porque yo creo que le haría bien. Preguntas: “¿Qué te gustaría aprender este año?” y “¿Qué te aburre o te cansa de las clases?”. Respondió que quiere aprender a hacer videollamadas con sus nietos, pero sin salón ni horarios fijos. Habría pagado un curso largo que no quería.» Es buena porque distingue la suposición de la respuesta real, usa preguntas abiertas y muestra el costo concreto de sólo imaginar.",
+     "plantilla": [
+      "De imaginar a obtener la perspectiva",
+      "Decisión: [qué voy a decidir]\nPersona afectada: [quién]\nLo que imagino que prefiere: [ ]\nPregunta abierta 1: [¿Qué…? / ¿Cómo…?]\nPregunta abierta 2: [¿Qué es lo más importante para ti en…?]\nLo que respondió: [ ]\nDecisión ajustada: [ ]"
+     ],
+     "clave": [
+      "Imaginar la perspectiva ajena no aumentó la precisión de forma consistente en 25 experimentos.",
+      "Preguntar y escuchar, es decir, obtener la perspectiva, sí mejoró la exactitud.",
+      "Imaginar sirve para formular hipótesis; preguntar sirve para verificarlas."
+     ]
     }
-  ],
-  "reto": {
+   ],
+   "reto": {
     "texto": "Construye tu línea de partida como lector de personas. Durante un día, registra cinco momentos en los que interpretaste lo que alguien pensaba o sentía. Para cada uno, anota los hechos, tu interpretación y tu nivel de seguridad de 0 a 10. Después verifica al menos tres de esas lecturas conversando con las personas implicadas y calcula cuántas acertaste.",
     "entregable": "Una tabla de cinco lecturas con hechos, interpretación, seguridad, forma de verificación y resultado; un párrafo sobre el error que más repites (maldición del conocimiento, ilusión de transparencia, suponer desde tus gustos u otro) y tres metas personales para el diplomado.",
     "criterios": "Revisa: cada lectura separa hechos de interpretación, verificaste al menos tres con la persona y no con terceros, comparas tu seguridad con tu acierto real, y tus metas describen conductas concretas que puedes practicar."
-  },
-  "lab": {
+   },
+   "lab": {
     "t": "Un malentendido en una tienda familiar",
     "obj": "Aplicar el método de cuatro fases para resolver un conflicto causado por lecturas apresuradas.",
     "esc": "<b>Doña Eloísa,</b> de 63 años, tiene una tlapalería en Oaxaca que atiende con su hija Fernanda y su sobrino Iván. Desde hace un mes el ambiente está tenso: cada quien cree saber lo que piensan los otros y casi no hablan. Te piden ayuda para desenredar la situación.",
     "e": [
-      ["Escena 1: Doña Eloísa te dice: «Fernanda ya no quiere el negocio; llega tarde y se la pasa en el celular».", "Consigna: separa los hechos de las interpretaciones en lo que dice doña Eloísa y propón tres hipótesis distintas sobre la conducta de Fernanda."],
-      ["Escena 2: Fernanda te cuenta que está tomando un curso en línea de contabilidad para modernizar la tienda, pero no se lo ha dicho a su mamá porque «seguro va a decir que es una tontería».", "Consigna: identifica qué está suponiendo Fernanda sobre su mamá y redacta cómo podría obtener su perspectiva en lugar de imaginarla."],
-      ["Escena 3: Iván cree que ambas lo quieren fuera del negocio porque ya no le piden opinión. Dice: «Se nota en cómo me miran».", "Consigna: explica por qué «se nota en cómo me miran» es una lectura débil y escribe dos preguntas abiertas que Iván podría hacer."],
-      ["Escena 4: Los tres aceptan sentarse a platicar el domingo por la mañana, antes de abrir.", "Consigna: diseña un guion breve para esa conversación con los cuatro pasos del método: qué observa cada quien, qué hipótesis tiene, qué pregunta y cómo acordarán ajustar."]
+     [
+      "Escena 1: Doña Eloísa te dice: «Fernanda ya no quiere el negocio; llega tarde y se la pasa en el celular».",
+      "Consigna: separa los hechos de las interpretaciones en lo que dice doña Eloísa y propón tres hipótesis distintas sobre la conducta de Fernanda."
+     ],
+     [
+      "Escena 2: Fernanda te cuenta que está tomando un curso en línea de contabilidad para modernizar la tienda, pero no se lo ha dicho a su mamá porque «seguro va a decir que es una tontería».",
+      "Consigna: identifica qué está suponiendo Fernanda sobre su mamá y redacta cómo podría obtener su perspectiva en lugar de imaginarla."
+     ],
+     [
+      "Escena 3: Iván cree que ambas lo quieren fuera del negocio porque ya no le piden opinión. Dice: «Se nota en cómo me miran».",
+      "Consigna: explica por qué «se nota en cómo me miran» es una lectura débil y escribe dos preguntas abiertas que Iván podría hacer."
+     ],
+     [
+      "Escena 4: Los tres aceptan sentarse a platicar el domingo por la mañana, antes de abrir.",
+      "Consigna: diseña un guion breve para esa conversación con los cuatro pasos del método: qué observa cada quien, qué hipótesis tiene, qué pregunta y cómo acordarán ajustar."
+     ]
     ],
     "p": [
-      ["¿Cuál de estas frases de doña Eloísa es una observación y no una interpretación?", "Fernanda llegó después de las diez tres días de esta semana", "Fernanda ya no le tiene cariño al negocio que fundó su abuelo", "Fernanda se aburre en la tienda y prefiere estar en el celular", "Una observación describe hechos verificables con fecha y conducta. Las otras dos atribuyen sentimientos o motivos que doña Eloísa no ha comprobado."],
-      ["¿Qué tienen en común las lecturas de los tres integrantes de la familia?", "Cada quien supone lo que piensan los demás sin haberlo preguntado", "Todas las lecturas están equivocadas, porque la familia no se conoce bien", "Todas se basan en observaciones exactas del lenguaje corporal de los otros", "El patrón es suponer sin verificar. No se puede afirmar que todas sean falsas, y ninguna se apoya en observaciones cuidadosas: son inferencias rápidas."],
-      ["¿Qué acuerdo final refleja mejor la fase de ajuste?", "Hablar cada semana diez minutos sobre la tienda antes de abrir", "Que doña Eloísa decida sola el futuro del negocio para evitar conflictos", "Que Fernanda deje el curso para no incomodar a su mamá con cambios", "Ajustar es cambiar la forma de relacionarse según lo que se descubrió: un espacio fijo para hablar evita volver a suponer. Las otras opciones eliminan la conversación o sacrifican a alguien sin resolver el problema."]
+     [
+      "¿Cuál de estas frases de doña Eloísa es una observación y no una interpretación?",
+      "Fernanda llegó después de las diez tres días de esta semana",
+      "Fernanda ya no le tiene cariño al negocio que fundó su abuelo",
+      "Fernanda se aburre en la tienda y prefiere estar en el celular",
+      "Una observación describe hechos verificables con fecha y conducta. Las otras dos atribuyen sentimientos o motivos que doña Eloísa no ha comprobado."
+     ],
+     [
+      "¿Qué tienen en común las lecturas de los tres integrantes de la familia?",
+      "Cada quien supone lo que piensan los demás sin haberlo preguntado",
+      "Todas las lecturas están equivocadas, porque la familia no se conoce bien",
+      "Todas se basan en observaciones exactas del lenguaje corporal de los otros",
+      "El patrón es suponer sin verificar. No se puede afirmar que todas sean falsas, y ninguna se apoya en observaciones cuidadosas: son inferencias rápidas."
+     ],
+     [
+      "¿Qué acuerdo final refleja mejor la fase de ajuste?",
+      "Hablar cada semana diez minutos sobre la tienda antes de abrir",
+      "Que doña Eloísa decida sola el futuro del negocio para evitar conflictos",
+      "Que Fernanda deje el curso para no incomodar a su mamá con cambios",
+      "Ajustar es cambiar la forma de relacionarse según lo que se descubrió: un espacio fijo para hablar evita volver a suponer. Las otras opciones eliminan la conversación o sacrifican a alguien sin resolver el problema."
+     ]
     ],
-    "pl": ["Guion para aclarar un malentendido", "1. Lo que yo observé: [hechos concretos, con fechas]\n2. Lo que pensé que significaba: [mi hipótesis]\n3. Lo que quiero preguntarte: [pregunta abierta]\n4. Lo que te escucho decir: [parafraseo]\n5. Lo que acordamos cambiar: [acción, responsable, fecha]"]
+    "pl": [
+     "Guion para aclarar un malentendido",
+     "1. Lo que yo observé: [hechos concretos, con fechas]\n2. Lo que pensé que significaba: [mi hipótesis]\n3. Lo que quiero preguntarte: [pregunta abierta]\n4. Lo que te escucho decir: [parafraseo]\n5. Lo que acordamos cambiar: [acción, responsable, fecha]"
+    ]
+   },
+   "quiz": [
+    [
+     "Lupita, recepcionista en Toluca, ve que un paciente golpea con el pie el piso mientras espera. ¿Qué haría alguien que aplica el método del diplomado?",
+     "Tomarlo como un dato y considerar varias causas antes de concluir",
+     "Concluir que está molesto por la espera y ofrecerle una disculpa por el retraso",
+     "Ignorarlo, porque los gestos nunca aportan información útil sobre lo que siente alguien",
+     "Pedir al médico que lo atienda primero porque parece muy ansioso y podría quejarse"
+    ],
+    [
+     "Samuel, de 60 años, dice: «Llevo treinta años con mi esposa; sé exactamente lo que piensa». Según la investigación sobre precisión empática, ¿qué le responderías?",
+     "La cercanía ayuda, pero no garantiza acertar; conviene seguir preguntando",
+     "Tiene razón: después de muchos años la precisión llega prácticamente al cien por ciento",
+     "Es imposible saber lo que piensa otra persona, así que no vale la pena intentarlo",
+     "Sólo las parejas con estudios en psicología logran una buena precisión empática"
+    ],
+    [
+     "Una gerente de Monterrey escribe a su equipo: «Qué buen trabajo, como siempre» con intención irónica. ¿Qué es más probable?",
+     "Que parte del equipo lo lea como un elogio sincero",
+     "Que todo el equipo capte la ironía, porque el tono se transmite bien por escrito",
+     "Que nadie lo lea, porque los mensajes de los jefes suelen ignorarse en los grupos",
+     "Que el equipo se sienta motivado, porque cualquier elogio mejora el ambiente laboral"
+    ],
+    [
+     "Beto va a dar una plática sobre su tema de especialidad a personas sin formación técnica. ¿Qué riesgo corre más?",
+     "Saltarse pasos que para él son obvios y para el público no",
+     "Aburrir al público con demasiados ejemplos sencillos y cotidianos durante la plática",
+     "Parecer nervioso aunque se sienta tranquilo, porque el público lo notará en su voz",
+     "Que el público desconfíe de él por no usar términos técnicos suficientes en su plática"
+    ],
+    [
+     "Antes de hablar en una junta, Marisol siente que todos notan su nerviosismo. ¿Qué concepto describe esa sensación?",
+     "La ilusión de transparencia",
+     "La maldición del conocimiento",
+     "El egocentrismo en mensajes escritos",
+     "La precisión empática"
+    ],
+    [
+     "Hugo quiere saber qué regalo le gustaría a su suegra. ¿Qué estrategia tiene más respaldo para acertar?",
+     "Preguntarle directamente o preguntarle qué le ha gustado recibir antes",
+     "Imaginarse en su lugar durante varios minutos antes de ir a comprar el regalo",
+     "Comprar lo que a él le gustaría recibir, porque los gustos se parecen dentro de la familia",
+     "Elegir lo más caro de la tienda, para que el valor compense cualquier error de gusto"
+    ],
+    [
+     "¿Cuál de estas es una hipótesis bien formulada y no una conclusión?",
+     "Tal vez no respondió porque no vio el mensaje; lo confirmaré mañana",
+     "No respondió porque le caigo mal desde la última reunión del equipo",
+     "No respondió, lo cual demuestra que no le interesa el proyecto",
+     "No respondió porque así es ella: nunca contesta a nadie"
+    ],
+    [
+     "En la investigación sobre precisión empática, ¿qué ocurrió con las diferencias entre hombres y mujeres al motivar a todos por igual?",
+     "Se redujeron mucho, lo que sugiere que la motivación pesa bastante",
+     "Aumentaron, lo que confirma una ventaja biológica fija de las mujeres",
+     "Desaparecieron por completo en todos los estudios, sin excepción alguna",
+     "No se midieron, porque el estudio sólo incluyó a parejas casadas de edad similar"
+    ],
+    [
+     "Mónica cree que su compañero la evita. ¿Qué haría en la fase de verificar?",
+     "Preguntarle en privado si todo está bien entre ellos",
+     "Contarle a otra compañera para ver si también lo ha notado",
+     "Evitarlo ella también hasta que él dé el primer paso",
+     "Observar si la saluda durante una semana sin decirle nada"
+    ],
+    [
+     "¿Por qué imaginar la perspectiva de alguien muy distinto de ti suele fallar?",
+     "Porque rellenas su situación con tus propios valores y experiencias",
+     "Porque imaginar consume mucha energía mental y agota a la persona",
+     "Porque las personas diferentes siempre mienten sobre lo que sienten",
+     "Porque la imaginación sólo funciona con familiares y amistades cercanas"
+    ]
+   ]
   },
-  "quiz": [
-    ["Lupita, recepcionista en Toluca, ve que un paciente golpea con el pie el piso mientras espera. ¿Qué haría alguien que aplica el método del diplomado?", "Tomarlo como un dato y considerar varias causas antes de concluir", "Concluir que está molesto por la espera y ofrecerle una disculpa por el retraso", "Ignorarlo, porque los gestos nunca aportan información útil sobre lo que siente alguien", "Pedir al médico que lo atienda primero porque parece muy ansioso y podría quejarse"],
-    ["Samuel, de 60 años, dice: «Llevo treinta años con mi esposa; sé exactamente lo que piensa». Según la investigación sobre precisión empática, ¿qué le responderías?", "La cercanía ayuda, pero no garantiza acertar; conviene seguir preguntando", "Tiene razón: después de muchos años la precisión llega prácticamente al cien por ciento", "Es imposible saber lo que piensa otra persona, así que no vale la pena intentarlo", "Sólo las parejas con estudios en psicología logran una buena precisión empática"],
-    ["Una gerente de Monterrey escribe a su equipo: «Qué buen trabajo, como siempre» con intención irónica. ¿Qué es más probable?", "Que parte del equipo lo lea como un elogio sincero", "Que todo el equipo capte la ironía, porque el tono se transmite bien por escrito", "Que nadie lo lea, porque los mensajes de los jefes suelen ignorarse en los grupos", "Que el equipo se sienta motivado, porque cualquier elogio mejora el ambiente laboral"],
-    ["Beto va a dar una plática sobre su tema de especialidad a personas sin formación técnica. ¿Qué riesgo corre más?", "Saltarse pasos que para él son obvios y para el público no", "Aburrir al público con demasiados ejemplos sencillos y cotidianos durante la plática", "Parecer nervioso aunque se sienta tranquilo, porque el público lo notará en su voz", "Que el público desconfíe de él por no usar términos técnicos suficientes en su plática"],
-    ["Antes de hablar en una junta, Marisol siente que todos notan su nerviosismo. ¿Qué concepto describe esa sensación?", "La ilusión de transparencia", "La maldición del conocimiento", "El egocentrismo en mensajes escritos", "La precisión empática"],
-    ["Hugo quiere saber qué regalo le gustaría a su suegra. ¿Qué estrategia tiene más respaldo para acertar?", "Preguntarle directamente o preguntarle qué le ha gustado recibir antes", "Imaginarse en su lugar durante varios minutos antes de ir a comprar el regalo", "Comprar lo que a él le gustaría recibir, porque los gustos se parecen dentro de la familia", "Elegir lo más caro de la tienda, para que el valor compense cualquier error de gusto"],
-    ["¿Cuál de estas es una hipótesis bien formulada y no una conclusión?", "Tal vez no respondió porque no vio el mensaje; lo confirmaré mañana", "No respondió porque le caigo mal desde la última reunión del equipo", "No respondió, lo cual demuestra que no le interesa el proyecto", "No respondió porque así es ella: nunca contesta a nadie"],
-    ["En el estudio de Ickes, ¿qué ocurrió con las diferencias entre hombres y mujeres al motivar a todos por igual?", "Se redujeron mucho, lo que sugiere que la motivación pesa bastante", "Aumentaron, lo que confirma una ventaja biológica fija de las mujeres", "Desaparecieron por completo en todos los estudios, sin excepción alguna", "No se midieron, porque el estudio sólo incluyó a parejas casadas de edad similar"],
-    ["Mónica cree que su compañero la evita. ¿Qué haría en la fase de verificar?", "Preguntarle en privado si todo está bien entre ellos", "Contarle a otra compañera para ver si también lo ha notado", "Evitarlo ella también hasta que él dé el primer paso", "Observar si la saluda durante una semana sin decirle nada"],
-    ["¿Por qué imaginar la perspectiva de alguien muy distinto de ti suele fallar?", "Porque rellenas su situación con tus propios valores y experiencias", "Porque imaginar consume mucha energía mental y agota a la persona", "Porque las personas diferentes siempre mienten sobre lo que sienten", "Porque la imaginación sólo funciona con familiares y amistades cercanas"]
-  ]
-},
-{
-  "t": "Los sesgos que distorsionan cómo juzgamos a otros",
-  "r": "Conoce los atajos mentales que más distorsionan nuestras lecturas: atribución, primeras impresiones, efecto halo, estereotipos, proyección y confirmación, y aprende a corregirlos con preguntas y datos.",
-  "lecciones": [
+  {
+   "t": "Los sesgos que distorsionan cómo juzgamos a otros",
+   "r": "Conoce los atajos mentales que más distorsionan nuestras lecturas: atribución, primeras impresiones, efecto halo, estereotipos, proyección y confirmación, y aprende a corregirlos con preguntas y datos.",
+   "lecciones": [
     {
-      "t": "El error fundamental de atribución: ¿es la persona o es la situación?",
-      "obj": "Identificar cuándo atribuyes una conducta al carácter de alguien sin considerar su situación, y corregirlo.",
-      "texto": [
-        "Cuando alguien se te cierra en el tráfico, es fácil pensar «qué tipo tan grosero». Cuando tú te cierras a alguien, piensas «es que iba tarde al hospital». Esta asimetría tiene nombre: el <b>error fundamental de atribución,</b> también llamado sesgo de correspondencia. Consiste en explicar la conducta de otras personas por su carácter y subestimar el peso de la situación en la que se encontraban.",
-        "Daniel Gilbert y Patrick Malone revisaron décadas de estudios sobre este sesgo en 1995. Explicaron que aparece por varias razones: no vemos las presiones que la otra persona enfrenta, tenemos expectativas poco realistas sobre cómo actuaría la gente en esa situación y, sobre todo, corregimos poco nuestra primera impresión cuando estamos cansados, con prisa o distraídos. Es decir, primero juzgamos el carácter de forma automática y sólo después, si tenemos energía, pensamos en la situación.",
-        "El error se agrava cuando la conducta es negativa y la persona no es de nuestro grupo. A un compañero querido le perdonamos un retraso por el tráfico; al nuevo lo tachamos de irresponsable. Con el tiempo, esas etiquetas se vuelven lentes por los que vemos todo lo que hace la persona.",
-        "Corregirlo requiere una pregunta sencilla que conviene volver hábito: <b>¿qué tendría que estar pasando para que una persona razonable actuara así?</b> Si encuentras respuestas plausibles, por ejemplo cansancio, instrucciones confusas, un problema familiar o falta de recursos, tu lectura mejora. No se trata de justificar todo, sino de considerar la situación antes de juzgar el carácter y, cuando haga falta, preguntar."
+     "t": "El error fundamental de atribución: ¿es la persona o es la situación?",
+     "obj": "Identificar cuándo atribuyes una conducta al carácter de alguien sin considerar su situación, y corregirlo.",
+     "texto": [
+      "Cuando alguien se te cierra en el tráfico, es fácil pensar «qué tipo tan grosero». Cuando tú te cierras a alguien, piensas «es que iba tarde al hospital». Esta asimetría tiene nombre: el <b>error fundamental de atribución,</b> también llamado sesgo de correspondencia. Consiste en explicar la conducta de otras personas por su carácter y subestimar el peso de la situación en la que se encontraban.",
+      "Daniel Gilbert y Patrick Malone revisaron décadas de estudios sobre este sesgo en 1995. Explicaron que aparece por varias razones: no vemos las presiones que la otra persona enfrenta, tenemos expectativas poco realistas sobre cómo actuaría la gente en esa situación y, sobre todo, corregimos poco nuestra primera impresión cuando estamos cansados, con prisa o distraídos. Es decir, primero juzgamos el carácter de forma automática y sólo después, si tenemos energía, pensamos en la situación.",
+      "El error se agrava cuando la conducta es negativa y la persona no es de nuestro grupo. A un compañero querido le perdonamos un retraso por el tráfico; al nuevo lo tachamos de irresponsable. Con el tiempo, esas etiquetas se vuelven lentes por los que vemos todo lo que hace la persona.",
+      "Corregirlo requiere una pregunta sencilla que conviene volver hábito: <b>¿qué tendría que estar pasando para que una persona razonable actuara así?</b> Si encuentras respuestas plausibles, por ejemplo cansancio, instrucciones confusas, un problema familiar o falta de recursos, tu lectura mejora. No se trata de justificar todo, sino de considerar la situación antes de juzgar el carácter y, cuando haga falta, preguntar."
+     ],
+     "comparar": [
+      "«Así no: “El repartidor llegó tarde otra vez; es un irresponsable y voy a pedir que lo cambien.”»",
+      "«Así sí: “Es el tercer retraso. Voy a preguntarle si la ruta cambió o si le están asignando más entregas.”»"
+     ],
+     "caso": "Caso ficticio: Leticia, de 34 años, es jefa de enfermería en un hospital de Culiacán. Una enfermera de nuevo ingreso, Dayana, olvidó registrar dos medicamentos en su primera semana. Otra jefa comenta: «Esa muchacha es descuidada; se le ve». Leticia debe decidir qué hacer.",
+     "p": [
+      [
+       "¿Qué pregunta ayudaría más a Leticia a evitar el error fundamental de atribución?",
+       "¿Qué pudo haber en su primera semana que facilitara esos olvidos?",
+       "¿Qué otros descuidos ha tenido Dayana que confirmen que es una persona poco cuidadosa?",
+       "¿Cuántas enfermeras nuevas suelen resultar descuidadas en los primeros meses de trabajo?",
+       "Pensar en la situación, como un sistema de registro nuevo, falta de capacitación o turnos saturados, corrige la tendencia a culpar al carácter. Buscar más descuidos confirma la etiqueta, y la estadística general no explica este caso."
       ],
-      "comparar": [
-        "«Así no: “El repartidor llegó tarde otra vez; es un irresponsable y voy a pedir que lo cambien.”»",
-        "«Así sí: “Es el tercer retraso. Voy a preguntarle si la ruta cambió o si le están asignando más entregas.”»"
+      [
+       "¿Qué acción es más adecuada para Leticia?",
+       "Revisar con Dayana cómo registra y si recibió la capacitación del sistema",
+       "Anotar el incidente en su expediente para tener antecedentes si vuelve a pasar",
+       "Pedir que la cambien de área antes de que el descuido afecte a algún paciente",
+       "Verificar la situación con la persona permite corregir la causa real. Documentar sin conversar y cambiarla de área parten de la etiqueta de «descuidada» sin comprobarla; la seguridad del paciente se protege mejor atendiendo la causa."
       ],
-      "caso": "Caso ficticio: Leticia, de 34 años, es jefa de enfermería en un hospital de Culiacán. Una enfermera de nuevo ingreso, Dayana, olvidó registrar dos medicamentos en su primera semana. Otra jefa comenta: «Esa muchacha es descuidada; se le ve». Leticia debe decidir qué hacer.",
-      "p": [
-        ["¿Qué pregunta ayudaría más a Leticia a evitar el error fundamental de atribución?", "¿Qué pudo haber en su primera semana que facilitara esos olvidos?", "¿Qué otros descuidos ha tenido Dayana que confirmen que es una persona poco cuidadosa?", "¿Cuántas enfermeras nuevas suelen resultar descuidadas en los primeros meses de trabajo?", "Pensar en la situación, como un sistema de registro nuevo, falta de capacitación o turnos saturados, corrige la tendencia a culpar al carácter. Buscar más descuidos confirma la etiqueta, y la estadística general no explica este caso."],
-        ["¿Qué acción es más adecuada para Leticia?", "Revisar con Dayana cómo registra y si recibió la capacitación del sistema", "Anotar el incidente en su expediente para tener antecedentes si vuelve a pasar", "Pedir que la cambien de área antes de que el descuido afecte a algún paciente", "Verificar la situación con la persona permite corregir la causa real. Documentar sin conversar y cambiarla de área parten de la etiqueta de «descuidada» sin comprobarla; la seguridad del paciente se protege mejor atendiendo la causa."],
-        ["¿Por qué es más probable que la otra jefa juzgue el carácter de Dayana?", "Porque juzgar el carácter es automático y corregir por la situación requiere esfuerzo", "Porque lleva más años en el hospital y distingue mejor a las personas descuidadas de las demás", "Porque los errores con medicamentos siempre se deben a falta de responsabilidad personal", "Gilbert y Malone describen que primero juzgamos el carácter de forma automática y la corrección situacional exige energía. La antigüedad no elimina el sesgo, y los errores con medicamentos tienen causas del sistema muy documentadas."]
-      ],
-      "completar": ["El error fundamental de atribución subestima el peso de la ___ en la conducta de otras personas.", "situación"],
-      "relacionar": [
-        ["Explicación por el carácter", "«No contestó porque es un grosero»"],
-        ["Explicación por la situación", "«No contestó porque estaba manejando»"],
-        ["Pregunta correctiva", "¿Qué haría que alguien razonable actuara así?"],
-        ["Condición que agrava el sesgo", "Juzgar con prisa, cansancio o distracción"]
-      ],
-      "refl": "Elige a una persona a la que hayas etiquetado por su conducta (un compañero «flojo», una vecina «metiche», un cliente «prepotente»). 1) Escribe la conducta concreta que motivó la etiqueta. 2) Lista cuatro factores de la situación que podrían explicarla. 3) Indica cuál podrías verificar y cómo. 4) Reescribe tu descripción de esa persona sin etiqueta.",
-      "modelo": "Modelo: «Etiqueté a mi vecino como “amargado” porque nunca saluda en el elevador. Factores posibles: trabaja de noche y llega agotado; tiene problemas de audición; en su cultura familiar no se saluda a desconocidos; está pasando por un duelo. Puedo verificar saludándolo yo primero varios días y comentando algo breve. Descripción nueva: “Mi vecino del 5 casi no habla en el elevador; todavía no sé por qué”.» Es buena porque parte de una conducta concreta, propone factores situacionales variados y deja la lectura abierta.",
-      "plantilla": ["Del carácter a la situación", "Etiqueta que usé: [ ]\nConducta concreta: [qué hizo, cuándo]\nFactores de la situación que podrían explicarla: 1) [ ] 2) [ ] 3) [ ] 4) [ ]\nCómo puedo verificar: [pregunta o acción]\nDescripción sin etiqueta: [ ]"],
-      "clave": [
-        "Tendemos a explicar la conducta ajena por el carácter y la propia por la situación.",
-        "Primero juzgamos el carácter de forma automática; considerar la situación exige un esfuerzo deliberado.",
-        "Pregúntate qué tendría que estar pasando para que alguien razonable actuara así."
+      [
+       "¿Por qué es más probable que la otra jefa juzgue el carácter de Dayana?",
+       "Porque juzgar el carácter es automático y corregir por la situación requiere esfuerzo",
+       "Porque lleva más años en el hospital y distingue mejor a las personas descuidadas de las demás",
+       "Porque los errores con medicamentos siempre se deben a falta de responsabilidad personal",
+       "Gilbert y Malone describen que primero juzgamos el carácter de forma automática y la corrección situacional exige energía. La antigüedad no elimina el sesgo, y los errores con medicamentos tienen causas del sistema muy documentadas."
       ]
+     ],
+     "completar": [
+      "El error fundamental de atribución subestima el peso de la ___ en la conducta de otras personas.",
+      "situación"
+     ],
+     "relacionar": [
+      [
+       "Explicación por el carácter",
+       "«No contestó porque es un grosero»"
+      ],
+      [
+       "Explicación por la situación",
+       "«No contestó porque estaba manejando»"
+      ],
+      [
+       "Pregunta correctiva",
+       "¿Qué haría que alguien razonable actuara así?"
+      ],
+      [
+       "Condición que agrava el sesgo",
+       "Juzgar con prisa, cansancio o distracción"
+      ]
+     ],
+     "refl": "Elige a una persona a la que hayas etiquetado por su conducta (un compañero «flojo», una vecina «metiche», un cliente «prepotente»). 1) Escribe la conducta concreta que motivó la etiqueta. 2) Lista cuatro factores de la situación que podrían explicarla. 3) Indica cuál podrías verificar y cómo. 4) Reescribe tu descripción de esa persona sin etiqueta.",
+     "modelo": "Modelo: «Etiqueté a mi vecino como “amargado” porque nunca saluda en el elevador. Factores posibles: trabaja de noche y llega agotado; tiene problemas de audición; en su cultura familiar no se saluda a desconocidos; está pasando por un duelo. Puedo verificar saludándolo yo primero varios días y comentando algo breve. Descripción nueva: “Mi vecino del 5 casi no habla en el elevador; todavía no sé por qué”.» Es buena porque parte de una conducta concreta, propone factores situacionales variados y deja la lectura abierta.",
+     "plantilla": [
+      "Del carácter a la situación",
+      "Etiqueta que usé: [ ]\nConducta concreta: [qué hizo, cuándo]\nFactores de la situación que podrían explicarla: 1) [ ] 2) [ ] 3) [ ] 4) [ ]\nCómo puedo verificar: [pregunta o acción]\nDescripción sin etiqueta: [ ]"
+     ],
+     "clave": [
+      "Tendemos a explicar la conducta ajena por el carácter y la propia por la situación.",
+      "Primero juzgamos el carácter de forma automática; considerar la situación exige un esfuerzo deliberado.",
+      "Pregúntate qué tendría que estar pasando para que alguien razonable actuara así."
+     ]
     },
     {
-      "t": "Primeras impresiones y efecto halo",
-      "obj": "Explicar qué captan y qué distorsionan las primeras impresiones, y reducir el efecto halo al evaluar a otras personas.",
-      "texto": [
-        "Formamos impresiones de otras personas con una rapidez asombrosa. En experimentos de Janine Willis y Alexander Todorov, bastaba ver un rostro una décima de segundo para que las personas emitieran juicios sobre confianza, simpatía o competencia, y esos juicios se parecían mucho a los que hacían sin límite de tiempo. El problema es que ser rápidos y consistentes no es lo mismo que acertar: muchos de esos juicios dicen más de nuestras asociaciones que de la persona.",
-        "¿Tienen algo de verdad? Algunas características se perciben con cierta precisión en los primeros minutos, como qué tan extrovertida es alguien, porque se expresa en conductas visibles: hablar mucho, sonreír, moverse con energía. Otras, como la honestidad, la amabilidad profunda o la ansiedad que alguien controla, apenas se reflejan en una primera interacción. Para esas, una primera impresión casi no aporta.",
-        "El <b>efecto halo</b> agrava el problema. Descrito desde hace un siglo y estudiado por Richard Nisbett y Timothy Wilson, consiste en que un rasgo que nos agrada, como el atractivo físico, la simpatía o la elocuencia, tiñe nuestro juicio sobre otros rasgos sin relación con él. Si alguien nos cae bien, calificamos mejor su trabajo, su inteligencia y hasta su acento. Existe también el efecto contrario: un detalle negativo oscurece todo lo demás.",
-        "Para usar las primeras impresiones sin que te dominen, trátalas como hipótesis de baja confianza. Evalúa por separado cada aspecto que te importa, con criterios definidos antes de conocer a la persona. Busca más de una ocasión y más de una fuente antes de decidir. Y pregúntate: <b>¿me gusta su trabajo o me gusta la persona?</b>"
+     "t": "Primeras impresiones y efecto halo",
+     "obj": "Explicar qué captan y qué distorsionan las primeras impresiones, y reducir el efecto halo al evaluar a otras personas.",
+     "texto": [
+      "Formamos impresiones de otras personas con una rapidez asombrosa. En experimentos de Janine Willis y Alexander Todorov, bastaba ver un rostro una décima de segundo para que las personas emitieran juicios sobre confianza, simpatía o competencia, y esos juicios se parecían mucho a los que hacían sin límite de tiempo. El problema es que ser rápidos y consistentes no es lo mismo que acertar: muchos de esos juicios dicen más de nuestras asociaciones que de la persona.",
+      "¿Tienen algo de verdad? Algunas características se perciben con cierta precisión en los primeros minutos, como qué tan extrovertida es alguien, porque se expresa en conductas visibles: hablar mucho, sonreír, moverse con energía. Otras, como la honestidad, la amabilidad profunda o la ansiedad que alguien controla, apenas se reflejan en una primera interacción. Para esas, una primera impresión casi no aporta.",
+      "El <b>efecto halo</b> agrava el problema. Descrito desde hace un siglo y estudiado por Richard Nisbett y Timothy Wilson, consiste en que un rasgo que nos agrada, como el atractivo físico, la simpatía o la elocuencia, tiñe nuestro juicio sobre otros rasgos sin relación con él. Si alguien nos cae bien, calificamos mejor su trabajo, su inteligencia y hasta su acento. Existe también el efecto contrario: un detalle negativo oscurece todo lo demás.",
+      "Para usar las primeras impresiones sin que te dominen, trátalas como hipótesis de baja confianza. Evalúa por separado cada aspecto que te importa, con criterios definidos antes de conocer a la persona. Busca más de una ocasión y más de una fuente antes de decidir. Y pregúntate: <b>¿me gusta su trabajo o me gusta la persona?</b>"
+     ],
+     "comparar": [
+      "«Así no: “Me cayó increíble en la entrevista; seguro es buenísimo en ventas. Contrátenlo ya.”»",
+      "«Así sí: “Me cayó muy bien. Antes de decidir, revisemos sus resultados anteriores y hagamos la prueba práctica.”»"
+     ],
+     "caso": "Caso ficticio: Joaquín, de 41 años, dirige una pequeña agencia de diseño en Querétaro. Entrevista a dos candidatas: Paulina, muy elocuente y segura, con quien platicó con gusto, y Carmen, reservada y nerviosa. Sin revisar a fondo sus portafolios, siente que Paulina es «claramente más talentosa».",
+     "p": [
+      [
+       "¿Qué sesgo es más probable que esté influyendo en Joaquín?",
+       "El efecto halo: la elocuencia de Paulina tiñe su juicio sobre su talento",
+       "La maldición del conocimiento: Joaquín sabe demasiado de diseño para evaluar a otras personas",
+       "El error de atribución: Joaquín cree que Carmen está nerviosa por la situación y no por carácter",
+       "Joaquín extiende una cualidad agradable, la elocuencia, a un rasgo distinto, el talento, sin evidencia. La maldición del conocimiento no aplica aquí, y atribuir los nervios a la situación sería, de hecho, una lectura prudente."
       ],
-      "comparar": [
-        "«Así no: “Me cayó increíble en la entrevista; seguro es buenísimo en ventas. Contrátenlo ya.”»",
-        "«Así sí: “Me cayó muy bien. Antes de decidir, revisemos sus resultados anteriores y hagamos la prueba práctica.”»"
+      [
+       "¿Qué procedimiento reduciría mejor el sesgo en la decisión?",
+       "Evaluar ambos portafolios con los mismos criterios definidos de antemano",
+       "Hacer una segunda entrevista más larga para conocer mejor la personalidad de cada una",
+       "Pedir la opinión del equipo sobre cuál de las dos candidatas les cae mejor",
+       "Criterios iguales, definidos antes, separan el juicio del trabajo del agrado personal. Otra entrevista y la opinión sobre quién cae mejor vuelven a medir simpatía, no talento para el diseño."
       ],
-      "caso": "Caso ficticio: Joaquín, de 41 años, dirige una pequeña agencia de diseño en Querétaro. Entrevista a dos candidatas: Paulina, muy elocuente y segura, con quien platicó con gusto, y Carmen, reservada y nerviosa. Sin revisar a fondo sus portafolios, siente que Paulina es «claramente más talentosa».",
-      "p": [
-        ["¿Qué sesgo es más probable que esté influyendo en Joaquín?", "El efecto halo: la elocuencia de Paulina tiñe su juicio sobre su talento", "La maldición del conocimiento: Joaquín sabe demasiado de diseño para evaluar a otras personas", "El error de atribución: Joaquín cree que Carmen está nerviosa por la situación y no por carácter", "Joaquín extiende una cualidad agradable, la elocuencia, a un rasgo distinto, el talento, sin evidencia. La maldición del conocimiento no aplica aquí, y atribuir los nervios a la situación sería, de hecho, una lectura prudente."],
-        ["¿Qué procedimiento reduciría mejor el sesgo en la decisión?", "Evaluar ambos portafolios con los mismos criterios definidos de antemano", "Hacer una segunda entrevista más larga para conocer mejor la personalidad de cada una", "Pedir la opinión del equipo sobre cuál de las dos candidatas les cae mejor", "Criterios iguales, definidos antes, separan el juicio del trabajo del agrado personal. Otra entrevista y la opinión sobre quién cae mejor vuelven a medir simpatía, no talento para el diseño."],
-        ["¿Qué puede aportar la primera impresión de Joaquín con más probabilidad de acierto?", "Una idea aproximada de qué tan extrovertida es cada candidata", "Una estimación confiable de cuál de las dos será más honesta con los clientes de la agencia", "Una buena predicción de la calidad de sus diseños a lo largo de los próximos años", "Los rasgos que se expresan en conductas visibles, como la extroversión, se captan mejor al inicio. La honestidad y la calidad del trabajo apenas se reflejan en una entrevista breve."]
-      ],
-      "completar": ["Cuando un rasgo agradable tiñe el juicio sobre otros rasgos sin relación, ocurre el efecto ___.", "halo"],
-      "refl": "Recuerda a alguien de quien tuviste una primera impresión muy positiva o muy negativa que después cambió (un jefe, una maestra, un vecino, una pareja). 1) Describe tu primera impresión y en qué detalles se basó. 2) Explica qué descubriste después y cómo. 3) Identifica si hubo efecto halo o su contrario. 4) Escribe qué harías distinto hoy para no depender tanto de esa impresión.",
-      "modelo": "Modelo: «Cuando conocí a mi supervisor en Mexicali me pareció frío y arrogante: casi no sonreía y hablaba poco. Pensé que sería injusto. Con los meses vi que era el que más defendía al equipo ante la dirección. Hubo un efecto halo negativo: su seriedad me hizo suponer también injusticia. Hoy anotaría mi primera impresión como hipótesis y esperaría a ver cómo actúa en decisiones concretas.» Es buena porque identifica los detalles de la impresión, describe cómo cambió con evidencia y propone una práctica concreta.",
-      "plantilla": ["Evaluación sin halo", "Persona o candidato: [ ]\nMi primera impresión: [ ]\nRasgo que me agradó o desagradó: [ ]\nCriterios que importan de verdad (definidos antes): 1) [ ] 2) [ ] 3) [ ]\nEvidencia para cada criterio: [dato, ejemplo, resultado]\nFuentes adicionales: [referencias, prueba práctica, segunda ocasión]\nDecisión: [ ]"],
-      "clave": [
-        "Las primeras impresiones son rápidas y consistentes, pero no por eso exactas.",
-        "Rasgos visibles como la extroversión se captan mejor al inicio; la honestidad, mucho menos.",
-        "Para reducir el efecto halo, evalúa cada aspecto por separado con criterios definidos antes."
+      [
+       "¿Qué puede aportar la primera impresión de Joaquín con más probabilidad de acierto?",
+       "Una idea aproximada de qué tan extrovertida es cada candidata",
+       "Una estimación confiable de cuál de las dos será más honesta con los clientes de la agencia",
+       "Una buena predicción de la calidad de sus diseños a lo largo de los próximos años",
+       "Los rasgos que se expresan en conductas visibles, como la extroversión, se captan mejor al inicio. La honestidad y la calidad del trabajo apenas se reflejan en una entrevista breve."
       ]
+     ],
+     "completar": [
+      "Cuando un rasgo agradable tiñe el juicio sobre otros rasgos sin relación, ocurre el efecto ___.",
+      "halo"
+     ],
+     "refl": "Recuerda a alguien de quien tuviste una primera impresión muy positiva o muy negativa que después cambió (un jefe, una maestra, un vecino, una pareja). 1) Describe tu primera impresión y en qué detalles se basó. 2) Explica qué descubriste después y cómo. 3) Identifica si hubo efecto halo o su contrario. 4) Escribe qué harías distinto hoy para no depender tanto de esa impresión.",
+     "modelo": "Modelo: «Cuando conocí a mi supervisor en Mexicali me pareció frío y arrogante: casi no sonreía y hablaba poco. Pensé que sería injusto. Con los meses vi que era el que más defendía al equipo ante la dirección. Hubo un efecto halo negativo: su seriedad me hizo suponer también injusticia. Hoy anotaría mi primera impresión como hipótesis y esperaría a ver cómo actúa en decisiones concretas.» Es buena porque identifica los detalles de la impresión, describe cómo cambió con evidencia y propone una práctica concreta.",
+     "plantilla": [
+      "Evaluación sin halo",
+      "Persona o candidato: [ ]\nMi primera impresión: [ ]\nRasgo que me agradó o desagradó: [ ]\nCriterios que importan de verdad (definidos antes): 1) [ ] 2) [ ] 3) [ ]\nEvidencia para cada criterio: [dato, ejemplo, resultado]\nFuentes adicionales: [referencias, prueba práctica, segunda ocasión]\nDecisión: [ ]"
+     ],
+     "clave": [
+      "Las primeras impresiones son rápidas y consistentes, pero no por eso exactas.",
+      "Rasgos visibles como la extroversión se captan mejor al inicio; la honestidad, mucho menos.",
+      "Para reducir el efecto halo, evalúa cada aspecto por separado con criterios definidos antes."
+     ]
     },
     {
-      "t": "Estereotipos y proyección: cuando vemos a un grupo o a nosotros mismos",
-      "obj": "Reconocer cómo los estereotipos y la proyección sustituyen a la persona real, y aplicar estrategias para individualizar tu lectura.",
-      "texto": [
-        "Un <b>estereotipo</b> es una creencia generalizada sobre las características de un grupo: «los jóvenes no aguantan la presión», «los norteños son muy directos», «las personas mayores no saben de tecnología». Los estereotipos simplifican un mundo complejo, pero al aplicarlos a una persona concreta la reemplazan por un promedio imaginario. Incluso cuando una generalización tuviera algo de base para un grupo, dice muy poco del individuo que tienes enfrente, y puede llevar a tratos injustos y discriminatorios.",
-        "La <b>proyección</b> es el error opuesto: en lugar de ver al otro como parte de un grupo, lo vemos como una copia de nosotros. Un fenómeno relacionado, el <b>falso consenso,</b> estudiado por Lee Ross y sus colegas en 1977, muestra que tendemos a sobrestimar cuántas personas piensan, prefieren o actuarían como nosotros. Si a ti te gusta que te feliciten en público, supones que a tu colaboradora también; si tú no pedirías ayuda, crees que ella tampoco.",
-        "Ambos errores comparten un mecanismo: usamos información que ya teníamos, sobre el grupo o sobre nosotros, en vez de información sobre la persona. La investigación sobre percepción social sugiere que el antídoto es la <b>individualización:</b> buscar datos específicos de esa persona, como sus palabras, sus decisiones pasadas y su historia, y darles más peso que a la categoría.",
-        "En la práctica, detecta las frases que empiezan con «los…», «las…» o «como yo…» cuando piensas en alguien. Pregúntate qué sabes realmente de esa persona y qué estás rellenando. Y recuerda que en México la discriminación por edad, origen, sexo, discapacidad, religión y otras condiciones está prohibida por la ley: además de ser un error de lectura, puede ser un trato ilegal."
+     "t": "Estereotipos y proyección: cuando vemos a un grupo o a nosotros mismos",
+     "obj": "Reconocer cómo los estereotipos y la proyección sustituyen a la persona real, y aplicar estrategias para individualizar tu lectura.",
+     "texto": [
+      "Un <b>estereotipo</b> es una creencia generalizada sobre las características de un grupo: «los jóvenes no aguantan la presión», «los norteños son muy directos», «las personas mayores no saben de tecnología». Los estereotipos simplifican un mundo complejo, pero al aplicarlos a una persona concreta la reemplazan por un promedio imaginario. Incluso cuando una generalización tuviera algo de base para un grupo, dice muy poco del individuo que tienes enfrente, y puede llevar a tratos injustos y discriminatorios.",
+      "La <b>proyección</b> es el error opuesto: en lugar de ver al otro como parte de un grupo, lo vemos como una copia de nosotros. Un fenómeno relacionado, el <b>falso consenso,</b> estudiado por Lee Ross y sus colegas en 1977, muestra que tendemos a sobrestimar cuántas personas piensan, prefieren o actuarían como nosotros. Si a ti te gusta que te feliciten en público, supones que a tu colaboradora también; si tú no pedirías ayuda, crees que ella tampoco.",
+      "Ambos errores comparten un mecanismo: usamos información que ya teníamos, sobre el grupo o sobre nosotros, en vez de información sobre la persona. La investigación sobre percepción social sugiere que el antídoto es la <b>individualización:</b> buscar datos específicos de esa persona, como sus palabras, sus decisiones pasadas y su historia, y darles más peso que a la categoría.",
+      "En la práctica, detecta las frases que empiezan con «los…», «las…» o «como yo…» cuando piensas en alguien. Pregúntate qué sabes realmente de esa persona y qué estás rellenando. Y recuerda que en México la discriminación por edad, origen, sexo, discapacidad, religión y otras condiciones está prohibida por la ley: además de ser un error de lectura, puede ser un trato ilegal."
+     ],
+     "comparar": [
+      "«Así no: “No le propongas el puesto de coordinación a doña Chelo; a su edad ya no quieren complicarse.”»",
+      "«Así sí: “Doña Chelo conoce el proceso mejor que nadie. Preguntémosle si le interesa la coordinación y qué necesitaría.”»"
+     ],
+     "caso": "Caso ficticio: Emiliano, de 27 años, coordina voluntarios en una asociación civil de Pachuca. Va a asignar tareas y piensa: «A los señores mayores les doy lo de recepción, que es más tranquilo; a los jóvenes, redes sociales». Además, supone que todos querrán reuniones por videollamada, como él.",
+     "p": [
+      [
+       "¿Qué errores de lectura muestra Emiliano?",
+       "Aplica estereotipos por edad y proyecta su preferencia por las videollamadas",
+       "Aplica el efecto halo, porque juzga a los voluntarios por su simpatía y su apariencia",
+       "Comete el error de atribución, porque culpa al carácter de los voluntarios por su edad",
+       "Emiliano asigna tareas por categoría de edad y supone que los demás prefieren lo mismo que él. No hay juicios de simpatía ni explicaciones de una conducta concreta."
       ],
-      "comparar": [
-        "«Así no: “No le propongas el puesto de coordinación a doña Chelo; a su edad ya no quieren complicarse.”»",
-        "«Así sí: “Doña Chelo conoce el proceso mejor que nadie. Preguntémosle si le interesa la coordinación y qué necesitaría.”»"
+      [
+       "¿Cuál es la mejor forma de individualizar la asignación de tareas?",
+       "Preguntar a cada voluntario qué sabe hacer, qué le interesa y qué horario tiene",
+       "Asignar tareas por sorteo para que nadie se sienta discriminado por su edad",
+       "Dar a los mayores la opción de redes sociales sólo si demuestran que saben usarlas",
+       "Individualizar es buscar datos de cada persona. El sorteo ignora habilidades y preferencias, y pedir pruebas sólo a los mayores mantiene el estereotipo como punto de partida."
       ],
-      "caso": "Caso ficticio: Emiliano, de 27 años, coordina voluntarios en una asociación civil de Pachuca. Va a asignar tareas y piensa: «A los señores mayores les doy lo de recepción, que es más tranquilo; a los jóvenes, redes sociales». Además, supone que todos querrán reuniones por videollamada, como él.",
-      "p": [
-        ["¿Qué errores de lectura muestra Emiliano?", "Aplica estereotipos por edad y proyecta su preferencia por las videollamadas", "Aplica el efecto halo, porque juzga a los voluntarios por su simpatía y su apariencia", "Comete el error de atribución, porque culpa al carácter de los voluntarios por su edad", "Emiliano asigna tareas por categoría de edad y supone que los demás prefieren lo mismo que él. No hay juicios de simpatía ni explicaciones de una conducta concreta."],
-        ["¿Cuál es la mejor forma de individualizar la asignación de tareas?", "Preguntar a cada voluntario qué sabe hacer, qué le interesa y qué horario tiene", "Asignar tareas por sorteo para que nadie se sienta discriminado por su edad", "Dar a los mayores la opción de redes sociales sólo si demuestran que saben usarlas", "Individualizar es buscar datos de cada persona. El sorteo ignora habilidades y preferencias, y pedir pruebas sólo a los mayores mantiene el estereotipo como punto de partida."],
-        ["¿Qué frase de Emiliano debería funcionar como alerta de estereotipo?", "«A los señores mayores les doy lo de recepción»", "«Voy a revisar la lista de voluntarios de este mes»", "«Necesito cubrir recepción y redes sociales esta semana»", "Las frases que empiezan con una categoría de personas («a los señores mayores…») suelen anunciar una generalización. Las otras dos describen tareas y necesidades, sin atribuir características a un grupo."]
-      ],
-      "completar": ["Buscar datos específicos de una persona y darles más peso que a su categoría se llama ___.", "individualización"],
-      "relacionar": [
-        ["Estereotipo", "«Los contadores son aburridos»"],
-        ["Proyección", "Suponer que tu colega también odia las sorpresas"],
-        ["Falso consenso", "Creer que casi todos votarían como tú"],
-        ["Individualización", "Preguntarle a la persona qué le interesa hacer"]
-      ],
-      "refl": "Haz una auditoría de tus atajos. 1) Escribe tres generalizaciones que sueles usar sobre grupos (por edad, región, profesión, género u otra condición). 2) Para cada una, recuerda a una persona concreta que no encaja. 3) Escribe una preferencia tuya que sueles suponer que los demás comparten. 4) Propón una pregunta para individualizar tu lectura en cada caso.",
-      "modelo": "Modelo: «Generalizaciones: “los jóvenes no son comprometidos”, “los de Monterrey son muy directos”, “los ingenieros no saben escuchar”. Excepciones: mi sobrina de 19 años lleva tres años cuidando a su abuela; mi socio regiomontano es muy diplomático; mi ingeniera de soporte es la mejor escuchando del equipo. Preferencia que proyecto: creo que a todos les gusta resolver los problemas de inmediato. Pregunta: “¿Prefieres que lo veamos ahora o lo piensas y lo platicamos mañana?”» Es buena porque nombra atajos reales, los contrasta con casos concretos y termina con una pregunta útil.",
-      "plantilla": ["Auditoría de atajos", "Generalización 1: [ ] · Excepción que conozco: [ ]\nGeneralización 2: [ ] · Excepción que conozco: [ ]\nGeneralización 3: [ ] · Excepción que conozco: [ ]\nPreferencia que proyecto en otros: [ ]\nPregunta para individualizar: [¿Qué prefieres tú…? / ¿Cómo te gustaría…?]"],
-      "clave": [
-        "Un estereotipo reemplaza a la persona por un promedio imaginario de su grupo.",
-        "La proyección y el falso consenso nos hacen ver a los demás como copias de nosotros.",
-        "La individualización, es decir, buscar datos de esa persona, corrige ambos errores."
+      [
+       "¿Qué frase de Emiliano debería funcionar como alerta de estereotipo?",
+       "«A los señores mayores les doy lo de recepción»",
+       "«Voy a revisar la lista de voluntarios de este mes»",
+       "«Necesito cubrir recepción y redes sociales esta semana»",
+       "Las frases que empiezan con una categoría de personas («a los señores mayores…») suelen anunciar una generalización. Las otras dos describen tareas y necesidades, sin atribuir características a un grupo."
       ]
+     ],
+     "completar": [
+      "Buscar datos específicos de una persona y darles más peso que a su categoría se llama ___.",
+      "individualización"
+     ],
+     "relacionar": [
+      [
+       "Estereotipo",
+       "«Los contadores son aburridos»"
+      ],
+      [
+       "Proyección",
+       "Suponer que tu colega también odia las sorpresas"
+      ],
+      [
+       "Falso consenso",
+       "Creer que casi todos votarían como tú"
+      ],
+      [
+       "Individualización",
+       "Preguntarle a la persona qué le interesa hacer"
+      ]
+     ],
+     "refl": "Haz una auditoría de tus atajos. 1) Escribe tres generalizaciones que sueles usar sobre grupos (por edad, región, profesión, género u otra condición). 2) Para cada una, recuerda a una persona concreta que no encaja. 3) Escribe una preferencia tuya que sueles suponer que los demás comparten. 4) Propón una pregunta para individualizar tu lectura en cada caso.",
+     "modelo": "Modelo: «Generalizaciones: “los jóvenes no son comprometidos”, “los de Monterrey son muy directos”, “los ingenieros no saben escuchar”. Excepciones: mi sobrina de 19 años lleva tres años cuidando a su abuela; mi socio regiomontano es muy diplomático; mi ingeniera de soporte es la mejor escuchando del equipo. Preferencia que proyecto: creo que a todos les gusta resolver los problemas de inmediato. Pregunta: “¿Prefieres que lo veamos ahora o lo piensas y lo platicamos mañana?”» Es buena porque nombra atajos reales, los contrasta con casos concretos y termina con una pregunta útil.",
+     "plantilla": [
+      "Auditoría de atajos",
+      "Generalización 1: [ ] · Excepción que conozco: [ ]\nGeneralización 2: [ ] · Excepción que conozco: [ ]\nGeneralización 3: [ ] · Excepción que conozco: [ ]\nPreferencia que proyecto en otros: [ ]\nPregunta para individualizar: [¿Qué prefieres tú…? / ¿Cómo te gustaría…?]"
+     ],
+     "clave": [
+      "Un estereotipo reemplaza a la persona por un promedio imaginario de su grupo.",
+      "La proyección y el falso consenso nos hacen ver a los demás como copias de nosotros.",
+      "La individualización, es decir, buscar datos de esa persona, corrige ambos errores."
+     ]
     },
     {
-      "t": "Sesgo de confirmación: buscar la prueba que te contradiga",
-      "obj": "Diseñar formas de poner a prueba tus lecturas sobre otras personas buscando información que pueda refutarlas.",
-      "texto": [
-        "Una vez que tenemos una idea sobre alguien, tendemos a buscar, recordar e interpretar la información que la confirma, e ignoramos la que la contradice. Es el <b>sesgo de confirmación,</b> uno de los más estudiados de la psicología; Raymond Nickerson lo describió en 1998 como un fenómeno presente en muchos ámbitos. Si crees que tu compañero es egoísta, recordarás las veces que no compartió y olvidarás cuando te cubrió un turno.",
-        "Este sesgo actúa también en la forma de preguntar. En experimentos clásicos sobre entrevistas, quienes debían averiguar si alguien era extrovertido tendían a hacer preguntas que invitaban respuestas extrovertidas, como «¿qué harías para animar una fiesta?». La pregunta misma fabricaba la evidencia. Lo mismo pasa cuando le preguntas a tu hijo «¿otra vez no hiciste la tarea?»: el tono y la forma empujan hacia la respuesta que esperabas.",
-        "Para leer bien necesitas lo contrario: formular tu lectura como hipótesis y preguntarte <b>qué vería si estuviera equivocado.</b> Si crees que tu jefa no valora tu trabajo, ¿qué conductas mostrarían que sí lo valora? Búscalas activamente durante una semana. Si crees que un cliente sólo busca el precio más bajo, pregunta por otras prioridades sin sugerir la respuesta.",
-        "Otras prácticas útiles: anota por escrito tus lecturas importantes con fecha, para que tu memoria no las reescriba; pide a alguien de confianza que defienda la interpretación contraria; y cuida que tus preguntas sean neutras. Cambiar de opinión ante nueva evidencia no es debilidad: es la fase de ajuste del método, y con la práctica te vuelve más justo con los demás y menos prisionero de tus propias ideas."
+     "t": "Sesgo de confirmación: buscar la prueba que te contradiga",
+     "obj": "Diseñar formas de poner a prueba tus lecturas sobre otras personas buscando información que pueda refutarlas.",
+     "texto": [
+      "Una vez que tenemos una idea sobre alguien, tendemos a buscar, recordar e interpretar la información que la confirma, e ignoramos la que la contradice. Es el <b>sesgo de confirmación,</b> uno de los más estudiados de la psicología; Raymond Nickerson lo describió en 1998 como un fenómeno presente en muchos ámbitos. Si crees que tu compañero es egoísta, recordarás las veces que no compartió y olvidarás cuando te cubrió un turno.",
+      "Este sesgo actúa también en la forma de preguntar. En experimentos clásicos sobre entrevistas, quienes debían averiguar si alguien era extrovertido tendían a hacer preguntas que invitaban a dar respuestas extrovertidas, como «¿qué harías para animar una fiesta?». La pregunta misma fabricaba la evidencia. Lo mismo pasa cuando le preguntas a tu hijo «¿otra vez no hiciste la tarea?»: el tono y la forma empujan hacia la respuesta que esperabas.",
+      "Para leer bien necesitas lo contrario: formular tu lectura como hipótesis y preguntarte <b>qué vería si estuviera equivocado.</b> Si crees que tu jefa no valora tu trabajo, ¿qué conductas mostrarían que sí lo valora? Búscalas activamente durante una semana. Si crees que un cliente sólo busca el precio más bajo, pregunta por otras prioridades sin sugerir la respuesta.",
+      "Otras prácticas útiles: anota por escrito tus lecturas importantes con fecha, para que tu memoria no las reescriba; pide a alguien de confianza que defienda la interpretación contraria; y cuida que tus preguntas sean neutras. Cambiar de opinión ante nueva evidencia no es debilidad: es la fase de ajuste del método, y con la práctica te vuelve más justo con los demás y menos prisionero de tus propias ideas."
+     ],
+     "comparar": [
+      "«Así no: “¿Verdad que te aburrió la junta? Se te notaba en la cara.”»",
+      "«Así sí: “¿Cómo viste la junta? Me interesa saber qué te pareció útil y qué no.”»"
+     ],
+     "caso": "Caso ficticio: Renata, de 36 años, es gerente de un hotel en Puerto Vallarta. Está convencida de que Ulises, el recepcionista del turno de noche, trata mal a los huéspedes. Revisa las reseñas en línea y sólo copia las tres que mencionan «recepción lenta». Planea hablar con él para «que acepte el problema».",
+     "p": [
+      [
+       "¿Qué muestra la forma en que Renata revisó las reseñas?",
+       "Sesgo de confirmación: seleccionó sólo la información que apoyaba su idea",
+       "Efecto halo: la simpatía de Ulises le impide ver sus errores con los huéspedes",
+       "Falso consenso: supone que todos los huéspedes opinan lo mismo que ella",
+       "Renata filtró las reseñas para confirmar lo que ya pensaba. No hay simpatía que tiña su juicio, y el problema no es suponer que otros piensan como ella, sino buscar sólo lo que la confirma."
       ],
-      "comparar": [
-        "«Así no: “¿Verdad que te aburrió la junta? Se te notaba en la cara.”»",
-        "«Así sí: “¿Cómo viste la junta? Me interesa saber qué te pareció útil y qué no.”»"
+      [
+       "¿Qué pregunta debería hacerse Renata antes de hablar con Ulises?",
+       "¿Qué encontraría en las reseñas y registros si mi idea estuviera equivocada?",
+       "¿Cuántas reseñas negativas más necesito para que Ulises no pueda negar lo que hace?",
+       "¿Qué otros empleados también han notado el mal trato de Ulises en el turno de noche?",
+       "Buscar lo que refutaría su idea, como reseñas positivas del turno de noche o tiempos de espera por otras causas, pone a prueba la hipótesis. Las otras preguntas sólo acumulan confirmaciones."
       ],
-      "caso": "Caso ficticio: Renata, de 36 años, es gerente de un hotel en Puerto Vallarta. Está convencida de que Ulises, el recepcionista del turno de noche, trata mal a los huéspedes. Revisa las reseñas en línea y sólo copia las tres que mencionan «recepción lenta». Planea hablar con él para «que acepte el problema».",
-      "p": [
-        ["¿Qué muestra la forma en que Renata revisó las reseñas?", "Sesgo de confirmación: seleccionó sólo la información que apoyaba su idea", "Efecto halo: la simpatía de Ulises le impide ver sus errores con los huéspedes", "Falso consenso: supone que todos los huéspedes opinan lo mismo que ella", "Renata filtró las reseñas para confirmar lo que ya pensaba. No hay simpatía que tiña su juicio, y el problema no es suponer que otros piensan como ella, sino buscar sólo lo que la confirma."],
-        ["¿Qué pregunta debería hacerse Renata antes de hablar con Ulises?", "¿Qué encontraría en las reseñas y registros si mi idea estuviera equivocada?", "¿Cuántas reseñas negativas más necesito para que Ulises no pueda negar lo que hace?", "¿Qué otros empleados también han notado el mal trato de Ulises en el turno de noche?", "Buscar lo que refutaría su idea, como reseñas positivas del turno de noche o tiempos de espera por otras causas, pone a prueba la hipótesis. Las otras preguntas sólo acumulan confirmaciones."],
-        ["¿Qué forma de iniciar la conversación con Ulises es más neutral?", "«Quiero revisar contigo cómo van las noches en recepción; ¿qué has notado?»", "«Ya vi las reseñas y quiero que aceptes que hay un problema con tu trato»", "«¿Por qué crees que los huéspedes se quejan tanto de ti en las noches?»", "Una pregunta abierta sin conclusión previa permite obtener información nueva. Las otras presuponen la culpa y fabrican una respuesta defensiva que Renata podría leer como confirmación."]
-      ],
-      "completar": ["Buscar y recordar sólo la información que apoya lo que ya creemos se llama sesgo de ___.", "confirmación"],
-      "relacionar": [
-        ["Pregunta que confirma", "«¿Otra vez no hiciste la tarea?»"],
-        ["Pregunta neutral", "«¿Cómo vas con la tarea de hoy?»"],
-        ["Buscar la refutación", "Anotar las veces que tu jefa sí reconoció tu trabajo"],
-        ["Registro con fecha", "Escribir tu lectura antes de ver los resultados"],
-        ["Abogado del diablo", "Pedir a una amiga que defienda la interpretación contraria"]
-      ],
-      "refl": "Pon a prueba una lectura que tienes sobre alguien. 1) Escribe la lectura como hipótesis («Creo que…»). 2) Enumera tres observaciones que la confirmarían y tres que la refutarían. 3) Redacta una pregunta neutral para esa persona. 4) Durante tres días, anota lo que observes en ambas columnas y concluye si mantienes, matizas o cambias tu lectura.",
-      "modelo": "Modelo: «Hipótesis: creo que mi suegra desaprueba cómo educamos a nuestro hijo. Confirmarían: que corrija al niño frente a nosotros, que comente sobre horarios, que critique lo que come. Refutarían: que nos pida consejo, que respete una regla sin comentar, que elogie algo. Pregunta: “¿Cómo ves a Mateo últimamente?” En tres días vi una corrección, pero también dos elogios y respetó la regla de las pantallas. Matizo: desaprueba algunas cosas, no todo.» Es buena porque define evidencia en ambos sentidos antes de observar y llega a una conclusión más precisa.",
-      "plantilla": ["Prueba de hipótesis sobre una persona", "Mi hipótesis: Creo que [persona] [piensa, siente o quiere…]\nLa confirmaría: 1) [ ] 2) [ ] 3) [ ]\nLa refutaría: 1) [ ] 2) [ ] 3) [ ]\nPregunta neutral: [ ]\nRegistro de 3 días: [fecha, observación, columna]\nConclusión: [mantengo / matizo / cambio]"],
-      "clave": [
-        "El sesgo de confirmación afecta qué buscamos, qué recordamos y cómo preguntamos.",
-        "Pregúntate qué verías si tu lectura estuviera equivocada, y búscalo.",
-        "Registrar tus lecturas por escrito y usar preguntas neutrales protege tu juicio."
+      [
+       "¿Qué forma de iniciar la conversación con Ulises es más neutral?",
+       "«Quiero revisar contigo cómo van las noches en recepción; ¿qué has notado?»",
+       "«Ya vi las reseñas y quiero que aceptes que hay un problema con tu trato»",
+       "«¿Por qué crees que los huéspedes se quejan tanto de ti en las noches?»",
+       "Una pregunta abierta sin conclusión previa permite obtener información nueva. Las otras presuponen la culpa y fabrican una respuesta defensiva que Renata podría leer como confirmación."
       ]
+     ],
+     "completar": [
+      "Buscar y recordar sólo la información que apoya lo que ya creemos se llama sesgo de ___.",
+      "confirmación"
+     ],
+     "relacionar": [
+      [
+       "Pregunta que confirma",
+       "«¿Otra vez no hiciste la tarea?»"
+      ],
+      [
+       "Pregunta neutral",
+       "«¿Cómo vas con la tarea de hoy?»"
+      ],
+      [
+       "Buscar la refutación",
+       "Anotar las veces que tu jefa sí reconoció tu trabajo"
+      ],
+      [
+       "Registro con fecha",
+       "Escribir tu lectura antes de ver los resultados"
+      ],
+      [
+       "Abogado del diablo",
+       "Pedir a una amiga que defienda la interpretación contraria"
+      ]
+     ],
+     "refl": "Pon a prueba una lectura que tienes sobre alguien. 1) Escribe la lectura como hipótesis («Creo que…»). 2) Enumera tres observaciones que la confirmarían y tres que la refutarían. 3) Redacta una pregunta neutral para esa persona. 4) Durante tres días, anota lo que observes en ambas columnas y concluye si mantienes, matizas o cambias tu lectura.",
+     "modelo": "Modelo: «Hipótesis: creo que mi suegra desaprueba cómo educamos a nuestro hijo. Confirmarían: que corrija al niño frente a nosotros, que comente sobre horarios, que critique lo que come. Refutarían: que nos pida consejo, que respete una regla sin comentar, que elogie algo. Pregunta: “¿Cómo ves a Mateo últimamente?” En tres días vi una corrección, pero también dos elogios y respetó la regla de las pantallas. Matizo: desaprueba algunas cosas, no todo.» Es buena porque define evidencia en ambos sentidos antes de observar y llega a una conclusión más precisa.",
+     "plantilla": [
+      "Prueba de hipótesis sobre una persona",
+      "Mi hipótesis: Creo que [persona] [piensa, siente o quiere…]\nLa confirmaría: 1) [ ] 2) [ ] 3) [ ]\nLa refutaría: 1) [ ] 2) [ ] 3) [ ]\nPregunta neutral: [ ]\nRegistro de 3 días: [fecha, observación, columna]\nConclusión: [mantengo / matizo / cambio]"
+     ],
+     "clave": [
+      "El sesgo de confirmación afecta qué buscamos, qué recordamos y cómo preguntamos.",
+      "Pregúntate qué verías si tu lectura estuviera equivocada, y búscalo.",
+      "Registrar tus lecturas por escrito y usar preguntas neutrales protege tu juicio."
+     ]
     }
-  ],
-  "reto": {
+   ],
+   "reto": {
     "texto": "Elabora tu mapa personal de sesgos. Revisa tres juicios importantes que hayas hecho sobre otras personas en el último año (en el trabajo, en tu familia o con amistades). Para cada uno, identifica qué sesgo intervino, qué información ignoraste y qué pasó después. Luego diseña un pequeño protocolo de tres pasos que usarás antes de emitir juicios importantes sobre alguien.",
     "entregable": "Un documento con tres juicios analizados (hechos, sesgo, información ignorada, consecuencia), el sesgo que más se repite en ti y tu protocolo de tres pasos con una pregunta de control para cada paso.",
     "criterios": "Revisa: cada juicio se describe con hechos concretos, el sesgo está bien identificado y justificado, reconoces una consecuencia real de ese sesgo y tu protocolo es breve, específico y aplicable en menos de cinco minutos."
-  },
-  "lab": {
+   },
+   "lab": {
     "t": "Un proceso de selección bajo la lupa",
     "obj": "Detectar y corregir sesgos de juicio en un proceso real de selección de personal.",
     "esc": "<b>Isaac,</b> dueño de una distribuidora de productos de limpieza en Hermosillo, necesita contratar a una persona para cobranza. Entrevistó a tres candidatos y te pide ayuda porque siente que su decisión «ya está tomada», pero quiere estar seguro de que es justa.",
     "e": [
-      ["Escena 1: Isaac dice: «Me quedo con Rodrigo: estudió en la misma universidad que yo, es alegre y habla muy bien. Los otros dos no me convencieron».", "Consigna: identifica qué sesgos pueden estar influyendo y explica cómo afectan la evaluación de las habilidades de cobranza."],
-      ["Escena 2: Sobre la candidata Maricela, de 49 años, Isaac comenta: «Tiene mucha experiencia, pero a su edad le va a costar el sistema nuevo».", "Consigna: explica por qué es un estereotipo, qué riesgo legal y ético implica y qué información individual debería buscar Isaac."],
-      ["Escena 3: Sobre Omar, que llegó diez minutos tarde a la entrevista, Isaac concluye: «Es impuntual; en cobranza eso no sirve».", "Consigna: aplica la pregunta correctiva del error de atribución y propón cómo verificar si la impuntualidad es un patrón o un hecho aislado."],
-      ["Escena 4: Isaac acepta repetir la evaluación con criterios claros.", "Consigna: diseña una rúbrica de cuatro criterios relacionados con cobranza, con evidencia concreta para cada uno, y un paso para evitar el sesgo de confirmación."]
+     [
+      "Escena 1: Isaac dice: «Me quedo con Rodrigo: estudió en la misma universidad que yo, es alegre y habla muy bien. Los otros dos no me convencieron».",
+      "Consigna: identifica qué sesgos pueden estar influyendo y explica cómo afectan la evaluación de las habilidades de cobranza."
+     ],
+     [
+      "Escena 2: Sobre la candidata Maricela, de 49 años, Isaac comenta: «Tiene mucha experiencia, pero a su edad le va a costar el sistema nuevo».",
+      "Consigna: explica por qué es un estereotipo, qué riesgo legal y ético implica y qué información individual debería buscar Isaac."
+     ],
+     [
+      "Escena 3: Sobre Omar, que llegó diez minutos tarde a la entrevista, Isaac concluye: «Es impuntual; en cobranza eso no sirve».",
+      "Consigna: aplica la pregunta correctiva del error de atribución y propón cómo verificar si la impuntualidad es un patrón o un hecho aislado."
+     ],
+     [
+      "Escena 4: Isaac acepta repetir la evaluación con criterios claros.",
+      "Consigna: diseña una rúbrica de cuatro criterios relacionados con cobranza, con evidencia concreta para cada uno, y un paso para evitar el sesgo de confirmación."
+     ]
     ],
     "p": [
-      ["¿Qué combinación de sesgos es más probable en la preferencia de Isaac por Rodrigo?", "Efecto halo y similitud con él mismo", "Error de atribución e ilusión de transparencia", "Maldición del conocimiento y falso consenso", "La simpatía y la elocuencia tiñen el juicio sobre otras habilidades, y compartir universidad genera una afinidad que no predice desempeño. Los otros pares no describen lo que ocurre en la escena."],
-      ["¿Qué información ayudaría más a evaluar a Maricela de forma individual?", "Una prueba práctica con el sistema y preguntarle cómo aprende herramientas nuevas", "Estadísticas nacionales sobre el uso de tecnología en personas de más de 45 años", "La opinión de los empleados jóvenes sobre si les gustaría trabajar con ella", "Los datos de la propia candidata son los que individualizan la evaluación. Las estadísticas de grupo no describen a Maricela, y la opinión de otros sobre trabajar con ella introduce más sesgo."],
-      ["¿Qué paso de la rúbrica protege mejor contra el sesgo de confirmación?", "Calificar cada criterio antes de comparar a los candidatos entre sí", "Empezar por el candidato favorito para tener un punto de referencia claro", "Pedir a Rodrigo que ayude a diseñar la prueba práctica para los demás", "Calificar criterio por criterio, sin mirar primero al favorito, evita buscar razones para lo que ya se decidió. Empezar por el favorito y dejar que un candidato diseñe la prueba refuerzan el sesgo."]
+     [
+      "¿Qué combinación de sesgos es más probable en la preferencia de Isaac por Rodrigo?",
+      "Efecto halo y atracción por la similitud",
+      "Error de atribución e ilusión de transparencia",
+      "Maldición del conocimiento y falso consenso",
+      "La simpatía y la elocuencia tiñen el juicio sobre otras habilidades, y compartir universidad genera una afinidad que no predice desempeño. Los otros pares no describen lo que ocurre en la escena."
+     ],
+     [
+      "¿Qué información ayudaría más a evaluar a Maricela de forma individual?",
+      "Una prueba práctica con el sistema y preguntarle cómo aprende herramientas nuevas",
+      "Estadísticas nacionales sobre el uso de tecnología en personas de más de 45 años",
+      "La opinión de los empleados jóvenes sobre si les gustaría trabajar con ella",
+      "Los datos de la propia candidata son los que individualizan la evaluación. Las estadísticas de grupo no describen a Maricela, y la opinión de otros sobre trabajar con ella introduce más sesgo."
+     ],
+     [
+      "¿Qué paso de la rúbrica protege mejor contra el sesgo de confirmación?",
+      "Calificar cada criterio antes de comparar a los candidatos entre sí",
+      "Empezar por el candidato favorito para tener un punto de referencia claro",
+      "Pedir a Rodrigo que ayude a diseñar la prueba práctica para los demás",
+      "Calificar criterio por criterio, sin mirar primero al favorito, evita buscar razones para lo que ya se decidió. Empezar por el favorito y dejar que un candidato diseñe la prueba refuerzan el sesgo."
+     ]
     ],
-    "pl": ["Rúbrica para evaluar personas sin sesgos", "Puesto: [ ]\nCriterio 1: [ ] · Evidencia: [prueba, ejemplo, referencia] · Puntaje 0-2\nCriterio 2: [ ] · Evidencia: [ ] · Puntaje 0-2\nCriterio 3: [ ] · Evidencia: [ ] · Puntaje 0-2\nCriterio 4: [ ] · Evidencia: [ ] · Puntaje 0-2\nSesgos que vigilo: [halo / similitud / estereotipo / atribución]\nDato que podría hacerme cambiar de opinión: [ ]"]
-  },
-  "quiz": [
-    ["Un cliente le contesta de forma cortante a Alma, vendedora en Morelia. Ella piensa: «Qué persona tan desagradable». ¿Qué sesgo es más probable?", "Error fundamental de atribución", "Efecto halo", "Falso consenso", "Maldición del conocimiento"],
-    ["Carlos califica mejor el reporte de una compañera porque es muy simpática y siempre lo saluda. ¿Qué le recomendarías?", "Revisar el reporte con criterios definidos, sin pensar en quién lo hizo", "Pedir a la compañera que sea menos simpática para evitar confusiones futuras", "Confiar en su juicio, porque la simpatía suele ir de la mano con la calidad del trabajo", "Calificar más bajo a propósito para compensar el efecto de la simpatía"],
-    ["Una maestra de Zacatecas piensa que un alumno es flojo y, cuando entrega una tarea excelente, lo atribuye a que «alguien se la hizo». ¿Qué ocurre?", "Interpreta la nueva evidencia para que encaje con su idea previa", "Aplica correctamente la individualización al considerar a otras personas", "Usa una hipótesis bien formulada, porque considera una causa externa", "Muestra ilusión de transparencia, porque cree que el alumno nota su opinión"],
-    ["Rigoberto supone que a todo su equipo le gustaría trabajar desde casa porque a él le encanta. ¿Qué concepto lo describe?", "Falso consenso", "Estereotipo", "Efecto halo", "Precisión empática"],
-    ["En una entrevista breve, ¿qué rasgo de un candidato se puede percibir con más precisión?", "Qué tan extrovertido es", "Qué tan honesto será con el dinero de la empresa", "Qué tan leal será con el equipo durante años", "Qué tan bien manejará las crisis futuras"],
-    ["Fabiola quiere comprobar si su nuevo compañero es arrogante. ¿Qué pregunta es más neutral?", "«¿Cómo te has sentido en el equipo estas semanas?»", "«¿Siempre has sido así de seguro de ti mismo?»", "«¿No crees que a veces interrumpes a los demás?»", "«¿Por qué te cuesta tanto aceptar otras ideas?»"],
-    ["Un gerente en Veracruz dice: «No contrates a gente de fuera; los que vienen de otros estados no se adaptan». ¿Qué es lo más acertado?", "Es un estereotipo que ignora a cada candidato y puede ser discriminatorio", "Es una regla prudente si la empresa ya tuvo malas experiencias con foráneos", "Es un caso de falso consenso, porque supone que todos piensan como él", "Es una primera impresión válida, porque se basa en su experiencia personal"],
-    ["¿Qué condición aumenta la probabilidad de cometer el error fundamental de atribución?", "Juzgar con prisa, cansancio o distracción", "Conocer bien la situación de la otra persona", "Tener tiempo para pensar antes de decidir", "Haber vivido una situación parecida antes"],
-    ["Jazmín anota con fecha su lectura sobre un nuevo socio antes de ver cómo se comporta en la primera negociación. ¿Para qué le sirve?", "Para que su memoria no reescriba después lo que pensaba", "Para tener pruebas por si el socio la engaña más adelante", "Para demostrarle al socio que ella lo leyó correctamente", "Para no tener que preguntarle nada durante la negociación"],
-    ["Toño llega tarde a una comida familiar y su tía dice: «Siempre tan desconsiderado». ¿Qué pregunta aplicaría mejor lo aprendido en el módulo?", "¿Qué pudo haberle pasado para llegar tarde hoy?", "¿Cuántas veces más ha llegado tarde este año?", "¿Quién más en la familia piensa que es desconsiderado?", "¿Por qué nunca aprende a ser puntual como los demás?"]
-  ]
+    "pl": [
+     "Rúbrica para evaluar personas sin sesgos",
+     "Puesto: [ ]\nCriterio 1: [ ] · Evidencia: [prueba, ejemplo, referencia] · Puntaje 0-2\nCriterio 2: [ ] · Evidencia: [ ] · Puntaje 0-2\nCriterio 3: [ ] · Evidencia: [ ] · Puntaje 0-2\nCriterio 4: [ ] · Evidencia: [ ] · Puntaje 0-2\nSesgos que vigilo: [halo / similitud / estereotipo / atribución]\nDato que podría hacerme cambiar de opinión: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un cliente le contesta de forma cortante a Alma, vendedora en Morelia. Ella piensa: «Qué persona tan desagradable». ¿Qué sesgo es más probable?",
+     "Error fundamental de atribución",
+     "Efecto halo",
+     "Falso consenso",
+     "Maldición del conocimiento"
+    ],
+    [
+     "Carlos califica mejor el reporte de una compañera porque es muy simpática y siempre lo saluda. ¿Qué le recomendarías?",
+     "Revisar el reporte con criterios definidos, sin pensar en quién lo hizo",
+     "Pedir a la compañera que sea menos simpática para evitar confusiones futuras",
+     "Confiar en su juicio, porque la simpatía suele ir de la mano con la calidad del trabajo",
+     "Calificar más bajo a propósito para compensar el efecto de la simpatía"
+    ],
+    [
+     "Una maestra de Zacatecas piensa que un alumno es flojo y, cuando entrega una tarea excelente, lo atribuye a que «alguien se la hizo». ¿Qué ocurre?",
+     "Interpreta la nueva evidencia para que encaje con su idea previa",
+     "Aplica correctamente la individualización al considerar a otras personas",
+     "Usa una hipótesis bien formulada, porque considera una causa externa",
+     "Muestra ilusión de transparencia, porque cree que el alumno nota su opinión"
+    ],
+    [
+     "Rigoberto supone que a todo su equipo le gustaría trabajar desde casa porque a él le encanta. ¿Qué concepto lo describe?",
+     "Falso consenso",
+     "Estereotipo",
+     "Efecto halo",
+     "Precisión empática"
+    ],
+    [
+     "En una entrevista breve, ¿qué rasgo de un candidato se puede percibir con más precisión?",
+     "Qué tan extrovertido es",
+     "Qué tan honesto será con el dinero de la empresa",
+     "Qué tan leal será con el equipo durante años",
+     "Qué tan bien manejará las crisis futuras"
+    ],
+    [
+     "Fabiola quiere comprobar si su nuevo compañero es arrogante. ¿Qué pregunta es más neutral?",
+     "«¿Cómo te has sentido en el equipo estas semanas?»",
+     "«¿Siempre has sido así de seguro de ti mismo?»",
+     "«¿No crees que a veces interrumpes a los demás?»",
+     "«¿Por qué te cuesta tanto aceptar otras ideas?»"
+    ],
+    [
+     "Un gerente en Veracruz dice: «No contrates a gente de fuera; los que vienen de otros estados no se adaptan». ¿Qué es lo más acertado?",
+     "Es un estereotipo que ignora a cada candidato y puede ser discriminatorio",
+     "Es una regla prudente si la empresa ya tuvo malas experiencias con foráneos",
+     "Es un caso de falso consenso, porque supone que todos piensan como él",
+     "Es una primera impresión válida, porque se basa en su experiencia personal"
+    ],
+    [
+     "¿Qué condición aumenta la probabilidad de cometer el error fundamental de atribución?",
+     "Juzgar con prisa, cansancio o distracción",
+     "Conocer bien la situación de la otra persona",
+     "Tener tiempo para pensar antes de decidir",
+     "Haber vivido una situación parecida antes"
+    ],
+    [
+     "Jazmín anota con fecha su lectura sobre un nuevo socio antes de ver cómo se comporta en la primera negociación. ¿Para qué le sirve?",
+     "Para que su memoria no reescriba después lo que pensaba",
+     "Para tener pruebas por si el socio la engaña más adelante",
+     "Para demostrarle al socio que ella lo leyó correctamente",
+     "Para no tener que preguntarle nada durante la negociación"
+    ],
+    [
+     "Toño llega tarde a una comida familiar y su tía dice: «Siempre tan desconsiderado». ¿Qué pregunta aplicaría mejor lo aprendido en el módulo?",
+     "¿Qué pudo haberle pasado para llegar tarde hoy?",
+     "¿Cuántas veces más ha llegado tarde este año?",
+     "¿Quién más en la familia piensa que es desconsiderado?",
+     "¿Por qué nunca aprende a ser puntual como los demás?"
+    ]
+   ]
+  }
+ ]
 }
-] }

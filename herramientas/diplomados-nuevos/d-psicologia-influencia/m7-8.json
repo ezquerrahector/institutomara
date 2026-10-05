@@ -1,0 +1,592 @@
+{
+  "modulos": [
+    {
+      "t": "Entornos diseñados: nudges, plataformas y desinformación",
+      "r": "Evalúa los empujoncitos y la arquitectura de decisiones con su evidencia y sus críticas, detecta patrones oscuros y publicidad engañosa en México, entiende qué amplifican los algoritmos y resiste la desinformación con inoculación, lectura lateral y pausa.",
+      "lecciones": [
+        {
+          "t": "Arquitectura de decisiones: nudges, evidencia y críticas",
+          "obj": "Evaluar un empujoncito según su mecanismo, la calidad de su evidencia y su transparencia.",
+          "texto": [
+            "Ninguna decisión ocurre en el vacío: alguien decide qué opción aparece primero, cuál viene marcada y cuántos pasos cuesta cambiarla. Richard Thaler y Cass Sunstein llamaron <b>arquitectura de decisiones</b> a ese diseño y en 2008 popularizaron el término <i>nudge</i>, que en español suele traducirse como «empujoncito»: un cambio en el entorno que orienta la conducta de forma predecible sin prohibir opciones ni cambiar de manera importante los incentivos económicos. Poner la fruta a la altura de los ojos es un empujoncito; prohibir los refrescos no lo es.",
+            "La herramienta más poderosa es la <b>opción por defecto.</b> Un estudio de 2003 comparó países europeos: donde había que inscribirse para ser donador de órganos, el consentimiento era bajo; donde todos se consideraban donadores salvo que dijeran lo contrario, superaba el 85 %. En el ahorro para el retiro, el programa «Ahorra más mañana», de Thaler y Shlomo Benartzi, comprometía de antemano una parte de los aumentos futuros de sueldo y elevó la tasa de ahorro de los participantes de alrededor de 3.5 % a más de 13 % en unos tres años. Los recordatorios, la simplificación de trámites y la información comparativa también son empujoncitos comunes.",
+            "¿Qué tan bien funcionan en general? Un metaanálisis de 2022 con más de 200 estudios reportó un efecto promedio de pequeño a moderado, mayor en alimentación y en cambios de opción por defecto. Otro equipo reanalizó esos datos corrigiendo el sesgo de publicación, la tendencia a publicar sobre todo resultados positivos, y concluyó que no quedaba evidencia sólida de un efecto general. Y al revisar todos los ensayos de dos unidades de ciencias del comportamiento de Estados Unidos, el efecto promedio fue de 1.4 puntos porcentuales, frente a 8.7 en los estudios publicados en revistas académicas. Moraleja: algunos empujoncitos son robustos y muchos otros son pequeños o dependen del contexto.",
+            "También hay críticas éticas. El mismo diseño puede usarse contra la persona, lo que Thaler llama <i>sludge</i> o «lodo»: fricción que estorba lo que te conviene, como cancelar con diez pasos. Y un empujoncito puede servir de excusa para no atender causas de fondo, como salarios bajos o servicios caros. Un criterio práctico es la transparencia: ¿quien lo diseñó estaría dispuesto a explicarlo en público, y la persona puede elegir otra cosa con facilidad?"
+          ],
+          "comparar": [
+            "«Así no: cambiar sin avisar la configuración de la nómina para que todo el personal quede inscrito en un seguro con costo, y esconder cómo darse de baja.»",
+            "«Así sí: inscribir por defecto al chequeo médico gratuito, avisarlo con claridad y permitir darse de baja con un solo paso.»"
+          ],
+          "caso": "Caso ficticio: Marisol, administradora de 41 años del comedor de una maquiladora en Ciudad Juárez, quiere que el personal coma más verduras. Propone poner la barra de ensaladas al inicio de la fila y servir fruta como postre por defecto, con un letrero que lo explica. Un consultor le sugiere además reducir en secreto la porción del platillo principal y cobrar extra, sin anunciarlo, a quien pida postre dulce.",
+          "p": [
+            [
+              "¿Cuál de las medidas es un empujoncito en sentido estricto?",
+              "Colocar las ensaladas al inicio de la fila",
+              "Cobrar extra el postre dulce sin anunciarlo antes",
+              "Reducir en secreto la porción del platillo principal",
+              "Cambiar el orden de la fila orienta la elección sin prohibir nada ni cambiar precios. Cobrar extra modifica el incentivo económico, y reducir porciones en secreto oculta información, que es lo contrario de un diseño transparente."
+            ],
+            [
+              "¿Qué hace más defendible la propuesta original de Marisol?",
+              "Que se explica con un letrero y cualquiera puede elegir otra cosa",
+              "Que la mayoría del personal no notará el cambio en el comedor",
+              "Que el consultor ya la aplicó con éxito en otras plantas del país",
+              "La transparencia y la libertad de elegir otra opción la vuelven legítima. Que nadie lo note apunta a lo contrario, y la experiencia del consultor no resuelve la pregunta ética ni prueba que funcione aquí."
+            ],
+            [
+              "Si Marisol quiere saber si su cambio funciona, ¿qué le conviene hacer?",
+              "Comparar cuánta verdura se consume antes y después, y en un turno sin cambios",
+              "Confiar en el metaanálisis, que ya demostró que los empujoncitos funcionan",
+              "Preguntar al consultor si en otras plantas se notaron mejoras",
+              "Medir la conducta con un punto de comparación le da evidencia propia. Los metaanálisis muestran efectos promedio discutidos, y la impresión del consultor no es una medición."
+            ]
+          ],
+          "completar": [
+            "El diseño de cómo se presentan las opciones se llama arquitectura de ___.",
+            "decisiones"
+          ],
+          "relacionar": [
+            ["Opción por defecto", "Quedar inscrito al chequeo salvo que digas que no"],
+            ["Simplificación", "Reducir un formulario de seis páginas a una"],
+            ["Recordatorio", "Mensaje un día antes de la cita en la clínica"],
+            ["Lodo o fricción en contra", "Exigir una llamada en horario hábil para cancelar"],
+            ["Prueba de transparencia", "Explicar en público por qué se diseñó así"]
+          ],
+          "refl": "Audita la arquitectura de decisiones de un lugar que uses seguido. 1) Elige un espacio o servicio (supermercado, aplicación del banco, trámite, comedor, sitio de compras). 2) Identifica tres elementos de diseño: qué viene por defecto, qué está más a la mano y qué cuesta más trabajo. 3) Clasifica cada uno como empujoncito a tu favor, neutral o lodo. 4) Propón un rediseño transparente para el elemento que te perjudica.",
+          "modelo": "Modelo: «Aplicación de mi banco. 1) Al pagar la tarjeta de crédito aparece primero el pago mínimo: me perjudica, porque genera intereses. 2) El botón para pedir un préstamo está en la pantalla principal y el estado de cuenta, dentro de dos menús: es lodo para informarme. 3) Las notificaciones de cargos vienen activadas: me favorece. Rediseño: mostrar primero el pago para no generar intereses y poner el estado de cuenta a un toque.» Es buena porque observa elementos concretos, distingue a quién favorece cada uno y propone un cambio transparente y realista.",
+          "plantilla": [
+            "Ficha para evaluar un empujoncito",
+            "Situación: [dónde y qué decisión]\nEmpujoncito: [opción por defecto / orden / recordatorio / simplificación / comparación]\n¿A quién favorece? [a la persona / a la organización / a ambas]\nEvidencia: [estudio, prueba propia, ninguna]\n¿Se puede elegir otra cosa con facilidad? [sí / no]\n¿Lo explicaría en público? [sí / no]\nMejora propuesta: [cambio]"
+          ],
+          "clave": [
+            "Un empujoncito orienta sin prohibir ni cambiar mucho los incentivos; la opción por defecto es la herramienta más robusta.",
+            "La evidencia general de los nudges es más modesta de lo que se creía: muchos efectos son pequeños o dependen del contexto.",
+            "Pregunta a quién favorece el diseño, si se puede elegir otra cosa fácilmente y si se explicaría en público."
+          ]
+        },
+        {
+          "t": "Patrones oscuros y publicidad engañosa: tus derechos en México",
+          "obj": "Reconocer patrones oscuros y publicidad engañosa, y usar los mecanismos de protección al consumidor en México.",
+          "texto": [
+            "Los <b>patrones oscuros</b> son diseños de páginas y aplicaciones que te llevan a hacer algo que no harías con información clara: comprar de más, compartir tus datos o no cancelar. El término lo propuso en 2010 el diseñador Harry Brignull y hoy lo usan autoridades de muchos países. Algunos tipos frecuentes son la casilla premarcada que agrega un seguro o una donación, los cargos que aparecen hasta el último paso, la suscripción fácil de contratar y difícil de cancelar, la vergüenza confirmatoria, cuando el botón para rechazar dice «No, prefiero pagar de más», y la falsa urgencia que estudiaste con el principio de escasez.",
+            "Funcionan porque aprovechan justo lo que has visto en el diplomado: la inercia de la opción por defecto, la aversión a la pérdida, la prisa y el cansancio al final de una compra, cuando el pensamiento lento ya no quiere revisar nada. En 2022 la Organización para la Cooperación y el Desarrollo Económicos publicó un informe que los describe como un problema creciente de protección al consumidor.",
+            "En México, el artículo 32 de la Ley Federal de Protección al Consumidor establece que la información y la publicidad de bienes y servicios deben ser veraces, comprobables, claras y libres de elementos que induzcan o puedan inducir a error o confusión por engañosas o abusivas, y su artículo 7 Bis obliga a exhibir el monto total a pagar. Si un proveedor incumple, puedes presentar una queja ante la Procuraduría Federal del Consumidor por el Teléfono del Consumidor, 55 5568 8722 u 800 468 8722, o en línea. Para frenar llamadas de publicidad existe el Registro Público para Evitar Publicidad (REPEP). Si el problema es con un banco, una aseguradora u otra institución financiera, la instancia es la Condusef (55 5340 0999 u 800 999 8080), que además administra el Registro Público de Usuarios para bloquear su publicidad. Verifica los datos vigentes en sus sitios oficiales.",
+            "Tu mejor defensa combina atención y evidencia: revisa el resumen antes de pagar, desmarca casillas, busca cómo cancelar antes de suscribirte y guarda capturas de pantalla de anuncios, precios y pasos. Esas capturas son tu prueba si necesitas reclamar."
+          ],
+          "comparar": [
+            "«Así no: pagar con prisa un boleto para un concierto y descubrir después un cargo por servicio y un seguro de cancelación que venía marcado.»",
+            "«Así sí: antes de pagar, revisar el total, desmarcar el seguro, tomar captura del resumen y compararlo con el precio anunciado.»"
+          ],
+          "caso": "Caso ficticio: Julián, repartidor de 26 años en Mazatlán, activó la prueba gratuita de una aplicación de entrenamiento. Al terminar el mes le cobraron una anualidad. Para cancelar, la aplicación le pide llamar en horario de oficina; el botón para quedarse dice «Sí, quiero seguir mejorando» y el de salir, «No, me rindo». La renovación anual aparecía en letra gris al final de los términos.",
+          "p": [
+            [
+              "¿Qué patrones oscuros aparecen en el caso de Julián?",
+              "Cancelación difícil, vergüenza confirmatoria y renovación poco visible",
+              "Falsa urgencia con un contador y reseñas inventadas en la tienda",
+              "Un precio tachado como ancla y un regalo de bienvenida condicionado",
+              "El caso describe una salida con más obstáculos que la entrada, un botón que avergüenza y una condición escondida. No se mencionan contadores, reseñas, precios tachados ni regalos."
+            ],
+            [
+              "¿Qué acción le conviene más a Julián?",
+              "Guardar capturas, pedir la cancelación por escrito y acudir a la Profeco si no responden",
+              "Dar por perdido el cobro, porque aceptó los términos al registrarse en la aplicación",
+              "Publicar una reseña negativa y esperar a que la empresa lo busque",
+              "Documentar y reclamar por la vía formal protege sus derechos. Aceptar términos ocultos no anula la obligación de informar con claridad, y una reseña no sustituye una queja."
+            ],
+            [
+              "¿Qué diseño sería legítimo para esa aplicación?",
+              "Avisar días antes del cobro y permitir cancelar tan fácil como suscribirse",
+              "Conservar el botón «No, me rindo», pero en letras más pequeñas y discretas",
+              "Ofrecer un descuento a quien llame para cancelar, sin cambiar el proceso",
+              "Avisar a tiempo y equilibrar la entrada y la salida respeta la decisión. Hacer menos visible el botón agrava el problema, y el descuento mantiene la fricción para irse."
+            ]
+          ],
+          "completar": [
+            "Los diseños que te llevan a hacer algo que no harías con información clara se llaman patrones ___.",
+            "oscuros"
+          ],
+          "refl": "Arma tu kit de defensa como consumidor. 1) Revisa una suscripción o una compra en línea reciente y anota si hubo casillas premarcadas, cargos al final, renovaciones automáticas o cancelaciones difíciles. 2) Busca en el sitio oficial de la Profeco (o de la Condusef, si es un servicio financiero) cómo presentar una queja. 3) Redacta un mensaje al proveedor pidiendo la corrección, con fechas y evidencia. 4) Escribe tu regla para futuras suscripciones.",
+          "modelo": "Modelo: «Compré dos boletos de autobús en línea; venía marcado un seguro de cancelación de $45 por boleto que no pedí. En el sitio de la Profeco vi que puedo presentar la queja en línea o por teléfono. Mensaje: “El 12 de mayo compré dos boletos; el seguro venía preseleccionado y no lo solicité. Adjunto capturas. Solicito el reembolso de $90 en cinco días hábiles”. Regla: antes de suscribirme busco cómo cancelar y pongo una alarma tres días antes de que termine la prueba gratuita.» Es buena porque identifica el patrón, ubica la instancia correcta, documenta con fechas y montos y fija una regla preventiva.",
+          "plantilla": [
+            "Reclamo por publicidad o diseño engañoso",
+            "Proveedor: [nombre]\nFecha y medio: [sitio, aplicación, tienda]\nLo que se anunció: [texto o precio]\nLo que ocurrió: [cargo, casilla, renovación, cancelación difícil]\nEvidencia: [capturas, correos, estado de cuenta]\nLo que solicito: [reembolso, cancelación, corrección]\nInstancia si no responden: [Profeco / Condusef]"
+          ],
+          "clave": [
+            "Los patrones oscuros explotan la inercia, la aversión a la pérdida y el cansancio al final de la compra.",
+            "En México la publicidad debe ser veraz, comprobable y clara, y el monto total debe estar a la vista.",
+            "Guarda evidencia y acude a la Profeco con proveedores y a la Condusef con instituciones financieras."
+          ]
+        },
+        {
+          "t": "Redes y algoritmos: qué se amplifica y por qué",
+          "obj": "Explicar cómo se combinan los algoritmos y la psicología de las personas usuarias para amplificar ciertos contenidos, y ajustar tus hábitos de consumo y difusión.",
+          "texto": [
+            "En redes sociales no ves lo más reciente ni lo más importante, sino lo que un <b>algoritmo de recomendación</b> calcula que te mantendrá más tiempo: publicaciones y videos ordenados según lo que tú y personas parecidas a ti miraron, comentaron o compartieron. Esa lógica no es neutral porque nuestra atención tampoco lo es: lo novedoso, lo que indigna y lo que confirma nuestra identidad atrapa más miradas.",
+            "La evidencia lo respalda. Un estudio publicado en 2018 analizó unas 126 000 historias difundidas en Twitter entre 2006 y 2017 y encontró que las falsas llegaban más lejos, más rápido y a más personas que las verdaderas, en parte porque eran más novedosas y provocaban sorpresa y asco; además, la diferencia se debía sobre todo a personas, no a cuentas automatizadas. Otro trabajo de 2017 encontró que cada palabra moral y emocional en un mensaje político, como «vergüenza» o «traición», se asociaba con un aumento cercano a 20 % en los reenvíos, aunque investigaciones posteriores discuten qué tan general es ese efecto.",
+            "¿Los algoritmos nos encierran en burbujas y nos polarizan? La respuesta es más matizada de lo que se repite. En 2023 se publicaron estudios hechos con la colaboración de una gran plataforma durante la elección presidencial de Estados Unidos: pasar el muro de decenas de miles de personas a orden cronológico cambió mucho lo que veían y redujo su tiempo de uso, pero en esos tres meses no modificó de forma medible su polarización ni sus actitudes políticas. Los algoritmos sí deciden qué ves; su efecto sobre lo que crees parece menor de lo que se teme y es difícil de medir a largo plazo.",
+            "En la influencia digital también pesan las <b>relaciones parasociales:</b> la sensación de conocer y estimar a una creadora de contenido que no sabe quién eres. Para recuperar el control, diversifica tus fuentes a propósito, desactiva la reproducción automática, usa el orden cronológico cuando exista y, antes de compartir algo que te enoja, detente: la indignación es justo la emoción que más se amplifica."
+          ],
+          "comparar": [
+            "«Así no: compartir de inmediato un video que te indignó porque “todo mundo tiene que verlo”.»",
+            "«Así sí: esperar unos minutos, buscar quién lo publicó primero y compartirlo sólo si puedes confirmar lo que dice.»"
+          ],
+          "caso": "Caso ficticio: Saúl, mecánico de 33 años en Torreón, empezó a ver videos de un creador de contenido que critica a los bancos. En pocas semanas sus recomendaciones se llenaron de videos cada vez más furiosos, y nota que sus propias publicaciones enojadas reciben el triple de reacciones que las demás. Hoy quiere compartir un video que asegura que «los bancos van a congelar todas las cuentas el próximo mes».",
+          "p": [
+            [
+              "¿Qué explica mejor que el muro de Saúl se llenara de videos furiosos?",
+              "El algoritmo prioriza lo que lo retiene, y la indignación retiene",
+              "Los bancos pagaron para que viera ese contenido y se alejara de ellos",
+              "Saúl decidió de forma consciente seguir sólo a creadores enojados",
+              "El sistema aprende de lo que Saúl mira y le ofrece más de lo que mantiene su atención. No hay indicios de que los bancos paguen esos videos, y el caso describe recomendaciones, no una elección deliberada."
+            ],
+            [
+              "¿Por qué sus publicaciones enojadas reciben más reacciones?",
+              "El contenido moral y emocional tiende a difundirse más",
+              "Sus seguidores comparten su opinión sobre los bancos sin excepción",
+              "Las plataformas eliminan por norma las publicaciones tranquilas",
+              "Los estudios asocian el lenguaje moral y emocional con más difusión. Nada indica que todos sus seguidores piensen igual, y las plataformas no eliminan publicaciones por ser tranquilas."
+            ],
+            [
+              "¿Qué debería hacer Saúl antes de compartir el video?",
+              "Pausar y buscar si fuentes oficiales o medios confiables lo confirman",
+              "Compartirlo con la advertencia de que quizá no es cierto, por si acaso",
+              "Revisar si el video tiene muchas reproducciones y comentarios a favor",
+              "La pausa y la verificación evitan difundir un rumor que puede causar pánico. Compartir con advertencia igual lo amplifica, y la popularidad no dice nada de su veracidad."
+            ]
+          ],
+          "completar": [
+            "El sistema que decide el orden de lo que ves en redes se llama algoritmo de ___.",
+            "recomendación"
+          ],
+          "relacionar": [
+            ["Novedad", "Un rumor sorprendente que nadie había escuchado"],
+            ["Indignación", "«¡Esto es una vergüenza, compártelo ya!»"],
+            ["Orden cronológico", "Ver las publicaciones en el orden en que se hicieron"],
+            ["Relación parasocial", "Sentir que conoces a una creadora que no sabe quién eres"],
+            ["Reproducción automática", "Videos que empiezan solos al terminar el anterior"]
+          ],
+          "refl": "Audita tu dieta digital durante tres días. 1) Anota las tres plataformas que más usas y cuánto tiempo pasas en cada una (revisa el registro de tiempo de pantalla de tu celular). 2) Clasifica los primeros 20 contenidos que te muestra cada una: información, entretenimiento, indignación o publicidad. 3) Identifica qué emoción predominó. 4) Haz dos ajustes concretos (seguir fuentes distintas, desactivar la reproducción automática, silenciar cuentas) y describe qué cambió al tercer día.",
+          "modelo": "Modelo: «Uso sobre todo una red de videos cortos (2 h 10 min al día), una de mensajería y una de fotos. De los primeros 20 videos, 9 eran de indignación sobre política o vecinos, 6 de entretenimiento, 4 publicidad y sólo 1 informativo. Predominó el enojo. Ajustes: desactivé la reproducción automática y empecé a seguir a dos medios locales y a una divulgadora de ciencia. Al tercer día bajé a 1 h 25 min y los videos de indignación pasaron de 9 a 5.» Es buena porque mide antes y después, nombra la emoción dominante y hace ajustes concretos y verificables.",
+          "plantilla": [
+            "Ajuste de mi entorno digital",
+            "Plataforma: [nombre genérico]\nTiempo diario: [horas y minutos]\nDe 20 contenidos: información [ ], entretenimiento [ ], indignación [ ], publicidad [ ]\nEmoción que predomina: [emoción]\nAjuste 1: [acción]\nAjuste 2: [acción]\nResultado después de tres días: [cambio observado]"
+          ],
+          "clave": [
+            "Los algoritmos ordenan lo que ves según lo que retiene tu atención, y la novedad y la indignación la retienen.",
+            "Las noticias falsas se difunden más rápido sobre todo por personas; el efecto de los algoritmos sobre las actitudes es más matizado de lo que se dice.",
+            "Diversifica fuentes, quita la reproducción automática y haz una pausa antes de compartir lo que te enoja."
+          ]
+        },
+        {
+          "t": "Desinformación: inoculación, lectura lateral y pausa",
+          "obj": "Aplicar inoculación, lectura lateral y pausa de verificación para evaluar un contenido antes de creerlo o compartirlo.",
+          "texto": [
+            "Corregir una mentira después de que se difundió sirve, pero llega tarde. Por eso la investigación reciente apuesta también por la <b>inoculación</b> psicológica, una idea que William McGuire propuso en los años sesenta: así como una vacuna expone al cuerpo a una versión debilitada de un virus, exponer a las personas a una dosis débil de una táctica de manipulación, con su explicación, las ayuda a reconocerla después. A esta estrategia también se le llama desmentido anticipado.",
+            "En 2022 un equipo de las universidades de Cambridge y Bristol probó videos de 90 segundos que explicaban técnicas frecuentes: lenguaje emocional exagerado, falsos dilemas («o estás con nosotros o contra el país»), chivos expiatorios e incoherencia. En experimentos con más de 6 000 personas, quienes vieron los videos reconocieron mejor esas técnicas. Después los videos se mostraron como anuncios a millones de usuarios de una plataforma de video, y quienes los vieron identificaron las técnicas alrededor de 5 % mejor que un grupo de comparación. Es un efecto pequeño, pero barato y aplicable a gran escala. Un estudio de 2025 en un muro simulado encontró que el efecto desaparecía cuando se mezclaban publicaciones reales u otras técnicas de manipulación: la inoculación ayuda, pero no es una solución mágica.",
+            "La segunda herramienta es la <b>lectura lateral.</b> Investigadores de la Universidad de Stanford compararon a verificadores de datos profesionales con historiadores y estudiantes: los verificadores evaluaban mejor los sitios porque, en lugar de leer a fondo la página, abrían otras pestañas para averiguar quién estaba detrás y qué decían otros de esa fuente. Leer menos la página y más acerca de la página resultó más eficaz.",
+            "La tercera es la pausa. Experimentos publicados en 2021 mostraron que pedir a las personas que juzgaran si un titular era verdadero mejoró después la calidad de lo que compartían: muchas veces difundimos falsedades no porque las creamos, sino porque no pensamos en si son exactas. Una rutina práctica: detente, pregunta quién lo dice y qué gana, busca la fuente original y a medios de verificación, y comparte sólo lo que puedas confirmar. Si el mensaje pide datos personales o pagos, trátalo como posible fraude y repórtalo a la policía cibernética de tu estado."
+          ],
+          "comparar": [
+            "«Así no: reenviar al grupo familiar el audio de un supuesto médico porque “más vale prevenir”.»",
+            "«Así sí: buscar el nombre del médico y el tema en otras fuentes y, si no se confirma, escribir: “Lo revisé y no encontré respaldo; mejor esperemos información oficial”.»"
+          ],
+          "caso": "Caso ficticio: Yolanda, cocinera de 48 años en una fonda de Chetumal, recibe un mensaje con el escudo nacional: «Nuevo apoyo federal de 5 mil pesos para trabajadoras del comercio. Regístrate antes del viernes en este enlace y compártelo con 10 contactos». El enlace no termina en gob.mx y pide su CURP y los datos de su tarjeta bancaria.",
+          "p": [
+            [
+              "¿Cómo aplicaría Yolanda la lectura lateral en este caso?",
+              "Buscando en otra pestaña si el apoyo aparece en sitios oficiales",
+              "Leyendo con cuidado el texto del enlace para ver si tiene errores",
+              "Revisando si el escudo del aviso tiene buena calidad de imagen",
+              "La lectura lateral consiste en salir de la página e investigar en otras fuentes. Revisar errores o la calidad del escudo es leer verticalmente, y los defraudadores pueden copiar logotipos con facilidad."
+            ],
+            [
+              "¿Qué señales de manipulación contiene el mensaje?",
+              "Urgencia, petición de reenviar y solicitud de datos bancarios",
+              "Un monto razonable y un plazo claro, que lo hacen confiable",
+              "El escudo oficial, que por sí solo prueba que el mensaje es falso",
+              "El plazo corto, la cadena de reenvío y la petición de datos financieros son señales típicas de fraude. Un monto razonable no lo vuelve confiable, y el escudo no prueba ni la verdad ni la falsedad."
+            ],
+            [
+              "¿Qué puede hacer Yolanda para proteger también a otras personas?",
+              "Avisar en sus grupos que no es oficial y reportar el enlace",
+              "Reenviarlo con la pregunta «¿alguien sabe si esto es cierto?»",
+              "Borrar el mensaje y callar para no causar alarma entre sus conocidos",
+              "Avisar con claridad y reportar corta la cadena. Reenviarlo para preguntar lo difunde aunque sea con buena intención, y callar deja a otros expuestos."
+            ]
+          ],
+          "completar": [
+            "Exponer a las personas a una dosis débil de una táctica de manipulación para que la reconozcan después se llama ___ psicológica.",
+            "inoculación"
+          ],
+          "relacionar": [
+            ["Lenguaje emocional exagerado", "«¡Indignante! Lo que no quieren que sepas»"],
+            ["Falso dilema", "«O apoyas esta medida o estás contra tu país»"],
+            ["Chivo expiatorio", "Culpar a un grupo entero de un problema complejo"],
+            ["Lectura lateral", "Abrir otra pestaña para investigar quién publica"],
+            ["Pausa de exactitud", "Preguntarte si es verdad antes de compartir"]
+          ],
+          "refl": "Inocula a tu círculo cercano. 1) Elige una técnica de manipulación: lenguaje emocional exagerado, falso dilema, chivo expiatorio o incoherencia. 2) Busca o redacta un ejemplo débil y evidente de esa técnica. 3) Escribe un mensaje breve (80 a 120 palabras) para tu familia o tu equipo que explique la técnica con ese ejemplo y cómo reconocerla. 4) Escribe tu rutina personal de verificación en cuatro pasos.",
+          "modelo": "Modelo: «Técnica: falso dilema. Mensaje para mi familia: “Les comparto un truco que usan muchos mensajes para manipular: presentar sólo dos opciones cuando hay más. Ejemplo: ‘O te vacunas con este remedio natural o te vas a enfermar’. En realidad hay más caminos, como preguntarle al médico. Cuando un mensaje los ponga entre la espada y la pared, pregúntense: ¿qué otras opciones no me están diciendo?”. Mi rutina: 1) me detengo; 2) busco quién lo publicó; 3) reviso fuentes oficiales o de verificación; 4) comparto sólo si se confirma.» Es buena porque usa un ejemplo evidente, explica la técnica sin burlarse de nadie y deja una pregunta fácil de recordar.",
+          "plantilla": [
+            "Rutina de verificación antes de compartir",
+            "1. Me detengo: ¿qué emoción me provoca? [emoción]\n2. ¿Quién lo dice y qué gana? [fuente, interés]\n3. Lectura lateral: ¿qué dicen otras fuentes y sitios oficiales? [hallazgos]\n4. ¿Usa una técnica de manipulación? [lenguaje emocional / falso dilema / chivo expiatorio / incoherencia]\n5. ¿Pide datos o dinero? [sí → reporto / no]\nDecisión: [comparto / no comparto / aviso que es falso]"
+          ],
+          "clave": [
+            "La inoculación expone a dosis débiles de técnicas de manipulación; ayuda, aunque su efecto es pequeño y puede desvanecerse.",
+            "La lectura lateral investiga quién está detrás de una página en lugar de leerla a fondo.",
+            "Una pausa para pensar si algo es exacto mejora la calidad de lo que compartes."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Elige un entorno que influya en muchas personas a tu alrededor: una aplicación, una tienda en línea, un grupo de mensajes, un trámite o un comedor. Audítalo con lo aprendido: arquitectura de decisiones, patrones oscuros, contenidos que se amplifican y riesgos de desinformación. Después propone mejoras transparentes y un plan de autodefensa para las personas usuarias.",
+        "entregable": "Un informe de una página con tres elementos de diseño evaluados con la ficha del empujoncito, dos patrones oscuros o prácticas dudosas con la instancia a la que acudirías, un análisis de qué contenidos se amplifican en ese entorno y una rutina de verificación adaptada a sus usuarios.",
+        "criterios": "Revisa: cada elemento de diseño indica a quién favorece y con qué evidencia, los patrones oscuros se describen con hechos y se ubica la instancia correcta (Profeco o Condusef), las mejoras pasan la prueba de transparencia, y la rutina de verificación incluye pausa, lectura lateral y qué hacer ante peticiones de datos o dinero."
+      },
+      "lab": {
+        "t": "El rumor en el grupo de la colonia",
+        "obj": "Detectar técnicas de desinformación, verificar con lectura lateral, prevenir daños y preparar a una comunidad para futuros rumores.",
+        "esc": "<b>Ofelia,</b> dueña de una tlapalería de 52 años y administradora del grupo de mensajes de su colonia en Uruapan, Michoacán, recibe una noche un audio alarmante que se reenvía sin parar. Los vecinos están nerviosos y algunos ya hablan de «hacer algo». Te pide ayuda para manejar la situación sin que nadie salga lastimado.",
+        "e": [
+          ["Escena 1: el audio, de una voz que dice ser «de protección civil», asegura que una camioneta blanca roba niños en la colonia, pide reenviarlo «a todos tus contactos» y termina con «si no lo compartes, eres cómplice».", "Consigna: identifica las técnicas de manipulación del audio y la emoción que busca despertar, y explica por qué se difunde tan rápido."],
+          ["Escena 2: Ofelia quiere saber si el audio es cierto antes de escribir algo en el grupo.", "Consigna: describe paso a paso cómo aplicaría la lectura lateral y a qué fuentes oficiales acudiría para confirmar o descartar el aviso."],
+          ["Escena 3: un vecino propone organizarse para detener «a cualquier camioneta blanca sospechosa» y darle «un escarmiento».", "Consigna: explica el riesgo de la propuesta, recordando que en México rumores de este tipo han terminado en agresiones contra personas inocentes, y redacta un mensaje que la desactive e indique llamar al 911 ante cualquier emergencia real."],
+          ["Escena 4: pasada la noche, Ofelia quiere preparar al grupo para el siguiente rumor.", "Consigna: redacta un mensaje breve de inoculación para el grupo que explique una técnica del audio con un ejemplo y proponga una regla de grupo para verificar antes de reenviar."]
+        ],
+        "p": [
+          [
+            "¿Qué técnica usa la frase «si no lo compartes, eres cómplice»?",
+            "Un falso dilema que convierte el reenvío en obligación moral",
+            "Prueba social basada en cuántos vecinos ya compartieron el audio",
+            "Una fuente oficial verificable que respalda la alerta de la colonia",
+            "Presentar sólo dos opciones, compartir o ser cómplice, presiona con culpa. El audio no menciona cuántos lo compartieron, y decir «de protección civil» no lo hace verificable."
+          ],
+          [
+            "¿Qué respuesta de Ofelia ayuda más ante la propuesta del escarmiento?",
+            "Pedir que nadie actúe por su cuenta y que cualquier emergencia se reporte al 911",
+            "Aceptar que se organicen, pero sólo para tomar fotos de las camionetas",
+            "Sacar del grupo al vecino sin explicar nada a los demás",
+            "Frenar la acción por mano propia y canalizar a la autoridad previene daños a inocentes. Fotografiar y vigilar camionetas sigue alimentando la sospecha, y expulsar sin explicar no desactiva el rumor."
+          ],
+          [
+            "¿Qué regla de grupo reduce mejor los rumores futuros?",
+            "Antes de reenviar una alerta, citar la fuente oficial que la confirma",
+            "Reenviar las alertas sólo si las mandó alguien de confianza del grupo",
+            "Prohibir hablar de seguridad en el grupo de la colonia en adelante",
+            "Pedir la fuente oficial obliga a verificar sin censurar el tema. La confianza en quien reenvía no prueba que sea cierto, y prohibir el tema impide compartir avisos reales."
+          ]
+        ],
+        "pl": [
+          "Protocolo comunitario ante un rumor",
+          "Rumor recibido: [texto o resumen]\nTécnicas que detecto: [lenguaje emocional / falso dilema / chivo expiatorio / urgencia]\nLectura lateral: [fuentes oficiales consultadas y resultado]\nMensaje al grupo: «Revisé este aviso en [fuente] y [no se confirma / se confirma]. Por favor no lo reenvíen.»\nSi hay riesgo de violencia: «Nadie actúe por su cuenta; cualquier emergencia, al 911.»\nRegla del grupo: [verificar y citar la fuente antes de reenviar]"
+        ]
+      },
+      "quiz": [
+        ["Al pedir un préstamo en línea, Tania, de Saltillo, ve que el seguro de desempleo viene marcado y que para quitarlo hay que leer tres pantallas. ¿Cómo se describe mejor ese diseño?", "Una opción por defecto con fricción en contra de la persona", "Un empujoncito transparente que protege a la usuaria", "Prueba social sobre lo que eligen otros clientes", "Un encuadre de ganancia sobre el costo del préstamo"],
+        ["Un municipio quiere que más personas se registren como donadoras de órganos. ¿Qué medida tiene más respaldo como empujoncito?", "Que el registro venga marcado al tramitar la licencia, con aviso claro y salida fácil", "Una campaña de carteles con historias emotivas de pacientes", "Multar a quien no se registre en un plazo de seis meses", "Pedir a cada persona que firme una carta de intención"],
+        ["Un artículo de divulgación afirma: «Está demostrado que los nudges cambian cualquier conducta». ¿Qué respuesta es más precisa?", "Algunos son robustos, pero el efecto general es discutido y suele ser pequeño", "Es cierto: los metaanálisis lo confirman sin excepción", "Es falso: ningún empujoncito ha funcionado en estudios serios", "Sólo funcionan cuando se combinan con multas"],
+        ["Para cancelar una membresía, Hilda, de Cuernavaca, debe acudir en persona en horario de oficina, aunque se inscribió en línea en dos minutos. ¿Qué es?", "Lodo: fricción que estorba una decisión que le conviene", "Escasez de tiempo para que aproveche la membresía", "Una norma social sobre la permanencia de los socios", "Un recordatorio para que reconsidere su decisión"],
+        ["Una tienda en línea muestra un precio y, en el último paso, agrega un cargo por servicio no anunciado. ¿Qué principio de la ley mexicana se incumple con más claridad?", "La obligación de informar el monto total a pagar", "La prohibición de vender en línea sin tienda física", "El derecho a recibir un regalo por cada compra", "La obligación de ofrecer pagos a meses sin intereses"],
+        ["Tu banco te cobró una comisión que no reconoces y no te resuelven. ¿A qué instancia conviene acudir?", "A la Condusef, porque se trata de una institución financiera", "A la Profeco, porque atiende cualquier problema de dinero", "Al REPEP, porque registra las quejas contra bancos", "A la policía cibernética, porque toda comisión es un delito"],
+        ["Después de ver dos videos de recetas, a Eduardo, de Mexicali, la plataforma sólo le muestra recetas. ¿Qué explica mejor esto?", "El algoritmo recomienda más de lo que retuvo su atención", "La plataforma sabe que Eduardo quiere ser chef profesional", "Un grupo de cocineros pagó para que viera sólo recetas", "Eduardo eligió desactivar los demás temas sin darse cuenta"],
+        ["Según el estudio de 2018 sobre Twitter, ¿qué explicaba sobre todo que las noticias falsas llegaran más lejos?", "Las personas las compartían más, en parte por su novedad", "Las cuentas automatizadas las difundían más que las personas", "Las plataformas las promovían de forma deliberada", "Las noticias falsas solían ser más cortas que las verdaderas"],
+        ["Rocío, de Tlaquepaque, encuentra un sitio que afirma que un suplemento cura la artritis. ¿Qué hace si aplica la lectura lateral?", "Busca en otras fuentes quién está detrás del sitio y qué se dice de él", "Lee todo el sitio con cuidado para ver si suena profesional", "Revisa si el sitio tiene un diseño moderno y sin errores", "Confía si el sitio cita muchos estudios en su propia página"],
+        ["Un video de 90 segundos explica cómo funcionan los chivos expiatorios antes de que la audiencia vea noticias. ¿Qué estrategia aplica?", "Inoculación o desmentido anticipado", "Corrección después de la difusión", "Arquitectura de decisiones con opción por defecto", "Prueba social sobre lo que creen otros"]
+      ]
+    },
+    {
+      "t": "Influir con ética y protegerte: liderazgo, autodefensa e integración",
+      "r": "Integra el diplomado: cómo influyen los líderes, qué distingue la persuasión de la manipulación, cómo armar tu plan de defensa personal y cómo diseñar una intervención de influencia responsable de principio a fin.",
+      "lecciones": [
+        {
+          "t": "Liderazgo: influir sin mandar",
+          "obj": "Distinguir las bases de poder de un líder y aplicar prácticas de liderazgo basadas en identidad compartida, seguridad psicológica y ejemplo.",
+          "texto": [
+            "Liderar es, sobre todo, influir. En 1959 John French y Bertram Raven describieron cinco <b>bases de poder:</b> la recompensa (puedo darte algo), la coerción (puedo castigarte), la legitimidad (mi puesto me da derecho a pedirlo), la experiencia o pericia (sé más del tema) y la referencia (me admiras o te identificas conmigo); más tarde Raven agregó la información. La investigación posterior suele asociar la pericia y la referencia con más compromiso y satisfacción, mientras que la coerción consigue obediencia mientras alguien vigila y desgasta la relación.",
+            "Alexander Haslam y Stephen Reicher, a quienes conociste en las críticas a Milgram, propusieron junto con Michael Platow que un líder influye cuando el grupo lo percibe como «uno de nosotros» y como alguien que trabaja por el grupo: no basta con tener el puesto, hay que representar y construir una identidad compartida. Es el principio de unidad aplicado con responsabilidad: un buen líder define el «nosotros» por una meta común, no contra un enemigo.",
+            "La investigadora Amy Edmondson mostró en estudios con equipos de trabajo que la <b>seguridad psicológica,</b> la creencia compartida de que se puede hablar, preguntar o admitir un error sin ser humillado, se asocia con más aprendizaje en equipo. Esto conecta con lo que viste sobre conformidad y disenso: un líder que opina primero y castiga la crítica fabrica silencios; uno que pregunta, agradece las malas noticias y admite sus errores fabrica información.",
+            "Por último, quien dirige influye en los hábitos del grupo más con lo que hace que con lo que dice. Si la gerente usa el casco, llega puntual y revisa los datos antes de decidir, esas conductas se vuelven norma descriptiva. Si pide una cosa y hace otra, enseña que la regla es opcional. Para revisar tu liderazgo en el trabajo, la familia o la comunidad, pregúntate qué base de poder usas más, a quién representas y qué conducta modelas sin darte cuenta."
+          ],
+          "comparar": [
+            "«Así no: “El que no esté de acuerdo ya sabe dónde está la puerta”.»",
+            "«Así sí: “Antes de decidir quiero escuchar qué ven ustedes que yo no estoy viendo; las malas noticias también se agradecen”.»"
+          ],
+          "caso": "Caso ficticio: Alberto, de 38 años, es el nuevo gerente de una sucursal de paquetería en Zacatecas. El equipo desconfía porque el gerente anterior humillaba a quien se equivocaba. Se extravían paquetes y nadie reporta las fallas a tiempo. El director regional le aconseja «poner orden» con sanciones por cada error.",
+          "p": [
+            [
+              "¿Qué base de poder le propone usar el director regional?",
+              "Coerción, con sanciones por cada error",
+              "Referencia, porque el equipo admira al director",
+              "Pericia, porque el director conoce bien el negocio",
+              "Las sanciones se apoyan en la capacidad de castigar. El caso no indica que el equipo admire al director, y su conocimiento del negocio no es lo que propone usar."
+            ],
+            [
+              "¿Por qué las sanciones podrían aumentar los extravíos?",
+              "El equipo tendería a ocultar los errores en vez de reportarlos",
+              "Al equipo le daría igual perder dinero si conserva el empleo",
+              "El castigo sólo funciona si lo aplica el director en persona",
+              "Con miedo, las fallas se esconden y no se corrigen a tiempo, justo lo contrario de la seguridad psicológica. Las otras explicaciones no tienen respaldo en el caso ni en la evidencia."
+            ],
+            [
+              "¿Qué primera acción construye mejor seguridad psicológica?",
+              "Reconocer un error propio en junta y agradecer a quien reporte fallas",
+              "Prometer que nadie será sancionado jamás, pase lo que pase",
+              "Revisar las cámaras para identificar a los responsables de cada extravío",
+              "Modelar la admisión de errores y premiar el reporte invita a hablar. Prometer impunidad total no es creíble ni responsable, y buscar culpables refuerza el miedo."
+            ]
+          ],
+          "completar": [
+            "La creencia compartida de que se puede hablar o admitir un error sin ser humillado se llama seguridad ___.",
+            "psicológica"
+          ],
+          "relacionar": [
+            ["Recompensa", "Bono por cumplir la meta del trimestre"],
+            ["Coerción", "Amenazar con cambiar de turno a quien se queje"],
+            ["Legitimidad", "Pedir el reporte porque le corresponde por su puesto"],
+            ["Pericia", "Seguir a la ingeniera porque domina el tema"],
+            ["Referencia", "Imitar a una jefa a la que admiras"]
+          ],
+          "refl": "Revisa tu forma de liderar. 1) Elige un grupo en el que influyes: equipo de trabajo, familia, comité, grupo de amistades. 2) Anota tres situaciones recientes en que intentaste que otros hicieran algo y la base de poder que usaste en cada una. 3) Identifica una conducta que modelas, para bien o para mal, sin decirla. 4) Diseña dos acciones concretas para aumentar la seguridad psicológica del grupo durante el próximo mes.",
+          "modelo": "Modelo: «Grupo: mi equipo de cuatro personas en la oficina. 1) Pedí el reporte urgente “porque lo digo yo” (legitimidad). 2) Convencí a un compañero de usar la nueva hoja de cálculo mostrándole cómo ahorra tiempo (pericia). 3) Amenacé con no dar el viernes libre si no terminaban (coerción). Conducta que modelo sin decirla: contesto correos a las once de la noche y eso presiona a los demás. Acciones: empezar cada junta preguntando “¿qué salió mal esta semana?” y programar mis correos para el horario laboral.» Es buena porque reconoce con honestidad la coerción, detecta un ejemplo implícito y propone acciones medibles.",
+          "plantilla": [
+            "Autodiagnóstico de liderazgo",
+            "Grupo: [cuál]\nSituación 1: [qué pedí] → base de poder: [recompensa / coerción / legitimidad / pericia / referencia / información]\nSituación 2: [qué pedí] → base de poder: [ ]\nSituación 3: [qué pedí] → base de poder: [ ]\nConducta que modelo sin decirla: [conducta]\nAcción para la seguridad psicológica 1: [acción y fecha]\nAcción 2: [acción y fecha]"
+          ],
+          "clave": [
+            "La pericia y la referencia generan más compromiso; la coerción logra obediencia vigilada y desgasta la relación.",
+            "Un líder influye cuando representa una identidad compartida definida por una meta común.",
+            "La seguridad psicológica y el ejemplo convierten el liderazgo en información y en normas del grupo."
+          ]
+        },
+        {
+          "t": "Ética de la influencia: dónde termina persuadir y empieza manipular",
+          "obj": "Aplicar criterios de veracidad, autonomía, interés, transparencia y reversibilidad para juzgar si una influencia es legítima.",
+          "texto": [
+            "A lo largo del diplomado viste que influir es inevitable: siempre hay una opción que aparece primero, un tono, un ejemplo. La pregunta ética no es si influir, sino cómo. Una distinción útil en filosofía separa la persuasión, que ofrece razones que la otra persona puede evaluar, de la <b>manipulación,</b> que busca un resultado esquivando o aprovechando su capacidad de decidir: ocultar información, explotar un miedo o una prisa, fabricar una presión que no existe.",
+            "Para casos concretos, combina cinco criterios. Veracidad: ¿es cierto lo que digo o muestro, incluidos datos, escasez y testimonios? Autonomía: ¿la persona puede pensarlo, preguntar y decir que no sin castigo? Interés: ¿el resultado también le conviene, o sólo a mí? Transparencia: ¿estaría dispuesto a explicar mi técnica en público? Thaler y Sunstein retomaron esta prueba de publicidad del filósofo John Rawls para evaluar los empujoncitos. Reversibilidad: ¿es fácil deshacer la decisión si la persona cambia de opinión?",
+            "Ningún criterio basta por sí solo. Un mensaje veraz puede volverse manipulador si se lanza a alguien agotado a las once de la noche con un plazo inventado; una opción por defecto puede ser transparente y, aun así, beneficiar sólo a la empresa. También importa la vulnerabilidad: cuanto menos tiempo, información o margen tenga la otra persona, por edad, enfermedad, duelo o necesidad económica, mayor es tu responsabilidad. Por eso los códigos de ética profesional, como los de la psicología, insisten en el consentimiento informado y en evitar el daño.",
+            "La ética también aplica cuando tú eres el blanco. Notar que alguien intenta influirte no te obliga a rechazar todo: puedes reconocer una buena razón aunque venga acompañada de una técnica. Y cuando descubras que tú cruzaste la línea, la salida es reparar: aclarar lo que ocultaste, corregir lo que exageraste y devolverle la decisión a la otra persona."
+          ],
+          "comparar": [
+            "«Así no: “Si no firma hoy, su familia quedará desprotegida; piénselo como buen padre”.»",
+            "«Así sí: “Le dejo la cotización y las condiciones; compárela con calma. Si decide no contratar, no hay ningún problema”.»"
+          ],
+          "caso": "Caso ficticio: Valeria, diseñadora de experiencia de usuario de 31 años en una empresa de préstamos por aplicación de la Ciudad de México, recibe la instrucción de que el seguro de desempleo aparezca preseleccionado al pedir un préstamo, que su costo se muestre sólo en el contrato y que el botón para no contratarlo diga «Prefiero arriesgarme». Su jefe argumenta que «el seguro sí protege a los clientes».",
+          "p": [
+            [
+              "¿Qué criterio ético falla con más claridad en la instrucción?",
+              "Transparencia: el costo queda oculto hasta el contrato",
+              "Interés: un seguro de desempleo nunca beneficia al cliente",
+              "Veracidad: el seguro no existe y la empresa lo inventó",
+              "Esconder el costo impide decidir con información y no resistiría una explicación pública. Un seguro puede beneficiar a algunos clientes, y el caso no dice que sea inventado."
+            ],
+            [
+              "¿Cómo puede responder Valeria al argumento de que el seguro protege?",
+              "Aunque proteja, el cliente debe elegirlo conociendo su costo",
+              "Si protege, entonces es correcto marcarlo y ocultar el costo",
+              "Ningún producto financiero debería ofrecerse en una aplicación",
+              "Un buen producto no justifica quitarle al cliente la decisión informada. Que proteja no vuelve aceptable ocultar el costo, y prohibir toda oferta en aplicaciones es una exageración."
+            ],
+            [
+              "¿Qué propuesta de Valeria respeta mejor la autonomía?",
+              "Mostrar el seguro sin marcar, con costo total y botones neutrales",
+              "Dejarlo marcado, pero con el costo en letra pequeña bajo el botón",
+              "Quitar el seguro de la aplicación para no tener que explicar su costo",
+              "Una opción sin marcar, con el costo visible y un lenguaje neutral, deja decidir con información. La letra pequeña conserva el ocultamiento, y quitar el seguro priva de una opción útil a quien la quiera."
+            ]
+          ],
+          "completar": [
+            "Buscar un resultado esquivando o aprovechando la capacidad de decidir de la otra persona es ___.",
+            "manipulación"
+          ],
+          "relacionar": [
+            ["Veracidad", "Mostrar sólo testimonios reales y con permiso"],
+            ["Autonomía", "Dar tiempo y aceptar un no sin castigo"],
+            ["Interés", "Recomendar el plan barato si es el que la persona necesita"],
+            ["Transparencia", "Estar dispuesto a explicar la técnica en público"],
+            ["Reversibilidad", "Permitir cancelar sin penalización en los primeros días"]
+          ],
+          "refl": "Aplica el semáforo ético a una influencia real. 1) Elige una situación en la que tú influiste en alguien, o alguien en ti, en las últimas semanas (una venta, una petición familiar, una instrucción de trabajo). 2) Califica cada uno de los cinco criterios en verde, amarillo o rojo y justifica en una línea. 3) Considera si la otra persona estaba en una situación vulnerable. 4) Si hubo algún rojo, escribe cómo repararías o cómo responderías la próxima vez.",
+          "modelo": "Modelo: «Convencí a mi mamá de cambiarse a mi compañía de teléfono para tener un plan familiar. Veracidad: amarillo, le dije que era más barato, pero no mencioné el plazo forzoso. Autonomía: verde, lo pensó varios días. Interés: verde, sí paga menos. Transparencia: verde. Reversibilidad: rojo, si se arrepiente debe pagar una penalización. Vulnerabilidad: confía mucho en mí y no lee contratos. Reparación: le explicaré el plazo forzoso y la penalización, y le diré que, si no le conviene, la ayudo a revisar alternativas.» Es buena porque aplica los cinco criterios con honestidad, considera la vulnerabilidad y propone una reparación concreta.",
+          "plantilla": [
+            "Semáforo ético de la influencia",
+            "Situación: [quién influye en quién y para qué]\nVeracidad: [verde / amarillo / rojo] porque [razón]\nAutonomía: [ ] porque [razón]\nInterés de la otra persona: [ ] porque [razón]\nTransparencia: [ ] porque [razón]\nReversibilidad: [ ] porque [razón]\nVulnerabilidad de la otra persona: [tiempo, información, situación]\nReparación o cambio: [acción]"
+          ],
+          "clave": [
+            "Persuadir ofrece razones que la otra persona puede evaluar; manipular esquiva o explota su capacidad de decidir.",
+            "Veracidad, autonomía, interés, transparencia y reversibilidad se evalúan juntas, no por separado.",
+            "A mayor vulnerabilidad de la otra persona, mayor responsabilidad de quien influye; si cruzaste la línea, repara."
+          ]
+        },
+        {
+          "t": "Tu plan de defensa personal frente a la manipulación",
+          "obj": "Construir un protocolo personal para detectar y frenar intentos de manipulación, fraude o presión, y saber dónde pedir ayuda.",
+          "texto": [
+            "Saber cómo funciona la influencia no te vuelve inmune. Los estudios sobre el llamado punto ciego de los sesgos muestran que solemos creer que los demás son más influenciables que nosotros. Por eso conviene decidir un plan cuando estás tranquilo para usarlo cuando no lo estés. Los intentos de manipulación grave suelen combinar las mismas <b>señales</b> de alerta: urgencia («ahora o nunca»), secreto («no le digas a nadie»), autoridad dudosa, emoción intensa (miedo, culpa, euforia o enamoramiento) y una petición de dinero, datos o acceso.",
+            "Un ejemplo frecuente en México es la extorsión telefónica conocida como secuestro virtual: alguien llama asegurando que tiene a un familiar, se escuchan gritos, exige un depósito inmediato y pide que no cuelgues. En los fraudes amorosos, una persona construye durante semanas una relación en línea y, cuando la confianza es alta, aparece una emergencia que requiere dinero. Hoy además existen voces e imágenes generadas con inteligencia artificial que imitan a personas conocidas. En todos los casos la estrategia es la misma: impedir que actives el pensamiento lento y que consultes a alguien.",
+            "Tu protocolo puede tener cuatro pasos. Primero, pausa: cuelga, cierra la conversación o di «lo reviso y te contesto». Segundo, verifica por otro canal: llama tú al familiar, al banco o a la empresa a un número que ya tengas, no al que te dieron. Tercero, consulta: cuéntaselo a alguien de confianza, justo lo que quien manipula quiere evitar. Cuarto, documenta y denuncia. Una palabra clave acordada en familia ayuda a confirmar si una emergencia es real.",
+            "En México puedes denunciar la extorsión al 089, la línea nacional de denuncia anónima, y ante un peligro inmediato llamar al 911. La policía cibernética de tu estado recibe reportes de fraudes en línea; la Condusef atiende problemas con bancos y la Profeco, con proveedores. Si la presión viene de una relación cercana que te controla, te aísla o te amenaza, también es influencia abusiva: busca apoyo, y si atraviesas una crisis emocional llama a la Línea de la Vida, 800 911 2000, disponible las 24 horas. Verifica los números vigentes en fuentes oficiales."
+          ],
+          "comparar": [
+            "«Así no: seguir en la línea y depositar porque la voz lloraba y dijeron que no colgaras.»",
+            "«Así sí: colgar, llamar directamente al familiar y a otra persona de la familia, y reportar el número al 089.»"
+          ],
+          "caso": "Caso ficticio: Patricia, dueña de una papelería de 50 años en Tampico, recibe una llamada: una voz llorosa grita «¡mamá, ayúdame!» y un hombre asegura tener a su hijo; exige que deposite 30 mil pesos en una tienda de conveniencia en 20 minutos y que no cuelgue ni avise a nadie. Su hijo, de 24 años, salió a trabajar temprano.",
+          "p": [
+            [
+              "¿Qué señales de alerta combina la llamada?",
+              "Urgencia, secreto, emoción intensa y petición de dinero",
+              "Autoridad legítima y prueba social de otras familias afectadas",
+              "Reciprocidad por un favor previo y un regalo condicionado",
+              "El plazo de 20 minutos, la orden de no avisar, el llanto y el depósito son la combinación típica de la extorsión. No hay autoridad legítima, prueba social ni favores previos en el caso."
+            ],
+            [
+              "¿Qué paso es más importante en los primeros minutos?",
+              "Colgar y llamar a su hijo al número que ya tiene",
+              "Pedirle al hombre una prueba de vida antes de depositar",
+              "Depositar una parte para ganar tiempo mientras investiga",
+              "Cortar la llamada y verificar por otro canal rompe el aislamiento que busca el extorsionador. Negociar o pagar una parte la mantiene dentro de su guion."
+            ],
+            [
+              "Después de confirmar que su hijo está bien, ¿qué le conviene hacer?",
+              "Denunciar al 089 y acordar en familia una palabra clave",
+              "Devolver la llamada a ese número para reclamarle al extorsionador",
+              "Publicar el número en redes y olvidar el asunto sin denunciar",
+              "La denuncia ayuda a las autoridades y la palabra clave prepara a la familia. Devolver la llamada la expone de nuevo, y publicar sin denunciar no deja registro oficial."
+            ]
+          ],
+          "completar": [
+            "Urgencia, secreto, autoridad dudosa y emoción intensa son ___ de alerta de manipulación.",
+            "señales"
+          ],
+          "relacionar": [
+            ["Secuestro virtual", "Llamada con gritos que exige un depósito inmediato"],
+            ["Fraude amoroso", "Pareja en línea que, tras semanas, pide dinero para una emergencia"],
+            ["Voz imitada con inteligencia artificial", "Audio que suena como tu hermano pidiendo una transferencia"],
+            ["Palabra clave familiar", "Pregunta acordada para confirmar una emergencia real"],
+            ["Verificar por otro canal", "Llamar al banco al número impreso en tu tarjeta"]
+          ],
+          "refl": "Escribe tu protocolo personal de defensa. 1) Anota las tres situaciones de manipulación a las que crees estar más expuesto (por tu trabajo, tu edad, tus redes o tu familia). 2) Para cada una, escribe la señal de alerta que más te costaría notar. 3) Redacta tu protocolo de cuatro pasos con frases concretas para la pausa. 4) Elige con quién acordarás una palabra clave y anota los números oficiales de denuncia que guardarás en tu celular.",
+          "modelo": "Modelo: «Situaciones: llamadas de supuestos ejecutivos del banco, mensajes de un supuesto familiar con número nuevo y ofertas de inversión en redes. Señal que me costaría notar: la autoridad, porque suelo confiar en quien habla con seguridad. Pausa: “Lo reviso y le marco yo al número de mi tarjeta”. Verifico por otro canal, consulto con mi hermana y documento con capturas. Palabra clave: la acordaré con mis papás y mi hermana este domingo. Números guardados: 911, 089, Condusef y Profeco.» Es buena porque parte de riesgos propios, reconoce su punto débil y deja frases y números listos.",
+          "plantilla": [
+            "Mi protocolo de defensa",
+            "Situaciones de riesgo para mí: [1], [2], [3]\nSeñal que más me cuesta notar: [urgencia / secreto / autoridad / emoción / petición]\n1. Pausa: «[frase para cortar o ganar tiempo]»\n2. Verifico por otro canal: [número o medio que ya tengo]\n3. Consulto con: [persona de confianza]\n4. Documento y denuncio: [911 / 089 / policía cibernética / Profeco / Condusef]\nPalabra clave familiar acordada con: [personas]"
+          ],
+          "clave": [
+            "Todos tenemos un punto ciego: creemos que los demás son más influenciables que nosotros.",
+            "Urgencia, secreto, autoridad dudosa, emoción intensa y petición de dinero o datos juntas son señal de manipulación grave.",
+            "Pausa, verifica por otro canal, consulta y denuncia: 911 ante peligro inmediato y 089 para extorsión."
+          ]
+        },
+        {
+          "t": "Diseñar una intervención de influencia responsable",
+          "obj": "Integrar diagnóstico, diseño, revisión ética, prueba y aprendizaje en una intervención de influencia transparente.",
+          "texto": [
+            "Ya tienes las piezas: sabes cómo deciden las personas, qué principios las mueven, cómo cambian actitudes y conductas, cómo pesan el grupo y el entorno, y qué hace ética una influencia. Ahora toca integrarlas en un ciclo que puedes usar para cualquier meta legítima: que tu equipo reporte errores, que tus vecinos separen la basura, que tus clientes lean el contrato o que tú mismo ahorres. El ciclo tiene cinco pasos: diagnosticar, diseñar, revisar la ética, probar y aprender.",
+            "Diagnosticar significa definir una <b>conducta objetivo</b> concreta y observable («que los adultos de la colonia acudan a medirse la presión arterial»), no una actitud vaga («que se cuiden»), e investigar qué la impide. El modelo COM-B, propuesto en 2011 por Susan Michie y su equipo, ordena las barreras en capacidad, oportunidad y motivación. Diseñar significa elegir la herramienta que responde a la barrera: argumentos claros si falta información, normas reales si se cree que nadie lo hace, recordatorios e intenciones de implementación si falta una señal, menos fricción si el trámite estorba.",
+            "Antes de lanzar, aplica el semáforo ético y pregúntate qué podría salir mal: efectos de rebote, personas que se sientan expuestas, grupos que queden fuera. Después prueba en pequeño y compara con un grupo o un periodo sin la intervención. Recuerda lo que viste sobre réplicas y efectos inflados: lo que funcionó en un artículo puede no funcionar en tu colonia. Escribe de antemano qué vas a medir y qué resultado considerarás un éxito, para no acomodar la interpretación después.",
+            "Por último, aprende y comunica con honestidad: si no funcionó, dilo y ajusta; si funcionó, explica cómo, para que otros puedan revisarlo. Trabajar así, con transparencia, medición y respeto, es lo que separa a alguien que manipula de alguien que sabe influir con ciencia."
+          ],
+          "comparar": [
+            "«Así no: lanzar una campaña con todos los principios a la vez y decir que funcionó porque “la gente comentó mucho”.»",
+            "«Así sí: definir una conducta medible, probar dos versiones en dos colonias y reportar con honestidad cuál funcionó y cuál no.»"
+          ],
+          "caso": "Caso ficticio: Lucía, promotora de salud de 36 años en Tapachula, quiere que más adultos de su colonia acudan a medirse la presión arterial en el centro de salud. Sólo llega uno de cada diez convocados. Su jefa le propone imprimir carteles con fotos impactantes de personas enfermas, pero Lucía sospecha que el problema es otro.",
+          "p": [
+            [
+              "¿Qué conducta objetivo está mejor definida para Lucía?",
+              "Que los adultos de la colonia acudan a medirse la presión este mes",
+              "Que la colonia tome conciencia de la importancia de cuidar la salud",
+              "Que la gente tenga una actitud más positiva hacia el centro de salud",
+              "Una conducta concreta, observable y con plazo se puede medir. Tomar conciencia o mejorar la actitud son metas vagas que no garantizan que alguien acuda."
+            ],
+            [
+              "Si descubre que muchos quieren ir, pero el horario choca con su trabajo, ¿qué herramienta responde a esa barrera?",
+              "Abrir horario en sábado y enviar recordatorios con fecha y hora",
+              "Usar los carteles con fotos impactantes para aumentar el miedo",
+              "Dar pláticas en la plaza sobre los riesgos de la presión alta",
+              "La barrera es de oportunidad, así que hay que cambiar el horario y dar una señal concreta. Más miedo o más información no resuelven que no puedan acudir."
+            ],
+            [
+              "¿Cómo sabrá Lucía si su intervención funcionó?",
+              "Comparando la asistencia con un periodo o una colonia sin cambios",
+              "Contando cuántas personas comentaron la publicación en redes",
+              "Preguntando a su jefa si notó más movimiento en el centro",
+              "Medir la conducta frente a un punto de comparación da evidencia. Los comentarios no son asistencia, y la impresión de la jefa no es una medición."
+            ]
+          ],
+          "completar": [
+            "Diagnosticar empieza por definir una conducta ___ concreta y observable.",
+            "objetivo"
+          ],
+          "refl": "Diseña el esqueleto de una intervención real. 1) Elige una meta legítima de influencia en tu trabajo, tu familia o tu comunidad y redáctala como conducta objetivo observable. 2) Identifica la barrera principal (capacidad, oportunidad o motivación) y cómo la averiguarías. 3) Elige dos herramientas del diplomado que respondan a esa barrera. 4) Aplica el semáforo ético. 5) Define qué medirás, contra qué lo compararás y qué resultado considerarás un éxito.",
+          "modelo": "Modelo: «Meta: que los socios de mi cooperativa de ahorro entreguen a tiempo su aportación mensual; hoy lo hace 60 %. Barrera: oportunidad; muchos cobran el día 15 y la fecha límite es el 10, lo averigüé con una encuesta de tres preguntas. Herramientas: mover la fecha límite al 17 y enviar un recordatorio el día 15 con una intención de implementación (“si recibo mi pago, entonces aporto ese mismo día”). Semáforo: verde en los cinco criterios; nadie queda expuesto. Medición: porcentaje de aportaciones a tiempo durante tres meses frente a los tres anteriores; éxito si supera 75 %.» Es buena porque la conducta es medible, la barrera se investigó y la herramienta responde a ella.",
+          "plantilla": [
+            "Ciclo de intervención responsable",
+            "Conducta objetivo: [quién hará qué, cuándo]\nLínea base: [cifra actual]\nBarrera principal: [capacidad / oportunidad / motivación] — cómo la averigüé: [método]\nHerramientas: [1], [2]\nSemáforo ético: [veracidad, autonomía, interés, transparencia, reversibilidad]\nQué podría salir mal: [riesgo]\nMedición: [indicador] comparado con [periodo o grupo]\nÉxito si: [criterio fijado de antemano]\nQué comunicaré y a quién: [resultado honesto]"
+          ],
+          "clave": [
+            "Define una conducta objetivo observable e investiga si la barrera es de capacidad, oportunidad o motivación.",
+            "Elige la herramienta que responde a la barrera y revísala con el semáforo ético antes de usarla.",
+            "Prueba en pequeño, compara, fija de antemano qué es éxito y comunica con honestidad lo que encontraste."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Escribe tu código personal de influencia: cómo influirás en otros y cómo te protegerás. Revisa tus bitácoras, retos y laboratorios del diplomado, elige los aprendizajes que más cambiaron tu forma de ver la influencia y conviértelos en compromisos concretos para tu trabajo, tu familia y tus redes.",
+        "entregable": "Un código de una página con cinco compromisos para influir con ética (cada uno ligado a un criterio del semáforo), tu protocolo de defensa de cuatro pasos, tres hábitos digitales de verificación y una práctica de liderazgo que aplicarás en el próximo mes.",
+        "criterios": "Revisa: cada compromiso es una conducta concreta y no una buena intención, el protocolo incluye frases y números reales de ayuda, los hábitos digitales se pueden comprobar, y la práctica de liderazgo favorece la seguridad psicológica o la identidad compartida."
+      },
+      "lab": {
+        "t": "Tu plan de influencia responsable y de defensa",
+        "obj": "Integrar los ocho módulos en un proyecto aplicado a un caso real: diagnóstico, principios, cambio de actitudes y conductas, dinámica de grupo, entorno, ética, medición y defensa personal.",
+        "esc": "Elige un caso real de tu vida, tu trabajo o tu comunidad en el que quieras influir de forma legítima o protegerte de una influencia dañina. Como guía, <b>Araceli,</b> coordinadora de 42 años de una cooperativa de transporte en Coatzacoalcos, eligió lograr que los choferes reporten fallas mecánicas antes de salir a ruta en lugar de ocultarlas por miedo a perder el día. Desarrolla tu caso en cuatro partes; cada una retoma dos módulos del diplomado.",
+        "e": [
+          ["Parte 1 (módulos 1 y 2): describe el caso con hechos y haz el diagnóstico de influencias y atajos mentales.", "Consigna: separa hechos, interpretaciones y conductas; identifica las formas y fuentes de influencia presentes; señala al menos tres heurísticos o sesgos que intervienen (por ejemplo, anclaje, disponibilidad o encuadre de pérdida) y verifica con la ficha de verificación una afirmación sobre el tema que circule en tu entorno."],
+          ["Parte 2 (módulos 3 y 4): mapa de principios de influencia.", "Consigna: indica qué principios de Cialdini operan hoy en el caso y cuáles usarás tú; para cada uno, aplica la lista de verificación ética y describe cómo lo usarías de forma verdadera y respetuosa, y cómo se vería su versión abusiva que vas a evitar."],
+          ["Parte 3 (módulos 5 y 6): actitudes, conductas y grupo.", "Consigna: diagnostica la motivación y la capacidad de tu audiencia, anticipa resistencias y disonancias, redacta un mensaje de dos caras y dos intenciones de implementación, y propone cómo manejarás la conformidad, el disenso y la norma social real del grupo."],
+          ["Parte 4 (módulos 7 y 8): entorno, ética, medición y defensa.", "Consigna: propone un cambio de entorno o un empujoncito transparente, revisa riesgos de patrones oscuros o rumores, aplica el semáforo ético completo, define conducta objetivo, línea base, comparación y criterio de éxito, y cierra con tu protocolo personal de defensa para este caso."]
+        ],
+        "p": [
+          [
+            "En el caso de Araceli, ¿qué conducta objetivo está mejor planteada?",
+            "Que cada chofer registre la revisión de su unidad antes de salir a ruta",
+            "Que los choferes tengan una mejor actitud hacia el mantenimiento",
+            "Que la cooperativa promueva una cultura de seguridad entre todos",
+            "Una conducta concreta y registrable se puede medir y comparar. Mejorar la actitud o promover una cultura son metas valiosas, pero vagas para evaluar una intervención."
+          ],
+          [
+            "Si los choferes ocultan fallas por miedo a perder el día, ¿qué combinación responde mejor a esa barrera?",
+            "Asegurar que reportar no cueste el ingreso y reconocer en público a quien reporta",
+            "Multar a quien sea sorprendido con una falla que no reportó a tiempo",
+            "Mostrar en la base un video impactante de un accidente por frenos dañados",
+            "Quitar el castigo implícito y premiar el reporte atiende la causa y construye seguridad psicológica. Las multas aumentan el ocultamiento, y el miedo no resuelve la pérdida del ingreso."
+          ],
+          [
+            "¿Qué prueba le permitiría a Araceli saber si su plan funcionó?",
+            "Comparar los reportes y las descomposturas en ruta antes y después, frente a otra base sin cambios",
+            "Preguntar a los choferes al final del mes si les gustó la nueva forma de trabajar",
+            "Contar cuántos choferes asistieron a la junta en la que presentó el plan",
+            "Medir la conducta y sus consecuencias con un punto de comparación da evidencia sólida. El agrado y la asistencia a una junta no muestran si cambió lo que importa."
+          ]
+        ],
+        "pl": [
+          "Índice del proyecto final",
+          "Título del caso: [nombre]\nParte 1. Diagnóstico: hechos, formas y fuentes de influencia, sesgos, afirmación verificada\nParte 2. Principios: los que operan, los que usaré, lista de verificación ética, versión abusiva que evito\nParte 3. Actitudes, conductas y grupo: ruta de procesamiento, resistencias, mensaje de dos caras, intenciones de implementación, conformidad y normas\nParte 4. Entorno y cierre: empujoncito transparente, riesgos, semáforo ético, conducta objetivo, línea base, medición, criterio de éxito y protocolo de defensa\nReflexión final: [qué aprendí sobre cómo influyo y cómo me influyen]"
+        ]
+      },
+      "quiz": [
+        ["Una jefa de turno en Irapuato logra que su equipo use el equipo de protección porque ella lo usa siempre y explica por qué. ¿Qué la hace influyente?", "Modela la conducta y apoya su petición en razones", "Aplica la coerción con discreción para no desgastarse", "Usa la escasez para que valoren más el equipo", "Fabrica prueba social con datos de otras plantas"],
+        ["Un gerente en Chihuahua dice: «Aquí el que se equivoca se va». ¿Qué efecto es más probable en el reporte de errores?", "Disminuirá, porque el equipo esconderá las fallas", "Aumentará, porque nadie querrá equivocarse", "No cambiará, porque el miedo no influye en el reporte", "Aumentará sólo entre quienes tienen más antigüedad"],
+        ["Un asesor presenta un plan de retiro veraz, con tiempo para pensar, pero sabe que no conviene al cliente y lo recomienda porque gana más comisión. ¿Qué criterio ético falla?", "El interés de la otra persona", "La veracidad de la información", "La autonomía para decidir", "La reversibilidad de la decisión"],
+        ["¿Qué pregunta expresa la prueba de transparencia o de publicidad?", "¿Explicaría esta técnica en público sin incomodidad?", "¿La técnica funcionó en algún estudio publicado?", "¿La persona terminó aceptando lo que le propuse?", "¿Otras empresas del ramo hacen lo mismo?"],
+        ["Ramón, de Los Mochis, recibe un mensaje de un número nuevo que dice ser su sobrino y le pide una transferencia urgente «sin decirle a mi mamá». ¿Qué hace primero?", "Llamar a su sobrino o a su hermana a los números que ya tiene", "Hacer la transferencia y luego preguntar a la familia", "Pedir al número nuevo una foto para confirmar que es él", "Responder con sus datos bancarios para que le devuelvan después"],
+        ["Ante una llamada en la que alguien amenaza con dañar a un familiar si no deposita de inmediato, ¿qué número corresponde para denunciar la extorsión?", "El 089, de denuncia anónima", "El de la Línea de la Vida", "El del REPEP de la Profeco", "El de atención a clientes del banco"],
+        ["Ximena quiere que su equipo de ventas en Aguascalientes llene el reporte semanal. Descubre que el formato tarda 40 minutos. ¿Qué barrera y qué herramienta corresponden?", "Oportunidad; simplificar el formato y ligarlo a una rutina", "Motivación; dar un discurso sobre la importancia del reporte", "Capacidad; mandar a todos a un curso de redacción", "Motivación; publicar quién no entregó cada semana"],
+        ["Un municipio prueba un nuevo recordatorio de pago del predial. ¿Qué evaluación es más sólida?", "Enviar el recordatorio a la mitad de los contribuyentes al azar y comparar pagos", "Enviar el recordatorio a todos y comparar con la recaudación de hace diez años", "Preguntar en redes si la gente vio el recordatorio", "Contar cuántas personas respondieron al mensaje"],
+        ["Mientras repasa el diplomado, Sergio concluye: «Como ya conozco los sesgos, a mí ya no me pueden manipular». ¿Qué responde mejor la evidencia?", "Conocerlos ayuda poco por sí solo; necesitas reglas y protocolos decididos de antemano", "Es correcto: conocer los sesgos elimina su efecto", "Es correcto, siempre que tengas estudios universitarios", "Es falso, porque los sesgos no existen en la vida real"],
+        ["Una campaña busca que los vecinos de una unidad en Cuautla separen la basura. ¿Qué diseño integra mejor el diplomado?", "Norma real del edificio, contenedores a la mano, aviso transparente y medición antes y después", "Mensaje de miedo, multa sorpresa y publicación de nombres de quienes no separan", "Video de una celebridad y un sorteo para quienes compartan la publicación", "Carta del administrador que diga que la mayoría no separa"]
+      ]
+    }
+  ]
+}
