@@ -1,0 +1,858 @@
+[
+ {
+  "k": "c-ia|0|l|4|8|2",
+  "nuevas": [
+   "Solo si quitas el nombre de la empresa",
+   "No, nada de la empresa se puede usar"
+  ],
+  "explica": "Un texto que ya está publicado no expone nada confidencial; puedes pegarlo tal cual para mejorarlo."
+ },
+ {
+  "k": "c-ia|0|l|4|8|3",
+  "nuevas": [
+   "Sí, si después borras la conversación",
+   "Sí, porque solo le pides un promedio"
+  ],
+  "explica": "Los sueldos son información confidencial: no van a una herramienta pública, aunque solo pidas un promedio; usa una herramienta autorizada y sin nombres."
+ },
+ {
+  "k": "c-ia|1|l|1|8|2",
+  "nuevas": [
+   "Lo pego completo, con firmas y teléfonos",
+   "No le doy contexto, solo le pido una respuesta"
+  ],
+  "explica": "Con el correo original la IA entiende el tono y el problema; antes quitas los datos personales."
+ },
+ {
+  "k": "c-ia|1|l|2|4|1",
+  "nuevas": [
+   "Un párrafo largo con todos los detalles",
+   "Un PDF adjunto con el aviso completo"
+  ],
+  "explica": "En el celular se lee rápido y en pantalla chica: pocas líneas y directo al punto."
+ },
+ {
+  "k": "c-ia|1|l|2|4|2",
+  "nuevas": [
+   "Empieza con los antecedentes del proyecto",
+   "Incluye las tablas de datos completas"
+  ],
+  "explica": "Con poco tiempo, la conclusión va primero y los puntos clave en viñetas; el detalle queda para quien lo pida."
+ },
+ {
+  "k": "c-ia|1|l|3|9|0",
+  "nuevas": [
+   "«Hazlo menos formal»",
+   "«Mejora el correo»"
+  ],
+  "explica": "Si solo quieres cambiar una parte, dilo y pide que lo demás se quede igual; si no, la IA reescribe todo y pierdes lo que te gustaba."
+ },
+ {
+  "k": "c-ia|1|l|3|9|1",
+  "nuevas": [
+   "«Hazlo más bonito»",
+   "«Corrígelo otra vez»"
+  ],
+  "explica": "Pedir varias versiones distintas te deja comparar y elegir; instrucciones vagas producen cambios al azar."
+ },
+ {
+  "k": "c-ia|1|l|3|9|2",
+  "nuevas": [
+   "«Revísale solo la ortografía»",
+   "«Hazla más larga para que se vea completa»"
+  ],
+  "explica": "Pedirle a la IA que actúe como el cliente te deja anticipar objeciones y preparar respuestas antes de enviarla."
+ },
+ {
+  "k": "c-ia|2|l|0|8|1",
+  "nuevas": [
+   "Lo dejo, pero bajo el descuento a 10%",
+   "Lo mando y lo aclaro después por teléfono"
+  ],
+  "explica": "La IA puede agregar cosas que no dijiste; quitas cualquier oferta que no puedas cumplir antes de enviar."
+ },
+ {
+  "k": "c-ia|2|l|0|8|2",
+  "nuevas": [
+   "Sarcástico, para que capte el mensaje",
+   "Muy frío, para marcar distancia"
+  ],
+  "explica": "Firme pero cordial defiende tu postura sin dañar la relación; el enojo en un texto escrito siempre se lee peor."
+ },
+ {
+  "k": "c-ia|2|l|1|6|0",
+  "nuevas": [
+   "«Hola. Mañana es su cita. Saludos.»",
+   "«ANA: NO OLVIDE SU CITA DE MAÑANA. CONFIRME DE INMEDIATO.»"
+  ],
+  "explica": "Para WhatsApp funciona un mensaje breve y cálido, con día, hora y una forma fácil de confirmar."
+ },
+ {
+  "k": "c-ia|2|l|2|9|1",
+  "nuevas": [
+   "Le pregunto a la IA si está segura",
+   "Lo uso, pero lo redondeo a 15%"
+  ],
+  "explica": "Un resumen puede equivocarse en cifras; si vas a negociar con ese dato, lo compruebas en la cláusula original."
+ },
+ {
+  "k": "c-ia|2|l|2|9|2",
+  "nuevas": [
+   "Poner el viernes, por ser antes",
+   "Quitar el tema de la minuta"
+  ],
+  "explica": "La IA no debe decidir por ti: lo que no está definido se marca como por confirmar para que nadie lo dé por hecho."
+ },
+ {
+  "k": "c-ia|2|l|3|7|0",
+  "nuevas": [
+   "Reescritura completa con otro tono",
+   "Traducción y adaptación"
+  ],
+  "explica": "Si el texto ya está bien, pides una edición ligera que solo corrija ortografía y no cambie tu redacción."
+ },
+ {
+  "k": "c-ia|2|l|3|7|1",
+  "nuevas": [
+   "Lo mando y aclaro la promesa después",
+   "Le pido que lo haga más corto"
+  ],
+  "explica": "Indícale que no agregue información nueva y revisa el resultado: tú respondes por lo que se envía."
+ },
+ {
+  "k": "c-ia|2|l|3|7|2",
+  "nuevas": [
+   "Para que el correo quede más largo",
+   "Para que la IA no vuelva a equivocarse"
+  ],
+  "explica": "La lista de cambios te deja ver qué corrigió y aprender de tus errores para no repetirlos."
+ },
+ {
+  "k": "c-ia|2|l|4|7|1",
+  "nuevas": [
+   "Actualizado",
+   "Actualidad"
+  ],
+  "explica": "<i>Actually</i> es falso amigo: significa «en realidad». «Actualmente» se dice <i>currently</i>."
+ },
+ {
+  "k": "c-ia|2|l|4|7|2",
+  "nuevas": [
+   "Memorizar un discurso traducido palabra por palabra",
+   "Repasar las reglas del verbo <i>to be</i>"
+  ],
+  "explica": "Practicar la conversación con la IA en el papel de la otra persona te prepara para responder en tiempo real."
+ },
+ {
+  "k": "c-ia|3|l|0|7|0",
+  "nuevas": [
+   "Agrego 2 filas con datos parecidos",
+   "Borro 2 registros del original para que cuadre"
+  ],
+  "explica": "Si faltan filas, se lo dices y pides que revise; nunca inventas datos ni ajustas el original para que cuadre."
+ },
+ {
+  "k": "c-ia|3|l|0|7|1",
+  "nuevas": [
+   "Poner la fecha de hoy",
+   "Copiar la fecha del pedido anterior"
+  ],
+  "explica": "Un dato que no existe se deja vacío o marcado; una fecha supuesta parece real y causa errores después."
+ },
+ {
+  "k": "c-ia|3|l|0|7|2",
+  "nuevas": [
+   "Uso Combinar celdas en Excel",
+   "Le pido la tabla como imagen"
+  ],
+  "explica": "Con formato separado por tabulaciones o CSV, Excel reparte cada dato en su columna al pegar."
+ },
+ {
+  "k": "c-ia|3|l|1|9|1",
+  "nuevas": [
+   "Falta cerrar un paréntesis",
+   "El rango tiene celdas vacías"
+  ],
+  "explica": "#¿NOMBRE? indica que Excel no reconoce la función: en Excel en español, SUMIF se escribe SUMAR.SI."
+ },
+ {
+  "k": "c-ia|3|l|1|9|2",
+  "nuevas": [
+   "Viendo que no marque error",
+   "Pidiéndole a la IA que la revise"
+  ],
+  "explica": "Una fórmula puede no marcar error y aun así calcular mal; la pruebas con un caso cuyo resultado ya conoces."
+ },
+ {
+  "k": "c-ia|3|l|2|5|1",
+  "nuevas": [
+   "«Haz una gráfica de abril»",
+   "«¿Cuánto vendí en abril?»"
+  ],
+  "explica": "Te sugerirá causas como Semana Santa, obras en la calle o un competidor nuevo; tú confirmas cuál aplica."
+ },
+ {
+  "k": "c-ia|3|l|2|5|2",
+  "nuevas": [
+   "Le pregunto a la IA si está segura",
+   "Lo redondeo a 184 y lo pongo"
+  ],
+  "explica": "(180+176+210+150+205)/5 = 184.2. Esta vez está bien, pero comprobarlo con =PROMEDIO toma 10 segundos."
+ },
+ {
+  "k": "c-ia|3|l|3|7|1",
+  "nuevas": [
+   "Tu puesto y tu antigüedad",
+   "Las herramientas que usas"
+  ],
+  "explica": "Sin saber qué quieres lograr y cuánto tiempo tienes, la IA no puede decidir qué va primero."
+ },
+ {
+  "k": "c-ia|3|l|3|7|2",
+  "nuevas": [
+   "Que te dé frases motivacionales",
+   "Que te recuerde la fecha de entrega cada día"
+  ],
+  "explica": "Dividir algo grande en pasos pequeños con fechas quita la parálisis: siempre sabes cuál es el siguiente paso."
+ },
+ {
+  "k": "c-ia|3|l|4|7|0",
+  "nuevas": [
+   "La IA, si está segura de su respuesta",
+   "Quien desarrolló la herramienta"
+  ],
+  "explica": "La IA propone; tú decides y respondes por el resultado."
+ },
+ {
+  "k": "c-ia|3|l|4|7|1",
+  "nuevas": [
+   "Lluvia de ideas",
+   "Resumen ejecutivo"
+  ],
+  "explica": "Pedirle a la IA que ataque tu propuesta como abogado del diablo revela sus puntos débiles antes de que lo haga otro."
+ },
+ {
+  "k": "c-ia|3|l|4|7|2",
+  "nuevas": [
+   "Sí: debió dar solo 3 ideas buenas",
+   "Sí: la herramienta es de baja calidad"
+  ],
+  "explica": "En una lluvia de ideas buscas cantidad para elegir; quedarte con 3 buenas de 15 es un buen resultado."
+ },
+ {
+  "k": "c-ia|4|l|0|10|0",
+  "nuevas": [
+   "Le pido que la revise otra vez y la uso",
+   "Reviso solo que el RFC tenga 13 caracteres"
+  ],
+  "explica": "Leer una foto puede fallar en cifras; comparas al menos el total contra la factura antes de capturar."
+ },
+ {
+  "k": "c-ia|4|l|0|10|1",
+  "nuevas": [
+   "«En alta resolución»",
+   "«Con letras grandes y claras»"
+  ],
+  "explica": "Los generadores de imágenes suelen escribir mal; pide la imagen sin texto y agrega las letras tú en tu editor."
+ },
+ {
+  "k": "c-ia|4|l|0|10|2",
+  "nuevas": [
+   "Crear una «foto» de un cliente real dando un testimonio",
+   "Crear un logotipo idéntico al de otra marca"
+  ],
+  "explica": "Una ilustración para tu presentación es un uso legítimo; fabricar escenas de personas reales o copiar marcas engaña y te expone legalmente."
+ },
+ {
+  "k": "c-ia|4|l|1|6|0",
+  "nuevas": [
+   "Lo subo quitando solo el nombre del cliente",
+   "Lo subo desde mi celular personal"
+  ],
+  "explica": "Si la empresa lo prohíbe, usas la herramienta autorizada o lo haces sin IA; cambiar de dispositivo o quitar un nombre no lo vuelve permitido."
+ },
+ {
+  "k": "c-ia|4|l|1|6|1",
+  "nuevas": [
+   "Le cambio unas cuantas palabras y lo publico",
+   "Lo publico, porque lo escribió la IA"
+  ],
+  "explica": "Un texto casi igual a otro puede ser plagio aunque lo haya generado la IA; lo reescribes de verdad o citas la fuente."
+ },
+ {
+  "k": "c-ia|4|l|1|6|2",
+  "nuevas": [
+   "Es válido aunque no lo revises",
+   "Solo es válido si usas una IA de pago"
+  ],
+  "explica": "Usar IA es válido si revisaste el contenido, los datos son correctos y respetas las reglas de tu empresa; tú respondes por el informe."
+ },
+ {
+  "k": "c-ia|4|l|1|6|3",
+  "nuevas": [
+   "Lo dejo, es solo un ejemplo",
+   "Cambio solo los nombres propios de los personajes"
+  ],
+  "explica": "La IA puede repetir estereotipos de género en los roles; lo revisas para que los ejemplos sean variados y respetuosos."
+ },
+ {
+  "k": "c-ia|4|l|2|6|0",
+  "nuevas": [
+   "Usarla solo en tareas urgentes",
+   "Probar una herramienta nueva cada semana"
+  ],
+  "explica": "Un hábito se forma con momentos fijos y repetidos, no con lo que recuerdes de vez en cuando."
+ },
+ {
+  "k": "c-ia|4|l|2|6|1",
+  "nuevas": [
+   "Para trabajar más horas",
+   "Para reportarle a la IA cuánto la usas"
+  ],
+  "explica": "Medir el tiempo ahorrado te dice qué usos valen la pena y te da argumentos para justificarlos ante tu jefe."
+ },
+ {
+  "k": "c-ia|4|l|3|13|0",
+  "nuevas": [
+   "Al redactar el saludo del correo",
+   "Al elegir el título del reporte"
+  ],
+  "explica": "Cuando la IA ordena y cuenta datos puede equivocarse en las cifras; ahí verificas. En las ideas no hay números que comprobar."
+ },
+ {
+  "k": "c-ia|4|l|3|13|1",
+  "nuevas": [
+   "Pego solo los teléfonos",
+   "Los pego y le pido que no los guarde"
+  ],
+  "explica": "Los datos personales de los clientes no se comparten; quítalos antes de pegar el texto."
+ },
+ {
+  "k": "c-ia|4|l|3|13|2",
+  "nuevas": [
+   "Lo rechazo sin leer el resto",
+   "Contrato 2 o 3 para quedar a la mitad"
+  ],
+  "explica": "La IA no conoce tu presupuesto ni tu contexto: evalúas con criterio y pides alternativas realistas."
+ },
+ {
+  "k": "c-ingles|0|l|4|8|0",
+  "nuevas": [
+   "Excuse",
+   "Forgive me"
+  ],
+  "explica": "Antes de molestar a alguien → <i>excuse me</i>. <i>Sorry</i> es para disculparte por algo que ya pasó."
+ },
+ {
+  "k": "c-ingles|0|l|4|8|1",
+  "nuevas": [
+   "Excuse",
+   "Thank you"
+  ],
+  "explica": "Ya pasó → <i>sorry</i>. <i>Excuse</i> solo, sin <i>me</i>, no se usa así."
+ },
+ {
+  "k": "c-ingles|0|l|4|8|2",
+  "nuevas": [
+   "Excuse",
+   "Thank you"
+  ],
+  "explica": "Te disculpas por algo que ya hiciste → <i>sorry</i>."
+ },
+ {
+  "k": "c-ingles|0|l|4|8|3",
+  "nuevas": [
+   "Please",
+   "Hey you"
+  ],
+  "explica": "Vas a interrumpir a un desconocido → <i>excuse me</i>. <i>Please</i> no sirve para llamar la atención y <i>hey you</i> es grosero."
+ },
+ {
+  "k": "c-ingles|0|l|4|8|4",
+  "nuevas": [
+   "Excuse?",
+   "Repeat?"
+  ],
+  "explica": "<i>Sorry?</i> con tono de pregunta significa «¿perdón, cómo?». <i>Please?</i>, <i>Excuse?</i> o <i>Repeat?</i> son traducciones literales que no se usan."
+ },
+ {
+  "k": "c-ingles|1|l|4|12|3",
+  "nuevas": [
+   "6 de junio",
+   "10 de octubre"
+  ],
+  "explica": "En EE. UU. va el mes primero: 06/10 es junio 10."
+ },
+ {
+  "k": "c-ingles|1|q|10",
+  "nuevas": [
+   "4 de abril",
+   "5 de mayo"
+  ],
+  "explica": "En EE. UU. va el mes primero: 04/05 es abril 5."
+ },
+ {
+  "k": "c-ingles|4|l|3|4|0",
+  "nuevas": [
+   "could",
+   "couldn't"
+  ],
+  "explica": "<i>Can</i> en una oración suena débil y corto (kən); <i>can't</i> suena fuerte y con la t final. Aquí escuchas <b>can</b>."
+ },
+ {
+  "k": "c-ingles|4|l|3|4|1",
+  "nuevas": [
+   "could",
+   "couldn't"
+  ],
+  "explica": "<i>Can't</i> suena fuerte, con vocal abierta y la t al final; <i>can</i> suena débil (kən). Aquí escuchas <b>can't</b>."
+ },
+ {
+  "k": "c-ingles|4|l|3|4|2",
+  "nuevas": [
+   "could",
+   "couldn't"
+  ],
+  "explica": "<i>Can</i> en una oración suena débil y corto (kən); <i>can't</i> suena fuerte y con la t final. Aquí escuchas <b>can</b>."
+ },
+ {
+  "k": "c-office|0|l|0|9|1",
+  "nuevas": [
+   "Buscarlo en la Papelera de reciclaje",
+   "Revisar carpeta por carpeta en el Explorador"
+  ],
+  "explica": "Escribir el nombre en el buscador de Inicio lo encuentra en segundos, sin importar dónde esté instalado."
+ },
+ {
+  "k": "c-office|0|l|0|9|2",
+  "nuevas": [
+   "Inicio",
+   "Esc"
+  ],
+  "explica": "Retroceso borra a la izquierda del cursor; Supr borra a la derecha."
+ },
+ {
+  "k": "c-office|0|l|1|7|0",
+  "nuevas": [
+   "Maximizar",
+   "Restaurar"
+  ],
+  "explica": "Minimizar esconde la ventana en la barra de tareas sin cerrarla; la recuperas con un clic."
+ },
+ {
+  "k": "c-office|0|l|1|7|1",
+  "nuevas": [
+   "Ctrl + Tab",
+   "Windows + D"
+  ],
+  "explica": "Alt + Tab cambia entre ventanas abiertas; Ctrl + Tab cambia de pestaña dentro de un programa y Windows + D muestra el escritorio."
+ },
+ {
+  "k": "c-office|0|l|1|7|2",
+  "nuevas": [
+   "Minimizar uno y dejar el otro",
+   "Ponerlos en cascada, uno encima del otro"
+  ],
+  "explica": "Acomodarlos lado a lado, por ejemplo con Windows + flecha, te deja ver los dos a la vez."
+ },
+ {
+  "k": "c-office|0|l|2|8|2",
+  "nuevas": [
+   "Lo busco en Descargas",
+   "Reinicio para que se recupere"
+  ],
+  "explica": "Los archivos borrados van a la Papelera de reciclaje; desde ahí los restauras a su lugar original."
+ },
+ {
+  "k": "c-office|0|l|2|8|3",
+  "nuevas": [
+   "«cotizacion.docx»",
+   "«final final ahora sí.docx»"
+  ],
+  "explica": "Fecha al inicio, tipo de documento y cliente: así lo encuentras y se ordena solo por fecha."
+ },
+ {
+  "k": "c-office|0|l|2|8|4",
+  "nuevas": [
+   "Documentos",
+   "Escritorio"
+  ],
+  "explica": "Los navegadores guardan las descargas, por omisión, en la carpeta Descargas."
+ },
+ {
+  "k": "c-office|0|l|3|5|0",
+  "nuevas": [
+   "Alt + F4",
+   "Windows + D"
+  ],
+  "explica": "Windows + L bloquea la computadora sin cerrar tus programas; nadie puede usarla mientras no estás."
+ },
+ {
+  "k": "c-office|0|l|3|5|1",
+  "nuevas": [
+   "Ctrl + Y",
+   "Ctrl + X"
+  ],
+  "explica": "Ctrl + Z deshace la última acción; Ctrl + Y la rehace."
+ },
+ {
+  "k": "c-office|0|l|3|5|2",
+  "nuevas": [
+   "Ctrl + Z y luego Ctrl + V",
+   "Ctrl + A y luego Ctrl + V"
+  ],
+  "explica": "Ctrl + X corta el párrafo (lo quita de su lugar) y Ctrl + V lo pega en el nuevo; copiar lo dejaría duplicado."
+ },
+ {
+  "k": "c-office|0|l|4|6|0",
+  "nuevas": [
+   "Real, porque menciona un monto exacto",
+   "Real, si llega en la conversación de siempre"
+  ],
+  "explica": "Urgencia más un enlace que no es el dominio oficial del banco: probable fraude, aunque el mensaje parezca conocido."
+ },
+ {
+  "k": "c-office|0|l|4|6|1",
+  "nuevas": [
+   "Real, si sabe tu nombre completo",
+   "Real, si te llama desde un número de EE. UU."
+  ],
+  "explica": "Microsoft no llama para ofrecer soporte que no pediste; saber tu nombre no lo vuelve legítimo."
+ },
+ {
+  "k": "c-office|0|l|4|6|2",
+  "nuevas": [
+   "Lo doy si el perfil tiene el logo del banco",
+   "Lo doy si me dicen el saldo de mi cuenta"
+  ],
+  "explica": "Tu banco nunca te pide por WhatsApp el código que te llega por SMS; quien lo pide quiere entrar a tu cuenta."
+ },
+ {
+  "k": "c-office|0|l|4|6|3",
+  "nuevas": [
+   "Lo ignoro hasta verlo en persona",
+   "Lo reenvío a todos para preguntar si es real"
+  ],
+  "explica": "Un correo interno, del remitente esperado y con una petición normal, es probablemente legítimo; solo verificas si algo se ve raro."
+ },
+ {
+  "k": "c-office|1|l|0|5|0",
+  "nuevas": [
+   "rfc filetype:pdf",
+   "RFC gestor oficial SAT"
+  ],
+  "explica": "<i>site:sat.gob.mx</i> limita los resultados al sitio oficial del SAT y deja fuera a los gestores."
+ },
+ {
+  "k": "c-office|1|l|0|5|1",
+  "nuevas": [
+   "carta renuncia filetype:pdf",
+   "carta renuncia site:docx"
+  ],
+  "explica": "<i>filetype:docx</i> trae solo archivos de Word; <i>site:</i> sirve para sitios web, no para tipos de archivo."
+ },
+ {
+  "k": "c-office|1|l|0|5|2",
+  "nuevas": [
+   "Ctrl + T",
+   "Ctrl + W"
+  ],
+  "explica": "Ctrl + Shift + T reabre la última pestaña cerrada; Ctrl + T abre una vacía y Ctrl + W cierra la actual."
+ },
+ {
+  "k": "c-office|1|l|1|6|0",
+  "nuevas": [
+   "Jefe en Para, compañero en CC",
+   "Compañero en Para, jefe en CCO"
+  ],
+  "explica": "En Para va quien debe actuar; en CC, quien solo debe estar enterado."
+ },
+ {
+  "k": "c-office|1|l|1|6|1",
+  "nuevas": [
+   "CC",
+   "Responder a todos"
+  ],
+  "explica": "CCO oculta las direcciones de los destinatarios; en Para o CC todos ven los correos de los demás."
+ },
+ {
+  "k": "c-office|1|l|1|6|2",
+  "nuevas": [
+   "Reenviar",
+   "Responder con copia a todo el hilo"
+  ],
+  "explica": "El agradecimiento solo le interesa a quien te escribió: Responder evita llenar la bandeja de otras 11 personas."
+ },
+ {
+  "k": "c-office|1|l|2|5|0",
+  "nuevas": [
+   "Propietario",
+   "Colaborador con edición"
+  ],
+  "explica": "Una cotización final no debe modificarse: el cliente solo necesita verla, como lector."
+ },
+ {
+  "k": "c-office|1|l|2|5|1",
+  "nuevas": [
+   "Comentarista",
+   "Solo descarga"
+  ],
+  "explica": "Para que los dos llenen el mismo archivo, ambos necesitan permiso de editor."
+ },
+ {
+  "k": "c-office|1|l|2|5|2",
+  "nuevas": [
+   "Cualquier persona de la empresa con el enlace",
+   "Público en la web"
+  ],
+  "explica": "Información sensible como sueldos se comparte solo con correos específicos autorizados."
+ },
+ {
+  "k": "c-office|1|l|3|5|0",
+  "nuevas": [
+   "Subo el volumen de mis bocinas",
+   "Apago la cámara"
+  ],
+  "explica": "Silenciar el micrófono cuando no hablas evita que el ruido de tu casa interrumpa la reunión."
+ },
+ {
+  "k": "c-office|1|l|3|5|1",
+  "nuevas": [
+   "Le mando a cada uno una foto de la pantalla",
+   "Comparto la pestaña del correo en el navegador"
+  ],
+  "explica": "Compartir solo la ventana de Excel muestra lo necesario y protege lo demás que tienes abierto."
+ },
+ {
+  "k": "c-office|1|l|3|5|2",
+  "nuevas": [
+   "Tu fondo se vea borroso",
+   "Tu cara se vea demasiado brillante"
+  ],
+  "explica": "Con la luz detrás, la cámara se ajusta a la ventana y tu cara queda oscura; ponte de frente a la luz."
+ },
+ {
+  "k": "c-office|2|l|0|7|0",
+  "nuevas": [
+   "Seleccionarla y Ctrl + B",
+   "Seleccionarla y Ctrl + S"
+  ],
+  "explica": "En Word en español, Ctrl + N es negrita; Ctrl + B abre Buscar y Ctrl + S subraya."
+ },
+ {
+  "k": "c-office|2|l|0|7|1",
+  "nuevas": [
+   "Elegir la fuente de cada párrafo antes de escribirlo",
+   "Dar formato a cada renglón antes de pasar al siguiente"
+  ],
+  "explica": "Primero escribes todo el contenido y luego das formato de una vez, con estilos; así no pierdes tiempo ni rompes el diseño."
+ },
+ {
+  "k": "c-office|2|l|0|7|2",
+  "nuevas": [
+   "Clic derecho",
+   "Ctrl + clic"
+  ],
+  "explica": "Triple clic selecciona el párrafo completo; doble clic, una palabra, y Ctrl + clic, una oración."
+ },
+ {
+  "k": "c-office|2|l|0|7|3",
+  "nuevas": [
+   "Tres o cuatro",
+   "Una distinta para cada sección"
+  ],
+  "explica": "Una o dos fuentes bastan para un documento limpio y profesional; más hacen que se vea desordenado."
+ },
+ {
+  "k": "c-office|2|l|1|8|0",
+  "nuevas": [
+   "Barra espaciadora",
+   "Ctrl + Enter"
+  ],
+  "explica": "Tab pasa a la siguiente celda y, en la última, crea una fila nueva; Enter solo agrega un renglón dentro de la celda."
+ },
+ {
+  "k": "c-office|2|l|1|8|1",
+  "nuevas": [
+   "Columnas de Disposición de página",
+   "Un cuadro de texto por cada nombre"
+  ],
+  "explica": "Una tabla mantiene cada nombre alineado con su teléfono; puedes quitarle los bordes para que no se note."
+ },
+ {
+  "k": "c-office|2|l|1|8|2",
+  "nuevas": [
+   "Cambio el tamaño de la letra",
+   "Le pongo un borde a la imagen"
+  ],
+  "explica": "Las Opciones de diseño controlan cómo se acomoda el texto alrededor de la imagen, por ejemplo Cuadrado o Arriba y abajo."
+ },
+ {
+  "k": "c-office|2|l|2|10|0",
+  "nuevas": [
+   "Poner los títulos en negritas y más grandes",
+   "Numerar las páginas a mano"
+  ],
+  "explica": "El índice automático se arma con los estilos de Título; las negritas solo cambian la apariencia y Word no los reconoce."
+ },
+ {
+  "k": "c-office|2|l|2|10|1",
+  "nuevas": [
+   "Un cuadro de texto en la primera hoja",
+   "La portada"
+  ],
+  "explica": "Lo que pones en el encabezado se repite solo en todas las páginas."
+ },
+ {
+  "k": "c-office|2|l|2|10|2",
+  "nuevas": [
+   "El de mayor sueldo",
+   "El que más te gustó"
+  ],
+  "explica": "Se ordena del más reciente al más antiguo: lo primero que lee el reclutador es lo que haces hoy."
+ },
+ {
+  "k": "c-office|2|l|2|10|3",
+  "nuevas": [
+   "Word editable",
+   "Un enlace a tu Drive"
+  ],
+  "explica": "El PDF se ve igual en cualquier dispositivo y nadie lo modifica por error."
+ },
+ {
+  "k": "c-office|2|l|3|8|0",
+  "nuevas": [
+   "Resaltar en amarillo lo que cambiaste",
+   "Guardar una copia con otro nombre"
+  ],
+  "explica": "Control de cambios registra cada inserción y eliminación, y tu jefe puede aceptarlas o rechazarlas una por una."
+ },
+ {
+  "k": "c-office|2|l|3|8|1",
+  "nuevas": [
+   "Páginas: 2-5",
+   "Imprimir la página actual dos veces"
+  ],
+  "explica": "En Páginas personalizadas, la coma separa páginas sueltas; el guion indica un rango (2-5 imprimiría la 2, 3, 4 y 5)."
+ },
+ {
+  "k": "c-office|2|l|3|8|2",
+  "nuevas": [
+   "Se convierte en solo lectura",
+   "Se reemplaza por el PDF"
+  ],
+  "explica": "Guardar como PDF crea una copia nueva; el .docx original sigue ahí para editarlo después."
+ },
+ {
+  "k": "c-office|3|l|0|3|3",
+  "nuevas": [
+   "1500 pesos",
+   "mil quinientos"
+  ],
+  "explica": "En una celda de montos escribes solo el número; el formato de moneda se aplica después. Con texto, Excel no puede sumar."
+ },
+ {
+  "k": "c-office|3|l|4|6|0",
+  "nuevas": [
+   "Radial",
+   "Anillo"
+  ],
+  "explica": "Una gráfica de líneas muestra la evolución en el tiempo; las circulares y de anillo solo muestran partes de un todo."
+ },
+ {
+  "k": "c-office|3|l|4|6|1",
+  "nuevas": [
+   "«Gastos»",
+   "«Tabla de gastos enero-junio 2026»"
+  ],
+  "explica": "Un título que dice la conclusión le ahorra al lector interpretar la gráfica."
+ },
+ {
+  "k": "c-office|3|l|4|6|2",
+  "nuevas": [
+   "Te faltó registrar un ingreso",
+   "Hay un error en la fórmula"
+  ],
+  "explica": "Si la diferencia es presupuesto menos real, un número negativo indica que gastaste más de lo planeado."
+ },
+ {
+  "k": "c-office|4|l|0|5|0",
+  "nuevas": [
+   "F7",
+   "Shift + F5"
+  ],
+  "explica": "F5 inicia desde la primera diapositiva; Shift + F5 inicia desde la diapositiva actual."
+ },
+ {
+  "k": "c-office|4|l|0|5|1",
+  "nuevas": [
+   "Al menos tres gráficas",
+   "Un párrafo por cada tema"
+  ],
+  "explica": "Una idea principal por diapositiva; lo demás lo dices tú."
+ },
+ {
+  "k": "c-office|4|l|0|5|2",
+  "nuevas": [
+   "12",
+   "14"
+  ],
+  "explica": "Desde el fondo de la sala, un texto menor de 24 puntos ya no se lee."
+ },
+ {
+  "k": "c-office|4|l|1|6|0",
+  "nuevas": [
+   "Comentarios de revisión",
+   "Una animación que lo oculte"
+  ],
+  "explica": "Las notas del orador las ves tú en la vista del moderador, pero el público no."
+ },
+ {
+  "k": "c-office|4|l|1|6|1",
+  "nuevas": [
+   "Tecla Esc",
+   "Tecla F5"
+  ],
+  "explica": "La tecla B pone la pantalla en negro y la vuelves a mostrar con la misma tecla; Esc termina la presentación."
+ },
+ {
+  "k": "c-office|4|l|1|6|2",
+  "nuevas": [
+   "Agradecer y mostrar «¿Preguntas?»",
+   "Presentar un tema nuevo"
+  ],
+  "explica": "El cierre deja claro qué pides o qué deben recordar; es lo último que se lleva el público."
+ },
+ {
+  "k": "c-office|4|l|2|3|0",
+  "nuevas": [
+   "La calculo con calculadora y capturo los resultados",
+   "Una sola SUMA de toda la columna"
+  ],
+  "explica": "Escribes la fórmula una vez y la copias hacia abajo: se ajusta sola a cada fila y evitas errores de captura."
+ },
+ {
+  "k": "c-office|4|l|2|3|1",
+  "nuevas": [
+   "Foto de la pantalla",
+   "Hoja de Excel"
+  ],
+  "explica": "El PDF conserva el formato en cualquier dispositivo y evita que alguien la modifique."
+ },
+ {
+  "k": "c-office|4|l|2|3|2",
+  "nuevas": [
+   "Con todo el personal de la escuela",
+   "Con los padres de familia"
+  ],
+  "explica": "Información de pagos es sensible: se comparte solo con la cuenta de quien la necesita, no con todos."
+ },
+ {
+  "k": "c-office|4|l|2|3|3",
+  "nuevas": [
+   "Un párrafo con todos los datos",
+   "Las fotos de los 10 alumnos"
+  ],
+  "explica": "La diapositiva principal muestra la conclusión y la gráfica que la respalda; el detalle va en anexos."
+ }
+]
