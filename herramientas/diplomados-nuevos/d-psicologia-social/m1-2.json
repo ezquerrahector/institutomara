@@ -1,0 +1,800 @@
+{
+  "modulos": [
+    {
+      "t": "El yo en el mundo social",
+      "r": "Descubre qué estudia la psicología social, cómo construyes tu identidad a partir de los demás y qué sesgos te hacen sentirte más observado, y a veces mejor, de lo que eres.",
+      "lecciones": [
+        {
+          "t": "Qué estudia la psicología social y por qué no es sólo sentido común",
+          "obj": "Explicar qué estudia la psicología social y distinguir un hallazgo con evidencia de una creencia popular.",
+          "texto": [
+            "La psicología social estudia cómo lo que pensamos, sentimos y hacemos cambia por la presencia de otras personas, sean reales, imaginadas o sólo sugeridas. Esa definición, clásica desde Gordon Allport, abarca casi todo: por qué te arreglas distinto para una entrevista, por qué en una junta te callas lo que piensas, por qué en el Metro nadie cede el asiento hasta que alguien lo hace y entonces varios se ofrecen. Kurt Lewin, uno de sus fundadores, lo resumió en una idea: la conducta depende de la persona <i>y</i> de la situación. Este diplomado te entrenará para mirar las dos.",
+            "¿No es todo esto sentido común? El problema es que el sentido común tiene refranes para todo y a veces se contradicen: «dime con quién andas y te diré quién eres», pero también «los polos opuestos se atraen». Además, cuando alguien nos cuenta un resultado, solemos sentir que ya lo sabíamos; a eso se le llama <b>sesgo retrospectivo</b>. Por eso la disciplina no se conforma con opiniones: pone a prueba las ideas con observación sistemática, encuestas y, sobre todo, experimentos en los que se asigna a las personas al azar a distintas condiciones para saber qué causa qué.",
+            "Ese método ha dado hallazgos muy sólidos y también tropiezos. Desde hace unos quince años la psicología vive una revisión profunda conocida como <b>crisis de replicación</b>: al repetir estudios famosos con muestras grandes, varios efectos se encogieron o desaparecieron. Aquí verás los experimentos clásicos siempre acompañados de lo que hoy sabemos de ellos: qué se sostuvo, qué se exageró y qué se cayó. Esa honestidad es parte del contenido, no una nota al pie.",
+            "A lo largo del diplomado usarás tres preguntas ante cualquier escena social: ¿qué está pasando en la situación (reglas, presión, quién mira, prisa)?, ¿qué está pasando en la persona (metas, historia, estado de ánimo)? y ¿qué evidencia tengo para cada explicación? Con ellas leerás mejor lo que ocurre en tu trabajo, tu familia, tu colonia y tus redes, y decidirás con más calma y menos prejuicio."
+          ],
+          "comparar": [
+            "«Así no: “Eso de la psicología social es puro sentido común; todo mundo sabe cómo es la gente.”»",
+            "«Así sí: “Antes de concluir por qué actuó así, voy a ver cuánto pesó la situación y qué evidencia tengo.”»"
+          ],
+          "caso": "Caso ficticio: Fermín, de 47 años, es supervisor de turno en una maquiladora de Ciudad Juárez. En la junta semanal preguntó en voz alta qué opinaban del nuevo horario y nadie habló, así que concluyó que todos estaban de acuerdo. Dos semanas después, tres operarias pidieron cambio de área y en el comedor se comenta que el horario «no lo aguanta nadie».",
+          "p": [
+            [
+              "¿Qué error de lectura cometió Fermín en la junta?",
+              "Tomó el silencio del grupo como si fuera acuerdo",
+              "Supuso que las operarias eran poco comprometidas",
+              "Creyó que el horario nuevo se explicaba por sí solo",
+              "El error central fue interpretar la falta de comentarios como aprobación, sin considerar que preguntar en público y frente al jefe inhibe a muchas personas. No hay datos de que juzgara el compromiso de las operarias ni de que omitiera explicar el horario."
+            ],
+            [
+              "Si Fermín aplicara la pregunta sobre la situación, ¿qué revisaría primero?",
+              "Si su presencia como jefe frenó que alguien opinara",
+              "Si las operarias tienen un carácter débil para opinar",
+              "Si el horario es objetivamente mejor que el anterior",
+              "La pregunta sobre la situación busca reglas, roles y presiones del momento: un jefe preguntando en público es una presión real. Atribuirlo al carácter de las operarias es mirar sólo a la persona, y evaluar el horario es otra pregunta distinta."
+            ],
+            [
+              "¿Qué le conviene hacer antes de decidir si mantiene el horario?",
+              "Recoger opiniones de forma anónima y por escrito",
+              "Repetir la junta y pedir opiniones con más firmeza",
+              "Mantenerlo hasta que alguien se queje formalmente",
+              "Un canal anónimo reduce la presión de opinar frente al jefe y da evidencia real. Exigir con más firmeza aumenta la presión que causó el silencio, y esperar quejas formales es seguir confundiendo silencio con acuerdo."
+            ]
+          ],
+          "completar": [
+            "Sentir que ya sabíamos un resultado justo después de conocerlo se llama sesgo ___.",
+            "retrospectivo"
+          ],
+          "relacionar": [
+            [
+              "Kurt Lewin",
+              "La conducta depende de la persona y de la situación"
+            ],
+            [
+              "Sesgo retrospectivo",
+              "«Eso ya lo sabía» después de oír el resultado"
+            ],
+            [
+              "Experimento",
+              "Asignar al azar a condiciones para saber qué causa qué"
+            ],
+            [
+              "Crisis de replicación",
+              "Repetir estudios famosos y ver que algunos efectos no aparecen"
+            ],
+            [
+              "Gordon Allport",
+              "Influencia de otros reales, imaginados o sugeridos"
+            ]
+          ],
+          "refl": "Elige una conducta tuya o de alguien cercano que te haya sorprendido en el último mes (en el trabajo, la familia, el transporte o las redes). 1) Descríbela en dos líneas, sin adjetivos. 2) Escribe dos explicaciones centradas en la persona y dos centradas en la situación. 3) Anota qué evidencia tienes hoy para cada una. 4) Decide qué dato concreto podrías buscar esta semana para salir de dudas.",
+          "modelo": "Modelo: «1) Mi hermano no llegó a la comida del domingo y no avisó. 2) Persona: es desconsiderado; se le olvidó. Situación: le cambiaron el turno en el hospital; se quedó sin pila. 3) Evidencia: sé que esta semana cambiaron turnos; no sé nada de su celular. 4) Le preguntaré cómo le fue con el turno nuevo antes de reclamarle.» Es buena porque describe sin calificar, da un peso real a la situación, separa lo que sabe de lo que supone y termina en una acción concreta.",
+          "plantilla": [
+            "Las tres preguntas de la psicología social",
+            "Situación observada: [qué pasó, sin adjetivos]\n1. ¿Qué hay en la situación? [reglas, presión, quién mira, prisa, rol]\n2. ¿Qué hay en la persona? [metas, historia, estado de ánimo]\n3. ¿Qué evidencia tengo para cada explicación? [dato / suposición]\nDato que buscaré antes de concluir: [ ]"
+          ],
+          "clave": [
+            "La psicología social estudia cómo la presencia real, imaginada o sugerida de otros cambia lo que pensamos, sentimos y hacemos.",
+            "El sentido común se contradice y el sesgo retrospectivo nos hace creer que ya sabíamos los resultados; por eso hace falta evidencia.",
+            "Los experimentos clásicos se estudian junto con sus réplicas y críticas."
+          ]
+        },
+        {
+          "t": "Te conoces a través de los demás: autoconcepto y comparación social",
+          "obj": "Reconocer cómo la comparación social y tus papeles moldean tu autoconcepto, y elegir comparaciones que te ayuden en lugar de hundirte.",
+          "texto": [
+            "Tu <b>autoconcepto</b> es el conjunto de creencias que tienes sobre quién eres: responsable, desordenada, buen cocinero, mala para los números. Buena parte de esas creencias no nació en soledad. El sociólogo Charles Horton Cooley habló del «yo espejo»: nos vemos, en parte, como creemos que los demás nos ven. Por eso una maestra que te dijo «tú eres de letras» o un papá que repetía «este niño es muy flojo» pueden seguir pesando décadas después, aunque los hechos ya digan otra cosa.",
+            "Además, no tienes un solo yo, sino varios papeles: hija, jefa, vecina, comadre, cliente. Cada contexto activa una parte distinta de ti. La investigación transcultural de Hazel Markus y Shinobu Kitayama describió que en algunas culturas predomina un yo más independiente, definido por rasgos personales, y en otras uno más interdependiente, definido por los vínculos y el grupo. Son tendencias promedio con muchísima variación individual; aun así, ayudan a entender por qué para muchas personas en México decir quiénes son incluye decir de qué familia y de qué pueblo vienen.",
+            "Leon Festinger propuso en 1954 la teoría de la <b>comparación social</b>: cuando no hay una regla objetiva para medirnos, nos evaluamos comparándonos con otros. Compararte con quien está mejor (comparación ascendente) puede inspirarte si ves el camino para llegar ahí, o desanimarte si la distancia parece imposible. Compararte con quien está peor (descendente) consuela, pero rara vez te hace avanzar. Las redes sociales multiplican las comparaciones ascendentes con versiones editadas de la vida ajena; los estudios encuentran, en promedio, asociaciones pequeñas y discutidas entre su uso y el bienestar, con grandes diferencias entre personas.",
+            "No puedes dejar de compararte, pero sí elegir cómo. Una comparación útil es específica (una habilidad, no «toda su vida»), se hace con alguien que va un poco adelante en tu mismo camino y se enfoca en conductas que puedes aprender. Otra herramienta es la comparación temporal: medirte contra quien eras hace un año. Esa referencia es más justa porque comparte tus circunstancias."
+          ],
+          "comparar": [
+            "«Así no: “Mira a esa chava, a su edad ya tiene su propio despacho; yo no sirvo para nada.”»",
+            "«Así sí: “Ella lleva cinco años con su despacho; voy a preguntarle cómo consiguió sus primeros clientes.”»"
+          ],
+          "caso": "Caso ficticio: Itzel, de 31 años, es contadora en Mérida y empezó a vender pasteles por encargo los fines de semana. Cada noche revisa cuentas de reposteras con cientos de miles de seguidores y se siente «una aficionada». Lleva dos semanas sin publicar fotos de sus pasteles, aunque sus clientas repiten pedido y la recomiendan.",
+          "p": [
+            [
+              "¿Qué tipo de comparación está haciendo Itzel?",
+              "Ascendente, con referentes muy lejanos a su etapa",
+              "Descendente, para sentirse mejor que otras reposteras",
+              "Temporal, contra lo que vendía cuando empezó",
+              "Itzel se compara con quienes están muy por encima de ella y en otra etapa, lo que la desanima. No se compara con alguien peor (descendente) ni con su propio pasado (temporal)."
+            ],
+            [
+              "¿Qué comparación le sería más útil esta semana?",
+              "Con una repostera local que empezó hace dos o tres años",
+              "Con las cuentas más famosas, para exigirse más alto",
+              "Con ninguna, porque compararse siempre hace daño",
+              "Una referente cercana en tiempo y contexto le muestra pasos alcanzables. Las cuentas famosas son justo lo que la paraliza, y renunciar a toda comparación no es realista: compararse es inevitable, lo que se elige es con quién y cómo."
+            ],
+            [
+              "¿Qué dato de su situación contradice su idea de ser «aficionada»?",
+              "Sus clientas repiten pedido y la recomiendan",
+              "Revisa cuentas de otras reposteras cada noche",
+              "Trabaja como contadora entre semana",
+              "La recompra y la recomendación son evidencia directa de la calidad de su trabajo. Revisar cuentas ajenas no dice nada de sus pasteles, y tener otro empleo no la vuelve menos competente como repostera."
+            ]
+          ],
+          "completar": [
+            "Según Festinger, cuando no hay una regla objetiva nos evaluamos mediante la comparación ___.",
+            "social"
+          ],
+          "refl": "Haz tu mapa de comparaciones. 1) Anota tres personas o cuentas con las que te comparas seguido (en tu trabajo, tu familia o tus redes). 2) Para cada una, indica si la comparación es ascendente o descendente y qué emoción te deja. 3) Señala cuál te inspira a actuar y cuál sólo te desanima, y por qué. 4) Escribe una comparación temporal: algo que hoy sabes hacer y que hace dos años no sabías.",
+          "modelo": "Modelo: «1) Mi primo, que ya compró casa; una compañera que habla inglés fluido; una cuenta de una nutrióloga que siempre se ve perfecta. 2) Las tres son ascendentes; me dejan envidia, curiosidad y culpa, respectivamente. 3) La de mi compañera me inspira: sé que tomó clases en línea por las noches. La de la cuenta sólo me desanima: no sé nada de su vida real. 4) Hace dos años no sabía hacer tablas dinámicas y hoy las enseño a mi equipo.» Es buena porque distingue emociones, explica qué hace útil una comparación y cierra con una medida justa.",
+          "plantilla": [
+            "Comparación útil",
+            "Me comparo con: [persona o cuenta]\nEn qué aspecto concreto: [habilidad, no «toda su vida»]\n¿Va un poco adelante en mi mismo camino? [sí / no]\nQué conducta suya puedo aprender: [ ]\nMi comparación temporal: hace un año yo [ ]; hoy yo [ ]"
+          ],
+          "clave": [
+            "El autoconcepto se forma en buena medida con los ojos de los demás: nos vemos como creemos que nos ven.",
+            "Nos comparamos cuando no hay reglas objetivas; elegir con quién y en qué aspecto cambia el efecto.",
+            "La comparación con tu yo de antes suele ser la más justa porque comparte tus circunstancias."
+          ]
+        },
+        {
+          "t": "Autoestima: lo que sí hace, lo que no y cómo cuidarla",
+          "obj": "Distinguir lo que la evidencia dice de la autoestima de los mitos populares y elegir formas sanas de cuidarla en ti y en otros.",
+          "texto": [
+            "La <b>autoestima</b> es la evaluación global que haces de ti: cuánto te valoras. Durante décadas se creyó que subirla era la llave para casi todo, desde mejores calificaciones hasta menos violencia. En 2003, Roy Baumeister y sus colegas revisaron cientos de estudios y encontraron algo menos espectacular: la autoestima alta se asocia con sentirse más feliz y con tomar más iniciativa, pero no hay evidencia clara de que <i>cause</i> mejor desempeño escolar o laboral. Muchas veces la flecha va al revés: te va bien y por eso te valoras más.",
+            "Mark Leary propuso la teoría del <b>sociómetro</b>: la autoestima funciona como un indicador interno de cuánto te sientes aceptado por los demás. Por eso baja de golpe cuando te excluyen de un chat de amigos o te ignoran en una reunión, aunque nada haya cambiado en tus capacidades. Entenderlo ayuda a no tomar esa caída como una verdad sobre tu valor, sino como una alarma social que conviene revisar con calma.",
+            "También importa de qué depende. Jennifer Crocker estudió la autoestima contingente: cuando tu valor se apoya sobre todo en un solo aspecto, como la apariencia, la aprobación ajena o ganar siempre, se vuelve frágil y sube y baja con cada evento. Y una autoestima inflada no es lo mismo que una sana: el narcisismo, la necesidad de sentirse superior, se asocia con reacciones más hostiles ante la crítica. En un estudio con niños de baja autoestima, los elogios exagerados como «¡es increíblemente hermoso!» los llevaron a evitar retos difíciles después.",
+            "¿Qué sí ayuda? Elogiar el esfuerzo y la estrategia concretos en lugar de etiquetas globales como «eres un genio»; diversificar las fuentes de valor (relaciones, aprendizaje, servicio, oficio); y practicar la autocompasión, propuesta por Kristin Neff: tratarte en un tropiezo como tratarías a una amiga, sin negar el error ni flagelarte. Es una línea de investigación con evidencia creciente, no una cura mágica."
+          ],
+          "comparar": [
+            "«Así no: “¡Eres un genio, mi amor, el más inteligente de tu salón!”»",
+            "«Así sí: “Te vi intentar tres formas distintas hasta que el problema salió; esa paciencia te va a servir.”»"
+          ],
+          "caso": "Caso ficticio: Guadalupe, de 38 años, es enfermera en Toluca. Para cuidar la autoestima de su hijo Emiliano, de 10 años, le dice «eres un genio» cada vez que termina la tarea. Desde hace un mes el niño se niega a intentar los problemas de matemáticas que no le salen a la primera y dice: «Si no me sale, es que soy tonto».",
+          "p": [
+            [
+              "¿Qué explica mejor la reacción de Emiliano?",
+              "Una etiqueta global lo hace temer perderla al fallar",
+              "Tiene poca autoestima y necesita elogios más intensos",
+              "Las matemáticas de su grado son demasiado difíciles",
+              "Si su valor depende de ser «genio», fallar amenaza esa etiqueta, y evitar retos la protege. Elogiar más fuerte agravaría el problema, y no hay datos de que el nivel escolar sea el obstáculo."
+            ],
+            [
+              "¿Qué tipo de elogio le serviría más?",
+              "Nombrar el esfuerzo y la estrategia que usó",
+              "Decirle que es más listo que sus compañeros",
+              "Dejar de reconocerle cualquier logro escolar",
+              "El elogio específico al proceso enseña qué repetir y no convierte el error en una amenaza a su identidad. Compararlo con otros refuerza la etiqueta frágil, y quitar todo reconocimiento lo deja sin retroalimentación."
+            ],
+            [
+              "Según la teoría del sociómetro, ¿qué indicaría una caída brusca en la autoestima de Emiliano?",
+              "Que se siente menos aceptado por alguien importante",
+              "Que su capacidad intelectual real ha disminuido",
+              "Que necesita una evaluación clínica inmediata",
+              "El sociómetro concibe la autoestima como un indicador de aceptación social. Una caída no mide inteligencia ni, por sí sola, justifica una evaluación clínica; sí invita a preguntar qué pasó con sus vínculos."
+            ]
+          ],
+          "completar": [
+            "La teoría del ___ propone que la autoestima es un indicador de cuánto nos sentimos aceptados.",
+            "sociómetro"
+          ],
+          "relacionar": [
+            [
+              "Baumeister y colegas",
+              "La autoestima alta no causa por sí sola mejor desempeño"
+            ],
+            [
+              "Sociómetro",
+              "La autoestima baja cuando te excluyen de un grupo"
+            ],
+            [
+              "Autoestima contingente",
+              "Sentirte valioso sólo si recibes muchos «me gusta»"
+            ],
+            [
+              "Narcisismo",
+              "Necesidad de sentirse superior y reaccionar con hostilidad a la crítica"
+            ],
+            [
+              "Autocompasión",
+              "Tratarte en un error como tratarías a una amiga"
+            ]
+          ],
+          "refl": "Revisa de qué depende tu autoestima. 1) Escribe las tres fuentes principales de las que sientes que depende tu valor (por ejemplo, trabajo, apariencia, aprobación de tu familia, ser útil). 2) Señala cuál es la más frágil, es decir, la que más sube y baja con eventos externos. 3) Recuerda una situación reciente de rechazo o crítica y describe cómo reaccionaste. 4) Reescribe lo que te dijiste a ti mismo como se lo dirías a un buen amigo en la misma situación.",
+          "modelo": "Modelo: «1) Mi desempeño en el banco, que mi familia me vea como la responsable y mi aspecto físico. 2) La más frágil es el trabajo: un correo seco de mi jefe me arruina el día. 3) Cuando rechazaron mi propuesta pensé: “no sirvo para esto” y no hablé en dos juntas. 4) A un amigo le diría: “Rechazaron una propuesta, no a ti; tienes años resolviendo cosas difíciles; pide qué faltó y ajusta”.» Es buena porque identifica la fuente frágil, describe una reacción concreta y practica la autocompasión sin negar el problema.",
+          "plantilla": [
+            "Elogio que sí ayuda",
+            "Vi que tú [conducta concreta]\nMe gustó cómo [estrategia o esfuerzo]\nEso te va a servir para [aplicación futura]\n(Evita: «eres un genio», «eres el mejor», «eres perfecto».)"
+          ],
+          "clave": [
+            "La autoestima alta se asocia con bienestar e iniciativa, pero no causa por sí sola mejor desempeño.",
+            "Funciona como un sociómetro: baja con el rechazo y conviene leerla como alarma, no como verdad.",
+            "Elogiar el proceso, diversificar fuentes de valor y practicar la autocompasión la vuelven más estable."
+          ]
+        },
+        {
+          "t": "El efecto reflector y los sesgos a favor de uno mismo",
+          "obj": "Detectar cuándo sobrestimas cuánto te observan los demás y cuándo te das más crédito del que corresponde, para ajustar tu juicio.",
+          "texto": [
+            "En un experimento de Thomas Gilovich y sus colegas, publicado en 2000, estudiantes universitarios entraron a un salón con una playera que les daba vergüenza. Estimaron que cerca de la mitad de sus compañeros lo notaría; en realidad, apenas alrededor de una cuarta parte se dio cuenta. A esto se le llama <b>efecto reflector</b>: sentimos que un foco nos sigue y que todos notan nuestra mancha, nuestro tartamudeo o nuestro error. Un fenómeno cercano es la ilusión de transparencia: creemos que nuestros nervios se notan mucho más de lo que se notan.",
+            "Conocer el efecto reflector es útil antes de hablar en público, de una entrevista o de una reunión familiar tensa: los demás están ocupados en su propio reflector. No significa que nadie te vea, sino que te ven menos y te juzgan con menos detalle de lo que imaginas.",
+            "El segundo grupo de sesgos nos favorece. El <b>sesgo de autoservicio</b> consiste en atribuir los éxitos a nuestras cualidades y los fracasos a la situación: «aprobé porque estudié», «reprobé porque el examen era injusto». Un metaanálisis de Amy Mezulis y colegas encontró que este sesgo es amplio, aunque su tamaño varía entre culturas y edades. Relacionado está el efecto «mejor que el promedio»: en un estudio clásico de Ola Svenson, la gran mayoría de un grupo de estudiantes estadounidenses se consideraba más hábil al volante que el conductor promedio, algo imposible para todos a la vez.",
+            "Por último, Emily Pronin describió el <b>punto ciego del sesgo</b>: vemos con facilidad los sesgos de los demás y casi nunca los propios. Estos sesgos tienen una función, nos protegen y nos dan ánimo, pero cuestan caro cuando hay que decidir. La salida no es castigarte, sino crear revisiones externas: preguntar a alguien de confianza, anotar tus predicciones y compararlas con lo que pasó."
+          ],
+          "comparar": [
+            "«Así no: “El proyecto salió bien gracias a mí; el anterior falló porque el área de sistemas nunca apoya.”»",
+            "«Así sí: “Revisemos qué hicimos distinto en este proyecto y qué parte del fracaso anterior sí dependía de mí.”»"
+          ],
+          "caso": "Caso ficticio: Saúl, de 34 años, es vendedor de seguros en Puebla. En su primera presentación ante la dirección regional se le trabó una palabra y desde entonces evita presentar porque «todos notaron que estaba temblando». Cuando el trimestre fue bueno, lo atribuyó a su talento; cuando bajaron las ventas, culpó al mercado y a la competencia.",
+          "p": [
+            [
+              "¿Qué fenómeno explica mejor su miedo a volver a presentar?",
+              "El efecto reflector y la ilusión de transparencia",
+              "El efecto mejor que el promedio en ventas",
+              "La comparación social descendente con sus colegas",
+              "Saúl cree que su error y sus nervios fueron mucho más visibles de lo que suelen ser; eso es el efecto reflector y la ilusión de transparencia. No se está creyendo mejor que el promedio ni comparándose con quien está peor."
+            ],
+            [
+              "¿Cómo se llama su forma de explicar los buenos y los malos trimestres?",
+              "Sesgo de autoservicio",
+              "Punto ciego del sesgo",
+              "Autoestima contingente",
+              "Atribuir éxitos a uno mismo y fracasos a la situación es el sesgo de autoservicio. El punto ciego es no ver los propios sesgos y la autoestima contingente se refiere a de qué depende el valor propio."
+            ],
+            [
+              "¿Qué acción le ayudaría más a corregir ambos sesgos?",
+              "Pedir a un colega datos concretos sobre su presentación y sus ventas",
+              "Convencerse de que nadie lo vio y que todo fue mala suerte",
+              "Evitar presentar hasta sentirse totalmente seguro de sí",
+              "La retroalimentación externa con datos contrasta lo que imagina con lo que pasó. Convencerse de que todo fue suerte mantiene el sesgo, y evitar presentar refuerza el miedo y le quita práctica."
+            ]
+          ],
+          "completar": [
+            "Creer que todos notan nuestros errores mucho más de lo que realmente los notan se llama efecto ___.",
+            "reflector"
+          ],
+          "refl": "Haz una auditoría de tus sesgos en dos partes. 1) Recuerda una situación del último año en la que sentiste que todos te miraban (un error, una caída, un comentario). Escribe qué creíste que pensaban y qué evidencia real tienes de ello. 2) Elige un éxito y un fracaso de tu trabajo o tu vida familiar. Para cada uno escribe qué parte dependió de ti y qué parte de la situación. 3) Compara: ¿repartiste igual el crédito y la responsabilidad? 4) Anota a quién podrías pedirle una opinión honesta sobre uno de ellos.",
+          "modelo": "Modelo: «1) En la boda de mi prima se me cayó el plato; creí que todos se burlaban. Evidencia: sólo un mesero se acercó a ayudar y nadie lo mencionó después. 2) Éxito: logré el ascenso; dependió de mi esfuerzo y de que mi jefa me propuso. Fracaso: perdí un cliente; lo atribuí a la crisis, pero también tardé una semana en responderle. 3) Me di más crédito en el éxito que responsabilidad en el fracaso. 4) Le pediré a mi compañero Iván su opinión sobre lo del cliente.» Es buena porque contrasta creencias con evidencia y reconoce el sesgo sin culparse en exceso.",
+          "plantilla": [
+            "Revisión de crédito justo",
+            "Resultado: [éxito o fracaso]\nLo que dependió de mí: [ ]\nLo que dependió de la situación: [ ]\nLo que habría dicho si le pasara a otra persona: [ ]\nPersona a quien pediré una opinión honesta: [ ]"
+          ],
+          "clave": [
+            "Los demás notan nuestros errores y nervios bastante menos de lo que creemos.",
+            "Tendemos a quedarnos con el crédito de los éxitos y a culpar a la situación de los fracasos.",
+            "Vemos los sesgos ajenos con facilidad y los propios casi nunca; la retroalimentación externa los corrige."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Construye tu autorretrato social. Identifica tus papeles principales y qué parte de ti activa cada uno, revisa con quién te comparas y con qué efecto, de qué depende tu autoestima y en qué situaciones aparecen el efecto reflector y el sesgo de autoservicio. Termina con un cambio pequeño que probarás durante el diplomado.",
+        "entregable": "Una ficha de una página con tus cuatro papeles principales, tus tres comparaciones frecuentes clasificadas, tus fuentes de autoestima marcando la más frágil, un ejemplo propio de efecto reflector, uno de sesgo de autoservicio y un experimento personal para las próximas cuatro semanas.",
+        "criterios": "Revisa: cada afirmación sobre ti se apoya en un ejemplo concreto, distingues lo que sabes de lo que supones, reconoces al menos un sesgo propio sin justificarlo y tu experimento es pequeño, observable y tiene fecha."
+      },
+      "lab": {
+        "t": "La nueva en la oficina",
+        "obj": "Aplicar autoconcepto, comparación social, autoestima y sesgos a favor de uno mismo a una situación laboral realista.",
+        "esc": "<b>Ximena,</b> de 29 años, acaba de entrar como analista a una dependencia de gobierno en Hermosillo. Viene de un despacho pequeño donde era «la que sabía de todo» y ahora está rodeada de colegas con más años de experiencia. En su primera semana tuvo un error en un reporte y cree que todo el piso habla de eso.",
+        "e": [
+          [
+            "Escena 1: Ximena te dice: «Aquí todos saben más que yo; en el despacho yo era buena, aquí no sirvo».",
+            "Consigna: explica qué está pasando con su autoconcepto al cambiar de contexto y de grupo de comparación, y propón una comparación más útil para ella."
+          ],
+          [
+            "Escena 2: Después del error en el reporte, Ximena evita comer en el comedor porque «seguro todos se están riendo de mí».",
+            "Consigna: identifica el sesgo en juego, escribe qué evidencia tendría que buscar y redacta una frase que podría decirse a sí misma."
+          ],
+          [
+            "Escena 3: Su jefe la felicita por un análisis y ella responde: «No fue nada, tuve suerte». Una semana después, cuando un dato sale mal, dice: «Es que yo no sirvo para esto».",
+            "Consigna: analiza cómo reparte crédito y responsabilidad y en qué se diferencia del sesgo de autoservicio típico; propón una forma más equilibrada de explicar ambos resultados."
+          ],
+          [
+            "Escena 4: Ximena te pide ayuda para sus primeras cuatro semanas.",
+            "Consigna: redacta un plan breve con una comparación temporal, una fuente de valor distinta del desempeño y una forma de pedir retroalimentación concreta a un colega."
+          ]
+        ],
+        "p": [
+          [
+            "¿Por qué Ximena se siente peor si su capacidad no cambió?",
+            "Cambió su grupo de comparación y su lugar en él",
+            "Su autoestima siempre fue falsa y hoy se descubre",
+            "Sus nuevos colegas la están rechazando abiertamente",
+            "Al pasar de ser la más experta a la menos experimentada, la comparación ascendente domina. No hay evidencia de que su autoestima fuera falsa ni de un rechazo abierto; es un cambio de referencia."
+          ],
+          [
+            "En la escena 3, ¿qué patrón muestra Ximena?",
+            "El inverso del autoservicio: éxito a la suerte y error a ella",
+            "El sesgo de autoservicio típico de los nuevos empleados",
+            "El efecto reflector aplicado a las felicitaciones",
+            "Ximena hace lo contrario del sesgo de autoservicio: niega su mérito y se adjudica toda la culpa. No es el patrón típico ni tiene que ver con sentirse observada."
+          ],
+          [
+            "¿Qué retroalimentación le conviene pedir?",
+            "Un comentario concreto sobre un reporte específico",
+            "La opinión general del equipo sobre su persona",
+            "Que su jefe le confirme que es buena analista",
+            "Lo específico permite mejorar y contrastar con datos. Una opinión general sobre su persona alimenta la autoestima contingente, y pedir confirmación de que es buena busca consuelo, no información."
+          ]
+        ],
+        "pl": [
+          "Plan de adaptación social a un nuevo grupo",
+          "Mi grupo de comparación anterior: [ ] · El nuevo: [ ]\nComparación temporal para medir mi avance: [semana 1 vs. semana 4]\nFuente de valor distinta del desempeño: [ ]\nPregunta de retroalimentación concreta: «¿Qué cambiarías de [tarea específica]?»\nFrase para el efecto reflector: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Tania, de 25 años, cree que todos en la boda notaron que su vestido estaba arrugado. Según la investigación, ¿qué es lo más probable?",
+          "Que lo notaron bastante menos personas de las que cree",
+          "Que lo notaron todos, pero nadie se atrevió a decirlo",
+          "Que lo notaron sólo quienes la conocen desde hace años",
+          "Que nadie lo notó, porque nadie se fija en la ropa ajena"
+        ],
+        [
+          "Un gerente de Saltillo dice: «Cuando el equipo gana es por mi liderazgo; cuando pierde, es por la economía». ¿Qué sesgo muestra?",
+          "Sesgo de autoservicio",
+          "Sesgo retrospectivo",
+          "Efecto reflector",
+          "Comparación descendente"
+        ],
+        [
+          "Después de conocer el resultado de una elección, Joaquín dice: «Era obvio que iba a pasar». Antes no lo había predicho. ¿Qué fenómeno es?",
+          "Sesgo retrospectivo",
+          "Punto ciego del sesgo",
+          "Ilusión de transparencia",
+          "Autoestima contingente"
+        ],
+        [
+          "Una maestra de Oaxaca quiere subir la autoestima de su grupo para que mejoren sus calificaciones. ¿Qué le diría la evidencia?",
+          "Que conviene más enseñar estrategias y elogiar el proceso",
+          "Que subir la autoestima es la vía más eficaz para mejorar",
+          "Que la autoestima no tiene relación alguna con el bienestar",
+          "Que los elogios exagerados funcionan mejor con niños inseguros"
+        ],
+        [
+          "Rubén se siente fatal desde que sus amigos hicieron un grupo de chat sin él, aunque su trabajo va bien. ¿Qué teoría lo explica mejor?",
+          "La del sociómetro",
+          "La de la disonancia",
+          "La del yo espejo invertido",
+          "La de la comparación temporal"
+        ],
+        [
+          "Andrea, nutrióloga en Culiacán, se compara con una colega que abrió consultorio dos años antes y copia su forma de dar seguimiento por mensaje. ¿Qué hace bien?",
+          "Elige una comparación ascendente cercana y aprendible",
+          "Elige una comparación descendente para darse ánimo",
+          "Evita compararse para proteger su autoestima",
+          "Se compara con la más famosa para exigirse más"
+        ],
+        [
+          "Un padre en León le dice a su hija «eres la más inteligente de tu salón» cada vez que saca diez. ¿Qué riesgo corre?",
+          "Que ella evite retos para no perder esa etiqueta",
+          "Que ella deje de estudiar por exceso de confianza",
+          "Que su autoestima baje por recibir tantos elogios",
+          "Ninguno, porque los elogios globales siempre ayudan"
+        ],
+        [
+          "Gerardo reconoce rápido los prejuicios de sus cuñados, pero asegura que él «es totalmente objetivo». ¿Qué fenómeno muestra?",
+          "El punto ciego del sesgo",
+          "El efecto mejor que el promedio en el manejo",
+          "La comparación social ascendente",
+          "La ilusión de transparencia"
+        ],
+        [
+          "¿Qué afirmación sobre la psicología social es más precisa?",
+          "Pone a prueba ideas con evidencia y revisa sus hallazgos",
+          "Confirma los refranes populares con datos estadísticos",
+          "Estudia sólo a las personas con problemas de conducta",
+          "Explica la conducta sólo por la personalidad de cada quien"
+        ],
+        [
+          "Lucía siente que su valor depende de que su familia la apruebe; un comentario de su suegra le arruina la semana. ¿Qué describe esto?",
+          "Una autoestima contingente y frágil",
+          "Una autoestima alta y estable",
+          "Un sesgo de autoservicio",
+          "Un efecto mejor que el promedio"
+        ]
+      ]
+    },
+    {
+      "t": "Cómo explicamos y percibimos a los demás",
+      "r": "Aprende por qué solemos culpar a la persona e ignorar la situación, qué tan confiables son las primeras impresiones y cómo nuestras expectativas pueden fabricar la conducta que esperamos.",
+      "lecciones": [
+        {
+          "t": "¿Fue la persona o la situación? El error fundamental de atribución",
+          "obj": "Reconocer cuándo explicas la conducta ajena sólo por el carácter y agregar de forma sistemática la explicación situacional.",
+          "texto": [
+            "Todos los días hacemos de psicólogos aficionados: explicamos por qué el chofer frenó de golpe, por qué la cajera fue cortante o por qué tu compañero no contestó el mensaje. Fritz Heider llamó <b>atribución</b> a ese proceso de buscar causas. Podemos atribuir a la persona (interna: «es grosera») o a la situación (externa: «lleva diez horas de turno y la fila no acaba»).",
+            "En 1967, Edward Jones y Victor Harris pidieron a estudiantes leer ensayos a favor o en contra de Fidel Castro. A una parte se le dijo que el autor había elegido su postura y a otra que se la habían asignado al azar. Aun sabiendo que la postura fue impuesta, los lectores seguían creyendo que el autor pensaba lo que escribió. Lee Ross llamó a esa tendencia <b>error fundamental de atribución</b>: sobrestimar el peso del carácter y subestimar el de la situación al explicar la conducta de otros. Otros autores prefieren llamarlo sesgo de correspondencia.",
+            "¿Por qué pasa? La persona está a la vista; la situación casi nunca: no ves la llamada que recibió, la orden de su jefe ni el dolor de espalda. Además, juzgar al carácter es automático y corregir por la situación exige esfuerzo, que falla cuando estamos cansados o con prisa. La cultura también pesa: Michael Morris y Kaiping Peng compararon notas de periódicos sobre los mismos crímenes y encontraron que los diarios en inglés se centraban más en rasgos del agresor y los diarios en chino daban más peso a las circunstancias. El sesgo es frecuente, pero no universal ni idéntico en todas partes.",
+            "La corrección práctica es sencilla y se entrena: antes de calificar a alguien, completa la frase «¿qué tendría que estar pasando para que una persona razonable hiciera esto?». No se trata de justificar todo, sino de dar a la situación el lugar que merece antes de decidir cómo responder."
+          ],
+          "comparar": [
+            "«Así no: “La de la ventanilla es una amargada; seguro así trata a todo mundo.”»",
+            "«Así sí: “Quizá lleva horas con gente molesta y un sistema caído; voy a ser claro y amable con lo que necesito.”»"
+          ],
+          "caso": "Caso ficticio: Arturo, de 41 años, es dueño de una pequeña imprenta en Aguascalientes. Su empleado Brayan, de 22, ha llegado tarde cuatro veces este mes. Arturo lo tiene catalogado como «flojo, como todos los chavos de ahora» y piensa despedirlo. No sabe que Brayan cambió de domicilio y ahora depende de dos rutas de camión que pasan cada cuarenta minutos.",
+          "p": [
+            [
+              "¿Qué error está cometiendo Arturo?",
+              "Atribuye la conducta al carácter e ignora la situación",
+              "Atribuye la conducta a la situación e ignora el carácter",
+              "Exagera un problema que en realidad no existe",
+              "Arturo explica los retrasos por una supuesta flojera y por un estereotipo de edad, sin conocer el cambio de domicilio. No ignora el carácter, lo sobrevalora; y el problema sí existe: los retrasos son reales."
+            ],
+            [
+              "¿Qué pregunta le ayudaría más a corregir su juicio?",
+              "«¿Qué cambió en tu traslado o tu horario este mes?»",
+              "«¿Por qué no te tomas en serio este trabajo?»",
+              "«¿Sabes que puedo despedirte por los retrasos?»",
+              "Preguntar por la situación abre la información que falta. Las otras dos parten de que ya sabe la causa, ponen a Brayan a la defensiva y no generan datos."
+            ],
+            [
+              "Si confirma lo del transporte, ¿qué respuesta es más razonable?",
+              "Buscar con Brayan un ajuste de horario o de ruta",
+              "Justificar cualquier retraso futuro sin hablarlo",
+              "Despedirlo igual, porque las reglas son las reglas",
+              "Corregir la atribución no significa ignorar el problema, sino resolverlo según su causa real. Justificar todo sin acuerdo deja el problema abierto, y despedir sin considerar la causa desperdicia a un empleado que podría cumplir con un ajuste."
+            ]
+          ],
+          "completar": [
+            "Sobrestimar el peso del carácter y subestimar la situación al explicar la conducta ajena es el error ___ de atribución.",
+            "fundamental"
+          ],
+          "relacionar": [
+            [
+              "Atribución interna",
+              "«No contestó porque es un desconsiderado»"
+            ],
+            [
+              "Atribución externa",
+              "«No contestó porque estaba manejando en carretera»"
+            ],
+            [
+              "Jones y Harris",
+              "Ensayos con postura asignada que aun así se atribuían al autor"
+            ],
+            [
+              "Morris y Peng",
+              "Notas de periódico que explican crímenes de forma distinta según la cultura"
+            ],
+            [
+              "Corrección situacional",
+              "Preguntar qué tendría que pasar para que alguien razonable actuara así"
+            ]
+          ],
+          "refl": "Entrena la corrección situacional con tres escenas reales de esta semana. 1) Anota tres conductas ajenas que te molestaron (en el tráfico, el trabajo, la familia o un servicio). 2) Escribe la explicación que se te ocurrió primero y clasifícala como interna o externa. 3) Para cada una, escribe dos explicaciones situacionales plausibles. 4) Elige una y decide cómo cambiaría tu respuesta si esa explicación fuera cierta.",
+          "modelo": "Modelo: «1) Un repartidor dejó mi paquete con el vecino sin tocar. Primera explicación: es un flojo (interna). Situacionales: le pagan por entrega y trae cien paquetes; el timbre no sirve y nadie abrió. 2) Mi compañera no respondió mi correo urgente. Primera: le valgo (interna). Situacionales: estaba en auditoría; mi asunto no decía que era urgente. 3) Respuesta: con mi compañera voy a llamarle y marcar los urgentes en el asunto.» Es buena porque las alternativas son verosímiles, no excusas fantásticas, y llevan a una acción concreta.",
+          "plantilla": [
+            "Antes de calificar a alguien",
+            "Conducta observada: [ ]\nMi primera explicación: [ ] (interna / externa)\n¿Qué tendría que estar pasando para que una persona razonable hiciera esto?\n1. [ ]\n2. [ ]\nCómo respondo si la explicación situacional es cierta: [ ]"
+          ],
+          "clave": [
+            "Solemos explicar la conducta ajena por el carácter y olvidar la situación, que casi nunca vemos.",
+            "Corregir por la situación exige esfuerzo y falla con prisa o cansancio; la cultura modula el sesgo.",
+            "Considerar la situación no es justificar todo: es resolver el problema según su causa real."
+          ]
+        },
+        {
+          "t": "Actor y observador: un sesgo famoso que la evidencia corrigió",
+          "obj": "Explicar qué propuso la hipótesis actor-observador, qué encontró la evidencia posterior y cómo pedir razones en lugar de adivinarlas.",
+          "texto": [
+            "En 1971, Edward Jones y Richard Nisbett propusieron una idea muy citada: cuando somos actores explicamos lo que hacemos por la situación («llegué tarde por el tráfico»), y cuando somos observadores explicamos lo que hacen otros por su carácter («llegó tarde porque es impuntual»). La llamaron <b>asimetría actor-observador</b> y apareció durante décadas en libros de texto como un hecho establecido.",
+            "En 2006, Bertram Malle revisó con un metaanálisis 173 estudios sobre el tema. El resultado sorprendió: en promedio, la asimetría era prácticamente nula. Sólo aparecía en condiciones limitadas, por ejemplo con hechos negativos, mientras que con hechos positivos tendía a invertirse; ese patrón se parece más al sesgo de autoservicio que a una regla general. Es un buen ejemplo de cómo la psicología se corrige: una idea elegante y popular no basta si los datos acumulados no la respaldan.",
+            "Malle propuso una lectura más útil: cuando explicamos acciones intencionales, actores y observadores hablan sobre todo de <b>razones</b>, es decir, de lo que la persona quería y creía. La diferencia está en el acceso: tú conoces tus razones; de las ajenas sólo tienes suposiciones. Por eso, muchas peleas no se deben a que culpemos al carácter, sino a que inventamos razones que nunca preguntamos.",
+            "Un experimento clásico de Michael Storms mostró que cambiar el punto de vista cambia la explicación: cuando las personas veían en video su propia conversación desde la perspectiva del otro, explicaban su conducta de forma distinta. La lección práctica es doble: ponte literalmente en el lugar del otro, imaginando qué veía, y, cuando sea posible, pregunta por sus razones con curiosidad genuina antes de completar el hueco con tu imaginación."
+          ],
+          "comparar": [
+            "«Así no: “Ya sé por qué no vino a la reunión: quiere que el proyecto fracase.”»",
+            "«Así sí: “Noté que no viniste a la reunión; ¿qué pasó? Quiero entender antes de reprogramar.”»"
+          ],
+          "caso": "Caso ficticio: Noemí, de 50 años, y su cuñada Rocío, de 46, organizan juntas las posadas familiares en Morelia. Este año Rocío no compró los aguinaldos que le tocaban. Noemí le contó a toda la familia que Rocío «ya no quiere cooperar con nada». Rocío, por su parte, dice que esperaba la lista de cuántos niños irían, que Noemí nunca le mandó.",
+          "p": [
+            [
+              "¿Qué muestra mejor este caso sobre las explicaciones?",
+              "Noemí inventó una razón que no preguntó",
+              "Rocío culpa a la situación por ser la actora",
+              "Las dos tienen un sesgo de autoservicio idéntico",
+              "El problema principal es que Noemí llenó el hueco con una intención negativa sin preguntar. Rocío sí menciona un hecho verificable, la lista que no llegó, y no hay datos para afirmar que ambas tengan el mismo sesgo."
+            ],
+            [
+              "¿Qué concluyó el metaanálisis de Malle sobre la asimetría actor-observador?",
+              "Que en promedio es casi nula y sólo aparece en casos limitados",
+              "Que es universal y explica la mayoría de los conflictos",
+              "Que se da sólo en culturas individualistas como la estadounidense",
+              "Malle encontró un efecto promedio prácticamente nulo, con apariciones en condiciones específicas. No la confirmó como universal, y su hallazgo central no fue una diferencia cultural."
+            ],
+            [
+              "¿Qué debería hacer Noemí para la próxima posada?",
+              "Preguntarle a Rocío qué necesitaba para cumplir su parte",
+              "Pedirle a otra cuñada que vigile si Rocío coopera",
+              "Repartir las tareas sin incluir a Rocío para evitar problemas",
+              "Preguntar razones y necesidades corrige la suposición y mejora la coordinación. Poner a alguien a vigilar mantiene la sospecha, y excluir a Rocío castiga sin saber si hubo falta."
+            ]
+          ],
+          "completar": [
+            "Cuando explicamos acciones intencionales, solemos hablar de las ___ de la persona: lo que quería y creía.",
+            "razones"
+          ],
+          "refl": "Analiza un desacuerdo reciente con alguien cercano (pareja, familiar, compañero de trabajo o vecino). 1) Escribe cómo explicas tu propia conducta en ese desacuerdo. 2) Escribe cómo explicas la conducta de la otra persona. 3) Señala qué partes de su explicación conoces de verdad y cuáles supones. 4) Redacta una pregunta abierta y sin acusación para conocer sus razones, y decide cuándo se la harás.",
+          "modelo": "Modelo: «1) Le subí la voz a mi esposo porque llevaba toda la tarde sola con los niños y él no contestaba. 2) Él no contestó porque no le importa lo que pasa en la casa. 3) Sé que no contestó; supongo que no le importa; no sé qué estaba haciendo. 4) Pregunta: “El martes te marqué varias veces y no pude localizarte; ¿qué estaba pasando? Me ayudaría saberlo para organizarnos.” Se la haré el sábado en la mañana, con calma.» Es buena porque separa hechos de suposiciones y formula una pregunta que invita a explicar.",
+          "plantilla": [
+            "Pregunta por razones",
+            "Hecho que observé: «Noté que [hecho, sin juicio]»\nPregunta abierta: «¿Qué estaba pasando? / ¿Qué te llevó a [ ]?»\nPara qué quiero saberlo: «Me ayudaría entenderlo para [objetivo común]»"
+          ],
+          "clave": [
+            "La asimetría actor-observador fue muy citada, pero un metaanálisis de 173 estudios encontró un efecto promedio casi nulo.",
+            "Al explicar acciones intencionales hablamos de razones; conocemos las nuestras y suponemos las ajenas.",
+            "Cambiar de perspectiva y preguntar con curiosidad reduce los conflictos basados en intenciones inventadas."
+          ]
+        },
+        {
+          "t": "Primeras impresiones: rápidas, influyentes y falibles",
+          "obj": "Explicar cómo se forman las primeras impresiones y tratarlas como hipótesis que hay que contrastar, sobre todo al decidir sobre otras personas.",
+          "texto": [
+            "Formamos impresiones de los demás a una velocidad sorprendente. Janine Willis y Alexander Todorov mostraron fotos de rostros durante una décima de segundo y los juicios de confiabilidad que hacían las personas se parecían mucho a los que hacían sin límite de tiempo. Nalini Ambady y Robert Rosenthal encontraron que fragmentos muy breves de video de profesores, de segundos, permitían predecir en parte las evaluaciones de sus alumnos al final del curso. A estos fragmentos se les llama <b>rebanadas finas</b>.",
+            "Que sean rápidas y coincidan entre personas no significa que sean acertadas. Coincidir en que alguien «parece confiable» no prueba que lo sea: la investigación sobre rostros muestra que esos juicios son muy consistentes, pero predicen mal la conducta real. Además, algunas pistas pesan de más. Solomon Asch mostró en 1946 que cambiar una sola palabra, «cálido» por «frío», en una lista de rasgos transformaba la impresión completa. Y el <b>efecto halo</b> hace que una cualidad visible, como el atractivo o la buena ropa, contagie juicios sobre inteligencia u honestidad.",
+            "Susan Fiske y sus colegas propusieron que juzgamos a las personas y a los grupos en dos dimensiones: calidez (¿tiene buenas intenciones hacia mí?) y competencia (¿es capaz de cumplirlas?). Primero solemos evaluar la calidez. Por eso, en una entrevista o un primer día de trabajo, mostrar interés genuino por el otro pesa tanto como mostrar lo que sabes.",
+            "La regla práctica es tratar tu primera impresión como una <b>hipótesis</b>, no como un veredicto. Anótala, identifica en qué pista se basó y busca activamente información que pueda contradecirla. Esto es especialmente importante cuando tu impresión decide algo para otra persona: contratar, rentar un cuarto, dar un crédito o elegir a quién creerle. En esos casos, usar criterios definidos de antemano reduce el peso de la apariencia."
+          ],
+          "comparar": [
+            "«Así no: “Desde que entró supe que no era para el puesto; tengo buen ojo para la gente.”»",
+            "«Así sí: “Mi primera impresión fue negativa; voy a calificarla con los mismos criterios que a los demás antes de decidir.”»"
+          ],
+          "caso": "Caso ficticio: Leticia, de 55 años, renta cuartos a estudiantes en Xalapa. Hoy vinieron dos interesados: Jonathan, con tatuajes y gorra, que llegó puntual y con sus papeles completos, y Diego, muy bien vestido y platicador, que no trajo comprobante de ingresos ni referencias. Leticia sintió de inmediato que Diego era «más de fiar».",
+          "p": [
+            [
+              "¿Qué fenómeno puede estar influyendo en Leticia?",
+              "El efecto halo de la buena presentación y la plática",
+              "El error fundamental de atribución dirigido hacia Jonathan",
+              "El efecto reflector sobre su propia imagen",
+              "Una cualidad visible, la buena ropa y la simpatía, está contagiando su juicio de confiabilidad: eso es efecto halo. No está explicando una conducta por el carácter ni preocupándose por cómo la ven."
+            ],
+            [
+              "¿Qué le conviene hacer para decidir mejor?",
+              "Comparar a ambos con los mismos requisitos definidos",
+              "Confiar en su intuición, que ha acertado otras veces",
+              "Pedir más papeles sólo a quien le dio mala impresión",
+              "Criterios iguales para todos reducen el peso de la apariencia. La intuición sobre caras y ropa es consistente pero poco precisa, y pedir requisitos extra sólo a uno convierte la primera impresión en discriminación."
+            ],
+            [
+              "¿Qué dato del caso es evidencia relevante y no sólo impresión?",
+              "La puntualidad y los papeles completos de Jonathan",
+              "La gorra y los tatuajes de Jonathan",
+              "La forma de vestir y la plática de Diego",
+              "La puntualidad y la documentación se relacionan con cumplir un contrato. La apariencia o la conversación agradable son pistas que pesan mucho en la impresión pero dicen poco sobre si alguien pagará la renta."
+            ]
+          ],
+          "completar": [
+            "Cuando una cualidad visible contagia el juicio sobre otras cualidades, hablamos del efecto ___.",
+            "halo"
+          ],
+          "relacionar": [
+            [
+              "Rebanadas finas",
+              "Juzgar a un profesor con segundos de video"
+            ],
+            [
+              "Efecto halo",
+              "Creer que alguien atractivo también es más honesto"
+            ],
+            [
+              "Cálido o frío",
+              "Una sola palabra cambia la impresión completa"
+            ],
+            [
+              "Calidez y competencia",
+              "Las dos dimensiones con que juzgamos a personas y grupos"
+            ],
+            [
+              "Criterios definidos",
+              "Evaluar a todos los candidatos con la misma lista"
+            ]
+          ],
+          "refl": "Pon a prueba una primera impresión. 1) Elige a una persona que conociste en el último año y de la que tuviste una impresión fuerte (positiva o negativa). 2) Escribe esa impresión y en qué pista se basó (aspecto, voz, forma de hablar, ropa, un comentario). 3) Anota qué has aprendido después que la confirma y qué la contradice. 4) Si tu impresión influye en una decisión sobre esa persona, escribe tres criterios objetivos con los que la evaluarás.",
+          "modelo": "Modelo: «1) El nuevo coordinador de mi área. 2) Me pareció soberbio porque casi no sonreía y hablaba muy rápido. 3) Confirma: corta las juntas sin despedirse. Contradice: me ayudó con un reporte sin que se lo pidiera y reconoce errores. 4) Para decidir si le propongo un proyecto, voy a fijarme en si cumple plazos, si comparte información y si da crédito al equipo.» Es buena porque identifica la pista que formó la impresión, reconoce evidencia en ambos sentidos y pasa de la intuición a criterios observables.",
+          "plantilla": [
+            "Primera impresión como hipótesis",
+            "Mi impresión: [ ]\nSe basó en: [pista concreta]\nQué la confirmaría: [conducta observable]\nQué la contradiría: [conducta observable]\nCriterios iguales para todos en esta decisión: 1. [ ] 2. [ ] 3. [ ]"
+          ],
+          "clave": [
+            "Las primeras impresiones se forman en fracciones de segundo y coinciden entre personas, pero eso no las vuelve precisas.",
+            "Pistas como la apariencia contagian otros juicios: es el efecto halo.",
+            "Trata la impresión como hipótesis y usa criterios definidos cuando decidas algo sobre otra persona."
+          ]
+        },
+        {
+          "t": "Expectativas que se cumplen solas",
+          "obj": "Reconocer cómo tus expectativas pueden provocar la conducta que esperas en otros y usar ese conocimiento con responsabilidad en el trabajo y la familia.",
+          "texto": [
+            "Una <b>profecía autocumplida</b> ocurre cuando una expectativa, aunque al principio sea falsa, cambia nuestra conducta de modo que termina provocando lo que esperábamos. El estudio más famoso es el de Robert Rosenthal y Lenore Jacobson, de 1968: dijeron a maestras que ciertos alumnos, elegidos al azar, «florecerían» ese año, y reportaron que esos alumnos mejoraron más en una prueba de inteligencia. Lo llamaron efecto Pigmalión.",
+            "Aquí hace falta el matiz. El estudio recibió críticas metodológicas fuertes y los intentos de repetirlo dieron resultados mixtos. Revisiones posteriores, como la de Lee Jussim y Kent Harber, concluyen que las expectativas de los maestros sí influyen en los alumnos, pero en promedio de forma pequeña, y que muchas veces las expectativas son acertadas porque se basan en información real. El efecto existe; lo que no existe es la versión mágica de «si crees en alguien, cambiará».",
+            "El mecanismo es conductual y por eso es tan útil conocerlo. Mark Snyder y sus colegas pidieron a hombres conversar por teléfono con mujeres a quienes creían atractivas o no, según una foto que en realidad no era de ellas. Quienes creían hablar con una mujer atractiva fueron más cálidos, y ellas, sin saber nada, respondieron con más calidez. La expectativa viajó a través de la conducta: tono, tiempo dedicado, oportunidades, paciencia ante el error.",
+            "En la vida diaria esto aparece con el empleado «problemático» al que ya no se le asignan proyectos interesantes, con el hijo «difícil» al que sólo se le habla para regañarlo o con el vecino «conflictivo» al que nadie saluda. La pregunta útil es: ¿qué estoy haciendo diferente con esta persona por lo que espero de ella? Igualar oportunidades, dar retroalimentación concreta y registrar hechos ayuda a romper el ciclo."
+          ],
+          "comparar": [
+            "«Así no: “A Toño ni le doy el proyecto; ya sé que lo va a echar a perder, como siempre.”»",
+            "«Así sí: “Le daré a Toño una parte del proyecto con criterios claros y revisión a medio camino, igual que a los demás.”»"
+          ],
+          "caso": "Caso ficticio: Rebeca, de 39 años, coordina un equipo de atención a clientes en un centro de llamadas de Tijuana. Desde que le dijeron que Alan, de 24, «es conflictivo», le asigna sólo las llamadas más sencillas, no lo invita a las capacitaciones y le habla poco. Tres meses después, Alan está desmotivado y sus indicadores son los más bajos del equipo. Rebeca concluye: «Ya ves, sí era problemático».",
+          "p": [
+            [
+              "¿Qué fenómeno muestra el caso?",
+              "Una posible profecía autocumplida",
+              "Un efecto halo positivo hacia Alan",
+              "Un sesgo retrospectivo de Alan",
+              "La expectativa de Rebeca cambió cómo trató a Alan, y ese trato pudo producir el bajo desempeño que esperaba. No hay halo positivo, y el sesgo retrospectivo sería de Rebeca, no de Alan, al decir que «ya lo sabía»."
+            ],
+            [
+              "¿Qué conducta de Rebeca pudo transmitir su expectativa?",
+              "Menos oportunidades, capacitación y contacto",
+              "Informarle a Alan su calificación mensual",
+              "Aplicar las mismas metas a todo el equipo",
+              "Restringir tareas, capacitación y trato es justo el canal conductual descrito por la investigación. Informar resultados o aplicar metas iguales no transmite una expectativa negativa por sí mismo."
+            ],
+            [
+              "¿Qué sería lo más útil que hiciera Rebeca ahora?",
+              "Darle oportunidades iguales con metas y seguimiento claros",
+              "Decirle que confía ciegamente en él y esperar a que cambie solo",
+              "Documentar su bajo desempeño para justificar su salida",
+              "Igualar oportunidades y medir con criterios claros rompe el ciclo y permite ver su desempeño real. La confianza ciega sin cambio de trato es la versión mágica del efecto, y documentar para despedir confirma la expectativa sin ponerla a prueba."
+            ]
+          ],
+          "completar": [
+            "Cuando una expectativa falsa cambia nuestra conducta y termina provocando lo esperado, hablamos de una profecía ___.",
+            "autocumplida"
+          ],
+          "relacionar": [
+            [
+              "Rosenthal y Jacobson",
+              "Alumnos elegidos al azar presentados como «prometedores»"
+            ],
+            [
+              "Jussim y Harber",
+              "Las expectativas influyen, pero en promedio poco"
+            ],
+            [
+              "Snyder y colegas",
+              "Llamadas telefónicas con una foto que no era real"
+            ],
+            [
+              "Canal conductual",
+              "Tono, tiempo, oportunidades y paciencia ante el error"
+            ]
+          ],
+          "refl": "Revisa tus expectativas sobre alguien. 1) Elige a una persona de tu trabajo, tu familia o tu colonia de quien esperas algo negativo. 2) Escribe en qué se basa tu expectativa: hechos que viste o cosas que te contaron. 3) Haz una lista de cómo la tratas distinto que a otros: tono, tiempo, oportunidades, saludos, paciencia. 4) Diseña un cambio concreto de trato durante dos semanas y cómo vas a registrar lo que pase.",
+          "modelo": "Modelo: «1) Mi suegro, a quien considero criticón. 2) Se basa en dos comentarios fuertes hace años y en lo que dice mi cuñada. 3) Lo saludo rápido, no le pregunto nada, me pongo a la defensiva cuando habla y lo dejo fuera de los planes. 4) Durante dos semanas le preguntaré por su huerto en cada visita y lo invitaré a ayudar con la carne asada. Anotaré cada comentario que haga, positivo o negativo.» Es buena porque separa hechos de rumores, reconoce conductas propias y propone un cambio medible.",
+          "plantilla": [
+            "Romper una expectativa negativa",
+            "Persona: [ ] · Lo que espero de ella: [ ]\nEn qué se basa: [hechos que vi / cosas que me contaron]\nCómo la trato distinto: [tono, tiempo, oportunidades]\nCambio que probaré durante dos semanas: [ ]\nCómo registraré lo que pase: [ ]"
+          ],
+          "clave": [
+            "Una expectativa puede producir lo que espera a través de la conducta: tono, tiempo y oportunidades.",
+            "El efecto Pigmalión existe, pero es más pequeño y matizado de lo que suele contarse.",
+            "Igualar oportunidades y registrar hechos ayuda a romper el ciclo de la expectativa negativa."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Elige una relación de tu vida en la que tengas un juicio firme sobre la otra persona (un compañero, un familiar, un vecino o un cliente). Revisa cómo lo formaste: qué primera impresión tuviste, qué atribuciones haces de su conducta, qué razones le supones sin haberlas preguntado y qué expectativas podrías estar confirmando con tu trato. Termina con un plan para ponerlo a prueba.",
+        "entregable": "Un análisis de una página con la primera impresión y su pista, tres conductas de la persona con su atribución inicial y dos alternativas situacionales cada una, una pregunta por razones lista para hacerse y un cambio de trato con fecha y forma de registro.",
+        "criterios": "Revisa: separas hechos de interpretaciones, tus alternativas situacionales son verosímiles y no excusas, tu pregunta es abierta y no acusa, y tu plan permite que la otra persona contradiga tu expectativa."
+      },
+      "lab": {
+        "t": "El vecino del departamento 4",
+        "obj": "Aplicar atribución, primeras impresiones y profecía autocumplida a un conflicto vecinal.",
+        "esc": "<b>Maribel,</b> de 44 años, administra un pequeño edificio de departamentos en Querétaro. Desde que llegó un nuevo inquilino, Hugo, de 58 años, los demás vecinos se quejan: no saluda, deja la bolsa de basura junto a la puerta y una vez discutió con el velador. En el chat del edificio ya lo llaman «el amargado del 4».",
+        "e": [
+          [
+            "Escena 1: En la primera reunión de vecinos, Hugo llega tarde, no sonríe y se va antes de terminar. Varios comentan: «Se nota que es mala persona».",
+            "Consigna: identifica qué pistas formaron esa impresión, qué fenómeno de percepción está actuando y qué información falta para juzgar."
+          ],
+          [
+            "Escena 2: Maribel descubre que Hugo trabaja de noche como guardia de hospital y que el horario de recolección de basura coincide con sus horas de sueño.",
+            "Consigna: reescribe la explicación de la basura y del saludo con atribuciones situacionales, y explica qué error se cometió en el chat."
+          ],
+          [
+            "Escena 3: Desde hace un mes nadie le avisa a Hugo de los acuerdos ni lo saludan. Ahora él ya no contesta los mensajes del edificio.",
+            "Consigna: analiza si se está formando una profecía autocumplida y describe qué conductas de los vecinos la alimentan."
+          ],
+          [
+            "Escena 4: Maribel decide hablar con Hugo en persona.",
+            "Consigna: redacta lo que le diría: una observación sin juicio, una pregunta por sus razones y una propuesta concreta para la basura."
+          ]
+        ],
+        "p": [
+          [
+            "¿Qué error cometieron los vecinos en el chat?",
+            "Atribuyeron todo al carácter sin conocer su situación",
+            "Atribuyeron todo a la situación y lo justificaron",
+            "Dieron demasiado peso a lo que Hugo les explicó",
+            "Concluyeron que era «amargado» sin saber de su trabajo nocturno. No justificaron nada, y Hugo nunca había explicado su situación."
+          ],
+          [
+            "¿Por qué el aislamiento de Hugo podría ser una profecía autocumplida?",
+            "Porque el trato frío de los vecinos alimenta la distancia",
+            "Porque Hugo ya era así antes de mudarse al edificio",
+            "Porque Maribel ya habló con él y eso empeoró todavía más la situación",
+            "La exclusión y el silencio de los vecinos pueden generar la respuesta distante que ellos usan como prueba. No hay datos de su conducta anterior, y Maribel aún no habla con él."
+          ],
+          [
+            "¿Qué apertura es mejor para Maribel?",
+            "«Supe que trabajas de noche; ¿te acomoda otro horario para la basura?»",
+            "«Los vecinos dicen que eres amargado; ¿es cierto lo que dicen?»",
+            "«Te pido que cumplas el reglamento como todos los demás vecinos»",
+            "Mostrar que entiende su situación y proponer una solución abre el diálogo. Repetir la etiqueta del chat lo pone a la defensiva, y recordar el reglamento sin escuchar ignora la causa del problema."
+          ]
+        ],
+        "pl": [
+          "Conversación para corregir una etiqueta",
+          "Observación sin juicio: «Noté que [hecho]»\nLo que ahora sé de tu situación: «Supe que [dato]»\nPregunta por razones: «¿Qué te funcionaría para [tema]?»\nPropuesta concreta: [ ]\nCompromiso mío: [qué haré distinto yo]"
+        ]
+      },
+      "quiz": [
+        [
+          "Un cliente en Monterrey le grita al cajero y piensas «qué tipo tan violento». Después sabes que le acaban de cobrar doble tres veces. ¿Qué error cometiste?",
+          "Error fundamental de atribución",
+          "Sesgo de autoservicio",
+          "Efecto reflector",
+          "Comparación descendente"
+        ],
+        [
+          "En un experimento, las personas creyeron que un autor apoyaba una postura aunque sabían que se la habían asignado. ¿Qué muestra?",
+          "Que subestimamos el peso de la situación",
+          "Que sobrestimamos el peso de la situación",
+          "Que juzgamos mejor a quien escribe bien",
+          "Que las posturas políticas no se pueden fingir"
+        ],
+        [
+          "Una gerente de Celaya contrata siempre a quien «le da buena espina» en los primeros segundos. ¿Qué le recomendarías?",
+          "Usar criterios iguales y definidos antes de entrevistar",
+          "Confiar más, porque las impresiones rápidas son precisas",
+          "Entrevistar sólo por teléfono para eliminar todo sesgo",
+          "Pedir a otra persona que confíe en su propia intuición"
+        ],
+        [
+          "Un maestro de Pachuca dejó de preguntarle en clase a Kevin porque «nunca sabe». Kevin participa cada vez menos. ¿Qué podría estar pasando?",
+          "Una profecía autocumplida por el trato del maestro",
+          "Un efecto halo positivo hacia Kevin",
+          "Un sesgo de autoservicio de Kevin",
+          "Un error de atribución de Kevin sobre las intenciones del maestro"
+        ],
+        [
+          "¿Qué afirmación sobre la asimetría actor-observador es más precisa hoy?",
+          "Su efecto promedio es casi nulo según un gran metaanálisis",
+          "Está demostrada en todas las culturas y situaciones",
+          "Sólo aparece cuando las personas hablan de sus éxitos",
+          "Fue descubierta en 2006 por Bertram Malle"
+        ],
+        [
+          "Sofía conoce a un proveedor muy bien vestido y supone que es honesto y capaz. ¿Qué fenómeno actúa?",
+          "Efecto halo",
+          "Rebanadas finas",
+          "Sociómetro",
+          "Sesgo retrospectivo"
+        ],
+        [
+          "Tu pareja no te contestó en toda la tarde y estás convencido de que está enojado contigo. ¿Qué te sugiere el enfoque de Malle?",
+          "Preguntar sus razones en lugar de suponerlas",
+          "Asumir que fue por la situación y no hablarlo",
+          "Asumir que fue intencional y confrontarlo",
+          "Esperar a que él te explique sin preguntar"
+        ],
+        [
+          "En el modelo de Fiske, ¿qué suele evaluarse primero al conocer a alguien?",
+          "Si tiene buenas intenciones hacia mí",
+          "Si es más capaz que yo en mi trabajo",
+          "Si es atractivo físicamente",
+          "Si pertenece a mi mismo grupo"
+        ],
+        [
+          "¿Qué afirmación sobre el efecto Pigmalión es más precisa?",
+          "Existe, pero suele ser pequeño y se transmite por la conducta",
+          "Basta con creer en alguien para que su desempeño cambie mucho",
+          "Fue refutado por completo y no tiene ninguna base",
+          "Sólo funciona con niños y nunca con adultos en el trabajo"
+        ],
+        [
+          "Un chofer de transporte en Guadalajara frena bruscamente y un pasajero dice «estos choferes son unos salvajes». ¿Qué pregunta corrige mejor ese juicio?",
+          "¿Qué pudo pasar en la calle para que frenara así?",
+          "¿Por qué los choferes son tan irresponsables?",
+          "¿Cuántos choferes conozco que manejen mal?",
+          "¿Cómo puedo denunciarlo con la empresa para que lo despidan?"
+        ]
+      ]
+    }
+  ]
+}
