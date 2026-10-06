@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Fundamentos: qué es mentir y qué tan bien lo detectamos",
+   "r": "Defines con precisión qué es una mentira, conoces cuánto mentimos en la vida diaria y descubres, con cifras reales, qué tan bien (o qué tan mal) detectamos el engaño.",
+   "lecciones": [
+    {
+     "t": "Qué es una mentira y qué no lo es",
+     "obj": "Distinguir una mentira de un error, una exageración o un recuerdo equivocado antes de sacar cualquier conclusión.",
+     "texto": [
+      "Paul Ekman, el psicólogo estadounidense que más ha influido en el estudio del engaño, define la mentira como un acto en el que una persona decide, de manera deliberada, engañar a otra sin avisarle que lo hará. Hay dos ingredientes clave: la intención y la falta de aviso. Una actriz en el escenario no miente, porque el público sabe que actúa; un mago tampoco, porque el truco es parte del trato. En cambio, quien te dice que ya depositó la renta sabiendo que no lo hizo, sí miente.",
+      "Ekman distingue dos formas básicas de mentir: <b>ocultar</b>, que es callar información verdadera, y <b>falsear</b>, que es presentar como verdadera una información falsa. Muchas mentiras combinan las dos: el empleado que llega tarde oculta que se quedó dormido y falsea que había tráfico. Ocultar suele sentirse menos grave para quien lo hace, porque «no dijo nada falso», y por eso es la forma más común en relaciones de pareja, negocios y entrevistas.",
+      "Igual de importante es saber qué <i>no</i> es una mentira. Una persona que se equivoca de fecha, que recuerda mal un detalle o que está convencida de algo falso no está mintiendo: está equivocada. La memoria reconstruye los hechos y se contamina con el tiempo, las emociones y las preguntas que nos hacen. Esto tiene una consecuencia práctica enorme: si alguien cree lo que dice, ninguna técnica para detectar mentiras te servirá, porque no hay engaño que detectar; lo que necesitas es verificar los hechos.",
+      "Entre la verdad completa y la mentira abierta hay una zona gris: exagerar, minimizar, decir verdades a medias o mentiras piadosas para no herir a alguien. Ponerles nombre te ayuda a reaccionar con proporción. No es lo mismo un «me encantó tu regalo» que un «ya revisé el contrato» cuando no es cierto. A lo largo del diplomado aprenderás a preguntarte primero qué tipo de afirmación tienes enfrente y qué consecuencias tendría equivocarte."
+     ],
+     "comparar": [
+      "«Así no: “Me dijo que la junta era el martes y fue el lunes. ¡Me mintió!”»",
+      "«Así sí: “Me dio una fecha equivocada. Antes de pensar que mintió, voy a revisar si él también tenía el dato mal.”»"
+     ],
+     "caso": "Caso ficticio: Graciela, de 41 años, coordina un despacho contable en Toluca. Su auxiliar, Iván, le aseguró el viernes que había enviado la declaración de un cliente. El lunes descubre que no se envió. Iván insiste en que pulsó «enviar» y se ve sorprendido. Graciela está segura de que le mintió para salir temprano.",
+     "p": [
+      [
+       "Con la información disponible, ¿qué puede afirmar Graciela con más seguridad?",
+       "Que la declaración no se envió, sin saber aún si hubo engaño",
+       "Que Iván mintió, porque la declaración no se envió como dijo",
+       "Que Iván dice la verdad, porque se ve sorprendido de verdad",
+       "Hay un hecho comprobado (no se envió) y una hipótesis (que Iván mintió). Concluir que mintió confunde error con engaño, y su sorpresa tampoco prueba sinceridad: la expresión de alguien no basta para decidir."
+      ],
+      [
+       "¿Qué ingrediente de la definición de Ekman falta comprobar?",
+       "Si Iván tenía la intención deliberada de engañar",
+       "Si Iván le avisó a Graciela de que podría fallar",
+       "Si Iván ocultó información además de falsearla",
+       "Para que haya mentira, Iván tendría que saber que no se envió y decir lo contrario a propósito. Avisar no aplica a este caso, y la distinción entre ocultar y falsear sólo importa si antes se establece que hubo engaño."
+      ],
+      [
+       "¿Cuál sería el siguiente paso más útil para Graciela?",
+       "Revisar con Iván el registro de envíos del sistema",
+       "Preguntarle a Iván, frente al equipo, por qué le mintió",
+       "Anotar el hecho en su expediente como falta grave",
+       "Verificar el registro aclara si hubo un error técnico, un descuido o una mentira. Preguntar «por qué me mentiste» da por hecho lo que no está probado, y sancionar sin verificar puede castigar un simple error."
+      ]
+     ],
+     "completar": [
+      "Ekman distingue dos formas de mentir: ___ información verdadera y falsear información falsa como si fuera cierta.",
+      "ocultar"
+     ],
+     "relacionar": [
+      [
+       "Ocultar",
+       "Callar que se quedó dormido y no explicar el retraso"
+      ],
+      [
+       "Falsear",
+       "Decir que había un choque en la autopista cuando no lo había"
+      ],
+      [
+       "Error",
+       "Dar una fecha equivocada creyendo que era la correcta"
+      ],
+      [
+       "Mentira piadosa",
+       "Decir que te encantó un regalo que no te gustó"
+      ],
+      [
+       "Exagerar",
+       "Decir que esperó dos horas cuando fueron cuarenta minutos"
+      ]
+     ],
+     "refl": "Analiza tres afirmaciones dudosas de tu vida reciente. 1) Escribe tres situaciones en las que sospechaste que alguien no te decía la verdad (trabajo, familia, compras, redes). 2) Para cada una, clasifica qué pudo ser: mentira por ocultación, mentira por falseamiento, error, recuerdo equivocado, exageración o mentira piadosa. 3) Escribe qué dato concreto te ayudaría a distinguir entre esas opciones. 4) Indica qué tan grave sería equivocarte si acusaras a esa persona.",
+     "modelo": "Modelo: «1) Mi vecino dijo que él no rayó mi coche. Puede ser falseamiento o puede ser verdad; me ayudaría la grabación de la cámara del edificio. Equivocarme sería grave: la relación vecinal se rompería. 2) Mi hermana dijo que mi mamá estaba de acuerdo con vender la casa. Puede ser un error de interpretación; le preguntaré directamente a mi mamá. 3) Un vendedor dijo que el precio subía mañana. Puede ser exageración para presionar; reviso el precio en otras tiendas.» Es buena porque considera varias explicaciones y busca datos verificables antes de juzgar.",
+     "plantilla": [
+      "Antes de decir «me mintió»",
+      "Lo que se dijo: [ ]\nLo que sé con certeza: [ ]\nPosibles explicaciones: [mentira por ocultación / mentira por falseamiento / error / recuerdo equivocado / exageración]\nDato que me ayudaría a distinguir: [ ]\nCosto de equivocarme si acuso: [ ]"
+     ],
+     "clave": [
+      "Mentir requiere intención deliberada de engañar y falta de aviso.",
+      "Ocultar y falsear son las dos formas básicas de mentir según Ekman.",
+      "Quien se equivoca o recuerda mal no miente; en esos casos lo que sirve es verificar."
+     ]
+    },
+    {
+     "t": "Cuánto mentimos en la vida diaria",
+     "obj": "Interpretar lo que muestran los estudios sobre la frecuencia de las mentiras y evitar la conclusión de que «todos mienten igual».",
+     "texto": [
+      "En 1996, la psicóloga Bella DePaulo y su equipo pidieron a estudiantes universitarios y a adultos de la comunidad que llevaran durante una semana un diario de todas sus interacciones sociales y de las mentiras que decían. Los estudiantes reportaron en promedio unas dos mentiras al día y mintieron en aproximadamente una de cada tres interacciones; los adultos de la comunidad, alrededor de una al día, en una de cada cinco interacciones. Es decir, mentir es parte de la vida social cotidiana.",
+      "¿Qué tipo de mentiras eran? En su mayoría, pequeñas: sobre sentimientos, opiniones, planes o logros. Los participantes dijeron que casi no las planeaban, que les causaban poca incomodidad y que normalmente les creían. Muchas buscaban proteger la propia imagen o evitar una molestia; otras, cuidar los sentimientos de alguien. También encontraron que las interacciones con mentiras se sentían menos cercanas y agradables que las sinceras.",
+      "Años después, Kim Serota, Timothy Levine y Franklin Boster encuestaron a una muestra amplia de adultos en Estados Unidos y obtuvieron un promedio cercano a una o dos mentiras al día, pero con un hallazgo más interesante: el promedio engaña. La mayoría de las personas reportó pocas mentiras o ninguna en el día anterior, mientras que un grupo pequeño de «mentirosos prolíficos» concentraba buena parte de todas las mentiras. Estudios posteriores en otros países encontraron un patrón parecido.",
+      "Estos datos te protegen de dos extremos. El primero es la ingenuidad de creer que nadie miente. El segundo, igual de dañino, es la paranoia de pensar que todos mienten todo el tiempo y que cada conversación esconde un engaño. La evidencia sugiere que la mayoría de las personas dice la verdad la mayor parte del tiempo, que la mayoría de las mentiras son pequeñas y que las mentiras graves son menos frecuentes, aunque causen mucho daño cuando ocurren. Ten presente que son autorreportes y que la cultura también influye."
+     ],
+     "comparar": [
+      "«Así no: “Si la gente miente dos veces al día, seguro mi socio me está mintiendo ahora mismo.”»",
+      "«Así sí: “La mayoría de las mentiras son pequeñas y pocas personas concentran muchas. Necesito datos sobre mi socio, no un promedio.”»"
+     ],
+     "caso": "Caso ficticio: Raúl, de 52 años, tiene una ferretería en Hermosillo. Leyó en redes que «todos mentimos varias veces al día» y desde entonces desconfía de sus cuatro empleados. Empezó a revisar cada nota y a interrogar a todos por cualquier diferencia de caja, aunque en dos años sólo ha tenido un faltante importante.",
+     "p": [
+      [
+       "¿Qué error de interpretación está cometiendo Raúl?",
+       "Aplicar un promedio a cada persona como si todos mintieran igual",
+       "Creer que las mentiras cotidianas suelen ser grandes y planeadas",
+       "Suponer que sus empleados mienten menos que el promedio general",
+       "El promedio esconde que muchas personas mienten poco y pocas mienten mucho. Raúl no cree que las mentiras sean grandes ni piensa que sus empleados mientan menos: su error es suponer que todos mienten por igual."
+      ],
+      [
+       "¿Qué dice la investigación sobre el tipo de mentiras más frecuentes?",
+       "Que suelen ser pequeñas, poco planeadas y sobre sentimientos o planes",
+       "Que suelen ser fraudes económicos o laborales planeados con anticipación",
+       "Que casi siempre buscan dañar a otra persona de manera intencional",
+       "El estudio de DePaulo encontró sobre todo mentiras pequeñas y espontáneas. Los fraudes planeados existen, pero son menos comunes, y muchas mentiras buscan proteger la imagen o los sentimientos, no dañar."
+      ],
+      [
+       "¿Qué le conviene hacer a Raúl con su caja?",
+       "Poner un control de cortes claro y revisar los datos de forma regular",
+       "Interrogar a cada empleado al final del turno para ver quién se pone nervioso",
+       "Despedir al empleado que menos le inspire confianza para prevenir",
+       "Un control objetivo detecta faltantes sin acusar a nadie. Interrogar buscando nervios mide ansiedad, no mentira, y despedir por intuición es injusto y no resuelve el problema."
+      ]
+     ],
+     "completar": [
+      "Serota y Levine encontraron que un grupo pequeño de mentirosos ___ concentra buena parte de las mentiras.",
+      "prolíficos"
+     ],
+     "refl": "Haz un diario de honestidad de dos días. 1) Durante dos días anota, sin juzgarte, cada vez que dices algo que no es del todo cierto (aunque sea pequeño): con quién, qué dijiste y por qué. 2) Clasifica cada caso: proteger tu imagen, evitar una molestia, cuidar a alguien u obtener una ventaja. 3) Escribe qué notas: ¿cuántas fueron, de qué tipo y en qué situaciones? 4) Elige una que podrías cambiar por una verdad dicha con tacto y redáctala.",
+     "modelo": "Modelo: «Anoté cinco en dos días. Le dije a mi jefa que el reporte iba “casi listo” cuando ni lo había empezado (proteger mi imagen). Le dije a mi tía que ya había comido para no ir a su casa (evitar molestia). Le dije a un amigo que su corte de pelo se veía bien (cuidarlo). Noto que casi todas fueron para evitar incomodidad. Puedo cambiar la primera: “Todavía no lo empiezo; te lo entrego mañana a las doce”.» Es buena porque registra con honestidad, clasifica motivos y propone una alternativa concreta.",
+     "plantilla": [
+      "Diario de honestidad",
+      "Día y hora: [ ]\nCon quién: [ ]\nLo que dije: [ ]\nLo que era cierto: [ ]\nPor qué lo dije: [imagen / evitar molestia / cuidar a alguien / ventaja]\nVersión honesta con tacto: [ ]"
+     ],
+     "clave": [
+      "Mentir es frecuente, pero la mayoría de las mentiras cotidianas son pequeñas.",
+      "El promedio esconde que muchas personas mienten poco y pocas mienten mucho.",
+      "Ni la ingenuidad ni la paranoia: decide con datos sobre la persona y la situación."
+     ]
+    },
+    {
+     "t": "El veredicto de los números: acertamos poco más que al azar",
+     "obj": "Explicar qué tan precisos somos al detectar mentiras y por qué sentirte seguro no significa que aciertes.",
+     "texto": [
+      "En 2006, Charles Bond y Bella DePaulo reunieron en un metaanálisis (un estudio que combina muchos estudios) los resultados de 206 documentos de investigación con más de 24,000 personas que juzgaban si alguien mentía o decía la verdad. El resultado fue contundente: en promedio, la gente acertó alrededor de <b>54 %</b> de las veces, cuando al azar, lanzando una moneda, se acierta 50 %. Es decir, somos un poco mejores que el azar, pero no mucho.",
+      "El dato se vuelve más interesante al separarlo. Las personas identificaron correctamente cerca de 61 % de las verdades, pero sólo alrededor de 47 % de las mentiras. ¿Por qué? Porque tendemos a creer: juzgamos como verdad más de la mitad de lo que oímos. A esto se le llama <b>sesgo de veracidad</b>, y lo estudiarás a fondo más adelante. No es un defecto tonto: en la vida diaria la mayoría de lo que nos dicen es cierto, así que creer suele funcionar.",
+      "Una pregunta obvia es si hay personas mucho mejores que otras. Un segundo análisis de Bond y DePaulo, de 2008, encontró que las diferencias entre jueces son pequeñas: la habilidad para detectar mentiras varía poco de una persona a otra. Policías, jueces y otros profesionales suelen tener resultados parecidos a los de cualquier persona en estos estudios, aunque se sientan más seguros. Además, la investigación muestra que la confianza en el propio juicio casi no se relaciona con acertar.",
+      "Esto no significa que sea imposible descubrir mentiras. Significa que hacerlo <i>mirando a alguien mientras habla</i> es muy poco confiable. En la vida real, la mayoría de las mentiras se descubren después, gracias a evidencia, a terceros o a la confesión de quien mintió. Por eso este diplomado no te prometerá un ojo infalible; te enseñará a hacer mejores preguntas, a verificar y a decidir con prudencia cuando no tienes certeza."
+     ],
+     "comparar": [
+      "«Así no: “Yo tengo un sexto sentido; a mí nadie me engaña.”»",
+      "«Así sí: “Mi intuición me dice que algo no cuadra. La voy a tratar como una hipótesis y voy a buscar cómo comprobarla.”»"
+     ],
+     "caso": "Caso ficticio: Mariela, de 34 años, es gerente de recursos humanos en una empresa de logística en Monterrey. Presume que en las entrevistas «huele» a los mentirosos y descarta a candidatos que le parecen falsos. Su director le pide revisar el último año: tres personas que ella calificó como «muy honestas» falsificaron referencias laborales.",
+     "p": [
+      [
+       "¿Qué explica mejor lo que le pasó a Mariela?",
+       "Su seguridad no garantizaba acertar",
+       "Tuvo mala suerte, porque su olfato suele fallar muy poco",
+       "Los candidatos eran expertos en engañar a cualquier persona",
+       "La confianza casi no se relaciona con la precisión. Atribuirlo a la mala suerte ignora la evidencia, y suponer mentirosos expertos no explica por qué ella confió tanto en su intuición."
+      ],
+      [
+       "Si Mariela juzgara al azar si cada candidato miente, ¿cuánto acertaría en promedio?",
+       "Alrededor de la mitad, cerca de lo que logra casi cualquiera",
+       "Mucho menos que una persona entrenada, que suele acertar ocho de cada diez",
+       "Nada, porque el azar no permite identificar ninguna mentira ni verdad",
+       "El azar da 50 % y el promedio humano es cercano a 54 %. Las personas entrenadas en observar conducta no llegan a ocho de diez de manera consistente, y el azar sí acierta la mitad de las veces."
+      ],
+      [
+       "¿Qué cambio en el proceso de selección sería más eficaz?",
+       "Verificar referencias y comprobar datos clave de cada candidato",
+       "Capacitar a Mariela para detectar señales de nervios en la entrevista",
+       "Pedir a dos entrevistadores que den su impresión de honestidad",
+       "Verificar hechos es mucho más confiable que juzgar la conducta. Los nervios no indican mentira y sumar impresiones de dos personas no corrige que ambas usen claves débiles."
+      ]
+     ],
+     "completar": [
+      "Tendemos a juzgar como verdad la mayor parte de lo que oímos; a esto se le llama sesgo de ___.",
+      "veracidad"
+     ],
+     "relacionar": [
+      [
+       "54 %",
+       "Precisión promedio al juzgar mentiras y verdades"
+      ],
+      [
+       "50 %",
+       "Lo que acertarías lanzando una moneda"
+      ],
+      [
+       "Sesgo de veracidad",
+       "Creer como cierta la mayoría de lo que oímos"
+      ],
+      [
+       "Confianza",
+       "Sentirse seguro sin que eso aumente el acierto"
+      ],
+      [
+       "Verificación",
+       "Descubrir una mentira gracias a evidencia posterior"
+      ]
+     ],
+     "refl": "Revisa tu propio historial como detector. 1) Recuerda dos ocasiones en las que estabas seguro de que alguien mentía o decía la verdad y después supiste qué había pasado. 2) Para cada una, escribe en qué te basaste para juzgar (gestos, tono, historia, datos). 3) Indica si acertaste y qué te permitió saberlo al final: evidencia, otra persona, confesión o tiempo. 4) Escribe una regla personal para la próxima vez que te sientas muy seguro.",
+     "modelo": "Modelo: «1) Estaba segura de que mi hijo no había ido a la fiesta porque me miró a los ojos; luego vi fotos y sí fue. Me basé en su mirada y fallé. Lo supe por las fotos. 2) Pensé que una clienta mentía sobre un pago porque titubeaba; resultó que sí había pagado y el banco tardó. Me basé en su titubeo y fallé; lo supe por el estado de cuenta. Mi regla: cuando me sienta muy segura, preguntaré qué dato lo comprobaría.» Es buena porque reconoce las claves usadas, cómo se supo la verdad y propone una regla aplicable.",
+     "plantilla": [
+      "Mi regla ante la certeza",
+      "Siento que [persona] [miente / dice la verdad] sobre [tema].\nMe baso en: [ ]\n¿Es una clave de conducta o un dato verificable? [ ]\nDato que lo confirmaría o lo descartaría: [ ]\nMientras lo compruebo, haré: [ ]"
+     ],
+     "clave": [
+      "En promedio acertamos alrededor de 54 %, apenas por encima del azar.",
+      "Identificamos mejor las verdades que las mentiras por el sesgo de veracidad.",
+      "La seguridad no garantiza acierto; la mayoría de las mentiras se descubren con evidencia posterior."
+     ]
+    },
+    {
+     "t": "Mitos que conviene olvidar: la mirada, los ojos y la nariz de Pinocho",
+     "obj": "Identificar las creencias populares sobre señales de mentira que la investigación no respalda y sustituirlas por preguntas útiles.",
+     "texto": [
+      "Un equipo internacional de investigadores, el Global Deception Research Team, preguntó en 2006 a personas de 58 países cómo se reconoce a un mentiroso. La respuesta más repetida en casi todo el mundo fue la misma: «el mentiroso no te mira a los ojos». Sin embargo, la revisión de DePaulo y su equipo (2003) sobre más de cien estudios no encontró relación entre evitar la mirada y mentir. Quien miente sabe que se espera contacto visual y puede sostenerlo; quien dice la verdad puede bajar la vista por timidez, cultura, respeto o vergüenza.",
+      "Otro mito muy difundido viene de la programación neurolingüística (PNL): que mirar hacia arriba a la derecha indica que alguien «construye» un recuerdo falso y hacia la izquierda que «recuerda» uno real. En 2012, Richard Wiseman y sus colegas lo pusieron a prueba en tres estudios, incluido el análisis de videos de conferencias de prensa reales. No encontraron ninguna relación entre la dirección de los ojos y la mentira, y quienes conocían la supuesta regla no detectaron mejor.",
+      "La lista sigue: tocarse la nariz, cruzar los brazos, moverse en la silla, sudar, tartamudear o sonreír de cierta forma. Ninguna de estas conductas es exclusiva de la mentira. Pueden aparecer por nervios, cansancio, frío, incomodidad o simple costumbre. Ekman mismo insiste en que no existe una señal única de engaño, una «nariz de Pinocho» que crezca cuando alguien miente. Las series de televisión y los videos virales que enseñan lo contrario mezclan algo de ciencia con mucho espectáculo.",
+      "¿Por qué persisten estos mitos? Porque recordamos los aciertos y olvidamos los errores, porque dan una sensación de control y porque se repiten en entrenamientos, libros y redes. El costo es alto: si crees que la mirada esquiva delata, sospecharás de personas tímidas, ansiosas o de culturas donde mirar fijo es descortés, y confiarás en quien miente mirándote a los ojos. Sustituye cada mito por una pregunta: «¿qué dato podría confirmar o descartar lo que me dice?»"
+     ],
+     "comparar": [
+      "«Así no: “No me sostuvo la mirada cuando le pregunté por el dinero; está clarísimo que miente.”»",
+      "«Así sí: “Bajó la mirada, pero eso no prueba nada. Voy a revisar los movimientos de la cuenta antes de pensar mal.”»"
+     ],
+     "caso": "Caso ficticio: Doña Esperanza, de 63 años, renta cuartos en Oaxaca. Un nuevo inquilino, Tomás, de 22 años, le explica que el depósito llegará el lunes. Habla mirando al piso y se rasca la nariz. Esperanza vio un video que decía que esas son señales de mentira y piensa rechazarlo, aunque Tomás le mostró una carta de su trabajo.",
+     "p": [
+      [
+       "¿Qué tan útiles son la mirada al piso y el rascarse la nariz para saber si Tomás miente?",
+       "Casi nada; no se relacionan con el engaño",
+       "Bastante, porque juntas forman un patrón típico del mentiroso",
+       "Algo, siempre que aparezcan al responder sobre dinero",
+       "Ni la mirada esquiva ni tocarse la nariz se han relacionado con mentir de forma confiable. Juntarlas no las vuelve válidas, y que aparezcan al hablar de dinero puede deberse a vergüenza o nervios."
+      ],
+      [
+       "¿Qué explicación alternativa es plausible para la conducta de Tomás?",
+       "Timidez o respeto ante una persona mayor que lo puede rechazar",
+       "Que intenta recordar un dato real, porque mira hacia abajo",
+       "Que prepara una mentira, porque no mira hacia la derecha",
+       "Bajar la vista ante una persona mayor es común por timidez o respeto. Las otras dos opciones usan la regla de los ojos de la PNL, que Wiseman y sus colegas no lograron confirmar."
+      ],
+      [
+       "¿Qué le conviene hacer a doña Esperanza?",
+       "Verificar la carta y pactar por escrito la fecha",
+       "Hacerle más preguntas mirando si se vuelve a tocar la nariz",
+       "Rechazarlo, porque más vale prevenir que lamentar en estos casos",
+       "Verificar documentos y dejar acuerdos por escrito protege sin prejuzgar. Seguir buscando gestos repite el mito, y rechazarlo por señales sin validez puede ser injusto con un inquilino cumplido."
+      ]
+     ],
+     "completar": [
+      "Wiseman y sus colegas no encontraron relación entre la dirección de los ___ y la mentira.",
+      "ojos"
+     ],
+     "relacionar": [
+      [
+       "Mirada esquiva",
+       "Puede deberse a timidez, respeto o cultura"
+      ],
+      [
+       "Ojos hacia la derecha",
+       "Regla de la PNL que no se confirmó en estudios"
+      ],
+      [
+       "Tocarse la nariz",
+       "Gesto que también aparece por comezón o nervios"
+      ],
+      [
+       "Nariz de Pinocho",
+       "Señal única de mentira que no existe"
+      ],
+      [
+       "Pregunta útil",
+       "¿Qué dato podría confirmar lo que me dice?"
+      ]
+     ],
+     "refl": "Haz una limpieza de mitos. 1) Escribe tres «señales de mentira» que creías válidas (o que has oído en tu familia, tu trabajo o redes). 2) Para cada una, anota al menos dos razones inocentes por las que alguien podría mostrarla. 3) Escribe qué pregunta o dato verificable usarías en su lugar. 4) Piensa en una persona a la que pudiste juzgar mal por alguno de esos mitos y escribe qué harías distinto.",
+     "modelo": "Modelo: «1) Que el mentiroso se ríe nervioso: también puede ser pena o una costumbre. En su lugar preguntaría “¿me cuentas paso a paso qué pasó?”. 2) Que si se rasca la cabeza duda: también puede ser comezón o concentración; en su lugar pediría un comprobante. 3) Que si contesta rápido trae la respuesta ensayada: también puede ser que la sepa bien; compararía con lo que dijo antes. Creo que juzgué mal a un compañero callado; la próxima vez le preguntaré directamente.» Es buena porque ofrece explicaciones alternativas y alternativas verificables.",
+     "plantilla": [
+      "Del mito a la pregunta",
+      "Señal que me hace sospechar: [ ]\nExplicaciones inocentes posibles: [1] [2]\nPregunta abierta que haré: [ ]\nDato que puedo verificar: [ ]\nDecisión mientras tanto: [ ]"
+     ],
+     "clave": [
+      "Evitar la mirada no se relaciona con mentir; es el mito más extendido del mundo.",
+      "La regla de los ojos hacia la derecha de la PNL no tiene respaldo empírico.",
+      "No existe una señal única de mentira; cambia cada mito por una pregunta o un dato verificable."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Diseña tu punto de partida como detector honesto. Elige una situación real en la que hoy sospeches que alguien no te dice la verdad (o una pasada que recuerdes bien). Descríbela separando lo que sabes de lo que supones, clasifica qué tipo de afirmación podría ser (mentira por ocultación o falseamiento, error, exageración), identifica qué mitos influyeron en tu sospecha y escribe qué datos te ayudarían a salir de dudas.",
+    "entregable": "Una ficha de una página con la situación, hechos comprobados, suposiciones, posibles explicaciones, mitos detectados en tu juicio y una lista de tres datos verificables.",
+    "criterios": "Revisa: separas con claridad hechos de suposiciones, incluyes al menos tres explicaciones posibles además de la mentira, nombras al menos un mito o clave débil que influyó en tu sospecha y propones datos que de verdad se pueden comprobar."
+   },
+   "lab": {
+    "t": "El faltante en la cafetería",
+    "obj": "Aplicar la definición de mentira, la evidencia sobre precisión y la crítica a los mitos a una sospecha concreta.",
+    "esc": "<b>Leticia,</b> de 39 años, es dueña de una cafetería en Morelia con tres empleados. Hace una semana faltaron 1,500 pesos en el corte del sábado. Su encargado, Fernando, dice que contó bien al cerrar; la cajera de fin de semana, Abril, de 20 años, se puso roja y no la miró cuando le preguntó. Leticia ya decidió que fue Abril.",
+    "e": [
+     [
+      "Escena 1: Leticia te dice: «Se puso roja, se le cortó la voz y no me miró. No necesito más pruebas».",
+      "Consigna: explica a Leticia, con lo que dice la investigación, por qué esas reacciones no prueban que Abril mintió y qué otras razones podrían explicarlas."
+     ],
+     [
+      "Escena 2: Revisas el ticket del corte: hay dos devoluciones de 750 pesos sin firma, registradas a la hora en que Fernando cubría la caja.",
+      "Consigna: separa hechos de suposiciones y escribe al menos tres hipótesis sobre el faltante, incluida la de un error sin engaño."
+     ],
+     [
+      "Escena 3: Fernando dice: «Las devoluciones las hice yo, un cliente pidió reembolso». No recuerda el nombre del cliente.",
+      "Consigna: indica qué podría ser esta respuesta (verdad, error de memoria, ocultación o falseamiento) y qué dato verificable buscarías para distinguir."
+     ],
+     [
+      "Escena 4: Leticia quiere hablar con los dos esta tarde.",
+      "Consigna: redacta para Leticia tres frases para iniciar la conversación sin acusar a nadie y una medida de control para que el problema no se repita."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué falla en la conclusión inicial de Leticia sobre Abril?",
+      "Se basa en reacciones de nervios que no distinguen verdad de mentira",
+      "Se basa en un solo testigo, cuando debería escuchar al menos a dos personas",
+      "Se basa en la caja del sábado, cuando debería revisar todo el mes",
+      "Sonrojarse o no mirar pueden ser timidez o miedo a ser culpada. Escuchar a más personas y revisar más días ayuda, pero el error central es tomar el nerviosismo como prueba."
+     ],
+     [
+      "¿Qué aporta el ticket de las devoluciones?",
+      "Un dato verificable que abre una hipótesis distinta a la de Leticia",
+      "La prueba definitiva de que Fernando tomó el dinero de la caja",
+      "Un detalle menor que no cambia la sospecha principal sobre Abril",
+      "El ticket es evidencia objetiva que conviene seguir. No prueba por sí solo que Fernando robara (pudo haber un reembolso real), pero tampoco es menor: cambia el panorama."
+     ],
+     [
+      "¿Qué medida reduce mejor el riesgo de futuros faltantes sin acusar a nadie?",
+      "Exigir firma y motivo en cada devolución y hacer cortes por turno",
+      "Instalar la regla de que quien esté en caja pagará cualquier faltante",
+      "Observar a los empleados para ver quién se pone nervioso en los cortes",
+      "Un control claro previene y permite rastrear. Cobrar faltantes al cajero sin aclarar responsabilidades es injusto y puede ser ilegal, y observar nervios repite el mito."
+     ]
+    ],
+    "pl": [
+     "Hoja de sospecha razonada",
+     "Situación: [ ]\nHechos comprobados: [ ]\nSuposiciones: [ ]\nHipótesis posibles: [mentira / error / malentendido / otra persona]\nDatos verificables que buscaré: [ ]\nFrase para conversar sin acusar: [ ]\nMedida de prevención: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un amigo te dice que la película empieza a las 8 y empieza a las 7. Él lo leyó mal en la app. Según la definición de Ekman, ¿qué ocurrió?",
+     "Un error, porque no tenía intención de engañarte",
+     "Una mentira por ocultación, porque calló la hora real",
+     "Una mentira por falseamiento, porque dijo algo falso",
+     "Una exageración, porque cambió la hora por poco"
+    ],
+    [
+     "Una vendedora de autos en Celaya no menciona que el coche tuvo un choque, aunque lo sabe. Nunca dice nada falso. ¿Qué tipo de mentira es?",
+     "Ocultación, porque calla información verdadera relevante",
+     "Ninguna, porque no dijo nada que fuera falso",
+     "Falseamiento, porque presenta el coche como nuevo",
+     "Mentira piadosa, porque evita preocupar al cliente"
+    ],
+    [
+     "Tu compañera dice: «Si la gente miente dos veces al día, mi jefe me miente dos veces al día». ¿Qué le responderías con base en la evidencia?",
+     "El promedio esconde que pocas personas concentran muchas mentiras",
+     "Tiene razón, porque los promedios aplican igual a cada persona",
+     "Se queda corta, porque los jefes mienten más que el promedio",
+     "Es imposible saberlo, porque nadie ha estudiado cuánto mentimos"
+    ],
+    [
+     "En un estudio, un grupo de policías acierta 55 % al juzgar videos de verdades y mentiras. ¿Cómo interpretas el resultado?",
+     "Es similar al promedio de cualquier persona, apenas sobre el azar",
+     "Es un resultado excelente, muy superior al de la gente común",
+     "Es peor que el azar, porque el azar acierta más de la mitad",
+     "Es imposible, porque los policías tienen entrenamiento especial"
+    ],
+    [
+     "Joaquín reconoce casi siempre a quien le dice la verdad, pero rara vez identifica a quien le miente. ¿Qué explica mejor este patrón?",
+     "El sesgo de veracidad: tiende a creer lo que oye",
+     "Que tiene un talento especial para verdades y no para mentiras",
+     "Que las mentiras que oye son de mentirosos profesionales",
+     "Que se fija demasiado en la mirada de las personas"
+    ],
+    [
+     "Una supervisora en Aguascalientes se siente «100 % segura» de que un empleado miente. ¿Qué indica la investigación sobre esa seguridad?",
+     "Casi no se relaciona con acertar, así que conviene verificar",
+     "Es un buen indicador cuando la persona tiene experiencia",
+     "Es confiable si la supervisora conoce al empleado de años",
+     "Sólo falla cuando la persona que juzga está cansada"
+    ],
+    [
+     "Un curso en línea promete enseñarte a detectar mentiras viendo hacia dónde se mueven los ojos. ¿Qué opinas?",
+     "Usa una regla de la PNL que no se confirmó",
+     "Funciona en personas diestras, pero no en las zurdas",
+     "Es útil siempre que lo combines con observar la nariz",
+     "Es válido, porque los ojos son la ventana de la mente"
+    ],
+    [
+     "Un joven de Tuxtla Gutiérrez baja la mirada al hablar con su jefe porque en su familia mirar fijo a un mayor es irrespetuoso. ¿Qué riesgo corre el jefe?",
+     "Confundir una norma de respeto con una señal de mentira",
+     "Creerle demasiado, porque las personas respetuosas no mienten",
+     "Ninguno, porque bajar la mirada sí es una señal fiable",
+     "Perder autoridad, porque el joven no lo toma en serio"
+    ],
+    [
+     "¿Cómo se descubren la mayoría de las mentiras en la vida real, según la investigación?",
+     "Después, gracias a evidencia, a terceros o a una confesión",
+     "En el momento, al notar gestos y tono de voz de la persona",
+     "En el momento, al ver microexpresiones en el rostro",
+     "Nunca, porque las mentiras casi nunca se descubren"
+    ],
+    [
+     "Tu hermana sospecha que su pareja le oculta algo porque «lo siente». ¿Qué consejo es más coherente con el módulo?",
+     "Tratar la intuición como hipótesis y buscar datos o conversar",
+     "Confiar en su intuición, porque las mujeres detectan mejor",
+     "Ignorar la sospecha, porque detectar mentiras es imposible",
+     "Revisar su celular a escondidas para salir de dudas rápido"
+    ]
+   ]
+  },
+  {
+   "t": "Paul Ekman: emociones, rostro y microexpresiones",
+   "r": "Conoces la obra de Ekman sobre las emociones básicas, el sistema FACS y las microexpresiones, y aprendes qué parte resiste la evidencia actual y qué parte no.",
+   "lecciones": [
+    {
+     "t": "Ekman y las emociones básicas: lo que encontró y el debate actual",
+     "obj": "Describir la teoría de las emociones básicas de Ekman y explicar por qué hoy se discute que el rostro revele siempre lo que sentimos.",
+     "texto": [
+      "En los años sesenta, Paul Ekman se propuso averiguar si las expresiones faciales eran aprendidas, como pensaban muchos antropólogos de su época, o si había algo universal en ellas. Mostró fotografías de rostros a personas de distintos países y, junto con Wallace Friesen, viajó a Papúa Nueva Guinea para trabajar con el pueblo fore, que había tenido muy poco contacto con medios occidentales. Encontró que personas de culturas muy distintas reconocían con bastante coincidencia ciertas expresiones.",
+      "De ahí surgió su propuesta de las <b>emociones básicas</b>: alegría, tristeza, ira, miedo, asco y sorpresa, a las que después sumó el desprecio. Según Ekman, cada una tiene una expresión característica, una función en la evolución y una respuesta corporal propia. También describió las <b>reglas de exhibición</b>: normas culturales que nos dicen cuándo mostrar, exagerar, disimular o esconder una emoción. Por ejemplo, en muchos funerales se espera mostrar tristeza y en una entrevista de trabajo, contener el enojo.",
+      "Hoy esta teoría se discute. En 2019, Lisa Feldman Barrett y otros cuatro especialistas revisaron más de mil estudios y concluyeron que las personas no siempre ponen la cara «típica» de una emoción: a veces fruncimos el ceño por enojo, pero también por concentración, y a veces nos enojamos sin fruncirlo. Además, el contexto y la cultura cambian mucho cómo se interpreta un mismo gesto. Otros investigadores siguen defendiendo que existen regularidades importantes en la expresión emocional.",
+      "¿Con qué te quedas? Con una postura equilibrada: hay patrones en las expresiones y reconocerlos te ayuda a ser más empático, pero un rostro no es un letrero que diga con certeza lo que alguien siente. Para detectar mentiras esto pesa doble, porque aunque leyeras bien una emoción, todavía tendrías que averiguar <i>por qué</i> la siente. Ekman abrió un campo enorme; tu tarea es usar sus aportaciones con la humildad que exige la evidencia."
+     ],
+     "comparar": [
+      "«Así no: “Frunció el ceño cuando le di la noticia; está furioso conmigo.”»",
+      "«Así sí: “Frunció el ceño. Puede ser enojo, preocupación o que se está concentrando. Le voy a preguntar cómo lo tomó.”»"
+     ],
+     "caso": "Caso ficticio: Ulises, de 30 años, da clases de secundaria en Zacatecas. Tomó un taller que le enseñó las siete expresiones de Ekman y ahora interpreta la cara de cada alumno. Hoy reportó a Brenda, de 13 años, porque «puso cara de desprecio» cuando él explicaba. Brenda dice que le dolía una muela.",
+     "p": [
+      [
+       "¿Qué error comete Ulises al usar lo que aprendió?",
+       "Trata una expresión como prueba segura de lo que Brenda siente",
+       "Confunde el desprecio con la tristeza, que tienen gestos parecidos",
+       "Usa una lista de emociones que ya nadie considera válida",
+       "Reconocer una expresión no basta para saber qué siente alguien ni por qué. No hay indicio de que confundiera emociones, y la lista de Ekman se discute, pero no ha sido abandonada por completo."
+      ],
+      [
+       "¿Qué aporta el debate de Barrett y sus colegas a este caso?",
+       "Que un mismo gesto puede tener varias causas según el contexto",
+       "Que el rostro nunca muestra emociones y conviene no mirarlo",
+       "Que las adolescentes expresan desprecio más que otras personas",
+       "La revisión de 2019 señala que la relación entre emoción y gesto no es uno a uno. No dice que el rostro no muestre nada, y la tercera opción es un estereotipo sin respaldo."
+      ],
+      [
+       "¿Qué sería una reacción más prudente de Ulises en clase?",
+       "Acercarse después y preguntarle a Brenda si está bien",
+       "Pedirle que repita el gesto para ver si era desprecio",
+       "Ignorar la cara de cualquier alumno para no equivocarse",
+       "Preguntar convierte la observación en conversación y permite descubrir la muela. Pedir que repita el gesto la expone, e ignorar todo desperdicia información útil para cuidar al grupo."
+      ]
+     ],
+     "completar": [
+      "Las normas culturales sobre cuándo mostrar o esconder una emoción se llaman reglas de ___.",
+      "exhibición"
+     ],
+     "relacionar": [
+      [
+       "Emociones básicas",
+       "Alegría, tristeza, ira, miedo, asco, sorpresa y desprecio"
+      ],
+      [
+       "Pueblo fore",
+       "Comunidad de Papúa Nueva Guinea estudiada por Ekman"
+      ],
+      [
+       "Reglas de exhibición",
+       "Contener el enojo en una entrevista de trabajo"
+      ],
+      [
+       "Revisión de Barrett (2019)",
+       "Un mismo gesto puede responder a emociones distintas"
+      ],
+      [
+       "Postura equilibrada",
+       "Usar la expresión como pista y confirmar preguntando"
+      ]
+     ],
+     "refl": "Observa expresiones sin sacar conclusiones. 1) Durante un día, anota tres momentos en que viste una expresión clara en alguien (en casa, el trabajo o la calle). 2) Escribe qué emoción creíste ver y al menos otra posible. 3) Anota qué sabías del contexto. 4) Si pudiste, escribe qué te dijo la persona al preguntarle o qué pasó después, y qué aprendiste sobre tu forma de interpretar.",
+     "modelo": "Modelo: «1) Mi esposo apretó los labios al ver el recibo de luz: creí ver enojo; también pudo ser preocupación. Contexto: subió el recibo. Le pregunté y dijo que estaba preocupado por el gasto, no enojado conmigo. 2) Una compañera sonrió en la junta cuando el jefe habló de recortes: pensé desprecio; pudo ser nervios. No le pregunté. 3) Un cliente abrió mucho los ojos: pensé sorpresa y lo era, porque no esperaba el descuento. Aprendí que mi primera lectura suele ser la más negativa.» Es buena porque considera alternativas, el contexto y lo que confirmó.",
+     "plantilla": [
+      "Bitácora de expresiones",
+      "Persona y momento: [ ]\nExpresión que vi: [ ]\nEmoción que creí ver: [ ]\nOtra emoción posible: [ ]\nContexto: [ ]\nLo que confirmé al preguntar: [ ]"
+     ],
+     "clave": [
+      "Ekman propuso siete emociones básicas con expresiones reconocibles entre culturas.",
+      "Hoy se discute que cada emoción tenga una cara fija; el contexto pesa mucho.",
+      "Leer una emoción es una pista para preguntar, no una conclusión."
+     ]
+    },
+    {
+     "t": "FACS: el mapa de los músculos del rostro",
+     "obj": "Explicar qué es el sistema FACS, para qué se usa y por qué no funciona como detector de mentiras.",
+     "texto": [
+      "En 1978, Paul Ekman y Wallace Friesen publicaron el <b>Sistema de Codificación de Acciones Faciales</b>, conocido por sus siglas en inglés, FACS. La idea fue describir de manera objetiva cualquier movimiento del rostro, sin interpretar la emoción. En lugar de decir «está triste», quien codifica anota qué músculos se movieron: por ejemplo, la unidad de acción 1 eleva la parte interior de las cejas y la unidad 15 baja las comisuras de los labios. En 2002 se publicó una versión actualizada con Joseph Hager.",
+      "Cada movimiento se llama <b>unidad de acción</b>. Combinando unidades se describe cualquier expresión. Un ejemplo famoso es la sonrisa de Duchenne, nombrada así por el neurólogo francés del siglo XIX que la estudió: además de jalar las comisuras hacia arriba (unidad 12), se elevan las mejillas y se arruga la zona junto a los ojos (unidad 6). Durante años se dijo que esta era la sonrisa «auténtica»; estudios posteriores mostraron que muchas personas pueden producirla a voluntad, así que tampoco es una garantía.",
+      "Aprender FACS exige muchas horas de entrenamiento y examen, y codificar un video es un trabajo lento, cuadro por cuadro. Por eso se usa sobre todo en investigación psicológica, en estudios de dolor y salud, en animación digital y en el desarrollo de programas que analizan rostros. Es una herramienta de medición muy valiosa, porque permite que distintas personas describan el mismo gesto de la misma manera.",
+      "Lo que FACS no hace es decirte si alguien miente. Describe movimientos; la interpretación viene después y depende del contexto. Desconfía de cursos rápidos que prometen «leer la verdad en el rostro» porque usan términos de FACS: describir con precisión un gesto no te dice qué lo provocó. La lección práctica para ti es aprender a describir antes de interpretar: «apretó los labios» es una observación; «está ocultando algo» es una interpretación que necesita más datos."
+     ],
+     "comparar": [
+      "«Así no: “En la junta, el contador puso cara de culpable.”»",
+      "«Así sí: “En la junta, el contador apretó los labios y bajó las cejas cuando se habló del presupuesto. Quiero entender qué le preocupa.”»"
+     ],
+     "caso": "Caso ficticio: Paola, de 27 años, es animadora digital en Guadalajara y estudia FACS para que sus personajes tengan expresiones realistas. Un amigo, Adrián, le pide que vea el video de su novia contando dónde estuvo el fin de semana y que le diga, «con eso de las unidades de acción», si le está mintiendo.",
+     "p": [
+      [
+       "¿Qué le debería responder Paola a Adrián?",
+       "Que FACS describe gestos, pero no indica si alguien miente",
+       "Que puede hacerlo, pero sólo si el video tiene una buena resolución",
+       "Que FACS funciona, siempre que la novia no sepa que la están grabando",
+       "FACS mide gestos de manera objetiva, pero no tiene un código de la mentira. La resolución o el saberse grabada no cambian que la herramienta no fue hecha para eso."
+      ],
+      [
+       "¿Cuál de estas frases es una descripción al estilo FACS y no una interpretación?",
+       "«Elevó la parte interior de las cejas al hablar del sábado»",
+       "«Puso cara de tristeza fingida al hablar del sábado»",
+       "«Se notó que se sentía culpable al hablar del sábado»",
+       "Describir qué parte del rostro se movió es una observación. «Tristeza fingida» y «culpable» ya son interpretaciones sobre lo que siente y su sinceridad."
+      ],
+      [
+       "¿Qué dice la investigación sobre la sonrisa de Duchenne?",
+       "Que suele asociarse a la alegría, pero también se puede producir a voluntad",
+       "Que es imposible fingirla, por eso sirve para detectar sonrisas falsas",
+       "Que sólo aparece en personas francesas por razones culturales",
+       "La sonrisa con elevación de mejillas se asocia a la alegría, pero muchas personas pueden hacerla a propósito. La tercera opción confunde el origen del nombre con su distribución."
+      ]
+     ],
+     "completar": [
+      "En FACS, cada movimiento muscular del rostro se llama unidad de ___.",
+      "acción"
+     ],
+     "refl": "Practica describir antes de interpretar. 1) Elige un video corto de una entrevista o una noticia en el que alguien hable de un tema emotivo. 2) Míralo sin sonido y anota cinco movimientos del rostro con palabras descriptivas (cejas, ojos, labios, mejillas, cabeza). 3) Escribe al lado una interpretación posible y otra alternativa para cada uno. 4) Explica en tres líneas qué diferencia notas entre describir e interpretar.",
+     "modelo": "Modelo: «Video: una madre habla del regreso a clases. 1) Elevó la parte interior de las cejas: preocupación o tristeza; o énfasis. 2) Apretó los labios: contención o enojo; o pausa para pensar. 3) Elevó las mejillas al mencionar a su hija: alegría; o sonrisa social. 4) Bajó la mirada: tristeza; o recordar algo. 5) Asintió varias veces: acuerdo; o costumbre al hablar. Noto que describir es más lento pero me evita juzgar; cada gesto tiene al menos dos lecturas.» Es buena porque separa observación de interpretación y siempre ofrece alternativas.",
+     "plantilla": [
+      "Describir antes de interpretar",
+      "Lo que vi (descripción): [parte del rostro + movimiento]\nInterpretación 1: [ ]\nInterpretación 2: [ ]\nContexto que conozco: [ ]\nPregunta para confirmar: [ ]"
+     ],
+     "clave": [
+      "FACS describe movimientos del rostro con unidades de acción, sin interpretar emociones.",
+      "Es muy útil en investigación, salud y animación, pero no es un detector de mentiras.",
+      "Primero describe lo que ves; después considera varias interpretaciones."
+     ]
+    },
+    {
+     "t": "Microexpresiones: lo que son y lo que la evidencia muestra",
+     "obj": "Explicar qué son las microexpresiones y valorar con datos su utilidad real para detectar mentiras.",
+     "texto": [
+      "Una <b>microexpresión</b> es una expresión facial completa que aparece y desaparece en una fracción de segundo, tan rápido que casi nadie la nota. Fue descrita en los años sesenta por Ernest Haggard y Kenneth Isaacs al revisar en cámara lenta grabaciones de sesiones de psicoterapia. Ekman y Friesen la popularizaron en 1969 con el caso de una paciente que, en una entrevista grabada, aseguraba sentirse mejor para obtener un permiso de salida; al ver la grabación cuadro por cuadro observaron una fugaz expresión de angustia que contradecía sus palabras.",
+      "La idea es poderosa: cuando alguien intenta esconder una emoción intensa, esta podría «escaparse» por un instante. Ekman desarrolló herramientas de entrenamiento para reconocerlas, y la idea llegó a programas de seguridad y a la televisión. Ekman distingue además las <b>expresiones sutiles</b>: movimientos parciales o de poca intensidad que muestran una emoción apenas incipiente.",
+      "¿Qué dice la evidencia? En 2008, Stephen Porter y Leanne ten Brinke analizaron cerca de 700 expresiones de personas que mostraban emociones genuinas o fingidas. Las microexpresiones fueron rarísimas, alrededor de 2 %, solían ser parciales (sólo en la parte de arriba o de abajo del rostro) y aparecieron tanto en personas que fingían como en personas sinceras. En 2019, Sarah Jordan y su equipo probaron una herramienta de entrenamiento en microexpresiones con 90 participantes: quienes la usaron no detectaron mentiras mejor que quienes recibieron un entrenamiento falso o ninguno.",
+      "Conclusión honesta: las microexpresiones existen y son un hallazgo interesante para estudiar las emociones, pero son poco frecuentes, no son exclusivas de quien miente y entrenarse para verlas no ha demostrado mejorar la detección de mentiras. Si alguna vez notas una, trátala como trataría Ekman cualquier señal emocional: como una invitación a preguntar con respeto, nunca como una prueba."
+     ],
+     "comparar": [
+      "«Así no: “Vi una microexpresión de miedo cuando le pregunté por la factura. Ya sé que me robó.”»",
+      "«Así sí: “Me pareció ver un gesto de miedo al mencionar la factura. Puede tener muchas causas; voy a revisar la factura con ella.”»"
+     ],
+     "caso": "Caso ficticio: Rodrigo, de 45 años, es jefe de seguridad de una tienda departamental en Querétaro. Su empresa le ofrece pagar un curso de microexpresiones de fin de semana que promete «90 % de precisión para detectar empleados deshonestos». Rodrigo debe decidir si recomendarlo a su director.",
+     "p": [
+      [
+       "¿Qué debería pesar más en la recomendación de Rodrigo?",
+       "Que los estudios no muestran que ese entrenamiento mejore la detección",
+       "Que un fin de semana es poco tiempo, pero un curso largo sí funcionaría",
+       "Que el porcentaje que prometen suena alto, pero puede ser real",
+       "La evidencia (como el estudio de Jordan y su equipo) no muestra mejoras al entrenar en microexpresiones. Alargar el curso no corrige ese problema, y 90 % no corresponde a ningún resultado sólido publicado."
+      ],
+      [
+       "Según Porter y ten Brinke, ¿cómo fueron las microexpresiones en su estudio?",
+       "Muy raras, casi siempre parciales y presentes también en personas sinceras",
+       "Frecuentes en quienes mentían y casi ausentes en quienes decían la verdad",
+       "Muy raras, pero exclusivas de las personas que fingían una emoción",
+       "Aparecieron en alrededor de 2 % de las expresiones, solían ser parciales y también surgieron en quienes eran sinceros. Por eso no sirven como señal exclusiva de engaño."
+      ],
+      [
+       "¿Qué alternativa le conviene proponer a Rodrigo para prevenir robos internos?",
+       "Controles de inventario y entrevistas basadas en evidencia",
+       "Observar en video las caras de los empleados al salir del turno",
+       "Aplicar a todos una prueba rápida de reconocimiento de emociones",
+       "Los controles objetivos y las entrevistas con evidencia son más confiables. Vigilar rostros y medir el reconocimiento de emociones no detecta deshonestidad y deteriora el clima laboral."
+      ]
+     ],
+     "completar": [
+      "Porter y ten Brinke encontraron que las microexpresiones eran raras y casi siempre ___.",
+      "parciales"
+     ],
+     "relacionar": [
+      [
+       "Microexpresión",
+       "Expresión completa que dura una fracción de segundo"
+      ],
+      [
+       "Expresión sutil",
+       "Movimiento parcial o de poca intensidad de una emoción"
+      ],
+      [
+       "Haggard e Isaacs",
+       "Primeros en describirlas en grabaciones de psicoterapia"
+      ],
+      [
+       "Porter y ten Brinke (2008)",
+       "Las encontraron en cerca de 2 % de unas 700 expresiones"
+      ],
+      [
+       "Jordan y equipo (2019)",
+       "El entrenamiento no mejoró la detección de mentiras"
+      ]
+     ],
+     "refl": "Evalúa una promesa de detección. 1) Busca un anuncio, video o curso que prometa detectar mentiras con microexpresiones o lenguaje corporal. 2) Anota exactamente qué promete (porcentajes, tiempos, garantías). 3) Contrasta cada promesa con lo que viste en esta lección y en el módulo 1. 4) Escribe un mensaje breve y respetuoso para alguien cercano que esté pensando pagar ese curso, explicándole qué sí y qué no puede esperar.",
+     "modelo": "Modelo: «El video promete “detectar a cualquier mentiroso en 3 segundos” con microexpresiones. Contraste: las microexpresiones aparecen en muy pocas expresiones, también en gente sincera, y entrenarse no mejoró la detección en el estudio de 2019; además, el promedio humano es cercano a 54 %. Mensaje: “Primo, el curso puede ser interesante para entender emociones, pero no te va a convertir en detector de mentiras. Si es para tu negocio, te sirve más un buen control de inventario”.» Es bueno porque contrasta promesas con datos y aconseja sin burlarse.",
+     "plantilla": [
+      "Revisión de una promesa",
+      "Lo que promete: [ ]\nQué dice la evidencia: [ ]\nLo que sí podría aportar: [ ]\nLo que no puede garantizar: [ ]\nAlternativa más confiable: [ ]"
+     ],
+     "clave": [
+      "Las microexpresiones existen, pero son raras y suelen ser parciales.",
+      "Aparecen también en personas sinceras, así que no son exclusivas de la mentira.",
+      "Entrenarse para verlas no ha demostrado mejorar la detección de engaños."
+     ]
+    },
+    {
+     "t": "De leer una emoción a sospechar una mentira: el salto que no debes dar",
+     "obj": "Usar las señales emocionales como puntos de partida para preguntar, sin convertirlas en pruebas de engaño.",
+     "texto": [
+      "Supón que notas con claridad que alguien siente miedo cuando le preguntas algo. Aun en el mejor de los casos, sólo sabes que siente miedo; no sabes <i>por qué</i>. Puede temer ser descubierto en una mentira, pero también temer que no le creas, que lo castigues injustamente o que la conversación termine en pleito. Ekman lo dijo con claridad en sus libros: las señales emocionales indican que algo está pasando, no qué es lo que pasa.",
+      "Por eso Ekman habla de <b>hot spots</b> o puntos calientes: señales de que algo no encaja, de que tal vez no se está contando la historia completa o de que algún detalle está alterado. Pueden ser un cambio emocional, una contradicción entre lo que se dice y cómo se dice, o una pausa inusual. Según el propio Ekman, un punto caliente revela una carga emocional o mental, pero no su causa; para eso hay que seguir investigando. Es un letrero que dice «pregunta aquí», no uno que dice «culpable».",
+      "Este salto, de la emoción a la conclusión, es donde se cometen los errores más graves. Una persona inocente acusada de algo suele sentir miedo, enojo o vergüenza, exactamente las emociones que un observador poco cuidadoso atribuye al mentiroso. En el módulo siguiente estudiarás el nombre que Ekman le puso a este error, y verás que él mismo advertía que es muy fácil cometerlo.",
+      "¿Qué hacer entonces con lo que notas? Úsalo para cuidar la relación y para obtener más información. Una frase como «te noto preocupado cuando hablamos de esto, ¿qué pasa?» abre la conversación sin acusar. Si después de escuchar sigue habiendo dudas, busca datos verificables. Leer emociones con empatía te hará mejor jefe, pareja o vendedor; usarlas como detector de mentiras te hará injusto con frecuencia."
+     ],
+     "comparar": [
+      "«Así no: “Te pusiste nerviosa cuando te pregunté por la cuenta. ¿Qué me estás escondiendo?”»",
+      "«Así sí: “Te noto tensa cuando hablamos de la cuenta. ¿Hay algo que te preocupe que podamos revisar juntas?”»"
+     ],
+     "caso": "Caso ficticio: Norma, de 50 años, es directora de una escuela primaria en Pachuca. Le preguntó al conserje, don Felipe, que tiene llaves de todos los salones, si sabía algo de unas computadoras que desaparecieron. Don Felipe se puso pálido, habló rápido y dijo que no sabía nada. Norma lo comentó con la supervisora como «muy sospechoso». Don Felipe tiene 25 años trabajando ahí.",
+     "p": [
+      [
+       "¿Qué puede concluir Norma de la reacción de don Felipe?",
+       "Que sintió una emoción intensa, sin saber todavía la causa",
+       "Que sabe algo de las computadoras, porque se puso pálido",
+       "Que es inocente, porque lleva 25 años trabajando ahí",
+       "La palidez y el habla rápida muestran una carga emocional, no su causa. No prueban que sepa algo, y su antigüedad tampoco prueba nada en ningún sentido."
+      ],
+      [
+       "¿Qué otra causa plausible podría explicar la reacción de don Felipe?",
+       "Miedo a ser culpado sin pruebas por tener llaves de todo",
+       "Que se ensayó la respuesta y por eso la dijo tan rápido",
+       "Que la palidez aparece cuando se recuerda algo falso",
+       "Como encargado de las llaves, temer ser señalado injustamente es muy razonable. La segunda supone engaño sin datos, y no hay evidencia de que la palidez aparezca al recordar algo falso."
+      ],
+      [
+       "¿Qué le conviene hacer a Norma después de esa reacción?",
+       "Revisar quién tuvo acceso y cuándo, y hablar con él sin acusarlo",
+       "Comentar con el personal que don Felipe reaccionó de forma rara",
+       "Presionarlo con más preguntas hasta que se contradiga",
+       "Reunir datos de acceso y conversar con respeto es justo y útil. Comentarlo con otros daña su reputación sin pruebas, y presionar hasta que se contradiga puede producir errores, no verdad."
+      ]
+     ],
+     "completar": [
+      "Ekman llama ___ spots a las señales de que algo no encaja y merece una pregunta.",
+      "hot"
+     ],
+     "relacionar": [
+      [
+       "Emoción observada",
+       "Sé que siente algo, no por qué lo siente"
+      ],
+      [
+       "Hot spot",
+       "Señal de que conviene preguntar en ese punto"
+      ],
+      [
+       "Miedo del inocente",
+       "Temor a no ser creído o a ser castigado sin razón"
+      ],
+      [
+       "Frase empática",
+       "«Te noto preocupado, ¿qué pasa?»"
+      ],
+      [
+       "Dato verificable",
+       "Registro de quién tuvo las llaves y a qué hora"
+      ]
+     ],
+     "refl": "Convierte señales en preguntas. 1) Recuerda una conversación en la que notaste una emoción fuerte en alguien (miedo, enojo, vergüenza) y la interpretaste como señal de que ocultaba algo. 2) Escribe al menos tres causas posibles de esa emoción. 3) Redacta la frase empática que podrías haber usado para abrir la conversación. 4) Anota qué dato verificable te habría ayudado a salir de dudas y qué harías hoy distinto.",
+     "modelo": "Modelo: «1) Mi socio se enojó cuando le pregunté por un gasto y pensé que algo ocultaba. 2) Causas posibles: que se sintió acusado, que estaba cansado, que había otro problema con ese proveedor. 3) Frase: “Te noto molesto con el tema del gasto, ¿qué pasó con ese proveedor?”. 4) Dato: la factura y la cotización. Hoy primero le pediría los documentos con calma y no le haría la pregunta frente a los empleados.» Es buena porque separa la emoción de su causa, propone una frase concreta y busca evidencia.",
+     "plantilla": [
+      "De la señal a la pregunta",
+      "Señal que noté: [ ]\nEmoción probable: [ ]\nCausas posibles: [1] [2] [3]\nFrase empática para abrir: «Te noto [emoción] cuando hablamos de [tema]. ¿Qué pasa?»\nDato que puedo revisar: [ ]"
+     ],
+     "clave": [
+      "Leer bien una emoción no te dice su causa.",
+      "Un hot spot es una señal para preguntar, no una prueba de culpa.",
+      "El miedo y el enojo también aparecen en personas inocentes que temen no ser creídas."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Escribe una guía personal de una página para leer emociones con responsabilidad. Incluye qué aporta la obra de Ekman (emociones básicas, reglas de exhibición, FACS, microexpresiones), qué discute la evidencia actual y cómo usarás lo que observas en tres situaciones de tu vida (por ejemplo, con tu equipo, tu familia o tus clientes). Para cada situación, escribe una frase empática y un dato verificable.",
+    "entregable": "Una guía de una página con aportaciones de Ekman, límites según la evidencia, tres situaciones aplicadas, tres frases empáticas y tres datos verificables.",
+    "criterios": "Revisa: explicas al menos tres aportaciones de Ekman con tus palabras, mencionas al menos dos hallazgos que limitan su uso como detector, tus frases empáticas no acusan y cada situación incluye un dato que de verdad se puede comprobar."
+   },
+   "lab": {
+    "t": "El taller de entrenamiento que prometía demasiado",
+    "obj": "Evaluar con evidencia un programa basado en microexpresiones y proponer una alternativa responsable.",
+    "esc": "<b>Daniel,</b> de 38 años, es gerente de una sucursal de una financiera en Culiacán. Su director regional quiere que todo el personal de crédito tome un taller de «lectura de microexpresiones» para detectar solicitantes que mienten sobre sus ingresos. Daniel tiene que preparar una opinión antes de la junta del viernes.",
+    "e": [
+     [
+      "Escena 1: El folleto del taller dice: «Aprende a ver la mentira en el rostro en 8 horas. 95 % de efectividad comprobada».",
+      "Consigna: identifica cada promesa del folleto y contrástala con lo que sabes sobre microexpresiones y sobre la precisión promedio al detectar mentiras."
+     ],
+     [
+      "Escena 2: Una ejecutiva de crédito, Rocío, cuenta que ya rechazó a un solicitante porque «hizo una microexpresión de miedo» al decir su sueldo.",
+      "Consigna: explica qué otras causas podría tener ese gesto y qué riesgos (para el cliente y para la financiera) implica decidir así."
+     ],
+     [
+      "Escena 3: El director pregunta: «Entonces, ¿Ekman estaba equivocado?».",
+      "Consigna: redacta una respuesta equilibrada de cinco a ocho líneas sobre lo que Ekman aportó y lo que la evidencia actual matiza."
+     ],
+     [
+      "Escena 4: Te piden una alternativa para verificar ingresos de manera confiable.",
+      "Consigna: propone tres medidas concretas basadas en documentos y datos verificables, y una frase para pedir información sin ofender al solicitante."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué es más preocupante del caso de Rocío?",
+      "Que tomó una decisión de crédito con base en una señal sin validez",
+      "Que no tomó el taller completo antes de aplicar lo que sabía",
+      "Que no grabó al solicitante para revisar después el gesto",
+      "El problema es decidir con una señal que no distingue verdad de mentira. Un taller completo o una grabación no convertirían esa señal en evidencia de ingresos falsos."
+     ],
+     [
+      "¿Cuál es la respuesta más equilibrada a la pregunta del director sobre Ekman?",
+      "Aportó mucho sobre emociones, pero no basta como detector",
+      "Estaba equivocado en todo, por eso hoy nadie usa sus investigaciones",
+      "Tenía razón en todo, sólo que el taller no aplica bien su método",
+      "Ekman hizo aportaciones importantes (emociones, FACS), y la evidencia limita su uso para detectar mentiras. Decir que se equivocó en todo o que acertó en todo ignora una parte de la evidencia."
+     ],
+     [
+      "¿Qué medida verifica mejor los ingresos de un solicitante?",
+      "Pedir comprobantes y cotejarlos con otras fuentes",
+      "Hacer la entrevista frente a una cámara para analizar el rostro",
+      "Preguntar el sueldo varias veces para ver si se pone nervioso",
+      "Los documentos cotejados son evidencia. La cámara y las preguntas repetidas sólo miden reacciones que pueden deberse a nervios, vergüenza o incomodidad."
+     ]
+    ],
+    "pl": [
+     "Evaluación de un programa de detección",
+     "Programa: [ ]\nPromesas: [ ]\nEvidencia a favor: [ ]\nEvidencia en contra o límites: [ ]\nRiesgos de usarlo para decidir: [ ]\nAlternativa basada en datos: [ ]\nRecomendación final: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un conferencista afirma: «Ekman demostró que cada emoción tiene una cara idéntica en todo el mundo». ¿Qué matiz le harías?",
+     "Halló regularidades, pero hoy se discute que sean fijas",
+     "Ekman nunca estudió otras culturas, sólo a estadounidenses",
+     "Ekman demostró justo lo contrario: que no hay expresiones comunes",
+     "Ekman sólo estudió emociones de animales, no de personas"
+    ],
+    [
+     "En un velorio en Durango, una mujer contiene la risa al recordar una anécdota del difunto. ¿Qué concepto de Ekman explica esa contención?",
+     "Las reglas de exhibición de su cultura",
+     "Una microexpresión de desprecio",
+     "Una unidad de acción del sistema FACS",
+     "El error de juzgar la sinceridad por el rostro"
+    ],
+    [
+     "Un estudiante escribe: «AU12 y AU6 activas durante dos segundos». ¿Qué está haciendo?",
+     "Describir una sonrisa con el lenguaje de FACS",
+     "Diagnosticar que la persona está mintiendo",
+     "Medir la intensidad de una mentira piadosa",
+     "Interpretar que la persona siente desprecio"
+    ],
+    [
+     "Una empresa de software asegura que su programa detecta mentiras porque «usa FACS». ¿Qué conviene preguntar primero?",
+     "Qué estudios independientes muestran que detecta mentiras",
+     "Cuántas unidades de acción reconoce el programa",
+     "Si funciona con cámaras de celular o sólo de computadora",
+     "Si Ekman participó en el diseño de la empresa"
+    ],
+    [
+     "Tu cuñado dice que una sonrisa de Duchenne garantiza alegría auténtica. ¿Qué le respondes?",
+     "Se asocia a la alegría, pero se puede producir a voluntad",
+     "Tiene razón, es imposible fingir ese tipo de sonrisa",
+     "Es al revés: esa sonrisa suele indicar que alguien finge",
+     "Sólo es auténtica cuando dura más de cinco segundos"
+    ],
+    [
+     "En el estudio de Porter y ten Brinke, ¿qué ocurrió con las microexpresiones?",
+     "Fueron raras y aparecieron en personas sinceras y en quienes fingían",
+     "Aparecieron en casi todas las personas que fingían una emoción",
+     "Fueron frecuentes, pero sólo las vieron observadores entrenados",
+     "No apareció ninguna, por eso concluyeron que no existen"
+    ],
+    [
+     "Un banco piensa entrenar a sus cajeros en microexpresiones para detectar fraudes. ¿Qué evidencia es más relevante para decidir?",
+     "Ese entrenamiento no superó a un grupo control",
+     "Los cajeros con más años detectan mejor las microexpresiones",
+     "Las microexpresiones duran exactamente un cuarto de segundo",
+     "El entrenamiento funciona mejor si se hace por la mañana"
+    ],
+    [
+     "Durante una entrevista, un candidato de Saltillo muestra un gesto de miedo al hablar de su empleo anterior. ¿Qué es lo más prudente?",
+     "Preguntar con calma por esa etapa y verificar referencias",
+     "Descartarlo, porque el miedo indica que oculta algo",
+     "Ignorarlo, porque las emociones no aportan información",
+     "Repetir la pregunta varias veces hasta que confiese"
+    ],
+    [
+     "¿Qué significa, según Ekman, detectar un hot spot en una conversación?",
+     "Que algo merece más preguntas, sin saber todavía qué es",
+     "Que la persona miente sobre el tema que se está tratando",
+     "Que la persona está a punto de confesar la verdad",
+     "Que la persona tiene un rasgo de personalidad deshonesto"
+    ],
+    [
+     "Un padre en Colima ve a su hija enojarse mucho cuando le pregunta dónde estuvo. ¿Qué explicación debe considerar además de la mentira?",
+     "Que se sienta acusada injustamente y le moleste la desconfianza",
+     "Que el enojo siempre es una forma de esconder la culpa",
+     "Que los adolescentes se enojan sólo cuando mienten",
+     "Que el enojo muestra que ensayó una historia falsa"
+    ]
+   ]
+  }
+ ]
+}
