@@ -340,6 +340,19 @@ footer a:hover{color:#fff}
 .plan .sello{align-self:flex-start;background:var(--morado);color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:4px 12px}
 .mem-nota{text-align:center;color:var(--gris);font-size:14px;max-width:760px;margin:18px auto 0}
 .regalo-sec{padding-top:10px}
+.emp-sec{padding-top:10px}
+.emp-caja{background:var(--nube);border:1px solid var(--linea);border-radius:28px;padding:40px}
+.emp-caja h2{font-size:2rem;letter-spacing:-.02em;margin:6px 0 10px}
+.emp-caja>p{color:var(--gris);max-width:680px;line-height:1.6;margin-bottom:22px}
+.emp-escala{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.emp-escala div{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:18px;text-align:center}
+.emp-escala b{display:block;font-size:2rem;color:var(--morado)}
+.emp-escala span{color:var(--gris);font-size:14px}
+.emp-lista{columns:2;gap:30px;margin:0 0 22px;padding-left:18px;line-height:1.8}
+@media(max-width:700px){.emp-caja{padding:26px}.emp-escala{gap:8px}.emp-escala div{padding:12px 6px}.emp-escala b{font-size:1.5rem}.emp-escala span{font-size:12px}.emp-lista{columns:1}}
+.fi-estrellas{color:#F59E0B;letter-spacing:1px}
+.fi-resena{border-left:3px solid var(--linea);margin:10px 0;padding:4px 14px;color:var(--tinta);font-size:15px}
+.fi-resena small{color:var(--gris)}
 .regalo-caja{display:flex;align-items:center;gap:30px;background:linear-gradient(135deg,#2E1065,#6D28D9);color:#fff;border-radius:28px;padding:40px}
 .regalo-caja h2{color:#fff;font-size:2rem;letter-spacing:-.02em;margin:6px 0 10px}
 .regalo-caja p{color:#E9E6F7;max-width:620px;margin-bottom:20px;line-height:1.6}
@@ -372,6 +385,7 @@ footer a:hover{color:#fff}
       <a href="#explorar" class="menu-explorar">Explorar programas</a>
       <a href="#membresia">Membresía</a>
       <a href="#regalar">Regalar</a>
+      <a href="#empresas">Empresas</a>
       <a href="#como">Cómo funciona</a>
       <a href="#preguntas">Preguntas</a>
       <a href="../plataforma/index.html" class="btn btn-mor">Ingresar</a>
@@ -763,10 +777,29 @@ html,body{overflow-x:hidden}
     document.getElementById('hero-mem').textContent = 'Todo incluido desde ' + dinero(PLANES.esencial) + '/mes';
   }
   pintarPortada(); pintarPlanes();
-  fetch(SUPA + '/rest/v1/ajustes?id=eq.true&select=precio_esencial,precio_total,precio_anual,dias_constancia_diplomado', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
+  fetch(SUPA + '/rest/v1/ajustes?id=eq.true&select=*', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
     .then(function(r){ return r.ok ? r.json() : []; })
-    .then(function(f){ if(f && f[0]){ PLANES = { esencial:Number(f[0].precio_esencial), total:Number(f[0].precio_total), anual:Number(f[0].precio_anual), dias:f[0].dias_constancia_diplomado }; pintarPlanes(); } })
+    .then(function(f){ if(f && f[0]){ PLANES = { esencial:Number(f[0].precio_esencial), total:Number(f[0].precio_total), anual:Number(f[0].precio_anual), dias:f[0].dias_constancia_diplomado }; pintarPlanes();
+      var pe = function(id, v){ var el = document.getElementById(id); if(el && v != null) el.textContent = Number(v) + '%'; };
+      var ok = function(){ pe('emp-p5', f[0].emp_pct_5); pe('emp-p10', f[0].emp_pct_10); pe('emp-p25', f[0].emp_pct_25); };
+      if(document.getElementById('emp-p5')) ok(); else document.addEventListener('DOMContentLoaded', ok); } })
     .catch(function(){});
+
+  /* Reseñas publicadas: promedio por programa (se muestra con 3 o más) */
+  var RESENAS = {};
+  fetch(SUPA + '/rest/v1/resenas_resumen?select=*&cantidad=gte.3', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(f){ (f || []).forEach(function(x){ RESENAS[x.curso_id] = x; }); })
+    .catch(function(){});
+  function estrellas(n){ n = Math.round(Number(n) || 0); return '<span class="fi-estrellas">' + '★★★★★'.slice(0, n) + '<span style="color:#D6D3E8">' + '★★★★★'.slice(n) + '</span></span>'; }
+  function pintarResenas(id){
+    var caja = document.getElementById('fi-resenas'), rs = RESENAS[id]; if(!caja || !rs) return;
+    fetch(SUPA + '/rest/v1/resenas?curso_id=eq.' + encodeURIComponent(id) + '&estado=eq.aprobada&comentario=not.is.null&select=estrellas,comentario,nombre_publico&order=creado_en.desc&limit=4', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(l){ caja.innerHTML = '<h3>Lo que dicen quienes lo estudian</h3><p>' + estrellas(rs.promedio) + ' <b>' + Number(rs.promedio).toFixed(1) + '</b> de 5 · ' + rs.cantidad + ' reseñas</p>' +
+        (l || []).map(function(x){ return '<div class="fi-resena">' + estrellas(x.estrellas) + ' ' + esc(x.comentario) + '<br><small>— ' + esc(x.nombre_publico || '') + '</small></div>'; }).join(''); })
+      .catch(function(){});
+  }
 
   /* Precios y publicación reales desde el servidor */
   fetch(SUPA + '/rest/v1/cursos?select=id,precio,publicado', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
@@ -809,8 +842,10 @@ html,body{overflow-x:hidden}
       var p = precioDe(id, t.p), url = '../plataforma/index.html?curso=' + encodeURIComponent(id);
       var cifras = [t.h + ' horas', t.s.mod + ' módulos', t.s.lec + ' lecciones', t.s.ej + ' ejercicios interactivos'];
       if(t.s.xl) cifras.push(t.s.xl + ' retos en hoja de cálculo');
+      var rs = RESENAS[id];
       var h = '<div class="fi-cab"><div class="fi-etq">' + esc(t.tipo) + (t.f !== 'Diplomados' ? ' · ' + esc(t.f) : '') + '</div>' +
-        '<h2 id="ficha-tit">' + esc(t.n) + '</h2><p class="fi-cifras">' + cifras.map(esc).join(' · ') + '</p></div>' +
+        '<h2 id="ficha-tit">' + esc(t.n) + '</h2><p class="fi-cifras">' + cifras.map(esc).join(' · ') + '</p>' +
+        (rs ? '<p class="fi-cifras">' + estrellas(rs.promedio) + ' ' + Number(rs.promedio).toFixed(1) + ' (' + rs.cantidad + ' reseñas)</p>' : '') + '</div>' +
         '<div class="fi-compra"><div><b>' + dinero(p) + '</b> <span>MXN · pago único</span><small>Acceso 12 meses · a tu ritmo, desde el celular</small></div>' +
         '<div class="fi-bot"><a class="btn btn-mor" href="' + url + '">Inscribirme</a>' +
         '<a class="fi-gratis" href="../plataforma/index.html?muestra=' + encodeURIComponent(id) + '">Probar una lección gratis</a>' +
@@ -824,6 +859,7 @@ html,body{overflow-x:hidden}
           '<small>' + m.l.length + ' lecciones + evaluación</small></span></summary>' +
           (m.r ? '<p>' + esc(m.r) + '</p>' : '') + '<ol>' + m.l.map(function(l){ return '<li>' + esc(l) + '</li>'; }).join('') + '</ol></details>';
       }).join('') + '</div>' +
+        '<div id="fi-resenas"></div>' +
         '<h3>Qué incluye</h3><ul class="fi-incluye">' +
           '<li><b>Lecciones cortas e interactivas:</b> ejercicios que se califican al momento, no solo lectura.</li>' +
           '<li><b>Evaluación al final de cada módulo</b> para comprobar lo que aprendiste.</li>' +
@@ -834,8 +870,10 @@ html,body{overflow-x:hidden}
         '<div class="fi-acciones"><a class="btn btn-mor" href="' + url + '">Inscribirme por ' + dinero(p) + '</a>' +
         '<a class="btn btn-linea" href="../plataforma/index.html?muestra=' + encodeURIComponent(id) + '">Probar una lección gratis</a>' +
         '<button type="button" class="btn btn-linea" id="fi-compartir">Compartir</button></div>';
+      h = h.replace('<button type="button" class="btn btn-linea" id="fi-compartir">', '<a class="btn btn-linea" href="../plataforma/index.html?ir=empresas">Para mi equipo</a><button type="button" class="btn btn-linea" id="fi-compartir">');
       fichaCuerpo.innerHTML = h;
       fichaCuerpo.scrollTop = 0;
+      pintarResenas(id);
       document.getElementById('fi-compartir').onclick = function(){
         var enlace = location.href.split('#')[0] + '#programa-' + id, txt = t.n + ' — Instituto Mara';
         if(navigator.share) navigator.share({ title: txt, url: enlace }).catch(function(){});
@@ -879,6 +917,29 @@ html,body{overflow-x:hidden}
       <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=regalos">Elegir un regalo →</a>
     </div>
     <div class="regalo-ico" aria-hidden="true">🎁</div>
+  </div>
+</section>
+
+<!-- ============ EMPRESAS ============ -->
+<section id="empresas" class="emp-sec">
+  <div class="wrap emp-caja">
+    <div class="eyebrow">Para empresas</div>
+    <h2>Capacita a tu equipo con descuento por volumen</h2>
+    <p>Compra de 5 a 50 lugares de cualquier curso o diplomado y paga en línea. Asignas cada lugar con el nombre y correo de la persona, le llega su invitación y desde tu panel ves quién ya empezó, cuánto lleva y quién terminó.</p>
+    <div class="emp-escala">
+      <div><b id="emp-p5">15%</b><span>5 a 9 lugares</span></div>
+      <div><b id="emp-p10">25%</b><span>10 a 24 lugares</span></div>
+      <div><b id="emp-p25">35%</b><span>25 a 50 lugares</span></div>
+    </div>
+    <ul class="emp-lista">
+      <li>Pago con tarjeta, OXXO o transferencia</li>
+      <li>Códigos válidos 12 meses</li>
+      <li>Panel con el avance de cada persona</li>
+      <li>Constancia con folio verificable para cada quien</li>
+      <li>Invitaciones por correo o WhatsApp</li>
+      <li>Ideal para NOM-035, liderazgo, Excel, servicio e IA</li>
+    </ul>
+    <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=empresas">Cotizar para mi equipo →</a>
   </div>
 </section>
 

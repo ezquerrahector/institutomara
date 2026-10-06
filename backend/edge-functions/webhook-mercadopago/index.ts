@@ -149,6 +149,7 @@ serve(async (req) => {
 
     const ref = String(pago.external_reference || "");
     if (ref.startsWith("regalo::")) return new Response(await pagoDeRegalo(pago, ref.split("::")[1]), { status: 200 });
+    if (ref.startsWith("emp::")) { await tienda({ accion: "empresa_pagada", compraId: ref.split("::")[1], pagoId: String(pago.id), monto: Number(pago.transaction_amount || 0) }); return new Response("ok", { status: 200 }); }
     if (ref.startsWith("mem::")) { const [, uidM, planM] = ref.split("::"); return new Response(await pagoDeMembresia(pago, uidM, planM), { status: 200 }); }
     const [usuarioId, cursoId] = String(pago.external_reference || "").split("::");
     if (!usuarioId || !cursoId) return new Response("sin referencia", { status: 200 });

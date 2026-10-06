@@ -579,7 +579,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261005"></script>
+<script src="nube.js?v=20261006"></script>
 <script src="interactivo.js?v=20260929"></script>
 <script src="cursos/ingles-a1.js?v=20261004"></script>
 <script src="cursos/ia-general.js?v=20261004"></script>
@@ -1684,8 +1684,9 @@ function entrarApp(){
   var params = new URLSearchParams(location.search);
   var pago = params.get('pago'), cid = params.get('curso');
   if(params.get('membresia') || params.get('regalo')){ if(regresoTienda(params)) return; }
+  if(params.get('empresa') && sesion.rol === 'alumno'){ regresoEmpresa(params); return; }
   var irA = params.get('ir');
-  if((irA === 'membresia' || irA === 'regalos') && sesion.rol === 'alumno'){ history.replaceState(null,'',location.pathname); ir(irA); return; }
+  if((irA === 'membresia' || irA === 'regalos' || irA === 'empresas') && sesion.rol === 'alumno'){ history.replaceState(null,'',location.pathname); ir(irA); return; }
 
   if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
@@ -1780,9 +1781,9 @@ function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
        ['admin-reactivacion','Invitaciones'],['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
-       ['admin-tienda','Membresías y regalos'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
+       ['admin-tienda','Membresías y regalos'],['admin-resenas','Reseñas'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
-       ['membresia','Membresía'],['constancias','Constancias'],['regalos','Regalar'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
+       ['membresia','Membresía'],['constancias','Constancias'],['regalos','Regalar'],['empresas','Empresas'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
   var h = '';
   for(var i=0;i<items.length;i++)
     h += '<button data-v="'+items[i][0]+'">'+items[i][1]+'</button>';
@@ -1990,8 +1991,11 @@ function verPrograma(cid){
   }).join('');
   if(rutas.length) h += '<div class="aviso aviso-info" style="margin-top:14px">También viene en la <b>'+esc(rutas[0].nombre)+'</b> con precio especial. '+
     '<a href="#" onclick="verRuta(\''+rutas[0].id+'\');return false">Ver la ruta</a></div>';
+  h += '<div id="ficha-resenas"></div>';
   h += '<div class="ficha-precio"><div><b>'+dinero(c.precio)+'</b><small>Pago único · acceso 12 meses · a tu ritmo</small></div></div>';
   h += avisoMembresiaFicha(c);
+  if(!ruta(cid) && sesion.rol === 'alumno') h += '<p style="font-size:.9rem;color:var(--gris);margin-top:10px">¿Para tu equipo? De 5 a 50 lugares con hasta '+pctEmpresa(25)+'% de descuento. <a href="#" onclick="cerrarModal();ir(\'empresas\');return false">Ver paquetes para empresas</a></p>';
+  setTimeout(function(){ pintarResenasFicha(cid); }, 0);
   abrirModal(c.nombre, h,
     '<a class="btn btn-fantasma" href="index.html?muestra='+encodeURIComponent(c.id)+'" target="_blank" rel="noopener">Probar una lección gratis</a>'+
     '<button class="btn btn-linea" onclick="abrirRegalo(\''+c.id+'\')">🎁 Regalar</button>'+
@@ -2297,6 +2301,7 @@ function vistaAula(){
       '<div class="avance" style="background:rgba(255,255,255,.22)"><i style="width:'+p+'%"></i></div>'+
     '</div>';
 
+  h += cajaResena(c);
   if(cursoCompleto(sesion.id,c)){
     h += '<div class="aviso aviso-ok" style="display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap">'+
          '<span><b>Terminaste el curso.</b> Tu constancia ya está lista.</span>'+
@@ -4555,6 +4560,8 @@ function pintar(){
   else if(v==='membresia')      h = vistaMembresia();
   else if(v==='regalos')        h = vistaRegalos();
   else if(v==='admin-tienda')   h = vistaAdminTienda();
+  else if(v==='empresas')       h = vistaEmpresas();
+  else if(v==='admin-resenas')  h = vistaAdminResenas();
   $('vista').innerHTML = h;
   if(v === 'catalogo') pintarCatalogo();
 }
@@ -4841,6 +4848,9 @@ function pintarAjustesGlobales(){
       '<div class="fila"><div class="campo"><label>Descuento al terminar un programa (%)</label><input id="ag-rpct" type="number" min="5" max="90" value="'+Number(ajuste('recompra_pct',40))+'"></div>'+
       '<div class="campo"><label>Vigencia del descuento (días)</label><input id="ag-rdias" type="number" min="1" max="90" value="'+Number(ajuste('recompra_dias',15))+'"></div>'+
       '<div class="campo"><label>Recordatorio al día</label><input id="ag-rrec" type="number" min="1" max="89" value="'+Number(ajuste('recompra_recordatorio_dia',10))+'"></div></div>'+
+      '<div class="fila"><div class="campo"><label>Empresas: 5 a 9 lugares (%)</label><input id="ag-e5" type="number" min="0" max="80" value="'+pctEmpresa(5)+'"></div>'+
+      '<div class="campo"><label>10 a 24 lugares (%)</label><input id="ag-e10" type="number" min="0" max="80" value="'+pctEmpresa(10)+'"></div>'+
+      '<div class="campo"><label>25 a 50 lugares (%)</label><input id="ag-e25" type="number" min="0" max="80" value="'+pctEmpresa(25)+'"></div></div>'+
       '<button class="btn btn-mor" onclick="guardarAjustesGlobales()">Guardar precios y descuentos</button><div id="ag-aviso2"></div></div>';
   };
   if(NUBE) Nube.cargarAjustes(BD).then(function(){ guardar(); dibujar(); }).catch(dibujar); else dibujar();
@@ -4878,10 +4888,12 @@ function guardarAjustesGlobales(){
     director_nombre: $('ag-nom').value.trim(), director_puesto: $('ag-puesto').value.trim() || 'Dirección Académica',
     precio_esencial: Number($('ag-p1').value), precio_total: Number($('ag-p2').value), precio_anual: Number($('ag-p3').value),
     dias_constancia_diplomado: Number($('ag-dias').value), recompra_pct: Number($('ag-rpct').value),
-    recompra_dias: Number($('ag-rdias').value), recompra_recordatorio_dia: Number($('ag-rrec').value)
+    recompra_dias: Number($('ag-rdias').value), recompra_recordatorio_dia: Number($('ag-rrec').value),
+    emp_pct_5: Number($('ag-e5').value), emp_pct_10: Number($('ag-e10').value), emp_pct_25: Number($('ag-e25').value)
   };
   if(firmaNueva !== null) c.firma_img = firmaNueva || null;
   if(!(c.precio_esencial > 0 && c.precio_total > 0 && c.precio_anual > 0)){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">Revisa los precios.</div>'; return; }
+  if(!(c.emp_pct_5 >= 0 && c.emp_pct_10 >= 0 && c.emp_pct_25 >= 0 && c.emp_pct_25 <= 80)){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">Revisa los descuentos para empresas (0 a 80 %).</div>'; return; }
   if(c.recompra_recordatorio_dia >= c.recompra_dias){ $('ag-aviso2').innerHTML = '<div class="aviso aviso-error">El recordatorio debe llegar antes de que venza el descuento.</div>'; return; }
   Nube.guardarAjustes(c).then(function(f){
     if(f && f[0]) BD.ajustes = f[0]; firmaNueva = null; guardar();
@@ -4907,12 +4919,198 @@ function vistaAdminTienda(){
         d.membresias.map(function(m){ return '<tr><td>'+esc(nombre(m.usuario_id))+'</td><td>'+esc((PLANES_MEM[m.plan]||{}).nombre||m.plan)+'</td><td>'+esc(m.estado)+'</td><td>'+(m.vigente_hasta?fechaLarga(String(m.vigente_hasta).slice(0,10)):'—')+'</td><td>'+(m.monto?dinero(m.monto):'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
         '<h3 style="margin:22px 0 10px">Regalos</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Compró</th><th>Para</th><th>Programa</th><th>Entrega</th><th>Estado</th><th>Código</th></tr>'+
         d.regalos.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.comprador_id))+'</td><td>'+esc(r.para_nombre)+'<br><small>'+esc(r.para_correo||r.para_tel||'')+'</small></td><td>'+esc(c?c.nombre:r.curso_id)+'</td><td>'+esc(r.entregar_en||'')+'</td><td>'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</td><td>'+esc(r.codigo||'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
+        (d.empresas && d.empresas.length ? '<h3 style="margin:22px 0 10px">Empresas</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Empresa</th><th>Compró</th><th>Programa</th><th>Lugares</th><th>Total</th><th>Estado</th></tr>'+
+          d.empresas.map(function(x){ var c = programa(x.curso_id); return '<tr><td>'+esc(x.empresa)+(x.rfc?'<br><small>'+esc(x.rfc)+'</small>':'')+'</td><td>'+esc(nombre(x.comprador_id))+'<br><small>'+esc(x.contacto_correo||'')+'</small></td><td>'+esc(c?c.nombre:x.curso_id)+'</td><td>'+x.lugares+'</td><td>'+dinero(x.total)+'</td><td>'+esc(ESTADO_EMP[x.estado]||x.estado)+'</td></tr>'; }).join('')+'</table></div></div>' : '')+
         '<h3 style="margin:22px 0 10px">Descuentos de recompra enviados</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Alumno</th><th>Terminó</th><th>Código</th><th>¿Lo usó?</th></tr>'+
         d.recompras.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.usuario_id))+'</td><td>'+esc(c?c.nombre:r.curso_id)+'</td><td>'+esc(r.codigo)+'</td><td>'+(usados[r.codigo]?'Sí':'No')+'</td></tr>'; }).join('')+'</table></div></div>';
     }).catch(function(e){ var caja = $('at-datos'); if(caja) caja.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
   }, 0);
   return '<div class="seccion"><h2>Membresías, regalos y recompras</h2><p class="sub">Precios y porcentajes se cambian en Ajustes.</p><div id="at-datos">Cargando…</div></div>';
 }
+
+/* ============================================================================
+   Empresas (paquetes de 5 a 50 lugares) y reseñas con estrellas
+   ========================================================================== */
+function pctEmpresa(n){
+  return Number(n >= 25 ? ajuste('emp_pct_25',35) : n >= 10 ? ajuste('emp_pct_10',25) : ajuste('emp_pct_5',15));
+}
+function cotizaEmpresa(cid, n){
+  var c = curso(cid); if(!c || !(n >= 5 && n <= 50)) return null;
+  var pct = pctEmpresa(n), unit = Math.round(Number(c.precio) * (100 - pct)) / 100;
+  return { pct:pct, unit:unit, total:Math.round(unit * n * 100) / 100, lista:Number(c.precio) * n };
+}
+var ESTADO_EMP = { pendiente_pago:'Esperando pago', pagado:'Pagado', cancelado:'Cancelado' };
+function vistaEmpresas(){
+  var mias = (BD.empresas||[]).filter(function(e){ return e.estado !== 'pendiente_pago'; });
+  var progs = BD.cursos.filter(function(c){ return c.publicado && Number(c.precio) > 0 && !ruta(c.id); })
+    .sort(function(a,b){ return (b.nivel==='Diplomados') - (a.nivel==='Diplomados') || a.nombre.localeCompare(b.nombre); });
+  var h = '<div class="seccion"><h2>Capacita a tu equipo</h2>'+
+    '<p class="sub">Compra de 5 a 50 lugares de un curso o diplomado con descuento por volumen. Asignas cada lugar con el nombre y correo de la persona, ves su avance y cada quien recibe su constancia con folio.</p>'+
+    '<div class="rejilla rejilla-3" style="margin-bottom:22px">'+
+      [['5 a 9 lugares', pctEmpresa(5)], ['10 a 24 lugares', pctEmpresa(10)], ['25 a 50 lugares', pctEmpresa(25)]].map(function(t){
+        return '<div class="tarjeta" style="text-align:center"><b style="font-size:1.9rem;color:var(--morado)">'+t[1]+'%</b><p style="color:var(--gris)">de descuento · '+t[0]+'</p></div>'; }).join('')+
+    '</div>'+
+    '<div class="tarjeta" style="margin-bottom:26px"><h3 style="color:var(--tinta);margin-bottom:12px">Cotiza y paga en línea</h3>'+
+      '<div class="campo"><label for="em-curso">Programa</label><select id="em-curso" onchange="cotizarEmpresaUI()">'+
+        progs.map(function(c){ return '<option value="'+c.id+'">'+esc(c.nombre)+' · '+dinero(c.precio)+'</option>'; }).join('')+'</select></div>'+
+      '<div class="fila"><div class="campo"><label for="em-n">Número de lugares (5 a 50)</label><input id="em-n" type="number" min="5" max="50" value="10" oninput="cotizarEmpresaUI()"></div>'+
+      '<div class="campo"><label for="em-emp">Empresa *</label><input id="em-emp" maxlength="160" placeholder="Nombre comercial o razón social"></div></div>'+
+      '<div class="fila"><div class="campo"><label for="em-rfc">RFC (opcional)</label><input id="em-rfc" maxlength="13" style="text-transform:uppercase"></div>'+
+      '<div class="campo"><label for="em-tel">Teléfono de contacto</label><input id="em-tel" type="tel" placeholder="10 dígitos"></div></div>'+
+      '<div class="fila"><div class="campo"><label for="em-cn">Persona de contacto</label><input id="em-cn" value="'+esc(sesion.nombre)+'"></div>'+
+      '<div class="campo"><label for="em-cc">Correo de contacto</label><input id="em-cc" type="email" value="'+esc(sesion.correo)+'"></div></div>'+
+      '<div id="em-cot" class="aviso aviso-info"></div><div id="em-aviso"></div>'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button id="em-btn" class="btn btn-mor" onclick="pagarEmpresa()">Pagar con Mercado Pago</button></div>'+
+      '<p style="color:var(--gris);font-size:.86rem;margin-top:10px">Tarjeta, OXXO o transferencia. Los códigos valen 12 meses. ¿Más de 50 lugares o necesitas factura? Escríbenos desde «Dudas» y te atendemos.</p></div>';
+  if(mias.length){
+    h += '<h3 style="margin-bottom:12px;color:var(--tinta)">Tus paquetes</h3>'+mias.map(function(e){
+      var c = programa(e.curso_id);
+      return '<div class="tarjeta" style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">'+
+        '<div><span class="etiqueta ok">'+esc(ESTADO_EMP[e.estado]||e.estado)+'</span><h3 style="margin:8px 0 4px;color:var(--tinta)">'+esc(c ? c.nombre : e.curso_id)+'</h3>'+
+        '<p style="color:var(--gris);font-size:.92rem">'+esc(e.empresa)+' · '+e.lugares+' lugares · '+dinero(e.total)+' ('+Number(e.pct)+'% de descuento)</p></div>'+
+        '<button class="btn btn-linea btn-sm" onclick="verEquipo(\''+e.id+'\')">Ver lugares y avance</button></div>'+
+        '<div id="eq-'+e.id+'"></div></div>';
+    }).join('');
+  }
+  setTimeout(cotizarEmpresaUI, 0);
+  return h + '</div>';
+}
+function cotizarEmpresaUI(){
+  var caja = $('em-cot'); if(!caja) return;
+  var n = Math.floor(Number($('em-n').value)), q = cotizaEmpresa($('em-curso').value, n);
+  if(!q){ caja.className = 'aviso aviso-error'; caja.textContent = 'Los paquetes son de 5 a 50 lugares.'; return; }
+  caja.className = 'aviso aviso-info';
+  caja.innerHTML = n+' lugares × '+dinero(q.unit)+' = <b>'+dinero(q.total)+'</b> <span style="color:var(--gris)">(precio normal '+dinero(q.lista)+'; ahorras '+dinero(q.lista - q.total)+' con '+q.pct+'% de descuento)</span>';
+}
+function pagarEmpresa(){
+  var av = $('em-aviso'), n = Math.floor(Number($('em-n').value)), emp = $('em-emp').value.trim();
+  if(!NUBE){ alert('El cobro en línea no está disponible en esta copia.'); return; }
+  if(!emp){ av.innerHTML = '<div class="aviso aviso-error">Escribe el nombre de la empresa.</div>'; return; }
+  if(!(n >= 5 && n <= 50)){ av.innerHTML = '<div class="aviso aviso-error">Los paquetes son de 5 a 50 lugares.</div>'; return; }
+  var b = $('em-btn'); b.disabled = true; b.textContent = 'Un momento…';
+  Nube.funcionServidor('tienda', { accion:'empresa', cursoId:$('em-curso').value, lugares:n, empresa:emp, rfc:$('em-rfc').value.trim(),
+      contactoNombre:$('em-cn').value.trim(), contactoCorreo:$('em-cc').value.trim(), contactoTel:$('em-tel').value.replace(/\D/g,''),
+      urlRegreso: location.origin + location.pathname })
+    .then(function(d){ if(d && d.init_point) location.href = d.init_point; else throw new Error('No se pudo iniciar el pago.'); })
+    .catch(function(e){ b.disabled = false; b.textContent = 'Pagar con Mercado Pago'; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+var EQUIPOS = {};
+function verEquipo(id){
+  var caja = $('eq-'+id); if(!caja) return;
+  caja.innerHTML = '<p style="color:var(--gris);margin-top:12px">Cargando…</p>';
+  Nube.empresaAvance(id).then(function(filas){ EQUIPOS[id] = filas || []; pintarEquipo(id); })
+    .catch(function(e){ caja.innerHTML = '<div class="aviso aviso-error" style="margin-top:12px">'+esc(e.message)+'</div>'; });
+}
+function pintarEquipo(id){
+  var caja = $('eq-'+id), filas = EQUIPOS[id] || [], e = (BD.empresas||[]).filter(function(x){ return x.id === id; })[0];
+  var c = e && curso(e.curso_id); if(!caja || !c) return;
+  var tot = totalLecciones(c), nm = c.modulos.length;
+  var activos = filas.filter(function(f){ return f.canjeado_en; }).length, hechos = filas.filter(function(f){ return f.constancia_folio; }).length;
+  caja.innerHTML = '<p style="margin:14px 0 8px"><b>'+activos+'</b> de '+filas.length+' lugares activados · <b>'+hechos+'</b> con constancia</p>'+
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Código</th><th>Persona</th><th>Estado</th><th>Avance</th><th></th></tr>'+
+    filas.map(function(f){
+      var pct = f.canjeado_en ? Math.min(100, Math.round(((f.lecciones_vistas||0) + (f.modulos_aprobados||0)) * 100 / (tot + nm))) : 0;
+      var est = f.constancia_folio ? '🎓 Terminó · folio '+esc(f.constancia_folio) : f.canjeado_en ? 'Estudiando' : f.enviado_en ? 'Invitación enviada' : f.asignado_nombre ? 'Asignado' : 'Libre';
+      return '<tr><td><code>'+esc(f.codigo)+'</code></td><td>'+esc(f.alumno || f.asignado_nombre || '—')+(f.asignado_correo?'<br><small>'+esc(f.asignado_correo)+'</small>':'')+'</td>'+
+        '<td>'+est+'</td><td>'+(f.canjeado_en ? '<div class="avance" style="min-width:90px"><i style="width:'+pct+'%"></i></div><small>'+pct+'%</small>' : '—')+'</td>'+
+        '<td style="white-space:nowrap">'+(f.canjeado_en ? '' :
+          '<button class="btn btn-linea btn-sm" onclick="asignarLugar(\''+id+'\',\''+esc(f.codigo)+'\')">'+(f.asignado_nombre?'Reenviar':'Asignar')+'</button> '+
+          '<button class="btn btn-fantasma btn-sm" onclick="compartirLugar(\''+id+'\',\''+esc(f.codigo)+'\')">WhatsApp</button>')+'</td></tr>';
+    }).join('')+'</table></div></div>';
+}
+function enlaceLugar(e, cod){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(cod) + '&curso=' + encodeURIComponent(e.curso_id); }
+function compartirLugar(id, cod){
+  var e = (BD.empresas||[]).filter(function(x){ return x.id === id; })[0], c = e && programa(e.curso_id); if(!e) return;
+  var t = '📚 *' + e.empresa + '* te dio un lugar en *' + (c ? c.nombre : 'un programa') + '* de Instituto Mara: 100% en línea y con constancia al terminar.\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + enlaceLugar(e, cod);
+  window.open('https://wa.me/?text=' + encodeURIComponent(t), '_blank', 'noopener');
+}
+function asignarLugar(id, cod){
+  var f = (EQUIPOS[id]||[]).filter(function(x){ return x.codigo === cod; })[0] || {};
+  abrirModal('Asignar lugar '+cod,
+    '<div class="campo"><label for="al-nom">Nombre de la persona *</label><input id="al-nom" maxlength="120" value="'+esc(f.asignado_nombre||'')+'"></div>'+
+    '<div class="campo"><label for="al-cor">Correo</label><input id="al-cor" type="email" value="'+esc(f.asignado_correo||'')+'"><small style="color:var(--gris)">Le enviamos la invitación con su código. Si lo dejas vacío, solo queda anotado y se lo mandas tú por WhatsApp.</small></div><div id="al-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="al-btn" class="btn btn-mor" onclick="guardarLugar(\''+id+'\',\''+cod+'\')">Guardar y enviar</button>');
+}
+function guardarLugar(id, cod){
+  var b = $('al-btn'); b.disabled = true;
+  Nube.funcionServidor('tienda', { accion:'empresa_invitar', codigo:cod, nombre:$('al-nom').value.trim(), correo:$('al-cor').value.trim() })
+    .then(function(r){ cerrarModal(); if(r && r.enviado) alert('Invitación enviada.'); verEquipo(id); })
+    .catch(function(e){ b.disabled = false; $('al-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+function regresoEmpresa(params){
+  var r = params.get('empresa'), id = params.get('id');
+  history.replaceState(null,'',location.pathname);
+  ir('empresas');
+  if(r === 'fallo'){ abrirModal('El pago no se completó', '<p>Mercado Pago no pudo cobrar. Puedes intentarlo de nuevo.</p>', '<button class="btn btn-mor" onclick="cerrarModal()">Entendido</button>'); return; }
+  abrirModal('¡Gracias por capacitar a tu equipo!', '<div id="em-espera" class="aviso aviso-info">Esperando la confirmación del pago…</div>', '<button class="btn btn-mor" onclick="cerrarModal()">Cerrar</button>');
+  var k = 0, t = setInterval(function(){
+    k++;
+    Nube.recargarEmpresas(BD, sesion.id).then(function(){
+      var e = (BD.empresas||[]).filter(function(x){ return x.id === id; })[0];
+      if(e && e.estado === 'pagado'){ clearInterval(t); guardar(); var el = $('em-espera');
+        if(el){ el.className = 'aviso aviso-ok'; el.textContent = '¡Listo! Tus '+e.lugares+' lugares ya están disponibles. Asigna cada uno desde «Ver lugares y avance».'; }
+        pintar(); setTimeout(function(){ verEquipo(id); }, 100); }
+    }).catch(function(){});
+    if(k > 24){ clearInterval(t); var e2 = $('em-espera'); if(e2) e2.textContent = 'Si pagaste en efectivo o transferencia, los lugares aparecen cuando Mercado Pago confirme. También te llegará un correo.'; }
+  }, 5000);
+}
+
+/* ---------- Reseñas ---------- */
+function estrellasTxt(n){ n = Math.round(Number(n)||0); return '<span class="estrellas" aria-label="'+n+' de 5">'+'★★★★★'.slice(0,n)+'<span style="color:#D6D3E8">'+'★★★★★'.slice(n)+'</span></span>'; }
+function avanceLecciones(c){ var a = avance(sesion.id, c.id), t = totalLecciones(c); return t ? a.lecciones.length / t : 0; }
+function cajaResena(c){
+  if(!NUBE || !sesion || sesion.rol === 'admin' || avanceLecciones(c) < 0.5) return '';
+  var r = (BD.misResenas||[]).filter(function(x){ return x.curso_id === c.id; })[0];
+  if(r && !cajaResena._editar) return '<div class="tarjeta" style="margin-bottom:22px"><b>Tu reseña:</b> '+estrellasTxt(r.estrellas)+
+    (r.comentario ? '<p style="margin:6px 0;color:var(--tinta)">'+esc(r.comentario)+'</p>' : '')+
+    '<small style="color:var(--gris)">'+(r.estado==='aprobada'?'Publicada':r.estado==='rechazada'?'No se publicó':'En revisión antes de publicarse')+'</small> '+
+    '<a href="#" onclick="cajaResena._editar=true;pintar();return false">Editar</a></div>';
+  var e0 = r ? r.estrellas : 0;
+  return '<div class="tarjeta" style="margin-bottom:22px;border:2px solid var(--morado)"><h3 style="color:var(--tinta);margin-bottom:4px">¿Qué te está pareciendo?</h3>'+
+    '<p style="color:var(--gris);font-size:.92rem;margin-bottom:10px">Tu opinión ayuda a otras personas a decidir y a nosotros a mejorar. Se publica tu nombre de pila y la inicial de tu apellido.</p>'+
+    '<div id="rs-est" data-v="'+e0+'" style="font-size:2rem;cursor:pointer;color:#F59E0B;user-select:none">'+[1,2,3,4,5].map(function(i){
+      return '<span role="button" aria-label="'+i+' estrellas" onclick="marcarEstrellas('+i+')">'+(i<=e0?'★':'☆')+'</span>'; }).join('')+'</div>'+
+    '<div class="campo"><textarea id="rs-com" maxlength="800" rows="3" placeholder="¿Qué te gustó? ¿Qué mejorarías? (opcional)">'+esc(r && r.comentario || '')+'</textarea></div>'+
+    '<div id="rs-aviso"></div><button id="rs-btn" class="btn btn-mor btn-sm" onclick="enviarResena(\''+c.id+'\')">Enviar reseña</button></div>';
+}
+function marcarEstrellas(n){ var el = $('rs-est'); if(!el) return; el.setAttribute('data-v', n);
+  el.querySelectorAll('span').forEach(function(s, i){ s.textContent = i < n ? '★' : '☆'; }); }
+function enviarResena(cid){
+  var n = Number($('rs-est').getAttribute('data-v')), av = $('rs-aviso');
+  if(!(n >= 1)){ av.innerHTML = '<div class="aviso aviso-error">Elige de 1 a 5 estrellas.</div>'; return; }
+  var b = $('rs-btn'); b.disabled = true;
+  Nube.guardarResena(BD, sesion.id, cid, n, $('rs-com').value.trim())
+    .then(function(){ cajaResena._editar = false; guardar(); pintar(); })
+    .catch(function(e){ b.disabled = false; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+function pintarResenasFicha(cid){
+  var caja = $('ficha-resenas'); if(!caja || !NUBE) return;
+  Nube.resenasPublicas(cid).then(function(d){
+    if(!d.resumen || d.resumen.cantidad < 3 || !$('ficha-resenas')) return;
+    caja.innerHTML = '<h4 class="ficha-sub">Lo que dicen quienes lo estudian</h4><p style="margin-bottom:8px">'+estrellasTxt(d.resumen.promedio)+' <b>'+Number(d.resumen.promedio).toFixed(1)+'</b> <span style="color:var(--gris)">('+d.resumen.cantidad+' reseñas)</span></p>'+
+      d.lista.filter(function(r){ return r.comentario; }).slice(0,3).map(function(r){
+        return '<blockquote style="border-left:3px solid var(--linea);margin:8px 0;padding:4px 12px;color:var(--tinta)">'+estrellasTxt(r.estrellas)+' '+esc(r.comentario)+'<br><small style="color:var(--gris)">— '+esc(r.nombre_publico||'')+'</small></blockquote>';
+      }).join('');
+  }).catch(function(){});
+}
+function vistaAdminResenas(){
+  setTimeout(function(){
+    Nube.adminResenas().then(function(lista){
+      var caja = $('ar-datos'); if(!caja) return;
+      var pend = lista.filter(function(r){ return r.estado === 'pendiente'; }), resto = lista.filter(function(r){ return r.estado !== 'pendiente'; });
+      var fila = function(r){ var c = programa(r.curso_id), u = usuario(r.usuario_id);
+        return '<div class="tarjeta" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">'+
+          '<div><b>'+esc(c ? c.nombre : r.curso_id)+'</b><br>'+estrellasTxt(r.estrellas)+' · '+esc(u ? u.nombre : r.nombre_publico)+' <small style="color:var(--gris)">(se publica como «'+esc(r.nombre_publico||'')+'»)</small>'+
+          (r.comentario ? '<p style="margin-top:6px">'+esc(r.comentario)+'</p>' : '<p style="color:var(--gris);margin-top:6px">Sin comentario</p>')+'</div>'+
+          '<div style="display:flex;gap:8px;align-items:flex-start">'+(r.estado !== 'aprobada' ? '<button class="btn btn-mor btn-sm" onclick="moderar(\''+r.id+'\',\'aprobada\')">Publicar</button>' : '')+
+          (r.estado !== 'rechazada' ? '<button class="btn btn-fantasma btn-sm" onclick="moderar(\''+r.id+'\',\'rechazada\')">'+(r.estado==='aprobada'?'Ocultar':'Rechazar')+'</button>' : '')+'</div></div></div>'; };
+      caja.innerHTML = '<h3 style="margin-bottom:10px">Por revisar ('+pend.length+')</h3>'+(pend.length ? pend.map(fila).join('') : '<p style="color:var(--gris)">No hay reseñas pendientes.</p>')+
+        '<h3 style="margin:22px 0 10px">Revisadas</h3>'+(resto.length ? resto.map(function(r){ return fila(r).replace('class="tarjeta"','class="tarjeta" data-estado="'+r.estado+'"'); }).join('') : '<p style="color:var(--gris)">Aún no hay.</p>');
+    }).catch(function(e){ var caja = $('ar-datos'); if(caja) caja.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+  }, 0);
+  return '<div class="seccion"><h2>Reseñas</h2><p class="sub">Solo pueden opinar alumnos que vieron al menos la mitad del programa. Nada se publica sin tu visto bueno; el promedio aparece en la ficha cuando hay 3 o más reseñas publicadas.</p><div id="ar-datos">Cargando…</div></div>';
+}
+function moderar(id, estado){ Nube.moderarResena(id, estado).then(function(){ pintar(); }).catch(function(e){ alert(e.message); }); }
 
 /* ---------------- Lección de muestra (sin cuenta) ----------------
    …/plataforma/?muestra=ID abre la primera lección del programa para que

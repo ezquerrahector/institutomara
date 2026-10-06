@@ -250,10 +250,14 @@ var Nube = {
         rest('membresias?select=*&usuario_id=eq.' + uid + '&order=creado_en.desc').catch(function(){ return []; }),
         rest('regalos?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc').catch(function(){ return []; }),
         rest('recompras?select=*&usuario_id=eq.' + uid).catch(function(){ return []; }),
-        Nube.cargarAjustes(BD).catch(function(){ return null; })
+        Nube.cargarAjustes(BD).catch(function(){ return null; }),
+        /* Compras para empresas y reseñas propias (si las tablas ya existen) */
+        rest('empresas_compras?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc').catch(function(){ return []; }),
+        rest('resenas?select=*&usuario_id=eq.' + uid).catch(function(){ return []; })
       ]).then(function(r){
         Nube.volcar(BD, { inscripciones:r[0], avances:r[1], pagos:r[2], constancias:r[3], dudas:r[4] });
         BD.membresias = r[5] || []; BD.regalos = r[6] || []; BD.recompras = r[7] || [];
+        BD.empresas = r[9] || []; BD.misResenas = r[10] || [];
         ultimoEnvio = huella(BD, u);
         return u;
       });
@@ -277,8 +281,9 @@ var Nube = {
       rest('membresias?select=*&order=creado_en.desc&limit=500'),
       rest('regalos?select=*&order=creado_en.desc&limit=500'),
       rest('recompras?select=*&order=creado_en.desc&limit=500'),
-      rest('cupones?select=codigo,usos,vence&or=(codigo.like.VUELVE-*,codigo.like.REGALO-*)&limit=2000')
-    ]).then(function(r){ return { membresias:r[0], regalos:r[1], recompras:r[2], cupones:r[3] }; });
+      rest('cupones?select=codigo,usos,vence&or=(codigo.like.VUELVE-*,codigo.like.REGALO-*)&limit=2000'),
+      rest('empresas_compras?select=*&order=creado_en.desc&limit=500').catch(function(){ return []; })
+    ]).then(function(r){ return { membresias:r[0], regalos:r[1], recompras:r[2], cupones:r[3], empresas:r[4] }; });
   },
   recargarMembresia: function(BD, uid){
     return Promise.all([
@@ -286,6 +291,42 @@ var Nube = {
       rest('regalos?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc'),
       rest('inscripciones?select=*&usuario_id=eq.' + uid)
     ]).then(function(r){ BD.membresias = r[0] || []; BD.regalos = r[1] || []; Nube.volcar(BD, { inscripciones:r[2] }); });
+  },
+
+  /* ---------- Empresas: paquetes de 5 a 50 lugares ---------- */
+  recargarEmpresas: function(BD, uid){
+    return rest('empresas_compras?select=*&comprador_id=eq.' + uid + '&order=creado_en.desc')
+      .then(function(f){ BD.empresas = f || []; return BD.empresas; });
+  },
+  empresaAvance: function(compraId){
+    return rest('rpc/empresa_avance', { metodo:'POST', cuerpo:{ p_compra: compraId } });
+  },
+  adminEmpresas: function(){
+    return rest('empresas_compras?select=*&order=creado_en.desc&limit=500');
+  },
+
+  /* ---------- Reseñas con estrellas ---------- */
+  /* Lectura pública (sin sesión): promedio por programa y comentarios aprobados. */
+  resenasPublicas: function(cursoId){
+    if(!activa()) return Promise.resolve({ resumen:null, lista:[] });
+    var h = { headers:{ apikey:cfg.key, Authorization:'Bearer ' + cfg.key } };
+    return Promise.all([
+      fetch(cfg.url + '/rest/v1/resenas_resumen?curso_id=eq.' + encodeURIComponent(cursoId) + '&select=*', h).then(function(r){ return r.ok ? r.json() : []; }),
+      fetch(cfg.url + '/rest/v1/resenas?curso_id=eq.' + encodeURIComponent(cursoId) + '&estado=eq.aprobada&select=estrellas,comentario,nombre_publico,creado_en&order=creado_en.desc&limit=6', h).then(function(r){ return r.ok ? r.json() : []; })
+    ]).then(function(r){ return { resumen:(r[0] && r[0][0]) || null, lista:r[1] || [] }; });
+  },
+  guardarResena: function(BD, uid, cursoId, estrellas, comentario){
+    return rest('resenas?on_conflict=usuario_id,curso_id', { metodo:'POST', prefer:'resolution=merge-duplicates,return=representation',
+      cuerpo:[{ usuario_id:uid, curso_id:cursoId, estrellas:estrellas, comentario:comentario }] })
+      .then(function(f){
+        var fila = f && f[0]; if(!fila) return null;
+        BD.misResenas = (BD.misResenas || []).filter(function(x){ return x.curso_id !== cursoId; }).concat([fila]);
+        return fila;
+      });
+  },
+  adminResenas: function(){ return rest('resenas?select=*&order=creado_en.desc&limit=1000'); },
+  moderarResena: function(id, estado){
+    return rest('resenas?id=eq.' + id, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ estado:estado } });
   },
 
   /* El administrador ve a todos: alumnos, inscripciones, pagos y dudas. */
