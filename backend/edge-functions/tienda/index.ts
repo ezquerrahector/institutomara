@@ -298,7 +298,7 @@ async function activarCompraEmpresa(compraId: string, pagoId: string, monto: num
     plantilla("¡Gracias por confiar en Instituto Mara!",
       `<p style="font-size:16px;line-height:1.6">Confirmamos el pago de <b>${e0.lugares} lugares</b> de <b>${e(c.nombre)}</b> para <b>${e(e0.empresa)}</b> (${dinero(e0.total)}).</p>` +
       `<p style="font-size:15px;line-height:1.6">Desde tu panel puedes asignar cada lugar con el nombre y correo de la persona: le llega una invitación con su código. También puedes copiar el enlace o mandarlo por WhatsApp, y ver el avance de cada quien.</p>` +
-      `<p style="font-size:13px;color:#6b6585">Los códigos valen 12 meses. Si necesitas factura, responde a este correo con tus datos fiscales.</p>`,
+      `<p style="font-size:13px;color:#6b6585">Los códigos valen 12 meses. ¿Necesitas factura? Envía tus datos fiscales (constancia de situación fiscal y uso de CFDI) a contacto@institutomara.com y te la enviamos.</p>`,
       { texto: "Abrir mi panel de empresa", url: `${AULA}?ir=empresas` }));
   return "ok";
 }
