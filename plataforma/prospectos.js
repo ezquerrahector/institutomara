@@ -242,7 +242,7 @@ function prPintarDatos(p){
   var progs = (p.cursos_ids||[]).map(function(cid){ var c = curso(cid); return c ? '<li>'+esc(c.nombre)+' <small style="color:var(--gris)">'+dinero(c.precio)+'</small></li>' : ''; }).join('');
   var extra = p.extra || {}, extraH = Object.keys(extra).map(function(k){ return prCampo(esc(k), extra[k]); }).join('');
   caja.innerHTML = '<div class="encabezado-fila" style="margin-bottom:10px"><h3 style="color:var(--tinta);margin:0">Datos</h3><button class="btn btn-fantasma btn-sm" onclick="prEditar(\''+p.id+'\')">Editar</button></div>'+
-    prCampo('Correo', p.correo, p.correo.split(',').map(function(c){ return prCopiable(c.trim()); }).join('<br>'))+
+    prCampo('Correo', p.correo, String(p.correo||'').split(',').map(function(c){ return prCopiable(c.trim()); }).join('<br>'))+
     prCampo('WhatsApp', p.whatsapp, prCopiable(prTelLimpio(p.whatsapp).slice(-10)))+
     prCampo('Teléfono', p.telefono, prCopiable(prTelLimpio(p.telefono).slice(-10)))+
     prCampo('Dirección', p.direccion)+prCampo('Web / Instagram', p.web, webs)+
@@ -415,7 +415,7 @@ function prTextosGiro(){
   (PR.lista ? Promise.resolve() : prCargar()).then(function(){
     abrirModal('Textos por giro',
       '<p style="color:var(--gris);margin-bottom:12px">El <b>tema</b> va en el asunto («capacitación en ___») y el <b>reto</b> abre el segundo párrafo del primer correo. Agrega aquí los giros nuevos que traigan tus archivos.</p>'+
-      '<div id="tg-lista">'+PR.giros.map(prGiroForm).join('')+'</div>'+
+      '<div id="tg-lista">'+PR.giros.map(function(g){ return prGiroForm(g, false); }).join('')+'</div>'+
       '<h4 style="margin:14px 0 8px">Agregar giro</h4>'+prGiroForm({ segmento:'', tema:'', problema:'', giro_corto:'' }, true)+'<div id="tg-aviso"></div>',
       '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
   });
