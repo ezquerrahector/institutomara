@@ -554,7 +554,11 @@ function formPiloto(id){
   return '<div class="tarjeta" style="background:var(--nube);margin:6px 0 4px"><h4 style="margin-bottom:6px">Crear piloto sin costo</h4>'+
     '<p style="color:var(--gris);font-size:.9rem;margin-bottom:10px">Genera lugares de prueba. Cada persona elige uno de los programas marcados. Al vencer pierde el acceso (conserva su avance) y la constancia solo se libera cuando formalices el piloto.</p>'+
     '<div class="campo"><label for="pl-q">Programas del piloto</label><input id="pl-q" placeholder="Buscar programa…" oninput="filtrarPiloto(this.value)"></div>'+
-    '<div id="pl-lista" style="max-height:230px;overflow:auto;border:1px solid var(--linea);border-radius:10px;padding:8px 10px;background:var(--papel);margin-bottom:12px">'+
+    '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:-4px 0 8px"><button type="button" class="btn btn-linea btn-sm" onclick="marcarPiloto(true)">Seleccionar los que se ven</button>'+
+      '<button type="button" class="btn btn-fantasma btn-sm" onclick="marcarPiloto(false)">Quitar todos</button>'+
+      '<span id="pl-cuenta" style="color:var(--gris);font-size:.9rem">'+(pre.length ? pre.length + (pre.length === 1 ? ' programa elegido' : ' programas elegidos') : 'Ningún programa elegido')+'</span></div>'+
+    '<div id="pl-lista" onchange="contarPiloto()" style="max-height:230px;overflow:auto;border:1px solid var(--linea);border-radius:10px;padding:8px 10px;background:var(--papel);margin-bottom:12px">'+
+      '<p id="pl-vacio" style="display:none;color:var(--gris);margin:4px 0">Ningún programa coincide con la búsqueda.</p>'+
       progs.map(function(c){ return '<label class="pl-op" data-n="'+esc(c.nombre.toLowerCase())+'" style="display:flex;gap:8px;align-items:flex-start;padding:4px 0"><input type="checkbox" value="'+c.id+'"'+(pre.indexOf(c.id) >= 0 ? ' checked' : '')+'> <span>'+esc(c.nombre)+' <small style="color:var(--gris)">'+dinero(c.precio)+'</small></span></label>'; }).join('')+
     '</div>'+
     '<div class="fila"><div class="campo"><label for="pl-n">Lugares</label><input id="pl-n" type="number" min="1" max="50" value="5"></div>'+
@@ -562,9 +566,25 @@ function formPiloto(id){
     '<div class="campo"><label for="pl-nota">Nota (opcional)</label><input id="pl-nota" maxlength="200" placeholder="Ej. campaña empresas León, octubre"></div>'+
     '<div id="pl-aviso"></div><button id="pl-btn" class="btn btn-mor" onclick="crearPiloto(\''+id+'\')">Crear piloto y generar lugares</button></div>';
 }
+function plNorm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
 function filtrarPiloto(q){
-  q = (q||'').toLowerCase();
-  document.querySelectorAll('#pl-lista .pl-op').forEach(function(el){ el.hidden = q && el.getAttribute('data-n').indexOf(q) < 0 && !el.querySelector('input').checked; });
+  q = plNorm(q).trim();
+  var n = 0;
+  document.querySelectorAll('#pl-lista .pl-op').forEach(function(el){
+    var ver = !q || plNorm(el.getAttribute('data-n')).indexOf(q) >= 0;
+    el.style.display = ver ? 'flex' : 'none'; if(ver) n++;
+  });
+  var v = $('pl-vacio'); if(v) v.style.display = n ? 'none' : 'block';
+}
+function marcarPiloto(v){
+  document.querySelectorAll('#pl-lista .pl-op').forEach(function(el){
+    if(!v || el.style.display !== 'none') el.querySelector('input').checked = v;
+  });
+  contarPiloto();
+}
+function contarPiloto(){
+  var n = document.querySelectorAll('#pl-lista input:checked').length, c = $('pl-cuenta');
+  if(c) c.textContent = n ? n + (n === 1 ? ' programa elegido' : ' programas elegidos') : 'Ningún programa elegido';
 }
 function crearPiloto(id){
   var cursos = [].slice.call(document.querySelectorAll('#pl-lista input:checked')).map(function(x){ return x.value; });
