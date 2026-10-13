@@ -200,6 +200,8 @@ async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: st
       sender: { email: REMITENTE, name: NOMBRE },
       replyTo: { email: REMITENTE, name: "Héctor Ezquerra" },
       to: destinos.map((d) => ({ email: d })),
+      // Copia oculta a nuestro buzón (Zoho) para tener cada correo que sale.
+      ...(destinos.some((d) => d.toLowerCase() === REMITENTE.toLowerCase()) ? {} : { bcc: [{ email: REMITENTE }] }),
       subject: m.asunto, htmlContent: m.html, textContent: m.texto,
       tags: ["prospectos"],
     }),
