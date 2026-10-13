@@ -447,7 +447,7 @@ function pintarReporteEmpresa(id){
           '<td>'+esc(k.alumno || k.asignado_nombre || '—')+(k.asignado_correo?'<br><small>'+esc(k.asignado_correo)+'</small>':'')+'</td><td>'+est+'</td><td>'+esc(k.vence||'—')+'</td>'+
           '<td style="white-space:nowrap">'+(k.usuario_id ? '' : '<button class="btn btn-linea btn-sm" onclick="empAsignarLugar(\''+id+'\',\''+esc(k.codigo)+'\')">'+(k.asignado_nombre?'Reenviar':'Asignar')+'</button> '+
             '<button class="btn btn-fantasma btn-sm" onclick="empCompartirLugar(\''+id+'\',\''+esc(k.codigo)+'\')">WhatsApp</button>')+'</td></tr>';
-      }).join('')+'</tbody></table></div></div>' : '<p style="color:var(--gris)">'+(admin ? 'Esta empresa todavía no tiene lugares. Regístralos en «Paquetes y lugares».' : 'Aún no hay lugares comprados.')+'</p>')+
+      }).join('')+'</tbody></table></div></div>' : '<p style="color:var(--gris)">'+(admin ? 'Esta empresa todavía no tiene lugares. Regístralos en «Paquetes y lugares».' : 'Aún no tienes lugares. Cuando Instituto Mara active tu prueba sin costo o compres lugares, aparecerán aquí con el botón «Asignar» para repartirlos entre tu equipo y elegir el curso de cada persona.')+'</p>')+
     '</div>';
   caja.innerHTML = h;
   pintarTablaReporte(id);
@@ -520,9 +520,12 @@ function nombreLugar(k){
 function empLugar(id, cod){ return ((EMP.rep[id]||{}).lugares||[]).filter(function(k){ return k.codigo === cod; })[0]; }
 function empCompartirLugar(id, cod){
   var k = empLugar(id, cod), e = empresaPorId(id), c = k && curso(k.curso_id); if(!k) return;
+  var plazo = k.piloto ? '\n\n⏳ Actívalo antes del ' + fechaLarga(String(k.vence||'').slice(0,10)) + '; tendrás ' + (k.dias_acceso || 15) + ' días de acceso desde que lo actives.' : '';
   var t = k.piloto && !k.curso_id
-    ? '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar de prueba en Instituto Mara, 100% en línea, hasta el ' + (k.vence || '') + '. Elige uno de estos programas:\n' +
-      (k.cursos||[]).map(function(x){ return '• ' + ((curso(x)||{}).nombre || x); }).join('\n') + '\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k)
+    ? '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar de prueba en Instituto Mara, 100% en línea. Elige uno de estos programas:\n' +
+      (k.cursos||[]).map(function(x){ return '• ' + ((curso(x)||{}).nombre || x); }).join('\n') + plazo + '\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k)
+    : k.piloto
+    ? '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar de prueba en *' + (c ? c.nombre : 'un programa') + '* de Instituto Mara, 100% en línea.' + plazo + '\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k)
     : '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar en *' + (c ? c.nombre : 'un programa') + '* de Instituto Mara: 100% en línea y con constancia al terminar.\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k);
   window.open('https://wa.me/?text=' + encodeURIComponent(t), '_blank', 'noopener');
 }
@@ -530,12 +533,17 @@ function empAsignarLugar(id, cod){
   var k = empLugar(id, cod) || {};
   abrirModal('Asignar lugar '+cod,
     '<div class="campo"><label for="al-nom">Nombre de la persona *</label><input id="al-nom" maxlength="120" value="'+esc(k.asignado_nombre||'')+'"></div>'+
-    '<div class="campo"><label for="al-cor">Correo</label><input id="al-cor" type="email" value="'+esc(k.asignado_correo||'')+'"><small style="color:var(--gris)">Le enviamos la invitación con su código. Si lo dejas vacío, solo queda anotado y se lo mandas tú por WhatsApp.</small></div><div id="al-aviso"></div>',
+    '<div class="campo"><label for="al-cor">Correo</label><input id="al-cor" type="email" value="'+esc(k.asignado_correo||'')+'"><small style="color:var(--gris)">Le enviamos la invitación con su código. Si lo dejas vacío, solo queda anotado y se lo mandas tú por WhatsApp.</small></div>'+
+    (k.piloto && k.cursos && k.cursos.length > 1 ? '<div class="campo"><label for="al-curso">Curso para esta persona</label><select id="al-curso"><option value="">Que la persona elija entre los del piloto</option>'+
+      k.cursos.map(function(x){ return '<option value="'+esc(x)+'"'+(k.curso_id===x?' selected':'')+'>'+esc((curso(x)||{}).nombre || x)+'</option>'; }).join('')+'</select></div>' : '')+
+    '<div id="al-aviso"></div>',
     '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="al-btn" class="btn btn-mor" onclick="empGuardarLugar(\''+id+'\',\''+cod+'\')">Guardar y enviar</button>');
 }
 function empGuardarLugar(id, cod){
   var b = $('al-btn'); b.disabled = true;
-  Nube.funcionServidor('tienda', { accion:'empresa_invitar', codigo:cod, nombre:$('al-nom').value.trim(), correo:$('al-cor').value.trim() })
+  var datos = { accion:'empresa_invitar', codigo:cod, nombre:$('al-nom').value.trim(), correo:$('al-cor').value.trim() };
+  if($('al-curso')) datos.cursoId = $('al-curso').value || null;
+  Nube.funcionServidor('tienda', datos)
     .then(function(r){ cerrarModal(); if(r && r.enviado) alert('Invitación enviada.'); cargarReporteEmpresa(id, EMP.rep[id].modo); })
     .catch(function(e){ b.disabled = false; $('al-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
 }
@@ -562,7 +570,8 @@ function formPiloto(id){
       progs.map(function(c){ return '<label class="pl-op" data-n="'+esc(c.nombre.toLowerCase())+'" style="display:flex;gap:8px;align-items:flex-start;padding:4px 0"><input type="checkbox" value="'+c.id+'"'+(pre.indexOf(c.id) >= 0 ? ' checked' : '')+'> <span>'+esc(c.nombre)+' <small style="color:var(--gris)">'+dinero(c.precio)+'</small></span></label>'; }).join('')+
     '</div>'+
     '<div class="fila"><div class="campo"><label for="pl-n">Lugares</label><input id="pl-n" type="number" min="1" max="50" value="5"></div>'+
-    '<div class="campo"><label for="pl-d">Días</label><input id="pl-d" type="number" min="1" max="60" value="15"></div></div>'+
+    '<div class="campo"><label for="pl-d">Días de acceso por persona</label><input id="pl-d" type="number" min="1" max="60" value="15"><small style="color:var(--gris)">Se cuentan desde que cada persona activa su lugar.</small></div>'+
+    '<div class="campo"><label for="pl-plazo">Plazo para activar (días)</label><input id="pl-plazo" type="number" min="1" max="120" value="30"><small style="color:var(--gris)">Después de este plazo, los lugares sin activar vencen.</small></div></div>'+
     '<div class="campo"><label for="pl-nota">Nota (opcional)</label><input id="pl-nota" maxlength="200" placeholder="Ej. campaña empresas León, octubre"></div>'+
     '<div id="pl-aviso"></div><button id="pl-btn" class="btn btn-mor" onclick="crearPiloto(\''+id+'\')">Crear piloto y generar lugares</button></div>';
 }
@@ -588,12 +597,13 @@ function contarPiloto(){
 }
 function crearPiloto(id){
   var cursos = [].slice.call(document.querySelectorAll('#pl-lista input:checked')).map(function(x){ return x.value; });
-  var n = Math.floor(Number($('pl-n').value)), d = Math.floor(Number($('pl-d').value)), av = $('pl-aviso'), b = $('pl-btn');
+  var n = Math.floor(Number($('pl-n').value)), d = Math.floor(Number($('pl-d').value)), pz = Math.floor(Number($('pl-plazo').value)), av = $('pl-aviso'), b = $('pl-btn');
+  if(!(pz >= 1 && pz <= 120)){ av.innerHTML = '<div class="aviso aviso-error">El plazo para activar va de 1 a 120 días.</div>'; return; }
   if(!cursos.length){ av.innerHTML = '<div class="aviso aviso-error">Marca al menos un programa.</div>'; return; }
   if(!(n >= 1 && n <= 50) || !(d >= 1 && d <= 60)){ av.innerHTML = '<div class="aviso aviso-error">Revisa los lugares (1 a 50) y los días (1 a 60).</div>'; return; }
-  if(!confirm('¿Crear un piloto de '+n+' lugares por '+d+' días con '+cursos.length+' programa(s)?')) return;
+  if(!confirm('¿Crear un piloto de '+n+' lugares, con '+d+' días de acceso por persona y '+pz+' días para activarlos, en '+cursos.length+' programa(s)?')) return;
   b.disabled = true;
-  Nube.empresaRpc('empresa_crear_piloto', { p_empresa:id, p_cursos:cursos, p_lugares:n, p_dias:d, p_nota:$('pl-nota').value.trim() })
+  Nube.empresaRpc('empresa_crear_piloto', { p_empresa:id, p_cursos:cursos, p_lugares:n, p_dias:d, p_nota:$('pl-nota').value.trim(), p_plazo:pz })
     .then(function(){
       estado.pilotoCursos = null;
       if(estado.prospectoPiloto) return Nube.tabla('prospectos?id=eq.' + estado.prospectoPiloto, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ estado:'piloto', empresa_id:id } })
@@ -648,4 +658,28 @@ vistaAula = function(){
     (p.vence ? ', con acceso hasta el <b>'+fechaLarga(String(p.vence).slice(0,10))+'</b>' : '')+
     '. Tu avance se guarda; la constancia se libera cuando tu empresa formalice la inscripción.</div>';
   return h.replace('<div class="tarjeta" style="margin-bottom:26px', aviso + '<div class="tarjeta" style="margin-bottom:26px');
+};
+
+
+/* Piloto vencido sin que la empresa lo formalizara: se le ofrece al empleado
+   continuar por su cuenta con un descuento (lo atiende Instituto Mara por WhatsApp). */
+function pilotosVencidosMios(){
+  if(!sesion || sesion.rol === 'admin') return [];
+  return BD.inscripciones.filter(function(x){ return x.usuarioId === sesion.id && x.estatus === 'piloto' && pilotoVencido(x); });
+}
+var _vistaMisCursosBase = vistaMisCursos;
+vistaMisCursos = function(){
+  var h = _vistaMisCursosBase(), l = pilotosVencidosMios();
+  if(!l.length) return h;
+  var cajas = l.map(function(x){
+    var c = curso(x.cursoId) || { nombre:x.cursoId }, a = avance(sesion.id, x.cursoId), pct = c.modulos ? porcentaje(sesion.id, c) : 0;
+    var txt = 'Hola, soy ' + sesion.nombre + '. Tuve un lugar de prueba de mi empresa en «' + c.nombre + '» y terminó. Me gustaría continuarlo por mi cuenta, ¿me pueden dar el descuento?';
+    return '<div class="tarjeta" style="margin-bottom:16px;border-color:var(--morado)">'+
+      '<h3 style="color:var(--tinta);margin-bottom:6px">Tu prueba de ' + esc(c.nombre) + ' terminó</h3>'+
+      '<p style="margin-bottom:12px">Tu acceso de prueba venció el ' + fechaLarga(String(x.vence).slice(0,10)) + (pct ? ' y llevabas <b>' + pct + '%</b>' : '') +
+      '. Tu avance está guardado. Si tu empresa no va a continuar, <b>escríbenos y te damos un descuento especial</b> para que lo termines por tu cuenta y obtengas tu constancia.</p>'+
+      '<a class="btn btn-tur" target="_blank" rel="noopener" href="https://wa.me/528120282120?text=' + encodeURIComponent(txt) + '">Pedir mi descuento por WhatsApp</a></div>';
+  }).join('');
+  var i = h.indexOf('</h2>');
+  return i > 0 ? h.slice(0, i + 5) + '<div style="margin:14px 0 6px">' + cajas + '</div>' + h.slice(i + 5) : cajas + h;
 };
