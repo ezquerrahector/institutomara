@@ -329,6 +329,31 @@ var Nube = {
     return rest('resenas?id=eq.' + id, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ estado:estado } });
   },
 
+  /* ---------- Empresas: administración y administradores de empresa ---------- */
+  misEmpresas: function(){
+    return rest('rpc/mis_empresas', { metodo:'POST', cuerpo:{} }).catch(function(){ return []; });
+  },
+  empresasAdmin: function(){
+    return Promise.all([
+      rest('empresas?select=*&order=nombre'),
+      rest('empresas_admins?select=*&order=creado_en'),
+      rest('empresas_miembros?select=empresa_id,usuario_id'),
+      rest('empresas_compras?select=*&order=creado_en.desc&limit=1000')
+    ]).then(function(r){ return { empresas:r[0]||[], admins:r[1]||[], miembros:r[2]||[], compras:r[3]||[] }; });
+  },
+  guardarEmpresa: function(id, datos){
+    if(id) return rest('empresas?id=eq.' + id, { metodo:'PATCH', prefer:'return=representation', cuerpo:datos }).then(function(f){ return f && f[0]; });
+    return rest('empresas', { metodo:'POST', prefer:'return=representation', cuerpo:datos }).then(function(f){ return f && f[0]; });
+  },
+  empresaRpc: function(nombre, args){ return rest('rpc/' + nombre, { metodo:'POST', cuerpo:args || {} }); },
+  quitarAdminEmpresa: function(id){ return rest('empresas_admins?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }); },
+  quitarMiembroEmpresa: function(empresaId, usuarioId){
+    return rest('empresas_miembros?empresa_id=eq.' + empresaId + '&usuario_id=eq.' + usuarioId, { metodo:'DELETE', prefer:'return=minimal' });
+  },
+  comprasDeEmpresa: function(empresaId){
+    return rest('empresas_compras?select=*&empresa_id=eq.' + empresaId + '&order=creado_en.desc');
+  },
+
   /* El administrador ve a todos: alumnos, inscripciones, pagos y dudas. */
   cargarAdmin: function(BD){
     return Promise.all([
