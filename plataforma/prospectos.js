@@ -96,8 +96,35 @@ function prFiltrados(){
     if(f.chip === 'toca' && !prTocaHoy(p)) return false;
     if(f.chip === 'nuevo' && p.estado !== 'nuevo') return false;
     if(f.chip === 'rebote' && !prResumen(p).reboto) return false;
+    if(f.chip === 'wapend' && !prWaPendiente(p)) return false;
+    if(f.chip === 'llamada' && !prSinWa(p)) return false;
     return !q || [p.nombre, p.segmento, p.correo, p.whatsapp, p.telefono, p.cursos_interes, p.notas].join(' ').toLowerCase().indexOf(q) >= 0;
-  });
+  }).sort(function(a, b){ return (prSinWa(a) ? 1 : 0) - (prSinWa(b) ? 1 : 0); });
+}
+/* «No tiene WhatsApp»: se contacta por llamada y se va al final de la lista. */
+function prSinWa(p){ return !!(p && p.extra && p.extra.sin_whatsapp); }
+function prWaPendiente(p){
+  return !prSinWa(p) && !prResumen(p).whatsapp && ['nuevo','contactado'].indexOf(p.estado) >= 0 && !!(prNumWa(p) || prNumWa(p, true));
+}
+function prMarcarSinWa(id, v){
+  var p = prPorId(id), extra = Object.assign({}, p.extra || {});
+  if(v) extra.sin_whatsapp = true; else delete extra.sin_whatsapp;
+  Nube.tabla('prospectos?id=eq.' + id, { metodo:'PATCH', prefer:'return=representation', cuerpo:{ extra:extra } })
+    .then(function(x){ if(x && x[0]) PR.lista = PR.lista.map(function(q){ return q.id === id ? x[0] : q; }); else p.extra = extra; prPintarFicha(id); prPintarMensajes(id); })
+    .catch(function(e){ alert(e.message); });
+}
+function prLlamada(id, resultado){
+  var p = prPorId(id);
+  prInsertarContacto({ prospecto_id:id, canal:'llamada', sentido:'saliente', resultado:resultado, creado_por:sesion.id,
+    resumen:resultado === 'contestó' ? 'Llamada atendida' : 'Llamada sin respuesta' })
+    .then(function(){ prPintarFicha(id); prPintarMensajes(id); });
+}
+/* Ir uno por uno: la ficha recorre la lista tal como estaba filtrada al abrirla. */
+function prAbrir(id){ PR.cola = prFiltrados().map(function(p){ return p.id; }); estado.prospectoId = id; pintar(); }
+function prSiguiente(paso){
+  var c = PR.cola || [], i = c.indexOf(estado.prospectoId);
+  if(i < 0 || !c[i + paso]) return;
+  estado.prospectoId = c[i + paso]; pintar(); window.scrollTo(0, 0);
 }
 function prPintarLista(){
   var caja = $('pr-datos'); if(!caja || !PR.lista) return;
@@ -120,8 +147,8 @@ function prPintarLista(){
         Object.keys(PR_ESTADOS).map(function(k){ return '<option value="'+k+'"'+(PR.f.estado===k?' selected':'')+'>'+PR_ESTADOS[k]+' ('+cuenta(k)+')</option>'; }).join('')+'</select></div>'+
       '<div class="campo" style="margin:0"><label for="pr-s">Giro</label><select id="pr-s" onchange="PR.f.seg=this.value;prPintarTabla()"><option value="">Todos</option>'+
         Object.keys(segs).sort().map(function(s){ return '<option'+(PR.f.seg===s?' selected':'')+' value="'+esc(s)+'">'+esc(s)+' ('+segs[s]+')</option>'; }).join('')+'</select></div></div>'+
-    '<div class="chips-aula">'+chip('toca','Toca seguimiento', toca)+chip('nuevo','Sin contactar', cuenta('nuevo'))+chip('correo','Con correo', L.filter(function(p){ return p.correo; }).length)+
-      chip('wa','Con WhatsApp', L.filter(function(p){ return p.whatsapp; }).length)+chip('rebote','Correo rebotó', rebotes)+'</div>'+
+    '<div class="chips-aula">'+chip('wapend','WhatsApp pendientes', L.filter(prWaPendiente).length)+chip('toca','Toca seguimiento', toca)+chip('nuevo','Sin contactar', cuenta('nuevo'))+chip('correo','Con correo', L.filter(function(p){ return p.correo; }).length)+
+      chip('wa','Con WhatsApp', L.filter(function(p){ return p.whatsapp; }).length)+chip('rebote','Correo rebotó', rebotes)+chip('llamada','Por llamada', L.filter(prSinWa).length)+'</div>'+
     '<div id="pr-masivo" style="margin:10px 0"></div><div id="pr-tabla"></div>';
   caja.innerHTML = h;
   prPintarTabla();
@@ -164,16 +191,17 @@ function prSeguimientoTxt(p){
   var tc = p.correo && prToca(p,'correo'), tw = p.whatsapp && prToca(p,'whatsapp'), sig = [];
   [[tc,'correo'],[tw,'WhatsApp']].forEach(function(x){ var t = x[0]; if(t && t.toque > 1) sig.push(prOrdinal(t.toque)+' '+x[1]+(t.ya ? ' <b style="color:#B45309">hoy</b>' : ' el '+prFecha(t.cuando))); });
   if(p.secuencia) sig.push('<span class="etiqueta tur">Auto</span>');
+  if(prSinWa(p)) partes.unshift('<span class="etiqueta gris">☎ Por llamada</span>');
   return partes.join('<br>') + (sig.length ? '<br><small style="color:var(--gris)">Siguiente: '+sig.join(' · ')+'</small>' : '');
 }
 function prFila(p){
   return '<tr><td><input type="checkbox" aria-label="Seleccionar '+esc(prCorto(p))+'"'+(PR.sel[p.id]?' checked':'')+' onchange="PR.sel[\''+p.id+'\']=this.checked;prPintarTabla()"></td>'+
-    '<td style="min-width:200px"><a href="#" onclick="estado.prospectoId=\''+p.id+'\';pintar();return false"><b>'+esc(p.nombre)+'</b></a><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.num_origen?' · #'+p.num_origen:'')+'</small></td>'+
+    '<td style="min-width:200px"><a href="#" onclick="prAbrir(\''+p.id+'\');return false"><b>'+esc(p.nombre)+'</b></a><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.num_origen?' · #'+p.num_origen:'')+'</small></td>'+
     '<td style="font-size:.88rem;min-width:220px">'+(p.correo ? prCopiable(p.correo.split(',')[0].trim(), '✉') : '<small style="color:var(--gris)">Sin correo</small>')+'<br>'+
       (p.whatsapp ? prCopiable(prTelLimpio(p.whatsapp).slice(-10), '💬') : p.telefono ? prCopiable(prTelLimpio(p.telefono).slice(-10), '☎') : '')+'</td>'+
     '<td style="font-size:.86rem;min-width:200px">'+prSeguimientoTxt(p)+'</td>'+
     '<td><span class="etiqueta '+(PR_COLOR[p.estado]||'gris')+'">'+esc(PR_ESTADOS[p.estado]||p.estado)+'</span></td>'+
-    '<td><button class="btn btn-linea btn-sm" onclick="estado.prospectoId=\''+p.id+'\';pintar()">Abrir</button></td></tr>';
+    '<td><button class="btn btn-linea btn-sm" onclick="prAbrir(\''+p.id+'\')">Abrir</button></td></tr>';
 }
 function prSelTodos(v){ prFiltrados().forEach(function(p){ PR.sel[p.id] = v; }); prPintarTabla(); }
 function prAuto(v){
@@ -216,7 +244,12 @@ function vistaProspecto(){
     (PR.lista ? Promise.resolve() : prCargar()).then(function(){ prPintarFicha(id); prCargarMensajes(id); })
       .catch(function(e){ var c = $('pf-cab'); if(c) c.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
   }, 0);
-  return '<div class="seccion"><button class="btn btn-fantasma btn-sm" style="margin-bottom:14px" onclick="estado.prospectoId=null;pintar()">← Prospectos</button>'+
+  var c = PR.cola || [], i = c.indexOf(id);
+  var nav = i >= 0 && c.length > 1 ? '<div style="display:flex;gap:8px;align-items:center"><button class="btn btn-fantasma btn-sm"'+(i>0?'':' disabled')+' onclick="prSiguiente(-1)">‹ Anterior</button>'+
+    '<span style="color:var(--gris);font-size:.9rem">'+(i+1)+' de '+c.length+'</span>'+
+    '<button class="btn btn-mor btn-sm"'+(i<c.length-1?'':' disabled')+' onclick="prSiguiente(1)">Siguiente ›</button></div>' : '';
+  return '<div class="seccion"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">'+
+    '<button class="btn btn-fantasma btn-sm" onclick="estado.prospectoId=null;pintar()">← Prospectos</button>'+nav+'</div>'+
     '<div id="pf-cab">Cargando…</div>'+
     '<div class="rejilla" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:18px;align-items:start">'+
       '<div style="min-width:0"><div class="tarjeta" id="pf-msg">Preparando mensajes…</div>'+
@@ -334,6 +367,14 @@ function prPintarMensajes(id){
     (m.listo ? '' : '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">«Enviar ahora» se activa cuando estén los secretos BREVO_API_KEY y CORREO_REMITENTE en Supabase. Mientras, cópialo y envíalo desde Zoho.</p>')+
     '<label style="display:flex;gap:8px;align-items:center;margin-top:12px"><input type="checkbox"'+(p.secuencia?' checked':'')+' onchange="prSecuencia(\''+id+'\',this.checked)"> Seguimientos automáticos por correo</label>')+
     '<hr style="border:0;border-top:1px solid var(--linea);margin:18px 0">'+
+    (prSinWa(p) ?
+      '<h3 style="color:var(--tinta);margin-bottom:8px">☎ Contactar por llamada</h3>'+
+      '<p style="margin-bottom:10px">Marcaste que no tiene WhatsApp. Teléfono: '+(p.telefono ? prCopiable(prTelLimpio(p.telefono).slice(-10)) : 'sin teléfono')+'</p>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-linea btn-sm" onclick="prLlamada(\''+id+'\',\'contestó\')">Llamé y contestó</button>'+
+      '<button class="btn btn-linea btn-sm" onclick="prLlamada(\''+id+'\',\'sin respuesta\')">Llamé y no contestó</button>'+
+      '<button class="btn btn-fantasma btn-sm" onclick="prMarcarSinWa(\''+id+'\',false)">Sí tiene WhatsApp</button></div>'+
+      '<p style="color:var(--gris);font-size:.85rem;margin-top:8px">Si te interesa la propuesta, usa «Registrar un contacto o respuesta» → «Me respondió».</p>'
+    :
     '<h3 style="color:var(--tinta);margin-bottom:8px">WhatsApp · '+prOrdinal(m.toqueWa)+' toque</h3>'+
     (finW ? '<p style="color:var(--gris)">Ya recibió los 3 mensajes.</p>' :
     '<pre style="white-space:pre-wrap;font-family:inherit;font-size:.9rem;background:#E7F6F3;border:1px solid var(--linea);border-radius:10px;padding:12px">'+esc(m.whatsapp)+'</pre>'+
@@ -343,7 +384,8 @@ function prPintarMensajes(id){
           : '<span style="color:var(--gris);font-size:.88rem">Sin teléfono registrado.</span>')+
       '<button class="btn btn-linea btn-sm" onclick="prCopiar(this,PR.msg[\''+id+'\'].whatsapp)">Copiar mensaje</button>'+
       (wa || waTel ? '' : '<button class="btn btn-fantasma btn-sm" onclick="prMarcar(\''+id+'\',\'whatsapp\')">Ya lo envié</button>')+'</div>'+
-      (waTel ? '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">No tenemos su WhatsApp; se intenta con su teléfono ('+esc(prTelLimpio(p.telefono).slice(-10))+'). Si WhatsApp dice que el número no tiene cuenta, es un fijo: borra el registro del historial con la ×.</p>' : ''));
+      (waTel ? '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">No tenemos su WhatsApp; se intenta con su teléfono ('+esc(prTelLimpio(p.telefono).slice(-10))+'). Si WhatsApp dice que el número no tiene cuenta, es un fijo.</p>' : '')+
+      '<button class="btn btn-fantasma btn-sm" style="margin-top:8px" onclick="prMarcarSinWa(\''+id+'\',true)">☎ No tiene WhatsApp: contactar por llamada</button>'));
 }
 function prEnviarUno(id){
   var p = prPorId(id), m = PR.msg[id];
