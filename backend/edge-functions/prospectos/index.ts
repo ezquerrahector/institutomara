@@ -2,6 +2,7 @@
 // ----------------------------------------------------------------------------
 // Campañas a empresas (Administración → Prospectos).
 // Acciones (POST { accion, ... }):
+//   correo    { para, asunto, texto } → envía un correo suelto por Brevo (solo admin)
 //   mensajes  { id, toque? }   → { toque, asunto, texto, html, whatsapp }   (vista previa; solo admin)
 //   enviar    { ids: [], toque? } → { enviados, fallas }  envía por Brevo y registra el contacto (solo admin)
 //   diaria    (llave de servicio, tarea programada) → seguimientos automáticos si están encendidos en ajustes
@@ -265,6 +266,18 @@ serve(async (req) => {
 
     if (!BREVO || !REMITENTE) {
       return json({ error: "Falta configurar el envío: agrega BREVO_API_KEY y CORREO_REMITENTE en Supabase → Edge Functions → Secrets." }, 500);
+    }
+
+    // Correo suelto desde Administración (por ejemplo, el acceso al panel de una empresa).
+    if (accion === "correo") {
+      if (u.servicio) return json({ error: "Solo administración." }, 403);
+      const para = String(body.para || "").trim();
+      const asunto = String(body.asunto || "").trim().slice(0, 200);
+      const texto = String(body.texto || "").replace(/\*/g, "").trim().slice(0, 8000);
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(para)) return json({ error: "Revisa el correo del destinatario." }, 400);
+      if (!asunto || !texto) return json({ error: "Falta el asunto o el mensaje." }, 400);
+      await mandar({ correo: para }, { asunto, texto, html: aHtml(texto) });
+      return json({ ok: true });
     }
 
     if (accion === "enviar") {
