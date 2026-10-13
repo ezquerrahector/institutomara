@@ -310,7 +310,11 @@ async function invitarEmpresa(u: any, b: any) {
   if (correoP && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correoP)) return json({ error: "Revisa el correo." }, 400);
   const k = (await db(`empresas_codigos?codigo=eq.${encodeURIComponent(cod)}&select=*,empresas_compras(*)`))[0];
   const comp = k && k.empresas_compras;
-  if (!k || !comp || (comp.comprador_id !== u.id && u.rol !== "admin")) return json({ error: "Ese código no es de tu empresa." }, 404);
+  let adminEmpresa = false;
+  if (k && comp && comp.empresa_id && comp.comprador_id !== u.id && u.rol !== "admin") {
+    adminEmpresa = (await db(`empresas_admins?empresa_id=eq.${comp.empresa_id}&usuario_id=eq.${u.id}&select=id`)).length > 0;
+  }
+  if (!k || !comp || (comp.comprador_id !== u.id && u.rol !== "admin" && !adminEmpresa)) return json({ error: "Ese código no es de tu empresa." }, 404);
   if (k.usuario_id) return json({ error: "Ese lugar ya lo activó otra persona." }, 409);
   let enviado = false;
   if (correoP) {
