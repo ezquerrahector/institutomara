@@ -352,7 +352,8 @@ function vistaPortalEmpresa(){
     (l.length > 1 ? '<select class="no-imprimir" onchange="estado.empresaId=this.value;pintar()">'+l.map(function(x){ return '<option value="'+x.id+'"'+(x.id===e.id?' selected':'')+'>'+esc(x.nombre)+'</option>'; }).join('')+'</select>' : '')+
     '</div><div id="rep-emp" style="margin-top:18px">Cargando…</div>'+
     '<div class="no-imprimir" style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-linea" onclick="ir(\'empresas\')">Comprar más lugares</button>'+
-    '<a class="btn btn-fantasma" href="https://wa.me/528120282120?text='+encodeURIComponent('Hola, soy de '+e.nombre+' y quiero cotizar un paquete especial.')+'" target="_blank" rel="noopener">Cotizar un paquete especial</a></div></div>';
+    '<a class="btn btn-fantasma" href="https://wa.me/528120282120?text='+encodeURIComponent('Hola, soy de '+e.nombre+' y quiero cotizar un paquete especial.')+'" target="_blank" rel="noopener">Cotizar un paquete especial</a></div>'+
+    '<p class="no-imprimir" style="color:var(--gris);font-size:.88rem;margin-top:14px">¿Necesitas factura? Envía tus datos fiscales (constancia de situación fiscal y uso de CFDI) a <a href="mailto:contacto@institutomara.com?subject='+encodeURIComponent('Factura '+e.nombre)+'">contacto@institutomara.com</a> y te la enviamos.</p></div>';
 }
 
 /* ---------- Reporte (lo comparten administración y el portal) ---------- */
