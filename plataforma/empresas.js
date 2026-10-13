@@ -440,11 +440,12 @@ function pintarReporteEmpresa(id){
     '<div id="re-tabla"></div>'+
     '<div class="no-imprimir"><div class="encabezado-fila" style="margin:26px 0 10px"><h3 style="margin:0;color:var(--tinta)">Lugares (códigos de acceso)</h3>'+
       (lug.length ? '<button class="btn btn-linea btn-sm" onclick="descargarLugaresEmpresa(\''+id+'\')">Descargar lugares (CSV)</button>' : '')+'</div>'+
+    resumenPilotos(id, lug)+
     (lug.length ? '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Código</th><th>Programa</th><th>Persona</th><th>Estado</th><th>Vence</th><th></th></tr></thead><tbody>'+
       lug.map(function(k){
         var est = k.usuario_id ? '<span class="etiqueta ok">Activado</span>' : k.enviado_en ? '<span class="etiqueta alerta">Invitación enviada</span>' : k.asignado_nombre ? '<span class="etiqueta gris">Asignado</span>' : '<span class="etiqueta gris">Libre</span>';
-        return '<tr><td><code>'+esc(k.codigo)+'</code>'+(k.piloto?'<br><span class="etiqueta alerta">Piloto</span>':'')+'</td><td>'+esc(nombreLugar(k))+'</td>'+
-          '<td>'+esc(k.alumno || k.asignado_nombre || '—')+(k.asignado_correo?'<br><small>'+esc(k.asignado_correo)+'</small>':'')+'</td><td>'+est+'</td><td>'+esc(k.vence||'—')+'</td>'+
+        return '<tr><td><code>'+esc(k.codigo)+'</code>'+(k.piloto?'<br><span class="etiqueta alerta">Piloto</span>':'')+'</td><td>'+celdaPrograma(id, k)+'</td>'+
+          '<td>'+esc(k.alumno || k.asignado_nombre || '—')+(k.asignado_correo?'<br><small>'+esc(k.asignado_correo)+'</small>':'')+'</td><td>'+est+'</td><td>'+celdaVence(k)+'</td>'+
           '<td style="white-space:nowrap">'+(k.usuario_id ? '' : '<button class="btn btn-linea btn-sm" onclick="empAsignarLugar(\''+id+'\',\''+esc(k.codigo)+'\')">'+(k.asignado_nombre?'Reenviar':'Asignar')+'</button> '+
             '<button class="btn btn-fantasma btn-sm" onclick="empCompartirLugar(\''+id+'\',\''+esc(k.codigo)+'\')">WhatsApp</button>')+'</td></tr>';
       }).join('')+'</tbody></table></div></div>' : '<p style="color:var(--gris)">'+(admin ? 'Esta empresa todavía no tiene lugares. Regístralos en «Paquetes y lugares».' : 'Aún no tienes lugares. Cuando Instituto Mara active tu prueba sin costo o compres lugares, aparecerán aquí con el botón «Asignar» para repartirlos entre tu equipo y elegir el curso de cada persona.')+'</p>')+
@@ -683,3 +684,51 @@ vistaMisCursos = function(){
   var i = h.indexOf('</h2>');
   return i > 0 ? h.slice(0, i + 5) + '<div style="margin:14px 0 6px">' + cajas + '</div>' + h.slice(i + 5) : cajas + h;
 };
+
+
+/* Lugares de piloto: celda compacta y lista de programas en una ventana. */
+function celdaPrograma(id, k){
+  if(k.curso_id) return '<b>' + esc((curso(k.curso_id)||{}).nombre || k.curso_id) + '</b>';
+  var n = (k.cursos||[]).length;
+  if(n === 1) return esc((curso(k.cursos[0])||{}).nombre || k.cursos[0]);
+  if(n > 1) return '<span class="etiqueta gris">Por elegir</span> ' + n + ' programas · <a href="#" onclick="verProgramasLugar(\'' + id + '\',\'' + esc(k.codigo) + '\');return false">ver lista</a>';
+  return '—';
+}
+function resumenPilotos(id, lug){
+  var grupos = {};
+  lug.forEach(function(k){ if(!k.piloto) return; var g = grupos[k.compra_id] = grupos[k.compra_id] || { n:0, activos:0, vence:k.vence, dias:k.dias_acceso, cursos:k.cursos||[], codigo:k.codigo };
+    g.n++; if(k.usuario_id) g.activos++; });
+  return Object.keys(grupos).map(function(cid){ var g = grupos[cid];
+    return '<div class="aviso aviso-info" style="margin-bottom:12px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center">'+
+      '<b>Prueba sin costo</b><span>' + g.activos + ' de ' + g.n + ' lugares activados</span>'+
+      '<span>' + (g.dias || 15) + ' días de acceso por persona, desde que activa</span>'+
+      (g.vence ? '<span>Activar antes del ' + fechaLarga(String(g.vence).slice(0,10)) + '</span>' : '')+
+      '<a href="#" onclick="verProgramasLugar(\'' + id + '\',\'' + esc(g.codigo) + '\');return false">' + g.cursos.length + ' programas incluidos</a></div>';
+  }).join('');
+}
+function verProgramasLugar(id, cod){
+  var k = empLugar(id, cod); if(!k) return;
+  var cs = (k.cursos||[]).map(function(x){ return curso(x) || { id:x, nombre:x }; });
+  var dip = cs.filter(function(c){ return c.nivel === 'Diplomados' || /^d-|^diplomado/.test(c.id); }), cur = cs.filter(function(c){ return dip.indexOf(c) < 0; });
+  var lista = function(t, arr){ return arr.length ? '<h4 style="margin:12px 0 6px">' + t + ' (' + arr.length + ')</h4><ul class="pl-prog" style="margin-left:18px;line-height:1.7">' +
+    arr.sort(function(a,b){ return a.nombre.localeCompare(b.nombre); }).map(function(c){ return '<li data-n="' + esc(plNorm(c.nombre)) + '">' + esc(c.nombre) + '</li>'; }).join('') + '</ul>' : ''; };
+  abrirModal('Programas de la prueba',
+    '<p style="color:var(--gris);margin-bottom:10px">Al asignar un lugar puedes elegir el curso de la persona. Si no lo eliges, ella escoge uno de esta lista.</p>'+
+    '<div class="campo" style="margin-bottom:4px"><input id="vp-q" placeholder="Buscar programa…" aria-label="Buscar programa" oninput="var q=plNorm(this.value);document.querySelectorAll(\'.pl-prog li\').forEach(function(li){li.style.display=!q||li.getAttribute(\'data-n\').indexOf(q)>=0?\'\':\'none\';})"></div>'+
+    lista('Diplomados', dip) + lista('Cursos', cur),
+    '<button class="btn btn-mor" onclick="cerrarModal()">Cerrar</button>');
+}
+
+function fechaCortaEmp(iso){
+  if(!iso) return '';
+  var m = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'], d = String(iso).slice(0,10).split('-');
+  return Number(d[2]) + ' ' + m[Number(d[1]) - 1] + ' ' + d[0];
+}
+function celdaVence(k){
+  if(k.piloto && k.usuario_id && k.canjeado_en){
+    var fin = new Date(new Date(k.canjeado_en).getTime() + (k.dias_acceso || 15) * 864e5).toISOString();
+    return '<small style="color:var(--gris)">Acceso hasta el</small><br>' + fechaCortaEmp(fin);
+  }
+  if(!k.vence) return '—';
+  return (k.piloto && !k.usuario_id ? '<small style="color:var(--gris)">Activar antes del</small><br>' : '') + fechaCortaEmp(k.vence);
+}
