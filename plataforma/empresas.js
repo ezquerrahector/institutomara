@@ -290,8 +290,15 @@ function invitarAdminEmpresa(id, aid){
   abrirModal('Enviar acceso a '+(a.nombre||a.correo),
     '<p style="margin-bottom:10px">Mándale este mensaje por WhatsApp o correo:</p><textarea id="ia-txt" rows="7" style="width:100%">'+esc(t)+'</textarea>',
     '<button class="btn btn-fantasma" onclick="copiarTexto($(\'ia-txt\').value)">Copiar</button>'+
-    '<a class="btn btn-linea" href="mailto:'+esc(a.correo)+'?subject='+encodeURIComponent('Tu acceso al panel de '+e.nombre+' · Instituto Mara')+'&body='+encodeURIComponent(t.replace(/\*/g,''))+'">Correo</a>'+
+    '<button id="ia-correo" class="btn btn-linea" onclick="enviarAccesoCorreo(\''+id+'\',\''+aid+'\')">Enviar por correo</button>'+
     '<button class="btn btn-mor" onclick="window.open(\'https://wa.me/?text=\'+encodeURIComponent($(\'ia-txt\').value),\'_blank\',\'noopener\')">WhatsApp</button>');
+}
+function enviarAccesoCorreo(id, aid){
+  var a = EMP.datos.admins.filter(function(x){ return x.id === aid; })[0], e = empresaPorId(id), b = $('ia-correo'); if(!a || !e) return;
+  b.disabled = true; b.textContent = 'Enviando…';
+  Nube.funcionServidor('prospectos', { accion:'correo', para:a.correo, asunto:'Tu acceso al panel de ' + e.nombre + ' · Instituto Mara', texto:$('ia-txt').value })
+    .then(function(){ b.textContent = 'Enviado ✓'; })
+    .catch(function(err){ b.disabled = false; b.textContent = 'Enviar por correo'; alert('No se pudo enviar: ' + err.message); });
 }
 function copiarTexto(t){
   var ok = function(){ alert('Copiado.'); };
