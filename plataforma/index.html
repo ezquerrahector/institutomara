@@ -4966,7 +4966,7 @@ function vistaEmpresas(){
       '<div class="campo"><label for="em-cc">Correo de contacto</label><input id="em-cc" type="email" value="'+esc(sesion.correo)+'"></div></div>'+
       '<div id="em-cot" class="aviso aviso-info"></div><div id="em-aviso"></div>'+
       '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button id="em-btn" class="btn btn-mor" onclick="pagarEmpresa()">Pagar con Mercado Pago</button></div>'+
-      '<p style="color:var(--gris);font-size:.86rem;margin-top:10px">Tarjeta, OXXO o transferencia. Los códigos valen 12 meses. ¿Más de 50 lugares o necesitas factura? Escríbenos desde «Dudas» y te atendemos.</p></div>';
+      '<p style="color:var(--gris);font-size:.86rem;margin-top:10px">Tarjeta, OXXO o transferencia. Los códigos valen 12 meses. ¿Necesitas factura? Envía tus datos fiscales (constancia de situación fiscal y uso de CFDI) a <a href="mailto:contacto@institutomara.com?subject=Factura">contacto@institutomara.com</a>. ¿Más de 50 lugares o un paquete especial? Escríbenos al mismo correo.</p></div>';
   if(mias.length){
     h += '<h3 style="margin-bottom:12px;color:var(--tinta)">Tus paquetes</h3>'+mias.map(function(e){
       var c = programa(e.curso_id);
@@ -5215,6 +5215,6 @@ avisoEnlaceCorreo();
   }
 })();
 </script>
-<script src="empresas.js?v=20261013"></script>
+<script src="empresas.js?v=20261013b"></script>
 </body>
 </html>
