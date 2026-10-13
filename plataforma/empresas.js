@@ -11,7 +11,7 @@ function pendientesDeConstancia(){
   for(i=0;i<BD.constancias.length;i++) tiene[BD.constancias[i].usuarioId+'|'+BD.constancias[i].cursoId] = true;
   for(i=0;i<BD.inscripciones.length;i++){
     var ins = BD.inscripciones[i], c = curso(ins.cursoId), u = usuario(ins.usuarioId);
-    if(!c || !u || tiene[ins.usuarioId+'|'+ins.cursoId]) continue;
+    if(!c || !u || tiene[ins.usuarioId+'|'+ins.cursoId] || ins.estatus === 'piloto') continue;
     if(cursoCompleto(ins.usuarioId, c)) out.push({ usuario:u, curso:c, ins:ins });
   }
   return out;
@@ -309,10 +309,14 @@ function pintarComprasEmpresa(id){
   var progs = BD.cursos.filter(function(c){ return c.publicado && Number(c.precio) > 0; }).sort(function(a,b){ return a.nombre.localeCompare(b.nombre); });
   caja.innerHTML = (l.length ? '<div class="tabla-caja" style="margin-bottom:16px"><div class="tabla-scroll"><table><tr><th>Fecha</th><th>Programa</th><th>Lugares</th><th>Total</th><th>Cómo pagó</th><th>Estado</th></tr>'+
     l.map(function(c){ var p = programa(c.curso_id);
-      return '<tr><td>'+esc(String(c.pagado_en||c.creado_en).slice(0,10))+'</td><td>'+esc(p?p.nombre:c.curso_id)+(c.nota?'<br><small>'+esc(c.nota)+'</small>':'')+'</td><td>'+c.lugares+'</td><td>'+dinero(c.total)+'</td>'+
-        '<td>'+(c.medio==='manual'?'Transferencia / manual':'Mercado Pago')+'</td><td>'+esc(ESTADO_EMP[c.estado]||c.estado)+'</td></tr>'; }).join('')+
+      var prog = c.cursos && c.cursos.length > 1 ? c.cursos.length+' programas a elegir' : esc(p?p.nombre:c.curso_id);
+      var medio = c.medio==='manual' ? 'Transferencia / manual' : c.medio==='piloto' ? 'Sin costo (piloto)' : 'Mercado Pago';
+      return '<tr><td>'+esc(String(c.pagado_en||c.creado_en).slice(0,10))+'</td><td>'+prog+(c.nota?'<br><small>'+esc(c.nota)+'</small>':'')+'</td><td>'+c.lugares+'</td><td>'+dinero(c.total)+'</td>'+
+        '<td>'+medio+'</td><td>'+esc(ESTADO_EMP[c.estado]||c.estado)+
+        (c.estado==='piloto' ? '<br><button class="btn btn-mor btn-sm" style="margin-top:6px" onclick="formalizarPiloto(\''+id+'\',\''+c.id+'\')">Formalizar (ya pagó)</button>' : '')+'</td></tr>'; }).join('')+
     '</table></div></div>' : '<p style="color:var(--gris);margin-bottom:12px">Sin paquetes todavía.</p>')+
-    '<h4 style="margin:6px 0 10px">Registrar venta manual (transferencia, factura o convenio)</h4>'+
+    formPiloto(id)+
+    '<h4 style="margin:22px 0 10px">Registrar venta manual (transferencia, factura o convenio)</h4>'+
     '<div class="campo"><label for="vm-curso">Programa</label><select id="vm-curso" onchange="cotizarVentaManual(\''+id+'\')">'+
       progs.map(function(c){ return '<option value="'+c.id+'">'+esc(c.nombre)+' · '+dinero(c.precio)+'</option>'; }).join('')+'</select></div>'+
     '<div class="fila"><div class="campo"><label for="vm-n">Lugares</label><input id="vm-n" type="number" min="1" max="500" value="5" oninput="cotizarVentaManual(\''+id+'\')"></div>'+
@@ -432,7 +436,7 @@ function pintarReporteEmpresa(id){
     (lug.length ? '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Código</th><th>Programa</th><th>Persona</th><th>Estado</th><th>Vence</th><th></th></tr></thead><tbody>'+
       lug.map(function(k){
         var est = k.usuario_id ? '<span class="etiqueta ok">Activado</span>' : k.enviado_en ? '<span class="etiqueta alerta">Invitación enviada</span>' : k.asignado_nombre ? '<span class="etiqueta gris">Asignado</span>' : '<span class="etiqueta gris">Libre</span>';
-        return '<tr><td><code>'+esc(k.codigo)+'</code></td><td>'+esc((curso(k.curso_id)||{}).nombre||k.curso_id)+'</td>'+
+        return '<tr><td><code>'+esc(k.codigo)+'</code>'+(k.piloto?'<br><span class="etiqueta alerta">Piloto</span>':'')+'</td><td>'+esc(nombreLugar(k))+'</td>'+
           '<td>'+esc(k.alumno || k.asignado_nombre || '—')+(k.asignado_correo?'<br><small>'+esc(k.asignado_correo)+'</small>':'')+'</td><td>'+est+'</td><td>'+esc(k.vence||'—')+'</td>'+
           '<td style="white-space:nowrap">'+(k.usuario_id ? '' : '<button class="btn btn-linea btn-sm" onclick="empAsignarLugar(\''+id+'\',\''+esc(k.codigo)+'\')">'+(k.asignado_nombre?'Reenviar':'Asignar')+'</button> '+
             '<button class="btn btn-fantasma btn-sm" onclick="empCompartirLugar(\''+id+'\',\''+esc(k.codigo)+'\')">WhatsApp</button>')+'</td></tr>';
@@ -495,16 +499,24 @@ function descargarReporteEmpresa(id){
 function descargarLugaresEmpresa(id){
   descargarCSV('lugares-' + hoy() + '.csv', ['Código','Programa','Asignado a','Correo','Estado','Activó','Vence','Enlace de activación'],
     EMP.rep[id].lugares.map(function(k){
-      return [k.codigo, (curso(k.curso_id)||{}).nombre||k.curso_id, k.alumno || k.asignado_nombre || '', k.asignado_correo || '',
+      return [k.codigo, nombreLugar(k), k.alumno || k.asignado_nombre || '', k.asignado_correo || '',
         k.usuario_id ? 'Activado' : k.enviado_en ? 'Invitación enviada' : k.asignado_nombre ? 'Asignado' : 'Libre',
         k.canjeado_en ? String(k.canjeado_en).slice(0,10) : '', k.vence || '', k.usuario_id ? '' : empEnlaceLugar(k)];
     }));
 }
-function empEnlaceLugar(k){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(k.codigo) + '&curso=' + encodeURIComponent(k.curso_id); }
+function empEnlaceLugar(k){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(k.codigo) + (k.curso_id ? '&curso=' + encodeURIComponent(k.curso_id) : ''); }
+function nombreLugar(k){
+  if(k.curso_id) return (curso(k.curso_id)||{}).nombre || k.curso_id;
+  if(k.cursos && k.cursos.length) return 'A elegir: ' + k.cursos.map(function(x){ return (curso(x)||{}).nombre || x; }).join(', ');
+  return '—';
+}
 function empLugar(id, cod){ return ((EMP.rep[id]||{}).lugares||[]).filter(function(k){ return k.codigo === cod; })[0]; }
 function empCompartirLugar(id, cod){
   var k = empLugar(id, cod), e = empresaPorId(id), c = k && curso(k.curso_id); if(!k) return;
-  var t = '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar en *' + (c ? c.nombre : 'un programa') + '* de Instituto Mara: 100% en línea y con constancia al terminar.\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k);
+  var t = k.piloto && !k.curso_id
+    ? '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar de prueba en Instituto Mara, 100% en línea, hasta el ' + (k.vence || '') + '. Elige uno de estos programas:\n' +
+      (k.cursos||[]).map(function(x){ return '• ' + ((curso(x)||{}).nombre || x); }).join('\n') + '\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k)
+    : '📚 *' + (e ? e.nombre : 'Tu empresa') + '* te dio un lugar en *' + (c ? c.nombre : 'un programa') + '* de Instituto Mara: 100% en línea y con constancia al terminar.\n\n🎟 Tu código: *' + cod + '*\n👉 Actívalo aquí: ' + empEnlaceLugar(k);
   window.open('https://wa.me/?text=' + encodeURIComponent(t), '_blank', 'noopener');
 }
 function empAsignarLugar(id, cod){
@@ -520,3 +532,93 @@ function empGuardarLugar(id, cod){
     .then(function(r){ cerrarModal(); if(r && r.enviado) alert('Invitación enviada.'); cargarReporteEmpresa(id, EMP.rep[id].modo); })
     .catch(function(e){ b.disabled = false; $('al-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
 }
+
+
+/* ==========================================================================
+   Piloto para empresas (13 oct 2026): N lugares sin costo por D días en una
+   lista de programas. La constancia se libera hasta que la empresa paga.
+   Requiere backend/prospectos-piloto.sql.
+   ========================================================================== */
+var PILOTO = { q:'' };
+function formPiloto(id){
+  var pre = (estado.pilotoCursos && estado.pilotoEmpresa === id) ? estado.pilotoCursos : [];
+  var progs = BD.cursos.filter(function(c){ return c.publicado && Number(c.precio) > 0 && !ruta(c.id); })
+    .sort(function(a,b){ var x = pre.indexOf(a.id) >= 0, y = pre.indexOf(b.id) >= 0; return x === y ? a.nombre.localeCompare(b.nombre) : (x ? -1 : 1); });
+  return '<div class="tarjeta" style="background:var(--nube);margin:6px 0 4px"><h4 style="margin-bottom:6px">Crear piloto sin costo</h4>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:10px">Genera lugares de prueba. Cada persona elige uno de los programas marcados. Al vencer pierde el acceso (conserva su avance) y la constancia solo se libera cuando formalices el piloto.</p>'+
+    '<div class="campo"><label for="pl-q">Programas del piloto</label><input id="pl-q" placeholder="Buscar programa…" oninput="filtrarPiloto(this.value)"></div>'+
+    '<div id="pl-lista" style="max-height:230px;overflow:auto;border:1px solid var(--linea);border-radius:10px;padding:8px 10px;background:var(--papel);margin-bottom:12px">'+
+      progs.map(function(c){ return '<label class="pl-op" data-n="'+esc(c.nombre.toLowerCase())+'" style="display:flex;gap:8px;align-items:flex-start;padding:4px 0"><input type="checkbox" value="'+c.id+'"'+(pre.indexOf(c.id) >= 0 ? ' checked' : '')+'> <span>'+esc(c.nombre)+' <small style="color:var(--gris)">'+dinero(c.precio)+'</small></span></label>'; }).join('')+
+    '</div>'+
+    '<div class="fila"><div class="campo"><label for="pl-n">Lugares</label><input id="pl-n" type="number" min="1" max="50" value="5"></div>'+
+    '<div class="campo"><label for="pl-d">Días</label><input id="pl-d" type="number" min="1" max="60" value="15"></div></div>'+
+    '<div class="campo"><label for="pl-nota">Nota (opcional)</label><input id="pl-nota" maxlength="200" placeholder="Ej. campaña empresas León, octubre"></div>'+
+    '<div id="pl-aviso"></div><button id="pl-btn" class="btn btn-mor" onclick="crearPiloto(\''+id+'\')">Crear piloto y generar lugares</button></div>';
+}
+function filtrarPiloto(q){
+  q = (q||'').toLowerCase();
+  document.querySelectorAll('#pl-lista .pl-op').forEach(function(el){ el.hidden = q && el.getAttribute('data-n').indexOf(q) < 0 && !el.querySelector('input').checked; });
+}
+function crearPiloto(id){
+  var cursos = [].slice.call(document.querySelectorAll('#pl-lista input:checked')).map(function(x){ return x.value; });
+  var n = Math.floor(Number($('pl-n').value)), d = Math.floor(Number($('pl-d').value)), av = $('pl-aviso'), b = $('pl-btn');
+  if(!cursos.length){ av.innerHTML = '<div class="aviso aviso-error">Marca al menos un programa.</div>'; return; }
+  if(!(n >= 1 && n <= 50) || !(d >= 1 && d <= 60)){ av.innerHTML = '<div class="aviso aviso-error">Revisa los lugares (1 a 50) y los días (1 a 60).</div>'; return; }
+  if(!confirm('¿Crear un piloto de '+n+' lugares por '+d+' días con '+cursos.length+' programa(s)?')) return;
+  b.disabled = true;
+  Nube.empresaRpc('empresa_crear_piloto', { p_empresa:id, p_cursos:cursos, p_lugares:n, p_dias:d, p_nota:$('pl-nota').value.trim() })
+    .then(function(){
+      estado.pilotoCursos = null;
+      if(estado.prospectoPiloto) return Nube.tabla('prospectos?id=eq.' + estado.prospectoPiloto, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ estado:'piloto', empresa_id:id } })
+        .then(function(){ estado.prospectoPiloto = null; }).catch(function(){});
+    })
+    .then(function(){ pintar(); })
+    .catch(function(e){ b.disabled = false; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'<br><small>Si dice que no existe la función, falta ejecutar backend/prospectos-piloto.sql en Supabase.</small></div>'; });
+}
+function formalizarPiloto(id, compraId){
+  var c = EMP.datos.compras.filter(function(x){ return x.id === compraId; })[0]; if(!c) return;
+  abrirModal('Formalizar piloto',
+    '<p style="margin-bottom:12px">La empresa ya pagó. Al formalizar: quienes entraron conservan su programa sin fecha límite, se libera su constancia, y los lugares que no se usaron pasan a durar 12 meses.</p>'+
+    '<div class="campo"><label for="fp-total">Total cobrado (MXN)</label><input id="fp-total" type="number" min="0" step="0.01"></div>'+
+    '<div class="campo"><label for="fp-nota">Nota (factura, referencia…)</label><input id="fp-nota" maxlength="200"></div><div id="fp-aviso"></div>'+
+    '<p style="color:var(--gris);font-size:.88rem">Si contrataron más lugares de los del piloto, regístralos además con «Venta manual».</p>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="fp-btn" class="btn btn-mor" onclick="confirmarFormalizar(\''+id+'\',\''+compraId+'\')">Formalizar</button>');
+}
+function confirmarFormalizar(id, compraId){
+  var t = Number($('fp-total').value), b = $('fp-btn');
+  if(!(t >= 0) || $('fp-total').value === ''){ $('fp-aviso').innerHTML = '<div class="aviso aviso-error">Escribe el total cobrado.</div>'; return; }
+  b.disabled = true;
+  Nube.empresaRpc('empresa_formalizar_piloto', { p_compra:compraId, p_total:t, p_nota:$('fp-nota').value.trim() })
+    .then(function(){ cerrarModal(); pintar(); })
+    .catch(function(e){ b.disabled = false; $('fp-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+
+/* Inscripción de piloto: acceso hasta su fecha y sin constancia. */
+function pilotoDe(cid){
+  if(!sesion) return null;
+  for(var i=0;i<BD.inscripciones.length;i++){ var x = BD.inscripciones[i];
+    if(x.usuarioId === sesion.id && x.cursoId === cid && x.estatus === 'piloto') return x; }
+  return null;
+}
+function pilotoVencido(ins){ return ins && ins.estatus === 'piloto' && ins.vence && String(ins.vence).slice(0,10) < hoy(); }
+var _estaInscritoBase = estaInscrito;
+estaInscrito = function(uid, cid){
+  var ins = _estaInscritoBase(uid, cid);
+  if(ins && pilotoVencido(ins) && !(sesion && sesion.rol === 'admin')) return null;
+  return ins;
+};
+var _bloqueoMembresiaBase = constanciaBloqueadaPorMembresia;
+constanciaBloqueadaPorMembresia = function(c){
+  var p = pilotoDe(c.id);
+  if(p) return 'Ya terminaste todo el programa. Lo tomaste con un <b>lugar de prueba</b> de tu empresa, así que tu constancia se libera en cuanto tu empresa formalice la inscripción. Tu avance queda guardado.';
+  return _bloqueoMembresiaBase(c);
+};
+var _vistaAulaBase = vistaAula;
+vistaAula = function(){
+  var h = _vistaAulaBase(), p = pilotoDe(estado.cursoId);
+  if(!p) return h;
+  var aviso = '<div class="aviso aviso-info" style="margin-bottom:18px">Estás usando un <b>lugar de prueba</b> de tu empresa'+
+    (p.vence ? ', con acceso hasta el <b>'+fechaLarga(String(p.vence).slice(0,10))+'</b>' : '')+
+    '. Tu avance se guarda; la constancia se libera cuando tu empresa formalice la inscripción.</div>';
+  return h.replace('<div class="tarjeta" style="margin-bottom:26px', aviso + '<div class="tarjeta" style="margin-bottom:26px');
+};

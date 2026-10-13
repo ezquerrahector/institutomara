@@ -346,6 +346,8 @@ var Nube = {
     return rest('empresas', { metodo:'POST', prefer:'return=representation', cuerpo:datos }).then(function(f){ return f && f[0]; });
   },
   empresaRpc: function(nombre, args){ return rest('rpc/' + nombre, { metodo:'POST', cuerpo:args || {} }); },
+  /* Consulta directa a una tabla (solo la usa Administración → Prospectos; RLS solo deja al admin). */
+  tabla: function(ruta, opciones){ return rest(ruta, opciones); },
   quitarAdminEmpresa: function(id){ return rest('empresas_admins?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }); },
   quitarMiembroEmpresa: function(empresaId, usuarioId){
     return rest('empresas_miembros?empresa_id=eq.' + empresaId + '&usuario_id=eq.' + usuarioId, { metodo:'DELETE', prefer:'return=minimal' });
@@ -400,11 +402,11 @@ var Nube = {
         for(var a=0;a<BD.inscripciones.length;a++){
           if(BD.inscripciones[a].usuarioId === f.usuario_id && BD.inscripciones[a].cursoId === f.curso_id){
             BD.inscripciones[a].id = f.id; BD.inscripciones[a].fecha = f.fecha;
-            BD.inscripciones[a].estatus = f.estatus; hay = true;
+            BD.inscripciones[a].estatus = f.estatus; BD.inscripciones[a].vence = f.vence || null; hay = true;
           }
         }
         if(!hay) BD.inscripciones.push({ id:f.id, usuarioId:f.usuario_id, cursoId:f.curso_id,
-                                         fecha:f.fecha, estatus:f.estatus });
+                                         fecha:f.fecha, estatus:f.estatus, vence:f.vence || null });
       }
     }
     if(d.avances){

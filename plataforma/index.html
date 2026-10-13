@@ -579,7 +579,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261013"></script>
+<script src="nube.js?v=20261013p"></script>
 <script src="interactivo.js?v=20260929"></script>
 <script src="cursos/ingles-a1.js?v=20261004"></script>
 <script src="cursos/ia-general.js?v=20261004"></script>
@@ -1782,7 +1782,7 @@ function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
        ['admin-reactivacion','Invitaciones'],['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
-       ['admin-tienda','Membresías y regalos'],['admin-empresas','Empresas'],['admin-resenas','Reseñas'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
+       ['admin-tienda','Membresías y regalos'],['admin-empresas','Empresas'],['admin-prospectos','Prospectos'],['admin-resenas','Reseñas'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
        ['membresia','Membresía'],['constancias','Constancias'],['regalos','Regalar'],['empresas','Empresas'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
   if(sesion.rol !== 'admin' && (BD.misEmpresasAdmin||[]).length) items.unshift(['mi-empresa','Mi empresa']);
@@ -4566,6 +4566,7 @@ function pintar(){
   else if(v==='admin-empresas') h = vistaAdminEmpresas();
   else if(v==='admin-empresa')  h = vistaAdminEmpresa();
   else if(v==='mi-empresa')     h = vistaPortalEmpresa();
+  else if(v==='admin-prospectos') h = vistaAdminProspectos();
   else if(v==='admin-resenas')  h = vistaAdminResenas();
   $('vista').innerHTML = h;
   if(v === 'catalogo') pintarCatalogo();
@@ -4944,7 +4945,7 @@ function cotizaEmpresa(cid, n){
   var pct = pctEmpresa(n), unit = Math.round(Number(c.precio) * (100 - pct)) / 100;
   return { pct:pct, unit:unit, total:Math.round(unit * n * 100) / 100, lista:Number(c.precio) * n };
 }
-var ESTADO_EMP = { pendiente_pago:'Esperando pago', pagado:'Pagado', cancelado:'Cancelado' };
+var ESTADO_EMP = { pendiente_pago:'Esperando pago', pagado:'Pagado', cancelado:'Cancelado', piloto:'Piloto (prueba sin costo)' };
 function vistaEmpresas(){
   var mias = (BD.empresas||[]).filter(function(e){ return e.estado !== 'pendiente_pago'; });
   var progs = BD.cursos.filter(function(c){ return c.publicado && Number(c.precio) > 0 && !ruta(c.id); })
@@ -5215,6 +5216,7 @@ avisoEnlaceCorreo();
   }
 })();
 </script>
-<script src="empresas.js?v=20261013b"></script>
+<script src="empresas.js?v=20261013p"></script>
+<script src="prospectos.js?v=20261013p"></script>
 </body>
 </html>
