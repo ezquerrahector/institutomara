@@ -29,8 +29,8 @@ function prFecha(iso){
   return d.getDate() + ' ' + m[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear() ? ' ' + d.getFullYear() : '');
 }
 function prOrdinal(n){ return n + (n === 1 || n === 3 ? '.er' : '.º'); }
-function prNumWa(p){
-  var t = String(p.whatsapp || '').replace(/\D/g,'');
+function prNumWa(p, conTel){
+  var t = String(p.whatsapp || (conTel ? p.telefono : '') || '').replace(/\D/g,'');
   if(t.length === 10) t = '52' + t;
   return t.length >= 12 ? t : '';
 }
@@ -316,7 +316,7 @@ function prPintarMensajes(id){
   var p = prPorId(id), m = PR.msg[id], caja = $('pf-msg'); if(!caja || !p || !m) return;
   var r = prResumen(p), tc = prToca(p,'correo'), tw = prToca(p,'whatsapp');
   var finC = r.correo && r.correo.toque >= 3, finW = r.whatsapp && r.whatsapp.toque >= 3;
-  var wa = prNumWa(p);
+  var wa = prNumWa(p), waTel = !wa && prNumWa(p, true);
   caja.innerHTML =
     '<div class="encabezado-fila" style="margin-bottom:8px"><h3 style="color:var(--tinta);margin:0">Correo · '+prOrdinal(m.toque)+' toque</h3>'+
       (tc && tc.cuando && !tc.ya ? '<small style="color:var(--gris)">Le toca el '+prFecha(tc.cuando)+'</small>' : '')+'</div>'+
@@ -338,9 +338,12 @@ function prPintarMensajes(id){
     (finW ? '<p style="color:var(--gris)">Ya recibió los 3 mensajes.</p>' :
     '<pre style="white-space:pre-wrap;font-family:inherit;font-size:.9rem;background:#E7F6F3;border:1px solid var(--linea);border-radius:10px;padding:12px">'+esc(m.whatsapp)+'</pre>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">'+
-      (wa ? '<button class="btn btn-tur btn-sm" onclick="prAbrirWa(\''+id+'\')">Abrir WhatsApp y registrar</button>' : '<span style="color:var(--gris);font-size:.88rem">Sin WhatsApp registrado.</span>')+
+      (wa ? '<button class="btn btn-tur btn-sm" onclick="prAbrirWa(\''+id+'\')">Abrir WhatsApp y registrar</button>'
+          : waTel ? '<button class="btn btn-tur btn-sm" onclick="prAbrirWa(\''+id+'\')">Abrir WhatsApp con su teléfono</button>'
+          : '<span style="color:var(--gris);font-size:.88rem">Sin teléfono registrado.</span>')+
       '<button class="btn btn-linea btn-sm" onclick="prCopiar(this,PR.msg[\''+id+'\'].whatsapp)">Copiar mensaje</button>'+
-      (wa ? '' : '<button class="btn btn-fantasma btn-sm" onclick="prMarcar(\''+id+'\',\'whatsapp\')">Ya lo envié</button>')+'</div>');
+      (wa || waTel ? '' : '<button class="btn btn-fantasma btn-sm" onclick="prMarcar(\''+id+'\',\'whatsapp\')">Ya lo envié</button>')+'</div>'+
+      (waTel ? '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">No tenemos su WhatsApp; se intenta con su teléfono ('+esc(prTelLimpio(p.telefono).slice(-10))+'). Si WhatsApp dice que el número no tiene cuenta, es un fijo: borra el registro del historial con la ×.</p>' : ''));
 }
 function prEnviarUno(id){
   var p = prPorId(id), m = PR.msg[id];
@@ -359,7 +362,7 @@ function prMarcar(id, canal){
 }
 function prAbrirWa(id){
   var p = prPorId(id), m = PR.msg[id];
-  window.open('https://wa.me/' + prNumWa(p) + '?text=' + encodeURIComponent(m.whatsapp), '_blank', 'noopener');
+  window.open('https://wa.me/' + (prNumWa(p) || prNumWa(p, true)) + '?text=' + encodeURIComponent(m.whatsapp), '_blank', 'noopener');
   prMarcar(id, 'whatsapp');
 }
 function prSecuencia(id, v){
