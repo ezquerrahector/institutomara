@@ -108,10 +108,7 @@ function armar(p: Prospecto, toque: number, cat: Record<string, Curso>, giro: Re
       (ref ? `${ref} ` : "") + `Con 5 o más lugares aplica un descuento por volumen: ${VOL}.\n\n` +
       `Pueden probar una lección gratis aquí: ${muestra}\nSi prefieren que yo les muestre la plataforma, agendamos 20 minutos por Google Meet o Teams cuando ustedes gusten.\n\n` +
       `Para activar su piloto, basta con responder este correo con el nombre de la persona que lo coordinará.\n\n${FIRMA}${pie}`;
-    whatsapp = `Buen día, ¿hablo con ${n}? Soy Héctor Ezquerra, Director Académico de Instituto Mara, escuela en línea de León.\n\n` +
-      `Capacitamos equipos de trabajo con una plataforma donde la empresa asigna los cursos, ve el avance de cada persona y descarga sus constancias.` +
-      (top.length ? ` Para ${giro ? giro.giro_corto : "su giro"} recomendamos ${top.slice(0, 2).join(" y ")}, entre otros.` : "") +
-      `\n\nLes ofrecemos una prueba sin costo: 5 lugares durante 15 días. ¿Le comparto los detalles por aquí o se los envío por correo?`;
+    whatsapp = waPrimero(p, n, progs, giro);
   } else if (toque === 2) {
     asunto = `${n}: ¿les activo la prueba sin costo para su equipo?`;
     const desde = desdeMin(progs);
@@ -120,14 +117,47 @@ function armar(p: Prospecto, toque: number, cat: Record<string, Curso>, giro: Re
       `• Un panel donde ustedes ven el avance de cada persona y descargan sus constancias.\n` +
       `• Si deciden continuar, ${desde ? "desde " + desde + " por colaborador, " : ""}con descuento por volumen.\n\n` +
       `Para activarlo solo necesito el nombre de la persona que lo coordinará. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
-    whatsapp = `Buen día, soy Héctor Ezquerra de Instituto Mara. Les escribí hace unos días sobre la prueba sin costo de 5 lugares para capacitar a su equipo, con panel de avance y constancias. ¿Les interesa que la active? Solo necesito el nombre de quien la coordinará.`;
+    const dos = progs.slice(0, 2).map((c) => cortoPrograma(c.nombre));
+    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les escribí para regalarles 5 lugares por 15 días` +
+      (dos.length ? ` para que su equipo pruebe nuestros cursos de ${dos.join(" y ")}` : " para que su equipo pruebe nuestros cursos") +
+      `.\n\nLa invitación sigue en pie, sin compromiso. ¿Con quién lo podría ver?`;
   } else {
     asunto = `${n}: ¿lo dejamos para más adelante?`;
     texto = `${saludo}\n\nNo quiero llenar su bandeja, así que este es mi último mensaje sobre el tema. Si la capacitación de su equipo no es prioridad en este momento, lo entiendo perfectamente.\n\n` +
       `Si más adelante les interesa, la prueba de 5 lugares sin costo sigue disponible: basta con responder este correo. Y si en la empresa hay otra persona que vea capacitación o Recursos Humanos, les agradeceré mucho que se lo reenvíen.\n\n${FIRMA}${pie}`;
-    whatsapp = `Buen día, soy Héctor de Instituto Mara. Último mensaje de mi parte: si la capacitación de su equipo no es prioridad ahora, sin problema. Si más adelante les interesa la prueba sin costo de 5 lugares, aquí estoy. ¡Gracias!`;
+    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. No quiero insistir de más: si la capacitación de su equipo no es prioridad ahorita, lo entiendo perfecto.\n\n` +
+      `Los 5 lugares sin costo quedan apartados para cuando les sirva; nada más me escriben por aquí. ¡Que tengan muy buena semana!`;
   }
   return { toque: Math.min(Math.max(toque, 1), 3), asunto, texto, html: aHtml(texto), whatsapp };
+}
+
+// Nombre corto de un programa para WhatsApp: «Diplomado NOM-035: Factores…» → «NOM-035».
+function cortoPrograma(nombre: string) {
+  return String(nombre).replace(/^Diplomado (en |de )?/i, "").split(":")[0].replace(/\s*\(.*?\)\s*/g, " ").trim();
+}
+// El gancho del correo, adaptado para seguir a «Le escribo porque…».
+function ganchoWa(p: Prospecto, n: string) {
+  const g = String(p.gancho || "").trim().replace(/\.\s*$/, "");
+  if (!g) return `conozco el trabajo de ${n} aquí en León`;
+  const auto = g.match(/^En sus reseñas, sus clientes destacan:\s*(.+)$/i);
+  if (auto) return `vi que sus clientes destacan «${auto[1]}»`;
+  const primera = g.split(" ")[0];
+  const comunes = ["Sus", "Quienes", "Con", "Las", "Los", "En", "El", "La", "Para"];
+  return comunes.indexOf(primera) >= 0 ? g.charAt(0).toLowerCase() + g.slice(1) : g;
+}
+function sinParar(seg: string) {
+  const s = String(seg || "").toLowerCase();
+  if (/calzado|curtidur|manufactura|industria/.test(s)) return "sin parar la producción";
+  if (/hospital|clínica|hotel|seguridad|call center|residencia|funeraria|diagnóstico/.test(s)) return "sin descuidar los turnos";
+  return "sin descuidar el trabajo";
+}
+function waPrimero(p: Prospecto, n: string, progs: Curso[], giro: Record<string, string> | null) {
+  const dos = progs.slice(0, 2).map((c) => cortoPrograma(c.nombre));
+  return `Hola, buen día. Soy Héctor Ezquerra, de aquí de León. Dirijo la parte académica de Instituto Mara, una escuela en línea que capacita equipos de trabajo.\n\n` +
+    `Le escribo porque ${ganchoWa(p, n)}, y creo que les podemos ayudar a que su equipo siga creciendo: que su gente se capacite desde el celular, ${sinParar(p.segmento)}.\n\n` +
+    (dos.length ? `Para ${giro ? giro.giro_corto : "empresas como la suya"} lo que más nos piden es ${dos.join(" y ")}. ` : "") +
+    `Ustedes ven en un panel quién va avanzando y descargan las constancias.\n\n` +
+    `¿Me permite regalarles 5 lugares por 15 días para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
 }
 
 function aHtml(t: string) {
