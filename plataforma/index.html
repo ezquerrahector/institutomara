@@ -579,7 +579,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261006"></script>
+<script src="nube.js?v=20261013"></script>
 <script src="interactivo.js?v=20260929"></script>
 <script src="cursos/ingles-a1.js?v=20261004"></script>
 <script src="cursos/ia-general.js?v=20261004"></script>
@@ -1681,12 +1681,13 @@ function entrarApp(){
   $('rolUsuario').textContent = sesion.rol === 'admin' ? 'Administrador' : 'Alumno';
   pintarAvatar();
   pintarNav();
+  if(window.cargarMisEmpresas) cargarMisEmpresas().catch(function(){});
   var params = new URLSearchParams(location.search);
   var pago = params.get('pago'), cid = params.get('curso');
   if(params.get('membresia') || params.get('regalo')){ if(regresoTienda(params)) return; }
   if(params.get('empresa') && sesion.rol === 'alumno'){ regresoEmpresa(params); return; }
   var irA = params.get('ir');
-  if((irA === 'membresia' || irA === 'regalos' || irA === 'empresas') && sesion.rol === 'alumno'){ history.replaceState(null,'',location.pathname); ir(irA); return; }
+  if((irA === 'membresia' || irA === 'regalos' || irA === 'empresas' || irA === 'constancias' || irA === 'mi-empresa') && sesion.rol === 'alumno'){ history.replaceState(null,'',location.pathname); ir(irA); return; }
 
   if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
@@ -1781,9 +1782,10 @@ function pintarNav(){
   var items = sesion.rol === 'admin'
     ? [['admin-tablero','Tablero'],['admin-cursos','Cursos'],['admin-alumnos','Alumnos'],
        ['admin-reactivacion','Invitaciones'],['admin-pagos','Pagos'],['admin-cupones','Cupones'],['admin-dudas', bandejaDudasEtiqueta()],
-       ['admin-tienda','Membresías y regalos'],['admin-resenas','Reseñas'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
+       ['admin-tienda','Membresías y regalos'],['admin-empresas','Empresas'],['admin-resenas','Reseñas'],['verificacion','Constancias'],['admin-ajustes','Ajustes']]
     : [['mis-cursos','Mis cursos'],['catalogo','Catálogo'],['ia-profesion','IA por profesión'],
        ['membresia','Membresía'],['constancias','Constancias'],['regalos','Regalar'],['empresas','Empresas'],['dudas','Dudas'],['mi-perfil','Mi perfil']];
+  if(sesion.rol !== 'admin' && (BD.misEmpresasAdmin||[]).length) items.unshift(['mi-empresa','Mi empresa']);
   var h = '';
   for(var i=0;i<items.length;i++)
     h += '<button data-v="'+items[i][0]+'">'+items[i][1]+'</button>';
@@ -4561,6 +4563,9 @@ function pintar(){
   else if(v==='regalos')        h = vistaRegalos();
   else if(v==='admin-tienda')   h = vistaAdminTienda();
   else if(v==='empresas')       h = vistaEmpresas();
+  else if(v==='admin-empresas') h = vistaAdminEmpresas();
+  else if(v==='admin-empresa')  h = vistaAdminEmpresa();
+  else if(v==='mi-empresa')     h = vistaPortalEmpresa();
   else if(v==='admin-resenas')  h = vistaAdminResenas();
   $('vista').innerHTML = h;
   if(v === 'catalogo') pintarCatalogo();
@@ -5210,5 +5215,6 @@ avisoEnlaceCorreo();
   }
 })();
 </script>
+<script src="empresas.js?v=20261013"></script>
 </body>
 </html>
