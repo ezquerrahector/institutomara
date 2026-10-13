@@ -9,7 +9,7 @@
 //   regalo               { cursoId, paraNombre, paraCorreo?, paraTel?, mensaje?, deNombre?, entregarEn?, urlRegreso } → { init_point }
 //   recompra             { cursoId }  (al obtener una constancia)                    → { codigo, pct, vence }
 //   empresa              { cursoId, lugares (5-50), empresa, rfc?, contactoNombre?, contactoCorreo?, contactoTel?, urlRegreso } → { init_point }
-//   empresa_invitar      { codigo, nombre, correo }  (asigna un lugar y le envía la invitación) → { ok }
+//   empresa_invitar      { codigo, nombre, correo, cursoId? }  (asigna un lugar y le envía la invitación) → { ok }
 //   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias }
 // Secretos: MP_ACCESS_TOKEN, BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE (opcional),
 //           MP_WEBHOOK_URL (opcional), URL_AULA (opcional). SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY los pone Supabase.
@@ -316,18 +316,37 @@ async function invitarEmpresa(u: any, b: any) {
   }
   if (!k || !comp || (comp.comprador_id !== u.id && u.rol !== "admin" && !adminEmpresa)) return json({ error: "Ese código no es de tu empresa." }, 404);
   if (k.usuario_id) return json({ error: "Ese lugar ya lo activó otra persona." }, 409);
+  // Piloto con varios programas: la empresa puede fijar el curso de esta persona (o dejar que elija).
+  const lista: string[] = Array.isArray(comp.cursos) && comp.cursos.length ? comp.cursos : [];
+  const cup = (await db(`cupones?codigo=eq.${encodeURIComponent(cod)}&select=piloto,vence,dias_acceso`))[0] || {};
+  let fijo: string | null = lista.length ? (k.curso_id || null) : comp.curso_id;
+  if (lista.length && b.cursoId !== undefined) {
+    const cid = b.cursoId ? String(b.cursoId) : null;
+    if (cid && lista.indexOf(cid) < 0) return json({ error: "Ese programa no es parte del piloto." }, 400);
+    fijo = cid;
+    await db(`cupones?codigo=eq.${encodeURIComponent(cod)}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { cursos: cid ? [cid] : lista } });
+  }
   let enviado = false;
   if (correoP) {
-    const c = (await db(`cursos?id=eq.${encodeURIComponent(comp.curso_id)}&select=nombre`))[0] || { nombre: comp.curso_id };
-    const enlace = `${AULA}?cupon=${encodeURIComponent(cod)}&curso=${encodeURIComponent(comp.curso_id)}`;
-    enviado = await correo(correoP, nombre, `${comp.empresa} te inscribió en ${c.nombre}`,
+    const ids = fijo ? [fijo] : lista;
+    const cs = await db(`cursos?id=in.(${ids.map((x) => encodeURIComponent(x)).join(",")})&select=id,nombre`);
+    const nom = (id: string) => (cs.find((x: any) => x.id === id) || { nombre: id }).nombre;
+    const enlace = `${AULA}?cupon=${encodeURIComponent(cod)}` + (fijo ? `&curso=${encodeURIComponent(fijo)}` : "");
+    const plazo = cup.piloto
+      ? `<p style="font-size:15px;line-height:1.6">Es un lugar de prueba: actívalo antes del <b>${e(String(cup.vence || "").split("-").reverse().join("/"))}</b> y tendrás <b>${Number(cup.dias_acceso) || 15} días</b> de acceso desde que lo actives.</p>`
+      : "";
+    const cuerpoCursos = fijo
+      ? `<p style="font-size:16px;line-height:1.6"><b>${e(comp.empresa)}</b> te dio un lugar en <b>${e(nom(fijo))}</b> de Instituto Mara: 100 % en línea y a tu ritmo.</p>`
+      : `<p style="font-size:16px;line-height:1.6"><b>${e(comp.empresa)}</b> te dio un lugar en Instituto Mara, 100 % en línea y a tu ritmo. Elige uno de estos programas:</p><ul style="font-size:15px;line-height:1.6">${ids.map((x) => `<li>${e(nom(x))}</li>`).join("")}</ul>`;
+    enviado = await correo(correoP, nombre, fijo ? `${comp.empresa} te inscribió en ${nom(fijo)}` : `${comp.empresa} te dio un lugar en Instituto Mara`,
       plantilla(`¡Hola, ${e(nombre.split(" ")[0])}!`,
-        `<p style="font-size:16px;line-height:1.6"><b>${e(comp.empresa)}</b> te dio un lugar en <b>${e(c.nombre)}</b> de Instituto Mara: 100 % en línea, a tu ritmo y con constancia con folio al terminar.</p>` +
+        cuerpoCursos + plazo +
         `<p style="font-size:15px">Tu código personal: <b style="font-size:18px;letter-spacing:1px">${e(cod)}</b><br><small>Al abrir el enlace, crea tu cuenta o entra con la tuya y el lugar se activa solo.</small></p>`,
         { texto: "Empezar mi programa", url: enlace }));
   }
   await db(`empresas_codigos?codigo=eq.${encodeURIComponent(cod)}`, { metodo: "PATCH", prefer: "return=minimal",
-    cuerpo: { asignado_nombre: nombre, asignado_correo: correoP || null, enviado_en: enviado ? new Date().toISOString() : k.enviado_en } });
+    cuerpo: { asignado_nombre: nombre, asignado_correo: correoP || null, enviado_en: enviado ? new Date().toISOString() : k.enviado_en,
+              ...(lista.length ? { curso_id: fijo } : {}) } });
   return json({ ok: true, enviado });
 }
 
