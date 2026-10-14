@@ -311,7 +311,7 @@ create table if not exists prospecto_contactos (
   id uuid primary key default gen_random_uuid(),
   prospecto_id uuid not null references prospectos(id) on delete cascade,
   fecha timestamptz not null default now(),
-  canal text not null check (canal in ('correo','whatsapp','llamada','visita','otro')),
+  canal text not null check (canal in ('correo','whatsapp','llamada','instagram','visita','otro')),
   sentido text not null default 'saliente' check (sentido in ('saliente','entrante')),
   toque int,                               -- 1, 2, 3… (solo salientes)
   asunto text,
