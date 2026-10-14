@@ -4,7 +4,7 @@
    listos para correo y WhatsApp, envío por Brevo y seguimientos automáticos.
    Requiere backend/prospectos-piloto.sql y la función «prospectos». */
 
-var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', chip:'' }, sel:{}, msg:{}, csv:null };
+var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', correo:'', wa:'', sg:'' }, sel:{}, msg:{}, csv:null };
 var PR_ESTADOS = { nuevo:'Sin contactar', contactado:'Contactado', respondio:'Respondió', demo:'Demo agendada',
   piloto:'En piloto', cliente:'Cliente', descartado:'Descartado', baja:'No quiere correos' };
 var PR_COLOR = { nuevo:'gris', contactado:'alerta', respondio:'tur', demo:'tur', piloto:'tur', cliente:'ok', descartado:'gris', baja:'gris' };
@@ -86,20 +86,55 @@ function vistaAdminProspectos(){
     '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-linea" onclick="prTextosGiro()">Textos por giro</button>'+
     '<button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">Cargando…</div></div>';
 }
-function prFiltrados(){
+/* Filtros combinables: un renglón por canal; se suman entre sí (Y). */
+var PR_FILTROS = {
+  correo: { rot:'Correo', ops:[
+    ['enviado','Ya le escribí', function(p){ return !!prResumen(p).correo && !prResumen(p).reboto; }],
+    ['falta','Falta escribirle', function(p){ var r = prResumen(p); return !!p.correo && !r.correo && !r.reboto; }],
+    ['rebote','Rebotó', function(p){ return prResumen(p).reboto; }],
+    ['sin','Sin correo', function(p){ return !p.correo; }] ] },
+  wa: { rot:'WhatsApp', ops:[
+    ['enviado','Ya le escribí', function(p){ return !!prResumen(p).whatsapp; }],
+    ['pend','Pendiente', function(p){ return prWaPendiente(p); }],
+    ['llamada','Por llamada', function(p){ return prSinWa(p); }],
+    ['sin','Sin número', function(p){ return !prSinWa(p) && !prResumen(p).whatsapp && !prNumWa(p, true); }] ] },
+  sg: { rot:'Seguimiento', ops:[
+    ['toca','Toca hoy', function(p){ return prTocaHoy(p); }],
+    ['resp','Respondió', function(p){ return !!prResumen(p).respondio || ['respondio','demo','piloto','cliente'].indexOf(p.estado) >= 0; }],
+    ['nada','Sin respuesta', function(p){ return !prResumen(p).respondio && ['contactado'].indexOf(p.estado) >= 0; }],
+    ['nuevo','Sin contactar', function(p){ return p.estado === 'nuevo'; }] ] }
+};
+function prPasa(p, grupo, valor){
+  if(!valor) return true;
+  var op = PR_FILTROS[grupo].ops.filter(function(o){ return o[0] === valor; })[0];
+  return !op || op[2](p);
+}
+/* omitir: grupo que no se aplica (para contar las opciones de ese renglón). */
+function prFiltrados(omitir){
   var f = PR.f, q = f.q.toLowerCase();
   return (PR.lista||[]).filter(function(p){
     if(f.estado && p.estado !== f.estado) return false;
     if(f.seg && p.segmento !== f.seg) return false;
-    if(f.chip === 'correo' && !p.correo) return false;
-    if(f.chip === 'wa' && !p.whatsapp) return false;
-    if(f.chip === 'toca' && !prTocaHoy(p)) return false;
-    if(f.chip === 'nuevo' && p.estado !== 'nuevo') return false;
-    if(f.chip === 'rebote' && !prResumen(p).reboto) return false;
-    if(f.chip === 'wapend' && !prWaPendiente(p)) return false;
-    if(f.chip === 'llamada' && !prSinWa(p)) return false;
+    for(var g in PR_FILTROS){ if(g !== omitir && !prPasa(p, g, f[g])) return false; }
     return !q || [p.nombre, p.segmento, p.correo, p.whatsapp, p.telefono, p.cursos_interes, p.notas].join(' ').toLowerCase().indexOf(q) >= 0;
   }).sort(function(a, b){ return (prSinWa(a) ? 1 : 0) - (prSinWa(b) ? 1 : 0); });
+}
+function prFiltro(g, v){ PR.f[g] = PR.f[g] === v ? '' : v; prPintarFiltros(); prPintarTabla(); }
+function prLimpiarFiltros(){ PR.f.correo = PR.f.wa = PR.f.sg = PR.f.estado = PR.f.seg = PR.f.q = ''; prPintarLista(); }
+function prPintarFiltros(){
+  var caja = $('pr-filtros'); if(!caja) return;
+  var activos = ['correo','wa','sg'].filter(function(g){ return PR.f[g]; }).length;
+  caja.innerHTML = Object.keys(PR_FILTROS).map(function(g){
+    var F = PR_FILTROS[g], base = prFiltrados(g);
+    return '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px">'+
+      '<b style="min-width:104px;font-size:.9rem">'+F.rot+'</b><div class="chips-aula" style="margin:0">'+
+      '<button class="'+(!PR.f[g]?'on':'')+'" onclick="PR.f.'+g+'=\'\';prPintarFiltros();prPintarTabla()">Todos <small>'+base.length+'</small></button>'+
+      F.ops.map(function(o){
+        var n = base.filter(o[2]).length;
+        return '<button class="'+(PR.f[g]===o[0]?'on':'')+'" onclick="prFiltro(\''+g+'\',\''+o[0]+'\')">'+o[1]+' <small>'+n+'</small></button>';
+      }).join('')+'</div></div>';
+  }).join('') + (activos || PR.f.estado || PR.f.seg || PR.f.q
+    ? '<button class="btn btn-fantasma btn-sm" style="margin-top:2px" onclick="prLimpiarFiltros()">✕ Quitar todos los filtros</button>' : '');
 }
 /* «No tiene WhatsApp»: se contacta por llamada y se va al final de la lista. */
 function prSinWa(p){ return !!(p && p.extra && p.extra.sin_whatsapp); }
@@ -132,7 +167,6 @@ function prPintarLista(){
   var toca = L.filter(prTocaHoy).length, rebotes = L.filter(function(p){ return prResumen(p).reboto; }).length;
   var met = function(rot, val, pie){ return '<div class="metrica"><div class="rot">'+rot+'</div><div class="val">'+val+'</div><div class="pie">'+pie+'</div></div>'; };
   var segs = {}; L.forEach(function(p){ if(p.segmento) segs[p.segmento] = (segs[p.segmento]||0) + 1; });
-  var chip = function(k, t, n){ return '<button class="'+(PR.f.chip===k?'on':'')+'" onclick="PR.f.chip=PR.f.chip===\''+k+'\'?\'\':\''+k+'\';prPintarLista()">'+t+(n!=null?' <small>'+n+'</small>':'')+'</button>'; };
   var h = '<div class="rejilla rejilla-4" style="margin:6px 0 18px">'+
       met('Prospectos', L.length, cuenta('nuevo')+' sin contactar')+
       met('Contactados', cuenta('contactado'), toca ? '<b style="color:#B45309">'+toca+' toca seguimiento hoy</b>' : 'al día')+
@@ -142,15 +176,15 @@ function prPintarLista(){
     '<div class="tarjeta" style="margin-bottom:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between">'+
       '<div style="flex:1;min-width:240px"><b>Seguimientos automáticos por correo</b><br><small style="color:var(--gris)">De lunes a viernes a las 10:00 se envía el 2.º correo a los '+Number(PR.aj.prospectos_dia_2||4)+' días y el 3.º a los '+Number(PR.aj.prospectos_dia_3||10)+' días a quien tenga la secuencia activa y no haya respondido.</small></div>'+
       '<label style="display:flex;gap:8px;align-items:center;font-weight:700"><input type="checkbox" id="pr-auto"'+(PR.aj.prospectos_auto?' checked':'')+' onchange="prAuto(this.checked)"> '+(PR.aj.prospectos_auto?'Encendidos':'Apagados')+'</label></div>'+
-    '<div class="fila" style="margin-bottom:8px"><div class="campo" style="margin:0"><label for="pr-q">Buscar</label><input id="pr-q" placeholder="Empresa, giro, correo, programa…" value="'+esc(PR.f.q)+'" oninput="PR.f.q=this.value;prPintarTabla()"></div>'+
-      '<div class="campo" style="margin:0"><label for="pr-e">Estado</label><select id="pr-e" onchange="PR.f.estado=this.value;prPintarTabla()"><option value="">Todos</option>'+
+    '<div class="fila" style="margin-bottom:8px"><div class="campo" style="margin:0"><label for="pr-q">Buscar</label><input id="pr-q" placeholder="Empresa, giro, correo, programa…" value="'+esc(PR.f.q)+'" oninput="PR.f.q=this.value;prPintarFiltros();prPintarTabla()"></div>'+
+      '<div class="campo" style="margin:0"><label for="pr-e">Estado</label><select id="pr-e" onchange="PR.f.estado=this.value;prPintarFiltros();prPintarTabla()"><option value="">Todos</option>'+
         Object.keys(PR_ESTADOS).map(function(k){ return '<option value="'+k+'"'+(PR.f.estado===k?' selected':'')+'>'+PR_ESTADOS[k]+' ('+cuenta(k)+')</option>'; }).join('')+'</select></div>'+
-      '<div class="campo" style="margin:0"><label for="pr-s">Giro</label><select id="pr-s" onchange="PR.f.seg=this.value;prPintarTabla()"><option value="">Todos</option>'+
+      '<div class="campo" style="margin:0"><label for="pr-s">Giro</label><select id="pr-s" onchange="PR.f.seg=this.value;prPintarFiltros();prPintarTabla()"><option value="">Todos</option>'+
         Object.keys(segs).sort().map(function(s){ return '<option'+(PR.f.seg===s?' selected':'')+' value="'+esc(s)+'">'+esc(s)+' ('+segs[s]+')</option>'; }).join('')+'</select></div></div>'+
-    '<div class="chips-aula">'+chip('wapend','WhatsApp pendientes', L.filter(prWaPendiente).length)+chip('toca','Toca seguimiento', toca)+chip('nuevo','Sin contactar', cuenta('nuevo'))+chip('correo','Con correo', L.filter(function(p){ return p.correo; }).length)+
-      chip('wa','Con WhatsApp', L.filter(function(p){ return p.whatsapp; }).length)+chip('rebote','Correo rebotó', rebotes)+chip('llamada','Por llamada', L.filter(prSinWa).length)+'</div>'+
+    '<div id="pr-filtros" style="margin:4px 0 6px"></div>'+
     '<div id="pr-masivo" style="margin:10px 0"></div><div id="pr-tabla"></div>';
   caja.innerHTML = h;
+  prPintarFiltros();
   prPintarTabla();
 }
 function prPintarTabla(){
