@@ -694,6 +694,18 @@ function prImportar(){
   var d = PR.csv, b = $('csv-btn'), lote = $('csv-lote').value.trim() || ('Carga ' + hoy()); if(!d) return;
   b.disabled = true; b.textContent = 'Importando…';
   var nuevos = d.nuevos.map(function(p){ p.lote = lote; return p; }), pasos = [];
+  /* PostgREST exige que todas las filas de un POST masivo traigan las mismas columnas
+     («All object keys must match»). Se completan las que falten: vacías en null,
+     extra en {} (es NOT NULL) y cursos_ids en lista vacía. */
+  var columnas = {};
+  nuevos.forEach(function(p){ Object.keys(p).forEach(function(k){ columnas[k] = true; }); });
+  nuevos = nuevos.map(function(p){
+    var fila = {};
+    Object.keys(columnas).forEach(function(k){
+      fila[k] = p[k] !== undefined ? p[k] : (k === 'extra' ? {} : k === 'cursos_ids' ? [] : null);
+    });
+    return fila;
+  });
   for(var i=0;i<nuevos.length;i+=200) pasos.push(nuevos.slice(i, i+200));
   var cadena = Promise.resolve();
   pasos.forEach(function(lotePaso){ cadena = cadena.then(function(){ return Nube.tabla('prospectos', { metodo:'POST', prefer:'return=minimal', cuerpo:lotePaso }); }); });
