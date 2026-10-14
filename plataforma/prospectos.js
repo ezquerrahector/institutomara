@@ -4,11 +4,12 @@
    listos para correo y WhatsApp, envío por Brevo y seguimientos automáticos.
    Requiere backend/prospectos-piloto.sql y la función «prospectos». */
 
-var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', correo:'', wa:'', sg:'' }, sel:{}, msg:{}, csv:null };
+var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', correo:'', wa:'', ot:'', sg:'' }, sel:{}, msg:{}, csv:null };
 var PR_ESTADOS = { nuevo:'Sin contactar', contactado:'Contactado', respondio:'Respondió', demo:'Demo agendada',
   piloto:'En piloto', cliente:'Cliente', descartado:'Descartado', baja:'No quiere correos' };
 var PR_COLOR = { nuevo:'gris', contactado:'alerta', respondio:'tur', demo:'tur', piloto:'tur', cliente:'ok', descartado:'gris', baja:'gris' };
-var PR_CANAL = { correo:'Correo', whatsapp:'WhatsApp', llamada:'Llamada', visita:'Visita', otro:'Otro' };
+var PR_CANAL = { correo:'Correo', whatsapp:'WhatsApp', llamada:'Llamada', instagram:'Instagram', visita:'Visita', otro:'Otro' };
+var PR_ICONO = { correo:'✉', whatsapp:'💬', llamada:'☎', instagram:'📷', visita:'🤝', otro:'•' };
 
 function prCargar(){
   return Promise.all([
@@ -38,14 +39,15 @@ function prTelLimpio(t){ return String(t||'').replace(/\D/g,''); }
 
 /* Resumen por canal: cuántos toques, cuándo, si rebotó, si respondió. */
 function prResumen(p){
-  var h = prContactos(p.id), r = { correo:null, whatsapp:null, otros:0, respondio:null, ultimo:null, reboto:false };
+  var h = prContactos(p.id), r = { correo:null, whatsapp:null, otros:0, canales:{}, respondio:null, ultimo:null, reboto:false };
   h.forEach(function(c){
     if(c.sentido === 'entrante'){ if(c.resultado !== 'baja') r.respondio = c; return; }
     if(c.canal === 'correo' || c.canal === 'whatsapp'){
       if(c.canal === 'correo' && c.resultado === 'rebotó'){ r.reboto = true; return; }
+      r.canales[c.canal] = (r.canales[c.canal]||0) + 1;
       var x = r[c.canal] = r[c.canal] || { n:0, toque:0, primero:null, ultimo:null };
       x.n++; x.toque = Math.max(x.toque, Number(c.toque||0)); if(!x.primero || Number(c.toque) === 1) x.primero = x.primero || c.fecha; x.ultimo = c.fecha;
-    } else r.otros++;
+    } else { r.otros++; r.canales[c.canal] = (r.canales[c.canal]||0) + 1; }
     r.ultimo = c;
   });
   if(r.correo && r.correo.ultimo && r.reboto){
@@ -99,6 +101,10 @@ var PR_FILTROS = {
     ['tel','Pendiente (solo teléfono)', function(p){ return prWaPendiente(p) && !prNumWa(p); }],
     ['llamada','Por llamada', function(p){ return prSinWa(p); }],
     ['sin','Sin número', function(p){ return !prSinWa(p) && !prResumen(p).whatsapp && !prNumWa(p, true); }] ] },
+  ot: { rot:'Llamada / Instagram', ops:[
+    ['llamada','Ya le llamé', function(p){ return !!prResumen(p).canales.llamada; }],
+    ['instagram','Ya le escribí por Instagram', function(p){ return !!prResumen(p).canales.instagram; }],
+    ['ninguno','Ni llamada ni Instagram', function(p){ var c = prResumen(p).canales; return !c.llamada && !c.instagram; }] ] },
   sg: { rot:'Seguimiento', ops:[
     ['toca','Toca hoy', function(p){ return prTocaHoy(p); }],
     ['resp','Respondió', function(p){ return !!prResumen(p).respondio || ['respondio','demo','piloto','cliente'].indexOf(p.estado) >= 0; }],
@@ -121,15 +127,15 @@ function prFiltrados(omitir){
   }).sort(function(a, b){ return (prSinWa(a) ? 1 : 0) - (prSinWa(b) ? 1 : 0); });
 }
 function prFiltro(g, v){ PR.f[g] = PR.f[g] === v ? '' : v; prPintarFiltros(); prPintarTabla(); }
-function prLimpiarFiltros(){ PR.f.correo = PR.f.wa = PR.f.sg = PR.f.estado = PR.f.seg = PR.f.q = ''; prPintarLista(); }
+function prLimpiarFiltros(){ PR.f.correo = PR.f.wa = PR.f.ot = PR.f.sg = PR.f.estado = PR.f.seg = PR.f.q = ''; prPintarLista(); }
 function prPintarFiltros(){
   var caja = $('pr-filtros'); if(!caja) return;
-  var activos = ['correo','wa','sg'].filter(function(g){ return PR.f[g]; }).length;
+  var activos = ['correo','wa','ot','sg'].filter(function(g){ return PR.f[g]; }).length;
   caja.innerHTML = Object.keys(PR_FILTROS).map(function(g){
     var F = PR_FILTROS[g], base = prFiltrados(g);
     return '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px">'+
-      '<b style="min-width:104px;font-size:.9rem">'+F.rot+'</b><div class="chips-aula" style="margin:0">'+
-      '<button class="'+(!PR.f[g]?'on':'')+'" onclick="PR.f.'+g+'=\'\';prPintarFiltros();prPintarTabla()">Todos <small>'+base.length+'</small></button>'+
+      '<b style="min-width:150px;font-size:.9rem">'+F.rot+'</b><div class="chips-aula" style="margin:0">'+
+      '<button class="'+(!PR.f[g]?'on':'')+'" title="No filtrar por '+F.rot+'" onclick="PR.f.'+g+'=\'\';prPintarFiltros();prPintarTabla()">Cualquiera <small>'+base.length+'</small></button>'+
       F.ops.map(function(o){
         var n = base.filter(o[2]).length;
         return '<button class="'+(PR.f[g]===o[0]?'on':'')+'" onclick="prFiltro(\''+g+'\',\''+o[0]+'\')">'+o[1]+' <small>'+n+'</small></button>';
@@ -220,7 +226,7 @@ function prSeguimientoTxt(p){
   if(r.correo) partes.push('✉ ' + (r.correo.toque > 1 ? r.correo.toque + ' correos' : '1 correo') + ' · ' + prFecha(r.correo.ultimo));
   if(r.reboto) partes.push('<span style="color:#B91C1C">✉ rebotó</span>');
   if(r.whatsapp) partes.push('💬 ' + (r.whatsapp.toque > 1 ? r.whatsapp.toque + ' WhatsApp' : '1 WhatsApp') + ' · ' + prFecha(r.whatsapp.ultimo));
-  if(r.otros) partes.push(r.otros + ' otro(s)');
+  ['llamada','instagram','visita','otro'].forEach(function(k){ var n = r.canales[k]; if(n) partes.push(PR_ICONO[k] + ' ' + n + ' ' + (k === 'llamada' ? (n > 1 ? 'llamadas' : 'llamada') : PR_CANAL[k])); });
   if(r.respondio) partes.push('<b style="color:#065F46">Respondió ' + prFecha(r.respondio.fecha) + ' por ' + (PR_CANAL[r.respondio.canal]||r.respondio.canal) + '</b>');
   if(!partes.length) partes.push('<span style="color:var(--gris)">Sin contacto</span>');
   var tc = p.correo && prToca(p,'correo'), tw = p.whatsapp && prToca(p,'whatsapp'), sig = [];
@@ -229,13 +235,19 @@ function prSeguimientoTxt(p){
   if(prSinWa(p)) partes.unshift('<span class="etiqueta gris">☎ Por llamada</span>');
   return partes.join('<br>') + (sig.length ? '<br><small style="color:var(--gris)">Siguiente: '+sig.join(' · ')+'</small>' : '');
 }
+/* Canales por los que ya se le contactó (va debajo del estado). */
+function prCanalesTxt(p){
+  var c = prResumen(p).canales, k = ['correo','whatsapp','llamada','instagram','visita','otro'].filter(function(x){ return c[x]; });
+  if(!k.length) return '';
+  return '<div style="font-size:.8rem;color:var(--gris);margin-top:4px;line-height:1.5">por '+k.map(function(x){ return '<span style="white-space:nowrap">'+PR_ICONO[x]+' '+PR_CANAL[x]+'</span>'; }).join(', ')+'</div>';
+}
 function prFila(p){
   return '<tr><td><input type="checkbox" aria-label="Seleccionar '+esc(prCorto(p))+'"'+(PR.sel[p.id]?' checked':'')+' onchange="PR.sel[\''+p.id+'\']=this.checked;prPintarTabla()"></td>'+
     '<td style="min-width:200px"><a href="#" onclick="prAbrir(\''+p.id+'\');return false"><b>'+esc(p.nombre)+'</b></a><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.num_origen?' · #'+p.num_origen:'')+'</small></td>'+
     '<td style="font-size:.88rem;min-width:220px">'+(p.correo ? prCopiable(p.correo.split(',')[0].trim(), '✉') : '<small style="color:var(--gris)">Sin correo</small>')+'<br>'+
       (p.whatsapp ? prCopiable(prTelLimpio(p.whatsapp).slice(-10), '💬') : p.telefono ? prCopiable(prTelLimpio(p.telefono).slice(-10), '☎') : '')+'</td>'+
     '<td style="font-size:.86rem;min-width:200px">'+prSeguimientoTxt(p)+'</td>'+
-    '<td><span class="etiqueta '+(PR_COLOR[p.estado]||'gris')+'">'+esc(PR_ESTADOS[p.estado]||p.estado)+'</span></td>'+
+    '<td><span class="etiqueta '+(PR_COLOR[p.estado]||'gris')+'">'+esc(PR_ESTADOS[p.estado]||p.estado)+'</span>'+prCanalesTxt(p)+'</td>'+
     '<td><button class="btn btn-linea btn-sm" onclick="prAbrir(\''+p.id+'\')">Abrir</button></td></tr>';
 }
 function prSelTodos(v){ prFiltrados().forEach(function(p){ PR.sel[p.id] = v; }); prPintarTabla(); }
@@ -420,7 +432,30 @@ function prPintarMensajes(id){
       '<button class="btn btn-linea btn-sm" onclick="prCopiar(this,PR.msg[\''+id+'\'].whatsapp)">Copiar mensaje</button>'+
       (wa || waTel ? '' : '<button class="btn btn-fantasma btn-sm" onclick="prMarcar(\''+id+'\',\'whatsapp\')">Ya lo envié</button>')+'</div>'+
       (waTel ? '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">No tenemos su WhatsApp; se intenta con su teléfono ('+esc(prTelLimpio(p.telefono).slice(-10))+'). Si WhatsApp dice que el número no tiene cuenta, es un fijo.</p>' : '')+
-      '<button class="btn btn-fantasma btn-sm" style="margin-top:8px" onclick="prMarcarSinWa(\''+id+'\',true)">☎ No tiene WhatsApp: contactar por llamada</button>'));
+      '<button class="btn btn-fantasma btn-sm" style="margin-top:8px" onclick="prMarcarSinWa(\''+id+'\',true)">☎ No tiene WhatsApp: contactar por llamada</button>'))+
+    prOtrosCanales(p);
+}
+/* Instagram y llamadas: se registran con un clic para que cuenten en el estado. */
+function prOtrosCanales(p){
+  var id = p.id, ig = String(p.web || '').split(/[\s,;|]+/).filter(function(u){ return /instagram\.com/i.test(u); })[0];
+  if(ig && !/^https?:/i.test(ig)) ig = 'https://' + ig;
+  var c = prResumen(p).canales;
+  return '<hr style="border:0;border-top:1px solid var(--linea);margin:18px 0">'+
+    '<h3 style="color:var(--tinta);margin-bottom:8px">Otros canales</h3>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">'+
+      (ig ? '<a class="btn btn-linea btn-sm" href="'+esc(ig)+'" target="_blank" rel="noopener">📷 Abrir su Instagram</a>' : '')+
+      '<button class="btn btn-linea btn-sm" onclick="prOtroCanal(\''+id+'\',\'instagram\')">📷 Le escribí por Instagram</button>'+
+      (prSinWa(p) ? '' : '<button class="btn btn-linea btn-sm" onclick="prLlamada(\''+id+'\',\'contestó\')">☎ Llamé y contestó</button>'+
+        '<button class="btn btn-fantasma btn-sm" onclick="prLlamada(\''+id+'\',\'sin respuesta\')">☎ Llamé y no contestó</button>')+
+    '</div>'+
+    (c.instagram || c.llamada ? '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">'+
+      [c.instagram ? '📷 Instagram: ' + c.instagram : '', c.llamada ? '☎ Llamadas: ' + c.llamada : ''].filter(Boolean).join(' · ')+'</p>' : '')+
+    (ig ? '' : '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">Para Instagram puedes copiar el mismo mensaje de WhatsApp.</p>');
+}
+function prOtroCanal(id, canal){
+  prInsertarContacto({ prospecto_id:id, canal:canal, sentido:'saliente', resultado:'enviado', creado_por:sesion.id,
+    resumen:canal === 'instagram' ? 'Mensaje por Instagram' : null })
+    .then(function(){ prPintarFicha(id); prPintarMensajes(id); });
 }
 function prEnviarUno(id){
   var p = prPorId(id), m = PR.msg[id];
