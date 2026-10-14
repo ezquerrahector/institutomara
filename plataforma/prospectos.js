@@ -131,17 +131,20 @@ function prLimpiarFiltros(){ PR.f.correo = PR.f.wa = PR.f.ot = PR.f.sg = PR.f.es
 function prPintarFiltros(){
   var caja = $('pr-filtros'); if(!caja) return;
   var activos = ['correo','wa','ot','sg'].filter(function(g){ return PR.f[g]; }).length;
-  caja.innerHTML = Object.keys(PR_FILTROS).map(function(g){
-    var F = PR_FILTROS[g], base = prFiltrados(g);
-    return '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px">'+
-      '<b style="min-width:150px;font-size:.9rem">'+F.rot+'</b><div class="chips-aula" style="margin:0">'+
-      '<button class="'+(!PR.f[g]?'on':'')+'" title="No filtrar por '+F.rot+'" onclick="PR.f.'+g+'=\'\';prPintarFiltros();prPintarTabla()">Cualquiera <small>'+base.length+'</small></button>'+
-      F.ops.map(function(o){
-        var n = base.filter(o[2]).length;
-        return '<button class="'+(PR.f[g]===o[0]?'on':'')+'" onclick="prFiltro(\''+g+'\',\''+o[0]+'\')">'+o[1]+' <small>'+n+'</small></button>';
-      }).join('')+'</div></div>';
-  }).join('') + (activos || PR.f.estado || PR.f.seg || PR.f.q
-    ? '<button class="btn btn-fantasma btn-sm" style="margin-top:2px" onclick="prLimpiarFiltros()">✕ Quitar todos los filtros</button>' : '');
+  /* Cada renglón es independiente: si no eliges nada en él, no filtra.
+     Un clic elige la opción; otro clic en la misma la quita. */
+  caja.innerHTML = '<p style="color:var(--gris);font-size:.85rem;margin:0 0 8px">Elige solo lo que te interese; los renglones que dejes sin elegir no filtran. Lo que elijas se combina.</p>'+
+    '<div style="display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:6px 12px;align-items:start">'+
+    Object.keys(PR_FILTROS).map(function(g){
+      var F = PR_FILTROS[g], base = prFiltrados(g);
+      return '<b style="font-size:.9rem;padding-top:9px">'+F.rot+'</b><div class="chips-aula" style="margin:0">'+
+        F.ops.map(function(o){
+          var n = base.filter(o[2]).length, on = PR.f[g] === o[0];
+          return '<button class="'+(on?'on':'')+'" title="'+(on?'Quitar este filtro':'Filtrar')+'" onclick="prFiltro(\''+g+'\',\''+o[0]+'\')">'+(on?'✓ ':'')+o[1]+' <small>'+n+'</small>'+(on?' ✕':'')+'</button>';
+        }).join('')+'</div>';
+    }).join('')+'</div>'+
+    (activos || PR.f.estado || PR.f.seg || PR.f.q
+      ? '<button class="btn btn-fantasma btn-sm" style="margin-top:6px" onclick="prLimpiarFiltros()">✕ Quitar todos los filtros</button>' : '');
 }
 /* «No tiene WhatsApp»: se contacta por llamada y se va al final de la lista. */
 function prSinWa(p){ return !!(p && p.extra && p.extra.sin_whatsapp); }
