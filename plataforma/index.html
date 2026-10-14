@@ -1485,6 +1485,18 @@ function moduloAprobado(uid,c,m){
   var a = avance(uid,c.id);
   return (a.quizzes[m.id] != null) && (a.quizzes[m.id] >= BD.config.minimoAprobatorio);
 }
+/* Lecciones del módulo que el alumno aún no marca como vistas. */
+function leccionesFaltantes(uid,c,m){
+  var a = avance(uid,c.id);
+  return m.lecciones.filter(function(l){ return a.lecciones.indexOf(l.id) < 0; });
+}
+/* La evaluación de un módulo se abre al terminar sus lecciones
+   (si ya la aprobó antes, puede repetirla; administración siempre la ve). */
+function quizBloqueado(uid,c,m){
+  if(sesion && sesion.rol === 'admin') return false;
+  if(moduloAprobado(uid,c,m)) return false;
+  return leccionesFaltantes(uid,c,m).length > 0;
+}
 function moduloDisponible(uid,c,idx){
   if(idx===0) return true;
   return moduloAprobado(uid,c,c.modulos[idx-1]);
@@ -2343,7 +2355,14 @@ function vistaAula(){
           '<span style="flex:1">'+esc(lec.titulo)+'</span>'+
           '<span style="font-size:.8rem;color:var(--gris);white-space:nowrap">'+(window.MI ? MI.minutos(lec)+' min' : lec.bloques.length+' bloques')+'</span></div>';
       }
-      if(m.quiz && m.quiz.preguntas.length){
+      if(m.quiz && m.quiz.preguntas.length && quizBloqueado(sesion.id,c,m)){
+        var falt = leccionesFaltantes(sesion.id,c,m).length;
+        h += '<div class="leccion-quiz" style="cursor:default;opacity:.75" title="Termina las lecciones del módulo para abrir la evaluación">'+
+          '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>'+
+          '<div style="flex:1"><b style="color:var(--tinta);font-size:.93rem">'+esc(m.quiz.titulo)+'</b>'+
+          '<div style="font-size:.8rem;color:var(--gris)">Se abre al terminar las lecciones del módulo: te '+(falt === 1 ? 'falta 1 lección' : 'faltan '+falt+' lecciones')+'.</div></div>'+
+          '<span class="etiqueta gris">🔒 Faltan '+falt+'</span></div>';
+      } else if(m.quiz && m.quiz.preguntas.length){
         h += '<div class="leccion-quiz" onclick="ir(\'quiz\',{cursoId:\''+c.id+'\',moduloId:\''+m.id+'\'})">'+
           '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>'+
           '<div style="flex:1"><b style="color:var(--tinta);font-size:.93rem">'+esc(m.quiz.titulo)+'</b>'+
@@ -2558,6 +2577,18 @@ function mezclaAzar(a){
 function vistaQuiz(){
   var c = curso(estado.cursoId), m = modulo(c,estado.moduloId);
   if(!c || !m || !m.quiz) return '';
+  if(quizBloqueado(sesion.id,c,m)){
+    var fal = leccionesFaltantes(sesion.id,c,m);
+    return '<div class="seccion"><div class="quiz">'+
+      '<button class="btn btn-fantasma btn-sm" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">← Volver al curso</button>'+
+      '<h2 style="margin:14px 0 4px">'+esc(m.quiz.titulo)+'</h2>'+
+      '<div class="aviso aviso-info" style="margin-top:12px">🔒 La evaluación se abre al terminar las lecciones de este módulo. Te '+
+        (fal.length === 1 ? 'falta 1 lección' : 'faltan '+fal.length+' lecciones')+':'+
+        '<ul style="margin:8px 0 0 18px">'+fal.map(function(l){ return '<li>'+esc(l.titulo)+'</li>'; }).join('')+'</ul>'+
+        '<p style="margin:8px 0 0">Al final de cada lección da clic en «Marcar vista y continuar».</p></div>'+
+      '<button class="btn btn-mor" style="margin-top:14px" onclick="ir(\'leccion\',{cursoId:\''+c.id+'\',moduloId:\''+m.id+'\',leccionId:\''+fal[0].id+'\'})">Ir a la lección pendiente</button>'+
+      '</div></div>';
+  }
   respuestas = {};
   var h = '<div class="seccion"><div class="quiz">'+
     '<button class="btn btn-fantasma btn-sm" onclick="ir(\'aula\',{cursoId:\''+c.id+'\'})">← Volver al curso</button>'+
