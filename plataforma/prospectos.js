@@ -95,7 +95,8 @@ var PR_FILTROS = {
     ['sin','Sin correo', function(p){ return !p.correo; }] ] },
   wa: { rot:'WhatsApp', ops:[
     ['enviado','Ya le escribí', function(p){ return !!prResumen(p).whatsapp; }],
-    ['pend','Pendiente', function(p){ return prWaPendiente(p); }],
+    ['pend','Pendiente (tiene WhatsApp)', function(p){ return prWaPendiente(p) && !!prNumWa(p); }],
+    ['tel','Pendiente (solo teléfono)', function(p){ return prWaPendiente(p) && !prNumWa(p); }],
     ['llamada','Por llamada', function(p){ return prSinWa(p); }],
     ['sin','Sin número', function(p){ return !prSinWa(p) && !prResumen(p).whatsapp && !prNumWa(p, true); }] ] },
   sg: { rot:'Seguimiento', ops:[
