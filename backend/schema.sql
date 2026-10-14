@@ -123,8 +123,9 @@ alter table constancias enable row level security;
 alter table dudas enable row level security;
 
 -- Función auxiliar: ¿el usuario que hace la consulta es admin?
+-- SECURITY DEFINER: lee perfiles sin volver a pasar por su política (si no, se cicla: stack depth limit exceeded).
 create or replace function es_admin() returns boolean
-language sql stable as $$
+language sql stable security definer set search_path = public as $$
   select exists (select 1 from perfiles where id = auth.uid() and rol = 'admin');
 $$;
 
