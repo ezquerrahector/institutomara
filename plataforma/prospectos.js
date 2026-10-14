@@ -427,7 +427,7 @@ function prPintarMensajes(id){
     :
     '<h3 style="color:var(--tinta);margin-bottom:8px">WhatsApp · '+prOrdinal(m.toqueWa)+' toque</h3>'+
     (finW ? '<p style="color:var(--gris)">Ya recibió los 3 mensajes.</p>' :
-    '<pre style="white-space:pre-wrap;font-family:inherit;font-size:.9rem;background:#E7F6F3;border:1px solid var(--linea);border-radius:10px;padding:12px">'+esc(m.whatsapp)+'</pre>'+
+    '<pre style="white-space:pre-wrap;font-family:inherit;font-size:.9rem;background:#E7F6F3;border:1px solid var(--linea);border-radius:10px;padding:12px">'+esc(m.whatsapp).replace(/\*([^*\n]+)\*/g,'<b>$1</b>')+'</pre>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">'+
       (wa ? '<button class="btn btn-tur btn-sm" onclick="prAbrirWa(\''+id+'\')">Abrir WhatsApp y registrar</button>'
           : waTel ? '<button class="btn btn-tur btn-sm" onclick="prAbrirWa(\''+id+'\')">Abrir WhatsApp con su teléfono</button>'
