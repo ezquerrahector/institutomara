@@ -6,8 +6,8 @@
 
 var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', correo:'', wa:'', ot:'', sg:'' }, sel:{}, msg:{}, csv:null };
 var PR_ESTADOS = { nuevo:'Sin contactar', contactado:'Contactado', respondio:'Respondió', demo:'Demo agendada',
-  piloto:'En piloto', cliente:'Cliente', descartado:'Descartado', baja:'No quiere correos' };
-var PR_COLOR = { nuevo:'gris', contactado:'alerta', respondio:'tur', demo:'tur', piloto:'tur', cliente:'ok', descartado:'gris', baja:'gris' };
+  piloto:'En piloto', cliente:'Cliente', no_interesa:'No le interesó', descartado:'Descartado', baja:'No quiere correos' };
+var PR_COLOR = { nuevo:'gris', contactado:'alerta', respondio:'tur', demo:'tur', piloto:'tur', cliente:'ok', no_interesa:'error', descartado:'gris', baja:'gris' };
 var PR_CANAL = { correo:'Correo', whatsapp:'WhatsApp', llamada:'Llamada', instagram:'Instagram', visita:'Visita', otro:'Otro' };
 var PR_ICONO = { correo:'✉', whatsapp:'💬', llamada:'☎', instagram:'📷', visita:'🤝', otro:'•' };
 
@@ -58,7 +58,7 @@ function prResumen(p){
 }
 /* ¿Le toca el siguiente toque? (mismo calendario para correo y WhatsApp) */
 function prToca(p, canal){
-  if(['respondio','demo','piloto','cliente','descartado','baja'].indexOf(p.estado) >= 0) return null;
+  if(['respondio','demo','piloto','cliente','no_interesa','descartado','baja'].indexOf(p.estado) >= 0) return null;
   var r = prResumen(p), x = r[canal]; if(r.respondio) return null;
   if(!x){ return p.estado === 'nuevo' ? { toque:1, desde:null } : null; }
   if(x.toque >= 3) return null;
@@ -92,7 +92,7 @@ function vistaAdminProspectos(){
 var PR_FILTROS = {
   correo: { rot:'Correo', ops:[
     ['enviado','Ya le escribí', function(p){ return !!prResumen(p).correo && !prResumen(p).reboto; }],
-    ['falta','Falta escribirle', function(p){ var r = prResumen(p); return !!p.correo && !r.correo && !r.reboto; }],
+    ['falta','Falta escribirle', function(p){ var r = prResumen(p); return !!p.correo && !r.correo && !r.reboto && !prNoContactar(p); }],
     ['rebote','Rebotó', function(p){ return prResumen(p).reboto; }],
     ['sin','Sin correo', function(p){ return !p.correo; }] ] },
   wa: { rot:'WhatsApp', ops:[
@@ -107,9 +107,10 @@ var PR_FILTROS = {
     ['ninguno','Ni llamada ni Instagram', function(p){ var c = prResumen(p).canales; return !c.llamada && !c.instagram; }] ] },
   sg: { rot:'Seguimiento', ops:[
     ['toca','Toca hoy', function(p){ return prTocaHoy(p); }],
-    ['resp','Respondió', function(p){ return !!prResumen(p).respondio || ['respondio','demo','piloto','cliente'].indexOf(p.estado) >= 0; }],
+    ['resp','Respondió', function(p){ return p.estado !== 'no_interesa' && (!!prResumen(p).respondio || ['respondio','demo','piloto','cliente'].indexOf(p.estado) >= 0); }],
     ['nada','Sin respuesta', function(p){ return !prResumen(p).respondio && ['contactado'].indexOf(p.estado) >= 0; }],
-    ['nuevo','Sin contactar', function(p){ return p.estado === 'nuevo'; }] ] }
+    ['nuevo','Sin contactar', function(p){ return p.estado === 'nuevo'; }],
+    ['nointeresa','No le interesó', function(p){ return p.estado === 'no_interesa'; }] ] }
 };
 function prPasa(p, grupo, valor){
   if(!valor) return true;
@@ -146,6 +147,8 @@ function prPintarFiltros(){
     (activos || PR.f.estado || PR.f.seg || PR.f.q
       ? '<button class="btn btn-fantasma btn-sm" style="margin-top:6px" onclick="prLimpiarFiltros()">✕ Quitar todos los filtros</button>' : '');
 }
+/* «No le interesó»: lo dijo claramente; ya no se le contacta por ningún canal. */
+function prNoContactar(p){ return !!p && p.estado === 'no_interesa'; }
 /* «No tiene WhatsApp»: se contacta por llamada y se va al final de la lista. */
 function prSinWa(p){ return !!(p && p.extra && p.extra.sin_whatsapp); }
 function prWaPendiente(p){
@@ -178,7 +181,7 @@ function prPintarLista(){
   var met = function(rot, val, pie){ return '<div class="metrica"><div class="rot">'+rot+'</div><div class="val">'+val+'</div><div class="pie">'+pie+'</div></div>'; };
   var segs = {}; L.forEach(function(p){ if(p.segmento) segs[p.segmento] = (segs[p.segmento]||0) + 1; });
   var h = '<div class="rejilla rejilla-4" style="margin:6px 0 18px">'+
-      met('Prospectos', L.length, cuenta('nuevo')+' sin contactar')+
+      met('Prospectos', L.length, cuenta('nuevo')+' sin contactar'+(cuenta('no_interesa') ? ' · '+cuenta('no_interesa')+' no les interesó' : ''))+
       met('Contactados', cuenta('contactado'), toca ? '<b style="color:#B45309">'+toca+' toca seguimiento hoy</b>' : 'al día')+
       met('Respondieron', cuenta('respondio') + cuenta('demo'), cuenta('demo')+' con demo')+
       met('Pilotos y clientes', cuenta('piloto') + cuenta('cliente'), cuenta('cliente')+' clientes')+
@@ -267,8 +270,8 @@ function prSecuenciaMasiva(v){
 }
 function prEnviarMasivo(){
   var ids = Object.keys(PR.sel).filter(function(k){ return PR.sel[k]; });
-  var con = ids.map(prPorId).filter(function(p){ return p && p.correo && p.estado !== 'baja'; });
-  if(!con.length){ alert('Ninguno de los seleccionados tiene correo.'); return; }
+  var con = ids.map(prPorId).filter(function(p){ return p && p.correo && p.estado !== 'baja' && !prNoContactar(p); });
+  if(!con.length){ alert('Ninguno de los seleccionados tiene correo o se puede contactar (los marcados «No le interesó» o «No quiere correos» se omiten).'); return; }
   abrirModal('Enviar correo a '+con.length+' prospecto(s)',
     '<p>Cada uno recibe <b>su siguiente correo</b> de la secuencia (1.º presentación, 2.º recordatorio corto, 3.º cierre), personalizado con su nombre, su giro y sus programas. Sale desde el remitente configurado en Brevo.</p>'+
     '<ul style="margin:10px 0 10px 18px;max-height:180px;overflow:auto">'+con.map(function(p){ var t = prToca(p,'correo'); return '<li>'+esc(prCorto(p))+' — '+(t ? prOrdinal(t.toque)+' correo' : 'ya recibió los 3')+'</li>'; }).join('')+'</ul>'+
@@ -382,7 +385,7 @@ function prBorrarContacto(pid, cid){
     .catch(function(e){ alert(e.message); });
 }
 function prCambiarEstado(id, v){
-  var cambios = { estado:v }; if(['respondio','demo','piloto','cliente','descartado','baja'].indexOf(v) >= 0) cambios.secuencia = false;
+  var cambios = { estado:v }; if(['respondio','demo','piloto','cliente','no_interesa','descartado','baja'].indexOf(v) >= 0) cambios.secuencia = false;
   Nube.tabla('prospectos?id=eq.' + id, { metodo:'PATCH', prefer:'return=representation', cuerpo:cambios })
     .then(function(x){ if(x && x[0]) PR.lista = PR.lista.map(function(p){ return p.id === id ? x[0] : p; }); prPintarFicha(id); })
     .catch(function(e){ alert(e.message); });
@@ -400,6 +403,11 @@ function prPintarMensajes(id){
   var r = prResumen(p), tc = prToca(p,'correo'), tw = prToca(p,'whatsapp');
   var finC = r.correo && r.correo.toque >= 3, finW = r.whatsapp && r.whatsapp.toque >= 3;
   var wa = prNumWa(p), waTel = !wa && prNumWa(p, true);
+  if(prNoContactar(p)){
+    caja.innerHTML = '<div class="aviso aviso-error"><b>No le interesó.</b> Nos dijo claramente que no le interesa: ya no se le envían correos, WhatsApp ni seguimientos. '+
+      'Si vuelve a buscarnos, cambia su estado arriba y aquí aparecerán de nuevo los mensajes.</div>';
+    return;
+  }
   caja.innerHTML =
     '<div class="encabezado-fila" style="margin-bottom:8px"><h3 style="color:var(--tinta);margin:0">Correo · '+prOrdinal(m.toque)+' toque</h3>'+
       (tc && tc.cuando && !tc.ya ? '<small style="color:var(--gris)">Le toca el '+prFecha(tc.cuando)+'</small>' : '')+'</div>'+
