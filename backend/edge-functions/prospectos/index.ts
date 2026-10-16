@@ -101,15 +101,18 @@ function armar(p: Prospecto, toque: number, cat: Record<string, Curso>, giro: Re
     const problema = giro ? giro.problema + " " : "";
     const muestra = progs[0] ? `${AULA}?muestra=${encodeURIComponent(progs[0].id)}` : AULA;
     const ref = referencia(progs);
-    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León. ${gancho} Por eso creemos que les puede interesar lo que ofrecemos a las empresas.\n\n` +
+    const extras = transversalesDe(p, progs, cat).slice(0, 2);
+    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León que capacita equipos de trabajo. ${gancho} Por eso creemos que les puede interesar lo que ofrecemos a las empresas.\n\n` +
       `${problema}Con nuestra plataforma, cada colaborador estudia desde su celular y a su ritmo, y ustedes conservan el control desde un panel propio, «Mi empresa»:\n\n` +
       `• Asignan los cursos a cada persona.\n• Ven el avance de cada colaborador: lecciones vistas, módulos aprobados y último acceso.\n• Descargan las constancias con folio y código QR de verificación, junto con el reporte en Excel o PDF.\n\n` +
       (lista ? `Programas que recomendamos para su equipo:\n${lista}\n\n` : "") +
+      (extras.length ? `También les pueden servir:\n${extras.map((c) => "• " + c.nombre).join("\n")}\n\n` : "") +
+      `Y ${totalProgramas(cat)} en institutomara.com para que cada área encuentre lo suyo.\n\n` +
       `Prueba piloto sin costo: 5 lugares durante 15 días, para que su equipo conozca el contenido y ustedes prueben el panel. Los 5 lugares pueden tomar cualquiera de los programas recomendados. Las constancias se emiten al formalizar la inscripción.\n\n` +
       (ref ? `${ref} ` : "") + `Con 5 o más lugares aplica un descuento por volumen: ${VOL}.\n\n` +
       `Pueden probar una lección gratis aquí: ${muestra}\nSi prefieren que yo les muestre la plataforma, agendamos 20 minutos por Google Meet o Teams cuando ustedes gusten.\n\n` +
       `Para activar su piloto, basta con responder este correo con el nombre de la persona que lo coordinará.\n\n${FIRMA}${pie}`;
-    whatsapp = waPrimero(p, n, progs, giro);
+    whatsapp = waPrimero(p, n, progs, cat);
   } else if (toque === 2) {
     asunto = `${n}: ¿les activo la prueba sin costo para su equipo?`;
     const desde = desdeMin(progs);
@@ -118,9 +121,10 @@ function armar(p: Prospecto, toque: number, cat: Record<string, Curso>, giro: Re
       `• Un panel donde ustedes ven el avance de cada persona y descargan sus constancias.\n` +
       `• Si deciden continuar, ${desde ? "desde " + desde + " por colaborador, " : ""}con descuento por volumen.\n\n` +
       `Para activarlo solo necesito el nombre de la persona que lo coordinará. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
-    const dos = progs.slice(0, 2).map((c) => negritas(cortoPrograma(c.nombre)));
+    const tres = listaWa(p, progs, cat).slice(0, 3);
+    const unidos = tres.length > 1 ? tres.slice(0, -1).join(", ") + " y " + tres[tres.length - 1] : tres.join("");
     whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les escribí para regalarles *5 lugares por 15 días*` +
-      (dos.length ? ` para que su equipo pruebe nuestros cursos de ${dos.join(" y ")}` : " para que su equipo pruebe nuestros cursos") +
+      (tres.length ? ` para que su equipo pruebe programas como ${unidos}, entre ${totalProgramas(cat)}` : " para que su equipo pruebe nuestros programas") +
       `.\n\nLa invitación sigue en pie, sin compromiso. ¿Con quién lo podría ver?`;
   } else {
     asunto = `${n}: ¿lo dejamos para más adelante?`;
@@ -154,13 +158,41 @@ function sinParar(seg: string) {
   if (/hospital|clínica|hotel|seguridad|call center|residencia|funeraria|diagnóstico/.test(s)) return "sin descuidar los turnos";
   return "sin descuidar el trabajo";
 }
-function waPrimero(p: Prospecto, n: string, progs: Curso[], giro: Record<string, string> | null) {
-  const dos = progs.slice(0, 2).map((c) => negritas(cortoPrograma(c.nombre)));
-  return `Hola, buen día. Soy Héctor Ezquerra, de aquí de León. Dirijo la parte académica de Instituto Mara, una escuela en línea que capacita equipos de trabajo.\n\n` +
-    `Le escribo porque ${ganchoWa(p, n)}, y creo que les podemos ayudar a que su equipo siga creciendo: que su gente se capacite desde el celular, ${sinParar(p.segmento)}.\n\n` +
-    (dos.length ? `Para ${giro ? giro.giro_corto : "empresas como la suya"} lo que más nos piden es ${dos.join(" y ")}. ` : "") +
-    `Ustedes ven en un panel quién va avanzando y descargan las constancias con QR.\n\n` +
-    `¿Me permite regalarles *5 lugares por 15 días* para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
+function waPrimero(p: Prospecto, n: string, progs: Curso[], cat: Record<string, Curso>) {
+  const lista = listaWa(p, progs, cat).map((t) => "• " + t).join("\n");
+  return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, una escuela en línea que capacita equipos de trabajo.\n\n` +
+    `Le escribo porque creo que les podemos ayudar a que su equipo siga creciendo: que su gente se capacite desde el celular, ${sinParar(p.segmento)}.\n\n` +
+    `Usted asigna los cursos, ve el avance de cada persona y ellos descargan sus constancias con QR.\n\n` +
+    (lista ? `Para ${n} le pueden servir:\n${lista}\n\n` : "") +
+    `Y ${totalProgramas(cat)} en institutomara.com\n\n` +
+    `¿Me permite *regalarles 5 lugares por 15 días* para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
+}
+
+// Programas que le sirven a cualquier empresa, en el orden que conviene según el giro.
+const TRANSVERSALES: Record<string, string[]> = {
+  planta: ["d-nom035", "d-seguridad-higiene", "c-excel-avanzado", "d-liderazgo"],
+  clientes: ["c-atencion-ventas", "d-nom035", "c-excel-avanzado", "d-liderazgo"],
+  oficina: ["c-excel-avanzado", "d-nom035", "c-atencion-ventas", "d-liderazgo"],
+};
+function transversalesDe(p: Prospecto, progs: Curso[], cat: Record<string, Curso>) {
+  const s = String(p.segmento || "").toLowerCase();
+  const tipo = /calzado|curtidur|manufactura|industria|seguridad privada/.test(s) ? "planta"
+    : /concesionaria|hotel|asegura|seguros|boutique|call center|inmobiliaria|hospital|clínica|diagnóstico|funeraria|residencia/.test(s) ? "clientes"
+    : "oficina";
+  const ya = new Set(progs.map((c) => c.id));
+  return TRANSVERSALES[tipo].filter((id) => !ya.has(id) && cat[id]).map((id) => cat[id]);
+}
+// Lista para WhatsApp: hasta 4 programas del giro y al menos uno transversal; siempre 4 o 5 renglones.
+function listaWa(p: Prospecto, progs: Curso[], cat: Record<string, Curso>) {
+  const giro = progs.slice(0, 4);
+  const extra = transversalesDe(p, giro, cat);
+  const todos = giro.concat(extra.slice(0, Math.max(1, 5 - giro.length)));
+  return todos.slice(0, 5).map((c) => negritas(cortoPrograma(c.nombre)));
+}
+// «más de 110 programas», calculado con lo publicado (sin contar rutas).
+function totalProgramas(cat: Record<string, Curso>) {
+  const n = Object.keys(cat).filter((id) => !id.startsWith("r-")).length;
+  return n > 20 ? `más de ${Math.floor((n - 1) / 10) * 10} programas` : "más programas";
 }
 
 function aHtml(t: string) {
@@ -289,6 +321,7 @@ serve(async (req) => {
       let enviados = 0; const fallas: string[] = [];
       for (const p of filas) {
         if (p.estado === "baja") { fallas.push(`${corto(p)}: pidió no recibir correos`); continue; }
+        if (p.estado === "no_interesa") { fallas.push(`${corto(p)}: marcado «No le interesó»`); continue; }
         try { await enviarA(req, p, body.toque || null, ctx, u.servicio ? null : u.id, false); enviados++; }
         catch (x) { fallas.push(`${corto(p)}: ${(x as Error).message}`); }
         if (body.iniciarSecuencia) await db(`prospectos?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { secuencia: true } });
