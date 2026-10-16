@@ -317,12 +317,16 @@ function pintarComprasEmpresa(id){
   caja.innerHTML = (l.length ? '<div class="tabla-caja" style="margin-bottom:16px"><div class="tabla-scroll"><table><tr><th>Fecha</th><th>Programa</th><th>Lugares</th><th>Total</th><th>Cómo pagó</th><th>Estado</th></tr>'+
     l.map(function(c){ var p = programa(c.curso_id);
       var prog = c.cursos && c.cursos.length > 1 ? c.cursos.length+' programas a elegir' : esc(p?p.nombre:c.curso_id);
-      var medio = c.medio==='manual' ? 'Transferencia / manual' : c.medio==='piloto' ? 'Sin costo (piloto)' : 'Mercado Pago';
+      var medio = c.medio==='manual' ? 'Transferencia / manual' : c.medio==='piloto' ? 'Sin costo (piloto)' : c.medio==='cotizacion' ? 'Liga de pago (cotización)' : 'Mercado Pago';
       return '<tr><td>'+esc(String(c.pagado_en||c.creado_en).slice(0,10))+'</td><td>'+prog+(c.nota?'<br><small>'+esc(c.nota)+'</small>':'')+'</td><td>'+c.lugares+'</td><td>'+dinero(c.total)+'</td>'+
         '<td>'+medio+'</td><td>'+esc(ESTADO_EMP[c.estado]||c.estado)+
-        (c.estado==='piloto' ? '<br><button class="btn btn-mor btn-sm" style="margin-top:6px" onclick="formalizarPiloto(\''+id+'\',\''+c.id+'\')">Formalizar (ya pagó)</button>' : '')+'</td></tr>'; }).join('')+
+        (c.estado==='piloto' ? '<br><button class="btn btn-mor btn-sm" style="margin-top:6px" onclick="formalizarPiloto(\''+id+'\',\''+c.id+'\')">Formalizar (ya pagó)</button>' : '')+
+        (c.estado==='pendiente_pago' && c.liga_pago ? '<br><small>'+(ligaVencida(c) ? 'Liga vencida' : 'Liga vigente hasta '+esc(String(c.liga_vence||'').slice(0,10)))+'</small><br>'+
+          '<button class="btn btn-linea btn-sm" style="margin-top:6px" onclick="verLigaCotizacion(\''+id+'\',\''+c.id+'\')">Ver liga</button> '+
+          '<button class="btn btn-fantasma btn-sm" style="margin-top:6px" onclick="cancelarCotizacion(\''+id+'\',\''+c.id+'\')">Cancelar</button>' : '')+'</td></tr>'; }).join('')+
     '</table></div></div>' : '<p style="color:var(--gris);margin-bottom:12px">Sin paquetes todavía.</p>')+
     formPiloto(id)+
+    formCotizacion(id, progs)+
     '<h4 style="margin:22px 0 10px">Registrar venta manual (transferencia, factura o convenio)</h4>'+
     '<div class="campo"><label for="vm-curso">Programa</label><select id="vm-curso" onchange="cotizarVentaManual(\''+id+'\')">'+
       progs.map(function(c){ return '<option value="'+c.id+'">'+esc(c.nombre)+' · '+dinero(c.precio)+'</option>'; }).join('')+'</select></div>'+
@@ -331,7 +335,7 @@ function pintarComprasEmpresa(id){
     '<div class="campo"><label for="vm-vence">Los lugares vencen</label><input id="vm-vence" type="date" value="'+new Date(Date.now()+365*864e5).toISOString().slice(0,10)+'"></div></div>'+
     '<div class="campo"><label for="vm-nota">Nota (folio de factura, referencia de la transferencia…)</label><input id="vm-nota" maxlength="200"></div>'+
     '<div id="vm-aviso"></div><button id="vm-btn" class="btn btn-mor" onclick="registrarVentaManual(\''+id+'\')">Registrar y generar lugares</button>';
-  cotizarVentaManual(id);
+  cotizarVentaManual(id); calcularCotizacion(id);
 }
 function cotizarVentaManual(id){
   var e = empresaPorId(id), c = curso($('vm-curso').value), n = Math.max(1, Number($('vm-n').value)||1); if(!c || !e) return;
@@ -346,6 +350,74 @@ function registrarVentaManual(id){
   b.disabled = true;
   Nube.empresaRpc('empresa_venta_manual', { p_empresa:id, p_curso:$('vm-curso').value, p_lugares:n, p_total:total, p_nota:$('vm-nota').value.trim(), p_vence:$('vm-vence').value || null })
     .then(function(){ pintar(); }).catch(function(e){ b.disabled = false; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+
+/* ---------- Cotización con liga de pago (precio negociado) ---------- */
+function ligaVencida(c){ return c.liga_vence && new Date(c.liga_vence).getTime() < Date.now(); }
+function formCotizacion(id, progs){
+  var e = empresaPorId(id);
+  return '<h4 style="margin:22px 0 4px">Cotización con liga de pago (precio negociado)</h4>'+
+    '<p style="color:var(--gris);font-size:.92rem;margin-bottom:10px">Genera una liga de Mercado Pago por el monto que acordaste. Cuando la empresa paga, se crean sus lugares y le llega el acceso a «Mi empresa».</p>'+
+    '<div class="campo"><label for="cq-curso">Programa</label><select id="cq-curso" onchange="calcularCotizacion(\''+id+'\')">'+
+      progs.filter(function(c){ return !ruta(c.id); }).map(function(c){ return '<option value="'+c.id+'">'+esc(c.nombre)+' · '+dinero(c.precio)+'</option>'; }).join('')+'</select></div>'+
+    '<div class="fila"><div class="campo"><label for="cq-n">Lugares</label><input id="cq-n" type="number" min="1" max="500" value="5" oninput="calcularCotizacion(\''+id+'\')"></div>'+
+    '<div class="campo"><label for="cq-total">Total a cobrar (MXN)</label><input id="cq-total" type="number" min="30" step="0.01" oninput="resumenCotizacion(\''+id+'\')"></div>'+
+    '<div class="campo"><label for="cq-dias">La liga vale (días)</label><input id="cq-dias" type="number" min="1" max="60" value="15"></div></div>'+
+    '<div class="campo"><label for="cq-nota">Nota interna (opcional)</label><input id="cq-nota" maxlength="200"></div>'+
+    '<label style="display:flex;gap:8px;align-items:center;margin-bottom:10px"><input type="checkbox" id="cq-correo"'+(e && e.contacto_correo ? ' checked' : ' disabled')+'> '+
+      (e && e.contacto_correo ? 'Enviar la cotización por correo a '+esc(e.contacto_correo) : 'Enviar por correo (la empresa no tiene correo de contacto)')+'</label>'+
+    '<div id="cq-aviso"></div><button id="cq-btn" class="btn btn-mor" onclick="generarCotizacion(\''+id+'\')">Generar liga de pago</button>';
+}
+function calcularCotizacion(id){
+  var e = empresaPorId(id), c = curso(($('cq-curso')||{}).value), n = Math.max(1, Number(($('cq-n')||{}).value)||1); if(!c || !e) return;
+  $('cq-total').value = Math.round(Number(c.precio) * n * (100 - Number(e.descuento_pct||0))) / 100;
+  resumenCotizacion(id);
+}
+function resumenCotizacion(id){
+  var e = empresaPorId(id), c = curso($('cq-curso').value), n = Math.max(1, Number($('cq-n').value)||1), t = Number($('cq-total').value)||0; if(!c || !e) return;
+  var lista = Number(c.precio) * n, pct = lista > 0 ? Math.round((1 - t / lista) * 1000) / 10 : 0;
+  $('cq-aviso').innerHTML = '<div class="aviso aviso-info">Precio de lista '+dinero(lista)+(Number(e.descuento_pct)?' · descuento pactado '+Number(e.descuento_pct)+'%':'')+
+    '. Con este total: '+dinero(Math.round(t / n * 100) / 100)+' por persona'+(pct > 0 ? ' ('+pct+'% de descuento)' : '')+'.'+
+    (t > 0 && t < 30 ? '<br><b>Mercado Pago no acepta cobros menores a $30.</b>' : '')+'</div>';
+}
+function generarCotizacion(id){
+  var b = $('cq-btn'), av = $('cq-aviso'), n = Math.floor(Number($('cq-n').value)), total = Number($('cq-total').value);
+  if(!(n >= 1 && n <= 500)){ av.innerHTML = '<div class="aviso aviso-error">Los lugares van de 1 a 500.</div>'; return; }
+  if(!(total >= 30)){ av.innerHTML = '<div class="aviso aviso-error">El total mínimo para cobrar con Mercado Pago es de $30.</div>'; return; }
+  if(!confirm('¿Generar la liga de pago por '+dinero(total)+' para '+n+' lugares?')) return;
+  b.disabled = true; b.textContent = 'Generando…';
+  Nube.funcionServidor('tienda', { accion:'empresa_cotizacion', empresaId:id, cursoId:$('cq-curso').value, lugares:n, total:total,
+      dias:Number($('cq-dias').value)||15, nota:$('cq-nota').value.trim(), enviarCorreo:!!($('cq-correo') && $('cq-correo').checked) })
+    .then(function(r){
+      return Nube.empresasAdmin().then(function(d){ EMP.datos = d; pintarComprasEmpresa(id); verLigaCotizacion(id, r.compraId, r.enviado); });
+    })
+    .catch(function(err){ b.disabled = false; b.textContent = 'Generar liga de pago'; av.innerHTML = '<div class="aviso aviso-error">'+esc(err.message)+'</div>'; });
+}
+function telWaEmpresa(t){
+  var d = String(t||'').replace(/\D/g,''); if(!d) return '';
+  return d.length === 10 ? '52' + d : d;
+}
+function verLigaCotizacion(id, compraId, enviado){
+  var c = (EMP.datos.compras||[]).filter(function(x){ return x.id === compraId; })[0], e = empresaPorId(id); if(!c || !e) return;
+  var p = programa(c.curso_id), vence = String(c.liga_vence||'').slice(0,10).split('-').reverse().join('/');
+  var t = 'Hola' + (e.contacto_nombre ? ' ' + String(e.contacto_nombre).split(' ')[0] : '') + ', como lo platicamos, esta es la liga para pagar la capacitación de *' + e.nombre + '*:\n\n' +
+    '• *' + (p ? p.nombre : c.curso_id) + '*\n• ' + c.lugares + ' lugares (' + dinero(c.precio_unit) + ' por persona)\n• Total: *' + dinero(c.total) + '*\n\n' +
+    'Pueden pagar con tarjeta, transferencia u OXXO: ' + c.liga_pago + '\n\n' +
+    'La liga vale hasta el ' + vence + '. Al confirmarse el pago les llega el acceso a su panel para asignar los lugares. Si necesitan factura, envíen sus datos fiscales a contacto@institutomara.com.';
+  var tel = telWaEmpresa(e.contacto_tel);
+  abrirModal('Liga de pago · ' + e.nombre,
+    (enviado ? '<div class="aviso aviso-ok">La cotización se envió por correo a '+esc(e.contacto_correo)+'.</div>' : '')+
+    '<div class="campo"><label for="lq-url">Liga de Mercado Pago</label><input id="lq-url" readonly value="'+esc(c.liga_pago)+'"></div>'+
+    '<p style="margin:6px 0 10px">Mensaje listo para WhatsApp:</p><textarea id="lq-txt" rows="10" style="width:100%">'+esc(t)+'</textarea>',
+    '<button class="btn btn-fantasma" onclick="copiarTexto($(\'lq-url\').value)">Copiar liga</button>'+
+    '<button class="btn btn-linea" onclick="copiarTexto($(\'lq-txt\').value)">Copiar mensaje</button>'+
+    '<button class="btn btn-mor" onclick="window.open(\'https://wa.me/'+tel+'?text=\'+encodeURIComponent($(\'lq-txt\').value),\'_blank\',\'noopener\')">WhatsApp</button>');
+}
+function cancelarCotizacion(id, compraId){
+  if(!confirm('¿Cancelar esta cotización? La liga deja de aceptar pagos.')) return;
+  Nube.funcionServidor('tienda', { accion:'empresa_cotizacion_cancelar', compraId:compraId })
+    .then(function(){ return Nube.empresasAdmin().then(function(d){ EMP.datos = d; pintarComprasEmpresa(id); }); })
+    .catch(function(err){ alert(err.message); });
 }
 
 /* ---------- Portal «Mi empresa» (administrador de la empresa) ---------- */
