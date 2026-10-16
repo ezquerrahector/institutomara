@@ -486,9 +486,12 @@ function pintarReporteEmpresa(id){
   });
   var lug = R.lugares, usados = lug.filter(function(k){ return k.usuario_id; }).length,
       libres = lug.filter(function(k){ return !k.usuario_id && !k.asignado_nombre; }).length;
-  lug.forEach(function(k){ var pc = porCurso[k.curso_id] = porCurso[k.curso_id] || { nombre:(curso(k.curso_id)||{}).nombre||k.curso_id, n:0, concl:0, suma:0 }; pc.lugares = (pc.lugares||0) + 1; pc.activos = (pc.activos||0) + (k.usuario_id?1:0); });
+  /* Lugares de prueba sin curso todavía: se agrupan en un renglón «Por elegir». */
+  lug.forEach(function(k){ var key = k.curso_id || '__elegir';
+    var pc = porCurso[key] = porCurso[key] || { nombre:k.curso_id ? ((curso(k.curso_id)||{}).nombre||k.curso_id) : 'Por elegir (lugares sin curso asignado)', n:0, concl:0, suma:0, elegir:!k.curso_id };
+    pc.lugares = (pc.lugares||0) + 1; pc.activos = (pc.activos||0) + (k.usuario_id?1:0); });
   var met = function(rot, val, pie){ return '<div class="metrica"><div class="rot">'+rot+'</div><div class="val">'+val+'</div><div class="pie">'+pie+'</div></div>'; };
-  var cursosOpt = Object.keys(porCurso).map(function(cid){ return '<option value="'+esc(cid)+'"'+(EMP.filtro.curso===cid?' selected':'')+'>'+esc(porCurso[cid].nombre)+'</option>'; }).join('');
+  var cursosOpt = Object.keys(porCurso).filter(function(cid){ return !porCurso[cid].elegir; }).map(function(cid){ return '<option value="'+esc(cid)+'"'+(EMP.filtro.curso===cid?' selected':'')+'>'+esc(porCurso[cid].nombre)+'</option>'; }).join('');
   var estOpt = ['Sin empezar','En curso','Concluido','Sin programa'].map(function(s){ return '<option'+(EMP.filtro.estado===s?' selected':'')+'>'+s+'</option>'; }).join('');
   var filas = filasFiltradas(id), admin = R.modo === 'admin';
   var h = '<div class="rejilla rejilla-4" style="margin-bottom:20px">'+
@@ -500,6 +503,7 @@ function pintarReporteEmpresa(id){
   if(Object.keys(porCurso).length){
     h += '<div class="tabla-caja" style="margin-bottom:22px"><div class="tabla-scroll"><table><thead><tr><th>Programa</th><th>Lugares</th><th>Inscritos</th><th>Concluidos</th><th>Avance promedio</th></tr></thead><tbody>'+
       Object.keys(porCurso).map(function(cid){ var p = porCurso[cid];
+        if(p.elegir) return '<tr><td style="color:var(--gris)"><i>'+esc(p.nombre)+'</i></td><td>'+(p.activos||0)+' / '+p.lugares+'</td><td>—</td><td>—</td><td>—</td></tr>';
         return '<tr><td><b>'+esc(p.nombre)+'</b></td><td>'+(p.lugares ? (p.activos||0)+' / '+p.lugares : '—')+'</td><td>'+p.n+'</td><td>'+p.concl+'</td><td>'+(p.n ? Math.round(p.suma/p.n) : 0)+'%</td></tr>'; }).join('')+
       '</tbody></table></div></div>';
   }
@@ -775,7 +779,7 @@ function resumenPilotos(id, lug){
       '<b>Prueba sin costo</b><span>' + g.activos + ' de ' + g.n + ' lugares activados</span>'+
       '<span>' + (g.dias || 15) + ' días de acceso por persona, desde que activa</span>'+
       (g.vence ? '<span>Activar antes del ' + fechaLarga(String(g.vence).slice(0,10)) + '</span>' : '')+
-      '<a href="#" onclick="verProgramasLugar(\'' + id + '\',\'' + esc(g.codigo) + '\');return false">' + g.cursos.length + ' programas incluidos</a></div>';
+      '<a href="#" onclick="verProgramasLugar(\'' + id + '\',\'' + esc(g.codigo) + '\');return false">' + g.cursos.length + (g.cursos.length === 1 ? ' programa incluido' : ' programas incluidos') + '</a></div>';
   }).join('');
 }
 function verProgramasLugar(id, cod){
