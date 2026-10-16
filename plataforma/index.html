@@ -1744,6 +1744,11 @@ function entrarApp(){
   }
   if(cuponPendiente() && sesion.rol === 'alumno'){
     history.replaceState(null,'',location.pathname);
+    var cc = cursoCuponPendiente();
+    if(cc && programa(cc)){
+      if(estaInscrito(sesion.id, cc)){ olvidarCuponPendiente(); ir(curso(cc) ? 'aula' : 'mis-cursos', {cursoId:cc}); return; }
+      ir('catalogo'); setTimeout(function(){ abrirPago(cc); }, 250); return;
+    }
     ir('catalogo');
     abrirModal('Tienes un cupón',
       '<p>Tu cupón <b>'+esc(cuponPendiente())+'</b> ya está guardado. Elige tu curso y presiona «Inscribirme»: '+
@@ -2170,14 +2175,22 @@ var cuponPago = null;   /* cupón aplicado a la compra que está en pantalla */
 /* Cupón compartido por enlace (…/plataforma/?cupon=CODIGO&curso=id). Se guarda
    por si el alumno primero tiene que crear su cuenta o confirmar su correo. */
 var LLAVE_CUPON = 'institutoMara.cupon';
+/* También se guarda el curso del enlace: al confirmar el correo, el aula se abre
+   sin los datos de la URL y así el alumno llega directo a su programa. */
+var LLAVE_CUPON_CURSO = 'institutoMara.cuponCurso';
 (function(){
   try{
-    var c = new URLSearchParams(location.search).get('cupon');
-    if(c) localStorage.setItem(LLAVE_CUPON, c.trim().toUpperCase());
+    var q = new URLSearchParams(location.search), c = q.get('cupon');
+    if(c){
+      localStorage.setItem(LLAVE_CUPON, c.trim().toUpperCase());
+      var cc = q.get('curso');
+      if(cc) localStorage.setItem(LLAVE_CUPON_CURSO, cc.trim()); else localStorage.removeItem(LLAVE_CUPON_CURSO);
+    }
   }catch(e){}
 })();
 function cuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON) || ''; }catch(e){ return ''; } }
-function olvidarCuponPendiente(){ try{ localStorage.removeItem(LLAVE_CUPON); }catch(e){} }
+function cursoCuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON_CURSO) || ''; }catch(e){ return ''; } }
+function olvidarCuponPendiente(){ try{ localStorage.removeItem(LLAVE_CUPON); localStorage.removeItem(LLAVE_CUPON_CURSO); }catch(e){} }
 
 function abrirPago(cid){
   var c = programa(cid); if(!c) return;
@@ -5248,7 +5261,7 @@ avisoEnlaceCorreo();
   }
 })();
 </script>
-<script src="empresas.js?v=20261016a"></script>
+<script src="empresas.js?v=20261016b"></script>
 <script src="prospectos.js?v=20261015a"></script>
 </body>
 </html>
