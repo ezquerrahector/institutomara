@@ -10,6 +10,8 @@
 //   recompra             { cursoId }  (al obtener una constancia)                    → { codigo, pct, vence }
 //   empresa              { cursoId, lugares (5-50), empresa, rfc?, contactoNombre?, contactoCorreo?, contactoTel?, urlRegreso } → { init_point }
 //   empresa_invitar      { codigo, nombre, correo, cursoId? }  (asigna un lugar y le envía la invitación) → { ok }
+//   empresa_cotizacion   { empresaId, cursoId, lugares (1-500), total (≥30), dias?, nota?, enviarCorreo? } (solo admin) → { liga, compraId, vence }
+//   empresa_cotizacion_cancelar { compraId }  (solo admin; vence la liga en Mercado Pago) → { ok }
 //   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias }
 // Secretos: MP_ACCESS_TOKEN, BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE (opcional),
 //           MP_WEBHOOK_URL (opcional), URL_AULA (opcional). SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY los pone Supabase.
@@ -267,10 +269,80 @@ async function crearCompraEmpresa(u: any, b: any) {
   });
   return json({ init_point: pref.init_point, compraId: compra.id });
 }
+/* Cotización con monto negociado (solo administración): crea la compra «Esperando pago»
+   y una liga de Mercado Pago con ese total. Al pagarse, el webhook la activa con
+   activarCompraEmpresa, igual que una compra en línea. */
+async function crearCotizacionEmpresa(u: any, b: any) {
+  if (u.rol !== "admin") return json({ error: "Solo administración puede crear cotizaciones." }, 403);
+  const emp = (await db(`empresas?id=eq.${encodeURIComponent(String(b.empresaId || ""))}&select=*`))[0];
+  if (!emp) return json({ error: "Empresa no encontrada." }, 404);
+  const cid = String(b.cursoId || "");
+  const c = (await db(`cursos?id=eq.${encodeURIComponent(cid)}&select=id,nombre,precio`))[0];
+  if (!c || cid.startsWith("r-")) return json({ error: "Ese programa no está disponible para cotizar." }, 404);
+  const lugares = Math.floor(Number(b.lugares));
+  if (!(lugares >= 1 && lugares <= 500)) return json({ error: "Los lugares van de 1 a 500." }, 400);
+  const total = Math.round(Number(b.total) * 100) / 100;
+  if (!(total >= 30)) return json({ error: "El total mínimo para cobrar con Mercado Pago es de $30." }, 400);
+  const dias = Math.min(60, Math.max(1, Math.floor(Number(b.dias) || 15)));
+  const vence = new Date(Date.now() + dias * 864e5);
+  const lista = Number(c.precio) || 0;
+  const unit = Math.round((total / lugares) * 100) / 100;
+  const pct = lista > 0 ? Math.max(0, Math.round((100 - (unit * 100) / lista) * 10) / 10) : 0;
+  const nota = String(b.nota || "").trim().slice(0, 200) || null;
+  const compra = (await db("empresas_compras", { metodo: "POST", prefer: "return=representation", cuerpo: {
+    comprador_id: u.id, empresa: emp.nombre, rfc: emp.rfc, contacto_nombre: emp.contacto_nombre, contacto_correo: emp.contacto_correo,
+    contacto_tel: emp.contacto_tel, curso_id: cid, lugares, precio_unit: unit, pct, total, empresa_id: emp.id, medio: "cotizacion",
+    nota, liga_vence: vence.toISOString() } }))[0];
+  const pref = await mp("/checkout/preferences", "POST", {
+    items: [{ id: cid, title: `${lugares} lugares: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: total }],
+    statement_descriptor: "INSTITUTO MARA",
+    metadata: { tipo: "empresa", compra_id: compra.id, monto: total }, external_reference: `emp::${compra.id}`,
+    back_urls: { success: `${AULA}?empresa=exito&id=${compra.id}`, pending: `${AULA}?empresa=pendiente&id=${compra.id}`, failure: `${AULA}?empresa=fallo&id=${compra.id}` },
+    auto_return: "approved", notification_url: WEBHOOK,
+    expires: true, expiration_date_from: new Date(Date.now() - 60e3).toISOString(), expiration_date_to: vence.toISOString(),
+  }).catch(async (x) => {
+    await db(`empresas_compras?id=eq.${compra.id}`, { metodo: "DELETE", prefer: "return=minimal" }).catch(() => null);
+    throw x;
+  });
+  await db(`empresas_compras?id=eq.${compra.id}`, { metodo: "PATCH", prefer: "return=minimal",
+    cuerpo: { liga_pago: pref.init_point, mp_preferencia_id: pref.id } });
+  let enviado = false;
+  if (b.enviarCorreo && emp.contacto_correo) {
+    enviado = await correo(emp.contacto_correo, emp.contacto_nombre || emp.nombre, `Cotización Instituto Mara: ${lugares} lugares de ${c.nombre}`,
+      plantilla(`Hola${emp.contacto_nombre ? ", " + e(String(emp.contacto_nombre).split(" ")[0]) : ""}`,
+        `<p style="font-size:16px;line-height:1.6">Como lo platicamos, esta es la cotización para <b>${e(emp.nombre)}</b>:</p>` +
+        `<ul style="font-size:15px;line-height:1.7"><li>Programa: <b>${e(c.nombre)}</b></li><li>Lugares: <b>${lugares}</b> (${dinero(unit)} por persona)</li><li>Total: <b>${dinero(total)}</b></li></ul>` +
+        `<p style="font-size:15px;line-height:1.6">Pueden pagar con tarjeta, transferencia u OXXO en Mercado Pago. Al confirmarse el pago les llega el acceso a su panel «Mi empresa» para asignar los lugares.</p>` +
+        `<p style="font-size:13px;color:#6b6585">La liga vale hasta el ${fechaLarga(fecha(vence))}. ¿Necesitan factura? Envíen su constancia de situación fiscal y uso de CFDI a contacto@institutomara.com.</p>`,
+        { texto: `Pagar ${dinero(total)}`, url: pref.init_point }));
+  }
+  return json({ ok: true, compraId: compra.id, liga: pref.init_point, vence: vence.toISOString(), total, unit, pct, enviado });
+}
+async function cancelarCotizacionEmpresa(u: any, b: any) {
+  if (u.rol !== "admin") return json({ error: "Solo administración puede cancelar cotizaciones." }, 403);
+  const c0 = (await db(`empresas_compras?id=eq.${encodeURIComponent(String(b.compraId || ""))}&select=*`))[0];
+  if (!c0 || c0.medio !== "cotizacion") return json({ error: "Cotización no encontrada." }, 404);
+  if (c0.estado !== "pendiente_pago") return json({ error: "Esa cotización ya no está esperando pago." }, 409);
+  if (c0.mp_preferencia_id) {
+    await mp(`/checkout/preferences/${c0.mp_preferencia_id}`, "PUT", { expires: true, expiration_date_to: new Date().toISOString() })
+      .catch((x) => console.error("No se pudo vencer la liga", x));
+  }
+  await db(`empresas_compras?id=eq.${c0.id}&estado=eq.pendiente_pago`, { metodo: "PATCH", prefer: "return=minimal",
+    cuerpo: { estado: "cancelado", liga_vence: new Date().toISOString() } });
+  return json({ ok: true });
+}
+
 /* La llama el webhook (llave de servicio) cuando Mercado Pago aprueba el pago. */
 async function activarCompraEmpresa(compraId: string, pagoId: string, monto: number) {
   const e0 = (await db(`empresas_compras?id=eq.${compraId}&select=*`))[0];
   if (!e0) return "compra no encontrada";
+  if (e0.estado === "cancelado" && e0.mp_pago_id !== pagoId) {
+    // Alguien pagó una cotización que ya se había cancelado: se registra para revisarlo a mano.
+    await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: e0.comprador_id, curso_id: e0.curso_id, monto,
+      referencia_mp: pagoId, nota: `REVISAR empresa ${e0.empresa}: pagó ${monto} de una cotización cancelada. No se generaron lugares.` } }).catch(() => null);
+    await db(`empresas_compras?id=eq.${e0.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { mp_pago_id: pagoId } }).catch(() => null);
+    return "cotización cancelada";
+  }
   if (e0.estado !== "pendiente_pago") return "compra ya procesada";
   if (Math.abs(Number(monto) - Number(e0.total)) > 1) {
     await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: e0.comprador_id, curso_id: e0.curso_id, monto,
@@ -405,6 +477,8 @@ serve(async (req) => {
       case "recompra": return await recompra(u, b);
       case "empresa": return await crearCompraEmpresa(u, b);
       case "empresa_invitar": return await invitarEmpresa(u, b);
+      case "empresa_cotizacion": return await crearCotizacionEmpresa(u, b);
+      case "empresa_cotizacion_cancelar": return await cancelarCotizacionEmpresa(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
