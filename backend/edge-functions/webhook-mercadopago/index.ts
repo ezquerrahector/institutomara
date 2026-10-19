@@ -112,6 +112,16 @@ async function pagoDeMembresia(pago: any, uid: string, plan: string) {
   return "ok";
 }
 
+/* Pago aprobado de un plan de empresa (mensual o anual). La comisión del operador se
+   calcula sobre lo que realmente depositó Mercado Pago; el registro es único por pago. */
+async function pagoDePlan(pago: any, planId: string) {
+  const monto = Number(pago.transaction_amount || 0);
+  const comisionMP = (pago.fee_details || []).reduce((s: number, f: any) => s + Number(f.amount || 0), 0);
+  const netoMP = pago.transaction_details && Number(pago.transaction_details.net_received_amount) > 0
+    ? Number(pago.transaction_details.net_received_amount) : Math.max(0, monto - comisionMP);
+  await tienda({ accion: "plan_pagado", planId, pagoId: String(pago.id), monto, neto: netoMP });
+}
+
 serve(async (req) => {
   try {
     const url = new URL(req.url);
@@ -129,6 +139,16 @@ serve(async (req) => {
         const ra = await fetch(`https://api.mercadopago.com/authorized_payments/${id}`, { headers: { Authorization: `Bearer ${MP_ACCESS_TOKEN}` } });
         const ap = await ra.json().catch(() => ({}));
         if (ra.ok && ap.preapproval_id) await tienda({ accion: "preapproval", id: String(ap.preapproval_id) });
+        // Cobro mensual de un plan de empresa: por si el pago no trae la referencia, se toma de la suscripción.
+        if (ra.ok && ap.preapproval_id && ap.payment && ap.payment.id && ap.payment.status === "approved") {
+          const rp = await fetch(`https://api.mercadopago.com/preapproval/${ap.preapproval_id}`, { headers: { Authorization: `Bearer ${MP_ACCESS_TOKEN}` } });
+          const pre = await rp.json().catch(() => ({}));
+          if (rp.ok && String(pre.external_reference || "").startsWith("plan::")) {
+            const rpg = await fetch(`https://api.mercadopago.com/v1/payments/${ap.payment.id}`, { headers: { Authorization: `Bearer ${MP_ACCESS_TOKEN}` } });
+            const pg = await rpg.json().catch(() => ({}));
+            if (rpg.ok && pg.status === "approved") await pagoDePlan(pg, String(pre.external_reference).split("::")[1]);
+          }
+        }
       }
       return new Response("ok", { status: 200 });
     }
@@ -151,6 +171,7 @@ serve(async (req) => {
     if (ref.startsWith("regalo::")) return new Response(await pagoDeRegalo(pago, ref.split("::")[1]), { status: 200 });
     if (ref.startsWith("emp::")) { await tienda({ accion: "empresa_pagada", compraId: ref.split("::")[1], pagoId: String(pago.id), monto: Number(pago.transaction_amount || 0) }); return new Response("ok", { status: 200 }); }
     if (ref.startsWith("mem::")) { const [, uidM, planM] = ref.split("::"); return new Response(await pagoDeMembresia(pago, uidM, planM), { status: 200 }); }
+    if (ref.startsWith("plan::")) { await pagoDePlan(pago, ref.split("::")[1]); return new Response("ok", { status: 200 }); }
     const [usuarioId, cursoId] = String(pago.external_reference || "").split("::");
     if (!usuarioId || !cursoId) return new Response("sin referencia", { status: 200 });
 

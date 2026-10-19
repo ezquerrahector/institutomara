@@ -12,7 +12,10 @@
 //   empresa_invitar      { codigo, nombre, correo, cursoId? }  (asigna un lugar y le envía la invitación) → { ok }
 //   empresa_cotizacion   { empresaId, cursoId, lugares (1-500), total (≥30), dias?, nota?, enviarCorreo? } (solo admin) → { liga, compraId, vence }
 //   empresa_cotizacion_cancelar { compraId }  (solo admin; vence la liga en Mercado Pago) → { ok }
-//   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias }
+//   plan_liga            { planId, correoMP?, enviarCorreo? } (admin u operador de la empresa) → { liga, planId }
+//   plan_cancelar        { planId }  (admin, su operador o el administrador de la empresa)    → { ok }
+//   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias, planes }
+//   (servicio) plan_pagado { planId, pagoId, monto, neto } — lo manda el webhook al aprobarse un cobro del plan
 // Secretos: MP_ACCESS_TOKEN, BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE (opcional),
 //           MP_WEBHOOK_URL (opcional), URL_AULA (opcional). SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY los pone Supabase.
 
@@ -124,6 +127,7 @@ async function crearMembresia(u: any, b: any) {
   return json({ init_point: pre.init_point });
 }
 async function aplicarPreapproval(pre: any) {
+  if (String(pre.external_reference || "").startsWith("plan::")) return await aplicarPreapprovalPlan(pre);
   const [, uid, plan] = String(pre.external_reference || "").split("::");
   if (!uid || !PLANES[plan]) return null;
   const hay = await db(`membresias?mp_preapproval_id=eq.${pre.id}&select=*`);
@@ -162,8 +166,10 @@ async function inscribirMembresia(u: any, b: any) {
   const cid = String(b.cursoId || "");
   const ok = await db("rpc/membresia_cubre", { metodo: "POST", cuerpo: { p_usuario: u.id, p_curso: cid } });
   if (ok !== true) return json({ error: "Tu membresía no incluye este programa o ya no está vigente." }, 403);
+  // Con lugar en el plan de su empresa, la inscripción queda como «empresa» (aparece en su reporte).
+  const porPlan = !cid.startsWith("r-") && (await db("rpc/plan_empresa_cubre", { metodo: "POST", cuerpo: { p_usuario: u.id } })) === true;
   await db("inscripciones?on_conflict=usuario_id,curso_id", { metodo: "POST", prefer: "resolution=ignore-duplicates,return=minimal",
-    cuerpo: { usuario_id: u.id, curso_id: cid, estatus: "membresia" } });
+    cuerpo: { usuario_id: u.id, curso_id: cid, estatus: porPlan ? "empresa" : "membresia" } });
   return json({ ok: true });
 }
 
@@ -422,6 +428,127 @@ async function invitarEmpresa(u: any, b: any) {
   return json({ ok: true, enviado });
 }
 
+// ---------------------------------------------------------------- planes mensuales para empresas
+/* ¿Puede esta persona manejar los planes de la empresa? admin, el operador que la atiende o (si se pide) su administrador. */
+async function permisoPlan(u: any, empresaId: string, tambienEmpresa = false) {
+  if (u.rol === "admin") return "admin";
+  const e = (await db(`empresas?id=eq.${empresaId}&select=operador_id`))[0];
+  if (e && e.operador_id) {
+    const op = (await db(`operadores?id=eq.${e.operador_id}&usuario_id=eq.${u.id}&activo=eq.true&select=id`))[0];
+    if (op) return "operador";
+  }
+  if (tambienEmpresa && (await db(`empresas_admins?empresa_id=eq.${empresaId}&usuario_id=eq.${u.id}&select=id`)).length) return "empresa";
+  return null;
+}
+function textoPlan(p: any) {
+  const desc = Number(p.descuento_pct) > 0
+    ? (p.periodo === "mensual"
+        ? `${dinero(p.monto_inicial)} al mes los primeros ${p.descuento_meses} meses (${Number(p.descuento_pct)} % de descuento) y después ${dinero(p.precio_lista)} al mes`
+        : `${dinero(p.monto_inicial)} por 12 meses (${Number(p.descuento_pct)} % de descuento)`)
+    : (p.periodo === "mensual" ? `${dinero(p.precio_lista)} al mes` : `${dinero(p.precio_lista)} por 12 meses`);
+  return `Plan ${p.periodo} · ${p.rango_texto} · ${desc}, IVA incluido`;
+}
+async function crearLigaPlan(u: any, b: any) {
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (!(await permisoPlan(u, p.empresa_id))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  if (p.estado === "por_aprobar") return json({ error: "Este plan tiene un descuento que espera la aprobación de administración." }, 409);
+  if (p.estado !== "pendiente_pago") return json({ error: "Este plan ya no está esperando pago." }, 409);
+  const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] || {};
+  const correoMP = String(b.correoMP || p.admin_correo || emp.contacto_correo || "").trim().toLowerCase();
+  const titulo = `Plan ${p.periodo} Instituto Mara — ${emp.nombre} (${p.rango_texto})`;
+  let liga = "", cambios: any = {};
+  if (p.periodo === "mensual") {
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correoMP)) return json({ error: "Escribe el correo de la cuenta de Mercado Pago con la que pagará la empresa." }, 400);
+    // Si ya había una suscripción sin pagar, se cancela para no dejar dos ligas vivas.
+    if (p.mp_preapproval_id) await mp(`/preapproval/${p.mp_preapproval_id}`, "PUT", { status: "cancelled" }).catch(() => null);
+    const pre = await mp("/preapproval", "POST", {
+      reason: titulo, external_reference: `plan::${p.id}`, payer_email: correoMP,
+      auto_recurring: { frequency: 1, frequency_type: "months", transaction_amount: Number(p.monto_inicial), currency_id: "MXN" },
+      back_url: `${AULA}?plan=exito`, status: "pending",
+    });
+    liga = pre.init_point;
+    cambios = { mp_preapproval_id: pre.id, liga_pago: liga, liga_vence: null };
+  } else {
+    const vence = new Date(Date.now() + 15 * 864e5);
+    const pref = await mp("/checkout/preferences", "POST", {
+      items: [{ id: `plan-${p.id}`, title: titulo, quantity: 1, currency_id: "MXN", unit_price: Number(p.monto_inicial) }],
+      statement_descriptor: "INSTITUTO MARA", external_reference: `plan::${p.id}`,
+      metadata: { tipo: "plan", plan_id: p.id, monto: Number(p.monto_inicial) },
+      back_urls: { success: `${AULA}?plan=exito`, pending: `${AULA}?plan=pendiente`, failure: `${AULA}?plan=fallo` },
+      auto_return: "approved", notification_url: WEBHOOK,
+      expires: true, expiration_date_from: new Date(Date.now() - 60e3).toISOString(), expiration_date_to: vence.toISOString(),
+    });
+    liga = pref.init_point;
+    cambios = { mp_preferencia_id: pref.id, liga_pago: liga, liga_vence: vence.toISOString() };
+  }
+  await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { ...cambios, actualizado_en: new Date().toISOString() } });
+  let enviado = false;
+  const para = String(b.enviarA || p.admin_correo || emp.contacto_correo || "").trim();
+  if (b.enviarCorreo && para) {
+    enviado = await correo(para, emp.contacto_nombre || emp.nombre, `Plan de capacitación para ${emp.nombre} · Instituto Mara`,
+      plantilla(`Hola${emp.contacto_nombre ? ", " + e(String(emp.contacto_nombre).split(" ")[0]) : ""}`,
+        `<p style="font-size:16px;line-height:1.6">Como lo platicamos, este es el plan para <b>${e(emp.nombre)}</b>: su equipo entra a <b>todo el catálogo</b> de cursos y diplomados por una cuota fija.</p>` +
+        `<ul style="font-size:15px;line-height:1.7"><li>${e(p.rango_texto)}</li><li>${e(textoPlan(p).replace(/^Plan [a-z]+ · [^·]+ · /, ""))}</li>` +
+        `<li>Constancia con folio y QR verificable al terminar cada programa</li><li>Panel «Mi empresa» con el avance de cada persona</li></ul>` +
+        (p.periodo === "mensual"
+          ? `<p style="font-size:15px;line-height:1.6">El cobro es automático cada mes con tarjeta en Mercado Pago, y pueden cancelarlo cuando quieran. Entren con la cuenta de Mercado Pago de <b>${e(correoMP)}</b>.</p>`
+          : `<p style="font-size:15px;line-height:1.6">Es un solo pago por 12 meses. La liga vale hasta el ${fechaLarga(fecha(new Date(cambios.liga_vence)))}.</p>`) +
+        `<p style="font-size:13px;color:#6b6585">¿Necesitan factura? Envíen su constancia de situación fiscal y uso de CFDI a contacto@institutomara.com.</p>`,
+        { texto: p.periodo === "mensual" ? "Activar el plan" : "Pagar el plan", url: liga }));
+  }
+  return json({ ok: true, planId: p.id, liga, enviado, texto: textoPlan(p) });
+}
+async function cancelarPlan(u: any, b: any) {
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (!(await permisoPlan(u, p.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  if (p.mp_preapproval_id && ["activo", "pendiente_pago"].includes(p.estado)) {
+    await mp(`/preapproval/${p.mp_preapproval_id}`, "PUT", { status: "cancelled" });
+  }
+  if (p.mp_preferencia_id && p.estado === "pendiente_pago") {
+    await mp(`/checkout/preferences/${p.mp_preferencia_id}`, "PUT", { expires: true, expiration_date_to: new Date().toISOString() }).catch(() => null);
+  }
+  // Ya pagado: conserva el acceso hasta el fin del periodo. Sin pagar: se cierra.
+  await db(`empresas_planes?id=eq.${p.id}&estado=in.(activo,pendiente_pago,por_aprobar)`, { metodo: "PATCH", prefer: "return=minimal",
+    cuerpo: { estado: "cancelado", actualizado_en: new Date().toISOString(), ...(p.estado === "activo" ? {} : { liga_vence: new Date().toISOString() }) } });
+  return json({ ok: true, vigenteHasta: p.estado === "activo" ? p.vigente_hasta : null });
+}
+async function aplicarPreapprovalPlan(pre: any) {
+  const id = String(pre.external_reference).split("::")[1];
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(id)}&select=*`))[0];
+  if (!p) return null;
+  if ((pre.status === "cancelled" || pre.status === "paused") && ["activo", "pendiente_pago"].includes(p.estado) && p.mp_preapproval_id === pre.id) {
+    await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "cancelado", actualizado_en: new Date().toISOString() } });
+  }
+  return true;
+}
+/* Cobro aprobado (lo manda el webhook). Registra el pago y la comisión en la base;
+   al terminar los meses con descuento, sube la suscripción al precio de lista. */
+async function planPagado(b: any) {
+  const r = await db("rpc/plan_registrar_pago", { metodo: "POST", cuerpo: {
+    p_plan: String(b.planId), p_pago: String(b.pagoId), p_monto: Number(b.monto), p_neto: b.neto == null ? null : Number(b.neto) } });
+  if (!r || !r.ok) return r;
+  if (r.subir_precio && r.preapproval) {
+    await mp(`/preapproval/${r.preapproval}`, "PUT", { auto_recurring: { transaction_amount: Number(r.precio_lista), currency_id: "MXN" } })
+      .catch((x) => console.error("No se pudo subir el precio de la suscripción", r.preapproval, x));
+  }
+  if (r.numero === 1) {
+    const p = (await db(`empresas_planes?id=eq.${String(b.planId)}&select=*`))[0];
+    const emp = p ? (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] : null;
+    const para = (p && p.admin_correo) || (emp && emp.contacto_correo);
+    if (p && emp && para) {
+      await correo(para, emp.contacto_nombre || emp.nombre, `✅ El plan de capacitación de ${emp.nombre} ya está activo`,
+        plantilla("¡Bienvenidos a Instituto Mara!",
+          `<p style="font-size:16px;line-height:1.6">Confirmamos el pago del plan de <b>${e(emp.nombre)}</b> (${e(p.rango_texto)}). Su equipo ya puede entrar a todo el catálogo.</p>` +
+          `<p style="font-size:15px;line-height:1.6">Entra al aula con este correo (<b>${e(para)}</b>); si aún no tienes cuenta, créala con él. En el menú «Mi empresa» registras a cada persona con su nombre y correo, y ves su avance y sus constancias.</p>` +
+          `<p style="font-size:13px;color:#6b6585">¿Necesitas factura? Envía tus datos fiscales a contacto@institutomara.com.</p>`,
+          { texto: "Abrir «Mi empresa»", url: `${AULA}?ir=mi-empresa` }));
+    }
+  }
+  return r;
+}
+
 // ---------------------------------------------------------------- tarea diaria
 async function diaria() {
   const hoy = fecha(new Date());
@@ -452,7 +579,12 @@ async function diaria() {
   const mems = await db(`membresias?mp_preapproval_id=not.is.null&estado=in.(activa,pendiente)&or=(vigente_hasta.is.null,vigente_hasta.lte.${pronto})&select=*`);
   let membresias = 0; for (const m of mems) { try { await aplicarPreapproval(await mp(`/preapproval/${m.mp_preapproval_id}`)); membresias++; } catch (x) { console.error(x); } }
   await db(`membresias?estado=in.(activa,cancelada)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencida" } });
-  return json({ regalos, recordatorios, membresias });
+  // Planes de empresa: revisar en Mercado Pago las suscripciones por vencer y cerrar las vencidas.
+  let planes = 0;
+  const pls = await db(`empresas_planes?mp_preapproval_id=not.is.null&estado=eq.activo&vigente_hasta=lte.${pronto}&select=mp_preapproval_id`).catch(() => []);
+  for (const p of pls) { try { await aplicarPreapprovalPlan(await mp(`/preapproval/${p.mp_preapproval_id}`)); planes++; } catch (x) { console.error(x); } }
+  await db(`empresas_planes?estado=in.(activo,cancelado)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
+  return json({ regalos, recordatorios, membresias, planes });
 }
 
 serve(async (req) => {
@@ -466,6 +598,7 @@ serve(async (req) => {
       if (b.accion === "entregar") { const r = (await db(`regalos?id=eq.${b.regaloId}&select=*`))[0]; if (r && r.estado === "pagado" && r.entregar_en <= fecha(new Date())) await entregarRegalo(r); return json({ ok: true }); }
       if (b.accion === "empresa_pagada") return json({ resultado: await activarCompraEmpresa(String(b.compraId), String(b.pagoId), Number(b.monto)) });
       if (b.accion === "preapproval") { await aplicarPreapproval(await mp(`/preapproval/${b.id}`)); return json({ ok: true }); }
+      if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });
       return json({ error: "Acción no válida." }, 400);
     }
     switch (b.accion) {
@@ -479,6 +612,8 @@ serve(async (req) => {
       case "empresa_invitar": return await invitarEmpresa(u, b);
       case "empresa_cotizacion": return await crearCotizacionEmpresa(u, b);
       case "empresa_cotizacion_cancelar": return await cancelarCotizacionEmpresa(u, b);
+      case "plan_liga": return await crearLigaPlan(u, b);
+      case "plan_cancelar": return await cancelarPlan(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
