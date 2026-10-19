@@ -15,6 +15,7 @@
 //   plan_liga            { planId, correoMP?, enviarCorreo? } (admin u operador de la empresa) → { liga, planId }
 //   plan_cancelar        { planId }  (admin, su operador o el administrador de la empresa)    → { ok }
 //   comision_aviso       { corteId?, evento: 'aceptado'|'duda'|'respuesta'|'pagado'|'banco' } (operador o admin, según el evento) → { ok, enviado }
+//   plan_renovar         { planId } (admin, operador o administrador de la empresa: liga para pagar el siguiente periodo) → { liga, monto }
 //   plan_invitar         { lugarId } (admin, operador o administrador de la empresa: correo de acceso a la prueba o al plan) → { ok, enviado }
 //   (servicio) supervision — resumen diario de operadores para administración (7 p. m., días hábiles)
 //   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias, planes, cortes }
@@ -711,6 +712,91 @@ async function supervision() {
   return json({ ok: true, operadores: ms.length });
 }
 
+// ---------------------------------------------------------------- renovación de planes (anual o por transferencia)
+function siguienteMonto(p: any) {
+  const n = Number(p.pagos_aprobados) || 0;
+  if (p.periodo === "anual") return n === 0 ? Number(p.monto_inicial) : Number(p.precio_lista);
+  return (n === 0 || n + 1 <= Number(p.descuento_meses || 0)) ? Number(p.monto_inicial) : Number(p.precio_lista);
+}
+function renovacionManual(p: any) {
+  return ["activo", "vencido"].includes(p.estado) && !p.cancelado_en && !p.convertida_en && Number(p.pagos_aprobados) >= 1 && (p.periodo === "anual" || !p.mp_preapproval_id);
+}
+const diaLargo = (d: Date) => d.toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "America/Mexico_City" });
+/* Liga de Mercado Pago para pagar el siguiente periodo (se reutiliza mientras siga vigente). */
+async function ligaRenovacion(p: any, emp: any) {
+  const monto = siguienteMonto(p);
+  // Se reutiliza la liga solo si es de este mismo periodo, por el mismo monto y sigue vigente.
+  if (p.renovar_liga && p.renovar_vence && new Date(p.renovar_vence).getTime() > Date.now() + 36e5
+      && p.renovar_para === p.vigente_hasta && Number(p.renovar_monto) === monto) return p.renovar_liga;
+  const vence = new Date(Date.now() + 15 * 864e5);
+  const pref = await mp("/checkout/preferences", "POST", {
+    items: [{ id: `plan-${p.id}`, title: `Renovación plan ${p.periodo} Instituto Mara — ${emp.nombre} (${p.rango_texto})`, quantity: 1, currency_id: "MXN", unit_price: monto }],
+    statement_descriptor: "INSTITUTO MARA", external_reference: `plan::${p.id}`,
+    metadata: { tipo: "plan", plan_id: p.id, monto, renovacion: true },
+    back_urls: { success: `${AULA}?plan=exito`, pending: `${AULA}?plan=pendiente`, failure: `${AULA}?plan=fallo` },
+    auto_return: "approved", notification_url: WEBHOOK,
+    expires: true, expiration_date_from: new Date(Date.now() - 60e3).toISOString(), expiration_date_to: vence.toISOString(),
+  });
+  await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { renovar_liga: pref.init_point, renovar_vence: vence.toISOString(), renovar_monto: monto, renovar_para: p.vigente_hasta } });
+  return pref.init_point;
+}
+async function renovarPlan(u: any, b: any) {
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (!(await permisoPlan(u, p.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  if (!renovacionManual(p)) return json({ error: "Este plan se cobra solo cada mes; no necesita renovación." }, 409);
+  const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=nombre`))[0] || {};
+  return json({ ok: true, liga: await ligaRenovacion(p, emp), monto: siguienteMonto(p) });
+}
+/* Tarea diaria: aviso 7 días antes (con copia a administración) y el día que vence. */
+async function avisosRenovacion() {
+  const ahora = Date.now();
+  const pls = await db(`empresas_planes?estado=in.(activo,vencido)&pagos_aprobados=gte.1&vigente_hasta=gte.${new Date(ahora - 864e5).toISOString()}` +
+    `&vigente_hasta=lte.${new Date(ahora + 10 * 864e5).toISOString()}&select=*`).catch(() => []);
+  let enviados = 0;
+  for (const p of pls) {
+    try {
+      if (!renovacionManual(p)) continue;
+      const otro = (await db(`empresas_planes?empresa_id=eq.${p.empresa_id}&id=neq.${p.id}&estado=eq.activo&vigente_hasta=gt.${encodeURIComponent(p.vigente_hasta)}&select=id`)).length;
+      if (otro) continue;
+      const acceso = new Date(p.vigente_hasta), fin = new Date(acceso.getTime() - 3 * 864e5);
+      const toca7 = fin.getTime() > ahora && fin.getTime() - ahora <= 7 * 864e5 && p.aviso7_para !== p.vigente_hasta;
+      const toca0 = fin.getTime() <= ahora && acceso.getTime() > ahora && p.aviso0_para !== p.vigente_hasta;
+      if (!toca7 && !toca0) continue;
+      const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] || {};
+      const adms = await db(`empresas_admins?empresa_id=eq.${p.empresa_id}&select=correo,nombre`);
+      const para = p.admin_correo || (adms[0] && adms[0].correo) || emp.contacto_correo;
+      if (!para) continue;
+      const nom = String((adms.find((a: any) => String(a.correo).toLowerCase() === String(para).toLowerCase()) || {}).nombre || emp.contacto_nombre || "").split(" ")[0];
+      const liga = await ligaRenovacion(p, emp);
+      const monto = siguienteMonto(p);
+      const que = `${dinero(monto)} ${p.periodo === "anual" ? "por 12 meses" : "por el siguiente mes"}, IVA incluido`;
+      const plan = `<b>${e(emp.nombre)}</b> (${e(p.rango_texto)}, ${e(p.periodo)})`;
+      const pie = `<p style="font-size:15px;line-height:1.6">Si prefieren pagar por transferencia bancaria, respondan este correo y les enviamos los datos.</p>`;
+      const boton = `<p style="margin:22px 0"><a href="${liga}" style="background:#6D28D9;color:#fff;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:bold">Renovar el plan</a></p>`;
+      let asunto = "", cuerpo = "";
+      if (toca7) {
+        asunto = `${emp.nombre}: su plan de Instituto Mara vence el ${fin.toLocaleDateString("es-MX", { day: "numeric", month: "long", timeZone: "America/Mexico_City" })}`;
+        cuerpo = `<p style="font-size:16px;line-height:1.6">El plan de capacitación de ${plan} vence el <b>${e(diaLargo(fin))}</b>.</p>` +
+          `<p style="font-size:15px;line-height:1.6">Para que su equipo no pierda el acceso, pueden renovarlo aquí: <b>${e(que)}</b>, con tarjeta, OXXO o transferencia SPEI.</p>` + boton + pie +
+          `<p style="font-size:15px;line-height:1.6">Su equipo conserva todo su avance y sus constancias. Si tienen dudas o quieren cambiar el número de personas, con gusto les ayudamos.</p>`;
+      } else {
+        asunto = `${emp.nombre}: su plan de Instituto Mara vence hoy`;
+        cuerpo = `<p style="font-size:16px;line-height:1.6">Hoy vence el plan de capacitación de ${plan}. Su equipo conserva el acceso <b>3 días más</b>, hasta el ${e(diaLargo(acceso))}; después ya no podrá entrar a los programas.</p>` +
+          `<p style="font-size:15px;line-height:1.6">Renuévenlo aquí: <b>${e(que)}</b>, con tarjeta, OXXO o transferencia SPEI. En cuanto se acredite el pago, todo sigue igual.</p>` + boton + pie +
+          `<p style="font-size:15px;line-height:1.6">Su avance y sus constancias quedan guardados aunque el plan venza.</p>`;
+      }
+      await correo(para, nom, asunto, plantilla(`Hola${nom ? ", " + e(nom) : ""}:`, cuerpo));
+      if (toca7) await avisarAdmins(`📅 Por vencer: ${emp.nombre} (${dinero(monto)})`,
+        plantilla("Plan por vencer", `<p style="font-size:15px;line-height:1.6">Le avisamos a ${e(para)} que el plan de ${plan} vence el <b>${e(diaLargo(fin))}</b>. La liga de pago es de ${e(que)}.</p>` +
+          `<p style="font-size:14px;color:#6b6585">Si te pagan por transferencia, regístrala en la ficha de la empresa con «Registrar pago por transferencia».</p>`, { texto: "Ver planes", url: urlPlanes }));
+      await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: toca7 ? { aviso7_para: p.vigente_hasta } : { aviso0_para: p.vigente_hasta } });
+      enviados++;
+    } catch (x) { console.error("renovación", p.id, x); }
+  }
+  return enviados;
+}
+
 // ---------------------------------------------------------------- tarea diaria
 async function diaria() {
   const hoy = fecha(new Date());
@@ -747,7 +833,8 @@ async function diaria() {
   for (const p of pls) { try { await aplicarPreapprovalPlan(await mp(`/preapproval/${p.mp_preapproval_id}`)); planes++; } catch (x) { console.error(x); } }
   await db(`empresas_planes?estado=in.(activo,cancelado)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
   let cortes = 0; try { cortes = await cortesDiarios(); } catch (x) { console.error("cortes", x); }
-  return json({ regalos, recordatorios, membresias, planes, cortes });
+  let renovaciones = 0; try { renovaciones = await avisosRenovacion(); } catch (x) { console.error("renovaciones", x); }
+  return json({ regalos, recordatorios, membresias, planes, cortes, renovaciones });
 }
 
 serve(async (req) => {
@@ -781,6 +868,7 @@ serve(async (req) => {
       case "plan_cancelar": return await cancelarPlan(u, b);
       case "comision_aviso": return await comisionAviso(u, b);
       case "plan_invitar": return await invitarLugar(u, b);
+      case "plan_renovar": return await renovarPlan(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
