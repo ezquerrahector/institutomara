@@ -344,12 +344,30 @@ footer a:hover{color:#fff}
 .emp-caja{background:var(--nube);border:1px solid var(--linea);border-radius:28px;padding:40px}
 .emp-caja h2{font-size:2rem;letter-spacing:-.02em;margin:6px 0 10px}
 .emp-caja>p{color:var(--gris);max-width:680px;line-height:1.6;margin-bottom:22px}
-.emp-escala{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
-.emp-escala div{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:18px;text-align:center}
-.emp-escala b{display:block;font-size:2rem;color:var(--morado)}
-.emp-escala span{color:var(--gris);font-size:14px}
+.emp-plan{display:grid;grid-template-columns:minmax(260px,360px) 1fr;gap:28px;align-items:start;margin-bottom:22px}
+.emp-tabla{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.emp-tabla th,.emp-tabla td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--linea)}
+.emp-tabla th{font-size:13px;color:var(--gris);font-weight:600}
+.emp-tabla td:last-child{font-weight:800;color:var(--morado)}
+.emp-tabla tr:last-child td{border-bottom:0}
+.emp-anual{font-weight:700;color:var(--morado);margin:4px 0 12px}
+.emp-botones{display:flex;gap:12px;flex-wrap:wrap}
+.emp-nota{color:var(--gris);font-size:14px;margin-top:10px}
+.emp-modal{position:fixed;inset:0;background:rgba(46,16,101,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:200}
+.emp-modal[hidden]{display:none}
+.emp-modal-caja{background:#fff;border-radius:22px;padding:28px;max-width:560px;width:100%;max-height:92vh;overflow:auto;position:relative}
+.emp-modal-caja h3{margin:0 0 6px;font-size:1.4rem}
+.emp-modal-caja>p{color:var(--gris);margin:0 0 16px}
+.emp-cerrar{position:absolute;top:12px;right:14px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--gris)}
+#emp-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#emp-form label{display:flex;flex-direction:column;font-size:13px;font-weight:600;gap:4px}
+#emp-form input{font:inherit;font-weight:400;padding:10px 12px;border:1px solid var(--linea);border-radius:10px}
+.emp-ancho{grid-column:1/-1}
+.emp-trampa{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.emp-ok{background:#D1FAE5;color:#065F46;padding:12px 14px;border-radius:12px}
+.emp-err{background:#FEE2E2;color:#991B1B;padding:12px 14px;border-radius:12px}
 .emp-lista{columns:2;gap:30px;margin:0 0 22px;padding-left:18px;line-height:1.8}
-@media(max-width:700px){.emp-caja{padding:26px}.emp-escala{gap:8px}.emp-escala div{padding:12px 6px}.emp-escala b{font-size:1.5rem}.emp-escala span{font-size:12px}.emp-lista{columns:1}}
+@media(max-width:700px){.emp-caja{padding:26px}.emp-plan{grid-template-columns:1fr;gap:16px}.emp-lista{columns:1}#emp-form{grid-template-columns:1fr}.emp-modal-caja{padding:22px}}
 .fi-estrellas{color:#F59E0B;letter-spacing:1px}
 .fi-resena{border-left:3px solid var(--linea);margin:10px 0;padding:4px 14px;color:var(--tinta);font-size:15px}
 .fi-resena small{color:var(--gris)}
@@ -780,10 +798,35 @@ html,body{overflow-x:hidden}
   fetch(SUPA + '/rest/v1/ajustes?id=eq.true&select=*', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
     .then(function(r){ return r.ok ? r.json() : []; })
     .then(function(f){ if(f && f[0]){ PLANES = { esencial:Number(f[0].precio_esencial), total:Number(f[0].precio_total), anual:Number(f[0].precio_anual), dias:f[0].dias_constancia_diplomado }; pintarPlanes();
-      var pe = function(id, v){ var el = document.getElementById(id); if(el && v != null) el.textContent = Number(v) + '%'; };
-      var ok = function(){ pe('emp-p5', f[0].emp_pct_5); pe('emp-p10', f[0].emp_pct_10); pe('emp-p25', f[0].emp_pct_25); };
-      if(document.getElementById('emp-p5')) ok(); else document.addEventListener('DOMContentLoaded', ok); } })
+      var meses = Number(f[0].plan_meses_anual) || 10, gratis = 12 - meses;
+      var ok = function(){ var el = document.getElementById('emp-anual'); if(el) el.textContent = gratis > 0 ? 'Paga el año y llévate ' + gratis + (gratis === 1 ? ' mes gratis.' : ' meses gratis.') : ''; };
+      if(document.getElementById('emp-anual')) ok(); else document.addEventListener('DOMContentLoaded', ok); } })
     .catch(function(){});
+
+  /* Plan para empresas: precios de la tabla de planes y «Quiero mi prueba sin costo». */
+  fetch(SUPA + '/rest/v1/planes_rangos?activo=eq.true&select=desde,hasta,precio_mensual&order=desde', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(f){
+      var l = (f || []).filter(function(x){ return x.hasta != null && x.desde <= 100; }); if(!l.length) return;
+      var ok = function(){ var t = document.getElementById('emp-precios'); if(!t) return;
+        t.innerHTML = l.map(function(x, i){ return '<tr><td>' + (i === 0 ? 'Hasta ' + x.hasta : x.desde + ' a ' + x.hasta) + '</td><td>' + dinero(x.precio_mensual) + '</td></tr>'; }).join('') +
+          '<tr><td>Más de 100</td><td>Pide tu cotización</td></tr>'; };
+      if(document.getElementById('emp-precios')) ok(); else document.addEventListener('DOMContentLoaded', ok);
+    }).catch(function(){});
+  window.abrirPruebaEmp = function(){ var m = document.getElementById('emp-modal'); m.hidden = false; var i = m.querySelector('input'); if(i) i.focus(); };
+  window.cerrarPruebaEmp = function(){ document.getElementById('emp-modal').hidden = true; };
+  document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape'){ var m = document.getElementById('emp-modal'); if(m) m.hidden = true; } });
+  window.enviarPruebaEmp = function(ev){
+    ev.preventDefault();
+    var f = ev.target, av = document.getElementById('emp-m-av'), b = document.getElementById('emp-m-btn'), d = {};
+    ['empresa','personas','nombre','puesto','correo','telefono','mensaje','web'].forEach(function(k){ d[k] = (f.elements[k].value || '').trim(); });
+    if(String(d.telefono).replace(/\D/g,'').length < 10){ av.innerHTML = '<div class="emp-err">Escribe un teléfono de 10 dígitos.</div>'; return; }
+    d.accion = 'solicitud'; b.disabled = true; b.textContent = 'Enviando…'; av.innerHTML = '';
+    fetch(SUPA + '/functions/v1/prospectos', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer '+ANON }, body:JSON.stringify(d) })
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); })
+      .then(function(){ f.reset(); b.textContent = 'Enviado ✓'; av.innerHTML = '<div class="emp-ok">¡Listo! Te llamamos hoy para activar tu prueba.</div>'; })
+      .catch(function(e){ b.disabled = false; b.textContent = 'Quiero mi prueba sin costo'; av.innerHTML = '<div class="emp-err">' + esc(e.message) + '</div>'; });
+  };
 
   /* Reseñas publicadas: promedio por programa (se muestra con 3 o más) */
   var RESENAS = {};
@@ -924,24 +967,54 @@ html,body{overflow-x:hidden}
 <section id="empresas" class="emp-sec">
   <div class="wrap emp-caja">
     <div class="eyebrow">Para empresas</div>
-    <h2>Capacita a tu equipo con descuento por volumen</h2>
-    <p>Compra de 5 a 50 lugares de cualquier curso o diplomado y paga en línea. Asignas cada lugar con el nombre y correo de la persona, le llega su invitación y desde tu panel ves quién ya empezó, cuánto lleva y quién terminó.</p>
-    <div class="emp-escala">
-      <div><b id="emp-p5">15%</b><span>5 a 9 lugares</span></div>
-      <div><b id="emp-p10">25%</b><span>10 a 24 lugares</span></div>
-      <div><b id="emp-p25">35%</b><span>25 a 50 lugares</span></div>
+    <h2>Capacita a todo tu equipo con un solo plan</h2>
+    <p>Por una cuota mensual, tu gente entra a todos los cursos y diplomados y cada quien toma los que necesite. Tú registras a cada persona y, desde tu panel, ves quién ya empezó, cuánto lleva y quién terminó.</p>
+    <div class="emp-plan">
+      <table class="emp-tabla" aria-label="Precios del plan para empresas">
+        <thead><tr><th>Personas</th><th>Al mes, IVA incluido</th></tr></thead>
+        <tbody id="emp-precios">
+          <tr><td>Hasta 5</td><td>$1,490</td></tr><tr><td>6 a 10</td><td>$2,490</td></tr><tr><td>11 a 25</td><td>$4,990</td></tr>
+          <tr><td>26 a 50</td><td>$8,490</td></tr><tr><td>51 a 100</td><td>$13,990</td></tr><tr><td>Más de 100</td><td>Pide tu cotización</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <p class="emp-anual" id="emp-anual">Paga el año y llévate 2 meses gratis.</p>
+        <ul class="emp-lista">
+          <li>Más de 80 cursos y diplomados: NOM-035, liderazgo, Excel, servicio, idiomas, IA y más</li>
+          <li>Panel con el avance de cada persona y reporte en Excel o PDF</li>
+          <li>Constancia con folio y QR verificable para cada quien</li>
+          <li>Pago con tarjeta y cobro automático, o anual con tarjeta, OXXO o transferencia</li>
+          <li>Factura disponible</li>
+        </ul>
+      </div>
     </div>
-    <ul class="emp-lista">
-      <li>Pago con tarjeta, OXXO o transferencia</li>
-      <li>Códigos válidos 12 meses</li>
-      <li>Panel con el avance de cada persona</li>
-      <li>Constancia con folio verificable para cada quien</li>
-      <li>Invitaciones por correo o WhatsApp</li>
-      <li>Ideal para NOM-035, liderazgo, Excel, servicio e IA</li>
-    </ul>
-    <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=empresas">Cotizar para mi equipo →</a>
+    <div class="emp-botones">
+      <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=empresas">Contratar el plan →</a>
+      <button type="button" class="btn btn-linea btn-grande" onclick="abrirPruebaEmp()">Quiero mi prueba sin costo</button>
+    </div>
+    <p class="emp-nota">Prueba: 5 personas, 15 días, todo el catálogo.</p>
   </div>
 </section>
+
+<div id="emp-modal" class="emp-modal" hidden>
+  <div class="emp-modal-caja" role="dialog" aria-modal="true" aria-labelledby="emp-m-t">
+    <button type="button" class="emp-cerrar" onclick="cerrarPruebaEmp()" aria-label="Cerrar">&times;</button>
+    <h3 id="emp-m-t">Prueba sin costo para tu equipo</h3>
+    <p>5 personas, 15 días, con todo el catálogo. Déjanos tus datos y te llamamos hoy para activarla.</p>
+    <form id="emp-form" onsubmit="enviarPruebaEmp(event)">
+      <label>Empresa<input name="empresa" required maxlength="160"></label>
+      <label>¿Cuántas personas son?<input name="personas" type="number" min="1"></label>
+      <label>Tu nombre<input name="nombre" required maxlength="120"></label>
+      <label>Puesto<input name="puesto" maxlength="80" placeholder="Ej. Recursos Humanos"></label>
+      <label>Correo<input name="correo" type="email" required maxlength="160"></label>
+      <label>Teléfono<input name="telefono" type="tel" required placeholder="10 dígitos" maxlength="20"></label>
+      <label class="emp-ancho">¿Qué les interesa? (opcional)<input name="mensaje" maxlength="300" placeholder="Ej. NOM-035 y Excel para 12 personas"></label>
+      <input name="web" tabindex="-1" autocomplete="off" class="emp-trampa" aria-hidden="true">
+      <div id="emp-m-av" class="emp-ancho"></div>
+      <button type="submit" class="btn btn-mor emp-ancho" id="emp-m-btn">Quiero mi prueba sin costo</button>
+    </form>
+  </div>
+</div>
 
 <section id="como" style="background:var(--nube)">
   <div class="wrap">
