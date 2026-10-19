@@ -390,7 +390,9 @@ async function invitarEmpresa(u: any, b: any) {
   const comp = k && k.empresas_compras;
   let adminEmpresa = false;
   if (k && comp && comp.empresa_id && comp.comprador_id !== u.id && u.rol !== "admin") {
-    adminEmpresa = (await db(`empresas_admins?empresa_id=eq.${comp.empresa_id}&usuario_id=eq.${u.id}&select=id`)).length > 0;
+    // El administrador de la empresa o el operador que la atiende también reparten lugares.
+    adminEmpresa = (await db(`empresas_admins?empresa_id=eq.${comp.empresa_id}&usuario_id=eq.${u.id}&select=id`)).length > 0
+      || (await permisoPlan(u, comp.empresa_id)) === "operador";
   }
   if (!k || !comp || (comp.comprador_id !== u.id && u.rol !== "admin" && !adminEmpresa)) return json({ error: "Ese código no es de tu empresa." }, 404);
   if (k.usuario_id) return json({ error: "Ese lugar ya lo activó otra persona." }, 409);
