@@ -15,6 +15,8 @@
 //   plan_liga            { planId, correoMP?, enviarCorreo? } (admin u operador de la empresa) → { liga, planId }
 //   plan_cancelar        { planId }  (admin, su operador o el administrador de la empresa)    → { ok }
 //   comision_aviso       { corteId?, evento: 'aceptado'|'duda'|'respuesta'|'pagado'|'banco' } (operador o admin, según el evento) → { ok, enviado }
+//   plan_invitar         { lugarId } (admin, operador o administrador de la empresa: correo de acceso a la prueba o al plan) → { ok, enviado }
+//   (servicio) supervision — resumen diario de operadores para administración (7 p. m., días hábiles)
 //   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias, planes, cortes }
 //   (servicio) plan_pagado { planId, pagoId, monto, neto } — lo manda el webhook al aprobarse un cobro del plan
 //   (servicio) plan_reembolso { pagoId, reembolsado, motivo } — reembolso o contracargo de un cobro del plan
@@ -655,6 +657,52 @@ async function planReembolso(b: any) {
   return r;
 }
 
+// ---------------------------------------------------------------- prueba y plan: acceso por correo
+/* Le manda a una persona su acceso al catálogo (prueba o plan). Admin, operador de la empresa o su administrador. */
+async function invitarLugar(u: any, b: any) {
+  const l = (await db(`empresas_plan_lugares?id=eq.${encodeURIComponent(String(b.lugarId || ""))}&activo=eq.true&select=*`))[0];
+  if (!l) return json({ error: "Ese lugar ya no existe." }, 404);
+  if (!(await permisoPlan(u, l.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  const p = (await db(`empresas_planes?id=eq.${l.plan_id}&select=*`))[0] || {};
+  const emp = (await db(`empresas?id=eq.${l.empresa_id}&select=nombre`))[0] || {};
+  const prueba = p.estado === "prueba";
+  const vence = prueba && p.vigente_hasta ? new Date(new Date(p.vigente_hasta).getTime() - 864e5).toLocaleDateString("es-MX", { day: "numeric", month: "long", timeZone: "America/Mexico_City" }) : "";
+  const enviado = await correo(l.correo, l.nombre, prueba ? `${emp.nombre} te invita a probar Instituto Mara` : `${emp.nombre} te dio acceso a Instituto Mara`,
+    plantilla(`¡Hola, ${e(String(l.nombre).split(" ")[0])}!`,
+      `<p style="font-size:16px;line-height:1.6"><b>${e(emp.nombre)}</b> te dio acceso a <b>todos los cursos y diplomados</b> de Instituto Mara: 100 % en línea y a tu ritmo.</p>` +
+      (prueba
+        ? `<p style="font-size:15px;line-height:1.6">Es una <b>prueba sin costo hasta el ${e(vence)}</b>. Empieza los programas que quieras; tu avance se guarda y, cuando ${e(emp.nombre)} active su plan, obtienes tu constancia con folio y QR verificable al terminar.</p>`
+        : `<p style="font-size:15px;line-height:1.6">Al terminar cada programa obtienes tu constancia con folio y QR verificable, que puedes agregar a tu currículum.</p>`) +
+      `<p style="font-size:15px;line-height:1.6">Crea tu cuenta con este correo: <b>${e(l.correo)}</b>. Así tu lugar se activa solo. Después elige en «Catálogo» el programa que quieras y presiona «Empezar».</p>`,
+      { texto: "Crear mi cuenta y empezar", url: AULA }));
+  if (enviado) await db(`empresas_plan_lugares?id=eq.${l.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { invitado_en: new Date().toISOString() } });
+  return json({ ok: true, enviado });
+}
+
+// ---------------------------------------------------------------- supervisión de operadores (7 p. m., días hábiles)
+async function supervision() {
+  const ms = ((await db("rpc/operador_metricas", { metodo: "POST", cuerpo: {} })) || []).filter((m: any) => m.activo);
+  if (!ms.length) return json({ ok: true, operadores: 0 });
+  const filas = ms.map((m: any) => {
+    const res = Object.entries(m.resultados_hoy || {}).sort((a: any, b: any) => b[1] - a[1]).map(([k, v]) => `${e(k)}: ${v}`).join(" · ");
+    const atr = (m.atrasadas_lista || []).slice(0, 8).map((a: any) =>
+      `<li>${e(a.nombre)} <span style="color:#6b6585">(tocaba el ${new Date(a.proxima).toLocaleDateString("es-MX", { day: "numeric", month: "short", timeZone: "America/Mexico_City" })})</span>${a.comentario ? ` — «${e(String(a.comentario).slice(0, 90))}»` : ""}</li>`).join("");
+    return `<div style="border:1px solid #e6e1f5;border-radius:12px;padding:14px 16px;margin:0 0 14px">` +
+      `<b style="font-size:16px">${e(m.nombre)}</b>` +
+      `<p style="font-size:14px;line-height:1.7;margin:6px 0">Llamadas hoy: <b>${m.llamadas_hoy}</b> · en la semana: ${m.llamadas_semana} · en el mes: ${m.llamadas_mes}<br>` +
+      (res ? `Resultados de hoy: ${res}<br>` : "") +
+      `Le tocaban hoy: ${m.toca_hoy} · sin llamar: ${m.sin_llamar} · <b style="color:${m.atrasadas ? "#b45309" : "#065f46"}">atrasadas: ${m.atrasadas}</b><br>` +
+      `Pruebas activas: ${m.pruebas_activas} · planes activos: ${m.planes_activos} · comisión del mes: ${dinero(m.comision_mes)}</p>` +
+      (atr ? `<p style="font-size:13px;margin:6px 0 2px"><b>Atrasadas:</b></p><ul style="font-size:13px;line-height:1.6;margin:0;padding-left:18px">${atr}</ul>` : "") +
+      `</div>`;
+  }).join("");
+  const total = ms.reduce((a: number, m: any) => a + Number(m.llamadas_hoy || 0), 0);
+  const hoyTxt = new Date().toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "America/Mexico_City" });
+  await avisarAdmins(`📞 Operadores hoy: ${total} llamada${total === 1 ? "" : "s"} · ${hoyTxt}`,
+    plantilla("Resumen de operadores", filas, { texto: "Ver supervisión", url: urlPlanes }));
+  return json({ ok: true, operadores: ms.length });
+}
+
 // ---------------------------------------------------------------- tarea diaria
 async function diaria() {
   const hoy = fecha(new Date());
@@ -707,6 +755,7 @@ serve(async (req) => {
       if (b.accion === "preapproval") { await aplicarPreapproval(await mp(`/preapproval/${b.id}`)); return json({ ok: true }); }
       if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });
       if (b.accion === "plan_reembolso") return json({ resultado: await planReembolso(b) });
+      if (b.accion === "supervision") return await supervision();
       return json({ error: "Acción no válida." }, 400);
     }
     switch (b.accion) {
@@ -723,6 +772,7 @@ serve(async (req) => {
       case "plan_liga": return await crearLigaPlan(u, b);
       case "plan_cancelar": return await cancelarPlan(u, b);
       case "comision_aviso": return await comisionAviso(u, b);
+      case "plan_invitar": return await invitarLugar(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
