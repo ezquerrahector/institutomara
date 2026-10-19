@@ -14,8 +14,10 @@
 //   empresa_cotizacion_cancelar { compraId }  (solo admin; vence la liga en Mercado Pago) → { ok }
 //   plan_liga            { planId, correoMP?, enviarCorreo? } (admin u operador de la empresa) → { liga, planId }
 //   plan_cancelar        { planId }  (admin, su operador o el administrador de la empresa)    → { ok }
-//   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias, planes }
+//   comision_aviso       { corteId?, evento: 'aceptado'|'duda'|'respuesta'|'pagado'|'banco' } (operador o admin, según el evento) → { ok, enviado }
+//   diaria               (solo con la llave de servicio: tarea programada)          → { regalos, recordatorios, membresias, planes, cortes }
 //   (servicio) plan_pagado { planId, pagoId, monto, neto } — lo manda el webhook al aprobarse un cobro del plan
+//   (servicio) plan_reembolso { pagoId, reembolsado, motivo } — reembolso o contracargo de un cobro del plan
 // Secretos: MP_ACCESS_TOKEN, BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE (opcional),
 //           MP_WEBHOOK_URL (opcional), URL_AULA (opcional). SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY los pone Supabase.
 
@@ -551,6 +553,108 @@ async function planPagado(b: any) {
   return r;
 }
 
+// ---------------------------------------------------------------- comisiones de operadores
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+function periodoTxt(k: any) {
+  const d = new Date(String(k.periodo_desde || k.fecha_corte) + "T12:00:00"), h = new Date(String(k.periodo_hasta || k.fecha_corte) + "T12:00:00");
+  return d.getMonth() === h.getMonth() && d.getFullYear() === h.getFullYear()
+    ? `del ${d.getDate()} al ${h.getDate()} de ${MESES[h.getMonth()]} de ${h.getFullYear()}`
+    : `del ${d.getDate()} de ${MESES[d.getMonth()]} al ${h.getDate()} de ${MESES[h.getMonth()]} de ${h.getFullYear()}`;
+}
+async function admins() { return await db("perfiles?rol=eq.admin&select=correo,nombre"); }
+async function avisarAdmins(asunto: string, html: string) {
+  for (const a of await admins()) { try { await correo(a.correo, a.nombre, asunto, html); } catch (x) { console.error(x); } }
+}
+const urlComisiones = `${AULA}?ir=op-comisiones`;
+const urlPlanes = `${AULA}?ir=admin-planes`;
+/* Avisos de los recibos: el operador acepta o pide revisión; administración responde o paga; cambio de cuenta. */
+async function comisionAviso(u: any, b: any) {
+  const ev = String(b.evento || "");
+  if (ev === "banco") {
+    const o = (await db(`operadores?usuario_id=eq.${u.id}&select=*`))[0];
+    if (!o || o.banco_cambio_visto) return json({ ok: true, enviado: false });
+    await avisarAdmins(`🏦 ${o.nombre} cambió su cuenta para comisiones`,
+      plantilla("Cambio de cuenta bancaria", `<p style="font-size:15px;line-height:1.6"><b>${e(o.nombre)}</b> registró una cuenta nueva para recibir sus comisiones:</p>` +
+        `<p style="font-size:15px;line-height:1.7">Titular: <b>${e(o.titular)}</b><br>Banco: <b>${e(o.banco)}</b><br>CLABE: <b>${e(o.clabe)}</b></p>` +
+        `<p style="font-size:14px;color:#6b6585">Aplica en los recibos que se generen a partir de hoy. Si no reconoces este cambio, confírmalo con ${e(o.nombre.split(" ")[0])} antes de transferir.</p>`,
+        { texto: "Ver en «Planes y operadores»", url: urlPlanes }));
+    return json({ ok: true, enviado: true });
+  }
+  const k = (await db(`comision_cortes?id=eq.${encodeURIComponent(String(b.corteId || ""))}&select=*`))[0];
+  if (!k) return json({ error: "Recibo no encontrado." }, 404);
+  const o = (await db(`operadores?id=eq.${k.operador_id}&select=*`))[0] || {};
+  const esSuyo = o.usuario_id === u.id, esAdmin = u.rol === "admin";
+  const folio = `recibo ${k.folio} (${periodoTxt(k)})`;
+  if (ev === "aceptado" && esSuyo && k.estado === "aceptado") {
+    await avisarAdmins(`💸 ${o.nombre} aceptó su recibo: ${dinero(k.total)} por pagar`,
+      plantilla("Recibo listo para pagar", `<p style="font-size:15px;line-height:1.6"><b>${e(o.nombre)}</b> aceptó su ${e(folio)} por <b>${dinero(k.total)}</b>.</p>` +
+        `<p style="font-size:15px;line-height:1.7">Transfiere a:<br>Titular: <b>${e(k.titular)}</b><br>Banco: <b>${e(k.banco)}</b><br>CLABE: <b>${e(k.clabe)}</b></p>` +
+        `<p style="font-size:14px;color:#6b6585">Después márcalo como pagado y sube el comprobante en «Planes y operadores».</p>`, { texto: "Pagar y subir comprobante", url: urlPlanes }));
+  } else if (ev === "duda" && esSuyo && k.estado === "en_revision") {
+    await avisarAdmins(`❓ ${o.nombre} tiene una duda con su recibo`,
+      plantilla("Duda sobre un recibo", `<p style="font-size:15px;line-height:1.6"><b>${e(o.nombre)}</b> pidió revisar su ${e(folio)} (${dinero(k.total)}):</p>` +
+        `<blockquote style="border-left:4px solid #6D28D9;margin:0;padding:8px 14px;font-size:15px;background:#f6f3ff">${e(k.duda)}</blockquote>`,
+        { texto: "Responder", url: urlPlanes }));
+  } else if (ev === "respuesta" && esAdmin && k.estado === "enviado" && o.correo) {
+    await correo(o.correo, o.nombre, `Revisamos tu recibo ${k.folio}: ${dinero(k.total)}`,
+      plantilla(`Hola, ${e(String(o.nombre).split(" ")[0])}`, `<p style="font-size:15px;line-height:1.6">Revisamos tu ${e(folio)}. Ahora es de <b>${dinero(k.total)}</b>.</p>` +
+        (k.respuesta ? `<blockquote style="border-left:4px solid #6D28D9;margin:0;padding:8px 14px;font-size:15px;background:#f6f3ff">${e(k.respuesta)}</blockquote>` : "") +
+        `<p style="font-size:15px;line-height:1.6">Revísalo y, si estás de acuerdo, acéptalo para que te podamos transferir.</p>`, { texto: "Ver mi recibo", url: urlComisiones }));
+  } else if (ev === "pagado" && esAdmin && k.estado === "pagado" && o.correo) {
+    await correo(o.correo, o.nombre, `✅ Te transferimos ${dinero(k.total)} de tus comisiones`,
+      plantilla(`¡Listo, ${e(String(o.nombre).split(" ")[0])}!`, `<p style="font-size:15px;line-height:1.6">Te transferimos <b>${dinero(k.total)}</b> de tu ${e(folio)} a tu cuenta ${e(k.banco)} con CLABE terminación <b>${e(String(k.clabe || "").slice(-4))}</b>.</p>` +
+        `<p style="font-size:15px">Referencia: <b>${e(k.referencia)}</b>. El comprobante está en «Comisiones».</p>`, { texto: "Ver comprobante", url: urlComisiones }));
+  } else return json({ ok: true, enviado: false });
+  return json({ ok: true, enviado: true });
+}
+/* Tarea diaria: arma los cortes del 15 y de fin de mes y avisa a cada operador. */
+async function cortesDiarios() {
+  const r = await db("rpc/comisiones_generar_cortes", { metodo: "POST", cuerpo: {} });
+  const lista = (r && r.cortes) || [];
+  const resumen: string[] = [];
+  for (const c of lista) {
+    try {
+      const k = (await db(`comision_cortes?id=eq.${c.id}&select=*`))[0];
+      const o = (await db(`operadores?id=eq.${c.operador_id}&select=*`))[0];
+      if (!k || !o) continue;
+      resumen.push(`<li>${e(o.nombre)}: <b>${dinero(k.total)}</b>${k.clabe ? "" : " · <span style='color:#b45309'>aún no captura su CLABE</span>"}</li>`);
+      if (o.correo) await correo(o.correo, o.nombre, `🧾 Tu recibo de comisiones ${periodoTxt(k)}: ${dinero(k.total)}`,
+        plantilla(`Hola, ${e(String(o.nombre).split(" ")[0])}`,
+          `<p style="font-size:15px;line-height:1.6">Ya está tu recibo de comisiones <b>${e(periodoTxt(k))}</b> por <b>${dinero(k.total)}</b>.</p>` +
+          `<p style="font-size:15px;line-height:1.6">Revisa el desglose y, si estás de acuerdo, presiona <b>«Acepto»</b> para que te transfiramos. Si algo no cuadra, usa <b>«Tengo una duda»</b>.</p>` +
+          (k.clabe ? "" : `<p style="font-size:15px;color:#b45309">Antes de aceptarlo, captura tu CLABE en «Mi perfil».</p>`),
+          { texto: "Ver mi recibo", url: urlComisiones }));
+    } catch (x) { console.error(x); }
+  }
+  if (resumen.length) await avisarAdmins(`🧾 Recibos de comisiones ${periodoTxt({ fecha_corte: r.hasta, periodo_desde: String(r.hasta).slice(8) === "15" ? String(r.hasta).slice(0, 8) + "01" : String(r.hasta).slice(0, 8) + "16", periodo_hasta: r.hasta })}`,
+    plantilla("Se generaron los recibos de comisiones", `<ul style="font-size:15px;line-height:1.8">${resumen.join("")}</ul>` +
+      `<p style="font-size:14px;color:#6b6585">Cada operador ya recibió el suyo. Te avisamos cuando lo acepte para que le transfieras.</p>`, { texto: "Ver recibos", url: urlPlanes }));
+  return lista.length;
+}
+/* Reembolso o contracargo de un cobro (lo manda el webhook). */
+async function planReembolso(b: any) {
+  const r = await db("rpc/plan_pago_reembolso", { metodo: "POST", cuerpo: { p_pago: String(b.pagoId), p_reembolsado: Number(b.reembolsado), p_motivo: String(b.motivo || "reembolso") } });
+  if (!r || !r.ok || r.motivo === "sin cambios") return r;
+  const que = b.motivo === "contracargo" ? "Contracargo" : "Reembolso";
+  const efecto: Record<string, string> = {
+    sin_comision: "Ese plan no tiene operador, así que no hay comisión que ajustar.",
+    cancelada: "La comisión aún no entraba a un recibo: se canceló.",
+    cancelada_en_recibo: "La comisión estaba en un recibo sin pagar: se ajustó y se le pidió al operador aceptarlo de nuevo.",
+    ajuste_siguiente: "La comisión ya se había pagado: se descontará en el siguiente recibo del operador.",
+  };
+  await avisarAdmins(`⚠️ ${que} en el plan de ${r.empresa}: ${dinero(r.monto)}`,
+    plantilla(`${que} de un plan de empresa`, `<p style="font-size:15px;line-height:1.6">Mercado Pago reportó un ${que.toLowerCase()} de <b>${dinero(r.monto)}</b> en el plan de <b>${e(r.empresa)}</b>${r.completo ? " (total)" : " (parcial)"}.</p>` +
+      `<p style="font-size:15px;line-height:1.6">${e(efecto[r.accion] || "")}</p>` +
+      `<p style="font-size:14px;color:#6b6585">El plan sigue activo. Si ya no les darás acceso, cancélalo desde la ficha de la empresa.</p>`, { texto: "Ver planes", url: urlPlanes }));
+  if (r.operador_id && r.accion !== "sin_comision") {
+    const o = (await db(`operadores?id=eq.${r.operador_id}&select=*`))[0];
+    if (o && o.correo) await correo(o.correo, o.nombre, `Ajuste en tus comisiones: ${que.toLowerCase()} de ${r.empresa}`,
+      plantilla(`Hola, ${e(String(o.nombre).split(" ")[0])}`, `<p style="font-size:15px;line-height:1.6">${e(r.empresa)} tuvo un ${que.toLowerCase()}, así que su comisión (${dinero(r.comision)}) ${r.accion === "ajuste_siguiente" ? "se descontará de tu siguiente recibo" : "se ajustó en tus comisiones"}.</p>`,
+        { texto: "Ver mis comisiones", url: urlComisiones }));
+  }
+  return r;
+}
+
 // ---------------------------------------------------------------- tarea diaria
 async function diaria() {
   const hoy = fecha(new Date());
@@ -586,7 +690,8 @@ async function diaria() {
   const pls = await db(`empresas_planes?mp_preapproval_id=not.is.null&estado=eq.activo&vigente_hasta=lte.${pronto}&select=mp_preapproval_id`).catch(() => []);
   for (const p of pls) { try { await aplicarPreapprovalPlan(await mp(`/preapproval/${p.mp_preapproval_id}`)); planes++; } catch (x) { console.error(x); } }
   await db(`empresas_planes?estado=in.(activo,cancelado)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
-  return json({ regalos, recordatorios, membresias, planes });
+  let cortes = 0; try { cortes = await cortesDiarios(); } catch (x) { console.error("cortes", x); }
+  return json({ regalos, recordatorios, membresias, planes, cortes });
 }
 
 serve(async (req) => {
@@ -601,6 +706,7 @@ serve(async (req) => {
       if (b.accion === "empresa_pagada") return json({ resultado: await activarCompraEmpresa(String(b.compraId), String(b.pagoId), Number(b.monto)) });
       if (b.accion === "preapproval") { await aplicarPreapproval(await mp(`/preapproval/${b.id}`)); return json({ ok: true }); }
       if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });
+      if (b.accion === "plan_reembolso") return json({ resultado: await planReembolso(b) });
       return json({ error: "Acción no válida." }, 400);
     }
     switch (b.accion) {
@@ -616,6 +722,7 @@ serve(async (req) => {
       case "empresa_cotizacion_cancelar": return await cancelarCotizacionEmpresa(u, b);
       case "plan_liga": return await crearLigaPlan(u, b);
       case "plan_cancelar": return await cancelarPlan(u, b);
+      case "comision_aviso": return await comisionAviso(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
