@@ -5,7 +5,9 @@
 //   correo    { para, asunto, texto } → envía un correo suelto por Brevo (solo admin)
 //   mensajes  { id, toque? }   → { toque, asunto, texto, html, whatsapp }   (vista previa; solo admin)
 //   enviar    { ids: [], toque? } → { enviados, fallas }  envía por Brevo y registra el contacto (solo admin)
-//   diaria    (llave de servicio, tarea programada) → seguimientos automáticos si están encendidos en ajustes
+//   info      { id } → correo de información firmado por el operador (admin o el operador asignado)
+//   solicitud { empresa, nombre, puesto?, correo, telefono, personas?, mensaje? } → «Quiero mi prueba sin costo» del sitio (sin cuenta)
+//   diaria    (llave de servicio, tarea programada) → correos de información pendientes y seguimientos automáticos si están encendidos
 // GET ?baja=<token> → página «ya no recibirás más correos» (enlace del pie de cada correo)
 //
 // Al publicarla, apaga «Verify JWT» (el enlace de baja se abre sin sesión);
@@ -70,70 +72,101 @@ function corto(p: Prospecto) {
 function programasDe(p: Prospecto, cat: Record<string, Curso>) {
   return (p.cursos_ids || []).map((id: string) => cat[id]).filter(Boolean) as Curso[];
 }
-function referencia(progs: Curso[]) {
-  const dip = progs.filter((c) => c.nivel === "Diplomados" || c.id.startsWith("d-") || c.id.startsWith("diplomado")).map((c) => Number(c.precio));
-  const cur = progs.filter((c) => !(c.nivel === "Diplomados" || c.id.startsWith("d-") || c.id.startsWith("diplomado"))).map((c) => Number(c.precio));
-  const partes = [];
-  if (cur.length) partes.push("cursos desde " + pesos(Math.min(...cur)));
-  if (dip.length) partes.push("diplomados desde " + pesos(Math.min(...dip)));
-  return partes.length ? "Precio de referencia por colaborador: " + partes.join(" y ") + "." : "";
-}
-function desdeMin(progs: Curso[]) {
-  const v = progs.map((c) => Number(c.precio)).filter((n) => n > 0);
-  return v.length ? pesos(Math.min(...v)) : "";
-}
-const VOL = "15 % de 5 a 9 personas, 25 % de 10 a 24 y 35 % de 25 a 50";
 const FIRMA = `Saludos cordiales,\n\nHéctor Ezquerra\nDirector Académico | Instituto Mara\ninstitutomara.com · WhatsApp ${FIRMA_TEL}`;
 
-function armar(p: Prospecto, toque: number, cat: Record<string, Curso>, giro: Record<string, string> | null, urlBaja: string) {
+// Precios del plan (de la tabla «planes_rangos»): «$1,490 al mes para hasta 5 personas».
+type Rango = { desde: number; hasta: number | null; precio_mensual: number };
+function planDesde(ctx: any) {
+  const r = (ctx.rangos as Rango[])[0];
+  return r ? `${pesos(r.precio_mensual)} al mes para hasta ${r.hasta} personas` : "";
+}
+function mesesGratis(ctx: any) { return Math.max(0, 12 - Number(ctx.mesesAnual || 10)); }
+function textoGratis(ctx: any) { const m = mesesGratis(ctx); return m ? `si pagan el año, ${m === 1 ? "1 mes es gratis" : m + " meses son gratis"}` : ""; }
+
+function armar(p: Prospecto, toque: number, ctx: any, giro: Record<string, string> | null, urlBaja: string) {
+  const cat: Record<string, Curso> = ctx.cat;
   const n = corto(p);
   const progs = programasDe(p, cat);
   const saludo = `Buen día, equipo de ${n}:`;
   const lista = progs.map((c) => "• " + c.nombre).join("\n");
-  const top = progs.slice(0, 3).map((c) => c.nombre);
+  const desde = planDesde(ctx);
   const pie = `\n\nSi prefieren no recibir más información, respondan «baja» o usen este enlace: ${urlBaja}`;
   let asunto = "", texto = "", whatsapp = "";
 
   if (toque <= 1) {
-    const tema = giro ? giro.tema : "capacitación";
-    asunto = `${n}: capacitación en ${tema} para su equipo, con constancias y reporte de avance`;
+    asunto = `${n}: capacitación para todo su equipo${desde ? " desde " + desde.split(" al mes")[0] + " al mes" : ""}, con constancias y reporte de avance`;
     const gancho = p.gancho ? String(p.gancho).replace(/\.\s*$/, "") + "." : `Conocemos el trabajo de ${n} en León.`;
     const problema = giro ? giro.problema + " " : "";
     const muestra = progs[0] ? `${AULA}?muestra=${encodeURIComponent(progs[0].id)}` : AULA;
-    const ref = referencia(progs);
     const extras = transversalesDe(p, progs, cat).slice(0, 2);
+    const gratis = textoGratis(ctx);
     texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León que capacita equipos de trabajo. ${gancho} Por eso creemos que les puede interesar lo que ofrecemos a las empresas.\n\n` +
-      `${problema}Con nuestra plataforma, cada colaborador estudia desde su celular y a su ritmo, y ustedes conservan el control desde un panel propio, «Mi empresa»:\n\n` +
-      `• Asignan los cursos a cada persona.\n• Ven el avance de cada colaborador: lecciones vistas, módulos aprobados y último acceso.\n• Descargan las constancias con folio y código QR de verificación, junto con el reporte en Excel o PDF.\n\n` +
+      `${problema}Con nuestra plataforma, cada persona estudia desde su celular y a su ritmo, y ustedes tienen el control desde un panel propio, «Mi empresa»:\n\n` +
+      `• Registran a su gente y ven el avance de cada persona: lecciones vistas, módulos aprobados y último acceso.\n• Descargan el reporte en Excel o PDF.\n` +
+      `• Cada persona obtiene su constancia con folio y QR verificable, que puede agregar a su currículum.\n\n` +
+      `Un solo plan, todo el catálogo: por una cuota mensual, su equipo entra a los ${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}, y cada quien toma los que necesite.` +
+      (desde ? ` Desde ${desde}, IVA incluido${gratis ? "; " + gratis : ""}.` : "") + `\n\n` +
       (lista ? `Programas que recomendamos para su equipo:\n${lista}\n\n` : "") +
       (extras.length ? `También les pueden servir:\n${extras.map((c) => "• " + c.nombre).join("\n")}\n\n` : "") +
-      `Y ${totalProgramas(cat)} en institutomara.com para que cada área encuentre lo suyo.\n\n` +
-      `Prueba piloto sin costo: 5 lugares durante 15 días, para que su equipo conozca el contenido y ustedes prueben el panel. Los 5 lugares pueden tomar cualquiera de los programas recomendados. Las constancias se emiten al formalizar la inscripción.\n\n` +
-      (ref ? `${ref} ` : "") + `Con 5 o más lugares aplica un descuento por volumen: ${VOL}.\n\n` +
-      `Pueden probar una lección gratis aquí: ${muestra}\nSi prefieren que yo les muestre la plataforma, agendamos 20 minutos por Google Meet o Teams cuando ustedes gusten.\n\n` +
-      `Para activar su piloto, basta con responder este correo con el nombre de la persona que lo coordinará.\n\n${FIRMA}${pie}`;
-    whatsapp = waPrimero(p, n, progs, cat);
+      `Prueba sin costo: 5 personas durante 15 días, con acceso a todo el catálogo, para que su equipo conozca el contenido y ustedes prueben el panel. Si deciden continuar, cada persona conserva su avance.\n\n` +
+      `Pueden probar una lección gratis aquí: ${muestra}\nSi prefieren que les muestre la plataforma, agendamos 20 minutos por Google Meet o Teams cuando gusten.\n\n` +
+      `Para activar su prueba, basta con responder este correo con el nombre de la persona que la coordinará.\n\n${FIRMA}${pie}`;
+    whatsapp = waPrimero(p, n, progs, ctx);
   } else if (toque === 2) {
     asunto = `${n}: ¿les activo la prueba sin costo para su equipo?`;
-    const desde = desdeMin(progs);
-    texto = `${saludo}\n\nLes escribí hace unos días sobre la capacitación para su equipo. Les resumo la propuesta en tres puntos:\n\n` +
-      `• 5 lugares sin costo durante 15 días` + (top.length ? ` en cualquiera de estos programas: ${top.join(", ")}.` : ".") + `\n` +
-      `• Un panel donde ustedes ven el avance de cada persona y descargan sus constancias.\n` +
-      `• Si deciden continuar, ${desde ? "desde " + desde + " por colaborador, " : ""}con descuento por volumen.\n\n` +
-      `Para activarlo solo necesito el nombre de la persona que lo coordinará. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
-    const tres = listaWa(p, progs, cat).slice(0, 3);
+    const tres = progs.slice(0, 3).map((c) => cortoPrograma(c.nombre));
     const unidos = tres.length > 1 ? tres.slice(0, -1).join(", ") + " y " + tres[tres.length - 1] : tres.join("");
-    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les escribí para regalarles *5 lugares por 15 días*` +
-      (tres.length ? ` para que su equipo pruebe programas como ${unidos}, entre ${totalProgramas(cat)}` : " para que su equipo pruebe nuestros programas") +
-      `.\n\nLa invitación sigue en pie, sin compromiso. ¿Con quién lo podría ver?`;
+    texto = `${saludo}\n\nLes escribí hace unos días sobre la capacitación para su equipo. Les resumo la propuesta en tres puntos:\n\n` +
+      `• Prueba sin costo: 5 personas durante 15 días, con acceso a todos los cursos y diplomados` + (unidos ? `, como ${unidos}.` : ".") + `\n` +
+      `• Un panel donde ustedes ven el avance de cada persona y descargan el reporte; cada quien obtiene su constancia con folio y QR verificable.\n` +
+      `• Si deciden continuar, el plan es ${desde ? "desde " + desde + ", IVA incluido, " : ""}y cada persona conserva su avance.\n\n` +
+      `Para activarla solo necesito el nombre de la persona que la coordinará. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
+    const tresWa = listaWa(p, progs, cat).slice(0, 3);
+    const unidosWa = tresWa.length > 1 ? tresWa.slice(0, -1).join(", ") + " y " + tresWa[tresWa.length - 1] : tresWa.join("");
+    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les escribí para regalarles *15 días sin costo para 5 personas*` +
+      (tresWa.length ? `, para que su equipo pruebe programas como ${unidosWa}, entre ${totalProgramas(cat)}` : ", para que su equipo pruebe nuestros programas") + `.\n\n` +
+      (desde ? `Si les gusta, el plan es desde *${desde}* y cada quien conserva su avance.\n\n` : "") +
+      `La invitación sigue en pie, sin compromiso. ¿Con quién lo podría ver?`;
   } else {
     asunto = `${n}: ¿lo dejamos para más adelante?`;
     texto = `${saludo}\n\nNo quiero llenar su bandeja, así que este es mi último mensaje sobre el tema. Si la capacitación de su equipo no es prioridad en este momento, lo entiendo perfectamente.\n\n` +
-      `Si más adelante les interesa, la prueba de 5 lugares sin costo sigue disponible: basta con responder este correo. Y si en la empresa hay otra persona que vea capacitación o Recursos Humanos, les agradeceré mucho que se lo reenvíen.\n\n${FIRMA}${pie}`;
+      `Si más adelante les interesa, la prueba sin costo de 15 días para 5 personas sigue disponible: basta con responder este correo. Y si en la empresa hay otra persona que vea capacitación o Recursos Humanos, les agradeceré mucho que se lo reenvíen.\n\n${FIRMA}${pie}`;
     whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. No quiero insistir de más: si la capacitación de su equipo no es prioridad ahorita, lo entiendo perfecto.\n\n` +
-      `Los *5 lugares sin costo* quedan apartados para cuando les sirva; nada más me escriben por aquí. ¡Que tengan muy buena semana!`;
+      `Los *15 días sin costo para 5 personas* quedan apartados para cuando les sirva; nada más me escriben por aquí. ¡Que tengan muy buena semana!`;
   }
   return { toque: Math.min(Math.max(toque, 1), 3), asunto, texto, html: aHtml(texto), whatsapp };
+}
+
+// Correo de información que pidió la empresa en la llamada; lo firma el operador.
+function armarInfo(p: Prospecto, ctx: any, op: { nombre: string; telefono: string | null }, urlBaja: string) {
+  const cat: Record<string, Curso> = ctx.cat;
+  const n = corto(p);
+  const progs = programasDe(p, cat);
+  const nombre = String(p.contacto_nombre || "").trim();
+  const extras = transversalesDe(p, progs, cat).slice(0, Math.max(0, 4 - progs.length));
+  const recomendados = progs.concat(extras).slice(0, 5);
+  const muestra = recomendados[0] ? `${AULA}?muestra=${encodeURIComponent(recomendados[0].id)}` : AULA;
+  const rangos = (ctx.rangos as Rango[]).filter((r) => r.hasta !== null && r.desde <= 100);
+  const tabla = rangos.map((r, i) => `• ${i === 0 ? "Hasta " + r.hasta + " personas" : r.desde + " a " + r.hasta}: ${pesos(r.precio_mensual)}${i === 0 ? " al mes" : ""}`).join("\n");
+  const gratis = mesesGratis(ctx);
+  let cuando = "";
+  if (p.proxima_llamada && new Date(p.proxima_llamada) > new Date()) {
+    cuando = new Date(p.proxima_llamada).toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "America/Mexico_City" });
+  }
+  const asunto = `Información de Instituto Mara para ${n}`;
+  const texto = `Hola${nombre ? ", " + nombre : ""}:\n\nGracias por su tiempo en la llamada de hoy. Como le comenté, le comparto la información.\n\n` +
+    `Qué es: una plataforma en línea donde su equipo se capacita desde el celular y a su ritmo, con ${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}. ` +
+    `Ustedes tienen el control desde «Mi empresa»: registran a su gente, ven el avance de cada persona y descargan el reporte. Cada quien obtiene su constancia con folio y QR verificable, que puede agregar a su currículum.\n\n` +
+    (recomendados.length ? `Programas que le recomiendo para su equipo:\n${recomendados.map((c) => "• " + c.nombre).join("\n")}\n\n` : "") +
+    `Plan mensual, todo el catálogo, IVA incluido:\n${tabla}\n• Más personas: con gusto le cotizo.\n` +
+    (gratis ? `Si pagan el año completo, ${gratis === 1 ? "1 mes es gratis" : gratis + " meses son gratis"}.\n\n` : "\n") +
+    `Prueba sin costo: 5 personas durante 15 días, con todo el catálogo. Si deciden continuar, cada persona conserva su avance.\n\n` +
+    `Puede probar una lección aquí: ${muestra}\n\n` +
+    (cuando ? `Le llamo el ${cuando} para resolver sus dudas. ` : "") +
+    `Si prefiere, respóndame este correo con el nombre de quien coordinará la prueba y la dejo lista hoy mismo.\n\n` +
+    `Saludos,\n\n${op.nombre}\nInstituto Mara${op.telefono ? " · " + op.telefono : ""}` +
+    `\n\nSi prefieren no recibir más información, respondan «baja» o usen este enlace: ${urlBaja}`;
+  return { asunto, texto, html: aHtml(texto).replace(`${e(op.nombre)}<br>`, `<b>${e(op.nombre)}</b><br>`) };
 }
 
 // Nombre corto de un programa para WhatsApp: «Diplomado NOM-035: Factores…» → «NOM-035».
@@ -158,14 +191,17 @@ function sinParar(seg: string) {
   if (/hospital|clínica|hotel|seguridad|call center|residencia|funeraria|diagnóstico/.test(s)) return "sin descuidar los turnos";
   return "sin descuidar el trabajo";
 }
-function waPrimero(p: Prospecto, n: string, progs: Curso[], cat: Record<string, Curso>) {
+function waPrimero(p: Prospecto, n: string, progs: Curso[], ctx: any) {
+  const cat: Record<string, Curso> = ctx.cat;
   const lista = listaWa(p, progs, cat).map((t) => "• " + t).join("\n");
+  const desde = planDesde(ctx);
   return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, una escuela en línea que capacita equipos de trabajo.\n\n` +
     `Le escribo porque creo que les podemos ayudar a que su equipo siga creciendo: que su gente se capacite desde el celular, ${sinParar(p.segmento)}.\n\n` +
-    `Usted asigna los cursos, ve el avance de cada persona y ellos descargan sus constancias con QR.\n\n` +
+    (desde ? `Con un solo plan, desde *${desde}*, su equipo entra a todo el catálogo. ` : "Su equipo entra a todo el catálogo. ") +
+    `Usted ve el avance de cada persona y ellos obtienen su constancia con QR verificable.\n\n` +
     (lista ? `Para ${n} le pueden servir:\n${lista}\n\n` : "") +
     `Y ${totalProgramas(cat)} en institutomara.com\n\n` +
-    `¿Me permite *regalarles 5 lugares por 15 días* para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
+    `¿Me permite *regalarles 15 días sin costo para 5 personas* para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
 }
 
 // Programas que le sirven a cualquier empresa, en el orden que conviene según el giro.
@@ -212,7 +248,9 @@ async function contexto() {
   cursos.forEach((c) => (cat[c.id] = c));
   const giros: Record<string, Record<string, string>> = {};
   (await db("prospecto_giros?select=*")).forEach((g: any) => (giros[g.segmento] = g));
-  return { cat, giros };
+  const rangos = await db("planes_rangos?select=desde,hasta,precio_mensual&activo=eq.true&order=desde").catch(() => []);
+  const aj = (await db("ajustes?id=eq.true&select=plan_meses_anual").catch(() => []))[0] || {};
+  return { cat, giros, rangos, mesesAnual: aj.plan_meses_anual || 10 };
 }
 async function historial(id: string) {
   return await db(`prospecto_contactos?select=canal,sentido,toque,fecha,resultado&prospecto_id=eq.${id}&order=fecha`);
@@ -225,15 +263,15 @@ function urlBaja(req: Request, token: string) {
   return `${URL_SB}/functions/v1/prospectos?baja=${token}`;
 }
 
-async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: string }) {
+async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: string }, como?: { nombre: string; responder: { email: string; name: string } }) {
   const destinos = String(p.correo || "").split(/[,;\s]+/).map((x) => x.trim()).filter((x) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x));
   if (!destinos.length) throw new Error("sin correo válido");
   const r = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: { "api-key": BREVO, "Content-Type": "application/json", accept: "application/json" },
     body: JSON.stringify({
-      sender: { email: REMITENTE, name: NOMBRE },
-      replyTo: { email: REMITENTE, name: "Héctor Ezquerra" },
+      sender: { email: REMITENTE, name: como ? como.nombre : NOMBRE },
+      replyTo: como ? como.responder : { email: REMITENTE, name: "Héctor Ezquerra" },
       to: destinos.map((d) => ({ email: d })),
       // Copia oculta a nuestro buzón (Zoho) para tener cada correo que sale.
       ...(destinos.some((d) => d.toLowerCase() === REMITENTE.toLowerCase()) ? {} : { bcc: [{ email: REMITENTE }] }),
@@ -248,7 +286,7 @@ async function enviarA(req: Request, p: Prospecto, toque: number | null, ctx: an
   const h = await historial(p.id);
   const t = toque || siguienteToque(h, "correo");
   if (t > 3) throw new Error("ya recibió los 3 correos de la secuencia");
-  const m = armar(p, t, ctx.cat, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
+  const m = armar(p, t, ctx, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
   await mandar(p, m);
   await db("prospecto_contactos", {
     metodo: "POST", prefer: "return=minimal",
@@ -256,6 +294,62 @@ async function enviarA(req: Request, p: Prospecto, toque: number | null, ctx: an
               resultado: "enviado", automatico, creado_por: porQuien },
   });
   return m.toque;
+}
+
+
+// ¿Quién llama? (administración, operador o nadie). Para «info».
+async function usuario(req: Request): Promise<{ id: string; servicio?: boolean; rol?: string } | null> {
+  const token = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!token) return null;
+  if (token === LLAVE) return { id: "servicio", servicio: true };
+  const r = await fetch(`${URL_SB}/auth/v1/user`, { headers: { apikey: LLAVE, Authorization: `Bearer ${token}` } });
+  if (!r.ok) return null;
+  const u = await r.json();
+  const p = await db(`perfiles?id=eq.${u.id}&select=rol`);
+  return { id: u.id, rol: p[0] && p[0].rol };
+}
+async function admins() { return await db("perfiles?rol=eq.admin&select=correo,nombre"); }
+
+// Correo de información a un prospecto (lo firma su operador). Marca que ya se envió.
+async function enviarInfo(req: Request, p: Prospecto, ctx: any, porQuien: string | null) {
+  const para = String(p.contacto_correo || "").trim();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(para)) throw new Error("no tiene el correo del contacto");
+  let op: any = p.asignado_a ? (await db(`operadores?id=eq.${p.asignado_a}&select=nombre,telefono,correo`))[0] : null;
+  if (!op) op = { nombre: "Héctor Ezquerra", telefono: FIRMA_TEL, correo: REMITENTE };
+  const m = armarInfo(p, ctx, op, urlBaja(req, p.token));
+  await mandar({ correo: para }, m, { nombre: `${op.nombre} · Instituto Mara`, responder: { email: op.correo || REMITENTE, name: op.nombre } });
+  await db("prospecto_contactos", { metodo: "POST", prefer: "return=minimal",
+    cuerpo: { prospecto_id: p.id, canal: "correo", sentido: "saliente", asunto: m.asunto, resultado: "enviado", automatico: !porQuien, creado_por: porQuien } });
+  const ex = { ...(p.extra || {}) }; delete ex.info_pendiente; ex.info_enviada = new Date().toISOString();
+  await db(`prospectos?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { extra: ex } });
+  return m.asunto;
+}
+
+// «Quiero mi prueba sin costo» desde el sitio (sin cuenta).
+async function solicitud(b: any) {
+  if (String(b.web || "")) return json({ ok: true });            // campo trampa para robots
+  const r = await db("rpc/prospecto_solicitud", { metodo: "POST", cuerpo: {
+    p_empresa: String(b.empresa || "").slice(0, 160), p_nombre: String(b.nombre || "").slice(0, 120), p_puesto: String(b.puesto || "").slice(0, 80) || null,
+    p_correo: String(b.correo || "").slice(0, 160), p_telefono: String(b.telefono || "").slice(0, 30),
+    p_personas: Number(b.personas) > 0 ? Math.min(100000, Math.floor(Number(b.personas))) : null, p_mensaje: String(b.mensaje || "").slice(0, 600) || null } });
+  if (!r || !r.ok || r.repetida) return json({ ok: true });
+  const p = (await db(`prospectos?id=eq.${r.id}&select=*`))[0];
+  const op = r.operador_id ? (await db(`operadores?id=eq.${r.operador_id}&select=nombre,correo`))[0] : null;
+  const datos = `<p style="font-size:15px;line-height:1.7"><b>${e(p.nombre)}</b><br>${e(p.contacto_nombre)}${p.contacto_puesto ? " · " + e(p.contacto_puesto) : ""}<br>` +
+    `${e(p.contacto_correo)} · ${e(p.telefono)}${p.extra && p.extra.personas ? "<br>" + e(p.extra.personas) + " personas" : ""}</p>` +
+    (p.extra && p.extra.mensaje ? `<blockquote style="border-left:4px solid #6D28D9;margin:0;padding:8px 14px;background:#f6f3ff">${e(p.extra.mensaje)}</blockquote>` : "");
+  const caja = (t: string, cuerpo: string) => `<div style="font-family:Arial,sans-serif;max-width:560px;color:#1f1640"><h2 style="margin:0 0 12px">${t}</h2>${cuerpo}` +
+    `<p style="margin:22px 0"><a href="${AULA}?ir=llamadas" style="background:#6D28D9;color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:bold">Abrir la consola</a></p></div>`;
+  const correo = async (para: string, nom: string, asunto: string, html: string) => {
+    if (!BREVO || !REMITENTE || !para) return;
+    await fetch("https://api.brevo.com/v3/smtp/email", { method: "POST", headers: { "api-key": BREVO, "Content-Type": "application/json", accept: "application/json" },
+      body: JSON.stringify({ sender: { email: REMITENTE, name: "Instituto Mara" }, to: [{ email: para, name: nom || para }], subject: asunto, htmlContent: html }) }).catch(() => null);
+  };
+  if (op && op.correo) await correo(op.correo, op.nombre, `🔥 ${p.nombre} pidió su prueba sin costo: llámale hoy`,
+    caja("Pidió la prueba desde el sitio", `<p style="font-size:15px">Está hasta arriba de tu consola, en «Toca hoy». Entre más rápido llames, mejor.</p>` + datos));
+  for (const a of await admins()) await correo(a.correo, a.nombre, `🔥 Solicitud de prueba: ${p.nombre}${op ? " (para " + op.nombre + ")" : " (sin asignar)"}`,
+    caja("Nueva solicitud de prueba", `<p style="font-size:15px">${op ? `Se asignó a <b>${e(op.nombre)}</b> y ya le avisamos.` : "No hay operadores activos: quedó sin asignar en Prospectos."}</p>` + datos));
+  return json({ ok: true });
 }
 
 function paginaBaja(nombre: string | null) {
@@ -282,10 +376,28 @@ serve(async (req) => {
       return paginaBaja(nom || null);
     }
 
-    const u = await quien(req);
-    if (!u) return json({ error: "Solo administración puede usar esta función." }, 403);
     const body = await req.json().catch(() => ({}));
     const accion = body.accion;
+    if (accion === "solicitud") return await solicitud(body);
+
+    // Correo de información que pidió la empresa en la llamada (administración o su operador).
+    if (accion === "info") {
+      const yo = await usuario(req);
+      if (!yo) return json({ error: "Inicia sesión." }, 401);
+      const p = (await db(`prospectos?id=eq.${encodeURIComponent(String(body.id || ""))}&select=*`))[0];
+      if (!p) return json({ error: "No encontré ese prospecto." }, 404);
+      if (!yo.servicio && yo.rol !== "admin") {
+        const op = (await db(`operadores?usuario_id=eq.${yo.id}&activo=eq.true&select=id`))[0];
+        if (!op || op.id !== p.asignado_a) return json({ error: "Ese prospecto no está asignado a ti." }, 403);
+      }
+      if (["baja", "no_interesa"].indexOf(p.estado) >= 0) return json({ error: "Ese prospecto pidió no recibir correos." }, 409);
+      if (!BREVO || !REMITENTE) return json({ error: "Falta configurar el envío de correos." }, 500);
+      const asunto = await enviarInfo(req, p, await contexto(), yo.servicio ? null : yo.id);
+      return json({ ok: true, asunto });
+    }
+
+    const u = await quien(req);
+    if (!u) return json({ error: "Solo administración puede usar esta función." }, 403);
     const ctx = await contexto();
 
     if (accion === "mensajes") {
@@ -293,8 +405,8 @@ serve(async (req) => {
       if (!p) return json({ error: "No encontré ese prospecto." }, 404);
       const h = await historial(p.id);
       const tc = body.toque || siguienteToque(h, "correo"), tw = body.toqueWa || siguienteToque(h, "whatsapp");
-      const mc = armar(p, tc, ctx.cat, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
-      const mw = armar(p, tw, ctx.cat, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
+      const mc = armar(p, tc, ctx, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
+      const mw = armar(p, tw, ctx, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
       return json({ toque: mc.toque, asunto: mc.asunto, texto: mc.texto, html: mc.html, toqueWa: mw.toque, whatsapp: mw.whatsapp, listo: !!(BREVO && REMITENTE) });
     }
 
@@ -331,8 +443,11 @@ serve(async (req) => {
 
     if (accion === "diaria") {
       if (!u.servicio) return json({ error: "Solo la tarea programada." }, 403);
+      let info = 0;
+      const pend: Prospecto[] = await db("prospectos?extra->>info_pendiente=eq.true&estado=not.in.(baja,no_interesa)&select=*&limit=100").catch(() => []);
+      for (const p of pend) { try { await enviarInfo(req, p, ctx, null); info++; } catch (x) { console.error("info", p.id, (x as Error).message); } }
       const aj = (await db("ajustes?id=eq.true&select=prospectos_auto,prospectos_dia_2,prospectos_dia_3"))[0] || {};
-      if (!aj.prospectos_auto) return json({ ok: true, apagado: true });
+      if (!aj.prospectos_auto) return json({ ok: true, apagado: true, info });
       const d2 = Number(aj.prospectos_dia_2 || 4), d3 = Number(aj.prospectos_dia_3 || 10);
       const filas: Prospecto[] = await db("prospectos?secuencia=eq.true&estado=eq.contactado&select=*&limit=200");
       let enviados = 0; const fallas: string[] = [];
@@ -350,7 +465,7 @@ serve(async (req) => {
         try { await enviarA(req, p, ult + 1, ctx, null, true); enviados++; }
         catch (x) { fallas.push(`${corto(p)}: ${(x as Error).message}`); }
       }
-      return json({ ok: true, enviados, fallas });
+      return json({ ok: true, enviados, fallas, info });
     }
 
     return json({ error: "Acción desconocida." }, 400);
