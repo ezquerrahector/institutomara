@@ -163,6 +163,15 @@ serve(async (req) => {
     const pago = await r.json();
     if (!r.ok) return new Response("no encontrado", { status: 200 });
 
+    // Reembolso (total o parcial) o contracargo: si es un cobro de plan de empresa, se ajusta
+    // la comisión del operador (la función «tienda» ignora los pagos que no son de un plan).
+    const reembolsado = (pago.status === "refunded" || pago.status === "charged_back")
+      ? Number(pago.transaction_amount || 0) : Number(pago.transaction_amount_refunded || 0);
+    if (reembolsado > 0) {
+      await tienda({ accion: "plan_reembolso", pagoId: String(pago.id), reembolsado,
+                     motivo: pago.status === "charged_back" ? "contracargo" : "reembolso" });
+    }
+
     if (pago.status !== "approved") {
       return new Response("pago no aprobado todavía", { status: 200 });
     }
