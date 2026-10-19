@@ -457,7 +457,9 @@ function textoPlan(p: any) {
 async function crearLigaPlan(u: any, b: any) {
   const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
   if (!p) return json({ error: "Plan no encontrado." }, 404);
-  if (!(await permisoPlan(u, p.empresa_id))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  // Admin, su operador o, si la contrató en línea, la misma persona que la contrató.
+  const quien = await permisoPlan(u, p.empresa_id, true);
+  if (!quien || (quien === "empresa" && p.creado_por !== u.id)) return json({ error: "No tienes acceso a esta empresa." }, 403);
   if (p.estado === "por_aprobar") return json({ error: "Este plan tiene un descuento que espera la aprobación de administración." }, 409);
   if (p.estado !== "pendiente_pago") return json({ error: "Este plan ya no está esperando pago." }, 409);
   const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] || {};
@@ -542,6 +544,12 @@ async function planPagado(b: any) {
   if (r.numero === 1) {
     const p = (await db(`empresas_planes?id=eq.${String(b.planId)}&select=*`))[0];
     const emp = p ? (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] : null;
+    if (p && emp && String(p.nota || "").startsWith("Contratado en línea")) {
+      const op = p.operador_id ? (await db(`operadores?id=eq.${p.operador_id}&select=nombre`))[0] : null;
+      await avisarAdmins(`🎉 ${emp.nombre} contrató el plan en línea: ${dinero(Number(b.monto))}`,
+        plantilla("Nueva empresa contrató en línea", `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b> contrató el plan ${e(p.periodo)} de ${e(p.rango_texto)} y ya pagó <b>${dinero(Number(b.monto))}</b>.</p>` +
+          `<p style="font-size:15px">Administra: ${e(p.admin_correo || "")}${op ? `<br>Comisión para: <b>${e(op.nombre)}</b> (ya la atendía)` : "<br>Sin operador: no hay comisión."}</p>`, { texto: "Ver planes", url: urlPlanes }));
+    }
     const para = (p && p.admin_correo) || (emp && emp.contacto_correo);
     if (p && emp && para) {
       await correo(para, emp.contacto_nombre || emp.nombre, `✅ El plan de capacitación de ${emp.nombre} ya está activo`,
