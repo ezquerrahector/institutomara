@@ -36,8 +36,17 @@ Escribe en `herramientas/diplomados-nuevos/<id>/`:
   "desc": "250-700 caracteres: qué aprenderás, cómo (casos, 8 laboratorios, proyecto final, cuaderno PDF) y para quién.",
   "aprender": ["6-8 resultados de aprendizaje concretos, con verbo de acción"],
   "aviso": "(opcional) alcance y límites éticos o profesionales del diplomado, en 2-3 frases",
-  "referencias": ["8-15 referencias en APA 7 en español: libros, artículos y fuentes oficiales reales y verificables"] }
+  "referencias": ["8-15 referencias en APA 7 en español: libros, artículos y fuentes oficiales reales y verificables"],
+  "precio": 1890, "area": "Negocios y oficina",
+  "giros": ["segmentos de prospectos (empresas) a los que se recomienda; exactos como en la tabla prospecto_giros; [] si ninguno"] }
 ```
+`giros` hace que el diplomado entre como 3.er programa recomendado a esas empresas (guion de llamada del operador, correos
+y WhatsApp) con el SQL acumulado. Segmentos válidos: Manufactura de calzado · Curtiduría / proveeduría de piel ·
+Industria / manufactura · Concesionaria automotriz · Hotelería · Despacho contable / fiscal · Consultorio de psicología ·
+Funeraria · Hospital / clínica privada · Agencia de marketing digital · Reclutamiento / capital humano · Despacho jurídico ·
+Inmobiliaria · Aseguradora / agencia de seguros · Boutique de ropa · Coworking / oficinas ejecutivas · Seguridad privada ·
+Colegio privado · Call center · Centro de terapia infantil / neurodesarrollo · Diagnóstico médico por imagen ·
+Residencia de adultos mayores · Asesoría de imagen. Elige sólo los giros donde el diplomado sea de los 3 más útiles.
 - `m1-2.json`, `m3-4.json`, `m5-6.json`, `m7-8.json`, cada uno `{ "modulos": [ módulo, módulo ] }` con:
 ```json
 { "t": "Título del módulo", "r": "Resumen de 1-2 frases",

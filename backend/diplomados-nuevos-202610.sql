@@ -43,3 +43,7 @@ update cursos c set lecciones = v.n from (values
   ('d-criminologia', 40),
   ('d-calidad-lean', 40)
 ) as v(id, n) where c.id = v.id;
+-- Programas recomendados por giro a los prospectos (empresas).
+-- d-calidad-lean: recomendado a Manufactura de calzado, Curtiduría / proveeduría de piel, Industria / manufactura.
+update prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array['d-calidad-lean'] || coalesce(cursos_ids[3:], '{}')
+ where segmento in ('Manufactura de calzado', 'Curtiduría / proveeduría de piel', 'Industria / manufactura') and not ('d-calidad-lean' = any(coalesce(cursos_ids, '{}')));

@@ -12,7 +12,7 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 
 | # | id | pref | Diplomado (nombre sugerido) | Precio | familia/área | Estado |
 |---|---|---|---|---|---|---|
-| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Listo en rama (2026-10-20) |
+| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
 | 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Pendiente |
 | 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Pendiente |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
@@ -78,12 +78,42 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
 15. **Bienestar Laboral, Estrés y Mindfulness.** Estrés y burnout (CIE-11), mindfulness con evidencia (MBSR/MBCT)
     y sus límites, sueño, pausas, programas de bienestar en la empresa ligados a la NOM-035. No es tratamiento.
 
+## Giros de empresa a los que se recomienda cada uno (`giros` en meta.json)
+Entra como 3.er programa del giro en el guion de llamada, los correos y el WhatsApp a prospectos. Ajusta si al
+escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
+
+| id | giros |
+|---|---|
+| d-calidad-lean | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura |
+| d-datos-ia | Despacho contable / fiscal; Industria / manufactura; Coworking / oficinas ejecutivas; Agencia de marketing digital |
+| d-ventas-experiencia | Concesionaria automotriz; Inmobiliaria; Aseguradora / agencia de seguros; Boutique de ropa; Hotelería; Call center |
+| d-proteccion-civil | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura; Hotelería; Hospital / clínica privada; Colegio privado; Residencia de adultos mayores; Seguridad privada |
+| d-intervencion-crisis | Consultorio de psicología; Hospital / clínica privada; Colegio privado; Funeraria |
+| d-psicologia-organizacional | Reclutamiento / capital humano; Consultorio de psicología; Industria / manufactura |
+| d-docencia-nem | Colegio privado |
+| d-adicciones | Consultorio de psicología; Hospital / clínica privada; Colegio privado |
+| d-crianza-positiva | Centro de terapia infantil / neurodesarrollo; Colegio privado; Consultorio de psicología |
+| d-estimulacion-temprana | Centro de terapia infantil / neurodesarrollo; Colegio privado |
+| d-sexualidad-humana | Colegio privado; Consultorio de psicología |
+| d-coaching | Coworking / oficinas ejecutivas; Reclutamiento / capital humano; Consultorio de psicología |
+| d-mantenimiento-tpm | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura |
+| d-pyme | Boutique de ropa; Coworking / oficinas ejecutivas; Despacho contable / fiscal |
+| d-bienestar-laboral | Call center; Hospital / clínica privada; Reclutamiento / capital humano; Industria / manufactura |
+
+## Cómo se publica una tanda
+1. PR de `tanda-diplomados-nov-2026` a `main` y merge (método *merge*, no squash: la rama sigue viva).
+2. En Supabase → SQL Editor: ejecutar `backend/diplomados-nuevos-202610.sql` (se puede repetir). Carga los diplomados,
+   su número de lecciones (regla del 50 % para reseñas) y su recomendación por giro a los prospectos.
+3. Comprobar: `select id, horas, precio, lecciones, publicado from cursos where id in (…);` y
+   `select segmento, cursos_ids from prospectos where segmento = 'Industria / manufactura' limit 3;`
+4. El sitio, el aula, los combos de Empresas y del operador toman el catálogo solos; no hay que tocar nada más.
+
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
 2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía.
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
-4. Escribir `meta.json` (con `"precio"` de la tabla) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
 5. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id> --simular` → sin errores, ≥ 30 h.
 6. Revisión V10 por un agente experto independiente que no escribió el contenido; corregir todo lo que señale.
 7. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id>` (sin --simular) y
