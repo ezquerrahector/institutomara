@@ -22,3 +22,24 @@ on conflict (id) do update set
   nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,
   nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas, precio = excluded.precio,
   publicado = excluded.publicado, proximamente = excluded.proximamente;
+-- Número de lecciones (regla del 50 % para dejar reseña).
+update cursos c set lecciones = v.n from (values
+  ('d-seduccion-atraccion', 40),
+  ('d-imagen-personal', 40),
+  ('d-psicologia-forense', 40),
+  ('d-lenguaje-corporal', 40),
+  ('d-psicologia-influencia', 40),
+  ('d-leer-personas', 40),
+  ('d-conversaciones-dificiles', 40),
+  ('d-confianza-seguridad', 40),
+  ('d-manipulacion', 40),
+  ('d-negociacion', 40),
+  ('d-storytelling', 40),
+  ('d-psicologia-social', 40),
+  ('d-detectar-mentiras', 40),
+  ('d-oratoria', 40),
+  ('d-psicologia-pareja', 40),
+  ('d-inteligencia-social', 40),
+  ('d-criminologia', 40),
+  ('d-calidad-lean', 40)
+) as v(id, n) where c.id = v.id;

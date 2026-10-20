@@ -206,7 +206,7 @@ function waPrimero(p: Prospecto, n: string, progs: Curso[], ctx: any) {
 
 // Programas que le sirven a cualquier empresa, en el orden que conviene según el giro.
 const TRANSVERSALES: Record<string, string[]> = {
-  planta: ["d-nom035", "d-seguridad-higiene", "c-excel-avanzado", "d-liderazgo"],
+  planta: ["d-nom035", "d-seguridad-higiene", "d-calidad-lean", "c-excel-avanzado", "d-liderazgo"],
   clientes: ["c-atencion-ventas", "d-nom035", "c-excel-avanzado", "d-liderazgo"],
   oficina: ["c-excel-avanzado", "d-nom035", "c-atencion-ventas", "d-liderazgo"],
 };

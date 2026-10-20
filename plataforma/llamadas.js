@@ -26,7 +26,7 @@ var LL_RES = [
 ];
 var LL_RES_TXT = {}; LL_RES.forEach(function(r){ LL_RES_TXT[r[0]] = r[1]; });
 var LL_TRANSV = {
-  planta: ['d-nom035','d-seguridad-higiene','c-excel-avanzado','d-liderazgo'],
+  planta: ['d-nom035','d-seguridad-higiene','d-calidad-lean','c-excel-avanzado','d-liderazgo'],
   clientes: ['c-atencion-ventas','d-nom035','c-excel-avanzado','d-liderazgo'],
   oficina: ['c-excel-avanzado','d-nom035','c-atencion-ventas','d-liderazgo']
 };
