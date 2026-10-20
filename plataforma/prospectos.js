@@ -24,12 +24,29 @@ function prCargar(){
 /* Huella de los datos cargados: sirve para no volver a pintar si nada cambió */
 function prHuella(){ return JSON.stringify([PR.lista, PR.contactos, PR.giros, PR.aj, (window.LL && LL.ops) || null]); }
 /* Vuelve a pintar sin mover la página ni perder lo que se está escribiendo en un buscador */
+var _pintarCompleto = false;
 function repintarConservando(fn){
   var y = window.scrollY, a = document.activeElement, id = a && a.id, s1 = null, s2 = null;
   try{ s1 = a.selectionStart; s2 = a.selectionEnd; }catch(e){}
-  fn();
+  _pintarCompleto = true;          /* aquí la tabla se pinta completa para conservar la posición */
+  try{ fn(); } finally { _pintarCompleto = false; }
   window.scrollTo(0, y);
   if(id){ var n = document.getElementById(id); if(n && n !== a){ n.focus(); try{ if(s1 != null) n.setSelectionRange(s1, s2); }catch(e){} } }
+}
+/* Tablas largas: las primeras filas se ven al instante y las demás se agregan en los
+   cuadros siguientes. Al final la tabla queda igual que si se pintara de una vez. */
+var _filasTurno = {};
+function filasPorPartes(caja, clave, filas, antes, despues){
+  var PRIMERAS = 60, PASO = 80, turno = _filasTurno[clave] = (_filasTurno[clave] || 0) + 1;
+  if(_pintarCompleto || filas.length <= PRIMERAS){ caja.innerHTML = antes + filas.join('') + despues; return; }
+  caja.innerHTML = antes + filas.slice(0, PRIMERAS).join('') + despues;
+  var tb = caja.querySelector('tbody'), i = PRIMERAS;
+  var sigue = function(){
+    if(_filasTurno[clave] !== turno || !tb || !tb.isConnected) return;
+    tb.insertAdjacentHTML('beforeend', filas.slice(i, i + PASO).join('')); i += PASO;
+    if(i < filas.length) requestAnimationFrame(sigue);
+  };
+  requestAnimationFrame(sigue);
 }
 /* El buscador filtra cuando dejas de escribir un instante (no en cada letra) */
 var _prBuscarT = null;
@@ -269,10 +286,10 @@ function prPintarTabla(){
       : '<div class="aviso aviso-info" style="margin-top:8px">Hoy no le toca el '+tq+' WhatsApp a nadie con estos filtros. Revisa «Esperando» para ver las fechas.</div>');
   }
   if(!filas.length){ caja.innerHTML = '<div class="tarjeta vacio"><p>'+(PR.lista.length ? 'Ningún prospecto coincide con el filtro.' : 'Todavía no hay prospectos. Súbelos con «Subir CSV».')+'</p></div>'; return; }
-  caja.innerHTML = '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+  filasPorPartes(caja, 'pr', filas.map(prFila), '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
     '<th><input type="checkbox" aria-label="Seleccionar todos" onchange="prSelTodos(this.checked)"'+(filas.every(function(p){ return PR.sel[p.id]; })?' checked':'')+'></th>'+
-    '<th>Empresa</th><th>Contacto</th><th>Seguimiento</th><th>Estado</th><th></th></tr></thead><tbody>'+
-    filas.map(prFila).join('')+'</tbody></table></div></div><p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' de '+PR.lista.length+' prospectos.</p>';
+    '<th>Empresa</th><th>Contacto</th><th>Seguimiento</th><th>Estado</th><th></th></tr></thead><tbody>',
+    '</tbody></table></div></div><p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' de '+PR.lista.length+' prospectos.</p>');
 }
 function prCopiable(valor, rot){
   if(!valor) return '';

@@ -137,9 +137,7 @@ function llPintarTablaLl(){
   var filas = llLista(LL.tab).filter(function(p){ return !llEsAdmin() || p.asignado_a; });
   LL.cola = filas.map(function(p){ return p.id; });
   if(!filas.length){ caja.innerHTML = '<div class="tarjeta vacio"><p>'+(LL.tab === 'hoy' ? '¡Listo por hoy! No hay llamadas pendientes. Revisa «Agendadas» para ver las próximas.' : 'No hay empresas en esta lista.')+'</p></div>'; return; }
-  caja.innerHTML = '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Empresa</th><th>Teléfono</th><th>Llamada</th><th>Último resultado</th><th>Siguiente</th>'+
-    (llEsAdmin() ? '<th>Operador</th>' : '')+'<th></th></tr></thead><tbody>'+
-    filas.map(function(p){
+  filasPorPartes(caja, 'll', filas.map(function(p){
       var tel = p.telefono || p.whatsapp, o = llOperadorDe(p);
       var vencida = p.proxima_llamada && new Date(p.proxima_llamada) < new Date();
       return '<tr><td style="min-width:190px"><b>'+esc(p.nombre)+'</b><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.contacto_nombre ? ' · '+esc(p.contacto_nombre) : '')+'</small></td>'+
@@ -149,8 +147,11 @@ function llPintarTablaLl(){
         '<td><small'+(vencida ? ' style="color:#B45309;font-weight:700"' : '')+'>'+esc(p.proxima_llamada ? llFechaHora(p.proxima_llamada) : (llCerrado(p) ? '—' : 'Cuando puedas'))+'</small></td>'+
         (llEsAdmin() ? '<td><small>'+esc(o ? o.nombre : '—')+'</small></td>' : '')+
         '<td><button class="btn btn-mor btn-sm" onclick="llAbrir(\''+p.id+'\')">'+(llCerrado(p) ? 'Ver' : 'Llamar')+'</button></td></tr>';
-    }).join('')+'</tbody></table></div></div>'+
-    '<p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' empresa'+(filas.length===1?'':'s')+'. Al abrir una, «Siguiente» recorre esta misma lista.</p>';
+    }),
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Empresa</th><th>Teléfono</th><th>Llamada</th><th>Último resultado</th><th>Siguiente</th>'+
+    (llEsAdmin() ? '<th>Operador</th>' : '')+'<th></th></tr></thead><tbody>',
+    '</tbody></table></div></div>'+
+    '<p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' empresa'+(filas.length===1?'':'s')+'. Al abrir una, «Siguiente» recorre esta misma lista.</p>');
 }
 function llNumeroTxt(p){
   if(p.estado === 'piloto') return '<span class="etiqueta tur">En prueba</span>';
