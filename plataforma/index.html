@@ -418,6 +418,10 @@ tbody tr:hover{background:var(--nube)}
 .sello-oficial span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3}
 .sello-qr{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:156px}
 .sello-qr span{font-size:.68rem;color:var(--gris);max-width:120px}
+.sello-emp{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:140px}
+.sello-emp .logo-emp{display:block;max-height:64px;max-width:150px;object-fit:contain}
+.sello-emp span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3;text-transform:uppercase}
+.constancia .para-empresa{font-size:.8rem;color:var(--gris);margin-top:6px;letter-spacing:.3px}
 @media(max-width:640px){.constancia-sellos{justify-content:center}}
 @media print{
   @page{size:letter portrait;margin:10mm}
@@ -434,6 +438,7 @@ tbody tr:hover{background:var(--nube)}
   .constancia .meta>div{min-width:0;overflow-wrap:anywhere}
   .constancia-sellos{margin-top:6mm}
   .constancia .legal{margin-top:6mm;padding-top:4mm;font-size:8pt;line-height:1.45}
+  .sello-emp .logo-emp{max-height:16mm;max-width:38mm}
 }
 
 /* Logros y festejos */
@@ -5291,5 +5296,6 @@ avisoEnlaceCorreo();
 <script src="renovaciones.js?v=20261019b"></script>
 <script src="cambio-rango.js?v=20261019b"></script>
 <script src="acceso-intencion.js?v=20261019a"></script>
+<script src="constancia-logo.js?v=20261020a"></script>
 </body>
 </html>
