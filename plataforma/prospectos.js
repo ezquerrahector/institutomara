@@ -52,7 +52,17 @@ function filasPorPartes(caja, clave, filas, antes, despues){
 var _prBuscarT = null;
 function prBuscar(v){ PR.f.q = v; clearTimeout(_prBuscarT); _prBuscarT = setTimeout(function(){ prPintarFiltros(); prPintarTabla(); }, 150); }
 function prPorId(id){ return (PR.lista||[]).filter(function(p){ return p.id === id; })[0]; }
-function prContactos(id){ return PR.contactos.filter(function(c){ return c.prospecto_id === id; }); }
+/* Contactos por prospecto con un índice (antes se recorría todo el historial por cada prospecto).
+   El índice se rehace solo cuando cambia la lista de contactos. */
+var _prIdx = { arr:null, n:-1, m:null };
+function prContactos(id){
+  var a = PR.contactos || [];
+  if(_prIdx.arr !== a || _prIdx.n !== a.length){
+    var m = {}; for(var i=0;i<a.length;i++){ var k = a[i].prospecto_id; (m[k] || (m[k] = [])).push(a[i]); }
+    _prIdx = { arr:a, n:a.length, m:m };
+  }
+  return (_prIdx.m[id] || []).slice();
+}
 function prCorto(p){ return p.nombre_corto || p.nombre; }
 function prFecha(iso){
   if(!iso) return '';
