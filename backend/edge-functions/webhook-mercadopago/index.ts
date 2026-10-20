@@ -158,6 +158,9 @@ serve(async (req) => {
             if (rpg.ok && pg.status === "approved") await pagoDePlan(pg, String(pre.external_reference).split("::")[1]);
           }
         }
+        // Cobro rechazado (Mercado Pago lo reintentará): si es de un plan de empresa, se le avisa para que registre otra tarjeta.
+        const rechazado = (ap.payment && ["rejected", "cancelled"].includes(String(ap.payment.status))) || ap.status === "recycling";
+        if (ra.ok && ap.preapproval_id && rechazado) await tienda({ accion: "cobro_rechazado", preapproval: String(ap.preapproval_id) });
       }
       return new Response("ok", { status: 200 });
     }

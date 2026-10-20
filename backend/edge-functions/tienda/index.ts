@@ -527,8 +527,25 @@ async function aplicarPreapprovalPlan(pre: any) {
   const id = String(pre.external_reference).split("::")[1];
   const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(id)}&select=*`))[0];
   if (!p) return null;
+  // La empresa autorizó la tarjeta nueva: esa suscripción pasa a ser la del plan y la anterior se cancela.
+  if (pre.status === "authorized" && p.tarjeta_pre === pre.id && p.mp_preapproval_id !== pre.id) {
+    const viejo = p.mp_preapproval_id;
+    await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: {
+      mp_preapproval_id: pre.id, tarjeta_pre: null, tarjeta_liga: null, tarjeta_monto: null, cobro_fallido_en: null, actualizado_en: new Date().toISOString() } });
+    if (viejo) await mp(`/preapproval/${viejo}`, "PUT", { status: "cancelled" }).catch((x) => console.error("cancelar suscripción anterior", viejo, x));
+    return true;
+  }
   if ((pre.status === "cancelled" || pre.status === "paused") && ["activo", "pendiente_pago"].includes(p.estado) && p.mp_preapproval_id === pre.id) {
-    await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "cancelado", actualizado_en: new Date().toISOString() } });
+    // Si Mercado Pago la detuvo por cobros rechazados, el plan no se cancela: la empresa recibe la liga para otra tarjeta.
+    const enCobro = p.estado === "activo" && Number(p.pagos_aprobados) >= 1 && p.vigente_hasta &&
+      ((p.cobro_fallido_en && new Date(p.cobro_fallido_en) > new Date(p.periodo_inicio || p.inicio || 0)) || Date.now() >= new Date(p.vigente_hasta).getTime() - 3 * 864e5);
+    if (enCobro) {
+      if (!p.cobro_fallido_en || new Date(p.cobro_fallido_en) <= new Date(p.periodo_inicio || p.inicio || 0))
+        await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { cobro_fallido_en: new Date().toISOString() } });
+      await avisoCobroPlan(p.id).catch((x) => console.error("aviso cobro", p.id, x));
+    } else {
+      await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "cancelado", actualizado_en: new Date().toISOString() } });
+    }
   }
   return true;
 }
@@ -538,6 +555,15 @@ async function planPagado(b: any) {
   const r = await db("rpc/plan_registrar_pago", { metodo: "POST", cuerpo: {
     p_plan: String(b.planId), p_pago: String(b.pagoId), p_monto: Number(b.monto), p_neto: b.neto == null ? null : Number(b.neto) } });
   if (!r || !r.ok) return r;
+  const pt = (await db(`empresas_planes?id=eq.${String(b.planId)}&select=id,tarjeta_pre,mp_preapproval_id`).catch(() => []))[0];
+  if (pt && pt.tarjeta_pre && pt.tarjeta_pre !== pt.mp_preapproval_id) {
+    const nueva = await mp(`/preapproval/${pt.tarjeta_pre}`).catch(() => null);
+    if (nueva && nueva.status === "authorized") await aplicarPreapprovalPlan(nueva);
+    else {
+      await mp(`/preapproval/${pt.tarjeta_pre}`, "PUT", { status: "cancelled" }).catch(() => null);
+      await db(`empresas_planes?id=eq.${pt.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { tarjeta_pre: null, tarjeta_liga: null, tarjeta_monto: null } });
+    }
+  }
   if (r.subir_precio && r.preapproval) {
     await mp(`/preapproval/${r.preapproval}`, "PUT", { auto_recurring: { transaction_amount: Number(r.precio_lista), currency_id: "MXN" } })
       .catch((x) => console.error("No se pudo subir el precio de la suscripción", r.preapproval, x));
@@ -949,6 +975,109 @@ async function cambioPagado(b: any) {
   return r;
 }
 
+// ---------------------------------------------------------------- cobro con tarjeta rechazado
+function faseCobro(p: any) {
+  if (p.periodo !== "mensual" || !p.mp_preapproval_id || !["activo", "vencido"].includes(p.estado) || p.cancelado_en || p.convertida_en
+      || Number(p.pagos_aprobados) < 1 || !p.vigente_hasta) return null;
+  const acceso = new Date(p.vigente_hasta).getTime();
+  if (acceso < Date.now() - 30 * 864e5) return null;
+  const rechazo = p.cobro_fallido_en && new Date(p.cobro_fallido_en) > new Date(p.periodo_inicio || p.inicio || 0);
+  if (!rechazo && Date.now() < acceso - 2 * 864e5) return null;
+  return acceso < Date.now() ? "tarjeta_vencido" : "tarjeta";
+}
+/* Liga para registrar otra tarjeta: una suscripción nueva por el mismo plan (se reutiliza mientras sirva). */
+async function ligaTarjeta(p: any, emp: any) {
+  const monto = await montoSiguiente(p);
+  if (p.tarjeta_pre && p.tarjeta_liga && Number(p.tarjeta_monto) === monto) return p.tarjeta_liga;
+  if (p.tarjeta_pre) await mp(`/preapproval/${p.tarjeta_pre}`, "PUT", { status: "cancelled" }).catch(() => null);
+  const pre = await mp("/preapproval", "POST", {
+    reason: `Plan mensual Instituto Mara — ${emp.nombre} (${p.rango_texto})`, external_reference: `plan::${p.id}`,
+    payer_email: String(p.admin_correo || emp.contacto_correo || "").trim().toLowerCase(),
+    auto_recurring: { frequency: 1, frequency_type: "months", transaction_amount: monto, currency_id: "MXN" },
+    back_url: `${AULA}?plan=exito`, status: "pending",
+  });
+  await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { tarjeta_pre: pre.id, tarjeta_liga: pre.init_point, tarjeta_monto: monto } });
+  return pre.init_point;
+}
+async function tarjetaPlan(u: any, b: any) {
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (!(await permisoPlan(u, p.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  if (!faseCobro(p)) return json({ error: "Este plan no tiene cobros pendientes." }, 409);
+  const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] || {};
+  return json({ ok: true, liga: await ligaTarjeta(p, emp), monto: await montoSiguiente(p) });
+}
+/* Los dos avisos: al detectar el cobro pendiente (empresa + operador + administración) y el día que pierden el acceso. */
+async function avisoCobroPlan(planId: string) {
+  const p = (await db(`empresas_planes?id=eq.${planId}&select=*`))[0];
+  const fase = p && faseCobro(p);
+  if (!fase) return false;
+  const otro = (await db(`empresas_planes?empresa_id=eq.${p.empresa_id}&id=neq.${p.id}&estado=eq.activo&vigente_hasta=gt.${encodeURIComponent(p.vigente_hasta)}&select=id`)).length;
+  if (otro) return false;
+  const toca1 = fase === "tarjeta" && p.aviso_fallo_para !== p.vigente_hasta;
+  const toca2 = fase === "tarjeta_vencido" && p.aviso_corte_para !== p.vigente_hasta && new Date(p.vigente_hasta).getTime() > Date.now() - 7 * 864e5;
+  if (!toca1 && !toca2) return false;
+  // Se marca primero para que dos avisos simultáneos (webhook y tarea diaria) no dupliquen correos.
+  const col = toca1 ? "aviso_fallo_para" : "aviso_corte_para", previo = p[col];
+  const marca = await db(`empresas_planes?id=eq.${p.id}&${col}=${previo ? "eq." + encodeURIComponent(previo) : "is.null"}`,
+    { metodo: "PATCH", prefer: "return=representation", cuerpo: { [col]: p.vigente_hasta } });
+  if (!marca.length) return false;
+  const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=*`))[0] || {};
+  const adms = await db(`empresas_admins?empresa_id=eq.${p.empresa_id}&select=correo,nombre`);
+  const para = p.admin_correo || (adms[0] && adms[0].correo) || emp.contacto_correo;
+  const nom = String((adms.find((a: any) => String(a.correo).toLowerCase() === String(para || "").toLowerCase()) || {}).nombre || emp.contacto_nombre || "").split(" ")[0];
+  const liga = await ligaTarjeta(p, emp), monto = await montoSiguiente(p), acceso = new Date(p.vigente_hasta);
+  const plan = `<b>${e(emp.nombre)}</b> (${e(p.rango_texto)})`;
+  const pie = `<p style="font-size:15px;line-height:1.6">Si prefieren pagar por transferencia bancaria, respondan este correo y les enviamos los datos.</p>`;
+  if (toca1) {
+    if (para) await correo(para, nom, `⚠️ No pudimos cobrar el plan de ${emp.nombre}`, plantilla(hola(nom),
+      `<p style="font-size:16px;line-height:1.6">Mercado Pago no pudo cobrar la mensualidad del plan de ${plan} con la tarjeta registrada.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Su equipo conserva el acceso hasta el <b>${e(diaLargo(acceso))}</b>. Para que no lo pierdan, registren otra tarjeta: se cobra la mensualidad pendiente de <b>${dinero(monto)}</b>, IVA incluido, y todo sigue igual.</p>` + pie,
+      { texto: "Actualizar forma de pago", url: liga }));
+    const op = p.operador_id ? (await db(`operadores?id=eq.${p.operador_id}&select=*`))[0] : null;
+    const resumen = `<p style="font-size:15px;line-height:1.6">Mercado Pago no pudo cobrar ${dinero(monto)} del plan de ${plan}. Ya les enviamos la liga para registrar otra tarjeta; tienen acceso hasta el <b>${e(diaLargo(acceso))}</b>.</p>`;
+    if (op && op.correo) await correo(op.correo, op.nombre, `⚠️ No se pudo cobrar a ${emp.nombre}`, plantilla(`Hola, ${e(String(op.nombre).split(" ")[0])}`,
+      resumen + `<p style="font-size:15px;line-height:1.6">Llámales para ayudarles: mientras no paguen, también se detiene tu comisión mensual.</p>`, { texto: "Ver la empresa", url: AULA }));
+    await avisarAdmins(`⚠️ Cobro rechazado: ${emp.nombre} (${dinero(monto)})`, plantilla("Cobro con tarjeta rechazado", resumen +
+      (op ? `<p style="font-size:14px;color:#6b6585">Operador: ${e(op.nombre)}.</p>` : "") +
+      `<p style="font-size:14px;color:#6b6585">Si te pagan por transferencia, regístrala en la ficha de la empresa con «Registrar pago por transferencia».</p>`, { texto: "Ver planes", url: urlPlanes }));
+  } else if (para) {
+    await correo(para, nom, `🔒 ${emp.nombre}: su equipo ya no tiene acceso al plan`, plantilla(hola(nom),
+      `<p style="font-size:16px;line-height:1.6">No recibimos el pago del plan de ${plan}, así que su equipo ya no puede entrar a los programas.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Su avance y sus constancias están guardados. Para reactivarlo, registren una tarjeta: se cobra <b>${dinero(monto)}</b>, IVA incluido, y el acceso vuelve en cuanto se acredite.</p>` + pie,
+      { texto: "Reactivar el plan", url: liga }));
+  }
+  return true;
+}
+async function avisosCobro() {
+  const pls = await db(`empresas_planes?periodo=eq.mensual&mp_preapproval_id=not.is.null&estado=in.(activo,vencido)&pagos_aprobados=gte.1` +
+    `&vigente_hasta=gte.${new Date(Date.now() - 8 * 864e5).toISOString()}&vigente_hasta=lte.${new Date(Date.now() + 3 * 864e5).toISOString()}&select=id`).catch(() => []);
+  let n = 0;
+  for (const p of pls) { try { if (await avisoCobroPlan(p.id)) n++; } catch (x) { console.error("cobro", p.id, x); } }
+  return n;
+}
+/* Administración registró una transferencia de un plan cuya tarjeta falló: el plan pasa a pagarse por
+   transferencia (se cancelan la suscripción y la liga pendiente para que no haya doble cobro). */
+async function planATransferencia(u: any, b: any) {
+  if (u.rol !== "admin") return json({ error: "Solo administración." }, 403);
+  const p = (await db(`empresas_planes?id=eq.${encodeURIComponent(String(b.planId || ""))}&select=*`))[0];
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (!p.mp_preapproval_id || !p.cobro_fallido_en) return json({ ok: true, sinCambio: true });
+  for (const id of [p.mp_preapproval_id, p.tarjeta_pre].filter(Boolean))
+    await mp(`/preapproval/${id}`, "PUT", { status: "cancelled" }).catch((x) => console.error("cancelar suscripción", id, x));
+  await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: {
+    mp_preapproval_id: null, tarjeta_pre: null, tarjeta_liga: null, tarjeta_monto: null, cobro_fallido_en: null, actualizado_en: new Date().toISOString() } });
+  return json({ ok: true });
+}
+/* Mercado Pago avisó un cobro rechazado de una suscripción de plan. */
+async function cobroRechazado(b: any) {
+  const p = (await db(`empresas_planes?mp_preapproval_id=eq.${encodeURIComponent(String(b.preapproval || ""))}&select=*`))[0];
+  if (!p) return { ok: false, motivo: "plan no encontrado" };
+  if (!p.cobro_fallido_en || new Date(p.cobro_fallido_en) <= new Date(p.periodo_inicio || p.inicio || 0))
+    await db(`empresas_planes?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { cobro_fallido_en: new Date().toISOString() } });
+  return { ok: true, aviso: await avisoCobroPlan(p.id) };
+}
+
 // ---------------------------------------------------------------- tarea diaria
 async function diaria() {
   const hoy = fecha(new Date());
@@ -986,9 +1115,10 @@ async function diaria() {
   await db(`empresas_planes?estado=in.(activo,cancelado)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
   let cortes = 0; try { cortes = await cortesDiarios(); } catch (x) { console.error("cortes", x); }
   let renovaciones = 0; try { renovaciones = await avisosRenovacion(); } catch (x) { console.error("renovaciones", x); }
+  let cobros = 0; try { cobros = await avisosCobro(); } catch (x) { console.error("cobros", x); }
   // Ligas de diferencia (cambio a más personas) que vencieron sin pagarse.
   await db(`plan_cambios?estado=eq.pendiente_pago&liga_vence=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
-  return json({ regalos, recordatorios, membresias, planes, cortes, renovaciones });
+  return json({ regalos, recordatorios, membresias, planes, cortes, renovaciones, cobros });
 }
 
 serve(async (req) => {
@@ -1005,6 +1135,7 @@ serve(async (req) => {
       if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });
       if (b.accion === "plan_reembolso") return json({ resultado: await planReembolso(b) });
       if (b.accion === "cambio_pagado") return json({ resultado: await cambioPagado(b) });
+      if (b.accion === "cobro_rechazado") return json({ resultado: await cobroRechazado(b) });
       if (b.accion === "supervision") return await supervision();
       return json({ error: "Acción no válida." }, 400);
     }
@@ -1026,6 +1157,8 @@ serve(async (req) => {
       case "plan_renovar": return await renovarPlan(u, b);
       case "plan_cambio": return await procesarCambio(u, b);
       case "plan_cambio_cancelar": return await cancelarCambio(u, b);
+      case "plan_tarjeta": return await tarjetaPlan(u, b);
+      case "plan_a_transferencia": return await planATransferencia(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
