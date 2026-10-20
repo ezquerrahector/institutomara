@@ -122,6 +122,15 @@ async function pagoDePlan(pago: any, planId: string) {
   await tienda({ accion: "plan_pagado", planId, pagoId: String(pago.id), monto, neto: netoMP });
 }
 
+/* Pago de la diferencia al cambiar a más personas: misma base de comisión que un pago de plan. */
+async function pagoDeCambio(pago: any, cambioId: string) {
+  const monto = Number(pago.transaction_amount || 0);
+  const comisionMP = (pago.fee_details || []).reduce((s: number, f: any) => s + Number(f.amount || 0), 0);
+  const netoMP = pago.transaction_details && Number(pago.transaction_details.net_received_amount) > 0
+    ? Number(pago.transaction_details.net_received_amount) : Math.max(0, monto - comisionMP);
+  await tienda({ accion: "cambio_pagado", cambioId, pagoId: String(pago.id), monto, neto: netoMP });
+}
+
 serve(async (req) => {
   try {
     const url = new URL(req.url);
@@ -181,6 +190,7 @@ serve(async (req) => {
     if (ref.startsWith("emp::")) { await tienda({ accion: "empresa_pagada", compraId: ref.split("::")[1], pagoId: String(pago.id), monto: Number(pago.transaction_amount || 0) }); return new Response("ok", { status: 200 }); }
     if (ref.startsWith("mem::")) { const [, uidM, planM] = ref.split("::"); return new Response(await pagoDeMembresia(pago, uidM, planM), { status: 200 }); }
     if (ref.startsWith("plan::")) { await pagoDePlan(pago, ref.split("::")[1]); return new Response("ok", { status: 200 }); }
+    if (ref.startsWith("cambio::")) { await pagoDeCambio(pago, ref.split("::")[1]); return new Response("ok", { status: 200 }); }
     const [usuarioId, cursoId] = String(pago.external_reference || "").split("::");
     if (!usuarioId || !cursoId) return new Response("sin referencia", { status: 200 });
 
