@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "ISO 9001:2026 y auditoría interna",
+   "r": "Conocerás la estructura y los cambios de ISO 9001:2026, cómo funciona la infraestructura de la calidad en México y cómo planear y hacer una auditoría interna con ISO 19011 que encuentre hechos, no culpables.",
+   "lecciones": [
+    {
+     "t": "ISO 9001:2026 y la infraestructura de la calidad en México",
+     "obj": "Explicar la estructura y los cambios de ISO 9001:2026 y distinguir quién certifica, quién acredita y qué es obligatorio en México.",
+     "texto": [
+      "ISO 9001 establece los requisitos de un <b>sistema de gestión de la calidad</b>: lo necesario para entregar de forma consistente lo que pide el cliente y la ley, y para mejorar. Su 6.ª edición, ISO 9001:2026, la publicó ISO el 16 de septiembre de 2026 y reemplaza a ISO 9001:2015 y a su enmienda de 2024 sobre cambio climático. Conserva la estructura armonizada de 10 cláusulas: 1 alcance, 2 referencias normativas, 3 términos y definiciones, 4 contexto, 5 liderazgo, 6 planificación, 7 apoyo, 8 operación, 9 evaluación del desempeño y 10 mejora. Esa estructura es el ciclo PHVA: planear (6, a partir del contexto y con el liderazgo al centro), hacer (7 y 8), verificar (9) y actuar (10).",
+      "La norma se apoya en ISO 9000:2026, publicada en mayo de 2026, que mantiene siete principios: enfoque al cliente, liderazgo, compromiso de las personas, enfoque a procesos, mejora, toma de decisiones basada en la evidencia y gestión de las relaciones. Frente a la edición 2015, los cambios principales son cinco: la <i>cultura de la calidad</i> y el comportamiento ético aparecen de forma explícita en liderazgo y en toma de conciencia; los riesgos y las oportunidades se tratan por separado en 6.1; se refuerza la planificación de los cambios; el cambio climático, que llegó con la enmienda de 2024, queda integrado como cuestión del contexto cuando es pertinente, y los términos clave se incluyen dentro de la propia norma.",
+      "La transición no es inmediata. El plazo lo fijan el IAF y cada organismo certificador; se habla de unos tres años, pero confírmalo con tu organismo certificador. Mientras tanto, muchas empresas siguen certificadas en la versión 2015. En México existe la norma equivalente NMX-CC-9001-IMNC-2015; verifica la versión vigente en el Catálogo Mexicano de Normas. En autopartes se exige además IATF 16949:2016, que usa ISO 9001 como base; verifica su actualización tras la edición 2026.",
+      "El marco legal es la Ley de Infraestructura de la Calidad, publicada en el DOF el 1 de julio de 2020, que sustituyó a la Ley Federal sobre Metrología y Normalización. Las NOM son obligatorias; las NMX son voluntarias, salvo que una NOM o un contrato las cite. ISO 9001 es voluntaria, aunque un cliente puede exigirla. Dos verbos clave: la ema <b>acredita</b> a los organismos certificadores, y éstos auditan y certifican a las empresas. Certificar no es acreditar. Este diplomado no certifica a tu empresa ni te acredita como auditor: te prepara para aplicar la norma."
+     ],
+     "comparar": [
+      "«Así no: Contratamos a quien nos dé el certificado más rápido y barato; da igual quién lo emita.»",
+      "«Así sí: Pedimos al organismo su acreditación vigente, revisamos que el alcance cubra nuestro sector y acordamos con él las fechas de transición a la versión 2026.»"
+     ],
+     "caso": "Caso ficticio: Leticia, de 46 años, dirige una empresa de mantenimiento industrial con 40 técnicos en Torreón. Una planta de alimentos le pide estar certificada en ISO 9001 para firmar un contrato. Un despacho le ofrece «el certificado ISO 9001:2026 en tres semanas, sin auditoría en sitio», emitido por un organismo que no aparece como acreditado. Su gerente de operaciones prefiere certificarse en la versión 2015, «que es la que todos conocen». Leticia tiene poco tiempo y poco presupuesto.",
+     "p": [
+      [
+       "¿Qué debe verificar Leticia primero del organismo que ofrece el certificado?",
+       "Su acreditación vigente con alcance para el sector",
+       "Que el certificado tenga sello oficial, folio y holograma",
+       "Que el precio incluya la documentación y la capacitación",
+       "Un certificado sólo tiene peso si lo emite un organismo acreditado con el alcance adecuado. El sello y el folio no prueban nada, y que el certificador haga también la documentación sería un conflicto de interés, no una ventaja."
+      ],
+      [
+       "¿Qué conviene hacer respecto a la versión de la norma?",
+       "Preguntar a un organismo acreditado qué versión y plazos aplica",
+       "Elegir 2015, porque la edición 2026 todavía no tiene validez",
+       "Esperar a que exista la NMX de 2026, sin la cual no puede certificarse",
+       "Las reglas de transición las fijan el IAF y cada organismo certificador, por eso hay que preguntarles. La edición 2026 ya está publicada y es válida, y ISO 9001 puede certificarse sin esperar a la norma mexicana equivalente."
+      ],
+      [
+       "El cliente cree que con el certificado ya no habrá fallas. ¿Qué es lo más preciso?",
+       "Muestra un sistema auditado, no la ausencia de fallas",
+       "Garantiza el servicio, porque el auditor revisa cada trabajo",
+       "Garantiza el servicio si el certificado es de la versión 2026",
+       "La certificación evalúa por muestreo que el sistema cumpla los requisitos y funcione; no revisa cada servicio ni elimina las fallas. «Con el certificado ya hay calidad» es un mito, sea cual sea la versión."
+      ]
+     ],
+     "completar": [
+      "Certificar no es lo mismo que ___: la ema evalúa a los organismos certificadores y éstos auditan a las empresas.",
+      "acreditar"
+     ],
+     "relacionar": [
+      [
+       "ema",
+       "Acredita a los organismos certificadores"
+      ],
+      [
+       "Organismo certificador",
+       "Audita y certifica a la empresa"
+      ],
+      [
+       "NOM",
+       "Es obligatoria por ley"
+      ],
+      [
+       "NMX",
+       "Es voluntaria salvo que la cite una NOM o un contrato"
+      ],
+      [
+       "IATF 16949",
+       "Agrega requisitos automotrices sobre la base de ISO 9001"
+      ]
+     ],
+     "refl": "Aplica la lección a una organización real, la tuya o una que conozcas bien. 1) ¿Está certificada? Anota la norma, la versión y el organismo; si no lo está, indica si algún cliente o contrato se lo pide. 2) Explica con tus palabras cuáles dos cambios de ISO 9001:2026 le afectarían más y por qué. 3) Ubica tres de sus procesos en las cláusulas 4 a 10. 4) Escribe qué tres datos verificarías antes de contratar a un organismo certificador.",
+     "modelo": "Modelo: «Trabajo en un hospital privado en Colima certificado en ISO 9001:2015. Los cambios que más nos afectan: cultura y ética, porque el personal de enfermería no reporta incidentes por miedo, y la planificación de cambios, porque abriremos un área de hemodiálisis. Admisión y facturación caen en operación (8); las encuestas de satisfacción, en evaluación del desempeño (9); las acciones correctivas, en mejora (10). Antes de contratar verificaría la acreditación vigente del organismo, que su alcance incluya servicios de salud y su calendario de transición.» Es bueno porque nombra cambios concretos ligados a un problema real y ubica cada proceso en su cláusula.",
+     "plantilla": [
+      "Ficha de situación ISO de mi organización",
+      "Organización: [ ]\nNorma y versión actual: [ISO 9001:2015 / ISO 9001:2026 / ninguna]\nOrganismo certificador: [ ] · Acreditación vigente verificada: [sí/no, fecha] · Alcance: [ ]\nFecha límite de transición según el organismo: [ ]\nCambios 2026 que más nos afectan: [cultura y ética / riesgos y oportunidades / planificación de cambios / cambio climático en el contexto]\nRequisitos del cliente o del sector (IATF 16949, NOM aplicables, contratos): [ ]\nPróximo paso, responsable y fecha: [ ]"
+     ],
+     "clave": [
+      "ISO 9001:2026 conserva las 10 cláusulas y el ciclo PHVA; sus cambios refuerzan la cultura, la ética, los riesgos y oportunidades, los cambios y el contexto.",
+      "La ema acredita, el organismo certifica y la empresa se certifica: certificar no es acreditar.",
+      "Las fechas de transición las confirma tu organismo certificador."
+     ]
+    },
+    {
+     "t": "Contexto, liderazgo, cultura de calidad, riesgos y oportunidades e información documentada",
+     "obj": "Definir el contexto de una organización, separar riesgos de oportunidades y reconocer qué hace la dirección para sostener una cultura de calidad ética.",
+     "texto": [
+      "La cláusula 4 pide entender el <b>contexto</b>: las cuestiones externas e internas que afectan la capacidad de la organización para lograr sus resultados, las partes interesadas pertinentes y lo que esperan, el alcance del sistema y sus procesos con sus interacciones. Aquí la norma pide decidir si el cambio climático es una cuestión pertinente; el requisito llegó con la enmienda de 2024 y la edición 2026 lo integra. Para una transportista de Veracruz, los huracanes que cierran carreteras lo son; para un despacho contable quizá pese poco. La norma no obliga a tener un programa ambiental: pide pensar si el clima afecta tu capacidad de cumplir y actuar en consecuencia.",
+      "En la cláusula 5, la alta dirección debe rendir cuentas del sistema; no basta con nombrar a un responsable de calidad y desentenderse. La versión 2026 hace explícitas la cultura de la calidad y el comportamiento ético, en liderazgo y en toma de conciencia. En la práctica, eso se ve cuando alguien puede reportar un error sin miedo, cuando nadie «maquilla» un registro para salir del paso y cuando la presión por entregar no le gana a los requisitos del cliente. Si la gente aprende que avisar trae castigo, el sistema se llena de registros perfectos y de problemas ocultos.",
+      "En la cláusula 6, los riesgos y las oportunidades ahora se tratan por separado, en apartados distintos de 6.1. Un riesgo es una incertidumbre que puede dañar el cumplimiento, como depender de un solo proveedor; una oportunidad es algo que puede mejorar resultados, como un cliente nuevo o una tecnología que reduce errores. Para cada uno decides una acción proporcional; en una pyme suele bastar una matriz sencilla. La planificación de los cambios, reforzada en 6.3, pide que antes de cambiar algo del sistema, como un software, una sucursal o un proceso, definas su propósito, sus posibles consecuencias, los recursos y los responsables.",
+      "La información documentada vive en la cláusula 7, de apoyo. La norma distingue la información que debe estar disponible para operar, como un procedimiento o un instructivo, de la que hay que <b>conservar</b> como evidencia, como un registro. Desde la edición 2015 no se exige un manual de calidad, y la cantidad de documentos depende del tamaño, la complejidad y la competencia del personal. Más papel no es más calidad: un registro sirve si alguien lo usa para decidir, está actualizado y se encuentra cuando se necesita, en papel o en formato digital."
+     ],
+     "comparar": [
+      "«Así no: Si alguien vuelve a fallar con un registro, se va. Y agreguen otro formato para que firmen todos.»",
+      "«Así sí: Gracias por avisar del termógrafo descompuesto. Revisemos por qué alguien prefirió inventar los datos antes que reportar la falla y cómo lo hacemos fácil.»"
+     ],
+     "caso": "Caso ficticio: Humberto, de 55 años, es director general de una transportista de carga refrigerada en Veracruz con 30 unidades. En temporada de lluvias, dos inundaciones cerraron rutas y una carga de mariscos llegó con la cadena de frío rota. Su coordinadora de calidad descubrió que un chofer llenó a mano el registro de temperatura «con los valores normales» porque el termógrafo falló y temía una sanción. Humberto quiere despedirlo y crear un formato nuevo de tres páginas.",
+     "p": [
+      [
+       "¿Qué respuesta es más congruente con una cultura de calidad ética?",
+       "Avisar al cliente, corregir el registro y analizar el miedo a reportar",
+       "Despedir al chofer para dejar claro que alterar registros no se tolera",
+       "No decir nada, porque la carga ya se entregó y nadie reclamó",
+       "La ética exige transparencia con el cliente y corregir el registro, y la cultura de calidad exige entender por qué ocultar parecía más seguro que avisar. Despedir sin analizar deja intacto el miedo que causó el problema; callar es engañar al cliente."
+      ],
+      [
+       "¿Cómo debería tratar las inundaciones en su sistema de gestión?",
+       "Como cuestión del contexto, con rutas y planes alternos",
+       "Como algo ajeno, porque el clima no depende de la empresa",
+       "Sólo con un seguro, sin incluirlas en la planificación",
+       "Si el clima afecta la capacidad de cumplir, es una cuestión pertinente del contexto y pide acciones. Que no lo controle la empresa no lo vuelve irrelevante, y un seguro compensa pérdidas pero no protege la cadena de frío."
+      ],
+      [
+       "¿Qué hacer con el formato de tres páginas?",
+       "Revisar qué evidencia se necesita y simplificar el registro",
+       "Aprobarlo, porque más registros dan más control al director",
+       "Quitar todos los registros y confiar en la experiencia del chofer",
+       "La información documentada debe servir para decidir y demostrar; un formato largo se llena por llenar. Eliminar los registros deja sin evidencia la temperatura, que es justo lo que el cliente necesita saber."
+      ]
+     ],
+     "completar": [
+      "La norma distingue la información que debe estar disponible para operar, como un procedimiento, de la que hay que ___ como evidencia, como un registro.",
+      "conservar"
+     ],
+     "refl": "Aplícalo a tu organización. 1) Escribe tres cuestiones externas y tres internas, y decide si el cambio climático es pertinente; justifica tu respuesta. 2) Anota dos riesgos y una oportunidad, por separado, con la acción que tomarías para cada uno. 3) Describe una situación en la que la presión por entregar podría empujar a alguien a ocultar un problema y qué haría la dirección para que reportarlo sea lo más fácil. 4) Nombra un documento o registro que sobra y uno que falta.",
+     "modelo": "Modelo: «Panadería con tres sucursales en Durango. Externas: precio de la harina, nueva NOM de etiquetado, ondas de calor que afectan la fermentación; el clima sí es pertinente. Internas: rotación de personal, horno viejo, un solo maestro panadero que conoce las fórmulas. Riesgo: que falte el maestro panadero; acción: documentar las fórmulas y entrenar a dos ayudantes. Oportunidad: pedidos para cafeterías; acción: una prueba de un mes con dos clientes. Presión: en diciembre se vende pan con alérgenos sin etiquetar; la gerente dará permiso explícito de detener la venta. Sobra la bitácora de limpieza duplicada; falta el registro de temperatura del horno.» Es bueno porque es concreto, separa riesgo de oportunidad y protege a quien detiene la venta.",
+     "plantilla": [
+      "Matriz de contexto, riesgos y oportunidades",
+      "Cuestiones externas: [ ] · Internas: [ ]\n¿El cambio climático es pertinente? [sí/no] · Por qué: [ ]\nPartes interesadas y lo que esperan: [ ]\nRiesgo 1: [ ] · Acción: [ ] · Responsable: [ ] · Fecha: [ ]\nRiesgo 2: [ ] · Acción: [ ] · Responsable: [ ] · Fecha: [ ]\nOportunidad 1: [ ] · Acción: [ ] · Responsable: [ ] · Fecha: [ ]\nCambio planeado: [ ] · Propósito: [ ] · Consecuencias posibles: [ ] · Recursos: [ ] · Responsable: [ ]\nConducta de la dirección que protege la cultura de calidad: [ ]"
+     ],
+     "clave": [
+      "El contexto incluye el clima cuando afecta tu capacidad de cumplir; no es un trámite ambiental.",
+      "Riesgos y oportunidades se analizan por separado, cada uno con una acción proporcional.",
+      "Si avisar trae castigo, los registros se vuelven perfectos y los problemas se esconden."
+     ]
+    },
+    {
+     "t": "Operación, no conformidades, acción correctiva y revisión por la dirección",
+     "obj": "Distinguir corrección de acción correctiva, cerrar una no conformidad con causa verificada y preparar una revisión por la dirección que produzca decisiones.",
+     "texto": [
+      "La cláusula 8, de operación, es donde se hace el trabajo: planear y controlar los procesos, acordar los requisitos con el cliente, diseñar cuando aplica, controlar a los proveedores externos, producir o prestar el servicio con identificación y trazabilidad, liberar sólo lo que cumple y controlar las salidas no conformes. Mucho de lo que hiciste en este diplomado es operación: el trabajo estandarizado, el poka-yoke, la gráfica de control y el plan de reacción. La norma no te dice cómo hacerlo; pide que esté planeado, controlado y con evidencia.",
+      "Cuando algo no cumple, hay dos respuestas distintas. La <b>corrección</b> actúa sobre lo que ya salió mal: separar, retrabajar, reponer o avisar al cliente. La acción correctiva actúa sobre la causa para que no se repita, y vive en la cláusula 10, de mejora. Las dos se necesitan: corregir sin buscar la causa garantiza que el problema regrese, y buscar la causa sin contener deja que el defecto siga llegando al cliente. Lo preventivo, desde la edición 2015, se aborda con la gestión de riesgos y oportunidades.",
+      "Una acción correctiva bien hecha sigue una secuencia: reaccionar y contener, analizar la causa con hechos, revisar si hay casos parecidos en otras líneas o productos, implementar la acción, verificar su eficacia con datos después de un tiempo razonable y, si hace falta, actualizar riesgos y cambiar el sistema. Usa lo que aprendiste en el módulo 4: Ishikawa y porqués verificados. Si la causa escrita es «error del operador» y la acción es «recapacitar», casi siempre falta preguntar por qué el proceso permitió ese error.",
+      "La revisión por la dirección forma parte de la cláusula 9, junto con el seguimiento, la satisfacción del cliente y la auditoría interna. Es la reunión donde la alta dirección mira el sistema completo con datos: acciones pendientes de revisiones anteriores, cambios en el contexto, satisfacción y quejas, objetivos, desempeño de procesos y proveedores, no conformidades, resultados de auditoría, eficacia de las acciones sobre riesgos y oportunidades, y recursos. Debe terminar en decisiones registradas sobre mejoras, cambios y recursos, cada una con responsable y fecha."
+     ],
+     "comparar": [
+      "«Así no: Causa: error humano. Acción: se habló con el operador. Estado: cerrada.»",
+      "«Así sí: Causa verificada: el atornillador no tiene control de torque. Acción: atornillador con paro por torque. Eficacia: cero respaldos flojos en tres meses de embarques.»"
+     ],
+     "caso": "Caso ficticio: Carolina, de 33 años, es coordinadora de calidad en una fábrica de muebles de oficina en Lagos de Moreno. En seis meses abrió nueve acciones correctivas por sillas con el respaldo flojo; todas dicen «causa: error del operador; acción: recapacitar», y las quejas siguen. Además, la revisión por la dirección de este año duró veinte minutos: el director vio el número de quejas, pidió «echarle más ganas» y terminó la reunión.",
+     "p": [
+      [
+       "¿Qué falla en las nueve acciones correctivas?",
+       "No investigan la causa ni comprueban si funcionaron",
+       "Les falta la firma del director en cada uno de los formatos",
+       "Debieron cerrarse en menos días para no acumularse",
+       "Una acción correctiva elimina una causa verificada y se cierra cuando los datos muestran que funcionó. Las firmas y la rapidez de cierre no sustituyen el análisis; cerrar rápido algo mal analizado sólo multiplica las acciones."
+      ],
+      [
+       "¿Qué hace Carolina primero con las sillas ya fabricadas?",
+       "Identificar y revisar las sospechosas antes de enviarlas",
+       "Esperar a terminar el análisis de causa para actuar",
+       "Enviarlas, porque el cliente puede apretar los tornillos",
+       "La contención protege al cliente mientras se investiga; es una corrección. Esperar deja salir más sillas defectuosas, y pasarle el problema al cliente contradice el enfoque al cliente."
+      ],
+      [
+       "¿Cómo debería ser la próxima revisión por la dirección?",
+       "Con datos y propuestas que terminen en decisiones con responsable",
+       "Conducida por el auditor externo para que el director escuche",
+       "Sustituida por la auditoría interna anual, que ya revisa el sistema",
+       "La revisión por la dirección es responsabilidad de la alta dirección y debe producir decisiones sobre mejoras, cambios y recursos. El auditor externo evalúa, no dirige; la auditoría interna es una entrada de la revisión, no su sustituto."
+      ]
+     ],
+     "completar": [
+      "Retrabajar la pieza es una ___; eliminar la causa para que no se repita es una acción correctiva.",
+      "corrección"
+     ],
+     "relacionar": [
+      [
+       "Corrección",
+       "Separar y retrabajar las sillas con respaldo flojo"
+      ],
+      [
+       "Acción correctiva",
+       "Instalar control de torque tras verificar la causa"
+      ],
+      [
+       "Verificación de eficacia",
+       "Revisar tres meses de quejas después del cambio"
+      ],
+      [
+       "Salida no conforme",
+       "Producto que no cumple y se controla para que no llegue al cliente"
+      ],
+      [
+       "Revisión por la dirección",
+       "Decidir recursos y cambios con datos de todo el sistema"
+      ]
+     ],
+     "refl": "Elige un problema que se repita en tu trabajo. 1) Redacta la no conformidad con su evidencia: qué, dónde, cuándo y cuántos. 2) Escribe la corrección inmediata que harías. 3) Anota la causa que consideras más probable y cómo la verificarías con hechos. 4) Propón la acción correctiva y explica cómo y cuándo comprobarás su eficacia. 5) Indica qué dato de este caso llevarías a la revisión por la dirección y qué decisión le pedirías.",
+     "modelo": "Modelo: «No conformidad: en septiembre, 14 de 220 recetas surtidas en la farmacia del hospital tenían una dosis distinta a la indicada. Corrección: llamar a los 14 pacientes y reponer el medicamento. Causa probable: dos presentaciones del mismo fármaco están juntas en el anaquel; la verificaré revisando si los 14 errores son de esas presentaciones. Acción: separar las presentaciones y escanear el código al surtir. Eficacia: cero errores de presentación en 90 días, revisados con el registro de surtido. A la revisión llevaría el costo de la reposición y pediría aprobar el lector de código.» Es bueno porque separa corrección de acción y define cómo medir la eficacia.",
+     "plantilla": [
+      "Registro de no conformidad y acción correctiva",
+      "Folio: [ ] · Fecha de detección: [ ] · Proceso: [ ]\nNo conformidad (requisito, evidencia, cantidad): [ ]\nCorrección y contención: [ ] · Responsable: [ ]\nCausa verificada y cómo se verificó: [ ]\n¿Hay casos similares en otras áreas? [ ]\nAcción correctiva: [ ] · Responsable: [ ] · Fecha compromiso: [ ]\nDías abiertos (fecha de detección en C2): [=HOY()-C2]\nVerificación de eficacia (dato, periodo, resultado): [ ]\n¿Se actualizan riesgos o el sistema? [ ]"
+     ],
+     "clave": [
+      "La corrección arregla lo que salió mal; la acción correctiva elimina su causa.",
+      "Una acción correctiva se cierra con datos de eficacia, no con una firma.",
+      "La revisión por la dirección termina en decisiones con responsable y fecha."
+     ]
+    },
+    {
+     "t": "Auditoría interna con ISO 19011: planear, recoger evidencia y redactar hallazgos",
+     "obj": "Planear una auditoría interna, recoger evidencia objetiva y redactar hallazgos claros, verificables y sin culpar a personas.",
+     "texto": [
+      "ISO 9001 pide hacer auditorías internas a intervalos planificados, dentro de la cláusula 9. La guía para hacerlas es ISO 19011:2026, 4.ª edición, publicada en mayo de 2026. Es una guía, no un requisito certificable: nadie se certifica en ISO 19011. Distingue la auditoría de primera parte, interna; la de segunda parte, que hace un cliente a su proveedor, y la de tercera parte, que hace un organismo certificador. Distingue también el <b>programa</b> de auditoría, que define qué procesos se auditan en el año según su riesgo y resultados, del plan de una auditoría concreta.",
+      "El plan fija objetivo (ISO 9001:2026 pide definirlo para cada auditoría), alcance, criterios (la norma, tus procedimientos, los requisitos del cliente y la ley aplicable), fechas, personas a entrevistar y muestra. El auditor actúa con integridad, imparcialidad y un enfoque basado en evidencia, y no audita su propio trabajo. La lista de verificación sirve de guía, no de interrogatorio: preguntas abiertas como «muéstrame cómo liberas un pedido» rinden más que «¿cumplen el procedimiento?». La edición 2026 amplía la orientación sobre auditoría remota y herramientas digitales: puedes revisar registros electrónicos o recorrer un área por videollamada, cuidando la confidencialidad y comprobando que lo que ves es real.",
+      "La evidencia objetiva se obtiene de tres fuentes: entrevistar a quien hace el trabajo, observar en el gemba y revisar registros. Lo más sólido es que coincidan. Una técnica útil es seguir un caso de punta a punta: un pedido desde la cotización hasta la entrega. Al comparar la evidencia contra los criterios obtienes un hallazgo, que puede ser una conformidad, una no conformidad o una oportunidad de mejora. Muchos organismos certificadores clasifican las no conformidades en mayores y menores; en tu auditoría interna define y comunica tu criterio antes de empezar.",
+      "Un hallazgo bien redactado tiene tres partes: el requisito, la <b>evidencia</b> objetiva y la declaración de lo que no se cumple. Ejemplo: «El procedimiento de almacén pide liberar cada lote antes de usarlo. Los lotes 214, 219 y 223 de resina se usaron vencidos y sin registro de liberación. No se controla la liberación de materias primas». No lleva nombres de personas ni adjetivos. Cierra con una reunión, un informe y el seguimiento de las acciones. Este diplomado no te acredita como auditor: para eso hay cursos de auditor interno y de auditor líder de proveedores aprobados en esquemas como el de CQI/IRCA; verifica su registro vigente."
+     ],
+     "comparar": [
+      "«Así no: El almacén es un desorden y el almacenista no sabe lo que hace.»",
+      "«Así sí: Requisito: liberar cada lote antes de usarlo. Evidencia: tres lotes usados vencidos y sin registro de liberación. No conformidad: no se controla la liberación de materias primas.»"
+     ],
+     "caso": "Caso ficticio: Adrián, de 27 años, es ingeniero de procesos en una fábrica de pinturas en Naucalpan y acaba de formarse como auditor interno. Le asignaron auditar el almacén de materias primas, que dirige su propio jefe. Encontró tres lotes de resina usados después de su caducidad y sin registro de liberación. Su jefe le pidió anotarlo «sólo como comentario», y en su borrador Adrián escribió: «El almacén es un desorden y el almacenista no sabe lo que hace».",
+     "p": [
+      [
+       "¿Qué debió cuidarse al planear esta auditoría?",
+       "Asignar a un auditor que no dependa del área auditada",
+       "Que el jefe del almacén revisara y ajustara la lista de verificación",
+       "Que Adrián auditara sin plan, para que la visita fuera sorpresa",
+       "El auditor no debe auditar su propio trabajo ni un área que lo pone en conflicto de interés, como la de su jefe. Dejar que el auditado ajuste la lista resta imparcialidad, y auditar sin plan resta método."
+      ],
+      [
+       "¿Cuál redacción del hallazgo es la adecuada?",
+       "Lotes 214, 219 y 223 usados vencidos y sin liberación registrada",
+       "El almacenista no cumple su trabajo y debe ser capacitado",
+       "Se observa cierto descuido general en el manejo de materiales",
+       "Un hallazgo cita evidencia verificable contra un requisito. Nombrar y juzgar a una persona no ayuda a corregir el sistema, y una frase vaga como «cierto descuido» no se puede verificar ni cerrar."
+      ],
+      [
+       "¿Qué hace Adrián ante la petición de su jefe?",
+       "Mantener la no conformidad y explicar la evidencia",
+       "Bajarla a oportunidad de mejora para cuidar la relación",
+       "Quitarla del informe porque los lotes ya se consumieron",
+       "El hallazgo se clasifica por la evidencia contra el criterio, no por la relación con el auditado. Que los lotes ya se usaran lo hace más importante, porque hay producto terminado que pudo verse afectado."
+      ]
+     ],
+     "completar": [
+      "Un hallazgo de no conformidad bien redactado incluye el requisito, la ___ objetiva y la declaración de lo que no se cumple.",
+      "evidencia"
+     ],
+     "relacionar": [
+      [
+       "Criterio de auditoría",
+       "El procedimiento de almacén y el requisito del cliente"
+      ],
+      [
+       "Evidencia objetiva",
+       "Registro del lote 214 sin firma de liberación"
+      ],
+      [
+       "Hallazgo",
+       "Resultado de comparar la evidencia contra el criterio"
+      ],
+      [
+       "Programa de auditoría",
+       "Calendario anual de qué procesos se auditan y cuándo"
+      ],
+      [
+       "Independencia del auditor",
+       "No auditar el área que tú diriges"
+      ]
+     ],
+     "refl": "Prepara una auditoría interna de un proceso que no dirijas. 1) Escribe el objetivo, el alcance y los criterios. 2) Redacta seis preguntas abiertas para la lista de verificación: dos para entrevistar, dos para observar y dos para revisar registros. 3) Define la muestra: qué registros o casos revisarás y cuántos. 4) Imagina un hallazgo de no conformidad y redáctalo con requisito, evidencia y declaración. 5) Explica qué harías si el responsable del área te pide suavizarlo.",
+     "modelo": "Modelo: «Objetivo: verificar que las quejas se atienden según el procedimiento. Alcance: atención a clientes, enero a junio. Criterios: ISO 9001, procedimiento de quejas y contrato con la cadena de autoservicio. Preguntas: “Muéstrame cómo registras una queja que llega por teléfono”; “¿Qué haces si no encuentras la causa?”. Muestra: 10 de 64 quejas, elegidas al azar. Hallazgo: el procedimiento pide responder en cinco días hábiles; 4 de las 10 quejas revisadas se respondieron después de 12 días; no se cumple el plazo de respuesta. Si me piden suavizarlo, muestro la evidencia y explico que el hallazgo describe el proceso, no a la persona.» Es bueno porque las preguntas son abiertas y el hallazgo es verificable.",
+     "plantilla": [
+      "Plan y lista de verificación de auditoría interna",
+      "Proceso: [ ] · Objetivo: [ ] · Alcance: [ ] · Fecha: [ ]\nCriterios: [norma, procedimiento, requisito del cliente, ley aplicable]\nAuditor: [ ] · ¿Es independiente del área? [sí/no]\nPreguntas para entrevistar: [ ] · Para observar: [ ] · Para revisar registros: [ ]\nMuestra: [qué casos y cuántos]\nHallazgo — Requisito: [ ] · Evidencia: [ ] · Declaración: [ ] · Tipo: [no conformidad / oportunidad de mejora]\nHallazgos abiertos (estado en F, «abierto» en H1): [=CONTAR.SI(F2:F40,H1)]\nFecha de seguimiento: [ ]"
+     ],
+     "clave": [
+      "ISO 19011 es una guía para auditar; ISO 9001 es la que pide auditorías internas.",
+      "La evidencia sólida coincide en entrevista, observación y registros.",
+      "Un buen hallazgo describe el sistema con hechos, no juzga a personas."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige un proceso real que no dirijas, de tu trabajo o de un negocio que te dé acceso. En los primeros 30 minutos escribe el plan de auditoría: objetivo, alcance, criterios, fecha, personas y muestra. En los siguientes 30 arma una lista de verificación de 10 a 12 preguntas abiertas que cubran contexto y riesgos, operación, información documentada y acción correctiva. Haz la auditoría o, si no es posible, un recorrido con permiso. En los últimos 30 minutos redacta dos hallazgos: una no conformidad y una oportunidad de mejora.",
+    "entregable": "Un plan de auditoría de una página, una lista de verificación de 10 a 12 preguntas y dos hallazgos redactados con requisito, evidencia y declaración.",
+    "criterios": "Revisa: el auditor es independiente del proceso, los criterios están escritos antes de auditar, las preguntas son abiertas y piden mostrar evidencia, y los hallazgos son verificables, no nombran a personas y no usan adjetivos."
+   },
+   "lab": {
+    "t": "La imprenta que prepara su transición",
+    "obj": "Preparar la transición de una imprenta a ISO 9001:2026: análisis de brecha, contexto y riesgos, auditoría interna y revisión por la dirección.",
+    "esc": "<b>Beatriz,</b> de 50 años, es dueña de una imprenta de etiquetas y empaques plegadizos en Tlalnepantla con 60 personas. Está certificada en ISO 9001:2015 y su organismo certificador le pidió acordar las fechas de transición a la versión 2026. El año pasado un lote de etiquetas con la fecha de caducidad mal impresa llegó a un cliente de alimentos, y la acción correctiva se cerró con «se habló con el prensista». Beatriz te pide ayuda para llegar bien preparada.",
+    "e": [
+     [
+      "Escena 1: Beatriz quiere saber qué cambia. Tiene una política de calidad de 2016, una matriz de riesgos que mezcla riesgos y oportunidades en la misma columna y ningún registro de cómo se planeó la compra de la guillotina nueva.",
+      "Consigna: elabora una tabla de brecha con los cambios de ISO 9001:2026 (cultura de la calidad y ética, riesgos y oportunidades por separado, planificación de cambios, cambio climático en el contexto): qué tienen hoy, qué falta, qué evidencia lo demostraría, responsable y fecha. Agrega tres preguntas para el organismo certificador sobre plazos y modalidad de la transición."
+     ],
+     [
+      "Escena 2: La imprenta depende de un solo proveedor de tintas, su temporada alta es noviembre, la calle se inunda con las lluvias de verano y en enero llega una prensa digital para tirajes cortos.",
+      "Consigna: escribe tres cuestiones externas y tres internas, decide si el cambio climático es pertinente y justifícalo, separa dos riesgos y dos oportunidades con su acción, y redacta la planificación del cambio de la prensa digital: propósito, consecuencias posibles, recursos y responsables."
+     ],
+     [
+      "Escena 3: Auditas preimpresión y liberación. La prueba de color del último pedido se aprobó por mensaje y no se guardó; el instructivo de verificación de datos variables es de 2019; un prensista te dice: «si aviso de un error, me lo descuentan».",
+      "Consigna: redacta el plan de la auditoría (alcance, criterios, entrevistados, muestra) y dos hallazgos con requisito, evidencia y declaración: una no conformidad y una oportunidad de mejora. Decide cómo reportar el comentario del prensista sin exponerlo."
+     ],
+     [
+      "Escena 4: Con tus hallazgos, Beatriz decide reabrir la acción correctiva de las etiquetas y preparar la revisión por la dirección antes de la auditoría de transición.",
+      "Consigna: reabre la acción correctiva con una causa verificable en el proceso, no en el prensista; propone una contención, una acción de tipo poka-yoke o de verificación contra el archivo aprobado y cómo medirás su eficacia. Después escribe la agenda de la revisión por la dirección con sus entradas y tres decisiones que pedirás, una de ellas sobre cómo reportar errores sin miedo."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué evidencia demuestra mejor el cambio sobre cultura de la calidad y ética?",
+      "Datos de errores reportados y lo que la dirección hizo con ellos",
+      "Una nueva política firmada que mencione la palabra «ética»",
+      "Un cartel con los valores de la empresa en cada área",
+      "La cultura se demuestra con conductas: que la gente reporte y que la dirección responda sin castigar. Una política o un cartel pueden existir aunque nadie se atreva a avisar de un error."
+     ],
+     [
+      "¿Cómo conviene tratar el comentario del prensista en el informe?",
+      "Como hallazgo del sistema sin identificar a quien lo dijo",
+      "Citarlo con su nombre para que la dirección le crea",
+      "Omitirlo, porque es una opinión y no un registro",
+      "La entrevista es evidencia válida si se corrobora, por ejemplo con la política de descuentos o con más entrevistas, y se reporta sin exponer a la persona. Nombrarlo lo pone en riesgo, y omitirlo esconde una causa probable de la falla."
+     ],
+     [
+      "¿Qué acción correctiva ataca mejor la causa de la caducidad mal impresa?",
+      "Verificar los datos variables contra el archivo aprobado antes de liberar",
+      "Pedir al prensista que revise con más atención cada tiraje antes de entregarlo",
+      "Agregar la firma del supervisor al formato de liberación del pedido",
+      "Una verificación sistemática contra el archivo aprobado detecta el error antes de que salga, sin depender de la atención de una persona. Pedir más cuidado no cambia el proceso, y otra firma suele firmarse sin revisar."
+     ]
+    ],
+    "pl": [
+     "Plan de transición a ISO 9001:2026",
+     "Organización: [ ] · Organismo certificador: [ ] · Fecha acordada de auditoría de transición: [ ]\nBrecha — Cultura y ética: [hoy / falta / evidencia / responsable / fecha]\nBrecha — Riesgos y oportunidades por separado: [ ]\nBrecha — Planificación de cambios: [ ]\nBrecha — Cambio climático en el contexto: [pertinente sí/no y por qué]\nAuditoría interna — Alcance: [ ] · Hallazgos: [ ]\nAcciones correctivas reabiertas: [ ]\nRevisión por la dirección — Fecha: [ ] · Decisiones pedidas: [ ]\nAvance (estado en E, «cerrado» en H1): [=CONTAR.SI(E2:E30,H1)/CONTARA(E2:E30)]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una empresa certificada en ISO 9001:2015 pregunta cuándo debe pasar a la versión 2026. ¿Qué le respondes?",
+     "Que lo confirme con su organismo certificador, según las reglas del IAF",
+     "Que su certificado perdió validez el 16 de septiembre de 2026",
+     "Que debe esperar a que se publique la NMX equivalente de 2026",
+     "Que la transición es voluntaria y puede quedarse en 2015 para siempre"
+    ],
+    [
+     "Francisco, dueño de un taller, recibe una oferta de «certificado ISO» de un organismo sin acreditación. ¿Qué riesgo corre?",
+     "Que su cliente no reconozca un certificado sin acreditación",
+     "Ninguno, porque cualquier organismo puede certificar ISO 9001",
+     "Que la ema le imponga una multa por usar la norma sin permiso",
+     "Que la norma ISO 9001 se vuelva obligatoria para su taller"
+    ],
+    [
+     "Valeria fabrica envases y su contrato con un cliente cita una NMX. ¿Qué implica?",
+     "Que debe cumplirla, porque el contrato la vuelve exigible",
+     "Nada, porque las NMX son siempre voluntarias",
+     "Que la NMX se convierte en NOM para todo el sector",
+     "Que sólo debe cumplirla si un organismo la certifica"
+    ],
+    [
+     "Un despacho contable revisa su contexto para la versión 2026. ¿Qué hace con el cambio climático?",
+     "Evalúa si es pertinente para su capacidad de cumplir y decide",
+     "Crea un programa ambiental completo porque la norma lo exige",
+     "Lo omite, porque sólo aplica a empresas de manufactura",
+     "Lo incluye como riesgo alto en todos los procesos"
+    ],
+    [
+     "Una clínica identifica que un convenio con aseguradoras podría traerle más pacientes. ¿Cómo lo clasifica en su matriz?",
+     "Como oportunidad, con su propia acción",
+     "Como riesgo, porque implica incertidumbre",
+     "Como no conformidad potencial del proceso",
+     "Como cuestión interna sin acción necesaria"
+    ],
+    [
+     "Alfredo implantará un nuevo sistema de facturación el próximo mes. ¿Qué pide la planificación de cambios?",
+     "Definir propósito, consecuencias, recursos y responsables antes",
+     "Avisar al organismo certificador para que autorice el cambio",
+     "Esperar a la auditoría interna para documentar el cambio",
+     "Hacer el cambio y registrar después lo que salió mal"
+    ],
+    [
+     "Mónica encuentra 30 cajas mal etiquetadas y las reetiqueta. ¿Qué hizo?",
+     "Una corrección; falta la acción correctiva sobre la causa",
+     "Una acción correctiva completa y lista para cerrarse",
+     "Una acción preventiva, porque evitó la queja del cliente",
+     "Una auditoría interna del proceso de etiquetado"
+    ],
+    [
+     "¿Cuál hallazgo de auditoría está mejor redactado?",
+     "3 de 12 órdenes no tienen la prueba de color aprobada que exige el procedimiento",
+     "El área de preimpresión trabaja con poca seriedad y le falta compromiso con la calidad",
+     "El diseñador de preimpresión no sigue los procedimientos de la empresa",
+     "Se recomienda mejorar en general el orden y el archivo de las pruebas de color"
+    ],
+    [
+     "En una pyme, la gerente de compras quiere auditar el proceso de compras. ¿Qué le sugieres?",
+     "Que audite otro proceso y otra persona revise compras",
+     "Que lo audite ella, porque es quien mejor conoce el proceso",
+     "Que lo audite sólo con registros, sin entrevistar a nadie",
+     "Que espere a que el organismo certificador lo audite"
+    ],
+    [
+     "Después de una revisión por la dirección, ¿qué evidencia muestra que sirvió?",
+     "Decisiones registradas con responsable, fecha y recursos",
+     "Una presentación con todos los indicadores del año",
+     "La lista de asistencia firmada por los directores",
+     "Un acta que diga que el sistema es adecuado"
+    ]
+   ]
+  },
+  {
+   "t": "Integrar y sostener: tu proyecto de mejora",
+   "r": "Verificarás causas con datos, pilotearás soluciones y las sostendrás con AMEF, plan de control, indicadores y una cultura que no culpa; al final integrarás todo el diplomado en tu proyecto de mejora y su A3.",
+   "lecciones": [
+    {
+     "t": "Analizar y mejorar en DMAIC: verificar causas con datos, elegir soluciones y pilotear",
+     "obj": "Comprobar con datos cuál causa explica el problema, elegir la mejor solución y probarla en un piloto antes de extenderla.",
+     "texto": [
+      "En la fase Analizar pasas de las causas posibles de tu Ishikawa a las causas verificadas. Las herramientas son las que ya conoces: estratificar los defectos por máquina, turno, proveedor o producto; comparar promedios por grupo con =PROMEDIO.SI; graficar una dispersión y calcular =COEF.DE.CORREL, e ir al gemba a ver el fenómeno. Una causa queda verificada cuando los datos muestran que el problema cambia con ella y, si es seguro, cuando al quitarla el problema baja y al regresarla vuelve.",
+      "Cuidado con la trampa clásica: correlación no prueba causa. Si en los días de más ventas también hay más fugas, eso no significa que vender provoque fugas; puede haber una tercera variable, como el ritmo acelerado de la línea en esos días, que mueve a las dos. Por eso conviene confirmar con una prueba controlada. Otra trampa es la causa favorita del equipo: aunque todos estén convencidos, si los datos estratificados no la muestran, se descarta o se vuelve a medir.",
+      "En Mejorar, genera varias opciones con quienes hacen el trabajo y elige con criterios explícitos: efecto sobre la causa verificada, costo, riesgo, rapidez y facilidad de sostener. Una matriz de impacto y esfuerzo ayuda a ordenar ideas. Prefiere soluciones que hagan imposible o evidente el error, como un poka-yoke o un cambio en el método, sobre las que dependen de «tener más cuidado». Antes de implantar, pregunta qué podría salir mal con la solución misma; ése será el inicio de tu AMEF.",
+      "Después viene el <b>piloto</b>: una prueba a pequeña escala, en una línea, un turno o una sucursal, durante un tiempo definido y con un criterio de éxito escrito antes de empezar. Es un ciclo PHVA completo. Compara el antes y el después con la misma medición, validada como viste en el MSA, y con la gráfica de control: un cambio real aparece como una señal según las reglas, por ejemplo una racha de puntos de un lado de la línea central. Tres días buenos no bastan. Si el piloto funciona, se extiende; si no, se aprende y se ajusta."
+     ],
+     "comparar": [
+      "«Así no: Todos sabemos que el problema es el proveedor; cambiemos de proveedor mañana.»",
+      "«Así sí: Estratificamos un mes de fugas; el cabezal 4 concentra el problema. Lo ajustamos dos semanas en piloto y medimos con la misma gráfica.»"
+     ],
+     "caso": "Caso ficticio: Emilio, de 39 años, es supervisor de envasado en una fábrica de salsas en Durango. Los frascos con fuga en la tapa son la primera barra de su Pareto. El equipo está convencido de que la causa es la tapa del proveedor nuevo. Emilio estratificó un mes de datos: con tapas del proveedor nuevo la fuga es 1.2 % y con las del anterior, 1.1 %; en cambio, en el cabezal 4 de la taponadora es 3.5 % y en los otros cinco no pasa de 0.6 %. El gerente quiere cambiar de proveedor mañana.",
+     "p": [
+      [
+       "¿Qué indican los datos estratificados de Emilio?",
+       "El cabezal 4 es la causa candidata más fuerte",
+       "El proveedor nuevo es la causa, como cree el equipo",
+       "Ninguna causa importa porque ambas tasas son bajas",
+       "La fuga casi no cambia entre proveedores y sí cambia mucho entre cabezales. La convicción del equipo no supera a los datos, y una tasa que es la primera barra del Pareto sí merece análisis."
+      ],
+      [
+       "¿Cómo confirma Emilio que el cabezal 4 es la causa?",
+       "Ajustar el cabezal 4 y medir si baja la fuga",
+       "Calcular la correlación entre lote de tapa y fuga",
+       "Votar la causa más probable con los operadores",
+       "Quitar la causa y ver si el problema baja es la prueba más directa. Una correlación no prueba causa y, además, apunta a la variable que los datos ya descartaron; votar sirve para generar hipótesis, no para verificarlas."
+      ],
+      [
+       "¿Cómo diseña el piloto?",
+       "Dos semanas, con criterio de éxito previo y la misma medición",
+       "Cambiar todos los cabezales hoy y revisar dentro de un año",
+       "Probar un solo día y cerrar el proyecto si no hay fugas",
+       "Un piloto acotado, con criterio de éxito definido y medición comparable, permite confirmar el efecto sin arriesgar toda la línea. Un año sin revisión es demasiado tarde para aprender, y un día no distingue un cambio real de la variación común."
+      ]
+     ],
+     "completar": [
+      "Antes de implantar en toda la planta, conviene un ___ a pequeña escala con un criterio de éxito definido.",
+      "piloto"
+     ],
+     "relacionar": [
+      [
+       "Estratificación",
+       "Separar la tasa de fuga por cabezal de la taponadora"
+      ],
+      [
+       "Diagrama de dispersión",
+       "Ver si el torque de cierre se relaciona con la fuga"
+      ],
+      [
+       "Matriz de impacto y esfuerzo",
+       "Ordenar cinco ideas de solución antes de elegir"
+      ],
+      [
+       "Piloto",
+       "Probar el cambio dos semanas en una sola línea"
+      ],
+      [
+       "Gráfica de control antes y después",
+       "Confirmar que el cambio en el proceso es real"
+      ]
+     ],
+     "refl": "Toma el problema de tu proyecto. 1) Escribe tres causas posibles de tu Ishikawa y, para cada una, qué dato la confirmaría o la descartaría. 2) Indica cómo estratificarías tus datos y qué función de Excel usarías. 3) Anota tres soluciones posibles y elige una con al menos cuatro criterios. 4) Diseña el piloto: dónde, cuánto tiempo, qué medirás y cuál es el criterio de éxito.",
+     "modelo": "Modelo: «Problema: 9 % de las solicitudes de crédito en una caja de ahorro de Zacatecas regresan por documentos incompletos. Causas posibles: formulario confuso, asesor nuevo, sucursal. Estratifiqué con =PROMEDIO.SI: las devoluciones no cambian por antigüedad del asesor, pero 70 % se deben a la misma sección del formulario. Soluciones: rediseñar esa sección, capacitar o agregar una lista de verificación digital que no deje avanzar sin el documento; elijo la tercera por efecto, costo bajo y facilidad de sostener. Piloto: dos sucursales, cuatro semanas; éxito si las devoluciones bajan a menos de 4 % con la misma medición.» Es bueno porque descarta una causa con datos y define el éxito antes del piloto.",
+     "plantilla": [
+      "Verificación de causas y piloto",
+      "Causa posible 1: [ ] · Dato que la confirmaría: [ ] · Resultado: [ ]\nComparación por grupo: [=PROMEDIO.SI(B2:B500,G2,C2:C500)]\nCorrelación entre factor y resultado: [=COEF.DE.CORREL(D2:D60,E2:E60)]\nCausa verificada: [ ] · ¿Se probó quitándola y regresándola? [sí/no]\nSoluciones (efecto, costo, riesgo, rapidez, sostenibilidad): [ ]\nPiloto — Dónde: [ ] · Duración: [ ] · Medición: [ ] · Criterio de éxito: [ ]\nResultado antes: [=PROMEDIO(C2:C100)] · Después: [=PROMEDIO(C101:C200)]"
+     ],
+     "clave": [
+      "Una causa se verifica cuando el problema cambia con ella, no cuando todos la creen.",
+      "Correlación no prueba causa: confirma con una prueba controlada.",
+      "Pilotea con criterio de éxito previo y la misma medición antes de extender."
+     ]
+    },
+    {
+     "t": "Controlar para que no regrese: AMEF, plan de control y estandarización",
+     "obj": "Construir un AMEF de proceso breve con Prioridad de Acción, un plan de control con plan de reacción y el estándar que sostenga la mejora.",
+     "texto": [
+      "La fase Controlar responde a una pregunta incómoda: ¿qué evitará que el problema regrese cuando el equipo del proyecto se vaya? La primera herramienta es el <b>AMEF</b>, análisis de modos y efectos de falla, que puede ser de diseño o de proceso. El manual AIAG-VDA de 2019 lo organiza en siete pasos: planeación y preparación, análisis de estructura, análisis de funciones, análisis de fallas, análisis de riesgos, optimización y documentación de resultados. Para cada paso del proceso preguntas cómo podría fallar, qué efecto tendría y por qué ocurriría.",
+      "Cada falla se califica del 1 al 10 en severidad del efecto, ocurrencia de la causa y detección por los controles actuales; en detección, un 10 significa que casi no se detectaría. Durante años se priorizó con el NPR, severidad por ocurrencia por detección. Su defecto se ve con números: un modo con 10, 4 y 2 da NPR de 80, y otro con 3, 6 y 6 da 108, aunque el primero pueda afectar la seguridad. Por eso el manual AIAG-VDA usa la Prioridad de Acción, alta, media o baja, que se lee en una tabla del manual y pesa primero la severidad, luego la ocurrencia y después la detección: con esa tabla, el primer modo sale alta y el segundo, baja.",
+      "El AMEF se hace en equipo, incluidos operadores y mantenimiento, y es un documento vivo: se actualiza con cada queja, cambio o hallazgo. Sus acciones alimentan el <b>plan de control</b>, que dice para cada característica importante cuál es la especificación, el método de medición, el tamaño y la frecuencia de la muestra, el método de control, como una gráfica o un poka-yoke, y el plan de reacción. Ese plan de reacción indica qué hace el operador cuando algo sale de límites: detener, separar lo producido desde la última pieza buena y avisar. Es el jidoka puesto por escrito.",
+      "Por último, estandariza: actualiza el trabajo estandarizado y la hoja de instrucción, entrena con el método TWI, ajusta los controles visuales y entrega el proceso a su dueño con un indicador que se revise al menos durante tres meses. Comparte lo aprendido con otras líneas que tengan el mismo riesgo. En términos de ISO 9001, esto es control operacional e información documentada: la mejora queda integrada en el sistema, no en la memoria de quien la hizo."
+     ],
+     "comparar": [
+      "«Así no: Sólo atendemos los modos con NPR mayor a 100; el engarce dio 80, así que no se toca.»",
+      "«Así sí: El engarce tiene severidad 10 y Prioridad de Acción alta: se atiende primero, aunque su NPR sea menor que el de la etiqueta torcida.»"
+     ],
+     "caso": "Caso ficticio: Patricia, de 42 años, es ingeniera de calidad en una planta de Azcapotzalco que fabrica mangueras de freno para un cliente armador. El AMEF de proceso tiene cuatro años sin cambios y la regla interna es actuar sólo si el NPR supera 100. El modo «engarce insuficiente» tiene severidad 10, ocurrencia 4 y detección 2; el modo «etiqueta torcida» tiene 3, 6 y 6. El plan de control dice «inspección visual» sin frecuencia ni plan de reacción. Su gerente prefiere no cambiar la regla «para no complicarse».",
+     "p": [
+      [
+       "¿Qué modo de falla merece atención primero?",
+       "El engarce insuficiente, con severidad 10 y AP alta",
+       "La etiqueta torcida, porque es el único NPR que pasa de 100",
+       "Los dos por igual, porque sus NPR son parecidos",
+       "Un engarce insuficiente en una manguera de freno puede afectar la seguridad, y eso pesa más que cualquier producto de números. El NPR de 108 frente a 80 muestra justo la debilidad del método, y tratarlos igual ignora la severidad."
+      ],
+      [
+       "¿Qué cambio de método recomiendas?",
+       "Priorizar con AP, que pesa primero la severidad",
+       "Bajar a 80 el umbral del NPR para incluir más modos",
+       "Promediar severidad, ocurrencia y detección de cada modo",
+       "La Prioridad de Acción del manual AIAG-VDA ordena primero por severidad y luego por ocurrencia y detección. Mover el umbral o promediar sigue mezclando factores que no valen lo mismo."
+      ],
+      [
+       "El operador encuentra un engarce fuera de especificación. ¿Qué debe decir el plan de reacción?",
+       "Detener, separar desde la última pieza buena y avisar",
+       "Ajustar la máquina y seguir produciendo sin registrar",
+       "Terminar el turno y avisar después al supervisor",
+       "El plan de reacción protege al cliente: se detiene, se contiene lo sospechoso y se escala de inmediato. Ajustar sin registrar oculta el problema, y esperar al final del turno deja pasar más piezas posiblemente defectuosas."
+      ]
+     ],
+     "completar": [
+      "En el manual AIAG-VDA, la Prioridad de ___ sustituye al NPR como criterio principal para decidir qué atender.",
+      "Acción"
+     ],
+     "relacionar": [
+      [
+       "Severidad",
+       "Qué tan grave es el efecto para el cliente o la seguridad"
+      ],
+      [
+       "Ocurrencia",
+       "Qué tan probable es que la causa se presente"
+      ],
+      [
+       "Detección",
+       "Qué tan capaz es el control actual de descubrir la falla"
+      ],
+      [
+       "Control de prevención",
+       "Dispositivo que impide engarzar sin la manguera completa"
+      ],
+      [
+       "Plan de reacción",
+       "Qué hace el operador cuando una medición sale de límites"
+      ]
+     ],
+     "refl": "Aplícalo a tu proyecto. 1) Elige de tres a cinco pasos de tu proceso y, para cada uno, escribe un modo de falla, su efecto y su causa. 2) Califica severidad, ocurrencia y detección del 1 al 10 y explica tu razonamiento para la severidad más alta. 3) Asigna una prioridad alta, media o baja empezando por la severidad y propone acciones para las altas. 4) Escribe dos renglones de plan de control con su plan de reacción.",
+     "modelo": "Modelo: «Proceso: entrega de medicamentos en un hospital de Villahermosa. Paso: preparar la dosis. Modo de falla: dosis equivocada. Efecto: daño al paciente; severidad 10. Causa: dos presentaciones con empaque parecido; ocurrencia 4. Control actual: doble verificación visual; detección 6. Prioridad alta por severidad. Acción: separar presentaciones y escanear el código antes de preparar. Plan de control: característica, presentación correcta; método, escaneo; frecuencia, cada dosis; reacción, si el lector marca error, no se prepara, se separa el medicamento y se avisa a la jefa de turno.» Es bueno porque prioriza por severidad y su plan de reacción es claro y no culpa a nadie.",
+     "plantilla": [
+      "AMEF breve y plan de control",
+      "AMEF — Paso: [ ] · Función: [ ] · Modo de falla: [ ] · Efecto: [ ] · Severidad (1-10): [ ]\nCausa: [ ] · Ocurrencia (1-10): [ ] · Control de prevención: [ ] · Control de detección: [ ] · Detección (1-10): [ ]\nPrioridad de Acción: [alta / media / baja] · Acción: [ ] · Responsable: [ ] · Fecha: [ ] · Nueva calificación: [ ]\nPlan de control — Característica: [ ] · Especificación: [ ] · Método de medición: [ ] · Tamaño y frecuencia de muestra: [ ] · Método de control: [ ]\nPlan de reacción: [detener / separar desde la última pieza buena / avisar a…]\nEstándar actualizado (hoja TWI, ayuda visual): [ ] · Dueño del proceso: [ ] · Revisión a 90 días: [ ]"
+     ],
+     "clave": [
+      "Con AIAG-VDA se prioriza por Prioridad de Acción, que pesa primero la severidad.",
+      "Todo control necesita un plan de reacción claro para el operador.",
+      "La mejora se sostiene cuando queda en el estándar, el entrenamiento y el indicador del dueño del proceso."
+     ]
+    },
+    {
+     "t": "Indicadores, gestión diaria y cultura de calidad",
+     "obj": "Diseñar un tablero de pocos indicadores, conducir una junta de arranque breve y sostener una cultura de calidad que no culpa a las personas.",
+     "texto": [
+      "Mide poco y bien. Los indicadores de calidad más útiles están ligados al cliente y al proceso: PPM, partes por millón = piezas defectuosas ÷ piezas entregadas × 1 000 000; rendimiento a la primera, FPY, la proporción que sale bien sin retrabajo en un paso; rendimiento rodado, RTY, el producto de los FPY de todos los pasos; quejas, devoluciones, costo de no calidad y tiempo de entrega. Ejemplo: tres pasos con FPY de 0.95, 0.98 y 0.97 dan un RTY de 0.903, es decir, sólo 90.3 % pasa todo el proceso sin tropiezo. El OEE, eficacia global del equipo, se profundiza en mantenimiento; aquí basta saber que existe. Combina indicadores de resultado, como las quejas, con indicadores de proceso que avisan antes, como el porcentaje de arranques con verificación de primera pieza.",
+      "La gestión diaria convierte los indicadores en acción. Un tablero por área muestra de cinco a siete indicadores con meta, tendencia y acciones abiertas con responsable. La junta de <b>arranque</b> dura de diez a quince minutos, de pie y frente al tablero: cómo nos fue ayer, qué problemas hay, qué ayuda necesitamos y quién hace qué. Lo que el equipo no puede resolver se escala al siguiente nivel ese mismo día. Los líderes recorren el gemba para ver y ayudar, no para vigilar.",
+      "La edición 2026 de ISO 9001 hace explícitas la cultura de la calidad y la ética en el liderazgo y en la toma de conciencia. La cultura se ve en lo que hacen los jefes: preguntan qué pasó y no quién fue, agradecen a quien detiene la línea y no maquillan indicadores. Cuidado con las metas mal diseñadas: si un bono premia «cero quejas», la gente aprende a no registrarlas. Cuando un indicador se usa para premiar o castigar, conviene vigilar también si los datos siguen siendo honestos.",
+      "No culpar no significa que nada importe. Distingue el error humano, que el sistema debe prevenir; la conducta de riesgo, que se corrige entrenando y quitando incentivos equivocados, y la violación deliberada, la única que amerita consecuencias. Deming pedía eliminar el miedo, y con razón: nadie propone mejoras si teme perder su empleo. Por eso Lean no es para despedir. Si una mejora libera horas, esas personas pasan a más mejora, a nuevos productos o al crecimiento."
+     ],
+     "comparar": [
+      "«Así no: Junta de 45 minutos para leer 28 indicadores y preguntar quién tuvo la culpa de cada rojo.»",
+      "«Así sí: Quince minutos de pie: tres indicadores en rojo, una causa por investigar, dos ayudas pedidas y un responsable para cada acción.»"
+     ],
+     "caso": "Caso ficticio: Gonzalo, de 48 años, es gerente de una empacadora de pescado en Ensenada. Su tablero tiene 28 indicadores que nadie lee. Este año instauró un bono para supervisores por «cero quejas del cliente», y las quejas registradas bajaron a casi cero; sin embargo, el área comercial encontró correos de clientes con reclamos que nunca se registraron. La junta matutina dura 45 minutos y suele terminar en regaños.",
+     "p": [
+      [
+       "¿Qué explica mejor la caída de las quejas registradas?",
+       "El bono premia no registrar quejas, no mejorar",
+       "El incentivo hizo que los supervisores mejoraran",
+       "Los clientes se acostumbraron y ya no reclaman",
+       "Los reclamos sin registrar muestran que el número bajó por ocultamiento, no por mejora. Un incentivo atado a un indicador que el propio premiado controla invita a cuidar el número, y nada indica que los clientes dejaran de reclamar."
+      ],
+      [
+       "¿Cómo debería ser el tablero?",
+       "Pocos indicadores ligados al cliente, con tendencia y acciones",
+       "Más indicadores, para que ningún problema se escape",
+       "Ninguno; mejor un informe mensual enviado por correo",
+       "Un tablero útil se lee en segundos y lleva a acciones. Agregar indicadores empeora lo que ya no funciona, y un informe mensual llega tarde para la gestión diaria."
+      ],
+      [
+       "¿Qué cambio conviene en la junta matutina?",
+       "Quince minutos de pie: resultados, problemas, ayuda y responsables",
+       "Mantenerla larga, porque la presión mejora el desempeño",
+       "Cancelarla y que cada supervisor resuelva por su cuenta",
+       "La junta de arranque breve organiza el día y escala problemas sin buscar culpables. Los regaños generan miedo y ocultamiento, y sin junta se pierde la coordinación entre áreas."
+      ]
+     ],
+     "completar": [
+      "La junta de ___ es una reunión breve, de pie, frente al tablero, para revisar el día anterior y organizar el actual.",
+      "arranque"
+     ],
+     "relacionar": [
+      [
+       "PPM",
+       "Piezas defectuosas por cada millón entregadas"
+      ],
+      [
+       "FPY",
+       "Proporción que sale bien a la primera en un paso"
+      ],
+      [
+       "RTY",
+       "Producto de los FPY de todos los pasos del proceso"
+      ],
+      [
+       "Indicador de proceso",
+       "Porcentaje de arranques con verificación de primera pieza"
+      ],
+      [
+       "Escalamiento",
+       "Pasar un problema al siguiente nivel el mismo día"
+      ]
+     ],
+     "refl": "Diseña la gestión diaria de tu área. 1) Elige de tres a cinco indicadores, al menos uno de resultado y uno de proceso, con su fórmula y su meta. 2) Calcula el RTY de tu proceso con el FPY de cada paso, aunque sea estimado. 3) Escribe la agenda de una junta de arranque de quince minutos y la regla de escalamiento. 4) Identifica un incentivo o una costumbre de tu organización que pueda empujar a ocultar problemas y propón cómo cambiarlo.",
+     "modelo": "Modelo: «Área: impresión de recibos en una imprenta de Iztapalapa. Indicadores: PPM de recibos con error de dato (meta, menos de 500), FPY de impresión (meta, 98 %), porcentaje de tirajes con prueba aprobada antes de imprimir (meta, 100 %) y quejas por mes. RTY: preimpresión 0.97 × impresión 0.98 × acabado 0.99 = 0.941. Junta de 8:00 a 8:15: ayer, rojos, causas por investigar, ayuda y responsables; lo que no se resuelva en 24 horas pasa a la gerente. Incentivo riesgoso: se premia al turno con menos retrabajos; lo cambiaría por reconocer al turno que más problemas reporta y cierra.» Es bueno porque mezcla indicadores de resultado y de proceso y corrige un incentivo que invita a ocultar.",
+     "plantilla": [
+      "Tablero de gestión diaria",
+      "Área: [ ] · Dueño: [ ]\nPPM: [=B2/C2*1000000] · Meta: [ ]\nFPY del paso: [=1-D2/C2] · Meta: [ ]\nRTY del proceso: [=PRODUCTO(E2:E6)]\nIndicador de proceso: [ ] · Meta: [ ]\nQuejas del mes: [=CONTAR.SI(F2:F200,H1)]\nJunta de arranque — Hora: [ ] · Agenda: [ayer / rojos / problemas / ayuda / responsables]\nRegla de escalamiento: [qué pasa si no se resuelve en 24 horas]\nConducta de liderazgo que cuidaremos: [ ]"
+     ],
+     "clave": [
+      "Pocos indicadores ligados al cliente, revisados a diario, valen más que un tablero lleno.",
+      "Una meta que castiga el mal número enseña a esconderlo.",
+      "Sin miedo hay mejora: Lean no es para despedir."
+     ]
+    },
+    {
+     "t": "Tu hoja de ruta: integrar Lean, Six Sigma e ISO, presentar resultados y seguir creciendo",
+     "obj": "Elegir el enfoque adecuado para cada problema, presentar resultados con honestidad en un A3 y trazar tu siguiente paso profesional sin promesas falsas.",
+     "texto": [
+      "Lean, Six Sigma e ISO 9001 no compiten: cada uno responde a una pregunta. Si el problema es desperdicio, espera o flujo lento, empieza con Lean: VSM, 5S, kaizen, SMED. Si el problema es variación o una causa desconocida que exige datos, usa DMAIC. Si el problema es que las cosas dependen de quién esté, que las mejoras no duran o que las quejas se repiten, necesitas el sistema de ISO 9001: procesos definidos, riesgos, acción correctiva, auditoría y revisión por la dirección. Shah y Ward (2003) encontraron que los conjuntos de prácticas lean se asocian con mejor desempeño operativo: lo que funciona es el sistema, no herramientas aisladas.",
+      "Para presentar tu proyecto usa un <b>A3</b>, una sola hoja que cuenta la historia completa: contexto, estado actual con datos, meta, análisis de causa, contramedidas, resultados antes y después, plan de control y pendientes. Escríbelo para que la dirección decida en diez minutos. Sé honesto con el dinero: reporta el ahorro medido aparte del proyectado, calcúlalo con las categorías de costo de calidad del módulo 1 y valídalo con finanzas. Reconoce al equipo por nombre y por lo que aportó, como en la última disciplina del 8D.",
+      "Un proyecto no termina el día de la presentación. Termina cuando el dueño del proceso recibe el estándar, el plan de control y el indicador, y cuando el seguimiento de tres meses confirma que el resultado se mantiene. Después, tu hoja de ruta de 90 días puede incluir un segundo proyecto, kaizen cortos en tu área, participar como auditor interno en otro proceso y enseñar a alguien lo que aprendiste. Un solo proyecto bien sostenido suele convencer más que varios abandonados a la mitad.",
+      "Para seguir creciendo, conoce los límites de este diplomado: no otorga cintas Six Sigma certificadas, no certifica a tu empresa en ISO 9001 y no te acredita como auditor. Las cintas Yellow, Green o Black Belt las emiten organismos como ASQ o IASSC, con examen y, a veces, proyecto demostrado. Si te interesa auditar, busca un curso de auditor líder de un proveedor aprobado en un esquema reconocido, como CQI/IRCA. Verifica los requisitos vigentes de cada uno. Lo que sí tienes es un proyecto documentado que muestra lo que sabes hacer."
+     ],
+     "comparar": [
+      "«Así no: Ahorramos dos millones al año, según la mejor semana del piloto multiplicada por 52.»",
+      "«Así sí: Ahorro medido en tres meses: tanto, validado con finanzas. Ahorro proyectado a un año: tanto, si se mantiene el resultado.»"
+     ],
+     "caso": "Caso ficticio: Noemí, de 25 años, es analista de mejora en una distribuidora de medicamentos en Colima. Su proyecto redujo los errores de surtido y debe presentarlo a la dirección. Su jefe le sugiere anunciar un ahorro anual multiplicando por 52 la mejor semana del piloto. Además, Noemí quiere poner en su currículum «Green Belt certificada» por haber terminado este diplomado y aplicado DMAIC completo.",
+     "p": [
+      [
+       "¿Cómo presenta Noemí el ahorro?",
+       "Separando el ahorro medido del proyectado y validándolo con finanzas",
+       "Con la proyección anual de la mejor semana, porque impresiona más",
+       "Sin cifras de dinero, hablando sólo del esfuerzo del equipo",
+       "Separar lo medido de lo proyectado, y validarlo, da credibilidad al proyecto. Proyectar la mejor semana exagera y puede derrumbar la confianza; omitir el dinero priva a la dirección de un dato clave para decidir."
+      ],
+      [
+       "¿Cómo describe Noemí su formación en el currículum?",
+       "Diplomado y proyecto DMAIC, sin presentarlo como cinta certificada",
+       "«Green Belt certificada», porque aplicó DMAIC completo",
+       "«Black Belt en formación», para mostrar ambición",
+       "Las cintas certificadas las emiten organismos como ASQ o IASSC; describir con precisión el diplomado y el proyecto es honesto y valioso. Atribuirse una certificación que no tiene es engañoso, aunque haya aplicado el método."
+      ],
+      [
+       "¿Qué sigue después de la presentación?",
+       "Entregar el proceso a su dueño con plan de control y seguimiento",
+       "Cerrar el proyecto en cuanto la dirección lo aprueba",
+       "Iniciar tres proyectos nuevos a la vez para aprovechar el impulso",
+       "El resultado se sostiene cuando el dueño del proceso recibe el estándar y el indicador y se confirma a los tres meses. Cerrar al presentar deja el resultado sin dueño, y abrir muchos proyectos dispersa la atención."
+      ]
+     ],
+     "completar": [
+      "Un buen ___ cuenta en una sola hoja el problema, la causa, las contramedidas, los resultados y el plan de control.",
+      "A3"
+     ],
+     "refl": "Traza tu hoja de ruta. 1) Clasifica tres problemas de tu trabajo según el enfoque que conviene (Lean, DMAIC o sistema ISO) y explica por qué. 2) Escribe en cinco renglones la historia de tu proyecto como la contarías en el A3. 3) Calcula o estima el ahorro, separando lo medido de lo proyectado y anotando con quién lo validarías. 4) Escribe tu plan de 90 días con tres acciones y la credencial externa que te interesa, con el organismo que la emite.",
+     "modelo": "Modelo: «Problemas: pilas de expedientes esperando firma (Lean, es espera); variación en el tiempo de dictamen entre analistas (DMAIC, la causa no es clara); acuerdos de juntas que nadie cumple (sistema, falta seguimiento). Historia del A3: las devoluciones de solicitudes eran 9 %; la causa verificada fue una sección del formulario; pusimos una lista digital que no deja avanzar sin documentos; en tres meses bajaron a 3 %. Ahorro medido: horas de retrabajo de tres meses, validado con contabilidad; el proyectado lo presento aparte. Plan: segundo proyecto en enero, auditar compras en marzo, preparar la Green Belt de un organismo reconocido.» Es bueno porque elige el enfoque por tipo de problema y es honesto con el ahorro.",
+     "plantilla": [
+      "Storyboard A3 y hoja de ruta de 90 días",
+      "Título del proyecto: [ ] · Dueño del proceso: [ ] · Equipo: [ ]\n1. Contexto y por qué importa: [ ]\n2. Estado actual con datos: [ ]\n3. Meta: [ ]\n4. Causa verificada y cómo se verificó: [ ]\n5. Contramedidas: [ ]\n6. Resultados antes y después: [ ] · Ahorro medido: [ ] · Proyectado: [ ] · Validó: [ ]\n7. Plan de control e indicador: [ ]\n8. Pendientes y reconocimientos: [ ]\nHoja de ruta — Mes 1: [ ] · Mes 2: [ ] · Mes 3: [ ] · Credencial externa y organismo: [ ]"
+     ],
+     "clave": [
+      "Elige el enfoque por el tipo de problema: desperdicio, variación o falta de sistema.",
+      "Presenta el ahorro medido aparte del proyectado y valídalo con finanzas.",
+      "El diplomado no otorga cintas ni acreditaciones; tu proyecto documentado demuestra lo que sabes hacer."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Prepara el storyboard A3 de tu proyecto para presentarlo a la dirección. En los primeros 30 minutos reúne tus datos de antes y después, tu causa verificada y tus contramedidas. En los siguientes 40 llena el A3 en una sola hoja con sus ocho bloques, con al menos una gráfica (Pareto, tendencia o gráfica de control) y el ahorro medido aparte del proyectado. En los últimos 20 minutos ensaya la presentación en cinco minutos y escribe las tres decisiones que pedirás a la dirección.",
+    "entregable": "Un A3 de una página con los ocho bloques, al menos una gráfica y tres decisiones solicitadas, más una nota con la validación del ahorro.",
+    "criterios": "Revisa: el problema y la meta están en números, la causa se verificó con datos y no culpa a personas, el ahorro medido está separado del proyectado e indica quién lo validó, y el plan de control tiene dueño, indicador y plan de reacción."
+   },
+   "lab": {
+    "t": "Tu proceso, de punta a punta",
+    "obj": "Integrar todo el diplomado en un proyecto de mejora sobre un proceso real: diagnóstico, flujo y causa raíz, análisis con datos, control y presentación A3.",
+    "esc": "Llegó el momento de integrar lo aprendido en un proceso real tuyo: una línea de producción, un área de servicio, un almacén o un trámite que se repita. Te acompaña <b>Esperanza,</b> mentora ficticia de 54 años, ingeniera de calidad en Villahermosa, que te pedirá en cada parte datos, no opiniones. Este proyecto no otorga cinta ni certificación: es la evidencia documentada de lo que ya sabes hacer. Al terminar tendrás una carpeta con cuatro partes, un libro de Excel con tus cálculos y un A3 de una página listo para presentar.",
+    "e": [
+     [
+      "Parte 1 (módulos 1 y 2): diagnóstico del proceso. Esperanza te pregunta: «¿Qué recibe tu cliente, qué valora y qué le cuesta a tu organización hacerlo mal?».",
+      "Consigna: arma el SIPOC con evento de inicio y de fin y de cuatro a siete pasos; traduce la voz del cliente en dos o tres CTQ medibles; haz un recorrido de 30 minutos por el proceso con los ocho desperdicios y anota al menos un dato por cada desperdicio que veas; calcula en la hoja de cálculo el costo de mala calidad de un mes en sus cuatro categorías, y cierra con un enunciado del problema con datos y una meta, sin culpables."
+     ],
+     [
+      "Parte 2 (módulos 3 y 4): flujo y causa raíz. Esperanza te pide «ver el proceso completo antes de arreglar una pieza».",
+      "Consigna: dibuja el VSM actual con takt, inventarios, lead time calculado con la ley de Little y porcentaje de valor agregado, y el estado futuro con sus cambios; construye un Ishikawa del problema y una cadena de cinco porqués en la que cada porqué tenga su evidencia, y propón al menos dos contramedidas de tipo kaizen, poka-yoke o SMED con responsable, fecha y efecto esperado."
+     ],
+     [
+      "Parte 3 (módulos 5 y 6): los datos. Esperanza te recuerda: «antes de confiar en un número, confía en cómo lo mediste».",
+      "Consigna: llena un acta breve de DMAIC; construye un Pareto con porcentaje acumulado; calcula en Excel media, desviación estándar, mínimo y máximo de tu característica principal; describe cómo comprobaste la medición; arma la gráfica de control que corresponda (X̄-R, I-MR o de atributos) e interprétala con las reglas de detección, y calcula Cp y Cpk si el proceso es estable o, si no, escribe el plan para medirlos en cuatro semanas."
+     ],
+     [
+      "Parte 4 (módulos 7 y 8): control, sistema y presentación. Esperanza pregunta: «¿qué impedirá que esto regrese cuando nadie esté mirando?».",
+      "Consigna: haz un AMEF breve de tres a cinco pasos con Prioridad de Acción; escribe el plan de control con su plan de reacción; diseña un tablero de tres a cinco indicadores con sus fórmulas; elabora una tabla que ubique cada elemento de tu proyecto en las cláusulas de ISO 9001:2026 (contexto, riesgos y oportunidades, información documentada, operación, evaluación del desempeño y mejora) e indique cómo cuidarás la cultura de la calidad, y resume todo en un A3 de una página."
+     ]
+    ],
+    "p": [
+     [
+      "Tu Pareto muestra que una causa explica la mayoría de los defectos, pero tu gráfica de control tiene señales sin explicar. ¿Qué haces antes de reportar el Cpk?",
+      "Investigar las señales y estabilizar antes de calcular",
+      "Reportar el Cpk y aclarar que el proceso es inestable",
+      "Quitar los puntos con señal para que el Cpk salga mejor",
+      "La capacidad sólo tiene sentido con un proceso estable, así que primero se investigan las señales. Un Cpk de un proceso inestable no predice nada aunque se aclare, y borrar puntos incómodos es manipular los datos."
+     ],
+     [
+      "Tu cadena de porqués termina en «el operador se distrajo». ¿Qué hace Esperanza?",
+      "Pregunta qué en el proceso permitió la distracción y pide evidencia",
+      "Acepta la causa y propone recapacitar al operador en el método",
+      "Sugiere una sanción por escrito para que no vuelva a pasar",
+      "El error humano es un síntoma: la causa raíz está en lo que el proceso permitió, y cada porqué debe tener evidencia. Recapacitar o sancionar sin cambiar el proceso deja intacta la causa y siembra miedo."
+     ],
+     [
+      "En la parte 4, ¿qué alineación con ISO 9001:2026 es la correcta?",
+      "Plan de control en operación; tablero en evaluación; acción correctiva en mejora",
+      "Plan de control en liderazgo; tablero en apoyo; AMEF en el alcance de la norma",
+      "Todo el proyecto va en la cláusula 10, porque al final todo es mejora continua",
+      "El control de los procesos es operación (8), el seguimiento de indicadores es evaluación del desempeño (9) y la acción correctiva es mejora (10). Las demás opciones confunden las cláusulas o meten todo el proyecto en una sola."
+     ]
+    ],
+    "pl": [
+     "Índice de tu proyecto final",
+     "Proceso elegido: [ ] · Dueño: [ ] · Equipo: [ ]\nParte 1 — SIPOC: [ ] · CTQ: [ ] · Desperdicios con datos: [ ] · Costo de mala calidad mensual: [=SUMA(B2:B5)] · Problema y meta: [ ]\nParte 2 — VSM actual y futuro: [ ] · Takt: [=B7/B8] · Lead time por Little: [=B9/B10] · Ishikawa: [ ] · Porqués con evidencia: [ ] · Contramedidas: [ ]\nParte 3 — Acta DMAIC: [ ] · Pareto: [ ] · Media: [=PROMEDIO(D2:D101)] · Desviación: [=DESVEST.M(D2:D101)] · Medición comprobada: [ ] · Gráfica de control: [ ] · Cp y Cpk o plan: [ ]\nParte 4 — AMEF con AP: [ ] · Plan de control y reacción: [ ] · Tablero: [ ] · Alineación ISO 9001:2026: [ ] · Cultura de la calidad: [ ] · A3: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Iván dirige un centro de atención telefónica: las llamadas esperan en cola y el tiempo de atención varía mucho entre agentes sin causa clara. ¿Cómo combinas los enfoques?",
+     "Lean para la espera y DMAIC para la variación",
+     "Sólo ISO 9001, porque ordena todos los procesos",
+     "Sólo 5S, porque el desorden explica ambos problemas",
+     "Sólo una certificación, para que el auditor vigile"
+    ],
+    [
+     "Una planta capacita a su personal en un método nuevo de inspección. ¿En qué categoría de costo de calidad va esa capacitación?",
+     "Prevención",
+     "Evaluación",
+     "Falla interna",
+     "Falla externa"
+    ],
+    [
+     "Claudia tiene 27,000 segundos disponibles por turno y el cliente pide 450 piezas por turno. ¿Cuál es el takt?",
+     "60 segundos por pieza",
+     "45 segundos por pieza",
+     "600 segundos por pieza",
+     "16.7 segundos por pieza"
+    ],
+    [
+     "Un proceso tiene una gráfica de control con dos puntos fuera de límites sin investigar y un Cpk calculado de 1.5. ¿Qué concluyes?",
+     "El Cpk no es confiable hasta estabilizar el proceso",
+     "El proceso es capaz porque 1.5 supera 1.33",
+     "Hay que ensanchar los límites de control para incluir los puntos",
+     "El proceso es estable porque el Cpk es alto"
+    ],
+    [
+     "Samuel ve un punto dentro de los límites de control pero cerca de la especificación. ¿Qué haces?",
+     "No ajustar por un punto; revisar la capacidad si preocupa",
+     "Ajustar la máquina en sentido contrario de inmediato",
+     "Recalcular los límites de control con ese punto",
+     "Detener la línea y separar todo lo del turno"
+    ],
+    [
+     "En un AMEF, un modo de falla tiene severidad 9 (seguridad), ocurrencia 4 y detección 3: NPR 108. Otro tiene severidad 4, ocurrencia 6 y detección 7: NPR 168. Con el enfoque AIAG-VDA, ¿qué haces?",
+     "Atender primero el de severidad 9, que sale con AP alta",
+     "Atender primero el de NPR 168, por ser el más alto",
+     "Atender sólo los modos cuyo NPR supere 150",
+     "Promediar ambos NPR y decidir con el resultado"
+    ],
+    [
+     "Un kaizen en una bodega libera el equivalente a dos puestos. ¿Qué es coherente con Lean?",
+     "Reubicar a esas personas en mejora o crecimiento",
+     "Despedir a dos personas para capturar el ahorro",
+     "Repartir la carga para que nadie note el cambio",
+     "Ocultar el resultado para no generar inquietud"
+    ],
+    [
+     "Ricardo cierra un 8D con «causa raíz: error humano». ¿Qué le pides?",
+     "Que verifique qué en el proceso permitió el error",
+     "Que agregue el nombre del operador responsable",
+     "Que lo cierre, porque ya identificó la causa",
+     "Que reemplace al operador por uno con más experiencia"
+    ],
+    [
+     "Una empresa certificada en ISO 9001 tiene quejas que se repiten. ¿Qué es lo más preciso?",
+     "El certificado no sustituye la acción correctiva eficaz",
+     "Las quejas repetidas anulan el certificado de inmediato",
+     "El organismo certificador debe resolver las quejas",
+     "Basta con una auditoría interna más para eliminarlas"
+    ],
+    [
+     "Un proceso tiene tres pasos con FPY de 0.90, 0.95 y 0.98. ¿Cuál es su RTY aproximado?",
+     "0.84",
+     "0.94",
+     "0.90",
+     "2.83"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Six Sigma I: definir y medir con datos",
+   "r": "Aprenderás a plantear un proyecto Six Sigma con DMAIC, a ordenar datos con las herramientas básicas, a calcular en Excel los estadísticos que de verdad se usan y a comprobar si tu sistema de medición merece confianza.",
+   "lecciones": [
+    {
+     "t": "Six Sigma y DMAIC: el proyecto, el acta y los roles",
+     "obj": "Plantear un proyecto de mejora con la ruta DMAIC y redactar su acta, sabiendo qué hace cada rol y qué significan realmente las cintas.",
+     "texto": [
+      "Six Sigma nació en Motorola a mediados de los años ochenta, impulsado por el ingeniero Bill Smith, y se hizo famoso cuando General Electric lo adoptó en los noventa. Su idea central: los defectos vienen de la variación, y la variación se reduce entendiendo el proceso con datos, no con corazonadas. Para lograrlo, el trabajo se organiza en proyectos que siguen una ruta de cinco fases llamada <b>DMAIC</b>: Definir el problema, Medir cómo está hoy el proceso, Analizar las causas, Mejorar con soluciones probadas y Controlar para que la mejora se sostenga. En este módulo practicarás las dos primeras; analizar y mejorar los retomarás en el módulo 8.",
+      "Todo proyecto arranca con el <b>acta del proyecto</b> (en inglés, <i>project charter</i>), que el equipo y la dirección acuerdan antes de tocar nada. Incluye el problema expresado con un dato y un periodo, la meta con número y fecha, el alcance (dónde empieza y dónde termina el proceso y qué queda fuera), la característica crítica para el cliente que vas a medir, el beneficio esperado, el equipo y un calendario por fase. Un problema bien escrito no trae ni la causa ni la solución: «nos falta un sistema nuevo» es una solución disfrazada que cierra la puerta a entender qué pasa.",
+      "El <b>patrocinador</b> es un directivo que elige el proyecto, consigue recursos y quita obstáculos; el <b>dueño del proceso</b> es quien vivirá con el resultado y lo mantendrá; el líder conduce el trabajo con el equipo. Las cintas describen niveles de preparación: Yellow Belt conoce las bases y participa; Green Belt dirige proyectos de su área con parte de su tiempo; Black Belt encabeza proyectos complejos, por lo general de tiempo completo, y asesora; Master Black Belt forma y guía a los demás. No existe un organismo único que las regule: cada empresa fija sus requisitos internos y las certificaciones con examen reconocido las emiten organismos como ASQ o IASSC.",
+      "Sé claro con esto: este diplomado no otorga ninguna cinta Six Sigma certificada. Te prepara para participar con solvencia en proyectos y, si lo decides, para estudiar después una certificación formal. Y elige bien tu primer proyecto: que afecte a un cliente, que tenga datos o puedan reunirse, que se pueda terminar en pocos meses y cuya solución no sea obvia. Si ya sabes qué hacer y es barato, no hace falta un DMAIC: hazlo con un kaizen rápido."
+     ],
+     "comparar": [
+      "«Así no: Problema: necesitamos un software de citas. Meta: mejorar el servicio lo antes posible.»",
+      "«Así sí: Problema: de enero a marzo, 18 de cada 100 pacientes esperaron más de 40 minutos para su toma de muestra. Meta: bajarlo a 5 de cada 100 al 30 de septiembre.»"
+     ],
+     "caso": "Caso ficticio: Jazmín, de 34 años, es química en un laboratorio clínico privado de Zapopan. Su director le pide «un proyecto Six Sigma para que el laboratorio sea más rápido» y quiere incluir desde el principio la compra de un software de turnos. Jazmín tiene tres meses de registros con los tiempos de entrega de resultados y sabe que el director espera que, con este proyecto, ella «salga ya con su cinta verde».",
+     "p": [
+      [
+       "¿Cómo debería redactar Jazmín el problema en el acta?",
+       "Con el dato actual de tiempos de entrega, sin causa ni solución",
+       "Como «falta un software de turnos para agilizar la atención»",
+       "Como «el laboratorio es lento», para no limitar el alcance",
+       "El problema necesita un dato, un periodo y un alcance, sin adelantar la causa. Mencionar el software es una solución disfrazada, y una frase vaga como «es lento» no permite medir si el proyecto funcionó."
+      ],
+      [
+       "¿Qué rol le corresponde al director en el proyecto?",
+       "Patrocinador: elige el proyecto, da recursos y quita obstáculos",
+       "Líder del proyecto: recoge los datos y hace todos los análisis",
+       "Auditor: revisa al final si el proyecto cumple la norma ISO",
+       "El directivo que impulsa el proyecto y tiene autoridad para dar recursos es el patrocinador. Recoger y analizar datos es tarea del líder y su equipo, y auditar contra ISO es otra actividad, que verás en el módulo 7."
+      ],
+      [
+       "¿Qué debe aclarar Jazmín sobre la cinta verde?",
+       "Que un proyecto no basta: la cinta exige formación y evaluación formal",
+       "Que con un acta bien documentada ya cumple el requisito de la cinta",
+       "Que las cintas sólo existen en las plantas automotrices",
+       "Una cinta reconocida requiere formación y evaluación, y las certificaciones con examen las otorgan organismos como ASQ o IASSC. Un acta, por buena que sea, no certifica a nadie, y Six Sigma se aplica en servicios, salud y manufactura de todo tipo."
+      ]
+     ],
+     "completar": [
+      "La ruta de cinco fases de Six Sigma se llama ___: definir, medir, analizar, mejorar y controlar.",
+      "DMAIC"
+     ],
+     "relacionar": [
+      [
+       "Patrocinador",
+       "Consigue recursos y quita obstáculos"
+      ],
+      [
+       "Dueño del proceso",
+       "Mantiene la mejora en la operación diaria"
+      ],
+      [
+       "Green Belt",
+       "Dirige proyectos de su área con parte de su tiempo"
+      ],
+      [
+       "Black Belt",
+       "Encabeza proyectos complejos y asesora a otros"
+      ],
+      [
+       "Acta del proyecto",
+       "Problema, meta, alcance y equipo acordados"
+      ]
+     ],
+     "refl": "Redacta el acta de un proyecto de mejora para tu trabajo o para un proceso que conozcas bien. 1) Escribe el problema con un dato y un periodo, sin causa ni solución. 2) Define la meta con número y fecha. 3) Marca el alcance: dónde empieza y dónde termina el proceso y qué queda fuera. 4) Nombra la característica que medirás y de dónde saldrán los datos. 5) Propón patrocinador, dueño del proceso y equipo. 6) Explica en dos líneas por qué merece un proyecto DMAIC y no una acción rápida.",
+     "modelo": "Modelo: «Problema: entre julio y septiembre, 23 de 410 facturas salieron con datos fiscales erróneos y hubo que cancelarlas. Meta: menos de 5 facturas con error por trimestre al 31 de marzo. Alcance: desde que ventas captura el pedido hasta que se emite la factura; no incluye cobranza. Medida: facturas canceladas por error de datos, según el registro del sistema. Patrocinadora: gerente de administración; dueño: jefe de facturación; equipo: dos capturistas y una vendedora. Es proyecto porque hay varias causas posibles y no sabemos cuál pesa más.» Es bueno porque el problema tiene dato y periodo, no esconde una solución, la meta se puede verificar y el alcance evita que el proyecto crezca sin control.",
+     "plantilla": [
+      "Acta de proyecto DMAIC",
+      "Nombre del proyecto: [ ]\nProblema (dato + periodo, sin causa ni solución): [ ]\nMeta (número + fecha): [ ]\nAlcance: empieza en [ ] y termina en [ ] · queda fuera: [ ]\nCaracterística crítica que mediré: [ ] · fuente de datos: [ ]\nBeneficio esperado: [ ]\nPatrocinador: [ ] · Dueño del proceso: [ ] · Líder: [ ] · Equipo: [ ]\nFechas: Definir [ ] · Medir [ ] · Analizar [ ] · Mejorar [ ] · Controlar [ ]\nAcuerdo de la dirección (nombre y fecha): [ ]"
+     ],
+     "clave": [
+      "DMAIC ordena el proyecto: primero entender y medir, después cambiar.",
+      "Un buen problema tiene dato, periodo y alcance, y no trae la solución escondida.",
+      "Una cinta certificada exige formación y examen formal: este diplomado prepara, pero no certifica."
+     ]
+    },
+    {
+     "t": "Las siete herramientas básicas: hoja de verificación, estratificación, Pareto, histograma y dispersión",
+     "obj": "Registrar, separar y ordenar datos de un problema con cinco herramientas básicas para decidir por dónde empezar.",
+     "texto": [
+      "Kaoru Ishikawa reunió siete herramientas básicas de calidad con una intención muy clara: que cualquier persona de piso pudiera usarlas, no sólo los especialistas. Son la hoja de verificación, la estratificación, el diagrama de Pareto, el histograma, el diagrama de dispersión, el diagrama causa-efecto y la gráfica de control. El causa-efecto ya lo usaste en el módulo 4 y la gráfica de control la verás a fondo en el 6; aquí trabajarás las otras cinco, que son las que convierten un montón de quejas sueltas en información para decidir.",
+      "La <b>hoja de verificación</b> es un formato sencillo para registrar cada evento en el momento y en el lugar donde ocurre: qué defecto, cuándo, en qué turno, con qué máquina o proveedor. Diséñala pensando en las preguntas que quieres contestar, porque lo que no anotes hoy no podrás analizarlo mañana. De ahí nace la <b>estratificación</b>: separar los datos por grupos. Muchas veces el problema «promedio» esconde que un solo turno, una sola línea o un solo proveedor concentra casi todo.",
+      "El <b>diagrama de Pareto</b> ordena las categorías de mayor a menor y agrega una línea con el porcentaje acumulado. Imagina 100 muestras rechazadas: 48 por error de captura, 30 por muestra hemolizada, 12 por etiqueta faltante, 6 por volumen insuficiente y 4 por otras causas. Las dos primeras suman 78 %: ahí conviene empezar. Juran lo describió como «pocos vitales y muchos triviales»; la proporción 80/20 es una aproximación, no una ley. Si un defecto es raro pero grave o caro, haz también un Pareto por costo. En Excel puedes contar con CONTAR.SI o con una tabla dinámica, y las versiones recientes incluyen un tipo de gráfico de Pareto.",
+      "El <b>histograma</b> muestra cómo se reparten los valores de una medición: dónde está el centro, qué tan abiertos están y qué forma tienen. Dos picos suelen indicar dos procesos mezclados, y un corte abrupto puede revelar que alguien redondea o descarta datos; con pocos datos la forma engaña, así que procura reunir varias decenas. El <b>diagrama de dispersión</b> cruza dos variables para ver si se mueven juntas; la función COEF.DE.CORREL da un valor entre −1 y 1. Pero una correlación sólo es una pista: puede haber un tercer factor detrás de ambas y la causa debe comprobarse."
+     ],
+     "comparar": [
+      "«Así no: Hay muchas quejas; vamos a atacar todo al mismo tiempo para no dejar nada fuera.»",
+      "«Así sí: Registré 200 errores en un mes por tipo y turno; dos tipos suman 72 % y empezamos por ellos.»"
+     ],
+     "caso": "Caso ficticio: Octavio, de 41 años, es jefe de almacén en un centro de distribución de Apodaca. En un mes registró 200 errores de surtido: producto equivocado 86, cantidad incorrecta 58, etiqueta de envío equivocada 30, empaque dañado 18 y otros 8. Su gerente quiere que se concentre en el empaque dañado porque es lo que reclamó el cliente más grande. Octavio además notó que los errores parecen subir en los días con más horas extra.",
+     "p": [
+      [
+       "Con el Pareto por frecuencia, ¿qué conclusión es correcta?",
+       "Producto equivocado y cantidad suman 72 % de los errores",
+       "El empaque dañado es la causa principal porque lo reclamó el cliente grande",
+       "Los cinco tipos pesan casi igual, así que el orden no importa",
+       "86 + 58 = 144 de 200, es decir 72 %. El reclamo de un cliente no cambia la frecuencia, y las categorías claramente no pesan igual: la primera es casi cinco veces la cuarta."
+      ],
+      [
+       "¿Qué haría bien Octavio antes de descartar el reclamo del cliente grande?",
+       "Hacer otro Pareto ordenado por costo o impacto en el cliente",
+       "Volver a contar los empaques dañados para confirmar que son 18",
+       "Quitar la categoría «otros» para que la gráfica se vea más limpia",
+       "Un defecto poco frecuente puede ser el más caro o el que más daña la relación con el cliente; un Pareto por costo lo muestra. Recontar no cambia la decisión y quitar «otros» oculta información."
+      ],
+      [
+       "Octavio ve en un diagrama de dispersión que los errores suben con las horas extra. ¿Qué puede concluir?",
+       "Que hay una relación que debe investigar, no una causa probada",
+       "Que las horas extra causan los errores y debe prohibirlas ya",
+       "Que la gráfica no sirve, porque los errores dependen de las personas",
+       "La dispersión muestra que dos variables se mueven juntas, pero puede haber un tercer factor, como los días de más pedidos, detrás de ambas. Prohibir sin verificar es precipitado, y descartar la gráfica desperdicia una pista valiosa."
+      ]
+     ],
+     "completar": [
+      "Ordenar las categorías de mayor a menor con su porcentaje acumulado es hacer un diagrama de ___.",
+      "Pareto"
+     ],
+     "relacionar": [
+      [
+       "Hoja de verificación",
+       "Registrar en el momento qué pasó, cuándo y dónde"
+      ],
+      [
+       "Estratificación",
+       "Separar los datos por turno, máquina o proveedor"
+      ],
+      [
+       "Pareto",
+       "Elegir los pocos tipos de defecto que más pesan"
+      ],
+      [
+       "Histograma",
+       "Ver centro, dispersión y forma de una medición"
+      ],
+      [
+       "Diagrama de dispersión",
+       "Explorar si dos variables se mueven juntas"
+      ]
+     ],
+     "refl": "Construye un Pareto con datos reales. 1) Elige un problema que se repita en tu trabajo o en tu casa: quejas, errores, retrasos o gastos. 2) Diseña una hoja de verificación con al menos tres categorías, la fecha y un estrato (turno, día o persona). 3) Registra durante una semana o usa registros que ya existan; reúne al menos 30 eventos. 4) Ordena de mayor a menor y calcula el porcentaje y el acumulado en una hoja de cálculo. 5) Escribe qué categorías atacarías primero y si la decisión cambia al ordenarlas por costo.",
+     "modelo": "Modelo: «Registré 10 días hábiles los retrasos de entrega de mi panadería: 41 eventos. Pedido mal tomado por teléfono 17, dirección incompleta 12, producto agotado 7 y tráfico 5. Acumulado: 41 %, 71 %, 88 % y 100 %. Al estratificar por día, 11 de los 17 pedidos mal tomados fueron sábados, cuando contesta quien atiende el mostrador. Empezaré con un formato de toma de pedido. Por costo, el producto agotado pesa más porque se pierde la venta, así que va en segundo lugar.» Es bueno porque usa datos propios, calcula bien el acumulado, estratifica para encontrar dónde se concentra el problema y compara frecuencia con costo antes de decidir.",
+     "plantilla": [
+      "Hoja de verificación y Pareto en Excel",
+      "Registro: columna A fecha · B turno o estrato · C tipo de defecto\nLista de tipos en E2:E6\nConteo por tipo (F2): [=CONTAR.SI($C$2:$C$300,E2)]\nPorcentaje (G2): [=F2/SUMA($F$2:$F$6)]\nAcumulado (H2): [=SUMA($G$2:G2)]\nOrdena de mayor a menor antes de graficar.\nPocos vitales: [ ] suman [ ] %\nPareto por costo (si aplica): [ ]\nEstrato donde se concentra: [ ]\nDecisión: empezar por [ ] porque [ ]"
+     ],
+     "clave": [
+      "Estratifica desde que recoges los datos: después ya no podrás separarlos.",
+      "El Pareto dice por dónde empezar; ordénalo también por costo o gravedad cuando importe.",
+      "Una correlación es una pista para investigar, no una prueba de causa."
+     ]
+    },
+    {
+     "t": "Estadística que sí vas a usar: tipos de datos, media, desviación estándar y distribución normal en Excel",
+     "obj": "Distinguir datos continuos y de atributo y calcular e interpretar en Excel la media, la mediana, la desviación estándar y la regla de la campana normal.",
+     "texto": [
+      "Antes de calcular nada, mira qué tipo de dato tienes. Los datos <b>continuos</b> se miden en una escala: tiempo, peso, temperatura, longitud. Los datos <b>de atributo</b> o discretos se cuentan o se clasifican: pasa o no pasa, número de errores, tipo de queja. Decir que «la muestra llegó tarde» es un atributo; decir que «llegó a los 52 minutos» es un dato continuo y dice mucho más con menos registros. Siempre que puedas, mide en lugar de sólo clasificar.",
+      "Para el centro de los datos usarás dos medidas. La <b>media</b> o promedio suma todo y divide entre el número de datos: los tiempos 12, 15, 9, 14 y 10 minutos suman 60, y 60 ÷ 5 = 12. La <b>mediana</b> es el valor de en medio al ordenar los datos, y resiste los valores extremos: si agregas un día de 60 minutos, la media salta a 20, pero la mediana apenas pasa a 13. En Excel usa =PROMEDIO(B2:B31) y =MEDIANA(B2:B31); si tu computadora usa punto y coma como separador de argumentos, cámbialo en todas las fórmulas de este diplomado.",
+      "Dos procesos con la misma media pueden ser muy distintos para el cliente: lo que se siente es la variación. El rango (máximo menos mínimo) da una idea rápida, pero la medida clave es la <b>desviación estándar</b>, que indica cuánto se alejan los datos de la media en forma típica. Con los cinco tiempos del ejemplo: las diferencias contra 12 son 0, 3, −3, 2 y −2; al cuadrado, 0, 9, 9, 4 y 4, que suman 26; divides entre n − 1 = 4 y obtienes 6.5, la varianza; su raíz cuadrada es 2.55 minutos. En Excel basta =DESVEST.M(B2:B6), la versión para muestras.",
+      "Muchas mediciones forman una campana llamada <b>distribución normal</b>. En ella, cerca de 68 % de los datos cae a una desviación de la media, cerca de 95 % a dos y cerca de 99.7 % a tres. Si un proceso tiene media 12 y desviación 2.5 minutos, esperarías que unos 95 de cada 100 casos tarden entre 7 y 17 minutos. Para estimar la proporción arriba de 17 usa =1-DISTR.NORM.N(17,12,2.5,VERDADERO), que da cerca de 2.3 %. Pero cuidado: los tiempos de espera suelen tener una cola larga hacia la derecha. Revisa siempre el histograma antes de aplicar la regla."
+     ],
+     "comparar": [
+      "«Así no: En promedio atendemos en 6 minutos, así que todos los clientes están bien atendidos.»",
+      "«Así sí: La media es de 6 minutos, pero la desviación es de 3.1 y la mediana es menor: unos cuantos clientes esperan muchísimo.»"
+     ],
+     "caso": "Caso ficticio: Fabiola, de 26 años, es analista de calidad en un centro de atención telefónica de Guadalajara. Dos equipos tienen el mismo promedio de 6 minutos por llamada: el equipo A con desviación estándar de 0.8 minutos y el equipo B con 3.1. La gerente quiere premiar a ambos por igual porque «el promedio es idéntico». Fabiola, además, quiere estimar cuántas llamadas del equipo B superan los 10 minutos con la regla de la campana, aunque su histograma tiene una cola larga a la derecha.",
+     "p": [
+      [
+       "¿Qué dice la desviación estándar del equipo B frente a la del A?",
+       "Que sus tiempos son mucho menos predecibles que los del A",
+       "Que el equipo B atiende llamadas más largas en promedio",
+       "Que el equipo B tiene más operadores trabajando por turno",
+       "Con la misma media, una desviación casi cuatro veces mayor significa tiempos mucho más dispersos e impredecibles. La desviación no habla del promedio, que es igual, ni del tamaño del equipo."
+      ],
+      [
+       "Si los datos del equipo A son aproximadamente normales, ¿entre qué valores caerá cerca de 95 % de sus llamadas?",
+       "Entre 4.4 y 7.6 minutos",
+       "Entre 5.2 y 6.8 minutos",
+       "Entre 3.6 y 8.4 minutos",
+       "El 95 % queda a dos desviaciones: 6 ± 2 × 0.8 = 4.4 a 7.6. El rango de 5.2 a 6.8 es una sola desviación (cerca de 68 %) y el de 3.6 a 8.4 son tres (cerca de 99.7 %)."
+      ],
+      [
+       "El histograma del equipo B tiene una cola larga a la derecha. ¿Qué conviene hacer?",
+       "Reportar también la mediana y no asumir la campana normal",
+       "Aplicar la regla del 95 % de todos modos, porque siempre funciona",
+       "Borrar las llamadas más largas para que la forma quede simétrica",
+       "Con una distribución sesgada, la regla de la normal da estimaciones engañosas y la mediana describe mejor el caso típico. La regla no siempre aplica, y borrar datos incómodos esconde justo lo que el cliente sufre."
+      ]
+     ],
+     "completar": [
+      "Para calcular en Excel la desviación estándar de una muestra usas la función ___.",
+      "DESVEST.M"
+     ],
+     "refl": "Calcula los estadísticos de algo que midas en tu vida. 1) Elige una variable continua: tiempo de traslado, tiempo para responder correos, gasto diario o peso de un producto. 2) Registra al menos 20 valores en una columna de una hoja de cálculo. 3) Calcula media, mediana, mínimo, máximo, rango y desviación estándar con fórmulas. 4) Haz un histograma y describe su forma. 5) Comprueba a mano la media de los primeros cinco datos. 6) Escribe qué le dirías a alguien que sólo mira el promedio de esa variable.",
+     "modelo": "Modelo: «Medí 22 días mi tiempo de traslado al trabajo. Media 38.5 min, mediana 36, mínimo 29, máximo 64 y desviación estándar 7.9 min. El histograma concentra casi todo entre 30 y 45 minutos y tiene una cola a la derecha por tres días de lluvia. Como no es simétrico, no uso la regla del 95 %. Si planeo con el promedio llegaré tarde muchos días; el percentil 90 fue de 49 min [=PERCENTIL(B2:B23,0.9)], así que saldré 50 minutos antes de mi hora de entrada.» Es bueno porque usa varias medidas, interpreta la forma de los datos antes de aplicar la normal y convierte los números en una decisión práctica.",
+     "plantilla": [
+      "Estadísticos básicos en Excel",
+      "Datos en B2:B31 · unidad: [ ]\nMedia: [=PROMEDIO(B2:B31)]\nMediana: [=MEDIANA(B2:B31)]\nMínimo: [=MIN(B2:B31)] · Máximo: [=MAX(B2:B31)]\nRango: [=MAX(B2:B31)-MIN(B2:B31)]\nDesviación estándar: [=DESVEST.M(B2:B31)]\nProporción esperada arriba de un límite (límite en E2, media en E3, desviación en E4), sólo si la forma es de campana: [=1-DISTR.NORM.N(E2,E3,E4,VERDADERO)]\nForma del histograma: [simétrica / cola a la derecha / dos picos]\nConclusión para decidir: [ ]"
+     ],
+     "clave": [
+      "Mide en lugar de sólo clasificar: un dato continuo dice más con menos registros.",
+      "El promedio sin la desviación esconde lo que vive el cliente: la variación.",
+      "La regla 68-95-99.7 sólo vale si los datos se parecen a una campana; revisa antes el histograma."
+     ]
+    },
+    {
+     "t": "¿Puedes confiar en tu medición? Análisis del sistema de medición (MSA) y R&R",
+     "obj": "Evaluar si un sistema de medición es confiable con los conceptos de exactitud, precisión y R&R antes de usar sus datos para decidir.",
+     "texto": [
+      "Todo lo anterior depende de una pregunta previa: ¿los datos dicen la verdad? La variación que observas combina la variación real del proceso y la de la medición (en términos estadísticos, se suman sus varianzas). El <b>análisis del sistema de medición</b> (MSA, por sus siglas en inglés) revisa al conjunto completo: instrumento, persona, método, pieza y ambiente. Piensa en una diana: la <b>exactitud</b> es qué tan cerca del centro cae el promedio de los tiros (lo contrario es el sesgo) y la <b>precisión</b> es qué tan juntos quedan entre sí. A esto se agregan la linealidad (el sesgo cambia a lo largo del rango) y la estabilidad (cambia con el tiempo).",
+      "La <b>calibración</b> compara el instrumento contra un patrón con trazabilidad, es decir, con una cadena de comparaciones documentadas que llega a un patrón nacional; en México el laboratorio nacional de metrología es el CENAM y los laboratorios de calibración pueden estar acreditados por la ema. Calibrar corrige la exactitud, pero no te dice si dos personas miden igual la misma pieza. Revisa también la resolución: una regla práctica muy difundida pide que el instrumento distinga al menos la décima parte de la tolerancia.",
+      "El estudio <b>R&R</b> separa dos fuentes de error. La <b>repetibilidad</b> es la variación cuando la misma persona mide la misma pieza varias veces con el mismo equipo; refleja sobre todo al instrumento. La <b>reproducibilidad</b> es la diferencia entre personas que miden lo mismo; suele revelar métodos distintos o falta de capacitación. Un estudio típico usa unas 10 piezas que cubran el rango real, 2 o 3 operadores y 2 o 3 repeticiones, a ciegas y en orden aleatorio. El criterio del manual de AIAG: menos de 10 % es aceptable, de 10 a 30 % puede aceptarse según la aplicación y el costo, y más de 30 % es inaceptable. Por ejemplo, si la desviación del sistema de medición es 0.02 mm y la tolerancia es de 1.2 mm, 6 × 0.02 ÷ 1.2 = 10 % de la tolerancia.",
+      "En servicios y en inspección visual los datos suelen ser de atributo: aprobado o rechazado, muestra aceptable o no. Ahí se hace un estudio de concordancia: varios evaluadores clasifican los mismos casos dos veces y se compara cada uno consigo mismo, entre ellos y contra la referencia de un experto. Si fallan, casi siempre falta una definición operacional con ejemplos. Arregla la medición antes de sacar conclusiones del proceso."
+     ],
+     "comparar": [
+      "«Así no: El calibrador tiene su certificado vigente, así que los datos de los dos turnos son confiables.»",
+      "«Así sí: El calibrador está calibrado, pero hicimos un R&R para saber si los inspectores de ambos turnos miden igual.»"
+     ],
+     "caso": "Caso ficticio: Saúl, de 52 años, es jefe de metrología en una planta de troquelado de Ciudad Juárez. El cliente rechaza lotes por el espesor de una pestaña, y los inspectores del primer y del segundo turno obtienen resultados distintos con el mismo calibrador. El gerente de planta quiere modificar de inmediato el proceso de troquelado. Saúl hizo un estudio R&R: dio 38 % de la tolerancia, y la mayor parte viene de diferencias entre inspectores.",
+     "p": [
+      [
+       "¿Qué indica un %R&R de 38 % de la tolerancia?",
+       "Que el sistema de medición no es aceptable para decidir",
+       "Que el troquelado produce 38 % de piezas fuera de especificación",
+       "Que es aceptable, porque está por debajo de la mitad de la tolerancia",
+       "Arriba de 30 % el sistema de medición se considera inaceptable según el criterio de AIAG. El porcentaje habla de la medición, no de cuántas piezas son malas, y no existe un umbral de 50 %."
+      ],
+      [
+       "La mayor parte del error viene de la reproducibilidad. ¿Qué conviene atacar primero?",
+       "El método y la capacitación de los inspectores de ambos turnos",
+       "La compra de un calibrador nuevo con mejor resolución",
+       "El ajuste del troquel para centrar la pestaña",
+       "La reproducibilidad es la diferencia entre personas: apunta a métodos distintos, a la forma de sujetar la pieza o a falta de entrenamiento. Un calibrador nuevo atiende sobre todo la repetibilidad, y ajustar el troquel cambia el proceso, no la medición."
+      ],
+      [
+       "El gerente quiere modificar el proceso ya. ¿Qué es lo más sensato?",
+       "Corregir la medición y repetir el estudio antes de mover el proceso",
+       "Cambiar proceso y medición al mismo tiempo para ganar semanas",
+       "Mandar a calibrar el calibrador, porque con eso se resuelve el R&R",
+       "Con una medición que no distingue piezas buenas de malas, cualquier cambio al proceso se evaluaría con datos poco confiables. Cambiar todo a la vez impide saber qué funcionó, y la calibración corrige el sesgo, no las diferencias entre personas."
+      ]
+     ],
+     "completar": [
+      "La variación que aparece cuando la misma persona mide la misma pieza varias veces con el mismo equipo se llama ___.",
+      "repetibilidad"
+     ],
+     "relacionar": [
+      [
+       "Sesgo",
+       "Diferencia entre el promedio medido y el valor de referencia"
+      ],
+      [
+       "Repetibilidad",
+       "Variación del equipo con la misma persona y la misma pieza"
+      ],
+      [
+       "Reproducibilidad",
+       "Diferencia entre personas que miden lo mismo"
+      ],
+      [
+       "Linealidad",
+       "El sesgo cambia a lo largo del rango de medición"
+      ],
+      [
+       "Estabilidad",
+       "El sesgo cambia con el paso del tiempo"
+      ]
+     ],
+     "refl": "Revisa un sistema de medición de tu trabajo o de tu casa. 1) Elige uno: báscula, termómetro, cronómetro o un criterio visual para aprobar o rechazar. 2) Describe cómo se calibra o verifica y si hay trazabilidad. 3) Haz un mini estudio con 5 objetos o casos, 2 personas y 2 mediciones por persona, a ciegas y en orden distinto. 4) Compara si cada persona coincide consigo misma y si coinciden entre ellas. 5) Escribe qué mejorarías (definición, instrucción o equipo) y si confiarías en esos datos para tomar una decisión.",
+     "modelo": "Modelo: «Revisé cómo clasificamos en recepción si una caja del proveedor llega “dañada”; no hay definición escrita. Una compañera y un compañero evaluaron 10 fotos de cajas dos veces cada uno, en orden distinto y sin ver sus respuestas anteriores. Ella coincidió consigo misma en 9 de 10 y él en 7; entre ellos coincidieron en 6. Hay un problema de repetibilidad (él no coincide consigo mismo), de reproducibilidad y, sobre todo, de definición: cada quien entiende “dañada” a su modo. Propongo un catálogo con fotos de lo aceptable y lo rechazable y repetir el estudio. Mientras tanto, no usaría esos registros para reclamar al proveedor.» Es bueno porque prueba la medición a ciegas, separa la coincidencia individual de la grupal y frena una decisión basada en datos dudosos.",
+     "plantilla": [
+      "Mini estudio del sistema de medición",
+      "Sistema: [ ] · ¿Qué mide?: [ ] · Unidad: [ ]\nCalibración o verificación: [fecha · patrón · ¿trazable?]\nResolución: [ ] · Tolerancia: [ ]\nTabla: pieza | persona A (1) en B | A (2) en C | persona B (1) en D | B (2) en E\nRango de A en cada pieza: [=MAX(B2:C2)-MIN(B2:C2)]\nDiferencia entre personas: [=PROMEDIO(B2:C11)-PROMEDIO(D2:E11)]\n%R&R contra tolerancia (desviación de R&R en H2, tolerancia en H3): [=6*H2/H3]\nDecisión: [aceptable / mejorar antes de usar]\nAcciones: [definición · instrucción · equipo]"
+     ],
+     "clave": [
+      "Antes de mejorar el proceso, asegúrate de que la medición no te esté engañando.",
+      "Calibrar corrige la exactitud, pero no garantiza que dos personas midan igual.",
+      "Con más de 30 % de R&R no decidas con esos datos: arregla primero la medición."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige un proceso de tu trabajo o de un negocio que conozcas y prepara en una hoja de cálculo su fase Definir y Medir. 1) Llena el acta del proyecto. 2) Reúne al menos 50 eventos de defectos, quejas o retrasos por categoría y construye su Pareto con porcentaje acumulado. 3) Toma al menos 30 mediciones de una variable continua del mismo proceso y calcula media, mediana, rango y desviación estándar, con su histograma. 4) Describe cómo se mide esa variable y qué tan confiable es la medición, con un mini estudio si puedes.",
+    "entregable": "Un libro de hoja de cálculo con tres pestañas (acta, Pareto y estadísticos) y una nota de media página con tus conclusiones y tus dudas sobre la medición.",
+    "criterios": "Revisa: el problema del acta tiene dato y periodo y no incluye la solución, el Pareto está ordenado de mayor a menor y su acumulado llega a 100 %, los estadísticos se calcularon con fórmulas que pueden rastrearse, y explicaste qué tan confiable es la medición y por qué."
+   },
+   "lab": {
+    "t": "Los resultados que no llegan a tiempo",
+    "obj": "Definir y medir un problema de servicio en el laboratorio clínico de un hospital con un acta, un Pareto, estadísticos y una revisión de la medición.",
+    "esc": "<b>Irene,</b> de 45 años, es jefa del laboratorio clínico de un hospital general en Hermosillo. Urgencias se queja de que los resultados de biometría hemática tardan demasiado y el director le pide «un proyecto con datos». Irene tiene el registro de los últimos dos meses con la hora de toma de la muestra, la de recepción en el laboratorio y la de liberación del resultado.",
+    "e": [
+     [
+      "Escena 1: El director propone como problema: «el laboratorio es lento y necesita más químicos».",
+      "Consigna: reescribe el problema y la meta para el acta, con dato, periodo y alcance, sin causa ni solución."
+     ],
+     [
+      "Escena 2: De 300 resultados urgentes que superaron el tiempo meta, el registro muestra: muestra que tardó en llegar desde urgencias 126, muestra rechazada que hubo que repetir 75, equipo en mantenimiento 45, espera para validación 36 y otros 18.",
+      "Consigna: construye el Pareto con porcentaje y acumulado, indica qué pocos vitales atacarías y qué estratificación pedirías (turno, día, tipo de solicitud)."
+     ],
+     [
+      "Escena 3: En 40 resultados urgentes del turno nocturno, el tiempo desde la toma hasta la liberación tiene una media de 74 minutos, una mediana de 61 y una desviación estándar de 29 minutos.",
+      "Consigna: interpreta los tres números, explica qué sugiere que la media sea mayor que la mediana y di qué gráfica harías para confirmarlo."
+     ],
+     [
+      "Escena 4: Descubres que la hora de toma la anotan a mano las enfermeras de urgencias, unas al tomar la muestra y otras al enviarla, y que dos relojes del área marcan horas distintas.",
+      "Consigna: propón cómo validar este sistema de medición antes de usar los datos y escribe una definición operacional de «hora de toma»."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es la mejor redacción del problema para el acta?",
+      "En agosto y septiembre, 300 biometrías urgentes superaron el tiempo meta",
+      "El laboratorio necesita más químicos para entregar a tiempo",
+      "Urgencias no manda las muestras a tiempo al laboratorio clínico",
+      "La primera describe el efecto con dato y periodo. La segunda es una solución disfrazada y la tercera adelanta una causa que todavía no se ha comprobado, aunque el Pareto la señale como sospechosa."
+     ],
+     [
+      "Según el Pareto de la escena 2, ¿qué afirmación es correcta?",
+      "Traslado y muestras rechazadas suman 67 % de los retrasos",
+      "El equipo en mantenimiento es la causa principal de los retrasos",
+      "Las cinco categorías pesan parecido, así que no hay una prioridad clara",
+      "126 + 75 = 201 de 300, o sea 67 %. El mantenimiento aporta 15 %, en tercer lugar, y la primera categoría pesa siete veces más que «otros», así que sí hay prioridad."
+     ],
+     [
+      "¿Qué debe hacer Irene con la hora de toma anotada a mano?",
+      "Definir cuándo se registra, sincronizar relojes y verificar antes de analizar",
+      "Usar los datos tal cual, porque los errores se compensan entre sí",
+      "Cancelar el proyecto, porque sin datos perfectos no puede hacerse",
+      "Si cada quien anota un momento distinto y los relojes no coinciden, el tiempo medido tiene sesgo y mucha variación. No hay razón para suponer que los errores se compensan, y los datos no tienen que ser perfectos: basta con hacerlos confiables."
+     ]
+    ],
+    "pl": [
+     "Hoja de definición y medición del laboratorio",
+     "Problema (dato, periodo, alcance): [ ]\nMeta (número y fecha): [ ]\nCaracterística crítica: tiempo desde [evento de inicio] hasta [evento de fin], registrado con [reloj o sistema]\nPareto: [categoría · conteo · % · acumulado]\nEstratos que pediré: [turno · día · tipo de solicitud · área]\nEstadísticos: media [ ] · mediana [ ] · desviación [ ] · forma del histograma [ ]\nValidación de la medición: [definición · sincronización · verificación]\nSiguiente paso: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Mireya, gerente de una tienda en Culiacán, escribe en su acta: «Problema: no tenemos báscula electrónica en carnes». ¿Qué falla?",
+     "Es una solución disfrazada; falta el dato del efecto",
+     "Le falta el nombre del proveedor de la báscula que va a comprar",
+     "Nada, porque el problema debe señalar lo que hay que comprar",
+     "Debería decir qué persona del área tiene la culpa"
+    ],
+    [
+     "Un equipo registra 120 quejas: 54 por demora, 36 por cobro erróneo, 18 por trato y 12 otras. ¿Cuánto suman las dos primeras?",
+     "75 %",
+     "90 %",
+     "45 %",
+     "60 %"
+    ],
+    [
+     "Ramiro ve que el tiempo promedio de entrega de su planta en Monterrey cumple lo prometido, pero los clientes se quejan. ¿Qué debería revisar?",
+     "La desviación estándar de los tiempos",
+     "El promedio de un periodo todavía más largo",
+     "El número total de pedidos entregados en el mes",
+     "El día de la semana en que hay más pedidos"
+    ],
+    [
+     "Elena mide cuatro cambios de turno: 8, 10, 12 y 10 minutos. ¿Cuál es la desviación estándar muestral aproximada?",
+     "1.63 minutos",
+     "1.41 minutos",
+     "2.67 minutos",
+     "4.00 minutos"
+    ],
+    [
+     "Joel obtiene en un estudio R&R un 8 % de la tolerancia. ¿Qué concluye?",
+     "El sistema de medición es aceptable para usarse",
+     "Debe rechazarlo, porque todo valor arriba de 5 % es malo",
+     "El proceso produce 8 % de piezas fuera de especificación",
+     "Sólo será aceptable si el instrumento tiene certificado"
+    ],
+    [
+     "Viridiana nota que dos inspectoras clasifican distinto los mismos defectos visuales. ¿Qué parte del sistema de medición falla?",
+     "La reproducibilidad entre evaluadoras",
+     "La repetibilidad del instrumento de medición",
+     "La linealidad a lo largo del rango del equipo",
+     "La estabilidad del instrumento con el tiempo"
+    ],
+    [
+     "Arturo recibe pesos de producto cuyo histograma tiene dos picos. ¿Qué es lo más probable y qué conviene hacer?",
+     "Hay dos fuentes mezcladas; estratificar por máquina o turno",
+     "Los datos son normales; puede aplicar la regla del 95 %",
+     "Hubo un error de captura; conviene borrar el pico menor",
+     "El proceso es muy estable, porque los valores se repiten"
+    ],
+    [
+     "Susana encuentra una correlación de 0.85 entre horas de capacitación y ventas por sucursal. ¿Qué puede afirmar?",
+     "Que se mueven juntas, pero falta verificar si hay causa",
+     "Que la capacitación explica el 85 % de las ventas",
+     "Que no hay relación, porque el valor no llega a 1.0",
+     "Que duplicar la capacitación duplicará las ventas"
+    ],
+    [
+     "Marco quiere que su proyecto termine con una cinta Green Belt reconocida fuera de su empresa. ¿Qué le conviene?",
+     "Presentar el examen de un organismo como ASQ o IASSC",
+     "Pedir a su jefe una constancia que diga que ya es Green Belt",
+     "Aprobar este diplomado, que otorga la cinta al terminar",
+     "Registrar su proyecto ante la ema para que lo certifique"
+    ],
+    [
+     "Una supervisora quiere registrar defectos y después saber en qué turno ocurren más. ¿Qué debe incluir desde el inicio en la hoja de verificación?",
+     "Una columna para el turno de cada registro",
+     "Sólo el total de defectos al cierre del día",
+     "El nombre del cliente que recibirá cada lote",
+     "Un espacio para la causa raíz de cada defecto"
+    ]
+   ]
+  },
+  {
+   "t": "Six Sigma II: control estadístico y capacidad del proceso",
+   "r": "Aprenderás a distinguir la variación común de la especial, a construir e interpretar gráficas de control en Excel sin sobrerreaccionar y a calcular e interpretar Cp, Cpk, DPMO y nivel sigma sin caer en mitos.",
+   "lecciones": [
+    {
+     "t": "Variación común y especial: la lógica de las gráficas de control",
+     "obj": "Distinguir la variación común de la especial para decidir cuándo investigar un resultado y cuándo cambiar el sistema.",
+     "texto": [
+      "Ningún proceso da dos resultados idénticos: dos paquetes de tortillas, dos llamadas o dos piezas siempre difieren un poco. Walter Shewhart, en los años veinte del siglo pasado, distinguió dos tipos de variación. La <b>variación común</b> nace de muchas causas pequeñas que siempre están presentes en el sistema: diferencias mínimas en la materia prima, la temperatura del día, la mano de cada persona. La <b>variación especial</b>, también llamada asignable, aparece por algo concreto e identificable: una herramienta rota, un lote de materia prima distinto, un ajuste mal hecho. Un proceso que sólo tiene variación común es estable o está «bajo control estadístico»: no es perfecto, pero es predecible.",
+      "La distinción decide qué hacer. Ante una causa especial se investiga qué pasó en ese momento y se elimina; muchas veces la resuelven el operario o el supervisor. Ante la variación común, buscar culpables en cada resultado alto es inútil, porque el número cambió sin que pasara nada en particular; para reducirla hay que modificar el sistema (método, equipo, materiales, diseño), y eso le toca a la dirección. Deming advirtió que confundirlas lleva a dos errores: reaccionar a la variación común como si fuera especial y dejar pasar una causa especial como si fuera ruido normal.",
+      "La <b>gráfica de control</b> es la herramienta para separarlas. Colocas los datos en orden de tiempo, trazas una línea central con el promedio y dos límites de control a tres desviaciones estándar, calculados con los datos del propio proceso. Si los puntos se mueven al azar dentro de los límites, ves variación común; un punto fuera o ciertos patrones son señal de una posible causa especial. Shewhart eligió tres sigmas por razones prácticas y económicas: equilibran el costo de las falsas alarmas con el de las señales que se escapan.",
+      "Dos aclaraciones evitan muchas confusiones. Los <b>límites de control</b> son la voz del proceso: dicen lo que el proceso hace. Los <b>límites de especificación</b> son la voz del cliente: dicen lo que se necesita. No se calculan igual y no conviene dibujar las especificaciones en una gráfica de promedios, porque los promedios varían menos que las piezas individuales. Un proceso puede ser estable y producir piezas fuera de especificación, o ser inestable y por ahora cumplir. Y la estabilidad es requisito para predecir: sin ella, cualquier cálculo de capacidad sólo describe el pasado."
+     ],
+     "comparar": [
+      "«Así no: El martes salió bajo; ¿quién estaba de turno? Que levanten un acta administrativa.»",
+      "«Así sí: El martes está dentro de los límites y sin patrón; si queremos menos variación hay que cambiar el método, no regañar al turno.»"
+     ],
+     "caso": "Caso ficticio: Damián, de 38 años, es supervisor en una tortillería industrial de Culiacán que empaca paquetes de 1 kg. Cada mañana el gerente pesa un paquete y, si sale por debajo del promedio, llama la atención al operador del turno anterior. Damián registró 25 días en una gráfica de control: todos los puntos quedan dentro de los límites y sin patrones, excepto el día 17, cuando se usó harina de otro proveedor y el peso cayó debajo del límite inferior.",
+     "p": [
+      [
+       "¿Qué tipo de variación muestran los días dentro de los límites y sin patrones?",
+       "Variación común del sistema",
+       "Variación especial de cada operador",
+       "Error de medición de la báscula",
+       "Puntos al azar dentro de los límites reflejan las causas pequeñas que siempre están presentes. No hay evidencia de una causa especial ligada a cada operador, y nada en el caso indica un problema de medición."
+      ],
+      [
+       "¿Qué conviene hacer con el día 17?",
+       "Investigar el cambio de harina como posible causa especial",
+       "Ignorarlo, porque un solo punto no significa nada entre 25 días",
+       "Ajustar la máquina cada mañana según el peso del día anterior",
+       "Un punto fuera de los límites coincide con un cambio concreto: es una señal que merece investigación. Ignorarlo deja pasar una causa real, y ajustar con base en el día anterior es sobreajustar un proceso estable."
+      ],
+      [
+       "¿Qué debe cambiar el gerente en su manera de reaccionar?",
+       "Dejar de culpar al operador por puntos dentro de los límites",
+       "Pesar dos paquetes al día y llamar la atención más seguido",
+       "Quitar los límites de control y usar sólo el peso de 1 kg",
+       "Culpar a alguien por variación común no reduce la variación y desgasta al equipo. Pesar más seguido para regañar más repite el error, y quitar los límites borra la herramienta que distingue señal de ruido."
+      ]
+     ],
+     "completar": [
+      "La variación que viene de una causa concreta e identificable, como un lote distinto de materia prima, se llama variación ___.",
+      "especial"
+     ],
+     "relacionar": [
+      [
+       "Variación común",
+       "Muchas causas pequeñas siempre presentes"
+      ],
+      [
+       "Variación especial",
+       "Una causa concreta que aparece en cierto momento"
+      ],
+      [
+       "Límites de control",
+       "Voz del proceso, calculados con sus datos"
+      ],
+      [
+       "Límites de especificación",
+       "Voz del cliente, fijados por el requisito"
+      ],
+      [
+       "Proceso estable",
+       "Predecible, aunque no necesariamente capaz"
+      ]
+     ],
+     "refl": "Analiza la variación de algo que vives a diario. 1) Elige un indicador que registres o puedas reconstruir por al menos 20 días: ventas, tiempo de traslado, quejas o gasto. 2) Grafícalo en orden de tiempo en una hoja de cálculo. 3) Marca los puntos que antes habrías considerado «malos» y anota qué se hizo en esos días. 4) Escribe qué causas comunes afectan a ese indicador todos los días y qué causas especiales recuerdas. 5) Explica qué reacción cambiarás a partir de esta lección y quién puede cambiar el sistema.",
+     "modelo": "Modelo: «Reconstruí 24 días de ventas de mi papelería. Antes me preocupaban los días bajos y llegué a cambiar el horario de una empleada pensando que ella era la causa. Al graficarlos veo que suben y bajan alrededor de un mismo nivel, por causas que siempre están: clima, quincena y calendario escolar. La única causa especial clara fue el día que se fue la luz cuatro horas. Ya no reaccionaré a cada día bajo; si quiero vender más, tengo que cambiar el sistema, por ejemplo la exhibición o los paquetes de regreso a clases.» Es bueno porque reconoce un error propio, separa causas comunes de una especial concreta y deja la mejora a quien controla el sistema.",
+     "plantilla": [
+      "Diagnóstico de variación",
+      "Indicador: [ ] · Periodo: [ ] · Unidad: [ ]\nGráfica en orden de tiempo: [sí / no]\nCausas comunes (siempre presentes): [ ]\nCausas especiales identificadas: [fecha · qué pasó]\nReacciones pasadas que fueron exageradas: [ ]\nQuién puede cambiar el sistema: [ ]\nNueva regla de reacción: [ ]"
+     ],
+     "clave": [
+      "Estable no significa bueno: significa predecible.",
+      "Causa especial: investiga ese momento. Causa común: cambia el sistema.",
+      "Los límites de control los fija el proceso; las especificaciones, el cliente."
+     ]
+    },
+    {
+     "t": "Gráficas X̄-R, I-MR y de atributos paso a paso en Excel",
+     "obj": "Elegir la gráfica de control adecuada según el tipo de dato y calcular sus límites en Excel con las constantes correctas.",
+     "texto": [
+      "Si mides una variable continua en subgrupos, por ejemplo cinco piezas seguidas cada hora, usa la gráfica <b>X̄-R</b> (X barra y rango). Si tienes un solo dato por momento, como un lote al día o la temperatura de un horno por turno, usa la <b>I-MR</b> (individuales y rango móvil). Para atributos: la gráfica <b>p</b> sigue la proporción de unidades defectuosas aunque el tamaño de muestra cambie; la <b>np</b>, el número de defectuosas con tamaño fijo; la <b>c</b>, el número de defectos en una unidad de tamaño constante, y la <b>u</b>, los defectos por unidad cuando ese tamaño varía. Para fijar límites reúne de 20 a 25 subgrupos de un periodo representativo.",
+      "En la X̄-R calculas para cada subgrupo su promedio, =PROMEDIO(B2:F2), y su rango, =MAX(B2:F2)-MIN(B2:F2). Un subgrupo con 49, 51, 50, 52 y 48 tiene promedio 50 y rango 4. Luego obtienes el gran promedio (X̄̄) y el rango promedio (R̄). Con subgrupos de cinco, las constantes son A2 = 0.577, D3 = 0 y D4 = 2.114. Si X̄̄ = 50.0 y R̄ = 2.0, los límites de X̄ son 50 ± 0.577 × 2 = 48.85 y 51.15, y el límite superior de R es 2.114 × 2 = 4.23, con inferior en 0. Revisa primero la gráfica R: si el rango no es estable, los límites de X̄ no son confiables. Las constantes cambian con el tamaño del subgrupo.",
+      "En la I-MR, cada <b>rango</b> móvil es la diferencia absoluta entre un dato y el anterior: =ABS(B3-B2). Con los datos 20, 22, 21, 23 y 19, la media es 21 y los rangos móviles son 2, 1, 2 y 4, con promedio 2.25. Los límites de individuales son 21 ± 2.66 × 2.25, es decir 15.02 y 26.99, y el límite superior del rango móvil es 3.267 × 2.25 = 7.35. Cinco datos sirven sólo para practicar el cálculo.",
+      "En la gráfica p, la línea central es p̄, el total de defectuosas entre el total inspeccionado, y los límites son p̄ ± 3 × RAIZ(p̄(1 − p̄)/n). Con p̄ = 0.04 y n = 200, tres desviaciones valen 0.042, así que el límite superior es 8.2 % y el inferior, negativo, se fija en cero. En la c, si el promedio es 4 defectos por unidad, el límite superior es 4 + 3 × 2 = 10, y el inferior, 4 − 6, también se fija en cero."
+     ],
+     "comparar": [
+      "«Así no: Usar los límites de especificación como si fueran límites de control y recalcularlos cada semana.»",
+      "«Así sí: Calcular los límites con 25 subgrupos estables, fijarlos y recalcular sólo tras un cambio documentado.»"
+     ],
+     "caso": "Caso ficticio: Lourdes, de 49 años, es inspectora de calidad en una planta de arneses eléctricos en Chihuahua. Cada hora mide la fuerza de desprendimiento de cinco terminales ponchadas (crimpadas) seguidas. Su jefe le pide una gráfica de control y propone usar una I-MR con el promedio de cada hora y poner como límites los de la especificación. También le pide graficar los arneses rechazados por día, aunque la producción diaria cambia mucho.",
+     "p": [
+      [
+       "¿Qué gráfica corresponde a las cinco mediciones por hora?",
+       "X̄-R, con subgrupos de cinco",
+       "I-MR, con el promedio de cada hora",
+       "c, con el número de terminales",
+       "Son datos continuos en subgrupos racionales de cinco, el caso típico de la X̄-R. Una I-MR con promedios desperdicia la información del rango dentro de cada hora, y la gráfica c es para conteos de defectos, no para mediciones."
+      ],
+      [
+       "Con X̄̄ = 120 N y R̄ = 10 N (newtons), ¿cuál es el límite superior de la gráfica X̄?",
+       "125.77 N",
+       "141.14 N",
+       "130.00 N",
+       "120 + 0.577 × 10 = 125.77. El valor 141.14 resulta de usar por error D4 = 2.114, que es para la gráfica de rangos, y 130 sólo suma R̄ sin la constante."
+      ],
+      [
+       "Los arneses rechazados se cuentan por día y la producción diaria cambia. ¿Qué gráfica conviene?",
+       "Una gráfica p de proporción defectuosa",
+       "Una gráfica np, que supone tamaño de muestra fijo",
+       "Una gráfica c, que cuenta defectos en unidades de tamaño constante",
+       "Con unidades defectuosas y tamaño de muestra variable, la gráfica p es la adecuada. La np exige que el tamaño sea constante, y la c cuenta defectos, no unidades rechazadas, en un área de oportunidad fija."
+      ]
+     ],
+     "completar": [
+      "En una gráfica I-MR, cada ___ móvil es la diferencia absoluta entre un dato y el anterior.",
+      "rango"
+     ],
+     "relacionar": [
+      [
+       "X̄-R",
+       "Mediciones en subgrupos de varias piezas"
+      ],
+      [
+       "I-MR",
+       "Un solo dato por lote, día o turno"
+      ],
+      [
+       "Gráfica p",
+       "Proporción de defectuosas con muestras de tamaño variable"
+      ],
+      [
+       "Gráfica c",
+       "Número de defectos en una unidad de tamaño constante"
+      ],
+      [
+       "Gráfica u",
+       "Defectos por unidad cuando el tamaño cambia"
+      ]
+     ],
+     "refl": "Construye tu primera gráfica de control en una hoja de cálculo. 1) Reúne al menos 20 datos individuales o 20 subgrupos de una característica de tu trabajo o tu casa. 2) Decide qué gráfica corresponde y justifica tu elección con el tipo de dato. 3) Calcula con fórmulas la línea central, los límites y, si aplica, el rango o el rango móvil. 4) Grafica datos y límites en una gráfica de líneas. 5) Señala los puntos fuera de límites y escribe qué investigarías en cada uno.",
+     "modelo": "Modelo: «Usé 24 lecturas de la temperatura de la cámara fría de mi negocio de mariscos, una diaria a las 8:00, así que elegí I-MR. Media 3.1 °C y rango móvil promedio 0.6 °C. Límites: 3.1 ± 2.66 × 0.6, es decir 1.5 y 4.7 °C; límite del rango móvil: 3.267 × 0.6 = 2.0 °C. El día 15 marcó 5.2 °C, fuera del límite: ese día la puerta quedó mal cerrada durante la descarga. Lo demás está dentro y sin patrones. Con la causa documentada, recalcularé sin ese día.» Es bueno porque elige la gráfica por el tipo de dato, muestra cada cálculo con su constante y liga la señal con una causa concreta y verificable.",
+     "plantilla": [
+      "Gráficas de control en Excel",
+      "X̄-R (subgrupos de 5 en B:F, filas 2 a 26)\nPromedio del subgrupo (G2): [=PROMEDIO(B2:F2)]\nRango del subgrupo (H2): [=MAX(B2:F2)-MIN(B2:F2)]\nGran promedio (J1): [=PROMEDIO(G2:G26)] · Rango promedio (J2): [=PROMEDIO(H2:H26)]\nLímites de X̄: [=$J$1+0.577*$J$2] y [=$J$1-0.577*$J$2]\nLímite superior de R: [=2.114*$J$2] · inferior: [0]\nI-MR (datos en B2:B26)\nRango móvil (C3): [=ABS(B3-B2)] · Media (J4): [=PROMEDIO(B2:B26)] · MR promedio (J5): [=PROMEDIO(C3:C26)]\nLímites: [=$J$4+2.66*$J$5] y [=$J$4-2.66*$J$5] · Límite del MR: [=3.267*$J$5]\nGráfica p (p̄ en J7, n en J8): [=$J$7+3*RAIZ($J$7*(1-$J$7)/$J$8)]\nSeñales observadas: [ ]"
+     ],
+     "clave": [
+      "Elige la gráfica por el tipo de dato y la forma de muestrear.",
+      "Calcula los límites con 20 a 25 subgrupos de un periodo representativo y fíjalos; no los recalcules cada semana.",
+      "Revisa primero la gráfica de rangos: si no es estable, la de promedios no es confiable."
+     ]
+    },
+    {
+     "t": "Leer la gráfica sin sobrerreaccionar: reglas de detección y el embudo de Deming",
+     "obj": "Aplicar reglas de detección para reconocer señales reales y redactar un plan de reacción que evite el sobreajuste.",
+     "texto": [
+      "La señal más conocida es un punto fuera de los límites de tres sigmas, pero no es la única. Las reglas de Western Electric y las de Lloyd Nelson dividen el espacio entre la línea central y cada límite en tres zonas de una sigma y buscan patrones poco probables por puro azar: dos de tres puntos seguidos más allá de dos sigmas del mismo lado; cuatro de cinco más allá de una sigma del mismo lado; una racha larga del mismo lado de la línea central (ocho puntos en un conjunto de reglas, nueve en el otro), o seis puntos seguidos subiendo o bajando, que suele indicar desgaste o deriva.",
+      "Más reglas no es mejor. Cada regla añadida detecta antes los cambios, pero también aumenta las falsas alarmas, y un equipo que persigue fantasmas termina por ignorar la gráfica. Elige pocas reglas, escríbelas en un plan de reacción y entrena a quien lee la gráfica. Observa también patrones que las reglas no nombran: ciclos que se repiten por turno o por hora del día, o puntos que se pegan a la línea central porque cada subgrupo mezcla piezas de varias máquinas. Anota en la propia gráfica qué pasó cada vez que aparece una señal.",
+      "Deming ilustró el peligro de reaccionar de más con el <b>experimento del embudo</b>. Se dejan caer canicas por un embudo sobre un blanco en una mesa. Con la regla 1 el embudo no se mueve y las canicas quedan alrededor del blanco con la menor dispersión posible. Con la regla 2, después de cada canica se mueve el embudo para compensar el error, y la dispersión crece. Las reglas 3 y 4, que reubican el embudo respecto al blanco o encima de la última canica, son aún peores: el proceso oscila o se aleja sin control. Eso es el <b>sobreajuste</b>: el operario que corrige la máquina tras cada pieza un poco alta, o la cadena de capacitación en la que cada persona enseña al siguiente su propia variante.",
+      "La lección es práctica. Si no hay señal, no ajustes; si quieres menos variación, mejora el sistema con datos. Si hay señal, investiga en ese momento, registra la causa, corrígela y documéntala. Recalcula los límites sólo cuando el proceso haya cambiado de forma permanente y documentada, con datos nuevos suficientes."
+     ],
+     "comparar": [
+      "«Así no: La botella salió con 3 ml de más; súbele tantito a la boquilla para compensar.»",
+      "«Así sí: El punto está dentro de los límites y sin patrón; no se ajusta y se sigue registrando.»"
+     ],
+     "caso": "Caso ficticio: Néstor, de 57 años, es gerente de una planta embotelladora de agua purificada en Toluca. Los operadores ajustan las boquillas de llenado cada vez que una botella sale arriba o abajo del volumen nominal, convencidos de que así cuidan la calidad. Además, desde que se instaló una bomba nueva, la gráfica de control del volumen muestra nueve puntos seguidos arriba de la línea central, aunque ninguno sale de los límites.",
+     "p": [
+      [
+       "¿Qué están haciendo los operadores al ajustar después de cada botella?",
+       "Sobreajustar, como en la regla 2 del embudo",
+       "Aplicar una regla de detección de Nelson",
+       "Seguir el ciclo PHVA en cada botella llenada",
+       "Corregir tras cada resultado sin una señal estadística es sobreajuste y aumenta la variación. Las reglas de Nelson sirven para detectar señales, no para ajustar a cada pieza, y PHVA implica planear y verificar, no reaccionar al instante."
+      ],
+      [
+       "¿Qué indican los nueve puntos seguidos arriba de la línea central?",
+       "Una posible causa especial: el nivel del proceso cambió",
+       "Nada, porque todos los puntos siguen dentro de los límites",
+       "Que el proceso es más estable que antes del cambio de bomba",
+       "Una racha larga del mismo lado es improbable por azar y coincide con un cambio concreto, la bomba. Que los puntos estén dentro de los límites no basta, y la racha no habla de mayor estabilidad, sino de un desplazamiento."
+      ],
+      [
+       "¿Qué regla de reacción conviene escribir para los operadores?",
+       "No ajustar sin señal; ante una señal, avisar y registrar la causa",
+       "Ajustar siempre que una botella se aleje del volumen nominal",
+       "Revisar la gráfica sólo una vez al mes en la junta de dirección",
+       "Una regla clara evita el sobreajuste y asegura que las señales reales se atiendan a tiempo. Ajustar ante cualquier desviación repite el error del embudo, y revisar una vez al mes deja pasar causas especiales durante semanas."
+      ]
+     ],
+     "completar": [
+      "Ajustar un proceso estable después de cada resultado, como en el experimento del embudo, se llama ___ y aumenta la variación.",
+      "sobreajuste"
+     ],
+     "relacionar": [
+      [
+       "Punto fuera de tres sigmas",
+       "La señal más clara de causa especial"
+      ],
+      [
+       "Racha del mismo lado",
+       "El nivel del proceso pudo desplazarse"
+      ],
+      [
+       "Seis puntos subiendo",
+       "Tendencia, como el desgaste de una herramienta"
+      ],
+      [
+       "Regla 1 del embudo",
+       "No ajustar si no hay señal"
+      ],
+      [
+       "Regla 2 del embudo",
+       "Compensar cada error y aumentar la dispersión"
+      ]
+     ],
+     "refl": "Escribe el plan de reacción de una gráfica de control de tu trabajo o de la que hiciste en la lección anterior. 1) Elige qué reglas de detección usarás (máximo tres) y explica por qué. 2) Para cada regla, indica quién reacciona, qué revisa primero y en cuánto tiempo. 3) Escribe qué <b>no</b> se debe hacer cuando no hay señal. 4) Describe un caso de sobreajuste que hayas visto o hecho. 5) Define cuándo y con qué autorización se recalculan los límites.",
+     "modelo": "Modelo: «Gráfica I-MR del tiempo de respuesta a solicitudes de clientes. Reglas: un punto fuera de límites, ocho seguidos del mismo lado y seis en tendencia. Ante un punto fuera, la coordinadora revisa ese mismo día qué solicitud fue y por qué; ante una racha o tendencia, lo vemos en la junta semanal con los datos de esos días. Sin señal no se cambia el procedimiento ni se pide explicación a nadie. Sobreajuste que vi: cada mes alto se cambiaba la forma de repartir casos. Los límites se recalculan sólo tras un cambio documentado y con 20 puntos nuevos.» Es bueno porque limita las reglas, asigna responsables y tiempos, y protege al equipo de reacciones sin señal.",
+     "plantilla": [
+      "Plan de reacción de la gráfica de control",
+      "Gráfica y característica: [ ]\nReglas de detección: [1] · [2] · [3]\nSi aparece la regla [ ]: reacciona [quién] · revisa [qué] · en [cuánto tiempo] · registra en [dónde]\nSi no hay señal: [no ajustar · seguir registrando]\nCuándo detener el proceso: [ ]\nCuándo recalcular límites: [cambio documentado + 20 a 25 puntos nuevos]\nBitácora de causas especiales: [fecha · regla · causa · acción]"
+     ],
+     "clave": [
+      "Sin señal, no ajustes: el sobreajuste aumenta la variación.",
+      "Usa pocas reglas de detección, escritas en un plan de reacción claro.",
+      "Cada señal se investiga en su momento y se anota en la gráfica."
+     ]
+    },
+    {
+     "t": "Capacidad del proceso: Cp, Cpk, DPMO y nivel sigma sin mitos",
+     "obj": "Calcular e interpretar Cp, Cpk, DPMO y nivel sigma en Excel, y explicar cuándo esos números no significan lo que parecen.",
+     "texto": [
+      "La capacidad responde a una pregunta distinta de la estabilidad: ¿el proceso cabe en lo que pide el cliente? El índice <b>Cp</b> = (LSE − LIE) / 6σ compara el ancho de la tolerancia con el ancho natural del proceso, sin importar dónde esté centrado. El <b>Cpk</b> = mín[(LSE − μ)/3σ, (μ − LIE)/3σ] mide la distancia al límite más cercano. Ejemplo: especificación de 9.4 a 10.6 mm, σ = 0.15 y media 10.1. Cp = 1.2 / 0.9 = 1.33, pero Cpk = mín(0.5/0.45, 0.7/0.45) = mín(1.11, 1.56) = 1.11. Si centras el proceso en 10.0, el Cpk sube a 1.33 sin reducir la variación. Con un solo límite, como un tiempo máximo, sólo se calcula el lado que existe.",
+      "Para que estos números signifiquen algo necesitas un proceso estable, datos aproximadamente normales y una medición confiable. Para Cp y Cpk, σ se estima con la variación dentro de los subgrupos: σ = R̄ / d2, con d2 = 2.326 para subgrupos de cinco. Si usas la desviación de todos los datos juntos, =DESVEST.M, obtienes Pp y Ppk, que describen el desempeño real; si el Ppk es mucho menor que el Cpk, el proceso se mueve entre subgrupos. Un criterio frecuente pide Cpk de al menos 1.33, y muchos clientes automotrices piden 1.67 en características especiales; verifica siempre lo que exige tu cliente.",
+      "En servicios o con atributos se usa el <b>DPMO</b>, defectos por millón de oportunidades: defectos ÷ (unidades × oportunidades) × 1 000 000. Si revisas 500 expedientes con 4 oportunidades de error cada uno y encuentras 12 errores, el DPMO es 12 ÷ 2 000 × 1 000 000 = 6 000. El nivel sigma se estima con =DISTR.NORM.ESTAND.INV(1-6000/1000000)+1.5, que da cerca de 4.0. Define las oportunidades con honestidad: inflarlas baja el DPMO sin mejorar nada.",
+      "Ahora, los mitos. Los famosos 3.4 DPMO equivalen a seis sigma sólo con un desplazamiento convencional de 1.5σ; sin él corresponden a 4.5σ. Ese 1.5 es una convención empírica, no una ley. Six Sigma no exige llegar a 3.4 en todo: la meta depende del costo y del riesgo. Y cumplir la especificación no equivale a estar en el valor ideal: Taguchi propuso que la pérdida para el cliente crece conforme el resultado se aleja del objetivo, aun dentro de tolerancia."
+     ],
+     "comparar": [
+      "«Así no: Nuestro Cpk es 1.8, lo calculamos con los datos del mes aunque la gráfica tenía señales.»",
+      "«Así sí: Primero estabilizamos el proceso; con 25 subgrupos sin señales, el Cpk es 1.41 y el Ppk 1.36.»"
+     ],
+     "caso": "Caso ficticio: Alma, de 31 años, es ingeniera de calidad en una maquiladora de dispositivos médicos en Tijuana. El cliente pide un Cpk de al menos 1.33 en el diámetro de un conector, cuya especificación va de 4.90 a 5.10 mm. Con 25 subgrupos, la media es 5.04 mm y σ, estimada con R̄/d2, es 0.02 mm. Su jefe propone reportar sólo el Cp porque «sale más alto». Además, la gráfica X̄ de la semana pasada mostró dos puntos fuera de límites que nadie investigó.",
+     "p": [
+      [
+       "¿Cuál es el Cpk del conector?",
+       "1.00",
+       "1.67",
+       "2.33",
+       "Cpk = mín[(5.10 − 5.04)/0.06, (5.04 − 4.90)/0.06] = mín(1.00, 2.33) = 1.00. El 1.67 es el Cp, que ignora el centrado, y 2.33 es sólo el lado inferior, el más lejano."
+      ],
+      [
+       "¿Qué cambio subiría el Cpk más rápido sin reducir la variación?",
+       "Centrar el proceso más cerca de 5.00 mm",
+       "Ampliar la tolerancia sin consultar al cliente",
+       "Reportar al cliente el Cp en lugar del Cpk",
+       "Centrado en 5.00, el Cpk llegaría a 0.10/0.06 = 1.67. Cambiar la tolerancia por cuenta propia es incumplir el requisito, y reportar el Cp no mejora el proceso: esconde el problema de centrado."
+      ],
+      [
+       "La gráfica X̄ mostró dos puntos fuera de límites. ¿Qué debe hacer Alma con el Cpk?",
+       "Atender esas causas especiales antes de reportarlo como capacidad",
+       "Reportarlo igual, porque el cliente sólo pide el número final",
+       "Quitar los dos puntos del cálculo sin investigar qué pasó",
+       "La capacidad sólo predice si el proceso es estable; primero hay que investigar y eliminar las causas especiales. Reportar sin aclarar engaña al cliente, y borrar datos sin causa documentada maquilla el resultado."
+      ]
+     ],
+     "completar": [
+      "El índice que considera el centrado del proceso y mide la distancia al límite de especificación más cercano es el ___.",
+      "Cpk"
+     ],
+     "refl": "Calcula la capacidad de una característica que conozcas. 1) Elige una con especificación: peso de un producto, tiempo de entrega prometido o temperatura requerida. 2) Confirma con una gráfica de control que el proceso es estable o explica por qué todavía no puedes confirmarlo. 3) Calcula media, σ, Cp y Cpk; si sólo hay un límite, calcula el lado que aplica. 4) Si tu dato es de atributo, define las oportunidades y calcula el DPMO y el nivel sigma. 5) Escribe qué harías primero, centrar, reducir la variación o mejorar la medición, y por qué.",
+     "modelo": "Modelo: «Analicé el tiempo de entrega a domicilio de mi farmacia; prometemos máximo 45 minutos, así que sólo hay límite superior. Una gráfica I-MR de 30 entregas no muestra señales. Media 32 min; σ estimada con el rango móvil promedio entre 1.128 es 4.5 min. Con un solo límite no calculo Cp; Cpk = (45 − 32)/(3 × 4.5) = 13/13.5 = 0.96. Está debajo de 1.33: algunas entregas pasarán de 45 minutos. Primero reduciré la variación con rutas por zona, antes de prometer otro tiempo.» Es bueno porque verifica la estabilidad, usa la fórmula correcta para un solo límite y propone una acción coherente con el resultado.",
+     "plantilla": [
+      "Capacidad del proceso en Excel",
+      "LIE (K1): [ ] · LSE (K2): [ ]\nMedia (K3): [=PROMEDIO(B2:F26)]\nσ dentro de subgrupos de 5 (K4): [=PROMEDIO(H2:H26)/2.326]\nσ total (K5): [=DESVEST.M(B2:F26)]\nCp: [=(K2-K1)/(6*K4)]\nCpk: [=MIN((K2-K3)/(3*K4),(K3-K1)/(3*K4))]\nPpk: [=MIN((K2-K3)/(3*K5),(K3-K1)/(3*K5))]\nDPMO (defectos en K7, unidades en K8, oportunidades en K9): [=K7/(K8*K9)*1000000]\nNivel sigma con la convención de 1.5 (DPMO en K10): [=DISTR.NORM.ESTAND.INV(1-K10/1000000)+1.5]\n¿Proceso estable según la gráfica?: [sí / no]\nDecisión: [centrar / reducir variación / mejorar medición]"
+     ],
+     "clave": [
+      "Sin estabilidad no hay capacidad: primero la gráfica de control, después el Cpk.",
+      "Cp dice si el proceso cabe; Cpk dice si además está bien centrado.",
+      "Los 3.4 DPMO de seis sigma incluyen un desplazamiento convencional de 1.5σ: no es una ley ni una meta obligatoria."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En una hoja de cálculo, construye una gráfica X̄-R con 25 subgrupos de 5 mediciones de una característica real. Si no tienes datos del trabajo, mide 125 veces algo de tu entorno en 25 momentos distintos, por ejemplo el tiempo de una tarea que repites, y regístralo en orden. Calcula los límites con fórmulas, grafica, aplica tres reglas de detección e investiga las señales. Si el proceso es estable, calcula Cp, Cpk y Ppk contra una especificación real o acordada. Cierra con media página de interpretación.",
+    "entregable": "Un libro con pestañas de datos, cálculos, gráficas X̄ y R, capacidad y una interpretación escrita con tus recomendaciones.",
+    "criterios": "Revisa: usaste A2 = 0.577 y D4 = 2.114 para subgrupos de cinco y las fórmulas pueden rastrearse, revisaste la gráfica R antes que la de X̄, no calculaste capacidad con señales sin explicar, y tu interpretación distingue límites de control de especificaciones."
+   },
+   "lab": {
+    "t": "La inyectora que nadie deja en paz",
+    "obj": "Aplicar gráficas de control y capacidad en una celda de inyección de plásticos para decidir cuándo ajustar y qué reportar al cliente.",
+    "esc": "<b>Benjamín,</b> de 24 años, es técnico de procesos en una planta de inyección de plásticos de Apodaca que fabrica tapas para envases de productos de limpieza. El cliente exige que el peso de la tapa esté entre 23.4 y 24.6 g, con objetivo de 24.0 g, y pide un Cpk de al menos 1.33. Los operadores de los tres turnos mueven la presión de sostenimiento cada vez que una tapa sale pesada o ligera.",
+    "e": [
+     [
+      "Escena 1: En la bitácora de una semana hay 47 ajustes de presión, casi todos hechos tras una sola tapa alejada de 24.0 g, y ninguna tapa salió de especificación.",
+      "Consigna: explica a los operadores, con el experimento del embudo, qué efecto tienen esos ajustes y redacta una regla temporal de no ajuste."
+     ],
+     [
+      "Escena 2: Con los ajustes congelados, Benjamín toma 25 subgrupos de 5 tapas, uno por hora, y obtiene un gran promedio de 24.2 g y un rango promedio de 0.34 g.",
+      "Consigna: calcula los límites de las gráficas X̄ y R (A2 = 0.577, D3 = 0, D4 = 2.114) y escribe las fórmulas de Excel que usarías."
+     ],
+     [
+      "Escena 3: La gráfica R es estable; en la X̄, el subgrupo 18 queda arriba del límite superior justo después de cambiar a un lote de resina de otro proveedor, y el resto no muestra patrones.",
+      "Consigna: decide qué hacer con el subgrupo 18, cómo documentarlo y qué pedirías al área de compras."
+     ],
+     [
+      "Escena 4: Con la causa del subgrupo 18 documentada y corregida, el gran promedio y el rango promedio quedan prácticamente iguales (24.2 g y 0.34 g). Benjamín estima σ = R̄/2.326.",
+      "Consigna: calcula Cp y Cpk, interpreta si se cumple lo que pide el cliente y propone un ajuste único y planeado, explicando por qué es distinto de los 47 ajustes de la escena 1."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué efecto tienen los 47 ajustes de la escena 1?",
+      "Aumentan la variación, como la regla 2 del embudo",
+      "Reducen la variación, porque corrigen cada desviación",
+      "No tienen efecto, porque las tapas siguen dentro de especificación",
+      "Compensar cada resultado de un proceso estable agrega variación en lugar de quitarla. Que las tapas sigan dentro de especificación no prueba que los ajustes sean inocuos: el proceso es más disperso de lo que sería sin ellos."
+     ],
+     [
+      "¿Cuáles son los límites de control de la gráfica X̄ de la escena 2?",
+      "24.00 g y 24.40 g",
+      "23.40 g y 24.60 g",
+      "23.48 g y 24.92 g",
+      "24.2 ± 0.577 × 0.34 = 24.2 ± 0.20, es decir 24.00 y 24.40. Los valores de 23.4 y 24.6 son la especificación, no límites de control, y 23.48 a 24.92 resulta de usar por error D4 en lugar de A2."
+     ],
+     [
+      "Con σ ≈ 0.146 g, Cp ≈ 1.37 y Cpk ≈ 0.91, ¿qué conviene proponer?",
+      "Un solo ajuste planeado para centrar el peso en 24.0 g",
+      "Seguir ajustando tras cada tapa hasta que suba el Cpk",
+      "Pedir al cliente que acepte un Cpk de 0.91 como suficiente",
+      "El Cp muestra que la variación cabe; el problema es el centrado. Centrado en 24.0, el Cpk sería 0.6/(3 × 0.146) ≈ 1.37 y cumpliría. Ajustar tras cada tapa es sobreajuste, y pedir una excepción sin intentar centrar es renunciar a una mejora sencilla."
+     ]
+    ],
+    "pl": [
+     "Hoja de control y capacidad de inyección",
+     "Característica: peso de tapa · Especificación: [LIE] a [LSE] g · Objetivo: [ ]\nSubgrupos: [25] de [5] tapas cada [hora]\nGran promedio (J1): [=PROMEDIO(G2:G26)] · Rango promedio (J2): [=PROMEDIO(H2:H26)]\nLímites de X̄: [=J1+0.577*J2] y [=J1-0.577*J2] · Límite superior de R: [=2.114*J2]\nSeñales y causa documentada: [subgrupo · regla · causa · acción]\nσ = R̄/2.326: [=J2/2.326] · Cp: [ ] · Cpk: [ ]\nRegla de reacción para operadores: [ ]\nAjuste planeado: [qué · quién autoriza · cuándo] · Verificación posterior: [nuevos subgrupos]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un supervisor ve que el rendimiento del lunes fue el más bajo del mes, aunque está dentro de los límites de control y sin patrones. ¿Qué conviene hacer?",
+     "No buscar culpables y tratarlo como variación común",
+     "Pedir una explicación por escrito al turno del lunes",
+     "Ajustar la máquina para compensar el lunes bajo",
+     "Recalcular los límites con los datos de esa semana"
+    ],
+    [
+     "Una jefa de calidad mide la viscosidad de un solo lote de pintura al día. ¿Qué gráfica le corresponde?",
+     "I-MR",
+     "X̄-R con subgrupos de cinco",
+     "Gráfica p de proporción",
+     "Gráfica c de defectos"
+    ],
+    [
+     "En una gráfica I-MR la media es 50 y el rango móvil promedio es 3. ¿Cuál es el límite superior de individuales?",
+     "57.98",
+     "59.80",
+     "53.00",
+     "51.73"
+    ],
+    [
+     "Un call center revisa 100 llamadas al día y la proporción promedio con error es 0.05. ¿Cuál es el límite superior aproximado de su gráfica p?",
+     "11.5 %",
+     "6.5 %",
+     "15.0 %",
+     "8.0 %"
+    ],
+    [
+     "En una gráfica X̄ aparecen nueve puntos seguidos debajo de la línea central, todos dentro de los límites. ¿Qué indica?",
+     "Una señal de posible cambio en el nivel del proceso",
+     "Que no hay nada que revisar, porque ningún punto salió de los límites",
+     "Que conviene ensanchar los límites de control a cuatro sigmas",
+     "Que la línea central quedó mal calculada y debe borrarse"
+    ],
+    [
+     "Un operario ajusta la temperatura del horno cada vez que una pieza sale un poco alta, aunque el proceso es estable. ¿Qué logra?",
+     "Aumentar la variación del proceso",
+     "Reducir la variación a la mitad",
+     "Centrar el proceso de forma permanente",
+     "Subir el Cpk sin ningún costo adicional"
+    ],
+    [
+     "Una característica tiene LIE = 20, LSE = 26, media de 24 y σ = 0.5. ¿Cuál es su Cpk?",
+     "1.33",
+     "2.00",
+     "2.67",
+     "1.00"
+    ],
+    [
+     "Un área revisa 1 000 solicitudes con 5 oportunidades de error cada una y encuentra 25 errores. ¿Cuál es el DPMO?",
+     "5 000",
+     "25 000",
+     "1 000",
+     "500"
+    ],
+    [
+     "Una gerente presume un Cpk de 1.8 calculado con un mes en el que la gráfica mostró varias señales sin explicar. ¿Qué le dirías?",
+     "Que ese Cpk no predice nada mientras el proceso sea inestable",
+     "Que es excelente y puede comprometerlo ya con el cliente",
+     "Que conviene usar el Cp, que siempre es más confiable",
+     "Que basta restarle 1.5 para obtener el valor corregido"
+    ],
+    [
+     "Un director afirma: «Six Sigma significa que todos nuestros procesos deben llegar a 3.4 DPMO». ¿Qué respuesta es más precisa?",
+     "Supone un desplazamiento convencional de 1.5σ; la meta depende del costo y del riesgo",
+     "Es correcto: 3.4 DPMO es el requisito que fija ISO 9001:2026 para otorgar la certificación",
+     "Es correcto, pero sólo se exige en empresas manufactureras y en la industria automotriz",
+     "Es falso: seis sigma significa seis defectos por cada millón de unidades producidas en total"
+    ]
+   ]
+  }
+ ]
+}

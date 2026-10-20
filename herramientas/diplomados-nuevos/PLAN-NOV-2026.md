@@ -12,7 +12,7 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 
 | # | id | pref | Diplomado (nombre sugerido) | Precio | familia/área | Estado |
 |---|---|---|---|---|---|---|
-| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Pendiente |
+| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Listo en rama (2026-10-20) |
 | 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Pendiente |
 | 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Pendiente |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
@@ -90,3 +90,14 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
    `node herramientas/validar-diplomado.js <id>` → V3 a V9 sin fallas. Correr `node herramientas/auditoria.js`.
 8. Marcar el Estado como «Listo en rama (fecha)» en esta tabla, anotar al final los datos para revisión de experto,
    commit y `git push`.
+
+## d-calidad-lean: datos para revisión de experto
+- ISO 9001:2026 (6.ª ed., publicada el 16 sep 2026): confirmar contra el texto oficial los números de subcláusula citados (6.1.2/6.1.3 riesgos y oportunidades, 6.3 planificación de cambios, 9.2.2 objetivo de cada auditoría, redacción de 7.5 información documentada) — se confirmaron sólo con fuentes secundarias.
+- Plazo de transición 2015→2026 («unos tres años», sujeto al IAF y al organismo certificador) y si ya existe NMX-CC-9001-IMNC versión 2026 en el Catálogo Mexicano de Normas. Estado de actualización de IATF 16949.
+- ISO 19011:2026 (mayo 2026) y principios de auditoría mencionados (integridad, presentación imparcial, enfoque basado en evidencia).
+- Tabla de Prioridad de Acción AIAG-VDA (2019) usada en el ejemplo de AMEF del M8 (S10-O4-D2 = alta; S3-O6-D6 = baja; quiz: 9-4-3 alta, 4-6-7 media) contra el manual impreso.
+- Criterio de Cpk 1.33 / 1.67 (en PPAP el 1.67 suele pedirse como Ppk preliminar; depende del cliente). Criterios de %R&R de AIAG (<10 %, 10-30 %, >30 %) y el uso de 6σ.
+- Requisitos vigentes de ASQ, IASSC (cintas) y CQI/IRCA (cursos de auditor), citados sólo como ejemplo, sin afirmar acreditación.
+- M1 quiz 1 y lab M4: contenido neto declarado como requisito legal (posible NOM-030-SCFI-2006; confirmar vigencia).
+- Referencias: editorial y año de la edición en español de Shingo (*Una revolución en la producción: El sistema SMED*: Productivity Press o TGP Hoshin) y de Rother y Shook (*Observar para crear valor*, LEI, 1999); URL de la Ley de Infraestructura de la Calidad en diputados.gob.mx (LICal.pdf).
+- Convenciones: calibración como costo de evaluación (algunos autores la ponen en prevención); fórmulas de Excel en español con coma como separador (nota para punto y coma).

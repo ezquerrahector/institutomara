@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Lean II: flujo, tiempos y mapa de flujo de valor",
+   "r": "Calcularás el ritmo que pide tu cliente y el tiempo real que tarda tu proceso, dibujarás el mapa de flujo de valor actual y diseñarás un estado futuro con flujo continuo, sistema jalar y un plan de implementación realista.",
+   "lecciones": [
+    {
+     "t": "Takt time, tiempo de ciclo, lead time y ley de Little (Excel)",
+     "obj": "Calcular en Excel el takt time, compararlo con los tiempos de ciclo y estimar el lead time de un proceso con la ley de Little.",
+     "texto": [
+      "En el módulo anterior aprendiste a ver desperdicios; ahora vas a ponerles números. El <b>takt time</b> (de la palabra alemana <i>Takt</i>, compás) es el ritmo al que el cliente consume tu producto: <b>tiempo disponible ÷ demanda del cliente</b> en el mismo periodo. El tiempo disponible es el turno menos comida, descansos y juntas programadas; no restes paros ni fallas: son pérdidas por atacar, no tiempo que se regala. Si un turno tiene 450 minutos disponibles (27,000 segundos) y el cliente pide 900 piezas por turno, el takt es de 30 segundos: cada 30 segundos debe salir una pieza buena.",
+      "El <b>tiempo de ciclo</b> es otra cosa: cada cuánto sale una pieza de una operación, medido con cronómetro en el piso y no copiado del sistema. Al compararlo con el takt sabes dónde estás parado. Una estación con ciclo de 34 segundos frente a un takt de 30 no alcanza la demanda y obliga a tiempo extra; una con ciclo de 12 segundos tiene capacidad sobrante y, si nadie la regula, se pondrá a sobreproducir. La meta no es que todos corran lo más rápido posible, sino que cada operación trabaje cerca del takt sin rebasarlo.",
+      "El <b>lead time</b> o tiempo de entrega es lo que tarda una unidad en recorrer todo el proceso, desde que entra la materia prima o la solicitud hasta que llega al cliente. Suele ser mucho mayor que la suma de los tiempos de trabajo, porque la pieza pasa la mayor parte de su vida esperando en una fila. La <b>ley de Little</b>, demostrada por John Little en 1961, lo relaciona con el inventario: <b>inventario en proceso (WIP) = rendimiento × lead time</b>, o bien lead time = WIP ÷ rendimiento. Si en una oficina de crédito hay 600 expedientes en proceso y se resuelven 50 por día, cada uno tarda en promedio 12 días, aunque el trabajo real sobre él sume dos horas.",
+      "Esta ley te dice que, con el mismo rendimiento, la forma más directa de acortar el tiempo de entrega es reducir el inventario en proceso, no presionar a la gente. Tiene matices: funciona con promedios de un proceso relativamente estable y exige unidades coherentes (piezas entre piezas por día da días). En Excel bastan pocas celdas, como verás en la plantilla. Lo difícil no es la fórmula, sino medir bien: contar el inventario real y cronometrar varios ciclos, no uno solo."
+     ],
+     "comparar": [
+      "«Así no: “Calculé el takt con las 8 horas completas del turno y luego le resté los paros de la semana pasada para que salga más holgado.”»",
+      "«Así sí: “Resté comida y descansos, dejé los paros fuera para atacarlos aparte, cronometré diez ciclos por estación y comparé la más lenta con el takt.”»"
+     ],
+     "caso": "Caso ficticio: Itzel, de 31 años, es ingeniera industrial en una planta que arma calentadores de agua en Celaya. La planta trabaja dos turnos de 8 horas, cada uno con 30 minutos de comida y dos descansos de 10 minutos, y el cliente pide 430 calentadores por día. Itzel cronometró la estación de prueba de fugas: tarda 135 segundos por calentador. Entre estaciones contó 1,290 calentadores en proceso, y la planta entrega en promedio 430 por día, pero sólo con horas extra diarias. Su jefe quiere abrir un tercer turno; ella sospecha que el problema está en otro lado.",
+     "p": [
+      [
+       "¿Cuál es el takt de la planta de Itzel?",
+       "120 segundos por calentador",
+       "Unos 134 segundos por calentador",
+       "60 segundos, uno por cada turno",
+       "Tiempo disponible: (480 − 30 − 20) × 2 = 860 minutos, es decir, 51,600 segundos; 51,600 ÷ 430 = 120 s. Usar las 16 horas sin restar comida ni descansos da unos 134 s, un ritmo irreal. Y el takt no se vuelve a dividir entre turnos: ya incluye el tiempo de ambos."
+      ],
+      [
+       "¿Qué indica que la prueba de fugas tarde 135 segundos?",
+       "Que no alcanza el ritmo del cliente y es el cuello de botella",
+       "Que tiene capacidad sobrante y puede producir de más",
+       "Que va bien, porque el ciclo debe superar al takt",
+       "Con 135 s frente a un takt de 120 s, esa estación no puede sacar 430 calentadores al día: es el cuello de botella. Capacidad sobrante tendría una estación con ciclo menor al takt, y un ciclo mayor al takt nunca es la meta."
+      ],
+      [
+       "Según la ley de Little, ¿cuánto tarda un calentador en recorrer la planta y qué conviene antes del tercer turno?",
+       "Unos 3 días; atacar la prueba de fugas y bajar inventario",
+       "Unos 10 días; abrir el tercer turno cuanto antes para cumplir",
+       "Unos 3 días; subir el inventario para nunca quedarse cortos",
+       "Lead time = 1,290 ÷ 430 = 3 días. Antes de pagar un turno más conviene balancear la estación de fugas y reducir el inventario en proceso. Subir inventario alarga el lead time, y 10 días no sale de los datos."
+      ]
+     ],
+     "completar": [
+      "La ley de ___ dice que el inventario en proceso es igual al rendimiento multiplicado por el lead time.",
+      "Little"
+     ],
+     "relacionar": [
+      [
+       "Takt time",
+       "Tiempo disponible entre demanda del cliente"
+      ],
+      [
+       "Tiempo de ciclo",
+       "Cada cuánto sale una pieza de una operación"
+      ],
+      [
+       "Lead time",
+       "Desde que entra el material hasta que llega al cliente"
+      ],
+      [
+       "Ley de Little",
+       "Inventario en proceso entre rendimiento da el lead time"
+      ],
+      [
+       "Tiempo disponible",
+       "Turno menos comida, descansos y juntas programadas"
+      ]
+     ],
+     "refl": "Calcula los tiempos de un proceso que conozcas (en tu trabajo o en un negocio cercano). 1) Escribe el tiempo disponible de un día y explica qué restaste. 2) Anota la demanda diaria y calcula el takt en segundos. 3) Cronometra o estima con datos el tiempo de ciclo de 3 a 5 operaciones y compáralo con el takt. 4) Cuenta el inventario en proceso y calcula el lead time con la ley de Little. 5) Escribe qué operación atacarías primero y por qué.",
+     "modelo": "Modelo: «Proceso: surtido de pedidos en una papelería mayorista. Tiempo disponible: 9 h menos 1 h de comida = 480 min (28,800 s). Demanda: 160 pedidos por día; takt = 180 s. Ciclos medidos: captura 95 s, surtido 210 s, revisión 120 s, empaque 80 s. El surtido rebasa el takt y explica las horas extra. En proceso conté 400 pedidos; con 160 por día, el lead time es de 2.5 días. Atacaría primero el surtido y la fila de pedidos.» Es buena porque explica qué restó, usa unidades coherentes, compara cada ciclo con el takt y elige una prioridad con datos.",
+     "plantilla": [
+      "Calculadora de takt y lead time (Excel)",
+      "B1 Duración del turno (min): [ ]\nB2 Comida, descansos y juntas (min): [ ]\nB3 Turnos por día: [ ]\nB4 Tiempo disponible por día (s): [=(B1-B2)*B3*60]\nB5 Demanda diaria del cliente: [ ]\nB6 Takt (s): [=B4/B5]\nB7 Ciclo de la operación más lenta (s): [ ]\nB8 Diferencia ciclo menos takt (s): [=B7-B6] (si es positiva, no alcanzas)\nB9 Inventario en proceso (piezas): [ ]\nB10 Piezas buenas que salen por día: [ ]\nB11 Lead time (días): [=B9/B10]"
+     ],
+     "clave": [
+      "El takt es el ritmo del cliente y el tiempo de ciclo es el ritmo real de cada operación: compáralos.",
+      "El lead time casi siempre es espera; la ley de Little muestra que bajar el inventario lo acorta.",
+      "Mide en el piso con cronómetro y unidades coherentes; las fórmulas son la parte fácil."
+     ]
+    },
+    {
+     "t": "Cómo dibujar tu mapa de flujo de valor (VSM) actual",
+     "obj": "Dibujar a lápiz el mapa de flujo de valor actual de una familia de productos, con cajas de datos, inventarios y línea de tiempo.",
+     "texto": [
+      "El <b>mapa de flujo de valor</b> (VSM, por sus siglas en inglés) se difundió con el libro de Mike Rother y John Shook <i>Learning to See</i> (1998), publicado en español en 1999 como <i>Observar para crear valor</i>. A diferencia de un diagrama de flujo, el VSM muestra en una sola hoja el flujo de materiales y el de información de punta a punta: cómo llega el pedido del cliente, cómo se programa la producción, por dónde camina el material y cuánto espera en cada parada. Su propósito no es hacer un dibujo bonito, sino ver el sistema completo antes de mejorar pedazos sueltos.",
+      "Empieza por elegir una <b>familia de productos</b>: un grupo que pasa por pasos y equipos parecidos. Una matriz sencilla, con productos en las filas y procesos en las columnas, te ayuda a agruparlos. Luego camina el flujo tú mismo, con lápiz, cronómetro y una hoja grande; Rother y Shook recomiendan comenzar por embarques e ir hacia atrás, para seguir el camino de lo que el cliente jala. Debajo de cada proceso dibuja una <b>caja de datos</b>: tiempo de ciclo, tiempo de cambio de modelo, disponibilidad del equipo, número de personas, turnos y porcentaje de desperdicio o retrabajo.",
+      "Entre procesos dibuja triángulos de <b>inventario</b> con la cantidad que contaste y conviértela en días: inventario ÷ demanda diaria. Si entre pintura y ensamble hay 900 piezas y el cliente pide 300 por día, ahí esperan 3 días. Las flechas de empuje indican que un proceso produce según un programa y no según lo que el siguiente necesita. En la parte de arriba va el flujo de información: pedidos del cliente, pronósticos, el sistema de planeación y los programas que se entregan a cada área, a veces cambiados a mano por el supervisor.",
+      "Al pie del mapa, la <b>línea de tiempo</b> suma por un lado los días de espera (el lead time) y por otro los tiempos de proceso. La comparación suele impactar, porque el tiempo que agrega valor resulta una fracción pequeña del total. Para el porcentaje de valor agregado usa las mismas unidades: tiempo de proceso ÷ lead time × 100. Dos advertencias: dibuja lo que ves hoy, no lo que dice el procedimiento, y no te pierdas en la precisión; un mapa razonable hecho en dos días sirve más que uno perfecto que tarda un mes."
+     ],
+     "comparar": [
+      "«Así no: “Sacamos los tiempos estándar del sistema y dibujamos el mapa en la sala de juntas; no hizo falta bajar a la planta.”»",
+      "«Así sí: “Caminamos el flujo desde embarques con cronómetro, contamos cada inventario y anotamos que el supervisor cambia el programa a mano dos veces por turno.”»"
+     ],
+     "caso": "Caso ficticio: Bernardo, de 46 años, es jefe de producción en una fábrica de colchones en Aguascalientes. Mapeó la familia de colchones matrimoniales de resortes, con demanda de 120 por día. Contó 360 juegos de tela cortada antes del acolchado, 240 colchones armados antes del cierre y 600 terminados en almacén. Los tiempos de proceso suman 30 minutos: corte 6, acolchado 12, cierre 9 y empaque 3. Su gerente le pide repetir el ejercicio con los 40 modelos al mismo tiempo, bases de madera incluidas, «para no dejar nada fuera».",
+     "p": [
+      [
+       "¿Qué le conviene responder Bernardo a su gerente?",
+       "Empezar con una familia de colchones que comparten pasos y equipos",
+       "Mapear los 40 modelos y las bases en un mismo mapa grande",
+       "Mapear sólo la operación más lenta y dejar fuera el resto",
+       "El VSM se hace por familia de productos para que el mapa sea legible y accionable; después se mapean otras familias. Un mapa con 40 modelos y procesos distintos se vuelve ilegible, y mapear una sola operación pierde la visión de punta a punta."
+      ],
+      [
+       "¿Cuál es el lead time de esa familia?",
+       "Unos 10 días de inventario en espera",
+       "Unos 30 minutos de proceso en total",
+       "Unos 5 días, sólo contando el almacén",
+       "360 ÷ 120 = 3 días, 240 ÷ 120 = 2 días y 600 ÷ 120 = 5 días: 10 días en total. Los 30 minutos son el tiempo de proceso, no el lead time, y el almacén es sólo una de las tres esperas."
+      ],
+      [
+       "Si cuentas jornadas de 8 horas, ¿qué porcentaje del lead time agrega valor?",
+       "Menos del 1 %: 30 de 4,800 min",
+       "Cerca del 6 %: 30 de 480 minutos",
+       "No se calcula: son unidades distintas",
+       "10 días × 480 min = 4,800 min; 30 ÷ 4,800 = 0.625 %. Dividir entre 480 minutos olvida que son diez días, y las unidades distintas se resuelven convirtiéndolas, no renunciando al cálculo."
+      ]
+     ],
+     "completar": [
+      "Debajo de cada proceso del VSM se dibuja una caja de ___ con ciclo, cambio de modelo, personas y turnos.",
+      "datos"
+     ],
+     "relacionar": [
+      [
+       "Triángulo de inventario",
+       "Cantidad que espera entre dos procesos"
+      ],
+      [
+       "Flecha de empuje",
+       "Producir según programa y no según el siguiente"
+      ],
+      [
+       "Caja de datos",
+       "Ciclo, cambio de modelo, personas y turnos"
+      ],
+      [
+       "Línea de tiempo",
+       "Días de espera frente a tiempo de proceso"
+      ],
+      [
+       "Familia de productos",
+       "Productos que pasan por pasos y equipos similares"
+      ]
+     ],
+     "refl": "Dibuja a lápiz el VSM actual de un proceso real. 1) Elige una familia de productos o servicios y justifica por qué comparten pasos. 2) Camina el flujo desde la entrega hacia atrás y anota de 4 a 6 procesos con su caja de datos. 3) Cuenta el inventario entre procesos y conviértelo en días. 4) Dibuja el flujo de información: pedidos, programa y cambios a mano. 5) Calcula lead time, tiempo de proceso y porcentaje de valor agregado, y anota tres cosas que te sorprendieron.",
+     "modelo": "Modelo: «Familia: credenciales de empleado que imprime una agencia de identificación. Procesos: captura (ciclo 3 min, 1 persona), diseño (5 min, cambio de plantilla 10 min), impresión (1 min, falla 1 de cada 50), enmicado (2 min) y entrega. Inventarios: 180 solicitudes antes de diseño y 90 antes de enmicado; con 90 por día, son 3 días de espera. Información: los pedidos llegan por correo y el jefe reordena la lista cada mañana. Tiempo de proceso: 11 min. Sorpresa: nadie sabía cuánto esperaban.» Es buena porque elige una familia, usa datos medidos, convierte inventario en días y dibuja la información.",
+     "plantilla": [
+      "Hoja de campo para el VSM actual",
+      "Familia elegida: [ ]   Demanda diaria: [ ]\nProceso: [nombre] | Ciclo: [ ] s | Cambio: [ ] min | Disponibilidad: [ ] % | Personas: [ ] | Turnos: [ ] | Retrabajo: [ ] %\nInventario después del proceso: [piezas] → días: [=piezas/demanda diaria]\n(repite por cada proceso)\nFlujo de información: [cómo llega el pedido, quién programa, cambios a mano]\nLead time (días): [=SUMA(días de inventario)]\nTiempo de proceso: [=SUMA(tiempos de proceso)]\n% valor agregado: [=tiempo de proceso/lead time*100, ambos en minutos]"
+     ],
+     "clave": [
+      "El VSM muestra en una hoja el flujo de materiales y el de información de una familia de productos.",
+      "Se dibuja caminando el piso, desde embarques hacia atrás, con datos medidos y no copiados.",
+      "La línea de tiempo revela cuánto del lead time es espera: ahí está la mayor oportunidad."
+     ]
+    },
+    {
+     "t": "Flujo continuo, sistema jalar y kanban",
+     "obj": "Decidir dónde conviene flujo continuo, dónde un supermercado con kanban y dónde una fila FIFO, y calcular cuántas tarjetas kanban necesitas.",
+     "texto": [
+      "El <b>flujo continuo</b> significa que una pieza pasa de un paso al siguiente sin esperar a que se complete un lote. Míralo con números: tres estaciones de 1 minuto cada una y un lote de 10 piezas que sólo avanza completo. Con lotes, la primera pieza sale terminada en el minuto 21 y el lote completo en el 30. Con flujo de una pieza, la primera sale en el minuto 3 y la décima en el 12. Además, si la estación 2 empieza a fallar, lo descubres en la segunda pieza y no en la décima. Exige estaciones cercanas, ciclos parecidos y equipos confiables; por eso suele empezar en una celda.",
+      "Donde no puedes fluir (un horno por cargas, una máquina compartida, un proveedor lejano), la alternativa es <b>jalar</b>: el proceso de arriba produce sólo lo que el de abajo consumió. Taiichi Ohno contó que la idea se inspiró en los supermercados estadounidenses, donde el estante se rellena conforme el cliente se lleva la mercancía. En la planta, el <b>supermercado</b> es un inventario controlado con lugar fijo y cantidad máxima, y el <b>kanban</b> es la señal (tarjeta, contenedor vacío o aviso electrónico) que autoriza retirar o producir. Una <b>fila FIFO</b> (primero en entrar, primero en salir) con tope máximo también frena la sobreproducción: si se llena, el proceso anterior se detiene.",
+      "Para estimar las tarjetas se usa una fórmula común: <b>kanbans = demanda diaria × tiempo de reposición en días × (1 + factor de seguridad) ÷ piezas por contenedor</b>, redondeando hacia arriba. Con demanda de 400 piezas, reposición de medio día, 10 % de seguridad y contenedores de 20 piezas: 400 × 0.5 × 1.1 ÷ 20 = 11 tarjetas. Las reglas son pocas y estrictas: nada se produce ni se mueve sin señal, nada defectuoso pasa al siguiente proceso y el número de tarjetas se reduce poco a poco para que salgan a la luz los problemas que el inventario tapaba.",
+      "Kanban no sirve para todo. Con demanda muy irregular, muy baja o productos hechos a la medida, es mejor fabricar bajo pedido y controlar la fila. Tampoco funciona si los cambios de modelo tardan horas, porque obligan a lotes enormes; por eso SMED, que verás en el siguiente módulo, suele ir de la mano. El error más común es imprimir tarjetas y seguir programando desde el sistema: si conviven dos señales, gana la que exige el jefe."
+     ],
+     "comparar": [
+      "«Así no: “Pusimos kanban en las 300 claves del almacén, pero seguimos mandando el programa semanal; las tarjetas se quedan en un cajón.”»",
+      "«Así sí: “Empezamos con las 12 claves de mayor consumo, les quitamos el programa y la única señal para producirlas es la tarjeta que regresa.”»"
+     ],
+     "caso": "Caso ficticio: Lorena, de 29 años, es planeadora en una fábrica de dulces típicos en Puebla. Produce según un pronóstico mensual y el resultado es contradictorio: hay camotes a punto de caducar en el almacén y faltan tortitas de Santa Clara para surtir a las tiendas. Las tortitas se venden parejo, unas 300 cajas por día; reponerlas toma 1 día y caben 30 cajas en cada charola. El dueño quiere kanban para las 85 presentaciones, incluidas las de Día de Muertos que sólo se venden en octubre y noviembre.",
+     "p": [
+      [
+       "Con 20 % de seguridad, ¿cuántas tarjetas necesita para las tortitas?",
+       "12 tarjetas, con el 20 % de seguridad",
+       "10 tarjetas, porque la seguridad sobra",
+       "360 tarjetas, una por cada caja",
+       "300 × 1 × 1.2 ÷ 30 = 12 tarjetas. Sin seguridad salen 10, pero cualquier variación deja a las tiendas sin producto; 360 son cajas, no tarjetas, porque cada tarjeta representa una charola de 30."
+      ],
+      [
+       "¿Qué conviene hacer con los dulces de Día de Muertos?",
+       "Producirlos bajo pedido y pronóstico, sin kanban",
+       "Incluirlos en el kanban con más tarjetas de seguridad",
+       "Fabricar en septiembre el lote de toda la temporada",
+       "Su demanda es estacional e irregular: un kanban con tarjetas fijas los haría sobrar o faltar. Inflar la seguridad llena el almacén, y un solo lote enorme repite el problema de caducidad de los camotes."
+      ],
+      [
+       "¿Qué debe hacer con el programa mensual para las claves con kanban?",
+       "Quitarles el programa y dejar la tarjeta como única señal para producir",
+       "Mantener el programa y usar la tarjeta como respaldo",
+       "Imprimir el programa en tarjetas para que se vea igual",
+       "Si conviven el programa y la tarjeta, la gente sigue al programa y el kanban muere. Convertir el programa en tarjetas sólo cambia el papel: sigue siendo empujar."
+      ]
+     ],
+     "completar": [
+      "Con el sistema para ___, el proceso de arriba produce sólo lo que el de abajo consumió.",
+      "jalar"
+     ],
+     "relacionar": [
+      [
+       "Flujo continuo",
+       "Una pieza pasa al siguiente paso sin esperar lote"
+      ],
+      [
+       "Supermercado",
+       "Inventario con lugar fijo y cantidad máxima"
+      ],
+      [
+       "Kanban",
+       "Señal que autoriza retirar o producir"
+      ],
+      [
+       "Fila FIFO",
+       "Primero en entrar, primero en salir, con tope"
+      ],
+      [
+       "Producción bajo pedido",
+       "Artículos de demanda irregular o hechos a la medida"
+      ]
+     ],
+     "refl": "Diseña el sistema jalar de un proceso que conozcas. 1) Marca dónde podría haber flujo continuo y qué lo impide hoy. 2) Elige dónde pondrías un supermercado y dónde una fila FIFO, y explica por qué. 3) Calcula con la fórmula el número de kanbans de dos artículos de alto consumo, mostrando tus datos. 4) Escribe las reglas de tu kanban en cinco líneas y qué señal anterior vas a eliminar. 5) Anota qué artículos dejarías fuera del kanban y cómo los controlarías.",
+     "modelo": "Modelo: «En el taller de tapicería, corte y costura pueden formar una celda; hoy los separa un pasillo. Entre costura y armado pondría una fila FIFO de máximo 15 fundas. Las espumas vienen de un proveedor que entrega cada 2 días: supermercado. Espuma A: 60 piezas por día × 2 días × 1.15 ÷ 10 por paquete = 13.8, redondeo a 14 tarjetas. Regla: sin tarjeta no se pide espuma; elimino el pedido semanal fijo. Los muebles a la medida quedan bajo pedido.» Es buena porque distingue flujo, FIFO y supermercado, calcula bien, redondea hacia arriba y elimina la señal duplicada.",
+     "plantilla": [
+      "Cálculo de kanban (Excel)",
+      "Artículo: [ ]\nB1 Demanda diaria (piezas): [ ]\nB2 Tiempo de reposición (días): [ ]\nB3 Factor de seguridad (por ejemplo, 0.1): [ ]\nB4 Piezas por contenedor: [ ]\nB5 Número de kanbans: [=REDONDEAR.MAS(B1*B2*(1+B3)/B4,0)] (si tu Excel lo pide, cambia la coma por punto y coma)\nB6 Inventario máximo (piezas): [=B5*B4]\nSeñal anterior que elimino: [ ]\nResponsable de revisar el número de tarjetas cada mes: [ ]"
+     ],
+     "clave": [
+      "El flujo continuo acorta el lead time y descubre los defectos desde la primera pieza.",
+      "Donde no puedes fluir, jala: supermercado con kanban o fila FIFO con tope.",
+      "El kanban fracasa si convive con el programa de siempre o si los cambios de modelo tardan horas."
+     ]
+    },
+    {
+     "t": "Diseñar el estado futuro y su plan de implementación",
+     "obj": "Diseñar el mapa de flujo de valor futuro de una familia de productos con las ocho preguntas de Rother y Shook y convertirlo en un plan por bucles con metas y responsables.",
+     "texto": [
+      "El mapa actual sólo vale si lleva a un <b>estado futuro</b>: cómo debería fluir esa familia en unos meses con recursos que razonablemente puedes conseguir. Rother y Shook proponen ocho preguntas en orden: ¿cuál es el takt?; ¿producirás para un supermercado de producto terminado o directo a embarque?; ¿dónde puedes tener flujo continuo?; ¿dónde necesitarás supermercados con sistema jalar?; ¿en qué único punto, el <b>proceso marcapasos</b>, programarás la producción?; ¿cómo nivelarás la mezcla de productos en ese punto?; ¿qué incremento de trabajo liberarás de forma constante?; ¿qué mejoras de proceso harán falta para que todo eso funcione?",
+      "Dos ideas merecen detalle. Programar en un solo punto significa que el resto se mueve por kanban o filas FIFO, y no por un programa para cada área que nadie puede cumplir a la vez. <b>Nivelar</b> (heijunka) es alternar modelos en lugar de hacer toda una semana del A y luego toda del B, lo que suaviza la demanda que reciben los procesos de arriba. El incremento de trabajo, llamado <b>pitch</b>, suele ser takt × piezas por contenedor: con un takt de 45 segundos y cajas de 20 piezas, cada 15 minutos sale una caja y cada 15 minutos sabes si vas a tiempo, en lugar de enterarte al final del turno.",
+      "En el mapa futuro dibuja <b>estallidos kaizen</b> donde haga falta una mejora: bajar un cambio de modelo, mejorar la disponibilidad de un equipo, juntar dos operaciones. Después divide el mapa en <b>bucles</b>: el del marcapasos, que abarca el flujo desde ese proceso hasta el cliente, y los bucles de los procesos de arriba. El plan se arma por bucles, casi siempre empezando por el del marcapasos, y cada estallido se vuelve un renglón con meta medible, responsable, fecha y forma de verificarlo. Un plan creíble es corto: pocos proyectos bien terminados valen más que veinte abiertos al mismo tiempo.",
+      "Un estado futuro libera tiempo de personas y de máquinas. Decide desde el principio, y dilo en voz alta, que ese tiempo se usará para absorber más demanda, traer trabajo que hoy se hace fuera, capacitar o atender mejoras, y no para despedir: una idea que le cuesta el empleo a un compañero es la última idea que el equipo comparte. Recuerda lo que viste en el módulo 2 con Shah y Ward (2003): la gestión de personas forma parte del paquete de prácticas que se asocia con mejor desempeño."
+     ],
+     "comparar": [
+      "«Así no: “Este es el mapa futuro: 23 estallidos kaizen, todos para este trimestre, y el ahorro principal será eliminar ocho plazas.”»",
+      "«Así sí: “Empezamos por el bucle del marcapasos con tres mejoras, cada una con dueño y fecha; quienes se liberen pasan al proyecto de traer el pintado a la planta.”»"
+     ],
+     "caso": "Caso ficticio: Cuauhtémoc, de 53 años, es gerente de una planta de piezas troqueladas en San Luis Potosí. Su mapa actual muestra 18 días de lead time contra 4 minutos de proceso; el cambio de troquel tarda dos horas, así que se corren lotes de una semana, y cada área recibe su propio programa del sistema. El cliente pide 2,160 piezas por día y hay 54,000 segundos disponibles; el contenedor lleva 36 piezas. El director propone comprar una prensa nueva y pregunta cuántas personas van a «sobrar» con el nuevo flujo.",
+     "p": [
+      [
+       "¿Cuál es el pitch con contenedores de 36 piezas?",
+       "15 minutos: 25 s × 36 piezas",
+       "25 segundos, igual que el takt",
+       "Unos 36 minutos, uno por cada pieza",
+       "Takt = 54,000 ÷ 2,160 = 25 s; pitch = 25 × 36 = 900 s = 15 minutos. El takt es el ritmo por pieza, no por contenedor, y 36 minutos confunde piezas con minutos."
+      ],
+      [
+       "Antes de comprar la prensa, ¿qué estallido kaizen conviene marcar?",
+       "Reducir el cambio de troquel de dos horas para poder hacer lotes pequeños",
+       "Agrandar los lotes para que la prensa cambie menos veces",
+       "Hacer un programa más detallado para cada una de las áreas",
+       "El cambio de dos horas obliga a lotes de una semana y explica buena parte del lead time; reducirlo permite lotes pequeños sin comprar equipo. Lotes más grandes empeoran el inventario, y más programas por área contradicen la idea de programar en un solo punto."
+      ],
+      [
+       "¿Qué debe responder sobre las personas que «sobren»?",
+       "Que se reasignarán a demanda nueva, mejoras o capacitación",
+       "Que se decidirá después de ver cuánto ahorra cada mejora",
+       "Que el ahorro de plazas es la meta que justifica el proyecto",
+       "Si la gente teme perder el empleo, deja de proponer mejoras y el sistema se cae. Postergar la respuesta alimenta ese miedo, y poner los despidos como meta convierte Lean en un recorte."
+      ]
+     ],
+     "completar": [
+      "En el estado futuro se programa la producción en un solo punto, llamado proceso ___.",
+      "marcapasos"
+     ],
+     "refl": "Diseña el estado futuro del VSM que dibujaste en la lección 2. 1) Responde por escrito las ocho preguntas de Rother y Shook con tus datos. 2) Dibuja el mapa futuro con flujo continuo, supermercados o filas FIFO y el proceso marcapasos. 3) Marca de 3 a 5 estallidos kaizen. 4) Divide el mapa en bucles y escribe un plan de seis meses con meta, responsable, fecha y verificación por mejora. 5) Escribe en dos líneas qué harás con el tiempo de personas que se libere.",
+     "modelo": "Modelo: «Takt: 60 s. Embarque directo, sin supermercado de terminado. Flujo continuo en armado y prueba (celda de 3 estaciones); supermercado de tarjetas electrónicas, que vienen de una línea compartida. Marcapasos: la celda; nivelo alternando modelos cada hora. Pitch: 60 s × 10 piezas = 10 min. Estallidos: bajar el cambio de la línea compartida de 50 a 15 min y eliminar los falsos rechazos de la prueba. Bucle 1 (meses 1 a 3): la celda, a cargo de la supervisora del turno. Personas liberadas: pasan a reparar garantías, que hoy se hacen fuera.» Es buena porque responde las preguntas con números, prioriza un bucle y protege a la gente.",
+     "plantilla": [
+      "Plan del estado futuro por bucles",
+      "Takt: [ ] s   Pitch (min): [=takt*piezas por contenedor/60]\nMarcapasos: [ ]   Cómo nivelo la mezcla: [ ]\nFlujo continuo en: [ ]   Supermercados o filas FIFO en: [ ]\nBucle | Estallido kaizen | Meta medible | Responsable | Fecha | Cómo lo verifico\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nUso del tiempo liberado (sin despidos): [ ]\nFecha de la revisión mensual: [ ]"
+     ],
+     "clave": [
+      "El estado futuro se diseña con ocho preguntas, empezando por el takt.",
+      "Se programa en un solo punto, el marcapasos, y se nivela la mezcla con un pitch constante.",
+      "El plan va por bucles, con pocas mejoras con dueño y fecha, y sin usar Lean para despedir."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige un proceso real (de tu trabajo o de un negocio que puedas observar) y en 90 minutos dibuja su VSM actual y su estado futuro. Usa una hoja de cálculo para el tiempo disponible, el takt, los días de inventario, el lead time con la ley de Little, el tiempo de proceso y el porcentaje de valor agregado, y repite los cálculos para el estado futuro. Termina con un plan de implementación por bucles.",
+    "entregable": "Dos mapas a lápiz (actual y futuro) fotografiados, una hoja de cálculo con las fórmulas visibles y un plan de seis meses con 3 a 5 mejoras, cada una con meta, responsable y fecha.",
+    "criterios": "Revisa: el takt usa el tiempo disponible real y la demanda del cliente, los inventarios se contaron y se convirtieron en días, el estado futuro responde las ocho preguntas, y el plan no depende de despedir personas ni de comprar equipo antes de mejorar lo que ya existe."
+   },
+   "lab": {
+    "t": "La línea de soportes de asiento",
+    "obj": "Aplicar takt, ley de Little, VSM y diseño del estado futuro en una planta de autopartes que no cumple a su cliente.",
+    "esc": "<b>Wendy,</b> de 37 años, es ingeniera de manufactura en una planta de autopartes de Ramos Arizpe que estampa y suelda soportes metálicos de asiento para un cliente armador. El cliente pide 1,840 soportes por día de cuatro números de parte; la planta trabaja dos turnos con 460 minutos disponibles cada uno y, aun así, paga fletes urgentes casi cada semana. El director le pide un diagnóstico y un plan en un mes.",
+    "e": [
+     [
+      "Escena 1: Wendy cronometra diez ciclos por operación: estampado 18 s, soldadura robotizada 28 s, inspección 34 s y empaque 22 s.",
+      "Consigna: calcula el takt mostrando la operación, compáralo con cada ciclo y escribe qué operación explica los fletes urgentes y qué datos necesitarías para confirmarlo."
+     ],
+     [
+      "Escena 2: Entre estampado y soldadura cuenta 4,600 soportes; entre inspección y empaque, 1,380; en el almacén de terminado, 5,520. Aun así, casi cada semana falta algún número de parte para embarcar.",
+      "Consigna: convierte cada inventario en días, calcula el lead time del flujo y explica por qué puede haber tanto terminado y, al mismo tiempo, faltantes."
+     ],
+     [
+      "Escena 3: El estampado cambia de troquel en 90 minutos, así que corre lotes de una semana de cada número de parte.",
+      "Consigna: dibuja el estado futuro: dónde pondrías un supermercado, qué proceso sería el marcapasos, cómo nivelarías la mezcla y qué estallidos kaizen marcarías."
+     ],
+     [
+      "Escena 4: El director pregunta: «Con este plan, ¿a cuántos operadores podemos dar de baja?».",
+      "Consigna: redacta tu respuesta en 5 a 8 líneas y el plan por bucles de seis meses, con metas, responsables, fechas y el destino del tiempo que se libere."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué operación limita el cumplimiento?",
+      "Inspección, con 34 s frente a un takt de 30 s",
+      "Estampado, porque es la que hace los lotes más grandes",
+      "Soldadura, porque el robot tiene el ciclo más complejo",
+      "Takt = 920 × 60 ÷ 1,840 = 30 s. Sólo la inspección rebasa ese ritmo. El estampado, con 18 s, tiene capacidad de sobra: su problema son los lotes y la mezcla, no la velocidad; la soldadura, con 28 s, cumple aunque con poco margen."
+     ],
+     [
+      "¿Cuál es el lead time aproximado del flujo mapeado?",
+      "Unos 6.25 días de inventario en espera",
+      "Unos 102 segundos, la suma de los ciclos",
+      "Unos 3 días, lo que hay en el terminado",
+      "4,600 ÷ 1,840 = 2.5 días; 1,380 ÷ 1,840 = 0.75 días; 5,520 ÷ 1,840 = 3 días: 6.25 días. Los 102 segundos son el tiempo de proceso, y el terminado es sólo una de las esperas."
+     ],
+     [
+      "¿Dónde conviene ubicar el proceso marcapasos?",
+      "En el tramo continuo de soldadura a empaque, después de un supermercado",
+      "En estampado, para que empuje a todos los procesos de abajo",
+      "En el almacén de terminado, programando sólo los embarques",
+      "El marcapasos suele ser el último proceso con flujo continuo antes del cliente; el estampado, que trabaja por lotes, debe surtir un supermercado y reponer lo que se jala. Un almacén no es un proceso que pueda marcar el ritmo."
+     ]
+    ],
+    "pl": [
+     "Diagnóstico y plan de una línea que no cumple",
+     "Takt: [tiempo disponible en s] ÷ [demanda diaria] = [ ] s\nOperación | Ciclo (s) | ¿Alcanza el takt?\n[ ] | [ ] | [ ]\nInventario | Piezas | Días [=piezas/demanda diaria]\n[ ] | [ ] | [ ]\nLead time total: [ ] días   Tiempo de proceso: [ ] s\nEstado futuro: supermercado en [ ], marcapasos en [ ], nivelación [ ]\nEstallidos kaizen: [ ]\nDestino del tiempo liberado: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "En un hospital, admisión atiende 96 ingresos programados en un turno con 480 minutos disponibles. ¿Cuál es el takt?",
+     "5 minutos por ingreso",
+     "Unos 0.2 minutos por ingreso",
+     "Lo que tarde la recepcionista más lenta",
+     "Depende de cuánto dure cada ingreso"
+    ],
+    [
+     "Zoila tiene 1,500 piezas en proceso y su línea entrega 300 piezas buenas por día. Si baja el inventario en proceso a 600 sin cambiar el rendimiento, ¿qué pasa con el lead time?",
+     "Baja de 5 a 2 días",
+     "Se queda igual, porque el ritmo no cambió",
+     "Sube, porque habrá menos piezas listas",
+     "Baja a la mitad, de 5 a 2.5 días"
+    ],
+    [
+     "Mauricio quiere calcular el takt y propone restar del turno los 40 minutos de paros por fallas de la semana pasada. ¿Qué le dirías?",
+     "Que no los reste: las fallas son pérdidas que hay que atacar aparte",
+     "Que los reste, porque así el takt refleja la realidad",
+     "Que reste el doble, para tener un margen de seguridad",
+     "Que use mejor el ciclo de la máquina más lenta como takt"
+    ],
+    [
+     "Una estación tiene un ciclo de 15 s, el takt es de 40 s y nadie la regula. ¿Qué riesgo es más probable?",
+     "Que sobreproduzca y acumule inventario",
+     "Que se convierta en el cuello de botella",
+     "Que no alcance la demanda del cliente",
+     "Que su tiempo de cambio se alargue"
+    ],
+    [
+     "Daniela va a dibujar el VSM de una planta que fabrica 60 productos distintos. ¿Por dónde empieza?",
+     "Agrupando una familia con pasos similares",
+     "Mapeando los 60 productos en un solo plano",
+     "Copiando los tiempos estándar del sistema",
+     "Dibujando primero el estado futuro ideal"
+    ],
+    [
+     "En un VSM, entre pintura y ensamble hay 2,000 piezas y la demanda es de 400 por día. ¿Qué anotas en la línea de tiempo para esa espera?",
+     "5 días de espera en ese inventario",
+     "400 piezas por día de demanda",
+     "0.2 días de espera",
+     "8 horas, un turno de trabajo"
+    ],
+    [
+     "Gilberto tiene 3 pasos de 2 minutos y un lote de 5 piezas que avanza completo. ¿Cuándo sale la primera pieza terminada con lotes y con flujo de una pieza?",
+     "A los 22 min con lotes y a los 6 min con flujo",
+     "A los 30 min con lotes y a los 10 min con flujo",
+     "A los 6 min en ambos casos, porque el trabajo es igual",
+     "A los 10 min con lotes y a los 2 min con flujo"
+    ],
+    [
+     "Rigoberto calcula kanban: demanda de 250 piezas por día, reposición de 2 días, 20 % de seguridad y contenedores de 25 piezas. ¿Cuántas tarjetas necesita?",
+     "24 tarjetas",
+     "20 tarjetas",
+     "12 tarjetas",
+     "30 tarjetas"
+    ],
+    [
+     "Una fábrica de muebles a la medida casi nunca repite un diseño. ¿Qué conviene para controlar su flujo?",
+     "Producir bajo pedido con filas FIFO con tope",
+     "Un supermercado con kanban para cada diseño que se venda",
+     "Producir por pronóstico en lotes grandes para ahorrar cambios",
+     "Un kanban electrónico con muchas tarjetas de seguridad"
+    ],
+    [
+     "Al diseñar el estado futuro, un director pide un programa distinto para cada una de las seis áreas. ¿Qué propones?",
+     "Programar sólo el marcapasos y jalar el resto",
+     "Programar cada área con más detalle y supervisión",
+     "Programar sólo el área más lenta y empujar el resto",
+     "Quitar todo programa y dejar que cada área decida"
+    ]
+   ]
+  },
+  {
+   "t": "Kaizen y solución de problemas en piso",
+   "r": "Organizarás mejoras diarias y eventos kaizen con PHVA, reducirás tiempos de cambio con SMED, diseñarás dispositivos poka-yoke y cerrarás problemas y quejas con Ishikawa, cinco porqués verificados, A3 y 8D.",
+   "lecciones": [
+    {
+     "t": "Kaizen diario y eventos kaizen: cómo organizarlos con PHVA",
+     "obj": "Planear un evento kaizen de cinco días con PHVA y un sistema de mejora diaria que responda rápido a las ideas del personal.",
+     "texto": [
+      "<b>Kaizen</b> es una palabra japonesa que se traduce como mejora y, en gestión, designa la mejora continua en pasos pequeños hecha por la gente que conoce el trabajo. Tiene dos formas que se complementan. El <b>kaizen diario</b> son las mejoras pequeñas que propone cualquier persona: un soporte para la herramienta, una etiqueta más clara, un paso que sobraba. El <b>evento kaizen</b> (también llamado taller kaizen) es un esfuerzo concentrado de 3 a 5 días en que un equipo pequeño y multifuncional se dedica de tiempo completo a mejorar un proceso acotado.",
+      "Un evento funciona si se prepara bien, y eso es la fase <b>Planear</b> del PHVA que viste en el módulo 1. Con semanas de anticipación se define el alcance (dónde empieza y dónde termina el proceso), una meta medible, el equipo, con personas del área y no sólo ingenieros, los datos del estado actual y lo que hará falta tener a mano, desde herramientas hasta el apoyo de mantenimiento. Un acta de una hoja evita que el evento se convierta en una lista de deseos.",
+      "Durante la semana, el <b>Hacer</b> sigue un ritmo típico: el primer día se capacita al equipo y se observa el gemba; el segundo se analizan desperdicios y causas; el tercero y el cuarto se prueban cambios reales en el piso, se miden y se ajustan; el último se estandariza y se presenta a la dirección. <b>Verificar</b> es medir otra vez con el mismo método del estado actual, no confiar en la impresión de que «ya quedó». <b>Actuar</b> convierte lo que funcionó en trabajo estandarizado y deja una lista de pendientes con responsable y fecha que se revisa, por ejemplo, a los 30 días.",
+      "El riesgo más conocido de los eventos es que el proceso regrese a como estaba en cuanto el equipo vuelve a sus labores; por eso el seguimiento y el kaizen diario importan más que la semana espectacular. Para la mejora diaria basta un tablero visible donde cualquiera anote un problema o una idea, una revisión breve en la junta de arranque y una regla de respuesta rápida: toda idea recibe contestación en pocos días, aunque sea para explicar por qué no se hará. Un reconocimiento sincero y oportuno suele animar más que un premio que llega meses después, y nadie debe perder su empleo por una mejora que propuso."
+     ],
+     "comparar": [
+      "«Así no: “El lunes empieza el evento kaizen en costura; todavía no tenemos meta, pero ya aparté la sala y pedí la comida.”»",
+      "«Así sí: “Meta: bajar de 2 días a medio día el tiempo en proceso de bolsas traseras; equipo de siete con cuatro operarias; estado actual medido; pendientes revisados a los 30 días.”»"
+     ],
+     "caso": "Caso ficticio: Karla, de 35 años, es supervisora de costura en una maquila de pantalones de mezclilla en Tehuacán. El gerente le pide organizar un evento kaizen la próxima semana, en plena temporada alta, para «sacar más pantalones», sin un área ni una meta definidas. En el tablero de ideas de su área hay 40 propuestas de las operarias que nadie ha contestado en dos meses, y varias ya dejaron de anotar. Karla quiere cumplirle al gerente sin perder la confianza de su equipo.",
+     "p": [
+      [
+       "¿Qué debe hacer Karla primero con el evento que le pidieron?",
+       "Definir alcance, meta y datos antes de fijar fecha",
+       "Hacerlo la próxima semana aunque falten la meta y los datos",
+       "Cambiarlo por una plática general de kaizen a toda la planta",
+       "Sin alcance, meta medible ni estado actual, el evento no podrá demostrar nada y se volverá una lista de deseos. Hacerlo así quema la credibilidad del método, y una plática general no mejora ningún proceso."
+      ],
+      [
+       "¿Qué conviene hacer con las 40 ideas sin respuesta?",
+       "Responderlas pronto, aunque sea con un no explicado",
+       "Guardarlas todas para resolverlas durante la semana del evento",
+       "Retirar el tablero porque la gente ya perdió el interés en él",
+       "La respuesta rápida es lo que sostiene el kaizen diario. Guardarlas para el evento las retrasa más y sobrecarga la semana; quitar el tablero confirma a las operarias que sus ideas no importan."
+      ],
+      [
+       "Al terminar el evento, ¿cómo sabrá Karla si funcionó?",
+       "Midiendo el indicador con el mismo método que usó en el estado actual",
+       "Preguntando al equipo si quedó satisfecho con lo logrado",
+       "Viendo si la presentación final convenció a la gerencia",
+       "Verificar en PHVA es comparar con el mismo método de medición antes y después. La satisfacción del equipo y una buena presentación importan, pero no prueban que el proceso mejoró."
+      ]
+     ],
+     "completar": [
+      "Un evento ___ es un esfuerzo concentrado de 3 a 5 días de un equipo multifuncional sobre un proceso acotado.",
+      "kaizen"
+     ],
+     "refl": "Planea una mejora para un proceso real. 1) Escribe el acta de un evento kaizen: alcance, meta medible, equipo y datos del estado actual que necesitas. 2) Ubica cada actividad de los cinco días en la fase del PHVA que le corresponde. 3) Define cómo medirás el resultado con el mismo método que el estado actual. 4) Diseña tu sistema de kaizen diario: dónde se anotan las ideas, quién las revisa, en cuánto tiempo se responden y cómo se reconocen. 5) Escribe qué harás con el tiempo que se libere.",
+     "modelo": "Modelo: «Evento: recepción de muestras en un laboratorio agrícola de análisis de suelos. Meta: bajar de 3 horas a 1 hora el tiempo entre la llegada de la muestra y su registro. Equipo: dos recepcionistas, una química, el chofer que recoge las muestras y yo. Planear: medí 30 muestras la semana pasada. Hacer: día 1 observación, día 2 causas, días 3 y 4 pruebas, día 5 estándar. Verificar: medir otras 30 muestras igual que antes. Actuar: pendientes revisados a los 30 días. Diario: pizarrón en recepción con respuesta en 5 días hábiles.» Es buena porque tiene meta medible, equipo mixto, medición comparable y seguimiento.",
+     "plantilla": [
+      "Acta de evento kaizen y mejora diaria",
+      "Proceso y alcance (dónde empieza y dónde termina): [ ]\nProblema y meta medible: de [ ] a [ ] en [indicador]\nEquipo (con personas del área): [ ]\nDatos del estado actual y cómo se midieron: [ ]\nPlanear: [preparación]   Hacer: [días 1 a 5]   Verificar: [medición final]   Actuar: [estándar y pendientes]\nRevisión de pendientes: [fecha, a unos 30 días]\nKaizen diario: dónde se anotan las ideas [ ], quién responde [ ], plazo de respuesta [ ] días\nUso del tiempo liberado: [ ]"
+     ],
+     "clave": [
+      "El kaizen diario y los eventos kaizen se necesitan: el evento acelera y lo diario sostiene.",
+      "Un evento se gana en la preparación: alcance, meta medible, equipo con gente del área y datos.",
+      "Verifica con el mismo método de medición y da seguimiento a los pendientes, o el proceso regresará."
+     ]
+    },
+    {
+     "t": "SMED: cambios de modelo rápidos",
+     "obj": "Analizar un cambio de modelo con SMED, separar actividades internas y externas, y calcular cuánto tiempo puedes reducir.",
+     "texto": [
+      "El <b>tiempo de cambio</b> se mide desde la última pieza buena del modelo anterior hasta la primera pieza buena del siguiente, a velocidad normal. Incluye todo: buscar herramienta, desmontar, montar, ajustar y correr piezas de prueba. Shigeo Shingo desarrolló el método <b>SMED</b> (en inglés, cambio de troquel en un solo dígito de minutos) con una meta ambiciosa: cambios de menos de 10 minutos. Aunque no siempre se llega, el método suele reducir mucho el cambio con poca inversión, porque gran parte del tiempo se va en actividades que nadie había cuestionado.",
+      "El método tiene tres pasos. Primero, observa y graba un cambio completo y anota cada actividad con su duración. Segundo, separa las <b>actividades internas</b>, que sólo pueden hacerse con la máquina parada, de las <b>externas</b>, que pueden hacerse mientras sigue produciendo: traer el troquel, preparar herramientas, revisar el material del siguiente lote, llenar papeles. Tercero, convierte internas en externas siempre que puedas (precalentar un molde fuera de la máquina, preensamblar dispositivos) y simplifica las internas que quedan: sujeciones de un cuarto de vuelta en lugar de tornillos largos, alturas estandarizadas, pines de ubicación, dos personas trabajando en paralelo.",
+      "Los ajustes merecen atención especial porque suelen ser la parte más larga y más variable: cada vez que alguien corre una pieza, la mide y mueve la máquina «a ojo», el cambio se alarga. La meta es que el ajuste desaparezca porque las posiciones quedan fijas desde el diseño del dispositivo. Una lista de verificación con todo lo que debe estar listo antes de parar evita la búsqueda de última hora. Y una regla que no se negocia: un cambio rápido nunca se logra saltándose el bloqueo de energías ni las protecciones de seguridad.",
+      "¿Para qué sirve el tiempo ganado? La tentación es usarlo para producir más del mismo lote grande, pero el gran beneficio de SMED es hacer <b>lotes más pequeños</b> y cambiar más seguido sin perder capacidad. Si hoy haces dos cambios de 60 minutos por turno, pierdes 120 minutos; con cambios de 15 minutos puedes hacer cuatro y perder sólo 60, con menos inventario y una respuesta más rápida al cliente. Así SMED se conecta con el kanban y la nivelación del módulo anterior."
+     ],
+     "comparar": [
+      "«Así no: “El cambio tarda lo que tarda; el troquel es pesado y cada ajustador tiene su maña.”»",
+      "«Así sí: “Grabamos el cambio, encontramos 35 minutos de búsqueda y traslado que se pueden hacer con la prensa trabajando y estandarizamos la altura de los troqueles.”»"
+     ],
+     "caso": "Caso ficticio: Ezequiel, de 44 años, es técnico de ajuste de prensas troqueladoras en una planta de Saltillo. Grabó un cambio de troquel de 96 minutos: 25 para buscar y traer el troquel, 10 para reunir herramienta, 36 para desmontar y montar, y 25 para ajustar y correr piezas de prueba. Propone sacar de la parada la búsqueda y la herramienta, bajar el montaje a 20 minutos con sujeciones rápidas y altura estándar, y los ajustes a 10 con pines y topes. El gerente quiere usar el tiempo ganado para correr lotes de dos semanas «y no parar».",
+     "p": [
+      [
+       "Si Ezequiel convierte en externas la búsqueda del troquel y la herramienta, ¿cuánto dura el cambio?",
+       "61 minutos",
+       "71 minutos",
+       "35 minutos",
+       "96 − 25 − 10 = 61 minutos. Restar sólo la búsqueda del troquel da 71, y 35 minutos es lo que se sacó de la parada, no lo que queda dentro."
+      ],
+      [
+       "Si además el montaje baja a 20 y los ajustes a 10 minutos, ¿cuál es la reducción total?",
+       "De 96 a 30 min, unos 69 % menos",
+       "De 96 a 40 min, unos 58 % menos",
+       "De 96 a 30 min, unos 31 % menos",
+       "Quedan 20 + 10 = 30 minutos internos; (96 − 30) ÷ 96 = 0.6875, cerca de 69 %. El 31 % es lo que queda del cambio, no lo que se redujo, y 40 minutos no sale de las cifras."
+      ],
+      [
+       "¿Qué conviene hacer con el tiempo que se gana?",
+       "Hacer más cambios con lotes más pequeños",
+       "Correr lotes de dos semanas para no tener que parar",
+       "Usarlo en ajustes extra para que la primera pieza salga mejor",
+       "El beneficio de SMED es producir lotes pequeños sin perder capacidad, lo que baja inventario y lead time. Los lotes de dos semanas desperdician la mejora, y volver a los ajustes largos deshace lo logrado."
+      ]
+     ],
+     "completar": [
+      "Las actividades ___ son las que sólo pueden hacerse con la máquina parada.",
+      "internas"
+     ],
+     "relacionar": [
+      [
+       "Actividad interna",
+       "Desmontar el troquel con la prensa detenida"
+      ],
+      [
+       "Actividad externa",
+       "Traer el siguiente troquel mientras se produce"
+      ],
+      [
+       "Convertir interna en externa",
+       "Precalentar el molde fuera de la máquina"
+      ],
+      [
+       "Simplificar internas",
+       "Sujeciones de un cuarto de vuelta"
+      ],
+      [
+       "Eliminar ajustes",
+       "Pines de ubicación y alturas estandarizadas"
+      ]
+     ],
+     "refl": "Analiza un cambio real: de modelo, de producto, de formato o incluso la preparación de una sala entre dos usos. 1) Describe dónde empieza y dónde termina el cambio según la definición de la lección. 2) Lista de 8 a 12 actividades con su duración medida o grabada. 3) Clasifícalas en internas y externas. 4) Propón cómo convertir internas en externas y cómo simplificar las internas, sin tocar la seguridad. 5) Calcula el tiempo nuevo, el porcentaje de reducción y qué harás con el tiempo ganado.",
+     "modelo": "Modelo: «Cambio de sabor en la línea de llenado de una fábrica de salsas: de la última botella buena de salsa verde a la primera buena de roja. Medí 70 min: 15 de lavado de tolva, 20 de esperar la salsa nueva, 10 de buscar empaques y 25 de ajuste de nivel. Externas: preparar la salsa y los empaques antes de parar (30 min). Internas restantes: lavado 15 y ajuste 25; con una guía de altura fija, el ajuste baja a 5. Nuevo cambio: 20 min, 71 % menos.» Es buena porque define el cambio, mide cada actividad, separa internas y externas y calcula bien.",
+     "plantilla": [
+      "Análisis SMED (Excel)",
+      "Cambio: de [última pieza buena del modelo anterior] a [primera pieza buena del siguiente]\nColumnas: A Actividad | B Minutos actuales | C Interna o externa | D Cómo convertir o simplificar | E Minutos que quedan con la máquina parada (0 si pasa a externa)\nFilas 2 a 13: [ ] | [ ] | [ ] | [ ] | [ ]\nB14 Tiempo de cambio actual: [=SUMA(B2:B13)]\nE14 Tiempo de cambio nuevo: [=SUMA(E2:E13)]\nE15 Reducción: [=(B14-E14)/B14] (formato de porcentaje)\nRevisión de seguridad: [bloqueo de energías y protecciones intactos]\nUso del tiempo ganado: [ ]"
+     ],
+     "clave": [
+      "El cambio se mide de la última pieza buena a la primera pieza buena a velocidad normal.",
+      "SMED separa internas y externas, convierte internas en externas y simplifica lo que queda.",
+      "El tiempo ganado sirve para lotes más pequeños y cambios más frecuentes, nunca a costa de la seguridad."
+     ]
+    },
+    {
+     "t": "Poka-yoke y jidoka: que el error no se convierta en defecto",
+     "obj": "Diseñar un dispositivo poka-yoke y una regla de jidoka para que un error previsible se detecte antes de convertirse en defecto.",
+     "texto": [
+      "Shigeo Shingo partió de una distinción clave: un <b>error</b> es una equivocación de una persona o de una máquina (tomar la pieza equivocada, olvidar un tornillo); un <b>defecto</b> es el resultado que llega al cliente cuando nadie detecta ese error. Las personas se van a equivocar alguna vez, por capacitadas y cuidadosas que sean; lo que sí podemos lograr es que el error se descubra al instante y no se convierta en defecto. Por eso «el operador no puso atención» nunca es una causa raíz suficiente: la pregunta útil es qué permitió que el error pasara sin ser detectado.",
+      "Un <b>poka-yoke</b> (a prueba de errores) es un dispositivo o método que impide el error o lo hace evidente. Shingo describió tres métodos: de <b>contacto</b>, que revisa forma, tamaño o posición (una pieza asimétrica que sólo entra en un sentido); de <b>valor fijo</b>, que verifica que se completó un número de movimientos o piezas (una charola con seis huecos para seis tornillos); y de <b>pasos o secuencia</b>, que confirma el orden correcto (un sistema que no imprime la etiqueta si no se escaneó el componente). Además, puede ser de <b>advertencia</b>, con luz o sonido, o de <b>control</b>, que detiene el proceso; el de control es más fuerte, porque una alarma se puede ignorar.",
+      "Shingo también distinguió tres tipos de inspección: la de juicio, que separa piezas malas al final; la informativa, que mide para corregir el proceso; y la de fuente, que revisa las condiciones antes de que el error ocurra. El poka-yoke empuja hacia la inspección de fuente y hacia revisar el cien por ciento de las piezas sin depender de la vista cansada de un inspector. Funciona mejor si es barato, sencillo y se prueba con regularidad: un sensor que nadie verifica puede pasar semanas desconectado.",
+      "La <b>jidoka</b>, uno de los dos pilares del Sistema de Producción Toyota junto con el justo a tiempo, lleva la idea al proceso completo: cuando aparece una anormalidad, la máquina o la persona se detiene en lugar de seguir produciendo defectos. El <b>andon</b> es la señal visual que pide ayuda en ese momento. Parar cuesta, pero esconder el problema suele costar más. Para que funcione, quien detiene la línea debe recibir apoyo en minutos, no un regaño, y cada paro debe alimentar la solución de la causa."
+     ],
+     "comparar": [
+      "«Así no: “Otra caja salió con el medicamento equivocado; levántenle un acta a quien la surtió y pídanle que se fije más.”»",
+      "«Así sí: “Separamos en anaqueles distintos las presentaciones parecidas y ahora el sistema no deja cerrar la caja si una clave escaneada no coincide con el pedido.”»"
+     ],
+     "caso": "Caso ficticio: Maribel, de 30 años, es jefa de surtido en un centro de distribución de medicamentos en Querétaro. En un mes, varias farmacias reportaron cajas con la concentración equivocada de un mismo medicamento: las dos presentaciones tienen empaques casi idénticos y están en anaqueles contiguos. Los surtidores usan un lector que pita si la clave no coincide, pero con el ruido del almacén muchos no lo oyen y siguen. El director quiere sancionar a los surtidores; Maribel cree que el problema es del proceso.",
+     "p": [
+      [
+       "¿Cuál es la falla del lector actual?",
+       "Es de advertencia y su señal se puede pasar por alto",
+       "Es de control y detiene el surtido con demasiada frecuencia",
+       "Es de valor fijo y no revisa la concentración del producto",
+       "El lector sólo avisa con un sonido que se pierde en el ruido: es de advertencia. No detiene nada, así que no es de control, y no cuenta movimientos o piezas, así que no es de valor fijo."
+      ],
+      [
+       "¿Qué mejora es un poka-yoke de control?",
+       "Que no se pueda cerrar la caja si hay discrepancia",
+       "Un letrero grande que pida revisar bien la concentración",
+       "Un inspector extra que revise cada caja antes de embarcar",
+       "Impedir el cierre detiene el proceso hasta corregir: eso es control. Un letrero depende de la atención, y un inspector extra es inspección de juicio, que también se cansa y se equivoca."
+      ],
+      [
+       "¿Qué debe responder Maribel al director?",
+       "Que el error es previsible y el proceso lo dejó pasar",
+       "Que se sancione sólo a quien acumule más de tres errores",
+       "Que se sancione al surtidor y se refuerce su capacitación",
+       "Con empaques casi idénticos juntos y una alarma inaudible, cualquiera puede equivocarse: la causa está en el diseño del proceso. Sancionar, con o sin umbral, no impide el siguiente error y hace que la gente esconda los problemas."
+      ]
+     ],
+     "completar": [
+      "Un dispositivo poka-yoke de ___ detiene el proceso, mientras que uno de advertencia sólo avisa.",
+      "control"
+     ],
+     "relacionar": [
+      [
+       "Método de contacto",
+       "Pieza asimétrica que sólo entra en un sentido"
+      ],
+      [
+       "Método de valor fijo",
+       "Charola con seis huecos para seis tornillos"
+      ],
+      [
+       "Método de secuencia",
+       "No se imprime la etiqueta sin escanear el componente"
+      ],
+      [
+       "Jidoka",
+       "Detener la línea ante una anormalidad"
+      ],
+      [
+       "Andon",
+       "Señal visual que pide ayuda en el momento"
+      ]
+     ],
+     "refl": "Elige un error que se repita en tu trabajo o en tu casa. 1) Describe el error y el defecto que produce, por separado. 2) Explica qué permite hoy que el error pase sin detectarse. 3) Diseña un poka-yoke: di si es de contacto, de valor fijo o de secuencia, y si es de advertencia o de control. 4) Escribe una regla de jidoka: quién detiene, cómo pide ayuda y quién responde en cuántos minutos. 5) Define cómo y cada cuándo probarás que el dispositivo funciona.",
+     "modelo": "Modelo: «Error: el armador olvida uno de los cuatro clips del tablero. Defecto: un ruido que reporta el cliente. Hoy nada lo detecta, porque el clip queda oculto. Poka-yoke de valor fijo y de control: los clips salen de un dispensador que cuenta cuatro salidas y, si no se completaron, la estación no libera el tablero. Jidoka: si se detiene dos veces seguidas, se enciende el andon y el líder llega en menos de 3 minutos. Prueba: al iniciar cada turno se pasa un tablero con tres clips para comprobar que se detiene.» Es buena porque separa error y defecto, elige un control y lo prueba a diario.",
+     "plantilla": [
+      "Diseño de poka-yoke y regla de jidoka",
+      "Error (qué se equivoca y en qué paso): [ ]\nDefecto que produce: [ ]\nPor qué hoy no se detecta: [ ]\nPoka-yoke: método [contacto / valor fijo / secuencia], función [advertencia / control]\nDescripción del dispositivo y costo aproximado: [ ]\nRegla de jidoka: quién detiene [ ], cómo pide ayuda [ ], quién responde y en cuántos minutos [ ]\nPrueba del dispositivo: [cómo y cada cuándo]"
+     ],
+     "clave": [
+      "Error no es defecto: el objetivo es que el error se detecte al instante y no llegue al cliente.",
+      "Un poka-yoke de control es más fuerte que uno de advertencia; pruébalo con regularidad.",
+      "Con jidoka, detenerse ante una anormalidad se apoya y se agradece, no se castiga."
+     ]
+    },
+    {
+     "t": "Causa raíz, A3 y 8D: Ishikawa, cinco porqués verificados y cierre de quejas",
+     "obj": "Investigar la causa raíz de un problema con Ishikawa y cinco porqués verificados, y documentar su solución en un A3 o en un 8D que el cliente acepte.",
+     "texto": [
+      "Antes de buscar causas, describe bien el problema: qué, dónde, cuándo, cuánto y cómo se detectó, y también lo que <i>no</i> está pasando (¿falla un turno y otro no?, ¿un número de parte y otro no?). Con esa descripción, el <b>diagrama de Ishikawa</b> o de causa-efecto ayuda a que el equipo no se quede con la primera ocurrencia: el efecto va en la cabeza del pescado y las causas posibles en ramas, a menudo agrupadas en las 6M: mano de obra, máquina, método, material, medición y medio ambiente. El diagrama sólo genera hipótesis; ninguna rama es causa hasta que los datos la confirman.",
+      "Los <b>cinco porqués</b>, asociados a Taiichi Ohno, consisten en preguntar por qué hasta llegar a una causa sobre la que puedes actuar y que, al corregirla, evita que el problema vuelva. El número cinco es orientativo. La trampa es encadenar suposiciones; por eso cada respuesta debe <b>verificarse</b> con un hecho: una medición, una prueba, un registro, la observación en el gemba. Si una respuesta no se puede comprobar, te detienes a conseguir datos. Y si la cadena termina en «el operador se equivocó», sigue preguntando por qué el proceso permitió ese error y por qué no se detectó.",
+      "El <b>A3</b>, que nació en Toyota y que John Shook explicó en <i>Managing to Learn</i> (2008), cuenta la historia de un problema en una sola hoja tamaño A3: antecedentes, situación actual, meta, análisis de causa, contramedidas, plan y seguimiento. Su valor no está en el formato, sino en la conversación que provoca. El <b>8D</b>, popularizado por Ford, es el método que muchos clientes exigen para responder a una queja: D0 prepararse, D1 formar el equipo, D2 describir el problema, D3 contención, D4 causa raíz, D5 elegir acciones permanentes, D6 implementarlas y validarlas, D7 prevenir la recurrencia y D8 reconocer al equipo.",
+      "Dos detalles distinguen un buen 8D. Primero, la <b>contención</b> protege al cliente de inmediato (revisar inventario en tu planta, en tránsito y en sus instalaciones), pero no es la solución. Segundo, la causa raíz tiene dos caras: por qué ocurrió el defecto y por qué no se detectó antes de salir; ambas necesitan acción. La validación se demuestra con datos después del cambio, y la prevención extiende la lección a procesos y productos parecidos, actualizando el AMEF, el plan de control y las instrucciones. Los plazos los fija cada cliente: verifica los del tuyo."
+     ],
+     "comparar": [
+      "«Así no: “Causa raíz: error humano. Acción: se capacitó al operador y se le pidió mayor atención.”»",
+      "«Así sí: “Ocurrencia: el inserto se desgastaba porque se cambiaba por intuición. No detección: se medía una pieza por turno. Acciones: cambio por conteo de piezas y medición cada hora, validadas con los lotes siguientes.”»"
+     ],
+     "caso": "Caso ficticio: Efraín, de 49 años, es ingeniero de calidad en un taller de maquinados de Salamanca que surte ejes a un fabricante de bombas de agua. El cliente rechazó un embarque: encontró 37 ejes con el diámetro por encima de la especificación y pide un 8D. Todos salieron del torno 3 en el turno de noche, que mide con un micrómetro distinto al del turno de día. El supervisor ya escribió «causa: descuido del operador; acción: amonestación» y quiere enviarlo hoy mismo para quedar bien.",
+     "p": [
+      [
+       "¿Qué debe hacer Efraín antes de buscar la causa raíz?",
+       "Contener: revisar ejes en planta, en tránsito y en el cliente",
+       "Enviar el 8D hoy para que el cliente vea que hubo respuesta",
+       "Ajustar los tornos de todos los turnos para prevenir más fallas",
+       "La contención protege al cliente mientras se investiga. Un 8D enviado sin contención ni análisis será rechazado, y ajustar todos los tornos sin conocer la causa puede introducir nuevos problemas."
+      ],
+      [
+       "¿Qué hacer con el dato del turno de noche y el micrómetro distinto?",
+       "Tratarlo como hipótesis y verificarlo contra un patrón calibrado",
+       "Declararlo causa raíz, porque coincide con el turno",
+       "Descartarlo, porque el problema fue del operador",
+       "Coincidir no prueba causa: hay que comparar el micrómetro con un patrón calibrado y medir las mismas piezas con ambos. Declararlo causa sin verificar y descartarlo sin datos son el mismo error en direcciones opuestas."
+      ],
+      [
+       "¿Por qué el cliente rechazaría «descuido del operador; amonestación»?",
+       "No explica la ocurrencia ni la no detección",
+       "No incluye el nombre completo del operador sancionado",
+       "La amonestación debió ser una suspensión de varios días",
+       "Un 8D debe mostrar por qué se produjo el defecto y por qué salió sin detectarse, con acciones para ambos. El nombre del operador y la dureza de la sanción no cambian el proceso que permitió el error."
+      ]
+     ],
+     "completar": [
+      "En un 8D, la ___ protege al cliente de inmediato, pero no sustituye la solución de la causa raíz.",
+      "contención"
+     ],
+     "relacionar": [
+      [
+       "D2",
+       "Describir qué, dónde, cuándo y cuánto"
+      ],
+      [
+       "D3",
+       "Contener el problema para proteger al cliente"
+      ],
+      [
+       "D4",
+       "Encontrar y verificar la causa raíz"
+      ],
+      [
+       "D6",
+       "Implementar y validar las acciones permanentes"
+      ],
+      [
+       "D7",
+       "Prevenir la recurrencia en procesos parecidos"
+      ]
+     ],
+     "refl": "Analiza un problema real que se haya repetido en tu trabajo. 1) Descríbelo con qué, dónde, cuándo, cuánto, cómo se detectó y lo que no está pasando. 2) Haz un Ishikawa con al menos dos causas posibles en cada una de las 6M que apliquen. 3) Elige la rama más probable y escribe los cinco porqués, anotando junto a cada respuesta el hecho que la verifica o el dato que te falta. 4) Escribe la causa de ocurrencia y la de no detección. 5) Propón una acción permanente para cada una y cómo validarás que funcionó.",
+     "modelo": "Modelo: «Problema: en marzo, 9 de 120 pedidos de una tostadora de café llegaron con la bolsa abierta, todos enviados por paquetería terrestre; los entregados en mano no fallaron. Ishikawa: material (bolsa), método (sellado), medio ambiente (calor del camión). Porqués: la bolsa se abre por el sello (visto en 9 de 9); el sello quedó angosto (medido); la selladora pierde temperatura cuando trabaja sin pausa (registro). No detección: nadie revisa el sello. Acciones: control de temperatura y prueba de tirón cada 50 bolsas.» Es buena porque usa lo que no pasa, verifica cada porqué y ataca ocurrencia y detección.",
+     "plantilla": [
+      "Hoja de causa raíz y 8D",
+      "D2 Problema: qué [ ], dónde [ ], cuándo [ ], cuánto [ ], cómo se detectó [ ], qué no está pasando [ ]\nD3 Contención: en planta [ ], en tránsito [ ], en el cliente [ ]\nD4 Ishikawa (6M): [ ]\nPorqué 1: [ ] → verificado con: [ ]\nPorqué 2: [ ] → verificado con: [ ]\n(sigue hasta una causa sobre la que puedas actuar)\nCausa de ocurrencia: [ ]   Causa de no detección: [ ]\nD5 y D6 Acciones permanentes y validación con datos: [ ]\nD7 Prevención en procesos parecidos y documentos actualizados: [ ]\nD8 Reconocimiento al equipo: [ ]"
+     ],
+     "clave": [
+      "Describe bien el problema, incluido lo que no está pasando, antes de buscar causas.",
+      "Cada porqué se verifica con un hecho; el «error humano» nunca es el final de la cadena.",
+      "Un buen 8D contiene de inmediato y ataca tanto la ocurrencia como la no detección."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige un problema real de tu trabajo (una queja, un defecto que se repite, un retraso) y en 90 minutos documéntalo completo en un A3 o en un 8D. Describe el problema con datos, haz un Ishikawa, verifica tus porqués con hechos y propone al menos una contramedida de tipo poka-yoke, SMED o kaizen. Si tienes datos, usa una hoja de cálculo para graficar el indicador antes del cambio junto con la meta.",
+    "entregable": "Un A3 de una página o un 8D completo (D0 a D8), con el Ishikawa, la cadena de porqués con su evidencia, las acciones con responsable y fecha, y la forma en que validarás el resultado.",
+    "criterios": "Revisa: el problema está descrito con cifras y con lo que no está pasando, cada porqué tiene un hecho que lo respalda, ninguna causa termina en «error humano» sin preguntar por qué el proceso lo permitió, y hay acción tanto para la ocurrencia como para la no detección."
+   },
+   "lab": {
+    "t": "Bolsas de fresa que no cierran",
+    "obj": "Combinar 8D, Ishikawa, SMED, poka-yoke y kaizen para resolver una queja de cliente en una empacadora de alimentos.",
+    "esc": "<b>Paola,</b> de 23 años, es analista de calidad en una empacadora de fresa congelada en Irapuato. Una cadena de autoservicio reportó bolsas de 500 g con el sello abierto y escarcha dentro, y algunas con peso menor al declarado, y pide un 8D. El gerente de planta, <b>Isidro,</b> de 57 años, le pide encabezar el equipo y le recuerda que el contenido neto declarado es una obligación legal, además de un compromiso con el cliente.",
+    "e": [
+     [
+      "Escena 1: Las quejas vienen de bolsas de 500 g de la línea 2, empacadas en el turno de la tarde; la línea 1 y el turno de la mañana no tienen quejas.",
+      "Consigna: escribe el D2 (qué, dónde, cuándo, cuánto y qué no está pasando) y la contención del D3 en planta, en tránsito y en las tiendas."
+     ],
+     [
+      "Escena 2: En la línea 2, la mordaza de sellado se cubre de escarcha cuando la fruta llega muy fría, y nadie registra su temperatura; el operador de la tarde dice que «siempre ha sido así».",
+      "Consigna: haz un Ishikawa con las 6M y escribe los cinco porqués de la rama más probable, indicando qué prueba o registro verificaría cada respuesta."
+     ],
+     [
+      "Escena 3: El cambio de presentación de 1 kg a 500 g tarda 70 minutos, así que la línea 2 hace un solo cambio al día y el turno de la tarde corre con prisa para cumplir.",
+      "Consigna: propón un análisis SMED: lista las actividades probables, clasifícalas en internas y externas y estima un nuevo tiempo de cambio con su porcentaje de reducción."
+     ],
+     [
+      "Escena 4: Para el peso, hoy una persona pesa 5 bolsas cada hora y anota los resultados en papel.",
+      "Consigna: diseña un poka-yoke de control para el peso y el sello, y el plan de un evento kaizen de cinco días con meta, equipo y seguimiento, aclarando qué hará la persona que hoy pesa."
+     ]
+    ],
+    "p": [
+     [
+      "¿Por qué es útil saber que la línea 1 y el turno de la mañana no tienen quejas?",
+      "Acota las causas a lo que cambia entre líneas y turnos",
+      "Demuestra que el problema es el personal del turno de la tarde",
+      "Indica que basta con reforzar la inspección del turno de la tarde",
+      "Lo que no está pasando delimita la búsqueda: ¿qué es distinto en la línea 2 y en la tarde? No demuestra que el problema sea la gente, y reforzar la inspección sólo filtraría defectos sin quitar la causa."
+     ],
+     [
+      "¿Cuál es una causa de no detección en este caso?",
+      "Nadie verifica el sello ni el peso de cada bolsa",
+      "La fresa llega muy fría a la mordaza de sellado",
+      "El cambio de presentación tarda demasiado tiempo",
+      "La no detección explica por qué el defecto salió de la planta: con 5 bolsas por hora y sin revisar el sello, casi todo pasa. La fruta muy fría es una posible causa de ocurrencia, y el cambio largo es un factor que aumenta la prisa."
+     ],
+     [
+      "Si se instala una báscula que rechaza bolsas fuera de peso, ¿qué hacer con la persona que hoy pesa?",
+      "Reasignarla a analizar rechazos y mejoras",
+      "Prescindir de ella porque su puesto ya no se necesita",
+      "Mantenerla pesando a mano como doble revisión fija",
+      "Conoce el proceso y puede convertir los rechazos en información para mejorar. Despedirla manda el mensaje de que mejorar cuesta empleos, y pesar a mano junto a la báscula duplica trabajo sin agregar control."
+     ]
+    ],
+    "pl": [
+     "8D con contramedidas Lean para una queja de cliente",
+     "D2 Problema y lo que no está pasando: [ ]\nD3 Contención (planta, tránsito, tiendas): [ ]\nD4 Ishikawa (6M) y porqués verificados: [ ]\nCausa de ocurrencia: [ ]   Causa de no detección: [ ]\nSMED: tiempo actual [ ] min → nuevo [ ] min; reducción [=(actual-nuevo)/actual]\nPoka-yoke: [método y función]\nEvento kaizen: meta [ ], equipo [ ], fechas [ ], seguimiento a 30 días [ ]\nD7 Prevención en la línea 1 y en otras presentaciones: [ ]\nD8 Reconocimiento al equipo: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Rosalba quiere organizar un evento kaizen en la recepción de un hospital, pero aún no tiene meta ni datos del estado actual. ¿Qué le recomiendas?",
+     "Posponerlo hasta definir la meta y medir",
+     "Hacerlo ya y medir sólo al final del evento",
+     "Hacerlo sólo con jefes para decidir más rápido",
+     "Pedir al equipo que traiga ideas sin medir nada"
+    ],
+    [
+     "Tras un evento kaizen exitoso, el proceso volvió a su estado anterior en seis semanas. ¿Qué faltó con más probabilidad?",
+     "Estandarizar lo que funcionó y dar seguimiento a los pendientes",
+     "Hacer un evento más largo, de diez días completos",
+     "Invitar a más personas al evento siguiente",
+     "Dar premios en dinero al equipo del evento"
+    ],
+    [
+     "En un cambio de molde, el técnico calienta el molde nuevo dentro de la máquina durante 25 minutos. ¿Qué propondría SMED?",
+     "Precalentarlo fuera mientras se produce",
+     "Subir la temperatura para calentarlo en menos tiempo",
+     "Hacer lotes más grandes para cambiar menos veces",
+     "Hacer los cambios sólo en el turno de la noche"
+    ],
+    [
+     "Un supervisor mide el cambio desde que se apaga la máquina hasta que vuelve a arrancar. ¿Qué error comete?",
+     "Deja fuera los ajustes y piezas de prueba",
+     "Incluye tiempo que no forma parte del cambio",
+     "Debería medir sólo el desmontaje y el montaje",
+     "Debería medirlo en horas y no en minutos"
+    ],
+    [
+     "Una línea redujo su cambio de 80 a 20 minutos. ¿Cuál es el mejor uso del tiempo ganado?",
+     "Más cambios con lotes más pequeños",
+     "Lotes más grandes para producir sin parar",
+     "Más tiempo para ajustes a ojo en cada cambio",
+     "Reducir los cambios a uno por semana"
+    ],
+    [
+     "Tomás arma muebles y a veces olvida un tornillo; ahora toma los tornillos de una charola con 8 huecos para los 8 que lleva cada mueble. ¿Qué método de poka-yoke es?",
+     "De valor fijo",
+     "De contacto",
+     "De secuencia",
+     "Una inspección de juicio"
+    ],
+    [
+     "Una alarma suena cuando falta una etiqueta, pero la línea sigue corriendo y los operadores la apagan. ¿Qué mejora propones?",
+     "Que la falta de etiqueta detenga la línea",
+     "Subir el volumen de la alarma para que se oiga",
+     "Poner un letrero que pida no apagar la alarma",
+     "Sancionar a quien apague la alarma del equipo"
+    ],
+    [
+     "En un 8D, el equipo propone «causa raíz: error humano». ¿Qué pregunta debe seguir?",
+     "¿Por qué el proceso permitió y no detectó el error?",
+     "¿Quién fue el operador y en qué turno trabajaba?",
+     "¿Cuántas veces se le había advertido antes al operador?",
+     "¿Qué sanción corresponde según el reglamento interno?"
+    ],
+    [
+     "Un cliente reporta piezas con rebaba. Antes de investigar la causa, ¿qué va primero en el 8D?",
+     "Contener: revisar el inventario en planta, en tránsito y en el cliente",
+     "Cambiar el proceso para eliminar la rebaba",
+     "Capacitar al personal en el uso de la máquina",
+     "Cerrar el 8D con una acción de inspección"
+    ],
+    [
+     "En un análisis de cinco porqués, la tercera respuesta es «la temperatura del horno bajó», pero nadie lo ha comprobado. ¿Qué haces?",
+     "Revisar los registros o medir la temperatura antes de seguir preguntando",
+     "Seguir con el cuarto porqué y verificar al final",
+     "Darla por buena si todo el equipo está de acuerdo",
+     "Cambiar de rama del Ishikawa sin comprobarla"
+    ]
+   ]
+  }
+ ]
+}
