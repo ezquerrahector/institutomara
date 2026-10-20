@@ -505,7 +505,9 @@ function llAsignar(si){
   var ids = Object.keys(PR.sel).filter(function(k){ return PR.sel[k]; }), op = si ? $('pr-asig').value : null;
   if(si && !op){ alert('Elige el operador.'); return; }
   var o = (LL.ops||[]).filter(function(x){ return x.id === op; })[0];
-  if(!confirm(si ? '¿Asignar '+ids.length+' empresa(s) a '+(o ? o.nombre : 'este operador')+'? Las verá en su consola de llamadas.' : '¿Quitar la asignación de '+ids.length+' empresa(s)?')) return;
+  if(!confirm(si ? '¿Asignar '+ids.length+' empresa(s) a '+(o ? o.nombre : 'este operador')+'? Las verá en su consola de llamadas.'+
+      ' Las que ya son clientes pasan también con su plan: las comisiones de los cobros que vengan serán de '+(o ? o.nombre : 'este operador')+
+      ' (las ya generadas se quedan con quien las ganó).' : '¿Quitar la asignación de '+ids.length+' empresa(s)?')) return;
   Nube.empresaRpc('asignar_prospectos', { p_ids:ids, p_operador:op })
     .then(function(n){
       PR.lista.forEach(function(p){ if(ids.indexOf(p.id) >= 0) p.asignado_a = op; });
@@ -513,6 +515,44 @@ function llAsignar(si){
       alert((si ? 'Asignadas: ' : 'Sin asignación: ') + n);
     })
     .catch(function(e){ alert(e.message); });
+}
+/* Ficha del prospecto: operador asignado y cambio (solo administración).
+   Si el prospecto ya es empresa, el servidor también le pasa la empresa y sus planes al
+   operador nuevo: las comisiones de los cobros que vengan son suyas; las ya generadas
+   se quedan con quien las ganó (backend/reasignar-operador-20261020.sql). */
+var _prPintarFichaLl = prPintarFicha;
+prPintarFicha = function(id){
+  _prPintarFichaLl(id);
+  var cab = $('pf-cab'), p = prPorId(id); if(!cab || !p || !llEsAdmin()) return;
+  var ops = (LL.ops||[]).filter(function(o){ return o.activo || o.id === p.asignado_a; });
+  cab.insertAdjacentHTML('beforeend', '<div id="pf-op" style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">'+
+    '<label for="pf-op-sel" style="font-weight:700;font-size:.92rem">👤 Operador</label>'+
+    (ops.length || p.asignado_a
+      ? '<select id="pf-op-sel" onchange="llReasignarUno(\''+id+'\', this)"><option value="">Sin asignar</option>'+
+        ops.map(function(o){ return '<option value="'+o.id+'"'+(o.id === p.asignado_a ? ' selected' : '')+(o.activo ? '' : ' disabled')+'>'+esc(o.nombre)+(o.activo ? '' : ' (inactivo)')+'</option>'; }).join('')+'</select>'
+      : '<small style="color:var(--gris)">Da de alta un operador en «Planes y operadores» para asignar.</small>')+
+    '</div>');
+};
+function llReasignarUno(id, sel){
+  var p = prPorId(id), nuevo = sel.value || null, antes = p ? (p.asignado_a || '') : '';
+  var nom = function(oid){ var o = (LL.ops||[]).filter(function(x){ return x.id === oid; })[0]; return o ? o.nombre : 'sin operador'; };
+  sel.disabled = true;
+  var info = nuevo ? Nube.empresaRpc('prospecto_empresa_operador', { p_id:id }).catch(function(){ return null; }) : Promise.resolve(null);
+  info.then(function(d){
+    var msg;
+    if(!nuevo) msg = '¿Quitar el operador de '+prCorto(p)+'? Ya no aparecerá en ninguna consola de llamadas.'+
+      ' Si ya es empresa, su plan y sus comisiones no cambian.';
+    else if(d && d.empresa) msg = '¿Pasar '+prCorto(p)+' a '+nom(nuevo)+'?\n\nTambién se le pasa la empresa «'+d.empresa+'»'+
+      (d.planes ? ' y su plan' : '')+': las comisiones de los cobros que vengan serán de '+nom(nuevo)+'.'+
+      ' Las comisiones ya generadas se quedan con quien las ganó.';
+    else msg = '¿Pasar '+prCorto(p)+' a '+nom(nuevo)+'? Lo verá en su consola de llamadas.'+
+      (d === null ? '' : ' Todavía no es empresa, así que no hay comisiones que mover.');
+    if(!confirm(msg)){ sel.value = antes; sel.disabled = false; return; }
+    return Nube.empresaRpc('asignar_prospectos', { p_ids:[id], p_operador:nuevo }).then(function(){
+      PR.lista.forEach(function(x){ if(x.id === id) x.asignado_a = nuevo; });
+      prPintarFicha(id);
+    });
+  }).catch(function(e){ sel.value = antes; sel.disabled = false; alert(e.message); });
 }
 var _vistaAdminProspectosLl = vistaAdminProspectos;
 vistaAdminProspectos = function(){
