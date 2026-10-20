@@ -76,3 +76,4 @@ let s = fs.existsSync(sql) ? fs.readFileSync(sql, 'utf8') : '-- Cursos de IA por
 s = s.split('\n').filter(l => !l.includes("id='" + amp.id + "'")).join('\n').replace(/\n*$/, '\n') + `UPDATE cursos SET horas=${amp.horas} WHERE id='${amp.id}';\n`;
 fs.writeFileSync(sql, s);
 console.log('Escrito en ' + archivo);
+require('./dividir-catalogo.js')();

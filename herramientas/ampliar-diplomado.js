@@ -124,3 +124,4 @@ const sql = `-- ${c.nombre}: ampliado a ${amp.horas} horas reales (opción B).\n
 const sqlPath = path.join(RAIZ, `backend/${amp.id.replace(/^d-/, '')}-${amp.horas}h-${REV}.sql`);
 fs.writeFileSync(sqlPath, sql);
 console.log(`${amp.id} (${archivo}): ${t.s.lec} lecciones, ${t.s.ej} ejercicios, ${amp.horas} h. Rutas: ${sqlRutas.join(' ') || 'ninguna'}. SQL: ${path.basename(sqlPath)}`);
+require('./dividir-catalogo.js')();
