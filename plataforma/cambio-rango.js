@@ -28,6 +28,7 @@ plnPintarEmpresa = function(id, modo){
   _plnPintarEmpresaCr(id, modo);
   var p = plnActual(id), caja = $('emp-plan');
   if(!caja || !crPuede(p)) return;
+  if(typeof renFaseCobro === 'function' && renFaseCobro(p)) return;   // con un cobro rechazado, primero que paguen
   var c = CR.pend[p.id], h = '';
   if(c && c.tipo === 'subir'){
     h = '<div class="aviso aviso-info" style="margin-bottom:12px">Cambio a <b>'+esc(c.rango_texto)+'</b> pendiente: falta pagar la diferencia de <b>'+dinero(c.diferencia)+'</b>.'+
@@ -48,7 +49,7 @@ plnPintarEmpresa = function(id, modo){
       (p.lugares == null || p.lugares > 5 ? '<button class="btn btn-fantasma" onclick="crAbrir(\''+id+'\',\'bajar\')">Cambiar a menos lugares</button>' : '')+
       '</div>';
   }
-  var aviso = caja.querySelector('.aviso'); if(!aviso) return;
+  var aviso = caja.querySelector('.aviso:not(.ren-cobro)'); if(!aviso) return;
   var ancla = aviso.nextElementSibling && aviso.nextElementSibling.querySelector && aviso.nextElementSibling.querySelector('[onclick^="epPagoManual"]') ? aviso.nextElementSibling : aviso;
   ancla.insertAdjacentHTML('afterend', h);
   // Lugares llenos: en vez de «pídelo a Instituto Mara», el botón.

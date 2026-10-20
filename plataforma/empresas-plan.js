@@ -104,7 +104,7 @@ plnPintarEmpresa = function(id, modo){
   if(modo !== 'admin') return;
   var p = plnActual(id), caja = $('emp-plan');
   if(!p || !caja || ['pendiente_pago','activo','cancelado'].indexOf(p.estado) < 0) return;
-  var aviso = caja.querySelector('.aviso'); if(!aviso) return;
+  var aviso = caja.querySelector('.aviso:not(.ren-cobro)'); if(!aviso) return;
   aviso.insertAdjacentHTML('afterend', '<div style="margin:-4px 0 14px"><button class="btn btn-linea btn-sm" onclick="epPagoManual(\''+id+'\',\''+p.id+'\')">Registrar pago por transferencia</button></div>');
 };
 function epPagoManual(id, planId){
@@ -117,7 +117,10 @@ function epPagoManual(id, planId){
 }
 function epGuardarPagoManual(id, planId){
   var b = $('pm-btn'); b.disabled = true;
+  var pl = plnBuscar(id, planId) || {};
   Nube.empresaRpc('plan_registrar_pago_manual', { p_plan:planId, p_monto:Number($('pm-monto').value), p_referencia:$('pm-ref').value.trim() })
+    // Si la tarjeta había fallado, el plan pasa a pagarse por transferencia: se cancela la suscripción para que no cobre doble.
+    .then(function(){ return pl.mp_preapproval_id && pl.cobro_fallido_en ? Nube.funcionServidor('tienda', { accion:'plan_a_transferencia', planId:planId }).catch(function(){ return null; }) : null; })
     .then(function(){ cerrarModal(); return plnCargarEmpresa(id, 'admin'); })
     .catch(function(e){ b.disabled = false; $('pm-av').innerHTML = plnErr(e); });
 }
