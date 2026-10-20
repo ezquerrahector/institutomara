@@ -724,7 +724,7 @@ function renovacionManual(p: any) {
 const diaLargo = (d: Date) => d.toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "America/Mexico_City" });
 /* Liga de Mercado Pago para pagar el siguiente periodo (se reutiliza mientras siga vigente). */
 async function ligaRenovacion(p: any, emp: any) {
-  const monto = siguienteMonto(p);
+  const monto = await montoSiguiente(p);
   // Se reutiliza la liga solo si es de este mismo periodo, por el mismo monto y sigue vigente.
   if (p.renovar_liga && p.renovar_vence && new Date(p.renovar_vence).getTime() > Date.now() + 36e5
       && p.renovar_para === p.vigente_hasta && Number(p.renovar_monto) === monto) return p.renovar_liga;
@@ -746,7 +746,7 @@ async function renovarPlan(u: any, b: any) {
   if (!(await permisoPlan(u, p.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
   if (!renovacionManual(p)) return json({ error: "Este plan se cobra solo cada mes; no necesita renovación." }, 409);
   const emp = (await db(`empresas?id=eq.${p.empresa_id}&select=nombre`))[0] || {};
-  return json({ ok: true, liga: await ligaRenovacion(p, emp), monto: siguienteMonto(p) });
+  return json({ ok: true, liga: await ligaRenovacion(p, emp), monto: await montoSiguiente(p) });
 }
 /* Tarea diaria: aviso 7 días antes (con copia a administración) y el día que vence. */
 async function avisosRenovacion() {
@@ -769,7 +769,7 @@ async function avisosRenovacion() {
       if (!para) continue;
       const nom = String((adms.find((a: any) => String(a.correo).toLowerCase() === String(para).toLowerCase()) || {}).nombre || emp.contacto_nombre || "").split(" ")[0];
       const liga = await ligaRenovacion(p, emp);
-      const monto = siguienteMonto(p);
+      const monto = await montoSiguiente(p);
       const que = `${dinero(monto)} ${p.periodo === "anual" ? "por 12 meses" : "por el siguiente mes"}, IVA incluido`;
       const plan = `<b>${e(emp.nombre)}</b> (${e(p.rango_texto)}, ${e(p.periodo)})`;
       const pie = `<p style="font-size:15px;line-height:1.6">Si prefieren pagar por transferencia bancaria, respondan este correo y les enviamos los datos.</p>`;
@@ -795,6 +795,158 @@ async function avisosRenovacion() {
     } catch (x) { console.error("renovación", p.id, x); }
   }
   return enviados;
+}
+
+// ---------------------------------------------------------------- cambiar el número de personas
+/* Si hay un cambio a menos personas programado, el siguiente cobro ya es por el precio nuevo. */
+async function montoSiguiente(p: any) {
+  const c = (await db(`plan_cambios?plan_id=eq.${p.id}&estado=eq.programado&select=monto_siguiente&order=creado_en.desc&limit=1`).catch(() => []))[0];
+  return c ? Number(c.monto_siguiente) : siguienteMonto(p);
+}
+const finPeriodo = (p: any) => new Date(new Date(p.vigente_hasta).getTime() - 3 * 864e5);
+const cadaCuando = (p: any) => p.periodo === "anual" ? "por 12 meses" : "al mes";
+async function ponerMontoSuscripcion(p: any, monto: number) {
+  if (p.periodo !== "mensual" || !p.mp_preapproval_id) return;
+  await mp(`/preapproval/${p.mp_preapproval_id}`, "PUT", { auto_recurring: { transaction_amount: Number(monto), currency_id: "MXN" } });
+}
+async function datosCambio(c: any) {
+  const p = (await db(`empresas_planes?id=eq.${c.plan_id}&select=*`))[0];
+  const emp = (await db(`empresas?id=eq.${c.empresa_id}&select=*`))[0] || {};
+  const adms = await db(`empresas_admins?empresa_id=eq.${c.empresa_id}&select=correo,nombre`);
+  const para = (p && p.admin_correo) || (adms[0] && adms[0].correo) || emp.contacto_correo || "";
+  const nom = String((adms.find((a: any) => String(a.correo).toLowerCase() === String(para).toLowerCase()) || {}).nombre || emp.contacto_nombre || "").split(" ")[0];
+  const op = p && p.operador_id ? (await db(`operadores?id=eq.${p.operador_id}&select=*`))[0] : null;
+  return { p, emp, para, nom, op };
+}
+const hola = (nom: string) => `Hola${nom ? ", " + e(nom) : ""}:`;
+/* Liga para pagar la diferencia (vale 3 días; se reutiliza mientras siga vigente). */
+async function ligaCambio(c: any, emp: any) {
+  if (c.liga && c.liga_vence && new Date(c.liga_vence).getTime() > Date.now() + 36e5) return c;
+  const vence = new Date(Date.now() + 3 * 864e5);
+  const pref = await mp("/checkout/preferences", "POST", {
+    items: [{ id: `cambio-${c.id}`, title: `Cambio de plan Instituto Mara — ${emp.nombre}: ${c.rango_antes} a ${c.rango_texto}`, quantity: 1, currency_id: "MXN", unit_price: Number(c.diferencia) }],
+    statement_descriptor: "INSTITUTO MARA", external_reference: `cambio::${c.id}`,
+    metadata: { tipo: "cambio", cambio_id: c.id, monto: Number(c.diferencia) },
+    back_urls: { success: `${AULA}?plan=cambio`, pending: `${AULA}?plan=pendiente`, failure: `${AULA}?plan=fallo` },
+    auto_return: "approved", notification_url: WEBHOOK,
+    expires: true, expiration_date_from: new Date(Date.now() - 60e3).toISOString(), expiration_date_to: vence.toISOString(),
+  });
+  const cambios = { liga: pref.init_point, liga_vence: vence.toISOString(), mp_preferencia_id: pref.id };
+  await db(`plan_cambios?id=eq.${c.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: cambios });
+  return { ...c, ...cambios };
+}
+/* Correos de un cambio ya aplicado (subir): empresa, operador y administración. Una sola vez. */
+async function avisosCambioAplicado(c: any, comision: number | null) {
+  if (comision == null && c.pago_id) {
+    const pg = (await db(`plan_pagos?mp_pago_id=eq.${encodeURIComponent(c.pago_id)}&select=id`))[0];
+    const cm = pg ? (await db(`comisiones?plan_pago_id=eq.${pg.id}&select=monto`))[0] : null;
+    if (cm) comision = Number(cm.monto);
+  }
+  const marca = await db(`plan_cambios?id=eq.${c.id}&avisado_en=is.null`, { metodo: "PATCH", prefer: "return=representation", cuerpo: { avisado_en: new Date().toISOString() } });
+  if (!marca.length) return;
+  const { p, emp, para, nom, op } = await datosCambio(c);
+  if (!p) return;
+  const sig = await montoSiguiente(p), fin = finPeriodo(p);
+  const cobro = p.periodo === "mensual" && p.mp_preapproval_id ? "se cobra solo" : "se renueva con la liga que les enviamos antes de esa fecha";
+  if (para) await correo(para, nom, `✅ ${emp.nombre} ya tiene ${c.lugares ? c.lugares + " lugares" : "lugares sin límite"} en su plan`,
+    plantilla(hola(nom),
+      `<p style="font-size:16px;line-height:1.6">El plan de <b>${e(emp.nombre)}</b> ya es de <b>${e(c.rango_texto)}</b>. Pueden registrar desde hoy a las personas nuevas en «Mi empresa».</p>` +
+      `<p style="font-size:15px;line-height:1.6">Desde su siguiente cobro, el ${e(diaLargo(fin))}, el plan queda en <b>${dinero(sig)} ${cadaCuando(p)}</b>, IVA incluido; ${cobro}.</p>` +
+      `<p style="font-size:13px;color:#6b6585">¿Necesitan factura? Envíen sus datos fiscales a contacto@institutomara.com.</p>`,
+      { texto: "Abrir «Mi empresa»", url: `${AULA}?ir=mi-empresa` }));
+  const pagoTxt = Number(c.diferencia) > 0 ? `y pagó la diferencia de <b>${dinero(c.diferencia)}</b>` : "(no hubo diferencia que cobrar: estaba al final de su periodo)";
+  if (op && op.correo && c.quien !== "admin") await correo(op.correo, op.nombre, `🎉 ${emp.nombre} subió a ${c.rango_texto}`,
+    plantilla(`Hola, ${e(String(op.nombre).split(" ")[0])}`,
+      `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b> pasó de ${e(c.rango_antes)} a <b>${e(c.rango_texto)}</b> ${pagoTxt}.</p>` +
+      (comision ? `<p style="font-size:15px;line-height:1.6">Tu comisión: <b>${dinero(comision)}</b> (35 % sin IVA ni comisión de Mercado Pago).</p>` : "") +
+      `<p style="font-size:15px;line-height:1.6">Desde el siguiente cobro ganas tu 5 % sobre ${dinero(sig)}.</p>`, { texto: "Ver mis comisiones", url: urlComisiones }));
+  await avisarAdmins(`⬆️ ${emp.nombre} subió a ${c.rango_texto}${Number(c.diferencia) > 0 ? ` (${dinero(c.diferencia)})` : ""}`,
+    plantilla("Cambio de plan", `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b>: ${e(c.rango_antes)} → <b>${e(c.rango_texto)}</b> ${pagoTxt}.<br>Siguiente cobro: ${dinero(sig)} ${cadaCuando(p)}.` +
+      (op ? `<br>Operador: ${e(op.nombre)}${comision ? ` · comisión ${dinero(comision)}` : ""}` : "") + `</p>`, { texto: "Ver planes", url: urlPlanes }));
+}
+/* Después de pedir el cambio: liga de la diferencia, ajuste de la suscripción y avisos. */
+async function procesarCambio(u: any, b: any) {
+  const c0 = (await db(`plan_cambios?id=eq.${encodeURIComponent(String(b.cambioId || ""))}&select=*`))[0];
+  if (!c0) return json({ error: "Cambio no encontrado." }, 404);
+  if (!(await permisoPlan(u, c0.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  const { p, emp, para, nom, op } = await datosCambio(c0);
+  if (!p) return json({ error: "Plan no encontrado." }, 404);
+  if (c0.tipo === "subir" && c0.estado === "pendiente_pago") {
+    const c = await ligaCambio(c0, emp);
+    let enviado = false;
+    const a = String(b.enviarA || para || "").trim();
+    if (b.enviarCorreo && a) {
+      const sig = Number(c.monto_siguiente), fin = finPeriodo(p);
+      enviado = await correo(a, nom, `${emp.nombre}: liga para sumar personas a su plan`,
+        plantilla(hola(nom),
+          `<p style="font-size:16px;line-height:1.6">Como lo platicamos, esta es la liga para cambiar el plan de <b>${e(emp.nombre)}</b> de ${e(c.rango_antes)} a <b>${e(c.rango_texto)}</b>.</p>` +
+          `<ul style="font-size:15px;line-height:1.7"><li>Hoy pagan solo la diferencia por lo que falta de su periodo: <b>${dinero(c.diferencia)}</b>, IVA incluido.</li>` +
+          `<li>Desde su siguiente cobro, el ${e(diaLargo(fin))}, el plan queda en <b>${dinero(sig)} ${cadaCuando(p)}</b>.</li>` +
+          `<li>En cuanto se acredite el pago, pueden registrar a las personas nuevas en «Mi empresa».</li></ul>` +
+          `<p style="font-size:15px;line-height:1.6">La liga vale hasta el ${e(diaLargo(new Date(c.liga_vence)))}. Si prefieren pagar por transferencia, respondan este correo y les enviamos los datos.</p>`,
+          { texto: "Pagar la diferencia", url: c.liga }));
+    }
+    return json({ ok: true, liga: c.liga, liga_vence: c.liga_vence, enviado, diferencia: Number(c.diferencia) });
+  }
+  if (c0.tipo === "subir" && c0.estado === "aplicado") {
+    await ponerMontoSuscripcion(p, await montoSiguiente(p)).catch((x) => console.error("monto suscripción", p.id, x));
+    await avisosCambioAplicado(c0, null);
+    return json({ ok: true, aplicado: true });
+  }
+  if (c0.tipo === "bajar" && c0.estado === "programado") {
+    try { await ponerMontoSuscripcion(p, Number(c0.monto_siguiente)); }
+    catch (x) {
+      console.error("bajar: suscripción", p.id, x);
+      await db(`plan_cambios?id=eq.${c0.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "cancelado", cancelado_en: new Date().toISOString() } });
+      return json({ error: "No pudimos actualizar el cobro en Mercado Pago. El cambio no se guardó; intenta de nuevo en unos minutos." }, 502);
+    }
+    const marca = await db(`plan_cambios?id=eq.${c0.id}&avisado_en=is.null`, { metodo: "PATCH", prefer: "return=representation", cuerpo: { avisado_en: new Date().toISOString() } });
+    if (marca.length) {
+      const fin = finPeriodo(p), antes = siguienteMonto(p);
+      const quedan = c0.conservar && c0.conservar.length
+        ? `<p style="font-size:15px;line-height:1.6">Conservan su lugar las ${c0.conservar.length} personas que eligieron. Las demás dejan de tener acceso por el plan ese día y conservan su avance. Sus constancias ya emitidas siguen vigentes.</p>` : "";
+      if (para) await correo(para, nom, `${emp.nombre}: su plan cambia a ${c0.rango_texto} desde el ${fin.toLocaleDateString("es-MX", { day: "numeric", month: "long", timeZone: "America/Mexico_City" })}`,
+        plantilla(hola(nom),
+          `<p style="font-size:16px;line-height:1.6">Recibimos su cambio. Conservan su plan de ${e(c0.rango_antes)} hasta el <b>${e(diaLargo(fin))}</b>.</p>` +
+          `<p style="font-size:15px;line-height:1.6">Desde su siguiente cobro el plan queda en <b>${e(c0.rango_texto)}</b>: ${dinero(c0.monto_siguiente)} ${cadaCuando(p)}, IVA incluido.</p>` + quedan +
+          `<p style="font-size:15px;line-height:1.6">Si cambian de opinión, pueden cancelar el cambio en «Mi empresa» antes de esa fecha.</p>`,
+          { texto: "Abrir «Mi empresa»", url: `${AULA}?ir=mi-empresa` }));
+      const resumen = `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b> pidió cambiar su plan de ${e(c0.rango_antes)} a <b>${e(c0.rango_texto)}</b> a partir del ${e(diaLargo(fin))}. Su siguiente cobro baja de ${dinero(antes)} a ${dinero(c0.monto_siguiente)}.</p>`;
+      if (op && op.correo && c0.quien === "empresa") await correo(op.correo, op.nombre, `⚠️ ${emp.nombre} pidió bajar a ${c0.rango_texto}`,
+        plantilla(`Hola, ${e(String(op.nombre).split(" ")[0])}`, resumen +
+          `<p style="font-size:15px;line-height:1.6">Llámales antes de esa fecha: es una oportunidad para entender qué pasó y retenerlos.</p>`, { texto: "Ver la empresa", url: AULA }));
+      await avisarAdmins(`⬇️ ${emp.nombre} pidió bajar a ${c0.rango_texto}`, plantilla("Cambio a menos personas", resumen +
+        `<p style="font-size:14px;color:#6b6585">Lo pidió: ${c0.quien === "empresa" ? "la empresa" : c0.quien === "operador" ? "el operador" : "administración"}${op ? ` · operador: ${e(op.nombre)}` : ""}.</p>`, { texto: "Ver planes", url: urlPlanes }));
+    }
+    return json({ ok: true, programado: true });
+  }
+  return json({ ok: true, estado: c0.estado });
+}
+async function cancelarCambio(u: any, b: any) {
+  const c = (await db(`plan_cambios?id=eq.${encodeURIComponent(String(b.cambioId || ""))}&select=*`))[0];
+  if (!c) return json({ error: "Cambio no encontrado." }, 404);
+  if (!(await permisoPlan(u, c.empresa_id, true))) return json({ error: "No tienes acceso a esta empresa." }, 403);
+  const r = await db(`plan_cambios?id=eq.${c.id}&estado=in.(pendiente_pago,programado)`, { metodo: "PATCH", prefer: "return=representation",
+    cuerpo: { estado: "cancelado", cancelado_en: new Date().toISOString() } });
+  if (!r.length) return json({ error: "Este cambio ya no se puede cancelar." }, 409);
+  if (c.mp_preferencia_id && c.estado === "pendiente_pago")
+    await mp(`/checkout/preferences/${c.mp_preferencia_id}`, "PUT", { expires: true, expiration_date_to: new Date().toISOString() }).catch(() => null);
+  if (c.tipo === "bajar") {
+    const p = (await db(`empresas_planes?id=eq.${c.plan_id}&select=*`))[0];
+    if (p) await ponerMontoSuscripcion(p, siguienteMonto(p)).catch((x) => console.error("cancelar bajar: suscripción", p.id, x));
+  }
+  return json({ ok: true });
+}
+/* Pago aprobado de la diferencia (lo manda el webhook). */
+async function cambioPagado(b: any) {
+  const r = await db("rpc/plan_cambio_pagado", { metodo: "POST", cuerpo: {
+    p_cambio: String(b.cambioId), p_pago: String(b.pagoId), p_monto: Number(b.monto), p_neto: b.neto == null ? null : Number(b.neto) } });
+  if (!r || !r.ok) return r;
+  if (r.preapproval) await mp(`/preapproval/${r.preapproval}`, "PUT", { auto_recurring: { transaction_amount: Number(r.monto_siguiente), currency_id: "MXN" } })
+    .catch((x) => console.error("No se pudo actualizar la suscripción", r.preapproval, x));
+  const c = (await db(`plan_cambios?id=eq.${r.cambio}&select=*`))[0];
+  if (c) await avisosCambioAplicado(c, r.comision == null ? null : Number(r.comision));
+  return r;
 }
 
 // ---------------------------------------------------------------- tarea diaria
@@ -834,6 +986,8 @@ async function diaria() {
   await db(`empresas_planes?estado=in.(activo,cancelado)&vigente_hasta=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
   let cortes = 0; try { cortes = await cortesDiarios(); } catch (x) { console.error("cortes", x); }
   let renovaciones = 0; try { renovaciones = await avisosRenovacion(); } catch (x) { console.error("renovaciones", x); }
+  // Ligas de diferencia (cambio a más personas) que vencieron sin pagarse.
+  await db(`plan_cambios?estado=eq.pendiente_pago&liga_vence=lt.${new Date().toISOString()}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "vencido" } }).catch(() => null);
   return json({ regalos, recordatorios, membresias, planes, cortes, renovaciones });
 }
 
@@ -850,6 +1004,7 @@ serve(async (req) => {
       if (b.accion === "preapproval") { await aplicarPreapproval(await mp(`/preapproval/${b.id}`)); return json({ ok: true }); }
       if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });
       if (b.accion === "plan_reembolso") return json({ resultado: await planReembolso(b) });
+      if (b.accion === "cambio_pagado") return json({ resultado: await cambioPagado(b) });
       if (b.accion === "supervision") return await supervision();
       return json({ error: "Acción no válida." }, 400);
     }
@@ -869,6 +1024,8 @@ serve(async (req) => {
       case "comision_aviso": return await comisionAviso(u, b);
       case "plan_invitar": return await invitarLugar(u, b);
       case "plan_renovar": return await renovarPlan(u, b);
+      case "plan_cambio": return await procesarCambio(u, b);
+      case "plan_cambio_cancelar": return await cancelarCambio(u, b);
       default: return json({ error: "Acción no válida." }, 400);
     }
   } catch (x) {
