@@ -86,16 +86,27 @@ function llCargar(){
 function vistaLlamadas(){
   if(!sesion || !(llEsAdmin() || esOperador())) return '';
   if(estado.llamadaId) return vistaLlamada();
+  /* Al volver a la lista (por ejemplo, desde una llamada) se pinta al instante con lo que
+     ya se tenía y se actualiza en segundo plano; solo se vuelve a pintar si cambió algo. */
+  var habia = !!(LL.cargado && PR.lista), antes = habia ? llHuella() : '';
   setTimeout(function(){
-    llCargar().then(llPintarLista).catch(function(e){
+    if(habia) llPintarLista();
+    llCargar().then(function(){
+      LL.cargado = true;
+      if(estado.vista !== 'llamadas' || estado.llamadaId) return;
+      if(!habia) llPintarLista();
+      else if(llHuella() !== antes) repintarConservando(llPintarLista);
+    }).catch(function(e){
+      if(habia) return;
       var c = $('ll-datos'); if(c) c.innerHTML = plnErr(e, 'Si dice que no existe la columna o la función, falta ejecutar backend/llamadas-20261019.sql en Supabase.');
     });
   }, 0);
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Llamadas</h2>'+
     '<p class="sub" style="margin:0">'+(esOperador() ? 'Tus empresas por llamar. Abre una, sigue el guion y registra lo que pasó.' : 'La consola de los operadores: lo mismo que ven ellos, con todos los prospectos asignados.')+'</p></div>'+
     (llEsAdmin() ? '<button class="btn btn-linea" onclick="ir(\'admin-prospectos\')">← Prospectos</button>' : '')+'</div>'+
-    '<div id="ll-datos">Cargando…</div></div>';
+    '<div id="ll-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
+function llHuella(){ return prHuella() + JSON.stringify([LL.op, PLN.rangos || null]); }
 function llPintarLista(){
   var caja = $('ll-datos'); if(!caja || !PR.lista) return;
   var L = PR.lista, hoyStr = new Date().toDateString();
@@ -116,7 +127,7 @@ function llPintarLista(){
     '</div>'+
     '<div class="chips-aula" style="margin-bottom:10px">'+LL_TABS.map(function(t){
       return '<button class="'+(LL.tab===t[0]?'on':'')+'" onclick="LL.tab=\''+t[0]+'\';llPintarTablaLl()">'+t[1]+' <small>'+cuenta(t[0])+'</small></button>'; }).join('')+'</div>'+
-    '<div class="campo" style="max-width:420px"><label for="ll-q">Buscar</label><input id="ll-q" placeholder="Empresa, giro, teléfono, contacto…" value="'+esc(LL.q)+'" oninput="LL.q=this.value;llPintarTablaLl()"></div>'+
+    '<div class="campo" style="max-width:420px"><label for="ll-q">Buscar</label><input id="ll-q" placeholder="Empresa, giro, teléfono, contacto…" value="'+esc(LL.q)+'" oninput="LL.q=this.value;clearTimeout(LL._t);LL._t=setTimeout(llPintarTablaLl,150)"></div>'+
     '<div id="ll-tabla"></div>';
   llPintarTablaLl();
 }
@@ -454,9 +465,11 @@ function llInvitar(id){
    ========================================================================== */
 var _prCargarLl = prCargar;
 prCargar = function(){
+  /* Los operadores se piden al mismo tiempo que los prospectos (antes iban después) */
+  var ops = llEsAdmin() ? Nube.tabla('operadores?select=*&order=nombre.asc').catch(function(){ return null; }) : null;
   return _prCargarLl().then(function(){
-    if(!llEsAdmin()) return;
-    return Nube.tabla('operadores?select=*&order=nombre.asc').then(function(r){ LL.ops = r || []; llFiltroOperador(); }).catch(function(){ LL.ops = []; });
+    if(!ops) return;
+    return ops.then(function(r){ LL.ops = r || []; if(r) llFiltroOperador(); });
   });
 };
 /* Renglón de filtro «Operador» (sin asignar, o uno por operador). */
