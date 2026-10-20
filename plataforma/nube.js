@@ -431,7 +431,7 @@ var Nube = {
       for(i=0;i<d.constancias.length;i++){
         var k = d.constancias[i], hayK = false;
         for(var c=0;c<BD.constancias.length;c++)
-          if(BD.constancias[c].usuarioId === k.usuario_id && BD.constancias[c].cursoId === k.curso_id){
+          if(BD.constancias[c].folio === k.folio || (k.curso_id && BD.constancias[c].usuarioId === k.usuario_id && BD.constancias[c].cursoId === k.curso_id)){
             BD.constancias[c].folio = k.folio; BD.constancias[c].fecha = k.fecha; hayK = true;
           }
         if(!hayK) BD.constancias.push({ id:k.id, folio:k.folio, usuarioId:k.usuario_id, cursoId:k.curso_id,
