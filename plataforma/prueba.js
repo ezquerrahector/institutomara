@@ -230,9 +230,11 @@ llInvitar = function(id){
 /* Administración: solicitudes de más días de las pruebas nuevas, junto a las viejas. */
 var _plnCargarAdminPb = plnCargarAdmin;
 plnCargarAdmin = function(){
+  /* Se pide al mismo tiempo que lo demás de la pantalla; se pinta en el mismo orden que antes */
+  var pedido = Nube.tabla('empresas_planes?select=id,empresa_id,extension_dias,extension_motivo,extension_en&estado=eq.prueba&extension_estado=eq.pendiente');
+  pedido.catch(function(){});
   return _plnCargarAdminPb().then(function(){
-    return Nube.tabla('empresas_planes?select=id,empresa_id,extension_dias,extension_motivo,extension_en&estado=eq.prueba&extension_estado=eq.pendiente')
-      .then(function(r){ PLN.extPruebas = r || []; oprPintarExtensiones(); }).catch(function(){});
+    return pedido.then(function(r){ PLN.extPruebas = r || []; oprPintarExtensiones(); }).catch(function(){});
   });
 };
 var _oprPintarExtensionesPb = oprPintarExtensiones;

@@ -21,8 +21,48 @@ function prCargar(){
     PR.lista = r[0] || []; PR.contactos = r[1] || []; PR.giros = r[2] || []; PR.aj = (r[3] && r[3][0]) || {};
   });
 }
+/* Huella de los datos cargados: sirve para no volver a pintar si nada cambió */
+function prHuella(){ return JSON.stringify([PR.lista, PR.contactos, PR.giros, PR.aj, (window.LL && LL.ops) || null]); }
+/* Vuelve a pintar sin mover la página ni perder lo que se está escribiendo en un buscador */
+var _pintarCompleto = false;
+function repintarConservando(fn){
+  var y = window.scrollY, a = document.activeElement, id = a && a.id, s1 = null, s2 = null;
+  try{ s1 = a.selectionStart; s2 = a.selectionEnd; }catch(e){}
+  _pintarCompleto = true;          /* aquí la tabla se pinta completa para conservar la posición */
+  try{ fn(); } finally { _pintarCompleto = false; }
+  window.scrollTo(0, y);
+  if(id){ var n = document.getElementById(id); if(n && n !== a){ n.focus(); try{ if(s1 != null) n.setSelectionRange(s1, s2); }catch(e){} } }
+}
+/* Tablas largas: las primeras filas se ven al instante y las demás se agregan en los
+   cuadros siguientes. Al final la tabla queda igual que si se pintara de una vez. */
+var _filasTurno = {};
+function filasPorPartes(caja, clave, filas, antes, despues){
+  var PRIMERAS = 60, PASO = 80, turno = _filasTurno[clave] = (_filasTurno[clave] || 0) + 1;
+  if(_pintarCompleto || filas.length <= PRIMERAS){ caja.innerHTML = antes + filas.join('') + despues; return; }
+  caja.innerHTML = antes + filas.slice(0, PRIMERAS).join('') + despues;
+  var tb = caja.querySelector('tbody'), i = PRIMERAS;
+  var sigue = function(){
+    if(_filasTurno[clave] !== turno || !tb || !tb.isConnected) return;
+    tb.insertAdjacentHTML('beforeend', filas.slice(i, i + PASO).join('')); i += PASO;
+    if(i < filas.length) requestAnimationFrame(sigue);
+  };
+  requestAnimationFrame(sigue);
+}
+/* El buscador filtra cuando dejas de escribir un instante (no en cada letra) */
+var _prBuscarT = null;
+function prBuscar(v){ PR.f.q = v; clearTimeout(_prBuscarT); _prBuscarT = setTimeout(function(){ prPintarFiltros(); prPintarTabla(); }, 150); }
 function prPorId(id){ return (PR.lista||[]).filter(function(p){ return p.id === id; })[0]; }
-function prContactos(id){ return PR.contactos.filter(function(c){ return c.prospecto_id === id; }); }
+/* Contactos por prospecto con un índice (antes se recorría todo el historial por cada prospecto).
+   El índice se rehace solo cuando cambia la lista de contactos. */
+var _prIdx = { arr:null, n:-1, m:null };
+function prContactos(id){
+  var a = PR.contactos || [];
+  if(_prIdx.arr !== a || _prIdx.n !== a.length){
+    var m = {}; for(var i=0;i<a.length;i++){ var k = a[i].prospecto_id; (m[k] || (m[k] = [])).push(a[i]); }
+    _prIdx = { arr:a, n:a.length, m:m };
+  }
+  return (_prIdx.m[id] || []).slice();
+}
 function prCorto(p){ return p.nombre_corto || p.nombre; }
 function prFecha(iso){
   if(!iso) return '';
@@ -93,8 +133,17 @@ function prWaPaso(p){
 function vistaAdminProspectos(){
   if(!sesion || sesion.rol !== 'admin') return '';
   if(estado.prospectoId) return vistaProspecto();
+  /* Si ya se tenían los prospectos (por ejemplo, al volver de una ficha), la lista se
+     pinta al instante y se actualiza en segundo plano; solo se vuelve a pintar si cambió algo. */
+  var habia = !!PR.lista, antes = habia ? prHuella() : '';
   setTimeout(function(){
-    prCargar().then(prPintarLista).catch(function(e){
+    if(habia) prPintarLista();
+    prCargar().then(function(){
+      if(estado.vista !== 'admin-prospectos' || estado.prospectoId) return;
+      if(!habia) prPintarLista();
+      else if(prHuella() !== antes) repintarConservando(prPintarLista);
+    }).catch(function(e){
+      if(habia) return;
       var c = $('pr-datos'); if(c) c.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+
         '<br><small>Si dice que no existe la tabla, falta ejecutar backend/prospectos-piloto.sql en Supabase.</small></div>';
     });
@@ -102,7 +151,7 @@ function vistaAdminProspectos(){
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Prospectos</h2>'+
     '<p class="sub" style="margin:0">Empresas a las que ofrecemos capacitación: datos, contactos y seguimiento.</p></div>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-linea" onclick="prTextosGiro()">Textos por giro</button>'+
-    '<button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">Cargando…</div></div>';
+    '<button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
 /* Filtros combinables: un renglón por canal; se suman entre sí (Y). */
 var PR_FILTROS = {
@@ -217,7 +266,7 @@ function prPintarLista(){
     '<div class="tarjeta" style="margin-bottom:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between">'+
       '<div style="flex:1;min-width:240px"><b>Seguimientos automáticos por correo</b><br><small style="color:var(--gris)">De lunes a viernes a las 10:00 se envía el 2.º correo a los '+Number(PR.aj.prospectos_dia_2||4)+' días y el 3.º a los '+Number(PR.aj.prospectos_dia_3||10)+' días a quien tenga la secuencia activa y no haya respondido.</small></div>'+
       '<label style="display:flex;gap:8px;align-items:center;font-weight:700"><input type="checkbox" id="pr-auto"'+(PR.aj.prospectos_auto?' checked':'')+' onchange="prAuto(this.checked)"> '+(PR.aj.prospectos_auto?'Encendidos':'Apagados')+'</label></div>'+
-    '<div class="fila" style="margin-bottom:8px"><div class="campo" style="margin:0"><label for="pr-q">Buscar</label><input id="pr-q" placeholder="Empresa, giro, correo, programa…" value="'+esc(PR.f.q)+'" oninput="PR.f.q=this.value;prPintarFiltros();prPintarTabla()"></div>'+
+    '<div class="fila" style="margin-bottom:8px"><div class="campo" style="margin:0"><label for="pr-q">Buscar</label><input id="pr-q" placeholder="Empresa, giro, correo, programa…" value="'+esc(PR.f.q)+'" oninput="prBuscar(this.value)"></div>'+
       '<div class="campo" style="margin:0"><label for="pr-e">Estado</label><select id="pr-e" onchange="PR.f.estado=this.value;prPintarFiltros();prPintarTabla()"><option value="">Todos</option>'+
         Object.keys(PR_ESTADOS).map(function(k){ return '<option value="'+k+'"'+(PR.f.estado===k?' selected':'')+'>'+PR_ESTADOS[k]+' ('+cuenta(k)+')</option>'; }).join('')+'</select></div>'+
       '<div class="campo" style="margin:0"><label for="pr-s">Giro</label><select id="pr-s" onchange="PR.f.seg=this.value;prPintarFiltros();prPintarTabla()"><option value="">Todos</option>'+
@@ -247,10 +296,10 @@ function prPintarTabla(){
       : '<div class="aviso aviso-info" style="margin-top:8px">Hoy no le toca el '+tq+' WhatsApp a nadie con estos filtros. Revisa «Esperando» para ver las fechas.</div>');
   }
   if(!filas.length){ caja.innerHTML = '<div class="tarjeta vacio"><p>'+(PR.lista.length ? 'Ningún prospecto coincide con el filtro.' : 'Todavía no hay prospectos. Súbelos con «Subir CSV».')+'</p></div>'; return; }
-  caja.innerHTML = '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
+  filasPorPartes(caja, 'pr', filas.map(prFila), '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr>'+
     '<th><input type="checkbox" aria-label="Seleccionar todos" onchange="prSelTodos(this.checked)"'+(filas.every(function(p){ return PR.sel[p.id]; })?' checked':'')+'></th>'+
-    '<th>Empresa</th><th>Contacto</th><th>Seguimiento</th><th>Estado</th><th></th></tr></thead><tbody>'+
-    filas.map(prFila).join('')+'</tbody></table></div></div><p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' de '+PR.lista.length+' prospectos.</p>';
+    '<th>Empresa</th><th>Contacto</th><th>Seguimiento</th><th>Estado</th><th></th></tr></thead><tbody>',
+    '</tbody></table></div></div><p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' de '+PR.lista.length+' prospectos.</p>');
 }
 function prCopiable(valor, rot){
   if(!valor) return '';

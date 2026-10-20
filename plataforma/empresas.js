@@ -130,14 +130,21 @@ function cargarMisEmpresas(){
 /* ---------- Administración → Empresas (lista) ---------- */
 function vistaAdminEmpresas(){
   if(!sesion || sesion.rol !== 'admin') return '';
+  /* Si ya se tenía la lista, se pinta al instante y se actualiza en segundo plano */
+  var habia = !!EMP.datos, antes = habia ? JSON.stringify(EMP.datos) : '';
   setTimeout(function(){
-    Nube.empresasAdmin().then(function(d){ EMP.datos = d; pintarListaEmpresas(); })
-      .catch(function(e){ var c = $('ae-datos'); if(c) c.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+
+    if(habia) pintarListaEmpresas();
+    Nube.empresasAdmin().then(function(d){
+      EMP.datos = d;
+      if(estado.vista !== 'admin-empresas') return;
+      if(!habia) pintarListaEmpresas();
+      else if(JSON.stringify(d) !== antes) repintarConservando(pintarListaEmpresas);
+    }).catch(function(e){ if(habia) return; var c = $('ae-datos'); if(c) c.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+
         '<br><small>Si dice que no existe la tabla, falta ejecutar backend/empresas-admin.sql en Supabase.</small></div>'; });
   }, 0);
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Empresas</h2>'+
     '<p class="sub" style="margin:0">Clientes corporativos: sus paquetes, sus administradores y el avance de su gente.</p></div>'+
-    '<button class="btn btn-mor" onclick="nuevaEmpresa()">+ Nueva empresa</button></div><div id="ae-datos">Cargando…</div></div>';
+    '<button class="btn btn-mor" onclick="nuevaEmpresa()">+ Nueva empresa</button></div><div id="ae-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
 function pintarListaEmpresas(){
   var caja = $('ae-datos'), d = EMP.datos; if(!caja || !d) return;
@@ -429,7 +436,11 @@ function vistaPortalEmpresa(){
   }
   if(!estado.empresaId || !empresaPorId(estado.empresaId)) estado.empresaId = l[0].id;
   var e = empresaPorId(estado.empresaId);
-  setTimeout(function(){ cargarReporteEmpresa(e.id, 'empresa'); }, 0);
+  setTimeout(function(){
+    /* El reporte que ya se tenía se muestra al instante mientras se actualiza */
+    if(EMP.rep[e.id] && EMP.rep[e.id].modo === 'empresa') pintarReporteEmpresa(e.id);
+    cargarReporteEmpresa(e.id, 'empresa');
+  }, 0);
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>'+esc(e.nombre)+'</h2>'+
     '<p class="sub" style="margin:0">Avance y constancias de tu equipo en los programas que contrató la empresa.</p></div>'+
     (l.length > 1 ? '<select class="no-imprimir" onchange="estado.empresaId=this.value;pintar()">'+l.map(function(x){ return '<option value="'+x.id+'"'+(x.id===e.id?' selected':'')+'>'+esc(x.nombre)+'</option>'; }).join('')+'</select>' : '')+

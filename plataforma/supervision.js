@@ -26,9 +26,13 @@ vistaAdminPlanes = function(){
   return h.replace('<div id="pln-com"></div>', '<div id="pln-sup"></div><div id="pln-com"></div>');
 };
 var _plnCargarAdminSup = plnCargarAdmin;
-plnCargarAdmin = function(){ return _plnCargarAdminSup().then(supCargarAdmin); };
-function supCargarAdmin(){
-  return Nube.empresaRpc('operador_metricas', {}).then(function(r){ SUP.datos = r || []; supPintarAdmin(); })
+/* Las métricas se piden al mismo tiempo que lo demás de la pantalla y se pintan al final, como antes */
+plnCargarAdmin = function(){
+  var pedido = Nube.empresaRpc('operador_metricas', {}); pedido.catch(function(){});
+  return _plnCargarAdminSup().then(function(){ return supCargarAdmin(pedido); });
+};
+function supCargarAdmin(pedido){
+  return (pedido && pedido.then ? pedido : Nube.empresaRpc('operador_metricas', {})).then(function(r){ SUP.datos = r || []; supPintarAdmin(); })
     .catch(function(e){ var c = $('pln-sup'); if(c) c.innerHTML = plnErr(e, 'Falta correr backend/prueba-y-supervision-20261019.sql en Supabase.'); });
 }
 function supPintarAdmin(){
