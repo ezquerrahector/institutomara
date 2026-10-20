@@ -580,7 +580,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261013p"></script>
+<script src="nube.js?v=20261019c"></script>
 <script src="interactivo.js?v=20260929"></script>
 <script src="cursos/ingles-a1.js?v=20261004"></script>
 <script src="cursos/ia-general.js?v=20261004"></script>
@@ -2785,17 +2785,27 @@ function prepararQR(cont, rec, url){
 function vistaConstancias(){
   var h = '<div class="seccion"><h2>Mis constancias</h2>'+
     '<p class="sub">Se generan solas al terminar todas las lecciones y aprobar todas las evaluaciones de un curso.</p>';
-  var hay = false, lista = '<div class="rejilla rejilla-3">';
+  var hay = false, lista = '<div class="rejilla rejilla-3">', emitidas = {};
+  /* Las constancias ya emitidas se muestran siempre, aunque el curso cambie o termine la membresía o el plan. */
+  for(var e=0;e<BD.constancias.length;e++){
+    var r = BD.constancias[e];
+    if(r.usuarioId !== sesion.id) continue;
+    hay = true; if(r.cursoId) emitidas[r.cursoId] = true;
+    lista += '<div class="tarjeta"><span class="etiqueta ok">Concluido</span>'+
+      '<h3 style="margin:10px 0 6px;color:var(--tinta)">'+esc(r.nombreCurso)+'</h3>'+
+      '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">'+r.horas+' horas · folio '+esc(r.folio)+'</p>'+
+      '<button class="btn btn-mor" style="width:100%" onclick="ir(\'constancia\',{constanciaId:\''+esc(r.id)+'\',cursoId:'+(r.cursoId ? '\''+esc(r.cursoId)+'\'' : 'null')+'})">Ver y descargar</button></div>';
+  }
   for(var i=0;i<BD.inscripciones.length;i++){
     if(BD.inscripciones[i].usuarioId !== sesion.id) continue;
-    var c = curso(BD.inscripciones[i].cursoId); if(!c) continue;
+    var c = curso(BD.inscripciones[i].cursoId); if(!c || emitidas[c.id]) continue;
     var listo = cursoCompleto(sesion.id,c);
     if(!listo) continue;
     hay = true;
     lista += '<div class="tarjeta"><span class="etiqueta ok">Concluido</span>'+
       '<h3 style="margin:10px 0 6px;color:var(--tinta)">'+esc(c.nombre)+'</h3>'+
       '<p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">'+c.horas+' horas</p>'+
-      '<button class="btn btn-mor" style="width:100%" onclick="ir(\'constancia\',{cursoId:\''+c.id+'\'})">Ver y descargar</button></div>';
+      '<button class="btn btn-mor" style="width:100%" onclick="ir(\'constancia\',{constanciaId:null,cursoId:\''+c.id+'\'})">Ver y descargar</button></div>';
   }
   lista += '</div>';
   if(!hay){
@@ -2807,6 +2817,10 @@ function vistaConstancias(){
 function vistaConstancia(){
   var admin = sesion && sesion.rol === 'admin';
   var rec = admin && estado.constanciaId ? BD.constancias.find(function(r){ return r.id === estado.constanciaId; }) : null;
+  /* Una constancia ya emitida siempre se puede ver y descargar. */
+  if(!rec && !admin && sesion) rec = BD.constancias.find(function(r){
+    return r.usuarioId === sesion.id && (estado.constanciaId ? r.id === estado.constanciaId : (estado.cursoId && r.cursoId === estado.cursoId));
+  }) || null;
   var c = curso(rec ? rec.cursoId : estado.cursoId);
   if(!rec){
     if(admin || !c || !cursoCompleto(sesion.id,c))
@@ -2823,7 +2837,7 @@ function vistaConstancia(){
   var firmaNombre = ajuste('director_nombre', BD.config.directorNombre || '');
   var firmaPuesto = ajuste('director_puesto', BD.config.directorPuesto || 'Dirección Académica');
   var firmaImg = ajuste('firma_img', '');
-  if(!admin) setTimeout(function(){ ofrecerRecompra(c.id); }, 0);
+  if(!admin && c) setTimeout(function(){ ofrecerRecompra(c.id); }, 0);
   var avisoQR = location.protocol === 'file:' && !BD.config.urlPublica
     ? '<div class="aviso aviso-info no-imprimir" style="margin-bottom:18px">Todavía no configuras la '+
       '<b>URL pública</b> en Ajustes, así que este QR solo abre en esta computadora. En cuanto publiques el '+
@@ -4173,7 +4187,8 @@ function guardarNuevoAlumno(){
 }
 function borrarAlumno(uid){
   var u = usuario(uid);
-  if(!confirm('Se elimina la cuenta de '+(u?u.nombre:'este alumno')+' por completo: su acceso, inscripciones, avance y constancias. '+
+  if(!confirm('Se elimina la cuenta de '+(u?u.nombre:'este alumno')+': su acceso, inscripciones y avance. '+
+    'Sus constancias se conservan: se siguen verificando por folio y QR, y si vuelve a registrarse con el mismo correo las vuelve a ver. '+
     'Los pagos se conservan en el registro. Esto no se puede deshacer. ¿Continuar?')) return;
   if(NUBE){
     Nube.funcionServidor('admin-usuarios', { accion:'borrar', usuarioId:uid }).then(function(){ quitarAlumnoLocal(uid); })
