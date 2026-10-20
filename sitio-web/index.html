@@ -815,6 +815,8 @@ html,body{overflow-x:hidden}
       if(document.getElementById('emp-precios')) ok(); else document.addEventListener('DOMContentLoaded', ok);
     }).catch(function(){});
   window.abrirPruebaEmp = function(){ var m = document.getElementById('emp-modal'); m.hidden = false; var i = m.querySelector('input'); if(i) i.focus(); };
+  /* Desde el aula («¿Prefieren probar primero?»): abre directo el formulario de prueba. */
+  if(location.hash === '#prueba-empresas') setTimeout(function(){ var sec = document.getElementById('empresas'); if(sec) sec.scrollIntoView(); window.abrirPruebaEmp(); }, 400);
   window.cerrarPruebaEmp = function(){ document.getElementById('emp-modal').hidden = true; };
   document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape'){ var m = document.getElementById('emp-modal'); if(m) m.hidden = true; } });
   window.enviarPruebaEmp = function(ev){
