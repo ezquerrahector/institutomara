@@ -1,0 +1,822 @@
+{
+ "modulos": [
+  {
+   "t": "Calidad: qué es, cuánto cuesta y cómo se mejora",
+   "r": "Entenderás qué significa calidad para el cliente, quiénes fundaron la disciplina, cuánto cuesta la mala calidad y cómo se complementan Lean, Six Sigma e ISO 9001.",
+   "lecciones": [
+    {
+     "t": "Qué es calidad: del cliente al proceso",
+     "obj": "Traducir lo que dice un cliente a requisitos medibles y distinguir qué requisitos pesan más según el modelo de Kano.",
+     "texto": [
+      "Imagina un par de botas que salió de la planta con todas las costuras dentro de tolerancia, el color correcto y la etiqueta en orden. Tres semanas después el cliente las devuelve porque le sacan ampollas. ¿Tenían calidad? Para el inspector, sí; para quien las usa, no. Esa tensión es el punto de partida de este diplomado. La familia de normas ISO describe la <b>calidad</b>, en esencia, como el grado en que las características de un producto o servicio cumplen los requisitos. La pregunta incómoda es: ¿los requisitos de quién y escritos por quién?",
+      "Joseph Juran lo resumió como <b>adecuación al uso</b>: algo tiene calidad si sirve para lo que el cliente lo necesita, en sus condiciones reales. Por eso los requisitos no son sólo los del plano o el contrato; también hay requisitos implícitos (nadie pide por escrito que una bota no lastime), legales (una NOM de etiquetado, por ejemplo) y los que la propia empresa decide. Escuchar la <b>voz del cliente</b> significa reunir quejas, devoluciones, entrevistas y observaciones de uso, y traducirlas a algo medible. Esa traducción produce las características críticas para la calidad, conocidas por su sigla en inglés, <b>CTQ</b>: «que no lastime» se convierte en una altura máxima de la costura interna o en una flexibilidad mínima de la suela, cada una con un valor objetivo y una tolerancia.",
+      "El modelo que propuso el profesor japonés Noriaki Kano en los años ochenta ayuda a no tratar igual todos los requisitos. Los <b>básicos</b> no generan satisfacción cuando se cumplen, pero sí enojo cuando faltan: que la factura salga bien, que la suela no se despegue. Los de <b>desempeño</b> agradan más cuanto mejor se cumplen, como la rapidez de entrega. Los de <b>entusiasmo</b> sorprenden porque nadie los esperaba, y con el tiempo tienden a volverse básicos. El error clásico es invertir en sorprender mientras fallan los básicos.",
+      "En este diplomado irás del cliente al proceso: entender qué valora quien paga, encontrar dónde y por qué el proceso no lo entrega, y luego medirlo, mejorarlo y sostenerlo con Lean, Six Sigma e ISO 9001. Vas a hacer, no sólo a nombrar: un mapa de flujo de valor, un Pareto, una gráfica de control, un A3. Una aclaración honesta desde ahora: este diplomado no otorga una cinta Six Sigma ni una certificación ISO; te prepara para aplicar estas herramientas y aprovechar mejor una certificación formal si después la buscas."
+     ],
+     "comparar": [
+      "«Así no: “Pasó la inspección, entonces tiene calidad; si el cliente se queja, es que es muy exigente.”»",
+      "«Así sí: “Pasó la inspección, pero al cliente le falla al usarlo: revisemos si nuestros requisitos reflejan lo que de verdad necesita.”»"
+     ],
+     "caso": "Caso ficticio: Ernestina, de 47 años, es dueña de un taller de uniformes escolares en Tlaxcala con doce personas en costura. Este año tres escuelas le reclamaron después de la entrega: los pantalones se deshilachan en el dobladillo tras pocas lavadas y las tallas no coinciden con la tabla que ella misma entrega. Su proveedor le ofrece una tela más cara, «de primera». Ernestina duda: ¿el problema es la tela o algo que no está escuchando de sus clientes?",
+     "p": [
+      [
+       "¿Qué le conviene hacer a Ernestina antes de cambiar de tela?",
+       "Reunir quejas y datos para saber qué falla y en qué uso",
+       "Comprar la tela cara, porque mejor material significa más calidad",
+       "Pedir a las escuelas que laven las prendas con más cuidado en casa",
+       "Sin saber qué falla y en qué condiciones, cambiar la tela es una apuesta: el dobladillo puede abrirse por la puntada, no por la tela, y las tallas no se arreglan con material más caro. Culpar al lavado ignora que la adecuación al uso incluye las condiciones reales del cliente."
+      ],
+      [
+       "Según Kano, ¿cómo clasificarías que las tallas coincidan con la tabla?",
+       "Como un requisito básico: nadie lo celebra, pero su falta enoja",
+       "Como un requisito de entusiasmo que sorprende a las escuelas",
+       "Como un requisito de desempeño: entre más coincida, más agrada",
+       "Que la talla corresponda a la tabla es algo que el cliente da por hecho; cumplirlo no genera aplausos y fallarlo genera reclamos, que es la definición de básico. No sorprende a nadie ni produce más satisfacción por coincidir «mucho»: coincide o no coincide."
+      ],
+      [
+       "¿Cuál sería una CTQ bien planteada para el dobladillo?",
+       "Que la costura resista cierto número de lavadas sin abrirse",
+       "Que el dobladillo se vea bonito y con acabado de buena calidad",
+       "Que las costureras revisen con más atención cada dobladillo",
+       "Una CTQ es una característica medible del producto con meta y tolerancia; el número de lavadas que resiste lo es. «Que se vea bonito» no se puede medir sin más precisión, y pedir más atención es una acción sobre las personas, no una característica del producto."
+      ]
+     ],
+     "completar": [
+      "Juran definió la calidad como ___ al uso: que sirva para lo que el cliente necesita en sus condiciones reales.",
+      "adecuación"
+     ],
+     "relacionar": [
+      [
+       "Requisito básico",
+       "Que la factura salga sin errores"
+      ],
+      [
+       "Requisito de desempeño",
+       "Entregar en menos días que la competencia"
+      ],
+      [
+       "Requisito de entusiasmo",
+       "Un detalle que el cliente no esperaba y le encanta"
+      ],
+      [
+       "Voz del cliente",
+       "Quejas, entrevistas y devoluciones reunidas"
+      ],
+      [
+       "CTQ",
+       "Característica medible con valor objetivo y tolerancia"
+      ]
+     ],
+     "refl": "Traduce la voz de tu cliente a requisitos medibles. 1) Elige un producto o servicio que entregues en tu trabajo y nombra a su cliente principal (interno o externo). 2) Anota cinco cosas que ese cliente ha dicho, reclamado o pedido, con sus propias palabras. 3) Clasifica cada una como básica, de desempeño o de entusiasmo. 4) Convierte las tres más importantes en CTQ con unidad de medida, valor objetivo y tolerancia. 5) Escribe qué dato te falta para confirmar que lo entendiste bien.",
+     "modelo": "Modelo: «Servicio: reparación de celulares en mi local; cliente: personas que llegan sin cita. Lo que dicen: “¿para cuándo queda?”, “me lo entregaron rayado”, “nadie me avisó que ya estaba”, “me cobraron más de lo que me dijeron”, “qué bien que me lo limpiaron”. Básicos: sin rayones y cobro igual al presupuesto. Desempeño: tiempo de entrega y aviso. Entusiasmo: la limpieza. CTQ: entrega en 48 horas o menos desde la recepción; diferencia entre presupuesto y cobro de cero pesos; aviso por mensaje antes de una hora tras terminar. Me falta medir cuántos equipos salen rayados.» Es buena porque usa palabras reales del cliente, distingue los tipos de requisito y define cada CTQ con unidad y meta.",
+     "plantilla": [
+      "De la voz del cliente a la CTQ",
+      "Producto o servicio: [ ]\nCliente: [quién lo recibe]\nLo que dice el cliente (textual): [ ]\nTipo según Kano: [básico / desempeño / entusiasmo]\nNecesidad detrás de la frase: [ ]\nCTQ: [característica medible]\nUnidad y valor objetivo: [ ]\nTolerancia: [mínimo – máximo]\nCómo y cada cuánto se medirá: [ ]"
+     ],
+     "clave": [
+      "Calidad es cumplir los requisitos del cliente en su uso real, no sólo pasar la inspección.",
+      "La voz del cliente se traduce a CTQ medibles, con meta y tolerancia.",
+      "Según Kano, fallar en un requisito básico no se compensa con detalles que sorprendan."
+     ]
+    },
+    {
+     "t": "Lo que siguen enseñando Shewhart, Deming, Juran, Ishikawa y Crosby",
+     "obj": "Aplicar las ideas centrales de los fundadores de la calidad (variación, PHVA, trilogía e inspección) a decisiones concretas de tu trabajo.",
+     "texto": [
+      "En la década de 1920, Walter <b>Shewhart</b>, físico y estadístico de la industria telefónica estadounidense, formalizó algo que hoy parece obvio: ningún proceso produce dos piezas idénticas. Distinguió entre la variación que viene del propio sistema, constante y de muchas causas pequeñas, y la que tiene una causa asignable que se puede encontrar y eliminar. Para separarlas creó las gráficas de control, que dominarás en el módulo 6. La consecuencia práctica es enorme: si reaccionas a cada subida o bajada como si fuera un problema especial, terminas empeorando el proceso.",
+      "W. Edwards <b>Deming</b> llevó esas ideas a Japón a partir de 1950 y difundió el ciclo de Shewhart como un método para aprender; con los años él mismo prefirió llamarlo planear, hacer, estudiar y actuar. En español lo encontrarás como <b>PHVA</b> (planear, hacer, verificar, actuar) o como PDCA, por sus siglas en inglés. Deming sostenía que la mayoría de los problemas nacen del sistema que diseña la dirección y no de la mala voluntad de los trabajadores. Uno de sus 14 puntos pide dejar de depender de la <b>inspección</b> masiva: revisar todo no mejora el proceso, sólo aparta lo malo cuando ya se hizo, y además quien inspecciona también se cansa y se equivoca.",
+      "Joseph <b>Juran</b> propuso la trilogía de la calidad: planificar (diseñar productos y procesos capaces de cumplir), controlar (mantener el desempeño logrado) y mejorar (llevarlo a un nivel nuevo, proyecto por proyecto). También dio nombre al principio de Pareto en calidad: unos pocos problemas vitales explican la mayor parte del daño, frente a muchos triviales. Kaoru <b>Ishikawa</b> creó el diagrama causa-efecto, reunió las siete herramientas básicas y promovió los círculos de calidad, convencido de que el operario también puede analizar y mejorar su trabajo.",
+      "Philip <b>Crosby</b> definió la calidad como cumplir los requisitos, popularizó la meta de «cero defectos» y la tradujo a dinero: lo que cuesta hacer las cosas mal. Antes, en los años cincuenta, Armand Feigenbaum había ordenado esos costos en prevención, evaluación y fallas, como verás en la siguiente lección. Ninguno es pieza de museo: cada vez que alguien propone «poner otro inspector» o «regañar al turno de noche», estos autores te dan argumentos para preguntar primero qué está fallando en el sistema."
+     ],
+     "comparar": [
+      "«Así no: “Subió el rechazo; pongamos dos inspectores más al final de la línea y que firmen cada caja.”»",
+      "«Así sí: “Subió el rechazo; contengamos con revisión temporal mientras buscamos en qué paso del proceso nace el defecto.”»"
+     ],
+     "caso": "Caso ficticio: Rogelio, de 52 años, es gerente de producción de una fábrica de ates y dulces de fruta en Morelia. En dos meses subieron las quejas por frascos con tapa mal sellada. El director propone revisar a mano el cien por ciento de los frascos y quitar el bono al turno que tenga más rechazos cada semana. Rogelio debe responder en la junta del lunes y no quiere quedar como alguien que defiende a su gente sin argumentos.",
+     "p": [
+      [
+       "¿Qué idea de Deming le sirve a Rogelio para responder sobre la revisión total?",
+       "Revisar todo aparta lo malo, pero no corrige la causa del sellado",
+       "Revisar todo es la única forma real de garantizar cero defectos",
+       "Revisar todo funciona siempre que los inspectores firmen cada lote",
+       "Deming pidió dejar de depender de la inspección masiva porque actúa cuando el defecto ya existe. Puede usarse como contención temporal, pero no garantiza cero defectos (la inspección humana falla) y firmar cada lote no cambia el proceso que produce tapas mal selladas."
+      ],
+      [
+       "¿Qué diría la lógica de Shewhart sobre quitar el bono al turno con más rechazos?",
+       "Que antes hay que ver si la diferencia es sólo variación del sistema",
+       "Que es justo, porque cada turno controla por completo su resultado",
+       "Que funciona si el castigo se aplica igual a todos los turnos",
+       "Si los turnos comparten máquina, tapas y procedimiento, las diferencias semanales pueden ser variación común; castigar por ella es castigar al azar. Ningún turno controla por completo su resultado, y aplicar el castigo a todos no corrige el error de razonamiento."
+      ],
+      [
+       "Con la trilogía de Juran, ¿cómo ordenaría Rogelio su propuesta?",
+       "Recuperar el control, mejorar con un proyecto y diseñar capaz lo nuevo",
+       "Rediseñar todos los productos de la fábrica antes de atender el problema",
+       "Mantener el control actual y esperar a que las quejas bajen por sí solas",
+       "La trilogía combina control (contener y estabilizar), mejora (un proyecto para atacar la causa) y planificación (que los procesos y productos nuevos ya nazcan capaces y el problema no se repita en ellos). Rediseñar todo es desproporcionado y deja al cliente sin respuesta; esperar sin actuar renuncia a la mejora."
+      ]
+     ],
+     "completar": [
+      "Deming pidió dejar de depender de la ___ masiva para lograr la calidad.",
+      "inspección"
+     ],
+     "relacionar": [
+      [
+       "Shewhart",
+       "Separar la variación común de las causas asignables"
+      ],
+      [
+       "Deming",
+       "Ciclo PHVA y dejar de depender de revisar todo"
+      ],
+      [
+       "Juran",
+       "Trilogía y pocos vitales frente a muchos triviales"
+      ],
+      [
+       "Ishikawa",
+       "Diagrama causa-efecto y círculos de calidad"
+      ],
+      [
+       "Crosby",
+       "Cero defectos y costo de incumplir los requisitos"
+      ]
+     ],
+     "refl": "Aplica a los fundadores en tu trabajo. 1) Describe un problema de calidad recurrente que hayas vivido. 2) Cuenta cómo se respondió (más inspección, regaños, cambios en el proceso o nada). 3) Analízalo con dos autores de esta lección: qué diría cada uno y qué pregunta haría. 4) Escribe un ciclo PHVA pequeño para atacarlo: qué planearías, qué probarías y dónde, cómo verificarías con un dato y qué harías según el resultado.",
+     "modelo": "Modelo: «Problema: en el área de facturación de una distribuidora de refacciones salen facturas con el RFC del cliente equivocado. La respuesta fue revisar cada factura dos veces y descontar a quien se equivoca. Deming diría que la doble revisión no corrige la causa y que el error nace del sistema; Ishikawa me pediría un diagrama causa-efecto con el equipo. PHVA: planear que el sistema tome el RFC del catálogo de clientes en lugar de teclearlo; probarlo dos semanas con una capturista; verificar los errores por cada mil facturas antes y después; actuar extendiéndolo o ajustándolo.» Es buena porque describe la respuesta actual, aplica dos autores con precisión y propone una prueba pequeña con medición.",
+     "plantilla": [
+      "Mi ciclo PHVA",
+      "Problema: [qué pasa, dónde y desde cuándo]\nRespuesta actual: [ ]\nPregunta de Deming: [¿qué parte del sistema lo provoca?]\nPlanear: [cambio a probar y meta]\nHacer: [dónde, quién y cuánto tiempo, en pequeño]\nVerificar: [indicador antes / después]\nActuar: [adoptar, ajustar o descartar]"
+     ],
+     "clave": [
+      "Todo proceso varía; tratar cada variación como especial lo empeora.",
+      "La inspección masiva aparta defectos, pero no los evita: la mejora está en el proceso.",
+      "PHVA es un ciclo de aprendizaje: se prueba en pequeño y se verifica con datos."
+     ]
+    },
+    {
+     "t": "El costo de la mala calidad: prevención, evaluación y fallas (calcularlo en Excel)",
+     "obj": "Clasificar los costos de calidad de un proceso en cuatro categorías y calcularlos en una hoja de cálculo para proponer dónde invertir.",
+     "texto": [
+      "La mala calidad casi nunca aparece como un renglón en el estado de resultados. Se esconde en horas extra para reprocesar, en material que se tira, en fletes urgentes, en notas de crédito y en clientes que ya no vuelven. Armand Feigenbaum propuso ordenar el <b>costo de calidad</b> en categorías, y el modelo más usado hoy tiene cuatro: prevención, evaluación, fallas internas y fallas externas. Ponerle pesos y centavos a la mala calidad es la forma más rápida de que la dirección deje de verla como un asunto «de los de calidad».",
+      "La <b>prevención</b> es lo que gastas para que el error no ocurra: capacitar, diseñar bien, validar a un proveedor, dar mantenimiento preventivo, instalar un dispositivo a prueba de errores. La <b>evaluación</b> es lo que gastas para averiguar si algo salió bien: inspección, pruebas de laboratorio, calibración de instrumentos, auditorías. Las <b>fallas internas</b> se detectan antes de que el producto llegue al cliente: desperdicio, retrabajo, reinspección, paros, venta como segunda. Las <b>fallas externas</b> llegan al cliente: devoluciones, garantías, penalizaciones, visitas para atender reclamos y ventas futuras perdidas, que son reales aunque cueste estimarlas.",
+      "La experiencia de la disciplina es consistente: una falla cuesta más cuanto más tarde se detecta. Un corte mal hecho cuesta poco en la mesa, más en el ensamble y mucho más en la tienda del cliente. Por eso la meta no es bajar el costo total recortando inspección, sino mover el gasto hacia la prevención y, con el tiempo, necesitar menos evaluación. Evita dos trampas: comparar tu cifra con porcentajes de ventas que circulan sin fuente, y presentar como exactos costos que no lo son, como la reputación; anótalos como estimación y dilo.",
+      "En una hoja de cálculo basta una tabla con cuatro columnas: en A el concepto, en B la categoría, en C el monto del mes y en D la fuente del dato. En F2:F5 escribe las cuatro categorías y en G2 la fórmula =SUMAR.SI(B$2:B$40,F2,C$2:C$40), que copias hasta G5. El total sale con =SUMA(G2:G5) en G6 y la proporción de cada categoría con =G2/G$6. Si tu computadora usa punto y coma como separador de argumentos, cámbialo. Saca los montos de registros reales: nómina, desperdicio pesado en báscula, notas de crédito y facturas de fletes."
+     ],
+     "comparar": [
+      "«Así no: “Para bajar el costo de calidad, quitemos el laboratorio y a la mitad de los inspectores.”»",
+      "«Así sí: “Midamos cuánto nos cuestan las fallas, probemos qué prevención las reduce y después veamos cuánta inspección sigue haciendo falta.”»"
+     ],
+     "caso": "Caso ficticio: Yadira, de 34 años, es contadora de costos de una curtiduría en León. El director le pide una cifra: cuánto les cuesta al mes la mala calidad. Ella tiene datos de pieles reprocesadas, devoluciones de un fabricante de calzado, horas del laboratorio que mide grosor y color, y un curso de teñido. El gerente comercial le pide no incluir los descuentos que dio a ese cliente por pieles con defectos, «porque eso es comercial, no de calidad».",
+     "p": [
+      [
+       "¿En qué categoría van los descuentos que se dieron al cliente por pieles con defectos?",
+       "Falla externa, porque el defecto llegó al cliente",
+       "Gasto comercial, porque los autorizó el área de ventas",
+       "Evaluación, porque el cliente revisó la piel al recibirla",
+       "Lo que define la categoría es dónde se detectó la falla, no qué área firmó el descuento. El defecto llegó al cliente, así que es falla externa; dejarlo fuera haría ver la mala calidad más barata de lo que es. Que el cliente revise no convierte el costo en evaluación de la curtiduría."
+      ],
+      [
+       "¿Dónde clasifica Yadira las horas del laboratorio que mide cada lote?",
+       "En evaluación, porque sirven para saber si el lote cumple",
+       "En prevención, porque ayudan a que no salgan lotes malos",
+       "En falla interna, porque es un gasto que ocurre en la planta",
+       "Medir para saber si algo salió bien es evaluación. Prevención es lo que evita que el error ocurra (capacitar, diseñar, validar), y falla interna es el costo de un defecto ya detectado, no de cualquier gasto dentro de la planta."
+      ],
+      [
+       "El director propone bajar el costo de calidad cancelando el curso de teñido. ¿Qué responde Yadira con mejor argumento?",
+       "Que es prevención y quitarla puede subir las fallas",
+       "Que la capacitación no entra en el costo de calidad",
+       "Que conviene recortar el laboratorio, que cuesta más",
+       "El curso es gasto de prevención: quitarlo ahorra poco hoy y puede encarecer las fallas mañana. La capacitación sí forma parte del costo de calidad, y recortar el laboratorio sólo cambia el problema de lugar: menos detección significa más fallas externas."
+      ]
+     ],
+     "completar": [
+      "Lo que gastas para que el error no ocurra, como capacitar o validar a un proveedor, es costo de ___.",
+      "prevención"
+     ],
+     "relacionar": [
+      [
+       "Capacitación en el nuevo procedimiento",
+       "Prevención"
+      ],
+      [
+       "Calibración de los instrumentos de medición",
+       "Evaluación"
+      ],
+      [
+       "Retrabajo de piezas antes de embarcar",
+       "Falla interna"
+      ],
+      [
+       "Nota de crédito por un lote devuelto",
+       "Falla externa"
+      ]
+     ],
+     "refl": "Calcula un primer costo de mala calidad. 1) Elige un proceso de tu trabajo y un mes de referencia. 2) Enlista al menos ocho conceptos de costo relacionados con la calidad y clasifícalos en las cuatro categorías. 3) Para cada uno anota de dónde sale el monto (registro, estimación o supuesto). 4) Arma la tabla en una hoja de cálculo con SUMAR.SI y obtén el total y la proporción de cada categoría. 5) Escribe en tres líneas qué te dice la distribución y qué prevención propondrías.",
+     "modelo": "Modelo: «Proceso: impresión de etiquetas, septiembre. Prevención: curso de manejo de color, $4,000. Evaluación: revisión de pruebas, $9,500; calibración del densitómetro, $2,000. Falla interna: tirajes reimpresos, $31,000; papel desperdiciado, $12,800. Falla externa: dos notas de crédito, $18,000; flete urgente, $3,500; un cliente perdido, sin estimar. Total registrado: $80,800, del cual las fallas son el 81 %. Fuentes: órdenes de reimpresión, facturas y nómina. Propongo una lista de verificación del arte antes de imprimir.» Es buena porque cada monto tiene fuente, separa lo que no se pudo estimar, la suma cuadra y la conclusión lleva a una acción de prevención.",
+     "plantilla": [
+      "Hoja de costo de calidad",
+      "Columna A: [concepto]\nColumna B: [categoría: prevención / evaluación / falla interna / falla externa]\nColumna C: [monto del mes en pesos]\nColumna D: [fuente: registro, estimación o supuesto]\nResumen en F2:F5: [las cuatro categorías]\nG2: [=SUMAR.SI(B$2:B$40,F2,C$2:C$40)] (cópiala hasta G5)\nG6, total: [=SUMA(G2:G5)]\nH2, proporción: [=G2/G$6] (formato de porcentaje, cópiala hasta H5)\nLo que no pude estimar: [ ]\nPrevención que propongo: [ ]"
+     ],
+     "clave": [
+      "El costo de calidad tiene cuatro categorías: prevención, evaluación, fallas internas y fallas externas.",
+      "Una falla cuesta más cuanto más tarde se detecta; la meta es mover el gasto hacia la prevención.",
+      "Cada monto necesita una fuente; lo que no se puede medir se declara como estimación."
+     ]
+    },
+    {
+     "t": "Pensar en procesos: SIPOC, mapa de proceso y cómo encajan Lean, Six Sigma e ISO 9001",
+     "obj": "Construir el SIPOC de un proceso y explicar qué aporta cada enfoque (Lean, Six Sigma e ISO 9001) para mejorarlo.",
+     "texto": [
+      "Un <b>proceso</b> es un conjunto de actividades que transforma entradas en salidas para alguien. Pensar en procesos cambia la pregunta de «¿quién se equivocó?» a «¿qué paso del proceso permitió el error?». Casi todo el trabajo importante cruza departamentos: un pedido nace en ventas y pasa por planeación, compras, producción, calidad y embarques. Cuando cada área cuida sólo su pedazo, nadie es dueño del resultado que ve el cliente. Por eso la ISO 9001 pide un enfoque a procesos, y la buena práctica es nombrar a un responsable para cada uno.",
+      "El <b>SIPOC</b> es la vista de alto nivel. Sus letras vienen del inglés y en español se leen como proveedores, entradas, proceso, salidas y clientes. Se llena desde el centro: escribe el proceso en cuatro a siete pasos grandes con verbo (recibir pedido, cortar, coser, inspeccionar, empacar) y define con precisión el evento que lo inicia y el que lo termina; luego anota las salidas y quién las recibe, y al final las entradas y quién las provee. Junto a cada salida agrega la CTQ que aprendiste a definir en la primera lección. Un buen SIPOC cabe en una hoja y sirve para que el equipo acuerde de qué proceso habla antes de discutir soluciones.",
+      "Cuando necesitas detalle, haces un <b>mapa de proceso</b> o diagrama de flujo: cada actividad, decisión, espera y traslado, de preferencia en carriles por área para ver dónde se pasa la estafeta de una a otra. Dibújalo como el proceso es, no como dice el manual, y caminándolo en el lugar donde ocurre. Ahí suelen aparecer reprocesos, esperas y firmas que nadie sabe para qué sirven.",
+      "Con esa vista se entiende cómo encajan las tres corrientes del diplomado. <b>Lean</b> se enfoca en el flujo: quitar desperdicios para que el valor llegue más rápido. <b>Six Sigma</b> se enfoca en la variación: usar datos y el método DMAIC (definir, medir, analizar, mejorar, controlar) para que el resultado sea predecible. <b>ISO 9001</b> es el marco del sistema de gestión: asegura que los procesos estén definidos, controlados, medidos y en mejora, ordenados según el ciclo PHVA. Su nueva edición, ISO 9001:2026, se publicó el 16 de septiembre de 2026 y la estudiarás en el módulo 7. No compiten: Lean y Six Sigma generan mejoras, e ISO 9001 ayuda a que no se pierdan."
+     ],
+     "comparar": [
+      "«Así no: “Los retrasos son culpa de almacén; que ellos lo resuelvan.”»",
+      "«Así sí: “Dibujemos el proceso del pedido de punta a punta, con todas las áreas, y veamos dónde se detiene.”»"
+     ],
+     "caso": "Caso ficticio: Fausto, de 29 años, es analista de mejora en el centro de atención telefónica de una aseguradora en Pachuca. Las aclaraciones de cobros duplicados tardan semanas y cada área culpa a otra: atención, cobranza y sistemas. Su gerente le dice: «Saquemos la certificación ISO este año y con eso se arregla». Fausto sospecha que primero hay que entender el proceso, pero no sabe cómo plantearlo sin parecer que se opone a la certificación.",
+     "p": [
+      [
+       "¿Qué debería construir Fausto primero?",
+       "Un SIPOC de las aclaraciones acordado con las tres áreas",
+       "Un manual de calidad completo para presentarlo al certificador",
+       "Un tablero con la productividad diaria de cada asesor telefónico",
+       "El SIPOC obliga a las tres áreas a acordar dónde empieza y termina el proceso, qué entrega y a quién; sin eso, cualquier solución es parcial. Un manual escrito antes de entender el proceso describiría lo que se cree, y medir a cada asesor vuelve a buscar culpables en lugar de ver el flujo."
+      ],
+      [
+       "Al llenar el SIPOC, ¿por dónde conviene empezar?",
+       "Por los pasos del proceso y su evento de inicio y de fin",
+       "Por la lista completa de proveedores externos de la empresa",
+       "Por las quejas más graves que han llegado a la dirección",
+       "El SIPOC se llena desde el centro: sin pasos y límites claros no sabes qué salidas, clientes, entradas y proveedores son pertinentes. Listar todos los proveedores de la empresa es demasiado amplio, y las quejas sirven como voz del cliente, pero no definen el proceso."
+      ],
+      [
+       "¿Qué respuesta es más precisa para su gerente sobre la certificación?",
+       "ISO da el marco, pero las mejoras salen de trabajar el proceso",
+       "ISO 9001 obliga a usar Six Sigma para reducir los tiempos de espera",
+       "Con el certificado los tiempos bajan, porque el auditor los vigila",
+       "ISO 9001 pide un sistema con procesos definidos, medidos y en mejora, pero no reduce por sí sola los tiempos de aclaración. No obliga a usar Six Sigma ni a ninguna metodología específica, y el auditor revisa el sistema por muestreo; no administra el proceso."
+      ]
+     ],
+     "completar": [
+      "Un buen ___ cabe en una hoja: proveedores, entradas, proceso, salidas y clientes.",
+      "SIPOC"
+     ],
+     "refl": "Haz el SIPOC de un proceso tuyo. 1) Elige un proceso que se repita y en el que participes. 2) Escribe sus límites: qué evento lo inicia y cuál lo termina. 3) Describe de cuatro a siete pasos con verbo. 4) Llena salidas, clientes, entradas y proveedores. 5) Anota una CTQ para cada salida. 6) Señala qué problema del proceso te parece de flujo (Lean), cuál de variación (Six Sigma) y cuál de sistema (ISO 9001), y explica por qué.",
+     "modelo": "Modelo: «Proceso: surtido de pedidos de una distribuidora de abarrotes. Inicia cuando llega el pedido del tendero y termina cuando el tendero firma de recibido. Pasos: capturar, verificar crédito, surtir, cargar, entregar. Salidas: pedido entregado y factura; cliente: la tienda. Entradas: pedido, inventario y unidad de reparto; proveedores: vendedor, almacén y flotilla. CTQ: pedido completo, entrega en menos de 24 horas, factura sin errores. Flujo: el pedido espera horas la verificación de crédito. Variación: unos días se surte completo y otros no. Sistema: nadie registra los faltantes.» Es buena porque tiene límites claros, pasos con verbo, CTQ medibles y conecta cada problema con el enfoque que mejor lo ataca.",
+     "plantilla": [
+      "SIPOC de un proceso",
+      "Proceso: [nombre]\nInicia cuando: [ ]\nTermina cuando: [ ]\nProveedores: [ ]\nEntradas: [ ]\nPasos (4 a 7, con verbo): [ ]\nSalidas: [ ]\nClientes: [ ]\nCTQ de cada salida: [ ]\nProblema de flujo: [ ]\nProblema de variación: [ ]\nProblema de sistema: [ ]"
+     ],
+     "clave": [
+      "Pensar en procesos cambia la pregunta de quién falló a qué paso permitió la falla.",
+      "El SIPOC acuerda límites, pasos, salidas y clientes antes de buscar soluciones.",
+      "Lean ataca el desperdicio, Six Sigma la variación, e ISO 9001 da el sistema que sostiene la mejora."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige un proceso real de tu trabajo o de un negocio que conozcas bien. En los primeros 30 minutos arma su SIPOC con evento de inicio y de fin, de cuatro a siete pasos y una CTQ para cada salida. En los siguientes 45 minutos construye en una hoja de cálculo la tabla de costo de calidad de un mes con al menos diez conceptos, su categoría, su monto y su fuente; calcula con SUMAR.SI el total de cada categoría y con una división su proporción. En los últimos 15 minutos escribe un párrafo para tu jefe con la cifra total, lo que no pudiste estimar y una propuesta de prevención.",
+    "entregable": "Un SIPOC de una página y una hoja de cálculo con la tabla de costo de calidad, el resumen por categoría con fórmulas y un párrafo de conclusiones dirigido a tu jefe.",
+    "criterios": "Revisa: el SIPOC tiene inicio y fin definidos y de cuatro a siete pasos con verbo, cada salida tiene una CTQ medible, cada monto tiene categoría correcta y fuente declarada, las fórmulas suman lo mismo que la tabla y la propuesta ataca la falla más costosa con prevención y no con más inspección."
+   },
+   "lab": {
+    "t": "Rechazos en la curtiduría",
+    "obj": "Aplicar voz del cliente, costo de calidad, PHVA y pensamiento de procesos a un rechazo real de un cliente.",
+    "esc": "<b>Montserrat,</b> de 38 años, es jefa de calidad de una curtiduría de León que vende piel acabada a fabricantes de calzado. En el último mes su principal cliente le devolvió cuatro lotes por diferencias de tono entre pieles de un mismo lote y le advirtió que, si sigue, buscará otro proveedor. El dueño quiere que se revise cada piel a mano antes de embarcar y exige un culpable para el viernes.",
+    "e": [
+     [
+      "Escena 1: El cliente escribe: «El color no es el que aprobamos y las pieles de un mismo lote no combinan cuando las cortamos para un par».",
+      "Consigna: traduce la queja a dos o tres CTQ con unidad de medida, valor objetivo y tolerancia, y anota qué información o muestras le pedirías al cliente para confirmarlas."
+     ],
+     [
+      "Escena 2: El dueño insiste: «Que dos personas revisen cada piel con buena luz y ya; y quiero saber quién del turno de teñido la regó».",
+      "Consigna: escribe tu respuesta al dueño con argumentos de Deming y Shewhart: qué aceptas como contención temporal y por qué la revisión pieza por pieza no basta como solución."
+     ],
+     [
+      "Escena 3: Contabilidad te entrega los datos del mes: lotes devueltos, fletes de regreso, pieles vendidas como segunda, horas de reteñido, horas del laboratorio de color y un curso de colorimetría que se canceló por falta de presupuesto.",
+      "Consigna: clasifica cada concepto en prevención, evaluación, falla interna o falla externa, y explica en tres líneas qué te dice la distribución."
+     ],
+     [
+      "Escena 4: El viernes debes presentar un plan, no un culpable.",
+      "Consigna: arma el SIPOC del proceso de teñido y acabado, marca en qué pasos podría nacer la diferencia de tono y redacta un primer ciclo PHVA para atacarla."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué es lo más útil que Montserrat puede pedirle al cliente?",
+      "Pieles rechazadas y la forma en que mide el tono",
+      "Una carta que reconozca que el defecto es tolerable",
+      "Un plazo mayor para corregir sin cambiar el proceso",
+      "Con las pieles rechazadas y el método de medición del cliente puede definir la CTQ en los mismos términos que él la evalúa. Pedir que acepte el defecto no resuelve nada, y pedir tiempo sin cambiar el proceso sólo pospone el siguiente rechazo."
+     ],
+     [
+      "¿Cómo debe tratar la revisión pieza por pieza que propone el dueño?",
+      "Como contención temporal mientras se busca la causa",
+      "Como la solución definitiva, porque evita que salgan defectos",
+      "Como algo innecesario, porque el culpable ya está identificado",
+      "Revisar cada piel protege al cliente mientras se investiga, pero no corrige por qué varía el tono y la inspección visual también falla. Tratarla como solución definitiva repite el error que señaló Deming, y no hay ningún culpable identificado: hay un proceso por analizar."
+     ],
+     [
+      "¿Dónde clasifica Montserrat las pieles vendidas como segunda?",
+      "Falla interna, porque el defecto se detectó en la planta",
+      "Falla externa, porque al final se venden a otro cliente",
+      "Evaluación, porque se clasificaron después de revisarlas",
+      "La categoría depende de dónde se detectó la falla: la curtiduría la encontró antes de embarcar al cliente original, así que es falla interna (la pérdida es la diferencia de precio). Venderla a otro comprador no la vuelve externa, y la revisión que la separó es evaluación, pero la pérdida por venderla barata no."
+     ]
+    ],
+    "pl": [
+     "Plan inicial ante un rechazo del cliente",
+     "Queja del cliente (textual): [ ]\nCTQ: [característica, unidad, objetivo y tolerancia]\nContención inmediata: [qué, quién y hasta cuándo]\nCosto de calidad del mes: prevención [ ] evaluación [ ] falla interna [ ] falla externa [ ]\nSIPOC del proceso: [ ]\nPasos donde podría nacer el problema: [ ]\nPHVA: planear [ ] hacer [ ] verificar [ ] actuar [ ]\nMensaje al dueño: [el plan en tres líneas]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una cadena de autoservicio rechaza cajas de galletas porque la etiqueta promete doce piezas y varias traen once, aunque la planta las había liberado. ¿Qué explica mejor el problema?",
+     "Se incumple un requisito del cliente y legal, aunque pasó el control interno",
+     "Es un requisito de entusiasmo que la planta no estaba obligada a cumplir",
+     "El cliente exige demasiado, porque una pieza menos casi no se nota",
+     "Es un problema de costo de prevención, no de calidad del producto"
+    ],
+    [
+     "Graciela, gerente de un hotel en Mérida, recibe reseñas que elogian el desayuno y, a la vez, quejas porque el aire acondicionado falla. Ella quiere invertir en un spa. Según Kano, ¿qué le conviene?",
+     "Arreglar primero el aire, que es un requisito básico",
+     "Construir el spa, que generará entusiasmo y compensará la falla",
+     "Mejorar aún más el desayuno, porque es lo que más se comenta",
+     "Bajar las tarifas para que los huéspedes se quejen menos del aire"
+    ],
+    [
+     "En una maquiladora de Silao, el porcentaje de defectos de cada turno sube y baja un poco cada día. El jefe quiere premiar al mejor turno de la semana y amonestar al peor. ¿Qué advertiría Shewhart?",
+     "Que primero hay que distinguir variación común de una causa asignable",
+     "Que es correcto, porque cada turno controla todo lo que produce",
+     "Que sólo debe amonestar si el turno queda último dos semanas seguidas",
+     "Que conviene aplicarlo sólo a los turnos nocturnos, que varían más"
+    ],
+    [
+     "Teodoro dirige un laboratorio de análisis de agua en Tepic. Para bajar el costo de calidad propone cancelar la calibración de los equipos. ¿Qué es lo más acertado?",
+     "Es costo de evaluación y quitarlo puede hacer que lleguen errores al cliente",
+     "Es costo de falla interna, así que cancelarlo es una buena decisión de ahorro",
+     "Es costo de prevención y cancelarlo no afecta los resultados que se entregan",
+     "No forma parte del costo de calidad, porque es un gasto de mantenimiento general"
+    ],
+    [
+     "Una panadería de Oaxaca reprocesa masa cada mañana y además repone dos pedidos por semana que una cafetería le devuelve. ¿Cómo se clasifican esos costos?",
+     "El reproceso es falla interna y las reposiciones son falla externa",
+     "Ambos son falla externa, porque al final afectan a todo el negocio",
+     "El reproceso es evaluación y las reposiciones son falla interna",
+     "Ambos son costos normales de producción y no costos de calidad"
+    ],
+    [
+     "Nayeli quiere mejorar la entrega de expedientes en una notaría de Morelia, pero cada área describe el proceso de forma distinta. ¿Qué herramienta le ayuda primero a acordar de qué proceso hablan?",
+     "Un SIPOC con inicio, fin, pasos, salidas y clientes",
+     "Un histograma con los tiempos de cada abogado del despacho",
+     "Una encuesta de satisfacción a todos los clientes del año",
+     "Un reglamento interno con sanciones por cada expediente tardío"
+    ],
+    [
+     "El director de una fábrica de muebles en Pachuca afirma: «Ya tenemos el certificado ISO 9001, así que nuestra calidad está garantizada». ¿Qué respuesta es más precisa?",
+     "El certificado avala un sistema; la calidad se ve en los resultados",
+     "Es correcto, porque el certificado comprueba que no existen defectos",
+     "Es correcto mientras el certificado esté vigente y a la vista del cliente",
+     "Es falso, porque ISO 9001 sólo aplica a empresas que dan servicios"
+    ],
+    [
+     "En un despacho contable de Tlaxcala, Sebastián propone que cada declaración se revise dos veces para evitar errores. ¿Qué enseñanza de Deming aplica?",
+     "Dejar de depender de la inspección y mejorar el proceso que genera errores",
+     "Revisar dos veces garantiza cero errores si los revisores son personas distintas",
+     "La revisión doble es un costo de prevención y siempre conviene ampliarla más",
+     "Deming recomendaba la inspección al cien por ciento en servicios profesionales"
+    ],
+    [
+     "Socorro, de una fábrica de dulces en San Francisco del Rincón, tiene registrados diez tipos de defecto. ¿Qué idea de Juran la ayuda a decidir por dónde empezar?",
+     "Atacar los pocos defectos vitales que explican la mayor parte del daño",
+     "Atacar los diez defectos a la vez para no dejar ninguno pendiente",
+     "Empezar por el defecto más fácil de resolver para motivar al equipo",
+     "Esperar a tener un año completo de datos antes de elegir un defecto"
+    ],
+    [
+     "Abraham, supervisor en una fábrica de Purísima del Rincón, debe explicar a su equipo cómo se relacionan Lean, Six Sigma e ISO 9001. ¿Qué explicación es correcta?",
+     "Lean reduce desperdicio, Six Sigma variación e ISO sostiene el sistema",
+     "Son lo mismo con nombres distintos según el país donde se aplican",
+     "ISO 9001 reemplaza a Lean y a Six Sigma a partir de su edición 2026",
+     "Six Sigma es para servicios, Lean para fábricas e ISO para oficinas"
+    ]
+   ]
+  },
+  {
+   "t": "Lean I: valor, desperdicios y orden en el lugar de trabajo",
+   "r": "Aprenderás a pensar como Lean: definir el valor desde el cliente, ver los ocho desperdicios donde se hace el trabajo, implantar 5S que se sostengan y estandarizar con gestión visual.",
+   "lecciones": [
+    {
+     "t": "El pensamiento Lean: cinco principios y el Sistema de Producción Toyota",
+     "obj": "Explicar los cinco principios Lean y los pilares del Sistema de Producción Toyota, y distinguir el Lean real de un recorte disfrazado.",
+     "texto": [
+      "Después de la Segunda Guerra Mundial, Toyota no podía competir con las grandes armadoras estadounidenses ni en volumen ni en capital. Taiichi <b>Ohno</b> y la familia Toyoda construyeron durante décadas otra forma de producir: hacer sólo lo que el cliente pide, cuando lo pide, con el menor desperdicio posible y deteniéndose ante cualquier anomalía. Hoy se le conoce como <b>Sistema de Producción Toyota</b>. En 1988, John Krafcik usó la palabra inglesa lean (esbelto) para describir ese modo de producir, y en 1990 Womack, Jones y Roos la popularizaron con el libro <i>La máquina que cambió el mundo</i>.",
+      "El sistema descansa en dos pilares. El <b>justo a tiempo</b> busca que cada proceso produzca lo que el siguiente necesita, en la cantidad y el momento en que lo necesita, sin montañas de inventario que escondan los problemas. El <b>jidoka</b>, que suele traducirse como «automatización con toque humano», significa que la máquina o la persona se detiene en cuanto detecta una anomalía, para no seguir fabricando defectos; su origen es un telar de Sakichi Toyoda que se paraba solo cuando se rompía un hilo. Debajo de ambos pilares hay una base que muchos olvidan: estabilidad, trabajo estandarizado y respeto por las personas.",
+      "En 1996, Womack y Jones resumieron el pensamiento Lean en cinco principios. Primero, definir el <b>valor</b> desde el punto de vista del cliente: aquello por lo que pagaría. Segundo, identificar el <b>flujo de valor</b>: todos los pasos, con y sin valor, desde el pedido hasta la entrega. Tercero, lograr que el valor <b>fluya</b> sin interrupciones ni lotes que esperan. Cuarto, que el cliente <b>jale</b>: producir según la demanda real y no según un pronóstico optimista. Quinto, buscar la <b>perfección</b>: repetir el ciclo, porque siempre queda desperdicio por quitar.",
+      "Dos aclaraciones evitan malentendidos costosos. Lean no es un recorte de personal: si la mejora se paga despidiendo a quien la propuso, nadie volverá a proponer nada; lo sensato es usar el tiempo liberado para crecer, mejorar o absorber más demanda. Y Lean tampoco es un catálogo de herramientas: la investigación de Shah y Ward (2003) encontró que las plantas que combinan paquetes de prácticas (justo a tiempo, calidad total, mantenimiento y gestión de personas) se asocian con mejor desempeño operativo. Funciona el sistema completo, no copiar un tablero."
+     ],
+     "comparar": [
+      "«Así no: “Vamos a implantar Lean: con la mejora nos sobran seis personas, así que hay que liquidarlas.”»",
+      "«Así sí: “Con la mejora liberamos horas; las usaremos para atender los pedidos que hoy rechazamos y para capacitar al equipo.”»"
+     ],
+     "caso": "Caso ficticio: Leonel, de 44 años, es gerente de una planta de arneses eléctricos en Silao que surte a un cliente armador. Le llega la instrucción corporativa de «hacer Lean» para bajar costos. El director de finanzas sugiere empezar por reducir la plantilla. Leonel ve otra cosa en el piso: pilas de arneses a medio terminar entre estaciones, líneas que siguen corriendo aunque salgan piezas defectuosas y operarios que nunca han visto qué pide el cliente.",
+     "p": [
+      [
+       "¿Por dónde le conviene empezar a Leonel según los principios Lean?",
+       "Por definir el valor para el cliente y ver su flujo completo",
+       "Por reducir la plantilla y luego ajustar el proceso con quien quede",
+       "Por comprar un sistema de cómputo que programe toda la planta",
+       "El primer principio es entender qué valora el cliente y el segundo, ver el flujo completo; sin eso no sabes qué es desperdicio. Recortar primero destruye la confianza que la mejora necesita, y un sistema de cómputo sobre un flujo con desperdicio sólo lo automatiza."
+      ],
+      [
+       "Las pilas de arneses entre estaciones contradicen sobre todo a uno de los pilares. ¿Cuál?",
+       "Al justo a tiempo, porque se produce sin que el siguiente lo pida",
+       "Al jidoka, porque las máquinas no se detienen solas al fallar",
+       "Al respeto por las personas, porque el operario trabaja de más",
+       "El inventario entre estaciones indica que se produce antes de que el proceso siguiente lo necesite, lo contrario del justo a tiempo. Que la línea no se detenga ante defectos sí contradice al jidoka, pero esa es otra observación del caso, no la de las pilas."
+      ],
+      [
+       "¿Qué argumento usa Leonel frente a la propuesta de reducir la plantilla?",
+       "Si la mejora cuesta empleos, la gente dejará de proponer mejoras",
+       "Lean prohíbe por norma cualquier ajuste de plantilla en la empresa",
+       "La plantilla no influye en los costos de una planta de arneses",
+       "Lean depende de que quienes hacen el trabajo propongan y apliquen mejoras; si eso les cuesta el empleo, dejarán de hacerlo. No existe una norma Lean que prohíba ajustes, y decir que la plantilla no influye en los costos es falso y le quita credibilidad."
+      ]
+     ],
+     "completar": [
+      "El segundo pilar del Sistema de Producción Toyota, el ___, detiene la producción en cuanto se detecta una anomalía.",
+      "jidoka"
+     ],
+     "relacionar": [
+      [
+       "Valor",
+       "Lo que el cliente estaría dispuesto a pagar"
+      ],
+      [
+       "Flujo de valor",
+       "Todos los pasos del pedido a la entrega"
+      ],
+      [
+       "Flujo",
+       "Que el trabajo avance sin lotes que esperan"
+      ],
+      [
+       "Jalar",
+       "Producir según la demanda real"
+      ],
+      [
+       "Perfección",
+       "Repetir el ciclo porque siempre queda desperdicio"
+      ]
+     ],
+     "refl": "Mira tu trabajo con los cinco principios. 1) Elige un producto o servicio que entregues y escribe qué valora el cliente, con sus palabras. 2) Lista los pasos de su flujo de valor de principio a fin. 3) Marca cuáles agregan valor, cuáles son necesarios aunque no lo agreguen (como un trámite legal) y cuáles son desperdicio. 4) Señala dónde se detiene el flujo y dónde se produce sin que nadie lo pida. 5) Escribe qué harías con el tiempo que liberarías al quitar ese desperdicio.",
+     "modelo": "Modelo: «Servicio: préstamos de nómina en una caja de ahorro. El socio valora tener el dinero pronto y sin vueltas. Pasos: solicitud, copia de documentos, revisión, comité semanal, firma y depósito. Agregan valor: la revisión y el depósito. Necesario sin valor: la firma del pagaré. Desperdicio: pedir copias que ya tenemos y esperar al comité de los jueves. El flujo se detiene en el comité, y se fotocopian expedientes antes de saber si se aprueban. Con el tiempo liberado, la analista atendería las solicitudes que hoy pasan a la semana siguiente.» Es buena porque parte de la mirada del cliente, separa tres tipos de actividad y destina el tiempo liberado a crecer, no a recortar.",
+     "plantilla": [
+      "Mis cinco principios Lean",
+      "Producto o servicio: [ ]\nValor para el cliente (sus palabras): [ ]\nFlujo de valor (pasos): [ ]\nAgrega valor / necesario sin valor / desperdicio: [ ]\nDónde se detiene el flujo: [ ]\nDónde se produce sin que lo pidan: [ ]\nQué haría con el tiempo liberado: [ ]"
+     ],
+     "clave": [
+      "Lean define el valor desde el cliente y quita lo que no lo agrega.",
+      "El Sistema de Producción Toyota se apoya en justo a tiempo y jidoka, sobre una base de estabilidad y respeto por las personas.",
+      "Lean es un sistema, no un catálogo de herramientas ni un pretexto para despedir."
+     ]
+    },
+    {
+     "t": "Los ocho desperdicios y cómo verlos en el gemba",
+     "obj": "Identificar los ocho desperdicios en un proceso real mediante un recorrido con método y datos.",
+     "texto": [
+      "Ohno describió siete <b>desperdicios</b> (en japonés, muda): actividades que consumen tiempo, dinero o esfuerzo sin agregar valor para el cliente. En Occidente se añadió un octavo, el talento no aprovechado. Conviene aprenderlos con ejemplos de tu propio entorno, porque aparecen igual en una fábrica que en una oficina, un hospital o una cocina.",
+      "La <b>sobreproducción</b> es hacer más, antes o más rápido de lo que se necesita; Ohno la consideraba la peor porque provoca casi todas las demás. La <b>espera</b> es gente, material o información detenidos: un pedido que aguarda una firma. El <b>transporte</b> es mover material o documentos de un lugar a otro sin necesidad. El <b>sobreprocesamiento</b> es hacer más de lo que el cliente pide: pulir una cara que nadie ve o capturar el mismo dato tres veces. El <b>inventario</b> excesivo, ya sea materia prima, producto en proceso o terminado, esconde problemas y amarra dinero. El <b>movimiento</b> es lo que la persona hace de más con su cuerpo: estirarse, agacharse, caminar a buscar una herramienta. Los <b>defectos</b> obligan a reprocesar, tirar o atender quejas. Y el <b>talento no aprovechado</b> es no escuchar las ideas de quien hace el trabajo.",
+      "Los desperdicios no se ven desde una oficina ni en un reporte mensual. Se ven en el <b>gemba</b>, palabra japonesa para el lugar real donde se crea el valor: la línea, el mostrador, la bodega. Para recorrerlo con método, elige un producto o trámite y síguelo de principio a fin; quédate en un punto observando varios minutos seguidos; anota hechos (cuántos metros, cuántos minutos, cuántas piezas esperando) y pregunta a quien hace el trabajo qué le estorba. Muchas personas usan una hoja con los ocho desperdicios como columnas y marcan ahí cada hallazgo.",
+      "Dos matices importantes. Primero, no toda actividad sin valor puede eliminarse de inmediato: hay tareas necesarias, como una inspección que exige el cliente o un registro que pide la ley, que por ahora se reducen o simplifican en lugar de quitarse. Segundo, el recorrido sirve para ver el proceso, no para vigilar personas: si el equipo siente que buscas culpables, esconderá justo lo que necesitas ver. Explica para qué observas, agradece y regresa a contar qué hiciste con sus ideas."
+     ],
+     "comparar": [
+      "«Así no: “Revisé el reporte del mes y no veo desperdicios; aquí todos están ocupados.”»",
+      "«Así sí: “Seguí un pedido de punta a punta y estuvo tres días esperando entre áreas, aunque todos estaban ocupados.”»"
+     ],
+     "caso": "Caso ficticio: Araceli, de 26 años, es ingeniera industrial recién contratada en una envasadora de mezcal en Oaxaca. En su primer recorrido ve botellas llenas esperando etiqueta desde el día anterior, operarias que se agachan a tomar cada tapa de una caja en el piso, etiquetas con dos sellos de garantía aunque el cliente sólo pide uno, y una mesa de etiquetado en otra nave, a la que se llevan las botellas en carretilla. Su jefe le pide un reporte en dos días y le sugiere hacerlo con los datos del sistema para no distraer a nadie.",
+     "p": [
+      [
+       "Las operarias se agachan para tomar cada tapa de una caja en el piso. ¿Qué desperdicio es?",
+       "Movimiento, porque la persona hace esfuerzos que no agregan valor",
+       "Transporte, porque las tapas viajan de la caja hasta la botella",
+       "Espera, porque la botella se detiene mientras llega cada tapa",
+       "Agacharse es un esfuerzo del cuerpo que no agrega valor: es movimiento. El transporte se refiere a trasladar material entre lugares, como las carretillas a la otra nave, y aunque la botella espere unos segundos, la causa que se observa es el movimiento de la operaria."
+      ],
+      [
+       "¿Qué desperdicio es poner dos sellos cuando el cliente pide uno?",
+       "Sobreprocesamiento, porque se hace más de lo que se pide",
+       "Sobreproducción, porque se fabrican más sellos de los necesarios",
+       "Inventario, porque se gastan sellos que podrían guardarse",
+       "Hacer al producto más de lo que el cliente requiere es sobreprocesamiento. La sobreproducción es fabricar unidades antes o en más cantidad de lo que se demanda, y el inventario se refiere a material acumulado, no a un paso extra en la operación."
+      ],
+      [
+       "¿Cómo debería preparar Araceli su reporte?",
+       "Volver al piso a medir y preguntar a las operarias",
+       "Usar sólo los datos del sistema para no interrumpir el trabajo",
+       "Grabar a cada operaria para detectar quién trabaja más lento",
+       "Los desperdicios que vio no aparecen en los datos del sistema: hay que medirlos en el gemba y recoger lo que saben las operarias. Grabar para encontrar a la más lenta convierte el recorrido en vigilancia y hará que el equipo esconda los problemas."
+      ]
+     ],
+     "completar": [
+      "El ___ es el lugar real donde se crea el valor: la línea, el mostrador o la bodega.",
+      "gemba"
+     ],
+     "relacionar": [
+      [
+       "Sobreproducción",
+       "Imprimir informes que nadie pidió"
+      ],
+      [
+       "Espera",
+       "Un expediente detenido por una firma"
+      ],
+      [
+       "Transporte",
+       "Llevar material de una nave a otra sin necesidad"
+      ],
+      [
+       "Movimiento",
+       "Agacharse por cada pieza que está en el piso"
+      ],
+      [
+       "Talento no aprovechado",
+       "No pedir ideas a quien hace el trabajo"
+      ]
+     ],
+     "refl": "Haz un recorrido de desperdicios. 1) Elige un proceso que puedas observar en persona y pide permiso al equipo, explicando para qué lo haces. 2) Sigue una pieza, pedido o trámite de principio a fin durante al menos 30 minutos. 3) Registra en una hoja con ocho columnas cada desperdicio que veas, con un dato (minutos, metros o piezas). 4) Pregunta a dos personas qué les estorba más en su trabajo. 5) Elige los tres desperdicios más costosos y escribe una idea para reducir cada uno.",
+     "modelo": "Modelo: «Proceso: altas de pacientes en el piso de medicina interna de un hospital. Seguí tres altas. Espera: el paciente con alta firmada aguardó unas cuatro horas a que farmacia surtiera la receta. Transporte: el expediente bajó y subió dos veces a caja. Sobreprocesamiento: la enfermera captura los mismos datos en papel y en la computadora. Movimiento: la camillera fue a otro piso por una silla de ruedas. Talento: una enfermera propuso hace meses enviar la receta antes de firmar el alta. Prioridades: la espera, la doble captura y el traslado del expediente.» Es buena porque observa casos reales, pone un dato a cada hallazgo, recoge la voz del personal y prioriza.",
+     "plantilla": [
+      "Hoja de recorrido de desperdicios",
+      "Proceso observado: [ ]  Fecha y hora: [ ]\nQué seguí: [pieza, pedido o trámite]\nSobreproducción: [hallazgo y dato]\nEspera: [ ]\nTransporte: [ ]\nSobreprocesamiento: [ ]\nInventario: [ ]\nMovimiento: [ ]\nDefectos: [ ]\nTalento no aprovechado: [ ]\nLo que dijo el equipo: [ ]\nTres prioridades y una idea para cada una: [ ]"
+     ],
+     "clave": [
+      "Los ocho desperdicios aparecen igual en fábricas, oficinas y hospitales.",
+      "Se ven en el gemba siguiendo el trabajo y midiendo, no desde un reporte.",
+      "El recorrido observa procesos, no vigila personas."
+     ]
+    },
+    {
+     "t": "5S que sí se sostienen: más allá de la limpieza",
+     "obj": "Diseñar una implantación de 5S con estándares y auditoría que se sostenga en el tiempo.",
+     "texto": [
+      "Casi todas las empresas han tenido una «jornada de 5S»: un sábado de escobas, pintura y bolsas de basura que a las tres semanas luce igual que antes. El problema es que la confunden con limpieza. Las <b>5S</b> son un método para que el lugar de trabajo haga visibles las anomalías: que cualquiera note en segundos si falta una herramienta, si sobra material o si una máquina tira aceite. Por eso son la base de casi todo lo demás en Lean.",
+      "<b>Seiri</b> (clasificar) es separar lo necesario de lo que no lo es; lo dudoso se marca con una tarjeta roja y va a una zona de cuarentena con fecha límite para decidir. <b>Seiton</b> (ordenar) es dar a cada cosa un lugar definido, identificado y cercano al punto de uso, según la frecuencia con que se utiliza: siluetas en el tablero de herramientas, marcas en el piso, etiquetas con máximos y mínimos. <b>Seiso</b> (limpiar) es limpiar para inspeccionar: al limpiar una máquina descubres fugas, tornillos flojos o desgaste. <b>Seiketsu</b> (estandarizar) fija cómo deben verse las tres primeras con fotos, listas y responsables. <b>Shitsuke</b> (disciplina o sostener) convierte todo en hábito con revisiones y liderazgo.",
+      "Las 5S se caen cuando nadie las revisa, cuando las hace un comité y no los dueños del área, o cuando el jefe es el primero en dejar cosas fuera de lugar. Se sostienen con tres cosas: una <b>auditoría</b> breve y periódica, con criterios claros, fotos del estándar y una escala sencilla; tiempo asignado dentro del turno y no en horas extra; y un líder que recorre el área, pregunta y corrige el sistema cuando el estándar no es práctico. Si algo vuelve a desordenarse una y otra vez, lo más probable es que el lugar asignado esté mal pensado.",
+      "Una hoja de cálculo basta para llevar la auditoría: en la columna A los criterios (cinco a ocho por cada S), en la B la calificación de 0 a 4 y en la C la evidencia o foto. El promedio de una S se obtiene con =PROMEDIO(B2:B7) y el avance general, con el promedio de las cinco. Graficar ese resultado cada quincena muestra si el área se sostiene o retrocede. Ojo: el objetivo no es la calificación, sino que los problemas se vean y se atiendan."
+     ],
+     "comparar": [
+      "«Así no: “El sábado hacemos 5S: todos a barrer, pintar y tirar lo viejo.”»",
+      "«Así sí: “Esta semana clasificamos con tarjeta roja, definimos los lugares con el equipo del área y dejamos una auditoría quincenal con fotos del estándar.”»"
+     ],
+     "caso": "Caso ficticio: Hilario, de 58 años, es jefe del almacén de refacciones de una empresa de autobuses foráneos en Pachuca. Hace un año hicieron una jornada de 5S con pintura nueva y etiquetas; hoy hay refacciones en el piso, cajas sin identificar y los mecánicos pierden tiempo buscando piezas mientras el autobús espera. El gerente propone repetir la jornada, ahora con más personal y un fin de semana completo. Hilario no está seguro de que eso resuelva algo.",
+     "p": [
+      [
+       "¿Qué explica mejor que la primera jornada no se sostuviera?",
+       "Se trató como limpieza y nadie auditó ni fijó estándares",
+       "La pintura que se usó no era la adecuada para un almacén",
+       "Los mecánicos no tienen disciplina y deberían ser sancionados",
+       "Sin estándar y sin auditoría, el orden depende de la buena voluntad y se pierde en semanas. La pintura es un detalle, y culpar a los mecánicos ignora que nadie definió ni revisó cómo debía quedar el almacén."
+      ],
+      [
+       "Hay cajas de refacciones de un modelo de autobús que ya no circula. ¿Qué S aplica primero?",
+       "Clasificar: tarjeta roja y decisión con fecha límite",
+       "Ordenar: asignarles un anaquel identificado cerca de la entrada",
+       "Limpiar: quitarles el polvo para que no se dañen en el anaquel",
+       "Lo primero es decidir si algo se necesita; las refacciones de un modelo retirado son candidatas a tarjeta roja. Ordenarlas o limpiarlas antes de decidir es invertir esfuerzo en cosas que quizá deban salir del almacén."
+      ],
+      [
+       "¿Qué haría que la nueva implantación se sostenga?",
+       "Una auditoría periódica con fotos del estándar y tiempo en el turno",
+       "Un letrero grande con el significado de las 5S en la entrada del almacén",
+       "Una jornada anual más larga con todo el personal del taller mecánico",
+       "La auditoría con estándar visible y tiempo asignado convierte las 5S en rutina. Un letrero informa, pero no verifica nada, y una jornada más larga repite el error de tratar las 5S como un evento en lugar de un hábito."
+      ]
+     ],
+     "completar": [
+      "Las 5S se sostienen con una ___ breve y periódica, con criterios claros y fotos del estándar.",
+      "auditoría"
+     ],
+     "relacionar": [
+      [
+       "Seiri",
+       "Tarjeta roja para lo que no se necesita"
+      ],
+      [
+       "Seiton",
+       "Silueta de cada herramienta en el tablero"
+      ],
+      [
+       "Seiso",
+       "Limpiar la máquina para detectar fugas"
+      ],
+      [
+       "Seiketsu",
+       "Fotos del estándar y responsables del área"
+      ],
+      [
+       "Shitsuke",
+       "Revisión periódica y un líder que da ejemplo"
+      ]
+     ],
+     "refl": "Diseña un plan 5S para un área que conozcas. 1) Describe el área y tres problemas que hoy causa el desorden (tiempo buscando, errores o riesgos). 2) Escribe qué harías en cada S, con una acción concreta y un responsable. 3) Redacta seis criterios de auditoría verificables con escala de 0 a 4. 4) Define cada cuánto se audita, quién lo hace y cuánto tiempo del turno se dedica. 5) Anota cómo reaccionarás si un criterio baja dos auditorías seguidas.",
+     "modelo": "Modelo: «Área: cocina de una fonda familiar. Problemas: diez minutos al día buscando utensilios e ingredientes caducados. Clasificar: tarjeta roja a las ollas que no se usaron en un mes (la cocinera). Ordenar: tablero con siluetas junto a la estufa y repisa con la fecha de caducidad a la vista (el ayudante). Limpiar: campana y revisión de fugas de gas al cierre (turno de tarde). Estandarizar: fotos de cómo debe quedar la cocina. Sostener: auditoría quincenal de seis criterios de 0 a 4; si un criterio baja dos veces, revisamos si el lugar asignado es práctico.» Es buena porque cada S tiene acción y responsable, la auditoría es breve y la reacción corrige el sistema, no a la persona.",
+     "plantilla": [
+      "Plan y auditoría 5S",
+      "Área: [ ]\nProblemas que causa el desorden: [ ]\nClasificar: [acción, responsable, fecha]\nOrdenar: [ ]\nLimpiar e inspeccionar: [ ]\nEstandarizar: [fotos, listas y responsables]\nSostener: [frecuencia de auditoría, auditor y tiempo en el turno]\nCriterios de auditoría de 0 a 4: [ ]\nPromedio de cada S en la hoja: [=PROMEDIO(B2:B7)]\nAvance general: [=PROMEDIO(promedios de las cinco S)]\nSi un criterio baja dos veces: [ ]"
+     ],
+     "clave": [
+      "Las 5S buscan que las anomalías se vean en segundos, no sólo que el área esté limpia.",
+      "Limpiar es inspeccionar: al limpiar se descubren fugas, desgaste y fallas.",
+      "Lo que sostiene las 5S es la auditoría, el tiempo dentro del turno y el ejemplo del líder."
+     ]
+    },
+    {
+     "t": "Trabajo estandarizado y gestión visual",
+     "obj": "Documentar y enseñar una tarea con el método de instrucción de trabajo y hacer visible su estado con gestión visual y recorridos al gemba.",
+     "texto": [
+      "Sin estándar no hay mejora: si cada persona hace la tarea a su manera, no sabes cuál forma funciona mejor ni puedes detectar cuándo algo cambió. El <b>trabajo estandarizado</b> es la mejor forma conocida hoy de hacer una tarea con seguridad, calidad y en el tiempo requerido. En el modelo de Toyota tiene tres elementos: el ritmo que marca la demanda (el takt, que calcularás en el módulo 3), la secuencia de pasos y la cantidad mínima de material en proceso para trabajar sin interrupciones. No es una camisa de fuerza: es la línea base que el propio equipo mejora y vuelve a escribir.",
+      "Un estándar sirve de poco si se enseña con un «mírame y luego lo haces tú». Durante la Segunda Guerra Mundial, Estados Unidos creó el programa <b>TWI</b> (capacitación dentro de la industria) para formar con rapidez a una enorme cantidad de trabajadores nuevos, y su módulo de instrucción de trabajo sigue vigente. Tiene cuatro pasos: preparar al trabajador (ponerlo cómodo y averiguar qué sabe), presentar la operación dividida en pasos importantes con su punto clave y la razón de cada uno, pedir que la persona la ejecute y la explique mientras la corriges, y dar seguimiento con visitas cada vez más espaciadas. Su lema resume la actitud: si el trabajador no ha aprendido, el instructor no ha enseñado.",
+      "La <b>gestión visual</b> hace que el estado del proceso se entienda de un vistazo, sin preguntar ni abrir una computadora: marcas en el piso, niveles máximos y mínimos, tableros por hora con lo planeado contra lo real, señales para pedir ayuda (andon), semáforos de indicadores. La prueba es sencilla: una persona ajena al área debería saber en un minuto si van bien o mal y qué problema tienen hoy. Un tablero que nadie actualiza ni consulta es decoración.",
+      "Los <b>recorridos al gemba</b> de los líderes cierran el círculo: ir al lugar, comparar lo que pasa con el estándar y el tablero, preguntar con respeto qué impide cumplirlo y ayudar a quitar el obstáculo. Funcionan cuando tienen una frecuencia fija, una ruta y pocas preguntas, y cuando el líder regresa con respuestas. Si el recorrido sólo sirve para regañar, el tablero empezará a mostrar lo que el jefe quiere ver y no lo que pasa."
+     ],
+     "comparar": [
+      "«Así no: “Fíjate cómo lo hace la compañera con más antigüedad y mañana ya te toca solo.”»",
+      "«Así sí: “Te explico los cinco pasos con su punto clave y su razón; luego lo haces tú y me lo explicas mientras te observo.”»"
+     ],
+     "caso": "Caso ficticio: Brenda, de 31 años, es supervisora de turno en el centro de distribución de una cadena de autoservicio en Mérida. El personal nuevo tarda semanas en surtir pedidos sin errores, porque cada veterano enseña su propio método. El tablero de productividad del pasillo no se actualiza desde hace un mes. El gerente propone dar un bono a quien surta más rápido, y Brenda teme que eso aumente los errores.",
+     "p": [
+      [
+       "¿Qué debería hacer Brenda primero con el surtido?",
+       "Documentar con el equipo la mejor secuencia y sus puntos clave",
+       "Pedir a cada veterano que escriba por separado su propio método",
+       "Dar el bono por velocidad para que cada quien encuentre su forma",
+       "El estándar se construye con quienes hacen el trabajo, eligiendo la mejor secuencia conocida y sus puntos clave. Tener un documento por veterano formaliza la variación que ya existe, y premiar sólo la velocidad sin estándar invita a saltarse pasos."
+      ],
+      [
+       "¿Cómo debería enseñar a los nuevos?",
+       "Con los cuatro pasos de instrucción de trabajo y seguimiento",
+       "Dejando que observen a los veteranos durante dos semanas",
+       "Entregándoles el procedimiento impreso para que lo estudien",
+       "La instrucción de trabajo prepara, presenta con puntos clave y razones, hace ejecutar y explicar, y da seguimiento. Observar sin estructura reproduce las diferencias entre veteranos, y leer un procedimiento no garantiza que la persona sepa hacerlo."
+      ],
+      [
+       "¿Qué cambio haría útil el tablero?",
+       "Que muestre plan contra real por hora y se revise en el turno",
+       "Que tenga más indicadores y colores para que llame la atención",
+       "Que lo actualice el gerente una vez al mes con el reporte",
+       "Un tablero útil muestra pocas cosas, con frecuencia suficiente para reaccionar dentro del turno, y alguien lo revisa y actúa. Más indicadores lo vuelven ilegible, y una actualización mensual llega cuando ya no se puede corregir nada."
+      ]
+     ],
+     "completar": [
+      "El programa ___ enseña la instrucción de trabajo en cuatro pasos: preparar, presentar, ejecutar y dar seguimiento.",
+      "TWI"
+     ],
+     "refl": "Estandariza y haz visible una tarea. 1) Elige una tarea que se repita y que hoy cada quien haga distinto. 2) Divídela en pasos importantes y anota para cada uno su punto clave y su razón. 3) Diseña una ayuda visual (foto, marca o tablero) que muestre si la tarea va bien. 4) Escribe cómo se la enseñarías a alguien nuevo con los cuatro pasos de TWI. 5) Propón una ruta de recorrido al gemba de diez minutos con tres preguntas.",
+     "modelo": "Modelo: «Tarea: preparar una mezcla de concreto en obra. Pasos: medir agua, cemento, arena y grava con los botes marcados; cargar la revolvedora en el orden de la tabla; mezclar y revisar la consistencia. Punto clave del primero: el agua, con la cubeta marcada; razón: el exceso de agua debilita el concreto. Ayuda visual: tabla de proporciones pegada en la revolvedora. Enseñanza: explico los pasos con su razón, el ayudante los repite explicándolos, lo acompaño en las tres primeras mezclas y luego reviso una al día. Recorrido: diez minutos al iniciar; pregunto qué faltó ayer, qué estorba hoy y qué idea tienen.» Es buena porque cada paso tiene razón, la ayuda visual es concreta y la enseñanza sigue los cuatro pasos.",
+     "plantilla": [
+      "Hoja de instrucción de trabajo",
+      "Tarea: [ ]\nPaso importante 1: [qué] — Punto clave: [cómo] — Razón: [por qué]\nPaso importante 2: [ ] — Punto clave: [ ] — Razón: [ ]\nPaso importante 3: [ ] — Punto clave: [ ] — Razón: [ ]\nAyuda visual: [foto, marca o tablero]\nCómo lo enseño: preparar [ ] presentar [ ] ejecutar [ ] seguimiento [ ]\nRecorrido al gemba: [frecuencia, ruta y tres preguntas]"
+     ],
+     "clave": [
+      "El trabajo estandarizado es la mejor forma conocida hoy y la base para mejorar.",
+      "Con TWI, si el trabajador no ha aprendido, el instructor no ha enseñado.",
+      "La gestión visual y los recorridos al gemba sirven para ayudar, no para vigilar."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Haz un recorrido de desperdicios de 30 minutos en un proceso real con la hoja de ocho columnas, registrando cada hallazgo con un dato. Luego elige el área donde viste más desperdicio y diseña su plan 5S: acciones por cada S con responsable y fecha, y una auditoría de seis a diez criterios con escala de 0 a 4 en una hoja de cálculo, con =PROMEDIO para cada S y una gráfica de avance. Cierra con una hoja de instrucción de trabajo para una tarea de esa área.",
+    "entregable": "Hoja de recorrido con los ocho desperdicios y tres prioridades, plan 5S con responsables, hoja de cálculo de auditoría con fórmulas y gráfica, e instrucción de trabajo de una tarea.",
+    "criterios": "Revisa: cada desperdicio tiene un dato observado y no una opinión, el plan 5S va más allá de limpiar e incluye tarjeta roja y estándar con fotos, la auditoría tiene criterios verificables y fórmulas de promedio correctas, y la instrucción de trabajo incluye punto clave y razón en cada paso."
+   },
+   "lab": {
+    "t": "El taller de calzado",
+    "obj": "Aplicar valor, desperdicios, 5S y trabajo estandarizado en un taller real con recursos limitados.",
+    "esc": "<b>Ulises,</b> de 36 años, heredó de su padre un taller de calzado escolar en Purísima del Rincón con 25 personas. Los pedidos de regreso a clases salen a tiempo sólo con horas extra, hay pilas de cortes esperando entre pespunte y montado, y cada pespuntadora trabaja a su manera. Un cliente le sugirió «hacer Lean», y su tío, socio del taller, cree que eso significa despedir a cinco personas.",
+    "e": [
+     [
+      "Escena 1: Recorres el taller con Ulises. Ves cortes apilados para tres días, un montador que camina a otra nave por cada horma, zapatos que se reprocesan por costuras chuecas y un cortador que antes de cada lote revisa dos veces medidas que no cambian.",
+      "Consigna: clasifica cada hallazgo en uno de los ocho desperdicios y propón cuál atacarías primero y por qué."
+     ],
+     [
+      "Escena 2: El tío insiste: «Si Lean sirve, que se note en la nómina».",
+      "Consigna: escribe la respuesta de Ulises en cinco a ocho líneas: qué es Lean, qué pasaría con la gente y qué haría el taller con el tiempo liberado."
+     ],
+     [
+      "Escena 3: En pespunte hay hilos de colores que ya no se usan, agujas mezcladas en un mismo frasco y nadie sabe dónde quedó el calibrador.",
+      "Consigna: diseña la implantación de 5S en pespunte con una acción por cada S, un responsable y cinco criterios de auditoría."
+     ],
+     [
+      "Escena 4: La pespuntadora con más años en el taller cose sin reprocesos, pero dos de las nuevas sacan costuras chuecas.",
+      "Consigna: con ella, redacta una hoja de instrucción de trabajo de tres pasos con punto clave y razón, y explica cómo la enseñarías a las nuevas con TWI."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué desperdicio conviene atacar primero en el taller?",
+      "Los cortes acumulados, porque cortar de más esconde los demás",
+      "El movimiento del montador, porque es el más fácil de observar",
+      "La doble revisión del cortador, porque es la que menos cuesta quitar",
+      "Cortar antes de lo que pide el pespunte es sobreproducción, y las pilas que genera esconden defectos y esperas. Elegir lo más fácil de ver o lo más barato de quitar puede dar una victoria rápida, pero deja intacto el desperdicio que alimenta a los otros."
+     ],
+     [
+      "¿Cuál es el mejor argumento de Ulises para su tío?",
+      "El tiempo liberado permite tomar más pedidos sin horas extra",
+      "Lean exige por contrato que la plantilla se mantenga igual",
+      "Despedir a cinco personas es Lean sólo si son las más lentas",
+      "El beneficio de Lean se nota en la nómina cuando desaparecen horas extra y el taller puede crecer con la misma gente. No existe un contrato Lean, y despedir a las más lentas sigue siendo un recorte que frena la colaboración."
+     ],
+     [
+      "¿Cómo debe aprovecharse la experiencia de la pespuntadora más antigua?",
+      "Como base del estándar, escrito con ella y enseñado con TWI",
+      "Como modelo para que las nuevas la observen hasta aprender",
+      "Como referencia para medir y sancionar a las más lentas",
+      "Su método, convertido en pasos con punto clave y razón, es la base del estándar, y TWI asegura que se enseñe bien. Observarla sin estructura deja fuera los puntos clave que ella hace sin pensar, y usarla para sancionar destruye la confianza."
+     ]
+    ],
+    "pl": [
+     "Diagnóstico Lean de un taller",
+     "Valor para el cliente: [ ]\nDesperdicios observados (con dato): [ ]\nPrimer desperdicio a atacar y por qué: [ ]\nQué haremos con el tiempo liberado: [ ]\n5S en el área elegida: clasificar [ ] ordenar [ ] limpiar [ ] estandarizar [ ] sostener [ ]\nCriterios de auditoría: [ ]\nInstrucción de trabajo: paso — punto clave — razón [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "En una oficina de trámites vehiculares de Tepic se imprimen cada mañana cientos de formatos de solicitud, aunque se usa una fracción y el resto se tira cuando cambia la versión. ¿Qué desperdicio está en el origen?",
+     "Sobreproducción, porque se imprime más de lo que se necesita",
+     "Sobreprocesamiento, porque cada formato lleva más datos de los necesarios",
+     "Inventario, porque las hojas impresas se acumulan en cajas",
+     "Transporte, porque los reportes viajan de un escritorio a otro"
+    ],
+    [
+     "Gerardo, técnico en una planta de alimentos de Silao, propone limpiar a diario una envasadora y anotar lo que encuentra. ¿Qué S aplica y por qué?",
+     "Seiso, porque limpiar sirve para inspeccionar la máquina",
+     "Seiri, porque se separa lo que sirve de lo que ya no sirve",
+     "Seiton, porque cada utensilio de limpieza tendrá su lugar",
+     "Shitsuke, porque limpiar a diario ya es un hábito de disciplina"
+    ],
+    [
+     "Rubí, gerente de una clínica dental en Morelia, ve que los pacientes esperan mucho aunque los dentistas están ocupados todo el día. ¿Qué conclusión Lean es más útil?",
+     "Hay que mirar el flujo del paciente, no sólo la ocupación del personal",
+     "Hay que contratar más dentistas, porque la ocupación ya está al máximo",
+     "Hay que pedir a los pacientes que lleguen más tarde a su cita agendada",
+     "Hay que medir a cada dentista para saber quién atiende con más lentitud"
+    ],
+    [
+     "El director de una planta dice: «Haremos Lean y con eso recortaremos un turno». ¿Qué respuesta es más precisa?",
+     "Lean busca quitar desperdicio; usarlo para despedir frena las mejoras",
+     "Es correcto, porque Lean significa operar con la mínima plantilla posible",
+     "Es correcto si antes se aplican las 5S en todas las áreas de la planta",
+     "Es incorrecto sólo porque Lean aplica a armadoras, no a otras empresas"
+    ],
+    [
+     "En una ensambladora, una operaria detecta una pieza defectuosa y jala un cordón que detiene la línea y avisa al líder. ¿Qué concepto ilustra?",
+     "Jidoka, apoyado en una señal andon",
+     "Justo a tiempo, porque se produce sólo lo que se pide",
+     "Sistema jalar, porque la operaria jala el cordón de la línea",
+     "Seiketsu, porque se estandariza la respuesta ante los defectos"
+    ],
+    [
+     "Un supervisor de bodega en Mérida instaló tableros de plan contra real por hora, pero nadie los actualiza desde hace semanas. ¿Qué falla?",
+     "Falta revisarlos en el turno y actuar con lo que muestran",
+     "Faltan más indicadores para que el tablero quede completo",
+     "Faltan colores llamativos para que la gente se fije en ellos",
+     "Falta que el gerente los revise una vez al mes en la junta"
+    ],
+    [
+     "Una cajera nueva de una caja popular en Pachuca aprendió viendo a una compañera y comete errores al hacer el corte. Su jefa quiere aplicar la instrucción de trabajo de TWI. ¿Qué paso es indispensable?",
+     "Que la cajera ejecute la tarea y explique cada paso mientras la corrigen",
+     "Que la cajera firme de enterada el procedimiento escrito antes de empezar",
+     "Que la cajera observe a su compañera una semana más antes de intentarlo",
+     "Que la cajera sea evaluada al final del mes según el número de errores"
+    ],
+    [
+     "Una cocina de restaurante en Oaxaca implantó 5S hace seis meses. Todas las zonas siguen bien, salvo la de especias, que vuelve a desordenarse. ¿Qué es lo más probable?",
+     "El lugar asignado no es práctico y hay que rediseñarlo con el equipo",
+     "El personal de esa zona no tiene disciplina y debe ser amonestado",
+     "Las 5S no funcionan en cocinas, porque el ritmo de trabajo es muy alto",
+     "Hace falta una nueva jornada de limpieza general en toda la cocina"
+    ],
+    [
+     "En un recorrido al gemba por un taller de San Francisco del Rincón, el gerente sólo anota quién está platicando. ¿Qué corrección le harías?",
+     "Observar el proceso y preguntar qué impide cumplir el estándar",
+     "Anotar también quién llega tarde para tener un registro completo",
+     "Hacer el recorrido sin avisar para ver cómo trabajan de verdad",
+     "Delegar el recorrido al supervisor para no intimidar a nadie"
+    ],
+    [
+     "Un despacho en Tlaxcala captura los datos de cada cliente en tres formatos distintos que piden la misma información. ¿Qué desperdicio predomina?",
+     "Sobreprocesamiento, porque se hace más trabajo del necesario",
+     "Inventario, porque se acumulan formatos llenos en los archivos",
+     "Defectos, porque capturar tres veces siempre provoca errores",
+     "Movimiento, porque la persona cambia de formato varias veces"
+    ]
+   ]
+  }
+ ]
+}
