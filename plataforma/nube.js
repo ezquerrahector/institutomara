@@ -80,13 +80,43 @@ function fijarSesion(d){
 }
 
 /* Devuelve un token vigente, renovándolo si ya venció. */
-function token(){
-  if(!ses) return Promise.reject(new Error('Sin sesión'));
-  if(Date.now() < ses.expira) return Promise.resolve(ses.access_token);
-  return auth('token', { refresh_token: ses.refresh_token }, '?grant_type=refresh_token')
-    .then(function(d){ fijarSesion(d); return ses.access_token; })
-    .catch(function(e){ ses = null; borrarSesionLocal(); throw e; });
+/* Si otra pestaña ya renovó la sesión, se usa la suya: Supabase cambia el
+   refresh_token en cada renovación y, si una pestaña vieja manda el anterior,
+   lo toma como robado y cierra la sesión en todos lados. */
+function sesionMasNueva(){
+  var l = leerSesionLocal();
+  if(l && l.refresh_token && (!ses || l.refresh_token !== ses.refresh_token) && (!ses || (l.expira||0) >= (ses.expira||0))){
+    ses = l;
+  }
+  return ses;
 }
+var renovando = null;   /* una sola renovación a la vez */
+function token(){
+  sesionMasNueva();
+  if(!ses) return Promise.reject(new Error('Tu sesión terminó. Vuelve a entrar.'));
+  if(Date.now() < ses.expira) return Promise.resolve(ses.access_token);
+  if(renovando) return renovando;
+  var usado = ses.refresh_token;
+  renovando = auth('token', { refresh_token: usado }, '?grant_type=refresh_token')
+    .then(function(d){ fijarSesion(d); return ses.access_token; })
+    .catch(function(e){
+      /* ¿otra pestaña la renovó mientras tanto? entonces no se pierde nada */
+      var l = leerSesionLocal();
+      if(l && l.refresh_token && l.refresh_token !== usado){ ses = l; return ses.access_token; }
+      /* sin red: se conserva la sesión para reintentar después */
+      if(e && /Failed to fetch|NetworkError|Load failed/i.test(e.message || '')) throw new Error('Sin conexión. Revisa tu internet e intenta de nuevo.');
+      ses = null; borrarSesionLocal(); throw e;
+    })
+    .then(function(t){ renovando = null; return t; }, function(e){ renovando = null; throw e; });
+  return renovando;
+}
+/* Cuando otra pestaña renueva o cierra la sesión, esta se entera. */
+try{
+  window.addEventListener('storage', function(ev){
+    if(ev.key !== LL_SES) return;
+    try{ ses = ev.newValue ? JSON.parse(ev.newValue) : null; }catch(e){}
+  });
+}catch(e){}
 
 /* --------------------------- consultas a las tablas ---------------------- */
 function rest(ruta, opciones){
