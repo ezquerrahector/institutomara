@@ -16,3 +16,4 @@ for(const [id,lista] of Object.entries(porCurso)) editar(id,c=>{
   q.explica=s.explica;if(s.p)q.p=s.p;n++;}
  c.revisionContenido=20261006;});
 console.log(n,'preguntas ampliadas; posiciones correctas',pos.join('/'));
+require('../dividir-catalogo.js')();

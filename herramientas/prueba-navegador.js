@@ -5,6 +5,8 @@ const srv = http.createServer((q, r) => { const f = path.join(RAIZ, decodeURICom
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' }).catch(() => chromium.launch());
   const p = await b.newPage({ viewport: { width: 390, height: 800 } }); const errs = []; p.on('pageerror', e => errs.push(e.message));
   await p.goto('http://localhost:' + srv.address().port + '/plataforma/index.html'); await p.waitForTimeout(1500);
+  /* El aula ya no trae el contenido al abrir: se baja todo antes de probar */
+  await p.evaluate(() => window.Contenido ? Contenido.cargarTodos().then(() => { window.CURSOS_MARA = BD.cursos.filter(c => window.CURSOS_MARA.some(x => x.id === c.id)); }) : null);
   const r = await p.evaluate(id => { let n = 0; const fail = []; for (const c of window.CURSOS_MARA) { if (id && c.id !== id) continue; c.modulos.forEach(m => m.lecciones.forEach(l => l.bloques.forEach((b, i) => { try { const h = pintarBloque(b, i); if (!h || h.length < 20) fail.push(l.id + ' ' + b.tipo + ' vacío'); n++; } catch (e) { fail.push(l.id + ' ' + b.tipo + ': ' + e.message); } }))); } return { n, fail }; }, id);
   const imgs = id ? await p.evaluate(async id => { const c = window.CURSOS_MARA.find(x => x.id === id); const u = c.modulos.flatMap(m => m.lecciones).flatMap(l => l.bloques).filter(b => b.tipo === 'imagen').map(b => b.url); const res = []; for (const x of u) { const r = await fetch(x); res.push(r.status); } return res; }, id) : [];
   const malos = errs.filter(e => !/supabase|fetch|Failed to load/i.test(e));

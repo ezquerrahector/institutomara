@@ -801,6 +801,8 @@ P.clave = function(b, id){
 MI.minutos = function(lec){
   // La dedicación editorial incluye el taller; los cursos anteriores conservan el cálculo automático.
   if(Number.isFinite(lec.minutosEstimados) && lec.minutosEstimados > 0) return Math.round(lec.minutosEstimados);
+  /* Lecciones del índice (sin bloques todavía): el cálculo ya viene hecho */
+  if(!lec.bloques && lec._min) return lec._min;
   var palabras = 0, ejercicios = 0;
   function cuenta(x){
     if(x == null) return;
@@ -823,6 +825,7 @@ MI.minutos = function(lec){
   return Math.max(5, Math.round((palabras/150 + ejercicios*0.6)/5)*5);
 };
 MI.contarEjercicios = function(lec){
+  if(!lec.bloques && lec._nej != null) return lec._nej;
   var n = 0; for(var i=0;i<(lec.bloques||[]).length;i++) if(MI.esInteractivo(lec.bloques[i].tipo) || lec.bloques[i].tipo==='pasos') n++; return n;
 };
 
