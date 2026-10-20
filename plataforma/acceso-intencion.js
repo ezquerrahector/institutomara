@@ -47,11 +47,11 @@ function intDescribir(){
   }
   if(irA === 'membresia'){
     return { ante:'Estás por suscribirte a la', titulo:'Membresía Instituto Mara', precio:typeof precioPlan === 'function' ? 'Desde ' + dinero(precioPlan('esencial')) + ' al mes' : '',
-      pasos:pasos('Crea tu cuenta (1 minuto)', 'Elige tu membresía y paga con Mercado Pago', 'Entras a los programas que quieras desde hoy; cancelas cuando quieras') };
+      pasos:pasos('Crea tu cuenta (1 minuto)', 'Elige tu membresía y paga con Mercado Pago', 'Entras a los programas que quieras desde hoy; cancelas cuando quieras'), det:{ membresia:true } };
   }
   if(irA === 'regalos'){
-    return { ante:'Estás por', titulo:'Regalar un curso', precio:'',
-      pasos:pasos('Crea tu cuenta (1 minuto)', 'Elige el curso y paga con Mercado Pago', 'Elige cuándo le llega el regalo a la persona') };
+    return { ante:'Estás por', titulo:'Regalar un curso o diplomado', precio:'',
+      pasos:pasos('Crea tu cuenta (1 minuto)', 'Elige el curso o diplomado y paga con Mercado Pago', 'Elige cuándo le llega el regalo a la persona'), det:{ regalos:true } };
   }
   if(irA === 'empresas'){
     var r1 = (INT.rangos || []).filter(function(x){ return x.activo !== false; }).sort(function(a, b){ return a.desde - b.desde; })[0];
@@ -62,6 +62,13 @@ function intDescribir(){
       extra:'<p class="int-extra">¿Prefieren probar primero? <a href="../sitio-web/index.html#prueba-empresas">Pidan su prueba sin costo, sin crear cuenta →</a></p>' };
   }
   return null;
+}
+
+/* Cuántos cursos y diplomados hay (del mismo archivo que usa el sitio). */
+function intCuenta(){
+  var T = INT.temarios; if(!T) return null;
+  var c = 0, d = 0; for(var k in T){ if(T[k].tipo === 'Diplomado') d++; else c++; }
+  return { c:c, d:d };
 }
 
 /* Desplegable «Ver temario y lo que vas a aprender»: se llena con el mismo temario del sitio. */
@@ -86,6 +93,21 @@ function intDetalle(det, abierto){
       '<ol class="int-mods">' + r.cursos.map(function(id){ var c = (typeof curso === 'function' && curso(id)) || T[id] || {}, n = c.nombre || c.n || id, h = c.horas || c.h;
         return '<li><b>' + esc(n) + '</b>' + (h ? '<span>' + h + ' horas · <a href="../sitio-web/index.html#programa-' + encodeURIComponent(id) + '" target="_blank" rel="noopener">ver temario ↗</a></span>' : '') + '</li>'; }).join('') + '</ol>' +
       (r.suma && r.precio ? '<p class="int-datos">Por separado costarían ' + esc(dinero(r.suma)) + '; en la ruta ahorras ' + esc(dinero(r.suma - r.precio)) + '.</p>' : '');
+  } else if(det.membresia){
+    titulo = 'Ver planes y qué incluye';
+    var cu = intCuenta(), pr = function(k, n){ return typeof precioPlan === 'function' ? precioPlan(k) : n; };
+    var cursosTxt = cu ? 'Los ' + cu.c + ' cursos' : 'Todos los cursos', todo = cu ? cu.c + ' cursos y ' + cu.d + ' diplomados' : 'cursos y diplomados';
+    cuerpo = [['Esencial', pr('esencial', 249), 'al mes', [cursosTxt + ': idiomas, Excel, IA, salud y negocios', 'IA para tu profesión incluida', 'Constancia con folio en cada curso', 'Cancelas cuando quieras']],
+      ['Total', pr('total', 449), 'al mes', ['Todo el catálogo: ' + todo, 'Programas nuevos sin costo extra', 'Constancia con folio en cada programa', 'Cancelas cuando quieras']],
+      ['Anual Total', pr('anual', 3990), 'al año', ['Todo lo de Total durante 12 meses', 'Un solo pago (tarjeta, OXXO o transferencia)', 'Sin renovación automática']]]
+      .map(function(p){ return '<h3>' + esc(p[0]) + ' · ' + esc(dinero(p[1])) + ' ' + p[2] + '</h3>' + li(p[3]); }).join('') +
+      '<p class="int-datos">Eliges tu plan después de crear tu cuenta.</p>';
+  } else if(det.regalos){
+    titulo = 'Ver cómo funciona el regalo';
+    var cr = intCuenta();
+    cuerpo = '<p>Tú lo pagas y la otra persona recibe un correo con tu mensaje y su código, en la fecha que elijas. También se lo puedes mandar por WhatsApp. Ideal para cumpleaños, graduaciones o para tu equipo.</p>' +
+      (cr ? '<p class="int-datos">Puedes elegir entre ' + cr.c + ' cursos y ' + cr.d + ' diplomados.</p>' : '') +
+      '<a class="int-ficha" href="../sitio-web/index.html#explorar" target="_blank" rel="noopener">Ver el catálogo en el sitio ↗</a>';
   } else if(det.empresas){
     titulo = 'Ver qué incluye y precios';
     var R = (INT.rangos || []).filter(function(x){ return x.activo !== false; }).sort(function(a, b){ return a.desde - b.desde; });
@@ -162,7 +184,7 @@ function intPintar(){
   setTimeout(intPintar, 1500);
   // El temario es el mismo que muestra el sitio.
   var qp = new URLSearchParams(location.search);
-  if(qp.get('curso'))
+  if(qp.get('curso') || qp.get('ir') === 'membresia' || qp.get('ir') === 'regalos')
     fetch('../sitio-web/temarios.json').then(function(r){ return r.ok ? r.json() : false; })
       .then(function(t){ INT.temarios = t || false; intPintar(); }).catch(function(){ INT.temarios = false; intPintar(); });
   // El precio del plan se lee de la tabla pública de precios (no requiere sesión).
