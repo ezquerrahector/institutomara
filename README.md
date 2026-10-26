@@ -8,6 +8,12 @@ el sitio y el aula virtual en internet de forma gratuita con **GitHub Pages**.
 - `index.html` — redirige a `sitio-web/index.html` (la página pública).
 - `sitio-web/` — sitio de mercadeo: cursos, precios, preguntas frecuentes.
 - `plataforma/` — el aula virtual (login de alumnos y administración).
+  - `plataforma/cursos/*.js` son las **fuentes** de los programas (las que editan las herramientas).
+  - El aula **no** carga esas fuentes: carga `cursos/indice.js` (catálogo sin contenido, ~180 KB
+    comprimido) y baja `cursos/contenido/<id>.js` solo cuando el alumno abre ese programa.
+  - Ambos se generan con `node herramientas/dividir-catalogo.js`. Las herramientas que escriben
+    cursos (crear-diplomado, ampliar-*, profundizar, aplicar-correcciones) ya lo corren solas;
+    si editas una fuente a mano, córrelo antes de publicar. No agregues `<script>` de fuentes al aula.
 - `verificar.html` — página pública para verificar constancias por folio o QR.
 - `marca/` — logos en SVG.
 - `backend/` — esquema de base de datos y funciones de nube (Supabase +

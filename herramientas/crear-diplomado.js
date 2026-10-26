@@ -128,10 +128,8 @@ const linea = 'window.CURSOS_MARA = window.CURSOS_MARA || []; window.CURSOS_MARA
 const k = lineas.findIndex(l => l.includes('window.CURSOS_MARA.push({"id":"' + S.id + '"'));
 if (k >= 0) lineas[k] = linea; else lineas.push(linea);
 fs.writeFileSync(cPath, lineas.join('\n') + '\n');
-const aula = path.join(RAIZ, 'plataforma/index.html'); let ah = fs.readFileSync(aula, 'utf8');
-if (!ah.includes('cursos/' + ARCH)) ah = ah.replace(/(<script src="cursos\/rutas\.js)/, '<script src="cursos/' + ARCH + '?v=' + REV + '"></script>\n$1');
-ah = ah.replace(new RegExp('(cursos/' + ARCH.replace('.', '\\.') + '\\?v=)[0-9a-z]+'), '$1' + REV + Date.now().toString(36).slice(-3));
-fs.writeFileSync(aula, ah);
+// El aula ya no carga este archivo directo: se genera el índice y el contenido por programa
+require('./dividir-catalogo.js')();
 // 2) Visuales SVG
 const dirR = path.join(RAIZ, 'plataforma', recursos); fs.mkdirSync(path.join(dirR, 'visuales'), { recursive: true });
 const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

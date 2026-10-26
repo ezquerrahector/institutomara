@@ -70,3 +70,4 @@ if (t) { const INTER = ['practica', 'completar', 'relacionar', 'ordenar', 'tarje
     xl: B.filter(b => b.tipo === 'excel').reduce((a, b) => a + b.retos.length, 0) };
   fs.writeFileSync(tPath, JSON.stringify(T)); }
 console.log('Escrito en ' + archivo);
+require('./dividir-catalogo.js')();

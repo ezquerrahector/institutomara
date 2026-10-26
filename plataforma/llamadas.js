@@ -86,16 +86,27 @@ function llCargar(){
 function vistaLlamadas(){
   if(!sesion || !(llEsAdmin() || esOperador())) return '';
   if(estado.llamadaId) return vistaLlamada();
+  /* Al volver a la lista (por ejemplo, desde una llamada) se pinta al instante con lo que
+     ya se tenía y se actualiza en segundo plano; solo se vuelve a pintar si cambió algo. */
+  var habia = !!(LL.cargado && PR.lista), antes = habia ? llHuella() : '';
   setTimeout(function(){
-    llCargar().then(llPintarLista).catch(function(e){
+    if(habia) llPintarLista();
+    llCargar().then(function(){
+      LL.cargado = true;
+      if(estado.vista !== 'llamadas' || estado.llamadaId) return;
+      if(!habia) llPintarLista();
+      else if(llHuella() !== antes) repintarConservando(llPintarLista);
+    }).catch(function(e){
+      if(habia) return;
       var c = $('ll-datos'); if(c) c.innerHTML = plnErr(e, 'Si dice que no existe la columna o la función, falta ejecutar backend/llamadas-20261019.sql en Supabase.');
     });
   }, 0);
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Llamadas</h2>'+
     '<p class="sub" style="margin:0">'+(esOperador() ? 'Tus empresas por llamar. Abre una, sigue el guion y registra lo que pasó.' : 'La consola de los operadores: lo mismo que ven ellos, con todos los prospectos asignados.')+'</p></div>'+
     (llEsAdmin() ? '<button class="btn btn-linea" onclick="ir(\'admin-prospectos\')">← Prospectos</button>' : '')+'</div>'+
-    '<div id="ll-datos">Cargando…</div></div>';
+    '<div id="ll-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
+function llHuella(){ return prHuella() + JSON.stringify([LL.op, PLN.rangos || null]); }
 function llPintarLista(){
   var caja = $('ll-datos'); if(!caja || !PR.lista) return;
   var L = PR.lista, hoyStr = new Date().toDateString();
@@ -116,7 +127,7 @@ function llPintarLista(){
     '</div>'+
     '<div class="chips-aula" style="margin-bottom:10px">'+LL_TABS.map(function(t){
       return '<button class="'+(LL.tab===t[0]?'on':'')+'" onclick="LL.tab=\''+t[0]+'\';llPintarTablaLl()">'+t[1]+' <small>'+cuenta(t[0])+'</small></button>'; }).join('')+'</div>'+
-    '<div class="campo" style="max-width:420px"><label for="ll-q">Buscar</label><input id="ll-q" placeholder="Empresa, giro, teléfono, contacto…" value="'+esc(LL.q)+'" oninput="LL.q=this.value;llPintarTablaLl()"></div>'+
+    '<div class="campo" style="max-width:420px"><label for="ll-q">Buscar</label><input id="ll-q" placeholder="Empresa, giro, teléfono, contacto…" value="'+esc(LL.q)+'" oninput="LL.q=this.value;clearTimeout(LL._t);LL._t=setTimeout(llPintarTablaLl,150)"></div>'+
     '<div id="ll-tabla"></div>';
   llPintarTablaLl();
 }
@@ -126,9 +137,7 @@ function llPintarTablaLl(){
   var filas = llLista(LL.tab).filter(function(p){ return !llEsAdmin() || p.asignado_a; });
   LL.cola = filas.map(function(p){ return p.id; });
   if(!filas.length){ caja.innerHTML = '<div class="tarjeta vacio"><p>'+(LL.tab === 'hoy' ? '¡Listo por hoy! No hay llamadas pendientes. Revisa «Agendadas» para ver las próximas.' : 'No hay empresas en esta lista.')+'</p></div>'; return; }
-  caja.innerHTML = '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Empresa</th><th>Teléfono</th><th>Llamada</th><th>Último resultado</th><th>Siguiente</th>'+
-    (llEsAdmin() ? '<th>Operador</th>' : '')+'<th></th></tr></thead><tbody>'+
-    filas.map(function(p){
+  filasPorPartes(caja, 'll', filas.map(function(p){
       var tel = p.telefono || p.whatsapp, o = llOperadorDe(p);
       var vencida = p.proxima_llamada && new Date(p.proxima_llamada) < new Date();
       return '<tr><td style="min-width:190px"><b>'+esc(p.nombre)+'</b><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.contacto_nombre ? ' · '+esc(p.contacto_nombre) : '')+'</small></td>'+
@@ -138,8 +147,11 @@ function llPintarTablaLl(){
         '<td><small'+(vencida ? ' style="color:#B45309;font-weight:700"' : '')+'>'+esc(p.proxima_llamada ? llFechaHora(p.proxima_llamada) : (llCerrado(p) ? '—' : 'Cuando puedas'))+'</small></td>'+
         (llEsAdmin() ? '<td><small>'+esc(o ? o.nombre : '—')+'</small></td>' : '')+
         '<td><button class="btn btn-mor btn-sm" onclick="llAbrir(\''+p.id+'\')">'+(llCerrado(p) ? 'Ver' : 'Llamar')+'</button></td></tr>';
-    }).join('')+'</tbody></table></div></div>'+
-    '<p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' empresa'+(filas.length===1?'':'s')+'. Al abrir una, «Siguiente» recorre esta misma lista.</p>';
+    }),
+    '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Empresa</th><th>Teléfono</th><th>Llamada</th><th>Último resultado</th><th>Siguiente</th>'+
+    (llEsAdmin() ? '<th>Operador</th>' : '')+'<th></th></tr></thead><tbody>',
+    '</tbody></table></div></div>'+
+    '<p style="color:var(--gris);font-size:.85rem;margin-top:8px">'+filas.length+' empresa'+(filas.length===1?'':'s')+'. Al abrir una, «Siguiente» recorre esta misma lista.</p>');
 }
 function llNumeroTxt(p){
   if(p.estado === 'piloto') return '<span class="etiqueta tur">En prueba</span>';
@@ -454,9 +466,11 @@ function llInvitar(id){
    ========================================================================== */
 var _prCargarLl = prCargar;
 prCargar = function(){
+  /* Los operadores se piden al mismo tiempo que los prospectos (antes iban después) */
+  var ops = llEsAdmin() ? Nube.tabla('operadores?select=*&order=nombre.asc').catch(function(){ return null; }) : null;
   return _prCargarLl().then(function(){
-    if(!llEsAdmin()) return;
-    return Nube.tabla('operadores?select=*&order=nombre.asc').then(function(r){ LL.ops = r || []; llFiltroOperador(); }).catch(function(){ LL.ops = []; });
+    if(!ops) return;
+    return ops.then(function(r){ LL.ops = r || []; if(r) llFiltroOperador(); });
   });
 };
 /* Renglón de filtro «Operador» (sin asignar, o uno por operador). */
@@ -491,7 +505,9 @@ function llAsignar(si){
   var ids = Object.keys(PR.sel).filter(function(k){ return PR.sel[k]; }), op = si ? $('pr-asig').value : null;
   if(si && !op){ alert('Elige el operador.'); return; }
   var o = (LL.ops||[]).filter(function(x){ return x.id === op; })[0];
-  if(!confirm(si ? '¿Asignar '+ids.length+' empresa(s) a '+(o ? o.nombre : 'este operador')+'? Las verá en su consola de llamadas.' : '¿Quitar la asignación de '+ids.length+' empresa(s)?')) return;
+  if(!confirm(si ? '¿Asignar '+ids.length+' empresa(s) a '+(o ? o.nombre : 'este operador')+'? Las verá en su consola de llamadas.'+
+      ' Las que ya son clientes pasan también con su plan: las comisiones de los cobros que vengan serán de '+(o ? o.nombre : 'este operador')+
+      ' (las ya generadas se quedan con quien las ganó).' : '¿Quitar la asignación de '+ids.length+' empresa(s)?')) return;
   Nube.empresaRpc('asignar_prospectos', { p_ids:ids, p_operador:op })
     .then(function(n){
       PR.lista.forEach(function(p){ if(ids.indexOf(p.id) >= 0) p.asignado_a = op; });
@@ -499,6 +515,44 @@ function llAsignar(si){
       alert((si ? 'Asignadas: ' : 'Sin asignación: ') + n);
     })
     .catch(function(e){ alert(e.message); });
+}
+/* Ficha del prospecto: operador asignado y cambio (solo administración).
+   Si el prospecto ya es empresa, el servidor también le pasa la empresa y sus planes al
+   operador nuevo: las comisiones de los cobros que vengan son suyas; las ya generadas
+   se quedan con quien las ganó (backend/reasignar-operador-20261020.sql). */
+var _prPintarFichaLl = prPintarFicha;
+prPintarFicha = function(id){
+  _prPintarFichaLl(id);
+  var cab = $('pf-cab'), p = prPorId(id); if(!cab || !p || !llEsAdmin()) return;
+  var ops = (LL.ops||[]).filter(function(o){ return o.activo || o.id === p.asignado_a; });
+  cab.insertAdjacentHTML('beforeend', '<div id="pf-op" style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">'+
+    '<label for="pf-op-sel" style="font-weight:700;font-size:.92rem">👤 Operador</label>'+
+    (ops.length || p.asignado_a
+      ? '<select id="pf-op-sel" onchange="llReasignarUno(\''+id+'\', this)"><option value="">Sin asignar</option>'+
+        ops.map(function(o){ return '<option value="'+o.id+'"'+(o.id === p.asignado_a ? ' selected' : '')+(o.activo ? '' : ' disabled')+'>'+esc(o.nombre)+(o.activo ? '' : ' (inactivo)')+'</option>'; }).join('')+'</select>'
+      : '<small style="color:var(--gris)">Da de alta un operador en «Planes y operadores» para asignar.</small>')+
+    '</div>');
+};
+function llReasignarUno(id, sel){
+  var p = prPorId(id), nuevo = sel.value || null, antes = p ? (p.asignado_a || '') : '';
+  var nom = function(oid){ var o = (LL.ops||[]).filter(function(x){ return x.id === oid; })[0]; return o ? o.nombre : 'sin operador'; };
+  sel.disabled = true;
+  var info = nuevo ? Nube.empresaRpc('prospecto_empresa_operador', { p_id:id }).catch(function(){ return null; }) : Promise.resolve(null);
+  info.then(function(d){
+    var msg;
+    if(!nuevo) msg = '¿Quitar el operador de '+prCorto(p)+'? Ya no aparecerá en ninguna consola de llamadas.'+
+      ' Si ya es empresa, su plan y sus comisiones no cambian.';
+    else if(d && d.empresa) msg = '¿Pasar '+prCorto(p)+' a '+nom(nuevo)+'?\n\nTambién se le pasa la empresa «'+d.empresa+'»'+
+      (d.planes ? ' y su plan' : '')+': las comisiones de los cobros que vengan serán de '+nom(nuevo)+'.'+
+      ' Las comisiones ya generadas se quedan con quien las ganó.';
+    else msg = '¿Pasar '+prCorto(p)+' a '+nom(nuevo)+'? Lo verá en su consola de llamadas.'+
+      (d === null ? '' : ' Todavía no es empresa, así que no hay comisiones que mover.');
+    if(!confirm(msg)){ sel.value = antes; sel.disabled = false; return; }
+    return Nube.empresaRpc('asignar_prospectos', { p_ids:[id], p_operador:nuevo }).then(function(){
+      PR.lista.forEach(function(x){ if(x.id === id) x.asignado_a = nuevo; });
+      prPintarFicha(id);
+    });
+  }).catch(function(e){ sel.value = antes; sel.disabled = false; alert(e.message); });
 }
 var _vistaAdminProspectosLl = vistaAdminProspectos;
 vistaAdminProspectos = function(){

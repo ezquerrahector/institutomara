@@ -304,9 +304,11 @@ plnPintarOpInicio = function(){
    ========================================================================== */
 var _plnCargarAdminOpr = plnCargarAdmin;
 plnCargarAdmin = function(){
+  /* Se pide al mismo tiempo que lo demás de la pantalla; se pinta en el mismo orden que antes */
+  var pedido = Nube.tabla('empresas_compras?select=id,empresa,empresa_id,nota,extension_dias,extension_motivo,extension_estado,extension_por,extension_en&extension_estado=eq.pendiente');
+  pedido.catch(function(){});
   return _plnCargarAdminOpr().then(function(){
-    return Nube.tabla('empresas_compras?select=id,empresa,empresa_id,nota,extension_dias,extension_motivo,extension_estado,extension_por,extension_en&extension_estado=eq.pendiente')
-      .then(function(r){ PLN.extensiones = r || []; oprPintarExtensiones(); }).catch(function(){});
+    return pedido.then(function(r){ PLN.extensiones = r || []; oprPintarExtensiones(); }).catch(function(){});
   });
 };
 function oprPintarExtensiones(){

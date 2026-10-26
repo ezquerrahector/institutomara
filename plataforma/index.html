@@ -286,6 +286,11 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit
 
 /* ---------- Quiz ---------- */
 .quiz{max-width:720px;margin:0 auto}
+.cargando-contenido{text-align:center;padding:72px 16px;color:var(--gris)}
+.cargando-contenido p{margin:14px 0 18px;line-height:1.6}
+.gira-mara{width:34px;height:34px;margin:0 auto;border-radius:50%;border:3px solid var(--lavanda);
+  border-top-color:var(--morado);animation:gira-mara .8s linear infinite}
+@keyframes gira-mara{to{transform:rotate(360deg)}}
 .pregunta{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:22px;margin-bottom:16px}
 .pregunta .num{font-size:.78rem;font-weight:700;color:var(--morado);text-transform:uppercase;letter-spacing:.8px}
 .pregunta h4{font-size:1.05rem;font-weight:600;color:var(--tinta);margin:6px 0 16px;line-height:1.5}
@@ -418,6 +423,10 @@ tbody tr:hover{background:var(--nube)}
 .sello-oficial span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3}
 .sello-qr{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:156px}
 .sello-qr span{font-size:.68rem;color:var(--gris);max-width:120px}
+.sello-emp{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:140px}
+.sello-emp .logo-emp{display:block;max-height:64px;max-width:150px;object-fit:contain}
+.sello-emp span{font-size:.62rem;font-weight:800;letter-spacing:.9px;color:var(--tinta);line-height:1.3;text-transform:uppercase}
+.constancia .para-empresa{font-size:.8rem;color:var(--gris);margin-top:6px;letter-spacing:.3px}
 @media(max-width:640px){.constancia-sellos{justify-content:center}}
 @media print{
   @page{size:letter portrait;margin:10mm}
@@ -434,6 +443,7 @@ tbody tr:hover{background:var(--nube)}
   .constancia .meta>div{min-width:0;overflow-wrap:anywhere}
   .constancia-sellos{margin-top:6mm}
   .constancia .legal{margin-top:6mm;padding-top:4mm;font-size:8pt;line-height:1.45}
+  .sello-emp .logo-emp{max-height:16mm;max-width:38mm}
 }
 
 /* Logros y festejos */
@@ -580,22 +590,9 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261019c"></script>
-<script src="interactivo.js?v=20260929"></script>
-<script src="cursos/ingles-a1.js?v=20261004"></script>
-<script src="cursos/ia-general.js?v=20261004"></script>
-<script src="cursos/ia-profesiones.js?v=20261004"></script>
-<script src="cursos/office.js?v=20261004"></script>
-<script src="cursos/catalogo-2.js?v=20261004"></script>
-<script src="cursos/catalogo-3.js?v=20261004"></script>
-<script src="cursos/catalogo-4.js?v=20261004"></script>
-<script src="cursos/catalogo-5.js?v=20261004"></script>
-<script src="cursos/catalogo-6.js?v=20261004"></script>
-<script src="cursos/catalogo-7.js?v=20261004"></script>
-<script src="cursos/catalogo-8.js?v=20261004"></script>
-<script src="cursos/persuasion-etica.js?v=20261004"></script>
-<script src="cursos/estoicismo-vida-moderna.js?v=20261004"></script>
-<script src="cursos/diplomados-2026-10.js?v=20261004bwm"></script>
+<script src="nube.js?v=20261020s"></script>
+<script src="interactivo.js?v=20261020c"></script>
+<script src="cursos/indice.js?v=5fd4458f71"></script>
 <script src="cursos/rutas.js?v=20261004"></script>
 <script>
 /* =========================================================================
@@ -608,7 +605,10 @@ details.modelo[open] summary{margin-bottom:8px}
    ========================================================================= */
 
 /* ---------------- Almacenamiento ---------------- */
-var LLAVE = 'institutoMara.v2';
+/* v3: se guardan solo los datos (alumnos, avances, pagos…) y los cursos creados o
+   editados en Administración. El contenido publicado sale siempre de /cursos/,
+   así lo guardado pesa unos KB en vez de 13 MB y guardar es instantáneo. */
+var LLAVE = 'institutoMara.v3', LLAVE_VIEJA = 'institutoMara.v2';
 /* Súbele 1 cada vez que cambies el contenido de los cursos y quieras que
    se actualice en las computadoras donde la plataforma ya se había abierto. */
 var CONTENIDO_VERSION = 8;
@@ -616,16 +616,36 @@ var CONTENIDO_VERSION = 8;
 var LOGIN_GOOGLE = true;
 var memoria = null;               /* respaldo si el navegador bloquea localStorage */
 
+/* Lo que se guarda en el equipo: todo menos el contenido de los cursos publicados.
+   Un curso se guarda completo solo si se creó o editó en Administración (_local). */
+function datosParaGuardar(){
+  var copia = {}, k;
+  for(k in BD) if(k !== 'cursos') copia[k] = BD[k];
+  copia.cursos = (BD.cursos || []).filter(function(c){ return c._local; });
+  return copia;
+}
 function guardar(){
-  try { localStorage.setItem(LLAVE, JSON.stringify(BD)); }
-  catch(e){ memoria = JSON.stringify(BD); }
+  /* Si se está editando un curso en Administración, ese curso pasa a guardarse completo */
+  try{
+    if(typeof estado !== 'undefined' && estado.cursoId && /^(admin-editor|vista-previa)$/.test(estado.vista)){
+      var ce = curso(estado.cursoId); if(ce && !ce._parcial) ce._local = true;
+    }
+  }catch(e){}
+  var txt = JSON.stringify(datosParaGuardar());
+  try { localStorage.setItem(LLAVE, txt); memoria = null; }
+  catch(e){
+    memoria = txt;
+    /* Sin espacio (cursos editados muy grandes): al menos se guardan los datos del alumno */
+    try { var sin = datosParaGuardar(); sin.cursos = []; localStorage.setItem(LLAVE, JSON.stringify(sin)); } catch(e2){}
+  }
+  try { localStorage.removeItem(LLAVE_VIEJA); } catch(e){}
   /* Con cuentas en la nube, todo lo del alumno en sesión sube al servidor.
      La subida se agrupa (ver nube.js) para no mandar una llamada por clic. */
   if(window.NUBE && sesion && sesion.id) Nube.sincronizar(BD, sesion);
 }
 function cargar(){
   try {
-    var t = localStorage.getItem(LLAVE);
+    var t = localStorage.getItem(LLAVE) || localStorage.getItem(LLAVE_VIEJA);
     if(t) return JSON.parse(t);
   } catch(e){
     if(memoria) return JSON.parse(memoria);
@@ -652,6 +672,67 @@ function esc(s){
 }
 function dinero(n){
   return '$' + Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+/* ---------------- Contenido de cada programa, bajo demanda ----------------
+   Al abrir el aula solo se baja cursos/indice.js (nombres, temarios, minutos,
+   número de ejercicios y de preguntas). Los bloques de las lecciones y las
+   preguntas de las evaluaciones de un programa se bajan de
+   cursos/contenido/<id>.js la primera vez que se abre (y quedan en caché).
+   Los cursos que aún no lo tienen llevan la marca _parcial. */
+var Contenido = (function(){
+  var pend = {}, listos = {};
+  window.MARA_CONTENIDO = function(id, datos){ listos[id] = datos; if(pend[id] && pend[id].ok) pend[id].ok(); };
+  function copia(x){ return JSON.parse(JSON.stringify(x)); }
+  function aplicar(c, d){
+    if(!c || !c._parcial || !d) return;
+    (c.modulos || []).forEach(function(m){
+      (m.lecciones || []).forEach(function(l){ if(!l.bloques) l.bloques = copia(d.l[l.id] || []); });
+      if(m.quiz && d.q[m.id]) m.quiz.preguntas = copia(d.q[m.id]);
+    });
+    delete c._parcial;
+  }
+  function aplicarTodo(id){
+    var d = listos[id];
+    aplicar(curso(id), d);
+    (window.CURSOS_MARA || []).forEach(function(x){ if(x.id === id) aplicar(x, d); });
+  }
+  function cargar(id){
+    var c = curso(id);
+    if(!c || !c._parcial) return Promise.resolve(c);
+    if(listos[id]){ aplicarTodo(id); return Promise.resolve(curso(id)); }
+    if(!pend[id]){
+      var p = pend[id] = {};
+      p.prom = new Promise(function(ok, mal){
+        var s = document.createElement('script'), fin = false;
+        var falla = function(){ if(fin) return; fin = true; delete pend[id]; if(s.parentNode) s.parentNode.removeChild(s); mal(new Error('sin contenido')); };
+        var reloj = setTimeout(falla, 30000);
+        p.ok = function(){ if(fin) return; fin = true; clearTimeout(reloj); ok(); };
+        s.onerror = function(){ clearTimeout(reloj); falla(); };
+        s.onload = function(){ setTimeout(function(){ if(!listos[id]) { clearTimeout(reloj); falla(); } }, 0); };
+        s.src = 'cursos/contenido/' + encodeURIComponent(id) + '.js?v=' + encodeURIComponent(c._v || '');
+        document.head.appendChild(s);
+      });
+    }
+    return pend[id].prom.then(function(){ aplicarTodo(id); return curso(id); });
+  }
+  return {
+    listo: function(id){ var c = curso(id); return !c || !c._parcial; },
+    cargar: cargar,
+    /* Se adelanta en segundo plano (por ejemplo, al abrir el índice del programa) */
+    precargar: function(id){ if(id) cargar(id).catch(function(){}); },
+    /* Para pruebas automáticas y herramientas: baja todo el catálogo */
+    cargarTodos: function(){ return Promise.all(BD.cursos.filter(function(c){ return c._parcial; }).map(function(c){ return cargar(c.id); })); }
+  };
+})();
+function cargandoContenido(){
+  return '<div class="seccion" data-cargando-contenido="1"><div class="lector cargando-contenido">'+
+    '<div class="gira-mara" aria-hidden="true"></div><p>Cargando…</p></div></div>';
+}
+function errorContenido(){
+  return '<div class="seccion"><div class="lector cargando-contenido">'+
+    '<p><b>No se pudo cargar esta parte del programa.</b><br>Revisa tu conexión a internet e inténtalo de nuevo.</p>'+
+    '<button class="btn btn-mor" onclick="pintar()">Reintentar</button></div></div>';
 }
 
 /* ---------------- Contenido inicial ---------------- */
@@ -1355,6 +1436,16 @@ function semillaBase(){
 
 var BD = cargar() || semilla();
 
+/* Cursos: el índice publicado manda (en su orden). Los que se crearon o editaron
+   en Administración en este equipo se conservan tal cual. */
+(function(){
+  var base = semilla().cursos, propios = BD.cursos || [], porId = {}, enBase = {};
+  propios.forEach(function(c){ porId[c.id] = c; });
+  base.forEach(function(c){ enBase[c.id] = true; });
+  BD.cursos = base.map(function(c){ var p = porId[c.id]; return (p && p._local && !p._parcial) ? p : c; });
+  propios.forEach(function(c){ if(!enBase[c.id] && c.modulos){ c._local = true; delete c._parcial; BD.cursos.push(c); } });
+})();
+
 /* Si en esta computadora quedaron guardados cursos de una versión anterior,
    los cursos se reemplazan por los nuevos y se conservan alumnos, pagos,
    inscripciones y avances. Así el contenido nuevo sí se ve. */
@@ -1377,6 +1468,8 @@ if(!BD.config || BD.config.contenidoVersion !== CONTENIDO_VERSION){
       // Actualiza sólo el contenido editorial versionado. Conserva pagos, avances y datos comerciales.
       if(extra[i].revisionContenido && Number(extra[i].revisionContenido) > Number(BD.cursos[j].revisionContenido||0)){
         BD.cursos[j].modulos = JSON.parse(JSON.stringify(extra[i].modulos));
+        /* El contenido nuevo llega del servidor al abrir el programa */
+        if(extra[i]._parcial){ BD.cursos[j]._parcial = true; BD.cursos[j]._v = extra[i]._v; delete BD.cursos[j]._local; }
         ['nivel','familia','periodoTipo','periodoNum','horas','desc','revisionContenido'].forEach(function(k){ BD.cursos[j][k]=extra[i][k]; });
       }
       break;
@@ -2367,7 +2460,7 @@ function vistaAula(){
           'onclick="ir(\'leccion\',{cursoId:\''+c.id+'\',moduloId:\''+m.id+'\',leccionId:\''+lec.id+'\'})">'+
           '<span class="punto">'+(vista?'<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>':'')+'</span>'+
           '<span style="flex:1">'+esc(lec.titulo)+'</span>'+
-          '<span style="font-size:.8rem;color:var(--gris);white-space:nowrap">'+(window.MI ? MI.minutos(lec)+' min' : lec.bloques.length+' bloques')+'</span></div>';
+          '<span style="font-size:.8rem;color:var(--gris);white-space:nowrap">'+(window.MI ? MI.minutos(lec)+' min' : (lec.bloques ? lec.bloques.length : (lec._nb||0))+' bloques')+'</span></div>';
       }
       if(m.quiz && m.quiz.preguntas.length && quizBloqueado(sesion.id,c,m)){
         var falt = leccionesFaltantes(sesion.id,c,m).length;
@@ -3263,6 +3356,7 @@ function guardarNuevoCurso(){
             familia:$('nc-fam').value.trim()||'General',
             horas:Number($('nc-hrs').value)||0, precio:Number($('nc-pre').value)||0,
             color:'#6D28D9', publicado:false, proximamente:false, modulos:[] };
+  c._local = true;
   BD.cursos.push(c); guardar(); cerrarModal();
   editarCurso(c.id);
 }
@@ -3868,6 +3962,7 @@ function vistaPrevia(){
 
 /* ------- Editor de evaluación ------- */
 function editarQuiz(cid,mid){
+  if(!Contenido.listo(cid)){ Contenido.cargar(cid).then(function(){ editarQuiz(cid,mid); }, function(){ alert('No se pudo cargar la evaluación. Revisa tu conexión.'); }); return; }
   var c = curso(cid), m = modulo(c,mid);
   if(!m.quiz) m.quiz = { titulo:'Evaluación de '+m.titulo, preguntas:[] };
   var cuerpo = '<div class="campo"><label>Título de la evaluación</label>'+
@@ -3891,6 +3986,7 @@ function quizATexto(q){
 }
 function guardarQuiz(cid,mid){
   var c = curso(cid), m = modulo(c,mid);
+  if(c && !c._parcial) c._local = true;
   m.quiz.titulo = $('q-tit').value.trim();
   var bloques = $('q-txt').value.split(/\n-{3,}\n/);
   var pregs = [];
@@ -4598,7 +4694,22 @@ function reiniciar(){
 /* ---------------- Enrutador ---------------- */
 function pintar(){
   var v = estado.vista, h = '';
-  if(v==='mis-cursos')          h = vistaMisCursos();
+  /* Lección, evaluación y editor necesitan el contenido del programa: si aún no
+     se baja, se muestra «Cargando…» un momento y se vuelve a pintar. */
+  if(/^(leccion|quiz|vista-previa|admin-editor)$/.test(v) && estado.cursoId && !Contenido.listo(estado.cursoId)){
+    var vPedida = v, cPedido = estado.cursoId;
+    $('vista').innerHTML = cargandoContenido();
+    Contenido.cargar(cPedido).then(function(){
+      if(estado.vista === vPedida && estado.cursoId === cPedido) pintar();
+    }, function(){
+      if(estado.vista === vPedida && estado.cursoId === cPedido) $('vista').innerHTML = errorContenido();
+    });
+    return;
+  }
+  /* En el índice del programa se adelanta su contenido para que la lección abra al instante */
+  if(v === 'aula' && estado.cursoId) Contenido.precargar(estado.cursoId);
+  if(v === 'mis-cursos' && sesion){ try{ Contenido.precargar(localStorage.getItem('institutoMara.ultimo.' + sesion.id)); }catch(e){} }
+  if(v==='mis-cursos')         h = vistaMisCursos();
   else if(v==='catalogo')       h = vistaCatalogo();
   else if(v==='ia-profesion')   h = vistaIAProfesion();
   else if(v==='aula')           h = vistaAula();
@@ -5187,6 +5298,7 @@ function moderar(id, estado){ Nube.moderarResena(id, estado).then(function(){ pi
 function vistaMuestra(cid){
   var c = curso(cid);
   if(!c || !c.publicado || !c.modulos.length || !c.modulos[0].lecciones.length) return null;
+  if(c._parcial) return cargandoContenido();
   if(window.MI) MI.idioma = c.idioma || 'en-US';
   var m = c.modulos[0], lec = c.muestra ? null : m.lecciones[0];
   if(c.muestra) c.modulos.forEach(function(mm){ mm.lecciones.forEach(function(l){ if(l.id === c.muestra){ m = mm; lec = l; } }); });
@@ -5233,6 +5345,9 @@ function abrirMuestra(cid){
   var d = document.createElement('div'); d.id = 'muestra'; d.innerHTML = h;
   document.body.appendChild(d);
   document.title = 'Lección gratis · ' + curso(cid).nombre + ' — Instituto Mara';
+  if(!Contenido.listo(cid)) Contenido.cargar(cid).then(function(){
+    var h2 = vistaMuestra(cid); if(h2) d.innerHTML = h2;
+  }, function(){ d.innerHTML = '<main class="contenedor">'+errorContenido().replace('onclick="pintar()"','onclick="location.reload()"')+'</main>'; });
   return true;
 }
 
@@ -5279,17 +5394,19 @@ avisoEnlaceCorreo();
   }
 })();
 </script>
-<script src="empresas.js?v=20261016b"></script>
-<script src="prospectos.js?v=20261015a"></script>
+<script src="empresas.js?v=20261020r"></script>
+<script src="prospectos.js?v=20261020r"></script>
 <script src="planes.js?v=20261019a"></script>
-<script src="llamadas.js?v=20261020a"></script>
-<script src="operador.js?v=20261019a"></script>
+<script src="llamadas.js?v=20261020t"></script>
+<script src="operador.js?v=20261020r"></script>
 <script src="comisiones.js?v=20261019a"></script>
-<script src="prueba.js?v=20261019a"></script>
-<script src="supervision.js?v=20261019a"></script>
+<script src="prueba.js?v=20261020r"></script>
+<script src="supervision.js?v=20261020r"></script>
 <script src="empresas-plan.js?v=20261019b"></script>
 <script src="renovaciones.js?v=20261019b"></script>
 <script src="cambio-rango.js?v=20261019b"></script>
 <script src="acceso-intencion.js?v=20261019a"></script>
+<script src="constancia-logo.js?v=20261020a"></script>
+<script src="prospectos-alumnos.js?v=20261020a"></script>
 </body>
 </html>
