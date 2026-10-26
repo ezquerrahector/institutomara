@@ -5,7 +5,7 @@
 const fs = require('fs'), path = require('path'), { execSync } = require('child_process');
 const RAIZ = path.join(__dirname, '..'), id = process.argv[2];
 global.window = {}; const dir = path.join(RAIZ, 'plataforma/cursos');
-for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js') && f !== 'rutas.js')) eval(fs.readFileSync(path.join(dir, f), 'utf8'));
+for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js') && f !== 'rutas.js' && f !== 'indice.js')) eval(fs.readFileSync(path.join(dir, f), 'utf8'));
 const c = window.CURSOS_MARA.find(x => x.id === id); if (!c) { console.error('No existe ' + id); process.exit(1); }
 const R = {}; const fallo = (v, m) => (R[v] = R[v] || []).push(m);
 const L = c.modulos.flatMap(m => m.lecciones), B = L.flatMap(l => l.bloques.map(b => ({ l, b })));
@@ -56,7 +56,7 @@ const O = JSON.parse(html.match(/var OFERTA = (\[.*?\]);/s)[1]).find(x => x.id =
 if (!O || O.h !== c.horas || O.p !== c.precio) fallo('V9', 'OFERTA no coincide'); if (!D || D.h !== c.horas) fallo('V9', 'DESTACADOS no coincide');
 const T = JSON.parse(fs.readFileSync(path.join(RAIZ, 'sitio-web/temarios.json'), 'utf8'))[id]; if (!T || T.h !== c.horas || T.m.length !== c.modulos.length) fallo('V9', 'temario no coincide');
 const sqlP = path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), sql = fs.existsSync(sqlP) ? fs.readFileSync(sqlP, 'utf8') : ''; if (!sql.includes("('" + id + "'")) fallo('V9', 'falta en SQL');
-const aula = fs.readFileSync(path.join(RAIZ, 'plataforma/index.html'), 'utf8'); if (!aula.includes('cursos/diplomados-2026-10.js')) fallo('V9', 'aula no carga el archivo');
+const aula = fs.readFileSync(path.join(RAIZ, 'plataforma/index.html'), 'utf8'); if (!aula.includes('cursos/indice.js')) fallo('V9', 'aula no carga cursos/indice.js'); if (/<script[^>]+cursos\/(?!indice\.js|rutas\.js)[^"']+\.js/.test(aula)) fallo('V9', 'aula carga una fuente de cursos directamente (solo indice.js y rutas.js)'); if (!fs.existsSync(path.join(RAIZ, 'plataforma/cursos/contenido', id + '.js'))) fallo('V9', 'falta plataforma/cursos/contenido/' + id + '.js'); if (!fs.readFileSync(path.join(RAIZ, 'plataforma/cursos/indice.js'), 'utf8').includes('"' + id + '"')) fallo('V9', 'indice.js no incluye el programa');
 B.filter(({ b }) => b.tipo === 'imagen').forEach(({ b }) => { const f = path.join(RAIZ, 'plataforma', b.url); if (!fs.existsSync(f)) fallo('V9', 'falta ' + b.url); else try { execSync('python3 -c "import xml.dom.minidom,sys;xml.dom.minidom.parse(sys.argv[1])" ' + f); } catch (e) { fallo('V9', 'SVG inválido ' + b.url); } });
 const pdf = path.join(RAIZ, 'plataforma/recursos', id, 'cuaderno.pdf'); if (!fs.existsSync(pdf) || fs.statSync(pdf).size < 20000) fallo('V9', 'PDF ausente o muy pequeño');
 // Resultado

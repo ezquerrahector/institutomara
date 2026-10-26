@@ -1,0 +1,804 @@
+{
+ "modulos": [
+  {
+   "t": "Estadística para decidir sin engañarte",
+   "r": "Variabilidad, atípicos y por qué el promedio solo no basta; muestras y margen de error; correlación, causalidad y paradoja de Simpson; y experimentos sencillos en el negocio.",
+   "lecciones": [
+    {
+     "t": "Más allá del promedio: dispersión, percentiles y atípicos",
+     "obj": "Describir un conjunto de datos con su centro, su dispersión y sus extremos, y tratar los atípicos sin esconderlos ni dejar que te engañen.",
+     "texto": [
+      "El promedio es el número más usado en los reportes y también el que más engaña cuando va solo. Se deja arrastrar por los valores extremos. Imagina diez clientes de una papelería: nueve gastan entre 150 y 250 pesos y uno, una escuela que surte su lista anual, gasta 4,800. El promedio da 657 pesos, aunque nueve de cada diez gastaron 250 o menos. La <b>mediana</b>, el valor que deja la mitad de los datos abajo y la mitad arriba, da 200 pesos y describe mejor al cliente de en medio. Por eso es un mito que «el promedio describe al cliente típico»: solo lo hace cuando los datos son más o menos simétricos y sin extremos.",
+      "Además del centro necesitas saber qué tan dispersos están los datos. La <b>desviación estándar</b> (DESVEST.M en Excel) indica qué tanto se alejan los datos de su promedio. Dos sucursales con el mismo tiempo promedio de entrega pueden ser muy distintas: en una casi todos los pedidos llegan entre 25 y 35 minutos y en la otra unos llegan en 10 y otros en 70. Lo que genera quejas es la parte impredecible. Los <b>percentiles</b> lo hacen visible: el percentil 90 (PERCENTIL.INC con 0.9) es el valor que solo supera uno de cada diez casos. Una meta como «90 % de los pedidos en menos de 40 minutos» protege mejor al cliente que «promedio de 30 minutos».",
+      "Los cuartiles dividen los datos ordenados en cuatro partes iguales (CUARTIL.INC). La distancia entre el primero y el tercero, el <b>rango intercuartílico</b>, mide la amplitud del 50 % central y no la mueven los extremos. Una regla común para señalar posibles <b>atípicos</b> marca los datos que quedan a más de 1.5 rangos intercuartílicos por encima del tercer cuartil o por debajo del primero. Es una señal para mirar, no una sentencia.",
+      "Ante un atípico, investiga antes de borrar. Puede ser un error de captura (alguien escribió 4,800 en lugar de 480), un caso de otra población (un cliente mayorista mezclado con clientes de mostrador) o un hecho real e importante, como el pedido que tardó tres días porque faltó una pieza. Corrige los errores, separa las poblaciones distintas y conserva los casos reales; si dudas, reporta el resultado con y sin el atípico y explica la diferencia. Borrar lo que estorba es la forma más rápida de oír lo que querías."
+     ],
+     "comparar": [
+      "«Así no: El tiempo promedio de atención es de 5 horas, por debajo de la meta. Vamos bien.»",
+      "«Así sí: La mitad de las solicitudes se atiende en 2 horas o menos, pero 1 de cada 10 tarda más de 19. Ahí están las quejas.»"
+     ],
+     "caso": "Caso ficticio: Adriana, de 41 años, es gerente de un centro de coworking en Querétaro con 180 miembros. El tablero mensual dice que las solicitudes de mantenimiento (aire acondicionado, internet, cerraduras) se atienden en 5 horas en promedio, por debajo de la meta de 6, pero las quejas siguen subiendo. Al revisar los 220 registros del mes, Adriana encuentra que la mediana es de 2 horas y el percentil 90, de 19 horas, y que hay una solicitud de 9 días por una cerradura que esperó una pieza importada. El dueño le pide borrar esa solicitud «porque distorsiona» y presentar el mes como meta cumplida.",
+     "p": [
+      [
+       "¿Qué resumen describe mejor lo que viven los miembros?",
+       "Mediana de 2 horas y 1 de cada 10 arriba de 19",
+       "Promedio de 5 horas, dentro de la meta de 6 horas",
+       "Promedio de 5 horas sin contar la solicitud de 9 días",
+       "La mediana dice qué vive el miembro de en medio y el percentil 90 muestra la cola donde nacen las quejas. El promedio de 5 horas mezcla muchas solicitudes rápidas con pocas muy lentas, y quitar la de 9 días lo bajaría todavía más, escondiendo justo el problema."
+      ],
+      [
+       "¿Qué debería hacer Adriana con la solicitud de 9 días?",
+       "Conservarla, explicarla y reportar con y sin ella",
+       "Borrarla, porque es un atípico que distorsiona",
+       "Cambiarla por el promedio del mes para no perderla",
+       "Es un caso real, no un error de captura: un miembro esperó 9 días. Se conserva, se explica su causa (la pieza importada) y se muestra cómo cambia el resultado con y sin ella. Borrarla o sustituirla por el promedio inventa un mes mejor del que fue."
+      ],
+      [
+       "¿Qué meta protegería mejor a los miembros?",
+       "90 % de las solicitudes atendidas en menos de 8 horas",
+       "Bajar el promedio mensual de atención de 6 a 4 horas",
+       "Atender al menos 50 solicitudes de mantenimiento por semana",
+       "Una meta con percentil obliga a cuidar la cola, que es lo que molesta. Un promedio más bajo se puede lograr acelerando las solicitudes fáciles sin tocar las lentas, y el número de solicitudes atendidas mide volumen, no la espera."
+      ]
+     ],
+     "completar": [
+      "La ___ es el valor que deja la mitad de los datos abajo y la mitad arriba, y no se deja arrastrar por los extremos.",
+      "mediana"
+     ],
+     "relacionar": [
+      [
+       "Mediana",
+       "Valor del caso que queda en medio"
+      ],
+      [
+       "Percentil 90",
+       "Límite que solo supera 1 de cada 10 casos"
+      ],
+      [
+       "Desviación estándar",
+       "Distancia típica de los datos a su promedio"
+      ],
+      [
+       "Rango intercuartílico",
+       "Amplitud del 50 % central de los datos"
+      ],
+      [
+       "Atípico",
+       "Dato lejano que se investiga antes de decidir"
+      ]
+     ],
+     "refl": "Toma un indicador de tu trabajo que hoy se reporte con un promedio (tiempo de entrega, ticket de venta, días de cobro, calificaciones). 1) Reúne al menos 30 datos individuales. 2) Calcula promedio, mediana, desviación estándar y percentil 90 en una hoja de cálculo. 3) Haz un histograma y describe su forma. 4) Señala los posibles atípicos con la regla del rango intercuartílico e investiga dos de ellos: ¿error, otra población o caso real? 5) Reescribe el reporte en tres líneas que digan lo que vive el caso típico y lo que vive la peor décima parte.",
+     "modelo": "Modelo: «Días de cobro de 64 facturas del trimestre: promedio de 38 días, mediana de 29 y percentil 90 de 75. El histograma tiene una cola larga a la derecha. Hay cuatro posibles atípicos de más de 90 días: tres son de un mismo cliente de gobierno, que paga con otro proceso, y uno estaba mal capturado y ya lo corregí. Reporte: la mitad de las facturas se cobra en 29 días o menos, pero una de cada diez tarda más de 75; sin el cliente de gobierno, el promedio baja a 33 días.» Es buena porque usa el centro y la cola, investiga los atípicos en lugar de borrarlos y separa una población distinta.",
+     "plantilla": [
+      "Resumen de variabilidad en Excel",
+      "Datos en B2:B201 · unidad: [ ]\nPromedio (E1): [=PROMEDIO(B2:B201)]\nMediana (E2): [=MEDIANA(B2:B201)]\nDesviación estándar (E3): [=DESVEST.M(B2:B201)]\nPercentil 90 (E4): [=PERCENTIL.INC(B2:B201,0.9)]\nPrimer cuartil (E5): [=CUARTIL.INC(B2:B201,1)] · Tercer cuartil (E6): [=CUARTIL.INC(B2:B201,3)]\nRango intercuartílico (E7): [=E6-E5]\nLímite alto de posibles atípicos (E8): [=E6+1.5*E7] · Límite bajo (E9): [=E5-1.5*E7]\nCuántos datos quedan arriba del límite alto: [=SUMAPRODUCTO((B2:B201>E8)*1)]\nAtípicos revisados: [dato · ¿error, otra población o caso real? · qué hice]\nResumen para decidir: la mitad [ ] · 1 de cada 10 [ ]"
+     ],
+     "clave": [
+      "El promedio solo describe al caso típico cuando los datos son simétricos: reporta también la mediana.",
+      "Lo que duele al cliente está en la cola: mide percentiles y dispersión, no solo el centro.",
+      "Un atípico se investiga antes de borrarlo: puede ser un error, otra población o la noticia más importante."
+     ]
+    },
+    {
+     "t": "Muestras, margen de error e intervalos",
+     "obj": "Calcular e interpretar el margen de error de un porcentaje, reportar intervalos y reconocer los sesgos que ningún margen corrige.",
+     "texto": [
+      "Casi nunca puedes preguntarle a todos tus clientes o revisar todas tus facturas, así que trabajas con una <b>muestra</b> para conocer a la <b>población</b>. Si la muestra se elige al azar, de modo que cada integrante tenga la misma oportunidad de quedar dentro, el resultado se parece al de la población y, además, puedes calcular cuánto se puede equivocar por pura suerte. Ese cálculo es el <b>margen de error</b>. Para un porcentaje, con muestra aleatoria y 95 % de confianza, una buena aproximación es 0.98 dividido entre la raíz cuadrada del tamaño de muestra: con 400 entrevistas, unos ±4.9 puntos; con 1,000, unos ±3.1. Es el margen máximo, el que aplica cuando el resultado ronda 50 %, y supone que la población es mucho más grande que la muestra.",
+      "Fíjate en la raíz cuadrada: para reducir el margen a la mitad necesitas cuatro veces más entrevistas, no el doble. Ojo con los subgrupos: si de tus 400 entrevistas solo 100 son de la sucursal norte, el margen para esa sucursal ronda ±9.8 puntos. Y cuando comparas dos grupos independientes de 400 personas cada uno, el margen de la diferencia es mayor que el de cada grupo, cerca de ±6.9 puntos: una ventaja de 52 % contra 48 % puede ser puro azar.",
+      "El <b>intervalo de confianza</b> es el resultado más o menos el margen. Si 61 % de 400 clientes elegidos al azar dice que volvería, lo honesto es reportar «entre 56 % y 66 %, aproximadamente». El 95 % de confianza se refiere al método: si repitieras la encuesta muchas veces, unos 95 de cada 100 intervalos atraparían el valor real. Para decidir, lo importante es dejar de presentar 61 % como si fuera exacto. Para promedios, Excel calcula el margen con INTERVALO.CONFIANZA.T.",
+      "Lo más importante: el margen de error solo mide el azar del muestreo. No cubre los <b>sesgos</b> de quién responde, de cómo se pregunta ni de a quién dejaste fuera. Una encuesta en tus redes sociales con 10,000 respuestas representa a quienes te siguen y quisieron contestar, no a tus clientes. Por eso es un mito que «una muestra grande corrige cualquier sesgo»: hacerla más grande solo te da más precisión alrededor de un valor equivocado. Antes de calcular márgenes, pregunta quién quedó dentro, quién no y por qué."
+     ],
+     "comparar": [
+      "«Así no: Votaron 2,500 personas en nuestras redes y 80 % nos prefiere. Con tantas respuestas, no hay margen de error.»",
+      "«Así sí: En 400 clientes elegidos al azar, 61 % nos prefiere, entre 56 % y 66 %. La votación en redes solo refleja a nuestros seguidores.»"
+     ],
+     "caso": "Caso ficticio: Joaquín, de 29 años, es analista en una agencia de marketing digital en Mérida. Su cliente, una cadena regional de panaderías, quiere lanzar una campaña con el mensaje «8 de cada 10 clientes nos prefieren», basado en una votación abierta en sus redes sociales con 2,500 respuestas. Joaquín tiene también una encuesta telefónica a 400 clientes elegidos al azar de la base del programa de lealtad, donde 61 % dice preferir esa panadería sobre otras. El cliente quiere el número más alto y pregunta para qué sirve una encuesta «tan chiquita».",
+     "p": [
+      [
+       "¿Qué número es más defendible para describir a los clientes?",
+       "El 61 % de la encuesta al azar, con su margen",
+       "El 80 % de la votación, por tener más respuestas",
+       "El promedio de las dos, cerca de 70 %, para equilibrar",
+       "La encuesta telefónica eligió a los clientes al azar, así que su error se puede medir. La votación abierta tiene autoselección: responden seguidores entusiastas, y más respuestas no corrigen eso. Promediar un dato sesgado con uno confiable solo contamina al bueno."
+      ],
+      [
+       "¿Cómo debería reportar Joaquín el 61 %?",
+       "Entre 56 % y 66 %, aproximadamente",
+       "Entre 60 % y 62 %, por ser una muestra aleatoria",
+       "Entre 51 % y 71 %, por ser solo 400 casos",
+       "Con 400 casos, 0.98 entre la raíz de 400 (que es 20) da 0.049, unos ±4.9 puntos: de 56 % a 66 %. Un margen de ±1 punto exigiría muchísimas más entrevistas, y ±10 puntos correspondería a unas 100."
+      ],
+      [
+       "¿Qué limitación queda aunque la encuesta sea aleatoria?",
+       "Solo representa a los clientes del programa de lealtad",
+       "El margen de error ya incluye cualquier sesgo que pudiera haber",
+       "Con 400 casos no se puede calcular un margen de error",
+       "El azar se aplicó dentro de la base de lealtad, así que el resultado describe a esos clientes, que quizá son más fieles que el resto. El margen no cubre ese sesgo de cobertura, y con 400 casos sí se puede calcular perfectamente."
+      ]
+     ],
+     "completar": [
+      "El margen de error solo mide el azar del muestreo; no cubre los ___ de quién responde ni de cómo se pregunta.",
+      "sesgos"
+     ],
+     "refl": "Busca una encuesta o sondeo que se haya usado en tu trabajo o que hayas visto en medios. 1) Escribe quién era la población y quién respondió en realidad. 2) Indica cómo se eligió la muestra: al azar, por conveniencia o por autoselección. 3) Calcula el margen máximo con 0.98 entre la raíz del tamaño de muestra y escribe el intervalo. 4) Enumera al menos tres sesgos que el margen no cubre. 5) Redacta en dos líneas cómo comunicarías el resultado sin exagerarlo.",
+     "modelo": "Modelo: «Sondeo de clima laboral. Población: 2,300 empleados de una planta. Respondieron 140 por un enlace voluntario, sin selección al azar. Con 140 respuestas, el margen sería de ±8.3 puntos si la muestra fuera aleatoria, pero no lo es. Sesgos: suelen responder más los muy molestos y los muy contentos, el turno nocturno casi no usa computadora y la pregunta 4 sugería la respuesta. Comunicación: 58 % de quienes contestaron está satisfecho; no lo generalizo a toda la planta y propongo una encuesta en papel por turno.» Es buena porque separa el azar de los sesgos y no presenta un sondeo voluntario como si representara a todos.",
+     "plantilla": [
+      "Calculadora de margen de error",
+      "Tamaño de muestra n (B1): [ ]\nProporción observada, en decimal (B2): [ ]\nMargen máximo al 95 % (B3): [=0.98/RAIZ(B1)]\nMargen para la proporción observada (B4): [=1.96*RAIZ(B2*(1-B2)/B1)]\nIntervalo: de [=B2-B4] a [=B2+B4]\nMargen que quieres lograr, en decimal (B6): [ ]\nMuestra necesaria (B7): [=REDONDEAR.MAS((0.98/B6)^2,0)]\nPara un promedio (datos en C2:C101), margen: [=INTERVALO.CONFIANZA.T(0.05,DESVEST.M(C2:C101),CONTAR(C2:C101))]\n¿Cómo se eligió la muestra?: [al azar / conveniencia / autoselección]\nSesgos que el margen no cubre: [quién no respondió · redacción · quién quedó fuera]\nCómo lo comunicaré: [ ]"
+     ],
+     "clave": [
+      "Con muestra aleatoria, el margen máximo de un porcentaje es cerca de 0.98 entre la raíz de n: duplicar la precisión exige cuadruplicar la muestra.",
+      "Reporta intervalos, no números exactos, y cuida los subgrupos y las diferencias, que tienen márgenes mayores.",
+      "El margen no cubre sesgos: una muestra enorme y mal elegida sigue estando mal elegida."
+     ]
+    },
+    {
+     "t": "Correlación no es causalidad",
+     "obj": "Medir e interpretar una correlación, proponer explicaciones alternativas a la causa aparente y detectar la paradoja de Simpson.",
+     "texto": [
+      "Dos variables están <b>correlacionadas</b> cuando tienden a moverse juntas. El coeficiente de correlación, que Excel calcula con COEF.DE.CORREL, va de −1 a 1: cerca de 1, relación creciente fuerte; cerca de −1, relación decreciente fuerte; cerca de 0, ninguna relación en línea recta. Ese «en línea recta» importa: una relación curva puede dar un coeficiente bajo, y un solo dato extremo puede inflarlo. En 1973, Francis Anscombe publicó cuatro conjuntos de datos con casi las mismas medias, varianzas, correlación y recta, pero gráficas totalmente distintas. La lección sigue vigente: antes de creerle a un coeficiente, haz la gráfica de dispersión.",
+      "Que dos cosas se muevan juntas no prueba que una cause la otra. Hay cuatro explicaciones frecuentes. Una <b>variable confusora</b> puede mover a ambas: en una tienda de playa, las ventas de helado y de bloqueador suben juntas porque las dos dependen del calor y de los turistas. Puede haber <b>causalidad inversa</b>: las sucursales con más promociones venden menos porque las promociones se dieron a las que ya vendían poco. Puede ser <b>azar</b>: si cruzas cientos de variables, algunas parecerán relacionadas sin serlo. Y puede haber <b>selección</b>: si solo analizas a quienes eligieron participar en algo, comparas personas que ya eran distintas.",
+      "La versión más desconcertante es la <b>paradoja de Simpson</b>: una tendencia que aparece en el total se invierte dentro de cada grupo. El ejemplo clásico son las admisiones de posgrado de la Universidad de California en Berkeley en 1973, analizadas por Bickel, Hammel y O'Connell en 1975. En el total parecía que se admitía menos a las mujeres; por departamento, la mayoría no mostraba ese sesgo y algunos las favorecían. La diferencia venía de que ellas aplicaban más a los departamentos con más competencia. Moraleja: antes de concluir con un total, revisa si los grupos que comparas tienen la misma mezcla.",
+      "¿Cómo acercarte a una causa sin un laboratorio? Piensa en el mecanismo: ¿hay una razón lógica para que X produzca Y? Revisa el orden en el tiempo: la causa va antes del efecto. Compara grupos parecidos, por ejemplo clientes del mismo tamaño o alumnos con el mismo punto de partida, y busca si el efecto crece con la dosis. Escribe las explicaciones alternativas y trata de descartarlas una por una con datos. Si aun así quedan dudas y la decisión importa, haz un experimento: es el tema de la siguiente lección."
+     ],
+     "comparar": [
+      "«Así no: Los que van a asesorías sacan peor calificación. Quitemos las asesorías.»",
+      "«Así sí: ¿Quiénes van a asesorías? Comparemos alumnos que empezaron con calificaciones parecidas antes de decidir.»"
+     ],
+     "caso": "Caso ficticio: Karla, de 46 años, es coordinadora académica de una preparatoria particular en Colima. El director revisa las calificaciones finales y ve que los 80 alumnos que asistieron a asesorías por las tardes promediaron 7.4, mientras que los 150 que no asistieron promediaron 8.1. Concluye que las asesorías «no sirven» y quiere cancelarlas para ahorrar horas de maestros. Karla separa a los alumnos por su primer parcial y descubre que tres de cada cuatro asistentes habían empezado reprobando. Entre quienes empezaron reprobando, los que fueron a asesorías terminaron con 7.0 y los que no, con 6.3; entre quienes empezaron aprobando, 8.6 contra 8.4.",
+     "p": [
+      [
+       "¿Por qué el promedio total engaña al director?",
+       "Porque a asesorías van sobre todo quienes iban mal",
+       "Porque 80 alumnos son muy pocos para un promedio",
+       "Porque debió usar la mediana en lugar del promedio",
+       "Es selección y paradoja de Simpson: el grupo de asesorías está cargado de alumnos que empezaron reprobando, así que su promedio total sale bajo aunque dentro de cada grupo les vaya mejor. El tamaño y la medida de centro no son el problema; la mezcla sí."
+      ],
+      [
+       "¿Qué muestra la comparación por punto de partida?",
+       "Que en ambos grupos los asistentes terminaron mejor",
+       "Que las asesorías bajan la calificación de los buenos",
+       "Que el primer parcial no tiene relación con el final",
+       "Entre quienes empezaron reprobando, 7.0 contra 6.3; entre quienes empezaron aprobando, 8.6 contra 8.4. La tendencia del total se invierte dentro de cada grupo. Y el primer parcial sí se relaciona con el final: quienes empezaron aprobando terminaron más alto."
+      ],
+      [
+       "¿Qué puede afirmar Karla con estos datos?",
+       "Que hay indicios a favor, pero no prueba de causa",
+       "Que está probado que las asesorías suben la nota",
+       "Que el director tiene razón y conviene cancelarlas",
+       "Comparar por punto de partida mejora mucho el análisis, pero todavía puede haber diferencias de motivación o de apoyo en casa entre quienes eligieron ir. Basta para no cancelar a ciegas; para probar el efecto haría falta un experimento, por ejemplo invitar al azar a una parte de los alumnos."
+      ]
+     ],
+     "completar": [
+      "Una variable ___ es la que mueve a la vez la causa aparente y el efecto, y crea una relación que no es causal.",
+      "confusora"
+     ],
+     "relacionar": [
+      [
+       "Variable confusora",
+       "El calor sube a la vez helados y bloqueador"
+      ],
+      [
+       "Causalidad inversa",
+       "Hay más guardias donde ya había más robos"
+      ],
+      [
+       "Azar",
+       "Dos series parecen ligadas al cruzar cientos de variables"
+      ],
+      [
+       "Paradoja de Simpson",
+       "La tendencia del total se invierte en cada grupo"
+      ],
+      [
+       "Sesgo de selección",
+       "Solo se analiza a quienes eligieron participar"
+      ]
+     ],
+     "refl": "Elige una relación que en tu trabajo se da por causal, por ejemplo «los clientes que reciben visita compran más» o «las áreas con más capacitación tienen menos accidentes». 1) Grafica los datos en dispersión y calcula el coeficiente de correlación. 2) Escribe al menos tres explicaciones alternativas: confusora, causalidad inversa, azar o selección. 3) Separa los datos por un grupo que pueda cambiar la conclusión (tamaño, zona, punto de partida) y compara. 4) Concluye con una frase honesta sobre lo que sí y lo que no puedes afirmar, y cómo lo comprobarías.",
+     "modelo": "Modelo: «Relación: las tiendas que reciben más visitas del supervisor venden más; la correlación es de 0.62 en 40 tiendas. Alternativas: el supervisor visita más las tiendas grandes y cercanas (confusora: tamaño), las tiendas que venden más piden más apoyo (causalidad inversa) y solo tengo un trimestre de datos. Al comparar tiendas de tamaño parecido, la correlación baja a 0.21. Conclusión: no puedo afirmar que las visitas causen ventas; propongo asignar al azar visitas extra a la mitad de las tiendas medianas durante dos meses.» Es buena porque nombra explicaciones alternativas, compara grupos parecidos y termina con una forma de comprobar la causa.",
+     "plantilla": [
+      "Revisión de correlación y causa",
+      "Variable X en B2:B51: [ ] · Variable Y en C2:C51: [ ] · Grupo en D2:D51: [ ] · ¿Recibió X? en E2:E51 (sí/no)\nCorrelación: [=COEF.DE.CORREL(B2:B51,C2:C51)]\nGráfica de dispersión revisada: [sí · forma: recta / curva / con extremos]\nGrupo a revisar en G1 · respuesta sí o no en H1\nPromedio de Y en ese grupo y respuesta: [=PROMEDIO.SI.CONJUNTO(C2:C51,D2:D51,G1,E2:E51,H1)]\nExplicaciones alternativas: confusora [ ] · causalidad inversa [ ] · azar [ ] · selección [ ]\n¿La relación se mantiene dentro de cada grupo?: [ ]\nLo que sí puedo afirmar: [ ] · Lo que no: [ ]\nCómo lo comprobaría: [ ]"
+     ],
+     "clave": [
+      "Una correlación dice que dos cosas se mueven juntas, no por qué: grafica antes de creerle al coeficiente.",
+      "Antes de hablar de causa, descarta confusoras, causalidad inversa, azar y selección.",
+      "Si el total y los grupos cuentan historias distintas, revisa la mezcla: es la paradoja de Simpson."
+     ]
+    },
+    {
+     "t": "Experimentos y pruebas A/B en el negocio",
+     "obj": "Diseñar una prueba A/B con asignación al azar, leer su resultado con su margen y distinguir lo significativo de lo importante.",
+     "texto": [
+      "Cuando la pregunta es «¿esto causa aquello?», la herramienta más confiable es un <b>experimento</b>: aplicas un cambio a un grupo, no lo aplicas a otro parecido y comparas. En el negocio se le llama <b>prueba A/B</b>: la versión A es lo que haces hoy y la B es el cambio. La clave es la asignación <b>aleatoria</b>: si es el azar, y no tú, quien decide qué cliente recibe cada versión, los grupos se parecen en todo lo demás y la diferencia que observes se puede atribuir al cambio. Si eliges a mano, se cuela el sesgo de selección.",
+      "Una buena prueba se diseña antes de empezar. Escribe la hipótesis, la métrica principal (una sola), la diferencia mínima que te interesa detectar, el tamaño de muestra y la duración. Detectar diferencias chicas exige muestras grandes; una calculadora de tamaño de muestra te dice cuántos casos necesitas para tener buena <b>potencia</b>, la probabilidad de detectarla si existe (se suele pedir 80 %). Cubre ciclos completos: una semana entera si las ventas cambian según el día, o un mes si dependen de la quincena. No revises a diario para detener la prueba cuando te guste lo que ves: con suficientes miradas, el azar terminará dándote un «ganador». Y cambia una sola cosa a la vez, o no sabrás cuál funcionó.",
+      "Al terminar aparece la palabra <b>significativo</b>. Una diferencia es estadísticamente significativa cuando sería poco probable ver una diferencia al menos así de grande si en realidad el cambio no hiciera nada; el valor p mide esa probabilidad y se suele usar 5 % como frontera. Pero es un mito que «significativo quiere decir importante»: quiere decir «probablemente no es azar». Con medio millón de visitas por versión, pasar de 3.0 % a 3.1 % de compras puede salir significativo y aun así no pagar lo que cuesta el cambio. Al revés, «no significativo» no es «no funciona»: a veces a la prueba le faltó potencia. Reporta el tamaño de la diferencia con su intervalo y tradúcelo a pesos.",
+      "Si no puedes asignar al azar, por ejemplo porque el cambio es por sucursal, compara contra sucursales parecidas sin el cambio, antes y después; es menos sólido, pero mejor que mirar solo el antes y el después. Y cuida la ética: prueba variaciones de mensajes, horarios o procesos, nunca precios engañosos, información falsa ni nada que pueda dañar a alguien, y respeta el aviso de privacidad cuando uses datos personales de tus clientes."
+     ],
+     "comparar": [
+      "«Así no: Mandamos el mensaje nuevo a los clientes más cumplidos y al tercer día ya ganaba. Lo adoptamos.»",
+      "«Así sí: Asignamos al azar, fijamos un mes completo y la métrica de antemano, y reportamos la diferencia con su intervalo y su valor en pesos.»"
+     ],
+     "caso": "Caso ficticio: Wendy, de 35 años, es administradora de un despacho contable en Celaya con 240 clientes, en su mayoría personas físicas. Cada mes batallan para que los clientes manden sus comprobantes antes del día 5. Wendy asignó al azar a 120 clientes al recordatorio de siempre por correo (A) y a 120 a un mensaje de chat al celular con la lista de lo que falta (B). En el mes, 66 clientes del grupo A (55 %) entregaron a tiempo, contra 84 del grupo B (70 %). Su socio quiere anunciar que «el chat duplica la puntualidad» y le pide que la próxima vez mande la versión nueva solo a los clientes cumplidos «para que se vea mejor».",
+     "p": [
+      [
+       "¿Cómo se describe con honestidad el efecto del mensaje B?",
+       "Subió 15 puntos; por azar, entre unos 3 y 27",
+       "Duplicó la puntualidad, como dice el socio",
+       "Subió exactamente 15 puntos, por ser al azar",
+       "De 55 % a 70 % son 15 puntos, no el doble. El margen de la diferencia es 1.96 por la raíz de 0.55 × 0.45 / 120 + 0.70 × 0.30 / 120, cerca de ±12 puntos, así que el efecto real podría estar entre unos 3 y 27. Asignar al azar evita sesgos, pero no elimina la incertidumbre."
+      ],
+      [
+       "¿Por qué no enviar la versión B solo a los clientes cumplidos?",
+       "Porque no sabría si mejora el mensaje o el cliente",
+       "Porque los cumplidos no necesitan recordatorios",
+       "Porque así la muestra quedaría demasiado chica",
+       "Si B va a los clientes que ya cumplen, cualquier ventaja puede deberse a quién la recibió y no al mensaje: es sesgo de selección. Los clientes cumplidos también olvidan, y el tamaño de muestra no es lo que arruina la prueba."
+      ],
+      [
+       "El resultado es significativo. ¿Qué le falta a Wendy para decidir?",
+       "Comparar la mejora con lo que cuesta cada mensaje",
+       "Nada: significativo quiere decir que el cambio conviene",
+       "Repetir la prueba hasta que la diferencia llegue a 30",
+       "Significativo dice que probablemente no es azar, no que valga la pena. Wendy debe traducir los 15 puntos a horas ahorradas o multas evitadas y compararlos con el tiempo de armar cada lista. Repetir hasta obtener la cifra deseada es buscar el resultado que uno quiere."
+      ]
+     ],
+     "completar": [
+      "La asignación ___ es lo que permite atribuir la diferencia al cambio y no a quién recibió cada versión.",
+      "aleatoria"
+     ],
+     "refl": "Diseña una prueba A/B para algo de tu trabajo: un mensaje, un horario, un formato o un paso de un proceso. 1) Escribe la hipótesis y la métrica principal. 2) Define cómo asignarás al azar, por ejemplo con =ALEATORIO() en cada registro y ordenando. 3) Fija el tamaño de cada grupo y la duración, y explica por qué cubre un ciclo completo. 4) Escribe la diferencia mínima que haría que el cambio valga la pena, en pesos o en tiempo. 5) Anota qué harás si sale significativo, si no sale y si sale al revés, y revisa que la prueba no engañe ni dañe a nadie.",
+     "modelo": "Modelo: «Hipótesis: si el recordatorio de cita llega un día antes y no el mismo día, faltarán menos pacientes en nuestras tres clínicas. Métrica: porcentaje de inasistencias, hoy de 18 %. Me interesa detectar una baja de al menos 5 puntos; con 95 % de confianza y 80 % de potencia, la calculadora de tamaño de muestra pide cerca de 820 citas por grupo, así que la prueba dura seis semanas. Asignación: cada cita recibe un número con =ALEATORIO() y la mitad más baja recibe el recordatorio anticipado. Si no sale significativo, reviso el intervalo antes de descartarlo.» Es buena porque fija todo antes de empezar, justifica la muestra y conecta el resultado con una decisión.",
+     "plantilla": [
+      "Plan y resultado de una prueba A/B",
+      "Hipótesis: si [cambio], entonces [métrica] [sube/baja] porque [razón]\nMétrica principal: [ ] · Diferencia mínima que vale la pena: [ ]\nAsignación al azar: [=ALEATORIO()] en cada registro, ordenar y partir a la mitad\nTamaño por grupo: [ ] · Duración: [ ] · Fecha de cierre fijada antes: [ ]\nÉxitos A (B2): [ ] · Total A (B3): [ ] · Éxitos B (C2): [ ] · Total B (C3): [ ]\nTasa A (B4): [=B2/B3] · Tasa B (C4): [=C2/C3]\nDiferencia (B5): [=C4-B4]\nMargen de la diferencia al 95 % (B6): [=1.96*RAIZ(B4*(1-B4)/B3+C4*(1-C4)/C3)]\nIntervalo de la diferencia: de [=B5-B6] a [=B5+B6] (si no incluye el cero, es significativa al 5 %, aproximadamente)\nValor en pesos de la diferencia: [ ] · Costo del cambio: [ ]\nDecisión: [ ]"
+     ],
+     "clave": [
+      "Solo la asignación al azar permite atribuir una diferencia al cambio y no a quién lo recibió.",
+      "Diseña antes de empezar: métrica, muestra, duración y diferencia mínima; no detengas la prueba cuando te guste el resultado.",
+      "Significativo quiere decir «probablemente no es azar», no «importante»: juzga el tamaño del efecto en pesos."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Con una base real de tu trabajo (al menos 100 registros) o con datos abiertos de INEGI o datos.gob.mx, arma en Excel un análisis que no te deje engañarte. 1) En una pestaña calcula PROMEDIO, MEDIANA, DESVEST.M, PERCENTIL.INC al 0.1 y al 0.9 y los cuartiles con CUARTIL.INC; marca los posibles atípicos con la regla de 1.5 rangos intercuartílicos y explica tres. 2) Toma un porcentaje que te interese, calcula su margen con =0.98/RAIZ(n) y escribe el intervalo. 3) Elige dos variables, haz la gráfica de dispersión, calcula COEF.DE.CORREL y compara los promedios dentro de dos grupos con PROMEDIO.SI.CONJUNTO para ver si la relación se mantiene. 4) Diseña una prueba A/B que pondría a prueba la causa que sospechas, con métrica, tamaño, duración y el cálculo del margen de la diferencia listo para llenar.",
+    "entregable": "Un libro de Excel con cuatro pestañas (variabilidad, margen de error, correlación y plan de prueba) y una nota de media página con lo que el promedio escondía, lo que tu margen no cubre y lo que puedes y no puedes afirmar sobre causa.",
+    "criterios": "Revisa: reportaste la mediana y el percentil 90 además del promedio, investigaste los atípicos en lugar de borrarlos, tu intervalo usa el tamaño de muestra correcto y nombra al menos dos sesgos que no cubre, revisaste la relación dentro de grupos antes de hablar de causa, y tu prueba A/B tiene asignación al azar, una sola métrica principal y fecha de cierre fijada de antemano."
+   },
+   "lab": {
+    "t": "Las renovaciones que nadie entendía",
+    "obj": "Analizar con estadística honesta las renovaciones de una escuela de idiomas en línea: variabilidad, encuestas, correlaciones y una prueba A/B.",
+    "esc": "<b>Tomás,</b> de 36 años, coordina el área de crecimiento de una escuela de idiomas en línea con sede en San Luis Potosí y unos 3,000 alumnos activos. La dirección quiere subir las renovaciones del plan trimestral y le pide «los datos que prueben qué funciona». Tomás tiene el registro de uso de la plataforma, dos encuestas y la historia de renovaciones del último año.",
+    "e": [
+     [
+      "Escena 1: El reporte de dirección dice que los alumnos estudian en promedio 3.2 horas por semana. Tomás calcula la mediana, 1.1 horas, y el percentil 90, 8.5 horas.",
+      "Consigna: explica qué dicen los tres números sobre el alumno típico, por qué el promedio engaña aquí y qué indicador pondrías en el tablero en su lugar."
+     ],
+     [
+      "Escena 2: Una encuesta opcional al terminar cada curso tiene 1,200 respuestas y 85 % de satisfacción. Una encuesta telefónica a 300 alumnos activos elegidos al azar da 68 %.",
+      "Consigna: decide qué número usarías, calcula su margen máximo y su intervalo, y nombra al menos dos sesgos de la encuesta opcional."
+     ],
+     [
+      "Escena 3: Los alumnos que usan la aplicación del celular renuevan 62 % y los que no la usan, 38 %. La dirección quiere obligar a todos a descargarla.",
+      "Consigna: escribe tres explicaciones alternativas a «la aplicación causa la renovación» y qué dato revisarías para poner a prueba cada una."
+     ],
+     [
+      "Escena 4: Tomás asignó al azar a 600 alumnos por vencer: a 300 se les regaló una sesión de conversación y 300 siguieron igual. Renovaron 135 del primer grupo (45 %) y 114 del segundo (38 %).",
+      "Consigna: calcula la diferencia y su margen al 95 %, di si es significativa y redacta qué le recomendarías a la dirección."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué describe mejor al alumno típico de la escena 1?",
+      "Estudia cerca de una hora por semana",
+      "Estudia cerca de tres horas por semana",
+      "Estudia entre tres y ocho horas semanales",
+      "La mediana de 1.1 horas dice que la mitad estudia eso o menos. El promedio de 3.2 lo jala una minoría muy activa: el 10 % que estudia más de 8.5 horas. Un tablero honesto mostraría la mediana y el porcentaje de alumnos que estudia menos de una hora."
+     ],
+     [
+      "¿Cómo reportarías la encuesta telefónica de la escena 2?",
+      "68 %, entre unos 62 % y 74 %",
+      "85 %, por tener cuatro veces más respuestas",
+      "68 %, entre unos 67 % y 69 %",
+      "Con 300 casos al azar, 0.98 entre la raíz de 300 da unos ±5.7 puntos: de 62 % a 74 %. La encuesta opcional solo la contestan quienes terminan el curso y quieren responder, un sesgo que su tamaño no corrige, y ±1 punto exigiría una muestra muchísimo mayor."
+     ],
+     [
+      "¿Qué concluyes de la prueba de la escena 4?",
+      "Hay un indicio favorable, pero no es significativo",
+      "La sesión no funciona y conviene descartarla",
+      "La sesión sube 7 puntos la renovación, sin duda",
+      "La diferencia es de 7 puntos, pero su margen es de unos ±7.9, así que el intervalo va de cerca de −1 a 15 e incluye el cero. No significativo no quiere decir que no funcione: con esta muestra no se distingue del azar. Lo sensato es ampliar la prueba y estimar si 7 puntos pagarían el costo de las sesiones."
+     ]
+    ],
+    "pl": [
+     "Tablero estadístico de renovaciones",
+     "Horas de estudio: promedio [ ] · mediana [ ] · percentil 90 [ ]\nIndicador propuesto para el tablero: [ ]\nEncuesta elegida: [ ] · n en B1: [ ] · margen: [=0.98/RAIZ(B1)] · intervalo: [ ]\nSesgos de la encuesta descartada: [ ]\nRelación observada: [ ] · alternativas: confusora [ ] · inversa [ ] · selección [ ]\nPrueba A/B: tasa A [ ] · tasa B [ ] · diferencia [ ] · margen [ ] · intervalo [ ]\n¿Significativa al 5 %?: [ ] · ¿Importante en pesos?: [ ]\nRecomendación a la dirección: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "En una tlapalería de Durango, el ticket promedio del mes es de 480 pesos y la mediana, de 210. ¿Qué sugiere esa diferencia?",
+     "Que unos pocos tickets muy altos jalan el promedio",
+     "Que la mayoría de los clientes gasta cerca de 480 pesos",
+     "Que la mitad de los clientes gasta más de 480 pesos",
+     "Que hay un error, porque media y mediana deben coincidir"
+    ],
+    [
+     "Dos sucursales de una cadena de comida en Celaya entregan a domicilio en 30 minutos en promedio. La desviación estándar es de 4 minutos en la norte y de 18 en la sur. ¿Dónde esperarías más quejas por demora?",
+     "En la sur, porque sus tiempos son menos predecibles",
+     "En ninguna, porque las dos tienen el mismo tiempo promedio",
+     "En la norte, si recibe más pedidos que la sur",
+     "No se puede saber sin la mediana de cada sucursal"
+    ],
+    [
+     "Una encuesta aleatoria a 1,000 habitantes de Veracruz encuentra que 45 % usa transporte público a diario. ¿Cómo lo reportarías?",
+     "Entre 42 % y 48 %, aproximadamente",
+     "Entre 44 % y 46 %, aproximadamente",
+     "Entre 35 % y 55 %, aproximadamente",
+     "45 % exacto, por tratarse de 1,000 casos"
+    ],
+    [
+     "Una clínica de Mexicali obtuvo un margen de ±5 puntos con 400 encuestas aleatorias y ahora quiere ±2.5. ¿Cuántas encuestas necesita, más o menos?",
+     "Unas 1,600",
+     "Unas 800",
+     "Unas 3,200",
+     "Unas 500"
+    ],
+    [
+     "Un despacho contable de Querétaro encuesta solo a sus clientes actuales y concluye que 90 % está satisfecho. ¿Cuál es la falla principal?",
+     "Deja fuera a quienes se fueron, quizá los más molestos",
+     "No usó la mediana para resumir la satisfacción",
+     "La muestra debió ser de al menos 1,000 clientes",
+     "Debió preguntar con una escala del 1 al 10"
+    ],
+    [
+     "En una distribuidora de Los Mochis, la correlación entre horas de capacitación y ventas por vendedor es de 0.8. La gerente quiere exigir más capacitación a todos. ¿Qué revisarías primero?",
+     "Si los mejores vendedores eligen capacitarse más",
+     "Si la correlación llega a 0.9 al sumar más datos",
+     "Si el promedio de ventas del equipo subió este año",
+     "Si la capacitación fue en línea o presencial"
+    ],
+    [
+     "En Mérida, el hospital A tiene más mortalidad total que el B, pero menos tanto en pacientes leves como en graves. ¿Qué lo explica mejor?",
+     "Que A atiende más casos graves en proporción",
+     "Que los datos de alguno de los dos están mal",
+     "Que B tiene mejores resultados en los dos grupos",
+     "Que A atiende a más pacientes en total que B"
+    ],
+    [
+     "Una agencia de marketing digital en San Luis Potosí lanzó una prueba A/B de dos páginas. Al segundo día la B va adelante y un colega quiere detenerla. ¿Qué haces?",
+     "Seguir hasta la muestra y la fecha fijadas antes",
+     "Detenerla, porque ya hay un ganador claro",
+     "Seguir solo con quienes ya compraron alguna vez",
+     "Cambiar a la métrica que hoy favorece más a B"
+    ],
+    [
+     "Una tienda en línea de Colima probó un diseño nuevo con medio millón de visitas por versión: las compras pasaron de 3.0 % a 3.1 %, con diferencia significativa. El diseño es caro de mantener. ¿Qué sigue?",
+     "Comparar lo que deja esa décima contra su costo",
+     "Adoptarlo, porque lo significativo siempre conviene",
+     "Descartarlo: tantas visitas invalidan la prueba",
+     "Repetirla con menos visitas para confirmarla"
+    ],
+    [
+     "Una escuela de Tehuacán probó al azar un mensaje para reducir faltas, con 150 alumnos por grupo: mejoró 2 puntos, pero no fue significativo. ¿Qué concluyes?",
+     "Que con esa muestra no se distingue del azar",
+     "Que el mensaje no funciona y hay que descartarlo",
+     "Que funciona, porque 2 puntos ya son una mejora",
+     "Que la prueba se hizo mal, porque no salió significativa"
+    ]
+   ]
+  },
+  {
+   "t": "Pronósticos y escenarios",
+   "r": "Leer una serie de tiempo, pronosticar en Excel midiendo el error, usar la regresión con cuidado y comparar opciones con escenarios, sensibilidad y valor esperado.",
+   "lecciones": [
+    {
+     "t": "Series de tiempo: tendencia, estacionalidad y ruido",
+     "obj": "Leer una serie de tiempo separando tendencia, estacionalidad, ruido y eventos, y compararla de forma justa antes de pronosticar.",
+     "texto": [
+      "Una <b>serie de tiempo</b> es un mismo dato medido en orden: ventas por mes, pacientes por semana, toneladas por día. Antes de pronosticarla, apréndete a leerla, porque casi siempre mezcla tres cosas. La <b>tendencia</b> es la dirección de fondo a lo largo de varios años: crecer, caer o mantenerse. La <b>estacionalidad</b> es el patrón que se repite en las mismas fechas cada año, como el aguinaldo en diciembre, el regreso a clases o los meses de calor. El <b>ruido</b> es la variación que queda y no tiene patrón. A eso se suman los eventos únicos, como una huelga o la compra adelantada de un cliente, que conviene etiquetar.",
+      "Empieza con una gráfica de línea y, de preferencia, dos o tres años de historia: con un solo año no puedes distinguir la estacionalidad de la tendencia. El error más común es comparar cada mes contra el anterior. Si una juguetería vende el doble en diciembre que en noviembre, eso no es noticia: pasa cada año. Para saber si vas mejor o peor, compara contra el mismo mes del año anterior, o calcula un <b>promedio móvil de 12 meses</b>, que en cada punto promedia el último año completo y deja ver la tendencia sin el sube y baja estacional.",
+      "Cuida el calendario. Un mes con más días hábiles produce más, y Semana Santa cae en marzo o en abril según el año, así que comparar esos dos meses puede engañar. El Buen Fin puede adelantar a noviembre compras que antes se hacían en diciembre. Cuando importe, usa ventas por día hábil y anota los cambios de calendario junto a la serie. Para medir la estacionalidad de forma sencilla, divide el promedio de cada mes entre el promedio general: un índice de 1.30 en diciembre quiere decir que ese mes suele estar 30 % arriba del promedio mensual.",
+      "Y no le busques explicación al ruido. Si un mes sale 3 % abajo, la tentación es buscar un culpable, cambiar precios o regañar al equipo. Antes, compara ese movimiento con la variación normal de la serie: si cambios así ocurren seguido y sin causa, lo más probable es que no signifiquen nada. Reaccionar a cada movimiento aleatorio desgasta al equipo y agrega más variación. Separa siempre lo que se repite, lo que crece y lo que pasó una sola vez: esa lectura es la base de cualquier pronóstico."
+     ],
+     "comparar": [
+      "«Así no: Enero cayó 18 % contra diciembre. Hay que recortar un turno.»",
+      "«Así sí: Enero siempre cae contra diciembre; contra el enero pasado subimos 4 %. Revisemos la tendencia de 12 meses antes de decidir.»"
+     ],
+     "caso": "Caso ficticio: Emilio, de 44 años, es jefe de planeación de una planta de envases plásticos para alimentos en Mexicali. En la junta de febrero, la gerente muestra que los pedidos de enero cayeron 18 % contra diciembre y propone recortar un turno. Emilio revisa tres años de pedidos: enero siempre cae entre 15 % y 20 % contra diciembre, y este enero está 4 % arriba del enero anterior. También ve que el marzo pasado tuvo un pico enorme porque un cliente compró por adelantado antes de un aumento de precio.",
+     "p": [
+      [
+       "¿Contra qué debe comparar Emilio los pedidos de enero?",
+       "Contra el enero anterior y la tendencia de 12 meses",
+       "Contra diciembre, porque es el mes más reciente",
+       "Contra la meta anual dividida entre los doce meses del año",
+       "La caída de enero contra diciembre es estacional: pasa cada año. Comparar contra el mismo mes del año anterior y mirar el promedio móvil de 12 meses muestra la tendencia real. Dividir la meta anual entre doce ignora que los meses no pesan igual."
+      ],
+      [
+       "¿Qué le dice la serie sobre la propuesta de recortar el turno?",
+       "Que la caída es estacional y no basta para recortar",
+       "Que la caída de 18 % confirma que la demanda baja",
+       "Que conviene esperar a que la caída llegue a 20 %",
+       "Una caída que se repite cada enero y un crecimiento de 4 % contra el año anterior no indican menor demanda de fondo. Esperar a un umbral arbitrario tampoco sirve: lo que importa es comparar con justicia."
+      ],
+      [
+       "¿Qué debería hacer con el pico del marzo pasado?",
+       "Etiquetarlo como evento y no tomarlo como patrón",
+       "Proyectar que cada marzo habrá un pico parecido",
+       "Borrar todo marzo de la serie para no confundir",
+       "El pico tuvo una causa única: una compra adelantada. Si se trata como estacionalidad, el pronóstico inventará otro pico el próximo marzo. Borrar el mes deja un hueco; es mejor etiquetarlo, anotar la causa y, si se usa para pronosticar, ajustarlo a un valor típico documentado."
+      ]
+     ],
+     "completar": [
+      "El patrón que se repite cada año en las mismas fechas se llama ___.",
+      "estacionalidad"
+     ],
+     "relacionar": [
+      [
+       "Tendencia",
+       "Dirección de fondo a lo largo de varios años"
+      ],
+      [
+       "Estacionalidad",
+       "Patrón que se repite cada año en las mismas fechas"
+      ],
+      [
+       "Ruido",
+       "Variación sin patrón que no conviene explicar"
+      ],
+      [
+       "Evento único",
+       "Pico con una causa identificable que no se repite"
+      ],
+      [
+       "Promedio móvil de 12 meses",
+       "Suaviza la serie para ver hacia dónde va"
+      ]
+     ],
+     "refl": "Toma una serie mensual de tu trabajo con al menos dos años (ventas, pacientes, pedidos, horas, quejas) o una de datos abiertos del INEGI. 1) Grafícala en línea. 2) Describe con tus palabras su tendencia, su estacionalidad y su ruido. 3) Calcula la variación contra el mismo mes del año anterior de los últimos seis meses y compárala con la variación contra el mes anterior. 4) Etiqueta al menos un evento único y explica qué lo causó. 5) Escribe qué decisión se habría tomado mal leyendo solo cada mes contra el anterior.",
+     "modelo": "Modelo: «Serie: consultas mensuales de una clínica dental, 30 meses. Tendencia: crece poco a poco desde que abrimos el segundo consultorio. Estacionalidad: julio y diciembre bajan por vacaciones y enero sube con los tratamientos que se pospusieron. Ruido: meses de ±5 % sin causa clara. Evento: septiembre del año pasado cayó 25 % por una obra que cerró el acceso. En los últimos seis meses, contra el mes anterior parecía que bajábamos dos veces; contra el mismo mes del año anterior, subimos todos los meses entre 6 % y 11 %. Habríamos recortado publicidad sin razón.» Es buena porque separa los componentes y muestra la decisión equivocada que evita.",
+     "plantilla": [
+      "Lectura de una serie mensual",
+      "Columna A: mes (fecha) · B: valor · F: número de mes (1 a 12) · filas 2 a 37\nVariación contra el mes anterior (C3): [=(B3-B2)/B2]\nVariación contra el mismo mes del año anterior (D14): [=(B14-B2)/B2]\nPromedio móvil de 12 meses (E13): [=PROMEDIO(B2:B13)] y arrastra hacia abajo\nÍndice estacional aproximado de enero: [=PROMEDIO.SI(F2:F37,1,B2:B37)/PROMEDIO(B2:B37)] (cambia el 1 por cada mes)\nTendencia: [crece / baja / estable] · Meses altos: [ ] · Meses bajos: [ ]\nEventos únicos: [fecha · qué pasó · cómo lo trataré]\nCambios de calendario: [días hábiles · Semana Santa · Buen Fin]\nConclusión para decidir: [ ]"
+     ],
+     "clave": [
+      "Lee antes de pronosticar: tendencia, estacionalidad, ruido y eventos son cosas distintas.",
+      "Compara contra el mismo mes del año anterior o con el promedio móvil de 12 meses, no contra el mes anterior.",
+      "No le busques causa a cada movimiento: el ruido no se explica, se mide."
+     ]
+    },
+    {
+     "t": "Pronosticar en Excel y medir el error",
+     "obj": "Pronosticar una serie en Excel, medir su error con datos que el modelo no vio y compararlo contra un pronóstico ingenuo antes de usarlo.",
+     "texto": [
+      "Un pronóstico no es una promesa: es la mejor estimación posible con un rango de error conocido. Por eso es un mito que «un pronóstico debe acertar el número exacto». Ninguno lo hace; lo que distingue a uno bueno es que se equivoca poco, no se equivoca siempre hacia el mismo lado y le gana a la alternativa más simple. En Excel, PRONOSTICO.LINEAL proyecta una línea recta y sirve cuando solo hay tendencia. PRONOSTICO.ETS usa suavizamiento exponencial, que da más peso a los datos recientes y puede capturar tendencia y estacionalidad; la <b>Hoja de previsión</b> (pestaña Datos) lo hace con gráfica e intervalo de confianza. PRONOSTICO.ETS y la Hoja de previsión piden fechas a intervalos regulares.",
+      "Para saber si sirve, haz una <b>prueba con datos retenidos</b>: aparta los últimos meses, pronostícalos con la historia anterior y compara con lo que pasó. Medirlo con los mismos datos del ajuste siempre lo hace ver mejor. Tres medidas bastan. El <b>MAE</b> (error absoluto medio) promedia el tamaño de los errores sin signo, en las mismas unidades que el dato. El <b>MAPE</b> (error porcentual absoluto medio) lo expresa en porcentaje del valor real, pero falla con valores cercanos a cero: un error de 3 unidades cuando se vendió 1 es 300 %. El <b>sesgo</b> promedia los errores con signo y dice si tiendes a pasarte o a quedarte corto.",
+      "Ejemplo: lo real fue 100, 120 y 80; el pronóstico dijo 110, 110 y 100. Los errores sin signo son 10, 10 y 20, así que el MAE es de 13.3 unidades. En porcentaje del real son 10 %, 8.3 % y 25 %, y el MAPE es de 14.4 %. Con signo (pronóstico menos real) los errores son +10, −10 y +20, y el sesgo es de +6.7: este pronóstico tiende a pasarse, y eso se traduce en inventario de más.",
+      "La vara para juzgar cualquier pronóstico es el pronóstico <b>ingenuo</b>: repetir el último dato o, si hay estacionalidad, el del mismo mes del año pasado. Si tu modelo o tu proveedor no le gana al ingenuo con datos retenidos, usa el ingenuo: es gratis y fácil de explicar. Divide el MAE del modelo entre el del ingenuo: si sale menor que 1, el modelo aporta. Y comunica rangos: «entre 1,100 y 1,380 cajas» ayuda a decidir el inventario de seguridad; un solo número da falsa certeza."
+     ],
+     "comparar": [
+      "«Así no: El sistema dice que en mayo venderemos 1,238 cajas. Compra exactamente eso.»",
+      "«Así sí: Esperamos entre 1,100 y 1,380 cajas. En los seis meses de prueba el modelo se equivocó 6 % en promedio y le ganó al pronóstico ingenuo.»"
+     ],
+     "caso": "Caso ficticio: Susana, de 27 años, es analista de compras de una cadena de 14 farmacias en Veracruz. El proveedor de un sistema de pronósticos asegura que su modelo tiene «solo 6 % de error» en suero oral, medido con los mismos meses que usó para ajustarlo. Susana aparta los últimos seis meses y compara: el sistema tuvo un MAE de 95 cajas por mes y el pronóstico ingenuo del mismo mes del año pasado, de 70. Además, su gerente le pide «el número exacto» de cajas para mayo y quiere usar el MAPE para calificar a cada sucursal, aunque algunas venden de 0 a 3 cajas al mes de ciertas presentaciones.",
+     "p": [
+      [
+       "¿Qué concluye Susana de la prueba con datos retenidos?",
+       "Que el sistema no le gana al ingenuo en este producto",
+       "Que el sistema es mejor, porque su error es de 6 %",
+       "Que los dos sirven igual, porque ambos tienen algún error",
+       "95 entre 70 da 1.36: el sistema se equivoca 36 % más que el ingenuo en meses que no vio. El 6 % del proveedor se midió con los mismos datos del ajuste, lo que siempre luce mejor. Y que ambos tengan error no los hace iguales: uno se equivoca bastante menos."
+      ],
+      [
+       "¿Qué debería entregarle Susana a su gerente para mayo?",
+       "Un pronóstico central con su rango de error esperado",
+       "El número exacto que dé el modelo con menor MAPE",
+       "El promedio de ventas de los últimos doce meses",
+       "Ningún método acierta el número exacto; un rango basado en el error medido permite decidir el inventario de seguridad. El promedio de doce meses ignora que el suero oral cambia según la temporada."
+      ],
+      [
+       "¿Por qué no usar el MAPE en las sucursales que venden de 0 a 3 cajas?",
+       "Porque cerca de cero el porcentaje se dispara",
+       "Porque el MAPE solo funciona con más de un año de datos",
+       "Porque el MAPE no toma en cuenta los errores grandes",
+       "Si una sucursal vendió 1 caja y el pronóstico fue 3, el error es de 200 %, y si vendió 0 ni siquiera se puede calcular. Ahí conviene el MAE, en cajas. El MAPE no depende de los años de historia y sí refleja los errores grandes."
+      ]
+     ],
+     "completar": [
+      "Un pronóstico vale la pena solo si le gana al pronóstico ___, el que repite el último dato o el del mismo mes del año pasado.",
+      "ingenuo"
+     ],
+     "relacionar": [
+      [
+       "MAE",
+       "Error promedio en las mismas unidades del dato"
+      ],
+      [
+       "MAPE",
+       "Error promedio como porcentaje del valor real"
+      ],
+      [
+       "Sesgo",
+       "Si el pronóstico tiende a pasarse o a quedarse corto"
+      ],
+      [
+       "Pronóstico ingenuo",
+       "Vara mínima que cualquier modelo debe superar"
+      ],
+      [
+       "Prueba con datos retenidos",
+       "Medir el error en meses que el modelo no vio"
+      ]
+     ],
+     "refl": "Elige algo que se pronostique, o que se debería pronosticar, en tu trabajo: ventas, demanda, citas, llamadas o cobranza. 1) Aparta los últimos seis meses de la serie. 2) Pronostícalos con PRONOSTICO.ETS o con la Hoja de previsión usando solo los meses anteriores. 3) Arma el pronóstico ingenuo del mismo periodo. 4) Calcula el MAE, el MAPE y el sesgo de los dos. 5) Decide cuál usarías y redacta cómo comunicarías el siguiente mes con un rango y no con un número exacto.",
+     "modelo": "Modelo: «Llamadas diarias al centro de atención, con seis meses retenidos. Hoja de previsión: MAE de 38 llamadas, MAPE de 6.1 % y sesgo de −12, o sea, se queda corta. Ingenuo (mismo día de la semana anterior): MAE de 55 y MAPE de 8.9 %. El modelo le gana al ingenuo (38 entre 55 da 0.69), pero subestima, así que ajusto la plantilla de personal con un margen. Para la próxima semana comunico: entre 580 y 660 llamadas diarias, con más carga el lunes.» Es buena porque mide con datos que el modelo no vio, compara contra el ingenuo, revisa el sesgo y entrega un rango útil para decidir.",
+     "plantilla": [
+      "Prueba de pronóstico con datos retenidos",
+      "Fechas en A2:A37 · historia en B2:B31 · últimos seis meses reales en B32:B37\nPronóstico ETS (C32): [=PRONOSTICO.ETS(A32,$B$2:$B$31,$A$2:$A$31,12)] y arrastra hasta C37\nIngenuo del mismo mes del año pasado (D32): [=B20] y arrastra hasta D37\nError absoluto ETS (E32): [=ABS(B32-C32)] · ingenuo (F32): [=ABS(B32-D32)]\nError porcentual ETS (G32): [=ABS(B32-C32)/B32]\nMAE ETS (E39): [=PROMEDIO(E32:E37)] · MAE ingenuo (F39): [=PROMEDIO(F32:F37)]\nMAPE ETS: [=PROMEDIO(G32:G37)]\nSesgo ETS (+ se pasa, − se queda corto): [=PROMEDIO(C32:C37)-PROMEDIO(B32:B37)]\nRazón contra el ingenuo: [=E39/F39] (menor que 1: el modelo aporta)\nRango para comunicar: de [ ] a [ ]\nDecisión: [modelo / ingenuo / revisar]"
+     ],
+     "clave": [
+      "Un buen pronóstico no acierta el número: se equivoca poco, sin sesgo y con un rango conocido.",
+      "Mide el error con datos que el modelo no vio: MAE, sesgo y MAPE solo si no hay valores cercanos a cero.",
+      "Si no le gana al pronóstico ingenuo, no vale la pena."
+     ]
+    },
+    {
+     "t": "Regresión lineal simple: útil y peligrosa",
+     "obj": "Ajustar e interpretar una regresión lineal simple en Excel, usarla dentro de su rango y reconocer cuándo un R² alto engaña.",
+     "texto": [
+      "La <b>regresión lineal simple</b> dibuja la recta que mejor resume cómo cambia una variable (Y) cuando cambia otra (X). La recta tiene dos números. La <b>pendiente</b> (PENDIENTE en Excel) dice cuánto cambia Y, en promedio, por cada unidad de X; la <b>intersección</b> (INTERSECCION.EJE) es el valor de Y cuando X vale cero, que muchas veces no tiene sentido práctico. Si en una agencia la pendiente entre inversión en anuncios (en miles de pesos) y prospectos es de 2.4, cada mil pesos más se asocian, en promedio, con 2.4 prospectos más, dentro del rango observado. Con PRONOSTICO.LINEAL obtienes la predicción para un valor de X.",
+      "La regresión es útil para estimar y planear, y peligrosa por cuatro razones. La primera es <b>extrapolar</b>: usar la recta fuera del rango de los datos. Si observaste inversiones de 20,000 a 80,000 pesos, no sabes qué pasa con 300,000; es común que los rendimientos se aplanen. La segunda: describe una asociación, no una causa. La tercera: un solo dato extremo puede jalar la recta entera. La cuarta: la relación puede ser curva y la recta la esconde, como mostró el cuarteto de Anscombe.",
+      "El <b>R²</b> (COEFICIENTE.R2) va de 0 a 1: 0.80 quiere decir que la recta explica, en sentido estadístico y no causal, 80 % de la variación de Y. Es un mito que «R² alto = buen modelo». Dos series que simplemente crecen con el tiempo, como tus ventas y el número de teléfonos celulares en el país, pueden dar un R² altísimo sin tener nada que ver. Con pocos datos, el R² también sale alto con facilidad. Y un R² alto no dice si la recta sirve fuera del rango, si hay una confusora detrás ni si el error de predicción es tolerable para tu decisión. En cambio, un R² modesto puede bastar si solo necesitas una dirección.",
+      "Revisa siempre los <b>residuos</b>, la diferencia entre cada dato real y lo que predice la recta. Si los graficas y ves un patrón (una curva, un abanico que se abre, grupos separados), la recta no está capturando algo importante. Mide el error con datos que el modelo no vio y reporta las predicciones con su rango. Y si la pregunta es «¿qué pasa si muevo X?», recuerda que los datos históricos dicen qué ha ocurrido junto, no qué pasará si tú lo cambias: eso lo contesta un experimento."
+     ],
+     "comparar": [
+      "«Así no: El R² es de 0.91, así que si duplicamos el fertilizante duplicamos la cosecha.»",
+      "«Así sí: Dentro de 120 a 240 kilos, cada kilo extra se asocia con unos 12 kilos más de grano; fuera de ese rango, la recta no nos dice nada.»"
+     ],
+     "caso": "Caso ficticio: Rodrigo, de 50 años, es agrónomo asesor de una cooperativa de productores de maíz en Los Mochis. Con datos de 8 parcelas que usaron entre 120 y 240 kilos de nitrógeno por hectárea, ajustó una regresión: la pendiente es de 0.012 toneladas de grano por kilo de nitrógeno y el R² es de 0.91. Un socio hace la cuenta con la recta y propone aplicar 480 kilos por hectárea en todas las parcelas para cosechar casi tres toneladas más que con 240. Rodrigo sabe que las parcelas con más fertilizante también eran las de mejor suelo y riego más constante.",
+     "p": [
+      [
+       "¿Cuál es el problema principal de la propuesta del socio?",
+       "Extrapola: 480 kilos está fuera del rango observado",
+       "La pendiente es demasiado chica para que valga la pena",
+       "El R² es bajo, así que la recta no sirve para planear",
+       "La recta solo describe lo que pasó entre 120 y 240 kilos; usarla en 480 es extrapolar, y en los cultivos la respuesta al fertilizante suele aplanarse. Un R² de 0.91 no es bajo, y la pendiente no es el problema: lo es usarla donde no hay datos."
+      ],
+      [
+       "¿Qué le dice a Rodrigo el R² de 0.91?",
+       "Que la recta sigue bien estos 8 datos, sin probar causa",
+       "Que 91 % del rendimiento se debe al nitrógeno aplicado",
+       "Que con 480 kilos la recta acertará en 91 % de los casos",
+       "El R² mide qué tan cerca quedan estos datos de la recta. No reparte causas: el suelo y el riego se mueven junto con el fertilizante. Tampoco es una probabilidad de acierto, y menos fuera del rango observado. Con solo 8 parcelas, un R² alto se consigue con facilidad."
+      ],
+      [
+       "¿Qué debería proponer Rodrigo?",
+       "Un ensayo con dosis al azar en parcelas parecidas",
+       "Aplicar 480 kilos solo en las parcelas de mejor suelo",
+       "Sumar más años de datos al mismo modelo y aplicar la dosis",
+       "Asignar dosis al azar, incluidas algunas mayores que 240, separa el efecto del fertilizante del suelo y el riego, y muestra dónde se aplana la respuesta. Probar solo en las mejores parcelas repite la confusión, y más datos históricos con el mismo rango no resuelven la extrapolación. Además, el exceso de nitrógeno cuesta y puede dañar suelo y agua."
+      ]
+     ],
+     "completar": [
+      "Usar la recta fuera del rango de datos que observaste se llama ___ y es el error más común con una regresión.",
+      "extrapolar"
+     ],
+     "relacionar": [
+      [
+       "Pendiente",
+       "Cambio promedio en Y por cada unidad de X"
+      ],
+      [
+       "Intersección",
+       "Valor de Y cuando X vale cero"
+      ],
+      [
+       "R²",
+       "Qué parte de la variación de Y acompaña la recta"
+      ],
+      [
+       "Extrapolar",
+       "Usar la recta fuera del rango observado"
+      ],
+      [
+       "Residuo",
+       "Diferencia entre el dato real y la recta"
+      ]
+     ],
+     "refl": "Elige dos variables de tu trabajo donde creas que una ayuda a predecir la otra (visitas y ventas, horas extra y piezas, temperatura y consumo, alumnos y materiales). 1) Reúne al menos 15 pares de datos y grafícalos en dispersión. 2) Calcula pendiente, intersección y R² y escribe qué significa la pendiente en palabras de tu negocio. 3) Anota el rango observado de X. 4) Calcula y grafica los residuos y describe si ves algún patrón. 5) Escribe dos usos correctos de la recta y uno que sería extrapolar o confundir asociación con causa.",
+     "modelo": "Modelo: «X: metros cuadrados rentados por cliente; Y: llamadas a soporte al mes, en 22 clientes de un centro de oficinas ejecutivas. Pendiente de 0.04: cada 100 m² más se asocian con 4 llamadas más al mes. R² de 0.64. Rango observado: de 20 a 300 m². Los residuos se abren en los clientes grandes, así que la recta es menos precisa con ellos. Uso correcto: estimar la carga de soporte de un cliente nuevo de 150 m² y presupuestar personal con un rango. Uso incorrecto: prometerle a un corporativo de 1,200 m² cuántas llamadas tendrá.» Es buena porque traduce la pendiente a decisiones, respeta el rango y revisa los residuos.",
+     "plantilla": [
+      "Regresión simple con sus advertencias",
+      "X en B2:B16: [ ] · Y en C2:C16: [ ]\nPendiente (F1): [=PENDIENTE(C2:C16,B2:B16)]\nIntersección (F2): [=INTERSECCION.EJE(C2:C16,B2:B16)]\nR² (F3): [=COEFICIENTE.R2(C2:C16,B2:B16)]\nRango observado de X: de [=MIN(B2:B16)] a [=MAX(B2:B16)]\nPredicción para la X de H1: [=PRONOSTICO.LINEAL(H1,C2:C16,B2:B16)] · ¿H1 está dentro del rango?: [sí / no]\nResiduo (D2): [=C2-PRONOSTICO.LINEAL(B2,$C$2:$C$16,$B$2:$B$16)] y arrastra\nPatrón en la gráfica de residuos: [ninguno / curva / abanico / grupos]\nLa pendiente en palabras: cada [unidad de X] más se asocia con [ ] de Y\nPosibles confusoras: [ ]\nUso permitido: [ ] · Uso prohibido: [ ]"
+     ],
+     "clave": [
+      "La pendiente dice cuánto cambia Y en promedio por unidad de X, y solo dentro del rango observado.",
+      "Un R² alto no prueba causa ni garantiza buenas predicciones: grafica, revisa residuos y mide el error.",
+      "Extrapolar es el error más común con una regresión."
+     ]
+    },
+    {
+     "t": "Escenarios, sensibilidad y valor esperado",
+     "obj": "Comparar opciones bajo incertidumbre con escenarios coherentes, una Tabla de datos de sensibilidad y el valor esperado, sin olvidar el peor caso.",
+     "texto": [
+      "Un pronóstico te dice qué esperar; una decisión exige comparar opciones bajo esa incertidumbre. Los <b>escenarios</b> son historias coherentes del futuro, no simples porcentajes arriba y abajo: un escenario pesimista no es «ventas −10 %», sino «llega un competidor, bajan las ventas y tenemos que dar descuentos», con supuestos congruentes entre sí. Tres suelen bastar: pesimista, base y optimista. Anota los supuestos de cada uno y de dónde salen: el rango de tu pronóstico, cotizaciones reales.",
+      "El <b>análisis de sensibilidad</b> responde otra pregunta: ¿cuál de mis supuestos mueve más el resultado? Cambias un supuesto a la vez, dejando los demás fijos, y anotas cuánto cambia la utilidad. En Excel, la herramienta es la <b>Tabla de datos</b> (Datos, Análisis de hipótesis; en algunas versiones, Análisis Y si): pones una fórmula de resultado y una columna de valores posibles para un supuesto, y Excel recalcula todo de un golpe. Si al mover el precio del insumo la utilidad cambia mucho más que al mover el volumen, ya sabes dónde investigar, negociar o protegerte. Ordenados de mayor a menor efecto, forman una gráfica de tornado.",
+      "El <b>valor esperado</b> combina escenarios y probabilidades: multiplicas cada resultado por su probabilidad y sumas. Si un proyecto gana 100,000 pesos con probabilidad de 60 % y pierde 50,000 con 40 %, su valor esperado es 0.6 × 100,000 − 0.4 × 50,000 = 40,000 pesos. No es lo que va a pasar, porque pasará una cosa o la otra, sino lo que ganarías en promedio si pudieras repetir la decisión muchas veces. Las probabilidades casi siempre son juicios: escríbelas, di en qué se basan y revisa cuánto cambia la decisión si las mueves. En Excel, SUMAPRODUCTO de probabilidades por resultados lo calcula; comprueba con SUMA que las probabilidades den 100 %.",
+      "El valor esperado no es todo. Si el peor escenario te quiebra, una opción con mayor valor esperado puede ser mala para ti, porque no vas a poder repetir la decisión muchas veces. Revisa siempre el peor caso y pregúntate si lo podrías soportar. Considera también el valor de la información: a veces la mejor jugada es una prueba piloto barata que reduzca la incertidumbre del supuesto que más pesa, antes de comprometer el dinero. Una buena decisión puede salir mal por mala suerte; se juzga por cómo usaste la información que tenías, y eso solo se revisa si documentaste supuestos y probabilidades antes del resultado."
+     ],
+     "comparar": [
+      "«Así no: La sucursal puede ganar 900,000 pesos. Vamos por el número más alto.»",
+      "«Así sí: La sucursal vale 210,000 en promedio, pero tiene 30 % de probabilidad de perder 400,000. Antes de invertir, probemos la demanda con un piloto.»"
+     ],
+     "caso": "Caso ficticio: Magdalena, de 39 años, es dueña de un restaurante de cocina regional en Durango y tiene 500,000 pesos de ahorro del negocio. Duda entre abrir una segunda sucursal o techar la terraza para dar más servicio. Con su contadora estimó el resultado a dos años. Sucursal: pierde 400,000 pesos (30 %), gana 300,000 (50 %) o gana 900,000 (20 %). Terraza: pierde 50,000 (30 %), gana 150,000 (50 %) o gana 250,000 (20 %). La Tabla de datos le muestra que la sucursal depende sobre todo de las ventas diarias, y un amigo le dice que «siempre hay que ir por el número más alto».",
+     "p": [
+      [
+       "¿Cuál es el valor esperado de la sucursal?",
+       "210,000 pesos",
+       "266,667 pesos",
+       "300,000 pesos",
+       "0.3 × (−400,000) + 0.5 × 300,000 + 0.2 × 900,000 = −120,000 + 150,000 + 180,000 = 210,000. La cifra de 266,667 es el promedio simple de los tres resultados, que ignora sus probabilidades, y 300,000 es solo el escenario base."
+      ],
+      [
+       "¿Debe elegir la sucursal solo porque su valor esperado es mayor?",
+       "No, sin revisar si podría soportar perder 400,000",
+       "Sí, porque el valor esperado ya incluye el riesgo",
+       "No, porque la terraza tiene menos probabilidad de perder",
+       "La terraza vale 110,000 en promedio y la sucursal 210,000, pero perder 400,000 sería 80 % de sus ahorros. El valor esperado promedia, no dice si sobrevives al peor caso. Y las dos opciones tienen la misma probabilidad de perder, 30 %; lo que cambia es cuánto."
+      ],
+      [
+       "¿Qué haría más sólida la decisión de Magdalena?",
+       "Probar la demanda con un piloto antes de invertir",
+       "Subir la probabilidad del escenario optimista",
+       "Elegir la terraza, porque así nunca hay pérdidas",
+       "La sensibilidad dice que todo depende de las ventas diarias; un piloto barato, como un punto de venta temporal en la zona, reduce esa incertidumbre antes de arriesgar el ahorro. Mover probabilidades para que salga lo que uno quiere es autoengaño, y la terraza también puede perder 50,000."
+      ]
+     ],
+     "completar": [
+      "El análisis de ___ cambia un supuesto a la vez para ver cuál mueve más el resultado.",
+      "sensibilidad"
+     ],
+     "refl": "Elige una decisión real con dos o tres opciones (invertir, contratar, comprar equipo, abrir un servicio). 1) Construye en una hoja de cálculo el modelo de resultado de cada opción con sus supuestos en celdas separadas. 2) Escribe tres escenarios coherentes y asigna probabilidades, explicando de dónde salen. 3) Calcula el valor esperado con SUMAPRODUCTO y el peor caso con MIN. 4) Haz una Tabla de datos para el supuesto que creas más incierto y mide cuánto mueve el resultado. 5) Redacta tu recomendación en cinco líneas, incluida la información barata que conseguirías antes de decidir.",
+     "modelo": "Modelo: «Decisión de una agencia de marketing digital: comprar una impresora de gran formato o seguir maquilando las lonas fuera. Escenarios a un año para la compra: con pedidos bajos (25 %) pierde 60,000 pesos, con pedidos normales (55 %) gana 90,000 y con pedidos altos (20 %) gana 210,000; valor esperado de 76,500. Maquilar: valor esperado de 40,000, sin pérdidas. La Tabla de datos muestra que el resultado depende más del precio de la tinta que del volumen. El peor caso es soportable. Recomiendo comprar, pero antes cotizar la tinta a precio fijo por un año.» Es buena porque compara con valor esperado, revisa el peor caso y protege el supuesto más débil.",
+     "plantilla": [
+      "Escenarios, sensibilidad y valor esperado",
+      "Supuestos: precio (B2) [ ] · unidades (B3) [ ] · costo variable por unidad (B4) [ ] · costos fijos (B5) [ ]\nResultado (B7): [=(B2-B4)*B3-B5]\nTabla de datos: valores de unidades en D3:D10; en E2 escribe [=B7]; selecciona D2:E10 y usa Datos > Análisis de hipótesis > Tabla de datos, con B3 como celda de entrada de columna\nEscenarios: probabilidades en G2:G4 · resultados en H2:H4\nComprobación (debe dar 1): [=SUMA(G2:G4)]\nValor esperado: [=SUMAPRODUCTO(G2:G4,H2:H4)]\nPeor caso: [=MIN(H2:H4)] · ¿Lo puedo soportar?: [sí / no]\nSupuesto que más mueve el resultado: [ ]\nInformación barata antes de decidir: [ ]\nRecomendación: [ ]"
+     ],
+     "clave": [
+      "Usa escenarios coherentes, no porcentajes al aire, y la sensibilidad para saber qué supuesto pesa más.",
+      "El valor esperado compara opciones, pero revisa siempre si sobrevives al peor caso.",
+      "Cuando un supuesto domina, un piloto barato puede valer más que cualquier cálculo."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Con una serie mensual de al menos 24 meses de tu trabajo o de datos abiertos (INEGI o el Sistema de Información Económica del Banco de México), arma en Excel un pronóstico que puedas defender y conviértelo en una decisión. 1) Grafica la serie, calcula la variación contra el mismo mes del año anterior y un promedio móvil de 12 meses, y etiqueta los eventos. 2) Retén los últimos seis meses, pronostícalos con PRONOSTICO.ETS y con el ingenuo del mismo mes del año pasado, y calcula con ABS el MAE, el MAPE y el sesgo de los dos. 3) Pronostica los próximos tres meses con el método ganador y un rango. 4) Si alguna variable ayuda a explicar la serie, prueba PRONOSTICO.LINEAL y di si estarías extrapolando. 5) Usa el pronóstico en una decisión (compras, personal o inventario): modela el resultado, haz una Tabla de datos para el supuesto más incierto y calcula con SUMAPRODUCTO el valor esperado de dos opciones.",
+    "entregable": "Un libro de Excel con pestañas de serie, prueba de pronóstico, pronóstico futuro y decisión, y un memo de media página con la recomendación, el rango esperado y el peor caso.",
+    "criterios": "Revisa: mediste el error con meses que el modelo no vio, comparaste contra el pronóstico ingenuo y usas el método que gana, comunicas un rango y no un número exacto, la Tabla de datos identifica el supuesto que más pesa, el valor esperado usa probabilidades que suman 100 % y explicas si el peor caso es soportable."
+   },
+   "lab": {
+    "t": "El presupuesto de guantes del hospital",
+    "obj": "Pronosticar el consumo de un insumo hospitalario, medir su error y decidir entre un contrato fijo y compras al mercado con escenarios y valor esperado.",
+    "esc": "<b>Valeria,</b> de 43 años, es jefa de compras de un hospital privado en Tehuacán. Antes de diciembre debe decidir cómo comprará los guantes de exploración del próximo año: con un contrato anual a precio fijo o con compras mensuales al precio del mercado. Tiene 36 meses de consumo, el registro de cirugías y tres cotizaciones.",
+    "e": [
+     [
+      "Escena 1: La gráfica muestra un consumo que crece desde que abrió un segundo quirófano, meses de invierno más altos y dos meses de hace dos años con el triple de lo normal por un brote de enfermedad respiratoria.",
+      "Consigna: describe la tendencia, la estacionalidad, el ruido y los eventos de la serie, y decide cómo tratarás los dos meses del brote al pronosticar."
+     ],
+     [
+      "Escena 2: En los seis meses retenidos, PRONOSTICO.ETS tuvo un MAE de 42 cajas y un sesgo de −30 cajas; el ingenuo del mismo mes del año anterior tuvo un MAE de 58.",
+      "Consigna: interpreta los tres números, di qué método usarías y qué harías con el sesgo."
+     ],
+     [
+      "Escena 3: Una regresión del consumo contra el número de cirugías, con meses de entre 180 y 260 cirugías, tiene un R² de 0.78. El director quiere usarla para presupuestar 520 cirugías al mes cuando abra la nueva ala.",
+      "Consigna: explica qué puedes y qué no puedes afirmar con esa recta y propón otra forma de estimar el consumo de la nueva ala."
+     ],
+     [
+      "Escena 4: El contrato fijo cuesta 780,000 pesos al año. Comprando al mercado, Valeria estima 640,000 si los precios bajan (25 %), 760,000 si se mantienen (50 %) y 950,000 si suben (25 %). El presupuesto aprobado es de 800,000 y no se puede rebasar.",
+      "Consigna: calcula el valor esperado de comprar al mercado, compáralo con el contrato y escribe tu recomendación considerando el peor caso."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué método conviene en la escena 2 y con qué cuidado?",
+      "ETS, pero revisando por qué se queda corto",
+      "El ingenuo, porque el sesgo descalifica al ETS",
+      "ETS tal cual, porque su sesgo es menor que su MAE",
+      "42 entre 58 da 0.72: el ETS le gana al ingenuo. Pero un sesgo de −30 con un MAE de 42 indica que casi siempre se queda corto, quizá porque la tendencia se aceleró con el segundo quirófano. El sesgo no descalifica al modelo, pero tampoco se ignora: se investiga y se corrige."
+     ],
+     [
+      "¿Cuál es el valor esperado de comprar al mercado?",
+      "777,500 pesos",
+      "783,333 pesos",
+      "760,000 pesos",
+      "0.25 × 640,000 + 0.5 × 760,000 + 0.25 × 950,000 = 160,000 + 380,000 + 237,500 = 777,500. La cifra de 783,333 es el promedio simple sin probabilidades, y 760,000 es solo el escenario de precios estables."
+     ],
+     [
+      "¿Qué recomendación es más sólida en la escena 4?",
+      "El contrato: cuesta casi igual y no rebasa el presupuesto",
+      "El mercado, porque su valor esperado es 2,500 pesos menor",
+      "El mercado, porque hay 75 % de probabilidad de que no suban",
+      "En promedio, el mercado ahorraría solo 2,500 pesos, pero tiene 25 % de probabilidad de costar 950,000 y rebasar un presupuesto que no se puede exceder. El contrato compra certeza a un costo mínimo. Mirar solo el valor esperado o la probabilidad, sin el tamaño del peor caso, deja fuera lo que más importa aquí."
+     ]
+    ],
+    "pl": [
+     "Hoja de pronóstico y decisión de compra",
+     "Serie: [ ] meses · tendencia [ ] · estacionalidad [ ] · eventos [fecha · causa · tratamiento]\nPrueba retenida: MAE ETS [ ] · MAE ingenuo [ ] · razón ETS entre ingenuo [ ] · sesgo [ ]\nMétodo elegido: [ ] · ajuste por sesgo: [ ]\nPronóstico anual: [ ] cajas · rango: de [ ] a [ ]\nRegresión: rango observado de X [ ] · ¿la uso para la nueva ala?: [ ] · alternativa: [ ]\nOpciones: contrato [ ] · mercado con probabilidades en G2:G4 y costos en H2:H4\nCosto esperado del mercado: [=SUMAPRODUCTO(G2:G4,H2:H4)] · peor caso: [=MAX(H2:H4)]\nPresupuesto máximo: [ ] · ¿El peor caso cabe?: [ ]\nRecomendación y fecha de revisión: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una tienda de uniformes escolares de Querétaro vendió en agosto 90 % más que en julio. ¿Con qué comparación sabrías si le fue bien?",
+     "Contra agosto del año anterior",
+     "Contra julio de este mismo año",
+     "Contra el promedio mensual del año pasado",
+     "Contra la meta del primer trimestre"
+    ],
+    [
+     "Cristóbal, de una fábrica de muebles en Durango, probó un modelo con seis meses retenidos: MAE de 120 piezas; el pronóstico ingenuo tuvo 110. ¿Qué conviene?",
+     "Usar el ingenuo hasta tener un modelo que le gane",
+     "Usar el modelo, porque es más completo que el ingenuo",
+     "Ajustar el modelo hasta que gane en esos mismos meses",
+     "Dejar de pronosticar, porque los dos se equivocan"
+    ],
+    [
+     "Elvira pronostica las ventas semanales de una refacción que vende entre 0 y 2 piezas. ¿Qué medida de error le conviene?",
+     "El MAE, porque el MAPE se dispara cerca de cero",
+     "El MAPE, porque en porcentaje se entiende mejor",
+     "El R², porque mide qué tan bien sigue la recta",
+     "El sesgo, porque basta saber hacia qué lado falla"
+    ],
+    [
+     "Lo real fue 50, 60 y 40 unidades; el pronóstico dijo 55, 50 y 45. ¿Cuál es el MAE?",
+     "6.7 unidades",
+     "0 unidades",
+     "20 unidades",
+     "10 unidades"
+    ],
+    [
+     "El pronóstico de pedidos de una cooperativa de café en Veracruz se queda corto casi todos los meses, entre 6 % y 9 %. ¿Qué indica?",
+     "Un sesgo: hay un error sistemático por corregir",
+     "Ruido normal: los errores se compensan solos",
+     "Un MAPE bajo, así que el pronóstico es confiable",
+     "Que conviene un modelo con un R² más alto"
+    ],
+    [
+     "En un coworking de Mexicali, la regresión de 10 años entre los ingresos del negocio y la población de la ciudad da un R² de 0.96. ¿Qué haces?",
+     "Sospechar: ambas pueden solo crecer con el tiempo",
+     "Usarla para pronosticar, porque ajusta casi perfecto",
+     "Concluir que la población causa 96 % de los ingresos",
+     "Agregar más años de datos hasta llegar a 0.99"
+    ],
+    [
+     "Una cadena de farmacias ajustó una recta de ventas contra empleados con sucursales de 4 a 12 personas. Quiere estimar una tienda de 40. ¿Qué problema hay?",
+     "Extrapola: fuera del rango la recta puede fallar",
+     "Ninguno, si el R² de la recta pasa de 0.8",
+     "Que la intersección no tiene sentido práctico",
+     "Que la pendiente se debe calcular con 40 tiendas"
+    ],
+    [
+     "En una agencia de marketing digital de Colima, la pendiente entre inversión en anuncios (en miles de pesos) y prospectos es de 3.5. ¿Qué significa?",
+     "Mil pesos más se asocian con 3.5 prospectos más",
+     "Cada prospecto cuesta, en promedio, unos 3,500 pesos",
+     "Invertir mil pesos más causará 3.5 prospectos",
+     "La recta explica 3.5 % de los prospectos"
+    ],
+    [
+     "Un proyecto puede ganar 200,000 pesos (40 %) o perder 50,000 (60 %). ¿Cuál es su valor esperado?",
+     "50,000 pesos",
+     "75,000 pesos",
+     "150,000 pesos",
+     "110,000 pesos"
+    ],
+    [
+     "Un despacho contable de Celaya evalúa contratar a dos personas. La Tabla de datos muestra que la tarifa por cliente mueve la utilidad mucho más que cualquier otro supuesto. ¿Qué haces?",
+     "Validar primero esa tarifa con clientes reales",
+     "Enfocarte en el supuesto que sea más fácil de medir",
+     "Subir la tarifa en el modelo hasta que convenga",
+     "Promediar todos los supuestos y seguir adelante"
+    ]
+   ]
+  }
+ ]
+}
