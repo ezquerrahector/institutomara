@@ -573,9 +573,15 @@ var Nube = {
      El alumno solo puede probar un código a la vez (la base valida y
      calcula el descuento); la lista completa la ve nada más el admin. */
   validarCupon: function(codigo, cursoId){
-    return rest('rpc/aplicar_cupon', { metodo:'POST',
-      cuerpo:{ p_codigo: codigo, p_curso_id: cursoId } })
-      .then(function(f){ return Array.isArray(f) ? f[0] : f; });
+    var cuerpo = { p_codigo: codigo, p_curso_id: cursoId };
+    sesionMasNueva();
+    /* Sin sesión (p. ej., la lección gratis) se consulta con la llave pública:
+       aplicar_cupon solo calcula el precio, no guarda nada. */
+    var r = ses ? rest('rpc/aplicar_cupon', { metodo:'POST', cuerpo: cuerpo })
+      : fetch(cfg.url + '/rest/v1/rpc/aplicar_cupon', { method:'POST',
+          headers:{ apikey: cfg.key, Authorization: 'Bearer ' + cfg.key, 'Content-Type': 'application/json' },
+          body: JSON.stringify(cuerpo) }).then(function(x){ return x.json(); });
+    return r.then(function(f){ return Array.isArray(f) ? f[0] : f; });
   },
   listarCupones: function(){
     return rest('cupones?select=*&order=creado_en.desc');
