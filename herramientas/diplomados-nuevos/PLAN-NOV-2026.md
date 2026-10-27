@@ -165,7 +165,12 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
 2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (primero la tabla de #1-15 y luego la de la Tanda 2).
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
-4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas, más `"tema"` y `"dificultad"`) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+   Clasificación desde el 26 oct (`plataforma/taxonomia.js`): `area` = una de las 11 áreas (o la «Área nueva» de la tanda 2),
+   `tema` = uno de los temas de esa área en `taxonomia.js` (o uno nuevo y claro, p. ej. «Repostería»), `dificultad` =
+   `desde_cero` | `intermedio` | `profesional` (nivel de entrada). Para los #3-15 usa el área equivalente nueva
+   (p. ej. «Liderazgo y RH», «Psicología y terapia», «Cuidado, infancia y educación»). `crear-diplomado.js` (en main desde
+   el 26 oct; trae `main` a la rama) los escribe en el SQL y en el sitio.
 5. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id> --simular` → sin errores, ≥ 30 h.
 6. Revisión V10 por un agente experto independiente que no escribió el contenido; corregir todo lo que señale.
 7. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id>` (sin --simular) y
