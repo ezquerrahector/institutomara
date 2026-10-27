@@ -710,6 +710,17 @@ html,body{overflow-x:hidden}
   .fi-compra{position:sticky;bottom:10px;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.12);background:#fff}
   .fi-temario ol{padding-left:44px} .fi-temario details p{padding-left:14px}
 }
+/* Celular: ícono o número a la izquierda y texto a la derecha (no uno debajo del otro) */
+@media(max-width:700px){
+  .razones,.pasos{gap:20px}
+  .razon,.paso{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start;padding-top:0}
+  .razon .ico,.paso .n{grid-row:1 / span 2;width:44px;height:44px;font-size:20px;margin:0}
+  .razon h3,.paso h3{margin:2px 0 4px;font-size:17px}
+  .razon p,.paso p{font-size:15px}
+  .regalo-caja{flex-direction:column;padding:24px}
+  .regalo-ico{display:none}
+  .regalo-caja h2{font-size:1.6rem}
+}
 </style>
 
 <div class="ficha" id="ficha" hidden role="dialog" aria-modal="true" aria-labelledby="ficha-tit">

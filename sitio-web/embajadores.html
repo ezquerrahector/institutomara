@@ -83,7 +83,7 @@ section{padding:56px 0}
 details{border-bottom:1px solid var(--linea);padding:14px 0}
 summary{cursor:pointer;font-weight:700;color:var(--tinta)}
 details p{color:var(--gris);margin-top:8px}
-@media(max-width:820px){.caminos,.pasos{grid-template-columns:1fr}.dos{grid-template-columns:1fr}.form{padding:20px}.camino{padding:22px}.compara{font-size:14px}.compara td:first-child{width:auto}}
+@media(max-width:820px){.paso{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;align-items:start}.paso .n{grid-row:1 / span 2;margin:0}.paso h3{margin:4px 0 2px}.caminos,.pasos{grid-template-columns:1fr}.dos{grid-template-columns:1fr}.form{padding:20px}.camino{padding:22px}.compara{font-size:14px}.compara td:first-child{width:auto}}
 </style>
 </head>
 <body>
@@ -153,7 +153,7 @@ details p{color:var(--gris);margin-top:8px}
     <div class="dos"><label>WhatsApp (opcional)<input id="tel" type="tel" maxlength="20" autocomplete="tel"></label><label>Ciudad y país<input id="lugar" maxlength="120" placeholder="Ej. Puebla, México"></label></div>
     <label>¿Dónde lo vas a recomendar? (opcional)<input id="como" maxlength="300" placeholder="Ej. con mis alumnos, en Instagram, en mi trabajo"></label>
     <input id="web" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="check"><input type="checkbox" id="acepto"> Acepto las reglas del programa y el <a href="legal/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</label>
+    <label class="check"><input type="checkbox" id="acepto"><span>Acepto las reglas del programa y el <a href="legal/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</span></label>
     <div id="av" aria-live="polite"></div>
     <button class="btn btn-mor" type="submit" id="b">Obtener mi código</button>
   </form>
@@ -180,7 +180,7 @@ details p{color:var(--gris);margin-top:8px}
     <label>¿Cuánto tiempo puedes dedicarle?<select id="a-disp"><option value="">Elige una opción</option><option>Unas horas a la semana</option><option>Medio tiempo</option><option>Tiempo completo</option></select></label>
     <label>Cuéntanos tu experiencia en ventas (opcional)<textarea id="a-exp" rows="3" maxlength="600" placeholder="Ej. 3 años vendiendo seguros a empresas; tengo contactos en RH de la industria"></textarea></label>
     <input id="a-web" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="check"><input type="checkbox" id="a-acepto"> Acepto el <a href="legal/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</label>
+    <label class="check"><input type="checkbox" id="a-acepto"><span>Acepto el <a href="legal/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</span></label>
     <div id="a-av" aria-live="polite"></div>
     <button class="btn btn-mor" type="submit" id="a-b">Enviar mi solicitud</button>
   </form>
