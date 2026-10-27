@@ -1,0 +1,848 @@
+{
+ "modulos": [
+  {
+   "t": "Pensar con datos para decidir",
+   "r": "Qué significa decidir con datos y cuándo vale la pena, cómo convertir una petición vaga en una pregunta de decisión, los cuatro tipos de análisis y los sesgos que nos hacen ver lo que queremos ver.",
+   "lecciones": [
+    {
+     "t": "De la corazonada a la decisión informada",
+     "obj": "Distinguir cuándo una decisión merece datos y cuánto análisis vale la pena según el costo del error, su reversibilidad y su frecuencia.",
+     "texto": [
+      "Toda organización decide todos los días: qué mercancía pedir, a quién contratar, qué cliente atender primero. Muchas de esas decisiones se toman por <b>corazonada</b>, y no siempre está mal: la intuición de alguien con años en el oficio condensa mucha experiencia. El problema aparece cuando el entorno cambia, cuando la decisión es nueva o cuando la persona confunde la seguridad que siente con la evidencia que tiene. Decidir con datos no significa obedecer a una hoja de cálculo; significa poner la intuición a prueba antes de apostar dinero, tiempo o reputación.",
+      "¿Sirve de algo? Un estudio de Erik Brynjolfsson, Lorin Hitt y Heekyung Kim (2011) con 179 grandes empresas que cotizan en bolsa encontró que las que tomaban decisiones basadas en datos tenían entre 5 y 6 % más producción y productividad de lo que explicaban sus otras inversiones y su uso de tecnología. Léelo con cuidado: es una <i>asociación</i>, no una prueba causal perfecta, porque puede que las empresas mejor administradas hagan ambas cosas. Aun así, es una señal seria de que la disciplina de preguntar y medir se nota en los resultados.",
+      "No toda decisión merece un análisis. Antes de pedir datos, hazte cuatro preguntas: ¿cuánto cuesta equivocarse?, ¿se puede revertir con facilidad?, ¿se repite seguido? y ¿existe un dato que, si lo tuvieras, cambiaría lo que vas a hacer? Si el error es barato y reversible, como probar una semana un nuevo horario de atención, conviene decidir rápido y observar. Si es caro e irreversible, como firmar un arrendamiento a cinco años, vale la pena invertir días en buscar evidencia. A esto se le llama, en términos sencillos, el <b>valor de la información</b>: un dato vale lo que mejora la decisión, no lo que costó juntarlo.",
+      "Aquí cae el primer mito: «más datos siempre dan mejores decisiones». Más datos también traen más ruido, más horas de limpieza y más tentación de encontrar el patrón que queríamos ver. Una docena de registros bien elegidos y confiables puede responder mejor que un millón de filas que nadie entiende. La meta de este diplomado no es que acumules información, sino que llegues a una decisión defendible: qué se decidió, con qué evidencia, con cuánta duda y cuándo se revisará."
+     ],
+     "comparar": [
+      "«Así no: “Llevo veinte años en esto; no necesito números para saber qué clientes nos dejan dinero.”»",
+      "«Así sí: “Mi experiencia dice que los clientes chicos no convienen; revisemos tres meses de horas y cobros antes de decidir.”»"
+     ],
+     "caso": "Caso ficticio: Rogelio, de 52 años, es socio fundador de un despacho contable en Hermosillo con nueve personas. Está convencido de que las personas físicas con declaraciones sencillas «dan mucha lata y poco dinero» y quiere dejar de atenderlas a partir de enero, aunque son casi la mitad de la cartera. Su socia le pide revisar antes las horas registradas y lo cobrado por cliente durante el último año. Rogelio duda: ¿vale la pena el esfuerzo si él ya sabe la respuesta?",
+     "p": [
+      [
+       "¿Por qué esta decisión sí merece revisar datos antes de tomarla?",
+       "Es costosa y difícil de revertir si se equivoca",
+       "Porque toda decisión de un despacho debe basarse en datos",
+       "Porque la socia lo pidió y conviene evitar un conflicto",
+       "Dejar a casi la mitad de la cartera es caro y, una vez que esos clientes se van con otro despacho, difícil de deshacer: ahí el análisis se paga solo. No toda decisión necesita datos (muchas son baratas y reversibles), y evitar un conflicto es un motivo social, no un criterio para decidir cuánto analizar."
+      ],
+      [
+       "¿Qué dato tendría más valor para esta decisión?",
+       "Horas dedicadas y cobro por cliente de varios meses",
+       "El número total de clientes del despacho cada año",
+       "La opinión del equipo sobre qué clientes le agradan",
+       "La pregunta es si esos clientes dejan o no dinero, y eso solo lo responde comparar el tiempo que consumen con lo que pagan. El total de clientes no distingue rentabilidad, y la opinión del equipo es contexto útil pero repite la misma impresión que Rogelio quiere probar."
+      ],
+      [
+       "Si los datos muestran que esos clientes sí son rentables, ¿qué debería hacer Rogelio?",
+       "Ajustar su idea y dejar por escrito por qué cambió",
+       "Buscar otros datos hasta encontrar los que lo apoyen",
+       "Dejarlos de todos modos, pues la experiencia pesa más",
+       "Decidir con datos implica aceptar que la evidencia puede contradecirte y registrar el cambio para aprender. Buscar datos hasta que digan lo que quieres es el sesgo de confirmación en acción, y descartar la evidencia por experiencia anula el propósito de haberla reunido."
+      ]
+     ],
+     "completar": [
+      "Un dato vale lo que mejora la decisión: a eso se le llama el ___ de la información.",
+      "valor"
+     ],
+     "refl": "Revisa una decisión real. 1) Escribe una decisión que tú o tu área deban tomar en los próximos tres meses. 2) Califica de 1 a 5 el costo de equivocarse, qué tan difícil es revertirla y qué tan seguido se repite. 3) Anota qué te dice hoy tu intuición y en qué experiencia se basa. 4) Escribe el dato que, si lo tuvieras, podría cambiar tu decisión, y cuánto tiempo te costaría conseguirlo. 5) Concluye: ¿decides ya, decides y observas, o investigas primero?",
+     "modelo": "Modelo: «Decisión: si renuevo por un año el contrato de limpieza de la oficina o cambio de proveedor. Costo del error: 3; dificultad para revertir: 4, por la penalización si salgo antes; frecuencia: 1. Mi intuición dice que cambie, porque hubo quejas en marzo y abril. El dato que podría cambiarla: el registro de incidencias de todo el año; si las quejas se concentran en dos meses con personal nuevo, el problema quizá ya se resolvió. Me cuesta una hora conseguirlo. Conclusión: investigo primero, pero solo ese dato, y decido esta semana.» Es buena porque separa intuición de evidencia, nombra un solo dato capaz de cambiar la decisión y pone un límite al análisis.",
+     "plantilla": [
+      "¿Esta decisión merece datos?",
+      "Decisión: [ ]\nQuién decide y para cuándo: [ ]\nCosto de equivocarse (1-5): [ ]\nDificultad para revertirla (1-5): [ ]\nFrecuencia con que se repite (1-5): [ ]\nLo que dice mi intuición y en qué se basa: [ ]\nDato que podría cambiar la decisión: [ ]\nCosto y tiempo de conseguirlo: [ ]\nRuta elegida: [decidir ya / decidir y observar / investigar primero]"
+     ],
+     "clave": [
+      "Decidir con datos es poner la intuición a prueba, no tirar a la basura la experiencia.",
+      "El análisis se justifica cuando el error es caro, difícil de revertir o se repite mucho.",
+      "Un dato vale por cuánto puede cambiar la decisión, no por cuánto costó reunirlo."
+     ]
+    },
+    {
+     "t": "La pregunta de decisión: del «mándame un reporte» a algo que se pueda contestar",
+     "obj": "Convertir una petición vaga en una pregunta de decisión con responsable, opciones, criterio, plazo y umbral de acción.",
+     "texto": [
+      "«Mándame un reporte de ventas.» Esa frase, tan común en cualquier oficina, es el origen de muchas horas perdidas. Quien la recibe no sabe qué periodo, qué nivel de detalle ni para qué se usará, y suele responder con todo: veinte pestañas y cuarenta gráficas que nadie lee. Detrás de casi cada petición de datos hay una decisión escondida. Tu primer trabajo como analista no es abrir la hoja de cálculo, sino descubrir esa decisión y escribirla como una <b>pregunta de decisión</b>.",
+      "Una buena pregunta de decisión tiene cinco piezas: <b>quién decide</b>, <b>qué opciones</b> reales tiene (incluida la de no hacer nada), <b>con qué criterio</b> elegirá entre ellas, <b>para cuándo</b> y <b>qué resultado cambiaría su decisión</b>, es decir, el umbral. Compara «¿cómo van las redes sociales?» con «¿La directora debe mover parte del presupuesto de anuncios de la red A a la red B en diciembre, si en octubre y noviembre el costo por cliente nuevo en B fue al menos 20 % menor que en A?». La segunda se puede contestar con datos concretos, en un plazo concreto, y su respuesta lleva a una acción.",
+      "Para llegar ahí, conversa antes de calcular. Pregunta: ¿qué vas a hacer distinto según lo que encuentre?, ¿qué opciones estás considerando?, ¿qué número te haría cambiar de opinión?, ¿quién más se ve afectado? Esa última pregunta identifica a las <b>partes interesadas</b>: quienes aportan datos, quienes ejecutarán y quienes vivirán las consecuencias. Escucharlas a tiempo evita que tu análisis se derrumbe en la junta porque alguien dice «eso no considera lo de producción».",
+      "Aquí cae otro mito: «los datos hablan solos». Los datos no hablan; responden a la pregunta que les hagas, y si no les haces ninguna, cada quien les hará decir lo que le convenga. Una pregunta clara también te protege: te dice qué datos no necesitas, qué precisión basta y cuándo parar. Si al final tu respuesta honesta es «depende», la pregunta estaba incompleta: casi siempre falta el criterio o el umbral, y conviene regresar con quien decide para fijarlos."
+     ],
+     "comparar": [
+      "«Así no: “Te mando el reporte con todo lo que hay del trimestre; ahí ves qué te sirve.”»",
+      "«Así sí: “Antes de armarlo, ¿qué vas a decidir con él, entre qué opciones y qué resultado te haría cambiar de rumbo?”»"
+     ],
+     "caso": "Caso ficticio: Itzel, de 29 años, es analista en una agencia de marketing digital en Oaxaca que maneja las redes de doce clientes. El director le escribe el lunes: «Mándame para el jueves un reporte de cómo vamos con el cliente de la cadena de farmacias». Itzel sabe que ese contrato vence en un mes y que en la agencia se discute si proponerle subir la cuota o reducir servicios. Duda entre armar el reporte de siempre, con todas las métricas, o hacer algo distinto.",
+     "p": [
+      [
+       "¿Qué debería hacer Itzel primero?",
+       "Preguntar qué decisión se tomará con el reporte",
+       "Armar el reporte completo y que el director elija",
+       "Incluir solo las métricas que salieron mejor este mes",
+       "Saber para qué decisión es el reporte le dice qué incluir y qué dejar fuera, y el vencimiento del contrato sugiere cuál es. El reporte completo traslada el trabajo de pensar al director, y escoger solo lo favorable es maquillar: el director decidiría con una imagen falsa."
+      ],
+      [
+       "¿Cuál es la mejor pregunta de decisión para este caso?",
+       "¿Renovamos con cuota mayor, igual o con menos servicios, según resultados?",
+       "¿Cuántos seguidores y reacciones tuvo el cliente en el último trimestre?",
+       "¿Qué tan contento está el cliente con el trabajo de la agencia este año?",
+       "La primera nombra opciones reales y anuncia un criterio; falta afinar el umbral, pero ya orienta el análisis. Contar seguidores es una pregunta descriptiva sin decisión detrás, y la satisfacción del cliente importa, pero así planteada no dice qué hacer con la respuesta."
+      ],
+      [
+       "El director responde: «Si la venta en línea del cliente no creció, propondremos reducir servicios». ¿Qué falta para completar la pregunta?",
+       "Definir cuánto crecimiento cuenta como «creció»",
+       "Agregar más métricas de redes al reporte final",
+       "Pedir al cliente que apruebe la pregunta antes",
+       "Sin un umbral, un crecimiento de medio punto puede leerse como éxito o como fracaso según quién lo vea. Más métricas no resuelven la ambigüedad, y la pregunta de decisión es interna de la agencia: no requiere la aprobación del cliente."
+      ]
+     ],
+     "completar": [
+      "Quienes aportan datos, ejecutan o viven las consecuencias de una decisión son las partes ___.",
+      "interesadas"
+     ],
+     "relacionar": [
+      [
+       "Quién decide",
+       "La directora comercial de la agencia"
+      ],
+      [
+       "Opciones",
+       "Mover presupuesto, mantenerlo o pausar la campaña"
+      ],
+      [
+       "Criterio",
+       "Costo por cliente nuevo en cada red"
+      ],
+      [
+       "Plazo",
+       "Antes del cierre de noviembre"
+      ],
+      [
+       "Umbral",
+       "Si B cuesta al menos 20 % menos que A"
+      ]
+     ],
+     "refl": "Convierte una petición vaga en una pregunta de decisión. 1) Copia una petición de datos que hayas recibido o hecho (por ejemplo, «mándame cómo vamos»). 2) Escribe quién decide y qué decisión hay detrás. 3) Enumera de dos a cuatro opciones reales, incluida la de no hacer nada. 4) Define el criterio y el umbral que inclinaría la balanza. 5) Anota la fecha límite y dos partes interesadas a quienes consultarías. 6) Redacta la pregunta final en una sola frase y anota un análisis que ya no necesitas hacer.",
+     "modelo": "Modelo: «Petición: “Mándame cómo vamos con las horas extra”. Decide: el gerente de planta. Decisión: si contrata operadores temporales para diciembre o sigue cubriendo con horas extra. Opciones: contratar dos, contratar uno o seguir igual. Criterio: costo laboral por pieza producida. Umbral: si las horas extra proyectadas cuestan más que los sueldos temporales con sus cargas. Fecha: 15 de noviembre. Partes interesadas: recursos humanos y supervisores de turno. Pregunta: ¿Contratamos uno o dos temporales para diciembre si las horas extra proyectadas cuestan más que esas contrataciones? Ya no necesito: el detalle de horas por persona.» Es buena porque nombra a quien decide, da opciones reales y deja claro qué resultado cambia la acción.",
+     "plantilla": [
+      "Pregunta de decisión",
+      "Petición original: [ ]\nQuién decide: [ ]\nDecisión que hay detrás: [ ]\nOpciones (incluye no hacer nada): [ ]\nCriterio para elegir: [ ]\nUmbral que cambiaría la decisión: [ ]\nFecha límite: [ ]\nPartes interesadas: [quién aporta datos / quién ejecuta / a quién afecta]\nPregunta final en una frase: [ ]\nLo que NO necesito analizar: [ ]"
+     ],
+     "clave": [
+      "Detrás de cada petición de datos hay una decisión: encuéntrala antes de calcular.",
+      "Una pregunta de decisión nombra a quien decide, opciones, criterio, plazo y umbral.",
+      "Los datos no hablan solos: responden a la pregunta que les haces."
+     ]
+    },
+    {
+     "t": "Cuatro tipos de análisis y el ciclo completo",
+     "obj": "Identificar qué tipo de análisis pide cada pregunta y ubicar tu trabajo dentro del ciclo que va de la pregunta al seguimiento.",
+     "texto": [
+      "No todas las preguntas piden lo mismo. Una clasificación muy difundida en la industria distingue cuatro tipos de análisis. El <b>descriptivo</b> responde qué pasó: cuántas piezas salieron, cuánto se vendió, cuántos paros hubo. El <b>diagnóstico</b> responde por qué pasó: qué tienen en común los paros, en qué turno o con qué materia prima se concentran. El <b>predictivo</b> estima qué es probable que pase: cuántos pedidos llegarán en diciembre, qué máquina tiene más riesgo de fallar. El <b>prescriptivo</b> recomienda qué conviene hacer: cuánto inventario pedir, qué mantenimiento programar primero.",
+      "Cada tipo se apoya en el anterior. Si no sabes con exactitud qué pasó, tu explicación de por qué pasó será una conjetura, y tu pronóstico heredará esos errores. Por eso muchos proyectos que prometen «predecir» se atoran: nadie había resuelto lo descriptivo y la base contaba dos veces los mismos pedidos. Tampoco desprecies lo sencillo: una tabla descriptiva bien hecha resuelve una gran parte de las preguntas de negocio. Lo avanzado no es mejor por ser avanzado; es mejor cuando la decisión lo necesita y los datos lo permiten.",
+      "Estos análisis viven dentro de un <b>ciclo</b> que va más allá de calcular: 1) plantear la pregunta de decisión; 2) conseguir y entender los datos; 3) prepararlos y documentar qué hiciste; 4) explorar y analizar, empezando por graficar; 5) comunicar el hallazgo con su nivel de duda; 6) decidir; y 7) dar seguimiento para saber si la decisión funcionó. El último paso es el más olvidado y el que más enseña: si nadie revisa, la organización nunca sabe si decidió bien o tuvo suerte, y repite sus errores con más confianza.",
+      "Este diplomado recorre el ciclo completo. En los módulos 1 y 2 trabajarás la pregunta y los datos; en el 3 y el 4, la preparación con Power Query, el modelo de datos y los indicadores; en el 5 y el 6, la estadística, los pronósticos y los escenarios; en el 7, la inteligencia artificial generativa y los modelos predictivos usados con criterio; y en el 8, la comunicación, el tablero y el seguimiento. Al final tendrás un proyecto propio que va de una pregunta real a un memo de decisión."
+     ],
+     "comparar": [
+      "«Así no: “Queremos un modelo que prediga las fallas de las máquinas; los registros de paros los ordenamos después.”»",
+      "«Así sí: “Primero contemos bien cuántos paros hubo y por qué; con eso sabremos si vale la pena intentar predecirlos.”»"
+     ],
+     "caso": "Caso ficticio: Efraín, de 44 años, es jefe de mantenimiento en una planta de autopartes de Torreón. El gerente le pide «un sistema con inteligencia artificial que prediga cuándo va a fallar cada prensa». Efraín sabe que los paros se anotan en una bitácora de papel que cada turno llena a su manera y que muchas veces nadie anota la causa. Tiene presupuesto para un proyecto de tres meses y duda entre contratar el modelo predictivo o empezar por otra cosa.",
+     "p": [
+      [
+       "¿Qué tipo de análisis falta resolver primero en la planta?",
+       "El descriptivo: saber bien qué paros hubo",
+       "El prescriptivo: decidir qué prensa reparar",
+       "El predictivo: estimar cuándo será la falla",
+       "Con una bitácora incompleta y desigual, ni siquiera se sabe con certeza cuántos paros hubo ni de qué tipo; cualquier predicción o recomendación se construiría sobre esa base débil. Lo prescriptivo y lo predictivo llegan después, si la decisión lo justifica."
+      ],
+      [
+       "Con la bitácora ya capturada, Efraín ve que la mayoría de los paros largos ocurren tras un cambio de molde. Investigar por qué sucede es análisis…",
+       "Diagnóstico",
+       "Descriptivo",
+       "Prescriptivo",
+       "Buscar la causa de un patrón ya observado es diagnóstico. Detectar que los paros largos se concentran tras el cambio de molde fue descriptivo, y decidir qué hacer al respecto, por ejemplo estandarizar el cambio, sería prescriptivo."
+      ],
+      [
+       "¿Qué paso del ciclo garantiza que la planta aprenda si su cambio funcionó?",
+       "Dar seguimiento al resultado tras decidir",
+       "Comunicar el hallazgo con gráficas claras",
+       "Documentar cómo se prepararon los datos",
+       "Solo el seguimiento compara lo que se esperaba con lo que ocurrió y permite corregir. Comunicar bien y documentar la preparación son pasos valiosos del ciclo, pero ocurren antes de la decisión y no dicen si funcionó."
+      ]
+     ],
+     "completar": [
+      "Recomendar qué conviene hacer, como cuánto inventario pedir, corresponde al análisis ___.",
+      "prescriptivo"
+     ],
+     "relacionar": [
+      [
+       "¿Cuántas piezas defectuosas salieron en octubre?",
+       "Descriptivo"
+      ],
+      [
+       "¿Por qué el turno nocturno tiene más defectos?",
+       "Diagnóstico"
+      ],
+      [
+       "¿Cuántos pedidos llegarán en diciembre?",
+       "Predictivo"
+      ],
+      [
+       "¿Cuánto material conviene comprar para diciembre?",
+       "Prescriptivo"
+      ],
+      [
+       "¿El cambio de proveedor redujo los defectos?",
+       "Seguimiento"
+      ]
+     ],
+     "refl": "Ubica tus preguntas en el ciclo. 1) Escribe cuatro preguntas que se hacen en tu trabajo, una de cada tipo: descriptiva, diagnóstica, predictiva y prescriptiva. 2) Para cada una, anota qué datos necesitarías y si hoy existen. 3) Señala cuál de las cuatro podrías contestar esta semana con lo que ya tienes. 4) Describe en qué paso del ciclo se suelen atorar los proyectos de tu área y por qué. 5) Propón una acción concreta para el paso de seguimiento, con responsable y fecha.",
+     "modelo": "Modelo: «Trabajo en cobranza de una distribuidora de abarrotes. Descriptiva: ¿cuánto se venció en septiembre por cliente? Diagnóstica: ¿por qué se atrasan más los clientes de la zona norte? Predictiva: ¿qué clientes es probable que se atrasen en diciembre? Prescriptiva: ¿a quién conviene llamar primero cada lunes? Hoy existen los datos de facturas y pagos; faltan los motivos de atraso. Esta semana puedo contestar la descriptiva. Nos atoramos en el seguimiento: cambiamos políticas de crédito y nadie revisa si funcionaron. Acción: el jefe de crédito revisará el vencido de los clientes con política nueva a los 60 días.» Es buena porque cada pregunta corresponde a su tipo y el seguimiento tiene responsable y fecha.",
+     "plantilla": [
+      "Mapa de preguntas por tipo de análisis",
+      "Decisión de fondo: [ ]\nDescriptiva (qué pasó): [pregunta] · datos: [ ] · ¿existen?: [sí/no]\nDiagnóstica (por qué pasó): [pregunta] · datos: [ ] · ¿existen?: [ ]\nPredictiva (qué pasará): [pregunta] · datos: [ ] · ¿existen?: [ ]\nPrescriptiva (qué conviene hacer): [pregunta] · datos: [ ] · ¿existen?: [ ]\nPaso del ciclo donde nos atoramos: [ ]\nSeguimiento: [qué se revisará, quién y cuándo]"
+     ],
+     "clave": [
+      "Descriptivo, diagnóstico, predictivo y prescriptivo responden preguntas distintas y se apoyan uno en otro.",
+      "Sin un buen análisis descriptivo, cualquier predicción hereda los errores de la base.",
+      "El ciclo termina en el seguimiento: sin él no sabes si decidiste bien o tuviste suerte."
+     ]
+    },
+    {
+     "t": "Sesgos que distorsionan el análisis",
+     "obj": "Reconocer los sesgos más comunes al analizar datos y aplicar antídotos concretos, como fijar el criterio antes de ver los números y hacer un premortem.",
+     "texto": [
+      "Daniel Kahneman, en <i>Pensar rápido, pensar despacio</i> (2011; en español, Debate, 2012), describe dos modos de pensar: el sistema 1, rápido, automático e intuitivo, y el sistema 2, lento, deliberado y que exige esfuerzo. El sistema 1 nos permite funcionar todo el día, pero también salta a conclusiones. Cuando analizamos datos, ese salto se disfraza de rigor: hacemos tablas y gráficas, pero elegimos sin darnos cuenta las que confirman lo que ya creíamos.",
+      "Cinco sesgos aparecen una y otra vez. El <b>sesgo de confirmación</b>: buscar y recordar lo que apoya nuestra idea e ignorar lo que la contradice. El <b>anclaje</b>: quedarnos pegados al primer número que escuchamos, como la meta que dijo el director al abrir la junta. La <b>disponibilidad</b>: dar más peso a lo que recordamos con facilidad, como la queja ruidosa de la semana pasada. El <b>exceso de confianza</b>: creer que nuestras estimaciones son más precisas de lo que son. Y el <b>sesgo de supervivencia</b>: analizar solo lo que pasó un filtro. El ejemplo clásico se atribuye a Abraham Wald en la Segunda Guerra Mundial: al revisar los aviones que regresaban con agujeros de bala, propuso blindar justo donde no había agujeros, porque los que recibían disparos ahí eran los que no volvían.",
+      "Los sesgos no se quitan con buena voluntad; se contienen con procedimientos. Escribe tu hipótesis y tu criterio de decisión <i>antes</i> de ver los datos, para no mover la meta después. Busca activamente la evidencia que te contradiría: ¿qué tendrías que ver para concluir lo contrario? Pregunta quién no está en tus datos: los clientes que se fueron, las solicitudes rechazadas, quienes no contestaron. Y pide a alguien ajeno al proyecto que revise tu conclusión.",
+      "Una técnica útil es el <b>premortem</b>, propuesto por el psicólogo Gary Klein: antes de aprobar una decisión, el equipo imagina que pasó un año y que fue un fracaso, y cada persona escribe por su cuenta por qué ocurrió. Así salen a la luz riesgos que nadie se atrevía a decir en voz alta, sobre todo frente al jefe. No busca frenar las decisiones, sino tomarlas con los ojos abiertos."
+     ],
+     "comparar": [
+      "«Así no: “Los miembros que encuestamos están felices con el cambio; quedó claro que funcionó.”»",
+      "«Así sí: “Los que siguen están contentos, pero falta preguntar a quienes cancelaron después del cambio.”»"
+     ],
+     "caso": "Caso ficticio: Dulce, de 36 años, coordina un coworking en Pachuca con unas ochenta personas inscritas. Hace cuatro meses convirtió parte del área abierta en cabinas privadas para llamadas, idea suya. Tres miembros le han dicho que las cabinas son lo mejor del lugar, y la encuesta de satisfacción a los miembros activos salió muy bien. Sin embargo, las renovaciones de los planes de escritorio abierto bajaron. El dueño le pregunta si conviene construir más cabinas.",
+     "p": [
+      [
+       "¿Qué sesgo puede afectar más la lectura de la encuesta?",
+       "Supervivencia: solo opinaron quienes se quedaron",
+       "Anclaje: la meta del dueño fijó cuántas cabinas",
+       "Exceso de confianza: la encuesta fue muy corta",
+       "La encuesta se aplicó solo a miembros activos; quienes no renovaron, que podrían ser justo los afectados por perder escritorios abiertos, no están. No hay indicio de una meta que funcione como ancla, y la longitud de la encuesta no tiene que ver con el exceso de confianza."
+      ],
+      [
+       "Los comentarios de los tres miembros entusiastas pesan mucho en Dulce. ¿Qué sesgos son más probables?",
+       "Disponibilidad y confirmación de su idea",
+       "Exceso de confianza en los resultados de la encuesta",
+       "Anclaje a la meta de renovaciones del mes",
+       "Tres comentarios vívidos y recientes se recuerdan con facilidad (disponibilidad) y, además, apoyan una idea que Dulce propuso (confirmación). El exceso de confianza y el anclaje existen, pero el caso no muestra estimaciones demasiado estrechas ni una cifra inicial que la atrape."
+      ],
+      [
+       "¿Qué paso concreto ayudaría más antes de construir más cabinas?",
+       "Hablar con quienes cancelaron y fijar un criterio",
+       "Repetir la encuesta a los activos con más preguntas",
+       "Pedir a los entusiastas que recomienden el lugar",
+       "Escuchar a quienes se fueron llena el hueco de supervivencia, y fijar antes el criterio (por ejemplo, qué nivel de renovaciones justifica la obra) evita mover la meta. Repetir la encuesta a los mismos solo amplía el sesgo, y las recomendaciones no informan la decisión."
+      ]
+     ],
+     "completar": [
+      "Imaginar que una decisión ya fracasó y escribir por qué ocurrió es la técnica del ___.",
+      "premortem"
+     ],
+     "relacionar": [
+      [
+       "Confirmación",
+       "Leer solo los comentarios que apoyan tu idea"
+      ],
+      [
+       "Anclaje",
+       "Ajustar el pronóstico apenas alrededor de la meta del director"
+      ],
+      [
+       "Disponibilidad",
+       "Decidir por la queja más reciente y ruidosa"
+      ],
+      [
+       "Supervivencia",
+       "Estudiar solo a los clientes que siguen activos"
+      ],
+      [
+       "Exceso de confianza",
+       "Dar un rango de estimación demasiado estrecho"
+      ]
+     ],
+     "refl": "Haz un premortem de una decisión tuya. 1) Elige una decisión que estés por tomar o que tomaste hace poco con datos. 2) Escribe tu hipótesis y el criterio con el que decidirías, como si aún no hubieras visto los números. 3) Imagina que pasó un año y fue un fracaso: anota al menos cuatro causas posibles. 4) Identifica cuál de los cinco sesgos de la lección podría estar en juego y por qué. 5) Escribe quién falta en tus datos y cómo podrías incluirlo.",
+     "modelo": "Modelo: «Decisión: ampliar hasta las 21:00 el horario de la cafetería de mi negocio. Hipótesis: hay demanda nocturna; criterio: si en un mes de prueba las ventas después de las 19:00 cubren el costo del turno extra. Premortem, fracasó porque: probamos en temporada de posadas; contamos ventas que solo se movieron de horario; el personal se cansó; nadie midió la luz y el gas. Sesgos: confirmación, porque la idea es mía, y disponibilidad, por dos clientes que lo pidieron. Faltan quienes pasan y no entran; puedo contar el flujo frente al local dos noches.» Es buena porque fija el criterio antes, nombra causas concretas y busca a quien no está en los datos.",
+     "plantilla": [
+      "Revisión de sesgos y premortem",
+      "Decisión: [ ]\nHipótesis escrita antes de ver datos: [ ]\nCriterio y umbral de decisión: [ ]\nEvidencia que me haría cambiar de opinión: [ ]\nQuién falta en mis datos: [ ]\nSesgos posibles: [confirmación / anclaje / disponibilidad / exceso de confianza / supervivencia]\nPremortem: ya pasó un año y fracasó porque…\n1. [ ]\n2. [ ]\n3. [ ]\n4. [ ]\nRevisor ajeno al proyecto: [nombre y fecha]"
+     ],
+     "clave": [
+      "Los sesgos no se eliminan con buena voluntad: se contienen con procedimientos escritos.",
+      "Pregunta siempre quién no está en tus datos; ahí suele esconderse la respuesta.",
+      "Un premortem saca a la luz los riesgos antes de comprometer recursos."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige una decisión real de tu trabajo o de un negocio que conozcas. En los primeros 25 minutos conversa con quien decide (o simula la conversación por escrito) y convierte su petición en una pregunta de decisión con opciones, criterio, umbral, fecha y partes interesadas. En los siguientes 30 minutos escribe cuatro preguntas de análisis, una de cada tipo, y para cada una anota qué datos necesitas, dónde están y si existen. En 20 minutos haz un premortem con al menos cuatro causas de fracaso y marca qué sesgo podría estar presente en cada una. En los últimos 15 minutos escribe un párrafo que diga qué análisis harás primero, cuál no harás y por qué.",
+    "entregable": "Una ficha de una página con la pregunta de decisión, el mapa de cuatro preguntas por tipo de análisis con sus fuentes de datos, el premortem con sesgos señalados y el párrafo de alcance.",
+    "criterios": "Revisa: la pregunta nombra a quien decide, al menos dos opciones reales, criterio, umbral y fecha; cada pregunta de análisis corresponde a su tipo y tiene una fuente de datos concreta; el premortem incluye causas específicas de tu caso y no genéricas; y el párrafo de alcance deja fuera al menos un análisis que no cambiaría la decisión."
+   },
+   "lab": {
+    "t": "La sucursal que no convence",
+    "obj": "Aplicar la pregunta de decisión, los tipos de análisis y el control de sesgos a la decisión de cerrar o no una sucursal.",
+    "esc": "<b>Mariana,</b> de 41 años, es gerente de operaciones de una cadena familiar de cuatro cafeterías en Zacatecas. El dueño quiere cerrar la sucursal del centro porque «siempre está vacía cuando paso» y le pide un reporte para el lunes. Mariana tiene los cortes diarios del sistema de punto de venta de dos años, la nómina de cada local y el contrato de renta, que vence en marzo.",
+    "e": [
+     [
+      "Escena 1: El dueño le dice: «Nada más confírmame con números que hay que cerrar el centro».",
+      "Consigna: redacta la pregunta de decisión con quién decide, al menos tres opciones (incluida una intermedia), criterio, umbral y fecha, y escribe la frase con la que le explicarías al dueño por qué no basta con confirmar."
+     ],
+     [
+      "Escena 2: Revisando los cortes, Mariana nota que el centro vende poco por la tarde, pero mucho entre 7:00 y 10:00 en días hábiles, cuando el dueño casi nunca pasa.",
+      "Consigna: identifica qué sesgo explica la impresión del dueño y escribe dos preguntas descriptivas y una diagnóstica que convendría contestar antes de decidir."
+     ],
+     [
+      "Escena 3: Un consultor ofrece por una cuota mensual un modelo de inteligencia artificial que «predice qué sucursales van a fracasar».",
+      "Consigna: explica en cinco líneas qué tipo de análisis es, qué tendría que estar resuelto antes y qué análisis más sencillo bastaría para esta decisión."
+     ],
+     [
+      "Escena 4: Con los datos ordenados, el equipo se inclina por reducir el horario del centro a la mañana en vez de cerrarla.",
+      "Consigna: haz un premortem de esa opción con cuatro causas de fracaso y define qué medirás, quién lo hará y cuándo, para saber en tres meses si funcionó."
+     ]
+    ],
+    "p": [
+     [
+      "¿Por qué la impresión del dueño no basta para cerrar la sucursal?",
+      "Se basa en lo que ve a las horas en que pasa",
+      "Porque una impresión nunca sirve para decidir",
+      "Porque la decisión le toca a la gerente y no a él",
+      "La impresión del dueño es una muestra sesgada: solo ve la tarde, que es la hora floja; los datos muestran una mañana fuerte. Las impresiones sí sirven como hipótesis a probar, y la decisión sigue siendo del dueño: el papel de Mariana es darle mejor evidencia."
+     ],
+     [
+      "¿Qué opción intermedia vale la pena incluir en la pregunta?",
+      "Reducir el horario o cambiar el formato",
+      "Esperar a que venza la renta y ver qué pasa",
+      "Abrir otra sucursal que compense las ventas",
+      "Si el local vende bien en la mañana, una opción intermedia como recortar horario o convertirlo en un formato para llevar puede conservar esas ventas con menos costo. Esperar sin analizar no es una opción evaluada, y abrir otra sucursal no responde a la pregunta sobre esta."
+     ],
+     [
+      "¿Qué hace útil el seguimiento del plan?",
+      "Un indicador, un responsable y una fecha",
+      "Un informe mensual con las ventas de la cadena",
+      "Una nueva visita del dueño al local en la tarde",
+      "Un seguimiento útil compara un indicador definido de antemano, por ejemplo la utilidad mensual del local, en una fecha fija y con alguien que responda por él. Un informe general diluye el foco, y otra visita en la tarde repite el sesgo que se quería corregir."
+     ]
+    ],
+    "pl": [
+     "Ficha de decisión de sucursal",
+     "Pregunta de decisión: [ ]\nQuién decide / fecha límite: [ ]\nOpciones: [cerrar / reducir horario / cambiar formato / mantener]\nCriterio y umbral: [ ]\nPreguntas descriptivas: [ ]\nPregunta diagnóstica: [ ]\nSesgo detectado y antídoto: [ ]\nPremortem (4 causas): [ ]\nSeguimiento: indicador [ ] · responsable [ ] · fecha [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "El dueño de una ferretería quiere abrir los domingos medio día durante dos semanas; si no conviene, regresa al horario anterior sin costo. ¿Cómo conviene decidir?",
+     "Probar pronto y medir: el error es barato y reversible",
+     "Hacer antes un estudio de mercado de varios meses en la zona",
+     "Esperar a tener un año de datos de ventas en domingo",
+     "No abrir, porque sin datos previos cualquier decisión es riesgosa"
+    ],
+    [
+     "La supervisora de un call center recibe la petición «mándame las métricas del mes». ¿Cuál es la mejor respuesta?",
+     "¿Qué vas a decidir con ellas y qué te haría cambiar de rumbo?",
+     "Claro, te mando todas las métricas del sistema para que elijas.",
+     "Te mando las mismas métricas del mes pasado, para comparar.",
+     "Te mando solo las que mejoraron, para no alarmar a dirección."
+    ],
+    [
+     "Una agencia de marketing digital quiere estimar cuántos prospectos generará en diciembre la campaña de un cliente si mantiene el presupuesto actual. ¿Qué tipo de análisis es?",
+     "Predictivo",
+     "Descriptivo",
+     "Diagnóstico",
+     "De seguimiento"
+    ],
+    [
+     "La socia de un despacho contable decidirá si contrata a un auxiliar según la carga de trabajo de la temporada de declaraciones anuales. ¿Qué le conviene hacer antes de ver los datos?",
+     "Fijar cuántas horas extra justificarían contratar",
+     "Revisar los datos y después decidir qué es mucho",
+     "Preguntar a los auxiliares si se sienten saturados",
+     "Comparar su plantilla con la de otros despachos"
+    ],
+    [
+     "Una cadena de gimnasios analiza solo las opiniones de quienes llevan más de un año inscritos para decidir qué mejorar. ¿Qué riesgo corre?",
+     "Sesgo de supervivencia: faltan quienes se fueron",
+     "Anclaje: la antigüedad fija la opinión del socio",
+     "Exceso de confianza: la muestra es demasiado grande",
+     "Disponibilidad: los socios antiguos recuerdan más"
+    ],
+    [
+     "Antes de comprar una inyectora nueva para una planta de plásticos, el gerente pide al equipo imaginar que en un año la compra resultó un error y anotar por qué. ¿Qué busca?",
+     "Que salgan riesgos que nadie se atrevía a decir",
+     "Que el equipo acepte la compra con más entusiasmo",
+     "Posponer la decisión hasta tener certeza total",
+     "Identificar desde hoy quién será responsable si falla"
+    ],
+    [
+     "El director de una clínica privada quiere integrar cinco años de expedientes antes de decidir si amplía el horario del laboratorio, aunque la pregunta depende de la demanda de los últimos meses. ¿Qué le dirías?",
+     "Bastan datos recientes y relevantes para esta decisión",
+     "Cinco años de datos siempre darán una respuesta mejor",
+     "Conviene reunir aún más años para eliminar toda duda",
+     "Mejor decidir sin datos, porque integrarlos tarda mucho"
+    ],
+    [
+     "En la junta de presupuesto de una fábrica de muebles, el director dice primero: «Creo que venderemos unas 12,000 piezas el año próximo». Después, todos los pronósticos del equipo quedan entre 11,500 y 12,500. ¿Qué sesgo es probable?",
+     "Anclaje en la primera cifra que se escuchó",
+     "Supervivencia por ignorar los muebles devueltos",
+     "Disponibilidad por recordar las ventas recientes",
+     "Confirmación por buscar datos de la competencia"
+    ],
+    [
+     "Un municipio cambió hace seis meses la ruta de recolección de basura en tres colonias, pero nadie ha revisado si bajaron las quejas. ¿Qué paso del ciclo se omitió?",
+     "El seguimiento de la decisión",
+     "La preparación y documentación de los datos",
+     "La comunicación del hallazgo a los vecinos",
+     "El planteamiento de la pregunta de decisión"
+    ],
+    [
+     "Damián, jefe de almacén de una distribuidora en Torreón, quiere un modelo que prediga faltantes, pero el inventario del sistema no coincide con el físico. ¿Qué conviene hacer primero?",
+     "Corregir el registro de lo que entra y sale",
+     "Entrenar el modelo con los datos que ya existen",
+     "Comprar un sistema nuevo con funciones predictivas",
+     "Hacer más conteos físicos sin cambiar el registro"
+    ]
+   ]
+  },
+  {
+   "t": "Datos confiables, documentados y legales",
+   "r": "La tabla bien hecha, las dimensiones de calidad, de dónde sacar datos (incluidos los datos abiertos de México) y cómo tratar datos personales con la ley vigente.",
+   "lecciones": [
+    {
+     "t": "La tabla bien hecha: granularidad y datos ordenados",
+     "obj": "Definir la granularidad de una tabla y rediseñar una hoja desordenada como datos ordenados que se puedan analizar y actualizar.",
+     "texto": [
+      "Antes de calcular nada, pregúntate qué representa cada fila. A eso se le llama <b>granularidad</b> o grano: ¿una fila es un ticket, un producto dentro de un ticket, un cliente, un día de una sucursal? Si no lo sabes, cometerás errores silenciosos, como sumar el total de un ticket tantas veces como productos tiene o promediar promedios. Escribe el grano en una frase y ponlo arriba de la hoja: «una fila = un producto vendido en un ticket». Esa frase te dice qué puedes sumar, qué puedes contar y con qué otras tablas puedes cruzar.",
+      "El estadístico Hadley Wickham formalizó en 2014 la idea de <b>datos ordenados</b> (en inglés, <i>tidy data</i>) con tres reglas: cada variable es una columna, cada observación es una fila y cada tipo de unidad de observación va en su propia tabla. Suena obvio, pero muchas hojas de trabajo las rompen: meses como columnas, celdas combinadas para agrupar, subtotales intercalados entre los datos, colores que significan «pagado» sin una columna que lo diga, o una celda que dice «3 cajas + 2 sueltas».",
+      "Una tabla bien hecha para analizar tiene una sola fila de encabezados, nombres de columna claros con su unidad («Monto_MXN», «Peso_kg»), un tipo de dato por columna, fechas guardadas como fechas y no como texto, un identificador para cada registro y ningún total adentro. Las versiones para imprimir, con formato bonito y subtotales, se generan después a partir de la tabla limpia, no al revés. Separar la tabla de captura del reporte es la decisión de diseño que más tiempo ahorra a lo largo de un año.",
+      "Una tabla larga, con una fila por cada combinación (productor, parcela, semana, kilos), parece menos cómoda de leer que una ancha con las semanas en columnas, pero es la que una tabla dinámica, Power Query o Power BI aprovechan sin trucos. La ancha sirve para mostrar; la larga, para analizar. En el módulo 3 aprenderás a convertir una en otra con unos cuantos pasos reproducibles; por ahora, el objetivo es que reconozcas una tabla mal construida en cuanto la abres y sepas cómo debería verse."
+     ],
+     "comparar": [
+      "«Así no: “Puse las semanas en columnas, combiné las celdas de cada familia y pinté de verde a los que ya cobraron.”»",
+      "«Así sí: “Una fila por parcela y semana, con una columna de kilos entregados y otra de estado de pago.”»"
+     ],
+     "caso": "Caso ficticio: Fausto, de 57 años, administra una cooperativa de productores de mango en Tepic. Lleva el registro de entregas en una hoja con un renglón por productor, una columna por semana de cosecha, celdas combinadas para agrupar a las familias y en verde a quienes ya cobraron. La asamblea quiere saber qué parcelas rinden menos por hectárea para decidir a quién apoyar con asesoría técnica. Fausto teme que rehacer la hoja le quite días que no tiene.",
+     "p": [
+      [
+       "¿Cuál sería el grano adecuado para la pregunta de la asamblea?",
+       "Una fila por parcela, semana y entrega",
+       "Una fila por familia, con sus totales",
+       "Una fila por semana con todos los kilos",
+       "La pregunta es por parcela y por hectárea, así que la fila debe bajar al nivel de parcela; con la semana y la entrega puedes sumar hacia arriba lo que quieras. Agrupar por familia o por semana borra justo la diferencia entre parcelas que la asamblea necesita ver."
+      ],
+      [
+       "¿Qué problema genera marcar en verde a quienes ya cobraron?",
+       "El estado no se puede filtrar ni contar como dato",
+       "Obliga a revisar la hoja a diario para actualizarla",
+       "El color hace que la hoja se imprima con dificultad",
+       "Un color guarda información que solo entiende quien lo pintó y que las fórmulas y tablas dinámicas no leen con facilidad; una columna de estado sí se cuenta y se filtra. La revisión diaria y la impresión son molestias menores, no el problema de fondo."
+      ],
+      [
+       "¿Qué conviene hacer con la hoja actual?",
+       "Crear una tabla larga y sacar el resumen de ahí",
+       "Dejarla igual y añadir una columna de hectáreas",
+       "Copiarla a una hoja nueva con el mismo formato",
+       "La tabla larga permite calcular rendimiento por parcela y seguir generando la vista por familia para la asamblea. Agregar hectáreas a una hoja con celdas combinadas no resuelve el grano, y copiar el formato traslada los mismos problemas a otro archivo."
+      ]
+     ],
+     "completar": [
+      "Wickham llamó datos ___ a las tablas en las que cada variable es una columna y cada observación una fila.",
+      "ordenados"
+     ],
+     "relacionar": [
+      [
+       "Semanas en columnas",
+       "Una columna Semana y otra de kilos"
+      ],
+      [
+       "Celdas combinadas",
+       "Repetir el valor en cada fila"
+      ],
+      [
+       "Color como dato",
+       "Columna de estado con valores definidos"
+      ],
+      [
+       "Subtotales intercalados",
+       "Totales aparte, en el reporte"
+      ],
+      [
+       "«3 cajas + 2 sueltas» en una celda",
+       "Columnas separadas con una sola unidad"
+      ]
+     ],
+     "refl": "Diagnostica una hoja real. 1) Abre una hoja de cálculo que uses en tu trabajo (puedes cambiar los datos sensibles). 2) Escribe su grano actual en una frase y di si es claro. 3) Enumera todas las violaciones a las tres reglas de datos ordenados que encuentres: celdas combinadas, periodos en columnas, colores con significado, subtotales, unidades mezcladas. 4) Diseña la versión larga: lista de columnas con nombre, unidad y tipo de dato. 5) Explica qué reporte se generaría desde ella y quién lo usaría.",
+     "modelo": "Modelo: «Hoja: control de servicios de una clínica veterinaria. Grano actual: confuso; hay filas por cliente y otras por mascota. Violaciones: una columna por mes, celdas combinadas por familia, rojo para adeudos, subtotales cada diez filas y la celda “vacuna + baño”. Versión larga: ID_servicio (texto), Fecha (fecha), ID_mascota (texto), ID_cliente (texto), Servicio (lista cerrada), Monto_MXN (número), Pagado (sí/no). Grano: una fila = un servicio a una mascota en una fecha. Desde ahí sale el reporte mensual por servicio que usa la dueña para decidir promociones.» Es buena porque define el grano, nombra cada violación y diseña columnas con tipo y unidad.",
+     "plantilla": [
+      "Diseño de tabla ordenada",
+      "Nombre de la tabla: [ ]\nGrano (una fila = …): [ ]\nIdentificador único: [ ]\nColumnas (nombre · unidad · tipo · valores permitidos):\n1. [ ]\n2. [ ]\n3. [ ]\n4. [ ]\nLo que NO va en la tabla: [totales, colores, notas sueltas]\nReporte que se generará desde ella: [ ]\nResponsable de captura: [ ]"
+     ],
+     "clave": [
+      "Antes de calcular, escribe qué representa una fila: ese es el grano de la tabla.",
+      "Cada variable en una columna, cada observación en una fila, cada unidad de observación en su tabla.",
+      "La tabla de captura y el reporte para imprimir son cosas distintas: el segundo sale de la primera."
+     ]
+    },
+    {
+     "t": "Calidad de datos: perfilar antes de analizar",
+     "obj": "Perfilar una tabla con las dimensiones de calidad y documentar los hallazgos en un diccionario de datos antes de analizarla.",
+     "texto": [
+      "«Si está en el sistema, está bien» es uno de los mitos más caros de cualquier organización. Los sistemas guardan lo que alguien capturó, importó o calculó, con todos sus errores: clientes duplicados con dos formas de escribir el nombre, fechas absurdas cuando el campo se dejó vacío, precios en pesos mezclados con precios en dólares, piezas en negativo por una devolución mal registrada. El sistema no te avisa; simplemente suma.",
+      "Para revisar con orden, usa seis <b>dimensiones de calidad</b>. <b>Exactitud</b>: ¿el dato refleja la realidad? <b>Completitud</b>: ¿faltan valores que deberían estar? <b>Validez</b>: ¿respeta el formato y el rango esperado, como un código postal de cinco dígitos o una entrega posterior al pedido? <b>Consistencia</b>: ¿se escribe igual en todas las filas y coincide entre tablas y sistemas? <b>Unicidad</b>: ¿hay registros repetidos? <b>Oportunidad</b>: ¿está suficientemente actualizado para la decisión? No todas pesan igual: para pagar nómina, la exactitud no se negocia; para ver una tendencia de visitas, unos pocos faltantes pueden ser tolerables si lo declaras.",
+      "Revisar la tabla antes de usarla se llama <b>perfilar</b>: cuántas filas tiene y cuántas esperabas, cuántos vacíos hay por columna, cuántos valores distintos, mínimos y máximos, fechas fuera de rango, duplicados en el identificador y categorías escritas de varias maneras. En Excel puedes empezar con filtros, ordenaciones y conteos sencillos. En el editor de Power Query, la pestaña Vista (o Ver) ofrece Calidad de columnas, Distribución de columnas y Perfil de columna; por omisión se calculan solo con las primeras 1,000 filas, y el aviso de la esquina inferior izquierda te deja cambiar al conjunto de datos completo. Los nombres pueden variar con la versión: verifica en la documentación vigente de Microsoft. Y siempre grafica: un histograma o una línea en el tiempo revelan en segundos lo que una tabla esconde.",
+      "Lo que encuentres se documenta. Un <b>diccionario de datos</b> es una tabla sencilla que describe cada columna: nombre, significado, unidad, tipo, valores permitidos, fuente, responsable y problemas conocidos. Parece burocracia hasta el día en que alguien nuevo hereda el archivo, o hasta que tú, seis meses después, ya no recuerdas si «Venta» incluía IVA. Documentar también es honestidad: al presentar un resultado podrás decir qué limpiaste, qué dejaste fuera y por qué."
+     ],
+     "comparar": [
+      "«Así no: “Lo saqué directo del sistema, así que las cifras son confiables.”»",
+      "«Así sí: “Lo saqué del sistema y lo perfilé: encontré clientes duplicados y fechas vacías; aquí explico cómo los traté.”»"
+     ],
+     "caso": "Caso ficticio: Renata, de 31 años, es analista en una fábrica de muebles de madera en Ensenada. Dirección le pide para el viernes el porcentaje de pedidos entregados a tiempo en el año, para decidir si cambia de transportista. Al exportar los pedidos del sistema encuentra fechas de entrega vacías, algunas anteriores a la fecha del pedido y un mismo cliente escrito de cuatro formas. Su jefe le dice: «No pierdas tiempo, el sistema es el oficial; calcula y ya».",
+     "p": [
+      [
+       "¿Qué dimensión de calidad falla en las entregas con fecha anterior al pedido?",
+       "Validez",
+       "Unicidad",
+       "Oportunidad",
+       "Una entrega no puede ocurrir antes del pedido: el dato viola una regla de rango lógico, que es la validez. La unicidad trata de registros repetidos y la oportunidad de qué tan actualizados están los datos; ninguna describe este error."
+      ],
+      [
+       "¿Qué debería hacer Renata con las fechas de entrega vacías?",
+       "Contarlas, investigar su causa y declarar cómo las trató",
+       "Eliminarlas sin avisar, porque no afectan el porcentaje",
+       "Tratarlas como entregas a tiempo para no castigar a nadie",
+       "Los vacíos pueden no ser al azar: si corresponden a entregas problemáticas, quitarlos inflaría el porcentaje de puntualidad. Por eso se cuentan, se investiga su origen y se declara el tratamiento. Asumirlas como puntuales es inventar el dato que falta."
+      ],
+      [
+       "¿Cómo puede responder a su jefe sin frenar la entrega?",
+       "Calcular con lo limpio y anotar los problemas y su efecto",
+       "Negarse a entregar hasta que sistemas lo corrija todo",
+       "Entregar el cálculo directo y corregirlo si alguien reclama",
+       "Entregar a tiempo con los problemas declarados permite decidir sabiendo cuánta duda hay; así dirección puede juzgar si el resultado aguanta. Esperar a que todo esté perfecto frena la decisión, y calcular sin revisar arriesga cambiar de transportista con un número falso."
+      ]
+     ],
+     "completar": [
+      "Antes de analizar conviene ___ la tabla: revisar vacíos, duplicados, rangos y valores distintos.",
+      "perfilar"
+     ],
+     "relacionar": [
+      [
+       "Exactitud",
+       "El precio capturado no coincide con la factura"
+      ],
+      [
+       "Completitud",
+       "Pedidos sin fecha de entrega"
+      ],
+      [
+       "Validez",
+       "Un código postal de cuatro dígitos"
+      ],
+      [
+       "Unicidad",
+       "El mismo cliente registrado dos veces"
+      ],
+      [
+       "Oportunidad",
+       "Inventario actualizado hace tres semanas"
+      ]
+     ],
+     "refl": "Perfila una tabla real. 1) Elige una tabla de tu trabajo con al menos cien filas. 2) Anota cuántas filas esperabas y cuántas tiene. 3) Para cinco columnas clave revisa vacíos, valores distintos, mínimo y máximo, y anota lo raro. 4) Busca duplicados en el identificador. 5) Clasifica cada problema en una de las seis dimensiones y decide qué harás con él: corregir, excluir, marcar o aceptar. 6) Escribe el diccionario de datos de esas cinco columnas.",
+     "modelo": "Modelo: «Tabla: solicitudes de crédito de una caja de ahorro, 1,240 filas; esperaba unas 1,300 porque faltan las de la última semana (oportunidad). Monto: máximo de 9,999,999, captura de relleno (validez); excluyo y marco seis filas. Fecha: 31 vacías (completitud); las marco como sin fecha. Sucursal: “Centro”, “centro” y “Cto.” (consistencia); unifico. ID: doce repetidos (unicidad); conservo el más reciente y anoto el criterio. Diccionario: Monto_MXN, número, monto solicitado sin intereses, fuente: sistema de crédito, responsable: mesa de control.» Es buena porque cuantifica cada problema, lo clasifica y deja una decisión que otra persona puede rastrear.",
+     "plantilla": [
+      "Perfil de calidad y diccionario de datos",
+      "Tabla: [ ] · Fuente: [ ] · Fecha de extracción: [ ]\nFilas esperadas / encontradas: [ ] / [ ]\nPor columna:\nNombre: [ ] · Significado: [ ] · Unidad y tipo: [ ]\nValores permitidos: [ ] · Vacíos: [ ] · Distintos: [ ] · Mín/Máx: [ ]\nProblemas (dimensión): [exactitud / completitud / validez / consistencia / unicidad / oportunidad]\nDecisión: [corregir / excluir / marcar / aceptar] · Responsable: [ ]\nEfecto estimado en el resultado: [ ]"
+     ],
+     "clave": [
+      "Que un dato esté en el sistema no garantiza que sea correcto: perfila antes de analizar.",
+      "Exactitud, completitud, validez, consistencia, unicidad y oportunidad ordenan la revisión.",
+      "El diccionario de datos documenta qué significa cada columna y qué problemas tiene."
+     ]
+    },
+    {
+     "t": "Fuentes internas, encuestas y datos abiertos de México",
+     "obj": "Elegir la fuente adecuada para cada parte de una pregunta, combinar datos internos con encuestas y datos abiertos de México, y registrar su procedencia.",
+     "texto": [
+      "Casi todas las organizaciones tienen más datos de los que creen. Las <b>fuentes internas</b> incluyen el sistema de punto de venta, la facturación electrónica, la nómina, el control de inventarios, la agenda de citas, las hojas que cada área lleva por su cuenta y hasta los mensajes de clientes. Su ventaja es que hablan de tu operación con detalle; su límite es que solo ven a quienes ya te compran, no a quienes se fueron con la competencia ni a quienes nunca llegaron.",
+      "Cuando necesitas opiniones, motivos o intenciones, la fuente suele ser una <b>encuesta</b>. Hacerla bien tiene más técnica de lo que parece: preguntas neutrales («¿qué tan satisfecho estás?» en lugar de «¿verdad que te encantó?»), una sola idea por pregunta, opciones que cubran todos los casos y una prueba piloto con unas cuantas personas antes de enviarla. Lo más delicado es <i>quién</i> responde: si solo contestan los más contentos o los más molestos, el resultado describe a ese grupo y no a todos. En el módulo 5 verás cómo se calcula el margen de error y qué cosas no puede corregir.",
+      "Para mirar fuera de tu organización, México tiene buenos <b>datos abiertos</b>. El INEGI publica los censos de población y los económicos, la Encuesta Nacional de Ocupación y Empleo (ENOE), la Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) y el Directorio Estadístico Nacional de Unidades Económicas (DENUE), que permite ubicar negocios por actividad y zona. El Banco de México ofrece su Sistema de Información Económica, con series como el tipo de cambio FIX. El portal datos.gob.mx reúne conjuntos de datos de dependencias públicas. Sirven para dimensionar un mercado, ubicar competidores o poner tus resultados en contexto.",
+      "Cada fuente tiene su letra chiquita: qué mide exactamente, a qué fecha corresponde, cada cuánto se actualiza, a qué nivel geográfico llega y en qué términos se puede usar. Por eso registra la <b>procedencia</b> de cada dato: fuente, tabla o serie, fecha de consulta, filtros aplicados y enlace. Verifica siempre la versión vigente en el sitio oficial, porque las series se revisan y los enlaces cambian. Una cifra sin procedencia no se puede defender en una junta."
+     ],
+     "comparar": [
+      "«Así no: “Busqué en internet cuántas cafeterías hay en la ciudad y tomé el número de un blog.”»",
+      "«Así sí: “Consulté el DENUE hoy, filtré por actividad y municipio, y guardé el enlace, la fecha y el archivo.”»"
+     ],
+     "caso": "Caso ficticio: Teodoro, de 26 años, es coordinador de proyectos en una agencia de marketing digital en Tlaxcala. La directora evalúa lanzar un paquete de redes sociales para talleres mecánicos de la región y le pide estimar si hay suficientes clientes posibles y qué estarían dispuestos a pagar. Teodoro tiene la lista de clientes de la agencia, puede hacer una encuesta y sabe que existen datos públicos, pero no sabe cuál usar para cada parte de la pregunta.",
+     "p": [
+      [
+       "¿Qué fuente sirve mejor para saber cuántos talleres mecánicos hay en la región?",
+       "El directorio de negocios del INEGI (DENUE)",
+       "La lista de clientes actuales de la agencia",
+       "Una encuesta entre seguidores de la agencia",
+       "El DENUE está hecho justo para ubicar unidades económicas por actividad y zona. La lista de clientes solo muestra a quienes ya contrataron, y una encuesta a seguidores no cuenta negocios: recoge opiniones de un grupo que ya conoce a la agencia."
+      ],
+      [
+       "¿Para qué parte de la pregunta conviene más una encuesta?",
+       "Saber qué buscan los talleres y cuánto pagarían",
+       "Contar cuántos talleres hay en cada municipio",
+       "Calcular cuánto facturó la agencia el último año",
+       "Las preferencias y la disposición a pagar no están en ningún registro: hay que preguntarlas. Contar talleres se resuelve mejor con datos abiertos, y la facturación de la agencia ya está en sus fuentes internas."
+      ],
+      [
+       "Teodoro solo puede encuestar a dueños de talleres que ya siguen a la agencia en redes. ¿Qué debe advertir?",
+       "Que tal vez no representen al resto de los talleres",
+       "Que eso solo importa si la encuesta no es anónima",
+       "Que debe ofrecer un premio para tener más respuestas",
+       "Quien ya sigue a la agencia probablemente tiene más interés en el marketing digital que el dueño de taller promedio, así que el resultado puede sobrestimar la demanda. El anonimato y los premios cambian cuántos y cómo responden, pero no corrigen quién quedó fuera."
+      ]
+     ],
+     "completar": [
+      "Registrar fuente, fecha de consulta, filtros y enlace de cada dato es documentar su ___.",
+      "procedencia"
+     ],
+     "relacionar": [
+      [
+       "DENUE",
+       "Ubicar negocios por actividad y zona"
+      ],
+      [
+       "ENOE",
+       "Ocupación y empleo de la población"
+      ],
+      [
+       "ENIGH",
+       "Ingresos y gastos de los hogares"
+      ],
+      [
+       "Sistema de Información Económica de Banxico",
+       "Series como el tipo de cambio FIX"
+      ],
+      [
+       "Sistema de punto de venta",
+       "Lo que compran tus clientes actuales"
+      ]
+     ],
+     "refl": "Arma el inventario de fuentes para una pregunta. 1) Escribe una pregunta de decisión de tu trabajo. 2) Divídela en tres o cuatro subpreguntas. 3) Para cada una elige una fuente interna, una encuesta o un dato abierto, y explica por qué. 4) Visita al menos un sitio de datos abiertos (INEGI, Banco de México o datos.gob.mx) y anota qué conjunto usarías, a qué fecha corresponde y a qué nivel geográfico llega. 5) Escribe qué limitación tiene cada fuente.",
+     "modelo": "Modelo: «Pregunta: ¿abrimos una segunda papelería en el municipio vecino? Subpreguntas: cuántos negocios similares hay ahí (DENUE, por actividad y localidad, consultado hoy); cuántos hogares con estudiantes hay (censo de población a nivel municipio; refleja la fecha del censo, no hoy); qué compran nuestros clientes en temporada escolar (punto de venta de dos años); si irían al nuevo local (encuesta breve en caja). Limitaciones: el directorio puede no reflejar aperturas recientes, el censo envejece y la encuesta solo llega a quien ya nos compra.» Es buena porque asigna a cada subpregunta la fuente adecuada y reconoce sus límites.",
+     "plantilla": [
+      "Inventario de fuentes de datos",
+      "Pregunta de decisión: [ ]\nSubpregunta 1: [ ] · Tipo de fuente: [interna / encuesta / abierta] · Nombre: [ ]\nSubpregunta 2: [ ] · Tipo de fuente: [ ] · Nombre: [ ]\nSubpregunta 3: [ ] · Tipo de fuente: [ ] · Nombre: [ ]\nProcedencia de cada dato: [fuente, serie o tabla, fecha de consulta, filtros, enlace]\nPeriodicidad y nivel geográfico: [ ]\nLimitaciones conocidas: [ ]\nTérminos de uso revisados: [sí/no]"
+     ],
+     "clave": [
+      "Las fuentes internas describen tu operación, pero no ven a quienes nunca te compraron.",
+      "En una encuesta importa tanto quién responde como qué se pregunta.",
+      "INEGI, Banco de México y datos.gob.mx dan contexto; registra siempre la procedencia."
+     ]
+    },
+    {
+     "t": "Datos personales: lo que exige la ley y cómo protegerlos",
+     "obj": "Identificar datos personales y sensibles en un análisis, aplicar medidas básicas de protección y reconocer cuándo pedir asesoría legal.",
+     "texto": [
+      "Casi cualquier análisis de clientes, empleados o pacientes toca <b>datos personales</b>: información que identifica o puede identificar a una persona. En México, empresas, despachos, consultorios y organizaciones civiles se rigen por la nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares, publicada en el Diario Oficial de la Federación el 20 de marzo de 2025 y vigente desde el día siguiente. La autoridad ya no es el INAI, sino la Secretaría Anticorrupción y Buen Gobierno. Esta lección es un mapa práctico y <b>no sustituye asesoría legal</b>; verifica el texto vigente en el DOF o en diputados.gob.mx.",
+      "La ley mantiene obligaciones conocidas. Quien trata datos debe tener un <b>aviso de privacidad</b> que diga qué datos recaba y para qué, y usarlos solo para esas finalidades. Las personas tienen derechos <b>ARCO</b>: acceso, rectificación, cancelación y oposición; hay 20 días hábiles para responder una solicitud y 15 más para hacerla efectiva, y cada plazo puede ampliarse una vez si se justifica. Los <b>datos sensibles</b>, como salud, origen étnico, creencias, opiniones políticas, preferencia sexual o información genética, tienen protección reforzada y requieren consentimiento expreso y por escrito. Además, las personas pueden oponerse a decisiones automatizadas, sin intervención humana, que les afecten de forma significativa. Las multas se fijan en UMA (Unidad de Medida y Actualización).",
+      "Para quien analiza, la ley se traduce en hábitos. <b>Minimiza</b>: si la pregunta es qué colonia compra más, no necesitas nombres ni teléfonos. Usa identificadores en lugar de nombres y guarda en otro lugar, con acceso restringido, la tabla que los une; eso es <b>seudonimizar</b>. Controla quién ve qué, no mandes bases completas por correo ni por mensajería y nunca pegues datos personales o confidenciales en un asistente de IA sin un contrato o política que lo permita.",
+      "Aquí cae el mito «anonimizar es borrar el nombre». Una tabla sin nombres que conserva código postal, fecha de nacimiento, sexo y puesto puede delatar a una persona, sobre todo en una ciudad mediana o en una empresa pequeña: si solo hay una contadora de 54 años en ese código postal, ya sabes quién es. Anonimizar de verdad exige que nadie pueda reidentificar a alguien con medios razonables: agrupar edades en rangos, quitar columnas innecesarias, no publicar grupos muy pequeños. Si dudas, no compartas y consulta a quien lleve el cumplimiento legal en tu organización."
+     ],
+     "comparar": [
+      "«Así no: “Le quité la columna de nombre a la base de pacientes y ya se la mandé al proveedor.”»",
+      "«Así sí: “Revisé con cumplimiento que el aviso cubra esa finalidad y mandé solo totales por rango de edad y municipio.”»"
+     ],
+     "caso": "Caso ficticio: Yazmín, de 45 años, dirige un centro de oficinas ejecutivas y coworking en Chilpancingo con unas sesenta empresas y profesionistas usuarios. Una mueblería le propone una alianza: quiere la base de usuarios «anonimizada», solo sin nombres, con giro, edad, código postal de domicilio, puesto y horario de uso, para ofrecerles descuentos. Además, el equipo guarda en una carpeta compartida las fotos de las identificaciones de cada visitante. Yazmín ve una oportunidad de ingresos, pero algo no le cuadra.",
+     "p": [
+      [
+       "¿Por qué la base «sin nombres» sigue siendo un riesgo?",
+       "Edad, puesto y código postal pueden identificar a alguien",
+       "Cualquier dato de un coworking es secreto industrial",
+       "Los horarios de uso son datos sensibles según la ley",
+       "Con sesenta usuarios, la combinación de giro, edad, puesto y código postal permite reconocer a casi cualquiera: borrar el nombre no anonimiza. Los datos de usuarios no son secreto industrial, y los horarios de uso son datos personales, pero no entran en la categoría de sensibles."
+      ],
+      [
+       "Antes de compartir cualquier dato, ¿qué debe revisar Yazmín?",
+       "Si su aviso de privacidad prevé esa finalidad",
+       "Si la mueblería tiene buena reputación en redes",
+       "Si algún usuario ha pedido sus derechos ARCO",
+       "Los datos solo pueden usarse para las finalidades informadas; si el aviso no prevé compartirlos con terceros para promociones, no se puede hacer sin más. La reputación del aliado no cambia la obligación legal, y que nadie haya ejercido derechos ARCO no autoriza nuevos usos."
+      ],
+      [
+       "¿Qué medida conviene para las fotos de identificaciones?",
+       "Limitar el acceso y conservarlas solo lo necesario",
+       "Moverlas a una carpeta con un nombre más discreto",
+       "Imprimirlas y archivarlas en recepción bajo llave",
+       "Restringir quién las ve y no guardarlas más tiempo del que exige la finalidad reduce el riesgo de mal uso o fuga. Cambiar el nombre de la carpeta no cambia quién tiene acceso, e imprimirlas solo traslada el problema al papel."
+      ]
+     ],
+     "completar": [
+      "Usar identificadores en lugar de nombres y guardar aparte la tabla que los une se llama ___.",
+      "seudonimizar"
+     ],
+     "relacionar": [
+      [
+       "Aviso de privacidad",
+       "Informa qué datos se recaban y para qué"
+      ],
+      [
+       "Derechos ARCO",
+       "Acceso, rectificación, cancelación y oposición"
+      ],
+      [
+       "Dato sensible",
+       "El diagnóstico médico de un paciente"
+      ],
+      [
+       "Minimizar",
+       "Usar solo las columnas que la pregunta necesita"
+      ],
+      [
+       "Seudonimizar",
+       "Reemplazar nombres por identificadores"
+      ]
+     ],
+     "refl": "Revisa los datos personales de un análisis. 1) Elige una tabla o un análisis de tu trabajo que incluya personas. 2) Marca qué columnas son datos personales y cuáles son sensibles. 3) Para tu pregunta de decisión, tacha las columnas que no necesitas. 4) Describe cómo seudonimizarías o agruparías las que sí necesitas. 5) Anota quién tiene acceso hoy y quién debería tenerlo. 6) Escribe qué duda le llevarías a un especialista o al responsable de cumplimiento de tu organización.",
+     "modelo": "Modelo: «Análisis: ausentismo del personal de producción. Datos personales: nombre, número de empleado, domicilio, edad y turno; sensible: el motivo médico de las incapacidades. Mi pregunta es qué turnos y meses concentran faltas, así que elimino nombre, domicilio y diagnóstico. Reemplazo el número de empleado por un código y agrupo la edad en rangos de diez años. Hoy la hoja la ven seis personas; deberían verla dos de recursos humanos, y yo solo la versión agrupada. Duda para cumplimiento: si podemos usar las fechas de incapacidad para este análisis sin un consentimiento adicional.» Es buena porque minimiza, distingue lo sensible y reconoce dónde termina su criterio.",
+     "plantilla": [
+      "Revisión de datos personales del análisis",
+      "Análisis y pregunta: [ ]\nColumnas con datos personales: [ ]\nColumnas con datos sensibles: [ ]\nColumnas que sí necesito: [ ]\nColumnas que elimino: [ ]\nSeudonimización o agrupación: [ ]\n¿El aviso de privacidad cubre esta finalidad?: [sí / no / consultar]\nQuién tiene acceso hoy / quién debería: [ ]\n¿Se usará en una herramienta de IA?: [no / sí, con contrato o política]\nDudas para asesoría legal o cumplimiento: [ ]"
+     ],
+     "clave": [
+      "Desde marzo de 2025 rige una nueva ley de datos personales para particulares; verifica siempre el texto vigente.",
+      "Pide y usa solo los datos que la pregunta necesita, y cuida todavía más los sensibles.",
+      "Borrar el nombre no anonimiza: la combinación de otros datos puede identificar a una persona."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Toma una tabla real de tu trabajo relacionada con la pregunta de decisión que definiste en el módulo 1 (si tiene datos de personas, trabaja con una copia). En los primeros 20 minutos escribe su grano y rediseña sus columnas como datos ordenados. En los siguientes 30 minutos perfílala: filas, vacíos, distintos, mínimos, máximos y duplicados de al menos cinco columnas, y clasifica cada problema por dimensión de calidad. En 20 minutos arma el inventario de fuentes, agrega al menos una fuente de datos abiertos de México y registra su procedencia. En los últimos 20 minutos haz la revisión de datos personales: qué columnas eliminas, cuáles seudonimizas y qué duda llevarías a asesoría legal.",
+    "entregable": "Un archivo con la tabla rediseñada, una hoja de perfil de calidad, el diccionario de datos de al menos cinco columnas, el inventario de fuentes con procedencia y la revisión de datos personales.",
+    "criterios": "Revisa: el grano está escrito en una frase y la tabla cumple las tres reglas de datos ordenados; cada problema de calidad está cuantificado, clasificado y tiene una decisión; la fuente abierta indica serie o tabla, fecha de consulta y nivel geográfico; y ninguna columna con datos personales se conserva sin que la pregunta la necesite."
+   },
+   "lab": {
+    "t": "Las citas perdidas de las clínicas dentales",
+    "obj": "Aplicar granularidad, perfil de calidad, selección de fuentes y protección de datos personales a un análisis de citas de salud.",
+    "esc": "<b>Leonel,</b> de 38 años, es administrador de una red de tres clínicas dentales en Campeche. Los dueños quieren reducir las citas a las que los pacientes no llegan y le piden un análisis para decidir si contratan un servicio de recordatorios. Cada clínica lleva su agenda en una hoja distinta, con formatos diferentes, y en las notas de cada cita aparecen tratamientos y padecimientos.",
+    "e": [
+     [
+      "Escena 1: Una clínica tiene una pestaña por mes y una columna por consultorio; otra, una fila por paciente con sus citas del año en la misma celda; la tercera, una fila por cita.",
+      "Consigna: define el grano común que necesitas, escribe la lista de columnas de la tabla ordenada (nombre, unidad y tipo) y explica qué hay que hacer con cada formato."
+     ],
+     [
+      "Escena 2: Al juntar los datos, Leonel encuentra citas sin estado, pacientes duplicados con y sin acentos, horas guardadas como texto y un mes completo que falta en una clínica.",
+      "Consigna: clasifica cada problema en su dimensión de calidad, decide qué harás con él y escribe cómo lo declararás en el resultado."
+     ],
+     [
+      "Escena 3: Uno de los dueños sugiere cruzar las inasistencias con datos de la colonia donde vive cada paciente para ver si influyen la distancia o el nivel socioeconómico.",
+      "Consigna: indica qué fuente pública podrías usar, a qué nivel geográfico, qué procedencia registrarías y qué riesgo de privacidad implica el cruce."
+     ],
+     [
+      "Escena 4: El proveedor de recordatorios pide la base completa con nombres, teléfonos y notas de tratamiento «para hacer una prueba».",
+      "Consigna: redacta tu respuesta: qué datos sí enviarías y cuáles no, qué debe revisarse del aviso de privacidad y qué consultarías con asesoría legal antes de firmar."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué grano conviene para analizar las inasistencias?",
+      "Una fila por cita, con su estado",
+      "Una fila por paciente con sus faltas",
+      "Una fila por mes y por consultorio",
+      "Con una fila por cita puedes calcular la tasa de inasistencia por clínica, día, hora o tipo de tratamiento, y sumar hacia arriba lo que haga falta. Por paciente o por mes se pierde el detalle que explica cuándo y por qué se falta."
+     ],
+     [
+      "¿Cómo debe tratar Leonel el mes faltante de una clínica?",
+      "Declararlo y no comparar ese mes entre clínicas",
+      "Rellenarlo con el promedio de los demás meses",
+      "Ignorarlo, porque un mes no cambia el resultado",
+      "Declarar el hueco y excluirlo de las comparaciones evita conclusiones falsas. Rellenarlo con un promedio inventa datos que luego parecen reales, e ignorarlo sin decirlo puede sesgar el resultado si ese mes era atípico, por ejemplo por vacaciones."
+     ],
+     [
+      "¿Por qué las notas de tratamiento exigen más cuidado?",
+      "Son datos de salud, es decir, sensibles",
+      "Son textos largos que ocupan mucho espacio",
+      "Solo el dentista sabe interpretarlas bien",
+      "La información de salud es un dato sensible: tiene protección reforzada y requiere consentimiento expreso y por escrito. Para medir inasistencias, además, casi nunca hace falta. El espacio y la interpretación son problemas técnicos menores frente al riesgo legal y ético."
+     ]
+    ],
+    "pl": [
+     "Plan de datos para un análisis con información de salud",
+     "Pregunta de decisión: [ ]\nGrano común: una fila = [ ]\nColumnas (nombre · unidad · tipo): [ ]\nProblemas de calidad, dimensión y decisión: [ ]\nFuentes externas y procedencia: [ ]\nDatos personales que se usan / se eliminan: [ ]\nDatos sensibles y cómo se protegen: [ ]\nRespuesta al proveedor: [ ]\nDudas para asesoría legal: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "En una tienda de abarrotes, cada fila de la exportación es un producto dentro de un ticket. El encargado suma la columna «Total del ticket» para saber la venta del día. ¿Qué pasa?",
+     "Infla la venta: cuenta cada ticket varias veces",
+     "Obtiene la venta correcta, solo que más lento",
+     "Subestima la venta porque faltan los descuentos",
+     "Obtiene el promedio por ticket y no el total"
+    ],
+    [
+     "Un despacho contable lleva el control de declaraciones con una columna por mes y celdas de color según el estado. Quiere contar cuántas quedaron pendientes por cliente. ¿Qué conviene?",
+     "Una tabla larga con columnas Mes y Estado",
+     "Una leyenda que explique qué es cada color",
+     "Colores más contrastantes para filtrar mejor",
+     "Una pestaña separada para cada mes del año"
+    ],
+    [
+     "La gerente de una planta recibe del sistema un reporte de producción con piezas negativas en algunos días. ¿Qué es lo más prudente?",
+     "Investigar su origen antes de usar el dato",
+     "Usarlo, porque el sistema es la fuente oficial",
+     "Cambiar los negativos por cero y continuar",
+     "Borrar esos días para no distorsionar el total"
+    ],
+    [
+     "Una ONG que reparte despensas tiene beneficiarios registrados dos veces con el nombre escrito distinto. ¿Qué dimensión de calidad falla?",
+     "Unicidad",
+     "Oportunidad",
+     "Validez",
+     "Completitud"
+    ],
+    [
+     "Para decidir los pedidos de mañana, un restaurante usa un inventario que se actualizó por última vez hace tres semanas. ¿Qué dimensión de calidad está en riesgo?",
+     "Oportunidad",
+     "Unicidad",
+     "Validez",
+     "Consistencia"
+    ],
+    [
+     "Una agencia de marketing digital quiere estimar cuántas estéticas y peluquerías hay en tres municipios para ofrecerles un servicio. ¿Qué fuente es más adecuada?",
+     "El DENUE del INEGI",
+     "La ENIGH del INEGI",
+     "La ENOE del INEGI",
+     "Su lista de clientes"
+    ],
+    [
+     "Una cooperativa encuesta a sus socios solo por un grupo de mensajería en el que participan los más activos. ¿Qué limitación debe declarar?",
+     "Puede no representar a los socios poco activos",
+     "Las respuestas por mensajería no tienen validez",
+     "Debe repetirla en papel para que cuente",
+     "Solo vale si responde más de la mitad"
+    ],
+    [
+     "Un coworking quiere compartir con un patrocinador una tabla de usuarios sin nombres, pero con empresa, puesto y edad exacta. ¿Qué le aconsejas?",
+     "Revisar la finalidad y compartir solo datos agregados",
+     "Compartirla, porque sin nombres ya está anonimizada",
+     "Compartirla si el patrocinador firma confidencialidad",
+     "Reemplazar la edad exacta por la fecha de nacimiento"
+    ],
+    [
+     "Un paciente pide a una clínica privada saber qué datos suyos tiene y corregir su teléfono. ¿Qué está ejerciendo?",
+     "Sus derechos de acceso y rectificación",
+     "Su oposición a decisiones automatizadas",
+     "La revocación de su consentimiento",
+     "Sus derechos de cancelación y oposición"
+    ],
+    [
+     "Celia, analista de recursos humanos en una fábrica de Pachuca, quiere pegar la base de nómina en un asistente de IA gratuito para que le haga un resumen. ¿Qué es lo correcto?",
+     "No hacerlo sin un contrato o política que lo permita",
+     "Hacerlo, pero borrando antes la columna de nombres",
+     "Hacerlo, porque el asistente no guarda conversaciones",
+     "Hacerlo solo desde su computadora personal en casa"
+    ]
+   ]
+  }
+ ]
+}

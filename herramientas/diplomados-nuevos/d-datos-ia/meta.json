@@ -1,0 +1,42 @@
+{
+  "id": "d-datos-ia",
+  "pref": "dat",
+  "nombre": "Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones",
+  "color": "#0E7490",
+  "familia": "Tecnología",
+  "area": "Tecnología e IA",
+  "precio": 1890,
+  "desc": "Aprende a convertir datos en decisiones: plantear la pregunta correcta, revisar la calidad y la legalidad de tus datos, limpiar y modelar con Power Query, definir indicadores que no se maquillan, usar estadística para no engañarte, pronosticar midiendo el error, comparar escenarios, apoyarte en la IA generativa sin creerle a ciegas y presentar en Power BI y en un memo de una página. Con casos mexicanos, retos en Excel, 8 laboratorios, un proyecto final con tus propios datos y un cuaderno PDF. Para quien ya usa Excel y quiere decidir mejor.",
+  "aprender": [
+    "Convertir una petición vaga en una pregunta de decisión con opciones, criterio y umbral, y detectar los sesgos que distorsionan el análisis",
+    "Perfilar la calidad de un conjunto de datos, documentarlo en un diccionario y tratar datos personales conforme a la ley vigente",
+    "Limpiar, combinar y transformar datos con Power Query y armar un modelo estrella con tabla calendario que se actualiza con un clic",
+    "Definir KPI con ficha y contrapeso, calcular medidas en el modelo de datos y comparar con justicia entre periodos, metas y segmentos",
+    "Usar dispersión, percentiles, margen de error, pruebas A/B y el razonamiento causal para no confundir ruido o correlación con efecto",
+    "Pronosticar en Excel midiendo el error contra un pronóstico ingenuo y comparar opciones con escenarios, sensibilidad y valor esperado",
+    "Apoyarte en la IA generativa como analista asistente, verificar sus resultados, entender cómo se evalúa un modelo predictivo y vigilar sus sesgos",
+    "Comunicar con gráficos honestos, un tablero en Power BI y un memo de decisión, y dar seguimiento a lo que decidiste"
+  ],
+  "aviso": "Este diplomado te enseña a analizar datos y a usar la inteligencia artificial para decidir mejor; no es una certificación oficial de Microsoft ni de ningún otro proveedor y no sustituye la asesoría legal en protección de datos. Las herramientas, sus funciones de IA y las leyes cambian seguido: verifica siempre la documentación vigente de cada herramienta y el texto vigente de la ley en el Diario Oficial de la Federación.",
+  "referencias": [
+    "Anscombe, F. J. (1973). Graphs in statistical analysis. <i>The American Statistician, 27</i>(1), 17-21. https://doi.org/10.1080/00031305.1973.10478966",
+    "Bickel, P. J., Hammel, E. A. y O'Connell, J. W. (1975). Sex bias in graduate admissions: Data from Berkeley. <i>Science, 187</i>(4175), 398-404. https://doi.org/10.1126/science.187.4175.398",
+    "Brynjolfsson, E., Hitt, L. M. y Kim, H. H. (2011). <i>Strength in numbers: How does data-driven decisionmaking affect firm performance?</i> SSRN. https://doi.org/10.2139/ssrn.1819486",
+    "Brynjolfsson, E., Li, D. y Raymond, L. (2025). Generative AI at work. <i>The Quarterly Journal of Economics, 140</i>(2), 889-942. https://doi.org/10.1093/qje/qjae044",
+    "Cairo, A. (2011). <i>El arte funcional: Infografía y visualización de información</i>. Alamut.",
+    "Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F. y Lakhani, K. R. (2023). <i>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</i> (Documento de trabajo 24-013). Harvard Business School.",
+    "Kahneman, D. (2012). <i>Pensar rápido, pensar despacio</i>. Debate.",
+    "Knaflic, C. N. (2021). <i>Storytelling con datos: Ejemplos prácticos</i>. Anaya Multimedia.",
+    "Ley Federal de Protección de Datos Personales en Posesión de los Particulares. (2025, 20 de marzo). <i>Diario Oficial de la Federación</i>. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+    "National Institute of Standards and Technology. (2023). <i>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</i> (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1",
+    "Spiegelhalter, D. (2023). <i>El arte de la estadística: Cómo aprender de los datos</i>. Capitán Swing.",
+    "UNESCO. (2022). <i>Recomendación sobre la ética de la inteligencia artificial</i>. UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa",
+    "Wickham, H. (2014). Tidy data. <i>Journal of Statistical Software, 59</i>(10), 1-23. https://doi.org/10.18637/jss.v059.i10"
+  ],
+  "giros": [
+    "Despacho contable / fiscal",
+    "Industria / manufactura",
+    "Coworking / oficinas ejecutivas",
+    "Agencia de marketing digital"
+  ]
+}

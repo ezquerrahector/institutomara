@@ -1,0 +1,782 @@
+{
+ "modulos": [
+  {
+   "t": "Preparar y modelar datos con Power Query",
+   "r": "Limpiar y transformar una sola vez y actualizar con un clic; anexar y combinar consultas; anular dinamización; y armar un modelo estrella con tabla calendario.",
+   "lecciones": [
+    {
+     "t": "Power Query: limpiar una vez, actualizar siempre",
+     "obj": "Construir en Power Query una consulta que limpie un archivo y se actualice con un clic, documentando cada paso.",
+     "texto": [
+      "En muchas oficinas el reporte mensual se arma igual cada vez: abrir el archivo que exportó el sistema, borrar las primeras filas, quitar espacios, corregir fechas, copiar, pegar y esperar no haber movido nada. Si eso te toma tres horas al mes, son 36 horas al año repitiendo los mismos clics, y cada repetición es una oportunidad de equivocarte. <b>Power Query</b> (en Excel está en la pestaña Datos, grupo «Obtener y transformar datos») cambia la lógica: haces la limpieza una vez, la herramienta graba cada paso y, cuando llega el archivo nuevo, la vuelves a ejecutar con <b>Actualizar todo</b>.",
+      "El recorrido básico es Datos > <b>Obtener datos</b> > Del archivo (libro, texto/CSV o carpeta). Aparece una vista previa; eliges <b>Transformar datos</b> y entras al editor. Ahí cada acción que haces con menús, como usar la primera fila como encabezado, quitar filas superiores, recortar espacios, reemplazar valores, quitar duplicados o filtrar, queda registrada en el panel <b>Pasos aplicados</b>. Puedes dar clic en cualquier paso para ver cómo estaba la tabla en ese momento, renombrarlo para que otros entiendan qué hace o borrarlo si te equivocaste. El archivo original nunca se modifica: Power Query lo lee, lo transforma y entrega una tabla nueva.",
+      "Un mito frecuente dice que <i>Power Query es para programadores</i>. Por debajo existe un lenguaje llamado M, pero casi todo el trabajo de oficina se resuelve con botones, y el código lo escribe la herramienta sola. Lo que sí exige es pensar como quien diseña un proceso: qué entra, qué reglas se aplican y qué sale. Dos cuidados importan en México. Las fechas: si el sistema exporta 03/04/2026 y Excel lo lee al revés, usa clic derecho en el encabezado > Cambiar tipo > Usar configuración regional y elige Español (México). Y el tipo de cada columna: un importe guardado como texto no suma.",
+      "Al terminar eliges <b>Cerrar y cargar en…</b> y decides el destino: una tabla en una hoja, solo crear conexión o la casilla <b>Agregar estos datos al modelo de datos</b>, que usarás en las lecciones siguientes. Si cada periodo llega en un archivo con la misma estructura, conéctate a la carpeta completa y no a un archivo: el mes nuevo entra con solo guardarlo ahí y actualizar. Los nombres exactos de los menús pueden variar con la versión de Excel; si algo no aparece donde esperas, verifica en la documentación vigente de Microsoft."
+     ],
+     "comparar": [
+      "«Así no: cada mes abro el archivo del banco, borro a mano las filas de encabezado y corrijo las fechas una por una.»",
+      "«Así sí: armé la consulta una vez, renombré cada paso aplicado y ahora guardo el archivo nuevo en la carpeta y doy clic en Actualizar todo.»"
+     ],
+     "caso": "Caso ficticio: Brenda, de 34 años, es contadora en un despacho contable de Saltillo y concilia cada mes los movimientos bancarios de 12 clientes. El banco entrega un archivo CSV por cliente con cinco filas de encabezado, fechas en formato día/mes/año, importes con espacios y algunos movimientos repetidos. Hoy le dedica unos 15 minutos a cada archivo, tres horas al mes en total. Su socio propone contratar a un practicante para seguir haciéndolo a mano; Brenda calcula que montar la consulta le llevaría una tarde, pero teme que el banco cambie el formato y todo se rompa.",
+     "p": [
+      [
+       "Brenda quiere que los archivos de cada mes entren sin rehacer la limpieza. ¿Qué conexión le conviene?",
+       "A la carpeta donde guarda todos los CSV",
+       "A cada CSV por separado, uno distinto cada mes",
+       "A una hoja donde pegue los CSV del mes",
+       "Con la conexión a carpeta, los 12 archivos del mes pasan por los mismos pasos y el mes siguiente basta con guardarlos ahí y actualizar. Conectarse a cada archivo obliga a repetir la consulta, y pegar en una hoja regresa al copiar y pegar que quería evitar."
+      ],
+      [
+       "Al cargar los datos, el 3 de abril aparece como 4 de marzo. ¿Qué debe hacer?",
+       "Cambiar el tipo con configuración regional de México",
+       "Corregir a mano esas fechas en la tabla que ya cargó",
+       "Dejar la fecha como texto para que no se altere",
+       "El sistema exporta día/mes/año y Excel lo interpretó como mes/día/año; cambiar el tipo con configuración regional lo corrige en cada actualización. La corrección a mano se pierde al actualizar, y una fecha como texto no se puede ordenar ni agrupar por mes."
+      ],
+      [
+       "Si un día el banco renombra la columna Importe como Monto, ¿qué pasará y qué hace Brenda?",
+       "Un paso marcará error; lo ubica en Pasos aplicados y lo ajusta",
+       "La consulta detecta el cambio sola y sigue funcionando igual",
+       "Tendrá que borrar la consulta y armarla otra vez desde cero",
+       "Los pasos que mencionan la columna por su nombre fallan, y el editor muestra en Pasos aplicados cuál es; basta ajustar ese paso o renombrar la columna al inicio. Power Query no adivina el cambio, y rehacer todo es innecesario: ese temor no justifica seguir a mano."
+      ]
+     ],
+     "completar": [
+      "Cuando llega el archivo del mes nuevo, lo guardas en la carpeta y das clic en ___ todo.",
+      "Actualizar"
+     ],
+     "refl": "Elige un reporte que hoy armes a mano cada semana o cada mes. 1) Describe de dónde sale el archivo y cada limpieza que le haces. 2) Calcula cuánto tiempo te toma al año. 3) Escribe en orden los pasos que grabarías en Power Query, con un nombre claro para cada uno. 4) Señala qué cambio en el archivo de origen podría romper la consulta y cómo lo detectarías. 5) Decide si te conectarías a un archivo o a una carpeta, y por qué.",
+     "modelo": "Modelo: «Reporte: ventas diarias que exporta el sistema de punto de venta de una papelería. Hoy borro cuatro filas de encabezado, quito la fila de totales, corrijo fechas y junto 30 archivos: unas 2 horas al mes, 24 al año. Pasos: Origen carpeta, Quitar filas superiores (4), Usar primera fila como encabezado, Filtrar fila Total, Cambiar tipo con configuración regional, Recortar espacios en Producto. Riesgo: que cambien el nombre de una columna; lo vería como error en Pasos aplicados. Me conecto a la carpeta.» Es buena porque cuantifica el tiempo, ordena los pasos con nombres claros y anticipa qué puede fallar.",
+     "plantilla": [
+      "Bitácora de una consulta reproducible",
+      "Nombre de la consulta: [ ]\nOrigen (archivo o carpeta y ruta): [ ]\nResponsable y frecuencia de actualización: [ ]\nPaso 1: [nombre del paso] | qué hace: [ ]\nPaso 2: [ ] | qué hace: [ ]\nPaso 3: [ ] | qué hace: [ ]\nDestino al cargar: [tabla / solo conexión / modelo de datos]\nControl de filas:\nB1 Filas en el origen: [ ]\nB2 Filas cargadas: [ ]\nB3 Diferencia: [=B1-B2] (explica cualquier diferencia, por ejemplo duplicados quitados)\nControl de importes:\nB4 Total en el origen: [ ]\nB5 Total cargado: [ ]\nB6 Diferencia: [=B4-B5]\nQué podría romperla y cómo lo detecto: [ ]"
+     ],
+     "clave": [
+      "Power Query graba cada transformación en Pasos aplicados: limpias una vez y actualizas con un clic.",
+      "Revisa tipos de datos y fechas con configuración regional antes de cargar.",
+      "Conéctate a una carpeta cuando cada periodo llega en un archivo con la misma estructura."
+     ]
+    },
+    {
+     "t": "Anexar y combinar consultas sin copiar y pegar",
+     "obj": "Distinguir cuándo anexar y cuándo combinar consultas, elegir el tipo de combinación y controlar que no se dupliquen filas.",
+     "texto": [
+      "Casi nunca la información que necesitas vive en una sola tabla. A veces tienes la misma tabla partida en pedazos: un archivo por sucursal, por mes o por vendedor. Otras veces tienes tablas distintas que comparten una clave: las ventas traen el número de cliente y el catálogo de clientes trae su giro y su ciudad. Son dos problemas diferentes con dos soluciones diferentes en Power Query: <b>Anexar consultas</b> apila filas y <b>Combinar consultas</b> agrega columnas buscando coincidencias.",
+      "Anexar (Inicio > Anexar consultas) pone una tabla debajo de otra; puedes elegir dos tablas o tres o más. La regla clave es que Power Query empareja las columnas por su <b>nombre</b>, no por su posición. Si en una sede la columna se llama Fecha y en otra Fecha reserva, el resultado tendrá dos columnas a medias, llenas de celdas vacías. Por eso primero se estandarizan nombres y tipos en cada consulta y luego se anexa. Un detalle que confunde: al conectarte a una carpeta, el botón dice «Combinar y transformar datos», pero lo que hace es apilar los archivos, es decir, anexar.",
+      "Combinar (Inicio > Combinar consultas) une dos tablas por una o más columnas clave y conserva filas según el tipo de combinación. <b>Externa izquierda</b> conserva todas las filas de la primera tabla y trae lo que coincida de la segunda; es la más usada para enriquecer datos y sustituye con ventaja a las fórmulas de búsqueda copiadas hacia abajo, porque se repite sola en cada actualización. <b>Interna</b> deja solo las filas que coinciden en ambas. <b>Anti izquierda</b> devuelve las filas de la primera que no encontraron pareja: es una auditoría rápida para hallar ventas sin cliente o facturas sin pago. Después de combinar, expandes la columna nueva y eliges solo los campos que necesitas.",
+      "Dos trampas arruinan muchos análisis. La primera: si la clave se repite en la segunda tabla, cada fila de la primera se duplica tantas veces como coincidencias haya, y los totales se inflan sin que nadie lo note. Compara siempre el número de filas antes y después de combinar. La segunda: las claves deben ser idénticas; un espacio al final, mayúsculas distintas o un número guardado como texto impiden la coincidencia. Limpia las claves y dales el mismo tipo en ambas consultas antes de combinar. Existe una opción de coincidencia aproximada, pero úsala solo si revisas a mano lo que emparejó."
+     ],
+     "comparar": [
+      "«Así no: pegué las reservas de las tres sedes una debajo de otra y luego arrastré una fórmula para traer el plan de cada cliente.»",
+      "«Así sí: anexé las tres consultas con los mismos nombres de columna, combiné con el catálogo por clave de cliente y comparé filas antes y después.»"
+     ],
+     "caso": "Caso ficticio: Saúl, de 41 años, coordina la administración de un coworking con tres sedes en Puebla. Cada sede exporta sus reservas de salas en un archivo distinto: la sede Centro tiene 1,240 filas, la sede Sur 860 y la sede Norte 700. Para renegociar planes necesita saber qué empresas clientes usan más las salas, y para eso debe unir las reservas con el catálogo de clientes, que tiene el plan contratado de cada empresa. Al combinar, el resultado salió con 2,950 filas; su jefa quiere el reporte hoy y Saúl duda si entregarlo así.",
+     "p": [
+      [
+       "¿Qué debe hacer Saúl primero con los tres archivos de reservas?",
+       "Anexarlos, después de igualar nombres y tipos",
+       "Combinarlos entre sí por la clave de cliente",
+       "Anexarlos tal cual y corregir las columnas al final",
+       "Son la misma tabla partida en tres: se apilan con Anexar consultas y deben sumar 1,240 + 860 + 700 = 2,800 filas. Combinar entre sí buscaría coincidencias que no tienen sentido aquí, y anexar sin igualar nombres deja columnas a medias que luego no cuadran."
+      ],
+      [
+       "Después de combinar con el catálogo (externa izquierda) hay 2,950 filas y no 2,800. ¿Qué indica?",
+       "Que hay claves de cliente repetidas en el catálogo",
+       "Que la combinación agregó reservas de otra sede",
+       "Que la externa izquierda siempre agrega filas",
+       "Una externa izquierda conserva exactamente las filas de la primera tabla si la clave es única en la segunda. Las 150 filas de más significan que algunas reservas encontraron dos o más clientes con la misma clave. No hay reservas nuevas, y la combinación no agrega filas por sí misma: Saúl no debe entregar así el reporte."
+      ],
+      [
+       "Saúl quiere listar las reservas cuyo cliente no aparece en el catálogo. ¿Qué combinación usa?",
+       "Anti izquierda, con reservas como primera tabla",
+       "Interna, con reservas como primera tabla",
+       "Externa izquierda, con el catálogo primero",
+       "La anti izquierda devuelve las filas de la primera tabla sin pareja en la segunda: justo las reservas sin cliente. La interna las elimina en lugar de mostrarlas, y la externa izquierda con el catálogo primero mostraría lo contrario: clientes que no reservaron."
+      ]
+     ],
+     "completar": [
+      "Para apilar archivos con las mismas columnas usas ___ consultas; para traer columnas de otra tabla usas Combinar consultas.",
+      "Anexar"
+     ],
+     "relacionar": [
+      [
+       "Anexar consultas",
+       "Apilar los archivos de varias sedes con las mismas columnas"
+      ],
+      [
+       "Externa izquierda",
+       "Conservar todas las reservas y traer el plan del cliente"
+      ],
+      [
+       "Interna",
+       "Quedarse solo con las filas que coinciden en ambas tablas"
+      ],
+      [
+       "Anti izquierda",
+       "Encontrar reservas cuyo cliente no está en el catálogo"
+      ],
+      [
+       "Expandir columna",
+       "Elegir qué campos de la tabla combinada traer"
+      ]
+     ],
+     "refl": "Toma dos o más tablas de tu trabajo que hoy juntas copiando y pegando o con fórmulas copiadas hacia abajo. 1) Escribe si el problema es de apilar (anexar) o de enriquecer (combinar). 2) Si anexas, lista los nombres de columna de cada tabla y cómo los igualarías. 3) Si combinas, define la clave, comprueba si es única en la segunda tabla y elige el tipo de combinación. 4) Anota cuántas filas esperas antes y después. 5) Describe qué buscarías con una combinación anti izquierda.",
+     "modelo": "Modelo: «Tablas: pedidos de una tienda en línea de refacciones (8,400 filas) y catálogo de productos (1,120 claves). Es un problema de enriquecer: combino Pedidos con Productos por la clave de producto, externa izquierda, y expando Categoría y Costo. Antes reviso que la clave no se repita en el catálogo: en una copia uso Quitar duplicados y, si quedan menos de 1,120 filas, hay repetidos que aclarar. Espero 8,400 filas después de combinar. Con anti izquierda busco pedidos con clave inexistente; salieron 37, casi todos con un espacio al final.» Es buena porque distingue apilar de enriquecer, verifica la clave y controla las filas.",
+     "plantilla": [
+      "Hoja de control para anexar y combinar",
+      "B1 Filas de la tabla 1: [ ]\nB2 Filas de la tabla 2: [ ]\nB3 Filas de la tabla 3: [ ]\nB4 Filas esperadas al anexar: [=B1+B2+B3]\nB5 Filas obtenidas al anexar: [ ]\nB6 Diferencia: [=B5-B4] (debe ser 0)\nClave de combinación: [ ] | ¿Única en la segunda tabla? [sí/no]\nTipo de combinación: [externa izquierda / interna / anti izquierda]\nB8 Filas antes de combinar: [ ]\nB9 Filas después de combinar: [ ]\nB10 Filas de más: [=B9-B8] (debe ser 0 en externa izquierda con clave única)\nRegistros sin pareja (anti izquierda): [ ] | Causa probable: [ ]"
+     ],
+     "clave": [
+      "Anexar apila filas y empareja columnas por nombre; combinar agrega columnas buscando coincidencias en una clave.",
+      "Compara filas antes y después: una clave repetida multiplica registros e infla los totales.",
+      "La combinación anti izquierda es una auditoría rápida de registros sin pareja."
+     ]
+    },
+    {
+     "t": "Anular dinamización, agrupar y columnas condicionales",
+     "obj": "Convertir reportes anchos en tablas largas, resumir con criterio y clasificar registros con columnas condicionales.",
+     "texto": [
+      "Muchos reportes están hechos para que una persona los lea, no para analizarlos: los meses van como columnas (enero, febrero, marzo…), cada sucursal tiene su propia columna o hay una columna por año. Se ven bien impresos, pero cada mes nuevo obliga a cambiar fórmulas y gráficos. En una tabla ordenada el mes es una variable y debería ocupar una sola columna. <b>Anular dinamización de columnas</b> hace esa conversión: de una tabla ancha a una tabla larga, con una fila por cada combinación de producto y mes.",
+      "En el editor seleccionas las columnas que no cambian (por ejemplo, Máquina y Producto) y eliges Transformar > Anular dinamización de columnas > <b>Anular dinamización de otras columnas</b>. Obtienes dos columnas nuevas, Atributo y Valor, que renombras como Mes y Piezas. Conviene la opción «de otras columnas» porque, cuando el reporte traiga un mes adicional, la consulta lo incluye sola; si seleccionas los meses uno por uno, el mes nuevo se queda fuera. Después ajusta el tipo: el mes como fecha o con su número, para que se ordene en el calendario y no por orden alfabético.",
+      "<b>Agrupar por</b> (Inicio o Transformar > Agrupar por) resume: una fila por línea con la suma de piezas, el recuento de filas o el promedio. Úsalo con criterio. Al agrupar en Power Query pierdes el detalle, y casi siempre es mejor cargar el detalle y resumir después con una tabla dinámica o una medida. Agrupar sí conviene cuando necesitas otra granularidad, por ejemplo una fila por cliente con su fecha de primera compra, para combinarla después. Y cuidado con los porcentajes: el promedio de tasas mensuales no es la tasa del periodo. Agrupa sumando numeradores y denominadores, y divide al final.",
+      "La <b>Columna condicional</b> (Agregar columna > Columna condicional) clasifica sin escribir fórmulas: si Tasa es mayor o igual que 0.03, entonces Crítico; si es mayor o igual que 0.015, Vigilar; en caso contrario, Normal. Las reglas se evalúan en orden y gana la primera que se cumple, así que ve de la condición más exigente a la menos exigente. Como todo en Power Query, la regla queda en Pasos aplicados y se aplica de nuevo en cada actualización. Documenta de dónde salieron los umbrales y quién los aprobó, para que nadie tenga que adivinarlo dentro de seis meses."
+     ],
+     "comparar": [
+      "«Así no: cada mes agrego a mano la columna nueva al reporte y promedio las tasas de rechazo de cada mes para el informe.»",
+      "«Así sí: anulé la dinamización de otras columnas, el mes nuevo entra solo, y la tasa del periodo es rechazos totales entre piezas totales.»"
+     ],
+     "caso": "Caso ficticio: Ofelia, de 52 años, es jefa de calidad en una planta de piezas plásticas inyectadas en Aguascalientes. El sistema le entrega dos reportes, uno de piezas producidas y otro de piezas rechazadas, ambos con una fila por máquina y una columna por mes de enero a septiembre. Su gerente quiere saber qué máquinas tienen una tasa de rechazo preocupante. La máquina 7 produjo 10,000 piezas en julio con 100 rechazos y 1,000 piezas en agosto con 90 rechazos, porque pasó casi todo el mes en mantenimiento. Ofelia duda entre reportar el promedio de las tasas mensuales o la tasa del periodo.",
+     "p": [
+      [
+       "¿Qué debe hacer Ofelia primero con cada reporte?",
+       "Seleccionar Máquina y anular dinamización de otras columnas",
+       "Seleccionar los nueve meses y anular solo esas columnas",
+       "Agrupar por máquina y sumar los nueve meses del reporte",
+       "Con «de otras columnas», octubre y los meses siguientes entrarán solos en cada actualización. Seleccionar los nueve meses deja fuera los nuevos, y agrupar sumando borra el mes, que es justo lo que necesita para ver la evolución."
+      ],
+      [
+       "¿Cuál es la tasa de rechazo de la máquina 7 en julio y agosto juntos?",
+       "Cerca de 1.7 %: 190 de 11,000 piezas",
+       "5 %: el promedio de las tasas de 1 % y 9 %",
+       "9 %: la tasa del mes más reciente",
+       "Julio: 100 ÷ 10,000 = 1 %; agosto: 90 ÷ 1,000 = 9 %. La tasa del periodo es (100 + 90) ÷ (10,000 + 1,000) = 190 ÷ 11,000 ≈ 1.73 %. Promediar 1 % y 9 % da a un mes de 1,000 piezas el mismo peso que a uno de 10,000; usar solo agosto ignora la mayor parte de la producción."
+      ],
+      [
+       "Ofelia escribe las reglas así: si la tasa es ≥ 1.5 %, Vigilar; si es ≥ 3 %, Crítico; en otro caso, Normal. ¿Qué falla?",
+       "Una tasa de 4 % quedará como Vigilar",
+       "Una tasa de 1 % quedará como Crítico",
+       "Ninguna máquina quedará como Normal",
+       "Las reglas se evalúan en orden y gana la primera que se cumple: un 4 % ya cumple ≥ 1.5 % y nunca llega a la segunda regla. Hay que poner primero ≥ 3 %. Un 1 % no cumple ninguna de las dos y sí queda como Normal."
+      ]
+     ],
+     "completar": [
+      "Para convertir los meses de columnas a filas usas Anular ___ de otras columnas.",
+      "dinamización"
+     ],
+     "refl": "Busca un reporte ancho de tu trabajo, con meses, sucursales o años como columnas. 1) Dibuja cómo se ve hoy y cómo quedaría en formato largo. 2) Indica qué columnas dejarías fijas y cuáles se volverían filas. 3) Define una columna condicional con 3 categorías, sus umbrales en orden y quién debería aprobarlos. 4) Decide si agruparías en Power Query o resumirías después, y justifica. 5) Si el reporte tiene porcentajes, escribe cómo calcularías bien la tasa del periodo.",
+     "modelo": "Modelo: «Reporte: cartera vencida de una distribuidora de medicamentos, con un cliente por fila y una columna por semana. Dejo fijas Cliente y Ruta y anulo la dinamización de las demás: quedan Semana e Importe vencido. Columna condicional sobre días de atraso: si ≥ 90, Alto riesgo; si ≥ 30, Seguimiento; en caso contrario, Al corriente, en ese orden. Los umbrales los aprobó la gerencia de crédito. No agrupo en Power Query: cargo el detalle y resumo en una tabla dinámica. El porcentaje vencido es la suma de lo vencido entre la suma de la cartera, no un promedio de porcentajes.» Es buena porque ordena las reglas de mayor a menor y protege el cálculo de tasas.",
+     "plantilla": [
+      "Diseño de transformación de un reporte ancho",
+      "Columnas fijas: [ ]\nColumnas que se vuelven filas: [ ]\nNuevo nombre de Atributo: [ ] | Nuevo nombre de Valor: [ ]\nColumna condicional, en este orden:\n1. Si [columna] ≥ [umbral alto] entonces [categoría]\n2. Si [columna] ≥ [umbral medio] entonces [categoría]\nEn caso contrario: [categoría]\nAprobó los umbrales: [ ] | Fecha: [ ]\nComprobación de tasas:\nB1 Suma de rechazos del periodo: [ ]\nB2 Suma de piezas producidas: [ ]\nB3 Tasa del periodo: [=B1/B2]\nB4 Promedio de tasas mensuales (solo para comparar): [ ]\nB5 Diferencia en puntos porcentuales: [=(B4-B3)*100]"
+     ],
+     "clave": [
+      "Anular dinamización de otras columnas convierte reportes anchos en tablas largas y acepta meses nuevos sin cambios.",
+      "Agrupa solo cuando necesites otra granularidad; para tasas, suma numeradores y denominadores y divide al final.",
+      "En una columna condicional gana la primera regla que se cumple: ordénalas de la más exigente a la menos."
+     ]
+    },
+    {
+     "t": "El modelo estrella: hechos, dimensiones y calendario",
+     "obj": "Diseñar un modelo estrella con tabla de hechos, dimensiones, relaciones uno a varios y tabla calendario.",
+     "texto": [
+      "Cuando ya tienes consultas limpias, la tentación es combinarlas todas en una tabla gigante con cien columnas. Funciona un tiempo, hasta que el archivo pesa demasiado y el nombre de un producto aparece escrito de tres formas. El <b>modelo estrella</b> es la forma estándar de organizar datos para análisis: en el centro, una <b>tabla de hechos</b> con los eventos medibles (cada venta, cada reserva, cada pieza rechazada) y, alrededor, <b>dimensiones</b> que describen esos eventos: productos, clientes, sucursales, empleados y fechas.",
+      "La tabla de hechos es larga y estrecha: fecha, claves de las dimensiones y cantidades como piezas e importe. Cada dimensión es corta y ancha: una fila por producto con su categoría y su costo, o por cliente con su giro y ciudad. Se unen con <b>relaciones uno a varios</b>: un producto aparece una vez en su catálogo y muchas veces en las ventas. Por eso la clave debe ser única en la dimensión; si un código se repite, la relación no se puede crear o los resultados salen mal. Antes de armar el modelo, escribe la <b>granularidad</b> de los hechos en una frase: una fila por renglón de factura, o una fila por máquina por día.",
+      "En Excel cargas cada consulta con Cerrar y cargar en… > Solo crear conexión y marcas Agregar estos datos al modelo de datos. Luego defines las relaciones en Datos > Relaciones o en la vista de diagrama de Power Pivot, según tu versión, uniendo la clave de la dimensión con la de los hechos. Así, una tabla dinámica creada desde el modelo de datos cruza campos de varias tablas sin combinar nada: el filtro viaja de la dimensión a los hechos por la relación. Power BI Desktop sigue la misma lógica en su vista de modelo.",
+      "La dimensión más importante es la <b>tabla calendario</b>: una fila por día, sin huecos, desde el 1 de enero del primer año de tus datos hasta el 31 de diciembre del último, con columnas como Año, Mes, Nombre del mes, Trimestre y Día de la semana. En Power Query las agregas con Agregar columna > Fecha. Si usas solo las fechas de los hechos, los días sin ventas desaparecen y las comparaciones fallan. Marca esa tabla como tabla de fechas en el modelo; las funciones de comparación entre periodos del módulo siguiente dependen de ella. Agrega columnas propias de tu negocio, como día hábil o temporada alta."
+     ],
+     "comparar": [
+      "«Así no: combiné ventas, productos, tiendas y metas en una sola tabla de 60 columnas para que el jefe pueda filtrar todo.»",
+      "«Así sí: dejé las ventas como hechos, productos, tiendas y calendario como dimensiones, y una tabla dinámica del modelo cruza todo.»"
+     ],
+     "caso": "Caso ficticio: Iván, de 27 años, es analista en una distribuidora de abarrotes de Culiacán que surte a 600 tiendas desde cuatro rutas. Tiene tres consultas limpias: ventas de 18 meses con una fila por renglón de factura, el catálogo de productos y el catálogo de tiendas, que incluye la ruta de cada una. Su jefe le pide «todo en una sola hoja para poder filtrar» y además comparar contra las metas, que el área comercial captura por ruta y por mes. Iván no sabe si combinar todo en una tabla o armar un modelo.",
+     "p": [
+      [
+       "¿Cuál es la tabla de hechos en el modelo de Iván?",
+       "Las ventas, con una fila por renglón de factura",
+       "El catálogo de tiendas, porque tiene más columnas",
+       "El catálogo de productos, que todo lo describe",
+       "Los hechos son los eventos medibles, con fecha, claves y cantidades: las ventas. Los catálogos describen esos eventos y son dimensiones, aunque tengan muchas columnas o sean muy consultados."
+      ],
+      [
+       "Al crear la relación entre Productos y Ventas, Excel marca error porque una clave se repite en Productos. ¿Qué hace Iván?",
+       "Revisa qué descripción es la correcta y deja una fila por clave",
+       "Quita duplicados de inmediato, sin revisar cuál fila es la buena",
+       "Crea la relación al revés, desde Ventas hacia Productos",
+       "La dimensión necesita claves únicas, pero los duplicados suelen esconder un error de captura: hay que decidir cuál descripción vale. Quitar duplicados a ciegas conserva la primera fila, que puede ser la equivocada, y invertir la relación no resuelve que la clave se repita."
+      ],
+      [
+       "Las metas están por ruta y por mes; las ventas, por día y renglón de factura. ¿Cómo integra las metas?",
+       "Como otra tabla de hechos mensual, con rutas y calendario",
+       "Combinándolas en Power Query con cada renglón de factura",
+       "Repartiendo cada meta mensual en partes iguales entre los días",
+       "Las metas tienen otra granularidad: van mejor como una segunda tabla de hechos, con la fecha del primer día del mes, relacionada con una dimensión Rutas y con el calendario, y se comparan a nivel mes. Combinarlas con cada renglón repetiría la meta miles de veces; repartirla por día inventa un patrón diario que nadie definió."
+      ]
+     ],
+     "completar": [
+      "En un modelo estrella, la tabla de ___ guarda los eventos medibles y las dimensiones los describen.",
+      "hechos"
+     ],
+     "relacionar": [
+      [
+       "Tabla de hechos",
+       "Cada renglón de factura con fecha, claves e importe"
+      ],
+      [
+       "Dimensión",
+       "Catálogo de tiendas con ruta, colonia y giro"
+      ],
+      [
+       "Tabla calendario",
+       "Una fila por día, sin huecos, con año, mes y trimestre"
+      ],
+      [
+       "Relación uno a varios",
+       "Un producto aparece una vez en su catálogo y muchas en ventas"
+      ],
+      [
+       "Granularidad",
+       "Lo que representa exactamente cada fila de los hechos"
+      ]
+     ],
+     "refl": "Diseña en papel el modelo estrella de un tema de tu trabajo. 1) Escribe la pregunta de decisión que quieres contestar. 2) Define la tabla de hechos y su granularidad en una frase. 3) Lista 3 o 4 dimensiones con su clave y tres columnas descriptivas cada una. 4) Dibuja las relaciones uno a varios. 5) Define el rango de tu tabla calendario y dos columnas propias de tu negocio que le agregarías.",
+     "modelo": "Modelo: «Pregunta: ¿en qué horarios y salas conviene subir la tarifa de un centro de capacitación? Hechos: una fila por reservación, con fecha, hora de inicio, clave de sala, clave de cliente, horas y monto. Dimensiones: Salas (clave, capacidad, piso, equipo), Clientes (clave, giro, tamaño, ciudad), Horario (hora, franja mañana, tarde o noche) y Calendario (fecha, mes, día de la semana, día hábil, temporada). Relaciones uno a varios de cada dimensión hacia Reservaciones. Calendario del 1 de enero de 2025 al 31 de diciembre de 2026.» Es buena porque parte de la pregunta, declara la granularidad y deja una clave única en cada dimensión.",
+     "plantilla": [
+      "Diseño de modelo estrella y calendario",
+      "Pregunta de decisión: [ ]\nTabla de hechos: [ ] | Granularidad: una fila por [ ]\nCantidades que se suman: [ ]\nDimensión 1: [ ] | clave: [ ] | columnas: [ ]\nDimensión 2: [ ] | clave: [ ] | columnas: [ ]\nDimensión 3: [ ] | clave: [ ] | columnas: [ ]\nCalendario en una hoja: A1 Fecha | A2 [primer día, ej. 01/01/2025] | A3 [=A2+1] copiado hacia abajo hasta [último día]; convierte el rango en tabla y llévalo a Power Query\nB1 Primer día: [ ]\nB2 Último día: [ ]\nB3 Días que debe tener: [=B2-B1+1]\nB4 Filas del calendario: [ ]\nB5 ¿Sin huecos?: [=B4=B3] (debe decir VERDADERO)\nColumnas propias: [día hábil, temporada, …]"
+     ],
+     "clave": [
+      "Separa hechos (eventos medibles) de dimensiones (lo que los describe) y únelos con relaciones uno a varios.",
+      "La clave debe ser única en cada dimensión y la granularidad de los hechos debe caber en una frase.",
+      "Una tabla calendario completa y marcada como tabla de fechas es la base de toda comparación entre periodos."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos construye en Excel un pequeño sistema reproducible, con datos de tu trabajo (sin datos personales) o con datos de ejemplo. 1) Guarda en una carpeta tres archivos mensuales con la misma estructura y conéctate con Datos > Obtener datos > Del archivo > De la carpeta; en Transformar datos corrige encabezados, tipos y fechas con configuración regional, y renombra cada paso en Pasos aplicados. 2) Combina con un catálogo (Combinar consultas, externa izquierda) y haz una segunda combinación anti izquierda para listar los registros sin pareja. 3) Si tienes metas con meses como columnas, usa Anular dinamización de otras columnas. 4) Crea la tabla calendario (A2 con el primer día y A3 =A2+1 copiado hacia abajo) y agrégale Año, Mes y Trimestre con Agregar columna > Fecha. 5) Carga todo con Cerrar y cargar en… > Solo crear conexión y marca Agregar estos datos al modelo de datos; crea las relaciones uno a varios y una tabla dinámica desde el modelo. 6) Prueba: agrega un cuarto archivo a la carpeta, usa Actualizar todo y concilia en una hoja de control el total de cada archivo con =SUMA() contra el total de la tabla dinámica.",
+    "entregable": "Un libro de Excel con las consultas nombradas y documentadas, el modelo con sus relaciones visible en la vista de diagrama, una tabla dinámica que cruce al menos dos dimensiones y una hoja de control con las fórmulas de conciliación de filas e importes antes y después de actualizar.",
+    "criterios": "Revisa: cada paso aplicado tiene un nombre que otra persona entiende, las filas y los importes del origen cuadran con la tabla dinámica después de agregar el cuarto archivo, las claves de las dimensiones son únicas y el calendario no tiene huecos, y la consulta anti izquierda muestra cuántos registros quedaron sin pareja y por qué."
+   },
+   "lab": {
+    "t": "Los reportes de campañas de la agencia",
+    "obj": "Diseñar con Power Query una consulta reproducible y un modelo estrella que unan campañas de varias plataformas de anuncios con clientes y presupuestos.",
+    "esc": "<b>Lorena,</b> de 38 años, dirige operaciones en una agencia de marketing digital de Morelia que maneja campañas de 25 clientes en tres plataformas de anuncios. Cada lunes, dos ejecutivas pasan medio día copiando los reportes exportados a una hoja maestra, y el mes pasado un cliente descubrió que su gasto aparecía duplicado. Lorena quiere un proceso que se actualice con un clic y que nadie tenga que tocar a mano.",
+    "e": [
+     [
+      "Escena 1: Los tres reportes traen los mismos datos con nombres distintos: Costo, Gasto e Inversión. Uno usa fechas día/mes/año y otro mes/día/año.",
+      "Consigna: escribe los pasos aplicados que harías en cada consulta antes de anexar (nombres, tipos, configuración regional) y cómo comprobarías con una hoja de control que no se dupliquen filas."
+     ],
+     [
+      "Escena 2: Al anexar quedan 4,320 filas. Al combinar con el catálogo de clientes (externa izquierda) siguen siendo 4,320, pero 210 filas tienen el cliente vacío.",
+      "Consigna: explica qué combinación usarías para listar esas 210 filas, qué causas revisarías en las claves y cómo lo corregirías en la consulta, sin escribir nada a mano en la tabla final."
+     ],
+     [
+      "Escena 3: Los presupuestos llegan en una hoja con un cliente por fila y una columna por mes. Lorena quiere clasificar cada cliente y mes como Sobregiro (gasto de 110 % o más del presupuesto), En rango (de 90 % a menos de 110 %) o Subejercido (menos de 90 %).",
+      "Consigna: describe cómo dejarías los presupuestos en formato largo, cómo agruparías el gasto por cliente y mes, cómo lo combinarías con el presupuesto y escribe la columna condicional con sus reglas en el orden correcto."
+     ],
+     [
+      "Escena 4: El director propone agregar al modelo la lista de prospectos que captan las campañas, con nombre, teléfono y correo de cada persona, para «ver todo junto».",
+      "Consigna: dibuja el modelo estrella (hechos, dimensiones, calendario y relaciones) y responde al director qué datos de prospectos entran y cuáles no, y por qué basta con conteos para las preguntas de la agencia."
+     ]
+    ],
+    "p": [
+     [
+      "Un cliente tuvo un presupuesto de 40,000 pesos en septiembre y gastó 46,000. ¿Cómo queda clasificado?",
+      "Sobregiro, con 115 % del presupuesto",
+      "En rango, con 87 % del presupuesto ejercido",
+      "Sobregiro, con 15 % del presupuesto",
+      "46,000 ÷ 40,000 = 1.15, es decir, 115 %: rebasa el 110 %. El 87 % sale de dividir al revés (40,000 ÷ 46,000), y el 15 % es el excedente, no el porcentaje ejercido que piden las reglas."
+     ],
+     [
+      "Lorena escribe la columna condicional así: primero «si % ≥ 0.9, En rango» y luego «si % ≥ 1.1, Sobregiro». ¿Qué pasa?",
+      "Ningún cliente quedará como Sobregiro",
+      "Todos quedarán como Subejercido",
+      "Funciona igual: el orden no importa",
+      "Todo cliente con 110 % o más ya cumple la primera regla (≥ 0.9) y se queda como En rango. Quienes gastan menos de 90 % sí quedan como Subejercido, así que no son todos. El orden importa porque gana la primera regla que se cumple."
+     ],
+     [
+      "¿Qué granularidad conviene para la tabla de hechos de campañas?",
+      "Una fila por campaña, plataforma y día",
+      "Una fila por cliente con el total del mes",
+      "Una fila por plataforma con el total semanal",
+      "Con el detalle por campaña, plataforma y día puedes sumar después a semana, mes o cliente, y comparar campañas. Los totales mensuales o semanales impiden ver qué campaña o qué día explicó el gasto, y no se pueden desagregar después."
+     ]
+    ],
+    "pl": [
+     "Diseño de consulta y modelo para reportes de varias fuentes",
+     "Fuente 1: [ ] | columnas a renombrar: [ ] | formato de fecha: [ ]\nFuente 2: [ ] | columnas a renombrar: [ ] | formato de fecha: [ ]\nFuente 3: [ ] | columnas a renombrar: [ ] | formato de fecha: [ ]\nB1 Filas fuente 1: [ ]  B2 Filas fuente 2: [ ]  B3 Filas fuente 3: [ ]\nB4 Filas esperadas al anexar: [=B1+B2+B3]\nCombinación con catálogo: tipo [ ] | clave [ ] | filas sin pareja (anti izquierda): [ ]\nPresupuestos: columnas fijas [ ] | anular dinamización de otras columnas\nB6 Gasto del mes: [ ]  B7 Presupuesto del mes: [ ]\nB8 Porcentaje ejercido: [=B6/B7]\nReglas en orden: 1) ≥ 1.1 Sobregiro  2) ≥ 0.9 En rango  3) en caso contrario Subejercido\nModelo: hechos [ ] | dimensiones [ ] | calendario del [ ] al [ ]\nDatos personales que NO entran al modelo: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Amparo recibe cada semana un archivo de inventario con la misma estructura y quiere dejar de rehacer la limpieza. ¿Qué le recomiendas?",
+     "Conectarse a la carpeta y actualizar al llegar cada archivo",
+     "Grabar una macro que copie y pegue el archivo de la semana",
+     "Pedir al sistema un solo archivo con todo el historial",
+     "Limpiar cada archivo con fórmulas antes de pegarlo"
+    ],
+    [
+     "En una consulta, el paso Tipo cambiado marca error después de que el proveedor agregó una columna. ¿Dónde empiezas a revisar?",
+     "En Pasos aplicados, en el paso con error",
+     "En la hoja donde se cargó la tabla final",
+     "En el archivo original, borrando la columna",
+     "En la tabla dinámica, actualizándola dos veces"
+    ],
+    [
+     "Una agencia anexa los reportes de enero (3,100 filas) y febrero (2,900). El resultado tiene 6,000 filas, pero dos columnas de costo a medio llenar. ¿Qué pasó?",
+     "La columna de costo tenía otro nombre en cada archivo",
+     "La anexión duplicó las filas que se repetían",
+     "Faltó combinar los archivos por la clave de campaña",
+     "Febrero tenía menos filas que enero y quedaron huecos"
+    ],
+    [
+     "Joel combina 5,000 pedidos con un catálogo de clientes (externa izquierda) y obtiene 5,400 filas. ¿Qué revisa primero?",
+     "Si hay claves repetidas en el catálogo",
+     "Si faltan clientes en el catálogo",
+     "Si debió usar una anti izquierda",
+     "Si hay pedidos con la misma fecha"
+    ],
+    [
+     "Un despacho contable quiere listar las facturas emitidas que no tienen ningún pago registrado. ¿Qué combinación usa?",
+     "Anti izquierda, con facturas como primera tabla",
+     "Interna, con facturas como primera tabla",
+     "Anti izquierda, con pagos como primera tabla",
+     "Externa izquierda, con pagos como primera tabla"
+    ],
+    [
+     "Una planta tiene un reporte con una columna por turno: Matutino, Vespertino y Nocturno. Quiere analizar por turno. ¿Qué hace?",
+     "Fija las demás columnas y anula la dinamización de otras",
+     "Agrupa por turno y suma las tres columnas del reporte",
+     "Crea una columna condicional distinta para cada turno",
+     "Anexa la tabla consigo misma tres veces seguidas"
+    ],
+    [
+     "En una columna condicional de cobranza, las reglas son: si atraso ≥ 30, Seguimiento; si atraso ≥ 90, Alto riesgo. ¿Cómo queda un cliente con 120 días de atraso?",
+     "Como Seguimiento, porque gana la primera regla",
+     "Como Alto riesgo, porque cumple las dos reglas",
+     "Sin categoría, y la consulta marca un error",
+     "En la categoría que diga En caso contrario"
+    ],
+    [
+     "Un hospital agrupa por mes el promedio de las tasas de reingreso de cada área. ¿Cuál es el problema?",
+     "Las áreas chicas pesan igual que las grandes",
+     "Agrupar por mes elimina de la tabla los meses sin datos",
+     "Power Query no puede promediar porcentajes",
+     "La tasa debería resumirse con la mediana"
+    ],
+    [
+     "En el modelo de datos de una cadena de farmacias, ¿cómo debe ser la relación entre Sucursales y Ventas?",
+     "Uno a varios: una sucursal aparece en muchas ventas",
+     "Varios a varios, porque hay muchas ventas por día",
+     "Uno a uno: cada venta tiene su propia sucursal",
+     "Uno a varios: una venta aparece en muchas sucursales"
+    ],
+    [
+     "Un coworking analiza la ocupación por día de la semana, pero los domingos sin reservas no aparecen y el promedio diario sale inflado. ¿Qué falta?",
+     "Una tabla calendario completa relacionada con las reservas",
+     "Una columna condicional que marque cuáles de los días son domingos",
+     "Anexar una tabla aparte con los domingos vacíos",
+     "Agrupar las reservas por semana y no por día"
+    ]
+   ]
+  },
+  {
+   "t": "Indicadores y análisis que responden preguntas",
+   "r": "Definir KPI que no se puedan «maquillar», calcular medidas sobre el modelo de datos, comparar de forma justa y segmentar con Pareto, cohortes y embudos.",
+   "lecciones": [
+    {
+     "t": "KPI bien definidos (y la ley de Goodhart)",
+     "obj": "Definir KPI con fórmula exacta, línea base y contrapeso para que no se puedan maquillar.",
+     "texto": [
+      "Un indicador clave de desempeño (KPI, por sus siglas en inglés) no es cualquier número que se pueda calcular: es una medida que se revisa con regularidad porque está ligada a una decisión. La prueba más útil es preguntar: si este número sube o baja, ¿qué haríamos distinto? Si nadie sabe contestar, es un dato interesante, no un KPI. Por eso es falso que <i>un buen tablero tenga muchos indicadores</i>: con veinte, nadie sabe a cuál atender y los importantes se pierden entre los demás. Para una decisión, unos pocos bien escogidos funcionan mejor, y el resto puede vivir en reportes de consulta.",
+      "Un KPI bien definido cabe en una ficha: nombre, pregunta que responde, <b>fórmula exacta</b> con numerador y denominador, qué se incluye y qué se excluye, fuente, frecuencia, responsable, meta y dirección deseada. «Tasa de cancelación» parece clara hasta que preguntas si una cita reprogramada cuenta como cancelada, si el denominador son las citas agendadas o las confirmadas y si se mide por la fecha de la cita o por la fecha en que se canceló. Cada respuesta da un número distinto, y dos áreas pueden discutir semanas sin darse cuenta de que miden cosas diferentes.",
+      "La <b>ley de Goodhart</b>, que se atribuye al economista Charles Goodhart (1975) y se conoce sobre todo por la formulación de la antropóloga Marilyn Strathern, advierte que cuando una medida se vuelve meta deja de ser buena medida. Si pagas un bono por llamadas atendidas por hora, las llamadas se acortan aunque los problemas no se resuelvan; si premias el cierre de tickets, aparecen tickets que se cierran y se reabren. No siempre hay mala fe: la gente responde al incentivo que le pusiste. La defensa es acompañar cada KPI de volumen o velocidad con un <b>indicador de contrapeso</b> de calidad (resolución al primer contacto, reaperturas, quejas) y revisar de vez en cuando los casos que hay detrás del número.",
+      "Distingue también entre <b>indicadores de resultado</b>, que miden lo que ya pasó (ventas del mes, clientes perdidos), e <b>indicadores adelantados</b>, que se mueven antes y permiten actuar a tiempo (cotizaciones enviadas, citas confirmadas para la próxima semana). Un buen conjunto combina ambos. Y fija la meta a partir de la <b>línea base</b>, no de un deseo: si la tasa de los últimos seis meses estuvo entre 18 % y 22 %, prometer 5 % el mes próximo no motiva; invita a maquillar."
+     ],
+     "comparar": [
+      "«Así no: el tablero tiene 18 indicadores, la tasa de cancelación se calcula distinto en cada sucursal y el bono depende solo del volumen.»",
+      "«Así sí: cuatro KPI con ficha y fórmula exacta, una meta que sale de la línea base y un contrapeso de calidad para cada indicador de volumen.»"
+     ],
+     "caso": "Caso ficticio: Gerardo, de 49 años, dirige una clínica de fisioterapia en Xalapa con seis terapeutas. Para crecer, propone pagar un bono por sesiones atendidas por terapeuta al mes. Su coordinadora le muestra otra cifra: de 140 pacientes que iniciaron tratamiento en el primer semestre, solo 84 completaron el plan indicado. Gerardo quiere un tablero con quince indicadores para «tener todo controlado»; la coordinadora le pide quedarse con pocos y bien definidos.",
+     "p": [
+      [
+       "¿Qué riesgo trae pagar el bono solo por sesiones atendidas?",
+       "Que se sumen sesiones sin que los pacientes mejoren",
+       "Que los terapeutas atiendan a menos pacientes al día",
+       "Que el indicador sea demasiado difícil de calcular",
+       "Por la ley de Goodhart, el número se vuelve el objetivo: se pueden agendar sesiones de más o más cortas sin mejorar los resultados. Atender a menos pacientes iría contra el bono, y contar sesiones es fácil: el problema no es el cálculo sino el incentivo."
+      ],
+      [
+       "¿Qué definición de tasa de plan completado es más sólida?",
+       "Completaron el plan ÷ iniciaron tratamiento en el mismo periodo",
+       "Sesiones atendidas ÷ sesiones agendadas por los pacientes en el mes",
+       "Altas del mes ÷ pacientes atendidos en ese mismo mes",
+       "Numerador y denominador se refieren a las mismas personas: 84 ÷ 140 = 60 %. La segunda mide asistencia a sesiones, no planes completados, y la tercera mezcla pacientes que iniciaron en periodos distintos con los atendidos en el mes."
+      ],
+      [
+       "¿Qué conjunto de indicadores conviene más para el tablero de Gerardo?",
+       "Plan completado, sesiones, cancelaciones y satisfacción",
+       "Los quince que propuso Gerardo, para no perder ningún detalle",
+       "Solo sesiones por terapeuta, porque es lo más fácil",
+       "Pocos indicadores ligados a decisiones, con un volumen (sesiones) equilibrado por resultados y calidad (plan completado, satisfacción) y un adelantado (cancelaciones). Quince dispersan la atención, y uno solo de volumen es el que más se presta al maquillaje."
+      ]
+     ],
+     "completar": [
+      "Cuando una medida se vuelve meta deja de ser buena medida: así lo dice la ley de ___.",
+      "Goodhart"
+     ],
+     "relacionar": [
+      [
+       "Indicador de resultado",
+       "Pacientes que completaron su plan el semestre pasado"
+      ],
+      [
+       "Indicador adelantado",
+       "Citas confirmadas para la próxima semana"
+      ],
+      [
+       "Indicador de contrapeso",
+       "Reaperturas de tickets junto a tickets cerrados"
+      ],
+      [
+       "Línea base",
+       "Cómo se ha comportado el indicador en los últimos meses"
+      ],
+      [
+       "Fórmula exacta",
+       "Numerador, denominador, inclusiones y exclusiones"
+      ]
+     ],
+     "refl": "Elige una decisión recurrente de tu trabajo. 1) Escribe la decisión y la pregunta que debe responder un indicador. 2) Llena la ficha completa de un KPI: fórmula con numerador y denominador, inclusiones, exclusiones, fuente, frecuencia, responsable y dirección deseada. 3) Calcula su línea base con los últimos 6 periodos y propón una meta realista. 4) Imagina cómo alguien podría mejorar el número sin mejorar la realidad y define un indicador de contrapeso. 5) Agrega un indicador adelantado.",
+     "modelo": "Modelo: «Decisión: a qué clientes dar seguimiento en una empresa de mantenimiento de aires acondicionados. KPI: tasa de servicio repetido = visitas a un mismo equipo dentro de los 30 días siguientes a otra visita ÷ visitas cerradas en el mes; excluye mantenimientos programados. Fuente: sistema de órdenes; mensual; responsable: jefe técnico; menor es mejor. Línea base de seis meses: entre 7 % y 10 %; meta: 6 % en dos trimestres. Maquillaje posible: registrar la repetición como servicio nuevo; contrapeso: quejas por cliente. Adelantado: visitas sin refacción disponible.» Es buena porque la fórmula no deja huecos, la meta sale de la línea base y anticipa el maquillaje.",
+     "plantilla": [
+      "Ficha de KPI a prueba de maquillaje",
+      "Nombre del KPI: [ ]\nDecisión que apoya: [ ] | Si sube haremos: [ ] | Si baja haremos: [ ]\nFórmula: [numerador] ÷ [denominador]\nIncluye: [ ] | Excluye: [ ]\nFuente: [ ] | Frecuencia: [ ] | Responsable: [ ]\nDirección deseada: [mayor es mejor / menor es mejor]\nLínea base (escribe en B2:B7 los últimos 6 periodos):\nB8 Mínimo: [=MIN(B2:B7)]\nB9 Promedio: [=PROMEDIO(B2:B7)]\nB10 Máximo: [=MAX(B2:B7)]\nMeta y fecha: [ ]\nCómo se podría maquillar: [ ]\nIndicador de contrapeso: [ ]\nIndicador adelantado: [ ]"
+     ],
+     "clave": [
+      "Un KPI está ligado a una decisión: si nadie sabe qué haría cuando cambia, no es clave.",
+      "Escribe la fórmula exacta con numerador, denominador, inclusiones y exclusiones.",
+      "Por la ley de Goodhart, acompaña cada meta de volumen o velocidad con un contrapeso de calidad."
+     ]
+    },
+    {
+     "t": "Medidas sobre el modelo de datos: tablas dinámicas y DAX básico",
+     "obj": "Crear medidas básicas en DAX sobre el modelo de datos y comprobarlas a mano.",
+     "texto": [
+      "Con el modelo estrella listo, la tabla dinámica se crea con Insertar > Tabla dinámica > Del modelo de datos (el nombre exacto puede variar con tu versión). En la lista de campos aparecen todas las tablas, y puedes poner la categoría de Productos en filas, el mes del Calendario en columnas y el importe de Ventas en valores, sin haber combinado nada. Al arrastrar un campo numérico a valores, Excel crea una suma automática. Sirve para empezar, pero para un cálculo reutilizable, como un margen o una variación, conviene escribir una <b>medida</b>.",
+      "Una medida es una fórmula con nombre que se calcula en el contexto de cada celda de la tabla dinámica: la misma medida Ventas da el total de enero en la columna de enero y el de la sucursal Norte en la fila de esa sucursal. Esa es la diferencia con una <b>columna calculada</b>, que se calcula renglón por renglón y se guarda en la tabla. Un error clásico es calcular el margen porcentual por renglón y sumarlo: salen porcentajes absurdos. Los porcentajes se calculan como medida, dividiendo totales. En Excel creas medidas con clic derecho sobre la tabla en la lista de campos > Agregar medida, o desde Power Pivot > Medidas, según tu versión.",
+      "Las medidas se escriben en <b>DAX</b>, el lenguaje de fórmulas del modelo de datos de Excel y de Power BI, y sus funciones se escriben en inglés aunque tu programa esté en español: SUM, DIVIDE y CALCULATE, no SUMA ni DIVIDIR. Cuatro medidas cubren buena parte del trabajo diario: Ventas = SUM(Ventas[Importe]); Margen = SUM(Ventas[Importe]) - SUM(Ventas[Costo]); Margen % = DIVIDE([Margen], [Ventas]), que devuelve vacío en lugar de error si el denominador es cero; y Ventas año anterior = CALCULATE([Ventas], SAMEPERIODLASTYEAR(Calendario[Fecha])). Si tu configuración usa punto y coma como separador, úsalo.",
+      "<b>CALCULATE</b> es la función más poderosa del grupo: evalúa una medida cambiando los filtros. Con SAMEPERIODLASTYEAR recorre el filtro de fechas un año atrás, así que en la celda de septiembre de 2026 te da septiembre de 2025; para que funcione de forma confiable necesitas una tabla calendario completa, sin huecos, y conviene marcarla como tabla de fechas. Con ella armas Variación % = DIVIDE([Ventas] - [Ventas año anterior], [Ventas año anterior]). Antes de confiar en una medida, compruébala en un caso pequeño: filtra un mes y una sucursal, suma el detalle en la hoja con =SUMA() y verifica que coincida."
+     ],
+     "comparar": [
+      "«Así no: hice una columna Margen % en cada renglón, la puse en la tabla dinámica y corregí el total a mano en la presentación.»",
+      "«Así sí: creé la medida Margen % con DIVIDE sobre totales y la comprobé con la suma del detalle de un mes antes de presentarla.»"
+     ],
+     "caso": "Caso ficticio: Paola, de 30 años, es analista comercial en una fábrica de muebles de madera en Uruapan. En su tabla de ventas creó una columna Margen % renglón por renglón y, al ponerla en la tabla dinámica, el total de septiembre de 2026 dice 1,240 %. Los datos del mes son ventas por 1,850,000 pesos y costo de 1,221,000 pesos; en septiembre de 2025 vendieron 1,600,000 pesos. La dirección quiere la cifra correcta para la junta de mañana, y Paola duda si basta con corregir el porcentaje a mano en la presentación.",
+     "p": [
+      [
+       "¿Por qué la tabla dinámica muestra 1,240 %?",
+       "Suma los porcentajes de cada renglón en vez de dividir totales",
+       "La columna tiene formato de número en lugar de formato de porcentaje",
+       "Promedia los renglones de varios meses al mismo tiempo",
+       "La suma automática agrega los porcentajes de cientos de renglones, y eso no significa nada. El formato no cambia el valor, y un promedio daría una cifra más creíble pero igual de equivocada, porque no pondera por el tamaño de cada venta."
+      ],
+      [
+       "¿Cuál es el margen porcentual correcto de septiembre de 2026?",
+       "34 %: 629,000 entre 1,850,000",
+       "66 %: 1,221,000 entre 1,850,000",
+       "51.5 %: 629,000 entre 1,221,000",
+       "Margen = 1,850,000 − 1,221,000 = 629,000; 629,000 ÷ 1,850,000 = 0.34. El 66 % es la proporción del costo, no el margen, y dividir el margen entre el costo da el porcentaje de sobreprecio, que es otra medida."
+      ],
+      [
+       "¿Qué medida da la variación contra el mismo mes del año anterior y cuánto vale?",
+       "DIVIDE de la diferencia entre ventas del año anterior: 15.6 %",
+       "DIVIDE de la diferencia entre ventas del año actual: 13.5 %",
+       "SUM de las ventas de ambos años: 3,450,000 pesos",
+       "La variación se mide contra la base: (1,850,000 − 1,600,000) ÷ 1,600,000 = 250,000 ÷ 1,600,000 ≈ 15.6 %. Dividir entre las ventas actuales da 13.5 %, que subestima el crecimiento, y sumar ambos años no compara nada."
+      ]
+     ],
+     "completar": [
+      "Para que SAMEPERIODLASTYEAR funcione de forma confiable necesitas una tabla ___ completa, sin huecos y marcada como tabla de fechas.",
+      "calendario"
+     ],
+     "refl": "Con el modelo que armaste en el módulo 3 o con un ejemplo propio: 1) Escribe tres medidas en DAX: un total con SUM, un porcentaje con DIVIDE y una comparación con CALCULATE y SAMEPERIODLASTYEAR. 2) Explica con tus palabras qué hace cada una. 3) Identifica en tus archivos un porcentaje que hoy se calcula por renglón y luego se suma o se promedia. 4) Describe cómo comprobarías a mano una de las medidas con un mes y un segmento. 5) Anota qué revisarías del calendario antes de usar la comparación anual.",
+     "modelo": "Modelo: «Medidas para una red de tres gimnasios: Ingresos = SUM(Cobros[Monto]); Socios activos = DISTINCTCOUNT(Cobros[ClaveSocio]); Ingreso por socio = DIVIDE([Ingresos], [Socios activos]); Ingresos año anterior = CALCULATE([Ingresos], SAMEPERIODLASTYEAR(Calendario[Fecha])). Hoy el porcentaje de renovación se promedia por sucursal; lo cambiaría a renovaciones ÷ vencimientos totales. Compruebo Ingresos filtrando marzo y la sucursal Centro, y sumo el detalle con =SUMA() en la hoja. Calendario: del 1 de enero de 2024 al 31 de diciembre de 2026, sin huecos y marcado.» Es buena porque cada medida es reutilizable, divide totales y se verifica a mano.",
+     "plantilla": [
+      "Medidas básicas y su comprobación",
+      "Medidas DAX (las funciones van en inglés; en el cuadro de Excel el nombre va en su casilla y la fórmula en otra):\nVentas = SUM(Ventas[Importe])\nCosto = SUM(Ventas[Costo])\nMargen = [Ventas] - [Costo]\nMargen % = DIVIDE([Margen], [Ventas])\nVentas año anterior = CALCULATE([Ventas], SAMEPERIODLASTYEAR(Calendario[Fecha]))\nVariación % = DIVIDE([Ventas] - [Ventas año anterior], [Ventas año anterior])\nComprobación en la hoja (un mes y un segmento):\nB1 Ventas del detalle: [ ]\nB2 Costo del detalle: [ ]\nB3 Margen %: [=(B1-B2)/B1]\nB4 Ventas del mismo mes del año anterior: [ ]\nB5 Variación %: [=(B1-B4)/B4]\n¿Coincide con la tabla dinámica? [sí/no]"
+     ],
+     "clave": [
+      "Una medida se recalcula en el contexto de cada celda; una columna calculada se guarda renglón por renglón.",
+      "Los porcentajes se calculan dividiendo totales con DIVIDE, nunca sumando porcentajes por renglón.",
+      "Las funciones DAX se escriben en inglés; CALCULATE con SAMEPERIODLASTYEAR funciona bien con un calendario completo, sin huecos y marcado como tabla de fechas."
+     ]
+    },
+    {
+     "t": "Comparar con justicia: tasas, metas, mezcla y periodos equivalentes",
+     "obj": "Hacer comparaciones justas con tasas, periodos equivalentes y atención al efecto mezcla.",
+     "texto": [
+      "Un número aislado no dice nada: 1.2 millones de pesos de venta pueden ser una gran noticia o una alarma, según contra qué los compares. Hay cuatro comparaciones habituales y cada una contesta algo distinto: contra el periodo anterior (¿vamos mejor que el mes pasado?), contra el mismo periodo del año anterior (¿crecimos, una vez descontada la temporada?), contra la meta (¿cumplimos lo comprometido?) y contra otras unidades (¿qué sucursal o área funciona mejor?). Elige la que corresponda a tu pregunta de decisión y dila en el título del reporte.",
+      "La primera regla es comparar <b>tasas</b> y no totales cuando las unidades son de distinto tamaño. Una sucursal de 400 m² casi siempre venderá más que una de 120 m²; lo que te dice cuál funciona mejor es la venta por metro cuadrado, por empleado o por cliente atendido. Lo mismo pasa con las quejas: 30 quejas en un área que atendió 6,000 casos (0.5 %) preocupan menos que 12 en un área que atendió 800 (1.5 %). Elige el denominador que represente la oportunidad real de que el evento ocurra.",
+      "La segunda regla es usar <b>periodos equivalentes</b>. Marzo tiene 31 días y febrero 28; un mes puede tener cinco fines de semana y otro cuatro; la Semana Santa cae en marzo o en abril según el año, y el Buen Fin mueve el comercio de noviembre. Por eso conviene comparar venta por día o por día hábil, o contra el mismo mes del año anterior. Cuidado con los meses incompletos: si hoy es 26 de octubre, comparar octubre a la fecha contra octubre completo del año pasado siempre se verá mal. Compara del 1 al 26 en ambos años; una columna del calendario que marque los días ya transcurridos ayuda a filtrarlo.",
+      "La tercera trampa es el <b>efecto mezcla</b>: un promedio general puede bajar aunque todas sus partes suban, porque cambió la proporción entre ellas. Si una cadena abre un local de ticket bajo, el ticket promedio de la cadena cae aunque cada sucursal haya subido el suyo. Antes de concluir algo de un promedio total, ábrelo por segmento y revisa si cambió la composición. Por último, la <b>meta</b> debe usar la misma fórmula y los mismos periodos que el indicador real: comparar contra la meta anual dividida entre doce ignora la temporada y castiga los meses flojos de siempre."
+     ],
+     "comparar": [
+      "«Así no: la sucursal Centro creció 8 % en marzo; felicitemos al gerente y cambiemos el menú porque el ticket de la cadena bajó.»",
+      "«Así sí: por día, la sucursal Centro bajó 2.5 %, y el ticket de la cadena cayó por la mezcla: cada sucursal lo subió.»"
+     ],
+     "caso": "Caso ficticio: Néstor, de 56 años, supervisa una cadena familiar de restaurantes en Tuxtla Gutiérrez que tenía tres sucursales. La sucursal Centro vendió 1,120,000 pesos en febrero de 2026 y 1,209,000 en marzo, y el dueño quiere felicitar al gerente por el crecimiento. Además, en marzo abrieron un cuarto local en la zona de comida de una plaza, con ticket bajo, y el ticket promedio de la cadena bajó aunque las tres sucursales anteriores subieron el suyo. El dueño piensa cambiar el menú para «recuperar el ticket».",
+     "p": [
+      [
+       "¿Cuánto cambió la venta diaria de la sucursal Centro de febrero a marzo?",
+       "Bajó 2.5 %: de 40,000 a 39,000 pesos por día",
+       "Subió 8 %: de 1,120,000 a 1,209,000 pesos",
+       "Subió 2.5 %: de 39,000 a 40,000 pesos por día",
+       "Febrero de 2026 tuvo 28 días: 1,120,000 ÷ 28 = 40,000; marzo, 31: 1,209,000 ÷ 31 = 39,000. La venta diaria bajó (39,000 − 40,000) ÷ 40,000 = −2.5 %. El 8 % compara totales de meses de distinto largo, y la tercera opción invierte los meses."
+      ],
+      [
+       "¿Qué explica la baja del ticket promedio de la cadena?",
+       "Un efecto mezcla por el nuevo local de ticket bajo",
+       "Que las sucursales anteriores bajaron sus precios",
+       "Que marzo tuvo más días que febrero de 2026",
+       "Cada sucursal subió su ticket; el promedio general cayó porque ahora pesa un local con tickets más bajos. No hubo baja de precios, y los días del mes afectan los totales, no el ticket promedio."
+      ],
+      [
+       "¿Qué comparación le recomiendas al dueño antes de cambiar el menú?",
+       "El ticket de cada sucursal contra su mismo mes del año anterior",
+       "El ticket promedio de toda la cadena contra el que tuvo en febrero",
+       "La venta total de marzo contra la meta anual entre doce",
+       "Comparar cada sucursal consigo misma un año antes separa el efecto mezcla y la temporada; el local nuevo se evalúa aparte. El ticket de la cadena es justo el número contaminado por la mezcla, y la meta anual entre doce ignora la temporada."
+      ]
+     ],
+     "completar": [
+      "Cuando el promedio general cambia porque cambió la proporción entre segmentos, hablamos de efecto ___.",
+      "mezcla"
+     ],
+     "relacionar": [
+      [
+       "Venta por metro cuadrado",
+       "Comparar sucursales de distinto tamaño"
+      ],
+      [
+       "Mismo mes del año anterior",
+       "Quitar el efecto de la temporada"
+      ],
+      [
+       "Venta por día hábil",
+       "Comparar meses con distinto número de días"
+      ],
+      [
+       "Efecto mezcla",
+       "El promedio baja aunque cada segmento suba"
+      ],
+      [
+       "Periodo a la fecha",
+       "Comparar del 1 al 26 de octubre en ambos años"
+      ]
+     ],
+     "refl": "Toma un reporte comparativo que circule en tu trabajo. 1) Escribe qué se compara contra qué y qué pregunta contesta. 2) Revisa si compara totales de unidades de distinto tamaño y propón la tasa adecuada con su denominador. 3) Revisa si los periodos son equivalentes: días, días hábiles, temporadas o meses incompletos. 4) Abre un promedio general por segmento y busca un efecto mezcla. 5) Reescribe el título del reporte con la comparación justa.",
+     "modelo": "Modelo: «Reporte: quejas por área en un hospital privado. Hoy compara totales: Urgencias tiene 45 quejas y Consulta externa 20, y se concluye que Urgencias está peor. Tasa propuesta: quejas por cada 1,000 pacientes atendidos. Urgencias atendió 15,000 (3 por 1,000) y Consulta externa 4,000 (5 por 1,000). Periodos: ambos son el trimestre completo. Mezcla: en Consulta externa crecieron las citas de primera vez, que en este hospital concentran más quejas; las separo. Título nuevo: Consulta externa tiene la tasa de quejas más alta del trimestre.» Es buena porque elige un denominador que representa la oportunidad de queja y revisa la composición.",
+     "plantilla": [
+      "Comparación justa en una hoja",
+      "Pregunta: [ ]\nB2 Valor del periodo actual: [ ]\nB3 Días (o días hábiles) del periodo actual: [ ]\nC2 Valor del periodo de comparación: [ ]\nC3 Días del periodo de comparación: [ ]\nB4 Valor por día, actual: [=B2/B3]\nC4 Valor por día, comparación: [=C2/C3]\nB5 Variación del total: [=(B2-C2)/C2]\nB6 Variación por día: [=(B4-C4)/C4]\nB7 Eventos (quejas, ventas…): [ ]\nB8 Denominador (casos, m², empleados): [ ]\nB9 Tasa por cada 1,000: [=B7/B8*1000]\nMezcla: participación de cada segmento, actual [ ] contra anterior [ ]\n¿El periodo actual está completo? [sí / no: comparar a la fecha]\nTítulo con la comparación justa: [ ]"
+     ],
+     "clave": [
+      "Compara tasas con el denominador correcto cuando las unidades tienen tamaños distintos.",
+      "Usa periodos equivalentes: por día, por día hábil, el mismo mes del año anterior o a la fecha.",
+      "Antes de concluir por un promedio total, ábrelo por segmento: el efecto mezcla engaña."
+     ]
+    },
+    {
+     "t": "Segmentar para encontrar dónde actuar: Pareto, cohortes y embudos",
+     "obj": "Usar Pareto, cohortes y embudos para encontrar el lugar donde actuar primero.",
+     "texto": [
+      "Un total te dice cuánto; la segmentación te dice dónde. Tres técnicas sencillas responden casi siempre a la pregunta ¿por dónde empiezo? El <b>análisis de Pareto</b> ordena los elementos de mayor a menor y calcula el porcentaje acumulado: clientes por ingreso, defectos por causa, productos por margen. Es común que unos pocos elementos concentren gran parte del total, pero el famoso 80/20 es un patrón frecuente, no una ley: a veces el 30 % de los clientes deja el 60 % del ingreso y a veces el total está bastante repartido. No lo supongas; calcúlalo.",
+      "En Excel basta una tabla dinámica ordenada de mayor a menor y, al lado, el porcentaje acumulado: si los valores están en B2:B51, en C2 escribes =SUMA($B$2:B2)/SUMA($B$2:$B$51) y la copias hacia abajo. Marca dónde se cruza el 80 % y pregúntate qué harías distinto con ese grupo. Pareto también sirve al revés: en los últimos lugares puede haber clientes que cuestan más de lo que dejan. Por eso conviene repetirlo con margen o con horas invertidas, no solo con ventas, y comparar las dos listas.",
+      "Una <b>cohorte</b> es un grupo que comparte un punto de partida, por ejemplo los clientes cuya primera compra fue en enero. En lugar de mirar a todos los clientes revueltos, comparas qué porcentaje de cada cohorte sigue comprando uno, dos o tres meses después. Así distingues si la retención mejora de verdad o si solo entran más clientes nuevos que esconden a los que se van. En Power Query obtienes la fecha de primera compra con Agrupar por cliente y la operación Mín sobre la fecha; luego la combinas con las ventas para calcular los meses transcurridos desde el inicio.",
+      "Un <b>embudo</b> sigue las etapas de un proceso, como visitas, solicitudes, contactos y ventas, y calcula la conversión de cada paso contra el anterior. El paso con la caída más grande, o el más barato de mejorar, es el candidato para actuar. Tres cuidados: define cada etapa con la misma precisión que un KPI; sigue a las mismas personas en el tiempo, porque quien pidió información el día 30 tal vez se inscriba el mes siguiente; y no confundas la conversión de un paso con la conversión total, de la primera etapa a la última."
+     ],
+     "comparar": [
+      "«Así no: las inscripciones no crecen; dupliquemos el presupuesto de anuncios para traer el doble de visitas.»",
+      "«Así sí: el embudo muestra que perdemos 60 % de los interesados antes del primer contacto; primero acortemos el tiempo de llamada.»"
+     ],
+     "caso": "Caso ficticio: Ximena, de 29 años, es analista en una agencia de marketing digital de Matamoros y lleva la cuenta de una escuela de inglés. En septiembre, la página de la escuela tuvo 20,000 visitas, 600 personas llenaron el formulario, el equipo de la escuela logró contactar a 240 y se inscribieron 60. La directora quiere duplicar el presupuesto de anuncios. Ximena nota que el equipo tarda en promedio tres días en llamar a cada interesado y no sabe cómo plantearlo sin que parezca que la agencia culpa al cliente.",
+     "p": [
+      [
+       "¿Cuál es la conversión total, de visita a inscripción?",
+       "0.3 %: 60 de 20,000 visitas",
+       "25 %: 60 de 240 contactados",
+       "3 %: 600 de 20,000 visitas",
+       "60 ÷ 20,000 = 0.003, es decir, 0.3 %. El 25 % es la conversión de un solo paso (contacto a inscripción) y el 3 % es la de visita a formulario: ninguno es la conversión total."
+      ],
+      [
+       "¿Qué etapa conviene atacar primero según los datos?",
+       "El contacto: solo se llama a 40 % de los interesados",
+       "Las visitas: 20,000 al mes son pocas para la escuela",
+       "La inscripción: 25 % de los contactados es muy poco",
+       "De 600 formularios solo se contacta a 240 (40 %): se pierde a 60 % de quienes ya levantaron la mano, y llamar más rápido cuesta poco. Más visitas cuesta dinero en anuncios y hereda la misma fuga, y no hay referencia que diga que 25 % de inscripción sea bajo."
+      ],
+      [
+       "Si el contacto sube de 40 % a 70 % y lo demás no cambia, ¿cuántas inscripciones habría al mes?",
+       "105, es decir, 45 más que hoy",
+       "120, el doble de las actuales",
+       "90, es decir, 30 más que hoy",
+       "600 × 0.70 = 420 contactados; 420 × 0.25 = 105 inscripciones. Las 120 saldrían de duplicar las visitas con las tasas de hoy, y 90 supone que cada punto de mejora en el contacto agrega una inscripción, sin pasar por las tasas del embudo."
+      ]
+     ],
+     "completar": [
+      "Un grupo de clientes que comparte un punto de partida, como el mes de su primera compra, es una ___.",
+      "cohorte"
+     ],
+     "refl": "Elige un problema de tu trabajo en el que no sepas por dónde empezar. 1) Haz un Pareto con datos reales (clientes, causas, productos) y escribe qué porcentaje del total concentra el 20 % superior. 2) Repite el Pareto con margen u horas y compara las dos listas. 3) Define una cohorte posible y qué mirarías uno, dos y tres meses después. 4) Dibuja un embudo de tu proceso con la conversión de cada paso. 5) Elige un solo lugar donde actuar y justifícalo con números.",
+     "modelo": "Modelo: «Problema: devoluciones en una tienda en línea de calzado deportivo. Pareto por motivo: talla incorrecta 46 %, defecto 21 %, color distinto 14 %, otros 19 %; dos motivos concentran 67 %. Con el costo de cada devolución, la talla sigue arriba. Cohorte: compradores de primera vez de julio; reviso cuántos vuelven a comprar a 30, 60 y 90 días. Embudo: 12,000 visitas a fichas de producto, 900 carritos (7.5 %), 450 pagos (50 % de los carritos). Actuaría primero en la guía de tallas, porque ataca el motivo principal y no cuesta anuncios.» Es buena porque calcula, compara dos versiones del Pareto y elige un solo frente con datos.",
+     "plantilla": [
+      "Pareto, cohorte y embudo en una hoja",
+      "Pareto (valores en B2:B51, ordenados de mayor a menor):\nA Elemento | B Valor | C % acumulado\nC2 [=SUMA($B$2:B2)/SUMA($B$2:$B$51)] copiado hacia abajo\nElementos hasta 80 %: [ ] de [ ]\nCohorte: [mes de primera compra]\nE2 Clientes iniciales: [ ]\nE3 Activos al mes 1: [ ]\nE4 Retención mes 1: [=E3/E2]\nE5 Activos al mes 3: [ ]\nE6 Retención mes 3: [=E5/E2]\nEmbudo:\nG2 Etapa 1: [ ]  G3 Etapa 2: [ ]  G4 Etapa 3: [ ]  G5 Etapa 4: [ ]\nH3 Conversión paso 2: [=G3/G2]  H4 Paso 3: [=G4/G3]  H5 Paso 4: [=G5/G4]\nH6 Conversión total: [=G5/G2]\nDónde actuar primero y por qué: [ ]"
+     ],
+     "clave": [
+      "Pareto: ordena, acumula y calcula; el 80/20 es un patrón frecuente, no una ley.",
+      "Las cohortes muestran si la retención mejora o si los clientes nuevos esconden a los que se van.",
+      "En un embudo, mide la conversión de cada paso y actúa donde la mejora rinda más."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos, sobre el modelo de datos del reto del módulo 3 (o con datos de ejemplo), convierte tablas en respuestas. 1) Escribe la ficha de 3 a 5 KPI con fórmula exacta, contrapeso y línea base calculada con =MIN(B2:B7), =PROMEDIO(B2:B7) y =MAX(B2:B7) de los últimos seis periodos. 2) Crea en el modelo las medidas en DAX, con sus funciones en inglés: Ventas = SUM(Ventas[Importe]), un porcentaje con DIVIDE, Ventas año anterior = CALCULATE([Ventas], SAMEPERIODLASTYEAR(Calendario[Fecha])) y Variación % con DIVIDE. 3) Arma una tabla dinámica desde el modelo de datos con esas medidas por mes y por segmento, y comprueba un mes a mano con =SUMA() del detalle. 4) Haz una comparación justa: valor por día con =B2/B3 contra =C2/C3 y, si el mes está incompleto, compara a la fecha. 5) Haz un Pareto con =SUMA($B$2:B2)/SUMA($B$2:$B$51) copiado hacia abajo y, si aplica, un embudo con conversiones paso a paso (=G3/G2). 6) Escribe tres hallazgos y una acción.",
+    "entregable": "Un libro de Excel con la hoja de fichas de KPI, las medidas creadas en el modelo, una tabla dinámica con comparación contra el año anterior, la hoja de comprobación a mano, el Pareto y el embudo con fórmulas visibles, y media página con tres hallazgos y una acción recomendada.",
+    "criterios": "Revisa: cada KPI tiene numerador, denominador, exclusiones y contrapeso; los porcentajes se calculan con DIVIDE sobre totales y coinciden con tu comprobación a mano; las comparaciones usan tasas y periodos equivalentes; y la acción propuesta sale de un segmento concreto del Pareto, la cohorte o el embudo."
+   },
+   "lab": {
+    "t": "Los honorarios del despacho",
+    "obj": "Definir KPI, construir medidas, comparar con justicia y segmentar clientes para decidir dónde actuar en un despacho contable.",
+    "esc": "<b>Rubén,</b> de 44 años, es socio de un despacho contable y fiscal de Chetumal con nueve contadores y 120 clientes con iguala mensual. Los ingresos crecen, pero los socios sienten que trabajan más y ganan lo mismo. Ya tienen un modelo de datos con dos tablas de hechos (horas registradas y honorarios cobrados) que comparten las dimensiones Clientes, Contadores y Calendario, y Rubén quiere decidir antes de fin de año qué clientes renegociar y cómo medir al equipo.",
+    "e": [
+     [
+      "Escena 1: Un socio propone medir a cada contador por horas facturables por semana y pagar un bono a quien registre más.",
+      "Consigna: escribe la ficha de un KPI para el equipo con fórmula exacta, explica qué maquillaje provocaría el bono propuesto según la ley de Goodhart y define un indicador de contrapeso."
+     ],
+     [
+      "Escena 2: Rubén necesita el honorario efectivo por hora de cada cliente y la comparación contra el año pasado. Hoy es 26 de octubre y el tablero compara octubre a la fecha contra octubre completo de 2025.",
+      "Consigna: escribe en DAX las medidas Honorarios, Horas, Honorario por hora y Honorarios año anterior, y explica cómo harías justa la comparación de octubre."
+     ],
+     [
+      "Escena 3: El Pareto por honorarios muestra que 18 clientes generan 60 % del ingreso. Al revisar las horas, el cliente A paga 18,000 pesos al mes y consume 60 horas; el cliente B paga 9,000 y consume 15.",
+      "Consigna: calcula el honorario por hora de ambos, haz un segundo Pareto por horas y propón qué hacer con los clientes que dejan poco por hora, sin decidir solo con el total de honorarios."
+     ],
+     [
+      "Escena 4: De los 30 clientes que entraron en el primer trimestre de 2025, 24 seguían activos seis meses después; de los 40 que entraron en el primer trimestre de 2026, seguían 26 al mismo plazo.",
+      "Consigna: calcula la retención de ambas cohortes, explica por qué el total de clientes no lo mostraba y redacta una recomendación de tres líneas para los socios."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es el honorario efectivo por hora de los clientes A y B?",
+      "A: 300 pesos por hora; B: 600",
+      "A: 600 pesos por hora; B: 300",
+      "Ambos: 360 pesos por hora en promedio",
+      "A: 18,000 ÷ 60 = 300; B: 9,000 ÷ 15 = 600. El cliente que paga el doble deja la mitad por hora. Invertirlos es el error de suponer que quien paga más rinde más, y 360 (27,000 ÷ 75) es el promedio conjunto, que esconde justo la diferencia que importa."
+     ],
+     [
+      "¿Qué medida calcula bien el honorario por hora con cualquier filtro?",
+      "DIVIDE([Honorarios], [Horas])",
+      "SUM(Horas[Honorario por hora])",
+      "CALCULATE([Horas], [Honorarios])",
+      "La medida divide totales en el contexto de cada celda, sea un cliente, un contador o un mes. Sumar una columna de honorario por hora repite el error de sumar tasas, y CALCULATE no divide: cambia filtros, y una medida no sirve como filtro."
+     ],
+     [
+      "¿Qué muestran las cohortes de clientes?",
+      "La retención bajó de 80 % a 65 %",
+      "La retención subió: hoy quedan 26 y no 24",
+      "La retención es igual: en ambas se fueron clientes",
+      "2025: 24 ÷ 30 = 80 %; 2026: 26 ÷ 40 = 65 %. Quedan más clientes en números absolutos porque entraron más, pero se fue una proporción mayor: 14 de 40 frente a 6 de 30. Por eso el total escondía el problema."
+     ]
+    ],
+    "pl": [
+     "Tablero de decisión de un despacho",
+     "KPI del equipo: [ ] = [numerador] ÷ [denominador] | contrapeso: [ ]\nMedidas DAX (funciones en inglés):\nHonorarios = SUM(Cobros[Monto])\nHoras = SUM(Horas[Horas])\nHonorario por hora = DIVIDE([Honorarios], [Horas])\nHonorarios año anterior = CALCULATE([Honorarios], SAMEPERIODLASTYEAR(Calendario[Fecha]))\nComparación justa: del 1 al [día] de [mes] en ambos años\nPareto (honorarios en B2:B121, de mayor a menor): C2 [=SUMA($B$2:B2)/SUMA($B$2:$B$121)] | clientes hasta 60 %: [ ]\nPor cliente: E2 Honorario mensual [ ]  F2 Horas [ ]  G2 Por hora [=E2/F2]\nCohortes: B124 Clientes iniciales [ ]  B125 Activos a 6 meses [ ]  B126 Retención [=B125/B124]\nAcción recomendada: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "La coordinadora de un coworking propone medir la ocupación de salas. ¿Qué falta para que sea un KPI bien definido?",
+     "Fórmula exacta, exclusiones, frecuencia y responsable",
+     "Un gráfico atractivo y un color distinto para cada una de las sedes",
+     "Compararlo con otros coworkings de la ciudad",
+     "Calcularlo a diario y enviarlo a todo el equipo"
+    ],
+    [
+     "Un centro de atención telefónica paga un bono por llamadas atendidas por hora y la duración promedio bajó a la mitad. ¿Qué haces primero?",
+     "Revisar la resolución al primer contacto y las rellamadas",
+     "Subir la meta de llamadas, porque el equipo sí respondió al bono",
+     "Quitar el indicador y dejar de medir la productividad",
+     "Felicitar al equipo y extender el bono a otras áreas"
+    ],
+    [
+     "El contador de una ferretería puso en una tabla dinámica la columna Margen % calculada por renglón y el total dice 870 %. ¿Qué le recomiendas?",
+     "Crear una medida que divida el margen total entre las ventas",
+     "Cambiar la suma por promedio en la configuración de ese campo",
+     "Dar formato de porcentaje con un decimal a esa columna",
+     "Filtrar los renglones que tienen un margen negativo"
+    ],
+    [
+     "¿Qué devuelve la medida CALCULATE([Ventas], SAMEPERIODLASTYEAR(Calendario[Fecha])) en la celda de mayo de 2026?",
+     "Las ventas de mayo de 2025",
+     "Las ventas de enero a mayo de 2026",
+     "La variación de mayo contra mayo",
+     "Las ventas de abril de 2026"
+    ],
+    [
+     "Una analista escribe en Power BI una medida con SUMA y DIVIDIR, y le marca error. ¿Cuál es la causa más probable?",
+     "Las funciones DAX se escriben en inglés: SUM y DIVIDE",
+     "DAX solo acepta medidas que usen una sola función",
+     "Las medidas solo funcionan dentro de tablas calculadas",
+     "Las medidas deben escribirse siempre en Power Query"
+    ],
+    [
+     "La sucursal A de una cadena de ópticas vendió 900,000 pesos en 300 m²; la B, 600,000 en 120 m². ¿Cuál rinde más por espacio?",
+     "B, con 5,000 pesos por m² frente a 3,000",
+     "A, porque vendió 300,000 pesos más que B",
+     "Ninguna: la diferencia es solo de tamaño",
+     "A, con 3,000 pesos por m² frente a 2,000"
+    ],
+    [
+     "Una planta de manufactura hizo 48,000 piezas en febrero (20 días hábiles) y 50,600 en marzo (22 días hábiles). ¿Qué concluyes?",
+     "Por día hábil bajó de 2,400 a 2,300 piezas",
+     "Subió 5.4 %, así que el ritmo mejoró",
+     "Por día hábil subió de 2,300 a 2,400 piezas",
+     "No se pueden comparar meses distintos"
+    ],
+    [
+     "El ticket promedio de una agencia de viajes bajó, aunque cada tipo de paquete subió de precio. ¿Qué revisas primero?",
+     "Si cambió la mezcla hacia paquetes más baratos",
+     "Si hubo un error al sumar los ingresos del mes",
+     "Si el mes tuvo menos días que el anterior",
+     "Si conviene subir otra vez todos los precios"
+    ],
+    [
+     "La jefa de servicio de una empresa de paquetería hace un Pareto de causas de reclamos: 3 de 15 causas suman 72 %. ¿Qué haces?",
+     "Atacar primero esas 3 causas y volver a medir",
+     "Descartar el análisis porque no da 80/20",
+     "Atender las 15 causas al mismo tiempo",
+     "Agregar causas hasta que el grupo llegue a 80 %"
+    ],
+    [
+     "Una agencia de marketing digital nota que los clientes que llegaron en enero renuevan menos que los de meses anteriores, aunque el total de clientes creció. ¿Qué análisis lo mostró?",
+     "Un análisis de cohortes por mes de inicio",
+     "Un Pareto de clientes por facturación",
+     "Una comparación contra la meta anual",
+     "Un embudo de visitas a contratos firmados"
+    ]
+   ]
+  }
+ ]
+}

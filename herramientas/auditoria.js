@@ -1,7 +1,7 @@
 // Auditoría automática de todo el catálogo: estructura, respuestas, horas, rutas y sitio.
 const fs=require('fs'),path=require('path');const R=path.join(__dirname,'..');
 global.window={};const dir=path.join(R,'plataforma/cursos');
-for(const f of fs.readdirSync(dir).filter(f=>f.endsWith('.js')&&f!=='rutas.js')){const n0=(window.CURSOS_MARA||[]).length;eval(fs.readFileSync(path.join(dir,f),'utf8'));(window.CURSOS_MARA||[]).slice(n0).forEach(c=>c._f=f);}
+for(const f of fs.readdirSync(dir).filter(f=>f.endsWith('.js')&&f!=='rutas.js'&&f!=='indice.js')){const n0=(window.CURSOS_MARA||[]).length;eval(fs.readFileSync(path.join(dir,f),'utf8'));(window.CURSOS_MARA||[]).slice(n0).forEach(c=>c._f=f);}
 eval(fs.readFileSync(path.join(dir,'rutas.js'),'utf8'));
 // cursos base definidos dentro de plataforma/index.html
 const cursos=window.CURSOS_MARA;const P=[];const add=(c,m)=>P.push((c?c.id+': ':'')+m);

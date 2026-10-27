@@ -26,6 +26,8 @@ req(S.desc && S.desc.length >= 250 && S.desc.length <= 700, 'desc de 250 a 700 c
 req(Array.isArray(S.aprender) && S.aprender.length >= 5, 'aprender: 5 o más');
 req(Array.isArray(S.modulos) && S.modulos.length === 8, 'se requieren 8 módulos');
 req(Array.isArray(S.referencias) && S.referencias.length >= 5, 'referencias APA: 5 o más');
+const GIROS = ['Manufactura de calzado', 'Curtiduría / proveeduría de piel', 'Industria / manufactura', 'Concesionaria automotriz', 'Hotelería', 'Despacho contable / fiscal', 'Consultorio de psicología', 'Funeraria', 'Hospital / clínica privada', 'Agencia de marketing digital', 'Reclutamiento / capital humano', 'Despacho jurídico', 'Inmobiliaria', 'Aseguradora / agencia de seguros', 'Boutique de ropa', 'Coworking / oficinas ejecutivas', 'Seguridad privada', 'Colegio privado', 'Call center', 'Centro de terapia infantil / neurodesarrollo', 'Diagnóstico médico por imagen', 'Residencia de adultos mayores', 'Asesoría de imagen'];
+if (S.giros !== undefined) req(Array.isArray(S.giros) && S.giros.every(g => GIROS.includes(g)), 'giros: lista (puede ir vacía) segmentos de prospectos a los que se recomienda (exactos): ' + GIROS.join(' | '));
 const P5 = (q, d, n) => { req(Array.isArray(q) && q.length === 5, d + ': pregunta mal formada (se esperan 5 elementos)');
   if (!Array.isArray(q)) return; const ops = q.slice(1, n + 1); req(new Set(ops).size === ops.length, d + ': opciones repetidas «' + q[0].slice(0, 40) + '»'); req(ops.every(o => typeof o === 'string' && o.trim()), d + ': opción vacía'); };
 (S.modulos || []).forEach((m, i) => {
@@ -171,5 +173,14 @@ fs.writeFileSync(tPath, JSON.stringify(T));
 global.window = {}; eval(fs.readFileSync(cPath, 'utf8'));
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 const filas = window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${q(c.nombre)}, ${q(c.desc)}, ${q(c.color)}, 'Diplomados', ${q(c.familia)}, null, null, ${c.horas}, ${c.precio}, true, false)`);
-fs.writeFileSync(path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), `-- Instituto Mara — diplomados nuevos (octubre 2026). Se puede repetir.\ninsert into cursos (id, nombre, descripcion, color, nivel, familia, periodo_tipo, periodo_num, horas, precio, publicado, proximamente) values\n${filas.join(',\n')}\non conflict (id) do update set\n  nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,\n  nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas, precio = excluded.precio,\n  publicado = excluded.publicado, proximamente = excluded.proximamente;\n-- Número de lecciones (regla del 50 % para dejar reseña).\nupdate cursos c set lecciones = v.n from (values\n${window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${c.modulos.reduce((a, m) => a + m.lecciones.length, 0)})`).join(',\n')}\n) as v(id, n) where c.id = v.id;\n`);
+fs.writeFileSync(path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), `-- Instituto Mara — diplomados nuevos (octubre 2026). Se puede repetir.\ninsert into cursos (id, nombre, descripcion, color, nivel, familia, periodo_tipo, periodo_num, horas, precio, publicado, proximamente) values\n${filas.join(',\n')}\non conflict (id) do update set\n  nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,\n  nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas, precio = excluded.precio,\n  publicado = excluded.publicado, proximamente = excluded.proximamente;\n-- Número de lecciones (regla del 50 % para dejar reseña).\nupdate cursos c set lecciones = v.n from (values\n${window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${c.modulos.reduce((a, m) => a + m.lecciones.length, 0)})`).join(',\n')}\n) as v(id, n) where c.id = v.id;\n` + sqlGiros());
+// Recomendación a empresas: cada diplomado con «giros» en su meta.json entra como 3.er programa de esos giros
+// (guion de llamada, correos y WhatsApp). No toca a quien ya lo tiene.
+function sqlGiros() {
+  const dir = path.join(__dirname, 'diplomados-nuevos'), ids = new Set(window.CURSOS_MARA.map(c => c.id)); let s = '';
+  for (const d of fs.readdirSync(dir).sort()) { const f = path.join(dir, d, 'meta.json'); if (!fs.existsSync(f)) continue;
+    const m = JSON.parse(fs.readFileSync(f, 'utf8')); if (!m.giros || !ids.has(m.id)) continue;
+    s += `-- ${m.id}: recomendado a ${m.giros.join(', ')}.\nupdate prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array[${q(m.id)}] || coalesce(cursos_ids[3:], '{}')\n where segmento in (${m.giros.map(q).join(', ')}) and not (${q(m.id)} = any(coalesce(cursos_ids, '{}')));\n`; }
+  return s ? '-- Programas recomendados por giro a los prospectos (empresas).\n' + s : '';
+}
 console.log('Escrito: catálogo, ' + modulos.length + ' visuales, cuaderno PDF, sitio, temario y SQL.');

@@ -12,8 +12,8 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 
 | # | id | pref | Diplomado (nombre sugerido) | Precio | familia/área | Estado |
 |---|---|---|---|---|---|---|
-| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Listo en rama (2026-10-20) |
-| 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Pendiente |
+| 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
+| 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Listo en rama (2026-10-26) |
 | 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Pendiente |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
 | 5 | d-intervencion-crisis | cri | Diplomado en Intervención en Crisis y Prevención del Suicidio | 1690 | Salud y bienestar | Pendiente |
@@ -78,12 +78,42 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
 15. **Bienestar Laboral, Estrés y Mindfulness.** Estrés y burnout (CIE-11), mindfulness con evidencia (MBSR/MBCT)
     y sus límites, sueño, pausas, programas de bienestar en la empresa ligados a la NOM-035. No es tratamiento.
 
+## Giros de empresa a los que se recomienda cada uno (`giros` en meta.json)
+Entra como 3.er programa del giro en el guion de llamada, los correos y el WhatsApp a prospectos. Ajusta si al
+escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
+
+| id | giros |
+|---|---|
+| d-calidad-lean | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura |
+| d-datos-ia | Despacho contable / fiscal; Industria / manufactura; Coworking / oficinas ejecutivas; Agencia de marketing digital |
+| d-ventas-experiencia | Concesionaria automotriz; Inmobiliaria; Aseguradora / agencia de seguros; Boutique de ropa; Hotelería; Call center |
+| d-proteccion-civil | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura; Hotelería; Hospital / clínica privada; Colegio privado; Residencia de adultos mayores; Seguridad privada |
+| d-intervencion-crisis | Consultorio de psicología; Hospital / clínica privada; Colegio privado; Funeraria |
+| d-psicologia-organizacional | Reclutamiento / capital humano; Consultorio de psicología; Industria / manufactura |
+| d-docencia-nem | Colegio privado |
+| d-adicciones | Consultorio de psicología; Hospital / clínica privada; Colegio privado |
+| d-crianza-positiva | Centro de terapia infantil / neurodesarrollo; Colegio privado; Consultorio de psicología |
+| d-estimulacion-temprana | Centro de terapia infantil / neurodesarrollo; Colegio privado |
+| d-sexualidad-humana | Colegio privado; Consultorio de psicología |
+| d-coaching | Coworking / oficinas ejecutivas; Reclutamiento / capital humano; Consultorio de psicología |
+| d-mantenimiento-tpm | Manufactura de calzado; Curtiduría / proveeduría de piel; Industria / manufactura |
+| d-pyme | Boutique de ropa; Coworking / oficinas ejecutivas; Despacho contable / fiscal |
+| d-bienestar-laboral | Call center; Hospital / clínica privada; Reclutamiento / capital humano; Industria / manufactura |
+
+## Cómo se publica una tanda
+1. PR de `tanda-diplomados-nov-2026` a `main` y merge (método *merge*, no squash: la rama sigue viva).
+2. En Supabase → SQL Editor: ejecutar `backend/diplomados-nuevos-202610.sql` (se puede repetir). Carga los diplomados,
+   su número de lecciones (regla del 50 % para reseñas) y su recomendación por giro a los prospectos.
+3. Comprobar: `select id, horas, precio, lecciones, publicado from cursos where id in (…);` y
+   `select segmento, cursos_ids from prospectos where segmento = 'Industria / manufactura' limit 3;`
+4. El sitio, el aula, los combos de Empresas y del operador toman el catálogo solos; no hay que tocar nada más.
+
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
 2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía.
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
-4. Escribir `meta.json` (con `"precio"` de la tabla) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
 5. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id> --simular` → sin errores, ≥ 30 h.
 6. Revisión V10 por un agente experto independiente que no escribió el contenido; corregir todo lo que señale.
 7. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id>` (sin --simular) y
@@ -101,3 +131,16 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
 - M1 quiz 1 y lab M4: contenido neto declarado como requisito legal (posible NOM-030-SCFI-2006; confirmar vigencia).
 - Referencias: editorial y año de la edición en español de Shingo (*Una revolución en la producción: El sistema SMED*: Productivity Press o TGP Hoshin) y de Rother y Shook (*Observar para crear valor*, LEI, 1999); URL de la Ley de Infraestructura de la Calidad en diputados.gob.mx (LICal.pdf).
 - Convenciones: calibración como costo de evaluación (algunos autores la ponen en prevención); fórmulas de Excel en español con coma como separador (nota para punto y coma).
+
+## d-datos-ia: datos para revisión de experto
+- Categoría: se usó `familia` «Tecnología» y `area` «Tecnología e IA» (las mismas de Excel Avanzado y Power BI en el sitio).
+- Nueva LFPDPPP (DOF 20 mar 2025; reforma del 14 nov 2025): confirmar contra el texto vigente los plazos ARCO (20 + 15 días hábiles, ampliables una vez), el consentimiento «expreso y por escrito» para datos sensibles, el alcance del derecho a oponerse a decisiones automatizadas («que afecten de forma significativa»), multas en UMA y que la autoridad sea la Secretaría Anticorrupción y Buen Gobierno. Revisar la URL de diputados.gob.mx (LFPDPPP.pdf) de la referencia. M7: entregar datos a un proveedor de IA como tratamiento/remisión; matiz del RFC de persona moral (confidencial, no dato personal).
+- Ley de IA en México: a oct 2026 no hay ley general aprobada (solo iniciativas); el texto dice «verifica su estado actual».
+- Cifras de estudios: Brynjolfsson, Li y Raymond (QJE 2025: +14 % casos/hora, +34 % novatos, impacto mínimo en expertos); Dell'Acqua et al. (HBS WP 24-013: 758 consultores; +12.2 % tareas, 25.1 % más rápido, >40 % calidad; −19 puntos fuera de la frontera). Dell'Acqua et al. ya estaría publicado en *Organization Science* (2026): decidir si se cita la versión publicada. Brynjolfsson, Hitt y Kim (2011: 5-6 %, 179 empresas).
+- Rutas de menú en Excel 365 en español (Datos > Obtener datos > Del archivo > De la carpeta; Combinar y transformar datos; Vista > Calidad/Distribución/Perfil de columnas con las primeras 1 000 filas; Insertar > Tabla dinámica > Del modelo de datos; Agregar medida; Análisis de hipótesis > Tabla de datos; Hoja de previsión) y en Power BI (Formato > Editar interacciones, actualización programada y puerta de enlace, seguridad a nivel de fila, licencias para compartir). Separador de argumentos en DAX según configuración regional; que Combinar consultas distinga mayúsculas.
+- DAX: DIVIDE devuelve vacío con denominador cero; SAMEPERIODLASTYEAR con calendario completo marcado como tabla de fechas; `CALCULATE(COUNTROWS(Atenciones), Atenciones[Dentro de meta] = TRUE())` con columna de tipo verdadero/falso; DISTINCTCOUNT.
+- Estadística (recalculada con python por el revisor): margen ≈0.98/√n; diferencia de dos grupos de 400 = ±6.9; caso Wendy (55 % vs 70 %, n=120) ±12.1; caso Tomás (45 % vs 38 %, n=300) no significativo; 3.0 % vs 3.1 % con 500,000 visitas z≈2.9; ~820 por grupo para 18 %→13 % con 80 % de potencia; regla de 1.5 RIC para atípicos.
+- Regresión agrícola (M6): pendiente ficticia de ~12 kg de grano por kg de nitrógeno en maíz de riego en Sinaloa (120-240 kg N/ha): que un agrónomo confirme que es verosímil.
+- Atribuciones: Goodhart (1975) y formulación de Marilyn Strathern; Berkeley 1973 (Bickel et al., 1975); Anscombe (1973); Abraham Wald y sesgo de supervivencia; premortem (Gary Klein); Cleveland y McGill (posiciones vs ángulos, sin citar); Cairo, Tufte, Knaflic, Minto. Caso de herramienta de selección abandonada en 2018 (Reuters), sin nombrar la empresa.
+- Fecha fija en M4 L3 y lab M4 («si hoy es 26 de octubre…»), usada como ejemplo de periodos a la fecha; ejemplos de Buen Fin y Semana Santa como periodos no equivalentes.
+- Herramientas: se corrigieron `herramientas/validar-diplomado.js` (V3 y V9) y `herramientas/auditoria.js` para el aula rápida (ya no cuentan `indice.js` como fuente duplicada y V9 verifica `indice.js`, `contenido/<id>.js` y que el aula no cargue fuentes directas). Las fallas «texto provisional» de la auditoría son previas (d-nom035, d-recursos-humanos, c-power-bi, d-tcc, c-aleman-a1, c-ia-programadores).
