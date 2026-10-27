@@ -404,9 +404,37 @@ function prPintarFicha(id){
       (p.puntuacion ? ' · ★ '+esc(p.puntuacion)+(p.resenas?' ('+p.resenas+' reseñas)':'') : '')+'</p></div>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><select id="pf-estado" aria-label="Estado" onchange="prCambiarEstado(\''+id+'\',this.value)">'+
       Object.keys(PR_ESTADOS).map(function(k){ return '<option value="'+k+'"'+(p.estado===k?' selected':'')+'>'+PR_ESTADOS[k]+'</option>'; }).join('')+'</select>'+
+    prBotonPlan(p)+
     '<button class="btn btn-mor btn-sm" onclick="prCrearPiloto(\''+id+'\')">'+(p.empresa_id ? 'Ver empresa y piloto' : 'Crear empresa y piloto')+'</button></div></div>'+
     '<div style="margin-top:8px">'+prSeguimientoTxt(p)+'</div>';
   prPintarDatos(p); prPintarHistorial(p);
+}
+/* «Enviar plan de capacitación»: el plan escrito por correo, firmado por el operador asignado (o Héctor).
+   Sirve cuando la empresa lo pide por WhatsApp o por correo, no solo en la llamada. Lo usan administración y el operador. */
+function prBotonPlan(p, cls){
+  if(['baja','no_interesa'].indexOf(p.estado) >= 0) return '';
+  var ya = p.extra && p.extra.info_enviada;
+  return '<button class="btn '+(cls||'btn-linea')+' btn-sm" title="'+(ya ? 'Ya se envió el '+prFecha(ya) : 'Le llega a quien ve la capacitación')+'" onclick="prEnviarPlan(\''+p.id+'\')">'+(ya ? 'Reenviar plan de capacitación' : 'Enviar plan de capacitación')+'</button>';
+}
+function prEnviarPlan(id){
+  var p = prPorId(id); if(!p) return;
+  var para = prompt('¿A qué correo enviamos el plan de capacitación para '+(p.nombre_corto || p.nombre)+'?', p.contacto_correo || String(p.correo||'').split(',')[0].trim());
+  if(para === null) return;
+  para = para.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(para)){ alert('Escribe un correo válido.'); return; }
+  Nube.funcionServidor('prospectos', { accion:'info', id:id, para:para })
+    .then(function(r){
+      if(!r || !r.ok) throw new Error((r && r.error) || 'No se pudo enviar.');
+      alert('Listo: el plan salió a '+para+'.');
+      return Nube.tabla('prospectos?id=eq.'+id+'&select=*').then(function(f){
+        if(f && f[0]) PR.lista = PR.lista.map(function(x){ return x.id === id ? f[0] : x; });
+        return Nube.tabla('prospecto_contactos?prospecto_id=eq.'+id+'&select=*&order=fecha.asc');
+      }).then(function(cs){
+        PR.contactos = PR.contactos.filter(function(c){ return c.prospecto_id !== id; }).concat(cs || []);
+        if($('pf-cab')) prPintarFicha(id);
+        if(typeof llPintarFicha === 'function' && $('lf-datos')) llPintarFicha(id);
+      }).catch(function(){ /* el correo ya salió; la ficha se refresca en la siguiente carga */ });
+    }).catch(function(e){ alert(e.message); });
 }
 function prCampo(rot, val, html){ if(val == null || val === '') return ''; return '<div style="margin-bottom:10px"><div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris);font-weight:700">'+rot+'</div><div>'+(html || esc(val))+'</div></div>'; }
 function prPintarDatos(p){
