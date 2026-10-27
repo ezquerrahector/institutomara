@@ -6,7 +6,7 @@
      cancela una comisión por reembolso, pausa un código y ajusta los porcentajes.
    Requiere backend/embajadores-20261026.sql. Se carga después de planes.js. */
 
-var EMB = { lista:null, ventas:[], pagos:[], aj:null, abierto:null };
+var EMB = { lista:null, ventas:[], pagos:[], aj:null, abierto:null, asesores:[] };
 
 function embHoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
 function embCargar(){
@@ -14,8 +14,9 @@ function embCargar(){
     Nube.tabla('embajadores?select=*&order=creado_en.desc'),
     Nube.tabla('embajador_ventas?select=*&order=creado_en.desc&limit=5000'),
     Nube.tabla('embajador_pagos?select=*&order=pagado_en.desc&limit=2000'),
-    Nube.tabla('ajustes?id=eq.true&select=embajador_comision_pct,embajador_descuento_pct,embajador_dias_espera,embajador_minimo')
-  ]).then(function(r){ EMB.lista = r[0] || []; EMB.ventas = r[1] || []; EMB.pagos = r[2] || []; EMB.aj = (r[3] || [])[0] || {}; });
+    Nube.tabla('ajustes?id=eq.true&select=embajador_comision_pct,embajador_descuento_pct,embajador_dias_espera,embajador_minimo'),
+    Nube.tabla('asesor_solicitudes?select=*&order=creado_en.desc&limit=500').catch(function(){ return []; })
+  ]).then(function(r){ EMB.lista = r[0] || []; EMB.ventas = r[1] || []; EMB.pagos = r[2] || []; EMB.aj = (r[3] || [])[0] || {}; EMB.asesores = r[4] || []; });
 }
 function embSaldos(id){
   var hoy = embHoy(), s = { ventas:0, espera:0, disponible:0, pagado:0, total:0 };
@@ -60,6 +61,7 @@ function vistaAdminEmbajadores(){
       '<div class="tarjeta"><small>Depósitos hechos</small><h3>'+EMB.pagos.length+'</h3><small>'+dinero(EMB.pagos.reduce(function(x, p){ return x + Number(p.monto); }, 0))+'</small></div></div>'+
     (EMB.lista.length ? '<div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Embajador</th><th>Código</th><th>Ventas</th><th>En espera</th><th>Disponible</th><th>Pagado</th><th>Cuenta</th><th></th></tr>'+filas+'</table></div></div>'
       : '<div class="tarjeta"><p class="vacio">Todavía no hay embajadores. Comparte la página de registro.</p></div>')+
+    embVistaAsesores()+
     '<details style="margin-top:22px"><summary><b>Reglas del programa</b></summary>'+
       '<div class="fila" style="margin-top:12px">'+
         '<div class="campo"><label for="emb-com">Comisión (%)</label><input id="emb-com" type="number" min="1" max="60" value="'+esc(a.embajador_comision_pct)+'"></div>'+
@@ -70,6 +72,22 @@ function vistaAdminEmbajadores(){
       '<div id="emb-aj-av"></div><button class="btn btn-mor" onclick="embGuardarReglas()">Guardar reglas</button></details></div>';
 }
 
+/* Solicitudes de asesor comercial (empresas) que llegan del sitio */
+var EMB_EST_AS = { nueva:'Nueva', contactada:'Contactada', aceptada:'Aceptada', descartada:'Descartada' };
+function embVistaAsesores(){
+  var l = EMB.asesores || [], nuevas = l.filter(function(a){ return a.estado === 'nueva'; }).length;
+  return '<h3 style="margin:26px 0 8px">Solicitudes de asesor comercial (empresas) '+(nuevas ? '<span class="etiqueta alerta">'+nuevas+' nuevas</span>' : '')+'</h3>'+
+    '<p style="color:var(--gris);font-size:.88rem;margin-bottom:8px">Si alguien encaja, dalo de alta como operador en «Planes y operadores» (35 % del primer pago + 5 % mensual).</p>'+
+    (l.length ? '<div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Fecha</th><th>Persona</th><th>Disponibilidad</th><th>Experiencia</th><th>Estado</th></tr>'+
+      l.map(function(a){ return '<tr><td>'+new Date(a.creado_en).toLocaleDateString('es-MX')+'</td><td><b>'+esc(a.nombre)+'</b><br><small>'+esc(a.correo)+' · <a href="https://wa.me/'+esc(String(a.telefono).replace(/\D/g,'').replace(/^(\d{10})$/,'52$1'))+'" target="_blank" rel="noopener">'+esc(a.telefono)+'</a>'+(a.ciudad ? ' · '+esc(a.ciudad) : '')+'</small></td>'+
+        '<td><small>'+esc(a.disponibilidad||'—')+'</small></td><td><small>'+esc(a.experiencia||'—')+'</small></td>'+
+        '<td><select onchange="embEstadoAsesor(\''+a.id+'\',this.value)">'+Object.keys(EMB_EST_AS).map(function(k){ return '<option value="'+k+'"'+(a.estado === k ? ' selected' : '')+'>'+EMB_EST_AS[k]+'</option>'; }).join('')+'</select></td></tr>'; }).join('')+'</table></div></div>'
+      : '<div class="tarjeta"><p class="vacio">Todavía no hay solicitudes.</p></div>');
+}
+function embEstadoAsesor(id, est){
+  Nube.tabla('asesor_solicitudes?id=eq.'+id, { metodo:'PATCH', cuerpo:{ estado:est } })
+    .then(function(){ (EMB.asesores||[]).forEach(function(a){ if(a.id === id) a.estado = est; }); }).catch(function(x){ alert(x.message); });
+}
 function embAbrir(id){
   var e = EMB.lista.filter(function(x){ return x.id === id; })[0]; if(!e) return;
   var s = embSaldos(id), min = Number((EMB.aj||{}).embajador_minimo || 300);

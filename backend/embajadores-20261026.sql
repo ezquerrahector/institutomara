@@ -137,3 +137,21 @@ begin
   return jsonb_build_object('ok', true, 'precio_final', v.precio_final,
                             'descuento', v.descuento, 'gratis', v.precio_final <= 0, 'piloto', c.piloto);
 end; $function$;
+
+-- Solicitudes para asesor comercial de empresas (esquema de operadores: 35 % del primer pago + 5 % mensual).
+create table if not exists asesor_solicitudes (
+  id uuid primary key default gen_random_uuid(),
+  nombre text not null,
+  correo text not null,
+  telefono text not null,
+  ciudad text,
+  experiencia text,
+  disponibilidad text,
+  estado text not null default 'nueva' check (estado in ('nueva','contactada','aceptada','descartada')),
+  notas text,
+  creado_en timestamptz not null default now()
+);
+alter table asesor_solicitudes enable row level security;
+drop policy if exists "asesor_solicitudes admin" on asesor_solicitudes;
+create policy "asesor_solicitudes admin" on asesor_solicitudes for all using (es_admin()) with check (es_admin());
+grant select, insert, update, delete on asesor_solicitudes to authenticated;

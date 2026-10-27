@@ -14,6 +14,7 @@
 //   (pública) embajador_alta  { nombre, correo, telefono?, pais?, ciudad?, como? } → { ok, token?, codigo? } (si ya existía, se le reenvía su liga)
 //   (pública) embajador_panel { t } → { embajador, ventas, totales, reglas }
 //   (pública) embajador_datos { t, titular, banco, clabe } → { ok }
+//   (pública) asesor_solicitud { nombre, correo, telefono, ciudad?, experiencia?, disponibilidad? } → { ok }
 //   recompra             { cursoId }  (al obtener una constancia)                    → { codigo, pct, vence }
 //   empresa              { cursoId, lugares (5-50), empresa, rfc?, contactoNombre?, contactoCorreo?, contactoTel?, urlRegreso } → { init_point }
 //   empresa_invitar      { codigo, nombre, correo, cursoId? }  (asigna un lugar y le envía la invitación) → { ok }
@@ -382,6 +383,30 @@ async function altaEmbajador(b: any) {
   await avisarAdmins(`Nuevo embajador: ${nombre} (${codigo})`,
     plantilla("Nuevo embajador", `<p>${e(nombre)} · ${e(correoE)} · ${e(emb.telefono || "")}<br>${e(emb.ciudad || "")} ${e(emb.pais || "")}<br>Cómo promueve: ${e(emb.como_promueve || "—")}</p><p>Código: <b>${e(codigo)}</b></p>`)).catch(() => null);
   return json({ ok: true, token: emb.token, codigo });
+}
+// Solicitud para asesor comercial de empresas (mismo esquema que los operadores). La revisa administración.
+async function solicitudAsesor(b: any) {
+  if (b.web) return json({ ok: true });
+  const nombre = String(b.nombre || "").trim().replace(/\s+/g, " ").slice(0, 120);
+  const correoA = String(b.correo || "").trim().toLowerCase().slice(0, 160);
+  const tel = String(b.telefono || "").replace(/[^\d+ ]/g, "").slice(0, 20);
+  if (nombre.length < 3) return json({ error: "Escribe tu nombre completo." }, 400);
+  if (!CORREO_OK.test(correoA)) return json({ error: "Revisa tu correo." }, 400);
+  if (tel.replace(/\D/g, "").length < 10) return json({ error: "Escribe tu teléfono a 10 dígitos: te llamamos para platicar." }, 400);
+  const hace = new Date(Date.now() - 86400e3).toISOString();
+  const ya = await db(`asesor_solicitudes?correo=eq.${encodeURIComponent(correoA)}&creado_en=gte.${hace}&select=id`);
+  if (ya.length) return json({ ok: true, repetida: true });
+  const sol = (await db("asesor_solicitudes", { metodo: "POST", prefer: "return=representation", cuerpo: {
+    nombre, correo: correoA, telefono: tel, ciudad: String(b.ciudad || "").slice(0, 120) || null,
+    experiencia: String(b.experiencia || "").slice(0, 600) || null, disponibilidad: String(b.disponibilidad || "").slice(0, 60) || null } }))[0];
+  await avisarAdmins(`Nueva solicitud de asesor comercial: ${nombre}`,
+    plantilla("Solicitud de asesor comercial", `<p><b>${e(nombre)}</b> · ${e(correoA)} · ${e(tel)}<br>${e(sol.ciudad || "")}<br>Disponibilidad: ${e(sol.disponibilidad || "—")}</p><p>Experiencia: ${e(sol.experiencia || "—")}</p><p>Revísala en Administración → Embajadores.</p>`)).catch(() => null);
+  await correo(correoA, nombre, "Recibimos tu solicitud de asesor comercial",
+    plantilla(`Gracias, ${e(nombre.split(" ")[0])}`,
+      `<p style="font-size:15px;line-height:1.6">Recibimos tu solicitud para vender el plan de capacitación de Instituto Mara a empresas. Te llamamos en menos de 2 días hábiles para una plática corta.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Mientras, si también quieres recomendar cursos a personas, puedes registrarte como embajador con el mismo correo.</p>`,
+      { texto: "Ver el programa", url: `${SITIO}/embajadores.html` })).catch(() => null);
+  return json({ ok: true });
 }
 async function embPorToken(t: string) {
   if (!TOKEN_OK.test(t)) return null;
@@ -1331,6 +1356,7 @@ serve(async (req) => {
     if (b.accion === "embajador_alta") return await altaEmbajador(b);
     if (b.accion === "embajador_panel") return await panelEmbajador(b);
     if (b.accion === "embajador_datos") return await datosEmbajador(b);
+    if (b.accion === "asesor_solicitud") return await solicitudAsesor(b);
     const u = await usuarioDe(req);
     if (!u) return json({ error: "Inicia sesión para continuar." }, 401);
     if (u.servicio) {

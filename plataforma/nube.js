@@ -523,7 +523,8 @@ var Nube = {
       nivel:c.nivel || 'Cursos libres de capacitación', familia:c.familia || 'General',
       periodo_tipo:c.periodoTipo || null, periodo_num:c.periodoNum == null ? null : c.periodoNum,
       horas:Number(c.horas)||0, precio:Number(c.precio)||0,
-      publicado:!!c.publicado, proximamente:!!c.proximamente }], 'id');
+      publicado:!!c.publicado, proximamente:!!c.proximamente,
+      area:c.area || null, tema:c.tema || null, dificultad:c.dificultad || null }], 'id');
   },
 
   /* El precio, el nombre y el estado de cada curso los manda el servidor
@@ -537,7 +538,7 @@ var Nube = {
       : (ses ? token().catch(function(){ return null; }) : Promise.resolve(null));
     return listo.then(function(t){
       cab.Authorization = 'Bearer ' + (t || cfg.key);
-      return fetch(cfg.url + '/rest/v1/cursos?select=id,nombre,descripcion,horas,precio,publicado,proximamente',
+      return fetch(cfg.url + '/rest/v1/cursos?select=id,nombre,descripcion,horas,precio,publicado,proximamente,area,tema,dificultad',
                    { headers: cab });
     }).then(function(r){ return r.ok ? r.json() : []; })
       .then(function(filas){
@@ -553,6 +554,7 @@ var Nube = {
             if(f.descripcion) c.desc = f.descripcion;
             c.publicado = !!f.publicado;
             c.proximamente = !!f.proximamente;
+            if(f.area){ c.area = f.area; c.tema = f.tema; c.dificultad = f.dificultad; }
             n++;
           }
           /* Rutas de aprendizaje (paquetes): precio y estado también del servidor */
