@@ -5,7 +5,8 @@
 //   correo    { para, asunto, texto } → envía un correo suelto por Brevo (solo admin)
 //   mensajes  { id, toque? }   → { toque, asunto, texto, html, whatsapp }   (vista previa; solo admin)
 //   enviar    { ids: [], toque? } → { enviados, fallas }  envía por Brevo y registra el contacto (solo admin)
-//   info      { id } → correo de información firmado por el operador (admin o el operador asignado)
+//   info      { id, para? } → plan de capacitación por correo, firmado por el operador (admin o el operador asignado);
+//                       «para» guarda el correo del contacto si aún no lo tenía
 //   solicitud { empresa, nombre, puesto?, correo, telefono, personas?, mensaje? } → «Quiero mi prueba sin costo» del sitio (sin cuenta)
 //   diaria    (llave de servicio, tarea programada) → correos de información pendientes y seguimientos automáticos si están encendidos
 // GET ?baja=<token> → página «ya no recibirás más correos» (enlace del pie de cada correo)
@@ -83,87 +84,107 @@ function planDesde(ctx: any) {
 function mesesGratis(ctx: any) { return Math.max(0, 12 - Number(ctx.mesesAnual || 10)); }
 function textoGratis(ctx: any) { const m = mesesGratis(ctx); return m ? `si pagan el año, ${m === 1 ? "1 mes es gratis" : m + " meses son gratis"}` : ""; }
 
+// Enfoque aprobado el 26 oct 2026: «somos su área de capacitación, por fuera». Primero el problema,
+// luego nuestro papel, cómo funciona, los dos regalos (plan escrito y prueba) y el precio al final.
 function armar(p: Prospecto, toque: number, ctx: any, giro: Record<string, string> | null, urlBaja: string) {
   const cat: Record<string, Curso> = ctx.cat;
   const n = corto(p);
   const progs = programasDe(p, cat);
   const saludo = `Buen día, equipo de ${n}:`;
-  const lista = progs.map((c) => "• " + c.nombre).join("\n");
+  const lista = progs.map((c) => "   • " + c.nombre).join("\n");
   const desde = planDesde(ctx);
+  const total = totalProgramas(cat).replace(/ programas$/, " cursos y diplomados");
   const pie = `\n\nSi prefieren no recibir más información, respondan «baja» o usen este enlace: ${urlBaja}`;
   let asunto = "", texto = "", whatsapp = "";
 
   if (toque <= 1) {
-    asunto = `${n}: capacitación para todo su equipo${desde ? " desde " + desde.split(" al mes")[0] + " al mes" : ""}, con constancias y reporte de avance`;
-    const gancho = p.gancho ? String(p.gancho).replace(/\.\s*$/, "") + "." : `Conocemos el trabajo de ${n} en León.`;
+    asunto = `${n}: un plan de capacitación para su equipo, armado y con seguimiento`;
+    const gancho = p.gancho ? " " + String(p.gancho).replace(/\.\s*$/, "") + "." : "";
     const problema = giro ? giro.problema + " " : "";
     const muestra = progs[0] ? `${AULA}?muestra=${encodeURIComponent(progs[0].id)}` : AULA;
     const extras = transversalesDe(p, progs, cat).slice(0, 2);
     const gratis = textoGratis(ctx);
-    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León que capacita equipos de trabajo. ${gancho} Por eso creemos que les puede interesar lo que ofrecemos a las empresas.\n\n` +
-      `${problema}Con nuestra plataforma, cada persona estudia desde su celular y a su ritmo, y ustedes tienen el control desde un panel propio, «Mi empresa»:\n\n` +
-      `• Registran a su gente y ven el avance de cada persona: lecciones vistas, módulos aprobados y último acceso.\n• Descargan el reporte en Excel o PDF.\n` +
-      `• Cada persona obtiene su constancia con folio y QR verificable, que puede agregar a su currículum.\n\n` +
-      `Un solo plan, todo el catálogo: por una cuota mensual, su equipo entra a los ${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}, y cada quien toma los que necesite.` +
-      (desde ? ` Desde ${desde}, IVA incluido${gratis ? "; " + gratis : ""}.` : "") + `\n\n` +
-      (lista ? `Programas que recomendamos para su equipo:\n${lista}\n\n` : "") +
-      (extras.length ? `También les pueden servir:\n${extras.map((c) => "• " + c.nombre).join("\n")}\n\n` : "") +
-      `Prueba sin costo: 5 personas durante 15 días, con acceso a todo el catálogo, para que su equipo conozca el contenido y ustedes prueben el panel. Si deciden continuar, cada persona conserva su avance.\n\n` +
-      `Pueden probar una lección gratis aquí: ${muestra}\nSi prefieren que les muestre la plataforma, agendamos 20 minutos por Google Meet o Teams cuando gusten.\n\n` +
-      `Para activar su prueba, basta con responder este correo con el nombre de la persona que la coordinará.\n\n${FIRMA}${pie}`;
+    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León.${gancho}\n\n` +
+      `${problema}En muchas empresas la capacitación se queda pendiente porque no hay quién arme el plan ni quién le dé seguimiento. ` +
+      `Ese es el papel que queremos hacer con ustedes: ser su área de capacitación, por fuera.\n\n` +
+      `Cómo funciona:\n` +
+      `1. Armamos el plan. Con base en su giro definimos qué toma cada grupo de su personal.` +
+      (lista ? ` Para ${n} empezaríamos con:\n${lista}` : "") +
+      (extras.length ? `\n   También les pueden servir: ${extras.map((c) => cortoPrograma(c.nombre)).join(" y ")}.` : "") + `\n` +
+      `2. Su gente estudia desde el celular, a su ritmo, ${sinParar(p.segmento)}. Lecciones cortas con ejercicios y evaluación.\n` +
+      `3. Ustedes llevan el control desde su panel «Mi empresa»: quién empezó, cuánto lleva y quién terminó, recordatorios por WhatsApp con un clic y reporte en Excel o PDF.\n` +
+      `4. Cada persona recibe su constancia con folio y QR verificable, que puede llevar el logo de ${n}.\n\n` +
+      `Un solo plan para todo el equipo: entran a ${total}` + (desde ? `, desde ${desde}, IVA incluido${gratis ? "; " + gratis : ""}` : "") + `.\n\n` +
+      `Para empezar les ofrezco dos cosas sin costo:\n` +
+      `• El plan de capacitación para ${n}, por escrito, con un calendario sugerido.\n` +
+      `• 15 días de prueba para 5 personas con todo el catálogo. Si continúan, cada quien conserva su avance.\n\n` +
+      `Basta con responder este correo con el nombre de quien ve la capacitación y se lo envío. Si prefieren, se los muestro en 20 minutos por Google Meet o Teams. ` +
+      `Y si quieren verlo por su cuenta, aquí hay una lección gratis: ${muestra}\n\n${FIRMA}${pie}`;
     whatsapp = waPrimero(p, n, progs, ctx);
   } else if (toque === 2) {
-    asunto = `${n}: ¿les activo la prueba sin costo para su equipo?`;
-    const tres = progs.slice(0, 3).map((c) => cortoPrograma(c.nombre));
-    const unidos = tres.length > 1 ? tres.slice(0, -1).join(", ") + " y " + tres[tres.length - 1] : tres.join("");
-    texto = `${saludo}\n\nLes escribí hace unos días sobre la capacitación para su equipo. Les resumo la propuesta en tres puntos:\n\n` +
-      `• Prueba sin costo: 5 personas durante 15 días, con acceso a todos los cursos y diplomados` + (unidos ? `, como ${unidos}.` : ".") + `\n` +
-      `• Un panel donde ustedes ven el avance de cada persona y descargan el reporte; cada quien obtiene su constancia con folio y QR verificable.\n` +
-      `• Si deciden continuar, el plan es ${desde ? "desde " + desde + ", IVA incluido, " : ""}y cada persona conserva su avance.\n\n` +
-      `Para activarla solo necesito el nombre de la persona que la coordinará. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
-    const tresWa = listaWa(p, progs, cat).slice(0, 3);
-    const unidosWa = tresWa.length > 1 ? tresWa.slice(0, -1).join(", ") + " y " + tresWa[tresWa.length - 1] : tresWa.join("");
-    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les escribí para regalarles *15 días sin costo para 5 personas*` +
-      (tresWa.length ? `, para que su equipo pruebe programas como ${unidosWa}, entre ${totalProgramas(cat)}` : ", para que su equipo pruebe nuestros programas") + `.\n\n` +
-      (desde ? `Si les gusta, el plan es desde *${desde}* y cada quien conserva su avance.\n\n` : "") +
-      `La invitación sigue en pie, sin compromiso. ¿Con quién lo podría ver?`;
+    asunto = `${n}: ¿a quién le envío su plan de capacitación?`;
+    const tres = nombresCortos(p, progs, cat, 3);
+    texto = `${saludo}\n\nLes escribí hace unos días. En corto, esto es lo que les propongo:\n\n` +
+      `• Nos encargamos de la capacitación de su equipo: el plan, el contenido, las evaluaciones y las constancias.\n` +
+      `• Ustedes solo revisan el avance en su panel y descargan el reporte.\n` +
+      `• Empezamos sin costo: el plan por escrito y 15 días para 5 personas` + (tres ? `, con programas como ${tres}.` : ".") + `\n` +
+      (desde ? `• Si continúan, desde ${desde}, IVA incluido, con todo el catálogo.\n` : "") +
+      `\nSolo necesito el nombre de quien ve la capacitación o Recursos Humanos. También puedo mostrarles la plataforma en 20 minutos por Google Meet o Teams.\n\n${FIRMA}${pie}`;
+    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. Hace unos días les ofrecí un *plan de capacitación sin costo* para su equipo` +
+      (tres ? `, empezando con ${tres}` : "") + `.\n\n` +
+      `Lo que más valoran las empresas: ya no tienen que perseguir a nadie. Ven quién avanza, le mandan un recordatorio con un clic, y las constancias pueden llevar el *logo de ${n}*.\n\n` +
+      `El plan y los *15 días sin costo para 5 personas* siguen en pie. ¿Con quién lo podría ver?`;
   } else {
     asunto = `${n}: ¿lo dejamos para más adelante?`;
     texto = `${saludo}\n\nNo quiero llenar su bandeja, así que este es mi último mensaje sobre el tema. Si la capacitación de su equipo no es prioridad en este momento, lo entiendo perfectamente.\n\n` +
-      `Si más adelante les interesa, la prueba sin costo de 15 días para 5 personas sigue disponible: basta con responder este correo. Y si en la empresa hay otra persona que vea capacitación o Recursos Humanos, les agradeceré mucho que se lo reenvíen.\n\n${FIRMA}${pie}`;
-    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. No quiero insistir de más: si la capacitación de su equipo no es prioridad ahorita, lo entiendo perfecto.\n\n` +
-      `Los *15 días sin costo para 5 personas* quedan apartados para cuando les sirva; nada más me escriben por aquí. ¡Que tengan muy buena semana!`;
+      `Cuando quieran ordenarla, el plan de capacitación sin costo y la prueba de 15 días para 5 personas siguen disponibles; basta con responder este correo. ` +
+      `Y si en la empresa hay otra persona que vea capacitación o Recursos Humanos, les agradeceré mucho que se lo reenvíen.\n\n${FIRMA}${pie}`;
+    whatsapp = `Hola, buen día. Soy Héctor Ezquerra, de Instituto Mara. No quiero insistir de más: si la capacitación no es prioridad ahorita, lo entiendo perfecto.\n\n` +
+      `Cuando quieran ordenar la capacitación de su equipo, aquí estamos. El *plan sin costo* y los *15 días para 5 personas* quedan apartados; nada más me escriben por aquí. ¡Que tengan muy buena semana!`;
   }
   return { toque: Math.min(Math.max(toque, 1), 3), asunto, texto, html: aHtml(texto), whatsapp };
 }
 
-// Correo de información que pidió la empresa en la llamada; lo firma el operador.
+// Plan de capacitación que pidió la empresa (antes «correo de información»); lo firma el operador.
+// Las etapas salen de los programas del giro en su orden, más los transversales; Liderazgo va a mandos.
+function etapasPlan(p: Prospecto, cat: Record<string, Curso>) {
+  const progs = programasDe(p, cat);
+  const base = progs.concat(transversalesDe(p, progs, cat));
+  const lider = base.filter((c) => c.id === "d-liderazgo")[0] || null;
+  const resto = base.filter((c) => c.id !== "d-liderazgo");
+  return { arranque: resto.slice(0, 2), segunda: resto.slice(2, 4), mandos: lider };
+}
 function armarInfo(p: Prospecto, ctx: any, op: { nombre: string; telefono: string | null }, urlBaja: string) {
   const cat: Record<string, Curso> = ctx.cat;
   const n = corto(p);
-  const progs = programasDe(p, cat);
   const nombre = String(p.contacto_nombre || "").trim();
-  const extras = transversalesDe(p, progs, cat).slice(0, Math.max(0, 4 - progs.length));
-  const recomendados = progs.concat(extras).slice(0, 5);
-  const muestra = recomendados[0] ? `${AULA}?muestra=${encodeURIComponent(recomendados[0].id)}` : AULA;
+  const et = etapasPlan(p, cat);
+  const primero = et.arranque[0] || et.mandos;
+  const muestra = primero ? `${AULA}?muestra=${encodeURIComponent(primero.id)}` : AULA;
   const rangos = (ctx.rangos as Rango[]).filter((r) => r.hasta !== null && r.desde <= 100);
-  const tabla = rangos.map((r, i) => `• ${i === 0 ? "Hasta " + r.hasta + " personas" : r.desde + " a " + r.hasta}: ${pesos(r.precio_mensual)}${i === 0 ? " al mes" : ""}`).join("\n");
+  const tabla = rangos.map((r, i) => `• ${i === 0 ? "Hasta " + r.hasta + " personas" : r.desde + " a " + r.hasta + " personas"}: ${pesos(r.precio_mensual)} al mes`).join("\n");
   const gratis = mesesGratis(ctx);
+  const nombres = (cs: Curso[]) => cs.map((c) => c.nombre).join("; ");
   let cuando = "";
   if (p.proxima_llamada && new Date(p.proxima_llamada) > new Date()) {
     cuando = new Date(p.proxima_llamada).toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "America/Mexico_City" });
   }
-  const asunto = `Información de Instituto Mara para ${n}`;
-  const texto = `Hola${nombre ? ", " + nombre : ""}:\n\nGracias por su tiempo en la llamada de hoy. Como le comenté, le comparto la información.\n\n` +
-    `Qué es: una plataforma en línea donde su equipo se capacita desde el celular y a su ritmo, con ${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}. ` +
-    `Ustedes tienen el control desde «Mi empresa»: registran a su gente, ven el avance de cada persona y descargan el reporte. Cada quien obtiene su constancia con folio y QR verificable, que puede agregar a su currículum.\n\n` +
-    (recomendados.length ? `Programas que le recomiendo para su equipo:\n${recomendados.map((c) => "• " + c.nombre).join("\n")}\n\n` : "") +
-    `Plan mensual, todo el catálogo, IVA incluido:\n${tabla}\n• Más personas: con gusto le cotizo.\n` +
+  const etapas = (et.arranque.length ? `• Arranque (meses 1 y 2), para todo el personal: ${nombres(et.arranque)}\n` : "") +
+    (et.segunda.length ? `• Segunda etapa (meses 3 y 4): ${nombres(et.segunda)}\n` : "") +
+    (et.mandos ? `• Para supervisores y mandos: ${et.mandos.nombre}\n` : "");
+  const asunto = `Plan de capacitación para ${n} · Instituto Mara`;
+  const texto = `Hola${nombre ? ", " + nombre : ""}:\n\nComo quedamos, le comparto el plan de capacitación que proponemos para su equipo.\n\n` +
+    `1. Qué proponemos\n${etapas}Además, todo el equipo tiene abierto el resto del catálogo: ${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}.\n\n` +
+    `2. Cómo lo llevamos nosotros\n` +
+    `• Ustedes registran a su gente en su panel «Mi empresa».\n` +
+    `• Cada persona estudia desde el celular; ustedes ven quién empezó, cuánto lleva y quién terminó, y le mandan un recordatorio con un clic.\n` +
+    `• Cada quien recibe su constancia con folio y QR verificable, que puede llevar el logo de ${n}.\n` +
+    `• Descargan el reporte en Excel o PDF cuando lo necesiten.\n\n` +
+    `3. Inversión mensual, todo el catálogo, IVA incluido\n${tabla}\n• Más personas: con gusto le cotizo.\n` +
     (gratis ? `Si pagan el año completo, ${gratis === 1 ? "1 mes es gratis" : gratis + " meses son gratis"}.\n\n` : "\n") +
-    `Prueba sin costo: 5 personas durante 15 días, con todo el catálogo. Si deciden continuar, cada persona conserva su avance.\n\n` +
+    `4. Siguiente paso\nPrueba sin costo: 5 personas durante 15 días. Respóndame con el nombre y correo de quien coordinará la prueba y la dejo lista hoy mismo.` +
+    (cuando ? ` Le llamo el ${cuando} para resolver sus dudas.` : "") + `\n\n` +
     `Puede probar una lección aquí: ${muestra}\n\n` +
-    (cuando ? `Le llamo el ${cuando} para resolver sus dudas. ` : "") +
-    `Si prefiere, respóndame este correo con el nombre de quien coordinará la prueba y la dejo lista hoy mismo.\n\n` +
     `Saludos,\n\n${op.nombre}\nInstituto Mara${op.telefono ? " · " + op.telefono : ""}` +
     `\n\nSi prefieren no recibir más información, respondan «baja» o usen este enlace: ${urlBaja}`;
   return { asunto, texto, html: aHtml(texto).replace(`${e(op.nombre)}<br>`, `<b>${e(op.nombre)}</b><br>`) };
@@ -195,13 +216,18 @@ function waPrimero(p: Prospecto, n: string, progs: Curso[], ctx: any) {
   const cat: Record<string, Curso> = ctx.cat;
   const lista = listaWa(p, progs, cat).map((t) => "• " + t).join("\n");
   const desde = planDesde(ctx);
-  return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, una escuela en línea que capacita equipos de trabajo.\n\n` +
-    `Le escribo porque creo que les podemos ayudar a que su equipo siga creciendo: que su gente se capacite desde el celular, ${sinParar(p.segmento)}.\n\n` +
-    (desde ? `Con un solo plan, desde *${desde}*, su equipo entra a todo el catálogo. ` : "Su equipo entra a todo el catálogo. ") +
-    `Usted ve el avance de cada persona y ellos obtienen su constancia con QR verificable.\n\n` +
-    (lista ? `Para ${n} le pueden servir:\n${lista}\n\n` : "") +
-    `Y ${totalProgramas(cat)} en institutomara.com\n\n` +
-    `¿Me permite *regalarles 15 días sin costo para 5 personas* para que su equipo lo pruebe, sin compromiso? ¿Con quién lo podría ver?`;
+  return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, en León.\n\n` +
+    `Muchas empresas no tienen un plan de capacitación porque no hay quién lo arme ni le dé seguimiento. Nosotros hacemos ese papel: *somos el área de capacitación de su empresa, por fuera*.\n\n` +
+    `• Armamos el plan para su equipo\n• Cada persona estudia desde su celular, ${sinParar(p.segmento)}\n• Usted ve el avance en un panel y cada quien recibe su constancia con folio y QR\n\n` +
+    (lista ? `Para ${n} empezaríamos con:\n${lista}\n\n` : "") +
+    (desde ? `Con un solo plan, desde *${desde}*, su equipo entra a ` : "Con un solo plan, su equipo entra a ") +
+    `${totalProgramas(cat).replace(/ programas$/, " cursos y diplomados")}.\n\n` +
+    `¿Me permite enviarles *sin costo* el plan de capacitación para ${n} y *15 días de prueba para 5 personas*? ¿A quién se lo mando?`;
+}
+// «NOM-035, Seguridad e Higiene y Calidad»: los primeros k programas (giro + transversales), sin negritas.
+function nombresCortos(p: Prospecto, progs: Curso[], cat: Record<string, Curso>, k: number) {
+  const t = progs.concat(transversalesDe(p, progs, cat)).slice(0, k).map((c) => cortoPrograma(c.nombre));
+  return t.length > 1 ? t.slice(0, -1).join(", ") + " y " + t[t.length - 1] : t.join("");
 }
 
 // Programas que le sirven a cualquier empresa, en el orden que conviene según el giro.
@@ -392,6 +418,16 @@ serve(async (req) => {
       }
       if (["baja", "no_interesa"].indexOf(p.estado) >= 0) return json({ error: "Ese prospecto pidió no recibir correos." }, 409);
       if (!BREVO || !REMITENTE) return json({ error: "Falta configurar el envío de correos." }, 500);
+      // Desde la ficha se puede mandar el plan aunque la llamada no lo haya pedido; si traen correo nuevo, se guarda.
+      const para = String(body.para || "").trim();
+      if (para) {
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(para)) return json({ error: "Ese correo no parece válido." }, 400);
+        if (para !== p.contacto_correo) {
+          await db(`prospectos?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { contacto_correo: para } });
+          p.contacto_correo = para;
+        }
+      }
+      if (!p.contacto_correo) return json({ error: "Falta el correo de la persona a quien va el plan." }, 400);
       const asunto = await enviarInfo(req, p, await contexto(), yo.servicio ? null : yo.id);
       return json({ ok: true, asunto });
     }
