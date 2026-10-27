@@ -106,7 +106,8 @@ const modulos = S.modulos.map((m, i) => {
   return { id: mid, titulo: m.t, resumen: m.r + (final ? ' Cierra con el proyecto final del diplomado.' : ' Incluye un reto y un laboratorio de simulación.'), lecciones,
     quiz: { titulo: final ? 'Evaluación final del diplomado' : 'Evaluación del módulo ' + (i + 1), preguntas: m.quiz.map(q => preg(q, 4)) } };
 });
-const curso = { id: S.id, nombre: S.nombre, idioma: 'es-MX', color: S.color, nivel: 'Diplomados', familia: S.familia || 'Desarrollo humano', periodoTipo: null, periodoNum: null,
+const curso = { id: S.id, nombre: S.nombre, idioma: 'es-MX', color: S.color, nivel: 'Diplomados', familia: S.familia || 'Desarrollo humano',
+  area: S.area || null, tema: S.tema || null, dificultad: S.dificultad || null, periodoTipo: null, periodoNum: null,
   desc: S.desc, horas: HORAS, precio: PRECIO, publicado: true, proximamente: false, revisionContenido: REV, modulos };
 
 // Horas estimadas (mismo modelo calibrado de los diplomados)
@@ -160,7 +161,7 @@ const recorta = (t, n) => { if (t.length <= n) return t; const s = t.slice(0, n)
 const sPath = path.join(RAIZ, 'sitio-web/index.html'); let html = fs.readFileSync(sPath, 'utf8');
 function upsert(nombre, obj) { const re = new RegExp('var ' + nombre + ' = (\\[.*?\\]);', 's'); const arr = JSON.parse(html.match(re)[1]);
   const i = arr.findIndex(x => x.id === obj.id); if (i >= 0) arr[i] = obj; else arr.push(obj); html = html.replace(re, () => 'var ' + nombre + ' = ' + JSON.stringify(arr) + ';'); }
-upsert('OFERTA', { id: S.id, n: S.nombre, f: 'Diplomados', h: HORAS, p: PRECIO, d: recorta(S.desc, 148), a: S.area || 'Desarrollo humano' });
+upsert('OFERTA', { id: S.id, n: S.nombre, f: 'Diplomados', h: HORAS, p: PRECIO, d: recorta(S.desc, 148), a: S.area || 'Desarrollo humano', area: S.area || undefined, tema: S.tema || undefined, dificultad: S.dificultad || undefined });
 upsert('DESTACADOS', { id: S.id, n: S.nombre, tipo: 'Diplomado', h: HORAS, p: PRECIO, color: S.color, d: recorta(S.desc, 128), a: S.aprender.slice(0, 3), nuevo: true });
 fs.writeFileSync(sPath, html);
 const tPath = path.join(RAIZ, 'sitio-web/temarios.json'), T = JSON.parse(fs.readFileSync(tPath, 'utf8'));
@@ -172,8 +173,9 @@ fs.writeFileSync(tPath, JSON.stringify(T));
 // 5) SQL acumulado (se regenera con todos los diplomados del archivo)
 global.window = {}; eval(fs.readFileSync(cPath, 'utf8'));
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
-const filas = window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${q(c.nombre)}, ${q(c.desc)}, ${q(c.color)}, 'Diplomados', ${q(c.familia)}, null, null, ${c.horas}, ${c.precio}, true, false)`);
-fs.writeFileSync(path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), `-- Instituto Mara — diplomados nuevos (octubre 2026). Se puede repetir.\ninsert into cursos (id, nombre, descripcion, color, nivel, familia, periodo_tipo, periodo_num, horas, precio, publicado, proximamente) values\n${filas.join(',\n')}\non conflict (id) do update set\n  nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,\n  nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas, precio = excluded.precio,\n  publicado = excluded.publicado, proximamente = excluded.proximamente;\n-- Número de lecciones (regla del 50 % para dejar reseña).\nupdate cursos c set lecciones = v.n from (values\n${window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${c.modulos.reduce((a, m) => a + m.lecciones.length, 0)})`).join(',\n')}\n) as v(id, n) where c.id = v.id;\n` + sqlGiros());
+const qn = s => s ? q(s) : 'null';
+const filas = window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${q(c.nombre)}, ${q(c.desc)}, ${q(c.color)}, 'Diplomados', ${q(c.familia)}, null, null, ${c.horas}, ${c.precio}, true, false, ${qn(c.area)}, ${qn(c.tema)}, ${qn(c.dificultad)})`);
+fs.writeFileSync(path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), `-- Instituto Mara — diplomados nuevos (octubre 2026). Se puede repetir.\ninsert into cursos (id, nombre, descripcion, color, nivel, familia, periodo_tipo, periodo_num, horas, precio, publicado, proximamente, area, tema, dificultad) values\n${filas.join(',\n')}\non conflict (id) do update set\n  nombre = excluded.nombre, descripcion = excluded.descripcion, color = excluded.color,\n  nivel = excluded.nivel, familia = excluded.familia, horas = excluded.horas, precio = excluded.precio,\n  publicado = excluded.publicado, proximamente = excluded.proximamente,\n  area = coalesce(excluded.area, cursos.area), tema = coalesce(excluded.tema, cursos.tema), dificultad = coalesce(excluded.dificultad, cursos.dificultad);\n-- Número de lecciones (regla del 50 % para dejar reseña).\nupdate cursos c set lecciones = v.n from (values\n${window.CURSOS_MARA.map(c => `  (${q(c.id)}, ${c.modulos.reduce((a, m) => a + m.lecciones.length, 0)})`).join(',\n')}\n) as v(id, n) where c.id = v.id;\n` + sqlGiros());
 // Recomendación a empresas: cada diplomado con «giros» en su meta.json entra como 3.er programa de esos giros
 // (guion de llamada, correos y WhatsApp). No toca a quien ya lo tiene.
 function sqlGiros() {
