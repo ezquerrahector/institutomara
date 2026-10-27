@@ -5352,11 +5352,17 @@ function vistaMuestra(cid){
   /* Cupón de bienvenida visible en la muestra: LANZAMIENTO30 hasta el 21 oct 2026,
      después BIENVENIDA30 (vence 31 dic 2026). Ambos 30 %. Va en la liga de compra. */
   var hoy = new Date(), cup = hoy < new Date('2026-10-22T00:00:00-06:00') ? 'LANZAMIENTO30' : (hoy < new Date('2027-01-01T00:00:00-06:00') ? 'BIENVENIDA30' : '');
-  var conCup = cup ? Math.round(c.precio * 0.7) : c.precio;
+  var conCup = cup ? Math.round(c.precio * 0.7) : c.precio, pctCup = 30;
+  /* Si la liga trae su propio cupón (?cupon=…) y el servidor lo acepta para
+     este programa, ese manda (p. ej., KITCLINICO de la campaña del kit). */
+  if(muestraCupon && muestraCupon.curso === c.id){
+    cup = muestraCupon.codigo; conCup = muestraCupon.final;
+    pctCup = Math.round((1 - muestraCupon.final / c.precio) * 100);
+  }
   var comprar = 'index.html?curso=' + encodeURIComponent(c.id) + (cup ? '&cupon=' + cup : '');
   var wa = 'https://wa.me/' + (BD.config.whatsapp || '528120282120') + '?text=' + encodeURIComponent('Hola, estoy viendo la lección gratis de «' + c.nombre + '» y tengo una duda.');
   var precioTxt = cup ? '<s style="opacity:.7">'+dinero(c.precio)+'</s> '+dinero(conCup) : dinero(c.precio);
-  var h = '<div class="muestra-barra"><div class="contenedor"><div><b>Instituto Mara</b> · <span>Lección de muestra gratuita'+(cup ? ' · 30 % de descuento con <b style="color:#fff">'+cup+'</b>' : '')+'</span></div>'+
+  var h = '<div class="muestra-barra"><div class="contenedor"><div><b>Instituto Mara</b> · <span>Lección de muestra gratuita'+(cup ? ' · '+pctCup+' % de descuento con <b style="color:#fff">'+cup+'</b>' : '')+'</span></div>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-sm" style="background:#25D366;color:#fff" target="_blank" rel="noopener" href="'+wa+'">WhatsApp</a>'+
     '<a class="btn btn-sm" style="background:#fff;color:var(--morado)" href="'+comprar+'">Inscribirme · '+precioTxt+'</a></div></div></div>'+
     '<main class="contenedor"><div class="seccion"><div class="lector">'+
@@ -5374,13 +5380,20 @@ function vistaMuestra(cid){
   h += '<div class="muestra-cta"><h3>¿Te gustó? Así son las '+total+' lecciones del programa.</h3>'+
     '<p style="color:var(--gris)">'+c.modulos.length+' módulos, evaluación en cada uno y constancia con folio al terminar. '+
     'Pago único de '+(cup ? '<s>'+dinero(c.precio)+'</s> <b>'+dinero(conCup)+'</b> con el cupón <b>'+cup+'</b> (ya va aplicado)' : dinero(c.precio))+' y acceso por 12 meses.</p>'+
-    '<div class="btns"><a class="btn btn-mor" href="'+comprar+'">Inscribirme'+(cup ? ' con 30 % de descuento' : '')+'</a>'+
+    '<div class="btns"><a class="btn btn-mor" href="'+comprar+'">Inscribirme'+(cup ? ' con '+pctCup+' % de descuento' : '')+'</a>'+
     '<a class="btn btn-tur" style="background:#25D366;border-color:#25D366;color:#fff" target="_blank" rel="noopener" href="'+wa+'">Pregúntanos por WhatsApp</a>'+
     '<a class="btn btn-linea" href="'+sitio+'">Ver temario completo</a></div></div>'+
     '</div></div></main>';
   return h;
 }
+var muestraCupon = null;   /* { curso, codigo, final } validado por el servidor */
 function abrirMuestra(cid){
+  var cp = cuponPendiente();
+  if(cp && NUBE) Nube.validarCupon(cp, cid).then(function(r){
+    if(!r || !r.valido) return;
+    muestraCupon = { curso: cid, codigo: cp, final: Number(r.precio_final) };
+    var el = $('muestra'), h3 = vistaMuestra(cid); if(el && h3) el.innerHTML = h3;
+  }).catch(function(){});
   var h = vistaMuestra(cid);
   if(!h) return false;
   estado.vista = 'muestra';
