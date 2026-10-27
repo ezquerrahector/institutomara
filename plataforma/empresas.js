@@ -660,7 +660,7 @@ function formPiloto(id){
     '<div class="fila"><div class="campo"><label for="pl-n">Lugares</label><input id="pl-n" type="number" min="1" max="50" value="5"></div>'+
     '<div class="campo"><label for="pl-d">Días de acceso por persona</label><input id="pl-d" type="number" min="1" max="60" value="15"><small style="color:var(--gris)">Se cuentan desde que cada persona activa su lugar.</small></div>'+
     '<div class="campo"><label for="pl-plazo">Plazo para activar (días)</label><input id="pl-plazo" type="number" min="1" max="120" value="30"><small style="color:var(--gris)">Después de este plazo, los lugares sin activar vencen.</small></div></div>'+
-    '<div class="campo"><label for="pl-nota">Nota (opcional)</label><input id="pl-nota" maxlength="200" placeholder="Ej. campaña empresas León, octubre"></div>'+
+    '<div class="campo"><label for="pl-nota">Nota (opcional)</label><input id="pl-nota" maxlength="200" placeholder="Ej. campaña empresas, octubre"></div>'+
     '<div id="pl-aviso"></div><button id="pl-btn" class="btn btn-mor" onclick="crearPiloto(\''+id+'\')">Crear piloto y generar lugares</button></div>';
 }
 function plNorm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }

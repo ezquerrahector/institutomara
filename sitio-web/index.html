@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instituto Mara · Educación en línea | Cursos desde tu celular</title>
-<meta name="description" content="Escuela digital mexicana. Cursos y diplomados en línea: inglés, Excel, inteligencia artificial por profesión, tanatología, NOM-035, cuidado del adulto mayor y más, con constancia verificable. Estudia desde tu celular, a tu ritmo, desde cualquier estado del país.">
+<meta name="description" content="Escuela 100% en línea. Cursos y diplomados en línea: inglés, Excel, inteligencia artificial por profesión, tanatología, NOM-035, cuidado del adulto mayor y más, con constancia verificable. Estudia desde tu celular, a tu ritmo, desde cualquier estado del país.">
 <meta property="og:title" content="Instituto Mara · Educación en línea">
 <meta property="og:description" content="Aprende hoy. Abre tu mundo. Cursos en línea con constancia verificable, desde tu celular.">
 <meta property="og:type" content="website">
@@ -306,7 +306,9 @@ footer a:hover{color:#fff}
 @media(max-width:900px){.vitrina{margin-top:10px}}
 @media(max-width:640px){.vitrina{grid-template-columns:1fr 1fr;gap:10px}.vit-top{min-height:96px;padding:12px}.vit-top b{font-size:14px}.hero-busca .btn{padding:12px 16px}}
 .explorar{padding-bottom:30px}
-.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:12px;margin-bottom:40px}
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:40px}
+@media(max-width:900px){.areas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.areas{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.area{padding:14px}}
 .area{border:1.5px solid var(--linea);background:#fff;border-radius:18px;padding:18px;text-align:left;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
 .area:hover{border-color:var(--morado);transform:translateY(-2px)}
 .area .ico{font-size:28px}
@@ -415,9 +417,9 @@ footer a:hover{color:#fff}
 <div class="hero hero2">
   <div class="wrap">
     <div class="h2-cab">
-      <div class="eyebrow">Escuela en línea · León, Guanajuato</div>
+      <div class="eyebrow">Escuela 100% en línea · Estudia desde cualquier lugar</div>
       <h1>Capacitación en línea, <span>para ti y para tu equipo</span></h1>
-      <p class="lead">Cursos y diplomados cortos, desde el celular y a tu ritmo, con constancia con folio y QR verificable.</p>
+      <p class="lead">Cursos y diplomados prácticos, desde el celular y a tu ritmo, con constancia con folio y QR verificable.</p>
     </div>
     <div class="puertas">
       <article class="puerta puerta-ti" aria-labelledby="pt-ti">
@@ -674,12 +676,21 @@ html,body{overflow-x:hidden}
   window.IM = { oferta:function(){ return OFERTA; }, supa:SUPA, anon:ANON };
   var ORDEN = ['Todos','Diplomados','Psicología y salud','Desarrollo humano','Negocios y oficina','Idiomas','Tecnología e IA','IA para tu profesión'];
   var AREAS = [
-    {k:'Psicología y salud', ico:'🧠', d:'Terapia, duelo, forense, infancia y bienestar'},
-    {k:'Desarrollo humano', ico:'✨', d:'Atracción, imagen, lenguaje corporal, liderazgo'},
-    {k:'Negocios y oficina', ico:'💼', d:'RH, contabilidad, marketing, Excel, ventas'},
-    {k:'Idiomas', ico:'🌎', d:'Inglés A1 a B2, francés, italiano, portugués, alemán'},
-    {k:'Tecnología e IA', ico:'🤖', d:'IA en el trabajo, Office, Power BI, ciberseguridad'},
-    {k:'IA para tu profesión', ico:'🧩', d:'28 cursos de IA por oficio y profesión'}];
+    {k:'Psicología y terapia', ico:'🧠', d:'Terapia, duelo, ansiedad, pareja'},
+    {k:'Comunicación e influencia', ico:'🎤', d:'Oratoria, persuasión, negociación'},
+    {k:'Crecimiento personal', ico:'🌱', d:'Emociones, hábitos, imagen, finanzas'},
+    {k:'Liderazgo, RH y seguridad laboral', ico:'👥', d:'Liderazgo, nómina, NOM-035, calidad'},
+    {k:'Ventas y marketing', ico:'📈', d:'Redes, ventas en línea, Canva'},
+    {k:'Tecnología e IA', ico:'🤖', d:'Excel, Power BI, Office, IA'},
+    {k:'IA para tu profesión', ico:'🧩', d:'IA aplicada a tu oficio'},
+    {k:'Idiomas', ico:'🌎', d:'Inglés A1 a B2 y 4 idiomas más'},
+    {k:'Criminología y forense', ico:'🔎', d:'Forense, perfilación, mentiras'},
+    {k:'Cuidado, infancia y educación', ico:'🤲', d:'Adulto mayor, niños, inclusión'},
+    {k:'Administración y contabilidad', ico:'🗂️', d:'RESICO, asistente, almacén'}];
+  /* Área de cada programa (26 oct 2026): 11 áreas en lugar de 6 para encontrar más rápido.
+     Un programa nuevo que no esté aquí conserva el área que trae del catálogo. */
+  var AREA_DE = {"c-ingles":"Idiomas","c-ia":"Tecnología e IA","c-ia-oficina":"IA para tu profesión","c-ia-ventas":"IA para tu profesión","c-ia-emprendedores":"IA para tu profesión","c-ia-finanzas":"IA para tu profesión","c-ia-rh":"IA para tu profesión","c-ia-docentes":"IA para tu profesión","c-ia-salud":"IA para tu profesión","c-ia-manufactura":"IA para tu profesión","c-ia-marketing":"IA para tu profesión","c-ia-contadores":"IA para tu profesión","c-ia-directivos":"IA para tu profesión","c-ia-atencion-cliente":"IA para tu profesión","c-ia-proyectos":"IA para tu profesión","c-ia-abogados":"IA para tu profesión","c-ia-compras":"IA para tu profesión","c-ia-logistica":"IA para tu profesión","c-ia-ecommerce":"IA para tu profesión","c-ia-inmobiliarias":"IA para tu profesión","c-ia-arquitectura":"IA para tu profesión","c-ia-diseno":"IA para tu profesión","c-ia-programadores":"IA para tu profesión","c-ia-automatizacion":"IA para tu profesión","c-ia-freelance":"IA para tu profesión","c-ia-callcenter":"IA para tu profesión","c-ia-turismo":"IA para tu profesión","c-ia-estudiantes":"IA para tu profesión","c-ia-construccion":"IA para tu profesión","c-ia-campo":"IA para tu profesión","c-office":"Tecnología e IA","d-tanatologia":"Psicología y terapia","d-nom035":"Liderazgo, RH y seguridad laboral","c-pap":"Psicología y terapia","c-excel-avanzado":"Tecnología e IA","c-ingles-a2":"Idiomas","d-adulto-mayor":"Cuidado, infancia y educación","c-inteligencia-emocional":"Crecimiento personal","c-finanzas-personales":"Crecimiento personal","d-marketing-digital":"Ventas y marketing","d-contabilidad-resico":"Administración y contabilidad","c-atencion-ventas":"Ventas y marketing","d-liderazgo":"Liderazgo, RH y seguridad laboral","d-proyectos":"Liderazgo, RH y seguridad laboral","d-recursos-humanos":"Liderazgo, RH y seguridad laboral","c-power-bi":"Tecnología e IA","d-asistente-administrativo":"Administración y contabilidad","c-comunicacion":"Comunicación e influencia","c-ciberseguridad":"Tecnología e IA","d-seguridad-higiene":"Liderazgo, RH y seguridad laboral","c-ingles-b1":"Idiomas","c-venta-en-linea":"Ventas y marketing","c-canva":"Ventas y marketing","c-productividad":"Crecimiento personal","c-logistica":"Administración y contabilidad","d-tcc":"Psicología y terapia","d-neurodiversidad":"Cuidado, infancia y educación","d-infancia-adolescencia":"Cuidado, infancia y educación","c-ansiedad-depresion":"Psicología y terapia","c-neurociencia":"Crecimiento personal","c-ingles-servicio":"Idiomas","d-terapias-contextuales":"Psicología y terapia","d-evaluacion-clinica":"Psicología y terapia","c-ia-psicologos":"IA para tu profesión","c-fotografia-producto":"Ventas y marketing","c-ingles-b2":"Idiomas","c-ingles-kids":"Idiomas","c-frances-a1":"Idiomas","c-portugues-a1":"Idiomas","c-italiano-a1":"Idiomas","c-aleman-a1":"Idiomas","diplomado-persuasion-etica":"Comunicación e influencia","diplomado-estoicismo-vida-moderna":"Crecimiento personal","d-seduccion-atraccion":"Crecimiento personal","d-imagen-personal":"Crecimiento personal","d-psicologia-forense":"Criminología y forense","d-lenguaje-corporal":"Comunicación e influencia","d-psicologia-influencia":"Comunicación e influencia","d-leer-personas":"Comunicación e influencia","d-conversaciones-dificiles":"Comunicación e influencia","d-confianza-seguridad":"Crecimiento personal","d-manipulacion":"Criminología y forense","d-negociacion":"Comunicación e influencia","d-storytelling":"Comunicación e influencia","d-psicologia-social":"Psicología y terapia","d-detectar-mentiras":"Criminología y forense","d-oratoria":"Comunicación e influencia","d-psicologia-pareja":"Psicología y terapia","d-inteligencia-social":"Comunicación e influencia","d-criminologia":"Criminología y forense","d-calidad-lean":"Liderazgo, RH y seguridad laboral","d-datos-ia":"Tecnología e IA"};
+  OFERTA.forEach(function(c){ if(AREA_DE[c.id]) c.a = AREA_DE[c.id]; });
   function areaDe(c){ return c.a || c.f; }
   var filtro = 'Todos', texto = '', verTodo = false;
   function norm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
@@ -778,7 +789,7 @@ html,body{overflow-x:hidden}
 
   /* ---------- Rediseño: buscador del hero, vitrina, áreas, filas y membresía ---------- */
   var COLOR = {}; DESTACADOS.forEach(function(d){ COLOR[d.id] = d.color; });
-  var PALETA = {'Psicología y salud':'#9333EA','Desarrollo humano':'#BE185D','Negocios y oficina':'#0F766E','Idiomas':'#3730A3','Tecnología e IA':'#1D4ED8','IA para tu profesión':'#6D28D9'};
+  var PALETA = {'Psicología y salud':'#9333EA','Desarrollo humano':'#BE185D','Negocios y oficina':'#0F766E','Idiomas':'#3730A3','Tecnología e IA':'#1D4ED8','IA para tu profesión':'#6D28D9','Psicología y terapia':'#9333EA','Comunicación e influencia':'#BE185D','Crecimiento personal':'#059669','Liderazgo, RH y seguridad laboral':'#0F766E','Ventas y marketing':'#EA580C','Criminología y forense':'#334155','Cuidado, infancia y educación':'#0891B2','Administración y contabilidad':'#4D7C0F'};
   function colorDe(c){ return COLOR[c.id] || PALETA[areaDe(c)] || '#6D28D9'; }
   function esNuevo(c){ return DESTACADOS.some(function(d){ return d.id === c.id && d.nuevo; }); }
   function irAExplorador(f, q){
@@ -868,7 +879,7 @@ html,body{overflow-x:hidden}
     if(String(d.telefono).replace(/\D/g,'').length < 10){ av.innerHTML = '<div class="emp-err">Escribe un teléfono de 10 dígitos.</div>'; return; }
     d.accion = 'solicitud'; b.disabled = true; b.textContent = 'Enviando…'; av.innerHTML = '';
     fetch(SUPA + '/functions/v1/prospectos', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer '+ANON }, body:JSON.stringify(d) })
-      .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); })
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; })
       .then(function(){ f.reset(); b.textContent = 'Enviado ✓'; av.innerHTML = '<div class="emp-ok">¡Listo! Te llamamos hoy para activar tu prueba.</div>'; })
       .catch(function(e){ b.disabled = false; b.textContent = 'Quiero mi prueba sin costo'; av.innerHTML = '<div class="emp-err">' + esc(e.message) + '</div>'; });
   };
@@ -1015,6 +1026,14 @@ html,body{overflow-x:hidden}
           </div>
           <p class="rg-ayuda">Ahí te llega el comprobante y una liga para cambiar el correo, el mensaje o la fecha si lo necesitas.</p>
         </fieldset>
+        <div class="rg-cupon">
+          <button type="button" class="rg-cupon-link" id="rg-cupon-abrir">¿Tienes un cupón de descuento?</button>
+          <div class="rg-cupon-caja" id="rg-cupon-caja" hidden>
+            <input id="rg-cupon" maxlength="40" placeholder="Escribe tu código" autocomplete="off" aria-label="Cupón de descuento">
+            <button type="button" class="btn btn-linea" id="rg-cupon-aplicar">Aplicar</button>
+          </div>
+          <p class="rg-cupon-res" id="rg-cupon-res" aria-live="polite"></p>
+        </div>
         <div id="rg-av" aria-live="polite"></div>
         <button type="submit" class="btn btn-mor btn-grande rg-pagar" id="rg-btn">Pagar el regalo</button>
         <p class="rg-ayuda rg-centro">Pago seguro con Mercado Pago: tarjeta, meses sin intereses u OXXO. Garantía de 7 días.</p>
@@ -1039,6 +1058,14 @@ html,body{overflow-x:hidden}
 .rg-ayuda{color:var(--gris);font-size:13px;line-height:1.5;margin:0}
 .rg-centro{text-align:center}
 .rg-pagar{width:100%}
+.rg-cupon-link{border:0;background:none;color:var(--morado);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:0;text-decoration:underline}
+.rg-cupon-caja{display:flex;gap:8px;margin-top:8px}
+#rg-form .rg-cupon-caja input{text-transform:uppercase}
+.rg-cupon-caja .btn{padding:10px 18px}
+.rg-cupon-res{font-size:14px;margin:6px 0 0}
+.rg-cupon-res.ok{color:var(--verde);font-weight:600}.rg-cupon-res.mal{color:var(--rojo)}
+.cupon-barra{background:#ECFDF5;color:#065F46;text-align:center;font-size:14.5px;padding:9px 16px;border-bottom:1px solid #A7F3D0}
+.cupon-barra b{letter-spacing:.5px}
 .rg-error{background:#FEF2F2;color:var(--rojo);border-radius:10px;padding:10px 12px;font-size:14px}
 .rg-ok{text-align:center}
 .rg-ok .rg-big{font-size:56px;line-height:1}
@@ -1095,6 +1122,30 @@ html,body{overflow-x:hidden}
     <div class="regalo-ico" aria-hidden="true">🎁</div>
   </div>
 </section>
+
+<!-- ============ EMBAJADORES ============ -->
+<section id="embajadores" class="emb-sec">
+  <div class="wrap emb-caja">
+    <div>
+      <div class="eyebrow">Gana dinero con nosotros</div>
+      <h2>Conviértete en embajador</h2>
+      <p>Recomienda cursos con tu código: tus contactos estudian con 10 % de descuento y tú ganas 20 % de cada venta. Registro gratis, sin horarios y desde tu celular.</p>
+    </div>
+    <div class="emb-bot">
+      <a class="btn btn-mor btn-grande" href="embajadores.html">Quiero ser embajador →</a>
+      <a class="emb-link" href="embajadores.html#asesor">¿Vendes a empresas? Conoce el esquema de asesor comercial</a>
+    </div>
+  </div>
+</section>
+<style>
+.emb-sec{padding-top:0}
+.emb-caja{display:flex;align-items:center;justify-content:space-between;gap:28px;border:1.5px solid var(--lila);border-radius:28px;padding:34px 40px;background:linear-gradient(120deg,#fff 0%,#F5F3FF 100%)}
+.emb-caja h2{font-size:clamp(24px,2.8vw,32px);margin:6px 0 8px}
+.emb-caja p{color:var(--gris);max-width:620px}
+.emb-bot{display:flex;flex-direction:column;align-items:center;gap:10px;flex:none}
+.emb-link{font-size:13.5px;text-align:center;max-width:260px}
+@media(max-width:820px){.emb-caja{flex-direction:column;align-items:flex-start;padding:26px}.emb-bot{align-items:flex-start}.emb-link{text-align:left}}
+</style>
 
 <!-- ============ EMPRESAS ============ -->
 <section id="empresas" class="emp-sec">
@@ -1157,7 +1208,7 @@ html,body{overflow-x:hidden}
     <div class="sec-head centro">
       <div class="eyebrow">Por qué Instituto Mara</div>
       <h2>Hecho para quien ya no tiene tiempo de ir a una escuela</h2>
-      <p>No inventamos nada raro: tomamos lo que impide estudiar a la mayoría de los adultos en México y lo quitamos de en medio.</p>
+      <p>No inventamos nada raro: tomamos lo que impide estudiar a la mayoría de los adultos y lo quitamos de en medio.</p>
     </div>
     <div class="razones">
       <div class="razon">
@@ -1172,8 +1223,8 @@ html,body{overflow-x:hidden}
       </div>
       <div class="razon">
         <div class="ico">🗺️</div>
-        <h3>En cualquier estado</h3>
-        <p>Da lo mismo si vives en Ciudad de México o en una comunidad de Chiapas. Si tienes internet, tienes escuela. Nunca vas a pisar una oficina.</p>
+        <h3>Desde cualquier lugar</h3>
+        <p>Da lo mismo si vives en una gran ciudad, en un pueblo o fuera de México. Si tienes internet, tienes escuela. Nunca vas a pisar una oficina.</p>
       </div>
       <div class="razon">
         <div class="ico">🤝</div>
@@ -1234,8 +1285,8 @@ html,body{overflow-x:hidden}
     </details>
 
     <details>
-      <summary>¿Puedo estudiar desde cualquier estado?</summary>
-      <div class="r">Sí. Instituto Mara es 100% en línea y atiende a alumnos de toda la República. No necesitas acudir a ninguna oficina en ningún momento, ni para inscribirte ni para recibir tu constancia.</div>
+      <summary>¿Puedo estudiar desde cualquier lugar?</summary>
+      <div class="r">Sí. Instituto Mara es 100% en línea y atiende a alumnos de todo México y de otros países. No necesitas acudir a ninguna oficina en ningún momento, ni para inscribirte ni para recibir tu constancia.</div>
     </details>
 
     <details>
@@ -1311,7 +1362,7 @@ html,body{overflow-x:hidden}
           </svg>
           <b>Instituto Mara</b>
         </div>
-        <p style="max-width:330px">Educación en línea. Capacitación accesible para adultos que trabajan, en cualquier estado de México.</p>
+        <p style="max-width:330px">Educación en línea. Capacitación accesible para adultos que trabajan, desde cualquier lugar.</p>
       </div>
       <div>
         <h4>Navegación</h4>
@@ -1320,6 +1371,7 @@ html,body{overflow-x:hidden}
           <li><a href="#membresia">Membresía</a></li>
           <li><a href="#empresas">Para empresas</a></li>
           <li><a href="#regalar" onclick="abrirRegalo();return false">Regalar un curso</a></li>
+          <li><a href="embajadores.html">Gana dinero: embajadores</a></li>
           <li><a href="#preguntas">Preguntas frecuentes</a></li>
           <li><a href="../plataforma/index.html">Entrar al aula</a></li>
         </ul>
@@ -1367,7 +1419,7 @@ menu.querySelectorAll('a').forEach(function(a){
   function esc(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function api(d){
     return fetch(IM.supa + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:IM.anon, Authorization:'Bearer ' + IM.anon }, body:JSON.stringify(d) })
-      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar. Intenta de nuevo.'); return j; }); });
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar. Intenta de nuevo.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; });
   }
   function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
   function llenar(id){
@@ -1378,13 +1430,34 @@ menu.querySelectorAll('a').forEach(function(a){
         return '<option value="' + esc(c.id) + '">' + esc(c.n) + ' — ' + dinero(c.p) + '</option>'; }).join('') + '</optgroup>';
     }).join('');
     sel.value = id && sel.querySelector('option[value="' + id.replace(/"/g, '') + '"]') ? id : '';
-    precio();
+    var guardado = (function(){ try{ return localStorage.getItem('institutoMara.cupon') || ''; }catch(e){ return ''; } })();
+    if(guardado && !/^REGALO-/.test(guardado) && !document.getElementById('rg-cupon').value){ document.getElementById('rg-cupon').value = guardado; document.getElementById('rg-cupon-caja').hidden = false; }
+    CUP = null; precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true);
   }
+  var CUP = null;   /* { cupon, curso, precio } validado por el servidor */
   function precio(){
     var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
-    document.getElementById('rg-btn').textContent = c ? 'Pagar ' + dinero(c.p) + ' →' : 'Pagar el regalo';
+    var p = c && CUP && CUP.curso === c.id ? CUP.precio : (c ? c.p : null);
+    document.getElementById('rg-btn').textContent = p != null ? 'Pagar ' + dinero(p) + ' →' : 'Pagar el regalo';
   }
-  sel.addEventListener('change', precio);
+  function cuponRes(t, ok){ var el = document.getElementById('rg-cupon-res'); el.textContent = t || ''; el.className = 'rg-cupon-res' + (t ? (ok ? ' ok' : ' mal') : ''); }
+  function aplicarCupon(silencioso){
+    var cod = document.getElementById('rg-cupon').value.trim().toUpperCase();
+    CUP = null; precio(); cuponRes('');
+    if(!cod) return Promise.resolve();
+    if(!sel.value){ if(!silencioso) cuponRes('Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
+    var cur = sel.value;
+    return api({ accion:'regalo_cupon', cursoId:cur, cupon:cod }).then(function(r){
+      if(sel.value !== cur) return;
+      CUP = { cupon:r.cupon, curso:cur, precio:r.precio };
+      cuponRes('Cupón ' + r.cupon + ' aplicado: ' + dinero(r.original) + ' → ' + dinero(r.precio) + ' (ahorras ' + dinero(r.descuento) + ')', true); precio();
+    }).catch(function(x){ cuponRes(x.message, false); });
+  }
+  sel.addEventListener('change', function(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); });
+  document.getElementById('rg-cupon-abrir').onclick = function(){ document.getElementById('rg-cupon-caja').hidden = false; document.getElementById('rg-cupon').focus(); };
+  document.getElementById('rg-cupon-aplicar').onclick = function(){ aplicarCupon(false); };
+  document.getElementById('rg-cupon').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); aplicarCupon(false); } });
+  document.getElementById('rg-cupon').addEventListener('input', function(){ if(CUP){ CUP = null; precio(); cuponRes(''); } });
   [].forEach.call(document.querySelectorAll('input[name=rg-cuando]'), function(r){ r.addEventListener('change', function(){
     var f = document.getElementById('rg-fecha'); f.hidden = r.value !== 'fecha' || !r.checked; if(!f.hidden){ f.min = hoy(); if(!f.value) f.value = hoy(); f.focus(); }
   }); });
@@ -1415,6 +1488,9 @@ menu.querySelectorAll('a').forEach(function(a){
       : !CORREO.test(d.paraCorreo) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.'] : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
       : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null;
     if(falta){ aviso(falta[1]); document.getElementById(falta[0]).focus(); return; }
+    var cupEscrito = document.getElementById('rg-cupon').value.trim().toUpperCase();
+    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.curso === d.cursoId)){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
+    if(CUP) d.cupon = CUP.cupon;
     var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
     try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
     api(d).then(function(r){ location.href = r.init_point; })
@@ -1442,6 +1518,21 @@ menu.querySelectorAll('a').forEach(function(a){
       }).catch(function(){ document.getElementById('rg-res').textContent = 'Te mandamos un correo con el comprobante y la liga para revisar tu regalo.'; });
     }
   }
+  /* Liga de embajador o de promoción: …/sitio-web/?cupon=CODIGO. Se guarda en el dispositivo
+     (el aula lo aplica solo al pagar) y se avisa arriba de la página. */
+  (function(){
+    var c = (q.get('cupon') || '').trim().toUpperCase();
+    try{
+      if(c && /^[A-Z0-9-]{3,40}$/.test(c) && !/^REGALO-/.test(c)){ localStorage.setItem('institutoMara.cupon', c); localStorage.removeItem('institutoMara.cuponCurso');
+        history.replaceState(null, '', location.pathname + location.hash); }
+      var g = localStorage.getItem('institutoMara.cupon') || '';
+      if(g && !/^REGALO-/.test(g)){
+        var bar = document.createElement('div'); bar.className = 'cupon-barra';
+        bar.innerHTML = '🎟️ Tienes el código <b>' + esc(g) + '</b>: se aplica solo al pagar tu curso o diplomado.';
+        var h = document.querySelector('header'); h.parentNode.insertBefore(bar, h);
+      }
+    }catch(x){}
+  })();
   /* Precio del plan para empresas en la puerta de la portada, igual al de la tabla */
   function precioEmp(){ var td = document.querySelector('#emp-precios tr td:nth-child(2)'), el = document.getElementById('hero-emp-precio'); if(td && el && /\$/.test(td.textContent)) el.textContent = td.textContent.trim() + ' al mes'; }
   precioEmp(); setTimeout(precioEmp, 2500);
