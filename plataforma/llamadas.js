@@ -17,7 +17,7 @@ var LL_RES = [
   ['buzon','Buzón o dejé recado', 'Se vuelve a llamar en 2 días hábiles.'],
   ['recepcion','Recepción no me transfirió', 'Anota el nombre del encargado si te lo dieron. Se vuelve a llamar en 2 días hábiles.'],
   ['otro_dia','Pidió que llame otro día', 'Escribe la fecha y hora que te dijo.'],
-  ['info_correo','Pidió información por correo', 'Escribe su correo. Se vuelve a llamar en 3 días hábiles.'],
+  ['info_correo','Pidió el plan por correo', 'Escribe su correo: le llega el plan de capacitación con precios. Se vuelve a llamar en 3 días hábiles.'],
   ['piloto','Aceptó la prueba', 'Al guardar, se crea su prueba de 5 lugares por 15 días.'],
   ['demo','Agendó demostración', 'Escribe la fecha y hora de la demostración.'],
   ['proveedor','Ya tiene proveedor', 'Se le vuelve a ofrecer en unos dos meses.'],
@@ -240,45 +240,49 @@ function llDatosGuion(p){
 /* Texto con las variables resaltadas: {clave} se cambia por su valor. */
 function llTxt(t, d){ return esc(t).replace(/\{(\w+)\}/g, function(m, k){ return '<b style="background:#F3E8FF;border-radius:4px;padding:0 3px">'+esc(d[k] != null ? d[k] : m)+'</b>'; }); }
 
-/* Guiones aprobados por Héctor el 19 oct 2026. */
+/* Guiones con el enfoque «somos su área de capacitación», aprobados por Héctor el 26 oct 2026. */
 var LL_GUIONES = [
   { id:'recepcion', rot:'1. Recepción', partes:[
-    ['', '{saludo}, habla {op}, de Instituto Mara. ¿Me podría comunicar, por favor, con la persona de Capital Humano o con quien se encarga de la capacitación del personal?'],
-    ['Si preguntan «¿de parte de quién?» o «¿de qué se trata?»', 'Somos una escuela en línea que capacita equipos de trabajo, con constancia con folio y QR verificable que pueden agregar a su currículum. Le estamos regalando a {emp} una prueba de 5 lugares sin costo por 15 días, en temas como {p1}, {p2} y {p3}. ¿Con quién lo podría platicar?'],
-    ['Si no lo transfieren', 'Entiendo. ¿Me podría compartir el contacto de esa persona para mandarle la información? ¿Y a qué hora es más fácil encontrarla?']
+    ['', '{saludo}, habla {op}, de Instituto Mara. ¿Me comunica, por favor, con la persona que ve Recursos Humanos o la capacitación del personal?'],
+    ['Si preguntan «¿de qué se trata?»', 'Somos una escuela en línea de León que funciona como el área de capacitación de las empresas: armamos el plan para su personal, cada quien estudia desde su celular y la empresa ve el avance en un panel. Queremos regalarle a {emp} un plan de capacitación y 15 días de prueba para 5 personas. ¿Con quién lo podría platicar?'],
+    ['Si no lo transfieren', 'Entiendo. ¿Me comparte el correo de esa persona para mandarle el plan? ¿Y a qué hora es más fácil encontrarla?']
   ]},
   { id:'encargado', rot:'2. Con quien decide', partes:[
-    ['', 'Gracias por tomar mi llamada, {trato}. En Instituto Mara capacitamos equipos de trabajo en línea; su gente estudia desde el celular o la computadora, a su ritmo.'],
-    ['', 'Para {emp} le pueden servir mucho {p1}, {p2} y {p3}, o cualquiera de nuestros {n} cursos y diplomados. Al terminar, cada persona recibe una constancia con folio y QR verificable, que puede agregar a su currículum.'],
-    ['', 'Y lo que más valoran las empresas: usted tiene su propio panel, donde ve quién está estudiando, cuánto avanzó cada persona y quién ya terminó, y puede descargar el reporte.'],
-    ['', 'Les quiero regalar 5 lugares por 15 días para que lo prueben sin compromiso. Si les gusta, es muy sencillo: una mensualidad fija según el número de colaboradores, y todos pueden tomar todo el catálogo. Desde {desde} al mes para hasta {hasta} personas, IVA incluido.'],
-    ['', '¿Les gustaría empezar la prueba esta semana?'],
-    ['Si dice que sí', 'Perfecto. ¿A qué correo le mando el acceso como administrador? ¿Ya tiene en mente a las 5 personas o prefiere que se las registre yo? Solo necesito nombre y correo de cada una.'],
-    ['Si dice «mándeme información»', 'Con gusto. ¿A qué correo se la envío? Le marco el (día) para resolver sus dudas. ¿Le queda mejor en la mañana o en la tarde?']
+    ['', 'Gracias por tomar mi llamada, {trato}. Antes de contarle qué hacemos, le hago una pregunta: hoy, en {emp}, ¿quién se encarga de capacitar al personal?'],
+    ['Si nadie o «no tenemos plan»', 'Es lo más común: nadie tiene tiempo de armar un plan ni de darle seguimiento. Justo para eso existimos. Somos el área de capacitación de la empresa, por fuera: nosotros armamos el plan, su gente estudia desde el celular y usted solo revisa el avance.'],
+    ['Si «lo ve RH, pero no nos da tiempo»', 'Entonces le quitamos la parte operativa. El contenido, las evaluaciones y las constancias corren por nuestra cuenta; usted decide quién toma qué y ve el avance en su panel.'],
+    ['Si «ya tenemos proveedor»', 'Qué bueno. Le pregunto: ¿hoy le llega el avance de cada persona sin tener que pedirlo? Con nosotros lo ve al momento y descarga el reporte. Muchas empresas nos usan para complementar.'],
+    ['Cómo funciona', 'Son tres pasos. Uno: con base en su giro armamos el plan; para {emp} empezaríamos con {p1}, {p2} y {p3}, y hay {n} cursos y diplomados más. Dos: cada persona estudia desde su celular, en sus tiempos. Tres: usted ve en su panel quién empezó, cuánto lleva y quién terminó, y le manda un recordatorio con un clic. Cada quien recibe su constancia con folio y QR, que puede llevar el logo de {emp}.'],
+    ['La oferta', 'Le propongo dos cosas sin costo: le mando por escrito el plan de capacitación para {emp}, y les activo 15 días para 5 personas con todo el catálogo. Si les sirve, es una mensualidad fija para todo el equipo, no por persona ni por curso: desde {desde} al mes para hasta {hasta} personas, IVA incluido.'],
+    ['Cierre', '¿A qué correo le envío el plan? Y si quiere arrancar ya, ¿quiénes serían las 5 personas de la prueba?'],
+    ['Si dice «mándeme información»', 'Con gusto, le mando el plan para {emp} con precios. ¿A qué correo? Le marco el (día) para revisarlo juntos; ¿le queda mejor en la mañana o en la tarde?']
   ]},
   { id:'segunda', rot:'3. Segunda llamada', partes:[
-    ['', '{saludo}, {trato}, habla {op}, de Instituto Mara. El {dia} platicamos sobre la prueba de 5 lugares sin costo para su equipo, con programas como {p1} y {p2}. ¿Tuvo oportunidad de revisar la información que le envié?'],
-    ['Si la revisó', '¿Qué le pareció? ¿Le gustaría que activemos la prueba esta semana? Solo necesito el correo de quien va a administrar y los nombres de las personas.'],
-    ['Si no la revisó', 'No se preocupe, se lo resumo en un minuto: son 5 lugares gratis por 15 días, su gente toma los cursos desde el celular y usted ve el avance de cada uno en su panel. ¿Arrancamos?'],
-    ['Si dice que todavía lo está viendo', 'Claro. ¿Hay algo que le ayude a decidir, como una demostración de 20 minutos por Meet o Teams? Si no, ¿le marco el (día)?'],
-    ['Si antes solo hablaste con recepción', 'Hace unos días les llamé para ofrecerles una prueba de capacitación sin costo; ¿me podría comunicar con {trato}?']
+    ['', '{saludo}, {trato}, habla {op}, de Instituto Mara. El {dia} platicamos sobre la capacitación de su equipo y le envié el plan que armamos para {emp}. ¿Tuvo oportunidad de verlo?'],
+    ['Si lo vio', '¿Qué le pareció? ¿Cambiaría algún curso o algún grupo de personas? Lo ajustamos, y si le parece arrancamos esta semana la prueba con las primeras 5 personas.'],
+    ['Si no lo vio', 'Se lo resumo en un minuto: empezaríamos con {p1} y {p2}, cada persona estudia desde el celular y usted ve el avance en su panel. Los primeros 15 días son sin costo para 5 personas. ¿Arrancamos?'],
+    ['Si todavía lo está viendo', 'Claro. ¿Le ayudaría que se lo muestre en 20 minutos por Meet o Teams? Si no, ¿le marco el (día)?'],
+    ['Si antes solo hablaste con recepción', 'Hace unos días les llamé para ofrecerles un plan de capacitación sin costo para su personal. ¿Me comunica con {trato}?']
   ]},
   { id:'tercera', rot:'4. Tercera llamada', partes:[
-    ['', '{saludo}, {trato}, habla {op}, de Instituto Mara. Le he buscado un par de veces por la prueba de capacitación para su equipo y no quiero quitarle más tiempo. Solo quería saber si la dejamos para otro momento o si les gustaría aprovecharla ahora: 5 lugares sin costo por 15 días, en {p1}, {p2} o el que necesiten.'],
-    ['Si dice que ahora no', 'Entiendo perfecto. ¿Le parece si le busco en (mes), cuando estén planeando la capacitación? Y si antes le surge algo, me puede escribir a contacto@institutomara.com.'],
+    ['', '{saludo}, {trato}, habla {op}, de Instituto Mara. Le he buscado un par de veces por el plan de capacitación de su equipo y no quiero quitarle más tiempo. ¿Lo dejamos para otro momento o les gustaría arrancar ahora con la prueba de 15 días para 5 personas?'],
+    ['Si dice que ahora no', 'Entiendo perfecto. ¿Cuándo planean la capacitación del próximo año? Le busco en (mes) y le llevo el plan actualizado. Si antes le surge algo, escríbame a contacto@institutomara.com.'],
     ['Si dice que sí', 'Se sigue igual que con quien decide: correo del administrador y nombres de las personas.'],
     ['Si dice que no le interesa', 'Gracias por su tiempo y por decírmelo. Que tenga excelente día. (Registra «No le interesa»: ya no se le vuelve a llamar.)']
   ]},
   { id:'recado', rot:'5. Recado o buzón', partes:[
-    ['', '{saludo}, habla {op}, de Instituto Mara, para la persona de Capital Humano de {emp}. Le llamo para regalarles una prueba de capacitación en línea para su equipo: 5 lugares sin costo por 15 días. Me puede regresar la llamada al {tel} o escribir a contacto@institutomara.com. Gracias, que tenga buen día.']
+    ['', '{saludo}, habla {op}, de Instituto Mara, para la persona que ve la capacitación en {emp}. Armamos planes de capacitación en línea para empresas que no tienen quién se encargue de ese tema, y queremos regalarles un plan y 15 días de prueba para 5 personas. Mi número es {tel}, o pueden escribir a contacto@institutomara.com. Gracias, buen día.']
   ]},
   { id:'objeciones', rot:'6. Objeciones', partes:[
-    ['«Ya tenemos proveedor de capacitación»', 'Qué bueno que ya capacitan a su gente. Muchas empresas nos usan como complemento en temas como {p1} o {p2}. La prueba no los compromete a nada; ¿por qué no la comparan?'],
-    ['«No tenemos presupuesto» (escalones 1 a 3)', 'Entiendo. Por eso empezamos sin costo: prueben 15 días y decidan con resultados. Y si les sirve, pueden arrancar con el plan para hasta {hasta} personas y crecer después. Si prefieren pagar el año, les queda en {meses} meses.'],
+    ['«Ya tenemos proveedor»', 'Qué bueno que ya capacitan. ¿Le llega el avance de cada persona sin pedirlo? Muchas empresas nos usan como complemento en temas como {p1} o {p2}. La prueba no los compromete; compárenlo.'],
+    ['«No tenemos presupuesto» (escalones 1 a 3)', 'Por eso empezamos sin costo: prueben 15 días y decidan con resultados. Y el plan es por equipo, no por curso: con {desde} al mes capacitan hasta {hasta} personas en todo el catálogo. Si pagan el año, les queda en {meses} meses.'],
     ['Solo si la objeción sigue (escalones 4 a 6)', 'Puedes ofrecer hasta {desc}% de descuento los primeros {descMeses} meses. Más que eso, o extender la prueba, lo pides a administración desde la ficha de la empresa.'],
-    ['«¿La constancia es oficial?»', 'Es una constancia propia de Instituto Mara, con folio y QR verificable, que pueden agregar a su currículum. No es de la SEP.'],
-    ['«No tenemos tiempo para capacitar»', 'Justo por eso es en línea: cada persona estudia desde su celular, en el tiempo que tenga, y usted ve en su panel quién avanza.'],
-    ['«Mándeme información por correo»', 'Con gusto. ¿A qué correo se la envío? ¿Le marco el (día) para resolver sus dudas?'],
+    ['«No tenemos tiempo para capacitar»', 'Justo por eso nos encargamos nosotros. Usted no prepara nada: cada persona estudia en sus tiempos y usted solo revisa el avance.'],
+    ['«Mi gente no va a entrar»', 'Las lecciones son cortas y desde el celular. Usted ve quién no ha entrado y le manda un recordatorio por WhatsApp con un clic.'],
+    ['«¿Y a mí, en RH, qué me resuelve?»', 'Un plan ya armado, registro de quién se capacitó, en qué y cuándo, y un reporte en Excel o PDF para presentar a dirección.'],
+    ['«¿Es una certificación oficial?»', 'Es una constancia de Instituto Mara con folio y QR verificable, que puede llevar el logo de su empresa. No es de la SEP.'],
+    ['«¿Emiten DC-3?»', 'Por ahora no; la constancia es de Instituto Mara, con folio y QR verificable.'],
+    ['«Mándeme información»', 'Con gusto le mando el plan de capacitación para {emp}. ¿A qué correo? ¿Le marco el (día)?'],
     ['«¿Dan factura?»', 'Sí. Nos manda su constancia de situación fiscal y el uso de CFDI a contacto@institutomara.com, y se la generamos.']
   ]}
 ];
@@ -369,6 +373,7 @@ function llPintarDatos(p){
     fila('Programas para su giro', progs ? '<ul style="margin-left:18px">'+progs+'</ul>' : '')+
     fila('Lo que destacan sus clientes', esc(p.puntos_fuertes||''))+
     fila('Notas', esc(p.notas||''))+
+    '<div style="margin:4px 0 10px">'+prBotonPlan(p)+'</div>'+
     (p.empresa_id ? '<div class="aviso aviso-info">Ya tiene empresa en la plataforma'+(p.estado === 'piloto' ? ', con su prueba activa' : '')+'.</div>' : '');
 }
 function llPintarHist(p){

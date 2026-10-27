@@ -7,7 +7,7 @@
      anteriores se siguen mostrando.
    · Ficha de la empresa (administración): sin cotización ni venta manual por curso;
      en el plan, «Registrar pago por transferencia».
-   · Consola de llamadas: «Pidió información por correo» envía el correo de información
+   · Consola de llamadas: «Pidió el plan por correo» envía el plan de capacitación
      firmado por el operador; las solicitudes del sitio salen hasta arriba. */
 
 function epRangosVenta(){ return (PLN.rangos || []).filter(function(r){ return r.activo !== false && r.hasta != null && r.desde <= 100; }); }
@@ -140,7 +140,7 @@ llNumeroTxt = function(p){
   var h = _llNumeroTxtEp(p);
   return epPidioSitio(p) ? '<span class="etiqueta error">Pidió prueba desde el sitio</span><br>' + h : h;
 };
-/* «Pidió información por correo»: además de registrar la llamada, sale el correo firmado por el operador. */
+/* «Pidió el plan por correo»: además de registrar la llamada, sale el correo firmado por el operador. */
 llGuardar = function(id, siguiente){
   var av = $('lr-aviso'), b = $('lr-btn');
   var v = (document.querySelector('input[name=lr-res]:checked')||{}).value;
@@ -172,7 +172,7 @@ llGuardar = function(id, siguiente){
       if(infoEnviada !== null) setTimeout(function(){
         var a = $('lr-aviso') || $('ll-datos'); if(!a) return;
         a.insertAdjacentHTML('afterbegin', infoEnviada ? '<div class="aviso aviso-ok" style="margin-bottom:10px">Le enviamos el correo con la información, firmado por ti.</div>'
-                                                      : '<div class="aviso aviso-error" style="margin-bottom:10px">No se pudo enviar el correo de información; se reintenta solo mañana.</div>');
+                                                      : '<div class="aviso aviso-error" style="margin-bottom:10px">No se pudo enviar el plan de capacitación; se reintenta solo mañana.</div>');
       }, 300);
     })
     .catch(function(e){ b.disabled = false; av.innerHTML = plnErr(e); });
