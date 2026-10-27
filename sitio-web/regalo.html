@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu regalo · Instituto Mara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--morado:#6D28D9;--morado-osc:#5B21B6;--tinta:#2E1065;--lavanda:#EDE9FE;--lila:#D9D6F7;--nube:#F8F7FE;--texto:#1F2937;--gris:#6B7280;--linea:#E9E6F7;--rojo:#DC2626;--verde:#059669}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--texto);background:var(--nube);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--morado)}
+header{background:#fff;border-bottom:1px solid var(--linea)}
+.nav{max-width:640px;margin:0 auto;padding:16px;display:flex;align-items:center;gap:10px}
+.nav svg{width:32px;height:32px}.nav b{font-size:19px;color:var(--tinta);letter-spacing:-.02em}
+main{max-width:640px;margin:0 auto;padding:28px 16px 60px}
+.caja{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:28px;box-shadow:0 4px 24px rgba(109,40,217,.07)}
+h1{font-size:26px;color:var(--tinta);letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.sub{color:var(--gris);margin-bottom:18px}
+.resumen{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;background:var(--nube);border-radius:14px;padding:16px;margin-bottom:22px;font-size:15px}
+.resumen dt{color:var(--gris)}.resumen dd{font-weight:600;color:var(--tinta)}
+.estado{display:inline-block;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--lavanda);color:var(--morado)}
+form{display:grid;gap:14px}
+label{display:flex;flex-direction:column;gap:4px;font-size:13.5px;font-weight:600}
+input,textarea{font:inherit;font-weight:400;font-size:15.5px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:12px;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;font:inherit;font-weight:700;padding:13px 24px;cursor:pointer}
+.btn-mor{background:var(--morado);color:#fff}.btn-mor:hover{background:var(--morado-osc)}
+.btn-linea{background:transparent;color:var(--morado);box-shadow:inset 0 0 0 2px var(--lila)}
+.botones{display:flex;gap:10px;flex-wrap:wrap}
+.aviso{border-radius:12px;padding:12px 14px;font-size:14.5px}
+.aviso-ok{background:#ECFDF5;color:var(--verde)}.aviso-error{background:#FEF2F2;color:var(--rojo)}
+.ayuda{color:var(--gris);font-size:13.5px}
+.pie{text-align:center;color:var(--gris);font-size:13.5px;margin-top:22px}
+@media(max-width:560px){.dos{grid-template-columns:1fr}.caja{padding:22px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a href="./" aria-label="Instituto Mara, inicio" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Instituto Mara</b></a></div></header>
+<main><div class="caja" id="caja"><p>Cargando tu regalo…</p></div>
+<p class="pie">¿Necesitas ayuda? <a href="https://wa.me/528120282120?text=Hola,%20tengo%20una%20duda%20con%20un%20regalo">Escríbenos por WhatsApp</a></p></main>
+<script>
+/* Página privada de quien regala: ver y cambiar el regalo con la liga del correo (?t=token). */
+(function(){
+  var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+  var t = new URLSearchParams(location.search).get('t') || '', caja = document.getElementById('caja'), R = null;
+  var ESTADO = { pendiente_pago:'Esperando pago', pagado:'Pagado · se entrega en su fecha', enviado:'Entregado', canjeado:'Ya lo activó 🎉', cancelado:'Cancelado' };
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function dinero(n){ return '$' + Number(n).toLocaleString('es-MX'); }
+  function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
+  function larga(f){ return (f <= hoy() || (R && R.llegaHoy && f === R.entregarEn)) ? 'hoy' : new Date(f + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' }); }
+  function api(d){
+    return fetch(SUPA + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body:JSON.stringify(d) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar.'); return j; }); });
+  }
+  function pintar(aviso){
+    var g = R, entregado = g.estado === 'enviado';
+    caja.innerHTML = '<h1>Tu regalo para ' + esc(g.paraNombre) + '</h1><p class="sub"><span class="estado">' + esc(ESTADO[g.estado] || g.estado) + '</span></p>' +
+      '<dl class="resumen"><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || '') + '</dd>' +
+      '<dt>' + (entregado ? 'Se entregó' : 'Le llega') + '</dt><dd>' + esc(larga(g.entregarEn)) + '</dd><dt>Pagaste</dt><dd>' + dinero(g.monto) + '</dd></dl>' +
+      (aviso || '') +
+      (g.editable ? '<form id="f"><h2 style="font-size:18px;color:var(--tinta)">¿Quieres cambiar algo?</h2>' +
+        '<div class="dos"><label>Su nombre<input id="n" maxlength="120" value="' + esc(g.paraNombre) + '"></label><label>Su correo<input id="c" type="email" maxlength="160" value="' + esc(g.paraCorreo || '') + '"></label></div>' +
+        '<label>Tu mensaje<textarea id="m" rows="3" maxlength="600">' + esc(g.mensaje) + '</textarea></label>' +
+        (entregado ? '<p class="ayuda">Ya se le entregó. Si cambias su correo, se lo volvemos a mandar al correo nuevo.</p>' : '<label>¿Cuándo le llega?<input id="fe" type="date" min="' + hoy() + '" value="' + esc(g.entregarEn < hoy() ? hoy() : g.entregarEn) + '"></label>') +
+        '<div id="av" aria-live="polite"></div><div class="botones"><button class="btn btn-mor" type="submit" id="b">Guardar cambios</button>' +
+        (entregado ? '<button class="btn btn-linea" type="button" id="re">Volver a enviárselo</button>' : '') + '</div></form>'
+        : '<p class="ayuda">' + (g.estado === 'canjeado' ? 'Tu amigo ya activó su regalo, así que ya no se puede cambiar. ¡Gracias por regalar aprendizaje!' : 'Este regalo ya no se puede cambiar.') + '</p>');
+    var f = document.getElementById('f'); if(!f) return;
+    function guardar(reenviar){
+      var av = document.getElementById('av'), b = document.getElementById('b'); b.disabled = true; av.innerHTML = '';
+      var fe = document.getElementById('fe');
+      api({ accion:'regalo_editar', t:t, paraNombre:document.getElementById('n').value.trim(), paraCorreo:document.getElementById('c').value.trim(),
+        mensaje:document.getElementById('m').value.trim(), entregarEn:fe ? fe.value : undefined, reenviar:!!reenviar })
+        .then(function(r){ R = r.regalo; pintar('<div class="aviso aviso-ok">' + (r.reenviado ? 'Listo: se lo volvimos a enviar a ' + esc(R.paraCorreo) + '.' : 'Cambios guardados.') + '</div><br>'); })
+        .catch(function(x){ b.disabled = false; av.innerHTML = '<div class="aviso aviso-error">' + esc(x.message) + '</div>'; });
+    }
+    f.addEventListener('submit', function(e){ e.preventDefault(); guardar(false); });
+    var re = document.getElementById('re'); if(re) re.onclick = function(){ guardar(true); };
+  }
+  if(!/^[0-9a-f-]{36}$/i.test(t)){ caja.innerHTML = '<h1>No encontramos tu regalo</h1><p class="sub">Abre la liga desde el correo que te mandamos al pagar.</p>'; return; }
+  api({ accion:'regalo_ver', t:t }).then(function(r){ R = r.regalo; pintar(); })
+    .catch(function(x){ caja.innerHTML = '<h1>No encontramos tu regalo</h1><p class="sub">' + esc(x.message) + '</p>'; });
+})();
+</script>
+</body>
+</html>
