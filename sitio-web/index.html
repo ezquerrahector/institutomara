@@ -1433,7 +1433,7 @@ menu.querySelectorAll('a').forEach(function(a){
     } else {
       caja.innerHTML = '<div class="rg-ok"><div class="rg-big">🎁</div><h3>' + (est === 'pendiente' ? 'Tu regalo está apartado' : '¡Listo! Tu regalo está pagado') + '</h3><p id="rg-res">Cargando los datos…</p></div>';
       api({ accion:'regalo_ver', t:t }).then(function(r){
-        var g = r.regalo, cuando = g.entregarEn <= hoy() ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
+        var g = r.regalo, cuando = (g.llegaHoy || g.entregarEn <= hoy()) ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
         document.getElementById('rg-res').outerHTML =
           '<p>' + (est === 'pendiente' ? 'En cuanto Mercado Pago confirme tu pago (con OXXO puede tardar unas horas), se lo enviamos.' : 'Le llega ' + esc(cuando) + ' con tu mensaje y su código para empezar.') + '</p>' +
           '<dl><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || '') + '</dd><dt>Le llega</dt><dd>' + esc(cuando) + '</dd><dt>Total</dt><dd>' + dinero(g.monto) + '</dd></dl>' +

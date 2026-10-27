@@ -268,7 +268,7 @@ async function regaloPorToken(t: string) {
 }
 function regaloPublico(r: any, curso: any) {
   return { programa: curso ? curso.nombre : r.curso_id, cursoId: r.curso_id, paraNombre: r.para_nombre, paraCorreo: r.para_correo,
-    mensaje: r.mensaje || "", entregarEn: r.entregar_en, deNombre: r.de_nombre, monto: Number(r.monto || 0), estado: r.estado,
+    mensaje: r.mensaje || "", entregarEn: r.entregar_en, llegaHoy: r.entregar_en <= fecha(new Date()), deNombre: r.de_nombre, monto: Number(r.monto || 0), estado: r.estado,
     editable: ["pendiente_pago", "pagado", "enviado"].indexOf(r.estado) >= 0 };
 }
 async function verRegalo(b: any) {
