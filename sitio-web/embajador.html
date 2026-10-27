@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<title>Mi panel de embajador · Instituto Mara</title>
+<meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--morado:#6D28D9;--morado-osc:#5B21B6;--tinta:#2E1065;--lavanda:#EDE9FE;--lila:#D9D6F7;--nube:#F8F7FE;--texto:#1F2937;--gris:#6B7280;--linea:#E9E6F7;--rojo:#DC2626;--verde:#059669;--turquesa:#14B8A6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--texto);background:#fff;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--morado)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--linea);background:#fff;position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}.marca svg{width:32px;height:32px}.marca b{font-size:19px;color:var(--tinta);letter-spacing:-.02em}
+h1,h2,h3{color:var(--tinta);letter-spacing:-.02em;line-height:1.2}
+h1{font-size:clamp(30px,4.6vw,48px);font-weight:800}
+h2{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
+h3{font-size:18px;font-weight:700}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--morado)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;font:inherit;font-weight:700;padding:13px 26px;cursor:pointer;text-decoration:none}
+.btn-mor{background:var(--morado);color:#fff}.btn-mor:hover{background:var(--morado-osc)}
+.btn-linea{background:transparent;color:var(--morado);box-shadow:inset 0 0 0 2px var(--lila)}
+.btn-chico{padding:9px 16px;font-size:14px}
+input,textarea,select{font:inherit;font-size:15.5px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:12px;width:100%;background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+label{display:flex;flex-direction:column;gap:4px;font-size:13.5px;font-weight:600}
+.aviso{border-radius:12px;padding:12px 14px;font-size:14.5px}
+.aviso-ok{background:#ECFDF5;color:#065F46}.aviso-error{background:#FEF2F2;color:var(--rojo)}
+.ayuda{color:var(--gris);font-size:13.5px}
+footer{background:var(--tinta);color:#C4B5FD;font-size:14px;text-align:center;padding:26px 16px;margin-top:60px}
+footer a{color:#fff}
+</style>
+<style>
+body{background:var(--nube)}
+main{max-width:860px;margin:0 auto;padding:26px 16px 40px;display:grid;gap:18px}
+.caja{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:24px}
+.codigo{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
+.codigo b{font-size:30px;letter-spacing:2px;color:var(--morado);background:var(--lavanda);padding:6px 16px;border-radius:12px}
+.liga{display:flex;gap:8px;margin-top:12px}
+.liga input{flex:1;min-width:0;background:var(--nube)}
+.compartir{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.wa{background:#25D366;color:#fff}
+.totales{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.totales div{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:14px}
+.totales span{display:block;color:var(--gris);font-size:13px}
+.totales b{font-size:22px;color:var(--tinta)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--linea)}
+th{color:var(--gris);font-weight:600;font-size:13px}
+td.n{text-align:right;white-space:nowrap}
+.est{font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.est-en_espera{background:#FEF3C7;color:#92400E}.est-disponible{background:#DCFCE7;color:#166534}.est-pagada{background:var(--lavanda);color:var(--morado)}.est-cancelada{background:#F3F4F6;color:var(--gris)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ideas li{margin:6px 0 6px 18px;color:var(--gris)}
+@media(max-width:700px){.totales{grid-template-columns:1fr 1fr}.dos{grid-template-columns:1fr}.caja{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="marca" href="./" aria-label="Instituto Mara, inicio">
+<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Instituto Mara</b></a><span class="ayuda">Panel de embajador</span></div></header>
+<main id="m"><div class="caja">Cargando tu panel…</div></main>
+<script>
+(function(){
+  var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+  var q = new URLSearchParams(location.search), t = q.get('t') || '', nuevo = q.get('nuevo') === '1', M = document.getElementById('m');
+  function api(d){ return fetch(SUPA + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body:JSON.stringify(d) })
+    .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; }); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function dinero(n){ return '$' + Number(n || 0).toLocaleString('es-MX', { minimumFractionDigits:2, maximumFractionDigits:2 }); }
+  function fecha(f){ return new Date(f + 'T12:00:00').toLocaleDateString('es-MX', { day:'numeric', month:'short', year:'numeric' }); }
+  var EST = { en_espera:'En espera', disponible:'Disponible', pagada:'Pagada', cancelada:'Cancelada' };
+  function pintar(d){
+    var e = d.embajador, r = d.reglas, T = d.totales;
+    var msg = '¡Hola! Te recomiendo los cursos y diplomados en línea de Instituto Mara: psicología, inglés, Excel, IA y más, con constancia. Con mi código ' + e.codigo + ' tienes ' + r.descuento + ' % de descuento: ' + e.liga;
+    M.innerHTML =
+      (nuevo ? '<div class="aviso aviso-ok">¡Bienvenido! Ya eres embajador. También te mandamos tu código y esta liga a tu correo.</div>' : '') +
+      (e.estado !== 'activo' ? '<div class="aviso aviso-error">Tu código está pausado. Escríbenos por WhatsApp para reactivarlo.</div>' : '') +
+      '<div class="caja"><div class="eyebrow">Hola, ' + esc(e.nombre.split(' ')[0]) + '</div><h1 style="font-size:28px;margin-top:4px">Tu código de embajador</h1>' +
+      '<div class="codigo"><b>' + esc(e.codigo) + '</b><span class="ayuda">Tu cliente: ' + r.descuento + ' % de descuento · Tú: ' + r.comision + ' % de cada venta (sin IVA)</span></div>' +
+      '<div class="liga"><input id="liga" readonly value="' + esc(e.liga) + '" aria-label="Tu liga para compartir"><button class="btn btn-mor btn-chico" id="copiar">Copiar liga</button></div>' +
+      '<div class="compartir"><a class="btn wa btn-chico" target="_blank" rel="noopener" href="https://wa.me/?text=' + encodeURIComponent(msg) + '">Compartir por WhatsApp</a>' +
+      '<button class="btn btn-linea btn-chico" id="copmsg">Copiar mensaje</button></div></div>' +
+      '<div class="totales"><div><span>Ventas</span><b>' + T.ventas + '</b></div><div><span>En espera</span><b>' + dinero(T.espera) + '</b></div>' +
+      '<div><span>Disponible para pago</span><b>' + dinero(T.disponible) + '</b></div><div><span>Ya pagado</span><b>' + dinero(T.pagado) + '</b></div></div>' +
+      '<div class="caja"><h2 style="font-size:20px">Tus ventas</h2>' +
+      (d.ventas.length ? '<div style="overflow-x:auto"><table><tr><th>Fecha</th><th>Programa</th><th class="n">Pagó</th><th class="n">Tu comisión</th><th>Estado</th></tr>' +
+        d.ventas.map(function(v){ return '<tr><td>' + fecha(v.fecha) + '</td><td>' + esc(v.programa) + (v.tipo === 'regalo' ? ' 🎁' : '') + '</td><td class="n">' + dinero(v.pagado) + '</td><td class="n"><b>' + dinero(v.comision) + '</b></td>' +
+          '<td><span class="est est-' + v.estado + '" title="' + (v.estado === 'en_espera' ? 'Disponible el ' + fecha(v.disponibleEn) : '') + '">' + EST[v.estado] + '</span></td></tr>'; }).join('') + '</table></div>'
+        : '<p class="ayuda">Todavía no hay ventas. Aquí aparecerá cada compra hecha con tu código.</p><ul class="ideas"><li>Mándalo a 10 contactos que estén buscando trabajo o crecer en el suyo.</li><li>Publica tu liga en tus estados de WhatsApp con el curso que más te guste.</li><li>Si das clases o tienes un grupo, ofrece tu código como beneficio.</li></ul>') +
+      '<p class="ayuda" style="margin-top:10px">Cada comisión queda disponible ' + r.dias + ' días después de la venta. Te depositamos al juntar ' + dinero(r.minimo) + ' disponibles, en los primeros días de cada mes.</p></div>' +
+      '<div class="caja"><h2 style="font-size:20px">¿Dónde te depositamos?</h2>' + (e.clabe ? '<p class="ayuda" style="margin-bottom:10px">Cuenta registrada: ' + esc(e.banco) + ' ' + esc(e.clabe) + ' a nombre de ' + esc(e.titular) + '. Puedes cambiarla aquí.</p>' : '<p class="ayuda" style="margin-bottom:10px">Registra la cuenta donde quieres recibir tus comisiones.</p>') +
+      '<form id="fb" class="dos"><label>Titular<input id="ti" maxlength="120" value="' + esc(e.titular) + '"></label><label>Banco<input id="ba" maxlength="60" value="' + esc(e.banco) + '"></label>' +
+      '<label style="grid-column:1/-1">CLABE (18 dígitos)<input id="cl" inputmode="numeric" maxlength="22" placeholder="' + (e.clabe ? 'Escribe la nueva CLABE' : '') + '"></label>' +
+      '<div id="avb" style="grid-column:1/-1"></div><button class="btn btn-mor" type="submit" style="grid-column:1/-1;justify-self:start">Guardar cuenta</button></form></div>' +
+      '<p class="ayuda" style="text-align:center">Guarda esta página en tus favoritos. ¿Dudas? <a href="https://wa.me/528120282120?text=Hola,%20soy%20embajador%20' + esc(e.codigo) + '">Escríbenos por WhatsApp</a> · <a href="embajadores.html">Reglas del programa</a></p>';
+    function copiar(txt, btn){ var ok = function(){ var o = btn.textContent; btn.textContent = '¡Copiado!'; setTimeout(function(){ btn.textContent = o; }, 1600); };
+      if(navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, function(){ prompt('Copia:', txt); }); else prompt('Copia:', txt); }
+    document.getElementById('copiar').onclick = function(){ copiar(e.liga, this); };
+    document.getElementById('copmsg').onclick = function(){ copiar(msg, this); };
+    document.getElementById('fb').onsubmit = function(ev){
+      ev.preventDefault(); var av = document.getElementById('avb');
+      api({ accion:'embajador_datos', t:t, titular:document.getElementById('ti').value, banco:document.getElementById('ba').value, clabe:document.getElementById('cl').value })
+        .then(function(){ av.innerHTML = '<div class="aviso aviso-ok">Cuenta guardada.</div>'; return cargar(); })
+        .catch(function(x){ av.innerHTML = '<div class="aviso aviso-error">' + esc(x.message) + '</div>'; });
+    };
+  }
+  function cargar(){ return api({ accion:'embajador_panel', t:t }).then(pintar).catch(function(x){ M.innerHTML = '<div class="caja"><h1 style="font-size:24px">No encontramos tu panel</h1><p class="ayuda">' + esc(x.message) + ' Si perdiste el correo, <a href="embajadores.html#registro">regístrate otra vez con el mismo correo</a> y te lo reenviamos.</p></div>'; }); }
+  if(!/^[0-9a-f-]{36}$/i.test(t)){ M.innerHTML = '<div class="caja"><h1 style="font-size:24px">Abre tu panel desde el correo</h1><p class="ayuda">La liga a tu panel viene en el correo de bienvenida. <a href="embajadores.html#registro">¿No lo tienes?</a></p></div>'; return; }
+  cargar(); if(nuevo) history.replaceState(null, '', location.pathname + '?t=' + encodeURIComponent(t));
+})();
+</script>
+</body>
+</html>

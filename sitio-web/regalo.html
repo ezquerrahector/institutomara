@@ -57,7 +57,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 
   function larga(f){ return (f <= hoy() || (R && R.llegaHoy && f === R.entregarEn)) ? 'hoy' : new Date(f + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' }); }
   function api(d){
     return fetch(SUPA + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body:JSON.stringify(d) })
-      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar.'); return j; }); });
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; });
   }
   function pintar(aviso){
     var g = R, entregado = g.estado === 'enviado';

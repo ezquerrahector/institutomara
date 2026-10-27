@@ -104,7 +104,7 @@ function armar(p: Prospecto, toque: number, ctx: any, giro: Record<string, strin
     const muestra = progs[0] ? `${AULA}?muestra=${encodeURIComponent(progs[0].id)}` : AULA;
     const extras = transversalesDe(p, progs, cat).slice(0, 2);
     const gratis = textoGratis(ctx);
-    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela en línea de León.${gancho}\n\n` +
+    texto = `${saludo}\n\nLes escribo de Instituto Mara, escuela de capacitación 100% en línea.${gancho}\n\n` +
       `${problema}En muchas empresas la capacitación se queda pendiente porque no hay quién arme el plan ni quién le dé seguimiento. ` +
       `Ese es el papel que queremos hacer con ustedes: ser su área de capacitación, por fuera.\n\n` +
       `Cómo funciona:\n` +
@@ -199,7 +199,7 @@ function cortoPrograma(nombre: string) {
 // El gancho del correo, adaptado para seguir a «Le escribo porque…».
 function ganchoWa(p: Prospecto, n: string) {
   const g = String(p.gancho || "").trim().replace(/\.\s*$/, "");
-  if (!g) return `conozco el trabajo de ${n} aquí en León`;
+  if (!g) return `conozco el trabajo de ${n}`;
   const auto = g.match(/^En sus reseñas, sus clientes destacan:\s*(.+)$/i);
   if (auto) return `vi que sus clientes destacan «${auto[1]}»`;
   const primera = g.split(" ")[0];
@@ -216,7 +216,7 @@ function waPrimero(p: Prospecto, n: string, progs: Curso[], ctx: any) {
   const cat: Record<string, Curso> = ctx.cat;
   const lista = listaWa(p, progs, cat).map((t) => "• " + t).join("\n");
   const desde = planDesde(ctx);
-  return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, en León.\n\n` +
+  return `Hola, buen día. Soy Héctor Ezquerra, director académico de Instituto Mara, escuela de capacitación 100% en línea.\n\n` +
     `Muchas empresas no tienen un plan de capacitación porque no hay quién lo arme ni le dé seguimiento. Nosotros hacemos ese papel: *somos el área de capacitación de su empresa, por fuera*.\n\n` +
     `• Armamos el plan para su equipo\n• Cada persona estudia desde su celular, ${sinParar(p.segmento)}\n• Usted ve el avance en un panel y cada quien recibe su constancia con folio y QR\n\n` +
     (lista ? `Para ${n} empezaríamos con:\n${lista}\n\n` : "") +
