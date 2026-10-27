@@ -30,6 +30,58 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 
 Las categorías de la tabla son las que ya existen en el sitio (`familia` y `area` en meta.json); confírmalas contra los `meta.json` de octubre y no inventes otras.
 
+## Tanda 2 — categorías nuevas (pedido de Héctor, 26 oct 2026)
+
+Al terminar el #15, la tarea sigue con esta tabla en el mismo orden y con el mismo procedimiento. Objetivo: abrir
+categorías nuevas en el sitio para que quien busca cursos encuentre temas que hoy no tenemos (cocina, contenido,
+oficios, salud, hogar, dinero). Los cursos (`c-`) se construyen con el formato de curso de 10-16 h; los diplomados
+(`d-`), con el de 30 h. Precio sugerido abajo; Héctor puede ajustarlo en Administración.
+
+**Área (`area` en meta.json) en esta tanda:** usa el nombre exacto de la columna «Área nueva». El sitio crea la
+tarjeta sola la primera vez que aparece un área nueva (ver `AREA_VIEJA`/`ICONO_AREA` en `sitio-web/index.html`).
+Desde el 26 oct el sitio usa 11 áreas: Psicología y terapia · Comunicación e influencia · Crecimiento personal ·
+Liderazgo, RH y seguridad laboral · Ventas y marketing · Tecnología e IA · IA para tu profesión · Idiomas ·
+Criminología y forense · Cuidado, infancia y educación · Administración y contabilidad. Para los #1-15 sigue
+valiendo la `familia` de la tabla de arriba.
+
+| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos) | Estado |
+|---|---|---|---|---|---|---|---|
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante, Cafetería, Panadería | Pendiente |
+| 17 | c-manejo-alimentos | mha | Manejo Higiénico de Alimentos (NOM-251-SSA1-2009 y Distintivo H) | 490 | Cocina y gastronomía | Restaurante, Hotel, Comedor industrial, Hospital | Pendiente |
+| 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
+| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio, Hospital, Comedor industrial | Pendiente |
+| 20 | c-energia-solar | sol | Energía Solar Fotovoltaica Residencial: diseño, cálculo e instalación segura | 990 | Oficios y técnica | Constructora, Instalaciones eléctricas | Pendiente |
+| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotel, Restaurante, Agencia de viajes | Pendiente |
+| 22 | d-derecho-practico | der | Diplomado en Derecho Práctico para la Vida Diaria: trabajo, renta, familia y consumo | 1690 | Dinero y derecho | — | Pendiente |
+| 23 | c-inversion | inv | Inversión para Principiantes: CETES, fondos y tu Afore | 490 | Dinero y derecho | — | Pendiente |
+| 24 | c-perros | per | Cuidado, Conducta y Adiestramiento Básico de Perros | 690 | Hogar, familia y mascotas | Veterinaria, Estética canina | Pendiente |
+| 25 | c-organizacion-hogar | org | Organización del Hogar, Rutinas y Presupuesto Familiar | 490 | Hogar, familia y mascotas | — | Pendiente |
+| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Escuela, Guardería, Industria | Pendiente |
+| 27 | c-barismo | caf | Barismo y Café de Especialidad | 690 | Cocina y gastronomía | Cafetería | Pendiente |
+
+### Cuidados de la tanda 2
+- **16 Cocina y repostería.** Formato de texto e interactivo: el valor está en recetas estándar con gramajes, costeo
+  por porción en Excel, precio de venta, conservación, empaque, etiquetado (NOM-051 si vende empacado), venta por
+  WhatsApp y apps de reparto. Decir que la práctica en cocina es indispensable; incluir fotos o esquemas solo propios.
+- **17 Manejo higiénico.** Verificar la versión vigente de la NOM-251-SSA1-2009 y del Distintivo H (Secretaría de
+  Turismo). Aclarar que no otorga el Distintivo H ni sustituye la capacitación que exija la autoridad sanitaria.
+- **18 Contenido y video.** CapCut/InShot, guion corto, ganchos, luz y audio con el celular, métricas, derechos de
+  autor y música con licencia. Distinto de Marketing Digital y de Fotografía de Producto.
+- **19 Nutrición.** Plato del Bien Comer y Guías Alimentarias (verificar vigentes), etiquetado frontal, lectura de
+  etiquetas. Prohibido dar planes de dieta, conteo de calorías por persona o metas de peso; incluir señales de
+  trastornos de la conducta alimentaria con canalización a profesional y la línea de la Alianza Nacional para los
+  Trastornos de la Conducta Alimentaria. Aclarar que no sustituye a un nutriólogo con cédula.
+- **20 Energía solar.** Cálculo de consumo con recibo de CFE, dimensionamiento, NOM-001-SEDE vigente, interconexión con
+  CFE (verificar trámite), seguridad eléctrica. Decir que la instalación la debe hacer personal calificado.
+- **21 Hospitalidad.** Recepción, housekeeping, servicio en restaurante, quejas, reseñas en línea, upselling ético.
+- **22 Derecho práctico.** Ley Federal del Trabajo (finiquito vs liquidación), arrendamiento, pensión alimenticia,
+  Profeco. Siempre «verifica con un abogado tu caso»; no es asesoría legal. Verificar artículos vigentes.
+- **23 Inversión.** Educativo, sin recomendaciones personalizadas: CETES, fondos, Afore, riesgo/rendimiento, fraudes
+  (CONDUSEF). Decir que no es asesoría financiera.
+- **24 Perros.** Bienestar animal, refuerzo positivo, socialización; nada de castigos físicos; canalizar a veterinario.
+- **26 Primeros auxilios.** Solo teórico, con aviso claro de que la práctica presencial certificada es indispensable;
+  911; no sustituye cursos de Cruz Roja o equivalentes. Coordinar con #4 (protección civil) para no repetir.
+
 ## Alcance y cuidados por diplomado
 
 1. **Calidad y Mejora Continua.** Público: supervisores, operarios, ingenieros y mandos de planta (calzado, curtiduría,
@@ -111,7 +163,7 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
-2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía.
+2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (primero la tabla de #1-15 y luego la de la Tanda 2).
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
 4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
 5. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id> --simular` → sin errores, ≥ 30 h.
