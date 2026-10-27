@@ -483,6 +483,7 @@ details.modelo summary{cursor:pointer;font-weight:600;color:var(--morado,#7C3AED
 details.modelo summary::-webkit-details-marker{display:none}
 details.modelo[open] summary{margin-bottom:8px}
 </style>
+<script src="../sitio-web/meta-pixel.js?v=20261027a"></script>
 </head>
 <body>
 
@@ -1809,6 +1810,11 @@ function entrarApp(){
 
   if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
+    try{ /* Píxel: compra aprobada (una sola vez, con el monto guardado al ir a pagar). */
+      var px = JSON.parse(localStorage.getItem('institutoMara.compraPixel') || 'null');
+      if(px && px.cid === cid && Date.now() - px.t < 864e5 && window.pixel) pixel('Purchase', { content_ids:[cid], value:px.monto, currency:'MXN' });
+      localStorage.removeItem('institutoMara.compraPixel');
+    }catch(e){}
     /* El acceso lo da el servidor cuando Mercado Pago confirma el pago, nunca
        el navegador: aquí solo se espera a que aparezca. */
     if(NUBE){ esperarAcceso(cid); return; }
@@ -2433,7 +2439,13 @@ function pagarConMercadoPago(cid){
         'No te vamos a cobrar: escríbenos por WhatsApp y te damos el acceso.</div>';
       return;
     }
-    if(d && d.init_point){ location.href = d.init_point; return; }
+    if(d && d.init_point){
+      /* Píxel: inicio de pago, y se guarda el monto para registrar la compra al regresar. */
+      var montoPx = cuponPago ? Number(cuponPago.precio) : Number((programa(cid) || {}).precio || 0);
+      if(window.pixel) pixel('InitiateCheckout', { content_ids:[cid], value:montoPx, currency:'MXN' });
+      try{ localStorage.setItem('institutoMara.compraPixel', JSON.stringify({ cid:cid, monto:montoPx, t:Date.now() })); }catch(e){}
+      location.href = d.init_point; return;
+    }
     if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Continuar al pago seguro'; }
     var av = $('pg-aviso');
     var msg = (d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.';
