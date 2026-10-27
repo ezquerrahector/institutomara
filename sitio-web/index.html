@@ -386,7 +386,7 @@ footer a:hover{color:#fff}
 
 <!-- ============ AVISO ============ -->
 <div class="barra-aviso">
-  <strong>🏅 Constancia con folio y QR verificable</strong> · agrégala a tu CV y a LinkedIn con un clic
+  <strong>Cursos para ti y capacitación para tu empresa</strong> · constancia con folio y QR verificable
 </div>
 
 <!-- ============ HEADER ============ -->
@@ -401,65 +401,118 @@ footer a:hover{color:#fff}
     </a>
     <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="menu" id="menu">
-      <a href="#explorar" class="menu-explorar">Explorar programas</a>
+      <a href="#explorar" class="menu-explorar">Programas</a>
       <a href="#membresia">Membresía</a>
-      <a href="#regalar">Regalar</a>
-      <a href="#empresas">Empresas</a>
-      <a href="#como">Cómo funciona</a>
+      <a href="#empresas">Para empresas</a>
+      <a href="#regalar" onclick="abrirRegalo();return false">Regalar</a>
       <a href="#preguntas">Preguntas</a>
       <a href="../plataforma/index.html" class="btn btn-mor">Ingresar</a>
     </nav>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<div class="hero">
+<!-- ============ HERO: dos entradas ============ -->
+<div class="hero hero2">
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">Cursos y diplomados en línea · Constancia con folio</div>
-        <h1>¿Qué quieres aprender hoy?</h1>
-        <p class="lead">Psicología, idiomas, Excel, inteligencia artificial, recursos humanos, imagen personal y más. Estudia desde tu celular, a tu ritmo, y obtén tu constancia al terminar.</p>
+    <div class="h2-cab">
+      <div class="eyebrow">Escuela en línea · León, Guanajuato</div>
+      <h1>Capacitación en línea, <span>para ti y para tu equipo</span></h1>
+      <p class="lead">Cursos y diplomados cortos, desde el celular y a tu ritmo, con constancia con folio y QR verificable.</p>
+    </div>
+    <div class="puertas">
+      <article class="puerta puerta-ti" aria-labelledby="pt-ti">
+        <div class="pu-tag">Para ti</div>
+        <h2 id="pt-ti">Aprende algo nuevo esta semana</h2>
+        <p>Psicología, inglés, Excel, IA, recursos humanos y más. Pagas una vez y tienes 12 meses para terminar.</p>
         <form class="hero-busca" id="hero-busca" role="search" onsubmit="return false">
-          <input type="search" id="hero-q" placeholder="Busca: psicología, inglés, Excel, duelo, ventas…" aria-label="Buscar un curso o diplomado" autocomplete="off">
+          <input type="search" id="hero-q" placeholder="¿Qué quieres aprender?" aria-label="Buscar un curso o diplomado" autocomplete="off">
           <button type="submit" class="btn btn-mor">Buscar</button>
         </form>
         <div class="hero-pop" id="hero-pop"></div>
+        <div class="pu-precio">Cursos desde <b>$390</b> · o todo el catálogo desde <b>$249 al mes</b></div>
         <div class="hero-cta">
-          <a href="#explorar" class="btn btn-mor btn-grande" id="hero-ver">Ver todos los programas →</a>
-          <a href="#membresia" class="btn btn-linea btn-grande" id="hero-mem">Todo incluido desde $249/mes</a>
+          <a href="#explorar" class="btn btn-mor" id="hero-ver">Ver programas →</a>
+          <a href="#membresia" class="btn btn-linea" id="hero-mem">Todo incluido desde $249/mes</a>
         </div>
-      </div>
-
-      <div class="vitrina" id="vitrina" aria-label="Programas nuevos"></div>
+      </article>
+      <article class="puerta puerta-emp" aria-labelledby="pt-emp">
+        <div class="pu-tag">Para tu empresa</div>
+        <h2 id="pt-emp">Somos el área de capacitación de tu empresa</h2>
+        <ul class="pu-lista">
+          <li>Armamos el plan de capacitación para tu equipo</li>
+          <li>Tu gente estudia desde el celular, sin descuidar el trabajo</li>
+          <li>Ves el avance en un panel y cada quien recibe su constancia, con tu logo</li>
+        </ul>
+        <div class="pu-precio">Un solo plan para todo el equipo, desde <b id="hero-emp-precio">$1,490 al mes</b> para hasta 5 personas</div>
+        <div class="hero-cta">
+          <button type="button" class="btn btn-blanco" onclick="abrirPruebaEmp()">Prueba 15 días sin costo</button>
+          <a href="#empresas" class="btn btn-linea-claro">Ver planes</a>
+        </div>
+      </article>
     </div>
-
+    <button type="button" class="pu-regalo" onclick="abrirRegalo()">
+      <span class="pu-regalo-ico" aria-hidden="true">🎁</span>
+      <span><b>¿Buscas un regalo?</b> Regala un curso en 2 minutos, sin crear cuenta. Le llega por correo con tu mensaje.</span>
+      <span class="pu-regalo-ir">Regalar →</span>
+    </button>
+    <div class="vitrina" id="vitrina" hidden></div>
     <div class="confianza">
       <div class="conf-grid">
-        <div class="conf">
-          <div class="ico ico-mor">📚</div>
-          <div><b>Por bloques</b><span>Contenido claro y organizado. Avanzas de un bloque al siguiente.</span></div>
-        </div>
-        <div class="conf">
-          <div class="ico ico-tur">🕐</div>
-          <div><b>A tu ritmo, 24/7</b><span>Tú decides cuándo y cómo avanzar. La plataforma nunca cierra.</span></div>
-        </div>
-        <div class="conf">
-          <div class="ico ico-lila">🎓</div>
-          <div><b>Constancia propia</b><span>Al aprobar recibes tu constancia con folio de Instituto Mara.</span></div>
-        </div>
+        <div class="conf"><div class="ico ico-mor">📱</div><div><b>Desde tu celular, 24/7</b><span>Lecciones cortas con ejercicios. Avanzas cuando puedes.</span></div></div>
+        <div class="conf"><div class="ico ico-tur">🎓</div><div><b>Constancia verificable</b><span>Con folio y código QR al aprobar cada programa.</span></div></div>
+        <div class="conf"><div class="ico ico-lila">🤝</div><div><b>Te atiende una persona</b><span>Por WhatsApp, de lunes a sábado. Garantía de 7 días.</span></div></div>
       </div>
     </div>
   </div>
 </div>
+<style>
+.hero2{padding:56px 0 64px}
+.h2-cab{text-align:center;max-width:780px;margin:0 auto 34px}
+.h2-cab h1{font-size:clamp(32px,4.6vw,50px)}
+.h2-cab h1 span{color:var(--morado)}
+.hero2 .h2-cab p.lead{margin:14px auto 0;max-width:620px;font-size:19px}
+.puertas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+.puerta{min-width:0}
+.menu a.btn-mor,.menu a.btn-mor:hover{color:#fff}
+.vitrina[hidden]{display:none}
+.rutas.corto>:nth-child(n+4){display:none}
+.puerta{border-radius:26px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.puerta h2{font-size:clamp(24px,2.6vw,30px);margin:0}
+.puerta p{color:var(--gris);margin:0}
+.puerta .hero-cta{margin-top:auto;padding-top:8px}
+.puerta-ti{background:#fff;border:1.5px solid var(--lila);box-shadow:var(--sombra)}
+.puerta-ti .hero-busca{margin:4px 0 0;max-width:none}
+.puerta-ti .hero-pop{margin:0}
+.puerta-emp{background:linear-gradient(140deg,#2E1065 0%,#5B21B6 100%);color:#fff}
+.puerta-emp h2{color:#fff}
+.pu-tag{align-self:flex-start;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--lavanda);color:var(--morado)}
+.puerta-emp .pu-tag{background:rgba(255,255,255,.14);color:#DDD6FE}
+.pu-lista{list-style:none;display:grid;gap:9px;margin:2px 0}
+.pu-lista li{padding-left:28px;position:relative;color:#EDE9FE;line-height:1.5}
+.pu-lista li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#14B8A6;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.pu-precio{font-size:15px;color:var(--gris)}
+.pu-precio b{color:var(--tinta)}
+.puerta-emp .pu-precio{color:#DDD6FE}.puerta-emp .pu-precio b{color:#fff}
+.btn-blanco{background:#fff;color:var(--morado)}
+.btn-blanco:hover{background:var(--lavanda)}
+.btn-linea-claro{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)}
+.btn-linea-claro:hover{box-shadow:inset 0 0 0 2px #fff}
+.pu-regalo{margin-top:18px;width:100%;display:flex;align-items:center;gap:16px;text-align:left;border:1.5px dashed var(--lila);background:var(--nube);border-radius:18px;padding:16px 22px;font:inherit;font-size:15.5px;color:var(--texto);cursor:pointer}
+.pu-regalo:hover{border-color:var(--morado);background:var(--lavanda)}
+.pu-regalo-ico{font-size:30px}
+.pu-regalo-ir{margin-left:auto;font-weight:700;color:var(--morado);white-space:nowrap}
+.hero2 .confianza{margin-top:26px}
+@media(max-width:860px){.puertas{grid-template-columns:minmax(0,1fr);gap:16px}.puerta{padding:22px}.hero2{padding:26px 0 40px}.h2-cab{margin-bottom:18px}.hero2 .h2-cab p.lead{font-size:16.5px}.puerta-ti .hero-pop button:nth-child(n+5){display:none}.puerta .hero-cta .btn{flex:1 1 auto}.pu-regalo{flex-wrap:wrap;padding:14px 16px}.pu-regalo-ir{margin-left:46px}}
+#filas-area .fila-area:not(:first-child){display:none}
+</style>
 
 <!-- ============ EXPLORAR POR ÁREA ============ -->
 <section id="explorar" class="explorar">
   <div class="wrap">
     <div class="sec-head centro">
-      <div class="eyebrow">Oferta educativa</div>
-      <h2>Explora por área</h2>
-      <p>Elige un área y encuentra el curso o diplomado para lo que quieres lograr.</p>
+      <div class="eyebrow">Para ti</div>
+      <h2>Encuentra tu curso o diplomado</h2>
+      <p>Elige un área o busca por nombre. Todos incluyen constancia con folio y 12 meses para terminar.</p>
     </div>
     <div class="areas" id="areas"></div>
     <div id="filas-area"></div>
@@ -467,33 +520,16 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- ============ CURSOS ============ -->
-<section id="cursos">
+<section id="cursos" class="cursos-sec">
   <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Oferta educativa</div>
-      <h2>Cursos y diplomados para crecer en tu trabajo</h2>
-      <p>Lecciones cortas con ejercicios interactivos, evaluación por módulo y constancia con folio y QR al terminar. Todo en línea, desde tu celular y a tu ritmo.</p>
+    <div hidden aria-hidden="true">
+      <div class="cifras" id="cifras"><div><b id="cf-total">73</b></div><div><b id="cf-dipl">17</b></div></div>
+      <button type="button" id="dest-ant"></button><button type="button" id="dest-sig"></button>
+      <div class="dest" id="dest"></div><div class="dest-puntos" id="dest-puntos"></div>
     </div>
 
-    <div class="cifras" id="cifras">
-      <div><b id="cf-total">73</b><span>programas</span></div>
-      <div><b id="cf-dipl">17</b><span>diplomados</span></div>
-      <div><b>Desde $390</b><span>pago único</span></div>
-      <div><b>12 meses</b><span>de acceso</span></div>
-    </div>
-
-    <div class="dest-cab"><div><h3 class="sub-oferta">Programas destacados</h3>
-      <p class="sub-oferta-p">Diplomados y cursos con más demanda. Cambian cada vez que entras.</p></div>
-      <div class="dest-flechas"><button type="button" id="dest-ant" aria-label="Anterior">‹</button><button type="button" id="dest-sig" aria-label="Siguiente">›</button></div></div>
-    <div class="dest" id="dest" aria-roledescription="carrusel"></div>
-    <div class="dest-puntos" id="dest-puntos"></div>
-
-    <h3 class="sub-oferta" style="margin-top:56px">Rutas de aprendizaje</h3>
-    <p class="sub-oferta-p">Programas que se complementan, con precio especial por llevarlos juntos.</p>
-    <div class="rutas" id="rutas"></div>
-
-    <h3 class="sub-oferta" style="margin-top:56px">Todos los programas</h3>
-    <p class="sub-oferta-p">Busca por nombre o filtra por área.</p>
+<h3 class="sub-oferta">Todos los programas</h3>
+    <p class="sub-oferta-p">Filtra por área o busca por nombre.</p>
     <div class="explorador">
       <input type="search" id="of-buscar" placeholder="Buscar: inglés, Excel, duelo, contadores…" aria-label="Buscar curso">
       <div class="chips" id="of-chips" role="tablist"></div>
@@ -502,6 +538,11 @@ footer a:hover{color:#fff}
       <div style="text-align:center;margin-top:18px"><button type="button" class="btn btn-linea" id="of-mas" hidden>Ver todos</button></div>
       <p class="of-vacio" id="of-vacio" hidden>No encontramos ese curso. <a href="https://wa.me/528120282120?text=Hola,%20busco%20un%20curso%20que%20no%20vi%20en%20Instituto%20Mara" target="_blank" rel="noopener">Dinos cuál buscas</a> y lo consideramos para la siguiente tanda.</p>
     </div>
+
+    <h3 class="sub-oferta" style="margin-top:64px">Rutas: ahorra llevando varios</h3>
+    <p class="sub-oferta-p">Programas que se complementan, con precio especial por llevarlos juntos.</p>
+    <div class="rutas corto" id="rutas"></div>
+    <div style="text-align:center;margin-top:18px"><button type="button" class="btn btn-linea" onclick="var r=document.getElementById('rutas');r.classList.toggle('corto');this.textContent=r.classList.contains('corto')?'Ver todas las rutas':'Ver menos rutas'">Ver todas las rutas</button></div>
   </div>
 </section>
 
@@ -630,6 +671,7 @@ html,body{overflow-x:hidden}
   var RUTAS = [{"id":"r-asistente","nombre":"Ruta Asistente Administrativo","para":"Para conseguir o mejorar un trabajo de oficina, recepción o auxiliar administrativo.","precio":1990,"cursos":["c-office","c-excel-avanzado","c-atencion-ventas"],"horas":37},{"id":"r-emprende","nombre":"Ruta Emprende y Haz Crecer tu Negocio","para":"Para dueños de negocio, emprendedores y quienes venden por su cuenta.","precio":2990,"cursos":["c-finanzas-personales","d-contabilidad-resico","d-marketing-digital"],"horas":73},{"id":"r-lider","nombre":"Ruta Líder de Equipo y Recursos Humanos","para":"Para supervisores, jefes de área y personal de Recursos Humanos.","precio":2890,"cursos":["d-liderazgo","d-nom035","c-inteligencia-emocional"],"horas":66},{"id":"r-cuidador","nombre":"Ruta Cuidador y Acompañamiento","para":"Para cuidadores familiares y personas que trabajan cuidando o acompañando a otros.","precio":2990,"cursos":["d-adulto-mayor","c-pap","d-tanatologia"],"horas":66},{"id":"r-ingles","nombre":"Ruta Inglés Completo: de cero a intermedio alto (A1 → B2)","para":"Para empezar desde cero y llegar a desenvolverte con soltura en juntas, presentaciones, correos y entrevistas en inglés.","precio":2490,"cursos":["c-ingles","c-ingles-a2","c-ingles-b1","c-ingles-b2"],"horas":67},{"id":"r-poliglota","nombre":"Ruta Políglota Viajero: francés, italiano y portugués","para":"Para quien viaja, trabaja en turismo o simplemente quiere abrirse a tres idiomas cercanos al español.","precio":1990,"cursos":["c-frances-a1","c-italiano-a1","c-portugues-a1"],"horas":38},{"id":"r-educadores","nombre":"Ruta Educación, Crianza y Bienestar Infantil","para":"Para docentes, orientadores, madres, padres y cuidadores de niñas, niños y adolescentes.","precio":3190,"cursos":["d-neurodiversidad","d-infancia-adolescencia","c-pap"],"horas":65},{"id":"r-vende","nombre":"Ruta Vende en Línea y Haz Crecer tu Marca","para":"Para quien vende por WhatsApp, Mercado Libre o redes y quiere vender más con mejor imagen.","precio":2690,"cursos":["c-venta-en-linea","d-marketing-digital","c-canva","c-fotografia-producto"],"horas":55},{"id":"r-psicologia","nombre":"Ruta Psicología Clínica Basada en Evidencia","para":"Para psicólogos y estudiantes de los últimos semestres de psicología que quieren fortalecer su práctica clínica.","precio":4490,"cursos":["d-evaluacion-clinica","d-tcc","d-terapias-contextuales"],"horas":95},{"id":"r-comunicacion-persuasiva","nombre":"Ruta Comunicación, Persuasión y Servicio","color":"#0F766E","precio":3290,"para":"Para comunicar propuestas, manejar emociones y atender a clientes con claridad y respeto.","desc":"Practica primero la regulación emocional, después la argumentación ética y finalmente la atención al cliente.","cursos":["c-inteligencia-emocional","diplomado-persuasion-etica","c-atencion-ventas"],"suma":4070,"horas":45,"ahorro":780}];
   var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co';
   var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+  window.IM = { oferta:function(){ return OFERTA; }, supa:SUPA, anon:ANON };
   var ORDEN = ['Todos','Diplomados','Psicología y salud','Desarrollo humano','Negocios y oficina','Idiomas','Tecnología e IA','IA para tu profesión'];
   var AREAS = [
     {k:'Psicología y salud', ico:'🧠', d:'Terapia, duelo, forense, infancia y bienestar'},
@@ -895,7 +937,7 @@ html,body{overflow-x:hidden}
         '<div class="fi-compra"><div><b>' + dinero(p) + '</b> <span>MXN · pago único</span><small>Acceso 12 meses · a tu ritmo, desde el celular</small></div>' +
         '<div class="fi-bot"><a class="btn btn-mor" href="' + url + '">Inscribirme</a>' +
         '<a class="fi-gratis" href="../plataforma/index.html?muestra=' + encodeURIComponent(id) + '">Probar una lección gratis</a>' +
-        '<a class="fi-gratis" href="../plataforma/index.html?curso=' + encodeURIComponent(id) + '&regalar=1">🎁 Regalarlo</a></div></div>' +
+        '<a class="fi-gratis" href="#regalar" data-regalar="' + esc(id) + '">🎁 Regalarlo</a></div></div>' +
         '<p style="font-size:13.5px;color:var(--gris);margin:-8px 0 14px">También incluido en la <a href="#membresia" onclick="cerrarFichaYIr(\'membresia\');return false">membresía</a> desde ' + dinero(PLANES.esencial) + ' al mes.</p>' +
         '<p class="fi-desc">' + esc(t.d) + '</p>';
       if(t.a && t.a.length) h += '<h3>Lo que vas a aprender</h3><ul class="fi-aprende">' +
@@ -939,7 +981,95 @@ html,body{overflow-x:hidden}
 })();
 </script>
 
+<!-- ============ REGALO SIN CUENTA ============ -->
+<div id="rg-modal" class="emp-modal" hidden>
+  <div class="emp-modal-caja rg-caja" role="dialog" aria-modal="true" aria-labelledby="rg-t">
+    <button type="button" class="emp-cerrar" onclick="cerrarRegalo()" aria-label="Cerrar">&times;</button>
+    <div id="rg-paso">
+      <h3 id="rg-t">🎁 Regala un curso o diplomado</h3>
+      <p>Sin crear cuenta. Pagas y le llega por correo con tu mensaje y su código para empezar.</p>
+      <form id="rg-form" novalidate>
+        <fieldset class="rg-grupo">
+          <legend>1. ¿Qué le regalas?</legend>
+          <select id="rg-curso" required aria-label="Programa para regalar"></select>
+        </fieldset>
+        <fieldset class="rg-grupo">
+          <legend>2. ¿Para quién es?</legend>
+          <div class="rg-dos">
+            <label>Su nombre<input id="rg-para-nom" maxlength="120" autocomplete="off" placeholder="Ej. Ana"></label>
+            <label>Su correo<input id="rg-para-cor" type="email" maxlength="160" autocomplete="off" placeholder="ana@correo.com"></label>
+          </div>
+          <label>Tu mensaje (opcional)<textarea id="rg-msg" maxlength="600" rows="2" placeholder="¡Feliz cumpleaños! Sé que te va a encantar."></textarea></label>
+          <div class="rg-cuando" role="radiogroup" aria-label="¿Cuándo le llega?">
+            <span>¿Cuándo le llega?</span>
+            <label class="rg-op"><input type="radio" name="rg-cuando" value="hoy" checked> Hoy</label>
+            <label class="rg-op"><input type="radio" name="rg-cuando" value="fecha"> Otro día</label>
+            <input type="date" id="rg-fecha" hidden aria-label="Fecha de entrega">
+          </div>
+        </fieldset>
+        <fieldset class="rg-grupo">
+          <legend>3. ¿De parte de quién?</legend>
+          <div class="rg-dos">
+            <label>Tu nombre<input id="rg-de-nom" maxlength="120" autocomplete="name"></label>
+            <label>Tu correo<input id="rg-de-cor" type="email" maxlength="160" autocomplete="email"></label>
+          </div>
+          <p class="rg-ayuda">Ahí te llega el comprobante y una liga para cambiar el correo, el mensaje o la fecha si lo necesitas.</p>
+        </fieldset>
+        <div id="rg-av" aria-live="polite"></div>
+        <button type="submit" class="btn btn-mor btn-grande rg-pagar" id="rg-btn">Pagar el regalo</button>
+        <p class="rg-ayuda rg-centro">Pago seguro con Mercado Pago: tarjeta, meses sin intereses u OXXO. Garantía de 7 días.</p>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+.rg-caja{max-width:600px}
+#rg-form{display:grid;gap:14px}
+.rg-grupo{border:0;padding:0;margin:0;display:grid;gap:10px}
+.rg-grupo legend{font-weight:800;color:var(--tinta);font-size:15px;margin-bottom:8px}
+.rg-dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#rg-form label{display:flex;flex-direction:column;font-size:13px;font-weight:600;gap:4px}
+#rg-form input:not([type=radio]),#rg-form select,#rg-form textarea{font:inherit;font-weight:400;font-size:15.5px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:12px;background:#fff;width:100%}
+#rg-form input:focus,#rg-form select:focus,#rg-form textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+#rg-form textarea{resize:vertical}
+.rg-cuando{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}
+.rg-cuando>span{font-weight:600}
+#rg-form .rg-op{flex-direction:row;align-items:center;gap:6px;font-weight:500;font-size:14px}
+#rg-form #rg-fecha{width:auto}
+.rg-ayuda{color:var(--gris);font-size:13px;line-height:1.5;margin:0}
+.rg-centro{text-align:center}
+.rg-pagar{width:100%}
+.rg-error{background:#FEF2F2;color:var(--rojo);border-radius:10px;padding:10px 12px;font-size:14px}
+.rg-ok{text-align:center}
+.rg-ok .rg-big{font-size:56px;line-height:1}
+.rg-ok dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;text-align:left;background:var(--nube);border-radius:14px;padding:16px;margin:16px 0;font-size:15px}
+.rg-ok dt{color:var(--gris)}.rg-ok dd{margin:0;font-weight:600;color:var(--tinta)}
+@media(max-width:560px){.rg-dos{grid-template-columns:1fr}}
+#como .pasos{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){#como .pasos{grid-template-columns:1fr}}
+</style>
+
 <!-- ============ CÓMO FUNCIONA ============ -->
+<section id="como" style="background:var(--nube)">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De inscribirte a tener tu constancia</h2>
+      <p>Todo en línea y automático: sin trámites, sin papeleo y sin esperar a que abra un ciclo escolar.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso"><div class="n">1</div><h3>Eliges tu curso y pagas</h3><p>Creas tu cuenta con tu correo y pagas con tarjeta, meses sin intereses u OXXO. Con tarjeta entras en segundos.</p></div>
+      <div class="paso"><div class="n">2</div><h3>Estudias por bloques</h3><p>Lecciones cortas, un archivo descargable, una actividad y un examen por bloque. Desde el celular, a tu ritmo.</p></div>
+      <div class="paso"><div class="n">3</div><h3>Obtienes tu constancia</h3><p>Al aprobar, tu constancia con folio, sello y código QR se genera sola. La descargas o la agregas a LinkedIn.</p></div>
+    </div>
+    <div class="ins-cta" style="margin-top:30px">
+      <a href="#explorar" class="btn btn-mor btn-grande">Elegir mi curso</a>
+      <p class="nota-form">¿Ya tienes cuenta? <a href="../plataforma/index.html">Entra al aula</a>. ¿Prefieres que te ayudemos o pagar por transferencia?
+      <a href="https://wa.me/528120282120?text=Hola,%20quiero%20inscribirme%20a%20un%20curso%20de%20Instituto%20Mara" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ MEMBRESÍA ============ -->
 <section id="membresia" class="mem-sec">
   <div class="wrap">
@@ -959,8 +1089,8 @@ html,body{overflow-x:hidden}
     <div>
       <div class="eyebrow">Regala aprendizaje</div>
       <h2>Regala un curso o diplomado</h2>
-      <p>Tú lo pagas y la otra persona recibe un correo con tu mensaje y su código, en la fecha que elijas. También se lo puedes mandar por WhatsApp. Ideal para cumpleaños, graduaciones o para tu equipo.</p>
-      <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=regalos">Elegir un regalo →</a>
+      <p>Sin crear cuenta: eliges el programa, escribes para quién es y su correo, pagas y listo. Le llega con tu mensaje en la fecha que elijas. Si te equivocas en algo, lo cambias desde el correo que te mandamos.</p>
+      <button type="button" class="btn btn-mor btn-grande" onclick="abrirRegalo()">Regalar ahora →</button>
     </div>
     <div class="regalo-ico" aria-hidden="true">🎁</div>
   </div>
@@ -970,8 +1100,8 @@ html,body{overflow-x:hidden}
 <section id="empresas" class="emp-sec">
   <div class="wrap emp-caja">
     <div class="eyebrow">Para empresas</div>
-    <h2>Capacita a todo tu equipo con un solo plan</h2>
-    <p>Por una cuota mensual, tu gente entra a todos los cursos y diplomados y cada quien toma los que necesite. Tú registras a cada persona y, desde tu panel, ves quién ya empezó, cuánto lleva y quién terminó.</p>
+    <h2>Somos el área de capacitación de tu empresa</h2>
+    <p>Si no tienes quién arme el plan ni le dé seguimiento, lo hacemos nosotros. Te proponemos qué toma cada grupo de tu personal, tu gente estudia desde el celular y tú ves en tu panel quién empezó, cuánto lleva y quién terminó. Un solo plan mensual para todo el equipo, con todo el catálogo.</p>
     <div class="emp-plan">
       <table class="emp-tabla" aria-label="Precios del plan para empresas">
         <thead><tr><th>Personas</th><th>Al mes, IVA incluido</th></tr></thead>
@@ -985,7 +1115,8 @@ html,body{overflow-x:hidden}
         <ul class="emp-lista">
           <li>Más de 80 cursos y diplomados: NOM-035, liderazgo, Excel, servicio, idiomas, IA y más</li>
           <li>Panel con el avance de cada persona y reporte en Excel o PDF</li>
-          <li>Constancia con folio y QR verificable para cada quien</li>
+          <li>Plan de capacitación sin costo, armado para tu giro</li>
+          <li>Constancia con folio y QR verificable para cada quien, con el logo de tu empresa</li>
           <li>Pago con tarjeta y cobro automático, o anual con tarjeta, OXXO o transferencia</li>
           <li>Factura disponible</li>
         </ul>
@@ -1020,38 +1151,6 @@ html,body{overflow-x:hidden}
   </div>
 </div>
 
-<section id="como" style="background:var(--nube)">
-  <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Cómo funciona</div>
-      <h2>De inscribirte a tener tu constancia</h2>
-      <p>Cuatro pasos. Sin trámites presenciales, sin papeleo y sin esperar a que abra un ciclo escolar.</p>
-    </div>
-    <div class="pasos">
-      <div class="paso">
-        <div class="n">1</div>
-        <h3>Creas tu cuenta</h3>
-        <p>Con tu correo y una contraseña, desde el celular. Confirmas el correo y ya estás dentro del aula.</p>
-      </div>
-      <div class="paso">
-        <div class="n">2</div>
-        <h3>Eliges tu curso y pagas</h3>
-        <p>Tarjeta, meses sin intereses o efectivo en tiendas. Con tarjeta, tu acceso se abre en segundos.</p>
-      </div>
-      <div class="paso">
-        <div class="n">3</div>
-        <h3>Estudias por bloques</h3>
-        <p>Cada bloque tiene lecciones, un archivo descargable, una actividad y un examen. Apruebas y se abre el siguiente.</p>
-      </div>
-      <div class="paso">
-        <div class="n">4</div>
-        <h3>Obtienes tu constancia</h3>
-        <p>Al ver todas las lecciones y aprobar la evaluación de cada módulo, tu constancia con folio, sello y código QR de verificación se genera sola y la descargas o imprimes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ POR QUÉ ============ -->
 <section class="oscuro">
   <div class="wrap">
@@ -1069,7 +1168,7 @@ html,body{overflow-x:hidden}
       <div class="razon">
         <div class="ico">💸</div>
         <h3>Precio de verdad accesible</h3>
-        <p>Pago único desde $890 pesos, con meses sin intereses y opción de pagar en efectivo. Sin inscripción, sin colegiatura mensual y sin cargos sorpresa.</p>
+        <p>Pago único desde $390 pesos, con meses sin intereses y opción de pagar en efectivo. Sin inscripción, sin colegiatura mensual y sin cargos sorpresa.</p>
       </div>
       <div class="razon">
         <div class="ico">🗺️</div>
@@ -1091,75 +1190,6 @@ html,body{overflow-x:hidden}
         <h3>Garantía de 7 días</h3>
         <p>Si en la primera semana ves que el curso no es para ti, te devolvemos tu dinero completo. Sin preguntas y sin letra chiquita.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ETAPAS ============ -->
-<section id="futuro">
-  <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Hacia dónde vamos</div>
-      <h2>Estamos creciendo, y queremos que crezcas con nosotros</h2>
-      <p>Instituto Mara abre con capacitación y avanza por etapas hacia la formación con reconocimiento oficial. Este es el camino, sin adornos.</p>
-    </div>
-    <div class="futuro">
-      <div class="fut viva">
-        <div class="fase">Etapa 1 · Ya disponible</div>
-        <h3>Capacitación</h3>
-        <p>Inglés, Excel, inteligencia artificial por profesión, diplomados en tanatología, NOM-035 y cuidado del adulto mayor, y más. Cursos libres con constancia de Instituto Mara.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 2 · Próximamente</div>
-        <h3>Preparación</h3>
-        <p>Asesoría para el examen CENEVAL del Acuerdo 286 y para exámenes de admisión a prepa y universidad.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 3 · En proceso</div>
-        <h3>Bachillerato</h3>
-        <p>Preparatoria en línea, una vez concluido el trámite de reconocimiento oficial ante la autoridad educativa.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 4 · A futuro</div>
-        <h3>Nivel superior</h3>
-        <p>Licenciaturas en línea, con el reconocimiento oficial correspondiente para cada plan de estudios.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INSCRIPCIÓN ============ -->
-<section id="inscripcion" style="background:var(--nube)">
-  <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Inscripción</div>
-      <h2>Empieza hoy, en tres pasos</h2>
-      <p>Todo es en línea y automático: no tienes que esperar a que alguien te conteste.</p>
-    </div>
-
-    <div class="pasos-ins">
-      <div class="paso-ins">
-        <div class="paso-num">1</div>
-        <h3>Crea tu cuenta</h3>
-        <p>Con tu correo y una contraseña. Te llega un correo para confirmarla; ábrelo y listo.</p>
-      </div>
-      <div class="paso-ins">
-        <div class="paso-num">2</div>
-        <h3>Elige tu curso y paga</h3>
-        <p>Con tarjeta de crédito o débito, meses sin intereses o efectivo en tiendas, por Mercado Pago.</p>
-      </div>
-      <div class="paso-ins">
-        <div class="paso-num">3</div>
-        <h3>Entra a estudiar</h3>
-        <p>Tu acceso se activa solo al confirmarse el pago. Estudias desde el celular, a tu ritmo, 12 meses.</p>
-      </div>
-    </div>
-
-    <div class="ins-cta">
-      <a href="../plataforma/index.html" class="btn btn-mor btn-grande">Crear mi cuenta y empezar</a>
-      <p class="nota-form">¿Ya tienes cuenta? <a href="../plataforma/index.html">Entra al aula</a>.<br>
-      ¿Prefieres que te ayudemos o pagar por transferencia?
-      <a href="https://wa.me/528120282120?text=Hola,%20quiero%20inscribirme%20a%20un%20curso%20de%20Instituto%20Mara" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </div>
 </section>
@@ -1219,9 +1249,47 @@ html,body{overflow-x:hidden}
     </details>
 
     <details>
+      <summary>¿Cómo funciona un regalo?</summary>
+      <div class="r">No necesitas crear cuenta. Eliges el programa, escribes el nombre y el correo de quien lo recibe, tu nombre y tu correo, y pagas. Le llega un correo con tu mensaje y su código el día que elijas. A ti te llega el comprobante con una liga para cambiar el correo, el mensaje o la fecha mientras no lo active.</div>
+    </details>
+
+    <details>
       <summary>¿Dan factura?</summary>
       <div class="r">Sí. Solicítala al momento de tu inscripción con tu constancia de situación fiscal y te la emitimos junto con tu comprobante de pago.</div>
     </details>
+  </div>
+</section>
+
+<!-- ============ ETAPAS ============ -->
+<section id="futuro">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Hacia dónde vamos</div>
+      <h2>Estamos creciendo, y queremos que crezcas con nosotros</h2>
+      <p>Instituto Mara abre con capacitación y avanza por etapas hacia la formación con reconocimiento oficial. Este es el camino, sin adornos.</p>
+    </div>
+    <div class="futuro">
+      <div class="fut viva">
+        <div class="fase">Etapa 1 · Ya disponible</div>
+        <h3>Capacitación</h3>
+        <p>Inglés, Excel, inteligencia artificial por profesión, diplomados en tanatología, NOM-035 y cuidado del adulto mayor, y más. Cursos libres con constancia de Instituto Mara.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 2 · Próximamente</div>
+        <h3>Preparación</h3>
+        <p>Asesoría para el examen CENEVAL del Acuerdo 286 y para exámenes de admisión a prepa y universidad.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 3 · En proceso</div>
+        <h3>Bachillerato</h3>
+        <p>Preparatoria en línea, una vez concluido el trámite de reconocimiento oficial ante la autoridad educativa.</p>
+      </div>
+      <div class="fut">
+        <div class="fase">Etapa 4 · A futuro</div>
+        <h3>Nivel superior</h3>
+        <p>Licenciaturas en línea, con el reconocimiento oficial correspondiente para cada plan de estudios.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1248,10 +1316,11 @@ html,body{overflow-x:hidden}
       <div>
         <h4>Navegación</h4>
         <ul>
-          <li><a href="#cursos">Cursos</a></li>
-          <li><a href="#como">Cómo funciona</a></li>
+          <li><a href="#explorar">Programas</a></li>
+          <li><a href="#membresia">Membresía</a></li>
+          <li><a href="#empresas">Para empresas</a></li>
+          <li><a href="#regalar" onclick="abrirRegalo();return false">Regalar un curso</a></li>
           <li><a href="#preguntas">Preguntas frecuentes</a></li>
-          <li><a href="#inscripcion">Inscripción</a></li>
           <li><a href="../plataforma/index.html">Entrar al aula</a></li>
         </ul>
       </div>
@@ -1287,6 +1356,96 @@ menu.querySelectorAll('a').forEach(function(a){
 
 // El botón de cada curso lleva directo al aula (plataforma/index.html?curso=…),
 // donde el alumno crea su cuenta, paga y entra sin que nadie intervenga.
+</script>
+<script>
+/* Regalo sin cuenta (26 oct 2026): eliges programa, para quién, su correo, tus datos, pagas y listo.
+   La acción pública «regalo_invitado» de la función «tienda» crea el cobro; al regresar de Mercado Pago
+   se muestra el resultado con «regalo_ver». Quien regala recibe una liga para cambiar los datos. */
+(function(){
+  var M = document.getElementById('rg-modal'), F = document.getElementById('rg-form'), sel = document.getElementById('rg-curso');
+  function dinero(n){ return '$' + Number(n).toLocaleString('es-MX'); }
+  function esc(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function api(d){
+    return fetch(IM.supa + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:IM.anon, Authorization:'Bearer ' + IM.anon }, body:JSON.stringify(d) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar. Intenta de nuevo.'); return j; }); });
+  }
+  function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
+  function llenar(id){
+    var lista = IM.oferta().filter(function(c){ return Number(c.p) > 0; }), grupos = {};
+    lista.forEach(function(c){ var g = c.f === 'Diplomados' ? 'Diplomados' : (c.a || c.f); (grupos[g] = grupos[g] || []).push(c); });
+    sel.innerHTML = '<option value="">Elige un programa…</option>' + Object.keys(grupos).map(function(g){
+      return '<optgroup label="' + esc(g) + '">' + grupos[g].sort(function(a, b){ return a.n.localeCompare(b.n, 'es'); }).map(function(c){
+        return '<option value="' + esc(c.id) + '">' + esc(c.n) + ' — ' + dinero(c.p) + '</option>'; }).join('') + '</optgroup>';
+    }).join('');
+    sel.value = id && sel.querySelector('option[value="' + id.replace(/"/g, '') + '"]') ? id : '';
+    precio();
+  }
+  function precio(){
+    var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
+    document.getElementById('rg-btn').textContent = c ? 'Pagar ' + dinero(c.p) + ' →' : 'Pagar el regalo';
+  }
+  sel.addEventListener('change', precio);
+  [].forEach.call(document.querySelectorAll('input[name=rg-cuando]'), function(r){ r.addEventListener('change', function(){
+    var f = document.getElementById('rg-fecha'); f.hidden = r.value !== 'fecha' || !r.checked; if(!f.hidden){ f.min = hoy(); if(!f.value) f.value = hoy(); f.focus(); }
+  }); });
+  window.abrirRegalo = function(id){
+    if(typeof id !== 'string') id = '';
+    llenar(id); M.hidden = false; document.body.style.overflow = 'hidden';
+    setTimeout(function(){ (id ? document.getElementById('rg-para-nom') : sel).focus(); }, 50);
+  };
+  window.cerrarRegalo = function(){ M.hidden = true; document.body.style.overflow = ''; };
+  M.addEventListener('click', function(e){ if(e.target === M) cerrarRegalo(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !M.hidden) cerrarRegalo(); });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-regalar]'); if(!a) return;
+    e.preventDefault(); var id = a.getAttribute('data-regalar');
+    var fi = document.getElementById('ficha'); if(fi && !fi.hidden){ fi.hidden = true; document.body.style.overflow = ''; if(/^#programa-/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search); }
+    abrirRegalo(id);
+  });
+  function aviso(t){ document.getElementById('rg-av').innerHTML = t ? '<div class="rg-error">' + esc(t) + '</div>' : ''; }
+  var CORREO = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  F.addEventListener('submit', function(e){
+    e.preventDefault(); aviso('');
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    var d = { accion:'regalo_invitado', cursoId:sel.value, paraNombre:v('rg-para-nom'), paraCorreo:v('rg-para-cor'), mensaje:v('rg-msg'),
+      deNombre:v('rg-de-nom'), deCorreo:v('rg-de-cor'), urlRegreso:location.origin + location.pathname };
+    var fecha = document.querySelector('input[name=rg-cuando]:checked').value === 'fecha' ? v('rg-fecha') : '';
+    if(fecha) d.entregarEn = fecha;
+    var falta = !d.cursoId ? ['rg-curso', 'Elige el programa que quieres regalar.'] : !d.paraNombre ? ['rg-para-nom', 'Escribe el nombre de quien recibe el regalo.']
+      : !CORREO.test(d.paraCorreo) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.'] : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
+      : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null;
+    if(falta){ aviso(falta[1]); document.getElementById(falta[0]).focus(); return; }
+    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
+    try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
+    api(d).then(function(r){ location.href = r.init_point; })
+      .catch(function(x){ b.disabled = false; b.textContent = txt; aviso(x.message); });
+  });
+  try{ var de = JSON.parse(localStorage.getItem('im-regalo-de') || 'null'); if(de){ document.getElementById('rg-de-nom').value = de.n || ''; document.getElementById('rg-de-cor').value = de.c || ''; } }catch(x){}
+
+  /* Regreso desde Mercado Pago */
+  var q = new URLSearchParams(location.search), est = q.get('regalo'), t = q.get('t');
+  if(est && t){
+    history.replaceState(null, '', location.pathname + location.hash);
+    var caja = document.getElementById('rg-paso');
+    M.hidden = false; document.body.style.overflow = 'hidden';
+    if(est === 'fallo'){
+      caja.innerHTML = '<div class="rg-ok"><div class="rg-big">😕</div><h3>El pago no se completó</h3><p>Mercado Pago no pudo cobrar el regalo. No se hizo ningún cargo; puedes intentarlo de nuevo.</p><p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="location.reload()">Intentar de nuevo</button></p></div>';
+    } else {
+      caja.innerHTML = '<div class="rg-ok"><div class="rg-big">🎁</div><h3>' + (est === 'pendiente' ? 'Tu regalo está apartado' : '¡Listo! Tu regalo está pagado') + '</h3><p id="rg-res">Cargando los datos…</p></div>';
+      api({ accion:'regalo_ver', t:t }).then(function(r){
+        var g = r.regalo, cuando = g.entregarEn <= hoy() ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
+        document.getElementById('rg-res').outerHTML =
+          '<p>' + (est === 'pendiente' ? 'En cuanto Mercado Pago confirme tu pago (con OXXO puede tardar unas horas), se lo enviamos.' : 'Le llega ' + esc(cuando) + ' con tu mensaje y su código para empezar.') + '</p>' +
+          '<dl><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || '') + '</dd><dt>Le llega</dt><dd>' + esc(cuando) + '</dd><dt>Total</dt><dd>' + dinero(g.monto) + '</dd></dl>' +
+          '<p class="rg-ayuda">Te mandamos un correo con tu comprobante y una liga para cambiar el correo, el mensaje o la fecha. ¿Algo está mal? <a href="regalo.html?t=' + encodeURIComponent(t) + '">Cámbialo aquí</a>.</p>' +
+          '<p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="cerrarRegalo()">Listo</button></p>';
+      }).catch(function(){ document.getElementById('rg-res').textContent = 'Te mandamos un correo con el comprobante y la liga para revisar tu regalo.'; });
+    }
+  }
+  /* Precio del plan para empresas en la puerta de la portada, igual al de la tabla */
+  function precioEmp(){ var td = document.querySelector('#emp-precios tr td:nth-child(2)'), el = document.getElementById('hero-emp-precio'); if(td && el && /\$/.test(td.textContent)) el.textContent = td.textContent.trim() + ' al mes'; }
+  precioEmp(); setTimeout(precioEmp, 2500);
+})();
 </script>
 </body>
 </html>
