@@ -44,20 +44,22 @@ Liderazgo, RH y seguridad laboral · Ventas y marketing · Tecnología e IA · I
 Criminología y forense · Cuidado, infancia y educación · Administración y contabilidad. Para los #1-15 sigue
 valiendo la `familia` de la tabla de arriba.
 
-| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos) | Estado |
+| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante, Cafetería, Panadería | Pendiente |
-| 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante, Hotel, Comedor industrial, Hospital | Pendiente |
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Pendiente |
+| 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante; Hotelería; Comedor industrial / catering; Hospital / clínica privada | Pendiente |
 | 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
-| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio, Hospital, Comedor industrial | Pendiente |
-| 20 | d-energia-solar | sol | Diplomado en Energía Solar Fotovoltaica: diseño, cálculo e instalación segura | 1690 | Oficios y técnica | Constructora, Instalaciones eléctricas | Pendiente |
-| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotel, Restaurante, Agencia de viajes | Pendiente |
+| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio / centro deportivo; Hospital / clínica privada; Comedor industrial / catering | Pendiente |
+| 20 | d-energia-solar | sol | Diplomado en Energía Solar Fotovoltaica: diseño, cálculo e instalación segura | 1690 | Oficios y técnica | Constructora; Instalaciones eléctricas / solares | Pendiente |
+| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotelería; Restaurante; Agencia de viajes | Pendiente |
 | 22 | d-derecho-practico | der | Diplomado en Derecho Práctico para la Vida Diaria: trabajo, renta, familia y consumo | 1690 | Dinero y derecho | — | Pendiente |
 | 23 | d-finanzas-inversion | inv | Diplomado en Finanzas Personales e Inversión para Principiantes: CETES, fondos y Afore | 1690 | Dinero y derecho | — | Pendiente |
-| 24 | d-perros | per | Diplomado en Cuidado, Conducta y Adiestramiento de Perros | 1690 | Hogar, familia y mascotas | Veterinaria, Estética canina | Pendiente |
+| 24 | d-perros | per | Diplomado en Cuidado, Conducta y Adiestramiento de Perros | 1690 | Hogar, familia y mascotas | Veterinaria; Estética canina | Pendiente |
 | 25 | d-hogar-familia | org | Diplomado en Organización del Hogar, Rutinas y Economía Familiar | 1690 | Hogar, familia y mascotas | — | Pendiente |
-| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Escuela, Guardería, Industria | Pendiente |
-| 27 | d-cafe-barismo | caf | Diplomado en Café de Especialidad, Barismo y Negocio de Cafetería | 1690 | Cocina y gastronomía | Cafetería | Pendiente |
+| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Colegio privado; Guardería / estancia infantil; Industria / manufactura | Pendiente |
+| 27 | d-cafe-barismo | caf | Diplomado en Café de Especialidad, Barismo y Negocio de Cafetería | 1690 | Cocina y gastronomía | Cafetería; Restaurante | Pendiente |
+
+Los 11 giros nuevos (Restaurante, Cafetería, Panadería / repostería, Comedor industrial / catering, Gimnasio / centro deportivo, Constructora, Instalaciones eléctricas / solares, Agencia de viajes, Veterinaria, Estética canina, Guardería / estancia infantil) se dieron de alta en `prospecto_giros` el 28 oct 2026, con su tema y su problema para llamadas, correos y WhatsApp.
 
 ### Cuidados de la tanda 2
 - **16 Cocina y repostería.** Formato de texto e interactivo: el valor está en recetas estándar con gramajes, costeo

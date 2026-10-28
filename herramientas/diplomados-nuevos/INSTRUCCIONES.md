@@ -46,7 +46,7 @@ Industria / manufactura · Concesionaria automotriz · Hotelería · Despacho co
 Funeraria · Hospital / clínica privada · Agencia de marketing digital · Reclutamiento / capital humano · Despacho jurídico ·
 Inmobiliaria · Aseguradora / agencia de seguros · Boutique de ropa · Coworking / oficinas ejecutivas · Seguridad privada ·
 Colegio privado · Call center · Centro de terapia infantil / neurodesarrollo · Diagnóstico médico por imagen ·
-Residencia de adultos mayores · Asesoría de imagen. Elige sólo los giros donde el diplomado sea de los 3 más útiles.
+Residencia de adultos mayores · Asesoría de imagen · Restaurante · Cafetería · Panadería / repostería · Comedor industrial / catering · Gimnasio / centro deportivo · Constructora · Instalaciones eléctricas / solares · Agencia de viajes · Veterinaria · Estética canina · Guardería / estancia infantil (estos 11 últimos, agregados el 28 oct 2026 para la tanda 2). Elige sólo los giros donde el diplomado sea de los 3 más útiles.
 - `m1-2.json`, `m3-4.json`, `m5-6.json`, `m7-8.json`, cada uno `{ "modulos": [ módulo, módulo ] }` con:
 ```json
 { "t": "Título del módulo", "r": "Resumen de 1-2 frases",
