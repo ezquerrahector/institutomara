@@ -1,0 +1,736 @@
+{
+  "modulos": [
+    {
+      "t": "Vender hoy: del vendedor que empuja al asesor que ayuda",
+      "r": "Entenderás qué distingue a la venta profesional, cómo decide hoy tu cliente, a quién le vendes y con qué propuesta, y qué límites éticos y legales nunca se cruzan.",
+      "lecciones": [
+        {
+          "t": "Qué es vender de forma profesional",
+          "obj": "Distinguir la venta transaccional, la consultiva y la compleja, y elegir cómo actuar en cada una sin caer en los mitos del oficio.",
+          "texto": [
+            "Piensa en la última vez que compraste algo importante: un celular, un seguro, un coche usado. ¿Recuerdas a quien te atendió? Si te ayudó a entender qué te convenía, probablemente volviste o lo recomendaste; si te presionó, seguramente lo evitaste. Este diplomado parte de una idea sencilla: <b>vender es ayudar a alguien a decidir bien</b>, y la experiencia que vive esa persona antes, durante y después de comprar es lo que hace que regrese. No es una frase bonita, es una forma de trabajar que se aprende, se practica y se mide.",
+            "No todas las ventas son iguales. En la <b>venta transaccional</b> el cliente ya sabe lo que quiere y busca rapidez, buen precio y disponibilidad: un garrafón, una refacción con número de parte, un boleto. Ahí lo profesional es ser ágil, claro y confiable. En la <b>venta consultiva</b> el cliente sabe que tiene un problema, pero no qué solución le conviene: un seguro de gastos médicos, un sistema de riego, una remodelación. Tu valor está en preguntar bien y recomendar con honestidad, incluso cuando la respuesta es «esto no te conviene». En la <b>venta compleja</b> deciden varias personas, el monto es alto y el proceso dura semanas o meses, como cuando una fábrica cambia de proveedor de mantenimiento.",
+            "Tres mitos estorban. «El vendedor nace»: vender bien es un conjunto de conductas concretas, como preparar, preguntar, escuchar y proponer el siguiente paso, que mejoran con práctica y retroalimentación. «Siempre hay que estar cerrando»: presionar desgasta la confianza, y en ventas grandes la investigación de Neil Rackham, que verás en el módulo 3, encontró que las técnicas de cierre clásicas funcionan peor que en ventas pequeñas. «El cliente siempre tiene la razón»: merece respeto y ser escuchado, pero puede equivocarse sobre lo que necesita, y un buen asesor se lo dice con datos; tampoco estás obligado a tolerar abusos.",
+            "Ser profesional, entonces, es adaptar tu forma de vender al tipo de compra, preparar cada conversación, decir la verdad aunque te cueste una venta y medir lo que haces. A lo largo de ocho módulos construirás tu propio sistema comercial."
+          ],
+          "comparar": [
+            "«Así no: “Este es el mejor plan, lo lleva todo el mundo; si firmas hoy te regalo el primer mes.”»",
+            "«Así sí: “Antes de recomendarte un plan, cuéntame cómo lo vas a usar y qué te preocupa; así vemos cuál te conviene, o si ninguno.”»"
+          ],
+          "caso": "Caso ficticio: Benito, de 52 años, atiende el mostrador de una tienda de materiales para construcción en Tlaxcala. Por la mañana llegan albañiles que piden bultos de cemento con prisa; por la tarde, familias que quieren impermeabilizar su azotea y no saben qué producto elegir. Su jefe le pide ofrecer a todos el impermeabilizante más caro «porque deja más margen». Benito duda si tratar igual a ambos tipos de cliente.",
+          "p": [
+            [
+              "¿Qué tipo de venta vive Benito con los albañiles que piden cemento?",
+              "Transaccional: saben qué quieren y buscan rapidez al comprar",
+              "Consultiva: conviene preguntarles a fondo por su obra",
+              "Compleja: en la compra deciden varias personas a la vez",
+              "Los albañiles llegan con el producto definido; lo profesional es atender rápido, confirmar cantidad y tener existencias. Un diagnóstico largo les quita tiempo, y no hay comité ni proceso largo que la vuelva compleja."
+            ],
+            [
+              "¿Cómo conviene atender a la familia que quiere impermeabilizar?",
+              "Preguntar por la azotea, el clima y el presupuesto antes de recomendar",
+              "Ofrecer de inmediato el producto más caro, porque dura más tiempo",
+              "Darle el folleto con todos los productos para que decida por su cuenta",
+              "Es una venta consultiva: la familia tiene un problema y no sabe qué solución le conviene. Recomendar sin preguntar puede venderle algo que no necesita, y entregarle un folleto la deja sola justo donde más ayuda necesita."
+            ],
+            [
+              "¿Qué le responde Benito a su jefe con un enfoque profesional?",
+              "Que ofrecerá el caro cuando el diagnóstico lo justifique",
+              "Que lo ofrecerá a todos, porque el cliente puede decir que no",
+              "Que nunca lo ofrecerá, porque un precio alto aleja a la gente",
+              "Recomendar según lo que el cliente necesita protege la confianza y la recompra; si el producto caro resuelve mejor el problema, se ofrece con argumentos. Empujarlo a todos sacrifica la confianza, y descartarlo siempre también ignora la necesidad real."
+            ]
+          ],
+          "completar": [
+            "En la venta ___ el cliente sabe que tiene un problema, pero no qué solución le conviene.",
+            "consultiva"
+          ],
+          "relacionar": [
+            ["Venta transaccional", "Refacción pedida por número de parte"],
+            ["Venta consultiva", "Elegir un seguro de gastos médicos"],
+            ["Venta compleja", "Fábrica que cambia de proveedor de mantenimiento"],
+            ["Mito «el vendedor nace»", "Vender bien se compone de conductas que se practican"],
+            ["Mito «siempre hay que estar cerrando»", "Presionar desgasta la confianza del cliente"]
+          ],
+          "refl": "Analiza cómo vendes hoy. 1) Describe los tres tipos de cliente o de compra más frecuentes en tu trabajo (o en un negocio que conozcas bien). 2) Clasifica cada uno como transaccional, consultivo o complejo y explica por qué. 3) Para cada tipo, anota qué valora más el cliente y qué conducta tuya lo ayuda a decidir mejor. 4) Escribe cuál de los tres mitos ha influido en tu forma de vender y qué harás distinto la próxima semana.",
+          "modelo": "Modelo: «Trabajo en una óptica. Transaccional: quien viene por sus lentes de contacto de siempre; valora rapidez, así que confirmo graduación y existencia y cobro sin rodeos. Consultiva: quien necesita sus primeros lentes progresivos; pregunto a qué distancia lee, si maneja de noche y cuánto quiere invertir. Compleja: el convenio con una empresa para sus 80 empleados, donde deciden recursos humanos y finanzas. El mito que me ha pesado es el de cerrar siempre: insistía en el armazón caro. Ahora recomendaré según sus respuestas.» Es bueno porque distingue los tres tipos con ejemplos reales, liga cada uno con una conducta concreta y termina en un cambio verificable.",
+          "plantilla": [
+            "Mapa de tipos de venta",
+            "Tipo de cliente o compra: [ ]\nClasificación: [transaccional / consultiva / compleja]\nQué valora más: [ ]\nQué hago hoy: [ ]\nQué haré distinto: [conducta concreta]\nCómo sabré que funcionó: [señal o dato]"
+          ],
+          "clave": [
+            "Vender de forma profesional es ayudar al cliente a decidir bien, y eso se aprende y se practica.",
+            "Adapta tu forma de vender: rapidez en la transaccional, diagnóstico en la consultiva y paciencia con varios decisores en la compleja.",
+            "Respetar al cliente no significa darle siempre la razón ni presionarlo para cerrar."
+          ]
+        },
+        {
+          "t": "Cómo compra hoy tu cliente",
+          "obj": "Reconocer en qué momento de su decisión está tu cliente y ajustar tu ayuda, tanto en compras de consumo como en compras de empresa con varios decisores.",
+          "texto": [
+            "Antes de pensar en cómo vendes, conviene entender cómo compra la otra persona. En las compras de consumo, el proceso de decisión suele describirse en cinco momentos: reconocer una necesidad, buscar información, evaluar alternativas, comprar y evaluar después de la compra. No siempre van en orden ni duran lo mismo: un antojo se resuelve en segundos y un crédito hipotecario en meses. Fíjate en que gran parte del recorrido ocurre sin ti; cuando por fin te habla, el cliente muchas veces ya trae una opinión formada.",
+            "En la compra entre empresas casi nunca decide una sola persona. Suele intervenir un <b>comité de compra</b>: quien usará el producto, quien autoriza el presupuesto, quien revisa la parte técnica o legal y, a veces, el área de compras. La consultora Gartner describe seis <b>tareas</b> que estos grupos realizan: identificar el problema, explorar soluciones, definir requisitos, seleccionar proveedor, validar y crear consenso. No son pasos lineales: el comité avanza, regresa y repite tareas cuando surge una duda o entra alguien nuevo. Según Gartner, los compradores dedican alrededor del 17 % del tiempo de su proceso a reunirse con proveedores potenciales, y ese tiempo se reparte entre todos los que compiten.",
+            "Una encuesta de Gartner a 632 compradores de empresas, publicada en 2025, refuerza la idea: el 61 % prefiere comprar sin un vendedor, el 73 % evita activamente a proveedores que mandan mensajes irrelevantes y el 69 % encontró contradicciones entre el sitio web del proveedor y lo que le dijeron sus vendedores. La lectura útil no es que el vendedor sobre, sino que sobra el que sólo repite el catálogo. Lo que se valora es que ayudes a avanzar: aclarar el problema, comparar con criterio, resolver dudas del comité y validar la decisión.",
+            "En cada contacto pregúntate: ¿en qué momento de su decisión está esta persona y qué la ayudaría a dar el siguiente paso? A quien apenas reconoce el problema le sirve una explicación clara; a quien compara, una tabla honesta; a quien ya eligió, facilidad para comprar y certeza de lo que pagará. Y cuida que tu sitio, tus redes y tus palabras digan lo mismo."
+          ],
+          "comparar": [
+            "«Así no: “Te mando el catálogo completo y la lista de precios; cualquier cosa me avisas.”»",
+            "«Así sí: “¿En qué punto van: todavía definiendo qué necesitan o ya comparando proveedores? Así te mando sólo lo que les sirve para decidir.”»"
+          ],
+          "caso": "Caso ficticio: Itzel, de 29 años, vende uniformes clínicos en Pachuca. Una clínica privada le pidió cotización por correo; la enfermera jefa le dijo que le encantaron las telas, pero pasaron tres semanas sin respuesta. Itzel se entera de que la decisión también depende del administrador, que cuida el presupuesto, y de la directora médica, que exige cierto material por higiene. Duda entre insistir con la enfermera o cambiar de estrategia.",
+          "p": [
+            [
+              "¿Qué explica mejor el silencio de la clínica?",
+              "El comité no llega a consenso y faltan voces por atender",
+              "La enfermera jefa perdió el interés y ya no vale la pena",
+              "La cotización salió cara y la clínica ya eligió a otro",
+              "Hay al menos tres personas con criterios distintos: uso, presupuesto y requisitos sanitarios; sin consenso, la compra se detiene. Suponer que se perdió el interés o que ya eligieron a otro es adivinar sin datos y la llevaría a rendirse o a bajar el precio sin razón."
+            ],
+            [
+              "¿Qué le conviene hacer a Itzel ahora?",
+              "Pedir a la enfermera que la oriente sobre cada decisor",
+              "Mandar a los tres la misma cotización con un descuento",
+              "Llamar al administrador sin avisar, para cerrar con quien paga",
+              "La enfermera es su aliada y puede orientarla sobre las dudas del administrador y de la directora, lo que ayuda a crear consenso. Un descuento no responde a las dudas de higiene ni de presupuesto, y saltarse a su aliada puede romper la confianza."
+            ],
+            [
+              "¿Qué material sería más útil para la directora médica?",
+              "La ficha técnica de la tela con datos de higiene y lavado",
+              "Testimonios de enfermeras que dicen que la tela es cómoda",
+              "Una presentación general de la empresa y su trayectoria",
+              "La directora define requisitos sanitarios; le sirve información verificable sobre el material. La comodidad es el criterio de la enfermera, no el suyo, y la historia de la empresa no resuelve su duda concreta."
+            ]
+          ],
+          "completar": [
+            "Gartner describe seis ___ de compra que los grupos de empresa realizan y repiten sin un orden fijo.",
+            "tareas"
+          ],
+          "refl": "Reconstruye cómo compra tu cliente. 1) Elige una venta reciente, ganada o perdida. 2) Describe qué hizo el cliente antes de hablar contigo: dónde buscó, a quién preguntó y qué comparó. 3) Si fue una compra de empresa, nombra a cada persona que influyó y su criterio. 4) Identifica en qué momento de su decisión llegó contigo. 5) Escribe dos cosas que pudiste darle para ayudarlo a avanzar y que no le diste.",
+          "modelo": "Modelo: «Venta perdida: impresión de catálogos para una cadena de tres farmacias. Antes de llamarme, la dueña ya había pedido muestras a dos imprentas y preguntó a una colega cuál recomendaba. Influyeron la dueña (precio y tiempo de entrega), su hijo, que lleva las redes (diseño), y la contadora (factura y crédito). Llegó conmigo cuando ya seleccionaba proveedor. Pude darle una tabla comparativa honesta y una muestra del papel; además, mi página decía entrega en cinco días y yo le dije ocho.» Es bueno porque reconstruye el proceso desde el cliente, nombra el criterio de cada decisor y encuentra fallas concretas, incluida una contradicción.",
+          "plantilla": [
+            "Mapa de decisión del cliente",
+            "Cliente u organización: [ ]\nMomento de su decisión: [reconoce el problema / busca / compara / elige / valida]\nPersonas que influyen y su criterio: [puesto – qué le importa]\nQué ya sabe o cree: [ ]\nQué le ayudaría a dar el siguiente paso: [ ]\nContradicciones por revisar entre sitio, redes y lo que digo: [ ]"
+          ],
+          "clave": [
+            "Gran parte de la decisión ocurre sin ti; cuando llegas, ayuda en el momento exacto en que está el cliente.",
+            "En las empresas compra un comité: atiende el criterio de cada decisor y ayuda a crear consenso.",
+            "Lo que dices debe coincidir con tu sitio y tus redes; las contradicciones cuestan ventas."
+          ]
+        },
+        {
+          "t": "Cliente ideal y propuesta de valor",
+          "obj": "Definir tu perfil de cliente ideal y escribir una propuesta de valor en una frase basada en sus trabajos, frustraciones y alegrías.",
+          "texto": [
+            "Vender a «todo el que quiera comprar» parece buena idea hasta que ves tu agenda: muchas citas, pocas ventas y clientes que exigen descuentos o se van pronto. El <b>perfil de cliente ideal</b> describe a quién le aportas más valor y quién te aporta más a ti: giro o tipo de persona, tamaño, zona, problema que vive, capacidad de pago y señales de que está listo para comprar. Se construye con datos, no con deseos: revisa a tus mejores clientes actuales, los que compran, pagan a tiempo, vuelven y te recomiendan, y busca qué tienen en común. Anota también quién no es tu cliente ideal, para no gastar tiempo ahí.",
+            "Para entender qué valora ese cliente, Alexander Osterwalder y sus colegas proponen el <b>lienzo de propuesta de valor</b>, que explican en su libro «Diseñando la propuesta de valor». Tiene dos lados. En el perfil del cliente anotas sus <b>trabajos</b> (lo que intenta lograr), sus <b>frustraciones</b> (lo que le estorba, le preocupa o le sale caro) y sus <b>alegrías</b> (los resultados que desea o lo que lo sorprendería). En el mapa de valor anotas tus productos y servicios, cómo alivian esas frustraciones y cómo crean esas alegrías. Hay encaje cuando lo que ofreces responde a lo que de verdad le importa al cliente, no a lo que tú crees que debería importarle.",
+            "Con eso escribes tu <b>propuesta en una frase</b>: para [cliente ideal] que [trabajo o frustración], ofrecemos [solución] que [resultado concreto], a diferencia de [alternativa]. Por ejemplo: «Para restaurantes pequeños que pierden mercancía cuando falla el refrigerador, ofrecemos mantenimiento preventivo mensual con atención en menos de cuatro horas, a diferencia de llamar al técnico cuando ya se echó a perder todo». Es específica, habla del problema del cliente y promete algo que puedes cumplir y comprobar.",
+            "Dos advertencias. El perfil y la propuesta son hipótesis: pruébalos en conversaciones reales y ajústalos. Y no confundas propuesta de valor con eslogan; «calidad y servicio» no dice nada que el cliente pueda verificar. Si lo que prometes no se cumple, la frase se vuelve publicidad engañosa, tema de la siguiente lección."
+          ],
+          "comparar": [
+            "«Así no: “Somos líderes en calidad, servicio y los mejores precios del mercado.”»",
+            "«Así sí: “Ayudamos a talleres mecánicos que pierden horas buscando refacciones: les surtimos en menos de 24 horas o les avisamos el mismo día si no hay existencia.”»"
+          ],
+          "caso": "Caso ficticio: Heriberto, de 45 años, tiene en Cuernavaca un negocio de mantenimiento de albercas con dos ayudantes. Atiende casas particulares, hoteles pequeños y condominios, y siente que trabaja sin parar sin ganar más. Al revisar su libreta nota que los condominios pagan con retraso pero contratan todo el año, y que los hoteles pagan a tiempo y lo recomiendan, aunque exigen respuesta rápida. Quiere decidir en quién enfocarse.",
+          "p": [
+            [
+              "¿Qué debería hacer primero Heriberto para definir su cliente ideal?",
+              "Comparar por tipo de cliente pagos, recompra y recomendaciones",
+              "Elegir a los condominios porque le dan trabajo todo el año seguro",
+              "Atender a todos por igual para no perder ninguna fuente de ingreso",
+              "El perfil de cliente ideal se construye con datos de los mejores clientes, no con una sola variable. Fijarse sólo en la continuidad ignora los pagos tardíos, y atender a todos por igual es justo lo que lo tiene agotado sin ganar más."
+            ],
+            [
+              "Para un hotel pequeño, ¿qué es una frustración en el lienzo de propuesta de valor?",
+              "Que un huésped se queje de la alberca turbia",
+              "Tener la alberca limpia y lista todos los días",
+              "Un reporte con fotos después de cada visita",
+              "Una frustración es lo que le estorba o le preocupa al cliente: la queja de un huésped le cuesta reputación. La alberca limpia es un trabajo o resultado que busca, y el reporte con fotos es algo que ofrece Heriberto en su mapa de valor."
+            ],
+            [
+              "¿Cuál es la mejor propuesta en una frase para los hoteles?",
+              "Respuesta el mismo día para que tu alberca no falle a un huésped",
+              "El mejor mantenimiento de albercas, con calidad y servicio garantizado",
+              "Limpieza de albercas para casas, hoteles y condominios a buen precio",
+              "La primera nombra al cliente, su frustración y un resultado que se puede comprobar. La segunda es un eslogan sin nada verificable, y la tercera le habla a todos y compite sólo por precio."
+            ]
+          ],
+          "completar": [
+            "En el lienzo de Osterwalder, las ___ son lo que le estorba, le preocupa o le sale caro al cliente.",
+            "frustraciones"
+          ],
+          "relacionar": [
+            ["Trabajo del cliente", "Tener la alberca lista antes del fin de semana"],
+            ["Frustración", "Un huésped se queja en temporada alta"],
+            ["Alegría", "Que los huéspedes elogien la alberca en sus reseñas"],
+            ["Aliviador de frustraciones", "Atención el mismo día ante una falla"],
+            ["Perfil de cliente ideal", "Hoteles pequeños que pagan a tiempo y recomiendan"]
+          ],
+          "refl": "Diseña tu cliente ideal y tu propuesta. 1) Haz una lista de tus cinco mejores clientes (o de los que te gustaría tener) y anota qué tienen en común. 2) Escribe el perfil de cliente ideal con al menos cinco rasgos y dos señales de que alguien no es tu cliente. 3) Llena el perfil del cliente con tres trabajos, tres frustraciones y tres alegrías. 4) Escribe tu propuesta en una frase con la fórmula de la lección. 5) Anota cómo la probarás con dos clientes esta semana.",
+          "modelo": "Modelo: «Cliente ideal: despachos contables de 3 a 15 personas cuyos clientes mandan facturas por mensaje y en desorden, que quieren crecer sin contratar más. No es mi cliente quien sólo busca el precio más bajo. Trabajos: cerrar el mes a tiempo. Frustraciones: perseguir comprobantes y corregir errores de captura. Alegrías: salir a su hora en temporada de declaraciones. Propuesta: para despachos que pierden días persiguiendo comprobantes, ofrecemos digitalización y clasificación semanal para cerrar el mes a tiempo, a diferencia de contratar a otro capturista. La probaré con dos despachos que ya me conocen.» Es bueno porque es específico, dice a quién no atender y su promesa se puede comprobar.",
+          "plantilla": [
+            "Cliente ideal y propuesta en una frase",
+            "Rasgos de mi cliente ideal: [giro o tipo de persona, tamaño, zona, problema, capacidad de pago]\nSeñales de que no es mi cliente: [ ]\nTrabajos: [ ]\nFrustraciones: [ ]\nAlegrías: [ ]\nMis productos o servicios: [ ]\nCómo alivio sus frustraciones: [ ]\nCómo creo sus alegrías: [ ]\nPropuesta: Para [cliente] que [frustración], ofrecemos [solución] que [resultado comprobable], a diferencia de [alternativa]."
+          ],
+          "clave": [
+            "El cliente ideal se define con datos de tus mejores clientes, y también se decide a quién no perseguir.",
+            "La propuesta de valor encaja cuando responde a los trabajos, frustraciones y alegrías reales del cliente.",
+            "Una buena propuesta en una frase es específica y comprobable; un eslogan genérico no vende."
+          ]
+        },
+        {
+          "t": "Vender con ética y dentro de la ley",
+          "obj": "Identificar las obligaciones básicas de la Ley Federal de Protección al Consumidor en tu venta y corregir las prácticas que la incumplen.",
+          "texto": [
+            "Vender con ética no es sólo cuestión de valores: en México hay reglas concretas. La <b>Ley Federal de Protección al Consumidor</b> (LFPC) protege a quienes compran, y la Profeco vigila que se cumpla. Lo que sigue es un resumen para orientarte, no asesoría legal; su última reforma se publicó en el DOF el 12 de diciembre de 2025, así que verifica el texto vigente en la Cámara de Diputados o en el DOF antes de diseñar un contrato o una promoción.",
+            "Cuatro artículos tocan tu día a día. El 7 Bis obliga a informar de forma notoria y visible el <b>monto total</b> a pagar, con impuestos, comisiones, intereses y cualquier cargo obligatorio, de contado o a crédito: el «más IVA» escondido o la comisión que aparece al final no caben. El 10 prohíbe las <b>prácticas coercitivas</b> y desleales: no puedes agregar servicios que el cliente no pidió ni aceptó expresamente, ni hacer cargos sin su consentimiento previo. El 32 exige información y publicidad veraces y comprobables, sin textos o imágenes que induzcan a error. Y el 56, para ventas fuera del establecimiento, como las de puerta en puerta, da 5 días hábiles para revocar el consentimiento sin responsabilidad, contados desde la entrega del bien o la firma del contrato, lo último que suceda; en servicios, ese derecho no aplica si la prestación está programada a 10 días hábiles o menos de la orden de compra.",
+            "En la práctica, eso significa no inventar urgencias («sólo hoy») ni escasez, no fabricar testimonios, no prometer resultados que no puedes comprobar y no sumar seguros o garantías extendidas sin preguntar. En suscripciones y membresías con cargos recurrentes, el artículo 76 Bis, reformado en 2025, exige informar periodicidad, monto y fecha del cargo, obtener consentimiento expreso, avisar al menos 5 días naturales antes de una renovación automática y ofrecer formas de cancelar de inmediato.",
+            "La ley es el piso, no el techo. La pregunta ética de fondo es: ¿le contaría a este cliente cómo lo convencí? Si no, algo falla. Cuando alguien tenga una queja que no resuelves, oriéntalo con la Profeco: Teléfono del Consumidor 55 5568 8722 en la zona metropolitana de la Ciudad de México y 800 468 8722 sin costo desde el resto del país, además de Concilianet para conciliar en línea (verifica los números vigentes en gob.mx/profeco)."
+          ],
+          "comparar": [
+            "«Así no: “Son 899 al mes; ya luego te explico lo del seguro y la comisión mensual.”»",
+            "«Así sí: “El total es de 1,050 pesos al mes, con IVA, comisión y seguro incluidos; el seguro es opcional y, sin él, quedan 980.”»"
+          ],
+          "caso": "Caso ficticio: Consuelo, de 38 años, vende colchones de puerta en puerta en Toluca para una distribuidora. Su nuevo gerente le pide decir a cada cliente que la promoción «se acaba hoy», aunque dura todo el mes, y sumar la garantía extendida al contrato sin mencionarla. Una clienta que firmó ayer le llama porque se arrepintió y quiere cancelar; el gerente dice que ya no se puede porque «ya firmó».",
+          "p": [
+            [
+              "¿Qué le responde Consuelo a la clienta que firmó ayer?",
+              "Que puede revocar sin responsabilidad en 5 días hábiles",
+              "Que ya no puede cancelar porque el contrato está firmado",
+              "Que puede cancelar si paga una penalización por el trámite",
+              "En una venta fuera del establecimiento, el artículo 56 de la LFPC permite revocar el consentimiento sin responsabilidad dentro de 5 días hábiles desde la entrega o la firma, lo último que suceda; la clienta sólo cubre envío y seguro de la devolución. Negarse por la firma o cobrar una penalización contradice esa protección (verifica el texto vigente)."
+            ],
+            [
+              "¿Cómo debe tratar Consuelo la garantía extendida?",
+              "Ofrecerla aparte, con su costo, y sumarla sólo si la aceptan",
+              "Incluirla en el contrato, porque de todos modos protege al cliente",
+              "Mencionarla de pasada al final para que nadie se distraiga",
+              "El artículo 10 de la LFPC prohíbe agregar servicios que el cliente no pidió ni aceptó expresamente (verifica el texto vigente). Que la garantía le convenga no autoriza a incluirla, y mencionarla de pasada no es un consentimiento informado."
+            ],
+            [
+              "¿Qué hace Consuelo con la frase «se acaba hoy»?",
+              "La cambia por la fecha real en que termina la promoción",
+              "La usa sólo con quienes dudan mucho, para ayudarlos a decidir",
+              "La dice, pero aclara que es una frase común en las ventas",
+              "Decir que la promoción termina hoy cuando dura todo el mes es información que induce a error y una presión indebida. Usarla con los indecisos es justo manipularlos, y llamarla «frase común» no la vuelve veraz."
+            ]
+          ],
+          "completar": [
+            "El artículo 7 Bis de la LFPC exige informar de forma notoria el monto ___ a pagar, con impuestos y cargos obligatorios.",
+            "total"
+          ],
+          "relacionar": [
+            ["Artículo 7 Bis", "Mostrar el precio final con impuestos y comisiones"],
+            ["Artículo 10", "No sumar servicios que el cliente no aceptó"],
+            ["Artículo 32", "Publicidad veraz y comprobable"],
+            ["Artículo 56", "Revocar una venta a domicilio en 5 días hábiles"],
+            ["Artículo 76 Bis", "Avisar antes de una renovación automática"]
+          ],
+          "refl": "Haz una auditoría ética de tu venta. 1) Elige una cotización, anuncio, mensaje o guion que uses hoy. 2) Verifica si muestra el monto total con impuestos y cargos obligatorios. 3) Busca frases de urgencia, escasez, testimonios o promesas que no puedas comprobar. 4) Revisa si algún servicio se agrega sin consentimiento expreso o si hay cargos recurrentes sin aviso. 5) Reescribe lo necesario y anota qué consultarías con un abogado o en el texto vigente de la ley.",
+          "modelo": "Modelo: «Revisé el anuncio de mi estudio de fotografía. Decía “Sesión desde 1,200”, pero en el mensaje cobraba IVA y 300 pesos de edición obligatoria; lo cambié por “Sesión con 10 fotos editadas: 1,740 pesos con IVA”. Quité “últimos lugares de diciembre” porque aún tengo agenda libre. Dejé sólo las reseñas que tengo con autorización. El álbum ya no se suma solo: lo ofrezco aparte. Consultaré si mi paquete mensual para negocios necesita aviso de renovación.» Es bueno porque revisa material real, corrige cada punto con un cambio concreto y reconoce lo que todavía debe verificar.",
+          "plantilla": [
+            "Revisión ética y legal antes de publicar o cotizar",
+            "Material revisado: [anuncio / cotización / guion / contrato]\nMonto total visible con impuestos y cargos: [sí / no – corrección]\nServicios agregados sin consentimiento: [ninguno / cuáles]\nUrgencia o escasez: [dato real que la respalda o eliminarla]\nTestimonios y promesas: [fuente y autorización]\nCargos recurrentes: [periodicidad, monto, fecha y forma de cancelar]\nVenta fuera del establecimiento: [cómo informo el plazo para revocar]\nPor verificar en el texto vigente o con un abogado: [ ]"
+          ],
+          "clave": [
+            "Informa siempre el monto total, sin cargos escondidos ni servicios agregados sin consentimiento.",
+            "Urgencias falsas, escasez inventada y promesas que no puedes comprobar dañan al cliente y te exponen ante la Profeco.",
+            "La ley es el piso y su texto vigente se verifica; la ética pregunta si le contarías al cliente cómo lo convenciste."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Construye la base de tu sistema comercial. En los primeros 30 minutos haz en una hoja de cálculo la lista de tus últimos 15 a 20 clientes (o los de un negocio que conozcas), con columnas de tipo de cliente, monto, si pagó a tiempo, si volvió a comprar y si te recomendó; usa CONTAR.SI.CONJUNTO para ver cuántos clientes de cada tipo cumplen cada criterio (en algunas configuraciones el separador de la fórmula es punto y coma en lugar de coma). En los siguientes 35 minutos escribe tu perfil de cliente ideal y llena su lienzo con trabajos, frustraciones y alegrías. En los últimos 25 minutos redacta tu propuesta en una frase y revisa una pieza de tu material de venta con la plantilla ética y legal.",
+        "entregable": "Una hoja de cálculo con el análisis de clientes, un documento de una página con perfil de cliente ideal, lienzo y propuesta en una frase, y la revisión ética y legal de una pieza de tu material de venta.",
+        "criterios": "Revisa: el perfil de cliente ideal se apoya en los datos de la hoja y no en suposiciones, incluye señales de a quién no perseguir, la propuesta nombra un resultado comprobable y la pieza revisada muestra el monto total sin urgencias ni promesas falsas."
+      },
+      "lab": {
+        "t": "Seguros que el cliente entiende",
+        "obj": "Aplicar los tipos de venta, el proceso de decisión, el cliente ideal y los límites legales al equipo de una agencia de seguros.",
+        "esc": "<b>Araceli,</b> de 34 años, acaba de asumir la coordinación comercial de una agencia de seguros en Puebla con cuatro asesores. Venden seguros de auto, de gastos médicos y planes para pequeñas empresas. Las pólizas de auto salen rápido, pero las de gastos médicos se cancelan mucho en el primer año, y el dueño quiere duplicar las llamadas en frío a una base de datos que le ofrecieron comprar.",
+        "e": [
+          [
+            "Escena 1: Un asesor comenta en la junta: «A todos les vendo igual: precio, coberturas y que firmen ese mismo día».",
+            "Consigna: explica a tu equipo qué tipo de venta es cada producto (auto, gastos médicos y planes para empresa) y qué conducta concreta conviene en cada uno."
+          ],
+          [
+            "Escena 2: La dueña de una panadería con 12 empleados pide un plan de gastos médicos para su equipo; su contador y su socio también opinarán.",
+            "Consigna: identifica quiénes forman el comité de compra, qué criterio tendrá cada uno y en qué tarea de compra están; propón el siguiente paso."
+          ],
+          [
+            "Escena 3: Al revisar las cancelaciones de gastos médicos, ves que casi todas son de personas que compraron por la promoción del primer mes y no entendieron el deducible.",
+            "Consigna: redacta el perfil de cliente ideal para gastos médicos, con señales de quién no es buen candidato, y una propuesta en una frase."
+          ],
+          [
+            "Escena 4: El dueño insiste en comprar la base de datos y en decir «últimos días de la tarifa» para que la gente firme.",
+            "Consigna: escribe tu respuesta al dueño con los riesgos legales y éticos (datos de origen dudoso, urgencia falsa, información que induce a error) y una alternativa para conseguir prospectos."
+          ]
+        ],
+        "p": [
+          [
+            "¿Por qué se cancelan tanto los planes de gastos médicos?",
+            "Se vendieron como transacción rápida, sin diagnóstico",
+            "Los clientes cambiaron de empleo y ya no lo necesitaron",
+            "La tarifa era alta y encontraron otra más barata",
+            "Un seguro de gastos médicos es una venta consultiva: si el cliente no entiende el deducible y compra por la promoción, se decepciona al usarlo. La escena no da datos de cambios de empleo ni de que se fueran por precio: suponerlo es adivinar y no corrige la forma de vender."
+          ],
+          [
+            "¿Qué responde Araceli sobre la base de datos que ofrecen comprar?",
+            "Que una base de origen dudoso expone a la agencia y daña la confianza",
+            "Que conviene comprarla si el proveedor asegura por escrito que es legal",
+            "Que sirve si se usa sólo para mandar mensajes en lugar de hacer llamadas",
+            "La ley de datos personales exige finalidades claras, aviso de privacidad y consentimiento (verifica el texto vigente), y una base de origen dudoso no lo garantiza aunque el vendedor lo prometa. Cambiar llamadas por mensajes no resuelve el consentimiento; además, en el sector asegurador también hay que respetar el REUS de la Condusef."
+          ],
+          [
+            "¿Cuál es la mejor alternativa a «últimos días de la tarifa»?",
+            "Informar la vigencia real de la cotización y el costo total",
+            "Decir que la tarifa sube pronto, sin dar una fecha exacta",
+            "Dar un regalo sólo a quien firme en la misma llamada",
+            "Una vigencia real con el costo total es información veraz que ayuda a decidir. Insinuar un aumento sin fecha sigue siendo urgencia inventada, y premiar sólo la firma inmediata presiona en lugar de ayudar."
+          ]
+        ],
+        "pl": [
+          "Diagnóstico comercial de una agencia",
+          "Producto: [ ]\nTipo de venta: [transaccional / consultiva / compleja]\nConducta que conviene: [ ]\nComité o personas que influyen: [puesto – criterio]\nTarea de compra en la que están: [ ]\nPerfil de cliente ideal: [ ]\nNo es buen candidato si: [ ]\nPropuesta en una frase: [ ]\nRiesgos legales y éticos detectados: [ ]\nAlternativa responsable: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Un cliente llega a una refaccionaria con el número de parte exacto y prisa porque su camión está detenido. ¿Qué conducta es la más profesional?",
+          "Confirmar pieza, existencia y total, y despacharlo rápido",
+          "Hacerle un diagnóstico completo del camión antes de vender",
+          "Ofrecerle primero un paquete de mantenimiento con descuento",
+          "Pedirle que vuelva en la tarde para atenderlo con más calma"
+        ],
+        [
+          "Darío, asesor de una inmobiliaria, oye a un colega decir que «el vendedor nace, no se hace». ¿Qué le respondería con base en la lección?",
+          "Que vender bien son conductas que se practican y mejoran",
+          "Que es cierto, pero la experiencia compensa la falta de talento",
+          "Que depende sobre todo de tener buena presencia y labia",
+          "Que es cierto sólo en las ventas complejas con varios decisores"
+        ],
+        [
+          "Una clienta insiste en comprar una computadora que no soporta el programa que necesita para trabajar. ¿Qué haría un asesor profesional?",
+          "Explicarle con datos por qué no le sirve y mostrarle opciones",
+          "Vendérsela, porque el cliente siempre tiene la razón",
+          "Negarse a atenderla hasta que acepte el modelo que él sugiere",
+          "Vendérsela y ofrecerle después cambiarla por una más cara"
+        ],
+        [
+          "Una fábrica tarda meses en elegir proveedor de limpieza industrial porque opinan producción, seguridad y finanzas. ¿Qué describe mejor esta compra?",
+          "Una venta compleja en la que hay que crear consenso",
+          "Una venta transaccional en la que gana el menor precio",
+          "Una venta consultiva que se decide en una sola reunión",
+          "Una compra impulsiva que se resuelve con una promoción"
+        ],
+        [
+          "Según la encuesta de Gartner publicada en 2025, el 73 % de los compradores de empresas evita a proveedores que mandan mensajes irrelevantes. ¿Qué conclusión práctica sacas?",
+          "Ajustar cada mensaje al problema y al momento del cliente",
+          "Mandar más mensajes para compensar los que serán ignorados",
+          "Dejar de contactar empresas y esperar a que ellas te busquen",
+          "Enviar el catálogo completo para que cada quien elija qué le sirve"
+        ],
+        [
+          "Rosario vende sistemas de seguridad. Un cliente le dice que en el sitio web vio un precio de instalación distinto al que ella le cotizó. ¿Qué debe hacer?",
+          "Aclarar la diferencia con transparencia y pedir que corrijan el sitio",
+          "Decirle que el sitio está desactualizado y que vale lo que ella dice",
+          "Ignorar el comentario y enfocarse en los beneficios del sistema",
+          "Ofrecerle un descuento para que olvide la diferencia de precios"
+        ],
+        [
+          "Pascual vende pintura a contratistas y quiere definir a su cliente ideal. ¿Cuál es la mejor fuente para hacerlo?",
+          "Los rasgos comunes de quienes le compran, pagan y lo recomiendan",
+          "La lista de las constructoras más grandes de la ciudad",
+          "Lo que hace la competencia, que ya probó qué clientes funcionan",
+          "Su intuición sobre quién debería necesitar más pintura cada año"
+        ],
+        [
+          "En el lienzo de propuesta de valor de una guardería, ¿qué sería una alegría para madres y padres que trabajan?",
+          "Recibir un reporte diario de cómo comió y durmió su hijo",
+          "Llegar tarde al trabajo por esperar a que abra la guardería",
+          "Tener a alguien que cuide a su hijo mientras ellos trabajan",
+          "El servicio de transporte que ofrece la propia guardería"
+        ],
+        [
+          "Una tienda anuncia una pantalla «a 7,999» y en caja agrega 600 pesos de «cargo por servicio» obligatorio. ¿Qué obligación de la LFPC parece incumplir?",
+          "La de informar el monto total con todo cargo obligatorio",
+          "La de dar 5 días hábiles para revocar una compra a domicilio",
+          "La de avisar antes de renovar una suscripción automática",
+          "La de no llamar a personas inscritas en el registro de publicidad"
+        ],
+        [
+          "Ulises vende membresías de un gimnasio con cargo mensual automático. ¿Qué práctica cumple con la reforma de 2025 al artículo 76 Bis de la LFPC?",
+          "Avisar 5 días naturales antes de renovar y permitir cancelar",
+          "Renovar en automático y explicar la cancelación sólo si preguntan",
+          "Cobrar una penalización a quien cancele antes de cumplir un año",
+          "Permitir cancelar únicamente en persona y en horario de oficina"
+        ]
+      ]
+    },
+    {
+      "t": "Prospección y calificación",
+      "r": "Aprenderás a encontrar prospectos que valen la pena, a contactarlos con mensajes relevantes y legales, a calificarlos sin perder tiempo y a sostener una rutina de prospección medible.",
+      "lecciones": [
+        {
+          "t": "De dónde salen los buenos prospectos",
+          "obj": "Elegir las fuentes de prospectos más adecuadas para tu cliente ideal y combinar esfuerzos entrantes y salientes.",
+          "texto": [
+            "Un <b>prospecto</b> es una persona o empresa que se parece a tu cliente ideal y que todavía no te compra. Prospectar es buscarlos de forma ordenada, en lugar de esperar a que lleguen. Las fuentes no valen lo mismo: alguien que llega recomendado por un cliente satisfecho suele confiar más y avanzar más rápido que un nombre sacado de un directorio. Por eso conviene saber de dónde salen tus mejores ventas y alimentar primero esas fuentes.",
+            "Las fuentes más comunes son seis. Los <b>referidos</b>: pedir a clientes contentos que te presenten con alguien, justo cuando acaban de ver resultados. Tu <b>base de clientes</b>: quienes ya te compraron pueden necesitar otro producto o volver a comprar, y suele ser más fácil que empezar de cero. Las <b>alianzas</b>: negocios que atienden al mismo cliente sin competir contigo, como un arquitecto y un proveedor de cancelería. Los <b>eventos</b>: ferias, cámaras empresariales y cursos donde se reúne tu cliente ideal. El <b>contenido</b>: guías, videos o publicaciones que resuelven dudas reales y hacen que te busquen. Y la búsqueda directa en directorios públicos o sitios de empresas.",
+            "Aquí aparece una distinción útil. La prospección <b>entrante</b> ocurre cuando el cliente te busca: llena un formulario, te escribe por tus redes o llama porque vio tu contenido. La <b>saliente</b> ocurre cuando tú tomas la iniciativa: llamas, escribes o visitas. Ninguna basta sola. Lo entrante llega con más interés, pero depende de que el cliente ya sepa que tiene un problema; lo saliente te permite elegir a quién buscar, pero exige más preparación para no ser una interrupción.",
+            "Cuida también de dónde salen los datos. La nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares, publicada en el DOF el 20 de marzo de 2025, exige un aviso de privacidad con finalidades claras y respetar los derechos de acceso, rectificación, cancelación y oposición (verifica el texto vigente). No compres ni uses bases de datos de origen dudoso: además del riesgo legal, buscar a quien nunca te dio permiso arranca la relación con desconfianza."
+          ],
+          "comparar": [
+            "«Así no: “Compré una lista de 5,000 correos de empresas y les mandé a todos la misma promoción.”»",
+            "«Así sí: “Pedí a tres clientes satisfechos que me presentaran con un colega que viva el mismo problema, y les escribí mencionando a quien nos presentó.”»"
+          ],
+          "caso": "Caso ficticio: Federico, de 41 años, vende servicios de control de plagas para restaurantes en Torreón. Casi todo su tiempo lo dedica a recorrer avenidas y entrar a negocios sin cita, con pocos resultados. Al revisar sus ventas del año descubre que siete de sus diez mejores clientes llegaron porque otro restaurantero los recomendó, y que un proveedor de cocinas industriales le ha mandado clientes dos veces sin que él se lo pidiera.",
+          "p": [
+            [
+              "¿Qué fuente debería fortalecer primero Federico?",
+              "Los referidos, de donde salió la mayoría de sus mejores clientes",
+              "Las visitas sin cita, porque es donde hoy invierte más horas",
+              "Los directorios, porque le darían muchos más nombres por semana",
+              "Sus propios datos muestran que los referidos generan sus mejores clientes; reforzar esa fuente es lo más rentable. Que hoy dedique más horas a las visitas no prueba que funcionen, y más nombres de un directorio no significan mejores prospectos."
+            ],
+            [
+              "¿Qué tipo de fuente es el proveedor de cocinas industriales?",
+              "Una alianza: atiende al mismo cliente sin competir",
+              "Un referido: es un cliente satisfecho que lo recomienda",
+              "Prospección entrante: llegó por el contenido de Federico",
+              "El proveedor de cocinas no es su cliente, sino un negocio que sirve al mismo tipo de cliente con algo distinto; eso es una alianza que conviene formalizar. No es un referido de cliente ni llegó por contenido."
+            ],
+            [
+              "¿Cómo conviene pedir referidos a sus clientes actuales?",
+              "Tras una visita con buen resultado, describiendo a quién busca",
+              "Al firmar el contrato, antes de que el cliente vea cómo trabaja",
+              "Con un mensaje masivo a todos sus clientes pidiendo que lo recomienden",
+              "Pedir cuando el cliente acaba de ver resultados y describir a quién buscas, por ejemplo otro restaurante con cocina abierta, facilita que piense en alguien. Antes de ver resultados no tiene qué recomendar, y un mensaje masivo genérico casi nunca produce presentaciones."
+            ]
+          ],
+          "completar": [
+            "La prospección ___ ocurre cuando tú tomas la iniciativa: llamas, escribes o visitas.",
+            "saliente"
+          ],
+          "relacionar": [
+            ["Referido", "Un cliente te presenta con un colega"],
+            ["Alianza", "Un arquitecto que recomienda a su proveedor de cancelería"],
+            ["Contenido", "Una guía que resuelve dudas y hace que te busquen"],
+            ["Prospección entrante", "Alguien llena el formulario de tu sitio"],
+            ["Prospección saliente", "Escribes a una empresa parecida a tu cliente ideal"]
+          ],
+          "refl": "Haz el inventario de tus fuentes. 1) Anota de dónde llegaron tus últimos diez clientes (o los de un negocio que conozcas). 2) Agrúpalos por fuente: referido, base de clientes, alianza, evento, contenido, entrante o búsqueda directa. 3) Marca qué fuentes dieron los clientes más rentables. 4) Elige dos fuentes para reforzar y escribe una acción concreta para cada una esta semana. 5) Revisa si alguna de tus listas de contactos tiene origen dudoso y decide qué harás con ella.",
+          "modelo": "Modelo: «Vendo cursos de primeros auxilios a empresas. De mis últimos diez clientes, cuatro llegaron por referidos, tres por una alianza con un despacho de seguridad e higiene, dos por mi guía gratuita sobre botiquines y uno por una feria. Los más rentables vinieron del despacho, porque compran para varias sucursales. Esta semana le propondré una reunión mensual para revisar a quién podemos ayudar juntos y pediré a dos clientes satisfechos que me presenten con un colega. Tengo una lista de correos que me pasó un conocido: no la usaré porque no sé si esas personas aceptaron.» Es bueno porque usa datos propios, prioriza por rentabilidad y descarta una fuente riesgosa.",
+          "plantilla": [
+            "Inventario de fuentes de prospectos",
+            "Fuente: [referidos / base de clientes / alianzas / eventos / contenido / entrantes / búsqueda directa]\nClientes que llegaron por ella: [número]\nVentas o margen que generaron: [ ]\nAcción para reforzarla esta semana: [ ]\nResponsable y fecha: [ ]\nOrigen y permiso de los datos: [cómo se obtuvieron y si hay aviso de privacidad]"
+          ],
+          "clave": [
+            "No todas las fuentes valen igual: refuerza las que traen a tus mejores clientes.",
+            "Combina prospección entrante y saliente; cada una compensa los límites de la otra.",
+            "Usa sólo datos obtenidos de forma legítima, con aviso de privacidad y respeto a los derechos de las personas."
+          ]
+        },
+        {
+          "t": "El primer contacto: llamada, WhatsApp y correo que sí se responden",
+          "obj": "Redactar un primer contacto relevante por llamada, mensaje o correo que respete el REPEP y la privacidad del prospecto.",
+          "texto": [
+            "Un primer contacto se responde cuando es <b>relevante</b>: muestra que sabes quién es la persona, menciona un problema que probablemente vive y propone un siguiente paso pequeño. Recuerda la encuesta de Gartner del módulo anterior: la mayoría de los compradores de empresa evita a los proveedores que mandan mensajes irrelevantes. La relevancia se prepara antes de escribir: revisa el sitio o las redes del prospecto, busca una noticia, una vacante o un cambio reciente y conéctalo con lo que tú resuelves.",
+            "Una estructura sencilla sirve en los tres canales: quién eres y por qué le escribes a esa persona, una observación concreta sobre su situación, una pregunta o propuesta breve y una salida fácil. En la llamada, pide permiso para hablar un minuto y respeta un no. En WhatsApp, preséntate en el primer mensaje, sé breve, evita audios largos y cadenas, y escribe en horario laboral. En el correo, el asunto debe decir algo útil y concreto, no «Propuesta increíble», y el cuerpo debe caber en una pantalla de celular. En los tres, nada de presión ni de insistir diez veces seguidas.",
+            "Hay reglas que no son opcionales. Los artículos 18 y 18 Bis de la LFPC crean el <b>Registro Público para Evitar Publicidad</b> (REPEP) de la Profeco: está prohibido enviar publicidad a quien se inscribió o a quien te pidió expresamente que no lo contactaras, y las empresas tienen 30 días después de la inscripción para dejar de llamar (verifica el texto vigente). Revisa el registro antes de una campaña; la Profeco atiende dudas sobre el REPEP en el 55 9628 0000 y el 800 962 8000 (verifica los números vigentes en gob.mx/profeco). Si trabajas en un banco, una aseguradora o una Afore, consulta también el REUS de la Condusef, un registro distinto para quien no quiere publicidad de instituciones financieras. Y ten a la mano tu aviso de privacidad por si el prospecto pregunta de dónde sacaste sus datos.",
+            "Un no también es información: regístralo y respétalo de inmediato. El objetivo del primer contacto no es vender, sino ganarte una conversación con alguien a quien de verdad puedes ayudar."
+          ],
+          "comparar": [
+            "«Así no: “¡Hola! Tenemos la mejor promoción del año en fertilizantes. ¿Le interesa? Responda SÍ para más información.”»",
+            "«Así sí: “Buen día, soy asesora agrícola en la región. Vi que su rancho amplió la superficie de hortalizas; ¿le sirve un análisis de suelo de las parcelas nuevas esta semana, o prefiere que no le escriba?”»"
+          ],
+          "caso": "Caso ficticio: Karla, de 26 años, vende análisis de suelo y programas de fertilización a agricultores del valle en Ciudad Obregón. Su jefe le entregó una lista de teléfonos que «alguien consiguió» y le pidió mandar a todos el mismo mensaje con fotos y precios. Dos personas ya le contestaron molestas y una dijo que está inscrita en el REPEP. Karla quiere cumplir su meta sin quemar su reputación en una zona donde todos se conocen.",
+          "p": [
+            [
+              "¿Qué hace Karla con la persona que dijo estar en el REPEP?",
+              "Deja de contactarla, lo registra y avisa a su jefe",
+              "Le aclara que el mensaje es informativo, no publicidad",
+              "La vuelve a buscar en un mes por si cambió de opinión",
+              "Los artículos 18 y 18 Bis de la LFPC prohíben enviar publicidad a quien está inscrito en el REPEP o la rechazó expresamente (verifica el texto vigente). Llamar «informativo» a un mensaje de venta no cambia su naturaleza, y volver a buscarla después repite la falta."
+            ],
+            [
+              "¿Qué riesgo tiene usar la lista que «alguien consiguió»?",
+              "Que sean datos sin consentimiento ni aviso de privacidad",
+              "Que los números estén viejos y muchos ya no funcionen",
+              "Que la competencia tenga la misma lista y escriba primero",
+              "El problema de fondo es legal y de confianza: si no sabes cómo se obtuvieron los datos, no puedes demostrar que hubo aviso de privacidad ni permiso. Que haya números viejos o que la competencia la use son molestias menores frente a ese riesgo."
+            ],
+            [
+              "¿Qué primer mensaje tiene más probabilidad de respuesta?",
+              "Uno que mencione un cambio real del rancho y ofrezca un análisis",
+              "Uno con fotos del catálogo, lista de precios y la promoción del mes",
+              "Uno que diga que los vecinos ya compraron y que quedan pocos lugares",
+              "La relevancia, algo concreto de su situación, y un siguiente paso pequeño facilitan responder. El catálogo genérico es justo el mensaje irrelevante que la gente evita, y presumir escasez sin que sea verdad es presión indebida."
+            ]
+          ],
+          "completar": [
+            "Un primer contacto se responde cuando es ___: muestra que sabes quién es la persona y qué problema vive.",
+            "relevante"
+          ],
+          "refl": "Escribe tu primer contacto. 1) Elige a un prospecto real que se parezca a tu cliente ideal. 2) Investiga diez minutos y anota dos datos concretos de su situación. 3) Redacta tres versiones: guion de llamada de 30 segundos, mensaje de WhatsApp de máximo 60 palabras y correo con asunto. 4) Verifica que ninguna use presión ni urgencia falsa y que todas incluyan una salida fácil. 5) Anota cómo confirmaste que puedes contactarlo: REPEP, permiso o fuente pública, y aviso de privacidad.",
+          "modelo": "Modelo: «Prospecto: escuela de natación que abrió su segunda sede hace tres meses y publica vacantes de recepción. WhatsApp: “Hola, soy asesora de un servicio de agenda y cobranza para escuelas deportivas. Vi que abrieron una segunda sede; en esa etapa los pagos atrasados suelen complicarse. ¿Le sirve una llamada de 15 minutos el jueves para ver si podemos ayudarle, o prefiere que no le escriba?” Verifiqué que el número es el de contacto público del negocio y que no está en el REPEP.» Es bueno porque usa datos reales del prospecto, propone un paso pequeño, ofrece una salida fácil y revisa la parte legal antes de enviar.",
+          "plantilla": [
+            "Primer contacto relevante",
+            "Prospecto: [nombre, puesto, empresa]\nDato concreto de su situación: [ ]\nProblema probable que puedo ayudar a resolver: [ ]\nMensaje: Hola, [nombre]. Soy [tu nombre], de [empresa]. Vi que [dato]. Con otros [tipo de cliente] hemos logrado [resultado real y comprobable]. ¿Te sirve [paso pequeño] el [día], o prefieres que no te escriba?\nVerificación: REPEP [ ] / permiso o fuente pública [ ] / aviso de privacidad disponible [ ]"
+          ],
+          "clave": [
+            "La relevancia se prepara: investiga un dato concreto antes de llamar o escribir.",
+            "Propón un paso pequeño y da siempre una salida fácil.",
+            "Respeta el REPEP y cualquier negativa expresa, y ten listo tu aviso de privacidad."
+          ]
+        },
+        {
+          "t": "Calificar sin perder el tiempo: necesidad, autoridad, momento y presupuesto",
+          "obj": "Calificar prospectos por necesidad, autoridad, momento y presupuesto, adaptando el método a compras con comité y descalificando a tiempo.",
+          "texto": [
+            "No todo prospecto interesado es una oportunidad. <b>Calificar</b> es averiguar, con preguntas respetuosas, si tiene sentido que ambos inviertan tiempo en avanzar. Un marco muy usado es <b>BANT</b>, sigla en inglés de presupuesto, autoridad, necesidad y momento. Aquí lo ordenamos distinto a propósito: primero <b>necesidad</b>, porque sin un problema real lo demás no importa; luego <b>autoridad</b>, <b>momento</b> y <b>presupuesto</b>.",
+            "Cada criterio se explora con preguntas abiertas. Necesidad: «¿Qué está pasando hoy que te hizo buscar una solución?». Autoridad: «Además de ti, ¿quién participa en la decisión y qué le importa a cada quien?». Momento: «¿Para cuándo necesitan tenerlo resuelto y qué pasa si no?». Presupuesto: «¿Tienen un rango contemplado o lo definirán según las opciones?». La pregunta de autoridad no es «¿tú decides?», que suele incomodar, sino quiénes participan; así descubres al comité sin ofender a nadie.",
+            "BANT tiene límites. Muchas veces el presupuesto todavía no existe: se crea cuando el cliente entiende cuánto le cuesta el problema, así que descartar a alguien sólo porque aún no tiene partida puede ser un error. En compras de empresa rara vez hay una sola autoridad; buscar al «que firma» y saltarte a los demás puede frenar el consenso. Y el momento cambia: un proyecto congelado hoy puede reactivarse en seis meses. Usa el marco como lista de verificación, no como interrogatorio, y registra qué sabes y qué te falta.",
+            "Calificar también significa <b>descalificar</b> a tiempo. Si no hay una necesidad que puedas resolver, si el prospecto sólo quiere tu cotización para presionar a su proveedor actual o si lo que pide no lo haces bien, dilo con respeto y libera tu agenda. Una frase útil: «Por lo que me cuentas, no somos la mejor opción para esto; si quieres, te recomiendo a alguien que sí lo hace». Soltar pronto te deja tiempo para quienes sí puedes ayudar."
+          ],
+          "comparar": [
+            "«Así no: “Antes de seguir, ¿usted es quien decide y cuánto presupuesto tiene?”»",
+            "«Así sí: “¿Qué los llevó a buscar una solución ahora y quiénes más van a participar en la decisión?”»"
+          ],
+          "caso": "Caso ficticio: Lorenzo, de 58 años, vende sistemas de paneles solares para negocios en Tepic. Tiene 30 prospectos en su lista y trata a todos igual. Un hotel le pidió cotización «para comparar» con su proveedor actual, una tortillería le dice que su recibo de luz se duplicó y quiere conocer opciones, y una constructora quiere paneles dentro de dos años pero aún no tiene terreno. Lorenzo no sabe a quién dedicar esta semana.",
+          "p": [
+            [
+              "¿A qué prospecto debería dar prioridad esta semana?",
+              "A la tortillería, con un problema actual y urgente",
+              "Al hotel, porque es el negocio más grande de los tres",
+              "A la constructora, que será el proyecto de mayor monto",
+              "La tortillería tiene necesidad clara y un momento inmediato. El tamaño del hotel no compensa que quizá sólo busca una referencia de precio, y la constructora tiene un horizonte de dos años sin terreno: conviene darle seguimiento, no la agenda de esta semana."
+            ],
+            [
+              "¿Qué hace Lorenzo con la petición del hotel?",
+              "Preguntar qué no le resuelve su proveedor antes de cotizar",
+              "Mandar la cotización más baja posible para ganar la cuenta",
+              "Negarse a cotizar, porque es obvio que sólo quiere comparar",
+              "Preguntar qué no le resuelve su proveedor actual revela si hay necesidad real. Bajar el precio a ciegas regala margen, y negarse de entrada descarta sin datos a un prospecto que podría tener un motivo genuino."
+            ],
+            [
+              "La tortillería dice que aún no tiene presupuesto para paneles. ¿Qué conviene?",
+              "Calcular con ella cuánto le cuesta al mes el recibo alto de luz",
+              "Descalificarla, porque BANT exige presupuesto desde el inicio",
+              "Ofrecerle el sistema a crédito sin revisar su capacidad de pago",
+              "El presupuesto muchas veces se crea cuando el cliente ve cuánto le cuesta el problema. Descartarla por la sigla ignora ese límite de BANT, y ofrecer crédito sin revisar su capacidad puede endeudarla con algo que no podrá pagar."
+            ]
+          ],
+          "completar": [
+            "Calificar también significa ___ a tiempo: decir con respeto que no eres la mejor opción y liberar tu agenda.",
+            "descalificar"
+          ],
+          "relacionar": [
+            ["Necesidad", "¿Qué los hizo buscar una solución ahora?"],
+            ["Autoridad", "¿Quiénes participan en la decisión?"],
+            ["Momento", "¿Para cuándo necesitan tenerlo resuelto?"],
+            ["Presupuesto", "¿Tienen un rango contemplado?"],
+            ["Descalificar", "Recomendar a otro proveedor que sí lo hace bien"]
+          ],
+          "refl": "Califica tu cartera. 1) Elige cinco prospectos o clientes potenciales actuales. 2) Para cada uno anota lo que sabes de necesidad, autoridad, momento y presupuesto, y marca lo que te falta. 3) Escribe la pregunta abierta que harías para cubrir cada hueco. 4) Clasifica cada prospecto en avanzar, dar seguimiento o descalificar. 5) Redacta el mensaje respetuoso para uno que vayas a descalificar.",
+          "modelo": "Modelo: «Prospecto: fábrica de muebles con 40 empleados. Necesidad: retrasos de entrega por fallas en sus sierras. Autoridad: el jefe de producción busca opciones y decide con el dueño y compras. Momento: quieren resolverlo antes de la temporada alta de diciembre. Presupuesto: no definido; falta calcular cuánto les cuestan los retrasos. Pregunta pendiente: “¿Cuántos pedidos se retrasaron el mes pasado y qué costo tuvo?”. Decisión: avanzar. Otro prospecto quería afilar una sierra doméstica; le escribí: “Eso no lo hacemos bien; te recomiendo un taller cercano”.» Es bueno porque distingue lo que sabe de lo que falta y decide con criterio en ambos casos.",
+          "plantilla": [
+            "Hoja de calificación de prospectos",
+            "Prospecto: [ ]\nNecesidad: [problema concreto y cuánto cuesta]\nAutoridad: [personas que participan y su criterio]\nMomento: [fecha o evento que obliga a decidir]\nPresupuesto: [rango, en definición o inexistente]\nLo que me falta saber: [ ]\nPróxima pregunta: [ ]\nDecisión: [avanzar / seguimiento el (fecha) / descalificar]"
+          ],
+          "clave": [
+            "Califica primero la necesidad; sin un problema real, lo demás no importa.",
+            "Usa BANT como lista de verificación, no como interrogatorio, y atiende al comité completo.",
+            "Descalificar a tiempo, con respeto, libera tu agenda para quien sí puedes ayudar."
+          ]
+        },
+        {
+          "t": "Cadencia y disciplina: bloques de prospección y métricas de actividad",
+          "obj": "Diseñar una cadencia de contactos y un tablero de actividad con tasas que te digan qué ajustar.",
+          "texto": [
+            "La prospección suele fallar menos por falta de talento que por falta de constancia: siempre hay algo más urgente. La salida es tratarla como una cita contigo. Reserva <b>bloques de prospección</b> en tu agenda, por ejemplo dos bloques de 90 minutos a la semana, en horas en que tus prospectos suelen responder; apaga distracciones y prepara la lista antes del bloque para no perder tiempo buscando a quién llamar.",
+            "Una <b>cadencia</b> es la secuencia planeada de contactos con un prospecto: cuántos intentos, por qué canales y con qué separación. Por ejemplo: día 1, correo con un dato relevante; día 3, llamada; día 6, mensaje breve con un recurso útil; día 10, último correo con un cierre amable («si no es buen momento, no te vuelvo a escribir sobre esto»). Cada intento debe aportar algo nuevo, no repetir «¿pudiste ver mi correo?». La cadencia termina cuando el prospecto responde, pide que no lo contactes o se agotan los intentos; insistir sin fin es acoso, no disciplina.",
+            "Lo que no se mide no se puede mejorar. Lleva una hoja de cálculo con una fila por contacto: fecha, prospecto, canal y resultado (sin respuesta, respondió, conversación, cita, no interesa). Con CONTAR.SI cuentas cuántos contactos tuvieron cada resultado; si escribes la palabra cita en la celda G2, la fórmula =CONTAR.SI(D2:D200,G2) cuenta las citas de la columna D (en algunas configuraciones se usa punto y coma en lugar de coma). Luego calculas tasas: <b>tasa de respuesta</b> = respuestas / contactos; <b>tasa de cita</b> = citas / conversaciones. Si casi nadie responde, revisa a quién eliges y tu primer mensaje; si responden pero no aceptan cita, revisa el siguiente paso que propones.",
+            "Cuidado con el mito de «a más llamadas, más ventas, sin importar la calidad». El volumen ayuda sólo si los prospectos se parecen a tu cliente ideal y el mensaje es relevante; cien llamadas a la lista equivocada producen cien rechazos y una peor reputación. Mide la actividad para aprender, no para presumir números."
+          ],
+          "comparar": [
+            "«Así no: “Hoy prospecto si me sobra tiempo; mañana les vuelvo a mandar el mismo mensaje a los que no contestaron.”»",
+            "«Así sí: “Martes y jueves de 10 a 11:30 prospecto con la lista preparada; cada intento aporta algo nuevo y al cuarto cierro con amabilidad.”»"
+          ],
+          "caso": "Caso ficticio: Magdalena, de 31 años, vende servicio de comedor para empresas en Colima. En su registro del mes anotó 120 contactos, 30 respuestas, 12 conversaciones y 2 citas. Su gerente le exige duplicar los contactos el próximo mes. Magdalena sospecha que el problema no está en la cantidad y quiere revisar sus números antes de responder.",
+          "p": [
+            [
+              "¿Cuál es la tasa de respuesta de Magdalena?",
+              "25 %: respondieron 30 de 120 contactos",
+              "10 %: conversaron 12 de 120 contactos",
+              "40 %: 12 de 30 respuestas fueron pláticas",
+              "La tasa de respuesta es respuestas entre contactos: 30 / 120 = 0.25, es decir, 25 %. Las otras cifras son tasas reales, pero de otras etapas: conversaciones entre contactos y conversaciones entre respuestas."
+            ],
+            [
+              "¿Dónde parece estar el mayor problema?",
+              "En pasar de conversación a cita: sólo 2 de 12 avanzaron",
+              "En la cantidad de contactos, porque 120 al mes son pocos",
+              "En el primer mensaje, porque casi nadie le responde nunca",
+              "La respuesta (25 %) no es el punto más débil: sólo 1 de cada 6 conversaciones termina en cita, cerca de 17 %. Duplicar contactos multiplicaría ese mismo cuello de botella; conviene revisar cómo propone el siguiente paso."
+            ],
+            [
+              "¿Qué le responde Magdalena a su gerente?",
+              "Que mejorará su propuesta de cita y medirá el cambio cada semana",
+              "Que duplicará los contactos aunque la tasa de cita siga igual",
+              "Que dejará de prospectar para atender sólo a clientes actuales",
+              "Los datos señalan el cuello de botella en la cita; mejorarlo y medirlo es la decisión con evidencia. Duplicar el volumen sin corregir repite el mito de que más llamadas siempre traen más ventas, y abandonar la prospección deja vacía la cartera futura."
+            ]
+          ],
+          "completar": [
+            "Una ___ es la secuencia planeada de contactos con un prospecto: intentos, canales y separación.",
+            "cadencia"
+          ],
+          "relacionar": [
+            ["Bloque de prospección", "Martes y jueves de 10 a 11:30 sin distracciones"],
+            ["Cadencia", "Correo, llamada, mensaje y cierre amable en diez días"],
+            ["CONTAR.SI", "Contar cuántos contactos terminaron en cita"],
+            ["Tasa de respuesta", "Respuestas divididas entre contactos"],
+            ["Tasa de cita", "Citas divididas entre conversaciones"]
+          ],
+          "refl": "Diseña tu rutina de prospección. 1) Elige los días y horas de dos bloques semanales y explica por qué esas horas. 2) Escribe una cadencia de cuatro contactos para tu cliente ideal, con día, canal y lo que aporta cada intento. 3) Redacta el mensaje de cierre amable. 4) Define tres métricas de actividad que llevarás y una meta realista para cada una. 5) Anota qué decidirías si la tasa de respuesta sale baja y qué si la tasa de cita sale baja.",
+          "modelo": "Modelo: «Bloques: lunes y miércoles de 9 a 10:30, porque mis clientes, dueños de talleres, revisan su celular antes de que llegue la carga de trabajo. Cadencia: día 1, mensaje con la foto de un caso parecido; día 4, llamada; día 8, guía breve de mantenimiento; día 12, cierre: “Si no es buen momento, no te vuelvo a escribir sobre esto”. Métricas: 40 contactos por semana, 20 % de respuesta y 25 % de citas sobre conversaciones. Si no responden, cambio la lista o el primer mensaje; si responden pero no hay cita, cambio el paso que propongo.» Es bueno porque cada parte es concreta y cada métrica lleva a una decisión.",
+          "plantilla": [
+            "Rutina y tablero de prospección",
+            "Bloques semanales: [día y hora] / [día y hora]\nLista preparada antes del bloque: [sí / no]\nCadencia: día [ ] – canal [ ] – aporte [ ]\nMensaje de cierre amable: [ ]\nRegistro: fecha | prospecto | canal | resultado\nContactos: [ ]  Respuestas: [ ]  Conversaciones: [ ]  Citas: [ ]\nTasa de respuesta = respuestas / contactos: [ ]\nTasa de cita = citas / conversaciones: [ ]\nAjuste para la próxima semana: [ ]"
+          ],
+          "clave": [
+            "La prospección necesita bloques fijos en tu agenda y una lista preparada de antemano.",
+            "Una buena cadencia aporta algo nuevo en cada intento y termina con un cierre amable.",
+            "Las tasas por etapa te dicen qué ajustar; más volumen sin calidad sólo multiplica rechazos."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Arma tu tablero de prospección en una hoja de cálculo. En los primeros 25 minutos crea una pestaña con al menos 20 prospectos parecidos a tu cliente ideal, con su fuente, un dato relevante y su calificación por necesidad, autoridad, momento y presupuesto. En los siguientes 35 minutos crea una pestaña de registro con una fila por contacto (fecha, prospecto, fuente, canal y resultado) y llénala con tu semana real o con un ejercicio de 30 contactos; usa CONTAR.SI para contar resultados por tipo y CONTAR.SI.CONJUNTO para cruzarlos por fuente, y divisiones con SI.ERROR para la tasa de respuesta y la tasa de cita. En los últimos 30 minutos escribe tu cadencia de cuatro contactos y tus mensajes de primer contacto por llamada, WhatsApp y correo.",
+        "entregable": "Una hoja de cálculo con la lista de prospectos calificados, el registro de contactos y un tablero de tasas con fórmulas, más un documento con la cadencia y los tres mensajes de primer contacto.",
+        "criterios": "Revisa: cada prospecto tiene una fuente legítima y un dato relevante, las fórmulas de CONTAR.SI y las tasas coinciden con un conteo manual, la cadencia aporta algo nuevo en cada intento y cierra con amabilidad, y ningún mensaje usa presión, urgencia falsa ni se dirige a contactos inscritos en el REPEP."
+      },
+      "lab": {
+        "t": "Refacciones que llegan a tiempo",
+        "obj": "Diseñar fuentes, primer contacto, calificación y cadencia con métricas para una distribuidora industrial que vende a empresas.",
+        "esc": "<b>Guadalupe,</b> de 44 años, es la nueva gerente comercial de una distribuidora de refacciones industriales en Saltillo que surte rodamientos, bandas y motores a plantas de la región. Tiene tres vendedores que visitan siempre a los mismos clientes y una lista de 200 empresas sin calificar. La dirección le pide nuevas cuentas en 90 días sin bajar precios.",
+        "e": [
+          [
+            "Escena 1: Al revisar el año, Guadalupe ve que los mejores clientes nuevos llegaron por recomendación de jefes de mantenimiento que cambiaron de planta y por un taller de rebobinado de motores que les manda clientes.",
+            "Consigna: elige tres fuentes de prospectos para los próximos 90 días, explica por qué y escribe una acción concreta, con responsable y fecha, para cada una."
+          ],
+          [
+            "Escena 2: Un vendedor propone mandar el catálogo completo por correo a las 200 empresas de la lista.",
+            "Consigna: redacta un primer contacto por correo y otro por mensaje para el jefe de mantenimiento de una planta, con un dato relevante, un paso pequeño y una salida fácil; anota qué verificarías antes de enviarlos."
+          ],
+          [
+            "Escena 3: Responden tres prospectos: una planta que tuvo un paro por un rodamiento sin existencia, un taller pequeño que pide precios «para comparar» y un corporativo cuyo contrato con otro proveedor vence en ocho meses.",
+            "Consigna: califica a los tres por necesidad, autoridad, momento y presupuesto, y decide si avanzas, das seguimiento o descalificas a cada uno."
+          ],
+          [
+            "Escena 4: Al cierre del primer mes, el equipo registró 180 contactos, 27 respuestas, 15 conversaciones y 9 citas.",
+            "Consigna: calcula la tasa de respuesta y la tasa de cita, escribe las fórmulas que usarías en la hoja de cálculo y propone un ajuste para el segundo mes."
+          ]
+        ],
+        "p": [
+          [
+            "Con los datos de la escena 4, ¿qué conviene ajustar primero?",
+            "La elección de prospectos y el primer mensaje: responde el 15 %",
+            "La propuesta de cita, porque sólo 9 de 15 pláticas avanzan",
+            "Nada todavía, porque 180 contactos bastan para la meta del trimestre",
+            "La tasa de respuesta es 27 / 180 = 15 %, mientras que la de cita es 9 / 15 = 60 %; el cuello de botella está al inicio. Cambiar la propuesta de cita atacaría la etapa que mejor funciona, y no ajustar nada ignora lo que dicen los datos."
+          ],
+          [
+            "¿Qué hace Guadalupe con el corporativo cuyo contrato vence en ocho meses?",
+            "Lo pone en seguimiento con fecha y busca conocer a su comité",
+            "Lo descalifica, porque no podrá comprar en los próximos 90 días",
+            "Le ofrece un descuento para que rompa su contrato actual",
+            "Hay necesidad potencial y un momento conocido; conviene prepararse y conocer a quienes decidirán antes de que venza. Descalificarlo desperdicia una oportunidad clara, y empujar a romper un contrato con descuento contradice la instrucción de no bajar precios y puede perjudicar al cliente."
+          ],
+          [
+            "¿Qué primer contacto es mejor para el jefe de mantenimiento?",
+            "Mencionar los paros por falta de piezas y ofrecer revisar las críticas",
+            "Enviar el catálogo completo con la lista de precios del trimestre",
+            "Avisar que la distribuidora maneja las mejores marcas de la región",
+            "Habla de una frustración real del jefe de mantenimiento, los paros, y propone un paso pequeño y útil. El catálogo completo es el mensaje genérico que la mayoría evita, y presumir marcas no muestra relevancia ni es comprobable."
+          ]
+        ],
+        "pl": [
+          "Plan de prospección B2B a 90 días",
+          "Fuentes elegidas y acción: [fuente – acción – responsable – fecha]\nPrimer contacto por correo: asunto [ ] / cuerpo [ ]\nPrimer contacto por mensaje: [ ]\nVerificación: REPEP [ ] / origen de los datos [ ] / aviso de privacidad [ ]\nCalificación: prospecto | necesidad | autoridad | momento | presupuesto | decisión\nCadencia: [día – canal – aporte]\nTablero: contactos [ ] respuestas [ ] conversaciones [ ] citas [ ]\nTasa de respuesta: [ ]  Tasa de cita: [ ]\nAjuste del siguiente mes: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una contadora que atiende a pequeños comercios quiere más clientes; sus mejores clientes llegaron por recomendación de otros comerciantes. ¿Qué acción es la más rentable?",
+          "Pedir presentaciones a clientes contentos, describiendo a quién busca",
+          "Comprar una base de datos de comercios de la ciudad para escribirles",
+          "Repartir volantes en todas las colonias durante un mes completo",
+          "Bajar sus honorarios para atraer a más comercios de inmediato"
+        ],
+        [
+          "Un fotógrafo de bodas y una florería se recomiendan mutuamente con sus clientes. ¿Qué fuente de prospectos es?",
+          "Una alianza entre negocios que atienden al mismo cliente",
+          "Un referido de un cliente satisfecho con el servicio",
+          "Prospección saliente, porque ambos toman la iniciativa",
+          "Contenido, porque cada uno muestra el trabajo del otro"
+        ],
+        [
+          "Tania publica videos breves que explican cómo elegir un seguro de auto, y la gente le escribe para cotizar. ¿Cómo se clasifican esos prospectos?",
+          "Entrantes: la buscaron después de ver su contenido",
+          "Salientes: ella inició el contacto al publicar el video",
+          "Referidos: alguien les recomendó que la buscaran",
+          "Alianza: la plataforma de videos le presenta clientes"
+        ],
+        [
+          "Saúl quiere escribir por WhatsApp a dueños de negocios que no lo conocen. ¿Qué primer mensaje es más adecuado?",
+          "Uno breve con quién es, un dato del negocio y un paso pequeño",
+          "Un audio de dos minutos que explique todos sus servicios",
+          "Uno con el catálogo en imágenes y la promoción vigente del mes",
+          "Uno que pida responder «SÍ» para recibir la información completa"
+        ],
+        [
+          "Una persona le dice a un vendedor que está inscrita en el REPEP y no quiere más publicidad. ¿Qué es lo correcto?",
+          "Registrar la negativa y dejar de enviarle publicidad",
+          "Cambiar a mensajes de texto, que el registro no incluye",
+          "Llamarla una última vez para confirmar que no le interesa",
+          "Pedirle que lo ponga por escrito antes de dejar de buscarla"
+        ],
+        [
+          "Ofelia vende un sistema de facturación y pregunta a un prospecto: «¿Usted es quien decide?». El prospecto se incomoda. ¿Qué pregunta sería mejor?",
+          "«¿Quiénes participan en la decisión y qué le importa a cada uno?»",
+          "«¿Me podría comunicar directamente con el director general?»",
+          "«¿Cuánto presupuesto tiene autorizado para este proyecto?»",
+          "«¿Podría firmar hoy si le consigo un buen descuento especial?»"
+        ],
+        [
+          "Un prospecto tiene un problema claro, pero aún no tiene presupuesto asignado. ¿Qué límite de BANT conviene recordar?",
+          "Que el presupuesto suele crearse al entender el costo del problema",
+          "Que el presupuesto siempre es lo primero que hay que preguntar",
+          "Que sin presupuesto no hay necesidad y el prospecto se descarta",
+          "Que BANT sólo sirve para vender a personas y no a empresas"
+        ],
+        [
+          "Néstor descubre en la primera llamada que el prospecto necesita un servicio que su empresa no hace bien. ¿Qué conviene?",
+          "Decírselo con respeto y recomendar a quien sí lo haga bien",
+          "Aceptar el proyecto y aprender sobre la marcha para no perderlo",
+          "Darle un precio muy alto para que sea el prospecto quien desista",
+          "Seguir en contacto sin aclarar nada, por si cambia de idea"
+        ],
+        [
+          "Jacinto registró en un mes 200 contactos, 20 respuestas, 10 conversaciones y 5 citas. ¿Cuál es su tasa de cita, medida sobre conversaciones?",
+          "50 %",
+          "10 %",
+          "2.5 %",
+          "25 %"
+        ],
+        [
+          "Esmeralda registra en la columna D el resultado de cada contacto y escribió la palabra cita en la celda G2. ¿Qué fórmula cuenta las citas?",
+          "=CONTAR.SI(D2:D200,G2)",
+          "=SUMAR.SI(D2:D200,G2)",
+          "=CONTAR.SI(G2,D2:D200)",
+          "=CONTARA(D2:D200,G2)"
+        ]
+      ]
+    }
+  ]
+}

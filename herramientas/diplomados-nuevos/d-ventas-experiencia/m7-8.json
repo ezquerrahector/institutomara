@@ -1,0 +1,818 @@
+{
+ "modulos": [
+  {
+   "t": "Experiencia del cliente y posventa",
+   "r": "Entiende de qué depende que un cliente quede satisfecho, dibuja su viaje completo, mide la experiencia con indicadores bien interpretados y diseña una posventa que genere recompra y recomendación sin presionar.",
+   "lecciones": [
+    {
+     "t": "Qué es la experiencia del cliente: expectativas, brechas y el final que se recuerda",
+     "obj": "Explicar por qué un cliente queda satisfecho o decepcionado y localizar en qué brecha de tu negocio se origina el problema.",
+     "texto": [
+      "La <b>experiencia del cliente</b> es la suma de lo que una persona vive, siente y concluye en cada contacto con tu negocio, desde que ve tu anuncio hasta que pide una garantía. No se reduce a «atender bonito». Richard Oliver (1980) propuso una idea que sigue vigente: la satisfacción surge de comparar lo que el cliente esperaba con lo que percibe que recibió. Si el desempeño iguala lo esperado, hay confirmación; si lo supera, hay desconfirmación positiva, y si queda abajo, desconfirmación negativa, que es la que produce molestia. Por eso dos clientes pueden recibir el mismo servicio y salir con opiniones opuestas: llegaron con expectativas distintas.",
+      "Las expectativas no caen del cielo: las forman tu publicidad, lo que prometió el vendedor, las reseñas, el precio y las experiencias pasadas. Parasuraman, Zeithaml y Berry (1985) describieron un <b>modelo de brechas</b>: la empresa no sabe bien qué espera el cliente; lo sabe, pero no lo convierte en un estándar claro; tiene el estándar, pero no lo cumple en la operación, o promete más de lo que entrega. Todas desembocan en la brecha que sí siente el cliente, entre lo esperado y lo percibido. Su escala SERVQUAL (1988) agrupa la calidad del servicio en cinco dimensiones: fiabilidad, capacidad de respuesta, seguridad, empatía y elementos tangibles.",
+      "Para quien vende, la conclusión es incómoda: muchas decepciones se fabrican en la venta. Si para cerrar dices «se lo entrego mañana» sabiendo que suele tardar tres días, abriste tú mismo la brecha de comunicación. Prometer con precisión forma parte de una buena experiencia, igual que cumplir.",
+      "Un matiz sobre la memoria. Kahneman y sus colegas (1993) encontraron que, al evaluar una experiencia ya pasada, las personas se apoyan mucho en el momento más intenso y en el final, y poco en la duración: es la regla del <b>pico y el final</b>. Úsala con prudencia: no sirve para tapar fallas con un detalle de despedida, sino para cuidar de forma especial los momentos fuertes y el cierre, como la entrega, el cobro o la despedida, donde más se juega el recuerdo."
+     ],
+     "comparar": [
+      "«Así no: Le prometo que mañana queda; luego vemos cómo le hacemos.»",
+      "«Así sí: Lo normal es que tarde tres días hábiles; si sale antes, le aviso en cuanto esté listo.»"
+     ],
+     "caso": "Caso ficticio: Elena, de 47 años, dirige un laboratorio de análisis clínicos en Guanajuato. Sus resultados son confiables y el personal es amable, pero las quejas crecen. Al revisarlas descubre que el volante dice «resultados en 24 horas», aunque algunos estudios especiales tardan 48, y que la entrega se hace en una ventanilla con fila, sin explicar qué hacer con los resultados. Su socio propone comprar un equipo más rápido de 600,000 pesos.",
+     "p": [
+      [
+       "¿En qué brecha se origina sobre todo la molestia por los tiempos?",
+       "En la de comunicación: el volante promete más de lo que se entrega",
+       "En la de conocimiento: no sabe qué esperan sus pacientes del servicio",
+       "En los elementos tangibles: el local necesita una remodelación",
+       "El laboratorio sí entrega a tiempo lo que puede; el problema es que anuncia un plazo que no aplica a todos los estudios. Nada indica que Elena ignore lo que esperan sus pacientes, y remodelar no corrige una promesa inexacta."
+      ],
+      [
+       "¿Qué conviene hacer antes de invertir en el equipo?",
+       "Anunciar plazos reales por estudio y medir si bajan las quejas",
+       "Comprar el equipo, porque la rapidez resuelve todas las quejas",
+       "Quitar los plazos del volante para que nadie pueda reclamar",
+       "Corregir la promesa es barato y ataca la causa; después se mide. El equipo puede ayudar, pero no corrige la entrega sin explicación, y ocultar los plazos deja al paciente sin información para decidir."
+      ],
+      [
+       "Según la regla del pico y el final, ¿qué momento merece atención especial?",
+       "La entrega de resultados, que hoy es fila sin explicación",
+       "La sala de espera, porque ahí pasan la mayor parte del tiempo",
+       "El volante, porque es el primer contacto con el laboratorio",
+       "La entrega es el final y, por lo que significa para el paciente, también un momento intenso. La duración en la sala pesa poco en el recuerdo, y el volante importa por la promesa, no por ser el inicio."
+      ]
+     ],
+     "completar": [
+      "Para Oliver (1980), la satisfacción nace de comparar las ___ del cliente con el desempeño que percibe.",
+      "expectativas"
+     ],
+     "relacionar": [
+      [
+       "Fiabilidad",
+       "Entregar el resultado correcto en la fecha prometida"
+      ],
+      [
+       "Capacidad de respuesta",
+       "Contestar en minutos un mensaje urgente, no en días"
+      ],
+      [
+       "Seguridad",
+       "Explicar con dominio técnico qué significa un resultado"
+      ],
+      [
+       "Empatía",
+       "Ajustar la cita de una paciente que trabaja de noche"
+      ],
+      [
+       "Elementos tangibles",
+       "Sala limpia, señalización clara y reporte legible"
+      ]
+     ],
+     "refl": "Piensa en tu negocio o en uno que conozcas. 1) Escribe tres expectativas que traen tus clientes y de dónde salen (anuncio, vendedor, reseñas, precio). 2) Identifica una brecha concreta y di de qué tipo es: conocimiento, estándar, entrega o comunicación. 3) Revisa una promesa que haces al vender y reescríbela para que sea precisa. 4) Elige el momento pico y el final de tu experiencia y propón una mejora para cada uno.",
+     "modelo": "Modelo: «Taller de costura y arreglos. Expectativas: que la prenda quede a la medida, lista el día acordado y con precio cerrado; salen de las reseñas y de lo que digo en el mostrador. Brecha: de comunicación, porque digo “en dos días” aunque los vestidos de fiesta tardan cinco. Promesa nueva: “Ajustes sencillos, dos días; vestidos de fiesta, cinco días hábiles; te escribo al terminar”. Pico: la prueba en el probador, hoy incómoda; pondré espejo grande y buena luz. Final: entrego la prenda planchada, en funda y con nota clara.» Es bueno porque nombra la brecha, corrige la promesa con plazos reales y mejora el pico y el final sin maquillar fallas.",
+     "plantilla": [
+      "Diagnóstico de expectativas y brechas",
+      "Expectativa del cliente: [ ] · ¿De dónde sale?: [anuncio / vendedor / reseñas / precio / experiencia previa]\nLo que entregamos hoy: [ ]\nTipo de brecha: [conocimiento / estándar / entrega / comunicación]\nDimensión SERVQUAL afectada: [ ]\nPromesa corregida: [ ]\nMomento pico: [ ] · Mejora: [ ]\nFinal de la experiencia: [ ] · Mejora: [ ]"
+     ],
+     "clave": [
+      "La satisfacción depende de la distancia entre lo esperado y lo percibido, no sólo de lo entregado.",
+      "Muchas brechas nacen en la venta: promete con precisión.",
+      "Cuida el momento más intenso y el final, sin usarlos para tapar fallas."
+     ]
+    },
+    {
+     "t": "Mapa del viaje del cliente y momentos de verdad",
+     "obj": "Dibujar el viaje completo de tu cliente con etapas, puntos de contacto, emociones, dolores y responsables internos, y elegir qué mejorar primero.",
+     "texto": [
+      "Un <b>mapa del viaje del cliente</b> es un dibujo, casi siempre una tabla, que sigue a un tipo de cliente desde que nota su necesidad hasta que vuelve a comprar o se va. Se arma por etapas, por ejemplo: descubrir, comparar, comprar, recibir, usar, pedir ayuda y recomprar. En cada etapa anotas los puntos de contacto (anuncio, llamada, mostrador, factura, entrega), lo que el cliente hace, lo que piensa y siente, y sus dolores. La regla de oro es dibujarlo desde los ojos del cliente, no desde el organigrama.",
+      "Los <b>momentos de verdad</b> son los contactos en los que el cliente se forma una opinión decisiva: la primera respuesta a su mensaje, el día de la entrega, la primera factura, la primera vez que algo falla. No todos los contactos pesan igual; marca en tu mapa los tres o cuatro que más influyen en que el cliente vuelva. A menudo no son los que la empresa cuida más: un negocio puede invertir en su sala de exhibición y descuidar la llamada que confirma la hora de instalación.",
+      "Un mapa útil incluye una fila que muchos olvidan: el <b>responsable</b> interno de cada etapa. Ahí aparecen los huecos entre áreas. Ventas promete, almacén surte, logística entrega, cobranza factura, y la espera entre la compra y la entrega a veces no es de nadie. Cuando un dolor no tiene dueño, nadie lo arregla. Anota también qué dato tienes de cada etapa: tiempos, quejas, devoluciones o comentarios.",
+      "Para que no se quede en un cartel bonito, construye el mapa con evidencia: escucha llamadas, lee quejas, entrevista a cinco o seis clientes recientes, incluidos algunos que no volvieron, y recorre tú el proceso como si fueras cliente. Después elige de una a tres mejoras con criterio: dolor frecuente, momento de verdad y costo razonable. Primero arregla lo que rompe la confianza; los detalles agradables vienen después."
+     ],
+     "comparar": [
+      "«Así no: Nuestro proceso es cotizar, vender y entregar; lo que pase después ya no es asunto de ventas.»",
+      "«Así sí: Después de pagar, el cliente espera, recibe, arma y usa; ¿quién le avisa en cada paso y cómo lo sabemos?»"
+     ],
+     "caso": "Caso ficticio: Bruno, de 33 años, es gerente de una mueblería en León que vende salas y comedores con entrega a domicilio. Las ventas en piso van bien, pero muchas reseñas negativas dicen lo mismo: el cliente no sabe cuándo llegará su mueble, llama varias veces y cada área le da una respuesta distinta. Ventas culpa a almacén, almacén culpa a los fleteros y nadie sabe cuántos pedidos llegan tarde. El dueño le pide a Bruno «una campaña para mejorar las reseñas».",
+     "p": [
+      [
+       "¿Qué debe hacer Bruno antes de pensar en una campaña?",
+       "Mapear el viaje posterior a la compra con datos y responsables",
+       "Pedir a los clientes satisfechos que publiquen más reseñas en línea",
+       "Ofrecer un descuento a quien escribió una reseña negativa",
+       "Las reseñas son el síntoma; la causa está en la etapa posterior a la compra, que nadie ve completa. Pedir más reseñas o dar descuentos no cambia la espera sin información que las provoca."
+      ],
+      [
+       "¿Cuál es el momento de verdad más dañado en este caso?",
+       "La espera entre la compra y la entrega, sin ningún aviso",
+       "La exhibición en piso, porque ahí se toma la decisión",
+       "El cobro en caja, porque ahí se cierra la operación",
+       "Las quejas se concentran en no saber cuándo llega el mueble. La exhibición y la caja funcionan bien según el caso; el daño está en la etapa que no tiene dueño."
+      ],
+      [
+       "¿Qué cambio ataca el dolor de raíz?",
+       "Un responsable de la espera que confirme la fecha y avise cambios",
+       "Que cada área conteste más rápido y con amabilidad cuando el cliente llame",
+       "Que los vendedores prometan entregar en menos días",
+       "Con un dueño que avise, el cliente ya no tiene que llamar. Contestar rápido sigue obligándolo a perseguir la información, y prometer menos días agranda la brecha entre lo prometido y lo entregado."
+      ]
+     ],
+     "completar": [
+      "En el mapa del viaje, cada etapa necesita un ___ interno; si un dolor no tiene dueño, nadie lo arregla.",
+      "responsable"
+     ],
+     "relacionar": [
+      [
+       "Punto de contacto",
+       "El mensaje que confirma la hora de entrega"
+      ],
+      [
+       "Momento de verdad",
+       "La primera vez que el producto falla y el cliente pide ayuda"
+      ],
+      [
+       "Dolor",
+       "Llamar tres veces para saber cuándo llega el pedido"
+      ],
+      [
+       "Responsable interno",
+       "La coordinadora de logística que avisa cambios de fecha"
+      ],
+      [
+       "Evidencia",
+       "Entrevistas con seis clientes recientes, dos de ellos perdidos"
+      ]
+     ],
+     "refl": "Elige un tipo de cliente de tu trabajo. 1) Escribe de cinco a siete etapas de su viaje, desde que nota la necesidad hasta que recompra. 2) Para cada etapa anota el punto de contacto, lo que siente y un dolor. 3) Marca los tres momentos de verdad y el responsable interno de cada uno. 4) Indica qué evidencia usaste o cuál conseguirías. 5) Elige una mejora y explica por qué va primero.",
+     "modelo": "Modelo: «Cliente: familia que inscribe a su hija en clases de piano. Etapas: buscar, visitar la academia, inscribirse, primera clase, clases regulares, recital, reinscripción. Momentos de verdad: la visita (responsable: recepción), la primera clase (coordinadora académica) y el recital (directora). Dolor más frecuente en 18 comentarios: los papás no saben cómo avanza su hija y se enteran del cambio de nivel por la factura. Mejora: un mensaje mensual de la maestra con un avance concreto. Evidencia: entrevisté a cinco familias, dos de ellas dadas de baja.» Es bueno porque se apoya en evidencia, pone dueño a cada momento clave y elige una sola mejora concreta.",
+     "plantilla": [
+      "Mapa del viaje del cliente",
+      "Tipo de cliente: [ ]\nEtapa: [ ] · Punto de contacto: [ ] · Lo que hace: [ ] · Lo que siente: [ ] · Dolor: [ ] · Responsable: [ ] · Dato disponible: [ ]\n(repite por etapa: descubrir, comparar, comprar, recibir, usar, pedir ayuda, recomprar)\nMomentos de verdad: [1] [2] [3]\nEvidencia usada: [entrevistas / quejas / recorrido / datos]\nMejora prioritaria: [ ] · Dueño: [ ] · Fecha: [ ]"
+     ],
+     "clave": [
+      "Dibuja el viaje desde los ojos del cliente, no desde el organigrama.",
+      "Cada etapa necesita un responsable; los dolores sin dueño no se arreglan.",
+      "Construye el mapa con evidencia y arregla primero lo que rompe la confianza."
+     ]
+    },
+    {
+     "t": "Medir la experiencia: NPS, CSAT y esfuerzo del cliente, con sus límites",
+     "obj": "Calcular e interpretar NPS, CSAT y esfuerzo del cliente en una hoja de cálculo, y usarlos sin convertirlos en metas que se manipulan.",
+     "texto": [
+      "El <b>NPS</b> (índice neto de promotores) lo propuso Fred Reichheld en 2003 en Harvard Business Review. Se pregunta: «¿Qué tan probable es que recomiendes esta empresa a un amigo o colega?», de 0 a 10. Quienes responden 9 o 10 son promotores; 7 u 8, pasivos, y de 0 a 6, detractores. NPS = % de promotores − % de detractores, así que va de −100 a +100. Ejemplo: de 120 respuestas, 66 son promotores (55 %) y 18 detractores (15 %); el NPS es +40. Ojo: no es un porcentaje, es una diferencia de puntos.",
+      "El <b>CSAT</b> mide la satisfacción con una interacción concreta, como una entrega o una reparación: suele preguntarse de 1 a 5 y reportarse como el porcentaje de respuestas 4 y 5 (hay variantes). El indicador de <b>esfuerzo</b> del cliente viene del trabajo de Dixon, Freeman y Toman (2010): en el servicio, la lealtad se asocia más con reducir el esfuerzo que con «deleitar», y volver a contactar por el mismo problema es de lo que más desgasta. De ahí el CES; por ejemplo, pedir que califique de 1 a 7 qué tan fácil le resultó resolver su asunto. Hay varias versiones de la pregunta.",
+      "En la hoja de cálculo, con las calificaciones en B2:B201: promotores =CONTAR.SI(B2:B201,“>=9”), detractores =CONTAR.SI(B2:B201,“<=6”) y total =CONTARA(B2:B201). En Excel las comillas van rectas y, en algunas configuraciones, el separador es punto y coma. El NPS es (promotores − detractores) / total × 100.",
+      "Ahora, los límites. Keiningham y sus colegas (2007), con datos de 21 empresas noruegas, no pudieron replicar la supuesta superioridad del NPS para predecir el crecimiento frente a otras medidas. Úsalo como termómetro, no como verdad única: un NPS alto no garantiza crecer. Agrega siempre una pregunta abierta («¿qué es lo principal que motiva tu calificación?»), porque el número dice cuánto y el comentario dice por qué. Y cuidado con ligar bonos al número: cuando un indicador se vuelve meta aparecen los «califícame con 10, por favor» y el dato deja de servir. Compara muestras parecidas y mira tendencias, no un mes aislado."
+     ],
+     "comparar": [
+      "«Así no: Si te llega la encuesta, ponme 10, que de eso depende mi bono.»",
+      "«Así sí: Te llegará una encuesta breve; contéstala con toda libertad, tus comentarios nos sirven para mejorar.»"
+     ],
+     "caso": "Caso ficticio: Carmen, de 39 años, coordina la atención a clientes de un proveedor de internet para hogares en Mexicali. En la encuesta del trimestre, de 200 respuestas, 90 dieron 9 o 10, 60 dieron 7 u 8 y 50 dieron de 0 a 6. Los comentarios de los detractores repiten que tuvieron que llamar dos o tres veces por la misma falla. El director quiere pagar un bono a cada técnico que «consiga» calificaciones de 10.",
+     "p": [
+      [
+       "¿Cuál es el NPS del trimestre?",
+       "+20",
+       "+45",
+       "+75",
+       "Promotores 45 % menos detractores 25 % da +20. El +45 sólo cuenta promotores, y el +75 suma promotores y pasivos, que no entran en la fórmula."
+      ],
+      [
+       "¿Qué indicador agregarías por lo que dicen los detractores?",
+       "El esfuerzo: qué tan fácil fue resolver la falla",
+       "Sólo el NPS, pero medido cada semana",
+       "La satisfacción con la publicidad y el sitio de la empresa",
+       "Los comentarios apuntan a llamar varias veces por lo mismo, justo lo que mide el esfuerzo. Medir más seguido el NPS no explica el porqué, y la publicidad no tiene relación con la queja."
+      ],
+      [
+       "¿Qué riesgo trae el bono del director?",
+       "Que se pida el 10 y el dato deje de servir",
+       "Ninguno: premiar el NPS asegura el crecimiento",
+       "Que el NPS suba tanto que ya no haya qué mejorar",
+       "Cuando el número se paga, se presiona al cliente y se pierde la verdad del indicador. El NPS no asegura crecer, y un número alto conseguido así no significa que no haya qué mejorar: sólo dejó de medir."
+      ]
+     ],
+     "completar": [
+      "En el servicio, la lealtad se asocia más con reducir el ___ del cliente que con deleitarlo.",
+      "esfuerzo"
+     ],
+     "relacionar": [
+      [
+       "NPS",
+       "¿Qué tan probable es que nos recomiendes?"
+      ],
+      [
+       "CSAT",
+       "¿Qué tan satisfecho quedaste con la instalación de hoy?"
+      ],
+      [
+       "Esfuerzo (CES)",
+       "¿Qué tan fácil fue resolver tu reporte?"
+      ],
+      [
+       "Pregunta abierta",
+       "¿Qué es lo principal que motiva tu calificación?"
+      ]
+     ],
+     "refl": "Diseña la medición de tu negocio. 1) Elige un momento de verdad para el CSAT, uno de servicio o soporte para el esfuerzo y un momento para el NPS (por ejemplo, 30 días después de la compra). 2) Redacta las preguntas, incluida una abierta. 3) Escribe las fórmulas de la hoja de cálculo. 4) Explica cómo evitarás que el indicador se manipule y qué decisión tomarás con cada uno.",
+     "modelo": "Modelo: «Florería con entregas a domicilio. CSAT al día siguiente: “Del 1 al 5, ¿cómo calificas tu entrega?”, con =CONTAR.SI(C2:C80,“>=4”)/CONTARA(C2:C80). Esfuerzo después de cada aclaración: “Del 1 al 7, ¿qué tan fácil fue resolver tu asunto?”, con =PROMEDIO(D2:D40). NPS cada trimestre a clientes con dos compras o más, con pregunta abierta. Nadie cobra bono por el número; cada lunes leemos los comentarios y elegimos una mejora. Si el esfuerzo promedio baja de 5, reviso las aclaraciones de esa semana.» Es bueno porque mide momentos distintos, usa fórmulas correctas, protege el dato de la manipulación y liga cada número a una decisión.",
+     "plantilla": [
+      "Tablero de experiencia en hoja de cálculo",
+      "Columna B: NPS (0-10) · Columna C: CSAT (1-5) · Columna D: esfuerzo (1-7) · Columna E: comentario\nPromotores (G2): [=CONTAR.SI(B2:B201,“>=9”)]\nDetractores (G3): [=CONTAR.SI(B2:B201,“<=6”)]\nTotal (G4): [=CONTARA(B2:B201)]\nNPS: [=(G2-G3)/G4*100]\nCSAT: [=CONTAR.SI(C2:C201,“>=4”)/CONTARA(C2:C201)]\nEsfuerzo promedio: [=PROMEDIO(D2:D201)]\nTres temas más repetidos en los comentarios: [ ]\nDecisión de este mes: [ ]\n(En Excel las comillas van rectas; en algunas configuraciones usa punto y coma)"
+     ],
+     "clave": [
+      "NPS = % de promotores − % de detractores; es un termómetro, no una verdad única.",
+      "Mide momentos distintos: CSAT por interacción, esfuerzo en el servicio y NPS para la relación.",
+      "Acompaña cada número con su porqué y no lo conviertas en un bono que invite a pedir calificaciones."
+     ]
+    },
+    {
+     "t": "Posventa que genera recompra y referidos",
+     "obj": "Diseñar una posventa con bienvenida, seguimiento, venta cruzada ética, petición de referidos y cancelación fácil, y estimar el valor de vida de un cliente.",
+     "texto": [
+      "La venta no termina con el pago; ahí empieza la parte que decide si el cliente vuelve. Reichheld y Sasser (1990) analizaron empresas de servicios y encontraron que reducir 5 puntos porcentuales la deserción de clientes elevaba las utilidades entre 25 % y 85 %, según la industria. Es un estudio de un conjunto de industrias, no una ley universal, pero la idea de fondo se sostiene: conservar bien a un cliente suele costar menos que reemplazarlo.",
+      "Para decidir cuánto invertir en posventa, estima el <b>valor de vida del cliente</b> en su versión simple: margen promedio por compra × compras por año × años de relación. Si cada visita deja 300 pesos de margen, el cliente viene diez veces al año y se queda tres años, su valor de vida es de 9,000 pesos. Es una aproximación sin descuento financiero, pero cambia la conversación: perder a ese cliente por un mal trato no cuesta 300 pesos, cuesta mucho más.",
+      "Una posventa sólida tiene cuatro piezas. La <b>bienvenida</b>: en los primeros días, confirma qué compró, cómo sacarle provecho y a quién acudir si algo falla. El seguimiento: un contacto en el momento en que suelen surgir dudas, no una felicitación vacía. La venta <b>cruzada</b> ética: ofrecer algo más sólo cuando resuelve una necesidad real, con precio total y sin agregarlo sin el consentimiento expreso del cliente. Y los <b>referidos</b>: pídelos cuando el cliente ya comprobó el valor, de forma concreta («¿conoces a alguien con este mismo problema?») y sin condicionar nada.",
+      "La salida también es parte de la experiencia. En servicios, suscripciones y membresías con cargos recurrentes, el artículo 76 Bis de la Ley Federal de Protección al Consumidor, con la reforma publicada en el DOF el 12 de diciembre de 2025, pide informar con claridad periodicidad, monto y fecha del cargo, obtener consentimiento expreso e informado, avisar al menos cinco días naturales antes de una renovación automática con opción de cancelar sin penalización y ofrecer mecanismos para cancelar de manera inmediata; verifica el texto vigente en la Cámara de Diputados o en el DOF. Retener con obstáculos va contra esa obligación y convierte a un excliente neutral en detractor."
+     ],
+     "comparar": [
+      "«Así no: Para cancelar tiene que venir en persona con una carta firmada; por teléfono no se puede.»",
+      "«Así sí: Puedes cancelar hoy mismo por este medio; si quieres, antes te cuento la opción de pausar, y tú decides.»"
+     ],
+     "caso": "Caso ficticio: Damián, de 52 años, es dueño de un gimnasio en Culiacán con membresía mensual de cargo automático. Cada socio le deja unos 300 pesos de margen al mes y, en promedio, se queda un año y medio. Muchos se van en los primeros dos meses sin haber recibido una rutina, y para cancelar deben llevar una carta en persona. Su encargada propone sumar al cargo mensual de cada socio nuevo un paquete de suplementos «si no dice que no».",
+     "p": [
+      [
+       "¿Cuál es el valor de vida simple de un socio?",
+       "5,400 pesos",
+       "3,600 pesos",
+       "450 pesos",
+       "300 pesos × 12 meses × 1.5 años = 5,400. El 3,600 corresponde a un solo año, y 450 multiplica el margen mensual por los años sin contar los meses."
+      ],
+      [
+       "¿Qué hace con la propuesta de los suplementos?",
+       "Rechazarla: nada se cobra sin consentimiento expreso",
+       "Aceptarla si el cargo aparece en el estado de cuenta",
+       "Aceptarla sólo con los socios nuevos de este mes",
+       "Agregar un cargo que el cliente no pidió ni aceptó de forma expresa es una práctica prohibida, aunque aparezca en el estado de cuenta o se limite a unos cuantos socios. Lo prohíben el artículo 10 y, en cargos recurrentes, el 76 Bis de la LFPC; verifica el texto vigente."
+      ],
+      [
+       "¿Qué cambio de posventa atiende la causa de las bajas tempranas?",
+       "Bienvenida con rutina y revisión en la tercera semana",
+       "Penalización para quien cancele antes de seis meses",
+       "Una rifa mensual entre los socios que sigan inscritos",
+       "Los socios se van sin haber recibido una rutina: la bienvenida ataca esa causa. La penalización contradice la cancelación sin obstáculos, y la rifa no resuelve por qué se van."
+      ]
+     ],
+     "completar": [
+      "Ofrecer algo más sólo cuando resuelve una necesidad real, con precio total y consentimiento expreso, es venta ___ ética.",
+      "cruzada"
+     ],
+     "refl": "Diseña la posventa de tu producto o servicio. 1) Calcula el valor de vida simple de un cliente típico con tus datos o con supuestos razonables. 2) Escribe el mensaje de bienvenida y di cuándo y por qué canal sale. 3) Define un seguimiento en el momento en que suelen surgir dudas. 4) Propón una venta cruzada que resuelva una necesidad real y explica cómo pedirás el consentimiento. 5) Redacta cómo pedirás referidos y, si cobras de forma recurrente, cómo se cancela.",
+     "modelo": "Modelo: «Mantenimiento de jardines para casas. Margen por visita: 250 pesos; dos visitas al mes, 24 al año; relación promedio de dos años: valor de vida de 12,000 pesos. Bienvenida: el día de la primera visita, mensaje con el calendario, el nombre del jardinero y un número para dudas. Seguimiento: al mes, foto del antes y el después y una pregunta abierta. Venta cruzada: si detecto plaga, cotizo el tratamiento aparte, con precio total, y sólo lo hago si el cliente acepta por escrito. Referidos: a los tres meses pregunto si algún vecino tiene el mismo problema. Cancelación: por el mismo chat, al momento.» Es bueno porque usa números, cuida el consentimiento y facilita la salida.",
+     "plantilla": [
+      "Plan de posventa",
+      "Valor de vida simple: [margen por compra] × [compras al año] × [años] = [ ] (en la hoja: [=B2*B3*B4])\nBienvenida — cuándo: [ ] · canal: [ ] · mensaje: [ ]\nSeguimiento — momento de dudas: [ ] · qué aporto: [ ]\nVenta cruzada — necesidad real: [ ] · precio total: [ ] · cómo pido consentimiento: [ ]\nReferidos — cuándo: [ ] · frase: [ ]\nCargos recurrentes — aviso previo a la renovación: [ ] · cómo se cancela al momento: [ ]"
+     ],
+     "clave": [
+      "Conservar bien a un cliente suele costar menos que reemplazarlo; el valor de vida dice cuánto vale cuidarlo.",
+      "Bienvenida, seguimiento útil, venta cruzada con consentimiento y referidos después del valor comprobado.",
+      "Cancelar debe ser fácil e inmediato: los obstáculos van contra el 76 Bis y crean detractores."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Construye tu tablero de experiencia. 1) En 25 minutos dibuja el mapa del viaje de tu cliente principal con etapas, momentos de verdad, dolores y responsables. 2) En 35 minutos arma en una hoja de cálculo una pestaña de respuestas con al menos 40 filas reales o realistas: fecha, calificación NPS de 0 a 10, CSAT de 1 a 5, esfuerzo de 1 a 7 y comentario; calcula promotores, detractores, NPS, CSAT y esfuerzo promedio con CONTAR.SI, CONTARA y PROMEDIO. 3) En 20 minutos clasifica los comentarios en tres a cinco temas y cuenta cada uno con CONTAR.SI. 4) En 10 minutos escribe tu plan de posventa con el valor de vida simple y una mejora prioritaria con responsable y fecha.",
+    "entregable": "Un mapa del viaje de una página y un libro de cálculo con la pestaña de respuestas, el tablero con NPS, CSAT y esfuerzo calculados con fórmulas, el conteo de temas y el plan de posventa.",
+    "criterios": "Revisa: cada momento de verdad tiene responsable y dato, el NPS sale como diferencia de porcentajes y no como promedio de calificaciones, cada indicador va acompañado de comentarios y de una decisión, y la posventa pide consentimiento expreso para cualquier venta adicional y ofrece una forma inmediata de cancelar si hay cargos recurrentes."
+   },
+   "lab": {
+    "t": "Huéspedes que vuelven",
+    "obj": "Diagnosticar la experiencia de un hotel boutique con brechas, mapa del viaje e indicadores, y diseñar una posventa que invite a volver sin presionar.",
+    "esc": "<b>Francisco,</b> de 36 años, es gerente de un hotel boutique de 14 habitaciones en San Miguel de Allende. Las reseñas elogian la decoración y el desayuno, pero varias mencionan cargos sorpresa a la salida, una llegada confusa por la noche y dudas que nadie contestó antes del viaje. La dueña quiere subir la ocupación entre semana y te pidió acompañar a Francisco durante un mes.",
+    "e": [
+     [
+      "Escena 1: El sitio del hotel dice «estacionamiento incluido», pero en realidad es un convenio con un estacionamiento a dos cuadras que cobra 150 pesos por noche, y la tarifa publicada no incluye impuestos. Varias reseñas hablan de «sorpresas en la cuenta».",
+      "Consigna: identifica qué brechas hay (conocimiento, estándar, entrega o comunicación) y qué dimensión SERVQUAL afectan, y reescribe la información del sitio para que muestre el precio total y lo que de verdad incluye la tarifa."
+     ],
+     [
+      "Escena 2: Francisco entrevista a seis huéspedes recientes. Cuentan que su mensaje para reservar tardó un día en recibir respuesta, que al llegar de noche no encontraron la entrada y que la salida fue el momento más tenso por la cuenta.",
+      "Consigna: dibuja el mapa del viaje del huésped, desde que busca hotel hasta que vuelve, con puntos de contacto, emociones, dolores y responsables; marca los momentos de verdad y explica con la regla del pico y el final por qué la salida merece prioridad."
+     ],
+     [
+      "Escena 3: La encuesta de los últimos dos meses tiene 60 respuestas: 33 dieron 9 o 10, 15 dieron 7 u 8 y 12 dieron de 0 a 6. En la pregunta sobre la llegada respondieron 50 huéspedes y 42 dieron 4 o 5. Francisco quiere poner en recepción un letrero que diga «califícanos con 10».",
+      "Consigna: calcula el NPS y el CSAT de la llegada, escribe las fórmulas de la hoja de cálculo, propón cómo medir el esfuerzo de reservar y explica por qué el letrero dañaría la medición."
+     ],
+     [
+      "Escena 4: La dueña propone inscribir a cada huésped, sin preguntarle, en un club con cargo anual que se renueva solo, y que el personal pida reseñas únicamente a quienes se ven contentos.",
+      "Consigna: diseña la posventa: mensaje de agradecimiento con pregunta abierta, invitación a volver con una razón real, un programa de huéspedes frecuentes con consentimiento expreso, aviso antes de la renovación y cancelación inmediata, y una forma de pedir opinión a todos los huéspedes por igual."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es el NPS de la encuesta del hotel?",
+      "+35",
+      "+55",
+      "+80",
+      "Promotores 55 % menos detractores 20 % da +35. El +55 sólo cuenta promotores y el +80 suma promotores y pasivos."
+     ],
+     [
+      "Sobre el estacionamiento, ¿qué conviene publicar?",
+      "Que hay un convenio cercano y cuánto cuesta por noche",
+      "Que es «gratis», y explicar el cobro cuando lleguen",
+      "Nada, y que el personal lo aclare si alguien pregunta",
+      "El huésped debe conocer lo que incluye la tarifa y el costo de los cargos antes de reservar. Llamarlo gratis es información que induce a error, y callarlo deja la sorpresa para el momento más tenso (artículos 7 Bis y 32 de la LFPC; verifica el texto vigente)."
+     ],
+     [
+      "¿Por qué no pedir reseñas sólo a los huéspedes contentos?",
+      "Porque sesga lo que se publica y deja de ser veraz",
+      "Porque los huéspedes contentos casi nunca escriben",
+      "Porque las reseñas casi no influyen al elegir hotel",
+      "Pedir opinión sólo a quien se ve feliz construye una imagen pública engañosa. Los huéspedes contentos sí suelen escribir si se les pide, y las reseñas sí pesan en la decisión de reservar."
+     ]
+    ],
+    "pl": [
+     "Diagnóstico de experiencia del hotel",
+     "Brecha detectada: [ ] · Tipo: [ ] · Dimensión SERVQUAL: [ ] · Corrección: [ ]\nMapa — etapas: [buscar / reservar / llegar / hospedarse / pagar y salir / después de la estancia]\nMomentos de verdad y responsables: [ ]\nNPS: [=(CONTAR.SI(B2:B61,“>=9”)-CONTAR.SI(B2:B61,“<=6”))/CONTARA(B2:B61)*100]\nCSAT de la llegada: [=CONTAR.SI(C2:C51,“>=4”)/CONTARA(C2:C51)]\nEsfuerzo al reservar (1-7): [=PROMEDIO(D2:D61)]\nPosventa — agradecimiento: [ ] · invitación a volver: [ ] · programa con consentimiento: [ ] · aviso y cancelación: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una panadería anuncia «pan recién horneado todo el día», pero después de las 3 de la tarde sólo queda pan de la mañana y los clientes de la tarde se quejan. ¿Qué brecha es?",
+     "De comunicación: se promete más de lo que se entrega",
+     "De conocimiento: no saben qué esperan sus clientes",
+     "De tangibles: el local no se ve lo bastante atractivo",
+     "De empatía: el personal trata mal a quien llega tarde"
+    ],
+    [
+     "Olga organiza recorridos culturales en la Ciudad de México. El paseo es excelente, pero el regreso termina en un embotellamiento sin agua ni explicación. ¿Qué sugiere la regla del pico y el final?",
+     "Cuidar el cierre: avisar del tráfico y planear el regreso",
+     "Alargar el recorrido para que el cliente sienta más valor",
+     "Olvidar el regreso, porque lo que cuenta es el paseo",
+     "Dar un regalo al final para que olviden cualquier falla"
+    ],
+    [
+     "Pedro vende calentadores solares en Acapulco. Ventas promete instalar en una semana, pero cuando hay retraso nadie avisa al cliente. ¿Qué le falta a su mapa del viaje?",
+     "Un responsable de la etapa entre la compra y la instalación",
+     "Más puntos de contacto en la etapa en que el cliente compara",
+     "Una campaña para que los clientes publiquen buenas reseñas",
+     "Un descuento automático para quien espere más de una semana"
+    ],
+    [
+     "Una encuesta tiene 300 respuestas: 150 promotores, 90 pasivos y 60 detractores. ¿Cuál es el NPS?",
+     "+30",
+     "+50",
+     "+80",
+     "+10"
+    ],
+    [
+     "Dos sucursales tienen NPS de +20. En una hay 40 % de promotores y 20 % de detractores; en la otra, 60 % y 40 %. ¿Qué concluyes?",
+     "Que viven realidades distintas: hay que ver la distribución",
+     "Que están igual, porque el NPS de ambas es idéntico",
+     "Que la segunda es mejor porque tiene más promotores",
+     "Que la primera es peor, porque tiene más clientes pasivos que la otra"
+    ],
+    [
+     "De 80 clientes que calificaron una reparación de 1 a 5, 56 dieron 4 o 5. ¿Cuál es el CSAT?",
+     "70 %",
+     "56 %",
+     "80 %",
+     "4.2 de 5"
+    ],
+    [
+     "Raquel coordina un centro de atención telefónica y muchos clientes llaman dos o tres veces por la misma falla. Según Dixon, Freeman y Toman, ¿qué mejora más la lealtad?",
+     "Resolver a la primera y evitar que tengan que volver a llamar",
+     "Regalar un detalle sorpresa a cada cliente que llama por tercera vez",
+     "Alargar cada llamada para que se sientan muy escuchados",
+     "Pedir al final de la llamada que califiquen con un 10"
+    ],
+    [
+     "El director de una cadena dice: «Con un NPS de +60 tenemos el crecimiento asegurado». ¿Qué le respondes?",
+     "Que es un buen termómetro, pero no garantiza crecer",
+     "Que tiene razón: es el mejor predictor que existe",
+     "Que el NPS no sirve y conviene dejar de medir",
+     "Que sólo garantiza crecer si supera los +80 puntos"
+    ],
+    [
+     "Sergio tiene una lavandería en Mazatlán. Un cliente frecuente deja 250 pesos de margen por servicio, va 6 veces al año y se queda 3 años. ¿Cuál es su valor de vida simple?",
+     "4,500 pesos",
+     "1,500 pesos",
+     "750 pesos",
+     "9,000 pesos"
+    ],
+    [
+     "Una plataforma de clases en línea con cargo mensual sólo permite cancelar por correo y tarda diez días en procesar la baja. Según el 76 Bis reformado en 2025, ¿qué debe cambiar?",
+     "Ofrecer un mecanismo para cancelar de inmediato",
+     "Nada: puede tardar hasta diez días hábiles",
+     "Sólo avisar de la renovación si el plan es anual",
+     "Cobrar penalización sólo si cancelan antes de un año"
+    ]
+   ]
+  },
+  {
+   "t": "Quejas, recuperación del servicio y tu sistema comercial",
+   "r": "Atiende quejas con justicia y método, pon límites seguros ante clientes agresivos, convierte quejas y reseñas en mejoras y arma la rutina, los indicadores y el plan de 90 días de tu sistema comercial.",
+   "lecciones": [
+    {
+     "t": "Atender quejas y recuperar el servicio",
+     "obj": "Atender una queja con un método claro que cuide el resultado, el proceso y el trato, y saber cuándo orientar al cliente hacia Profeco.",
+     "texto": [
+      "Una queja es información valiosa que llega gratis: muchos clientes molestos no reclaman, simplemente no vuelven. Quien se toma el trabajo de quejarse te da la oportunidad de arreglar su caso y de descubrir una falla del proceso. Tax, Brown y Chandrashekaran (1998) mostraron que el cliente evalúa la atención de su queja con tres tipos de <b>justicia</b> percibida: la del resultado (¿obtuve una solución proporcional?), la del proceso (¿fue rápido, claro y sin vueltas?) y la del trato (¿me escucharon con respeto y me dieron una explicación honesta?). Una compensación generosa no repara un trato humillante, y la amabilidad no sustituye una solución.",
+      "Un método sencillo: 1) escucha completo, sin interrumpir ni justificarte; 2) reconoce la molestia y, si hubo falla, discúlpate con claridad; 3) pregunta lo necesario para entender qué pasó y qué espera; 4) propone una solución concreta con fecha, o dos opciones para que elija; 5) cumple y confirma que quedó resuelto; 6) registra la causa para que no se repita. Da a quien atiende un margen para resolver sin pedir permiso en los casos comunes: cada escalamiento suma esfuerzo al cliente.",
+      "Existe la llamada <b>paradoja de la recuperación</b>: la idea de que un cliente cuya falla se resolvió muy bien queda más contento que si nunca hubiera fallado. El metaanálisis de De Matos, Henrique y Rossi (2007) encontró que una buena recuperación sí puede dejar la satisfacción por encima de la previa, pero no halló efecto significativo en la intención de recompra, la recomendación boca a boca ni la imagen. Conclusión: es mejor no fallar; recuperar bien es indispensable, pero no es una estrategia.",
+      "Si ofreces una <b>garantía</b>, que sea clara: qué cubre, por cuánto tiempo y cómo se hace válida. Y si no llegan a un acuerdo, orientar al cliente hacia Profeco no es una amenaza para ti: el Teléfono del Consumidor es 55 5568 8722 en la Ciudad de México y su área metropolitana y 800 468 8722, sin costo, desde el resto del país; Concilianet permite conciliar en línea con los proveedores dados de alta en ese servicio. Verifica los datos vigentes en gob.mx/profeco. Un negocio serio sigue atendiendo la queja aunque el cliente ya haya acudido a la autoridad."
+     ],
+     "comparar": [
+      "«Así no: Eso no fue culpa nuestra; si quiere, ponga su queja donde guste.»",
+      "«Así sí: Tiene razón en estar molesto; revisemos qué pasó y le propongo dos soluciones para hoy.»"
+     ],
+     "caso": "Caso ficticio: Gloria, de 44 años, es dueña de un taller de hojalatería y pintura en Guadalajara. Un cliente de 63 años recogió su auto dos días después de lo prometido y con un rayón nuevo en la puerta. Llegó molesto, pero sin gritar. El jefe de taller asegura que el rayón «seguro ya estaba» y que no se le dé nada; las fotos de recepción muestran la puerta sin daño. El cliente pide que se arregle y que le expliquen el retraso.",
+     "p": [
+      [
+       "¿Qué debe hacer Gloria primero?",
+       "Escucharlo, revisar las fotos y reconocer la falla",
+       "Respaldar a su jefe de taller frente al cliente",
+       "Ofrecerle un descuento para que deje de reclamar",
+       "Las fotos de recepción muestran que el daño ocurrió en el taller; escuchar y reconocerlo cuida el trato. Respaldar una versión que la evidencia contradice destruye la confianza, y un descuento sin reconocer la falla no atiende lo que el cliente pide."
+      ],
+      [
+       "¿Qué solución cuida la justicia del resultado?",
+       "Reparar el rayón sin costo, en una fecha que él acepte",
+       "Reparar el rayón cobrando sólo la mitad de la pintura",
+       "Darle una disculpa por escrito sin reparar el daño",
+       "El daño lo causó el taller, así que la solución proporcional es repararlo sin costo y en un plazo acordado. Cobrar la mitad traslada al cliente parte de una falla ajena, y la disculpa sola deja el daño sin resolver."
+      ],
+      [
+       "Gloria piensa: «si lo resolvemos de lujo, nos recomendará más que antes». ¿Qué dice la evidencia?",
+       "Su satisfacción puede subir, pero no se vio efecto en recomendar",
+       "Tiene razón: fallar y recuperar bien multiplica las recomendaciones",
+       "No vale la pena esforzarse, porque ese cliente ya no volverá",
+       "El metaanálisis de De Matos y colegas encontró un posible aumento de satisfacción, sin efecto significativo en recompra ni boca a boca. Eso no quiere decir que no valga la pena recuperar bien: es indispensable, aunque no sea una estrategia."
+      ]
+     ],
+     "completar": [
+      "El cliente evalúa la atención de su queja con tres tipos de ___ percibida: la del resultado, la del proceso y la del trato.",
+      "justicia"
+     ],
+     "relacionar": [
+      [
+       "Justicia del resultado",
+       "Reparar el daño sin costo para el cliente"
+      ],
+      [
+       "Justicia del proceso",
+       "Resolver en una sola visita, sin pedirle que repita su historia"
+      ],
+      [
+       "Justicia del trato",
+       "Escuchar sin interrumpir y explicar con honestidad el retraso"
+      ],
+      [
+       "Registro de la causa",
+       "Anotar que faltó proteger la puerta antes de pintar"
+      ],
+      [
+       "Concilianet",
+       "Conciliar en línea con un proveedor dado de alta ante Profeco"
+      ]
+     ],
+     "refl": "Recuerda una queja real de tu trabajo o una que tú presentaste como cliente. 1) Describe qué pasó y cómo se atendió. 2) Califica del 1 al 5 la justicia del resultado, del proceso y del trato, y explica cada nota. 3) Reescribe la atención con los seis pasos del método. 4) Indica qué causa registrarías y qué cambio evitaría que se repita.",
+     "modelo": "Modelo: «Queja: una clienta encargó un pastel para 30 personas y llegó con el decorado equivocado una hora antes de la fiesta. Antes le dijimos que el pedido “se entendió así”: resultado 2, proceso 2, trato 1. Ahora: escucho sin interrumpir, reconozco que el pedido estaba bien escrito y el error fue nuestro, ofrezco corregir el decorado en 40 minutos o devolver el pago completo, y ella elige. Al día siguiente confirmo que todo salió bien. Causa: el pedido se copia a mano en cocina; cambio: la foto del pedido firmado va pegada en la orden.» Es bueno porque evalúa las tres justicias, ofrece opciones reales y corrige la causa.",
+     "plantilla": [
+      "Protocolo de atención de quejas",
+      "Fecha: [ ] · Cliente: [ ] · Canal: [ ]\n1. Escuché completo: [qué pasó, en sus palabras]\n2. Reconocí y me disculpé: [frase]\n3. Pregunté: [qué espera]\n4. Propuse: [solución con fecha] u opciones: [A] [B]\n5. Cumplí y confirmé: [fecha y cómo]\n6. Causa registrada: [ ] · Cambio para que no se repita: [ ] · Responsable: [ ]\nGarantía aplicable: [qué cubre, plazo, cómo se hace válida]\nSi no hay acuerdo: Teléfono del Consumidor de Profeco y Concilianet (verifica los datos en gob.mx/profeco)"
+     ],
+     "clave": [
+      "Una queja atendida se juzga por el resultado, el proceso y el trato: cuida los tres.",
+      "Recuperar bien es indispensable, pero fallar a propósito no es estrategia: el metaanálisis no encontró efecto en recompra ni en recomendación.",
+      "Orientar al cliente hacia Profeco es respetar su derecho, no una amenaza para ti."
+     ]
+    },
+    {
+     "t": "Clientes molestos, agresivos o abusivos: límites y seguridad",
+     "obj": "Distinguir entre un cliente molesto, uno agresivo y uno abusivo; desescalar cuando es seguro y poner límites, escalar o pedir ayuda cuando no lo es.",
+     "texto": [
+      "No todo enojo es igual. Un cliente <b>molesto</b> tiene un problema y lo expresa con emoción; casi siempre se calma cuando lo escuchas y le das una ruta. Uno <b>agresivo</b> grita, insulta, golpea el mostrador o se acerca de forma intimidante. Uno <b>abusivo</b> busca humillar, hostiga de manera repetida, hace comentarios sexuales o amenaza. Con el primero aplicas el método de quejas; con los otros dos cambia la prioridad: primero está tu seguridad y la de tus compañeros y clientes.",
+      "Para desescalar, cuando es seguro hacerlo: baja el volumen y el ritmo de tu voz, mantén distancia y una salida libre, no discutas quién tiene la razón, nombra la emoción («veo que esto le ha causado muchos problemas») y ofrece algo concreto que sí puedes hacer. Evita frases que encienden, como «cálmese» o «no es para tanto». Si el tono sigue subiendo, pon un límite claro y respetuoso: «Quiero ayudarle; para hacerlo necesito que no me insulte. Si continúa, tendré que terminar la conversación». Y cúmplelo.",
+      "Nadie está obligado a soportar acoso ni amenazas como parte del trabajo. Escala a tu supervisor o a quien designe tu empresa, termina la llamada o el chat si el abuso persiste y deja registro por escrito: fecha, hora, qué se dijo y quién lo presenció. Ante violencia o amenaza, llama al 911: no intentes resolverlo solo ni sigas atendiendo. Un buen negocio tiene un protocolo escrito, capacita a su personal en él y respalda a quien pone un límite; nunca le exige «aguantar porque el cliente paga».",
+      "Después de un episodio fuerte es normal sentir temblor, enojo o tristeza durante horas o días. Habla con alguien de confianza y con tu supervisor, y, si es posible, tómate una pausa antes de atender al siguiente cliente. Si un episodio te afecta mucho, la Línea de la Vida, 800 911 2000, es gratuita y atiende las 24 horas. Este diplomado no te prepara para intervenir en crisis ni sustituye la ayuda de profesionales de la salud o de la seguridad."
+     ],
+     "comparar": [
+      "«Así no: Aguanta los insultos; el cliente paga y aquí no se le cuelga a nadie.»",
+      "«Así sí: Quiero ayudarle, pero no voy a continuar si me sigue insultando; le paso con mi supervisora.»"
+     ],
+     "caso": "Caso ficticio: Iván, de 25 años, atiende el mostrador de una sucursal de paquetería en Tijuana. Un cliente cuyo envío se perdió llega gritando, lo insulta, golpea el vidrio y le dice que «lo va a esperar a la salida». Hay otras cuatro personas formadas y la gerente está en la bodega. Iván tiene el número de rastreo y podría abrir un reporte de búsqueda, pero el cliente no lo deja hablar.",
+     "p": [
+      [
+       "¿Qué hace Iván ante la amenaza?",
+       "Pone distancia, avisa a su gerente y llama al 911",
+       "Sigue atendiendo hasta que el cliente se calme solo",
+       "Le contesta con firmeza para no mostrarle miedo",
+       "Hubo una amenaza directa: la prioridad es la seguridad, con apoyo y ayuda de emergencia. Seguir atendiendo lo deja expuesto, y responder con dureza puede escalar el conflicto."
+      ],
+      [
+       "Si el cliente sólo estuviera molesto, sin insultos ni amenazas, ¿qué convendría?",
+       "Nombrar su molestia y ofrecer el reporte de búsqueda",
+       "Pedirle que se calme y que vuelva a formarse",
+       "Explicarle que la pérdida no fue culpa de la sucursal",
+       "Con un cliente molesto, reconocer la emoción y dar una ruta concreta suele bajar la tensión. «Cálmese» enciende, y deslindarse no resuelve nada."
+      ],
+      [
+       "Al día siguiente, Iván no logra dormir y piensa en renunciar. ¿Qué le recomiendas?",
+       "Hablarlo con alguien y llamar a la Línea de la Vida si le pesa mucho",
+       "No contárselo a nadie para no parecer débil frente a su gerente y compañeros",
+       "Volver al mostrador de inmediato para perderle el miedo",
+       "Es una reacción común después de un episodio fuerte, y pedir apoyo ayuda. Callarlo aísla, y forzarse a volver sin apoyo puede empeorar el malestar."
+      ]
+     ],
+     "completar": [
+      "Ante violencia o amenaza de un cliente, llama al ___ y no intentes resolverlo solo.",
+      "911"
+     ],
+     "relacionar": [
+      [
+       "Cliente molesto",
+       "Escuchar, nombrar la emoción y ofrecer una ruta concreta"
+      ],
+      [
+       "Cliente agresivo",
+       "Mantener distancia, poner un límite claro y avisar al supervisor"
+      ],
+      [
+       "Cliente abusivo en el chat",
+       "Advertir una vez, terminar la conversación y dejar registro"
+      ],
+      [
+       "Amenaza o violencia",
+       "Alejarse, ponerse a salvo y llamar al 911"
+      ],
+      [
+       "Episodio que te afectó mucho",
+       "Hablar con alguien y llamar a la Línea de la Vida"
+      ]
+     ],
+     "refl": "Escribe el protocolo de seguridad de tu puesto o negocio. 1) Define con ejemplos qué es para ti un cliente molesto, uno agresivo y uno abusivo. 2) Redacta tres frases para desescalar y una frase de límite. 3) Indica a quién escalas en cada caso, cómo terminas una llamada o un chat y qué registras. 4) Anota los números de emergencia y de apoyo y dónde estarán visibles.",
+     "modelo": "Modelo: «Puesto: recepción de una clínica dental. Molesto: reclama porque esperó 40 minutos; lo escucho y le doy la hora real de atención. Agresivo: grita o golpea el mostrador; mantengo distancia y aviso a la coordinadora. Abusivo: comentarios sexuales o amenazas; termino la atención y lo reporto. Para desescalar: “Entiendo que esperar así es muy molesto” y “Déjeme ver qué puedo hacer ahora”. Límite: “Quiero ayudarle; si sigue insultando, terminaré la conversación”. Bitácora: fecha, hora, frases y testigos. En recepción, visibles: 911 y Línea de la Vida 800 911 2000.» Es bueno porque distingue los tres casos, tiene frases listas y define a quién escalar.",
+     "plantilla": [
+      "Protocolo de seguridad ante clientes agresivos",
+      "Molesto (ejemplo): [ ] → escuchar, nombrar la emoción, ofrecer una ruta\nAgresivo (ejemplo): [ ] → distancia, salida libre, límite, avisar a: [ ]\nAbusivo (ejemplo): [ ] → advertir una vez, terminar, registrar, escalar a: [ ]\nFrases para desescalar: [1] [2] [3]\nFrase de límite: [ ]\nRegistro: fecha [ ] · hora [ ] · qué se dijo [ ] · testigos [ ]\nEmergencia por violencia o amenaza: 911\nApoyo emocional: Línea de la Vida 800 911 2000 (gratuita, 24 horas)"
+     ],
+     "clave": [
+      "Tu seguridad va primero: ante violencia o amenaza, aléjate y llama al 911.",
+      "Desescala cuando sea seguro; pon límites claros y cúmplelos.",
+      "Nadie debe soportar acoso: escala, registra y pide apoyo si el episodio te afectó."
+     ]
+    },
+    {
+     "t": "La voz del cliente: de las quejas y reseñas a las mejoras",
+     "obj": "Clasificar quejas y reseñas, encontrar con un Pareto las causas que más pesan, cerrar el ciclo con el cliente y responder reseñas con honestidad.",
+     "texto": [
+      "Cada queja aislada parece un caso; juntas, muestran un patrón. La <b>voz del cliente</b> reúne todo lo que tus clientes te dicen: quejas, reseñas en línea, comentarios de encuestas, mensajes y lo que escucha el personal. Para que sirva, junta todo en una sola hoja con fecha, canal, texto original y categoría. Define de cinco a ocho categorías claras (tiempo de espera, error en el pedido, cobro, trato, producto) y clasifica siempre con las mismas reglas.",
+      "Luego cuenta por categoría con CONTAR.SI, ordena de mayor a menor y calcula el porcentaje acumulado: eso es un Pareto. Casi siempre unas pocas categorías concentran buena parte de las quejas, y ahí conviene empezar. Si de 120 quejas, 48 son por tiempo de espera y 30 por platillos fríos, esas dos suman 65 % y merecen el primer proyecto de mejora. Mira también la gravedad: una sola queja de intoxicación pesa más que veinte por ruido.",
+      "Cerrar el ciclo tiene dos niveles. Con cada cliente: contestar, resolver y confirmar. Con el negocio: corregir la causa y avisar a quienes se quejaron de eso que ya cambió. Al responder reseñas públicas, agradece, reconoce lo que sí falló sin pelear ni revelar datos personales, explica qué cambiaste e invita a resolver en privado. Una respuesta serena le habla también a todas las personas que leen sin escribir.",
+      "Lo que nunca se hace: publicar reseñas falsas, pagar por reseñas positivas, pedir opinión sólo a los clientes contentos o esconder las negativas. Además de engañar, eso contradice la obligación de dar información veraz, comprobable y que no induzca a error, que establece el artículo 32 de la Ley Federal de Protección al Consumidor (verifica el texto vigente en la Cámara de Diputados o en el DOF). Si quieres más reseñas, pídelas a todos tus clientes por igual, en el momento adecuado y sin condicionar nada."
+     ],
+     "comparar": [
+      "«Así no: Reporta esa reseña de una estrella y pídele a tus primos que pongan cinco.»",
+      "«Así sí: Gracias por avisarnos; tuvo razón con la espera. Desde este mes hay un cocinero más en la noche; escríbanos y compensamos su visita.»"
+     ],
+     "caso": "Caso ficticio: Josefina, de 58 años, es dueña de un restaurante de mariscos en La Paz. En tres meses juntó 120 quejas entre reseñas, encuestas y comentarios a los meseros: 48 por tiempo de espera, 30 por platillos fríos, 18 por errores en la cuenta, 12 por ruido, 8 por estacionamiento y 4 de otros temas. Su sobrino le propone comprar paquetes de reseñas de cinco estrellas y reportar como falsas todas las negativas para que desaparezcan.",
+     "p": [
+      [
+       "¿Qué porcentaje acumulan las dos primeras categorías?",
+       "65 %",
+       "40 %",
+       "80 %",
+       "Espera y platillos fríos suman 78 de 120, es decir, 65 %. El 40 % es sólo la espera, y el 80 % ya incluye los errores en la cuenta."
+      ],
+      [
+       "¿Qué hace Josefina con la propuesta del sobrino?",
+       "La rechaza: engaña y contradice el artículo 32",
+       "La acepta sólo mientras resuelve la espera",
+       "La acepta si las reseñas parecen naturales",
+       "Comprar reseñas y ocultar las negativas engaña a quien lee y va contra la información veraz, sin importar cuánto dure o qué tan bien se disimule. Verifica el texto vigente del artículo 32."
+      ],
+      [
+       "Cuando por fin reduce la espera, ¿cómo cierra el ciclo?",
+       "Avisa a quienes se quejaron y mide si bajan las quejas",
+       "Deja de contar quejas, porque el problema ya se atendió",
+       "Responde sólo las reseñas nuevas de cinco estrellas",
+       "Cerrar el ciclo es avisar del cambio y comprobar con datos que funcionó. Dejar de medir impide saberlo, y contestar sólo lo positivo ignora a quienes señalaron el problema."
+      ]
+     ],
+     "completar": [
+      "Ordenar las quejas por categoría, de mayor a menor y con su porcentaje acumulado, es hacer un ___.",
+      "Pareto"
+     ],
+     "refl": "Trabaja con la voz de tus clientes. 1) Reúne al menos 20 quejas, reseñas o comentarios recientes, tuyos o de un negocio que conozcas. 2) Define de cinco a siete categorías y clasifícalos. 3) Haz el conteo y el porcentaje acumulado en la hoja de cálculo. 4) Elige la causa que atacarás primero, considerando frecuencia y gravedad. 5) Redacta la respuesta a una reseña negativa real o realista.",
+     "modelo": "Modelo: «Estética unisex, 24 comentarios del último bimestre. Categorías: espera, resultado del corte, precio, trato y limpieza. Conteo: espera 10, resultado 6, precio 4, trato 3, limpieza 1; espera y resultado suman 67 %. Empiezo por la espera: citas cada 45 minutos en lugar de 30. Respuesta a una reseña: “Gracias por contarnos. Tiene razón: aun con cita esperó 50 minutos. Ya ajustamos la agenda para dar más tiempo a cada servicio; si nos escribe por mensaje, con gusto compensamos su próxima visita”.» Es bueno porque cuantifica, prioriza con datos, reconoce sin pelear, explica el cambio y lleva la solución a lo privado.",
+     "plantilla": [
+      "Tablero de la voz del cliente",
+      "Pestaña de datos: fecha · canal · texto original · categoría · gravedad (1-3)\nConteo por categoría: [=CONTAR.SI(D2:D200,“Tiempo de espera”)]\nPorcentaje: [=G2/SUMA($G$2:$G$8)] · Acumulado: [=SUMA($H$2:H2)]\nCausa prioritaria (frecuencia y gravedad): [ ]\nCambio aplicado: [ ] · Responsable: [ ] · Fecha: [ ]\nAviso a los clientes que se quejaron: [ ]\nRespuesta a reseña: agradezco [ ] · reconozco [ ] · cambio [ ] · invito a privado [ ]\nRegla: reseñas pedidas a todos por igual; nunca falsas, pagadas ni ocultas"
+     ],
+     "clave": [
+      "Junta toda la voz del cliente en una hoja y clasifícala con reglas fijas.",
+      "Usa el Pareto y la gravedad para elegir qué mejorar primero, y avisa a los clientes cuando cambie.",
+      "Nunca reseñas falsas, pagadas ni ocultas: la información debe ser veraz."
+     ]
+    },
+    {
+     "t": "Tu sistema comercial: rutina semanal, indicadores y plan de 90 días",
+     "obj": "Integrar lo aprendido en una rutina semanal, un tablero de pocos indicadores y un plan de 90 días con metas medibles.",
+     "texto": [
+      "Un <b>sistema comercial</b> es el conjunto de hábitos, herramientas e indicadores que hace que vender y servir bien no dependa del ánimo del día. Ya tienes sus piezas: cliente ideal y propuesta de valor, plan de prospección, guion de descubrimiento, propuesta tipo, banco de objeciones, embudo con criterios, mapa del viaje y protocolo de quejas. Falta ponerlas a funcionar con una rutina que se repita cada semana.",
+      "Una <b>rutina semanal</b> realista incluye bloques fijos de prospección; tiempo protegido para reuniones de descubrimiento y propuestas; una revisión de cartera en la que cada oportunidad tenga siguiente paso y fecha; una hora para posventa (bienvenidas, seguimientos y referidos), y media hora el viernes para leer quejas y comentarios. Si trabajas en equipo, una junta breve con los mismos indicadores cada semana vale más que una larga y desordenada.",
+      "Elige pocos indicadores de tres familias: de <b>actividad</b> (contactos y reuniones), que controlas tú; de <b>resultado</b> del embudo (conversión, tasa de cierre, ticket, ciclo y pronóstico ponderado), que dicen si esa actividad funciona, y de <b>experiencia</b> (CSAT, esfuerzo, NPS y quejas por categoría), que anticipan si los clientes volverán. Para cada uno define fórmula, fuente, frecuencia y qué harás si sale de rango. Un tablero de seis a ocho números bien entendidos sirve más que uno de treinta.",
+      "Cierra con un <b>plan de 90 días</b> en tres tramos. Días 1 a 30: ordenar la base de clientes, poner criterios al embudo y medir la línea base. Días 31 a 60: aplicar la rutina completa y probar una mejora del viaje del cliente. Días 61 a 90: revisar los datos, ajustar lo que no funcionó y fijar metas para el siguiente trimestre. Cada meta debe ser medible y tener fecha, y conviene revisar el plan cada dos semanas. Este diplomado no otorga certificación ni cédula: tu evidencia será el sistema funcionando y sus resultados."
+     ],
+     "comparar": [
+      "«Así no: Este mes le echo todas las ganas y a ver qué sale.»",
+      "«Así sí: Martes y jueves prospecto de 8:30 a 10, el viernes reviso cartera y leo quejas; mi meta es subir la tasa de cierre de 25 % a 30 % en 90 días.»"
+     ],
+     "caso": "Caso ficticio: Marisol, de 35 años, vende e instala cocinas integrales en Oaxaca. Tiene meses buenos y meses malos sin saber por qué: cuando hay muchas instalaciones deja de prospectar y al mes siguiente no tiene propuestas. Lleva sus oportunidades en una libreta, mide sólo las ventas del mes y se entera de las quejas cuando un cliente ya no la recomienda. Quiere un plan para el próximo trimestre.",
+     "p": [
+      [
+       "¿Qué explica mejor sus meses malos?",
+       "Deja de prospectar cuando está ocupada y la cartera se vacía",
+       "La demanda de cocinas en Oaxaca cambia mucho de mes a mes",
+       "Sus precios son demasiado altos frente a los de la competencia",
+       "El caso muestra el patrón: sin prospección constante, el mes siguiente llega vacío. No hay datos que apoyen un cambio de demanda ni un problema de precio."
+      ],
+      [
+       "¿Qué tablero le conviene?",
+       "De seis a ocho indicadores de actividad, embudo y experiencia",
+       "Sólo las ventas del mes, que es lo que de verdad importa",
+       "Treinta indicadores, para no perder ningún detalle del negocio",
+       "Pocos indicadores de las tres familias le avisan a tiempo. Las ventas del mes llegan tarde para corregir, y treinta números no se revisan cada semana."
+      ],
+      [
+       "¿Qué conviene hacer en los primeros 30 días?",
+       "Pasar la libreta al CRM, fijar criterios y medir la línea base",
+       "Fijar como meta duplicar las ventas y presionar para lograrlo",
+       "Esperar al tercer mes para ver si todo mejora por sí solo",
+       "Sin datos ordenados ni línea base no se puede fijar una meta realista ni saber si el plan funciona. Duplicar a ciegas presiona sin método, y esperar repite el ciclo."
+      ]
+     ],
+     "completar": [
+      "Un plan de 90 días empieza por medir la línea ___ antes de fijar metas.",
+      "base"
+     ],
+     "relacionar": [
+      [
+       "Contactos y reuniones de la semana",
+       "Indicador de actividad que controlas tú"
+      ],
+      [
+       "Tasa de cierre del trimestre",
+       "Indicador de resultado del embudo"
+      ],
+      [
+       "Esfuerzo promedio tras una aclaración",
+       "Indicador de experiencia del cliente"
+      ],
+      [
+       "Pronóstico ponderado",
+       "Suma de cada monto por la probabilidad de su etapa"
+      ]
+     ],
+     "refl": "Diseña tu sistema. 1) Escribe tu rutina semanal con días, horarios y actividades: prospección, descubrimiento, cartera, posventa y voz del cliente. 2) Elige de seis a ocho indicadores de las tres familias, con fórmula, fuente, frecuencia y acción si salen de rango. 3) Redacta tu plan de 90 días en tres tramos, con una meta medible y fecha por tramo. 4) Indica cada cuándo y con quién revisarás el plan.",
+     "modelo": "Modelo: «Vendo servicios de limpieza para oficinas. Rutina: martes y jueves de 8:30 a 10, prospección; tardes de lunes a jueves, reuniones; viernes a las 9, revisión de cartera; viernes a las 12, posventa y quejas. Indicadores: reuniones por semana (meta: 8), conversión de reunión a propuesta, tasa de cierre, ticket, pronóstico ponderado, CSAT de la primera limpieza y quejas por categoría. Plan: días 1-30, limpiar el CRM y medir la línea base; 31-60, rutina completa y bienvenida nueva; 61-90, revisar y fijar metas. Reviso cada quincena con mi socia.» Es bueno porque es concreto, mezcla actividad, resultado y experiencia y tiene fechas de revisión.",
+     "plantilla": [
+      "Mi sistema comercial",
+      "Rutina semanal\nProspección: [días y horario] · Descubrimiento y propuestas: [ ] · Revisión de cartera: [ ] · Posventa: [ ] · Voz del cliente: [ ]\nIndicadores (fórmula · fuente · frecuencia · acción si sale de rango)\nActividad: [ ]\nEmbudo: [conversión] [tasa de cierre] [ticket] [ciclo] [pronóstico ponderado]\nExperiencia: [CSAT] [esfuerzo] [NPS] [quejas por categoría]\nPlan de 90 días\nDías 1-30: [ ] · Meta: [ ]\nDías 31-60: [ ] · Meta: [ ]\nDías 61-90: [ ] · Meta: [ ]\nRevisión: [cada cuándo y con quién]"
+     ],
+     "clave": [
+      "Un sistema comercial convierte las buenas prácticas en hábitos semanales que no dependen del ánimo.",
+      "Pocos indicadores de actividad, embudo y experiencia, cada uno con una acción definida.",
+      "Plan de 90 días: línea base, aplicación y ajuste, con metas medibles y revisiones frecuentes."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Construye tu protocolo de quejas y tu tablero de la voz del cliente. 1) En 25 minutos escribe el protocolo de quejas de tu negocio con los seis pasos, el margen que tiene cada persona para resolver sin pedir permiso, la garantía y cuándo orientar hacia Profeco. 2) En 20 minutos agrega el protocolo de seguridad: definiciones, frases para desescalar y de límite, a quién se escala, qué se registra y los números 911 y Línea de la Vida. 3) En 35 minutos arma en una hoja de cálculo una pestaña con al menos 30 quejas o comentarios reales o realistas, clasifícalos y haz el Pareto con CONTAR.SI y porcentaje acumulado. 4) En 10 minutos redacta la respuesta a dos reseñas, una positiva y una negativa.",
+    "entregable": "Un documento con el protocolo de quejas y el de seguridad, un libro de cálculo con la voz del cliente clasificada y su Pareto, y dos respuestas a reseñas.",
+    "criterios": "Revisa: el protocolo cuida el resultado, el proceso y el trato; las situaciones de riesgo indican cómo ponerse a salvo y a quién llamar; el Pareto usa fórmulas y considera la gravedad además de la frecuencia, y ninguna práctica de reseñas es falsa, pagada, selectiva u oculta."
+   },
+   "lab": {
+    "t": "Tu sistema comercial completo",
+    "obj": "Integrar todo el diplomado en un sistema comercial documentado para un negocio real o realista: cliente ideal, prospección, descubrimiento, propuesta, objeciones, embudo, experiencia, quejas y plan de 90 días.",
+    "esc": "<b>Rebeca,</b> de 41 años, abrirá en Tuxtla Gutiérrez la oficina regional de una empresa de purificación y venta de agua para negocios y hogares: equipos purificadores con mantenimiento, garrafones a domicilio y contratos para restaurantes, escuelas y oficinas. Tendrá dos asesores y un repartidor, y quiere empezar con un sistema y no con improvisación. Puedes hacer el proyecto para el negocio de Rebeca o para el tuyo; al final tendrás una carpeta con cuatro partes y un libro de cálculo. Este proyecto no otorga certificación: es la evidencia de lo que ya sabes hacer.",
+    "e": [
+     [
+      "Escena 1 (módulos 1 y 2): Rebeca tiene una lista de 300 teléfonos que le dejó un proveedor anterior y quiere llamar a todos mañana. Antes, le pides definir a quién le sirve más lo que vende.",
+      "Consigna: describe dos perfiles de cliente ideal (un negocio y un hogar) con sus trabajos, frustraciones y alegrías; escribe la propuesta de valor en una frase; arma un plan de prospección con tres fuentes, metas semanales de actividad y criterios de calificación por necesidad, autoridad, momento y presupuesto; explica qué harás con la lista de origen dudoso (aviso de privacidad, consentimiento y REPEP), y redacta un mensaje de primer contacto relevante para un restaurante."
+     ],
+     [
+      "Escena 2 (módulos 3 y 4): Un restaurante con unos 60 comensales al día compra garrafones sueltos y la dueña dice que «el agua es agua». Rebeca consigue una reunión con ella y con el jefe de cocina.",
+      "Consigna: prepara la reunión con hipótesis y agenda; escribe un guion de descubrimiento con preguntas de situación, problema, implicación y necesidad, incluida una que cuantifique el problema en pesos; redacta una propuesta tipo de una página con dos o tres opciones bien diferenciadas, beneficios en el idioma del cliente, precio total con impuestos y cargos, vigencia y siguiente paso, y compara el costo total de propiedad del purificador con seguir comprando garrafones."
+     ],
+     [
+      "Escena 3 (módulos 5 y 6): Tras la propuesta, la dueña dice: «Está caro y lo tengo que ver con mi socio». La cartera de Rebeca tiene 180,000 pesos en la etapa Propuesta y 90,000 en Decisión; su histórico indica 25 % y 60 % de probabilidad.",
+      "Consigna: arma un banco con las cinco objeciones más probables, su tipo y una respuesta que escuche, aclare, responda y confirme, separando objeciones de condiciones; define criterios de entrada y salida de cada etapa y el avance que buscarás en cada reunión, y construye en la hoja de cálculo el tablero con conversión, tasa de cierre, ticket, ciclo y pronóstico ponderado; comprueba que el pronóstico actual es de 99,000 pesos."
+     ],
+     [
+      "Escena 4 (módulos 7 y 8): A los tres meses, la encuesta a 80 clientes muestra 48 promotores, 20 pasivos y 12 detractores; los comentarios repiten que el repartidor no avisa y que cancelar el servicio mensual fue complicado. Además, un cliente furioso amenazó al repartidor.",
+      "Consigna: dibuja el mapa del viaje del cliente de hogar con momentos de verdad y responsables; calcula el NPS (debe darte +45) y define CSAT y esfuerzo con sus fórmulas; diseña la posventa con valor de vida simple y cancelación inmediata; escribe el protocolo de quejas y de seguridad con 911 y Línea de la Vida, y cierra con tu rutina semanal, tu tablero de seis a ocho indicadores y tu plan de 90 días."
+     ]
+    ],
+    "p": [
+     [
+      "En la escena 1, ¿qué hace Rebeca con la lista de 300 teléfonos?",
+      "No la usa: su origen es dudoso y no hay consentimiento",
+      "La usa, pero sólo con mensajes y no con llamadas",
+      "La usa una vez y borra a quienes no contesten",
+      "Una base sin consentimiento ni origen claro no se usa para prospectar, sin importar el canal o cuántas veces. Cambiar a mensajes o limpiar después no corrige cómo se obtuvieron los datos."
+     ],
+     [
+      "En la escena 3, la dueña lo verá con su socio. ¿Cuál es el mejor avance?",
+      "Una reunión con ambos socios en una fecha concreta",
+      "Un descuento especial si firma la propuesta antes del viernes",
+      "Esperar a que ella llame cuando decida",
+      "Un avance compromete al cliente con una acción concreta e incluye a quien también decide. El descuento con fecha límite crea urgencia sin contrapartida, y esperar es una continuación sin compromiso."
+     ],
+     [
+      "En la escena 4, ¿qué atiendes primero?",
+      "La seguridad del repartidor y luego el aviso de entregas",
+      "Subir el NPS pidiendo a los clientes que califiquen con 10",
+      "Hacer más difícil cancelar para conservar a los clientes",
+      "Una amenaza va primero: seguridad, registro y, si hace falta, 911; después se corrige el dolor del aviso. Pedir calificaciones arruina el dato, y dificultar la cancelación va contra el 76 Bis."
+     ]
+    ],
+    "pl": [
+     "Índice de tu sistema comercial",
+     "Negocio: [ ] · Responsable: [ ]\nParte 1 — Cliente ideal: [ ] · Propuesta de valor en una frase: [ ] · Fuentes de prospección: [ ] · Calificación: [ ] · Datos personales y REPEP: [ ] · Primer mensaje: [ ]\nParte 2 — Hipótesis y agenda: [ ] · Preguntas SPIN: [ ] · Problema en pesos: [ ] · Propuesta tipo con precio total y vigencia: [ ] · Costo total de propiedad: [ ]\nParte 3 — Banco de objeciones: [ ] · Criterios de etapa: [ ] · Avances: [ ] · Tasa de cierre: [=B2/(B2+B3)] · Pronóstico ponderado: [=SUMAPRODUCTO(C2:C20,D2:D20)]\nParte 4 — Mapa del viaje: [ ] · NPS: [ ] · CSAT: [ ] · Esfuerzo: [ ] · Valor de vida: [ ] · Protocolo de quejas y seguridad: [ ] · Rutina semanal: [ ] · Indicadores: [ ] · Plan de 90 días: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Teresa da clases de cocina a domicilio. Su anuncio dice «desde 900 pesos», pero cobra aparte 250 pesos de ingredientes obligatorios. ¿Qué debe corregir?",
+     "Anunciar el precio total, ingredientes incluidos",
+     "Agregar «más ingredientes» en letra pequeña",
+     "Cobrar los ingredientes sólo a quien pregunte",
+     "Subir el precio base y no mencionar los extras"
+    ],
+    [
+     "Una persona le dice a Víctor, que vende internet por teléfono, que se inscribió en el REPEP hace dos meses. ¿Qué hace Víctor?",
+     "Deja de enviarle publicidad y la marca para no contactarla",
+     "Le llama una última vez para ofrecerle la promoción del mes",
+     "Le sigue llamando, porque la empresa tiene 90 días de plazo",
+     "Le pide que firme una carta para poder seguir llamándole"
+    ],
+    [
+     "Leonardo dirige una escuela de música en San Cristóbal de las Casas con cargo mensual automático. ¿Qué mejora la experiencia y cumple el 76 Bis?",
+     "Avisar antes de la renovación y permitir cancelar al instante",
+     "Renovar sin aviso, porque el contrato ya lo dice con claridad",
+     "Pedir una carta firmada en persona para cualquier baja",
+     "Dar de baja sólo cuando termine el ciclo escolar completo"
+    ],
+    [
+     "En una reunión con una planta, ¿cuál es una pregunta de implicación?",
+     "¿Qué les cuesta cada vez que la línea para por falta de agua?",
+     "¿Cuántas personas trabajan hoy en la planta, por turno?",
+     "¿Le gustaría ahorrar dinero con un equipo más moderno y eficiente?",
+     "¿Quién es su proveedor actual de agua y desde cuándo?"
+    ],
+    [
+     "Nicolás prepara una propuesta para una escuela que no sabe nada de equipos de cómputo. ¿Qué le conviene presentar?",
+     "Dos o tres opciones bien diferenciadas, con precio total",
+     "Diez opciones, para que la escuela elija con libertad",
+     "Una sola opción, porque más opciones siempre paralizan",
+     "Precios sin IVA, para que las cifras se vean más bajas"
+    ],
+    [
+     "Al final de una reunión, el cliente dice: «Me interesa, luego platicamos». Según Rackham, ¿qué obtuviste?",
+     "Una continuación: no hay compromiso concreto",
+     "Un avance, porque el cliente mostró un interés real",
+     "Un cierre, porque el cliente no dijo que no",
+     "Una objeción de precio que conviene rebatir"
+    ],
+    [
+     "En el trimestre, Zulema ganó 18 oportunidades, perdió 27 y abandonó 5. Sin contar las abandonadas, ¿cuál es su tasa de cierre?",
+     "40 %",
+     "36 %",
+     "67 %",
+     "60 %"
+    ],
+    [
+     "Alma tiene 200,000 pesos en una etapa con 30 % de probabilidad histórica y 100,000 en otra con 60 %. ¿Cuál es su pronóstico ponderado?",
+     "120,000 pesos",
+     "300,000 pesos",
+     "90,000 pesos",
+     "135,000 pesos"
+    ],
+    [
+     "Un gerente propone dejar que fallen algunos pedidos para lucirse al resolverlos. ¿Qué dice el metaanálisis de De Matos y colegas?",
+     "Puede subir la satisfacción, no la recompra ni la recomendación",
+     "Fallar y luego recuperar bien duplica las recomendaciones",
+     "Recuperar el servicio nunca mejora la satisfacción del cliente afectado",
+     "Sólo funciona si la compensación supera el precio pagado"
+    ],
+    [
+     "Un cliente le escribe por chat insultos sexuales a una asesora de atención. ¿Qué procede?",
+     "Advertir una vez, terminar el chat, registrar y escalar",
+     "Seguir atendiendo con paciencia, porque es un cliente que paga",
+     "Responder con el mismo tono para que se detenga",
+     "Bloquearlo sin dejar registro para olvidar el tema"
+    ]
+   ]
+  }
+ ]
+}

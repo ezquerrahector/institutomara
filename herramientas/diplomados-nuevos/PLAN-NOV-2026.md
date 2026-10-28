@@ -14,7 +14,7 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 |---|---|---|---|---|---|---|
 | 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
 | 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Listo en rama (2026-10-26) |
-| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Pendiente |
+| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Listo en rama (2026-10-28) |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
 | 5 | d-intervencion-crisis | cri | Diplomado en Intervención en Crisis y Prevención del Suicidio | 1690 | Salud y bienestar | Pendiente |
 | 6 | d-psicologia-organizacional | por | Diplomado en Psicología Organizacional y Desarrollo del Talento | 1690 | Salud y bienestar | Pendiente |
@@ -29,6 +29,58 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 | 15 | d-bienestar-laboral | blm | Diplomado en Bienestar Laboral, Manejo del Estrés y Mindfulness | 1690 | Desarrollo humano | Pendiente |
 
 Las categorías de la tabla son las que ya existen en el sitio (`familia` y `area` en meta.json); confírmalas contra los `meta.json` de octubre y no inventes otras.
+
+## Tanda 2 — categorías nuevas (pedido de Héctor, 26 oct 2026)
+
+Al terminar el #15, la tarea sigue con esta tabla en el mismo orden y con el mismo procedimiento. Objetivo: abrir
+categorías nuevas en el sitio para que quien busca cursos encuentre temas que hoy no tenemos (cocina, contenido,
+oficios, salud, hogar, dinero). Todos son diplomados de 30 h (el generador `crear-diplomado.js` solo hace
+diplomados). Precio sugerido abajo; Héctor puede ajustarlo en Administración.
+
+**Área (`area` en meta.json) en esta tanda:** usa el nombre exacto de la columna «Área nueva». El sitio crea la
+tarjeta sola la primera vez que aparece un área nueva (ver `AREA_VIEJA`/`ICONO_AREA` en `sitio-web/index.html`).
+Desde el 26 oct el sitio usa 11 áreas: Psicología y terapia · Comunicación e influencia · Crecimiento personal ·
+Liderazgo, RH y seguridad laboral · Ventas y marketing · Tecnología e IA · IA para tu profesión · Idiomas ·
+Criminología y forense · Cuidado, infancia y educación · Administración y contabilidad. Para los #1-15 sigue
+valiendo la `familia` de la tabla de arriba.
+
+| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos) | Estado |
+|---|---|---|---|---|---|---|---|
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante, Cafetería, Panadería | Pendiente |
+| 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante, Hotel, Comedor industrial, Hospital | Pendiente |
+| 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
+| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio, Hospital, Comedor industrial | Pendiente |
+| 20 | d-energia-solar | sol | Diplomado en Energía Solar Fotovoltaica: diseño, cálculo e instalación segura | 1690 | Oficios y técnica | Constructora, Instalaciones eléctricas | Pendiente |
+| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotel, Restaurante, Agencia de viajes | Pendiente |
+| 22 | d-derecho-practico | der | Diplomado en Derecho Práctico para la Vida Diaria: trabajo, renta, familia y consumo | 1690 | Dinero y derecho | — | Pendiente |
+| 23 | d-finanzas-inversion | inv | Diplomado en Finanzas Personales e Inversión para Principiantes: CETES, fondos y Afore | 1690 | Dinero y derecho | — | Pendiente |
+| 24 | d-perros | per | Diplomado en Cuidado, Conducta y Adiestramiento de Perros | 1690 | Hogar, familia y mascotas | Veterinaria, Estética canina | Pendiente |
+| 25 | d-hogar-familia | org | Diplomado en Organización del Hogar, Rutinas y Economía Familiar | 1690 | Hogar, familia y mascotas | — | Pendiente |
+| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Escuela, Guardería, Industria | Pendiente |
+| 27 | d-cafe-barismo | caf | Diplomado en Café de Especialidad, Barismo y Negocio de Cafetería | 1690 | Cocina y gastronomía | Cafetería | Pendiente |
+
+### Cuidados de la tanda 2
+- **16 Cocina y repostería.** Formato de texto e interactivo: el valor está en recetas estándar con gramajes, costeo
+  por porción en Excel, precio de venta, conservación, empaque, etiquetado (NOM-051 si vende empacado), venta por
+  WhatsApp y apps de reparto. Decir que la práctica en cocina es indispensable; incluir fotos o esquemas solo propios.
+- **17 Manejo higiénico.** Verificar la versión vigente de la NOM-251-SSA1-2009 y del Distintivo H (Secretaría de
+  Turismo). Aclarar que no otorga el Distintivo H ni sustituye la capacitación que exija la autoridad sanitaria.
+- **18 Contenido y video.** CapCut/InShot, guion corto, ganchos, luz y audio con el celular, métricas, derechos de
+  autor y música con licencia. Distinto de Marketing Digital y de Fotografía de Producto.
+- **19 Nutrición.** Plato del Bien Comer y Guías Alimentarias (verificar vigentes), etiquetado frontal, lectura de
+  etiquetas. Prohibido dar planes de dieta, conteo de calorías por persona o metas de peso; incluir señales de
+  trastornos de la conducta alimentaria con canalización a profesional y la línea de la Alianza Nacional para los
+  Trastornos de la Conducta Alimentaria. Aclarar que no sustituye a un nutriólogo con cédula.
+- **20 Energía solar.** Cálculo de consumo con recibo de CFE, dimensionamiento, NOM-001-SEDE vigente, interconexión con
+  CFE (verificar trámite), seguridad eléctrica. Decir que la instalación la debe hacer personal calificado.
+- **21 Hospitalidad.** Recepción, housekeeping, servicio en restaurante, quejas, reseñas en línea, upselling ético.
+- **22 Derecho práctico.** Ley Federal del Trabajo (finiquito vs liquidación), arrendamiento, pensión alimenticia,
+  Profeco. Siempre «verifica con un abogado tu caso»; no es asesoría legal. Verificar artículos vigentes.
+- **23 Finanzas e inversión.** Distinto del curso «Finanzas personales y salir de deudas» (ese es deudas y presupuesto; este va a ahorro e inversión). Educativo, sin recomendaciones personalizadas: CETES, fondos, Afore, riesgo/rendimiento, fraudes
+  (CONDUSEF). Decir que no es asesoría financiera.
+- **24 Perros.** Bienestar animal, refuerzo positivo, socialización; nada de castigos físicos; canalizar a veterinario.
+- **26 Primeros auxilios.** Solo teórico, con aviso claro de que la práctica presencial certificada es indispensable;
+  911; no sustituye cursos de Cruz Roja o equivalentes. Coordinar con #4 (protección civil) para no repetir.
 
 ## Alcance y cuidados por diplomado
 
@@ -111,9 +163,14 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
-2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía.
+2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (primero la tabla de #1-15 y luego la de la Tanda 2).
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
-4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas, más `"tema"` y `"dificultad"`) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
+   Clasificación desde el 26 oct (`plataforma/taxonomia.js`): `area` = una de las 11 áreas (o la «Área nueva» de la tanda 2),
+   `tema` = uno de los temas de esa área en `taxonomia.js` (o uno nuevo y claro, p. ej. «Repostería»), `dificultad` =
+   `desde_cero` | `intermedio` | `profesional` (nivel de entrada). Para los #3-15 usa el área equivalente nueva
+   (p. ej. «Liderazgo y RH», «Psicología y terapia», «Cuidado, infancia y educación»). `crear-diplomado.js` (en main desde
+   el 26 oct; trae `main` a la rama) los escribe en el SQL y en el sitio.
 5. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id> --simular` → sin errores, ≥ 30 h.
 6. Revisión V10 por un agente experto independiente que no escribió el contenido; corregir todo lo que señale.
 7. `node herramientas/crear-diplomado.js herramientas/diplomados-nuevos/<id>` (sin --simular) y
@@ -144,3 +201,15 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Atribuciones: Goodhart (1975) y formulación de Marilyn Strathern; Berkeley 1973 (Bickel et al., 1975); Anscombe (1973); Abraham Wald y sesgo de supervivencia; premortem (Gary Klein); Cleveland y McGill (posiciones vs ángulos, sin citar); Cairo, Tufte, Knaflic, Minto. Caso de herramienta de selección abandonada en 2018 (Reuters), sin nombrar la empresa.
 - Fecha fija en M4 L3 y lab M4 («si hoy es 26 de octubre…»), usada como ejemplo de periodos a la fecha; ejemplos de Buen Fin y Semana Santa como periodos no equivalentes.
 - Herramientas: se corrigieron `herramientas/validar-diplomado.js` (V3 y V9) y `herramientas/auditoria.js` para el aula rápida (ya no cuentan `indice.js` como fuente duplicada y V9 verifica `indice.js`, `contenido/<id>.js` y que el aula no cargue fuentes directas). Las fallas «texto provisional» de la auditoría son previas (d-nom035, d-recursos-humanos, c-power-bi, d-tcc, c-aleman-a1, c-ia-programadores).
+
+## d-ventas-experiencia: datos para revisión de experto
+- Categoría: `familia` «Negocios y finanzas», `area` «Ventas y marketing», `tema` «Ventas y atención», `dificultad` «desde_cero» (mismo tema que «Atención al cliente y ventas»; este es el diplomado de 30 h, con B2B, embudo, CRM y CX).
+- LFPC (última reforma al texto: DOF 12 dic 2025): confirmar contra el texto vigente lo que se dice de los arts. 7 Bis (monto total visible), 10 (prácticas coercitivas, servicios y cargos no solicitados), 18 y 18 Bis (REPEP; plazo de 30 días tras inscribirse, ¿naturales?), 32 (información veraz; aplicado a reseñas falsas o compradas), 56 (5 días hábiles desde la entrega o la firma, lo último; excepción de servicios a ≤10 días hábiles; quién paga flete y seguro al revocar; caso de paneles solares firmados en casa en M5 L3) y 76 Bis fracc. VIII-IX (aviso ≥5 días naturales antes de renovación automática, cancelación inmediata; confirmar su alcance fuera del comercio electrónico).
+- Teléfonos: Profeco 55 5568 8722 / 800 468 8722; REPEP 55 9628 0000 / 800 962 8000; Concilianet; REUS de Condusef (si aplica a agentes de seguros además de aseguradoras, Lab M1).
+- LFPDPPP (DOF 20 mar 2025): aviso de privacidad, ARCO y uso de bases de datos de terceros en el CRM (M2 L2, M6 L2).
+- Gartner: 17 % del tiempo de compra con proveedores (fuente sin año en los resúmenes) y encuesta de 632 compradores (ago-sep 2024; nota de prensa del 25 jun 2025): 61 % prefiere comprar sin vendedor, 73 % evita mensajes irrelevantes, 69 % halló contradicciones entre sitio y vendedores. Seis tareas de compra.
+- Rackham (1988): ~35,000 encuentros, 12 años, >20 países; hallazgos citados sin porcentajes (implicación y necesidad-beneficio; cierres clásicos rinden peor en ventas grandes; avances vs continuaciones). Dixon y Adamson: >6,000 vendedores, cinco perfiles, límites del estudio; afirmación de M3 L4 de que la consultora después vendió capacitación sobre el modelo.
+- Reichheld y Sasser (1990): −5 puntos de deserción → +25 a 85 % de utilidades según industria. Keiningham et al. (2007): 21 empresas noruegas, >15,500 entrevistas. De Matos et al. (2007): efecto en satisfacción, no en recompra, boca a boca ni imagen. Scheibehenne et al. (2010): efecto promedio de sobrecarga de opciones cercano a cero.
+- Convenciones: CSAT como % de 4 y 5 en escala 1-5; CES en escala 1-7 (hay varias versiones); velocidad de ventas, cobertura (~3 veces) y valor de vida simple presentados como heurísticas. Fórmulas de Excel en español con coma (CONTAR.SI.CONJUNTO, PROMEDIO.SI, SI.ERROR).
+- Referencias: subtítulo exacto y año de «El vendedor desafiante» (Empresa Activa, 2012) y de «La pregunta decisiva 2.0» (LID, 2012); páginas de Dixon, Freeman y Toman (HBR, 2010).
+
