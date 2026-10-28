@@ -23,7 +23,7 @@
   T.DURACION = [ ['corto','Menos de 10 h'], ['medio','10 a 20 h'], ['largo','30 h o más'] ];
   /* Áreas nuevas previstas (tanda 2): icono para cuando aparezcan */
   T.ICONOS = { 'Cocina y gastronomía':'🍳', 'Creatividad y contenido':'🎬', 'Salud y nutrición':'🥗', 'Oficios y técnica':'🛠️',
-    'Hogar, familia y mascotas':'🏡', 'Dinero y derecho':'⚖️', 'Turismo y hospitalidad':'🏨' };
+    'Hogar, familia y mascotas':'🏡', 'Dinero y derecho':'⚖️', 'Turismo y hospitalidad':'🏨', 'Emprendimiento y negocio propio':'🚀' };
   /* Familias y áreas viejas → área nueva */
   T.VIEJAS = { 'Psicología y salud':'Psicología y terapia', 'Salud y bienestar':'Psicología y terapia', 'Desarrollo humano':'Crecimiento personal',
     'Negocios y oficina':'Administración y finanzas', 'Negocios y finanzas':'Administración y finanzas', 'Administración y oficina':'Administración y finanzas',

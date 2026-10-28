@@ -84,11 +84,12 @@ Los 11 giros nuevos (Restaurante, Cafetería, Panadería / repostería, Comedor 
 - **26 Primeros auxilios.** Solo teórico, con aviso claro de que la práctica presencial certificada es indispensable;
   911; no sustituye cursos de Cruz Roja o equivalentes. Coordinar con #4 (protección civil) para no repetir.
 
-## Tanda 3 — emprendimiento (propuesta del 28 oct 2026, POR VALIDAR)
+## Tanda 3 — emprendimiento (aprobada por Héctor el 28 oct 2026)
 
-Pedido de Héctor: diplomados para quien quiere emprender o ya tiene un negocio pequeño. **Estado «Propuesto»: la tarea
-diaria NO los toma** hasta que Héctor apruebe cuáles van (entonces se cambian a «Pendiente» y se ordenan). Área sugerida
-nueva: «Emprendimiento y negocio propio» (el sitio crea la tarjeta sola). Todos de 30 h, $1,690 sugerido.
+Pedido de Héctor: diplomados para quien quiere emprender o ya tiene un negocio pequeño. **Aprobados todos el 28 oct**
+(«de acuerdo con todos») más el #48 de composta. Van DESPUÉS de la tanda 2 y de los pendientes #4-15, en el orden de la
+tabla. `area` = «Emprendimiento y negocio propio» (icono 🚀 ya en taxonomia.js) salvo el #48, que también va ahí.
+Todos de 30 h, $1,690. Los giros de la columna son sugerencia: úsalos sólo si el diplomado es de los 3 más útiles para ese giro.
 Base de la selección: en México las micro son el 95.5 % de los establecimientos y la rama con más unidades es el
 comercio de abarrotes y alimentos, con poco más de un millón (INEGI, Censos Económicos 2024); oficios más pedidos en
 centros de capacitación (gastronomía, belleza, electricidad, carpintería, mecánica, fotografía); nichos que señalan
@@ -96,28 +97,29 @@ guías de negocio 2026 (tiendas en línea de nicho, mascotas, comida ligera, rev
 vendedores en línea). Regla para oficios manuales: teoría, negocio, higiene y seguridad en línea; decir siempre que la
 práctica presencial es indispensable y que no certifica (ni sustituye estándares de competencia del CONOCER).
 
-| # | id | pref | Diplomado (nombre sugerido) | Interés estimado | Riesgo de traslape | Giros posibles | Estado |
+| # | id | pref | Diplomado (nombre sugerido) | Interés estimado | Riesgo de traslape | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Propuesto |
-| 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Propuesto |
-| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Propuesto |
-| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Propuesto |
-| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Propuesto |
-| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Propuesto |
-| 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Propuesto |
-| 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Propuesto |
-| 36 | d-eventos | eve | Organización de Eventos: bodas, XV años y corporativos (presupuesto, proveedores y contratos) | Alto | Bajo | Hotelería; Restaurante | Propuesto |
-| 37 | d-renta-vacacional | rva | Renta Vacacional y Hospedaje de Corta Estancia: anuncio, precio, limpieza, reseñas e impuestos | Medio-alto | Medio (d-hospitalidad) | Inmobiliaria | Propuesto |
-| 38 | d-freelance | fre | Trabajo Independiente y Servicios Profesionales: asistente virtual, cotizar, contratos, cobro y facturación | Alto | Medio (c-ia-freelancers) | Coworking / oficinas ejecutivas | Propuesto |
-| 39 | d-franquicias | frq | Franquicias: evaluar, comprar o convertir tu negocio en franquicia | Medio | Bajo | — | Propuesto |
-| 40 | d-importar | imp | Importar y Vender: comercio exterior para pequeños negocios (aduana, padrón, costos y proveedores) | Medio-alto | Bajo | Industria / manufactura | Propuesto |
-| 41 | d-huertos-agronegocio | hue | Huertos, Hidroponía y Agronegocio a Pequeña Escala | Medio | Bajo | Restaurante | Propuesto |
-| 42 | d-servicios-hogar | sho | Negocio de Servicios para el Hogar: limpieza profesional, mantenimiento y jardinería con cuadrillas | Medio | Bajo | Inmobiliaria; Hotelería | Propuesto |
-| 43 | d-reparacion-celulares | rce | Reparación de Celulares y Electrónica: diagnóstico, refacciones y negocio | Medio-alto | Bajo | — | Propuesto |
-| 44 | d-clases-tutorias | tut | Negocio de Clases y Tutorías: regularización, idiomas y cursos en línea | Medio | Bajo | Colegio privado | Propuesto |
-| 45 | d-artesanias | art | Artesanías y Productos Hechos a Mano: diseño, precio, ferias, venta en línea y exportación | Medio | Bajo | — | Propuesto |
-| 46 | d-negocio-mascotas | nmc | Negocio de Mascotas: tienda, guardería, paseo y venta por suscripción | Medio-alto | Medio (d-perros) | Veterinaria; Estética canina | Propuesto |
-| 47 | d-taller-automotriz | tal | Taller Mecánico y Autolavado: administración, cotización, garantía y servicio al cliente | Medio | Bajo | Concesionaria automotriz | Propuesto |
+| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Pendiente |
+| 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Pendiente |
+| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Pendiente |
+| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Pendiente |
+| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Pendiente |
+| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Pendiente |
+| 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Pendiente |
+| 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Pendiente |
+| 36 | d-eventos | eve | Organización de Eventos: bodas, XV años y corporativos (presupuesto, proveedores y contratos) | Alto | Bajo | Hotelería; Restaurante | Pendiente |
+| 37 | d-renta-vacacional | rva | Renta Vacacional y Hospedaje de Corta Estancia: anuncio, precio, limpieza, reseñas e impuestos | Medio-alto | Medio (d-hospitalidad) | Inmobiliaria | Pendiente |
+| 38 | d-freelance | fre | Trabajo Independiente y Servicios Profesionales: asistente virtual, cotizar, contratos, cobro y facturación | Alto | Medio (c-ia-freelancers) | Coworking / oficinas ejecutivas | Pendiente |
+| 39 | d-franquicias | frq | Franquicias: evaluar, comprar o convertir tu negocio en franquicia | Medio | Bajo | — | Pendiente |
+| 40 | d-importar | imp | Importar y Vender: comercio exterior para pequeños negocios (aduana, padrón, costos y proveedores) | Medio-alto | Bajo | Industria / manufactura | Pendiente |
+| 41 | d-huertos-agronegocio | hue | Huertos, Hidroponía y Agronegocio a Pequeña Escala | Medio | Bajo | Restaurante | Pendiente |
+| 42 | d-servicios-hogar | sho | Negocio de Servicios para el Hogar: limpieza profesional, mantenimiento y jardinería con cuadrillas | Medio | Bajo | Inmobiliaria; Hotelería | Pendiente |
+| 43 | d-reparacion-celulares | rce | Reparación de Celulares y Electrónica: diagnóstico, refacciones y negocio | Medio-alto | Bajo | — | Pendiente |
+| 44 | d-clases-tutorias | tut | Negocio de Clases y Tutorías: regularización, idiomas y cursos en línea | Medio | Bajo | Colegio privado | Pendiente |
+| 45 | d-artesanias | art | Artesanías y Productos Hechos a Mano: diseño, precio, ferias, venta en línea y exportación | Medio | Bajo | — | Pendiente |
+| 46 | d-negocio-mascotas | nmc | Negocio de Mascotas: tienda, guardería, paseo y venta por suscripción | Medio-alto | Medio (d-perros) | Veterinaria; Estética canina | Pendiente |
+| 47 | d-taller-automotriz | tal | Taller Mecánico y Autolavado: administración, cotización, garantía y servicio al cliente | Medio | Bajo | Concesionaria automotriz | Pendiente |
+| 48 | d-composta-humus | cmp | Composta, Humus de Lombriz y Abonos Orgánicos: producción, calidad y negocio | Medio-alto | Bajo (distinto de #41 Huertos) | Restaurante; Comedor industrial / catering; Hotelería | Pendiente |
 
 ### Cuidados de la tanda 3
 - Nada de promesas de ingresos («gana X al mes») ni esquemas piramidales, dropshipping engañoso o reventa de marcas sin autorización.
@@ -127,6 +129,16 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 - 40 importar: padrón de importadores, regulaciones no arancelarias y NOM de etiquetado; verificar aranceles vigentes.
 - 43 reparación: seguridad con baterías de litio y manejo de residuos electrónicos.
 - 46 mascotas: bienestar animal, sin castigos; canalizar a veterinario.
+- **48 Composta, humus y abonos orgánicos.** Temario sugerido (investigación del 28 oct 2026):
+  M1 El negocio de los abonos orgánicos (mercado: viveros, huertos urbanos, agricultores, paisajismo, municipios; productos: composta, lombricomposta o humus, lixiviado, bocashi, sustratos);
+  M2 Ciencia del compostaje (relación carbono/nitrógeno, humedad, aireación, fases y temperatura, higienización de patógenos, madurez);
+  M3 Lombricultura (lombriz roja californiana, camas, alimentación, cosecha, plagas, escalar);
+  M4 Otros abonos y su uso seguro (bocashi, lixiviados, estiércoles, biofertilizantes; dosis y aplicación sin prometer resultados);
+  M5 Calidad, normas y etiquetado (NMX-FF-109-SCFI-2008 humus de lombriz, NMX-AA-180-SCFI-2018 tratamiento aerobio de residuos orgánicos —ambas vigentes al 28 oct 2026, verificar—, análisis de laboratorio, prueba de germinación, contaminantes; registro de nutrientes vegetales ante COFEPRIS: verificar si aplica, el Reglamento se reformó en el DOF del 24 abr 2026; uso del término «orgánico» sólo con certificación conforme a la Ley de Productos Orgánicos y la lista de insumos de SENASICA);
+  M6 Insumos, logística y permisos (acuerdos con mercados, restaurantes y comedores; residuos de manejo especial y permisos estatales o municipales; olores, lixiviados, vecinos y uso de suelo);
+  M7 Costos, precio y escala en Excel (costo por kilo y por bulto, inversión, punto de equilibrio, pilas volteadas vs. aireación forzada);
+  M8 Marca, venta y proyecto final (canales: viveros, ferreterías, huertos, agricultores, paisajismo, programas municipales y B2B de «cierre del ciclo» para restaurantes y hoteles; plan de negocio completo).
+  Cuidados: seguridad al manejar estiércoles y residuos (guantes, lavado, no usar heces de perros, gatos ni humanas; no compostar carne en pequeña escala sin control), sin promesas de rendimiento de cosechas, «verifica la norma vigente» y la práctica es indispensable.
 
 ## Alcance y cuidados por diplomado
 
