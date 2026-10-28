@@ -14,7 +14,7 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 |---|---|---|---|---|---|---|
 | 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
 | 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Listo en rama (2026-10-26) |
-| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Pendiente |
+| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Listo en rama (2026-10-28) |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
 | 5 | d-intervencion-crisis | cri | Diplomado en Intervención en Crisis y Prevención del Suicidio | 1690 | Salud y bienestar | Pendiente |
 | 6 | d-psicologia-organizacional | por | Diplomado en Psicología Organizacional y Desarrollo del Talento | 1690 | Salud y bienestar | Pendiente |
@@ -201,3 +201,15 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Atribuciones: Goodhart (1975) y formulación de Marilyn Strathern; Berkeley 1973 (Bickel et al., 1975); Anscombe (1973); Abraham Wald y sesgo de supervivencia; premortem (Gary Klein); Cleveland y McGill (posiciones vs ángulos, sin citar); Cairo, Tufte, Knaflic, Minto. Caso de herramienta de selección abandonada en 2018 (Reuters), sin nombrar la empresa.
 - Fecha fija en M4 L3 y lab M4 («si hoy es 26 de octubre…»), usada como ejemplo de periodos a la fecha; ejemplos de Buen Fin y Semana Santa como periodos no equivalentes.
 - Herramientas: se corrigieron `herramientas/validar-diplomado.js` (V3 y V9) y `herramientas/auditoria.js` para el aula rápida (ya no cuentan `indice.js` como fuente duplicada y V9 verifica `indice.js`, `contenido/<id>.js` y que el aula no cargue fuentes directas). Las fallas «texto provisional» de la auditoría son previas (d-nom035, d-recursos-humanos, c-power-bi, d-tcc, c-aleman-a1, c-ia-programadores).
+
+## d-ventas-experiencia: datos para revisión de experto
+- Categoría: `familia` «Negocios y finanzas», `area` «Ventas y marketing», `tema` «Ventas y atención», `dificultad` «desde_cero» (mismo tema que «Atención al cliente y ventas»; este es el diplomado de 30 h, con B2B, embudo, CRM y CX).
+- LFPC (última reforma al texto: DOF 12 dic 2025): confirmar contra el texto vigente lo que se dice de los arts. 7 Bis (monto total visible), 10 (prácticas coercitivas, servicios y cargos no solicitados), 18 y 18 Bis (REPEP; plazo de 30 días tras inscribirse, ¿naturales?), 32 (información veraz; aplicado a reseñas falsas o compradas), 56 (5 días hábiles desde la entrega o la firma, lo último; excepción de servicios a ≤10 días hábiles; quién paga flete y seguro al revocar; caso de paneles solares firmados en casa en M5 L3) y 76 Bis fracc. VIII-IX (aviso ≥5 días naturales antes de renovación automática, cancelación inmediata; confirmar su alcance fuera del comercio electrónico).
+- Teléfonos: Profeco 55 5568 8722 / 800 468 8722; REPEP 55 9628 0000 / 800 962 8000; Concilianet; REUS de Condusef (si aplica a agentes de seguros además de aseguradoras, Lab M1).
+- LFPDPPP (DOF 20 mar 2025): aviso de privacidad, ARCO y uso de bases de datos de terceros en el CRM (M2 L2, M6 L2).
+- Gartner: 17 % del tiempo de compra con proveedores (fuente sin año en los resúmenes) y encuesta de 632 compradores (ago-sep 2024; nota de prensa del 25 jun 2025): 61 % prefiere comprar sin vendedor, 73 % evita mensajes irrelevantes, 69 % halló contradicciones entre sitio y vendedores. Seis tareas de compra.
+- Rackham (1988): ~35,000 encuentros, 12 años, >20 países; hallazgos citados sin porcentajes (implicación y necesidad-beneficio; cierres clásicos rinden peor en ventas grandes; avances vs continuaciones). Dixon y Adamson: >6,000 vendedores, cinco perfiles, límites del estudio; afirmación de M3 L4 de que la consultora después vendió capacitación sobre el modelo.
+- Reichheld y Sasser (1990): −5 puntos de deserción → +25 a 85 % de utilidades según industria. Keiningham et al. (2007): 21 empresas noruegas, >15,500 entrevistas. De Matos et al. (2007): efecto en satisfacción, no en recompra, boca a boca ni imagen. Scheibehenne et al. (2010): efecto promedio de sobrecarga de opciones cercano a cero.
+- Convenciones: CSAT como % de 4 y 5 en escala 1-5; CES en escala 1-7 (hay varias versiones); velocidad de ventas, cobertura (~3 veces) y valor de vida simple presentados como heurísticas. Fórmulas de Excel en español con coma (CONTAR.SI.CONJUNTO, PROMEDIO.SI, SI.ERROR).
+- Referencias: subtítulo exacto y año de «El vendedor desafiante» (Empresa Activa, 2012) y de «La pregunta decisiva 2.0» (LID, 2012); páginas de Dixon, Freeman y Toman (HBR, 2010).
+
