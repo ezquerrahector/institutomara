@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Darme de baja · Instituto Mara</title>
+<style>
+:root{--morado:#6D28D9;--tinta:#2E1065;--gris:#6B7280;--linea:#E9E6F7}
+body{margin:0;font-family:Inter,-apple-system,'Segoe UI',Arial,sans-serif;background:#F8F7FE;color:#1F2937}
+.caja{max-width:520px;margin:60px auto;padding:30px 24px;background:#fff;border:1px solid var(--linea);border-radius:18px;text-align:center}
+@media(max-width:560px){.caja{margin:24px 16px}}
+.marca{color:var(--morado);font-weight:800;margin:0 0 10px}
+h1{font-size:22px;color:var(--tinta);margin:0 0 10px}
+p{line-height:1.6;color:var(--gris)}
+a{color:var(--morado);font-weight:700}
+</style>
+</head>
+<body>
+<div class="caja">
+  <p class="marca">Instituto Mara</p>
+  <h1 id="titulo">Procesando…</h1>
+  <p id="texto"></p>
+  <p><a href="./">Ir a institutomara.com</a></p>
+</div>
+<script>
+(function(){
+  var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+  var t = new URLSearchParams(location.search).get('t') || '';
+  function mostrar(ok){
+    document.getElementById('titulo').textContent = ok ? 'Listo, ya no te enviaremos estos correos.' : 'No encontramos tu registro.';
+    document.getElementById('texto').textContent = ok
+      ? 'Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.'
+      : 'Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.';
+  }
+  if(!t) return mostrar(false);
+  fetch(SUPA + '/functions/v1/kit', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body: JSON.stringify({ accion:'baja', t:t }) })
+    .then(function(r){ return r.json(); }).then(function(d){ mostrar(!!d.ok); }).catch(function(){ mostrar(false); });
+})();
+</script>
+</body>
+</html>

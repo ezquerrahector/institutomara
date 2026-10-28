@@ -7,6 +7,14 @@
 //   sincronizar          {}  (revisa en Mercado Pago el estado de tu membresía)       → { membresia }
 //   inscribir_membresia  { cursoId }  (empieza un programa incluido en tu membresía) → { ok }
 //   regalo               { cursoId, paraNombre, paraCorreo?, paraTel?, mensaje?, deNombre?, entregarEn?, urlRegreso } → { init_point }
+//   (pública) regalo_invitado { cursoId, deNombre, deCorreo, paraNombre, paraCorreo, mensaje?, entregarEn?, urlRegreso } → { init_point, token }
+//   (pública) regalo_ver      { t }  → { regalo }      (t = liga privada que llega a quien regala)
+//   (pública) regalo_editar   { t, paraNombre, paraCorreo, mensaje?, entregarEn?, reenviar? } → { ok, reenviado, regalo }
+//   (pública) regalo_cupon    { cursoId, cupon } → { precio, descuento }   (regalo_invitado también acepta «cupon»)
+//   (pública) embajador_alta  { nombre, correo, telefono?, pais?, ciudad?, como? } → { ok, token?, codigo? } (si ya existía, se le reenvía su liga)
+//   (pública) embajador_panel { t } → { embajador, ventas, totales, reglas }
+//   (pública) embajador_datos { t, titular, banco, clabe } → { ok }
+//   (pública) asesor_solicitud { nombre, correo, telefono, ciudad?, experiencia?, disponibilidad? } → { ok }
 //   recompra             { cursoId }  (al obtener una constancia)                    → { codigo, pct, vence }
 //   empresa              { cursoId, lugares (5-50), empresa, rfc?, contactoNombre?, contactoCorreo?, contactoTel?, urlRegreso } → { init_point }
 //   empresa_invitar      { codigo, nombre, correo, cursoId? }  (asigna un lugar y le envía la invitación) → { ok }
@@ -179,32 +187,76 @@ async function inscribirMembresia(u: any, b: any) {
 }
 
 // ---------------------------------------------------------------- regalos
-async function crearRegalo(u: any, b: any) {
-  const cid = String(b.cursoId || "");
+// Desde el 26 oct 2026 se puede regalar sin cuenta (acción pública «regalo_invitado»): quien regala deja su nombre
+// y correo, paga y listo. Al confirmarse el pago le llega un correo con una liga privada (?t=token) para cambiar
+// destinatario, mensaje o fecha mientras el regalo no se active.
+const SITIO = "https://institutomara.com/sitio-web";
+const CORREO_OK = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const ligaEditar = (r: any) => `${SITIO}/regalo.html?t=${r.token}`;
+function datosRegalo(b: any) {
   const paraNombre = String(b.paraNombre || "").trim().slice(0, 120);
-  const paraCorreo = String(b.paraCorreo || "").trim().slice(0, 160);
+  const paraCorreo = String(b.paraCorreo || "").trim().toLowerCase().slice(0, 160);
   const paraTel = String(b.paraTel || "").replace(/[^\d+]/g, "").slice(0, 20);
-  if (!paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
-  if (!paraCorreo && !paraTel) return json({ error: "Escribe el correo o el WhatsApp de quien recibe el regalo." }, 400);
-  if (paraCorreo && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
   const hoy = fecha(new Date());
   let entregar = String(b.entregarEn || hoy).slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entregar) || entregar < hoy) entregar = hoy;
+  return { paraNombre, paraCorreo, paraTel, entregar, mensaje: String(b.mensaje || "").trim().slice(0, 600) };
+}
+async function crearRegalo(u: any, b: any) {
+  const cid = String(b.cursoId || "");
+  const d = datosRegalo(b);
+  const invitado = !u;
+  const deNombre = String(b.deNombre || (u && u.nombre) || "").trim().slice(0, 120);
+  const deCorreo = String(b.deCorreo || (u && u.correo) || "").trim().toLowerCase().slice(0, 160);
+  if (!d.paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
+  if (invitado) {
+    if (!d.paraCorreo) return json({ error: "Escribe el correo de quien recibe el regalo." }, 400);
+    if (!deNombre) return json({ error: "Escribe tu nombre: así sabrá quién se lo regala." }, 400);
+    if (!CORREO_OK.test(deCorreo)) return json({ error: "Escribe tu correo: ahí te llega el comprobante y la liga para cambiar el regalo." }, 400);
+    const hace = new Date(Date.now() - 3600e3).toISOString();
+    const recientes = await db(`regalos?de_correo=eq.${encodeURIComponent(deCorreo)}&estado=eq.pendiente_pago&creado_en=gte.${hace}&select=id`);
+    if (recientes.length >= 6) return json({ error: "Ya tienes varios regalos esperando pago. Termina uno o escríbenos por WhatsApp." }, 429);
+  }
+  if (!d.paraCorreo && !d.paraTel) return json({ error: "Escribe el correo o el WhatsApp de quien recibe el regalo." }, 400);
+  if (d.paraCorreo && !CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
   const c = (await db(`cursos?id=eq.${encodeURIComponent(cid)}&select=id,nombre,precio,publicado`))[0];
   if (!c || c.publicado === false || !(Number(c.precio) > 0)) return json({ error: "Ese programa no está disponible para regalo." }, 409);
+  const cup = await cuponRegalo(cid, b.cupon);
+  if (cup.error) return json({ error: cup.error }, 400);
+  const precio = cup.codigo ? cup.precio : Number(c.precio);
   const reg = (await db("regalos", { metodo: "POST", prefer: "return=representation", cuerpo: {
-    comprador_id: u.id, curso_id: cid, para_nombre: paraNombre, para_correo: paraCorreo || null, para_tel: paraTel || null,
-    mensaje: String(b.mensaje || "").slice(0, 600), de_nombre: String(b.deNombre || u.nombre || "").slice(0, 120),
-    entregar_en: entregar, monto: Number(c.precio) } }))[0];
+    comprador_id: u ? u.id : null, curso_id: cid, para_nombre: d.paraNombre, para_correo: d.paraCorreo || null, para_tel: d.paraTel || null,
+    mensaje: d.mensaje, de_nombre: deNombre, de_correo: deCorreo || null,
+    entregar_en: d.entregar, monto: precio, cupon: cup.codigo || null, descuento: cup.codigo ? cup.descuento : null } }))[0];
   const base = String(b.urlRegreso || AULA).replace(/[?#].*$/, "");
+  const vuelta = invitado ? `t=${reg.token}` : `id=${reg.id}`;
   const pref = await mp("/checkout/preferences", "POST", {
-    items: [{ id: cid, title: `Regalo: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: Number(c.precio) }],
-    payer: { email: u.correo }, statement_descriptor: "INSTITUTO MARA",
-    metadata: { tipo: "regalo", regalo_id: reg.id, monto: Number(c.precio) }, external_reference: `regalo::${reg.id}`,
-    back_urls: { success: `${base}?regalo=exito&id=${reg.id}`, pending: `${base}?regalo=pendiente&id=${reg.id}`, failure: `${base}?regalo=fallo&id=${reg.id}` },
+    items: [{ id: cid, title: `Regalo: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: precio }],
+    payer: { email: deCorreo || undefined, name: deNombre || undefined }, statement_descriptor: "INSTITUTO MARA",
+    metadata: { tipo: "regalo", regalo_id: reg.id, monto: precio, cupon: cup.codigo || undefined }, external_reference: `regalo::${reg.id}`,
+    back_urls: { success: `${base}?regalo=exito&${vuelta}`, pending: `${base}?regalo=pendiente&${vuelta}`, failure: `${base}?regalo=fallo&${vuelta}` },
     auto_return: "approved", notification_url: WEBHOOK,
   });
-  return json({ init_point: pref.init_point, regaloId: reg.id });
+  return json({ init_point: pref.init_point, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
+}
+// Cupón de descuento al regalar: los mismos cupones de Administración → Cupones (y los de embajador).
+// No aplican los códigos de un regalo (REGALO-…) ni los que cubren el 100 % (becas y pilotos).
+async function cuponRegalo(cid: string, codigo: unknown): Promise<{ codigo?: string; precio?: number; descuento?: number; original?: number; error?: string }> {
+  const cod = String(codigo || "").trim().toUpperCase();
+  if (!cod) return {};
+  if (cod.startsWith("REGALO-")) return { error: "Ese código es de un regalo que alguien recibió; no sirve para comprar otro." };
+  const r = ((await db("rpc/aplicar_cupon", { metodo: "POST", cuerpo: { p_codigo: cod, p_curso_id: cid } })) || [])[0];
+  if (!r || !r.valido) return { error: (r && r.motivo) || "Ese cupón no existe o ya no está activo." };
+  if (!(Number(r.precio_final) > 0)) return { error: "Ese cupón cubre el 100 % y no aplica para regalos." };
+  return { codigo: cod, precio: Number(r.precio_final), descuento: Number(r.descuento), original: Number(r.precio_original) };
+}
+async function previaCuponRegalo(b: any) {
+  const cid = String(b.cursoId || "");
+  if (!cid) return json({ error: "Elige primero el programa que quieres regalar." }, 400);
+  const r = await cuponRegalo(cid, b.cupon);
+  if (r.error) return json({ error: r.error }, 400);
+  if (!r.codigo) return json({ error: "Escribe tu cupón." }, 400);
+  return json({ ok: true, cupon: r.codigo, original: r.original, descuento: r.descuento, precio: r.precio });
 }
 async function entregarRegalo(r: any) {
   const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre,nivel`))[0] || { nombre: r.curso_id };
@@ -220,6 +272,177 @@ async function entregarRegalo(r: any) {
   }
   await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "enviado", enviado_en: new Date().toISOString() } });
   return ok;
+}
+// Comprobante para quien regala, con la liga para cambiar el regalo. Se manda una sola vez, al confirmarse el pago.
+async function confirmarRegalo(r: any) {
+  if (r.confirmado_en) return;
+  if (r.cupon) {
+    await db("rpc/canjear_cupon", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_curso_id: r.curso_id, p_usuario: r.comprador_id || null } })
+      .catch((x) => console.error("cupón de regalo", x));
+  }
+  if (!r.de_correo) { await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } }); return; }
+  const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre`))[0] || { nombre: r.curso_id };
+  const hoy = fecha(new Date());
+  const cuando = r.entregar_en <= hoy ? "hoy mismo" : `el ${fechaLarga(r.entregar_en)}`;
+  await correo(r.de_correo, r.de_nombre || r.de_correo, `Tu regalo para ${r.para_nombre} está pagado`,
+    plantilla(`¡Gracias, ${e(r.de_nombre || "")}! Tu regalo está listo`,
+      `<p style="font-size:16px;line-height:1.6">Regalaste <b>${e(c.nombre)}</b> a <b>${e(r.para_nombre)}</b>. Le llega ${e(cuando)} a <b>${e(r.para_correo || r.para_tel || "")}</b>, con tu mensaje y su código para activarlo.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Total pagado: <b>${pesos(Number(r.monto || 0))}</b>${r.cupon ? ` (con el cupón ${e(r.cupon)})` : ""}.</p>` +
+      `<p style="font-size:15px;line-height:1.6">¿Te equivocaste en el correo o quieres cambiar el mensaje o la fecha? Usa este botón mientras tu amigo no lo active.</p>`,
+      { texto: "Ver o cambiar mi regalo", url: ligaEditar(r) }));
+  await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } });
+}
+function pesos(n: number) { return "$" + Math.round(n).toLocaleString("en-US"); }
+const TOKEN_OK = /^[0-9a-f-]{36}$/i;
+async function regaloPorToken(t: string) {
+  if (!TOKEN_OK.test(t)) return null;
+  return (await db(`regalos?token=eq.${t}&select=*`))[0] || null;
+}
+function regaloPublico(r: any, curso: any) {
+  return { programa: curso ? curso.nombre : r.curso_id, cursoId: r.curso_id, paraNombre: r.para_nombre, paraCorreo: r.para_correo,
+    mensaje: r.mensaje || "", entregarEn: r.entregar_en, llegaHoy: r.entregar_en <= fecha(new Date()), deNombre: r.de_nombre, monto: Number(r.monto || 0), estado: r.estado,
+    editable: ["pendiente_pago", "pagado", "enviado"].indexOf(r.estado) >= 0 };
+}
+async function verRegalo(b: any) {
+  const r = await regaloPorToken(String(b.t || ""));
+  if (!r) return json({ error: "No encontramos ese regalo. Revisa la liga de tu correo." }, 404);
+  const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre`))[0];
+  return json({ regalo: regaloPublico(r, c) });
+}
+async function editarRegalo(b: any) {
+  const r = await regaloPorToken(String(b.t || ""));
+  if (!r) return json({ error: "No encontramos ese regalo. Revisa la liga de tu correo." }, 404);
+  if (r.estado === "canjeado") return json({ error: "Tu amigo ya activó el regalo; ya no se puede cambiar." }, 409);
+  if (r.estado === "cancelado") return json({ error: "Este regalo está cancelado." }, 409);
+  const d = datosRegalo(b);
+  if (!d.paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
+  if (!CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
+  const correoCambio = d.paraCorreo !== String(r.para_correo || "").toLowerCase();
+  const cambios: any = { para_nombre: d.paraNombre, para_correo: d.paraCorreo, mensaje: d.mensaje, actualizado_en: new Date().toISOString() };
+  // La fecha solo se mueve si todavía no se entrega.
+  if (r.estado !== "enviado") cambios.entregar_en = d.entregar;
+  await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: cambios });
+  const n = { ...r, ...cambios };
+  let reenviado = false;
+  // Si ya se había entregado y cambió el correo (o lo pide), se vuelve a mandar al correo nuevo.
+  if (r.estado === "enviado" && (correoCambio || b.reenviar)) { await entregarRegalo(n); reenviado = true; }
+  const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre`))[0];
+  return json({ ok: true, reenviado, regalo: regaloPublico(n, c) });
+}
+
+// ---------------------------------------------------------------- embajadores
+// Cualquier persona se registra gratis y recibe un código: quien compra con él tiene un descuento
+// y el embajador gana una comisión (ajustes). La venta la registra la base en canjear_cupon.
+// El embajador entra a su panel con una liga privada (?t=token); no necesita cuenta.
+const ligaPanelEmb = (t: string) => `${SITIO}/embajador.html?t=${t}`;
+const ligaVentaEmb = (cod: string) => `${SITIO}/?cupon=${encodeURIComponent(cod)}`;
+async function reglasEmb() {
+  const a = (await db("ajustes?id=eq.true&select=embajador_comision_pct,embajador_descuento_pct,embajador_dias_espera,embajador_minimo"))[0] || {};
+  return { comision: Number(a.embajador_comision_pct ?? 20), descuento: Number(a.embajador_descuento_pct ?? 10),
+    dias: Number(a.embajador_dias_espera ?? 15), minimo: Number(a.embajador_minimo ?? 300) };
+}
+function baseCodigo(nombre: string) {
+  const n = String(nombre).normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace(/[^A-Z ]/g, " ").trim().split(/\s+/)[0] || "MARA";
+  return n.slice(0, 8);
+}
+async function correoBienvenidaEmb(emb: any, r: any) {
+  await correo(emb.correo, emb.nombre, `Bienvenido al programa de embajadores, ${emb.nombre.split(" ")[0]}`,
+    plantilla(`¡Ya eres embajador de Instituto Mara!`,
+      `<p style="font-size:16px;line-height:1.6">Tu código es <b style="font-size:20px;letter-spacing:1px">${e(emb.codigo)}</b>.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Quien compre un curso o diplomado con tu código tiene <b>${r.descuento} % de descuento</b>, y tú ganas <b>${r.comision} %</b> de lo que pague (sin IVA). También cuenta si lo usan para regalar un curso.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Comparte esta liga; el descuento se aplica solo:<br><a href="${ligaVentaEmb(emb.codigo)}">${ligaVentaEmb(emb.codigo)}</a></p>` +
+      `<p style="font-size:15px;line-height:1.6">Tus comisiones quedan disponibles ${r.dias} días después de cada venta y te las depositamos al juntar ${pesos(r.minimo)}. En tu panel ves tus ventas y registras tu cuenta para el depósito.</p>`,
+      { texto: "Abrir mi panel de embajador", url: ligaPanelEmb(emb.token) }));
+}
+async function altaEmbajador(b: any) {
+  const nombre = String(b.nombre || "").trim().replace(/\s+/g, " ").slice(0, 120);
+  const correoE = String(b.correo || "").trim().toLowerCase().slice(0, 160);
+  if (b.web) return json({ ok: true });                       // trampa para robots
+  if (nombre.length < 3) return json({ error: "Escribe tu nombre completo." }, 400);
+  if (!CORREO_OK.test(correoE)) return json({ error: "Revisa tu correo: ahí te llega tu código." }, 400);
+  if (!b.acepto) return json({ error: "Para continuar, acepta las reglas del programa." }, 400);
+  const r = await reglasEmb();
+  const ya = (await db(`embajadores?correo=ilike.${encodeURIComponent(correoE)}&select=*`))[0];
+  if (ya) { await correoBienvenidaEmb(ya, r).catch((x) => console.error(x)); return json({ ok: true, existente: true }); }
+  const base = baseCodigo(nombre);
+  let codigo = "";
+  for (let i = 0; i < 12 && !codigo; i++) {
+    const cand = base + (10 + Math.floor(Math.random() * 90));
+    const libre = (await db(`cupones?codigo=eq.${cand}&select=codigo`)).length === 0;
+    if (libre) codigo = cand;
+  }
+  if (!codigo) return json({ error: "No pudimos generar tu código. Intenta de nuevo." }, 500);
+  await db("cupones", { metodo: "POST", prefer: "return=minimal", cuerpo: {
+    codigo, descripcion: `Embajador: ${nombre}`, tipo: "porcentaje", valor: r.descuento } });
+  const emb = (await db("embajadores", { metodo: "POST", prefer: "return=representation", cuerpo: {
+    nombre, correo: correoE, telefono: String(b.telefono || "").replace(/[^\d+ ]/g, "").slice(0, 20) || null,
+    pais: String(b.pais || "").slice(0, 60) || null, ciudad: String(b.ciudad || "").slice(0, 80) || null,
+    como_promueve: String(b.como || "").slice(0, 300) || null, codigo } }))[0];
+  await correoBienvenidaEmb(emb, r).catch((x) => console.error(x));
+  // Aviso a administración
+  await avisarAdmins(`Nuevo embajador: ${nombre} (${codigo})`,
+    plantilla("Nuevo embajador", `<p>${e(nombre)} · ${e(correoE)} · ${e(emb.telefono || "")}<br>${e(emb.ciudad || "")} ${e(emb.pais || "")}<br>Cómo promueve: ${e(emb.como_promueve || "—")}</p><p>Código: <b>${e(codigo)}</b></p>`)).catch(() => null);
+  return json({ ok: true, token: emb.token, codigo });
+}
+// Solicitud para asesor comercial de empresas (mismo esquema que los operadores). La revisa administración.
+async function solicitudAsesor(b: any) {
+  if (b.web) return json({ ok: true });
+  const nombre = String(b.nombre || "").trim().replace(/\s+/g, " ").slice(0, 120);
+  const correoA = String(b.correo || "").trim().toLowerCase().slice(0, 160);
+  const tel = String(b.telefono || "").replace(/[^\d+ ]/g, "").slice(0, 20);
+  if (nombre.length < 3) return json({ error: "Escribe tu nombre completo." }, 400);
+  if (!CORREO_OK.test(correoA)) return json({ error: "Revisa tu correo." }, 400);
+  if (tel.replace(/\D/g, "").length < 10) return json({ error: "Escribe tu teléfono a 10 dígitos: te llamamos para platicar." }, 400);
+  const hace = new Date(Date.now() - 86400e3).toISOString();
+  const ya = await db(`asesor_solicitudes?correo=eq.${encodeURIComponent(correoA)}&creado_en=gte.${hace}&select=id`);
+  if (ya.length) return json({ ok: true, repetida: true });
+  const sol = (await db("asesor_solicitudes", { metodo: "POST", prefer: "return=representation", cuerpo: {
+    nombre, correo: correoA, telefono: tel, ciudad: String(b.ciudad || "").slice(0, 120) || null,
+    experiencia: String(b.experiencia || "").slice(0, 600) || null, disponibilidad: String(b.disponibilidad || "").slice(0, 60) || null } }))[0];
+  await avisarAdmins(`Nueva solicitud de asesor comercial: ${nombre}`,
+    plantilla("Solicitud de asesor comercial", `<p><b>${e(nombre)}</b> · ${e(correoA)} · ${e(tel)}<br>${e(sol.ciudad || "")}<br>Disponibilidad: ${e(sol.disponibilidad || "—")}</p><p>Experiencia: ${e(sol.experiencia || "—")}</p><p>Revísala en Administración → Embajadores.</p>`)).catch(() => null);
+  await correo(correoA, nombre, "Recibimos tu solicitud de asesor comercial",
+    plantilla(`Gracias, ${e(nombre.split(" ")[0])}`,
+      `<p style="font-size:15px;line-height:1.6">Recibimos tu solicitud para vender el plan de capacitación de Instituto Mara a empresas. Te llamamos en menos de 2 días hábiles para una plática corta.</p>` +
+      `<p style="font-size:15px;line-height:1.6">Mientras, si también quieres recomendar cursos a personas, puedes registrarte como embajador con el mismo correo.</p>`,
+      { texto: "Ver el programa", url: `${SITIO}/embajadores.html` })).catch(() => null);
+  return json({ ok: true });
+}
+async function embPorToken(t: string) {
+  if (!TOKEN_OK.test(t)) return null;
+  return (await db(`embajadores?token=eq.${t}&select=*`))[0] || null;
+}
+async function panelEmbajador(b: any) {
+  const emb = await embPorToken(String(b.t || ""));
+  if (!emb) return json({ error: "No encontramos tu panel. Abre la liga del correo de bienvenida." }, 404);
+  const r = await reglasEmb();
+  const ventas = await db(`embajador_ventas?embajador_id=eq.${emb.id}&select=creado_en,curso_id,tipo,precio_pagado,comision,estado,disponible_en&order=creado_en.desc&limit=200`);
+  const ids = [...new Set(ventas.map((v: any) => v.curso_id).filter(Boolean))];
+  const cursos = ids.length ? await db(`cursos?id=in.(${ids.map((x) => `"${x}"`).join(",")})&select=id,nombre`) : [];
+  const nom: Record<string, string> = {}; cursos.forEach((c: any) => nom[c.id] = c.nombre);
+  const hoy = fecha(new Date());
+  let espera = 0, disponible = 0, pagado = 0;
+  const lista = ventas.map((v: any) => {
+    const est = v.estado === "pendiente" ? (v.disponible_en <= hoy ? "disponible" : "en_espera") : v.estado;
+    if (est === "en_espera") espera += Number(v.comision); else if (est === "disponible") disponible += Number(v.comision); else if (est === "pagada") pagado += Number(v.comision);
+    return { fecha: String(v.creado_en).slice(0, 10), programa: nom[v.curso_id] || v.curso_id, tipo: v.tipo, pagado: Number(v.precio_pagado), comision: Number(v.comision), estado: est, disponibleEn: v.disponible_en };
+  });
+  const clabe = String(emb.clabe || "");
+  return json({ embajador: { nombre: emb.nombre, codigo: emb.codigo, estado: emb.estado, liga: ligaVentaEmb(emb.codigo),
+      titular: emb.titular || "", banco: emb.banco || "", clabe: clabe ? "•••• " + clabe.slice(-4) : "" },
+    ventas: lista, totales: { ventas: lista.filter((v: any) => v.estado !== "cancelada").length, espera, disponible, pagado }, reglas: r });
+}
+async function datosEmbajador(b: any) {
+  const emb = await embPorToken(String(b.t || ""));
+  if (!emb) return json({ error: "No encontramos tu panel." }, 404);
+  const clabe = String(b.clabe || "").replace(/\D/g, "");
+  const titular = String(b.titular || "").trim().slice(0, 120), banco = String(b.banco || "").trim().slice(0, 60);
+  if (!titular || !banco) return json({ error: "Escribe el titular y el banco." }, 400);
+  if (clabe.length !== 18) return json({ error: "La CLABE tiene 18 dígitos." }, 400);
+  await db(`embajadores?id=eq.${emb.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { titular, banco, clabe } });
+  if (emb.clabe && emb.clabe !== clabe) await avisarAdmins(`Embajador ${emb.codigo} cambió su CLABE`,
+    plantilla("Cambio de cuenta de embajador", `<p>${e(emb.nombre)} (${e(emb.codigo)}) cambió su cuenta a ${e(banco)} •••• ${e(clabe.slice(-4))}.</p>`)).catch(() => null);
+  return json({ ok: true });
 }
 
 // ---------------------------------------------------------------- recompra
@@ -1125,11 +1348,20 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   try {
     const b = await req.json().catch(() => ({}));
+    // Regalo sin cuenta: acciones públicas (el pago y el token privado hacen de candado).
+    if (b.accion === "regalo_invitado") return await crearRegalo(null, b);
+    if (b.accion === "regalo_ver") return await verRegalo(b);
+    if (b.accion === "regalo_editar") return await editarRegalo(b);
+    if (b.accion === "regalo_cupon") return await previaCuponRegalo(b);
+    if (b.accion === "embajador_alta") return await altaEmbajador(b);
+    if (b.accion === "embajador_panel") return await panelEmbajador(b);
+    if (b.accion === "embajador_datos") return await datosEmbajador(b);
+    if (b.accion === "asesor_solicitud") return await solicitudAsesor(b);
     const u = await usuarioDe(req);
     if (!u) return json({ error: "Inicia sesión para continuar." }, 401);
     if (u.servicio) {
       if (b.accion === "diaria") return await diaria();
-      if (b.accion === "entregar") { const r = (await db(`regalos?id=eq.${b.regaloId}&select=*`))[0]; if (r && r.estado === "pagado" && r.entregar_en <= fecha(new Date())) await entregarRegalo(r); return json({ ok: true }); }
+      if (b.accion === "entregar") { const r = (await db(`regalos?id=eq.${b.regaloId}&select=*`))[0]; if (r && r.estado === "pagado") { await confirmarRegalo(r).catch((x) => console.error("confirmar regalo", x)); if (r.entregar_en <= fecha(new Date())) await entregarRegalo(r); } return json({ ok: true }); }
       if (b.accion === "empresa_pagada") return json({ resultado: await activarCompraEmpresa(String(b.compraId), String(b.pagoId), Number(b.monto)) });
       if (b.accion === "preapproval") { await aplicarPreapproval(await mp(`/preapproval/${b.id}`)); return json({ ok: true }); }
       if (b.accion === "plan_pagado") return json({ resultado: await planPagado(b) });

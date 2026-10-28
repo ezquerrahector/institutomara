@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instituto Mara · Educación en línea | Cursos desde tu celular</title>
-<meta name="description" content="Escuela digital mexicana. Cursos y diplomados en línea: inglés, Excel, inteligencia artificial por profesión, tanatología, NOM-035, cuidado del adulto mayor y más, con constancia verificable. Estudia desde tu celular, a tu ritmo, desde cualquier estado del país.">
+<meta name="description" content="Escuela 100% en línea. Cursos y diplomados en línea: inglés, Excel, inteligencia artificial por profesión, tanatología, NOM-035, cuidado del adulto mayor y más, con constancia verificable. Estudia desde tu celular, a tu ritmo, desde cualquier estado del país.">
 <meta property="og:title" content="Instituto Mara · Educación en línea">
 <meta property="og:description" content="Aprende hoy. Abre tu mundo. Cursos en línea con constancia verificable, desde tu celular.">
 <meta property="og:type" content="website">
@@ -306,7 +306,9 @@ footer a:hover{color:#fff}
 @media(max-width:900px){.vitrina{margin-top:10px}}
 @media(max-width:640px){.vitrina{grid-template-columns:1fr 1fr;gap:10px}.vit-top{min-height:96px;padding:12px}.vit-top b{font-size:14px}.hero-busca .btn{padding:12px 16px}}
 .explorar{padding-bottom:30px}
-.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:12px;margin-bottom:40px}
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:40px}
+@media(max-width:900px){.areas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.areas{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.area{padding:14px}}
 .area{border:1.5px solid var(--linea);background:#fff;border-radius:18px;padding:18px;text-align:left;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
 .area:hover{border-color:var(--morado);transform:translateY(-2px)}
 .area .ico{font-size:28px}
@@ -381,12 +383,13 @@ footer a:hover{color:#fff}
 @media(max-width:700px){.regalo-caja{flex-direction:column-reverse;align-items:flex-start;padding:28px}.regalo-ico{font-size:64px}}
 .menu .menu-explorar{font-weight:800;color:var(--morado)}
 </style>
+<script src="meta-pixel.js?v=20261027a"></script>
 </head>
 <body>
 
 <!-- ============ AVISO ============ -->
 <div class="barra-aviso">
-  <strong>🏅 Constancia con folio y QR verificable</strong> · agrégala a tu CV y a LinkedIn con un clic
+  <strong>Constancia con folio y QR verificable</strong> · estudia desde tu celular, a tu ritmo
 </div>
 
 <!-- ============ HEADER ============ -->
@@ -401,65 +404,119 @@ footer a:hover{color:#fff}
     </a>
     <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="menu" id="menu">
-      <a href="#explorar" class="menu-explorar">Explorar programas</a>
+      <a href="#explorar" class="menu-explorar">Programas</a>
       <a href="#membresia">Membresía</a>
-      <a href="#regalar">Regalar</a>
-      <a href="#empresas">Empresas</a>
-      <a href="#como">Cómo funciona</a>
+      <a href="#empresas">Para empresas</a>
+      <a href="#regalar" onclick="abrirRegalo();return false">Regalar</a>
       <a href="#preguntas">Preguntas</a>
       <a href="../plataforma/index.html" class="btn btn-mor">Ingresar</a>
     </nav>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<div class="hero">
+<!-- ============ HERO: dos entradas ============ -->
+<div class="hero hero2">
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">Cursos y diplomados en línea · Constancia con folio</div>
-        <h1>¿Qué quieres aprender hoy?</h1>
-        <p class="lead">Psicología, idiomas, Excel, inteligencia artificial, recursos humanos, imagen personal y más. Estudia desde tu celular, a tu ritmo, y obtén tu constancia al terminar.</p>
+    <div class="h2-cab">
+      <div class="eyebrow">Escuela 100% en línea · Estudia desde cualquier lugar</div>
+      <h1>Aprende en línea, <span>a tu ritmo y con constancia</span></h1>
+      <p class="lead">Cursos y diplomados para crecer en lo personal y en tu trabajo. ¿Tienes empresa? También capacitamos a todo tu equipo.</p>
+    </div>
+    <div class="puertas">
+      <article class="puerta puerta-ti" aria-labelledby="pt-ti">
+        <div class="pu-tag">Para ti</div>
+        <h2 id="pt-ti">Aprende algo nuevo esta semana</h2>
+        <p><span id="hero-n">92</span> cursos y diplomados en 11 áreas. Pagas una vez y tienes 12 meses para terminar.</p>
         <form class="hero-busca" id="hero-busca" role="search" onsubmit="return false">
-          <input type="search" id="hero-q" placeholder="Busca: psicología, inglés, Excel, duelo, ventas…" aria-label="Buscar un curso o diplomado" autocomplete="off">
+          <input type="search" id="hero-q" placeholder="¿Qué quieres aprender?" aria-label="Buscar un curso o diplomado" autocomplete="off">
           <button type="submit" class="btn btn-mor">Buscar</button>
         </form>
+        <div class="hero-pop-tit">Explora por área</div>
         <div class="hero-pop" id="hero-pop"></div>
+        <div class="pu-precio">Cursos desde <b>$390</b> · o todo el catálogo desde <b>$249 al mes</b></div>
         <div class="hero-cta">
-          <a href="#explorar" class="btn btn-mor btn-grande" id="hero-ver">Ver todos los programas →</a>
-          <a href="#membresia" class="btn btn-linea btn-grande" id="hero-mem">Todo incluido desde $249/mes</a>
+          <a href="#explorar" class="btn btn-mor" id="hero-ver">Ver programas →</a>
+          <a href="#membresia" class="btn btn-linea" id="hero-mem">Todo incluido desde $249/mes</a>
         </div>
-      </div>
-
-      <div class="vitrina" id="vitrina" aria-label="Programas nuevos"></div>
+      </article>
+      <article class="puerta puerta-emp" aria-labelledby="pt-emp">
+        <div class="pu-tag">Para tu empresa</div>
+        <h2 id="pt-emp">Somos el área de capacitación de tu empresa</h2>
+        <ul class="pu-lista">
+          <li>Armamos el plan de capacitación para tu equipo</li>
+          <li>Tu gente estudia desde el celular, sin descuidar el trabajo</li>
+          <li>Ves el avance en un panel y cada quien recibe su constancia, con tu logo</li>
+        </ul>
+        <div class="pu-precio">Un solo plan para todo el equipo, desde <b id="hero-emp-precio">$1,490 al mes</b> para hasta 5 personas</div>
+        <div class="hero-cta">
+          <button type="button" class="btn btn-blanco" onclick="abrirPruebaEmp()">Prueba 15 días sin costo</button>
+          <a href="#empresas" class="btn btn-linea-claro">Ver planes</a>
+        </div>
+      </article>
     </div>
-
+    <button type="button" class="pu-regalo" onclick="abrirRegalo()">
+      <span class="pu-regalo-ico" aria-hidden="true">🎁</span>
+      <span><b>¿Buscas un regalo?</b> Regala un curso en 2 minutos, sin crear cuenta. Le llega por correo con tu mensaje.</span>
+      <span class="pu-regalo-ir">Regalar →</span>
+    </button>
+    <div class="vitrina" id="vitrina" hidden></div>
     <div class="confianza">
       <div class="conf-grid">
-        <div class="conf">
-          <div class="ico ico-mor">📚</div>
-          <div><b>Por bloques</b><span>Contenido claro y organizado. Avanzas de un bloque al siguiente.</span></div>
-        </div>
-        <div class="conf">
-          <div class="ico ico-tur">🕐</div>
-          <div><b>A tu ritmo, 24/7</b><span>Tú decides cuándo y cómo avanzar. La plataforma nunca cierra.</span></div>
-        </div>
-        <div class="conf">
-          <div class="ico ico-lila">🎓</div>
-          <div><b>Constancia propia</b><span>Al aprobar recibes tu constancia con folio de Instituto Mara.</span></div>
-        </div>
+        <div class="conf"><div class="ico ico-mor">📱</div><div><b>Desde tu celular, 24/7</b><span>Lecciones cortas con ejercicios. Avanzas cuando puedes.</span></div></div>
+        <div class="conf"><div class="ico ico-tur">🎓</div><div><b>Constancia verificable</b><span>Con folio y código QR al aprobar cada programa.</span></div></div>
+        <div class="conf"><div class="ico ico-lila">🤝</div><div><b>Te atiende una persona</b><span>Por WhatsApp, de lunes a sábado. Garantía de 7 días.</span></div></div>
       </div>
     </div>
   </div>
 </div>
+<style>
+.hero2{padding:56px 0 64px}
+.h2-cab{text-align:center;max-width:780px;margin:0 auto 34px}
+.h2-cab h1{font-size:clamp(32px,4.6vw,50px)}
+.h2-cab h1 span{color:var(--morado)}
+.hero2 .h2-cab p.lead{margin:14px auto 0;max-width:620px;font-size:19px}
+.puertas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+.puerta{min-width:0}
+.menu a.btn-mor,.menu a.btn-mor:hover{color:#fff}
+.vitrina[hidden]{display:none}
+.rutas.corto>:nth-child(n+4){display:none}
+.puerta{border-radius:26px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.puerta h2{font-size:clamp(24px,2.6vw,30px);margin:0}
+.puerta p{color:var(--gris);margin:0}
+.puerta .hero-cta{margin-top:auto;padding-top:8px}
+.puerta-ti{background:#fff;border:1.5px solid var(--lila);box-shadow:var(--sombra)}
+.puerta-ti .hero-busca{margin:4px 0 0;max-width:none}
+.puerta-ti .hero-pop{margin:0}
+.puerta-emp{background:linear-gradient(140deg,#2E1065 0%,#5B21B6 100%);color:#fff}
+.puerta-emp h2{color:#fff}
+.pu-tag{align-self:flex-start;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--lavanda);color:var(--morado)}
+.puerta-emp .pu-tag{background:rgba(255,255,255,.14);color:#DDD6FE}
+.pu-lista{list-style:none;display:grid;gap:9px;margin:2px 0}
+.pu-lista li{padding-left:28px;position:relative;color:#EDE9FE;line-height:1.5}
+.pu-lista li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#14B8A6;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.pu-precio{font-size:15px;color:var(--gris)}
+.pu-precio b{color:var(--tinta)}
+.puerta-emp .pu-precio{color:#DDD6FE}.puerta-emp .pu-precio b{color:#fff}
+.btn-blanco{background:#fff;color:var(--morado)}
+.btn-blanco:hover{background:var(--lavanda)}
+.btn-linea-claro{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)}
+.btn-linea-claro:hover{box-shadow:inset 0 0 0 2px #fff}
+.pu-regalo{margin-top:18px;width:100%;display:flex;align-items:center;gap:16px;text-align:left;border:1.5px dashed var(--lila);background:var(--nube);border-radius:18px;padding:16px 22px;font:inherit;font-size:15.5px;color:var(--texto);cursor:pointer}
+.pu-regalo:hover{border-color:var(--morado);background:var(--lavanda)}
+.pu-regalo-ico{font-size:30px}
+.pu-regalo-ir{margin-left:auto;font-weight:700;color:var(--morado);white-space:nowrap}
+.hero2 .confianza{margin-top:26px}
+@media(max-width:860px){.puertas{grid-template-columns:minmax(0,1fr);gap:16px}.puerta{padding:22px}.hero2{padding:26px 0 40px}.h2-cab{margin-bottom:18px}.hero2 .h2-cab p.lead{font-size:16.5px}.puerta-ti .hero-pop button:nth-child(n+5){display:none}.puerta .hero-cta .btn{flex:1 1 auto}.pu-regalo{flex-wrap:wrap;padding:14px 16px}.pu-regalo-ir{margin-left:46px}}
+#filas-area .fila-area:not(:first-child){display:none}
+</style>
 
 <!-- ============ EXPLORAR POR ÁREA ============ -->
 <section id="explorar" class="explorar">
   <div class="wrap">
     <div class="sec-head centro">
-      <div class="eyebrow">Oferta educativa</div>
-      <h2>Explora por área</h2>
-      <p>Elige un área y encuentra el curso o diplomado para lo que quieres lograr.</p>
+      <div class="eyebrow">Para ti</div>
+      <h2>Encuentra tu curso o diplomado</h2>
+      <p>Elige un área o busca por nombre. Todos incluyen constancia con folio y 12 meses para terminar.</p>
     </div>
     <div class="areas" id="areas"></div>
     <div id="filas-area"></div>
@@ -467,40 +524,40 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- ============ CURSOS ============ -->
-<section id="cursos">
+<section id="cursos" class="cursos-sec">
   <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Oferta educativa</div>
-      <h2>Cursos y diplomados para crecer en tu trabajo</h2>
-      <p>Lecciones cortas con ejercicios interactivos, evaluación por módulo y constancia con folio y QR al terminar. Todo en línea, desde tu celular y a tu ritmo.</p>
+    <div hidden aria-hidden="true">
+      <div class="cifras" id="cifras"><div><b id="cf-total">73</b></div><div><b id="cf-dipl">17</b></div></div>
+      <button type="button" id="dest-ant"></button><button type="button" id="dest-sig"></button>
+      <div class="dest" id="dest"></div><div class="dest-puntos" id="dest-puntos"></div>
     </div>
 
-    <div class="cifras" id="cifras">
-      <div><b id="cf-total">73</b><span>programas</span></div>
-      <div><b id="cf-dipl">17</b><span>diplomados</span></div>
-      <div><b>Desde $390</b><span>pago único</span></div>
-      <div><b>12 meses</b><span>de acceso</span></div>
+    <div class="pestanas" role="tablist" aria-label="Qué quieres ver">
+      <button type="button" role="tab" id="tab-prog" aria-selected="true" aria-controls="panel-prog">Cursos y diplomados</button>
+      <button type="button" role="tab" id="tab-rutas" aria-selected="false" aria-controls="panel-rutas">Paquetes con descuento</button>
     </div>
-
-    <div class="dest-cab"><div><h3 class="sub-oferta">Programas destacados</h3>
-      <p class="sub-oferta-p">Diplomados y cursos con más demanda. Cambian cada vez que entras.</p></div>
-      <div class="dest-flechas"><button type="button" id="dest-ant" aria-label="Anterior">‹</button><button type="button" id="dest-sig" aria-label="Siguiente">›</button></div></div>
-    <div class="dest" id="dest" aria-roledescription="carrusel"></div>
-    <div class="dest-puntos" id="dest-puntos"></div>
-
-    <h3 class="sub-oferta" style="margin-top:56px">Rutas de aprendizaje</h3>
-    <p class="sub-oferta-p">Programas que se complementan, con precio especial por llevarlos juntos.</p>
-    <div class="rutas" id="rutas"></div>
-
-    <h3 class="sub-oferta" style="margin-top:56px">Todos los programas</h3>
-    <p class="sub-oferta-p">Busca por nombre o filtra por área.</p>
+    <div id="panel-prog" role="tabpanel" aria-labelledby="tab-prog">
+    <p class="sub-oferta-p">Filtra por área o busca por nombre.</p>
     <div class="explorador">
       <input type="search" id="of-buscar" placeholder="Buscar: inglés, Excel, duelo, contadores…" aria-label="Buscar curso">
-      <div class="chips" id="of-chips" role="tablist"></div>
+      <div class="chips" id="of-chips" role="tablist" aria-label="Área"></div>
+      <div class="chips temas" id="of-temas" aria-label="Tema" hidden></div>
+      <div class="of-filtros">
+        <label>Tipo<select id="of-tipo"><option value="">Cursos y diplomados</option><option value="curso">Solo cursos</option><option value="diplomado">Solo diplomados</option></select></label>
+        <label>Duración<select id="of-dur"><option value="">Cualquiera</option><option value="corto">Menos de 10 h</option><option value="medio">10 a 20 h</option><option value="largo">30 h o más</option></select></label>
+        <label>Nivel<select id="of-nivel"><option value="">Cualquiera</option><option value="desde_cero">Desde cero</option><option value="intermedio">Intermedio</option><option value="profesional">Para profesionales</option></select></label>
+        <button type="button" class="of-limpiar" id="of-limpiar" hidden>Quitar filtros</button>
+      </div>
       <p class="of-cuenta" id="of-cuenta"></p>
       <div class="of-grid" id="of-grid"></div>
       <div style="text-align:center;margin-top:18px"><button type="button" class="btn btn-linea" id="of-mas" hidden>Ver todos</button></div>
       <p class="of-vacio" id="of-vacio" hidden>No encontramos ese curso. <a href="https://wa.me/528120282120?text=Hola,%20busco%20un%20curso%20que%20no%20vi%20en%20Instituto%20Mara" target="_blank" rel="noopener">Dinos cuál buscas</a> y lo consideramos para la siguiente tanda.</p>
+    </div>
+
+    </div>
+    <div id="panel-rutas" role="tabpanel" aria-labelledby="tab-rutas" hidden>
+      <p class="sub-oferta-p">Un paquete es un grupo de 3 o 4 programas que se complementan, más barato que comprarlos por separado. Pagas una vez y tomas todos.</p>
+      <div class="rutas" id="rutas"></div>
     </div>
   </div>
 </section>
@@ -523,6 +580,45 @@ footer a:hover{color:#fff}
 .chips button[aria-selected=true]{background:var(--morado);border-color:var(--morado);color:#fff}
 .chips button small{opacity:.7;font-weight:500;margin-left:4px}
 .of-cuenta{font-size:14px;color:var(--gris);margin-bottom:12px}
+#of-mas[hidden]{display:none}
+.chips.temas[hidden]{display:none}
+.pestanas{display:flex;gap:6px;border-bottom:2px solid var(--linea);margin:0 0 16px}
+.pestanas button{border:0;background:none;font:inherit;font-weight:700;font-size:16px;color:var(--gris);padding:10px 14px;margin-bottom:-2px;border-bottom:3px solid transparent;cursor:pointer}
+.pestanas button[aria-selected=true]{color:var(--morado);border-bottom-color:var(--morado)}
+.hero-pop .extra{display:none}.hero-pop.todas .extra{display:inline-block}
+.hero-pop .mas{background:transparent;box-shadow:inset 0 0 0 1.5px var(--lila)}
+.hero-pop-tit{font-size:12.5px;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.area-tx{display:flex;flex-direction:column;gap:2px}
+.area .area-n{color:var(--morado);font-size:13px;font-weight:600}
+@media(max-width:620px){
+  .area{flex-direction:row;align-items:center;gap:10px;padding:12px}
+  .area .ico{font-size:22px;flex:none}
+  .area b{font-size:14px;overflow-wrap:anywhere;hyphens:auto}
+  .area-tx{min-width:0}
+  .area .area-d{display:none}
+  .hero-pop{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-22px;padding-right:22px}
+  .hero-pop button{flex:none}
+  .puerta-ti .hero-pop button:nth-child(n+5),.hero-pop .extra{display:inline-block}
+  .puerta-ti .hero-pop .mas{display:none!important}
+  .pu-regalo{flex-wrap:nowrap;gap:12px;padding:12px 14px;font-size:14px}
+  .pu-regalo-ico{font-size:24px}
+  .pu-regalo-ir{margin-left:0}
+  .confianza{padding:14px}
+  .conf-grid{gap:12px}
+  .conf span{font-size:13.5px}
+  .pestanas button{font-size:14.5px;padding:9px 8px}
+}
+.chips.temas{margin:0 0 8px;padding:10px 12px;background:var(--nube);border-radius:16px}
+.chips.temas button{font-size:13.5px;padding:6px 12px;background:#fff}
+.chips.temas button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.of-filtros{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin:6px 0 14px}
+.of-filtros label{display:flex;flex-direction:column;font-size:12.5px;font-weight:700;color:var(--gris);gap:3px}
+.of-filtros select{font:inherit;font-size:14.5px;padding:8px 10px;border:1.5px solid var(--linea);border-radius:10px;background:#fff;color:var(--tinta);min-width:150px}
+.of-limpiar{border:0;background:none;color:var(--morado);font:inherit;font-weight:700;font-size:14px;cursor:pointer;padding:8px 4px;text-decoration:underline}
+.of-etq{display:flex;gap:6px;flex-wrap:wrap;margin:-2px 0 8px}
+.of-etq span{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--nube);color:var(--gris)}
+.of-etq .nv-intermedio{background:#FEF3C7;color:#92400E}.of-etq .nv-profesional{background:#EDE9FE;color:var(--morado)}.of-etq .nv-desde_cero{background:#DCFCE7;color:#166534}
+@media(max-width:640px){.of-filtros label{flex:1 1 45%}.of-filtros select{min-width:0;width:100%}}
 .of-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:14px}
 .of-card{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
 .of-card .of-fam{font-size:12px;font-weight:700;color:var(--turquesa-osc);text-transform:uppercase;letter-spacing:.5px}
@@ -615,11 +711,23 @@ html,body{overflow-x:hidden}
   .fi-compra{position:sticky;bottom:10px;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.12);background:#fff}
   .fi-temario ol{padding-left:44px} .fi-temario details p{padding-left:14px}
 }
+/* Celular: ícono o número a la izquierda y texto a la derecha (no uno debajo del otro) */
+@media(max-width:700px){
+  .razones,.pasos{gap:20px}
+  .razon,.paso{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start;padding-top:0}
+  .razon .ico,.paso .n{grid-row:1 / span 2;width:44px;height:44px;font-size:20px;margin:0}
+  .razon h3,.paso h3{margin:2px 0 4px;font-size:17px}
+  .razon p,.paso p{font-size:15px}
+  .regalo-caja{flex-direction:column;padding:24px}
+  .regalo-ico{display:none}
+  .regalo-caja h2{font-size:1.6rem}
+}
 </style>
 
 <div class="ficha" id="ficha" hidden role="dialog" aria-modal="true" aria-labelledby="ficha-tit">
   <div class="ficha-panel"><button type="button" class="fi-cerrar" aria-label="Cerrar">✕</button><div id="ficha-cuerpo"></div></div>
 </div>
+<script src="../plataforma/taxonomia.js?v=20261026a"></script>
 <script>
 /* Catálogo de la página principal. La lista viene incluida aquí (para que cargue
    al instante) y, si hay conexión con el servidor, se actualizan precios y se
@@ -630,40 +738,69 @@ html,body{overflow-x:hidden}
   var RUTAS = [{"id":"r-asistente","nombre":"Ruta Asistente Administrativo","para":"Para conseguir o mejorar un trabajo de oficina, recepción o auxiliar administrativo.","precio":1990,"cursos":["c-office","c-excel-avanzado","c-atencion-ventas"],"horas":37},{"id":"r-emprende","nombre":"Ruta Emprende y Haz Crecer tu Negocio","para":"Para dueños de negocio, emprendedores y quienes venden por su cuenta.","precio":2990,"cursos":["c-finanzas-personales","d-contabilidad-resico","d-marketing-digital"],"horas":73},{"id":"r-lider","nombre":"Ruta Líder de Equipo y Recursos Humanos","para":"Para supervisores, jefes de área y personal de Recursos Humanos.","precio":2890,"cursos":["d-liderazgo","d-nom035","c-inteligencia-emocional"],"horas":66},{"id":"r-cuidador","nombre":"Ruta Cuidador y Acompañamiento","para":"Para cuidadores familiares y personas que trabajan cuidando o acompañando a otros.","precio":2990,"cursos":["d-adulto-mayor","c-pap","d-tanatologia"],"horas":66},{"id":"r-ingles","nombre":"Ruta Inglés Completo: de cero a intermedio alto (A1 → B2)","para":"Para empezar desde cero y llegar a desenvolverte con soltura en juntas, presentaciones, correos y entrevistas en inglés.","precio":2490,"cursos":["c-ingles","c-ingles-a2","c-ingles-b1","c-ingles-b2"],"horas":67},{"id":"r-poliglota","nombre":"Ruta Políglota Viajero: francés, italiano y portugués","para":"Para quien viaja, trabaja en turismo o simplemente quiere abrirse a tres idiomas cercanos al español.","precio":1990,"cursos":["c-frances-a1","c-italiano-a1","c-portugues-a1"],"horas":38},{"id":"r-educadores","nombre":"Ruta Educación, Crianza y Bienestar Infantil","para":"Para docentes, orientadores, madres, padres y cuidadores de niñas, niños y adolescentes.","precio":3190,"cursos":["d-neurodiversidad","d-infancia-adolescencia","c-pap"],"horas":65},{"id":"r-vende","nombre":"Ruta Vende en Línea y Haz Crecer tu Marca","para":"Para quien vende por WhatsApp, Mercado Libre o redes y quiere vender más con mejor imagen.","precio":2690,"cursos":["c-venta-en-linea","d-marketing-digital","c-canva","c-fotografia-producto"],"horas":55},{"id":"r-psicologia","nombre":"Ruta Psicología Clínica Basada en Evidencia","para":"Para psicólogos y estudiantes de los últimos semestres de psicología que quieren fortalecer su práctica clínica.","precio":4490,"cursos":["d-evaluacion-clinica","d-tcc","d-terapias-contextuales"],"horas":95},{"id":"r-comunicacion-persuasiva","nombre":"Ruta Comunicación, Persuasión y Servicio","color":"#0F766E","precio":3290,"para":"Para comunicar propuestas, manejar emociones y atender a clientes con claridad y respeto.","desc":"Practica primero la regulación emocional, después la argumentación ética y finalmente la atención al cliente.","cursos":["c-inteligencia-emocional","diplomado-persuasion-etica","c-atencion-ventas"],"suma":4070,"horas":45,"ahorro":780}];
   var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co';
   var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
-  var ORDEN = ['Todos','Diplomados','Psicología y salud','Desarrollo humano','Negocios y oficina','Idiomas','Tecnología e IA','IA para tu profesión'];
-  var AREAS = [
-    {k:'Psicología y salud', ico:'🧠', d:'Terapia, duelo, forense, infancia y bienestar'},
-    {k:'Desarrollo humano', ico:'✨', d:'Atracción, imagen, lenguaje corporal, liderazgo'},
-    {k:'Negocios y oficina', ico:'💼', d:'RH, contabilidad, marketing, Excel, ventas'},
-    {k:'Idiomas', ico:'🌎', d:'Inglés A1 a B2, francés, italiano, portugués, alemán'},
-    {k:'Tecnología e IA', ico:'🤖', d:'IA en el trabajo, Office, Power BI, ciberseguridad'},
-    {k:'IA para tu profesión', ico:'🧩', d:'28 cursos de IA por oficio y profesión'}];
+  window.IM = { oferta:function(){ return OFERTA; }, supa:SUPA, anon:ANON };
+  /* Clasificación única (plataforma/taxonomia.js): área → tema + nivel. La base manda cuando responde. */
+  function clasificar(){ OFERTA.forEach(function(c){ var x = TAXO.de({ id:c.id, area:c.area, tema:c.tema, dificultad:c.dificultad, a:c.a, familia:c.f }); c.a = x.area; c.t = x.tema; c.nv = x.nivel; }); }
+  clasificar();
+  var AREAS = TAXO.areasCon(OFERTA.map(function(c){ return { area:c.a, tema:c.t }; }));
+  /* Orden de áreas: por inscripciones reales (función pública «populares»); mientras carga, un orden de respaldo */
+  var POP = { area:{}, curso:{} }, RESPALDO = ['Idiomas','Psicología y terapia','Crecimiento personal','Tecnología e IA','IA para tu profesión','Comunicación e influencia','Liderazgo y RH','Ventas y marketing','Administración y finanzas','Cuidado, infancia y educación','Criminología y forense'];
+  function areasOrdenadas(){
+    var r = function(k){ var i = RESPALDO.indexOf(k); return i < 0 ? 99 : i; };
+    return AREAS.slice().sort(function(a, b){ return ((POP.area[b.k] || 0) - (POP.area[a.k] || 0)) || (r(a.k) - r(b.k)); });
+  }
+  fetch(SUPA + '/rest/v1/rpc/populares', { method:'POST', headers:{ apikey:ANON, Authorization:'Bearer ' + ANON, 'Content-Type':'application/json' }, body:'{}' })
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(l){ (l || []).forEach(function(x){ if(POP[x.tipo]) POP[x.tipo][x.clave] = Number(x.n) || 0; }); window.IM_POP = POP;
+      if(typeof pintarPortada === 'function'){ pintarPortada(); chips(); } }).catch(function(){});
   function areaDe(c){ return c.a || c.f; }
-  var filtro = 'Todos', texto = '', verTodo = false;
+  var filtro = 'Todos', tema = '', tipo = '', dur = '', nivel = '', texto = '', verTodo = false;
   function norm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
   function dinero(n){ return '$' + Number(n).toLocaleString('es-MX'); }
   function esc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-
+  /* ¿Pasa los filtros? (sin = filtro que se ignora, para contar opciones) */
+  function pasa(c, sin){
+    return (sin === 'area' || filtro === 'Todos' || areaDe(c) === filtro) &&
+      (sin === 'tema' || !tema || c.t === tema) &&
+      (sin === 'tipo' || !tipo || (tipo === 'diplomado') === (c.f === 'Diplomados')) &&
+      (sin === 'dur' || !dur || TAXO.duracion(c.h) === dur) &&
+      (sin === 'nivel' || !nivel || c.nv === nivel);
+  }
   function chips(){
-    var cuenta = {}; OFERTA.forEach(function(c){ cuenta[areaDe(c)] = (cuenta[areaDe(c)]||0) + 1; if(c.f === 'Diplomados') cuenta['Diplomados'] = (cuenta['Diplomados']||0) + 1; });
-    var cats = ORDEN.filter(function(k){ return k === 'Todos' || cuenta[k]; });
-    Object.keys(cuenta).forEach(function(k){ if(cats.indexOf(k) < 0) cats.push(k); });
+    var base = OFERTA.filter(function(c){ return pasa(c, 'area'); }), cuenta = {};
+    base.forEach(function(c){ cuenta[areaDe(c)] = (cuenta[areaDe(c)]||0) + 1; });
+    var cats = ['Todos'].concat(areasOrdenadas().map(function(a){ return a.k; }).filter(function(k){ return cuenta[k] || k === filtro; }));
     document.getElementById('of-chips').innerHTML = cats.map(function(k){
-      var n = k === 'Todos' ? OFERTA.length : cuenta[k];
+      var n = k === 'Todos' ? base.length : (cuenta[k] || 0);
       return '<button type="button" role="tab" aria-selected="'+(k===filtro)+'" data-k="'+esc(k)+'">'+esc(k)+'<small>'+n+'</small></button>';
     }).join('');
+    /* Segunda fila: temas del área elegida */
+    var caja = document.getElementById('of-temas'), area = AREAS.filter(function(a){ return a.k === filtro; })[0];
+    if(!area || area.temas.length < 2){ caja.hidden = true; caja.innerHTML = ''; }
+    else {
+      var bt = OFERTA.filter(function(c){ return pasa(c, 'tema'); }), ct = {};
+      bt.forEach(function(c){ ct[c.t] = (ct[c.t]||0) + 1; });
+      caja.hidden = false;
+      caja.innerHTML = '<button type="button" aria-pressed="'+(!tema)+'" data-t="">Todos los temas</button>' + area.temas.filter(function(t){ return ct[t] || t === tema; }).map(function(t){
+        return '<button type="button" aria-pressed="'+(t===tema)+'" data-t="'+esc(t)+'">'+esc(t)+'<small>'+(ct[t]||0)+'</small></button>'; }).join('');
+    }
+    [['of-chips','[aria-selected=true]'],['of-temas','[aria-pressed=true]']].forEach(function(x){ var c = document.getElementById(x[0]), on = c && c.querySelector(x[1]); if(on && c.scrollWidth > c.clientWidth) c.scrollLeft = Math.max(0, on.offsetLeft - c.offsetLeft - 16); });
+    var sel = function(id, v){ var e = document.getElementById(id); if(e) e.value = v; };
+    sel('of-tipo', tipo); sel('of-dur', dur); sel('of-nivel', nivel);
+    document.getElementById('of-limpiar').hidden = !(filtro !== 'Todos' || tema || tipo || dur || nivel || texto);
     document.getElementById('cf-total').textContent = OFERTA.length;
-    document.getElementById('cf-dipl').textContent = cuenta['Diplomados'] || 0;
+    document.getElementById('cf-dipl').textContent = OFERTA.filter(function(c){ return c.f === 'Diplomados'; }).length;
   }
   function pintar(){
     var q = norm(texto);
     var lista = OFERTA.filter(function(c){
-      return (filtro === 'Todos' || (filtro === 'Diplomados' ? c.f === 'Diplomados' : areaDe(c) === filtro)) && (!q || norm(c.n + ' ' + c.d + ' ' + c.f + ' ' + areaDe(c)).indexOf(q) >= 0);
+      return pasa(c) && (!q || norm(c.n + ' ' + c.d + ' ' + c.f + ' ' + areaDe(c) + ' ' + c.t).indexOf(q) >= 0);
     });
     document.getElementById('of-cuenta').textContent = lista.length === 1 ? '1 programa' : lista.length + ' programas';
     document.getElementById('of-vacio').hidden = lista.length > 0;
-    /* En «Todos» sin búsqueda se muestran primero los más buscados, para no alargar la página */
-    var total = lista.length, recortar = (filtro === 'Todos' && !q && !verTodo && total > 9);
+    /* Sin ningún filtro se muestran primero los más buscados, para no alargar la página */
+    var sinFiltro = filtro === 'Todos' && !tema && !tipo && !dur && !nivel;
+    var total = lista.length, recortar = (sinFiltro && !q && !verTodo && total > 9);
     if(recortar){
       var primero = ['c-ingles','c-excel-avanzado','c-finanzas-personales','c-ia','c-atencion-ventas','c-inteligencia-emocional','c-pap','c-office','c-ingles-a2'];
       lista = primero.map(function(id){ return OFERTA.filter(function(c){ return c.id === id; })[0]; }).filter(Boolean);
@@ -671,9 +808,10 @@ html,body{overflow-x:hidden}
     document.getElementById('of-mas').hidden = !recortar;
     document.getElementById('of-mas').textContent = 'Ver los ' + total + ' programas';
     document.getElementById('of-grid').innerHTML = lista.map(function(c){
-      return '<article class="of-card"><div class="of-fam">'+esc(c.f === 'Diplomados' ? 'Diplomado · ' + areaDe(c) : areaDe(c))+'</div>'+
+      return '<article class="of-card"><div class="of-fam">'+esc((c.f === 'Diplomados' ? 'Diplomado · ' : 'Curso · ') + (c.t || areaDe(c)))+'</div>'+
         '<h4><a href="#programa-'+esc(c.id)+'" class="of-tit">'+esc(c.n)+'</a></h4>'+
         '<p>'+esc(c.d)+'</p>'+
+        '<div class="of-etq"><span>'+esc(areaDe(c))+'</span><span class="nv-'+esc(c.nv)+'">'+esc(TAXO.NIVELES[c.nv] || '')+'</span></div>'+
         '<div class="of-links"><a href="#programa-'+esc(c.id)+'" class="of-ver">Ver temario</a>'+
         '<a href="../plataforma/index.html?muestra='+encodeURIComponent(c.id)+'" class="of-ver">Probar una lección gratis</a></div>'+
         '<div class="of-pie"><div><b>'+dinero(c.p)+'</b> <span>· '+c.h+' h</span></div>'+
@@ -728,19 +866,40 @@ html,body{overflow-x:hidden}
   pintarDestacados();
   document.getElementById('of-chips').addEventListener('click', function(e){
     var b = e.target.closest('button'); if(!b) return;
-    filtro = b.getAttribute('data-k'); chips(); pintar();
+    filtro = b.getAttribute('data-k'); tema = ''; verTodo = filtro !== 'Todos'; chips(); pintar();
   });
-  document.getElementById('of-buscar').addEventListener('input', function(e){ texto = e.target.value; pintar(); });
+  document.getElementById('of-temas').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    tema = b.getAttribute('data-t'); chips(); pintar();
+  });
+  ['of-tipo','of-dur','of-nivel'].forEach(function(id){ document.getElementById(id).addEventListener('change', function(e){
+    if(id === 'of-tipo') tipo = e.target.value; else if(id === 'of-dur') dur = e.target.value; else nivel = e.target.value;
+    verTodo = true; chips(); pintar(); }); });
+  document.getElementById('of-limpiar').addEventListener('click', function(){
+    filtro = 'Todos'; tema = tipo = dur = nivel = texto = ''; verTodo = false; document.getElementById('of-buscar').value = ''; chips(); pintar(); });
+  document.getElementById('of-buscar').addEventListener('input', function(e){ texto = e.target.value; chips(); pintar(); });
   document.getElementById('of-mas').addEventListener('click', function(){ verTodo = true; pintar(); });
   chips(); pintar();
 
   /* ---------- Rediseño: buscador del hero, vitrina, áreas, filas y membresía ---------- */
   var COLOR = {}; DESTACADOS.forEach(function(d){ COLOR[d.id] = d.color; });
-  var PALETA = {'Psicología y salud':'#9333EA','Desarrollo humano':'#BE185D','Negocios y oficina':'#0F766E','Idiomas':'#3730A3','Tecnología e IA':'#1D4ED8','IA para tu profesión':'#6D28D9'};
+  var PALETA = {'Psicología y salud':'#9333EA','Desarrollo humano':'#BE185D','Negocios y oficina':'#0F766E','Idiomas':'#3730A3','Tecnología e IA':'#1D4ED8','IA para tu profesión':'#6D28D9','Psicología y terapia':'#9333EA','Comunicación e influencia':'#BE185D','Crecimiento personal':'#059669','Liderazgo, RH y seguridad laboral':'#0F766E','Liderazgo y RH':'#0F766E','Administración y finanzas':'#4D7C0F','Ventas y marketing':'#EA580C','Criminología y forense':'#334155','Cuidado, infancia y educación':'#0891B2','Administración y contabilidad':'#4D7C0F'};
   function colorDe(c){ return COLOR[c.id] || PALETA[areaDe(c)] || '#6D28D9'; }
   function esNuevo(c){ return DESTACADOS.some(function(d){ return d.id === c.id && d.nuevo; }); }
-  function irAExplorador(f, q){
-    filtro = f || 'Todos'; texto = q || ''; verTodo = !!q || filtro !== 'Todos';
+  /* f: área (o «Diplomados»), q: texto, t: tema */
+  function verPestana(cual){
+    var r = cual === 'rutas';
+    document.getElementById('panel-prog').hidden = r; document.getElementById('panel-rutas').hidden = !r;
+    document.getElementById('tab-prog').setAttribute('aria-selected', String(!r)); document.getElementById('tab-rutas').setAttribute('aria-selected', String(r));
+  }
+  document.getElementById('tab-prog').onclick = function(){ verPestana('prog'); };
+  document.getElementById('tab-rutas').onclick = function(){ verPestana('rutas'); };
+  if(location.hash === '#rutas') setTimeout(function(){ verPestana('rutas'); document.getElementById('cursos').scrollIntoView(); }, 300);
+  function irAExplorador(f, q, t){
+    verPestana('prog');
+    tipo = ''; tema = t || ''; dur = ''; nivel = '';
+    if(f === 'Diplomados'){ tipo = 'diplomado'; f = 'Todos'; }
+    filtro = f || 'Todos'; texto = q || ''; verTodo = true;
     document.getElementById('of-buscar').value = texto; chips(); pintar();
     document.getElementById('of-buscar').scrollIntoView({ behavior:'smooth', block:'start' });
   }
@@ -752,11 +911,18 @@ html,body{overflow-x:hidden}
       '<div class="mini-pie"><strong data-precio="' + esc(c.id) + '">' + dinero(c.p) + '</strong><span>Ver temario ›</span></div></a>';
   }
   function pintarPortada(){
-    var pop = [['Psicología','Psicología y salud'],['Inglés','Idiomas'],['Excel',null,'excel'],['Inteligencia artificial','Tecnología e IA'],['Diplomados','Diplomados'],['Recursos humanos',null,'recursos humanos']];
-    document.getElementById('hero-pop').innerHTML = pop.map(function(p, i){ return '<button type="button" data-i="' + i + '">' + esc(p[0]) + '</button>'; }).join('');
-    document.getElementById('hero-pop').onclick = function(e){ var b = e.target.closest('button'); if(!b) return; var p = pop[+b.getAttribute('data-i')]; irAExplorador(p[1], p[2] || ''); };
+    var pop = areasOrdenadas().map(function(a){ return [a.k, a.k]; }).concat([['Diplomados','Diplomados']]);
+    /* Las 6 áreas más populares + Diplomados; el resto con «+ N áreas» (en celular, todas en una fila deslizable) */
+    var extra = Math.max(0, pop.length - 7), hp = document.getElementById('hero-pop');
+    pop = pop.slice(0, 6).concat(pop.slice(-1)).concat(pop.slice(6, -1));
+    hp.innerHTML = pop.map(function(p, i){ return '<button type="button" data-i="' + i + '"' + (i >= 7 ? ' class="extra"' : '') + '>' + esc(p[0]) + '</button>'; }).join('') +
+      (extra ? '<button type="button" class="mas" data-mas="1">+ ' + extra + ' áreas</button>' : '');
+    hp.onclick = function(e){ var b = e.target.closest('button'); if(!b) return;
+      if(b.hasAttribute('data-mas')){ hp.classList.add('todas'); b.remove(); return; }
+      var p = pop[+b.getAttribute('data-i')]; irAExplorador(p[1], ''); };
     document.getElementById('hero-busca').onsubmit = function(){ irAExplorador('Todos', document.getElementById('hero-q').value.trim()); return false; };
     document.getElementById('hero-ver').textContent = 'Ver los ' + OFERTA.length + ' programas →';
+    var hn = document.getElementById('hero-n'); if(hn) hn.textContent = OFERTA.length;
     var nuevos = pintarPortada._v || OFERTA.filter(esNuevo); if(nuevos.length < 4) nuevos = nuevos.concat(OFERTA.filter(function(c){ return c.f === 'Diplomados' && !esNuevo(c); }));
     for(var i = nuevos.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = nuevos[i]; nuevos[i] = nuevos[j]; nuevos[j] = t; }
     pintarPortada._v = nuevos;
@@ -766,9 +932,9 @@ html,body{overflow-x:hidden}
         '<div class="vit-pie"><span>' + c.h + ' horas</span><b data-precio="' + esc(c.id) + '">' + dinero(c.p) + '</b></div></a>';
     }).join('');
     var cuenta = {}; OFERTA.forEach(function(c){ cuenta[areaDe(c)] = (cuenta[areaDe(c)] || 0) + 1; });
-    document.getElementById('areas').innerHTML = AREAS.filter(function(a){ return cuenta[a.k]; }).map(function(a){
-      return '<button type="button" class="area" data-k="' + esc(a.k) + '"><span class="ico">' + a.ico + '</span><b>' + esc(a.k) + '</b><span>' + cuenta[a.k] + ' programas · ' + esc(a.d) + '</span></button>';
-    }).join('') + '<button type="button" class="area" data-k="Diplomados"><span class="ico">🎓</span><b>Diplomados</b><span>' + OFERTA.filter(function(c){ return c.f === 'Diplomados'; }).length + ' programas de 30 horas o más</span></button>';
+    document.getElementById('areas').innerHTML = areasOrdenadas().filter(function(a){ return cuenta[a.k]; }).map(function(a){
+      return '<button type="button" class="area" data-k="' + esc(a.k) + '"><span class="ico">' + a.ico + '</span><span class="area-tx"><b>' + esc(a.k) + '</b><span class="area-n">' + cuenta[a.k] + ' programas</span><span class="area-d">' + esc(a.d) + '</span></span></button>';
+    }).join('') + '<button type="button" class="area" data-k="Diplomados"><span class="ico">🎓</span><span class="area-tx"><b>Diplomados</b><span class="area-n">' + OFERTA.filter(function(c){ return c.f === 'Diplomados'; }).length + ' programas</span><span class="area-d">De 30 horas o más</span></span></button>';
     document.getElementById('areas').onclick = function(e){ var b = e.target.closest('.area'); if(b) irAExplorador(b.getAttribute('data-k')); };
     var filas = [['Diplomados nuevos', function(c){ return esNuevo(c) && c.f === 'Diplomados'; }, 'Diplomados']].concat(AREAS.map(function(a){ return [a.k, function(c){ return areaDe(c) === a.k; }, a.k]; }));
     document.getElementById('filas-area').innerHTML = filas.map(function(f, n){
@@ -826,7 +992,7 @@ html,body{overflow-x:hidden}
     if(String(d.telefono).replace(/\D/g,'').length < 10){ av.innerHTML = '<div class="emp-err">Escribe un teléfono de 10 dígitos.</div>'; return; }
     d.accion = 'solicitud'; b.disabled = true; b.textContent = 'Enviando…'; av.innerHTML = '';
     fetch(SUPA + '/functions/v1/prospectos', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer '+ANON }, body:JSON.stringify(d) })
-      .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); })
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; })
       .then(function(){ f.reset(); b.textContent = 'Enviado ✓'; av.innerHTML = '<div class="emp-ok">¡Listo! Te llamamos hoy para activar tu prueba.</div>'; })
       .catch(function(e){ b.disabled = false; b.textContent = 'Quiero mi prueba sin costo'; av.innerHTML = '<div class="emp-err">' + esc(e.message) + '</div>'; });
   };
@@ -848,13 +1014,14 @@ html,body{overflow-x:hidden}
   }
 
   /* Precios y publicación reales desde el servidor */
-  fetch(SUPA + '/rest/v1/cursos?select=id,precio,publicado', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
+  fetch(SUPA + '/rest/v1/cursos?select=id,precio,publicado,area,tema,dificultad', { headers:{ apikey:ANON, Authorization:'Bearer '+ANON } })
     .then(function(r){ return r.ok ? r.json() : []; })
     .then(function(filas){
       if(!filas || !filas.length) return;
       var m = {}; filas.forEach(function(f){ m[f.id] = f; });
       OFERTA = OFERTA.filter(function(c){ return !m[c.id] || m[c.id].publicado; });
-      OFERTA.forEach(function(c){ if(m[c.id] && m[c.id].precio != null) c.p = Number(m[c.id].precio); });
+      OFERTA.forEach(function(c){ if(m[c.id] && m[c.id].precio != null) c.p = Number(m[c.id].precio); if(m[c.id] && m[c.id].area){ c.area = m[c.id].area; c.tema = m[c.id].tema; c.dificultad = m[c.id].dificultad; } });
+      clasificar(); AREAS = TAXO.areasCon(OFERTA.map(function(c){ return { area:c.a, tema:c.t }; }));
       RUTAS.forEach(function(r){ if(m[r.id]){ if(m[r.id].precio != null) r.precio = Number(m[r.id].precio); r.publicado = m[r.id].publicado; } });
       pintarRutas();
       document.querySelectorAll('[data-pd]').forEach(function(el){
@@ -895,7 +1062,7 @@ html,body{overflow-x:hidden}
         '<div class="fi-compra"><div><b>' + dinero(p) + '</b> <span>MXN · pago único</span><small>Acceso 12 meses · a tu ritmo, desde el celular</small></div>' +
         '<div class="fi-bot"><a class="btn btn-mor" href="' + url + '">Inscribirme</a>' +
         '<a class="fi-gratis" href="../plataforma/index.html?muestra=' + encodeURIComponent(id) + '">Probar una lección gratis</a>' +
-        '<a class="fi-gratis" href="../plataforma/index.html?curso=' + encodeURIComponent(id) + '&regalar=1">🎁 Regalarlo</a></div></div>' +
+        '<a class="fi-gratis" href="#regalar" data-regalar="' + esc(id) + '">🎁 Regalarlo</a></div></div>' +
         '<p style="font-size:13.5px;color:var(--gris);margin:-8px 0 14px">También incluido en la <a href="#membresia" onclick="cerrarFichaYIr(\'membresia\');return false">membresía</a> desde ' + dinero(PLANES.esencial) + ' al mes.</p>' +
         '<p class="fi-desc">' + esc(t.d) + '</p>';
       if(t.a && t.a.length) h += '<h3>Lo que vas a aprender</h3><ul class="fi-aprende">' +
@@ -939,7 +1106,132 @@ html,body{overflow-x:hidden}
 })();
 </script>
 
+<!-- ============ REGALO SIN CUENTA ============ -->
+<div id="rg-modal" class="emp-modal" hidden>
+  <div class="emp-modal-caja rg-caja" role="dialog" aria-modal="true" aria-labelledby="rg-t">
+    <button type="button" class="emp-cerrar" onclick="cerrarRegalo()" aria-label="Cerrar">&times;</button>
+    <div id="rg-paso">
+      <h3 id="rg-t">🎁 Regala un curso o diplomado</h3>
+      <p>Sin crear cuenta. Pagas y le llega por correo con tu mensaje y su código para empezar.</p>
+      <form id="rg-form" novalidate>
+        <fieldset class="rg-grupo">
+          <legend>1. ¿Qué le regalas?</legend>
+          <select id="rg-curso" class="rg-oculto" tabindex="-1" aria-hidden="true"></select>
+          <div class="rg-elige">
+            <input id="rg-busca" type="search" placeholder="Busca por nombre o tema: inglés, duelo, Excel…" autocomplete="off"
+              role="combobox" aria-expanded="false" aria-controls="rg-lista" aria-autocomplete="list" aria-label="Busca el programa para regalar">
+            <ul id="rg-lista" class="rg-lista" role="listbox" hidden></ul>
+            <div id="rg-elegido" class="rg-elegido" hidden></div>
+          </div>
+        </fieldset>
+        <fieldset class="rg-grupo">
+          <legend>2. ¿Para quién es?</legend>
+          <div class="rg-dos">
+            <label>Su nombre<input id="rg-para-nom" maxlength="120" autocomplete="off" placeholder="Ej. Ana"></label>
+            <label>Su correo<input id="rg-para-cor" type="email" maxlength="160" autocomplete="off" placeholder="ana@correo.com"></label>
+          </div>
+          <label>Tu mensaje (opcional)<textarea id="rg-msg" maxlength="600" rows="2" placeholder="¡Feliz cumpleaños! Sé que te va a encantar."></textarea></label>
+          <div class="rg-cuando" role="radiogroup" aria-label="¿Cuándo le llega?">
+            <span>¿Cuándo le llega?</span>
+            <label class="rg-op"><input type="radio" name="rg-cuando" value="hoy" checked> Hoy</label>
+            <label class="rg-op"><input type="radio" name="rg-cuando" value="fecha"> Otro día</label>
+            <input type="date" id="rg-fecha" hidden aria-label="Fecha de entrega">
+          </div>
+        </fieldset>
+        <fieldset class="rg-grupo">
+          <legend>3. ¿De parte de quién?</legend>
+          <div class="rg-dos">
+            <label>Tu nombre<input id="rg-de-nom" maxlength="120" autocomplete="name"></label>
+            <label>Tu correo<input id="rg-de-cor" type="email" maxlength="160" autocomplete="email"></label>
+          </div>
+          <p class="rg-ayuda">Ahí te llega el comprobante y una liga para cambiar el correo, el mensaje o la fecha si lo necesitas.</p>
+        </fieldset>
+        <div class="rg-cupon">
+          <button type="button" class="rg-cupon-link" id="rg-cupon-abrir">¿Tienes un cupón de descuento?</button>
+          <div class="rg-cupon-caja" id="rg-cupon-caja" hidden>
+            <input id="rg-cupon" maxlength="40" placeholder="Escribe tu código" autocomplete="off" aria-label="Cupón de descuento">
+            <button type="button" class="btn btn-linea" id="rg-cupon-aplicar">Aplicar</button>
+          </div>
+          <p class="rg-cupon-res" id="rg-cupon-res" aria-live="polite"></p>
+        </div>
+        <div id="rg-av" aria-live="polite"></div>
+        <button type="submit" class="btn btn-mor btn-grande rg-pagar" id="rg-btn">Pagar el regalo</button>
+        <p class="rg-ayuda rg-centro">Pago seguro con Mercado Pago: tarjeta, meses sin intereses u OXXO. Garantía de 7 días.</p>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+.rg-caja{max-width:600px}
+.rg-oculto{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.rg-elegido[hidden],.rg-lista[hidden],#rg-busca[hidden]{display:none}
+.rg-elige{position:relative}
+.rg-lista{list-style:none;margin:6px 0 0;padding:6px;border:1.5px solid var(--linea);border-radius:14px;max-height:300px;overflow:auto;background:#fff;box-shadow:var(--sombra)}
+.rg-lista .rg-tit{font-size:12px;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:.05em;padding:6px 8px 2px}
+.rg-op-l{display:flex;justify-content:space-between;gap:10px;padding:9px 10px;border-radius:10px;cursor:pointer}
+.rg-op-l[aria-selected=true],.rg-op-l:hover{background:var(--lavanda)}
+.rg-op-l b{display:block;font-size:14.5px;color:var(--tinta);line-height:1.3}
+.rg-op-l small{color:var(--gris);font-size:12.5px}
+.rg-op-l .rg-p{font-weight:800;color:var(--morado);white-space:nowrap}
+.rg-vacio{padding:10px;color:var(--gris);font-size:14px}
+.rg-elegido{display:flex;align-items:center;gap:12px;justify-content:space-between;border:1.5px solid var(--morado);background:var(--nube);border-radius:14px;padding:12px 14px}
+.rg-elegido b{display:block;color:var(--tinta);line-height:1.3}
+.rg-elegido small{color:var(--gris)}
+.rg-cambiar{border:0;background:none;color:var(--morado);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;white-space:nowrap}
+#rg-form{display:grid;gap:14px}
+.rg-grupo{border:0;padding:0;margin:0;display:grid;gap:10px}
+.rg-grupo legend{font-weight:800;color:var(--tinta);font-size:15px;margin-bottom:8px}
+.rg-dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#rg-form label{display:flex;flex-direction:column;font-size:13px;font-weight:600;gap:4px}
+#rg-form input:not([type=radio]),#rg-form select,#rg-form textarea{font:inherit;font-weight:400;font-size:15.5px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:12px;background:#fff;width:100%}
+#rg-form input:focus,#rg-form select:focus,#rg-form textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+#rg-form textarea{resize:vertical}
+.rg-cuando{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}
+.rg-cuando>span{font-weight:600}
+#rg-form .rg-op{flex-direction:row;align-items:center;gap:6px;font-weight:500;font-size:14px}
+#rg-form #rg-fecha{width:auto}
+.rg-ayuda{color:var(--gris);font-size:13px;line-height:1.5;margin:0}
+.rg-centro{text-align:center}
+.rg-pagar{width:100%}
+.rg-cupon-link{border:0;background:none;color:var(--morado);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:0;text-decoration:underline}
+.rg-cupon-caja{display:flex;gap:8px;margin-top:8px}
+#rg-form .rg-cupon-caja input{text-transform:uppercase}
+.rg-cupon-caja .btn{padding:10px 18px}
+.rg-cupon-res{font-size:14px;margin:6px 0 0}
+.rg-cupon-res.ok{color:var(--verde);font-weight:600}.rg-cupon-res.mal{color:var(--rojo)}
+.cupon-barra{background:#ECFDF5;color:#065F46;text-align:center;font-size:14.5px;padding:9px 16px;border-bottom:1px solid #A7F3D0}
+.cupon-barra b{letter-spacing:.5px}
+.rg-error{background:#FEF2F2;color:var(--rojo);border-radius:10px;padding:10px 12px;font-size:14px}
+.rg-ok{text-align:center}
+.rg-ok .rg-big{font-size:56px;line-height:1}
+.rg-ok dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;text-align:left;background:var(--nube);border-radius:14px;padding:16px;margin:16px 0;font-size:15px}
+.rg-ok dt{color:var(--gris)}.rg-ok dd{margin:0;font-weight:600;color:var(--tinta)}
+@media(max-width:560px){.rg-dos{grid-template-columns:1fr}}
+#como .pasos{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){#como .pasos{grid-template-columns:1fr}}
+</style>
+
 <!-- ============ CÓMO FUNCIONA ============ -->
+<section id="como" style="background:var(--nube)">
+  <div class="wrap">
+    <div class="sec-head centro">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De inscribirte a tener tu constancia</h2>
+      <p>Todo en línea y automático: sin trámites, sin papeleo y sin esperar a que abra un ciclo escolar.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso"><div class="n">1</div><h3>Eliges tu curso y pagas</h3><p>Creas tu cuenta con tu correo y pagas con tarjeta, meses sin intereses u OXXO. Con tarjeta entras en segundos.</p></div>
+      <div class="paso"><div class="n">2</div><h3>Estudias por bloques</h3><p>Lecciones cortas, un archivo descargable, una actividad y un examen por bloque. Desde el celular, a tu ritmo.</p></div>
+      <div class="paso"><div class="n">3</div><h3>Obtienes tu constancia</h3><p>Al aprobar, tu constancia con folio, sello y código QR se genera sola. La descargas o la agregas a LinkedIn.</p></div>
+    </div>
+    <div class="ins-cta" style="margin-top:30px">
+      <a href="#explorar" class="btn btn-mor btn-grande">Elegir mi curso</a>
+      <p class="nota-form">¿Ya tienes cuenta? <a href="../plataforma/index.html">Entra al aula</a>. ¿Prefieres que te ayudemos o pagar por transferencia?
+      <a href="https://wa.me/528120282120?text=Hola,%20quiero%20inscribirme%20a%20un%20curso%20de%20Instituto%20Mara" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ MEMBRESÍA ============ -->
 <section id="membresia" class="mem-sec">
   <div class="wrap">
@@ -959,8 +1251,8 @@ html,body{overflow-x:hidden}
     <div>
       <div class="eyebrow">Regala aprendizaje</div>
       <h2>Regala un curso o diplomado</h2>
-      <p>Tú lo pagas y la otra persona recibe un correo con tu mensaje y su código, en la fecha que elijas. También se lo puedes mandar por WhatsApp. Ideal para cumpleaños, graduaciones o para tu equipo.</p>
-      <a class="btn btn-mor btn-grande" href="../plataforma/index.html?ir=regalos">Elegir un regalo →</a>
+      <p>Sin crear cuenta: eliges el programa, escribes para quién es y su correo, pagas y listo. Le llega con tu mensaje en la fecha que elijas. Si te equivocas en algo, lo cambias desde el correo que te mandamos.</p>
+      <button type="button" class="btn btn-mor btn-grande" onclick="abrirRegalo()">Regalar ahora →</button>
     </div>
     <div class="regalo-ico" aria-hidden="true">🎁</div>
   </div>
@@ -970,8 +1262,8 @@ html,body{overflow-x:hidden}
 <section id="empresas" class="emp-sec">
   <div class="wrap emp-caja">
     <div class="eyebrow">Para empresas</div>
-    <h2>Capacita a todo tu equipo con un solo plan</h2>
-    <p>Por una cuota mensual, tu gente entra a todos los cursos y diplomados y cada quien toma los que necesite. Tú registras a cada persona y, desde tu panel, ves quién ya empezó, cuánto lleva y quién terminó.</p>
+    <h2>Somos el área de capacitación de tu empresa</h2>
+    <p>Si no tienes quién arme el plan ni le dé seguimiento, lo hacemos nosotros. Te proponemos qué toma cada grupo de tu personal, tu gente estudia desde el celular y tú ves en tu panel quién empezó, cuánto lleva y quién terminó. Un solo plan mensual para todo el equipo, con todo el catálogo.</p>
     <div class="emp-plan">
       <table class="emp-tabla" aria-label="Precios del plan para empresas">
         <thead><tr><th>Personas</th><th>Al mes, IVA incluido</th></tr></thead>
@@ -985,7 +1277,8 @@ html,body{overflow-x:hidden}
         <ul class="emp-lista">
           <li>Más de 80 cursos y diplomados: NOM-035, liderazgo, Excel, servicio, idiomas, IA y más</li>
           <li>Panel con el avance de cada persona y reporte en Excel o PDF</li>
-          <li>Constancia con folio y QR verificable para cada quien</li>
+          <li>Plan de capacitación sin costo, armado para tu giro</li>
+          <li>Constancia con folio y QR verificable para cada quien, con el logo de tu empresa</li>
           <li>Pago con tarjeta y cobro automático, o anual con tarjeta, OXXO o transferencia</li>
           <li>Factura disponible</li>
         </ul>
@@ -1020,37 +1313,45 @@ html,body{overflow-x:hidden}
   </div>
 </div>
 
-<section id="como" style="background:var(--nube)">
+<!-- ============ GANA DINERO: embajador (personas) y asesor comercial (empresas) ============ -->
+<section id="embajadores" class="emb-sec">
   <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Cómo funciona</div>
-      <h2>De inscribirte a tener tu constancia</h2>
-      <p>Cuatro pasos. Sin trámites presenciales, sin papeleo y sin esperar a que abra un ciclo escolar.</p>
+    <div class="sec-head centro" style="margin-bottom:22px">
+      <div class="eyebrow">Gana dinero con nosotros</div>
+      <h2>Dos formas de ganar, elige la tuya</h2>
     </div>
-    <div class="pasos">
-      <div class="paso">
-        <div class="n">1</div>
-        <h3>Creas tu cuenta</h3>
-        <p>Con tu correo y una contraseña, desde el celular. Confirmas el correo y ya estás dentro del aula.</p>
-      </div>
-      <div class="paso">
-        <div class="n">2</div>
-        <h3>Eliges tu curso y pagas</h3>
-        <p>Tarjeta, meses sin intereses o efectivo en tiendas. Con tarjeta, tu acceso se abre en segundos.</p>
-      </div>
-      <div class="paso">
-        <div class="n">3</div>
-        <h3>Estudias por bloques</h3>
-        <p>Cada bloque tiene lecciones, un archivo descargable, una actividad y un examen. Apruebas y se abre el siguiente.</p>
-      </div>
-      <div class="paso">
-        <div class="n">4</div>
-        <h3>Obtienes tu constancia</h3>
-        <p>Al ver todas las lecciones y aprobar la evaluación de cada módulo, tu constancia con folio, sello y código QR de verificación se genera sola y la descargas o imprimes.</p>
-      </div>
+    <div class="emb-dos">
+      <a class="emb-c" href="embajadores.html#personas">
+        <span class="emb-tag">Para personas</span>
+        <h3>Embajador</h3>
+        <p>Recomienda cursos con tu código: tus contactos tienen 10 % de descuento y tú ganas <b>20 % de cada venta</b>.</p>
+        <span class="emb-ir">Registrarme gratis →</span>
+      </a>
+      <a class="emb-c emb-oscuro" href="embajadores.html#asesor">
+        <span class="emb-tag">Para empresas</span>
+        <h3>Asesor comercial</h3>
+        <p>Vende nuestro plan de capacitación a empresas y gana <b>35 % del primer pago y 5 % cada mes</b> mientras sigan activas.</p>
+        <span class="emb-ir">Quiero vender a empresas →</span>
+      </a>
     </div>
   </div>
 </section>
+<style>
+.emb-sec{padding-top:0}
+.emb-dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.emb-c{display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--lila);border-radius:24px;padding:28px;background:linear-gradient(120deg,#fff 0%,#F5F3FF 100%);color:var(--texto);transition:transform .15s,box-shadow .15s}
+.emb-c:hover{transform:translateY(-2px);box-shadow:var(--sombra-alta)}
+.emb-c h3{font-size:24px;margin:2px 0}
+.emb-c p{color:var(--gris)}
+.emb-c b{color:var(--tinta)}
+.emb-tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px;background:var(--lavanda);color:var(--morado)}
+.emb-ir{margin-top:auto;font-weight:700;color:var(--morado)}
+.emb-oscuro{background:linear-gradient(140deg,#2E1065,#5B21B6);border-color:transparent}
+.emb-oscuro h3{color:#fff}.emb-oscuro p{color:#DDD6FE}.emb-oscuro b{color:#fff}.emb-oscuro .emb-ir{color:#fff}
+.emb-oscuro .emb-tag{background:rgba(255,255,255,.14);color:#DDD6FE}
+@media(max-width:760px){.emb-dos{grid-template-columns:1fr}.emb-c{padding:22px}}
+</style>
+
 
 <!-- ============ POR QUÉ ============ -->
 <section class="oscuro">
@@ -1058,7 +1359,7 @@ html,body{overflow-x:hidden}
     <div class="sec-head centro">
       <div class="eyebrow">Por qué Instituto Mara</div>
       <h2>Hecho para quien ya no tiene tiempo de ir a una escuela</h2>
-      <p>No inventamos nada raro: tomamos lo que impide estudiar a la mayoría de los adultos en México y lo quitamos de en medio.</p>
+      <p>No inventamos nada raro: tomamos lo que impide estudiar a la mayoría de los adultos y lo quitamos de en medio.</p>
     </div>
     <div class="razones">
       <div class="razon">
@@ -1069,12 +1370,12 @@ html,body{overflow-x:hidden}
       <div class="razon">
         <div class="ico">💸</div>
         <h3>Precio de verdad accesible</h3>
-        <p>Pago único desde $890 pesos, con meses sin intereses y opción de pagar en efectivo. Sin inscripción, sin colegiatura mensual y sin cargos sorpresa.</p>
+        <p>Pago único desde $390 pesos, con meses sin intereses y opción de pagar en efectivo. Sin inscripción, sin colegiatura mensual y sin cargos sorpresa.</p>
       </div>
       <div class="razon">
         <div class="ico">🗺️</div>
-        <h3>En cualquier estado</h3>
-        <p>Da lo mismo si vives en Ciudad de México o en una comunidad de Chiapas. Si tienes internet, tienes escuela. Nunca vas a pisar una oficina.</p>
+        <h3>Desde cualquier lugar</h3>
+        <p>Da lo mismo si vives en una gran ciudad, en un pueblo o fuera de México. Si tienes internet, tienes escuela. Nunca vas a pisar una oficina.</p>
       </div>
       <div class="razon">
         <div class="ico">🤝</div>
@@ -1091,75 +1392,6 @@ html,body{overflow-x:hidden}
         <h3>Garantía de 7 días</h3>
         <p>Si en la primera semana ves que el curso no es para ti, te devolvemos tu dinero completo. Sin preguntas y sin letra chiquita.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ETAPAS ============ -->
-<section id="futuro">
-  <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Hacia dónde vamos</div>
-      <h2>Estamos creciendo, y queremos que crezcas con nosotros</h2>
-      <p>Instituto Mara abre con capacitación y avanza por etapas hacia la formación con reconocimiento oficial. Este es el camino, sin adornos.</p>
-    </div>
-    <div class="futuro">
-      <div class="fut viva">
-        <div class="fase">Etapa 1 · Ya disponible</div>
-        <h3>Capacitación</h3>
-        <p>Inglés, Excel, inteligencia artificial por profesión, diplomados en tanatología, NOM-035 y cuidado del adulto mayor, y más. Cursos libres con constancia de Instituto Mara.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 2 · Próximamente</div>
-        <h3>Preparación</h3>
-        <p>Asesoría para el examen CENEVAL del Acuerdo 286 y para exámenes de admisión a prepa y universidad.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 3 · En proceso</div>
-        <h3>Bachillerato</h3>
-        <p>Preparatoria en línea, una vez concluido el trámite de reconocimiento oficial ante la autoridad educativa.</p>
-      </div>
-      <div class="fut">
-        <div class="fase">Etapa 4 · A futuro</div>
-        <h3>Nivel superior</h3>
-        <p>Licenciaturas en línea, con el reconocimiento oficial correspondiente para cada plan de estudios.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INSCRIPCIÓN ============ -->
-<section id="inscripcion" style="background:var(--nube)">
-  <div class="wrap">
-    <div class="sec-head centro">
-      <div class="eyebrow">Inscripción</div>
-      <h2>Empieza hoy, en tres pasos</h2>
-      <p>Todo es en línea y automático: no tienes que esperar a que alguien te conteste.</p>
-    </div>
-
-    <div class="pasos-ins">
-      <div class="paso-ins">
-        <div class="paso-num">1</div>
-        <h3>Crea tu cuenta</h3>
-        <p>Con tu correo y una contraseña. Te llega un correo para confirmarla; ábrelo y listo.</p>
-      </div>
-      <div class="paso-ins">
-        <div class="paso-num">2</div>
-        <h3>Elige tu curso y paga</h3>
-        <p>Con tarjeta de crédito o débito, meses sin intereses o efectivo en tiendas, por Mercado Pago.</p>
-      </div>
-      <div class="paso-ins">
-        <div class="paso-num">3</div>
-        <h3>Entra a estudiar</h3>
-        <p>Tu acceso se activa solo al confirmarse el pago. Estudias desde el celular, a tu ritmo, 12 meses.</p>
-      </div>
-    </div>
-
-    <div class="ins-cta">
-      <a href="../plataforma/index.html" class="btn btn-mor btn-grande">Crear mi cuenta y empezar</a>
-      <p class="nota-form">¿Ya tienes cuenta? <a href="../plataforma/index.html">Entra al aula</a>.<br>
-      ¿Prefieres que te ayudemos o pagar por transferencia?
-      <a href="https://wa.me/528120282120?text=Hola,%20quiero%20inscribirme%20a%20un%20curso%20de%20Instituto%20Mara" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </div>
 </section>
@@ -1183,11 +1415,6 @@ html,body{overflow-x:hidden}
       <h2>Lo que más nos preguntan</h2>
     </div>
 
-    <details open>
-      <summary>¿Los cursos tienen validez oficial de la SEP?</summary>
-      <div class="r">No, y preferimos decírtelo de frente. Los cursos de Instituto Mara son cursos libres de capacitación para el trabajo: al terminar recibes una constancia de capacitación con folio que acredita las horas que cursaste y lo que aprendiste. No es un certificado de secundaria, de preparatoria ni un título universitario, y no sustituye estudios formales. Si lo que buscas es un certificado oficial, escríbenos y te orientamos sobre las vías legales para obtenerlo.</div>
-    </details>
-
     <details>
       <summary>¿Necesito computadora?</summary>
       <div class="r">Para los cursos de inteligencia artificial e inglés basta con tu celular. El curso de Computación y Office sí requiere una computadora con Windows, porque vas a practicar directamente sobre los programas; puede ser prestada o de un café internet, pero necesitas acceso a una.</div>
@@ -1199,13 +1426,18 @@ html,body{overflow-x:hidden}
     </details>
 
     <details>
+      <summary>¿Los cursos tienen validez oficial de la SEP?</summary>
+      <div class="r">No, y preferimos decírtelo de frente. Los cursos de Instituto Mara son cursos libres de capacitación para el trabajo: al terminar recibes una constancia de capacitación con folio que acredita las horas que cursaste y lo que aprendiste. No es un certificado de secundaria, de preparatoria ni un título universitario, y no sustituye estudios formales. Si lo que buscas es un certificado oficial, escríbenos y te orientamos sobre las vías legales para obtenerlo.</div>
+    </details>
+
+    <details>
       <summary>¿Hay clases en vivo o maestro asignado?</summary>
       <div class="r">No en esta etapa. Todo el contenido está grabado y cargado, con exámenes que se califican automáticamente y te explican cada respuesta. Sí tienes acompañamiento humano por WhatsApp para dudas de la plataforma, pagos y orientación. Estamos preparando asesorías en vivo opcionales para más adelante.</div>
     </details>
 
     <details>
-      <summary>¿Puedo estudiar desde cualquier estado?</summary>
-      <div class="r">Sí. Instituto Mara es 100% en línea y atiende a alumnos de toda la República. No necesitas acudir a ninguna oficina en ningún momento, ni para inscribirte ni para recibir tu constancia.</div>
+      <summary>¿Puedo estudiar desde cualquier lugar?</summary>
+      <div class="r">Sí. Instituto Mara es 100% en línea y atiende a alumnos de todo México y de otros países. No necesitas acudir a ninguna oficina en ningún momento, ni para inscribirte ni para recibir tu constancia.</div>
     </details>
 
     <details>
@@ -1216,6 +1448,11 @@ html,body{overflow-x:hidden}
     <details>
       <summary>¿Y si no me gusta el curso?</summary>
       <div class="r">Si dentro de los primeros siete días naturales y antes de haber completado el segundo bloque consideras que el curso no es para ti, te devolvemos tu pago completo. Solo escríbenos por WhatsApp; no te vamos a pedir explicaciones.</div>
+    </details>
+
+    <details>
+      <summary>¿Cómo funciona un regalo?</summary>
+      <div class="r">No necesitas crear cuenta. Eliges el programa, escribes el nombre y el correo de quien lo recibe, tu nombre y tu correo, y pagas. Le llega un correo con tu mensaje y su código el día que elijas. A ti te llega el comprobante con una liga para cambiar el correo, el mensaje o la fecha mientras no lo active.</div>
     </details>
 
     <details>
@@ -1243,15 +1480,17 @@ html,body{overflow-x:hidden}
           </svg>
           <b>Instituto Mara</b>
         </div>
-        <p style="max-width:330px">Educación en línea. Capacitación accesible para adultos que trabajan, en cualquier estado de México.</p>
+        <p style="max-width:330px">Educación en línea. Capacitación accesible, desde cualquier lugar.</p>
       </div>
       <div>
         <h4>Navegación</h4>
         <ul>
-          <li><a href="#cursos">Cursos</a></li>
-          <li><a href="#como">Cómo funciona</a></li>
+          <li><a href="#explorar">Programas</a></li>
+          <li><a href="#membresia">Membresía</a></li>
+          <li><a href="#empresas">Para empresas</a></li>
+          <li><a href="#regalar" onclick="abrirRegalo();return false">Regalar un curso</a></li>
+          <li><a href="embajadores.html">Gana dinero: embajador o asesor</a></li>
           <li><a href="#preguntas">Preguntas frecuentes</a></li>
-          <li><a href="#inscripcion">Inscripción</a></li>
           <li><a href="../plataforma/index.html">Entrar al aula</a></li>
         </ul>
       </div>
@@ -1287,6 +1526,176 @@ menu.querySelectorAll('a').forEach(function(a){
 
 // El botón de cada curso lleva directo al aula (plataforma/index.html?curso=…),
 // donde el alumno crea su cuenta, paga y entra sin que nadie intervenga.
+</script>
+<script>
+/* Regalo sin cuenta (26 oct 2026): eliges programa, para quién, su correo, tus datos, pagas y listo.
+   La acción pública «regalo_invitado» de la función «tienda» crea el cobro; al regresar de Mercado Pago
+   se muestra el resultado con «regalo_ver». Quien regala recibe una liga para cambiar los datos. */
+(function(){
+  var M = document.getElementById('rg-modal'), F = document.getElementById('rg-form'), sel = document.getElementById('rg-curso');
+  function dinero(n){ return '$' + Number(n).toLocaleString('es-MX'); }
+  function esc(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function api(d){
+    return fetch(IM.supa + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:IM.anon, Authorization:'Bearer ' + IM.anon }, body:JSON.stringify(d) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No pudimos continuar. Intenta de nuevo.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; });
+  }
+  function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
+  function llenar(id){
+    var lista = IM.oferta().filter(function(c){ return Number(c.p) > 0; }), grupos = {};
+    lista.forEach(function(c){ var g = c.f === 'Diplomados' ? 'Diplomados' : (c.a || c.f); (grupos[g] = grupos[g] || []).push(c); });
+    sel.innerHTML = '<option value="">Elige un programa…</option>' + Object.keys(grupos).map(function(g){
+      return '<optgroup label="' + esc(g) + '">' + grupos[g].sort(function(a, b){ return a.n.localeCompare(b.n, 'es'); }).map(function(c){
+        return '<option value="' + esc(c.id) + '">' + esc(c.n) + ' — ' + dinero(c.p) + '</option>'; }).join('') + '</optgroup>';
+    }).join('');
+    sel.value = id && sel.querySelector('option[value="' + id.replace(/"/g, '') + '"]') ? id : '';
+    var guardado = (function(){ try{ return localStorage.getItem('institutoMara.cupon') || ''; }catch(e){ return ''; } })();
+    if(guardado && !/^REGALO-/.test(guardado) && !document.getElementById('rg-cupon').value){ document.getElementById('rg-cupon').value = guardado; document.getElementById('rg-cupon-caja').hidden = false; }
+    CUP = null; precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true);
+    pintarElegido();
+  }
+  var CUP = null;   /* { cupon, curso, precio } validado por el servidor */
+  function precio(){
+    var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
+    var p = c && CUP && CUP.curso === c.id ? CUP.precio : (c ? c.p : null);
+    document.getElementById('rg-btn').textContent = p != null ? 'Pagar ' + dinero(p) + ' →' : 'Pagar el regalo';
+  }
+  function cuponRes(t, ok){ var el = document.getElementById('rg-cupon-res'); el.textContent = t || ''; el.className = 'rg-cupon-res' + (t ? (ok ? ' ok' : ' mal') : ''); }
+  function aplicarCupon(silencioso){
+    var cod = document.getElementById('rg-cupon').value.trim().toUpperCase();
+    CUP = null; precio(); cuponRes('');
+    if(!cod) return Promise.resolve();
+    if(!sel.value){ if(!silencioso) cuponRes('Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
+    var cur = sel.value;
+    return api({ accion:'regalo_cupon', cursoId:cur, cupon:cod }).then(function(r){
+      if(sel.value !== cur) return;
+      CUP = { cupon:r.cupon, curso:cur, precio:r.precio };
+      cuponRes('Cupón ' + r.cupon + ' aplicado: ' + dinero(r.original) + ' → ' + dinero(r.precio) + ' (ahorras ' + dinero(r.descuento) + ')', true); precio();
+    }).catch(function(x){ cuponRes(x.message, false); });
+  }
+  sel.addEventListener('change', function(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); });
+  document.getElementById('rg-cupon-abrir').onclick = function(){ document.getElementById('rg-cupon-caja').hidden = false; document.getElementById('rg-cupon').focus(); };
+  document.getElementById('rg-cupon-aplicar').onclick = function(){ aplicarCupon(false); };
+  document.getElementById('rg-cupon').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); aplicarCupon(false); } });
+  document.getElementById('rg-cupon').addEventListener('input', function(){ if(CUP){ CUP = null; precio(); cuponRes(''); } });
+  [].forEach.call(document.querySelectorAll('input[name=rg-cuando]'), function(r){ r.addEventListener('change', function(){
+    var f = document.getElementById('rg-fecha'); f.hidden = r.value !== 'fecha' || !r.checked; if(!f.hidden){ f.min = hoy(); if(!f.value) f.value = hoy(); f.focus(); }
+  }); });
+  /* Buscador del programa (en lugar del combo): escribe, filtra por nombre, área y tema; con el campo vacío
+     muestra los más elegidos. El valor vive en el <select> oculto, así el resto del flujo no cambia. */
+  var busca = document.getElementById('rg-busca'), lista = document.getElementById('rg-lista'), elegido = document.getElementById('rg-elegido'), activo = -1, vista = [];
+  function nrm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function ofertaR(){ return IM.oferta().filter(function(c){ return Number(c.p) > 0; }); }
+  function sugeridos(){
+    var pop = (window.IM_POP && window.IM_POP.curso) || {}, base = ['c-ingles','d-tanatologia','c-excel-avanzado','c-inteligencia-emocional','d-imagen-personal','c-ia'];
+    return ofertaR().slice().sort(function(a, b){ return ((pop[b.id]||0) - (pop[a.id]||0)) || ((base.indexOf(a.id) < 0 ? 99 : base.indexOf(a.id)) - (base.indexOf(b.id) < 0 ? 99 : base.indexOf(b.id))); }).slice(0, 6);
+  }
+  function mostrar(){
+    var q = nrm(busca.value.trim());
+    vista = q ? ofertaR().filter(function(c){ return nrm(c.n + ' ' + (c.a||'') + ' ' + (c.t||'') + ' ' + c.f).indexOf(q) >= 0; }).slice(0, 8) : sugeridos();
+    activo = -1;
+    lista.innerHTML = (q ? '' : '<li class="rg-tit" role="presentation">Los más elegidos</li>') + (vista.length ? vista.map(function(c, i){
+      return '<li class="rg-op-l" role="option" id="rg-o' + i + '" data-i="' + i + '" aria-selected="false"><span><b>' + esc(c.n) + '</b><small>' + (c.f === 'Diplomados' ? 'Diplomado' : 'Curso') + ' · ' + esc(c.a || c.f) + ' · ' + c.h + ' h</small></span><span class="rg-p">' + dinero(c.p) + '</span></li>'; }).join('')
+      : '<li class="rg-vacio">No encontramos ese programa. Prueba con otra palabra.</li>');
+    lista.hidden = false; busca.setAttribute('aria-expanded', 'true');
+  }
+  function marcar(i){ activo = i; [].forEach.call(lista.querySelectorAll('.rg-op-l'), function(li, k){ li.setAttribute('aria-selected', String(k === i)); if(k === i) li.scrollIntoView({ block:'nearest' }); });
+    busca.setAttribute('aria-activedescendant', i >= 0 ? 'rg-o' + i : ''); }
+  function cerrarLista(){ lista.hidden = true; busca.setAttribute('aria-expanded', 'false'); }
+  function pintarElegido(){
+    var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
+    if(!c){ elegido.hidden = true; busca.hidden = false; return; }
+    elegido.innerHTML = '<span><b>' + esc(c.n) + '</b><small>' + (c.f === 'Diplomados' ? 'Diplomado' : 'Curso') + ' · ' + esc(c.a || c.f) + ' · ' + dinero(c.p) + '</small></span><button type="button" class="rg-cambiar">Cambiar</button>';
+    elegido.hidden = false; busca.hidden = true; cerrarLista();
+    elegido.querySelector('.rg-cambiar').onclick = function(){ sel.value = ''; sel.dispatchEvent(new Event('change')); busca.value = ''; pintarElegido(); busca.focus(); mostrar(); };
+  }
+  function elegir(c){ sel.value = c.id; sel.dispatchEvent(new Event('change')); busca.value = ''; pintarElegido(); var n = document.getElementById('rg-para-nom'); if(n && !n.value) n.focus(); }
+  busca.addEventListener('focus', mostrar);
+  busca.addEventListener('input', mostrar);
+  busca.addEventListener('keydown', function(e){
+    if(lista.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) mostrar();
+    if(e.key === 'ArrowDown'){ e.preventDefault(); marcar(Math.min(vista.length - 1, activo + 1)); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); marcar(Math.max(0, activo - 1)); }
+    else if(e.key === 'Enter'){ e.preventDefault(); if(vista[activo >= 0 ? activo : 0]) elegir(vista[activo >= 0 ? activo : 0]); }
+    else if(e.key === 'Escape' && !lista.hidden){ e.stopPropagation(); cerrarLista(); }
+  });
+  lista.addEventListener('mousedown', function(e){ var li = e.target.closest('.rg-op-l'); if(!li) return; e.preventDefault(); elegir(vista[+li.getAttribute('data-i')]); });
+  busca.addEventListener('blur', function(){ setTimeout(cerrarLista, 150); });
+  window.abrirRegalo = function(id){
+    if(typeof id !== 'string') id = '';
+    llenar(id); M.hidden = false; document.body.style.overflow = 'hidden';
+    setTimeout(function(){ (sel.value ? document.getElementById('rg-para-nom') : busca).focus(); }, 50);
+  };
+  window.cerrarRegalo = function(){ M.hidden = true; document.body.style.overflow = ''; };
+  M.addEventListener('click', function(e){ if(e.target === M) cerrarRegalo(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !M.hidden) cerrarRegalo(); });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-regalar]'); if(!a) return;
+    e.preventDefault(); var id = a.getAttribute('data-regalar');
+    var fi = document.getElementById('ficha'); if(fi && !fi.hidden){ fi.hidden = true; document.body.style.overflow = ''; if(/^#programa-/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search); }
+    abrirRegalo(id);
+  });
+  function aviso(t){ document.getElementById('rg-av').innerHTML = t ? '<div class="rg-error">' + esc(t) + '</div>' : ''; }
+  var CORREO = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  F.addEventListener('submit', function(e){
+    e.preventDefault(); aviso('');
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    var d = { accion:'regalo_invitado', cursoId:sel.value, paraNombre:v('rg-para-nom'), paraCorreo:v('rg-para-cor'), mensaje:v('rg-msg'),
+      deNombre:v('rg-de-nom'), deCorreo:v('rg-de-cor'), urlRegreso:location.origin + location.pathname };
+    var fecha = document.querySelector('input[name=rg-cuando]:checked').value === 'fecha' ? v('rg-fecha') : '';
+    if(fecha) d.entregarEn = fecha;
+    var falta = !d.cursoId ? ['rg-busca', 'Elige el programa que quieres regalar.'] : !d.paraNombre ? ['rg-para-nom', 'Escribe el nombre de quien recibe el regalo.']
+      : !CORREO.test(d.paraCorreo) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.'] : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
+      : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null;
+    if(falta){ aviso(falta[1]); document.getElementById(falta[0]).focus(); return; }
+    var cupEscrito = document.getElementById('rg-cupon').value.trim().toUpperCase();
+    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.curso === d.cursoId)){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
+    if(CUP) d.cupon = CUP.cupon;
+    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
+    try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
+    api(d).then(function(r){ location.href = r.init_point; })
+      .catch(function(x){ b.disabled = false; b.textContent = txt; aviso(x.message); });
+  });
+  try{ var de = JSON.parse(localStorage.getItem('im-regalo-de') || 'null'); if(de){ document.getElementById('rg-de-nom').value = de.n || ''; document.getElementById('rg-de-cor').value = de.c || ''; } }catch(x){}
+
+  /* Regreso desde Mercado Pago */
+  var q = new URLSearchParams(location.search), est = q.get('regalo'), t = q.get('t');
+  if(est && t){
+    history.replaceState(null, '', location.pathname + location.hash);
+    var caja = document.getElementById('rg-paso');
+    M.hidden = false; document.body.style.overflow = 'hidden';
+    if(est === 'fallo'){
+      caja.innerHTML = '<div class="rg-ok"><div class="rg-big">😕</div><h3>El pago no se completó</h3><p>Mercado Pago no pudo cobrar el regalo. No se hizo ningún cargo; puedes intentarlo de nuevo.</p><p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="location.reload()">Intentar de nuevo</button></p></div>';
+    } else {
+      caja.innerHTML = '<div class="rg-ok"><div class="rg-big">🎁</div><h3>' + (est === 'pendiente' ? 'Tu regalo está apartado' : '¡Listo! Tu regalo está pagado') + '</h3><p id="rg-res">Cargando los datos…</p></div>';
+      api({ accion:'regalo_ver', t:t }).then(function(r){
+        var g = r.regalo, cuando = (g.llegaHoy || g.entregarEn <= hoy()) ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
+        document.getElementById('rg-res').outerHTML =
+          '<p>' + (est === 'pendiente' ? 'En cuanto Mercado Pago confirme tu pago (con OXXO puede tardar unas horas), se lo enviamos.' : 'Le llega ' + esc(cuando) + ' con tu mensaje y su código para empezar.') + '</p>' +
+          '<dl><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || '') + '</dd><dt>Le llega</dt><dd>' + esc(cuando) + '</dd><dt>Total</dt><dd>' + dinero(g.monto) + '</dd></dl>' +
+          '<p class="rg-ayuda">Te mandamos un correo con tu comprobante y una liga para cambiar el correo, el mensaje o la fecha. ¿Algo está mal? <a href="regalo.html?t=' + encodeURIComponent(t) + '">Cámbialo aquí</a>.</p>' +
+          '<p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="cerrarRegalo()">Listo</button></p>';
+      }).catch(function(){ document.getElementById('rg-res').textContent = 'Te mandamos un correo con el comprobante y la liga para revisar tu regalo.'; });
+    }
+  }
+  /* Liga de embajador o de promoción: …/sitio-web/?cupon=CODIGO. Se guarda en el dispositivo
+     (el aula lo aplica solo al pagar) y se avisa arriba de la página. */
+  (function(){
+    var c = (q.get('cupon') || '').trim().toUpperCase();
+    try{
+      if(c && /^[A-Z0-9-]{3,40}$/.test(c) && !/^REGALO-/.test(c)){ localStorage.setItem('institutoMara.cupon', c); localStorage.removeItem('institutoMara.cuponCurso');
+        history.replaceState(null, '', location.pathname + location.hash); }
+      var g = localStorage.getItem('institutoMara.cupon') || '';
+      if(g && !/^REGALO-/.test(g)){
+        var bar = document.createElement('div'); bar.className = 'cupon-barra';
+        bar.innerHTML = '🎟️ Tienes el código <b>' + esc(g) + '</b>: se aplica solo al pagar tu curso o diplomado.';
+        var h = document.querySelector('header'); h.parentNode.insertBefore(bar, h);
+      }
+    }catch(x){}
+  })();
+  /* Precio del plan para empresas en la puerta de la portada, igual al de la tabla */
+  function precioEmp(){ var td = document.querySelector('#emp-precios tr td:nth-child(2)'), el = document.getElementById('hero-emp-precio'); if(td && el && /\$/.test(td.textContent)) el.textContent = td.textContent.trim() + ' al mes'; }
+  precioEmp(); setTimeout(precioEmp, 2500);
+})();
 </script>
 </body>
 </html>

@@ -523,7 +523,8 @@ var Nube = {
       nivel:c.nivel || 'Cursos libres de capacitación', familia:c.familia || 'General',
       periodo_tipo:c.periodoTipo || null, periodo_num:c.periodoNum == null ? null : c.periodoNum,
       horas:Number(c.horas)||0, precio:Number(c.precio)||0,
-      publicado:!!c.publicado, proximamente:!!c.proximamente }], 'id');
+      publicado:!!c.publicado, proximamente:!!c.proximamente,
+      area:c.area || null, tema:c.tema || null, dificultad:c.dificultad || null }], 'id');
   },
 
   /* El precio, el nombre y el estado de cada curso los manda el servidor
@@ -537,7 +538,7 @@ var Nube = {
       : (ses ? token().catch(function(){ return null; }) : Promise.resolve(null));
     return listo.then(function(t){
       cab.Authorization = 'Bearer ' + (t || cfg.key);
-      return fetch(cfg.url + '/rest/v1/cursos?select=id,nombre,descripcion,horas,precio,publicado,proximamente',
+      return fetch(cfg.url + '/rest/v1/cursos?select=id,nombre,descripcion,horas,precio,publicado,proximamente,area,tema,dificultad',
                    { headers: cab });
     }).then(function(r){ return r.ok ? r.json() : []; })
       .then(function(filas){
@@ -553,6 +554,7 @@ var Nube = {
             if(f.descripcion) c.desc = f.descripcion;
             c.publicado = !!f.publicado;
             c.proximamente = !!f.proximamente;
+            if(f.area){ c.area = f.area; c.tema = f.tema; c.dificultad = f.dificultad; }
             n++;
           }
           /* Rutas de aprendizaje (paquetes): precio y estado también del servidor */
@@ -571,9 +573,15 @@ var Nube = {
      El alumno solo puede probar un código a la vez (la base valida y
      calcula el descuento); la lista completa la ve nada más el admin. */
   validarCupon: function(codigo, cursoId){
-    return rest('rpc/aplicar_cupon', { metodo:'POST',
-      cuerpo:{ p_codigo: codigo, p_curso_id: cursoId } })
-      .then(function(f){ return Array.isArray(f) ? f[0] : f; });
+    var cuerpo = { p_codigo: codigo, p_curso_id: cursoId };
+    sesionMasNueva();
+    /* Sin sesión (p. ej., la lección gratis) se consulta con la llave pública:
+       aplicar_cupon solo calcula el precio, no guarda nada. */
+    var r = ses ? rest('rpc/aplicar_cupon', { metodo:'POST', cuerpo: cuerpo })
+      : fetch(cfg.url + '/rest/v1/rpc/aplicar_cupon', { method:'POST',
+          headers:{ apikey: cfg.key, Authorization: 'Bearer ' + cfg.key, 'Content-Type': 'application/json' },
+          body: JSON.stringify(cuerpo) }).then(function(x){ return x.json(); });
+    return r.then(function(f){ return Array.isArray(f) ? f[0] : f; });
   },
   listarCupones: function(){
     return rest('cupones?select=*&order=creado_en.desc');

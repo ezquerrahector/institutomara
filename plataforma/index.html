@@ -152,6 +152,17 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit
 .chips-aula button{border:1.5px solid var(--linea);background:#fff;color:var(--tinta);padding:7px 13px;border-radius:999px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
 .chips-aula button.on{background:var(--morado);border-color:var(--morado);color:#fff}
 .chips-aula small{opacity:.7;font-weight:500;margin-left:3px}
+.chips-temas{background:var(--nube,#F8F7FE);border-radius:14px;padding:8px 10px;margin-top:4px}
+.chips-temas button{font-size:.84rem;padding:5px 11px}
+.chips-temas button.on{background:var(--tinta,#2E1065);border-color:var(--tinta,#2E1065)}
+.cat-filtros{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin:8px 0 12px}
+.cat-filtros label{display:flex;flex-direction:column;font-size:.75rem;font-weight:700;color:var(--gris);gap:3px}
+.cat-filtros select{font:inherit;font-size:.9rem;padding:7px 9px;border:1.5px solid var(--linea);border-radius:10px;background:#fff;min-width:140px}
+.cat-limpiar{border:0;background:none;color:var(--morado);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;padding:7px 2px}
+.cat-etq{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
+.cat-etq span{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#F3F4F6;color:var(--gris)}
+.cat-etq .nv-intermedio{background:#FEF3C7;color:#92400E}.cat-etq .nv-profesional{background:#EDE9FE;color:#6D28D9}.cat-etq .nv-desde_cero{background:#DCFCE7;color:#166534}
+@media(max-width:700px){.cat-filtros label{flex:1 1 45%}.cat-filtros select{min-width:0;width:100%}}
 .cat-tit{margin:26px 0 10px;color:var(--tinta);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .cat-tit small{color:var(--gris);font-weight:500;font-size:.85rem}
 .cat-tit a{margin-left:auto;font-size:.9rem;color:var(--morado);font-weight:700;text-decoration:none}
@@ -472,6 +483,7 @@ details.modelo summary{cursor:pointer;font-weight:600;color:var(--morado,#7C3AED
 details.modelo summary::-webkit-details-marker{display:none}
 details.modelo[open] summary{margin-bottom:8px}
 </style>
+<script src="../sitio-web/meta-pixel.js?v=20261027a"></script>
 </head>
 <body>
 
@@ -590,7 +602,8 @@ details.modelo[open] summary{margin-bottom:8px}
 <div id="modales"></div>
 
 <!-- Ejercicios interactivos y contenido de los cursos (un archivo por curso) -->
-<script src="nube.js?v=20261020s"></script>
+<script src="taxonomia.js?v=20261026a"></script>
+<script src="nube.js?v=20261027k"></script>
 <script src="interactivo.js?v=20261020c"></script>
 <script src="cursos/indice.js?v=98331b6aab"></script>
 <script src="cursos/rutas.js?v=20261004"></script>
@@ -1797,6 +1810,11 @@ function entrarApp(){
 
   if(pago === 'exito' && cid){
     history.replaceState(null,'',location.pathname);
+    try{ /* Píxel: compra aprobada (una sola vez, con el monto guardado al ir a pagar). */
+      var px = JSON.parse(localStorage.getItem('institutoMara.compraPixel') || 'null');
+      if(px && px.cid === cid && Date.now() - px.t < 864e5 && window.pixel) pixel('Purchase', { content_ids:[cid], value:px.monto, currency:'MXN' });
+      localStorage.removeItem('institutoMara.compraPixel');
+    }catch(e){}
     /* El acceso lo da el servidor cuando Mercado Pago confirma el pago, nunca
        el navegador: aquí solo se espera a que aparezca. */
     if(NUBE){ esperarAcceso(cid); return; }
@@ -2054,8 +2072,10 @@ function tarjetaRuta(r){
     '</div></article>';
 }
 
-function famDe(c){
-  if(c.nivel === 'Diplomados') return 'Diplomados';
+/* Clasificación única (taxonomia.js): área → tema + nivel. famDe devuelve el área. */
+function claseDe(c){ return TAXO.de({ id:c.id, area:c.area, tema:c.tema, dificultad:c.dificultad, familia:famViejaDe(c) }); }
+function famDe(c){ return claseDe(c).area; }
+function famViejaDe(c){
   if(c.iaPorProfesion || /^c-ia-/.test(c.id)) return 'IA por profesión';
   if(c.id === 'c-ia') return 'IA aplicada';
   return c.familia || 'General';
@@ -2072,7 +2092,8 @@ function tarjetaCurso(c){
   var lec = c.modulos.reduce(function(a,m){ return a + m.lecciones.length; }, 0);
   return '<article class="curso-card cat-card">'+
     '<div class="cat-franja" style="background:linear-gradient(90deg,'+c.color+',#7C3AED)"></div><div class="curso-cuerpo">'+
-    '<span class="cat-fam">'+esc(famDe(c))+'</span>'+
+    '<span class="cat-fam">'+esc((c.nivel === 'Diplomados' ? 'Diplomado · ' : 'Curso · ') + (claseDe(c).tema || famDe(c)))+'</span>'+
+    '<div class="cat-etq"><span>'+esc(famDe(c))+'</span><span class="nv-'+claseDe(c).nivel+'">'+esc(TAXO.NIVELES[claseDe(c).nivel]||'')+'</span></div>'+
     '<h3>'+esc(c.nombre)+'</h3><p class="cat-desc">'+esc(c.desc)+'</p>'+
     '<div class="cat-meta">'+c.horas+' h · '+c.modulos.length+' módulos · '+lec+' lecciones</div>'+
     '<div class="cat-precio">'+dinero(c.precio)+'</div>'+
@@ -2093,7 +2114,7 @@ function verPrograma(cid){
   var paso = Math.max(1, obj.length / 6), aprende = [];
   for(var i=0;i<obj.length && aprende.length<6;i+=paso){ var o = obj[Math.floor(i)]; aprende.push(o.charAt(0).toUpperCase()+o.slice(1)); }
   var rutas = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && r.cursos.indexOf(cid) >= 0; });
-  var h = '<div class="ficha-etq">'+esc(c.nivel === 'Diplomados' ? 'Diplomado · '+(c.familia||'') : 'Curso · '+famDe(c))+'</div>'+
+  var h = '<div class="ficha-etq">'+esc((c.nivel === 'Diplomados' ? 'Diplomado · ' : 'Curso · ') + famDe(c) + (claseDe(c).tema ? ' · ' + claseDe(c).tema : '') + ' · ' + (TAXO.NIVELES[claseDe(c).nivel]||''))+'</div>'+
     '<p style="color:var(--gris);margin:4px 0 12px">'+c.horas+' horas · '+c.modulos.length+' módulos · '+lec+' lecciones · evaluación por módulo · constancia con folio</p>'+
     '<p style="margin-bottom:14px">'+esc(c.desc)+'</p>';
   if(aprende.length) h += '<h4 class="ficha-sub">Lo que vas a aprender</h4><ul class="ficha-aprende">'+
@@ -2134,22 +2155,42 @@ function verRuta(rid){
     : '<button class="btn btn-mor" onclick="abrirPago(\''+r.id+'\')">Quiero esta ruta</button>');
 }
 
-var filtroCat = { k:'Todos', q:'' };
+var filtroCat = { k:'Todos', q:'', t:'', tipo:'', dur:'', nv:'' };
+function catPasa(c, sin){
+  var x = claseDe(c), f = filtroCat;
+  return (sin === 'k' || f.k === 'Todos' || x.area === f.k) && (sin === 't' || !f.t || x.tema === f.t) &&
+    (!f.tipo || (f.tipo === 'diplomado') === (c.nivel === 'Diplomados')) && (!f.dur || TAXO.duracion(c.horas) === f.dur) && (!f.nv || x.nivel === f.nv);
+}
+function catAreas(pub){ return TAXO.areasCon(pub.map(function(c){ var x = claseDe(c); return { area:x.area, tema:x.tema }; })); }
+function catFiltro(campo, valor){ filtroCat[campo] = valor; if(campo === 'k') filtroCat.t = ''; ir('catalogo'); }
 function vistaCatalogo(){
-  var pub = BD.cursos.filter(function(c){ return c.publicado; });
-  var cuenta = {}; pub.forEach(function(c){ var f = famDe(c); cuenta[f] = (cuenta[f]||0) + 1; });
-  var orden = ['Diplomados','Negocios y finanzas','Administración y oficina','Idiomas','Tecnología','Salud y bienestar','Desarrollo humano','Recursos Humanos y empresa','IA aplicada','IA por profesión'];
-  var cats = ['Todos'];
+  var pub = BD.cursos.filter(function(c){ return c.publicado; }), f = filtroCat;
+  if(f.k === 'Rutas') f.t = '';
+  var base = pub.filter(function(c){ return catPasa(c, 'k'); }), cuenta = {};
+  base.forEach(function(c){ var a = famDe(c); cuenta[a] = (cuenta[a]||0) + 1; });
+  var areas = catAreas(pub), cats = ['Todos'];
   if((window.RUTAS_MARA||[]).length) cats.push('Rutas');
-  orden.forEach(function(k){ if(cuenta[k]) cats.push(k); });
-  Object.keys(cuenta).forEach(function(k){ if(cats.indexOf(k) < 0) cats.push(k); });
-  var n = function(k){ return k === 'Todos' ? pub.length : k === 'Rutas' ? (window.RUTAS_MARA||[]).length : cuenta[k]; };
+  areas.forEach(function(a){ if(cuenta[a.k] || f.k === a.k) cats.push(a.k); });
+  var n = function(k){ return k === 'Todos' ? base.length : k === 'Rutas' ? (window.RUTAS_MARA||[]).length : (cuenta[k]||0); };
+  var area = areas.filter(function(a){ return a.k === f.k; })[0], temas = '';
+  if(area && area.temas.length > 1){
+    var ct = {}; pub.filter(function(c){ return catPasa(c, 't'); }).forEach(function(c){ var t = claseDe(c).tema; ct[t] = (ct[t]||0) + 1; });
+    temas = '<div class="chips-aula chips-temas">'+['' ].concat(area.temas.filter(function(t){ return ct[t] || t === f.t; })).map(function(t){
+      return '<button class="'+(f.t === t ? 'on' : '')+'" onclick="catFiltro(\'t\',\''+esc(t).replace(/'/g,"\\'")+'\')">'+(t ? esc(t)+'<small>'+(ct[t]||0)+'</small>' : 'Todos los temas')+'</button>'; }).join('')+'</div>';
+  }
+  var opt = function(campo, lista){ return '<select onchange="catFiltro(\''+campo+'\',this.value)">'+lista.map(function(o){ return '<option value="'+o[0]+'"'+(f[campo] === o[0] ? ' selected' : '')+'>'+o[1]+'</option>'; }).join('')+'</select>'; };
+  var hay = f.k !== 'Todos' || f.t || f.tipo || f.dur || f.nv || f.q;
   return '<div class="seccion"><h2>Catálogo</h2>'+
     '<p class="sub">Conoce cada programa, prueba una lección gratis y decide con calma. Al terminar recibes constancia con folio y QR de verificación.</p>'+
-    '<input type="search" class="cat-buscar" id="cat-q" placeholder="Buscar: Excel, inglés, RESICO, duelo…" value="'+esc(filtroCat.q)+'" oninput="filtroCat.q=this.value;pintarCatalogo()">'+
+    '<input type="search" class="cat-buscar" id="cat-q" placeholder="Buscar: Excel, inglés, RESICO, duelo…" value="'+esc(f.q)+'" oninput="filtroCat.q=this.value;pintarCatalogo()">'+
     '<div class="chips-aula" id="cat-chips">'+cats.map(function(k){
-      return '<button class="'+(filtroCat.k===k?'on':'')+'" onclick="filtroCat.k=\''+k+'\';document.querySelectorAll(\'#cat-chips button\').forEach(function(b){b.classList.remove(\'on\')});this.classList.add(\'on\');pintarCatalogo()">'+esc(k)+' <small>'+n(k)+'</small></button>';
-    }).join('')+'</div><div id="cat-res"></div></div>';
+      return '<button class="'+(f.k===k?'on':'')+'" onclick="catFiltro(\'k\',\''+esc(k).replace(/'/g,"\\'")+'\')">'+esc(k)+'<small>'+n(k)+'</small></button>';
+    }).join('')+'</div>'+temas+
+    (f.k === 'Rutas' ? '' : '<div class="cat-filtros"><label>Tipo'+opt('tipo', [['','Cursos y diplomados'],['curso','Solo cursos'],['diplomado','Solo diplomados']])+'</label>'+
+      '<label>Duración'+opt('dur', [['','Cualquiera']].concat(TAXO.DURACION))+'</label>'+
+      '<label>Nivel'+opt('nv', [['','Cualquiera']].concat(Object.keys(TAXO.NIVELES).map(function(k){ return [k, TAXO.NIVELES[k]]; })))+'</label>'+
+      (hay ? '<button class="cat-limpiar" onclick="filtroCat={k:\'Todos\',q:\'\',t:\'\',tipo:\'\',dur:\'\',nv:\'\'};ir(\'catalogo\')">Quitar filtros</button>' : '')+'</div>')+
+    '<div id="cat-res"></div></div>';
 }
 function normaliza(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
 function pintarCatalogo(){
@@ -2157,21 +2198,22 @@ function pintarCatalogo(){
   var q = normaliza(filtroCat.q), k = filtroCat.k, h = '';
   var rutas = (window.RUTAS_MARA||[]).filter(function(r){ return r.publicado !== false && (!q || normaliza(r.nombre+' '+r.desc).indexOf(q) >= 0); });
   var pub = BD.cursos.filter(function(c){
-    return c.publicado && (k === 'Todos' || famDe(c) === k) && (!q || normaliza(c.nombre+' '+c.desc+' '+famDe(c)).indexOf(q) >= 0);
+    return c.publicado && catPasa(c) && (!q || normaliza(c.nombre+' '+c.desc+' '+famDe(c)+' '+claseDe(c).tema).indexOf(q) >= 0);
   });
-  if((k === 'Todos' && !q && rutas.length) || k === 'Rutas'){
+  var sinFiltros = !filtroCat.t && !filtroCat.tipo && !filtroCat.dur && !filtroCat.nv;
+  if((k === 'Todos' && !q && sinFiltros && rutas.length) || k === 'Rutas'){
     h += '<h3 class="cat-tit">Rutas de aprendizaje <small>varios programas con precio especial</small></h3>'+
       '<div class="rejilla rejilla-3">'+rutas.map(tarjetaRuta).join('')+'</div>';
   }
   if(k !== 'Rutas'){
-    if(k === 'Todos' && !q){
+    if(k === 'Todos' && !q && sinFiltros){
       /* Vista general: por categoría, con máximo 3 por fila de categoría y botón para ver todos */
       var grupos = {}; pub.forEach(function(c){ var f = famDe(c); (grupos[f] = grupos[f] || []).push(c); });
-      ['Diplomados','Negocios y finanzas','Administración y oficina','Idiomas','Tecnología','Salud y bienestar','Desarrollo humano','Recursos Humanos y empresa','IA aplicada','IA por profesión']
+      catAreas(pub).map(function(a){ return a.k; })
         .concat(Object.keys(grupos)).filter(function(f, i, a){ return grupos[f] && a.indexOf(f) === i; }).forEach(function(f){
         var g = grupos[f];
         h += '<h3 class="cat-tit">'+esc(f)+' <small>'+g.length+'</small>'+
-          (g.length > 3 ? '<a href="#" onclick="filtroCat.k=\''+f+'\';ir(\'catalogo\');return false">Ver todos ›</a>' : '')+'</h3>'+
+          (g.length > 3 ? '<a href="#" onclick="catFiltro(\'k\',\''+esc(f).replace(/'/g,"\\'")+'\');return false">Ver todos ›</a>' : '')+'</h3>'+
           '<div class="rejilla rejilla-3">'+g.slice(0,3).map(tarjetaCurso).join('')+'</div>';
       });
     } else {
@@ -2397,7 +2439,13 @@ function pagarConMercadoPago(cid){
         'No te vamos a cobrar: escríbenos por WhatsApp y te damos el acceso.</div>';
       return;
     }
-    if(d && d.init_point){ location.href = d.init_point; return; }
+    if(d && d.init_point){
+      /* Píxel: inicio de pago, y se guarda el monto para registrar la compra al regresar. */
+      var montoPx = cuponPago ? Number(cuponPago.precio) : Number((programa(cid) || {}).precio || 0);
+      if(window.pixel) pixel('InitiateCheckout', { content_ids:[cid], value:montoPx, currency:'MXN' });
+      try{ localStorage.setItem('institutoMara.compraPixel', JSON.stringify({ cid:cid, monto:montoPx, t:Date.now() })); }catch(e){}
+      location.href = d.init_point; return;
+    }
     if(btn){ btn.removeAttribute('disabled'); btn.textContent = (cuponPago && cuponPago.precio <= 0) ? 'Obtener mi acceso' : 'Continuar al pago seguro'; }
     var av = $('pg-aviso');
     var msg = (d && d.error) ? d.error : 'No se pudo iniciar el pago. Intenta de nuevo o escríbenos por WhatsApp.';
@@ -3369,7 +3417,14 @@ function datosCurso(cid){
     '<div class="fila"><div class="campo"><label>Nivel</label><select id="dc-niv">'+opcionesNivel(c.nivel)+'</select></div>'+
     '<div class="campo"><label>Periodo</label><select id="dc-per">'+opcionesPeriodo(c.periodoTipo||'')+'</select></div></div>'+
     '<div class="fila"><div class="campo"><label>Número de periodo</label><input type="number" id="dc-pnum" min="1" value="'+(c.periodoNum||'')+'"></div>'+
-    '<div class="campo"><label>Familia / categoría</label><input id="dc-fam" value="'+esc(c.familia||'')+'"></div></div>'+
+    '<div class="campo"><label>Familia (interna)</label><input id="dc-fam" value="'+esc(c.familia||'')+'"></div></div>'+
+    (function(){ var x = claseDe(c), areas = TAXO.areasCon([{ area:x.area, tema:x.tema }]);
+      return '<div class="fila"><div class="campo"><label>Área (sitio y catálogo)</label><input id="dc-area" list="dc-areas" value="'+esc(x.area)+'">'+
+        '<datalist id="dc-areas">'+areas.map(function(a){ return '<option value="'+esc(a.k)+'">'; }).join('')+'</datalist></div>'+
+        '<div class="campo"><label>Tema</label><input id="dc-tema" list="dc-temas" value="'+esc(x.tema)+'">'+
+        '<datalist id="dc-temas">'+areas.reduce(function(t, a){ return t.concat(a.temas); }, []).map(function(t){ return '<option value="'+esc(t)+'">'; }).join('')+'</datalist></div>'+
+        '<div class="campo"><label>Nivel de entrada</label><select id="dc-dif">'+Object.keys(TAXO.NIVELES).map(function(k){ return '<option value="'+k+'"'+(x.nivel === k ? ' selected' : '')+'>'+TAXO.NIVELES[k]+'</option>'; }).join('')+'</select></div></div>'+
+        '<p style="color:var(--gris);font-size:.82rem;margin:-6px 0 12px">Elige un área y un tema existentes, o escribe uno nuevo (p. ej. «Cocina y gastronomía»): aparece solo en el sitio y en el catálogo.</p>'; })()+
     '<div class="fila"><div class="campo"><label>Horas</label><input type="number" id="dc-hrs" value="'+c.horas+'"></div>'+
     '<div class="campo"><label>Precio</label><input type="number" id="dc-pre" value="'+c.precio+'"></div></div>'+
     '<div class="fila"><div class="campo"><label>Color</label><input type="color" id="dc-col" value="'+c.color+'" style="height:46px;padding:5px"></div>'+
@@ -3386,6 +3441,7 @@ function guardarDatosCurso(cid){
   c.nivel = $('dc-niv').value; c.periodoTipo = $('dc-per').value||null;
   c.periodoNum = $('dc-pnum').value?Number($('dc-pnum').value):null;
   c.familia = $('dc-fam').value.trim()||'General';
+  c.area = $('dc-area').value.trim() || null; c.tema = $('dc-tema').value.trim() || null; c.dificultad = $('dc-dif').value || null;
   c.horas = Number($('dc-hrs').value)||0; c.precio = Number($('dc-pre').value)||0;
   c.color = $('dc-col').value;
   var estado2 = $('dc-pub').value;
@@ -5308,11 +5364,17 @@ function vistaMuestra(cid){
   /* Cupón de bienvenida visible en la muestra: LANZAMIENTO30 hasta el 21 oct 2026,
      después BIENVENIDA30 (vence 31 dic 2026). Ambos 30 %. Va en la liga de compra. */
   var hoy = new Date(), cup = hoy < new Date('2026-10-22T00:00:00-06:00') ? 'LANZAMIENTO30' : (hoy < new Date('2027-01-01T00:00:00-06:00') ? 'BIENVENIDA30' : '');
-  var conCup = cup ? Math.round(c.precio * 0.7) : c.precio;
+  var conCup = cup ? Math.round(c.precio * 0.7) : c.precio, pctCup = 30;
+  /* Si la liga trae su propio cupón (?cupon=…) y el servidor lo acepta para
+     este programa, ese manda (p. ej., KITCLINICO de la campaña del kit). */
+  if(muestraCupon && muestraCupon.curso === c.id){
+    cup = muestraCupon.codigo; conCup = muestraCupon.final;
+    pctCup = Math.round((1 - muestraCupon.final / c.precio) * 100);
+  }
   var comprar = 'index.html?curso=' + encodeURIComponent(c.id) + (cup ? '&cupon=' + cup : '');
   var wa = 'https://wa.me/' + (BD.config.whatsapp || '528120282120') + '?text=' + encodeURIComponent('Hola, estoy viendo la lección gratis de «' + c.nombre + '» y tengo una duda.');
   var precioTxt = cup ? '<s style="opacity:.7">'+dinero(c.precio)+'</s> '+dinero(conCup) : dinero(c.precio);
-  var h = '<div class="muestra-barra"><div class="contenedor"><div><b>Instituto Mara</b> · <span>Lección de muestra gratuita'+(cup ? ' · 30 % de descuento con <b style="color:#fff">'+cup+'</b>' : '')+'</span></div>'+
+  var h = '<div class="muestra-barra"><div class="contenedor"><div><b>Instituto Mara</b> · <span>Lección de muestra gratuita'+(cup ? ' · '+pctCup+' % de descuento con <b style="color:#fff">'+cup+'</b>' : '')+'</span></div>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-sm" style="background:#25D366;color:#fff" target="_blank" rel="noopener" href="'+wa+'">WhatsApp</a>'+
     '<a class="btn btn-sm" style="background:#fff;color:var(--morado)" href="'+comprar+'">Inscribirme · '+precioTxt+'</a></div></div></div>'+
     '<main class="contenedor"><div class="seccion"><div class="lector">'+
@@ -5330,13 +5392,20 @@ function vistaMuestra(cid){
   h += '<div class="muestra-cta"><h3>¿Te gustó? Así son las '+total+' lecciones del programa.</h3>'+
     '<p style="color:var(--gris)">'+c.modulos.length+' módulos, evaluación en cada uno y constancia con folio al terminar. '+
     'Pago único de '+(cup ? '<s>'+dinero(c.precio)+'</s> <b>'+dinero(conCup)+'</b> con el cupón <b>'+cup+'</b> (ya va aplicado)' : dinero(c.precio))+' y acceso por 12 meses.</p>'+
-    '<div class="btns"><a class="btn btn-mor" href="'+comprar+'">Inscribirme'+(cup ? ' con 30 % de descuento' : '')+'</a>'+
+    '<div class="btns"><a class="btn btn-mor" href="'+comprar+'">Inscribirme'+(cup ? ' con '+pctCup+' % de descuento' : '')+'</a>'+
     '<a class="btn btn-tur" style="background:#25D366;border-color:#25D366;color:#fff" target="_blank" rel="noopener" href="'+wa+'">Pregúntanos por WhatsApp</a>'+
     '<a class="btn btn-linea" href="'+sitio+'">Ver temario completo</a></div></div>'+
     '</div></div></main>';
   return h;
 }
+var muestraCupon = null;   /* { curso, codigo, final } validado por el servidor */
 function abrirMuestra(cid){
+  var cp = cuponPendiente();
+  if(cp && NUBE) Nube.validarCupon(cp, cid).then(function(r){
+    if(!r || !r.valido) return;
+    muestraCupon = { curso: cid, codigo: cp, final: Number(r.precio_final) };
+    var el = $('muestra'), h3 = vistaMuestra(cid); if(el && h3) el.innerHTML = h3;
+  }).catch(function(){});
   var h = vistaMuestra(cid);
   if(!h) return false;
   estado.vista = 'muestra';
@@ -5408,5 +5477,6 @@ avisoEnlaceCorreo();
 <script src="acceso-intencion.js?v=20261019a"></script>
 <script src="constancia-logo.js?v=20261020a"></script>
 <script src="prospectos-alumnos.js?v=20261020a"></script>
+<script src="embajadores.js?v=20261026b"></script>
 </body>
 </html>

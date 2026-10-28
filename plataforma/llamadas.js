@@ -244,7 +244,7 @@ function llTxt(t, d){ return esc(t).replace(/\{(\w+)\}/g, function(m, k){ return
 var LL_GUIONES = [
   { id:'recepcion', rot:'1. Recepción', partes:[
     ['', '{saludo}, habla {op}, de Instituto Mara. ¿Me comunica, por favor, con la persona que ve Recursos Humanos o la capacitación del personal?'],
-    ['Si preguntan «¿de qué se trata?»', 'Somos una escuela en línea de León que funciona como el área de capacitación de las empresas: armamos el plan para su personal, cada quien estudia desde su celular y la empresa ve el avance en un panel. Queremos regalarle a {emp} un plan de capacitación y 15 días de prueba para 5 personas. ¿Con quién lo podría platicar?'],
+    ['Si preguntan «¿de qué se trata?»', 'Somos una escuela 100% en línea que funciona como el área de capacitación de las empresas: armamos el plan para su personal, cada quien estudia desde su celular y la empresa ve el avance en un panel. Queremos regalarle a {emp} un plan de capacitación y 15 días de prueba para 5 personas. ¿Con quién lo podría platicar?'],
     ['Si no lo transfieren', 'Entiendo. ¿Me comparte el correo de esa persona para mandarle el plan? ¿Y a qué hora es más fácil encontrarla?']
   ]},
   { id:'encargado', rot:'2. Con quien decide', partes:[

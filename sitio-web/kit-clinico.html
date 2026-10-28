@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit gratis de formatos clínicos · Instituto Mara</title>
+<meta name="description" content="Descarga gratis 4 formatos editables para tu consulta: entrevista clínica inicial, registro de pensamientos (TCC), consentimiento informado y plan de tratamiento.">
+<meta property="og:title" content="Kit gratis de formatos clínicos para tu consulta">
+<meta property="og:description" content="Entrevista inicial, registro de pensamientos, consentimiento informado y plan de tratamiento. Editables y listos para usar.">
+<meta property="og:image" content="https://institutomara.com/sitio-web/recursos/kit-p1.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--morado:#6D28D9;--morado-osc:#5B21B6;--tinta:#2E1065;--lavanda:#EDE9FE;--lila:#D9D6F7;--nube:#F8F7FE;--texto:#1F2937;--gris:#6B7280;--linea:#E9E6F7;--rojo:#DC2626;--verde:#059669;--turquesa:#14B8A6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--texto);background:#fff;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--morado)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--linea);background:#fff;position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}.marca svg{width:32px;height:32px}.marca b{font-size:19px;color:var(--tinta);letter-spacing:-.02em}
+h1,h2,h3{color:var(--tinta);letter-spacing:-.02em;line-height:1.2}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:800}
+h2{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:10px}
+h3{font-size:17px;font-weight:700}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--morado)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;font:inherit;font-weight:700;padding:14px 26px;cursor:pointer;text-decoration:none}
+.btn-mor{background:var(--morado);color:#fff}.btn-mor:hover{background:var(--morado-osc)}.btn-mor:disabled{opacity:.6;cursor:wait}
+.btn-linea{background:transparent;color:var(--morado);box-shadow:inset 0 0 0 2px var(--lila)}
+.btn-chico{padding:9px 16px;font-size:14px}
+input,select{font:inherit;font-size:16px;padding:12px 13px;border:1.5px solid var(--linea);border-radius:12px;width:100%;background:#fff;color:var(--texto)}
+input:focus,select:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+label{display:flex;flex-direction:column;gap:5px;font-size:13.5px;font-weight:600;color:var(--tinta)}
+label small{font-weight:500;color:var(--gris)}
+.aviso{border-radius:12px;padding:12px 14px;font-size:14.5px}
+.aviso-error{background:#FEF2F2;color:var(--rojo)}
+.ayuda{color:var(--gris);font-size:13.5px}
+footer{background:var(--tinta);color:#C4B5FD;font-size:14px;text-align:center;padding:26px 16px;margin-top:64px}
+footer a{color:#fff}
+
+.hero{background:linear-gradient(160deg,#F8F7FE 0%,#EDE9FE 100%);padding:46px 0 56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:start}
+.lead{font-size:18.5px;color:var(--gris);margin-top:14px;max-width:560px}
+.formatos{list-style:none;margin:24px 0 0;display:grid;gap:12px}
+.formatos li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;align-items:start}
+.formatos .n{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--morado);display:grid;place-items:center;font-weight:800;box-shadow:inset 0 0 0 1.5px var(--lila)}
+.formatos b{display:block;color:var(--tinta);font-size:16px}
+.formatos span{color:var(--gris);font-size:14.5px}
+.firma{margin-top:22px;font-size:14px;color:var(--gris);display:flex;gap:8px;align-items:center}
+.firma svg{flex:none}
+.tarjeta{background:#fff;border-radius:24px;padding:28px;box-shadow:0 10px 40px rgba(46,16,101,.12);border:1px solid var(--linea)}
+.tarjeta h2{font-size:24px;margin-bottom:4px}
+.form{display:grid;gap:14px;margin-top:18px}
+.perfiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.perfiles label{position:relative}
+.perfiles input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;padding:0;border:0;left:0;top:0}
+.perfiles span{display:block;text-align:center;padding:10px 6px;border-radius:12px;border:1.5px solid var(--linea);font-size:13.5px;font-weight:600;color:var(--tinta);cursor:pointer;line-height:1.3}
+.perfiles input:checked + span{border-color:var(--morado);background:var(--lavanda);color:var(--morado)}
+.perfiles input:focus-visible + span{box-shadow:0 0 0 3px var(--lavanda)}
+.legal{font-size:12.5px;color:var(--gris);line-height:1.5}
+.trampa{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+.listo{text-align:center;padding:6px 0}
+.listo .ok{width:60px;height:60px;border-radius:50%;background:#ECFDF5;color:var(--verde);display:grid;place-items:center;margin:0 auto 12px;font-size:30px;font-weight:800}
+.listo p{color:var(--gris);margin:8px 0 18px}
+.oferta{margin-top:20px;text-align:left;background:var(--lavanda);border-radius:16px;padding:16px 18px;font-size:15px}
+.oferta b{color:var(--tinta)}
+
+.seccion{padding:56px 0 0}
+.cab{text-align:center;max-width:680px;margin:0 auto 26px}
+.cab p{color:var(--gris);margin-top:6px}
+.paginas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pag{background:var(--nube);border-radius:18px;padding:14px;border:1px solid var(--linea)}
+.pag img{width:100%;height:220px;object-fit:contain;display:block;border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(46,16,101,.08)}
+.pag h3{margin-top:12px}
+.pag p{color:var(--gris);font-size:14.5px;margin-top:4px}
+.para{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.para div{border-radius:18px;padding:22px;border:1px solid var(--linea)}
+.para p{color:var(--gris);font-size:15px;margin-top:6px}
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+details{border:1px solid var(--linea);border-radius:14px;padding:14px 18px;background:#fff}
+summary{cursor:pointer;font-weight:700;color:var(--tinta)}
+details p{color:var(--gris);margin-top:8px;font-size:15.5px}
+.final{margin-top:56px;background:linear-gradient(140deg,#2E1065,#5B21B6);border-radius:24px;padding:36px 28px;text-align:center;color:#EDE9FE}
+.final h2{color:#fff}
+.final .btn{background:#fff;color:var(--morado);margin-top:14px}
+@media(max-width:860px){
+  .hero{padding:28px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .tarjeta{padding:22px}
+  .paginas{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .pag img{height:170px}
+  .para{grid-template-columns:1fr}
+  .nav .btn-chico{display:none}
+}
+@media(max-width:420px){.perfiles{grid-template-columns:1fr}.perfiles span{text-align:left;padding:10px 12px}}
+</style>
+<script src="meta-pixel.js?v=20261027a"></script>
+</head>
+<body>
+<header><div class="wrap nav"><a class="marca" href="./" aria-label="Instituto Mara, inicio">
+<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95" fill="none" stroke="#6D28D9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Instituto Mara</b></a>
+<a class="btn btn-linea btn-chico" href="#descargar">Descargar gratis</a></div></header>
+
+<div class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Gratis para psicólogos y estudiantes</div>
+    <h1 style="margin-top:10px">Kit de formatos clínicos para tu consulta</h1>
+    <p class="lead">Cuatro formatos editables, listos para usar desde tu próxima sesión. Llénalos en la computadora o imprímelos.</p>
+    <ul class="formatos">
+      <li><div class="n">1</div><div><b>Entrevista clínica inicial</b><span>Motivo de consulta, antecedentes, examen mental y evaluación de riesgo.</span></div></li>
+      <li><div class="n">2</div><div><b>Registro de pensamientos (TCC)</b><span>Siete columnas para trabajar con tu paciente entre sesiones.</span></div></li>
+      <li><div class="n">3</div><div><b>Consentimiento informado</b><span>Alcance, confidencialidad y sus límites, honorarios y firmas.</span></div></li>
+      <li><div class="n">4</div><div><b>Plan de tratamiento</b><span>Objetivos medibles, intervenciones, indicadores y criterios de alta.</span></div></li>
+    </ul>
+    <p class="firma"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Elaborado por el equipo académico de Instituto Mara, con formación en psicología.</p>
+  </div>
+
+  <div class="tarjeta" id="descargar">
+    <div id="paso-form">
+      <h2>Recibe tu kit gratis</h2>
+      <p class="ayuda">Te lo mostramos aquí mismo y te lo enviamos a tu correo.</p>
+      <form class="form" id="form" novalidate>
+        <label>Nombre<input id="nombre" autocomplete="name" maxlength="80" required></label>
+        <label>Correo electrónico<input id="correo" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
+        <label>WhatsApp <small>(opcional, por si tienes dudas)</small><input id="whatsapp" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="10 dígitos"></label>
+        <div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--tinta);margin-bottom:6px">Soy</div>
+          <div class="perfiles" role="radiogroup" aria-label="Soy">
+            <label><input type="radio" name="perfil" value="psicologo"><span>Psicólogo(a)</span></label>
+            <label><input type="radio" name="perfil" value="estudiante"><span>Estudiante de psicología</span></label>
+            <label><input type="radio" name="perfil" value="otro"><span>Otro profesional</span></label>
+          </div>
+        </div>
+        <div class="trampa" aria-hidden="true"><label>Sitio web<input id="web" tabindex="-1" autocomplete="off"></label></div>
+        <div id="error" class="aviso aviso-error" role="alert" hidden></div>
+        <button class="btn btn-mor" id="enviar" type="submit">Quiero mi kit gratis</button>
+        <p class="legal">Usaremos tus datos para enviarte el kit y algunos correos con contenido y ofertas de Instituto Mara. Puedes darte de baja cuando quieras. Consulta el <a href="legal/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</p>
+      </form>
+    </div>
+    <div id="paso-listo" class="listo" hidden>
+      <div class="ok" aria-hidden="true">✓</div>
+      <h2>¡Listo, tu kit está aquí!</h2>
+      <p>También te lo enviamos a <b id="listo-correo"></b>. Si no lo ves, revisa tu carpeta de promociones o spam.</p>
+      <a class="btn btn-mor" id="liga-descarga" href="recursos/kit-formatos-clinicos-instituto-mara.pdf" target="_blank" rel="noopener" download>Descargar el kit (PDF)</a>
+      <div class="oferta" id="oferta"><b>Regalo extra: 60 % de descuento</b> en nuestros programas clínicos con el cupón <b>KITCLINICO</b>, hasta el 30 de noviembre. El Diplomado en TCC te queda en <b>$996</b> en lugar de $2,490.
+        <div style="margin-top:10px"><a class="btn btn-linea btn-chico" href="../plataforma/index.html?muestra=d-tcc&cupon=KITCLINICO&utm_source=kit&utm_medium=web&utm_campaign=kit-clinico">Probar una lección gratis</a></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <section class="seccion">
+    <div class="cab"><h2>Así se ven los formatos</h2><p>Con la marca de Instituto Mara y espacios para llenar en pantalla. Adáptalos a tu enfoque y a tu institución.</p></div>
+    <div class="paginas">
+      <div class="pag"><img src="recursos/kit-p2.webp" alt="Formato de entrevista clínica inicial" loading="lazy" width="402" height="520"><h3>Entrevista inicial</h3><p>Dos páginas, con evaluación de riesgo y examen mental breve.</p></div>
+      <div class="pag"><img src="recursos/kit-p4.webp" alt="Registro de pensamientos de siete columnas" loading="lazy" width="520" height="402"><h3>Registro de pensamientos</h3><p>Hoja horizontal con intensidad de 0 a 100.</p></div>
+      <div class="pag"><img src="recursos/kit-p5.webp" alt="Formato de consentimiento informado" loading="lazy" width="402" height="520"><h3>Consentimiento informado</h3><p>Incluye firmas de paciente, tutor y profesional.</p></div>
+      <div class="pag"><img src="recursos/kit-p7.webp" alt="Formato de plan de tratamiento" loading="lazy" width="402" height="520"><h3>Plan de tratamiento</h3><p>Objetivos, intervenciones, indicadores y plazos.</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="cab"><h2>Para quién es</h2></div>
+    <div class="para">
+      <div><h3>Psicólogos en consulta</h3><p>Ordena tus primeras sesiones y deja constancia de lo que acuerdas con cada paciente.</p></div>
+      <div><h3>Estudiantes en prácticas</h3><p>Llega a tu servicio social o tus prácticas con formatos claros y completos.</p></div>
+      <div><h3>Docentes y supervisores</h3><p>Úsalos como material de clase o como base para revisar casos con tu equipo.</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="cab"><h2>Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <details><summary>¿Tiene algún costo?</summary><p>No. El kit es gratis. Solo te pedimos tu nombre y correo para enviártelo.</p></details>
+      <details><summary>¿Puedo editar los formatos?</summary><p>Sí. Se llenan en Adobe Acrobat Reader, en Vista Previa de Mac o desde el navegador, y puedes guardar una copia por paciente. También puedes imprimirlos.</p></details>
+      <details><summary>¿Sustituyen la normativa o mi criterio profesional?</summary><p>No. Son formatos de apoyo. Ajústalos al código ético de tu gremio, a tu aviso de privacidad y a la normativa que aplique a tu servicio.</p></details>
+      <details><summary>¿Qué hacen con mis datos?</summary><p>Los usamos para enviarte el kit y algunos correos con ideas prácticas y ofertas de Instituto Mara. Cada correo trae una liga para darte de baja. No vendemos ni compartimos tus datos.</p></details>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>Llévate el kit hoy</h2>
+    <p>Cuatro formatos listos para tu próxima sesión, sin costo.</p>
+    <a class="btn" href="#descargar">Quiero mi kit gratis</a>
+  </div>
+</div>
+
+<footer>© 2026 Instituto Mara · <a href="./">Ir al sitio</a> · <a href="legal/privacidad.html">Aviso de privacidad</a></footer>
+
+<script>
+(function(){
+  var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
+  var $ = function(id){ return document.getElementById(id); };
+  if(new Date() >= new Date('2026-12-01T00:00:00-06:00')) $('oferta').hidden = true;   /* KITCLINICO vence el 30 nov */
+  var q = new URLSearchParams(location.search), utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){ if(q.get(k)) utm[k] = q.get(k); });
+  function error(t, campo){ var e = $('error'); e.textContent = t; e.hidden = !t; if(campo) $(campo).focus(); }
+  $('form').addEventListener('submit', function(ev){
+    ev.preventDefault(); error('');
+    var nombre = $('nombre').value.trim(), correo = $('correo').value.trim(), wa = $('whatsapp').value.trim();
+    var p = document.querySelector('input[name="perfil"]:checked');
+    if(nombre.length < 2) return error('Escribe tu nombre.', 'nombre');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo)) return error('Revisa tu correo electrónico.', 'correo');
+    if(wa && wa.replace(/\D/g,'').length < 10) return error('Revisa tu número de WhatsApp (10 dígitos) o déjalo vacío.', 'whatsapp');
+    var b = $('enviar'); b.disabled = true; b.textContent = 'Enviando…';
+    fetch(SUPA + '/functions/v1/kit', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON },
+      body: JSON.stringify({ accion:'registro', nombre:nombre, correo:correo, whatsapp:wa, perfil:p ? p.value : '', utm:utm, web:$('web').value }) })
+      .then(function(r){ return r.json().then(function(d){ if(!r.ok || d.error) throw new Error(d.error || 'No pudimos registrarte.'); return d; }); })
+      .then(function(d){
+        if(d.descarga) $('liga-descarga').href = d.descarga;
+        $('listo-correo').textContent = correo;
+        $('paso-form').hidden = true; $('paso-listo').hidden = false;
+        $('descargar').scrollIntoView({ behavior:'smooth', block:'start' });
+        try{ if(window.fbq) fbq('track', 'Lead', { content_name:'Kit clínico' }); }catch(e){}
+      })
+      .catch(function(e){ error(e.message || 'No pudimos registrarte. Intenta de nuevo.'); b.disabled = false; b.textContent = 'Quiero mi kit gratis'; });
+  });
+})();
+</script>
+</body>
+</html>
