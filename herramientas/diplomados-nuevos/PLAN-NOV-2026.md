@@ -84,6 +84,50 @@ Los 11 giros nuevos (Restaurante, Cafetería, Panadería / repostería, Comedor 
 - **26 Primeros auxilios.** Solo teórico, con aviso claro de que la práctica presencial certificada es indispensable;
   911; no sustituye cursos de Cruz Roja o equivalentes. Coordinar con #4 (protección civil) para no repetir.
 
+## Tanda 3 — emprendimiento (propuesta del 28 oct 2026, POR VALIDAR)
+
+Pedido de Héctor: diplomados para quien quiere emprender o ya tiene un negocio pequeño. **Estado «Propuesto»: la tarea
+diaria NO los toma** hasta que Héctor apruebe cuáles van (entonces se cambian a «Pendiente» y se ordenan). Área sugerida
+nueva: «Emprendimiento y negocio propio» (el sitio crea la tarjeta sola). Todos de 30 h, $1,690 sugerido.
+Base de la selección: en México las micro son el 95.5 % de los establecimientos y la rama con más unidades es el
+comercio de abarrotes y alimentos, con poco más de un millón (INEGI, Censos Económicos 2024); oficios más pedidos en
+centros de capacitación (gastronomía, belleza, electricidad, carpintería, mecánica, fotografía); nichos que señalan
+guías de negocio 2026 (tiendas en línea de nicho, mascotas, comida ligera, reventa y reacondicionados, servicios a
+vendedores en línea). Regla para oficios manuales: teoría, negocio, higiene y seguridad en línea; decir siempre que la
+práctica presencial es indispensable y que no certifica (ni sustituye estándares de competencia del CONOCER).
+
+| # | id | pref | Diplomado (nombre sugerido) | Interés estimado | Riesgo de traslape | Giros posibles | Estado |
+|---|---|---|---|---|---|---|---|
+| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Propuesto |
+| 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Propuesto |
+| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Propuesto |
+| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Propuesto |
+| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Propuesto |
+| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Propuesto |
+| 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Propuesto |
+| 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Propuesto |
+| 36 | d-eventos | eve | Organización de Eventos: bodas, XV años y corporativos (presupuesto, proveedores y contratos) | Alto | Bajo | Hotelería; Restaurante | Propuesto |
+| 37 | d-renta-vacacional | rva | Renta Vacacional y Hospedaje de Corta Estancia: anuncio, precio, limpieza, reseñas e impuestos | Medio-alto | Medio (d-hospitalidad) | Inmobiliaria | Propuesto |
+| 38 | d-freelance | fre | Trabajo Independiente y Servicios Profesionales: asistente virtual, cotizar, contratos, cobro y facturación | Alto | Medio (c-ia-freelancers) | Coworking / oficinas ejecutivas | Propuesto |
+| 39 | d-franquicias | frq | Franquicias: evaluar, comprar o convertir tu negocio en franquicia | Medio | Bajo | — | Propuesto |
+| 40 | d-importar | imp | Importar y Vender: comercio exterior para pequeños negocios (aduana, padrón, costos y proveedores) | Medio-alto | Bajo | Industria / manufactura | Propuesto |
+| 41 | d-huertos-agronegocio | hue | Huertos, Hidroponía y Agronegocio a Pequeña Escala | Medio | Bajo | Restaurante | Propuesto |
+| 42 | d-servicios-hogar | sho | Negocio de Servicios para el Hogar: limpieza profesional, mantenimiento y jardinería con cuadrillas | Medio | Bajo | Inmobiliaria; Hotelería | Propuesto |
+| 43 | d-reparacion-celulares | rce | Reparación de Celulares y Electrónica: diagnóstico, refacciones y negocio | Medio-alto | Bajo | — | Propuesto |
+| 44 | d-clases-tutorias | tut | Negocio de Clases y Tutorías: regularización, idiomas y cursos en línea | Medio | Bajo | Colegio privado | Propuesto |
+| 45 | d-artesanias | art | Artesanías y Productos Hechos a Mano: diseño, precio, ferias, venta en línea y exportación | Medio | Bajo | — | Propuesto |
+| 46 | d-negocio-mascotas | nmc | Negocio de Mascotas: tienda, guardería, paseo y venta por suscripción | Medio-alto | Medio (d-perros) | Veterinaria; Estética canina | Propuesto |
+| 47 | d-taller-automotriz | tal | Taller Mecánico y Autolavado: administración, cotización, garantía y servicio al cliente | Medio | Bajo | Concesionaria automotriz | Propuesto |
+
+### Cuidados de la tanda 3
+- Nada de promesas de ingresos («gana X al mes») ni esquemas piramidales, dropshipping engañoso o reventa de marcas sin autorización.
+- Trámites y fiscal: SAT (RESICO y plataformas digitales), aviso de funcionamiento o licencia sanitaria (COFEPRIS o estatal), uso de suelo y licencia municipal: siempre «verifica en tu municipio y en el SAT».
+- 31-33 belleza y cosmética: higiene y bioseguridad, alergias y reacciones (canalizar a médico); etiquetado de cosméticos (verificar NOM-141-SSA1/SCFI vigente).
+- 37 renta vacacional: impuestos por plataformas digitales e impuesto estatal al hospedaje; reglamentos de condominio.
+- 40 importar: padrón de importadores, regulaciones no arancelarias y NOM de etiquetado; verificar aranceles vigentes.
+- 43 reparación: seguridad con baterías de litio y manejo de residuos electrónicos.
+- 46 mascotas: bienestar animal, sin castigos; canalizar a veterinario.
+
 ## Alcance y cuidados por diplomado
 
 1. **Calidad y Mejora Continua.** Público: supervisores, operarios, ingenieros y mandos de planta (calzado, curtiduría,
