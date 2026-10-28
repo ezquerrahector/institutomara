@@ -32,7 +32,7 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
 
 ## Tanda 2 — categorías nuevas (pedido de Héctor, 26 oct 2026)
 
-Al terminar el #15, la tarea sigue con esta tabla en el mismo orden y con el mismo procedimiento. Objetivo: abrir
+**Cambio de orden (pedido de Héctor, 28 oct 2026): esta tabla va PRIMERO.** La tarea hace los #16-27 en este orden y, al terminarlos, regresa a los pendientes #4-15 de la tabla de arriba, con el mismo procedimiento. Objetivo: abrir
 categorías nuevas en el sitio para que quien busca cursos encuentre temas que hoy no tenemos (cocina, contenido,
 oficios, salud, hogar, dinero). Todos son diplomados de 30 h (el generador `crear-diplomado.js` solo hace
 diplomados). Precio sugerido abajo; Héctor puede ajustarlo en Administración.
@@ -163,7 +163,7 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
-2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (primero la tabla de #1-15 y luego la de la Tanda 2).
+2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (desde el 28 oct: primero la tabla de la Tanda 2, #16-27, y luego los pendientes de la tabla de #1-15).
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
 4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas, más `"tema"` y `"dificultad"`) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
    Clasificación desde el 26 oct (`plataforma/taxonomia.js`): `area` = una de las 11 áreas (o la «Área nueva» de la tanda 2),
