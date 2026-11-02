@@ -1861,7 +1861,11 @@ function entrarApp(){
       ir('catalogo'); setTimeout(function(){ abrirPago(cc); }, 250); return;
     }
     ir('catalogo');
-    abrirModal('Tienes un cupón',
+    if(esCodigoRegalo(cuponPendiente())) abrirModal('🎁 Tienes un regalo',
+      '<p>Tu código <b>'+esc(cuponPendiente())+'</b> ya está guardado. Elige el curso o diplomado que quieras y presiona «Inscribirme»: '+
+      'el regalo se aplica solo. Si el programa cuesta más, pagas solo la diferencia; si cuesta menos, lo que sobra te queda como saldo.</p>',
+      '<button class="btn btn-mor" onclick="cerrarModal()">Ver cursos y diplomados</button>');
+    else abrirModal('Tienes un cupón',
       '<p>Tu cupón <b>'+esc(cuponPendiente())+'</b> ya está guardado. Elige tu curso y presiona «Inscribirme»: '+
       'el descuento se aplica solo al momento de pagar.</p>',
       '<button class="btn btn-mor" onclick="cerrarModal()">Ver cursos</button>');
@@ -2326,6 +2330,8 @@ var LLAVE_CUPON_CURSO = 'institutoMara.cuponCurso';
 function cuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON) || ''; }catch(e){ return ''; } }
 function cursoCuponPendiente(){ try{ return localStorage.getItem(LLAVE_CUPON_CURSO) || ''; }catch(e){ return ''; } }
 function olvidarCuponPendiente(){ try{ localStorage.removeItem(LLAVE_CUPON); localStorage.removeItem(LLAVE_CUPON_CURSO); }catch(e){} }
+/* Códigos de regalo (REGALO-) y de saldo (SALDO-): valen un monto y sirven para cualquier curso o diplomado. */
+function esCodigoRegalo(c){ return /^(REGALO|SALDO)-/i.test(String(c || '')); }
 
 function abrirPago(cid){
   var c = programa(cid); if(!c) return;
@@ -2386,16 +2392,23 @@ function aplicarCupon(cid){
       cuponPago = null;
       $('pg-precio').textContent = dinero(c.precio);
       var b0 = $('pg-btn'); if(b0) b0.textContent = 'Continuar al pago seguro';
-      av.innerHTML = '<div class="aviso aviso-error">'+esc((r && r.motivo) || 'Ese cupón no se pudo aplicar.')+
-        ' Si quieres pagar sin cupón, borra el código.</div>';
-      olvidarCuponPendiente();
+      var mot = (r && r.motivo) || 'Ese cupón no se pudo aplicar.';
+      av.innerHTML = '<div class="aviso aviso-error">'+esc(mot)+
+        (esCodigoRegalo(codigo) && !/límite|venció|no existe/i.test(mot)
+          ? ' Tu regalo sigue guardado: <a href="#" onclick="cerrarModal();ir(\'catalogo\');return false">elige un curso o diplomado</a>.</div>'
+          : ' Si quieres pagar sin cupón, borra el código.</div>');
+      if(!esCodigoRegalo(codigo) || /límite|venció|no existe/i.test(mot)) olvidarCuponPendiente();
       return;
     }
     var fin = Number(r.precio_final);
     cuponPago = { codigo: codigo.toUpperCase(), precio: fin };
     $('pg-precio').innerHTML = '<s style="color:var(--gris);font-weight:400">'+dinero(r.precio_original)+'</s> '+dinero(fin);
-    av.innerHTML = '<div class="aviso aviso-ok">'+esc(r.motivo || 'Cupón aplicado')+'. Ahorras '+dinero(r.descuento)+'.'+
-      (fin <= 0 ? ' Este cupón cubre el curso completo.' : '')+'</div>';
+    av.innerHTML = esCodigoRegalo(codigo)
+      ? '<div class="aviso aviso-ok">🎁 '+(fin <= 0 ? 'Tu regalo cubre este programa completo.' : 'Tu regalo cubre '+dinero(r.descuento)+': pagas solo la diferencia de '+dinero(fin)+'.')+'</div>'+
+        '<p style="font-size:.9rem;color:var(--gris);margin-top:8px">¿Prefieres otro programa? Tu regalo sirve para cualquier curso o diplomado; si cuesta menos, lo que sobra te queda como saldo. '+
+        '<a href="#" onclick="cerrarModal();ir(\'catalogo\');return false">Elegir otro</a></p>'
+      : '<div class="aviso aviso-ok">'+esc(r.motivo || 'Cupón aplicado')+'. Ahorras '+dinero(r.descuento)+'.'+
+        (fin <= 0 ? ' Este cupón cubre el curso completo.' : '')+'</div>';
     var b = $('pg-btn');
     if(b) b.textContent = fin <= 0 ? 'Obtener mi acceso' : 'Continuar al pago seguro';
   }).catch(function(e){
@@ -2426,8 +2439,17 @@ function pagarConMercadoPago(cid){
     /* Cupón que cubre el curso completo: el servidor ya inscribió al alumno. */
     if(d && d.gratis){
       olvidarCuponPendiente();
+      /* El regalo valía más que el programa: el sobrante queda como saldo para la siguiente compra. */
+      if(d.saldo){ try{ localStorage.setItem(LLAVE_CUPON, d.saldo); }catch(e){} }
       Nube.refrescarInscripciones(BD, sesion.id).then(function(){
         guardar(); cerrarModal(); ir(curso(cid) ? 'aula' : 'mis-cursos', {cursoId:cid});
+        if(d.saldo) setTimeout(function(){
+          abrirModal('💜 Te sobró saldo',
+            '<p>Tu regalo valía más que este programa, así que te quedan <b>'+dinero(d.saldoMonto)+'</b> para otro curso o diplomado.</p>'+
+            '<p style="margin-top:10px">Tu código de saldo: <b>'+esc(d.saldo)+'</b>'+(d.saldoVence ? ' · válido hasta el '+fechaLarga(String(d.saldoVence).slice(0,10)) : '')+'. '+
+            'Ya quedó guardado y se aplica solo; también te lo mandamos por correo.</p>',
+            '<button class="btn btn-fantasma" onclick="cerrarModal()">Empezar mi programa</button><button class="btn btn-mor" onclick="cerrarModal();ir(\'catalogo\')">Elegir otro programa</button>');
+        }, 400);
       });
       return;
     }
@@ -4979,10 +5001,11 @@ function pagarRegalo(cid){
     .catch(function(e){ b.disabled = false; b.textContent = 'Pagar el regalo'; av.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
 }
 var ESTADO_REGALO = { pendiente_pago:'Esperando pago', pagado:'Pagado · se entrega en su fecha', enviado:'Entregado', canjeado:'Ya lo activó 🎉', cancelado:'Cancelado' };
-function enlaceRegalo(r){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(r.codigo) + '&curso=' + encodeURIComponent(r.curso_id); }
+function enlaceRegalo(r){ return location.origin + location.pathname + '?cupon=' + encodeURIComponent(r.codigo) + (r.curso_id ? '&curso=' + encodeURIComponent(r.curso_id) : ''); }
 function textoRegalo(r){
   var c = programa(r.curso_id);
-  return '🎁 *¡' + r.para_nombre + ', tienes un regalo!* ' + (r.de_nombre ? r.de_nombre + ' te regaló' : 'Te regalaron') + ' *' + (c ? c.nombre : 'un programa') + '* en Instituto Mara: 100% en línea, a tu ritmo y con constancia al terminar.\n\n' +
+  var val = Number(r.valor || r.monto || 0);
+  return '🎁 *¡' + r.para_nombre + ', tienes un regalo!* ' + (r.de_nombre ? r.de_nombre + ' te regaló' : 'Te regalaron') + ' *' + (c ? c.nombre : dinero(val) + ' para el curso o diplomado que elijas') + '* en Instituto Mara: 100% en línea, a tu ritmo y con constancia al terminar.\n\n' +
     (r.mensaje ? '💌 «' + r.mensaje + '»\n\n' : '') + '🎟 Tu código: *' + r.codigo + '* (válido 12 meses)\n👉 Actívalo aquí: ' + enlaceRegalo(r);
 }
 function whatsappRegalo(id){
@@ -4997,11 +5020,12 @@ function copiarRegalo(id){
 function tarjetaRegalo(r){
   var c = programa(r.curso_id);
   return '<div class="tarjeta"><span class="etiqueta '+(r.estado==='pendiente_pago'?'alerta':'ok')+'">'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</span>'+
-    '<h3 style="margin:10px 0 4px;color:var(--tinta)">'+esc(c ? c.nombre : r.curso_id)+'</h3>'+
+    '<h3 style="margin:10px 0 4px;color:var(--tinta)">'+esc(c ? c.nombre : 'Regalo abierto de '+dinero(Number(r.valor || r.monto || 0)))+'</h3>'+
     '<p style="color:var(--gris);font-size:.92rem">Para <b>'+esc(r.para_nombre)+'</b>'+(r.para_correo?' · '+esc(r.para_correo):'')+(r.entregar_en?' · entrega '+fechaLarga(String(r.entregar_en).slice(0,10)):'')+'</p>'+
     (r.codigo ? '<p style="margin:10px 0">Código: <b>'+esc(r.codigo)+'</b></p><div style="display:flex;gap:8px;flex-wrap:wrap">'+
       '<button class="btn btn-sm" style="background:#25D366;color:#fff" onclick="whatsappRegalo(\''+r.id+'\')">Enviar por WhatsApp</button>'+
-      '<button class="btn btn-linea btn-sm" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button></div>' : '')+'</div>';
+      '<button class="btn btn-linea btn-sm" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button>'+
+      (r.token && r.estado !== 'canjeado' ? '<a class="btn btn-linea btn-sm" href="../sitio-web/regalo.html?t='+encodeURIComponent(r.token)+'" target="_blank" rel="noopener">🎨 Tarjeta de regalo</a>' : '')+'</div>' : '')+'</div>';
 }
 function vistaRegalos(){
   var mios = (BD.regalos||[]).filter(function(r){ return r.comprador_id === sesion.id && r.estado !== 'pendiente_pago'; });
@@ -5154,7 +5178,7 @@ function vistaAdminTienda(){
         '<h3 style="margin:10px 0">Membresías</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Alumno</th><th>Plan</th><th>Estado</th><th>Vigente hasta</th><th>Monto</th></tr>'+
         d.membresias.map(function(m){ return '<tr><td>'+esc(nombre(m.usuario_id))+'</td><td>'+esc((PLANES_MEM[m.plan]||{}).nombre||m.plan)+'</td><td>'+esc(m.estado)+'</td><td>'+(m.vigente_hasta?fechaLarga(String(m.vigente_hasta).slice(0,10)):'—')+'</td><td>'+(m.monto?dinero(m.monto):'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
         '<h3 style="margin:22px 0 10px">Regalos</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Compró</th><th>Para</th><th>Programa</th><th>Entrega</th><th>Estado</th><th>Código</th></tr>'+
-        d.regalos.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.comprador_id))+'</td><td>'+esc(r.para_nombre)+'<br><small>'+esc(r.para_correo||r.para_tel||'')+'</small></td><td>'+esc(c?c.nombre:r.curso_id)+'</td><td>'+esc(r.entregar_en||'')+'</td><td>'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</td><td>'+esc(r.codigo||'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
+        d.regalos.map(function(r){ var c = programa(r.curso_id); return '<tr><td>'+esc(nombre(r.comprador_id))+'</td><td>'+esc(r.para_nombre)+'<br><small>'+esc(r.para_correo||r.para_tel||'')+'</small></td><td>'+esc(c?c.nombre:'Abierto · '+dinero(Number(r.valor||r.monto||0)))+'</td><td>'+esc(r.entregar_en||'')+'</td><td>'+esc(ESTADO_REGALO[r.estado]||r.estado)+'</td><td>'+esc(r.codigo||'—')+'</td></tr>'; }).join('')+'</table></div></div>'+
         (d.empresas && d.empresas.length ? '<h3 style="margin:22px 0 10px">Empresas</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Empresa</th><th>Compró</th><th>Programa</th><th>Lugares</th><th>Total</th><th>Estado</th></tr>'+
           d.empresas.map(function(x){ var c = programa(x.curso_id); return '<tr><td>'+esc(x.empresa)+(x.rfc?'<br><small>'+esc(x.rfc)+'</small>':'')+'</td><td>'+esc(nombre(x.comprador_id))+'<br><small>'+esc(x.contacto_correo||'')+'</small></td><td>'+esc(c?c.nombre:x.curso_id)+'</td><td>'+x.lugares+'</td><td>'+dinero(x.total)+'</td><td>'+esc(ESTADO_EMP[x.estado]||x.estado)+'</td></tr>'; }).join('')+'</table></div></div>' : '')+
         '<h3 style="margin:22px 0 10px">Descuentos de recompra enviados</h3><div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Alumno</th><th>Terminó</th><th>Código</th><th>¿Lo usó?</th></tr>'+

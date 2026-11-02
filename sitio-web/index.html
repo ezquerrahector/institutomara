@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Fraunces:ital,wght@0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M25 95 L25 35 C25 26 34 23 39 30 L60 56 L81 30 C86 23 95 26 95 35 L95 95' fill='none' stroke='%236D28D9' stroke-width='17' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 :root{
@@ -456,7 +456,7 @@ footer a:hover{color:#fff}
     </div>
     <button type="button" class="pu-regalo" onclick="abrirRegalo()">
       <span class="pu-regalo-ico" aria-hidden="true">🎁</span>
-      <span><b>¿Buscas un regalo?</b> Regala un curso en 2 minutos, sin crear cuenta. Le llega por correo con tu mensaje.</span>
+      <span><b>¿Buscas un regalo?</b> Regala un curso en 2 minutos, sin crear cuenta. Por correo o WhatsApp, con tarjeta de regalo.</span>
       <span class="pu-regalo-ir">Regalar →</span>
     </button>
     <div class="vitrina" id="vitrina" hidden></div>
@@ -1112,26 +1112,46 @@ html,body{overflow-x:hidden}
     <button type="button" class="emp-cerrar" onclick="cerrarRegalo()" aria-label="Cerrar">&times;</button>
     <div id="rg-paso">
       <h3 id="rg-t">🎁 Regala un curso o diplomado</h3>
-      <p>Sin crear cuenta. Pagas y le llega por correo con tu mensaje y su código para empezar.</p>
+      <p>Sin crear cuenta. Pagas y le llega por correo, o se lo mandas tú por WhatsApp con una tarjeta de regalo que eliges.</p>
       <form id="rg-form" novalidate>
         <fieldset class="rg-grupo">
           <legend>1. ¿Qué le regalas?</legend>
+          <div class="rg-via" role="radiogroup" aria-label="¿Qué le regalas?">
+            <label class="rg-op"><input type="radio" name="rg-tipo" value="programa" checked> Un programa en específico</label>
+            <label class="rg-op"><input type="radio" name="rg-tipo" value="abierto"> Que elija quien lo recibe</label>
+          </div>
+          <div id="rg-monto-caja" hidden>
+            <div class="rg-montos" role="group" aria-label="Monto del regalo">
+              <button type="button" data-monto="490">$490</button><button type="button" data-monto="890">$890</button>
+              <button type="button" data-monto="1290">$1,290</button><button type="button" data-monto="1690">$1,690</button>
+            </div>
+            <label class="rg-otro">Otra cantidad<input id="rg-monto" type="number" inputmode="numeric" min="100" max="20000" step="10" placeholder="Desde $100"></label>
+            <p class="rg-ayuda">Le llega como saldo para el curso o diplomado que elija. Si el que elige cuesta más, paga la diferencia; si cuesta menos, le queda saldo para otro.</p>
+          </div>
           <select id="rg-curso" class="rg-oculto" tabindex="-1" aria-hidden="true"></select>
-          <div class="rg-elige">
+          <div class="rg-elige" id="rg-elige">
             <input id="rg-busca" type="search" placeholder="Busca por nombre o tema: inglés, duelo, Excel…" autocomplete="off"
               role="combobox" aria-expanded="false" aria-controls="rg-lista" aria-autocomplete="list" aria-label="Busca el programa para regalar">
             <ul id="rg-lista" class="rg-lista" role="listbox" hidden></ul>
             <div id="rg-elegido" class="rg-elegido" hidden></div>
           </div>
+          <p class="rg-ayuda" id="rg-ayuda-prog">Si prefiere otro, lo puede cambiar antes de empezarlo: paga la diferencia o le queda saldo.</p>
         </fieldset>
         <fieldset class="rg-grupo">
           <legend>2. ¿Para quién es?</legend>
+          <div class="rg-via" role="radiogroup" aria-label="¿Cómo se lo hacemos llegar?">
+            <span>¿Cómo le llega?</span>
+            <label class="rg-op"><input type="radio" name="rg-via" value="correo" checked> Por correo</label>
+            <label class="rg-op"><input type="radio" name="rg-via" value="whats"> Por WhatsApp</label>
+          </div>
           <div class="rg-dos">
             <label>Su nombre<input id="rg-para-nom" maxlength="120" autocomplete="off" placeholder="Ej. Ana"></label>
-            <label>Su correo<input id="rg-para-cor" type="email" maxlength="160" autocomplete="off" placeholder="ana@correo.com"></label>
+            <label id="rg-l-cor">Su correo<input id="rg-para-cor" type="email" maxlength="160" autocomplete="off" placeholder="ana@correo.com"></label>
+            <label id="rg-l-tel" hidden>Su WhatsApp<input id="rg-para-tel" type="tel" inputmode="numeric" maxlength="20" autocomplete="off" placeholder="10 dígitos"></label>
           </div>
+          <p class="rg-ayuda" id="rg-ayuda-tel" hidden>Al terminar de pagar, tú se lo mandas por WhatsApp con la tarjeta de regalo que elijas. Nosotros no le escribimos.</p>
           <label>Tu mensaje (opcional)<textarea id="rg-msg" maxlength="600" rows="2" placeholder="¡Feliz cumpleaños! Sé que te va a encantar."></textarea></label>
-          <div class="rg-cuando" role="radiogroup" aria-label="¿Cuándo le llega?">
+          <div class="rg-cuando" id="rg-cuando" role="radiogroup" aria-label="¿Cuándo le llega?">
             <span>¿Cuándo le llega?</span>
             <label class="rg-op"><input type="radio" name="rg-cuando" value="hoy" checked> Hoy</label>
             <label class="rg-op"><input type="radio" name="rg-cuando" value="fecha"> Otro día</label>
@@ -1186,8 +1206,17 @@ html,body{overflow-x:hidden}
 #rg-form input:not([type=radio]),#rg-form select,#rg-form textarea{font:inherit;font-weight:400;font-size:15.5px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:12px;background:#fff;width:100%}
 #rg-form input:focus,#rg-form select:focus,#rg-form textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
 #rg-form textarea{resize:vertical}
-.rg-cuando{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}
-.rg-cuando>span{font-weight:600}
+.rg-cuando,.rg-via{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}
+.rg-cuando>span,.rg-via>span{font-weight:600}
+.rg-cuando[hidden],#rg-form label[hidden],.rg-ayuda[hidden]{display:none}
+.rg-tarjeta{margin:18px 0 6px;text-align:left}
+.rg-montos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rg-montos button{border:1.5px solid var(--linea);background:#fff;border-radius:12px;padding:11px 4px;font:inherit;font-weight:700;color:var(--tinta);cursor:pointer}
+.rg-montos button[aria-pressed=true]{border-color:var(--morado);background:var(--lavanda);color:var(--morado)}
+#rg-form .rg-otro{margin-top:8px}
+#rg-monto-caja[hidden],#rg-elige[hidden],.rg-cupon[hidden]{display:none}
+@media(max-width:420px){.rg-montos{grid-template-columns:repeat(2,1fr)}}
+.rg-tarjeta h4{font-size:16px;color:var(--tinta);margin:0 0 10px}
 #rg-form .rg-op{flex-direction:row;align-items:center;gap:6px;font-weight:500;font-size:14px}
 #rg-form #rg-fecha{width:auto}
 .rg-ayuda{color:var(--gris);font-size:13px;line-height:1.5;margin:0}
@@ -1251,7 +1280,7 @@ html,body{overflow-x:hidden}
     <div>
       <div class="eyebrow">Regala aprendizaje</div>
       <h2>Regala un curso o diplomado</h2>
-      <p>Sin crear cuenta: eliges el programa, escribes para quién es y su correo, pagas y listo. Le llega con tu mensaje en la fecha que elijas. Si te equivocas en algo, lo cambias desde el correo que te mandamos.</p>
+      <p>Sin crear cuenta: eliges el programa, escribes para quién es y su correo o su WhatsApp, y pagas. Eliges una de 18 tarjetas de regalo (cumpleaños, Navidad, graduación y más) para descargarla o mandarla directo por WhatsApp. Si te equivocas en algo, lo cambias desde el correo que te mandamos.</p>
       <button type="button" class="btn btn-mor btn-grande" onclick="abrirRegalo()">Regalar ahora →</button>
     </div>
     <div class="regalo-ico" aria-hidden="true">🎁</div>
@@ -1452,7 +1481,7 @@ html,body{overflow-x:hidden}
 
     <details>
       <summary>¿Cómo funciona un regalo?</summary>
-      <div class="r">No necesitas crear cuenta. Eliges el programa, escribes el nombre y el correo de quien lo recibe, tu nombre y tu correo, y pagas. Le llega un correo con tu mensaje y su código el día que elijas. A ti te llega el comprobante con una liga para cambiar el correo, el mensaje o la fecha mientras no lo active.</div>
+      <div class="r">No necesitas crear cuenta. Eliges el programa, escribes el nombre de quien lo recibe y su correo o su WhatsApp, tu nombre y tu correo, y pagas. Con correo, le llega con tu mensaje y su código el día que elijas. Con WhatsApp, tú se lo mandas al terminar de pagar. En los dos casos eliges una tarjeta de regalo con su código y un QR para activarlo, que puedes descargar o enviar. A ti te llega el comprobante con una liga para volver a la tarjeta y cambiar los datos mientras no lo active.</div>
     </details>
 
     <details>
@@ -1541,7 +1570,7 @@ menu.querySelectorAll('a').forEach(function(a){
   }
   function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
   function llenar(id){
-    var lista = IM.oferta().filter(function(c){ return Number(c.p) > 0; }), grupos = {};
+    var lista = IM.oferta().filter(function(c){ return Number(c.p) > 0 && !/^r-/.test(c.id); }), grupos = {};
     lista.forEach(function(c){ var g = c.f === 'Diplomados' ? 'Diplomados' : (c.a || c.f); (grupos[g] = grupos[g] || []).push(c); });
     sel.innerHTML = '<option value="">Elige un programa…</option>' + Object.keys(grupos).map(function(g){
       return '<optgroup label="' + esc(g) + '">' + grupos[g].sort(function(a, b){ return a.n.localeCompare(b.n, 'es'); }).map(function(c){
@@ -1553,30 +1582,61 @@ menu.querySelectorAll('a').forEach(function(a){
     CUP = null; precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true);
     pintarElegido();
   }
-  var CUP = null;   /* { cupon, curso, precio } validado por el servidor */
+  var CUP = null;   /* { cupon, clave, precio } validado por el servidor; clave = programa o «abierto:monto» */
+  var MONTO = 0;
+  function tipoRegalo(){ var r = document.querySelector('input[name=rg-tipo]:checked'); return r ? r.value : 'programa'; }
+  function montoOk(){ return MONTO >= 100 && MONTO <= 20000; }
+  function claveCupon(){ return tipoRegalo() === 'abierto' ? 'abierto:' + MONTO : sel.value; }
   function precio(){
+    var cupOk = CUP && CUP.clave === claveCupon();
+    if(tipoRegalo() === 'abierto'){
+      var pm = cupOk ? CUP.precio : MONTO;
+      document.getElementById('rg-btn').textContent = !MONTO ? 'Elige el monto del regalo' : Number(pm) > 0 ? 'Pagar ' + dinero(pm) + ' →' : 'Enviar regalo sin costo →'; return;
+    }
     var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
-    var p = c && CUP && CUP.curso === c.id ? CUP.precio : (c ? c.p : null);
-    document.getElementById('rg-btn').textContent = p != null ? 'Pagar ' + dinero(p) + ' →' : 'Pagar el regalo';
+    var p = c && cupOk ? CUP.precio : (c ? c.p : null);
+    document.getElementById('rg-btn').textContent = p != null ? (Number(p) > 0 ? 'Pagar ' + dinero(p) + ' →' : 'Enviar regalo sin costo →') : 'Pagar el regalo';
   }
   function cuponRes(t, ok){ var el = document.getElementById('rg-cupon-res'); el.textContent = t || ''; el.className = 'rg-cupon-res' + (t ? (ok ? ' ok' : ' mal') : ''); }
   function aplicarCupon(silencioso){
     var cod = document.getElementById('rg-cupon').value.trim().toUpperCase();
     CUP = null; precio(); cuponRes('');
     if(!cod) return Promise.resolve();
-    if(!sel.value){ if(!silencioso) cuponRes('Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
-    var cur = sel.value;
-    return api({ accion:'regalo_cupon', cursoId:cur, cupon:cod }).then(function(r){
-      if(sel.value !== cur) return;
-      CUP = { cupon:r.cupon, curso:cur, precio:r.precio };
+    var ab = tipoRegalo() === 'abierto';
+    if(ab ? !montoOk() : !sel.value){ if(!silencioso) cuponRes(ab ? 'Elige primero el monto del regalo.' : 'Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
+    var clave = claveCupon();
+    return api(ab ? { accion:'regalo_cupon', abierto:true, monto:MONTO, cupon:cod } : { accion:'regalo_cupon', cursoId:sel.value, cupon:cod }).then(function(r){
+      if(claveCupon() !== clave) return;
+      CUP = { cupon:r.cupon, clave:clave, precio:r.precio };
       cuponRes('Cupón ' + r.cupon + ' aplicado: ' + dinero(r.original) + ' → ' + dinero(r.precio) + ' (ahorras ' + dinero(r.descuento) + ')', true); precio();
     }).catch(function(x){ cuponRes(x.message, false); });
   }
-  sel.addEventListener('change', function(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); });
+  function recupon(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); }
+  var tRecupon = null;
+  sel.addEventListener('change', recupon);
   document.getElementById('rg-cupon-abrir').onclick = function(){ document.getElementById('rg-cupon-caja').hidden = false; document.getElementById('rg-cupon').focus(); };
   document.getElementById('rg-cupon-aplicar').onclick = function(){ aplicarCupon(false); };
   document.getElementById('rg-cupon').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); aplicarCupon(false); } });
   document.getElementById('rg-cupon').addEventListener('input', function(){ if(CUP){ CUP = null; precio(); cuponRes(''); } });
+  function via(){ var r = document.querySelector('input[name=rg-via]:checked'); return r ? r.value : 'correo'; }
+  function ponerTipo(t){
+    var ab = t === 'abierto', r = document.querySelector('input[name=rg-tipo][value=' + t + ']'); if(r) r.checked = true;
+    document.getElementById('rg-monto-caja').hidden = !ab; document.getElementById('rg-elige').hidden = ab;
+    document.getElementById('rg-ayuda-prog').hidden = ab;
+    recupon();
+  }
+  [].forEach.call(document.querySelectorAll('input[name=rg-tipo]'), function(r){ r.addEventListener('change', function(){ ponerTipo(tipoRegalo()); }); });
+  function marcarMonto(){ [].forEach.call(document.querySelectorAll('.rg-montos button'), function(b){ b.setAttribute('aria-pressed', String(Number(b.getAttribute('data-monto')) === MONTO)); }); }
+  [].forEach.call(document.querySelectorAll('.rg-montos button'), function(b){ b.addEventListener('click', function(){
+    MONTO = Number(b.getAttribute('data-monto')); document.getElementById('rg-monto').value = ''; marcarMonto(); recupon(); }); });
+  document.getElementById('rg-monto').addEventListener('input', function(){ MONTO = Math.round(Number(this.value) || 0); marcarMonto(); precio();
+    clearTimeout(tRecupon); tRecupon = setTimeout(recupon, 600); });
+  [].forEach.call(document.querySelectorAll('input[name=rg-via]'), function(r){ r.addEventListener('change', function(){
+    var w = via() === 'whats';
+    document.getElementById('rg-l-cor').hidden = w; document.getElementById('rg-l-tel').hidden = !w;
+    document.getElementById('rg-ayuda-tel').hidden = !w; document.getElementById('rg-cuando').hidden = w;
+    document.getElementById(w ? 'rg-para-tel' : 'rg-para-cor').focus();
+  }); });
   [].forEach.call(document.querySelectorAll('input[name=rg-cuando]'), function(r){ r.addEventListener('change', function(){
     var f = document.getElementById('rg-fecha'); f.hidden = r.value !== 'fecha' || !r.checked; if(!f.hidden){ f.min = hoy(); if(!f.value) f.value = hoy(); f.focus(); }
   }); });
@@ -1584,7 +1644,7 @@ menu.querySelectorAll('a').forEach(function(a){
      muestra los más elegidos. El valor vive en el <select> oculto, así el resto del flujo no cambia. */
   var busca = document.getElementById('rg-busca'), lista = document.getElementById('rg-lista'), elegido = document.getElementById('rg-elegido'), activo = -1, vista = [];
   function nrm(t){ return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  function ofertaR(){ return IM.oferta().filter(function(c){ return Number(c.p) > 0; }); }
+  function ofertaR(){ return IM.oferta().filter(function(c){ return Number(c.p) > 0 && !/^r-/.test(c.id); }); }
   function sugeridos(){
     var pop = (window.IM_POP && window.IM_POP.curso) || {}, base = ['c-ingles','d-tanatologia','c-excel-avanzado','c-inteligencia-emocional','d-imagen-personal','c-ia'];
     return ofertaR().slice().sort(function(a, b){ return ((pop[b.id]||0) - (pop[a.id]||0)) || ((base.indexOf(a.id) < 0 ? 99 : base.indexOf(a.id)) - (base.indexOf(b.id) < 0 ? 99 : base.indexOf(b.id))); }).slice(0, 6);
@@ -1622,7 +1682,7 @@ menu.querySelectorAll('a').forEach(function(a){
   busca.addEventListener('blur', function(){ setTimeout(cerrarLista, 150); });
   window.abrirRegalo = function(id){
     if(typeof id !== 'string') id = '';
-    llenar(id); M.hidden = false; document.body.style.overflow = 'hidden';
+    llenar(id); ponerTipo('programa'); M.hidden = false; document.body.style.overflow = 'hidden';
     setTimeout(function(){ (sel.value ? document.getElementById('rg-para-nom') : busca).focus(); }, 50);
   };
   window.cerrarRegalo = function(){ M.hidden = true; document.body.style.overflow = ''; };
@@ -1639,24 +1699,34 @@ menu.querySelectorAll('a').forEach(function(a){
   F.addEventListener('submit', function(e){
     e.preventDefault(); aviso('');
     var v = function(id){ return document.getElementById(id).value.trim(); };
-    var d = { accion:'regalo_invitado', cursoId:sel.value, paraNombre:v('rg-para-nom'), paraCorreo:v('rg-para-cor'), mensaje:v('rg-msg'),
+    var porWhats = via() === 'whats', tel = v('rg-para-tel').replace(/\D/g, ''), abierto = tipoRegalo() === 'abierto';
+    var d = { accion:'regalo_invitado', cursoId:sel.value, paraNombre:v('rg-para-nom'), paraCorreo:porWhats ? '' : v('rg-para-cor'), paraTel:porWhats ? tel : '', mensaje:v('rg-msg'),
       deNombre:v('rg-de-nom'), deCorreo:v('rg-de-cor'), urlRegreso:location.origin + location.pathname };
-    var fecha = document.querySelector('input[name=rg-cuando]:checked').value === 'fecha' ? v('rg-fecha') : '';
+    if(abierto){ d.abierto = true; d.monto = MONTO; d.cursoId = ''; }
+    var fecha = !porWhats && document.querySelector('input[name=rg-cuando]:checked').value === 'fecha' ? v('rg-fecha') : '';
     if(fecha) d.entregarEn = fecha;
-    var falta = !d.cursoId ? ['rg-busca', 'Elige el programa que quieres regalar.'] : !d.paraNombre ? ['rg-para-nom', 'Escribe el nombre de quien recibe el regalo.']
-      : !CORREO.test(d.paraCorreo) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.'] : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
-      : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null;
+    var falta = abierto ? (!(MONTO >= 100 && MONTO <= 20000) ? ['rg-monto', 'Elige el monto del regalo: de $100 a $20,000.'] : null) : !d.cursoId ? ['rg-busca', 'Elige el programa que quieres regalar.'] : null;
+    falta = falta || (!d.paraNombre ? ['rg-para-nom', 'Escribe el nombre de quien recibe el regalo.']
+      : (!porWhats && !CORREO.test(d.paraCorreo)) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.']
+      : (porWhats && !(tel.length === 10 || (tel.length >= 11 && tel.length <= 15))) ? ['rg-para-tel', 'Revisa su WhatsApp: escribe los 10 dígitos.']
+      : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
+      : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null);
     if(falta){ aviso(falta[1]); document.getElementById(falta[0]).focus(); return; }
     var cupEscrito = document.getElementById('rg-cupon').value.trim().toUpperCase();
-    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.curso === d.cursoId)){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
-    if(CUP) d.cupon = CUP.cupon;
-    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
+    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.clave === claveCupon())){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
+    if(CUP && cupEscrito) d.cupon = CUP.cupon;
+    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = CUP && Number(CUP.precio) <= 0 ? 'Preparando tu regalo…' : 'Abriendo Mercado Pago…';
     try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
     api(d).then(function(r){ location.href = r.init_point; })
       .catch(function(x){ b.disabled = false; b.textContent = txt; aviso(x.message); });
   });
   try{ var de = JSON.parse(localStorage.getItem('im-regalo-de') || 'null'); if(de){ document.getElementById('rg-de-nom').value = de.n || ''; document.getElementById('rg-de-cor').value = de.c || ''; } }catch(x){}
 
+  /* La tarjeta de regalo se carga solo cuando se necesita (regreso del pago). */
+  function cargarTarjeta(){
+    function js(src){ return new Promise(function(ok, mal){ var e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = mal; document.head.appendChild(e); }); }
+    return window.TarjetaRegalo ? Promise.resolve() : js('vendor/qrcode.js?v=1.4.4').then(function(){ return js('tarjeta-regalo.js?v=20261102b'); });
+  }
   /* Regreso desde Mercado Pago */
   var q = new URLSearchParams(location.search), est = q.get('regalo'), t = q.get('t');
   if(est && t){
@@ -1667,14 +1737,26 @@ menu.querySelectorAll('a').forEach(function(a){
       caja.innerHTML = '<div class="rg-ok"><div class="rg-big">😕</div><h3>El pago no se completó</h3><p>Mercado Pago no pudo cobrar el regalo. No se hizo ningún cargo; puedes intentarlo de nuevo.</p><p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="location.reload()">Intentar de nuevo</button></p></div>';
     } else {
       caja.innerHTML = '<div class="rg-ok"><div class="rg-big">🎁</div><h3>' + (est === 'pendiente' ? 'Tu regalo está apartado' : '¡Listo! Tu regalo está pagado') + '</h3><p id="rg-res">Cargando los datos…</p></div>';
-      api({ accion:'regalo_ver', t:t }).then(function(r){
-        var g = r.regalo, cuando = (g.llegaHoy || g.entregarEn <= hoy()) ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
-        document.getElementById('rg-res').outerHTML =
-          '<p>' + (est === 'pendiente' ? 'En cuanto Mercado Pago confirme tu pago (con OXXO puede tardar unas horas), se lo enviamos.' : 'Le llega ' + esc(cuando) + ' con tu mensaje y su código para empezar.') + '</p>' +
-          '<dl><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || '') + '</dd><dt>Le llega</dt><dd>' + esc(cuando) + '</dd><dt>Total</dt><dd>' + dinero(g.monto) + '</dd></dl>' +
-          '<p class="rg-ayuda">Te mandamos un correo con tu comprobante y una liga para cambiar el correo, el mensaje o la fecha. ¿Algo está mal? <a href="regalo.html?t=' + encodeURIComponent(t) + '">Cámbialo aquí</a>.</p>' +
+      /* El código se crea cuando Mercado Pago avisa del pago (segundos después del regreso): se reintenta un momento. */
+      var intentos = 0;
+      (function ver(){ api({ accion:'regalo_ver', t:t }).then(function(r){
+        var g = r.regalo;
+        if(!g.codigo && est === 'exito' && intentos++ < 6){ setTimeout(ver, 2500); return; }
+        var porWhats = !g.paraCorreo, cuando = (g.llegaHoy || g.entregarEn <= hoy()) ? 'hoy' : new Date(g.entregarEn + 'T12:00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' });
+        var res = document.getElementById('rg-res');
+        if(porWhats && g.codigo) res.previousElementSibling.textContent = '¡Listo! Ahora envíaselo';
+        res.outerHTML =
+          '<p>' + (!g.codigo ? 'En cuanto Mercado Pago confirme tu pago (con OXXO puede tardar unas horas), ' + (porWhats ? 'te llega un correo con la liga para elegir su tarjeta y enviársela.' : 'se lo enviamos.')
+            : porWhats ? 'Elige la tarjeta y mándasela por WhatsApp. Lleva su código y un QR para activarlo.' : 'Le llega ' + esc(cuando) + ' por correo con tu mensaje y su código. Si quieres, también dale su tarjeta de regalo.') + '</p>' +
+          '<dl><dt>Programa</dt><dd>' + esc(g.programa) + '</dd><dt>Para</dt><dd>' + esc(g.paraNombre) + ' · ' + esc(g.paraCorreo || (g.paraTel ? 'WhatsApp ' + g.paraTel.replace(/^52/, '') : '')) + '</dd>' +
+          (porWhats ? '' : '<dt>Le llega</dt><dd>' + esc(cuando) + '</dd>') + '<dt>Total</dt><dd>' + dinero(g.monto) + '</dd></dl>' +
+          (g.codigo ? '<div class="rg-tarjeta"><h4>🎨 Elige su tarjeta de regalo</h4><div id="rg-tarjeta">Cargando las tarjetas…</div></div>' : '') +
+          '<p class="rg-ayuda">Te mandamos un correo con tu comprobante y una liga para volver a esta tarjeta o cambiar los datos. ¿Algo está mal? <a href="regalo.html?t=' + encodeURIComponent(t) + '">Cámbialo aquí</a>.</p>' +
           '<p style="margin-top:16px"><button type="button" class="btn btn-mor" onclick="cerrarRegalo()">Listo</button></p>';
-      }).catch(function(){ document.getElementById('rg-res').textContent = 'Te mandamos un correo con el comprobante y la liga para revisar tu regalo.'; });
+        if(g.codigo) cargarTarjeta().then(function(){
+          TarjetaRegalo.montar(document.getElementById('rg-tarjeta'), { para:g.paraNombre, de:g.deNombre, programa:g.programa, cursoId:g.cursoId, mensaje:g.mensaje, codigo:g.codigo, liga:g.ligaActivar, tel:g.paraTel, valor:g.valor, abierto:g.abierto });
+        }).catch(function(){ document.getElementById('rg-tarjeta').textContent = 'No pudimos cargar las tarjetas. Ábrelas desde la liga de tu correo.'; });
+      }).catch(function(){ document.getElementById('rg-res').textContent = 'Te mandamos un correo con el comprobante y la liga para revisar tu regalo.'; }); })();
     }
   }
   /* Liga de embajador o de promoción: …/sitio-web/?cupon=CODIGO. Se guarda en el dispositivo
