@@ -8,6 +8,10 @@
 //   info      { id, para? } → plan de capacitación por correo, firmado por el operador (admin o el operador asignado);
 //                       «para» guarda el correo del contacto si aún no lo tenía
 //   solicitud { empresa, nombre, puesto?, correo, telefono, personas?, mensaje? } → «Quiero mi prueba sin costo» del sitio (sin cuenta)
+//   campana_audiencia { id } → { destinatarios, yaEnviados, omitidos }   (solo admin)
+//   campana_prueba    { id, para } → envía la campaña a un correo de prueba (solo admin)
+//   campana_enviar    { id } → envía el siguiente lote (≤ 40) a quienes no han pedido baja; { enviados, fallas, restantes }
+//   entregas          { dias? } → resumen de Brevo: entregados, abiertos, rebotes, bloqueados, spam (solo admin)
 //   diaria    (llave de servicio, tarea programada) → correos de información pendientes y seguimientos automáticos si están encendidos
 // GET ?baja=<token> → página «ya no recibirás más correos» (enlace del pie de cada correo)
 //
@@ -289,7 +293,7 @@ function urlBaja(req: Request, token: string) {
   return `${URL_SB}/functions/v1/prospectos?baja=${token}`;
 }
 
-async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: string }, como?: { nombre: string; responder: { email: string; name: string } }) {
+async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: string; etiqueta?: string }, como?: { nombre: string; responder: { email: string; name: string } }): Promise<string> {
   const destinos = String(p.correo || "").split(/[,;\s]+/).map((x) => x.trim()).filter((x) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x));
   if (!destinos.length) throw new Error("sin correo válido");
   const r = await fetch("https://api.brevo.com/v3/smtp/email", {
@@ -302,10 +306,30 @@ async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: st
       // Copia oculta a nuestro buzón (Zoho) para tener cada correo que sale.
       ...(destinos.some((d) => d.toLowerCase() === REMITENTE.toLowerCase()) ? {} : { bcc: [{ email: REMITENTE }] }),
       subject: m.asunto, htmlContent: m.html, textContent: m.texto,
-      tags: ["prospectos"],
+      tags: m.etiqueta ? ["prospectos", m.etiqueta] : ["prospectos"],
+      headers: { "List-Unsubscribe": `<mailto:${REMITENTE}?subject=baja>` },
     }),
   });
   if (!r.ok) throw new Error(`Brevo ${r.status}: ${(await r.text()).slice(0, 160)}`);
+  const d = await r.json().catch(() => ({}));
+  return String(d.messageId || "");
+}
+
+// ---------------------------------------------------------------- campañas
+const NO_CONTACTAR = "estado=not.in.(baja,no_interesa)";
+function campanaMensaje(c: any, p: Prospecto, req: Request) {
+  const n = corto(p) || "su empresa";
+  const asunto = String(c.asunto).replace(/\{empresa\}/g, n);
+  const texto = String(c.texto).replace(/\{empresa\}/g, n).replace(/\*/g, "") + `\n\n${FIRMA}` +
+    `\n\nSi prefieren no recibir más información, respondan «baja» o usen este enlace: ${urlBaja(req, p.token)}`;
+  return { asunto, texto, html: aHtml(texto), etiqueta: "campana-" + String(c.id).slice(0, 8) };
+}
+async function campanaDestinos(c: any) {
+  const seg = c.segmento ? `&segmento=eq.${encodeURIComponent(c.segmento)}` : "";
+  const todos: Prospecto[] = await db(`prospectos?${NO_CONTACTAR}&correo=not.is.null&correo=neq.${seg}&select=id,nombre,nombre_corto,correo,token,estado,extra&limit=5000`);
+  const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id&limit=10000`);
+  const ya = new Set(env.map((x) => x.prospecto_id));
+  return { todos, pendientes: todos.filter((p) => !ya.has(p.id)), ya: ya.size };
 }
 
 async function enviarA(req: Request, p: Prospecto, toque: number | null, ctx: any, porQuien: string | null, automatico: boolean) {
@@ -475,6 +499,68 @@ serve(async (req) => {
         if (body.iniciarSecuencia) await db(`prospectos?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { secuencia: true } });
       }
       return json({ ok: true, enviados, fallas });
+    }
+
+    if (accion === "campana_audiencia" || accion === "campana_prueba" || accion === "campana_enviar") {
+      if (u.servicio) return json({ error: "Solo administración." }, 403);
+      const c = (await db(`campanas?id=eq.${encodeURIComponent(String(body.id || ""))}&select=*`))[0];
+      if (!c) return json({ error: "No encontré esa campaña." }, 404);
+      if (accion === "campana_audiencia") {
+        const d = await campanaDestinos(c);
+        const total: any[] = await db(`prospectos?select=id${c.segmento ? "&segmento=eq." + encodeURIComponent(c.segmento) : ""}&limit=5000`);
+        return json({ destinatarios: d.todos.length, pendientes: d.pendientes.length, yaEnviados: d.ya, omitidos: total.length - d.todos.length });
+      }
+      if (accion === "campana_prueba") {
+        const para = String(body.para || "").trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(para)) return json({ error: "Escribe un correo de prueba válido." }, 400);
+        const m = campanaMensaje(c, { nombre: "Empresa de ejemplo", nombre_corto: "Empresa de ejemplo", token: "00000000-0000-0000-0000-000000000000" }, req);
+        await mandar({ correo: para }, { ...m, asunto: "[PRUEBA] " + m.asunto });
+        return json({ ok: true });
+      }
+      const d = await campanaDestinos(c);
+      const lote = d.pendientes.slice(0, 40);
+      let enviados = 0; const fallas: string[] = [];
+      if (c.estado === "borrador") await db(`campanas?id=eq.${c.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "enviando" } });
+      for (const p of lote) {
+        try {
+          const m = campanaMensaje(c, p, req);
+          const mid = await mandar(p, m);
+          await db("campana_envios", { metodo: "POST", prefer: "return=minimal,resolution=ignore-duplicates",
+            cuerpo: { campana_id: c.id, prospecto_id: p.id, correo: p.correo, resultado: "enviado", mensaje_id: mid } });
+          await db("prospecto_contactos", { metodo: "POST", prefer: "return=minimal",
+            cuerpo: { prospecto_id: p.id, canal: "correo", sentido: "saliente", asunto: m.asunto, resultado: "enviado", automatico: false, creado_por: u.id, resumen: "Campaña: " + c.nombre } }).catch(() => {});
+          enviados++;
+        } catch (x) {
+          fallas.push(`${corto(p)}: ${(x as Error).message}`);
+          await db("campana_envios", { metodo: "POST", prefer: "return=minimal,resolution=ignore-duplicates",
+            cuerpo: { campana_id: c.id, prospecto_id: p.id, correo: p.correo, resultado: "falla", detalle: (x as Error).message.slice(0, 200) } }).catch(() => {});
+        }
+      }
+      const restantes = d.pendientes.length - lote.length;
+      await db(`campanas?id=eq.${c.id}`, { metodo: "PATCH", prefer: "return=minimal",
+        cuerpo: { enviados: Number(c.enviados || 0) + enviados, ...(restantes <= 0 ? { estado: "enviada", enviada_en: new Date().toISOString() } : {}) } });
+      return json({ ok: true, enviados, fallas, restantes });
+    }
+
+    // Entregabilidad: lo que Brevo sabe de los correos enviados (no puede ver la bandeja de cada persona,
+    // pero sí rebotes, bloqueos, quejas de spam y aperturas).
+    if (accion === "entregas") {
+      if (u.servicio) return json({ error: "Solo administración." }, 403);
+      const dias = Math.min(90, Math.max(1, Number(body.dias) || 30));
+      const tipos: Record<string, number> = {}; const problemas: any[] = [];
+      let offset = 0;
+      for (let i = 0; i < 10; i++) {
+        const r = await fetch(`https://api.brevo.com/v3/smtp/statistics/events?limit=2500&offset=${offset}&days=${dias}&tags=prospectos`, { headers: { "api-key": BREVO, accept: "application/json" } });
+        if (!r.ok) return json({ error: `Brevo ${r.status}: ${(await r.text()).slice(0, 160)}` }, 502);
+        const ev = ((await r.json()).events || []) as any[];
+        for (const x of ev) {
+          tipos[x.event] = (tipos[x.event] || 0) + 1;
+          if (["hardBounces", "softBounces", "blocked", "spam", "invalid", "error", "deferred", "unsubscribed"].includes(x.event) && problemas.length < 300)
+            problemas.push({ correo: x.email, evento: x.event, fecha: x.date, motivo: String(x.reason || "").slice(0, 160), asunto: String(x.subject || "").slice(0, 120) });
+        }
+        if (ev.length < 2500) break; offset += 2500;
+      }
+      return json({ ok: true, dias, tipos, problemas });
     }
 
     if (accion === "diaria") {
