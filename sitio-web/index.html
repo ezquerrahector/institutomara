@@ -1125,7 +1125,7 @@ html,body{overflow-x:hidden}
               <button type="button" data-monto="490">$490</button><button type="button" data-monto="890">$890</button>
               <button type="button" data-monto="1290">$1,290</button><button type="button" data-monto="1690">$1,690</button>
             </div>
-            <label class="rg-otro">Otra cantidad<input id="rg-monto" type="number" inputmode="numeric" min="300" max="20000" step="10" placeholder="Desde $300"></label>
+            <label class="rg-otro">Otra cantidad<input id="rg-monto" type="number" inputmode="numeric" min="100" max="20000" step="10" placeholder="Desde $100"></label>
             <p class="rg-ayuda">Le llega como saldo para el curso o diplomado que elija. Si el que elige cuesta más, paga la diferencia; si cuesta menos, le queda saldo para otro.</p>
           </div>
           <select id="rg-curso" class="rg-oculto" tabindex="-1" aria-hidden="true"></select>
@@ -1695,7 +1695,7 @@ menu.querySelectorAll('a').forEach(function(a){
     if(abierto){ d.abierto = true; d.monto = MONTO; d.cursoId = ''; }
     var fecha = !porWhats && document.querySelector('input[name=rg-cuando]:checked').value === 'fecha' ? v('rg-fecha') : '';
     if(fecha) d.entregarEn = fecha;
-    var falta = abierto ? (!(MONTO >= 300 && MONTO <= 20000) ? ['rg-monto', 'Elige el monto del regalo: de $300 a $20,000.'] : null) : !d.cursoId ? ['rg-busca', 'Elige el programa que quieres regalar.'] : null;
+    var falta = abierto ? (!(MONTO >= 100 && MONTO <= 20000) ? ['rg-monto', 'Elige el monto del regalo: de $100 a $20,000.'] : null) : !d.cursoId ? ['rg-busca', 'Elige el programa que quieres regalar.'] : null;
     falta = falta || (!d.paraNombre ? ['rg-para-nom', 'Escribe el nombre de quien recibe el regalo.']
       : (!porWhats && !CORREO.test(d.paraCorreo)) ? ['rg-para-cor', 'Revisa el correo de quien recibe el regalo.']
       : (porWhats && !(tel.length === 10 || (tel.length >= 11 && tel.length <= 15))) ? ['rg-para-tel', 'Revisa su WhatsApp: escribe los 10 dígitos.']
