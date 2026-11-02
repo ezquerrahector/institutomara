@@ -1,7 +1,7 @@
 /* Instituto Mara — Administración → Prospectos → Campañas (2 nov 2026).
    Un correo para TODOS los prospectos con correo que no pidieron baja ni marcaron «No le interesó».
    Se envía por lotes (Brevo), registra cada envío y muestra la entregabilidad (rebotes, bloqueos, spam).
-   Requiere backend/campanas-20261102.sql y la función «prospectos» actualizada. */
+   Requiere backend/campanas-20261102.sql y la función «campanas». */
 var CP = { lista:null, sel:null };
 function cpAbrir(){
   abrirModal('Campañas por correo', '<div id="cp-caja">Cargando…</div>', '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
@@ -44,19 +44,19 @@ function cpGuardar(id){
 function cpPrueba(id){
   var para = prompt('¿A qué correo envío la prueba?', (sesion && sesion.correo) || 'contacto@institutomara.com'); if(!para) return;
   $('cp-aviso').innerHTML = '<div class="aviso">Enviando prueba…</div>';
-  Nube.funcionServidor('prospectos', { accion:'campana_prueba', id:id, para:para })
+  Nube.funcionServidor('campanas', { accion:'prueba', id:id, para:para })
     .then(function(){ $('cp-aviso').innerHTML = '<div class="aviso aviso-ok">Prueba enviada a '+esc(para)+'. Revisa también la carpeta de spam.</div>'; })
     .catch(function(e){ $('cp-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
 }
 function cpEnviar(id){
   var av = $('cp-aviso'); av.innerHTML = '<div class="aviso">Calculando destinatarios…</div>';
-  Nube.funcionServidor('prospectos', { accion:'campana_audiencia', id:id }).then(function(a){
+  Nube.funcionServidor('campanas', { accion:'audiencia', id:id }).then(function(a){
     if(!a.pendientes){ av.innerHTML = '<div class="aviso aviso-ok">Ya se envió a todos ('+a.yaEnviados+'). Omitidos por baja / no le interesó / sin correo: '+a.omitidos+'.</div>'; return; }
     if(!confirm('Se enviará a '+a.pendientes+' prospecto(s)'+(a.yaEnviados ? ' (ya se envió a '+a.yaEnviados+')' : '')+'.\nSe omiten '+a.omitidos+' (pidieron baja, no les interesó o no tienen correo).\n\n¿Enviar ahora?')) { av.innerHTML = ''; return; }
     var tot = 0, fallas = [];
     (function lote(){
       av.innerHTML = '<div class="aviso">Enviando… '+tot+' de '+a.pendientes+'</div>';
-      Nube.funcionServidor('prospectos', { accion:'campana_enviar', id:id }).then(function(r){
+      Nube.funcionServidor('campanas', { accion:'enviar', id:id }).then(function(r){
         tot += r.enviados; fallas = fallas.concat(r.fallas || []);
         if(r.restantes > 0 && (r.enviados || (r.fallas||[]).length)) return setTimeout(lote, 1500);
         av.innerHTML = '<div class="aviso aviso-ok">Listo: '+tot+' enviados.'+(fallas.length ? '<br>No salieron '+fallas.length+':<br>'+fallas.slice(0,30).map(esc).join('<br>') : '')+'</div>';
@@ -69,7 +69,7 @@ var CP_EV = { requests:'Enviados', delivered:'Entregados', opened:'Abiertos (per
   blocked:'Bloqueados por Brevo', spam:'Marcados como spam', invalid:'Correo inválido', deferred:'Retrasados por el servidor destino', unsubscribed:'Se dieron de baja', error:'Error' };
 function cpEntregas(){
   $('cp-caja').innerHTML = 'Consultando Brevo…';
-  Nube.funcionServidor('prospectos', { accion:'entregas', dias:30 }).then(function(r){
+  Nube.funcionServidor('campanas', { accion:'entregas', dias:30 }).then(function(r){
     var t = r.tipos || {}, env = t.requests || 0, ent = t.delivered || 0, ab = t.uniqueOpened || t.opened || 0;
     var pct = function(n){ return env ? Math.round(n / env * 100) + '%' : '—'; };
     $('cp-caja').innerHTML = '<p class="sub">Últimos '+r.dias+' días de correos a prospectos. Brevo no puede ver si un correo cayó en «no deseados»; lo indican pocas aperturas pese a estar entregado, y las quejas de spam.</p>'+
