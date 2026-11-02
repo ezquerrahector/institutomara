@@ -80,8 +80,11 @@ async function pagoDeRegalo(pago: any, regaloId: string) {
   }
   const codigo = codigoRegalo();
   const vence = new Date(Date.now() + 365 * 864e5).toISOString().slice(0, 10);
+  // Desde el 2 nov 2026 el código vale un monto en pesos y sirve para cualquier curso o diplomado:
+  // quien lo recibe puede cambiar de programa (paga la diferencia o le queda saldo; ver canjear_cupon).
+  const valor = Math.round(Number(r.valor || r.monto || 0) * 100) / 100;
   const { error: e1 } = await supabase.from("cupones").insert({ codigo, descripcion: `Regalo para ${r.para_nombre}`,
-    tipo: "porcentaje", valor: 100, curso_id: r.curso_id, usos_max: 1, vence });
+    tipo: "monto", valor, curso_id: null, usos_max: 1, vence });
   if (e1) { console.error("cupón de regalo", e1.message); return "error cupón"; }
   await supabase.from("regalos").update({ estado: "pagado", codigo, mp_pago_id: String(pago.id) }).eq("id", r.id);
   await supabase.from("pagos").upsert({ usuario_id: r.comprador_id, curso_id: r.curso_id, monto, medio: "Mercado Pago",
