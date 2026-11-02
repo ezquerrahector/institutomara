@@ -1567,7 +1567,7 @@ menu.querySelectorAll('a').forEach(function(a){
   function precio(){
     var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
     var p = c && CUP && CUP.curso === c.id ? CUP.precio : (c ? c.p : null);
-    document.getElementById('rg-btn').textContent = p != null ? 'Pagar ' + dinero(p) + ' →' : 'Pagar el regalo';
+    document.getElementById('rg-btn').textContent = p != null ? (Number(p) > 0 ? 'Pagar ' + dinero(p) + ' →' : 'Enviar regalo sin costo →') : 'Pagar el regalo';
   }
   function cuponRes(t, ok){ var el = document.getElementById('rg-cupon-res'); el.textContent = t || ''; el.className = 'rg-cupon-res' + (t ? (ok ? ' ok' : ' mal') : ''); }
   function aplicarCupon(silencioso){
@@ -1670,7 +1670,7 @@ menu.querySelectorAll('a').forEach(function(a){
     var cupEscrito = document.getElementById('rg-cupon').value.trim().toUpperCase();
     if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.curso === d.cursoId)){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
     if(CUP) d.cupon = CUP.cupon;
-    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
+    var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = CUP && Number(CUP.precio) <= 0 ? 'Preparando tu regalo…' : 'Abriendo Mercado Pago…';
     try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
     api(d).then(function(r){ location.href = r.init_point; })
       .catch(function(x){ b.disabled = false; b.textContent = txt; aviso(x.message); });

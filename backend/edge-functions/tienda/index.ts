@@ -228,12 +228,33 @@ async function crearRegalo(u: any, b: any) {
   const cup = await cuponRegalo(cid, b.cupon);
   if (cup.error) return json({ error: cup.error }, 400);
   const precio = cup.codigo ? cup.precio : Number(c.precio);
+  const gratis = !!cup.gratis;
   const reg = (await db("regalos", { metodo: "POST", prefer: "return=representation", cuerpo: {
     comprador_id: u ? u.id : null, curso_id: cid, para_nombre: d.paraNombre, para_correo: d.paraCorreo || null, para_tel: d.paraTel || null,
     mensaje: d.mensaje, de_nombre: deNombre, de_correo: deCorreo || null,
     entregar_en: d.entregar, monto: precio, cupon: cup.codigo || null, descuento: cup.codigo ? cup.descuento : null } }))[0];
   const base = String(b.urlRegreso || AULA).replace(/[?#].*$/, "");
   const vuelta = invitado ? `t=${reg.token}` : `id=${reg.id}`;
+  if (gratis) {
+    // Cupón del 100 %: no pasa por Mercado Pago. Se cuenta el uso del cupón, se crea el código del regalo
+    // y se entrega igual que uno pagado. El regreso es la misma pantalla de «pagado».
+    const ok = await usarCuponRegalo(cup.codigo!);
+    if (!ok) {
+      await db(`regalos?id=eq.${reg.id}`, { metodo: "DELETE", prefer: "return=minimal" }).catch(() => null);
+      return json({ error: "Ese cupón ya llegó a su límite de usos." }, 409);
+    }
+    const codigoR = codigo("REGALO");
+    const vence = fecha(new Date(Date.now() + 365 * 864e5));
+    await db("cupones", { metodo: "POST", prefer: "return=minimal", cuerpo: {
+      codigo: codigoR, descripcion: `Regalo para ${d.paraNombre}`, tipo: "porcentaje", valor: 100, curso_id: cid, usos_max: 1, vence } });
+    await db(`regalos?id=eq.${reg.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "pagado", codigo: codigoR } });
+    await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: u ? u.id : null, curso_id: cid, monto: 0, medio: "Cupón",
+      nota: `Regalo para ${d.paraNombre} (${codigoR}) con el cupón ${cup.codigo}` } }).catch((x) => console.error("pago de regalo con cupón", x));
+    const r2 = { ...reg, estado: "pagado", codigo: codigoR };
+    await confirmarRegalo(r2).catch((x) => console.error("confirmar regalo", x));
+    if (r2.entregar_en <= fecha(new Date())) await entregarRegalo(r2).catch((x) => console.error("entregar regalo", x));
+    return json({ init_point: `${base}?regalo=exito&${vuelta}`, gratis: true, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
+  }
   const pref = await mp("/checkout/preferences", "POST", {
     items: [{ id: cid, title: `Regalo: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: precio }],
     payer: { email: deCorreo || undefined, name: deNombre || undefined }, statement_descriptor: "INSTITUTO MARA",
@@ -244,15 +265,32 @@ async function crearRegalo(u: any, b: any) {
   return json({ init_point: pref.init_point, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
 }
 // Cupón de descuento al regalar: los mismos cupones de Administración → Cupones (y los de embajador).
-// No aplican los códigos de un regalo (REGALO-…) ni los que cubren el 100 % (becas y pilotos).
-async function cuponRegalo(cid: string, codigo: unknown): Promise<{ codigo?: string; precio?: number; descuento?: number; original?: number; error?: string }> {
+// No aplican los códigos de un regalo (REGALO-…), los lugares de empresa (EMP-…) ni los pilotos.
+// Los cupones del 100 % de Administración sí (desde el 2 nov 2026): el regalo sale sin cobro.
+async function cuponRegalo(cid: string, codigo: unknown): Promise<{ codigo?: string; precio?: number; descuento?: number; original?: number; gratis?: boolean; error?: string }> {
   const cod = String(codigo || "").trim().toUpperCase();
   if (!cod) return {};
   if (cod.startsWith("REGALO-")) return { error: "Ese código es de un regalo que alguien recibió; no sirve para comprar otro." };
   const r = ((await db("rpc/aplicar_cupon", { metodo: "POST", cuerpo: { p_codigo: cod, p_curso_id: cid } })) || [])[0];
   if (!r || !r.valido) return { error: (r && r.motivo) || "Ese cupón no existe o ya no está activo." };
-  if (!(Number(r.precio_final) > 0)) return { error: "Ese cupón cubre el 100 % y no aplica para regalos." };
-  return { codigo: cod, precio: Number(r.precio_final), descuento: Number(r.descuento), original: Number(r.precio_original) };
+  if (cod.startsWith("EMP-")) return { error: "Ese código es un lugar de empresa; no sirve para regalar." };
+  const gratis = !(Number(r.precio_final) > 0);
+  if (gratis) {
+    const c = (await db(`cupones?codigo=eq.${encodeURIComponent(cod)}&select=piloto`))[0];
+    if (!c || c.piloto) return { error: "Ese código es de una prueba para empresas; no sirve para regalar." };
+  }
+  return { codigo: cod, precio: gratis ? 0 : Number(r.precio_final), descuento: Number(r.descuento), original: Number(r.precio_original), gratis };
+}
+// Suma un uso al cupón sin pasar de su límite (si dos regalos lo usan a la vez, solo uno se lleva el último uso).
+// No usa canjear_cupon porque esa función inscribiría a quien regala.
+async function usarCuponRegalo(cod: string) {
+  for (let i = 0; i < 4; i++) {
+    const c = (await db(`cupones?codigo=eq.${encodeURIComponent(cod)}&select=usos,usos_max,activo`))[0];
+    if (!c || !c.activo || (c.usos_max != null && Number(c.usos) >= Number(c.usos_max))) return false;
+    const r = await db(`cupones?codigo=eq.${encodeURIComponent(cod)}&usos=eq.${Number(c.usos)}`, { metodo: "PATCH", prefer: "return=representation", cuerpo: { usos: Number(c.usos) + 1 } });
+    if (r.length) return true;
+  }
+  return false;
 }
 async function previaCuponRegalo(b: any) {
   const cid = String(b.cursoId || "");
@@ -260,7 +298,7 @@ async function previaCuponRegalo(b: any) {
   const r = await cuponRegalo(cid, b.cupon);
   if (r.error) return json({ error: r.error }, 400);
   if (!r.codigo) return json({ error: "Escribe tu cupón." }, 400);
-  return json({ ok: true, cupon: r.codigo, original: r.original, descuento: r.descuento, precio: r.precio });
+  return json({ ok: true, cupon: r.codigo, original: r.original, descuento: r.descuento, precio: r.precio, gratis: !!r.gratis });
 }
 async function entregarRegalo(r: any) {
   const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre,nivel`))[0] || { nombre: r.curso_id };
@@ -280,7 +318,7 @@ async function entregarRegalo(r: any) {
 // Comprobante para quien regala, con la liga para cambiar el regalo. Se manda una sola vez, al confirmarse el pago.
 async function confirmarRegalo(r: any) {
   if (r.confirmado_en) return;
-  if (r.cupon) {
+  if (r.cupon && Number(r.monto) > 0) {
     await db("rpc/canjear_cupon", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_curso_id: r.curso_id, p_usuario: r.comprador_id || null } })
       .catch((x) => console.error("cupón de regalo", x));
   }
