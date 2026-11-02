@@ -5,6 +5,7 @@
 //   prueba    { id, para } → envía la campaña a un correo de prueba
 //   enviar    { id }       → siguiente lote (≤ 40) a prospectos con correo que NO pidieron baja ni «No le interesó»
 //   entregas  { dias? }    → eventos de Brevo: entregados, abiertos, rebotes, bloqueados, spam
+//   reporte   { id }       → una fila por destinatario con su envío y lo que Brevo sabe (para descargar en Excel)
 // Usa los mismos secretos que «prospectos»: BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE.
 // El enlace de baja es el de la función «prospectos» (?baja=<token>), así la baja queda en el mismo lugar.
 import { serve } from "https://deno.land/std@0.192.0/http/server.ts";
@@ -107,6 +108,39 @@ serve(async (req) => {
     if (!c) return json({ error: "No encontré esa campaña." }, 404);
     const etiqueta = "campana-" + String(c.id).slice(0, 8);
 
+    if (accion === "reporte") {
+      const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id,correo,resultado,detalle,fecha&order=fecha&limit=10000`);
+      const ids = env.map((x) => x.prospecto_id);
+      const pros: any[] = [];
+      for (let i = 0; i < ids.length; i += 150) pros.push(...await db(`prospectos?id=in.(${ids.slice(i, i + 150).join(",")})&select=id,nombre,nombre_corto,segmento,telefono,estado`));
+      const porId = new Map(pros.map((p) => [p.id, p]));
+      // Eventos de Brevo de esta campaña (por su etiqueta), por correo.
+      const ev: Record<string, Record<string, any>> = {};
+      let offset = 0;
+      for (let i = 0; i < 10; i++) {
+        const r = await fetch(`https://api.brevo.com/v3/smtp/statistics/events?limit=2500&offset=${offset}&days=90&tags=${etiqueta}`, { headers: { "api-key": BREVO, accept: "application/json" } });
+        if (!r.ok) break;
+        const lista = ((await r.json()).events || []) as any[];
+        for (const x of lista) {
+          const k = String(x.email || "").toLowerCase();
+          (ev[k] = ev[k] || {})[x.event] = ev[k][x.event] || { fecha: x.date, motivo: x.reason || "" };
+        }
+        if (lista.length < 2500) break; offset += 2500;
+      }
+      const ORDEN = [["spam", "Marcó como spam"], ["hardBounces", "Rebote definitivo (correo no existe)"], ["blocked", "Bloqueado"], ["invalid", "Correo inválido"],
+        ["softBounces", "Rebote temporal"], ["unsubscribed", "Se dio de baja"], ["clicks", "Hizo clic"], ["opened", "Abrió"], ["delivered", "Entregado (sin abrir)"], ["deferred", "Retrasado"], ["requests", "Enviado"]];
+      const filas = env.map((x) => {
+        const p = porId.get(x.prospecto_id) || {};
+        const correos = String(x.correo || "").split(/[,;\s]+/).map((m) => m.trim().toLowerCase()).filter(Boolean);
+        const e2: Record<string, any> = {};
+        for (const m of correos) Object.assign(e2, ev[m] || {});
+        const top = ORDEN.find(([k]) => e2[k]);
+        return { empresa: p.nombre || "", giro: p.segmento || "", correo: x.correo, telefono: p.telefono || "", envio: x.resultado, fecha: x.fecha,
+          entrega: x.resultado === "falla" ? "No salió" : top ? top[1] : "Sin datos de Brevo aún", entregado: !!(e2.delivered || e2.opened || e2.clicks),
+          abrio: !!(e2.opened || e2.clicks), clic: !!e2.clicks, motivo: x.detalle || (top && e2[top[0]].motivo) || "", estadoProspecto: p.estado || "" };
+      });
+      return json({ ok: true, campana: { nombre: c.nombre, asunto: c.asunto, enviada_en: c.enviada_en, estado: c.estado }, filas });
+    }
     if (accion === "audiencia") {
       const d = await destinos(c);
       const total: any[] = await db(`prospectos?select=id${c.segmento ? "&segmento=eq." + encodeURIComponent(c.segmento) : ""}&limit=5000`);

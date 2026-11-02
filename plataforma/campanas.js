@@ -22,7 +22,7 @@ function cpPintarLista(){
         '<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><b>'+esc(x.nombre)+'</b><span class="etiqueta '+e[1]+'">'+e[0]+'</span></div>'+
         '<div style="color:var(--gris);font-size:.85rem;margin:4px 0">'+esc(x.asunto)+' · enviados: '+(x.enviados||0)+(x.enviada_en ? ' · '+new Date(x.enviada_en).toLocaleDateString('es-MX') : '')+'</div>'+
         '<div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn btn-linea btn-sm" onclick="cpEditar(\''+x.id+'\')">Editar</button>'+
-        '<button class="btn btn-linea btn-sm" onclick="cpPrueba(\''+x.id+'\')">Enviar prueba</button>'+
+        '<button class="btn btn-linea btn-sm" onclick="cpPrueba(\''+x.id+'\')">Enviar prueba</button>'+(x.enviados ? '<button class="btn btn-linea btn-sm" onclick="cpReporte(\''+x.id+'\')">⬇ Reporte Excel</button>' : '')+
         '<button class="btn btn-mor btn-sm" onclick="cpEnviar(\''+x.id+'\')">'+(x.estado === 'enviada' ? 'Enviar a los nuevos' : 'Enviar a todos')+'</button></div></div>'; }).join('')
       : '<div class="aviso">Aún no hay campañas.</div>')+'<div id="cp-aviso"></div>';
 }
@@ -81,4 +81,28 @@ function cpEntregas(){
       ((r.problemas||[]).length ? '<div style="max-height:260px;overflow:auto;font-size:.85rem">'+r.problemas.map(function(p){ return '<div style="padding:5px 0;border-bottom:1px solid var(--borde,#eee)"><b>'+esc(p.correo)+'</b> · '+esc(CP_EV[p.evento]||p.evento)+' · '+esc((p.fecha||'').slice(0,10))+(p.motivo ? '<br><small style="color:var(--gris)">'+esc(p.motivo)+'</small>' : '')+'</div>'; }).join('')+'</div>' : '<div class="aviso aviso-ok">Sin rebotes, bloqueos ni quejas en este periodo.</div>')+
       '<div style="margin-top:10px"><button class="btn btn-fantasma btn-sm" onclick="cpPintarLista()">← Volver</button></div>';
   }).catch(function(e){ $('cp-caja').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div><button class="btn btn-fantasma btn-sm" onclick="cpPintarLista()">← Volver</button>'; });
+}
+
+/* Reporte por campaña en Excel (.xlsx): hoja «Resumen» y hoja «Detalle» (una fila por empresa). */
+function cpXlsx(){ return window.XLSX ? Promise.resolve(window.XLSX) : new Promise(function(ok, mal){ var sc = document.createElement('script');
+  sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'; sc.onload = function(){ ok(window.XLSX); }; sc.onerror = function(){ mal(new Error('No se pudo cargar el generador de Excel.')); }; document.head.appendChild(sc); }); }
+function cpReporte(id){
+  var av = $('cp-aviso'); av.innerHTML = '<div class="aviso">Armando el reporte con los datos de Brevo…</div>';
+  Promise.all([Nube.funcionServidor('campanas', { accion:'reporte', id:id }), cpXlsx()]).then(function(r){
+    var d = r[0], X = r[1], f = d.filas || [];
+    var cuenta = function(fn){ return f.filter(fn).length; }, pct = function(n){ return f.length ? Math.round(n / f.length * 1000) / 10 + '%' : '0%'; };
+    var ent = cuenta(function(x){ return x.entregado; }), ab = cuenta(function(x){ return x.abrio; }), cl = cuenta(function(x){ return x.clic; });
+    var reb = cuenta(function(x){ return /Rebote|inválido/.test(x.entrega); }), bloq = cuenta(function(x){ return /Bloqueado|spam/.test(x.entrega); }), nos = cuenta(function(x){ return x.envio === 'falla'; });
+    var resumen = [['Campaña', d.campana.nombre], ['Asunto', d.campana.asunto], ['Enviada', d.campana.enviada_en ? new Date(d.campana.enviada_en).toLocaleString('es-MX') : d.campana.estado], [],
+      ['Indicador', 'Cantidad', '% de envíos'], ['Destinatarios', f.length, '100%'], ['No salieron', nos, pct(nos)], ['Entregados', ent, pct(ent)], ['Abrieron', ab, pct(ab)], ['Hicieron clic', cl, pct(cl)],
+      ['Rebotes', reb, pct(reb)], ['Bloqueados o spam', bloq, pct(bloq)], [], ['Nota', 'Brevo no puede ver la bandeja de cada persona: “entregado sin abrir” puede ser que no lo ha leído o que cayó en no deseados. Las aperturas pueden tardar o no registrarse si el lector bloquea imágenes.']];
+    var detalle = [['Empresa', 'Giro', 'Correo', 'Teléfono', 'Fecha de envío', 'Resultado del envío', 'Estado de entrega', 'Entregado', 'Abrió', 'Clic', 'Motivo', 'Estado del prospecto']].concat(f.map(function(x){
+      return [x.empresa, x.giro, x.correo, x.telefono, x.fecha ? new Date(x.fecha).toLocaleString('es-MX') : '', x.envio === 'falla' ? 'Falla' : 'Enviado', x.entrega, x.entregado ? 'Sí' : 'No', x.abrio ? 'Sí' : 'No', x.clic ? 'Sí' : 'No', x.motivo, (window.PR_ESTADOS && PR_ESTADOS[x.estadoProspecto]) || x.estadoProspecto]; }));
+    var wb = X.utils.book_new(), h1 = X.utils.aoa_to_sheet(resumen), h2 = X.utils.aoa_to_sheet(detalle);
+    h1['!cols'] = [{ wch:22 }, { wch:60 }, { wch:14 }]; h2['!cols'] = [{wch:34},{wch:18},{wch:32},{wch:14},{wch:18},{wch:14},{wch:30},{wch:10},{wch:8},{wch:8},{wch:40},{wch:18}];
+    h2['!autofilter'] = { ref: 'A1:L' + detalle.length };
+    X.utils.book_append_sheet(wb, h1, 'Resumen'); X.utils.book_append_sheet(wb, h2, 'Detalle');
+    X.writeFile(wb, 'Reporte campaña - ' + String(d.campana.nombre).replace(/[\\/:*?"<>|]/g, '').slice(0, 60) + '.xlsx');
+    av.innerHTML = '<div class="aviso aviso-ok">Reporte descargado: ' + f.length + ' destinatarios, ' + ab + ' abrieron.</div>';
+  }).catch(function(e){ av.innerHTML = '<div class="aviso aviso-error">' + esc(e.message) + '</div>'; });
 }
