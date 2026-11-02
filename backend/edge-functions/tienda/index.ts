@@ -195,7 +195,7 @@ async function inscribirMembresia(u: any, b: any) {
 const SITIO = "https://institutomara.com/sitio-web";
 const CORREO_OK = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const ligaEditar = (r: any) => `${SITIO}/regalo.html?t=${r.token}`;
-const MONTO_ABIERTO = { min: 300, max: 20000 };
+const MONTO_ABIERTO = { min: 100, max: 20000 };
 // Lo que vale el regalo: el precio de lista del programa al regalarlo, o el monto del regalo abierto.
 const valorRegalo = (r: any) => Number(r.valor || r.monto || 0);
 async function programaRegalo(r: any) {
