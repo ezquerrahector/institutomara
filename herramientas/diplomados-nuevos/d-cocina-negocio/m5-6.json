@@ -1,0 +1,844 @@
+{
+  "modulos": [
+    {
+      "t": "Costeo: cuánto te cuesta de verdad",
+      "r": "Aprenderás a costear cada receta en Excel con merma incluida, a sumar los costos que casi todos olvidan, a leer el porcentaje de costo y el margen de contribución sin engañarte con el IVA, y a calcular cuánto necesitas vender para no perder.",
+      "lecciones": [
+        {
+          "t": "Costo de la receta en Excel",
+          "obj": "Calcular en Excel el costo por gramo de cada ingrediente y el costo por porción vendible de una receta, con merma incluida.",
+          "texto": [
+            "Muchas personas que venden comida ponen precio mirando el ticket del súper: «gasté $400 y salieron 20 piezas». El problema es que en ese ticket hay ingredientes que te sobran para otros lotes y faltan otros que ya tenías en la alacena. El <b>costeo de receta</b> parte de tu receta estándar en gramos y le pone precio a cada línea. La regla base es sencilla: <b>costo por gramo = precio de compra ÷ cantidad comprada</b>. Si el kilo de harina te cuesta $28, cada gramo cuesta $0.028 y los 1,000 g de tu receta cuestan $28. Si usas 30 g de canela de un frasco de 100 g que costó $45, esa línea vale $13.50, no $45.",
+            "Luego viene la <b>merma</b>. Si compras algo con cáscara, hueso o partes que no usas, el gramo que sí aprovechas sale más caro. Con el factor de rendimiento que calculaste en el módulo 2, el ajuste es: <b>costo por gramo usable = costo por gramo comprado ÷ factor de rendimiento</b>. Si la fresa cuesta $60 el kilo y aprovechas 85 % después de quitar hojas y partes dañadas, el kilo usable te cuesta $70.59. Hay una segunda merma, la de producto: si de un lote de 16 piezas una sale deforme y no la vendes, el costo del lote se reparte entre 15.",
+            "En Excel, arma una fila por ingrediente: A ingrediente, B precio de compra, C cantidad comprada en gramos o mililitros, D costo por gramo (=B2/C2), E cantidad usada neta, F factor de rendimiento (1 si no hay merma) y G costo en la receta (=E2*D2/F2). El total sale con =SUMA(G2:G12) y el costo por porción, con el total entre las porciones vendibles, por ejemplo =G13/15. Si ningún ingrediente tiene merma, puedes calcular el total directo con =SUMAPRODUCTO(D2:D12,E2:E12). Para ver centavos usa =REDONDEAR(G13/15,2). En algunas configuraciones de Excel el separador de argumentos es punto y coma: =SUMAPRODUCTO(D2:D12;E2:E12).",
+            "Tres hábitos hacen confiable tu hoja. Usa unidades consistentes: gramos para sólidos, mililitros para líquidos y piezas sólo cuando compras y usas por pieza, como el huevo. Anota la fecha del precio de cada insumo, porque los precios cambian y una hoja vieja te miente. Y costea también lo que se va sin verse: el aceite para engrasar, la harina para enharinar la mesa, la sal. Son pocos pesos por lote, pero a lo largo de un mes cambian el resultado."
+          ],
+          "comparar": [
+            "«Así no: “Gasté $400 en el súper y me salieron 20 roles, así que cada uno me cuesta $20.”»",
+            "«Así sí: “Mi receta en gramos cuesta $162.34 en ingredientes; vendo 15 de cada 16 roles, así que cada rol vendible me cuesta $10.82.”»"
+          ],
+          "caso": "Caso ficticio: Graciela, de 41 años, es secretaria en una escuela de Guadalajara y los fines de semana vende roles de canela por pedido. Su receta estándar lleva harina, mantequilla, azúcar, leche, huevo, levadura, canela, sal y un glaseado de queso crema; en su hoja de Excel, los ingredientes suman $162.34 por lote (cifras ficticias). El lote rinde 16 roles, pero casi siempre uno sale deforme y se queda en casa. Ella quiere dividir entre 16 «porque así dice la receta» y, además, piensa agregar nuez de temporada en la cubierta.",
+          "p": [
+            [
+              "¿Cuánto cuesta en ingredientes cada rol que Graciela sí vende?",
+              "$10.82 por rol, dividiendo entre los 15 vendibles",
+              "$10.15 por rol, dividiendo el lote entre 16",
+              "$12.92 por rol, con el frasco completo de canela",
+              "El costo del lote se reparte entre las piezas que se venden: $162.34 ÷ 15 = $10.82. Dividir entre 16 olvida la merma de producto, y cargar el frasco completo de canela ($45 en vez de $13.50) infla el costo con canela que seguirá en la alacena."
+            ],
+            [
+              "En su hoja, el precio de compra está en B2 y los gramos del paquete en C2. ¿Qué fórmula da el costo por gramo?",
+              "=B2/C2",
+              "=C2/B2*100",
+              "=SUMA(B2:C2)",
+              "El costo por gramo es el precio entre la cantidad comprada. Invertir la división da gramos por cada peso, no pesos por gramo, y sumar precio y gramos mezcla unidades que no se pueden sumar."
+            ],
+            [
+              "Graciela compra nuez entera a $280 el kilo y, al limpiarla, aprovecha 80 %. Si usa 100 g de nuez limpia por lote, ¿cuánto le cuesta?",
+              "$35.00, dividiendo $0.28 entre 0.8 por gramo",
+              "$28.00, con el precio por gramo comprado",
+              "$22.40, al multiplicar por el factor",
+              "El gramo comprado cuesta $280 ÷ 1,000 = $0.28; como sólo aprovecha 80 %, el gramo usable cuesta $0.28 ÷ 0.8 = $0.35, y 100 g cuestan $35.00. Usar $28.00 olvida la merma, y multiplicar por 0.8 la aplica al revés, como si limpiar la nuez la abaratara."
+            ]
+          ],
+          "completar": [
+            "El costo de cada ingrediente en la receta sale del costo por ___ y de la cantidad que usas.",
+            "gramo"
+          ],
+          "relacionar": [
+            [
+              "=B2/C2",
+              "Costo por gramo de un ingrediente"
+            ],
+            [
+              "=E2*D2/F2",
+              "Costo de la línea ajustado por merma"
+            ],
+            [
+              "=SUMA(G2:G12)",
+              "Costo total de ingredientes del lote"
+            ],
+            [
+              "=G13/15",
+              "Costo por porción vendible"
+            ],
+            [
+              "=REDONDEAR(G13/15,2)",
+              "Resultado mostrado con dos decimales"
+            ]
+          ],
+          "refl": "Elige una receta que ya vendas o quieras vender. 1) Escríbela en gramos, mililitros o piezas, con su rendimiento y cuántas porciones sueles vender de cada lote. 2) Anota el precio de compra y el tamaño del paquete de cada ingrediente, con la fecha. 3) Calcula el costo por gramo y el costo de cada línea, ajustando por merma donde haya cáscara, hueso o recorte. 4) Obtén el costo por porción vendible y compáralo con lo que creías que te costaba.",
+          "modelo": "Modelo: «Receta: pastel de vainilla con fresa, 20 porciones; vendo las 20 porque el recorte del bizcocho ya está en la merma. Precios con fecha del 1 de noviembre. La fresa tiene factor 0.85; la mantequilla y la harina, 1. Costo del lote: $186.40; por porción, $9.32. Yo creía que eran $7 porque no contaba la crema ni la fresa que se tira.» Funciona porque usa cantidades en gramos y precios fechados, ajusta la merma sólo donde existe y compara el resultado con la creencia previa, que es lo que obliga a tomar decisiones.",
+          "plantilla": [
+            "Hoja de costo de receta",
+            "Receta: [nombre] · Rendimiento: [piezas o porciones] · Porciones vendibles: [ ]\nFecha de precios: [dd/mm/aaaa]\nIngrediente | Precio de compra | Cantidad comprada (g, ml o pza) | Costo por unidad =B2/C2 | Cantidad usada | Factor de rendimiento | Costo en receta =E2*D2/F2\n[ ] | $[ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nTotal de ingredientes: =SUMA(G2:G12)\nCosto por porción vendible: =REDONDEAR(G13/[porciones],2)\nSi tu Excel marca error, usa punto y coma: =REDONDEAR(G13/[porciones];2)"
+          ],
+          "clave": [
+            "El costo por gramo es el precio de compra entre la cantidad comprada; la línea cuesta ese valor por lo que usas.",
+            "La merma encarece el gramo usable: divide entre el factor de rendimiento y reparte el lote entre las piezas vendibles.",
+            "Fecha los precios y actualízalos: una hoja de costos vieja lleva a decisiones equivocadas."
+          ]
+        },
+        {
+          "t": "Los costos que se olvidan",
+          "obj": "Convertir empaque, gas, agua, comisiones, desperdicio y tu propio tiempo en costo por pieza, y separar costos fijos de variables.",
+          "texto": [
+            "El costo de ingredientes es sólo una parte. Alrededor de cada pieza que vendes hay gastos que no aparecen en la receta: el <b>empaque</b> (bolsa, papel, servilleta, caja, etiqueta, cubiertos), el <b>gas</b> y la <b>luz</b> del horno o la plancha, el <b>agua</b> para lavar, tu <b>mano de obra</b>, las <b>comisiones</b> de la terminal o de la app, el <b>desperdicio</b> de lo que no se vendió y las <b>degustaciones</b> que regalas. Cada uno parece pequeño; juntos pueden ser una parte importante del costo de cada pieza.",
+            "Para repartirlos, conviértelos a costo por pieza. El gas se prorratea: si un cilindro te cuesta $480 y, por experiencia, alcanza para unas 400 tortas, cada torta carga $1.20 de gas. Tu tiempo también cuenta: decide cuánto vale tu hora (lo que pagarías a alguien por hacer ese trabajo es buena referencia) y multiplícalo por los minutos por pieza. A $60 la hora, una torta de 4 minutos lleva $4.00 de mano de obra. Si no la cuentas, el negocio parece rentable sólo porque tú trabajas gratis.",
+            "Las comisiones funcionan distinto: no dependen del costo, sino del <b>precio</b>. Si la terminal cobra un porcentaje por cada venta con tarjeta, o la app de reparto se queda con una parte del pedido, calcula ese porcentaje sobre lo que cobras y revisa en tu contrato si además se suma IVA a la comisión. El desperdicio y las degustaciones se registran aparte: anota cuántas piezas tiraste o regalaste en la semana y cuánto costaron; si se repiten cada semana, inclúyelas en el costo como merma de producto.",
+            "Por último, separa <b>costos variables</b> de <b>costos fijos</b>. Variable es lo que sube con cada pieza: ingredientes, empaque, gas prorrateado, comisiones, mano de obra por pieza. Fijo es lo que pagas igual vendas 10 o 300 piezas: renta del puesto, permisos, teléfono, internet, la cuota mensual de la terminal o un sueldo semanal fijo. Un mismo gasto puede cambiar de grupo: si a tu ayudante le pagas por pieza, es variable; si le pagas una semana fija, es fijo. Esta separación es la base del margen de contribución y del punto de equilibrio."
+          ],
+          "comparar": [
+            "«Así no: “Mi torta me cuesta $28.40 de ingredientes; el gas, la bolsa y mi tiempo ya salen de lo que gana el puesto.”»",
+            "«Así sí: “Mi torta me cuesta $28.40 de ingredientes, $3.10 de empaque, $1.20 de gas y $4.00 de mi tiempo: $36.70 antes de comisiones.”»"
+          ],
+          "caso": "Caso ficticio: Mauricio, de 38 años, tiene un puesto de tortas cerca de una zona de fábricas en León. Calculó con cuidado los ingredientes de su torta de pierna: $28.40. Pero no ha contado el papel, la bolsa y la servilleta ($3.10 por torta), el cilindro de gas de $480 que le alcanza para unas 400 tortas ni los 4 minutos que tarda en preparar cada una. Este mes empezó a aceptar tarjeta y paga $1,500 de renta por el puesto (cifras ficticias). Su esposa le pregunta por qué, si vende tanto, nunca les sobra dinero.",
+          "p": [
+            [
+              "¿Cuánto gas debe cargar Mauricio a cada torta?",
+              "$1.20, repartiendo $480 entre 400 tortas",
+              "$0.83 por torta (400 ÷ 480)",
+              "Nada: el gas sale del gasto de la casa",
+              "El costo del cilindro se reparte entre las tortas que rinde: $480 ÷ 400 = $1.20. Dividir 400 entre 480 invierte la operación y da tortas por peso, y no cargarlo esconde un costo real que sí sale de su bolsa."
+            ],
+            [
+              "Si Mauricio valúa su hora en $60, ¿cuánto lleva cada torta de mano de obra?",
+              "$4.00",
+              "$15.00, dividiendo 60 entre 4",
+              "$0.00, porque el puesto es suyo",
+              "Cuatro minutos son 4/60 de hora: $60 × 4 ÷ 60 = $4.00. Dividir $60 entre 4 supone que cada torta tarda 15 minutos, y ponerla en cero hace que el negocio parezca rentable porque él trabaja gratis."
+            ],
+            [
+              "¿Cómo debe tratar Mauricio la renta del puesto y la comisión de la terminal?",
+              "Renta fija; comisión variable sobre lo cobrado",
+              "Las dos como variables por torta",
+              "Renta variable; comisión fija porque la cobra el banco",
+              "La renta se paga igual venda poco o mucho, así que es fija y se usa en el punto de equilibrio. La comisión aparece con cada venta con tarjeta y es un porcentaje del precio, por eso es variable. Meter la renta en cada torta como si fuera variable deforma el costo en cuanto cambian las ventas."
+            ]
+          ],
+          "completar": [
+            "Lo que pagas igual vendas 10 o 300 piezas, como la renta del puesto, es un costo ___.",
+            "fijo"
+          ],
+          "relacionar": [
+            [
+              "Renta mensual del puesto",
+              "Fijo: se paga vendas o no"
+            ],
+            [
+              "Bolsa, papel y servilleta",
+              "Variable: aparece con cada pieza"
+            ],
+            [
+              "Comisión de la terminal",
+              "Variable: porcentaje de lo que cobras"
+            ],
+            [
+              "Tortas regaladas para probar",
+              "Promoción que debes registrar y costear"
+            ],
+            [
+              "Sueldo semanal fijo de un ayudante",
+              "Fijo mientras no dependa de las piezas"
+            ]
+          ],
+          "refl": "Toma el producto que costeaste en la lección anterior. 1) Lista todo lo que se usa para venderlo además de los ingredientes: empaque, gas o luz, agua, comisiones, tu tiempo. 2) Convierte cada gasto en costo por pieza y explica cómo lo prorrateaste. 3) Escribe cuánto vale tu hora y por qué elegiste esa cifra. 4) Haz dos columnas, costos variables por pieza y costos fijos del mes, y anota en cuál va cada gasto y si alguno podría cambiar de columna.",
+          "modelo": "Modelo: «Producto: roles de canela, 15 vendibles por lote. Variables por rol: ingredientes $10.82; caja individual y etiqueta $4.50; gas del horno $0.96 (un cilindro de $432 rinde unos 30 lotes, $14.40 por lote entre 15); mi tiempo $5.33 (2 horas por lote a $40 la hora, entre 15). Total variable: $21.61. Fijos del mes: internet $400 y la parte del teléfono que uso para pedidos, $150.» Es buena porque convierte cada gasto en pesos por pieza vendible, explica el prorrateo y separa lo fijo de lo variable.",
+          "plantilla": [
+            "Costos completos por pieza",
+            "Producto: [ ] · Piezas vendibles por lote: [ ]\nVariables por pieza: ingredientes $[ ] · empaque $[ ] · gas o luz $[ ] · agua $[ ] · mano de obra ([minutos] min a $[valor] la hora) $[ ] · comisión ([ ] % del precio) $[ ]\nTotal variable por pieza: $[ ]\nFijos del mes: renta $[ ] · permisos $[ ] · teléfono e internet $[ ] · terminal $[ ] · sueldos fijos $[ ]\nTotal fijo mensual: $[ ]\nDesperdicio y degustaciones de la semana: [piezas] · $[ ]"
+          ],
+          "clave": [
+            "Empaque, gas, agua, tu tiempo y las comisiones también son costo: conviértelos a pesos por pieza.",
+            "Tu hora vale: si no la cuentas, el negocio sólo parece rentable porque trabajas gratis.",
+            "Separa variables (suben con cada pieza) de fijos (se pagan igual): de eso dependen el margen y el punto de equilibrio."
+          ]
+        },
+        {
+          "t": "Porcentaje de costo y margen de contribución",
+          "obj": "Calcular el porcentaje de costo de alimentos y el margen de contribución sobre el precio sin IVA, y decidir con el margen en pesos.",
+          "texto": [
+            "El <b>porcentaje de costo de alimentos</b> dice qué parte del precio se va en ingredientes: <b>costo de alimentos de la porción ÷ precio de venta sin IVA</b>. Se calcula sin IVA porque ese impuesto no es tuyo: lo cobras y lo entregas al SAT. Los alimentos preparados para consumo llevan, en general, IVA de 16 %, así que el precio sin IVA es el precio al público entre 1.16; algunos productos, como ciertos panes o pasteles que se venden enteros para llevar, podrían tener otro tratamiento, y en los ejemplos usamos 16 % para practicar: verifica con tu contador tu caso. Si tu plato se vende en $95 con IVA, sin IVA son $81.90, y con $26.20 de ingredientes el porcentaje de costo es 32 %. Dividir entre $95 daría 27.6 % y te haría creer que vas mejor de lo que vas.",
+            "Muchos negocios de comida trabajan alrededor de 25 a 35 % de costo de alimentos, según el tipo de producto y de servicio. Tómalo como <b>orientación</b>, no como regla: un platillo de mariscos puede tener un porcentaje alto y aun así convenir, y un agua fresca puede tener uno bajísimo. El porcentaje sirve para detectar desviaciones (si sube de un mes a otro, algo cambió en precios, porciones o merma), pero no te dice cuánto dinero te queda.",
+            "Para eso está el <b>margen de contribución</b>: precio sin IVA menos todos los costos variables de esa pieza (ingredientes, empaque, comisiones, mano de obra por pieza). Es lo que cada venta aporta para pagar los costos fijos y, después, dejar utilidad. Con $26.20 de ingredientes y $4.30 de empaque, el plato de $95 aporta $81.90 − $30.50 = $51.40. Expresado como porcentaje del precio se llama margen; no lo confundas con el <b>markup</b>, que se mide sobre el costo. Si algo cuesta $40 y lo vendes en $100 sin IVA, el margen es 60 % y el markup, 150 %.",
+            "¿Por qué manda el margen en pesos? Porque la renta y tus demás fijos se pagan con pesos, no con porcentajes. Un producto con porcentaje de costo bajo puede aportar menos dinero por pieza que otro con porcentaje más alto. Antes de quitar un platillo o empujar otro, compara cuántos pesos aporta cada uno y cuántos vendes a la semana."
+          ],
+          "comparar": [
+            "«Así no: “La torta tiene 19 % de costo y el plato 32 %, así que voy a empujar la torta, que es la que más me deja.”»",
+            "«Así sí: “La torta aporta $36.01 y el plato $51.40 por pieza; aunque su porcentaje sea más alto, el plato me ayuda más a pagar la renta.”»"
+          ],
+          "caso": "Caso ficticio: Sofía, de 33 años, vende cochinita pibil los fines de semana desde la cochera de su casa en Mérida. Ofrece un plato con tortillas a $95 y una torta a $55, ambos con IVA incluido. El plato lleva $26.20 de ingredientes y $4.30 de empaque; la torta, $9.00 de ingredientes y $2.40 de empaque, $11.40 de costos variables en total (cifras ficticias). Un amigo le dice que el plato «tiene un costo muy alto» y que debería quitarlo para vender sólo tortas.",
+          "p": [
+            [
+              "¿Cuál es el porcentaje de costo de alimentos del plato?",
+              "32 %",
+              "27.6 %, sobre $95",
+              "37.2 %, con empaque",
+              "Se divide el costo de alimentos entre el precio sin IVA: $26.20 ÷ ($95 ÷ 1.16) = $26.20 ÷ $81.90 ≈ 32 %. Usar $95 mete el IVA, que no es de Sofía, y sumar el empaque mide el costo variable total, no el de alimentos."
+            ],
+            [
+              "¿Cuál es el margen de contribución del plato?",
+              "$51.40, con $81.90 menos $30.50",
+              "$64.50, restando del precio de $95",
+              "$55.70, sin contar el empaque",
+              "Precio sin IVA menos costos variables: $81.90 − $26.20 − $4.30 = $51.40. Restar del precio de $95 trata el IVA como ingreso propio, y omitir el empaque deja fuera un costo que sale con cada plato."
+            ],
+            [
+              "¿Qué debería responderle Sofía a su amigo?",
+              "Que el plato aporta más pesos por pieza y conviene conservarlo",
+              "Que tiene razón: la torta, con 19 %, es la que más deja",
+              "Que da igual, porque los dos quedan bajo 35 % de costo",
+              "La torta aporta $55 ÷ 1.16 − $11.40 = $47.41 − $11.40 = $36.01; el plato, $51.40. Aunque su porcentaje es más alto, el plato deja más pesos por pieza para cubrir los fijos. El porcentaje bajo de la torta no dice cuánto dinero aporta, y el rango de 25-35 % es sólo orientación."
+            ]
+          ],
+          "completar": [
+            "Lo que cada venta aporta, sin IVA y después de los costos variables, para pagar los fijos es el margen de ___.",
+            "contribución"
+          ],
+          "relacionar": [
+            [
+              "Precio sin IVA",
+              "Precio al público ÷ 1.16"
+            ],
+            [
+              "% de costo de alimentos",
+              "Costo de alimentos ÷ precio sin IVA"
+            ],
+            [
+              "Margen de contribución",
+              "Precio sin IVA − costos variables"
+            ],
+            [
+              "Margen sobre precio",
+              "(Precio − costo) ÷ precio"
+            ],
+            [
+              "Markup",
+              "(Precio − costo) ÷ costo"
+            ]
+          ],
+          "refl": "Con dos o tres productos que vendas o quieras vender: 1) Calcula el precio sin IVA de cada uno y anota que debes verificar con tu contador tu caso. 2) Obtén su porcentaje de costo de alimentos. 3) Calcula su margen de contribución en pesos con todos los costos variables. 4) Ordénalos primero por porcentaje y luego por margen en pesos, y escribe qué decisión cambiaría si sólo miraras el porcentaje.",
+          "modelo": "Modelo: «Pastel de cumpleaños de 20 porciones a $638: sin IVA, $550; alimentos $165, 30 %; variables totales $352; margen $198. Docena de galletas decoradas a $290: sin IVA, $250; alimentos $60, 24 %; variables totales $140; margen $110. Por porcentaje parecería mejor la galleta; en pesos, el pastel aporta $88 más por pedido. Antes de empujar uno, revisaré cuántos de cada uno puedo hacer por semana.» Es bueno porque calcula sin IVA, separa alimentos de variables totales y no decide sólo con el porcentaje.",
+          "plantilla": [
+            "Tabla de porcentaje y margen",
+            "Producto: [ ]\nPrecio al público (con IVA): $[ ] · Precio sin IVA (÷ 1.16, verifica tu caso): $[ ]\nCosto de alimentos: $[ ] · % de costo: [ ] %\nOtros variables (empaque, comisión, mano de obra): $[ ]\nMargen de contribución: $[ ] · Margen sobre precio: [ ] %\nPiezas por semana: [ ] · Aporte semanal: $[ ]\nDecisión: [ ]"
+          ],
+          "clave": [
+            "Calcula el porcentaje de costo sobre el precio sin IVA; sobre el precio con IVA te engañas.",
+            "El rango de 25-35 % es orientación para vigilar desviaciones, no una regla para todos los productos.",
+            "El margen de contribución en pesos es el que paga la renta: decide con pesos y volumen, no sólo con porcentajes."
+          ]
+        },
+        {
+          "t": "Punto de equilibrio y metas de producción",
+          "obj": "Calcular el punto de equilibrio con uno o varios productos, convertirlo en una meta diaria y contrastarlo con la capacidad real de tu cocina.",
+          "texto": [
+            "El <b>punto de equilibrio</b> es la cantidad que necesitas vender para cubrir tus costos fijos del mes, sin ganar ni perder. Se calcula así: <b>costos fijos ÷ margen de contribución unitario</b>. Si tus fijos son $8,400 al mes y cada orden aporta $42, necesitas 200 órdenes. Debajo de esa cifra pierdes dinero aunque cada venta tenga margen; arriba, cada orden adicional suma $42 a la utilidad. Usa siempre el margen calculado con precio sin IVA: con el precio con IVA el resultado sale más bajo y engañoso.",
+            "Convierte el número mensual en una <b>meta diaria</b>. Si trabajas 22 días, 200 ÷ 22 = 9.09 órdenes, y como no se venden fracciones, redondea hacia arriba: 10 al día. En Excel: =REDONDEAR.MAS(B1/B2,0), donde B1 es el punto de equilibrio y B2 los días que trabajas. Si además quieres cubrir un sueldo para ti que no metiste en los fijos, súmalo: (fijos + sueldo deseado) ÷ margen. Esa es tu meta de producción, no un pronóstico: nada garantiza que se venda.",
+            "Casi nadie vende un solo producto. Con varios, usa el <b>margen ponderado por la mezcla</b>: multiplica el margen de cada producto por su participación en las ventas y suma. Si 60 % de tus ventas son chilaquiles con margen de $42 y 40 % son tortas con $30, el margen ponderado es 0.6 × $42 + 0.4 × $30 = $37.20, y el equilibrio sube a unas 226 unidades. En Excel: =SUMAPRODUCTO(B2:B3,C2:C3), con márgenes en B y participaciones en C. Si la mezcla se inclina hacia productos de menor margen, necesitas vender más.",
+            "Compara la meta con tu <b>capacidad real</b>: cuántas piezas puedes producir, empacar y entregar por día con tu equipo, tu tiempo y tus manos, sin descuidar la higiene. Si el equilibrio pide más de lo que puedes hacer, vender más no es la salida: revisa precio, costos variables, fijos o mezcla. Y si la meta queda muy cerca de tu capacidad máxima, cualquier día malo te deja en pérdida."
+          ],
+          "comparar": [
+            "«Así no: “Vendo bastante; si un mes no alcanza, ya saldrá en el siguiente.”»",
+            "«Así sí: “Con $8,400 de fijos y $42 de margen necesito 200 órdenes al mes: 10 por día en 22 días. Hoy puedo hacer 12 como máximo.”»"
+          ],
+          "caso": "Caso ficticio: Óscar, de 44 años, dejó su empleo en una distribuidora de San Luis Potosí y ahora prepara chilaquiles para oficinas de una zona industrial. Vende la orden a $87 con IVA; sus costos variables son $33 por orden y sus fijos, $8,400 al mes entre la renta de una cocina compartida, servicios, teléfono y la ayuda de su sobrino (cifras ficticias). Trabaja 22 días al mes y puede preparar y entregar, como máximo, 12 órdenes por mañana. Quiere agregar tortas, que dejan $30 de margen, y calcula que serían 40 % de sus ventas.",
+          "p": [
+            [
+              "¿Cuál es el punto de equilibrio mensual de Óscar vendiendo sólo chilaquiles?",
+              "200 órdenes, con $42 de margen",
+              "156 órdenes, con $87",
+              "97 órdenes, dividiendo $8,400 entre $87",
+              "Sin IVA, la orden vale $87 ÷ 1.16 = $75 y aporta $75 − $33 = $42; $8,400 ÷ $42 = 200. Restar $33 a $87 incluye el IVA y baja falsamente el equilibrio; dividir entre el precio olvida que los costos variables también se pagan."
+            ],
+            [
+              "¿Cuántas órdenes diarias necesita para alcanzar su equilibrio?",
+              "10 al día",
+              "9 al día, redondeando 9.09 hacia abajo",
+              "7 al día, repartiendo entre 30 días",
+              "200 ÷ 22 días = 9.09; como no se venden fracciones de orden, se redondea hacia arriba a 10. Con 9 diarias quedaría corto cada mes, y repartir entre 30 días supone que trabaja días que no trabaja."
+            ],
+            [
+              "Si agrega tortas y la mezcla queda en 60 % chilaquiles y 40 % tortas, ¿qué pasa con su equilibrio?",
+              "Sube a unas 226 unidades al mes, con margen de $37.20",
+              "Sigue en 200, porque los fijos no cambian",
+              "Baja a 156, porque ahora vende dos productos",
+              "El margen ponderado es 0.6 × $42 + 0.4 × $30 = $37.20, y $8,400 ÷ $37.20 = 225.8, unas 226 unidades. Los fijos son los mismos, pero cada unidad aporta menos en promedio, así que necesita vender más. Tener dos productos no reduce el equilibrio por sí mismo."
+            ]
+          ],
+          "completar": [
+            "Los costos fijos divididos entre el margen de contribución unitario dan el punto de ___.",
+            "equilibrio"
+          ],
+          "relacionar": [
+            [
+              "Costos fijos ÷ margen unitario",
+              "Punto de equilibrio en unidades"
+            ],
+            [
+              "=REDONDEAR.MAS(B1/B2,0)",
+              "Meta diaria redondeada hacia arriba"
+            ],
+            [
+              "(Fijos + sueldo deseado) ÷ margen",
+              "Meta que también cubre tu sueldo"
+            ],
+            [
+              "=SUMAPRODUCTO(B2:B3,C2:C3)",
+              "Margen ponderado por la mezcla"
+            ],
+            [
+              "Piezas que puedes hacer y entregar al día",
+              "Capacidad real de tu cocina"
+            ]
+          ],
+          "refl": "Con tus números, o con estimaciones honestas si aún no vendes: 1) Suma tus costos fijos mensuales. 2) Calcula el margen de contribución de tus productos y su participación esperada en ventas, y obtén el margen ponderado. 3) Calcula el punto de equilibrio mensual y la meta diaria con REDONDEAR.MAS. 4) Compáralo con tu capacidad real por día y escribe qué ajustarías si la meta queda cerca o por encima de esa capacidad.",
+          "modelo": "Modelo: «Fijos: $5,100 (renta de cocina compartida $3,500, servicios $1,000, teléfono $600). Galletas decoradas por docena: margen $110, 70 % de mis pedidos; pasteles: margen $170, 30 %. Margen ponderado: 0.7 × 110 + 0.3 × 170 = $128. Equilibrio: $5,100 ÷ $128 = 39.8, es decir, 40 pedidos al mes, 10 por semana. Puedo hacer 14 por semana, así que tengo poco colchón: antes de bajar precios buscaré más pedidos de pastel, que aportan más.» Funciona porque usa el margen ponderado, redondea hacia arriba y compara con la capacidad.",
+          "plantilla": [
+            "Calculadora de equilibrio",
+            "Costos fijos del mes: $[ ] (B1)\nProducto 1: margen $[ ] · participación [ ] %\nProducto 2: margen $[ ] · participación [ ] %\nMargen ponderado: =SUMAPRODUCTO([márgenes],[participaciones]) → $[ ]\nPunto de equilibrio: =REDONDEAR.MAS(B1/[margen],0) → [ ] unidades\nDías de trabajo al mes: [ ] · Meta diaria: =REDONDEAR.MAS([equilibrio]/[días],0) → [ ]\nCapacidad real por día: [ ] · Colchón: [ ] piezas\nAjuste si no alcanza: [ ]"
+          ],
+          "clave": [
+            "Punto de equilibrio = costos fijos ÷ margen de contribución unitario, siempre con precio sin IVA.",
+            "Con varios productos usa el margen ponderado por la mezcla; si la mezcla empeora, el equilibrio sube.",
+            "Compara la meta con tu capacidad real: si no cabe, cambia precio, costos o mezcla, no tus horas de sueño."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Arma en 90 minutos tu libro de costos en Excel con cuatro hojas. 1) Hoja Receta: tu producto principal con columnas de precio de compra, cantidad comprada, costo por gramo (=B2/C2), cantidad usada, factor de rendimiento y costo en receta (=E2*D2/F2); total con =SUMA(G2:G15) y costo por porción vendible con =REDONDEAR(G16/H1,2). 2) Hoja Variables: empaque, gas, agua, comisiones y tu mano de obra por pieza. 3) Hoja Margen: precio sin IVA (=B1/1.16; verifica con tu contador tu caso), porcentaje de costo de alimentos y margen de contribución en pesos de dos o tres productos. 4) Hoja Equilibrio: costos fijos, margen ponderado con =SUMAPRODUCTO(B2:B4,C2:C4), punto de equilibrio con =REDONDEAR.MAS(B6/B7,0) y meta diaria comparada con tu capacidad. En algunas configuraciones de Excel el separador es punto y coma: si te marca error, escribe =SUMAPRODUCTO(B2:B4;C2:C4).",
+        "entregable": "Un archivo de Excel con cuatro hojas enlazadas (receta, variables, margen y equilibrio) de tu producto principal y una nota de cinco líneas con lo que descubriste de tus números.",
+        "criterios": "Revisa: las cantidades están en gramos, mililitros o piezas con fecha de precios, la merma está aplicada donde existe, el porcentaje de costo y el margen se calculan sobre el precio sin IVA, incluiste tu mano de obra y las comisiones, y el punto de equilibrio está redondeado hacia arriba y comparado con tu capacidad real."
+      },
+      "lab": {
+        "t": "Los pasteles de Valeria, peso por peso",
+        "obj": "Costear un pastel de pedido con merma, sumar los costos olvidados, calcular porcentaje de costo y margen sin IVA y hallar el punto de equilibrio frente a la capacidad real.",
+        "esc": "<b>Valeria,</b> de 36 años, es maestra de primaria en Chihuahua y vende pasteles de cumpleaños de 20 porciones por pedido. Cobra $580 con IVA «porque es lo que cobran otras» y siente que trabaja mucho para lo que le queda. Tiene sus recetas en gramos, pero nunca ha hecho un costeo completo (cifras ficticias).",
+        "e": [
+          [
+            "Escena 1: Su pastel de vainilla con relleno de fresa lleva 850 g de fresa limpia; la compra a $60 el kilo y aprovecha 85 % después de limpiarla. El resto de los ingredientes suma $90.00 y el pastel rinde 20 porciones sin desperdicio.",
+            "Consigna: arma la hoja de costo de receta con sus columnas y fórmulas, y calcula el costo de alimentos del pastel y por porción."
+          ],
+          [
+            "Escena 2: Además, cada pastel lleva caja y base ($30), gas del horno ($10 por pastel, prorrateado) y 2 horas de su trabajo, que valúa en $70 la hora.",
+            "Consigna: calcula el costo variable total del pastel y explica por qué su hora debe estar ahí aunque el negocio sea suyo."
+          ],
+          [
+            "Escena 3: Con el precio de $580 con IVA, su hermana calcula que «el costo de alimentos es 25.9 %» y que todo está bien.",
+            "Consigna: calcula el precio sin IVA, el porcentaje de costo de alimentos correcto y el margen de contribución en pesos, y explica el error de la hermana."
+          ],
+          [
+            "Escena 4: Sus fijos mensuales son $5,100 (su parte de la renta, internet, teléfono y la cuota mensual de su terminal). Su horno y su horario le permiten hacer como máximo 6 pasteles por semana sin dejar su empleo.",
+            "Consigna: calcula el punto de equilibrio, compáralo con su capacidad mensual y propón dos ajustes posibles, con números."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuál es el porcentaje de costo de alimentos del pastel?",
+            "30 %, sobre $500 sin IVA",
+            "25.9 %, sobre el precio de $580",
+            "66 %, con variables",
+            "Fresa: 850 g × $0.06 ÷ 0.85 = $60; más $90, son $150 de alimentos. Sin IVA el pastel vale $580 ÷ 1.16 = $500, y $150 ÷ $500 = 30 %. La hermana dividió entre $580, con IVA; el 66 % ($330 ÷ $500) es el costo variable total, no sólo el de alimentos."
+          ],
+          [
+            "¿Cuál es su punto de equilibrio mensual?",
+            "30 pasteles, con $170 de margen",
+            "21 pasteles, con $580",
+            "11 pasteles, dividiendo entre $500",
+            "Costo variable: $150 + $30 + $10 + $140 = $330; margen: $500 − $330 = $170; $5,100 ÷ $170 = 30. Con $580 el margen parecería $250 y daría 20.4, unos 21, pero el IVA no es de Valeria. Dividir entre el precio olvida los costos variables."
+          ],
+          [
+            "Si puede hacer 24 pasteles al mes y su equilibrio es de 30, ¿qué le conviene?",
+            "Revisar precio, costos o fijos antes de buscar más pedidos",
+            "Bajar el precio para conseguir más pedidos cada semana",
+            "Seguir igual, porque algunos meses vende más pasteles",
+            "Aunque venda todo lo que puede hacer (6 × 4 = 24), no cubre sus fijos: más pedidos no le caben. Bajar el precio reduce el margen y sube todavía más el equilibrio, y esperar meses buenos no cambia la cuenta. Debe revisar su precio frente al mercado, sus costos variables, sus fijos o sumar productos de mayor margen."
+          ]
+        ],
+        "pl": [
+          "Hoja de costeo completo de un pedido",
+          "Producto: [ ] · Porciones: [ ]\nIngredientes: =SUMA(G2:G12) → $[ ] · Por porción: $[ ]\nVariables extra: empaque $[ ] · gas $[ ] · mano de obra [horas] × $[ ] = $[ ]\nCosto variable total: $[ ]\nPrecio al público: $[ ] · Sin IVA (÷ 1.16, verifica tu caso): $[ ]\n% de costo de alimentos: [ ] % · Margen de contribución: $[ ]\nFijos del mes: $[ ] · Equilibrio: =REDONDEAR.MAS([fijos]/[margen],0) → [ ]\nCapacidad mensual: [ ] · Ajustes: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Leonel compra azúcar en bolsa de 2 kg a $64 y su receta de roles usa 350 g. ¿Cuánto cuesta el azúcar de la receta?",
+          "$11.20, a $0.032 el gramo",
+          "$22.40, como si $64 fuera el precio del kilo",
+          "$64.00, porque compró la bolsa completa",
+          "$5.60, entre 4,000 g"
+        ],
+        [
+          "Patricia compra pechuga con hueso a $95 el kilo para sus chilaquiles; después de cocerla y deshebrarla aprovecha 55 %. ¿Cuánto le cuesta el kilo de pollo deshebrado?",
+          "$172.73, dividiendo $95 entre 0.55",
+          "$95.00, el precio de compra",
+          "$52.25, multiplicando por 0.55",
+          "$147.25, sumando 55 % al precio"
+        ],
+        [
+          "En la hoja de Óscar, D2:D12 tiene el costo por gramo y E2:E12 los gramos usados, sin merma. ¿Qué fórmula da el costo total de la receta?",
+          "=SUMAPRODUCTO(D2:D12,E2:E12)",
+          "=SUMA(D2:D12)*SUMA(E2:E12)",
+          "=PRODUCTO(D2:E12)",
+          "=SUMA(D2:E12)"
+        ],
+        [
+          "Rubén paga $1,200 al mes por un espacio en una cocina compartida y compra charolas para cada pedido. ¿Cuál de estos gastos es variable?",
+          "Las charolas de cada pedido",
+          "La renta de la cocina compartida",
+          "El plan mensual de su celular de pedidos",
+          "La cuota mensual fija de su terminal"
+        ],
+        [
+          "Valeria vende una caja de roles en $76 con IVA y su costo de alimentos es de $19. ¿Cuál es su porcentaje de costo de alimentos?",
+          "29 %, sobre el precio sin IVA",
+          "25 %, dividiendo entre $76",
+          "71 %, lo que queda del precio",
+          "400 %, el precio entre el costo"
+        ],
+        [
+          "Arturo vende un postre en $100 sin IVA que le cuesta $40 en costos variables. ¿Qué afirmación es correcta?",
+          "Margen de 60 % y markup de 150 %",
+          "Margen y markup iguales, de 60 %",
+          "Margen de 150 % y markup de sólo 60 %",
+          "Margen de 40 % y markup de 60 %"
+        ],
+        [
+          "Cristian tiene $6,000 de fijos al mes y vende un producto a $58 con IVA con $26 de costo variable. ¿Cuál es su punto de equilibrio?",
+          "250 unidades",
+          "188 unidades, restando $26 a $58",
+          "120 unidades, dividiendo entre $50",
+          "231 unidades, dividiendo entre $26"
+        ],
+        [
+          "Graciela vende dos productos: 75 % de sus ventas dejan $30 de margen y 25 % dejan $50. Con $7,000 de fijos al mes, ¿cuál es su equilibrio?",
+          "200 unidades, con margen ponderado de $35",
+          "175 unidades, con el promedio simple de $40",
+          "140 unidades, con el margen de $50",
+          "234 unidades, con el margen de $30"
+        ],
+        [
+          "Patricia tarda 3 horas en decorar 48 galletas y valúa su hora en $75. ¿Cuánto de mano de obra carga cada galleta?",
+          "$4.69, con $225 entre 48 galletas",
+          "$1.56, dividiendo $75 entre 48",
+          "$75.00, el valor completo de su hora",
+          "$0.00, porque lo hace en su tiempo libre"
+        ],
+        [
+          "Leonel hornea lotes de 40 roles con un costo de $380; en promedio, 4 roles no se pueden vender. ¿Cuál es el costo por rol vendible?",
+          "$10.56, dividiendo entre 36",
+          "$9.50, dividiendo entre 40",
+          "$10.45, sumando 10 % a $9.50",
+          "$8.55, restando 10 % a $9.50"
+        ]
+      ]
+    },
+    {
+      "t": "Precio y menú rentable",
+      "r": "Aprenderás a poner precios que cubren costos y respetan el precio total que pide Profeco, a ordenar tu menú con la matriz de popularidad y margen, a cotizar pedidos especiales con reglas claras y a responder con honestidad cuando suben los insumos.",
+      "lecciones": [
+        {
+          "t": "Poner precio",
+          "obj": "Fijar el precio total de un producto combinando costo, margen deseado, referencia de mercado y valor percibido, en mostrador y en app.",
+          "texto": [
+            "Un buen precio sale de mirar tres cosas a la vez. Primero, tu <b>costo</b>: el precio mínimo es el que cubre los costos variables y aporta a los fijos. Segundo, la <b>referencia de mercado</b>: lo que cobran por algo comparable en tu zona y en tu canal. Tercero, el <b>valor percibido</b>: lo que tu cliente cree que recibe por diseño, frescura, servicio, puntualidad o personalización. El costo te dice el piso; el mercado y el valor te dicen hasta dónde puedes llegar.",
+            "Desde el costo hay dos fórmulas útiles. Con un porcentaje objetivo de costo de alimentos: <b>precio sin IVA = costo de alimentos ÷ % objetivo</b>; si una docena de galletas lleva $75.60 de alimentos y buscas 30 %, el precio sin IVA es $252. Con un margen deseado sobre el precio: <b>precio sin IVA = costo variable ÷ (1 − margen)</b>; con $120 de costo variable y 55 % de margen, son $266.67. El error frecuente es multiplicar el costo por 1.55: eso es un markup de 55 %, que deja apenas 35.5 % de margen.",
+            "Después, convierte a <b>precio total</b>. La Ley Federal de Protección al Consumidor pide que el precio que anuncias sea el total que pagará el cliente, con impuestos incluidos; «$252 + IVA» no es un precio al público válido. Con IVA de 16 % (verifica con tu contador tu caso), $252 se vuelven $292.32. Redondea a una cifra cómoda, por ejemplo hacia arriba al múltiplo de 5: =REDONDEAR.MAS(B5/5,0)*5 da $295. Y recuerda que la propina siempre es voluntaria: no la incluyas en el precio ni la cobres por obligación.",
+            "Si vendes también por app de reparto, la comisión se calcula sobre el precio, así que para conservar lo que recibes en mostrador divide: <b>precio en app = precio en mostrador ÷ (1 − comisión)</b>. Con una comisión de 25 % (revisa la de tu contrato y lo que dice sobre precios), una pieza de $25 debe ir a $33.33, que redondeas a $35. Subirla sólo 25 %, a $31.25, te deja $23.44. En las ventas por plataformas también hay retenciones de impuestos: verifícalas en el SAT o con tu contador."
+          ],
+          "comparar": [
+            "«Así no: “Docena de galletas decoradas: $252 + IVA. En la app, el mismo precio más 25 %.”»",
+            "«Así sí: “Docena de galletas decoradas: $295, precio total. En la app la publico al precio que me deja lo mismo después de la comisión.”»"
+          ],
+          "caso": "Caso ficticio: Jimena, de 27 años, estudió diseño gráfico y vende galletas decoradas para fiestas en Tijuana. La docena le cuesta $75.60 de alimentos y $120 en total de costos variables, contando caja, listón, etiqueta y sus horas de decoración (cifras ficticias). Otras reposteras de su zona cobran entre $260 y $340 la docena. Su hermana le sugiere «costo por 1.55 y listo», y una conocida le dice que ponga «$252 + IVA» para que se vea más barato.",
+          "p": [
+            [
+              "Si Jimena busca 30 % de costo de alimentos, ¿qué precio total debería anunciar, redondeado al múltiplo de 5?",
+              "$295, con IVA y redondeado",
+              "$252 más IVA",
+              "$100, que es 75.60 × 1.30 redondeado",
+              "$75.60 ÷ 0.30 = $252 sin IVA; con IVA son $292.32, que se redondean a $295. Anunciar «más IVA» incumple el precio total que pide la ley, y multiplicar por 1.30 confunde el porcentaje de costo con un aumento sobre el costo."
+            ],
+            [
+              "¿Qué precio sin IVA le da 55 % de margen sobre sus $120 de costo variable?",
+              "$266.67, dividiendo 120 ÷ 0.45",
+              "$186.00, multiplicando 120 × 1.55",
+              "$218.18, dividiendo 120 ÷ 0.55",
+              "Precio = costo ÷ (1 − margen) = $120 ÷ 0.45 = $266.67; comprobación: ($266.67 − $120) ÷ $266.67 = 55 %. Multiplicar por 1.55 es un markup que deja 35.5 % de margen, y dividir entre 0.55 deja sólo 45 %."
+            ],
+            [
+              "Con $266.67 sin IVA, ¿cómo queda su precio frente al mercado?",
+              "En $310 con IVA, dentro del rango de la zona",
+              "En $266.67, porque así se ve más barato",
+              "Arriba de $340, así que debe bajar su margen",
+              "Con IVA, $266.67 × 1.16 = $309.33, que puede redondear a $310: queda entre $260 y $340, los precios de su zona. Anunciar el precio sin IVA no es el precio total, y el resultado no supera los $340."
+            ]
+          ],
+          "completar": [
+            "La Ley Federal de Protección al Consumidor pide anunciar el precio ___, con impuestos incluidos.",
+            "total"
+          ],
+          "relacionar": [
+            [
+              "Costo de alimentos ÷ % objetivo",
+              "Precio sugerido desde el costo"
+            ],
+            [
+              "Costo variable ÷ (1 − margen)",
+              "Precio para un margen sobre el precio"
+            ],
+            [
+              "Precio en mostrador ÷ (1 − comisión)",
+              "Precio en app que conserva tu ingreso"
+            ],
+            [
+              "Precio sin IVA × 1.16",
+              "Precio total para anunciar (verifica tu caso)"
+            ],
+            [
+              "=REDONDEAR.MAS(B5/5,0)*5",
+              "Redondeo hacia arriba al múltiplo de 5"
+            ]
+          ],
+          "refl": "Elige un producto que ya costeaste. 1) Calcula su precio sin IVA con un porcentaje objetivo de costo de alimentos y con un margen deseado, y compara los dos resultados. 2) Anota tres precios de referencia de productos comparables en tu zona. 3) Escribe qué le da valor a tu producto ante tu cliente. 4) Decide el precio total que anunciarías, redondeado, y su precio en app si vendes por ahí, con la comisión de tu contrato.",
+          "modelo": "Modelo: «Roles de canela, caja de 4. Costo variable de la caja: $86.44. Con 50 % de margen: $86.44 ÷ 0.5 = $172.88 sin IVA, $200.54 con IVA; redondeo a $205. En mi colonia, cajas parecidas van de $180 a $230. Mi valor: entrego tibio y a la hora pactada. Precio total: $205. En app, con 30 % de comisión según mi contrato: $205 ÷ 0.7 = $292.86; la publico en $295.» Es buena porque parte del costo, aplica bien la fórmula del margen, revisa el mercado, anuncia el precio total y ajusta la app dividiendo.",
+          "plantilla": [
+            "Hoja de precio",
+            "Producto: [ ]\nCosto de alimentos: $[ ] · Costo variable total: $[ ]\nPrecio por % objetivo ([ ] %): costo ÷ [ ] = $[ ] sin IVA\nPrecio por margen ([ ] %): costo ÷ (1 − [ ]) = $[ ] sin IVA\nReferencias de mercado: $[ ] · $[ ] · $[ ]\nValor para mi cliente: [ ]\nPrecio total con IVA (verifica tu caso): $[ ] · Redondeado: =REDONDEAR.MAS([precio]/5,0)*5 → $[ ]\nPrecio en app: [precio] ÷ (1 − [comisión]) = $[ ]"
+          ],
+          "clave": [
+            "El costo marca el piso; el mercado y el valor percibido dicen hasta dónde puedes llegar.",
+            "Para un margen sobre precio divide entre (1 − margen); multiplicar por (1 + margen) es markup y deja menos.",
+            "Anuncia siempre el precio total con impuestos y calcula el precio en app dividiendo entre (1 − comisión)."
+          ]
+        },
+        {
+          "t": "Ingeniería de menú",
+          "obj": "Clasificar los platillos de un menú con la matriz de popularidad y margen de Kasavana y Smith y decidir qué hacer con cada cuadrante.",
+          "texto": [
+            "La <b>ingeniería de menú</b>, propuesta por Michael Kasavana y Donald Smith en 1982, clasifica cada platillo con dos preguntas: ¿se vende mucho? y ¿deja buen margen de contribución? Necesitas, por platillo, las unidades vendidas en un periodo (un mes, por ejemplo), el precio sin IVA y el costo variable. Con eso calculas el margen de cada uno y lo comparas contra dos líneas de corte.",
+            "La línea de <b>popularidad</b> no es el promedio simple: es el 70 % de la participación esperada. Si tu menú tiene 6 platillos, cada uno esperaría 1/6 de las ventas (16.7 %), y el corte queda en 70 % de eso: 11.7 %. Un platillo con 11.7 % o más de las unidades es popular. La línea de margen es el <b>margen promedio ponderado</b>: la suma de margen × unidades de todos los platillos entre el total de unidades. No uses el promedio simple de los márgenes, porque daría el mismo peso a un platillo que vendió 40 que a uno que vendió 590.",
+            "Con esas dos líneas salen cuatro cuadrantes. <b>Estrellas</b>: populares y de margen alto; mantenlas, cuida su calidad y dales un lugar visible. <b>Caballos de batalla</b>: populares con margen bajo; revisa su costo y su porción, súbeles el precio con cuidado o acompáñalos de algo con más margen. <b>Rompecabezas</b>: margen alto pero poco populares; cámbiales el lugar en el menú, el nombre o la descripción, o pide que se recomienden. <b>Perros</b>: ni populares ni rentables; considera quitarlos o rediseñarlos, salvo que tengan una razón para quedarse.",
+            "La matriz es una herramienta para decidir, no un veredicto automático. Un perro puede ser el único platillo vegetariano o el que trae a cierto grupo de clientes; un caballo de batalla puede ser el que llena el local. Cuida también el <b>diseño</b> del menú: uno corto, con pocos platillos bien hechos, se produce con más consistencia, desperdicia menos y se lee mejor en el celular. Repite el análisis cada mes o cada temporada."
+          ],
+          "comparar": [
+            "«Así no: “El pescado casi no se vende; lo quito del menú.”»",
+            "«Así sí: “El pescado deja $102 de margen y se vende poco: es un rompecabezas. Lo pongo arriba en el menú y pido que lo recomienden antes de decidir.”»"
+          ],
+          "caso": "Caso ficticio: Estela, de 58 años, tiene una fonda de comida corrida en Villahermosa. Revisó sus ventas de octubre, con precios sin IVA y costo variable por platillo (cifras ficticias): comida corrida del día, 590 unidades, $95 y $36; chilaquiles con pollo, 260, $85 y $18; caldo de res, 150, $110 y $44; milanesa con papas, 90, $120 y $42; pescado empapelado, 70, $160 y $58; enchiladas suizas, 40, $95 y $38. En total vendió 1,200 platillos con un margen total de $78,570. Su hijo quiere quitar todo lo que venda menos de 200 al mes.",
+          "p": [
+            [
+              "¿Cuál es la línea de popularidad del menú de Estela?",
+              "140 unidades (11.7 %)",
+              "200 unidades, la sexta parte del total",
+              "840 unidades, el 70 % de las 1,200",
+              "Con 6 platillos, la participación esperada es 1/6; el corte es 70 % de eso: 0.7 × 1/6 × 1,200 = 140 unidades. Usar 200 omite el 70 % que propone el método, y aplicar el 70 % al total no tiene relación con la participación de cada platillo."
+            ],
+            [
+              "¿En qué cuadrante cae el caldo de res?",
+              "Estrella",
+              "Caballo de batalla",
+              "Rompecabezas",
+              "Vende 150 (12.5 %), arriba del corte de 140, y su margen de $66 supera el promedio ponderado de $65.48 ($78,570 ÷ 1,200). Con el promedio simple de los márgenes ($71.50) parecería caballo de batalla, y con el corte de 200 parecería rompecabezas: por eso importan las dos reglas del método."
+            ],
+            [
+              "¿Qué conviene hacer con el pescado empapelado?",
+              "Destacarlo en el menú y que se recomiende",
+              "Quitarlo, porque vende menos de 200",
+              "Bajarle el precio a la mitad para venderlo",
+              "Con $102 de margen y 5.8 % de las ventas es un rompecabezas: deja mucho por plato, pero se pide poco. Lo indicado es probar ubicación, descripción o recomendación. Quitarlo pierde un platillo rentable, y a mitad de precio ($80) dejaría sólo $22 de margen."
+            ]
+          ],
+          "completar": [
+            "El margen que se compara en la matriz es el margen promedio ___, que pesa cada platillo por sus unidades vendidas.",
+            "ponderado"
+          ],
+          "relacionar": [
+            [
+              "Estrella",
+              "Mantener, cuidar su calidad y su lugar visible"
+            ],
+            [
+              "Caballo de batalla",
+              "Revisar costo y porción o subir precio con cuidado"
+            ],
+            [
+              "Rompecabezas",
+              "Cambiar ubicación, nombre o recomendación"
+            ],
+            [
+              "Perro",
+              "Quitar o rediseñar, salvo una razón de peso"
+            ]
+          ],
+          "refl": "Con las ventas de un mes de tu negocio, o de uno que conozcas con cifras estimadas: 1) Haz la tabla con unidades, precio sin IVA, costo variable y margen de cada producto. 2) Calcula la línea de popularidad con el 70 % de la participación esperada y el margen promedio ponderado. 3) Clasifica cada producto en su cuadrante. 4) Escribe una decisión para cada cuadrante y qué medirás el mes siguiente para saber si funcionó.",
+          "modelo": "Modelo: «Mi catálogo de 4 productos vendió 400 piezas; el corte de popularidad es 0.7 × 1/4 × 400 = 70 piezas. Margen ponderado: $13,420 ÷ 400 = $33.55. Roles de canela: 180 piezas y $36, estrella; los dejo al frente del catálogo. Panqué de plátano: 120 y $28, caballo de batalla; reviso la porción. Rebanada de pastel de chocolate: 40 y $52, rompecabezas; le tomaré mejor foto y la ofreceré a oficinas. Galleta de avena: 60 y $25, perro; la quito en diciembre.» Es bueno porque aplica bien las dos líneas, decide por cuadrante y deja algo que medir.",
+          "plantilla": [
+            "Matriz de menú del mes",
+            "Mes: [ ] · Platillos en el análisis: [n]\nPlatillo | Unidades | Precio sin IVA | Costo variable | Margen | Margen × unidades | % de unidades\n[ ] | [ ] | $[ ] | $[ ] | $[ ] | $[ ] | [ ] %\nCorte de popularidad: 0.7 × 1/[n] = [ ] %\nMargen promedio ponderado: [suma de margen × unidades] ÷ [unidades] = $[ ]\nEstrellas: [ ] → decisión: [ ]\nCaballos de batalla: [ ] → decisión: [ ]\nRompecabezas: [ ] → decisión: [ ]\nPerros: [ ] → decisión: [ ]"
+          ],
+          "clave": [
+            "La popularidad se corta en 70 % de la participación esperada (0.7 × 1/n), no en el promedio simple.",
+            "El margen alto o bajo se mide contra el promedio ponderado por unidades vendidas.",
+            "Cada cuadrante pide una acción distinta, pero la matriz orienta: el contexto de tu negocio también cuenta."
+          ]
+        },
+        {
+          "t": "Pedidos especiales y eventos",
+          "obj": "Cotizar pasteles, charolas y mesas de postres por porción, con anticipo y una política de cambios, cancelación y entrega por escrito.",
+          "texto": [
+            "Un pedido especial no se cotiza al tanteo. Empieza por las <b>porciones</b>: cuántos invitados, cuántas piezas o rebanadas por persona y de qué tamaño. Una mesa de postres para 80 invitados con 2.5 piezas por persona son 200 piezas. Multiplica por el costo variable de cada pieza y suma lo que sólo existe por el evento: montaje (bases, manteles, charolas), traslado, horas extra de montaje y desmontaje, y lo que rentes. Luego aplica tu fórmula de precio y conviértelo a precio total con IVA.",
+            "Pide un <b>anticipo</b> al confirmar: es lo que cubre los insumos y el tiempo que apartas para ese cliente. Un 50 % es una práctica común, pero lo importante es que el cliente sepa desde el principio cuánto paga, cuándo y qué pasa con ese dinero si algo cambia. Entrega siempre un comprobante del pago y, si te piden factura, emítela como corresponda; verifica con tu contador cómo hacerlo.",
+            "Escribe tu política de cambios y <b>cancelación</b> y compártela antes de recibir el anticipo, por mensaje o en un documento sencillo que el cliente acepte. Incluye hasta cuándo se puede cambiar el número de invitados o el sabor, qué pasa con el anticipo si cancela (por ejemplo, se devuelve lo que aún no compraste ni trabajaste), cómo se ajusta el precio si cambian las porciones y qué sucede si tú no puedes cumplir. Las penalizaciones deben ser claras, razonables y pactadas por escrito: la ley protege al consumidor de cláusulas abusivas.",
+            "Planea la <b>entrega</b> como parte del producto: hora de llegada, quién recibe, dónde se monta, cuánto tiempo puede estar la mesa fuera de refrigeración (lo viste en el módulo 4) y cómo se transporta sin que se maltrate. Toma fotos al entregar, con la hora, y pide confirmación por mensaje. Una entrega clara evita discusiones y es tu mejor argumento para el siguiente pedido."
+          ],
+          "comparar": [
+            "«Así no: “Te la dejo en unos $4,000; me das algo cuando puedas y lo demás el día del evento.”»",
+            "«Así sí: “Son 200 piezas para 80 invitados: $5,750 con IVA, montaje y traslado incluidos. Con 50 % de anticipo aparto la fecha; te mando por escrito la política de cambios.”»"
+          ],
+          "caso": "Caso ficticio: Arturo, de 42 años, trabaja como cocinero en un hotel de Aguascalientes y, en sus días libres, arma mesas de postres para bodas y bautizos. Una clienta le pide una para 80 invitados. Calcula 2.5 piezas por persona con un costo variable promedio de $9.40 por pieza, más $350 de montaje, $250 de traslado y 3 horas de montaje a $80 la hora (cifras ficticias). Busca 45 % de margen sobre el precio sin IVA. La clienta le avisa que tal vez cambie el número de invitados.",
+          "p": [
+            [
+              "¿Qué precio total, redondeado hacia arriba al múltiplo de $50, debe cotizar Arturo?",
+              "$5,750, con margen sobre el precio",
+              "$3,944, aplicando 45 % sobre el costo",
+              "$4,950, sin sumar el IVA al precio",
+              "Costo variable: 200 × $9.40 + $350 + $250 + $240 = $2,720. Precio sin IVA: $2,720 ÷ 0.55 = $4,945.45; con IVA, $5,736.73, redondeado a $5,750. Multiplicar $2,720 por 1.45 es un markup que deja 31 % de margen, y $4,950 no es el precio total."
+            ],
+            [
+              "Si pide 50 % de anticipo, ¿cuánto y cuándo lo cobra?",
+              "$2,875, al confirmar, con la política enviada",
+              "$1,360, la mitad del costo, el día del evento",
+              "$2,875, después de montar, si la clienta quedó contenta",
+              "La mitad de $5,750 es $2,875, y se cobra al confirmar para cubrir insumos y apartar la fecha, con la política ya aceptada. La mitad del costo no es la mitad del precio, y cobrar después del montaje deja a Arturo financiando todo el evento."
+            ],
+            [
+              "Una semana antes, la clienta avisa que serán 100 invitados. ¿Qué hace Arturo?",
+              "Recotiza 250 piezas y ajusta según su política escrita",
+              "Hace las 200 piezas: lo pactado ya no se mueve",
+              "Agrega las piezas y cobra lo mismo para no discutir",
+              "Con 100 invitados son 250 piezas y el costo variable sube a $3,190; con el mismo método, el nuevo precio total sería $6,750. Su política escrita define hasta cuándo se aceptan cambios y cómo se ajusta el precio. Hacer menos piezas deja corta la mesa, y absorber el costo regala su margen."
+            ]
+          ],
+          "completar": [
+            "Antes de cobrar el anticipo, comparte por escrito tu política de cambios y ___.",
+            "cancelación"
+          ],
+          "relacionar": [
+            [
+              "Invitados × piezas por persona",
+              "Número de piezas a producir"
+            ],
+            [
+              "Montaje, traslado y horas extra",
+              "Costos que sólo existen por el evento"
+            ],
+            [
+              "Anticipo al confirmar",
+              "Cubre insumos y aparta tu fecha"
+            ],
+            [
+              "Política escrita y aceptada",
+              "Reglas claras de cambios y cancelación"
+            ],
+            [
+              "Fotos con hora al entregar",
+              "Evidencia de que cumpliste lo pactado"
+            ]
+          ],
+          "refl": "Cotiza un pedido especial real o probable. 1) Define invitados, piezas o rebanadas por persona y tamaño de porción. 2) Calcula el costo variable de las piezas más los costos propios del evento. 3) Obtén el precio sin IVA con tu margen y el precio total redondeado. 4) Redacta tu política de cambios, cancelación y entrega en no más de ocho líneas, en lenguaje claro.",
+          "modelo": "Modelo: «Pastel de cumpleaños para 30 personas, rebanada de 100 g. Costo variable: 30 × $14 + caja y base $45 + entrega $80 = $545. Con 50 % de margen: $1,090 sin IVA, $1,264.40 con IVA; cotizo $1,270. Anticipo: $635 al confirmar. Política: cambios de sabor hasta 72 horas antes; si cancelas con más de 72 horas, devuelvo el anticipo menos lo ya comprado, con comprobantes; entrega de 4 a 5 p. m., con firma de recibido.» Es bueno porque parte de las porciones, separa los costos del evento, aplica bien el margen y la política es clara y razonable.",
+          "plantilla": [
+            "Cotización de pedido especial",
+            "Cliente: [ ] · Evento: [ ] · Fecha y hora de entrega: [ ] · Lugar: [ ]\nInvitados: [ ] × piezas por persona [ ] = [ ] piezas de [tamaño]\nCosto variable: [piezas] × $[ ] + montaje $[ ] + traslado $[ ] + horas extra $[ ] = $[ ]\nPrecio sin IVA: costo ÷ (1 − [margen]) = $[ ] · Precio total con IVA: $[ ]\nAnticipo de [ ] %: $[ ] al confirmar · Resto: $[ ] el [fecha]\nCambios: hasta [ ] antes · Cancelación: [qué se devuelve y cuándo]\nEntrega: [quién recibe, tiempo máximo fuera de refrigeración, evidencia]"
+          ],
+          "clave": [
+            "Cotiza por porciones: invitados por piezas por persona, más los costos que sólo existen por el evento.",
+            "Cobra el anticipo al confirmar y explica desde el principio qué cubre.",
+            "La política de cambios, cancelación y entrega va por escrito antes del anticipo, clara y razonable."
+          ]
+        },
+        {
+          "t": "Cuando suben los insumos",
+          "obj": "Recostear tus recetas cuando cambian los precios y elegir una salida honesta: ajustar el precio, sustituir con aviso o reducir la porción informando.",
+          "texto": [
+            "Los precios de los insumos cambian: el huevo, la mantequilla, la carne o el gas pueden subir varias veces al año. Si tu hoja de costos tiene precios de hace seis meses, tu margen real puede ser mucho menor de lo que crees. Haz un <b>recosteo</b> periódico: actualiza los precios de compra en tu hoja cada mes o cuando notes un cambio fuerte en un insumo importante. Como las fórmulas ya están hechas, basta con cambiar el precio y ver el nuevo costo por porción y el nuevo margen.",
+            "No todos los ingredientes pesan igual. Revisa primero los que más aportan al costo: en una torta de cochinita, la carne es la mayor parte. Si la pierna de cerdo pasa de $110 a $132 el kilo (20 % más) y de 4 kg en crudo, con factor de rendimiento de 0.6, salen 24 porciones de 100 g, el costo de carne por torta sube de $18.33 a $22.00. Sin considerar la merma, calcularías $13.20 y te quedarías corto.",
+            "Tienes varias salidas y puedes combinarlas. <b>Subir el precio</b> lo necesario para recuperar, al menos, el margen en pesos que tenías. <b>Sustituir</b> un ingrediente de forma honesta: si cambias la mantequilla por margarina o un queso por otro, dilo y ajusta la descripción; anunciar «con mantequilla» o «sin conservadores» cuando no es cierto es publicidad engañosa. <b>Reducir la porción</b> sólo con aviso claro: si la torta llevaba 100 g y ahora lleva 80, tu menú y tu catálogo deben decirlo. Y antes de tocar el precio, revisa la merma, el proveedor o el tamaño de compra.",
+            "Comunica los aumentos con respeto y anticipación: un mensaje breve a tus clientes frecuentes, con la fecha en que cambia el precio y una razón real, sin dramatizar ni culpar a nadie. Respeta los pedidos ya confirmados al precio pactado. Un cliente acepta mejor un aumento explicado que una porción más chica descubierta por sorpresa."
+          ],
+          "comparar": [
+            "«Así no: “Subió la carne; desde hoy la torta lleva un poco menos y nadie se va a dar cuenta.”»",
+            "«Así sí: “Desde el lunes 16, la torta de cochinita pasa de $80 a $85 porque subió la carne; los pedidos ya apartados se respetan al precio anterior.”»"
+          ],
+          "caso": "Caso ficticio: Cristian, de 31 años, vende tortas de cochinita en un carrito frente a una universidad de Culiacán. Cobra $80 con IVA. Su torta costaba $24.33 en ingredientes: $18.33 de carne y $6.00 de todo lo demás. La pierna de cerdo acaba de subir de $110 a $132 el kilo; de 4 kg en crudo obtiene 2.4 kg de carne lista, 24 porciones de 100 g (cifras ficticias). Su primo le propone servir 80 g «sin decir nada», y un cliente le pregunta si va a subir el precio.",
+          "p": [
+            [
+              "¿Cuánto cuesta ahora la carne de cada torta?",
+              "$22.00",
+              "$13.20, contando 40 porciones de 4 kg",
+              "$18.33, el costo de su hoja anterior",
+              "4 kg × $132 = $528, repartidos en 24 porciones netas: $22.00. Dividir entre 40 porciones supone que la carne no pierde peso al cocinarse, y quedarse con $18.33 es justo el error de no recostear."
+            ],
+            [
+              "¿Cuál es el precio total mínimo, redondeado al múltiplo de $5, que le devuelve el margen en pesos que tenía?",
+              "$85",
+              "$96, porque la carne subió 20 %",
+              "$80: el aumento es de sólo $3.67",
+              "El costo subió $22.00 − $18.33 = $3.67. Sin IVA la torta vale $80 ÷ 1.16 = $68.97; sumándole $3.67 son $72.64, y con IVA $84.26, que se redondean a $85. Subir todo el precio 20 % trata como si todo el costo hubiera subido, y quedarse en $80 hace que Cristian absorba el aumento."
+            ],
+            [
+              "¿Qué le responde Cristian a su primo?",
+              "Que si reduce a 80 g, lo avisará claramente en el menú",
+              "Que 20 g menos no se notan y conviene hacerlo",
+              "Que no avisar es válido si el precio no cambia",
+              "Reducir la porción es una opción válida sólo si se informa: el cliente paga por lo que se le anuncia, y ocultarlo engaña y daña la confianza. Que no se note no lo vuelve honesto, y mantener el precio no autoriza a dar menos de lo anunciado."
+            ]
+          ],
+          "completar": [
+            "Actualizar cada cierto tiempo los precios de compra y el costo de tus recetas se llama ___.",
+            "recosteo"
+          ],
+          "refl": "Haz el recosteo de tu producto principal. 1) Actualiza hoy los precios de compra de sus tres ingredientes más caros, con fecha. 2) Calcula el nuevo costo por porción y el nuevo margen en pesos, y compáralos con los anteriores. 3) Escribe dos opciones para recuperar el margen (precio, sustitución honesta, porción avisada, proveedor o merma), con números. 4) Redacta el mensaje con el que avisarías un aumento a tus clientes frecuentes.",
+          "modelo": "Modelo: «Recosteo de galletas decoradas, 1 de noviembre: la mantequilla pasó de $190 a $215 el kilo; uso 250 g por docena, así que el costo sube $6.25 por docena. Margen anterior: $110; nuevo: $103.75. Opción 1: subir de $290 a $300 con IVA, que deja $112.37. Opción 2: comprar en caja de 10 kg a mejor precio. Mensaje: “A partir del 15 de noviembre, la docena queda en $300 por el aumento de la mantequilla; los pedidos apartados se respetan.”» Es bueno porque cuantifica, propone opciones con números y avisa con fecha y razón real.",
+          "plantilla": [
+            "Recosteo y aviso de aumento",
+            "Fecha del recosteo: [ ]\nInsumo que subió: [ ] · Precio anterior: $[ ] · Precio nuevo: $[ ]\nCosto por porción: antes $[ ] · ahora $[ ]\nMargen en pesos: antes $[ ] · ahora $[ ]\nPrecio mínimo para recuperar el margen: ([precio sin IVA anterior] + [aumento del costo]) × 1.16 = $[ ] → redondeado $[ ]\nOtras salidas: [sustitución honesta · porción avisada · proveedor · merma]\nMensaje: Hola, [nombre]. A partir del [fecha], [producto] queda en $[ ] por [razón real]. Tus pedidos ya confirmados se respetan al precio anterior. Gracias por tu preferencia."
+          ],
+          "clave": [
+            "Recostea cada mes o cuando suba fuerte un insumo clave: con la hoja hecha, sólo cambias precios.",
+            "Para recuperar el margen en pesos basta subir lo que subió el costo, más IVA, no necesariamente el mismo porcentaje.",
+            "Sustituciones y porciones menores, siempre avisadas: ocultarlas es engañar al cliente."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma en Excel la hoja de precios y la matriz de tu menú. 1) Hoja Precios: por producto, costo variable (B), margen deseado (C), precio sin IVA (=B2/(1-C2)), precio total con IVA (=D2*1.16; verifica con tu contador tu caso), precio redondeado (=REDONDEAR.MAS(E2/5,0)*5) y precio en app (=F2/(1-G2)) con la comisión de tu contrato en G. 2) Hoja Matriz: unidades del mes (B), margen por producto (C), margen total (=B2*C2), participación (=B2/SUMA($B$2:$B$9)), corte de popularidad (=0.7/CONTAR(B2:B9)) en H1 y margen promedio ponderado (=SUMAPRODUCTO(B2:B9,C2:C9)/SUMA(B2:B9)) en H2; marca popularidad con =E2>=$H$1 y margen alto con =C2>=$H$2 (Excel mostrará VERDADERO o FALSO). 3) Escribe una decisión por cuadrante. 4) Redacta tu política de pedidos especiales y tu mensaje de aumento de precios. En algunas configuraciones de Excel el separador es punto y coma: cambia las comas de las fórmulas por punto y coma si te marca error.",
+        "entregable": "Un archivo de Excel con la hoja de precios y la matriz de menú de al menos cuatro productos, más una página con tus decisiones por cuadrante, tu política de pedidos especiales y tu mensaje de aumento.",
+        "criterios": "Revisa: los precios se calculan con la fórmula de margen correcta y se anuncian como precio total con IVA, el precio en app divide entre (1 − comisión), la matriz usa el corte de 70 % de la participación esperada y el margen promedio ponderado, y la política y el mensaje son claros, están por escrito y no ocultan nada al cliente."
+      },
+      "lab": {
+        "t": "La fonda de Rubén pone orden en sus precios",
+        "obj": "Aplicar precio total, precio en app, matriz de menú, cotización de pedidos especiales y recosteo en una fonda de desayunos.",
+        "esc": "<b>Rubén,</b> de 50 años, tiene una fonda de desayunos y tortas cerca del puerto de Veracruz. Puso sus precios hace dos años y no los ha revisado desde entonces. Quiere entrar a una app de reparto, recibe cada vez más pedidos de oficinas y el huevo acaba de subir (cifras ficticias).",
+        "e": [
+          [
+            "Escena 1: Sus molletes con huevo tienen $27 de costo variable. Rubén quiere 55 % de margen sobre el precio sin IVA y entrar a una app cuya comisión, según el contrato que le ofrecen, es de 25 %.",
+            "Consigna: calcula el precio sin IVA, el precio total para mostrador redondeado al múltiplo de $5 y el precio en app que conserva su ingreso."
+          ],
+          [
+            "Escena 2: En octubre vendió 800 platillos de sus cuatro opciones principales: chilaquiles, 330 unidades con margen de $48; huevos al gusto, 250 con $38.34; torta de pierna, 120 con $52; enfrijoladas, 100 con $40.",
+            "Consigna: calcula el corte de popularidad y el margen promedio ponderado, clasifica cada platillo y escribe una decisión por cuadrante."
+          ],
+          [
+            "Escena 3: Una oficina pide 40 tortas para una junta. Cada torta tiene $26 de costo variable, la charola desechable cuesta $60 y la entrega, $90. Rubén quiere 45 % de margen.",
+            "Consigna: arma la cotización con el precio total redondeado al múltiplo de $10, el anticipo y una política de cambios y cancelación de cuatro líneas."
+          ],
+          [
+            "Escena 4: Por el aumento del huevo, sus huevos al gusto pasaron de $22 a $25 de costo variable. Se venden en $70 con IVA. Su esposa propone servir un huevo menos sin avisar.",
+            "Consigna: calcula el precio mínimo, redondeado al múltiplo de $5, que recupera el margen en pesos, y redacta el aviso a clientes y tu respuesta a la propuesta."
+          ]
+        ],
+        "p": [
+          [
+            "En la escena 1, ¿qué precios debe publicar Rubén?",
+            "$70 en mostrador y $95 en la app",
+            "$70 en mostrador y $90 en la app (25 % más)",
+            "$60 en mostrador y $80 en la app (÷ 0.75)",
+            "Precio sin IVA: $27 ÷ 0.45 = $60; con IVA, $69.60, redondeado a $70. En app: $70 ÷ 0.75 = $93.33, redondeado a $95. Subir 25 % da $87.50 (unos $90) y deja $67.50 después de la comisión, menos que en mostrador; $60 es el precio sin IVA, no el precio total."
+          ],
+          [
+            "En la escena 2, ¿qué cuadrante le toca a la torta de pierna?",
+            "Rompecabezas",
+            "Caballo de batalla",
+            "Estrella del menú",
+            "El corte de popularidad es 0.7 × 1/4 × 800 = 140 unidades, y la torta vendió 120: es poco popular. El margen ponderado es $35,665 ÷ 800 = $44.58, y la torta deja $52: margen alto. Poco popular con margen alto es rompecabezas; para ser estrella o caballo tendría que superar las 140 unidades."
+          ],
+          [
+            "En la escena 3, ¿qué precio total cotiza Rubén?",
+            "$2,510",
+            "$1,730, con 1,190 × 1.45",
+            "$2,170, sin sumar el IVA",
+            "Costo variable: 40 × $26 + $60 + $90 = $1,190. Precio sin IVA: $1,190 ÷ 0.55 = $2,163.64; con IVA, $2,509.82, redondeado a $2,510. Multiplicar por 1.45 es un markup que no deja 45 % de margen, y $2,170 es el precio sin IVA redondeado, que no es el precio total."
+          ]
+        ],
+        "pl": [
+          "Tablero de precios de la fonda",
+          "Producto: [ ] · Costo variable: $[ ] · Margen deseado: [ ] %\nPrecio sin IVA: costo ÷ (1 − margen) = $[ ] · Precio total: $[ ] → redondeado $[ ]\nPrecio en app: [precio total] ÷ (1 − [comisión]) = $[ ]\nMatriz: corte de popularidad [ ] unidades · margen ponderado $[ ]\nEstrellas: [ ] · Caballos de batalla: [ ] · Rompecabezas: [ ] · Perros: [ ]\nPedido especial: [piezas] × $[ ] + empaque $[ ] + entrega $[ ] = $[ ] → precio total $[ ] · anticipo $[ ]\nRecosteo: insumo [ ] · costo antes $[ ] · ahora $[ ] · nuevo precio $[ ]\nAviso: A partir del [fecha], [producto] queda en $[ ] por [razón]. Los pedidos confirmados se respetan."
+        ]
+      },
+      "quiz": [
+        [
+          "Leonel prepara tortas en Guadalajara con $21 de costo de alimentos y busca 30 % de costo. ¿Qué precio total anuncia, redondeado al múltiplo de $5?",
+          "$85, con IVA y redondeado",
+          "$70 más IVA",
+          "$30, que es 21 × 1.30 redondeado",
+          "$65, que es el triple del costo"
+        ],
+        [
+          "Patricia tiene un postre con $36 de costo variable y quiere 40 % de margen sobre el precio sin IVA. ¿Qué precio sin IVA necesita?",
+          "$60.00",
+          "$50.40 (36 × 1.40)",
+          "$90.00 (36 ÷ 0.40)",
+          "$57.60 (36 × 1.60)"
+        ],
+        [
+          "Valeria vende un pastelito en $60 en mostrador y la app le cobra 20 % de comisión sobre el precio. ¿Qué precio en app le deja lo mismo?",
+          "$75, dividiendo entre 0.80",
+          "$72, que es 20 % más",
+          "$80, que es $60 más $20",
+          "$60, el mismo en todos lados"
+        ],
+        [
+          "Un cartel de una cafetería en León dice «Rebanada de pastel $45 + IVA». ¿Qué debe corregir?",
+          "Anunciar el precio total que se paga, con IVA",
+          "Poner el monto del IVA en letra más chica",
+          "Cobrar el IVA sólo a quien pida factura",
+          "Quitar el precio y darlo sólo por mensaje"
+        ],
+        [
+          "Un menú de 5 platillos vendió 1,000 unidades. La torta de milanesa vendió 150 y su margen está por debajo del promedio ponderado. ¿En qué cuadrante cae?",
+          "Caballo de batalla",
+          "Perro",
+          "Estrella",
+          "Rompecabezas"
+        ],
+        [
+          "Óscar vendió 500 piezas con un margen total de $17,500. Un producto suyo es popular y deja $33 por pieza. ¿Cómo se clasifica?",
+          "Caballo de batalla, por margen bajo",
+          "Estrella, por ser popular",
+          "Rompecabezas, por su margen",
+          "Perro, por quedar bajo $35"
+        ],
+        [
+          "En la fonda de Patricia, el pescado deja mucho margen pero casi no se pide. ¿Qué conviene probar primero?",
+          "Destacarlo en el menú y recomendarlo",
+          "Quitarlo del menú este mismo mes",
+          "Bajarle el precio por debajo del costo",
+          "Subirle el precio para que se note más"
+        ],
+        [
+          "Graciela cotiza un pastel de 40 porciones: $12 de costo variable por porción, $50 de caja y base y $70 de entrega. Quiere 40 % de margen. ¿Cuál es el precio total?",
+          "$1,160",
+          "$974.40, con 600 × 1.40 y el IVA",
+          "$1,000 más IVA",
+          "$1,740, con 600 ÷ 0.40 y el IVA"
+        ],
+        [
+          "Una clienta de Arturo cancela su mesa de postres tres días antes; la política que aceptó dice que con menos de una semana se devuelve el anticipo menos lo ya comprado. ¿Qué hace Arturo?",
+          "Devuelve el anticipo menos lo comprado, con comprobantes",
+          "Se queda con todo el anticipo, por la poca anticipación",
+          "Devuelve todo para evitar cualquier queja de la clienta",
+          "Le cobra el total del evento como penalización"
+        ],
+        [
+          "Cristian decide usar un queso más barato en sus tortas, que anuncia «con queso Oaxaca». ¿Qué es lo correcto?",
+          "Cambiar la descripción a lo que sí lleva",
+          "Seguir anunciándolo igual: nadie lo nota",
+          "Usar el queso barato sólo en pedidos de app",
+          "Subir el precio sin decir nada del cambio"
+        ]
+      ]
+    }
+  ]
+}

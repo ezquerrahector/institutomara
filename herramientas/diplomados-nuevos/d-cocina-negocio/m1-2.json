@@ -1,0 +1,804 @@
+{
+ "modulos": [
+  {
+   "t": "De tu cocina a tu negocio: producto, cliente y capacidad",
+   "r": "Entenderás qué cambia cuando lo que cocinas se vuelve producto, elegirás tu producto estrella y a quién vendérselo, probarás tu idea sin gastar de más y calcularás cuánto puede producir de verdad tu cocina.",
+   "lecciones": [
+    {
+     "t": "Del gusto por cocinar al negocio de comida",
+     "obj": "Reconocer los cinco cambios que exige vender comida (consistencia, costo, tiempo, higiene y legalidad) y desmontar los mitos que llevan a perder dinero.",
+     "texto": [
+      "Cocinar para tu familia y cocinar para vender se parecen en la estufa, pero no en todo lo demás. En casa, si un día el guisado sale más salado, nadie te reclama; si tardas una hora más, se come más tarde. Cuando alguien te paga, espera que el producto sea igual al que probó la vez pasada, que llegue a la hora acordada y que no le haga daño. Este diplomado te acompaña en ese paso: te da método, criterios, costeo y herramientas de venta. La técnica, en cambio, solo se domina con las manos en la masa, así que <b>la práctica en tu cocina es indispensable</b> y cada lección te pedirá probar algo.",
+      "Cinco cosas cambian al vender. La <b>consistencia</b>: que el tamal de hoy pese, sepa y se vea como el de la semana pasada. El <b>costo</b>: saber cuánto te cuesta cada pieza, incluidos el gas, el empaque y tu tiempo. El <b>tiempo</b>: cuántas piezas puedes hacer y en cuánto, para no aceptar pedidos que no puedes cumplir. La <b>higiene</b>: lo esencial para no enfermar a nadie, como lavar manos, separar crudos de cocinados y cuidar temperaturas. Y la <b>legalidad</b>: según tu caso pueden tocarte un aviso de funcionamiento ante la autoridad sanitaria, una licencia municipal y tu alta en el SAT; los requisitos varían, así que verifica en tu municipio, con la autoridad sanitaria de tu estado y en el SAT.",
+      "Dos mitos estorban mucho. «Si sabe rico, se vende solo»: el sabor es la puerta de entrada, pero la gente también compra por conveniencia, precio, confianza y por saber dónde y cuándo encontrarte; hay platillos deliciosos que nadie conoce. «Lo casero no necesita costeo»: precisamente porque compras en pequeño y trabajas con poca o ninguna ayuda, un error de cinco pesos por pieza se multiplica por cada pedido, y puedes vender mucho y quedarte sin dinero para surtir la siguiente semana.",
+      "Pasar de cocinera o cocinero a emprendedor no significa dejar de cocinar con cariño; significa sumarle orden. Al terminar este módulo tendrás claro qué vas a vender, a quién, cómo comprobarás que hay demanda y cuánto puede producir tu cocina sin que te rebase."
+     ],
+     "comparar": [
+      "«Así no: “Hago los tamales como siempre, a ojo; el precio lo saco viendo lo que cobra la vecina.”»",
+      "«Así sí: “Escribí mi receta en gramos, sé cuántos tamales salen por lote y cuánto me cuesta cada uno; con eso pongo precio y acepto solo los pedidos que puedo cumplir.”»"
+     ],
+     "caso": "Caso ficticio: Lupita, de 47 años, hace tamales de mole y de rajas en Oaxaca desde hace años para las fiestas de su familia. Una vecina le encargó 50 para un bautizo, quedaron encantados y ahora le piden 150 para una posada. Lupita nunca ha pesado sus ingredientes, no sabe cuánto le costó cada tamal y está pensando cobrar lo mismo que cobra el puesto de la esquina.",
+     "p": [
+      [
+       "¿Qué debería resolver Lupita antes de aceptar los 150 tamales?",
+       "Cuánto le cuesta cada tamal y si puede hacer 150 a tiempo",
+       "Qué colores de servilletas y de canasta va a usar para entregar",
+       "Cuánto cobran otros puestos, para cobrar exactamente igual que ellos",
+       "Antes de comprometerse necesita conocer su costo por pieza y su capacidad real; sin eso puede perder dinero o quedar mal. La presentación importa, pero es secundaria, y copiar el precio del vecino ignora que sus costos pueden ser distintos."
+      ],
+      [
+       "Un familiar le dice: «Tus tamales son tan buenos que se venden solos». ¿Qué le conviene pensar?",
+       "Que el sabor ayuda, pero también cuentan precio y puntualidad",
+       "Que es verdad y basta con anunciarse en redes una sola vez",
+       "Que no necesita costear porque la demanda ya está asegurada",
+       "El sabor abre la puerta, pero la gente también compra por conveniencia, confianza y precio, y un negocio sin costeo puede vender mucho y perder dinero. Las otras dos opciones repiten el mito de que lo rico se vende solo."
+      ],
+      [
+       "¿Qué paso sobre la legalidad es el más sensato para Lupita ahora?",
+       "Preguntar en su municipio, a la autoridad sanitaria y en el SAT qué le toca",
+       "Esperar a vender más de un año, porque los trámites son solo para negocios grandes",
+       "Copiar los trámites que hizo una amiga que vende pasteles en otra ciudad",
+       "Los requisitos dependen del municipio, del estado y de su situación fiscal, así que lo correcto es verificar con las autoridades. No hay regla de esperar un año, y lo que aplicó a otra persona en otra ciudad puede no aplicarle a ella."
+      ]
+     ],
+     "completar": [
+      "Que el producto de hoy pese, sepa y se vea igual que el de la semana pasada se llama ___.",
+      "consistencia"
+     ],
+     "relacionar": [
+      [
+       "Consistencia",
+       "Cada tamal pesa y sabe igual que el del pedido anterior"
+      ],
+      [
+       "Costo",
+       "Saber cuánto te cuesta cada pieza, con gas y empaque"
+      ],
+      [
+       "Tiempo",
+       "Calcular cuántas piezas salen por lote antes de aceptar"
+      ],
+      [
+       "Higiene",
+       "Separar crudos de cocinados y cuidar temperaturas"
+      ],
+      [
+       "Legalidad",
+       "Verificar aviso sanitario, licencia municipal y SAT"
+      ]
+     ],
+     "refl": "Haz tu diagnóstico de arranque. 1) Escribe qué cocinas u horneas hoy y para quién. 2) Califica del 1 al 5 qué tan resuelto tienes cada uno de los cinco cambios: consistencia, costo, tiempo, higiene y legalidad, y explica en una línea por qué. 3) Anota cuál de los dos mitos te ha influido y en qué decisión concreta. 4) Elige el cambio más débil y escribe una acción que harás esta semana para mejorarlo, con fecha.",
+     "modelo": "Modelo: «Hago galletas y pan para mi familia y algunas vecinas. Consistencia 2: unas tandas salen más planas y no sé por qué. Costo 1: nunca he sumado lo que gasto. Tiempo 3: sé que una tanda tarda una hora, pero no cuántas caben en un día. Higiene 4: lavo manos y uso cofia. Legalidad 1: no sé qué me toca. Me influyó el mito de que lo casero no se costea: cobré igual que una panadería grande. Esta semana, antes del viernes, anotaré en gramos todo lo que uso en una tanda.» Es bueno porque es honesto, justifica cada calificación y termina en una acción pequeña con fecha.",
+     "plantilla": [
+      "Diagnóstico de arranque de mi negocio de cocina",
+      "Qué cocino hoy y para quién: [ ]\nConsistencia (1-5): [ ] Por qué: [ ]\nCosto (1-5): [ ] Por qué: [ ]\nTiempo (1-5): [ ] Por qué: [ ]\nHigiene (1-5): [ ] Por qué: [ ]\nLegalidad (1-5): [ ] Por qué: [ ]\nMito que me ha influido: [ ]\nAcción de esta semana: [qué haré] antes del [fecha]"
+     ],
+     "clave": [
+      "Vender comida exige sumar consistencia, costo, tiempo, higiene y legalidad al gusto por cocinar.",
+      "El sabor abre la puerta, pero no sustituye al costeo ni a la puntualidad.",
+      "Los trámites dependen de tu caso: verifica en tu municipio, con la autoridad sanitaria de tu estado y en el SAT."
+     ]
+    },
+    {
+     "t": "Producto estrella y cliente",
+     "obj": "Elegir un producto estrella con un menú corto, ligarlo a una ocasión de consumo y a un cliente concreto, y escribir tu propuesta en una frase.",
+     "texto": [
+      "Cuando empiezas, la tentación es ofrecer de todo para que nadie se vaya sin comprar. El problema es que cada producto nuevo pide sus propios ingredientes, su receta estándar, su espacio en el refrigerador y su tiempo de práctica. Con quince opciones compras en pequeño, desperdicias más y te cuesta que todo salga igual. Por eso conviene arrancar con un <b>producto estrella</b>: el que mejor te sale, el que te piden de nuevo, el que puedes repetir con calidad y el que deja ganancia (eso lo confirmarás en el módulo de costeo). Alrededor de él armas un <b>menú corto</b> de tres a cinco opciones que compartan ingredientes y procesos.",
+      "Después piensa en la <b>ocasión de consumo</b>, es decir, el momento en que alguien quiere tu producto. No es lo mismo un antojo de media tarde, que pide algo listo, cerca y en porción individual, que la comida de oficina, que pide puntualidad, precio estable y variedad durante la semana, o un festejo, que pide piezas por docena o pastel por porciones, entrega a domicilio y anticipo. Una misma empanada puede venderse suelta para el antojo o en charola de 30 para una reunión; cambian el empaque, el precio, el canal y la forma de pedir.",
+      "Con la ocasión clara, describe a tu <b>cliente ideal</b>: quién es, dónde está, cuándo compra, cuánto suele gastar y qué le preocupa. «Todo el que tenga hambre» no te ayuda a decidir nada; «empleadas de las oficinas del centro que comen en su escritorio entre la una y las tres y quieren algo casero que no las haga salir» sí te dice qué cocinar, en qué porción y a qué hora entregar.",
+      "Al final, junta todo en tu <b>propuesta en una frase</b>: para [cliente] que [necesidad u ocasión], ofrezco [producto] que [beneficio concreto y comprobable]. Por ejemplo: para oficinas del centro que piden desayunos para juntas, ofrezco charolas de empanadas horneadas entregadas antes de las nueve. Es una hipótesis: la probarás en la siguiente lección."
+     ],
+     "comparar": [
+      "«Así no: “Vendo empanadas de 14 sabores, tortas, pozole los jueves y pasteles por encargo; lo que me pidan.”»",
+      "«Así sí: “Vendo empanadas horneadas de tres sabores, en charola para juntas de oficina, con entrega antes de las nueve.”»"
+     ],
+     "caso": "Caso ficticio: Jonás, de 31 años, trabaja de lunes a viernes en una bodega de Toluca y los fines de semana vende empanadas en un tianguis. Ofrece 14 sabores dulces y salados; cada domingo tira relleno que no se vendió y algunos sabores salen distintos cada vez. Varias clientas le preguntan si puede llevar charolas a las oficinas donde trabajan, entre semana y temprano.",
+     "p": [
+      [
+       "¿Qué le conviene hacer primero a Jonás con su menú?",
+       "Reducirlo a sus tres o cuatro sabores más pedidos y más parejos",
+       "Agregar dos sabores nuevos para atraer a los clientes de oficina",
+       "Mantener los 14 sabores, porque la variedad es lo que lo distingue",
+       "Un menú corto con los sabores que más se venden y que mejor le salen reduce desperdicio y mejora la consistencia. Agregar sabores aumenta el problema, y la variedad que no se vende le cuesta relleno tirado cada domingo."
+      ],
+      [
+       "¿Qué ocasión de consumo describe el pedido de las clientas?",
+       "Desayuno de oficina que pide puntualidad",
+       "Antojo de paso que se decide al momento",
+       "Festejo familiar con anticipo y pastel",
+       "Las clientas quieren charolas temprano y entre semana para su trabajo: es una ocasión de oficina, donde importan la hora de entrega y un precio estable. El antojo de paso es lo que vive en el tianguis, y no hay ningún festejo de por medio."
+      ],
+      [
+       "¿Cuál propuesta en una frase le sirve más a Jonás para ese cliente?",
+       "Charolas de empanadas para juntas, en tu oficina antes de las nueve",
+       "Las empanadas más ricas de Toluca, hechas con amor y buen sazón",
+       "Empanadas de todos los sabores para toda ocasión y todo público",
+       "La primera nombra al cliente, la ocasión y un beneficio comprobable, la hora de entrega. La segunda es un eslogan que nadie puede verificar, y la tercera le habla a todos y no le dice nada a nadie."
+      ]
+     ],
+     "completar": [
+      "El momento en que alguien quiere tu producto, como un antojo, una comida de oficina o un festejo, se llama ocasión de ___.",
+      "consumo"
+     ],
+     "refl": "Define tu producto estrella. 1) Haz la lista de todo lo que cocinas u horneas y marca, para cada producto, si te sale siempre igual, si te lo piden de nuevo y si comparte ingredientes con otros. 2) Elige tu producto estrella y arma un menú corto de tres a cinco opciones. 3) Elige una ocasión de consumo principal y explica qué pide en porción, empaque y horario. 4) Describe a tu cliente ideal con al menos cinco rasgos. 5) Escribe tu propuesta en una frase con la fórmula de la lección.",
+     "modelo": "Modelo: «Hago flan, pay de queso, pastel de chocolate y galletas. El flan y el pay me salen parejos, me los vuelven a pedir y comparten leche, huevo y azúcar. Producto estrella: pay de queso. Menú corto: pay entero de 20 cm, rebanada individual y flan individual. Ocasión: postre de comida familiar del fin de semana, que pide pay entero, caja firme y entrega el sábado antes de las dos. Cliente: mamás y papás de 30 a 50 años de mi colonia que reciben visitas. Propuesta: para familias que reciben visitas el fin de semana, ofrezco pay de queso entero entregado en tu casa el sábado antes de las dos.» Es bueno porque elige con criterios y aterriza horario y empaque.",
+     "plantilla": [
+      "Producto estrella y propuesta",
+      "Productos que hago hoy: [ ]\nMe sale siempre igual / me lo vuelven a pedir / comparte ingredientes: [sí o no por producto]\nProducto estrella: [ ]\nMenú corto (3 a 5): [ ]\nOcasión de consumo: [antojo / oficina / festejo / otra]\nQué pide esa ocasión: porción [ ], empaque [ ], horario [ ]\nCliente ideal: [quién, dónde, cuándo compra, cuánto gasta, qué le preocupa]\nPropuesta: Para [cliente] que [necesidad u ocasión], ofrezco [producto] que [beneficio comprobable]."
+     ],
+     "clave": [
+      "Empieza con un producto estrella y un menú corto que comparta ingredientes y procesos.",
+      "La ocasión de consumo decide porción, empaque, precio, horario y canal.",
+      "Una propuesta en una frase nombra al cliente y un beneficio que puedes cumplir."
+     ]
+    },
+    {
+     "t": "Investigar el mercado sin gastar",
+     "obj": "Comprobar con datos baratos si tu producto tiene demanda: revisar competencia y precios de referencia, hacer una prueba de producto con 15 a 20 personas y validar con preventas.",
+     "texto": [
+      "Antes de comprar equipo o mandar a hacer etiquetas, comprueba que alguien quiere lo que vendes, a un precio que te funcione. Empieza por la <b>competencia</b>: quién vende algo parecido cerca de tu cliente, en qué presentación, a qué precio, en qué horario y qué dicen sus reseñas. Visita dos o tres puestos o negocios, compra el producto y pruébalo con atención: porción, sabor, empaque, trato. Anota los <b>precios de referencia</b>, que te dicen cuánto está acostumbrado a pagar tu cliente. Ojo: no son tu precio. Tu precio saldrá de tu costo y del valor que ofreces, tema de los módulos 5 y 6.",
+      "Luego haz una <b>prueba de producto</b> con 15 a 20 personas que se parezcan a tu cliente ideal, no solo con tu familia, que tiende a decirte que todo está delicioso. Dales la porción que venderías, en el empaque real, y pídeles que califiquen por separado sabor, tamaño, presentación y precio que pagarían, con una pregunta abierta: ¿qué le cambiarías? Escucha patrones, no comentarios aislados: si siete de veinte dicen que está muy dulce, eso es información; si uno pide que le pongas nuez, quizá no.",
+      "La prueba más honesta es el dinero. Decir «sí lo compraría» no cuesta nada; pagar por adelantado, sí. Una <b>preventa</b> consiste en anunciar una fecha de entrega y tomar pedidos con anticipo; un <b>pedido de prueba</b> es ofrecer una charola o una docena a una oficina, una cafetería o un grupo de vecinos para ver si vuelven a pedir. Cuántas personas pagan y cuántas repiten dice más que cualquier encuesta.",
+      "Lleva todo en una hoja sencilla: quién probó, qué dijo, quién pagó y quién volvió. Y cuida la higiene también en las degustaciones: porciones tapadas, manos limpias y los perecederos fuera del refrigerador el menor tiempo posible."
+     ],
+     "comparar": [
+      "«Así no: “Les di a probar a mi familia y a mis comadres, todos dijeron que estaba buenísimo; ya mandé a hacer 500 cajas con mi logo.”»",
+      "«Así sí: “Di a probar a 18 personas de oficinas cercanas, ajusté el dulzor y abrí una preventa para el viernes; según cuántos paguen, decido cuántas cajas compro.”»"
+     ],
+     "caso": "Caso ficticio: Nayeli, de 26 años, es estudiante de diseño en Mexicali y hornea pay de queso. Su tía le ofrece prestarle dinero para comprar un horno grande y abrir un local. En una prueba con 18 compañeros de la universidad, 12 dijeron que lo comprarían, pero varios comentaron que la rebanada era muy pequeña para el precio que ella pensaba cobrar. Aún no ha vendido ni un pay completo.",
+     "p": [
+      [
+       "¿Qué le conviene hacer a Nayeli antes de aceptar el préstamo?",
+       "Abrir una preventa con anticipo y ver cuántos pagan y repiten",
+       "Comprar el horno ya, porque doce de dieciocho personas dijeron que sí",
+       "Hacer una encuesta en redes con cien personas más antes de decidir",
+       "Decir que comprarías no cuesta; pagar por adelantado sí, y volver a pedir confirma la demanda. Endeudarse por respuestas verbales es arriesgado, y una encuesta más grande sigue midiendo intenciones, no compras."
+      ],
+      [
+       "¿Qué hace con el comentario de que la rebanada es pequeña?",
+       "Lo trata como patrón y prueba otra porción o precio",
+       "Lo ignora, porque a la mayoría le gustó el sabor",
+       "Baja el precio a la mitad para que nadie se queje",
+       "Si varios lo dicen, es un patrón que conviene probar: ajustar la porción, el precio o la presentación y volver a medir. Ignorarlo desperdicia información valiosa, y bajar el precio a ciegas puede dejarla vendiendo con pérdida."
+      ],
+      [
+       "Al revisar la competencia, ve una pastelería que vende la rebanada mucho más barata. ¿Qué concluye?",
+       "Que es un precio de referencia, no necesariamente su precio",
+       "Que debe cobrar igual o menos para poder competir con ella",
+       "Que no hay mercado y lo mejor es buscar otro producto distinto",
+       "El precio de la competencia orienta sobre lo que el cliente acostumbra pagar, pero su precio debe salir de su costo y del valor que ofrece. Igualarlo sin conocer su costo puede hacerla perder, y un competidor barato no prueba que falte demanda."
+      ]
+     ],
+     "completar": [
+      "Anunciar una fecha de entrega y tomar pedidos con anticipo para comprobar la demanda se llama ___.",
+      "preventa"
+     ],
+     "relacionar": [
+      [
+       "Revisar competencia",
+       "Comprar y probar el producto de tres puestos cercanos"
+      ],
+      [
+       "Precio de referencia",
+       "Lo que tu cliente acostumbra pagar por algo parecido"
+      ],
+      [
+       "Prueba de producto",
+       "Dar la porción real a 18 personas y pedir calificación"
+      ],
+      [
+       "Preventa",
+       "Tomar pedidos con anticipo para una fecha anunciada"
+      ],
+      [
+       "Pedido de prueba",
+       "Llevar una charola a una oficina y ver si repite"
+      ]
+     ],
+     "refl": "Diseña tu investigación de mercado de dos semanas. 1) Elige tres competidores cercanos a tu cliente ideal y anota qué revisarás de cada uno (porción, precio, empaque, horario, reseñas). 2) Escribe a quién invitarás a tu prueba de producto, cómo conseguirás de 15 a 20 personas parecidas a tu cliente y las cinco preguntas que les harás. 3) Diseña una preventa: producto, fecha de entrega, anticipo y cómo la anunciarás. 4) Define qué resultado te haría seguir, ajustar o cambiar de producto.",
+     "modelo": "Modelo: «Competencia: dos fondas y una cocina económica cerca de las oficinas de gobierno; revisaré precio de la comida corrida, porción, horario y reseñas. Prueba: 16 personas de dos oficinas, con la comida en el recipiente real; preguntaré por sabor, cantidad, temperatura al llegar, precio que pagarían y qué cambiarían. Preventa: menú de la semana siguiente con pago de lunes a miércoles por adelantado, anunciado por WhatsApp a quienes probaron. Seguiré si al menos 10 pagan y la mitad repite; ajustaré si piden cambios de porción o precio; cambiaré si casi nadie paga.» Es bueno porque fija criterios de decisión antes de ver los resultados.",
+     "plantilla": [
+      "Investigación de mercado en dos semanas",
+      "Competidor 1: [nombre genérico o zona] porción [ ] precio [ ] horario [ ] reseñas [ ]\nCompetidor 2: [ ]\nCompetidor 3: [ ]\nPrueba de producto: [cuántas personas, quiénes, dónde]\nPreguntas: sabor [1-5], tamaño [1-5], presentación [1-5], cuánto pagarías [ ], qué le cambiarías [ ]\nPreventa: producto [ ] fecha de entrega [ ] anticipo [ ] canal [ ]\nSigo si: [ ]\nAjusto si: [ ]\nCambio si: [ ]"
+     ],
+     "clave": [
+      "Los precios de la competencia son referencia, no tu precio.",
+      "Prueba con 15 a 20 personas parecidas a tu cliente y busca patrones, no comentarios sueltos.",
+      "La demanda se confirma cuando la gente paga por adelantado y vuelve a pedir."
+     ]
+    },
+    {
+     "t": "Tu cocina de trabajo y su capacidad",
+     "obj": "Ordenar tu cocina por flujo de trabajo, calcular cuántas piezas puedes producir por hora y por día según tu cuello de botella y trabajar con seguridad.",
+     "texto": [
+      "No necesitas una cocina industrial para empezar, pero sí una cocina pensada para trabajar. El <b>equipo mínimo</b> depende de tu producto: una <b>báscula</b> de cocina en gramos (la verás a fondo en el módulo 2), un termómetro de punzón, recipientes con tapa, tablas distintas para crudos y cocinados, cuchillos con filo, charolas o moldes del mismo tamaño y un refrigerador que no esté saturado con la comida de la casa. Antes de comprar algo grande, pregúntate qué tarea te está frenando hoy.",
+      "Ordena tu espacio siguiendo el <b>flujo</b> de los alimentos: recepción de insumos, almacén (seco, refrigerado y congelado), preparación, cocción, enfriado y empaque. La idea es que los ingredientes avancen en una sola dirección y que lo crudo no se cruce con lo que ya está listo para entregar. Si empacas en la misma mesa donde acabas de limpiar pollo crudo, el flujo está roto, aunque la mesa se vea limpia.",
+      "Tu <b>capacidad</b> es cuántas piezas puedes terminar en un tiempo dado, y la marca el paso más lento, el <b>cuello de botella</b>. Un ejemplo ficticio: si en tu horno doméstico caben 2 moldes y cada pan tarda 50 minutos más 10 para sacar y volver a cargar, el horno produce 2 panes por hora. Aunque prepares la mezcla de 4 panes en una hora, no saldrán más de 2. Para un pedido de 30 panes necesitarías 15 horas de horno; antes de aceptar, haz esa cuenta y suma tiempo para empacar, limpiar y descansar. Mide tus tiempos reales con reloj en una tanda de prueba; no los adivines.",
+      "Trabajar rápido no justifica trabajar con riesgo. Revisa que las mangueras y conexiones de gas estén en buen estado y que la cocina tenga ventilación; si hueles gas, cierra la llave, no prendas ni apagues aparatos eléctricos, ventila y sal. Usa guantes o trapos secos para charolas calientes, mangos de ollas hacia dentro y cuchillos con filo, que resbalan menos. Ten un botiquín a la mano y, ante una quemadura grave, una fuga o un incendio, llama al 911. Protección civil de tu municipio puede pedir revisiones; verifica qué te toca."
+     ],
+     "comparar": [
+      "«Así no: “Claro que te hago los 30 panes para el sábado; ya veré cómo le hago.”»",
+      "«Así sí: “Mi horno saca 2 panes por hora; con el tiempo que tengo, para el sábado puedo entregarte 14. Si necesitas los 30, pídemelos con una semana de anticipación y te los entrego completos.”»"
+     ],
+     "caso": "Caso ficticio: Efraín, de 60 años, se jubiló como técnico de mantenimiento en Pachuca y hace pan de elote con la receta de su mamá. En su horno doméstico caben 2 moldes; cada pan tarda unos 50 minutos y él necesita unos 10 más para sacar y volver a cargar. Desgranar y licuar el elote de un pan le toma unos 15 minutos. Un salón de fiestas le pide 30 panes para el sábado y él tiene libre solo el viernes, unas 8 horas.",
+     "p": [
+      [
+       "¿Cuál es el cuello de botella de Efraín?",
+       "El horno, que saca 2 panes por hora",
+       "Desgranar el elote, que lleva más trabajo",
+       "Empacar, porque es lo último que hace",
+       "Desgranar y licuar le permite preparar unos 4 panes por hora, pero el horno solo termina 2 por hora; el paso más lento marca la capacidad. El empaque no aparece como limitante en los datos del caso."
+      ],
+      [
+       "¿Cuántos panes puede comprometer de forma realista para el sábado?",
+       "Menos de 16, porque además debe empacar y limpiar",
+       "Los 30, si se desvela y trabaja más rápido toda la noche",
+       "Unos 32, porque puede preparar 4 mezclas por hora",
+       "Con 8 horas de horno a 2 panes por hora, el máximo teórico es 16, y hay que restar tiempo de enfriado, empaque y limpieza. Desvelarse no hace más rápido al horno y aumenta el riesgo de accidentes, y contar las mezclas ignora el cuello de botella."
+      ],
+      [
+       "Efraín guarda el elote recién desgranado junto al pollo crudo de la comida familiar. ¿Qué conviene cambiar?",
+       "Separar crudos de lo que va a hornear y ordenar el refrigerador",
+       "Nada, porque el pan se hornea y el calor elimina todo riesgo",
+       "Lavar el elote con jabón y dejarlo a temperatura ambiente",
+       "Mantener separados los crudos de origen animal de otros ingredientes es una de las bases de la higiene y protege su flujo de trabajo. Confiar en el horno no evita la contaminación de superficies y otros alimentos, y dejar ingredientes perecederos fuera del refrigerador agrega otro riesgo."
+      ]
+     ],
+     "completar": [
+      "El paso más lento del proceso, que marca cuántas piezas puedes terminar, se llama cuello de ___.",
+      "botella"
+     ],
+     "refl": "Calcula la capacidad de tu cocina. 1) Dibuja o describe el flujo de tu producto estrella: recepción, almacén, preparación, cocción, enfriado y empaque, y marca dónde se cruzan crudos y cocinados. 2) En tu próxima tanda, mide con reloj cuánto tarda cada paso. 3) Identifica tu cuello de botella y calcula cuántas piezas puedes terminar por hora y en un día de trabajo realista. 4) Revisa gas, cuchillos y manejo de calor y anota tres medidas de seguridad. 5) Escribe el máximo de piezas que aceptarás por pedido.",
+     "modelo": "Modelo: «Producto: empanadas horneadas. Flujo: compro el martes, guardo relleno en refrigerador, extiendo masa en la mesa del comedor, horneo, enfrío en rejilla y empaco en la barra. El cruce: corto pollo crudo en la misma barra donde empaco; ahora corto en tabla roja y empaco en otra mesa. Tiempos: formar 24 empanadas me lleva 30 minutos; una charola de 12 se hornea en 25. Cuello de botella: el horno, unas 24 por hora con dos charolas. En 6 horas útiles, unas 120. Seguridad: revisé la manguera, uso guantes secos y tengo botiquín. Acepto pedidos de hasta 100 por día.» Es bueno porque mide tiempos reales y deja margen.",
+     "plantilla": [
+      "Capacidad de mi cocina",
+      "Producto: [ ]\nFlujo: recepción [ ] → almacén [ ] → preparación [ ] → cocción [ ] → enfriado [ ] → empaque [ ]\nCruces de crudo y cocinado que corrijo: [ ]\nTiempo medido por paso: [paso – minutos – piezas]\nCuello de botella: [ ]\nPiezas por hora: [ ]\nHoras útiles por día: [ ]\nCapacidad diaria realista: [ ]\nMáximo que acepto por pedido: [ ]\nSeguridad: gas [ ], cuchillos [ ], calor [ ], botiquín [ ], emergencias 911"
+     ],
+     "clave": [
+      "Ordena tu cocina para que los alimentos avancen en una sola dirección y lo crudo no toque lo listo.",
+      "Tu capacidad la marca el cuello de botella, medido con reloj y no a ojo.",
+      "La prisa nunca justifica riesgos con gas, cuchillos o calor; ante una emergencia, llama al 911."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Arma la ficha de arranque de tu negocio. En los primeros 25 minutos haz tu diagnóstico de los cinco cambios y elige tu producto estrella con su menú corto. En los siguientes 25 escribe tu ocasión de consumo, tu cliente ideal y tu propuesta en una frase. En los siguientes 20 diseña tu prueba de producto y tu preventa con criterios para seguir, ajustar o cambiar. En los últimos 20 minutos, en tu cocina, mide con reloj una tanda de tu producto, identifica tu cuello de botella y calcula tu capacidad diaria realista.",
+    "entregable": "Un documento de una o dos páginas con diagnóstico, producto estrella, menú corto, cliente ideal, propuesta en una frase, plan de prueba y preventa, y el cálculo de capacidad con tiempos medidos.",
+    "criterios": "Revisa: el menú tiene de tres a cinco opciones que comparten ingredientes, la propuesta nombra un cliente y un beneficio comprobable, la preventa pide anticipo y define criterios de decisión antes de ver resultados, y la capacidad sale de tiempos medidos y del cuello de botella."
+   },
+   "lab": {
+    "t": "La fonda que quiere atender oficinas",
+    "obj": "Aplicar los cinco cambios, el producto estrella, la investigación de mercado y el cálculo de capacidad a una fonda pequeña que recibe un pedido grande.",
+    "esc": "<b>Rosaura,</b> de 39 años, tiene una fonda de comida corrida en Colima con una ayudante. Sirve unas 25 comidas diarias en su local, con un menú que cambia según lo que encuentra en el mercado. Una empresa vecina le propone llevarles 40 comidas diarias a su oficina, de lunes a viernes, a la una en punto.",
+    "e": [
+     [
+      "Escena 1: Rosaura está emocionada y quiere decir que sí de inmediato. Su ayudante le recuerda que algunos días el guisado sale más picante y que nunca han calculado cuánto cuesta cada comida.",
+      "Consigna: escribe qué cinco cambios debe revisar Rosaura antes de responder y cuál le parece el más urgente."
+     ],
+     [
+      "Escena 2: La empresa pide que el menú se conozca con anticipación y que las porciones sean iguales para todos.",
+      "Consigna: propón un menú corto semanal que comparta ingredientes con lo que ya vende en su fonda y describe la ocasión de consumo y el cliente ideal."
+     ],
+     [
+      "Escena 3: Antes de firmar, Rosaura puede llevar una semana de comidas de prueba a un grupo de la oficina.",
+      "Consigna: diseña el pedido de prueba: cuántas personas, qué les preguntará, cómo cobrará y qué resultado la haría aceptar, ajustar o rechazar."
+     ],
+     [
+      "Escena 4: Al medir, descubre que su estufa de cuatro quemadores y sus dos ollas grandes solo le permiten terminar a tiempo unas 50 comidas entre las 8 y las 12:30, contando las de su local.",
+      "Consigna: calcula si puede atender las 25 del local más las 40 de la oficina y redacta su respuesta a la empresa con una propuesta realista."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué debe hacer Rosaura antes de aceptar las 40 comidas?",
+      "Medir capacidad, costear la comida y probar con un pedido",
+      "Aceptar ya, porque un cliente fijo resuelve todo el negocio",
+      "Contratar dos ayudantes más y comprar otra estufa grande",
+      "Antes de comprometerse necesita saber si su cocina alcanza, cuánto le cuesta cada comida y si el cliente queda contento con una prueba. Aceptar a ciegas arriesga la calidad del local, y comprar equipo antes de comprobar demanda y costo es gastar sin datos."
+     ],
+     [
+      "Si su capacidad es de 50 comidas y necesita 65, ¿qué respuesta es más profesional?",
+      "Ofrecer 25 diarias por ahora y crecer cuando amplíe su capacidad",
+      "Aceptar las 40 y servir porciones más chicas para alcanzar",
+      "Decir que sí y entregar más tarde los días con mucho trabajo",
+      "Comprometerse con lo que sí puede cumplir protege su reputación y deja la puerta abierta a crecer con orden. Achicar porciones sin avisar rompe la confianza y la consistencia, y llegar tarde incumple justo lo que la oficina pidió: puntualidad."
+     ],
+     [
+      "¿Qué menú le conviene más para la oficina?",
+      "Uno corto que se publica el viernes y usa sus insumos",
+      "Uno distinto cada día según lo que encuentre en el mercado",
+      "Uno con diez opciones diarias para que cada quien elija",
+      "Un menú corto y anticipado permite comprar con orden, repetir porciones y cumplir lo que pidió la empresa. Improvisar a diario impide avisar con anticipación, y diez opciones multiplican el trabajo, el desperdicio y los errores."
+     ]
+    ],
+    "pl": [
+     "Respuesta a un pedido grande",
+     "Cliente y pedido: [cuántas piezas, días y hora]\nCinco cambios revisados: consistencia [ ], costo [ ], tiempo [ ], higiene [ ], legalidad [ ]\nMenú corto propuesto: [ ]\nOcasión de consumo y cliente ideal: [ ]\nPedido de prueba: [personas, preguntas, cobro, criterio de decisión]\nCapacidad medida: [piezas por día y cuello de botella]\nLo que sí puedo cumplir: [ ]\nPropuesta al cliente: [cantidad, horario, fecha para crecer]"
+    ]
+   },
+   "quiz": [
+    [
+     "Germán vende galletas de mantequilla y su hermana le dice que no necesita costear porque «es algo casero». ¿Qué le responderías?",
+     "Que justo por producir en pequeño cada error de costo pesa más",
+     "Que tiene razón mientras venda menos de cien galletas al mes",
+     "Que basta con cobrar un poco más que la panadería más cercana",
+     "Que el costeo solo importa cuando ya se tiene un local propio"
+    ],
+    [
+     "Brenda quiere vender en su colonia de Tlaxcala y ofrece 12 postres distintos; tira la mitad cada semana. ¿Cuál es la mejor decisión?",
+     "Quedarse con un producto estrella y un menú corto",
+     "Bajar los precios de todos los postres para venderlos",
+     "Hacer menos piezas de cada uno de los 12 postres",
+     "Agregar postres de temporada para renovar el interés"
+    ],
+    [
+     "Una clienta pide a Teodoro 60 empanadas para una reunión familiar el domingo. ¿Qué rasgos tiene esta ocasión de consumo?",
+     "Charola por cantidad, entrega en fecha fija y anticipo",
+     "Porción individual, venta al paso y precio de antojo",
+     "Menú semanal fijo con entrega diaria a la misma hora",
+     "Compra impulsiva que se decide al ver el producto"
+    ],
+    [
+     "Maricela vende flan y escribe: «Para todos, el mejor flan del mundo». ¿Qué le falta a su propuesta?",
+     "Un cliente concreto y un beneficio comprobable",
+     "Más adjetivos que transmitan el cariño con que cocina",
+     "Una foto profesional para acompañar la frase",
+     "Mencionar que la receta es de su abuela"
+    ],
+    [
+     "Abel hizo una prueba de su pan de elote con 20 personas: 16 dijeron que lo comprarían y 3 pagaron una preventa. ¿Qué conclusión es la más prudente?",
+     "La intención es alta, pero la compra real es baja y hay que indagar",
+     "La demanda está confirmada porque el 80 % dijo que sí lo compraría",
+     "No hay mercado y conviene abandonar el producto de inmediato",
+     "Debe bajar el precio a la mitad para que paguen los otros 13"
+    ],
+    [
+     "Itzel quiere saber si su comida corrida tendrá clientes en una zona de oficinas. ¿Cuál es la prueba más confiable?",
+     "Ofrecer una semana de comidas pagadas por adelantado",
+     "Preguntar en redes si a la gente le gusta la comida corrida",
+     "Dar a probar a su familia y pedirles opinión sincera",
+     "Contar cuántas oficinas hay en la zona con un mapa"
+    ],
+    [
+     "Saúl vio que una pastelería vende el pay de queso entero más barato de lo que él pensaba cobrar. ¿Qué hace con ese dato?",
+     "Lo usa como referencia y define su precio con su costo y su valor",
+     "Iguala ese precio, porque si no, nadie le comprará su pay de queso",
+     "Cobra el doble para que su pay parezca de mejor calidad",
+     "Deja de vender pay de queso porque ya hay quien lo hace más barato"
+    ],
+    [
+     "Lupita forma unos 120 tamales por hora con ayuda, pero su vaporera solo cuece 100 por tanda de unos 90 minutos. ¿Qué marca su capacidad?",
+     "La vaporera",
+     "Formar los tamales",
+     "La compra del mercado",
+     "El empaque de las piezas"
+    ],
+    [
+     "Nayeli empaca pays en la misma mesa donde minutos antes cortó pollo crudo, aunque la limpió con un trapo. ¿Qué principio rompe?",
+     "El flujo en una sola dirección que separa lo crudo de lo listo",
+     "La regla de que todo el equipo debe ser de acero inoxidable",
+     "La obligación de tener una cocina industrial para vender",
+     "Ninguno, porque limpiar la mesa con un trapo es suficiente"
+    ],
+    [
+     "Mientras hornea, Efraín percibe olor a gas en su cocina. ¿Qué debe hacer?",
+     "Cerrar la llave, ventilar sin tocar interruptores y salir",
+     "Encender la luz para buscar la fuga con más claridad",
+     "Terminar la tanda y revisar la manguera después",
+     "Prender un cerillo cerca de la conexión para ubicarla"
+    ]
+   ]
+  },
+  {
+   "t": "Recetas estándar: que siempre salga igual",
+   "r": "Convertirás tus recetas en fichas técnicas en gramos, aprenderás a pesar con precisión, a escalar con factor de conversión, por área de molde y con porcentaje del panadero, y a calcular rendimiento y merma con tu báscula.",
+   "lecciones": [
+    {
+     "t": "La receta estándar o ficha técnica",
+     "obj": "Escribir la ficha técnica completa de un producto, con rendimiento, porción, ingredientes en gramos, procedimiento numerado, tiempos, temperaturas, montaje, conservación, alérgenos y espacio para el costo.",
+     "texto": [
+      "La receta de la abuela suele decir «un puño de azúcar», «leche la que agarre» y «hornear hasta que esté». Funciona en sus manos porque ella la ha hecho cientos de veces, pero no le sirve a tu ayudante, ni a ti en un día de mucho cansancio. La <b>receta estándar</b>, también llamada <b>ficha técnica</b>, es el documento que permite que un producto salga igual cada vez, la haga quien la haga, y es la base para costear, escalar, capacitar y responder a un cliente que pregunta qué lleva lo que compró.",
+      "Una ficha completa tiene estas partes: <b>nombre</b> del producto; <b>rendimiento</b> total (por ejemplo, 8 porciones o 1,600 g de mezcla); <b>porción</b> en gramos o piezas; <b>ingredientes</b> en gramos, en el orden en que se usan; <b>procedimiento numerado</b>, un paso por renglón y con verbos claros; <b>tiempos y temperaturas</b> de cocción, enfriado y reposo; <b>montaje</b> o presentación, es decir, cómo se ve terminado y en qué empaque; <b>conservación</b>, dónde y a qué temperatura se guarda; <b>alérgenos</b> que contiene; y un espacio para el <b>costo</b>, que llenarás en el módulo 5.",
+      "Dos detalles marcan la diferencia. Primero, escribe el procedimiento para alguien que no te ha visto cocinar: «batir 2 minutos a velocidad media hasta que no se vean grumos» dice más que «batir bien». Incluye señales que se puedan comprobar: color, textura, temperatura interna, un palillo que sale limpio. Segundo, anota los alérgenos sin esperar a que te pregunten: huevo, leche y sus derivados, cereales con gluten como el trigo, nueces, cacahuate, soya, pescado, crustáceos. En el módulo 4 verás cómo informarlos y evitar el contacto cruzado.",
+      "Para los productos que se guardan en frío, como un flan o un pay de queso, la ficha debe decir que van en refrigeración; la NOM-251-SSA1-2009 marca un máximo de 7 °C (verifica la versión vigente). La primera versión de tu ficha casi nunca es la final: haz el producto siguiéndola al pie de la letra, corrige lo que no quedó claro y ponle fecha a cada versión."
+     ],
+     "comparar": [
+      "«Así no: “Flan: leche, huevos, azúcar al gusto y vainilla. Se hornea a baño María hasta que cuaje.”»",
+      "«Así sí: “Flan, rinde 8 porciones de 180 g. Leche 1,000 g, huevo sin cascarón 300 g, azúcar 200 g... Paso 4: hornear a baño María a 160 °C unos 60 minutos, hasta que al moverlo tiemble apenas el centro. Refrigerar a 7 °C o menos. Contiene huevo y leche.”»"
+     ],
+     "caso": "Caso ficticio: Saúl, de 35 años, es mesero en Tepic y vende flan los fines de semana. Para atender más pedidos le enseñó a su sobrina a hacerlo, pero los flanes de ella salen con agujeros y más aguados. Saúl le dictó la receta de memoria: «seis huevos, un litro de leche, azúcar como a la mitad del vaso y al horno hasta que cuaje». Un cliente le preguntó si el flan lleva harina, porque su hija es celíaca.",
+     "p": [
+      [
+       "¿Qué explica mejor que los flanes de la sobrina salgan distintos?",
+       "La receta no tiene gramos, tiempos ni señales de punto",
+       "La sobrina no tiene la sazón ni la mano que tiene Saúl",
+       "El horno de la sobrina es de una marca peor que el suyo",
+       "Sin cantidades exactas, temperatura, tiempo y una señal para saber cuándo está listo, cada persona interpreta distinto. Atribuirlo a la mano o al horno sin datos impide corregir; una ficha clara permite repetir y detectar el problema real."
+      ],
+      [
+       "¿Cómo debería escribir Saúl el azúcar en su ficha?",
+       "Azúcar: 200 g",
+       "Azúcar: medio vaso",
+       "Azúcar: al gusto",
+       "Una cantidad en gramos se repite igual con cualquier recipiente y cualquier persona. Medio vaso depende del vaso, y al gusto deja la decisión a cada quien, que es justo lo que rompe la consistencia."
+      ],
+      [
+       "¿Qué le responde Saúl al cliente sobre la harina?",
+       "Lo que diga su ficha de alérgenos, incluido si hubo contacto con harina",
+       "Que el flan nunca lleva harina, así que es seguro para cualquier persona",
+       "Que no sabe, pero que seguramente no le hará daño a una sola porción",
+       "La ficha debe decir qué alérgenos contiene el producto, y también conviene saber si en su cocina hay harina que pudo tener contacto con el flan. Afirmar que es seguro sin revisar su proceso, o minimizar el riesgo, puede dañar a una persona celíaca."
+      ]
+     ],
+     "completar": [
+      "La cantidad total que produce una receta, por ejemplo 8 porciones o 1,600 g de mezcla, es su ___.",
+      "rendimiento"
+     ],
+     "relacionar": [
+      [
+       "Rendimiento",
+       "La receta produce 8 porciones de 180 g"
+      ],
+      [
+       "Procedimiento numerado",
+       "Paso 4: batir 2 minutos a velocidad media"
+      ],
+      [
+       "Señal de punto",
+       "Al moverlo, solo tiembla un poco el centro"
+      ],
+      [
+       "Conservación",
+       "Refrigerar a 7 °C o menos"
+      ],
+      [
+       "Alérgenos",
+       "Contiene huevo y leche"
+      ]
+     ],
+     "refl": "Escribe la ficha técnica de tu producto estrella. 1) Llena todas las partes de la plantilla: nombre, rendimiento, porción, ingredientes en gramos, procedimiento numerado, tiempos y temperaturas, montaje, conservación y alérgenos; deja el costo en blanco. 2) Agrega al menos tres señales de punto que se puedan comprobar. 3) Pide a otra persona que la lea sin que tú le expliques y anota cada duda que le surja. 4) Corrige la ficha y ponle fecha y número de versión.",
+     "modelo": "Modelo: «Ficha: galletas de mantequilla, versión 2, 12 de marzo. Rendimiento: 40 piezas de 25 g. Ingredientes: mantequilla 350 g, azúcar glass 150 g, huevo 50 g, harina de trigo 500 g, sal 4 g. Pasos: 1) acremar mantequilla y azúcar 3 minutos; 2) agregar huevo; 3) incorporar harina y sal sin amasar de más; 4) porcionar a 25 g; 5) hornear a 170 °C unos 14 minutos, hasta que la orilla dore. Conservación: frasco cerrado. Alérgenos: gluten, leche, huevo. Mi hermana preguntó qué es acremar; lo expliqué en el paso 1.» Es bueno porque tiene gramos, señales de punto y una corrección real.",
+     "plantilla": [
+      "Ficha técnica",
+      "Nombre: [ ]  Versión: [ ]  Fecha: [ ]\nRendimiento total: [piezas o gramos]\nPorción: [gramos o piezas]\nIngredientes (en orden de uso): [ingrediente – gramos]\nProcedimiento:\n1. [verbo + acción + tiempo o señal]\n2. [ ]\n3. [ ]\nTiempos y temperaturas: [cocción, enfriado, reposo]\nSeñales de punto: [color, textura, temperatura interna]\nMontaje y empaque: [ ]\nConservación: [dónde y a qué temperatura]\nAlérgenos: [ ]\nCosto por porción: [lo calcularás en el módulo 5]"
+     ],
+     "clave": [
+      "La ficha técnica permite que el producto salga igual, la haga quien la haga.",
+      "Escribe gramos, pasos numerados, tiempos, temperaturas y señales de punto comprobables.",
+      "Los alérgenos y la forma de conservación van en la ficha desde la primera versión."
+     ]
+    },
+    {
+     "t": "Pesar en lugar de medir",
+     "obj": "Usar la báscula en gramos con tara, distinguir mililitros de gramos y convertir recetas de tazas y piezas a peso sin perder consistencia.",
+     "texto": [
+      "La razón principal de pesar es sencilla: una taza no mide lo mismo cada vez. Si sumerges la taza en el costal de harina y la aplanas, entra mucha más harina que si la llenas con cuchara y sin apretar; el azúcar morena cambia según cuánto la compactes, y una cucharada de miel puede ir copeteada o rasa. En repostería, donde las proporciones deciden si un pastel sube o se hunde, esa variación se nota. Por eso tu receta estándar va en <b>gramos</b>, y medir por volumen queda solo para referencia.",
+      "Una <b>báscula</b> digital de cocina que marque de gramo en gramo basta para casi todo. Aprende a usar la <b>tara</b>: pones el recipiente vacío, oprimes el botón de tara para que la pantalla regrese a cero y agregas el ingrediente. Si tu tazón pesa 420 g y al ponerle harina la báscula marca 920 g sin haber tarado, tienes 500 g de harina. Con la tara puedes pesar varios ingredientes en el mismo tazón, regresando a cero antes de cada uno. Para cantidades pequeñas, como sal, levadura o polvo para hornear, pesa con calma y considera una báscula de mayor precisión si tus recetas lo piden. Revisa de vez en cuando tu báscula con algo de peso conocido, como un paquete cerrado que indique su contenido neto.",
+      "Cuidado con los líquidos: un mililitro mide volumen y un gramo mide peso. En el agua, 1 ml pesa prácticamente 1 g, pero no en todos los líquidos: la leche pesa un poco más por mililitro, la miel bastante más y el aceite menos. Para que tu ficha sea clara, decide si los líquidos van en gramos o en mililitros y escríbelo así siempre. Lo más consistente es pesarlo todo.",
+      "Los ingredientes por pieza también varían. Un huevo puede ser chico o grande, así que pesa el huevo sin cascarón; lo mismo con un chile, una manzana o un elote. Para convertir una receta de tazas a gramos, hazla una vez midiendo como siempre, pero pesa cada ingrediente antes de agregarlo y anota el resultado. Esa será tu nueva base."
+     ],
+     "comparar": [
+      "«Así no: “Tres tazas de harina, dos huevos y un chorrito de leche.”»",
+      "«Así sí: “Harina 500 g, huevo sin cascarón 100 g, leche 60 g; todo pesado en el mismo tazón con tara entre cada ingrediente.”»"
+     ],
+     "caso": "Caso ficticio: Itzel, de 23 años, estudia enfermería en Ciudad Obregón y vende galletas de mantequilla a sus compañeras. Usa una receta en tazas que encontró hace años. Algunas tandas salen planas y grasosas y otras secas y quebradizas. Compró una báscula, pero la primera vez olvidó tarar el tazón y la mezcla le salió con mucha menos harina de la que creía.",
+     "p": [
+      [
+       "¿Qué explica mejor que sus galletas salgan cada vez distintas?",
+       "Que la harina medida en tazas cambia de una tanda a otra",
+       "Que la mantequilla es de distinta calidad en cada compra",
+       "Que el clima de Ciudad Obregón cambia mucho cada semana",
+       "Cuánta harina entra en una taza depende de cómo se llene, y esa variación cambia la proporción con la mantequilla: con menos harina se extienden y salen grasosas; con más, quedan secas. Los otros factores pueden influir, pero el caso apunta a la medición en tazas."
+      ],
+      [
+       "Itzel puso el tazón vacío, no taró, y la báscula marcó 920 g al agregar la harina. El tazón pesa 420 g. ¿Cuánta harina tiene?",
+       "500 g",
+       "920 g",
+       "1,340 g",
+       "Sin tarar, la báscula suma el peso del tazón: 920 − 420 = 500 g de harina. Tomar 920 como si fuera solo harina es el error que le pasó, y sumar ambos pesos no tiene sentido."
+      ],
+      [
+       "¿Cómo convierte Itzel su receta de tazas a gramos?",
+       "Hace una tanda, pesa cada ingrediente y lo anota",
+       "Busca en internet cuántos gramos tiene una taza",
+       "Multiplica cada taza por 250, que es un litro entre cuatro",
+       "Pesar lo que ella realmente usa crea una base fiel a su receta, que después ajusta según el resultado. Una tabla genérica no refleja cómo llena ella la taza, y multiplicar por 250 confunde mililitros con gramos: la harina no pesa lo mismo que el agua."
+      ]
+     ],
+     "completar": [
+      "Oprimir el botón para que la báscula regrese a cero con el recipiente encima se llama hacer la ___.",
+      "tara"
+     ],
+     "relacionar": [
+      [
+       "Tara",
+       "Regresar a cero con el tazón encima"
+      ],
+      [
+       "Gramo",
+       "Unidad de peso en la que va la receta estándar"
+      ],
+      [
+       "Mililitro",
+       "Unidad de volumen, útil para líquidos"
+      ],
+      [
+       "Huevo sin cascarón",
+       "Se pesa porque cada pieza es distinta"
+      ],
+      [
+       "Conversión de tazas",
+       "Pesar lo que usas una vez y anotarlo"
+      ]
+     ],
+     "refl": "Convierte una receta de volumen a peso. 1) Elige una receta que hoy hagas en tazas, cucharadas o piezas. 2) Prepárala midiendo como siempre, pero pesa cada ingrediente con tara antes de agregarlo y anota los gramos. 3) Pesa los huevos sin cascarón y los líquidos en gramos. 4) Escribe la receta nueva solo en gramos. 5) Repite la receta la semana siguiente usando solo la báscula y anota si el resultado fue igual, mejor o distinto, y por qué crees que pasó.",
+     "modelo": "Modelo: «Convertí mi pan de elote. Antes: 3 tazas de elote, 4 huevos, 1 taza de azúcar, media barra de mantequilla. Al pesar: elote desgranado 600 g, huevo sin cascarón 200 g, azúcar 180 g, mantequilla 150 g. Pesé la leche: 120 g. Lo repetí con báscula y salió más parejo, aunque el centro quedó un poco húmedo: anoté revisar tiempo de horneado en la siguiente prueba.» Es bueno porque convierte con datos reales, pesa piezas y líquidos y registra lo que falta ajustar.",
+     "plantilla": [
+      "Conversión de receta a gramos",
+      "Receta: [ ]\nIngrediente – medida anterior – gramos pesados:\n[ ] – [taza, cucharada o pieza] – [ g]\n[ ] – [ ] – [ g]\nLíquidos: [en gramos o en ml; escribir cuál]\nHuevo sin cascarón: [ g]\nPrimera prueba con báscula: [fecha y resultado]\nAjuste para la siguiente prueba: [ ]"
+     ],
+     "clave": [
+      "Una taza no mide lo mismo cada vez; la receta estándar va en gramos.",
+      "Usa la tara para pesar varios ingredientes en el mismo tazón sin errores.",
+      "Mililitros y gramos no son lo mismo salvo en el agua; elige una unidad y sé constante."
+     ]
+    },
+    {
+     "t": "Escalar recetas y porcentaje del panadero",
+     "obj": "Escalar una receta con factor de conversión, por área de molde y con porcentaje del panadero, y reconocer qué ajustes no se hacen en línea recta.",
+     "texto": [
+      "Escalar es cambiar la cantidad que produce una receta sin cambiar el resultado. La herramienta básica es el <b>factor de conversión</b>: rendimiento deseado entre rendimiento original. Si tu receta de galletas de mantequilla rinde 40 piezas y necesitas 100, el factor es 100 ÷ 40 = 2.5. Multiplicas cada ingrediente por 2.5: harina 500 g pasa a 1,250 g; mantequilla 350 g, a 875 g; azúcar glass 150 g, a 375 g; huevo 50 g, a 125 g. Por eso pesar en gramos facilita todo: con tazas y piezas, multiplicar por 2.5 se vuelve adivinanza.",
+      "No todo escala en línea recta. La sal, las especias y el picante conviene ajustarlos con prueba: en el ejemplo, 4 g de sal darían 10 g, pero agrega un poco menos y prueba antes de completar. Los <b>tiempos</b> tampoco se multiplican: cada charola de galletas tarda lo mismo en hornearse aunque hagas 100 en lugar de 40; lo que cambia es el número de tandas. En cambio, una olla mucho más grande tarda más en hervir y en enfriarse. Y si tu batidora o tu olla no tienen capacidad para el lote completo, divídelo en tandas.",
+      "Cuando cambias de molde, escala por <b>área</b>, no por diámetro. El área de un molde redondo es π × radio². Pasar de un molde de 20 cm a uno de 24 cm parece un aumento de 20 %, pero el área crece (12 ÷ 10)², es decir, 1.44 veces: multiplica todo por 1.44 si quieres la misma altura. Si cambias la altura de la mezcla, cambia también el tiempo de horneado; revisa con un palillo antes de sacarlo.",
+      "En panadería se usa el <b>porcentaje del panadero</b>: cada ingrediente se expresa como porcentaje del peso total de harina, que vale 100 %. Una masa de empanadas con harina 1,000 g, mantequilla 300 g, agua 400 g, huevo 100 g y sal 20 g queda en 100 %, 30 %, 40 %, 10 % y 2 %, y suma 182 %. Si necesitas 2,730 g de masa, divides 2,730 ÷ 1.82 = 1,500 g de harina, y de ahí sale el resto: mantequilla 450 g, agua 600 g, huevo 150 g y sal 30 g."
+     ],
+     "comparar": [
+      "«Así no: “Mi molde nuevo es de 24 en lugar de 20, así que le pongo un poquito más de todo.”»",
+      "«Así sí: “El área crece 1.44 veces, así que multiplico cada ingrediente por 1.44 y reviso el pan con un palillo unos minutos antes del tiempo de siempre.”»"
+     ],
+     "caso": "Caso ficticio: Brenda, de 42 años, trabaja como recepcionista en Tlaxcala y hornea pan de elote por encargo. Su receta, para un molde redondo de 20 cm, lleva elote desgranado 600 g, huevo 200 g, azúcar 180 g, mantequilla 150 g, harina 120 g, polvo para hornear 8 g y sal 2 g. Una clienta le pide un pan más grande, en molde de 24 cm, para un festejo, y Brenda piensa simplemente agregar un huevo y un poco más de elote.",
+     "p": [
+      [
+       "¿Por cuánto debe multiplicar Brenda su receta para el molde de 24 cm con la misma altura?",
+       "Por 1.44",
+       "Por 1.20",
+       "Por 2.00",
+       "El área crece con el cuadrado del radio: (12 ÷ 10)² = 1.44. Usar 1.20 compara diámetros y daría un pan más bajo, y 2.00 haría un pan mucho más alto que quizá no se cueza bien en el centro."
+      ],
+      [
+       "Con el factor correcto, ¿cuánto elote necesita?",
+       "864 g",
+       "720 g",
+       "1,200 g",
+       "600 g × 1.44 = 864 g. 720 g resulta de multiplicar por 1.20 y 1,200 g de duplicar; ninguno conserva la misma proporción y altura."
+      ],
+      [
+       "¿Qué ajuste no debería hacer en línea recta?",
+       "El tiempo de horneado, que revisa con palillo",
+       "La harina, que conviene dejar igual",
+       "El huevo, que basta con sumar uno",
+       "El tiempo no se multiplica por 1.44: depende de la altura y del horno, así que se vigila con una señal de punto. La harina y el huevo sí deben escalar con el mismo factor para mantener la proporción; dejarlos igual o sumar a ojo cambia la textura."
+      ]
+     ],
+     "completar": [
+      "En el porcentaje del panadero, cada ingrediente se expresa en relación con el peso de la ___, que vale 100 %.",
+      "harina"
+     ],
+     "refl": "Escala tu producto estrella. 1) Calcula el factor de conversión para producir 2.5 veces tu receta o la cantidad de tu pedido más grande, y escribe cada ingrediente escalado en gramos. 2) Marca qué ingredientes ajustarás con prueba (sal, especias, picante) y cómo lo harás. 3) Si usas molde, calcula el factor por área para un molde distinto. 4) Si haces pan o masas, expresa tu receta en porcentaje del panadero. 5) Revisa tus cuentas con calculadora y anota qué cambiará en tiempos y tandas.",
+     "modelo": "Modelo: «Mi masa de empanadas rinde 30 piezas; un pedido pide 75. Factor: 75 ÷ 30 = 2.5. Harina 1,000 g pasa a 2,500 g, mantequilla 300 a 750, agua 400 a 1,000, huevo 100 a 250 y sal 20 a 50 g, aunque pondré 45 y probaré la masa. En porcentaje del panadero: 100, 30, 40, 10 y 2 %. Mi batidora no aguanta 2.5 kg de harina, así que haré dos tandas. El horneado no cambia, pero serán más charolas.» Es bueno porque calcula bien, ajusta la sal con prueba y piensa en capacidad.",
+     "plantilla": [
+      "Escalado de receta",
+      "Receta: [ ]\nRendimiento original: [ ]  Rendimiento deseado: [ ]\nFactor = deseado ÷ original = [ ]\nIngrediente – gramos originales – × factor – gramos escalados – % del panadero:\n[ ] – [ ] – [ ] – [ ] – [ ]\nAjustes con prueba: sal [ ], especias [ ], picante [ ]\nCambio de molde: radio nuevo² ÷ radio original² = [ ]\nTiempos y tandas: [ ]"
+     ],
+     "clave": [
+      "Factor de conversión = rendimiento deseado ÷ rendimiento original; multiplica cada gramo.",
+      "Al cambiar de molde, escala por área: un molde de 24 cm tiene 1.44 veces el área de uno de 20.",
+      "Sal, especias y tiempos no escalan en línea recta; se ajustan con prueba y señales de punto."
+     ]
+    },
+    {
+     "t": "Rendimiento y merma",
+     "obj": "Calcular el factor de rendimiento de un ingrediente con una prueba de báscula, distinguir merma de limpieza y de cocción y usar el factor para comprar y costear.",
+     "texto": [
+      "Lo que compras no es lo que usas. Pagas el chile poblano con tallo, semillas y piel, la carne con hueso y grasa, la granada con cáscara, y lo que llega al plato pesa menos. Esa diferencia se llama <b>merma</b>. El <b>peso bruto</b> es lo que compras; el <b>peso neto</b>, lo que queda usable después de limpiar o cocinar. El <b>factor de rendimiento</b> se calcula así: peso neto usable ÷ peso bruto. Si de 5 kg de poblano, después de asar, pelar y desvenar, te quedan 3.6 kg, el factor es 3.6 ÷ 5 = 0.72: aprovechas 72 % y la merma es de 28 %.",
+      "Hay dos tipos principales. La <b>merma de limpieza</b> ocurre al pelar, deshuesar, desvenar o recortar. La <b>merma de cocción</b> ocurre porque los alimentos pierden agua y grasa al cocinarse: si 4 kg de carne de cerdo limpia quedan en 2.8 kg ya cocida y deshebrada, el factor de cocción es 0.70. Cuando un ingrediente tiene ambas, se multiplican: si esa carne venía con hueso y de 5 kg salieron 4 kg limpios (0.80), el factor total es 0.80 × 0.70 = 0.56, igual que 2.8 ÷ 5.",
+      "El factor sirve para dos cosas. Para <b>comprar</b>: si tu receta pide 2.7 kg de poblano limpio, necesitas comprar 2.7 ÷ 0.72 = 3.75 kg. Para <b>costear</b>: si el kilo de poblano te cuesta 40 pesos (cifra de ejemplo), cada kilo usable te sale en 40 ÷ 0.72 ≈ 55.56 pesos. Si costeas con el precio de compra y no con el usable, tu costo sale más bajo de lo real y tu precio se queda corto.",
+      "Tus factores no salen de una tabla: salen de una <b>prueba de rendimiento</b> en tu cocina. Pesa el ingrediente como lo compraste, límpialo, pesa lo que queda; cocínalo, pesa otra vez. Repite la prueba al menos tres veces, con distintas compras, y usa el promedio, porque el rendimiento cambia con la temporada, el proveedor y el tamaño de las piezas. Anota cada factor en tu ficha técnica."
+     ],
+     "comparar": [
+      "«Así no: “Compro un kilo de chile por cada kilo que pide la receta, y lo costeo al precio del mercado.”»",
+      "«Así sí: “Mi poblano rinde 0.72 según tres pruebas; para 2.7 kg limpios compro 3.75 kg y costeo cada kilo usable en 55.56 pesos.”»"
+     ],
+     "caso": "Caso ficticio: Teodoro, de 52 años, es cocinero de una fonda en Durango y en temporada vende chiles en nogada por encargo. Este año aceptó 40 órdenes y compró el poblano y la granada pensando en lo que pide la receta ya limpia. A mitad de la preparación se dio cuenta de que no le alcanzaba la granada desgranada y de que el costo que cotizó a sus clientes no incluía lo que tiró al limpiar.",
+     "p": [
+      [
+       "Teodoro compró 3 kg de granada y obtuvo 1.2 kg de granos. ¿Cuál es su factor de rendimiento?",
+       "0.40",
+       "0.60",
+       "2.50",
+       "Factor = peso neto ÷ peso bruto = 1.2 ÷ 3 = 0.40. El 0.60 es la merma, no el rendimiento, y 2.50 resulta de dividir al revés."
+      ],
+      [
+       "Si su receta pide 2.7 kg de poblano limpio y su factor es 0.72, ¿cuánto debe comprar?",
+       "3.75 kg",
+       "2.70 kg",
+       "1.94 kg",
+       "Se divide lo que necesitas limpio entre el factor: 2.7 ÷ 0.72 = 3.75 kg. Comprar 2.70 kg ignora la merma, y 1.94 kg sale de multiplicar en lugar de dividir."
+      ],
+      [
+       "¿Qué debe hacer Teodoro para la próxima temporada?",
+       "Hacer pruebas de rendimiento y costear con el precio usable",
+       "Usar un factor de una tabla general para todos los chiles",
+       "Pedir a sus proveedores el poblano ya pelado y desvenado",
+       "Sus propios factores, medidos varias veces, le dicen cuánto comprar y cuánto le cuesta de verdad cada kilo usable. Una tabla general no refleja su proveedor ni su técnica, y comprar limpio puede ser una opción, pero no resuelve el costeo ni la granada."
+      ]
+     ],
+     "completar": [
+      "El peso neto usable dividido entre el peso bruto es el factor de ___.",
+      "rendimiento"
+     ],
+     "relacionar": [
+      [
+       "Peso bruto",
+       "Los 5 kg de poblano tal como se compraron"
+      ],
+      [
+       "Peso neto",
+       "Los 3.6 kg que quedan asados, pelados y desvenados"
+      ],
+      [
+       "Merma de limpieza",
+       "Tallo, piel y semillas que se retiran"
+      ],
+      [
+       "Merma de cocción",
+       "Agua y grasa que pierde la carne al cocinarse"
+      ],
+      [
+       "Costo usable",
+       "Precio por kilo dividido entre el factor"
+      ]
+     ],
+     "refl": "Haz una prueba de rendimiento. 1) Elige el ingrediente con más merma de tu producto estrella. 2) Pésalo como lo compraste, límpialo y pesa lo usable; si se cocina, pésalo también ya cocido. 3) Calcula el factor de limpieza, el de cocción y el total. 4) Con el precio de compra (real o de ejemplo), calcula el costo por kilo usable. 5) Calcula cuánto debes comprar para tu próxima tanda. 6) Anota la fecha y planea repetir la prueba dos veces más.",
+     "modelo": "Modelo: «Ingrediente: pierna de cerdo para tamales. Compré 5 kg con hueso; limpia quedó en 4 kg, factor de limpieza 0.80. Cocida y deshebrada pesó 2.8 kg, factor de cocción 0.70. Total: 0.56. A 100 pesos el kilo (cifra de ejemplo), el kilo usable me cuesta 100 ÷ 0.56 ≈ 178.57 pesos. Para 1.4 kg de carne deshebrada debo comprar 1.4 ÷ 0.56 = 2.5 kg. Repetiré la prueba con otras dos compras.» Es bueno porque separa ambas mermas, hace bien las cuentas y planea repetir.",
+     "plantilla": [
+      "Prueba de rendimiento",
+      "Ingrediente: [ ]  Fecha: [ ]  Proveedor: [ ]\nPeso bruto: [ g]\nPeso después de limpiar: [ g]  Factor de limpieza: [ ]\nPeso después de cocinar: [ g]  Factor de cocción: [ ]\nFactor total: [ ]\nPrecio por kilo de compra: [ ]\nCosto por kilo usable = precio ÷ factor total: [ ]\nCantidad que pide la receta: [ ]\nCantidad a comprar = cantidad usable ÷ factor: [ ]\nPruebas realizadas: [1, 2, 3 – promedio]"
+     ],
+     "clave": [
+      "Factor de rendimiento = peso neto usable ÷ peso bruto; la merma es lo que se pierde.",
+      "Para comprar, divide lo que necesitas limpio entre el factor; para costear, divide el precio entre el factor.",
+      "Tus factores salen de pruebas propias, repetidas y anotadas en la ficha técnica."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Estandariza tu producto estrella. En los primeros 20 minutos escribe su ficha técnica completa en gramos, con señales de punto, conservación y alérgenos. En los siguientes 30, en tu cocina, haz una prueba de rendimiento del ingrediente con más merma y anota los factores. En los siguientes 20 escala la receta con un factor de conversión para tu pedido más grande y, si usas molde o masa, calcula el factor por área o el porcentaje del panadero. En los últimos 20 minutos revisa todas las cuentas con calculadora y pide a otra persona que lea la ficha para detectar dudas.",
+    "entregable": "La ficha técnica de tu producto estrella con número de versión, la hoja de prueba de rendimiento con factores calculados y la receta escalada con sus ajustes de sal, tiempos y tandas.",
+    "criterios": "Revisa: todos los ingredientes están en gramos y en orden de uso, el procedimiento tiene pasos numerados con señales de punto, el factor de rendimiento sale de una prueba real y las cuentas del escalado y de la compra son correctas."
+   },
+   "lab": {
+    "t": "Tamales y flanes que salen igual",
+    "obj": "Aplicar ficha técnica, pesado, escalado y factor de rendimiento a un pequeño negocio familiar que empieza a surtir a una cafetería.",
+    "esc": "<b>Maricela,</b> de 44 años, y su hijo <b>Abel,</b> de 24, hacen tamales y flan en San Cristóbal de las Casas. Una cafetería les pidió 60 tamales y 16 flanes individuales cada sábado. Las dos primeras entregas salieron distintas: unos tamales con poco relleno, otros con mucho, y flanes de tamaños diferentes. La dueña de la cafetería les pidió que el producto sea igual cada semana.",
+    "e": [
+     [
+      "Escena 1: Maricela hace los tamales de memoria; Abel los hace los sábados en que su mamá trabaja y nunca salen iguales.",
+      "Consigna: escribe las partes de la ficha técnica del tamal que deben acordar los dos, con rendimiento, porción y tres señales de punto."
+     ],
+     [
+      "Escena 2: Miden la masa con un jarro y el relleno con una cuchara grande; los flanes los llenan «hasta donde se vea bien».",
+      "Consigna: define cómo pesarán masa, relleno y mezcla de flan, con báscula y tara, y qué gramos tendrá cada pieza."
+     ],
+     [
+      "Escena 3: Su receta de tamal rinde 20 piezas y la cafetería pide 60; en la receta la sal va en 12 g.",
+      "Consigna: calcula el factor de conversión, escala los ingredientes principales y explica cómo ajustarán la sal y las tandas de la vaporera."
+     ],
+     [
+      "Escena 4: Compraron 5 kg de pierna de cerdo con hueso y obtuvieron 2.8 kg de carne cocida y deshebrada.",
+      "Consigna: calcula el factor de rendimiento total, cuánta carne con hueso deben comprar si necesitan 2.1 kg deshebrada y cómo cambia el costo por kilo usable."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es el factor de conversión de 20 a 60 tamales?",
+      "3",
+      "40",
+      "0.33",
+      "Factor = rendimiento deseado ÷ original = 60 ÷ 20 = 3. El 40 es la diferencia de piezas, no un factor, y 0.33 resulta de dividir al revés."
+     ],
+     [
+      "¿Cuánta sal deberían poner al escalar los 12 g?",
+      "Algo menos de 36 g y ajustar después de probar la masa",
+      "Exactamente 36 g, porque todo se multiplica por el factor",
+      "Los mismos 12 g, porque la sal nunca se debe escalar",
+      "La sal no escala en línea recta: el punto de partida es 12 × 3 = 36 g, pero conviene poner un poco menos y ajustar probando. Poner 36 g sin probar ignora ese matiz, y dejar 12 g haría la masa sosa."
+     ],
+     [
+      "Con un factor total de 0.56, ¿cuánta pierna con hueso necesitan para 2.1 kg deshebrada?",
+      "3.75 kg",
+      "1.18 kg",
+      "2.10 kg",
+      "Cantidad a comprar = cantidad usable ÷ factor: 2.1 ÷ 0.56 = 3.75 kg. Multiplicar da 1.18 kg, que es menos de lo que necesitan, y comprar 2.10 kg ignora la merma de limpieza y de cocción."
+     ]
+    ],
+    "pl": [
+     "Estandarización de un producto para surtir",
+     "Producto: [ ]  Cliente: [ ]  Cantidad por entrega: [ ]\nFicha técnica acordada: rendimiento [ ], porción [ g], señales de punto [ ]\nCómo pesamos: masa [ g], relleno [ g], pieza terminada [ g]\nFactor de conversión: [deseado ÷ original]\nIngredientes escalados: [ ]\nAjustes con prueba: [sal, especias, tiempos, tandas]\nFactor de rendimiento del ingrediente con más merma: [ ]\nCantidad a comprar: [ ]\nQuién revisa que cada lote salga igual: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Rosaura le enseña a su ayudante a preparar el arroz de la comida corrida, pero cada día sale distinto. ¿Qué herramienta resuelve mejor el problema?",
+     "Una ficha técnica con gramos, tiempos y señales de punto",
+     "Que la ayudante la observe cocinar durante otro mes más",
+     "Comprar una olla más grande para hacer todo de una vez",
+     "Cambiar de marca de arroz hasta encontrar uno que no falle"
+    ],
+    [
+     "Jonás escribe en su ficha: «hornear hasta que estén». ¿Cómo la mejora?",
+     "Hornear a 180 °C unos 20 minutos, hasta que la orilla dore",
+     "Hornear el tiempo que considere necesario la persona que hornea",
+     "Hornear como siempre, porque cada horno es diferente",
+     "Hornear hasta que se vean bonitas y huelan bien"
+    ],
+    [
+     "Una clienta pregunta a Nayeli si su pay de queso tiene algo que pueda dañar a su hijo alérgico al huevo. ¿Qué parte de la ficha consulta?",
+     "Los alérgenos",
+     "El rendimiento",
+     "El montaje",
+     "El costo"
+    ],
+    [
+     "Germán pesa la leche para su pan: el recipiente vacío marca 150 g y con leche marca 400 g; no usó tara. ¿Cuánta leche tiene?",
+     "250 g",
+     "400 g",
+     "550 g",
+     "150 g"
+    ],
+    [
+     "Lupita convierte su receta de tazas a gramos. ¿Qué procedimiento es el más fiel a su receta?",
+     "Prepararla una vez y pesar lo que realmente usa",
+     "Usar una tabla de equivalencias de una revista",
+     "Suponer que una taza de cualquier cosa pesa 250 g",
+     "Medir dos veces en tazas y sacar el promedio"
+    ],
+    [
+     "Efraín tiene una receta de galletas que rinde 24 piezas y necesita 90. ¿Cuál es el factor de conversión?",
+     "3.75",
+     "0.27",
+     "66",
+     "4.5"
+    ],
+    [
+     "Brenda cambia un molde redondo de 20 cm por uno de 26 cm y quiere la misma altura. ¿Por cuánto multiplica la receta?",
+     "Por 1.69",
+     "Por 1.30",
+     "Por 1.60",
+     "Por 2.60"
+    ],
+    [
+     "Una masa tiene harina 2,000 g y agua 1,200 g. En porcentaje del panadero, ¿cuánto es el agua?",
+     "60 %",
+     "40 %",
+     "37.5 %",
+     "120 %"
+    ],
+    [
+     "Itzel compra 2 kg de manzanas para un relleno y, ya peladas y sin corazón, le quedan 1.5 kg. ¿Qué afirmación es correcta?",
+     "El factor es 0.75 y la merma es de 25 %",
+     "El factor es 1.33 y la merma es de 33 %",
+     "El factor es 0.25 y la merma es de 75 %",
+     "El factor es 0.50 y la merma es de 50 %"
+    ],
+    [
+     "Saúl paga 60 pesos por kilo de un ingrediente con factor de rendimiento 0.80 (cifras de ejemplo). ¿Cuánto le cuesta cada kilo usable?",
+     "75 pesos",
+     "48 pesos",
+     "60 pesos",
+     "80 pesos"
+    ]
+   ]
+  }
+ ]
+}

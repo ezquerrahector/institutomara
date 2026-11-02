@@ -46,7 +46,7 @@ valiendo la `familia` de la tabla de arriba.
 
 | # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Pendiente |
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Listo en rama (2026-11-02) |
 | 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante; Hotelería; Comedor industrial / catering; Hospital / clínica privada | Pendiente |
 | 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
 | 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio / centro deportivo; Hospital / clínica privada; Comedor industrial / catering | Pendiente |
@@ -271,3 +271,14 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Convenciones: CSAT como % de 4 y 5 en escala 1-5; CES en escala 1-7 (hay varias versiones); velocidad de ventas, cobertura (~3 veces) y valor de vida simple presentados como heurísticas. Fórmulas de Excel en español con coma (CONTAR.SI.CONJUNTO, PROMEDIO.SI, SI.ERROR).
 - Referencias: subtítulo exacto y año de «El vendedor desafiante» (Empresa Activa, 2012) y de «La pregunta decisiva 2.0» (LID, 2012); páginas de Dixon, Freeman y Toman (HBR, 2010).
 
+
+## d-cocina-negocio: datos para revisión de experto
+- Categoría: `familia` «Negocios y finanzas», `area` «Cocina y gastronomía» (área nueva, icono 🍳 ya en taxonomia.js), `tema` «Cocina y repostería para emprender», `dificultad` «desde_cero». Giros: Restaurante; Cafetería; Panadería / repostería (los tres de la tabla).
+- NOM-251-SSA1-2009 (vigente en el Catálogo Mexicano de Normas al 2 nov 2026): refrigeración ≤ 7 °C (5.5.2), recepción de refrigerados ≤ 4 °C, calientes > 60 °C y fríos ≤ 7 °C (7.3.3), cocción 63/68/74 °C (7.3.1), recalentar ≥ 74 °C (7.3.2), descongelar nunca a temperatura ambiente (7.4.1). La NOM no fija cifra de congelación (−18 °C se da como referencia de capacitación). Zona de peligro según USDA FSIS (4.4-60 °C; 2 h, 1 h si hace más de 32 °C).
+- NOM-051 (modificación DOF 27 mar 2020): solo preenvasados; excluye granel y envasado en el punto de venta. Confirmar los casos frontera usados: cheesecake en vasos cerrados y polvorones en bolsa para tienda (M4), frascos de salsa y bolsas selladas de chicharrones (M7) como preenvasados; pan de vitrina empacado al momento y salsa en vasitos con la orden como excluidos. Lista de alérgenos (4.2.2.2.3) y sulfitos ≥ 10 mg/kg. Que «sin conservadores» con benzoato de sodio sea publicidad engañosa.
+- IVA: los ejemplos calculan con 16 % (÷ 1.16) para practicar, con nota de que ciertos panes o pasteles enteros para llevar pueden tener tasa 0 %: confirmar con un contador y ajustar el texto de M5 L3 si conviene.
+- SAT: tope RESICO 3.5 millones (2026), factura global a público en general para RESICO, y que las retenciones de plataformas cambiaron en 2026 (se citan sin tasas). Aviso de funcionamiento (LGS art. 200 Bis) ante COFEPRIS o la COPRIS estatal; reglas para vender desde casa por estado y municipio.
+- LFPDPPP citada como la publicada en el DOF el 20 mar 2025, sin artículos. LFPC: precio total, propina voluntaria. Referencia de la LFPC y de la LGS quedaron «con reformas» (sin fecha de última reforma).
+- Ciencia de repostería y defectos (Gisslen, McGee): pastel hundido, galleta que se extiende, pan denso, cheesecake agrietado; retrogradación del pan en refrigerador; la papa no desala un guisado. Tiempos ficticios de ejemplo (flan a 160 °C ~60 min; galletas 170 °C ~14 min; vaporera de tamales ~90 min) y proporciones de recetas plausibles, no probadas.
+- Kasavana y Smith (1982): línea de popularidad al 70 % de la participación esperada y margen promedio ponderado. Comisiones de apps (20-30 %) y cuotas de bazar son ficticias. Datos agregados por los autores: Condusef para comparar créditos (CAT) y alerta por créditos que piden depósito previo; alta en el IMSS al contratar ayuda.
+- Referencias: ISBN de la edición en español del manual de las cinco claves de la OMS (9789243594637) en lugar del de inglés; URL de la modificación de la NOM-051 en dof.gob.mx.
