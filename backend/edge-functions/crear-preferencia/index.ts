@@ -155,7 +155,14 @@ serve(async (req) => {
         if (!r || r.ok !== true) {
           return json({ error: (r && r.motivo) || "No se pudo aplicar el cupón." }, 409);
         }
-        return json({ gratis: true, precio: 0, cupon: codigoCupon });
+        // Regalo que valía más que el programa: el sobrante queda como saldo (código SALDO-…) y se le avisa por correo.
+        if (r.saldo) {
+          await fetch(`${SUPABASE_URL}/functions/v1/tienda`, { method: "POST",
+            headers: { "Content-Type": "application/json", apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` },
+            body: JSON.stringify({ accion: "saldo_aviso", usuarioId, codigo: r.saldo, monto: r.saldo_monto, vence: r.saldo_vence }) })
+            .catch((x) => console.error("aviso de saldo", x));
+        }
+        return json({ gratis: true, precio: 0, cupon: codigoCupon, saldo: r.saldo || null, saldoMonto: r.saldo_monto || null, saldoVence: r.saldo_vence || null });
       }
     }
 

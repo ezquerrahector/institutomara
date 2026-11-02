@@ -43,7 +43,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 
 </style>
 <script src="meta-pixel.js?v=20261027a"></script>
 <script src="vendor/qrcode.js?v=1.4.4"></script>
-<script src="tarjeta-regalo.js?v=20261102a"></script>
+<script src="tarjeta-regalo.js?v=20261102b"></script>
 </head>
 <body>
 <header><div class="nav"><a href="./" aria-label="Instituto Mara, inicio" style="display:flex;align-items:center;gap:10px;text-decoration:none">
@@ -83,7 +83,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--morado);box-shadow:0 
         (entregado && g.paraCorreo ? '<button class="btn btn-linea" type="button" id="re">Volver a enviárselo</button>' : '') + '</div></form>'
         : '<p class="ayuda">' + (g.estado === 'canjeado' ? 'Tu amigo ya activó su regalo, así que ya no se puede cambiar. ¡Gracias por regalar aprendizaje!' : 'Este regalo ya no se puede cambiar.') + '</p>');
     var tj = document.getElementById('tj');
-    if(tj && window.TarjetaRegalo) TarjetaRegalo.montar(tj, { para:g.paraNombre, de:g.deNombre, programa:g.programa, cursoId:g.cursoId, mensaje:g.mensaje, codigo:g.codigo, liga:g.ligaActivar, tel:g.paraTel });
+    if(tj && window.TarjetaRegalo) TarjetaRegalo.montar(tj, { para:g.paraNombre, de:g.deNombre, programa:g.programa, cursoId:g.cursoId, mensaje:g.mensaje, codigo:g.codigo, liga:g.ligaActivar, tel:g.paraTel, valor:g.valor, abierto:g.abierto });
     var f = document.getElementById('f'); if(!f) return;
     function guardar(reenviar){
       var av = document.getElementById('av'), b = document.getElementById('b'); b.disabled = true; av.innerHTML = '';

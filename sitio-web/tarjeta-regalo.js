@@ -229,6 +229,9 @@
     }
     return lineas;
   }
+  function pesos(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('es-MX'); }
+  /* Lo que dice la tarjeta en «Te regalo»: el programa, o el monto si el regalo es abierto. */
+  function queRegalo(datos){ return datos.abierto ? pesos(datos.valor) + ' para el curso o diplomado que tú elijas' : (datos.programa || ''); }
   function articulo(id){ return /^d-/.test(id) ? 'el diplomado' : /^r-/.test(id) ? 'la ruta' : 'el curso'; }
 
   function qr(c, texto, x, y, lado, color){
@@ -267,7 +270,7 @@
     y += 106;
     c.fillStyle = d.ac; c.font = '800 23px Inter, Arial, sans-serif'; c.fillText('TE REGALO', x, y);
     c.fillStyle = '#1F1535'; c.font = '700 44px Fraunces, Georgia, serif';
-    var prog = partir(c, datos.programa || '', ancho, 2); prog.forEach(function(l, i){ c.fillText(l, x, y + 52 + i * 52); });
+    var prog = partir(c, queRegalo(datos), ancho, 2); prog.forEach(function(l, i){ c.fillText(l, x, y + 52 + i * 52); });
     y += 52 + (prog.length - 1) * 52;
     var by = py + ph - 205, tope = by - 26;  // by: donde empieza el bloque del código
     if(datos.mensaje){
@@ -279,7 +282,7 @@
     // Bloque del código + QR
     var ladoQr = 160, qx = px + pw - 60 - ladoQr;
     c.save(); c.setLineDash([12, 9]); c.strokeStyle = d.ac; c.lineWidth = 3; rr(c, x, by, qx - x - 40, 160, 22); c.stroke(); c.restore();
-    c.fillStyle = '#6B6280'; c.font = '700 22px Inter, Arial, sans-serif'; c.fillText('TU CÓDIGO', x + 30, by + 42);
+    c.fillStyle = '#6B6280'; c.font = '700 22px Inter, Arial, sans-serif'; c.fillText(Number(datos.valor) > 0 ? 'TU CÓDIGO · VALE ' + pesos(datos.valor) : 'TU CÓDIGO', x + 30, by + 42);
     c.fillStyle = '#1F1535'; var cod = datos.codigo || 'REGALO-••••••', sc = 44;
     do { c.font = '800 ' + sc + 'px ui-monospace, Menlo, Consolas, monospace'; sc -= 2; } while(c.measureText(cod).width > qx - x - 100 && sc > 24);
     c.fillText(cod, x + 30, by + 94);
@@ -304,8 +307,13 @@
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
 
   function textoWhats(datos){
-    return '🎁 *¡' + (datos.para || '') + ', tienes un regalo!* ' + (datos.de ? datos.de + ' te regaló ' : 'Te regalaron ') + articulo(datos.cursoId || '') + ' *' + datos.programa + '* en Instituto Mara: 100 % en línea, a tu ritmo y con constancia al terminar.\n\n' +
-      (datos.mensaje ? '💌 «' + datos.mensaje + '»\n\n' : '') + '🎟 Tu código: *' + datos.codigo + '* (válido 12 meses)\n👉 Actívalo aquí: ' + datos.liga;
+    var v = Number(datos.valor) > 0;
+    return '🎁 *¡' + (datos.para || '') + ', tienes un regalo!* ' + (datos.de ? datos.de + ' te regaló ' : 'Te regalaron ') +
+      (datos.abierto ? '*' + pesos(datos.valor) + '* para el curso o diplomado que tú elijas' : articulo(datos.cursoId || '') + ' *' + datos.programa + '*') +
+      ' en Instituto Mara: 100 % en línea, a tu ritmo y con constancia al terminar.\n\n' +
+      (datos.mensaje ? '💌 «' + datos.mensaje + '»\n\n' : '') + '🎟 Tu código: *' + datos.codigo + '*' + (v ? ' · vale ' + pesos(datos.valor) : '') + ' (válido 12 meses)\n' +
+      (v && !datos.abierto ? '🔄 ¿Prefieres otro programa? Puedes cambiarlo antes de empezar: pagas la diferencia o te queda saldo.\n' : '') +
+      '👉 Actívalo aquí: ' + datos.liga;
   }
   function telWhats(t){ t = String(t || '').replace(/\D/g, ''); return t.length === 10 ? '52' + t : t; }
 
