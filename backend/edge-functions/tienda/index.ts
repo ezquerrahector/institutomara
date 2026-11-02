@@ -7,9 +7,9 @@
 //   sincronizar          {}  (revisa en Mercado Pago el estado de tu membresía)       → { membresia }
 //   inscribir_membresia  { cursoId }  (empieza un programa incluido en tu membresía) → { ok }
 //   regalo               { cursoId, paraNombre, paraCorreo?, paraTel?, mensaje?, deNombre?, entregarEn?, urlRegreso } → { init_point }
-//   (pública) regalo_invitado { cursoId, deNombre, deCorreo, paraNombre, paraCorreo, mensaje?, entregarEn?, urlRegreso } → { init_point, token }
-//   (pública) regalo_ver      { t }  → { regalo }      (t = liga privada que llega a quien regala)
-//   (pública) regalo_editar   { t, paraNombre, paraCorreo, mensaje?, entregarEn?, reenviar? } → { ok, reenviado, regalo }
+//   (pública) regalo_invitado { cursoId, deNombre, deCorreo, paraNombre, paraCorreo? | paraTel?, mensaje?, entregarEn?, urlRegreso } → { init_point, token }
+//   (pública) regalo_ver      { t }  → { regalo }      (t = liga privada que llega a quien regala; incluye código y liga de activación ya pagado)
+//   (pública) regalo_editar   { t, paraNombre, paraCorreo? | paraTel?, mensaje?, entregarEn?, reenviar? } → { ok, reenviado, regalo }
 //   (pública) regalo_cupon    { cursoId, cupon } → { precio, descuento }   (regalo_invitado también acepta «cupon»)
 //   (pública) embajador_alta  { nombre, correo, telefono?, pais?, ciudad?, como? } → { ok, token?, codigo? } (si ya existía, se le reenvía su liga)
 //   (pública) embajador_panel { t } → { embajador, ventas, totales, reglas }
@@ -196,10 +196,14 @@ const ligaEditar = (r: any) => `${SITIO}/regalo.html?t=${r.token}`;
 function datosRegalo(b: any) {
   const paraNombre = String(b.paraNombre || "").trim().slice(0, 120);
   const paraCorreo = String(b.paraCorreo || "").trim().toLowerCase().slice(0, 160);
-  const paraTel = String(b.paraTel || "").replace(/[^\d+]/g, "").slice(0, 20);
+  // WhatsApp: 10 dígitos de México → se antepone 52; con lada de otro país se deja como viene.
+  let paraTel = String(b.paraTel || "").replace(/\D/g, "").slice(0, 15);
+  if (paraTel.length === 10) paraTel = "52" + paraTel;
   const hoy = fecha(new Date());
   let entregar = String(b.entregarEn || hoy).slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entregar) || entregar < hoy) entregar = hoy;
+  // Sin correo, quien regala se lo manda por WhatsApp en cuanto paga: no hay fecha de entrega que esperar.
+  if (!paraCorreo) entregar = hoy;
   return { paraNombre, paraCorreo, paraTel, entregar, mensaje: String(b.mensaje || "").trim().slice(0, 600) };
 }
 async function crearRegalo(u: any, b: any) {
@@ -210,7 +214,6 @@ async function crearRegalo(u: any, b: any) {
   const deCorreo = String(b.deCorreo || (u && u.correo) || "").trim().toLowerCase().slice(0, 160);
   if (!d.paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
   if (invitado) {
-    if (!d.paraCorreo) return json({ error: "Escribe el correo de quien recibe el regalo." }, 400);
     if (!deNombre) return json({ error: "Escribe tu nombre: así sabrá quién se lo regala." }, 400);
     if (!CORREO_OK.test(deCorreo)) return json({ error: "Escribe tu correo: ahí te llega el comprobante y la liga para cambiar el regalo." }, 400);
     const hace = new Date(Date.now() - 3600e3).toISOString();
@@ -219,6 +222,7 @@ async function crearRegalo(u: any, b: any) {
   }
   if (!d.paraCorreo && !d.paraTel) return json({ error: "Escribe el correo o el WhatsApp de quien recibe el regalo." }, 400);
   if (d.paraCorreo && !CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
+  if (d.paraTel && d.paraTel.length < 11) return json({ error: "Revisa el WhatsApp de quien recibe: son 10 dígitos." }, 400);
   const c = (await db(`cursos?id=eq.${encodeURIComponent(cid)}&select=id,nombre,precio,publicado`))[0];
   if (!c || c.publicado === false || !(Number(c.precio) > 0)) return json({ error: "Ese programa no está disponible para regalo." }, 409);
   const cup = await cuponRegalo(cid, b.cupon);
@@ -284,12 +288,16 @@ async function confirmarRegalo(r: any) {
   const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre`))[0] || { nombre: r.curso_id };
   const hoy = fecha(new Date());
   const cuando = r.entregar_en <= hoy ? "hoy mismo" : `el ${fechaLarga(r.entregar_en)}`;
+  const porWhats = !r.para_correo;
   await correo(r.de_correo, r.de_nombre || r.de_correo, `Tu regalo para ${r.para_nombre} está pagado`,
     plantilla(`¡Gracias, ${e(r.de_nombre || "")}! Tu regalo está listo`,
-      `<p style="font-size:16px;line-height:1.6">Regalaste <b>${e(c.nombre)}</b> a <b>${e(r.para_nombre)}</b>. Le llega ${e(cuando)} a <b>${e(r.para_correo || r.para_tel || "")}</b>, con tu mensaje y su código para activarlo.</p>` +
+      (porWhats
+        ? `<p style="font-size:16px;line-height:1.6">Regalaste <b>${e(c.nombre)}</b> a <b>${e(r.para_nombre)}</b>. Como nos diste su WhatsApp, tú se lo envías: abre tu regalo, elige su tarjeta y mándasela con un toque.</p>` +
+          (r.codigo ? `<p style="font-size:15px">Su código: <b style="font-size:17px;letter-spacing:1px">${e(r.codigo)}</b> (válido 12 meses, de un solo uso).</p>` : "")
+        : `<p style="font-size:16px;line-height:1.6">Regalaste <b>${e(c.nombre)}</b> a <b>${e(r.para_nombre)}</b>. Le llega ${e(cuando)} a <b>${e(r.para_correo)}</b>, con tu mensaje y su código para activarlo. Si quieres, también puedes descargar una tarjeta de regalo para dársela tú.</p>`) +
       `<p style="font-size:15px;line-height:1.6">Total pagado: <b>${pesos(Number(r.monto || 0))}</b>${r.cupon ? ` (con el cupón ${e(r.cupon)})` : ""}.</p>` +
-      `<p style="font-size:15px;line-height:1.6">¿Te equivocaste en el correo o quieres cambiar el mensaje o la fecha? Usa este botón mientras tu amigo no lo active.</p>`,
-      { texto: "Ver o cambiar mi regalo", url: ligaEditar(r) }));
+      `<p style="font-size:15px;line-height:1.6">Desde el botón eliges la tarjeta de regalo y, mientras no lo active, puedes cambiar sus datos o el mensaje.</p>`,
+      { texto: porWhats ? "Elegir tarjeta y enviarlo" : "Ver mi regalo y su tarjeta", url: ligaEditar(r) }));
   await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } });
 }
 function pesos(n: number) { return "$" + Math.round(n).toLocaleString("en-US"); }
@@ -299,7 +307,10 @@ async function regaloPorToken(t: string) {
   return (await db(`regalos?token=eq.${t}&select=*`))[0] || null;
 }
 function regaloPublico(r: any, curso: any) {
-  return { programa: curso ? curso.nombre : r.curso_id, cursoId: r.curso_id, paraNombre: r.para_nombre, paraCorreo: r.para_correo,
+  // El código y la liga de activación solo existen ya pagado; quien tiene el token es quien regala.
+  const conCodigo = !!r.codigo && ["pagado", "enviado", "canjeado"].indexOf(r.estado) >= 0;
+  return { programa: curso ? curso.nombre : r.curso_id, cursoId: r.curso_id, paraNombre: r.para_nombre, paraCorreo: r.para_correo, paraTel: r.para_tel || "",
+    codigo: conCodigo ? r.codigo : null, ligaActivar: conCodigo ? `${AULA}?cupon=${encodeURIComponent(r.codigo)}&curso=${encodeURIComponent(r.curso_id)}` : null,
     mensaje: r.mensaje || "", entregarEn: r.entregar_en, llegaHoy: r.entregar_en <= fecha(new Date()), deNombre: r.de_nombre, monto: Number(r.monto || 0), estado: r.estado,
     editable: ["pendiente_pago", "pagado", "enviado"].indexOf(r.estado) >= 0 };
 }
@@ -316,16 +327,18 @@ async function editarRegalo(b: any) {
   if (r.estado === "cancelado") return json({ error: "Este regalo está cancelado." }, 409);
   const d = datosRegalo(b);
   if (!d.paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
-  if (!CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
-  const correoCambio = d.paraCorreo !== String(r.para_correo || "").toLowerCase();
-  const cambios: any = { para_nombre: d.paraNombre, para_correo: d.paraCorreo, mensaje: d.mensaje, actualizado_en: new Date().toISOString() };
+  if (!d.paraCorreo && !d.paraTel) return json({ error: "Escribe su correo o su WhatsApp." }, 400);
+  if (d.paraCorreo && !CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
+  if (d.paraTel && d.paraTel.length < 11) return json({ error: "Revisa el WhatsApp de quien recibe: son 10 dígitos." }, 400);
+  const correoCambio = !!d.paraCorreo && d.paraCorreo !== String(r.para_correo || "").toLowerCase();
+  const cambios: any = { para_nombre: d.paraNombre, para_correo: d.paraCorreo || null, para_tel: d.paraTel || null, mensaje: d.mensaje, actualizado_en: new Date().toISOString() };
   // La fecha solo se mueve si todavía no se entrega.
   if (r.estado !== "enviado") cambios.entregar_en = d.entregar;
   await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: cambios });
   const n = { ...r, ...cambios };
   let reenviado = false;
   // Si ya se había entregado y cambió el correo (o lo pide), se vuelve a mandar al correo nuevo.
-  if (r.estado === "enviado" && (correoCambio || b.reenviar)) { await entregarRegalo(n); reenviado = true; }
+  if (r.estado === "enviado" && n.para_correo && (correoCambio || b.reenviar)) { await entregarRegalo(n); reenviado = true; }
   const c = (await db(`cursos?id=eq.${encodeURIComponent(r.curso_id)}&select=nombre`))[0];
   return json({ ok: true, reenviado, regalo: regaloPublico(n, c) });
 }
