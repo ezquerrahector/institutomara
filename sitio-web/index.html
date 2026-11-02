@@ -1582,13 +1582,19 @@ menu.querySelectorAll('a').forEach(function(a){
     CUP = null; precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true);
     pintarElegido();
   }
-  var CUP = null;   /* { cupon, curso, precio } validado por el servidor */
+  var CUP = null;   /* { cupon, clave, precio } validado por el servidor; clave = programa o «abierto:monto» */
   var MONTO = 0;
   function tipoRegalo(){ var r = document.querySelector('input[name=rg-tipo]:checked'); return r ? r.value : 'programa'; }
+  function montoOk(){ return MONTO >= 100 && MONTO <= 20000; }
+  function claveCupon(){ return tipoRegalo() === 'abierto' ? 'abierto:' + MONTO : sel.value; }
   function precio(){
-    if(tipoRegalo() === 'abierto'){ document.getElementById('rg-btn').textContent = MONTO ? 'Pagar ' + dinero(MONTO) + ' →' : 'Elige el monto del regalo'; return; }
+    var cupOk = CUP && CUP.clave === claveCupon();
+    if(tipoRegalo() === 'abierto'){
+      var pm = cupOk ? CUP.precio : MONTO;
+      document.getElementById('rg-btn').textContent = !MONTO ? 'Elige el monto del regalo' : Number(pm) > 0 ? 'Pagar ' + dinero(pm) + ' →' : 'Enviar regalo sin costo →'; return;
+    }
     var c = IM.oferta().filter(function(x){ return x.id === sel.value; })[0];
-    var p = c && CUP && CUP.curso === c.id ? CUP.precio : (c ? c.p : null);
+    var p = c && cupOk ? CUP.precio : (c ? c.p : null);
     document.getElementById('rg-btn').textContent = p != null ? (Number(p) > 0 ? 'Pagar ' + dinero(p) + ' →' : 'Enviar regalo sin costo →') : 'Pagar el regalo';
   }
   function cuponRes(t, ok){ var el = document.getElementById('rg-cupon-res'); el.textContent = t || ''; el.className = 'rg-cupon-res' + (t ? (ok ? ' ok' : ' mal') : ''); }
@@ -1596,15 +1602,18 @@ menu.querySelectorAll('a').forEach(function(a){
     var cod = document.getElementById('rg-cupon').value.trim().toUpperCase();
     CUP = null; precio(); cuponRes('');
     if(!cod) return Promise.resolve();
-    if(!sel.value){ if(!silencioso) cuponRes('Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
-    var cur = sel.value;
-    return api({ accion:'regalo_cupon', cursoId:cur, cupon:cod }).then(function(r){
-      if(sel.value !== cur) return;
-      CUP = { cupon:r.cupon, curso:cur, precio:r.precio };
+    var ab = tipoRegalo() === 'abierto';
+    if(ab ? !montoOk() : !sel.value){ if(!silencioso) cuponRes(ab ? 'Elige primero el monto del regalo.' : 'Elige primero el programa que quieres regalar.', false); return Promise.resolve(); }
+    var clave = claveCupon();
+    return api(ab ? { accion:'regalo_cupon', abierto:true, monto:MONTO, cupon:cod } : { accion:'regalo_cupon', cursoId:sel.value, cupon:cod }).then(function(r){
+      if(claveCupon() !== clave) return;
+      CUP = { cupon:r.cupon, clave:clave, precio:r.precio };
       cuponRes('Cupón ' + r.cupon + ' aplicado: ' + dinero(r.original) + ' → ' + dinero(r.precio) + ' (ahorras ' + dinero(r.descuento) + ')', true); precio();
     }).catch(function(x){ cuponRes(x.message, false); });
   }
-  sel.addEventListener('change', function(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); });
+  function recupon(){ precio(); if(document.getElementById('rg-cupon').value.trim()) aplicarCupon(true); }
+  var tRecupon = null;
+  sel.addEventListener('change', recupon);
   document.getElementById('rg-cupon-abrir').onclick = function(){ document.getElementById('rg-cupon-caja').hidden = false; document.getElementById('rg-cupon').focus(); };
   document.getElementById('rg-cupon-aplicar').onclick = function(){ aplicarCupon(false); };
   document.getElementById('rg-cupon').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); aplicarCupon(false); } });
@@ -1613,14 +1622,15 @@ menu.querySelectorAll('a').forEach(function(a){
   function ponerTipo(t){
     var ab = t === 'abierto', r = document.querySelector('input[name=rg-tipo][value=' + t + ']'); if(r) r.checked = true;
     document.getElementById('rg-monto-caja').hidden = !ab; document.getElementById('rg-elige').hidden = ab;
-    document.getElementById('rg-ayuda-prog').hidden = ab; document.querySelector('.rg-cupon').hidden = ab;
-    precio();
+    document.getElementById('rg-ayuda-prog').hidden = ab;
+    recupon();
   }
   [].forEach.call(document.querySelectorAll('input[name=rg-tipo]'), function(r){ r.addEventListener('change', function(){ ponerTipo(tipoRegalo()); }); });
   function marcarMonto(){ [].forEach.call(document.querySelectorAll('.rg-montos button'), function(b){ b.setAttribute('aria-pressed', String(Number(b.getAttribute('data-monto')) === MONTO)); }); }
   [].forEach.call(document.querySelectorAll('.rg-montos button'), function(b){ b.addEventListener('click', function(){
-    MONTO = Number(b.getAttribute('data-monto')); document.getElementById('rg-monto').value = ''; marcarMonto(); precio(); }); });
-  document.getElementById('rg-monto').addEventListener('input', function(){ MONTO = Math.round(Number(this.value) || 0); marcarMonto(); precio(); });
+    MONTO = Number(b.getAttribute('data-monto')); document.getElementById('rg-monto').value = ''; marcarMonto(); recupon(); }); });
+  document.getElementById('rg-monto').addEventListener('input', function(){ MONTO = Math.round(Number(this.value) || 0); marcarMonto(); precio();
+    clearTimeout(tRecupon); tRecupon = setTimeout(recupon, 600); });
   [].forEach.call(document.querySelectorAll('input[name=rg-via]'), function(r){ r.addEventListener('change', function(){
     var w = via() === 'whats';
     document.getElementById('rg-l-cor').hidden = w; document.getElementById('rg-l-tel').hidden = !w;
@@ -1702,9 +1712,9 @@ menu.querySelectorAll('a').forEach(function(a){
       : !d.deNombre ? ['rg-de-nom', 'Escribe tu nombre: así sabrá quién se lo regala.']
       : !CORREO.test(d.deCorreo) ? ['rg-de-cor', 'Escribe tu correo: ahí te llega el comprobante.'] : null);
     if(falta){ aviso(falta[1]); document.getElementById(falta[0]).focus(); return; }
-    var cupEscrito = abierto ? '' : document.getElementById('rg-cupon').value.trim().toUpperCase();
-    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.curso === d.cursoId)){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
-    if(CUP && !abierto) d.cupon = CUP.cupon;
+    var cupEscrito = document.getElementById('rg-cupon').value.trim().toUpperCase();
+    if(cupEscrito && !(CUP && CUP.cupon === cupEscrito && CUP.clave === claveCupon())){ aplicarCupon(false).then(function(){ if(CUP) aviso('Revisa el nuevo precio y vuelve a presionar «Pagar».'); }); return; }
+    if(CUP && cupEscrito) d.cupon = CUP.cupon;
     var b = document.getElementById('rg-btn'), txt = b.textContent; b.disabled = true; b.textContent = CUP && Number(CUP.precio) <= 0 ? 'Preparando tu regalo…' : 'Abriendo Mercado Pago…';
     try{ localStorage.setItem('im-regalo-de', JSON.stringify({ n:d.deNombre, c:d.deCorreo })); }catch(x){}
     api(d).then(function(r){ location.href = r.init_point; })
