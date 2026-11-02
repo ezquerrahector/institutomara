@@ -209,7 +209,8 @@ function ganchoWa(p: Prospecto, n: string) {
 function sinParar(seg: string) {
   const s = String(seg || "").toLowerCase();
   if (/calzado|curtidur|manufactura|industria/.test(s)) return "sin parar la producción";
-  if (/hospital|clínica|hotel|seguridad|call center|residencia|funeraria|diagnóstico/.test(s)) return "sin descuidar los turnos";
+  if (/constructora|instalaciones/.test(s)) return "sin detener la obra";
+  if (/hospital|clínica|hotel|seguridad|call center|residencia|funeraria|diagnóstico|restaurante|cafeter|panader|comedor|guarder/.test(s)) return "sin descuidar los turnos";
   return "sin descuidar el trabajo";
 }
 function waPrimero(p: Prospecto, n: string, progs: Curso[], ctx: any) {
@@ -238,8 +239,8 @@ const TRANSVERSALES: Record<string, string[]> = {
 };
 function transversalesDe(p: Prospecto, progs: Curso[], cat: Record<string, Curso>) {
   const s = String(p.segmento || "").toLowerCase();
-  const tipo = /calzado|curtidur|manufactura|industria|seguridad privada/.test(s) ? "planta"
-    : /concesionaria|hotel|asegura|seguros|boutique|call center|inmobiliaria|hospital|clínica|diagnóstico|funeraria|residencia/.test(s) ? "clientes"
+  const tipo = /calzado|curtidur|manufactura|industria|seguridad privada|constructora|instalaciones|comedor/.test(s) ? "planta"
+    : /concesionaria|hotel|asegura|seguros|boutique|call center|inmobiliaria|hospital|clínica|diagnóstico|funeraria|residencia|restaurante|cafeter|panader|gimnasio|viajes|veterinari|estética canina|guarder/.test(s) ? "clientes"
     : "oficina";
   const ya = new Set(progs.map((c) => c.id));
   return TRANSVERSALES[tipo].filter((id) => !ya.has(id) && cat[id]).map((id) => cat[id]);

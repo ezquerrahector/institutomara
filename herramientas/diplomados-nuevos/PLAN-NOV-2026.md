@@ -14,7 +14,7 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 |---|---|---|---|---|---|---|
 | 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
 | 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Listo en rama (2026-10-26) |
-| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Listo en rama (2026-10-28) |
+| 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Publicado (2026-10-28) |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
 | 5 | d-intervencion-crisis | cri | Diplomado en Intervención en Crisis y Prevención del Suicidio | 1690 | Salud y bienestar | Pendiente |
 | 6 | d-psicologia-organizacional | por | Diplomado en Psicología Organizacional y Desarrollo del Talento | 1690 | Salud y bienestar | Pendiente |
@@ -32,7 +32,7 @@ Las categorías de la tabla son las que ya existen en el sitio (`familia` y `are
 
 ## Tanda 2 — categorías nuevas (pedido de Héctor, 26 oct 2026)
 
-Al terminar el #15, la tarea sigue con esta tabla en el mismo orden y con el mismo procedimiento. Objetivo: abrir
+**Cambio de orden (pedido de Héctor, 28 oct 2026): esta tabla va PRIMERO.** La tarea hace los #16-27 en este orden y, al terminarlos, regresa a los pendientes #4-15 de la tabla de arriba, con el mismo procedimiento. Objetivo: abrir
 categorías nuevas en el sitio para que quien busca cursos encuentre temas que hoy no tenemos (cocina, contenido,
 oficios, salud, hogar, dinero). Todos son diplomados de 30 h (el generador `crear-diplomado.js` solo hace
 diplomados). Precio sugerido abajo; Héctor puede ajustarlo en Administración.
@@ -44,20 +44,22 @@ Liderazgo, RH y seguridad laboral · Ventas y marketing · Tecnología e IA · I
 Criminología y forense · Cuidado, infancia y educación · Administración y contabilidad. Para los #1-15 sigue
 valiendo la `familia` de la tabla de arriba.
 
-| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos) | Estado |
+| # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante, Cafetería, Panadería | Pendiente |
-| 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante, Hotel, Comedor industrial, Hospital | Pendiente |
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Listo en rama (2026-11-02) |
+| 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante; Hotelería; Comedor industrial / catering; Hospital / clínica privada | Pendiente |
 | 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
-| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio, Hospital, Comedor industrial | Pendiente |
-| 20 | d-energia-solar | sol | Diplomado en Energía Solar Fotovoltaica: diseño, cálculo e instalación segura | 1690 | Oficios y técnica | Constructora, Instalaciones eléctricas | Pendiente |
-| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotel, Restaurante, Agencia de viajes | Pendiente |
+| 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio / centro deportivo; Hospital / clínica privada; Comedor industrial / catering | Pendiente |
+| 20 | d-energia-solar | sol | Diplomado en Energía Solar Fotovoltaica: diseño, cálculo e instalación segura | 1690 | Oficios y técnica | Constructora; Instalaciones eléctricas / solares | Pendiente |
+| 21 | d-hospitalidad | hos | Diplomado en Hospitalidad y Servicio en Hoteles y Restaurantes | 1690 | Turismo y hospitalidad | Hotelería; Restaurante; Agencia de viajes | Pendiente |
 | 22 | d-derecho-practico | der | Diplomado en Derecho Práctico para la Vida Diaria: trabajo, renta, familia y consumo | 1690 | Dinero y derecho | — | Pendiente |
 | 23 | d-finanzas-inversion | inv | Diplomado en Finanzas Personales e Inversión para Principiantes: CETES, fondos y Afore | 1690 | Dinero y derecho | — | Pendiente |
-| 24 | d-perros | per | Diplomado en Cuidado, Conducta y Adiestramiento de Perros | 1690 | Hogar, familia y mascotas | Veterinaria, Estética canina | Pendiente |
+| 24 | d-perros | per | Diplomado en Cuidado, Conducta y Adiestramiento de Perros | 1690 | Hogar, familia y mascotas | Veterinaria; Estética canina | Pendiente |
 | 25 | d-hogar-familia | org | Diplomado en Organización del Hogar, Rutinas y Economía Familiar | 1690 | Hogar, familia y mascotas | — | Pendiente |
-| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Escuela, Guardería, Industria | Pendiente |
-| 27 | d-cafe-barismo | caf | Diplomado en Café de Especialidad, Barismo y Negocio de Cafetería | 1690 | Cocina y gastronomía | Cafetería | Pendiente |
+| 26 | d-primeros-auxilios | pax | Diplomado en Primeros Auxilios y Respuesta a Emergencias (teórico) | 1690 | Salud y nutrición | Colegio privado; Guardería / estancia infantil; Industria / manufactura | Pendiente |
+| 27 | d-cafe-barismo | caf | Diplomado en Café de Especialidad, Barismo y Negocio de Cafetería | 1690 | Cocina y gastronomía | Cafetería; Restaurante | Pendiente |
+
+Los 11 giros nuevos (Restaurante, Cafetería, Panadería / repostería, Comedor industrial / catering, Gimnasio / centro deportivo, Constructora, Instalaciones eléctricas / solares, Agencia de viajes, Veterinaria, Estética canina, Guardería / estancia infantil) se dieron de alta en `prospecto_giros` el 28 oct 2026, con su tema y su problema para llamadas, correos y WhatsApp.
 
 ### Cuidados de la tanda 2
 - **16 Cocina y repostería.** Formato de texto e interactivo: el valor está en recetas estándar con gramajes, costeo
@@ -81,6 +83,62 @@ valiendo la `familia` de la tabla de arriba.
 - **24 Perros.** Bienestar animal, refuerzo positivo, socialización; nada de castigos físicos; canalizar a veterinario.
 - **26 Primeros auxilios.** Solo teórico, con aviso claro de que la práctica presencial certificada es indispensable;
   911; no sustituye cursos de Cruz Roja o equivalentes. Coordinar con #4 (protección civil) para no repetir.
+
+## Tanda 3 — emprendimiento (aprobada por Héctor el 28 oct 2026)
+
+Pedido de Héctor: diplomados para quien quiere emprender o ya tiene un negocio pequeño. **Aprobados todos el 28 oct**
+(«de acuerdo con todos») más el #48 de composta. Van DESPUÉS de la tanda 2 y de los pendientes #4-15, en el orden de la
+tabla. `area` = «Emprendimiento y negocio propio» (icono 🚀 ya en taxonomia.js) salvo el #48, que también va ahí.
+Todos de 30 h, $1,690. Los giros de la columna son sugerencia: úsalos sólo si el diplomado es de los 3 más útiles para ese giro.
+Base de la selección: en México las micro son el 95.5 % de los establecimientos y la rama con más unidades es el
+comercio de abarrotes y alimentos, con poco más de un millón (INEGI, Censos Económicos 2024); oficios más pedidos en
+centros de capacitación (gastronomía, belleza, electricidad, carpintería, mecánica, fotografía); nichos que señalan
+guías de negocio 2026 (tiendas en línea de nicho, mascotas, comida ligera, reventa y reacondicionados, servicios a
+vendedores en línea). Regla para oficios manuales: teoría, negocio, higiene y seguridad en línea; decir siempre que la
+práctica presencial es indispensable y que no certifica (ni sustituye estándares de competencia del CONOCER).
+
+| # | id | pref | Diplomado (nombre sugerido) | Interés estimado | Riesgo de traslape | Giros (prospectos, nombres exactos) | Estado |
+|---|---|---|---|---|---|---|---|
+| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Pendiente |
+| 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Pendiente |
+| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Pendiente |
+| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Pendiente |
+| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Pendiente |
+| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Pendiente |
+| 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Pendiente |
+| 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Pendiente |
+| 36 | d-eventos | eve | Organización de Eventos: bodas, XV años y corporativos (presupuesto, proveedores y contratos) | Alto | Bajo | Hotelería; Restaurante | Pendiente |
+| 37 | d-renta-vacacional | rva | Renta Vacacional y Hospedaje de Corta Estancia: anuncio, precio, limpieza, reseñas e impuestos | Medio-alto | Medio (d-hospitalidad) | Inmobiliaria | Pendiente |
+| 38 | d-freelance | fre | Trabajo Independiente y Servicios Profesionales: asistente virtual, cotizar, contratos, cobro y facturación | Alto | Medio (c-ia-freelancers) | Coworking / oficinas ejecutivas | Pendiente |
+| 39 | d-franquicias | frq | Franquicias: evaluar, comprar o convertir tu negocio en franquicia | Medio | Bajo | — | Pendiente |
+| 40 | d-importar | imp | Importar y Vender: comercio exterior para pequeños negocios (aduana, padrón, costos y proveedores) | Medio-alto | Bajo | Industria / manufactura | Pendiente |
+| 41 | d-huertos-agronegocio | hue | Huertos, Hidroponía y Agronegocio a Pequeña Escala | Medio | Bajo | Restaurante | Pendiente |
+| 42 | d-servicios-hogar | sho | Negocio de Servicios para el Hogar: limpieza profesional, mantenimiento y jardinería con cuadrillas | Medio | Bajo | Inmobiliaria; Hotelería | Pendiente |
+| 43 | d-reparacion-celulares | rce | Reparación de Celulares y Electrónica: diagnóstico, refacciones y negocio | Medio-alto | Bajo | — | Pendiente |
+| 44 | d-clases-tutorias | tut | Negocio de Clases y Tutorías: regularización, idiomas y cursos en línea | Medio | Bajo | Colegio privado | Pendiente |
+| 45 | d-artesanias | art | Artesanías y Productos Hechos a Mano: diseño, precio, ferias, venta en línea y exportación | Medio | Bajo | — | Pendiente |
+| 46 | d-negocio-mascotas | nmc | Negocio de Mascotas: tienda, guardería, paseo y venta por suscripción | Medio-alto | Medio (d-perros) | Veterinaria; Estética canina | Pendiente |
+| 47 | d-taller-automotriz | tal | Taller Mecánico y Autolavado: administración, cotización, garantía y servicio al cliente | Medio | Bajo | Concesionaria automotriz | Pendiente |
+| 48 | d-composta-humus | cmp | Composta, Humus de Lombriz y Abonos Orgánicos: producción, calidad y negocio | Medio-alto | Bajo (distinto de #41 Huertos) | Restaurante; Comedor industrial / catering; Hotelería | Pendiente |
+
+### Cuidados de la tanda 3
+- Nada de promesas de ingresos («gana X al mes») ni esquemas piramidales, dropshipping engañoso o reventa de marcas sin autorización.
+- Trámites y fiscal: SAT (RESICO y plataformas digitales), aviso de funcionamiento o licencia sanitaria (COFEPRIS o estatal), uso de suelo y licencia municipal: siempre «verifica en tu municipio y en el SAT».
+- 31-33 belleza y cosmética: higiene y bioseguridad, alergias y reacciones (canalizar a médico); etiquetado de cosméticos (verificar NOM-141-SSA1/SCFI vigente).
+- 37 renta vacacional: impuestos por plataformas digitales e impuesto estatal al hospedaje; reglamentos de condominio.
+- 40 importar: padrón de importadores, regulaciones no arancelarias y NOM de etiquetado; verificar aranceles vigentes.
+- 43 reparación: seguridad con baterías de litio y manejo de residuos electrónicos.
+- 46 mascotas: bienestar animal, sin castigos; canalizar a veterinario.
+- **48 Composta, humus y abonos orgánicos.** Temario sugerido (investigación del 28 oct 2026):
+  M1 El negocio de los abonos orgánicos (mercado: viveros, huertos urbanos, agricultores, paisajismo, municipios; productos: composta, lombricomposta o humus, lixiviado, bocashi, sustratos);
+  M2 Ciencia del compostaje (relación carbono/nitrógeno, humedad, aireación, fases y temperatura, higienización de patógenos, madurez);
+  M3 Lombricultura (lombriz roja californiana, camas, alimentación, cosecha, plagas, escalar);
+  M4 Otros abonos y su uso seguro (bocashi, lixiviados, estiércoles, biofertilizantes; dosis y aplicación sin prometer resultados);
+  M5 Calidad, normas y etiquetado (NMX-FF-109-SCFI-2008 humus de lombriz, NMX-AA-180-SCFI-2018 tratamiento aerobio de residuos orgánicos —ambas vigentes al 28 oct 2026, verificar—, análisis de laboratorio, prueba de germinación, contaminantes; registro de nutrientes vegetales ante COFEPRIS: verificar si aplica, el Reglamento se reformó en el DOF del 24 abr 2026; uso del término «orgánico» sólo con certificación conforme a la Ley de Productos Orgánicos y la lista de insumos de SENASICA);
+  M6 Insumos, logística y permisos (acuerdos con mercados, restaurantes y comedores; residuos de manejo especial y permisos estatales o municipales; olores, lixiviados, vecinos y uso de suelo);
+  M7 Costos, precio y escala en Excel (costo por kilo y por bulto, inversión, punto de equilibrio, pilas volteadas vs. aireación forzada);
+  M8 Marca, venta y proyecto final (canales: viveros, ferreterías, huertos, agricultores, paisajismo, programas municipales y B2B de «cierre del ciclo» para restaurantes y hoteles; plan de negocio completo).
+  Cuidados: seguridad al manejar estiércoles y residuos (guantes, lavado, no usar heces de perros, gatos ni humanas; no compostar carne en pequeña escala sin control), sin promesas de rendimiento de cosechas, «verifica la norma vigente» y la práctica es indispensable.
 
 ## Alcance y cuidados por diplomado
 
@@ -163,7 +221,7 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 ## Procedimiento de cada día (lo sigue la tarea programada)
 1. Clonar el repo, `git fetch origin main`, cambiar a `tanda-diplomados-nov-2026` y traer `main` encima
    (`git merge origin/main`; si hay conflicto en archivos generados, regenerar con los meta de la rama).
-2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (primero la tabla de #1-15 y luego la de la Tanda 2).
+2. Tomar el primer diplomado de la tabla con Estado «Pendiente» cuya carpeta no exista todavía (desde el 28 oct: primero la tabla de la Tanda 2, #16-27, y luego los pendientes de la tabla de #1-15).
 3. Investigar (WebSearch/WebFetch) temarios de los mejores programas del mercado, evidencia y datos de México.
 4. Escribir `meta.json` (con `"precio"`, `"area"` y `"giros"` de las tablas, más `"tema"` y `"dificultad"`) y `m1-2.json` … `m7-8.json` según `INSTRUCCIONES.md`.
    Clasificación desde el 26 oct (`plataforma/taxonomia.js`): `area` = una de las 11 áreas (o la «Área nueva» de la tanda 2),
@@ -213,3 +271,14 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Convenciones: CSAT como % de 4 y 5 en escala 1-5; CES en escala 1-7 (hay varias versiones); velocidad de ventas, cobertura (~3 veces) y valor de vida simple presentados como heurísticas. Fórmulas de Excel en español con coma (CONTAR.SI.CONJUNTO, PROMEDIO.SI, SI.ERROR).
 - Referencias: subtítulo exacto y año de «El vendedor desafiante» (Empresa Activa, 2012) y de «La pregunta decisiva 2.0» (LID, 2012); páginas de Dixon, Freeman y Toman (HBR, 2010).
 
+
+## d-cocina-negocio: datos para revisión de experto
+- Categoría: `familia` «Negocios y finanzas», `area` «Cocina y gastronomía» (área nueva, icono 🍳 ya en taxonomia.js), `tema` «Cocina y repostería para emprender», `dificultad` «desde_cero». Giros: Restaurante; Cafetería; Panadería / repostería (los tres de la tabla).
+- NOM-251-SSA1-2009 (vigente en el Catálogo Mexicano de Normas al 2 nov 2026): refrigeración ≤ 7 °C (5.5.2), recepción de refrigerados ≤ 4 °C, calientes > 60 °C y fríos ≤ 7 °C (7.3.3), cocción 63/68/74 °C (7.3.1), recalentar ≥ 74 °C (7.3.2), descongelar nunca a temperatura ambiente (7.4.1). La NOM no fija cifra de congelación (−18 °C se da como referencia de capacitación). Zona de peligro según USDA FSIS (4.4-60 °C; 2 h, 1 h si hace más de 32 °C).
+- NOM-051 (modificación DOF 27 mar 2020): solo preenvasados; excluye granel y envasado en el punto de venta. Confirmar los casos frontera usados: cheesecake en vasos cerrados y polvorones en bolsa para tienda (M4), frascos de salsa y bolsas selladas de chicharrones (M7) como preenvasados; pan de vitrina empacado al momento y salsa en vasitos con la orden como excluidos. Lista de alérgenos (4.2.2.2.3) y sulfitos ≥ 10 mg/kg. Que «sin conservadores» con benzoato de sodio sea publicidad engañosa.
+- IVA: los ejemplos calculan con 16 % (÷ 1.16) para practicar, con nota de que ciertos panes o pasteles enteros para llevar pueden tener tasa 0 %: confirmar con un contador y ajustar el texto de M5 L3 si conviene.
+- SAT: tope RESICO 3.5 millones (2026), factura global a público en general para RESICO, y que las retenciones de plataformas cambiaron en 2026 (se citan sin tasas). Aviso de funcionamiento (LGS art. 200 Bis) ante COFEPRIS o la COPRIS estatal; reglas para vender desde casa por estado y municipio.
+- LFPDPPP citada como la publicada en el DOF el 20 mar 2025, sin artículos. LFPC: precio total, propina voluntaria. Referencia de la LFPC y de la LGS quedaron «con reformas» (sin fecha de última reforma).
+- Ciencia de repostería y defectos (Gisslen, McGee): pastel hundido, galleta que se extiende, pan denso, cheesecake agrietado; retrogradación del pan en refrigerador; la papa no desala un guisado. Tiempos ficticios de ejemplo (flan a 160 °C ~60 min; galletas 170 °C ~14 min; vaporera de tamales ~90 min) y proporciones de recetas plausibles, no probadas.
+- Kasavana y Smith (1982): línea de popularidad al 70 % de la participación esperada y margen promedio ponderado. Comisiones de apps (20-30 %) y cuotas de bazar son ficticias. Datos agregados por los autores: Condusef para comparar créditos (CAT) y alerta por créditos que piden depósito previo; alta en el IMSS al contratar ayuda.
+- Referencias: ISBN de la edición en español del manual de las cinco claves de la OMS (9789243594637) en lugar del de inglés; URL de la modificación de la NOM-051 en dof.gob.mx.

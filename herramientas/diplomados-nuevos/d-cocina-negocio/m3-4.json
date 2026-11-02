@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Técnica con criterio: por qué funcionan las recetas",
+   "r": "Entenderás qué hace cada ingrediente y cada método de cocción, organizarás la producción por lotes con mise en place y enfriamiento correcto, y controlarás la calidad con prueba sensorial y bitácora.",
+   "lecciones": [
+    {
+     "t": "La ciencia de la repostería: harina, azúcar, grasa, huevo y leudantes",
+     "obj": "Explicar qué hace cada ingrediente básico de la repostería para anticipar el efecto de un cambio y evitar sustituciones que arruinan un lote.",
+     "texto": [
+      "En repostería cada ingrediente cumple varias funciones a la vez; por eso cambiar uno «a ojo» suele cambiar todo. Como explican McGee y Gisslen, la <b>harina</b> de trigo aporta proteínas que, al mojarse y trabajarse, forman <b>gluten</b>, una red elástica que atrapa gas y da estructura. Entre más amasas y más proteína tiene la harina, más fuerte es esa red: ideal para una concha que debe esponjar, mala idea para un pastel que debe ser tierno. El almidón, al calentarse con agua, se hincha y termina de fijar la miga.",
+      "El <b>azúcar</b> hace mucho más que endulzar. Atrae y retiene humedad, por eso un pastel con su azúcar completa se conserva suave más días; ablanda, porque se interpone entre las proteínas de la harina y del huevo y retrasa que formen estructura; ayuda a atrapar aire cuando la bates con mantequilla, y se carameliza y colabora en el dorado. La <b>grasa</b> recubre las proteínas de la harina y acorta las hebras de gluten, de ahí la textura tierna o quebradiza; además da sabor y, batida, retiene aire. La mantequilla contiene agua y sólidos de leche; el aceite es grasa pura y no se acrema, así que no son intercambiables sin consecuencias.",
+      "El <b>huevo</b> da estructura porque sus proteínas cuajan con el calor, emulsiona gracias a la yema y, batido, atrapa aire que leuda. Los <b>leudantes</b> producen el gas. La levadura es biológica: fermenta azúcares, necesita tiempo y calor moderado, y muere si el líquido está demasiado caliente. El bicarbonato es químico y necesita un ácido para reaccionar, como yogur, jocoque, cacao natural o jugo de limón; el polvo para hornear ya trae su propio ácido. Con el calor llegan el color y el aroma: la <b>reacción de Maillard</b> entre azúcares y proteínas, y la caramelización del azúcar.",
+      "De ahí salen las sustituciones riesgosas. Quitar la mitad del azúcar «para que sea más sano» da un producto más seco, menos tierno, más pálido y que se endurece antes. Cambiar bicarbonato por polvo para hornear en la misma cantidad, o al revés, altera el leudado y el sabor; el exceso de bicarbonato deja un gusto jabonoso. Si necesitas una versión distinta, trátala como receta nueva: un solo cambio por lote, todo pesado, una prueba chica y notas. La teoría te dice dónde buscar; la práctica en tu cocina, que es indispensable, te confirma el resultado."
+     ],
+     "comparar": [
+      "«Así no: “Le quité la mitad del azúcar y cambié la mantequilla por aceite para que salga más barato; total, es la misma receta.”»",
+      "«Así sí: “En este lote solo bajé el azúcar 10 %, pesé todo y anoté textura, color y cuántos días se mantuvo suave. El siguiente cambio lo pruebo aparte.”»"
+     ],
+     "caso": "Caso ficticio: Fernanda, de 29 años, hornea brownies en Puebla y los vende por pedido a dos cafeterías. Una de ellas le pide una versión «con menos azúcar». Sin probar antes, Fernanda recorta la mitad del azúcar y, de paso, cambia la mantequilla por aceite para abaratar. El lote sale seco, más parecido a un pastel, pálido y sin brillo, y la cafetería le devuelve la mitad de las piezas. Fernanda quiere ofrecer la versión nueva sin perder al cliente ni su prestigio.",
+     "p": [
+      [
+       "¿Qué explica mejor que el brownie saliera seco y menos tierno?",
+       "Perdió azúcar, que retiene humedad y ablanda; sin ella la miga queda seca y firme",
+       "El aceite contiene más agua que la mantequilla y eso endureció la mezcla en el horno",
+       "Con menos azúcar el horno transmite más calor y la pieza se seca por fuera",
+       "El azúcar retiene humedad y retrasa que las proteínas formen estructura; al quitar la mitad, la pieza queda seca y firme. El aceite no tiene agua: es grasa pura (la mantequilla es la que trae agua). Y el azúcar no cambia cómo calienta el horno."
+      ],
+      [
+       "¿Cómo debería desarrollar Fernanda la versión con menos azúcar?",
+       "Bajar el azúcar por pasos, con un solo cambio por lote, pesando todo y anotando el resultado",
+       "Cambiar azúcar, grasa y harina a la vez para tener lista la versión nueva cuanto antes",
+       "Entregar la receta original con la etiqueta de menos azúcar, porque casi nadie lo nota",
+       "Un cambio por lote permite saber qué causó cada efecto. Cambiar todo a la vez impide saber qué falló, y anunciar algo que no es cierto rompe la confianza del cliente y puede ser publicidad engañosa."
+      ],
+      [
+       "Fernanda quiere agregar yogur natural a un panqué que solo lleva polvo para hornear. ¿Qué debe considerar?",
+       "El yogur aporta ácido y humedad: si suma bicarbonato, debe equilibrarlo y probar",
+       "El yogur desactiva cualquier leudante, así que tendría que retirar el polvo para hornear",
+       "El polvo para hornear necesita yogur para reaccionar, así que antes no estaba leudando",
+       "El yogur es ácido: puede reaccionar con bicarbonato si se agrega, y cambia humedad y sabor, por lo que conviene un lote de prueba. No desactiva los leudantes, y el polvo para hornear ya trae su propio ácido; no depende del yogur."
+      ]
+     ],
+     "completar": [
+      "La red elástica que forman las proteínas de la harina al mojarse y amasarse, y que atrapa el gas, se llama ___.",
+      "gluten"
+     ],
+     "relacionar": [
+      [
+       "Harina",
+       "Estructura por gluten y almidón"
+      ],
+      [
+       "Azúcar",
+       "Retiene humedad, ablanda y dora"
+      ],
+      [
+       "Grasa",
+       "Acorta el gluten y da sabor"
+      ],
+      [
+       "Huevo",
+       "Cuaja, emulsiona y atrapa aire"
+      ],
+      [
+       "Bicarbonato",
+       "Leuda solo si encuentra un ácido"
+      ]
+     ],
+     "refl": "Elige una receta de repostería que hagas o quieras vender. 1) Haz una tabla con cada ingrediente, su peso en gramos y las funciones que cumple (estructura, humedad, ternura, sabor, color, leudado). 2) Marca el ingrediente que más te gustaría cambiar, por costo, salud o petición de clientes, y escribe qué efecto esperas en textura, sabor, color y duración. 3) Diseña una prueba: un solo cambio, tamaño del lote y cómo vas a evaluar el resultado. 4) Si puedes, hornéala y anota qué pasó y qué harías en el siguiente lote.",
+     "modelo": "Modelo: «Receta: galletas de avena, versión 3. Harina 250 g, estructura; azúcar mascabado 180 g, humedad, sabor y color; mantequilla 150 g, ternura y sabor; huevo 50 g, unión y estructura; bicarbonato 4 g, leudado con la acidez del mascabado. Cambio: bajar el azúcar a 160 g. Espero galletas menos extendidas, más pálidas y que se endurezcan antes. Prueba: media receta, mismas charolas y horno. Resultado: más firmes; me quedo en 170 g.» Es buena porque conecta cada ingrediente con su función, cambia una sola variable y decide con base en lo que observó.",
+     "plantilla": [
+      "Ficha de funciones y prueba de sustitución",
+      "Receta: [nombre] — versión [número]\nIngrediente | gramos | función principal\n[harina] | [ ] | [estructura]\n[azúcar] | [ ] | [humedad, ternura, color]\n[grasa] | [ ] | [ternura, sabor]\n[huevo] | [ ] | [estructura, emulsión, aire]\n[leudante] | [ ] | [gas; ¿necesita ácido?]\nCambio que pruebo (solo uno): [ ]\nEfecto que espero: [textura, sabor, color, duración]\nLote de prueba: [cantidad]\nResultado observado: [ ]\nDecisión: [adopto / ajusto / descarto]"
+     ],
+     "clave": [
+      "Cada ingrediente cumple varias funciones: si cambias uno, cambias estructura, humedad, color y duración.",
+      "El bicarbonato necesita un ácido; el polvo para hornear trae el suyo: no se intercambian en la misma cantidad.",
+      "Una versión nueva es una receta nueva: un cambio por lote, todo pesado y con notas."
+     ]
+    },
+    {
+     "t": "Cocina salada para vender: métodos de cocción, bases y sazón medida",
+     "obj": "Elegir el método de cocción adecuado para cada ingrediente, preparar bases por lote y medir la sazón para que cada olla salga igual.",
+     "texto": [
+      "En la cocina salada para vender la pregunta no es solo si sale rico, sino cómo logras que la olla de 20 litros salga igual que la de casa. Empieza por los métodos de cocción. El <b>calor seco</b> transmite el calor por aire caliente, metal o grasa: asar, hornear, saltear, freír. Dora la superficie gracias a la reacción de Maillard y conviene a cortes suaves y piezas pequeñas. El <b>calor húmedo</b> usa agua o vapor: hervir, cocer a fuego suave, escalfar, cocer al vapor. No dora, pero cocina parejo y es ideal para granos, leguminosas y cortes que necesitan tiempo.",
+      "El <b>método mixto</b> combina los dos: primero doras la carne con calor seco para ganar color y sabor, y luego la cocinas lento, tapada y con poco líquido. Así se hacen estofados y muchas birrias. La razón está en la carne: los cortes duros tienen mucho <b>colágeno</b>, que con cocción húmeda, larga y suave se convierte en gelatina; la carne se ablanda y el caldo gana cuerpo. Un hervor fuerte, en cambio, contrae y reseca las fibras y enturbia el caldo. Por eso el fondo o el pozole se cuecen apenas burbujeando y se espuman.",
+      "Las <b>bases</b> se preparan una vez y sostienen muchos platillos: un fondo de huesos y verduras, una salsa de chiles asados, molidos y colados, o un sofrito de cebolla, ajo y jitomate. Freír la salsa de chile en un poco de grasa caliente antes de agregar el caldo concentra el sabor y le quita el gusto a crudo; es un paso que con prisa se omite y que se nota en el plato. Si preparas tus bases por lote y con receta estándar, cada guisado del día arranca del mismo punto.",
+      "La <b>sazón</b> consistente se mide. Anota los gramos de sal por litro o por kilo y agrégala en dos momentos: una parte al inicio y el ajuste final cuando el caldo ya redujo, porque al evaporarse el agua la sal se concentra. Toma en cuenta lo que ya trae sal, como quesos, embutidos o consomé en polvo. Prueba a la temperatura a la que servirás, con una cuchara limpia cada vez, y escribe el ajuste en la ficha para que la siguiente olla no dependa de tu memoria."
+     ],
+     "comparar": [
+      "«Así no: “Le echo la sal a puño desde el principio, lo dejo hervir fuerte para que se acabe rápido y la salsa de chile va cruda directo a la olla.”»",
+      "«Así sí: “Pongo 60 % de la sal medida al inicio, cuezo a fuego suave, frío la salsa antes de integrarla y ajusto la sal al final con la báscula.”»"
+     ],
+     "caso": "Caso ficticio: Rigoberto, de 52 años, fue cocinero de fonda y ahora vende pozole rojo los fines de semana en Morelia, en ollas de 20 litros. Sus clientes le dicen que un sábado está «perfecto» y al siguiente «muy salado» o «aguado». Rigoberto sala al principio a puño, deja hervir fuerte para terminar más rápido y agrega la salsa de chile cruda directamente a la olla. Quiere que su pozole salga igual cada semana sin quedarse más horas en la cocina.",
+     "p": [
+      [
+       "¿Qué cambio ayuda más a que el pozole no salga salado unos días y otros no?",
+       "Medir la sal en gramos por litro y hacer el ajuste final cuando el caldo ya redujo",
+       "Echar toda la sal al inicio para que la carne y el maíz la absorban de manera pareja",
+       "Dejar de salar el pozole y que cada cliente lo sazone en la mesa como prefiera",
+       "La sal medida y ajustada al final evita que la reducción la concentre de más. Salar todo al inicio es justamente lo que provoca la variación, y quitarla por completo deja sin sabor la base del platillo."
+      ],
+      [
+       "¿Por qué le conviene a Rigoberto cocer la carne a hervor suave en lugar de fuerte?",
+       "La carne queda más suave porque el colágeno se convierte en gelatina, y el caldo, más claro",
+       "El hervor fuerte deja la carne más jugosa, aunque tarda un poco más en suavizarse",
+       "El hervor suave elimina más bacterias porque mantiene el calor más tiempo en la olla",
+       "El hervor suave permite que el colágeno se convierta en gelatina sin contraer y resecar las fibras, y no enturbia el caldo. El hervor fuerte reseca la carne, y la inocuidad depende de alcanzar la temperatura interna, no de que el hervor sea suave."
+      ],
+      [
+       "¿Qué logra Rigoberto al freír la salsa de chile antes de integrarla al pozole?",
+       "Concentra el sabor de la salsa y le quita el gusto a crudo",
+       "Ya no necesita medir la sal, porque la grasa caliente sazona por sí sola el caldo",
+       "Hace que el maíz reviente más rápido en el caldo",
+       "Freír la salsa la reduce y desarrolla sabores; por eso conviene incluirlo como paso fijo en la receta estándar. La grasa no sustituye a la sal, y el maíz se abre por su cocción en el caldo, no por la salsa."
+      ]
+     ],
+     "completar": [
+      "Los cortes duros tienen mucho ___, que con cocción húmeda, larga y suave se convierte en gelatina.",
+      "colágeno"
+     ],
+     "relacionar": [
+      [
+       "Asar o freír",
+       "Calor seco que dora la superficie"
+      ],
+      [
+       "Cocer a fuego suave",
+       "Calor húmedo que cocina parejo"
+      ],
+      [
+       "Dorar y luego cocinar tapado",
+       "Método mixto para cortes duros"
+      ],
+      [
+       "Fondo",
+       "Base de huesos y verduras espumada"
+      ],
+      [
+       "Sofrito",
+       "Base de cebolla, ajo y jitomate"
+      ]
+     ],
+     "refl": "Elige un guisado o platillo salado que vendas o quieras vender. 1) Describe qué método de cocción usa cada componente (carne, verduras, granos, salsa) y por qué. 2) Identifica una base que podrías preparar por lote y escribe su receta en gramos y su rendimiento. 3) Escribe tu protocolo de sazón: gramos de sal por litro o kilo, qué parte va al inicio, cuándo haces el ajuste final y qué ingredientes ya traen sal. 4) Anota qué harías si la olla queda pasada de sal.",
+     "modelo": "Modelo: «Platillo: tinga de pollo. Pollo cocido a fuego suave en agua con cebolla (húmedo, para deshebrar fácil); cebolla y jitomate en sofrito (seco, para concentrar); chipotle molido y frito con el sofrito. Base por lote: caldo de pollo, 8 litros, rinde para cuatro días de tinga y arroz. Sazón: 10 g de sal por kilo de tinga; la mitad al sofrito y el resto al final, después de reducir; el chipotle de lata ya trae sal, así que pruebo antes. Si se pasa: agrego tinga sin sal.» Es buena porque justifica cada método, mide la sal y prevé el error.",
+     "plantilla": [
+      "Ficha de cocción y sazón por lote",
+      "Platillo: [ ]   Lote: [litros o kilos]   Porciones: [ ]\nComponente | método (seco / húmedo / mixto) | por qué\n[carne] | [ ] | [ ]\n[verdura o grano] | [ ] | [ ]\nBase por lote: [fondo, salsa o sofrito], rinde [ ], se usa en [ ]\nSal total: [ ] g por [litro / kilo]\nAl inicio: [ ] g   Ajuste final, después de reducir: [ ] g\nIngredientes que ya traen sal: [ ]\nTemperatura a la que pruebo: [la de servicio]\nNota del lote: [ajuste hecho y resultado]"
+     ],
+     "clave": [
+      "Calor seco dora, calor húmedo cocina parejo y el método mixto ablanda cortes duros al convertir el colágeno en gelatina.",
+      "Prepara tus bases por lote con receta estándar para que cada guisado arranque del mismo punto.",
+      "La sazón se mide en gramos y se ajusta al final, porque la reducción concentra la sal."
+     ]
+    },
+    {
+     "t": "Producción por lotes y mise en place",
+     "obj": "Planear un día de pedidos con hoja de producción, mise en place y cronograma, incluyendo el enfriamiento correcto de lo que se prepara antes.",
+     "texto": [
+      "Cocinar para vender es producir por lotes: muchas porciones iguales en un tiempo fijo. Lo que lo hace posible es la <i>mise en place</i>, expresión francesa que significa «todo en su lugar»: antes de encender el fuego tienes cada ingrediente pesado, lavado y cortado, cada recipiente listo y cada utensilio a la mano. No es una manía de chef; es la diferencia entre armar 60 porciones en una hora o en tres, y entre una cocina tranquila y una donde se olvida la sal o se quema algo mientras buscas un cuchillo.",
+      "La herramienta para planear es la <b>hoja de producción</b>: una tabla con cada preparación del día, la cantidad que exigen los pedidos (ya escalada con tu factor de conversión), la receta estándar que usarás, el equipo, quién la hace y a qué hora empieza y termina. Se arma de atrás hacia adelante: parte de la hora de entrega, resta empaque y traslado, y acomoda cada tarea. Primero va lo que tarda más o necesita reposo o enfriamiento, como una masa con levadura, un guisado de cocción larga o un pan que debe enfriarse antes de rellenarse; al final, lo que se marchita o pierde textura, como hojas aliñadas o fritos.",
+      "Ordena las tareas también por higiene. Trabaja primero lo que se come sin cocinar, como verduras ya desinfectadas, y después los crudos de origen animal; si tienes que alternar, lava y desinfecta superficie y utensilios entre uno y otro. Agrupa tareas parecidas para no lavar tres veces la licuadora ni prender el horno varias veces, y deja tiempo libre en el cronograma, porque casi siempre algo se retrasa.",
+      "El <b>enfriamiento</b> correcto forma parte del plan. Un arroz, un guisado o un pollo cocido que se deja enfriar horas sobre la estufa pasa demasiado tiempo en la zona de peligro, de 4.4 °C a 60 °C, donde las bacterias se multiplican; la guía del Departamento de Agricultura de Estados Unidos es refrigerar lo cocinado antes de que cumpla 2 horas fuera del frío, y antes de 1 hora en días de más de 32 °C. Para enfriar rápido, divide en recipientes bajos y anchos, usa un baño de agua con hielo, mueve de vez en cuando y refrigera pronto. Y no armes ensaladas ni cubras pasteles con componentes tibios."
+     ],
+     "comparar": [
+      "«Así no: “Empiezo a las 10 con lo que vaya saliendo; el pollo lo hago al final y lo pongo caliente sobre la lechuga para ganar tiempo.”»",
+      "«Así sí: “Entrego a las 12:30; empaco desde las 11:45. El pollo se cocinó ayer, se enfrió en charolas bajas y hoy solo pico, peso y armo en orden.”»"
+     ],
+     "caso": "Caso ficticio: Isaac, de 31 años, prepara ensaladas para oficina en Querétaro y entrega 60 cada día a las 12:30 en tres empresas. Empieza a las 10 de la mañana sin plan: lava hojas, se acuerda de que falta cocer el pollo, lo asa a la plancha y, para no retrasarse, lo pone recién salido sobre la lechuga y cierra los recipientes. Dos oficinas se quejaron de hojas marchitas y una entrega llegó 40 minutos tarde. Isaac quiere cumplir a tiempo sin contratar a nadie todavía.",
+     "p": [
+      [
+       "¿Cuál es el principal problema de poner el pollo recién asado sobre la lechuga y cerrar el recipiente?",
+       "El calor y el vapor marchitan las hojas, y la ensalada viaja tibia, en la zona de peligro",
+       "El pollo caliente se sigue cociendo dentro del recipiente cerrado y pierde casi toda su proteína",
+       "Ninguno, porque el pollo recién cocido está estéril y puede viajar tibio con seguridad",
+       "El calor y el vapor atrapado marchitan las hojas, y la ensalada pasa tiempo a temperatura tibia, justo donde crecen bacterias. El pollo no pierde su proteína por estar caliente, y cocinar no lo vuelve estéril: si se queda tibio, las bacterias pueden multiplicarse."
+      ],
+      [
+       "¿Cómo debería construir Isaac su cronograma del día?",
+       "De atrás hacia adelante: parte de las 12:30, resta empaque y traslado y acomoda cada tarea",
+       "En el orden en que se le ocurren las tareas, para no perder tiempo planeando por escrito",
+       "Empezar por las hojas para tenerlas listas y dejar todo lo que requiere cocción para el final",
+       "El cronograma hacia atrás asegura que lo que tarda o necesita enfriarse empiece primero y que lo delicado se arme al final. Improvisar es lo que hoy lo retrasa, y dejar la cocción al final obliga a usar componentes tibios."
+      ],
+      [
+       "Isaac decide cocinar el pollo el día anterior. ¿Qué forma de enfriarlo es la más segura?",
+       "Cortarlo, extenderlo en recipientes bajos y anchos, y meterlo al refrigerador lo antes posible",
+       "Dejarlo tapado en el sartén toda la tarde y refrigerarlo justo antes de irse a dormir",
+       "Guardarlo entero en un solo recipiente hondo y bien tapado para que conserve su jugo",
+       "Repartir en recipientes bajos aumenta la superficie y acorta el tiempo en la zona de peligro. Una tarde a temperatura ambiente rebasa la recomendación de 2 horas, y un recipiente hondo y tapado tarda mucho en enfriarse por dentro."
+      ]
+     ],
+     "completar": [
+      "El cronograma se arma de atrás hacia adelante: parte de la hora de ___ y resta empaque y traslado.",
+      "entrega"
+     ],
+     "refl": "Planea un día real o probable de pedidos de tu negocio. 1) Escribe los pedidos con cantidades y hora de entrega. 2) Haz la hoja de producción: preparación, cantidad escalada, receta, equipo, responsable y horas. 3) Ordena las tareas de atrás hacia adelante y marca cuáles deben hacerse el día anterior por cocción larga, reposo o enfriamiento. 4) Escribe cómo enfriarás lo que prepares antes. 5) Deja un margen de tiempo y explica qué harías si una tarea se retrasa 30 minutos.",
+     "modelo": "Modelo: «Pedido: 40 tamales de rajas y 40 de verde para las 9:00 del sábado. Viernes: 16:00 salsas y relleno; 17:30 enfriar el relleno en charolas bajas y refrigerar; 18:00 hojas en remojo. Sábado: 4:00 preparar masa; 4:45 embarrar y armar; 6:00 vaporera; 7:30 revisar cocción; 8:15 empacar en hielera térmica; 8:30 salir. Margen: 15 minutos antes de salir. Si la vaporera se retrasa, aviso a las 8:00 con hora real.» Es buena porque parte de la hora de entrega, adelanta lo que necesita enfriarse y deja un margen con plan de aviso.",
+     "plantilla": [
+      "Hoja de producción del día",
+      "Fecha: [ ]   Hora de entrega: [ ]   Salida: [ ]\nPedido | cantidad | receta y factor | equipo | responsable | inicio | fin\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nDía anterior (cocción larga, reposo, enfriamiento): [ ]\nEnfriamiento: [recipientes bajos / baño de hielo], refrigerado a las [hora]\nMise en place lista a las: [ ]\nOrden por higiene: [listos para comer] → [crudos] (lavar y desinfectar entre uno y otro)\nMargen libre: [minutos]\nPlan si me retraso: [a quién aviso y cuándo]"
+     ],
+     "clave": [
+      "Mise en place significa todo pesado, cortado y a la mano antes de encender el fuego.",
+      "La hoja de producción se arma hacia atrás desde la entrega: primero lo largo, al final lo delicado.",
+      "Enfría rápido en recipientes bajos y refrigera pronto: lo tibio no se arma ni se tapa."
+     ]
+    },
+    {
+     "t": "Control de calidad: prueba sensorial, defectos y bitácora",
+     "obj": "Evaluar cada lote contra un estándar, reconocer las causas probables de los defectos más comunes y registrar en una bitácora lo que corriges.",
+     "texto": [
+      "Controlar la calidad es comparar lo que produces contra un estándar y actuar cuando no coincide. El estándar es tu receta estándar más una descripción de cómo debe verse, oler, sentirse y saber el producto, con una foto de referencia. La <b>prueba sensorial</b> se hace igual cada vez: apariencia (color, forma, tamaño), aroma, textura al corte y en boca, sabor y temperatura de servicio. Califica cada aspecto de 1 a 5 y anota. Si puedes, pide a dos personas que prueben sin decirles qué cambiaste: tu paladar se acostumbra a tu propio producto.",
+      "Los defectos frecuentes tienen causas probables bien estudiadas en la repostería profesional; Gisslen las reúne en tablas de solución de problemas. Un <b>pastel que se hunde</b> en el centro suele deberse a exceso de leudante o de azúcar, a abrir el horno o mover el molde antes de que la estructura cuaje, a un horno más frío de lo indicado o a sacarlo crudo. Una <b>galleta que se extiende</b> de más apunta a mantequilla muy suave o derretida, exceso de azúcar, poca harina, charolas calientes o engrasadas de más, u horno frío. Un <b>pan denso</b> puede venir de amasado o fermentación insuficientes, levadura vieja o dañada por líquido muy caliente, o exceso de harina.",
+      "En lo salado, el clásico es el <b>guisado pasado de sal</b>: se saló antes de reducir, se usaron ingredientes ya salados o nadie midió. Lo que funciona es diluir con más base sin sal y volver a ajustar; la papa cruda absorbe algo de líquido, pero no rescata una olla salada. Observa que cada defecto tiene varias causas posibles: no adivines. Revisa lo que cambió, ajusta una sola variable en el siguiente lote y confirma.",
+      "La memoria engaña; por eso existe la <b>bitácora</b> de producción, una hoja o un cuaderno donde anotas fecha, producto, lote, versión de la receta, temperatura real del horno (el termostato puede no coincidir con lo que marca la perilla, y un termómetro de horno te lo confirma), tiempo, calificación sensorial, defecto, causa probable y acción. Con unas semanas de registros aparecen patrones: el pastel se hunde cuando horneas tres a la vez o la galleta se extiende los días de calor. Ahí dejas de apagar incendios y empiezas a mejorar."
+     ],
+     "comparar": [
+      "«Así no: “Otra vez se me bajó el pastel; ha de ser el clima. Le pongo más polvo para hornear al siguiente y a ver qué pasa.”»",
+      "«Así sí: “Revisé la bitácora: se hunde los días que abro el horno antes de tiempo. En el próximo lote no lo abro hasta el minuto 30 y anoto el resultado.”»"
+     ],
+     "caso": "Caso ficticio: Pamela, de 38 años, es maestra de primaria y vende pastel de tres leches y cheesecake por pedido en Xalapa. De cada cinco tres leches, dos se le hunden en el centro. Hornea a la temperatura que marca la perilla, abre la puerta a los 15 minutos «para ver cómo va» y no anota nada. Una clienta le canceló un pedido para una primera comunión después de recibir un pastel hundido. Pamela quiere entender qué pasa antes de cambiar la receta.",
+     "p": [
+      [
+       "Pamela abre el horno a los 15 minutos. ¿Qué causa probable debería revisar primero?",
+       "Que abrir el horno temprano baja la temperatura antes de que la estructura haya cuajado",
+       "La leche, porque el tres leches se hunde cuando absorbe demasiado líquido dentro del horno",
+       "La harina para pastel, que forma demasiado gluten y hace que el centro colapse al subir",
+       "Abrir el horno temprano baja la temperatura cuando la estructura aún no cuaja y el centro se colapsa. Las leches se agregan después de hornear, así que no explican un hundimiento en el horno, y la harina para pastel tiene menos proteína, no más."
+      ],
+      [
+       "Pamela quiere saber si su horno calienta lo que marca la perilla. ¿Qué le conviene hacer?",
+       "Medir la temperatura real con un termómetro de horno y anotar la diferencia",
+       "Subir siempre 20 grados a cualquier receta para compensar por si acaso el horno es frío",
+       "Hornear más tiempo hasta que la superficie dore",
+       "Un termómetro de horno le da el dato real, y la bitácora le permite ajustar con evidencia. Subir 20 grados sin medir es adivinar y puede quemar la superficie, y alargar el horneado reseca el pastel."
+      ],
+      [
+       "Tras dos lotes sin abrir el horno, el centro ya no se hunde, pero un pastel salió seco. ¿Qué debe hacer?",
+       "Revisar en la bitácora el tiempo y la temperatura de ese lote y ajustar una sola variable",
+       "Volver a abrir el horno a los 15 minutos para vigilar la cocción y evitar que se seque",
+       "Duplicar las leches para que la humedad extra disimule cualquier sequedad en la miga",
+       "La bitácora muestra qué fue distinto en ese lote; cambiar una variable permite confirmar la causa. Abrir el horno temprano reactiva el defecto original, y duplicar las leches cambia el producto y tapa el problema sin resolverlo."
+      ]
+     ],
+     "completar": [
+      "Anota fecha, lote, temperatura real, defecto, causa probable y acción en la ___ de producción.",
+      "bitácora"
+     ],
+     "relacionar": [
+      [
+       "Pastel hundido",
+       "Horno abierto antes de que cuaje"
+      ],
+      [
+       "Galleta extendida",
+       "Mantequilla derretida o charola caliente"
+      ],
+      [
+       "Pan denso",
+       "Fermentación o amasado insuficientes"
+      ],
+      [
+       "Guisado salado",
+       "Sal agregada antes de reducir"
+      ],
+      [
+       "Prueba sensorial",
+       "Apariencia, aroma, textura, sabor y temperatura"
+      ]
+     ],
+     "refl": "Diseña el control de calidad de tu producto principal. 1) Escribe el estándar: cómo debe verse, oler, sentirse y saber, y qué foto usarás de referencia. 2) Prepara tu hoja de prueba sensorial con escala de 1 a 5 para cada aspecto. 3) Elige el defecto que más te pasa (o el más probable) y lista al menos tres causas posibles. 4) Escribe la primera variable que cambiarías y cómo confirmarías el resultado. 5) Llena la primera línea de tu bitácora con tu próximo lote.",
+     "modelo": "Modelo: «Producto: conchas. Estándar: 70 g, cobertura agrietada en cuadros, miga suave y esponjosa, aroma a mantequilla; foto en el celular. Prueba: apariencia 4, aroma 5, textura 2, sabor 4. Defecto: miga densa. Causas posibles: fermentación corta, levadura vieja, agua muy caliente al disolverla. Cambio: dejar fermentar hasta que doble su volumen, sin fijarme solo en el reloj. Confirmo con la textura del siguiente lote. Bitácora: 12 de mayo, lote 8, versión 2, horno real 175 °C.» Es buena porque el estándar es observable, la prueba tiene calificaciones y cambia una sola variable.",
+     "plantilla": [
+      "Bitácora de producción y prueba sensorial",
+      "Fecha: [ ]   Producto: [ ]   Lote: [ ]   Versión de receta: [ ]\nHorno: marca [ ] °C / termómetro [ ] °C   Tiempo: [ ] min\nApariencia [1-5]: [ ]   Aroma [1-5]: [ ]   Textura [1-5]: [ ]   Sabor [1-5]: [ ]   Temperatura de servicio: [ ]\nDefecto observado: [ ]\nCausas probables: [1] [2] [3]\nVariable que cambio en el siguiente lote: [solo una]\nResultado del siguiente lote: [ ]\n¿Se vendió este lote?: [sí / no / con descuento avisando por qué]"
+     ],
+     "clave": [
+      "Compara cada lote contra un estándar observable con una prueba sensorial calificada de 1 a 5.",
+      "Cada defecto tiene varias causas probables: revisa qué cambió y ajusta una variable a la vez.",
+      "La bitácora convierte los errores sueltos en patrones que puedes corregir."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos elige tu producto principal y arma su expediente técnico. 1) Ficha de funciones: cada ingrediente, sus gramos y qué hace. 2) Hoja de producción para un día real de pedidos, con cronograma de atrás hacia adelante, tareas del día anterior y plan de enfriamiento. 3) Estándar de calidad con foto de referencia y hoja de prueba sensorial. 4) Bitácora con las columnas necesarias. Si puedes, produce un lote de prueba, califícalo con alguien más y llena la primera línea de la bitácora: la práctica en tu cocina es indispensable para que el expediente sirva.",
+    "entregable": "Un expediente de dos a tres páginas con ficha de funciones, hoja de producción, estándar de calidad con prueba sensorial y bitácora con al menos un lote registrado.",
+    "criterios": "Revisa: cada ingrediente tiene al menos una función explicada, el cronograma parte de la hora de entrega y deja margen, lo que se prepara antes tiene un método de enfriamiento rápido, el estándar se puede observar y la bitácora registra temperatura real, defecto, causa probable y acción."
+   },
+   "lab": {
+    "t": "Un sábado de pedidos en Hermosillo",
+    "obj": "Planear y ejecutar un pedido grande con hoja de producción, enfriamiento correcto y control de calidad, corrigiendo defectos sin improvisar.",
+    "esc": "<b>Yolanda,</b> de 49 años, cocinó 15 años en una fonda y ahora vende comida por pedido desde su casa en Hermosillo, con la ayuda de su sobrino los fines de semana. Una familia le encarga para el sábado a las 14:00 una comida para 60 personas: birria de res con su consomé y dos pasteles de tres leches de 20 porciones cada uno. Su receta estándar de birria rinde 20 porciones y nunca ha hecho tanta cantidad a la vez.",
+    "e": [
+     [
+      "Escena 1: Es martes. Yolanda tiene la receta de birria para 20 porciones, la de tres leches para un pastel de 20 porciones, una estufa de cuatro quemadores, un horno doméstico y dos ollas grandes.",
+      "Consigna: calcula el factor de conversión de la birria, anota qué ingredientes no escalarás de forma lineal y arma la hoja de producción con cantidades, equipo, responsable y horario."
+     ],
+     [
+      "Escena 2: La carne necesita marinar, la cocción tarda varias horas y los pasteles deben hornearse, enfriarse y remojarse antes de servirse. El sábado a las 13:15 debe salir de casa.",
+      "Consigna: escribe el cronograma de atrás hacia adelante desde las 13:15, separando lo que se hace el viernes y el sábado, e indica cómo enfriarás lo que prepares con anticipación."
+     ],
+     [
+      "Escena 3: El viernes por la tarde, el primer tres leches sale del horno hundido en el centro. Yolanda abrió la puerta a los 15 minutos para acomodar el segundo molde.",
+      "Consigna: haz la prueba sensorial del pastel, anota las causas probables, decide qué harás con ese pastel y qué cambiarás en el siguiente horneado, y registra todo en la bitácora."
+     ],
+     [
+      "Escena 4: El sábado a las 12:30, al probar el consomé, Yolanda lo encuentra pasado de sal. Usó consomé en polvo para reforzar el sabor y saló al inicio con la cantidad de siempre multiplicada por tres.",
+      "Consigna: escribe cómo corriges el consomé sin perder la hora de salida, qué anotas en la bitácora y qué cambiarás en la receta para la próxima vez."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cómo debe escalar Yolanda la receta de birria para 60 porciones?",
+      "Factor 3 en los ingredientes principales; la sal y las especias, por partes y probando",
+      "Factor 3 exacto en todo, incluidos sal, chiles y especias, para que sepa igual que siempre",
+      "Factor 0.33, porque el pedido es tres veces más grande que el rendimiento de su receta",
+      "El factor es 60 ÷ 20 = 3, pero sal y especias no escalan de forma lineal: se agregan por partes y se ajustan probando. Multiplicar todo exacto suele pasarse de sal, y 0.33 es el factor invertido, que reduciría la receta."
+     ],
+     [
+      "¿Qué hace Yolanda con el pastel hundido?",
+      "No entregarlo así: hornear otro pastel sin abrir el horno antes de tiempo y anotar la causa",
+      "Lo rellena de crema batida para disimular el centro y lo entrega como si nada hubiera pasado",
+      "Lo entrega sin cambios, porque las leches van a emparejar el hundimiento al remojarse",
+      "El estándar de calidad incluye la apariencia; entregar un defecto escondido daña la confianza. Disimular sin avisar es engañar al cliente, y el remojo no corrige la estructura hundida. Si el tiempo no alcanzara, lo honesto sería avisar y acordar."
+     ],
+     [
+      "¿Cuál es la corrección más confiable para el consomé salado?",
+      "Diluirlo con caldo o agua sin sal y volver a ajustar la sazón probando al final",
+      "Echar varias papas crudas a la olla para que absorban la sal antes de la entrega",
+      "Agregar azúcar y limón para equilibrar la sal y que los invitados no lo noten",
+      "Diluir con más base sin sal baja la concentración; después se ajusta probando. La papa absorbe un poco de líquido pero no rescata una olla salada, y el azúcar o el limón disfrazan el sabor sin corregirlo."
+     ]
+    ],
+    "pl": [
+     "Plan de producción para un pedido grande",
+     "Pedido: [platillos y porciones]   Entrega: [día y hora]   Salida: [hora]\nFactor de conversión: [porciones pedidas] ÷ [rendimiento] = [ ]\nNo escala lineal: [sal, especias, tiempos] → [cómo lo ajusto]\nDía anterior: [tarea, hora, responsable]\nDía de entrega: [tarea, hora, responsable]\nEnfriamiento de lo preparado antes: [recipientes bajos / baño de hielo / hora de refrigeración]\nPrueba sensorial antes de empacar: [apariencia, aroma, textura, sabor, temperatura]\nSi hay defecto: [qué hago, a quién aviso]\nBitácora: [lote, defecto, causa probable, acción]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una panadera de Puebla se quedó sin harina de pan y hace sus conchas con harina para pastel. ¿Qué resultado es más probable?",
+     "Conchas con menos volumen y miga más débil, porque esa harina forma menos gluten",
+     "Conchas más altas, porque esa harina absorbe más agua y forma más gluten",
+     "El mismo resultado, ya que todas las harinas de trigo tienen igual proteína",
+     "Conchas más oscuras, porque la harina para pastel tiene azúcar añadida"
+    ],
+    [
+     "En un día caluroso, las galletas de mantequilla de Dalia se extienden mucho en la charola. ¿Qué ajuste es más razonable probar primero?",
+     "Refrigerar la masa ya formada antes de hornear y usar charolas frías",
+     "Agregar más polvo para hornear para que las galletas suban en vez de extenderse",
+     "Aumentar el azúcar para que la masa quede más firme y conserve la forma",
+     "Bajar la temperatura del horno para que la mantequilla se derrita más despacio"
+    ],
+    [
+     "Un pastel de chocolate lleva bicarbonato y cacao natural. Alguien cambia el cacao por uno alcalinizado. ¿Qué puede pasar?",
+     "Que el bicarbonato tenga menos ácido con qué reaccionar: puede leudar menos y saber jabonoso",
+     "El cacao alcalinizado aporta más ácido y el pastel subirá de más en el horno",
+     "Nada, porque el bicarbonato reacciona solo con el calor del horno sin necesidad de ácido",
+     "El pastel quedará más claro y ácido, porque el cacao alcalinizado tiene menos color"
+    ],
+    [
+     "Ulises vende birria y la cuece una hora a hervor fuerte; la carne de un corte duro queda correosa. ¿Qué le conviene cambiar?",
+     "Cocción húmeda, más larga y a fuego suave, para convertir el colágeno",
+     "Hervor todavía más fuerte para que se cueza en menos tiempo",
+     "Cambiar a fritura profunda para ablandar la carne por dentro",
+     "Salar más al inicio para que la sal ablande las fibras duras"
+    ],
+    [
+     "Mireya tiene un pedido de mole con pollo para el domingo a mediodía. ¿Qué conviene preparar con anticipación?",
+     "La pasta o salsa de mole, hecha antes, enfriada rápido y refrigerada",
+     "El pollo ya cocido y emplatado con mole desde el jueves, cubierto con un trapo limpio",
+     "Nada: todo debe hacerse el mismo domingo",
+     "El arroz cocido el viernes, dejado en la olla tapada sobre la estufa hasta el domingo"
+    ],
+    [
+     "Los cheesecakes de Carolina salen con grietas en la superficie. ¿Qué conjunto de ajustes es más razonable probar, uno a la vez?",
+     "Batir sin meter aire de más, no hornear de más y enfriar de forma gradual",
+     "Batir a máxima velocidad para que la mezcla quede más ligera y esponjosa",
+     "Hornear a la temperatura más alta posible para cuajarlo cuanto antes",
+     "Sacarlo del horno caliente directo al refrigerador para fijar su superficie"
+    ],
+    [
+     "Joaquín prueba su guisado y dice que está perfecto, pero varios clientes lo encuentran salado. ¿Qué le conviene hacer?",
+     "Pedir a otras personas que prueben a ciegas y medir la sal en gramos por litro",
+     "Confiar en su paladar, porque él es quien conoce la receta original mejor que nadie",
+     "Quitar la sal por completo de la receta para que nadie vuelva a quejarse",
+     "Servir porciones más chicas para que los clientes no noten tanto la sal"
+    ],
+    [
+     "Rigoberto terminó 20 litros de pozole a las 9 de la noche para venderlo al día siguiente. ¿Cómo lo enfría mejor?",
+     "Repartirlo en recipientes bajos, en baño de hielo, y refrigerarlo pronto",
+     "Dejar la olla tapada en la estufa toda la noche y refrigerarla temprano",
+     "Meter la olla completa al refrigerador y abrirla hasta el día siguiente",
+     "Dejarlo destapado en el patio, que en la noche está más fresco que la cocina"
+    ],
+    [
+     "Fernanda quiere ofrecer brownies con aceite en lugar de mantequilla. ¿Qué expectativa es correcta?",
+     "Cambiarán la textura y el sabor, y como el aceite no se acrema, necesita probarse en lote chico",
+     "Saldrán iguales, porque el aceite y la mantequilla son grasas con la misma composición",
+     "Saldrán más secos, porque el aceite trae agua que se evapora durante el horneado",
+     "Durarán menos días, porque el aceite hace que el azúcar se cristalice más rápido"
+    ],
+    [
+     "En la bitácora de Esteban, el pan sale denso casi siempre los lunes. ¿Qué es lo más útil?",
+     "Comparar qué cambia los lunes: levadura, temperatura del agua, tiempos o quién amasa",
+     "Dejar de hornear los lunes, porque ese día por alguna razón el pan sale peor",
+     "Agregar más harina los lunes para que la masa quede más firme y manejable",
+     "Cambiar todos los ingredientes de la receta al mismo tiempo desde ese lunes"
+    ]
+   ]
+  },
+  {
+   "t": "Higiene, conservación y empaque",
+   "r": "Trabajarás con la higiene esencial para vender comida, controlarás con termómetro las temperaturas que protegen, conservarás y etiquetarás tus productos con criterio, y manejarás alérgenos, empaque y transporte con honestidad.",
+   "lecciones": [
+    {
+     "t": "Higiene esencial para quien vende comida",
+     "obj": "Aplicar todos los días las cinco claves de la OMS, la higiene personal, la prevención de la contaminación cruzada, la limpieza y desinfección, y el control de plagas.",
+     "texto": [
+      "Vender comida es hacerte responsable de la salud de quien la come. La Organización Mundial de la Salud resume lo esencial en las <b>cinco claves para la inocuidad de los alimentos</b>: mantener la limpieza; separar alimentos crudos y cocinados; cocinar completamente; mantener los alimentos a temperaturas seguras, y usar agua y materias primas seguras. Este módulo te da lo indispensable para trabajar así cada día. Si quieres ir a fondo, conviene un curso específico de inocuidad que profundice en la NOM-251-SSA1-2009 y en el Distintivo H.",
+      "Empieza por ti. Lávate las manos con agua y jabón, frotando palmas, dorso, entre los dedos y bajo las uñas, al entrar a la cocina, después de ir al baño, de tocar carne cruda, basura, dinero o el celular, y cada vez que cambies de tarea. Usa ropa limpia y mandil, cabello recogido y cubierto, uñas cortas y sin esmalte, sin anillos ni pulseras, y cubre cualquier herida con material impermeable. Si tienes diarrea, vómito o fiebre, no prepares comida para vender: en esas condiciones es muy fácil pasar microbios a los alimentos.",
+      "La <b>contaminación cruzada</b> ocurre cuando los microorganismos de un alimento crudo, de una superficie o de tus manos pasan a un alimento listo para comer. Ejemplos típicos: picar cilantro en la tabla donde cortaste carne cruda, guardar la carne arriba de un postre en el refrigerador o usar el mismo trapo para todo. Usa tablas y utensilios distintos para crudos y para lo listo para comer (marcarlos por color ayuda), guarda los crudos abajo y tapados, y usa toallas desechables o trapos que laves y desinfectes seguido.",
+      "Limpiar y desinfectar no es lo mismo. <b>Limpiar</b> quita la suciedad visible y la grasa con agua y jabón; <b>desinfectar</b> reduce los microorganismos con un desinfectante apto para superficies que tocan alimentos, siempre después de limpiar y con la dilución y el tiempo que indica la etiqueta. Nunca mezcles cloro con otros productos de limpieza: puede liberar gases tóxicos. Contra las plagas manda la prevención: comida en recipientes cerrados, basura tapada, huecos sellados y piso sin restos. Si ves cucarachas o roedores, contrata un servicio de control de plagas en lugar de rociar insecticida cerca de tus alimentos."
+     ],
+     "comparar": [
+      "«Así no: “Corto la carne y luego, en la misma tabla, pico la cebolla y el cilantro; le paso el trapo y listo, al fin que todo se va a comer.”»",
+      "«Así sí: “La tabla roja es solo para carne cruda. La cebolla y el cilantro los pico antes, en la tabla verde, y los guardo tapados en el refrigerador.”»"
+     ],
+     "caso": "Caso ficticio: Ulises, de 41 años, trabaja entre semana en una refaccionaria y los domingos vende birria de res en la cochera de su casa en Zacatecas. Corta la carne cruda y luego pica cebolla y cilantro en la misma tabla, que limpia con un trapo que usa para todo el día. Cobra en efectivo y sirve sin lavarse las manos entre una cosa y otra. Hace poco encontró cucarachas en la alacena donde guarda los chiles secos. Quiere ordenar su puesto antes de que algún cliente se enferme.",
+     "p": [
+      [
+       "¿Cuál es el mayor riesgo en la forma en que Ulises prepara la guarnición?",
+       "Pasar microbios de la carne cruda a la cebolla y el cilantro, que se comen sin cocinar",
+       "Que la cebolla absorba el olor de la carne y cambie el sabor del consomé al servirlo",
+       "Que el cilantro se marchite antes, porque la tabla conserva la humedad de la carne",
+       "La cebolla y el cilantro se comen crudos: si se pican en la tabla de la carne cruda, reciben sus microorganismos sin que nada los elimine después. El olor y la frescura importan, pero no son un riesgo para la salud."
+      ],
+      [
+       "Ulises cobra y sirve al mismo tiempo. ¿Qué solución es la más práctica y segura?",
+       "Lavarse las manos después de cobrar, o que otra persona se encargue solo del dinero",
+       "Limpiarse las manos en el mandil después de cobrar cada vez para no perder tiempo",
+       "Usar los mismos guantes toda la mañana para cobrar y servir, porque así no se toca nada",
+       "El dinero pasa por muchas manos: separar quien cobra de quien sirve, o lavarse después de cobrar, evita llevar esa suciedad a la comida. El mandil no limpia, y unos guantes que tocan dinero y comida se contaminan igual que las manos."
+      ],
+      [
+       "Ulises encontró cucarachas en la alacena. ¿Qué es lo más adecuado?",
+       "Contratar un servicio de control de plagas, sellar huecos y guardar todo en recipientes cerrados",
+       "Rociar insecticida dentro de la alacena y volver a guardar los chiles al día siguiente",
+       "Poner los chiles en bolsas abiertas para que se ventilen y no atraigan cucarachas",
+       "Un servicio de control de plagas aplica productos y métodos adecuados lejos de los alimentos, y sellar huecos, guardar en recipientes cerrados y quitar restos previene que regresen. Rociar insecticida junto a la comida la puede contaminar, y las bolsas abiertas dejan el alimento expuesto."
+      ]
+     ],
+     "completar": [
+      "Cuando los microorganismos de un alimento crudo pasan a uno listo para comer, ocurre la contaminación ___.",
+      "cruzada"
+     ],
+     "relacionar": [
+      [
+       "Mantener la limpieza",
+       "Lavarse las manos al cambiar de tarea"
+      ],
+      [
+       "Separar crudos y cocinados",
+       "Tabla distinta para la carne cruda"
+      ],
+      [
+       "Limpiar",
+       "Quitar suciedad y grasa con agua y jabón"
+      ],
+      [
+       "Desinfectar",
+       "Aplicar desinfectante después de limpiar"
+      ],
+      [
+       "Prevenir plagas",
+       "Recipientes cerrados y huecos sellados"
+      ]
+     ],
+     "refl": "Revisa tu cocina como si fueras un cliente exigente. 1) Escribe en qué momentos de tu jornada te lavas las manos y en cuáles deberías hacerlo. 2) Haz un mapa de contaminación cruzada: dónde se cruzan crudos y listos para comer (tablas, cuchillos, trapos, refrigerador) y qué cambiarás. 3) Redacta tu rutina de limpieza y desinfección: qué superficies, con qué producto, a qué dilución según la etiqueta y cada cuánto. 4) Anota tres acciones para prevenir plagas. 5) Escribe qué harás el día que te enfermes.",
+     "modelo": "Modelo: «Manos: me lavo al llegar, tras ir al baño, tocar pollo crudo, basura o el celular, y al cambiar de tarea; me faltaba después de cobrar. Cruces: picaba el jitomate después del pollo en la misma tabla; ahora tabla roja para crudos y verde para lo demás, y el pollo va abajo en el refrigerador. Limpieza: mesa y tablas con agua y jabón, enjuague y desinfectante según la etiqueta, al terminar cada tarea y al cierre. Plagas: harina en botes cerrados, basura tapada y fuera, rendija de la puerta sellada. Si me enfermo: aviso a clientes y no cocino.» Es buena porque es concreta y nombra los cambios.",
+     "plantilla": [
+      "Rutina diaria de higiene",
+      "Lavado de manos: [al entrar] [después del baño] [tras tocar crudos, basura, dinero o celular] [al cambiar de tarea]\nUniforme: [mandil limpio] [cabello cubierto] [sin joyería] [heridas cubiertas]\nTabla y utensilios para crudos: [color]   Para listos para comer: [color]\nRefrigerador: crudos [abajo y tapados]; listos para comer [arriba]\nLimpieza: [superficie] con [agua y jabón], enjuague, desinfectante [nombre genérico] a [dilución de la etiqueta], [frecuencia]\nNo mezclar: [cloro con otros productos]\nPlagas: [recipientes cerrados] [basura tapada] [huecos sellados] [servicio de control: fecha]\nSi me enfermo: [quién me sustituye o a quién aviso]"
+     ],
+     "clave": [
+      "Las cinco claves de la OMS: limpieza, separar crudos y cocinados, cocinar completamente, temperaturas seguras, agua y materias primas seguras.",
+      "La contaminación cruzada se evita con tablas separadas, crudos abajo en el refrigerador y manos lavadas al cambiar de tarea.",
+      "Primero limpias y después desinfectas; nunca mezcles cloro con otros productos."
+     ]
+    },
+    {
+     "t": "Temperaturas que protegen",
+     "obj": "Mantener y comprobar con termómetro las temperaturas seguras de refrigeración, cocción, servicio, recalentado y descongelación.",
+     "texto": [
+      "Las bacterias que causan intoxicaciones se multiplican rápido a temperaturas templadas. El Servicio de Inocuidad e Inspección de los Alimentos del Departamento de Agricultura de Estados Unidos llama <b>zona de peligro</b> al rango de 4.4 °C a 60 °C y recomienda que un perecedero no pase más de 2 horas fuera de refrigeración, o 1 hora si hace más de 32 °C. La regla práctica es lo frío, bien frío, y lo caliente, bien caliente, con el menor tiempo posible en medio. Ni el olor ni el sabor te dicen si un alimento es seguro.",
+      "En México, la NOM-251-SSA1-2009 fija valores que debes conocer; verifica la versión vigente en el Catálogo Mexicano de Normas. Refrigeración: 7 °C como máximo. Recepción de productos refrigerados: que lleguen a 4 °C o menos. En exhibición o servicio, los alimentos calientes a más de 60 °C y los fríos a 7 °C o menos. Nota que la norma y la guía estadounidense no usan la misma cifra para el frío; la de 7 °C es el límite, y un refrigerador que se mantiene más frío, sin congelar, te da más margen.",
+      "Para la cocción, la norma pide temperaturas internas mínimas: 63 °C para pescado y carne de res en trozo; 68 °C para cerdo en trozo y carnes molidas; 74 °C para aves, embutidos y rellenos. Al recalentar un alimento ya cocinado, debe llegar como mínimo a 74 °C. Para descongelar, hazlo en refrigeración, como parte de la cocción, en microondas o bajo chorro de agua fría; nunca a temperatura ambiente sobre la mesa, porque la superficie se calienta mientras el centro sigue congelado.",
+      "Nada de esto sirve sin un <b>termómetro</b> de punzón, el de varilla metálica que se clava en el alimento. Mide en la parte más gruesa, sin tocar hueso ni el fondo de la olla, y en varios puntos si el lote es grande; lávalo y desinféctalo entre un alimento y otro. Para comprobar que mide bien, mételo en un vaso con mucho hielo y un poco de agua: debe marcar 0 °C o muy cerca. Anota cada medición en tu bitácora; el registro convierte la buena intención en un hábito comprobable."
+     ],
+     "comparar": [
+      "«Así no: “El mole lo dejo en la estufa toda la noche para que se enfríe solito y en la mañana lo caliento hasta que se vea que hierve en la orilla.”»",
+      "«Así sí: “Lo enfrío en recipientes bajos y lo refrigero. Al recalentar, clavo el termómetro en el centro: no sirvo hasta ver 74 °C, y en el servicio lo mantengo arriba de 60 °C.”»"
+     ],
+     "caso": "Caso ficticio: Dalia, de 56 años, es jubilada y prepara mole con pollo y arroz para bautizos y cumpleaños en Campeche, en pedidos de hasta 100 porciones. Cocina el viernes por la noche, deja las ollas tapadas sobre la estufa hasta el sábado y recalienta «hasta que se vea bien caliente». En el servicio usa charolas sobre parrillas con velas de calor. No tiene termómetro y nunca ha medido nada. Una clienta le comentó que varios invitados se sintieron mal después de una fiesta y Dalia quiere asegurarse de que no vuelva a pasar.",
+     "p": [
+      [
+       "¿Cuál de las prácticas de Dalia pone en mayor riesgo a los invitados?",
+       "Dejar el mole toda la noche tapado sobre la estufa, a temperatura ambiente",
+       "Usar pollo en lugar de guajolote, porque el pollo necesita mucho más tiempo de cocción",
+       "Cocinar un día antes, porque la norma prohíbe preparar alimentos con anticipación",
+       "Toda una noche a temperatura ambiente mantiene el mole en la zona de peligro muchas horas, mucho más que las 2 horas recomendadas. Cocinar con anticipación es válido si se enfría rápido y se refrigera, y el tipo de ave no es el problema: ambas requieren 74 °C internos."
+      ],
+      [
+       "¿A qué temperatura interna debe recalentar Dalia el mole con pollo antes de servir?",
+       "A 74 °C como mínimo en el centro de la olla, comprobados con termómetro",
+       "A 60 °C, la misma del servicio caliente",
+       "Hasta que hierva en la orilla de la olla, aunque el centro todavía se sienta tibio",
+       "La NOM-251 pide recalentar a mínimo 74 °C, y solo el termómetro lo confirma en el centro. Los 60 °C son para mantener en servicio, no para recalentar, y el hervor en la orilla no garantiza la temperatura del centro de una olla grande."
+      ],
+      [
+       "Durante una fiesta, el termómetro marca 52 °C en una charola que lleva poco tiempo servida. ¿Qué debe hacer?",
+       "Recalentarlo hasta 74 °C y luego mantenerlo arriba de 60 °C",
+       "Seguir sirviendo, porque 52 °C está bastante cerca de los 60 °C que pide la norma",
+       "Agregar mole frío para renovar la charola",
+       "Debajo de 60 °C el alimento ya está en la zona de peligro; si lleva poco tiempo, se recalienta a 74 °C y se mantiene caliente; si no sabes cuánto tiempo estuvo así, lo seguro es desecharlo. Mezclar mole frío con tibio baja más la temperatura."
+      ]
+     ],
+     "completar": [
+      "El rango de 4.4 °C a 60 °C, donde las bacterias se multiplican rápido, se conoce como zona de ___.",
+      "peligro"
+     ],
+     "relacionar": [
+      [
+       "Refrigeración",
+       "7 °C como máximo"
+      ],
+      [
+       "Alimentos calientes en servicio",
+       "Más de 60 °C"
+      ],
+      [
+       "Aves, embutidos y rellenos",
+       "74 °C internos"
+      ],
+      [
+       "Cerdo en trozo y carnes molidas",
+       "68 °C internos"
+      ],
+      [
+       "Pescado y res en trozo",
+       "63 °C internos"
+      ]
+     ],
+     "refl": "Arma el mapa de temperaturas de tu negocio. 1) Lista tus productos y, para cada uno, la temperatura interna de cocción que le toca según la NOM-251. 2) Escribe cómo guardas, recalientas y sirves cada uno, y a qué temperatura. 3) Identifica el momento en que tus alimentos pasan más tiempo en la zona de peligro y cómo lo reducirás. 4) Si tienes termómetro de punzón, compruébalo en agua con hielo y mide tu refrigerador y un alimento; si no lo tienes, anota dónde lo comprarás y desde qué día lo usarás.",
+     "modelo": "Modelo: «Productos: albóndigas de res y cerdo molidos, cocción a 68 °C internos; arroz, mantener arriba de 60 °C; ensalada de col, 7 °C o menos. Guardo las albóndigas en recipientes bajos y las recaliento a 74 °C; sirvo en baño maría arriba de 60 °C. Mi punto débil: el arroz se queda en la estufa mientras armo los pedidos; ahora lo paso a recipiente térmico. Termómetro: en agua con hielo marcó 0.5 °C; refrigerador a 5 °C; albóndiga a 71 °C.» Es buena porque usa las cifras de la norma, identifica un punto débil real y registra mediciones.",
+     "plantilla": [
+      "Mapa de temperaturas y registro",
+      "Termómetro comprobado en agua con hielo: [fecha] marcó [ ] °C\nRefrigerador: [ ] °C (máximo 7 °C)   Recepción de refrigerados: [ ] °C (4 °C o menos)\nProducto | cocción interna mínima | medí | hora | iniciales\n[pescado o res en trozo] | 63 °C | [ ] | [ ] | [ ]\n[cerdo en trozo o carne molida] | 68 °C | [ ] | [ ] | [ ]\n[aves, embutidos, rellenos] | 74 °C | [ ] | [ ] | [ ]\nRecalentado: [producto] llegó a [ ] °C (mínimo 74 °C)\nServicio caliente: [ ] °C (más de 60 °C)   Servicio frío: [ ] °C (7 °C o menos)\nDescongelo en: [refrigerador / cocción / microondas / chorro de agua fría]\nAcción si algo no cumple: [ ]"
+     ],
+     "clave": [
+      "Zona de peligro: de 4.4 °C a 60 °C; un perecedero no debe pasar ahí más de 2 horas, o 1 si hace más de 32 °C.",
+      "NOM-251: refrigeración máximo 7 °C, caliente arriba de 60 °C, cocción a 63, 68 o 74 °C según el alimento y recalentado a 74 °C.",
+      "Sin termómetro de punzón no hay control: compruébalo en agua con hielo y registra cada medición."
+     ]
+    },
+    {
+     "t": "Conservación y vida útil",
+     "obj": "Refrigerar, congelar, etiquetar y rotar tus productos con criterio, distinguiendo lo que alarga de verdad la vida útil de lo que solo lo aparenta.",
+     "texto": [
+      "Conservar bien no es hacer que la comida dure lo más posible, sino saber cuánto tiempo y en qué condiciones sigue siendo segura y buena. Son dos cosas distintas: la <b>inocuidad</b>, que no enferme, y la <b>calidad</b>, que siga sabiendo y luciendo como debe. Un pan duro es seguro pero ya no se vende igual; un guisado que huele bien puede no ser seguro. El frío frena a los microorganismos: la refrigeración retrasa su crecimiento y la congelación lo detiene, pero no los mata. La NOM-251 no fija una cifra de congelación; en capacitación se usa como referencia común -18 °C.",
+      "Cada producto tiene su mejor lugar. Guisados, cremas, rellenos y postres con lácteos o huevo van al refrigerador. El pan es un caso curioso que explica McGee: se endurece porque el almidón se reorganiza al enfriarse, un proceso llamado <b>retrogradación</b>, y eso ocurre más rápido en el refrigerador que a temperatura ambiente. Por eso el pan sin rellenos perecederos se guarda bien cerrado a temperatura ambiente poco tiempo o se congela, y se regenera en el horno. Congela en porciones bien envueltas para que no se reseque y descongela solo lo que vas a usar.",
+      "Todo lo que guardes lleva una <b>etiqueta interna</b>: producto, fecha de elaboración, lote y fecha límite de uso que tú defines. Y se acomoda con <b>PEPS</b>, primeras entradas, primeras salidas: lo más antiguo adelante para usarlo primero, lo nuevo atrás. Aplica también al almacén de harina, azúcar y especias; rotar evita gorgojos, rancidez y desperdicio.",
+      "¿Qué alarga la vida útil? Mucha azúcar o sal, porque dejan menos agua disponible para los microbios, de ahí que una mermelada dure más que una fruta picada; un horneado que deja el producto seco, como una galleta; la acidez, y un envasado limpio y bien cerrado. ¿Qué no la alarga? Tapar herméticamente algo caliente, que condensa agua y favorece el moho; recalentar una y otra vez, o confiar en que el refrigerador conserva sin límite. Y no prometas caducidades copiadas de internet: la vida útil depende de tu receta, tu empaque y tu cocina, y se estima con pruebas y registros."
+     ],
+     "comparar": [
+      "«Así no: “Las conchas que sobran las meto al refri para que duren, y en la bolsa pongo que duran diez días, como las del súper.”»",
+      "«Así sí: “Lo que sobra lo congelo el mismo día, envuelto y con etiqueta de fecha. En la bolsa no prometo días que no he comprobado en mi propia cocina.”»"
+     ],
+     "caso": "Caso ficticio: Esteban, de 27 años, estudia administración y hornea conchas y pan dulce por pedido en Cuernavaca. Las piezas que sobran las guarda en el refrigerador «para que duren» y al día siguiente salen duras. Quiere vender en bolsas cerradas e imprimir «dura 10 días» porque leyó esa cifra en internet. Además, el otro día encontró gorgojos en un costal de harina viejo que había quedado atrás del nuevo. Esteban quiere desperdiciar menos sin poner en riesgo a sus clientes.",
+     "p": [
+      [
+       "¿Por qué las conchas de Esteban salen duras después de una noche en el refrigerador?",
+       "En refrigeración el almidón se reorganiza más rápido y la miga se endurece",
+       "El frío congela el agua de la masa y la deshidrata por completo durante la noche",
+       "Les faltó azúcar a la receta",
+       "A temperatura de refrigeración el almidón del pan se reorganiza más rápido y la miga se endurece. El refrigerador no congela la masa, y aunque el azúcar ayuda a retener humedad, la causa principal aquí es el frío."
+      ],
+      [
+       "¿Qué conviene hacer con las conchas que sobran al final del día?",
+       "Congelarlas el mismo día, bien envueltas y con su etiqueta de fecha y lote",
+       "Refrigerarlas en una bolsa abierta para que circule el aire y no les salga moho",
+       "Dejarlas en la vitrina y venderlas como recién hechas durante toda la semana",
+       "Congelar el mismo día detiene el endurecimiento y la etiqueta permite usar primero lo más antiguo; al venderlas, lo honesto es decir que son regeneradas. El refrigerador acelera el endurecimiento, y venderlas como recién hechas engaña al cliente."
+      ],
+      [
+       "Esteban quiere imprimir «dura 10 días» en sus bolsas. ¿Qué le conviene?",
+       "Estimar la vida útil con sus propias pruebas y registros antes de prometer una cifra",
+       "Usar la cifra de una panadería industrial, porque se trata del mismo tipo de producto",
+       "Poner una fecha larga, ya que si el pan se endurece el cliente lo notará por sí mismo",
+       "La vida útil depende de la receta, el empaque y la cocina de cada quien, así que se estima observando y registrando. Una panadería industrial usa otra formulación y otro proceso, y prometer de más es engañoso."
+      ]
+     ],
+     "completar": [
+      "Con el sistema ___, lo más antiguo se acomoda adelante y se usa primero.",
+      "PEPS"
+     ],
+     "refl": "Diseña el plan de conservación de tus productos. 1) Lista tus productos y escribe dónde se guarda cada uno (temperatura ambiente, refrigerador o congelador) y por qué. 2) Diseña tu etiqueta interna con los datos mínimos. 3) Describe cómo aplicarás PEPS en tu refrigerador y en tu almacén seco. 4) Elige un producto y planea una prueba de vida útil: cuántas piezas, en qué condiciones, qué revisarás cada día y cómo lo registrarás. 5) Anota qué no vas a prometer a tus clientes hasta tener esos registros.",
+     "modelo": "Modelo: «Productos: galletas de mantequilla, a temperatura ambiente en frasco cerrado (son secas); pay de limón, refrigerado (lleva lácteos y huevo); masa de galleta, congelada en rollos. Etiqueta: producto, fecha, lote, usar antes de. PEPS: en el refrigerador, lo nuevo atrás; en el almacén, plumón con fecha en cada bote. Prueba: diez galletas en frasco, reviso textura, aroma y aspecto cada día durante dos semanas y anoto. No prometo días hasta terminar la prueba.» Es buena porque justifica dónde guarda cada producto, define la etiqueta y diseña una prueba antes de prometer.",
+     "plantilla": [
+      "Plan de conservación y etiqueta interna",
+      "Producto | dónde se guarda | por qué | fecha límite que definí\n[ ] | [ambiente / refrigerador / congelador] | [ ] | [ ]\nEtiqueta interna: Producto [ ]  Elaborado [fecha]  Lote [ ]  Usar antes de [fecha]  Responsable [ ]\nPEPS: [cómo acomodo lo nuevo y lo antiguo]\nCongelado: [porciones, envoltura, cómo descongelo]\nPrueba de vida útil: [producto], [número de piezas], [condiciones], reviso [textura, aroma, aspecto] cada [ ]\nRegistro: día [ ] → [observación]\nLo que no prometo todavía: [ ]"
+     ],
+     "clave": [
+      "Inocuidad y calidad son distintas: un alimento puede verse bien y no ser seguro.",
+      "El refrigerador endurece el pan más rápido; el pan que sobra se congela el mismo día.",
+      "Etiqueta todo, rota con PEPS y estima la vida útil con tus propias pruebas, no con cifras de internet."
+     ]
+    },
+    {
+     "t": "Alérgenos, empaque y transporte",
+     "obj": "Identificar los alérgenos de tus productos, prevenir el contacto cruzado, informar con honestidad y empacar y transportar sin romper la cadena de frío o de calor.",
+     "texto": [
+      "Para una persona con alergia alimentaria, una cantidad muy pequeña de un ingrediente puede provocar una reacción grave. La NOM-051-SCFI/SSA1-2010 enumera los ingredientes que causan hipersensibilidad y deben declararse en los preenvasados: cereales con gluten (trigo, centeno, cebada, avena, espelta), crustáceos, huevo, pescado, cacahuate, soya (salvo el aceite), leche y lácteos (incluida la lactosa), nueces de árboles y sulfitos desde 10 mg/kg. Aunque vendas a granel, esa lista es tu mapa: anota en cada ficha técnica cuáles lleva tu producto.",
+      "El <b>contacto cruzado</b> ocurre cuando un alérgeno llega a un alimento que no lo lleva en la receta: el procesador donde moliste nuez, la harina que flota en el aire, la espátula sin lavar, el aceite donde se frieron camarones. Cocinar no elimina un alérgeno. Si ofreces una versión sin cierto alérgeno, prepárala primero, con equipo lavado, y guárdala tapada y aparte. Si no puedes garantizar que no hubo contacto, dilo con claridad y no la vendas como apta. Ten la lista de ingredientes a la mano; «no creo que tenga» no es respuesta. Ante una reacción alérgica grave, la persona necesita atención médica inmediata: llama al 911.",
+      "El empaque debe ser de <b>grado alimenticio</b>: fabricado para estar en contacto con comida y limpio; nada de bolsas de mandado, cajas de otros productos ni frascos que tuvieron químicos. Si preenvasas, es decir, empacas antes de la venta y entregas cerrado, la NOM-051 pide etiqueta en español con denominación, ingredientes en orden decreciente, contenido neto, nombre o razón social y domicilio fiscal, país de origen, lote, caducidad o consumo preferente y declaración nutrimental, más instrucciones, sellos y leyendas cuando correspondan. No hay excepción por ser pequeño; se excluyen la venta a granel y lo envasado en el punto de venta, así que verifica tu caso.",
+      "El <b>transporte</b> también es cocina. Lo frío viaja en hielera con refrigerantes, lo caliente en recipientes térmicos y lo crudo separado y abajo de lo listo para comer. Planea rutas cortas, no dejes pedidos en una cajuela al sol y entrega con instrucciones de conservación."
+     ],
+     "comparar": [
+      "«Así no: “¿Tiene nuez? Mmm, no creo, este es el de galleta sola. Bueno, lo molí en el mismo procesador, pero lo lavé… más o menos.”»",
+      "«Así sí: “La base lleva trigo, leche y huevo, y en mi cocina se muele nuez. No puedo garantizar que no tenga trazas, así que no te lo ofrezco como apto para alergia a la nuez.”»"
+     ],
+     "caso": "Caso ficticio: Mireya, de 44 años, es contadora y vende cheesecake por pedido en Saltillo; su receta lleva base de galleta con nuez. Una clienta le pide uno «sin nuez» porque su hijo es alérgico. Mireya piensa quitar la nuez de la base, pero muele la galleta en el mismo procesador donde siempre muele la nuez. La entrega es a 40 minutos en coche a mediodía, en pleno verano, y pensaba llevar el pastel en una caja de cartón reutilizada en la cajuela. Quiere quedar bien sin poner en riesgo al niño.",
+     "p": [
+      [
+       "¿Cuál es el riesgo principal de usar el mismo procesador?",
+       "Que restos de nuez del equipo pasen a la base, aunque la receta ya no la lleve",
+       "Que la galleta sin nuez se muela más fina y la base quede menos firme al cortar",
+       "Ninguno, porque el horno destruye el alérgeno",
+       "Es contacto cruzado: restos de nuez en el equipo llegan a la base aunque la receta ya no la lleve, y basta poco para una reacción. La textura es un tema de calidad, no de seguridad, y el calor no elimina los alérgenos."
+      ],
+      [
+       "La clienta pregunta si el pastel es seguro para su hijo, y Mireya no puede garantizar que no hubo contacto cruzado. ¿Qué responde?",
+       "Que no puede garantizar que no tenga nuez y, por eso, no se lo ofrece como apto para su hijo",
+       "Que sí es seguro, porque quitó la nuez de la receta y lavó el procesador con cuidado",
+       "Que el niño pruebe un pedacito pequeño primero para ver si le provoca alguna reacción",
+       "La honestidad protege al niño: si no puede garantizar la ausencia del alérgeno, no debe ofrecerlo como apto. Afirmar que es seguro sin poder garantizarlo es engañoso, y probar un pedazo puede desencadenar una reacción grave."
+      ],
+      [
+       "¿Cómo debería transportar Mireya el cheesecake a 40 minutos de distancia en verano?",
+       "En hielera con refrigerantes, por ruta directa y con aviso de refrigerarlo",
+       "En una caja de cartón dentro de la cajuela, que suele estar más fresca que el asiento",
+       "Sacarlo del refrigerador una hora antes del viaje",
+       "Un postre con lácteos y huevo debe mantenerse frío; la hielera, la ruta directa y la instrucción al cliente cuidan la cadena de frío. La cajuela al sol se calienta mucho, y sacarlo antes solo aumenta su tiempo en la zona de peligro."
+      ]
+     ],
+     "completar": [
+      "Cuando un alérgeno llega a un alimento que no lo lleva en la receta, se habla de contacto ___.",
+      "cruzado"
+     ],
+     "relacionar": [
+      [
+       "Preenvasado",
+       "Se empaca antes de la venta y lleva etiqueta"
+      ],
+      [
+       "Contacto cruzado",
+       "Restos de nuez en el procesador"
+      ],
+      [
+       "Grado alimenticio",
+       "Material fabricado para tocar comida"
+      ],
+      [
+       "Sulfitos",
+       "Se declaran desde 10 mg/kg"
+      ],
+      [
+       "Hielera con refrigerantes",
+       "Traslado de postres fríos"
+      ]
+     ],
+     "refl": "Haz la matriz de alérgenos y el plan de empaque de tu negocio. 1) Lista tus productos y marca cuáles de los alérgenos de la NOM-051 lleva cada uno, incluidos los que vienen dentro de otros ingredientes (galletas, salsas, embutidos). 2) Identifica dónde puede haber contacto cruzado en tu cocina y cómo lo reducirás. 3) Escribe la respuesta que darás cuando un cliente pregunte por un alérgeno que no puedes garantizar. 4) Describe tu empaque y tu forma de transporte para un producto frío y uno caliente. 5) Escribe si algún producto tuyo sería preenvasado y qué tendrías que verificar.",
+     "modelo": "Modelo: «Matriz: pan de elote, huevo, leche, trigo; empanadas de atún, trigo, pescado, huevo en el barniz; galletas de avena, avena, trigo, leche, huevo. Contacto cruzado: harina en el aire al amasar; amaso al final y tapo lo terminado. Respuesta: “En mi cocina se usan trigo, huevo y leche en todo; no puedo ofrecerte nada libre de ellos.” Transporte: empanadas en recipiente térmico; pan de elote en caja de grado alimenticio. Preenvasado: si vendo galletas en bolsa cerrada en una tienda, necesito etiqueta NOM-051; lo verifico antes.» Es buena porque encuentra alérgenos escondidos y responde con honestidad.",
+     "plantilla": [
+      "Matriz de alérgenos, empaque y transporte",
+      "Producto | gluten | crustáceos | huevo | pescado | cacahuate | soya | leche | nueces | sulfitos\n[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ]\nAlérgenos escondidos en ingredientes compuestos: [ ]\nPuntos de contacto cruzado en mi cocina: [ ] → [cómo los reduzco]\nRespuesta cuando no puedo garantizar: «[ ]»\nEmpaque de grado alimenticio: [tipo] para [producto]\nTransporte frío: [hielera, refrigerantes]   Transporte caliente: [recipiente térmico]\nInstrucción al cliente: «[refrigera al llegar / consume antes de]»\n¿Preenvaso?: [sí / no] → verifico etiqueta NOM-051: [ ]"
+     ],
+     "clave": [
+      "La lista de alérgenos de la NOM-051 es tu mapa: márcalos en cada ficha técnica, incluidos los escondidos.",
+      "Cocinar no elimina alérgenos; si no puedes garantizar su ausencia, dilo y no vendas el producto como apto.",
+      "Empaque de grado alimenticio, cadena de frío o de calor en el traslado y etiqueta NOM-051 si preenvasas."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el plan de inocuidad básico de tu negocio de cocina. 1) Rutina diaria de higiene: manos, uniforme, tablas por color, limpieza y desinfección, plagas. 2) Mapa de temperaturas con las cifras de la NOM-251 (verifica la versión vigente) para cada producto, más tu registro de termómetro. 3) Plan de conservación con etiqueta interna, PEPS y una prueba de vida útil diseñada. 4) Matriz de alérgenos de la NOM-051, respuesta honesta para clientes, empaque y transporte. Si tienes termómetro de punzón, compruébalo en agua con hielo y registra tres mediciones reales.",
+    "entregable": "Un plan de inocuidad de dos a tres páginas con rutina de higiene, mapa de temperaturas, plan de conservación con etiqueta y matriz de alérgenos con empaque y transporte.",
+    "criterios": "Revisa: la rutina separa crudos de listos para comer y distingue limpiar de desinfectar, las temperaturas coinciden con la NOM-251 y se miden con termómetro, ninguna vida útil se promete sin prueba, la matriz incluye alérgenos escondidos y la respuesta al cliente no promete lo que no puedes garantizar."
+   },
+   "lab": {
+    "t": "Ensaladas y cheesecake a domicilio en Ensenada",
+    "obj": "Revisar la operación de un negocio pequeño de comida y corregir higiene, temperaturas, conservación, alérgenos y empaque antes de crecer.",
+    "esc": "<b>Joaquín,</b> de 33 años, y <b>Carolina,</b> de 30, son pareja y venden ensaladas para oficina con pollo y cheesecake individual a domicilio en Ensenada. Una empresa les ofrece un pedido diario de 40 ensaladas y una tienda de la colonia quiere vender sus cheesecakes en vasos cerrados. Antes de aceptar, deciden revisar su cocina como si fueran inspectores.",
+    "e": [
+     [
+      "Escena 1: En su cocina hay una sola tabla para todo, un trapo que se usa todo el día y un refrigerador que, medido con termómetro, marca 9 °C. El pollo crudo se guarda en la repisa de arriba, encima de los cheesecakes.",
+      "Consigna: escribe la rutina de higiene corregida: tablas, trapos, orden del refrigerador, limpieza y desinfección, y qué hacen con el refrigerador."
+     ],
+     [
+      "Escena 2: Carolina asa el pollo a la plancha y, al medirlo en la parte más gruesa, el termómetro marca 66 °C. Joaquín dice que ya está bien porque «ya no se ve rosa». Después lo dejan enfriar en la plancha apagada mientras lavan.",
+      "Consigna: decide qué hacen con el pollo, a qué temperatura deben llegar, cómo lo enfrían y qué anotan en el registro de temperaturas."
+     ],
+     [
+      "Escena 3: Para adelantar trabajo, quieren preparar el lunes las ensaladas de toda la semana y escribirle a la empresa que «duran cinco días», porque lo leyeron en un blog.",
+      "Consigna: diseña la etiqueta interna, explica cómo aplicarán PEPS y escribe cómo estimarán la vida útil real antes de prometer algo al cliente."
+     ],
+     [
+      "Escena 4: La empresa avisa que un empleado es alérgico al cacahuate, y el aderezo de la casa lleva cacahuate. Además, la tienda quiere los cheesecakes en vasos cerrados para venderlos desde su refrigerador.",
+      "Consigna: escribe la respuesta al cliente sobre el alérgeno, la matriz de alérgenos de los dos productos y qué deben verificar antes de entregar cheesecakes preenvasados a la tienda."
+     ]
+    ],
+    "p": [
+     [
+      "El refrigerador marca 9 °C. ¿Qué deben hacer?",
+      "Ajustar el termostato y volver a medir hasta que se mantenga en 7 °C o menos",
+      "Nada, porque 9 °C es frío suficiente para guardar ensaladas y postres por unos días",
+      "Guardar solo el pollo crudo en él y dejar los cheesecakes a temperatura ambiente",
+      "La NOM-251 fija la refrigeración en máximo 7 °C; a 9 °C los perecederos están en la zona de peligro. Deben ajustarlo, volver a medir y, si no baja, revisar el equipo. Sacar los cheesecakes del refrigerador empeora el problema."
+     ],
+     [
+      "El pollo marca 66 °C en la parte más gruesa. ¿Qué es lo correcto?",
+      "Seguir cocinándolo hasta que llegue a 74 °C internos y anotar la medición",
+      "Retirarlo ya, porque 66 °C supera los 63 °C que pide la norma para la carne de res en trozo",
+      "Servirlo, porque ya no se ve rosa por dentro",
+      "Las aves requieren 74 °C internos según la NOM-251; los 63 °C son para pescado y res en trozo. El color no es una medida confiable: solo el termómetro confirma la temperatura."
+     ],
+     [
+      "La tienda quiere vender los cheesecakes en vasos cerrados desde su refrigerador. ¿Qué deben considerar?",
+      "Si se empacan antes y se venden cerrados, son preenvasados y aplica la etiqueta NOM-051",
+      "Nada, porque la norma de etiquetado exceptúa a los negocios pequeños y artesanales",
+      "Solo pegar una etiqueta con el nombre del producto y su precio, sin más información",
+      "Un producto empacado antes de la venta y entregado cerrado es preenvasado y requiere la etiqueta de la NOM-051, incluidos los alérgenos; no hay excepción por tamaño. Deben verificar su caso concreto antes de entregar."
+     ]
+    ],
+    "pl": [
+     "Revisión de inocuidad antes de crecer",
+     "Higiene: tablas [colores], trapos [cambio y lavado], refrigerador [crudos abajo], limpieza y desinfección [frecuencia]\nRefrigerador: medí [ ] °C → acción [ ] → volví a medir [ ] °C\nCocción: [producto] medí [ ] °C (mínimo [63 / 68 / 74] °C) → [acción]\nEnfriamiento: [recipientes bajos / baño de hielo], refrigerado a las [hora]\nEtiqueta interna: [producto, fecha, lote, usar antes de]\nPEPS: [cómo]\nPrueba de vida útil: [producto, días, qué reviso]\nMatriz de alérgenos: [producto] → [alérgenos]\nRespuesta al cliente: «[ ]»\nPreenvasado: [sí / no] → etiqueta NOM-051: [qué verifico]"
+    ]
+   },
+   "quiz": [
+    [
+     "En un puesto de pan dulce, la misma persona cobra en efectivo y toma las piezas con la mano. ¿Qué cambio es el más adecuado?",
+     "Usar pinzas para el pan y que el dinero lo maneje otra persona o lavarse tras cobrar",
+     "Limpiarse las manos en el mandil después de cada cobro para no detener la fila",
+     "Usar el mismo guante durante todo el turno para cobrar y despachar el pan",
+     "Rociar desinfectante en las manos una vez al inicio de la mañana y seguir igual"
+    ],
+    [
+     "Isaac rocía desinfectante sobre una tabla que todavía tiene restos de pollo. ¿Qué le faltó?",
+     "Lavarla con agua y jabón y enjuagarla antes de desinfectar",
+     "Usar el doble de desinfectante",
+     "Mezclar el desinfectante con cloro para potenciar el efecto en la tabla",
+     "Secar la tabla con el trapo de uso general antes de aplicar el producto"
+    ],
+    [
+     "Ulises necesita descongelar 10 kilos de carne para la birria del domingo. ¿Qué método es correcto?",
+     "Pasarla al refrigerador con días de anticipación, tapada y abajo",
+     "Dejarla en la mesa de la cocina toda la noche del sábado, tapada con un trapo",
+     "Ponerla al sol en el patio un rato",
+     "Sumergirla en agua caliente de la llave durante varias horas antes de cocinar"
+    ],
+    [
+     "Pamela prepara empanadas rellenas de carne molida de res. ¿A qué temperatura interna mínima debe llegar el relleno según la NOM-251?",
+     "68 °C, por ser carne molida",
+     "63 °C, por ser carne de res",
+     "60 °C, la de servicio caliente",
+     "55 °C, si la carne es fresca"
+    ],
+    [
+     "Rigoberto recalienta pozole del día anterior para venderlo. ¿Cuál es el criterio correcto?",
+     "Llevarlo a 74 °C como mínimo, medido con termómetro, y mantenerlo arriba de 60 °C",
+     "Calentarlo hasta que humee y servirlo, aunque no lo mida con el termómetro",
+     "Llevarlo a 60 °C, porque esa es la temperatura mínima para mantenerlo caliente",
+     "Calentar solo las porciones que se vayan pidiendo, a la temperatura que tenga la estufa"
+    ],
+    [
+     "Esteban encontró en su refrigerador un recipiente de crema pastelera sin etiqueta. ¿Qué es lo más prudente?",
+     "Desecharla, porque no sabe cuándo se hizo, y etiquetar todo desde hoy",
+     "Olerla y probarla: si no sabe agria, todavía puede usarse en los pasteles",
+     "Usarla primero, porque con PEPS lo que está atrás siempre es lo más nuevo",
+     "Congelarla para que el frío elimine cualquier bacteria que pudiera tener"
+    ],
+    [
+     "Fernanda vende brownies con nuez, harina de trigo, huevo, mantequilla y chocolate con leche. ¿Qué alérgenos de la lista de la NOM-051 contiene?",
+     "Cereal con gluten por el trigo, huevo, leche por la mantequilla y el chocolate, y nueces",
+     "Solo nueces de árboles, porque es el único que puede causar reacción grave",
+     "Huevo y nueces de árboles; la mantequilla y el chocolate con leche no cuentan",
+     "Ninguno, porque son ingredientes comunes que casi todas las personas toleran"
+    ],
+    [
+     "Dalia vende pan dulce que el cliente escoge en vitrina y se le empaca al momento, y además quiere vender bolsas cerradas de polvorones en una tienda. ¿Qué aplica?",
+     "Las bolsas cerradas para la tienda son preenvasados y requieren etiqueta NOM-051",
+     "Ambos requieren etiqueta completa, porque todo pan que se vende debe llevarla",
+     "Ninguno la requiere, porque se trata de un negocio pequeño y artesanal",
+     "Solo el pan de vitrina la requiere, porque el cliente lo ve antes de comprar"
+    ],
+    [
+     "En una fiesta, una invitada presenta ronchas, hinchazón de labios y dificultad para respirar después de comer un postre. ¿Qué debe hacerse?",
+     "Llamar al 911 de inmediato para que reciba atención médica urgente",
+     "Darle agua con limón y esperar media hora para ver si se le pasa",
+     "Ofrecerle otro postre sin el ingrediente sospechoso para que se calme",
+     "Pedirle que se acueste un rato en otra habitación hasta que termine la fiesta"
+    ],
+    [
+     "Un cliente de Mireya le escribe que su familia tuvo vómito y diarrea después de comer uno de sus pasteles. ¿Qué es lo más responsable?",
+     "Recomendarles atención médica, apartar el lote y revisar su bitácora",
+     "Contestar que en su cocina eso no puede pasar porque siempre es muy limpia",
+     "Ofrecerles un descuento en el siguiente pedido a cambio de que no comenten nada",
+     "Esperar a ver si otros clientes se quejan antes de tomar cualquier medida"
+    ]
+   ]
+  }
+ ]
+}
