@@ -5001,7 +5001,8 @@ function tarjetaRegalo(r){
     '<p style="color:var(--gris);font-size:.92rem">Para <b>'+esc(r.para_nombre)+'</b>'+(r.para_correo?' · '+esc(r.para_correo):'')+(r.entregar_en?' · entrega '+fechaLarga(String(r.entregar_en).slice(0,10)):'')+'</p>'+
     (r.codigo ? '<p style="margin:10px 0">Código: <b>'+esc(r.codigo)+'</b></p><div style="display:flex;gap:8px;flex-wrap:wrap">'+
       '<button class="btn btn-sm" style="background:#25D366;color:#fff" onclick="whatsappRegalo(\''+r.id+'\')">Enviar por WhatsApp</button>'+
-      '<button class="btn btn-linea btn-sm" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button></div>' : '')+'</div>';
+      '<button class="btn btn-linea btn-sm" onclick="copiarRegalo(\''+r.id+'\')">Copiar mensaje</button>'+
+      (r.token && r.estado !== 'canjeado' ? '<a class="btn btn-linea btn-sm" href="../sitio-web/regalo.html?t='+encodeURIComponent(r.token)+'" target="_blank" rel="noopener">🎨 Tarjeta de regalo</a>' : '')+'</div>' : '')+'</div>';
 }
 function vistaRegalos(){
   var mios = (BD.regalos||[]).filter(function(r){ return r.comprador_id === sesion.id && r.estado !== 'pendiente_pago'; });
