@@ -12,7 +12,7 @@
 //     puede cambiarlo por otro programa antes de empezar; si cuesta más paga la diferencia y si cuesta menos le queda saldo.
 //   (pública) regalo_ver      { t }  → { regalo }      (t = liga privada que llega a quien regala; incluye código y liga de activación ya pagado)
 //   (pública) regalo_editar   { t, paraNombre, paraCorreo? | paraTel?, mensaje?, entregarEn?, reenviar? } → { ok, reenviado, regalo }
-//   (pública) regalo_cupon    { cursoId, cupon } → { precio, descuento }   (regalo_invitado también acepta «cupon»)
+//   (pública) regalo_cupon    { cursoId | (abierto: true, monto), cupon } → { precio, descuento }   (regalo_invitado también acepta «cupon»)
 //   (pública) embajador_alta  { nombre, correo, telefono?, pais?, ciudad?, como? } → { ok, token?, codigo? } (si ya existía, se le reenvía su liga)
 //   (pública) embajador_panel { t } → { embajador, ventas, totales, reglas }
 //   (pública) embajador_datos { t, titular, banco, clabe } → { ok }
@@ -242,13 +242,14 @@ async function crearRegalo(u: any, b: any) {
   if (d.paraTel && d.paraTel.length < 11) return json({ error: "Revisa el WhatsApp de quien recibe: son 10 dígitos." }, 400);
   let c: any, cup: any = {}, precio: number, valor: number;
   if (abierto) {
-    // Regalo abierto: un monto para el programa que elija quien lo recibe. Sin cupones.
+    // Regalo abierto: un monto para el programa que elija quien lo recibe. El cupón se calcula sobre ese monto.
     valor = Math.round(Number(b.monto));
     if (!(valor >= MONTO_ABIERTO.min && valor <= MONTO_ABIERTO.max))
       return json({ error: `El monto del regalo va de ${pesos(MONTO_ABIERTO.min)} a ${pesos(MONTO_ABIERTO.max)}.` }, 400);
-    if (String(b.cupon || "").trim()) return json({ error: "Los cupones aplican al regalar un programa en específico." }, 400);
+    cup = await cuponRegalo("", b.cupon, valor);
+    if (cup.error) return json({ error: cup.error }, 400);
     c = { nombre: `saldo de ${pesos(valor)} para el curso o diplomado que elija` };
-    precio = valor;
+    precio = cup.codigo ? cup.precio : valor;
   } else {
     c = (await db(`cursos?id=eq.${encodeURIComponent(cid)}&select=id,nombre,precio,publicado`))[0];
     if (!c || c.publicado === false || !(Number(c.precio) > 0) || cid.startsWith("r-")) return json({ error: "Ese programa no está disponible para regalo." }, 409);
@@ -275,7 +276,7 @@ async function crearRegalo(u: any, b: any) {
     const codigoR = codigo("REGALO");
     await db("cupones", { metodo: "POST", prefer: "return=minimal", cuerpo: cuponDeRegalo(codigoR, { para_nombre: d.paraNombre, valor }) });
     await db(`regalos?id=eq.${reg.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "pagado", codigo: codigoR } });
-    await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: u ? u.id : null, curso_id: cid, monto: 0, medio: "Cupón",
+    await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: u ? u.id : null, curso_id: cid || null, monto: 0, medio: "Cupón",
       nota: `Regalo para ${d.paraNombre} (${codigoR}) con el cupón ${cup.codigo}` } }).catch((x) => console.error("pago de regalo con cupón", x));
     const r2 = { ...reg, estado: "pagado", codigo: codigoR };
     await confirmarRegalo(r2).catch((x) => console.error("confirmar regalo", x));
@@ -294,11 +295,15 @@ async function crearRegalo(u: any, b: any) {
 // Cupón de descuento al regalar: los mismos cupones de Administración → Cupones (y los de embajador).
 // No aplican los códigos de un regalo (REGALO-…), los lugares de empresa (EMP-…) ni los pilotos.
 // Los cupones del 100 % de Administración sí (desde el 2 nov 2026): el regalo sale sin cobro.
-async function cuponRegalo(cid: string, codigo: unknown): Promise<{ codigo?: string; precio?: number; descuento?: number; original?: number; gratis?: boolean; error?: string }> {
+// Regalo abierto (sin curso): el cupón se calcula sobre el monto con aplicar_cupon_monto, que ya descarta
+// los cupones de un programa en específico, EMP-, pilotos y regalos; con cupón del 100 % el monto tiene tope.
+async function cuponRegalo(cid: string, codigo: unknown, monto?: number): Promise<{ codigo?: string; precio?: number; descuento?: number; original?: number; gratis?: boolean; error?: string }> {
   const cod = String(codigo || "").trim().toUpperCase();
   if (!cod) return {};
-  if (cod.startsWith("REGALO-")) return { error: "Ese código es de un regalo que alguien recibió; no sirve para comprar otro." };
-  const r = ((await db("rpc/aplicar_cupon", { metodo: "POST", cuerpo: { p_codigo: cod, p_curso_id: cid } })) || [])[0];
+  if (cod.startsWith("REGALO-") || cod.startsWith("SALDO-")) return { error: "Ese código es de un regalo que alguien recibió; no sirve para comprar otro." };
+  const r = !cid
+    ? ((await db("rpc/aplicar_cupon_monto", { metodo: "POST", cuerpo: { p_codigo: cod, p_monto: Number(monto) || 0 } })) || [])[0]
+    : ((await db("rpc/aplicar_cupon", { metodo: "POST", cuerpo: { p_codigo: cod, p_curso_id: cid } })) || [])[0];
   if (!r || !r.valido) return { error: (r && r.motivo) || "Ese cupón no existe o ya no está activo." };
   if (cod.startsWith("EMP-")) return { error: "Ese código es un lugar de empresa; no sirve para regalar." };
   const gratis = !(Number(r.precio_final) > 0);
@@ -320,9 +325,12 @@ async function usarCuponRegalo(cod: string) {
   return false;
 }
 async function previaCuponRegalo(b: any) {
-  const cid = String(b.cursoId || "");
-  if (!cid) return json({ error: "Elige primero el programa que quieres regalar." }, 400);
-  const r = await cuponRegalo(cid, b.cupon);
+  const abierto = b.abierto === true || b.abierto === "true";
+  const cid = abierto ? "" : String(b.cursoId || "");
+  const monto = Math.round(Number(b.monto));
+  if (abierto && !(monto >= MONTO_ABIERTO.min && monto <= MONTO_ABIERTO.max)) return json({ error: "Elige primero el monto del regalo." }, 400);
+  if (!abierto && !cid) return json({ error: "Elige primero el programa que quieres regalar." }, 400);
+  const r = await cuponRegalo(cid, b.cupon, monto);
   if (r.error) return json({ error: r.error }, 400);
   if (!r.codigo) return json({ error: "Escribe tu cupón." }, 400);
   return json({ ok: true, cupon: r.codigo, original: r.original, descuento: r.descuento, precio: r.precio, gratis: !!r.gratis });
@@ -349,7 +357,10 @@ async function entregarRegalo(r: any) {
 async function confirmarRegalo(r: any) {
   if (r.confirmado_en) return;
   if (r.cupon && Number(r.monto) > 0) {
-    await db("rpc/canjear_cupon", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_curso_id: r.curso_id, p_usuario: r.comprador_id || null } })
+    // Con programa: canjear_cupon (precio > 0, no inscribe). Abierto: canjear_cupon_monto sobre el valor del regalo.
+    await (r.curso_id
+      ? db("rpc/canjear_cupon", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_curso_id: r.curso_id, p_usuario: r.comprador_id || null } })
+      : db("rpc/canjear_cupon_monto", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_monto: valorRegalo(r), p_usuario: r.comprador_id || null } }))
       .catch((x) => console.error("cupón de regalo", x));
   }
   if (!r.de_correo) { await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } }); return; }
