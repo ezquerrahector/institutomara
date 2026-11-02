@@ -46,7 +46,7 @@ valiendo la `familia` de la tabla de arriba.
 
 | # | id | pref | Programa (nombre sugerido) | Precio | Área nueva | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Listo en rama (2026-11-02) |
+| 16 | d-cocina-negocio | coc | Diplomado en Cocina y Repostería para Emprender: costeo, recetas estándar y venta | 1690 | Cocina y gastronomía | Restaurante; Cafetería; Panadería / repostería | Publicado (2026-11-02) |
 | 17 | d-manejo-alimentos | mha | Diplomado en Inocuidad y Manejo Higiénico de Alimentos (NOM-251 y Distintivo H) | 1890 | Cocina y gastronomía | Restaurante; Hotelería; Comedor industrial / catering; Hospital / clínica privada | Pendiente |
 | 18 | d-contenido-video | vid | Diplomado en Creación de Contenido y Edición de Video con el Celular | 1690 | Creatividad y contenido | Agencia de marketing digital | Pendiente |
 | 19 | d-nutricion | nut | Diplomado en Nutrición y Alimentación Saludable | 1690 | Salud y nutrición | Gimnasio / centro deportivo; Hospital / clínica privada; Comedor industrial / catering | Pendiente |
