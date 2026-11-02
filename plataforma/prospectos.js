@@ -150,7 +150,7 @@ function vistaAdminProspectos(){
   }, 0);
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Prospectos</h2>'+
     '<p class="sub" style="margin:0">Empresas a las que ofrecemos capacitación: datos, contactos y seguimiento.</p></div>'+
-    '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-linea" onclick="prTextosGiro()">Textos por giro</button>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-mor" onclick="cpAbrir()">📣 Campañas</button><button class="btn btn-linea" onclick="prTextosGiro()">Textos por giro</button>'+
     '<button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
 /* Filtros combinables: un renglón por canal; se suman entre sí (Y). */
