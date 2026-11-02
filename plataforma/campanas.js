@@ -5,6 +5,7 @@
 var CP = { lista:null, sel:null };
 function cpAbrir(){
   abrirModal('Campañas por correo', '<div id="cp-caja">Cargando…</div>', '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
+  var md = document.querySelector('#mFondo .modal'); if(md) md.style.maxWidth = '1080px';
   cpCargar();
 }
 function cpCargar(){
@@ -29,11 +30,38 @@ function cpPintarLista(){
 function cpEditar(id){
   var x = id ? CP.lista.filter(function(c){ return c.id === id; })[0] : { nombre:'', asunto:'', texto:'', segmento:'' };
   var giros = (PR.giros || []).map(function(g){ return '<option value="'+esc(g.segmento)+'"'+(x.segmento === g.segmento ? ' selected' : '')+'>'+esc(g.segmento)+'</option>'; }).join('');
-  $('cp-caja').innerHTML = '<label>Nombre interno<input id="cp-n" value="'+esc(x.nombre)+'" maxlength="120"></label>'+
-    '<label>Asunto <small>(usa {empresa} para personalizar)</small><input id="cp-a" value="'+esc(x.asunto)+'" maxlength="200"></label>'+
-    '<label>Giro <small>(opcional)</small><select id="cp-s"><option value="">Todos los giros</option>'+giros+'</select></label>'+
-    '<label>Mensaje <small>({empresa} se reemplaza; la firma y el enlace de baja se agregan solos)</small><textarea id="cp-t" rows="14">'+esc(x.texto)+'</textarea></label>'+
-    '<div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-fantasma btn-sm" onclick="cpPintarLista()">← Volver</button><button class="btn btn-mor btn-sm" id="cp-g" onclick="cpGuardar(\''+(id||'')+'\')">Guardar</button></div><div id="cp-aviso"></div>';
+  var paso = function(n, t, d){ return '<div style="display:flex;gap:10px;align-items:baseline;margin:4px 0 10px"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:var(--morado);color:#fff;font-weight:700;font-size:.8rem;display:inline-flex;align-items:center;justify-content:center">'+n+'</span><div><b>'+t+'</b>'+(d ? '<div class="ayuda" style="font-size:.8rem;color:var(--gris)">'+d+'</div>' : '')+'</div></div>'; };
+  var btnEmp = function(campo){ return '<button type="button" class="btn btn-linea btn-sm" style="margin-top:6px" onclick="cpInsertar(\''+campo+'\')">+ Insertar nombre de la empresa</button>'; };
+  $('cp-caja').innerHTML = '<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px" class="cp-editor">'+
+    '<div>'+
+      paso(1, '¿A quién va?', 'Se omite automáticamente a quien pidió baja, a quien no le interesó y a quien no tiene correo.')+
+      '<div class="fila"><div class="campo"><label for="cp-n">Nombre de la campaña</label><input id="cp-n" value="'+esc(x.nombre)+'" maxlength="120" placeholder="Ej. Navidad 2026"><div class="ayuda">Solo lo ves tú.</div></div>'+
+      '<div class="campo"><label for="cp-s">Giro</label><select id="cp-s"><option value="">Todos los giros</option>'+giros+'</select><div class="ayuda">Opcional: limita a un giro.</div></div></div>'+
+      paso(2, 'Asunto del correo', 'Lo primero que leen en su bandeja. Corto y claro.')+
+      '<div class="campo"><input id="cp-a" value="'+esc(x.asunto)+'" maxlength="200" placeholder="Ej. {empresa}: regala un diplomado a tu equipo" oninput="cpVista()">'+btnEmp('cp-a')+'</div>'+
+      paso(3, 'Mensaje', 'Escribe solo el cuerpo. La firma y el enlace para darse de baja se agregan solos.')+
+      '<div class="campo"><textarea id="cp-t" rows="12" placeholder="Hola, equipo de {empresa}:\n\nEste fin de año…" oninput="cpVista()">'+esc(x.texto)+'</textarea>'+btnEmp('cp-t')+'</div>'+
+    '</div>'+
+    '<div><div style="position:sticky;top:0">'+paso('👁', 'Así lo verá la empresa', 'Vista previa con «Empresa de ejemplo».')+
+      '<div style="border:1px solid var(--linea);border-radius:14px;overflow:hidden;background:#fff"><div style="padding:10px 14px;background:#F8F7FC;border-bottom:1px solid var(--linea);font-size:.85rem"><div style="color:var(--gris)">De: Héctor Ezquerra · Instituto Mara</div><div><b id="cp-va"></b></div></div>'+
+      '<div id="cp-vt" style="padding:14px;font-size:.88rem;line-height:1.55;white-space:pre-wrap;max-height:420px;overflow:auto"></div></div></div></div>'+
+  '</div>'+
+  '<div style="display:flex;gap:8px;margin-top:14px;justify-content:flex-end;border-top:1px solid var(--linea);padding-top:12px"><button class="btn btn-fantasma btn-sm" onclick="cpPintarLista()">← Volver</button><button class="btn btn-mor btn-sm" id="cp-g" onclick="cpGuardar(\''+(id||'')+'\')">Guardar campaña</button></div>'+
+  '<div class="ayuda" style="text-align:right;font-size:.8rem;color:var(--gris);margin-top:6px">Guardar no envía nada: después podrás mandarte una prueba y luego enviarla a todos.</div><div id="cp-aviso"></div>';
+  if(!document.getElementById('cp-css')){ var st = document.createElement('style'); st.id = 'cp-css'; st.textContent = '@media(max-width:820px){.cp-editor{grid-template-columns:1fr!important}.cp-editor .fila{grid-template-columns:1fr}}'; document.head.appendChild(st); }
+  cpVista();
+}
+function cpInsertar(campo){
+  var el = $(campo), i = el.selectionStart == null ? el.value.length : el.selectionStart, f = el.selectionEnd == null ? i : el.selectionEnd;
+  el.value = el.value.slice(0, i) + '{empresa}' + el.value.slice(f); el.focus(); el.selectionStart = el.selectionEnd = i + 9; cpVista();
+}
+function cpVista(){
+  if(!$('cp-va')) return;
+  var r = function(t){ return String(t || '').replace(/\{empresa\}/g, 'Empresa de ejemplo').replace(/\*/g, ''); };
+  $('cp-va').textContent = r($('cp-a').value) || '(sin asunto)';
+  $('cp-vt').innerHTML = (esc(r($('cp-t').value)) || '<span style="color:var(--gris)">Aquí aparecerá tu mensaje…</span>') +
+    '<div style="margin-top:14px">Saludos cordiales,<br><br><b>Héctor Ezquerra</b><br>Director Académico | Instituto Mara<br>institutomara.com · WhatsApp 81 2028 2120</div>'+
+    '<div style="margin-top:12px;font-size:.75rem;color:var(--gris)">Si prefieren no recibir más información, respondan «baja» o usen este enlace…</div>';
 }
 function cpGuardar(id){
   var cuerpo = { nombre:$('cp-n').value.trim(), asunto:$('cp-a').value.trim(), texto:$('cp-t').value.trim(), segmento:$('cp-s').value || null };
