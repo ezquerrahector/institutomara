@@ -26,15 +26,15 @@ a{color:var(--morado);font-weight:700}
 <script>
 (function(){
   var SUPA = 'https://xvihjhfvwjgpesxpdtnl.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2aWhqaGZ2d2pncGVzeHBkdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2OTgyMTYsImV4cCI6MjEwNTI3NDIxNn0.NfEKKq0lStlH43B0AqdFc3CDsHOuCWWlORoqNevRMG0';
-  var t = new URLSearchParams(location.search).get('t') || '';
+  var q = new URLSearchParams(location.search), t = q.get('t') || '', a = q.get('a') || '';   /* a = baja de promociones (campañas a alumnos) */
   function mostrar(ok){
-    document.getElementById('titulo').textContent = ok ? 'Listo, ya no te enviaremos estos correos.' : 'No encontramos tu registro.';
+    document.getElementById('titulo').textContent = ok ? (a ? 'Listo, ya no te enviaremos promociones.' : 'Listo, ya no te enviaremos estos correos.') : 'No encontramos tu registro.';
     document.getElementById('texto').textContent = ok
-      ? 'Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.'
+      ? (a ? 'Los correos de tu cuenta (accesos, recibos y constancias) te seguirán llegando. Si cambias de opinión, escríbenos a contacto@institutomara.com.' : 'Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.')
       : 'Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.';
   }
-  if(!t) return mostrar(false);
-  fetch(SUPA + '/functions/v1/kit', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body: JSON.stringify({ accion:'baja', t:t }) })
+  if(!t && !a) return mostrar(false);
+  fetch(SUPA + '/functions/v1/kit', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body: JSON.stringify(a ? { accion:'baja_alumno', t:a } : { accion:'baja', t:t }) })
     .then(function(r){ return r.json(); }).then(function(d){ mostrar(!!d.ok); }).catch(function(){ mostrar(false); });
 })();
 </script>

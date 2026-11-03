@@ -267,6 +267,18 @@ async function secuencia() {
   return json({ enviados, terminados });
 }
 
+async function bajaAlumno(tk: unknown) {
+  const t = String(tk || "").toLowerCase().replace(/[^a-f0-9-]/g, "");
+  if (!/^[0-9a-f-]{36}$/.test(t)) return false;
+  const r = await db(`alumnos_prospectos?token=eq.${t}&select=id,correo,sin_promociones`);
+  if (!r[0]) return false;
+  if (!r[0].sin_promociones) {
+    await db(`alumnos_prospectos?id=eq.${r[0].id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { sin_promociones: true } });
+    await db("alumnos_contactos", { metodo: "POST", prefer: "return=minimal", cuerpo: { persona_id: r[0].id, canal: "correo", sentido: "entrante", resumen: "Pidió no recibir promociones (enlace de baja de campaña).", resultado: "baja" } }).catch(() => null);
+    if (r[0].correo) await db(`kit_registros?correo=eq.${encodeURIComponent(r[0].correo)}&baja=eq.false`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { baja: true, baja_en: new Date().toISOString(), siguiente_en: null } }).catch(() => null);
+  }
+  return true;
+}
 function paginaBaja(ok: boolean, promos = false) {
   const t = ok ? (promos ? "Listo, ya no te enviaremos promociones." : "Listo, ya no te enviaremos estos correos.") : "No encontramos tu registro.";
   const s = ok ? (promos ? "Los correos de tu cuenta (accesos, recibos y constancias) te seguirán llegando. Si cambias de opinión, escríbenos a contacto@institutomara.com." : "Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.") : "Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.";
@@ -281,18 +293,7 @@ serve(async (req) => {
   try {
     const u = new URL(req.url);
     // Baja de promociones de Prospectos → Alumnos (enlace de las campañas a alumnos, 2 nov 2026).
-    if (u.searchParams.get("baja_alumno")) {
-      const t = (u.searchParams.get("baja_alumno") || "").replace(/[^a-f0-9-]/g, "");
-      if (!/^[0-9a-f-]{36}$/.test(t)) return paginaBaja(false, true);
-      const r = await db(`alumnos_prospectos?token=eq.${t}&select=id,correo,sin_promociones`);
-      if (!r[0]) return paginaBaja(false, true);
-      if (!r[0].sin_promociones) {
-        await db(`alumnos_prospectos?id=eq.${r[0].id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { sin_promociones: true } });
-        await db("alumnos_contactos", { metodo: "POST", prefer: "return=minimal", cuerpo: { persona_id: r[0].id, canal: "correo", sentido: "entrante", resumen: "Pidió no recibir promociones (enlace de baja de campaña).", resultado: "baja" } }).catch(() => null);
-        if (r[0].correo) await db(`kit_registros?correo=eq.${encodeURIComponent(r[0].correo)}&baja=eq.false`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { baja: true, baja_en: new Date().toISOString(), siguiente_en: null } }).catch(() => null);
-      }
-      return paginaBaja(true, true);
-    }
+    if (u.searchParams.get("baja_alumno")) return paginaBaja(await bajaAlumno(u.searchParams.get("baja_alumno")), true);
     if (req.method === "GET" || u.searchParams.get("baja")) {
       const t = (u.searchParams.get("baja") || "").replace(/[^a-f0-9]/g, "");
       if (!t) return paginaBaja(false);
@@ -301,6 +302,7 @@ serve(async (req) => {
     }
     const b = await req.json().catch(() => ({}));
     if (b.accion === "registro") return await registro(b);
+    if (b.accion === "baja_alumno") return json({ ok: await bajaAlumno(b.t) });   // la usa sitio-web/baja-kit.html?a=…
     if (b.accion === "baja") {
       const t = String(b.t || "").replace(/[^a-f0-9]/g, "");
       if (!t) return json({ ok: false });

@@ -9,7 +9,7 @@
 // Desde el 2 nov 2026 una campaña tiene «publico»: 'empresas' (prospectos) o 'alumnos' (Prospectos → Alumnos:
 // cuentas del aula, kit clínico, CSV…). En alumnos, «filtro» limita a: kit, sin_cuenta, sin_compra, alumno,
 // egresado o membresia. Se omite a quien no quiere promociones o marcaste «No le interesó». Admite {nombre}.
-// La baja de alumnos es la función «kit» (?baja_alumno=<token>), pública.
+// La baja de alumnos es la página sitio-web/baja-kit.html?a=<token> (acción «baja_alumno» de la función «kit»).
 // Usa los mismos secretos que «prospectos»: BREVO_API_KEY, CORREO_REMITENTE, NOMBRE_REMITENTE.
 // El enlace de baja es el de la función «prospectos» (?baja=<token>), así la baja queda en el mismo lugar.
 import { serve } from "https://deno.land/std@0.192.0/http/server.ts";
@@ -71,7 +71,7 @@ function mensajeAlumno(c: any, p: any) {
   const n = pila(p);
   const pon = (t: string) => String(t).replace(/\{nombre\}/g, n || "").replace(/\s+([,:;.!?])/g, "$1").replace(/\*/g, "");
   const texto = pon(c.texto) + `\n\n${FIRMA_AL}` +
-    `\n\nSi ya no quieres recibir promociones de Instituto Mara, usa este enlace: ${URL_SB}/functions/v1/kit?baja_alumno=${p.token}`;
+    `\n\nSi ya no quieres recibir promociones de Instituto Mara, usa este enlace: https://institutomara.com/sitio-web/baja-kit.html?a=${p.token}`;
   return { asunto: pon(c.asunto), texto, html: aHtml(texto) };
 }
 async function listaAlumnos(): Promise<any[]> {
