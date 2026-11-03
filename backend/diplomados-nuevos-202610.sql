@@ -64,9 +64,6 @@ update prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array['d-c
 -- d-datos-ia: recomendado a Despacho contable / fiscal, Industria / manufactura, Coworking / oficinas ejecutivas, Agencia de marketing digital.
 update prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array['d-datos-ia'] || coalesce(cursos_ids[3:], '{}')
  where segmento in ('Despacho contable / fiscal', 'Industria / manufactura', 'Coworking / oficinas ejecutivas', 'Agencia de marketing digital') and not ('d-datos-ia' = any(coalesce(cursos_ids, '{}')));
--- d-emprender-cero: recomendado a .
-update prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array['d-emprender-cero'] || coalesce(cursos_ids[3:], '{}')
- where segmento in () and not ('d-emprender-cero' = any(coalesce(cursos_ids, '{}')));
 -- d-manejo-alimentos: recomendado a Restaurante, Hotelería, Comedor industrial / catering, Hospital / clínica privada.
 update prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array['d-manejo-alimentos'] || coalesce(cursos_ids[3:], '{}')
  where segmento in ('Restaurante', 'Hotelería', 'Comedor industrial / catering', 'Hospital / clínica privada') and not ('d-manejo-alimentos' = any(coalesce(cursos_ids, '{}')));
