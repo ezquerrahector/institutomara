@@ -120,7 +120,7 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 | 45 | d-artesanias | art | Artesanías y Productos Hechos a Mano: diseño, precio, ferias, venta en línea y exportación | Medio | Bajo | — | Pendiente |
 | 46 | d-negocio-mascotas | nmc | Negocio de Mascotas: tienda, guardería, paseo y venta por suscripción | Medio-alto | Medio (d-perros) | Veterinaria; Estética canina | Pendiente |
 | 47 | d-taller-automotriz | tal | Taller Mecánico y Autolavado: administración, cotización, garantía y servicio al cliente | Medio | Bajo | Concesionaria automotriz | Pendiente |
-| 48 | d-composta-humus | cmp | Composta, Humus de Lombriz y Abonos Orgánicos: producción, calidad y negocio | Medio-alto | Bajo (distinto de #41 Huertos) | Restaurante; Comedor industrial / catering; Hotelería | Listo en rama (2026-11-03) |
+| 48 | d-composta-humus | cmp | Composta, Humus de Lombriz y Abonos Orgánicos: producción, calidad y negocio | Medio-alto | Bajo (distinto de #41 Huertos) | Restaurante; Comedor industrial / catering; Hotelería | Publicado (2026-11-03) |
 
 ### Cuidados de la tanda 3
 - Nada de promesas de ingresos («gana X al mes») ni esquemas piramidales, dropshipping engañoso o reventa de marcas sin autorización.
