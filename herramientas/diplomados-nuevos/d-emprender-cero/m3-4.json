@@ -1,0 +1,782 @@
+{
+ "modulos": [
+  {
+   "t": "Validar con experimentos baratos",
+   "r": "Aprende a probar tu idea gastando lo menos posible antes de invertir en serio: diseña un producto mínimo viable, elige el experimento adecuado, fija criterios de éxito antes de empezar y decide con evidencia si sigues, ajustas o sueltas.",
+   "lecciones": [
+    {
+     "t": "El producto mínimo viable: qué es y qué no es",
+     "obj": "Diseñar el producto mínimo viable de tu idea como un experimento para aprender, sin confundirlo con un producto mal hecho ni con una versión chiquita de todo el negocio.",
+     "texto": [
+      "Eric Ries popularizó el ciclo <b>construir-medir-aprender</b>: en lugar de pasar meses preparando el negocio perfecto, construyes lo mínimo que te permite poner a prueba tu supuesto más riesgoso, mides cómo responden clientes reales y decides qué hacer después. A ese mínimo se le llama <b>producto mínimo viable</b>, un término que Ries difundió. Lo que importa no es el producto en sí, sino lo que aprendes con él: es la versión más pequeña de tu oferta con la que consigues evidencia. Su meta todavía no es ganar dinero.",
+      "Conviene aclarar lo que no es. No es un producto mal hecho: lo que entregues debe resolver el problema con calidad aceptable, porque si falla no sabrás si el cliente rechazó la idea o tu ejecución. No es todo el negocio en pequeño: un local chico sigue siendo un local con renta, depósito y contrato. Tampoco es un prototipo que solo ves tú; si nadie de fuera lo usa o lo paga, no hay nada que medir. En vez de rentar local para una estética de uñas, atiende a domicilio a diez clientas con un estuche; en vez de mandar a hacer 500 piezas de un accesorio, fabrica 15 a mano y ofrécelas con un catálogo de fotos; en vez de programar una aplicación de clases, da tres clases por videollamada y cóbralas.",
+      "Hay evidencia de que pensar así ayuda. Camuffo, Cordova, Gambardella y Spina (2020) hicieron un experimento aleatorizado con 116 empresas emergentes italianas: a una parte le enseñaron a tratar sus ideas como hipótesis y a probarlas con datos. Esas empresas cambiaron de rumbo más veces, abandonaron antes las ideas que no funcionaban y tuvieron mayores ingresos promedio. El matiz: eran empresas en un programa de formación, no negocios de colonia; aun así, la lógica sirve igual para un taller o un servicio a domicilio, porque probar barato evita apostar en grande a un supuesto falso.",
+      "Para diseñar el tuyo, parte del supuesto más riesgoso que escribiste en el módulo 1 y pregúntate: ¿cuál es la forma más barata y rápida de que una persona real demuestre con una acción —pagar, apartar, darme su tiempo— que esto le importa? Ponle dos límites: dinero, dentro de tu pérdida asumible, y tiempo, de dos a cuatro semanas. Si tu prueba cuesta más de lo que podrías perder sin afectar a tu familia, no es mínima: es una apuesta disfrazada."
+     ],
+     "comparar": [
+      "«Así no: Primero monto el taller completo, la página y las fotos profesionales; cuando todo esté listo, salgo a vender.»",
+      "«Así sí: Esta semana hago dos piezas, se las ofrezco a 20 personas del perfil que elegí y cuento cuántas dejan anticipo.»"
+     ],
+     "caso": "Caso ficticio: Fernando, de 34 años, es carpintero en Aguascalientes y hace muebles por encargo. Quiere lanzar una línea de muebles plegables para departamentos pequeños. Un conocido le ofrece una máquina de corte por control numérico usada en $95,000, y Fernando piensa además pagar una tienda en línea y fotos profesionales de 12 modelos. Tiene $120,000 ahorrados y todavía no ha vendido ni un mueble plegable. Su esposa le pide que no arriesgue el ahorro completo; él teme que, si no compra ya, alguien más se quede con la máquina.",
+     "p": [
+      [
+       "¿Cuál sería un producto mínimo viable sensato para Fernando?",
+       "Fabricar a mano dos modelos, fotografiarlos él mismo y ofrecerlos con anticipo a quienes viven en departamentos",
+       "Comprar la máquina usada, porque sin ella no podrá producir al volumen que piensa vender en línea",
+       "Hacer una encuesta en línea a sus contactos sobre si comprarían muebles plegables y a qué precio",
+       "Dos piezas hechas a mano y ofrecidas con anticipo prueban el supuesto clave, que alguien pague, por muy poco dinero. La máquina resuelve un problema de volumen que aún no existe. La encuesta solo recoge opiniones e hipótesis: decir «sí compraría» no cuesta nada."
+      ],
+      [
+       "Fernando objeta: «Hechos a mano me salen más caros; el precio de la prueba no sería el real». ¿Qué le conviene?",
+       "Ofrecerlos al precio que tendrían con la máquina y aceptar menos margen en la prueba",
+       "Cobrar el precio artesanal alto y, si casi nadie compra, concluir que no hay mercado",
+       "Regalar los primeros muebles, porque en esta etapa lo único que importa es juntar opiniones de usuarios",
+       "Lo que quiere saber es si pagan el precio que cobraría a escala; ganar menos en dos piezas es el costo de aprender. Con el precio artesanal, un mal resultado no distinguiría entre «no quieren plegables» y «no pagan tanto», y regalar no prueba disposición a pagar."
+      ],
+      [
+       "¿Qué límites debería ponerle Fernando a su prueba?",
+       "Un monto que pueda perder sin afectar a su familia y un plazo de dos a cuatro semanas",
+       "Todo su ahorro, porque invertir con convicción es lo que distingue a quienes emprenden en serio",
+       "Ninguno: debe seguir probando hasta que la idea funcione",
+       "La pérdida asumible protege a la familia y el plazo obliga a decidir con datos. Arriesgar todo el ahorro no es convicción, es exposición innecesaria, y probar sin límite convierte el experimento en un gasto sin fin."
+      ]
+     ],
+     "completar": [
+      "La versión más pequeña de tu oferta con la que consigues evidencia de clientes reales se llama producto mínimo ___.",
+      "viable"
+     ],
+     "refl": "Toma la idea que quieres emprender o el negocio que ya tienes y quieres ampliar. 1) Escribe tu supuesto más riesgoso en una sola frase. 2) Describe tres formas de producto mínimo viable para probarlo, de la más barata a la más cara, con costo estimado y días que tomaría. 3) Elige una y explica qué acción concreta de un cliente contará como evidencia: pago, anticipo, cita agendada o recompra. 4) Escribe tu límite de dinero y de tiempo y compáralo con la pérdida asumible que calculaste en el módulo 1. 5) Anota qué NO vas a construir todavía.",
+     "modelo": "Modelo: «Supuesto: las familias de mi zona pagarían $1,200 al mes por apoyo con tareas de primaria tres tardes por semana. Opciones: 1) mensaje en el grupo escolar con lista de espera, $0, tres días; 2) dos semanas de prueba con cuatro niños en mi comedor, $300 de material, 14 días; 3) rentar un salón, $4,000, un mes. Elijo la 2. Evidencia: que al menos dos familias paguen el mes completo al terminar la prueba. Límite: $500 y tres semanas; mi pérdida asumible es $6,000. No construyo todavía: salón, página ni logotipo.» Es buena porque compara opciones por costo, define una acción que cuesta dinero y respeta un límite claro.",
+     "plantilla": [
+      "Ficha de producto mínimo viable",
+      "Idea: [ ]\nSupuesto más riesgoso: [ ]\nProducto mínimo viable: [qué entrego, a quién, cuántas unidades]\nAcción que cuenta como evidencia: [pago / anticipo / cita / recompra]\nCosto máximo: $[ ]   Plazo: [fecha de inicio – fecha de fin]\nPérdida asumible (módulo 1): $[ ]\nLo que NO voy a construir todavía: [ ]"
+     ],
+     "clave": [
+      "El producto mínimo viable sirve para aprender: es la oferta más pequeña que pone a prueba tu supuesto más riesgoso con clientes reales.",
+      "Mínimo no significa mal hecho: lo que entregas debe resolver el problema, o no sabrás qué falló.",
+      "Ponle límite de dinero y de tiempo; si cuesta más de tu pérdida asumible, ya no es una prueba."
+     ]
+    },
+    {
+     "t": "Tipos de experimento: preventa, piloto, servicio manual, catálogo y anuncio vecinal",
+     "obj": "Elegir el experimento barato que mejor responde la duda principal de tu idea y ejecutarlo con honestidad hacia el cliente.",
+     "texto": [
+      "No hay un experimento universal: cada tipo contesta una pregunta distinta. La <b>preventa</b> responde «¿pagarán antes de que exista?»: ofreces el producto con fecha de entrega y cobras el total o un anticipo. Es la evidencia más fuerte porque hay dinero de por medio, pero exige honestidad: fecha realista, condiciones claras y devolución si no cumples. La Ley Federal de Protección al Consumidor pide publicidad veraz, comprobable y clara (art. 32) y anunciar el precio total con impuestos y comisiones (art. 7 Bis). Una preventa con fotos de algo que no puedes fabricar no es experimento: es engaño.",
+      "La <b>prueba piloto</b> responde «¿funciona en la vida real y vuelven?»: atiendes a pocos clientes durante un periodo corto, por ejemplo cuatro semanas de comida para una oficina de diez personas, y observas entregas, quejas y recompra. El <b>servicio manual</b>, que en la literatura de emprendimiento se conoce como experimento «conserje», consiste en hacer a mano lo que algún día automatizarías: en vez de una plataforma que conecte jardineros con clientes, tú recibes los pedidos por WhatsApp, buscas al jardinero y das seguimiento. Así ves de cerca qué valora la gente antes de gastar en sistemas.",
+      "El <b>catálogo o página de prueba</b> responde «¿les interesa lo suficiente para dar un paso?»: publicas fotos, precios y una forma de apartar, y cuentas cuántas personas lo hacen. Si el producto aún no existe, dilo con claridad, por ejemplo «apartado para la primera tanda, entrega en tres semanas», y no cobres lo que no puedas entregar; si pides nombre y teléfono, necesitas un aviso de privacidad sencillo. El <b>anuncio en un grupo vecinal</b> o escolar es lo más barato para servicios locales: un mensaje concreto con precio, zona y forma de agendar te da en uno o dos días una primera señal de demanda.",
+      "Para elegir, ordena las señales por fuerza. De la más débil a la más fuerte: comentarios, mensajes que piden información, datos de contacto, citas agendadas, apartados con anticipo y pagos completos; la recompra está por encima de todas. Empieza por lo barato si tu duda es «¿a alguien le interesa?»; pasa a preventa o piloto si la duda es «¿pagarán este precio?» o «¿puedo entregar bien?». También puedes encadenarlos: un anuncio vecinal para encontrar interesados y, con ellos, una preventa."
+     ],
+     "comparar": [
+      "«Así no: Voy a preguntar en mi estado de WhatsApp quién usaría mi servicio y con lo que me digan decido.»",
+      "«Así sí: Publico precio, zona y horarios en dos grupos vecinales y cuento cuántas personas agendan una cita esta semana.»"
+     ],
+     "caso": "Caso ficticio: Norma, de 39 años, es electricista en Tuxtla Gutiérrez con 12 años de experiencia en instalaciones residenciales. Quiere ofrecer a fondas, cocinas económicas y pequeños comercios un plan de revisión eléctrica preventiva de $600 al mes, con una visita mensual y atención prioritaria en emergencias. Su sobrino le propone programar una aplicación para agendar visitas por $40,000 antes de empezar. Norma no sabe si alguien pagaría una cuota mensual por algo que hoy solo se resuelve cuando ya hay una falla.",
+     "p": [
+      [
+       "¿Qué experimento le conviene a Norma primero?",
+       "Ofrecer el plan a 15 comercios cercanos, cobrar el primer mes y llevar todo a mano con agenda y WhatsApp",
+       "Pagar la aplicación, para que los comercios la vean profesional y se animen a contratar el plan mensual",
+       "Publicar en el grupo de la colonia una encuesta sobre si les preocupa la seguridad eléctrica de su local",
+       "Un servicio manual con cobro del primer mes prueba lo que más duda: si pagan una cuota por prevenir. La aplicación automatiza algo que aún no ha demostrado demanda, y la encuesta solo mide preocupación declarada, no disposición a pagar."
+      ],
+      [
+       "Después de tres semanas, 4 de 15 comercios pagaron el primer mes. ¿Qué responde mejor una prueba piloto de dos meses?",
+       "Si renuevan el segundo mes y cuánto tiempo le toma cada visita",
+       "Si les gusta tener una electricista de confianza cerca",
+       "Cuántas personas del grupo vecinal reaccionan a sus publicaciones sobre prevención de incendios",
+       "El piloto sirve para ver si el servicio funciona en la vida real: renovación y tiempo real de trabajo. Que les guste es opinión, y las reacciones en redes son señales débiles que no dicen nada sobre la cuota mensual."
+      ],
+      [
+       "Una amiga le sugiere poner en su catálogo fotos de un tablero industrial que Norma no instaló, «para dar imagen». ¿Qué hace?",
+       "Usar solo fotos de trabajos propios, aunque sean sencillos, y describir con claridad qué incluye el plan",
+       "Usarlas con una nota pequeña, porque en publicidad es común mostrar trabajos ilustrativos de otras personas",
+       "Usarlas solo durante la prueba y cambiarlas cuando tenga trabajos propios que se vean igual de bien",
+       "La publicidad debe ser veraz y comprobable; mostrar trabajos ajenos como propios engaña al cliente y contamina el experimento, porque medirías la reacción a algo que no ofreces. La nota pequeña y el uso temporal no quitan el engaño."
+      ]
+     ],
+     "completar": [
+      "Hacer a mano lo que algún día automatizarías, para ver de cerca lo que valora el cliente, es un experimento de servicio ___.",
+      "manual"
+     ],
+     "relacionar": [
+      [
+       "Preventa",
+       "¿Pagarán antes de que el producto exista?"
+      ],
+      [
+       "Prueba piloto",
+       "¿Funciona en la vida real y vuelven a comprar?"
+      ],
+      [
+       "Servicio manual",
+       "¿Qué valora el cliente antes de automatizar?"
+      ],
+      [
+       "Catálogo de prueba",
+       "¿Dan un paso concreto al ver la oferta?"
+      ],
+      [
+       "Anuncio vecinal",
+       "¿Hay demanda local en un par de días?"
+      ]
+     ],
+     "refl": "1) Escribe la pregunta principal que necesitas responder sobre tu idea: ¿interesa?, ¿pagan este precio?, ¿puedo entregar bien?, ¿vuelven? 2) Diseña dos experimentos de la lista que la respondan: qué haces, a cuántas personas llegas, cuánto cuesta y cuántos días dura. 3) Ordénalos por fuerza de evidencia y explica por qué. 4) Escribe el mensaje exacto que usarías (anuncio, catálogo o preventa) con precio total, fecha de entrega y condiciones honestas, incluido qué pasa si no puedes cumplir.",
+     "modelo": "Modelo: «Pregunta: ¿los despachos pequeños de mi ciudad pagarían $2,500 al mes por que les lleve agenda, correos y recordatorios 10 horas a la semana? Experimento 1: servicio manual con dos despachos conocidos un mes, cobrado a precio completo. Experimento 2: mensaje directo a 25 despachos con una semana de prueba pagada de $700. El más fuerte es el 1, porque pagan un mes entero y veo si renuevan. Mensaje: “Llevo la agenda y los correos de tu despacho 10 horas a la semana por $2,500 al mes, precio total. Si en la primera semana no te sirve, te devuelvo la parte proporcional.”» Es bueno porque cada experimento responde la misma pregunta y la oferta es clara y honesta.",
+     "plantilla": [
+      "Diseño de experimento",
+      "Pregunta que quiero responder: [ ]\nTipo de experimento: [preventa / piloto / servicio manual / catálogo / anuncio vecinal]\nA quién llego y cuántas personas: [ ]\nOferta exacta: [producto, precio total, fecha, condiciones]\nCosto: $[ ]   Duración: [días]\nAcción que voy a contar: [ ]\nCómo cuido la honestidad: [qué digo si aún no existe, devolución, aviso de privacidad]"
+     ],
+     "clave": [
+      "Cada experimento responde una pregunta distinta: elige el que ataca tu duda principal.",
+      "Las señales que cuestan algo al cliente (tiempo, anticipo, pago, recompra) valen más que los comentarios.",
+      "Experimentar no da permiso de engañar: precio total, fecha realista y devolución si no cumples."
+     ]
+    },
+    {
+     "t": "Métricas de validación: criterios de éxito definidos antes",
+     "obj": "Fijar antes de lanzar tu experimento la métrica principal, el denominador, los umbrales y el plazo, para que decida el resultado y no tu entusiasmo.",
+     "texto": [
+      "Un experimento sin criterio de éxito escrito antes es una trampa: cuando llegan los resultados, cualquier número parece bueno si quieres que lo sea. Recuerda el sesgo de optimismo que viste en el módulo 1: quien emprende tiende a creer que a su negocio le irá mejor que al promedio. La defensa es sencilla y poco usada: antes de lanzar, escribe qué resultado te haría seguir y cuál te haría cambiar, con fecha. Si lo dejas para después, tu cabeza moverá la meta hasta donde quedaste.",
+      "Distingue dos familias de números. Las <b>métricas de vanidad</b> se ven bien pero no obligan a nadie: «me gusta», vistas, seguidores, «qué bonito», «yo te compro» sin fecha ni pago. Son baratas para quien las da. Las <b>métricas de compromiso</b> implican un costo para el cliente, lo que Fitzpatrick llama pagar con tiempo, reputación o dinero: mensajes con una pregunta concreta, citas agendadas, apartados con anticipo, pagos completos, recompra y recomendaciones espontáneas. Una regla práctica: cuenta lo que le cuesta algo a la otra persona, sea dinero, tiempo o su reputación al recomendarte.",
+      "Para fijar tu criterio necesitas cuatro piezas. 1) Una métrica principal, no cinco. 2) Un denominador: a quiénes y a cuántos ofrecerás, por ejemplo 40 dueñas de estéticas de tu zona, no «todos mis contactos». 3) Umbrales: con cuánto sigues, qué zona gris te obliga a repetir y con cuánto cambias; deben salir de lo que necesitas para que valga la pena tu tiempo, no de lo que esperas. 4) Un plazo. Ejemplo: «De 40 estéticas a las que ofrezca afilado de tijeras a domicilio, al menos 8 agendan y pagan en 15 días»; eso es 20 %. En una hoja de cálculo, pon contactos en B2, pagos en B3 y en B4 la tasa con =B3/B2 en formato de porcentaje.",
+      "Tres matices. Con muestras pequeñas, el número orienta pero no da certeza: si quedas cerca del umbral, repite con otro grupo parecido antes de decidir. El origen de la muestra importa: 8 pagos de 40 familiares no equivalen a 8 de 40 desconocidos del segmento que elegiste. Y vigila la recompra: un primer pago puede ser curiosidad o un favor; que vuelvan a comprar sin que insistas es la señal más fuerte de que resolviste algo de verdad."
+     ],
+     "comparar": [
+      "«Así no: Mi publicación tuvo 300 me gusta y muchos comentarios; con eso ya está validado.»",
+      "«Así sí: Antes de publicar escribí: si de 30 interesados al menos 6 dejan anticipo en diez días, sigo; si no, cambio precio o cliente.»"
+     ],
+     "caso": "Caso ficticio: Kevin, de 23 años, cose camas y collares para perro con tela reciclada en Mazatlán. Publicó fotos en un grupo de mascotas de la ciudad sin definir antes ningún criterio. Resultado en una semana: 240 reacciones, 35 comentarios de «qué bonito», 12 mensajes preguntando precio y 3 apartados con anticipo de $150. Su mamá le dice que es un éxito y que compre de una vez $9,000 de tela y una máquina de coser industrial usada. Kevin no sabe si los números alcanzan para dar ese paso.",
+     "p": [
+      [
+       "¿Qué dato debería pesar más en la decisión de Kevin?",
+       "Los 3 apartados con anticipo, frente a los 12 que preguntaron precio",
+       "Las 240 reacciones, porque muestran el tamaño del mercado interesado en camas y collares para perro",
+       "Los 35 comentarios positivos que recibió en una semana",
+       "Los apartados implican dinero y los 12 mensajes son el grupo que de verdad evaluó la compra. Las reacciones y los elogios son métricas de vanidad: no cuestan nada y no indican cuántos pagarían."
+      ],
+      [
+       "¿Qué porcentaje de quienes preguntaron precio terminó apartando?",
+       "25 %, porque 3 de 12 interesados dejaron anticipo",
+       "1.25 %, al dividir los 3 apartados entre las 240 reacciones de la publicación",
+       "8.6 %, al dividir 3 entre 35 comentarios",
+       "La pregunta es sobre quienes pidieron precio: 3 ÷ 12 = 0.25, es decir 25 %. Dividir entre reacciones o comentarios mezcla denominadores que no corresponden a esa pregunta."
+      ],
+      [
+       "¿Qué le conviene hacer antes de gastar los $9,000?",
+       "Repetir la oferta en otro grupo con un criterio escrito antes, por ejemplo que aparte al menos 1 de cada 5 interesados en dos semanas",
+       "Comprar ya, porque si una sola publicación generó tanta reacción, con más producto vendrán más ventas",
+       "Esperar a juntar 1,000 seguidores para tener una muestra grande antes de tomar cualquier decisión",
+       "Tres apartados son una muestra pequeña y sin criterio previo; repetir con una meta escrita (20 % de interesados) da una base más sólida. Las reacciones no predicen ventas y los seguidores son, otra vez, una métrica de vanidad."
+      ]
+     ],
+     "completar": [
+      "Los «me gusta», las vistas y los elogios que no obligan a nada se llaman métricas de ___.",
+      "vanidad"
+     ],
+     "relacionar": [
+      [
+       "«Me gusta» en una publicación",
+       "Métrica de vanidad"
+      ],
+      [
+       "Apartado con anticipo",
+       "Compromiso con dinero"
+      ],
+      [
+       "Recompra sin insistir",
+       "La señal más fuerte de valor"
+      ],
+      [
+       "Denominador",
+       "Cuántas personas del segmento recibieron la oferta"
+      ],
+      [
+       "Criterio de éxito",
+       "Umbral y plazo escritos antes de lanzar"
+      ]
+     ],
+     "refl": "Usa el experimento que diseñaste en las lecciones anteriores. 1) Escribe tu métrica principal y explica qué le cuesta al cliente. 2) Define el denominador: quiénes y cuántos recibirán la oferta y por qué ese grupo representa a tu cliente. 3) Escribe tres umbrales: sigo si…, zona gris (repito) si…, cambio si…, y justifica el de seguir con lo que necesitas para que valga tu tiempo. 4) Pon fecha de inicio y de fin. 5) Arma la hoja: contactos en B2, acciones en B3 y la tasa con =B3/B2. Firma y fecha tu criterio antes de lanzar.",
+     "modelo": "Modelo: «Experimento: clases de guitarra para adultos principiantes en mi casa. Métrica: personas que pagan el primer mes de $800. Denominador: los primeros 30 adultos que respondan a mi anuncio en dos grupos vecinales. Sigo si pagan 6 o más (20 %); zona gris de 3 a 5, repito con otro anuncio; cambio precio u horario si pagan 2 o menos. Plazo: del 4 al 25 de noviembre. Por qué 6: con seis alumnos armo dos grupos de tres y las tardes que dedico ya tienen sentido.» Es bueno porque mide una acción con dinero, usa un denominador claro, tiene zona gris y explica de dónde sale el umbral.",
+     "plantilla": [
+      "Criterio de éxito del experimento",
+      "Métrica principal: [ ]\nQué le cuesta al cliente: [dinero / tiempo / recomendación]\nDenominador: [quiénes y cuántos]\nSigo si: [número o %]\nZona gris, repito si: [rango]\nCambio si: [número o %]\nPlazo: [fecha de inicio – fecha de fin]\nHoja: B2 [contactos]   B3 [acciones]   B4 =B3/B2\nEscrito antes de empezar, el: [fecha]"
+     ],
+     "clave": [
+      "Escribe el criterio de éxito antes de lanzar; si no, moverás la meta hasta donde quedaste.",
+      "Cuenta lo que le cuesta algo al cliente: anticipos, pagos y recompra, no reacciones.",
+      "Una tasa necesita un denominador claro; con muestras chicas, si quedas cerca del umbral, repite."
+     ]
+    },
+    {
+     "t": "Decidir: perseverar, pivotar o soltar, sin caer en el costo hundido",
+     "obj": "Tomar con evidencia la decisión de seguir, cambiar una pieza del modelo o soltar la idea, sin que pese el dinero ni el tiempo que ya gastaste.",
+     "texto": [
+      "Al terminar un experimento tienes tres caminos. <b>Perseverar</b>: cumpliste el criterio, así que sigues y diseñas la siguiente prueba con un supuesto nuevo, por ejemplo pasar de «¿pagan?» a «¿vuelven?» o a «¿puedo atender a 20 sin perder calidad?». <b>Pivotar</b>: Ries lo describe como una corrección de rumbo para probar una hipótesis nueva sin tirar lo aprendido; cambias una pieza —cliente, problema, solución, canal o precio— y conservas las demás. <b>Soltar</b>: después de varios intentos bien hechos, la evidencia dice que nadie tiene ese problema con la intensidad necesaria, y lo sensato es liberar tu tiempo y tu dinero.",
+      "En negocios pequeños, cuatro pivotes son frecuentes. De cliente: las clases de computación no atraen a jóvenes, pero sí a personas mayores que quieren usar el banco en línea. De canal: del local al domicilio o a la venta por encargo. De forma de cobro: del pago por servicio suelto a un paquete mensual. De problema: los clientes no quieren lo que ofreces, pero mencionan una y otra vez otra necesidad que sí pagarían. Lo que no es pivotar: cambiar todo cada semana sin medir nada, porque así nunca sabes qué funcionó.",
+      "El enemigo de la buena decisión es el <b>costo hundido</b>: el dinero, el tiempo y el orgullo que ya invertiste y que no vas a recuperar, decidas lo que decidas. Por eso no debe pesar. La pregunta útil es: «si hoy empezara de cero con lo que ya sé, ¿pondría el siguiente peso en esto?». Recuerda el análisis de CB Insights que viste en el módulo 1: además del 35 % de cierres sin necesidad de mercado, el 38 % de esas empresas se quedó sin dinero. Insistir en algo que nadie pide consume justo el dinero que necesitarías para probar otra cosa.",
+      "Un procedimiento sencillo: compara el resultado con el criterio que escribiste; separa hechos («6 de 30 pagaron») de interpretaciones («creo que fue por el precio»); identifica qué supuesto falló; enlista dos o tres opciones con su siguiente experimento y su costo, y fija una fecha para decidir. Si sueltas, documenta lo aprendido: los contactos, las habilidades y los datos que reuniste sirven para la siguiente idea, como propone la efectuación al aprovechar lo inesperado. Soltar a tiempo no es fracasar; es cuidar tu pérdida asumible."
+     ],
+     "comparar": [
+      "«Así no: Ya le metí $15,000 a esto; no lo puedo dejar ahora, le sigo aunque no venda.»",
+      "«Así sí: No llegué al criterio con ese cliente, pero cinco personas de otro perfil pidieron lo mismo: pruebo con ellas cuatro semanas y decido.»"
+     ],
+     "caso": "Caso ficticio: Beatriz, de 52 años, vende ropa de segunda mano seleccionada en un bazar de fin de semana en Zacatecas. Ha gastado $18,000 en percheros, renta del puesto y lotes de ropa juvenil. Su criterio era vender 25 prendas por semana a mujeres jóvenes; tras ocho semanas, el promedio es de 9. En cambio, cinco clientas de 40 a 60 años le han apartado abrigos de talla grande y ropa formal para entrevistas de trabajo, y tres le pidieron que les busque prendas específicas. Su hija le dice que ya invirtió demasiado para cambiar ahora.",
+     "p": [
+      [
+       "¿Qué decisión respalda mejor la evidencia?",
+       "Pivotar hacia mujeres de 40 a 60 que buscan tallas grandes y ropa formal, con una prueba de búsqueda por encargo",
+       "Perseverar igual, porque ya invirtió $18,000 y cambiar ahora sería perder todo lo que gastó",
+       "Soltar, porque no llegó al criterio de 25 prendas por semana",
+       "Con el cliente original no cumplió, pero hay una señal repetida y con compromiso en otro segmento: es un pivote de cliente. Los $18,000 son costo hundido y no deben decidir. Soltar desperdiciaría lo aprendido sobre el nuevo segmento."
+      ],
+      [
+       "¿Qué pregunta ayuda a Beatriz a no caer en el costo hundido?",
+       "¿Pondría hoy el siguiente peso en esto si empezara de cero con lo que sé?",
+       "¿Cuánto tiempo más necesito vender para recuperar lo que ya invertí en el puesto y la ropa?",
+       "¿Qué opinan mis amigas del bazar sobre mi puesto?",
+       "La pregunta del siguiente peso mira hacia adelante y deja fuera lo que no se recupera. Pensar en recuperar lo invertido es justo la trampa del costo hundido, y la opinión de las amigas no sustituye a la conducta de las clientas."
+      ],
+      [
+       "¿Qué hace que su cambio sea un pivote disciplinado y no una ocurrencia?",
+       "Fijar un criterio nuevo, como 12 encargos pagados en cuatro semanas, y conservar lo que sí funcionó",
+       "Cambiar de golpe producto, cliente, precio y ciudad para empezar con la mente fresca",
+       "Probar la nueva idea sin metas, porque los números la presionaron la primera vez",
+       "Un pivote cambia una pieza y se mide con un criterio escrito antes. Cambiar todo a la vez impide saber qué funcionó, y probar sin meta la deja otra vez a merced del optimismo."
+      ]
+     ],
+     "completar": [
+      "El dinero y el tiempo que ya gastaste y no vas a recuperar, y que no deberían pesar en tu siguiente decisión, se llaman costo ___.",
+      "hundido"
+     ],
+     "refl": "Toma un experimento real o el que diseñaste en este módulo. 1) Escribe el resultado frente al criterio que fijaste. 2) Separa en dos columnas los hechos y tus interpretaciones. 3) Identifica qué supuesto se confirmó y cuál falló. 4) Escribe tres opciones —perseverar, pivotar (di qué pieza cambias) y soltar— con el siguiente experimento y su costo. 5) Anota lo que ya invertiste, táchalo y responde por escrito: ¿pondría hoy el siguiente peso en esto? Cierra con tu decisión y una fecha de revisión.",
+     "modelo": "Modelo: «Experimento: arreglos de ropa a domicilio en oficinas. Criterio: 15 arreglos pagados en tres semanas; logré 6. Hechos: 4 de los 6 fueron dobladillos de pantalones de uniforme y dos gerentes preguntaron si podía arreglar los uniformes de todo su personal. Interpretación: quizá el cliente no es el empleado suelto, sino la empresa. Opciones: perseverar igual, no, el dato no lo respalda; pivotar a convenios de uniformes, criterio: un convenio pagado en un mes, costo $300; soltar, todavía no. Ya gasté $2,000 en una máquina portátil; lo tacho. Decido pivotar y reviso el 30 de noviembre.» Es buena porque separa hechos de suposiciones, cambia una sola pieza y deja fuera el costo hundido.",
+     "plantilla": [
+      "Acta de decisión del experimento",
+      "Experimento: [ ]\nCriterio fijado antes: [ ]   Resultado: [ ]\nHechos: [ ]\nInterpretaciones: [ ]\nSupuesto confirmado / fallido: [ ]\nOpción 1, perseverar: [siguiente experimento, costo]\nOpción 2, pivotar (pieza que cambio): [cliente / problema / solución / canal / precio]\nOpción 3, soltar: [qué conservo: contactos, datos, habilidades]\nCosto hundido (no cuenta): $[ ]\n¿Pondría hoy el siguiente peso? [sí / no, por qué]\nDecisión: [ ]   Fecha de revisión: [ ]"
+     ],
+     "clave": [
+      "Hay tres salidas honestas: perseverar con un supuesto nuevo, pivotar una sola pieza o soltar a tiempo.",
+      "Lo que ya gastaste no se recupera: decide por el siguiente peso, no por el anterior.",
+      "Soltar una idea no borra lo aprendido; tus contactos y datos sirven para la siguiente."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos diseña y deja listo para lanzar el experimento de tu idea. 1) Escribe tu supuesto más riesgoso. 2) Define tu producto mínimo viable y el tipo de experimento (preventa, piloto, servicio manual, catálogo o anuncio vecinal), con costo máximo y plazo dentro de tu pérdida asumible. 3) Escribe el criterio de éxito: métrica principal, denominador, umbral para seguir, zona gris, umbral para cambiar y fechas. 4) Redacta el mensaje de oferta tal como lo enviarás, con precio total, fecha y condiciones honestas. 5) Arma la hoja de registro con la tasa calculada (=B3/B2). Si puedes, envía la oferta hoy a las primeras cinco personas y anota qué pasa; si ya tienes resultados de una prueba anterior, llena también el acta de decisión.",
+    "entregable": "Una ficha de experimento de una a dos páginas con supuesto, producto mínimo viable, tipo de experimento, criterio de éxito fechado, mensaje de oferta y hoja de registro; opcionalmente, los primeros resultados o un acta de decisión.",
+    "criterios": "Revisa: el supuesto probado es el más riesgoso y no el más cómodo, la acción que mides le cuesta algo al cliente, el criterio tiene denominador, umbrales y plazo escritos antes de lanzar, el costo cabe en tu pérdida asumible y la oferta no promete nada que no puedas entregar."
+   },
+   "lab": {
+    "t": "Una preventa de fin de año en Morelia",
+    "obj": "Diseñar, medir y decidir una preventa real con criterio de éxito definido antes, distinguiendo señales de vanidad de compromisos y sin caer en compras de inventario impulsivas.",
+    "esc": "<b>Marisol,</b> de 31 años, es vendedora en una distribuidora de artículos de oficina en Morelia y quiere vender canastas de fin de año con productos de productores michoacanos (artesanías pequeñas, café en grano y mermeladas envasadas) a despachos, consultorios y pequeñas empresas que regalan a su personal o a sus clientes. Su plan original era comprar de una vez material para 100 canastas. Tiene $12,000 que podría perder sin afectar a su familia y estamos a principios de noviembre.",
+    "e": [
+     [
+      "Escena 1: Marisol escribe sus supuestos: las empresas pagarían $850 por canasta, cada una pediría al menos 10, aceptarían dejar 50 % de anticipo y la entrega sería el 12 de diciembre. Puede armar dos canastas de muestra con $1,800.",
+      "Consigna: identifica el supuesto más riesgoso y diseña la preventa: a cuántos negocios llegarás, cómo los eliges, qué muestras usarás, qué anticipo pedirás y qué condiciones de entrega y devolución pondrás por escrito."
+     ],
+     [
+      "Escena 2: Antes de enviar mensajes, Marisol decide contactar a 25 negocios en diez días, en persona o por WhatsApp, con foto real de la muestra y precio total.",
+      "Consigna: escribe su criterio de éxito con métrica principal, denominador, umbral para seguir, zona gris, umbral para cambiar y plazo; arma la hoja de registro con columnas y la fórmula de la tasa."
+     ],
+     [
+      "Escena 3: Diez días después: de 25 negocios contactados, 14 respondieron, 9 pidieron ver la muestra, 4 dejaron anticipo del 50 % por 46 canastas en total y 2 dijeron «la próxima semana te confirmo». Su criterio para seguir era 5 negocios con anticipo; la zona gris, 3 o 4.",
+      "Consigna: calcula las tasas (respuesta, muestra y anticipo sobre contactados), el monto de los anticipos (46 × $850 × 50 %), separa las señales de vanidad de las de compromiso y escribe qué decide y por qué."
+     ],
+     [
+      "Escena 4: Un proveedor le ofrece 15 % de descuento si hoy compra material para 100 canastas. Marisol tiene 46 canastas apartadas y ya gastó $1,800 en muestras, que piensa que «no deben desperdiciarse».",
+      "Consigna: decide cuánto material compra, qué hace con los dos negocios pendientes, cómo trata los $1,800 de las muestras y qué aprendizaje anota para la próxima temporada."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué tasa refleja mejor el compromiso de los negocios contactados?",
+      "4 de 25 dejaron anticipo: un 16 %",
+      "14 de 25 respondieron: 56 %, señal de un interés alto en las canastas",
+      "9 de 25 pidieron muestra: 36 %",
+      "El anticipo implica dinero: 4 ÷ 25 = 0.16, o 16 %. Responder o pedir muestra son pasos útiles, pero no comprometen al cliente; pueden servir como indicadores intermedios, no como criterio de éxito."
+     ],
+     [
+      "Marisol quedó en la zona gris (4 negocios con anticipo). ¿Qué le conviene?",
+      "Cumplir los 46 pedidos y abrir una ronda corta con otros negocios antes de concluir",
+      "Declarar el fracaso y devolver los anticipos cobrados",
+      "Contar como confirmados a los dos negocios que dijeron «la próxima semana» y declarar el éxito",
+      "La zona gris pide repetir antes de decidir, y los anticipos cobrados obligan a entregar. Devolverlos tira evidencia real y rompe la palabra dada; contar promesas como compromisos es mover la meta."
+     ],
+     [
+      "¿Qué hace con la oferta de material para 100 canastas?",
+      "Compra para los pedidos pagados más un margen pequeño; el descuento no compensa el riesgo de inventario sin vender",
+      "Compra para las 100, porque el 15 % de descuento mejora su margen en todas las canastas que venda",
+      "No compra nada hasta conseguir el quinto negocio, aunque ya cobró anticipos con fecha de entrega",
+      "El descuento solo ahorra si vende las 100; con 46 apartadas, el riesgo de quedarse con material es alto. No comprar nada pondría en riesgo entregas ya cobradas. Los $1,800 de muestras son costo hundido y no justifican comprar de más."
+     ]
+    ],
+    "pl": [
+     "Bitácora de preventa",
+     "Producto y precio total: [ ]   Entrega: [fecha]   Anticipo: [%]\nSupuesto más riesgoso: [ ]\nDenominador: [cuántos negocios / personas y cómo los elegí]\nCriterio: sigo si [ ]; zona gris [ ]; cambio si [ ]   Plazo: [fechas]\nRegistro: contactados [B2]   respondieron [B3]   pidieron muestra [B4]   pagaron anticipo [B5]\nTasa de anticipo: =B5/B2\nMonto cobrado: [unidades] × $[precio] × [anticipo %] = $[ ]\nDecisión: [perseverar / pivotar / soltar] porque [ ]\nCompra de material: [cantidad] y razón: [ ]\nCosto hundido que no cuenta: $[ ]\nAprendizaje para la próxima: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Paola quiere enseñar cerámica a adultos en Xalapa. ¿Cuál es el producto mínimo viable más adecuado?",
+     "Un taller de un sábado en su casa para seis personas que paguen por adelantado",
+     "Rentar un local con tres hornos para que las clases se vean serias",
+     "Abrir una cuenta en redes y esperar a tener 500 seguidores antes de cobrar la primera clase",
+     "Comprar un horno profesional para garantizar la calidad de las piezas desde la primera clase"
+    ],
+    [
+     "Rubén publicó un catálogo de prueba de llaveros de piel grabados: 60 «me encanta», 10 preguntas de precio y 2 pedidos pagados. ¿Qué señal pesa más?",
+     "Los 2 pedidos pagados",
+     "Los 60 «me encanta», porque muestran cuántas personas vieron y aprobaron la oferta",
+     "Las 10 preguntas de precio, porque son personas que dieron el primer paso para comprar",
+     "La suma de las tres señales, porque juntas dan una idea más completa del interés total"
+    ],
+    [
+     "Gabriel escribió: «Si de 40 vecinos que reciban mi oferta de poda al menos 8 la contratan en dos semanas, sigo». ¿Qué tasa exige su criterio?",
+     "20 % de quienes reciben la oferta",
+     "8 % de quienes reciben la oferta",
+     "32 % de quienes reciben la oferta",
+     "5 % de quienes reciben la oferta"
+    ],
+    [
+     "Beatriz sueña con una plataforma que conecte costureras con clientas de arreglos en Zacatecas. ¿Qué experimento barato encaja mejor?",
+     "Recibir ella los pedidos por WhatsApp, asignarlos a dos costureras y cobrar cada arreglo",
+     "Contratar a un programador para tener lista la plataforma",
+     "Preguntar a sus amigas si usarían una plataforma así y cuánto estarían dispuestas a pagar",
+     "Imprimir volantes con el logotipo de la plataforma para medir interés, aunque aún no exista"
+    ],
+    [
+     "Esteban gastó $7,000 en equipo para lavar tenis a domicilio. Tras dos pruebas no llega a su criterio, pero varios clientes le piden restaurar chamarras de piel. ¿Qué razonamiento es correcto?",
+     "Los $7,000 no se recuperan; debe decidir pensando en dónde rinde mejor el siguiente peso que invierta",
+     "Debe seguir con el lavado de tenis hasta recuperar los $7,000 y solo después considerar otro servicio",
+     "Debe vender todo el equipo de inmediato y descartar cualquier servicio relacionado con calzado o piel",
+     "Debe pedir un crédito para anunciar el lavado de tenis, porque el problema es que pocos lo conocen"
+    ],
+    [
+     "Norma ofrecía su plan de revisión eléctrica a fondas y no renovaron, pero tres escuelas privadas le pidieron revisiones periódicas. Si mantiene el servicio y cambia de cliente, ¿qué tipo de pivote hace?",
+     "De segmento de clientes",
+     "De canal de venta y entrega",
+     "De forma de cobro del servicio",
+     "De problema que resuelve"
+    ],
+    [
+     "Marisol hará una preventa de agendas de escritorio para enero. ¿Qué condición es indispensable?",
+     "Fecha de entrega realista, precio total y devolución si no cumple",
+     "Un precio más bajo que la competencia para que aparten muchas personas en poco tiempo",
+     "Fotos de agendas parecidas de otro diseñador mientras termina las suyas, para no perder tiempo",
+     "No fijar fecha, para entregar cuando pueda"
+    ],
+    [
+     "Fernando presume que su video de muebles plegables tuvo 15,000 vistas. ¿Qué dato le pedirías para saber si valida su idea?",
+     "Cuántas personas apartaron un mueble con anticipo después de verlo",
+     "Cuántos seguidores nuevos ganó la cuenta después del video",
+     "Cuántos comentarios positivos dejaron quienes lo vieron completo",
+     "A qué hora lo publicó, para repetir el horario en los siguientes videos"
+    ],
+    [
+     "Yolanda fijó seguir si 6 de 30 personas pagaban su servicio de planchado a domicilio; obtuvo 5. Su zona gris era de 4 a 5. ¿Qué es lo más sensato?",
+     "Repetir la oferta con otro grupo parecido antes de decidir",
+     "Declarar que la idea no funciona y soltarla",
+     "Bajar el criterio a 5 pagos y declarar que el experimento fue un éxito",
+     "Invertir en grande, porque quedó a solo un pago de la meta que había fijado"
+    ],
+    [
+     "Iván ya cobró anticipos a 12 clientes por lavado de autos en seco en Aguascalientes. ¿Qué duda responde mejor ahora una prueba piloto de un mes?",
+     "Si puede entregar con calidad y a tiempo, y si los clientes vuelven a pedir",
+     "Si a la gente de su ciudad le interesa la idea de lavar el auto sin agua",
+     "Cuánto le costaría anunciarse en redes para llegar a más personas de la zona",
+     "Si el nombre que eligió para el negocio les parece atractivo a sus clientes"
+    ]
+   ]
+  },
+  {
+   "t": "Tu modelo de negocio en una página",
+   "r": "Describe todo tu negocio en una sola hoja con el lienzo de nueve bloques: a quién sirves, qué le resuelves, cómo te encuentra y te paga, qué necesitas para operar y cuánto cuesta, y descubre qué supuesto probar primero.",
+   "lecciones": [
+    {
+     "t": "El lienzo de modelo de negocio: los 9 bloques con un ejemplo mexicano",
+     "obj": "Describir tu negocio en una sola página con los nueve bloques del lienzo, usando frases concretas que puedas probar y corregir.",
+     "texto": [
+      "Uno de los mitos más caros dice que sin un plan de negocios de 50 páginas no puedes empezar. Para arrancar, Osterwalder y Pigneur propusieron el <b>lienzo de modelo de negocio</b>: una hoja con nueve bloques que muestra cómo tu negocio crea valor, lo entrega y cobra por él. Un plan formal puede pedírtelo un banco o un inversionista más adelante; para decidir y probar, una página que corriges con lápiz vale más que un documento que nadie vuelve a abrir.",
+      "Los nueve bloques se acomodan en dos lados. A la derecha está el cliente: 1) <b>segmentos de clientes</b>, para quién creas valor; 2) <b>propuesta de valor</b>, qué problema resuelves o qué beneficio das; 3) <b>canales</b>, cómo te conocen, compran y reciben; 4) <b>relación con clientes</b>, cómo los atiendes y haces que vuelvan; 5) <b>fuentes de ingreso</b>, por qué y cómo te pagan. A la izquierda está la operación: 6) <b>recursos clave</b>, lo indispensable para funcionar; 7) <b>actividades clave</b>, lo que debes hacer bien; 8) <b>socios clave</b>, proveedores y aliados; 9) <b>estructura de costos</b>, lo que cuesta operar todo lo anterior.",
+      "Un ejemplo mexicano: comida corrida para oficinas en una zona industrial. Segmento: personal de oficinas de 10 a 50 personas sin comedor. Propuesta: comida casera completa entregada a las 14:00, con menú semanal enviado por WhatsApp. Canales: visita a recepción con muestra, grupo de WhatsApp por oficina y entrega en recepción. Relación: trato personal y encuesta semanal del menú. Ingresos: venta por comida y paquete semanal prepagado. Recursos: cocina con su aviso de funcionamiento (verifica con la autoridad sanitaria de tu estado), refrigeración y transporte. Actividades: comprar, cocinar, entregar puntual y cobrar. Socios: proveedor de verduras del mercado y una oficina que presta su recepción como punto de entrega. Costos: insumos, gas, empaques, transporte y el sueldo de quien cocina.",
+      "Para usarlo, trabaja con notas adhesivas o a lápiz y empieza por segmentos y propuesta de valor, porque de ellos dependen los demás bloques. Cada nota es una hipótesis: marca cuáles ya probaste con los experimentos del módulo 3 y cuáles no. Ponle fecha y número de versión; si atiendes a dos clientes muy distintos, haz un lienzo para cada uno. El error más común es llenarlo con frases genéricas como «calidad», «buen servicio» o «todo el público»: si una nota serviría para cualquier negocio, no dice nada del tuyo."
+     ],
+     "comparar": [
+      "«Así no: Segmento: todo el público. Propuesta: calidad y buen precio. Canales: redes sociales.»",
+      "«Así sí: Segmento: oficinas de 10 a 50 personas sin comedor en la zona industrial. Propuesta: comida casera completa a las 14:00, menú semanal por WhatsApp.»"
+     ],
+     "caso": "Caso ficticio: Armando, de 45 años, trabajó 15 años como plomero en una empresa de mantenimiento de Xalapa y quiere independizarse con servicio a domicilio. Varios clientes ya lo buscan directamente por su celular. Un amigo le insiste en que primero escriba un plan de negocios completo, aunque Armando no piensa pedir crédito por ahora. En su primer intento de lienzo anotó en «socios clave»: «mis clientes de siempre», y en «propuesta de valor»: «buen servicio».",
+     "p": [
+      [
+       "¿Qué le conviene hacer a Armando primero?",
+       "Llenar un lienzo de una página con sus supuestos y marcar los que ya tiene probados",
+       "Escribir el plan de negocios completo, porque sin ese documento sus decisiones no tienen sustento formal",
+       "Imprimir tarjetas y abrir redes para conseguir más clientes",
+       "Como no busca crédito, el lienzo le da en una página la visión completa y muestra qué falta probar. El plan formal puede venir después si un banco lo pide. Sus clientes actuales son una buena señal, pero no prueban canales, costos ni precio del negocio independiente."
+      ],
+      [
+       "¿Qué corrección procede con «mis clientes de siempre» en socios clave?",
+       "Pasarlos a segmentos y anotar como socios a proveedores de material o ferreterías que lo recomienden",
+       "Dejarlo así, porque un cliente frecuente y un socio clave cumplen el mismo papel dentro del lienzo",
+       "Borrarlos, porque los clientes de su etapa como empleado no cuentan para el negocio que empieza",
+       "Los clientes van en segmentos; los socios son quienes le ayudan a operar, como proveedores o aliados que lo recomiendan. Un cliente no cumple el papel de socio, y borrar a quienes ya lo buscan desperdicia su mejor punto de partida."
+      ],
+      [
+       "¿Por qué bloques le conviene empezar a corregir su lienzo?",
+       "Segmentos y propuesta de valor",
+       "Estructura de costos, porque lo primero es saber cuánto dinero necesita para arrancar",
+       "Recursos clave, porque su herramienta define qué reparaciones puede ofrecer a domicilio",
+       "Los demás bloques dependen de a quién sirve y qué problema le resuelve: «buen servicio» todavía no lo dice. Costos y recursos importan, pero se definen en función del cliente y de la propuesta."
+      ]
+     ],
+     "completar": [
+      "El lienzo de modelo de negocio describe en una página cómo creas, entregas y cobras valor mediante nueve ___.",
+      "bloques"
+     ],
+     "relacionar": [
+      [
+       "Segmentos de clientes",
+       "Personal de oficinas pequeñas sin comedor"
+      ],
+      [
+       "Propuesta de valor",
+       "Comida casera completa a la hora pactada"
+      ],
+      [
+       "Recursos clave",
+       "Cocina equipada, refrigeración y transporte"
+      ],
+      [
+       "Socios clave",
+       "Proveedor de verduras del mercado"
+      ],
+      [
+       "Estructura de costos",
+       "Insumos, gas, empaques y sueldo de quien cocina"
+      ]
+     ],
+     "refl": "Dibuja en una hoja tu primer lienzo de modelo de negocio. 1) Traza los nueve bloques y escribe en cada uno al menos una nota concreta sobre tu idea o tu negocio actual. 2) Revisa cada nota con la prueba de la frase genérica: si serviría para cualquier negocio, reescríbela con datos de tu cliente, zona, precio o forma de trabajo. 3) Marca con una palomita las notas que ya probaste con clientes reales y con un signo de interrogación las que son suposiciones. 4) Escribe al pie la fecha y «versión 1», y una frase sobre el bloque que más dudas te genera.",
+     "modelo": "Modelo: «Lienzo, versión 1, 4 de noviembre. Segmento: dueños de perros de razas medianas en mi fraccionamiento que trabajan todo el día. Propuesta: paseo de 45 minutos entre semana con foto y aviso al terminar. Canales: grupo vecinal y recomendación; cobro por transferencia. Relación: mensaje diario y reporte semanal. Ingresos: paquete mensual de 20 paseos. Recursos: correas de repuesto, bolsas y mi tiempo de 12 a 15 h. Actividades: paseo, comunicación, cobro. Socios: veterinaria que me recomienda. Costos: material, transporte y mi sueldo. Probado: segmento y canal; supuesto: precio. Duda principal: si pagan por mes.» Es bueno porque cada nota es concreta y distingue lo probado de lo supuesto.",
+     "plantilla": [
+      "Lienzo de modelo de negocio en una página",
+      "Versión: [número]   Fecha: [ ]\n1. Segmentos de clientes: [ ]\n2. Propuesta de valor: [ ]\n3. Canales (conocer, comprar, recibir): [ ]\n4. Relación con clientes: [ ]\n5. Fuentes de ingreso: [ ]\n6. Recursos clave: [ ]\n7. Actividades clave: [ ]\n8. Socios clave: [ ]\n9. Estructura de costos: [ ]\nYa probado (✔): [ ]   Suposición (?): [ ]\nBloque que más dudas me genera: [ ]"
+     ],
+     "clave": [
+      "Para arrancar basta una página: el lienzo muestra cómo creas, entregas y cobras valor.",
+      "Empieza por segmentos y propuesta de valor; los otros bloques dependen de ellos.",
+      "Cada nota es una hipótesis concreta: fecha, versión y marca de lo que ya probaste."
+     ]
+    },
+    {
+     "t": "Propuesta de valor, segmentos, canales y relación con clientes",
+     "obj": "Definir el lado del cliente de tu lienzo: a quién sirves, qué le resuelves, cómo te encuentra, compra y recibe, y qué hace que vuelva.",
+     "texto": [
+      "La <b>propuesta de valor</b> no es una frase bonita: es el conjunto de beneficios que resuelve un problema concreto de un segmento concreto. Aquí se conecta con el mapa que hiciste en el módulo 2: los trabajos que tu cliente intenta hacer, sus frustraciones y las alegrías que busca. Una buena propuesta dice para quién es, qué resuelve y qué la hace preferible a lo que esa persona usa hoy, incluso a no hacer nada. A veces quien usa y quien paga son distintos: en clases de regularización, el estudiante recibe la clase, pero su mamá o su papá deciden y pagan; son dos segmentos con propuestas diferentes.",
+      "Los <b>canales</b> son el camino completo del cliente contigo. Osterwalder y Pigneur los dividen en cinco fases: cómo se entera de ti, cómo te evalúa, cómo compra, cómo recibe lo que pagó y cómo lo atiendes después. En un negocio pequeño, ese camino suele ser recomendación, muestra o fotos de trabajos reales, mensaje por WhatsApp, cobro y entrega en persona o a domicilio. Revisa cada fase: muchos negocios pierden clientes no por el producto, sino porque es difícil comprarles o pagarles.",
+      "El cobro también es canal. CoDi, del Banco de México, permite cobrar con un código QR sin comisiones adicionales, y DiMo, transferir con el número de celular. Las terminales de tarjeta cobran comisión: Banxico reporta comisiones típicas de alrededor de 2 % a 3.5 % con tarjeta de crédito y de 1.5 % a 2.5 % con débito (julio de 2026; verifica las vigentes). Esa comisión va a tu estructura de costos, y la ley pide mostrar al cliente el precio total, sin cargos sorpresa en caja.",
+      "La <b>relación con clientes</b> responde cómo los atiendes y qué los hace volver. Puede ser asistencia personal, autoservicio o comunidad, entre otras formas; en un micronegocio casi siempre es personal, y esa es tu ventaja frente a una cadena: te acuerdas de su nombre, de lo que pidió y de cuándo le toca otra vez. Diseña la vuelta: recordatorio antes de la siguiente temporada, seguimiento a la semana de entregar, paquete que premie la recompra. Insistir con promociones diarias no es relación; es ruido que te saca de sus chats."
+     ],
+     "comparar": [
+      "«Así no: Mis clientes me buscan en redes; si no compran, será que no les interesa.»",
+      "«Así sí: Revisé las cinco fases: me encuentran por recomendación, pero los pierdo al pagar. Agregué cobro con QR y bajaron los pedidos que se quedaban a medias.»"
+     ],
+     "caso": "Caso ficticio: Lucía, de 28 años, es fotógrafa en Tlaxcala y hace fotos de producto para pequeños negocios: tiendas de artesanía, restaurantes y marcas locales de ropa. Su único canal es una red social: recibe muchos mensajes y cierra pocas sesiones. Los clientes que sí contratan llegan por recomendación de un despacho contable que asesora a pequeños negocios. Solo acepta efectivo, y algunos clientes le han pedido pagar con tarjeta o transferencia. Casi nadie la vuelve a contratar después de la primera sesión.",
+     "p": [
+      [
+       "¿Qué ajuste de canal sugiere la evidencia?",
+       "Formalizar la recomendación con despachos y asociaciones que atienden a pequeños negocios",
+       "Publicar el doble en redes, porque más contenido terminará convirtiendo los mensajes en sesiones",
+       "Bajar el precio para que quienes le escriben se animen a contratar",
+       "Sus clientes reales llegan por recomendación de quien ya atiende a su segmento: ese canal funciona y conviene reforzarlo. Publicar más o bajar precio ataca la fase de enterarse o de evaluar sin saber por qué no cierran los mensajes."
+      ],
+      [
+       "¿Qué relación con clientes la ayudaría a lograr recompra?",
+       "Proponer a cada cliente una sesión de temporada, con un recordatorio personal un mes antes",
+       "Esperar a que la busquen, porque insistir se ve poco profesional",
+       "Mandar promociones diarias por WhatsApp a todos sus contactos para estar siempre presente",
+       "Un recordatorio personal ligado a una necesidad real, como el catálogo de temporada, diseña la vuelta. Esperar deja la recompra al azar, y las promociones diarias son ruido que suele terminar en bloqueo."
+      ],
+      [
+       "¿Cómo resuelve el cobro sin perder clientes ni romper reglas?",
+       "Ofrecer cobro con QR o transferencia y, si suma terminal, incluir la comisión en sus costos y en el precio total",
+       "Cargar 5 % extra en el momento de pagar a quien use tarjeta, sin mencionarlo antes en su lista de precios",
+       "Seguir solo con efectivo, porque cualquier forma de cobro digital le cuesta más que perder algunas ventas",
+       "El cobro con QR o transferencia elimina una barrera de compra, y la comisión de la terminal se trata como costo dentro de un precio total claro. El cargo sorpresa va contra la obligación de mostrar el precio total, y el QR con CoDi no tiene comisiones adicionales."
+      ]
+     ],
+     "completar": [
+      "Las fases por las que pasa el cliente para enterarse de ti, evaluarte, comprar, recibir y ser atendido después forman tus ___.",
+      "canales"
+     ],
+     "refl": "Trabaja el lado derecho de tu lienzo. 1) Escribe tu segmento principal con detalle: quién es, dónde está, qué hace hoy para resolver su problema. Si quien usa y quien paga son distintos, escribe ambos. 2) Redacta tu propuesta de valor en una frase: para quién, qué resuelve y por qué es preferible a su alternativa actual. 3) Recorre las cinco fases del canal y anota cómo ocurre cada una y dónde podrías estar perdiendo clientes. 4) Escribe dos acciones concretas de relación que hagan que un cliente vuelva sin que lo persigas.",
+     "modelo": "Modelo: «Segmento: dueñas de estéticas pequeñas de mi colonia que afilan sus tijeras cuando ya no cortan bien. Propuesta: afilado a domicilio en su horario de menos clientas, con tijeras listas el mismo día, para que no cierren ni pierdan una tarde. Canales: me conocen por recomendación de una distribuidora de productos; evalúan con una prueba gratis de una tijera; compran por WhatsApp; recibo y entrego en su local; después, mensaje a la semana. Pierdo clientas al cobrar: solo acepto efectivo. Relación: recordatorio cada dos meses y descuento al tercer servicio.» Es bueno porque detalla el segmento, compara con la alternativa y detecta la fase débil.",
+     "plantilla": [
+      "Lado del cliente del lienzo",
+      "Segmento que usa: [ ]   Segmento que paga (si es distinto): [ ]\nQué hace hoy para resolverlo: [ ]\nPropuesta de valor: Para [segmento] que [problema], ofrezco [solución], que a diferencia de [alternativa actual] [beneficio].\nCanales\n- Se entera por: [ ]\n- Me evalúa con: [ ]\n- Compra y paga con: [ ]\n- Recibe en: [ ]\n- Después lo atiendo con: [ ]\nFase donde pierdo clientes: [ ]\nRelación: [acción 1 para que vuelva]   [acción 2]"
+     ],
+     "clave": [
+      "Una propuesta de valor dice para quién es, qué resuelve y por qué es mejor que la alternativa actual.",
+      "Revisa las cinco fases del canal: muchos clientes se pierden al comprar o al pagar, no por el producto.",
+      "En un micronegocio la relación personal es tu ventaja; diseña la recompra en lugar de perseguir."
+     ]
+    },
+    {
+     "t": "Fuentes de ingreso, recursos, actividades y socios clave",
+     "obj": "Definir cómo te pagan y qué necesitas, qué haces y con quién te alías para entregar tu propuesta, distinguiendo una alianza sana de un esquema que vive de reclutar.",
+     "texto": [
+      "Las <b>fuentes de ingreso</b> responden dos preguntas: por qué te paga el cliente y cómo prefiere pagar. Las formas más comunes en negocios pequeños son venta por pieza, cobro por servicio o evento, paquete prepagado (diez clases, cuatro limpiezas), cuota mensual por un servicio continuo, renta de algo que sigue siendo tuyo y comisión por conectar a dos partes. Distingue el ingreso eventual del <b>recurrente</b>: una cuota mensual o un paquete suaviza las temporadas bajas y te deja planear compras y horarios. Pregunta a tus clientes cómo pagan hoy alternativas parecidas; cambiar su costumbre también es un supuesto que hay que probar.",
+      "Los <b>recursos clave</b> son lo indispensable para cumplir tu propuesta: físicos (herramienta, vehículo, cocina, local), intelectuales (tu método, tus diseños, tu cartera de contactos), humanos (tu oficio, ayudantes) y financieros (el colchón para comprar insumos antes de cobrar). Las <b>actividades clave</b> son lo que debes hacer muy bien sí o sí: producir, resolver problemas del cliente, vender, entregar, cobrar. Si una actividad clave depende solo de ti, anótalo: es un riesgo y también un límite de cuántos clientes puedes atender.",
+      "Los <b>socios clave</b> son proveedores y aliados que te permiten operar mejor o llegar a clientes que solos no alcanzarías: el proveedor que te da crédito a 15 días, el vivero que te recomienda, el negocio vecino con el que armas un paquete. La efectuación de Sarasvathy enfatiza las alianzas y los compromisos tempranos con otros como una forma de reducir incertidumbre sin gastar de más. Pon por escrito lo básico: qué aporta cada quien, comisión o pago, plazo, quién atiende las quejas y cómo se termina. Ojo: en el lienzo, «socio» no significa accionista de tu negocio; eso lo verás en el módulo 6.",
+      "Aquí conviene una alerta. Si te ofrecen un «negocio» donde para entrar debes comprar un paquete y tu ingreso viene sobre todo de inscribir a más personas, y no de vender a clientes finales, revisa con cuidado: es la señal típica de un esquema piramidal, aunque se presente como multinivel. En un modelo sano, el dinero entra porque un cliente final paga por algo que valora. Aplica la misma prueba a la reventa: vender productos de una marca sin autorización o anunciar un dropshipping con tiempos y calidad que no controlas es construir sobre arena."
+     ],
+     "comparar": [
+      "«Así no: Mi ingreso es lo que caiga cada semana; el vivero me manda clientes y ya veremos qué le doy.»",
+      "«Así sí: Cobro un plan mensual de mantenimiento y visitas sueltas; con el vivero firmamos una prueba de tres meses con 10 % de comisión y reglas para las quejas.»"
+     ],
+     "caso": "Caso ficticio: Gabriel, de 38 años, es jardinero y vende plantas en Morelia. Cobra $450 por visita suelta: en temporada de lluvias no se da abasto y en secas casi no tiene trabajo. Un vivero le propone mandarle a sus clientes para mantenimiento a cambio de 10 % de comisión por cada servicio. Al mismo tiempo, un conocido lo invita a una red de venta de fertilizantes donde debe comprar un paquete de inicio y gana sobre todo por cada persona que inscriba.",
+     "p": [
+      [
+       "¿Qué fuente de ingreso le ayudaría más a suavizar las temporadas?",
+       "Un plan mensual de mantenimiento con visitas programadas y precio fijo",
+       "Subir el precio de las visitas sueltas en lluvias para ahorrar lo que falte en la temporada de secas",
+       "Vender más plantas en secas, aunque en esa época la gente cuida y riega menos su jardín",
+       "La cuota mensual convierte el trabajo en ingreso recurrente y le deja planear. Subir precios en lluvias puede ayudar, pero no crea demanda en secas; vender más plantas justo cuando menos se cuidan los jardines es un supuesto débil."
+      ],
+      [
+       "¿Cómo le conviene responder al vivero?",
+       "Aceptar una prueba por escrito con comisión, quién cobra, plazo y cómo se atienden las quejas",
+       "Rechazarla, porque pagar comisión significa ceder una ganancia que le corresponde",
+       "Aceptarla de palabra, porque formalizar desde el inicio genera desconfianza con el vivero",
+       "La alianza le da un canal hacia clientes que ya compran plantas; ponerla por escrito evita malentendidos sobre dinero y quejas. La comisión puede ser el costo razonable de un canal, y un acuerdo de palabra suele romperse en el primer desacuerdo."
+      ],
+      [
+       "¿Qué señal debería llamar su atención en la red de fertilizantes?",
+       "Que gane sobre todo por inscribir personas y no por vender a clientes finales",
+       "Que los fertilizantes sean de una empresa grande y conocida",
+       "Que el paquete de inicio cueste más de lo que gana en una semana de visitas",
+       "Un ingreso que depende de reclutar más que de vender a clientes finales es la señal típica de esquema piramidal. El tamaño de la empresa no lo descarta, y el precio del paquete importa, pero no es lo que define si el modelo es sano."
+      ]
+     ],
+     "completar": [
+      "Una cuota mensual o un paquete prepagado generan un ingreso ___ que suaviza las temporadas bajas.",
+      "recurrente"
+     ],
+     "relacionar": [
+      [
+       "Venta por pieza",
+       "Pago único por cada producto entregado"
+      ],
+      [
+       "Cuota mensual",
+       "Pago periódico por un servicio continuo"
+      ],
+      [
+       "Paquete prepagado",
+       "Varias sesiones cobradas por adelantado"
+      ],
+      [
+       "Renta",
+       "Uso temporal de un bien que sigue siendo tuyo"
+      ],
+      [
+       "Comisión",
+       "Porcentaje por conectar a dos partes"
+      ]
+     ],
+     "refl": "Completa el centro y la izquierda de tu lienzo. 1) Escribe tus fuentes de ingreso actuales o previstas y marca cuál es recurrente y cuál eventual; propón una forma de cobro recurrente que tenga sentido para tu cliente. 2) Lista tus recursos clave en cuatro columnas: físicos, intelectuales, humanos y financieros. 3) Escribe tus tres actividades clave y marca las que dependen solo de ti. 4) Nombra dos posibles socios clave, qué aportaría cada quien y tres condiciones que pondrías por escrito. 5) Revisa si alguna oportunidad que te hayan ofrecido gana más por reclutar que por vender.",
+     "modelo": "Modelo: «Negocio: reparación de bicicletas a domicilio para repartidores. Ingresos: servicio suelto de ajuste, $250, eventual; plan mensual de revisión semanal, $700, recurrente. Recursos: físicos, herramienta y moto; intelectuales, mi lista de 60 repartidores; humanos, mi oficio; financieros, $3,000 para refacciones. Actividades: diagnóstico rápido, reparación en sitio, cobro; las tres dependen de mí, así que tengo un límite de clientes por día. Socios: refaccionaria con crédito a 15 días y una cocina que solo vende por aplicaciones, donde esperan los repartidores; por escrito: horarios, espacio y quién responde si algo se daña. Me ofrecieron vender aceites ganando por inscritos: no entré.» Es bueno porque es concreto, separa tipos de ingreso y detecta el límite y la alerta.",
+     "plantilla": [
+      "Ingresos, recursos, actividades y socios",
+      "Fuentes de ingreso: [forma] $[ ] — [recurrente / eventual]\nForma recurrente que voy a probar: [ ]\nRecursos clave\n- Físicos: [ ]\n- Intelectuales: [ ]\n- Humanos: [ ]\n- Financieros: [ ]\nActividades clave (marca las que dependen solo de ti): [ ]\nSocio 1: [nombre] aporta [ ] / yo aporto [ ]\nSocio 2: [nombre] aporta [ ] / yo aporto [ ]\nPor escrito: [pago o comisión], [plazo], [quejas], [cómo se termina]\nAlerta: ¿el ingreso viene de clientes finales o de reclutar? [ ]"
+     ],
+     "clave": [
+      "Pregunta por qué y cómo te pagan; el ingreso recurrente suaviza temporadas, pero también hay que probarlo.",
+      "Si una actividad clave depende solo de ti, es un riesgo y un límite de capacidad.",
+      "Un modelo sano cobra a clientes finales; si el dinero viene de reclutar, aléjate."
+     ]
+    },
+    {
+     "t": "Estructura de costos y riesgos: probar el modelo completo",
+     "obj": "Revisar la coherencia de todo tu lienzo, ubicar lo que cuesta cada bloque e identificar el supuesto más riesgoso para elegir qué ajustar y qué probar después.",
+     "texto": [
+      "La <b>estructura de costos</b> reúne lo que cuesta operar tu modelo, y casi todo sale de dos bloques: recursos y actividades clave. Algunos costos son fijos (renta, internet, tu sueldo base) y otros cambian con cada venta (insumos, empaque, transporte por entrega, comisiones); en el módulo 5 los calcularás a fondo. Aquí la pregunta es otra: ¿cada decisión del lienzo trae su costo anotado? Si cobras un servicio de $400 con tarjeta de crédito y tu terminal cobra 3.5 %, pagas $14 por cobro. Si vendes por una plataforma digital, en 2026 la retención de ISR para personas físicas subió a 2.5 % (antes 1 %) y, si no das tu RFC, es mucho mayor; verifica la versión vigente.",
+      "Después viene la prueba de <b>coherencia</b>: lee tu lienzo como una historia en voz alta. «Atiendo a este segmento, que me encuentra por este canal, paga de esta forma, y yo lo entrego con estos recursos y socios, a este costo.» Las contradicciones saltan solas: un segmento de empresas con un canal que solo llega a vecinos; un precio bajo con entrega a domicilio lejana; un servicio que depende de ti con una meta de clientes que no cabe en tu semana. En el análisis de CB Insights sobre cierres de empresas emergentes de tecnología, el 19 % se atribuyó a un modelo de negocio defectuoso: un recordatorio de que las piezas tienen que funcionar juntas.",
+      "Para ver los riesgos, marca cada nota con un color: verde si ya la probaste con clientes reales, amarillo si tienes evidencia parcial y rojo si es pura suposición. Luego pregunta, para cada nota roja: si resulta falsa, ¿se cae el negocio? El supuesto más riesgoso es el que combina mucha incertidumbre con mucho impacto, y ese es tu siguiente experimento, con lo que aprendiste en el módulo 3.",
+      "Ajusta una pieza a la vez. Si cambias segmento, precio y canal al mismo tiempo, no sabrás qué mejoró o qué empeoró. Guarda cada versión con fecha: comparar la versión 1 con la versión 4 te muestra cuánto aprendiste y evita repetir errores. Y recuerda que un lienzo coherente no garantiza ventas ni ingresos: solo hace visibles tus apuestas para que las pruebes en orden, empezando por la que más te puede costar."
+     ],
+     "comparar": [
+      "«Así no: El lienzo ya está bonito y completo; ahora sí compro el equipo y abro.»",
+      "«Así sí: Pinté de rojo tres notas; la que tumbaría todo es que las empresas me dejen trabajar en su estacionamiento, así que eso pruebo primero.»"
+     ],
+     "caso": "Caso ficticio: Iván, de 24 años, quiere ofrecer lavado de autos en seco en estacionamientos de oficinas de Aguascalientes, a $180 por auto. Calcula $35 de productos por auto, se mueve en motocicleta y tarda unos 40 minutos por lavado. Su lienzo se ve completo, pero todavía no ha preguntado a ninguna empresa si le permitiría trabajar en su estacionamiento. Un amigo le recomienda comprar a crédito una camioneta de $160,000 «para verse profesional» antes de buscar clientes.",
+     "p": [
+      [
+       "¿Cuál es el supuesto más riesgoso del lienzo de Iván?",
+       "Que las empresas le permitan trabajar en su estacionamiento y avisen a su personal",
+       "Que los productos en seco cuesten $35 por auto, como calculó con la lista de precios de su proveedor",
+       "Que su motocicleta aguante los traslados diarios entre las oficinas de la ciudad durante todo el año",
+       "Sin permiso de las empresas no hay canal ni clientes: combina mucha incertidumbre con mucho impacto. El costo de productos ya tiene una referencia de proveedor y la moto es un riesgo operativo menor y fácil de resolver."
+      ],
+      [
+       "¿Qué hace con la propuesta de la camioneta?",
+       "Posponerla, porque eleva sus costos fijos y apoya un canal que aún no ha probado",
+       "Comprarla, porque la imagen profesional convence a las empresas",
+       "Comprarla a un plazo largo, porque así la mensualidad casi no pesa en su estructura de costos",
+       "Un costo fijo grande sobre un supuesto sin probar es justo la incoherencia que el lienzo debe evitar. La imagen no sustituye el permiso, y alargar el plazo reduce la mensualidad pero aumenta lo que paga y lo ata por más tiempo."
+      ],
+      [
+       "Una empresa acepta, pero solo le permite trabajar de 7:00 a 9:00. ¿Qué revisa primero en su lienzo?",
+       "Cuántos autos alcanza a lavar en esas dos horas y si eso cubre sus costos del día",
+       "Solo su propuesta de valor, porque el horario no afecta a ningún otro bloque",
+       "Solo sus socios clave, porque el horario es un asunto del convenio con la empresa",
+       "Con 40 minutos por lavado alcanza unos 3 autos en dos horas (120 ÷ 40 = 3): eso toca actividades, ingresos y costos a la vez. Revisar un solo bloque pierde de vista que el horario cambia la capacidad de todo el modelo."
+      ]
+     ],
+     "completar": [
+      "Leer el lienzo como una historia en voz alta para detectar bloques que no encajan es la prueba de ___.",
+      "coherencia"
+     ],
+     "refl": "Revisa tu lienzo completo. 1) Escribe junto a cada bloque los costos que genera y sepáralos en fijos y variables; incluye comisiones de cobro y tu propio sueldo. 2) Lee el lienzo en voz alta como una historia y anota al menos dos contradicciones o huecos. 3) Pinta cada nota de verde, amarillo o rojo según la evidencia que tengas. 4) De las rojas, elige la que tumbaría el negocio si fuera falsa y explica por qué. 5) Escribe la versión 2 del lienzo con una sola pieza ajustada y el experimento con que probarás tu supuesto más riesgoso.",
+     "modelo": "Modelo: «Negocio: clases de natación para bebés en la alberca de un club. Costos fijos: renta de carril $2,400 al mes, seguro de responsabilidad, mi sueldo base. Variables: material y comisión de terminal en cada mensualidad. Historia en voz alta: atiendo a mamás y papás primerizos, me encuentran por el pediatra, pagan mensual… pero mi horario de 10:00 no les sirve a quienes trabajan. Verde: interés de pediatras. Amarillo: precio. Rojo: que el club acepte horario de sábado. Ese tumbaría todo. Versión 2: solo cambio el horario a sábados. Experimento: pedir al club dos sábados de prueba y abrir lista con anticipo.» Es bueno porque detecta una incoherencia real y ajusta una sola pieza.",
+     "plantilla": [
+      "Revisión del modelo completo",
+      "Costos fijos: [concepto] $[ ]\nCostos variables por venta: [concepto] $[ ] (incluye comisiones)\nHistoria en voz alta: Atiendo a [segmento], que me encuentra por [canal], paga [forma], y lo entrego con [recursos y socios] a un costo de [ ].\nContradicciones o huecos: [1] [2]\nVerde (probado): [ ]\nAmarillo (evidencia parcial): [ ]\nRojo (suposición): [ ]\nSupuesto más riesgoso: [ ] porque si es falso [ ]\nVersión 2 — pieza que ajusto (solo una): [ ]\nSiguiente experimento: [tipo, criterio, plazo]"
+     ],
+     "clave": [
+      "Cada decisión del lienzo trae costos: anótalos, incluidas comisiones de cobro y retenciones.",
+      "Lee el lienzo como una historia: las piezas deben encajar entre sí, no solo ser buenas por separado.",
+      "Pinta tus supuestos por colores y prueba primero el que más te puede costar; ajusta una pieza a la vez."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma la versión 1 y la versión 2 de tu lienzo de modelo de negocio. 1) Llena los nueve bloques con notas concretas, empezando por segmentos y propuesta de valor. 2) Recorre las cinco fases del canal y señala dónde pierdes o podrías perder clientes. 3) Escribe tus fuentes de ingreso (marca la recurrente), recursos, actividades y socios, con las condiciones que pondrías por escrito con cada socio. 4) Anota los costos que genera cada bloque, separando fijos y variables e incluyendo comisiones de cobro. 5) Lee el lienzo en voz alta, pinta cada nota de verde, amarillo o rojo y elige tu supuesto más riesgoso. 6) Haz la versión 2 ajustando una sola pieza y escribe el experimento con que probarás ese supuesto, con criterio de éxito y plazo.",
+    "entregable": "Dos lienzos fechados (versión 1 y versión 2) con notas por colores, la lista de costos por bloque, la ficha de tu supuesto más riesgoso y el experimento que harás para probarlo.",
+    "criterios": "Revisa: ninguna nota es genérica, el segmento y el canal son coherentes entre sí, cada bloque de la izquierda tiene su costo anotado, distingues lo probado de lo supuesto, la versión 2 cambia una sola pieza y el siguiente experimento tiene criterio de éxito escrito antes."
+   },
+   "lab": {
+    "t": "Un lienzo para limpieza a domicilio en Querétaro",
+    "obj": "Construir y poner a prueba el lienzo completo de un servicio a domicilio, detectando incoherencias entre precio, costos y capacidad antes de crecer.",
+    "esc": "<b>Yolanda,</b> de 47 años, trabajó diez años en una empresa de limpieza de oficinas en Querétaro y quiere ofrecer por su cuenta limpieza profunda de casas, con la ayuda de una compañera. Ya atendió a cinco familias conocidas que quedaron contentas y le piden repetir. Piensa cobrar $900 por una limpieza profunda de cuatro horas hecha entre las dos.",
+    "e": [
+     [
+      "Escena 1: Yolanda escribe en su lienzo: «Segmento: todas las casas de Querétaro. Propuesta: limpieza de calidad. Canal: redes». Las cinco familias que atendió viven en dos fraccionamientos cercanos, ambos padres trabajan y le pidieron limpieza profunda una vez al mes.",
+      "Consigna: reescribe segmento, propuesta de valor, las cinco fases del canal y la relación con clientes usando lo que ya sabe de esas cinco familias."
+     ],
+     [
+      "Escena 2: Por cada servicio gasta $120 en productos y $80 en transporte, y le paga $400 a su compañera. No ha decidido si su compañera será empleada o socia, ni con qué proveedor comprar. Si la contrata, tendría que registrarse como patrona e inscribirla en el IMSS en un plazo no mayor de cinco días hábiles.",
+      "Consigna: completa fuentes de ingreso (propón una forma recurrente), recursos, actividades y socios clave; anota qué dejaría por escrito con su compañera y qué implicaría contratarla formalmente."
+     ],
+     [
+      "Escena 3: Al leer el lienzo en voz alta, Yolanda hace la cuenta de un servicio: $900 − $120 − $80 − $400 = $300 para ella, por cuatro horas de trabajo más la organización, mientras su compañera recibe $400.",
+      "Consigna: escribe la estructura de costos por servicio, explica la incoherencia que aparece y propón dos ajustes posibles, eligiendo uno solo para la versión 2."
+     ],
+     [
+      "Escena 4: Pinta sus notas: verde, que las familias quedan contentas; amarillo, que pagarían cada mes; rojo, que pagarían más de $900 y que encontrará clientas fuera de su círculo.",
+      "Consigna: elige el supuesto más riesgoso, diseña el experimento para probarlo con criterio de éxito, denominador y plazo, y escribe el mensaje de oferta con precio total."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué segmento conviene escribir en la versión 2 del lienzo?",
+      "Familias con ambos padres trabajando en fraccionamientos cercanos que quieren limpieza profunda mensual",
+      "Todas las casas de Querétaro, porque cualquier hogar necesita limpieza en algún momento",
+      "Empresas grandes que contratan limpieza diaria de oficinas con contratos anuales",
+      "El segmento concreto sale de la evidencia que ya tiene: cinco familias con ese perfil que le piden repetir. «Todas las casas» no orienta canal ni precio, y las empresas grandes son otro negocio, con otros requisitos, que ella no ha probado."
+     ],
+     [
+      "Con $900 por servicio, su compañera recibe $400 y a Yolanda le quedan $300. ¿Qué indica?",
+      "Que su precio o su forma de operar no pagan bien su propio trabajo y debe ajustar",
+      "Que el modelo funciona, porque al final de cada servicio queda dinero a favor de Yolanda",
+      "Que debe pagar menos a su compañera, para quedarse con la mayor parte del ingreso",
+      "Yolanda trabaja las mismas horas y además organiza, pero gana menos: el modelo no cubre su sueldo. Que quede algo no significa que funcione, y recortar el pago de su compañera traslada el problema y pone en riesgo la calidad y la relación."
+     ],
+     [
+      "¿Qué experimento prueba mejor su supuesto más riesgoso?",
+      "Ofrecer a 20 familias del segmento, fuera de sus conocidas, la limpieza a $1,100 y medir cuántas agendan y repiten",
+      "Imprimir uniformes y lonas con el nombre del negocio para verse formales antes de subir los precios",
+      "Comprar una camioneta propia para no depender del transporte y así bajar ese costo por servicio",
+      "Prueba a la vez los dos supuestos rojos, precio mayor y clientas fuera de su círculo, con un denominador claro. Uniformes y camioneta son gastos que no responden si alguien nuevo pagará más."
+     ]
+    ],
+    "pl": [
+     "Lienzo de servicio a domicilio — versión 2",
+     "Segmento: [quién, dónde, qué necesita y cada cuánto]\nPropuesta de valor: [para quién, qué resuelve, frente a qué alternativa]\nCanal — se entera / evalúa / compra / recibe / después: [ ]\nRelación: [cómo vuelve]\nIngresos: [servicio suelto $ ] [plan recurrente $ ]\nRecursos: [ ]   Actividades: [ ]   Socios: [ ]\nAcuerdo con compañera: [empleada o socia, pago, horario, por escrito]\nCostos por servicio: productos $[ ] + transporte $[ ] + compañera $[ ] = $[ ]\nQueda para mí: $[precio] − $[costos] = $[ ] por [horas]\nVerde / amarillo / rojo: [ ]\nSupuesto más riesgoso: [ ]\nExperimento: [oferta, denominador, criterio, plazo]\nPieza que ajusto en esta versión (solo una): [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Armando escribió en su propuesta de valor: «calidad y buen servicio». ¿Qué le falta?",
+     "Decir qué problema concreto resuelve y para quién",
+     "Agregar más adjetivos positivos para que la propuesta suene más atractiva a cualquier cliente",
+     "Moverla al bloque de relación con clientes, porque el buen servicio pertenece a ese bloque",
+     "Nada, porque calidad y buen servicio es justo lo que todo cliente busca al contratar"
+    ],
+    [
+     "Fernando consiguió que una maderería le dé crédito a 15 días en tableros. ¿En qué bloque del lienzo anota a la maderería?",
+     "Socios clave",
+     "Segmentos de clientes",
+     "Fuentes de ingreso",
+     "Relación con clientes"
+    ],
+    [
+     "Gabriel cobra $450 por visita suelta de jardinería y quiere un ingreso más estable con el mismo servicio. ¿Qué fuente de ingreso le conviene probar?",
+     "Una cuota mensual por mantenimiento con visitas programadas",
+     "Una comisión por recomendar a otros jardineros con sus clientes",
+     "La venta por pieza de macetas decoradas en temporada de lluvias",
+     "La renta de su podadora a vecinos durante los fines de semana"
+    ],
+    [
+     "A Norma le ofrecen distribuir productos de limpieza: debe comprar un paquete de inicio y gana sobre todo por cada persona que inscriba. ¿Cómo debe leerlo?",
+     "Como señal de esquema piramidal, porque el ingreso depende de reclutar",
+     "Como un modelo de suscripción normal, porque hay una cuota de entrada que se paga una vez",
+     "Como una alianza con un socio clave, igual que con cualquier proveedor de su negocio",
+     "Como una oportunidad segura si hay muchos distribuidores"
+    ],
+    [
+     "Los clientes de Iván lo conocen por recomendación y quieren contratarlo, pero varios se van cuando piden pagar con tarjeta. ¿En qué fase del canal está el problema?",
+     "En la compra",
+     "En la evaluación",
+     "En la entrega",
+     "En la posventa"
+    ],
+    [
+     "Fernando cobra un mueble de $4,000 con tarjeta de crédito y su terminal cobra 3.5 %. ¿Cuánto paga de comisión y dónde lo anota?",
+     "$140, en la estructura de costos",
+     "$35, en las fuentes de ingreso",
+     "$140, en los socios clave",
+     "$1,400, en la estructura de costos"
+    ],
+    [
+     "Beatriz quiere cobrar 4 % extra en caja a quien pague con tarjeta, sin anunciarlo antes. ¿Qué es lo correcto?",
+     "Mostrar desde el inicio el precio total, con impuestos y comisiones incluidos",
+     "Cobrarlo en caja, porque la comisión de la terminal es un costo que genera el cliente",
+     "Cobrarlo solo a clientes nuevos, para no molestar a quienes ya le compran cada semana",
+     "Subir sus precios solo en efectivo, para compensar las comisiones de quienes pagan con tarjeta"
+    ],
+    [
+     "Kevin pintó de rojo la nota «las veterinarias venderán mis camas para perro a consignación». ¿Qué significa y qué hace?",
+     "Es un supuesto sin probar; si tumbaría el negocio, va en su siguiente experimento",
+     "Es un costo alto; debe recortarlo",
+     "Es una nota en el bloque equivocado; debe borrarla",
+     "Es un riesgo menor que puede ignorar hasta tener más clientes"
+    ],
+    [
+     "Marisol quiere vender canastas de regalo a empresas, pero su único canal es un puesto en un tianguis los domingos. ¿Qué detecta la prueba de coherencia?",
+     "Que segmento y canal no encajan: las empresas no compran en ese puesto",
+     "Un problema de costos fijos, porque la renta del puesto es demasiado alta para el negocio",
+     "Que debe bajar el precio de las canastas para que las empresas se animen a comprarlas",
+     "Nada, porque canal y segmento son bloques independientes"
+    ],
+    [
+     "Claudia da asesorías de matemáticas a estudiantes de secundaria: los estudiantes las reciben y sus padres pagan. ¿Cómo lo refleja en su lienzo?",
+     "Con dos segmentos y una propuesta para cada uno: aprobar y entender para el estudiante, avance visible y tranquilidad para los padres",
+     "Solo con el estudiante como segmento, porque es quien recibe la clase y quien debe quedar satisfecho",
+     "Solo con los padres como segmento, porque el que paga es el único cliente que importa en el lienzo",
+     "Con los padres como socios clave y el estudiante como segmento, porque los padres financian la clase"
+    ]
+   ]
+  }
+ ]
+}

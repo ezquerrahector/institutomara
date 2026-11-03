@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Números de arranque: costos, precio y punto de equilibrio",
+   "r": "Calcula cuánto necesitas para abrir, cuánto te cuesta de verdad cada venta, qué precio cobrar con IVA y comisiones, cuántas ventas necesitas para no perder y si tu efectivo aguanta los primeros seis meses.",
+   "lecciones": [
+    {
+     "t": "Inversión inicial y capital de trabajo: qué necesitas de verdad para empezar",
+     "obj": "Calcular la inversión mínima para abrir, separando inversión fija, capital de trabajo y colchón, y decidir qué recortar sin poner en riesgo la operación.",
+     "texto": [
+      "Cuando alguien dice «necesito cien mil pesos para empezar», casi nunca sabe de dónde salió esa cifra. Divide lo que necesitas en tres bolsas. La <b>inversión fija</b> es lo que pagas una vez para poder abrir: equipo, mobiliario, herramienta, adecuaciones del local y letrero; aquí sumamos también los gastos de apertura, como trámites y el depósito de la renta, que no se gasta pero queda inmovilizado mientras rentes. El <b>capital de trabajo</b> es el dinero que gira: inventario inicial e insumos que se consumen, se venden y se vuelven a comprar. El <b>colchón</b> son varios meses de gastos fijos para aguantar mientras llegan los clientes; en este diplomado trabajamos con al menos tres, porque las ventas casi nunca llegan al ritmo que imaginas (recuerda el sesgo de optimismo del módulo 1).",
+      "Haz una lista mínima, no una lista de deseos. Para cada concepto pregúntate: ¿sin esto no puedo atender a mi primer cliente? Si la respuesta es no, pasa a la lista de «después». Un taller, por ejemplo, puede rentar una máquina cara por trabajo antes de comprarla. Cotiza con al menos dos proveedores y escribe cifras reales, no «como cinco mil». Lo que más se olvida: el depósito de renta, la instalación eléctrica, el primer surtido completo, los trámites municipales, el empaque y tu propio sueldo mientras arrancas.",
+      "Arma la hoja en Excel: en la columna A el concepto, en la B el monto y en la C la bolsa (fija, trabajo o colchón). Si tus gastos fijos mensuales están en B10, el colchón de tres meses es =B10*3, y el total de lo que necesitas es =SUMA(B2:B8)+B11 si el colchón quedó en B11. Compara ese total con tu pérdida asumible y con el dinero que de verdad tienes hoy, no con el que esperas juntar.",
+      "Si no alcanza, el error típico es recortar el colchón y conservar el equipo de lujo. Es al revés: el equipo caro no te trae más clientes el primer mes, y el colchón es lo que te permite aguantar hasta que el negocio camine. Opciones sensatas: empezar en una versión más chica (rentar una cabina dentro de un negocio que ya funciona, atender a domicilio, trabajar por pedido), comprar usado con revisión o conseguir preventas. En el análisis de CB Insights de 111 cierres de empresas emergentes de tecnología, 38 % se quedó sin dinero; son negocios muy distintos de un micronegocio mexicano, pero la lección aplica: quien se gasta todo en la apertura se queda sin aire."
+     ],
+     "comparar": [
+      "«Así no: Ya aparté el sillón importado y la lámpara de diseño; los gastos de los primeros meses los voy pagando con lo que entre.»",
+      "«Así sí: Compro el equipo básico que me deja atender bien, guardo tres meses de gastos fijos y el sillón importado lo compro cuando la agenda esté llena.»"
+     ],
+     "caso": "Caso ficticio: Verónica, de 38 años, lleva diez años como manicurista en una estética de León y quiere abrir su propio local. Tiene $70,000 ahorrados. Su lista: adecuación del local $12,000; equipo de gama alta $55,000 (un equipo básico de buena calidad cuesta $28,000); letrero y trámites $4,500; depósito de dos meses de renta de $6,500, es decir $13,000; e inventario inicial de esmaltes, geles y desechables por $9,000. Sus gastos fijos serían de $17,000 al mes, incluidos $8,000 de sueldo para ella. La dueña de otra estética le ofrece rentarle una cabina por $3,500 al mes, sin depósito: ahí le bastaría un equipo portátil de $18,000 y un surtido de $6,000, y sus gastos fijos bajarían a $12,100.",
+     "p": [
+      [
+       "¿Cuánto necesitaría Verónica para abrir su local con equipo básico y tres meses de colchón?",
+       "$117,500: $66,500 de inversión, depósito e inventario, más $51,000 de colchón",
+       "$66,500, porque los gastos fijos de los primeros meses se pagan con las ventas",
+       "$83,500: la inversión, el depósito y el inventario, más un mes de gastos fijos",
+       "Inversión y capital de trabajo suman $12,000 + $28,000 + $4,500 + $13,000 + $9,000 = $66,500, y el colchón es $17,000 × 3 = $51,000: total $117,500. Contar con que las ventas paguen los fijos desde el primer mes es justo el optimismo que hunde negocios, y un solo mes de colchón ($83,500) deja muy poco margen."
+      ],
+      [
+       "Con sus $70,000, ¿qué decisión protege mejor el arranque de Verónica?",
+       "Empezar en la cabina, con equipo portátil, y guardar tres meses de gastos fijos: $60,300 en total",
+       "Abrir el local con equipo básico y un solo mes de colchón, porque un local propio atrae más clientas",
+       "Abrir el local con el equipo de gama alta y cubrir los gastos fijos con sus tarjetas de crédito",
+       "En la cabina necesita $18,000 + $6,000 + $12,100 × 3 = $60,300 y aún le sobran $9,700. El local con un mes de colchón cuesta $83,500, más de lo que tiene, y pagar gastos fijos con tarjeta convierte el arranque en deuda cara. Puede pasar a local propio cuando su agenda lo justifique."
+      ],
+      [
+       "¿Qué concepto de la lista de Verónica es capital de trabajo y no inversión fija?",
+       "El inventario inicial de esmaltes, geles y desechables",
+       "El depósito de la renta, porque lo recupera al dejar el local",
+       "El equipo, porque lo usará todos los días para trabajar",
+       "El capital de trabajo es el dinero que gira: insumos que se consumen en cada servicio y se vuelven a comprar. El depósito no gira: queda inmovilizado mientras rente, por eso lo contamos con la inversión y los gastos de apertura. El equipo se compra una vez y dura, aunque se use a diario."
+      ]
+     ],
+     "completar": [
+      "El dinero que gira en la operación, como el inventario inicial y los insumos, se llama capital de ___.",
+      "trabajo"
+     ],
+     "relacionar": [
+      [
+       "Equipo y mobiliario",
+       "Inversión fija"
+      ],
+      [
+       "Inventario inicial",
+       "Capital de trabajo"
+      ],
+      [
+       "Tres meses de gastos fijos",
+       "Colchón"
+      ],
+      [
+       "Sillón importado que no es indispensable",
+       "Lista de «después»"
+      ],
+      [
+       "Total con colchón aparte",
+       "=SUMA(B2:B8)+B11"
+      ]
+     ],
+     "refl": "Calcula la inversión de tu negocio (20 min). 1) Haz la lista mínima: cada concepto con su monto; para lo que cueste más de $2,000, anota dos cotizaciones. 2) Clasifica cada concepto como inversión fija, capital de trabajo o colchón. 3) Suma tus gastos fijos mensuales, incluido un sueldo para ti, y calcula el colchón de tres meses. 4) Compara el total con tu pérdida asumible y con el dinero que tienes hoy. Si no alcanza, escribe dos versiones más chicas del arranque y cuánto cuesta cada una.",
+     "modelo": "Modelo: «Negocio: plantas de interior en macetas recicladas, por pedido. Inversión fija: repisas $3,200 y herramienta $900. Capital de trabajo: 60 plantas y sustrato $5,400, macetas $1,800. Fijos al mes: internet y teléfono $500, cuota de un bazar $700 y mi sueldo $4,500, o sea $5,700; colchón de tres meses, $17,100. Total: $28,400. Mi pérdida asumible es $20,000: arranco sin repisas nuevas y con 30 plantas, $22,500, y busco dos preventas para cubrir la diferencia.» Es buena porque separa las tres bolsas, incluye su sueldo, compara con lo que puede perder y recorta equipo antes que colchón.",
+     "plantilla": [
+      "Hoja de inversión inicial",
+      "Negocio: [ ]\nInversión fija y de apertura: [equipo, adecuaciones, trámites, depósito] $[ ] (cotización 1: $[ ] / cotización 2: $[ ])\nCapital de trabajo: [inventario inicial, insumos] $[ ]\nGastos fijos al mes: [renta, servicios, mi sueldo, otros] = $[ ]\nColchón (fijos × 3) = $[ ]\nTotal que necesito = $[ ]\nDinero que tengo hoy: $[ ]   Mi pérdida asumible: $[ ]\nSi no alcanza, versión más chica: [qué cambio] = $[ ]\nLista de «después»: [ ]"
+     ],
+     "clave": [
+      "Lo que necesitas para empezar tiene tres bolsas: inversión fija, capital de trabajo y colchón de al menos tres meses de gastos fijos.",
+      "Si el dinero no alcanza, recorta equipo y tamaño del arranque, nunca el colchón.",
+      "Cotiza con cifras reales y compara el total con tu pérdida asumible, no con el dinero que esperas tener."
+     ]
+    },
+    {
+     "t": "Costos fijos, variables y costo unitario (incluye tu propio sueldo)",
+     "obj": "Separar costos fijos y variables, calcular el costo unitario completo e incluir tu sueldo para saber cuánto te cuesta de verdad cada producto o servicio.",
+     "texto": [
+      "Un <b>costo variable</b> sube o baja con cada unidad que vendes: materiales, empaque, la comisión por cobrar con tarjeta, la gasolina de una entrega. Un <b>costo fijo</b> se paga vendas o no: renta, internet, contador, el sueldo de un ayudante de planta y el tuyo. Algunos son mixtos: la luz de un taller tiene una parte que pagas aunque no prendas la sierra y otra que crece con las horas de trabajo. Para empezar, estima la parte fija con tus recibos de meses tranquilos y la variable por pieza o por hora.",
+      "El <b>costo unitario</b> completo tiene dos partes. La parte variable sale de tu lista de materiales: suma lo que lleva cada pieza o cada servicio, con mermas incluidas. La parte fija es lo que le toca cargar a cada unidad: costos fijos del mes ÷ unidades que esperas vender. En Excel, si los materiales están en B2:B5, el variable unitario es =SUMA(B2:B5) en B6; con los fijos en B7 y las unidades en B8, la parte fija es =B7/B8 en B9, y el costo completo, =B6+B9. Ojo: la parte fija por unidad depende del volumen; si vendes la mitad de lo planeado, cada pieza carga el doble de fijos.",
+      "El error más caro de quien empieza es no ponerse sueldo. «Lo que sobre es mío» suena humilde, pero esconde que el negocio podría no pagar ni tu tiempo. Tu sueldo es un costo fijo: ponle lo que te costaría pagarle a alguien por hacer tu trabajo o, como mínimo, lo que tu casa necesita para no endeudarse. Si con ese sueldo los números no cierran, tienes un problema de modelo, no de ánimo. Y no confundas sueldo con utilidad: la utilidad es lo que queda después de pagar todos los costos, tú incluido.",
+      "Otros olvidos frecuentes: mermas y piezas defectuosas; herramienta que se desgasta, para la que conviene apartar una cantidad cada mes; envíos que absorbes; el tiempo de cotizar y de ir por material; y las comisiones de cobro. Revisa tus costos cada vez que un proveedor suba precios: una lista de costos de hace un año puede estar diciéndote que ganas cuando ya pierdes. Con el costo unitario completo en la mano ya puedes hablar de precio, que es el tema de la siguiente lección."
+     ],
+     "comparar": [
+      "«Así no: La repisa me cuesta $270 de material y la vendo en $450, así que gano $180 en cada una y lo que sobre es mi sueldo.»",
+      "«Así sí: Cada repisa lleva $270 de material y, si vendo 50 al mes, $310 de fijos con mi sueldo incluido: me cuesta $580 y hoy la estoy vendiendo por debajo de eso.»"
+     ],
+     "caso": "Caso ficticio: Alberto, de 45 años, es carpintero en Guadalajara. Hace repisas flotantes de pino en un taller rentado y las vende por pedido en $450 cada una (cifras sin IVA). Por repisa gasta $180 de madera, $45 de herrajes, $30 de lija y barniz y $15 de empaque. Sus fijos al mes: renta $3,500, luz $900, teléfono e internet $400 y mantenimiento de herramienta $700. Nunca se ha puesto sueldo, aunque su casa necesita $10,000 al mes. Vende unas 50 repisas mensuales y no entiende por qué nunca le alcanza. Ahora un cliente le pide 20 repisas con 15 % de descuento.",
+     "p": [
+      [
+       "Si vende 50 repisas al mes e incluye su sueldo, ¿cuál es el costo unitario completo?",
+       "$580: $270 de costo variable más los $310 de fijos que carga cada pieza",
+       "$270, porque los fijos se pagan de todos modos aunque no venda nada",
+       "$380: $270 de material más $110 de renta, luz, teléfono y herramienta",
+       "El variable es $180 + $45 + $30 + $15 = $270. Los fijos con sueldo suman $3,500 + $900 + $400 + $700 + $10,000 = $15,500, y entre 50 repisas son $310: costo completo $580. Ignorar los fijos da $270, y dejar fuera el sueldo da $380, que es justo el error que tiene a Alberto sin dinero."
+      ],
+      [
+       "Con 50 repisas a $450, ¿qué le queda a Alberto al mes?",
+       "$3,500 para él: $9,000 de contribución menos los $5,500 de gastos fijos",
+       "$9,000 de utilidad, porque cada repisa deja $180 por encima del material",
+       "$22,500, porque es lo que cobra en total por las 50 repisas del mes",
+       "Las ventas son $22,500 y los materiales $13,500: la contribución es $9,000. Después de pagar $5,500 de fijos le quedan $3,500, muy lejos de los $10,000 que necesita su casa. Los $9,000 no son utilidad porque faltan los fijos, y $22,500 es el ingreso, no lo que gana."
+      ],
+      [
+       "¿Cómo debería analizar Alberto el pedido de 20 repisas con 15 % de descuento?",
+       "A $382.50 cada una aún le dejan $112.50 sobre el variable; le conviene si tiene tiempo libre y no baja su precio normal",
+       "Rechazarlo, porque $382.50 está muy por debajo de su costo completo de $580 y cada una de las 20 repisas le haría perder $197.50",
+       "Aceptarlo sin hacer cuentas, porque un pedido grande siempre conviene para darse a conocer con clientes nuevos",
+       "Con taller y fijos ya pagados, cada repisa extra solo necesita cubrir su variable: 20 × $112.50 = $2,250 adicionales. Comparar con el costo completo ignora que los fijos no suben por este pedido; aceptar sin cuentas es arriesgado si el descuento no cubriera el variable. Aparte, Alberto necesita subir su precio normal."
+      ]
+     ],
+     "completar": [
+      "Lo que te pagas por tu trabajo en el negocio debe tratarse como un costo ___.",
+      "fijo"
+     ],
+     "relacionar": [
+      [
+       "Madera de cada repisa",
+       "Costo variable"
+      ],
+      [
+       "Renta del taller",
+       "Costo fijo"
+      ],
+      [
+       "Luz del taller",
+       "Costo mixto"
+      ],
+      [
+       "Fijos ÷ unidades del mes",
+       "Parte fija del costo unitario"
+      ],
+      [
+       "Herramienta que se desgasta",
+       "Apartado mensual para reponerla"
+      ]
+     ],
+     "refl": "Calcula el costo unitario de tu producto o servicio principal (20 min). 1) Lista de costos variables por unidad, con mermas y empaque. 2) Lista de costos fijos del mes, incluido tu sueldo y un apartado para reponer herramienta. 3) Estima cuántas unidades venderás al mes y calcula la parte fija por unidad. 4) Calcula el costo completo con tus unidades esperadas y con la mitad de ellas. 5) Escribe en dos líneas qué te dice la diferencia.",
+     "modelo": "Modelo: «Servicio: asistente virtual para consultorios, paquete de 20 horas al mes. Variables por paquete: comisión de cobro $35 y aplicación de agenda $120, o sea $155. Fijos al mes: internet $450, apartado para reponer la computadora $600, contador $800 y mi sueldo $12,000: $13,850. Con 4 paquetes, cada uno carga $3,462.50 de fijos y cuesta $3,617.50 en total; con 3 paquetes, $4,771.67.» Es buena porque separa variables y fijos, incluye el sueldo y el desgaste del equipo, y muestra cómo sube el costo si vende menos.",
+     "plantilla": [
+      "Hoja de costo unitario",
+      "Producto o servicio: [ ]\nCostos variables por unidad: [material] $[ ] + [empaque] $[ ] + [comisión] $[ ] + [merma] $[ ] = $[ ]   (=SUMA(B2:B5))\nCostos fijos del mes: [renta] $[ ] + [servicios] $[ ] + [herramienta] $[ ] + [mi sueldo] $[ ] = $[ ]\nUnidades esperadas al mes: [ ]\nParte fija por unidad: $[ ]   (=B7/B8)\nCosto unitario completo: $[ ]   (=B6+B9)\nCon la mitad de las unidades: $[ ]\nPrecio actual: $[ ] → ¿cubre el costo completo? [sí / no]"
+     ],
+     "clave": [
+      "Costo variable sube con cada unidad; costo fijo se paga vendas o no.",
+      "Tu sueldo es un costo fijo: si no lo incluyes, no sabes si el negocio paga tu tiempo.",
+      "La parte fija por unidad depende del volumen: si vendes menos, cada pieza te cuesta más."
+     ]
+    },
+    {
+     "t": "Poner precio: costo, valor y competencia; margen de contribución",
+     "obj": "Fijar un precio que cubra costos y refleje el valor, separando el IVA y restando comisiones para conocer el margen de contribución de cada canal de venta.",
+     "texto": [
+      "El precio tiene un piso, un techo y una zona intermedia. El piso es tu costo: por debajo pierdes en cada venta. El techo lo pone el <b>valor</b> que percibe el cliente: cuánto le ahorras, qué problema le quitas, qué tan urgente es para él. En medio están la <b>competencia</b> y las alternativas: lo que cobran otros por algo parecido y lo que haría el cliente si no te compra. Empieza por el piso, investiga el rango del mercado y decide dónde te paras según lo que te distingue: personalización, rapidez, entrega o garantía.",
+      "Cuidado con confundir margen y aumento. Si tu costo variable es $150 y quieres que la mitad del precio sea margen, multiplicar por 1.5 da $225, y tu margen real sería $75 ÷ $225 = 33.3 %. La fórmula correcta es precio = costo ÷ (1 − margen deseado); en Excel, =B2/(1-B3), que da $300. El <b>margen de contribución</b> unitario es lo que te deja cada venta después de sus costos variables: precio sin IVA − costo variable − comisiones.",
+      "El IVA no es tuyo. Si estás dado de alta y tu producto paga la tasa general de 16 %, el precio de etiqueta incluye un impuesto que entregas al SAT, descontado el IVA que pagaste en tus compras. Para separarlo divide entre 1.16: de $348 cobrados, $300 son tu precio y $48 son IVA. Restar 16 % a $348 es un error común: da $292.32. Hay productos con tasa 0 %, como la mayoría de los alimentos no preparados y las medicinas de patente; los alimentos preparados sí pagan 16 %. Al público debes mostrarle el precio total, con impuestos y comisiones (Ley Federal de Protección al Consumidor, art. 7 Bis).",
+      "Las comisiones también se restan. Banxico reporta comisiones típicas con tarjeta de crédito de alrededor de 2 % a 3.5 %, y con débito de 1.5 % a 2.5 % (julio de 2026; verifica las vigentes), calculadas sobre el total cobrado. Las plataformas de venta cobran su comisión y, en 2026, retienen 2.5 % de ISR a las personas físicas que dan su RFC (verifica la versión vigente); esa retención no es un costo del producto sino impuesto adelantado, pero reduce lo que te depositan. Cobrar con CoDi no tiene comisiones adicionales. Calcula el margen por canal: el mismo producto puede dejarte mucho menos en una plataforma."
+     ],
+     "comparar": [
+      "«Así no: Mi caja me cuesta $150 y quiero ganar la mitad, así que la doy en $225 más IVA, igual que el año pasado, aunque pague con tarjeta.»",
+      "«Así sí: Con costo de $150 y margen de 50 %, el precio sin IVA es $150 ÷ 0.5 = $300; con IVA publico $348, y con tarjeta me quedan $139.56 de contribución.»"
+     ],
+     "caso": "Caso ficticio: Diana, de 31 años, arma cajas de regalo personalizadas en Toluca: taza grabada, vela y libreta con el nombre de quien la recibe. Cada caja le cuesta $150 en materiales y personalización. Copió el precio de una competidora, $348 con IVA incluido, y la mitad de sus clientes paga con tarjeta, con una comisión total de 3 % sobre lo cobrado. Una plataforma le ofrece vender ahí con una comisión de 17 % sobre el precio total. Además, una empresa le pide cotizar 80 cajas con su logotipo para regalar a fin de año.",
+     "p": [
+      [
+       "¿Cuál es el margen de contribución de Diana en una caja pagada con tarjeta?",
+       "$139.56: $300 sin IVA, menos $150 de costo y $10.44 de comisión",
+       "$198: los $348 que cobra menos los $150 que le cuesta armarla",
+       "$187.56: $348 menos $150 de costo y $10.44 de comisión del banco",
+       "Sin IVA, $348 ÷ 1.16 = $300; la comisión es 3 % de $348 = $10.44; queda $300 − $150 − $10.44 = $139.56. Los $198 olvidan el IVA y la comisión; los $187.56 restan la comisión pero cuentan como suyo el IVA, que es del SAT."
+      ],
+      [
+       "Si vende en la plataforma al mismo precio, ¿qué le conviene saber a Diana?",
+       "Que ahí le quedan $90.84 por caja, contra $139.56 cuando le pagan con tarjeta en su tienda",
+       "Que le queda lo mismo que en su tienda, porque la retención de 2.5 % de ISR es la única diferencia entre los dos canales",
+       "Que le quedan $124.50, porque la plataforma solo cobra su 17 % sobre el costo de los materiales",
+       "La comisión es 17 % de $348 = $59.16, así que su contribución es $300 − $150 − $59.16 = $90.84. La retención de ISR no es la única diferencia, y la comisión se cobra sobre el precio total, no sobre el costo. Le conviene si el canal le trae clientes que no llegarían de otro modo o si ajusta el precio ahí."
+      ],
+      [
+       "¿Cómo debería cotizar Diana las 80 cajas con logotipo?",
+       "Calcular el costo de la versión con logo, investigar qué pagan las empresas por regalos así y cotizar por valor, con el IVA desglosado",
+       "Dar el mismo precio de $348 con un descuento por volumen, porque así cotiza la competencia que copió y las empresas siempre piden rebaja",
+       "Cotizar a costo más 50 %, o sea $225 más IVA por caja, para asegurar el pedido grande",
+       "El piso es su nuevo costo (el logotipo cambia el costo) y el techo, el valor para la empresa: entrega puntual, personalización y factura. Copiar un precio sin saber su margen es lo que ya le dio problemas, y costo × 1.5 da un margen real de 33.3 %, no de 50 %."
+      ]
+     ],
+     "completar": [
+      "Precio sin IVA menos costo variable menos comisiones es el margen de ___ unitario.",
+      "contribución"
+     ],
+     "relacionar": [
+      [
+       "Precio de $348 con IVA",
+       "$300 sin IVA (÷ 1.16)"
+      ],
+      [
+       "Costo de $150 con margen deseado de 50 %",
+       "Precio de $300 = 150 ÷ (1 − 0.5)"
+      ],
+      [
+       "Alimentos no preparados",
+       "Tasa 0 % en la mayoría"
+      ],
+      [
+       "Cobro con CoDi",
+       "Sin comisiones adicionales"
+      ],
+      [
+       "Venta en plataforma con RFC",
+       "Retención de ISR de 2.5 % en 2026"
+      ]
+     ],
+     "refl": "Pon precio a tu producto o servicio principal (20 min). 1) Escribe tu costo variable y tu costo unitario completo (lección anterior). 2) Investiga el precio de al menos tres competidores o alternativas y anota si incluyen IVA. 3) Escribe qué valor extra das tú. 4) Calcula el precio con el margen que buscas usando costo ÷ (1 − margen), agrega IVA si aplica a tu producto y redondea. 5) Calcula el margen de contribución en cada canal donde venderás: efectivo o CoDi, tarjeta y plataforma.",
+     "modelo": "Modelo: «Producto: collar bordado para perro con su nombre. Costo variable $85. Competencia: $180 a $260 con IVA. Quiero 55 % de margen: $85 ÷ 0.45 = $188.89 sin IVA. Publico $220 con IVA, que son $189.66 sin IVA. Con tarjeta (3 % de $220 = $6.60) me quedan $98.06 de contribución; con CoDi, $104.66. Mi valor extra: bordado en 48 horas y entrega en mi colonia.» Es buena porque parte del costo, revisa el mercado, separa el IVA, resta la comisión de cada canal y justifica el precio con un valor concreto.",
+     "plantilla": [
+      "Hoja de precio y margen por canal",
+      "Producto: [ ]   Costo variable: $[ ]   Costo completo: $[ ]\nCompetencia (con o sin IVA): [ ] $[ ] / [ ] $[ ] / [ ] $[ ]\nMi valor extra: [ ]\nMargen deseado: [ ] %  →  precio sin IVA = costo ÷ (1 − margen) = $[ ]   (=B2/(1-B3))\nTasa de IVA de mi producto: [16 % / 0 %]  →  precio al público = $[ ]\nMargen de contribución por canal:\nEfectivo o CoDi: $[ ]\nTarjeta ([ ] % sobre el total): $[ ]\nPlataforma ([ ] % de comisión): $[ ]\nCanal que más me deja: [ ]"
+     ],
+     "clave": [
+      "El precio va del piso de tu costo al techo del valor que percibe el cliente, con la competencia como referencia.",
+      "Para un margen deseado, precio = costo ÷ (1 − margen); multiplicar el costo por 1.5 no da 50 % de margen.",
+      "El IVA se separa dividiendo entre 1.16 cuando aplica, y las comisiones se restan: calcula el margen de cada canal."
+     ]
+    },
+    {
+     "t": "Punto de equilibrio y flujo de efectivo de los primeros seis meses",
+     "obj": "Calcular cuántas ventas necesitas al mes para no perder y proyectar el flujo de efectivo de seis meses en dos escenarios para saber si tu dinero aguanta.",
+     "texto": [
+      "El <b>punto de equilibrio</b> es el número de ventas al mes en el que tu margen de contribución paga todos tus costos fijos, incluido tu sueldo: ni ganas ni pierdes. La fórmula es costos fijos ÷ margen de contribución unitario. En Excel, con los fijos en B2, el precio sin IVA en B3 y el costo variable con comisiones en B4, escribe =B2/(B3-B4) en B5; como no vendes fracciones, redondea hacia arriba con =REDONDEAR.MAS(B5,0). Ejemplo: fijos de $23,000 y un margen de $115 por servicio dan 200 servicios al mes. Divide entre los días que abres para ver si es realista: 200 entre 26 días son casi 8 diarios.",
+      "Los errores típicos dan números falsamente cómodos: dividir los fijos entre el precio en lugar del margen, usar el precio con IVA, olvidar las comisiones o dejar fuera tu sueldo. Si el resultado está por encima de tu capacidad o de lo que tu mercado puede comprar, tus palancas son cuatro: subir el precio, bajar el costo variable, bajar los fijos o cambiar el modelo. «Echarle más ganas» no está en la lista.",
+      "Utilidad no es efectivo. Puedes vender por encima del equilibrio y quedarte sin dinero porque compraste inventario antes de vender, diste crédito a un cliente o pagaste algo anual. El <b>flujo de efectivo</b> registra, mes por mes, lo que de verdad entra y sale. Ponlo con los meses en columnas y estas filas: saldo inicial, entradas, salidas (variables, fijos, impuestos y pagos de deuda), flujo del mes (=B3-B4) y saldo final (=B2+B5), que se vuelve el saldo inicial del mes siguiente. Incluye los impuestos: en RESICO el ISR va de 1.00 % a 2.50 % de lo efectivamente cobrado según la tabla mensual, y el IVA que cobras, menos el que pagas, se entrega al SAT.",
+      "Haz al menos dos escenarios: esperado y pesimista, con ventas más lentas, un cliente que paga tarde o un aumento de tu proveedor. Lo que más importa no es el saldo del último mes, sino el <b>saldo más bajo</b>, que encuentras con =MIN(B6:G6). Si en el escenario pesimista ese saldo llega a negativo, necesitas más colchón, un arranque más chico o un plan de ajuste decidido antes de abrir, no a la mitad de la crisis. Cada mes reemplaza la proyección con los datos reales y vuelve a mirar."
+     ],
+     "comparar": [
+      "«Así no: Con $23,000 de gastos y cobrando $174 por lavado, necesito como 130 al mes; seguro el primer mes ya estoy ganando.»",
+      "«Así sí: Mi equilibrio es $23,000 ÷ ($150 − $35) = 200 lavados; en el escenario pesimista mi colchón se acaba en el sexto mes, así que ajusto antes de abrir.»"
+     ],
+     "caso": "Caso ficticio: Sergio, de 34 años, abre un autolavado en Culiacán con un ayudante. Cobra $174 con IVA por lavado completo, es decir $150 sin IVA, y gasta $35 por auto en agua, jabón, cera y toallas. Sus fijos son $23,000 al mes: renta $7,000, ayudante con IMSS $9,500, luz, agua y teléfono $2,000 y un sueldo para él de $4,500 mientras arranca. Abre 26 días al mes y, para simplificar, el ejercicio no incluye impuestos. Ya pagada la inversión, le quedan $40,000 de colchón. Escenario esperado para los meses 1 a 6: 120, 160, 190, 210, 220 y 230 lavados. Escenario pesimista: 80, 110, 140, 160, 170 y 180.",
+     "p": [
+      [
+       "¿Cuál es el punto de equilibrio mensual de Sergio?",
+       "200 lavados: $23,000 ÷ ($150 − $35)",
+       "154 lavados: $23,000 ÷ $150, lo que cobra sin IVA por cada lavado",
+       "166 lavados: $23,000 ÷ ($174 − $35), con el precio que cobra al cliente",
+       "El margen de contribución es $150 − $35 = $115 y $23,000 ÷ $115 = 200. Dividir entre el precio olvida que cada lavado tiene costos variables (153.3, redondeado a 154), y usar $174 cuenta como suyo el IVA, que es del SAT (165.5, redondeado a 166)."
+      ],
+      [
+       "En el escenario esperado, ¿cuál es su saldo más bajo y cuándo ocurre?",
+       "$25,050, al final del tercer mes",
+       "$30,800, al final del primer mes, que es el de menos lavados",
+       "$31,950, al final del sexto mes, cuando ya superó el equilibrio",
+       "Los flujos son −$9,200, −$4,600 y −$1,150 en los meses 1 a 3: el saldo baja a $30,800, $26,200 y $25,050. Desde el mes 4 supera los 200 lavados y el saldo sube. El mes con menos ventas no es el de saldo más bajo, porque las pérdidas se acumulan, y el saldo final no dice cuánto apretó el camino."
+      ],
+      [
+       "¿Qué le dice a Sergio su escenario pesimista?",
+       "Que su colchón se acaba en el sexto mes (saldo de −$1,400) y debe preparar ajustes antes de abrir",
+       "Que debe pedir un crédito de $41,400 en cuanto abra para cubrir las pérdidas de los seis meses",
+       "Que puede ignorarlo, porque el escenario pesimista casi nunca ocurre y conviene pensar en positivo",
+       "En el pesimista nunca llega a 200 lavados: pierde $13,800, $10,350, $6,900, $4,600, $3,450 y $2,300, y su saldo termina en −$1,400. La salida es decidir ajustes antes de abrir (bajar fijos, buscar contratos de flotilla, cambiar horario). Un crédito para cubrir pérdidas solo las aplaza con intereses, e ignorar el escenario es el sesgo de optimismo."
+      ]
+     ],
+     "completar": [
+      "Costos fijos ÷ margen de contribución unitario = punto de ___.",
+      "equilibrio"
+     ],
+     "refl": "Calcula tu punto de equilibrio y tu flujo de seis meses (20 min). 1) Con tus fijos, tu precio sin IVA y tu costo variable con comisiones, calcula el equilibrio mensual y diario. 2) Escribe si es realista para tu capacidad y tu mercado, y por qué. 3) Arma el flujo de seis meses con saldo inicial, entradas, salidas, impuestos y saldo final en dos escenarios: esperado y pesimista. 4) Anota el saldo más bajo de cada uno y qué harías si el pesimista llega a negativo.",
+     "modelo": "Modelo: «Negocio: clases particulares de matemáticas en mi casa. Fijos: $9,800 al mes con mi sueldo. Precio por clase: $250 sin IVA; variables: copias y material $20. Equilibrio: $9,800 ÷ $230 = 42.6, o sea 43 clases al mes, unas 10 por semana; caben en mis tardes. Flujo esperado: saldo más bajo $14,200 en el mes 2. Pesimista: saldo más bajo $3,100 en el mes 4. Si baja de $5,000, abro un grupo de tres alumnos los sábados.» Es buena porque usa el margen y no el precio, revisa la capacidad real y tiene un plan con disparador concreto.",
+     "plantilla": [
+      "Hoja de punto de equilibrio y flujo de seis meses",
+      "Costos fijos del mes: $[ ]   Precio sin IVA: $[ ]   Costo variable con comisiones: $[ ]\nMargen de contribución unitario: $[ ]\nPunto de equilibrio: [ ] ventas al mes (=REDONDEAR.MAS(B2/(B3-B4),0)) → [ ] al día\nFlujo (meses 1 a 6, en columnas B a G):\nSaldo inicial | Entradas | Salidas: variables, fijos, impuestos, deuda | Flujo del mes (=B3-B4) | Saldo final (=B2+B5)\nEscenario esperado: saldo más bajo $[ ] en el mes [ ]   (=MIN(B6:G6))\nEscenario pesimista: saldo más bajo $[ ] en el mes [ ]\nSi el saldo baja de $[ ], haré: [ajuste concreto]"
+     ],
+     "clave": [
+      "Punto de equilibrio = costos fijos ÷ margen de contribución unitario, redondeado hacia arriba.",
+      "Utilidad no es efectivo: el flujo mes por mes te dice si tu dinero aguanta.",
+      "Mira el saldo más bajo del escenario pesimista y decide los ajustes antes de abrir."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma la hoja de números de tu negocio en Excel, con cuatro pestañas. 1) Inversión: lista mínima cotizada, clasificada en inversión fija, capital de trabajo y colchón de tres meses. 2) Costo unitario: variables por unidad, fijos con tu sueldo y costo completo con tus unidades esperadas. 3) Precio: precio sin IVA y al público, y margen de contribución en cada canal de cobro. 4) Equilibrio y flujo: punto de equilibrio mensual y diario, y flujo de seis meses en escenario esperado y pesimista, con el saldo más bajo de cada uno.",
+    "entregable": "Un archivo de Excel con cuatro pestañas y fórmulas (no cifras tecleadas a mano) más un párrafo de conclusiones: cuánto necesitas, cuánto te cuesta cada venta, cuántas ventas necesitas y si tu efectivo aguanta.",
+    "criterios": "Revisa: tu sueldo aparece como costo fijo, el IVA está separado cuando aplica y las comisiones restadas, el punto de equilibrio usa margen y no precio, el flujo tiene dos escenarios con su saldo más bajo y escribiste qué harás si el pesimista llega a negativo."
+   },
+   "lab": {
+    "t": "Las cuentas de unos aretes en Colima",
+    "obj": "Calcular inversión, costo unitario, margen por canal y punto de equilibrio de un negocio pequeño, y decidir con esos números dónde y cómo vender.",
+    "esc": "<b>Jimena,</b> de 27 años, trabaja medio tiempo como recepcionista en Colima y hace aretes de chaquira y bordado. Ha vendido a conocidas y quiere hacerlo en serio: un puesto en un bazar de fin de semana y una plataforma de venta en línea. Ya está dada de alta en el SAT y cobra IVA. Tiene $35,000 ahorrados y no quiere endeudarse.",
+    "e": [
+     [
+      "Escena 1: Para arrancar necesita herramientas $1,800, materiales iniciales $4,500 y un exhibidor plegable $2,700. Sus fijos al mes serían cuota del bazar $1,200, internet y teléfono $500 y un sueldo para ella de $6,000.",
+      "Consigna: arma la hoja de inversión con fórmulas, calcula el colchón de tres meses y el total, y escribe si le alcanza con sus ahorros."
+     ],
+     [
+      "Escena 2: Cada par lleva $38 de materiales y $7 de empaque. Calcula que venderá unos 60 pares al mes.",
+      "Consigna: calcula el costo variable, la parte fija por par y el costo unitario completo; repite el cálculo con 30 pares y explica la diferencia."
+     ],
+     [
+      "Escena 3: Su precio al público es $232 con IVA. En el bazar le pagan en efectivo o con CoDi; la plataforma cobra una comisión total de 18 % sobre el precio.",
+      "Consigna: separa el IVA, calcula el margen de contribución en cada canal y escribe qué canal le deja más por par y qué otro motivo podría tener para usar el otro."
+     ],
+     [
+      "Escena 4: Sus primeras semanas en el bazar fueron flojas y una amiga le dice que «con vender 34 pares ya sale».",
+      "Consigna: calcula el punto de equilibrio si vendiera todo en el bazar y si vendiera todo en la plataforma, explica el error de su amiga y escribe dos ajustes posibles si no llega."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuánto necesita Jimena para arrancar con tres meses de colchón?",
+      "$32,100: $9,000 de compras y $23,100 de colchón",
+      "$9,000, porque los fijos los cubrirá con lo que venda en el bazar",
+      "$16,700: las compras más un mes de fijos, que es lo que tarda en vender",
+      "Las compras suman $1,800 + $4,500 + $2,700 = $9,000; los fijos, $1,200 + $500 + $6,000 = $7,700, y tres meses son $23,100: total $32,100, que sí cabe en sus $35,000. Arrancar sin colchón o con un mes apuesta a que las ventas lleguen de inmediato."
+     ],
+     [
+      "¿Cuál es su margen de contribución por par vendido en la plataforma?",
+      "$113.24 por par",
+      "$145.24 por cada par vendido",
+      "$155.00 por par, igual que en el bazar",
+      "Sin IVA, $232 ÷ 1.16 = $200; la comisión es 18 % de $232 = $41.76; queda $200 − $45 − $41.76 = $113.24. $145.24 resta la comisión pero cuenta el IVA como propio, y $155 es el margen del bazar, sin comisión."
+     ],
+     [
+      "¿Cuál es su punto de equilibrio si vende todo en el bazar y por qué se equivoca su amiga?",
+      "50 pares: $7,700 ÷ $155 de margen; su amiga dividió los fijos entre el precio",
+      "42 pares: $7,700 ÷ ($232 − $45); su amiga olvidó restar el costo de los materiales",
+      "34 pares: $7,700 ÷ $232, así que su amiga tiene razón y ya está cerca de lograrlo",
+      "En el bazar el margen es $200 − $45 = $155 y $7,700 ÷ $155 = 49.7, o sea 50 pares (en la plataforma serían 68). Su amiga dividió entre el precio con IVA: 33.2, redondeado a 34. Usar $232 − $45 sigue contando el IVA como propio."
+     ]
+    ],
+    "pl": [
+     "Hoja de números de arranque",
+     "Negocio: [ ]\nInversión: fija $[ ] + capital de trabajo $[ ] + colchón (fijos × 3) $[ ] = $[ ]\nCosto variable por unidad: $[ ]   Fijos del mes con mi sueldo: $[ ]\nUnidades esperadas: [ ] → costo unitario completo: $[ ]\nPrecio al público: $[ ] → sin IVA (÷ 1.16 si aplica): $[ ]\nMargen de contribución: efectivo o CoDi $[ ] / tarjeta $[ ] / plataforma $[ ]\nPunto de equilibrio por canal: [ ] / [ ] / [ ]\nSaldo más bajo en escenario pesimista: $[ ] en el mes [ ]\nAjustes si no llego: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Karina vende cojines bordados con un costo variable de $80 y quiere que 40 % del precio sin IVA sea margen. ¿Qué precio sin IVA debe poner?",
+     "$133.33, porque $80 ÷ (1 − 0.40) deja $53.33 de margen",
+     "$112, porque $80 × 1.40 ya incluye el 40 % que busca",
+     "$200, porque $80 ÷ 0.40 es la forma de calcular el margen",
+     "$128, porque $80 × 1.60 cubre el margen y además la comisión"
+    ],
+    [
+     "Gilberto cobra $580 con IVA incluido por reparar una lavadora. ¿Cuál es su ingreso sin IVA?",
+     "$500, porque $580 ÷ 1.16 = $500",
+     "$487.20, porque a los $580 se les resta el 16 %",
+     "$564, porque al precio solo se le restan $16 de impuesto",
+     "$672.80, porque el IVA se calcula sumándolo a lo cobrado"
+    ],
+    [
+     "Verónica tiene fijos de $17,000 al mes en su estética de León. Cobra $290 con IVA por servicio de uñas ($250 sin IVA) y gasta $100 por servicio en productos y comisión. ¿Cuál es su punto de equilibrio?",
+     "114 servicios al mes",
+     "68 servicios al mes, porque divide $17,000 entre $250",
+     "90 servicios al mes, porque usa los $290 cobrados menos $100",
+     "170 servicios al mes, porque divide $17,000 entre los $100 de costo variable"
+    ],
+    [
+     "Diana cobra $1,160 con IVA por un pedido pagado con tarjeta de crédito, con comisión de 3.5 % sobre el total, y su costo variable es $400. ¿Cuál es su margen de contribución?",
+     "$559.40: $1,000 sin IVA menos $400 y $40.60 de comisión",
+     "$760.00, la diferencia entre lo que cobró y su costo variable",
+     "$600.00, porque la comisión del banco la absorbe el cliente",
+     "$719.40, porque a lo cobrado se le restan el costo y la comisión"
+    ],
+    [
+     "Irma abrirá una frutería en Colima y no sabe si debe separar IVA de sus precios. ¿Qué es lo más acertado?",
+     "La mayoría de los alimentos no preparados tienen tasa 0 %, así que en ellos no hay IVA que separar; lo confirma con un contador",
+     "Todos los productos pagan la tasa general de 16 %, así que debe dividir cada precio de su lista entre 1.16",
+     "Solo paga IVA lo que cobra con tarjeta; lo que cobra en efectivo siempre tiene tasa 0 %",
+     "Los alimentos no necesitan alta en el SAT, así que el IVA no le aplica a ningún producto"
+    ],
+    [
+     "Octavio da mantenimiento a minisplits en Ciudad Victoria. ¿Cuál de estos es un costo variable de su servicio?",
+     "El gas refrigerante y las piezas que usa en cada equipo",
+     "La renta de la bodega donde guarda su herramienta y su escalera",
+     "El pago mensual de su plan de teléfono e internet",
+     "El sueldo fijo de su ayudante, trabaje mucho o poco"
+    ],
+    [
+     "Benito calcula que su taller de bicicletas le deja $12,000 al mes, pero no incluyó un sueldo para él y trabaja ahí 50 horas a la semana. ¿Qué debería concluir?",
+     "Que esos $12,000 pagan su tiempo y no son utilidad: debe compararlos con lo que costaría pagarle a alguien por su trabajo",
+     "Que tiene $12,000 de utilidad limpia, porque el tiempo del dueño no se cuenta como costo",
+     "Que debe ponerse sueldo solo cuando el negocio cumpla un año de abierto",
+     "Que su negocio está en pérdida, porque todo negocio sin sueldo registrado pierde dinero"
+    ],
+    [
+     "Rosa proyecta un saldo inicial de $30,000 y flujos de −$8,000, −$5,000, −$2,000 y +$1,000 en sus primeros cuatro meses. ¿Cuál es su saldo más bajo?",
+     "$15,000, al final del tercer mes",
+     "$16,000, al final del cuarto mes, el último que proyectó",
+     "$22,000, al final del primer mes, el de mayor pérdida",
+     "−$14,000, que es la suma de los cuatro flujos"
+    ],
+    [
+     "En la hoja de Sergio, B2 tiene los costos fijos, B3 el precio sin IVA y B4 el costo variable por unidad. ¿Qué fórmula da el punto de equilibrio?",
+     "=B2/(B3-B4)",
+     "=B2/B3-B4",
+     "=(B2-B4)/B3",
+     "=B2/(B3+B4)"
+    ],
+    [
+     "Mario abrirá un estudio de fotografía en Campeche y calcula que necesita $45,000, exactamente lo que cuesta su equipo. ¿Qué le falta considerar?",
+     "El capital de trabajo y un colchón de varios meses de gastos fijos, incluido su sueldo",
+     "Nada: el equipo es lo único indispensable y lo demás sale de las primeras sesiones",
+     "Un local más grande, porque los clientes juzgan a un fotógrafo por su estudio",
+     "Un crédito por el doble del equipo, para no quedarse corto si algo sale mal"
+    ]
+   ]
+  },
+  {
+   "t": "Dinero para empezar sin hundirte",
+   "r": "Elige y combina fuentes de dinero según para qué lo necesitas, compara créditos por su CAT y tu capacidad de pago, detecta fraudes, separa el dinero del negocio del de tu casa y decide con cabeza si te conviene un socio.",
+   "lecciones": [
+    {
+     "t": "Fuentes de dinero: ahorro, preventas, clientes, familia, socios, tandas y crédito",
+     "obj": "Comparar las fuentes de dinero disponibles para tu arranque y armar una combinación que cubra lo que necesitas con el menor riesgo y por escrito.",
+     "texto": [
+      "Antes de buscar dinero, reduce cuánto necesitas (módulo 5) y recuerda tu <b>pérdida asumible</b> (módulo 1). Es falso que sin crédito no se pueda empezar: según la ENAPROCE 2018, con datos de 2017, solo 7.6 % de las microempresas tuvo financiamiento, y 7 de cada 10 mipymes no aceptarían un crédito bancario, sobre todo porque lo consideran caro. El orden sensato suele ser: primero lo que no genera deuda ni te quita control, y al final lo que cuesta intereses o una parte de tu negocio.",
+      "El ahorro propio no cobra intereses ni pide permiso, pero debe limitarse a lo que puedes perder. Las preventas y los <b>anticipos</b> de clientes validan tu idea y te financian a la vez; el riesgo es gastarlos en otra cosa y no poder cumplir, así que trátalos como dinero comprometido con esa entrega y deja las condiciones por escrito. El crédito de proveedores, pagar a 15 o 30 días lo que vendes antes, es valioso si no compras de más. El dinero de familia y amigos llega rápido y es flexible, pero puede costarte relaciones: escribe el monto, si es préstamo o aportación, el plazo, los pagos y qué pasa si el negocio no funciona.",
+      "La tanda es un ahorro colectivo sin intereses muy común en México: sirve si tu turno llega cuando lo necesitas y confías en todos, porque nadie responde si alguien deja de pagar. Un socio aporta dinero, trabajo o contactos a cambio de una parte de las utilidades y de las decisiones (lección 4). El crédito bancario o de una financiera es útil para un activo que genera ingresos, como una máquina que ya tiene pedidos esperando, y peligroso para tapar pérdidas (lección 2). Los programas públicos cambian: revisa los programas vigentes de tu estado y de Nacional Financiera, y no cuentes con ese dinero hasta tenerlo aprobado.",
+      "Combina las fuentes según el uso: el equipo que dura años puede financiarse a plazo; el inventario que se vende en semanas, con proveedores o anticipos; el colchón, de preferencia con ahorro. Y antes de financiar, recorta: rentar equipo los primeros meses, comprar usado, empezar con un solo servicio. Desconfía de cualquier «inversión» que te pide reclutar personas para recuperar tu dinero: esa es la lógica del multinivel, no una fuente de financiamiento."
+     ],
+     "comparar": [
+      "«Así no: Pido prestado a mi tío lo que falte, sin fecha, y si me va mal ya veremos; la familia es la familia.»",
+      "«Así sí: Tío, te pido $6,200 como préstamo, en cuatro pagos de $1,550, el primero en marzo; si el negocio no funciona, te pago de mi sueldo. Lo firmamos los dos.»"
+     ],
+     "caso": "Caso ficticio: Mario, de 29 años, es fotógrafo de eventos en Campeche y quiere independizarse. Necesita $45,000: cámara $32,000, lente $9,000 y flash $4,000. Puede arriesgar $15,000 de su ahorro. Tres parejas quieren contratarlo para su boda a $12,000 cada una y aceptan dejar 30 % de anticipo. Un tío le ofrece $20,000 «y me pagas cuando puedas»; una vecina lo invita a una tanda de diez personas de $2,000 semanales en la que le tocaría el turno 8; y su tarjeta de crédito tiene una línea de $40,000. Un fotógrafo conocido renta lente y flash por evento.",
+     "p": [
+      [
+       "¿Qué combinación es más sensata para Mario?",
+       "Cámara con ahorro y anticipos ($25,800), rentar lente y flash al principio y pedir al tío solo $6,200 por escrito",
+       "Comprar todo con la tarjeta de crédito y liquidarla con lo que cobre en las tres bodas, para no deberle nada a la familia",
+       "Aceptar los $20,000 del tío sin plazo y entrar a la tanda, para comprar todo el equipo de una vez",
+       "Ahorro más anticipos: $15,000 + 3 × $3,600 = $25,800; para la cámara de $32,000 faltan $6,200, que pide por escrito. Rentar lente y flash evita deuda mientras valida. Pagar todo con tarjeta es la fuente más cara y depende de que no falle ninguna boda, y un préstamo sin plazo es el que más relaciones rompe."
+      ],
+      [
+       "¿Qué debe cuidar Mario al usar los anticipos de las bodas?",
+       "Que son de los clientes: si no cumple debe devolverlos, así que los usa solo en lo necesario para entregar y firma un contrato",
+       "Que son suyos desde que los recibe, así que puede usarlos en lo que quiera sin avisarle a nadie",
+       "Que conviene meterlos a la tanda de su vecina para que crezcan hasta la fecha de cada boda",
+       "Un anticipo es dinero comprometido con una entrega: si no la cumple, lo debe. Usarlo para el equipo que necesita esas bodas es razonable, con contrato que diga fechas, entregables y política de cancelación. La tanda no genera rendimientos: devuelve lo mismo que aportas."
+      ],
+      [
+       "¿Qué implica para Mario entrar a la tanda con el turno 8?",
+       "Recibir $20,000 hasta la semana 8 y seguir pagando $2,000 semanales, sin nadie que responda si otro falla",
+       "Obtener un crédito barato, porque al final recibe más dinero del que aporta durante las diez semanas",
+       "Recibir los $20,000 en la primera semana, porque es la primera vez que participa en esa tanda",
+       "En una tanda de diez personas a $2,000 aportas $20,000 y recibes $20,000: es ahorro, no crédito, y con el turno 8 el dinero llega casi dos meses después. Su riesgo principal es que alguien deje de pagar, porque no hay contrato ni institución que responda."
+      ]
+     ],
+     "completar": [
+      "El dinero que un cliente adelanta por una entrega futura es un ___ y está comprometido con esa entrega.",
+      "anticipo"
+     ],
+     "relacionar": [
+      [
+       "Ahorro propio",
+       "Sin intereses, limitado a tu pérdida asumible"
+      ],
+      [
+       "Preventa",
+       "Valida y financia a la vez"
+      ],
+      [
+       "Tanda",
+       "Ahorro colectivo sin intereses ni garantía"
+      ],
+      [
+       "Préstamo familiar",
+       "Monto, plazo y pagos por escrito"
+      ],
+      [
+       "Crédito",
+       "Para un activo que genera ingresos"
+      ]
+     ],
+     "refl": "Arma tu mapa de fuentes de dinero (20 min). 1) Escribe cuánto necesitas según tu hoja de inversión y cuánto es tu pérdida asumible. 2) Lista las fuentes que tienes a tu alcance: ahorro, preventas o anticipos, proveedores, familia, tanda, socio, crédito. 3) Para cada una anota cuánto podría darte, cuándo, cuánto te cuesta y su riesgo principal. 4) Elige una combinación en orden de menor a mayor riesgo y escribe qué recortarías si una fuente falla. 5) Redacta en cinco líneas el acuerdo para la fuente que involucra a otra persona.",
+     "modelo": "Modelo: «Necesito $28,000 para mi servicio de jardinería; mi pérdida asumible es $12,000. Fuentes: ahorro $12,000 ya; anticipo de un condominio $6,000 al firmar contrato; vivero que me fía plantas a 30 días, $4,000; mi hermana me presta $6,000 en seis pagos de $1,000 desde abril. Total: $28,000. Si falla el condominio, rento la desbrozadora en vez de comprarla. Acuerdo con mi hermana: préstamo, monto, pagos, fechas y qué pasa si me atraso, firmado por los dos.» Es buena porque respeta la pérdida asumible, combina fuentes por su uso, tiene plan B y pone por escrito el dinero de la familia.",
+     "plantilla": [
+      "Mapa de fuentes de dinero",
+      "Necesito: $[ ]   Mi pérdida asumible: $[ ]\nFuente | Monto | Cuándo llega | Costo | Riesgo principal\nAhorro propio | $[ ] | [ ] | sin intereses | [ ]\nPreventas o anticipos | $[ ] | [ ] | compromiso de entrega | [ ]\nProveedores | $[ ] | [ ] | [plazo] | [ ]\nFamilia o amigos | $[ ] | [ ] | [ ] | [ ]\nTanda / socio / crédito | $[ ] | [ ] | [ ] | [ ]\nCombinación elegida: [ ] = $[ ]\nSi falla una fuente, recorto: [ ]\nAcuerdo por escrito con: [persona] (monto, préstamo o aportación, plazo, pagos, qué pasa si no funciona)"
+     ],
+     "clave": [
+      "La mayoría de las microempresas en México arranca sin crédito: primero lo que no genera deuda ni te quita control.",
+      "Los anticipos financian y validan, pero son dinero comprometido con una entrega.",
+      "El dinero de familia y amigos se pone por escrito: monto, plazo, pagos y qué pasa si no funciona."
+     ]
+    },
+    {
+     "t": "Crédito con cabeza: CAT, Condusef, capacidad de pago y fraudes",
+     "obj": "Comparar créditos por su CAT y su costo total, revisar si el pago cabe en tu flujo pesimista y reconocer las señales de un fraude de crédito.",
+     "texto": [
+      "El <b>CAT</b> (Costo Anual Total) reúne en un solo porcentaje la tasa de interés y las comisiones de un crédito; por eso sirve para comparar mejor que la tasa sola. Compara créditos de monto y plazo parecidos y usa las herramientas de comparación de la Condusef (verifica las vigentes en su sitio). Además del CAT, revisa el pago mensual, el total que pagarás al final, las comisiones por apertura o por pago anticipado, los seguros obligatorios y qué pasa si te atrasas.",
+      "El pago más bajo no es el crédito más barato. Con $60,000 a 24 meses y una tasa anual de 30 %, el pago mensual es de $3,354.77 y al final pagas $80,514.48; a 36 meses con 40 %, el pago baja a $2,886.61, pero pagas $103,917.96. En Excel, con la tasa anual en B2, los meses en B3 y el monto en B4, el pago, redondeado a centavos, es =REDONDEAR(PAGO(B2/12,B3,-B4),2) en B5, y el total, =B5*B3. Este ejemplo no incluye comisiones ni seguros: el CAT de una oferta real suele ser mayor que su tasa.",
+      "La <b>capacidad de pago</b> sale de tu flujo, no de tus esperanzas. El pago debe caber en el excedente del negocio, lo que queda después de variables, fijos, impuestos y tu sueldo, y debe caber también en el escenario pesimista del módulo 5. Si en ese escenario el pago se come todo el excedente o lo supera, el crédito es demasiado grande o demasiado corto. Pide crédito para algo que genere el ingreso con que lo pagarás; usarlo para tapar pérdidas solo aplaza el problema y le suma intereses.",
+      "Los fraudes de crédito buscan a quien tiene prisa. La Condusef lo dice claro: si te piden dinero por adelantado para darte un crédito, es fraude, se llame «seguro», «apertura», «investigación» o «liberación». Otras señales: «sin buró y sin requisitos», presión para decidir hoy, contacto solo por mensajes o redes sociales y depósitos a cuentas de personas. Verifica en la Condusef que la institución exista y esté autorizada, nunca compartas contraseñas ni códigos que te lleguen por mensaje y, si ya depositaste, repórtalo de inmediato a tu banco y a la Condusef."
+     ],
+     "comparar": [
+      "«Así no: Me quedo con el crédito de pago más bajito, aunque sea a 36 meses; total, lo voy pagando como pueda.»",
+      "«Así sí: Comparo el CAT y el total pagado a plazos parecidos, y elijo el pago que cabe aun en mi escenario pesimista.»"
+     ],
+     "caso": "Caso ficticio: Lorena, de 41 años, tiene un servicio de limpieza de casas y oficinas en Ciudad Victoria con dos colaboradoras. Un edificio de oficinas le ofrece un contrato si lleva equipo industrial, que cuesta $60,000. Tiene tres ofertas: A, de un banco, a 24 meses con pago de $3,354.77 y CAT de 36 %; B, de una financiera, a 36 meses con pago de $2,886.61 y CAT de 49 %; C, un préstamo en línea a 12 meses con pago de $6,027.73 y CAT de 44 %. Con el contrato, su excedente mensual esperado es de $5,500, y en el escenario pesimista, de $3,600. Esa semana le llega un mensaje: «Crédito aprobado sin buró; deposita $1,800 del seguro y te liberamos el dinero hoy».",
+     "p": [
+      [
+       "¿Qué oferta le conviene más a Lorena?",
+       "A: tiene el menor CAT y su pago mensual cabe aun en el escenario más pesimista",
+       "B: tiene el pago mensual más bajo, así que es la más barata y también la más segura",
+       "C: es la que menos paga en total, $72,332.76, aunque el pago mensual sea alto",
+       "A tiene el CAT más bajo y su pago de $3,354.77 es menor que el excedente pesimista de $3,600. B baja el pago pero cuesta $103,917.96 en total y tiene el CAT más alto. C paga menos en total por su plazo corto, pero $6,027.73 al mes supera incluso su excedente esperado: no la podría pagar."
+      ],
+      [
+       "¿Qué debe hacer Lorena con el mensaje del crédito aprobado?",
+       "Ignorarlo y reportarlo: pedir dinero por adelantado para dar un crédito es fraude",
+       "Depositar solo si le mandan un contrato con logotipo, folio y firma digital",
+       "Negociar que el seguro se descuente del crédito para no depositar nada antes",
+       "La Condusef alerta que cualquier cobro anticipado para otorgar un crédito es fraude. Un contrato con logotipo se falsifica fácilmente, y negociar con quien ya mostró la señal principal de fraude solo la expone a perder datos o dinero. Los créditos se buscan en instituciones verificadas, no se aceptan por mensajes."
+      ],
+      [
+       "Si eligiera la oferta B, ¿cuánto pagaría en total y cuánto más que con la A?",
+       "$103,917.96, es decir, $23,403.48 más que con la A",
+       "$84,000, porque al monto se le suma el 40 % de la tasa",
+       "$89,400, porque al monto se le suma el 49 % del CAT",
+       "Total de B: $2,886.61 × 36 = $103,917.96; total de A: $3,354.77 × 24 = $80,514.48; diferencia: $23,403.48. Sumar la tasa o el CAT al monto, como si fueran un cargo único, ignora que el interés se cobra cada mes sobre el saldo y durante todo el plazo."
+      ]
+     ],
+     "completar": [
+      "El porcentaje que reúne la tasa de interés y las comisiones para comparar créditos se llama ___.",
+      "CAT"
+     ],
+     "refl": "Evalúa un crédito antes de pedirlo (20 min). 1) Escribe para qué lo necesitas y qué ingreso generará ese uso. 2) Busca al menos dos ofertas de monto y plazo parecidos y anota CAT, pago mensual, plazo, comisiones y seguros. 3) Calcula en Excel el pago con =REDONDEAR(PAGO(B2/12,B3,-B4),2) y el total pagado. 4) Compara el pago con tu excedente esperado y pesimista del módulo 5. 5) Escribe tu decisión: cuál, por cuánto, o por qué esperar. Agrega tres señales de fraude que revisarás antes de firmar.",
+     "modelo": "Modelo: «Uso: horno de convección para mi negocio de comida para oficinas; tengo dos empresas que me piden 40 comidas diarias. Oferta 1: $35,000 a 18 meses, pago $2,421, CAT 39 %. Oferta 2: $35,000 a 24 meses, pago $2,160, CAT 51 %. Mi excedente pesimista: $2,900. Elijo la 1: menor CAT y cabe en el pesimista; pago $43,578 en total contra $51,840 de la otra. Señales que reviso: que no me pidan dinero antes, que la institución esté en la Condusef y que el contrato diga comisiones.» Es buena porque liga el crédito a un ingreso concreto, compara CAT y total, y revisa la capacidad de pago en el peor escenario.",
+     "plantilla": [
+      "Comparador de créditos",
+      "Para qué lo necesito: [ ]   Ingreso que generará: $[ ] al mes\nOferta | Monto | Plazo | Pago mensual (=REDONDEAR(PAGO(B2/12,B3,-B4),2)) | Total pagado | CAT | Comisiones y seguros\n[A] | $[ ] | [ ] meses | $[ ] | $[ ] | [ ] % | [ ]\n[B] | $[ ] | [ ] meses | $[ ] | $[ ] | [ ] % | [ ]\nMi excedente esperado: $[ ]   pesimista: $[ ]\n¿El pago cabe en el pesimista? [sí / no]\nRevisión antifraude: ¿me piden dinero antes? [ ] ¿institución verificada en la Condusef? [ ] ¿contrato con comisiones claras? [ ]\nDecisión: [ ]"
+     ],
+     "clave": [
+      "Compara créditos por CAT y total pagado a montos y plazos parecidos; el pago más bajo no es el más barato.",
+      "El pago debe caber en tu escenario pesimista y financiar algo que genere ingresos, no tapar pérdidas.",
+      "Si te piden dinero por adelantado para darte un crédito, es fraude."
+     ]
+    },
+    {
+     "t": "Separar el dinero del negocio y el de tu casa",
+     "obj": "Organizar una cuenta, un registro diario y un sueldo fijo para saber si tu negocio gana y evitar que los retiros se coman su capital.",
+     "texto": [
+      "Mezclar dinero es el error silencioso de muchos negocios pequeños. Si la misma caja paga el súper, la colegiatura y al proveedor, nunca sabrás si el negocio gana, y el dinero que ves no es todo tuyo: parte es del proveedor que te surtió, parte del IVA que cobraste y parte de tus próximos gastos fijos. Sepáralo: una cuenta usada solo para el negocio, los cobros digitales directo a esa cuenta y el efectivo contado y anotado al cierre de cada día.",
+      "El registro diario no necesita un programa caro: cinco columnas bastan (fecha, concepto, entradas, salidas y saldo). En la columna de concepto, clasifica cada salida como compra de mercancía, gasto fijo, impuesto, pago de deuda o Retiro. En Excel, si el saldo anterior está en E2 y las entradas y salidas en C3 y D3, el saldo nuevo es =E2+C3-D3, y lo copias hacia abajo. Para saber cuánto retiraste en el mes, escribe la palabra Retiro en H1 y usa =SUMAR.SI(B2:B200,H1,D2:D200). Diez minutos al cierre y guardar tus comprobantes valen más que una libreta llenada de memoria el domingo.",
+      "Págate un sueldo: un monto fijo, en una fecha fija, semanal o quincenal, que salga de tus números del módulo 5. Los retiros extra solo cuando el cierre del mes muestre utilidad y tu colchón siga completo. La mercancía que tomas para tu casa también es un retiro: anótala a su costo. Así sabes si el negocio paga tu sueldo o si tu sueldo se está comiendo el negocio, que es lo que pasa cuando «siempre hay dinero en la caja» pero no alcanza para pagarle al proveedor.",
+      "Separar el dinero también te abre puertas: decides con datos, un banco puede ver el historial de tu negocio cuando pidas crédito, y tu contabilidad se vuelve más sencilla. En RESICO pagas ISR sobre lo efectivamente cobrado, así que tener los cobros del negocio en su propia cuenta facilita saber qué ingresos son del negocio y cuáles no. La formalidad no es solo gasto: es orden que se nota en tu bolsillo. El detalle de cómo declarar está en el diplomado de Contabilidad, RESICO y CFDI."
+     ],
+     "comparar": [
+      "«Así no: Saco de la caja lo que haga falta para la casa; al fin y al cabo, el negocio es mío y siempre hay dinero.»",
+      "«Así sí: Me pago $2,500 cada sábado, anoto como retiro lo que tomo de mercancía y solo saco algo extra si al cierre del mes hubo utilidad.»"
+     ],
+     "caso": "Caso ficticio: Tomás, de 58 años, tiene una tienda de abarrotes en Durango que abre los 30 días del mes. Vende en promedio $4,200 diarios ($126,000 al mes), con un margen bruto aproximado de 18 %, y sus gastos fijos son de $4,500 al mes. Cada día toma unos $350 de la caja para su casa ($10,500 al mes), se lleva mercancía por unos $4,000 al costo y este mes sacó $6,000 para una fiesta familiar. Vende frijol, arroz y huevo, y también tortas que prepara su hija. Su proveedor de lácteos le reclama dos facturas atrasadas y Tomás no entiende cómo, si «siempre hay dinero en la caja».",
+     "p": [
+      [
+       "¿Qué explica que a Tomás no le alcance para pagar al proveedor?",
+       "Sus retiros ($20,500) superan la utilidad del mes ($18,180): se está comiendo el capital de la tienda",
+       "Que vende poco: con $126,000 al mes, el problema solo puede estar en las ventas y no en los retiros",
+       "Que el proveedor le cobra caro, porque los retiros de un dueño no afectan el dinero para surtir",
+       "El margen bruto es 18 % de $126,000 = $22,680; menos $4,500 de fijos quedan $18,180. Sus retiros suman $10,500 + $4,000 + $6,000 = $20,500: sacó $2,320 más de lo que la tienda ganó, y esa diferencia sale del dinero para surtir. Vender más no corrige retiros sin control."
+      ],
+      [
+       "¿Qué sueldo es más sensato para Tomás?",
+       "$2,500 fijos cada semana, unos $10,833 al mes, registrados, y extras solo si al cierre hay utilidad",
+       "Seguir tomando de la caja lo que necesite, pero anotarlo en una libreta al final de cada semana",
+       "No pagarse nada hasta liquidar al proveedor y vivir mientras tanto de la mercancía de la tienda",
+       "Un sueldo fijo, $2,500 × 52 ÷ 12 = $10,833.33 al mes, cabe en la utilidad y le da a la casa un ingreso predecible. Anotar después no pone límite a los retiros, y vivir de la mercancía sigue siendo retirar, solo que sin registro."
+      ],
+      [
+       "¿Cómo debe tratar Tomás el IVA de lo que vende?",
+       "Separar ventas: la mayoría de los alimentos no preparados va a tasa 0 % y las tortas, como alimento preparado, pagan 16 %",
+       "Tratar todo como tasa 0 %, porque todo lo que vende es comida y la comida nunca paga IVA",
+       "Dividir todas sus ventas entre 1.16, porque todo lo que se vende en un local con licencia de funcionamiento paga la tasa general de 16 %",
+       "La mayoría de los alimentos no preparados, como frijol, arroz y huevo, tiene tasa 0 %; los alimentos preparados pagan 16 %. Por eso conviene registrar por separado las tortas. Ni toda la comida tiene tasa 0 % ni la licencia del local cambia la tasa; el detalle lo resuelve con su contador."
+      ]
+     ],
+     "completar": [
+      "Lo que el dueño saca para su casa, en dinero o en mercancía, se registra como ___.",
+      "retiro"
+     ],
+     "relacionar": [
+      [
+       "Cuenta del negocio",
+       "Solo cobros y pagos del negocio"
+      ],
+      [
+       "Registro diario",
+       "Fecha, concepto, entradas, salidas y saldo"
+      ],
+      [
+       "Sueldo del dueño",
+       "Monto fijo en fecha fija"
+      ],
+      [
+       "Mercancía para la casa",
+       "Retiro anotado a su costo"
+      ],
+      [
+       "Retiro extra",
+       "Solo si hubo utilidad y el colchón sigue completo"
+      ]
+     ],
+     "refl": "Diseña tu sistema para separar el dinero (20 min). 1) Escribe dónde caerán los cobros del negocio y cómo manejarás el efectivo. 2) Arma en Excel el registro diario con sus cinco columnas y las categorías de salidas. 3) Calcula tu sueldo con tus números del módulo 5 y decide frecuencia y día de pago. 4) Escribe tu regla para retiros extra y para la mercancía o servicios que uses en tu casa. 5) Elige día y hora de tu cierre semanal.",
+     "modelo": "Modelo: «Negocio: estética para hombres en mi cochera. Cobros con CoDi y tarjeta a una cuenta solo del negocio; el efectivo lo deposito cada lunes. Registro diario en Excel al cerrar, 10 minutos. Sueldo: $3,000 cada viernes, que sale de mis fijos del módulo 5. Retiros extra: solo el día 1, si el mes cerró con utilidad y el colchón sigue en $25,000. Productos que uso en casa: los anoto a su costo como retiro. Cierre semanal: domingos a las 7 de la noche.» Es buena porque cada regla es concreta y medible, el sueldo sale de sus números y protege el colchón.",
+     "plantilla": [
+      "Sistema de dinero separado",
+      "Cuenta del negocio: [banco o institución, solo para el negocio]\nCobros digitales a esa cuenta: [CoDi / transferencia / terminal]\nEfectivo: se cuenta [cada día] y se deposita [ ]\nRegistro diario: fecha | concepto | entradas | salidas | saldo (=E2+C3-D3)\nCategorías de salida: mercancía | fijos | impuestos | deuda | retiro\nMi sueldo: $[ ] cada [semana / quincena], el día [ ]\nRetiros extra: solo si [hubo utilidad y el colchón sigue en $ ]\nMercancía o servicios para mi casa: se anotan como retiro a su costo\nCierre semanal: [día y hora]"
+     ],
+     "clave": [
+      "El dinero que ves en la caja no es todo tuyo: parte es del proveedor, del IVA y de tus próximos fijos.",
+      "Un sueldo fijo en fecha fija, y retiros extra solo con utilidad y colchón completo.",
+      "Registro diario de cinco columnas y cuenta propia del negocio: así sabes si gana y es más fácil cumplir con el SAT."
+     ]
+    },
+    {
+     "t": "Socios: cuándo sí, cuándo no y qué dejar por escrito",
+     "obj": "Decidir si te conviene un socio, qué alternativas existen y qué acuerdos dejar por escrito antes de recibir una sola aportación.",
+     "texto": [
+      "Un socio tiene sentido cuando aporta algo que el negocio necesita y que no puedes conseguir de otra manera: una habilidad que te falta, clientes, un permiso, equipo o tiempo de trabajo. Si solo aporta dinero, compáralo con un préstamo: el préstamo se termina de pagar, mientras que el socio se queda con una parte de las utilidades y de las decisiones para siempre, salvo que acuerden cómo sale. Muchas sociedades entre amigos se rompen no por el negocio, sino por expectativas que nadie dijo en voz alta.",
+      "Señales de alerta: «tú pon el trabajo y yo el dinero» sin definir cuánto vale cada cosa; un socio que no puede dedicar tiempo pero espera la mitad de todo; porcentajes iguales sin regla para desempatar; y nunca haber hablado de qué pasa si uno quiere salir. Antes de ofrecer un porcentaje, pon valor a las <b>aportaciones</b> de cada quien: dinero, bienes como una camioneta o herramienta, clientes y horas de trabajo. El trabajo diario de un socio suele pagarse con sueldo, aparte de su parte de las utilidades.",
+      "Qué dejar por escrito: aportaciones y su valor; porcentajes; quién decide qué, qué decisiones requieren a los dos y cómo se desempata; sueldo de quien trabaja y cómo se reparten las utilidades; reglas para retirar dinero; qué pasa si alguien no cumple, se enferma, muere o quiere salir, cómo se valúa su parte y en qué plazo se le paga; y a quién pertenecen el nombre, los clientes y el equipo. Revísalo con un abogado antes de firmar: un acuerdo hecho entre amigos con buena fe es el que más se agradece cuando llegan los problemas.",
+      "¿Persona física o sociedad? Constituir una S.A. desde el primer día es un mito: puedes empezar como persona física en RESICO, y una sociedad tiene sentido cuando hay socios, cuando el negocio crece o cuando tus clientes la piden. Ojo con un dato: quienes son socios o accionistas de una persona moral no pueden tributar en el RESICO de personas físicas. Elegir entre un convenio entre personas físicas o una sociedad tiene efectos fiscales y legales distintos; consulta a un contador y a un abogado para tu caso."
+     ],
+     "comparar": [
+      "«Así no: Somos amigos de toda la vida; mitad y mitad, y lo demás lo vamos viendo sobre la marcha.»",
+      "«Así sí: Antes de recibir tu dinero, ponemos por escrito cuánto vale lo que aporta cada uno, quién decide qué, cómo se desempata y qué pasa si alguno quiere salir.»"
+     ],
+     "caso": "Caso ficticio: Felipe, de 36 años, trabaja de lunes a viernes en una fábrica de León y los fines de semana da mantenimiento de jardines a 12 clientes fijos. Quiere crecer a condominios, pero necesita una camioneta y herramienta. Un excompañero le ofrece $40,000 y su camioneta a cambio de 50 % del negocio; no puede trabajar en él, pero quiere opinar en todo, y propone «firmar algo después, cuando ya haya ganancias». Además, insiste en constituir de inmediato una sociedad mercantil «para que se vea serio».",
+     "p": [
+      [
+       "¿Qué le conviene más a Felipe ante la oferta de su excompañero?",
+       "Proponer otra figura, como préstamo con plazo o renta de la camioneta, o un porcentaje menor con reglas claras",
+       "Aceptar el 50 %, porque sin un socio que ponga capital ningún negocio de servicios logra crecer",
+       "Aceptar de palabra y firmar después, para no ofender a su amigo con un contrato desde el inicio",
+       "El excompañero aporta dinero y un bien, no trabajo ni clientes: un préstamo o una renta resuelven la necesidad sin ceder la mitad para siempre. Si deciden ser socios, el porcentaje debe reflejar el valor de las aportaciones, y dejarlo para después es la receta del conflicto."
+      ],
+      [
+       "Si deciden asociarse, ¿qué es indispensable dejar por escrito?",
+       "Aportaciones y su valor, porcentajes, decisiones y desempate, sueldo de quien trabaja, retiros y reglas de salida",
+       "Solo el porcentaje de cada uno, porque lo demás se arregla platicando conforme vayan surgiendo los temas",
+       "El nombre comercial y el logotipo, porque es lo que más vale en un negocio de servicios",
+       "Los conflictos entre socios nacen de lo no acordado: quién aporta qué, quién decide, cómo se paga el trabajo y cómo se sale. El porcentaje solo no resuelve nada de eso, y el nombre importa, pero no sustituye las reglas de decisión y salida."
+      ],
+      [
+       "¿Qué debe saber Felipe antes de constituir una sociedad mercantil?",
+       "Que como socio de una persona moral ya no podría tributar en el RESICO de personas físicas, y que conviene revisarlo con contador y abogado",
+       "Que es obligatorio constituir una sociedad mercantil para poder tener un socio, así que no tiene otra alternativa legal para crecer con su excompañero",
+       "Que las personas morales siempre pagan más impuestos que las físicas, así que nunca les conviene",
+       "Los socios o accionistas de una persona moral no pueden estar en el RESICO de personas físicas, lo cual cambia sus cuentas. No es obligatorio constituir sociedad para colaborar, y no es cierto que una persona moral siempre pague más: depende del caso, por eso se consulta a un contador."
+      ]
+     ],
+     "completar": [
+      "Lo que cada socio pone en dinero, bienes, clientes o trabajo son sus ___, y conviene valuarlas por escrito.",
+      "aportaciones"
+     ],
+     "relacionar": [
+      [
+       "Socio que solo aporta dinero",
+       "Compáralo con un préstamo"
+      ],
+      [
+       "Dos socios al 50 %",
+       "Regla de desempate"
+      ],
+      [
+       "Socio que quiere salir",
+       "Valuación y plazo de pago acordados"
+      ],
+      [
+       "Socio de una persona moral",
+       "No puede tributar en el RESICO de personas físicas"
+      ],
+      [
+       "Socio que trabaja a diario",
+       "Sueldo aparte de las utilidades"
+      ]
+     ],
+     "refl": "Decide si necesitas un socio (20 min). 1) Escribe qué le falta a tu negocio: dinero, habilidad, clientes, equipo o tiempo. 2) Para cada carencia, anota una alternativa sin socio (préstamo, renta, contratar por proyecto, alianza). 3) Si un socio sigue siendo la mejor opción, lista lo que aportaría cada quien y ponle valor. 4) Redacta un borrador de acuerdo con aportaciones, porcentajes, decisiones, desempate, sueldo, retiros y salida. 5) Anota tres preguntas para el contador o el abogado.",
+     "modelo": "Modelo: «Negocio: reparación de electrodomésticos. Me falta quien atienda la parte de ventas y refacciones. Alternativas: contratar por comisión o aliarme con una refaccionaria. Elegí socia: Ana aporta $25,000 y su cartera de 40 clientes; yo, herramienta valuada en $30,000 y el trabajo técnico. Acuerdo: 55 % yo y 45 % ella; cada quien con sueldo por su trabajo; compras de más de $5,000, entre los dos; desempate: decide quien lleva esa área; salida con aviso de tres meses y valuación por un contador. Preguntas: ¿persona física o sociedad?, ¿cómo facturamos?, ¿qué contrato firmamos?» Es buena porque explora alternativas, valúa aportaciones y deja reglas concretas.",
+     "plantilla": [
+      "Borrador de acuerdo entre socios",
+      "Negocio: [ ]   Socios: [ ] y [ ]\nAportaciones: [nombre] aporta [dinero, bienes, clientes, trabajo] valuado en $[ ]\nPorcentajes: [ ] % / [ ] %\nDecisiones que requieren a ambos: [ ]   Desempate: [ ]\nSueldo por trabajo: [quién, cuánto]\nReparto de utilidades: [cuándo y cómo]\nRetiros: [reglas]\nSi alguien no cumple, enferma, muere o quiere salir: [valuación, plazo de pago]\nNombre, clientes y equipo pertenecen a: [ ]\nForma legal y fiscal: [persona física con convenio / sociedad] → revisar con contador y abogado"
+     ],
+     "clave": [
+      "Un socio se justifica cuando aporta algo que no consigues de otro modo; si solo aporta dinero, compáralo con un préstamo.",
+      "Antes de recibir dinero, deja por escrito aportaciones, decisiones, desempate, sueldo, retiros y salida.",
+      "Los socios de una persona moral no pueden tributar en el RESICO de personas físicas: decide la forma legal con contador y abogado."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma tu plan de financiamiento. 1) Monto necesario según tu hoja del módulo 5 y tu pérdida asumible. 2) Mapa de fuentes con monto, fecha, costo y riesgo, y la combinación elegida en orden de menor a mayor riesgo. 3) Si incluye crédito: comparativo de al menos dos ofertas con CAT, pago, total pagado y revisión de capacidad de pago en tu escenario pesimista. 4) Borrador de acuerdo por escrito con la persona que te preste o se asocie contigo. 5) Tu sistema para separar el dinero: cuenta, registro diario y sueldo.",
+    "entregable": "Un plan de financiamiento de una a dos páginas con mapa de fuentes, comparativo de créditos si aplica, borrador de acuerdo y reglas de separación del dinero.",
+    "criterios": "Revisa: el monto sale de tus números y no de un cálculo a ojo, el ahorro no rebasa tu pérdida asumible, el crédito se compara por CAT y total y su pago cabe en el pesimista, el dinero de otras personas tiene acuerdo por escrito y tu sueldo es fijo y sale de tus números."
+   },
+   "lab": {
+    "t": "El arranque de una electricista en Toluca",
+    "obj": "Armar un plan de financiamiento realista con fuentes combinadas, comparar créditos, detectar un fraude, evaluar una oferta de sociedad y separar el dinero desde el primer mes.",
+    "esc": "<b>Rosa,</b> de 50 años, trabajó 20 años como electricista en una empresa de mantenimiento en Toluca y se independiza para dar mantenimiento eléctrico a casas y pequeños comercios. Necesita $50,000: $35,000 de herramienta y equipo de medición y $15,000 de capital de trabajo. Puede arriesgar $20,000 de sus ahorros. Una constructora le ofrece un contrato de $40,000 con 50 % de anticipo para comprar el material de esa obra.",
+    "e": [
+     [
+      "Escena 1: Rosa tiene sus $20,000, el anticipo de la constructora, la oferta de su proveedor de cable de pagarle a 30 días y un hermano que podría prestarle algo.",
+      "Consigna: arma su mapa de fuentes con monto, fecha, costo y riesgo, y explica qué uso le dará al anticipo y por qué."
+     ],
+     [
+      "Escena 2: Para los $30,000 que le faltan tiene dos créditos: un banco a 24 meses con pago de $1,677.38 y CAT de 37 %, y una financiera a 36 meses con pago de $1,478.52 y CAT de 52 %. Su excedente mensual esperado es de $4,000 y el pesimista, de $2,000.",
+      "Consigna: calcula el total pagado en cada uno, compara y escribe qué elegirías y por qué."
+     ],
+     [
+      "Escena 3: Le llega un mensaje: «Préstamo de $30,000 sin buró; deposita $2,000 de apertura». El mismo día, su exjefe le ofrece $30,000 a cambio de 40 % del negocio, sin trabajar en él.",
+      "Consigna: escribe qué haces con el mensaje y cómo evalúas la oferta del exjefe; si la aceptaras, lista lo que dejarías por escrito."
+     ],
+     [
+      "Escena 4: En su primer mes, dos clientes le pagaron a su cuenta personal, pagó la gasolina de un paseo familiar con la tarjeta que usa para el negocio y no sabe cuánto ganó.",
+      "Consigna: diseña su sistema de dinero separado (cuenta, registro diario, sueldo y reglas de retiro) y reclasifica los movimientos de ese mes."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál de los dos créditos le conviene a Rosa y por qué?",
+      "El del banco: menor CAT, paga $12,969.60 menos en total y su pago cabe en el pesimista",
+      "El de la financiera: su pago es $198.86 menor y eso le da más aire cada mes",
+      "Ninguno: un crédito siempre es mala idea al empezar, aunque sea para herramienta con trabajo esperando",
+      "Banco: $1,677.38 × 24 = $40,257.12; financiera: $1,478.52 × 36 = $53,226.72; diferencia, $12,969.60. El pago del banco es menor que su excedente pesimista de $2,000. Los $198.86 de diferencia mensual salen muy caros, y un crédito para un activo que genera ingresos puede ser razonable si cabe en el pesimista."
+     ],
+     [
+      "¿Cómo debe usar Rosa el anticipo de $20,000 de la constructora?",
+      "Para el material de esa obra, registrado como dinero comprometido y no como capital para su equipo",
+      "Completo para comprar su herramienta, porque desde que lo recibe ya es dinero suyo",
+      "En una tanda familiar, para que crezca mientras empieza la obra y luego comprar el material",
+      "El anticipo se dio para comprar el material de esa obra: si lo gasta en otra cosa y no cumple, lo debe. Usarlo para su equipo deja la obra sin material, y una tanda no hace crecer el dinero: devuelve lo mismo que aportas, cuando te toca."
+     ],
+     [
+      "¿Cómo debe evaluar Rosa la oferta de su exjefe?",
+      "Ver qué aporta además del dinero; si solo es dinero, compararlo con el crédito y, si acepta, firmar las reglas por escrito",
+      "Aceptarla, porque el dinero de un socio es gratis: no paga intereses, no tiene plazos que cumplir y no afecta su historial de crédito",
+      "Rechazarla sin analizar, porque todos los socios terminan peleados",
+      "Un socio que solo pone dinero se queda con 40 % de las utilidades para siempre, lo que puede costar más que el crédito. No es dinero gratis: se paga con utilidades y decisiones. Tampoco hay que descartarlo sin analizar: si aporta clientes o contactos, puede valer la pena con un acuerdo por escrito."
+     ]
+    ],
+    "pl": [
+     "Plan de financiamiento del arranque",
+     "Necesito: $[ ] ([equipo] $[ ] + [capital de trabajo] $[ ])   Pérdida asumible: $[ ]\nFuentes: ahorro $[ ] | anticipos $[ ] (uso: [ ]) | proveedores $[ ] a [ ] días | familia $[ ] | crédito o socio $[ ]\nCrédito elegido: [ ] | pago $[ ] | total $[ ] | CAT [ ] % | ¿cabe en el pesimista? [ ]\nRevisión antifraude: [ ]\nAcuerdo por escrito con: [ ] (aportación o préstamo, plazo, pagos, decisiones, salida)\nDinero separado: cuenta [ ] | registro diario [ ] | sueldo $[ ] cada [ ] | retiros extra si [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Jimena compara dos créditos de $20,000 a 12 meses: A tiene tasa de 32 % y CAT de 41 %; B, tasa de 34 % y CAT de 39 %. ¿Cuál es más barato?",
+     "B, porque su CAT es menor, y el CAT ya incluye las comisiones",
+     "A, porque su tasa de interés es menor y la tasa es lo que más pesa",
+     "Cuestan lo mismo, porque el monto y el plazo de los dos coinciden",
+     "A, porque el CAT solo importa en créditos de más de un año de plazo"
+    ],
+    [
+     "A Alberto le llaman para ofrecerle un crédito preaprobado de $50,000 y le piden depositar $900 para el estudio de crédito. ¿Qué debe hacer?",
+     "No depositar y reportarlo: pedir dinero por adelantado para un crédito es fraude",
+     "Depositar, porque $900 es poco comparado con los $50,000 que recibirá",
+     "Pedir que le manden el contrato por mensaje y depositar si tiene logotipo",
+     "Pagar el estudio en efectivo en una tienda, que es más seguro que transferir"
+    ],
+    [
+     "El excedente de Sergio en su escenario pesimista es de $2,000 al mes y le ofrecen un crédito con pago de $2,700. ¿Qué es lo más prudente?",
+     "No tomarlo así: buscar un monto menor u otro plazo comparando el CAT, o esperar",
+     "Tomarlo, porque en el escenario esperado su excedente sí alcanza para pagarlo",
+     "Tomarlo y cubrir la diferencia con su tarjeta de crédito en los meses flojos",
+     "Tomarlo, porque el pesimista es solo un supuesto que casi nunca ocurre"
+    ],
+    [
+     "Diana paga el plan de su celular personal con la cuenta del negocio. ¿Cómo debe registrarlo?",
+     "Como retiro del dueño, no como gasto del negocio",
+     "Como gasto fijo del negocio, porque lo usa a veces con clientes",
+     "No lo registra, porque es un monto pequeño y fijo cada mes",
+     "Como compra de mercancía, porque sale de la misma cuenta"
+    ],
+    [
+     "Verónica tiene meses buenos y malos en su estética y retira dinero según lo que haya en la caja. ¿Qué práctica le conviene?",
+     "Un sueldo fijo en fecha fija, y retiros extra solo si el mes cerró con utilidad y el colchón sigue completo",
+     "Retirar todo lo que haya en los meses buenos, para compensar lo que no se pudo retirar en los malos",
+     "No retirar nada durante el primer año, aunque tenga que endeudarse para los gastos de su casa",
+     "Retirar un porcentaje fijo de las ventas de cada día, sin importar cuánto haya que pagarles a los proveedores ese mes"
+    ],
+    [
+     "Mario y otro fotógrafo abrirán un estudio en Campeche al 50 % cada uno. ¿Qué le falta a su acuerdo si solo dice eso?",
+     "Valor de las aportaciones, decisiones y desempate, sueldo, retiros y qué pasa si alguien sale",
+     "Nada importante: con porcentajes iguales los dos tienen el mismo poder y no hay conflictos",
+     "Solo el nombre del estudio, porque lo demás lo deciden cuando empiecen a tener ganancias",
+     "Un notario, porque los acuerdos entre socios solo valen si se firman ante uno desde el inicio"
+    ],
+    [
+     "La hermana de Lorena le prestará $15,000 para su servicio de limpieza. ¿Qué conviene dejar por escrito?",
+     "Que es préstamo, el monto, el plazo, los pagos y qué pasa si el negocio no funciona",
+     "Solo el monto, porque entre hermanas poner fechas puede sonar a desconfianza",
+     "Que le pagará cuando el negocio dé ganancias, sin fecha para no presionarse",
+     "Que su hermana tendrá derecho a decidir cómo se gasta el dinero del negocio"
+    ],
+    [
+     "Felipe entró a una tanda de diez personas y le tocó el turno 10. ¿Qué es correcto sobre esa tanda?",
+     "Es ahorro: recibirá al final lo mismo que aportó, y no sirve si necesita el dinero ya",
+     "Es un crédito: recibirá más de lo que aportó gracias a los intereses",
+     "Es la fuente más segura, porque si alguien deja de pagar responde la organizadora por ley",
+     "Le conviene para arrancar este mes, porque el turno 10 recibe un premio extra al final"
+    ],
+    [
+     "Tomás pidió $10,000 y pagará 12 mensualidades de $1,000. ¿Cuánto le cuesta el crédito?",
+     "$2,000 de intereses y comisiones: pagará $12,000 en total",
+     "$1,000, que es lo que paga cada mes durante el plazo",
+     "$12,000, porque es lo que pagará durante todo el plazo",
+     "Nada, si paga puntual todas las mensualidades"
+    ],
+    [
+     "Rosa quiere pedir un crédito para cubrir las pérdidas de sus últimos tres meses, sin cambiar nada de su negocio. ¿Qué le dirías?",
+     "Que un crédito para tapar pérdidas solo las aplaza con intereses; primero debe corregir precio, costos o modelo",
+     "Que es buena idea, porque así gana tiempo mientras las ventas mejoran por sí solas",
+     "Que lo pida por el doble de lo que perdió, para tener colchón suficiente por si las pérdidas siguen durante otros meses",
+     "Que mejor use la tarjeta de crédito, que no pide trámites y es más barata"
+    ]
+   ]
+  }
+ ]
+}

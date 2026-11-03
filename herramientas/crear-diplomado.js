@@ -181,7 +181,7 @@ fs.writeFileSync(path.join(RAIZ, 'backend/diplomados-nuevos-202610.sql'), `-- In
 function sqlGiros() {
   const dir = path.join(__dirname, 'diplomados-nuevos'), ids = new Set(window.CURSOS_MARA.map(c => c.id)); let s = '';
   for (const d of fs.readdirSync(dir).sort()) { const f = path.join(dir, d, 'meta.json'); if (!fs.existsSync(f)) continue;
-    const m = JSON.parse(fs.readFileSync(f, 'utf8')); if (!m.giros || !ids.has(m.id)) continue;
+    const m = JSON.parse(fs.readFileSync(f, 'utf8')); if (!m.giros || !m.giros.length || !ids.has(m.id)) continue;
     s += `-- ${m.id}: recomendado a ${m.giros.join(', ')}.\nupdate prospectos set cursos_ids = coalesce(cursos_ids[1:2], '{}') || array[${q(m.id)}] || coalesce(cursos_ids[3:], '{}')\n where segmento in (${m.giros.map(q).join(', ')}) and not (${q(m.id)} = any(coalesce(cursos_ids, '{}')));\n`; }
   return s ? '-- Programas recomendados por giro a los prospectos (empresas).\n' + s : '';
 }
