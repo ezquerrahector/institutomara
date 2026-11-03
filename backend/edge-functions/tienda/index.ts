@@ -10,6 +10,9 @@
 //   (pública) regalo_invitado { cursoId | (abierto: true, monto), deNombre, deCorreo, paraNombre, paraCorreo? | paraTel?, mensaje?, entregarEn?, urlRegreso } → { init_point, token }
 //     Desde el 2 nov 2026 el código del regalo vale un monto en pesos (cupón de monto fijo sin curso): quien lo recibe
 //     puede cambiarlo por otro programa antes de empezar; si cuesta más paga la diferencia y si cuesta menos le queda saldo.
+//   (pública) inscripcion_invitado { cursoId, nombre, correo, tel?, cupon?, urlRegreso } → { init_point, token }
+//     Compra sin cuenta para uno mismo (desde el 2 nov 2026, página del kit clínico): usa el mismo flujo del regalo
+//     con para_mi = true; al pagar le llega «Tu inscripción está lista» con su código y la liga para activarlo.
 //   (pública) regalo_ver      { t }  → { regalo }      (t = liga privada que llega a quien regala; incluye código y liga de activación ya pagado)
 //   (pública) regalo_editar   { t, paraNombre, paraCorreo? | paraTel?, mensaje?, entregarEn?, reenviar? } → { ok, reenviado, regalo }
 //   (pública) regalo_cupon    { cursoId | (abierto: true, monto), cupon } → { precio, descuento }   (regalo_invitado también acepta «cupon»)
@@ -227,15 +230,16 @@ async function crearRegalo(u: any, b: any) {
   const cid = abierto ? "" : String(b.cursoId || "");
   const d = datosRegalo(b);
   const invitado = !u;
+  const paraMi = invitado && b.paraMi === true;
   const deNombre = String(b.deNombre || (u && u.nombre) || "").trim().slice(0, 120);
   const deCorreo = String(b.deCorreo || (u && u.correo) || "").trim().toLowerCase().slice(0, 160);
   if (!d.paraNombre) return json({ error: "Escribe el nombre de quien recibe el regalo." }, 400);
   if (invitado) {
-    if (!deNombre) return json({ error: "Escribe tu nombre: así sabrá quién se lo regala." }, 400);
-    if (!CORREO_OK.test(deCorreo)) return json({ error: "Escribe tu correo: ahí te llega el comprobante y la liga para cambiar el regalo." }, 400);
+    if (!deNombre) return json({ error: paraMi ? "Escribe tu nombre completo: así aparecerá en tu constancia." : "Escribe tu nombre: así sabrá quién se lo regala." }, 400);
+    if (!CORREO_OK.test(deCorreo)) return json({ error: paraMi ? "Revisa tu correo: ahí te llega tu acceso." : "Escribe tu correo: ahí te llega el comprobante y la liga para cambiar el regalo." }, 400);
     const hace = new Date(Date.now() - 3600e3).toISOString();
     const recientes = await db(`regalos?de_correo=eq.${encodeURIComponent(deCorreo)}&estado=eq.pendiente_pago&creado_en=gte.${hace}&select=id`);
-    if (recientes.length >= 6) return json({ error: "Ya tienes varios regalos esperando pago. Termina uno o escríbenos por WhatsApp." }, 429);
+    if (recientes.length >= 6) return json({ error: paraMi ? "Ya tienes varias compras esperando pago. Termina una o escríbenos por WhatsApp." : "Ya tienes varios regalos esperando pago. Termina uno o escríbenos por WhatsApp." }, 429);
   }
   if (!d.paraCorreo && !d.paraTel) return json({ error: "Escribe el correo o el WhatsApp de quien recibe el regalo." }, 400);
   if (d.paraCorreo && !CORREO_OK.test(d.paraCorreo)) return json({ error: "Revisa el correo de quien recibe." }, 400);
@@ -252,7 +256,7 @@ async function crearRegalo(u: any, b: any) {
     precio = cup.codigo ? cup.precio : valor;
   } else {
     c = (await db(`cursos?id=eq.${encodeURIComponent(cid)}&select=id,nombre,precio,publicado`))[0];
-    if (!c || c.publicado === false || !(Number(c.precio) > 0) || cid.startsWith("r-")) return json({ error: "Ese programa no está disponible para regalo." }, 409);
+    if (!c || c.publicado === false || !(Number(c.precio) > 0) || cid.startsWith("r-")) return json({ error: paraMi ? "Ese programa no está disponible para compra en línea." : "Ese programa no está disponible para regalo." }, 409);
     cup = await cuponRegalo(cid, b.cupon);
     if (cup.error) return json({ error: cup.error }, 400);
     precio = cup.codigo ? cup.precio : Number(c.precio);
@@ -262,9 +266,10 @@ async function crearRegalo(u: any, b: any) {
   const reg = (await db("regalos", { metodo: "POST", prefer: "return=representation", cuerpo: {
     comprador_id: u ? u.id : null, curso_id: cid || null, abierto, valor, para_nombre: d.paraNombre, para_correo: d.paraCorreo || null, para_tel: d.paraTel || null,
     mensaje: d.mensaje, de_nombre: deNombre, de_correo: deCorreo || null,
-    entregar_en: d.entregar, monto: precio, cupon: cup.codigo || null, descuento: cup.codigo ? cup.descuento : null } }))[0];
+    entregar_en: d.entregar, monto: precio, cupon: cup.codigo || null, descuento: cup.codigo ? cup.descuento : null, para_mi: paraMi } }))[0];
   const base = String(b.urlRegreso || AULA).replace(/[?#].*$/, "");
   const vuelta = invitado ? `t=${reg.token}` : `id=${reg.id}`;
+  const clave = paraMi ? "inscripcion" : "regalo";
   if (gratis) {
     // Cupón del 100 %: no pasa por Mercado Pago. Se cuenta el uso del cupón, se crea el código del regalo
     // y se entrega igual que uno pagado. El regreso es la misma pantalla de «pagado».
@@ -277,17 +282,17 @@ async function crearRegalo(u: any, b: any) {
     await db("cupones", { metodo: "POST", prefer: "return=minimal", cuerpo: cuponDeRegalo(codigoR, { para_nombre: d.paraNombre, valor }) });
     await db(`regalos?id=eq.${reg.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "pagado", codigo: codigoR } });
     await db("pagos", { metodo: "POST", prefer: "return=minimal", cuerpo: { usuario_id: u ? u.id : null, curso_id: cid || null, monto: 0, medio: "Cupón",
-      nota: `Regalo para ${d.paraNombre} (${codigoR}) con el cupón ${cup.codigo}` } }).catch((x) => console.error("pago de regalo con cupón", x));
+      nota: `${paraMi ? "Inscripción sin cuenta de" : "Regalo para"} ${d.paraNombre} (${codigoR}) con el cupón ${cup.codigo}` } }).catch((x) => console.error("pago de regalo con cupón", x));
     const r2 = { ...reg, estado: "pagado", codigo: codigoR };
     await confirmarRegalo(r2).catch((x) => console.error("confirmar regalo", x));
     if (r2.entregar_en <= fecha(new Date())) await entregarRegalo(r2).catch((x) => console.error("entregar regalo", x));
-    return json({ init_point: `${base}?regalo=exito&${vuelta}`, gratis: true, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
+    return json({ init_point: `${base}?${clave}=exito&${vuelta}`, gratis: true, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
   }
   const pref = await mp("/checkout/preferences", "POST", {
-    items: [{ id: cid || "regalo-abierto", title: `Regalo: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: precio }],
+    items: [{ id: cid || "regalo-abierto", title: `${paraMi ? "Inscripción" : "Regalo"}: ${c.nombre}`, quantity: 1, currency_id: "MXN", unit_price: precio }],
     payer: { email: deCorreo || undefined, name: deNombre || undefined }, statement_descriptor: "INSTITUTO MARA",
     metadata: { tipo: "regalo", regalo_id: reg.id, monto: precio, cupon: cup.codigo || undefined }, external_reference: `regalo::${reg.id}`,
-    back_urls: { success: `${base}?regalo=exito&${vuelta}`, pending: `${base}?regalo=pendiente&${vuelta}`, failure: `${base}?regalo=fallo&${vuelta}` },
+    back_urls: { success: `${base}?${clave}=exito&${vuelta}`, pending: `${base}?${clave}=pendiente&${vuelta}`, failure: `${base}?${clave}=fallo&${vuelta}` },
     auto_return: "approved", notification_url: WEBHOOK,
   });
   return json({ init_point: pref.init_point, regaloId: invitado ? undefined : reg.id, token: invitado ? reg.token : undefined });
@@ -339,6 +344,18 @@ async function entregarRegalo(r: any) {
   const pr = await programaRegalo(r), val = valorRegalo(r);
   const enlace = ligaActivar(r);
   let ok = true;
+  if (r.para_mi && r.para_correo) {
+    // Compra sin cuenta para uno mismo: es su acceso, no un regalo.
+    ok = await correo(r.para_correo, r.para_nombre, `Tu inscripción a ${pr.nombre} está lista`,
+      plantilla(`¡Bienvenido(a), ${e(String(r.para_nombre).split(" ")[0])}!`,
+        `<p style="font-size:16px;line-height:1.6">Tu pago de <b>${pesos(Number(r.monto || 0))}</b> por <b>${e(pr.nombre)}</b> quedó confirmado. Gracias por tu confianza.</p>` +
+        `<p style="font-size:15px;line-height:1.6"><b>Para empezar:</b> abre el botón, crea tu cuenta con este mismo correo (<b>${e(r.para_correo)}</b>) o entra si ya tienes una, y tu programa se activa solo.</p>` +
+        `<p style="font-size:15px">Tu código de acceso: <b style="font-size:18px;letter-spacing:1px">${e(r.codigo)}</b><br><small>Guárdalo por si te lo pide la plataforma. Es de un solo uso y vale 12 meses.</small></p>` +
+        `<p style="font-size:14px;line-height:1.6;color:#4b4366">Estudias 100 % en línea y a tu ritmo, y al terminar obtienes tu constancia con folio y código QR. ¿Dudas? Responde este correo.</p>`,
+        { texto: "Activar mi programa", url: enlace }));
+    await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { estado: "enviado", enviado_en: new Date().toISOString() } });
+    return ok;
+  }
   if (r.para_correo) {
     ok = await correo(r.para_correo, r.para_nombre, `🎁 ${r.de_nombre || "Alguien especial"} te regaló un programa en Instituto Mara`,
       plantilla(`¡${e(r.para_nombre)}, tienes un regalo!`,
@@ -362,6 +379,16 @@ async function confirmarRegalo(r: any) {
       ? db("rpc/canjear_cupon", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_curso_id: r.curso_id, p_usuario: r.comprador_id || null } })
       : db("rpc/canjear_cupon_monto", { metodo: "POST", cuerpo: { p_codigo: r.cupon, p_monto: valorRegalo(r), p_usuario: r.comprador_id || null } }))
       .catch((x) => console.error("cupón de regalo", x));
+  }
+  if (r.para_mi) {
+    // Compra para sí mismo: no hay comprobante de regalo (le llega su acceso); se avisa a administración.
+    const prm = await programaRegalo(r);
+    await avisarAdmins(`Nueva inscripción: ${prm.nombre} · ${pesos(Number(r.monto || 0))}`,
+      plantilla("Nueva inscripción sin cuenta",
+        `<p style="font-size:15px;line-height:1.6"><b>${e(r.para_nombre)}</b> (${e(r.para_correo || "")}${r.para_tel ? `, WhatsApp ${e(r.para_tel)}` : ""}) pagó <b>${pesos(Number(r.monto || 0))}</b> por <b>${e(prm.nombre)}</b>${r.cupon ? ` con el cupón ${e(r.cupon)}` : ""}.</p>` +
+        `<p style="font-size:15px;line-height:1.6">Le llegó su código <b>${e(r.codigo || "")}</b> para activar el programa. Si en 24 h no lo activa, conviene escribirle.</p>`)).catch((x) => console.error("aviso inscripción", x));
+    await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } });
+    return;
   }
   if (!r.de_correo) { await db(`regalos?id=eq.${r.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { confirmado_en: new Date().toISOString() } }); return; }
   const pr = await programaRegalo(r);
@@ -1453,7 +1480,10 @@ serve(async (req) => {
   try {
     const b = await req.json().catch(() => ({}));
     // Regalo sin cuenta: acciones públicas (el pago y el token privado hacen de candado).
-    if (b.accion === "regalo_invitado") return await crearRegalo(null, b);
+    if (b.accion === "regalo_invitado") return await crearRegalo(null, { ...b, paraMi: false });
+    if (b.accion === "inscripcion_invitado") return await crearRegalo(null, {
+      cursoId: b.cursoId, cupon: b.cupon, urlRegreso: b.urlRegreso, paraMi: true, mensaje: "",
+      deNombre: b.nombre, deCorreo: b.correo, paraNombre: b.nombre, paraCorreo: b.correo, paraTel: b.tel });
     if (b.accion === "regalo_ver") return await verRegalo(b);
     if (b.accion === "regalo_editar") return await editarRegalo(b);
     if (b.accion === "regalo_cupon") return await previaCuponRegalo(b);

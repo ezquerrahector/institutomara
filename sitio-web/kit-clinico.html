@@ -95,6 +95,27 @@ details p{color:var(--gris);margin-top:8px;font-size:15.5px}
   .nav .btn-chico{display:none}
 }
 @media(max-width:420px){.perfiles{grid-template-columns:1fr}.perfiles span{text-align:left;padding:10px 12px}}
+/* Inscripción sin cuenta (2 nov 2026) */
+.inscribete{margin-top:56px;background:var(--nube);border:1px solid var(--linea);border-radius:24px;padding:34px 28px}
+.insc-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;align-items:start}
+.progs{display:grid;gap:10px}
+.progs label{position:relative;display:block}
+.progs input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;padding:0;border:0;left:0;top:0}
+.prog{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--linea);border-radius:16px;padding:14px 16px;cursor:pointer}
+.prog b{display:block;color:var(--tinta);font-size:15.5px;line-height:1.3}
+.prog small{display:block;color:var(--gris);font-size:13px;font-weight:500;margin-top:3px}
+.prog .precio{text-align:right;white-space:nowrap}
+.prog s{color:var(--gris);font-size:13px;font-weight:500}
+.prog .pfinal{display:block;color:var(--morado);font-size:20px;font-weight:800}
+.progs input:checked + .prog{border-color:var(--morado);box-shadow:0 0 0 3px var(--lavanda)}
+.progs input:focus-visible + .prog{box-shadow:0 0 0 3px var(--lila)}
+.insc-form{background:#fff;border-radius:20px;padding:22px;border:1px solid var(--linea);display:grid;gap:12px;position:sticky;top:84px}
+.insc-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--linea);padding-top:12px;font-weight:700;color:var(--tinta)}
+.insc-total span:last-child{font-size:24px;color:var(--morado)}
+.garantias{list-style:none;display:grid;gap:6px;font-size:13.5px;color:var(--gris)}
+.garantias li::before{content:"✓ ";color:var(--verde);font-weight:800}
+.insc-ok{text-align:center;padding:10px 0}
+@media(max-width:860px){.inscribete{padding:24px 16px}.insc-grid{grid-template-columns:1fr}.insc-form{position:static}}
 </style>
 <script src="meta-pixel.js?v=20261027a"></script>
 </head>
@@ -145,11 +166,46 @@ details p{color:var(--gris);margin-top:8px;font-size:15.5px}
       <p>También te lo enviamos a <b id="listo-correo"></b>. Si no lo ves, revisa tu carpeta de promociones o spam.</p>
       <a class="btn btn-mor" id="liga-descarga" href="recursos/kit-formatos-clinicos-instituto-mara.pdf" target="_blank" rel="noopener" download>Descargar el kit (PDF)</a>
       <div class="oferta" id="oferta"><b>Regalo extra: 60 % de descuento</b> en nuestros programas clínicos con el cupón <b>KITCLINICO</b>, hasta el 30 de noviembre. El Diplomado en TCC te queda en <b>$996</b> en lugar de $2,490.
-        <div style="margin-top:10px"><a class="btn btn-linea btn-chico" href="../plataforma/index.html?muestra=d-tcc&cupon=KITCLINICO&utm_source=kit&utm_medium=web&utm_campaign=kit-clinico">Probar una lección gratis</a></div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-mor btn-chico" href="#inscribete">Inscribirme con 60 %</a><a class="btn btn-linea btn-chico" href="../plataforma/index.html?muestra=d-tcc&cupon=KITCLINICO&utm_source=kit&utm_medium=web&utm_campaign=kit-clinico">Probar una lección gratis</a></div>
       </div>
     </div>
   </div>
 </div></div>
+
+<div class="wrap">
+  <section class="inscribete" id="inscribete" hidden>
+    <div class="cab"><div class="eyebrow">Solo hasta el 30 de noviembre</div><h2 style="margin-top:8px">Inscríbete hoy con 60 % de descuento</h2>
+      <p>Para quienes descargaron el kit. Pagas en Mercado Pago sin crear cuenta antes y tu acceso llega a tu correo en cuanto se confirma el pago.</p></div>
+    <div class="insc-grid">
+      <div class="progs" role="radiogroup" aria-label="Elige tu programa">
+        <label><input type="radio" name="prog" value="d-tcc" data-precio="2490" data-final="996" checked><span class="prog"><span><b>Diplomado en Terapia Cognitivo-Conductual</b><small>33 h · Fundamentos y técnicas, con registro de pensamientos y casos</small></span><span class="precio"><s>$2,490</s><span class="pfinal">$996</span></span></span></label>
+        <label><input type="radio" name="prog" value="d-terapias-contextuales" data-precio="2490" data-final="996"><span class="prog"><span><b>Diplomado en Terapias Contextuales</b><small>32 h · ACT, DBT y activación conductual</small></span><span class="precio"><s>$2,490</s><span class="pfinal">$996</span></span></span></label>
+        <label><input type="radio" name="prog" value="d-evaluacion-clinica" data-precio="1790" data-final="716"><span class="prog"><span><b>Diplomado en Evaluación Psicológica y Formulación de Casos</b><small>30 h · Entrevista, instrumentos y formulación de casos</small></span><span class="precio"><s>$1,790</s><span class="pfinal">$716</span></span></span></label>
+        <label><input type="radio" name="prog" value="c-pap" data-precio="690" data-final="276"><span class="prog"><span><b>Primeros Auxilios Psicológicos</b><small>5 h · Intervenir en una crisis y armar un plan de seguridad</small></span><span class="precio"><s>$690</s><span class="pfinal">$276</span></span></span></label>
+        <label><input type="radio" name="prog" value="c-ia-psicologos" data-precio="590" data-final="236"><span class="prog"><span><b>IA para Psicólogos y Consultorios</b><small>8 h · Notas, materiales y administración, cuidando la confidencialidad</small></span><span class="precio"><s>$590</s><span class="pfinal">$236</span></span></span></label>
+      </div>
+      <div class="insc-form">
+        <div id="insc-paso-form">
+          <form class="form" id="insc" novalidate style="margin-top:0">
+            <label>Nombre completo <small>(así aparecerá en tu constancia)</small><input id="i-nombre" autocomplete="name" maxlength="100" required></label>
+            <label>Correo electrónico <small>(ahí te llega tu acceso)</small><input id="i-correo" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
+            <label>WhatsApp <small>(opcional)</small><input id="i-tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="10 dígitos"></label>
+            <div class="insc-total"><span>Total con KITCLINICO</span><span id="i-total">$996</span></div>
+            <div id="i-error" class="aviso aviso-error" role="alert" hidden></div>
+            <button class="btn btn-mor" id="i-pagar" type="submit">Pagar $996 con Mercado Pago</button>
+            <ul class="garantias"><li>Tarjeta de crédito o débito, OXXO o transferencia</li><li>Acceso inmediato al confirmarse el pago</li><li>100 % en línea, a tu ritmo, con constancia con folio y QR</li></ul>
+          </form>
+        </div>
+        <div id="insc-paso-ok" class="insc-ok" hidden>
+          <div class="listo"><div class="ok" aria-hidden="true">✓</div></div>
+          <h3 id="i-ok-titulo">¡Gracias! Tu pago está confirmado</h3>
+          <p class="ayuda" id="i-ok-texto" style="font-size:15px;margin-top:8px">Te enviamos tu acceso por correo. Ábrelo, crea tu cuenta con ese mismo correo y tu programa se activa solo.</p>
+          <p style="margin-top:14px"><a class="btn btn-mor" id="i-ok-liga" href="../plataforma/index.html" hidden>Activar mi programa ahora</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <div class="wrap">
   <section class="seccion">
@@ -212,12 +268,70 @@ details p{color:var(--gris);margin-top:8px;font-size:15.5px}
       .then(function(d){
         if(d.descarga) $('liga-descarga').href = d.descarga;
         $('listo-correo').textContent = correo;
+        try{ localStorage.setItem('institutoMara.kit', JSON.stringify({ nombre:nombre, correo:correo, tel:wa })); }catch(e){}
+        prellenar();
         $('paso-form').hidden = true; $('paso-listo').hidden = false;
         $('descargar').scrollIntoView({ behavior:'smooth', block:'start' });
         try{ if(window.fbq) fbq('track', 'Lead', { content_name:'Kit clínico' }); }catch(e){}
       })
       .catch(function(e){ error(e.message || 'No pudimos registrarte. Intenta de nuevo.'); b.disabled = false; b.textContent = 'Quiero mi kit gratis'; });
   });
+  /* ---------- Inscripción sin cuenta (2 nov 2026): función «tienda», acción inscripcion_invitado ---------- */
+  var VIGENTE = new Date() < new Date('2026-12-01T00:00:00-06:00');
+  var insc = $('inscribete');
+  function api(cuerpo){
+    return fetch(SUPA + '/functions/v1/tienda', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer ' + ANON }, body: JSON.stringify(cuerpo) })
+      .then(function(r){ return r.json().then(function(d){ if(!r.ok || d.error) throw new Error(d.error || 'No pudimos continuar.'); return d; }); });
+  }
+  function pesos(n){ return '$' + Number(n).toLocaleString('es-MX'); }
+  function elegido(){ return document.querySelector('input[name="prog"]:checked'); }
+  function total(){ var x = elegido(); if(!x) return; $('i-total').textContent = pesos(x.dataset.final); $('i-pagar').textContent = 'Pagar ' + pesos(x.dataset.final) + ' con Mercado Pago'; }
+  function prellenar(){
+    try{ var g = JSON.parse(localStorage.getItem('institutoMara.kit') || 'null'); if(!g) return;
+      if(!$('i-nombre').value) $('i-nombre').value = g.nombre || ''; if(!$('i-correo').value) $('i-correo').value = g.correo || ''; if(!$('i-tel').value) $('i-tel').value = g.tel || ''; }catch(e){}
+  }
+  function iError(t, campo){ var e = $('i-error'); e.textContent = t; e.hidden = !t; if(campo) $(campo).focus(); }
+  if(VIGENTE){
+    insc.hidden = false;
+    var pedir = q.get('comprar');
+    if(pedir){ var r = document.querySelector('input[name="prog"][value="' + pedir.replace(/[^a-z0-9-]/g,'') + '"]'); if(r) r.checked = true; }
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="prog"]'), function(r){ r.addEventListener('change', total); });
+    total(); prellenar();
+    if(pedir || location.hash === '#inscribete') setTimeout(function(){ insc.scrollIntoView(); }, 50);
+    $('insc').addEventListener('submit', function(ev){
+      ev.preventDefault(); iError('');
+      var x = elegido(), nombre = $('i-nombre').value.trim().replace(/\s+/g,' '), correo = $('i-correo').value.trim(), tel = $('i-tel').value.trim();
+      if(!x) return iError('Elige un programa.');
+      if(nombre.length < 3) return iError('Escribe tu nombre completo.', 'i-nombre');
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo)) return iError('Revisa tu correo electrónico.', 'i-correo');
+      if(tel && tel.replace(/\D/g,'').length !== 10) return iError('Revisa tu WhatsApp (10 dígitos) o déjalo vacío.', 'i-tel');
+      var b = $('i-pagar'); b.disabled = true; b.textContent = 'Abriendo Mercado Pago…';
+      try{ localStorage.setItem('institutoMara.kit', JSON.stringify({ nombre:nombre, correo:correo, tel:tel })); }catch(e){}
+      if(window.pixel) pixel('InitiateCheckout', { content_ids:[x.value], content_type:'product', value:Number(x.dataset.final), currency:'MXN' });
+      api({ accion:'inscripcion_invitado', cursoId:x.value, nombre:nombre, correo:correo, tel:tel.replace(/\D/g,''), cupon:'KITCLINICO', urlRegreso: location.origin + location.pathname })
+        .then(function(d){ location.href = d.init_point; })
+        .catch(function(e){ iError(e.message || 'No pudimos abrir el pago. Intenta de nuevo.'); b.disabled = false; total(); });
+    });
+  }
+  /* Regreso de Mercado Pago: ?inscripcion=exito|pendiente|fallo&t=TOKEN */
+  var est = q.get('inscripcion'), tk = q.get('t');
+  if(est && tk){
+    insc.hidden = false; $('insc-paso-form').hidden = true; $('insc-paso-ok').hidden = false;
+    if(est === 'fallo'){ $('insc-paso-ok').hidden = true; $('insc-paso-form').hidden = false; iError('El pago no se completó. Puedes intentarlo de nuevo con otro medio de pago.'); }
+    else if(est === 'pendiente'){ $('i-ok-titulo').textContent = 'Tu pago está en proceso'; $('i-ok-texto').textContent = 'Si pagaste en OXXO o por transferencia, en cuanto Mercado Pago lo confirme te llega tu acceso por correo.'; }
+    insc.scrollIntoView();
+    (function ver(n){
+      api({ accion:'regalo_ver', t:tk }).then(function(d){
+        var g = d.regalo || {};
+        if(g.ligaActivar){
+          $('i-ok-titulo').textContent = '¡Listo! Tu pago está confirmado';
+          $('i-ok-texto').textContent = 'Te enviamos tu acceso a ' + (g.paraCorreo || 'tu correo') + '. También puedes activarlo ahora: crea tu cuenta con ese mismo correo y tu programa se activa solo.';
+          var l = $('i-ok-liga'); l.href = g.ligaActivar; l.hidden = false;
+          try{ if(!sessionStorage.getItem('compra-' + tk)){ sessionStorage.setItem('compra-' + tk, '1'); if(window.pixel) pixel('Purchase', { content_ids:[g.cursoId], content_type:'product', value:Number(g.monto || 0), currency:'MXN' }); } }catch(e){}
+        } else if(est === 'exito' && n < 6){ setTimeout(function(){ ver(n + 1); }, 4000); }
+      }).catch(function(){});
+    })(0);
+  }
 })();
 </script>
 </body>
