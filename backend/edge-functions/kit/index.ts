@@ -267,9 +267,9 @@ async function secuencia() {
   return json({ enviados, terminados });
 }
 
-function paginaBaja(ok: boolean) {
-  const t = ok ? "Listo, ya no te enviaremos estos correos." : "No encontramos tu registro.";
-  const s = ok ? "Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com." : "Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.";
+function paginaBaja(ok: boolean, promos = false) {
+  const t = ok ? (promos ? "Listo, ya no te enviaremos promociones." : "Listo, ya no te enviaremos estos correos.") : "No encontramos tu registro.";
+  const s = ok ? (promos ? "Los correos de tu cuenta (accesos, recibos y constancias) te seguirán llegando. Si cambias de opinión, escríbenos a contacto@institutomara.com." : "Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.") : "Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.";
   return new Response(`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Instituto Mara</title></head>
   <body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#F8F7FE;color:#1F2937"><div style="max-width:520px;margin:60px auto;padding:30px 24px;background:#fff;border:1px solid #E9E6F7;border-radius:18px;text-align:center">
   <p style="color:#6D28D9;font-weight:bold;margin:0 0 10px">Instituto Mara</p><h1 style="font-size:22px;color:#2E1065">${t}</h1><p style="line-height:1.6;color:#6B7280">${s}</p>
@@ -280,6 +280,19 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   try {
     const u = new URL(req.url);
+    // Baja de promociones de Prospectos → Alumnos (enlace de las campañas a alumnos, 2 nov 2026).
+    if (u.searchParams.get("baja_alumno")) {
+      const t = (u.searchParams.get("baja_alumno") || "").replace(/[^a-f0-9-]/g, "");
+      if (!/^[0-9a-f-]{36}$/.test(t)) return paginaBaja(false, true);
+      const r = await db(`alumnos_prospectos?token=eq.${t}&select=id,correo,sin_promociones`);
+      if (!r[0]) return paginaBaja(false, true);
+      if (!r[0].sin_promociones) {
+        await db(`alumnos_prospectos?id=eq.${r[0].id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { sin_promociones: true } });
+        await db("alumnos_contactos", { metodo: "POST", prefer: "return=minimal", cuerpo: { persona_id: r[0].id, canal: "correo", sentido: "entrante", resumen: "Pidió no recibir promociones (enlace de baja de campaña).", resultado: "baja" } }).catch(() => null);
+        if (r[0].correo) await db(`kit_registros?correo=eq.${encodeURIComponent(r[0].correo)}&baja=eq.false`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { baja: true, baja_en: new Date().toISOString(), siguiente_en: null } }).catch(() => null);
+      }
+      return paginaBaja(true, true);
+    }
     if (req.method === "GET" || u.searchParams.get("baja")) {
       const t = (u.searchParams.get("baja") || "").replace(/[^a-f0-9]/g, "");
       if (!t) return paginaBaja(false);
