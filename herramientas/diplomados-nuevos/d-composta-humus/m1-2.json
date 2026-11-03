@@ -1,0 +1,729 @@
+{
+"modulos": [
+{
+"t": "El negocio de los abonos orgánicos",
+"r": "Entiende por qué los residuos orgánicos de México son una oportunidad, qué productos puedes fabricar con ellos, quién los compra y quién paga por que los recojas, y qué límites y medidas de seguridad respetarás desde el primer día.",
+"lecciones": [
+{
+"t": "De residuo a recurso: los residuos orgánicos en México y el negocio de cerrar el ciclo",
+"obj": "Explicar con datos oficiales cuántos residuos orgánicos se generan en México, por qué cerrar el ciclo puede ser un negocio y qué recorrido harás en este diplomado.",
+"texto": [
+"Cada día, en México se generan unas 139,902 toneladas de residuos sólidos urbanos, alrededor de 1.08 kg por persona. El dato viene del <b>Diagnóstico Básico para la Gestión Integral de los Residuos</b> de la SEMARNAT (edición 2026, con datos de 2022) y trae un dato clave: el 40.15 % es orgánico (restos de comida, 29.2 %; jardinería, 8.3 %). Son unas 56,000 toneladas diarias de cáscaras, sobras, hojas y podas que, en buena parte, terminan revueltas con plásticos en rellenos o tiraderos, donde se pudren sin aire y producen metano, olores y lixiviados. El mismo diagnóstico registró apenas 14 instalaciones de compostaje en 7 estados.",
+"Ahí está la oportunidad de <b>cerrar el ciclo</b>: devolver al suelo, como composta o humus, lo que salió de él como alimento. Un negocio de abonos tiene dos puertas. La primera es el servicio: hay quien genera muchos orgánicos y necesita deshacerse de ellos en regla. La Ley General para la Prevención y Gestión Integral de los Residuos (artículo 5) llama <b>gran generador</b> a quien produce 10 toneladas o más de residuos al año (pequeño generador, de 400 kg a menos de 10 t); sus residuos urbanos son de manejo especial y los regulan los estados. Un restaurante que genera 30 kg diarios ya suma 10.95 t al año. La segunda puerta es el producto: abonos para viveros, huertos, agricultores y jardines. Además, la Ley General de Economía Circular (DOF, 19 de enero de 2026) menciona el compostaje como aprovechamiento; verifica su reglamento y lo que pide tu estado.",
+"El diplomado recorre ese camino en 8 módulos: productos, clientes y límites (1); la ciencia de la pila (2); lombricultura (3); bocashi, lixiviados y estiércoles (4); calidad, normas y etiqueta (5); insumos, logística y permisos (6); costos, precio y escala en Excel (7), y el plan de negocio de tu planta (8). Cada laboratorio alimenta ese plan.",
+"Dos advertencias honestas. Aquí no hay promesas de ingresos: que sobre residuo no significa que alguien te pague por recogerlo ni que tu composta se venda sola; lo comprobarás con números y clientes reales. Y la composta se aprende con las manos: la práctica en una planta, un vivero o un huerto es indispensable, y este diplomado no te certifica. Antes de recolectar, vender o rotular, verifica en tu municipio, con la secretaría de medio ambiente de tu estado, con COFEPRIS o SENASICA y en el SAT."
+],
+"comparar": [
+"«Así no: Hay toneladas de basura orgánica, así que con un terreno y una pala ya tengo el negocio asegurado.»",
+"«Así sí: Hay mucho residuo; primero peso cuánto genera cada cliente posible, practico en una planta y pregunto quién pagaría por la recolección y quién por la composta.»"
+],
+"caso": "Caso ficticio: Emiliano, de 29 años, trabajó seis años como cocinero en Ciudad Obregón y conoce a los dueños de seis restaurantes de su colonia. Vio un video que promete «$50,000 al mes con composta desde tu patio» y está pensando en renunciar para empezar ya. Calcula, a ojo, que cada restaurante tira unos 25 kg diarios de restos de comida; el más grande, que abre todos los días, genera unos 35 kg diarios de residuos en total. Emiliano nunca ha hecho una pila de composta.",
+"p": [
+[
+"¿Qué le conviene hacer a Emiliano antes de renunciar a su empleo?",
+"Pesar lo que tiran los seis restaurantes, preguntar quién le pagaría y practicar en una planta",
+"Renunciar ya, porque con unos 150 kg diarios de residuo la venta de composta está asegurada",
+"Comprar terreno y una trituradora para estar listo en cuanto los restaurantes acepten el servicio",
+"Lo que tiene son estimaciones a ojo y cero práctica: necesita kilos medidos, saber si alguien pagaría por la recolección o compraría el producto, y aprender en una planta. Tener residuo no asegura ventas, y comprar equipo antes de validar es gastar en lo que quizá no necesite."
+],
+[
+"¿Qué le dirías sobre la promesa del video?",
+"Que ningún ingreso está garantizado: debe comprobar con números quién le paga y cuánto",
+"Que es realista, porque con 56,000 toneladas diarias de orgánicos en el país hay mercado para todos",
+"Que exagera un poco, pero que con seis restaurantes llegará a la mitad de esa cifra en el primer mes",
+"Una cifra de ingreso sin conocer volumen, costos ni clientes no vale nada. Que en el país sobren orgánicos no dice que en su colonia alguien pague, y adivinar la mitad de una cifra inventada sigue siendo inventar."
+],
+[
+"¿Cómo clasifica la ley al restaurante más grande, que genera unos 35 kg diarios de residuos?",
+"Como gran generador: suma unas 12.8 t al año, y la ley pone el límite en 10 t o más",
+"Como pequeño generador, porque el límite de 10 toneladas se cuenta por mes y no por año",
+"Como no regulado, porque los restos de comida de un restaurante no cuentan como residuo",
+"35 kg × 365 días = 12,775 kg, unas 12.8 t al año: el artículo 5 de la ley llama gran generador a quien produce 10 t o más al año, y sus residuos urbanos pasan a ser de manejo especial, regulados por el estado. El límite es anual, y los restos de comida sí son residuos."
+]
+],
+"completar": [
+"Devolver al suelo como abono lo que salió de él como alimento es ___ el ciclo.",
+"cerrar"
+],
+"refl": "Mide tu punto de partida (20 min). 1) Haz una lista de cinco lugares cerca de ti que generen residuos orgánicos (tu casa, una fonda, un mercado, un comedor, un vivero) y pregunta o pesa cuántos kilos tiran al día. 2) Calcula cuántas toneladas al año son y si alguno sería gran generador. 3) Escribe quién podría pagarte por recolectar y quién podría comprarte el producto. 4) Anota dónde harás tu práctica: una planta, un vivero, un huerto comunitario o tu patio.",
+"modelo": "Modelo: «Lugares: mi casa, 1.5 kg al día; la fonda de la esquina, 12 kg; el mercado municipal, unos 200 kg según su administrador; el comedor de una maquiladora, 60 kg; un vivero con podas, sin dato aún. Si abren diario, el mercado suma 73 t al año y el comedor 21.9 t: los dos serían grandes generadores. Quién pagaría recolección: el comedor, que hoy le paga a un transportista. Quién compraría: el vivero. Practicaré los sábados en el huerto comunitario.» Es buena porque usa datos preguntados, hace la cuenta anual y separa a quien paga de quien compra.",
+"plantilla": [
+"Mapa de residuos de mi zona",
+"Lugar: [ ]  Tipo de residuo: [restos de comida / jardinería / mixto]\nKilos al día: [ ] (dato: [preguntado / pesado / estimado])\nToneladas al año: kilos al día × días que abre ÷ 1,000 = [ ]\n¿Gran generador (10 t o más al año)? [sí / no / falta dato]\n¿Me pagaría por recolectar? [ ]  ¿Me compraría producto? [ ]\nDónde haré mi práctica: [ ]"
+],
+"clave": [
+"En México, unos 4 de cada 10 kilos de residuos urbanos son orgánicos (SEMARNAT, datos de 2022) y muy pocos llegan a compostarse.",
+"Cerrar el ciclo puede dar dos fuentes de ingreso, recibir residuos y vender abono, pero ninguna está garantizada.",
+"La práctica supervisada es indispensable y los trámites se verifican en tu municipio y en tu estado."
+]
+},
+{
+"t": "Tus productos: composta, humus de lombriz, lixiviado, bocashi y sustratos",
+"obj": "Distinguir los cinco productos que puede fabricar una planta de abonos, lo que exige cada uno y elegir con cuáles empezar.",
+"texto": [
+"Antes de pensar en clientes, ten claro qué puedes fabricar. La <b>composta</b> resulta de descomponer residuos orgánicos con aire, en pila o en contenedor: los microorganismos la calientan, la transforman y, tras una etapa de maduración, queda un material oscuro, suelto y con olor a tierra húmeda. Sirve para mejorar suelos y como ingrediente de mezclas, y en México su calidad se describe con la NMX-AA-180-SCFI-2018, que verás en el módulo 5. Es el producto más versátil y el que mejor acepta residuos variados, como podas y restos de mercado.",
+"El <b>humus de lombriz</b>, también llamado lombricomposta, lo producen las lombrices rojas al digerir residuos ya precomposteados. Es más fino y parejo, se produce a temperatura ambiente y tiene su propia norma, la NMX-FF-109-SCFI-2008. A cambio, exige cuidar a un ser vivo: si las camas se calientan, se inundan o reciben lo que no deben, pierdes la población. Del mismo sistema sale el <b>lixiviado</b>, el líquido que escurre de camas y pilas. Se vende mucho como «fertilizante líquido», pero su composición cambia de un lote a otro y puede llevar microorganismos indeseables: no es un producto milagro, y en el módulo 4 aprenderás a manejarlo con cuidado.",
+"El <b>bocashi</b> es un abono fermentado de tradición japonesa, muy usado en América Latina, que se prepara mezclando materiales como estiércol, cascarilla, tierra y una fuente de azúcar. Tiene muchos seguidores, pero su evidencia son ensayos agronómicos dispersos y no hay norma mexicana para él: preséntalo con honestidad, sin atribuirle poderes. Por último, los <b>sustratos</b> son mezclas listas para maceta o almácigo en las que la composta o el humus se combinan con tezontle, arena u otras fibras que dan aire y drenaje. Al cliente urbano le resuelven el problema completo, y por eso suele valorarlos más que un abono suelto.",
+"No tienes que hacer los cinco desde el principio. Cada producto pide equipo, espacio, tiempo y controles distintos, y cada uno que sumas multiplica lo que puede salir mal. Una ruta razonable es empezar con uno o dos, por ejemplo composta y un sustrato hecho con ella, hasta que tu calidad sea constante, y agregar otro cuando un cliente concreto lo pida. Elige según los residuos que tienes, el espacio, la sombra y el agua disponibles, y lo que de verdad te piden los compradores de tu zona."
+],
+"comparar": [
+"«Así no: Desde el primer mes vendo composta, humus, bocashi, lixiviado y tres sustratos, y al lixiviado le pongo que nutre y protege cualquier planta.»",
+"«Así sí: Empiezo con composta cribada y un sustrato para maceta; el humus lo agrego cuando mis camas de lombriz den cosechas parejas.»"
+],
+"caso": "Caso ficticio: Viridiana, de 36 años, tiene con su hermano un vivero de plantas de ornato en Xalapa. Cada mes compra sustrato y tierra de hoja que le salen caros, mientras en el vivero se acumulan podas, hojas y plantas muertas. Un proveedor le ofrece montar un módulo de lombricultura «llave en mano» y su hermano quiere vender lixiviado como «fertilizante que cura las plantas». Viridiana tiene un patio techado de 40 m² sin usar y muy poco tiempo libre.",
+"p": [
+[
+"¿Con qué producto le conviene empezar a Viridiana?",
+"Con composta de sus propias podas y hojas, para usarla en su sustrato y medir si sale pareja",
+"Con humus de lombriz del módulo llave en mano, porque es el más fino y el que se vende más caro",
+"Con los cinco productos a la vez, para ofrecer a sus clientes un catálogo completo desde el inicio",
+"Ya tiene el residuo (podas y hojas) y el uso (su propio sustrato), así que la composta le ahorra compras y le enseña a controlar la calidad. El humus exige cuidar camas vivas y ella tiene poco tiempo; los cinco productos juntos multiplican los riesgos."
+],
+[
+"¿Qué le dirías sobre vender lixiviado como «fertilizante que cura las plantas»?",
+"Que es una promesa sin respaldo: su composición varía y puede llevar microorganismos indeseables",
+"Que está bien decirlo, porque al ser un producto natural no le puede hacer daño a ninguna planta",
+"Que conviene, siempre que lo diluya y lo venda en botellas con una etiqueta bonita y llamativa",
+"El lixiviado cambia de lote a lote y puede llevar microorganismos indeseables; decir que «cura» es una promesa que no puede sostener. Que algo sea natural no lo hace seguro, y diluirlo o ponerle buena etiqueta no vuelve verdadera la afirmación."
+],
+[
+"Más adelante quiere ofrecer un abono fino, hecho sin calor, para clientes con macetas. ¿Qué producto encaja y qué le exige?",
+"Humus de lombriz: se hace a temperatura ambiente y le exige cuidar camas, humedad y alimento",
+"Bocashi: es el abono que tiene norma mexicana propia y se prepara sin ningún cuidado especial",
+"Composta termófila: es la más fina de todas, porque el calor alto deshace las partículas gruesas",
+"El humus se produce sin fase caliente, es fino y tiene la NMX-FF-109-SCFI-2008, pero depende de mantener vivas a las lombrices. El bocashi no tiene norma mexicana, y la finura de una composta depende del cribado, no del calor."
+]
+],
+"completar": [
+"El abono fermentado de tradición japonesa, sin norma mexicana propia, se llama ___.",
+"bocashi"
+],
+"relacionar": [
+["Composta", "Se calienta en pila con aire y luego madura"],
+["Humus de lombriz", "Lo digieren lombrices rojas; NMX-FF-109"],
+["Lixiviado", "Líquido que escurre de camas y pilas"],
+["Bocashi", "Fermentado, sin norma mexicana"],
+["Sustrato", "Mezcla para maceta con tezontle o arena"]
+],
+"refl": "Elige tus primeros productos (20 min). 1) Anota qué residuos tienes a la mano y cuánto espacio, techo, sombra y agua. 2) Para cada uno de los cinco productos escribe qué necesitarías y qué podría salir mal. 3) Elige uno o dos para empezar y explica por qué. 4) Escribe qué condición concreta te haría agregar un tercero.",
+"modelo": "Modelo: «Tengo las podas de mi jardín, los restos de comida de mi casa y de la de mi mamá, un patio de 25 m² con medio techo y una toma de agua. Composta: necesito espacio para dos pilas; riesgo, que se encharque en lluvias. Humus: necesito sombra y alimentar cada semana; riesgo, perder lombrices en vacaciones. Bocashi y lixiviado: los dejo, no puedo controlarlos aún. Sustrato: lo hago con mi composta y tezontle. Empiezo con composta y sustrato, y agrego humus cuando dos viveros me lo pidan.» Es buena porque parte de recursos reales, anticipa riesgos y pone una condición concreta para crecer.",
+"plantilla": [
+"Ficha de elección de productos",
+"Residuos que tengo: [ ]  Espacio: [ ] m²  Techo y sombra: [ ]  Agua: [ ]\nComposta: necesito [ ]; riesgo [ ]\nHumus de lombriz: necesito [ ]; riesgo [ ]\nLixiviado: necesito [ ]; riesgo [ ]\nBocashi: necesito [ ]; riesgo [ ]\nSustrato: necesito [ ]; riesgo [ ]\nEmpiezo con: [ ] porque [ ]\nAgrego otro cuando: [ ]"
+],
+"clave": [
+"Composta, humus, lixiviado, bocashi y sustratos piden procesos, controles y normas distintos.",
+"El lixiviado y el bocashi se presentan con honestidad: sin milagros ni curas.",
+"Empieza con uno o dos productos y crece cuando un cliente concreto lo pida."
+]
+},
+{
+"t": "Quién compra y quién paga: viveros, huertos, agricultores, paisajismo, municipios y empresas",
+"obj": "Distinguir a quien compra tu producto de quien te paga por recibir sus residuos, identificar qué quiere cada segmento y comparar canales con cuentas por tonelada.",
+"texto": [
+"En este negocio hay dos tipos de cliente y conviene no confundirlos: el que <b>compra</b> tu producto y el que te <b>paga por recibir</b> sus residuos. Un vivero te compra composta; un hotel, un comedor industrial o un mercado puede pagarte por llevarte sus orgánicos, porque así cumple con su manejo de residuos y deja de pagar otro servicio. Una planta pequeña puede vivir de la combinación de ambas fuentes, y en el módulo 7 calcularás cuánto pesa cada una en tus números. Por ahora, identifica quiénes son en tu zona y qué quiere cada uno.",
+"Entre los que compran, cada segmento busca algo distinto. Los <b>viveros</b> compran volumen con regularidad y quieren calidad pareja: si un lote llega húmedo o con piedras, te cambian por otro proveedor. Los <b>huertos urbanos</b> y los aficionados compran poco, prefieren bultos chicos y pagan más por kilo, pero preguntan mucho y necesitan instrucciones de uso. Los <b>agricultores</b> compran por tonelada y a granel, comparan contra el precio de otros abonos y a menudo piden un análisis de laboratorio. El <b>paisajismo</b>, es decir, quienes hacen y mantienen jardines, necesita volúmenes grandes en fechas concretas y valora un sustrato listo.",
+"Entre los que pagan están los <b>generadores</b>: restaurantes, hoteles, comedores, mercados y centrales de abasto. Les importa que llegues puntual, que el servicio no huela ni ensucie, y muchos quieren un reporte de los kilos que te llevaste para sus registros ambientales. Los <b>municipios</b> pueden estar de los dos lados: tienen podas de parques y residuos de mercados que tratar, y áreas verdes que abonar. Suelen contratar mediante procesos formales y pueden tardar en pagar, así que no dependas de uno solo para cubrir los gastos del mes.",
+"Haz las cuentas por canal, aunque sea con números de ejemplo. Si vendes una tonelada a granel a un agricultor a $2.00 por kilo, entran $2,000. Esa misma tonelada en 40 bultos de 25 kg a $95 serían $3,800, pero ahora pagas costales, etiqueta y llenado, y vendes de uno en uno. Y si un comedor te paga $700 al mes por recoger sus restos, ese dinero llega antes de que produzcas un solo kilo, aunque te obliga a pasar a tiempo también cuando llueve. Ningún canal es el mejor en abstracto: depende de tu volumen, tu tiempo y tu calidad."
+],
+"comparar": [
+"«Así no: Mi cliente es cualquiera que tenga plantas; a todos les vendo el mismo bulto al mismo precio y sin explicarles nada.»",
+"«Así sí: Al vivero le vendo a granel con calidad pareja, al huerto le vendo bultos de 25 kg con instrucciones y al comedor le cobro la recolección con un reporte mensual de kilos.»"
+],
+"caso": "Caso ficticio: Rubén, de 45 años, produce composta en un terreno de su familia a las afueras de Pachuca: unas 3 toneladas al mes, que hoy vende a granel a dos agricultores a $1.80 el kilo. El municipio le propone recibir las podas de sus parques y pagarle $9,000 al mes, con contrato de un año y pago a 90 días. Un vivero le ofrece comprarle una tonelada al mes en bultos de 25 kg a $90 cada uno, si la calidad es pareja. Rubén tiene ahorros para cubrir solo dos meses de gastos.",
+"p": [
+[
+"Si pasa una tonelada de su venta a granel al vivero, ¿cuánto más ingresa por ella, antes de pagar el empaque?",
+"$1,800 más: recibe $3,600 por los 40 bultos en lugar de $1,800 a granel",
+"$3,600, porque esa es la cantidad que el vivero le paga por los 40 bultos",
+"$2,250, porque cada bulto le deja $45 más y en una tonelada caben 50 bultos",
+"Una tonelada son 40 bultos de 25 kg: 40 × $90 = $3,600, contra 1,000 kg × $1.80 = $1,800 a granel; la diferencia es $1,800, y de ahí salen costales, etiqueta y llenado. $3,600 es el ingreso total, no lo que gana de más, y en una tonelada caben 40 bultos, no 50."
+],
+[
+"¿Qué le conviene hacer con la propuesta del municipio?",
+"Aceptarla solo si negocia pagos más cortos o puede aguantar tres meses sin cobrar",
+"Aceptarla de inmediato, porque $9,000 al mes es más de lo que hoy gana con el granel",
+"Rechazarla, porque un municipio nunca es buen cliente para una planta de composta chica",
+"Con pago a 90 días pasaría tres meses recibiendo podas sin cobrar, y sus ahorros cubren dos. El monto es atractivo, pero el flujo manda; tampoco hay que descartar a los municipios: pueden ser buenos clientes si las condiciones de pago se ajustan a tu caja."
+],
+[
+"¿Qué implica para Rubén la condición del vivero de recibir «calidad pareja»?",
+"Que debe registrar y revisar cada lote, porque uno que llegue húmedo o con piedras le puede costar el cliente",
+"Que le basta con que la composta se vea oscura, porque el color demuestra que el lote está bien hecho",
+"Que puede mezclar lotes viejos y nuevos en cada entrega para que el vivero no note la diferencia",
+"Un vivero compra con regularidad y cambia de proveedor si un lote falla: necesita control y registro por lote. El color no dice si la composta está madura, y revolver lotes sin control no garantiza nada."
+]
+],
+"completar": [
+"Los restaurantes, hoteles y mercados que te pagan por recoger sus residuos son los ___.",
+"generadores"
+],
+"refl": "Haz el mapa de clientes de tu zona (20 min). 1) Escribe dos posibles compradores y dos posibles generadores, con su tipo y ubicación. 2) Para cada uno anota qué le importa: precio, volumen, calidad, puntualidad o reporte. 3) Con números de ejemplo, calcula cuánto te dejaría una tonelada a granel y en bultos. 4) Señala qué cliente buscarías primero y qué riesgo tiene (pago tardío, volumen variable, exigencia de calidad).",
+"modelo": "Modelo: «Compradores: un vivero en la carretera y un huerto escolar. Generadores: una cocina económica y el mercado del domingo. Al vivero le importa la calidad pareja; al huerto, el precio y las instrucciones; a la cocina, que recoja puntual; al mercado, que no quede nada tirado. Ejemplo: una tonelada a granel a $1.50 son $1,500; en 40 bultos de $80 son $3,200, menos $400 de costales y etiqueta, $2,800. Primero busco a la cocina económica: me da residuo seguro y un ingreso pequeño; riesgo, que cierre en vacaciones.» Es buena porque distingue compradores de generadores, hace cuentas y nombra un riesgo concreto.",
+"plantilla": [
+"Mapa de clientes",
+"Compradores\n1. [ ]  Le importa: [ ]  Formato: [granel / bulto de 25 kg / costal de 40 L]\n2. [ ]  Le importa: [ ]\nGeneradores que pagarían por recolección\n1. [ ]  Kilos al día: [ ]  Le importa: [ ]\n2. [ ]  Kilos al día: [ ]\nUna tonelada a granel: 1,000 kg × $[ ] = $[ ]\nUna tonelada en bultos: [ ] bultos × $[ ] − empaque $[ ] = $[ ]\nPrimer cliente que busco: [ ]  Riesgo: [ ]"
+],
+"clave": [
+"Distingue a quien te compra el producto de quien te paga por recibir sus residuos.",
+"Cada segmento quiere algo distinto: volumen y calidad pareja, bultos con instrucciones, análisis de laboratorio o puntualidad con reporte.",
+"Haz cuentas por canal y no dependas de un solo cliente, sobre todo si paga tarde."
+]
+},
+{
+"t": "Mitos, límites y seguridad desde el primer día",
+"obj": "Desmentir los mitos más comunes sobre la composta, saber qué nunca entra a una pila pequeña y protegerte de los riesgos de salud del trabajo con residuos.",
+"texto": [
+"Tres ideas populares conviene desmontarlas antes de mover la primera pala. <b>«La composta huele mal»</b>: una pila bien llevada huele a tierra húmeda o a bosque; el olor a podrido o a amoniaco avisa que le falta aire, le sobra agua o lleva demasiados restos frescos, y en el módulo 2 aprenderás a leerlo. <b>«Todo lo natural es seguro»</b>: los residuos orgánicos traen bacterias y hongos y, si incluyes estiércol o restos mal elegidos, patógenos que pueden enfermar a quien trabaja la pila o a quien come lo que se cosecha. Y <b>«con composta duplicas tu cosecha»</b>: la composta mejora el suelo, pero el rendimiento depende de muchas cosas más; no le prometas cifras de cosecha a nadie.",
+"Lo que no entra a una pila pequeña: heces de perros, gatos o humanas, por los parásitos y patógenos que pueden llevar, y, si no tienes un control de temperatura serio, carne, pescado, huesos y lácteos, que atraen fauna y producen olores. Tampoco residuos peligrosos, como aceite de motor, pilas, medicinas o madera tratada o pintada. Si algún día trabajas con estiércol de vaca, caballo o aves, en el módulo 4 verás cómo compostarlo bien; crudo, no se aplica a cultivos sin cuidado.",
+"Tu cuerpo también es parte del sistema. Al voltear o cribar material seco se levantan <b>bioaerosoles</b>: polvo con esporas de hongos como <i>Aspergillus fumigatus</i> y con actinomicetos, unas bacterias filamentosas. En personas sensibles pueden causar rinitis, asma o alveolitis alérgica, el llamado «pulmón de granjero», y el riesgo es mayor para quien tiene las defensas bajas o una enfermedad pulmonar. Usa guantes, botas, ropa de trabajo y un respirador tipo N95 al voltear o cribar; humedece el material antes de cribarlo, no voltees con el viento hacia la gente y lávate las manos antes de comer. Pregúntale a tu médico por la vacuna antitetánica. En una emergencia, llama al 911.",
+"Y respeta los límites de lo que haces. Este diplomado te da bases sólidas, pero no te certifica; aprender bien exige práctica supervisada en una planta o un huerto. Las reglas cambian según el lugar: en la Ciudad de México, por ejemplo, hay normas ambientales propias, como la NADF-020-AMBT-2011 para producir composta y la NADF-024-AMBT-2013 para separar residuos. Antes de recibir residuos de otros o de vender, verifica en tu municipio y con la secretaría de medio ambiente de tu estado."
+],
+"comparar": [
+"«Así no: Es 100 % natural, así que le echo de todo, cribo sin mascarilla y en la bolsa pongo que duplica tu cosecha.»",
+"«Así sí: Sin heces de mascotas ni carne, cribo con el material humedecido y respirador N95, y en la bolsa explico qué es y cómo se usa.»"
+],
+"caso": "Caso ficticio: Andrea, de 24 años, organizó en la azotea de su edificio en Coyoacán una composta para 18 departamentos. Una vecina propone echar también las heces de sus dos perros, «porque es abono natural»; un vecino con asma se ofrece a cribar el material seco cada fin de mes, y una amiga diseñadora le sugiere vender bolsitas con el lema «duplica tu cosecha». Andrea quiere que el proyecto crezca sin problemas con la administración del edificio.",
+"p": [
+[
+"¿Qué hace Andrea con la propuesta de las heces de perro?",
+"Rechazarlas: pueden llevar parásitos y patógenos que una pila de azotea no elimina con seguridad",
+"Aceptarlas si las mezcla bien, porque al ser de origen animal le aportan nitrógeno a la pila",
+"Aceptarlas solo en invierno, cuando hay menos moscas y los olores casi no se notan en la azotea",
+"Las heces de perros y gatos pueden llevar parásitos y patógenos, y una composta doméstica no garantiza el calor ni el control para eliminarlos: no entran nunca. Aportar nitrógeno no compensa el riesgo, y la temporada no cambia lo que llevan."
+],
+[
+"¿Cómo resuelve el ofrecimiento del vecino con asma?",
+"Darle otra tarea, como pesar y registrar, y que quien cribe humedezca el material y use respirador N95",
+"Dejarlo cribar con un cubrebocas de tela, porque el polvo de la composta es básicamente tierra fina",
+"Dejarlo cribar solo si lo hace al aire libre, porque en exteriores los bioaerosoles no le pueden afectar",
+"El polvo de material seco lleva esporas y bacterias que pueden agravar el asma: mejor que colabore lejos del polvo. Un cubrebocas de tela no filtra como un N95, y al aire libre los bioaerosoles también se respiran."
+],
+[
+"¿Qué le responde a su amiga sobre el lema?",
+"Que lo cambien por una descripción honesta de qué es y cómo se usa, sin cifras de cosecha",
+"Que lo dejen, porque en la azotea las plantas crecieron el doble desde que usan su composta",
+"Que lo usen con una nota en letra chica que diga «los resultados pueden variar según el cultivo»",
+"El rendimiento depende del suelo, el cultivo, el agua y el manejo; una experiencia en macetas no prueba que la composta «duplique» nada. La letra chica no vuelve honesta una promesa engañosa."
+]
+],
+"completar": [
+"El polvo con esporas y bacterias que se levanta al voltear o cribar se llama ___.",
+"bioaerosoles"
+],
+"relacionar": [
+["«La composta huele mal»", "Bien llevada, huele a tierra húmeda"],
+["«Todo lo natural es seguro»", "Los residuos pueden llevar patógenos"],
+["«Con composta duplicas tu cosecha»", "No se prometen rendimientos"],
+["Cribar material seco", "Humedecerlo y usar respirador N95"],
+["Heces de perros y gatos", "Nunca van a la pila"]
+],
+"refl": "Escribe tu protocolo de arranque (20 min). 1) Haz la lista de lo que sí y lo que no entra a tu pila, con el porqué de cada «no». 2) Anota el equipo de protección que usarás y en qué tareas. 3) Escribe tres frases que no dirás a tus clientes y cómo las reemplazarás. 4) Di dónde harás tu práctica supervisada y qué trámite verificarás primero, y ante quién.",
+"modelo": "Modelo: «Sí entra: cáscaras, restos de verdura, café molido, hojas secas y cartón sin tinta. No entra: carne, lácteos y huesos, porque atraen ratas y no controlo la temperatura; heces de mascotas, por los parásitos; madera pintada. Protección: guantes y botas siempre; respirador N95 al voltear y cribar, con el material humedecido. No diré «es 100 % natural y seguro», «duplica tu cosecha» ni «no necesita cuidados»; diré «mejora la estructura del suelo; así se usa». Practico en un huerto comunitario y pregunto en la alcaldía si necesito algún aviso.» Es buena porque justifica cada exclusión y convierte promesas en descripciones honestas.",
+"plantilla": [
+"Protocolo de arranque",
+"Sí entra: [ ]\nNo entra y por qué: [heces de mascotas o humanas: patógenos] [carne, pescado y lácteos: fauna y olores] [ ]\nProtección: guantes y botas [siempre]; respirador N95 [al voltear y cribar]; lavado de manos [antes de comer]\nFrases que no diré: [ ] → Lo que diré: [ ]\nPráctica supervisada en: [ ]\nTrámite que verifico primero: [ ] con [municipio / secretaría de medio ambiente del estado]\nEmergencias: 911"
+],
+"clave": [
+"Una composta bien llevada huele a tierra; el mal olor es un diagnóstico, no una característica del producto.",
+"Nunca heces de perros, gatos ni humanas; carne, pescado y lácteos, solo con un control de temperatura serio.",
+"Protégete de los bioaerosoles con respirador N95 y material humedecido, y no prometas cosechas."
+]
+}
+],
+"reto": {
+"texto": "En 90 minutos arma la ficha de tu idea de negocio de abonos, en Excel o en papel, con cuatro partes. 1) Residuos: tres fuentes posibles con los kilos al día que preguntaste o pesaste, las toneladas al año y si cada una sería gran o pequeño generador. 2) Productos: el o los dos con los que empezarías y por qué. 3) Clientes: dos compradores y un generador que pagaría por recolección, qué le importa a cada uno y una cuenta de ejemplo por tonelada en dos canales. 4) Protocolo: qué sí y qué no entra, tu equipo de protección y dónde harás tu práctica supervisada.",
+"entregable": "Una ficha de idea de negocio de una o dos páginas con las cuatro partes y las cuentas a la vista.",
+"criterios": "Revisa: los kilos vienen de preguntar o pesar y no de suponer, distinguiste compradores de generadores, no hay promesas de ingresos ni de cosechas, excluiste las heces de mascotas y humanas y nombraste el lugar de tu práctica supervisada."
+},
+"lab": {
+"t": "Una idea de composta en Texcoco",
+"obj": "Estimar los residuos disponibles, elegir productos y clientes, comparar canales con cuentas y fijar límites de seguridad para una idea de negocio de composta.",
+"esc": "<b>Lucía,</b> de 27 años, vive en Texcoco y su familia tiene un terreno de 600 m² con un cuarto techado. Cerca hay un mercado y cuatro restaurantes con los que su papá tiene trato. Lucía quiere convertir esos residuos en un negocio, pero no sabe por dónde empezar ni cuánto puede prometer.",
+"e": [
+[
+"Escena 1: El administrador del mercado le dice que salen unos 250 kg diarios de orgánicos y que abre 26 días al mes, 312 al año. Cada restaurante abre todos los días y genera unos 25 kg diarios de residuos en total, de los que 18 kg son orgánicos.",
+"Consigna: calcula los kilos de orgánicos al mes de cada fuente y el total (toma 30 días para los restaurantes), y di con la cuenta anual si el mercado y cada restaurante son grandes o pequeños generadores."
+],
+[
+"Escena 2: Su tío le ofrece un módulo de lombricultura usado; su hermano quiere vender lixiviado y bocashi desde el principio. El terreno tiene mucho sol, poca sombra y una toma de agua.",
+"Consigna: elige uno o dos productos para empezar, explica por qué con los recursos del terreno y escribe la condición que te haría agregar otro."
+],
+[
+"Escena 3: En una prueba en el huerto de un conocido, en este caso de 1,000 kg de residuo fresco salieron unos 300 kg de composta. Un agricultor le compraría a granel a $2.00 el kilo; un huerto urbano, bultos de 25 kg a $95 (datos de ejemplo), y dos restaurantes le pagarían $600 al mes cada uno por recoger sus restos.",
+"Consigna: estima con esa misma proporción cuánta composta saldría al mes, calcula cuánto entraría por tonelada en cada canal y por recolección, y di qué combinación probarías primero y por qué."
+],
+[
+"Escena 4: Su hermano quiere anunciar «abono 100 % natural que duplica tu cosecha»; su tío, que tiene una enfermedad pulmonar, se ofrece a cribar, y una vecina le pide recibir la arena sanitaria de sus gatos.",
+"Consigna: escribe qué le respondes a cada uno, el equipo de protección que usará quien trabaje las pilas y los dos trámites que verificarías primero y ante quién."
+]
+],
+"p": [
+[
+"¿Cuántos kilos de orgánicos al mes podría recibir Lucía de todas las fuentes?",
+"8,660 kg: 6,500 del mercado y 2,160 de los cuatro restaurantes",
+"9,500 kg: 6,500 del mercado y 3,000 de los cuatro restaurantes",
+"6,572 kg: 6,500 del mercado y 72 kg de los cuatro restaurantes",
+"Mercado: 250 kg × 26 días = 6,500 kg; restaurantes: 4 × 18 kg × 30 días = 2,160 kg; total 8,660 kg. Los 3,000 kg usan los 25 kg de residuo total, que incluye lo que no es orgánico, y los 72 kg son lo de un solo día."
+],
+[
+"¿Cómo clasifica la ley al mercado y a cada restaurante?",
+"Mercado, gran generador con 78 t al año; cada restaurante, pequeño generador con 9.1 t",
+"Los dos son grandes generadores, porque juntos suman bastante más de 10 toneladas al año",
+"Los dos son pequeños generadores, porque ninguno genera 10 toneladas en un solo mes",
+"La clasificación es por generador y por año: el mercado genera al menos 250 kg × 312 = 78,000 kg, 78 t, solo de orgánicos; cada restaurante, 25 kg × 365 = 9,125 kg, entre 400 kg y menos de 10 t. No se suman generadores distintos, y el límite no es mensual."
+],
+[
+"¿Qué combinación es más prudente para empezar?",
+"Cobrar la recolección de los dos restaurantes y vender a granel al agricultor mientras afina su calidad",
+"Vender solo bultos al huerto urbano, porque cada tonelada le deja $3,800 y no tiene más costos",
+"Recibir desde el primer mes todo lo del mercado y los restaurantes y lanzar todos los productos",
+"La recolección le da ingreso desde el inicio y un volumen que puede manejar, y el granel es el canal más simple mientras su calidad se vuelve pareja. Los $3,800 de los bultos no descuentan costales, etiqueta ni tiempo de venta, y recibir lo del mercado, un gran generador, exige verificar antes los permisos de manejo especial con el estado."
+]
+],
+"pl": [
+"Ficha de mi idea de composta",
+"Fuente 1: [ ] kg al día × [ ] días = [ ] kg al mes; al año [ ] t → [gran / pequeño generador]\nFuente 2: [ ] kg al día × [ ] días = [ ] kg al mes; al año [ ] t → [ ]\nProductos para empezar: [ ] porque [ ]; agrego otro cuando [ ]\nEn mi prueba, de [ ] kg de residuo salieron [ ] kg de producto (referencia de mi caso, no regla)\nCanal 1: [ ] → $[ ] por tonelada   Canal 2: [ ] → $[ ] por tonelada, menos empaque $[ ]\nRecolección: [ ] clientes × $[ ] = $[ ] al mes\nNo entra: [ ]   Protección: [ ]\nTrámites a verificar: [ ] ante [ ]"
+]
+},
+"quiz": [
+[
+"En una reunión en Tepic, un regidor afirma que «casi toda la basura es orgánica». Con el diagnóstico de la SEMARNAT (datos de 2022), ¿qué le respondes?",
+"Que es cerca del 40 %, y que los restos de comida y de jardinería son casi todo ese 40 %",
+"Que es alrededor del 10 %, porque la mayor parte de la basura de las ciudades es plástico",
+"Que es cerca del 80 %, porque casi todo lo que se tira en las casas son restos de comida",
+"Que no hay datos nacionales, porque cada municipio mide sus residuos a su manera y no se juntan"
+],
+[
+"Un comedor industrial genera 40 kg diarios de residuos y opera 250 días al año. ¿Cómo lo clasifica la ley general de residuos?",
+"Gran generador: llega justo a 10 t al año, y el límite es de 10 t o más",
+"Pequeño generador, porque en ningún mes del año llega a generar 10 t",
+"Pequeño generador, porque solo cuenta los días hábiles de un año de 365",
+"Como no regulado, porque los comedores de empresa quedan fuera de esa ley"
+],
+[
+"Una clienta de Xalapa busca un abono fino para macetas, hecho sin fase caliente y con norma mexicana propia. ¿Qué le ofreces?",
+"Humus de lombriz, que se describe en la NMX-FF-109-SCFI-2008",
+"Bocashi, que tiene su norma propia para abonos fermentados",
+"Lixiviado, porque es el abono más concentrado y fino que hay",
+"Composta termófila sin cribar, porque el calor la deja más fina"
+],
+[
+"Un hotel de Tepic te propone que recojas sus restos de cocina tres veces por semana. ¿Qué tipo de cliente es?",
+"Un generador que puede pagarte por la recolección y pedirte un reporte de kilos",
+"Un comprador seguro de composta, porque todo hotel tiene jardines que abonar cada mes",
+"Un proveedor gratuito, porque a un hotel no se le puede cobrar por llevarse sus residuos",
+"Un asunto municipal, porque los residuos de los hoteles siempre los recoge el municipio"
+],
+[
+"Vendes una tonelada en bultos de 25 kg a $100 cada uno y gastas $8 por bulto en costal y etiqueta. ¿Cuánto te queda de esa tonelada antes de otros costos?",
+"$3,680, porque son 40 bultos que te dejan $92 cada uno",
+"$4,000, porque el costal y la etiqueta los paga el cliente",
+"$2,300, porque son 25 bultos que te dejan $92 cada uno",
+"$3,920, porque a $4,000 le restas $8 por cada 100 kg"
+],
+[
+"Un posible cliente en Coyoacán no quiere composta porque, dice, «huele a basura». ¿Qué le explicas?",
+"Que una composta madura huele a tierra húmeda, y que el olor a podrido delata un proceso mal llevado",
+"Que todas huelen así al principio y que el olor se quita si la deja unas horas al sol antes de usarla",
+"Que ese olor es señal de que tiene muchos nutrientes, y que por eso es un abono mejor que otros",
+"Que puede pedirla aromatizada, porque antes de empacarla se le agrega cal y una esencia de pino"
+],
+[
+"Un trabajador de una planta en Ciudad Obregón tose cada vez que criba composta seca. ¿Qué medida es la más adecuada?",
+"Humedecer el material antes de cribar, usar respirador N95 y que lo revise un médico",
+"Cribar a mediodía, cuando el sol seca el polvo y hace que caiga más rápido al suelo",
+"Usar un pañuelo de tela sobre la nariz, porque el polvo de composta es solo tierra fina",
+"Seguir igual, porque la tos es normal los primeros meses y después el cuerpo se acostumbra"
+],
+[
+"Un vecino te ofrece la arena sanitaria de sus gatos para tu composta doméstica. ¿Qué haces?",
+"No la aceptas: las heces de gato pueden llevar parásitos y no van a la pila",
+"La aceptas si la entierras en el centro de la pila, donde hace más calor",
+"La aceptas solo si la arena es biodegradable y no tiene ningún perfume",
+"La aceptas y usas esa composta solo para plantas de ornato, nunca huertos"
+],
+[
+"Una pareja de Texcoco quiere imprimir en sus costales «Duplica tu cosecha». ¿Qué les recomiendas?",
+"Cambiarlo por qué es el producto y cómo se usa, porque el rendimiento depende de muchos factores",
+"Dejarlo, si en su propia parcela la cosecha creció al doble después de empezar a usar su composta",
+"Ponerlo solo en los bultos para agricultores, que entienden de rendimientos y no se dejan engañar",
+"Cambiarlo por «aumenta tu cosecha hasta 50 %», porque es una cifra más moderada y más creíble"
+],
+[
+"Una empresa quiere producir composta en Coyoacán con los residuos de varios restaurantes. ¿Qué es lo más sensato antes de empezar?",
+"Revisar la NADF-020-AMBT-2011 y preguntar a la autoridad ambiental local qué le piden",
+"Empezar sin revisar nada, porque la composta no está regulada en ninguna parte del país",
+"Aplicar solo la norma del humus de lombriz, porque es la única que existe sobre abonos",
+"Tramitar el registro en COFEPRIS antes de recibir su primer kilo de residuo orgánico"
+]
+]
+},
+{
+"t": "La ciencia del compostaje",
+"r": "Entiende qué hacen los microorganismos en cada fase, arma recetas con la relación carbono/nitrógeno en Excel, controla humedad, aire y partícula, lee los olores y lleva una pila hasta la higienización con termómetro y bitácora.",
+"lecciones": [
+{
+"t": "Microorganismos y fases: mesófila, termófila, enfriamiento y maduración",
+"obj": "Reconocer en qué fase está una pila por su temperatura, olor y aspecto, y decidir si ya puede considerarse terminada.",
+"texto": [
+"La composta no la haces tú: la hacen bacterias, hongos y actinomicetos (bacterias filamentosas que dan el olor a tierra mojada), y después lombrices de tierra, ácaros y otros animales pequeños. Tu trabajo es darles comida balanceada, agua y aire. Si entiendes qué necesitan en cada etapa, sabrás leer la pila: su temperatura, su olor y su aspecto te dicen lo que pasa adentro, sin necesidad de laboratorio para el día a día.",
+"En la <b>fase mesófila</b>, la de los primeros días, trabajan microorganismos que prosperan a temperaturas templadas. Consumen lo más fácil de digerir, como azúcares, almidones y proteínas, y al respirar liberan calor. Es normal que el pH baje un poco por los ácidos orgánicos que se forman. Si la mezcla está bien hecha, la temperatura sube rápido, y cuando pasa de unos 40 a 45 °C los mesófilos ceden el lugar a otros microorganismos.",
+"En la <b>fase termófila</b> dominan los que resisten el calor. La temperatura preferida va de 54 a 60 °C, con un rango razonable de 43 a 66 °C (Rynk, 1992). Aquí se degradan grasas, proteínas y parte de la celulosa, y aquí se eliminan patógenos y semillas de maleza, siempre que el calor dure lo suficiente y llegue a toda la masa; por eso existen el termómetro y los volteos. Si la pila pasa de unos 60 °C conviene voltearla, porque el exceso de calor también mata a los microorganismos útiles.",
+"Cuando se acaba la comida fácil, viene el <b>enfriamiento</b>: la temperatura baja, regresan los mesófilos y los hongos atacan lo más duro, como la celulosa y la lignina de ramas y paja. Luego llega la <b>maduración</b>, la etapa más larga y la más olvidada: semanas en las que el material se estabiliza y deja de consumir oxígeno con fuerza. Cuidado con el mito de «ya no se ven los restos, ya está lista»: una composta con buen aspecto puede estar inmadura y dañar raíces o semillas. Una prueba sencilla es voltearla y humedecerla; si vuelve a calentarse, todavía no termina. En el módulo 5 verás pruebas más finas, como la de germinación."
+],
+"comparar": [
+"«Así no: La pila ya se enfrió y no se ven las cáscaras; hoy mismo la embolso y la vendo.»",
+"«Así sí: Se enfrió; la volteo y la humedezco, y si en unos días no recalienta, la dejo madurar y la pruebo antes de venderla.»"
+],
+"caso": "Caso ficticio: Fermín, de 67 años, es ejidatario cerca de Tepic y armó una pila con hojas, cáscaras de fruta y bagazo de caña. La primera semana subió a 58 °C; en la quinta está a 30 °C, tiene color café oscuro y casi no se ven los restos. Un vivero le pide 2 toneladas para la semana próxima y su nieto le asegura que una pila fría ya está lista para vender.",
+"p": [
+[
+"¿Qué indica que la pila de Fermín haya bajado a 30 °C?",
+"Que se acabó la comida fácil o le falta agua o aire; no prueba que esté madura",
+"Que ya está madura, porque el calor solo dura mientras se ven restos en la pila",
+"Que el calor mató a los microorganismos y la pila ya no sirve como abono",
+"Una pila se enfría cuando entra en enfriamiento, pero también cuando se seca o se compacta; ninguna de esas causas prueba madurez. El calor no depende de que se vean restos, y una pila fría no está muerta: puede reactivarse con agua y volteo."
+],
+[
+"¿Qué prueba sencilla puede hacer Fermín esta misma semana?",
+"Voltearla y humedecerla: si vuelve a calentarse, todavía no está terminada",
+"Olerla: si no huele a podrido, ya está lista para embolsarse y venderse",
+"Mirarla de cerca: si ya no distingue cáscaras ni bagazo, está madura",
+"Si al recibir agua y aire la pila recalienta, todavía hay material que los microorganismos pueden consumir: no ha terminado. La falta de mal olor y de restos visibles no distingue una composta madura de una inmadura."
+],
+[
+"¿Qué le conviene decirle al vivero?",
+"Que la entrega depende de las pruebas de madurez y que le dará fecha cuando las tenga",
+"Que se la entrega la semana próxima y que, si daña alguna planta, le repone el material",
+"Que se la entrega cribada, porque el cribado elimina el riesgo de que esté inmadura",
+"Una composta inmadura puede dañar raíces y semillas; reponer el material después no repara las plantas perdidas ni la confianza del cliente. Cribar mejora la partícula, pero no madura la composta."
+]
+],
+"completar": [
+"La etapa más larga, en la que la composta se estabiliza y deja de consumir mucho oxígeno, se llama ___.",
+"maduración"
+],
+"relacionar": [
+["Fase mesófila", "Primeros días: se consume lo fácil y el pH baja"],
+["Fase termófila", "54 a 60 °C: se eliminan patógenos si el calor dura"],
+["Enfriamiento", "Los hongos atacan celulosa y lignina"],
+["Maduración", "Semanas de estabilización antes de usarla"],
+["Pila que recalienta al voltearla", "Todavía no termina"]
+],
+"refl": "Lee una pila (20 min). Si tienes una, mídela; si no, usa la de tu práctica o la de un caso. 1) Anota temperatura en el centro y en la orilla, olor, color y si se distinguen los materiales. 2) Di en qué fase crees que está y por qué. 3) Escribe qué harías hoy (voltear, regar o esperar) y qué esperas ver en tres días. 4) Explica cómo decidirás si ya está madura sin fiarte solo del aspecto.",
+"modelo": "Modelo: «Pila de restos de casa y hojas, día 18. Centro: 47 °C; orilla: 31 °C; olor a tierra con un toque dulce; color café; aún veo trozos de olote. Creo que va saliendo de la fase termófila, porque bajó desde 61 °C. Hoy la volteo y le pongo agua, porque al centro está seca. Espero que en tres días suba otra vez de 50 °C; si sube, sigue activa. No la daré por madura hasta que deje de recalentar y pase la prueba de germinación del módulo 5.» Es buena porque usa datos, nombra la fase con argumentos y no confunde aspecto con madurez.",
+"plantilla": [
+"Hoja de lectura de la pila",
+"Pila: [ ]  Día: [ ]\nTemperatura en el centro: [ ] °C  En la orilla: [ ] °C\nOlor: [tierra / amoniaco / podrido / sin olor]  Color: [ ]  ¿Se ven restos? [ ]\nFase probable: [mesófila / termófila / enfriamiento / maduración] porque [ ]\nAcción de hoy: [voltear / regar / esperar]\nLo que espero ver en 3 días: [ ]\nPrueba de madurez pendiente: [recalentamiento / germinación]"
+],
+"clave": [
+"La composta pasa por fases mesófila, termófila, de enfriamiento y de maduración, cada una con sus microorganismos.",
+"Que una pila se enfríe o ya no muestre restos no prueba que esté madura.",
+"Si al voltearla y humedecerla vuelve a calentarse, todavía no termina."
+]
+},
+{
+"t": "La receta: verdes, cafés y relación carbono/nitrógeno en Excel",
+"obj": "Calcular la relación carbono/nitrógeno de una mezcla con SUMAPRODUCTO, en base seca, y ajustar los materiales hasta llegar al rango recomendado.",
+"texto": [
+"Los microorganismos necesitan carbono, que es su energía, y nitrógeno, con el que forman proteínas. De ahí los <b>verdes</b> y los <b>cafés</b>. Los verdes son ricos en nitrógeno y suelen ser húmedos: restos de comida, pasto recién cortado, estiércoles. Los cafés son ricos en carbono y suelen ser secos: hojas secas, paja, aserrín, cartón. La proporción entre ambos es la <b>relación carbono/nitrógeno</b> (C/N): una C/N de 30 son 30 partes de carbono por cada una de nitrógeno. Para arrancar, la preferida es de 25 a 30, con un rango razonable de 20 a 40 (Rynk, 1992). Con C/N baja, el nitrógeno se escapa como amoniaco y la pila huele; con C/N alta, no calienta y tarda meses.",
+"C/N típicas, siempre aproximadas: restos de comida, 15; pasto, 17; estiércol de vaca, 19; hojas secas, 54; paja, 80; aserrín, alrededor de 440. Y el error más común: <b>la C/N no se promedia</b>. Con valores de ejemplo (restos de comida con 45 % de carbono y 3 % de nitrógeno; hojas con 43.2 % y 0.8 %), si mezclas el mismo peso seco de ambos, el promedio de 15 y 54 da 34.5, pero la mezcla real queda en 23.2. Lo correcto es sumar el carbono de todos los materiales y dividirlo entre la suma de su nitrógeno: C/N = Σ C ÷ Σ N. Otro mito, «más verde, más rápido»: si te pasas de verdes, la pila se apelmaza, se encharca y huele.",
+"En Excel, una fila por material: en A el nombre, en B los kilos en base seca, en C el % de carbono y en D el % de nitrógeno. La C/N de la mezcla es =SUMAPRODUCTO(B2:B5,C2:C5)/SUMAPRODUCTO(B2:B5,D2:D5). Lo que casi todos olvidan: si los porcentajes están en base seca, los kilos también. Unos restos con 80 % de agua (dato de ejemplo) dan 20 kg secos por cada 100 kg frescos: kilos secos = kilos frescos × (1 − humedad).",
+"Los valores de tabla son promedios y los reales cambian: mídelos en un laboratorio cuando puedas, o usa tablas y corrige con lo que te diga la pila. Además, el carbono del aserrín y de las ramas gruesas está en la lignina, que se degrada despacio: esos materiales se comportan como si tuvieran menos carbono disponible. Nunca uses aserrín de madera tratada o pintada."
+],
+"comparar": [
+"«Así no: Mezclo pesos iguales de restos (C/N 15) y aserrín (C/N 440), saco el promedio, 227.5, y como sale altísimo le echo más restos.»",
+"«Así sí: Paso todo a kilos secos, multiplico por el % de carbono y de nitrógeno y divido las sumas: con 24 kg secos de cada uno, la mezcla queda en 30.»"
+],
+"caso": "Caso ficticio: Brenda, de 41 años, es encargada de servicios generales de un comedor industrial en Ciudad Obregón. Salen 120 kg frescos de restos de comida al día, con 80 % de humedad según su medición: 24 kg secos (datos de ejemplo: 45 % de carbono y 3 % de nitrógeno en base seca). Una carpintería le regala aserrín de pino sin tratar, con 15 % de humedad, 48.4 % de carbono y 0.11 % de nitrógeno. Su jefe le sugiere mezclar «mitad y mitad» por cubetas y olvidarse de cálculos.",
+"p": [
+[
+"¿Cuánto aserrín seco necesita Brenda para llevar los 24 kg secos de restos a una C/N cercana a 30?",
+"Unos 24 kg secos, unos 28 kg tal como llega, y la mezcla queda en 30",
+"Unos 12 kg secos, porque con la mitad del peso el promedio ya da 30",
+"Unos 340 kg secos, porque la C/N de 440 tiene que bajar hasta 30",
+"Carbono: 24 × 0.45 + 24 × 0.484 = 22.42 kg; nitrógeno: 24 × 0.03 + 24 × 0.0011 = 0.746 kg; 22.42 ÷ 0.746 = 30. Con 15 % de humedad, 24 kg secos son unos 28 kg tal como llega. Las otras dos cifras salen de tratar la C/N como un promedio o una resta, que no es como se comporta una mezcla."
+],
+[
+"¿Por qué el «mitad y mitad» por cubetas no sirve como regla?",
+"Porque la C/N se calcula con kilos secos y con el carbono y el nitrógeno de cada material",
+"Porque el aserrín y los restos se deben poner en capas separadas y nunca revolverse",
+"Porque siempre hay que poner el doble de verdes que de cafés para que la pila caliente",
+"Una cubeta de aserrín y una de restos pesan muy distinto y traen distinta agua, carbono y nitrógeno; solo la cuenta en base seca dice dónde queda la mezcla. Las capas se terminan revolviendo con los volteos, y no existe una proporción fija de verdes y cafés que sirva para todo."
+],
+[
+"Si mezcla los 120 kg frescos de restos con los 28 kg de aserrín tal como llega, ¿qué debe revisar después?",
+"La humedad: la mezcla queda cerca de 68 %, arriba del rango razonable de 40 a 65 %",
+"Nada más: si la C/N quedó en 30, la humedad se acomoda sola durante la fase caliente",
+"El pH: con aserrín de pino la pila se vuelve tan ácida que necesita varios bultos de cal",
+"Agua: 96 kg de los restos más unos 4.2 kg del aserrín, unos 100 kg en 148 kg de mezcla, cerca de 68 %. Tendrá que escurrir los restos, sumar otro café seco con estructura o ajustar la receta. Una buena C/N no corrige el exceso de agua, y nada en el caso indica un problema de pH."
+]
+],
+"completar": [
+"Para sumar el carbono y el nitrógeno de varios materiales en Excel se usa la función ___.",
+"SUMAPRODUCTO"
+],
+"relacionar": [
+["Restos de comida", "Verde: C/N cercana a 15"],
+["Hojas secas", "Café: C/N cercana a 54"],
+["Aserrín", "Café muy alto en carbono y lento en degradarse"],
+["C/N de la mezcla", "Σ C ÷ Σ N, nunca el promedio"],
+["Kilos secos", "Kilos frescos × (1 − humedad)"]
+],
+"refl": "Diseña tu receta en Excel (20 min). 1) Elige tres o cuatro materiales que puedas conseguir y anota sus kilos frescos y su humedad, medida o de ejemplo. 2) Pásalos a kilos secos. 3) Escribe un % de carbono y de nitrógeno para cada uno, de laboratorio o de tablas, y calcula la C/N de la mezcla con SUMAPRODUCTO. 4) Ajusta los kilos hasta quedar entre 25 y 30 y explica qué material moviste y por qué.",
+"modelo": "Modelo: «Materiales: 50 kg frescos de restos de cocina con 80 % de humedad, 10 kg secos (45 % C y 3 % N); 20 kg de pasto con 70 %, 6 kg secos (42.5 % C y 2.5 % N), y hojas secas con 10 % de humedad (43.2 % C y 0.8 % N). Con 10 kg frescos de hojas, 9 kg secos, la C/N daba 21; subí a 30 kg frescos, 27 kg secos, y quedó en 28.1. Moví las hojas porque es el café que me sobra y casi no agrega agua.» Es buena porque convierte a base seca, usa la fórmula de mezcla y explica el ajuste.",
+"plantilla": [
+"Hoja de receta C/N",
+"A Material | B Kilos secos | C % carbono | D % nitrógeno | E C/N del material =C2/D2\nKilos secos = kilos frescos × (1 − humedad)\nC/N de la mezcla: =SUMAPRODUCTO(B2:B5,C2:C5)/SUMAPRODUCTO(B2:B5,D2:D5) = [ ]\nMeta: entre 25 y 30 (razonable de 20 a 40)\nAjuste que hice: [material] de [ ] a [ ] kg secos → C/N [ ]\nOrigen de mis % de C y N: [laboratorio / tabla de referencia]"
+],
+"clave": [
+"La C/N preferida para arrancar es de 25 a 30; con mucho nitrógeno huele a amoniaco y con mucho carbono no calienta.",
+"La C/N de una mezcla es Σ C ÷ Σ N con kilos secos: en Excel, SUMAPRODUCTO, nunca el promedio simple.",
+"Los valores de tabla son aproximados y el carbono de la lignina se degrada lento: confirma con la pila."
+]
+},
+{
+"t": "Humedad, aire y tamaño de partícula: la prueba del puño y los olores como diagnóstico",
+"obj": "Medir y ajustar la humedad de una pila, asegurar su aireación con el tamaño de partícula adecuado y diagnosticar problemas por el olor.",
+"texto": [
+"El agua es el medio donde viven los microorganismos: sin ella se detienen y con demasiada se ahogan, porque llena los huecos por donde debería circular el aire. La humedad preferida de una pila es de 50 a 60 %, con un rango razonable de 40 a 65 % (Rynk, 1992), medida en <b>base húmeda</b>: el peso del agua entre el peso total. Para medirla, pesa una muestra, sécala al sol o en un horno a baja temperatura hasta que deje de perder peso y vuelve a pesarla: humedad = (peso húmedo − peso seco) ÷ peso húmedo. Si 500 g quedan en 220 g, la humedad es 56 %.",
+"En el día a día usarás la <b>prueba del puño</b>: toma con guante un puñado del centro de la pila, apriétalo con fuerza y abre la mano. Si escurre agua entre los dedos, está demasiado húmeda; si apenas salen una o dos gotas y queda una bola que se mantiene unida pero se rompe al picarla con un dedo, está bien; si se desmorona y la mano queda seca, le falta agua. Para estimar la humedad de una mezcla en Excel, pon en B los kilos frescos de cada material y en C su humedad, y usa =SUMAPRODUCTO(B2:B4,C2:C4)/SUMA(B2:B4).",
+"El aire importa igual: los microorganismos de la composta necesitan oxígeno, idealmente más de 5 % en los poros de la pila. Lo dan los huecos entre partículas, los volteos y, en sistemas mayores, la aireación forzada. Por eso cuenta el <b>tamaño de partícula</b>: los trozos chicos ofrecen más superficie y se degradan más rápido, pero si todo es muy fino se compacta y se queda sin aire; los trozos grandes dejan pasar el aire, pero tardan meses. La mezcla ideal combina material fino con algo que dé estructura, como ramas picadas o paja. Y nunca compactes la pila pisándola.",
+"Y aprende a oler, porque <b>el olor es diagnóstico</b>. Olor a tierra húmeda: va bien. Olor a amoniaco: sobra nitrógeno; agrega cafés y voltea. Olor a huevo podrido, a agrio o a drenaje: falta aire, casi siempre por exceso de agua o compactación; voltea, agrega material seco con estructura y cubre la pila si va a llover. Pila seca, fría y sin olor: falta agua; riégala mientras la volteas. Moscas: hay restos expuestos; cúbrelos con una capa de cafés. Perfumar una pila no resuelve nada, y la cal sube el pH y hace que se pierda más nitrógeno como amoniaco."
+],
+"comparar": [
+"«Así no: Huele a huevo podrido después de las lluvias; le echo un bulto de cal y aromatizante para que los vecinos dejen de quejarse.»",
+"«Así sí: Huele a huevo podrido porque le falta aire por exceso de agua; la volteo, le mezclo hojas secas y ramas picadas y la cubro antes de la siguiente lluvia.»"
+],
+"caso": "Caso ficticio: Joel, de 38 años, trabaja en los servicios públicos municipales de Xalapa y encabeza un pequeño centro de compostaje que recibe podas de parques y restos de un mercado. Tras una semana de lluvias, las pilas huelen a huevo podrido, escurre un líquido oscuro y los vecinos se quejan. Al apretar un puñado, escurre agua entre los dedos. Su jefe le pide «echarles cal y aromatizante hoy mismo». Joel tiene una trituradora pequeña, lonas y un montón de ramas.",
+"p": [
+[
+"¿Qué le dicen a Joel la prueba del puño y el olor a huevo podrido?",
+"Que la pila está saturada de agua, sin aire, y se volvió anaerobia",
+"Que le sobra nitrógeno y le falta azúcar, y por eso se volvió ácida",
+"Que está en plena fase termófila y el olor se irá cuando se enfríe",
+"El agua que escurre y el olor a huevo podrido indican que el agua llenó los poros y los microorganismos trabajan sin oxígeno. El exceso de nitrógeno huele a amoniaco, no a huevo podrido, y una fase termófila sana no huele así."
+],
+[
+"¿Qué hace Joel primero?",
+"Voltear, mezclar ramas trituradas y material seco y cubrir las pilas con lona antes de que vuelva a llover",
+"Echar cal y aromatizante, como le pide su jefe, y esperar a que el sol seque las pilas en unos días",
+"Regar las pilas con agua limpia para lavar el olor y mandar el líquido oscuro hacia el drenaje de la calle",
+"Voltear mete aire, las ramas trituradas dan estructura y absorben agua, y la lona evita que se vuelva a saturar. La cal y el perfume tapan el síntoma y la cal aumenta la pérdida de nitrógeno; regar empeora el problema, y el lixiviado no debe ir al drenaje."
+],
+[
+"Una muestra de 400 g frescos pesa 120 g después de secarse. ¿Qué humedad tiene?",
+"70 %: está arriba del rango razonable de 40 a 65 %",
+"30 %, porque 120 g entre 400 g es la parte de agua",
+"233 %, porque se divide el agua entre el peso seco",
+"Humedad = (400 − 120) ÷ 400 = 70 %, en base húmeda. Los 120 g son el material seco, no el agua, y dividir el agua (280 g) entre el peso seco da la humedad en base seca, que no es la que se usa aquí."
+]
+],
+"completar": [
+"Apretar con fuerza un puñado de material para ver si escurre agua es la prueba del ___.",
+"puño"
+],
+"relacionar": [
+["Olor a amoniaco", "Sobra nitrógeno: agrega cafés y voltea"],
+["Olor a huevo podrido", "Falta aire: voltea y agrega estructura"],
+["Pila seca, fría y sin olor", "Falta agua: riega mientras volteas"],
+["Moscas sobre la pila", "Cubre los restos con una capa de cafés"],
+["Escurre agua al apretar", "Demasiado húmeda"]
+],
+"refl": "Haz el diagnóstico de humedad y aire (20 min). 1) Haz la prueba del puño en tres puntos de una pila, o describe una de tu práctica, y anota el resultado. 2) Si puedes, mide la humedad de una muestra con la fórmula de peso húmedo y seco. 3) Anota el olor y su diagnóstico. 4) Escribe tres acciones en orden y qué revisarás en 48 horas para saber si funcionaron.",
+"modelo": "Modelo: «Pila 2, tres puntos. Centro: salen unas gotas y queda una bola firme; orilla norte: se desmorona; base: escurre agua. Muestra del centro: 300 g frescos y 132 g secos, 56 % de humedad, bien. La base huele agrio, a drenaje: ahí falta aire. Acciones: 1) voltear mezclando la base con la orilla seca; 2) agregar dos carretillas de ramas picadas; 3) cavar una zanja para que no se encharque. En 48 horas reviso el olor de la base y la temperatura: espero olor a tierra y más de 45 °C.» Es buena porque mide en varios puntos, hace la cuenta y liga cada acción con un diagnóstico.",
+"plantilla": [
+"Diagnóstico de humedad, aire y olor",
+"Pila: [ ]  Fecha: [ ]\nPrueba del puño. Centro: [ ]  Orilla: [ ]  Base: [ ]\nMuestra: peso húmedo [ ] g, peso seco [ ] g → humedad = (húmedo − seco) ÷ húmedo = [ ] %\nHumedad de la mezcla en Excel: =SUMAPRODUCTO(B2:B4,C2:C4)/SUMA(B2:B4) = [ ] %\nOlor: [tierra / amoniaco / huevo podrido / sin olor] → diagnóstico: [ ]\nPartícula: [muy fina / mezclada / muy gruesa]\nAcciones: 1. [ ]  2. [ ]  3. [ ]\nRevisión en 48 h: [ ]"
+],
+"clave": [
+"La humedad preferida es de 50 a 60 % en base húmeda; la prueba del puño te da una lectura rápida.",
+"El olor es un diagnóstico: amoniaco es exceso de nitrógeno; huevo podrido es falta de aire.",
+"Combina partículas finas con material que dé estructura y no tapes los olores con perfume ni cal."
+]
+},
+{
+"t": "Temperatura e higienización: termómetro, bitácora y volteos",
+"obj": "Medir la temperatura de una pila, programar volteos y comprobar con una bitácora en Excel si se cumplió la higienización.",
+"texto": [
+"La temperatura es la mejor ventana a lo que pasa dentro de la pila. Usa un <b>termómetro de vástago largo</b> que llegue al centro y mide siempre en los mismos tres o más puntos, a la misma hora y, si puedes, a dos profundidades. Como referencia, la temperatura preferida va de 54 a 60 °C. Si pasa de unos 60 °C conviene voltear, porque el exceso de calor empieza a esterilizar la pila y, en pilas grandes, sube el riesgo de que se incendien solas; arriba de unos 71 °C mueren casi todos los microorganismos útiles (Cornell). No dejes que una pila grande pase mucho de 70 °C.",
+"La <b>higienización</b> es el periodo de calor que elimina patógenos y semillas de maleza. La NMX-AA-180-SCFI-2018 (Tabla 4) pide, igual que la norma de la EPA de Estados Unidos: en pilas volteadas, 55 °C o más durante 15 días, con al menos 5 volteos en ese periodo; en pilas estáticas aireadas o biorreactores, 55 °C o más durante 3 días consecutivos. Además, el material no debe pasar más de 24 horas por arriba de 65 °C. Anota cada día por separado y, si te exigen días seguidos, verifica la norma vigente. Los volteos son clave porque las orillas siempre están más frías: cada volteo lleva al centro lo que estaba afuera, hasta que todo el material ha pasado por el calor.",
+"De ahí sale un mito peligroso: <b>«si calentó una vez, ya está higienizada»</b>. Una pila que llegó a 60 °C tres días y luego bajó a 45 °C no cumplió, y tampoco una en la que solo el centro estuvo caliente. Lleva una <b>bitácora</b> en Excel: en A la fecha; en B, C y D la temperatura de tres puntos; en E, =MIN(B2:D2), porque te importa el punto más frío; en F, =SI(E2>=55,1,0), que marca con 1 cada día en que toda la pila estuvo a 55 °C o más; en G, un 1 si ese día volteaste, y en H, =SI(MAX(B2:D2)>65,1,0), que te avisa que hay que voltear. Al final, =SUMA(F2:F31) cuenta los días calientes y =SUMA(G2:G31) los volteos. Escribe Cumple en J1 y No cumple en J2, y en J3 pon =SI(Y(SUMA(F2:F31)>=15,SUMA(G2:G31)>=5),J1,J2).",
+"La bitácora es la prueba de que tu proceso funciona ante un cliente o una autoridad: anota también lluvias, riegos y olores, con su número de lote. Y recuerda que cumplir la higienización no significa que la composta esté lista: todavía le faltan el enfriamiento y la maduración."
+],
+"comparar": [
+"«Así no: El termómetro marcó 62 °C el martes; ya está higienizada y la puedo vender para hortalizas.»",
+"«Así sí: Llevo 9 días con todos los puntos a 55 °C o más y 3 volteos; me faltan 6 días y 2 volteos, y lo anoto en la bitácora.»"
+],
+"caso": "Caso ficticio: Concepción, de 55 años, coordina una cooperativa de mujeres que compostan restos de mercado y estiércol de vaca a las afueras de Pachuca, y venden a huertos escolares. Su bitácora de la pila 4 marca cuatro días a 58 °C en el centro y luego 50 °C; las orillas nunca pasaron de 45 °C y la volteó una sola vez. Una escuela le pregunta si la composta está higienizada, porque la usará en un huerto de lechugas que comerán los niños.",
+"p": [
+[
+"¿La pila 4 cumple la higienización que pide la norma para una pila volteada?",
+"No: le faltan días a 55 °C o más en toda la masa y le faltan volteos",
+"Sí, porque el centro pasó de 55 °C durante cuatro días y eso le basta",
+"Sí, porque el estiércol de vaca se higieniza con cualquier calor alto",
+"Para una pila volteada se piden 15 días a 55 °C o más con al menos 5 volteos; ella tiene cuatro días solo en el centro, con orillas a 45 °C y un volteo. El estiércol de vaca puede llevar E. coli O157:H7, así que necesita la higienización completa, no menos."
+],
+[
+"¿Qué le responde Concepción a la escuela?",
+"Que esa pila todavía no cumple y que le mostrará la bitácora cuando cumpla y esté madura",
+"Que sí está higienizada, porque en Pachuca hace frío y el frío también elimina patógenos",
+"Que la use solo en las orillas del huerto, lejos de las lechugas, para no correr ningún riesgo",
+"Las lechugas se comen crudas y la pila no completó la higienización: lo honesto es decirlo y mostrar el registro cuando cumpla. El frío no elimina patógenos, y aplicar composta sin higienizar cerca de un huerto escolar sigue siendo un riesgo."
+],
+[
+"En su bitácora, la columna E tiene la temperatura mínima de los tres puntos. ¿Qué fórmula marca con 1 los días en que toda la pila estuvo a 55 °C o más?",
+"=SI(E2>=55,1,0)",
+"=SI(MAX(B2:D2)>=55,1,0)",
+"=SI(E2>55,0,1)",
+"Si el punto más frío llegó a 55 °C, toda la pila llegó: por eso se usa E, el mínimo, con >=55. Con MAX bastaría con que el centro estuviera caliente, que es justo el error de Concepción; la tercera fórmula invierte el resultado y deja fuera el día con 55 °C exactos."
+]
+],
+"completar": [
+"El periodo de calor que elimina patógenos y semillas de maleza se llama ___.",
+"higienización"
+],
+"refl": "Arma tu bitácora de temperatura (20 min). 1) En Excel, crea las columnas de fecha, tres puntos de temperatura, mínimo, día caliente, volteo y aviso de más de 65 °C, con las fórmulas de la lección. 2) Llena de 15 a 20 filas con datos de una pila real o de práctica. 3) Calcula cuántos días cumplen y cuántos volteos llevas. 4) Escribe qué harías mañana según lo que dice la hoja.",
+"modelo": "Modelo: «Pila de restos de cocina y paja, 20 días registrados. Días con los tres puntos a 55 °C o más: 11; volteos: 4. El día 6 el centro marcó 67 °C y la columna H me avisó: volteé esa tarde y al día siguiente bajó a 59 °C. J3 dice No cumple: me faltan 4 días calientes y un volteo. Mañana la riego un poco al voltear, porque la orilla salió seca en la prueba del puño, y sigo midiendo a las 9 de la mañana.» Es buena porque usa los conteos de la hoja, reacciona a la alerta y decide con datos.",
+"plantilla": [
+"Bitácora de temperatura e higienización",
+"A Fecha | B Punto 1 °C | C Punto 2 °C | D Punto 3 °C | E Mínimo =MIN(B2:D2) | F Día caliente =SI(E2>=55,1,0) | G Volteo (1 o 0) | H Aviso =SI(MAX(B2:D2)>65,1,0) | I Notas (lluvia, riego, olor)\nDías calientes: =SUMA(F2:F31)   Volteos: =SUMA(G2:G31)\nJ1: Cumple   J2: No cumple   J3: =SI(Y(SUMA(F2:F31)>=15,SUMA(G2:G31)>=5),J1,J2)\nLote: [ ]  Tipo de pila: [volteada / estática aireada]"
+],
+"clave": [
+"Pilas volteadas: 55 °C o más durante 15 días con al menos 5 volteos; estáticas aireadas: 3 días consecutivos; nunca más de 24 h arriba de 65 °C.",
+"Que haya calentado una vez no prueba nada: mide varios puntos y usa el más frío.",
+"Arriba de unos 60 °C, voltea: una pila grande muy caliente puede incendiarse."
+]
+}
+],
+"reto": {
+"texto": "En 90 minutos diseña la receta y el plan de control de una pila real o de práctica. 1) Receta: tres o cuatro materiales con kilos frescos, humedad, kilos secos, % de carbono y de nitrógeno, y la C/N de la mezcla con SUMAPRODUCTO, ajustada entre 25 y 30. 2) Humedad de la mezcla calculada y cómo la comprobarás con la prueba del puño. 3) Tabla de diagnóstico de olores con la acción para cada uno. 4) Bitácora de temperatura con las fórmulas de higienización y el calendario de volteos de las primeras tres semanas.",
+"entregable": "Un archivo de Excel con la receta, la humedad de la mezcla, la tabla de olores y la bitácora lista para llenar.",
+"criterios": "Revisa: usaste kilos secos y no frescos para la C/N, la C/N salió de SUMAPRODUCTO y no de un promedio, la humedad de la mezcla está entre 50 y 60 % o explicaste cómo la corregirás, y la bitácora usa el punto más frío y cuenta días y volteos."
+},
+"lab": {
+"t": "La pila que no calienta en Querétaro",
+"obj": "Diagnosticar por qué una pila no calienta, corregir su receta y su humedad con cálculos y llevarla hasta la higienización con una bitácora.",
+"esc": "<b>Arnulfo,</b> de 61 años, se jubiló de una fábrica en Querétaro y hace composta en el terreno de su hermana para venderla a vecinos con huerto. Su pila lleva tres semanas entre 25 y 30 °C, casi la temperatura del aire. Tiene 300 kg secos de hojas, 100 kg secos de aserrín y apenas 40 kg secos de restos de comida. Quiere entender qué falló antes de rendirse.",
+"e": [
+[
+"Escena 1: Con los valores de ejemplo de la lección (hojas, 43.2 % de carbono y 0.8 % de nitrógeno; aserrín, 48.4 % y 0.11 %; restos de comida, 45 % y 3 %), Arnulfo arma su hoja de Excel.",
+"Consigna: calcula la C/N de su mezcla con SUMAPRODUCTO, compárala con el promedio simple de las tres C/N y calcula cuántos kilos secos de restos de comida necesitaría para bajar a 30, y cuántos frescos si tienen 80 % de humedad."
+],
+[
+"Escena 2: La prueba del puño se desmorona y la mano queda seca. Una muestra de 500 g quedó en 400 g después de secarla. Un restaurante vecino le ofrece 950 kg frescos de restos de comida, con 80 % de humedad.",
+"Consigna: calcula la humedad actual de la pila, la C/N y la humedad de la mezcla si agrega los 950 kg, y di si quedan dentro del rango recomendado."
+],
+[
+"Escena 3: Con la nueva mezcla, el quinto día el centro marca 68 °C y el sexto 69 °C; en una orilla donde quedaron restos sin revolver huele a amoniaco.",
+"Consigna: explica qué riesgos hay, qué haces ese mismo día con la pila y qué te dice el olor a amoniaco de esa orilla."
+],
+[
+"Escena 4: En la bitácora de 20 días, los tres puntos estuvieron a 55 °C o más en 12 días; Arnulfo volteó 4 veces, y después del volteo del día 6 la pila nunca pasó más de 24 horas arriba de 65 °C.",
+"Consigna: aplica la fórmula de cumplimiento, di qué le falta a la pila y escribe qué le dirías a un vecino que quiere la composta para sus jitomates la semana próxima."
+]
+],
+"p": [
+[
+"¿Cuál es la C/N de la pila original de Arnulfo?",
+"Cerca de 53: 196 kg de carbono entre 3.71 kg de nitrógeno",
+"Cerca de 170: el promedio simple de 54, 440 y 15",
+"Cerca de 30: los restos de comida compensan al aserrín",
+"Carbono: 300 × 0.432 + 100 × 0.484 + 40 × 0.45 = 196 kg; nitrógeno: 2.4 + 0.11 + 1.2 = 3.71 kg; 196 ÷ 3.71 = 52.8, muy arriba de 30, por eso no calienta. El promedio de las C/N exagera el peso del aserrín, y 40 kg secos de restos son muy pocos para compensar 400 kg de cafés."
+],
+[
+"Después de agregar los 950 kg frescos de restos, ¿cómo queda la humedad de la pila?",
+"Cerca de 58 %: 870 kg de agua en 1,500 kg, dentro del rango preferido",
+"Cerca de 80 %, porque la mezcla toma la humedad de los restos que agregó",
+"Cerca de 50 %, que es el promedio del 20 % de la pila y el 80 % de los restos",
+"La pila tiene 440 kg secos con 20 % de humedad: 550 kg con 110 kg de agua. Los restos aportan 760 kg de agua: 870 ÷ 1,500 = 58 %. La humedad de la mezcla se pondera por peso, no se copia de un material ni se promedia, y la C/N queda en 29.9."
+],
+[
+"Con 12 días calientes y 4 volteos, ¿qué le dice Arnulfo a su vecino?",
+"Que aún no cumple: le faltan 3 días a 55 °C o más y un volteo, y después debe madurar",
+"Que ya cumple, porque 12 días a 55 °C con 4 volteos supera lo esencial que pide la norma",
+"Que la puede usar si la aplica al menos un mes antes de cosechar sus jitomates del huerto",
+"La regla para pilas volteadas es 15 días a 55 °C o más con al menos 5 volteos: le faltan 3 días y un volteo, y aun cumpliendo, falta la maduración. Aplicarla antes de tiempo no sustituye la higienización."
+]
+],
+"pl": [
+"Corrección de una pila que no calienta",
+"Receta original: [materiales] → C/N = SUMAPRODUCTO(kilos secos, % C) ÷ SUMAPRODUCTO(kilos secos, % N) = [ ]\nAjuste: agregar [ ] kg secos ([ ] kg frescos) de [ ] → C/N nueva [ ]\nHumedad: muestra de [ ] g → [ ] g secos = [ ] %; mezcla nueva = agua total ÷ peso total = [ ] %\nTemperatura: si pasa de 65 °C → acción [ ]\nBitácora: días calientes [ ] de 15; volteos [ ] de 5 → [Cumple / No cumple]\nRespuesta al cliente: [ ]"
+]
+},
+"quiz": [
+[
+"Una pila en Tepic subió a 57 °C la primera semana y en la sexta está a 28 °C, oscura y sin restos visibles. ¿Qué concluyes?",
+"Que puede estar enfriándose o madurando, y que hay que probar su madurez antes de usarla",
+"Que ya está lista, porque bajar a temperatura ambiente demuestra que terminó el proceso",
+"Que se arruinó, porque una pila que se enfría ya no puede volver a calentarse nunca más",
+"Que sigue en fase termófila, porque el color oscuro indica una actividad muy intensa"
+],
+[
+"Mezclas 10 kg secos de pasto (42.5 % de carbono y 2.5 % de nitrógeno) con 10 kg secos de paja (44 % y 0.55 %). ¿Qué C/N tiene la mezcla?",
+"Cerca de 28: se dividen 8.65 kg de carbono entre 0.305 kg de nitrógeno",
+"Cerca de 48: el promedio de la C/N del pasto (17) y la de la paja (80)",
+"Cerca de 97: la suma de las C/N de los dos materiales de la mezcla",
+"Cerca de 63: la diferencia entre la C/N de la paja y la del pasto"
+],
+[
+"En tu hoja, B2:B4 tiene kilos secos, C2:C4 el % de carbono y D2:D4 el % de nitrógeno. ¿Qué fórmula da la C/N de la mezcla?",
+"=SUMAPRODUCTO(B2:B4,C2:C4)/SUMAPRODUCTO(B2:B4,D2:D4)",
+"=PROMEDIO(C2:C4)/PROMEDIO(D2:D4)",
+"=SUMA(C2:C4)/SUMA(D2:D4)*SUMA(B2:B4)",
+"=SUMA(C2:C4)/SUMA(B2:B4)"
+],
+[
+"Recibes 200 kg frescos de restos de fruta con 85 % de humedad. ¿Cuántos kilos secos anotas en tu hoja de C/N?",
+"30 kg, porque 200 × (1 − 0.85) = 30",
+"170 kg, porque 200 × 0.85 = 170",
+"200 kg, porque se anota el peso que llega",
+"115 kg, porque 200 − 85 = 115"
+],
+[
+"La pila de un comedor en Ciudad Obregón huele a amoniaco cada vez que la volteas. ¿Qué ajuste haces?",
+"Agregar material café, como hojas secas o paja, y voltear para mezclarlo bien",
+"Agregar más restos de comida, para que la pila tenga más actividad y calor",
+"Echarle cal, porque neutraliza el amoniaco y conserva el nitrógeno en la pila",
+"Regarla con mucha agua para lavar el amoniaco y que se vaya hacia el suelo"
+],
+[
+"En Texcoco, al apretar un puñado de una pila, el material se desmorona y la mano queda seca. La pila está a 32 °C. ¿Qué haces?",
+"Regarla mientras la volteas, hasta que al apretar salgan apenas unas gotas",
+"Agregarle aserrín seco, que ayuda a la pila a retener la poca humedad que tiene",
+"Dejarla así, porque seca no da malos olores y de todos modos termina de madurar",
+"Taparla con plástico negro para que el sol la caliente desde afuera hacia dentro"
+],
+[
+"Después de varios días de lluvia, una pila en Xalapa huele a huevo podrido y escurre líquido. ¿Cuál es la causa más probable?",
+"Le falta aire por el exceso de agua y la compactación",
+"Le sobra material café, que fermenta al mojarse en la lluvia",
+"La temperatura de la fase termófila subió demasiado",
+"Le falta nitrógeno porque recibió pocos restos de comida"
+],
+[
+"En una planta de Querétaro, una pila volteada pasó 15 días con todos sus puntos a 56 °C o más, pero solo la voltearon 3 veces. ¿Cumple la higienización?",
+"No, porque la norma también pide al menos 5 volteos en ese periodo",
+"Sí, porque con 15 días arriba de 55 °C los volteos son opcionales",
+"Sí, porque 3 volteos bastan si la temperatura nunca bajó de 55 °C",
+"No, porque le faltan días: la norma pide 30 días seguidos a 55 °C"
+],
+[
+"Una pila estática aireada en Pachuca estuvo a 57 °C en todos sus puntos durante 3 días seguidos y nunca pasó de 63 °C. ¿Qué dice la NMX-AA-180?",
+"Que cumple: para pilas estáticas aireadas se piden 55 °C o más durante 3 días consecutivos",
+"Que no cumple, porque toda composta necesita 15 días con 5 volteos, sin importar el sistema",
+"Que no cumple, porque el material debe pasar al menos 24 horas por arriba de 65 °C para higienizarse",
+"Que cumple solo si después la voltean 5 veces para que la orilla también pase por el calor"
+],
+[
+"Tu bitácora marca 68 °C en el centro en dos lecturas seguidas, con 24 horas de diferencia. ¿Qué haces?",
+"Voltear ese mismo día, porque no debe pasar más de 24 h arriba de 65 °C y puede incendiarse",
+"Esperar, porque más calor significa más higienización y al final una composta de mejor calidad",
+"Agregarle más restos de comida, para que los microorganismos consuman el exceso de calor",
+"Taparla con una lona gruesa para que conserve el calor y no se vaya a enfriar de golpe"
+]
+]
+}
+]
+}

@@ -1,0 +1,804 @@
+{
+  "modulos": [
+    {
+      "t": "Costos, precio y escala en Excel",
+      "r": "Calcula cuánto necesitas para arrancar, cuánto te cuesta de verdad cada kilo y cada bulto, a qué precio vender y cuántos bultos y cuotas de recolección necesitas para no perder, y decide cómo crecer con números y no con corazonadas.",
+      "lecciones": [
+        {
+          "t": "Inversión inicial: terreno, techo, herramientas, criba y empaque",
+          "obj": "Armar en Excel la lista de inversión de una planta pequeña de composta, separar inversión fija, capital de trabajo y colchón, y decidir qué comprar ahora y qué después.",
+          "texto": [
+            "Antes de comprar nada, haz la lista completa y ponle precio. En una planta pequeña la <b>inversión fija</b> suele incluir el depósito de renta del terreno, un techo o malla contra lluvia y sol, un piso firme con pendiente y canaleta para captar lixiviados, herramientas (bieldos, palas, carretillas), un termómetro de vástago largo, una báscula para pesar lo que entra y lo que sale, contenedores con tapa para recolectar, equipo de protección (guantes, botas, respiradores N95), una criba y, si vas a vender en bultos, una cosedora o selladora. Suma también los gastos de apertura: consultas de uso de suelo, trámites y el primer análisis de laboratorio.",
+            "El terreno es la decisión más pesada. Rentar te deja salir si no funciona; comprar te ata a un lugar quizá sin el uso de suelo correcto. Por eso verifica en tu municipio el uso de suelo antes de firmar, y con la secretaría de medio ambiente de tu estado, COFEPRIS, SENASICA y el SAT lo que te toque (módulo 6). El techo no es lujo: con lluvia, una pila destapada se encharca y escurre; con sol fuerte se reseca. En la criba es donde más se gasta de más: una manual de marco y malla basta para arrancar; la rotatoria con motor tiene sentido cuando tu cuello de botella ya es cribar.",
+            "El <b>capital de trabajo</b> son los costales, etiquetas, combustible, material café que compres y el agua de los primeros ciclos. Y aquí hay algo propio de este negocio: la composta tarda. Entre que recibes el primer residuo y vendes el primer bulto maduro pueden pasar varios meses; en los ejemplos de este módulo suponemos cuatro, pero el tuyo lo dirá tu bitácora. Por eso el <b>colchón</b> se calcula con los meses sin ventas de producto. Si desde el primer mes cobras una cuota de recolección ya firmada, réstala: el colchón es lo que te falta cada mes, no el total de tus gastos.",
+            "En Excel: columna A el concepto, B el monto, C la bolsa (fija, trabajo o apertura) y D si es de «ahora» o de «después». Con los fijos mensuales en B15, la cuota de recolección en B16 y los meses sin ventas en B17, el colchón es =(B15-B16)*B17 y el total que necesitas, =SUMA(B2:B13)+B18 si el colchón quedó en B18. Montos de ejemplo: cotiza con dos proveedores. Si el total no cabe en tu dinero, recorta equipo y tamaño del arranque, nunca el colchón."
+          ],
+          "comparar": [
+            "«Así no: Compro de una vez la criba rotatoria y la camioneta; con lo que venda el primer mes pago la renta y al ayudante.»",
+            "«Así sí: Arranco con criba manual y terreno rentado, guardo cuatro meses de lo que me falta para cubrir gastos y compro la criba con motor cuando cribar sea mi cuello de botella.»"
+          ],
+          "caso": "Caso ficticio: Eduardo, de 52 años, fue capataz en una empacadora cerca de Morelia y quiere montar una planta de composta en un terreno rentado. Tiene $180,000 de ahorro. Su lista (montos de ejemplo): criba rotatoria con motor $95,000 (una criba manual cuesta $4,000); techo y piso con canaleta $40,000; herramientas y termómetro $12,000; báscula $7,000; contenedores con tapa $10,000; equipo de protección $3,000; trámites y primer análisis $11,000; costales y etiquetas del primer lote $4,000. Sus gastos fijos serían de $18,000 al mes, con un sueldo para él, y calcula que su primera composta estará lista para vender en el mes cuatro. Todavía no tiene clientes que le paguen recolección.",
+          "p": [
+            [
+              "¿Cuánto necesita Eduardo si arranca con criba manual y cuatro meses de colchón?",
+              "$163,000: $91,000 de compras y apertura con criba manual más $72,000 de colchón",
+              "$182,000: todas las compras de su lista, incluida la criba con motor, sin colchón",
+              "$145,000: las compras con criba manual más tres meses de gastos fijos",
+              "Sin la criba con motor, la lista suma $87,000; con la manual, $91,000. Como no venderá producto en cuatro meses y no tiene cuota de recolección, el colchón es $18,000 × 4 = $72,000: total $163,000, que cabe en sus $180,000. La lista completa con criba de motor ($182,000) ya rebasa su ahorro sin un peso de colchón, y tres meses no cubren el tiempo que tarda su primera composta."
+            ],
+            [
+              "Un proveedor le ofrece la criba con motor a crédito, con pagos mensuales. ¿Qué le conviene a Eduardo?",
+              "Arrancar con la manual y comprar la de motor cuando cribar sea su cuello de botella y ya tenga ventas",
+              "Tomar el crédito, porque una criba con motor da mejor presentación a su composta desde el primer lote",
+              "Comprarla de contado y recortar el colchón a un mes, porque las ventas pronto cubrirán la diferencia",
+              "En los primeros meses Eduardo no venderá producto: una deuda con pagos mensuales se suma a sus fijos justo cuando no entra dinero. La criba manual da una partícula aceptable para el volumen inicial. Recortar el colchón apuesta a que las ventas lleguen antes de que la composta esté lista, y la presentación no compensa quedarse sin efectivo."
+            ],
+            [
+              "¿Cuál de sus conceptos es capital de trabajo y no inversión fija?",
+              "Los costales y etiquetas, porque se gastan y se reponen con cada venta",
+              "La báscula, porque la usará para pesar cada carga que entre a la planta",
+              "El techo, porque se desgasta con el sol y la lluvia de cada temporada",
+              "Los costales y las etiquetas se consumen con cada venta y se vuelven a comprar: son dinero que gira. La báscula se compra una vez y dura años aunque se use a diario. El techo también se desgasta, pero se paga una vez y sirve muchos ciclos: es inversión fija, y su desgaste se reconoce poco a poco en el costo mensual."
+            ]
+          ],
+          "completar": [
+            "Los meses que tarda tu primera composta, en los que no vendes producto, se cubren con el ___.",
+            "colchón"
+          ],
+          "relacionar": [
+            [
+              "Techo y piso con canaleta",
+              "Inversión fija"
+            ],
+            [
+              "Costales y etiquetas",
+              "Capital de trabajo"
+            ],
+            [
+              "(Fijos − cuota firmada) × meses sin ventas",
+              "Colchón"
+            ],
+            [
+              "Criba rotatoria con motor al arrancar con poco volumen",
+              "Lista de «después»"
+            ],
+            [
+              "Consulta de uso de suelo",
+              "Gasto de apertura"
+            ]
+          ],
+          "refl": "Arma la hoja de inversión de tu planta (20 min). 1) Haz la lista mínima con todo lo que necesitas para recibir, compostar, cribar y empacar; para cada concepto de más de $3,000 anota dos cotizaciones. 2) Clasifica cada concepto en inversión fija, capital de trabajo o apertura, y marca cuáles son de «ahora» y cuáles de «después». 3) Calcula tus fijos mensuales con un sueldo para ti, resta la cuota de recolección que ya tengas por escrito y multiplica por los meses que tardará tu primera venta. 4) Compara el total con el dinero que tienes y escribe qué recortarías primero.",
+          "modelo": "Modelo: «Planta en terreno rentado, 20 t de mezcla al mes. Fija: malla sombra y piso $28,000, herramientas y termómetro $9,000, báscula $6,500, contenedores $8,000, protección $2,500, criba manual $3,500. Apertura: consultas y análisis $9,000. Trabajo: costales y etiquetas $3,500. Total de compras: $70,000. Fijos de $16,000 al mes; un comedor ya firmó una cuota de $4,000; primera venta en el mes 4: colchón (16,000 − 4,000) × 4 = $48,000. Necesito $118,000 y tengo $105,000: hago el piso en dos etapas ($13,000 menos ahora) y busco un segundo cliente de recolección.» Es buena porque tiene cotizaciones, separa bolsas, descuenta solo la cuota firmada y recorta obra, no colchón.",
+          "plantilla": [
+            "Hoja de inversión de mi planta",
+            "Concepto | Monto | Bolsa (fija, trabajo, apertura) | Ahora o después | Cotización 1 | Cotización 2\n[ ] | $[ ] | [ ] | [ ] | $[ ] | $[ ]\nTotal de compras y apertura: =SUMA(B2:B13) = $[ ]\nFijos al mes con mi sueldo (B15): $[ ]\nCuota de recolección firmada (B16): $[ ]\nMeses sin venta de producto (B17): [ ]\nColchón: =(B15-B16)*B17 = $[ ]\nTotal que necesito: $[ ]   Dinero que tengo: $[ ]\nSi no alcanza, recorto primero: [ ]"
+          ],
+          "clave": [
+            "La composta tarda meses en estar lista: el colchón cubre lo que te falta cada mes hasta tu primera venta de producto.",
+            "Una cuota de recolección firmada reduce el colchón; una promesa de palabra no.",
+            "Arranca con equipo sencillo y compra el grande cuando el volumen lo justifique."
+          ]
+        },
+        {
+          "t": "Costo por kilo y por bulto: rendimiento, mano de obra y merma de masa",
+          "obj": "Calcular en Excel el costo real de cada kilo y de cada bulto de composta a partir de tu bitácora de entradas y salidas, incluida la merma de masa.",
+          "texto": [
+            "El error más común al costear composta es dividir los gastos entre los kilos de residuo que entraron. Pero tú no vendes residuo: vendes producto cribado, y de cada tonelada que entra sale bastante menos. A eso le llamamos <b>merma</b> de masa, y tiene tres causas. Primero, el agua: los restos de comida llegan con mucha humedad y buena parte se evapora con el calor de la pila. Segundo, el carbono: los microorganismos convierten parte de la materia orgánica en dióxido de carbono, que literalmente se va al aire. Tercero, el rechazo de la criba: ramas gruesas, huesos de fruta y plásticos que se separan al final y que a veces regresan a una pila nueva.",
+            "¿Cuánto sale? No hay cifra universal: depende de los materiales, su humedad, el tiempo y qué tan fino cribes. Por eso el <b>rendimiento</b> se mide, no se copia. Pesa todo lo que entra a cada pila (residuos y material café) y pesa lo que sale cribado, listo para vender. Un ejemplo ficticio de bitácora: a una pila entraron 10,000 kg de mezcla fresca y, cuatro meses después, salieron 3,800 kg de composta cribada; en ese caso el rendimiento fue de 38 %. Con otros materiales o en otra temporada puede salir muy distinto.",
+            "Luego junta todos los costos del mes: mano de obra (incluido tu sueldo, aunque hoy no te lo pagues), renta, combustible de la ruta, luz y agua, material café que compres, mantenimiento y una parte del equipo que se desgasta. En Excel: B2 kilos de mezcla que entraron, B3 kilos cribados que salieron, B4 el rendimiento =B3/B2 y B5 los costos del mes =SUMA(C2:C9). El costo por kilo, en B6, es =B5/B3. Para un bulto de 25 kg suma el empaque: si en B7 está lo que cuestan costal, etiqueta y llenado por bulto, el costo del bulto es =B6*25+B7.",
+            "Si vendes por volumen, por ejemplo en bultos de 40 L, pesa varios bultos llenos y usa el promedio: una composta húmeda pesa más por litro que una seca. La mano de obra suele ser el costo más grande en una planta pequeña, y el rendimiento manda sobre todo lo demás: si con los mismos gastos te sale menos producto porque llegó mucho plástico o porque cribaste más fino de lo necesario, cada kilo te cuesta más. Todos los montos de esta lección son ejemplos."
+          ],
+          "comparar": [
+            "«Así no: Este mes gasté $20,000 y entraron 16 toneladas de residuo: me sale a $1.25 el kilo, así que a $2 gano.»",
+            "«Así sí: Este mes gasté $20,000 y salieron 6,000 kg cribados según mi bitácora: me sale a $3.33 el kilo antes de empacar.»"
+          ],
+          "caso": "Caso ficticio: Carmen, de 39 años, coordina una cooperativa de cinco familias en los Valles Centrales de Oaxaca que composta restos de un mercado con rastrojo y poda. En un mes típico entran 18,000 kg de mezcla fresca y, según su bitácora, salen 6,300 kg de composta cribada. Los costos del mes suman $25,200 (ejemplo: mano de obra de dos personas, renta, combustible, luz, agua y desgaste de herramienta). Carmen dividió los costos entre lo que entra, le salió $1.40 por kilo y aceptó vender bultos de 25 kg a $110. Cada bulto lleva aparte $14 de costal, etiqueta y llenado.",
+          "p": [
+            [
+              "¿Cuál es el costo real por kilo y por bulto de Carmen?",
+              "$4.00 por kilo y $114 por bulto, dividiendo entre lo cribado y sumando el empaque",
+              "$1.40 por kilo y $49 por bulto, repartiendo los costos entre todo lo que entra a la planta",
+              "$4.00 por kilo y $100 por bulto, porque el empaque ya va dentro de los costos del mes",
+              "$25,200 ÷ 6,300 = $4.00 por kilo vendible; × 25 = $100, más $14 de empaque: $114 por bulto. Dividir entre los 18,000 kg que entran ignora que 65 % de la masa se fue en agua, carbono y rechazo. Y el empaque no está en los costos del mes que ella sumó: va aparte, por bulto."
+            ],
+            [
+              "Vendiendo a $110 el bulto, ¿qué está pasando?",
+              "Pierde $4 en cada bulto: debe revisar su precio y qué parte de sus costos puede cubrir una cuota de recolección",
+              "Gana $61 por bulto, así que puede bajar el precio a $100 para vender más rápido y ganar clientes nuevos en la zona",
+              "Gana $96 por bulto, porque lo único que paga cada vez que vende es el empaque de $14",
+              "Con el costo real, $110 − $114 = −$4 por bulto: cada venta agranda la pérdida. Antes de vender más, revisa el precio contra lo que paga tu mercado y busca la segunda fuente de ingreso del negocio, la recolección, que verás en la siguiente lección. Los $61 salen del costo mal calculado ($110 − $49) y los $96 ignoran mano de obra, renta y todo lo demás."
+            ],
+            [
+              "Si Carmen mejora su manejo y, con los mismos costos, su bitácora marca 7,200 kg cribados, ¿cuánto le cuesta cada bulto?",
+              "$101.50, porque el kilo baja a $3.50 y cada bulto suma $14 de empaque",
+              "$114, porque el costo por bulto no cambia mientras los gastos del mes sigan iguales",
+              "$87.50, porque ahora el kilo cuesta $3.50 y cada bulto lleva 25 kg",
+              "$25,200 ÷ 7,200 = $3.50 por kilo; × 25 = $87.50, más $14 de empaque: $101.50. El mismo gasto repartido entre más producto baja el costo de cada kilo: por eso el rendimiento manda. $114 ignora ese efecto y $87.50 olvida el empaque. Más rendimiento sale de separar mejor en origen y no cribar de más, no de pesar con descuido."
+            ]
+          ],
+          "completar": [
+            "La pérdida de agua, carbono y rechazo de criba entre lo que entra y lo que sale se llama ___ de masa.",
+            "merma"
+          ],
+          "refl": "Calcula tu costo por kilo y por bulto (20 min). 1) De tu bitácora o de una pila de práctica, anota los kilos de mezcla que entraron y los kilos cribados que salieron, y calcula el rendimiento con =B3/B2. Si aún no tienes datos, usa un ejemplo marcado como tal y escribe cómo vas a pesar. 2) Lista los costos de un mes típico, con tu sueldo y el desgaste del equipo. 3) Calcula el costo por kilo con =B5/B3 y por bulto con =B6*25+B7. 4) Repite con un rendimiento cinco puntos menor y escribe qué harías para evitarlo.",
+          "modelo": "Modelo: «Pila 7 (ejemplo de mi bitácora): entraron 8,000 kg de mezcla y salieron 3,200 kg cribados, rendimiento de 40 %. Costos de un mes: mano de obra con mi sueldo $11,000, renta $3,000, combustible $1,800, luz y agua $600, desgaste $600: $17,000. Costo por kilo: $5.31; bulto de 25 kg con $13 de empaque: $145.81. Con 35 % de rendimiento saldrían 2,800 kg: $6.07 por kilo. Para no bajar, pediré a mis clientes que no revuelvan bolsas y cribaré con malla de 12 mm, no más fina.» Es buena porque usa kilos pesados, incluye su sueldo y el desgaste, separa el empaque y mide el efecto del rendimiento.",
+          "plantilla": [
+            "Hoja de costo por kilo y por bulto",
+            "Pila o mes: [ ]\nKilos de mezcla que entraron (B2): [ ]\nKilos cribados que salieron (B3): [ ]\nRendimiento (B4): =B3/B2 = [ ] %\nCostos del mes: mano de obra con mi sueldo $[ ] | renta $[ ] | combustible $[ ] | luz y agua $[ ] | material café $[ ] | desgaste $[ ] | otros $[ ]\nTotal (B5): =SUMA(C2:C9) = $[ ]\nCosto por kilo (B6): =B5/B3 = $[ ]\nEmpaque por bulto (B7): $[ ]\nCosto por bulto de 25 kg: =B6*25+B7 = $[ ]\nSi vendo por volumen: peso promedio de [ ] bultos de 40 L = [ ] kg\nCon cinco puntos menos de rendimiento: $[ ] por kilo"
+          ],
+          "clave": [
+            "Divide tus costos entre los kilos cribados que vendes, no entre los kilos de residuo que entran.",
+            "El rendimiento se mide en tu bitácora; cualquier cifra ajena es solo un ejemplo.",
+            "La mano de obra pesa mucho y el rendimiento manda: cuídalos antes de discutir centavos de empaque."
+          ]
+        },
+        {
+          "t": "Precio, margen y punto de equilibrio con dos fuentes de ingreso: venta y recolección",
+          "obj": "Fijar un precio con margen y calcular en Excel cuántos bultos necesitas vender al mes para no perder, tomando en cuenta las cuotas de recolección.",
+          "texto": [
+            "El precio se decide mirando tres cosas a la vez: tu costo, lo que paga tu mercado y el margen que necesitas. Si tu costo completo por bulto está en B2 y quieres que 30 % del precio sea margen (B3 = 30 %), el precio mínimo es =B2/(1-B3). Con un costo de $100 eso da $142.86, no $130: el margen se mide sobre el precio, no sobre el costo. Después compáralo con lo que cobran otros en tus canales; pregunta en al menos tres viveros o tiendas y anota peso, presentación y si traen ficha técnica. Si tu precio mínimo queda muy arriba del mercado, no lo arregles vendiendo abajo de tu costo: arréglalo con costos, rendimiento o canal.",
+            "Para el <b>punto de equilibrio</b> separa los costos fijos (los que pagas aunque no vendas: renta, sueldos, luz) de los variables por bulto (costal, etiqueta, llenado y la parte de material café y agua que lleva cada bulto). El margen de contribución por bulto es el precio sin IVA menos el costo variable. Si cobras IVA en tu producto o en tu servicio de recolección, sepáralo: qué tasa aplica a cada uno se verifica en el SAT o con tu contador, y el alta la viste o puedes verla en «Emprender desde Cero».",
+            "Aquí entra lo propio de este negocio: tienes dos fuentes de ingreso. Las cuotas de recolección llegan cada mes, aunque todavía no vendas producto, pero tienen sus propios costos variables: combustible de la ruta, bolsas y lavado de contenedores. Lo que queda, la <b>cuota</b> neta, ayuda a cubrir los fijos. En Excel: B5 fijos del mes, B6 cuotas de recolección cobradas, B7 costos de la ruta, B8 precio sin IVA por bulto y B9 costo variable por bulto. Los bultos de equilibrio son =REDONDEAR.MAS((B5-(B6-B7))/(B8-B9),0). Si quieres que la hoja te avise cuando la cuota neta ya cubre todos los fijos, usa =SI(B6-B7>=B5,0,REDONDEAR.MAS((B5-(B6-B7))/(B8-B9),0)); al arrancar, eso es raro.",
+            "Compara el resultado con tu capacidad: si el equilibrio pide 300 bultos y tu planta saca 250 al mes, ningún esfuerzo de venta te salva; necesitas más cuota, mejor precio o menos costos. Revisa también de qué depende tu equilibrio: si un solo cliente aporta la mitad de las cuotas, perderlo te mueve el número de golpe. Todos los montos son ejemplos; no tomes ningún precio de esta lección como referencia de mercado."
+          ],
+          "comparar": [
+            "«Así no: Mis fijos son $30,000 y vendo el bulto a $105: con 286 bultos ya salgo, y las cuotas de los restaurantes son ganancia extra.»",
+            "«Así sí: Resto a mis fijos la cuota neta de recolección, divido lo que falta entre el margen de cada bulto y no entre el precio, y lo comparo con lo que mi planta produce.»"
+          ],
+          "caso": "Caso ficticio: Gonzalo, de 46 años, tiene una planta de composta a las afueras de Hermosillo con dos ayudantes. Sus fijos son de $30,000 al mes, con su sueldo. Vende bultos de 25 kg a $105 sin IVA y cada bulto le cuesta $35 de variables. Cinco restaurantes y un hotel le pagan en total $10,500 al mes por recolectar sus orgánicos, y la ruta le cuesta $2,500 al mes de combustible, bolsas y lavado. Su planta produce unos 8,000 kg cribados al mes. Su socio quiere bajar el precio a $95 para vender más rápido. Todos los montos son ejemplos.",
+          "p": [
+            [
+              "¿Cuántos bultos al mes necesita vender Gonzalo para no perder?",
+              "315 bultos: los $22,000 que faltan tras la cuota neta ÷ $70 de margen",
+              "279 bultos: ($30,000 − $10,500 de cuotas cobradas) ÷ $70 de margen por bulto",
+              "429 bultos: $30,000 ÷ $70, porque las cuotas no tienen que ver con vender composta",
+              "La cuota neta es $10,500 − $2,500 = $8,000; faltan $22,000, y el margen por bulto es $105 − $35 = $70: 22,000 ÷ 70 = 314.3, o sea 315 bultos. Restar las cuotas completas olvida que la ruta cuesta, y no contarlas desperdicia la segunda fuente de ingreso del negocio."
+            ],
+            [
+              "¿Qué dice ese equilibrio sobre la capacidad de su planta?",
+              "Que casi no tiene holgura: 315 bultos son 7,875 kg de los 8,000 kg que produce",
+              "Que va sobrado, porque 315 bultos son apenas un poco más de 3 toneladas al mes",
+              "Que no puede llegar nunca, porque necesitaría producir más de 10 toneladas al mes",
+              "315 × 25 kg = 7,875 kg: tendría que vender casi todo lo que produce (unos 320 bultos posibles) solo para no perder. Un mes flojo o un lote rechazado lo deja en números rojos. Las otras dos conclusiones salen de confundir bultos con kilos o de multiplicar mal."
+            ],
+            [
+              "¿Qué le respondes al socio que quiere bajar el precio a $95?",
+              "Que con $60 de margen el equilibrio sube a 367 bultos, más de lo que la planta produce",
+              "Que es buena idea, porque vendiendo más rápido los fijos se reparten entre más bultos",
+              "Que da igual, porque las cuotas de recolección ya cubren la mayor parte de sus fijos y el precio de los bultos pesa poco",
+              "$95 − $35 = $60 y 22,000 ÷ 60 = 366.7, o sea 367 bultos, pero solo puede hacer unos 320. Bajar el precio sirve cuando sobra capacidad; aquí falta. Y la cuota neta cubre $8,000 de $30,000, no la mayor parte. Mejor: revisar el precio hacia arriba con su ficha técnica, sumar clientes de recolección o bajar costos."
+            ]
+          ],
+          "completar": [
+            "Lo que te queda de las cuotas de recolección después de pagar combustible, bolsas y lavado es la ___ neta.",
+            "cuota"
+          ],
+          "relacionar": [
+            [
+              "Renta y sueldos",
+              "Costo fijo"
+            ],
+            [
+              "Costal, etiqueta y llenado",
+              "Costo variable por bulto"
+            ],
+            [
+              "Precio sin IVA − costo variable",
+              "Margen de contribución"
+            ],
+            [
+              "Cuotas cobradas − costo de la ruta",
+              "Cuota neta"
+            ],
+            [
+              "=REDONDEAR.MAS((B5-(B6-B7))/(B8-B9),0)",
+              "Bultos de equilibrio"
+            ]
+          ],
+          "refl": "Calcula tu precio y tu equilibrio (20 min). 1) Con tu costo completo por bulto de la lección anterior, calcula el precio mínimo con =B2/(1-B3) para un margen de 25 % y de 35 %. 2) Investiga el precio de tres productos parecidos en tu zona: peso, presentación y si traen ficha. 3) Separa tus fijos y tus variables por bulto, y escribe tus cuotas de recolección firmadas o probables con el costo de la ruta. 4) Calcula los bultos de equilibrio con y sin cuotas, compáralos con tu capacidad y escribe una decisión.",
+          "modelo": "Modelo: «Costo completo por bulto: $96; con 30 % de margen, =96/(1-0.3) da $137.14. En dos viveros y una tienda, bultos parecidos van de $120 a $150 (ejemplo). Elijo $130 sin IVA, dentro del mercado, aunque mi margen baja a 26 %. Fijos: $18,000. Variables por bulto: $24; margen de contribución: $106. Cuotas firmadas: $5,000; ruta: $1,200; neta: $3,800. Equilibrio: (18,000 − 3,800) ÷ 106 = 133.96, o sea 134 bultos; sin cuotas, 170. Mi capacidad es de 200 bultos: tengo 66 de holgura. Decisión: busco otro cliente de recolección antes de pensar en descuentos.» Es buena porque compara costo y mercado, usa la cuota neta y revisa la capacidad.",
+          "plantilla": [
+            "Hoja de precio y punto de equilibrio",
+            "Costo completo por bulto (B2): $[ ]   Margen deseado (B3): [ ] %\nPrecio mínimo: =B2/(1-B3) = $[ ]\nPrecios en mi zona: [lugar, peso, precio, ficha] / [ ] / [ ]\nFijos del mes (B5): $[ ]\nCuotas de recolección cobradas (B6): $[ ]   Costo de la ruta (B7): $[ ]\nPrecio sin IVA por bulto (B8): $[ ]   Costo variable por bulto (B9): $[ ]\nBultos de equilibrio: =SI(B6-B7>=B5,0,REDONDEAR.MAS((B5-(B6-B7))/(B8-B9),0)) = [ ]\nSin cuotas: [ ]   Mi capacidad: [ ] bultos   Holgura: [ ]\nDecisión: [ ]"
+          ],
+          "clave": [
+            "El margen se mide sobre el precio: precio mínimo = costo ÷ (1 − margen).",
+            "Las cuotas de recolección cubren fijos solo después de restar el costo de la ruta.",
+            "Compara siempre el equilibrio con tu capacidad: si no cabe, bajar el precio empeora las cosas."
+          ]
+        },
+        {
+          "t": "Escalar: pilas volteadas, aireación forzada o lombricultura",
+          "obj": "Comparar con criterios y números de ejemplo tres formas de crecer y elegir la que conviene a tu espacio, tus clientes, tu dinero y tus vecinos.",
+          "texto": [
+            "Si tu planta ya va a tope y te ofrecen más residuos, tienes tres caminos principales. Las <b>pilas volteadas</b> son lo que ya conoces: hileras que se voltean a mano o con maquinaria. Requieren poca inversión, pero mucho espacio y mucha mano de obra, y cada volteo libera olor y polvo. Para higienizar, la NMX-AA-180 pide que pasen 15 días a 55 °C o más con al menos 5 volteos. Con más volumen se pasa del bieldo a un tractor con pala o a una volteadora rentada por hora.",
+            "La <b>aireación</b> forzada mete aire a pilas que no se voltean, con un soplador, tubos perforados bajo la pila y un temporizador o un control por temperatura. Ocupa menos espacio y menos horas de trabajo y, como casi no se mueve el material, se controla mejor el olor, sobre todo si cubres la pila con una capa de composta madura. Para higienizar, una pila estática aireada debe pasar 3 días consecutivos a 55 °C o más. A cambio, necesitas luz eléctrica confiable, una inversión mayor y una mezcla bien armada desde el principio, porque no habrá volteos para corregirla; y sigue valiendo que el material no pase más de 24 horas arriba de 65 °C.",
+            "La <b>lombricultura</b> da otro producto, el humus, que a veces se paga mejor por kilo que la composta; verifica precios en tu mercado. Pero procesa más lento por metro cuadrado, pide temperatura y humedad estables y necesita precomposteo. Y como la cama no llega a temperaturas de higienización, los residuos de riesgo, como estiércoles o sobras de comedor con carne, deben pasar antes por una pila caliente controlada o quedarse fuera. No es una forma de procesar más residuos: es una forma de vender distinto.",
+            "Compara con números aunque sean de ejemplo. Para procesar 10 toneladas de mezcla al mes, un proveedor ficticio estima: pilas volteadas a mano, 300 m², $40,000 de inversión y 60 horas de volteo al mes; aireación forzada, 150 m², $90,000 y 20 horas, más unos $900 de luz al mes. Con una paga de ejemplo de $80 por hora, la aireación ahorra 40 horas, o sea $3,200, menos $900 de luz: $2,300 al mes, y recupera los $50,000 de diferencia en unos 22 meses. Pesa también lo que no tiene precio (vecinos, lluvias, quién opera, qué compran tus clientes) y escala por etapas: prueba un módulo antes de cambiar toda la planta."
+          ],
+          "comparar": [
+            "«Así no: Me ofrecen el triple de residuos; los recibo desde el lunes y ya veré dónde los pongo.»",
+            "«Así sí: Antes de aceptar más residuos, calculo espacio, horas e inversión de cada opción, pruebo un módulo y crezco por etapas.»"
+          ],
+          "caso": "Caso ficticio: Liliana, de 31 años, es ingeniera ambiental y opera una planta de composta en un terreno de 500 m² en las afueras de Cuernavaca, con pilas volteadas a mano: procesa 6 toneladas de mezcla al mes. Un hotel y dos comedores le ofrecen 15 toneladas más al mes y pagarían cuota de recolección. A 150 m se construye un fraccionamiento. Con cifras de ejemplo para las 21 toneladas, sus opciones son: A) más pilas volteadas: 600 m² de pilas y pasillos y dos ayudantes más, $22,000 al mes; B) aireación forzada: $210,000 de inversión, cabe en 300 m², un ayudante más y luz, $13,000 al mes; C) lombricultura: unos 800 m² de camas más el precomposteo, para vender humus, aunque hoy no tiene compradores para él.",
+          "p": [
+            [
+              "¿Qué opción tiene más sentido para Liliana?",
+              "La aireación forzada: cabe en su terreno, mueve menos el material junto al fraccionamiento y cuesta menos al mes",
+              "Las pilas volteadas, porque son la forma más barata de crecer y ya sabe operarlas sin necesidad de aprender nada nuevo",
+              "La lombricultura, porque el humus puede pagarse mejor y así aprovecha directamente los residuos de los comedores",
+              "Las pilas volteadas no caben (piden 600 m² y tiene 500) y voltear junto a un fraccionamiento multiplica las quejas por olor. La lombricultura pide aún más espacio, no higieniza las sobras de comedor y no tiene a quién vender el humus. La aireación forzada cabe, mueve menos el material y su operación cuesta $13,000 contra $22,000."
+            ],
+            [
+              "Comparada con contratar dos ayudantes para más pilas, ¿en cuánto tiempo recupera la inversión de la aireación?",
+              "En unos 23 meses: $210,000 ÷ $9,000 de ahorro neto al mes frente a A",
+              "En unos 10 meses: $210,000 ÷ $22,000 que costarían las dos personas",
+              "En unos 16 meses: $210,000 ÷ $13,000 que cuesta la aireación al mes",
+              "La aireación no ahorra los $22,000 completos: también cuesta $13,000 al mes. El ahorro frente a la opción A es $22,000 − $13,000 = $9,000, y $210,000 ÷ $9,000 = 23.3 meses. Dividir entre el costo de B no tiene sentido: es un gasto, no un ahorro. Recuerda que son cifras de ejemplo."
+            ],
+            [
+              "¿Cómo le conviene empezar?",
+              "Instalar un módulo de aireación, recibir primero a un cliente y sumar a los otros con su bitácora en mano",
+              "Firmar con los tres clientes desde el inicio y acomodar el excedente en pilas volteadas mientras instala",
+              "Instalar los tres módulos de una vez, porque fraccionar la obra encarece la instalación eléctrica",
+              "Por etapas aprende a operar la aireación (mezcla, temperatura, olores) con un riesgo acotado y comprueba que sostiene 3 días a 55 °C o más. Aceptar todo y apilar el excedente junto al fraccionamiento es la receta de las quejas; instalar todo de golpe quizá ahorre algo de obra, pero apuesta $210,000 a un sistema que todavía no domina."
+            ]
+          ],
+          "completar": [
+            "En una pila estática con ___ forzada, la higienización pide 3 días consecutivos a 55 °C o más.",
+            "aireación"
+          ],
+          "relacionar": [
+            [
+              "Inversión baja, mucho espacio y muchas horas",
+              "Volteo a mano"
+            ],
+            [
+              "Soplador, tubos perforados y temporizador",
+              "Aireación forzada"
+            ],
+            [
+              "Producto distinto y más lento por metro cuadrado",
+              "Lombricultura"
+            ],
+            [
+              "15 días a 55 °C o más con 5 volteos",
+              "Higienización en pilas volteadas"
+            ],
+            [
+              "3 días consecutivos a 55 °C o más",
+              "Higienización en pila estática aireada"
+            ]
+          ],
+          "refl": "Compara tus opciones para crecer (20 min). 1) Escribe cuánto procesas hoy y cuánto te ofrecen o quieres procesar. 2) Para dos o tres opciones (pilas volteadas, aireación forzada, lombricultura), anota con cotizaciones o cifras de ejemplo: espacio, inversión, horas de trabajo al mes, costo mensual y cómo higienizas. 3) Calcula el ahorro mensual de una opción frente a otra y en cuántos meses recuperas la diferencia de inversión. 4) Escribe lo que no tiene precio (vecinos, clima, quién opera, qué compran tus clientes) y tu primera etapa.",
+          "modelo": "Modelo: «Hoy: 8 t al mes en pilas volteadas. Oferta: 6 t más de un comedor. Opción A, más pilas: 220 m² extra y dos personas de medio tiempo, $10,000 al mes. Opción B, aireación: $75,000, 100 m² y $5,500 al mes con luz. Ahorro de B: $4,500 al mes; recupero los $75,000 en 16.7 meses (cifras de ejemplo). Tengo vecinos a 80 m y lluvias fuertes: B me conviene por el olor. Primera etapa: un módulo con la mitad de lo que da el comedor durante dos meses, midiendo días arriba de 55 °C y quejas.» Es buena porque compara con números, calcula el ahorro neto y no solo el costo, y crece por etapas.",
+          "plantilla": [
+            "Comparador de opciones para crecer",
+            "Hoy proceso: [ ] t al mes   Me ofrecen o quiero: [ ] t al mes\nOpción | Espacio (m²) | Inversión | Horas al mes | Costo mensual | Cómo higienizo\nPilas volteadas | [ ] | $[ ] | [ ] | $[ ] | 15 días a 55 °C o más, 5 volteos\nAireación forzada | [ ] | $[ ] | [ ] | $[ ] | 3 días seguidos a 55 °C o más\nLombricultura | [ ] | $[ ] | [ ] | $[ ] | pila caliente antes de la cama\nAhorro mensual de [ ] frente a [ ]: $[ ]   Meses para recuperar la diferencia: [ ]\nLo que no tiene precio: [vecinos, clima, quién opera, clientes]\nPrimera etapa y qué voy a medir: [ ]"
+          ],
+          "clave": [
+            "Pilas volteadas: poca inversión, mucho espacio y trabajo; aireación forzada: más inversión, menos espacio, horas y olor.",
+            "La lombricultura vende un producto distinto, no procesa más residuo y no sustituye la higienización.",
+            "Compara con el ahorro neto, no con costos sueltos, y crece por etapas."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma en Excel el modelo de números de tu planta, con cuatro pestañas y fórmulas. 1) Inversión: lista cotizada por bolsa, de «ahora» y de «después», y colchón con =(fijos-cuota)*meses sin ventas. 2) Costo: entradas, salidas y rendimiento de tu bitácora o de un ejemplo marcado, costo por kilo y por bulto. 3) Precio y equilibrio: precio mínimo con margen, comparación con tres precios de tu zona y bultos de equilibrio con y sin la cuota neta de recolección. 4) Escala: dos opciones para crecer con espacio, inversión, horas, costo mensual y meses para recuperar la diferencia.",
+        "entregable": "Un archivo de Excel con cuatro pestañas calculadas con fórmulas y un párrafo de conclusiones: cuánto necesitas, cuánto te cuesta cada kilo, cuántos bultos y cuotas necesitas al mes, si eso cabe en tu capacidad y cuál será tu primera etapa de crecimiento.",
+        "criterios": "Revisa: el costo por kilo se divide entre kilos cribados y no entre residuo recibido, tu sueldo aparece en los fijos, la cuota de recolección es neta de la ruta, el equilibrio se compara con tu capacidad y todos los montos ficticios están marcados como ejemplo."
+      },
+      "lab": {
+        "t": "Los números de una planta en Aguascalientes",
+        "obj": "Calcular la inversión, el costo por kilo y por bulto, el precio y el punto de equilibrio con dos fuentes de ingreso de una planta pequeña, y decidir con esos números cómo y cuándo crecer.",
+        "esc": "<b>Bruno,</b> de 44 años, trabajó en mantenimiento industrial en Aguascalientes y, con su esposa, quiere abrir una planta pequeña de composta en un terreno rentado al oriente de la ciudad. Lleva un año haciendo pilas de práctica con bitácora, y un comedor industrial le firmó una carta de intención para pagarle la recolección. Tiene $150,000 de ahorro. Todos los montos son ejemplos ficticios.",
+        "e": [
+          [
+            "Escena 1: Su lista: techo y piso con canaleta $45,000; herramientas, termómetro y báscula $16,000; criba manual $4,500; contenedores $9,000; equipo de protección $3,500; trámites y primer análisis $8,000; costales y etiquetas iniciales $5,000. Sus fijos serán de $20,000 al mes, con su sueldo y la ruta; el comedor pagaría $6,000 al mes desde el primer mes, y su primera composta estaría lista en el mes cuatro.",
+            "Consigna: arma la hoja de inversión con =SUMA() y el colchón con =(B15-B16)*B17, calcula el total y escribe si le alcanza con su ahorro y qué pasaría si el comedor no firma."
+          ],
+          [
+            "Escena 2: Su bitácora, llevada a la escala de la planta, indica que en un mes típico entrarían 16,000 kg de mezcla y saldrían 6,000 kg cribados. Sus costos del mes serían los $20,000 de fijos más $1,920 de material café y agua. Cada bulto de 25 kg lleva aparte $13 de costal, etiqueta y llenado.",
+            "Consigna: calcula en Excel el rendimiento, el costo por kilo y el costo por bulto con fórmulas, y explica por qué no divides entre los 16,000 kg."
+          ],
+          [
+            "Escena 3: Tres viveros le dicen que pagan entre $110 y $130 sin IVA por un bulto parecido. Bruno piensa cobrar $120. Su costo variable por bulto es de $21: $13 de empaque y $8 de material café y agua; la ruta ya está en sus fijos.",
+            "Consigna: calcula el margen por bulto y los bultos de equilibrio con y sin la cuota del comedor usando =REDONDEAR.MAS(), y compáralos con los 240 bultos que puede producir al mes."
+          ],
+          [
+            "Escena 4: Seis meses después, un segundo comedor le ofrece 8 toneladas más al mes y pagaría $5,000 de cuota. Su terreno solo da para unas 20 toneladas de mezcla al mes en pilas volteadas. Un proveedor le cotiza un módulo de aireación forzada en $120,000.",
+            "Consigna: escribe dos opciones para recibir o no ese residuo, con espacio, inversión, costo mensual y cómo higienizarías en cada una, y tu decisión por etapas."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuánto necesita Bruno para arrancar y qué pasa si el comedor no firma?",
+            "$147,000 con la cuota; sin ella, $171,000, más de lo que tiene",
+            "$91,000 en ambos casos, porque el colchón se paga con las ventas de composta",
+            "$151,000 con la cuota, porque el colchón son tres meses de sus $20,000 de fijos",
+            "Compras: $91,000. Con la cuota, el colchón es ($20,000 − $6,000) × 4 = $56,000: total $147,000, justo debajo de sus $150,000. Sin cuota, $20,000 × 4 = $80,000 y el total sube a $171,000. Por eso la carta de intención debe volverse contrato antes de rentar. Sin colchón no llegaría a la primera venta, y tres meses de fijos no reflejan ni la cuota ni los cuatro meses sin ventas."
+          ],
+          [
+            "¿Cuál es su costo por kilo y por bulto?",
+            "$3.65 por kilo y $104.33 por bulto",
+            "$1.37 por kilo y $47.25 por bulto",
+            "$3.65 por kilo y $91.33 por bulto",
+            "Rendimiento: 6,000 ÷ 16,000 = 37.5 %. Costos: $20,000 + $1,920 = $21,920; ÷ 6,000 kg = $3.65 por kilo; × 25 = $91.33, más $13 de empaque: $104.33. Dividir entre lo que entra da $1.37 y un bulto engañosamente barato, y olvidar el empaque deja el bulto en $91.33."
+          ],
+          [
+            "¿Cuántos bultos necesita vender al mes para no perder?",
+            "142 bultos con la cuota y 203 sin ella, dividiendo entre el margen de $99",
+            "167 bultos, porque divide sus $20,000 de fijos entre los $120 de precio",
+            "117 bultos, porque resta la cuota y divide lo que falta entre los $120 de precio",
+            "Margen: $120 − $21 = $99. Con cuota: ($20,000 − $6,000) ÷ $99 = 141.4, o sea 142 bultos; sin cuota, 202.02, o sea 203. Los dos caben en sus 240 bultos, pero sin cuota la holgura es de solo 37. Dividir entre el precio olvida que cada bulto consume $21 de variables."
+          ]
+        ],
+        "pl": [
+          "Hoja de números de mi planta",
+          "Inversión: compras y apertura =SUMA(B2:B8) = $[ ]\nFijos (B15) $[ ] − cuota firmada (B16) $[ ], × meses sin ventas (B17) [ ] = colchón $[ ]\nTotal: $[ ]   Ahorro: $[ ]   Total sin la cuota: $[ ]\nEntradas al mes: [ ] kg   Salidas cribadas: [ ] kg   Rendimiento: [ ] %\nCostos del mes: $[ ]   Costo por kilo: $[ ]   Costo por bulto: $[ ]\nPrecio sin IVA: $[ ]   Costo variable por bulto: $[ ]   Margen: $[ ]\nEquilibrio con cuota: [ ] bultos   Sin cuota: [ ] bultos   Capacidad: [ ] bultos\nCrecer: opción A [ ] / opción B [ ] / primera etapa: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una planta tendrá fijos de $15,000 al mes, ya firmó cuotas de recolección por $5,000 al mes (la ruta está en sus fijos) y su primera composta estará lista en el mes cuatro. ¿Qué colchón necesita?",
+          "$40,000: le faltan $10,000 al mes durante cuatro meses sin ventas",
+          "$60,000, porque las cuotas no deben contarse en el colchón",
+          "$45,000, porque cualquier negocio necesita tres meses de fijos",
+          "$20,000, porque solo hace falta cubrir la suma de un mes"
+        ],
+        [
+          "En un mes, una planta gastó $18,000; entraron 10,000 kg de mezcla y salieron 4,000 kg cribados. ¿Cuál es su costo por kilo?",
+          "$4.50 por kilo, dividiendo entre lo cribado",
+          "$1.80 por kilo de mezcla recibida",
+          "$2.57 por kilo, promediando entradas y salidas",
+          "$11.25 por kilo, porque solo se vende 40 % de cada kilo"
+        ],
+        [
+          "Tu costo por kilo cribado es de $4 y vendes en bultos de 25 kg; costal, etiqueta y llenado cuestan $15 por bulto. ¿Cuánto te cuesta cada bulto?",
+          "$115, porque 25 kg a $4 son $100 y se suman $15 de empaque",
+          "$100, porque el empaque ya está incluido en el costo por kilo",
+          "$475, porque a cada kilo se le suma el costo del empaque",
+          "$19, porque se suman el costo de un kilo y el del empaque"
+        ],
+        [
+          "Vendes en bultos de 40 L. Pesaste diez bultos llenos y promediaron 22 kg; tu costo por kilo es de $4 y el empaque, $12. ¿Cuánto te cuesta cada bulto?",
+          "$100, porque 22 kg a $4 son $88 y se suman $12 de empaque",
+          "$172, porque 40 L de composta equivalen a 40 kg",
+          "$88, porque el empaque no forma parte del costo de la composta",
+          "$112, porque todos los bultos se calculan como si fueran de 25 kg"
+        ],
+        [
+          "Con los mismos costos, tu rendimiento bajó de 40 % a 32 % porque llegó mucho plástico que tuviste que cribar. ¿Qué pasa con tu costo por kilo?",
+          "Sube 25 %, porque los mismos costos se reparten entre menos kilos",
+          "Sube 8 %, lo mismo que bajó el rendimiento de la pila",
+          "No cambia, porque los costos del mes siguen siendo los mismos",
+          "Baja, porque un producto cribado con más cuidado se vende mejor"
+        ],
+        [
+          "Tu costo completo por bulto es de $90 y quieres que 25 % del precio sea margen. ¿Cuál es tu precio mínimo sin IVA?",
+          "$120, porque $90 ÷ (1 − 0.25) deja 25 % del precio como margen",
+          "$112.50, porque $90 × 1.25 ya incluye el 25 %",
+          "$115, porque al costo se le suman $25 de margen",
+          "$360, porque $90 ÷ 0.25 da el precio con margen"
+        ],
+        [
+          "Tus fijos son $24,000 al mes, cobras $11,000 de cuotas de recolección con $2,000 de costo de ruta, vendes el bulto a $100 sin IVA y su costo variable es $40. ¿Cuántos bultos necesitas para no perder?",
+          "250 bultos, restando la cuota neta y dividiendo entre $60",
+          "217 bultos, restando las cuotas completas a los fijos",
+          "400 bultos, porque las cuotas no tienen que ver con la venta",
+          "150 bultos, dividiendo lo que falta entre el precio del bulto"
+        ],
+        [
+          "En tu hoja, B5 son los fijos, B6 las cuotas cobradas, B7 el costo de la ruta, B8 el precio sin IVA y B9 el costo variable por bulto. ¿Qué fórmula da los bultos de equilibrio?",
+          "=REDONDEAR.MAS((B5-(B6-B7))/(B8-B9),0)",
+          "=REDONDEAR.MAS((B5-B6)/B8,0)",
+          "=REDONDEAR.MAS(B5/(B8-B9),0)-B6",
+          "=REDONDEAR.MAS((B5+B6-B7)/(B8-B9),0)"
+        ],
+        [
+          "Tu planta está en un terreno chico, junto a casas, con luz eléctrica confiable, y te ofrecen el doble de residuos. ¿Qué opción suele encajar mejor?",
+          "Aireación forzada por etapas, porque ocupa menos espacio y mueve menos el material",
+          "Más pilas volteadas a mano, porque son la opción de menor inversión en cualquier caso",
+          "Lombricultura, porque las lombrices procesan los residuos crudos sin necesidad de calentarlos",
+          "Recibir todo de inmediato y acomodar el excedente donde quepa hasta conseguir otro terreno"
+        ],
+        [
+          "Un comedor te ofrece sus sobras con carne y quieres meterlas a tus camas de lombriz para crecer sin construir pilas. ¿Qué es lo correcto?",
+          "No van directo a las camas: pasan antes por una pila caliente controlada o se quedan fuera",
+          "Sí conviene, porque las lombrices higienizan el material mientras lo van digiriendo",
+          "Sí, siempre que pongas el doble de lombriz por metro cuadrado en esas camas",
+          "Sí, si mezclas antes las sobras con cal para quitarles el olor y la grasa"
+        ]
+      ]
+    },
+    {
+      "t": "Marca, venta y proyecto final",
+      "r": "Dale a tu producto una marca y una ficha técnica honestas, elige tus canales con números, ofrece a restaurantes, hoteles y comedores un servicio de cierre del ciclo con contrato y reporte, y escribe el plan de negocio de tu planta con tus primeros 90 días.",
+      "lecciones": [
+        {
+          "t": "Marca, presentación y ficha técnica honesta",
+          "obj": "Elegir nombre, presentaciones y mensajes para tu producto, y armar una ficha técnica que diga solo lo que puedes respaldar.",
+          "texto": [
+            "Una <b>marca</b> no es solo un logotipo: es la promesa que el cliente aprende a reconocer. En abonos, la promesa que más vale es la regularidad: que cada bulto salga igual de oscuro, suelto, sin piedras y con el mismo olor a tierra. Por eso el nombre debe sonar a lo que haces y a dónde lo haces, no a milagros. Evita nombres que prometen («Supercosecha», «Fertimilagro») o que insinúan una certificación que no tienes: como viste en el módulo 5, «orgánico» es un término de rotulación para productos certificados. Tu origen sí lo puedes contar con datos: «hecha con residuos de mercados de tu ciudad».",
+            "La presentación es una decisión de canal. Bolsas de 5 o 10 kg para quien tiene macetas o un huerto de azotea; bultos de 25 kg o de 40 L para viveros y paisajistas; granel por tonelada o por metro cúbico para agricultores. Cada presentación cambia tu costo por kilo, como calculaste en el módulo 7. Cuida también el empaque: una composta inmadura o muy húmeda puede seguir fermentando dentro de una bolsa cerrada, inflarla y oler mal en el anaquel. Empaca solo lotes que pasaron tus pruebas y con la humedad en rango.",
+            "La <b>ficha</b> técnica es el documento que pide el área de compras de un vivero, un paisajista o una empresa. Una ficha honesta incluye: nombre y tipo de producto («composta tipo II según NMX-AA-180», si así salió tu análisis, o humus de lombriz con su grado según la NMX-FF-109); lote y fecha; materias primas; parámetros medidos en laboratorio con la fecha del análisis; cómo se cumplió la higienización (días a 55 °C o más y volteos); modo de uso con dosis de ejemplo y la recomendación de un análisis de suelo; precauciones (guantes, lavado de manos, no aplicar sobre la parte comestible) y tus datos de contacto. Si vendes con marca, recuerda consultar a COFEPRIS sobre el registro y revisar la NOM-182-SSA1-2010 para la etiqueta.",
+            "Lo que no tiene respaldo no va: ni «duplica tu cosecha», ni «elimina plagas», ni «ideal para todo cultivo». La prueba de fuego es que cada frase de tu ficha pueda señalarse en un informe, una bitácora o una norma; si no puedes, quítala o cámbiala por el dato. Un cliente serio confía más en «conductividad 3.1 dS/m, lote 14» que en tres adjetivos."
+          ],
+          "comparar": [
+            "«Así no: Nombre: Supercosecha Orgánica. Ficha: abono 100 % natural, ideal para cualquier cultivo, triplica tu producción.»",
+            "«Así sí: Nombre: Compostas Alma. Ficha: composta tipo II (NMX-AA-180), lote 14, análisis del 2 de octubre, 16 días a 55 °C o más con 6 volteos, dosis de ejemplo y recomendación de análisis de suelo.»"
+          ],
+          "caso": "Caso ficticio: Fernanda, de 28 años, y su papá producen composta en un terreno a las afueras de Veracruz con restos de un mercado y poda. Su último análisis salió tipo II por una conductividad de 5.4 dS/m; el lote cumplió 17 días a 55 °C o más con 6 volteos. Una tienda de jardinería del puerto le pide bolsas de 5 kg para sus clientes de macetas, y un primo diseñador le propone llamar al producto «Milagro Verde, abono orgánico», con la frase «tus plantas el doble de grandes». Fernanda quiere una marca que se venda, pero no quiere problemas.",
+          "p": [
+            [
+              "¿Qué nombre y mensaje le convienen más a Fernanda?",
+              "Un nombre de origen, como «Compostas Alma», con datos medidos en lugar de promesas",
+              "«Milagro Verde, abono orgánico», porque el abono sí viene de materia orgánica y eso no engaña a nadie",
+              "«Milagro Verde» sin la palabra orgánico, pero conservando la frase de las plantas el doble de grandes",
+              "«Orgánico» es término de rotulación para productos certificados, y el efecto «el doble de grandes» no tiene respaldo: depende del suelo, la planta y el manejo. Quitar una sola palabra no arregla la promesa. Un nombre que dice de dónde viene, más los datos de su ficha, construye confianza sin riesgos."
+            ],
+            [
+              "Para las bolsas de 5 kg de la tienda, ¿qué debe cuidar antes de empacar?",
+              "Empacar solo lotes maduros y con la humedad en rango, con lote y fecha impresos en cada bolsa",
+              "Humedecer el producto justo antes de cerrar la bolsa para que se vea más oscuro en el anaquel",
+              "Empacar desde la fase termófila, para que la bolsa llegue a la tienda con el producto más fresco",
+              "Una composta inmadura o húmeda sigue fermentando en la bolsa cerrada: la infla y huele mal. Humedecer de más para que luzca oscura provoca lo mismo y, además, vende agua por composta. El lote y la fecha permiten rastrear cualquier reclamo hasta su pila y su análisis."
+            ],
+            [
+              "¿Cómo presenta en la ficha el resultado de su análisis?",
+              "Composta tipo II según la NMX-AA-180, con conductividad de 5.4 dS/m y la fecha del análisis",
+              "Composta tipo I, porque todos los demás parámetros del lote cumplen y la conductividad varía mucho",
+              "Sin mencionar el tipo, para que la tienda no compare su producto con otras compostas del mercado",
+              "Basta un parámetro fuera del tipo I (conductividad de más de 4 dS/m) para no alcanzarlo, y su informe lo clasificó como tipo II: decirlo con su dato da confianza y ayuda a dosificar (un abono más salino pide dosis menores en macetas). Subirlo a tipo I es falso, y esconder el tipo no evita la comparación: solo la vuelve sospechosa."
+            ]
+          ],
+          "completar": [
+            "Cada frase de tu ___ técnica debe poder señalarse en un informe, una bitácora o una norma.",
+            "ficha"
+          ],
+          "relacionar": [
+            [
+              "Bolsa de 5 o 10 kg",
+              "Macetas y huertos de azotea"
+            ],
+            [
+              "Bulto de 25 kg o 40 L",
+              "Viveros y paisajistas"
+            ],
+            [
+              "Granel por tonelada",
+              "Agricultores"
+            ],
+            [
+              "Lote y fecha",
+              "Rastrear un reclamo"
+            ],
+            [
+              "Días a 55 °C o más y volteos",
+              "Higienización en la ficha"
+            ]
+          ],
+          "refl": "Arma la marca y la ficha de tu producto (20 min). 1) Propón tres nombres que digan qué haces o de dónde viene, y descarta los que prometan resultados o insinúen certificación. 2) Elige dos presentaciones según tus canales y anota su peso o volumen. 3) Escribe tu ficha técnica con producto y tipo o grado, lote, materias primas, parámetros medidos con fecha, higienización, modo de uso con dosis de ejemplo, precauciones y contacto; si aún no tienes análisis, deja esos campos marcados como pendientes. 4) Pasa cada frase por la prueba de fuego: ¿dónde está su respaldo?",
+          "modelo": "Modelo: «Compostas Alma. Composta tipo II según NMX-AA-180, lote 21, de restos de mercado y poda. Análisis del 9 de octubre: humedad 38 %, pH 7.8, conductividad 5.4 dS/m, materia orgánica 41 %, índice de germinación 88 %, Salmonella ausente en 25 g. Higienización: 17 días a 55 °C o más con 6 volteos. Uso: mézclala con tierra o sustrato; en macetas, una parte de composta por cuatro de sustrato (ejemplo); para una dosis exacta, análisis de suelo. Precauciones: guantes, lavado de manos, no aplicar sobre la parte comestible.» Es buena porque cada dato tiene fuente y no promete resultados.",
+          "plantilla": [
+            "Ficha técnica honesta",
+            "Producto y marca: [ ]\nTipo o grado: [composta tipo __ según NMX-AA-180 / humus grado __ según NMX-FF-109]\nLote: [ ]   Fecha de producción: [ ]   Presentación: [ ] kg o L\nMaterias primas: [ ]\nAnálisis de [laboratorio] del [fecha]: humedad [ ] %, pH [ ], conductividad [ ] dS/m, materia orgánica [ ] %, N [ ] %, C/N [ ], germinación [ ] %, patógenos [ ]\nHigienización: [ ] días a 55 °C o más con [ ] volteos\nModo de uso: [dosis de ejemplo] y recomendación de análisis de suelo\nPrecauciones: [guantes, lavado de manos, no aplicar sobre la parte comestible]\nRegistro o consulta a COFEPRIS: [ ]\nContacto: [ ]"
+          ],
+          "clave": [
+            "Tu marca promete regularidad y origen, no milagros ni certificaciones que no tienes.",
+            "Empaca solo producto maduro y con la humedad en rango.",
+            "Cada frase de la ficha debe tener respaldo en un informe, una bitácora o una norma."
+          ]
+        },
+        {
+          "t": "Canales de venta: viveros, ferreterías, huertos, agricultores y paisajismo",
+          "obj": "Comparar canales por margen por kilo, forma de pago, volumen y temporada, y armar una mezcla de canales que tu planta pueda sostener.",
+          "texto": [
+            "Cada canal paga distinto, en tiempos distintos y pide cosas distintas. Los <b>viveros</b> compran con regularidad y revenden; quieren calidad pareja, bultos que no se rompan y, a veces, ficha técnica. Las <b>ferreterías</b> y tiendas de jardinería venden bolsas chicas con buen precio por kilo, pero rotan lento, piden exhibidor y a veces trabajan a consignación o con crédito de 30 días: tu dinero se queda en su anaquel. Los <b>huertos</b> urbanos, escolares y comunitarios compran poco, pero recomiendan mucho; un taller corto sobre cómo aplicar el abono abre la puerta. Los <b>agricultores</b> compran a granel por tonelada, en temporada de siembra, comparan contra otros abonos y suelen pedir análisis. El <b>paisajismo</b> pide volúmenes grandes en fechas concretas y valora mezclas listas.",
+            "Para comparar, calcula el <b>margen</b> por kilo de cada canal: lo que te pagan menos tus costos variables (material, empaque, flete, comisión), dividido entre los kilos que entregas. Si un vivero vende tu bulto a $150 y quiere quedarse con 35 % del precio de venta, a ti te paga $150 × (1 − 0.35) = $97.50. En Excel, con lo que te pagan en B2, los variables en B3 y los kilos en B4, el margen por kilo es =(B2-B3)/B4. Si el canal paga a 30 días o a consignación, anota también cuánto dinero tendrás detenido.",
+            "Después mira lo que el número no dice. La temporada: los agricultores compran antes de sembrar y desaparecen el resto del año; los viveros tienen meses fuertes y flojos: pregúntales cuáles son. El flete: el granel deja poco por kilo y un viaje lejano se come el margen. El riesgo: un cliente que paga tarde o devuelve producto. Y el trabajo: atender a diez huertos cuesta más horas que entregar una tonelada a un agricultor.",
+            "Con eso arma una mezcla: un canal ancla que se lleve volumen con regularidad, uno de buen margen que mejore el promedio y uno de temporada que vacíe inventario sin malbaratar. No dependas de un solo comprador ni vendas abajo de tu costo por kilo solo para mover producto. Cuando recomiendes el uso, recuerda el módulo 4: dosis de ejemplo, análisis de suelo y nada de promesas de cosecha. Todas las cifras de esta lección son ejemplos."
+          ],
+          "comparar": [
+            "«Así no: La ferretería paga mejor por kilo, así que le dejo toda mi producción a consignación.»",
+            "«Así sí: Calculo el margen por kilo de cada canal, reviso cuándo me pagan y en qué temporada compran, y reparto mi producción para no depender de uno solo.»"
+          ],
+          "caso": "Caso ficticio: Julián, de 57 años, produce unas 5 toneladas de composta al mes en un terreno familiar cerca de Morelia. Sus costos variables son de $0.40 por kilo en material café y agua, más el empaque. Tiene tres ofertas (ejemplo): una ferretería le pagaría $48 por bolsa de 10 kg, a consignación con pago a 30 días (empaque $9); un vivero le compraría 80 bultos de 25 kg al mes a $100, pago contra entrega (empaque $12), y un agricultor de hortalizas quiere 3 toneladas a granel en marzo a $1,900 la tonelada, con un flete de $900 a cargo de Julián.",
+          "p": [
+            [
+              "¿Cuál es el margen por kilo de cada oferta?",
+              "Ferretería $3.50, vivero $3.12 y agricultor $1.20 por kilo",
+              "Ferretería $4.80, vivero $4.00 y agricultor $1.90 por kilo",
+              "Ferretería $3.90, vivero $3.52 y agricultor $1.60 por kilo",
+              "Ferretería: ($48 − $9 − $4) ÷ 10 = $3.50. Vivero: ($100 − $12 − $10) ÷ 25 = $3.12. Agricultor: ($5,700 − $900 − $1,200) ÷ 3,000 = $1.20. La segunda opción toma el precio sin restar nada, y la tercera resta empaque y flete pero olvida los $0.40 por kilo de material café y agua."
+            ],
+            [
+              "¿Qué mezcla de canales le conviene a Julián con sus 5 toneladas al mes?",
+              "El vivero como ancla (2 t), una prueba chica en la ferretería, el agricultor en marzo y buscar más compradores",
+              "Toda la producción a la ferretería, porque es el canal que más le deja por cada kilo que entrega",
+              "Toda al agricultor, porque una sola entrega a granel le ahorra empaque, visitas y trabajo de venta",
+              "80 bultos de 25 kg son 2,000 kg con pago contra entrega: un ancla regular. La ferretería deja más por kilo, pero 5 t serían 500 bolsas a consignación: dinero detenido y riesgo de devolución si rotan lento. El agricultor compra una vez al año, deja el menor margen y no absorbe la producción de los otros meses. Aun con los tres, le sobra producto casi todo el año: antes de crecer necesita más compradores."
+            ],
+            [
+              "La ferretería le pide además que sus bolsas digan «abono para todo tipo de plantas». ¿Qué hace Julián?",
+              "Ofrece una etiqueta con modo de uso, dosis de ejemplo y precauciones, sin esa promesa",
+              "Acepta, porque la ferretería es quien vende y quien responde ante sus clientes por las bolsas",
+              "Acepta solo si la ferretería le paga $5 más por bolsa para cubrir el riesgo de posibles reclamos",
+              "La etiqueta es de Julián y la responsabilidad también: si una planta sensible a la sal sufre, el reclamo llega a su marca. «Para todo tipo de plantas» no tiene respaldo, y cobrar más no lo vuelve cierto. Un modo de uso claro, con dosis de ejemplo y la recomendación de análisis, ayuda más al vendedor de mostrador."
+            ]
+          ],
+          "completar": [
+            "Para comparar canales, calcula el ___ por kilo: lo que te pagan menos tus variables, entre los kilos que entregas.",
+            "margen"
+          ],
+          "refl": "Compara tus canales (20 min). 1) Elige tres canales posibles en tu zona y escribe para cada uno: presentación, lo que te pagarían, costos variables (material, empaque, flete, comisión), kilos por entrega, forma y plazo de pago y temporada. 2) Calcula el margen por kilo con =(B2-B3)/B4. 3) Anota lo que el número no dice: trabajo, riesgo y temporada. 4) Reparte tu producción mensual entre canal ancla, canal de margen y canal de temporada, y escribe qué harías si el ancla se cae.",
+          "modelo": "Modelo: «Produzco 3 t al mes (ejemplo). Ancla: dos viveros, 60 bultos de 25 kg a $105; variables $24 por bulto; margen de $3.24 por kilo; pago contra entrega: 1.5 t. Margen: una tienda de jardinería, 100 bolsas de 5 kg a $35; variables $8; margen de $5.40 por kilo; a 30 días, unos $3,500 detenidos: 0.5 t. Temporada: un paisajista en primavera, a $2,200 la tonelada con flete incluido: 1 t. Si un vivero se cae, ofrezco precio por volumen al paisajista y a huertos escolares.» Es buena porque compara el margen por kilo, cuenta el dinero detenido y no depende de un solo comprador.",
+          "plantilla": [
+            "Comparador de canales",
+            "Canal | Presentación | Lo que me pagan (B2) | Variables por entrega (B3) | Kilos (B4) | Margen por kilo =(B2-B3)/B4 | Plazo de pago | Temporada\n[ ] | [ ] | $[ ] | $[ ] | [ ] | $[ ] | [ ] | [ ]\n[ ] | [ ] | $[ ] | $[ ] | [ ] | $[ ] | [ ] | [ ]\n[ ] | [ ] | $[ ] | $[ ] | [ ] | $[ ] | [ ] | [ ]\nReparto mensual: ancla [ ] t | margen [ ] t | temporada [ ] t\nDinero detenido por crédito o consignación: $[ ]\nSi el ancla se cae: [ ]"
+          ],
+          "clave": [
+            "Compara canales por margen por kilo, plazo de pago, temporada y trabajo, no solo por precio.",
+            "Arma una mezcla: un ancla de volumen, uno de margen y uno de temporada.",
+            "Ningún canal justifica una promesa en la etiqueta ni vender abajo de tu costo."
+          ]
+        },
+        {
+          "t": "Cierre del ciclo: propuesta a restaurantes, hoteles y comedores",
+          "obj": "Redactar una propuesta de servicio de cierre del ciclo con diagnóstico, precio, reporte de kilos desviados del relleno y un contrato sencillo.",
+          "texto": [
+            "Para un restaurante, un hotel o un comedor, tu servicio resuelve tres cosas: se lleva sus orgánicos en regla, le da un dato confiable para sus registros y, si quiere, le regresa composta para sus jardines. A eso le llamamos <b>cierre del ciclo</b>. La propuesta se arma en cinco partes: 1) diagnóstico, con lo que pesaste o te dijeron y una muestra separada a mano; 2) el servicio: contenedores, frecuencia, horario y una capacitación corta al personal; 3) el reporte que recibirá; 4) el precio, y 5) los siguientes pasos, empezando por un piloto de cuatro a ocho semanas.",
+            "Haz la cuenta con su volumen. Si una cocina genera 180 kg por día durante 6 días, son 1,080 kg por semana y unas 56 toneladas al año (=B2*C2*52/1000): solo con sus orgánicos ya pasa de las 10 toneladas con que la Ley General para la Prevención y Gestión Integral de los Residuos define al <b>gran generador</b>. Eso le da peso a tu propuesta, pero no digas que la ley lo obliga a contratarte: lo que se le exige depende de su estado, y conviene que lo verifique con la secretaría de medio ambiente. Puedes cobrar por kilo, por contenedor o con una cuota mensual con tope de kilos; las cuotas de este módulo son ejemplos.",
+            "El reporte mensual vende tanto como el precio. Incluye los kilos recolectados por fecha, pesados en báscula; el porcentaje de contaminantes encontrados, con fotos; el destino (tu planta y su dirección), y los <b>kilos</b> desviados del relleno sanitario, es decir, los que no terminaron enterrados. Si el cliente te pide toneladas de CO2 evitadas, no las inventes: tú entregas los kilos con su método de medición, y un cálculo de emisiones lo hace un especialista con una metodología reconocida a partir de tus datos.",
+            "El contrato puede ser de dos páginas, pero debe decir: qué residuos <b>sí</b> recibes (restos de preparación, sobras de plato, servilletas de papel, café molido) y cuáles <b>no</b> (plástico, unicel, vidrio, aceite usado, latas, y carne o huesos si tu sistema no los controla); frecuencia y horario; quién pone y quién lava los contenedores; precio, forma de pago y ajuste anual; qué pasa con una carga contaminada (aviso con foto la primera vez, cargo extra o rechazo si se repite); vigencia, cómo terminarlo y quién responde de cada lado."
+          ],
+          "comparar": [
+            "«Así no: Le digo al hotel que por ley tiene que contratarme y que cada mes le doy un certificado de toneladas de CO2 evitadas.»",
+            "«Así sí: Le propongo un piloto de seis semanas, con un contrato de dos páginas y un reporte mensual de kilos pesados, contaminantes con fotos y kilos desviados del relleno.»"
+          ],
+          "caso": "Caso ficticio: Irma, de 50 años, tiene con su hijo un servicio de recolección y una planta de composta en el área metropolitana de Monterrey. El comedor de una fábrica que da de comer a 900 personas genera 180 kg de orgánicos por día, 6 días a la semana. El gerente de sustentabilidad quiere tres cosas: que Irma también se lleve las charolas de unicel y los vasos, «porque es más fácil tirar todo junto»; un reporte mensual con «toneladas de CO2 evitadas» para el informe anual de la empresa, y un precio menor al del recolector actual. Irma cobra de ejemplo $0.75 por kilo.",
+          "p": [
+            [
+              "¿Cuánto genera el comedor al año y qué le dice Irma sobre ser gran generador?",
+              "Unas 56 t de orgánicos al año: ya es gran generador; lo que se le exige lo verifica con su estado",
+              "Unas 4.7 t al año: es pequeño generador, así que no tiene obligaciones en materia de residuos",
+              "Unas 56 t al año: por eso la ley lo obliga a contratar un servicio de composta como el de ella",
+              "180 × 6 × 52 ÷ 1,000 = 56.16 t al año, más que las 10 t del gran generador solo con orgánicos. Las 4.7 t son lo que genera en un mes, no en un año. Y la ley no obliga a contratar composta en particular: lo que exige cada estado se verifica con su secretaría de medio ambiente."
+            ],
+            [
+              "¿Qué responde Irma sobre el reporte de CO2?",
+              "Que entrega kilos pesados y kilos desviados con su método, y que el cálculo de emisiones lo haga un especialista",
+              "Que pondrá una cifra aproximada de CO2 evitado con una regla general, porque nadie la va a revisar en la empresa",
+              "Que su reporte de kilos no sirve para un informe de empresa y que mejor no incluyan ningún dato de su servicio",
+              "Inventar una cifra de CO2 pone en riesgo el informe del cliente y la credibilidad de Irma. Sus kilos pesados, con fecha y método, son un dato sólido y útil; si la empresa necesita emisiones, un especialista las calcula con una metodología reconocida a partir de esos kilos."
+            ],
+            [
+              "¿Qué debe decir el contrato sobre el unicel y los vasos?",
+              "Que no se reciben, con aviso y foto la primera vez y cargo extra o rechazo si se repite",
+              "Que se reciben mientras vengan en una bolsa aparte dentro del mismo contenedor de orgánicos",
+              "Que se reciben sin cargo durante el piloto, para no perder al cliente desde el primer mes",
+              "El unicel y los vasos no se compostan: acaban en la criba como rechazo o, peor, en el producto, y le quitan calidad. Aceptarlos en bolsa aparte revuelve la separación que costó enseñar, y tolerarlos en el piloto enseña justo el hábito equivocado. La cláusula clara protege a los dos."
+            ]
+          ],
+          "completar": [
+            "El reporte de cierre del ciclo informa los ___ desviados del relleno sanitario, pesados en báscula.",
+            "kilos"
+          ],
+          "relacionar": [
+            [
+              "Plástico, unicel y vidrio",
+              "Residuos que no se reciben"
+            ],
+            [
+              "Aviso con foto y luego cargo extra",
+              "Carga contaminada"
+            ],
+            [
+              "Kilos pesados por fecha",
+              "Reporte mensual"
+            ],
+            [
+              "10 toneladas o más al año",
+              "Gran generador"
+            ],
+            [
+              "Cuatro a ocho semanas",
+              "Piloto"
+            ]
+          ],
+          "refl": "Escribe tu propuesta de cierre del ciclo (20 min). 1) Elige un restaurante, hotel o comedor real de tu zona y estima o pesa sus orgánicos por día y por semana; calcula sus toneladas al año. 2) Escribe la propuesta en cinco partes: diagnóstico, servicio, reporte, precio de ejemplo y piloto. 3) Redacta las cláusulas del contrato: residuos sí y no, frecuencia, contenedores, precio y pago, contaminantes, vigencia y responsables. 4) Diseña el reporte mensual: columnas, fotos y cómo pesas.",
+          "modelo": "Modelo: «Propuesta para un hotel de 80 habitaciones. Diagnóstico: en una semana pesamos 95 kg diarios de cocina y 40 kg de jardín, todos los días (ejemplo): unas 49 t al año. Servicio: cuatro contenedores con tapa que pongo y lavo, recolección lunes, miércoles y viernes a las 7:00, y capacitación de 20 minutos por turno. Reporte: kilos por fecha, contaminantes con foto y kilos desviados del relleno. Precio de ejemplo: $3,600 al mes hasta 4,200 kg; cada kilo adicional, $0.80. Piloto de seis semanas.» Es buena porque parte de datos pesados, deja claros el servicio y el reporte, no inventa cifras de CO2 y propone un piloto.",
+          "plantilla": [
+            "Propuesta y contrato de cierre del ciclo",
+            "Cliente: [ ]   Responsable: [ ]\n1. Diagnóstico: [ ] kg por día × [ ] días = [ ] kg por semana; [ ] t al año; muestra: [ ] % de contaminantes\n2. Servicio: contenedores [cuántos, quién los pone y los lava] | frecuencia y horario [ ] | capacitación [ ]\n3. Reporte mensual: kilos por fecha, contaminantes con foto, destino y kilos desviados del relleno\n4. Precio (ejemplo): $[ ] por [kilo / contenedor / mes con tope de ___ kg]; forma de pago [ ]; ajuste anual [ ]\n5. Piloto: [ ] semanas, del [ ] al [ ]\nContrato: residuos que sí [ ] | que no [ ] | carga contaminada: [aviso con foto, luego cargo o rechazo] | vigencia y terminación [ ] | firmas"
+          ],
+          "clave": [
+            "Tu propuesta vende un servicio completo: recolección en regla, reporte confiable y, si lo quieren, composta de regreso.",
+            "Reporta kilos pesados y desviados del relleno; no inventes cifras de CO2.",
+            "Un contrato sencillo dice qué sí y qué no recibes y qué pasa con los contaminantes."
+          ]
+        },
+        {
+          "t": "Tu plan de negocio y tus primeros 90 días",
+          "obj": "Escribir el plan de negocio de tu planta en una sola pieza y un plan de 90 días con metas, indicadores y criterios para seguir, ajustar o detenerte.",
+          "texto": [
+            "Un plan de negocio de composta no necesita cincuenta páginas; necesita que cada parte se apoye en datos. Su estructura: 1) resumen en cinco líneas; 2) producto y clientes; 3) operación: receta con C/N y humedad, capacidad, higienización y, si aplica, lombricultura; 4) calidad: pruebas caseras, análisis y etiqueta honesta; 5) insumos, logística, permisos y seguridad; 6) números: inversión, costo por kilo, precio y punto de equilibrio con las dos fuentes de ingreso; 7) canales y propuesta de cierre del ciclo; 8) riesgos y qué harás si ocurren, y 9) plan de 90 días. Es justo lo que armarás en tu proyecto final.",
+            "Los primeros 90 días tienen una trampa: tu primera composta quizá no esté lista para vender en ese plazo, porque entre pila, higienización y maduración pueden pasar varios meses. Por eso esos días se usan para validar lo que más riesgo tiene. Semanas 1 a 4: consultas de uso de suelo y permisos por escrito, un piloto con un solo generador y la primera pila con bitácora. Semanas 5 a 8: ajustes de receta y de separación en origen, temperatura y volteos para higienizar, y primeras pláticas con viveros y huertos con muestras de práctica. Semanas 9 a 12: prueba de germinación, primer análisis cuando el lote madure, contrato de recolección firmado y lista de compradores con cantidades y precios.",
+            "Elige pocos <b>indicadores</b> y revísalos cada semana: kilos recibidos, porcentaje de contaminantes, días a 55 °C o más por pila, kilos cribados, cuotas cobradas, saldo de efectivo y quejas de vecinos. Ponles meta; por ejemplo, contaminantes debajo de 3 % en la semana 8. Una hoja de Excel con una fila por semana y una columna por indicador basta, y con formato condicional puedes pintar de rojo lo que no llega a la meta.",
+            "Escribe desde hoy tus criterios de decisión, antes de que la ilusión decida por ti. Ejemplo: sigo si en la semana 12 tengo un contrato de recolección firmado, una pila que cumplió la higienización y al menos tres compradores con cantidad y precio por escrito; ajusto si falta uno; me detengo y replanteo si no consigo el uso de suelo o si los contaminantes no bajan. Y no dejes tu ingreso actual hasta que tus números de varios meses lo justifiquen: este diplomado no promete ingresos, te da la forma de medirlos."
+          ],
+          "comparar": [
+            "«Así no: Renuncio el mes que entra; en el segundo mes vendo 400 bultos y con eso ya me pago.»",
+            "«Así sí: Mis primeros 90 días son de permisos, piloto y primera pila con bitácora; sigo en mi trabajo hasta tener contrato, lote higienizado y compradores por escrito.»"
+          ],
+          "caso": "Caso ficticio: Natalia, de 35 años, es técnica de laboratorio en Hermosillo y quiere montar una planta de composta con los residuos de tres restaurantes de su colonia. Su borrador de plan dice que en el mes 2 venderá 400 bultos, que renunciará a su trabajo el día 30 y que los permisos los verá «cuando ya esté vendiendo». No tiene indicadores ni criterios para decidir. Tiene ahorro para cubrir cinco meses de sus gastos personales.",
+          "p": [
+            [
+              "¿Cuál es el problema principal del borrador de Natalia?",
+              "Supone ventas de producto en el mes 2, cuando su primera composta difícilmente estará lista",
+              "Que 400 bultos es una meta muy baja y debería apuntar a vender más desde el primer mes de operación",
+              "Que no incluye logotipo ni página de internet, que son lo primero que debe tener cualquier plan",
+              "Entre pila, higienización y maduración pasan varios meses: en el mes 2 no tendrá producto maduro, y menos 400 bultos sin compradores. Subir la meta agrava el error, y el logotipo puede esperar: primero van permisos, piloto y bitácora."
+            ],
+            [
+              "¿Qué es lo primero que debería mover de lugar en su plan?",
+              "Los permisos: la consulta de uso de suelo va en las primeras semanas, antes de rentar o construir",
+              "La renuncia: debe adelantarla para dedicarle tiempo completo a vender desde la primera semana",
+              "Los indicadores: puede definirlos al final del año, cuando ya tenga datos suficientes para comparar",
+              "Si el terreno no tiene el uso de suelo correcto, todo lo demás se cae; por eso va primero y por escrito. Adelantar la renuncia aumenta el riesgo justo cuando no hay ingresos de producto, y los indicadores sirven para decidir mientras avanza, no un año después."
+            ],
+            [
+              "¿Qué criterio de decisión le conviene escribir para la semana 12?",
+              "Seguir si tiene contrato de recolección, una pila higienizada y tres compradores por escrito",
+              "Seguir si sus amigos y familiares le dicen que la idea les gusta y que comprarían algunos bultos",
+              "Seguir pase lo que pase, porque cambiar de plan a las 12 semanas es señal de poca constancia",
+              "Un criterio con hechos verificables (contrato, bitácora que cumple la higienización, compromisos de compra) le permite decidir con evidencia. Las opiniones de conocidos no son compras, y seguir pase lo que pase convierte la constancia en terquedad."
+            ]
+          ],
+          "completar": [
+            "Elige pocos ___ y revísalos cada semana: kilos recibidos, contaminantes, días a 55 °C o más y saldo de efectivo.",
+            "indicadores"
+          ],
+          "refl": "Escribe tu plan de 90 días (20 min). 1) Escribe el resumen de tu negocio en cinco líneas. 2) Divide los 90 días en tres bloques de cuatro semanas y anota en cada uno tres acciones con fecha: permisos, piloto, pila, pruebas, contratos y compradores. 3) Elige cinco indicadores semanales con su meta. 4) Escribe tus criterios para seguir, ajustar o detenerte en la semana 12, y la condición con números para dejar o no tu ingreso actual.",
+          "modelo": "Modelo: «Resumen: composta de restos de dos comedores y poda municipal, en bultos de 25 kg para viveros de mi ciudad, más cuota de recolección. Semanas 1-4: uso de suelo por escrito, piloto con un comedor y pila 1 con bitácora. Semanas 5-8: bajar los contaminantes a menos de 3 %, higienizar la pila 1 (15 días a 55 °C o más, 5 volteos) y visitar cuatro viveros. Semanas 9-12: germinación, contrato del comedor y análisis cuando madure. Sigo si en la semana 12 tengo contrato y tres compradores por escrito; conservo mi trabajo hasta cubrir mis fijos tres meses seguidos.» Es buena porque es realista con los tiempos y decide con criterios.",
+          "plantilla": [
+            "Plan de 90 días",
+            "Resumen en cinco líneas: [ ]\nSemanas 1-4: [acción, fecha] / [ ] / [ ]\nSemanas 5-8: [ ] / [ ] / [ ]\nSemanas 9-12: [ ] / [ ] / [ ]\nIndicadores semanales y meta: kilos recibidos [ ] | contaminantes [ ] % | días a 55 °C o más [ ] | cuotas cobradas $[ ] | saldo $[ ]\nSemana 12: sigo si [ ]; ajusto si [ ]; me detengo y replanteo si [ ]\nDejo mi ingreso actual solo cuando: [condición con números]"
+          ],
+          "clave": [
+            "Tus primeros 90 días validan permisos, insumos y proceso; las ventas de producto llegan cuando el lote madura.",
+            "Pocos indicadores semanales con meta valen más que un plan largo.",
+            "Escribe hoy tus criterios para seguir, ajustar o detenerte."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma tu kit comercial. 1) Marca y ficha: nombre, dos presentaciones y ficha técnica honesta con los datos que tienes y los pendientes marcados. 2) Canales: comparador de tres canales en Excel con margen por kilo, plazo de pago y temporada, y tu reparto mensual. 3) Cierre del ciclo: propuesta en cinco partes para un generador real de tu zona, con contrato sencillo y formato de reporte mensual. 4) Mensaje: un texto de 60 palabras para pedirle una cita a ese generador, sin presión ni promesas.",
+        "entregable": "Una ficha técnica, un comparador de canales en Excel, una propuesta con contrato y formato de reporte, y un mensaje listo para enviar.",
+        "criterios": "Revisa: la ficha no usa «orgánico» ni promesas de cosecha, cada dato tiene fuente o está marcado como pendiente, el margen por kilo resta material, empaque y flete, el contrato dice qué residuos sí y no y qué pasa con los contaminantes, el reporte da kilos pesados sin cifras de CO2 inventadas y todos los precios están marcados como ejemplo."
+      },
+      "lab": {
+        "t": "Plan de negocio de tu planta de composta",
+        "obj": "Integrar en un solo documento todo lo que construiste en el diplomado: producto, clientes, receta, lombricultura y abonos seguros, calidad, insumos y permisos, números, canales y plan de 90 días.",
+        "esc": "Este laboratorio es tu proyecto final: escribe el plan de negocio de tu propia planta, de preferencia sobre un proyecto real (tu terreno, tu huerto, tu cooperativa, la cocina donde trabajas) o sobre uno que conozcas bien. Si todavía no lo tienes, sigue el ejemplo de <b>Alma,</b> de 38 años, que en un terreno familiar a las afueras de Oaxaca quiere compostar los restos de tres restaurantes y la poda de un vivero vecino para vender composta en bultos y humus en bolsa. Todos los montos y datos de su ejemplo son ficticios.",
+        "e": [
+          [
+            "Parte 1 (módulos 1 y 2): Alma venderá composta en bultos de 25 kg a viveros y humus en bolsas de 5 kg a huertos urbanos. Su receta de prueba: 600 kg frescos de restos de comida (80 % de humedad; 45 % de carbono y 3 % de nitrógeno en base seca) y 250 kg de hojas secas (10 % de humedad; 50 % de carbono y 0.9 % de nitrógeno).",
+            "Consigna: escribe tu Parte 1 con tu producto, tus tres segmentos de clientes y quién te pagaría recolección, y tu receta en Excel: kilos secos de cada material, C/N de la mezcla con =SUMAPRODUCTO(B2:B3,C2:C3)/SUMAPRODUCTO(B2:B3,D2:D3), humedad de la mezcla y cómo la corregirías si sale fuera de 50 a 60 %."
+          ],
+          [
+            "Parte 2 (módulos 3 y 4): Alma tendrá dos camas de lombriz de 1 × 4 m bajo techo, alimentadas con material precomposteado de 15 a 20 días. El vivero vecino le ofrece estiércol fresco de caballo y una clienta le pide té de composta con melaza para rociar sus lechugas.",
+            "Consigna: escribe tu Parte 2 con el diseño de tu sistema de lombricultura (área, kilos de pie de cría a 5 kg por m², alimento y bitácora) o de tu otro abono, y tu protocolo de seguridad: qué estiércoles aceptas y cómo los higienizas, qué heces nunca, cómo preparas y recomiendas los tés y qué equipo de protección usa tu equipo."
+          ],
+          [
+            "Parte 3 (módulos 5 y 6): Su primera pila cumplió 16 días a 55 °C o más con 5 volteos. Los tres restaurantes le darían 30, 45 y 60 kg por día, 6 días a la semana; del uso de suelo de su terreno solo le dijeron de palabra que es agrícola.",
+            "Consigna: escribe tu Parte 3 con tu plan de calidad (prueba de germinación, qué norma aplicas, qué analiza el laboratorio, ficha y etiqueta sin «orgánico» ni promesas) y tu plan de insumos y permisos: tabla de fuentes con =B2*C2 y =D2*52/1000, quién es gran generador con =SI() y tu lista de consultas por escrito."
+          ],
+          [
+            "Parte 4 (módulos 7 y 8): Sus fijos serán de $16,000 al mes, con la ruta incluida; los restaurantes pagarían $4,500 al mes de cuota en total. Cobrará $115 por bulto sin IVA, con $35 de costo variable.",
+            "Consigna: escribe tu Parte 4 con inversión y colchón, costo por kilo y por bulto, precio, bultos de equilibrio con =REDONDEAR.MAS((B5-B6)/(B8-B9),0) (sin B7, porque su ruta ya va en los fijos), tus canales con margen por kilo, tu propuesta de cierre del ciclo y tu plan de 90 días con indicadores y criterios de decisión."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuál es la C/N y la humedad de la mezcla de Alma?",
+            "C/N de 29.6 y humedad de 59.4 %, dentro de lo preferido",
+            "C/N de 35.3, el promedio de 15 y 55.6, y humedad de 59.4 %",
+            "C/N de 29.6 y humedad de 45 %, el promedio de 80 % y 10 %",
+            "Restos: 120 kg secos con 54 kg de carbono y 3.6 de nitrógeno; hojas: 225 kg secos con 112.5 de carbono y 2.025 de nitrógeno. C/N = 166.5 ÷ 5.625 = 29.6, dentro de 25-30. Agua: 480 + 25 = 505 kg de 850, o sea 59.4 %, dentro de 50-60 %. Ni las C/N ni las humedades se promedian: se suman masas."
+          ],
+          [
+            "¿Cuáles de sus tres restaurantes son grandes generadores solo por sus orgánicos?",
+            "Los de 45 y 60 kg por día; el de 30 kg suma 9.36 t y falta contar sus otros residuos",
+            "Ninguno, porque cada uno genera menos de una tonelada de orgánicos a la semana",
+            "Solo el de 60 kg por día, porque la ley pide 15 toneladas o más de residuos al año",
+            "45 × 6 × 52 ÷ 1,000 = 14.04 t y 60 × 6 × 52 ÷ 1,000 = 18.72 t: ambos pasan de 10 t. El de 30 kg suma 9.36 t de orgánicos; como la ley cuenta todos sus residuos, puede serlo también. El umbral es de 10 t al año, no de 15, y la ley no mide por semana."
+          ],
+          [
+            "Revisando sus cuatro partes, ¿qué debe corregir Alma antes de presentar su plan?",
+            "Confirmar por escrito el uso de suelo y no recomendar té con melaza sobre lechugas próximas a cosecha",
+            "Cambiar la receta, porque una C/N cercana a 30 hará que la pila se caliente demasiado rápido",
+            "Quitar la cuota de recolección del equilibrio, porque solo cuenta la venta de producto",
+            "Una respuesta de palabra no protege su inversión, y los aditivos como la melaza favorecieron E. coli y Salmonella en tés de composta: no van sobre la parte comestible próxima a cosecha. Su C/N está en el rango preferido, y la cuota sí cuenta: con ella, el equilibrio es ($16,000 − $4,500) ÷ $80 = 143.75, o sea 144 bultos."
+          ]
+        ],
+        "pl": [
+          "Índice del proyecto: Plan de negocio de tu planta de composta",
+          "Portada: [nombre de la planta] | [tu nombre] | [fecha]\nResumen en cinco líneas: [qué produces, para quién, con qué residuos, cuánto cuesta y qué sigue]\nParte 1. Producto, clientes y receta (módulos 1 y 2)\n  1.1 Productos y presentaciones\n  1.2 Clientes que compran y clientes que pagan recolección\n  1.3 Receta en Excel: C/N con SUMAPRODUCTO y humedad de la mezcla\n  1.4 Plan de temperatura, volteos e higienización\nParte 2. Lombricultura, otros abonos y seguridad (módulos 3 y 4)\n  2.1 Sistema de lombricultura u otro abono\n  2.2 Protocolo de estiércoles y tés\n  2.3 Equipo de protección y emergencias (911)\nParte 3. Calidad, insumos y permisos (módulos 5 y 6)\n  3.1 Pruebas caseras, norma aplicable y análisis\n  3.2 Ficha y etiqueta honestas\n  3.3 Fuentes, ruta y gran generador en Excel\n  3.4 Consultas y permisos por escrito\n  3.5 Vecinos, lixiviados y fauna\nParte 4. Números, venta y 90 días (módulos 7 y 8)\n  4.1 Inversión y colchón\n  4.2 Costo por kilo y por bulto\n  4.3 Precio y punto de equilibrio con venta y recolección\n  4.4 Canales y propuesta de cierre del ciclo\n  4.5 Plan de 90 días, indicadores y criterios de decisión\nAnexos: [bitácoras, hojas de Excel, informes, acuerdos por escrito]\nMi siguiente decisión y su fecha: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Mezclas 100 kg secos de restos de comida (45 % de carbono y 3 % de nitrógeno) con 50 kg secos de paja (45 % de carbono y 0.56 % de nitrógeno); son valores de ejemplo. ¿Qué C/N tiene la mezcla?",
+          "Unos 20.6: le falta material café para llegar a 25-30",
+          "Unos 47.7: el promedio de las C/N de 15 y 80.4",
+          "Unos 36.8: el promedio de las C/N ponderado por kilos secos",
+          "Unos 15: manda la C/N del material que más pesa en la pila"
+        ],
+        [
+          "Al apretar un puñado de tu pila escurre agua entre los dedos y huele a huevo podrido. ¿Qué haces primero?",
+          "Voltear y agregar material café seco para bajar la humedad y meter aire",
+          "Echar cal y aromatizante para quitar el olor antes de que lleguen las quejas",
+          "Regar más para que baje la temperatura y se disuelva el olor",
+          "Tapar la pila con plástico para que el olor no salga del terreno"
+        ],
+        [
+          "Tu bitácora de pilas volteadas marca 18 días a 55 °C o más, 3 volteos y nunca más de 65 °C. ¿Está higienizada según la NMX-AA-180?",
+          "No: le faltan volteos, porque en pilas volteadas se piden al menos 5",
+          "Sí, porque pasó más de 15 días arriba de 55 °C sin rebasar los 65 °C",
+          "Sí, porque con 3 días seguidos arriba de 55 °C basta en cualquier sistema",
+          "No, porque debía pasar más de 24 horas arriba de 65 °C para lograrlo"
+        ],
+        [
+          "Tienes una cama de 3 m² y quieres arrancar con la densidad orientativa de este diplomado. ¿Cuánta lombriz pones y cómo la alimentas?",
+          "Unos 15 kg, con material precomposteado y midiendo cuánto consumen",
+          "Unos 3 kg, porque se reproducen rápido y no conviene saturar la cama",
+          "Unos 15 kg, y les das cada día la mitad de su peso en restos crudos",
+          "Unos 30 kg, con restos de cocina que incluyan carne y lácteos para darles proteína"
+        ],
+        [
+          "Un cliente con lechugas a dos semanas de cosecha quiere aplicar estiércol fresco de vaca y té de composta con melaza. ¿Qué le recomiendas?",
+          "Ninguno sobre esas lechugas: estiércol compostado e higienizado, y té sin aditivos lejos de la parte comestible",
+          "El té sí, porque al ir diluido en agua sus microbios ya no representan ningún riesgo para quien coma las lechugas",
+          "El estiércol sí, porque el fresco es el abono más completo y natural",
+          "Ambos, si los aplica temprano en la mañana y riega bien después"
+        ],
+        [
+          "Un lote de composta tiene conductividad de 6.5 dS/m, materia orgánica de 45 %, germinación de 88 %, partícula de hasta 10 mm, sin plásticos, y patógenos y metales dentro de los límites. ¿Alcanza el tipo I de la NMX-AA-180?",
+          "No: su conductividad, su materia orgánica y su germinación quedan fuera del tipo I",
+          "Sí, porque cumple partícula, impurezas, patógenos y metales, que son los que deciden el tipo",
+          "Sí, porque en el tipo I la conductividad puede llegar hasta 8 dS/m",
+          "No, y además no cumple la norma, porque la germinación debe pasar de 90 % en cualquier tipo"
+        ],
+        [
+          "Tu humus de lombriz tiene 4.5 % de material no digerido, humedad de 35 %, C/N de 14 y conductividad de 3 dS/m. ¿Qué grado le corresponde según la NMX-FF-109?",
+          "Primera, porque su material no digerido está entre 3.1 y 6 %",
+          "Extra, porque todos los demás parámetros cumplen la norma",
+          "Segunda, porque pasa de 3 % de material no digerido",
+          "Ninguno, porque la humedad del humus debe ser menor de 20 %"
+        ],
+        [
+          "Quieres que tu bolsa diga «humus orgánico certificado» porque viene de restos de cocina. ¿Qué es lo correcto?",
+          "No usarlo sin certificación: describe el origen con datos y consulta a SENASICA y a COFEPRIS",
+          "Usarlo, porque todo humus de lombriz es orgánico por definición",
+          "Usarlo si agregas el distintivo nacional para dar más confianza",
+          "Cambiarlo por «100 % natural, duplica tu cosecha», que no requiere ningún permiso"
+        ],
+        [
+          "Un hotel te da 35 kg de orgánicos todos los días y quiere tu propuesta. ¿Qué debe llevar?",
+          "Sus 12.8 t al año (ya es gran generador), un piloto, contrato con residuos sí y no, y reporte de kilos",
+          "Que la ley lo obliga a contratarte por pasar de 10 t al año, y un reporte con el CO2 que evita",
+          "Que es pequeño generador porque genera menos de 50 kg al día, y un precio por kilo recolectado",
+          "Que recibirás todo lo que tire, incluido el plástico, para que su personal no tenga que separar"
+        ],
+        [
+          "Este mes gastaste $22,400 sin contar empaque; entraron 16,000 kg de mezcla y salieron 6,000 kg cribados. Tus fijos son $20,000, cobras $6,000 de cuota neta de recolección y vendes el bulto a $110 sin IVA con $25 de costo variable. ¿Qué dicen tus números?",
+          "$3.73 por kilo y 165 bultos de equilibrio",
+          "$1.40 por kilo y 165 bultos de equilibrio",
+          "$3.73 por kilo y 236 bultos de equilibrio",
+          "$1.40 por kilo y 128 bultos de equilibrio"
+        ]
+      ]
+    }
+  ]
+}

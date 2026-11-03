@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Calidad, normas y etiquetado",
+   "r": "Aprende a saber cuándo tu composta y tu humus están listos, a compararlos con las normas mexicanas NMX-AA-180 y NMX-FF-109 usando un informe de laboratorio, y a etiquetar y describir tu producto sin decir lo que no puedes respaldar.",
+   "lecciones": [
+    {
+     "t": "Madurez y estabilidad: pruebas caseras y prueba de germinación",
+     "obj": "Distinguir estabilidad de madurez y hacer, paso a paso, tres pruebas caseras (bolsa cerrada, recalentamiento y germinación) para decidir si un lote está listo para venderse o necesita más curado.",
+     "texto": [
+      "Una composta puede verse oscura, suelta y sin restos reconocibles y aun así no estar lista. Es un mito caro: confundir aspecto con <b>madurez</b>. La <b>estabilidad</b> habla de cuánta actividad microbiana queda: una composta inestable sigue consumiendo oxígeno, se recalienta al humedecerla. La madurez habla del efecto en las plantas: una composta inmadura todavía tiene compuestos que frenan la germinación o dañan raíces, como amonio, ácidos orgánicos o exceso de sales. Un lote ya frío aún puede frenar semillas: revisa las dos cosas.",
+      "Hay tres pruebas caseras baratas. La de la <b>bolsa cerrada</b>: humedece un puño de composta, mételo en una bolsa sellada y déjala tres días a la sombra; al abrirla debe oler a tierra, no a amoniaco, huevo podrido o vinagre. La de <b>recalentamiento</b>: humedece una o dos cubetas de composta hasta que pasen la prueba del puño, haz un montón tapado y mide la temperatura del centro tres o cuatro días; si sube claramente sobre la del ambiente, los microbios aún tienen alimento y le falta curado. Y la de <b>germinación</b>, la más útil, porque mide lo que le importa al cliente: si las semillas nacen.",
+      "Prueba de germinación casera, paso a paso. 1) Toma una muestra compuesta de varios puntos de la pila y críbala. 2) Prepara dos vasos o charolas con perforaciones: uno con tu composta mezclada mitad y mitad con sustrato comercial para semilleros, y otro, el testigo, solo con ese sustrato. 3) Siembra en cada uno 20 semillas de una especie rápida y sensible, como berro o rábano. 4) Riega igual y deja ambos en el mismo lugar; a los cinco a siete días cuenta cuántas nacieron y mira las raíces. 5) Calcula la germinación relativa: nacidas en la composta ÷ nacidas en el testigo. Si el testigo germinó mal, la prueba no vale: repítela con semilla nueva.",
+      "Esta prueba es <b>orientativa</b>: te avisa de un problema, pero no es el dato de tu ficha técnica. El índice de germinación formal que piden las normas lo da un laboratorio, que trabaja con un extracto de la composta y combina cuántas semillas germinan y cuánto crecen sus raíces frente a un testigo con agua. Si tu prueba casera sale mal, no vendas ese lote como listo: dale más semanas de curado, revisa sales y humedad, y repite. Si sale bien, úsala como filtro, no como sustituto del análisis."
+     ],
+     "comparar": [
+      "«Así no: Ya no se ven los restos de comida; está lista, la encostalo hoy mismo.»",
+      "«Así sí: Se ve bien, pero antes hago la prueba de la bolsa, la de recalentamiento y una de germinación contra un testigo.»"
+     ],
+     "caso": "Caso ficticio: Elena, de 44 años, tiene un vivero familiar en las afueras de Toluca y hace composta con poda del vivero y restos de fruta y verdura de un mercado cercano. Su pila más reciente lleva nueve semanas: se ve oscura y ya no se distinguen los restos. Un cliente le pide 40 bultos para la próxima semana para preparar semilleros. Elena hace dos pruebas: en la bolsa cerrada nota un ligero olor a amoniaco, y en la de germinación nacen 18 de 20 semillas de rábano en el testigo y 11 de 20 en la mezcla con su composta. El cliente insiste en que la necesita ya.",
+     "p": [
+      [
+       "¿Qué le dice a Elena su prueba de germinación?",
+       "La germinación relativa es de 61 % (11 ÷ 18): hay señal de inmadurez o de sales y no conviene venderla para semilleros todavía",
+       "Que la composta ya está lista, porque 11 de 20 semillas son más de la mitad y eso basta para cualquier uso",
+       "Que la prueba no sirve, porque el testigo no llegó a 20 de 20 semillas y por eso tiene que repetirla con otra especie antes de concluir algo",
+       "11 ÷ 18 = 61 %: la composta frena semillas frente al testigo, y eso coincide con el olor a amoniaco. Comparar contra 20 en lugar de contra el testigo ignora para qué sirve el testigo. Un testigo con 18 de 20 (90 %) germinó bien, así que la prueba sí es válida."
+      ],
+      [
+       "¿Qué le conviene decirle al cliente que pide los 40 bultos?",
+       "Que este lote necesita más curado; le propone una fecha nueva tras repetir la prueba o, si lo tiene, otro lote ya probado",
+       "Que se los entrega con descuento y con la indicación de mezclarlos con mucha tierra para disimular el problema",
+       "Que se los entrega completos junto con el resultado de su prueba casera, presentado como el índice de germinación de laboratorio",
+       "Decir la verdad y ofrecer alternativas protege al cliente y a su reputación. Diluir el problema sin explicarlo traslada el riesgo al cliente. Presentar una prueba casera como dato de laboratorio es engañoso: el índice formal lo da el laboratorio."
+      ],
+      [
+       "¿Qué indica el ligero olor a amoniaco al abrir la bolsa?",
+       "Que la composta todavía es inestable: sigue descomponiéndose y libera nitrógeno como amoniaco",
+       "Que le sobra material café y necesita restos de comida frescos antes de poder venderse",
+       "Que es el olor normal de una composta madura y se quita en cuanto se aplica al suelo",
+       "El amoniaco aparece cuando todavía hay descomposición activa con nitrógeno de sobra: es señal de falta de curado. Agregar restos frescos haría más inestable el lote. Una composta madura huele a tierra, no a amoniaco."
+      ]
+     ],
+     "completar": [
+      "La prueba de germinación casera es ___: te avisa de un problema, pero el índice formal lo da el laboratorio.",
+      "orientativa"
+     ],
+     "refl": "Plan de pruebas de madurez (20 min). 1) Elige un lote real o imaginario y escribe cuántas semanas lleva y cómo se ve. 2) Describe cómo harás la prueba de la bolsa, la de recalentamiento y la de germinación: materiales, semilla, testigo y días. 3) Define qué resultado te haría esperar y cuál te permitiría pasar al análisis de laboratorio. 4) Escribe la frase con la que le explicarías a un cliente que un lote necesita más curado.",
+     "modelo": "Modelo: «Lote 05, ocho semanas, oscuro y suelto. Bolsa cerrada: un puño húmedo, tres días a la sombra; si huele a amoniaco o a podrido, espero dos semanas. Recalentamiento: dos cubetas humedecidas, tapadas, temperatura diaria; si sube varios grados sobre el ambiente, le falta curado. Germinación: 20 semillas de berro en mezcla mitad y mitad y 20 en sustrato testigo; cuento al sexto día. Si la relativa es baja o las raíces se ven cafés, no vendo. Al cliente: “Se ve listo, pero todavía frena semillas; te lo entrego en dos semanas con prueba repetida”.» Es buena porque usa testigo, fija criterios antes de ver resultados y no presenta la prueba casera como dato de laboratorio.",
+     "plantilla": [
+      "Bitácora de pruebas de madurez",
+      "Lote: [ ] Fecha de armado: [ ] Semanas: [ ]\nAspecto y olor: [ ]\nBolsa cerrada (3 días): olor [ ]\nRecalentamiento: ambiente [ ] °C; día 1 [ ] día 2 [ ] día 3 [ ] °C\nGerminación: semilla [ ] | testigo [ ] de 20 | composta [ ] de 20 | relativa [ ] % | raíces [ ]\nDecisión: [más curado / pasar a laboratorio]\nRepetir el: [fecha]"
+     ],
+     "clave": [
+      "Aspecto no es madurez: un lote oscuro y sin restos puede seguir inestable o frenar semillas.",
+      "Bolsa cerrada, recalentamiento y germinación contra un testigo son filtros baratos antes del laboratorio.",
+      "La prueba casera es orientativa; el índice de germinación de tu ficha técnica sale del laboratorio."
+     ]
+    },
+    {
+     "t": "La NMX-AA-180-SCFI-2018: tipos de composta, parámetros e higienización",
+     "obj": "Clasificar un lote de composta en tipo I, II o III con un informe de laboratorio, revisar si su bitácora cumple la higienización y elegir cómo se rotula según su contenido de N, P y K.",
+     "texto": [
+      "La <b>NMX-AA-180-SCFI-2018</b> (DOF 26 de septiembre de 2018; verifica la versión vigente) es la norma mexicana de referencia para la composta. Aplica a quien trata, produce o comercializa composta hecha con residuos sólidos urbanos y de manejo especial, como los de mercados, restaurantes, hoteles o jardinería. Como NMX es, en principio, voluntaria, salvo que una autoridad o un contrato la exijan, pero es el idioma de municipios y compradores serios. Y pone una regla de entrada: no uses residuos peligrosos como materia prima.",
+      "La norma clasifica la composta en tres tipos: el I es el de mayor calidad, luego el II y el III. Parámetros generales: humedad de 25 a 45 %; pH de 6.7 a 8.5; conductividad eléctrica de 0.5 a 12 dS/m (tipo I hasta 4, tipo II hasta 8, tipo III hasta 12); materia orgánica de 20 % o más (tipo I, 50 % o más); nitrógeno total de 1 a 3 %; relación C/N de 15 a 25; partícula de hasta 30 mm (tipo I, hasta 10 mm), e índice de germinación de 80 % o más (tipo I, más de 90 %). También pide medir la estabilidad por consumo de oxígeno y fija límites de metales pesados por tipo; por ejemplo, en el tipo I, plomo hasta 45 mg/kg y cadmio hasta 0.7 mg/kg. El tipo I, además, va sin impurezas como plástico o vidrio. Un lote queda en el tipo que le permite su parámetro más débil.",
+      "En lo sanitario, los límites son coliformes fecales por debajo de 1000 NMP/g (NMP: número más probable), Salmonella ausente en 25 g y no más de 1 huevo de helminto en 4 g. Para llegar ahí la norma exige <b>higienización</b> (Tabla 4): en pilas volteadas, 55 °C o más durante 15 días con al menos 5 volteos; en pilas estáticas aireadas o biorreactor, 55 °C o más durante 3 días consecutivos; y en ningún caso más de 24 horas arriba de 65 °C. Tu bitácora es la prueba del proceso; un análisis solo habla de esa muestra.",
+      "La norma también define el nombre del producto. Si el nitrógeno, el fósforo y el potasio (N, P y K) están cada uno entre 1 y 3 % y su suma no pasa de 7 %, se rotula «Composta – mejorador de suelo orgánico»; fuera de eso, «Fertilizante orgánico». Ojo con el mito: calentar una vez no es higienizar; cuentan días, temperatura y volteos registrados."
+     ],
+     "comparar": [
+      "«Así no: Mi composta es tipo I porque se ve fina y huele a tierra.»",
+      "«Así sí: Según el informe, mi lote es tipo II por su conductividad; así lo pongo en la ficha.»"
+     ],
+     "caso": "Caso ficticio: Raúl, de 57 años, coordina una cooperativa en Chihuahua que composta restos de un mercado y poda de parques. El área de parques del municipio le pide composta tipo I. El informe de su último lote dice: humedad 38 %, pH 7.9, conductividad 6.2 dS/m, materia orgánica 35 %, N 1.6 %, P 1.1 %, K 1.4 %, C/N 18, partícula de hasta 16 mm, índice de germinación 85 %, coliformes fecales 300 NMP/g, Salmonella ausente en 25 g, helmintos debajo del límite y metales dentro del tipo I. Su bitácora: 12 días a 55 °C o más y 4 volteos. Un socio propone poner «tipo I» en la ficha para no perder al cliente.",
+     "p": [
+      [
+       "¿Qué tipo de composta es el lote de Raúl?",
+       "Tipo II: la conductividad, la materia orgánica, la partícula y el índice de germinación lo sacan del tipo I",
+       "Tipo I, porque sus metales pesados y patógenos están dentro de los límites que la norma fija para ese tipo",
+       "Tipo III, porque una conductividad de 6.2 dS/m ya rebasa el límite general que marca la norma para la composta",
+       "6.2 dS/m pasa de 4 (tipo I) pero no de 8 (tipo II); 35 % de materia orgánica no llega a 50 %; 16 mm pasa de 10 mm, y 85 % no supera 90 %. El lote queda donde lo deja su parámetro más débil. El límite general de conductividad es 12 dS/m, así que no es tipo III por eso."
+      ],
+      [
+       "¿Cómo debe rotularse ese lote según su N, P y K?",
+       "«Composta – mejorador de suelo orgánico», porque N, P y K están entre 1 y 3 % y suman 4.1 %",
+       "«Fertilizante orgánico», porque toda composta con más de 1 % de nitrógeno se considera fertilizante",
+       "«Abono orgánico certificado», porque un lote que cumple la norma mexicana ya puede usar esa frase",
+       "1.6 + 1.1 + 1.4 = 4.1 %, y cada uno está entre 1 y 3 %: le corresponde «Composta – mejorador de suelo orgánico». El rótulo de fertilizante es para lo que queda fuera de esos rangos, no para cualquier composta con nitrógeno. Cumplir una NMX no equivale a una certificación orgánica."
+      ],
+      [
+       "¿Qué concluye Raúl de su bitácora de higienización?",
+       "No cumple la Tabla 4: faltaron 3 días a 55 °C o más y un volteo; debe corregir el proceso de los próximos lotes",
+       "Sí cumple, porque el laboratorio no encontró Salmonella y eso demuestra que su proceso de compostaje fue suficiente",
+       "Sí cumple, porque en una pila volteada basta superar 55 °C durante 3 días consecutivos para considerarla higienizada",
+       "En pilas volteadas se piden 15 días a 55 °C o más con al menos 5 volteos: le faltaron 3 días y un volteo. Un análisis negativo dice cómo salió esa muestra, no que el proceso sea confiable. Los 3 días consecutivos son para pilas estáticas aireadas o biorreactor."
+      ]
+     ],
+     "completar": [
+      "En pilas volteadas, la ___ exige 55 °C o más durante 15 días con al menos 5 volteos.",
+      "higienización"
+     ],
+     "relacionar": [
+      [
+       "Conductividad eléctrica",
+       "Mide las sales; tipo I hasta 4 dS/m"
+      ],
+      [
+       "Índice de germinación",
+       "Tipo I, más de 90 %"
+      ],
+      [
+       "Pila volteada",
+       "55 °C o más por 15 días y 5 volteos"
+      ],
+      [
+       "Salmonella",
+       "Ausente en 25 g"
+      ],
+      [
+       "Tamaño de partícula",
+       "Tipo I, hasta 10 mm"
+      ]
+     ],
+     "refl": "Tu lote contra la NMX-AA-180 (20 min). 1) Con un informe real o con los datos del caso de Raúl, haz una tabla con cada parámetro, tu resultado y el límite de los tipos I, II y III. 2) Marca el parámetro más débil y di en qué tipo queda el lote. 3) Revisa tu bitácora (o diseña una) contra la Tabla 4 según tu sistema. 4) Calcula la suma de N, P y K y escribe el rótulo que le corresponde. 5) Anota una acción para subir de tipo el próximo lote.",
+     "modelo": "Modelo: «Lote 03, pila volteada. Humedad 40 % (cumple), pH 7.6, conductividad 3.2 dS/m (tipo I), materia orgánica 46 % (no llega al 50 % del tipo I), partícula 10 mm, índice de germinación 92 %. Queda tipo II por la materia orgánica. Bitácora: 16 días a 55 °C o más, 6 volteos y ningún registro más de 24 h arriba de 65 °C: cumple. N 1.8, P 1.2, K 1.5: suman 4.5 %, rótulo “Composta – mejorador de suelo orgánico”. Acción: más poda en la receta y cribar sin arrastrar tierra del piso, que diluye la materia orgánica.» Es buena porque identifica el parámetro limitante, revisa el proceso y no solo el análisis, y rotula según la regla.",
+     "plantilla": [
+      "Tabla de clasificación NMX-AA-180",
+      "Lote: [ ] Sistema: [pila volteada / estática aireada / biorreactor]\nParámetro | Resultado | Tipo I | Tipo II | Tipo III\nHumedad | [ ] % | 25-45 % (general)\nConductividad | [ ] dS/m | ≤4 | ≤8 | ≤12\nMateria orgánica | [ ] % | ≥50 | ≥20 | ≥20\nPartícula | [ ] mm | ≤10 | ≤30 | ≤30\nÍndice de germinación | [ ] % | >90 | ≥80 | ≥80\nParámetro más débil: [ ] → Tipo [ ]\nHigienización: [ ] días ≥55 °C, [ ] volteos, horas >65 °C [ ] → [cumple / no cumple]\nN + P + K = [ ] % → Rótulo: [ ]"
+     ],
+     "clave": [
+      "La NMX-AA-180 define tres tipos de composta; tu lote queda en el tipo que permite su parámetro más débil.",
+      "La higienización se demuestra con bitácora: 15 días a 55 °C o más y 5 volteos en pila volteada, sin pasar 24 h arriba de 65 °C.",
+      "El rótulo depende de N, P y K: entre 1 y 3 % cada uno y suma de 7 % o menos es «mejorador de suelo orgánico»."
+     ]
+    },
+    {
+     "t": "El humus de lombriz (NMX-FF-109-SCFI-2008) y el análisis de laboratorio: muestrear y leer el informe",
+     "obj": "Tomar una muestra representativa de humus, leer un informe de laboratorio contra la NMX-FF-109 y armar en Excel una tabla que marque con =SI() qué parámetros cumplen y cuáles hay que revisar.",
+     "texto": [
+      "Para el humus, la referencia es la <b>NMX-FF-109-SCFI-2008</b> (DOF 10 de junio de 2008; verifica la versión vigente), también voluntaria en principio salvo que un comprador o una autoridad la pidan. Pide nitrógeno total de 1 a 4 % en base seca, materia orgánica de 20 a 50 %, C/N de 20 o menos, humedad de 20 a 40 %, pH de 5.5 a 8.5, conductividad eléctrica de hasta 4 dS/m, capacidad de intercambio catiónico mayor de 40 cmol/kg y densidad aparente de 0.40 a 0.90 g/mL. En lo sanitario, E. coli de hasta 1000 NMP/g y Salmonella por debajo de 3 NMP en 4 g. Debe ser café oscuro a negro y oler a tierra húmeda, sin materiales adicionados: mezclarle tierra, arena o fertilizante lo saca de la norma. Los grados dependen del material no digerido: Extra de 0 a 3 %, Primera de 3.1 a 6 % y Segunda de 6.1 a 10 %.",
+      "Un análisis vale lo que vale la muestra. Toma submuestras de muchos puntos del lote (por ejemplo, de 10 a 15) y profundidades, no solo de la orilla. Júntalas sobre una lona limpia, mezcla y haz el <b>cuarteo</b>: divide el montón en cuatro, retira dos cuartos opuestos y repite hasta quedarte con la cantidad que pide el laboratorio. Envíala en bolsa nueva, etiquetada con lote y fecha; para patógenos, pregunta si va refrigerada y en cuánto tiempo debe llegar. Prefiere un laboratorio acreditado.",
+      "Revisa tres cosas del informe. La base: la humedad se reporta sobre base húmeda, pero nitrógeno y materia orgánica suelen venir en base seca; no los mezcles. Las unidades: si algo no cuadra, pregunta antes de concluir. Y cada resultado contra su rango. Para eso, arma en Excel una tabla: en A el parámetro, en B tu resultado, en C el mínimo y en D el máximo de la norma (si la norma dice «hasta», pon 0 como mínimo). Escribe Cumple en G1 y Revisar en G2, y en E2: =SI(Y(B2>=C2,B2<=D2),$G$1,$G$2). Cópiala hacia abajo.",
+      "Un Revisar no siempre es un lote perdido. Si la humedad sale alta, oréalo a la sombra y vuelve a medir; si el material no digerido sale alto, criba mejor o déjalo más tiempo en la cama. Lo sanitario no se arregla al final: si E. coli o Salmonella salen fuera, no vendas ese lote, revisa qué alimentaste (estiércol crudo, por ejemplo) y pide orientación. Repite el análisis cuando cambies de receta o de proveedor de residuos."
+     ],
+     "comparar": [
+      "«Así no: Tomé un puño de la orilla de la cama y lo mandé al laboratorio en una bolsa del súper.»",
+      "«Así sí: Junté 12 submuestras de toda la cama, cuarteé y mandé la muestra etiquetada con lote y fecha.»"
+     ],
+     "caso": "Caso ficticio: Ximena, de 31 años, cría lombriz roja en el patio de su casa en Colima y un hotel le pide humus para sus jardines. Recibe su primer informe: humedad 46 %, pH 7.4, conductividad 2.8 dS/m, materia orgánica 38 %, N 1.9 %, C/N 13, capacidad de intercambio catiónico 52 cmol/kg, densidad aparente 0.62 g/mL, E. coli 120 NMP/g, Salmonella menor de 3 NMP en 4 g y 4.2 % de material no digerido. El hotel quiere recibirlo el viernes y le pide una ficha que diga que «cumple la norma».",
+     "p": [
+      [
+       "¿Qué grado tiene el humus de Ximena y qué parámetro queda fuera?",
+       "Grado Primera por su 4.2 % de material no digerido; la humedad de 46 % queda fuera del rango de 20 a 40 %",
+       "Grado Extra, porque todos sus parámetros químicos y sanitarios están dentro de lo que pide la norma para el humus",
+       "Grado Segunda, porque una humedad de 46 % baja el grado del humus aunque su material no digerido sea bajo",
+       "4.2 % cae en Primera (3.1 a 6 %). Todo lo demás está en rango salvo la humedad, que pasa de 40 %. No es Extra porque pasa de 3 % de material no digerido, y la humedad no define el grado: lo define el material no digerido."
+      ],
+      [
+       "¿Qué le conviene hacer antes del viernes?",
+       "Orear el lote a la sombra, volver a medir la humedad y entregar la ficha con el dato nuevo y la fecha de medición",
+       "Agregarle tierra seca de jardín para bajar la humedad y entregarlo como humus que cumple la norma ese mismo viernes",
+       "Entregar la ficha que dice que cumple, porque la humedad es un dato menor que no tiene nada que ver con la calidad",
+       "La humedad alta se corrige oreando y se comprueba midiendo otra vez. Mezclar tierra viola la regla de «sin materiales adicionados». Decir que cumple con un parámetro fuera de rango es una afirmación falsa en la ficha, aunque el resto esté bien."
+      ],
+      [
+       "Con 46 en B2, 20 en C2 y 40 en D2, ¿qué muestra =SI(Y(B2>=C2,B2<=D2),$G$1,$G$2)?",
+       "Revisar, porque 46 es mayor que 20 pero no es menor o igual que 40",
+       "Cumple, porque basta que el resultado pase el mínimo para que Y() dé verdadero",
+       "Un error, porque la función SI no acepta dentro otra función como Y()",
+       "Y() solo da verdadero si se cumplen las dos condiciones; 46 ≤ 40 es falso, así que SI devuelve G2, Revisar. Basta una condición falsa para que Y() sea falso. SI acepta perfectamente una función Y() como prueba lógica."
+      ]
+     ],
+     "completar": [
+      "Para reducir la muestra sin perder representatividad, se hace el ___: dividir en cuatro y retirar dos cuartos opuestos.",
+      "cuarteo"
+     ],
+     "relacionar": [
+      [
+       "Grado Extra",
+       "De 0 a 3 % de material no digerido"
+      ],
+      [
+       "Grado Segunda",
+       "De 6.1 a 10 % de material no digerido"
+      ],
+      [
+       "Cuarteo",
+       "Reducir la muestra sin perder representatividad"
+      ],
+      [
+       "Base seca",
+       "Como suelen reportarse el nitrógeno y la materia orgánica"
+      ],
+      [
+       "Función SI con Y",
+       "Marcar si el resultado cae dentro del rango"
+      ]
+     ],
+     "refl": "Tu semáforo de laboratorio en Excel (20 min). 1) Arma la tabla con parámetro, resultado, mínimo y máximo de la NMX-FF-109 (o de la NMX-AA-180 si haces composta). 2) Escribe Cumple y Revisar en dos celdas y la fórmula =SI(Y(…)) en la columna E. 3) Captura un informe real o los datos de Ximena. 4) Para cada Revisar, escribe qué harías y cuándo vuelves a medir. 5) Describe en cuatro pasos cómo tomarás tu próxima muestra.",
+     "modelo": "Modelo: «Capturé 10 parámetros del lote 07. La columna E marcó Revisar en humedad (44 %, máximo 40). Acción: orear tres días bajo malla sombra y medir con el método de secado del laboratorio. El material no digerido fue 2.6 %: grado Extra. Para el siguiente análisis: 12 submuestras de las tres camas a dos profundidades, mezcla en lona, cuarteo hasta lo que pide el laboratorio y bolsa nueva con lote y fecha; las de patógenos, con guantes y refrigeradas.» Es buena porque usa la fórmula para detectar, propone una corrección medible y no da por bueno un parámetro sin volver a medirlo.",
+     "plantilla": [
+      "Semáforo de cumplimiento en Excel",
+      "G1: Cumple   G2: Revisar\nA: Parámetro | B: Resultado | C: Mínimo | D: Máximo | E: =SI(Y(B2>=C2,B2<=D2),$G$1,$G$2)\nHumedad | [ ] | 20 | 40 |\npH | [ ] | 5.5 | 8.5 |\nConductividad (dS/m) | [ ] | 0 | 4 |\nMateria orgánica (%) | [ ] | 20 | 50 |\nC/N | [ ] | 0 | 20 |\nMaterial no digerido (%) | [ ] → grado [Extra / Primera / Segunda]\nAcciones para cada Revisar: [ ]\nMuestreo: [ ] submuestras, profundidades [ ], fecha [ ]"
+     ],
+     "clave": [
+      "La NMX-FF-109 pide humus sin materiales adicionados; su grado depende del material no digerido.",
+      "Una muestra compuesta y cuarteada vale más que un puño de la orilla.",
+      "Una tabla con =SI(Y()) te muestra en segundos qué parámetro revisar; lo sanitario fuera de rango no se vende."
+     ]
+    },
+    {
+     "t": "Registro, etiqueta y la palabra «orgánico»: lo que puedes y no puedes decir",
+     "obj": "Identificar cuándo consultar a COFEPRIS sobre registro, revisar una etiqueta contra la NOM-182-SSA1-2010 y reescribir afirmaciones de venta para no usar «orgánico certificado» ni prometer resultados sin respaldo.",
+     "texto": [
+      "Antes de vender con marca, revisa tres frentes. El primero es sanitario. El Reglamento en materia de registros de plaguicidas, nutrientes vegetales y sustancias tóxicas, conocido como PLAFEST (DOF 28 de diciembre de 2004, reformado el 24 de abril de 2026), define «nutriente vegetal» de forma que incluye a los mejoradores de suelo, y clasifica fertilizantes orgánicos y mejoradores de suelo orgánicos. Para ellos pide registro, con dictamen de efectividad biológica y límites de metales y patógenos. El texto no nombra la composta ni el humus, así que la regla práctica es esta: una composta que se vende como fertilizante o mejorador de suelo <b>puede requerir registro sanitario: consulta a COFEPRIS</b> antes de vender con marca, y guarda la respuesta por escrito.",
+      "El segundo frente es la etiqueta. La <b>NOM-182-SSA1-2010</b>, de etiquetado de nutrientes vegetales (vigente; verifica), pide nombre del producto, función, composición garantizada, número de registro, lote, fecha, contenido neto, datos del registrante, precauciones y modo de uso. El lote y la fecha no son burocracia: te dejan rastrear un bulto hasta su pila, su bitácora y su análisis si un cliente reclama.",
+      "El tercer frente es la palabra «orgánico». En la Ley de Productos Orgánicos (2006), «orgánico» es un término de rotulación para productos certificados conforme a esa ley; para pequeños productores existe la certificación participativa. Y SENASICA lo resume así: los insumos no se certifican, se <b>evalúan</b>. Un insumo puede aparecer en la Lista Nacional de sustancias permitidas o en la lista de formulaciones evaluadas, un trámite gratuito. Para composta usada en producción orgánica, los lineamientos piden C/N inicial de 25 a 40 y temperaturas de 55 a 77 °C. No choca con la NMX-AA-180: ambas exigen al menos 55 °C, y si sigues la NMX cuidas además no pasar 24 h arriba de 65 °C. Por eso no rotules «orgánico certificado» ni uses el distintivo nacional sin respaldo. Decir «abono de origen orgánico» o usar el rótulo de la NMX nombra el tipo de producto, no una certificación; verifica con SENASICA cómo decirlo.",
+      "Fuera de la etiqueta también cuenta lo que dices: redes, ficha y plática. Puedes decir lo que mediste: «materia orgánica 38 % en base seca, lote 12, análisis del 4 de octubre». No prometas cosechas («duplica tu producción»), curas («elimina plagas») ni sellos que no tienes. El mito «si es composta, puedo llamarla orgánica» confunde el origen de la materia prima con el derecho a rotular. Si dudas de una frase, quita el adjetivo y deja el dato."
+     ],
+     "comparar": [
+      "«Así no: Humus 100 % orgánico certificado. Duplica tu cosecha y acaba con las plagas.»",
+      "«Así sí: Humus de lombriz. Lote 08, análisis disponible. Modo de uso y precauciones al reverso.»"
+     ],
+     "caso": "Caso ficticio: Sergio, de 38 años, vende humus de lombriz en bolsas en un tianguis de Saltillo y una tienda de jardinería de la ciudad quiere venderlo. Un diseñador le propone la etiqueta: «Humus 100 % orgánico certificado», un sello verde parecido al distintivo nacional, la frase «duplica tu cosecha» y nada de lote ni fecha. La encargada de compras de la tienda le pregunta por el número de registro. Sergio teme que si cambia la etiqueta se vea menos atractiva.",
+     "p": [
+      [
+       "¿Qué cambio de la etiqueta es más urgente?",
+       "Quitar «orgánico certificado», el sello parecido al distintivo y la promesa de cosecha, y agregar lote y fecha",
+       "Cambiar «duplica tu cosecha» por «aumenta mucho tu cosecha», que suena más moderado y ya sería aceptable",
+       "Mantener «orgánico certificado», porque el humus se hace solo con residuos naturales y lombrices, sin químicos",
+       "Rotular «orgánico certificado» o usar un sello parecido sin certificación no tiene respaldo, y una promesa de cosecha tampoco; lote y fecha los pide la NOM-182. Suavizar la promesa sigue siendo una promesa sin datos. Que la materia prima sea natural no da derecho a rotular «orgánico»."
+      ],
+      [
+       "¿Cómo responde Sergio a la pregunta del registro?",
+       "Consulta a COFEPRIS si su humus, vendido como mejorador de suelo, requiere registro, y guarda la respuesta escrita",
+       "Le dice a la tienda que el humus no necesita registro, porque el reglamento no lo menciona por su nombre en el texto",
+       "Le da un número provisional inventado mientras hace el trámite, para no perder la venta con la tienda de jardinería",
+       "Que el reglamento no nombre el humus no significa que esté exento: si se vende como mejorador de suelo, puede requerir registro, y la respuesta la da COFEPRIS. Inventar un número es falsificar un dato de la etiqueta y engañar al comprador."
+      ],
+      [
+       "¿Qué papel tiene SENASICA en lo que Sergio quiere decir?",
+       "Evalúa insumos para la producción orgánica; no certifica su humus como producto «orgánico»",
+       "Certifica cada lote de humus como orgánico si pasa un análisis de laboratorio acreditado",
+       "Ninguno: con cumplir la NMX-FF-109 ya puede usar el distintivo nacional de orgánico",
+       "Para SENASICA los insumos no se certifican, se evalúan, y pueden entrar a la Lista Nacional o a la de formulaciones evaluadas. Un análisis de laboratorio no es una certificación orgánica. Cumplir una NMX no da derecho al distintivo nacional."
+      ]
+     ],
+     "completar": [
+      "Según SENASICA, los insumos para la producción orgánica no se certifican, se ___.",
+      "evalúan"
+     ],
+     "relacionar": [
+      [
+       "NOM-182-SSA1-2010",
+       "Lo que debe llevar la etiqueta"
+      ],
+      [
+       "COFEPRIS",
+       "Consultar si tu producto requiere registro"
+      ],
+      [
+       "SENASICA",
+       "Evalúa insumos para producción orgánica"
+      ],
+      [
+       "Ley de Productos Orgánicos",
+       "Reserva el término a lo certificado"
+      ],
+      [
+       "Lote y fecha",
+       "Rastrear un bulto hasta su pila y su análisis"
+      ]
+     ],
+     "refl": "Revisión de tu etiqueta y tus frases de venta (20 min). 1) Escribe la etiqueta actual o imaginaria de tu producto. 2) Revisa cada elemento que pide la NOM-182 y marca lo que falta. 3) Subraya toda palabra que no puedas respaldar con un análisis o un documento («orgánico certificado», promesas de cosecha, curas) y reescríbela como dato. 4) Redacta la pregunta que le harás a COFEPRIS y, si quieres vender para producción orgánica, la que le harás a SENASICA.",
+     "modelo": "Modelo: «Antes: “Composta 100 % orgánica, duplica tu cosecha”. Después: “Composta – mejorador de suelo orgánico. Composición garantizada: materia orgánica 41 %, N 1.7 %, P 1.2 %, K 1.5 % (base seca). Lote 09, fecha 12/10/2026, contenido neto 25 kg. Modo de uso al reverso. Precauciones: usa guantes, lávate las manos y mantenlo fuera del alcance de niños y mascotas. Registro: [en consulta con COFEPRIS]”. Pregunta a COFEPRIS: “Vendo composta de residuos de mercado como mejorador de suelo con marca; ¿requiere registro y qué dictamen piden?”.» Es buena porque cambia adjetivos por datos y no inventa un número de registro.",
+     "plantilla": [
+      "Revisión de etiqueta NOM-182",
+      "Nombre del producto: [ ]\nFunción: [mejorador de suelo / fertilizante orgánico]\nComposición garantizada: [ ]\nNúmero de registro: [ ] (consulta a COFEPRIS el [fecha])\nLote: [ ] Fecha: [ ] Contenido neto: [ ] kg\nRegistrante: [nombre, domicilio, teléfono]\nPrecauciones: [ ]\nModo de uso: [ ]\nFrases que quito: [ ] → las cambio por: [ ]\n¿Uso «orgánico»?: [no / solo con respaldo de: ]"
+     ],
+     "clave": [
+      "Una composta que se vende como fertilizante o mejorador de suelo puede requerir registro: consulta a COFEPRIS.",
+      "La NOM-182 pide, entre otros, composición garantizada, registro, lote, fecha, precauciones y modo de uso.",
+      "No rotules «orgánico certificado» ni uses el distintivo sin respaldo; cambia adjetivos y promesas por datos medidos."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el plan de calidad de tu producto. 1) Pruebas caseras: describe tu protocolo de bolsa cerrada, recalentamiento y germinación con testigo, y en qué resultado pasas al laboratorio. 2) Laboratorio: elige qué norma aplica (NMX-AA-180 para composta o NMX-FF-109 para humus), escribe cómo muestrearás y arma en Excel la tabla de cumplimiento con =SI(Y()). 3) Etiqueta: redacta una etiqueta con los elementos de la NOM-182 y el rótulo que corresponde según N, P y K. 4) Consultas: escribe las preguntas para COFEPRIS y, si aplica, para SENASICA.",
+    "entregable": "Un documento con el protocolo de pruebas y de muestreo, un archivo de Excel con la tabla de cumplimiento y su fórmula, y el borrador de etiqueta con las consultas a las autoridades.",
+    "criterios": "Revisa: la prueba de germinación tiene testigo y se presenta como orientativa, la tabla compara cada parámetro con el rango exacto de la norma, la etiqueta incluye lote, fecha, composición garantizada, precauciones y modo de uso, y ninguna frase dice «orgánico certificado» ni promete cosechas sin respaldo."
+   },
+   "lab": {
+    "t": "La primera venta con ficha técnica en Puebla",
+    "obj": "Interpretar una prueba de germinación casera y un informe de laboratorio, clasificar un lote con la NMX-AA-180, redactar una ficha técnica honesta y resolver las dudas de etiqueta y registro de un cliente que revende.",
+    "esc": "<b>Imelda,</b> de 49 años, hace composta con restos de un mercado y poda de jardines en las afueras de Puebla. Un vivero de la ciudad le pide 2 toneladas para su mezcla de sustratos y una ficha técnica para su área de compras. Es su primera venta grande: tiene una prueba casera, un informe de laboratorio y su bitácora.",
+    "e": [
+     [
+      "Escena 1: En su prueba de germinación, el testigo dio 19 de 20 semillas de berro y la mezcla con su composta, 17 de 20. La bolsa cerrada huele a tierra y el montón humedecido no se recalentó.",
+      "Consigna: calcula la germinación relativa, di qué te permite concluir y qué no, y decide si pasas al análisis de laboratorio."
+     ],
+     [
+      "Escena 2: El informe dice: humedad 41 %, pH 8.1, conductividad 3.6 dS/m, materia orgánica 52 %, N 2.1 %, P 1.3 %, K 1.8 %, C/N 17, partícula de hasta 10 mm, índice de germinación 92 %, coliformes fecales 250 NMP/g, Salmonella ausente en 25 g, metales dentro del tipo I y presencia de fragmentos de plástico.",
+      "Consigna: clasifica el lote en tipo I, II o III explicando cuál parámetro decide, y escribe el rótulo que le corresponde por su N, P y K."
+     ],
+     [
+      "Escena 3: Su bitácora registra 16 días a 55 °C o más con 6 volteos y ninguna lectura arriba de 65 °C. El vivero le sugiere que la ficha diga «composta tipo I, orgánica, ideal para cualquier cultivo».",
+      "Consigna: redacta la ficha técnica honesta con los datos medidos, el tipo real, la higienización cumplida y lo que no vas a afirmar."
+     ],
+     [
+      "Escena 4: El vivero planea revender parte en bolsas de 10 kg con su propia etiqueta y le pregunta a Imelda quién tramita el registro y qué debe decir la bolsa.",
+      "Consigna: escribe tu respuesta al vivero: qué consultar a COFEPRIS, qué elementos de la NOM-182 lleva la bolsa y quién aparece como registrante."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué concluye Imelda de su prueba casera?",
+      "La germinación relativa es de 89.5 % (17 ÷ 19): buena señal para ir al laboratorio, pero no es el dato de la ficha",
+      "Que su composta tiene un índice de germinación de 85 %, el dato que debe poner en la ficha para el vivero",
+      "Que su composta es tipo I, porque cualquier germinación relativa arriba de 80 % alcanza para ese tipo según la norma",
+      "17 ÷ 19 = 89.5 %: junto con el olor y la falta de recalentamiento, sugiere un lote estable y maduro. Es orientativa: el índice de la ficha es el del laboratorio (92 %). Dividir entre 20 ignora el testigo, y el tipo no se decide con una prueba casera."
+     ],
+     [
+      "¿En qué tipo queda el lote y cómo se rotula?",
+      "Tipo II por los fragmentos de plástico, aunque lo demás dé tipo I; se rotula «Composta – mejorador de suelo orgánico»",
+      "Tipo I, porque los fragmentos de plástico no son un parámetro que se mida, y se rotula «Fertilizante orgánico» por su pH alto",
+      "Tipo III, porque un pH de 8.1 está fuera del rango general, y se rotula «Composta – mejorador de suelo orgánico»",
+      "El tipo I debe estar libre de impurezas como plástico, así que el lote queda en tipo II. N 2.1, P 1.3 y K 1.8 están entre 1 y 3 % y suman 5.2 %: mejorador de suelo orgánico. El pH 8.1 está dentro del rango de 6.7 a 8.5."
+     ],
+     [
+      "¿Qué responde Imelda sobre la reventa con etiqueta propia?",
+      "Que la bolsa debe cumplir la NOM-182, que conviene consultar a COFEPRIS sobre el registro y acordar por escrito quién es el registrante",
+      "Que no hace falta nada, porque una vez vendida la composta a granel cualquier etiqueta es responsabilidad exclusiva del vivero",
+      "Que el vivero puede usar el informe de Imelda como número de registro, porque el laboratorio ya revisó el lote",
+      "Quien rotula y vende con marca necesita una etiqueta completa y aclarar el registro; conviene dejar por escrito quién figura como registrante y qué lote se entrega. Desentenderse deja huecos de responsabilidad. Un informe de laboratorio no es un número de registro."
+     ]
+    ],
+    "pl": [
+     "Ficha técnica honesta",
+     "Producto: [ ] Productor: [ ] Ciudad: [ ]\nLote: [ ] Fecha de análisis: [ ] Laboratorio: [ ]\nNorma de referencia: NMX-AA-180-SCFI-2018 (verifica la versión vigente)\nTipo: [ ] (parámetro que lo define: [ ])\nRótulo: [ ] (N [ ] % + P [ ] % + K [ ] % = [ ] %)\nHumedad [ ] % · pH [ ] · Conductividad [ ] dS/m · Materia orgánica [ ] % · C/N [ ] · Partícula [ ] mm · Índice de germinación [ ] %\nSanitario: coliformes [ ] NMP/g · Salmonella [ ]\nHigienización: [ ] días a 55 °C o más, [ ] volteos\nNo afirmamos: [ ]\nRegistro: [consulta a COFEPRIS del: ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una composta se ve terminada, pero al humedecer dos cubetas y taparlas sube varios grados sobre el ambiente durante tres días. ¿Qué significa?",
+     "Que aún es inestable: los microbios tienen alimento y le falta curado antes de venderse",
+     "Que está madura, porque solo una composta terminada conserva microbios capaces de calentar",
+     "Que le sobra material café y hay que agregarle restos frescos para que termine de madurar",
+     "Que la prueba falló, porque la composta lista nunca se debe humedecer antes de medir su temperatura"
+    ],
+    [
+     "En una prueba de germinación casera, el testigo solo germinó 8 de 20 semillas y la composta 7 de 20. ¿Qué conviene hacer?",
+     "Repetir la prueba con semilla nueva, porque el testigo germinó mal y el resultado no sirve",
+     "Concluir que la composta es excelente, porque germinó casi igual que el sustrato del testigo",
+     "Concluir que la composta es inmadura, porque solo germinaron 7 de las 20 semillas sembradas",
+     "Reportar al cliente un índice de germinación de 87.5 %, que sale de dividir 7 entre 8"
+    ],
+    [
+     "Un lote de composta tiene conductividad de 9 dS/m y todo lo demás dentro del tipo I. Según la NMX-AA-180, ¿en qué tipo queda?",
+     "Tipo III, porque pasa de 8 dS/m, límite del tipo II, pero no rebasa 12 dS/m",
+     "Tipo II, porque la conductividad solo baja un tipo aunque pase del límite del tipo II",
+     "Tipo I, porque la conductividad no cuenta si los demás parámetros cumplen ese tipo",
+     "Fuera de norma, porque el límite general de conductividad para cualquier composta es de 4 dS/m"
+    ],
+    [
+     "En una pila volteada, la bitácora muestra 17 días arriba de 55 °C con 6 volteos, pero dos días seguidos a 68 °C. ¿Qué dices?",
+     "Que no cumple la Tabla 4, porque estuvo más de 24 horas arriba de 65 °C; además conviene voltear antes",
+     "Que cumple de sobra, porque mientras más calor y más días, mejor higienizada queda la composta",
+     "Que cumple, porque el límite de 65 °C solo aplica a las pilas estáticas aireadas y a los biorreactores",
+     "Que no cumple, porque en una pila volteada nunca se debe pasar de 55 °C durante el proceso"
+    ],
+    [
+     "El análisis de una composta con gallinaza reporta N 2.0 %, P 1.5 % y K 3.6 %. ¿Cómo se rotula según la NMX-AA-180?",
+     "«Fertilizante orgánico», porque el potasio pasa de 3 % y la suma de N, P y K llega a 7.1 %",
+     "«Composta – mejorador de suelo orgánico», porque el nitrógeno está entre 1 y 3 %",
+     "«Composta – mejorador de suelo orgánico», porque la suma de N, P y K no pasa de 7.5 %",
+     "«Fertilizante orgánico certificado», porque al rebasar los rangos ya se considera un fertilizante"
+    ],
+    [
+     "Un humus de lombriz cumple todos los parámetros químicos y sanitarios y tiene 7 % de material no digerido. ¿Qué grado tiene según la NMX-FF-109?",
+     "Segunda, porque 7 % cae dentro del rango de 6.1 a 10 %",
+     "Primera, porque no pasa de 10 % de material no digerido",
+     "Extra, porque todos sus demás parámetros cumplen la norma",
+     "Ninguno, porque cualquier material no digerido lo saca de la norma"
+    ],
+    [
+     "Un productor mezcla su humus con 20 % de arena para que rinda más y lo vende como «humus de lombriz según NMX-FF-109». ¿Qué problema hay?",
+     "La norma pide humus sin materiales adicionados: con arena ya no lo es y la frase engaña",
+     "Ninguno, porque la arena mejora el drenaje y la norma solo revisa los patógenos del humus",
+     "Solo que debe declarar la arena en la etiqueta, porque así la mezcla sigue siendo humus según la norma",
+     "Que la arena sube la humedad del humus por arriba de 40 % y por eso deja de cumplir ese parámetro"
+    ],
+    [
+     "Para analizar un lote, un productor toma un puño de la superficie de una sola cama. ¿Qué debió hacer?",
+     "Juntar submuestras de muchos puntos y profundidades, mezclarlas y cuartear hasta la cantidad que pide el laboratorio",
+     "Tomar el puño del centro de la cama, porque ahí el humus está más maduro y representa mejor a todo el lote",
+     "Mandar el lote completo al laboratorio, porque cualquier muestra pequeña da resultados que no sirven para nada",
+     "Tomar varias muestras y mandar solo la que se vea mejor, para que el informe refleje la calidad que puede lograr"
+    ],
+    [
+     "Una etiqueta de composta tiene nombre, función, composición, contenido neto, modo de uso y datos del productor. Según la NOM-182-SSA1-2010, ¿qué le falta?",
+     "Número de registro, lote, fecha y precauciones",
+     "Solo el precio al público y el código de barras",
+     "Nada, porque ya incluye la composición del producto",
+     "La palabra «orgánico», que es obligatoria en abonos"
+    ],
+    [
+     "Un vendedor dice que su composta está «certificada orgánica por SENASICA» porque la evaluaron como insumo. ¿Es correcto?",
+     "No: SENASICA evalúa insumos para la producción orgánica, pero eso no es rotular el producto como orgánico certificado",
+     "Sí: toda composta evaluada por SENASICA puede usar el distintivo nacional de orgánico en su bolsa y en su publicidad",
+     "Sí, siempre que además cumpla la NMX-AA-180, porque la norma y la evaluación juntas equivalen a una certificación",
+     "No, porque SENASICA no tiene ninguna relación con los insumos que se usan en la producción orgánica en México"
+    ]
+   ]
+  },
+  {
+   "t": "Insumos, logística y permisos",
+   "r": "Consigue residuos orgánicos limpios y constantes con acuerdos por escrito, organiza la recolección y calcula en Excel cuántas toneladas recibes, ubica qué permisos te tocan y protege a tus vecinos, al ambiente y a tu equipo.",
+   "lecciones": [
+    {
+     "t": "Conseguir residuos: acuerdos con restaurantes, hoteles, comedores y mercados",
+     "obj": "Caracterizar lo que te daría una fuente de residuos y redactar un acuerdo de recolección que diga qué aceptas, cómo se entrega, quién paga qué y qué informe recibe el cliente.",
+     "texto": [
+      "Sin residuos constantes y limpios no hay planta. La materia prima sobra: según el Diagnóstico Básico para la Gestión Integral de los Residuos de SEMARNAT (edición 2026, con datos de 2022), México genera unas 139,902 toneladas diarias de residuos sólidos urbanos, cerca de 1.08 kg por persona al día, y 40.15 % son orgánicos: 29.2 % restos de comida y 8.3 % de jardinería. Hay mucho material y pocas plantas que lo aprovechen. Lo difícil no es encontrar residuos: es conseguirlos separados, a tiempo y con un acuerdo que te convenga.",
+      "Cada fuente tiene su perfil. Los <b>restaurantes</b> dan restos de preparación, como cáscaras y recortes, bastante limpios, pero también sobras de plato con carne, grasa y servilletas. Los <b>hoteles</b> combinan cocina y jardinería y muchas veces tienen metas ambientales que reportar. Los <b>comedores industriales</b> generan volúmenes grandes y regulares en horarios fijos. Los <b>mercados</b> dan mucha fruta y verdura, a veces revuelta con bolsas, cajas y unicel. Antes de comprometerte, conviene <b>caracterizar</b>: pesa lo que te darían durante una o dos semanas y separa a mano una muestra para ver qué trae.",
+      "Un buen acuerdo se escribe, aunque sea en una hoja firmada. Debe decir qué recibes y qué no (por ejemplo, sin plástico, vidrio ni aceite usado; carne y huesos solo si tu sistema los controla), cómo se entrega (contenedores con tapa y quién los lava), frecuencia y horario de recolección, quién paga qué, qué pasa si una carga viene contaminada y qué informe recibe el cliente: kilos recolectados por mes y, si lo pide, la composta que regresa a sus jardines. A muchos clientes, sobre todo a los grandes generadores, se les cobra por el servicio de recolección; esa es tu segunda fuente de ingreso y la calcularás en el módulo 7.",
+      "Arranca con un piloto de cuatro a ocho semanas y una sola cocina. Así mides cuánto llega de verdad, cuánto rechazas y cuánto tarda el personal en separar bien. Si la contaminación no baja, ajusta la capacitación o renegocia; no aceptes cargas sucias por quedar bien, porque el plástico que entra a la pila acaba en tu producto y te saca del tipo I. Tampoco prometas recibir más de lo que tu espacio procesa: una pila desbordada es el camino más corto a los olores, la fauna y las quejas."
+     ],
+     "comparar": [
+      "«Así no: Sí, mándenme todo lo que tiren desde el lunes; ya veré cómo lo separo.»",
+      "«Así sí: Empecemos con un piloto de seis semanas: recibo restos de cocina sin plástico, en tambos con tapa, martes, jueves y sábado, y cada mes les entrego el reporte de kilos.»"
+     ],
+     "caso": "Caso ficticio: Gustavo, de 45 años, composta en un predio rentado a las afueras de Tampico. Un hotel le ofrece todos sus residuos orgánicos, unos 150 kg por día, a partir del lunes y sin pagar nada. Gustavo separa a mano una muestra de 100 kg: 72 kg son restos vegetales de cocina, 15 kg carne y huesos, 8 kg servilletas y cartón y 5 kg plástico y cubiertos desechables. El gerente quiere una respuesta hoy y le dice que, si pone condiciones, buscará a otro.",
+     "p": [
+      [
+       "¿Qué le conviene hacer primero a Gustavo?",
+       "Proponer un piloto por escrito que diga qué acepta y qué no, en qué contenedores y con qué frecuencia",
+       "Aceptar todo desde el lunes sin condiciones, para que el hotel no busque a otro proveedor",
+       "Pedir que le entreguen solo la carne y los huesos, porque son el material más rico en nitrógeno para arrancar sus pilas",
+       "Un piloto por escrito fija las reglas desde el principio y le deja medir. Aceptarlo todo le mete plástico y carne a su pila sin control. La carne y los huesos son justo lo que más fauna atrae y lo que su sistema debe controlar, no la base de la receta."
+      ],
+      [
+       "¿Qué implica el 5 % de plástico y desechables en la muestra?",
+       "Que ese material acabará en su producto si no hay separación en origen, rechazo de cargas sucias y cribado",
+       "Que es una cantidad mínima que desaparece sola en la pila caliente después de unas semanas de compostaje",
+       "Que debe triturarlo junto con los restos de comida para que no se note en la composta terminada",
+       "El plástico no se composta: se fragmenta y contamina la composta, y con impurezas el lote ya no puede ser tipo I. Triturarlo solo lo vuelve más difícil de quitar. La solución empieza en la cocina del hotel, con separación en origen."
+      ],
+      [
+       "¿Cómo conviene plantear el pago con el hotel?",
+       "Cobrar por la recolección y el informe mensual: resuelve un manejo de residuos que el hotel necesita",
+       "Pagarle al hotel por sus residuos, porque son la materia prima de Gustavo y así asegura el abasto",
+       "Dar el servicio gratis por tiempo indefinido, porque la venta de composta ya cubrirá todos los costos",
+       "El hotel tiene que manejar sus residuos de cualquier forma; recolectarlos e informar es un servicio con valor. Pagar por el residuo invierte la lógica del negocio. Suponer que la composta pagará todo es una promesa sin números: lo verás en el módulo 7."
+      ]
+     ],
+     "completar": [
+      "Antes de firmar un acuerdo, conviene ___ la fuente: pesar una o dos semanas y separar a mano una muestra.",
+      "caracterizar"
+     ],
+     "relacionar": [
+      [
+       "Restaurante",
+       "Restos de preparación limpios y sobras con grasa"
+      ],
+      [
+       "Hotel",
+       "Cocina y jardinería, con metas ambientales"
+      ],
+      [
+       "Comedor industrial",
+       "Volúmenes grandes en horarios fijos"
+      ],
+      [
+       "Mercado",
+       "Mucha fruta y verdura revuelta con empaques"
+      ],
+      [
+       "Piloto",
+       "Medir cuánto llega y cuánto se rechaza"
+      ]
+     ],
+     "refl": "Tu primer acuerdo de residuos (20 min). 1) Elige una fuente real cerca de ti (restaurante, hotel, comedor o mercado) y escribe qué crees que genera. 2) Diseña cómo la caracterizarías: cuántos días pesarías y cómo separarías una muestra. 3) Redacta el acuerdo de piloto: qué aceptas y qué no, contenedores, frecuencia, horario, pago, cargas contaminadas e informe. 4) Escribe qué harías si en el piloto la contaminación no baja.",
+     "modelo": "Modelo: «Fuente: comedor de una maquiladora, unos 120 kg al día. Caracterización: dos semanas de pesaje y una muestra de 50 kg separada a mano el día 3 y el día 8. Piloto de seis semanas: acepto restos de cocina y de plato sin plástico, vidrio, unicel ni aceite; tres tambos con tapa que yo lavo; recolección lunes, miércoles y viernes a las 16 h; servicio con cuota mensual fija; carga con más de un poco de plástico visible se rechaza y se avisa con foto; informe mensual de kilos. Si la contaminación no baja en tres semanas, capacitación al turno y revisión del acuerdo.» Es buena porque mide antes de comprometerse y deja reglas claras para cargas sucias.",
+     "plantilla": [
+      "Acuerdo de piloto de recolección",
+      "Cliente: [ ] Contacto: [ ] Ciudad: [ ]\nDuración del piloto: [ ] semanas\nAcepto: [ ]  No acepto: [ ]\nContenedores: [tipo, cantidad, quién los lava]\nRecolección: [días y hora]\nPago: [cuota por servicio / por kilo / otro]\nCarga contaminada: [qué pasa y cómo se avisa]\nInforme al cliente: [kilos por mes, composta entregada]\nRevisión del acuerdo: [fecha]"
+     ],
+     "clave": [
+      "La materia prima abunda; lo escaso es el residuo separado, constante y con un acuerdo claro.",
+      "Caracteriza antes de comprometerte y arranca con un piloto por escrito.",
+      "La recolección es un servicio que puede cobrarse; las cargas sucias se rechazan porque terminan en tu producto."
+     ]
+    },
+    {
+     "t": "Recolección, transporte y separación en origen",
+     "obj": "Organizar la separación en origen y una ruta de recolección, y calcular en Excel los kilos por semana y las toneladas por año de cada cliente para saber si es gran generador.",
+     "texto": [
+      "La calidad de tu composta empieza en la cocina del cliente. <b>Separación</b> en origen significa que el residuo orgánico se aparta donde se genera, en un contenedor propio, sin mezclarlo con lo demás. Funciona cuando es fácil: contenedores de color con imágenes de lo que sí y lo que no, junto a la tarja y la mesa de preparación; una capacitación corta en cada turno, y retroalimentación con fotos cuando una carga llega contaminada. En la Ciudad de México la separación la regula la NADF-024-AMBT-2013; en otros lugares, revisa tu reglamento municipal.",
+      "Para recolectar, piensa como quien reparte garrafones: rutas fijas, horarios fijos y registro. Usa contenedores con tapa que cierren bien y que una persona cargue sin lastimarse; en clima caliente recolecta más seguido para que no fermenten ni atraigan moscas. La caja del vehículo no debe escurrir: un lixiviado en la calle es una queja segura de vecinos y autoridades. Pesa cada contenedor al llegar y anota en la bitácora de recepción fecha, cliente, kilos, contaminación observada y quién recibió. Verifica con la secretaría de medio ambiente de tu estado si para transportar residuos de manejo especial necesitas autorización.",
+      "Haz la cuenta de tu ruta en Excel. En A pon el cliente, en B los kilos por día (pesados, no estimados) y en C los días de recolección por semana. En D, los kilos por semana: =B2*C2. En E, las toneladas por año: =D2*52/1000. Al final, =SUMA(D2:D4) te da lo que entra a tu planta cada semana, y con eso dimensionas pilas, vehículo y personal. Ejemplo: un restaurante con 85 kg por día durante 6 días entrega 510 kg por semana, unas 26.5 toneladas al año.",
+      "La misma tabla te dice algo legal de tu cliente. La Ley General para la Prevención y Gestión Integral de los Residuos llama <b>gran generador</b> a quien genera 10 toneladas o más de residuos al año, y pequeño generador a quien genera de 400 kg a menos de 10 toneladas. Escribe Gran generador en H1 y Revisar total en H2, y en F2: =SI(E2>=10,$H$1,$H$2). Ojo: la ley cuenta el total de sus residuos, no solo los orgánicos que te da. Si sus orgánicos ya pasan de 10 t, es gran generador seguro; si no, falta sumar lo demás. Saberlo ayuda a vender: los grandes generadores tienen obligaciones de manejo y tu informe les sirve (verifica qué exige tu estado)."
+     ],
+     "comparar": [
+      "«Así no: Paso cuando puedo, echo todo a la caja de la camioneta y calculo a ojo cuánto me dieron.»",
+      "«Así sí: Ruta de martes, jueves y sábado; peso cada tambo, lo anoto y a fin de mes le mando al cliente sus kilos.»"
+     ],
+     "caso": "Caso ficticio: Daniela, de 27 años, tiene en Toluca un servicio de recolección de orgánicos con una camioneta. Sus clientes son un comedor industrial (150 kg por día, 5 días a la semana), una cafetería (12 kg por día, 6 días) y un hotel (240 kg por día, 7 días). El hotel quiere que pase solo dos veces por semana para pagar menos, aunque sus tambos quedarían varios días al sol. Daniela quiere saber cuánto recibe y cuál de sus clientes es gran generador.",
+     "p": [
+      [
+       "¿Cuántos kilos por semana recibe Daniela en total?",
+       "2,502 kg: 750 del comedor, 72 de la cafetería y 1,680 del hotel",
+       "402 kg, porque se suman los kilos por día de los tres clientes",
+       "2,814 kg, porque todos los clientes se multiplican por 7 días",
+       "150 × 5 = 750; 12 × 6 = 72; 240 × 7 = 1,680; suman 2,502 kg. Sumar los kilos por día ignora cuántos días entrega cada uno. Multiplicar todo por 7 supone días de recolección que el comedor y la cafetería no tienen."
+      ],
+      [
+       "¿Qué puede concluir Daniela sobre la cafetería, que le da unas 3.7 t de orgánicos al año?",
+       "Que con ese dato no sabe si es gran generador: debe sumar el resto de sus residuos, no solo los orgánicos",
+       "Que es pequeño generador con seguridad, porque sus orgánicos quedan entre 400 kg y menos de 10 t al año",
+       "Que es gran generador, porque toda cafetería que recolecta orgánicos de forma separada entra en esa categoría",
+       "12 × 6 × 52 = 3,744 kg, unas 3.7 t. La ley cuenta el total de residuos, así que el dato de orgánicos no basta para decir que es pequeño generador. La categoría depende de toneladas, no del giro ni de si separa."
+      ],
+      [
+       "Si D4 tiene los kilos por semana del hotel, ¿qué fórmula da sus toneladas por año?",
+       "=D4*52/1000",
+       "=D4*12/1000",
+       "=D4*365/1000",
+       "Una semana por 52 semanas da el año, y entre 1,000 pasa de kilos a toneladas: 1,680 × 52 ÷ 1,000 = 87.36 t. Multiplicar por 12 trata la semana como si fuera un mes. Multiplicar por 365 trata los kilos semanales como si fueran diarios."
+      ]
+     ],
+     "completar": [
+      "La ___ en origen significa apartar el residuo orgánico donde se genera, sin mezclarlo con lo demás.",
+      "separación"
+     ],
+     "refl": "Tu ruta en Excel (20 min). 1) Haz la tabla con al menos tres clientes reales o imaginarios: kilos por día, días por semana, kilos por semana y toneladas por año. 2) Agrega la columna con =SI() para marcar quién es gran generador y quién requiere revisar su total. 3) Suma los kilos por semana y escribe qué capacidad de pilas, vehículo y personal implica. 4) Define días, horario y orden de la ruta, y qué harás en temporada de calor.",
+     "modelo": "Modelo: «Clientes: restaurante 40 kg/día × 6 = 240 kg/semana, 12.5 t/año (gran generador); escuela 25 kg/día × 5 = 125 kg/semana, 6.5 t/año (revisar total); mercado 300 kg/día × 6 = 1,800 kg/semana, 93.6 t/año (gran generador). Total: 2,165 kg por semana. Mi camioneta carga una tonelada, así que hago tres vueltas por semana: lunes, miércoles y viernes, primero el mercado. En calor, el restaurante pasa a recolección diaria con tambos con tapa.» Es buena porque cada cifra sale de multiplicar kilos por días, marca con prudencia al cliente que no puede clasificar y ajusta la ruta al clima.",
+     "plantilla": [
+      "Hoja de ruta y generadores",
+      "H1: Gran generador   H2: Revisar total\nA: Cliente | B: kg por día | C: días por semana | D: =B2*C2 | E: =D2*52/1000 | F: =SI(E2>=10,$H$1,$H$2)\n[ ] | [ ] | [ ] |\n[ ] | [ ] | [ ] |\n[ ] | [ ] | [ ] |\nTotal semanal: =SUMA(D2:D4)\nRuta: días [ ] hora [ ] orden [ ]\nBitácora de recepción: fecha | cliente | kg | contaminación | recibió"
+     ],
+     "clave": [
+      "La separación en origen funciona si es fácil, se capacita a cada turno y se retroalimenta con fotos.",
+      "Kilos por semana = kilos por día × días; toneladas por año = kilos por semana × 52 ÷ 1,000.",
+      "Gran generador es quien genera 10 t o más al año del total de sus residuos, no solo de los orgánicos."
+     ]
+    },
+    {
+     "t": "Permisos: residuos de manejo especial, uso de suelo y licencias",
+     "obj": "Ubicar qué autoridad revisa cada parte de una planta de composta y armar una lista ordenada de consultas: estado, municipio, COFEPRIS, SENASICA y SAT.",
+     "texto": [
+      "Antes de mover un costal, ubica qué autoridad mira cada parte de tu proyecto. Los residuos sólidos urbanos de las casas los maneja el municipio. Los <b>residuos de manejo especial</b>, que son los de procesos productivos y los urbanos de grandes generadores (como pueden ser los de muchos hoteles, comedores y mercados), los regulan los <b>estados</b>, según la Ley General para la Prevención y Gestión Integral de los Residuos. Por eso, si recolectas o tratas residuos de un gran generador, la secretaría de medio ambiente de tu estado puede pedirte un registro o una autorización. Cada estado tiene su ley y su trámite: verifica el tuyo.",
+      "El terreno es asunto municipal. Aunque sea chica, una planta de composta puede no estar permitida en zona habitacional. Pide en tu ayuntamiento la constancia o licencia de <b>uso de suelo</b> antes de rentar o construir, y pregunta qué más aplica: licencia de funcionamiento, visto bueno de protección civil y, según el tamaño, alguna evaluación de impacto ambiental. Si el predio es ejidal, además necesitas el acuerdo que corresponda con el ejido. En la Ciudad de México existe además la NADF-020-AMBT-2011, que regula la producción de composta.",
+      "El marco se está moviendo. La Ley General de Economía Circular, publicada en el DOF el 19 de enero de 2026, menciona el compostaje como forma de aprovechamiento y plantea metas de reducción del desperdicio. Es una oportunidad para ofrecer tu servicio. Pero lo que exija en concreto dependerá de su reglamento y de lo que adopte cada estado. No le digas a un cliente que la ley lo obliga a contratarte; verifica el reglamento vigente y lo que pide tu estado antes de usarla como argumento.",
+      "Un orden práctico: 1) consulta el uso de suelo antes de comprometer el terreno; 2) pregunta en la secretaría estatal qué registro o autorización necesitas para recibir y tratar residuos de manejo especial, y si el transporte requiere permiso aparte; 3) revisa con el ayuntamiento y protección civil la licencia de funcionamiento; 4) si vas a vender con marca, consulta a COFEPRIS sobre el registro y, si quieres que tu insumo se use en producción orgánica, a SENASICA; 5) date de alta en el SAT, como viste o puedes ver en «Emprender desde Cero». Guarda cada respuesta por escrito, con fecha y nombre de quien te atendió. Esta lista sirve para preguntar, no para dar nada por hecho."
+     ],
+     "comparar": [
+      "«Así no: Es composta, es natural; nadie me va a pedir permiso para hacerla en mi lote.»",
+      "«Así sí: Antes de recibir el primer tambo pregunto el uso de suelo en el ayuntamiento y el trámite de manejo especial en la secretaría estatal.»"
+     ],
+     "caso": "Caso ficticio: Octavio, de 63 años, se jubiló y tiene un lote en una colonia habitacional de Chihuahua. Quiere recibir los residuos de un comedor industrial que genera más de 30 toneladas al año y los de dos restaurantes, y producir composta para venderla en bultos con su marca. Un vecino le asegura que «la composta no necesita permisos porque es natural». Su sobrino le dice que con la nueva Ley General de Economía Circular las empresas «ya están obligadas» a contratar compostaje.",
+     "p": [
+      [
+       "¿Qué le conviene consultar primero a Octavio?",
+       "El uso de suelo en el ayuntamiento, porque su lote está en zona habitacional y de eso depende lo demás",
+       "La certificación orgánica ante SENASICA, porque sin ella no podrá vender ni un solo bulto de su composta con marca",
+       "Nada por ahora: empezar a recibir residuos y hacer los trámites solo si algún vecino llega a presentar una queja",
+       "Si el uso de suelo no lo permite, cualquier otra inversión o trámite se pierde. SENASICA no certifica insumos, los evalúa, y no es requisito para vender cualquier composta. Esperar a una queja lo expone a una clausura con residuos ya recibidos."
+      ],
+      [
+       "¿Qué significa que el comedor sea gran generador?",
+       "Que sus residuos son de manejo especial y los regula el estado: debe preguntar si necesita registro o autorización",
+       "Que sus residuos son urbanos comunes y solo el municipio puede opinar sobre su recolección y su tratamiento",
+       "Que sus residuos se consideran peligrosos y Octavio no puede recibirlos en una planta de composta en ningún caso",
+       "Los residuos urbanos de grandes generadores son de manejo especial y los regulan los estados. No son peligrosos por venir de un gran generador: son restos de comida. El municipio sí regula el uso de suelo, pero no es la única autoridad aquí."
+      ],
+      [
+       "¿Cómo debería usar Octavio la Ley General de Economía Circular con sus clientes?",
+       "Decir que la ley impulsa el compostaje y ofrecer su informe, sin afirmar obligaciones que no ha verificado",
+       "Decir que, desde 2026, toda empresa está obligada por esa ley a contratar a un servicio de compostaje",
+       "No mencionarla nunca, porque una ley tan reciente todavía no tiene ninguna relación con el compostaje",
+       "La ley menciona el compostaje y metas de reducción del desperdicio, pero lo que exige en concreto depende de su reglamento y de cada estado. Afirmar una obligación sin verificarla es engañar al cliente. Ignorarla desaprovecha un argumento legítimo."
+      ]
+     ],
+     "completar": [
+      "Los residuos de manejo especial, como los de grandes generadores, los regulan los ___.",
+      "estados"
+     ],
+     "relacionar": [
+      [
+       "Uso de suelo",
+       "Ayuntamiento"
+      ],
+      [
+       "Residuos de manejo especial",
+       "Secretaría de medio ambiente del estado"
+      ],
+      [
+       "Registro de un abono con marca",
+       "COFEPRIS"
+      ],
+      [
+       "Insumo para producción orgánica",
+       "SENASICA"
+      ],
+      [
+       "Alta fiscal",
+       "SAT"
+      ]
+     ],
+     "refl": "Tu mapa de permisos (20 min). 1) Describe dónde estaría tu planta (municipio, tipo de zona, si es ejido o propiedad privada) y de quién recibirías residuos. 2) Haz una tabla con cada consulta: autoridad, qué preguntarás y qué documento esperas. 3) Ordénalas como lo harías en la vida real y explica por qué ese orden. 4) Escribe cómo mencionarías la Ley General de Economía Circular a un cliente sin afirmar nada que no hayas verificado.",
+     "modelo": "Modelo: «Planta en un predio privado de 600 m² en zona agrícola del municipio, a 2 km de las casas. Recibiría residuos de un hotel y un mercado. 1) Ayuntamiento: ¿el uso de suelo permite una planta de composta?, pido constancia por escrito. 2) Secretaría estatal: ¿necesito registro o autorización para recibir y tratar residuos de manejo especial y para transportarlos? 3) Protección civil y licencia de funcionamiento. 4) COFEPRIS: ¿mi composta con marca requiere registro? 5) SAT. Al cliente: “La nueva ley impulsa el compostaje; mi informe mensual te ayuda a documentar lo que aprovechas”.» Es buena porque empieza por lo que puede frenar todo y no promete obligaciones legales.",
+     "plantilla": [
+      "Mapa de permisos",
+      "Ubicación: [municipio, zona, régimen del predio]\nFuentes de residuos: [ ] (¿gran generador?: [ ])\n1) Ayuntamiento – uso de suelo: [pregunta] [respuesta, fecha, quién]\n2) Secretaría estatal – manejo especial y transporte: [ ]\n3) Protección civil / licencia de funcionamiento: [ ]\n4) COFEPRIS – registro: [ ]  SENASICA (si aplica): [ ]\n5) SAT: [ ]\nCómo hablo de la Ley General de Economía Circular: [ ]"
+     ],
+     "clave": [
+      "Los residuos de manejo especial, incluidos los urbanos de grandes generadores, los regulan los estados.",
+      "El uso de suelo es municipal y va primero: sin él, todo lo demás puede perderse.",
+      "La Ley General de Economía Circular abre oportunidades, pero verifica su reglamento y lo que exige tu estado antes de citarla."
+     ]
+    },
+    {
+     "t": "Vecinos, ambiente y salud de tu equipo: olores, lixiviados, fauna y bioaerosoles",
+     "obj": "Prevenir olores, lixiviados y fauna nociva, y proteger a tu equipo de bioaerosoles, gases y combustión espontánea con medidas concretas y un plan de emergencia.",
+     "texto": [
+      "Los <b>olores</b> casi siempre son diagnóstico: falta de aire, exceso de humedad o demasiados verdes. Cubre cada carga fresca con una capa de material café el mismo día, no acumules restos sin procesar y voltea cuando el viento no vaya hacia las casas. Los <b>lixiviados</b>, el líquido que escurre de residuos frescos y pilas muy húmedas, pueden contaminar suelo y agua: trabaja sobre piso firme con pendiente hacia una canaleta y un depósito, techa o cubre las pilas en temporada de lluvias y nunca los mandes al drenaje ni a un arroyo.",
+      "La <b>fauna nociva</b> (ratas, moscas, cucarachas, perros callejeros) llega por comida expuesta. En escala chica o en casa, deja fuera carne, pescado y lácteos. Solo una planta con control (pilas grandes que sostienen 55 °C o más con bitácora, cubierta diaria con material café y malla) debería recibirlos; si no puedes asegurar eso, recházalos en el acuerdo. Pon malla si hace falta y llama a control de plagas si aparecen roedores. Muchas moscas avisan de restos frescos destapados.",
+      "Tu equipo respira lo que remueves. Voltear y cribar material seco levanta <b>bioaerosoles</b>: esporas de hongos como Aspergillus fumigatus y bacterias llamadas actinomicetos, que pueden causar rinitis, asma o alveolitis alérgica, el llamado «pulmón de granjero». El riesgo es mayor para personas inmunodeprimidas o con enfermedades pulmonares, que no deberían hacer esas tareas sin consultar a su médico. Usa guantes, botas, ropa de trabajo y respirador N95 o FFP2 al voltear o cribar seco; humedece antes de cribar y no voltees con el viento hacia la gente. En contenedores cerrados o material sin aire se acumulan gases como amoniaco y ácido sulfhídrico: ventila antes de entrar y nunca trabajes solo ahí; si alguien se desmaya dentro, no entres por él sin ventilar: llama al 911.",
+      "Las pilas grandes y calientes pueden sufrir <b>combustión espontánea</b>, sobre todo si están secas y compactas: vigila la temperatura a diario y voltea o humedece cuando ronde los 65 °C; arriba de 70 °C el riesgo sube. Si huele a quemado o sale humo, aleja a la gente, no abras la pila de golpe (el aire puede avivar el fuego) y llama al 911. Lávate las manos antes de comer, beber o fumar, ten botiquín y pregunta a tu médico por la vacuna antitetánica; ante una lesión seria, llama al 911. Y habla con tus vecinos antes de que se quejen: explícales qué haces, dales un teléfono y atiende rápido cada aviso."
+     ],
+     "comparar": [
+      "«Así no: Cribo en seco a mediodía con un ventilador para que se lleve el polvo; total, es pura tierra.»",
+      "«Así sí: Humedezco antes de cribar, me pongo respirador N95 y trabajo con el viento lejos de la gente.»"
+     ],
+     "caso": "Caso ficticio: Hilario, de 66 años, tiene una planta de composta con dos ayudantes en las orillas de Saltillo. En pleno verano, seco y con viento, una pila grande marca 74 °C y él percibe olor a quemado. Uno de sus ayudantes tiene asma y le toca cribar material seco esa tarde. Además, una vecina le reclama que su patio se llenó de moscas desde que Hilario empezó a recibir restos de un comedor.",
+     "p": [
+      [
+       "¿Qué hace Hilario con la pila de 74 °C que huele a quemado?",
+       "Aleja a la gente, no la abre de golpe y llama al 911 si hay humo o fuego; luego corrige tamaño y humedad",
+       "La abre de inmediato con la pala para que se enfríe con el aire, sin avisar a nadie para no alarmar a los vecinos",
+       "La deja así, porque una temperatura alta asegura la higienización y una pila de composta no tiene riesgo de fuego",
+       "Una pila muy caliente y seca puede estar en combustión; abrirla de golpe le da oxígeno y puede avivar el fuego. Pasar de 70 °C no mejora la higienización: la norma no quiere más de 24 h arriba de 65 °C. Después hay que corregir el tamaño y la humedad."
+      ],
+      [
+       "¿Qué hace con el ayudante que tiene asma?",
+       "Le asigna otra tarea, humedece el material antes de cribar y quien cribe usa respirador N95 o FFP2",
+       "Le da un cubrebocas de tela y le pide que cribe rápido para que pase poco tiempo expuesto al polvo",
+       "Le pide que cribe con el viento a favor para que el polvo se vaya hacia la calle y no hacia él",
+       "Las personas con enfermedades pulmonares tienen mayor riesgo con los bioaerosoles; lo prudente es reasignarlo y proteger a quien sí cribe. Un cubrebocas de tela no filtra esporas como un N95. Mandar el polvo a la calle traslada el riesgo a los vecinos."
+      ],
+      [
+       "¿Cómo responde a la queja de las moscas?",
+       "Cubre cada carga fresca con material café el mismo día, no deja restos destapados y le cuenta a la vecina qué cambió",
+       "Rocía insecticida sobre todas las pilas cada día, porque las moscas son inevitables en una planta de composta",
+       "Le pide a la vecina que cierre sus ventanas en verano, porque la planta ya estaba ahí cuando ella llegó a vivir",
+       "Las moscas indican restos frescos expuestos; cubrirlos corta la causa, y avisar a la vecina cuida la relación. El insecticida diario no resuelve la causa y puede dañar la vida de la pila. Culpar a la vecina garantiza una queja ante la autoridad."
+      ]
+     ],
+     "completar": [
+      "Al voltear o cribar material seco, usa respirador N95 o FFP2 para protegerte de los ___.",
+      "bioaerosoles"
+     ],
+     "relacionar": [
+      [
+       "Bioaerosoles",
+       "Humedecer antes de cribar y usar N95 o FFP2"
+      ],
+      [
+       "Lixiviados",
+       "Piso con pendiente, canaleta y depósito"
+      ],
+      [
+       "Fauna nociva",
+       "Cubrir cada carga fresca con material café"
+      ],
+      [
+       "Combustión espontánea",
+       "Vigilar a diario y voltear cerca de 65 °C"
+      ],
+      [
+       "Gases en contenedores cerrados",
+       "Ventilar antes de entrar y no trabajar solo"
+      ]
+     ],
+     "refl": "Protocolo de vecinos y seguridad (20 min). 1) Haz una lista de los cinco riesgos de tu planta (olores, lixiviados, fauna, bioaerosoles, fuego o gases) y una medida concreta para cada uno. 2) Escribe el equipo de protección que usará cada tarea: recibir, voltear, cribar y envasar. 3) Redacta qué hacer si una pila humea o alguien se intoxica, con el 911 al principio. 4) Escribe el mensaje con el que te presentarías a tus vecinos.",
+     "modelo": "Modelo: «Olores: cubrir cada carga con poda el mismo día. Lixiviados: piso firme con pendiente hacia un depósito tapado. Fauna: sin carne en las pilas chicas; malla y revisión semanal. Bioaerosoles: humedecer antes de cribar; respirador N95, guantes y botas al voltear y cribar. Fuego: termómetro diario y volteo si pasa de 65 °C; si humea, alejar a todos, no abrir y llamar al 911. A los vecinos: “Soy [tu nombre], aquí convertimos restos de cocina en composta; si notan olor o moscas, este es mi teléfono y lo atiendo el mismo día”.» Es buena porque cada riesgo tiene una medida observable y el plan de emergencia empieza por la seguridad de las personas.",
+     "plantilla": [
+      "Protocolo de vecinos y seguridad",
+      "Riesgo | Medida | Responsable | Frecuencia\nOlores | [ ] | [ ] | [ ]\nLixiviados | [ ] | [ ] | [ ]\nFauna nociva | [ ] | [ ] | [ ]\nBioaerosoles | [ ] | [ ] | [ ]\nCombustión / gases | [ ] | [ ] | [ ]\nEquipo por tarea: recibir [ ] voltear [ ] cribar [ ] envasar [ ]\nEmergencia: 1) 911  2) [ ]  3) [ ]\nContacto para vecinos: [nombre y teléfono]"
+     ],
+     "clave": [
+      "Olores, lixiviados y fauna se previenen con material café, piso con canaleta y nada de comida expuesta.",
+      "Al voltear o cribar seco, humedece y usa respirador N95 o FFP2; quien tiene enfermedad pulmonar debe consultar a su médico.",
+      "Vigila la temperatura y voltea cerca de 65 °C; ante humo, gases o lesiones, llama al 911."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el plan de insumos y permisos de tu planta. 1) Fuentes: elige tres fuentes de residuos y describe cómo las caracterizarías. 2) Ruta en Excel: kilos por día, días por semana, kilos por semana, toneladas por año y la columna con =SI() para gran generador; suma lo que entra por semana. 3) Acuerdo: redacta el acuerdo de piloto con tu fuente principal. 4) Permisos y seguridad: tu mapa de consultas ordenado por autoridad y tu protocolo de vecinos y seguridad con equipo de protección y plan de emergencia.",
+    "entregable": "Un archivo de Excel con la ruta y la clasificación de generadores, el acuerdo de piloto y un documento con el mapa de permisos y el protocolo de vecinos y seguridad.",
+    "criterios": "Revisa: los kilos son pesados o están marcados como estimados, las toneladas por año salen de kilos por semana × 52 ÷ 1,000, el acuerdo dice qué no aceptas y qué pasa con cargas sucias, cada consulta tiene autoridad y pregunta escrita y el protocolo incluye respirador N95 o FFP2 y el 911."
+   },
+   "lab": {
+    "t": "Residuos de un mercado en Mérida",
+    "obj": "Caracterizar los residuos de un mercado, calcular toneladas y capacidad en Excel, definir qué permisos consultar y armar las medidas de vecinos y seguridad antes de firmar un acuerdo.",
+    "esc": "<b>Rebeca,</b> de 34 años, es bióloga y tiene una planta chica de composta a las afueras de Mérida con capacidad para unas 2 toneladas por semana y hoy le sobra espacio. La administración de un mercado municipal le ofrece sus residuos orgánicos: unos 900 kg por día, 6 días a la semana. Es la oportunidad de crecer, pero el calor, las lluvias y la cercanía de unas casas la obligan a planear bien.",
+    "e": [
+     [
+      "Escena 1: Rebeca separa a mano una muestra de 200 kg: 180 kg son fruta y verdura, 6 kg cartón húmedo y 14 kg bolsas y unicel.",
+      "Consigna: calcula el porcentaje de contaminantes, di qué del material puedes compostar y escribe las tres condiciones de separación que pondrías en el acuerdo."
+     ],
+     [
+      "Escena 2: El mercado entrega 900 kg por día, 6 días a la semana, y su planta tiene capacidad para unas 2 t por semana.",
+      "Consigna: escribe las fórmulas de Excel para kilos por semana, toneladas por año y si el mercado es gran generador, y decide cuánto recibir al principio."
+     ],
+     [
+      "Escena 3: Un funcionario del mercado le dice que, como es municipal, no necesita ningún trámite. Su terreno está junto a una zona de casas recién construidas.",
+      "Consigna: haz tu lista de consultas: autoridad, pregunta y por qué, en el orden en que las harías."
+     ],
+     [
+      "Escena 4: En temporada de lluvias las pilas escurren, aparecen moscas y un ayudante quiere cribar en seco los días de calor para avanzar más rápido.",
+      "Consigna: escribe el protocolo de lixiviados, fauna, bioaerosoles y emergencia, y el mensaje para presentarte con los vecinos."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué porcentaje de la muestra son contaminantes?",
+      "7 %: los 14 kg de bolsas y unicel; el cartón húmedo puede compostarse como material café",
+      "10 %, porque todo lo que no es fruta ni verdura cuenta como contaminante de la pila",
+      "3 %, solo el cartón, porque el plástico se puede quitar después con la criba sin problema",
+      "14 ÷ 200 = 7 %. El cartón sin plástico es un material café útil, así que no es contaminante. Confiar en la criba para quitar el plástico deja fragmentos en el producto y lo saca del tipo I."
+     ],
+     [
+      "¿Cuánto le conviene recibir al principio?",
+      "Solo lo que cabe en su capacidad, por ejemplo dos días por semana (1.8 t), y crecer al ampliar pilas y personal",
+      "Las 5.4 t semanales desde el primer día y apilar lo que no alcance a procesar hasta conseguir más espacio y más personal",
+      "Nada: una planta chica no debe trabajar con un mercado, porque sus volúmenes nunca se pueden manejar con orden",
+      "900 × 6 = 5,400 kg por semana, casi el triple de su capacidad. Recibir de más genera montones sin tratar, olores y fauna. Dos días (900 × 2 = 1,800 kg) caben en su capacidad y le permiten crecer ordenadamente; rechazar todo desaprovecha una fuente estable."
+     ],
+     [
+      "¿Qué concluye sobre el mercado como generador?",
+      "Que con 280.8 t de orgánicos al año es gran generador y sus residuos son de manejo especial, regulados por el estado",
+      "Que es pequeño generador, porque los mercados municipales se clasifican así sin importar cuánto generan al año",
+      "Que es gran generador, y por eso sus residuos se consideran peligrosos y requieren un permiso federal especial",
+      "5,400 × 52 ÷ 1,000 = 280.8 t: muy por encima de 10 t. Los residuos urbanos de grandes generadores son de manejo especial y los regula el estado. La categoría depende de las toneladas, no de que el mercado sea municipal, y no los vuelve peligrosos."
+     ]
+    ],
+    "pl": [
+     "Plan de insumos y permisos para una fuente grande",
+     "Fuente: [ ] Ciudad: [ ]\nCaracterización: muestra [ ] kg | orgánicos [ ] % | compostables cafés [ ] % | contaminantes [ ] %\nkg por día [ ] × días [ ] = kg por semana [ ] → t por año [ ] → [gran generador / revisar total]\nCapacidad actual: [ ] t por semana → recibo al inicio: [ ] t por semana\nCondiciones del acuerdo: [ ]\nConsultas: ayuntamiento [ ] | secretaría estatal [ ] | protección civil [ ] | otras [ ]\nLixiviados: [ ] Fauna: [ ] Bioaerosoles: [ ] Emergencia: 911 y [ ]\nMensaje a vecinos: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un restaurante te da 30 kg de orgánicos por día, 6 días a la semana. ¿Qué puedes decir sobre si es gran generador?",
+     "Sus orgánicos suman 9.36 t al año; para saberlo falta sumar el resto de sus residuos",
+     "Es pequeño generador seguro, porque sus orgánicos quedan por debajo de 10 t al año",
+     "Es gran generador, porque cualquier restaurante que genera orgánicos todos los días lo es",
+     "No se puede calcular, porque la ley mide a los generadores por kilos diarios y no anuales"
+    ],
+    [
+     "El comedor de una fábrica entrega 50 kg por día, 5 días a la semana, las 52 semanas del año. ¿Qué es?",
+     "Gran generador: solo sus orgánicos suman 13 t al año",
+     "Pequeño generador, porque entrega menos de una tonelada por semana",
+     "No es generador, porque los comedores de empresas no entran en la ley",
+     "Pequeño generador, porque 50 kg por día es menos de 10 t por año"
+    ],
+    [
+     "Vas a recolectar los residuos de cocina de un hotel grande que es gran generador. ¿A quién preguntas si necesitas registro o autorización para tratarlos?",
+     "A la secretaría de medio ambiente de tu estado, porque son residuos de manejo especial",
+     "Solo al ayuntamiento, porque los residuos de cocina son siempre residuos urbanos comunes",
+     "A COFEPRIS, porque es la autoridad que registra cualquier actividad que maneje restos de comida",
+     "A nadie, porque el compostaje está exento de trámites por la Ley General de Economía Circular"
+    ],
+    [
+     "Encontraste un terreno barato para tu planta en una zona con casas. ¿Qué haces antes de firmar la renta?",
+     "Pedir en el ayuntamiento la constancia de uso de suelo para esa actividad",
+     "Firmar ya y tramitar después, porque la composta es una actividad natural",
+     "Preguntar a SENASICA si el terreno sirve para producir composta orgánica",
+     "Pedirles a los vecinos una carta de apoyo, que sustituye el permiso municipal"
+    ],
+    [
+     "Una carga de un restaurante llega con mucho plástico, contra lo acordado. ¿Qué haces?",
+     "La rechazas o separas según el acuerdo, la documentas con foto y retroalimentas al personal",
+     "La recibes completa para no perder al cliente y tratas de sacar el plástico más adelante con la criba",
+     "La compostas tal cual, porque el plástico se degrada en la pila si la temperatura pasa de 55 °C",
+     "Dejas de recolectar en ese restaurante sin avisar, porque el acuerdo ya no tiene ningún valor"
+    ],
+    [
+     "En temporada de calor en Mérida, un cliente quiere bajar la recolección a una vez por semana. ¿Qué le propones?",
+     "Mantener la recolección frecuente con tambos tapados: varios días al sol fermentan y atraen moscas",
+     "Aceptar, siempre que deje los tambos destapados para que se ventilen y así no huelan tanto",
+     "Aceptar y pedir que agregue cloro a los tambos para que el residuo se conserve mejor",
+     "Aceptar sin cambios, porque el calor acelera el compostaje dentro de los tambos y eso ayuda"
+    ],
+    [
+     "Al llegar a la planta, la caja de tu camioneta escurre un líquido oscuro. ¿Qué corriges?",
+     "Usar contenedores que cierren y una caja que no escurra, y manejar el lixiviado en tu planta",
+     "Nada, porque es un líquido natural que se evapora pronto y no contamina el suelo ni el agua",
+     "Lavar la caja en la calle con manguera para que el líquido se vaya directo al drenaje",
+     "Agregar más restos de fruta al fondo, porque absorben el líquido durante el traslado"
+    ],
+    [
+     "Una nueva ayudante te cuenta que está en tratamiento que baja sus defensas. ¿Qué haces antes de asignarle tareas?",
+     "Evitar que voltee o cribe hasta que consulte a su médico y darle tareas con menos polvo",
+     "Asignarle el cribado, porque con guantes y botas el riesgo de los bioaerosoles desaparece",
+     "Pedirle que trabaje sin protección unos días para que su cuerpo se acostumbre al polvo",
+     "Nada especial, porque los bioaerosoles solo afectan a quien ya tiene asma diagnosticada"
+    ],
+    [
+     "Al abrir un contenedor cerrado de residuos, sale un fuerte olor a huevo podrido. ¿Qué haces?",
+     "Alejarte y ventilar, no entrar solo y, si alguien se desmaya, llamar al 911 sin entrar por él",
+     "Meterte rápido a revisar el fondo, porque ese olor solo indica que la mezcla está muy húmeda",
+     "Cerrarlo de nuevo y esperar a que el olor desaparezca solo antes de volver a abrirlo",
+     "Encender un cerillo junto a la boca del contenedor para quemar el gas antes de revisarlo"
+    ],
+    [
+     "Un cliente te pregunta si la Ley General de Economía Circular lo obliga a contratar tu servicio. ¿Qué respondes?",
+     "Que la ley impulsa el compostaje y menos desperdicio, pero que verifique su reglamento y lo que pide su estado",
+     "Que sí: desde enero de 2026 todas las empresas del país están obligadas por esa ley a contratar compostaje",
+     "Que no tiene nada que ver, porque esa ley solo regula el reciclaje de plásticos y de envases de bebidas",
+     "Que sí, pero solo si es gran generador, porque la ley obliga a los grandes generadores a compostar todo"
+    ]
+   ]
+  }
+ ]
+}
