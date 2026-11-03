@@ -86,9 +86,10 @@ Los 11 giros nuevos (Restaurante, Cafetería, Panadería / repostería, Comedor 
 
 ## Tanda 3 — emprendimiento (aprobada por Héctor el 28 oct 2026)
 
+**Cambio de orden (pedido de Héctor, 3 nov 2026): esta tabla va PRIMERO.** La tarea hace los #28-48 en orden; después, los pendientes de la tanda 2 (#18-27) y al final los pendientes #4-15.
+
 Pedido de Héctor: diplomados para quien quiere emprender o ya tiene un negocio pequeño. **Aprobados todos el 28 oct**
-(«de acuerdo con todos») más el #48 de composta. Van DESPUÉS de la tanda 2 y de los pendientes #4-15, en el orden de la
-tabla. `area` = «Emprendimiento y negocio propio» (icono 🚀 ya en taxonomia.js) salvo el #48, que también va ahí.
+(«de acuerdo con todos») más el #48 de composta. Desde el 3 nov van PRIMERO, en el orden de la tabla. `area` = «Emprendimiento y negocio propio» (icono 🚀 ya en taxonomia.js) salvo el #48, que también va ahí.
 Todos de 30 h, $1,690. Los giros de la columna son sugerencia: úsalos sólo si el diplomado es de los 3 más útiles para ese giro.
 Base de la selección: en México las micro son el 95.5 % de los establecimientos y la rama con más unidades es el
 comercio de abarrotes y alimentos, con poco más de un millón (INEGI, Censos Económicos 2024); oficios más pedidos en
@@ -99,7 +100,7 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 
 | # | id | pref | Diplomado (nombre sugerido) | Interés estimado | Riesgo de traslape | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Pendiente |
+| 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Listo en rama (2026-11-03) |
 | 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Pendiente |
 | 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Pendiente |
 | 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Pendiente |
@@ -294,4 +295,15 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Visita sanitaria (M8 L2): orden de visita, acompañar, observaciones en el acta, copia del acta y «el plazo que indique el acta»; firmar no implica aceptar todo. Que lo confirme un abogado administrativo. Denuncia sanitaria sin teléfono («verifica el canal vigente en gob.mx/cofepris»). Art. 200 Bis LGS (aviso de funcionamiento).
 - Alérgenos: lista de la NOM-051 (4.2.2.2.3; verificar numeración tras la modificación de 2020); señales de anafilaxia y apoyo con autoinyector (M7 L1).
 - Referencias: URLs de sidof.segob.gob.mx (5133449, 5567750), fsis.usda.gov/es/node/3293 y la página del Food Code 2026; fechas DOF de NOM-201 (22 dic 2015) y NOM-256 (29 ene 2013); título exacto en español del CXC 80-2020.
+
+## d-emprender-cero: datos para revisión de experto
+- Categoría: `familia` «Negocios y finanzas», `area` «Emprendimiento y negocio propio» (icono 🚀), `tema` «Emprender desde cero», `dificultad` «desde_cero», precio 1690, giros [] (la tabla dice «—»). Es el diplomado base de la tanda 3: remite a «Contabilidad Básica, RESICO y Facturación CFDI 4.0» (impuestos y facturación a detalle) y a «Marketing Digital y Redes Sociales» (anuncios).
+- INEGI: Censos Económicos 2024 definitivos (micro = 95.4 % de las unidades y 41.4 % del personal ocupado; el plan decía 95.5 %); EDN 2023 (1.7 millones de nacimientos y 1.4 millones de muertes, may 2019-may 2023); esperanza de vida de 7.7 años y supervivencia al primer año de 0.64 (dato publicado en 2015, presentado como histórico); ENAPROCE 2018 (7.6 % de las micro con financiamiento). Confirmar URL de los boletines.
+- RESICO 2026: tope $3.5 millones; tabla mensual 1 %-2.5 % aplicada a todo lo cobrado en el mes según el tramo. Reforma que sube el tope a $5 millones para 2027: aprobada en el Congreso en oct 2026, sin publicar en el DOF al 3 nov 2026 → al publicarse, actualizar M7 L1, su clave 2 y la pregunta 2 del quiz M7.
+- Plataformas digitales 2026: retención de ISR de 2.5 % con RFC; 20 % de ISR y 100 % de IVA sin RFC (fuentes secundarias). Constancia de situación fiscal no requerida para facturar (SAT 2026). Datos que se piden al cliente para CFDI 4.0 (RFC, nombre, código postal, régimen).
+- Aviso de funcionamiento (LGS art. 200 Bis): que es aviso sin visita previa; casos de cosméticos artesanales y de alimentos envasados que se revenden. SARE y permisos municipales presentados en general («verifica en tu municipio»).
+- IMPI: unos $3,100 por clase (2026) y vigencia de 10 años. LFPC arts. 7 Bis, 32 y 77 (garantía mínima de 90 días). Nueva LFPDPPP (aviso de privacidad, sin artículos). IMSS: inscripción en no más de 5 días hábiles (LSS art. 15, fr. I), sin excepción por periodo de prueba ni parentesco. NOM-035 básica para centros pequeños.
+- Comisiones de terminal (Banxico, jul 2026: crédito 2-3.5 %, débito 1.5-2.5 %; los ejemplos no suman el IVA de la comisión); CoDi sin comisión adicional; DiMo. CAT de los ejemplos ficticio; pagos calculados con PAGO a tasa nominal.
+- Evidencia: Camuffo et al. (2020, 116 startups italianas, sin cifras de ingresos); Cooper, Woo y Dunkelberg (1988: 81 %, 33 %, 39 %); CB Insights (111 cierres de startups tecnológicas: 38 % sin dinero, 35 % sin necesidad de mercado, 19 % modelo defectuoso); «métricas de compromiso» atribuidas a Fitzpatrick; términos de la edición en español de Osterwalder (trabajos, frustraciones, alegrías, aliviadores, creadores de alegrías); efectuación de Sarasvathy.
+- Criterios didácticos (no normas): pérdida asumible = ahorro menos un fondo de tres meses de gastos; colchón de tres meses de gastos fijos; depósito de renta como inversión de apertura (no capital de trabajo); tasa de IVA de dulces y refrescos en el lab de M7 se deja para que el alumno la investigue.
 
