@@ -38,6 +38,7 @@ function apContactos(id){
 function apNombre(p){ return p.nombre || p.correo || p.telefono || 'Sin nombre'; }
 function apPila(p){ var n = String(p.nombre||'').trim().split(/\s+/)[0] || ''; return n ? n.charAt(0).toUpperCase() + n.slice(1).toLowerCase() : ''; }
 function apNumWa(p){ var t = String(p.telefono||'').replace(/\D/g,''); if(t.length === 10) t = '52' + t; return t.length >= 12 ? t : ''; }
+function apKit(p){ return !!(p.extra && p.extra.kit); }
 function apTiene(p, e){ return (p.etiquetas||[]).indexOf(e) >= 0; }
 function apProg(id){ var c = id && curso(id); return c ? c.nombre : ''; }
 function apAula(){ return (BD.config.urlPublica || 'https://institutomara.com').replace(/\/$/, '') + '/plataforma/index.html'; }
@@ -86,12 +87,12 @@ function apVistaLista(){
   }, 0);
   return '<div class="seccion">'+apPestanas('alumnos')+'<div class="encabezado-fila"><div><h2>Prospectos de alumnos</h2>'+
     '<p class="sub" style="margin:0">Cuentas del aula y personas interesadas: quiénes son, qué les interesa y cómo vas con cada una.</p></div>'+
-    '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-linea" onclick="apAgregar()">Agregar persona</button>'+
-    '<button class="btn btn-mor" onclick="apSubirCSV()">Subir CSV</button></div></div><div id="ap-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
+    '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-mor" onclick="cpAbrir(\'alumnos\')">📣 Campañas</button><button class="btn btn-linea" onclick="apAgregar()">Agregar persona</button>'+
+    '<button class="btn btn-linea" onclick="apSubirCSV()">Subir CSV</button></div></div><div id="ap-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
 
 var AP_FILTROS = {
-  tipo: { rot:'Tipo', ops: Object.keys(AP_ETQ).map(function(k){ return [k, AP_ETQ[k][0], function(p){ return apTiene(p, k); }]; }) },
+  tipo: { rot:'Tipo', ops: [['kit', 'Kit clínico', function(p){ return apKit(p); }]].concat(Object.keys(AP_ETQ).map(function(k){ return [k, AP_ETQ[k][0], function(p){ return apTiene(p, k); }]; })) },
   estado: { rot:'Seguimiento', ops: Object.keys(AP_ESTADOS).map(function(k){ return [k, AP_ESTADOS[k], function(p){ return p.estado === k; }]; }) },
   origen: { rot:'Origen', ops: Object.keys(AP_ORIGEN).map(function(k){ return [k, AP_ORIGEN[k], function(p){ return p.origen === k; }]; }) },
   promo: { rot:'Datos y permisos', ops:[
@@ -262,7 +263,19 @@ function apPintarHistorial(p){
 }
 
 /* Mensaje de WhatsApp según quién es (se puede editar antes de abrirlo). */
+/* Kit clínico (2 nov 2026): cupón KITCLINICO hasta el 30 nov y compra sin cuenta en la página del kit. */
+var AP_KIT = { psicologo:['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual (33 h) te queda en $996 en lugar de $2,490'],
+  estudiante:['c-pap', 'el curso de Primeros Auxilios Psicológicos te queda en $276 en lugar de $690, y el Diplomado en TCC en $996'],
+  otro:['c-ia-psicologos', 'el curso de IA para Psicólogos y Consultorios te queda en $236 y el Diplomado en TCC en $996'] };
+function apMensajeKit(p){
+  var n = apPila(p), o = AP_KIT[(p.extra && p.extra.kit_perfil) || ''] || ['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual te queda en $996 en lugar de $2,490'];
+  return 'Hola' + (n ? ', ' + n : '') + '. Te escribo de Instituto Mara. Gracias por descargar el kit de formatos clínicos, ¿ya pudiste usarlo?\n\n' +
+    'Por haberlo descargado tienes 60 % de descuento con el cupón KITCLINICO hasta el 30 de noviembre: ' + o[1] + '. Te inscribes aquí sin crear cuenta y pagas con tarjeta, OXXO o transferencia:\n' +
+    apSitio() + 'kit-clinico.html?comprar=' + o[0] + '&utm_source=whatsapp&utm_medium=directo&utm_campaign=kit-clinico#inscribete\n\n' +
+    'Si tienes alguna duda sobre el programa, con gusto te ayudo por aquí.';
+}
 function apMensaje(p){
+  if(apKit(p) && !apTiene(p,'alumno') && new Date() < new Date('2026-12-01T00:00:00-06:00')) return apMensajeKit(p);
   var n = apPila(p), hola = 'Hola' + (n ? ' ' + n : '') + ', soy Héctor de Instituto Mara.';
   var prog = apProg(p.programa_interes), mu = apMuestra(p.programa_interes);
   var ult = apProg(p.ultimo_curso) || apProg((p.cursos||[])[0]);

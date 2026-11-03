@@ -19,6 +19,7 @@ const REMITENTE = Deno.env.get("CORREO_REMITENTE") || "";
 const NOMBRE = Deno.env.get("NOMBRE_REMITENTE") || "Instituto Mara";
 const AULA = "https://institutomara.com/plataforma/index.html";
 const SITIO = "https://institutomara.com/sitio-web/index.html";
+const KIT = "https://institutomara.com/sitio-web/kit-clinico.html";
 const PDF = "https://institutomara.com/sitio-web/recursos/kit-formatos-clinicos-instituto-mara.pdf";
 const RECURSO = "kit-clinico";
 const DIAS = [0, 0, 1, 3, 5, 7];         // DIAS[n] = días después del registro en que sale el correo n
@@ -98,6 +99,8 @@ async function oferta(): Promise<Oferta | null> {
 // ---------------------------------------------------------------- plantillas
 const MOR = "#6D28D9", TINTA = "#2E1065", GRIS = "#6B7280";
 const ligaAula = (q: string, n: number, o: Oferta | null) => `${AULA}?${q}${o && o.codigo ? `&cupon=${o.codigo}` : ""}&utm_source=correo&utm_medium=email&utm_campaign=kit-clinico&utm_content=c${n}`;
+// Desde el 2 nov 2026 las ligas de compra van a la página del kit (#inscribete): paga sin crear cuenta.
+const ligaCompra = (id: string, n: number) => `${KIT}?comprar=${encodeURIComponent(id)}&utm_source=correo&utm_medium=email&utm_campaign=kit-clinico&utm_content=c${n}#inscribete`;
 const p = (t: string) => `<p style="font-size:15.5px;line-height:1.65;margin:0 0 14px">${t}</p>`;
 const boton = (texto: string, url: string) => `<p style="margin:22px 0"><a href="${url}" style="background:${MOR};color:#fff;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">${e(texto)}</a></p>`;
 const lista = (items: string[]) => `<ul style="font-size:15.5px;line-height:1.6;padding-left:20px;margin:0 0 14px">${items.map((i) => `<li style="margin-bottom:8px">${i}</li>`).join("")}</ul>`;
@@ -113,14 +116,14 @@ function marco(cuerpo: string, bajaUrl: string) {
 
 function tablaProgramas(o: Oferta, n: number) {
   return `<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:6px 0 16px">${o.programas.map((x) => `
-    <tr><td style="padding:11px 0;border-bottom:1px solid #E9E6F7"><a href="${ligaAula(`curso=${x.id}`, n, o)}" style="color:${TINTA};font-weight:bold;text-decoration:none;font-size:15px">${e(x.nombre)}</a>
+    <tr><td style="padding:11px 0;border-bottom:1px solid #E9E6F7"><a href="${ligaCompra(x.id, n)}" style="color:${TINTA};font-weight:bold;text-decoration:none;font-size:15px">${e(x.nombre)}</a>
     <div style="color:${GRIS};font-size:13px">${x.horas} h · ${e(DESCRIPCION[x.id] || "")}</div></td>
-    <td style="padding:11px 0 11px 10px;border-bottom:1px solid #E9E6F7;text-align:right;white-space:nowrap">${o.pct ? `<s style="color:${GRIS};font-size:13px">${dinero(x.precio)}</s><br>` : ""}<b style="color:${MOR};font-size:18px">${dinero(x.final)}</b></td></tr>`).join("")}</table>`;
+    <td style="padding:11px 0 11px 10px;border-bottom:1px solid #E9E6F7;text-align:right;white-space:nowrap">${o.pct ? `<s style="color:${GRIS};font-size:13px">${dinero(x.precio)}</s><br>` : ""}<b style="color:${MOR};font-size:18px">${dinero(x.final)}</b><br><a href="${ligaCompra(x.id, n)}" style="color:${MOR};font-size:13px;font-weight:bold">Inscribirme</a></td></tr>`).join("")}</table>`;
 }
 function cajaOferta(o: Oferta | null) {
   if (!o || !o.codigo) return "";
   const txt = o.especial
-    ? `Por descargar el kit tienes <b>${o.pct} % de descuento</b> en los programas clínicos con el cupón <b>${o.codigo}</b>${o.vence ? `, válido hasta el ${fechaLarga(o.vence)}` : ""}. Ya va aplicado en las ligas de este correo.`
+    ? `Por descargar el kit tienes <b>${o.pct} % de descuento</b> en los programas clínicos con el cupón <b>${o.codigo}</b>${o.vence ? `, válido hasta el ${fechaLarga(o.vence)}` : ""}. Ya va aplicado en las ligas de este correo y <b>pagas sin crear cuenta</b>.`
     : `Tienes <b>${o.pct} % de descuento</b> en tu primer programa con el cupón <b>${o.codigo}</b>${o.vence ? `, válido hasta el ${fechaLarga(o.vence)}` : ""}. Ya va aplicado en las ligas de este correo.`;
   return `<div style="background:#EDE9FE;border-radius:12px;padding:14px 16px;font-size:15px;line-height:1.55;margin:18px 0">${txt}</div>`;
 }
@@ -152,7 +155,8 @@ export function armarCorreo(n: number, nombre: string, o: Oferta | null, bajaUrl
         "<b>Buscar un pensamiento positivo en vez de uno equilibrado.</b> La meta no es convencerse de que todo está bien, sino mirar la situación completa con la evidencia a favor y en contra.",
       ]) +
       p(`Si quieres dominar estas y otras técnicas, prueba gratis una lección del <b>Diplomado en Terapia Cognitivo-Conductual</b>. Es en línea, con casos y ejercicios interactivos.${prog("d-tcc") ? ` El diplomado completo (${prog("d-tcc")!.horas} h) te queda en ${precioDe("d-tcc")}.` : ""}`) +
-      boton("Probar una lección gratis", ligaAula("muestra=d-tcc", n, o)) + cajaOferta(o);
+      boton("Probar una lección gratis", ligaAula("muestra=d-tcc", n, o)) +
+      (o && o.codigo ? p(`¿Ya te convenció? <a href="${ligaCompra("d-tcc", n)}" style="color:${MOR};font-weight:bold">Inscríbete al diplomado con tu ${o.pct} % de descuento</a>.`) : "") + cajaOferta(o);
   } else if (n === 3) {
     asunto = "¿Tu paciente sabe cuándo puedes romper la confidencialidad?";
     cuerpo = hola + p("Explicar los límites de la confidencialidad desde la primera sesión no debilita la alianza terapéutica: la fortalece. El paciente sabe a qué atenerse y confía más.") +
@@ -160,7 +164,8 @@ export function armarCorreo(n: number, nombre: string, o: Oferta | null, bajaUrl
       `<div style="border-left:4px solid ${MOR};padding:6px 14px;margin:0 0 14px;font-size:15.5px;line-height:1.6;color:${TINTA}">«Todo lo que hablemos aquí se queda entre nosotros. Solo hay tres excepciones: si tu vida o la de alguien más corre un riesgo grave, si me entero de que un niño o una persona vulnerable está sufriendo maltrato, o si una autoridad me lo ordena. Si llegara a pasar, lo hablaría contigo primero siempre que sea posible.»</div>` +
       p("Y cuando la evaluación de riesgo sale positiva, lo que hagas en los siguientes minutos importa: un plan de seguridad por escrito, la red de apoyo enterada y los números de emergencia a la mano (911 y Línea de la Vida, 800 911 2000).") +
       p(`Para eso existe nuestro curso de <b>Primeros Auxilios Psicológicos</b>${prog("c-pap") ? ` (${prog("c-pap")!.horas} h, ${precioDe("c-pap")})` : ""}. Y si quieres profundizar en la entrevista y la formulación de casos, el <b>Diplomado en Evaluación Psicológica</b>${prog("d-evaluacion-clinica") ? ` te queda en ${precioDe("d-evaluacion-clinica")}` : ""}.`) +
-      boton("Ver Primeros Auxilios Psicológicos", ligaAula("muestra=c-pap", n, o)) + cajaOferta(o);
+      boton("Ver Primeros Auxilios Psicológicos", ligaAula("muestra=c-pap", n, o)) +
+      (o && o.codigo ? p(`¿Listo(a) para empezar? <a href="${ligaCompra("c-pap", n)}" style="color:${MOR};font-weight:bold">Inscríbete a Primeros Auxilios Psicológicos</a>${prog("c-pap") ? ` por ${dinero(prog("c-pap")!.final)}` : ""}.`) : "") + cajaOferta(o);
   } else if (n === 4) {
     asunto = "Así se estudia en Instituto Mara";
     cuerpo = hola + p("Quizá te preguntas cómo son nuestros programas antes de inscribirte. Te lo contamos en corto:") +
@@ -172,14 +177,15 @@ export function armarCorreo(n: number, nombre: string, o: Oferta | null, bajaUrl
         "<b>Pago único</b> con Mercado Pago y acceso inmediato.",
       ]) +
       (o ? p("<b>Los programas clínicos y su precio con tu descuento:</b>") + tablaProgramas(o, n) : "") +
-      boton("Ver los programas", ligaAula("muestra=d-evaluacion-clinica", n, o)) + cajaOferta(o);
+      boton(o && o.codigo ? "Inscribirme con descuento" : "Ver los programas", o && o.codigo ? ligaCompra("d-tcc", n) : ligaAula("muestra=d-evaluacion-clinica", n, o)) + cajaOferta(o);
   } else {
     const vence = o && o.vence ? fechaLarga(o.vence) : "";
     asunto = o && o.codigo ? `Tu ${o.pct} % de descuento${vence ? ` vence el ${vence}` : " sigue disponible"}` : "¿Te sirvió el kit?";
     cuerpo = hola + p("Esperamos que los formatos del kit ya te estén sirviendo en consulta.") +
       (o && o.codigo
         ? p(`Te escribimos por última vez para recordarte tu descuento: <b>${o.pct} %</b> con el cupón <b>${o.codigo}</b>${vence ? `, válido hasta el ${vence}` : ""}. Con él, cualquier diplomado clínico te queda por menos de lo que cuesta un taller presencial de fin de semana.`) + tablaProgramas(o, n) +
-          boton("Inscribirme con descuento", ligaAula("muestra=d-tcc", n, o))
+          boton("Inscribirme con descuento", ligaCompra("d-tcc", n)) +
+          p("Pagas en la página segura de Mercado Pago (tarjeta, OXXO o transferencia), sin crear cuenta antes. En cuanto se confirma el pago te llega tu acceso a este correo.")
         : boton("Ver los programas clínicos", `${SITIO}?utm_source=correo&utm_medium=email&utm_campaign=kit-clinico&utm_content=c5`)) +
       p("¿Tienes dudas sobre algún programa? Responde este correo y con gusto te ayudamos.");
   }
@@ -228,6 +234,9 @@ async function registro(b: any) {
 }
 
 async function yaCompro(correoP: string) {
+  // Compra sin cuenta (página del kit): queda en regalos con para_mi hasta que active su programa.
+  const g = await db(`regalos?para_mi=eq.true&de_correo=eq.${encodeURIComponent(correoP)}&curso_id=in.(${PROGRAMAS.join(",")})&estado=in.(pagado,enviado,canjeado)&select=id&limit=1`).catch(() => []);
+  if (g.length) return true;
   const p = await db(`perfiles?correo=eq.${encodeURIComponent(correoP)}&select=id`);
   if (!p[0]) return false;
   const i = await db(`inscripciones?usuario_id=eq.${p[0].id}&curso_id=in.(${PROGRAMAS.join(",")})&select=id&limit=1`);
@@ -258,9 +267,21 @@ async function secuencia() {
   return json({ enviados, terminados });
 }
 
-function paginaBaja(ok: boolean) {
-  const t = ok ? "Listo, ya no te enviaremos estos correos." : "No encontramos tu registro.";
-  const s = ok ? "Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com." : "Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.";
+async function bajaAlumno(tk: unknown) {
+  const t = String(tk || "").toLowerCase().replace(/[^a-f0-9-]/g, "");
+  if (!/^[0-9a-f-]{36}$/.test(t)) return false;
+  const r = await db(`alumnos_prospectos?token=eq.${t}&select=id,correo,sin_promociones`);
+  if (!r[0]) return false;
+  if (!r[0].sin_promociones) {
+    await db(`alumnos_prospectos?id=eq.${r[0].id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { sin_promociones: true } });
+    await db("alumnos_contactos", { metodo: "POST", prefer: "return=minimal", cuerpo: { persona_id: r[0].id, canal: "correo", sentido: "entrante", resumen: "Pidió no recibir promociones (enlace de baja de campaña).", resultado: "baja" } }).catch(() => null);
+    if (r[0].correo) await db(`kit_registros?correo=eq.${encodeURIComponent(r[0].correo)}&baja=eq.false`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { baja: true, baja_en: new Date().toISOString(), siguiente_en: null } }).catch(() => null);
+  }
+  return true;
+}
+function paginaBaja(ok: boolean, promos = false) {
+  const t = ok ? (promos ? "Listo, ya no te enviaremos promociones." : "Listo, ya no te enviaremos estos correos.") : "No encontramos tu registro.";
+  const s = ok ? (promos ? "Los correos de tu cuenta (accesos, recibos y constancias) te seguirán llegando. Si cambias de opinión, escríbenos a contacto@institutomara.com." : "Si algún día quieres volver a recibirlos, solo descarga de nuevo el kit en institutomara.com.") : "Es posible que la liga esté incompleta. Si quieres darte de baja, escríbenos a contacto@institutomara.com.";
   return new Response(`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Instituto Mara</title></head>
   <body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#F8F7FE;color:#1F2937"><div style="max-width:520px;margin:60px auto;padding:30px 24px;background:#fff;border:1px solid #E9E6F7;border-radius:18px;text-align:center">
   <p style="color:#6D28D9;font-weight:bold;margin:0 0 10px">Instituto Mara</p><h1 style="font-size:22px;color:#2E1065">${t}</h1><p style="line-height:1.6;color:#6B7280">${s}</p>
@@ -271,6 +292,8 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   try {
     const u = new URL(req.url);
+    // Baja de promociones de Prospectos → Alumnos (enlace de las campañas a alumnos, 2 nov 2026).
+    if (u.searchParams.get("baja_alumno")) return paginaBaja(await bajaAlumno(u.searchParams.get("baja_alumno")), true);
     if (req.method === "GET" || u.searchParams.get("baja")) {
       const t = (u.searchParams.get("baja") || "").replace(/[^a-f0-9]/g, "");
       if (!t) return paginaBaja(false);
@@ -279,6 +302,7 @@ serve(async (req) => {
     }
     const b = await req.json().catch(() => ({}));
     if (b.accion === "registro") return await registro(b);
+    if (b.accion === "baja_alumno") return json({ ok: await bajaAlumno(b.t) });   // la usa sitio-web/baja-kit.html?a=…
     if (b.accion === "baja") {
       const t = String(b.t || "").replace(/[^a-f0-9]/g, "");
       if (!t) return json({ ok: false });
