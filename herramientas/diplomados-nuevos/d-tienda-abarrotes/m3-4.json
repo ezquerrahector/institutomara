@@ -1,0 +1,800 @@
+{
+  "modulos": [
+    {
+      "t": "Precios con margen real",
+      "r": "Pon precios por categoría con un margen objetivo, separa bien el IVA, diseña promociones que no se coman tu ganancia y compite con cadenas y mayoristas sin bajar todo tu surtido.",
+      "lecciones": [
+        {
+          "t": "Fijar precios por categoría: márgenes objetivo, precio sugerido y productos gancho",
+          "obj": "Calcular el precio de cada producto a partir de un margen objetivo por categoría y decidir qué productos funcionan como gancho sin que la tienda pierda.",
+          "texto": [
+            "Muchas tiendas ponen precio igual a todo: «le subo 20 % y ya». Es rápido, pero trata igual a productos que cumplen papeles muy distintos. Una categoría de tráfico, como huevo, leche o tortilla, la compara cualquiera; si la cobras cara, la gente lo nota y deja de entrar. Una de impulso, como dulces o botanas, se compra por antojo y casi nadie recuerda su precio exacto, así que aguanta más margen. Por eso conviene fijar un <b>margen objetivo por categoría</b>: por ejemplo, 8 a 12 % en básicos de tráfico, 18 a 22 % en abarrotes de rutina y 25 a 35 % en impulso. Son cifras de ejemplo: ajústalas con tus costos, tu colonia y tu competencia.",
+            "Con el margen objetivo, el precio sale de una fórmula: precio = costo ÷ (1 − margen). Si el aceite te cuesta $38 y quieres 15 % de margen, el precio es $38 ÷ 0.85 = $44.71, que redondeas a $45. Multiplicar $38 × 1.15 da $43.70 y solo te deja 13 %, porque un aumento sobre el costo no es lo mismo que un margen sobre el precio (30 % de aumento equivale a 23.1 % de margen). En Excel, con el costo en B2 y el margen en C2, escribe =B2/(1-C2) y arrastra la fórmula a toda la lista.",
+            "El <b>precio sugerido</b> del proveedor es una referencia, no una orden. Calcula qué margen te deja: si las galletas te cuestan $14 y el sugerido es $19, ganas 26.3 %. Si tu objetivo para impulso es 30 %, el precio sería $20; decide mirando a tus vecinos y si el precio viene impreso en el empaque: cobrar por encima de lo que el cliente lee en la bolsa genera desconfianza inmediata y, si el empaque dice precio máximo, verifica con Profeco antes de cobrar más.",
+            "Un <b>producto gancho</b> lleva margen bajo a propósito para que la gente entre y, ya adentro, compre otras cosas. Funciona si cumple tres condiciones: es muy conocido, se compra seguido y casi siempre va acompañado. No lo vendas abajo del costo de forma permanente, y revisa si de verdad trae canasta: si la gente solo compra el gancho, estás regalando margen. Al final importa el <b>margen ponderado</b>, es decir, lo que te deja toda la venta junta, no el porcentaje de un producto suelto."
+          ],
+          "comparar": [
+            "«Así no: A todo le subo 20 % sobre lo que me costó; así es parejo y nadie se queja.»",
+            "«Así sí: Al huevo le dejo 9 % porque me trae clientes, a los abarrotes 20 % y a dulces y botanas 30 %, y cada mes reviso mi margen total.»"
+          ],
+          "caso": "Caso ficticio: Araceli, de 52 años, tiene una tienda de abarrotes en una colonia de Oaxaca desde hace quince años. Siempre ha puesto precio sumando 20 % al costo. Un sobrino le hizo una hoja con sus ventas de una semana: básicos $6,000 con 10 % de margen, abarrotes $5,000 con 20 %, botanas y dulces $3,000 con 30 % y limpieza $2,000 con 22 %. Esta semana le llegó aceite a $38 el litro, el kilo de huevo a $42 (lo vende a $46) y unas galletas nuevas que cuestan $14 con precio sugerido de $19. Su hija le dice que suba el huevo a 20 % «para emparejar».",
+          "p": [
+            [
+              "¿Qué precio debe ponerle Araceli al aceite si quiere 15 % de margen sobre el precio?",
+              "$44.71, que redondea a $45, porque $38 ÷ 0.85 deja justo 15 %",
+              "$43.70, porque $38 × 1.15 agrega el 15 % que ella busca ganar",
+              "$53.20, porque $38 × 1.40 cubre margen, merma y algo de luz",
+              "Precio = costo ÷ (1 − margen) = $38 ÷ 0.85 = $44.71. Multiplicar por 1.15 es un aumento sobre el costo y deja solo 13 % de margen sobre el precio. Subir 40 % no responde al objetivo de 15 % y en el aceite, que es producto de rutina y muy comparado, la alejaría del vecindario."
+            ],
+            [
+              "¿Le conviene subir el huevo a 20 % de margen como propone su hija?",
+              "No por ahora: el huevo funciona como gancho; conviene medir si trae canasta antes de moverlo",
+              "Sí, porque todos los productos deben dejar el mismo margen para que la tienda sea pareja y justa",
+              "Sí, y además bajar los dulces a 10 % para compensar a los clientes por la subida del huevo",
+              "El huevo es conocido, se compra seguido y suele ir acompañado: es buen gancho, y su margen de 8.7 % se compensa con categorías de más margen. Emparejar ignora el papel de cada categoría, y bajar los dulces regala margen donde casi nadie compara precios."
+            ],
+            [
+              "Con la hoja de su sobrino, ¿cuál es el margen ponderado de la semana?",
+              "18.4 %: $2,940 de margen entre $16,000 de venta",
+              "20.5 %: el promedio simple de 10, 20, 30 y 22 por ciento",
+              "30 %: el margen de la categoría que más le deja por peso",
+              "El margen en pesos es $600 + $1,000 + $900 + $440 = $2,940, y $2,940 ÷ $16,000 = 18.4 %. El promedio simple trata igual a una categoría que vende $2,000 que a una que vende $6,000, y el 30 % es solo de botanas y dulces."
+            ]
+          ],
+          "completar": [
+            "Un producto con margen bajo a propósito para atraer clientes que luego compran otras cosas se llama producto ___.",
+            "gancho"
+          ],
+          "relacionar": [
+            [
+              "Huevo, leche y tortilla",
+              "Tráfico: margen bajo y precio vigilado"
+            ],
+            [
+              "Dulces y botanas",
+              "Impulso: aguantan más margen"
+            ],
+            [
+              "=B2/(1-C2)",
+              "Precio para un margen objetivo"
+            ],
+            [
+              "Precio sugerido del proveedor",
+              "Referencia para comparar tu margen"
+            ],
+            [
+              "Margen de toda la venta junta",
+              "Margen ponderado"
+            ]
+          ],
+          "refl": "Fija tus márgenes por categoría (20 min). 1) Agrupa tu tienda en 4 a 6 categorías y escribe para cada una su papel: tráfico, rutina, impulso o conveniencia. 2) Asigna un margen objetivo a cada categoría y justifícalo en una línea. 3) Elige 10 productos, anota su costo y calcula el precio con costo ÷ (1 − margen). 4) Compara con tu precio actual y marca cuáles están abajo del objetivo. 5) Escoge un posible producto gancho y escribe cómo vas a medir si trae canasta.",
+          "modelo": "Modelo: «Categorías: básicos (tráfico) 10 %, abarrotes (rutina) 20 %, bebidas frías (conveniencia) 22 %, dulces y botanas (impulso) 30 %. Recalculé 10 productos: el arroz me cuesta $30 y lo vendía a $34 (11.8 %); a 20 % debería estar en $37.50, pero en la colonia está a $35, así que lo dejo en $35 y gano en otros. El jabón de barra estaba a 14 %: lo subo. Gancho: tortilla. Durante dos semanas anotaré cuántos tickets con tortilla llevan algo más.» Es buena porque usa la fórmula, mira a la competencia y plantea cómo medir el gancho.",
+          "plantilla": [
+            "Tabla de márgenes por categoría",
+            "Categoría: [ ]  Papel: [tráfico / rutina / impulso / conveniencia]  Margen objetivo: [ ] %\nProducto: [ ]  Costo: $[ ]  Precio actual: $[ ]  Margen actual: [ ] %\nPrecio con margen objetivo = costo ÷ (1 − margen) = $[ ]  Redondeo: $[ ]\nPrecio en la competencia cercana: $[ ]\nDecisión: [subo / dejo / bajo] porque [ ]\nProducto gancho: [ ]  Cómo mediré si trae canasta: [ ]"
+          ],
+          "clave": [
+            "Pon margen objetivo por categoría según su papel: los productos de tráfico aguantan poco margen y los de impulso, más.",
+            "Precio = costo ÷ (1 − margen); multiplicar el costo por 1.15 no da 15 % de margen.",
+            "Lo que importa es el margen ponderado de toda la venta, no el de un producto suelto."
+          ]
+        },
+        {
+          "t": "Impuestos en el precio: IVA a tasa 0 % y 16 %, IEPS incluido y precio total a la vista",
+          "obj": "Separar correctamente el IVA de tus precios, calcular márgenes sobre el precio sin IVA y exhibir siempre el precio total.",
+          "texto": [
+            "En una tienda conviven productos con dos tasas de IVA. Como regla general, la mayoría de los alimentos van a <b>tasa 0 %</b>: tortilla, pan, leche, huevo, frijol, hielo y, en general, los dulces. Pagan <b>16 %</b> las bebidas distintas de la leche (refrescos, jugos, néctares y polvos para preparar bebidas), los chicles, el alimento procesado para mascotas y los productos de limpieza e higiene personal. Hay casos finos: el agua natural en envases menores de 10 litros paga 16 % y el garrafón de 10 litros o más, 0 %; con las botanas hay criterios dudosos. En esos casos, verifica con tu contador antes de decidir cómo los registras.",
+            "Si tu tienda está inscrita y declara IVA, ese 16 % que cobras no es tuyo: lo recibes por cuenta del SAT y, al declarar, le restas el IVA que pagaste en compras con factura. Para sacar el precio sin IVA se divide entre <b>1.16</b>; no se resta 16 %. Un refresco de $21 vale $18.10 sin IVA; si restas 16 % te sale $17.64, que es un error. Lo mismo con el costo: si la factura de la refresquera dice $16.50 con IVA, tu costo real es $14.22. Tu ganancia por botella es $18.10 − $14.22 = $3.88, no los $4.50 que ves en la caja. Si compras sin factura, ese IVA no lo puedes acreditar y se vuelve parte de tu costo.",
+            "Calcula el margen siempre sobre el precio sin IVA cuando el producto paga 16 %. Para poner precio con margen objetivo, usa costo sin IVA ÷ (1 − margen) × 1.16; en Excel, =B2/(1-C2)*1.16. Y cuando separes el IVA de la venta del día, hazlo solo sobre lo que paga 16 %: si vendiste $8,000 y $3,000 eran de tasa 16 %, el IVA es $3,000 − $3,000 ÷ 1.16 = $413.79, no $8,000 ÷ 1.16.",
+            "El <b>IEPS</b> es distinto: lo paga el fabricante o importador y ya viene dentro de tu costo. En 2026 los refrescos con azúcar llevan $3.0818 por litro, las bebidas con edulcorantes $1.50 por litro y los alimentos no básicos con 275 kcal o más por cada 100 gramos, 8 %. El tendero que solo revende normalmente no lo desglosa; confírmalo con tu contador. Por último, la Ley Federal de Protección al Consumidor pide exhibir el <b>precio total</b>, con impuestos incluidos: nada de letreros con «más IVA»."
+          ],
+          "comparar": [
+            "«Así no: Detergente $36 más IVA; y al refresco le quito 16 % para saber cuánto es mío.»",
+            "«Así sí: Detergente $42, precio total. Para mis cuentas divido entre 1.16 solo lo que paga IVA y calculo el margen sin IVA.»"
+          ],
+          "caso": "Caso ficticio: Bernardo, de 34 años, tomó la tienda de su papá en Tlaxcala y se inscribió en RESICO; su contador le pidió que separe las ventas por tasa de IVA. Vende el refresco de 600 ml a $21 y la refresquera le factura cada botella a $16.50 con IVA. Un día típico vende $8,000, de los cuales $3,000 son de productos con 16 %. Quiere ponerle precio a un detergente que le cuesta $28 sin IVA ($32.48 con IVA) y busca 22 % de margen. Su papá le aconseja: «saca el IVA restando 16 % a todo lo que vendiste».",
+          "p": [
+            [
+              "¿Cuánto le deja de verdad a Bernardo cada refresco de $21?",
+              "$3.88: $18.10 sin IVA menos $14.22 de costo sin IVA",
+              "$4.50, que es la diferencia entre lo que cobra y lo que paga",
+              "$3.42: resta 16 % al precio, $17.64, y le quita $14.22 del costo",
+              "Sin IVA, $21 ÷ 1.16 = $18.10 y $16.50 ÷ 1.16 = $14.22: la ganancia es $3.88. Los $4.50 incluyen IVA que en parte debe pagar al SAT. Restar 16 % al precio es el error de método: el IVA se separa dividiendo entre 1.16."
+            ],
+            [
+              "¿Cuánto IVA cobró en un día típico de $8,000?",
+              "$413.79, porque solo separa el IVA de los $3,000 que pagan 16 %",
+              "$1,103.45, porque divide los $8,000 entre 1.16 y toma la diferencia",
+              "$1,280, que es el 16 % de toda la venta del día según su papá",
+              "Solo los $3,000 llevan IVA: $3,000 − $3,000 ÷ 1.16 = $413.79. Dividir los $8,000 trata como gravados productos de tasa 0 %, y multiplicar por 0.16 suma el error de método al error de tasa. Así Bernardo pagaría IVA que nunca cobró."
+            ],
+            [
+              "¿Qué precio total debe exhibir para el detergente con 22 % de margen sin IVA?",
+              "$41.64, que redondea a $42, con el IVA ya incluido en el letrero",
+              "$35.90 más IVA, para que el cliente vea cuánto paga de impuesto",
+              "$39.63, porque $32.48 × 1.22 incluye el margen y el impuesto",
+              "$28 ÷ 0.78 = $35.90 sin IVA y × 1.16 = $41.64. Exhibir «más IVA» va contra la obligación de mostrar el precio total. Multiplicar $32.48 × 1.22 es un aumento sobre el costo y deja menos de 22 % de margen."
+            ]
+          ],
+          "completar": [
+            "Para sacar el precio sin IVA de un producto con tasa 16 %, divides el precio entre ___.",
+            "1.16"
+          ],
+          "relacionar": [
+            [
+              "Tortilla, leche, huevo y frijol",
+              "Tasa 0 % como regla general"
+            ],
+            [
+              "Refrescos, jugos y chicles",
+              "Tasa 16 %"
+            ],
+            [
+              "Botanas y agua en envase chico",
+              "Verifica con tu contador"
+            ],
+            [
+              "IEPS de refrescos",
+              "Ya viene dentro de tu costo"
+            ],
+            [
+              "Letrero con precio total",
+              "Obligación ante el consumidor"
+            ]
+          ],
+          "refl": "Separa el IVA de tu tienda (20 min). 1) Haz una lista de 15 productos y marca su tasa: 0 %, 16 % o «preguntar al contador». 2) Para cinco productos de 16 %, calcula precio y costo sin IVA (÷ 1.16) y su margen real. 3) Toma la venta de un día y estima qué parte fue de 16 %; calcula el IVA solo sobre esa parte. 4) Revisa tus letreros: anota cuáles no muestran el precio total y corrígelos. 5) Escribe tres preguntas para tu contador.",
+          "modelo": "Modelo: «Tasa 0 %: frijol, arroz, leche, pan. Tasa 16 %: jugo de 1 L, cloro, papel higiénico, croquetas. Preguntar: cacahuates enchilados y agua de 1.5 L. El cloro lo vendo a $29: sin IVA son $25; me cuesta $20.88 con IVA, $18 sin IVA, así que mi margen es 28 %. Ayer vendí $6,500 y unos $2,300 eran de 16 %: IVA de $317.24. Quité dos letreros que decían «más IVA».» Es buena porque separa tasas, divide entre 1.16, calcula el IVA solo de lo gravado y deja dudas para el contador.",
+          "plantilla": [
+            "Hoja de precios con IVA",
+            "Producto: [ ]  Tasa: [0 % / 16 % / preguntar]\nCosto con IVA: $[ ] → sin IVA (÷ 1.16): $[ ]\nPrecio al público: $[ ] → sin IVA (÷ 1.16): $[ ]\nMargen real = (precio sin IVA − costo sin IVA) ÷ precio sin IVA = [ ] %\nVenta del día: $[ ]  De ella, con 16 %: $[ ]  IVA = $[ ] − $[ ] ÷ 1.16 = $[ ]\nLetreros por corregir: [ ]\nPreguntas para mi contador: [ ]"
+          ],
+          "clave": [
+            "El IVA se separa dividiendo entre 1.16, nunca restando 16 %, y solo sobre lo que paga esa tasa.",
+            "Calcula el margen con precio y costo sin IVA; si compras sin factura, el IVA se vuelve costo.",
+            "El IEPS ya viene en tu costo y al cliente siempre le muestras el precio total."
+          ]
+        },
+        {
+          "t": "Promociones que no regalan tu margen: paquetes, volumen y precios redondos",
+          "obj": "Calcular cuánto más necesitas vender para que una promoción valga la pena y diseñar promociones honestas que el cliente entienda.",
+          "texto": [
+            "Una promoción cambia tu margen por la esperanza de vender más. Antes de lanzarla, haz la cuenta: <b>unidades necesarias = margen por unidad antes ÷ margen por unidad después</b>. Si un producto se vende a $20, cuesta $14 y lo bajas 10 %, a $18, tu margen pasa de $6 a $4: necesitas vender 50 % más unidades solo para quedar igual. Si el producto no tiene esa elasticidad, o si la gente simplemente adelanta una compra que iba a hacer de todos modos, la promoción te hace perder.",
+            "Hay formatos que cuidan mejor el margen. Las de <b>volumen</b> («3 por $48») suben el ticket y se aplican solo a quien compra más. Los <b>paquetes</b> juntan un producto de margen bajo con uno de margen alto: café con pan dulce, o refresco con botana. Los «3 × 2» suenan atractivos, pero regalan una unidad completa: si el margen del producto es menor de 33 %, pierdes en cada paquete. Usa promociones para mover producto con fecha cercana, para conocer un producto nuevo o para temporadas, y ponles fecha de fin.",
+            "Los <b>precios redondos</b> agilizan el cobro y evitan problemas de cambio, pero redondea hacia arriba con cuidado. En Excel, =MULTIPLO.SUPERIOR(B2,0.5) lleva un precio de $36.40 a $36.50. Si redondeas siempre hacia abajo, de $19.80 a $19, regalas 80 centavos que en cientos de piezas al mes suman. Si un producto queda incómodo, ajusta el empaque o vende por pieza y por paquete.",
+            "La promoción debe ser verdadera. Es engañoso poner «antes $22, hoy $18» si nunca lo vendiste a $22, anunciar «oferta» en un precio que es el de siempre o esconder condiciones como «solo con compra mínima». La publicidad engañosa la sanciona Profeco, y además el cliente de barrio se da cuenta y no regresa. Escribe claro el precio, la cantidad, la vigencia y las condiciones, y respeta el precio del letrero aunque te hayas equivocado al ponerlo."
+          ],
+          "comparar": [
+            "«Así no: Antes $22, hoy $18, solo esta semana (aunque siempre ha costado $18).»",
+            "«Así sí: Galletas 3 por $48, hasta el domingo 15. Por pieza, $18 como siempre.»"
+          ],
+          "caso": "Caso ficticio: Silvia, de 46 años, atiende con su hermano una tienda frente a una secundaria en Morelia. Vende unas galletas a $18 la pieza; le cuestan $12.60. Quiere aumentar la venta de la tarde y piensa en un «3 × 2». Su hermano propone mejor «3 por $48». Una vecina que vende en tianguis le aconseja poner un letrero de «Antes $22, hoy $18», porque «así se ve más oferta», aunque Silvia siempre las ha vendido a $18.",
+          "p": [
+            [
+              "¿Qué pasa con el «3 × 2» que piensa Silvia?",
+              "Pierde $1.80 en cada paquete: cobra $36 y le cuestan $37.80",
+              "Gana $16.20 por paquete, igual que si vendiera tres galletas sueltas",
+              "Gana $5.40 por paquete, porque su margen de cada galleta se conserva",
+              "Tres galletas le cuestan 3 × $12.60 = $37.80 y cobra $36: pierde $1.80. Los $16.20 son la ganancia de tres piezas a precio normal, y el margen por galleta no se conserva porque regala una completa. Con un margen de 30 %, menor de 33 %, el «3 × 2» siempre pierde."
+            ],
+            [
+              "Con «3 por $48», ¿cuántas galletas más necesita vender para ganar lo mismo que hoy?",
+              "Cerca de 59 % más: su margen por pieza baja de $5.40 a $3.40",
+              "33 % más, porque solo regala una de cada tres piezas en la promoción",
+              "Ninguna más, porque el precio por paquete ya sube su ticket promedio",
+              "A $16 por pieza ($48 ÷ 3) el margen es $3.40 contra $5.40: $5.40 ÷ $3.40 = 1.59, o sea 59 % más unidades. El 33 % confunde descuento con margen, y subir el ticket no compensa por sí solo si el margen por pieza cae."
+            ],
+            [
+              "¿Qué hace Silvia con el consejo del letrero «Antes $22»?",
+              "No lo usa: es engañoso porque nunca las vendió a $22 y Profeco lo sanciona",
+              "Lo usa solo una semana, porque así no da tiempo a que nadie se queje",
+              "Lo usa si sube las galletas a $22 un día antes de lanzar su promoción de la tarde",
+              "Un precio de referencia inventado engaña al cliente; subirlo un día para «justificarlo» es la misma trampa con disfraz. Además del riesgo ante Profeco, en una tienda de barrio se pierde la confianza, que es la ventaja principal frente a una cadena."
+            ]
+          ],
+          "completar": [
+            "Anunciar un «precio antes» que nunca existió es un mensaje ___.",
+            "engañoso"
+          ],
+          "refl": "Diseña una promoción que sí te deje (20 min). 1) Elige un producto y anota precio, costo y cuántas piezas vendes a la semana. 2) Propón dos formatos (volumen, paquete o descuento) y calcula para cada uno el margen por unidad y cuántas piezas más necesitas con margen antes ÷ margen después. 3) Escoge el que te parezca alcanzable. 4) Escribe el letrero completo: precio, cantidad, vigencia y condiciones. 5) Define qué medirás al final para saber si funcionó.",
+          "modelo": "Modelo: «Producto: jugo de 1 L a $32, cuesta $24.36 con IVA; sin IVA, $27.59 y $21, margen $6.59. Opción A: 10 % de descuento, margen $3.83, necesito 72 % más: difícil. Opción B: jugo más pan de caja por $75 en lugar de $78 (el pan se vende en $46 y me cuesta $34, tasa 0 %); si el descuento va en el jugo, el margen de las dos piezas baja de $18.59 a $16, necesito unos 16 % más paquetes: alcanzable. Letrero: «Desayuno: jugo de 1 L + pan de caja $75, del 1 al 15 de marzo. Por separado, $32 y $46». Mediré piezas vendidas y margen total contra las dos semanas anteriores.» Es buena porque hace la cuenta antes, elige con números y escribe un letrero honesto.",
+          "plantilla": [
+            "Calculadora de promoción",
+            "Producto: [ ]  Precio: $[ ]  Costo: $[ ]  Margen por unidad antes: $[ ]\nPromoción propuesta: [ ]  Precio por unidad en promoción: $[ ]\nMargen por unidad después: $[ ]\nUnidades necesarias = margen antes ÷ margen después = [ ] (o sea [ ] % más)\nLetrero: [precio] por [cantidad], del [fecha] al [fecha]. Condiciones: [ ]\nResultado al final: piezas [ ]  margen total $[ ] contra $[ ] antes"
+          ],
+          "clave": [
+            "Antes de una promoción calcula cuántas unidades más necesitas: margen antes ÷ margen después.",
+            "El «3 × 2» pierde siempre que el margen sea menor de 33 %; el volumen y los paquetes cuidan mejor el margen.",
+            "Una promoción honesta dice precio, cantidad, vigencia y condiciones; un «precio antes» inventado es engaño."
+          ]
+        },
+        {
+          "t": "Competir con cadenas y mayoristas sin entrar en guerra de precios",
+          "obj": "Elegir qué precios igualar frente a una cadena o un mayorista y en qué ventajas propias apoyarte para no bajar todo el surtido.",
+          "texto": [
+            "Cuando una cadena de conveniencia abre en la esquina, el primer impulso es bajar todos los precios. Haz la cuenta antes: si tu margen es 22 % y bajas todo 5 %, tu margen cae a 17.9 % y, para ganar los mismos pesos, necesitas vender cerca de 29 % más unidades. Pocas tiendas logran eso de golpe, y la cadena puede aguantar precios bajos más tiempo que tú. La guerra de precios casi siempre la gana quien tiene más espalda.",
+            "El mito dice que para competir necesitas el precio más bajo. En realidad, el cliente solo recuerda el precio de unos cuantos productos: los que compra casi a diario y comparan todos, como refresco de 600 ml, huevo, leche, tortilla o pan de caja. Esos son tus <b>productos de precio vigilado</b>. Identifica 10 a 15, compara cada semana con la cadena y con «Quién es Quién en los Precios» de Profeco, y mantenlos cerca. En el resto del surtido, el cliente valora más que el producto esté a mano.",
+            "Tu ventaja es la <b>cercanía</b>, en dos sentidos. Física: estás a media cuadra, abres temprano, no hay fila. Y de trato: conoces a tus clientes, guardas el pan de la señora de la esquina, das cambio sin problema. Súmale lo que a una cadena le cuesta hacer: vender a granel o en presentaciones chicas, productos de la región, pedidos por mensaje con entrega en la cuadra, recargas y pago de servicios si te convienen, y un horario que se adapta a la colonia. Eso no se iguala bajando precios.",
+            "Con el mayorista o el club de precio pasa algo distinto: pueden ser tu competencia y también tu proveedor. Al cliente que compra por volumen una vez al mes no lo vas a ganar con precio; al que necesita algo hoy, sí con servicio. Lo que no debes hacer es vender por debajo del costo para «quitarle clientes» a nadie: pierdes dinero y entrenas a tu clientela a esperar precios que no puedes sostener."
+          ],
+          "comparar": [
+            "«Así no: Abrió la cadena; bajo 5 % toda la tienda y ya veremos cómo nos va.»",
+            "«Así sí: Igualo 12 productos que todos comparan, mantengo margen en lo demás y anuncio que entrego en la cuadra y abro a las 6.»"
+          ],
+          "caso": "Caso ficticio: Rigoberto, de 61 años, tiene una tienda en Nezahualcóyotl desde hace 30 años. Vende unos $35,000 a la semana con un margen promedio de 22 %. A dos cuadras abrió una cadena de tiendas de conveniencia con refrescos, leche y pan de caja más baratos que él. Su nieta le hizo una lista de 15 productos que la gente compara; suman $8,750 a la semana, la cuarta parte de su venta. Su compadre le insiste en bajar todo 5 % «para que no se le vayan los clientes».",
+          "p": [
+            [
+              "Si Rigoberto baja todo 5 % y vende las mismas piezas, ¿qué pasa con su margen semanal?",
+              "Baja de $7,700 a $5,950: pierde $1,750 cada semana",
+              "Se queda en $7,700, porque los clientes que no se van compensan el descuento",
+              "Baja solo $385, porque el 5 % se aplica sobre los $7,700 de margen",
+              "Hoy gana $35,000 × 22 % = $7,700. Al bajar precios 5 %, vende $33,250 con el mismo costo de $27,300: le quedan $5,950. El descuento se aplica al precio, no al margen, y conservar clientes no compensa si no vende más piezas."
+            ],
+            [
+              "¿Qué costaría bajar 5 % solo los 15 productos de precio vigilado?",
+              "Unos $437.50 de margen a la semana, mucho menos que bajar toda la tienda",
+              "Lo mismo que bajar toda la tienda, porque el cliente compara todos los precios",
+              "Nada, porque los productos de precio vigilado siempre se venden con pérdida",
+              "El 5 % de $8,750 son $437.50 a la semana, contra $1,750 de bajar todo. El cliente no compara todos los precios, solo los de compra diaria. Y esos productos no tienen por qué venderse con pérdida: basta con tenerlos cerca del precio de la cadena."
+            ],
+            [
+              "¿Qué ventaja le conviene reforzar a Rigoberto además de cuidar esos 15 precios?",
+              "Pedidos por mensaje con entrega en la cuadra y horario temprano para la colonia",
+              "Una tarjeta de puntos idéntica a la de la cadena, aunque le cueste cada mes",
+              "Bajar los dulces y botanas para que el ticket se vea más barato que el de enfrente",
+              "Su ventaja es la cercanía física y de trato: entregar en la cuadra y abrir temprano es algo que la cadena no hace igual. Copiar la tarjeta de la cadena compite en su terreno y cuesta, y bajar los dulces sacrifica margen en productos de impulso que nadie compara."
+            ]
+          ],
+          "completar": [
+            "La ventaja principal de la tienda de barrio frente a la cadena es la ___, física y de trato.",
+            "cercanía"
+          ],
+          "relacionar": [
+            [
+              "Refresco, huevo y leche",
+              "Productos de precio vigilado"
+            ],
+            [
+              "Bajar toda la tienda 5 %",
+              "Guerra de precios difícil de sostener"
+            ],
+            [
+              "Entrega en la cuadra",
+              "Ventaja de cercanía"
+            ],
+            [
+              "Quién es Quién en los Precios",
+              "Comparar con datos de Profeco"
+            ]
+          ],
+          "refl": "Arma tu estrategia frente a la competencia (20 min). 1) Escribe quiénes son tus competidores a menos de 500 metros. 2) Elige 10 a 15 productos de precio vigilado y compara tu precio con el de ellos. 3) Calcula cuánto margen te costaría acercarte en esos productos. 4) Escribe tres ventajas de cercanía que ya tienes y una nueva que podrías ofrecer en un mes. 5) Escribe qué no vas a hacer, aunque te presionen.",
+          "modelo": "Modelo: «Competencia: una cadena a una cuadra y un mayorista a 1 km. De 12 productos vigilados, estoy más caro en 5, en promedio $1.50; acercarlos me cuesta unos $300 a la semana. Ventajas: abro a las 6:30, conozco a mis clientes, vendo frijol y azúcar a granel. Nueva: pedidos por mensaje con entrega en mi calle a partir de $150. No voy a: bajar toda la tienda ni vender abajo del costo.» Es buena porque elige pocos precios, calcula el costo de igualarlos y se apoya en ventajas que la cadena no copia fácil.",
+          "plantilla": [
+            "Estrategia frente a la competencia",
+            "Competidores cercanos: [ ]\nProductos de precio vigilado (10-15): [producto] mi precio $[ ] / su precio $[ ]\nCosto semanal de acercarme: $[ ]\nMis ventajas de cercanía: 1) [ ] 2) [ ] 3) [ ]\nVentaja nueva en 30 días: [ ]\nLo que no voy a hacer: [ ]\nRevisión: cada [ ] comparo precios y anoto cambios"
+          ],
+          "clave": [
+            "Bajar toda la tienda casi nunca se sostiene: con 22 % de margen, un descuento general de 5 % exige vender cerca de 29 % más.",
+            "Cuida de cerca solo los productos de precio vigilado y mantén margen en el resto.",
+            "Compite con cercanía, trato y servicios, no con el precio más bajo."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma tu hoja de precios en Excel. 1) Lista 30 productos con categoría, papel, tasa de IVA, costo y precio actual. 2) Calcula precio y costo sin IVA (÷ 1.16 solo en los de 16 %) y el margen real de cada uno. 3) Asigna un margen objetivo por categoría y calcula el precio sugerido con =B2/(1-C2), multiplicado por 1.16 cuando aplique, y redondeado con =MULTIPLO.SUPERIOR(). 4) Marca tus productos de precio vigilado y compáralos con tu competencia. 5) Diseña una promoción con su cálculo de unidades necesarias y su letrero honesto.",
+        "entregable": "Un archivo de Excel con la tabla de 30 productos, el margen ponderado de la tienda, la lista de precios vigilados con su comparación y una promoción calculada con su letrero.",
+        "criterios": "Revisa: el margen está calculado sobre precio sin IVA en los productos de 16 %, usaste costo ÷ (1 − margen) y no un aumento, el IVA se separa dividiendo entre 1.16, la promoción incluye unidades necesarias y vigencia, y todos tus letreros muestran el precio total."
+      },
+      "lab": {
+        "t": "Precios de una tienda frente a una cadena en Querétaro",
+        "obj": "Calcular márgenes reales con IVA, decidir qué precios igualar frente a una cadena y diseñar una promoción honesta.",
+        "esc": "<b>Fabiola,</b> de 39 años, tiene una tienda de abarrotes en una colonia de Querétaro. Hace un mes abrió una cadena de conveniencia a dos cuadras y sus ventas de la tarde bajaron. Está inscrita en RESICO y compra casi todo con factura. Quiere revisar precios sin regalar su margen.",
+        "e": [
+          [
+            "Escena 1: Sus precios y costos: refresco de 600 ml, precio $21 y costo $16.24 con IVA; leche de 1 L, $29 y $25.50; detergente de 1 kg, $45 y $34.80 con IVA ($30 sin IVA); huevo, $46 y $40 el kilo; pan de caja, $46 y $38.",
+            "Consigna: marca la tasa de IVA de cada producto, separa el IVA donde aplique y calcula el margen real de los cinco."
+          ],
+          [
+            "Escena 2: En la cadena el refresco está a $19, la leche a $28, el detergente a $49, el huevo a $45 y el pan de caja a $47.",
+            "Consigna: calcula qué margen le quedaría a Fabiola si iguala cada precio que hoy tiene más alto y decide cuáles iguala, cuáles deja y por qué."
+          ],
+          [
+            "Escena 3: Su hermana le sugiere un letrero de «Antes $49, hoy $45» para el detergente, porque «así se ve que estamos más baratos que la cadena».",
+            "Consigna: explica si el letrero es aceptable y escribe un mensaje honesto que comunique que su detergente sí es más barato."
+          ],
+          [
+            "Escena 4: Fabiola quiere recuperar la tarde y tiene buen margen en pan de caja y en café soluble.",
+            "Consigna: diseña una promoción de paquete o volumen, calcula las unidades necesarias para ganar lo mismo y escribe el letrero completo con vigencia."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuál es el margen real del detergente de Fabiola?",
+            "22.7 %: $38.79 sin IVA menos $30 de costo, entre $38.79",
+            "33.3 %: $45 menos $30, dividido entre el precio de $45",
+            "50 %: $45 menos $30, dividido entre los $30 que le cuesta",
+            "Sin IVA, $45 ÷ 1.16 = $38.79 y el margen es ($38.79 − $30) ÷ $38.79 = 22.7 %. El 33.3 % mezcla precio con IVA y costo sin IVA, y el 50 % es un aumento sobre el costo, no un margen."
+          ],
+          [
+            "Si iguala el refresco a $19, ¿qué margen le queda?",
+            "14.5 % sobre el precio sin IVA de $16.38",
+            "26.3 %: $19 menos $14 de costo, entre $19",
+            "35.7 %: $19 menos $14, dividido entre los $14",
+            "Sin IVA, $19 ÷ 1.16 = $16.38 y el costo es $14: ($16.38 − $14) ÷ $16.38 = 14.5 %. Restar el costo sin IVA al precio con IVA infla el margen, y dividir entre el costo es un aumento. Con 14.5 % el refresco sigue dejando, por eso puede funcionar como gancho."
+          ],
+          [
+            "¿Qué mensaje puede usar Fabiola para su detergente?",
+            "«Detergente 1 kg: $45», sin inventar precio anterior, y si quiere, «comparado hoy con la cadena: $49»",
+            "«Antes $49, hoy $45», porque $49 sí es un precio real, aunque sea el de la cadena",
+            "«Oferta: $45, solo esta semana», aunque lo vaya a dejar en $45 todo el año",
+            "Presentar el precio de otra tienda como «antes» sugiere una rebaja que no existe, y llamar «oferta» a un precio permanente también engaña. Comparar con la fecha y el precio que de verdad viste es transparente; si lo hace, debe mantener la comparación al día."
+          ]
+        ],
+        "pl": [
+          "Hoja de precios frente a la competencia",
+          "Producto: [ ]  Tasa IVA: [ ]\nPrecio $[ ] → sin IVA $[ ]   Costo $[ ] → sin IVA $[ ]   Margen real [ ] %\nPrecio de la competencia: $[ ]  Margen si igualo: [ ] %\nDecisión: [igualo / dejo / subo] porque [ ]\nPromoción: [ ]  Unidades necesarias = [ ]\nLetrero: [precio total, cantidad, vigencia, condiciones]"
+        ]
+      },
+      "quiz": [
+        [
+          "Celso compra un jabón a $40 y le sube 25 % para venderlo a $50. ¿Qué margen sobre el precio obtiene?",
+          "20 %, porque $10 de ganancia entre $50 de precio",
+          "25 %, porque es el porcentaje que le subió al costo",
+          "80 %, porque $40 es el costo y $50 el precio",
+          "12.5 %, porque se reparte el aumento entre costo y precio"
+        ],
+        [
+          "Dulce quiere 18 % de margen en un arroz que le cuesta $41 (tasa 0 %). ¿Qué precio debe poner?",
+          "$50, porque $41 ÷ 0.82 deja justo 18 % del precio",
+          "$48.38, porque $41 × 1.18 le suma el 18 % que busca",
+          "$56.12, porque al resultado de $41 × 1.18 también le suma el 16 % de IVA",
+          "$45.10, porque $41 más 10 % cubre el margen de arroz"
+        ],
+        [
+          "Hugo vende un desodorante en $58, precio total. ¿Cuánto es de IVA?",
+          "$8, porque $58 ÷ 1.16 = $50",
+          "$9.28, porque es el 16 % de los $58",
+          "$0, porque los productos de higiene van a tasa 0 %",
+          "$5.80, porque es el 10 % que se queda el SAT"
+        ],
+        [
+          "En el ticket de Esperanza hay leche, frijol, jugo embotellado y pan dulce. ¿Cuál paga IVA de 16 %?",
+          "El jugo embotellado, porque es una bebida distinta de la leche",
+          "La leche, porque es un producto refrigerado de origen animal y procesado",
+          "El pan dulce, porque no es pan de caja ni bolillo",
+          "El frijol, porque se vende empaquetado y no a granel"
+        ],
+        [
+          "Armando vende botellas de agua de 1 L y garrafones de 20 L. ¿Qué es lo más correcto?",
+          "La botella suele pagar 16 % y el garrafón 0 %; lo confirma con su contador",
+          "Los dos van a tasa 0 % porque el agua es un producto de primera necesidad",
+          "Los dos pagan 16 % porque el agua embotellada se considera bebida procesada",
+          "El garrafón paga 16 % por su tamaño y la botella chica, 0 %, porque se vende al menudeo"
+        ],
+        [
+          "Silvia vende un producto a $30 que le cuesta $21 y quiere bajarlo 10 %. ¿Cuánto más debe vender para ganar lo mismo?",
+          "50 % más unidades: su margen baja de $9 a $6",
+          "10 % más unidades, porque el descuento fue de 10 %",
+          "33 % más unidades, porque le regala una de cada tres",
+          "Nada más, porque el descuento atrae a clientes nuevos"
+        ],
+        [
+          "Mireya quiere vender más aceite y le recomiendan poner «Antes $52, hoy $45», aunque siempre lo ha vendido a $45. ¿Qué debe hacer?",
+          "No ponerlo: es un precio de referencia falso y Profeco puede sancionarlo",
+          "Ponerlo, porque el precio final de $45 es real y el cliente no paga de más",
+          "Ponerlo solo los fines de semana, cuando más gente pasa frente a la tienda",
+          "Ponerlo si en algún momento del año pasado otra tienda lo vendió a $52"
+        ],
+        [
+          "Una clienta de Iván paga con tarjeta y él quiere cobrarle 3 % extra por la comisión. ¿Qué es lo correcto?",
+          "No cobrar el recargo: va contra la ley según Profeco y contra el contrato con el banco",
+          "Cobrarlo, siempre que tenga un letrero visible que avise del 3 % adicional",
+          "Cobrarlo solo en compras menores de $100, cuando la comisión pesa más",
+          "Cobrarlo, pero con un precio especial para efectivo que no se exhiba en la tienda"
+        ],
+        [
+          "Bernardo tiene una cadena enfrente y quiere elegir qué precios igualar. ¿Qué criterio le conviene?",
+          "Los productos que se compran casi a diario y todos comparan, como refresco y huevo",
+          "Los productos con más margen, porque ahí es donde la cadena le gana más clientes",
+          "Todos los productos, porque el cliente compara la tienda completa antes de entrar",
+          "Los productos de impulso, porque la gente los compra sin pensar y así sube el ticket"
+        ],
+        [
+          "Araceli tiene un letrero que dice «Cloro 1 L: $25 más IVA». ¿Qué debe corregir?",
+          "Exhibir el precio total con IVA incluido, $29, porque así lo pide la ley",
+          "Nada, porque deja claro que el IVA se cobra aparte y no esconde el impuesto",
+          "Quitar el precio y decirlo en voz alta para que cada cliente pregunte",
+          "Cambiarlo a $25 y absorber el IVA, porque el cloro es de tasa 0 %"
+        ]
+      ]
+    },
+    {
+      "t": "Proveedores y compras",
+      "r": "Conoce los tipos de proveedor y compara por costo total, negocia crédito, visitas y devoluciones, calcula en Excel cuándo y cuánto pedir y revisa el contrato de comodato antes de aceptar un refrigerador.",
+      "lecciones": [
+        {
+          "t": "Mapa de proveedores: preventa, mayorista, central de abasto y club de precio",
+          "obj": "Identificar qué tipo de proveedor conviene para cada categoría y comparar opciones por costo total, no solo por precio de lista.",
+          "texto": [
+            "Una tienda compra a cuatro tipos de proveedor. La <b>preventa</b> es el sistema de los fabricantes grandes y sus distribuidores (refrescos, pan, botanas, lácteos): un vendedor pasa en días fijos, levanta el pedido y otro camión lo entrega uno o dos días después. El <b>mayorista o distribuidor</b> de abarrotes surte muchas marcas; puedes ir tú o pedir con entrega, a veces con monto mínimo. La <b>central de abasto</b> concentra fruta, verdura, chiles secos y semillas; se compra temprano, casi siempre en efectivo y cargando tú. El <b>club de precio</b> vende en volumen con membresía y te obliga a ir por la mercancía.",
+            "El precio de lista engaña. Lo que importa es el <b>costo total</b> de tener el producto en tu anaquel: precio + transporte + tu tiempo + merma + la parte proporcional de membresías o cuotas. Si el club te da $12,000 de mercancía que en el mayorista cuesta $12,360 con entrega, parece que el club gana; pero súmale $250 de gasolina, cuatro horas tuyas que valen al menos $60 cada una y $1,200 de membresía al año repartidos entre 52 compras: el club sale en $12,513. Tu tiempo cuenta: en esas horas no estás atendiendo ni acomodando.",
+            "Compara también por presentación. Un paquete de 12 latas a $210 sale a $17.50 por pieza; si la misma lata suelta en la preventa cuesta $17.90, ahorras 40 centavos por pieza, pero inmovilizas más dinero y espacio. Pregunta siempre por unidad de venta, por factura (sin ella no acreditas el IVA) y por el producto que trae fecha de caducidad corta.",
+            "Arma un <b>mapa de proveedores</b>: una tabla con cada proveedor, qué categorías te surte, día de visita o de compra, tiempo de entrega, pedido mínimo, forma de pago, si da crédito y si acepta cambios. Con el mapa a la vista evitas depender de uno solo, sabes a quién llamar si alguien falla y notas cuándo un producto conviene más en otro canal. Lo ideal es tener al menos una alternativa para tus productos de la categoría A del análisis ABC, los que no pueden faltar."
+          ],
+          "comparar": [
+            "«Así no: El club está más barato, así que todo lo compro ahí; la gasolina y las horas no cuentan porque son mías.»",
+            "«Así sí: Comparo costo total: precio, gasolina, mi tiempo y membresía. Si el mayorista me entrega más barato al final, le compro a él.»"
+          ],
+          "caso": "Caso ficticio: Hugo, de 28 años, abrió hace un año un minisúper en Mexicali con su pareja. Cada semana va al club de precio en su camioneta: compra $12,000 de abarrotes, gasta $250 de gasolina y pierde unas cuatro horas; la membresía le cuesta $1,200 al año. Un mayorista le ofrece la misma canasta por $12,360 con entrega en la tienda. Además, compra verdura en la central de abasto tres veces por semana y la refresquera lo visita los lunes con preventa. Su pareja quiere que Hugo pase más tiempo en el mostrador, porque en las tardes las ventas bajan cuando él no está.",
+          "p": [
+            [
+              "Valuando su tiempo en $60 por hora, ¿cuál es el costo total semanal de comprar en el club?",
+              "$12,513: $12,000 + $250 + $240 de su tiempo + $23 de membresía",
+              "$12,000, porque la gasolina y su tiempo no aparecen en la factura",
+              "$13,450, porque la membresía completa se cobra en cada compra",
+              "$12,000 + $250 + 4 × $60 + $1,200 ÷ 52 = $12,513. Ignorar gasolina y tiempo esconde costos reales, y cargar la membresía completa a una sola compra exagera: se reparte entre las 52 compras del año."
+            ],
+            [
+              "¿Qué decisión le conviene a Hugo con esos números?",
+              "Comprar al mayorista con entrega y usar esas cuatro horas en el mostrador",
+              "Seguir en el club, porque la diferencia de $153 a la semana no es tanta",
+              "Dividir la compra mitad y mitad para no quedar mal con ninguno de los dos",
+              "El mayorista sale $153 más barato por semana en costo total y le devuelve cuatro horas justo cuando sus ventas de la tarde lo necesitan. Dividir la compra mantiene buena parte del viaje al club sin una razón de costo."
+            ],
+            [
+              "¿Para qué productos sigue teniendo sentido la central de abasto?",
+              "Fruta y verdura, comprando temprano, revisando calidad y en cantidades que vende en pocos días",
+              "Abarrotes secos, porque ahí todo está más barato que en el mayorista",
+              "Refrescos y lácteos, para no depender de los días de visita de la preventa",
+              "La central concentra perecederos frescos; ahí conviene comprar poco y seguido para cuidar la merma. Los abarrotes secos suelen convenir con el mayorista, y refrescos y lácteos llegan por preventa con cadena de frío y cambio de producto."
+            ]
+          ],
+          "completar": [
+            "Para comparar proveedores no basta el precio de lista: calcula el ___ de tener el producto en tu anaquel.",
+            "costo total"
+          ],
+          "relacionar": [
+            [
+              "Vendedor que pasa en días fijos y otro camión entrega",
+              "Preventa"
+            ],
+            [
+              "Muchas marcas, con entrega o en mostrador",
+              "Mayorista o distribuidor"
+            ],
+            [
+              "Fruta y verdura temprano y en efectivo",
+              "Central de abasto"
+            ],
+            [
+              "Volumen con membresía y vas tú por la mercancía",
+              "Club de precio"
+            ],
+            [
+              "Precio + transporte + tiempo + merma + cuotas",
+              "Costo total"
+            ]
+          ],
+          "refl": "Dibuja tu mapa de proveedores (20 min). 1) Lista a todos tus proveedores y anota para cada uno: categorías, día de visita o compra, tiempo de entrega, pedido mínimo, forma de pago, crédito y política de cambios. 2) Elige una canasta de 10 productos que compres seguido y calcula su costo total en dos canales, con tu tiempo valuado. 3) Marca qué productos de categoría A dependen de un solo proveedor. 4) Escribe una alternativa para cada uno.",
+          "modelo": "Modelo: «Proveedores: preventa de refrescos (martes, entrega miércoles, efectivo, cambia caducos), pan (diario, crédito semanal), distribuidor de abarrotes (pido por mensaje, entrega en 2 días, mínimo $2,500), central (verdura, lunes y jueves). Canasta de 10 productos: club $3,180 + $120 de gasolina + 2 h × $60 = $3,420; distribuidor con entrega $3,350. El aceite y el azúcar solo los compro al distribuidor: busco un segundo proveedor.» Es buena porque registra condiciones, compara costo total y detecta dependencias en productos que no pueden faltar.",
+          "plantilla": [
+            "Mapa de proveedores",
+            "Proveedor: [ ]  Tipo: [preventa / mayorista / central / club]\nCategorías: [ ]  Día de visita o compra: [ ]  Entrega en: [ ] días\nPedido mínimo: $[ ]  Pago: [efectivo / transferencia / crédito de [ ] días]\nCambios o devoluciones: [ ]  Factura: [sí / no]\nCosto total de mi canasta: precio $[ ] + transporte $[ ] + mi tiempo $[ ] + cuotas $[ ] = $[ ]\nProductos A con un solo proveedor: [ ]  Alternativa: [ ]"
+          ],
+          "clave": [
+            "Preventa, mayorista, central de abasto y club de precio sirven para cosas distintas; usa cada uno donde convenga.",
+            "Compara por costo total, con tu tiempo incluido, no por precio de lista.",
+            "Ten al menos una alternativa para los productos que no pueden faltar."
+          ]
+        },
+        {
+          "t": "Negociar con proveedores: días de visita, crédito, devoluciones y notas de crédito",
+          "obj": "Negociar condiciones claras de visita, crédito y devoluciones, y verificar que las notas de crédito se apliquen en tu cuenta.",
+          "texto": [
+            "Al proveedor no solo se le negocia el precio. Para una tienda, muchas veces valen más otras condiciones: el <b>día de visita</b> (que llegue antes de tu día fuerte, no después), la frecuencia (semanal en lugar de quincenal, para pedir menos y más seguido), el <b>pedido mínimo</b>, el plazo de pago y qué pasa con el producto que caduca o llega dañado. Prepárate con datos: cuánto le compras al mes, cuánto le pagas puntual y cuánto se te caducó de su producto. Quien llega con números negocia mejor que quien solo pide «una ayudadita».",
+            "El <b>crédito</b> de proveedor es dinero prestado sin intereses visibles. Si te dan 15 días para pagar y el producto se vende en 10, el proveedor está financiando tu inventario. A veces te ofrecen elegir: crédito o un descuento por pronto pago, como 2 % si pagas al recibir. Si tienes efectivo quieto, ese 2 % por adelantar 15 días es un rendimiento muy alto; si pagar de contado te deja sin dinero para la leche y las tortillas del fin de semana, toma el crédito. Nunca aceptes más crédito del que puedes pagar a tiempo: un proveedor que te corta el surtido cuesta más que cualquier descuento.",
+            "Pide por escrito la <b>política de devoluciones</b>: qué productos cambian (caducos, golpeados, inflados), hasta cuándo, si es cambio físico por producto igual o si te dan una nota de crédito. Separa el producto que vas a devolver en una caja marcada, anótalo en una hoja con fecha, cantidad y costo, y entrégalo al vendedor con firma de recibido. Sin registro, lo que se va con el camión se vuelve merma tuya.",
+            "Una <b>nota de crédito</b> es el documento con el que el proveedor reconoce que te debe una cantidad, por devolución, bonificación o error de cobro; si te factura, suele emitirla como comprobante fiscal de egreso (confírmalo con tu contador). Verifica que se reste de tu siguiente pago: si devolviste $480 y la nueva factura es de $3,200, deberías pagar $2,720. Revisa cada mes un estado de cuenta con el proveedor; las notas que nadie aplica son dinero tuyo que se queda en otro lado."
+          ],
+          "comparar": [
+            "«Así no: El chofer no quiso llevarse los caducos; ni modo, los tiro y que me cambien la próxima vez.»",
+            "«Así sí: Tengo la hoja de devoluciones firmada por el vendedor; en la factura de hoy debe venir la nota de crédito por $480.»"
+          ],
+          "caso": "Caso ficticio: Esperanza, de 58 años, tiene una tienda en Chetumal desde hace 20 años. Le compra $6,000 al mes a un distribuidor de botanas y galletas que la visita cada 15 días y le cobra al entregar. El mes pasado se le caducaron $640 de producto que el chofer no quiso recibir. El nuevo vendedor le propone dos opciones: 15 días de crédito, o 2 % de descuento si sigue pagando al recibir. Además le pide un pedido mínimo de $1,500 por visita. Esperanza tiene un dinero ahorrado en la cuenta de la tienda que no usa, pero la visita quincenal la obliga a comprar mucho de una vez.",
+          "p": [
+            [
+              "Con efectivo quieto en la cuenta, ¿qué opción le conviene a Esperanza?",
+              "El 2 % por pagar al recibir: $120 al mes por adelantar 15 días, un rendimiento alto",
+              "El crédito de 15 días, porque siempre conviene pagar lo más tarde posible",
+              "Ninguna de las dos: debe pedir 30 días de crédito y además el 2 % de descuento",
+              "Con dinero sin uso, 2 % de $6,000 son $120 al mes por pagar 15 días antes, más de lo que ese dinero le deja quieto. El crédito conviene cuando el efectivo está apretado, no siempre. Exigir ambas cosas a la vez es poco realista y puede tensar la relación."
+            ],
+            [
+              "¿Qué debe pedir Esperanza sobre los productos caducados?",
+              "Una política escrita de cambios y una hoja de devoluciones firmada en cada visita",
+              "Que el chofer se lleve los caducos aunque no los anote, para no perder tiempo",
+              "Nada: si se caducan es porque ella pidió de más y le toca absorberlos",
+              "Con reglas escritas y registro firmado, la devolución se puede reclamar y sumar a una nota de crédito. Sin anotar, no hay prueba. Y aunque pedir de más causa caducos, el cambio por caducidad es una condición negociable y común en estas categorías."
+            ],
+            [
+              "¿Qué cambio de condiciones le ayudaría más a no caducar producto?",
+              "Visitas semanales con un pedido mínimo menor, para comprar menos y más seguido",
+              "Mantener la visita quincenal y subir el pedido para ganar más bonificación del proveedor",
+              "Pedir visitas mensuales con más crédito, para pagar todo en una sola fecha",
+              "Con visita semanal compra para 7 días y no para 15, así el producto rota antes de su fecha y el dinero parado baja. Comprar más para ganar bonificación o espaciar las visitas aumenta justo el riesgo de caducidad."
+            ]
+          ],
+          "completar": [
+            "El documento con el que el proveedor reconoce que te debe por una devolución se llama ___.",
+            "nota de crédito"
+          ],
+          "refl": "Prepara tu negociación con un proveedor (20 min). 1) Elige el proveedor con el que tienes más problemas. 2) Junta datos: cuánto le compras al mes, cada cuándo te visita, cuánto se te caducó o dañó de su producto en tres meses. 3) Escribe qué quieres cambiar: día o frecuencia de visita, crédito, pedido mínimo o política de cambios. 4) Escribe qué puedes ofrecer a cambio: pago puntual, más espacio, exhibir un producto. 5) Redacta el mensaje o guion para pedirlo.",
+          "modelo": "Modelo: «Proveedor: distribuidor de lácteos. Le compro $9,000 al mes, pago puntual, y en tres meses se me caducaron $1,100 de yogur. Quiero: visita martes y viernes en lugar de solo lunes, y cambio de producto caducado con hoja firmada. Ofrezco: pago al recibir y un exhibidor junto a la caja. Mensaje: «Le compro unos $9,000 al mes y siempre pago a tiempo. Para no tirar producto suyo necesito dos visitas por semana y que los caducos se cambien con hoja firmada. Si se puede, le doy lugar junto a la caja».» Es buena porque llega con datos, pide algo concreto y ofrece algo a cambio.",
+          "plantilla": [
+            "Guion de negociación con proveedor",
+            "Proveedor: [ ]  Compra mensual: $[ ]  Pago: [puntual / con atraso]\nProblema en 3 meses: caducos $[ ]  dañados $[ ]  visitas fallidas [ ]\nLo que pido: [día / frecuencia / crédito / mínimo / cambios]\nLo que ofrezco: [ ]\nMensaje: «Le compro unos $[ ] al mes y [ ]. Para [ ] necesito [ ]. A cambio [ ].»\nAcuerdo por escrito: [sí / no]  Fecha de revisión: [ ]\nNotas de crédito pendientes: $[ ]  Aplicada en factura: [ ]"
+          ],
+          "clave": [
+            "Negocia más que el precio: día y frecuencia de visita, pedido mínimo, crédito y cambios.",
+            "Toma crédito si tu efectivo está apretado; si tienes dinero quieto, un descuento por pronto pago suele convenir.",
+            "Registra cada devolución con firma y verifica que la nota de crédito se reste de tu siguiente pago."
+          ]
+        },
+        {
+          "t": "Cuándo y cuánto pedir: punto de reorden y pedido sugerido en Excel",
+          "obj": "Calcular en Excel el punto de reorden y el pedido sugerido de tus productos para no quedarte sin mercancía ni llenarte de inventario.",
+          "texto": [
+            "Pedir «a ojo» falla de dos formas: te quedas sin el producto que más se vende o llenas la bodega de lo que no rota. Dos cálculos sencillos lo corrigen. El <b>punto de reorden</b> te dice cuándo pedir: venta diaria promedio × días de entrega + inventario de seguridad. El inventario de seguridad es un colchón para días buenos o retrasos; una forma práctica es venta diaria × uno o dos días. Si vendes 12 litros de leche al día, el proveedor tarda un día y guardas un día de colchón, el punto de reorden es 12 × 1 + 12 = 24: cuando te queden 24, pide.",
+            "El punto de reorden funciona mejor con proveedores a los que pides cuando quieres. Con la preventa, que pasa en días fijos, pides en la visita aunque aún tengas producto, y lo que importa es cuánto: el <b>pedido sugerido</b> = venta diaria × (días hasta la siguiente visita + días de entrega) + inventario de seguridad − existencia. Con la leche, visita cada 3 días, entrega en 1 y un día de colchón: 12 × 4 + 12 = 60; si tienes 20, pides 40. Si viene en cajas de 12, redondea hacia arriba a 48.",
+            "En Excel, una fila por producto. A: producto; B: venta de las últimas 4 semanas; C: venta diaria =B2/28; D: días de entrega; E: días entre visitas; F: días de seguridad; G: existencia; H: punto de reorden =C2*D2+C2*F2; I: ¿pedir? =SI(G2<=H2,1,0), donde 1 significa que ya toca; J: pedido sugerido =MAX(0,C2*(E2+D2)+C2*F2-G2); K: piezas por caja; L: cajas =REDONDEAR.MAS(J2/K2,0). Arrastra las fórmulas y actualiza B y G antes de cada pedido.",
+            "Los números ayudan, pero tú conoces tu colonia. Ajusta la venta diaria cuando cambia la temporada: en calor se vende más agua y hielo; en diciembre, más de todo; en vacaciones escolares, menos golosinas cerca de la escuela. Para perecederos como pan, leche o tortilla, usa pocos días de seguridad. Para un producto nuevo, empieza con poco y mide dos semanas antes de confiar en el cálculo. Si un producto se agota seguido, revisa primero la venta diaria y luego el colchón."
+          ],
+          "comparar": [
+            "«Así no: Pido cuando veo el anaquel medio vacío, y si el vendedor me dice que me lleve más, me llevo más.»",
+            "«Así sí: Antes de que pase el vendedor actualizo mi hoja: existencia, venta de 4 semanas, y pido lo que dice el pedido sugerido redondeado a cajas.»"
+          ],
+          "caso": "Caso ficticio: Mireya, de 44 años, y su esposo Celso, de 47, tienen un minisúper en Morelia. Él hace los pedidos «a ojo» y ella nota que la leche se acaba los domingos mientras sobran arroz y pastas. En las últimas 4 semanas vendieron 336 litros de leche y 84 kilos de arroz. La preventa de lácteos pasa cada 3 días, entrega al día siguiente y la leche viene en cajas de 12; hoy tienen 20 litros. El arroz lo piden al distribuidor, que entrega en 2 días; quieren 2 días de colchón. Celso cree que «con tener mucho, nunca falta».",
+          "p": [
+            [
+              "¿Cuál es el punto de reorden del arroz?",
+              "12 kg: 3 kg diarios × 2 días de entrega + 6 kg de seguridad",
+              "6 kg: 3 kg diarios × 2 días de entrega, sin colchón",
+              "84 kg: lo que vendieron en las últimas cuatro semanas",
+              "La venta diaria es 84 ÷ 28 = 3 kg; por entrega, 3 × 2 = 6, y la seguridad de 2 días suma otros 6: 12 kg. Sin colchón, cualquier día bueno o retraso deja el anaquel vacío, y 84 kg es la venta del mes, no el momento de pedir."
+            ],
+            [
+              "Hoy pasa la preventa de lácteos. ¿Cuántas cajas de leche deben pedir?",
+              "4 cajas: necesitan 40 litros y lo redondean hacia arriba a 48",
+              "5 cajas: los 60 litros de cobertura sin restar lo que tienen",
+              "3 cajas: 36 litros, redondeando hacia abajo para no sobrecomprar",
+              "Venta diaria 336 ÷ 28 = 12; cobertura 12 × (3 + 1) + 12 = 60; menos 20 en existencia, 40 litros: 4 cajas de 12. Sin restar existencia piden 20 de más, y redondear hacia abajo deja 4 litros menos de lo necesario justo antes del domingo."
+            ],
+            [
+              "¿Qué responde Mireya a la idea de Celso de «tener mucho»?",
+              "Que el exceso inmoviliza dinero y caduca; el pedido sugerido evita faltar sin llenarse",
+              "Que tiene razón, porque un faltante cuesta más que cualquier producto caducado",
+              "Que conviene tener mucho solo de arroz y pastas, porque no caducan nunca",
+              "El objetivo es no faltar y no sobrar: cada peso de más en el anaquel es dinero parado y, en perecederos, merma. Los faltantes sí cuestan, pero se evitan con un buen cálculo, no con exceso. El arroz y la pasta también tienen fecha y ocupan espacio."
+            ]
+          ],
+          "completar": [
+            "La existencia a la que debes pedir de nuevo un producto se llama punto de ___.",
+            "reorden"
+          ],
+          "relacionar": [
+            [
+              "=B2/28",
+              "Venta diaria promedio"
+            ],
+            [
+              "=C2*D2+C2*F2",
+              "Punto de reorden"
+            ],
+            [
+              "=SI(G2<=H2,1,0)",
+              "Alerta de que ya toca pedir"
+            ],
+            [
+              "=MAX(0,C2*(E2+D2)+C2*F2-G2)",
+              "Pedido sugerido"
+            ],
+            [
+              "=REDONDEAR.MAS(J2/K2,0)",
+              "Cajas a pedir"
+            ]
+          ],
+          "refl": "Arma tu hoja de pedido (20 min). 1) Elige 10 productos de tu categoría A. 2) Anota su venta de las últimas 4 semanas (de tu punto de venta o de tus notas de compra) y su existencia de hoy. 3) Escribe para cada uno días de entrega, días entre visitas y días de seguridad. 4) Calcula punto de reorden y pedido sugerido con las fórmulas de la lección. 5) Compara con lo que habrías pedido a ojo y anota dónde estabas pidiendo de más o de menos.",
+          "modelo": "Modelo: «Refresco de 600 ml: 840 piezas en 4 semanas, 30 al día; preventa cada 7 días, entrega 1, seguridad 1. Pedido sugerido: 30 × 8 + 30 − 95 en existencia = 175, en cajas de 24: 8 cajas. A ojo habría pedido 10. Frijol: 2 kg diarios, distribuidor con entrega en 3 días y 2 de seguridad: punto de reorden 10 kg; hoy tengo 9, así que pido. Ajuste: en mayo subiré 20 % la venta de bebidas por el calor.» Es buena porque usa datos reales, distingue preventa de pedido libre y ajusta por temporada.",
+          "plantilla": [
+            "Hoja de pedido sugerido",
+            "Producto: [ ]  Venta 4 semanas: [ ]  Venta diaria = [ ] ÷ 28 = [ ]\nDías de entrega: [ ]  Días entre visitas: [ ]  Días de seguridad: [ ]\nPunto de reorden = venta diaria × días de entrega + venta diaria × días de seguridad = [ ]\nExistencia hoy: [ ]  ¿Pedir? [sí / no]\nPedido sugerido = venta diaria × (días entre visitas + días de entrega) + seguridad − existencia = [ ]\nPiezas por caja: [ ]  Cajas: [ ]\nAjuste por temporada: [ ]"
+          ],
+          "clave": [
+            "Punto de reorden = venta diaria × días de entrega + inventario de seguridad: te dice cuándo pedir.",
+            "Con preventa de días fijos, el pedido sugerido te dice cuánto: cobertura hasta la siguiente visita menos lo que ya tienes.",
+            "Ajusta por temporada y usa poco colchón en perecederos."
+          ]
+        },
+        {
+          "t": "Refrigeradores y exhibidores en comodato: lee antes de firmar",
+          "obj": "Revisar un contrato de comodato de refrigerador o exhibidor, calcular si te conviene y reconocer cláusulas que podrían ser abusivas.",
+          "texto": [
+            "Muchos refrigeradores y exhibidores de las tiendas no son del tendero: los presta una refresquera, una cervecera o una marca de lácteos o helados en <b>comodato</b>, un contrato en el que alguien te presta un bien para usarlo sin cobrarte renta, y tú te comprometes a cuidarlo y devolverlo. Gratis no significa sin costo ni sin condiciones. Antes de firmar, pide una copia y léela completa, con calma y, si algo no entiendes, con alguien de confianza.",
+            "Revisa cinco puntos. Uno: qué puedes meter, porque es común que el refrigerador sea solo para productos de quien lo presta. Dos: quién paga la luz, que casi siempre eres tú; un refrigerador vertical puede ser buena parte de tu recibo, sobre todo en clima caliente (la mayoría de las tiendas está en tarifa PDBT de la CFE). Tres: quién paga reparaciones y mantenimiento, y en cuánto tiempo atienden una falla. Cuatro: plazo y retiro, con qué aviso pueden llevárselo y si lo condicionan a una compra mínima semanal. Cinco: qué pasa si se daña o te lo roban.",
+            "Haz la cuenta de si conviene. Si el refrigerador te permite vender 300 botellas más al mes con $3.50 de margen sin IVA, ganas $1,050; si la luz que consume te cuesta, por ejemplo, $600, te quedan $450 al mes, más el espacio que ocupa. Si no vendes lo suficiente o te exigen compras mínimas que se te quedan en la bodega, quizá no convenga. Revisa tu recibo de luz antes y después.",
+            "Una cosa es que el refrigerador sea solo para productos de quien lo presta, y otra que te prohíban vender en toda la tienda productos de otras marcas. Condicionar a una tienda a no vender productos de la competencia, la <b>exclusividad</b>, puede ser una práctica monopólica relativa. En 2005, la autoridad de competencia sancionó a embotelladoras por ese tipo de condiciones y el caso siguió en tribunales. Hoy la autoridad encargada es la Comisión Nacional Antimonopolio (verifica en su sitio cómo presentar una denuncia). Si te piden algo así, pídelo por escrito y no firmes con prisa."
+          ],
+          "comparar": [
+            "«Así no: Me lo regalan, firmo donde me digan y luego veo qué dice el papel.»",
+            "«Así sí: Me llevo una copia, reviso luz, reparaciones, retiro y qué puedo vender en el resto de la tienda, y luego decido.»"
+          ],
+          "caso": "Caso ficticio: Dulce, de 24 años, se quedó a cargo de la tienda de su abuela en Oaxaca. Un vendedor de una refresquera le ofrece un segundo refrigerador en comodato. El contrato dice: el refrigerador es solo para productos de la refresquera; la tienda paga la luz; el retiro puede hacerse con 15 días de aviso si compra menos de 20 cajas por semana; y la tienda «se compromete a no vender bebidas de otras marcas en el establecimiento». Hoy Dulce vende agua y jugos de otras empresas que sus clientes le piden. El vendedor le dice que firme hoy porque «solo quedan dos refris».",
+          "p": [
+            [
+              "¿Qué cláusula debe cuestionar primero Dulce?",
+              "La que le prohíbe vender bebidas de otras marcas en toda la tienda",
+              "La que reserva el refrigerador para productos de la refresquera",
+              "La que pide que la tienda pague toda la luz que consuma el refrigerador nuevo",
+              "Que el refrigerador prestado sea para los productos de quien lo presta es común. Prohibirle vender bebidas de otras marcas en toda la tienda es exclusividad y puede ser una práctica monopólica relativa. La luz es un costo que debe calcular, pero no es la cláusula más delicada."
+            ],
+            [
+              "Si el refrigerador le deja 300 botellas más al mes con $3.50 de margen y la luz le cuesta $600, ¿cuánto gana?",
+              "$450 al mes, antes de considerar el espacio que ocupa",
+              "$1,050 al mes, porque la luz ya la paga en el recibo de siempre",
+              "$1,650 al mes, porque suma el margen y lo que se ahorra de luz",
+              "300 × $3.50 = $1,050 de margen menos $600 de luz: $450. La luz sí aumenta con el refrigerador nuevo, así que no puede ignorarse, y no hay ningún ahorro que sumar: es un costo."
+            ],
+            [
+              "¿Qué hace Dulce ante la presión de firmar hoy?",
+              "Pide copia, lo revisa con calma y pide por escrito quitar la cláusula de exclusividad",
+              "Firma hoy para no perder el refrigerador y luego negocia la cláusula",
+              "Rechaza cualquier refrigerador en comodato porque todos son abusivos",
+              "Las prisas son una táctica de presión; firmar primero la deja amarrada. El comodato puede convenirle, así que rechazar todos tampoco es la respuesta: conviene leer, calcular y negociar. Si insisten en la exclusividad, puede orientarse con la Comisión Nacional Antimonopolio."
+            ]
+          ],
+          "completar": [
+            "El contrato con el que una empresa te presta un refrigerador sin cobrarte renta se llama ___.",
+            "comodato"
+          ],
+          "refl": "Revisa tus refrigeradores y exhibidores (20 min). 1) Haz una lista de los equipos prestados que tienes y de quién es cada uno. 2) Busca los contratos y anota para cada uno: qué puedes meter, quién paga luz y reparaciones, plazo, condiciones de retiro y compras mínimas. 3) Estima cuánto margen te deja cada equipo al mes y cuánto te cuesta de luz. 4) Marca cualquier cláusula que limite lo que vendes en el resto de la tienda. 5) Escribe qué vas a renegociar o pedir por escrito.",
+          "modelo": "Modelo: «Equipos: refrigerador de una refresquera y congelador de helados. El refri es solo para sus productos, yo pago luz, reparan en 72 horas y lo retiran si compro menos de 15 cajas por semana; compro 18. Me deja unos $1,300 de margen y calculo $550 de luz. El congelador: me piden no vender helados de otra marca en toda la tienda; lo pediré por escrito y preguntaré si eso es válido, y revisaré cómo orientarme con la Comisión Nacional Antimonopolio.» Es buena porque revisa cada contrato, hace la cuenta y separa lo normal de lo que conviene cuestionar.",
+          "plantilla": [
+            "Revisión de comodato",
+            "Equipo: [ ]  Empresa: [ ]  Fecha del contrato: [ ]\nQué puedo meter: [ ]\nLuz: la pago [yo / la empresa]  Costo estimado al mes: $[ ]\nReparaciones: [quién / en cuánto tiempo]\nPlazo y retiro: [ ]  Compra mínima: [ ]\nDaño o robo: [ ]\n¿Limita lo que vendo en el resto de la tienda? [sí / no]: [cláusula]\nMargen al mes que me deja: $[ ] − luz $[ ] = $[ ]\nDecisión: [firmo / negocio / no firmo]"
+          ],
+          "clave": [
+            "Comodato es préstamo de uso: lee qué puedes meter, quién paga luz y reparaciones, y cuándo pueden retirarlo.",
+            "Calcula si conviene: margen que te deja el equipo menos la luz que consume.",
+            "Prohibirte vender otras marcas en toda la tienda puede ser una práctica monopólica relativa: pídelo por escrito y orienta tu caso con la Comisión Nacional Antimonopolio."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos ordena tus compras. 1) Haz tu mapa de proveedores con días, entrega, mínimos, pago, crédito y cambios. 2) Calcula el costo total de una canasta de 10 productos en dos canales, con tu tiempo valuado. 3) Arma en Excel la hoja de pedido sugerido para 15 productos con punto de reorden, pedido sugerido y cajas. 4) Revisa tus contratos de comodato con los cinco puntos de la lección. 5) Escribe el guion de negociación con el proveedor que más problemas te da.",
+        "entregable": "Un archivo de Excel con dos pestañas (mapa de proveedores y pedido sugerido) más una hoja con la comparación de costo total, la revisión de comodato y tu guion de negociación.",
+        "criterios": "Revisa: el costo total incluye transporte, tiempo y cuotas, las fórmulas de reorden y pedido usan venta diaria de 4 semanas y restan existencia, cada contrato de comodato tiene la cuenta de margen menos luz, y el guion pide algo concreto y ofrece algo a cambio."
+      },
+      "lab": {
+        "t": "Compras de una tienda en Culiacán",
+        "obj": "Comparar proveedores por costo total, calcular el pedido de un producto de alta rotación y revisar un contrato de comodato.",
+        "esc": "<b>Armando,</b> de 42 años, tiene una tienda en Culiacán con mucho movimiento de bebidas y hielo por el calor. Compra en un club de precio, a una refresquera por preventa, a un distribuidor de abarrotes y en la central de abasto. Siente que pasa media semana comprando y aun así se le acaba el refresco los fines de semana.",
+        "e": [
+          [
+            "Escena 1: La refresquera pasa los lunes y entrega el martes; el distribuidor entrega en 2 días con mínimo de $3,000; el club exige membresía y que él vaya; la fruta la compra en la central martes y viernes.",
+            "Consigna: arma su mapa de proveedores con días, entrega, mínimos, pago y cambios, y marca qué productos dependen de un solo proveedor."
+          ],
+          [
+            "Escena 2: En el club su compra semanal es de $18,400, gasta $380 de gasolina, tarda 5 horas (valúa su tiempo en $70 por hora) y la membresía cuesta $1,560 al año. El distribuidor le ofrece la misma canasta por $18,950 con entrega.",
+            "Consigna: calcula el costo total de cada opción y escribe qué le recomiendas y qué haría con el tiempo que libera."
+          ],
+          [
+            "Escena 3: En las últimas 4 semanas vendió 1,008 refrescos de 600 ml. La preventa pasa cada 7 días, entrega en 1 y quiere 2 días de seguridad. Hoy, día de visita, tiene 130 piezas; vienen en cajas de 24.",
+            "Consigna: calcula venta diaria, punto de reorden y pedido sugerido en cajas, y escribe las fórmulas de Excel que usarías."
+          ],
+          [
+            "Escena 4: La refresquera le ofrece un segundo refrigerador. El contrato dice: solo sus productos dentro; él paga la luz; retiro con aviso si compra menos de 20 cajas por semana; y no vender bebidas de otras marcas en el establecimiento.",
+            "Consigna: clasifica cada cláusula como normal, a calcular o a cuestionar, y escribe qué pediría por escrito antes de firmar."
+          ]
+        ],
+        "p": [
+          [
+            "¿Qué le conviene a Armando según el costo total de la escena 2?",
+            "El distribuidor: $18,950 contra $19,160 del club",
+            "El club: $18,400 contra los $18,950 del distribuidor",
+            "Da igual, porque la diferencia queda en la gasolina",
+            "El club suma $18,400 + $380 + 5 × $70 + $1,560 ÷ 52 = $19,160, y el distribuidor cuesta $18,950: le ahorra $210 por semana y cinco horas. Comparar solo el precio de lista olvida transporte, tiempo y membresía, y la diferencia no es solo la gasolina."
+          ],
+          [
+            "¿Cuántas cajas de refresco debe pedir hoy?",
+            "10 cajas: 230 piezas que redondea hacia arriba a 240",
+            "Ninguna, porque las 130 piezas superan el punto de reorden de 108",
+            "15 cajas: 360 piezas de cobertura, sin restar las que ya tiene",
+            "Venta diaria 1,008 ÷ 28 = 36; cobertura 36 × (7 + 1) + 36 × 2 = 360; menos 130, son 230: 10 cajas de 24. Con preventa semanal pide en la visita: si no pide, en 7 días vende 252 y se queda sin refresco el fin de semana. Sin restar existencia sobrecompra 120 piezas."
+          ],
+          [
+            "¿Qué cláusula del contrato de la escena 4 debe cuestionar?",
+            "La de no vender bebidas de otras marcas en el establecimiento, que puede ser exclusividad indebida",
+            "La de meter solo productos de la refresquera, porque el refrigerador es para toda la tienda",
+            "La del retiro, porque no pueden llevarse un equipo que ya le prestaron",
+            "Reservar el refrigerador a sus productos es común, y el retiro con aviso es una condición que debe calcular contra su compra semanal. Prohibirle vender otras marcas en toda la tienda puede ser una práctica monopólica relativa: conviene pedirlo por escrito y orientarse con la Comisión Nacional Antimonopolio."
+          ]
+        ],
+        "pl": [
+          "Hoja de compras de la tienda",
+          "Proveedores: [nombre, tipo, día, entrega, mínimo, pago, cambios]\nCosto total opción A: $[ ] + transporte $[ ] + tiempo $[ ] + cuotas $[ ] = $[ ]\nCosto total opción B: $[ ]  Decisión: [ ]\nProducto: [ ]  Venta diaria: [ ]  Punto de reorden: [ ]\nPedido sugerido: [ ]  Cajas: [ ]\nComodato: cláusulas normales [ ] / a calcular [ ] / a cuestionar [ ]\nLo que pido por escrito: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Iván vende 112 paquetes de pañales en 4 semanas. El distribuidor tarda 3 días en entregar y él quiere 2 días de seguridad. ¿Cuál es su punto de reorden?",
+          "20 paquetes: 4 diarios × 3 días + 8 de seguridad",
+          "12 paquetes: 4 diarios × 3 días, sin colchón de seguridad",
+          "28 paquetes: lo que vende en una semana completa",
+          "112 paquetes: la venta total de las cuatro semanas"
+        ],
+        [
+          "Fabiola vende 10 litros de yogur al día; la preventa pasa cada 7 días, entrega en 1 y ella guarda 2 días de seguridad. Tiene 35 litros y vienen en cajas de 12. ¿Cuántas cajas pide?",
+          "6 cajas: necesita 65 litros y redondea hacia arriba",
+          "5 cajas: 60 litros, redondeando hacia abajo los 65",
+          "9 cajas: los 100 litros de cobertura completos",
+          "3 cajas: 30 litros, lo que marca su punto de reorden"
+        ],
+        [
+          "Iván compra $5,000 en el club, gasta $300 de traslado y 3 horas que valora en $50 cada una. El mayorista le entrega lo mismo por $5,300. ¿Qué le conviene?",
+          "El mayorista: el club le cuesta $5,450 en total",
+          "El club, porque $5,000 es menos que $5,300",
+          "El club, porque el traslado no es un costo de la mercancía",
+          "El mayorista, porque siempre es mejor que te entreguen"
+        ],
+        [
+          "Hugo necesita mangos, jitomate y cebolla para su minisúper. ¿Cuál es la mejor forma de comprarlos?",
+          "En la central de abasto, temprano, revisando calidad y en cantidades que venda en pocos días",
+          "En el club de precio, en paquetes grandes, para aprovechar el precio por volumen",
+          "Con la preventa de la refresquera, porque ya pasa por la tienda una vez a la semana",
+          "Una vez al mes en el mayorista, para ahorrar viajes aunque se maduren antes de venderse"
+        ],
+        [
+          "Esperanza devolvió $480 de producto dañado y el proveedor le dio una nota de crédito. Su nueva factura es de $3,200. ¿Cuánto debe pagar?",
+          "$2,720, porque la nota de crédito se resta del pago",
+          "$3,200, y la nota de crédito la cobra en efectivo después",
+          "$3,680, porque la devolución se suma a la factura nueva",
+          "$3,200, porque las notas de crédito solo sirven para el SAT"
+        ],
+        [
+          "Un proveedor le da a Armando 15 días de crédito en un producto que vende en 10 días. ¿Qué significa?",
+          "Que vende el producto antes de pagarlo: el proveedor financia su inventario",
+          "Que le conviene pedir el doble para aprovechar el plazo de pago",
+          "Que paga intereses ocultos y debe rechazar el crédito siempre",
+          "Que debe pagar a los 10 días aunque el acuerdo diga 15"
+        ],
+        [
+          "Un vendedor le dice a Silvia que, si acepta el refrigerador en comodato, no podrá vender jugos de otras marcas en ninguna parte de la tienda. ¿Qué es lo correcto?",
+          "Pedirlo por escrito: esa exclusividad puede ser una práctica monopólica relativa",
+          "Aceptarlo, porque quien presta el refrigerador decide qué se vende en toda la tienda",
+          "Aceptarlo de palabra y seguir vendiendo los otros jugos sin decirle nada a nadie",
+          "Denunciar a la refresquera ante Profeco, que es la autoridad de los contratos de comodato"
+        ],
+        [
+          "Un refrigerador en comodato le deja a Mireya 250 botellas más al mes con $4 de margen y aumenta su recibo de luz en $700 al mes. ¿Qué concluye?",
+          "Le deja $300 al mes; conviene si el espacio no rinde más con otro uso",
+          "Le deja $1,000 al mes, porque la luz ya la paga en su recibo de siempre",
+          "Le deja $1,700 al mes, sumando el margen y el valor del refrigerador",
+          "Pierde $700 al mes, porque el margen de las botellas no cuenta"
+        ],
+        [
+          "Rigoberto quiere que el distribuidor de galletas, que lo visita cada 15 días, deje de causarle caducos. ¿Qué le conviene negociar?",
+          "Visitas semanales con menor pedido mínimo, para comprar menos y más seguido",
+          "Más bonificación por subir el pedido de cada visita quincenal que ya tiene",
+          "Visitas mensuales con más crédito, para pagar todo junto",
+          "Que el chofer acepte caducos sin anotarlos, para ahorrar tiempo"
+        ],
+        [
+          "Dulce calculó en marzo el pedido sugerido de agua embotellada para su tienda en Oaxaca. Llega mayo y hace mucho calor. ¿Qué hace?",
+          "Ajusta la venta diaria con lo que vendió en mayo del año pasado o en las últimas dos semanas",
+          "Sigue con el cálculo de marzo, porque la fórmula ya considera el inventario de seguridad",
+          "Duplica todos sus pedidos de la tienda, porque en calor se vende más de todo",
+          "Deja de usar la fórmula y vuelve a pedir a ojo hasta que pase la temporada de calor"
+        ]
+      ]
+    }
+  ]
+}

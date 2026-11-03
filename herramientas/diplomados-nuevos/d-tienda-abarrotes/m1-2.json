@@ -1,0 +1,804 @@
+{
+  "modulos": [
+    {
+      "t": "Tu tienda en números: diagnóstico de partida",
+      "r": "Ubica tu tienda frente a la competencia, distingue margen de aumento, mide ticket promedio y horas pico, y ordena el corte de caja y el dinero de la tienda y de tu casa.",
+      "lecciones": [
+        {
+          "t": "La tienda de barrio en México: datos, competencia y tu ventaja de cercanía",
+          "obj": "Explicar con datos por qué la tienda de barrio sigue siendo un negocio de peso en México, ubicar a tus competidores reales y reconocer las ventajas de cercanía que puedes cuidar y medir.",
+          "texto": [
+            "Bienvenida, bienvenido. Si tienes una tienda o estás por abrirla, no estás en un negocio menor. Según los Censos Económicos 2024 del INEGI, con resultados definitivos publicados en 2025, las <b>tiendas de abarrotes, ultramarinos y misceláneas</b> son la clase de actividad que más personas ocupa en todo el país: 1,191,398 en 2023. Entre 2018 y 2023 se sumaron unas 81,500 unidades, y el comercio al por menor de abarrotes y alimentos reunía 1,063,448 establecimientos. Además, 95.4 % de los establecimientos del país son micro, de 0 a 10 personas. Traducido: es un oficio con peso real en la economía del país y en la vida diaria de muchas colonias.",
+            "Que el sector sea grande no significa que cada tienda gane. Muchas venden mucho y les queda poco, porque nadie les enseñó a medir el margen, la merma o lo que sale de la caja para la casa. Y la competencia es real: cadenas de tiendas de conveniencia abiertas casi todo el día, minisúpers, mayoristas, clubes de precio, apps de entrega y otra tiendita en la esquina. Cada una gana en algo distinto: la cadena en horario y orden, el mayorista en precio por volumen, la app en comodidad.",
+            "Tu ventaja es la <b>cercanía</b>, y no solo de metros. Conoces a tus clientes por su nombre, sabes qué leche lleva la señora de la esquina, vendes en presentaciones chicas, aceptas pedidos por teléfono, te adaptas a la hora en que sale la gente a trabajar y das confianza. Esa ventaja vale si la cuidas: un cliente que tres veces no encuentra lo que busca, o que recibe mala cara, deja de sentir que esa es su tienda. La cercanía se gana todos los días; no se hereda junto con el local.",
+            "Este diplomado va de lo urgente a lo que te hace crecer. Primero el diagnóstico: cuánto vendes, cuánto te deja y qué surtir (módulos 1 y 2). Luego la operación: precios, proveedores, inventario, merma, cobro digital y fiado (módulos 3 a 6). Después, operar en regla y con seguridad y hacer crecer la tienda (módulos 7 y 8), hasta armar tu plan de rentabilidad como proyecto final. Necesitas una libreta o una hoja de Excel y ganas de medir. No te prometemos ganancias: te damos un método para decidir con números y no con corazonadas. Si aún no te das de alta en el SAT, el paso a paso está en «Emprender desde Cero»."
+          ],
+          "comparar": [
+            "«Así no: Abrió una cadena a dos cuadras; ya perdí, mejor le bajo a todo para que no se me vayan.»",
+            "«Así sí: Abrió una cadena a dos cuadras; voy a medir qué me piden que no tengo, en qué horas vendo más y qué servicio doy que ellos no dan.»"
+          ],
+          "caso": "Caso ficticio: Rosalba, de 52 años, tiene desde hace 18 años una tienda en una colonia de Puebla, cerca de una primaria y de un paradero de camiones. Hace dos meses abrió a dos cuadras una tienda de una cadena de conveniencia, abierta de 6 a 24 h. Rosalba siente que bajó la venta de la tarde, pero no lo ha medido: solo cuenta la caja al final del día. Su hijo le propone bajar 10 % todos los precios «para que no se vayan»; su comadre le dice que ya no vale la pena y que mejor traspase. Rosalba sabe que en las mañanas tiene fila de mamás que compran pan, leche y algo para el almuerzo, y que varios vecinos le hacen pedidos por teléfono.",
+          "p": [
+            [
+              "¿Qué debería hacer Rosalba antes de tocar sus precios?",
+              "Medir dos o tres semanas sus ventas por hora y anotar lo que le piden y no tiene, para saber qué cambió y en qué horas",
+              "Bajar 10 % todos los precios de inmediato, porque si espera a medir ya habrá perdido a buena parte de los clientes de la tarde",
+              "Traspasar la tienda pronto, porque una tienda de barrio no puede competir con una cadena que abre 18 horas al día",
+              "Sin datos no sabe si perdió venta, en qué horas ni de qué productos. Bajar 10 % todo sacrifica margen justo donde quizá no hay riesgo, como el pan y la leche de la mañana. Traspasar por una corazonada ignora que su clientela de la mañana sigue ahí."
+            ],
+            [
+              "¿Cuál de estas es una ventaja de cercanía que Rosalba puede cuidar y medir?",
+              "Los pedidos por teléfono de sus vecinos: puede anotarlos, cumplirlos a tiempo y contar cuántos recibe por semana",
+              "Tener el precio más bajo de la colonia en todos sus productos, porque así ninguna cadena podrá quitarle clientes",
+              "La antigüedad del local: con 18 años abierta, los clientes regresan solos aunque no encuentren lo que buscan",
+              "Los pedidos son servicio personal que la cadena no ofrece igual, y se pueden registrar. El precio más bajo en todo no es una ventaja sostenible para una tienda chica frente a quien compra por volumen. La antigüedad no protege si el cliente no encuentra lo que necesita."
+            ],
+            [
+              "Según los datos del INEGI, ¿qué afirmación es correcta?",
+              "La clase de abarrotes y misceláneas es la que más personas ocupa en el país, pero eso no garantiza que cada tienda gane",
+              "Las tiendas de abarrotes disminuyeron entre 2018 y 2023 porque las cadenas de conveniencia las fueron desplazando",
+              "Como el sector ocupa a más de un millón de personas, cualquier tienda bien ubicada tiene asegurada una buena utilidad",
+              "El INEGI reporta 1,191,398 personas ocupadas en 2023 y unas 81,500 unidades más que en 2018: el sector creció. Pero el tamaño del sector no dice nada de la utilidad de una tienda en particular; eso depende de margen, gastos y operación."
+            ]
+          ],
+          "completar": [
+            "Tu ventaja frente a una cadena no es solo de metros: es la ___, que se gana todos los días con trato, surtido y servicio.",
+            "cercanía"
+          ],
+          "refl": "Diagnóstico de partida de tu tienda (20 min). 1) Escribe quiénes son tus competidores a 10 minutos caminando y en qué gana cada uno: precio, horario, orden o comodidad. 2) Anota tres ventajas de cercanía que hoy tienes y cómo podrías medir cada una (por ejemplo, pedidos por semana). 3) Separa lo que sabes con datos de lo que solo crees sobre tu venta. 4) Si aún no abres, describe la colonia: quién pasa, a qué hora y qué no encuentra cerca.",
+          "modelo": "Modelo: «Competidores: una cadena de conveniencia a tres cuadras, que gana en horario y orden; un minisúper en la avenida, que gana en precio de abarrotes, y la tiendita de enfrente, parecida a la mía. Mis ventajas: conozco a unas 40 familias por nombre, llevo pedidos chicos a domicilio y fío con reglas a clientes de años. Las mediré así: pedidos por semana en una libreta, fiados pagados a tiempo y lo que me piden y no tengo. Lo que solo creo: que en la tarde vendo menos; lo voy a contar dos semanas.» Es buena porque nombra la fortaleza de cada competidor, convierte cada ventaja en algo medible y separa datos de creencias.",
+          "plantilla": [
+            "Mapa de competencia y ventajas",
+            "Mi tienda: [ ] en [colonia, ciudad]\nCompetidor 1: [ ] a [ ] min; gana en [ ]\nCompetidor 2: [ ] a [ ] min; gana en [ ]\nCompetidor 3: [ ] a [ ] min; gana en [ ]\nMis ventajas de cercanía: 1) [ ] se mide con [ ] 2) [ ] se mide con [ ] 3) [ ] se mide con [ ]\nLo que sé con datos: [ ]\nLo que solo creo y voy a medir: [ ]"
+          ],
+          "clave": [
+            "La tienda de abarrotes es la clase de actividad que más gente ocupa en México, pero el tamaño del sector no garantiza la utilidad de tu tienda.",
+            "Cada competidor gana en algo distinto; tu ventaja es la cercanía, y solo vale si la cuidas y la mides.",
+            "Antes de reaccionar ante un competidor, mide ventas por hora, lo que te piden y no tienes, y qué cambió de verdad."
+          ]
+        },
+        {
+          "t": "Margen y aumento: cuánto te deja de verdad cada peso que vendes",
+          "obj": "Calcular el margen y el aumento de cada producto, distinguir uno de otro y fijar el precio que te da el margen que buscas, a mano y en Excel.",
+          "texto": [
+            "Hay dos formas de medir la ganancia de un producto, y confundirlas cuesta dinero. El <b>aumento</b> se calcula sobre el costo: (precio − costo) ÷ costo. El <b>margen</b> se calcula sobre el precio: (precio − costo) ÷ precio. Si compras un producto en $15 y lo vendes en $20, ganas $5: es un aumento de 33.3 % ($5 ÷ $15), pero un margen de 25 % ($5 ÷ $20). El margen es el que manda: te dice qué parte de cada peso que entra a la caja es ganancia bruta y qué parte se guarda para volver a surtir.",
+            "De ahí sale un mito caro: «si le subo 30 %, gano 30 %». No. Con 30 % de aumento, tu margen es 30 ÷ 130 = 23.1 %. En una tienda que vende $180,000 al mes, la diferencia entre creer que la ganancia bruta es de $54,000 y saber que es de $41,538 son casi $12,500 que nunca existieron. Para fijar el precio que te da un margen deseado, divide: precio = costo ÷ (1 − margen). Un producto que te cuesta $28 y en el que quieres 25 % de margen debe venderse en $28 ÷ 0.75 = $37.33; redondea a $37.50 o a $38, nunca hacia abajo sin pensarlo.",
+            "En Excel arma una hoja con una fila por producto: en A el nombre, en B el costo por pieza y en C el precio. En D escribe =(C2-B2)/C2 y dale formato de porcentaje: ese es el margen. En E, =(C2-B2)/B2 te da el aumento, para que veas la diferencia. Si en F pones el margen que quieres, por ejemplo 25 %, en G la fórmula =B2/(1-F2) te da el precio sugerido. Copia las fórmulas hacia abajo y en una tarde tienes revisados tus 30 productos de más venta.",
+            "Dos cuidados. Primero, el costo debe ser el real por pieza: si el paquete de 12 te costó $186, cada pieza cuesta $15.50; si el proveedor te bonificó piezas, el costo baja, y si pagaste flete, sube. Segundo, cuando un producto paga IVA de 16 % y tú lo trasladas, el margen se calcula sobre el precio sin IVA: un refresco de $22 al público son $22 ÷ 1.16 = $18.97 antes del impuesto. El IVA y el IEPS en tus precios los verás en el módulo 3; por ahora, no cuentes el impuesto como tuyo."
+          ],
+          "comparar": [
+            "«Así no: A todo lo que compro le subo 30 % y así sé que gano 30 % de lo que vendo.»",
+            "«Así sí: Le subo 30 % al costo y eso me deja 23.1 % de margen; para mis productos de más venta calculo el precio con costo ÷ (1 − margen).»"
+          ],
+          "caso": "Caso ficticio: Efraín, de 34 años, atiende con su esposa una tienda en una colonia de Hermosillo. Desde que abrió le sube 30 % al costo a todo y les cuenta a sus conocidos que «gana 30 %». Vende unos $180,000 al mes (cifras sin IVA, para simplificar) y paga $17,500 de gastos: renta $6,000, luz $3,500 y un ayudante $8,000. Con esas cuentas esperaba quedarse con $36,500 al mes para su casa, pero nunca le salen. Ahora quiere meter un producto que le cuesta $28, y el proveedor le sugiere venderlo en $36.",
+          "p": [
+            [
+              "¿Qué margen tiene en realidad Efraín con su aumento de 30 %?",
+              "23.1 %, porque gana $30 por cada $130 que cobra al cliente",
+              "30 %, porque el margen y el aumento son la misma cifra",
+              "Alrededor de 14 %, porque al 30 % hay que restarle el 16 % de IVA",
+              "Si algo cuesta $100 y le sube 30 %, lo vende en $130 y gana $30: el margen es $30 ÷ $130 = 23.1 %. Margen y aumento solo coinciden cuando no hay ganancia. Restar el IVA no aplica aquí: el caso usa cifras sin IVA, y el impuesto se separa dividiendo entre 1.16, no restando 16 puntos."
+            ],
+            [
+              "¿Cuánto le queda al mes a Efraín después de gastos, antes de pagarse a sí mismo?",
+              "$24,038: $41,538 de utilidad bruta menos $17,500 de gastos",
+              "$36,500: el 30 % de $180,000 menos los $17,500 de gastos",
+              "$162,500: lo que vende al mes menos los gastos de la tienda",
+              "La utilidad bruta es $180,000 × 30 ÷ 130 = $41,538; menos $17,500 de gastos quedan $24,038. Los $36,500 salen de confundir aumento con margen. Restar solo los gastos a la venta olvida que la mayor parte de lo que cobra es para volver a surtir."
+            ],
+            [
+              "Si quiere 25 % de margen en el producto que le cuesta $28, ¿qué precio debe poner?",
+              "$37.50, que es $28 ÷ 0.75 = $37.33 redondeado hacia arriba",
+              "$35, porque $28 más 25 % da exactamente el margen que busca",
+              "$36, el que sugiere el proveedor, porque ya trae su margen incluido",
+              "Precio = costo ÷ (1 − margen) = $28 ÷ 0.75 = $37.33, y conviene redondear hacia arriba. $35 es 25 % de aumento y deja solo 20 % de margen. Los $36 del proveedor dan ($36 − $28) ÷ $36 = 22.2 %, menos de lo que Efraín quiere."
+            ]
+          ],
+          "completar": [
+            "La ganancia dividida entre el precio de venta se llama ___; dividida entre el costo se llama aumento.",
+            "margen"
+          ],
+          "relacionar": [
+            [
+              "Margen",
+              "(precio − costo) ÷ precio"
+            ],
+            [
+              "Aumento",
+              "(precio − costo) ÷ costo"
+            ],
+            [
+              "Precio para un margen deseado",
+              "=B2/(1-F2)"
+            ],
+            [
+              "30 % de aumento",
+              "23.1 % de margen"
+            ],
+            [
+              "Precio sin IVA de un producto a 16 %",
+              "Precio ÷ 1.16"
+            ]
+          ],
+          "refl": "Revisa el margen de tus 10 productos de más venta (20 min). 1) Anota el costo real por pieza de cada uno: divide el paquete entre las piezas y suma el flete si lo pagas. 2) Anota el precio al que lo vendes, sin IVA si lo trasladas. 3) Calcula margen y aumento de cada uno, a mano o en Excel. 4) Marca los que tienen menos margen del que creías y escribe qué harás con dos de ellos: ajustar el precio, buscar otro proveedor o dejarlo igual por una razón que puedas explicar.",
+          "modelo": "Modelo: «Leche de litro: costo $25.50, precio $29, margen 12.1 %; la dejo así porque es la que trae a las mamás en la mañana. Bolsa de papas chica: costo $14, precio $18, margen 22.2 %; creía que ganaba más, así que la igualo al precio de la zona, $19, y queda en 26.3 %. Detergente de 1 kg: costo $38 y precio $45, los dos sin IVA; margen 15.6 %; yo decía que le ganaba 18 %, pero ese es el aumento. Busco otro proveedor antes de subirlo.» Es buena porque usa costos reales por pieza, distingue margen de aumento y decide producto por producto con una razón.",
+          "plantilla": [
+            "Hoja de margen por producto",
+            "Columnas: A Producto | B Costo por pieza | C Precio (sin IVA si lo trasladas) | D Margen =(C2-B2)/C2 | E Aumento =(C2-B2)/B2 | F Margen deseado | G Precio sugerido =B2/(1-F2)\nProducto: [ ] Costo: $[ ] Precio: $[ ] Margen: [ ] % Aumento: [ ] %\nDecisión: [ajusto precio / cambio de proveedor / lo dejo así porque…]"
+          ],
+          "clave": [
+            "Margen = (precio − costo) ÷ precio; aumento = (precio − costo) ÷ costo. Un aumento de 30 % es apenas 23.1 % de margen.",
+            "Para el margen que buscas, precio = costo ÷ (1 − margen), redondeado hacia arriba.",
+            "Usa costos reales por pieza y, si trasladas IVA, calcula el margen sobre el precio sin impuesto."
+          ]
+        },
+        {
+          "t": "Ticket promedio, clientes por día y horas pico: mide antes de cambiar",
+          "obj": "Registrar las ventas por hora durante una o dos semanas y calcular ticket promedio, compras por día y horas pico para decidir horarios, personal y surtido con datos.",
+          "texto": [
+            "Tus ventas del día se explican con dos números: cuántas compras (tickets) hiciste y cuánto gastó en promedio cada una. Ventas = compras × <b>ticket promedio</b>. Si vendiste $12,000 en 160 compras, el ticket promedio fue $12,000 ÷ 160 = $75. Contamos compras, no personas: una señora que viene en la mañana y vuelve en la tarde son dos tickets. Esa división sencilla te dice qué palanca mover: si tienes pocas compras, el reto es atraer clientes o no perderlos; si tienes muchas con tickets chicos, la oportunidad está en que cada quien lleve un poco más.",
+            "Las palancas se suman. Con 160 compras al día, subir el ticket promedio de $75 a $82.50, un 10 %, son $1,200 más de venta diaria sin un solo cliente nuevo. A veces basta con tener a la vista el complemento lógico, como el pan junto al café o las pilas junto a la caja, o con preguntar «¿algo más?» sin presionar. Cuidado con las conclusiones de un solo día: un sábado de quincena no se parece a un martes de lluvia. Mide al menos dos semanas completas antes de decidir.",
+            "Si no tienes punto de venta, basta una hoja por día: en la columna A la hora (7, 8, 9…), en B una rayita por cada compra y en C el monto de cada hora según la caja o tu libreta. Al pasarlo a Excel, B y C quedan como números; si las horas van de la fila 2 a la 17, el total de compras es =SUMA(B2:B17), la venta del día =SUMA(C2:C17) y el ticket promedio =C18/B18. En D2, =C2/$C$18 te dice qué parte de la venta cae en cada hora. Así aparecen tus <b>horas pico</b>: las franjas donde se concentra la venta, en las que no puede haber una sola persona atendiendo ni faltar cambio.",
+            "Con los datos en la mano, las decisiones cambian. Abrir más temprano, cerrar más tarde, poner un ayudante de 13 a 15 h o mover el pedido del pan dejan de ser corazonadas. Una hora adicional conviene si el margen de lo que vendes en ella cubre lo que cuesta abrirla (luz, sueldo, riesgo); no basta con que «algo se venda». La venta mínima es el costo de esa hora ÷ tu margen. Y si quieres probar un horario, hazlo con fecha de inicio y de fin, y compáralo contra tus semanas de registro."
+          ],
+          "comparar": [
+            "«Así no: Siento que en la noche viene mucha gente; desde mañana me quedo abierta hasta las 11.»",
+            "«Así sí: Dos semanas anoté compras y venta por hora; de 20 a 21 h tengo 22 compras de $95 en promedio, así que pruebo un mes cerrar a las 22 h y comparo.»"
+          ],
+          "caso": "Caso ficticio: Maricela, de 41 años, tiene una tienda frente a una unidad habitacional en Tepic y la atiende con un ayudante. Registró dos semanas sus ventas por hora: en promedio vende $12,000 al día en 160 compras y abre de 7 a 21 h. Entre 7 y 9 h hace 40 compras de $55 en promedio; entre 19 y 21 h, 46 compras de $95. Varios vecinos le piden que abra a las 6 h porque salen temprano a trabajar, y otros que cierre más tarde. Cada hora extra le cuesta unos $250 diarios de luz y sueldo, y su margen promedio es de 22 %. Quiere decidir esta semana.",
+          "p": [
+            [
+              "¿Cuál es el ticket promedio de Maricela y qué significa?",
+              "$75: lo que gasta en promedio cada compra, no cada persona",
+              "$857: lo que vende en promedio cada una de las 14 horas que abre",
+              "$95: el ticket de la noche, que es la mejor franja de todo el día",
+              "$12,000 ÷ 160 compras = $75 por compra; una persona que viene dos veces cuenta dos. $857 es la venta promedio por hora ($12,000 ÷ 14), otro indicador. $95 es el ticket de una sola franja, no el promedio del día."
+            ],
+            [
+              "¿Cuánto tendría que vender como mínimo una hora extra para no perder dinero?",
+              "Unos $1,137, porque $250 ÷ 0.22 de margen da eso",
+              "$250, lo mismo que le cuesta abrir esa hora",
+              "$857, la venta promedio por hora de su día actual",
+              "De cada peso que vende solo 22 centavos son margen, así que necesita $250 ÷ 0.22 = $1,136.36. Vender $250 cubriría apenas $55 del costo. La venta promedio por hora no es una meta: dice cómo le va hoy, no cuánto necesita la hora nueva."
+            ],
+            [
+              "¿Qué decisión es la más sensata con lo que sabe Maricela?",
+              "Probar un mes la hora que su registro sugiere más prometedora, con meta de venta y fecha para comparar",
+              "Abrir a las 6 y cerrar a las 22 desde mañana, para no perder a ningún vecino que le haya pedido otro horario",
+              "No cambiar nada, porque en una tienda de barrio abrir una hora más siempre cuesta más de lo que deja",
+              "La noche tiene tickets de $95 frente a $55 de la mañana, pero solo una prueba con meta dice si la hora extra pasa de $1,137 de venta. Abrir dos horas a la vez duplica el costo sin saber cuál funciona, y descartar sin medir también es una corazonada."
+            ]
+          ],
+          "completar": [
+            "Las franjas del día en las que se concentra la venta se llaman horas ___.",
+            "pico"
+          ],
+          "refl": "Prepara tu registro de dos semanas (20 min). 1) Diseña tu hoja: horas en filas y compras y monto por hora en columnas, una hoja por día. 2) Decide cómo contarás las compras (rayitas, tickets del punto de venta o notas) y quién lo hará en cada turno. 3) Escribe qué decisión quieres tomar con los datos (horario, ayudante, pedido del pan) y qué número te haría decidir en cada sentido. 4) Si ya tienes datos de un día, calcula tu ticket promedio y tu hora más fuerte.",
+          "modelo": "Modelo: «Hoja diaria de 7 a 22 h con tres columnas: hora, compras con rayitas y monto según la caja. Yo anoto en la mañana y mi hijo en la tarde; al cerrar paso todo a Excel. Decisión: si contrato ayudante de 13 a 15 h. Si en esas dos horas hago más de 35 compras diarias y la fila pasa de cuatro personas, contrato; si no, reacomodo la caja para cobrar más rápido. Primer día: 148 compras, $10,360, ticket promedio de $70; mi hora más fuerte fue de 19 a 20 h.» Es buena porque define quién mide, liga los datos a una decisión concreta y fija de antemano el número que decide.",
+          "plantilla": [
+            "Registro de ventas por hora",
+            "Fecha: [ ] Día: [ ]\nColumnas: A Hora | B Compras | C Venta $ | D Parte del día =C2/$C$18\nTotales: compras =SUMA(B2:B17) | venta =SUMA(C2:C17) | ticket promedio =C18/B18\nHoras pico: [ ] y [ ]\nDecisión que quiero tomar: [ ]\nNúmero que la decide: [ ]"
+          ],
+          "clave": [
+            "Ventas = compras × ticket promedio; cada factor se mejora con acciones distintas.",
+            "Registra compras y venta por hora al menos dos semanas antes de cambiar horarios o personal.",
+            "Una hora adicional conviene si su margen cubre lo que cuesta abrirla: venta mínima = costo de la hora ÷ margen."
+          ]
+        },
+        {
+          "t": "Corte de caja y dinero separado: tu sueldo, los gastos de la tienda y los de tu casa",
+          "obj": "Hacer un corte de caja diario con fondo fijo, explicar por qué la caja no es la utilidad y separar reposición, gastos, sueldo e imprevistos con un sueldo que la tienda pueda pagar.",
+          "texto": [
+            "El <b>corte de caja</b> responde una pregunta sencilla: ¿está en la caja el dinero que debería estar? Empiezas el día con un fondo fijo de cambio, por ejemplo $500 en monedas y billetes chicos. Al cerrar cuentas el efectivo y comparas: fondo + ventas en efectivo − pagos que salieron de la caja con comprobante = efectivo esperado. Lo que falta o sobra es la diferencia del día. Anótala siempre, aunque sean $10: una diferencia que se repite habla de cambio mal dado, ventas sin anotar, precios mal cobrados o, a veces, de dinero que alguien tomó. Las ventas con tarjeta o transferencia se cuadran aparte, contra el reporte de la terminal o del banco.",
+            "Ahora el mito: «con la caja me doy cuenta de cuánto gano». La caja dice cuánto cobraste, no cuánto ganaste. Si vendiste $10,000 y tu margen promedio es de 22 %, solo $2,200 son ganancia bruta; los otros $7,800 son mercancía que tienes que volver a comprar. Y de esa ganancia todavía salen renta, luz, sueldos y reparaciones. Quien toma de la caja para la casa «porque hoy se vendió bien» se come, sin darse cuenta, el dinero del próximo pedido. Así se descapitaliza una tienda que vende bien: cada mes hay menos mercancía y nadie entiende por qué.",
+            "La salida es separar el dinero en bolsas con reglas. Primera, la <b>reposición</b>: el costo de lo que vendiste, que solo se usa para surtir. Segunda, los gastos de la tienda: renta, luz, gas, ayudantes, bolsas. Tercera, tu <b>sueldo</b>: una cantidad fija por semana o quincena que te pagas como le pagarías a un encargado. Cuarta, un ahorro para imprevistos, como el refrigerador que se descompone en plena temporada de calor. Pueden ser sobres, cuentas distintas en el banco o columnas en tu hoja; lo importante es que la casa reciba un sueldo y no lo que alcance.",
+            "Lo que tomas de los anaqueles para tu casa también es dinero: regístralo a costo como <b>autoconsumo</b> y descuéntalo de tu sueldo. Para saber cuánto puedes pagarte sin dañar la tienda, calcula tu utilidad del mes: ventas × margen − gastos de la tienda. Tu sueldo y tu autoconsumo juntos no deben pasar de esa cifra; si la pasan, la tienda pierde capital aunque venda mucho. Este orden, además, te facilita el trabajo con tu contador."
+          ],
+          "comparar": [
+            "«Así no: Hoy se vendió bien; saco para el súper de la casa y el pedido de mañana lo veo mañana.»",
+            "«Así sí: Hice el corte: aparto la reposición, pago lo de la tienda y me llevo mi sueldo de la semana, que ya descuenta la despensa anotada.»"
+          ],
+          "caso": "Caso ficticio: Joaquín, de 61 años, y su esposa atienden una tienda en Zacatecas. Venden unos $240,000 al mes con un margen promedio de 22 % y pagan $14,000 de gastos de la tienda. No tienen sueldo fijo: sacan de la caja para el gas, la escuela del nieto y lo que se ofrezca, unos $45,000 al mes, y toman de los anaqueles despensa por unos $6,000 a costo. Cada fin de mes les falta para pagarle al proveedor de preventa y ya empezaron a pedir menos mercancía. Su hija les propone separar el dinero «de la casa»; Joaquín dice que no hace falta porque «la tienda vende bien».",
+          "p": [
+            [
+              "¿Cuánto les deja de verdad la tienda al mes, antes de lo que sacan para la casa?",
+              "$38,800: $52,800 de utilidad bruta menos $14,000 de gastos",
+              "$226,000: la venta del mes menos los gastos de la tienda",
+              "$52,800: el 22 % de lo vendido, que ya es lo que ganaron en el mes",
+              "La utilidad bruta es $240,000 × 0.22 = $52,800, y después de $14,000 de gastos quedan $38,800. Restar solo los gastos a la venta olvida la reposición de mercancía. Los $52,800 todavía no descuentan la renta, la luz ni los demás gastos."
+            ],
+            [
+              "¿Por qué les falta dinero para pagarle al proveedor?",
+              "Sacan $51,000 entre efectivo y despensa, y la tienda deja $38,800: pierden $12,200 de capital cada mes",
+              "Porque un margen de 22 % es muy bajo y ninguna tienda puede sostenerse con menos de 30 % de margen promedio",
+              "Porque una venta de $240,000 al mes no alcanza para una tienda en la que atienden dos personas de tiempo completo",
+              "$45,000 + $6,000 = $51,000 salen cada mes, $12,200 más de lo que la tienda genera; esa diferencia sale de la reposición. No hay un margen mínimo universal: depende de la mezcla de productos. La venta sí alcanza; el problema es cuánto sacan."
+            ],
+            [
+              "¿Qué cambio protege mejor a la tienda y a la casa?",
+              "Pagarse un sueldo fijo que, sumado a la despensa anotada a costo, no pase de los $38,800 que deja la tienda",
+              "Seguir sacando lo necesario de la caja y pedirle más crédito al proveedor para cubrir lo que falte cada mes",
+              "Subir 10 % todos los precios para que alcance lo que hoy sacan, sin cambiar la forma en que toman el dinero",
+              "Un sueldo fijo con la despensa incluida deja de comerse la reposición. Más crédito solo pospone el hueco y lo agranda. Subir todo 10 % sin orden puede ahuyentar clientes y no corrige el hábito de sacar sin medida."
+            ]
+          ],
+          "completar": [
+            "El efectivo de cambio con el que abres la caja cada día se llama ___ de caja.",
+            "fondo"
+          ],
+          "relacionar": [
+            [
+              "Fondo de caja",
+              "Cambio fijo con el que abres cada día"
+            ],
+            [
+              "Reposición",
+              "Costo de lo vendido, solo para surtir"
+            ],
+            [
+              "Autoconsumo",
+              "Mercancía para la casa registrada a costo"
+            ],
+            [
+              "Diferencia de caja",
+              "Efectivo contado menos efectivo esperado"
+            ],
+            [
+              "Sueldo del dueño",
+              "Cantidad fija por semana o quincena"
+            ]
+          ],
+          "refl": "Ordena el dinero de tu tienda (20 min). 1) Estima tu utilidad mensual: ventas × margen promedio − gastos de la tienda. 2) Suma lo que hoy sacas para la casa, en efectivo y en mercancía a costo. 3) Compara ambas cifras y escribe qué está pasando con la diferencia. 4) Define tu sueldo fijo por semana o quincena, tu fondo de caja y las cuatro bolsas (reposición, gastos, sueldo e imprevistos), con el lugar donde guardarás cada una.",
+          "modelo": "Modelo: «Vendo unos $150,000 al mes con 20 % de margen: $30,000 de utilidad bruta. Gastos de la tienda: $9,000. Me deja $21,000. Hoy saco unos $20,000 en efectivo y $3,000 de despensa: $23,000, así que pierdo $2,000 al mes. Mi sueldo será de $9,000 por quincena, $18,000 al mes, más $2,000 de despensa anotada: $20,000. Fondo de caja: $400. Bolsas: reposición en una cuenta del banco, gastos en un sobre y $1,000 al mes de ahorro en otra cuenta.» Es buena porque parte de la utilidad real, incluye la mercancía que se lleva y fija un sueldo que la tienda puede pagar.",
+          "plantilla": [
+            "Corte de caja y bolsas de dinero",
+            "Fecha: [ ]\nFondo inicial: $[ ]\n+ Ventas en efectivo: $[ ]\n− Pagos de caja con comprobante: $[ ]\n= Efectivo esperado: $[ ]\nEfectivo contado: $[ ]  Diferencia: $[ ]  Motivo probable: [ ]\nVentas con tarjeta o transferencia según terminal o banco: $[ ]\nBolsas: reposición $[ ] | gastos $[ ] | mi sueldo $[ ] | imprevistos $[ ]\nAutoconsumo del día a costo: $[ ]"
+          ],
+          "clave": [
+            "Efectivo esperado = fondo + ventas en efectivo − pagos con comprobante; anota toda diferencia.",
+            "La caja dice cuánto cobraste, no cuánto ganaste: la mayor parte es reposición.",
+            "Págate un sueldo fijo y registra el autoconsumo; juntos no deben pasar de la utilidad del mes."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma tu diagnóstico de partida en Excel con cuatro pestañas. 1) Competencia: tres competidores, en qué gana cada uno y tus ventajas de cercanía con su forma de medirlas. 2) Margen: tus 15 productos de más venta con costo real por pieza, precio, margen, aumento y precio sugerido. 3) Ventas por hora: el registro de al menos tres días con compras, venta, ticket promedio y horas pico (si aún no tienes tienda, observa una con permiso del dueño). 4) Dinero: utilidad mensual estimada, lo que hoy sacas para la casa, sueldo fijo, fondo de caja y bolsas.",
+        "entregable": "Un archivo de Excel con cuatro pestañas y fórmulas, más un párrafo con las tres decisiones que tomarás este mes a partir de tus números.",
+        "criterios": "Revisa: el margen está calculado sobre el precio y no sobre el costo, usaste costos reales por pieza, el ticket promedio sale de compras y no de personas, tu sueldo más el autoconsumo no pasa de la utilidad estimada y cada decisión se apoya en un número."
+      },
+      "lab": {
+        "t": "Las cuentas de una miscelánea en Pachuca",
+        "obj": "Calcular margen, ticket promedio, horas pico, corte de caja y utilidad de una miscelánea, y proponer cómo separar el dinero de la tienda del de la casa.",
+        "esc": "<b>Yesenia,</b> de 29 años, se quedó a cargo de la miscelánea de su tía en una colonia de Pachuca. La tienda vende bien, pero la tía nunca supo cuánto le dejaba: sacaba de la caja lo que necesitaba y anotaba los pedidos en un cuaderno. Yesenia quiere saber con números si la tienda puede pagarle un sueldo y qué cambiar primero.",
+        "e": [
+          [
+            "Escena 1: En el cuaderno, la tía anotó que a todo le sube 25 % sobre el costo. Un jabón de tocador le cuesta $16 y lo vende en $20; un paquete de galletas le cuesta $12 y lo vende en $15.",
+            "Consigna: calcula el margen y el aumento de los dos productos, explica por qué la tía no gana 25 % de lo que vende y escribe la fórmula de Excel para el precio que da 25 % de margen."
+          ],
+          [
+            "Escena 2: Yesenia registra una semana completa: 840 compras y $63,000 de venta. De 7 a 9 h ocurre 25 % de las compras, con tickets de $48 en promedio; de 18 a 21 h, 35 % de las compras, con tickets de $96.",
+            "Consigna: calcula el ticket promedio, las compras y la venta por día, la venta de cada franja y qué parte de la semana representa, y propón una acción para la hora pico."
+          ],
+          [
+            "Escena 3: Un martes abre con $600 de fondo. Las ventas en efectivo registradas suman $6,650 y pagó $120 al repartidor del pan, con nota. Al cerrar cuenta $7,180.",
+            "Consigna: calcula el efectivo esperado y la diferencia, y escribe tres posibles causas y cómo comprobarías cada una."
+          ],
+          [
+            "Escena 4: La tienda vende unos $270,000 al mes con un margen promedio de 20 %. Gastos: renta $5,000, luz $2,800, ayudante $7,200 y bolsas y otros $500. La tía sacaba unos $42,000 al mes de la caja.",
+            "Consigna: calcula la utilidad mensual, compárala con lo que sacaba la tía y propón un sueldo para Yesenia, un fondo de caja y las bolsas de dinero."
+          ]
+        ],
+        "p": [
+          [
+            "¿Qué margen real tienen los productos a los que la tía les sube 25 %?",
+            "20 %: ganan $4 de cada $20 y $3 de cada $15 que cobran",
+            "25 %, porque en productos baratos el margen y el aumento son iguales",
+            "33.3 %, porque son $4 de ganancia sobre $12 de costo",
+            "($20 − $16) ÷ $20 = 20 % y ($15 − $12) ÷ $15 = 20 %. Un aumento de 25 % siempre da 20 % de margen, sin importar el precio. La tercera opción mezcla la ganancia de un producto con el costo del otro."
+          ],
+          [
+            "¿Qué parte de la venta semanal ocurre de 18 a 21 h?",
+            "Alrededor de 44.8 %: sus 294 compras de $96 suman $28,224 de venta",
+            "35 %, porque es la parte de las compras que se hace en esas horas",
+            "Alrededor de 33 %, porque la tarde suele vender una tercera parte del día",
+            "35 % de 840 son 294 compras; × $96 = $28,224, y $28,224 ÷ $63,000 = 44.8 %. Pesa más que su parte de compras porque su ticket es mayor que el promedio de $75. No hay una proporción fija para la tarde: cada tienda tiene que medirla."
+          ],
+          [
+            "¿Cuál es la utilidad mensual y qué implica para el sueldo de Yesenia?",
+            "$38,500; su sueldo más lo que tome de mercancía a costo debe quedar por debajo de esa cifra",
+            "$54,000; puede sacar lo mismo que la tía, porque la venta de la tienda lo aguanta sin problema",
+            "$254,500; la venta menos los gastos es lo que la tienda le puede pagar a quien la atiende",
+            "$270,000 × 0.20 = $54,000 de utilidad bruta; menos $15,500 de gastos quedan $38,500. La tía sacaba $42,000, $3,500 más de lo que la tienda generaba, y por eso faltaba mercancía. Restar solo los gastos a la venta ignora la reposición."
+          ]
+        ],
+        "pl": [
+          "Diagnóstico de números de la tienda",
+          "Tienda: [ ] Ciudad: [ ]\nMargen promedio: [ ] % (aumento con el que se calculó: [ ] %)\nCompras por día: [ ] Venta por día: $[ ] Ticket promedio: $[ ]\nHoras pico: [ ] (parte de la venta: [ ] %)\nCorte: fondo $[ ] + efectivo $[ ] − pagos $[ ] = esperado $[ ]; contado $[ ]; diferencia $[ ]\nUtilidad mensual: ventas $[ ] × margen [ ] % − gastos $[ ] = $[ ]\nSueldo fijo: $[ ] por [semana / quincena]  Autoconsumo a costo: $[ ]\nPrimera decisión: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Leticia compra un jugo en $18 y lo vende en $24 (precios sin IVA). ¿Cuál es su margen?",
+          "25 %, porque los $6 de ganancia se dividen entre $24",
+          "33.3 %, porque $6 ÷ $18",
+          "30 %, porque $6 ÷ $20, el punto medio entre costo y precio",
+          "75 %, porque $18 ÷ $24 es lo que se queda la tienda"
+        ],
+        [
+          "Gerardo quiere 20 % de margen en un aceite que le cuesta $44. ¿Qué precio debe poner como mínimo?",
+          "$55, porque $44 ÷ 0.80 deja $11 de ganancia, 20 % del precio",
+          "$52.80, porque $44 × 1.20",
+          "$54, porque $44 más $10 de ganancia equivale a 20 % del precio",
+          "$46.20, porque al costo se le suma 5 % por cada pieza"
+        ],
+        [
+          "Gerardo dice que «gana 40 %» porque a todo le sube 40 % sobre el costo. ¿Cuál es su margen real?",
+          "28.6 %, porque $40 de ganancia ÷ $140 de precio",
+          "40 %, porque margen y aumento son lo mismo",
+          "60 %, porque al 100 % del costo se le resta el 40 %",
+          "34.3 %, porque al 40 % se le resta el 16 % de IVA del precio"
+        ],
+        [
+          "Un refresco se vende en $23.20 con IVA y a Leticia le cuesta $15 sin IVA. ¿Cuál es su margen sobre el precio sin IVA?",
+          "25 %, porque el precio sin IVA es $20",
+          "35.3 %, porque $8.20 ÷ $23.20",
+          "54.7 %, porque $8.20 ÷ $15",
+          "9 %, porque al margen de 25 % se le restan los 16 puntos del IVA"
+        ],
+        [
+          "Una tienda de Tepic vendió $9,600 en 128 compras el lunes. ¿Cuál fue su ticket promedio?",
+          "$75, porque $9,600 ÷ 128 compras",
+          "$128, porque son las compras que hizo en el día",
+          "$96, porque se divide entre 100 compras para simplificar",
+          "$80, porque se redondea a la cantidad de clientes distintos"
+        ],
+        [
+          "Abrir de 21 a 22 h le cuesta a una tienda $300 diarios de luz y sueldo, y su margen promedio es de 22 %. ¿Qué venta mínima necesita en esa hora?",
+          "Unos $1,364, porque $300 ÷ 0.22 de margen",
+          "$300, lo mismo que cuesta abrir",
+          "$366, porque son $300 más el 22 %",
+          "Unos $1,200, porque se recomienda vender cuatro veces el costo de la hora"
+        ],
+        [
+          "Leticia vendió $11,000 hoy y su margen promedio es de 20 %. ¿Qué parte de esa venta es ganancia bruta?",
+          "$2,200; los otros $8,800 son mercancía que hay que volver a surtir",
+          "$11,000, porque todo lo que entró a la caja ya es suyo",
+          "$8,800, porque el 20 % es lo que se queda el proveedor",
+          "$1,760, porque al 20 % de margen todavía hay que quitarle el 16 % de IVA de toda la venta"
+        ],
+        [
+          "Gerardo abre con $500 de fondo, vende $7,300 en efectivo y paga $250 de gas con nota. Al cerrar cuenta $7,480. ¿Qué resultado tiene su corte?",
+          "Faltan $70, porque esperaba $7,550 y contó $7,480",
+          "Sobran $180, porque contó más de lo que vendió en efectivo",
+          "Faltan $320, porque esperaba $7,800 de fondo más ventas",
+          "Cuadra exacto, porque el gas no se resta del efectivo de la caja"
+        ],
+        [
+          "Una tienda deja $30,000 de utilidad al mes. La dueña saca $26,000 en efectivo y $5,500 de mercancía a costo. ¿Qué está pasando?",
+          "Sale más de lo que deja: la tienda pierde $1,500 de capital cada mes",
+          "Todo está bien, porque el efectivo que saca es menor que la utilidad",
+          "Le sobran $4,000 al mes que debería invertir en más mercancía",
+          "La mercancía no cuenta, porque no salió de la caja y no afecta el dinero con el que se vuelve a surtir"
+        ],
+        [
+          "Abre una tienda de una cadena de conveniencia a tres cuadras de la de Leticia. ¿Cuál es el primer paso más sensato?",
+          "Medir unas semanas sus ventas por hora y lo que le piden y no tiene",
+          "Bajar todos sus precios para quedar por debajo de la cadena",
+          "Ampliar su horario a 24 h para igualar lo que ofrece la cadena",
+          "Quitar el fiado y los pedidos por teléfono para bajar costos y poder competir mejor en precio"
+        ]
+      ]
+    },
+    {
+      "t": "Surtido inteligente: qué vender y cuánto espacio darle",
+      "r": "Agrupa tus productos en categorías con un papel claro, encuentra con un análisis ABC los que sostienen tu venta y tu utilidad, mide los faltantes y decide con números qué productos o servicios nuevos entran.",
+      "lecciones": [
+        {
+          "t": "Categorías y su papel: tráfico, rutina, conveniencia e impulso",
+          "obj": "Agrupar tus productos en categorías, asignarle a cada una un papel (tráfico, rutina, conveniencia o impulso) y decidir con eso su espacio, su precio y su lugar en la tienda.",
+          "texto": [
+            "Una tienda no vende productos sueltos: resuelve necesidades. Por eso conviene agrupar lo que tienes en <b>categorías</b> desde el punto de vista del cliente: bebidas, lácteos y huevo, pan y tortilla, abarrotes básicos, botanas y dulces, limpieza del hogar, higiene personal, mascotas y servicios. Los supermercados lo hacen con un método llamado administración de categorías: definen cada categoría, le asignan un papel, la evalúan con indicadores y deciden surtido, precio, promoción y exhibición. Para una tienda de barrio basta una versión sencilla con cuatro papeles.",
+            "Las categorías de <b>tráfico</b> son las que hacen que la gente cruce tu puerta: tortilla y pan donde los vendes, leche, huevo, refrescos fríos, hielo en temporada. No siempre son las de mayor margen, pero si fallan, el cliente se va a otra tienda y compra ahí todo lo demás. Las de <b>rutina</b> son lo que la casa repone cada semana: aceite, arroz, frijol, papel higiénico, detergente; aquí el cliente compara precios y espera encontrar siempre lo mismo. Las de <b>conveniencia</b> resuelven una urgencia: pilas, focos, veladoras, un analgésico de venta libre (solo los medicamentos que pueden venderse fuera de farmacia; si dudas, pregúntale a tu proveedor o a la autoridad sanitaria), pañales a medianoche; se venden poco, pero sostienen la idea de que «en la tienda de la esquina hay de todo». Las de <b>impulso</b> se compran sin haberlas planeado: dulces, chicles, botanas, helados; suelen dejar buen margen y viven cerca de la caja o bien a la vista.",
+            "El papel define cómo tratas cada categoría. Tráfico: nunca debe faltar, precio competitivo y un lugar que invite a recorrer la tienda; Paco Underhill observó que poner lo básico al fondo hace que el cliente pase frente a todo lo demás. Rutina: surtido estable, precio cercano al de la zona y acomodo ordenado, fácil de encontrar. Conveniencia: pocas opciones, una o dos por necesidad, con margen razonable, porque el cliente paga por tenerlo cerca. Impulso: visibilidad, variedad que rote y cuidado con la caducidad.",
+            "Un mismo producto puede cambiar de papel según tu colonia: frente a una escuela, los dulces son tráfico; en una zona de oficinas, el café y la botana de media mañana. Escribe tu lista de categorías, asigna un papel a cada una y compárala con el espacio que hoy les das. Muchas tiendas descubren que su categoría de tráfico está arrinconada mientras el mejor espacio lo ocupan productos que casi nadie pide."
+          ],
+          "comparar": [
+            "«Así no: Le doy el mejor lugar y más espacio a lo que más margen me deja, aunque la leche y el huevo queden en un rincón y a veces se acaben.»",
+            "«Así sí: La leche y el huevo nunca faltan y están al fondo, a la vista; los dulces y las botanas, cerca de la caja, y la limpieza, ordenada en su propio anaquel.»"
+          ],
+          "caso": "Caso ficticio: Abraham, de 45 años, tiene una tienda de 30 m² en Ciudad Juárez, cerca de una maquiladora con cambio de turno a las 6 y a las 15 h. Una distribuidora de botanas le ofrece un exhibidor grande si le cede toda la cabecera de la entrada, donde hoy están el refrigerador de lácteos y el huevo; para hacer lugar tendría que llevar los lácteos a un rincón junto a la limpieza. La distribuidora le asegura que «las botanas dejan más». Abraham ha notado que en cada cambio de turno entran muchos trabajadores por leche, huevo, pan y café, y que cerca de la mitad sale también con una botana o un dulce.",
+          "p": [
+            [
+              "¿Qué papel cumplen la leche y el huevo en la tienda de Abraham?",
+              "Tráfico: atraen a los trabajadores del cambio de turno, que después compran otras cosas",
+              "Impulso: los trabajadores los compran sin haberlo planeado cuando pasan frente a la entrada",
+              "Conveniencia: se venden poco, pero dan la imagen de que en la tienda se encuentra de todo",
+              "Los trabajadores entran a propósito por leche y huevo, y la mitad se lleva además una botana: eso es tráfico. Impulso es lo que se compra sin plan, como la botana misma. Conveniencia es lo que se vende poco y resuelve urgencias, y la leche se vende mucho."
+            ],
+            [
+              "¿Qué le conviene responder a la distribuidora?",
+              "Aceptar un exhibidor más chico junto a la caja y dejar los lácteos donde los clientes ya los encuentran",
+              "Aceptar todo, porque si las botanas dejan más margen, darles más espacio significa más ganancia para la tienda",
+              "Rechazar cualquier exhibidor, porque las botanas no tienen un papel importante en una tienda de barrio",
+              "Las botanas son impulso y funcionan en el camino a la caja, sin desplazar lo que trae a la gente. Arrinconar los lácteos pone en riesgo la visita que hoy genera esas compras de botana. Rechazar todo desperdicia una categoría de buen margen que sus clientes sí compran."
+            ],
+            [
+              "Si Abraham quiere que más clientes vean las botanas, ¿qué acomodo ayuda más?",
+              "Lácteos y huevo al fondo, a la vista, y las botanas en el camino que lleva de ahí hacia la caja",
+              "Lácteos y huevo junto a la puerta, para que el cliente entre, tome lo suyo y salga sin recorrer nada",
+              "Botanas al fondo, para que el cliente las busque, y la leche junto a la caja, para cobrarla rápido",
+              "Con lo básico al fondo, el cliente recorre la tienda y pasa frente a las botanas al ir a pagar. Con la leche en la puerta entra y sale sin ver nada más. Esconder las botanas al fondo va contra su papel de impulso, que necesita estar a la vista."
+            ]
+          ],
+          "completar": [
+            "Las categorías que hacen que el cliente cruce tu puerta, como la leche o el pan, cumplen un papel de ___.",
+            "tráfico"
+          ],
+          "relacionar": [
+            [
+              "Leche, huevo y tortilla",
+              "Tráfico"
+            ],
+            [
+              "Aceite, arroz y detergente",
+              "Rutina"
+            ],
+            [
+              "Pilas, focos y veladoras",
+              "Conveniencia"
+            ],
+            [
+              "Dulces, chicles y botanas",
+              "Impulso"
+            ],
+            [
+              "Administración de categorías",
+              "Papel, indicadores y tácticas por categoría"
+            ]
+          ],
+          "refl": "Mapa de categorías de tu tienda (20 min). 1) Haz una lista de 8 a 12 categorías desde el punto de vista del cliente. 2) Asigna a cada una un papel (tráfico, rutina, conveniencia o impulso) pensando en tu colonia. 3) Anota cuánto espacio le das hoy (anaqueles, charolas o refrigeradores) y dónde está. 4) Señala dos categorías cuyo espacio o lugar no corresponde a su papel y escribe qué cambiarías.",
+          "modelo": "Modelo: «Tráfico: pan y leche, dos charolas y medio refrigerador junto a la puerta; refrescos, dos refrigeradores al fondo. Rutina: abarrotes básicos, tres anaqueles; limpieza, uno. Conveniencia: pilas, focos y analgésicos de venta libre, media repisa detrás del mostrador. Impulso: dulces y botanas en la caja y en dos exhibidores. Cambios: paso la leche al fondo, junto a los refrescos, para que el cliente recorra la tienda, y reduzco a la mitad el anaquel de artículos de fiesta, que casi no rota, para completar la limpieza, que me piden y no tengo completa.» Es buena porque cada categoría tiene papel, espacio y lugar, y los cambios salen de esa comparación.",
+          "plantilla": [
+            "Mapa de categorías",
+            "Categoría: [ ] | Papel: [tráfico / rutina / conveniencia / impulso] | Espacio hoy: [ ] | Lugar: [ ] | ¿Corresponde a su papel? [sí / no] | Cambio: [ ]\n(Repite para cada categoría)\nCategorías de tráfico que nunca deben faltar: [ ]"
+          ],
+          "clave": [
+            "Agrupa tus productos según la necesidad del cliente y asigna a cada categoría un papel.",
+            "El tráfico nunca debe faltar, la rutina debe ser estable, la conveniencia resuelve urgencias y el impulso necesita estar a la vista.",
+            "Lo básico al fondo hace que el cliente recorra la tienda; no lo arrincones para darle espacio a lo que deja más margen."
+          ]
+        },
+        {
+          "t": "Análisis ABC en Excel: el 20 % de productos que sostiene tu venta",
+          "obj": "Clasificar tus productos en A, B y C según su venta y su utilidad bruta en Excel, y usar esa clasificación para decidir qué nunca debe faltar, qué revisar y qué podrías quitar.",
+          "texto": [
+            "En casi cualquier tienda pasa lo mismo: unos cuantos productos hacen la mayor parte de la venta. Es el principio de Pareto, que suele resumirse como «80/20», aunque la proporción cambia en cada negocio; no es una ley, es una tendencia que conviene medir. El <b>análisis ABC</b> ordena tus productos de mayor a menor venta y los divide en tres grupos: A, los pocos que juntos suman cerca del 80 % de la venta; B, los que suman el siguiente 15 %, y C, la larga lista que aporta el último 5 %.",
+            "En Excel: en la columna A pon el producto y en la B la venta del mes de cada uno, tomada de tu punto de venta o, si no tienes, de tus compras del mes como aproximación. Ordena de mayor a menor por la columna B. Si tus productos van de la fila 2 a la 301, en C2 escribe =B2/SUMA($B$2:$B$301) para ver qué parte de la venta aporta cada uno. En D2 escribe =C2, en D3 =D2+C3 y copia hacia abajo: es el acumulado. Escribe las letras A, B y C en H1, H2 y H3, y en E2 usa =SI(D2<=0.8,$H$1,SI(D2<=0.95,$H$2,$H$3)). Con =CONTAR.SI(E2:E301,H1) sabes cuántos productos son A.",
+            "Ahora el mito: «lo que más se vende es lo que más deja». No siempre. Un refresco puede estar en el primer lugar de venta con un margen de 15 %, y un dulce en el lugar 40 con 35 %. Haz un segundo ABC con la <b>utilidad bruta</b> de cada producto (venta × margen) y compara: los que son A en ambas listas son el corazón de tu tienda; los que son A en venta pero C en utilidad atraen gente, pero hay que vigilar su costo; los que son C en venta y A o B en utilidad merecen un mejor lugar.",
+            "Cómo usarlo. Los A nunca deben faltar: revisa su existencia a diario y negocia su compra con cuidado. Los B se revisan cada semana. Antes de quitar un C, pregúntate si cumple un papel de conveniencia (las pilas o las veladoras se venden poco, pero el cliente que no las encuentra pierde confianza), si tiene buen margen o si alguien lo compra junto con un A. Lo que no cumple ningún papel, no rota y ocupa espacio es candidato a salir: liquídalo y usa ese lugar para algo que te piden."
+          ],
+          "comparar": [
+            "«Así no: Lo que menos se vende lo quito todo, y lo que más se vende es lo que más me deja.»",
+            "«Así sí: Hice el ABC por venta y por utilidad; mis A nunca faltan, y de los C solo saco lo que no cumple ningún papel.»"
+          ],
+          "caso": "Caso ficticio: Guadalupe, de 38 años, tiene un minisúper en Iztapalapa con unos 250 productos y vende $300,000 al mes. Hizo su primer ABC: 40 productos suman $234,000 de venta. En el otro extremo, 120 productos juntos venden $15,000 al mes. Quiere quitar esos 120 para meter más refrescos, que son su producto número uno en venta pero le dejan 14 % de margen. Entre los 120 hay pilas, veladoras, focos y analgésicos de venta libre, y también 30 presentaciones de botanas de una marca que nadie pide desde hace meses.",
+          "p": [
+            [
+              "¿Qué dice el ABC de Guadalupe sobre sus 40 productos principales?",
+              "Son 16 % de los productos y hacen 78 % de la venta: son sus A y nunca deben faltar",
+              "Son 40 % de los productos y hacen 80 % de la venta, como dice la regla exacta del 80/20",
+              "Son su grupo C, porque son pocos, y el resto de la lista hace la mayor parte de la venta",
+              "40 ÷ 250 = 16 % de los productos y $234,000 ÷ $300,000 = 78 % de la venta: son su grupo A. El 80/20 es una tendencia, no una regla exacta. El grupo C es la larga lista de baja venta, no los pocos que sostienen la tienda."
+            ],
+            [
+              "¿Qué debería hacer con los 120 productos de menor venta?",
+              "Revisarlos uno por uno: conservar los que son de conveniencia y sacar las botanas que no rotan",
+              "Quitarlos todos, porque solo aportan 5 % de la venta y ocupan espacio que necesitan los refrescos",
+              "Dejarlos todos, porque en una tienda de barrio cualquier producto puede hacer falta algún día",
+              "Pilas, veladoras, focos y analgésicos son de conveniencia: se venden poco, pero su falta cuesta confianza. Las botanas sin rotación no cumplen ningún papel y ocupan espacio. Quitar todo por su venta ignora el papel; conservar todo mantiene producto muerto."
+            ],
+            [
+              "¿Por qué no basta con dar más espacio a los refrescos aunque sean el número uno en venta?",
+              "Porque con 14 % de margen pueden ser A en venta y no en utilidad: falta hacer el ABC de utilidad",
+              "Porque los refrescos pagan IVA, y eso hace que nunca le dejen ganancia a una tienda de barrio",
+              "Porque el ABC solo sirve para decidir qué quitar, no cuánto espacio darle a cada producto",
+              "La venta no es lo mismo que la utilidad: un producto de mucha venta y poco margen puede dejar menos que otros. El IVA que trasladas no es tuyo, pero eso no impide ganar: el margen se calcula sobre el precio sin IVA. El ABC también orienta el espacio y el lugar."
+            ]
+          ],
+          "completar": [
+            "Ordenar los productos de mayor a menor venta y dividirlos en tres grupos se llama análisis ___.",
+            "ABC"
+          ],
+          "relacionar": [
+            [
+              "Grupo A",
+              "Cerca del 80 % de la venta; nunca debe faltar"
+            ],
+            [
+              "Grupo B",
+              "El siguiente 15 %; se revisa cada semana"
+            ],
+            [
+              "Grupo C",
+              "El último 5 %; se revisa antes de quitar"
+            ],
+            [
+              "Venta acumulada",
+              "=D2+C3"
+            ],
+            [
+              "Contar productos A",
+              "=CONTAR.SI(E2:E301,H1)"
+            ]
+          ],
+          "refl": "Tu primer ABC (20 min). 1) Junta la venta del último mes por producto (punto de venta, notas o compras como aproximación) de al menos tus 50 productos principales. 2) Ordénalos, calcula la parte de cada uno y el acumulado, y marca A, B y C. 3) Calcula la utilidad bruta de tus A y compara el orden. 4) Escribe tres productos A que nunca deben faltar, dos C que conservarás por su papel y dos C que sacarías.",
+          "modelo": "Modelo: «De 60 productos, 11 son A y hacen 78 % de la venta: refresco de 600 ml, tortilla, leche, huevo, pan de caja, garrafón, papel higiénico… Por utilidad, el garrafón baja a B y los dulces sueltos suben a A, así que les doy una charola junto a la caja. Nunca faltan: leche, huevo y tortilla. Conservo pilas y focos, que son C pero de conveniencia. Saco un jabón de lavandería que nadie pide desde febrero y una salsa que caducó dos veces.» Es buena porque usa datos reales, compara venta con utilidad y decide qué conservar por su papel y no solo por su venta.",
+          "plantilla": [
+            "Hoja ABC de productos",
+            "Columnas: A Producto | B Venta del mes | C Parte =B2/SUMA($B$2:$B$301) | D Acumulado (D2 =C2; D3 =D2+C3) | E Grupo =SI(D2<=0.8,$H$1,SI(D2<=0.95,$H$2,$H$3)) | F Margen | G Utilidad bruta =B2*F2\nCeldas H1: A  H2: B  H3: C\nProductos A: [ ] (son [ ] % de la lista y [ ] % de la venta)\nA que nunca deben faltar: [ ]\nC que conservo por su papel: [ ]\nC que saco: [ ]"
+          ],
+          "clave": [
+            "Pocos productos hacen la mayor parte de la venta; mide cuántos son en tu tienda en vez de suponer el 80/20.",
+            "Haz el ABC por venta y por utilidad: lo que más se vende no siempre es lo que más deja.",
+            "Antes de quitar un C, revisa si cumple un papel de conveniencia, si deja buen margen o si acompaña a un A."
+          ]
+        },
+        {
+          "t": "Faltantes: lo que pierdes cuando no tienes lo que te piden",
+          "obj": "Medir los faltantes con una libreta, estimar lo que te cuestan, encontrar su causa y proteger tus productos clave con una lista de nunca-falta.",
+          "texto": [
+            "Un faltante es el momento en que un cliente busca algo que vendes y no está. Parece un detalle, pero se acumula. En un estudio mundial de Gruen, Corsten y Bharadwaj (2002), los anaqueles tenían en promedio 8.3 % de productos faltantes. Y lo más importante: ante un faltante, 31 % de los compradores fue a comprar a otra tienda, 26 % cambió de marca y 9 % no compró; el resto lo sustituyó por otra presentación o pospuso la compra. Son datos de supermercados de muchos países, no de tiendas de barrio mexicanas, pero la lección se sostiene: el mito de que «el cliente regresa» no se cumple con todos.",
+            "En tu tienda, el daño es doble. Pierdes la venta del producto que faltó y, muchas veces, todo lo que el cliente iba a comprar con él: quien no encuentra la tortilla tampoco se lleva aquí el refresco ni las salchichas. Peor aún, si le pasa dos o tres veces, aprende que en tu tienda «nunca hay» y cambia su ruta de todos los días. Por eso los faltantes de productos A y de categorías de tráfico son los más caros.",
+            "Lo primero es medir. Ten junto a la caja una <b>libreta</b> de faltantes, o una pestaña en tu hoja, y anota cada vez que alguien pide algo que no tienes: fecha, hora, producto y si se llevó otra cosa. En dos semanas verás patrones: productos que se acaban siempre el mismo día, cosas que te piden y nunca has vendido, horas en que se termina el hielo. En Excel, con los productos en la columna C, =CONTAR.SI(C2:C200,G2) te dice cuántas veces te pidieron el producto escrito en G2.",
+            "Luego busca la causa, porque cada una tiene su remedio: pedido hecho tarde o muy justo (ajusta cantidades; el punto de reorden lo verás en el módulo 4), proveedor que no pasó (ten un segundo proveedor para tus A), dinero insuficiente para surtir (la reposición no se toca, como viste en el corte de caja), producto que sí está pero quedó en la bodega o mal acomodado, o que se vendió y nadie lo anotó. Con eso arma tu <b>lista de nunca-falta</b>: tus productos A y de tráfico, con la existencia mínima de cada uno, revisada todos los días antes de abrir y antes de la hora pico."
+          ],
+          "comparar": [
+            "«Así no: Ya se acabó, vuelva otro día.» Y en la libreta no queda nada anotado.",
+            "«Así sí: Se me acabó a las 3, ya lo anoté; le pedí al proveedor una segunda vuelta y el sábado que viene hay hasta la noche.»"
+          ],
+          "caso": "Caso ficticio: Teodoro, de 67 años, atiende con su nieto una tienda en Hermosillo. En verano, los sábados se le acaba el hielo hacia las 15 h; el repartidor pasa una sola vez, a las 9 h. Su nieto anotó tres sábados: después de que se acabó el hielo, en promedio 25 personas preguntaron por él y casi todas se fueron sin comprar nada. La bolsa de hielo le cuesta $18 y la vende en $30. Teodoro piensa que «no pasa nada, el cliente regresa la próxima semana», y su nieto propone comprar un segundo congelador de $12,000.",
+          "p": [
+            [
+              "¿Cuánto margen pierde Teodoro solo en hielo cada sábado de verano?",
+              "Unos $300: 25 bolsas por $12 de margen que deja cada una",
+              "Unos $750: 25 bolsas por los $30 que cobra por cada una",
+              "Nada, porque esos clientes regresarán la próxima semana a comprar",
+              "Cada bolsa deja $30 − $18 = $12, y 25 × $12 = $300. Los $750 son venta, no margen: los $450 de costo no los gasta si no vende. Suponer que todos regresan es justo el mito: casi todos se fueron sin comprar."
+            ],
+            [
+              "¿Por qué la pérdida real probablemente es mayor que ese cálculo?",
+              "Porque quien no encontró hielo tampoco compró aquí refrescos, botanas, vasos o desechables del día",
+              "Porque el hielo es un producto de impulso con un margen mucho más alto que el del resto de la tienda",
+              "Porque el hielo paga IVA de 16 %, y esa parte del impuesto también se pierde con cada bolsa que no vende",
+              "En verano el hielo es tráfico: la gente que se va sin él se lleva a otra tienda el resto de su compra. No es impulso, porque se busca a propósito. Además, el hielo va a tasa 0 % de IVA, y el impuesto nunca fue ganancia de la tienda."
+            ],
+            [
+              "¿Qué conviene probar primero?",
+              "Pedir al proveedor una segunda entrega los sábados a las 13 h y medir unas semanas si se acaba",
+              "Comprar el congelador de $12,000 de inmediato, para tener el doble de hielo desde el primer sábado",
+              "Dejar de vender hielo, porque se acaba siempre y les causa molestias a los clientes de la tarde",
+              "La causa es una sola entrega diaria; una segunda vuelta no requiere inversión y se mide en dos o tres sábados. El congelador tardaría unos 40 sábados en pagarse con $300 de margen, aunque puede valer después si la prueba lo justifica. Dejar el hielo regala tráfico a otra tienda."
+            ]
+          ],
+          "completar": [
+            "La ___ de faltantes, junto a la caja, registra cada producto que te piden y no tienes.",
+            "libreta"
+          ],
+          "refl": "Tu libreta de faltantes (20 min). 1) Diseña la libreta o la pestaña: fecha, hora, producto y si se llevó otra cosa. 2) Escribe quién anotará en cada turno y cómo se lo recordarás. 3) Haz una primera lista de nunca-falta con 10 a 15 productos (tus A y tu tráfico) y la existencia mínima de cada uno. 4) Para los tres faltantes que recuerdes de este mes, escribe la causa probable y un remedio.",
+          "modelo": "Modelo: «Libreta en la caja con cuatro columnas. Anotamos yo en la mañana y mi esposo en la tarde, y al cerrar repasamos. Nunca-falta: leche entera, mínimo 12; huevo, 2 tapas; tortilla, encargo diario de 15 kg; refresco de cola de 600 ml, 24; garrafón, 6; pan de caja, 4; papel higiénico, 8 paquetes. Faltantes del mes: leche el domingo (pido poco el viernes: subo 6 piezas), garrafón el lunes (el proveedor no pasa: busco un segundo) y pilas AA (nunca había: meto un paquete de prueba).» Es buena porque define quién mide, pone mínimos concretos y da a cada faltante una causa con su remedio.",
+          "plantilla": [
+            "Libreta de faltantes y lista de nunca-falta",
+            "Libreta: Fecha | Hora | Producto que me pidieron | ¿Se llevó otra cosa? [sí / no]\nConteo en Excel: =CONTAR.SI(C2:C200,G2)\nNunca-falta: Producto [ ] | Existencia mínima [ ] | Revisión [antes de abrir / antes de la hora pico]\nFaltante frecuente: [ ] Causa: [pedido / proveedor / dinero / acomodo / registro] Remedio: [ ]"
+          ],
+          "clave": [
+            "Ante un faltante, una parte importante de los clientes compra en otra tienda: el cliente no siempre regresa.",
+            "Un faltante de tráfico cuesta la venta de ese producto y la de todo lo que iba a comprar con él.",
+            "Mide con una libreta, busca la causa y protege tus A con una lista de nunca-falta."
+          ]
+        },
+        {
+          "t": "Productos nuevos, a granel, refrigerados y servicios: decidir con números si entran",
+          "obj": "Evaluar con una hoja sencilla si un producto, categoría o servicio nuevo conviene: contribución mensual, costos extra, inversión, meses para recuperarla y una prueba con meta y fecha.",
+          "texto": [
+            "Todo el tiempo llegan propuestas: el proveedor que trae un producto nuevo, el vecino que pide carnes frías, la idea de vender frijol y arroz a granel o de cobrar pagos de servicios. El espacio y el dinero de tu tienda son limitados, así que cada cosa que entra desplaza a otra. Antes de decir que sí, haz cuatro cuentas. <b>Contribución mensual</b>: venta esperada × margen − costos extra (luz, merma, bolsas, comisiones). Inversión: equipo, adecuaciones o inventario inicial. Meses para recuperarla: inversión ÷ contribución mensual. Y qué dejas de vender en ese espacio.",
+            "Cada tipo trae sus costos escondidos. Los refrigerados (lácteos, carnes frías, quesos) gastan luz todo el día, deben conservarse a 7 °C o menos según la NOM-251 y caducan pronto; si rebanas carnes frías, la rebanadora debe limpiarse y desinfectarse, y conviene que verifiques con la autoridad sanitaria de tu estado si necesitas aviso de funcionamiento. El granel deja buen margen, pero pide una báscula verificada ante Profeco, recipientes cerrados y limpios, bolsas y control de la merma por humedad o plaga. Los servicios, como recargas o pagos de luz y agua, dejan una comisión pequeña por operación y te obligan a manejar más efectivo, pero atraen visitas.",
+            "Una regla práctica: nada entra sin prueba. Define una <b>prueba</b> de 6 a 8 semanas con meta clara (por ejemplo, vender 40 kg de frijol a granel al mes) y una fecha para decidir. Empieza con poco inventario, ponlo a la vista y anota ventas y merma. Si a la fecha no cumple la meta, sácalo sin culpa; si la cumple, dale un espacio fijo. Pide al proveedor productos con devolución o en consignación cuando se pueda, para que la prueba no te deje inventario muerto.",
+            "En Excel, una fila por propuesta: en B la venta mensual esperada, en C el margen, en D los costos extra del mes y en E la inversión. En F, =B2*C2-D2 te da la contribución mensual; en G, =E2/F2, los meses para recuperar la inversión. Si F sale negativa o G pasa de lo que dura el equipo, no entra. Y piensa en el efecto de arrastre: hay servicios que dejan poco pero traen clientes. Esa razón vale si la puedes medir con más compras, no solo porque «se siente» más movimiento."
+          ],
+          "comparar": [
+            "«Así no: El proveedor me dijo que se vende solo; le compro dos cajas y ya veré dónde las pongo.»",
+            "«Así sí: Le compro media caja con devolución, la pongo a la vista ocho semanas y, si no vende 20 piezas al mes, la saco.»"
+          ],
+          "caso": "Caso ficticio: Nayeli, de 26 años, tomó la tienda de su mamá en un barrio de Puebla y quiere crecer. Tiene $16,000 y tres ideas. Una: un refrigerador vertical de $14,000 para lácteos y carnes frías; espera vender $9,000 al mes con 20 % de margen, con $450 más de luz y unos $360 de merma. Dos: frijol, arroz y azúcar a granel; necesita una báscula de $2,500 y espera vender $6,000 al mes con 25 % de margen, con $250 de bolsas y merma. Tres: cobro de pagos de servicios, sin inversión, con unas 200 operaciones al mes de $5 de comisión cada una (ejemplo; verifica las condiciones del proveedor del servicio). Su mamá insiste en que lo que la gente más pide son carnes frías.",
+          "p": [
+            [
+              "¿Cuál es la contribución mensual del refrigerador?",
+              "$990: el margen de $1,800 menos los $810 de luz y merma del mes",
+              "$1,800: el 20 % de los $9,000 que espera vender al mes",
+              "$9,000: lo que espera vender cada mes con el refrigerador nuevo",
+              "$9,000 × 0.20 = $1,800 de margen; menos $450 de luz y $360 de merma quedan $990. Quedarse en $1,800 olvida los costos extra que trae el refrigerador, y $9,000 es venta, no contribución."
+            ],
+            [
+              "¿En cuántos meses recuperaría cada inversión?",
+              "Refrigerador, unos 14 meses; báscula para el granel, unos 2 meses",
+              "Refrigerador, unos 8 meses; báscula para granel, menos de 2 meses",
+              "Las dos en unos 2 meses, porque las ventas esperadas son parecidas",
+              "Refrigerador: $14,000 ÷ $990 = 14.1 meses. Granel: $6,000 × 0.25 − $250 = $1,250, y $2,500 ÷ $1,250 = 2 meses. Los 8 meses salen de dividir entre el margen sin restar luz y merma. Ventas parecidas no implican inversiones ni costos parecidos."
+            ],
+            [
+              "¿Qué plan es más sensato con sus $16,000?",
+              "Empezar con granel y pagos de servicios, probar 8 semanas y decidir el refrigerador con esos datos",
+              "Comprar primero el refrigerador, porque las carnes frías son lo que más piden y eso basta para decidir",
+              "Hacer las tres cosas a la vez con todo su dinero, para ver cuál funciona mejor desde el primer mes",
+              "Granel y servicios cuestan poco, se recuperan rápido y dan datos; mientras, una libreta de faltantes dirá si de verdad piden carnes frías. El refrigerador tarda 14 meses en pagarse y trae requisitos sanitarios. Las tres juntas cuestan $16,500, más de lo que tiene, y la dejan sin colchón."
+            ]
+          ],
+          "completar": [
+            "Antes de dar espacio fijo a un producto nuevo, hazle una ___ de 6 a 8 semanas con meta y fecha.",
+            "prueba"
+          ],
+          "relacionar": [
+            [
+              "Refrigerados",
+              "7 °C o menos y caducidad corta"
+            ],
+            [
+              "Granel",
+              "Báscula verificada y control de humedad"
+            ],
+            [
+              "Servicios",
+              "Comisión pequeña y más efectivo en caja"
+            ],
+            [
+              "Contribución mensual",
+              "=B2*C2-D2"
+            ],
+            [
+              "Meses para recuperar",
+              "=E2/F2"
+            ]
+          ],
+          "refl": "Evalúa una propuesta para tu tienda (20 min). 1) Elige un producto, categoría o servicio que estés pensando meter. 2) Estima venta mensual, margen, costos extra e inversión, y calcula contribución y meses para recuperar. 3) Escribe qué dejarías de vender en ese espacio y qué requisitos aplican (temperatura, báscula, aviso de funcionamiento, manejo de efectivo). 4) Diseña la prueba: duración, inventario inicial, meta y fecha de decisión.",
+          "modelo": "Modelo: «Propuesta: pan dulce de una panadería del barrio, en consignación. Venta esperada: $4,500 al mes con 25 % de margen, $1,125. Costos extra: bolsas y papel, $150. Contribución: $975. Inversión: una vitrina usada de $1,800, que recupero en menos de dos meses. Ocupa el lugar de un exhibidor de artículos de fiesta que es C. Prueba: 8 semanas con meta de $1,000 a la semana; lo que no se vende se devuelve al día siguiente. Decido el 15 de enero.» Es buena porque hace las cuentas completas, nombra lo que desplaza, aprovecha la consignación para bajar el riesgo y fija meta y fecha.",
+          "plantilla": [
+            "Hoja para evaluar un producto o servicio nuevo",
+            "Propuesta: [ ]\nB Venta mensual esperada: $[ ] | C Margen: [ ] % | D Costos extra del mes: $[ ] | E Inversión: $[ ]\nF Contribución mensual =B2*C2-D2: $[ ]\nG Meses para recuperar =E2/F2: [ ]\nQué desplaza: [ ]\nRequisitos: [temperatura / báscula / aviso de funcionamiento / manejo de efectivo]\nPrueba: del [ ] al [ ], inventario inicial [ ], meta [ ], decisión el [ ]"
+          ],
+          "clave": [
+            "Contribución mensual = venta esperada × margen − costos extra; meses para recuperar = inversión ÷ contribución.",
+            "Refrigerados, granel y servicios traen costos y requisitos propios: luz y 7 °C, báscula verificada, más efectivo.",
+            "Nada entra sin prueba con meta y fecha; pide devolución o consignación para bajar el riesgo."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma el plan de surtido de tu tienda en Excel con cuatro pestañas. 1) Categorías: lista con papel, espacio actual, lugar y cambio propuesto. 2) ABC: al menos 50 productos con venta, parte, acumulado y grupo, más la utilidad bruta de los A. 3) Faltantes: el formato de tu libreta y tu lista de nunca-falta con existencias mínimas. 4) Propuestas: una o dos ideas nuevas evaluadas con contribución, inversión, meses para recuperar y diseño de la prueba.",
+        "entregable": "Un archivo de Excel con cuatro pestañas y fórmulas, y un párrafo con los tres cambios de surtido o acomodo que harás en las próximas cuatro semanas.",
+        "criterios": "Revisa: cada categoría tiene un papel y su lugar corresponde a él, el ABC está hecho por venta y por utilidad, la lista de nunca-falta incluye existencias mínimas, ninguna propuesta entra sin prueba con meta y fecha, y no quitaste ningún producto C sin revisar su papel."
+      },
+      "lab": {
+        "t": "El surtido de un minisúper en Mérida",
+        "obj": "Asignar papeles a las categorías, hacer un análisis ABC, ordenar los faltantes y evaluar un producto nuevo para decidir el surtido de un minisúper.",
+        "esc": "<b>Saúl,</b> de 48 años, y su socia tienen un minisúper de 60 m² en una colonia de Mérida, con unos 600 productos y tres refrigeradores. Venden alrededor de $420,000 al mes, pero el espacio no alcanza: hay pasillos atiborrados, productos empolvados y clientes que se van sin lo que buscaban. Saúl quiere reordenar el surtido antes de pedir un préstamo para ampliar el local.",
+        "e": [
+          [
+            "Escena 1: Así ocupan el espacio las categorías: bebidas, tres refrigeradores; abarrotes básicos, cuatro anaqueles; limpieza, dos; botanas y dulces, dos anaqueles y la caja; artículos de fiesta y de temporada, dos anaqueles; higiene, uno; pan y tortilla, una charola en la entrada; mascotas, medio anaquel.",
+            "Consigna: asigna un papel a cada categoría, señala dos que no tienen el espacio o el lugar que su papel pide y propone el cambio."
+          ],
+          [
+            "Escena 2: Su ABC por venta muestra que 84 productos suman $336,000 al mes, otros 150 suman $63,000 y los 366 restantes, $21,000. El refresco de cola de 600 ml es el número uno en venta, con 13 % de margen.",
+            "Consigna: calcula qué porcentaje de los productos y de la venta es cada grupo, explica qué harás con los A y cómo decidirás qué C quitar; di qué cálculo te falta para el refresco."
+          ],
+          [
+            "Escena 3: En dos semanas, la libreta de faltantes registró 46 pedidos sin surtir: 18 de garrafón en domingo, 11 de pan dulce en la tarde, 9 de pilas y 8 de productos que nunca ha vendido, como croquetas para gato en bolsa chica.",
+            "Consigna: ordena los faltantes por importancia, escribe la causa probable y el remedio de cada uno, y arma la lista de nunca-falta."
+          ],
+          [
+            "Escena 4: Un proveedor le ofrece pan dulce en consignación. Saúl espera vender $12,000 al mes con 28 % de margen, con $400 de bolsas y papel, y necesita una vitrina de $3,600.",
+            "Consigna: calcula la contribución mensual y los meses para recuperar la vitrina, decide qué espacio libera para ella y diseña la prueba."
+          ]
+        ],
+        "p": [
+          [
+            "¿Qué porcentaje de los productos y de la venta son los A de Saúl?",
+            "14 % de los productos y 80 % de la venta del mes",
+            "80 % de los productos y 14 % de la venta",
+            "20 % de los productos y 80 % de la venta, como en cualquier tienda",
+            "84 ÷ 600 = 14 % de los productos y $336,000 ÷ $420,000 = 80 % de la venta. La segunda opción invierte las cifras. El 20 % es la tendencia general del 80/20, pero en su tienda la proporción medida es 14 %."
+          ],
+          [
+            "¿Qué faltante debería resolver primero?",
+            "El garrafón del domingo: es de tráfico y fue, por mucho, el faltante que más se repitió",
+            "Las croquetas en bolsa chica, porque son un producto nuevo que nadie más vende en la colonia",
+            "Las pilas, porque son de conveniencia y suelen dejar el mejor margen de toda la lista",
+            "El garrafón concentra 18 de los 46 faltantes y es tráfico: quien no lo encuentra se va con toda su compra. Un producto que nunca ha vendido se prueba después, con poco inventario. Las pilas importan, pero se piden la mitad de veces que el garrafón."
+          ],
+          [
+            "¿Cuánto contribuiría el pan dulce y en cuánto tiempo pagaría la vitrina?",
+            "$2,960 al mes; recupera la vitrina en poco más de un mes",
+            "$3,360 al mes; recupera la vitrina en apenas un mes y unos días",
+            "$12,000 al mes; recupera la vitrina en menos de dos semanas",
+            "$12,000 × 0.28 = $3,360 de margen, menos $400 de bolsas y papel: $2,960; $3,600 ÷ $2,960 = 1.2 meses. La segunda opción olvida restar los costos extra, y $12,000 es la venta, no lo que queda."
+          ]
+        ],
+        "pl": [
+          "Plan de surtido de la tienda",
+          "Tienda: [ ] Ciudad: [ ]\nCategorías y papel: [categoría – papel – espacio – cambio]\nABC: A = [ ] productos ([ ] %) y [ ] % de la venta; B = [ ]; C = [ ]\nA que nunca faltan: [ ]\nC que salen: [ ]  C que se quedan por su papel: [ ]\nFaltantes principales: [producto – causa – remedio]\nPropuesta nueva: contribución $[ ], meses para recuperar [ ], prueba del [ ] al [ ], meta [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "En la tienda de Leticia, la tortilla deja poco margen pero hace que muchos clientes entren cada mañana. ¿Qué papel tiene?",
+          "Tráfico, porque atrae visitas",
+          "Impulso, porque se compra sin planearlo",
+          "Conveniencia, porque resuelve una urgencia",
+          "Rutina, porque se compra a diario y por eso conviene venderla a precio de costo"
+        ],
+        [
+          "Gerardo vende $200,000 al mes y sus primeros 30 productos suman $150,000. ¿Qué parte de la venta hacen?",
+          "75 %, porque $150,000 ÷ $200,000",
+          "30 %, porque son sus primeros 30 productos",
+          "15 %, porque es la parte que suele tener el grupo B",
+          "80 %, porque los primeros productos siempre suman esa proporción"
+        ],
+        [
+          "En el ABC de Gerardo, con 200 productos en las filas 2 a 201, ¿qué fórmula calcula la parte de la venta del producto de la fila 2?",
+          "=B2/SUMA($B$2:$B$201)",
+          "=SUMA(B2:B201)/B2",
+          "=B2*SUMA($B$2:$B$201)",
+          "=CONTAR.SI(B2:B201,B2), que cuenta cuántas veces aparece la venta"
+        ],
+        [
+          "Un dulce de Leticia es C en el ABC de venta, pero A en el de utilidad bruta. ¿Qué conviene?",
+          "Darle un mejor lugar a la vista, porque deja más de lo que su venta sugiere",
+          "Quitarlo, porque todo producto C ocupa espacio que necesitan los A",
+          "Bajarle el precio hasta que suba a A en el ABC de venta",
+          "Ignorar el resultado, porque para decidir el surtido solo cuenta el ABC de venta del mes"
+        ],
+        [
+          "Teodoro dice que si falta el hielo «el cliente regresa». Según el estudio de Gruen, Corsten y Bharadwaj, ¿qué es lo más acertado?",
+          "No siempre: cerca de un tercio de los compradores compra en otra tienda",
+          "Tiene razón: casi todos los compradores posponen la compra y regresan",
+          "Tiene razón: solo 9 % de los compradores se va a otra tienda",
+          "No: 8.3 % de los clientes se pierde para siempre con cada faltante que ocurre en el anaquel"
+        ],
+        [
+          "A Leticia se le acaba el pan de caja los domingos a mediodía y después lo piden 15 clientes. Cada pan le deja $9 de margen. ¿Cómo estima la pérdida?",
+          "$135 directos, más lo que esos clientes iban a comprar con el pan",
+          "$135 y nada más, porque el resto de su compra la hacen igual",
+          "$9, porque solo se pierde la primera venta del día",
+          "$270, porque cada faltante se cuenta dos veces: una por el pan y otra por el cliente"
+        ],
+        [
+          "Gerardo evalúa una vitrina de quesos: venta esperada de $8,000 al mes, 22 % de margen, $500 de luz y merma, e inversión de $9,000. ¿En cuánto tiempo la recupera?",
+          "Unos 7 meses: $9,000 ÷ $1,260",
+          "Unos 5 meses: $9,000 ÷ $1,760 de margen",
+          "Poco más de 1 mes: $9,000 ÷ $8,000 de venta",
+          "Unos 18 meses, porque se divide la inversión entre la luz y la merma del mes"
+        ],
+        [
+          "Leticia quiere vender frijol a granel. ¿Qué necesita además de recipientes limpios y cerrados?",
+          "Una báscula verificada ante Profeco y control de la merma por humedad",
+          "Un refrigerador a 7 °C o menos, porque todo el granel lo exige la NOM-251",
+          "Nada más; el granel no tiene requisitos especiales en una tienda",
+          "Un permiso especial del SAT para vender alimentos sin empaque de fábrica"
+        ],
+        [
+          "Un proveedor le asegura a Gerardo que un producto nuevo «se vende solo». ¿Qué conviene?",
+          "Probarlo 8 semanas con poco inventario, meta y fecha, de preferencia con devolución",
+          "Comprar varias cajas para obtener mejor precio y tenerlo bien surtido desde el principio",
+          "Rechazarlo, porque los productos nuevos casi nunca funcionan en una tienda de barrio",
+          "Darle el lugar de un producto A para que se vea bien"
+        ],
+        [
+          "¿Dónde conviene poner la leche y el huevo en una tienda de 30 m² para que el cliente vea más productos?",
+          "Al fondo y a la vista, para que el cliente recorra la tienda",
+          "En la entrada, para que entre y salga rápido",
+          "Detrás del mostrador, para que nadie los tome sin pagar",
+          "Junto a la caja, en el lugar de los dulces y botanas, para que sea lo último que tome antes de pagar"
+        ]
+      ]
+    }
+  ]
+}
