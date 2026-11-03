@@ -1,0 +1,804 @@
+{
+ "modulos": [
+  {
+   "t": "Operar en regla y con seguridad",
+   "r": "Pon en orden los trámites de tu tienda, vende tabaco, alcohol y granel conforme a sus reglas, protege a tu gente y tu dinero ante robos y extorsiones, y forma un equipo al que puedas confiarle la tienda.",
+   "lecciones": [
+    {
+     "t": "Lo que tu tienda necesita en regla: licencia municipal, protección civil, aviso de funcionamiento y SAT",
+     "obj": "Identificar los trámites que le tocan a tu tienda en cada ventanilla, ordenar sus vigencias en una carpeta y saber qué preguntar en tu municipio y en el SAT.",
+     "texto": [
+      "Una tienda puede vender bien durante años con los papeles incompletos, hasta que llega una inspección, una clausura o un crédito que pide comprobantes. Los trámites cambian de municipio a municipio y de estado a estado, así que aquí no hay costos ni plazos, sino el mapa de qué preguntar. Piensa en cuatro ventanillas. La primera es el <b>municipio</b>: según el lugar se llama licencia de funcionamiento, licencia de giro o permiso de operación, y casi siempre va ligada a un titular, un domicilio y un giro. En muchos lugares piden antes el uso de suelo, y algunos tienen ventanillas de apertura rápida para giros de bajo riesgo. La venta de cerveza o vinos suele ser una licencia aparte, con sus propios horarios.",
+      "La segunda es <b>protección civil</b>: extintor con carga vigente, salidas libres, instalación eléctrica sin extensiones sobrecargadas, tanque de gas en buen estado si lo usas y señalización básica. La tercera es la <b>autoridad sanitaria</b>: la venta al por menor de abarrotes aparece entre las actividades que requieren aviso de funcionamiento ante la COFEPRIS o la autoridad sanitaria de tu estado; confirma con ella qué te corresponde, sobre todo si rebanas carnes frías, vendes a granel o comida preparada. La cuarta es el <b>SAT</b>: alta, régimen (muchos tenderos personas físicas tributan en RESICO) y factura global por las ventas al público en general. El alta paso a paso está en «Emprender desde Cero».",
+      "Tu herramienta es una carpeta de regularidad, en papel y escaneada en el celular, con cada documento, su vigencia y su próximo paso. En Excel, pon en la columna A el trámite, en B la dependencia, en C la fecha de vencimiento y en D2 =C2-HOY(), que te dice cuántos días faltan; con =SI(D2<60,1,0) marcas con 1 lo que vence en menos de dos meses. Así el refrendo o la recarga del extintor no te agarran por sorpresa.",
+      "Dos trampas frecuentes. Una es confiar en la licencia del inquilino anterior: si cambia el titular o el giro, pregunta en tu municipio si se traspasa o se tramita de nuevo. La otra es arreglar una inspección por fuera: dar dinero a un inspector es cohecho, un delito para ambas partes, y te deja igual de irregular. Si llega un inspector, pide identificación y orden escrita, y guarda copia. Nada de esto es asesoría legal ni fiscal: verifica en tu municipio y en el SAT."
+     ],
+     "comparar": [
+      "«Así no: El local ya tenía licencia, así que abro el lunes y luego veo lo demás.»",
+      "«Así sí: Antes de abrir pregunto en el municipio qué licencia y uso de suelo me tocan, reviso protección civil y la autoridad sanitaria, y confirmo mi alta en el SAT.»"
+     ],
+     "caso": "Caso ficticio: Socorro, de 44 años, trabajó doce años como cajera y va a abrir su propia tienda en un local rentado de una colonia de Celaya. El dueño del local le asegura que no necesita tramitar nada, porque el inquilino anterior, que también vendía abarrotes, tenía licencia. Socorro quiere rebanar jamón y queso, vender frijol y arroz a granel y, en unos meses, cerveza. Tiene prisa por abrir antes de diciembre y no sabe por dónde empezar.",
+     "p": [
+      [
+       "¿Qué hace Socorro con la licencia del inquilino anterior?",
+       "Pregunta en el municipio si se traspasa o si debe tramitarla a su nombre",
+       "La usa tal cual, porque la licencia es del local y el giro sigue siendo el mismo",
+       "Abre sin licencia y la tramita hasta que llegue la primera inspección del municipio",
+       "Las licencias suelen ligarse a un titular, un domicilio y un giro; si cambia el titular, solo el municipio puede decir si hay traspaso o trámite nuevo. Suponer que «es del local» o esperar la inspección la expone a multa o clausura justo en su temporada fuerte."
+      ],
+      [
+       "Socorro va a rebanar jamón y a vender granos a granel. ¿Qué agrega a su lista?",
+       "Confirmar con la autoridad sanitaria de su estado el aviso de funcionamiento",
+       "Nada más, porque a una tienda de abarrotes solo la revisa el municipio",
+       "Solo comprar una báscula nueva, porque el granel es lo único que revisa la autoridad",
+       "La venta al por menor de abarrotes aparece entre las actividades con aviso de funcionamiento, y rebanar o vender a granel hace aún más importante confirmarlo. La autoridad sanitaria es una ventanilla distinta del municipio, y la báscula tiene su propia regla, pero no sustituye el aviso."
+      ],
+      [
+       "Socorro quiere vender cerveza en unos meses. ¿Qué le conviene hacer?",
+       "Preguntar en el municipio por la licencia de alcohol y sus horarios antes de surtir",
+       "Empezar a venderla ya, porque la licencia de abarrotes cubre bebidas de todo tipo",
+       "Agregar la actividad en el SAT, porque con eso ya puede vender cerveza en la tienda",
+       "La venta de alcohol suele requerir una licencia aparte, con horarios y reglas que fijan el estado y el municipio. La licencia de abarrotes no la incluye por sí sola, y el SAT registra tus obligaciones fiscales, no te da permiso de vender alcohol."
+      ]
+     ],
+     "completar": [
+      "En muchos municipios, antes de la licencia de funcionamiento te piden el uso de ___.",
+      "suelo"
+     ],
+     "relacionar": [
+      [
+       "Licencia municipal",
+       "Permiso para operar el giro en ese domicilio"
+      ],
+      [
+       "Protección civil",
+       "Extintor vigente, salidas libres e instalación segura"
+      ],
+      [
+       "Aviso de funcionamiento",
+       "Autoridad sanitaria (COFEPRIS o estatal)"
+      ],
+      [
+       "SAT",
+       "Alta, régimen y factura global"
+      ],
+      [
+       "=C2-HOY()",
+       "Días que faltan para que venza un trámite"
+      ]
+     ],
+     "refl": "Arma la carpeta de regularidad de tu tienda (20 min). 1) Lista los trámites de las cuatro ventanillas (municipio, protección civil, autoridad sanitaria y SAT), más los de alcohol o anuncio si aplican. 2) Para cada uno anota si lo tienes, a nombre de quién está y su vigencia. 3) Escribe qué te falta y a qué oficina vas a preguntar, con fecha. 4) Arma la hoja de Excel con los días para vencer y la marca de lo que vence en menos de 60 días.",
+     "modelo": "Modelo: «Municipio: licencia de funcionamiento a mi nombre, refrendo anual que vence en marzo; uso de suelo, lo tengo. Protección civil: el extintor vence en enero y ya agendé la recarga; quito la extensión del refrigerador y pido revisar el contacto. Sanitaria: rebano jamón, así que el jueves llamo a la autoridad sanitaria del estado para confirmar el aviso de funcionamiento. SAT: estoy en RESICO y mi contador hace la factura global. Pendiente: preguntar si el letrero necesita permiso.» Es buena porque cubre las cuatro ventanillas, tiene fechas y titulares, y convierte cada hueco en una acción con día.",
+     "plantilla": [
+      "Carpeta de regularidad",
+      "Trámite | Dependencia | A nombre de | Vence | Días para vencer (=C2-HOY()) | Próximo paso\nLicencia o permiso municipal: [ ]\nUso de suelo: [ ]\nProtección civil (extintor, instalación, salidas): [ ]\nAviso de funcionamiento (autoridad sanitaria): [ ]\nSAT: régimen [ ] | factura global [ ]\nLicencia de alcohol (si aplica): [ ]\nOtros (anuncio, refrendo): [ ]\nOficina a la que preguntaré y fecha: [ ]"
+     ],
+     "clave": [
+      "Los trámites cambian por municipio y estado: tu trabajo es saber qué preguntar en cada ventanilla y verificarlo.",
+      "Cuatro ventanillas: municipio, protección civil, autoridad sanitaria y SAT; el alcohol suele ir aparte.",
+      "Una carpeta con vigencias y días para vencer evita multas y clausuras por descuido."
+     ]
+    },
+    {
+     "t": "Productos con reglas especiales: tabaco, alcohol, vapeadores y básculas",
+     "obj": "Vender tabaco, alcohol y productos a granel conforme a sus reglas, rechazar lo prohibido y convertir esas reglas en una rutina de todo tu equipo.",
+     "texto": [
+      "Algunos productos traen reglas obligatorias. Empieza por el <b>tabaco</b>. La Ley General para el Control del Tabaco y su reglamento, reformado en diciembre de 2022, prohíben vender cigarros sueltos o en cajetillas de menos de 14 o más de 25 piezas, que el cliente los tome directamente y venderlos a menores de 18 años; además debes tener a la vista el letrero que lo dice. Desde 2023, exhibir cajetillas se considera <b>publicidad</b> y está prohibido: lo que puedes tener es una lista de precios escrita, sin logotipos, y el producto guardado fuera de la vista. Algunas empresas obtuvieron amparos, pero la regla general para tu tienda es no exhibir.",
+      "Los <b>vapeadores</b> y cigarros electrónicos son otra historia. Una reforma constitucional publicada en enero de 2025 y la reforma a la Ley General de Salud de enero de 2026 prohíben venderlos, distribuirlos o almacenarlos para venta, con sanciones penales de prisión y multa (verifica el texto vigente). No castigan el consumo personal, sino la venta. Si te los ofrecen porque dejan buen margen, la respuesta es no: ningún margen compensa un proceso penal. Con el <b>alcohol</b>, la Ley General de Salud establece que en ningún caso se puede vender a menores de edad; la licencia, los horarios y la ley seca los fijan tu estado y tu municipio, así que verifica en tu municipio. Si dudas de la edad, pide identificación, con el mismo trato amable para todos.",
+      "La <b>báscula</b> es tu instrumento de confianza con quien compra a granel. Debe verificarse periódicamente ante Profeco, conforme a la NOM-010-SCFI-1994 (verifica vigencia, calendario y requisitos en tu oficina de Profeco), y nunca se ajusta a mano. Un error afecta en los dos sentidos: si marca de más, cobras de más y te expones a sanción; si marca de menos, regalas producto. Como ejemplo ficticio, si tu báscula marca 30 gramos de menos por kilo y vendes 300 kilos al mes de granel a $36 el kilo en promedio, entregas 9 kilos sin cobrar: $324 al mes.",
+      "Convierte estas reglas en rutina del equipo: letrero de no venta a menores a la vista, cigarros detrás del mostrador en un cajón o gabinete cerrado, una frase igual para todos al pedir identificación («por regla de la tienda, ¿me enseñas tu identificación?»), la báscula limpia y en cero antes de abrir, y su constancia de verificación guardada en la carpeta de regularidad."
+     ],
+     "comparar": [
+      "«Así no: Te vendo dos cigarros sueltos, y la cerveza llévatela, que ya sé que es para tu papá.»",
+      "«Así sí: Los cigarros solo en cajetilla y sin exhibir; y para la cerveza, por regla de la tienda, ¿me enseñas tu identificación?»"
+     ],
+     "caso": "Caso ficticio: Alfredo, de 57 años, tiene una tienda con venta de cerveza y cigarros en una colonia de Torreón. Muchos clientes le piden cigarros sueltos y su sobrino, que lo ayuda en las tardes, insiste en que así se vende más. Un proveedor le ofrece una caja de vapeadores con 45 % de margen. Su vitrina de cajetillas tiene los logotipos a la vista y su báscula de granel no se verifica desde hace años; esta semana un cliente le reclamó que su kilo de azúcar salió corto.",
+     "p": [
+      [
+       "¿Qué hace Alfredo con la oferta de vapeadores?",
+       "La rechaza: venderlos o guardarlos para venta está prohibido y tiene sanciones penales",
+       "Los acepta, pero los vende solo a adultos y detrás del mostrador, como los cigarros",
+       "Los acepta solo con factura del proveedor, porque así la venta queda en regla",
+       "Desde 2025 y 2026, vender, distribuir o almacenar vapeadores para venta está prohibido, con prisión y multa. Venderlos solo a adultos no lo vuelve legal, y una factura no cambia que el producto esté prohibido."
+      ],
+      [
+       "¿Cómo debe vender los cigarros desde ahora?",
+       "En cajetillas de 14 a 25 piezas, sin vitrina y solo con lista de precios escrita",
+       "Sueltos, pero solo a clientes adultos que conoce, y con la vitrina a la vista",
+       "En cajetillas, en la vitrina de siempre, mientras el letrero de menores esté puesto",
+       "La ley prohíbe vender sueltos y, desde 2023, exhibir cajetillas cuenta como publicidad prohibida; solo cabe una lista de precios escrita sin logotipos. Conocer al cliente no permite vender sueltos, y el letrero de menores es obligatorio pero no autoriza la vitrina."
+      ],
+      [
+       "¿Qué hace con la báscula después del reclamo?",
+       "La lleva a verificar ante Profeco y guarda la constancia en su carpeta",
+       "La ajusta él mismo con el tornillo hasta que el kilo de azúcar salga exacto",
+       "La cambia por una nueva, porque las básculas nuevas ya no necesitan verificarse",
+       "La báscula debe verificarse periódicamente ante Profeco y nunca se ajusta a mano, aunque sea con buena intención. Una báscula nueva también entra en la verificación periódica; cambiarla no lo exime."
+      ]
+     ],
+     "completar": [
+      "Desde 2023, exhibir cajetillas de cigarros se considera ___ y está prohibido.",
+      "publicidad"
+     ],
+     "refl": "Revisa tus productos con reglas especiales (20 min). 1) Haz una lista de lo que vendes de tabaco, alcohol y a granel. 2) Para cada uno escribe la regla que aplica y si hoy la cumples. 3) Redacta la frase que usará todo tu equipo para pedir identificación. 4) Anota cuándo se verificó tu báscula y qué harás para la próxima verificación. 5) Escribe qué responderás si alguien te ofrece vapeadores.",
+     "modelo": "Modelo: «Tabaco: vendo cajetillas de 20; quito la vitrina con logotipos y pongo una lista de precios escrita; los cigarros van en un cajón detrás de la caja; el letrero de menores ya está. Alcohol: tengo licencia y pregunto en el municipio los horarios y la ley seca de las próximas elecciones. Frase del equipo: por regla de la tienda, ¿me enseñas tu identificación? Báscula: la última verificación fue hace dos años; el lunes pregunto en Profeco el calendario. Vapeadores: no los vendo ni los guardo.» Es buena porque revisa cada producto contra su regla, corrige lo que no cumple y deja una sola frase para todo el equipo.",
+     "plantilla": [
+      "Hoja de productos con reglas",
+      "Tabaco: presentación [ ] (de 14 a 25 piezas) | ¿exhibo? [ ] → lista de precios escrita, sin logotipos | letrero de menores [sí/no]\nAlcohol: licencia [ ] vigencia [ ] | horarios y ley seca según mi municipio: [ ]\nFrase para pedir identificación: [ ]\nVapeadores: no se venden ni se guardan para venta\nBáscula: última verificación [fecha] | próxima [ ] | constancia en la carpeta [sí/no]\nResponsable de revisar cada mes: [ ]"
+     ],
+     "clave": [
+      "Tabaco: cajetillas de 14 a 25 piezas, sin exhibir, sin que el cliente lo tome y nunca a menores.",
+      "Vapeadores: venderlos o guardarlos para venta está prohibido, con sanciones penales.",
+      "Alcohol nunca a menores y con las reglas de tu municipio; la báscula se verifica ante Profeco y no se ajusta."
+     ]
+    },
+    {
+     "t": "Seguridad: manejo de efectivo, robos y extorsiones",
+     "obj": "Reducir el efectivo expuesto, saber qué hacer antes, durante y después de un asalto, y responder a una extorsión sin pagar y con denuncia.",
+     "texto": [
+      "La seguridad de tu tienda se juega antes del incidente. Con el <b>efectivo</b>, la regla es tener a la vista solo lo necesario para dar cambio. Fija un tope de caja, por ejemplo $2,000, y cada vez que lo rebases haz un retiro <b>parcial</b> a un lugar seguro y anótalo en tu corte, para que el arqueo cuadre. No cuentes billetes frente a los clientes, cambia los días y las horas en que llevas dinero al banco y, si puedes, ve acompañado. Cada venta cobrada por transferencia, CoDi o tarjeta es dinero que no queda en el cajón.",
+      "Para prevenir <b>robos</b>: buena iluminación, mostrador con vista a la entrada, vidrios sin carteles que tapen el interior y, si tu presupuesto alcanza, cámaras con aviso visible. Si llega un <b>asalto</b>, la única regla es salir con vida: no te resistas, no persigas, no hagas movimientos bruscos, entrega lo que te pidan y fíjate en detalles que puedas contar después. Cuando se vayan, llama al 911, no toques nada y presenta tu denuncia. Ningún dinero vale más que tu vida o la de tu equipo, y así debe quedar escrito en tu manual.",
+      "La <b>extorsión</b> suele empezar con una llamada o un mensaje: alguien dice ser de un grupo criminal o de una autoridad, o asegura que tiene a un familiar tuyo, y exige un depósito urgente. Las recomendaciones oficiales son claras: no pagues, cuelga, verifica por otro medio (llama a tu familiar a su número), guarda evidencia (número, hora, mensajes) y denuncia. El 089 recibe denuncias anónimas, incluida la extorsión, aunque no hayas pagado; si hay peligro inmediato, llama al 911. Si ya transferiste, avisa de inmediato a tu banco. Creer que si pagas te dejan en paz es un mito peligroso: pagar le confirma al extorsionador que puede volver a pedir. La ENVIPE del INEGI ubica a la extorsión entre los delitos que menos se denuncian, y ese silencio es justo lo que aprovechan.",
+      "Organízate con los comercios vecinos en un grupo de mensajes para avisos de seguridad, con reglas claras (solo hechos, sin fotos de personas ni acusaciones sin pruebas), y ten pegados junto a la caja el 911, el 089 y el número de tu banco. La prevención no debe convertirse en sospecha hacia un grupo: juzgar por la ropa, la edad o la apariencia no te protege y sí aleja a tus clientes."
+     ],
+     "comparar": [
+      "«Así no: Mejor pago lo que me piden cada semana y guardo el dinero del día bajo el mostrador hasta el sábado.»",
+      "«Así sí: Cuelgo, no pago, guardo el número y denuncio al 089; en la caja solo tengo el tope y hago retiros parciales anotados.»"
+     ],
+     "caso": "Caso ficticio: Patricia, de 39 años, atiende sola por las noches su tienda en Reynosa. Al cierre suele tener unos $15,000 en el cajón, porque lleva el dinero al banco cada tercer día, siempre a las 9 de la mañana. Ayer recibió una llamada: un hombre le dijo que sabía dónde vivía y le exigió $5,000 semanales para «cuidarla»; le dio un número de cuenta y le advirtió que, si avisaba a alguien, le iría mal. El vecino del puesto de tacos le aconseja pagar para no tener problemas.",
+     "p": [
+      [
+       "¿Qué hace Patricia con la llamada?",
+       "No paga, guarda el número y la hora, y denuncia al 089 o al 911 si hay peligro",
+       "Paga la primera semana para ganar tiempo mientras averigua quién la llamó",
+       "Devuelve la llamada para negociar una cuota más baja y que la dejen trabajar",
+       "Las recomendaciones oficiales son no pagar, colgar, verificar, guardar evidencia y denunciar; el 089 es anónimo y recibe extorsión aunque no haya pago. Pagar una vez confirma que puede volver a pedir, y negociar la expone y la mantiene en contacto con el extorsionador."
+      ],
+      [
+       "¿Qué cambio en el manejo del efectivo reduce más su riesgo?",
+       "Tope de caja con retiros parciales anotados y depósitos en días y horas distintos",
+       "Guardar los $15,000 del cierre en una caja escondida debajo del mostrador",
+       "Ir al banco todos los días, siempre a la misma hora para no olvidarlo nunca",
+       "El tope y los retiros parciales reducen lo que queda expuesto, y variar días y horas hace menos predecible el traslado. Esconder el dinero en la tienda deja el mismo monto en riesgo, e ir siempre a la misma hora crea una rutina fácil de observar."
+      ],
+      [
+       "Si una noche entra alguien armado a asaltarla, ¿qué debe hacer Patricia?",
+       "Entregar lo que le pidan sin resistirse y, cuando se vaya, llamar al 911",
+       "Activar la alarma frente al asaltante para que se asuste y salga corriendo",
+       "Decir que no hay dinero en la caja y ofrecerle mercancía para perder menos",
+       "En un asalto la prioridad es la vida: no resistirse ni hacer movimientos bruscos. Activar una alarma a la vista o mentir sobre el dinero puede provocar una reacción violenta; la denuncia y el 911 vienen cuando el asaltante ya se fue."
+      ]
+     ],
+     "completar": [
+      "Fija un tope de caja y, cuando lo rebases, haz un retiro ___ a un lugar seguro.",
+      "parcial"
+     ],
+     "relacionar": [
+      [
+       "Tope de caja",
+       "Retiro anotado en el corte al rebasarlo"
+      ],
+      [
+       "Asalto",
+       "No resistirse y llamar al 911 cuando se vayan"
+      ],
+      [
+       "Llamada de extorsión",
+       "Colgar, verificar por otro medio y no pagar"
+      ],
+      [
+       "089",
+       "Denuncia anónima, aunque no hayas pagado"
+      ],
+      [
+       "Ya transferiste",
+       "Avisar de inmediato a tu banco"
+      ]
+     ],
+     "refl": "Escribe tu protocolo de seguridad (20 min). 1) Fija tu tope de caja y cómo harás los retiros parciales. 2) Escribe cómo y cuándo llevarás el dinero al banco, variando días y horas. 3) Redacta los pasos ante un asalto y ante una llamada o mensaje de extorsión. 4) Anota los números que pegarás junto a la caja. 5) Escribe las reglas de tu grupo de avisos con los vecinos.",
+     "modelo": "Modelo: «Tope de caja: $2,500. Al rebasarlo, retiro $2,000 al buzón de la trastienda y lo anoto en el corte. Banco: martes, jueves y sábado, a horas distintas y con mi hermano. Asalto: no me resisto, entrego, observo, llamo al 911 cuando se vayan y no toco nada. Extorsión: cuelgo, no pago, anoto número y hora, llamo a mi familia para verificar y denuncio al 089. Junto a la caja: 911, 089 y mi banco. Grupo de vecinos: solo hechos, sin fotos de personas.» Es buena porque convierte la prevención en pasos concretos, pone la vida primero y no señala a nadie.",
+     "plantilla": [
+      "Protocolo de seguridad de la tienda",
+      "Tope de caja: $[ ] → retiro parcial a [lugar], anotado en el corte\nDepósitos: días [ ] | horas [ ] | acompañado por [ ]\nAsalto: no resistirse, entregar, observar, 911 cuando se vayan, no tocar nada, denunciar\nExtorsión: colgar, no pagar, verificar por otro medio, guardar evidencia, 089 (o 911 si hay peligro), avisar al banco si ya transferí\nNúmeros junto a la caja: 911 | 089 | mi banco [ ]\nGrupo de vecinos, reglas: [ ]"
+     ],
+     "clave": [
+      "Menos efectivo a la vista es menos riesgo: tope de caja, retiros parciales y depósitos variados.",
+      "En un asalto no te resistas: tu vida vale más que la caja; después, 911 y denuncia.",
+      "Ante una extorsión: no pagues, cuelga, verifica, guarda evidencia y denuncia al 089."
+     ]
+    },
+    {
+     "t": "Tu equipo: contratar, capacitar y dejar la tienda en buenas manos",
+     "obj": "Definir un puesto, contratar en regla, capacitar con un manual y controlar la caja con fondo fijo y arqueo, sin desconfiar de nadie.",
+     "texto": [
+      "Llega un momento en que la tienda necesita más manos que las tuyas. Antes de contratar, escribe el puesto: qué horario cubre, qué tareas hace (atender, cobrar, recibir pedidos, acomodar, limpiar) y qué no puede hacer sin ti, como cambiar precios o fiar. Busca actitud de servicio, honestidad y gusto por el trato con la gente; las cuentas se enseñan. Contratar a un familiar o a alguien de confianza no te ahorra las reglas: con ellos también conviene un acuerdo por escrito con horario, sueldo, días de descanso y tareas.",
+      "Contratar en regla es parte del trato digno. La persona debe quedar inscrita en el IMSS dentro del plazo legal (los pasos y el plazo los ves en «Emprender desde Cero»), con contrato por escrito, pago puntual en la fecha acordada, descansos y un ambiente sin gritos ni humillaciones. Los faltantes de caja no se descuentan del sueldo por tu cuenta: la ley laboral limita los descuentos al salario, y lo correcto es investigar la causa, corregir el proceso y, si hace falta, asesorarte con un especialista laboral.",
+      "La <b>capacitación</b> no es decir «fíjate cómo lo hago». Arma un manual corto de la tienda: apertura y cierre, cobro con cada forma de pago y confirmación de transferencias, fondo de caja y retiros, recepción de pedidos, precios y etiquetas, no venta de tabaco ni alcohol a menores, y qué hacer ante un asalto o una llamada de extorsión. Enséñalo en tres pasos: tú lo haces y explicas, lo hacen juntos, lo hace la persona y tú revisas. Una o dos semanas de acompañamiento valen más que un mes de regaños.",
+      "Para dejar la tienda en buenas manos necesitas controles que no dependan de la sospecha: un <b>fondo fijo</b> de caja igual en cada turno, corte al cambio de turno firmado por quien entrega y quien recibe, usuarios distintos en el punto de venta si lo tienes y un cuaderno de novedades (faltantes, quejas, pedidos). El <b>arqueo</b> es simple: fondo + ventas en efectivo − retiros = lo que debe haber. Como ejemplo ficticio, con fondo de $1,000, ventas en efectivo de $6,450 y un retiro de $3,000, deben quedar $4,450; si cuentas $4,300, faltan $150. Una diferencia así se revisa con calma: un cambio mal dado, una venta sin registrar o un error de captura."
+     ],
+     "comparar": [
+      "«Así no: Ahí te encargo la tienda; lo que falte en la noche te lo descuento.»",
+      "«Así sí: Recibes con $1,000 de fondo, hacemos el arqueo juntos al cambio de turno y, si algo no cuadra, lo revisamos con los tickets.»"
+     ],
+     "caso": "Caso ficticio: Ernesto, de 66 años, tiene una tienda en Tuxtla Gutiérrez desde hace 25 años y quiere dejar de trabajar por las tardes. Su sobrino le ofrece cubrirlas sin papeles, a cambio de un pago semanal, y una vecina de 24 años que trabajó en una cadena de conveniencia le pide el empleo formal. Ernesto teme que, sin él, se pierda el dinero, y su idea es contar la caja cada noche y descontarle cualquier faltante a quien esté en el turno.",
+     "p": [
+      [
+       "¿Qué le conviene a Ernesto al contratar?",
+       "Escribir el puesto y, elija a quien elija, contrato, alta en el IMSS y pago puntual",
+       "Elegir al sobrino sin papeles, porque con la familia no hacen falta contratos",
+       "Contratar a la vecina por su experiencia y dejarla sola desde el primer día",
+       "El puesto escrito y la contratación en regla protegen a ambas partes, sea familiar o no. Con la familia también hay derechos y conflictos posibles, y la experiencia de la vecina no sustituye la capacitación en las reglas de esta tienda."
+      ],
+      [
+       "¿Qué hace Ernesto con los faltantes de caja?",
+       "Revisa la causa con fondo fijo, tickets y un arqueo firmado al cambio de turno",
+       "Los descuenta siempre del sueldo de quien esté en el turno, para que cuide más",
+       "Los ignora si son menores de $500, porque revisarlos genera desconfianza en el equipo",
+       "Fondo fijo, tickets y arqueo firmado permiten encontrar la causa sin acusar a nadie. Descontar por su cuenta choca con los límites de la ley laboral y castiga errores que pueden ser del proceso, e ignorar diferencias deja que crezcan sin explicación."
+      ],
+      [
+       "En un turno hubo fondo de $1,000, ventas en efectivo de $5,200 y un retiro de $2,500. Cuentan $3,650. ¿Qué resultado da el arqueo?",
+       "Faltan $50, porque debían quedar $3,700",
+       "Faltan $2,550, porque debían quedar $6,200",
+       "Sobran $950, porque debían quedar $2,700",
+       "Fondo + ventas en efectivo − retiros: $1,000 + $5,200 − $2,500 = $3,700, y se contaron $3,650: faltan $50. Olvidar el retiro da $6,200 y un faltante falso de $2,550; olvidar el fondo da $2,700 y un sobrante falso de $950."
+      ]
+     ],
+     "completar": [
+      "Fondo más ventas en efectivo menos retiros es lo que debe haber en la caja según el ___.",
+      "arqueo"
+     ],
+     "relacionar": [
+      [
+       "Puesto escrito",
+       "Horario, tareas y lo que no hace sin ti"
+      ],
+      [
+       "Alta en el IMSS",
+       "Dentro del plazo legal (ver Emprender desde Cero)"
+      ],
+      [
+       "Fondo fijo",
+       "Mismo monto de cambio en cada turno"
+      ],
+      [
+       "Arqueo",
+       "Fondo + ventas en efectivo − retiros"
+      ],
+      [
+       "Cuaderno de novedades",
+       "Faltantes, quejas y pedidos del turno"
+      ]
+     ],
+     "refl": "Prepara la llegada de una persona a tu equipo (20 min). 1) Escribe el puesto: horario, tareas y lo que no puede hacer sin ti. 2) Anota lo que necesitas para contratar en regla. 3) Haz el índice de tu manual de la tienda con al menos ocho temas. 4) Diseña el corte de cambio de turno con fondo fijo y arqueo. 5) Escribe qué harás si aparece un faltante.",
+     "modelo": "Modelo: «Puesto: encargada de tarde, de 14 a 21 h, de lunes a sábado; atiende, cobra, recibe el pan y acomoda; no fía ni cambia precios. Contratación: contrato por escrito, alta en el IMSS y pago cada viernes. Manual: apertura, cierre, cobros, transferencias, fondo y retiros, pedidos, tabaco y alcohol, seguridad. Acompañamiento: dos semanas. Turno: fondo de $1,000 y arqueo firmado por las dos. Si falta dinero, revisamos juntas tickets y retiros; no descuento del sueldo.» Es buena porque delimita el puesto, contrata en regla, capacita con método y controla sin sospechar de nadie.",
+     "plantilla": [
+      "Ficha de puesto y cambio de turno",
+      "Puesto: [ ] | Horario: [ ] | Descanso: [ ]\nTareas: [ ]\nNo puede sin mí: [fiar, cambiar precios, otros]\nContratación: contrato escrito [ ] | alta en el IMSS [ ] | día de pago [ ]\nManual (temas): [ ]\nAcompañamiento: [ ] semanas (yo lo hago / lo hacemos juntos / lo haces y reviso)\nArqueo: fondo $[ ] + ventas en efectivo $[ ] − retiros $[ ] = $[ ] | contado $[ ] | diferencia $[ ]\nFirmas: entrega [ ] | recibe [ ]"
+     ],
+     "clave": [
+      "Escribe el puesto y contrata en regla: contrato, alta en el IMSS, pago puntual y trato digno.",
+      "Capacita con un manual y en tres pasos: tú lo haces, lo hacen juntos, lo hace y tú revisas.",
+      "Fondo fijo y arqueo firmado al cambio de turno controlan la caja sin desconfiar de nadie."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el expediente de operación de tu tienda. 1) Carpeta de regularidad (25 min): trámites de las cuatro ventanillas con su vigencia y la hoja de Excel con días para vencer. 2) Productos con reglas (15 min): tabaco, alcohol, báscula y la frase para pedir identificación. 3) Protocolo de seguridad (25 min): tope de caja, depósitos, asalto, extorsión y números de emergencia. 4) Equipo (25 min): ficha de puesto, índice del manual y formato de arqueo para el cambio de turno.",
+    "entregable": "Un expediente de cuatro secciones (carpeta de regularidad con hoja de vencimientos, hoja de productos con reglas, protocolo de seguridad y ficha de puesto con formato de arqueo), con la parte que va junto a la caja lista para imprimir.",
+    "criterios": "Revisa: cada trámite tiene dependencia y vigencia o una pregunta pendiente con fecha, el tabaco no se exhibe ni se vende suelto, el protocolo pone la vida primero y descarta pagar extorsiones, y el arqueo usa fondo + ventas en efectivo − retiros."
+   },
+   "lab": {
+    "t": "Una tienda en regla en San Luis Potosí",
+    "obj": "Revisar trámites, productos con reglas especiales, seguridad y equipo de una tienda que ya funciona, y escribir el plan para ponerla en orden sin cerrarla.",
+    "esc": "<b>Jazmín,</b> de 28 años, heredó la tienda de su abuelo en un barrio de San Luis Potosí. Vende unos $160,000 al mes, con cerveza, cigarros, granel y carnes frías. Su abuelo nunca guardó papeles y ella quiere contratar a una encargada para poder estudiar por las tardes.",
+    "e": [
+     [
+      "Escena 1: En un cajón aparecen una licencia municipal a nombre del abuelo y un extintor con la carga vencida; no hay comprobante de aviso de funcionamiento. Jazmín ya está dada de alta en el SAT.",
+      "Consigna: arma la carpeta de regularidad con las cuatro ventanillas, escribe qué preguntará en el municipio sobre la licencia a nombre de su abuelo y diseña la hoja de Excel con =C2-HOY() y =SI(D2<60,1,0)."
+     ],
+     [
+      "Escena 2: Los cigarros están en una vitrina con logotipos y su primo vende sueltos a conocidos. Un proveedor le ofrece vapeadores. La báscula de granel no tiene constancia de verificación y marca 20 gramos de menos por kilo; venden unos 250 kilos de granel al mes a $40 el kilo en promedio.",
+      "Consigna: escribe qué cambia en el tabaco, qué responde al proveedor de vapeadores, la frase para pedir identificación al vender cerveza y cuánto pierde al mes por la báscula, con su plan de verificación."
+     ],
+     [
+      "Escena 3: Al cierre suele haber $12,000 en el cajón. Una tarde llega un mensaje: «sabemos dónde vives, deposita $3,000 hoy». Su primo quiere comprar un bate para tenerlo debajo del mostrador.",
+      "Consigna: escribe el protocolo de efectivo con tope de caja y retiros parciales, los pasos ante el mensaje, qué le respondes a tu primo sobre el bate y los números que pegarás junto a la caja."
+     ],
+     [
+      "Escena 4: Contrata a una encargada para la tarde con un fondo de caja de $1,500. En su primer cierre, las ventas en efectivo fueron de $7,800 y hubo un retiro de $4,000; la encargada cuenta $5,250.",
+      "Consigna: escribe la ficha de puesto, lo que necesita para contratarla en regla, el plan de capacitación de dos semanas y el arqueo con su diferencia y lo que harás con ella."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuánto pierde Jazmín al mes por la báscula y qué hace?",
+      "$200; la lleva a verificar ante Profeco y no la ajusta por su cuenta",
+      "$800; la deja como está, porque marcar de menos solo beneficia al cliente",
+      "$200; la ajusta ella misma con el tornillo para que marque exacto",
+      "250 kilos × 0.020 kg = 5 kilos regalados, × $40 = $200 al mes. $800 sale de multiplicar los 20 gramos como si fueran pesos. Ajustarla por su cuenta no sustituye la verificación ante Profeco, aunque corrija el error, y dejarla así sigue siendo un instrumento sin verificar."
+     ],
+     [
+      "¿Qué hace con el mensaje y con la idea del bate?",
+      "No paga, guarda el mensaje, denuncia al 089 y descarta el bate: no se enfrenta a nadie",
+      "Paga una sola vez para ganar tiempo y deja el bate solo como medida para disuadir a quien llegue",
+      "Responde el mensaje para saber quién es y guarda el bate escondido por si acaso",
+      "Ante la extorsión: no pagar, guardar evidencia y denunciar; el 089 es anónimo. Un bate invita a enfrentarse y en un asalto la regla es no resistirse. Pagar una vez confirma que puede volver a pedir, y responder mantiene el contacto con quien la amenaza."
+     ],
+     [
+      "¿Qué arroja el arqueo del primer cierre de la encargada?",
+      "Faltan $50, que se revisan con tickets y retiros",
+      "Sobran $1,450, que se le dan a la encargada como bono",
+      "Faltan $4,050, que se descuentan de su primer sueldo",
+      "$1,500 + $7,800 − $4,000 = $5,300 y se contaron $5,250: faltan $50, que se revisan con calma. Olvidar el fondo da un sobrante falso de $1,450; olvidar el retiro, un faltante falso de $4,050, y descontarlo del sueldo choca con los límites de la ley laboral."
+     ]
+    ],
+    "pl": [
+     "Plan de una tienda en regla",
+     "Carpeta de regularidad: municipio [ ] | protección civil [ ] | autoridad sanitaria [ ] | SAT [ ] | alcohol [ ]\nPregunta para el municipio: [ ]\nTabaco: cajetillas de 14 a 25, sin vitrina, lista de precios escrita | Vapeadores: no\nFrase para pedir identificación: [ ]\nBáscula: pérdida mensual = kilos vendidos × error por kilo × precio = $[ ] | verificación ante Profeco: [fecha]\nEfectivo: tope $[ ] | retiros parciales anotados | depósitos [días y horas]\nExtorsión: no pagar, guardar evidencia, 089 | Asalto: no resistirse, 911\nEquipo: ficha de puesto [ ] | IMSS [ ] | capacitación [ ] semanas\nArqueo del primer cierre: fondo $[ ] + efectivo vendido $[ ] − retiros $[ ] = debe haber $[ ] | contado $[ ] | diferencia y qué haré [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Damián evalúa comprar una segunda tienda que ya funciona y el vendedor le dice que la licencia municipal «va con el local». ¿Qué hace?",
+     "Pregunta en el municipio si la licencia se traspasa o debe sacarla a su nombre",
+     "La conserva tal cual, porque el giro y el domicilio no cambian con la venta",
+     "Solo actualiza su alta en el SAT, porque eso cambia también la licencia municipal",
+     "Abre sin preocuparse, porque la licencia vigente protege a cualquier dueño nuevo"
+    ],
+    [
+     "Isidro va a empezar a rebanar jamón y queso en su tienda. ¿Qué trámite le conviene confirmar?",
+     "El aviso de funcionamiento con la autoridad sanitaria de su estado",
+     "Solo la licencia de alcohol, porque las carnes frías no requieren nada",
+     "Un permiso especial del SAT para vender productos rebanados por kilo",
+     "Ninguno, porque el municipio revisa los alimentos en la licencia de giro"
+    ],
+    [
+     "Un cliente adulto le pide a Beatriz cinco cigarros sueltos. ¿Qué responde?",
+     "Que solo vende cajetillas completas, porque la venta suelta está prohibida",
+     "Que sí, porque la prohibición de vender sueltos solo aplica con menores",
+     "Que sí, siempre que él mismo los tome de la vitrina y pague en efectivo",
+     "Que solo se los vende si compra al menos diez, para no romper la cajetilla"
+    ],
+    [
+     "Un distribuidor le propone a Karla dejarle vapeadores a consignación: ella solo los guarda y le pagan comisión por los que venda. ¿Qué hace?",
+     "Rechazarlo: guardarlos para venta está prohibido, con sanciones penales",
+     "Aceptarlo, porque a consignación los vapeadores siguen siendo del distribuidor",
+     "Aceptarlo, siempre que los venda solo a mayores de edad y con identificación",
+     "Aceptarlo, porque la ley castiga a quien consume, no a la tienda que los guarda"
+    ],
+    [
+     "Un joven que parece de 17 años pide una cerveza en la tienda de Alfredo. ¿Qué hace el encargado?",
+     "Pide identificación con la frase de la tienda y no vende si no la muestra",
+     "Le vende si dice que es para su papá, porque el adulto es quien la tomará",
+     "Le vende si es cliente conocido, porque a los vecinos no se les pide nada",
+     "Le pide que regrese más tarde, cuando haya menos gente en la tienda"
+    ],
+    [
+     "La báscula de Rodolfo marca 25 gramos de menos por kilo. Vende 400 kilos de granel al mes a $30 el kilo. ¿Cuánto regala al mes y qué hace?",
+     "$300; la lleva a verificar ante Profeco y no la ajusta a mano",
+     "$750; la ajusta con el tornillo, porque el error lo perjudica a él",
+     "$300; la deja así, porque marcar de menos no es motivo de sanción",
+     "$100; la cambia por una nueva que ya no requiera verificación"
+    ],
+    [
+     "Elvira tiene $9,000 en la caja a media tarde y su tope es de $2,000. ¿Qué hace?",
+     "Hace un retiro parcial a un lugar seguro y lo anota en el corte",
+     "Lo deja en la caja para no confundirse a la hora del corte de la noche",
+     "Lo cuenta en el mostrador para saber cuánto lleva antes de guardarlo",
+     "Lo lleva al banco de inmediato, sola y por el camino de todos los días"
+    ],
+    [
+     "Entra un asaltante a la tienda de Mauricio. ¿Qué es lo correcto?",
+     "No resistirse, entregar lo que pida y llamar al 911 cuando se vaya",
+     "Retenerlo con ayuda de los clientes hasta que llegue la patrulla",
+     "Decirle que no hay efectivo para proteger la venta del día",
+     "Seguirlo a distancia al salir para ver hacia dónde escapa"
+    ],
+    [
+     "Patricia recibe un mensaje: «somos del grupo que controla la zona; deposita $4,000 o quemamos tu tienda». ¿Qué hace primero?",
+     "No paga, guarda el mensaje y denuncia al 089, o al 911 si hay peligro",
+     "Paga esta vez, porque así suelen quedar en paz y no vuelven a pedir dinero",
+     "Responde pidiendo pruebas de que son quienes dicen ser antes de decidir",
+     "Borra el mensaje y no le cuenta a nadie para no meterse en problemas"
+    ],
+    [
+     "Al cambio de turno en la tienda de Ernesto hubo fondo de $800, ventas en efectivo de $5,350 y un retiro de $2,000. Cuentan $4,230. ¿Qué resultado da el arqueo?",
+     "Sobran $80: debían quedar $4,150",
+     "Faltan $1,920: debían quedar $6,150",
+     "Sobran $880: debían quedar $3,350",
+     "Faltan $1,120: debían quedar $5,350"
+    ]
+   ]
+  },
+  {
+   "t": "Hacer crecer tu tienda",
+   "r": "Acomoda la tienda para que el cliente encuentre y descubra, haz que regrese con buen servicio y entregas que sí te dejan, mide cada mes con un tablero y decide con números cómo crecer; cierras con el plan de rentabilidad de tu tienda.",
+   "lecciones": [
+    {
+     "t": "Exhibición y acomodo: que el cliente encuentre y descubra",
+     "obj": "Reacomodar tu tienda con principios observables y tu análisis ABC, y comprobar con el ticket promedio si el cambio funcionó.",
+     "texto": [
+      "Paco Underhill, que dedicó su carrera a observar compradores y lo cuenta en «Por qué compramos», insiste en algo sencillo: el comportamiento del cliente se observa, no se adivina. Antes de mover un anaquel, párate diez minutos en distintos horarios y fíjate por dónde entra la gente, dónde se detiene, qué busca y no encuentra, y qué deja porque ya no le cabe en las manos. Underhill describe una <b>zona de transición</b> en la entrada: en los primeros pasos el cliente todavía ajusta la vista y el ritmo, y lo que pones ahí casi no se ve. No gastes ese espacio en tu mejor promoción; déjalo despejado y con buena luz.",
+      "Tres principios funcionan en una tienda chica. Lo básico al fondo: si la leche, el huevo y las tortillas están al final, el cliente recorre la tienda y ve lo demás, siempre que el camino sea claro y sin cajas en el piso. Manos libres: las manos ocupadas compran menos, así que ofrece canasta o charola a quien lleva varias cosas. Y orden por categoría, como piensa el cliente: lo del desayuno junto (pan, mermelada, café), la limpieza separada de los alimentos, como pide la NOM-251, y las botanas cerca de las bebidas.",
+      "El acomodo también sale de tu análisis ABC. Los productos A merecen más frentes (cuántas piezas se ven de frente), una altura cómoda entre los ojos y las manos, y nunca huecos: un anaquel vacío vende menos y hace ver descuidada la tienda. Los C pueden ir abajo o arriba. Junto a la caja van productos de impulso de precio bajo, como dulces, pilas o encendedores, y cada producto lleva su precio total a la vista, como pide la ley y como agradece el cliente. Dibuja un <b>planograma</b> sencillo, un croquis de cada anaquel con lo que va en cada repisa, para que tu equipo reponga siempre igual.",
+      "Mide antes y después. Cambia una cosa a la vez y compara dos semanas parecidas (si una tiene quincena, la otra también) con tu ticket promedio y tus ventas por categoría. Como ejemplo ficticio, si atiendes a 200 clientes al día y el ticket pasa de $78 a $82 después de llevar la leche al fondo, vendes $800 más al día; con 22 % de margen, son unos $176 diarios de utilidad bruta. Si no cambia nada, regresa o prueba otra idea: la intuición se confirma con números."
+     ],
+     "comparar": [
+      "«Así no: Pongo la promoción en la puerta, el detergente junto al pan y las cajas del pedido en el pasillo, que al fin todos saben dónde está todo.»",
+      "«Así sí: Entrada despejada, lo básico al fondo con camino libre, la limpieza en su anaquel y un cambio a la vez, medido con el ticket promedio.»"
+     ],
+     "caso": "Caso ficticio: Rodolfo, de 50 años, tiene una tienda de 40 m² en una colonia de Guadalajara. Junto a la puerta tiene la leche, el huevo y una torre de cajas de refresco; los productos de limpieza comparten repisa con el pan dulce, y en el pasillo se quedan las cajas del último pedido. Su ticket promedio es de $76 con 180 clientes al día. Su hija quiere reacomodar toda la tienda en un domingo; él teme que los clientes se pierdan y se vayan.",
+     "p": [
+      [
+       "¿Qué cambio le conviene hacer primero a Rodolfo?",
+       "Despejar entrada y pasillo, separar la limpieza del pan y llevar lo básico al fondo",
+       "Poner su mejor promoción justo en la entrada, donde todos la ven al llegar",
+       "Dejar todo igual, porque cualquier cambio confunde a los clientes de siempre y baja la venta",
+       "La entrada es zona de transición y el pasillo bloqueado frena el recorrido; la limpieza junto al pan contradice la NOM-251, y lo básico al fondo hace recorrer la tienda. La promoción en la puerta casi no se ve, y no cambiar nada ignora problemas visibles."
+      ],
+      [
+       "Su hija quiere cambiar todo en un domingo. ¿Qué le recomiendas?",
+       "Cambiar una cosa a la vez y comparar cada cambio con semanas parecidas",
+       "Cambiarlo todo de una vez y evaluar con la venta del lunes siguiente",
+       "Copiar el acomodo de una cadena de conveniencia, que ya lo probó con estudios",
+       "Un cambio a la vez, medido contra semanas comparables, dice qué funcionó. Si se cambia todo, no se sabe qué ayudó o qué estorbó, y un solo lunes no es comparable. Una cadena tiene otro tamaño, otros clientes y otro surtido."
+      ],
+      [
+       "Tras el cambio, el ticket sube de $76 a $80 en dos semanas comparables, con los mismos 180 clientes al día. ¿Qué gana con 22 % de margen?",
+       "$720 más de venta al día y unos $158.40 de utilidad bruta diaria",
+       "$720 más al día, y todo es ganancia porque el costo ya estaba pagado",
+       "$80 más al día, que con 22 % de margen dejan $17.60 de utilidad",
+       "180 clientes × $4 = $720 de venta adicional; × 22 % = $158.40 de utilidad bruta. La venta adicional también tiene costo de mercancía, y $80 confunde el ticket con el aumento total del día."
+      ]
+     ],
+     "completar": [
+      "Un croquis de cada anaquel con lo que va en cada repisa se llama ___.",
+      "planograma"
+     ],
+     "relacionar": [
+      [
+       "Zona de transición",
+       "Entrada despejada y con buena luz"
+      ],
+      [
+       "Básicos al fondo",
+       "El cliente recorre la tienda"
+      ],
+      [
+       "Canastas",
+       "Manos libres para llevar más"
+      ],
+      [
+       "Productos A",
+       "Más frentes y altura cómoda"
+      ],
+      [
+       "Junto a la caja",
+       "Impulso de precio bajo"
+      ]
+     ],
+     "refl": "Rediseña el acomodo de tu tienda (20 min). 1) Observa diez minutos en dos horarios distintos y anota por dónde entra la gente, dónde se detiene y qué pregunta. 2) Dibuja el croquis actual y marca la zona de transición, los básicos y la caja. 3) Propón tres cambios con los principios de la lección y tu ABC. 4) Elige uno para probar primero y escribe cómo medirás el antes y el después.",
+     "modelo": "Modelo: «Observé de 7 a 7:10 y de 19 a 19:10: casi todos van directo al refrigerador de la entrada y tres personas preguntaron por el pan. Cambios: 1) leche y huevo al fondo, con pasillo libre; 2) limpieza en un anaquel aparte; 3) pan junto al café. Primero pruebo el cambio 1 durante dos semanas sin quincena y lo comparo con las dos anteriores, también sin quincena: ticket promedio de $74 y 160 clientes al día.» Es buena porque parte de observar, aplica principios concretos y mide con semanas comparables.",
+     "plantilla": [
+      "Plan de acomodo",
+      "Observación (horario y qué vi): [ ]\nZona de transición: [qué quito o despejo]\nBásicos al fondo: [ ] | Camino libre: [sí/no]\nCanastas o charolas: [ ]\nProductos A con más frentes: [ ]\nJunto a la caja (impulso): [ ]\nLimpieza separada de alimentos: [sí/no]\nPrueba: cambio [ ] | semanas comparables [ ] | ticket antes $[ ] | después $[ ]"
+     ],
+     "clave": [
+      "Observa antes de mover: entrada despejada, básicos al fondo con camino libre y manos libres.",
+      "Tu ABC decide frentes y altura; tu planograma hace que el acomodo se mantenga.",
+      "Cambia una cosa a la vez y mide con semanas comparables."
+     ]
+    },
+    {
+     "t": "Clientes que regresan: servicio, pedidos por WhatsApp y entrega a domicilio",
+     "obj": "Calcular cuánto vale un cliente que regresa, organizar pedidos por mensaje con datos cuidados y fijar un pedido mínimo que cubra el costo de entregar.",
+     "texto": [
+      "Tu ventaja frente a una cadena no es solo la cercanía: es que te conocen. Un cliente que regresa vale mucho más que su compra de hoy. Si alguien gasta $70 al día, seis días a la semana, son unos $1,820 al mes en ventas; con 22 % de margen, cerca de $400 de utilidad bruta cada mes, solo por esa persona. El servicio que lo hace volver es concreto: saludo y nombre, rapidez en la caja (si la fila pasa de tres personas, alguien más se acerca a cobrar), cambio correcto, producto que no falta y una solución sin discutir cuando algo sale mal, como cambiar un producto que salió en mal estado.",
+      "Los <b>pedidos por WhatsApp</b> convierten tu tienda en un servicio. Ten un número solo para la tienda, con un mensaje de bienvenida que diga horario, zona de entrega, pedido mínimo y formas de pago. Confirma cada pedido por escrito con el <b>total</b> antes de surtir y, si algo falta, ofrece un sustituto y pregunta; nunca cambies sin avisar. Cuida los datos de tus clientes: no compartas sus números ni los metas en listas de difusión sin su permiso, y manda promociones solo a quien te dijo que sí.",
+      "La <b>entrega a domicilio</b> cuesta aunque no la cobres: el tiempo de quien entrega, la gasolina o el desgaste de la bicicleta y el riesgo de dejar la tienda sin atención. Calcula tu costo por entrega. Como ejemplo ficticio, 20 minutos de un ayudante que te cuesta $60 la hora son $20; con $10 de gasolina, $30 por viaje. Con 22 % de margen, un pedido necesita $30 ÷ 0.22 = $136.36 de venta solo para pagar la entrega. De ahí sale tu pedido mínimo (por ejemplo, $200) o un cargo de envío claro, anunciado desde el principio para que el cliente conozca el total antes de pedir.",
+      "Lleva un registro sencillo en Excel: fecha en A, cliente en B, monto en C, colonia en D y minutos de entrega en E. Con =CONTAR.SI(B:B,B2) sabes cuántas veces ha pedido cada cliente y con =PROMEDIO(C2:C200) conoces tu pedido promedio. Si el promedio queda por debajo de tu mínimo, o las entregas se amontonan en la hora pico, ajusta horarios o zona antes de que el servicio te cueste más de lo que deja."
+     ],
+     "comparar": [
+      "«Así no: Te lo llevo, aunque sea un refresco; ahorita le aviso a todos mis contactos de la promoción.»",
+      "«Así sí: Entregamos de 17 a 20 h con pedido mínimo de $150; te confirmo el total antes de salir y solo te mando promociones si me dices que sí.»"
+     ],
+     "caso": "Caso ficticio: Elvira, de 35 años, tiene una tienda en un fraccionamiento de Campeche y empezó a recibir pedidos por mensaje en su número personal. Su hijo de 19 años entrega en bicicleta sin cobrar envío y sin mínimo, y muchos pedidos son de $40 o $60. Elvira calcula que cada entrega le cuesta $24 y su margen promedio es de 20 %. En las tardes la tienda se queda sin quien cobre mientras él entrega, y ella quiere mandar promociones a todos los contactos de su teléfono.",
+     "p": [
+      [
+       "¿Qué pedido mínimo tiene sentido para Elvira?",
+       "Más de $120, que es lo que cubre la entrega; por ejemplo, $150 o más",
+       "$24, porque es lo que cuesta cada entrega y con eso queda cubierta",
+       "$28.80, que es la entrega de $24 más el 20 % de margen que busca",
+       "Con 20 % de margen, cada peso de venta deja 20 centavos: $24 ÷ 0.20 = $120 de venta solo para pagar la entrega, y conviene un mínimo arriba. Un pedido de $24 deja $4.80, no $24, y sumarle 20 % al costo confunde margen con aumento."
+      ],
+      [
+       "¿Qué hace con las promociones?",
+       "Las manda solo a quien acepte recibirlas, y desde un número de la tienda",
+       "Las manda a todos sus contactos, porque ya la conocen y no les molestará",
+       "Comparte su lista con otras tiendas del fraccionamiento para llegar a más gente",
+       "Pedir permiso respeta los datos de los clientes y evita que la bloqueen o la reporten. Escribir a todos sin preguntar molesta aunque la conozcan, y compartir la lista expone números que le confiaron solo a ella."
+      ],
+      [
+       "¿Cómo resuelve que la tienda se quede sola en las tardes?",
+       "Fija horarios de entrega fuera de la hora pico o con alguien más en la caja",
+       "Deja de atender en el mostrador por las tardes y solo hace entregas a domicilio",
+       "Acepta todos los pedidos y pide a los clientes que esperen en la tienda a que regrese",
+       "Agrupar entregas en horarios tranquilos, o tener a alguien en la caja, cuida a los clientes que llegan y la seguridad del efectivo. Cerrar el mostrador pierde la venta de paso, y hacer esperar a los clientes de la tienda los manda a otro lado."
+      ]
+     ],
+     "completar": [
+      "Confirma cada pedido por escrito con el ___ antes de surtir.",
+      "total"
+     ],
+     "refl": "Diseña tu servicio de pedidos y entrega (20 min). 1) Escribe tu mensaje de bienvenida con horario, zona, pedido mínimo y formas de pago. 2) Calcula tu costo por entrega y tu pedido mínimo con tu margen. 3) Escribe cómo confirmarás pedidos y sustitutos. 4) Redacta tu regla para mandar promociones solo con permiso. 5) Arma las columnas de tu registro en Excel con el conteo de pedidos por cliente y el pedido promedio.",
+     "modelo": "Modelo: «Bienvenida: Hola, somos la tienda de la calle 12. Entregamos de 9 a 13 y de 17 a 20 h, a cinco cuadras a la redonda, con pedido mínimo de $180; aceptamos efectivo, transferencia y tarjeta. Costo por entrega: 15 minutos de mi ayudante a $60 la hora, $15, más $5 de desgaste de la bici, $20; con 18 % de margen necesito $111 de venta solo para cubrirla. Confirmo el total y pregunto antes de sustituir. Promociones: solo a quien diga que sí.» Es buena porque calcula el mínimo con su propio margen, comunica las condiciones desde el inicio y respeta los datos de sus clientes.",
+     "plantilla": [
+      "Servicio de pedidos y entrega",
+      "Mensaje de bienvenida: horario [ ] | zona [ ] | pedido mínimo $[ ] | formas de pago [ ]\nCosto por entrega: tiempo [ ] min × $[ ] por hora + traslado $[ ] = $[ ]\nVenta para cubrirla: costo ÷ margen = $[ ] → mínimo $[ ] o envío $[ ] anunciado\nConfirmación: total por escrito antes de surtir | sustitutos solo con permiso\nPromociones: solo a quien aceptó\nRegistro: A fecha | B cliente | C monto | D colonia | E minutos | =CONTAR.SI(B:B,B2) | =PROMEDIO(C2:C200)"
+     ],
+     "clave": [
+      "Un cliente que regresa vale meses de venta: el servicio concreto es tu mejor inversión.",
+      "Pedidos por mensaje con total confirmado, sustitutos con permiso y promociones solo a quien aceptó.",
+      "La entrega cuesta: calcula costo ÷ margen y fija tu pedido mínimo o un envío anunciado."
+     ]
+    },
+    {
+     "t": "Tablero mensual: los indicadores que miras cada mes (incluye ahorro de luz con refrigeradores)",
+     "obj": "Armar en Excel un tablero de seis indicadores con metas y semáforo, y calcular si te conviene dar mantenimiento o cambiar un refrigerador.",
+     "texto": [
+      "Un tablero es una hoja de una página que revisas el mismo día de cada mes para saber si la tienda mejora o empeora, y por qué. Con seis indicadores basta. <b>Ventas</b> del mes. <b>Margen bruto %</b> = (ventas − costo de lo vendido) ÷ ventas. <b>Merma %</b> = merma del mes ÷ ventas. <b>Días de inventario</b> = inventario promedio a costo ÷ costo de lo vendido × 30. <b>Faltantes</b>: cuántas veces anotaste «no tengo» en el mes, o cuántos productos de tu lista de nunca-falta se agotaron. <b>Ticket promedio</b> = ventas ÷ número de tickets.",
+      "En Excel, una columna por mes y una fila por dato: ventas en B2, costo de lo vendido en B3, merma en B4, inventario promedio en B5, tickets en B6 y faltantes en B7. Debajo van las fórmulas: margen =(B2-B3)/B2, merma =B4/B2, días de inventario =B5/B3*30 y ticket =B2/B6. Agrega una columna de meta y un semáforo con =SI(): si la merma % quedó en B9, =SI(B9>0.02,1,0) marca con 1 la merma arriba de 2 %. Lo que importa no es el número de un mes, sino la <b>tendencia</b>: tres meses seguidos de margen a la baja dicen más que un mes malo.",
+      "La luz merece su propia fila. La mayoría de las tiendas está en la tarifa PDBT de la CFE (demanda menor de 25 kW) y los refrigeradores son buena parte del consumo. Saca tu costo real por kWh: importe del recibo ÷ kWh consumidos. Como ejemplo ficticio, un recibo de $4,800 por 1,200 kWh da $4 por kWh. Mide con un medidor de enchufe cuánto gasta cada refrigerador al día. En el mismo ejemplo ficticio, cambiar un equipo viejo de 9 kWh al día por uno eficiente de 4 kWh ahorra 150 kWh al mes, $600; si el nuevo cuesta $21,000, tarda 35 meses en pagarse. Antes de comprar, prueba lo barato: limpiar el condensador, cambiar empaques que no sellan, separar el equipo de la pared, no llenarlo de más y ajustar el termostato para que los perecederos estén a 7 °C o menos, sin enfriar de más.",
+      "Si tienes refrigeradores en comodato, revisa en el contrato quién paga la luz y las reparaciones (lo viste en el módulo 4), porque ese consumo también cae en tu recibo. Cierra el tablero con tres renglones: qué mejoró, qué empeoró y qué vas a hacer este mes, con una sola acción por indicador."
+     ],
+     "comparar": [
+      "«Así no: Este mes entró bastante a la caja, así que vamos bien; la luz siempre sale cara, ni modo.»",
+      "«Así sí: Margen 22 %, merma 1.8 %, 15 días de inventario y ticket de $80; la merma subió, así que este mes reviso caducidades, y mido el refrigerador viejo antes de cambiarlo.»"
+     ],
+     "caso": "Caso ficticio: Mauricio, de 31 años, administra la tienda familiar en Cuernavaca. En octubre vendió $180,000, con costo de lo vendido de $140,400, merma de $3,240, inventario promedio a costo de $70,200 y 2,250 tickets; anotó 46 veces «no tengo». Su recibo de luz fue de $5,600 por 1,400 kWh (ejemplo ficticio). Tiene un refrigerador de lácteos propio que gasta 8 kWh al día; uno eficiente gastaría 3.5 kWh y cuesta $18,000. Su papá dice que con ver la caja basta.",
+     "p": [
+      [
+       "¿Cuáles son el margen bruto, la merma y el ticket promedio de Mauricio en octubre?",
+       "22 %, 1.8 % y $80 por ticket promedio",
+       "28.2 %, 2.3 % y $62.40 por ticket",
+       "22 %, 2.3 % y $62.40 por ticket",
+       "Margen: ($180,000 − $140,400) ÷ $180,000 = 22 %; merma: $3,240 ÷ $180,000 = 1.8 %; ticket: $180,000 ÷ 2,250 = $80. El 28.2 % es el aumento sobre el costo, el 2.3 % divide la merma entre el costo, y $62.40 divide el costo, no las ventas, entre los tickets."
+      ],
+      [
+       "¿Cuántos días de inventario tiene?",
+       "15 días: $70,200 ÷ $140,400 × 30",
+       "11.7 días: $70,200 ÷ $180,000 × 30",
+       "60 días: $140,400 ÷ $70,200 × 30",
+       "Los días de inventario comparan el inventario a costo con el costo de lo vendido: $70,200 ÷ $140,400 × 30 = 15 días. Dividir entre ventas mezcla precio con costo, y la fórmula invertida da 60, que no son días sino rotación por 30."
+      ],
+      [
+       "¿Le conviene cambiar ya el refrigerador de lácteos?",
+       "Antes prueba el mantenimiento: el cambio ahorra unos $540 al mes y tarda unos 33 meses en pagarse",
+       "Sí, porque ahorra $540 al mes y en un año ya recuperó lo que pagó",
+       "No, porque en una tienda los refrigeradores casi no pesan en el recibo de luz",
+       "Costo por kWh: $5,600 ÷ 1,400 = $4 (ficticio); ahorro: (8 − 3.5) × 30 = 135 kWh, × $4 = $540 al mes; $18,000 ÷ $540 = 33.3 meses. En un año apenas recupera $6,480, y los refrigeradores sí son buena parte del consumo de una tienda."
+      ]
+     ],
+     "completar": [
+      "Lo que importa en el tablero no es el número de un mes, sino la ___.",
+      "tendencia"
+     ],
+     "relacionar": [
+      [
+       "Margen bruto %",
+       "=(B2-B3)/B2"
+      ],
+      [
+       "Merma %",
+       "=B4/B2"
+      ],
+      [
+       "Días de inventario",
+       "=B5/B3*30"
+      ],
+      [
+       "Ticket promedio",
+       "=B2/B6"
+      ],
+      [
+       "Costo por kWh",
+       "Importe del recibo ÷ kWh consumidos"
+      ]
+     ],
+     "refl": "Arma tu tablero mensual (20 min). 1) Reúne los datos del último mes: ventas, costo de lo vendido, merma, inventario promedio, tickets y faltantes. 2) Captura las fórmulas de los seis indicadores en Excel y define una meta para cada uno. 3) Saca tu costo por kWh del último recibo y mide o estima el consumo de tu refrigerador más viejo. 4) Escribe qué mejoró, qué empeoró y qué harás este mes.",
+     "modelo": "Modelo: «Septiembre: ventas $142,000, margen 23.5 %, merma 1.6 %, 18 días de inventario, ticket de $71 y 31 faltantes. Metas: merma de 1.5 % y menos de 20 faltantes. Luz: $3,900 ÷ 1,000 kWh = $3.90 por kWh, según mi recibo. El refrigerador de refrescos, que es propio, gasta 7 kWh al día: esta semana limpio el condensador y vuelvo a medir. Mejoró: el margen. Empeoró: faltantes de huevo y hielo. Acción: subo el punto de reorden del huevo.» Es buena porque usa sus datos, fija metas, empieza por la medida barata en la luz y termina con una acción por indicador.",
+     "plantilla": [
+      "Tablero mensual de la tienda",
+      "Datos: B2 ventas $[ ] | B3 costo de lo vendido $[ ] | B4 merma $[ ] | B5 inventario promedio $[ ] | B6 tickets [ ] | B7 faltantes [ ]\nMargen bruto % =(B2-B3)/B2 → [ ] | meta [ ]\nMerma % =B4/B2 → [ ] | meta [ ] | semáforo =SI(B9>0.02,1,0)\nDías de inventario =B5/B3*30 → [ ] | meta [ ]\nTicket promedio =B2/B6 → $[ ] | meta [ ]\nFaltantes → [ ] | meta [ ]\nLuz: recibo $[ ] ÷ [ ] kWh = $[ ] por kWh | refrigerador más viejo [ ] kWh al día\nMejoró: [ ] | Empeoró: [ ] | Acción del mes: [ ]"
+     ],
+     "clave": [
+      "Seis indicadores bastan: ventas, margen bruto %, merma %, días de inventario, faltantes y ticket promedio.",
+      "Mira la tendencia de varios meses y decide una acción por indicador.",
+      "Calcula tu costo por kWh y prueba el mantenimiento antes de cambiar un refrigerador."
+     ]
+    },
+    {
+     "t": "Crecer con cabeza: ampliar, pasar a minisúper o abrir otra sucursal y tu plan de 90 días",
+     "obj": "Evaluar una forma de crecer con inversión, punto de equilibrio de la ampliación, recuperación en dos escenarios y colchón, y convertirla en un plan de 90 días.",
+     "texto": [
+      "Crecer no siempre es abrir otra tienda. Hay tres caminos, de menor a mayor riesgo: ampliar lo que ya tienes (un refrigerador más, una categoría nueva, el local de junto), pasar a minisúper (más surtido, autoservicio, punto de venta y más personal) o abrir otra sucursal. Antes de elegir, revisa tu tablero: si la tienda actual tiene merma alta, faltantes frecuentes o depende de que tú estés ahí todo el día, crecer multiplica esos problemas. Una segunda sucursal tiene sentido cuando la primera funciona sin ti, con manual, encargado y arqueos que cuadran, como viste en el módulo 7.",
+      "Cada opción se evalúa con tres números. La <b>inversión</b>: equipo, adecuaciones, trámites y el surtido inicial. Los <b>gastos fijos adicionales</b>: renta, sueldos con su alta en el IMSS, luz y servicios nuevos. Y el <b>punto de equilibrio</b> de la ampliación: gastos fijos adicionales ÷ margen bruto %, que te dice cuánto tienes que vender de más cada mes solo para no perder. Como ejemplo ficticio, si ampliar suma $16,500 al mes de fijos y tu margen es de 23 %, necesitas vender $71,739 más al mes para quedar igual que hoy. En Excel, con los fijos en B2 y el margen en B3: =B2/B3.",
+      "Después calcula el plazo de recuperación. Si con esa ampliación esperas vender $90,000 más al mes, el margen extra es de $20,700; menos los $16,500 de fijos quedan $4,200 al mes, y una inversión de $120,000 tardaría unos 29 meses en recuperarse. Haz también un escenario pesimista, por ejemplo con la mitad de las ventas esperadas: $45,000 más al mes dejan $10,350 de margen y perderías $6,150 cada mes. Aparta un <b>colchón</b> de al menos tres meses de los fijos adicionales ($49,500 en el ejemplo), porque las ventas nuevas tardan en llegar. Nadie puede prometerte cuánto venderás; por eso decides con escenarios, no con esperanzas.",
+      "Termina con un plan de 90 días: tres metas medibles (por ejemplo, bajar la merma de 2.1 % a 1.5 % o tener cero faltantes en la lista de nunca-falta), las acciones de cada mes, quién las hace, cuánto cuestan y la fecha de revisión. Cada 30 días compara contra tu tablero y decide si sigues, ajustas o detienes. Si piensas financiarte, revisa primero que el pago mensual quepa en el margen extra del escenario pesimista; el financiamiento en general lo ves en «Emprender desde Cero»."
+     ],
+     "comparar": [
+      "«Así no: El local de junto está barato; si lo rento, seguro vendo el doble y en unos meses lo pago.»",
+      "«Así sí: Ampliar suma $14,000 de fijos; con 22 % de margen necesito $63,636 más de venta solo para quedar igual, así que primero hago el escenario pesimista y aparto el colchón.»"
+     ],
+     "caso": "Caso ficticio: Karla, de 33 años, y Damián, de 36, venden $150,000 al mes en su tienda de Torreón con 22 % de margen bruto. Se desocupó el local de junto: pasar a minisúper costaría $100,000 de inversión y sumaría $14,000 al mes de fijos (renta, un ayudante dado de alta y luz). Esperan vender $80,000 más al mes y tienen $110,000 ahorrados. Damián quiere firmar esta semana porque el local no va a durar; Karla nota que su tablero marca 2.4 % de merma y faltantes cada semana.",
+     "p": [
+      [
+       "¿Cuánto tendrían que vender de más al mes solo para no perder con la ampliación?",
+       "$63,636, que es $14,000 ÷ 0.22 (fijos entre margen)",
+       "$14,000, lo mismo que suman los gastos fijos nuevos",
+       "$17,080, que es $14,000 más el 22 % de margen",
+       "El punto de equilibrio de la ampliación es fijos adicionales ÷ margen: $14,000 ÷ 0.22 = $63,636. Vender $14,000 solo deja $3,080 de margen, y sumarle 22 % a los fijos confunde margen con aumento."
+      ],
+      [
+       "¿Les alcanzan sus $110,000 para hacerlo con cabeza?",
+       "No: con el colchón de tres meses ($42,000) necesitan $142,000",
+       "Sí: la inversión es de $100,000 y aún les sobran $10,000",
+       "Sí, si usan el dinero del colchón para comprar más surtido al abrir",
+       "Inversión de $100,000 más tres meses de fijos adicionales ($14,000 × 3 = $42,000) dan $142,000. Abrir con $10,000 de sobra deja la tienda sin aire si las ventas tardan, y gastar el colchón en surtido elimina justo esa protección."
+      ],
+      [
+       "¿Qué les recomiendas antes de firmar?",
+       "Bajar merma y faltantes, calcular el escenario pesimista y valorar un paso más chico",
+       "Firmar ya, porque un local así se renta rápido y las ventas cubrirán los gastos nuevos",
+       "Pedir un préstamo por la diferencia y abrir con todo el surtido desde el primer día",
+       "Con $80,000 esperados el margen extra es $17,600 y quedan $3,600 al mes (unos 28 meses de recuperación); con la mitad, $40,000, perderían $5,200 al mes. Ampliar con merma y faltantes los multiplica. Firmar por prisa o pedir prestado sin revisar el pesimista convierte la apuesta en deuda."
+      ]
+     ],
+     "completar": [
+      "Gastos fijos adicionales entre margen bruto da el punto de ___ de la ampliación.",
+      "equilibrio"
+     ],
+     "refl": "Evalúa una forma de crecer y arma tu plan de 90 días (20 min). 1) Elige una opción (ampliar, pasar a minisúper u otra sucursal) y revisa si tu tablero está listo para ella. 2) Calcula inversión, fijos adicionales, punto de equilibrio de la ampliación y colchón de tres meses. 3) Calcula la recuperación en un escenario esperado y uno pesimista. 4) Escribe tres metas de 90 días con acciones, responsable, costo y fechas de revisión.",
+     "modelo": "Modelo: «Opción: un segundo refrigerador para lácteos y carnes frías. Inversión: $26,000; fijos adicionales: $700 al mes de luz. Con 24 % de margen, el equilibrio es $700 ÷ 0.24 = $2,917 de venta extra al mes. Esperado: $12,000 más, margen de $2,880 menos $700, quedan $2,180; recupero en 12 meses. Pesimista: $6,000 más, $740 al mes, 35 meses. Colchón: $2,100. Metas: merma de 2 % a 1.5 %, cero faltantes de leche y huevo y ticket de $72 a $76; reviso cada día 1.» Es buena porque usa números, incluye el escenario pesimista y liga el crecimiento a metas medibles.",
+     "plantilla": [
+      "Evaluación de crecimiento y plan de 90 días",
+      "Opción: [ampliar / minisúper / sucursal] | ¿Mi tablero está listo? [merma, faltantes, operación sin mí]\nInversión: $[ ] | Fijos adicionales: $[ ] al mes | Margen: [ ] %\nPunto de equilibrio de la ampliación =B2/B3 → $[ ] de venta extra al mes\nEsperado: venta extra $[ ] × margen − fijos = $[ ] → recupero en [ ] meses\nPesimista: venta extra $[ ] × margen − fijos = $[ ] → [ ]\nColchón (fijos adicionales × 3): $[ ] | Dinero disponible: $[ ]\nPlan de 90 días: meta 1 [ ] | meta 2 [ ] | meta 3 [ ] | acciones por mes [ ] | responsable [ ] | costo [ ]\nRevisiones: día 30 [ ] | día 60 [ ] | día 90 [ ] → seguir, ajustar o detener"
+     ],
+     "clave": [
+      "Antes de crecer, ordena la tienda que tienes: crecer multiplica los problemas que ya existen.",
+      "Punto de equilibrio de la ampliación = fijos adicionales ÷ margen; evalúa también el escenario pesimista.",
+      "Aparta un colchón de tres meses de los fijos nuevos y avanza con un plan de 90 días medible."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma tu tablero y tu plan de crecimiento. 1) Acomodo (15 min): croquis con zona de transición, básicos, productos A y caja, y un cambio para probar. 2) Servicio (15 min): mensaje de bienvenida para pedidos y pedido mínimo calculado con tu margen. 3) Tablero (30 min): seis indicadores con fórmulas en Excel, metas, semáforo y la fila de luz con costo por kWh. 4) Crecimiento (30 min): una opción evaluada con inversión, punto de equilibrio, recuperación en dos escenarios y colchón, y el borrador de tu plan de 90 días.",
+    "entregable": "Un croquis de acomodo con el cambio a probar, el mensaje de pedidos con su mínimo, un archivo de Excel con tablero mensual y evaluación de crecimiento con fórmulas, y el borrador de tu plan de 90 días.",
+    "criterios": "Revisa: el cambio de acomodo se mide con semanas comparables, el pedido mínimo sale de costo ÷ margen, el tablero calcula con fórmulas y tiene meta por indicador, y la evaluación de crecimiento incluye escenario pesimista y colchón de tres meses."
+   },
+   "lab": {
+    "t": "Plan de rentabilidad de tu tienda",
+    "obj": "Integrar en un solo plan todo lo que construiste en el diplomado: números base, surtido, precios, proveedores, inventario, merma, cobro, fiado, regularidad, seguridad, acomodo, tablero y plan de 90 días.",
+    "esc": "Este laboratorio es tu proyecto final: armas el plan de rentabilidad de tu tienda real o, si aún no tienes una, de una que conozcas bien (la de tu familia, la de tu colonia o la que vas a abrir), con datos de un mes completo y un archivo de Excel con fórmulas. Si te sirve de referencia, piensa en <b>Beatriz,</b> de 47 años, que atiende con su hijo <b>Isidro</b> una tienda en Reynosa: vende $165,000 al mes, su costo de lo vendido es de $128,700 y tiene $64,350 de inventario a costo.",
+    "e": [
+     [
+      "Parte 1 (módulos 1 y 2), diagnóstico y surtido: entrega los números base de un mes (ventas, costo de lo vendido, margen bruto, clientes por día, ticket promedio y corte de caja con tu sueldo separado de los gastos de la tienda y de la casa), tu análisis ABC y tu lista de nunca-falta.",
+      "Consigna: entrega la hoja de números base con margen =(B2-B3)/B2 y ticket =B2/B6, el ABC con participación =B2/SUMA($B$2:$B$301), acumulado y clasificación con =SI(D2<=0.8,$H$1,SI(D2<=0.95,$H$2,$H$3)), y tu lista de nunca-falta de 10 a 15 productos con su existencia mínima."
+     ],
+     [
+      "Parte 2 (módulos 3 y 4), precios y proveedores: entrega tus márgenes objetivo por categoría, la tabla de tus proveedores y el punto de reorden de tus productos A.",
+      "Consigna: entrega la tabla de márgenes por categoría con precio = costo ÷ (1 − margen) en =B2/(1-C2), calculado sin IVA en lo que paga 16 % (÷ 1.16); la tabla de proveedores con días de visita, crédito, devoluciones y pedido mínimo, y el punto de reorden = venta diaria × días de entrega + inventario de seguridad para al menos 10 productos A."
+     ],
+     [
+      "Parte 3 (módulos 5 y 6), inventario, merma, cobro y fiado: entrega tus días de inventario, tu calendario de conteos y caducidades, tu merma por tipo, el costo de tus formas de cobro y tus reglas de fiado.",
+      "Consigna: entrega los días de inventario =B5/B3*30, el calendario de conteos cíclicos y el semáforo de caducidades, la merma del mes por tipo con su porcentaje sobre ventas, el costo mensual de la terminal con IVA y tu regla para confirmar transferencias, y tus reglas de fiado (límite, plazo y tope total) con el saldo de hoy."
+     ],
+     [
+      "Parte 4 (módulos 7 y 8), regla, seguridad, exhibición, tablero y plan de 90 días: entrega tu carpeta de regularidad, tu protocolo de seguridad, tu plan de acomodo, tu tablero mensual y tu plan de 90 días.",
+      "Consigna: entrega la carpeta de regularidad con =C2-HOY(), el protocolo de seguridad con tope de caja, 911 y 089, el croquis de acomodo con el cambio a medir, el tablero de seis indicadores con metas y costo por kWh, y el plan de 90 días con tres metas medibles, escenario pesimista de cualquier inversión y fechas de revisión."
+     ]
+    ],
+    "p": [
+     [
+      "Con los datos de Beatriz, ¿cuál es su margen bruto y qué precio sin IVA le pondría a un producto que le cuesta $39 para mantener ese margen?",
+      "22 % y $50, con =B2/(1-C2), o sea $39 ÷ 0.78",
+      "22 % y $47.58, que es $39 más el 22 %",
+      "28.2 % y $50, porque el margen es sobre el costo",
+      "Margen: ($165,000 − $128,700) ÷ $165,000 = 22 %; precio: $39 ÷ (1 − 0.22) = $50. Sumar 22 % al costo da $47.58, que deja solo 18 % de margen; y 28.2 % es el aumento sobre el costo, no el margen."
+     ],
+     [
+      "En su Parte 3, Beatriz registra $2,970 de merma y $40,000 cobrados con tarjeta, con una comisión de 3 % más IVA (ejemplo; consulta las tasas vigentes). ¿Qué anota?",
+      "Merma de 1.8 % de las ventas y $1,392 de costo de terminal",
+      "Merma de 2.3 % de las ventas y $1,200 de costo de terminal",
+      "Merma de 1.8 % y $1,200, más un recargo de 3 % a quien pague con tarjeta",
+      "$2,970 ÷ $165,000 = 1.8 %; la comisión es 3 % de $40,000 = $1,200, más 16 % de IVA ($192): $1,392. El 2.3 % divide la merma entre el costo, olvidar el IVA subestima el gasto, y cobrar recargo por pagar con tarjeta va contra la ley según Profeco."
+     ],
+     [
+      "En su Parte 4, Beatriz quiere un refrigerador más que sumaría $900 al mes de luz. Con 22 % de margen, ¿cuánto debe vender de más al mes para no perder?",
+      "$4,091, que es $900 ÷ 0.22",
+      "$1,098, que es $900 más el 22 %",
+      "$198, que es el 22 % de $900",
+      "Punto de equilibrio de la ampliación = fijos adicionales ÷ margen: $900 ÷ 0.22 = $4,091. Con $1,098 de venta extra solo gana $241.56, y $198 confunde el margen con la venta necesaria."
+     ]
+    ],
+    "pl": [
+     "Índice del proyecto: Plan de rentabilidad de tu tienda",
+     "Portada: [nombre de la tienda] | [tu nombre] | [ciudad] | [mes de los datos]\nResumen en cinco líneas: [ventas, margen, principal problema, principal oportunidad, meta de 90 días]\nParte 1. Diagnóstico y surtido (módulos 1 y 2)\n  1.1 Números base: ventas, costo, margen bruto, clientes por día y ticket promedio\n  1.2 Corte de caja y dinero separado (sueldo, tienda, casa)\n  1.3 Análisis ABC y papel de cada categoría\n  1.4 Lista de nunca-falta con existencias mínimas\nParte 2. Precios y proveedores (módulos 3 y 4)\n  2.1 Márgenes objetivo por categoría e IVA\n  2.2 Tabla de proveedores y acuerdos\n  2.3 Punto de reorden y pedido sugerido\nParte 3. Inventario, merma, cobro y fiado (módulos 5 y 6)\n  3.1 Días de inventario, conteos cíclicos y caducidades\n  3.2 Merma por tipo y medidas\n  3.3 Costo de cada forma de cobro y conciliación\n  3.4 Reglas de fiado y saldo\nParte 4. Regla, seguridad, crecimiento (módulos 7 y 8)\n  4.1 Carpeta de regularidad y productos con reglas\n  4.2 Protocolo de seguridad y equipo\n  4.3 Plan de acomodo y servicio de pedidos\n  4.4 Tablero mensual con luz\n  4.5 Plan de 90 días con escenarios\nAnexos: [archivo de Excel, fotos del antes y después, contratos]\nMi siguiente decisión y su fecha: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Isidro le sube 25 % al costo a todos sus productos. ¿Qué margen sobre el precio obtiene en realidad?",
+     "20 %, porque 25 ÷ 125 = 0.20",
+     "25 %, lo mismo que el aumento sobre el costo",
+     "33.3 %, porque 25 ÷ 75 = 0.333",
+     "18.75 %, porque al 25 % se le resta una cuarta parte"
+    ],
+    [
+     "En su análisis ABC, Socorro descubre que 45 productos suman 80 % de su venta. ¿Qué hace con ellos?",
+     "Los pone en su lista de nunca-falta, con más frentes y existencia revisada a diario",
+     "Les baja el precio a todos, porque son los que más deja cada uno en la tienda",
+     "Reduce su inventario, porque ya se venden solos y no necesitan tanto espacio",
+     "Los cambia de lugar cada semana, para que el cliente recorra la tienda buscándolos"
+    ],
+    [
+     "Un refresco se vende a $22 con IVA y le cuesta a Elvira $15.50 sin IVA. ¿Cuál es su margen real?",
+     "18.3 %",
+     "29.5 %",
+     "41.9 %",
+     "16.1 %"
+    ],
+    [
+     "Rodolfo vende 12 litros de leche al día, el proveedor tarda 2 días en surtir y quiere 10 litros de seguridad. ¿Cuál es su punto de reorden?",
+     "34 litros",
+     "24 litros",
+     "22 litros",
+     "120 litros"
+    ],
+    [
+     "Karla vende $120,000 al mes. Registró $900 de caducidad, $300 de daño y $1,200 de diferencia de conteo sin explicar. ¿Qué concluye?",
+     "Merma de 2 %, la mitad desconocida: más conteos cíclicos y revisión de registros",
+     "Merma de 1 %, porque solo cuentan la caducidad y el daño que anotó en su bitácora",
+     "Merma de 2 %, toda por robo: revisará las bolsas de los clientes al salir de la tienda",
+     "Merma de 2.4 %, porque se calcula sobre el costo y no sobre las ventas del mes"
+    ],
+    [
+     "Un cliente le muestra a Mauricio la captura de una transferencia por $350 y quiere llevarse su compra. ¿Qué hace?",
+     "Le pide esperar un momento y entrega cuando ve el depósito en su cuenta",
+     "Le entrega la compra, porque la captura ya es un comprobante válido de pago",
+     "Le pide reenviar la captura por mensaje y con eso le entrega su compra",
+     "Le cobra 3 % más por transferencia, para cubrir el riesgo de que no llegue"
+    ],
+    [
+     "Un cliente le debe a Alfredo $900 de fiado desde hace seis semanas, más allá del plazo de sus reglas, y pide que le fíe otra vez. ¿Qué hace?",
+     "Le propone en privado un plan de pagos y no le fía hasta que se ponga al día",
+     "Le fía otra vez para no perderlo, porque el fiado siempre hace que el cliente regrese",
+     "Pega su nombre en la lista de deudores junto a la caja para que se apure a pagar",
+     "Le cobra un recargo de 10 % cada semana hasta que pague todo lo que debe"
+    ],
+    [
+     "Un muchacho que parece menor de edad pide en la tienda de Patricia tres cigarros sueltos y una cerveza. ¿Qué es lo correcto?",
+     "Pedir identificación; si es menor no le vende nada, y cigarros solo en cajetilla",
+     "Venderle la cerveza si dice que es para un adulto, pero no los cigarros",
+     "Venderle los cigarros sueltos, porque la regla de edad aplica solo al alcohol",
+     "Venderle todo si paga con tarjeta, porque eso demuestra que es mayor de edad"
+    ],
+    [
+     "Ernesto recibe una llamada: «tenemos a tu hijo; deposita $8,000 ya y no cuelgues». ¿Qué hace?",
+     "Cuelga, llama a su hijo por otro medio, no deposita y denuncia al 089",
+     "Deposita de inmediato, porque cada minuto cuenta y después denunciará",
+     "Mantiene la llamada mientras busca el dinero, para no hacerlos enojar",
+     "Negocia una cantidad menor y pide hablar con su hijo antes de pagar"
+    ],
+    [
+     "El tablero de Jazmín muestra en tres meses ventas de $150,000, $158,000 y $166,000, margen de 24 %, 22 % y 20.5 %, y merma de 1.5 %, 1.9 % y 2.4 %. ¿Qué concluye?",
+     "Vende más pero gana menos: revisa precios por categoría y merma antes de crecer",
+     "Va muy bien, porque las ventas subieron tres meses seguidos y eso es lo que importa",
+     "Debe bajar precios para vender todavía más y compensar el margen que perdió",
+     "Nada todavía, porque el tablero necesita al menos un año para mostrar tendencias"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Inventario sin sorpresas",
+   "r": "Recibe y acomoda con orden, cuenta sin cerrar la tienda, mide cuánto dinero tienes parado en el anaquel y actúa antes de que las fechas venzan.",
+   "lecciones": [
+    {
+     "t": "Recibir y acomodar: revisar el pedido, primeras entradas, primeras salidas y cadena de frío",
+     "obj": "Recibir cada pedido sin perder dinero en la puerta, acomodar con primeras entradas, primeras salidas y mantener los refrigerados a 7 °C o menos.",
+     "texto": [
+      "La mayoría de las sorpresas de inventario nacen en la puerta, cuando llega el repartidor con prisa y tú tienes clientes en el mostrador. Recibir bien toma cinco minutos: compara la <b>remisión</b> o factura contra lo que bajó, por pieza o por paquete cerrado; revisa precios contra lo acordado; mira fechas de caducidad y el estado de los empaques (latas abolladas o infladas, bolsas rotas, cajas húmedas) y toca los refrigerados, que deben llegar fríos. Si algo falta o viene mal, anótalo en la remisión antes de firmar y pide que el repartidor lo firme o que te deje una nota de crédito. Una vez firmada sin observaciones, reclamar es mucho más difícil.",
+      "Pon una regla de horario: pide a tus proveedores que lleguen en horas tranquilas y, si llegan en hora pico, que esperen tu revisión o dejen el pedido apartado hasta que lo cuentes. No es desconfianza; al repartidor también le conviene que la entrega quede clara. Una diferencia pequeña repetida cada semana se vuelve dinero: dos litros de leche de menos a $26 cada uno, cuatro veces al mes, son $208 que pagaste y nunca vendiste.",
+      "Al acomodar, usa <b>PEPS</b>: primeras entradas, primeras salidas. Lo que vence antes va al frente, donde el cliente lo toma primero, y lo recién llegado va atrás o abajo; si algo nuevo trae fecha más corta que lo que ya tenías, manda la fecha y ese va adelante. Si un producto no trae fecha visible, márcalo con la fecha de entrada. Esto es lo que pide la NOM-251 a quien maneja alimentos, junto con dos reglas básicas para una tienda: los productos de limpieza (cloro, detergente, insecticida) van en un anaquel separado, nunca encima de los alimentos, y equipos como la rebanadora y la báscula se limpian y desinfectan. El detalle completo está en nuestro curso de inocuidad y manejo higiénico de alimentos.",
+      "La <b>cadena de frío</b> es el punto más delicado. Los refrigerados (leche, yogur, crema, quesos, carnes frías) se guardan primero, antes que los abarrotes secos, y el refrigerador debe mantenerlos a 7 °C o menos. Pon un termómetro dentro, a la vista, y anota la temperatura en la mañana y en la tarde. Si sube, revisa lo típico: la puerta abierta mucho tiempo, el equipo sobrecargado que no deja circular el aire, las rejillas tapadas o el refrigerador pegado a la pared o al sol."
+     ],
+     "comparar": [
+      "«Así no: Firmo la remisión mientras cobro y luego reviso; si falta algo, se lo reclamo al repartidor la otra semana.»",
+      "«Así sí: Cuento contra la remisión antes de firmar, anoto ahí lo que falta o viene dañado y le pido al repartidor que lo firme.»"
+     ],
+     "caso": "Caso ficticio: Norma, de 58 años, atiende con su esposo una tienda de abarrotes en una colonia de Monterrey. El repartidor de lácteos llega a las 7:30, justo cuando pasan los vecinos por el pan y la leche, y le pide que firme rápido porque va atrasado. La remisión dice 30 litros de leche y 24 yogures; Norma alcanza a ver que bajaron 28 litros y que seis yogures vencen en cuatro días. Es agosto: en la tarde el termómetro del refrigerador marca 10 °C, el equipo está lleno hasta el tope y la puerta se abre a cada rato.",
+     "p": [
+      [
+       "¿Qué debe hacer Norma con la remisión antes de que se vaya el repartidor?",
+       "Contar, anotar en la remisión los 2 litros faltantes y pedir que el repartidor firme esa nota",
+       "Firmar ya para no retrasarlo y descontar los 2 litros del siguiente pago sin avisar a nadie",
+       "Negarse a recibir todo el pedido de lácteos hasta que regrese con los 30 litros completos, aunque se quede sin leche",
+       "Anotar la diferencia en la remisión, antes de firmar, deja prueba para la nota de crédito y no deja a la tienda sin leche. Descontar sin avisar genera conflicto y no tiene respaldo; rechazar todo el pedido castiga a Norma y a sus clientes por una diferencia que se arregla con una anotación."
+      ],
+      [
+       "¿Qué hace Norma con los seis yogures que vencen en cuatro días?",
+       "Preguntar si el proveedor los cambia o los recibe de vuelta; si se quedan, ponerlos al frente para venderlos primero",
+       "Acomodarlos atrás de los que ya tenía, porque todo lo que llega en el pedido de hoy debe ir siempre al fondo del refrigerador",
+       "Recibirlos sin comentar nada, porque cuatro días de fecha alcanzan de sobra para venderlos todos",
+       "PEPS se guía por la fecha, no por el día de llegada: lo que vence antes va adelante, aunque haya llegado hoy. Antes conviene negociar el cambio o la devolución si no se venden. Recibirlos sin comentarlo deja todo el riesgo de la fecha corta en Norma."
+      ],
+      [
+       "El refrigerador marca 10 °C en la tarde. ¿Qué es lo primero que conviene revisar?",
+       "Que no esté sobrecargado, que la puerta cierre bien y no se abra de más, y que las rejillas estén libres",
+       "Nada por ahora: en verano es normal que suba unos grados y la leche aguanta si en la mañana vuelve a enfriar",
+       "Bajar el termostato al mínimo y dejarlo así todo el año, aunque se congele el yogur del fondo del equipo",
+       "La meta es 7 °C o menos todo el día. Sobrecarga, puerta abierta y rejillas tapadas son las causas más comunes y se arreglan sin gastar. Aceptar 10 °C pone en riesgo la inocuidad, y llevar el termostato al mínimo sin revisar la causa congela producto y gasta luz de más."
+      ]
+     ],
+     "completar": [
+      "Para que lo que vence antes se venda antes, acomodas con el método ___: lo nuevo atrás y lo anterior al frente.",
+      "PEPS"
+     ],
+     "relacionar": [
+      [
+       "Remisión que no cuadra",
+       "Anotar la diferencia antes de firmar"
+      ],
+      [
+       "Lácteos recién llegados",
+       "Guardarlos antes que los secos"
+      ],
+      [
+       "Producto sin fecha visible",
+       "Marcar la fecha de entrada"
+      ],
+      [
+       "Cloro y detergente",
+       "Anaquel separado de los alimentos"
+      ],
+      [
+       "Refrigerador a 10 °C",
+       "Revisar carga, puerta y rejillas"
+      ]
+     ],
+     "refl": "Diseña tu rutina de recepción (20 min). 1) Lista tus proveedores con el día y la hora en que llegan; marca cuáles caen en hora pico. 2) Escribe los cinco pasos que harás con cada entrega antes de firmar. 3) Describe cómo acomodarás un anaquel y el refrigerador con PEPS. 4) Decide dónde pondrás el termómetro y quién anotará la temperatura dos veces al día. 5) Escribe qué le dirás al repartidor que tenga prisa.",
+     "modelo": "Modelo: «El de lácteos llega a las 7:30, en hora pico; le pediré que pase a las 9:00 o que espere tres minutos. Antes de firmar: cuento contra remisión, reviso precios, miro fechas, toco los refrigerados y reviso empaques. Si algo falla, lo anoto en la remisión y le pido su firma. Acomodo: lo que vence antes al frente; lo nuevo atrás. Termómetro en la repisa de en medio; mi hijo anota a las 9 y a las 17. Al repartidor le diré que es un momento y que así los dos quedamos tranquilos.» Es buena porque cambia el horario, revisa antes de firmar, ordena por fecha y asigna quién vigila el frío.",
+     "plantilla": [
+      "Rutina de recepción y acomodo",
+      "Proveedor: [ ]  Día y hora: [ ]  ¿Hora pico? [sí / no]\nAntes de firmar: [ ] cantidades  [ ] precios  [ ] fechas  [ ] empaques  [ ] refrigerados fríos\nDiferencias anotadas en la remisión: [producto] [cantidad] [firma del repartidor]\nNota de crédito pedida: $[ ]\nAcomodo PEPS: lo que vence antes al frente; lo nuevo [atrás / abajo]\nTermómetro del refrigerador: mañana [ ] °C  tarde [ ] °C  (meta: 7 °C o menos)\nLimpieza separada de alimentos: [ubicación]"
+     ],
+     "clave": [
+      "Lo que no revisas antes de firmar se vuelve difícil de reclamar después.",
+      "PEPS se guía por la fecha: lo que vence antes va al frente.",
+      "Refrigerados a 7 °C o menos, con termómetro a la vista y registro diario."
+     ]
+    },
+    {
+     "t": "Contar sin cerrar la tienda: conteos cíclicos y diferencias de inventario",
+     "obj": "Organizar conteos cíclicos por zonas, calcular diferencias de inventario en piezas y en pesos y buscar su causa antes de sacar conclusiones.",
+     "texto": [
+      "Cerrar la tienda un domingo al año para contar todo tiene tres problemas: pierdes un día de venta, el conteo sale cansado y con errores, y cuando por fin ves una diferencia ya no sabes cuándo ni cómo pasó. La alternativa son los <b>conteos cíclicos</b>: divides la tienda en zonas o categorías y cuentas una parte pequeña cada semana, en una hora tranquila, sin cerrar. En uno o dos meses recorres todo, y los productos que más importan los cuentas varias veces.",
+      "¿Qué contar más seguido? Lo que tiene más valor, más venta o más riesgo: tus productos A del análisis ABC, las bebidas, la leche, los pañales, las pilas, los rastrillos y lo que guardas detrás del mostrador. Lo de poca venta y poco valor puede contarse cada mes o cada trimestre. Cuenta a ciegas: anota lo que ves sin mirar antes cuánto dice el sistema o la libreta, porque si ya conoces la cifra tiendes a encontrarla. Si sale una diferencia grande, que otra persona vuelva a contar antes de sacar conclusiones.",
+      "La <b>diferencia de inventario</b> es lo que hay menos lo que debería haber. Si tienes punto de venta con inventario, el sistema te da el teórico. Si no, calcúlalo en tus productos clave: inventario del conteo anterior + compras − ventas registradas − merma anotada. En Excel pon el producto en A, el teórico en B, el físico en C y el costo unitario en D; la diferencia en piezas va en E (=C2-B2), en pesos en F (=(C2-B2)*D2) y como porcentaje en G (=(C2-B2)/B2). Al final, =SUMA(F2:F40) te da el total en pesos de la zona. Valora siempre a costo: es lo que pagaste.",
+      "No toda diferencia es robo. Una diferencia positiva (hay más de lo que debería) casi siempre es un error de registro: se cobró una presentación por otra o no se capturó una devolución. Una negativa puede ser merma no anotada, un pedido que llegó incompleto, una venta cobrada con el código equivocado o un robo. Por eso el conteo no termina en la cifra: anota la causa probable, corrige el registro y decide qué cambiarás. Con el tiempo, ver qué zonas fallan cada mes te dice dónde poner atención."
+     ],
+     "comparar": [
+      "«Así no: Cerramos un domingo al año, contamos todo de corrido y, si falta dinero, es que alguien está robando.»",
+      "«Así sí: Cada lunes contamos una zona a ciegas, valoramos la diferencia a costo y buscamos la causa antes de culpar a alguien.»"
+     ],
+     "caso": "Caso ficticio: Ramiro, de 34 años, administra el minisúper que abrió su madre en Villahermosa. Tiene punto de venta con inventario y cada enero cierra un domingo para contar todo; este año le salieron $11,400 de diferencia y no supo de dónde. Decide probar conteos cíclicos y empieza por bebidas: el sistema dice 180 refrescos de 600 ml y cuenta 168, a $15 de costo cada uno; en pañales el sistema dice 40 paquetes de un tamaño y cuenta 41. Su madre le dice que seguro alguien está robando y que hay que cerrar más días a contar.",
+     "p": [
+      [
+       "¿Cuál es la diferencia de refrescos valorada a costo?",
+       "−$180: faltan 12 refrescos y se valoran a su costo de $15 cada uno",
+       "−$252: faltan 12 piezas al precio de venta al público de $21",
+       "−6.7 %, que es la única cifra útil, porque los pesos cambian cada vez que sube el costo",
+       "168 − 180 = −12 piezas; por $15, −$180. Usar el precio de venta infla la pérdida, porque lo que perdiste es lo que pagaste. El porcentaje (−12 ÷ 180 = −6.7 %) también sirve, pero sin pesos no sabes cuánto pesa frente a otras zonas."
+      ],
+      [
+       "¿Qué explica mejor el paquete de pañales que sobra?",
+       "Un error de registro: por ejemplo, que se cobró otro tamaño de pañal con el código de este",
+       "Que alguien regresó un paquete que se había robado, señal clara de que sí hay un ladrón",
+       "Que el punto de venta se descompuso y conviene dejar de usar para siempre el inventario del sistema",
+       "Las diferencias positivas suelen venir del registro: una presentación cobrada por otra o una captura mal hecha. Y si sobra uno aquí, probablemente falta uno en otro tamaño. Ver un robo en un sobrante no tiene base, y el sistema no falla solo: lo alimentan cobros y capturas que se pueden corregir."
+      ],
+      [
+       "¿Qué le conviene responder Ramiro a su madre?",
+       "Que contarán una zona a ciegas cada semana y buscarán las causas antes de culpar a nadie",
+       "Que tiene razón y que desde mañana revisará las mochilas de los empleados al terminar cada turno",
+       "Que cerrarán dos domingos al año en lugar de uno, para contar con más calma todo el minisúper",
+       "Los conteos cíclicos dan diferencias pequeñas y recientes que sí se pueden explicar, y la causa puede ser registro, recepción, merma o robo. Revisar mochilas por sospecha general daña al equipo sin evidencia, y cerrar más domingos repite el problema del conteo anual con más venta perdida."
+      ]
+     ],
+     "completar": [
+      "Contar una parte pequeña de la tienda cada semana, sin cerrar, es hacer conteos ___.",
+      "cíclicos"
+     ],
+     "relacionar": [
+      [
+       "Productos A, bebidas y pañales",
+       "Contarlos cada semana"
+      ],
+      [
+       "Productos de poca venta y poco valor",
+       "Contarlos cada mes o trimestre"
+      ],
+      [
+       "Contar a ciegas",
+       "No ver antes la cifra del sistema"
+      ],
+      [
+       "Diferencia positiva",
+       "Probable error de registro"
+      ],
+      [
+       "=(C2-B2)*D2",
+       "Diferencia valorada a costo"
+      ]
+     ],
+     "refl": "Arma tu calendario de conteo cíclico (20 min). 1) Divide tu tienda en 6 a 10 zonas o categorías. 2) Marca cuáles se cuentan cada semana y cuáles cada mes, y por qué. 3) Elige el día y la hora tranquila de cada conteo y quién cuenta. 4) Prepara en Excel la hoja con producto, teórico, físico, costo y las fórmulas de diferencia. 5) Escribe qué harás si una diferencia pasa de cierto monto en pesos.",
+     "modelo": "Modelo: «Zonas: bebidas, lácteos, botanas, abarrotes secos, limpieza, higiene, dulces y mostrador. Cada lunes a las 15:00 cuento bebidas y mostrador, que tienen los productos A y los más pequeños; las demás, una zona por semana. Cuento yo y anota mi sobrina, sin ver la cifra del sistema. Si una zona pasa de $150 de diferencia, la vuelve a contar otra persona y reviso cobros y remisiones de la semana antes de hablar con nadie.» Es buena porque prioriza por valor y riesgo, fija horario y responsables, cuenta a ciegas y pone un umbral en pesos con un paso de revisión antes de acusar.",
+     "plantilla": [
+      "Hoja de conteo cíclico",
+      "Zona: [ ]  Fecha: [ ]  Hora: [ ]  Cuenta: [ ]  Anota: [ ]\nA: producto | B: teórico | C: físico | D: costo | E: =C2-B2 | F: =(C2-B2)*D2 | G: =(C2-B2)/B2\nTotal de la zona en pesos: =SUMA(F2:F40)\nUmbral para recontar: $[ ]\nCausa probable: [registro / recepción / merma no anotada / robo / no sé]\nCorrección hecha: [ ]  Cambio para la próxima semana: [ ]"
+     ],
+     "clave": [
+      "Contar poco y seguido da diferencias que todavía puedes explicar.",
+      "Cuenta a ciegas y valora las diferencias a costo.",
+      "Una diferencia no es una acusación: primero revisa registro y recepción."
+     ]
+    },
+    {
+     "t": "Rotación y días de inventario: dinero parado en el anaquel",
+     "obj": "Calcular la rotación y los días de inventario por categoría para detectar el dinero parado y decidir qué liquidar, devolver o dejar de comprar.",
+     "texto": [
+      "Cada producto en tu anaquel es dinero que ya pagaste y todavía no recuperas. La <b>rotación</b> te dice cuántas veces en un periodo se vende y se repone tu inventario: rotación = costo de lo vendido ÷ inventario promedio a costo. Si en un mes vendiste mercancía que te costó $144,000 y tu inventario promedio a costo fue de $96,000, tu rotación fue de 1.5 veces en el mes. Los <b>días de inventario</b> lo dicen al revés: 30 ÷ 1.5 = 20 días, es decir, lo que tienes hoy alcanza para unos 20 días de venta.",
+      "El promedio de la tienda esconde diferencias enormes. Los refrescos pueden rotar seis veces al mes (cinco días de inventario), mientras una repisa de ollas, focos y veladoras rota 0.2 veces (150 días). Calcula por categoría: en Excel, con el costo de lo vendido del mes en B y el inventario promedio en C, la rotación es =B2/C2 y los días, =30/D2. El inventario promedio puede ser (inventario al inicio + inventario al final) ÷ 2; con tus conteos cíclicos ya tienes de dónde sacarlo.",
+      "Lo que más rota no siempre es lo que más deja, y lo que más deja por pieza puede pasar meses en el anaquel. Mira las dos cosas juntas: un producto con poco margen y mucha rotación puede dejarte más al mes que uno con buen margen que casi no sale. Una forma simple de verlo es dividir la utilidad bruta del mes de una categoría entre su inventario promedio: te dice cuánto margen te deja cada peso que tienes parado ahí. Ese número te ayuda a decidir a qué categoría darle más espacio y más dinero.",
+      "Con los números en la mano, actúa sobre el dinero parado. Los productos sin venta en 90 días se marcan: se liquidan con un precio claro, se devuelven si el proveedor lo acepta o se dejan de comprar. Cuidado con las ofertas por volumen: un descuento por comprar tres meses de golpe solo conviene si el producto se vende seguro, si tienes espacio y si ese dinero no te hace falta para surtir lo que sí rota. Un anaquel lleno no es una tienda sana; un anaquel que se vacía y se repone a tiempo, sí."
+     ],
+     "comparar": [
+      "«Así no: Tengo la tienda llena hasta el techo, así que voy bien; y si el proveedor me hace descuento, compro para medio año.»",
+      "«Así sí: Mido cuántos días tarda en venderse cada categoría y solo compro por volumen lo que rota rápido y si me sobra efectivo.»"
+     ],
+     "caso": "Caso ficticio: Itzel, de 27 años, tomó la tienda de su papá en Durango. En una repisa hay ollas, focos, veladoras y pilas que costaron $18,000 y de ahí sale mercancía por unos $3,000 a costo al mes. En refrescos, el inventario promedio es de $6,000 y vende $36,000 a costo al mes. Ahora el proveedor de detergentes le ofrece 4 % de descuento si compra tres meses de una vez: $12,000 de lista en lugar de $4,000 cada mes. Su papá quiere aprovechar; Itzel apenas tiene efectivo para el pedido de bebidas de la semana.",
+     "p": [
+      [
+       "¿Cuántos días de inventario tiene la repisa de ollas y focos?",
+       "180 días: rota 0.17 veces al mes ($3,000 ÷ $18,000) y 30 ÷ 0.17 da unos 180",
+       "6 días, porque $18,000 ÷ $3,000 da los días que tarda en venderse",
+       "17 días, porque la rotación de 0.17 se convierte en días multiplicándola por cien",
+       "Rotación = $3,000 ÷ $18,000 = 0.17 al mes; días = 30 ÷ 0.1667 = 180, unos seis meses. $18,000 ÷ $3,000 = 6 son meses, no días; y la rotación no se convierte en días multiplicando, sino dividiendo el periodo entre ella."
+      ],
+      [
+       "¿Qué dice la comparación con los refrescos?",
+       "Que los refrescos rotan 6 veces al mes, unos 5 días, y en la repisa el dinero se queda parado mucho más",
+       "Que la repisa es la mejor categoría, porque tiene tres veces más dinero invertido que los refrescos",
+       "Que las dos categorías están igual de sanas, porque las dos se venden todos los meses en la tienda de Itzel",
+       "$36,000 ÷ $6,000 = 6 rotaciones al mes y 30 ÷ 6 = 5 días. Tener más dinero invertido no es una virtud, es dinero detenido; y venderse cada mes no basta: la repisa necesita seis meses para recuperar lo que costó."
+      ],
+      [
+       "¿Qué conviene hacer con la oferta de detergentes?",
+       "No tomarla ahora: ahorra $480, pero adelanta $7,520 que hoy necesita para surtir las bebidas",
+       "Tomarla, porque un 4 % de descuento siempre rinde más que cualquier otra cosa que haga con ese dinero",
+       "Pedir el doble para tener seis meses de detergente y conseguir un descuento todavía mayor",
+       "Con 4 % menos, los $12,000 se vuelven $11,520: ahorra $480. Pero paga hoy $7,520 más que su compra normal de $4,000, dinero que necesita para las bebidas, que rotan rápido. El descuento no siempre gana; comprar seis meses empeora el problema de efectivo y de espacio."
+      ]
+     ],
+     "completar": [
+      "Costo de lo vendido ÷ inventario promedio a costo da la ___ del inventario.",
+      "rotación"
+     ],
+     "refl": "Calcula la rotación de tres categorías de tu tienda (20 min). 1) Elige una que creas que vuela, una intermedia y una que sientas lenta. 2) Estima o mide el costo de lo vendido del mes y el inventario promedio a costo de cada una. 3) Calcula rotación y días de inventario. 4) Lista los productos sin venta en 90 días y su valor a costo. 5) Escribe una acción para cada uno: liquidar, devolver o dejar de comprar.",
+     "modelo": "Modelo: «Lácteos: vendo $28,000 a costo al mes con $3,500 de inventario: rotación 8, casi 4 días. Botanas: $15,000 con $5,000: rotación 3, 10 días. Higiene personal: $4,000 con $12,000: rotación 0.33, 90 días. Sin venta en 90 días: tintes para cabello y dos marcas de champú, $2,300 a costo. Los tintes los pregunto al proveedor para devolverlos; el champú lo pongo en paquete con jabón y ya no lo resurto.» Es buena porque calcula con costo y no con precio, compara categorías y termina en acciones concretas con monto.",
+     "plantilla": [
+      "Hoja de rotación por categoría",
+      "Mes: [ ]\nA: categoría | B: costo de lo vendido del mes | C: inventario promedio a costo | D: rotación =B2/C2 | E: días =30/D2\nInventario promedio = (inicio + final) ÷ 2\nUtilidad bruta del mes ÷ inventario promedio: [ ]\nProductos sin venta en 90 días: [producto] $[ ] → [liquidar / devolver / no resurtir]\nOferta por volumen: ahorro $[ ] contra dinero adelantado $[ ] → [sí / no] porque [ ]"
+     ],
+     "clave": [
+      "Rotación = costo de lo vendido ÷ inventario promedio a costo; días = periodo ÷ rotación.",
+      "Mide por categoría: el promedio de la tienda esconde el dinero parado.",
+      "Un descuento por volumen solo conviene si el producto se vende seguro y el efectivo te sobra."
+     ]
+    },
+    {
+     "t": "Caducidades: semáforo de fechas, liquidar a tiempo y donar con orden",
+     "obj": "Usar un semáforo de fechas para actuar antes de que los productos venzan, rebajar a tiempo y donar con orden lo que ya no venderás.",
+     "texto": [
+      "La caducidad es la merma más fácil de prevenir porque avisa con tiempo: la fecha está impresa. Lo que falla es revisarla. Un <b>semáforo</b> de fechas ordena esa revisión: defines, por tipo de producto, cuándo pasa a amarillo y cuándo a rojo. Para abarrotes secos y latas, por ejemplo, verde si faltan más de 60 días, amarillo entre 60 y 30, rojo con menos de 30. Para lácteos y pan, la escala es de días: amarillo a cinco días, rojo a dos. Tú fijas los umbrales según lo que tardas en vender cada producto.",
+      "Revisa por zonas, igual que en los conteos: cada semana los refrigerados y el pan, cada mes los secos. Lo amarillo pasa al frente y se vigila. Lo rojo se mueve: pide al proveedor el cambio por fecha si tu acuerdo lo incluye, arma un paquete (galletas con leche, por ejemplo) o baja el precio con un letrero claro, cuanto antes mejor. Bajar a tiempo suele salvar parte del costo; esperar a la última semana casi siempre termina en pérdida. Distingue dos leyendas: la fecha de caducidad marca hasta cuándo es seguro consumir el producto, y el consumo preferente, hasta cuándo conserva su mejor calidad. Nunca vendas un producto con la caducidad vencida; con el consumo preferente vencido, lo prudente como regla de tienda es retirarlo también (verifica el criterio vigente con Profeco).",
+      "Cuando un producto sigue en fecha pero ya no lo vas a vender, <b>donarlo</b> es mejor que tirarlo. En muchas ciudades hay bancos de alimentos y comedores comunitarios que reciben abarrotes en buen estado. Hazlo con orden: llama antes para saber qué reciben y con cuánto tiempo de vida, entrega con fecha suficiente para que lo puedan repartir, nunca dones nada caducado o dañado y anota qué donaste, cuánto y a quién. Si quieres saber si la donación tiene algún efecto fiscal para ti, pregúntale a tu contador.",
+      "El semáforo también te enseña a comprar. Si cada mes terminas rebajando el mismo yogur o la misma galleta, el problema no está en la fecha sino en el pedido: pides de más o lo exhibes donde no se ve. Ajusta la cantidad, pide presentaciones que roten más o deja de surtirlo. Anota cada rebaja y cada producto tirado con su costo: esa lista es la parte de caducidad de tu merma, el tema del siguiente módulo."
+     ],
+     "comparar": [
+      "«Así no: Reviso fechas cuando me acuerdo; lo que caduca, se tira, y el que quiera algo con fecha corta, que lo compre al precio de siempre.»",
+      "«Así sí: Cada lunes reviso refrigerados y cada mes los secos; lo rojo lo cambio, lo empaqueto o lo rebajo, y lo que no venderé lo dono en fecha.»"
+     ],
+     "caso": "Caso ficticio: Óscar, de 63 años, tiene una tienda frente a una primaria en Ensenada. En su revisión de fin de mes encuentra 12 yogures que vencen en tres días (le costaron $14 y los vende a $20), 18 paquetes de galletas con tres semanas de fecha que casi no se venden y 10 latas de chiles que vencen en dos meses. Su vecino le aconseja dejar todo como está: «el que lo quiera, que lo compre; y lo que caduque, se tira». Óscar siente que cada mes tira más.",
+     "p": [
+      [
+       "Sin rebaja, los yogures no se venderán. Si los baja a $15 y vende 8, ¿cómo le va frente a no hacer nada?",
+       "Pierde $48 en lugar de $168: con la rebaja recupera $120 de lo que pagó",
+       "Pierde $40, porque cada yogur rebajado deja $5 menos que a su precio normal",
+       "Gana $8 en total, porque los 8 yogures vendidos le dejan $1 cada uno sobre el costo y los otros no cuentan",
+       "Los 12 yogures ya costaron $168. Vendiendo 8 a $15 recupera $120 y pierde $48; sin rebaja perdería los $168. Los $5 menos por pieza no son la pérdida real, y la ganancia de $8 ignora los 4 yogures que se tiran."
+      ],
+      [
+       "¿Qué hace con las galletas que vencen en tres semanas?",
+       "Pedir cambio por fecha si su acuerdo lo permite, o rebajarlas o armar paquete ya, y después pedir menos",
+       "Esperar a la última semana para rebajarlas, porque antes todavía las puede vender a precio completo",
+       "Donarlas un día antes de que caduquen, porque así no pierde venta y alguien las aprovecha",
+       "Con tres semanas aún hay tiempo para cambiarlas, rebajarlas o empaquetarlas, y si se venden poco el problema es el pedido. Esperar a la última semana suele acabar en pérdida, y donar un día antes no deja tiempo para repartirlas: se dona con fecha suficiente."
+      ],
+      [
+       "¿Qué le responde Óscar a su vecino?",
+       "Que con un semáforo revisará cada semana lo perecedero y cada mes lo seco, para actuar antes de tirar",
+       "Que tiene razón, porque rebajar productos acostumbra a los clientes a esperar descuentos y daña a la tienda",
+       "Que desde hoy venderá también lo caducado a mitad de precio, avisando en un letrero",
+       "El semáforo pone fechas para actuar mientras todavía se recupera algo. Rebajar a tiempo y con letrero no acostumbra a nadie si es ocasional y por fecha; vender lo caducado, aun con letrero, rompe la regla básica de la tienda y pone en riesgo a los clientes."
+      ]
+     ],
+     "completar": [
+      "Clasificar los productos en verde, amarillo y rojo según su fecha es usar un ___ de fechas.",
+      "semáforo"
+     ],
+     "relacionar": [
+      [
+       "Lata con más de 60 días de fecha",
+       "Verde: venta normal"
+      ],
+      [
+       "Yogur a cinco días",
+       "Amarillo: al frente y vigilado"
+      ],
+      [
+       "Galletas a 20 días que no salen",
+       "Rojo: cambio, paquete o rebaja"
+      ],
+      [
+       "Abarrote en fecha que no venderás",
+       "Donar a un banco de alimentos"
+      ],
+      [
+       "Producto rebajado cada mes",
+       "Ajustar el pedido"
+      ]
+     ],
+     "refl": "Arma el semáforo de fechas de tu tienda (20 min). 1) Elige tres tipos de producto: refrigerados, pan o perecederos, y secos. 2) Fija para cada uno los umbrales de amarillo y rojo según lo que tardas en venderlos. 3) Escribe qué harás en amarillo y en rojo, y con quién hablarás para el cambio por fecha. 4) Busca un banco de alimentos o comedor comunitario cerca y anota qué necesitas preguntarles. 5) Revisa una zona hoy y anota lo que encontraste.",
+     "modelo": "Modelo: «Refrigerados: amarillo a 5 días, rojo a 2; reviso lunes y jueves. Pan de caja: amarillo a 3 días, rojo a 1. Secos: amarillo a 60 días, rojo a 30; reviso el día 1 de cada mes. Amarillo: al frente. Rojo: primero pido cambio al proveedor; si no, paquete o rebaja con letrero. Para donar, llamaré al banco de alimentos de mi ciudad para preguntar qué reciben y con cuánta fecha. Hoy en lácteos encontré 4 cremas en amarillo.» Es buena porque los umbrales cambian según el producto, tiene días fijos de revisión y un orden claro de acciones.",
+     "plantilla": [
+      "Semáforo de fechas",
+      "Tipo de producto: [ ]  Revisión: [día y frecuencia]\nVerde: más de [ ] días   Amarillo: [ ] a [ ] días → al frente   Rojo: menos de [ ] días → [cambio / paquete / rebaja]\nRebaja: precio $[ ] (costo $[ ])  Letrero: [sí]\nDonación: institución [ ]  Teléfono [ ]  Qué reciben [ ]  Fecha mínima [ ]\nRegistro: producto [ ] cantidad [ ] costo $[ ] destino [vendido / cambiado / donado / tirado]"
+     ],
+     "clave": [
+      "El semáforo convierte la fecha impresa en una fecha para actuar.",
+      "Rebajar a tiempo recupera parte del costo; esperar casi siempre termina en pérdida.",
+      "Dona en buen estado y con fecha suficiente; nunca vendas ni dones caducado."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos ordena el inventario de tu tienda (o de una tienda que conozcas) en Excel, con cuatro pestañas. 1) Recepción: proveedores, día y hora de entrega y tus cinco revisiones antes de firmar. 2) Conteo cíclico: calendario de zonas y hoja de diferencias con fórmulas, llenada con el conteo real de una zona. 3) Rotación: costo de lo vendido, inventario promedio, rotación y días de inventario de al menos cuatro categorías. 4) Fechas: semáforo con umbrales por tipo de producto y la lista de lo que hoy está en amarillo y en rojo, con su acción.",
+    "entregable": "Un archivo de Excel con cuatro pestañas y fórmulas, más un párrafo con las tres decisiones que tomarás este mes: qué dejarás de comprar, qué liquidarás y qué cambiarás en la recepción.",
+    "criterios": "Revisa: las diferencias de inventario y la rotación están valoradas a costo, el conteo se hizo a ciegas, los umbrales del semáforo cambian según el tipo de producto y cada producto en rojo tiene una acción y una fecha."
+   },
+   "lab": {
+    "t": "Inventario de una tienda en Aguascalientes",
+    "obj": "Aplicar recepción con PEPS y cadena de frío, conteo cíclico, rotación por categoría y semáforo de fechas para decidir qué cambiar en una tienda.",
+    "esc": "<b>Cristina,</b> de 41 años, tiene una tienda de abarrotes con refrigerador de lácteos en un fraccionamiento de Aguascalientes. Vende bien, pero siente que el dinero no le rinde: el anaquel está lleno, cada mes tira producto y no sabe cuánto le falta. Su hijo de 19 años la ayuda por las tardes y sabe usar Excel.",
+    "e": [
+     [
+      "Escena 1: Llega el pedido de lácteos. La remisión dice 36 yogures y bajaron 33; cuatro de ellos vencen en cinco días. El termómetro del refrigerador marca 9 °C a las cinco de la tarde y el equipo está repleto.",
+      "Consigna: escribe paso a paso qué hace Cristina antes de firmar, cómo acomoda los yogures y qué revisa en el refrigerador."
+     ],
+     [
+      "Escena 2: Primer conteo cíclico, en bebidas. Libreta contra físico: refresco de 600 ml, 96 contra 90 (costo $15); agua de 1 L, 60 contra 61 (costo $9); jugo, 40 contra 36 (costo $12).",
+      "Consigna: arma la hoja en Excel con las fórmulas de diferencia en piezas y en pesos, calcula el total y escribe una causa probable de cada diferencia."
+     ],
+     [
+      "Escena 3: El mes pasado vendió mercancía que le costó $119,000, con un inventario promedio a costo de $85,000. En dulcería, el inventario promedio es de $6,000 y vendió $12,000 a costo; en papelería escolar, el inventario es de $7,500 y en el mes vendió $1,250 a costo, ya pasado el regreso a clases.",
+      "Consigna: calcula la rotación y los días de inventario de la tienda y de las dos categorías, y escribe qué hará con la papelería."
+     ],
+     [
+      "Escena 4: En la revisión de fechas encuentra 20 latas de atún que vencen en 25 días, 10 paquetes de galletas que vencen en 10 días y 6 litros de leche que vencen en 2 días.",
+      "Consigna: clasifícalos en el semáforo, decide qué hace con cada grupo (cambio, paquete, rebaja o donación) y en qué orden."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es la diferencia total de la zona de bebidas, valorada a costo?",
+      "−$129: −$90 de refresco, +$9 de agua y −$48 de jugo, sumados en pesos",
+      "−$138: se suman solo los faltantes y el sobrante de agua se ignora porque es un error",
+      "−9 piezas, sin pasarlas a pesos, porque el total en piezas es lo que se compara entre zonas",
+      "(90 − 96) × $15 = −$90; (61 − 60) × $9 = +$9; (36 − 40) × $12 = −$48; total −$129. El sobrante también se registra e investiga, no se borra; y las piezas de productos con costos distintos no se suman: por eso se compara en pesos."
+     ],
+     [
+      "¿Qué muestran los días de inventario de la escena 3?",
+      "La tienda tiene unos 21 días, la dulcería 15 y la papelería 180: ahí está el dinero parado",
+      "La tienda tiene 1.4 días, la dulcería 2 y la papelería 0.17, así que la papelería es la que mejor está",
+      "La papelería tiene 6 días, porque $7,500 ÷ $1,250 = 6, y eso indica que se acabará pronto",
+      "Tienda: $119,000 ÷ $85,000 = 1.4 rotaciones; 30 ÷ 1.4 = 21.4 días. Dulcería: 2 rotaciones, 15 días. Papelería: 0.17 rotaciones, 180 días. 1.4, 2 y 0.17 son rotaciones, no días; y $7,500 ÷ $1,250 = 6 son meses de inventario, no días."
+     ],
+     [
+      "¿En qué orden conviene que Cristina actúe con los productos de la escena 4?",
+      "Leche hoy, con rebaja o paquete; galletas esta semana; atún con cambio por fecha o rebaja planeada",
+      "Atún primero, porque son más piezas y representan más dinero que la leche y las galletas juntas",
+      "Donar los tres grupos hoy mismo a un banco de alimentos, para no tener que tirar nada en las próximas semanas",
+      "La urgencia la marcan la fecha y el tipo de producto: la leche con 2 días está en rojo y se mueve hoy (rebaja o paquete con galletas); las galletas, a 10 días, y el atún, a 25, aún permiten cambio por fecha o rebaja planeada. Empezar por lo de más valor deja vencer la leche, y la leche con 2 días no da tiempo a un banco de alimentos para repartirla."
+     ]
+    ],
+    "pl": [
+     "Hoja de control de inventario",
+     "Recepción: remisión [ ] contra físico [ ]  diferencias anotadas [ ]  refrigerador [ ] °C\nConteo cíclico: zona [ ]  diferencia en piezas [ ]  en pesos $[ ]  causa [ ]\nRotación del mes: tienda [ ] (días [ ])  categoría lenta [ ] (días [ ])\nSemáforo hoy: rojo [ ]  amarillo [ ]\nAcciones con fecha: 1) [ ] 2) [ ] 3) [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una tendera de Monterrey recibe el pedido de refrescos y nota que faltan dos paquetes, pero el repartidor tiene prisa. ¿Qué le conviene?",
+     "Anotar el faltante en la remisión y pedir que el repartidor lo firme antes de irse",
+     "Firmar completa y llamar mañana al proveedor para que reponga lo que faltó",
+     "Quedarse con un paquete de la siguiente entrega, sin avisar, para compensar",
+     "Rechazar el pedido completo y esperar a que el repartidor regrese otro día"
+    ],
+    [
+     "En un minisúper llegan yogures que vencen en 20 días y en el refrigerador quedan algunos que vencen en 6. ¿Cómo se acomodan?",
+     "Los de 6 días al frente y los nuevos atrás, porque lo que vence antes sale primero",
+     "Los nuevos al frente, porque se ven más frescos y el cliente siempre los prefiere",
+     "Todos revueltos, para que el cliente elija y no se note la diferencia de fechas",
+     "Los nuevos en otra repisa fuera del refrigerador hasta que se acaben los de 6 días, para no mezclar lotes"
+    ],
+    [
+     "El termómetro del refrigerador de una tienda marca 9 °C toda la tarde. ¿Qué conclusión es correcta?",
+     "Está arriba del límite de 7 °C: hay que revisar carga, puerta y ventilación",
+     "Está bien, porque el límite para refrigerados en una tienda es de 10 °C",
+     "Solo es grave si también marca 9 °C en la mañana, cuando la tienda abre y nadie ha abierto la puerta todavía",
+     "Hay que tirar de inmediato todos los lácteos, sin revisar nada más"
+    ],
+    [
+     "Un tendero de Villahermosa cuenta las bebidas mirando primero lo que dice el sistema. ¿Qué problema tiene eso?",
+     "Tiende a encontrar la cifra que esperaba y se le escapan diferencias reales",
+     "Ninguno, porque así cuenta más rápido y comprueba que el sistema esté al día",
+     "Que las bebidas deberían contarse solo una vez al año, en el conteo general",
+     "Que el sistema siempre es más confiable que cualquier conteo que haga una persona en la tienda"
+    ],
+    [
+     "En un conteo, el sistema dice 50 latas de chile (costo $11, precio $16) y hay 44. ¿Cuál es la diferencia a costo?",
+     "−$66: 6 latas faltantes por $11 de costo",
+     "−$96, valorando las latas a su precio de venta",
+     "−12 %, que es lo único que hay que reportar",
+     "−$6, un peso por cada lata que falta"
+    ],
+    [
+     "En un mes, una tienda vendió mercancía que le costó $90,000 y su inventario promedio a costo fue de $60,000. ¿Cuántos días de inventario tiene?",
+     "20 días: rotación de 1.5 y 30 ÷ 1.5 = 20",
+     "1.5 días, porque esa es la rotación del mes",
+     "45 días, porque $90,000 ÷ $60,000 × 30 = 45",
+     "60 días, porque el inventario equivale a dos meses de venta"
+    ],
+    [
+     "Una tendera de Durango tiene en abarrotes una rotación de 2 al mes y en artículos de fiesta de 0.25. ¿Qué indica?",
+     "Los artículos de fiesta tardan unos 120 días en venderse: conviene revisar cuánto surte",
+     "Los artículos de fiesta son más rentables, porque tardan más en venderse y por eso dejan más margen por pieza",
+     "Los abarrotes tienen 2 días de inventario y hay que pedir el doble",
+     "Las dos categorías están bien, porque la rotación no cambia nada del negocio"
+    ],
+    [
+     "Un proveedor ofrece 5 % de descuento si un tendero compra seis meses de servilletas de golpe. Vende pocas y tiene poco espacio. ¿Qué le conviene?",
+     "Seguir comprando por mes: el ahorro no compensa el dinero parado ni el espacio",
+     "Comprar los seis meses, porque un descuento siempre deja más que cualquier otro uso del dinero",
+     "Comprar doce meses para pedir un descuento todavía mayor y olvidarse de las servilletas todo el año",
+     "Comprar seis meses y guardarlas encima de los productos de limpieza"
+    ],
+    [
+     "En un minisúper de Ensenada, unas galletas tienen 15 días de fecha y el semáforo para secos marca rojo con menos de 30. ¿Qué es lo primero?",
+     "Pedir cambio por fecha si el acuerdo lo permite; si no, paquete o rebaja visible",
+     "Esperar a que falten tres días para rebajarlas y así no perder margen",
+     "Retirarlas del anaquel y guardarlas en la bodega, sin marcarlas, hasta que el proveedor vuelva dentro de un mes",
+     "Dejarlas igual, porque con 15 días todavía no hace falta hacer nada"
+    ],
+    [
+     "Una tienda de Aguascalientes tiene 30 latas en buen estado que vencen en dos meses y que ya no va a vender. ¿Qué es lo más adecuado?",
+     "Llamar a un banco de alimentos, preguntar qué reciben y donar con fecha suficiente y registro",
+     "Esperar a que caduquen y entonces donarlas, porque antes todavía pueden venderse",
+     "Tirarlas ya, porque donar alimentos siempre le trae problemas legales a la tienda",
+     "Dejarlas en la banqueta con un letrero para que se las lleve quien quiera, sin anotar nada en la bitácora de la tienda"
+    ]
+   ]
+  },
+  {
+   "t": "Merma, cobro digital y fiado",
+   "r": "Mide la merma por causa y redúcela sin tratar a nadie como sospechoso, conoce el costo y el control de cada forma de cobro y pon reglas claras al fiado para que no se coma tu capital.",
+   "lecciones": [
+    {
+     "t": "Medir la merma: caducidad, daño, robo y errores de registro",
+     "obj": "Registrar la merma por causa en una bitácora, calcularla como porcentaje de las ventas y separar lo que no es merma, como los retiros de la familia.",
+     "texto": [
+      "<b>Merma</b> es la mercancía que entró a tu tienda y no se convirtió en venta. Tiene cinco fuentes: caducidad, daño (la lata que se cayó, el refrigerador que falló una noche), robo de clientes, robo interno y errores de registro (un pedido mal contado, un producto cobrado con otro código, un precio mal capturado). Pensar que la merma es solo robo es un mito caro: si únicamente buscas ladrones, no ves los yogures que tiras cada semana ni la remisión que firmaste incompleta.",
+      "¿Cuánto es normal? En México no hay una cifra pública confiable para tiendas de barrio. Como referencia de otro país, la encuesta de seguridad de la Federación Nacional de Minoristas de Estados Unidos (NRF) reportó una merma promedio de 1.6 % de las ventas en 2022, y atribuyó alrededor de 65 % de ella al robo externo e interno. Úsala como orden de magnitud, no como meta: las tiendas de allá venden otros productos, tienen otros controles y miden de otra forma. Lo que importa es tu propio número y cómo cambia mes con mes.",
+      "Para medir, lleva una <b>bitácora</b> de merma: fecha, producto, cantidad, costo unitario, causa y quién la anotó. Todo lo que se tira, se rompe o se rebaja por debajo del costo va ahí. En Excel, si la causa está en C y el monto a costo en F, =SUMAR.SI(C2:C300,H2,F2:F300) suma la causa que escribas en H2; repítelo para cada causa. Lo que la bitácora no explica aparece en tus conteos cíclicos como diferencia negativa: esa es la merma desconocida (siempre que lo anotado en la bitácora también lo des de baja del inventario, para no contarlo dos veces), donde se mezclan robos y errores que nadie vio.",
+      "Calcula la merma como porcentaje de las ventas del mes: merma a costo ÷ ventas. Y separa lo que no es merma: lo que tu familia toma de la tienda para la casa es un retiro, parte de tu sueldo, y se anota aparte, a costo. Si lo mezclas, tu merma se ve inflada y tu sueldo real se esconde. Con tres o cuatro meses de datos sabrás qué causa pesa más, y la solución depende de eso: la caducidad se ataca con pedidos y semáforo; el daño, con acomodo; los errores, con recepción y cobro; el robo, con prevención."
+     ],
+     "comparar": [
+      "«Así no: Me faltan como cinco mil pesos al mes; seguro me están robando, voy a poner cámaras en todos lados.»",
+      "«Así sí: Anoto cada pérdida con su causa, separo lo que se lleva mi familia y veo en qué zona aparece la diferencia antes de gastar.»"
+     ],
+     "caso": "Caso ficticio: Benito, de 49 años, tiene un minisúper en Irapuato con ventas de $210,000 al mes. Este mes su bitácora registra $1,400 de caducidad y $700 de daño; los conteos muestran $3,150 de diferencia negativa sin explicación. Aparte, su familia tomó productos por $600 a costo que nadie anotó. Su cuñado le dice que todo es robo y que ponga cámaras en cada pasillo.",
+     "p": [
+      [
+       "¿Cuál es la merma del mes como porcentaje de las ventas?",
+       "2.5 %: $5,250 de caducidad, daño y diferencia sin explicar, ÷ $210,000",
+       "2.8 %: $5,850, sumando también lo que tomó la familia para la casa",
+       "1 %: solo los $2,100 anotados en la bitácora, porque lo demás no está comprobado",
+       "$1,400 + $700 + $3,150 = $5,250, y $5,250 ÷ $210,000 = 2.5 %. Lo de la familia es retiro, no merma: va aparte. Y dejar fuera la diferencia no explicada esconde la parte más grande del problema."
+      ],
+      [
+       "¿Qué parte de la merma no tiene causa conocida?",
+       "60 %: los $3,150 de diferencia en los conteos, donde se mezclan errores y robos",
+       "100 %, porque ninguna merma tiene causa conocida hasta que se instala una cámara",
+       "65 %, el mismo porcentaje de robo que reporta la encuesta de Estados Unidos para las tiendas",
+       "$3,150 ÷ $5,250 = 60 %. La caducidad y el daño sí tienen causa anotada. El 65 % de la NRF es una referencia de otro país sobre robo, no la medición de la tienda de Benito."
+      ],
+      [
+       "¿Qué le conviene hacer a Benito antes de comprar cámaras?",
+       "Revisar recepción, cobros con código equivocado y conteos por zona para ubicar la diferencia",
+       "Poner cámaras en todos los pasillos, porque si más de la mitad de la merma es desconocida seguro es robo de clientes",
+       "Dejar de medir la merma, porque 2.5 % es poco y no vale la pena anotarla cada día",
+       "La diferencia sin explicar mezcla errores de registro, de recepción y robo; ubicar en qué zona y productos aparece dice qué remedio sirve. Suponer que todo es robo puede llevar a gastar en cámaras sin atacar los errores; y 2.5 % de $210,000 son $5,250 al mes, suficiente para medirlo."
+      ]
+     ],
+     "completar": [
+      "Anotar fecha, producto, cantidad, costo y causa de lo que se tira o se rompe es llevar una ___ de merma.",
+      "bitácora"
+     ],
+     "relacionar": [
+      [
+       "Yogur que venció en el refrigerador",
+       "Caducidad"
+      ],
+      [
+       "Botella que se rompió al acomodar",
+       "Daño"
+      ],
+      [
+       "Pedido firmado sin contar",
+       "Error de recepción"
+      ],
+      [
+       "Producto que la familia llevó a casa",
+       "Retiro, no merma"
+      ],
+      [
+       "Faltante en conteo sin explicación",
+       "Merma desconocida"
+      ]
+     ],
+     "refl": "Arranca la medición de merma de tu tienda (20 min). 1) Haz en Excel o en una libreta la bitácora con fecha, producto, cantidad, costo, causa y quién anota. 2) Define las causas: caducidad, daño, error de registro, robo visto y desconocida. 3) Decide cómo registrarás lo que toma tu familia, como retiro. 4) Anota quién llena la bitácora y cuándo la revisas. 5) Escribe cuál causa crees que pesa más, según lo que recuerdes del último mes, y cómo lo comprobarás.",
+     "modelo": "Modelo: «Bitácora en un cuaderno junto a la caja, con seis columnas; cada viernes la paso a Excel y sumo por causa con SUMAR.SI. Causas: caducidad, daño, error, robo visto y desconocida (esta sale del conteo cíclico). Lo que tomamos para la casa va en otra hoja como retiro, a costo, y lo descuento de mi sueldo del mes. Anotamos mi esposa y yo. Creo que lo que más pesa es la caducidad de pan y lácteos; lo sabré con cuatro semanas de registro.» Es buena porque separa causas, saca el autoconsumo de la merma y fija responsables y un plazo para tener datos.",
+     "plantilla": [
+      "Bitácora de merma",
+      "A: fecha | B: producto | C: causa | D: cantidad | E: costo unitario | F: =D2*E2 | G: anotó\nCausas: caducidad / daño / error de registro / robo visto / desconocida\nTotal por causa: =SUMAR.SI(C2:C300,H2,F2:F300)\nMerma del mes: $[ ] ÷ ventas $[ ] = [ ] %\nRetiros de la familia (aparte, a costo): $[ ]\nCausa que más pesa: [ ] → acción: [ ]"
+     ],
+     "clave": [
+      "La merma tiene cinco fuentes: caducidad, daño, robo externo, robo interno y errores.",
+      "Mide tu propia merma como porcentaje de ventas; la cifra de Estados Unidos es solo una referencia.",
+      "Lo que se lleva tu familia es retiro, no merma: anótalo aparte."
+     ]
+    },
+    {
+     "t": "Reducir la merma sin tratar a todos como sospechosos",
+     "obj": "Reducir la merma con procesos, acomodo y reglas parejas para todos, sin estigmatizar a clientes ni empleados y sin ponerte en riesgo.",
+     "texto": [
+      "Reducir la merma no empieza por vigilar personas sino por ordenar procesos. Muchas pérdidas se cierran sin señalar a nadie: contar antes de firmar la remisión, cobrar siempre con el código correcto, rotar con PEPS y pedir con base en lo que se vende. Con eso bajan los errores y la caducidad, que en muchas tiendas pesan tanto como el robo. Lo que queda se ataca con prevención, y la mejor es la que hace difícil robar sin hacer sentir mal a quien no roba, que es casi toda tu clientela.",
+      "Diseña la tienda para ver y ser visto: la caja con vista a la entrada y a los pasillos, buena luz, anaqueles que no tapen la vista y espejos en las esquinas ciegas. Los productos pequeños y de alto valor (pilas, rastrillos, cargadores) van cerca de la caja o detrás del mostrador. Saludar a cada persona que entra es servicio y, a la vez, <b>disuasión</b>: quien se sabe visto lo piensa dos veces. Si pones cámaras, colócalas a la vista con un aviso de videovigilancia y cuida esas grabaciones como datos personales: no las compartas en redes ni en grupos de vecinos.",
+      "Nunca enfrentes a quien está robando. No persigas, no retengas, no revises bolsas a la fuerza ni exhibas fotos de supuestos ladrones: te pones en riesgo, puedes equivocarte de persona y puedes meterte en un problema legal. Si hay violencia o amenaza, prioriza tu vida y la de tu equipo, entrega lo que pidan y llama al 911 cuando sea seguro. Después, anota lo que pasó, guarda el video y denuncia ante el Ministerio Público o, de forma anónima, al 089. Un producto perdido se repone; una persona herida, no.",
+      "Con tu equipo, aplica reglas que valgan para todos, también para ti y tu familia: fondo fijo en caja y corte en cada cambio de turno, compras del personal cobradas por otra persona, nadie saca mercancía sin anotarla y las rebajas solo las autoriza el encargado. Así nadie queda señalado y cualquier diferencia se detecta pronto. Si una diferencia se repite en el turno de alguien, revisa primero el proceso y luego habla en privado, con datos y sin acusar: puede ser un error de cobro que nadie le explicó. El manejo del efectivo y la prevención de asaltos se ven a fondo en el módulo 7."
+     ],
+     "comparar": [
+      "«Así no: Pegamos un letrero de que exhibiremos a los rateros y revisamos la bolsa de quien se vea sospechoso.»",
+      "«Así sí: Movimos lo pequeño y caro junto a la caja, pusimos espejos y saludamos a todos; las reglas de caja valen igual para el dueño.»"
+     ],
+     "caso": "Caso ficticio: Paola, de 31 años, es encargada de un minisúper en Acapulco. Los conteos muestran faltantes que se repiten en pilas y rastrillos, que están en el primer anaquel junto a la puerta, donde desde la caja no se alcanza a ver. El dueño quiere colgar un letrero que diga que publicarán en redes las fotos de los rateros y pedirle a Paola que revise las bolsas de los clientes que le parezcan sospechosos. Paola no está de acuerdo, pero tampoco quiere seguir perdiendo.",
+     "p": [
+      [
+       "¿Qué cambio debería proponer Paola primero?",
+       "Mover pilas y rastrillos junto a la caja o detrás del mostrador, donde siempre estén a la vista",
+       "Revisar solo las bolsas de las personas que le parezcan sospechosas, para no molestar a toda la clientela",
+       "Quitar de la tienda las pilas y los rastrillos para que ya no haya nada pequeño que robar",
+       "La pérdida está en un punto ciego con productos pequeños: llevarlos a la vista ataca la causa sin molestar a nadie. Elegir a quién revisar por su aspecto es discriminatorio y no se basa en datos; dejar de venderlos pierde ventas de productos que sí se piden."
+      ],
+      [
+       "¿Qué le dice Paola al dueño sobre el letrero de las fotos?",
+       "Que exhibir personas las expone, puede señalar a un inocente y meterlos en un problema legal",
+       "Que está bien siempre que las fotos solo se compartan en el grupo de vecinos y no en redes públicas",
+       "Que es buena idea, porque la vergüenza pública es lo que mejor disuade a quien piensa robar",
+       "Las grabaciones y fotos de clientes son datos personales; exhibirlas, aunque sea en un grupo de vecinos, expone a alguien que tal vez no robó y puede traer problemas legales. La disuasión que sirve es la visibilidad dentro de la tienda, no la humillación."
+      ],
+      [
+       "Una tarde, Paola ve a un joven guardarse un rastrillo y caminar hacia la puerta. ¿Qué hace?",
+       "No lo enfrenta ni lo persigue; deja que se vaya, anota lo ocurrido y guarda el video",
+       "Cierra la puerta para retenerlo y llama al dueño para que revise su ropa delante de los demás",
+       "Sale tras él para recuperar el rastrillo antes de que se suba al transporte",
+       "Retener o perseguir a alguien pone en riesgo a Paola, a los clientes y al propio joven, y puede terminar en violencia o en un problema legal. Lo que sigue es registrar, guardar evidencia y denunciar; si hubiera amenaza o violencia, el 911."
+      ]
+     ],
+     "completar": [
+      "Saludar a cada cliente al entrar es servicio y también ___, porque quien se sabe visto lo piensa dos veces.",
+      "disuasión"
+     ],
+     "refl": "Haz el plan de reducción de merma de tu tienda (20 min). 1) Recorre la tienda desde la caja y anota los puntos ciegos. 2) Lista los productos pequeños y caros y dónde los pondrás. 3) Escribe tres reglas que valgan para todos, tú incluido. 4) Redacta qué hará tu equipo si ve un robo y si hay violencia, con el 911. 5) Escribe cómo hablarías en privado con alguien de tu equipo si su turno tiene diferencias repetidas.",
+     "modelo": "Modelo: «Puntos ciegos: el pasillo de limpieza y la esquina del refrigerador; pondré un espejo en cada uno. Pilas, rastrillos y cargadores pasan a la vitrina de la caja. Reglas para todos: fondo de $500 y corte en cada turno; las compras del personal las cobra otra persona; nadie, ni yo, saca mercancía sin anotarla. Ante un robo: no perseguir, anotar, guardar video; si hay amenaza, entregar y llamar al 911. Con el equipo: le muestro las cifras de tres cortes y le pregunto cómo cobra las recargas, sin acusarlo.» Es buena porque cambia el lugar antes que a las personas, las reglas incluyen al dueño y pone la seguridad primero.",
+     "plantilla": [
+      "Plan para reducir merma",
+      "Puntos ciegos: [ ] → [espejo / mover anaquel / luz]\nProductos pequeños de alto valor: [ ] → nuevo lugar: [junto a caja / detrás del mostrador]\nReglas para todos (yo incluido): 1) [ ] 2) [ ] 3) [ ]\nCámaras: aviso visible [sí / no]  ¿Quién ve las grabaciones? [ ]  Nunca se publican\nSi vemos un robo: no enfrentar, anotar, guardar evidencia, denunciar. Con violencia: entregar y llamar al 911\nPlática privada por diferencias: datos [ ]  pregunta abierta [ ]"
+     ],
+     "clave": [
+      "Primero procesos (recepción, cobro, PEPS); después prevención.",
+      "Diseña para ver y ser visto, no para sospechar de todos.",
+      "Nunca enfrentes ni exhibas a nadie: tu seguridad primero y el 911 si hay violencia."
+     ]
+    },
+    {
+     "t": "Cobrar con tarjeta, transferencia, CoDi y DiMo: costo y control de cada forma",
+     "obj": "Calcular cuánto te cuesta cada forma de cobro, evitar fraudes con comprobantes falsos y conciliar cada día sin cargarle comisiones al cliente.",
+     "texto": [
+      "Cada forma de cobro tiene un costo y un riesgo distintos. El efectivo no paga comisión, pero cuesta: hay que contarlo, cambiarlo, llevarlo al banco, y te expone a robos y billetes falsos. La tarjeta trae una comisión por cada venta (la <i>tasa de descuento</i>), a veces una renta de la terminal y un plazo para que te depositen, según tu contrato. Como ejemplo ficticio, una comisión de 3 % más IVA sobre una venta de $100 te cuesta $3.48 (pregúntale a tu contador si puedes acreditar ese IVA). Las tasas cambian según el banco o la empresa de la terminal y el giro: consulta las tasas vigentes en Banxico, que las publica, y compara antes de firmar.",
+      "CoDi (cobro con código QR) y DiMo (transferencia con el número de celular) son esquemas de Banxico sobre SPEI, sin comisión por usarlos, y el dinero suele llegar en segundos (revisa si tu cuenta cobra algo por recibir transferencias). Su riesgo es otro: el comprobante falso. Una captura de pantalla no es un pago. Antes de entregar la mercancía, confirma en la app de tu banco que el dinero llegó; si hay fila, pide al cliente que espere un momento a un lado. Para pagos frecuentes, ten tu QR o tu número impreso junto a la caja.",
+      "Creer que la tarjeta no conviene suele ser un error de cuenta. Si tu margen promedio es de 20 %, una venta de $100 te deja $20 y la comisión del ejemplo te quita $3.48: todavía ganas $16.52, contra $0 si el cliente se va porque no traía efectivo. Lo que no puedes hacer es cargarle la comisión al cliente: la Ley Federal de Protección al Consumidor (art. 7 Bis) obliga a exhibir el precio total y, según Profeco, cobrar un recargo por pagar con tarjeta va contra la ley y contra el contrato con el banco. El costo de cobrar se considera al fijar tus precios, igual para todos.",
+      "El control es la <b>conciliación</b>: cada día, compara lo que tu corte dice que cobraste con cada forma de pago contra lo que de verdad entró a tu cuenta, y revisa en cada estado de cuenta las comisiones que te cobraron. En Excel, una fila por día con lo cobrado según el corte en B y lo depositado en C; la diferencia, =B2-C2, debe ser cero o tener explicación, como un depósito de tarjeta que llega al día siguiente. Guarda los reportes de la terminal como respaldo."
+     ],
+     "comparar": [
+      "«Así no: Con tarjeta, 4 % más; y si me enseñas la captura de la transferencia, llévatelo.»",
+      "«Así sí: Mismo precio con cualquier forma de pago; si pagas por transferencia o CoDi, espérame un segundo a que se refleje en mi cuenta.»"
+     ],
+     "caso": "Caso ficticio: Ulises, de 38 años, tiene una tienda de abarrotes con venta de recargas en Villahermosa. Cobra con terminal unos $45,000 al mes y, en su contrato, la comisión de ejemplo es de 2.9 % más IVA. Como le parece mucho, quiere poner un letrero que diga «con tarjeta, 4 % más». Además, la semana pasada entregó $650 de mercancía a un cliente que le enseñó una captura de una transferencia que nunca llegó.",
+     "p": [
+      [
+       "¿Cuánto le cuesta al mes cobrar con tarjeta, según el ejemplo?",
+       "$1,513.80 al mes: $1,305 de comisión más $208.80 de IVA sobre esa comisión",
+       "$1,305 exactos, porque el IVA de la comisión siempre lo absorbe el banco que le renta la terminal",
+       "$1,800, porque cobra $45,000 y la comisión de la terminal es de 4 %",
+       "2.9 % de $45,000 = $1,305; el IVA de 16 % sobre esa comisión, $208.80; total $1,513.80. El IVA de la comisión lo paga el comercio, y el 4 % es lo que Ulises quiere cobrar, no lo que le cobran."
+      ],
+      [
+       "¿Qué le conviene hacer en lugar del letrero de 4 %?",
+       "No cobrar recargo, comparar tasas en Banxico y ofrecer CoDi y DiMo, que no le cobran comisión",
+       "Poner el recargo solo a los clientes que no conoce, porque a los vecinos de siempre no les cobra extra",
+       "Dejar de aceptar tarjeta, porque con la comisión todas las ventas con tarjeta le dejan pérdida",
+       "El recargo por pagar con tarjeta va contra la ley según Profeco y contra su contrato, sea quien sea el cliente. Comparar tasas y ofrecer transferencia, CoDi y DiMo baja su costo sin perder ventas. Y la tarjeta no deja pérdida: con un margen de 20 % como el del ejemplo de la lección, una comisión de 3.36 % con IVA todavía deja ganancia."
+      ],
+      [
+       "¿Cómo evita Ulises que se repita lo de los $650?",
+       "Confirmando en la app de su banco que el dinero llegó antes de entregar, aunque haya fila",
+       "Pidiendo que le reenvíen la captura por mensaje, para guardarla como comprobante del pago",
+       "Aceptando transferencias solo de los clientes que conozca de vista o de nombre en la colonia",
+       "Una captura no prueba que el dinero llegó, aunque la guardes; lo único que cuenta es verlo en tu cuenta. Limitarlo a conocidos no resuelve el problema (también un conocido puede equivocarse de cuenta) y deja fuera a clientes que pagan bien."
+      ]
+     ],
+     "completar": [
+      "Comparar cada día lo que cobraste por cada forma de pago con lo que entró a tu cuenta se llama ___.",
+      "conciliación"
+     ],
+     "relacionar": [
+      [
+       "Efectivo",
+       "Sin comisión, pero con riesgo de robo y billetes falsos"
+      ],
+      [
+       "Tarjeta",
+       "Tasa de descuento más IVA, según contrato"
+      ],
+      [
+       "CoDi",
+       "Cobro con código QR sobre SPEI"
+      ],
+      [
+       "DiMo",
+       "Transferencia con el número de celular"
+      ],
+      [
+       "Captura de pantalla",
+       "No es pago hasta verlo en tu cuenta"
+      ]
+     ],
+     "refl": "Calcula el costo y arma el control de tus cobros (20 min). 1) Estima cuánto cobras al mes con cada forma de pago. 2) Revisa tu contrato o tu estado de cuenta y anota la comisión real de tu terminal y si cobra renta. 3) Calcula cuánto te cuesta al mes la tarjeta, con IVA. 4) Escribe cómo vas a promover transferencia, CoDi o DiMo sin presionar al cliente. 5) Diseña tu hoja de conciliación diaria.",
+     "modelo": "Modelo: «Cobro al mes: efectivo $120,000, tarjeta $30,000 y transferencias $10,000. Mi terminal cobra 3.2 % más IVA y no tiene renta: $30,000 × 3.2 % = $960, más $153.60 de IVA, $1,113.60 al mes. Pondré mi QR y mi número de celular impresos junto a la caja con la leyenda de que también recibo transferencia; nadie paga recargo. Conciliación: cada noche anoto lo cobrado por forma de pago y lo comparo con la app del banco; el sábado reviso comisiones.» Es buena porque usa datos de su contrato, calcula el IVA de la comisión, ofrece alternativas sin recargo y fija una rutina de control.",
+     "plantilla": [
+      "Costo y control de cobros",
+      "Ventas del mes: efectivo $[ ] / tarjeta $[ ] / transferencia, CoDi y DiMo $[ ]\nComisión de mi terminal: [ ] % + IVA  Renta: $[ ]  Plazo de depósito: [ ]\nCosto mensual de tarjeta: $[ ] × [ ] % = $[ ] + IVA $[ ] = $[ ]\nTasas comparadas en Banxico: [opción 1] [ ] % / [opción 2] [ ] %\nReglas: confirmo en mi app antes de entregar; sin recargo por tarjeta\nConciliación diaria: A fecha | B cobrado según corte | C depositado | D =B2-C2"
+     ],
+     "clave": [
+      "Cada forma de cobro cuesta algo: comisión, manejo de efectivo o riesgo de fraude.",
+      "Cargarle la comisión al cliente va contra la ley; ese costo va en tus precios.",
+      "Una captura no es un pago: confírmalo en tu cuenta y concilia cada día."
+     ]
+    },
+    {
+     "t": "El fiado con reglas: límites, registro y cobro respetuoso",
+     "obj": "Poner reglas claras al fiado, llevar un registro que cuide los datos de tus clientes y cobrar con respeto y acuerdos de pago.",
+     "texto": [
+      "El fiado es parte de la tienda de barrio: resuelve la quincena de muchas familias y crea lazos. Según la Encuesta Nacional de Inclusión Financiera 2024, 37.3 % de la población adulta tenía algún crédito formal, es decir, la mayoría no tenía uno, y para mucha gente la tienda es de los pocos lugares donde le dan un respiro. No hay un dato oficial de cuánto se fía en México, pero cualquier tendero sabe que también es un riesgo: lo que fías es mercancía que ya le pagaste a tu proveedor y que no recuperas hasta que te pagan. Creer que el fiado siempre fideliza es un mito: una deuda que crece sin control muchas veces aleja al cliente, que deja de venir por pena.",
+      "Por eso el fiado necesita reglas, dichas con claridad y antes de fiar. Decide a quién (clientes conocidos, con historial de pago), un <b>límite</b> por persona (por ejemplo, $400), un plazo (la quincena) y un tope total: la suma de todo lo que fías no debe pasar de lo que podrías perder sin dejar de surtir. Quien no ha pagado lo anterior no recibe más fiado hasta liquidar o acordar pagos. Ponlas por escrito en un letrero sencillo: «Fiado hasta $400 por persona, a pagar en la quincena».",
+      "Registra cada movimiento: fecha, nombre, cargo, abono y saldo. Puede ser una libreta o una hoja de Excel: con la fecha del primer adeudo en B, =HOY()-B2 te dice cuántos días lleva, y =SUMA(E2:E60) cuánto tienes fiado en total. Si el cliente está de acuerdo, mándale un mensaje con cada cargo para que los dos tengan la misma cuenta. Ese registro tiene datos personales y deudas: guárdalo fuera de la vista, no lo dejes en el mostrador y nunca pegues listas de deudores en la pared ni las compartas en grupos.",
+      "El cobro respetuoso funciona mejor que la presión. Recuerda en privado, en persona o con un mensaje directo, sin testigos; ofrece pagos parciales con fechas concretas y agradece cada abono. Nunca humilles, amenaces ni exhibas a nadie: además de lastimar, te expone a problemas y ahuyenta a la clientela que ve la escena. Si alguien de plano no puede pagar, suspende el fiado hasta que se ponga al corriente y decide cuánto tiempo esperarás antes de darlo por perdido y anotarlo como pérdida, sin perder el trato amable."
+     ],
+     "comparar": [
+      "«Así no: Le fío a quien me pida, lo apunto en un papelito y, si no paga, su nombre va a la lista de la pared.»",
+      "«Así sí: Fío hasta $400 por persona, a la quincena; cada cargo queda anotado y, si alguien se atrasa, le escribo en privado para acordar pagos.»"
+     ],
+     "caso": "Caso ficticio: Graciela, de 67 años, tiene una miscelánea en Durango desde hace 30 años y vende unos $120,000 al mes. Hoy 23 clientes le deben $14,600 en total, algunos desde hace tres meses. Tiene pegada en la pared una lista con los nombres de quienes le deben, porque su sobrina le dijo que así pagan por vergüenza. Una vecina que cuida a sus nietos y tiene trabajo irregular le debe $1,800 y le pide más fiado para la semana.",
+     "p": [
+      [
+       "¿Qué hace Graciela con la lista de la pared?",
+       "Quitarla y guardar el registro fuera de la vista, porque expone datos y deudas de sus clientes",
+       "Dejarla, pero quitar los apellidos y poner solo nombres y montos para que sea más discreta",
+       "Dejarla, porque si la gente paga por vergüenza la lista está cumpliendo su función",
+       "La deuda de una persona es un dato personal; exhibirla humilla, aleja clientes y puede traer problemas. Quitar apellidos no basta en una colonia donde todos se conocen, y que alguien pague por vergüenza no justifica exhibirlo."
+      ],
+      [
+       "¿Qué le responde a la vecina que pide más fiado?",
+       "Que por ahora no le fía más y le propone pagar $300 por semana: en seis semanas queda al corriente",
+       "Que le fía otra vez esta semana, porque negarle el fiado a una clienta de años es perderla para siempre",
+       "Que no le volverá a fiar nunca y que le pague los $1,800 completos el viernes",
+       "$1,800 ÷ $300 = 6 semanas. Suspender el fiado nuevo mientras paga lo anterior protege el capital sin cortar la relación. Fiarle más hace crecer una deuda que ya le cuesta pagar, y exigir todo de golpe a quien tiene ingresos irregulares casi garantiza que no pague."
+      ],
+      [
+       "¿Qué reglas le convienen a Graciela de aquí en adelante?",
+       "Límite por persona, plazo de quincena, tope total y un registro con cargos, abonos y saldo",
+       "Fiar sin límite solo a quien lleve más de diez años comprando en la miscelánea, sin necesidad de anotar",
+       "Cobrar 10 % de interés por semana a quien se atrase, para que todos paguen a tiempo",
+       "Las cuatro reglas juntas cuidan a la tienda: cuánto por persona, cuándo, cuánto en total y cuánto se ha abonado. La antigüedad no sustituye al registro, y un interés de 10 % semanal convierte el fiado en un préstamo abusivo que hunde a quien ya está atrasado."
+      ]
+     ],
+     "completar": [
+      "Además de un plazo y un tope total, el fiado necesita un ___ por persona.",
+      "límite"
+     ],
+     "relacionar": [
+      [
+       "Límite por persona",
+       "Hasta cuánto puede deber cada cliente"
+      ],
+      [
+       "Tope total",
+       "Lo máximo que la tienda arriesga en fiado"
+      ],
+      [
+       "=HOY()-B2",
+       "Días que lleva un adeudo"
+      ],
+      [
+       "Recordatorio en privado",
+       "Cobro sin exhibir a nadie"
+      ],
+      [
+       "Pagos parciales con fecha",
+       "Acuerdo para ponerse al corriente"
+      ]
+     ],
+     "refl": "Escribe la política de fiado de tu tienda (20 min). 1) Define a quién fías, el límite por persona, el plazo y el tope total. 2) Redacta el letrero con tus reglas en dos líneas. 3) Diseña tu registro con fecha, nombre, cargo, abono, saldo y días. 4) Escribe el mensaje privado que mandarías a alguien con 30 días de atraso. 5) Decide qué harás con los adeudos de más de 90 días.",
+     "modelo": "Modelo: «Fío solo a clientes que llevan al menos tres meses comprando y viven en la colonia. Límite: $300 por persona; plazo: 15 días; tope total: $5,000. Letrero: Fiado hasta $300 por persona, se paga cada quincena; gracias por cumplir. Mensaje: Buenas tardes, don Tomás, le escribo para recordarle su cuenta de $280; si le acomoda, la dividimos en dos pagos. Adeudos de más de 90 días: suspendo el fiado, propongo pagos y, si en otros 60 días no hay abono, lo anoto como pérdida.» Es buena porque tiene cifras claras, un mensaje privado y amable, y un camino para los adeudos viejos.",
+     "plantilla": [
+      "Política y registro de fiado",
+      "A quién: [ ]  Límite por persona: $[ ]  Plazo: [ ] días  Tope total: $[ ]\nLetrero: [ ]\nRegistro: A nombre | B fecha del primer adeudo | C cargos | D abonos | E saldo =C2-D2 | F días =HOY()-B2\nTotal fiado: =SUMA(E2:E60)  Dónde guardo el registro: [fuera de la vista]\nMensaje privado de recordatorio: [ ]\nAdeudos de más de 90 días: [acción]"
+     ],
+     "clave": [
+      "El fiado es mercancía que ya pagaste: ponle límite por persona, plazo y tope total.",
+      "Registra cargos, abonos y saldo, y guarda esos datos fuera de la vista.",
+      "Cobra en privado y con acuerdos; nunca humilles ni exhibas a quien te debe."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma en Excel el control de merma, cobro y fiado de tu tienda, con cuatro pestañas. 1) Bitácora de merma con causas, totales por causa con SUMAR.SI y el porcentaje sobre ventas. 2) Plan de prevención: puntos ciegos, productos que moverás y tres reglas para todos. 3) Cobros: costo mensual de cada forma de pago con el IVA de la comisión, tasas comparadas en Banxico y hoja de conciliación diaria. 4) Fiado: tus reglas, el registro con saldo y días de cada adeudo y tu mensaje de recordatorio.",
+    "entregable": "Un archivo de Excel con cuatro pestañas y fórmulas, más tu letrero de fiado y un párrafo con las dos causas de merma que atacarás primero y cómo lo harás.",
+    "criterios": "Revisa: la merma está a costo y sin los retiros de la familia, ninguna medida implica enfrentar, revisar o exhibir a clientes, no hay recargo por tarjeta y el registro de fiado se guarda fuera de la vista, con límite, plazo y tope total."
+   },
+   "lab": {
+    "t": "Merma, terminal y fiado en Xalapa",
+    "obj": "Medir la merma, proponer medidas de prevención sin estigmatizar, calcular el costo del cobro con tarjeta y poner reglas al fiado en una tienda de barrio.",
+    "esc": "<b>Federico,</b> de 52 años, y su hija <b>Marisol,</b> de 24, atienden una tienda de abarrotes cerca de una secundaria en Xalapa, con ventas de $200,000 al mes. Marisol estudió administración y quiere ordenar la tienda; su papá desconfía de los cambios, pero acepta que el dinero ya no rinde como antes.",
+    "e": [
+     [
+      "Escena 1: La bitácora del mes registra $1,100 de caducidad y $460 de daño; los conteos cíclicos dan $2,440 de diferencia negativa sin explicar. Además, la familia tomó $500 en productos para la casa sin anotarlos.",
+      "Consigna: calcula la merma del mes y su porcentaje sobre ventas, explica qué haces con los $500 y escribe qué parte de la merma es desconocida."
+     ],
+     [
+      "Escena 2: Los faltantes se concentran en dulces y chocolates del exhibidor junto a la puerta, a la hora de salida de la escuela. Un vecino les sugiere pegar fotos de los alumnos que, según él, roban.",
+      "Consigna: propón tres medidas para reducir esa merma sin señalar a nadie y escribe qué le responden al vecino."
+     ],
+     [
+      "Escena 3: Cobran con terminal $38,000 al mes y la comisión de ejemplo de su contrato es de 3.2 % más IVA. Federico quiere cobrar 5 % extra con tarjeta. La semana pasada entregaron $480 de mercancía por una captura de transferencia que nunca llegó.",
+      "Consigna: calcula el costo mensual de la terminal, explica por qué no procede el recargo y escribe la regla para cobros por transferencia, CoDi y DiMo."
+     ],
+     [
+      "Escena 4: Quince clientes deben $9,800 de fiado, sin límites ni registro ordenado. Un señor debe $1,200 desde hace dos meses y pide que le sigan fiando.",
+      "Consigna: escribe las reglas de fiado (límite, plazo y tope total), dónde guardarán el registro y el mensaje privado para el señor, con un plan de pagos."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es la merma del mes y qué parte es desconocida?",
+      "$4,000, que es 2 % de las ventas; de eso, 61 % es merma desconocida",
+      "$4,500, 2.25 % de las ventas, porque lo que tomó la familia también cuenta como merma",
+      "$1,560, 0.8 % de las ventas, porque solo cuenta lo anotado en la bitácora",
+      "$1,100 + $460 + $2,440 = $4,000, y $4,000 ÷ $200,000 = 2 %. La parte sin explicar es $2,440 ÷ $4,000 = 61 %. Los $500 de la familia son retiro y se anotan aparte; dejar fuera la diferencia de conteo esconde más de la mitad de la merma."
+     ],
+     [
+      "¿Cuánto les cuesta al mes la terminal y qué hacen con la idea del recargo?",
+      "$1,410.56 al mes con IVA; no cobran recargo y ofrecen CoDi y DiMo, que no tienen comisión",
+      "$1,216; cobran el 5 % extra solo en compras grandes, para recuperar lo que les cobra el banco",
+      "$1,900, que es el 5 % de lo cobrado; por eso el recargo apenas cubre lo que pagan por la terminal",
+      "3.2 % de $38,000 = $1,216, más 16 % de IVA ($194.56): $1,410.56. Cobrar recargo va contra la ley según Profeco y contra el contrato, en compras grandes o chicas; y el 5 % es lo que Federico quiere cobrar, no lo que pagan."
+     ],
+     [
+      "¿Qué reglas de fiado y qué plan para el señor son más adecuados?",
+      "Límite, plazo y tope total, registro guardado y pagos de $200 por semana durante seis semanas antes de volver a fiarle",
+      "Fiarle otra vez al señor para no perderlo como cliente y pegar en la caja la lista de deudores, para que los demás se apuren a pagar",
+      "Cancelar todo el fiado de la tienda y exigir a los quince clientes que paguen completo este mismo mes",
+      "$1,200 ÷ $200 = 6 semanas. Las reglas protegen el capital y el plan de pagos permite al señor ponerse al corriente con dignidad. La lista en la caja exhibe datos personales y humilla; cancelar todo y exigir pagos completos rompe con clientes que sí pagan y casi garantiza impagos."
+     ]
+    ],
+    "pl": [
+     "Hoja de merma, cobro y fiado",
+     "Merma del mes: caducidad $[ ] + daño $[ ] + desconocida $[ ] = $[ ] → [ ] % de ventas\nRetiros de la familia (aparte): $[ ]\nMedidas sin señalar a nadie: 1) [ ] 2) [ ] 3) [ ]\nTerminal: $[ ] × [ ] % = $[ ] + IVA $[ ] = $[ ]  Sin recargo. Transferencias: confirmar en la app antes de entregar\nFiado: límite $[ ]  plazo [ ] días  tope total $[ ]  registro guardado en [ ]\nPlan de pagos: $[ ] por semana durante [ ] semanas"
+    ]
+   },
+   "quiz": [
+    [
+     "Un minisúper de Monterrey vende $150,000 al mes y su merma a costo fue de $3,000. ¿Cuál es su porcentaje de merma?",
+     "2 %, porque $3,000 ÷ $150,000 = 0.02, y eso por cien da 2",
+     "1.6 %, porque es la merma promedio que se toma como norma en México",
+     "0.02 %, porque $3,000 ÷ $150,000 = 0.02",
+     "5 %, porque la merma se compara con la utilidad y no con las ventas"
+    ],
+    [
+     "Una tendera anota que su hijo se llevó $400 en productos para la casa. ¿Cómo debe registrarlo?",
+     "Como retiro de la familia, a costo y aparte de la merma",
+     "Como merma por robo interno, porque salió de la tienda sin pagarse",
+     "Como merma por daño, que es lo más parecido a una salida sin venta en la bitácora",
+     "No registrarlo, porque lo que consume la familia no cuenta"
+    ],
+    [
+     "Un tendero lee que en Estados Unidos la merma promedio fue de 1.6 % de las ventas en 2022. ¿Cómo debe usar ese dato?",
+     "Como referencia de otro país; lo que importa es medir su propia merma y su tendencia",
+     "Como la meta oficial que debe cumplir cualquier tienda de abarrotes en México",
+     "Como prueba de que su merma de 2.4 % se debe casi toda a robo de clientes, igual que allá",
+     "Como señal de que no necesita medir, porque seguramente anda en ese promedio"
+    ],
+    [
+     "En una tienda de Acapulco, las pilas se pierden en un anaquel que no se ve desde la caja. ¿Qué medida es la más adecuada?",
+     "Moverlas junto a la caja o detrás del mostrador, donde se vean siempre",
+     "Revisar la bolsa de cada cliente que entre a ese pasillo",
+     "Poner un letrero que avise que se publicarán en redes las fotos de quien robe en la tienda",
+     "Dejar de vender pilas y mandar a los clientes a otra tienda"
+    ],
+    [
+     "Un encargado ve a una persona guardarse un chocolate y salir. ¿Qué es lo correcto?",
+     "No perseguirla, anotar lo ocurrido y guardar la evidencia",
+     "Salir tras ella para recuperar el chocolate antes de que se aleje de la tienda",
+     "Retenerla dentro de la tienda hasta que llegue el dueño",
+     "Tomarle una foto y subirla al grupo de vecinos para alertar a los comercios de la colonia"
+    ],
+    [
+     "La terminal de una tienda cobra, como ejemplo, 3.5 % más IVA. ¿Cuánto cuesta una venta de $200 con tarjeta?",
+     "$8.12: $7.00 de comisión más $1.12 de IVA",
+     "$7.00, porque el IVA de la comisión lo paga el cliente",
+     "$32.00, que es el 16 % de IVA sobre los $200 de la venta",
+     "$3.50, porque la comisión es fija por cada venta"
+    ],
+    [
+     "Un tendero de Villahermosa quiere cobrar 3 % extra a quien pague con tarjeta. ¿Qué es correcto?",
+     "No debe: el precio exhibido es el total y Profeco considera ilegal ese recargo",
+     "Puede, siempre que lo avise con un letrero visible junto a la caja y en la entrada",
+     "Puede, si el recargo es menor que la comisión que le cobra el banco por cada venta",
+     "Solo puede hacerlo en compras de menos de $100"
+    ],
+    [
+     "Un cliente muestra en su celular la captura de una transferencia por $350 y hay fila. ¿Qué hace la encargada?",
+     "Le pide esperar a un lado y entrega cuando ve el depósito en la cuenta de la tienda",
+     "Le entrega la mercancía, porque la captura de pantalla tiene folio y eso es comprobante suficiente",
+     "Le pide que pague en efectivo, porque las transferencias siempre son riesgosas",
+     "Guarda una foto de la captura y le entrega, para reclamar después si no llega"
+    ],
+    [
+     "Una tienda de Ensenada vende $100,000 al mes y tiene $11,000 fiados, con varios adeudos de más de 60 días. ¿Qué conviene primero?",
+     "Fijar límite, plazo y tope total, y acordar pagos con quienes ya deben",
+     "Fiar más, para que los clientes no se vayan a otra tienda mientras pagan",
+     "Pegar la lista de deudores en la entrada para presionar a que paguen pronto",
+     "Cobrar intereses altos a los atrasados para recuperar más rápido lo que se fió"
+    ],
+    [
+     "Una clienta de Irapuato debe $900, tiene ingresos irregulares y pide más fiado. ¿Qué respuesta es la más adecuada?",
+     "Suspender el fiado nuevo y proponerle pagar $150 por semana durante seis semanas",
+     "Fiarle sin límite, porque es clienta de años y algún día pagará todo lo que debe",
+     "Exigirle los $900 completos esta semana delante de los demás clientes",
+     "Fiarle más, pero anotar su deuda en un letrero junto a la caja"
+    ]
+   ]
+  }
+ ]
+}
