@@ -1,0 +1,848 @@
+{
+ "modulos": [
+  {
+   "t": "Del proveedor al almacén",
+   "r": "Aprenderás a elegir y evaluar proveedores, recibir con termómetro y criterio para aceptar o rechazar, ordenar almacén, refrigeradores y congeladores, descongelar con métodos seguros y etiquetar con fechas que de verdad protejan.",
+   "lecciones": [
+    {
+     "t": "Proveedores y recepción: aceptar o rechazar",
+     "obj": "Recibir materia prima con termómetro y criterios escritos para decidir en minutos si aceptas o rechazas un producto, y dejarlo registrado.",
+     "texto": [
+      "La inocuidad empieza antes de que el producto cruce tu puerta. Un buen proveedor no es el más barato, sino el que puede demostrar cómo cuida lo que vende: transporta los refrigerados en vehículo con frío, entrega en el horario acordado, acepta devoluciones y te da remisión o factura con lote. Arma una <b>lista de proveedores aprobados</b> con contacto, productos, especificaciones de cada uno (temperatura, empaque, aspecto y vida útil mínima al recibir) y una evaluación periódica. Cuando un proveedor falla de forma repetida, la conversación ya no es de precio: es de riesgo.",
+      "La NOM-251-SSA1-2009, en su tabla de recepción (numeral 5.6.7), establece que los productos refrigerados deben llegar a <b>4 °C o menos</b> y que los congelados se rechazan si muestran signos de descongelación: cristales grandes de hielo, líquido congelado en el fondo de la caja, piezas pegadas en bloque o empaques deformados. Para pescado, el numeral 7.4.2 pide fresco a 4 °C o menos y congelado a −9 °C o menos; verifica la versión vigente en el Catálogo Mexicano de Normas. Mide con termómetro de punzón limpio y desinfectado, en el centro de una pieza de muestra o entre dos paquetes. El termómetro infrarrojo sirve para un tamizaje rápido, pero solo lee la superficie.",
+      "Además de la temperatura, revisa con criterio: olor, color y textura propios del producto; empaques íntegros, sin latas abombadas, oxidadas o golpeadas en la costura; etiquetas legibles con fecha y lote; vehículo limpio, sin químicos junto a los alimentos ni carne cruda escurriendo sobre verduras. Un mito peligroso es «si huele bien, está bien»: la mayoría de los patógenos no cambia el olor ni el sabor, y por eso el termómetro y la especificación mandan.",
+      "Recibe rápido y en orden: refrigerados y congelados primero, directo a su equipo, sin dejarlos en el andén mientras se firma. Si algo no cumple, decide en el momento, anota motivo, temperatura y hora en la bitácora de recepción y pide la firma del chofer. Rechazar no es pelear: es aplicar una especificación que el proveedor ya conocía. Acuerda entregas fuera de las horas pico para que quien recibe no tenga que elegir entre el servicio y el termómetro."
+     ],
+     "comparar": [
+      "«Así no: el almacenista firma la remisión con el servicio encima, deja las cajas de pollo en el pasillo y las mide una hora después, cuando ya no puede devolverlas.»",
+      "«Así sí: el almacenista mide cada lote refrigerado al bajarlo del camión, rechaza lo que no cumple, lo anota con la firma del chofer y guarda lo aceptado en minutos.»"
+     ],
+     "caso": "Caso ficticio: Rigoberto, de 41 años, es almacenista de un comedor industrial en León que sirve 600 comidas diarias a una fábrica de calzado. Un martes a las 11:40, en plena preparación, llega el proveedor de lácteos con crema y queso fresco. El termómetro marca 9 °C en la crema. El chofer asegura que el frío del camión falló «apenas hace media hora» y advierte que, si no la recibe, no habrá crema para las enchiladas del día. Por radio, el gerente le pide que no haga problema.",
+     "p": [
+      [
+       "¿Qué debe hacer Rigoberto con la crema que marca 9 °C?",
+       "Rechazarla, porque supera los 4 °C que pide la NOM-251 al recibir, y registrar motivo, hora y temperatura",
+       "Aceptarla y meterla de inmediato al refrigerador, porque en menos de una hora volverá a estar a 4 °C sin mayor problema",
+       "Aceptarla solo si huele y sabe normal, porque media hora sin frío no alcanza para que un lácteo se descomponga",
+       "La NOM-251 fija 4 °C o menos para recibir refrigerados; la crema no cumple y se rechaza dejando registro. Enfriarla después no borra el tiempo que pasó en temperatura de riesgo, y el olor y el sabor no revelan la presencia de patógenos."
+      ],
+      [
+       "¿Qué le ayuda más a sostener su decisión ante el gerente?",
+       "La especificación escrita que el proveedor aceptó y la bitácora con la temperatura que midió en la puerta",
+       "La explicación del chofer sobre cuánto tiempo estuvo apagado el equipo de frío del camión",
+       "Que la crema todavía no haya llegado a la fecha de caducidad impresa en el envase",
+       "Un criterio escrito y una medición registrada convierten el rechazo en procedimiento. La versión del chofer no se puede comprobar, y la fecha de caducidad solo vale si el producto se conservó en las condiciones indicadas, que aquí no se cumplieron."
+      ],
+      [
+       "¿Cómo debe medir el queso fresco que llegó en el mismo camión?",
+       "Con termómetro de punzón limpio y desinfectado en una pieza de muestra",
+       "Con termómetro infrarrojo sobre el empaque, porque es más rápido y no abre ninguna pieza del lote",
+       "Tocando el empaque con la mano: si se siente frío al tacto, ya está a la temperatura que pide la norma",
+       "El punzón mide la temperatura real del producto; se sacrifica o se separa una pieza de muestra. El infrarrojo solo lee la superficie y sirve como tamizaje, y la mano no distingue entre 4 °C y 9 °C."
+      ]
+     ],
+     "completar": [
+      "Los congelados que muestran signos de descongelación se ___ en la recepción y se anota el motivo en la bitácora.",
+      "rechazan"
+     ],
+     "relacionar": [
+      [
+       "Crema a 9 °C",
+       "Supera el límite de 4 °C: no se acepta"
+      ],
+      [
+       "Cristales grandes y líquido congelado en la caja",
+       "Señal de que el producto ya se descongeló"
+      ],
+      [
+       "Termómetro infrarrojo",
+       "Tamizaje de superficie, no del interior"
+      ],
+      [
+       "Lista de proveedores aprobados",
+       "Especificaciones y evaluación periódica"
+      ],
+      [
+       "Lata abombada u oxidada en la costura",
+       "Se devuelve aunque esté en fecha"
+      ]
+     ],
+     "refl": "Revisa cómo se recibe la mercancía en la cocina donde trabajas o trabajarás. 1) Enlista los cinco productos de mayor riesgo que llegan de proveedor y, para cada uno, escribe su especificación de recepción: temperatura, empaque, aspecto y vida útil mínima al recibir. 2) Describe cómo se recibe hoy: quién, a qué hora, con qué termómetro y dónde se dejan las cajas, y marca dos puntos débiles. 3) Redacta la frase con la que rechazarías un producto con respeto y sin discutir con el chofer. 4) Diseña las columnas de tu bitácora de recepción.",
+     "modelo": "Modelo: «Producto: pechuga de pollo refrigerada. Especificación: 4 °C o menos, empaque cerrado sin escurrimiento, color rosado uniforme, sin olor agrio y al menos tres días de vida útil al recibir. Hoy recibe el ayudante que esté libre y nadie mide. Puntos débiles: no hay termómetro en el andén y las entregas llegan a la hora de la comida. Frase: lo siento, marca 8 °C y nuestra especificación es 4 °C; lo anoto como rechazo y te firmo la devolución. Bitácora: fecha, hora, proveedor, producto, lote, temperatura, decisión, motivo y firmas.» Es buena porque cada criterio se puede medir, nombra fallas reales y vuelve el rechazo un procedimiento.",
+     "plantilla": [
+      "Bitácora de recepción",
+      "Fecha: [ ]   Hora: [ ]   Recibió: [nombre]\nProveedor: [ ]   Remisión o factura: [ ]\nProducto: [ ]   Lote: [ ]   Caducidad: [ ]\nTemperatura medida: [ ] °C   Límite: [refrigerado 4 °C o menos / congelado sin signos de descongelación]\nEmpaque y aspecto: [correcto / defecto: ]\nVehículo: [limpio, con frío, sin químicos: sí / no]\nDecisión: [aceptado / rechazado]   Motivo: [ ]\nFirma de quien recibe: [ ]   Firma del chofer: [ ]"
+     ],
+     "clave": [
+      "Refrigerados a 4 °C o menos al recibir; congelados con signos de descongelación se rechazan (NOM-251, tabla de recepción).",
+      "El olor no demuestra inocuidad: mide con termómetro limpio y registra cada lote de riesgo.",
+      "Rechazar con una especificación escrita es un procedimiento, no un pleito con el proveedor."
+     ]
+    },
+    {
+     "t": "Almacenamiento seco y orden del refrigerador",
+     "obj": "Organizar almacén seco, refrigeradores y cuartos fríos con PEPS, separación de crudos y químicos y un orden que impida que lo crudo escurra sobre lo listo para comer.",
+     "texto": [
+      "El almacén es donde se pierde dinero y se acumula riesgo sin que nadie lo note. La NOM-251 pide almacenar los productos sobre mesas, tarimas o anaqueles, nunca directamente en el piso (numeral 5.4.3). La norma no fija una altura: dejar unos 15 cm entre el piso y el primer nivel, y separar los anaqueles de la pared, es una buena práctica que permite barrer debajo y descubrir excremento de roedores o cucarachas. El almacén seco debe estar limpio, ventilado y protegido del sol, y los costales abiertos de harina, arroz, azúcar o frijol pasan a recipientes cerrados y etiquetados.",
+      "<b>PEPS</b> significa «primeras entradas, primeras salidas». Está definido en la norma (3.46) y se exige en el manejo de inventarios (5.6.9). En la práctica, lo nuevo se acomoda atrás o abajo y lo anterior al frente, de modo que cualquier persona sepa sin preguntar qué se usa primero. Un matiz que muchos olvidan: si un producto llegó después pero vence antes, sale primero. PEPS ordena por fecha, no por costumbre ni por comodidad.",
+      "La otra regla es separar. La norma pide mantener los productos crudos apartados de los procesados o listos para consumir (5.5.4 y 5.5.5). En un refrigerador de un solo compartimento, el orden de arriba abajo sigue la temperatura de cocción que necesita cada alimento: listos para comer y cocinados arriba; después pescados y mariscos; luego carnes de res y cerdo en trozo; más abajo carnes molidas, y las aves hasta el fondo. Así, si algo escurre, cae sobre un alimento que de todos modos se cocinará a mayor temperatura. Todo va tapado, con charola si gotea, y sin sobrellenar, porque el aire frío necesita circular.",
+      "Los químicos de limpieza, los plaguicidas y los combustibles van en un área aparte, identificados, en su envase original o en uno rotulado, nunca en envases de alimentos ni encima de ellos. Un desengrasante en una botella de refresco reutilizada provoca de los accidentes químicos más evitables y más graves de una cocina. Tampoco metas al cuarto frío las cajas de cartón del proveedor: traen polvo, humedad y, a veces, cucarachas; trasvasa a recipientes limpios y conserva el lote en la etiqueta. Revisa en cada turno que las puertas cierren, que los empaques de hule estén enteros y que nada quede en el piso ni sin etiqueta."
+     ],
+     "comparar": [
+      "«Así no: el pollo marinado va en el entrepaño de arriba porque ahí cabe, el queso rallado abajo destapado y el cloro en la repisa de los lácteos para tenerlo a la mano.»",
+      "«Así sí: arriba lo listo para comer, en medio pescado y carnes, abajo las aves en charola; todo tapado, etiquetado y los químicos en su gabinete aparte.»"
+     ],
+     "caso": "Caso ficticio: Daniela, de 34 años, es chef ejecutiva de un hotel de negocios en San Luis Potosí. En una autoinspección del cuarto frío encuentra charolas de pollo marinado en el entrepaño superior, justo encima del salmón curado del desayuno y de los quesos ya rebanados; cajas de cartón del proveedor en el piso, y una botella de desinfectante en el anaquel de lácteos. El cocinero del turno le dice que siempre se ha acomodado así y que nunca ha pasado nada.",
+     "p": [
+      [
+       "¿Cómo debe reordenar Daniela los entrepaños del cuarto frío?",
+       "Listos para comer arriba; después pescado, carnes en trozo y molidas, y las aves hasta abajo en charola",
+       "Aves arriba por ser lo que más se usa, y los listos para comer abajo, donde el aire está más frío",
+       "Da igual el orden mientras todo esté a 7 °C o menos y cubierto con plástico autoadherible",
+       "El orden por temperatura de cocción evita que un escurrimiento crudo caiga sobre algo que no se volverá a cocinar. Poner las aves arriba es justo el riesgo que encontró, y tapar ayuda pero no impide que una charola gotee o se vuelque."
+      ],
+      [
+       "¿Qué hace con las cajas de cartón que están en el piso?",
+       "Trasvasar el producto a recipientes limpios y etiquetados sobre anaqueles",
+       "Subirlas a una tarima tal como llegaron, porque así conservan impresos el lote y los datos del proveedor",
+       "Dejarlas en el piso, siempre que el piso se trapee y se desinfecte con cloro todos los días",
+       "El cartón trae polvo, humedad y a veces plagas, y la norma pide almacenar sobre mesas, tarimas o anaqueles. El lote se conserva copiándolo a la etiqueta del recipiente; un piso limpio no autoriza a almacenar en él."
+      ],
+      [
+       "¿Cómo responde Daniela al «nunca ha pasado nada»?",
+       "Que un brote puede ocurrir sin que nadie lo rastree hasta la cocina, y que la norma pide separar crudos de listos",
+       "Que tiene razón, y que basta con revisar que el pollo no gotee antes de acomodarlo en el entrepaño de arriba",
+       "Que el problema es sobre todo de imagen, porque un huésped podría verlo y dejar una mala reseña del hotel",
+       "Muchas enfermedades transmitidas por alimentos no se reportan ni se conectan con su origen; que no se sepa no significa que no ocurra. Revisar que no gotee no elimina el riesgo, y el motivo de fondo es la salud del comensal, no la imagen."
+      ]
+     ],
+     "completar": [
+      "El sistema que ordena el inventario para que lo que entró o vence primero salga primero se llama ___.",
+      "PEPS"
+     ],
+     "relacionar": [
+      [
+       "Pollo crudo",
+       "Entrepaño inferior, en charola"
+      ],
+      [
+       "Salmón curado listo para comer",
+       "Entrepaño superior, tapado"
+      ],
+      [
+       "Desinfectante",
+       "Gabinete aparte, envase original rotulado"
+      ],
+      [
+       "Costal de harina abierto",
+       "Recipiente cerrado con etiqueta"
+      ],
+      [
+       "Producto que llegó después pero vence antes",
+       "Se usa primero"
+      ]
+     ],
+     "refl": "Haz un recorrido por el almacén seco y el refrigerador principal de la cocina donde trabajas, o de tu casa si aún no trabajas en una. 1) Describe el refrigerador entrepaño por entrepaño y marca lo que está fuera de orden. 2) Propón el orden correcto y explica en una línea el porqué de cada nivel. 3) Enlista cinco fallas del almacén seco: piso, etiquetas, químicos, cartón o PEPS. 4) Redacta un aviso de media página para la puerta del cuarto frío que cualquier persona del equipo entienda en 30 segundos.",
+     "modelo": "Modelo: «Refrigerador de la línea fría. Entrepaño 1: crema, quesos y una carne deshebrada cocida, bien. Entrepaño 2: filetes de pescado junto a un recipiente de pollo crudo destapado: mal. Entrepaño 3: verduras, bien. Orden propuesto: 1 listos para comer, 2 pescado, 3 res en trozo, 4 molidas, 5 aves en charola. Almacén seco: dos costales en el piso, arroz abierto sin etiqueta, aceite nuevo delante del viejo, un atomizador sin rótulo y cajas de cartón en la cámara. Aviso: ARRIBA LO QUE NO SE COCINA, ABAJO LO QUE SE COCINA MÁS. Todo tapado y con etiqueta.» Es buena porque es concreta, explica cada nivel y deja una regla fácil de recordar.",
+     "plantilla": [
+      "Mapa del refrigerador y revisión del almacén",
+      "Equipo: [nombre o número]   Temperatura medida: [ ] °C   Revisó: [ ]\nEntrepaño 1 (arriba): [listos para comer y cocinados]\nEntrepaño 2: [pescados y mariscos]\nEntrepaño 3: [res y cerdo en trozo]\nEntrepaño 4: [carnes molidas]\nEntrepaño 5 (abajo): [aves, en charola]\nAlmacén seco: piso libre [sí / no]   recipientes etiquetados [sí / no]   PEPS respetado [sí / no]\nQuímicos en área aparte y rotulados: [sí / no]\nCartón dentro de cámaras: [sí / no]\nCorrección y responsable: [ ]"
+     ],
+     "clave": [
+      "Almacena sobre mesas, tarimas o anaqueles; los 15 cm del piso son buena práctica, no cifra de la NOM.",
+      "PEPS ordena por fecha: lo que entró o vence primero, sale primero.",
+      "En el refrigerador, lo listo para comer arriba y las aves hasta abajo; los químicos, siempre aparte."
+     ]
+    },
+    {
+     "t": "Refrigeración, congelación y descongelación",
+     "obj": "Mantener refrigeradores y congeladores dentro de límite, reaccionar cuando fallan y descongelar solo con los métodos que permite la NOM-251.",
+     "texto": [
+      "El frío no mata a las bacterias: las frena. Un alimento contaminado sigue contaminado después de días en refrigeración y las bacterias vuelven a multiplicarse en cuanto el producto regresa a una temperatura cómoda para ellas. La NOM-251 pide que los equipos de refrigeración mantengan los alimentos a <b>7 °C o menos</b> (numeral 5.5.2). Muchas cocinas ajustan sus equipos más abajo, entre 1 y 4 °C, para tener margen cuando la puerta se abre cien veces en servicio; es una decisión prudente de cada cocina, no una cifra de la norma. Y hay una bacteria que no respeta del todo ese freno: <i>Listeria monocytogenes</i> crece, despacio, aun en refrigeración.",
+      "Para congelación, la norma no fija una cifra: pide que el producto se mantenga congelado (5.5.3). La referencia común de la industria es −18 °C o menos. Congelar tampoco mata a la mayoría de las bacterias: las detiene, y despiertan al descongelar. Mide cada equipo al inicio y al cierre del turno con un termómetro propio, no solo con la pantalla del aparato, y regístralo. Si un equipo marca fuera de límite, primero confirma con el termómetro, luego pasa los alimentos de mayor riesgo a otro equipo, reporta la falla y decide con la bitácora en la mano qué se conserva y qué se desecha.",
+      "Descongelar es donde más cocinas fallan. La NOM-251 (7.4.1) permite cuatro métodos: en refrigeración; como parte de la cocción; en horno de microondas, y con agua fría corriente. Prohíbe descongelar a temperatura <b>ambiente</b>. Una pierna de cerdo sobre la tarja toda la noche tiene la superficie en temperatura de riesgo durante horas mientras el centro sigue duro. En refrigeración, lo que descongela va en el entrepaño inferior, en charola y con etiqueta de la fecha en que salió del congelador. Con agua fría corriente, el producto va en bolsa cerrada y el chorro no se detiene. Del microondas, el producto pasa directo a la cocción.",
+      "Lo descongelado no se vuelve a congelar: así lo dice la norma. La razón no es solo la textura; cada ciclo da tiempo a las bacterias para multiplicarse y la segunda congelación las conserva. Planea con días de anticipación, porque una pieza grande puede tardar más de un día en descongelar en refrigeración. Si descongelaste de más, cocínalo y guárdalo refrigerado como un producto nuevo, con su propia etiqueta y fecha límite de uso."
+     ],
+     "comparar": [
+      "«Así no: el cocinero olvida sacar la carne, la deja en la tarja con agua tibia toda la mañana y lo que sobra lo regresa al congelador.»",
+      "«Así sí: la carne se pasa al refrigerador dos días antes según el plan; si hay urgencia, va en bolsa cerrada bajo agua fría corriente y se cocina al terminar.»"
+     ],
+     "caso": "Caso ficticio: Susana, de 46 años, es dueña y cocinera de una cocina económica en Irapuato. Un lunes a las 7:00 se da cuenta de que el viernes olvidó pasar el pollo del congelador al refrigerador, y tiene un pedido de 80 comidas para la 13:00. Su ayudante propone poner las bolsas en la tarja con agua tibia o dejarlas en el patio al sol. Además, el refrigerador vertical marca 9 °C en su pantalla, y Susana no sabe si es una falla real.",
+     "p": [
+      [
+       "¿Qué método de descongelación le conviene a Susana con el pollo?",
+       "Agua fría corriente, con el pollo en bolsa cerrada y el chorro sin detenerse, y cocinarlo en cuanto termine",
+       "Agua tibia en la tarja, cambiándola cada hora para que el pollo no se enfríe demasiado y descongele parejo",
+       "Dejarlo en la mesa cubierto con un trapo limpio, porque a esa hora la cocina todavía está fresca",
+       "El agua fría corriente es uno de los cuatro métodos permitidos y es rápido. El agua tibia estancada calienta la superficie hasta la temperatura de riesgo, y la mesa es descongelar a temperatura ambiente, que la NOM prohíbe."
+      ],
+      [
+       "Al terminar sobra pollo descongelado y crudo. ¿Qué hace?",
+       "Lo cocina y lo guarda refrigerado como producto nuevo, etiquetado",
+       "Lo vuelve a congelar crudo de inmediato para usarlo la semana siguiente y no desperdiciarlo",
+       "Lo deja en la tarja con agua hasta la tarde y lo cocina para la cena del personal",
+       "La NOM prohíbe volver a congelar lo descongelado. Cocinarlo y etiquetarlo lo convierte en un producto con control propio. Dejarlo horas en la tarja lo expone a la temperatura de riesgo."
+      ],
+      [
+       "El refrigerador vertical marca 9 °C en la pantalla. ¿Qué hace primero?",
+       "Confirmar con su termómetro, mover lo de mayor riesgo a otro equipo y reportar la falla",
+       "Bajar la perilla al máximo y esperar a que se recupere sin mover nada, porque es normal en temporada de calor",
+       "Ignorar la pantalla, porque los refrigeradores comerciales suelen marcar unos grados más que la realidad",
+       "Primero se confirma con un termómetro propio; si supera 7 °C, se protege lo de mayor riesgo y se reporta. Esperar sin mover nada deja los alimentos fuera de límite, y suponer que la pantalla miente sin medir es apostar."
+      ]
+     ],
+     "completar": [
+      "La NOM-251 prohíbe descongelar alimentos a temperatura ___.",
+      "ambiente"
+     ],
+     "refl": "Revisa los equipos de frío de la cocina donde trabajas o trabajarás. 1) Enlista cada refrigerador, cámara y congelador, con su temperatura medida hoy con termómetro propio y su límite. 2) Escribe paso a paso qué hace el equipo si un refrigerador supera 7 °C: quién mide, adónde se mueven los alimentos, a quién se avisa y cómo se decide qué se desecha. 3) Revisa cómo se descongela hoy y compáralo con los cuatro métodos permitidos. 4) Diseña un calendario semanal de descongelación para tus tres productos de mayor volumen.",
+     "modelo": "Modelo: «Cámara de carnes: 3 °C, bien. Refrigerador de la línea: 6 °C, en límite por apertura constante. Congelador horizontal: −20 °C, bien. Si un equipo supera 7 °C: el cocinero del turno confirma con termómetro de punzón, pasa carnes, lácteos y cocinados a la cámara, avisa al encargado y anota hora y temperatura; el encargado decide qué se desecha según el tiempo fuera de límite. Hoy descongelamos el pescado en la tarja sin agua corriendo: lo cambiamos a refrigeración. Calendario: el pollo del lunes se pasa el sábado; la carne del miércoles, el lunes.» Es buena porque usa mediciones reales, asigna responsables y corrige una práctica concreta.",
+     "plantilla": [
+      "Control de equipos de frío y descongelación",
+      "Fecha: [ ]   Turno: [ ]   Midió: [nombre]\nEquipo: [ ]   Hora: [ ]   Temperatura: [ ] °C   Límite: [refrigeración 7 °C o menos / congelado]\n¿Fuera de límite?: [sí / no]   Acción: [mover a / avisar a / desechar]\nDescongelación\nProducto: [ ]   Método: [refrigeración / cocción / microondas / agua fría corriente]\nSalió del congelador: [fecha y hora]   Uso previsto: [fecha]\nResponsable: [ ]"
+     ],
+     "clave": [
+      "El frío frena a las bacterias, no las mata; refrigeración a 7 °C o menos según la NOM-251.",
+      "Descongela solo en refrigeración, en la cocción, en microondas o con agua fría corriente; nunca a temperatura ambiente.",
+      "Lo descongelado no se vuelve a congelar: se cocina y se etiqueta como producto nuevo."
+     ]
+    },
+    {
+     "t": "Fechas, etiquetas internas y vida útil",
+     "obj": "Distinguir caducidad de consumo preferente, etiquetar todo lo que se abre o se prepara y retirar a tiempo lo vencido, sobre todo los alimentos listos para comer.",
+     "texto": [
+      "En un empaque puedes encontrar dos fechas con significados distintos. La <b>fecha de caducidad</b> marca el límite después del cual el producto no debe consumirse porque puede dejar de ser seguro. La <b>fecha de consumo preferente</b> indica hasta cuándo el fabricante garantiza la calidad, como sabor y textura, siempre que el producto se haya conservado como indica la etiqueta. Un producto caducado se retira y no se usa. Uno que pasó su consumo preferente no es automáticamente peligroso, pero muchas cocinas profesionales prefieren no usarlo; lo importante es que la regla esté escrita y no dependa del criterio de cada turno.",
+      "Las dos fechas valen con el empaque cerrado y en las condiciones indicadas. Al abrir una crema, un jamón o una salsa embotellada, la vida útil cambia: muchas etiquetas dicen «una vez abierto, consúmase en tantos días», y esa instrucción manda sobre la fecha impresa. Lo mismo ocurre con lo que tú produces: un caldo, una salsa verde, una carne deshebrada o un aderezo no traen fecha de fábrica. La tienes que poner tú.",
+      "Una buena <b>etiqueta</b> interna lleva cuatro datos: producto, fecha de elaboración o apertura, fecha límite de uso y <b>responsable</b>. Agrega los alérgenos si el producto los contiene. Usa etiquetas que se desprendan sin dejar residuos y, si te ayuda, un color por día de la semana, pero el color complementa la fecha escrita, no la sustituye. La vida útil de cada preparación la define tu cocina por escrito, con base en el tipo de producto, la indicación del fabricante de cada ingrediente y la experiencia; la NOM no trae una tabla de días por platillo, así que no inventes una cifra «oficial».",
+      "La razón de tanta disciplina tiene nombre: <i>Listeria monocytogenes</i>. Se multiplica en refrigeración en alimentos listos para comer, como carnes frías, quesos frescos de leche sin pasteurizar, ensaladas preparadas o pescado ahumado, y es especialmente grave en el embarazo, en personas mayores y en pacientes con defensas bajas. Como esos alimentos no se vuelven a cocinar, el tiempo en refrigeración es su principal control. Revisa fechas al abrir y al cerrar cada turno, aparta lo vencido en un área identificada para desecho y recuerda que el olor no avisa: si la etiqueta dice que se venció, se tira."
+     ],
+     "comparar": [
+      "«Así no: la ensalada de pollo está en un recipiente sin etiqueta y la cocinera calcula que la hizo antier, así que la sirve porque todavía huele bien.»",
+      "«Así sí: cada recipiente lleva producto, fecha de elaboración, uso límite y nombre de quien lo preparó; lo que no tiene etiqueta, no se sirve.»"
+     ],
+     "caso": "Caso ficticio: Paola, de 29 años, es nutrióloga de una residencia de adultos mayores en Campeche con 45 residentes, varios con diabetes y defensas bajas. Al revisar el refrigerador encuentra un recipiente de ensalada de pollo sin etiqueta; la cocinera cree que la hizo antier. También ve un paquete de jamón abierto cuya etiqueta dice que, una vez abierto, se consuma en pocos días, pero nadie anotó cuándo se abrió. La fecha de caducidad impresa vence hasta el próximo mes.",
+     "p": [
+      [
+       "¿Qué debe hacer Paola con la ensalada de pollo sin etiqueta?",
+       "Desecharla, porque sin etiqueta no puede saberse su vida útil y los residentes son población vulnerable",
+       "Servirla hoy al mediodía, porque si la cocinera recuerda que es de antier todavía está dentro de tiempo",
+       "Olerla y probarla antes de decidir: si conserva su aroma y sabor normales, puede servirse sin riesgo",
+       "Sin fecha no hay forma de demostrar que está en tiempo, y en una población vulnerable la duda se resuelve desechando. La memoria de alguien no es un registro, y el olor o el sabor no revelan bacterias como <i>Listeria</i>."
+      ],
+      [
+       "¿Qué hace con el jamón abierto?",
+       "Retirarlo: al abrirse manda el plazo tras apertura, y nadie anotó cuándo fue",
+       "Usarlo, porque la fecha de caducidad impresa en el empaque todavía no llega y eso es lo que vale",
+       "Congelarlo hoy mismo para detener cualquier bacteria y usarlo sin problema la siguiente semana",
+       "Una vez abierto, la instrucción de días tras apertura sustituye a la fecha impresa, que solo vale con el empaque cerrado. Congelar no mata a las bacterias: las detiene, y no corrige que se desconozca la fecha de apertura."
+      ],
+      [
+       "¿Qué regla le conviene implantar en la cocina de la residencia?",
+       "Que todo lo que se guarde lleve etiqueta con producto, elaboración o apertura, uso límite y responsable",
+       "Un color por día de la semana en lugar de escribir fechas, porque es más rápido y todos lo entienden",
+       "Etiquetar solo lo que se vaya a guardar más de tres días, para no perder tiempo con lo que se usa a diario",
+       "La etiqueta completa permite decidir sin depender de la memoria. El color ayuda solo si acompaña a la fecha escrita, y lo que se guarda poco tiempo es justo lo que más se confunde entre turnos."
+      ]
+     ],
+     "completar": [
+      "Una etiqueta interna completa lleva producto, fecha de elaboración o apertura, fecha límite de uso y ___.",
+      "responsable"
+     ],
+     "relacionar": [
+      [
+       "Fecha de caducidad",
+       "Después de ella el producto no se consume"
+      ],
+      [
+       "Fecha de consumo preferente",
+       "Garantía de calidad del fabricante"
+      ],
+      [
+       "Una vez abierto, consúmase en pocos días",
+       "Manda sobre la fecha impresa"
+      ],
+      [
+       "<i>Listeria monocytogenes</i>",
+       "Crece en refrigeración en listos para comer"
+      ],
+      [
+       "Salsa verde de la casa",
+       "Vida útil que define tu cocina por escrito"
+      ]
+     ],
+     "refl": "Haz una auditoría de fechas en la cocina donde trabajas o trabajarás. 1) Revisa diez recipientes o productos abiertos y anota cuántos tienen etiqueta completa, incompleta o ninguna. 2) Elige cinco preparaciones propias, como salsas, caldos o aderezos, y escribe para cada una su vida útil refrigerada y en qué la basas. 3) Enlista los alimentos listos para comer de tu menú donde <i>Listeria</i> sería un riesgo y quién los consume. 4) Redacta la regla de etiquetado en cinco líneas para pegarla junto al refrigerador.",
+     "modelo": "Modelo: «De diez recipientes, tres con etiqueta completa, cuatro sin responsable y tres sin nada. Vida útil que propongo: salsa verde cocida, 3 días; caldo de pollo, 3 días; aderezo de yogur, 2 días; frijoles refritos, 3 días; pico de gallo, se prepara el mismo día. Me baso en las indicaciones de los ingredientes y en que preferimos plazos cortos. Listos para comer con riesgo: jamón y queso fresco del desayuno, que comen dos huéspedes embarazadas por semana. Regla: sin etiqueta no se sirve; producto, elaboración, uso límite, responsable y alérgenos.» Es buena porque mide la situación real, explica de dónde salen los plazos y prioriza a las personas vulnerables.",
+     "plantilla": [
+      "Etiqueta interna y regla de vida útil",
+      "ETIQUETA\nProducto: [ ]\nElaborado o abierto: [fecha y hora]\nUsar antes de: [fecha]\nResponsable: [nombre]\nAlérgenos: [ ]\n\nREGLA DE LA COCINA\nPreparación | vida útil refrigerada | base de la decisión\n[ ] | [ ] días | [indicación del fabricante / experiencia / criterio conservador]\nRevisión de fechas: [al abrir y al cerrar cada turno]   Responsable: [ ]\nLo vencido va a: [área identificada para desecho]"
+     ],
+     "clave": [
+      "Caducidad es límite de seguridad; consumo preferente es garantía de calidad: no son lo mismo.",
+      "Al abrir un empaque manda la indicación de días tras apertura; lo que preparas tú lleva tu propia etiqueta.",
+      "<i>Listeria</i> crece en refrigeración: en los listos para comer, el tiempo es el control principal."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el procedimiento de recepción y almacenamiento de tu cocina. 1) Escribe las especificaciones de recepción de tus diez productos de mayor riesgo, con temperatura, empaque, aspecto y vida útil mínima. 2) Dibuja el mapa de tus refrigeradores y del almacén seco con el orden correcto. 3) Haz un calendario de descongelación para una semana de tu menú real. 4) Define la regla de etiquetado y la vida útil de cinco preparaciones propias. 5) Mide hoy cada equipo de frío con termómetro y registra las lecturas: la práctica en tu cocina es indispensable para que el procedimiento sirva.",
+    "entregable": "Un procedimiento de dos a tres páginas con tabla de especificaciones, mapa de almacenamiento, calendario de descongelación, regla de etiquetado y una primera hoja de lecturas de temperatura.",
+    "criterios": "Revisa: cada especificación se puede medir en la puerta, el mapa pone lo listo para comer arriba y las aves abajo, la descongelación usa solo métodos permitidos por la NOM-251, cada preparación tiene una vida útil escrita y justificada, y las lecturas se tomaron con termómetro propio."
+   },
+   "lab": {
+    "t": "Una mañana de recepción en un hospital de Guadalajara",
+    "obj": "Decidir con criterio en la recepción, el almacenamiento y el etiquetado de una cocina hospitalaria, donde los comensales son especialmente vulnerables.",
+    "esc": "<b>Alejandra</b>, de 38 años, es jefa de cocina de un hospital privado en Guadalajara que prepara unas 300 comidas diarias para pacientes y una cafetería para el personal. Entre sus pacientes hay mujeres embarazadas, adultos mayores y personas en tratamiento oncológico. Un jueves a las 7:30, con el desayuno en curso, llega el camión del proveedor de cárnicos y pescados.",
+    "e": [
+     [
+      "Escena 1: El pollo para el caldo de mediodía marca 9 °C en el centro de una pieza de muestra. El chofer dice que la caja estuvo cerca de la puerta y que en el fondo debe estar más frío. No hay otro proveedor que entregue antes de las 11:00.",
+      "Consigna: decide si aceptas o rechazas, escribe la frase que le dices al chofer y llena la línea de la bitácora de recepción. Propón cómo resolverás el menú del día."
+     ],
+     [
+      "Escena 2: En el mismo camión, el pescado congelado trae cristales grandes de hielo y piezas pegadas en bloque, y las cajas de verdura viajan debajo de cajas de carne cruda que escurren.",
+      "Consigna: decide qué haces con el pescado y con la verdura, y escribe dos cambios que exigirás al proveedor por escrito, con su justificación."
+     ],
+     [
+      "Escena 3: Al guardar lo aceptado, el termómetro de la cámara de lácteos marca 8 °C. Dentro hay yogures, gelatinas para pacientes con dieta blanda, quesos frescos y jamón para la cafetería.",
+      "Consigna: escribe los pasos en orden, con responsable, para confirmar la falla, proteger los alimentos y decidir qué se conserva y qué se desecha."
+     ],
+     [
+      "Escena 4: En la cámara de cocinados hay purés para dieta blanda sin etiqueta, un queso fresco abierto para la cafetería sin fecha de apertura y un pavo que se descongela en la tarja desde la noche anterior.",
+      "Consigna: decide qué pasa con cada uno y redacta la regla de etiquetado y descongelación que pegarás en la cocina, pensando en quiénes comen ahí."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué decisión es correcta con el pollo a 9 °C?",
+      "Rechazarlo, registrar el motivo con la temperatura medida y ajustar el menú del día con lo que hay",
+      "Aceptar solo las cajas del fondo, que según el chofer viajaron más frías que la caja de la puerta",
+      "Aceptarlo y cocinarlo de inmediato, porque el caldo hierve y eso elimina cualquier bacteria que traiga",
+      "La pieza medida supera los 4 °C de recepción y, en un hospital, la duda se resuelve a favor del paciente. Aceptar otras cajas sin medirlas es suponer, y hervir no compensa una cadena de frío rota: algunas bacterias forman toxinas o esporas que resisten la cocción."
+     ],
+     [
+      "¿Qué hace Alejandra con el queso fresco abierto y sin fecha de apertura?",
+      "Lo desecha, porque es un alimento listo para comer, no tiene fecha de apertura y ahí comen personas vulnerables",
+      "Lo usa solo en la cafetería del personal, porque ahí no comen pacientes embarazadas ni oncológicos",
+      "Lo conserva hasta la fecha de caducidad impresa, porque el empaque original todavía la muestra",
+      "El queso fresco es un alimento de riesgo para <i>Listeria</i>, que crece en refrigeración, y sin fecha de apertura no se sabe cuánto lleva. El personal también puede estar embarazado o tener defensas bajas, y la fecha impresa solo vale con el empaque cerrado."
+     ],
+     [
+      "¿Qué hace con el pavo que lleva la noche en la tarja?",
+      "Lo desecha y cambia el procedimiento a descongelar en refrigeración",
+      "Lo cocina enseguida a 74 °C, porque esa temperatura compensa las horas que pasó en la tarja",
+      "Lo pasa al refrigerador para terminar de descongelar ahí y lo usa al día siguiente sin problema",
+      "Descongelar a temperatura ambiente está prohibido por la NOM-251 y la superficie pasó horas en temperatura de riesgo, donde pudieron formarse toxinas que la cocción no destruye. Meterlo al refrigerador no borra esas horas. Lo que se corrige es el procedimiento."
+     ]
+    ],
+    "pl": [
+     "Protocolo de recepción y almacenamiento para cocina hospitalaria",
+     "Producto de riesgo: [ ]   Especificación: [temperatura, empaque, aspecto, vida útil]\nMedición en recepción: [ ] °C   Decisión: [acepto / rechazo]   Motivo: [ ]\nFrase al proveedor: [ ]\nPlan alterno si rechazo: [producto sustituto / ajuste de menú]\nEquipo de frío fuera de límite: confirma [quién] → mueve a [dónde] → avisa a [quién] → decide [quién y con qué criterio]\nEtiquetado: [producto, elaboración o apertura, uso límite, responsable, alérgenos]\nDescongelación permitida: [refrigeración / cocción / microondas / agua fría corriente]\nPoblación vulnerable que come aquí: [embarazo, mayores, defensas bajas] → regla extra: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Felipe recibe en una taquería de Culiacán carne de res empacada al vacío que marca 6 °C con termómetro de punzón. ¿Qué corresponde según la NOM-251?",
+     "Rechazarla, porque la NOM-251 pide que los refrigerados lleguen a 4 °C o menos",
+     "Aceptarla, porque el límite de refrigeración de la NOM-251 es de 7 °C o menos",
+     "Aceptarla, porque el empaque al vacío impide que las bacterias se multipliquen",
+     "Aceptarla si el proveedor firma que el producto estuvo poco tiempo fuera del frío"
+    ],
+    [
+     "En un hotel de León, Andrés recibe camarón congelado con escarcha gruesa, bloques pegados y líquido congelado en el fondo de la caja. ¿Qué indica?",
+     "Que el producto se descongeló y se volvió a congelar, así que se rechaza",
+     "Que viene bien congelado y la escarcha lo protege del aire durante el traslado",
+     "Que es normal en mariscos y basta con enjuagarlo antes de guardarlo en el congelador",
+     "Que puede aceptarse si el termómetro marca al menos −18 °C en ese momento"
+    ],
+    [
+     "La encargada de una cafetería en Toluca acomoda el único refrigerador del local. Tiene sándwiches listos, pechugas de pollo crudas y carne molida de res. ¿Qué orden es correcto de arriba abajo?",
+     "Sándwiches, carne molida y pollo crudo",
+     "Pollo crudo, carne molida y sándwiches",
+     "Carne molida, sándwiches y pollo crudo",
+     "Sándwiches, pollo crudo y carne molida"
+    ],
+    [
+     "En la escuela de San Luis Potosí, Esperanza quiere guardar los costales de frijol en el piso de la bodega porque el anaquel está lleno. ¿Qué le recuerdas?",
+     "La NOM-251 pide almacenar sobre mesas, tarimas o anaqueles, nunca en el piso",
+     "La NOM-251 permite usar el piso si el costal sigue cerrado y la bodega está seca",
+     "La NOM-251 exige exactamente 15 cm de separación del piso para cualquier producto",
+     "La NOM-251 solo regula el almacenamiento de productos refrigerados y congelados"
+    ],
+    [
+     "Susana tiene en su cocina de Irapuato dos paquetes iguales de queso panela: uno llegó el lunes con caducidad del día 25 y el otro llegó el martes con caducidad del día 20. ¿Cuál usa primero?",
+     "El del martes, porque vence antes",
+     "El del lunes, porque entró primero",
+     "Cualquiera, porque los dos están en fecha",
+     "El del día 25, porque estará más fresco"
+    ],
+    [
+     "Rigoberto necesita descongelar 10 kg de carne de cerdo para mañana en un comedor industrial de León. ¿Cuál método es correcto?",
+     "Pasarla hoy mismo al refrigerador, en charola y en el entrepaño inferior, con etiqueta",
+     "Dejarla en la mesa de trabajo cubierta toda la noche, con la cocina cerrada y fresca",
+     "Sumergirla en agua tibia estancada en la tarja y cambiar el agua al llegar en la mañana",
+     "Ponerla junto al horno encendido para que el calor la descongele más parejo"
+    ],
+    [
+     "En una marisquería de Campeche, el congelador horizontal marca −12 °C con el producto aún duro. El encargado pregunta qué cifra fija la NOM-251 para congelación. ¿Qué le respondes?",
+     "Ninguna: pide que el producto permanezca congelado; −18 °C es referencia de la industria",
+     "Exactamente −18 °C, y cualquier lectura más alta obliga a desechar el contenido completo",
+     "Exactamente −12 °C, que es el límite oficial para todos los productos congelados",
+     "Ninguna, porque la norma deja la congelación a criterio del fabricante del equipo"
+    ],
+    [
+     "Daniela encuentra en San Luis Potosí una botella de salsa abierta hace dos semanas. La etiqueta dice refrigérese y consúmase en 7 días una vez abierta, y la caducidad impresa es de dentro de tres meses. ¿Qué hace?",
+     "La desecha, porque al abrirla manda el plazo de siete días tras apertura y ya pasaron dos semanas",
+     "La usa, porque la fecha de caducidad impresa sigue vigente y es la que importa",
+     "La usa si no tiene moho visible ni cambio de olor al abrirla en ese momento",
+     "La congela para alargar su vida y la usa en las siguientes dos semanas"
+    ],
+    [
+     "Iván dirige un servicio de catering en Chihuahua que sirve carnes frías y quesos frescos en desayunos para empresas. ¿Por qué debe ser estricto con la vida útil de esos productos?",
+     "Porque <i>Listeria</i> crece en refrigeración y no habrá cocción antes de servir",
+     "Porque <i>Staphylococcus aureus</i> se multiplica más rápido en el frío que en el calor",
+     "Porque <i>Clostridium perfringens</i> se activa en los quesos cuando se refrigeran",
+     "Porque las carnes frías pierden sabor y eso puede generar quejas de los clientes"
+    ],
+    [
+     "Susana sacó de más unas piezas de pescado congelado y ya están descongeladas en el refrigerador de su cocina en Irapuato. No las usará hoy. ¿Qué es correcto?",
+     "Cocinarlas y guardarlas refrigeradas como producto nuevo, con su propia etiqueta",
+     "Volver a congelarlas crudas, porque estuvieron siempre en refrigeración",
+     "Dejarlas crudas en el refrigerador sin plazo, porque el frío las conserva",
+     "Volver a congelarlas crudas si se envuelven antes en plástico nuevo"
+    ]
+   ]
+  },
+  {
+   "t": "Preparación, cocción y servicio seguros",
+   "r": "Prevendrás la contaminación cruzada, desinfectarás frutas y verduras, cocerás con termómetro a las temperaturas de la NOM-251, enfriarás y recalentarás sin riesgos y mantendrás la comida segura en buffet, banquetes y comedores satélite.",
+   "lecciones": [
+    {
+     "t": "Contaminación cruzada y desinfección de frutas y verduras",
+     "obj": "Organizar la preparación para que lo crudo nunca contamine lo listo para comer y desinfectar frutas y verduras como pide la NOM-251.",
+     "texto": [
+      "La contaminación cruzada es el paso de microorganismos de un alimento, superficie, utensilio o mano a otro alimento. La ruta más peligrosa va de lo crudo a lo que ya no se cocinará: el cuchillo que deshuesó pollo y luego pica jitomate para la salsa; la tabla de la carne que solo se enjuaga y se usa para el cilantro; el trapo que limpia la mesa y después seca un plato. La famosa regla de los cinco segundos es falsa: Miranda y Schaffner (2016) midieron transferencia de bacterias de la superficie al alimento en menos de un segundo, y que la transferencia aumenta cuanto más húmedo es el alimento.",
+      "Separa en el espacio y en el tiempo. Si puedes, ten zonas distintas para crudos y para listos para comer. Si no, trabaja primero lo listo para comer y después lo crudo, y lava y desinfecta mesa, tabla y cuchillo entre uno y otro. Las tablas por color, por ejemplo una para aves, otra para carnes rojas, otra para pescado y otra para verduras, son una buena <b>práctica</b> muy útil, no un requisito de la NOM-251; funcionan solo si los colores se respetan y cada tabla se lava y desinfecta.",
+      "No laves el pollo crudo. En un estudio del Departamento de Agricultura de los Estados Unidos (USDA) de 2019, el 60 % de las personas que lavaron pollo crudo tenían bacterias en el fregadero después, y el 26 % las pasaron a la ensalada que prepararon enseguida. Lo que elimina las bacterias es la cocción a la temperatura correcta; el chorro de agua solo las salpica a la tarja, la mesa y lo que esté cerca. Si una pieza trae astillas de hueso o restos, retíralos con cuchillo o papel desechable, no bajo la llave.",
+      "Con frutas y verduras el reto es el contrario: muchas se comen crudas y no tienen un paso que elimine microorganismos. La NOM-251 (7.4.1, inciso f) pide lavarlas con agua, jabón y estropajo o cepillo, según el producto, y desinfectarlas con cloro u otro desinfectante de uso alimenticio. La norma no fija la concentración: sigue siempre la etiqueta del producto que compraste y respeta el tiempo de contacto. Agregar «un chorrito de más» no desinfecta mejor; deja residuos y sabor. Lava la lechuga hoja por hoja, quita las hojas exteriores dañadas y desinfecta en un recipiente exclusivo, nunca en la tarja donde se descongeló carne."
+     ],
+     "comparar": [
+      "«Así no: el cocinero corta el pollo, enjuaga la tabla con agua y en la misma pica el cilantro para los tacos, porque no hay tiempo de lavar.»",
+      "«Así sí: primero se pican cilantro, cebolla y jitomate ya desinfectados; después el pollo, y al terminar tabla y cuchillo se lavan, se enjuagan y se desinfectan.»"
+     ],
+     "caso": "Caso ficticio: Mauricio, de 27 años, es cocinero de un camión de comida en Culiacán que vende tacos de pollo asado y tostadas con lechuga, jitomate y cilantro crudos. En el camión solo caben una tabla, dos cuchillos y una tarja. El dueño le pide que lave el pollo crudo en la tarja para quitarle la baba antes de marinarlo, y en esa misma tarja Mauricio suele lavar la lechuga y el cilantro.",
+     "p": [
+      [
+       "¿Cómo debe organizar Mauricio el trabajo con una sola tabla?",
+       "Picar primero las verduras ya desinfectadas y después el pollo, desinfectando tabla y cuchillo al terminar",
+       "Cortar primero el pollo y luego las verduras, pasando un trapo húmedo limpio por la tabla antes de cambiar de alimento",
+       "Usar la misma tabla volteándola del otro lado para las verduras y lavarla a fondo solo al final del turno",
+       "Trabajar primero lo que se come crudo evita que lo toque algo contaminado por el pollo; al final se lava y desinfecta. Un trapo no desinfecta y puede esparcir bacterias, y el otro lado de la tabla se contamina con el escurrimiento y con las manos."
+      ],
+      [
+       "¿Qué le responde al dueño sobre lavar el pollo?",
+       "Que lavarlo salpica bacterias a la tarja y a lo que esté cerca, y que la cocción completa es la que las elimina",
+       "Que conviene lavarlo con agua caliente y un chorrito de cloro para que la baba no llegue a la plancha",
+       "Que puede lavarlo temprano, antes de que haya verduras en la tarja, y así no hay ningún riesgo",
+       "El estudio del USDA muestra que lavar pollo esparce bacterias en el fregadero y en otros alimentos. El cloro no vuelve seguro el lavado y deja residuos; lavarlo temprano contamina la tarja donde después irán las verduras."
+      ],
+      [
+       "¿Cómo debe desinfectar el cilantro y la lechuga?",
+       "Lavar con agua y jabón, y desinfectar en recipiente exclusivo siguiendo la etiqueta del producto",
+       "Remojarlos en el doble del desinfectante que indica la etiqueta para compensar que la tarja es la misma del pollo",
+       "Enjuagarlos solo con agua purificada, porque las hojas verdes casi no transmiten enfermedades",
+       "La NOM-251 pide lavar y desinfectar las verduras, y la concentración la marca la etiqueta del producto. Duplicar la dosis no corrige una tarja contaminada y deja residuos; las hojas que se comen crudas sí pueden transmitir bacterias y virus."
+      ]
+     ],
+     "completar": [
+      "Las tablas por color son una buena ___, no un requisito de la NOM-251.",
+      "práctica"
+     ],
+     "relacionar": [
+      [
+       "Tabla y cuchillo después de cortar pollo",
+       "Lavar y desinfectar antes de otro alimento"
+      ],
+      [
+       "Lechuga para ensalada",
+       "Agua, jabón y desinfectante según la etiqueta"
+      ],
+      [
+       "Pollo crudo",
+       "No se lava: se cuece a 74 °C o más"
+      ],
+      [
+       "Regla de los cinco segundos",
+       "Falsa: hay transferencia en menos de un segundo"
+      ],
+      [
+       "Trapo de limpiar mesas",
+       "No sirve para secar loza ni utensilios"
+      ]
+     ],
+     "refl": "Observa durante un turno la preparación en la cocina donde trabajas o trabajarás. 1) Dibuja un croquis del área de preparación y marca con flechas dos rutas por las que lo crudo podría llegar a lo listo para comer. 2) Escribe el orden de trabajo ideal para tu mesa principal durante la mañana. 3) Redacta el procedimiento de lavado y desinfección de frutas y verduras de tu cocina, con producto, dosis según su etiqueta, tiempo y recipiente. 4) Enlista los utensilios que necesitas separar o comprar y su costo aproximado.",
+     "modelo": "Modelo: «En la cocina del restaurante, la mesa de verduras está junto a la tarja donde se descongela pollo y el escurrimiento llega al borde. Segunda ruta: el mismo cuchillo pasa de la carne a la fruta del postre. Orden ideal: 7:00 verduras y fruta, 8:30 limpieza y desinfección, 9:00 carnes y aves. Procedimiento: retirar hojas dañadas, lavar con agua, jabón y cepillo, enjuagar y sumergir en la tina azul con el desinfectante a la dosis de su etiqueta y el tiempo que indica. Compras: tina exclusiva y dos tablas de color.» Es buena porque nombra rutas reales, ordena el trabajo y respeta la etiqueta del producto.",
+     "plantilla": [
+      "Plan contra la contaminación cruzada",
+      "Área: [ ]   Responsable: [ ]\nRutas de riesgo detectadas: 1) [ ] 2) [ ]\nOrden de trabajo: [hora] listos para comer → [hora] limpieza y desinfección → [hora] crudos\nTablas: [color] aves / [color] carnes / [color] pescado / [color] verduras\nFrutas y verduras: retirar dañadas → lavar con agua, jabón y [estropajo o cepillo] → desinfectar con [producto] a [dosis de la etiqueta] por [tiempo] en [recipiente exclusivo]\nPollo crudo: no se lava; astillas se retiran con [cuchillo o papel desechable]\nCompras necesarias: [ ]"
+     ],
+     "clave": [
+      "La contaminación cruzada más peligrosa va de lo crudo a lo que ya no se cocinará.",
+      "No laves el pollo crudo: la cocción elimina las bacterias y el agua solo las esparce.",
+      "Frutas y verduras: lavar con agua y jabón y desinfectar según la etiqueta; la NOM no fija la concentración."
+     ]
+    },
+    {
+     "t": "Cocción con termómetro: temperaturas que marca la NOM",
+     "obj": "Medir la temperatura interna correctamente y aplicar los mínimos de cocción de la NOM-251 a cada alimento de tu menú.",
+     "texto": [
+      "El color no dice si un alimento está cocido. Una hamburguesa puede dorarse por fuera y seguir cruda en el centro, y un pollo puede conservar un tono rosado junto al hueso estando bien cocido. La única forma confiable es medir la temperatura <b>interna</b> con termómetro de punzón, en la parte más gruesa, sin tocar hueso, grasa ni el fondo del recipiente. En piezas irregulares mide en dos o tres puntos y quédate con la lectura más baja. Limpia y desinfecta el punzón entre un alimento y otro, y comprueba el termómetro en punto de hielo, a 0 °C, como viste en el módulo 4.",
+      "La NOM-251 (numeral 7.3.1) fija temperaturas internas mínimas de cocción: <b>63 °C</b> para pescado, carne de res en trozo y huevo para consumo inmediato; <b>68 °C</b> para cerdo en trozo, carnes molidas de res, cerdo o pescado, carnes inyectadas y huevo que irá a un buffet; <b>74 °C</b> para aves, embutidos y alimentos rellenos. La lógica es sencilla: al moler o inyectar una carne, las bacterias de la superficie llegan al centro, y las aves cargan con frecuencia <i>Salmonella</i> y <i>Campylobacter</i>.",
+      "Encontrarás otras tablas. El USDA, por ejemplo, recomienda 74 °C para aves, 71 °C para carnes molidas y 63 °C para piezas enteras de res o cerdo con tres minutos de reposo. Son referencias valiosas para entender el porqué, pero <b>en México manda la NOM-251</b>. Una cocina puede fijar un estándar más estricto que la norma, como cocinar la carne molida a 71 °C; nunca uno menor. Si una receta extranjera indica una temperatura más baja que la NOM, la que vale en tu cocina es la de la norma.",
+      "Escribe la temperatura objetivo en cada receta estándar y en la hoja de producción, y registra las mediciones de los productos de mayor riesgo: aves, carnes molidas, rellenos y huevo para buffet. Si un producto no llega, la acción correctiva es directa: sigue cocinando y vuelve a medir; no se sirve porque ya tardó. En hornos de producción mide piezas de distintas posiciones, porque las orillas de la charola se cuecen antes que el centro. Y recuerda que alcanzar la temperatura de cocción no cierra el control: si después enfrías el alimento para usarlo otro día, empieza otro control que verás en la siguiente lección."
+     ],
+     "comparar": [
+      "«Así no: el cocinero corta una pechuga, ve que el jugo sale claro y manda toda la charola a la línea sin medir.»",
+      "«Así sí: el cocinero mide tres pechugas del centro de la charola, anota la más baja, 76 °C, y libera la charola; si una marca menos de 74 °C, regresa al horno.»"
+     ],
+     "caso": "Caso ficticio: Gerardo, de 52 años, es supervisor de un comedor industrial en Toluca que atiende a 900 trabajadores de una planta de autopartes. El menú del día incluye albóndigas de res y cerdo, pollo en mole y huevo revuelto para la barra del desayuno. Un cocinero nuevo mide las albóndigas en 64 °C y le dice que ya están, porque la res se cuece a 63 °C.",
+     "p": [
+      [
+       "¿Qué temperatura interna mínima exige la NOM-251 para las albóndigas?",
+       "68 °C, porque al molerla la contaminación de la superficie de la carne llega al centro de la pieza",
+       "63 °C, porque la mayor parte de la mezcla es carne de res y esa es su temperatura mínima",
+       "71 °C, porque es la cifra que da el USDA para carne molida y es la que rige en México",
+       "Las carnes molidas de res, cerdo o pescado llevan 68 °C en la NOM-251. El 63 °C es para res en trozo, no molida, y 71 °C es la referencia del USDA: una cocina puede adoptarla como estándar propio, pero no es la cifra de la norma mexicana."
+      ],
+      [
+       "¿Qué mínimo aplica al huevo revuelto que irá a la barra del desayuno?",
+       "68 °C, porque es huevo que se mantendrá en buffet",
+       "63 °C, porque la norma pone el huevo en el mismo grupo que el pescado y la carne de res en trozo",
+       "74 °C, porque cualquier alimento que va a un buffet se trata como si fuera un recalentado",
+       "La NOM distingue el huevo para consumo inmediato, 63 °C, del huevo para buffet, 68 °C, porque este pasará más tiempo antes de comerse. El 74 °C corresponde a aves, embutidos, rellenos y recalentado."
+      ],
+      [
+       "¿Cómo debe medir el pollo en mole?",
+       "En la parte más gruesa de varias piezas, sin tocar hueso, y anotar la lectura más baja de todas",
+       "En la salsa de la olla, porque el mole y las piezas de pollo siempre están a la misma temperatura",
+       "En una pieza de la orilla de la olla, que es la que primero se calienta y da una lectura rápida",
+       "La temperatura que importa es la del centro de la pieza, y se registra la más baja para cubrir las peores. La salsa puede estar más caliente que el interior del pollo, y la orilla da la lectura más alta, no la más segura."
+      ]
+     ],
+     "completar": [
+      "La temperatura ___ se mide con termómetro de punzón en la parte más gruesa del alimento.",
+      "interna"
+     ],
+     "relacionar": [
+      [
+       "Carne molida o inyectada",
+       "68 °C: la contaminación llegó al centro"
+      ],
+      [
+       "Aves y alimentos rellenos",
+       "74 °C como mínimo en la NOM"
+      ],
+      [
+       "Res en trozo y pescado",
+       "63 °C como mínimo en la NOM"
+      ],
+      [
+       "Tabla del USDA",
+       "Referencia útil; en México manda la NOM"
+      ],
+      [
+       "Lectura en pieza irregular",
+       "Varios puntos; se registra la más baja"
+      ]
+     ],
+     "refl": "Toma el menú de la cocina donde trabajas o trabajarás. 1) Enlista diez platillos con proteína animal y escribe junto a cada uno su temperatura interna mínima según la NOM-251 y en qué grupo de la norma cae. 2) Para los tres de mayor riesgo, describe dónde y cómo se mide: punto de inserción, número de piezas y momento. 3) Escribe la acción correctiva si no llega. 4) Diseña la columna de cocción de tu hoja de producción y llénala con una medición real si puedes.",
+     "modelo": "Modelo: «Hamburguesa: carne molida, 68 °C; nuestro estándar es 71 °C. Pechuga a la plancha: ave, 74 °C. Chile relleno de picadillo: relleno, 74 °C. Lomo de cerdo: cerdo en trozo, 68 °C. Medición: hamburguesa, en el centro de dos piezas por tanda, de lado; pechuga, en la parte más gruesa de tres piezas por charola. Si no llega: regresa a la plancha o al horno y se vuelve a medir; se anota la segunda lectura. Hoy: pechuga, charola 2, 77 °C, 12:40, Felipe.» Es buena porque cita el grupo de la norma, fija un estándar propio más estricto y deja una medición verificable.",
+     "plantilla": [
+      "Hoja de cocción con termómetro",
+      "Fecha: [ ]   Termómetro verificado en punto de hielo: [sí / no]\nPlatillo | grupo NOM | mínimo NOM | estándar de la casa | lectura | hora | quién\n[ ] | [ave / molida / trozo / pescado / huevo / relleno] | [63 / 68 / 74] °C | [ ] °C | [ ] °C | [ ] | [ ]\nPunto de medición: [parte más gruesa, sin hueso; número de piezas]\nSi no llega: [sigue cocinando y vuelve a medir]   Segunda lectura: [ ] °C"
+     ],
+     "clave": [
+      "El color engaña: la única prueba de cocción es la temperatura interna medida con termómetro.",
+      "NOM-251: 63 °C pescado, res en trozo y huevo inmediato; 68 °C cerdo en trozo, molidas, inyectadas y huevo de buffet; 74 °C aves, embutidos y rellenos.",
+      "Las tablas del USDA son referencia: puedes ser más estricto que la NOM, nunca menos."
+     ]
+    },
+    {
+     "t": "Enfriar y recalentar sin riesgos",
+     "obj": "Enfriar grandes volúmenes con el criterio de dos etapas de la FDA y recalentar a 74 °C como pide la NOM-251, sabiendo qué no puede rescatar el calor.",
+     "texto": [
+      "Enfriar es el paso más subestimado de una cocina y uno de los más ligados a brotes en grandes volúmenes. <i>Clostridium perfringens</i> forma esporas que sobreviven a la cocción y se multiplican cuando una olla grande de frijoles, guiso o barbacoa se enfría despacio; <i>Bacillus cereus</i> hace algo parecido con el arroz cocido que se queda a temperatura ambiente. Dejar que la olla se enfríe sola sobre la estufa antes de refrigerarla es un mito: es justo lo que les da tiempo de multiplicarse.",
+      "La NOM-251 no tiene un numeral que fije tiempos de enfriamiento. Por eso la referencia técnica más usada es el Código de Alimentos 2026 de la Administración de Alimentos y Medicamentos de Estados Unidos (FDA), que pide enfriar en <b>dos etapas</b>: de 57 °C a 21 °C en 2 horas, y de 21 °C a 5 °C en las 4 horas siguientes, 6 horas en total. Dilo así ante tu equipo: es un criterio de la FDA, no una obligación legal mexicana, pero es el mejor disponible y te permite demostrar control ante un verificador o un cliente corporativo. Lo que sí exige la NOM es que, ya frío, el alimento quede en refrigeración a 7 °C o menos.",
+      "Buenas prácticas para lograrlo: reparte en recipientes poco <b>profundos</b>, con no más de 5 a 10 cm de producto; usa baño de hielo con agua, no solo hielo, y mueve con frecuencia; corta las piezas grandes en trozos; deja los recipientes destapados o con la tapa entreabierta mientras bajan, protegidos de goteos y sin apilar, y tápalos al llegar a temperatura. El USDA aclara que la comida caliente puede ir directo al refrigerador en recipientes poco profundos. Registra hora y temperatura al inicio, a las 2 horas y al final; si una etapa no se cumple, aplica la acción correctiva que tu cocina haya escrito, y ante la duda, desecha.",
+      "Para recalentar, la NOM-251 (numeral 7.3.2) pide que el alimento alcance al menos <b>74 °C</b>. Llega ahí rápido, en estufa, horno o marmita, no en la vaporera del buffet, que tarda horas en subir. Recalienta solo la porción que vas a servir y no recalientes lo mismo una y otra vez. Y conoce el límite del calor: la toxina de <i>Staphylococcus aureus</i> resiste la temperatura, así que recalentar a 74 °C no rescata un alimento que pasó horas mal guardado."
+     ],
+     "comparar": [
+      "«Así no: la olla de 40 litros de frijoles se queda tapada en la estufa hasta el día siguiente y antes de servir se hierve bien, porque así se mata todo.»",
+      "«Así sí: los frijoles se reparten en charolas de 5 cm en baño de hielo, se anota la temperatura a las 2 horas y se refrigeran; al día siguiente se recalienta solo lo del servicio a 74 °C.»"
+     ],
+     "caso": "Caso ficticio: Esperanza, de 44 años, es cocinera de una escuela primaria de tiempo completo en San Luis Potosí que da de comer a 250 niñas y niños. Prepara frijoles para el día siguiente en una olla de 40 litros; termina de cocerlos a las 16:00 y sale a las 17:00. Su costumbre es dejar la olla tapada en la estufa hasta la mañana, o meterla así, completa, al refrigerador. La nueva directora le pide un procedimiento seguro.",
+     "p": [
+      [
+       "¿Qué debe hacer Esperanza con los frijoles al terminar de cocerlos?",
+       "Repartirlos en recipientes poco profundos, enfriarlos en baño de hielo con agua y después refrigerarlos",
+       "Dejar la olla tapada en la estufa toda la noche y hervirla bien por la mañana antes de servir a los niños",
+       "Meter la olla completa y tapada al refrigerador, porque el equipo de la escuela es comercial y enfría rápido",
+       "Los recipientes poco profundos y el baño de hielo bajan la temperatura a tiempo. La olla en la estufa da horas a <i>C. perfringens</i>, y hervir después no rescata todo; una olla de 40 litros enfría demasiado lento aunque el refrigerador sea comercial."
+      ],
+      [
+       "¿Qué meta de enfriamiento debe escribir en el procedimiento?",
+       "La referencia de la FDA: de 57 °C a 21 °C en 2 h y de 21 °C a 5 °C en las 4 h siguientes",
+       "La de la NOM-251, que fija bajar de la cocción a 7 °C en un máximo de cuatro horas",
+       "Ninguna en especial: basta con que la olla esté tibia al tacto antes de cerrar la cocina",
+       "La NOM-251 no tiene numeral de enfriamiento, así que se usa la referencia de la FDA, diciendo que es de la FDA. Atribuirle a la NOM una cifra que no tiene es un error frecuente, y el tacto no mide temperatura."
+      ],
+      [
+       "¿Cómo debe recalentar los frijoles al día siguiente?",
+       "Solo la porción del día, en estufa, hasta al menos 74 °C medidos",
+       "Toda la olla hasta que suelte el primer hervor en la superficie, sin necesidad de medir con termómetro",
+       "Toda la olla dos veces durante la jornada, para que se mantenga fresca hasta el último grupo",
+       "La NOM-251 pide recalentar a 74 °C o más, y conviene hacerlo solo con lo que se servirá. Un hervor en la superficie no garantiza el centro de una olla grande, y recalentar varias veces suma tiempo en temperatura de riesgo."
+      ]
+     ],
+     "completar": [
+      "Para enfriar rápido, reparte la preparación en recipientes poco ___ y usa baño de hielo con agua.",
+      "profundos"
+     ],
+     "relacionar": [
+      [
+       "Primera etapa de la FDA",
+       "De 57 °C a 21 °C en 2 horas"
+      ],
+      [
+       "Segunda etapa de la FDA",
+       "De 21 °C a 5 °C en 4 horas más"
+      ],
+      [
+       "Recalentado según la NOM-251",
+       "74 °C como mínimo, rápido"
+      ],
+      [
+       "Arroz cocido a temperatura ambiente",
+       "Riesgo de <i>Bacillus cereus</i>"
+      ],
+      [
+       "Toxina de <i>Staphylococcus aureus</i>",
+       "Resiste el recalentado"
+      ]
+     ],
+     "refl": "Elige la preparación de mayor volumen que se cocina con anticipación en la cocina donde trabajas o trabajarás, como frijoles, arroz, caldo o guiso. 1) Describe cómo se enfría hoy: recipiente, lugar, tiempo y quién la guarda. 2) Diseña el procedimiento nuevo en dos etapas, con tamaño de recipientes, método y horarios de medición, aclarando que la meta es de la FDA. 3) Escribe la acción correctiva si a las 2 horas no bajó de 21 °C. 4) Redacta el procedimiento de recalentado con temperatura, equipo y cantidad.",
+     "modelo": "Modelo: «Hoy el caldo de res de 30 litros se queda en la olla hasta las 18:00 y se mete completo a la cámara. Nuevo procedimiento: al terminar, 14:00, se cuela y se reparte en cuatro charolas de 6 cm; baño de hielo con agua en la tarja, se mueve cada 15 minutos. Mido a las 14:00, 16:00 y 20:00 con meta FDA: 21 °C a las 16:00 y 5 °C a las 20:00. Si a las 16:00 está arriba de 21 °C, se desecha y se revisa el método. Recalentado: solo lo del servicio, en estufa, hasta 74 °C medidos; lo que sobre no regresa a la olla.» Es buena porque tiene horas, cifras con su fuente y una acción correctiva clara.",
+     "plantilla": [
+      "Registro de enfriamiento y recalentado",
+      "Producto: [ ]   Cantidad: [ ] L o kg   Responsable: [ ]\nMétodo: [recipientes de ___ cm / baño de hielo / trozos]\nHora de inicio: [ ]   Temperatura: [ ] °C (meta FDA: desde 57 °C)\nA las 2 h: [hora] [ ] °C   meta FDA: 21 °C o menos\nA las 6 h: [hora] [ ] °C   meta FDA: 5 °C o menos\nRefrigerado a: [ ] °C (NOM-251: 7 °C o menos)\n¿Se cumplió?: [sí / no]   Acción correctiva: [ ]\nRecalentado: [fecha y hora] [ ] °C (NOM-251: 74 °C o más)   Cantidad: [ ]"
+     ],
+     "clave": [
+      "La NOM-251 no fija tiempos de enfriamiento; usa el criterio de dos etapas de la FDA y dilo así.",
+      "Recipientes de 5 a 10 cm y baño de hielo: una olla grande sobre la estufa es una incubadora.",
+      "Recalienta a 74 °C o más, rápido y solo lo que vas a servir; el calor no destruye todas las toxinas."
+     ]
+    },
+    {
+     "t": "Mantener, servir y transportar: buffet, banquetes y comedores satélite",
+     "obj": "Mantener los alimentos dentro de temperatura desde que salen de la cocina hasta el plato, en buffet, banquetes y transporte a comedores satélite.",
+     "texto": [
+      "Cuando el alimento ya está cocinado, el riesgo cambia de forma: ya no se trata de eliminar microorganismos, sino de no darles tiempo. La NOM-251 (numeral 7.3.3) pide mantener los alimentos calientes a más de <b>60 °C</b> y los fríos a <b>7 °C o menos</b>. Como referencia adicional, el USDA llama «zona de peligro» al rango de 4.4 a 60 °C y recomienda que la comida no pase más de 2 horas fuera de refrigeración, o 1 hora si el ambiente supera los 32 °C. En México, las cifras que te revisarán son las de la NOM; la regla de tiempo del USDA te sirve como criterio interno cuando un equipo falla o no lo hay.",
+      "En buffet, el equipo de mantenimiento conserva, no cocina ni recalienta: las charolas entran ya calientes, por encima de 60 °C, y se miden y anotan a intervalos fijos que tu cocina defina. Para los fríos, pon hielo debajo del recipiente y no solo alrededor, y sirve cantidades pequeñas que repongas seguido. No mezcles comida nueva con la que ya lleva horas en la línea: cambia la charola completa. Cada platillo lleva su propio cucharón, la barra tiene protector contra estornudos y el comensal toma un plato limpio en cada vuelta.",
+      "En banquetes, el reto es el volumen y la espera. Planea de atrás hacia adelante desde la hora de servicio, emplata por bloques, mantén cada bloque en equipo caliente o frío hasta el último momento y mide antes de que salga el primer mesero. Los meseros también manipulan alimentos: toman los platos por la orilla, sin dedos sobre la comida, y se lavan las manos al volver de recoger loza sucia.",
+      "En los comedores <b>satélite</b>, la comida se cocina en una cocina central y se transporta a otro sitio, así que el transporte es una etapa más del proceso. Usa contenedores térmicos limpios, precalentados para lo caliente y preenfriados para lo frío; separa crudos de listos para comer y calientes de fríos; mide y registra la temperatura al salir y al llegar, y deja por escrito qué hace quien recibe si algo llega fuera de límite. Si la comida caliente llega por debajo de 60 °C, no se resuelve sirviendo más rápido: se aplica el procedimiento, que puede ser recalentar a 74 °C para servir enseguida o desechar, según cuánto tiempo estuvo fuera de control."
+     ],
+     "comparar": [
+      "«Así no: la charola de arroz del buffet se rellena con arroz recién hecho encima del que lleva tres horas, y nadie mide porque el baño María está prendido.»",
+      "«Así sí: cada hora la persona de la barra mide y anota; la charola que se acaba se retira completa y entra una nueva por encima de 60 °C.»"
+     ],
+     "caso": "Caso ficticio: Iván, de 36 años, es gerente de un servicio de catering en Chihuahua que cocina en una cocina central y lleva comida a tres comedores de maquiladoras. Un día, el camión sale a las 11:30 con guisos a 80 °C y ensaladas en el mismo contenedor que los guisos. Por un bloqueo vial llega al tercer comedor a las 13:00, y el guiso marca 52 °C. El servicio empieza a las 13:30 y hay 200 trabajadores esperando.",
+     "p": [
+      [
+       "¿Qué debe hacer Iván con el guiso que llegó a 52 °C?",
+       "Medir, registrar y aplicar la acción correctiva escrita antes de servir: recalentar a 74 °C o desechar",
+       "Servir de inmediato para que no siga perdiendo temperatura mientras los trabajadores hacen fila",
+       "Pasar las charolas a la línea de buffet, cuyo baño María las subirá de temperatura en una hora",
+       "La comida caliente debe mantenerse a más de 60 °C; al llegar fuera de límite se aplica el procedimiento, como recalentar a 74 °C para servir enseguida o desechar según el tiempo. Servir rápido no corrige el problema, y el baño María conserva calor, no recalienta."
+      ],
+      [
+       "¿Qué cambio previene mejor que se repita?",
+       "Precalentar contenedores, medir al salir y al llegar y revisar rutas y horarios",
+       "Cocinar los guisos más temprano para tener margen si el camión se retrasa en el tráfico de la ciudad",
+       "Tapar las charolas con papel aluminio y meterlas en cajas de cartón para que conserven mejor el calor",
+       "Contenedores precalentados y registros en ambos extremos permiten detectar y corregir la pérdida de temperatura. Cocinar antes alarga el tiempo de espera, y el cartón con aluminio no sustituye a un contenedor térmico."
+      ],
+      [
+       "¿Cómo deben viajar las ensaladas?",
+       "A 7 °C o menos, separadas de los guisos calientes, en un contenedor preenfriado o con hielo",
+       "En el mismo contenedor que los guisos, bien tapadas para que no se mezclen olores ni sabores",
+       "A temperatura ambiente, porque el trayecto suele durar menos de cuatro horas desde la cocina central",
+       "La NOM-251 pide mantener los fríos a 7 °C o menos, y viajar junto a guisos calientes las calienta. Tapar evita olores, no el calor, y no hay ninguna regla que permita llevar ensaladas a temperatura ambiente durante horas."
+      ]
+     ],
+     "completar": [
+      "En los comedores ___, la comida se cocina en una cocina central y se transporta a otro sitio.",
+      "satélite"
+     ],
+     "relacionar": [
+      [
+       "Charola caliente en buffet",
+       "Más de 60 °C, medida y anotada"
+      ],
+      [
+       "Ensalada en barra fría",
+       "7 °C o menos, con hielo debajo"
+      ],
+      [
+       "Contenedor térmico para guiso",
+       "Precalentado antes de cargar"
+      ],
+      [
+       "Charola que lleva horas en la línea",
+       "Se cambia completa, no se rellena"
+      ],
+      [
+       "Zona de peligro del USDA",
+       "Referencia: de 4.4 a 60 °C"
+      ]
+     ],
+     "refl": "Elige un servicio de la cocina donde trabajas o trabajarás: buffet, banquete, línea de comedor o entrega a otro sitio. 1) Describe cómo se mantiene hoy la comida desde que sale de la cocina hasta el plato, con tiempos y equipos. 2) Marca en qué momentos se mide la temperatura y en cuáles no. 3) Diseña la hoja de control del servicio con límites, horarios de medición y responsable. 4) Escribe tres acciones correctivas: comida caliente bajo 60 °C, comida fría arriba de 7 °C y retraso del servicio.",
+     "modelo": "Modelo: «Desayuno buffet del hotel, 7:00 a 11:00. Hoy los huevos salen a las 6:40 y se rellenan sobre lo anterior; nadie mide la barra fría. Nuevo control: mido a las 7:00, 8:00, 9:00, 10:00 y 11:00; calientes por encima de 60 °C y fríos a 7 °C o menos; responsable, la cocinera de la barra. Acciones: caliente bajo 60 °C, se retira, y si lleva poco tiempo se recalienta a 74 °C en estufa, si no, se desecha; frío arriba de 7 °C, se cambia el hielo y se mide en 15 minutos, si sigue, se retira; retraso, se emplata por bloques pequeños.» Es buena porque fija horas, límites de la NOM y decisiones concretas.",
+     "plantilla": [
+      "Hoja de control de mantenimiento y transporte",
+      "Servicio: [buffet / banquete / comedor / satélite]   Fecha: [ ]   Responsable: [ ]\nPlatillo | hora | temperatura | límite | ¿cumple? | acción\n[ ] | [ ] | [ ] °C | [más de 60 °C / 7 °C o menos] | [sí / no] | [ ]\nTransporte: salida [hora] [ ] °C → llegada [hora] [ ] °C\nContenedor: [precalentado / preenfriado]   Separación: [calientes / fríos / crudos]\nSi llega fuera de límite: [recalentar a 74 °C y servir / desechar] según [tiempo fuera de control]"
+     ],
+     "clave": [
+      "NOM-251: calientes a más de 60 °C y fríos a 7 °C o menos durante todo el servicio.",
+      "La zona de peligro de 4.4 a 60 °C y la regla de 2 horas son referencias del USDA, útiles como criterio interno.",
+      "El transporte es una etapa del proceso: se mide al salir y al llegar y se actúa con un procedimiento escrito."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos dibuja el flujo completo de un platillo de tu menú, de la recepción al servicio. 1) Escribe cada etapa: recepción, almacenamiento, descongelación si aplica, preparación, cocción, enfriamiento, recalentado, mantenimiento y servicio o transporte. 2) Junto a cada etapa anota el límite que aplica y su fuente, separando lo que exige la NOM-251 de lo que tomas como referencia de la FDA o el USDA. 3) Define cómo se mide, quién y con qué frecuencia. 4) Escribe la acción correctiva de cada etapa. 5) Si puedes, prepara el platillo y llena el registro real de una tanda: la práctica en tu cocina es indispensable.",
+    "entregable": "Un diagrama de flujo de una página con límites, fuente de cada límite, forma de medir, responsable y acción correctiva por etapa, más un registro de una tanda real.",
+    "criterios": "Revisa: todas las etapas del platillo aparecen en orden, cada límite cita su fuente correcta y no atribuye a la NOM cifras que no tiene, las mediciones dicen quién, cómo y cuándo, cada acción correctiva es concreta y el registro tiene lecturas reales."
+   },
+   "lab": {
+    "t": "Un banquete de 400 personas en Torreón",
+    "obj": "Controlar la contaminación cruzada, la cocción, el enfriamiento y el mantenimiento de temperaturas en un evento de gran volumen, con tiempos y límites claros.",
+    "esc": "<b>Ximena</b>, de 31 años, es coordinadora de producción de un salón de eventos en Torreón. El sábado hay una boda de 400 personas en julio, con temperaturas exteriores arriba de 35 °C. Menú: crema de champiñones, pechuga rellena de espinaca y queso, arroz blanco y ensalada verde con aderezo de la casa. El servicio del plato fuerte está programado para las 21:00 y cuenta con seis cocineros y veinte meseros.",
+    "e": [
+     [
+      "Escena 1: El viernes por la tarde, en la única mesa grande, un cocinero abre pechugas crudas para rellenarlas mientras otro, en el otro extremo, corta lechuga para la ensalada. Hay dos tablas y una tarja doble.",
+      "Consigna: reorganiza el trabajo del viernes con orden, separación, limpieza y desinfección, e indica cómo se lava y desinfecta la lechuga."
+     ],
+     [
+      "Escena 2: El sábado, las primeras charolas de pechuga rellena salen del horno. El cocinero mide dos piezas del centro de una charola: 70 °C y 72 °C. Dice que ya están porque el jugo sale claro.",
+      "Consigna: decide qué pasa con esas charolas, qué temperatura aplica y por qué, y cómo medirás las siguientes tandas."
+     ],
+     [
+      "Escena 3: Para adelantar, la crema y el arroz se cocinaron el viernes. A las 23:00 la crema sigue en una olla de 60 litros sobre la estufa apagada y el arroz está en una tina grande tapada sobre la mesa.",
+      "Consigna: escribe el plan de enfriamiento en dos etapas, aclarando que la meta es de la FDA, qué haces hoy con lo que ya está así y cómo recalentarás el sábado."
+     ],
+     [
+      "Escena 4: El sábado, la ceremonia se retrasa una hora. Los platos fuertes ya emplatados esperan en un pasillo sin clima y las ensaladas con aderezo están servidas en las mesas desde las 20:00.",
+      "Consigna: decide qué haces con los platos y las ensaladas y escribe cómo organizarás el emplatado por bloques para que no vuelva a pasar."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué decisión es correcta con las pechugas rellenas a 70 °C y 72 °C?",
+      "Regresarlas al horno hasta 74 °C o más, porque son ave y además van rellenas",
+      "Liberarlas, porque superan los 68 °C que pide la norma para carnes en trozo como la pechuga",
+      "Liberarlas si el jugo sale claro, porque ese es un indicador aceptado de cocción en aves",
+      "Las aves y los rellenos llevan 74 °C como mínimo en la NOM-251. El 68 °C corresponde a cerdo en trozo y molidas, no a aves, y el color del jugo no es una prueba confiable de cocción."
+     ],
+     [
+      "¿Qué hace Ximena con la crema que a las 23:00 sigue en la olla de 60 litros?",
+      "Desecharla si no puede demostrar el enfriamiento y, en adelante, enfriar en recipientes bajos con hielo",
+      "Meterla así a la cámara y recalentarla el sábado a 74 °C, lo que elimina cualquier riesgo que haya quedado",
+      "Dejarla tapada hasta mañana, porque la crema hirvió y una olla tapada no deja entrar bacterias",
+      "Una olla de 60 litros que se enfría sola pasa horas en temperatura de riesgo, donde <i>C. perfringens</i> se multiplica; recalentar no deshace todo el daño. Tapar no impide que crezcan las esporas que ya están dentro."
+     ],
+     [
+      "¿Qué hace con las ensaladas con aderezo que están en las mesas desde las 20:00, si el servicio será a las 22:00?",
+      "Retirarlas y servir ensaladas nuevas desde la cámara fría en el momento en que los invitados se sienten",
+      "Dejarlas, porque la regla del USDA permite dos horas fuera de refrigeración y apenas se cumplirán",
+      "Rociarlas con más aderezo frío antes de que lleguen los invitados para bajarles la temperatura",
+      "La NOM-251 pide mantener los fríos a 7 °C o menos, y dos horas sobre la mesa no lo cumplen, aunque el salón tenga clima; si el ambiente supera 32 °C, la referencia del USDA baja a una hora. Agregar aderezo frío no enfría la ensalada ni borra el tiempo que pasó fuera."
+     ]
+    ],
+    "pl": [
+     "Plan de control de temperaturas para un banquete",
+     "Evento: [ ]   Personas: [ ]   Hora de servicio: [ ]   Responsable: [ ]\nPreparación: listos para comer [hora] → limpieza y desinfección [hora] → crudos [hora]\nCocción: platillo [ ] grupo NOM [ ] mínimo [ ] °C   lecturas [ ] °C   quién [ ]\nEnfriamiento (meta FDA): inicio [hora] [ ] °C → 2 h [ ] °C (≤ 21 °C) → 6 h [ ] °C (≤ 5 °C)\nRecalentado (NOM-251): [ ] °C (74 °C o más)\nMantenimiento (NOM-251): calientes más de 60 °C   fríos 7 °C o menos\nEmplatado por bloques: [número de bloques, hora de cada uno]\nPlan ante retraso: [qué se detiene, qué se mantiene, qué se desecha]"
+    ]
+   },
+   "quiz": [
+    [
+     "En la taquería de Culiacán, Felipe corta pescado crudo para los tacos de pescado y quiere usar la misma tabla para picar el pepino de una ensalada. ¿Qué es correcto?",
+     "Lavar y desinfectar tabla y cuchillo antes de picar el pepino, o mejor picarlo primero",
+     "Pasar un trapo húmedo con jabón por la tabla y seguir, porque el pescado irá cocido",
+     "Enjuagar la tabla con agua caliente, que es suficiente para quitar las bacterias",
+     "Usar la tabla sin lavar porque el limón de la ensalada elimina las bacterias"
+    ],
+    [
+     "Mauricio agregará hamburguesas al menú del camión de comida en Culiacán y el dueño quiere fijar la temperatura de cocción. ¿Qué mínimo marca la NOM-251?",
+     "68 °C, por ser carne molida",
+     "63 °C, por ser carne de res",
+     "71 °C, por ser la cifra oficial",
+     "74 °C, como cualquier carne"
+    ],
+    [
+     "En la cocina del hospital de Guadalajara, Alejandra revisa el menú: pescado al horno, pechuga rellena y lomo de cerdo. ¿Qué combinación de mínimos de la NOM-251 es correcta?",
+     "Pescado 63 °C, pechuga rellena 74 °C y lomo 68 °C",
+     "Pescado 68 °C, pechuga rellena 74 °C y lomo 63 °C",
+     "Pescado 63 °C, pechuga rellena 68 °C y lomo 74 °C",
+     "Pescado 74 °C, pechuga rellena 68 °C y lomo 63 °C"
+    ],
+    [
+     "Daniela, en un hotel de San Luis Potosí, explica al equipo de dónde sale la meta de enfriar de 57 °C a 21 °C en 2 horas y a 5 °C en 4 horas más. ¿Qué dice?",
+     "Es un criterio de la FDA; la NOM-251 no fija tiempos de enfriamiento",
+     "Es el numeral de enfriamiento de la NOM-251, obligatorio en todo el país",
+     "Es un requisito del Distintivo H que sustituye a lo que pide la NOM-251",
+     "Es una recomendación de la OMS que forma parte de sus cinco claves"
+    ],
+    [
+     "En un comedor de Toluca sobran 25 litros de arroz cocido a las 15:00. Gerardo quiere dejarlo en la olla hasta que se enfríe para no calentar la cámara. ¿Qué le dices?",
+     "Que lo reparta en charolas poco profundas, con baño de hielo, y lo refrigere",
+     "Que tiene razón: meter comida caliente al refrigerador está prohibido y daña los equipos",
+     "Que lo deje en la olla, pero tapado, para que no le caigan bacterias del ambiente",
+     "Que lo enfríe en la olla y lo recaliente al otro día a 74 °C, lo que elimina el riesgo"
+    ],
+    [
+     "Susana tiene un guiso que pasó la noche fuera del refrigerador en su cocina de Irapuato. Su ayudante propone hervirlo bien para servirlo. ¿Qué es correcto?",
+     "Desecharlo: algunas toxinas, como la de <i>S. aureus</i>, resisten el calor",
+     "Hervirlo diez minutos, porque a esa temperatura no sobrevive ninguna toxina",
+     "Recalentarlo a 74 °C y servirlo, porque eso es lo que pide la NOM-251",
+     "Servirlo frío, porque las bacterias solo se multiplican cuando hay calor"
+    ],
+    [
+     "Andrés supervisa el buffet de desayuno de un hotel en León y la charola de chilaquiles marca 55 °C. ¿Qué indica la NOM-251?",
+     "Que debe mantenerse a más de 60 °C, así que se aplica la acción correctiva",
+     "Que está bien, porque la NOM-251 permite mantener calientes a partir de 50 °C",
+     "Que está bien mientras no pasen cuatro horas desde que salió de la cocina",
+     "Que basta subir el baño María y medir de nuevo al terminar el servicio"
+    ],
+    [
+     "En el catering de Chihuahua, Iván revisa la ensalada de la barra fría a 10 °C. ¿Qué hace?",
+     "La retira o corrige: la NOM-251 pide fríos a 7 °C o menos",
+     "La deja: el límite de la NOM-251 para fríos en exhibición es de 10 °C",
+     "La deja si no han pasado dos horas, porque solo cuenta la regla del USDA",
+     "Le agrega hielo encima de las hojas y la deja en la barra el resto del servicio"
+    ],
+    [
+     "Gerardo envía comida de la cocina central del comedor de Toluca a un comedor satélite de la misma planta. ¿Qué práctica es la más completa para el transporte?",
+     "Contenedores precalentados o preenfriados, separados, con medición al salir y llegar",
+     "Contenedores bien sellados con todo junto, para que el calor de los guisos ayude a todos",
+     "Medir solo al llegar al comedor, porque es donde se sirve la comida a los trabajadores",
+     "Transportar la comida tibia para recalentarla en el comedor justo antes de servirla"
+    ],
+    [
+     "Ximena ve a un mesero de un banquete en Torreón tomar los platos con el pulgar sobre el arroz y luego recoger loza sucia. ¿Qué corrección es la adecuada?",
+     "Tomar los platos por la orilla y lavarse las manos después de recoger loza sucia",
+     "Que use guantes todo el evento, así no tiene que lavarse las manos",
+     "Que use gel con alcohol entre mesas en lugar de lavarse las manos",
+     "Que cambie de servilleta entre mesas para no ensuciar los platos"
+    ]
+   ]
+  }
+ ]
+}
