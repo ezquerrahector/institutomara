@@ -1,0 +1,826 @@
+{
+  "modulos": [
+    {
+      "t": "Cobrar en línea sin sustos: formas de pago, fraudes y conciliación",
+      "r": "Elegir formas de pago con su costo real, prevenir fraudes y contracargos, y cuadrar cada depósito con cada venta.",
+      "lecciones": [
+        {
+          "t": "Formas de pago en línea: tarjeta, meses sin intereses, transferencia, efectivo en tiendas y contra entrega",
+          "obj": "Elegir las formas de pago de tu tienda sabiendo cuánto te cuesta cada una, cuándo te llega el dinero y qué riesgo corres.",
+          "texto": [
+            "En México casi nadie paga en línea de una sola forma. Según el Estudio de Venta Online 2026 de la AMVO, el 69 % de los compradores usó tarjeta de débito, el 54 % de crédito, el 23 % efectivo en tiendas, el 20 % transferencia y el 14 % pago contra entrega. Y no encontrar su forma de pago es una de las razones para abandonar una compra. La meta es cubrir a la mayoría de tus clientes sabiendo qué te cuesta cada opción, cuándo llega el dinero y qué riesgo corres.",
+            "Con <b>tarjeta</b> cobras por medio de una pasarela de pago. Un ejemplo real de noviembre de 2026: 3.49 % + $4 + IVA si quieres el dinero al instante y 2.95 % si aceptas recibirlo a 30 días; para comparar, a los dos les sumamos los $4 y el IVA (verifica la tarifa vigente de tu pasarela). En una venta de $800 son $37.03 contra $32.02: pagas $5.01 por tener el dinero hoy. Los <b>meses sin intereses</b> (MSI) cuestan aparte: en ese ejemplo, la <b>sobrecomisión</b> de 3 MSI es 4.69 % y la de 12 MSI, 12.89 %, más IVA, y se suma a la base. Los mismos $800 a 12 MSI te cuestan $156.65, casi el 20 % del precio. El cliente no paga intereses: los pagas tú.",
+            "La <b>transferencia</b> (SPEI, o DiMo con el número de celular, ambos de Banxico) llega en segundos a tu cuenta, no paga comisión de pasarela y no tiene contracargos. Su riesgo es otro: los comprobantes falsos, que verás en la lección 5.3. El <b>efectivo en tiendas</b> se paga con una referencia que genera la pasarela; en el ejemplo cuesta parecido a la tarjeta y el dinero se libera en hasta 3 días. Muchas referencias vencen sin pagarse, así que no apartes mercancía más de un día o dos.",
+            "El <b>pago contra entrega</b> da confianza a quien no te conoce, pero el riesgo es tuyo: si el cliente no está o se arrepiente, pagas la ida y la vuelta del envío. Además, la paquetería suele cobrar por recaudar y te deposita días después (verifica sus condiciones). Úsalo en entregas locales o pide un anticipo que cubra el envío. Y si anuncias meses sin intereses, la suma de los pagos debe ser igual al precio de contado: si cobras más, el anuncio puede inducir a error (módulo 7)."
+          ],
+          "comparar": [
+            "«Así no: Activo 12 meses sin intereses en toda la tienda porque la gente lo pide, y acepto contra entrega en todo el país sin anticipo.»",
+            "«Así sí: Calculo cuánto me deja cada forma de pago, doy 3 MSI sólo desde $1,200 y acepto contra entrega en mi ciudad o con anticipo.»"
+          ],
+          "caso": "Caso ficticio: Marisol, de 36 años, vende en Mexicali lámparas de madera torneada que hace con su papá. Cada lámpara cuesta $1,450 en su tienda propia; hacerla le cuesta $520, paga $180 de envío y $45 de empaque. Su pasarela de ejemplo cobra 3.49 % + $4 + IVA con dinero inmediato y suma una sobrecomisión de 4.69 % + IVA por 3 MSI y de 12.89 % + IVA por 12 MSI. Una amiga le insiste en activar 12 meses sin intereses porque «todos lo piden». El mismo día, una clienta de otro estado le escribe que sólo compra si puede pagar contra entrega.",
+          "p": [
+            [
+              "¿Cuánto le cuesta a Marisol cobrar una lámpara a 12 MSI y cuánto le deja ese pedido?",
+              "$280.15 de comisión; le quedan $424.85 en vez de $641.66 de contado",
+              "$186.91 de comisión, el 12.89 % del precio; le quedan $518.09",
+              "$63.34, lo mismo que de contado, porque los meses los absorbe el banco",
+              "La sobrecomisión se suma a la base: ($1,450 × 16.38 % + $4) × 1.16 = $280.15, y $1,450 − $520 − $180 − $45 − $280.15 = $424.85. De contado la comisión es $63.34 y le quedan $641.66. Usar sólo el 12.89 % olvida la base, el cargo fijo y el IVA. Y el banco no absorbe nada: la sobrecomisión la paga quien vende."
+            ],
+            [
+              "¿Qué decisión sobre meses sin intereses es más sensata para Marisol?",
+              "Dar sólo 3 MSI, que le dejan $562.77 por lámpara, y medir si suben las ventas",
+              "Activar 12 MSI con un precio a meses más alto para recuperar la sobrecomisión",
+              "Quitar la tarjeta de crédito para no pagar nunca una sobrecomisión por meses",
+              "Con 3 MSI la comisión es ($1,450 × 8.18 % + $4) × 1.16 = $142.23 y el pedido aún deja $562.77; si las ventas suben, puede evaluar más plazos. Cobrar más a meses y llamarlo «sin intereses» engaña al cliente. Quitar el crédito deja fuera a muchos compradores: el 54 % pagó con crédito, según la AMVO."
+            ],
+            [
+              "¿Cómo debe responder Marisol a la clienta que sólo quiere pagar contra entrega desde otro estado?",
+              "Ofrecerle transferencia o efectivo en tiendas, o contra entrega con un anticipo que cubra el envío",
+              "Aceptar contra entrega sin anticipo, porque así la clienta confía y el riesgo de rechazo es bajo",
+              "Explicarle que su tienda sólo atiende a clientes que pagan con tarjeta de crédito o de débito",
+              "Si la clienta rechaza el paquete, Marisol paga ida y vuelta: $360 de envío por una lámpara que regresa. Ofrecer alternativas o un anticipo cuida la confianza y el dinero. Aceptar sin anticipo traslada todo el riesgo a Marisol, y negarse en seco pierde a una clienta que sí quiere comprar."
+            ]
+          ],
+          "completar": [
+            "Los meses sin intereses no son gratis: la ___ se suma a la comisión base y sale de tu margen.",
+            "sobrecomisión"
+          ],
+          "relacionar": [
+            [
+              "Tarjeta con dinero inmediato",
+              "Comisión más alta a cambio de liquidez"
+            ],
+            [
+              "Meses sin intereses",
+              "Sobrecomisión que paga quien vende"
+            ],
+            [
+              "Transferencia por SPEI o DiMo",
+              "Sin contracargo, pero se verifica en tu banca"
+            ],
+            [
+              "Efectivo en tiendas",
+              "Referencia que puede vencer sin pagarse"
+            ],
+            [
+              "Pago contra entrega",
+              "Riesgo de pagar ida y vuelta del envío"
+            ]
+          ],
+          "refl": "Tu mapa de formas de pago (20 min). 1) Anota las formas de pago que aceptas o planeas aceptar. 2) Busca la tarifa vigente de tu pasarela y calcula el costo de cobrar tu producto más vendido con dinero inmediato, a 30 días y a 3 MSI. 3) Calcula cuánto te queda del pedido en cada caso. 4) Decide qué métodos ofreces, desde qué monto das MSI y en qué condiciones aceptas contra entrega. 5) Escribe el texto que verá el cliente en tu página de pagos.",
+          "modelo": "Modelo: «Producto: cojín bordado de $690; producto $250, envío $150, empaque $30. Con la tarifa de ejemplo, cobrar al instante cuesta $32.57 y me quedan $227.43; a 30 días, $28.25 y me quedan $231.75; a 3 MSI, $70.11 y me quedan $189.89. Acepto débito, crédito, transferencia y efectivo en tiendas. MSI sólo desde $1,500. Contra entrega sólo en mi ciudad. Texto: Paga con tarjeta, transferencia o efectivo en tiendas; 3 meses sin intereses en compras desde $1,500, mismo precio que de contado.» Es buena porque calcula lo que queda con cada método y fija reglas claras.",
+          "plantilla": [
+            "Mi política de cobro",
+            "Producto o ticket típico: $[ ]\nProducto + envío + empaque: $[ ]\nTarjeta inmediata: comisión $[ ] → me queda $[ ]\nTarjeta a [ ] días: comisión $[ ] → me queda $[ ]\nMSI que ofrezco: [ ] desde $[ ] → comisión $[ ] → me queda $[ ]\nTransferencia: [sí / no]  Cómo la verifico: [ ]\nEfectivo en tiendas: [sí / no]  Apartado máximo: [ ] horas\nContra entrega: [no / sólo en ( ) / con anticipo de $( )]\nTexto para mi página de pagos: [ ]"
+          ],
+          "clave": [
+            "Cada forma de pago tiene costo, tiempo de liberación y riesgo: elige con números, no por costumbre.",
+            "La sobrecomisión de los meses sin intereses sale de tu margen; ofrécelos sólo donde el pedido lo aguanta.",
+            "Contra entrega y efectivo en tiendas traen pedidos que no se concretan: pon reglas de anticipo y de apartado."
+          ]
+        },
+        {
+          "t": "Contracargos: por qué ocurren, cómo prevenirlos y cómo defenderte con evidencia",
+          "obj": "Reconocer los motivos de un contracargo, detectar pedidos de riesgo antes de enviar y armar la evidencia para defenderte.",
+          "texto": [
+            "Un <b>contracargo</b> ocurre cuando el titular de una tarjeta desconoce o reclama un cargo ante su banco y el banco le regresa el dinero. La pasarela te descuenta ese monto y, a veces, un cargo por gestión. Los motivos más comunes son tres: <b>fraude</b> (alguien usó una tarjeta robada), <b>«no recibí»</b> y <b>«no es como se describe»</b>. También hay fraude amistoso, cuando el cliente recibe y luego desconoce el cargo, y confusiones porque el nombre que aparece en el estado de cuenta no se parece al de tu tienda. Plazos y costos dependen del contrato con tu pasarela: verifícalos.",
+            "Perder uno duele más de lo que parece. Si vendes una hamaca de $1,200 que te costó $430, pagaste $160 de envío y $53.22 de comisión, y el banco revierte el cargo, te quitan los $1,200 y no recuperas los $643.22 que ya gastaste (la comisión, por lo general, no se devuelve; verifica): en vez de ganar $556.78, pierdes $643.22. La prevención empieza antes de enviar: activa <b>3-D Secure</b>, la autenticación del banco que pide una clave o confirmación en la app y que, por lo general, traslada al banco la responsabilidad por fraude. Usa un nombre reconocible en el estado de cuenta y describe el producto con medidas, material y defectos.",
+            "Aprende a ver un <b>pedido de riesgo</b>: monto mucho mayor que tu ticket típico, varios intentos con tarjetas distintas, dirección de envío lejos de la de facturación, prisa extrema, cambio de destinatario o peticiones de enviar por una paquetería «de su confianza». Una señal sola no prueba nada; dos o tres juntas piden una pausa. Antes de enviar, confirma por teléfono, pide pagar con otro método o cancela y reembolsa: un reembolso a tiempo cuesta menos que un contracargo perdido.",
+            "Si llega el contracargo, defiéndete con <b>evidencia</b>, dentro del plazo que te dé la pasarela: comprobante de la autorización, guía con seguimiento y confirmación de entrega con firma o foto, captura de la ficha como estaba el día de la venta, conversaciones con el cliente y la política de devoluciones que aceptó. Guarda todo en una carpeta por pedido desde el primer día. Mide tu <b>tasa de contracargos</b>, contracargos ÷ ventas con tarjeta: 3 de 180 es 1.67 %. Los programas de monitoreo de las redes de tarjetas se activan alrededor del 1.5 % (verifica con tu pasarela); procura mantenerte muy por debajo del 1 %."
+          ],
+          "comparar": [
+            "«Así no: Me pagaron $3,600 con la tercera tarjeta, el cliente tiene prisa; lo envío hoy mismo a la dirección que me pasó por mensaje.»",
+            "«Así sí: Tres tarjetas, destino distinto y prisa: llamo para confirmar, pido 3-D Secure o transferencia, y si no responde, cancelo y reembolso.»"
+          ],
+          "caso": "Caso ficticio: Saúl, de 45 años, vende en Tuxtla Gutiérrez hamacas tejidas de $1,200 en su tienda propia, con 3-D Secure apagado porque «estorba». Este mes tuvo 180 ventas con tarjeta y 3 contracargos. Uno es de una hamaca que la guía marca como entregada con foto de la fachada; el cliente dice «no recibí». Hoy entra un pedido de tres hamacas, $3,600, de un comprador nuevo: dos tarjetas rechazadas y la tercera aprobada, la dirección de envío está en otro estado y lejos de la de facturación, y pide que salga hoy por una paquetería que él elige.",
+          "p": [
+            [
+              "¿Cuál es la tasa de contracargos de Saúl este mes y qué significa?",
+              "1.67 %: está por encima del 1 % que conviene no rebasar y cerca del 1.5 % que vigilan las redes",
+              "0.6 %: 3 contracargos entre $1,200 de ticket promedio, todavía es una tasa baja y normal",
+              "3 %: cada contracargo equivale a 1 % de las ventas, así que ya rebasó todos los límites",
+              "La tasa es contracargos ÷ ventas con tarjeta: 3 ÷ 180 = 1.67 %. Dividir entre el ticket mezcla unidades y no tiene sentido. Contar 1 % por contracargo inventa una regla; con 180 ventas, cada contracargo pesa 0.56 %."
+            ],
+            [
+              "¿Qué debe hacer Saúl con el pedido de $3,600?",
+              "Pausarlo, llamar para confirmar y pedir pago con 3-D Secure o transferencia; si no responde, cancelar y reembolsar",
+              "Enviarlo de inmediato por la paquetería que pide el cliente, porque la tercera tarjeta sí quedó aprobada",
+              "Enviarlo, pero con seguro de la paquetería, porque el seguro lo cubre si después hay un contracargo",
+              "Varias tarjetas rechazadas, destino lejano y prisa son señales que juntas piden pausa. Una autorización no prueba que el titular sea quien compra. Y el seguro de envío cubre daño o pérdida del paquete, no un contracargo por fraude: Saúl perdería producto, envío y dinero."
+            ],
+            [
+              "¿Qué evidencia pesa más para defender el contracargo de «no recibí»?",
+              "La guía con confirmación de entrega y foto, la autorización del cobro y la conversación con el cliente",
+              "Una carta firmada por Saúl donde explica que siempre envía bien y que su tienda es seria",
+              "Las reseñas positivas de otros compradores que muestran que nunca ha tenido problemas",
+              "En un «no recibí» lo que cuenta es probar la entrega de ese pedido: seguimiento, foto o firma, y la autorización. Una carta propia no es evidencia independiente, y las reseñas de otros no prueban nada sobre este pedido."
+            ]
+          ],
+          "completar": [
+            "La autenticación del banco que pide una clave al pagar y ayuda a prevenir fraudes se llama ___.",
+            "3-D Secure"
+          ],
+          "refl": "Tu protocolo contra contracargos (20 min). 1) Escribe tus cinco señales de pedido de riesgo según tu producto y tu ticket típico. 2) Define qué haces cuando aparecen dos o más: a quién llamas, qué pides y en cuánto tiempo cancelas. 3) Revisa en tu pasarela si tienes 3-D Secure y cómo aparece tu nombre en el estado de cuenta. 4) Haz la lista de evidencias que guardarás por pedido y dónde. 5) Calcula tu tasa de contracargos de los últimos tres meses.",
+          "modelo": "Modelo: «Señales: pedido mayor a $3,000 (mi ticket es $850), dos o más tarjetas intentadas, destino distinto al de facturación, prisa, cambio de destinatario. Con dos señales, pauso y llamo en menos de 4 horas; pido transferencia o pago con 3-D Secure; sin respuesta en 24 horas, cancelo y reembolso. 3-D Secure activado; nombre en el estado de cuenta: TEJIDOS LUNA. Carpeta por pedido: autorización, guía, foto de entrega, chat y ficha. Tasa: 1 de 240, 0.42 %.» Es buena porque convierte señales en acciones con tiempos y mide el resultado.",
+          "plantilla": [
+            "Protocolo antifraude por pedido",
+            "Pedido: [ ]  Monto: $[ ]  Mi ticket típico: $[ ]\nSeñales presentes: [monto alto / varias tarjetas / destino distinto / prisa / cambio de destinatario / paquetería impuesta]\nAcción: [enviar / llamar y confirmar / pedir otro método / cancelar y reembolsar]\nEvidencia guardada: [autorización] [guía y entrega] [ficha del día] [chat] [política aceptada]\nTasa de contracargos del mes: [ ] ÷ [ ] = [ ] %"
+          ],
+          "clave": [
+            "Un contracargo perdido te quita la venta y además el producto, el envío y la comisión que ya pagaste.",
+            "Varias señales de riesgo juntas piden pausa: confirmar, cambiar de método o reembolsar antes de enviar.",
+            "La defensa es evidencia de ese pedido, guardada desde el primer día y entregada dentro del plazo."
+          ]
+        },
+        {
+          "t": "Fraudes contra vendedores: comprobantes falsos, sobrepagos y falsos soportes",
+          "obj": "Verificar cada pago en tu banca antes de enviar, reconocer los engaños más comunes contra vendedores y saber qué hacer y dónde denunciar si caes en uno.",
+          "texto": [
+            "Los fraudes contra quien vende en línea casi nunca son sofisticados: se apoyan en la prisa y en la buena fe. El más común es el <b>comprobante falso</b>: una captura de pantalla de una transferencia que nunca se hizo o que se editó en minutos. Una captura no prueba nada. El dinero sólo cuenta cuando lo ves en tu banca, en tu app o en tu cuenta de la pasarela. Para transferencias SPEI, Banxico ofrece en su portal el <b>CEP</b> (Comprobante Electrónico de Pago): con la fecha, la clave de rastreo, los bancos, tu cuenta y el monto, consultas directamente si la operación de verdad se liquidó (verifica los datos que pide en banxico.org.mx).",
+            "El segundo es el <b>sobrepago</b>: «te deposité $5,000 en vez de $500, regrésame $4,500 a esta otra cuenta». A veces el depósito no existe; otras, se hizo con una tarjeta robada que después se revierte, y tú ya habrás mandado dinero real. La regla es sencilla: nunca devuelvas a una cuenta distinta ni antes de confirmar en tu banca que el dinero está liberado. Si de verdad hubo un pago de más, se reembolsa por el mismo medio con el que se pagó, desde la función de reembolso de tu pasarela.",
+            "El tercero es el <b>falso soporte</b>: un mensaje o correo que dice ser del marketplace o de la pasarela, «tu cuenta será suspendida», «tienes un pago retenido, libéralo aquí», con un enlace a una página idéntica que roba tu contraseña y tus códigos de verificación. Variantes: el comprador que pide seguir la venta fuera del marketplace o que te manda la guía de una paquetería que él controla. Entra siempre desde la app o escribiendo tú la dirección, y recuerda que ninguna plataforma seria te pide contraseñas ni códigos por mensaje.",
+            "Si caíste, actúa rápido. Cambia contraseñas y activa la verificación en dos pasos; avisa a tu banco y a la plataforma; guarda capturas, números telefónicos, cuentas destino, guías y fechas. Repórtalo a la <b>Policía Cibernética</b> de tu estado o al 089 de denuncia anónima, y presenta la denuncia formal ante la fiscalía de tu estado. Si alguien te amenaza o quiere verte en persona para «arreglarlo», llama al 911. Y ajusta tu proceso para que no vuelva a pasar: nada sale de tu bodega hasta que el pago aparece en tu cuenta."
+          ],
+          "comparar": [
+            "«Así no: Ya me mandó la captura del depósito y es sábado en la noche; mejor lo envío para no hacerle esperar.»",
+            "«Así sí: Gracias, en cuanto el pago aparezca en mi cuenta te confirmo y sale tu pedido. Las capturas no las tomo como pago.»"
+          ],
+          "caso": "Caso ficticio: Ximena, de 27 años, vende en Veracruz ropa deportiva de su propia marca por su tienda, por WhatsApp y en el marketplace más grande del país. El sábado a las 11 de la noche un cliente le envía una captura de una transferencia de $2,340 y le pide que el pedido salga «hoy mismo». El domingo otra persona le escribe que le depositó $5,000 en vez de $500 y le pide devolver $4,500 a la cuenta de su «hermano». El lunes le llega un mensaje de un número desconocido que firma como «Soporte del marketplace» con un enlace para «evitar la suspensión» de su cuenta.",
+          "p": [
+            [
+              "¿Qué debe hacer Ximena con el pedido pagado con captura de $2,340?",
+              "Revisar su banca o el CEP de Banxico y enviar sólo cuando vea el dinero en su cuenta",
+              "Enviarlo, porque la captura trae clave de rastreo y eso demuestra que el pago es real",
+              "Pedirle al cliente un video de su app de banco mostrando la transferencia y enviar",
+              "La captura y el video se pueden fabricar; la clave de rastreo sirve para consultar el CEP, pero lo que prueba es la consulta, no la imagen. Mientras el dinero no esté en su cuenta, el pedido no sale."
+            ],
+            [
+              "¿Cómo debe responder al supuesto sobrepago de $5,000?",
+              "No devolver nada hasta ver el dinero liberado en su cuenta y, si procede, reembolsar por el mismo medio",
+              "Devolver los $4,500 de inmediato a la cuenta del hermano para no tener problemas legales",
+              "Devolver $4,500 menos la comisión de su banco y pedirle al cliente una captura del reembolso",
+              "El engaño del sobrepago funciona porque devuelves dinero real antes de que el depósito falso se caiga o se revierta. Si el pago de más existiera, se reembolsa por el mismo medio, nunca a otra cuenta. Descontar comisiones no reduce el riesgo."
+            ],
+            [
+              "¿Qué hace Ximena con el mensaje de «Soporte del marketplace»?",
+              "No abrir el enlace, entrar desde la app oficial a revisar su cuenta y reportar el mensaje",
+              "Abrir el enlace sólo desde la computadora, que es más segura que el celular",
+              "Responder pidiendo el nombre completo del asesor antes de capturar su contraseña",
+              "El riesgo no está en el aparato, sino en la página falsa que roba contraseña y códigos. Un nombre se inventa en segundos. Lo seguro es entrar por su cuenta desde la app o escribiendo la dirección, revisar si hay avisos reales y reportar el mensaje como fraude."
+            ]
+          ],
+          "completar": [
+            "Para comprobar que una transferencia SPEI sí llegó a tu cuenta, puedes consultar el ___ en el portal de Banxico.",
+            "CEP"
+          ],
+          "relacionar": [
+            [
+              "Captura de pantalla de un depósito",
+              "No es prueba de pago"
+            ],
+            [
+              "«Te deposité de más, regrésame»",
+              "Reembolsa sólo por el mismo medio y tras verificar"
+            ],
+            [
+              "Mensaje de «soporte» con enlace",
+              "Entra tú desde la app oficial"
+            ],
+            [
+              "Comprador que pide salir del marketplace",
+              "Pierdes la protección de la plataforma"
+            ],
+            [
+              "Ya caíste en un fraude",
+              "Policía Cibernética, 089 y denuncia en la fiscalía"
+            ]
+          ],
+          "refl": "Tus reglas contra fraudes (20 min). 1) Escribe cómo verificas cada forma de pago que aceptas (banca, app de la pasarela, CEP). 2) Redacta un mensaje amable para cuando te manden una captura. 3) Redacta otro para cuando te pidan devolver un sobrepago. 4) Anota cómo entras a tu marketplace y a tu pasarela sin usar enlaces de mensajes. 5) Busca y guarda el número o sitio de la Policía Cibernética de tu estado.",
+          "modelo": "Modelo: «Verifico transferencias en mi app de banco y, si dudo, en el CEP; tarjeta y efectivo, en el panel de la pasarela. Mensaje para capturas: Gracias, en cuanto el pago se refleje en mi cuenta te aviso y sale tu pedido; suele tardar minutos. Mensaje para sobrepagos: Reviso mi cuenta; si hay un pago de más, lo reembolso por el mismo medio con el que pagaste. Entro siempre desde la app guardada. Policía Cibernética de mi estado: número y sitio anotados en mis contactos.» Es buena porque es amable, no acusa y no deja huecos.",
+          "plantilla": [
+            "Reglas de verificación de pagos",
+            "Forma de pago: [ ] → La verifico en: [banca / panel de la pasarela / CEP]\nNada se envía hasta: [el pago aparece en mi cuenta]\nRespuesta a capturas: «[ ]»\nRespuesta a sobrepagos: «[ ]»\nCómo entro a mis cuentas: [app oficial / dirección escrita por mí]\nSi caigo: cambio contraseñas, aviso a [banco] y [plataforma], guardo [evidencias]\nDenuncia: Policía Cibernética de [estado] [teléfono o sitio] / 089 / fiscalía; riesgo inmediato: 911"
+          ],
+          "clave": [
+            "Un pago existe cuando lo ves en tu cuenta, no cuando te mandan una imagen.",
+            "Los reembolsos van por el mismo medio del pago, nunca a una cuenta distinta.",
+            "Entra a tus plataformas por tu cuenta y, si caes, guarda evidencias y denuncia."
+          ]
+        },
+        {
+          "t": "Conciliar ventas y depósitos: comisiones, retenciones y dinero retenido",
+          "obj": "Cuadrar cada depósito con cada pedido en una hoja de conciliación, encontrar diferencias y planear tu flujo de caja según las fechas de liberación.",
+          "texto": [
+            "<b>Conciliar</b> es comprobar que cada venta se convirtió en el dinero que esperabas. El depósito de un marketplace casi nunca es el precio: le restan la comisión, los cargos fijos, el envío que cobra la plataforma, las retenciones de impuestos, los reembolsos y los contracargos. Si sólo miras el saldo, no sabrás si te cobraron de más ni qué pedido falta. Por eso se concilia pedido por pedido, con el reporte que descargas de cada plataforma.",
+            "Un ejemplo con cifras de ejemplo: vendes un carrete de pesca en $1,740 con IVA en un marketplace. Sin IVA son $1,500. La comisión de ejemplo, 14 % con IVA incluido, es $243.60, y el envío que te cobra la plataforma, $119. Además, si eres persona física, verás dos <b>retenciones</b>: ISR de 2.5 % sobre el precio sin IVA ($37.50) e IVA de 8 % del precio sin IVA, la mitad del IVA ($120). El neto esperado es $1,219.90. Cómo se declaran esas retenciones lo verás en el módulo 7; aquí sólo importa que aparecen en tu depósito y que guardes la constancia para tu contador. Verifica las tasas vigentes en el SAT. Si vendes en tu tienda propia con pasarela, por lo general no hay retención: ese ingreso lo declaras por tu cuenta.",
+            "Arma la hoja con una fila por pedido: número, canal, fecha de venta, precio cobrado, comisión, cargo fijo, envío, retención de ISR, retención de IVA, neto esperado, depósito real, diferencia y fecha de liberación. En Excel, si el precio está en D2 y los descuentos van de E2 a I2, el neto es =D2-SUMA(E2:I2); trae el depósito del reporte con =BUSCARX(A2,Reporte!A:A,Reporte!F:F) y calcula la diferencia con =K2-J2. La fórmula =ABS(L2)<1 devuelve VERDADERO cuando cuadra. Cada diferencia tiene una causa: un cargo por sobrepeso que llegó días después, una devolución, un contracargo o un error que puedes reclamar.",
+            "Concilia también el <b>dinero retenido</b>. Muchas plataformas liberan el pago días después de la entrega, y frenan el de los pedidos con reclamo abierto. Una venta de hoy puede ser dinero dentro de dos semanas. Por eso tu <b>flujo de caja</b> se planea con la fecha de liberación, no con la fecha de venta. Concilia cada semana, usa una cuenta sólo para el negocio y no gastes lo que todavía está retenido."
+          ],
+          "comparar": [
+            "«Así no: El marketplace me depositó $9,800 esta semana; se ve bien, ya con eso pago al proveedor el viernes.»",
+            "«Así sí: Concilio pedido por pedido: esperaba $10,420, llegaron $9,800; hay un cargo por sobrepeso y un pedido retenido por reclamo.»"
+          ],
+          "caso": "Caso ficticio: Ramiro, de 50 años, vende en Celaya artículos de pesca en el marketplace más grande del país y en su tienda propia. Esta semana vendió un carrete de $1,740 con IVA en el marketplace (comisión de ejemplo 14 % con IVA, envío de $119, retenciones de ISR 2.5 % e IVA 8 % del precio sin IVA) y otro igual en su tienda propia, cobrado con una pasarela al 3.49 % + $4 + IVA. El marketplace le depositó $1,133.90 por el carrete. Ramiro quiere pagarle $12,000 a su proveedor el viernes con lo que «vendió», aunque la mitad de sus ventas de la semana aún no se libera.",
+          "p": [
+            [
+              "¿Cuánto esperaba recibir Ramiro por el carrete vendido en el marketplace?",
+              "$1,219.90: $1,740 menos comisión, envío y las retenciones de ISR e IVA",
+              "$1,377.40: $1,740 menos la comisión de $243.60 y el envío de $119",
+              "$1,500.00, que es el precio sin IVA, porque el IVA se lo queda el SAT",
+              "Neto = $1,740 − $243.60 − $119 − $37.50 − $120 = $1,219.90. Olvidar las retenciones da $1,377.40 y hace creer que falta dinero que nunca iba a llegar. Restar todo el IVA confunde la retención, que es la mitad, con el impuesto completo."
+            ],
+            [
+              "El depósito fue de $1,133.90. ¿Qué hace Ramiro con la diferencia?",
+              "Registrar −$86 y buscar la causa en el reporte del pedido, como un cargo por sobrepeso",
+              "Darlo por bueno, porque la diferencia es menor al 10 % del precio del carrete",
+              "Reclamar los $86 a la plataforma de inmediato, porque es seguro que es un error",
+              "$1,133.90 − $1,219.90 = −$86. Toda diferencia se explica: puede ser un ajuste de envío legítimo o un cobro equivocado. Ignorarla por pequeña la vuelve costumbre; reclamar sin revisar desgasta y puede no proceder."
+            ],
+            [
+              "¿Qué debería hacer con el pago de $12,000 al proveedor?",
+              "Proyectar lo que se libera antes del viernes y pagar con eso, o acordar otra fecha",
+              "Pagar los $12,000 completos, porque las ventas de la semana ya los superan",
+              "Pagar con un adelanto de su tarjeta de crédito y esperar a que se libere todo",
+              "El flujo de caja depende de la fecha de liberación, no de la venta. Si no le alcanza lo liberado, negociar la fecha cuesta menos que un adelanto con intereses. Pagar con lo vendido pero retenido lo deja sin efectivo si llega un reclamo o un contracargo."
+            ]
+          ],
+          "completar": [
+            "Comprobar pedido por pedido que cada venta se convirtió en el dinero esperado se llama ___.",
+            "conciliar"
+          ],
+          "relacionar": [
+            [
+              "Comisión y cargo fijo",
+              "Los cobra la plataforma por vender"
+            ],
+            [
+              "Retención de ISR de 2.5 %",
+              "Sobre el precio sin IVA, si eres persona física"
+            ],
+            [
+              "Retención de IVA",
+              "La mitad del IVA, 8 % del precio sin IVA"
+            ],
+            [
+              "Diferencia en la conciliación",
+              "Se busca su causa pedido por pedido"
+            ],
+            [
+              "Dinero retenido",
+              "Se cuenta en el flujo por fecha de liberación"
+            ]
+          ],
+          "refl": "Tu primera conciliación (20 min). 1) Descarga el reporte de ventas y depósitos de una semana de tu marketplace o pasarela. 2) Haz una fila por pedido con precio, descuentos, neto esperado y depósito real. 3) Marca las diferencias y escribe la causa probable de cada una. 4) Separa lo liberado de lo retenido y anota la fecha de liberación. 5) Escribe qué pagos de la próxima semana puedes cubrir sólo con lo liberado.",
+          "modelo": "Modelo: «Semana del 2 al 8: 14 pedidos, $9,640 de ventas. Neto esperado: $7,212.30. Liberado: $5,766.10 en 11 pedidos, cuando esperaba $5,830.10; retenidos: 3 pedidos por $1,382.20 hasta el día 15. Diferencia: −$64 en el pedido 1046 por sobrepeso (mi báscula marcaba menos; ya la calibré). El martes pago $4,500 de tela; los $2,800 de la imprenta los muevo al día 16.» Es buena porque cuadra pedido por pedido, explica cada diferencia, separa lo retenido y decide pagos con dinero liberado.",
+          "plantilla": [
+            "Hoja de conciliación por pedido",
+            "Pedido | Canal | Fecha venta | Precio | Comisión | Cargo fijo | Envío | Ret. ISR | Ret. IVA | Neto esperado | Depósito | Diferencia | Liberación\nNeto esperado: =D2-SUMA(E2:I2)\nDepósito: =BUSCARX(A2,Reporte!A:A,Reporte!F:F)\nDiferencia: =K2-J2   ¿Cuadra?: =ABS(L2)<1\nCausa de la diferencia: [ ]\nLiberado esta semana: $[ ]   Retenido: $[ ] hasta [fecha]"
+          ],
+          "clave": [
+            "El depósito nunca es el precio: concilia pedido por pedido con comisiones, envío, retenciones y reembolsos.",
+            "Toda diferencia tiene una causa; encuéntrala antes de darla por buena o de reclamar.",
+            "Planea tus pagos con el dinero liberado, no con lo que vendiste."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma el sistema de cobro de tu tienda. 1) Elige tus formas de pago y calcula, con la tarifa vigente de tu pasarela, cuánto te deja tu producto más vendido con dinero inmediato, a 30 días y a 3 MSI. 2) Escribe tu política de MSI, de efectivo en tiendas y de contra entrega. 3) Redacta tu protocolo antifraude: señales de riesgo, acciones y evidencias por pedido. 4) Escribe tus respuestas para capturas de pago, sobrepagos y falsos soportes, con el contacto de la Policía Cibernética de tu estado. 5) Concilia una semana real o simulada de 10 pedidos en Excel.",
+        "entregable": "Un archivo de Excel con el costo de cobro por método y la conciliación de 10 pedidos, más un documento de una página con tu política de cobro, tu protocolo antifraude y tus mensajes listos.",
+        "criterios": "Revisa: cada comisión parte de una tarifa vigente y está calculada con su IVA, la sobrecomisión de MSI está restada del margen, el protocolo dice qué haces y en cuánto tiempo, ningún pedido se envía sin pago verificado en tu cuenta, y cada diferencia de la conciliación tiene una causa escrita."
+      },
+      "lab": {
+        "t": "Un fin de semana de pedidos de una tienda de ropa de bebé en Morelia",
+        "obj": "Decidir formas de pago, filtrar un pedido de riesgo, verificar transferencias y conciliar depósitos en un fin de semana real de ventas.",
+        "esc": "<b>Karina,</b> de 29 años, vende en Morelia ropa de bebé de algodón que confecciona con su mamá, en su tienda propia, en el marketplace más grande del país y por WhatsApp. Su pasarela de ejemplo cobra 3.49 % + $4 + IVA con dinero inmediato y una sobrecomisión de 12.89 % + IVA por 12 MSI. Este fin de semana le entraron 19 pedidos y el lunes quiere saber cuánto dinero tiene de verdad.",
+        "e": [
+          [
+            "Escena 1: En su tienda propia entra un ajuar de $1,860 a 12 MSI y una pañalera de $640 con débito y dinero inmediato. Por WhatsApp, una clienta de otro estado pide pagar un mameluco de $520 contra entrega.",
+            "Consigna: calcula la comisión de los dos cobros con tarjeta y decide qué le ofreces a la clienta de WhatsApp; escribe tu mensaje."
+          ],
+          [
+            "Escena 2: El sábado entra un pedido de $4,800, seis veces su ticket típico, pagado al tercer intento con una tarjeta distinta, con envío a un destino lejos de la dirección de facturación y la petición de que salga «en cuanto puedas, es urgente».",
+            "Consigna: enumera las señales de riesgo, decide qué haces antes de enviar y escribe el mensaje al comprador."
+          ],
+          [
+            "Escena 3: El domingo a las 11 de la noche un cliente le manda la captura de una transferencia de $1,350. Una hora después llega un mensaje de «Soporte del marketplace» con un enlace para «liberar pagos retenidos».",
+            "Consigna: describe cómo verificas la transferencia y qué haces con el mensaje; incluye a dónde reportarías un fraude."
+          ],
+          [
+            "Escena 4: El lunes el marketplace le deposita $2,445.26 por cinco pedidos de $1,160, $580, $920, $1,280 y $700 con IVA. Comisión de ejemplo 15 % con IVA incluido, envío de $95 por pedido y retenciones de ISR 2.5 % e IVA 8 % del precio sin IVA.",
+            "Consigna: arma la conciliación por pedido, calcula el neto esperado y explica la diferencia."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuánto le cuesta a Karina cobrar el ajuar de $1,860 a 12 MSI?",
+            "$358.05, porque la sobrecomisión se suma a la base y todo lleva IVA",
+            "$239.75, porque 12.89 % de $1,860 es lo único que se cobra por los meses",
+            "$69.92, porque los 12 MSI cuestan lo mismo que el cobro de contado",
+            "($1,860 × 16.38 % + $4) × 1.16 = $358.05, casi el 19.3 % del precio. El 12.89 % solo olvida la comisión base, el cargo fijo y el IVA. De contado costaría ($1,860 × 3.49 % + $4) × 1.16 = $79.94, así que tampoco es la cifra de $69.92."
+          ],
+          [
+            "Con los cinco pedidos del marketplace, ¿qué explica el depósito de $2,445.26?",
+            "El neto esperado es $3,048.98; faltan $603.72, justo el neto del pedido de $920, quizá retenido",
+            "El neto esperado es $3,469.00; faltan $1,023.74, porque le cobraron envíos de más",
+            "El neto esperado es $2,445.26; cuadra, porque la plataforma ya descontó todo lo que debía",
+            "Pedido por pedido, el neto suma $3,048.98: precio menos 15 %, $95 de envío, 2.5 % y 8 % del precio sin IVA. La diferencia de $603.72 coincide con el neto del pedido de $920, señal de que está retenido, por ejemplo por un reclamo. $3,469 olvida las retenciones, y dar por cuadrado sin calcular es no conciliar."
+          ],
+          [
+            "¿Qué hace Karina con el pedido de $4,800?",
+            "Lo pausa, llama al comprador y le pide pagar por transferencia o con 3-D Secure antes de enviar",
+            "Lo envía con guía con firma, porque la firma la protege de un contracargo por fraude",
+            "Lo envía a la mitad para probar al cliente y manda el resto cuando no haya reclamo",
+            "Monto inusual, varias tarjetas, destino lejano y prisa juntos piden pausa. La firma de entrega ayuda en un «no recibí», pero no en un fraude con tarjeta robada, donde el titular nunca autorizó la compra. Enviar la mitad sólo reduce la pérdida, no la evita."
+          ]
+        ],
+        "pl": [
+          "Fin de semana de cobro y conciliación",
+          "Pedido | Canal | Método | Monto | Comisión | Neto | ¿Pago verificado? | ¿Señales de riesgo?\nPedidos pausados: [ ] → acción: [ ] → plazo: [ ]\nTransferencias verificadas en: [banca / CEP]\nMensajes sospechosos reportados: [ ] → Policía Cibernética de [estado] / 089\nConciliación del marketplace: neto esperado $[ ] − depósito $[ ] = diferencia $[ ] → causa: [ ]\nLiberado: $[ ]  Retenido: $[ ] hasta [fecha]"
+        ]
+      },
+      "quiz": [
+        [
+          "Leticia vende una mochila de $900 con una pasarela que cobra 3.49 % + $4 + IVA al instante o 2.95 % + $4 + IVA a 30 días (tarifa de ejemplo). ¿Cuánto paga por recibir el dinero hoy?",
+          "$5.64 más que a 30 días: $41.08 contra $35.44",
+          "$4.86 más, que es la diferencia de 0.54 % sobre $900",
+          "$4.00 más, porque el cargo fijo sólo aplica al cobro inmediato",
+          "Nada más, porque el IVA hace iguales las dos tarifas"
+        ],
+        [
+          "Un vendedor quiere ofrecer 12 MSI en un producto de $600 que le deja $140 antes de comisiones. Con la tarifa de ejemplo (3.49 % + $4, más 12.89 % por 12 MSI, todo + IVA), ¿qué le conviene?",
+          "No darlos: la comisión sería $118.64 y el pedido apenas dejaría $21.36",
+          "Darlos, porque la sobrecomisión de 12.89 % equivale a $77.34 y aún gana",
+          "Darlos y subir el precio sólo a quien pague a meses para compensar",
+          "Darlos, porque los meses sin intereses no tienen costo para el vendedor"
+        ],
+        [
+          "Óscar recibe la captura de una transferencia SPEI con clave de rastreo y el cliente insiste en que el pedido salga ya. ¿Qué hace?",
+          "Consulta su banca o el CEP con esa clave y envía cuando confirme el abono",
+          "Envía el pedido, porque una captura con clave de rastreo no se puede falsificar",
+          "Le pide al cliente que le mande también una foto de su identificación oficial",
+          "Envía la mitad del pedido y la otra mitad cuando vea el dinero en su cuenta"
+        ],
+        [
+          "Una tienda tuvo 4 contracargos en 320 ventas con tarjeta en el mes. ¿Qué tasa tiene y qué hace?",
+          "1.25 %: revisa sus pedidos de riesgo y activa 3-D Secure para bajar del 1 %",
+          "0.4 %: está bien, porque cada contracargo pesa 0.1 % sobre las ventas",
+          "4 %: debe cerrar la cuenta de la pasarela antes de que se la suspendan",
+          "1.25 %: no hace nada, porque las redes sólo vigilan desde el 3 %"
+        ],
+        [
+          "Llega un contracargo con motivo «no es como se describe» por un tapete que el cliente recibió. ¿Qué evidencia conviene enviar?",
+          "La ficha como estaba el día de la venta, fotos del envío y la conversación",
+          "Sólo la guía con firma de entrega, que demuestra que el cliente lo recibió",
+          "Reseñas de otros compradores que dicen que el tapete es igual a las fotos",
+          "Una carta donde explica que sus descripciones siempre son honestas"
+        ],
+        [
+          "Alguien escribe: «te pagué $3,000 de más por error, regrésamelos a la cuenta de mi esposa». Tu pasarela muestra el cobro aún sin liberar. ¿Qué haces?",
+          "Esperas a que se libere y, si sobra, reembolsas por la pasarela al mismo medio",
+          "Devuelves los $3,000 a la cuenta de su esposa para conservar la buena reputación",
+          "Devuelves $3,000 menos tus comisiones, para que el error no te cueste",
+          "Le pides la credencial de su esposa y devuelves cuando la mande"
+        ],
+        [
+          "Fausto vendió $1,160 con IVA en un marketplace; es persona física con RFC. ¿Qué retenciones verá en su depósito (verifica las tasas vigentes)?",
+          "ISR de $25 y IVA de $80, calculados sobre $1,000 sin IVA",
+          "ISR de $29 y IVA de $92.80, calculados sobre los $1,160",
+          "ISR de $200 y el IVA completo, porque se aplica la tasa sin RFC",
+          "Ninguna, porque las retenciones se pagan sólo una vez al año"
+        ],
+        [
+          "El neto esperado de una semana es $8,410 y el depósito fue $8,310. ¿Cuál es el siguiente paso?",
+          "Buscar en el reporte qué pedido tiene la diferencia de $100 y por qué",
+          "Darlo por cuadrado, porque $100 es poco más del 1 % de lo esperado",
+          "Reclamar los $100 a la plataforma, porque toda diferencia es un error suyo",
+          "Ajustar la fórmula del neto esperado hasta que coincida con el depósito"
+        ],
+        [
+          "Rebeca vendió $30,000 en el fin de semana, pero sólo $11,000 están liberados; el resto se libera en 10 días. Debe pagar $18,000 el miércoles. ¿Qué hace?",
+          "Paga con lo liberado lo que pueda y negocia el resto para después de la liberación",
+          "Paga los $18,000, porque las ventas del fin de semana ya superan esa cifra",
+          "Pide un préstamo rápido en línea por $18,000 y lo paga con las ventas futuras",
+          "Cancela los pedidos retenidos para que el dinero se libere más rápido"
+        ],
+        [
+          "Una clienta lejana pide pagar contra entrega un vestido de $480; el envío cuesta $150 cada sentido. ¿Qué opción protege mejor a la vendedora?",
+          "Ofrecer transferencia o efectivo en tiendas, o contra entrega con anticipo del envío",
+          "Aceptar contra entrega sin condiciones, porque así la clienta confía más en ella",
+          "Aceptar contra entrega y cobrarle después a la clienta si rechaza el paquete",
+          "Rechazar el pedido, porque el pago contra entrega no está permitido en línea"
+        ]
+      ]
+    },
+    {
+      "t": "Envíos, empaque e inventario multicanal",
+      "r": "Elegir paquetería y empaque, calcular costos de envío y mantener un inventario que no se sobrevenda.",
+      "lecciones": [
+        {
+          "t": "Paqueterías y guías: tarifas, peso volumétrico, cobertura y zonas extendidas",
+          "obj": "Calcular el peso cobrable de tus paquetes, prever cargos por cobertura y diseñar un envío gratis que tu margen pueda pagar.",
+          "texto": [
+            "Una guía no se cobra sólo por lo que pesa tu paquete. Las paqueterías comparan el <b>peso real</b> con el <b>peso volumétrico</b>, que mide cuánto espacio ocupa la caja, y cobran el mayor. El volumétrico se calcula con largo × ancho × alto en centímetros ÷ 5,000, el divisor más común en paquetería; algunas usan otro, así que verifica el de la tuya. Una caja de 40 × 30 × 25 cm con un producto de 1.8 kg pesa 6 kg volumétricos: pagas 6 kg. La misma mercancía en una caja de 35 × 25 × 20 cm baja a 3.5 kg. Medir la caja vale tanto como pesarla.",
+            "Antes de prometer un costo, revisa la <b>cobertura</b> del código postal de destino. Si es <b>zona extendida</b>, por estar lejos de las rutas regulares, hay un cargo extra; en tarifas de 2026 vimos ejemplos de unos $130 a $180 por envío (verifica la tarifa vigente de tu paquetería). Otros cargos llegan días después: sobrepeso si declaraste menos, cambio de domicilio, devolución al remitente o una guía cancelada que sí se usó. Pesa con báscula calibrada, anota medidas reales y muestra al cliente el costo de envío antes de que pague.",
+            "Decide también cómo entregas tus paquetes: con <b>recolección</b> en tu domicilio, cómoda pero a veces con costo o con un mínimo de envíos, o llevándolos a sucursal. Las plataformas que venden guías de varias paqueterías te dejan comparar precio y tiempo por destino. Y piensa en tu cliente: según la AMVO, el 90 % prefiere recibir en su domicilio, pero el 14 % usa puntos de retiro y el 11 % casilleros inteligentes, opciones útiles donde nadie recibe de día.",
+            "El <b>envío gratis</b> es el incentivo número uno: el 84 % de los compradores en México lo menciona, y el envío caro es la primera razón para abandonar un sitio (AMVO 2026). Pero no es gratis para ti. Lewis, Singh y Fay (2006) encontraron que aumenta mucho los pedidos, aunque puede no ser rentable si no se diseña. La salida es un <b>umbral</b>: envío gratis desde el monto en que tu margen pague la guía. Con 50 % de margen y una guía promedio de $165, un pedido de $1,199 deja $434.50 después del envío; uno de $780 con envío gratis, sólo $225."
+          ],
+          "comparar": [
+            "«Así no: Uso la misma caja grande para todo, total el producto pesa poco, y doy envío gratis en cualquier compra.»",
+            "«Así sí: Mido cada caja, calculo el peso cobrable, reviso la cobertura del destino y doy envío gratis desde $1,199.»"
+          ],
+          "caso": "Caso ficticio: Elvira, de 56 años, vende en Saltillo edredones que confecciona en su taller. Cada edredón empacado pesa 2.4 kg y lo envía en una caja de 60 × 45 × 30 cm. Su paquetería usa divisor 5,000 y su tarifa de ejemplo es: hasta 5 kg, $165; de 5.1 a 10 kg, $230; de 10.1 a 15 kg, $310; de 15.1 a 20 kg, $390. Una proveedora le ofrece bolsas al vacío para usar una caja de 40 × 30 × 20 cm. Su margen es de 50 % y su ticket promedio, $780. Un cliente de un código postal de zona extendida le reclama porque al final le cobraron $150 más de envío.",
+          "p": [
+            [
+              "¿Cuánto paga Elvira por cada guía hoy y cuánto pagaría con la bolsa al vacío?",
+              "Hoy $390 por 16.2 kg volumétricos; con la caja chica, $165 por 4.8 kg",
+              "Hoy $165, porque el edredón pesa 2.4 kg reales y la caja no cuenta",
+              "Hoy $310 por 16.2 kg volumétricos; con la caja chica, $230 por 4.8 kg",
+              "60 × 45 × 30 ÷ 5,000 = 16.2 kg, que cae en el rango de 15.1 a 20 kg: $390. Con 40 × 30 × 20 ÷ 5,000 = 4.8 kg, hasta 5 kg: $165. Ahorra $225 por envío. El peso real sólo cuenta si es mayor que el volumétrico, y la tercera opción ubica mal los rangos."
+            ],
+            [
+              "¿Qué debe hacer Elvira con el cliente de zona extendida?",
+              "Explicarle el cargo, ofrecerle una solución y mostrar ese costo antes de pagar en adelante",
+              "Decirle que fue un error de la paquetería y que ella no tiene nada que ver con ese cargo",
+              "Absorber siempre el cargo sin avisar a nadie, para que ningún cliente vuelva a reclamar",
+              "La ley pide informar los costos de envío antes de la compra; si el cargo apareció al final, el cliente tiene razón en molestarse. Culpar a la paquetería no resuelve, y absorber todo sin calcular puede dejar pedidos en pérdida. Lo sano es mostrar la zona extendida en el carrito."
+            ],
+            [
+              "¿Desde qué monto le conviene a Elvira ofrecer envío gratis?",
+              "Desde unos $1,199: con 50 % de margen le quedan $434.50 tras la guía de $165",
+              "Desde $330, el doble de la guía, para que el envío nunca rebase el precio",
+              "En todas las compras, porque el 84 % de los clientes pide envío gratis",
+              "$1,199 × 50 % − $165 = $434.50. Con $330, el margen es $165 y la guía se lo come completo. Darlo en todo pedido hace que uno de $780 deje sólo $225, y uno más chico, casi nada: la preferencia del cliente no paga la guía."
+            ]
+          ],
+          "completar": [
+            "Las paqueterías cobran el mayor entre el peso real y el peso ___.",
+            "volumétrico"
+          ],
+          "relacionar": [
+            [
+              "Largo × ancho × alto ÷ 5,000",
+              "Peso volumétrico con el divisor más común"
+            ],
+            [
+              "Zona extendida",
+              "Cargo extra por destino remoto"
+            ],
+            [
+              "Cargo por sobrepeso",
+              "Llega días después si declaraste menos"
+            ],
+            [
+              "Umbral de envío gratis",
+              "Monto desde el que tu margen paga la guía"
+            ],
+            [
+              "Punto de retiro o casillero",
+              "Opción cuando nadie recibe en casa"
+            ]
+          ],
+          "refl": "Tu tabla de envíos (20 min). 1) Mide y pesa ya empacados tus tres productos más vendidos. 2) Calcula el peso volumétrico con el divisor de tu paquetería y anota el peso cobrable. 3) Cotiza cada uno con dos paqueterías a tres destinos: tu ciudad, una capital lejana y una zona extendida. 4) Busca una caja más chica para el producto que más espacio desperdicia. 5) Calcula tu umbral de envío gratis con tu margen real.",
+          "modelo": "Modelo: «Tapete de 1.2 kg en caja de 50 × 40 × 15 cm: 6 kg volumétricos, pago 6 kg. Enrollado en un tubo de 60 × 12 × 12 cm: 1.73 kg volumétricos, pago 1.73 kg o lo que redondee mi paquetería. A Mérida: $240 contra $150. Zona extendida: $160 más con una paquetería; la otra no llega. Margen 45 % y guía promedio $170: envío gratis desde $999 me deja $279.55 por pedido; lo anuncio arriba de la tienda.» Es buena porque mide, compara opciones reales y calcula el umbral con su propio margen.",
+          "plantilla": [
+            "Tabla de envío por producto",
+            "Producto: [ ]  Peso real empacado: [ ] kg\nCaja: [L] × [A] × [A] cm → volumétrico = L × A × A ÷ [divisor] = [ ] kg\nPeso cobrable (el mayor): [ ] kg   En Excel: =MAX(B2,C2*D2*E2/5000)\nCotización local: $[ ]  lejana: $[ ]  zona extendida: $[ ]\nEntrega: [recolección / sucursal / punto de retiro]\nUmbral de envío gratis: $[ ] × margen [ ] % − guía $[ ] = $[ ] que me queda"
+          ],
+          "clave": [
+            "Se cobra el mayor entre peso real y volumétrico: una caja a la medida ahorra en cada guía.",
+            "Revisa la cobertura del destino y muestra al cliente el costo de envío antes de que pague.",
+            "El envío gratis atrae, pero sólo con un umbral que tu margen pueda pagar."
+          ]
+        },
+        {
+          "t": "Empaque que protege y no encarece: caja, relleno, prueba de caída y presentación",
+          "obj": "Diseñar un empaque que llegue entero, probarlo antes de lanzarlo y calcular su costo por pedido sin exagerar sus beneficios ambientales.",
+          "texto": [
+            "El empaque tiene dos trabajos: que el producto llegue entero y que no se coma tu margen. El producto dañado está entre las tres molestias principales de los compradores en línea en México, junto con el pedido incompleto y la entrega tardía (AMVO 2026), y cada rotura cuesta el producto, otro envío y a veces una mala reseña. Empieza por el <b>tamaño justo</b>: una caja con espacio para el relleno alrededor, sin huecos de sobra, protege mejor y además baja el peso volumétrico.",
+            "Para lo frágil, usa cartón corrugado resistente, de preferencia de doble pared, y no cajas reusadas ya aplastadas. Envuelve cada pieza por separado e inmovilízala con <b>relleno</b>: papel arrugado, cartón picado, burbuja o cojines de aire. Si es muy delicado, usa caja dentro de caja: una interior acolchonada dentro de otra con relleno entre ambas. Cierra y agita: si algo se mueve, falta relleno. Sella con cinta en forma de H sobre las uniones y pega la guía plana, sin cinta sobre el código de barras. La leyenda «frágil» ayuda poco: tu empaque debe resistir aunque nadie la lea.",
+            "Antes de lanzar un producto, haz una <b>prueba de caída</b> casera. Las normas de la industria para paquetes, como las de ISTA, simulan el viaje con secuencias de caídas sobre esquinas, aristas y caras; la ISTA 1A, por ejemplo, usa 10 caídas. En casa puedes aproximarte: deja caer la caja empacada desde la altura de tu cintura sobre una esquina, tres aristas y las caras, y revisa. No es una certificación, pero descubre el empaque que no aguanta antes de que lo descubra tu cliente.",
+            "Calcula el <b>costo por pedido</b> del empaque y súmalo a tu utilidad: caja $18, relleno $6, cinta $3, tarjeta de agradecimiento $4 y bolsa $5 son $36. La presentación cuenta, pero una tarjeta impresa y un buen acomodo lucen más que capas de material. Si usas materiales reciclados, dilo con precisión: «caja de cartón reciclado, reutilízala». Llamar «100 % ecológico» a un empaque sin poder demostrarlo es publicidad engañosa: la ley pide publicidad veraz y comprobable."
+          ],
+          "comparar": [
+            "«Así no: Meto la vela en una caja grande con un poco de papel, le escribo FRÁGIL en grande y que la paquetería se encargue.»",
+            "«Así sí: Envuelvo cada frasco, uso caja a la medida con relleno que no deja mover nada, sello en H y antes probé las caídas.»"
+          ],
+          "caso": "Caso ficticio: Darío, de 31 años, hace en Uruapan velas aromáticas en frascos de vidrio y las vende en línea. El mes pasado envió 50 pedidos y 6 llegaron rotos; cada rotura le cuesta $215: $95 de reponer la vela y $120 de otro envío. Hoy gasta $22 de empaque por pedido. Un proveedor le propone un kit con separador de cartón y cojines de aire que sube el costo a $31 y que, en sus pruebas de caída, bajaría las roturas a una por mes. Darío también quiere imprimir en la caja «empaque 100 % ecológico» porque el cartón es reciclado, aunque los cojines son de plástico.",
+          "p": [
+            [
+              "¿Cuánto le costaron a Darío las roturas del mes y qué tasa de rotura tiene?",
+              "$1,290 por 6 roturas, una tasa de 12 % de sus pedidos",
+              "$570, sólo lo que cuesta reponer las 6 velas rotas",
+              "$720, sólo los 6 envíos extra, porque la vela ya estaba pagada",
+              "6 × $215 = $1,290 y 6 ÷ 50 = 12 %. Contar sólo la vela o sólo el envío subestima el daño: cada rotura exige las dos cosas, y además arriesga una mala reseña."
+            ],
+            [
+              "¿Le conviene el kit nuevo si las roturas bajan a una por mes?",
+              "Sí: gasta $450 más de empaque y ahorra $1,075 en roturas; gana $625",
+              "No: el empaque sube 41 % y eso nunca se compensa con menos roturas",
+              "Sí, pero sólo si las roturas bajan a cero, porque una rotura ya cuesta más",
+              "El kit cuesta $9 más × 50 = $450. Las roturas bajan de $1,290 a $215: $1,075 menos. $1,075 − $450 = $625 a favor. El porcentaje de aumento no dice nada sin comparar contra lo que ahorra, y no hace falta llegar a cero roturas para que convenga."
+            ],
+            [
+              "¿Qué debería decir Darío sobre su empaque?",
+              "«Caja de cartón reciclado; reutilízala», porque eso sí lo puede demostrar",
+              "«Empaque 100 % ecológico», porque la caja, que es lo más grande, es reciclada",
+              "Nada sobre el empaque, porque toda mención ambiental está prohibida por ley",
+              "La publicidad debe ser veraz y comprobable: con cojines de plástico, «100 % ecológico» induce a error. Hablar del cartón reciclado es cierto y útil. No está prohibido mencionar lo ambiental: lo que no se vale es exagerarlo."
+            ]
+          ],
+          "completar": [
+            "Para saber si tu empaque aguanta el viaje, haz una prueba de ___ sobre esquinas, aristas y caras.",
+            "caída"
+          ],
+          "refl": "Rediseña tu empaque (20 min). 1) Elige tu producto más delicado o el que más se ha dañado. 2) Describe tu empaque actual y su costo por pedido. 3) Diseña uno mejor: caja, relleno, sellado y etiqueta. 4) Haz la prueba de caída casera con una unidad y anota qué pasó. 5) Calcula si el costo extra se paga con menos roturas y escribe una frase ambiental que sí puedas demostrar.",
+          "modelo": "Modelo: «Producto: plato de talavera de 30 cm. Antes: caja de 40 × 40 × 10 cm con periódico, $14 por pedido; 3 de 40 llegaron rotos. Nuevo: plato en burbuja entre dos cartones rígidos, caja de 36 × 36 × 8 cm con cartón picado en las orillas, $23. Prueba: cinco caídas desde un metro sobre esquina, aristas y caras, sin daño. Gasto $360 más al mes y, si las roturas bajan a una, me ahorro dos reposiciones de $380: $760. Frase: Cartón reciclado; reutiliza esta caja.» Es buena porque prueba antes de cambiar, compara costo contra ahorro y comunica sin exagerar.",
+          "plantilla": [
+            "Ficha de empaque por producto",
+            "Producto: [ ]  Fragilidad: [baja / media / alta]\nCaja: [medidas] cm  Material: [corrugado sencillo / doble pared]\nProtección: [envoltura] + [relleno] + caja dentro de caja: [sí / no]\nSellado: [cinta en H]  Guía: [plana, sin cinta sobre el código]\nPrueba de caída: [n.º de caídas] desde [altura] → resultado: [ ]\nCosto por pedido: caja $[ ] + relleno $[ ] + cinta $[ ] + extras $[ ] = $[ ]\nTasa de rotura: [roturas] ÷ [envíos] = [ ] %\nFrase ambiental que puedo demostrar: [ ]"
+          ],
+          "clave": [
+            "Caja a la medida y relleno que inmoviliza protegen más que la leyenda «frágil».",
+            "Prueba las caídas antes de lanzar y compara el costo del empaque contra lo que te cuestan las roturas.",
+            "Di de tu empaque sólo lo que puedas demostrar: lo verde exagerado también es publicidad engañosa."
+          ]
+        },
+        {
+          "t": "Inventario multicanal: existencias sincronizadas, stock de seguridad y cero sobreventas",
+          "obj": "Llevar un solo inventario para todos tus canales, publicar con colchón, calcular cuándo reponer y responder bien si ocurre una sobreventa.",
+          "texto": [
+            "La <b>sobreventa</b> ocurre cuando vendes algo que ya no tienes: el mismo producto está publicado en tu tienda, en el marketplace y en WhatsApp, y dos clientes compran la última unidad casi al mismo tiempo. El resultado es una cancelación, un cliente molesto y, en el marketplace, un golpe a tu reputación: en el más grande del país, como referencia, las cancelaciones no deberían pasar del 1 % de tus ventas (verifica la regla vigente). Con 120 ventas, dos cancelaciones ya son 1.67 %.",
+            "La regla es tener un solo <b>inventario maestro</b>: una hoja o un sistema con cada SKU, donde toda venta, venga del canal que venga, se descuenta en un solo lugar. Lo ideal es una integración que sincronice existencias entre canales de forma automática. Si lo haces a mano, actualiza a horas fijas y no publiques todo: deja un colchón. En Excel, con la existencia en B2, las unidades apartadas en C2 y el colchón en D2, lo que puedes publicar es =MAX(0,B2-C2-D2).",
+            "Del lado de la reposición, calcula tu <b>stock de seguridad</b>: las unidades que te cubren si vendes más de lo normal mientras llega el pedido al proveedor. Una fórmula sencilla: (venta diaria máxima − venta diaria promedio) × días de reposición. Si vendes 4 al día en promedio, hasta 7 en días fuertes, y tu proveedor tarda 6 días, el stock de seguridad es 18 y el <b>punto de reorden</b>, 4 × 6 + 18 = 42 unidades: cuando llegues a 42, pides. En Excel, =B2<=C2 devuelve VERDADERO cuando toca pedir.",
+            "El sistema sólo sirve si refleja la realidad. Haz conteos cíclicos: cada semana cuenta lo que más vendes y cada mes, todo. Registra mermas y devoluciones; una devolución regresa al inventario sólo después de revisarla. Si haces productos bajo pedido, publícalos con su tiempo de elaboración en lugar de inventar existencias. Y si aun así hay una sobreventa, avisa de inmediato al cliente y ofrécele opciones antes de que la plataforma cancele por ti."
+          ],
+          "comparar": [
+            "«Así no: Tengo 10 camas y las publico completas en los tres canales; en la noche reviso la libreta y ajusto.»",
+            "«Así sí: Todo se descuenta en mi hoja maestra, actualizo tres veces al día y publico 8 de 10 hasta tener sincronización.»"
+          ],
+          "caso": "Caso ficticio: Yesenia, de 24 años, vende en Mexicali camas y collares para perro en su tienda propia, en el marketplace más grande del país y por WhatsApp. Lleva el inventario en una libreta y actualiza las publicaciones cuando se acuerda. El viernes vendió la misma cama, la última, en el marketplace y por WhatsApp, y tuvo que cancelar en el marketplace. En el mes lleva 120 ventas ahí y 2 cancelaciones. Sus collares se venden 4 al día en promedio y hasta 7 en quincena; su proveedor tarda 6 días en surtir.",
+          "p": [
+            [
+              "¿Qué tasa de cancelación tiene Yesenia en el marketplace y qué implica?",
+              "1.67 %: rebasa la referencia de 1 % y puede bajar su reputación",
+              "2 %: cada cancelación cuenta 1 %, sin importar cuántas ventas tenga",
+              "0 %: sólo cuentan las cancelaciones que pide el comprador, no las suyas",
+              "2 ÷ 120 = 1.67 %, arriba de la referencia de 1 %. La tasa depende del total de ventas, no es un punto fijo por cancelación. Y las cancelaciones que hace quien vende son justo las que más pesan en la reputación."
+            ],
+            [
+              "¿Qué stock de seguridad y punto de reorden necesita para los collares?",
+              "Stock de seguridad de 18 y punto de reorden de 42 collares",
+              "Stock de seguridad de 42 (7 × 6) y punto de reorden de 66",
+              "Stock de seguridad de 3 (7 − 4) y punto de reorden de 27",
+              "(7 − 4) × 6 = 18 de seguridad, y 4 × 6 + 18 = 42 de reorden. Multiplicar la venta máxima por los días duplica lo que ya cubre el promedio. Usar sólo la diferencia de un día olvida que el proveedor tarda seis."
+            ],
+            [
+              "¿Qué cambio evita mejor que se repita la sobreventa?",
+              "Un inventario maestro por SKU, actualizado a horas fijas y publicando con colchón",
+              "Publicar la mitad de sus existencias en cada canal, sin llevar un registro central",
+              "Dejar de vender por WhatsApp, que fue el canal donde se vendió la segunda cama",
+              "Un solo registro donde se descuenta todo, más un colchón mientras no hay sincronización, ataca la causa. Repartir sin registro central sigue sin decir cuánto queda de verdad. Y quitar un canal reduce ventas sin arreglar el problema."
+            ]
+          ],
+          "completar": [
+            "Cuando el mismo producto se vende en dos canales y no hay existencias para ambos, ocurre una ___.",
+            "sobreventa"
+          ],
+          "relacionar": [
+            [
+              "Inventario maestro",
+              "Un solo lugar donde se descuenta toda venta"
+            ],
+            [
+              "Colchón por canal",
+              "Unidades que no publicas si actualizas a mano"
+            ],
+            [
+              "Stock de seguridad",
+              "Cubre la venta extra mientras llega el proveedor"
+            ],
+            [
+              "Punto de reorden",
+              "Nivel de existencias en el que haces el pedido"
+            ],
+            [
+              "Conteo cíclico",
+              "Revisar seguido lo que más se vende"
+            ]
+          ],
+          "refl": "Tu inventario maestro (20 min). 1) Haz una hoja con tus SKU, existencia, apartados y colchón. 2) Calcula lo que puedes publicar de cada uno con =MAX(0,B2-C2-D2). 3) Para tus tres productos más vendidos, calcula stock de seguridad y punto de reorden. 4) Define a qué horas actualizas los canales o qué integración usarás. 5) Escribe el mensaje que mandarías a un cliente si hubiera una sobreventa.",
+          "modelo": "Modelo: «12 SKU en una hoja. Collar mediano rojo: existencia 30, apartados 2, colchón 3; publico 25. Vendo 3 al día en promedio, hasta 5, y el proveedor tarda 8 días: stock de seguridad (5 − 3) × 8 = 16; reorden 3 × 8 + 16 = 40. Como tengo 30, ya debí pedir: pido hoy. Actualizo canales a las 10, 15 y 20 horas. Mensaje: Hola, Fer: por un error mío, el collar que compraste se agotó. Puedo enviarte la talla grande al mismo precio o reembolsarte hoy completo. ¿Qué prefieres?» Es buena porque aplica las fórmulas, actúa con el resultado y resuelve con opciones.",
+          "plantilla": [
+            "Inventario maestro multicanal",
+            "SKU | Producto | Existencia | Apartados | Colchón | Publicable | Venta prom./día | Venta máx./día | Días de reposición | Stock de seguridad | Punto de reorden | ¿Pedir?\nPublicable: =MAX(0,C2-D2-E2)\nStock de seguridad: =(H2-G2)*I2\nPunto de reorden: =G2*I2+J2\n¿Pedir?: =C2<=K2\nHoras de actualización: [ ]\nConteo cíclico: semanal [SKU] / mensual [todos]"
+          ],
+          "clave": [
+            "Un solo inventario maestro y un colchón por canal evitan vender lo que no tienes.",
+            "Stock de seguridad y punto de reorden te dicen cuándo pedir, no la intuición.",
+            "Si hay sobreventa, avisa tú primero y ofrece opciones: cada cancelación pesa en tu reputación."
+          ]
+        },
+        {
+          "t": "Promesa de entrega, seguimiento e incidencias: retrasos, daños y paquetes perdidos",
+          "obj": "Prometer fechas de entrega realistas, informar al cliente en cada etapa y resolver retrasos, daños y pérdidas con un protocolo y un registro.",
+          "texto": [
+            "En las ventas a distancia, la Ley Federal de Protección al Consumidor pide informar antes de la compra el precio, la <b>fecha aproximada de entrega</b> y los costos de seguro y flete (art. 53). Además, la entrega tardía es una de las molestias principales de quien compra en línea (AMVO 2026). Promete con tus tiempos reales: días de preparación + tránsito de la paquetería a ese destino + un margen. Si preparas en 1 día hábil y el tránsito es de 2 a 4, promete de 4 a 6 días hábiles o, mejor, fechas: «llega entre el martes 17 y el viernes 20».",
+            "Informa sin que el cliente tenga que preguntar: confirmación del pedido, aviso de envío con número de guía y enlace de seguimiento, aviso si hay retraso y mensaje al entregar con la forma de reportar un problema. Revisa tus guías cada día: una que lleva más de 48 horas sin movimiento merece una consulta a la paquetería antes de que llegue la queja.",
+            "Ante una <b>incidencia</b> hay tres casos. Retraso: avisa con la nueva fecha y ofrece cancelar si ya no le sirve. Daño: pide fotos del empaque y del producto, y reclama a la paquetería dentro del plazo de su contrato (verifícalo). Pérdida: abre el reclamo y no hagas esperar al cliente; repón o reembolsa, y tú sigues el reclamo. Ojo: el <b>valor declarado</b> no siempre es un seguro; en una paquetería sólo fija el límite de su responsabilidad. Un seguro opcional de ejemplo cobra 1.25 % del valor y tiene deducible de 20 %: por una pieza de $3,200 pagas $40 y, si se pierde, recuperas $2,560. Lee la cobertura antes de contratar.",
+            "Lleva un <b>registro de incidencias</b>: fecha, pedido, paquetería, destino, tipo, costo, solución y lo recuperado. Al mes verás patrones: una paquetería que pierde más en cierta zona, un producto que siempre llega dañado o un destino que conviene enviar con otra opción. Calcula la tasa de incidencias de cada paquetería, incidencias ÷ envíos, y decide con datos con quién envías y desde qué monto vale la pena asegurar. Cada incidencia bien resuelta es, además, una reseña que no se vuelve queja."
+          ],
+          "comparar": [
+            "«Así no: Entrega en 2 días a todo el país. Y si se pierde, que el cliente espere a que la paquetería resuelva.»",
+            "«Así sí: Llega entre 4 y 6 días hábiles. Si tu paquete se pierde, te repongo o te reembolso y yo me encargo del reclamo.»"
+          ],
+          "caso": "Caso ficticio: Anselmo, de 60 años, vende en Tuxtla Gutiérrez joyería de ámbar de Chiapas en su tienda propia. Su ficha promete «entrega en 2 días» a todo el país, aunque prepara en 1 día hábil y su paquetería tarda de 2 a 5 días según el destino. Un collar de $3,200 lleva 6 días con la guía sin movimiento y la clienta escribe molesta. Anselmo cree que está protegido porque anotó el valor declarado en la guía, pero no contrató seguro. Su paquetería ofrece un seguro opcional de ejemplo de 1.25 % del valor con deducible de 20 %.",
+          "p": [
+            [
+              "¿Qué promesa de entrega debería poner Anselmo en su ficha?",
+              "Entre 4 y 7 días hábiles según destino, con fecha estimada al pagar",
+              "Entrega en 2 días, porque así compite con las tiendas más grandes",
+              "Entre 2 y 5 días hábiles, que es lo que tarda su paquetería",
+              "Preparación 1 + tránsito de 2 a 5 + margen de 1 = de 4 a 7 días hábiles. Prometer 2 días incumple casi siempre y genera quejas. El rango de la paquetería olvida el día de preparación y no deja margen."
+            ],
+            [
+              "¿Qué hace Anselmo con la clienta del collar sin movimiento?",
+              "Abre el reclamo, le ofrece reponer o reembolsar ya y él sigue el trámite",
+              "Le pide esperar a que la paquetería resuelva antes de reponer o reembolsar",
+              "Le explica que, entregado a la paquetería, el paquete ya no es su asunto",
+              "En ventas a distancia, quien vende debe cerciorarse de que la entrega llegue al domicilio del consumidor. Hacerla esperar el reclamo traslada el problema a quien no lo causó, y desentenderse contradice esa obligación."
+            ],
+            [
+              "Si hubiera asegurado el collar, ¿cuánto habría pagado y cuánto recuperaría?",
+              "$40 de seguro y recuperaría $2,560 tras el deducible de 20 %",
+              "$40 de seguro y recuperaría los $3,200 completos del valor",
+              "$400 de seguro y recuperaría $2,560 tras el deducible de 20 %",
+              "1.25 % de $3,200 = $40, y con deducible de 20 % recupera $3,200 − $640 = $2,560. Olvidar el deducible sobrestima lo recuperado, y $400 sería 12.5 %, diez veces la tasa. Revisa siempre la cobertura real antes de contratar."
+            ]
+          ],
+          "completar": [
+            "En una paquetería, el valor ___ puede ser sólo el límite de su responsabilidad y no un seguro.",
+            "declarado"
+          ],
+          "relacionar": [
+            [
+              "Retraso",
+              "Aviso con nueva fecha y opción de cancelar"
+            ],
+            [
+              "Paquete dañado",
+              "Fotos del empaque y reclamo en plazo"
+            ],
+            [
+              "Paquete perdido",
+              "Repones o reembolsas y tú sigues el reclamo"
+            ],
+            [
+              "Guía sin movimiento 48 horas",
+              "Consulta a la paquetería antes de la queja"
+            ],
+            [
+              "Registro de incidencias",
+              "Elegir paquetería y seguro con datos"
+            ]
+          ],
+          "refl": "Tu promesa y tu protocolo de incidencias (20 min). 1) Calcula tu promesa de entrega a tres destinos: preparación + tránsito + margen. 2) Reescribe la frase de entrega de tu ficha con un rango o con fechas. 3) Redacta tus cuatro mensajes de seguimiento: confirmación, envío, retraso y entrega. 4) Escribe qué haces ante un retraso, un daño y una pérdida, y en cuánto tiempo. 5) Revisa las condiciones de valor declarado y seguro de tu paquetería.",
+          "modelo": "Modelo: «Preparo en 1 día hábil. Local: tránsito de 1 a 2 días, prometo de 3 a 4; capitales: de 2 a 4, prometo de 4 a 6; zona extendida: de 4 a 7, prometo de 6 a 9. Ficha: Recibe tu pedido entre 4 y 6 días hábiles; al pagar verás tu fecha estimada. Retraso: aviso el mismo día y ofrezco cancelar. Daño: pido fotos en 48 horas, repongo y reclamo. Pérdida: tras 5 días sin movimiento abro reclamo y repongo o reembolso. Aseguro pedidos de más de $1,500.» Es buena porque promete con datos, avisa antes de la queja y decide el seguro por monto.",
+          "plantilla": [
+            "Promesa de entrega e incidencias",
+            "Preparación: [ ] días hábiles\nDestino [ ]: preparación [ ] + tránsito [ ] + margen [ ] = promesa de [ ] a [ ] días\nFrase para la ficha: «Recibe tu pedido entre [ ] y [ ] días hábiles»\nMensajes: confirmación [ ] / envío con guía [ ] / retraso [ ] / entrega [ ]\nRetraso: [acción y plazo]  Daño: [acción y plazo]  Pérdida: [acción y plazo]\nSeguro: desde $[ ] de valor  Costo: [ ] %  Deducible: [ ] %\nRegistro: fecha | pedido | paquetería | destino | tipo | costo | solución | recuperado"
+          ],
+          "clave": [
+            "Promete con preparación, tránsito y margen, y comunica fechas, no promesas vagas.",
+            "Ante una pérdida, el cliente no espera tu reclamo: repón o reembolsa y tú sigues el trámite.",
+            "El valor declarado no siempre es seguro: lee la cobertura y decide con tu registro de incidencias."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "En 90 minutos arma la operación de envíos e inventario de tu tienda. 1) Mide, pesa y calcula el peso cobrable de tus cinco productos principales, y cotiza con dos paqueterías a tres destinos. 2) Diseña la ficha de empaque de tu producto más delicado y haz la prueba de caída casera. 3) Monta tu inventario maestro en Excel con unidades publicables, stock de seguridad y punto de reorden. 4) Calcula tu umbral de envío gratis. 5) Escribe tu promesa de entrega por destino y tu protocolo de incidencias.",
+        "entregable": "Un archivo de Excel con tu tabla de envíos y tu inventario maestro, y un documento de una página con la ficha de empaque, el umbral de envío gratis, la promesa de entrega y los mensajes para incidencias.",
+        "criterios": "Revisa: el peso cobrable usa el mayor entre real y volumétrico con el divisor de tu paquetería, el empaque pasó la prueba de caída y su costo está en tu utilidad, nada se publica fuera del inventario maestro ni sin colchón, el umbral de envío gratis deja margen positivo, y la promesa de entrega suma preparación, tránsito y margen."
+      },
+      "lab": {
+        "t": "Envíos e inventario de una tienda de cerámica en Torreón",
+        "obj": "Calcular el peso cobrable, rediseñar un empaque frágil, corregir una sobreventa en tres canales y resolver una incidencia en zona extendida.",
+        "esc": "<b>Fermín,</b> de 44 años, vende en Torreón tazas y platos de cerámica que pinta a mano, en su tienda propia, en el marketplace más grande del país y por WhatsApp. Envía unos 60 pedidos al mes, casi todos juegos de cuatro tazas. Su paquetería usa divisor 5,000 y su tarifa de ejemplo es $175 hasta 5 kg y $245 de 5.1 a 10 kg.",
+        "e": [
+          [
+            "Escena 1: El juego de cuatro tazas empacado pesa 2.1 kg y va en una caja de 45 × 35 × 30 cm. Un proveedor le ofrece una caja de 32 × 32 × 22 cm con separadores, donde el juego cabe con su relleno.",
+            "Consigna: calcula el peso cobrable con cada caja, el costo de la guía y el ahorro en 60 pedidos al mes."
+          ],
+          [
+            "Escena 2: El mes pasado, 5 de 60 juegos llegaron con una taza rota; cada caso le cuesta $435 entre reponer el juego y pagar otro envío. Usar caja dentro de caja agregaría $14 por pedido, y en sus pruebas sólo se rompería un juego al mes.",
+            "Consigna: calcula la tasa y el costo de las roturas, describe el empaque nuevo con su prueba de caída y decide si conviene."
+          ],
+          [
+            "Escena 3: Tenía 8 juegos del diseño de nopales. En un día vendió 3 en el marketplace, 4 en su tienda y 3 por WhatsApp, porque actualiza existencias por la noche.",
+            "Consigna: di cuántos pedidos no puede surtir, escribe el mensaje para esos clientes y diseña cómo evitar que vuelva a pasar."
+          ],
+          [
+            "Escena 4: Un pedido a un código postal de zona extendida llega con 4 días de retraso y, una semana después, la paquetería le carga $160 que no le había cobrado a la clienta.",
+            "Consigna: escribe el mensaje a la clienta durante el retraso, registra la incidencia y explica cómo cotizarás esos destinos en adelante."
+          ]
+        ],
+        "p": [
+          [
+            "¿Cuánto ahorra Fermín al mes con la caja de 32 × 32 × 22 cm?",
+            "$4,200: baja de 9.45 a 4.51 kg cobrables y de $245 a $175 por guía",
+            "Nada: el juego pesa 2.1 kg reales y con cualquier caja paga hasta 5 kg",
+            "$2,100: baja de $245 a $210 por guía, la mitad de la diferencia de peso",
+            "45 × 35 × 30 ÷ 5,000 = 9.45 kg ($245) y 32 × 32 × 22 ÷ 5,000 = 4.51 kg ($175). Ahorra $70 × 60 = $4,200. El peso real no manda cuando el volumétrico es mayor, y las tarifas van por rangos, no en proporción al peso."
+          ],
+          [
+            "¿Le conviene usar caja dentro de caja?",
+            "Sí: cuesta $840 más al mes y las roturas bajan de $2,175 a $435; ahorra $900",
+            "No: $14 más por pedido es el 8 % de la guía y eso encarece demasiado el envío",
+            "No: con una rotura al mes seguiría perdiendo dinero igual que ahora",
+            "Roturas actuales: 5 × $435 = $2,175 (8.3 % de los pedidos). Con una: $435. Ahorro de $1,740 menos $14 × 60 = $840 de empaque: $900 a favor. El porcentaje sobre la guía no compara contra lo que ahorra, y una rotura cuesta mucho menos que cinco."
+          ],
+          [
+            "¿Qué hace Fermín con la sobreventa de los juegos de nopales?",
+            "Avisa hoy a 2 clientes, ofrece otro diseño o reembolso y crea un inventario maestro con colchón",
+            "Cancela 3 pedidos de WhatsApp porque fueron los últimos y no afectan su reputación",
+            "Espera a que los clientes reclamen y entonces cancela desde cada plataforma",
+            "Vendió 10 con 8 en existencia: faltan 2. Avisar primero y dar opciones cuida al cliente y la reputación; cancelar de más o por canal castiga a clientes sin necesidad, y esperar el reclamo empeora la experiencia y deja que la plataforma cancele por él."
+          ]
+        ],
+        "pl": [
+          "Operación de envíos e inventario",
+          "Producto: [ ]  Peso real: [ ] kg  Caja: [ ] cm → volumétrico [ ] kg → cobrable [ ] kg → guía $[ ]\nEmpaque: [ ]  Costo $[ ]  Prueba de caída: [resultado]  Tasa de rotura: [ ] %\nInventario maestro: existencia [ ] − apartados [ ] − colchón [ ] = publicable [ ]\nStock de seguridad: [ ]  Punto de reorden: [ ]\nSobreventa: pedidos afectados [ ] → mensaje: «[ ]»\nIncidencia: fecha [ ] pedido [ ] tipo [ ] costo $[ ] solución [ ]\nZonas extendidas: cómo las cotizo antes de cobrar: [ ]"
+        ]
+      },
+      "quiz": [
+        [
+          "Una caja de 50 × 40 × 30 cm lleva 4 kg reales; la paquetería usa divisor 5,000. ¿Qué peso te cobran?",
+          "12 kg, porque el volumétrico supera al peso real",
+          "4 kg, porque siempre se cobra el peso de la báscula",
+          "8 kg, el promedio entre el peso real y el volumétrico",
+          "16 kg, la suma del peso real y el volumétrico"
+        ],
+        [
+          "Mauricio envía cojines de 0.8 kg en cajas de 40 × 40 × 20 cm. ¿Qué cambio reduce más su costo de guía?",
+          "Usar una bolsa o caja más chica, porque el volumen decide la tarifa",
+          "Comprar una báscula más precisa, porque el kilo real decide la tarifa",
+          "Declarar menos peso en la guía para caer en un rango más barato",
+          "Poner la leyenda «frágil» para que no le cobren manejo especial"
+        ],
+        [
+          "Tu margen es de 40 % y la guía promedio cuesta $160. ¿Desde qué monto el envío gratis deja al menos $200 después de pagar la guía?",
+          "Desde $900, porque 40 % de $900 es $360 y menos $160 quedan $200",
+          "Desde $400, porque 40 % de $400 alcanza justo para pagar la guía",
+          "Desde $560, porque es el monto de la guía más los $400 de margen",
+          "Desde $500, porque así el envío no rebasa un tercio del precio"
+        ],
+        [
+          "Una tienda muestra el costo de envío y el cargo por zona extendida sólo después de que el cliente captura su tarjeta. ¿Qué está mal?",
+          "Esos costos deben verse antes de comprar, dentro del monto total",
+          "Nada, porque el cargo lo impone la paquetería y no la tienda",
+          "Sólo falta avisar por correo después de cobrar el cargo extra",
+          "Nada, siempre que el cliente pueda cancelar en los 5 días siguientes"
+        ],
+        [
+          "Al agitar una caja cerrada con dos frascos se oye que algo se mueve. ¿Qué indica?",
+          "Falta relleno: las piezas pueden golpearse durante el viaje",
+          "Que la caja es pequeña y debe cambiarse por una más grande",
+          "Nada, porque la leyenda «frágil» hará que la traten con cuidado",
+          "Que sobra relleno y por eso las piezas rebotan dentro"
+        ],
+        [
+          "Usas caja de cartón reciclado y burbuja plástica. ¿Qué frase sobre tu empaque es correcta?",
+          "«Caja de cartón reciclado: reutilízala»",
+          "«Empaque 100 % ecológico y sustentable»",
+          "«Empaque libre de plástico y amigable»",
+          "«Empaque biodegradable de principio a fin»"
+        ],
+        [
+          "Tienes 20 unidades, 3 apartadas para un pedido y un colchón de 2 porque actualizas a mano. ¿Cuántas publicas en cada canal?",
+          "15, que es la existencia menos apartados y colchón",
+          "20, porque los apartados todavía no se han enviado",
+          "17, porque el colchón sólo aplica al marketplace",
+          "18, porque los apartados ya los cubre el colchón"
+        ],
+        [
+          "Vendes 5 unidades al día en promedio y hasta 8 en días fuertes; tu proveedor tarda 4 días. ¿Cuándo debes pedir?",
+          "Al llegar a 32 unidades: 20 del promedio más 12 de seguridad",
+          "Al llegar a 20 unidades, lo que vendes en los 4 días de espera",
+          "Al llegar a 12 unidades, que es tu stock de seguridad completo",
+          "Al llegar a 44 unidades: 32 de venta máxima más 12 de seguridad"
+        ],
+        [
+          "Preparas pedidos en 2 días hábiles y tu paquetería tarda de 1 a 3. ¿Qué promesa de entrega es más honesta y realista?",
+          "De 4 a 6 días hábiles, con un día de margen",
+          "De 1 a 3 días hábiles, lo que dice la paquetería",
+          "De 3 a 5 días hábiles, justo sin ningún margen",
+          "Entrega en 24 horas para competir con las grandes"
+        ],
+        [
+          "Un paquete de $1,800 se perdió y sólo anotaste valor declarado, sin seguro. ¿Qué haces con el cliente?",
+          "Repones o reembolsas ya, y tú sigues el reclamo con la paquetería",
+          "Le pides que él reclame a la paquetería, porque la guía lleva su nombre",
+          "Esperas el resultado del reclamo para saber si le reembolsas o no",
+          "Le reembolsas sólo lo que la paquetería acepte pagarte por el envío"
+        ]
+      ]
+    }
+  ]
+}
