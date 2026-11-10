@@ -1,0 +1,825 @@
+{
+ "modulos": [
+  {
+   "t": "Números del estudio: costo, precio, agenda y equipo",
+   "r": "Cuánto te cuesta de verdad cada servicio, cómo ponerle precio y saber cuántos necesitas al mes, cómo cuidar tu agenda con anticipos y precios claros, y cómo sumar a otra persona sin romper la ley.",
+   "lecciones": [
+    {
+     "t": "El costo real de cada servicio: material, tiempo y gastos fijos en Excel",
+     "obj": "Calcular en Excel el costo completo de un servicio sumando material con merma y minutos de silla que cargan tus gastos fijos y tu sueldo.",
+     "texto": [
+      "Muchas técnicas fijan su precio mirando a la competencia y descubren meses después que trabajan mucho y les queda poco. El <b>costo real</b> de un servicio tiene dos partes: el <b>material</b> que gastas en esa clienta y el <b>tiempo de silla</b>, que carga con los gastos fijos del estudio y con tu propio sueldo. Si tu sueldo no está en la cuenta, no estás calculando un costo: estás regalando tu trabajo. Todas las cifras de esta lección son de ejemplo; usa las tuyas.",
+      "Primero, los <b>gastos fijos</b> del mes: renta, luz y agua, internet, la app de agenda, contador, insumos de limpieza y un apartado para reponer equipo (lámpara, autoclave, silla). En Excel, anota cada uno en la columna B y súmalos con =SUMA(B2:B8). Luego divide entre los minutos que de verdad cobras, no entre los que el estudio está abierto: los huecos, la limpieza, las cancelaciones y los trámites no se venden. La fórmula del <b>costo por minuto de silla</b> es (gastos fijos + tu sueldo) ÷ (horas cobradas × 60); en Excel, =(B9+B10)/(B11*60).",
+      "Después, el <b>material por servicio</b>. Divide el precio de cada producto entre las aplicaciones que rinde: un esmalte de $180 que alcanza para 30 clientas cuesta $6 por servicio, y en Excel lo escribes =180/30. Suma lo desechable que se va completo: lima, bloque pulidor, palito, toallas, los guantes de nitrilo que cambias cada 30 minutos y tu parte de desinfectante y esterilización. Agrega la <b>merma</b>: producto que se queda en el pincel, frascos que se espesan, aplicaciones que repites. Si aún no la mides, empieza con un porcentaje de ejemplo, como 10 %, y ajústalo con tus compras reales.",
+      "Por último, junta todo: costo del servicio = minutos × costo por minuto + material × (1 + merma). En Excel: =REDONDEAR(B15*B12+B17*(1+B18),2). Mide los minutos con reloj en tus últimas diez citas, desde la consulta previa hasta el cierre de mesa, porque el tiempo que no cuentas lo pagas tú. Revisa la hoja cada tres meses o cuando suba la renta o un proveedor: el costo cambia aunque el servicio sea el mismo."
+     ],
+     "comparar": [
+      "«Así no: Cobro $250 porque es lo que cobra la de la esquina; como el estudio es mío, mi tiempo no cuenta.»",
+      "«Así sí: Mi semipermanente me cuesta $297.20 con material, merma y $4 por minuto de silla que ya incluye mi sueldo; desde ahí decido el precio.»"
+     ],
+     "caso": "Caso ficticio: Lorena, de 35 años, tiene un estudio de uñas en Guadalajara; todas las cifras son de ejemplo. Sus gastos fijos al mes son renta $6,000, luz y agua $1,000, internet y teléfono $500, app de agenda $300, contador $1,200, limpieza $800 y reposición de equipo $1,000. Quiere pagarse un sueldo de $18,000. El estudio abre 216 horas al mes, pero en los últimos dos meses cobró en promedio 120 horas de servicio. Su semipermanente en manos ocupa 60 minutos de silla y lleva $52 de material; calcula una merma de 10 %. Hoy lo cobra a $250 «porque así cobra la de la esquina».",
+     "p": [
+      [
+       "¿Cuál es el costo por minuto de silla de Lorena?",
+       "$4.00: $28,800 ÷ 7,200 minutos cobrados",
+       "$1.50: $10,800 ÷ 7,200 minutos cobrados",
+       "$2.22: $28,800 ÷ 12,960 minutos abiertos",
+       "Gastos fijos: =SUMA() da $10,800; con su sueldo, $28,800. Cobra 120 horas, es decir 7,200 minutos: $28,800 ÷ 7,200 = $4.00. La segunda opción olvida su sueldo, como si trabajara gratis. La tercera divide entre las 216 horas que abre (12,960 minutos), pero esas horas incluyen huecos y limpieza que nadie paga, y así el costo sale artificialmente bajo."
+      ],
+      [
+       "¿Cuánto le cuesta de verdad cada semipermanente?",
+       "$297.20: $240 de tiempo más $57.20 de material con merma",
+       "$292.00: $240 de tiempo más $52 de material sin merma",
+       "$147.20: $90 de tiempo más $57.20 de material con merma",
+       "Tiempo: 60 × $4.00 = $240. Material con merma: $52 × 1.10 = $57.20. Total: $297.20. Sin merma faltan $5.20 por servicio que sí se gastan en pinceles, frascos y repeticiones; con $1.50 por minuto ($90 de tiempo) se vuelve a dejar fuera el sueldo de Lorena."
+      ],
+      [
+       "¿Qué significa que lo cobre a $250 si le cuesta $297.20?",
+       "Cubre material y gastos fijos, pero se paga menos sueldo del planeado",
+       "Pierde $47.20 de su bolsa en cada semipermanente que hace",
+       "Está bien cobrado, porque su sueldo no forma parte del costo del servicio",
+       "De $250 resta $57.20 de material y $90 de gastos fijos (60 × $1.50): le quedan $102.80 por servicio. Con 120 semipermanentes al mes serían $12,336 de sueldo, no los $18,000 que planeó. No pierde dinero de su bolsa, pero trabaja por menos de lo que decidió valer; y decir que el sueldo no es costo es justo el error que la llevó a copiar el precio."
+      ]
+     ],
+     "completar": [
+      "El costo por ___ de silla reparte tus gastos fijos y tu sueldo entre los minutos que de verdad cobras.",
+      "minuto"
+     ],
+     "relacionar": [
+      [
+       "Renta y contador",
+       "Gastos fijos del mes"
+      ],
+      [
+       "Base, color y top",
+       "Material por servicio"
+      ],
+      [
+       "Producto que se seca en el pincel",
+       "Merma"
+      ],
+      [
+       "=SUMA(B2:B8)",
+       "Total de los gastos fijos"
+      ],
+      [
+       "Horas que sí cobraste",
+       "Divisor del costo por minuto"
+      ]
+     ],
+     "refl": "Calcula el costo real de tu servicio principal (20 min). 1) En Excel, anota tus gastos fijos del mes y súmalos con =SUMA(). 2) Escribe el sueldo que quieres pagarte y las horas que de verdad cobras al mes; calcula tu costo por minuto. 3) Haz la lista del material de un servicio con lo que rinde cada producto y suma lo desechable. 4) Mide los minutos reales de tus últimas citas y aplica una merma. 5) Calcula el costo completo con =REDONDEAR() y compáralo con lo que cobras hoy: ¿qué cambiarías primero?",
+     "modelo": "Modelo: «Gastos fijos $7,800; sueldo $14,700; cobro 100 horas al mes: $22,500 ÷ 6,000 minutos = $3.75 por minuto. Mi gel sobre uña natural toma 90 minutos reales, no 75 como creía: $337.50 de tiempo. Material $68, con 10 % de merma, $74.80. Costo: $412.30. Hoy cobro $380, así que me pago menos de lo que pensé. Primero recortaré tiempos muertos y después revisaré el precio.» Es buena porque incluye el sueldo, mide el tiempo con reloj en lugar de suponerlo y saca una decisión concreta del número.",
+     "plantilla": [
+      "Hoja de costo por servicio",
+      "Gastos fijos del mes: renta $[ ] + luz y agua $[ ] + internet $[ ] + agenda $[ ] + contador $[ ] + limpieza $[ ] + reposición de equipo $[ ] = $[ ] (=SUMA)\nMi sueldo: $[ ]  Horas cobradas al mes: [ ]\nCosto por minuto: =(fijos+sueldo)/(horas*60) = $[ ]\nServicio: [ ]  Minutos reales: [ ]\nMaterial: [producto] $[precio] ÷ [rinde] = $[ ] …  Desechables: $[ ]  Total: $[ ]\nMerma: [ ] %\nCosto completo: =REDONDEAR(minutos*costo_min+material*(1+merma),2) = $[ ]\nPrecio actual: $[ ]  Diferencia: $[ ]\nPróxima revisión: [fecha]"
+     ],
+     "clave": [
+      "El costo real suma material con merma y minutos de silla que cargan gastos fijos y tu sueldo.",
+      "Divide entre las horas que cobras, no entre las que abres, y mide los minutos con reloj.",
+      "Revisa tu hoja cada trimestre o cuando cambie un gasto: el mismo servicio puede costarte más."
+     ]
+    },
+    {
+     "t": "Precio, combos, retoques y punto de equilibrio",
+     "obj": "Fijar precios con margen sobre tu costo, armar combos y una política de retoques que no te descapitalicen, y calcular cuántos servicios necesitas al mes.",
+     "texto": [
+      "Con el costo completo ya puedes poner precio. La trampa más común es confundir <b>margen</b> con aumento. Si quieres que el 25 % del precio quede para el estudio, no basta con sumar 25 % al costo: precio = costo ÷ (1 − margen). Con un costo de ejemplo de $260, sumar 25 % da $325, y eso deja solo 20 % de margen; $260 ÷ 0.75 da $346.67. En Excel, =REDONDEAR.MAS(B2/(1-B3),-1) redondea hacia arriba a la decena: $350. Usa REDONDEAR.MAS y no REDONDEAR, porque redondear hacia abajo te deja por debajo del margen que elegiste.",
+      "El margen no es un lujo: paga imprevistos, reposición de equipo y crecimiento. Si tienes alta en el SAT, el IVA se suma después del margen: los servicios de belleza causan IVA de 16 % y la clienta debe ver el total (verifica tu caso con tu contador). Si cobras con tarjeta, la comisión de la terminal también es costo de cada servicio. Mira a la competencia al final, para saber dónde te ubicas y qué explicas de tu servicio, no para copiar su precio.",
+      "Los <b>combos</b> (manos y pies, uñas y cejas) funcionan cuando ahorras algo real: una sola consulta, una sola preparación de mesa, menos minutos de silla. El descuento debe salir de ese ahorro y no de tu sueldo. Los <b>retoques</b> también se planean: define por escrito qué cubre tu garantía (por ejemplo, levantamiento por técnica dentro de pocos días; no golpes ni uñas mordidas), en qué plazo y cuántos esperas por cada 100 servicios. Ese costo se reparte en el precio, aunque el retoque se dé sin cobro.",
+      "El <b>punto de equilibrio</b> te dice cuántos servicios necesitas al mes para no perder. Calcula primero el margen de contribución de un servicio promedio: precio menos lo que gastas solo porque lo hiciste (material, merma, comisión de la terminal). Luego divide: servicios necesarios = gastos fijos ÷ margen de contribución; en Excel, =REDONDEAR.MAS(B6/B7,0), porque no existen medios servicios. Hazlo dos veces, solo con gastos fijos y sumando tu sueldo. Si el segundo número no cabe en tu agenda, trabajar más no lo arregla: revisa precio, tiempos o gastos."
+     ],
+     "comparar": [
+      "«Así no: Le sumo 30 % al costo y listo; el combo lo dejo 10 % más barato porque así se vende más.»",
+      "«Así sí: Divido el costo entre 0.70 y redondeo hacia arriba; el combo es más barato porque me ahorra 12 minutos de silla.»"
+     ],
+     "caso": "Caso ficticio: Raúl, de 32 años, renta un local pequeño en Celaya donde hace gel y semipermanente; todas las cifras son de ejemplo. Calculó que su gel sobre uña natural le cuesta $330 completo y quiere un margen de 30 %. Su semipermanente en manos cuesta $280 y lo cobra a $400; en pies cuesta $350 y lo cobra a $500. Piensa ofrecer un combo de manos y pies a $810 (10 % menos): al hacerlos en la misma cita se ahorra 12 minutos de consulta y preparación, que a su costo de $5 por minuto valen $60. Sus gastos fijos son $9,600 al mes, quiere pagarse $15,000 y cada servicio promedio le deja $360 después de material, merma y comisión de la terminal.",
+     "p": [
+      [
+       "¿Qué precio mínimo debe poner Raúl a su gel para lograr 30 % de margen, redondeando a la decena?",
+       "$480: $330 ÷ 0.70 = $471.43, hacia arriba",
+       "$430: $330 × 1.30 = $429, hacia arriba",
+       "$470: $330 ÷ 0.70 = $471.43, a la más cercana",
+       "$330 ÷ (1 − 0.30) = $471.43; con REDONDEAR.MAS a la decena, $480, y su margen queda en 31.3 %. Con $430 solo sumó 30 % al costo: el margen real es ($430 − $330) ÷ $430 = 23.3 %. Con $470, el redondeo normal baja el precio y el margen queda en 29.8 %, apenas debajo de lo que eligió."
+      ],
+      [
+       "¿Cuántos servicios al mes necesita para cubrir solo sus gastos fijos, y cuántos para pagarse también su sueldo?",
+       "27 para los fijos y 69 con su sueldo",
+       "26 para los fijos y 68 con su sueldo",
+       "27 para los fijos y 42 con su sueldo",
+       "$9,600 ÷ $360 = 26.7, que se redondea hacia arriba a 27, porque con 26 todavía no alcanza. Con su sueldo: ($9,600 + $15,000) ÷ $360 = 68.3, o sea 69. Redondear hacia abajo deja un hueco, y 42 sale de dividir solo el sueldo ($15,000 ÷ $360) y olvidar que los gastos fijos también se pagan."
+      ],
+      [
+       "¿Le conviene a Raúl el combo de manos y pies a $810?",
+       "Sí: su margen pasa de 30 % a 29.6 %, casi igual",
+       "No: el 10 % de descuento sale completo de su ganancia",
+       "Sí, aunque su margen baje a 22.2 % por el descuento",
+       "Por separado cobra $900 con $630 de costo: margen de 30 %. En combo, el costo baja a $630 − $60 = $570 y cobra $810: le quedan $240, un 29.6 %. Gana $30 menos por cita, pero $60 de los $90 de descuento salen del tiempo ahorrado; sin ese ahorro el margen sí caería a 22.2 % ($180 ÷ $810), y decir que el descuento sale completo de su ganancia ignora los minutos que se ahorra."
+      ]
+     ],
+     "completar": [
+      "Para fijar un precio con margen, divide el costo entre (1 − ___), en lugar de sumar el porcentaje al costo.",
+      "margen"
+     ],
+     "refl": "Pon precio a tres servicios (20 min). 1) Toma el costo completo de tres servicios de tu menú. 2) Elige un margen y calcula cada precio con =REDONDEAR.MAS(costo/(1-margen),-1). 3) Diseña un combo y comprueba que el descuento salga del tiempo que ahorras. 4) Escribe tu política de retoques: qué cubre, qué no y en cuántos días. 5) Calcula tu punto de equilibrio con y sin tu sueldo y compáralo con las citas que caben en tu agenda.",
+     "modelo": "Modelo: «Semipermanente: costo $260, precio $350. Acrílico: costo $520, precio $700. Diseño de cejas: costo $120, precio $160; todos con al menos 25 % de margen. Combo de semipermanente y cejas a $470: me ahorra 10 minutos ($40), así que su margen sube a 27.7 %. Retoque sin costo por levantamiento dentro de 5 días; no cubre golpes ni uñas mordidas. Equilibrio: $8,000 ÷ $300 = 26.7, o sea 27 servicios; con mi sueldo de $14,000, $22,000 ÷ $300 = 73.3, o sea 74. Caben 90 citas en mi agenda, así que es alcanzable.» Es buena porque usa la fórmula de margen, justifica el combo con tiempo ahorrado y compara el equilibrio con su capacidad real.",
+     "plantilla": [
+      "Calculadora de precio y equilibrio",
+      "Servicio: [ ]  Costo completo: $[ ]  Margen deseado: [ ] %\nPrecio: =REDONDEAR.MAS(costo/(1-margen),-1) = $[ ]\nIVA 16 % (verifica tu caso con tu contador): $[ ] → precio total a la vista: $[ ]\nCombo: [servicio + servicio]  Minutos ahorrados: [ ] × $[ ] = $[ ]  Precio del combo: $[ ]  Margen: [ ] %\nRetoques: cubre [ ]; no cubre [ ]; plazo [ ] días; esperados [ ] por cada 100 servicios\nMargen de contribución promedio: $[ ]\nEquilibrio sin sueldo: =REDONDEAR.MAS(fijos/contribución,0) = [ ]\nEquilibrio con sueldo: [ ]  Citas que caben al mes: [ ]"
+     ],
+     "clave": [
+      "Precio = costo ÷ (1 − margen); sumar el porcentaje al costo te deja menos margen del que crees.",
+      "Un combo o un retoque gratis se pagan con algo: tiempo ahorrado o un costo repartido en el precio.",
+      "Calcula tu equilibrio con y sin tu sueldo, redondea hacia arriba y compáralo con lo que cabe en tu agenda."
+     ]
+    },
+    {
+     "t": "Agenda, anticipos, cancelaciones y precios a la vista",
+     "obj": "Organizar una agenda con tiempos reales, cobrar anticipos con una política de cancelación clara y mostrar tus precios como pide la ley.",
+     "texto": [
+      "Una cita que no llega cuesta casi lo mismo que un servicio regalado: la renta, la luz y tu tiempo se pagan igual. La agenda empieza con <b>bloques realistas</b>: la duración que mediste con reloj, más el tiempo de limpiar y desinfectar mesa y herramientas, respetando el tiempo de contacto que indica la etiqueta del desinfectante. No encimes citas para recuperar huecos: con prisa es cuando se brincan pasos de higiene. Confirma cada cita uno o dos días antes por mensaje y lleva una lista de espera para llenar cancelaciones.",
+      "El <b>anticipo</b> aparta el espacio y se descuenta del total; no es un cobro extra. La Ley Federal de Protección al Consumidor no tiene una regla específica sobre anticipos o cancelaciones en estudios de belleza. Lo prudente es que tu política sea razonable y clara, que la clienta la conozca <b>antes de agendar y por escrito</b> (en el mensaje de confirmación, no solo en tu perfil) y que la apliques igual a todas. Un ejemplo: con 24 horas o más de aviso se reprograma o se devuelve; con menos aviso o si no llega, el anticipo cubre el espacio. Si cancelas tú, devuelves todo o reprogramas, a elección de la clienta.",
+      "Tus precios también tienen reglas. El artículo 7 de la LFPC te obliga a informar y respetar los precios, tarifas y condiciones que ofreces; el 7 Bis, a mostrar el <b>monto total</b>, con impuestos y cargos incluidos; y el 57, a exhibir a la vista la tarifa de tus principales servicios. «Desde $450» y luego $70 por retiro y el IVA en caja no cumple: si el retiro se cobra aparte, va en tu lista con su precio. Si una clienta tiene dudas o hay un desacuerdo, el Teléfono del Consumidor de Profeco es 55 5568 8722 o 800 468 8722.",
+      "Revisa tu agenda una vez al mes: citas agendadas, cancelaciones a tiempo, faltas sin aviso y <b>ocupación</b> (horas vendidas ÷ horas disponibles). Ese último dato alimenta tu costo por minuto: si la ocupación sube, cada minuto carga menos gasto fijo. Anota también qué días y horarios se llenan primero; ahí sabrás dónde no hace falta ningún descuento y dónde vale la pena probar una promoción honesta, con sus condiciones por escrito."
+     ],
+     "comparar": [
+      "«Así no: Te aparto con $150; si no vienes, lo pierdes. (La regla solo está en una publicación de hace meses.)»",
+      "«Así sí: Te mando por escrito, antes de agendar, cuánto es el anticipo, que se descuenta del total y qué pasa si cancelas con más o menos de 24 horas.»"
+     ],
+     "caso": "Caso ficticio: Wendy, de 29 años, hace extensiones de pestañas y uñas en Villahermosa; todas las cifras son de ejemplo. Agenda unas 70 citas al mes y, en promedio, 6 no llegan ni avisan; su servicio promedio es de $500. Decide pedir un anticipo de $150 por transferencia, que se descuenta del total, con esta regla: con 24 horas o más de aviso se reprograma o se devuelve; con menos aviso o sin presentarse, el anticipo cubre el espacio. Publicó la regla en su perfil, pero no siempre la manda al confirmar. En su menú anuncia «extensiones clásicas desde $450» y en caja suma $70 por retirar las anteriores y el IVA.",
+     "p": [
+      [
+       "Si con la nueva regla las faltas bajan de 6 a 2 al mes, ¿cuánto deja de perder Wendy?",
+       "$2,300: pasa de perder $3,000 a $700",
+       "$2,000: son 4 citas menos de $500",
+       "$300: los anticipos de las 2 faltas",
+       "Antes perdía 6 × $500 = $3,000. Ahora pierde 2 × $500 = $1,000, pero conserva 2 × $150 = $300 de anticipos: su pérdida es $700. La diferencia es $3,000 − $700 = $2,300. Contar solo las 4 citas recuperadas olvida los anticipos, y contar solo los anticipos olvida que el mayor efecto es que la gente sí llega."
+      ],
+      [
+       "Una clienta agendó por mensaje, Wendy no le envió la regla y no llegó. ¿Qué es lo correcto?",
+       "Ofrecerle reprogramar o devolverle el anticipo, y corregir su confirmación",
+       "Quedarse el anticipo, porque la regla está publicada en su perfil hace meses",
+       "Cobrarle el servicio completo en su próxima cita como penalización",
+       "Una condición que no se informó antes de agendar y por escrito es difícil de sostener: el artículo 7 pide informar las condiciones, y que esté en un perfil no garantiza que la clienta la viera. Lo justo es reprogramar o devolver y mandar la regla en cada confirmación. Cobrar el servicio completo, además, es desproporcionado frente a la regla que ella misma fijó."
+      ],
+      [
+       "¿Cómo debe corregir Wendy su menú?",
+       "Mostrar el total con IVA y el retiro como servicio con su precio",
+       "Agregar «más IVA» y «retiro aparte» en letra pequeña al final",
+       "Dejar «desde $450» y explicar los extras durante la cita",
+       "El artículo 7 Bis pide mostrar el monto total a pagar, con impuestos incluidos, y el 57 pide la tarifa de los principales servicios a la vista. «Más IVA» en letra pequeña no muestra el total, y explicar los extras ya en la cita es justo lo que genera quejas. Si el retiro se cobra, va en el menú con su precio."
+      ]
+     ],
+     "completar": [
+      "El ___ aparta el espacio y se descuenta del total del servicio; no es un cobro extra.",
+      "anticipo"
+     ],
+     "relacionar": [
+      [
+       "Artículo 7 de la LFPC",
+       "Informar y respetar precios y condiciones"
+      ],
+      [
+       "Artículo 7 Bis",
+       "Monto total visible, con impuestos"
+      ],
+      [
+       "Artículo 57",
+       "Tarifa de los servicios principales a la vista"
+      ],
+      [
+       "Anticipo",
+       "Se descuenta del total del servicio"
+      ],
+      [
+       "Teléfono del Consumidor",
+       "55 5568 8722 o 800 468 8722"
+      ]
+     ],
+     "refl": "Escribe tu política de agenda (20 min). 1) Haz la lista de tus servicios con su duración real más el tiempo de limpieza. 2) Define el monto del anticipo, cómo se paga y cuándo se devuelve. 3) Redacta en un párrafo tu política de cancelación, retrasos y faltas. 4) Escribe el mensaje de confirmación que la incluye, para enviarlo antes de agendar. 5) Revisa tu lista de precios: ¿muestra el total, incluye los extras con su precio y está a la vista?",
+     "modelo": "Modelo: «Gel en manos: 90 minutos más 15 de limpieza; bloque de 105. Anticipo de $100 por transferencia, se descuenta del total. Mensaje: “Hola, te aparto el jueves a las 4. El anticipo de $100 se descuenta de tu servicio. Si cancelas o cambias con 24 horas o más, lo reprogramo o te lo devuelvo; con menos aviso, cubre tu espacio. Si llegas más de 15 minutos tarde, ajustamos el diseño al tiempo que queda. ¿Estás de acuerdo?”» Es buena porque llega antes de agendar y por escrito, tiene plazos claros, pide que la clienta acepte y se aplica igual a todas.",
+     "plantilla": [
+      "Política de agenda y cancelación",
+      "Servicio | Minutos reales | Limpieza | Bloque en agenda\n[ ] | [ ] | [ ] | [ ]\nAnticipo: $[ ] por [medio de pago]; se descuenta del total\nCancelar o reprogramar con [ ] horas o más: [reprogramo / devuelvo]\nCon menos aviso o sin presentarse: [ ]\nRetraso de más de [ ] minutos: [ ]\nSi cancelo yo: devuelvo todo o reprogramo, a elección de la clienta\nCómo la informo: antes de agendar, por escrito, en el mensaje de confirmación\nLista de precios totales a la vista en: [ ]\nDudas o desacuerdos: Profeco 55 5568 8722 / 800 468 8722"
+     ],
+     "clave": [
+      "Agenda bloques con el tiempo real más la limpieza; confirma y ten lista de espera.",
+      "La política de cancelación se informa antes y por escrito, es razonable y se aplica igual a todas.",
+      "Muestra el precio total con impuestos y cada extra con su precio, a la vista."
+     ]
+    },
+    {
+     "t": "Trabajar con más personas: comisión, renta de cabina, IMSS y obligaciones básicas",
+     "obj": "Distinguir una relación laboral de una renta de cabina real, comprobar que una comisión alcance el salario mínimo y conocer tus obligaciones básicas al contratar.",
+     "texto": [
+      "Cuando el estudio crece llega la pregunta: ¿contrato o rento? La Ley Federal del Trabajo responde con hechos, no con el nombre del papel. Su artículo 20 dice que hay <b>relación de trabajo</b> cuando alguien presta un trabajo personal subordinado a cambio de un salario, sin importar cómo se llame el contrato, y el 21 presume esa relación entre quien presta el trabajo y quien lo recibe. Si tú fijas horario, precios, material y forma de trabajar, es tu trabajadora aunque el contrato diga «renta de cabina».",
+      "La <b>comisión</b> es una forma legal de pagar (el artículo 83 permite fijar el salario por comisión), pero no te libera del mínimo. En 2026, el salario mínimo general es de $315.04 diarios, y el profesional de peluquero(a) y cultor(a) de belleza, $341.42. En la zona libre de la frontera norte rige un solo mínimo, $440.87, también para los oficios que en el resto del país tienen mínimo profesional. Si en una quincena la comisión no alcanza el mínimo que corresponde, completas la diferencia. Son montos de 2026: verifica en la CONASAMI los vigentes. Además, debes dar de alta a tu trabajadora en el IMSS en no más de 5 días hábiles (Ley del Seguro Social, artículo 15, fracción I).",
+      "La <b>renta de cabina</b> real se ve así: la persona trabaja por su cuenta, pone su material, fija su agenda y sus precios, cobra a sus clientas y te paga una renta por el espacio. Puedes poner reglas mínimas del lugar que protegen a todos, como el protocolo de higiene o el horario en que abre el local, pero no la mandas. Escribe qué incluye la renta y qué no, y cuida que en los hechos se cumpla: si empiezas a asignarle clientas, horario y precios, la relación cambia.",
+      "Lo fiscal, en breve, porque lo verás a fondo en «Emprender desde Cero» y en «Contabilidad Básica, RESICO y Facturación CFDI 4.0». Como persona física, el RESICO admite ingresos de hasta $3.5 millones al año y paga entre 1 % y 2.5 % sobre lo que cobras. Los servicios de belleza causan IVA de 16 %, sin exención, y lo que cobras a clientas que no piden factura se ampara con una factura global a público en general. Verifica en el SAT o con tu contador, también si en tu región aplica algún estímulo fiscal, porque las reglas cambian."
+     ],
+     "comparar": [
+      "«Así no: Le digo renta de cabina para no darla de alta, aunque cobre mis precios, use mi material y cumpla mi horario.»",
+      "«Así sí: Si trabaja con mis precios y mi horario, es mi empleada: la doy de alta en el IMSS y reviso que su comisión alcance el mínimo.»"
+     ],
+     "caso": "Caso ficticio: Gabriela, de 44 años, tiene un estudio con tres mesas en Mexicali; todas las cifras son de ejemplo. Contrató a Jazmín, de 23 años, para hacer uñas de martes a sábado de 10 a 7, con los precios del estudio y el material que compra Gabriela, y le paga 40 % de lo que factura cada quincena. Jazmín empezó el lunes y Gabriela piensa darla de alta en el IMSS «cuando pase el primer mes». En una quincena floja, Jazmín facturó $13,000. Además, una técnica con clientela propia le propone rentar la tercera mesa por $3,500 al mes con sus propios productos, pero Gabriela quiere que cobre los precios del estudio y cubra los sábados en que falte personal.",
+     "p": [
+      [
+       "En la quincena floja, ¿cuánto debe pagarle Gabriela a Jazmín como mínimo?",
+       "$6,613.05: el mínimo de la frontera por 15 días",
+       "$5,200.00: el 40 % de lo que facturó esa quincena",
+       "$5,121.30: el mínimo profesional por 15 días",
+       "La comisión da $13,000 × 40 % = $5,200. Mexicali está en la zona libre de la frontera norte, donde el mínimo de 2026 es $440.87 diarios: $440.87 × 15 = $6,613.05. Gabriela completa $1,413.05. En la zona libre no se usa el mínimo profesional de $341.42: ahí el general de la zona aplica también a cultoras de belleza, y pagar solo la comisión deja a Jazmín debajo del mínimo. Verifica los montos en la CONASAMI."
+      ],
+      [
+       "¿Cuándo debe darla de alta en el IMSS?",
+       "En no más de 5 días hábiles desde que empezó",
+       "Al terminar el primer mes, como periodo de prueba",
+       "Solo si Jazmín lo pide, porque cobra por comisión",
+       "La Ley del Seguro Social pide el alta en un plazo no mayor de 5 días hábiles. Esperar un mes deja a Jazmín sin seguridad social si se lastima o enferma, y la forma de pago no cambia la obligación: la comisión es salario según la LFT."
+      ],
+      [
+       "¿Qué le conviene a Gabriela con la propuesta de la tercera mesa?",
+       "Si va a fijarle precios y sábados, contratarla; si no, renta real",
+       "Firmar la renta y pedirle que cobre los precios del estudio y cubra sábados",
+       "Rentarle sin contrato escrito para no crear obligaciones legales",
+       "Con precios y horario impuestos, la «renta» sería en los hechos una relación de trabajo (artículos 20 y 21), y el papel no la protege. Si Gabriela quiere una renta real, la técnica decide agenda, precios y material. No escribir nada no evita la relación laboral; solo deja a las dos sin claridad."
+      ]
+     ],
+     "completar": [
+      "Según la LFT, si fijas horario, precios y forma de trabajar, hay ___ de trabajo aunque el papel diga «renta».",
+      "relación"
+     ],
+     "relacionar": [
+      [
+       "Artículo 20 de la LFT",
+       "Trabajo subordinado y pagado: relación laboral"
+      ],
+      [
+       "Artículo 21 de la LFT",
+       "La relación de trabajo se presume"
+      ],
+      [
+       "Artículo 83 de la LFT",
+       "El salario puede fijarse por comisión"
+      ],
+      [
+       "Alta en el IMSS",
+       "No más de 5 días hábiles"
+      ],
+      [
+       "Renta de cabina real",
+       "Agenda, precios y material propios"
+      ]
+     ],
+     "refl": "Decide cómo crecer con otra persona (20 min). 1) Describe cómo trabajaría: horario, precios, material, clientas y quién decide cada cosa. 2) Con esa lista, determina si sería una relación laboral o una renta real y explica por qué con el artículo 20. 3) Si es laboral, calcula su pago por comisión en una quincena floja y compáralo con el salario mínimo de tu zona. 4) Escribe quién y cuándo hará el alta en el IMSS. 5) Si es renta, redacta qué incluye y qué decide ella.",
+     "modelo": "Modelo: «Quiero a una técnica de martes a sábado, con mis precios y mi material: es relación laboral (artículo 20), aunque le pague por comisión. Estoy fuera de la frontera y la contrato como cultora de belleza: $341.42 × 15 = $5,121.30 por quincena. Si factura $11,000, el 40 % da $4,400, así que completo $721.30. Mi contador la dará de alta en el IMSS el día que empiece. Antes de contratar verificaré los montos en la CONASAMI.» Es buena porque decide por los hechos y no por el nombre del contrato, usa el mínimo de la zona correcta y no deja el alta para después.",
+     "plantilla": [
+      "Decisión: contratar o rentar",
+      "Persona: [ ]  Servicios: [ ]\n¿Quién fija el horario? [ ]  ¿Los precios? [ ]  ¿El material? [ ]  ¿Las clientas? [ ]\nConclusión: [relación laboral (LFT 20 y 21) / renta de cabina real]\nSi es laboral: comisión [ ] % de $[ ] = $[ ] por quincena; mínimo de mi zona $[ ] × 15 = $[ ]; complemento $[ ]\nAlta en el IMSS: ingreso [fecha]; alta a más tardar [5 días hábiles]\nSi es renta: incluye [espacio, luz, recepción]; ella decide [agenda, precios, material]\nFiscal: verifico con [contador / SAT] mi régimen, el IVA y la factura global\nMontos verificados en la CONASAMI el [fecha]"
+     ],
+     "clave": [
+      "La relación laboral la definen los hechos: si mandas, fijas horario y precios, es tu trabajadora.",
+      "La comisión es válida, pero en cada periodo debe alcanzar el mínimo de tu zona; el alta en el IMSS va en 5 días hábiles.",
+      "RESICO, IVA y factura global se verifican en el SAT o con tu contador; profundiza en los diplomados de emprendimiento y contabilidad."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma los números de tu estudio, la primera mitad de la parte 4 de tu proyecto final. 1) En Excel, calcula tu costo por minuto de silla con gastos fijos, sueldo y horas cobradas. 2) Costea tres servicios con material, merma y minutos reales, usando =SUMA() y =REDONDEAR(). 3) Fija sus precios con margen, diseña un combo y calcula tu punto de equilibrio con y sin sueldo. 4) Escribe tu política de agenda, anticipo y cancelación y tu lista de precios totales. 5) Si piensas trabajar con alguien más, decide si sería contrato o renta y calcula el mínimo por quincena de tu zona.",
+    "entregable": "Un archivo de Excel con la hoja de gastos fijos, el costo y el precio de tres servicios y el punto de equilibrio, más una página con tu política de agenda y cancelación, tu lista de precios y tu decisión sobre el equipo.",
+    "criterios": "Revisa: el costo por minuto incluye tu sueldo y usa horas cobradas, cada servicio tiene material con merma y minutos medidos, el precio usa costo ÷ (1 − margen) redondeado hacia arriba, la política se envía antes de agendar y por escrito, los precios a la vista son totales, y la decisión sobre el equipo se basa en quién fija horario, precios y material."
+   },
+   "lab": {
+    "t": "Los números de un estudio con dos mesas en Coyoacán",
+    "obj": "Calcular el costo y el precio de un servicio, el punto de equilibrio, una política de agenda y la forma legal de sumar a una técnica en un estudio real.",
+    "esc": "<b>Alejandra,</b> de 38 años, tiene un estudio de uñas con dos mesas en la alcaldía Coyoacán, en la Ciudad de México; todas las cifras son de ejemplo. Sus gastos fijos son $15,600 al mes, quiere pagarse $20,400 y cobra unas 160 horas de servicio al mes. Su servicio estrella es el acrílico escultural: 120 minutos de silla y $85 de material, con 10 % de merma. Quiere ordenar sus números antes de sumar a otra técnica.",
+    "e": [
+     [
+      "Escena 1: Alejandra arma su hoja: gastos fijos en B2:B8, total en B9, sueldo en B10, horas cobradas en B11, costo por minuto en B12, minutos del acrílico en B15, material en B17 y merma en B18.",
+      "Consigna: escribe las fórmulas en español para el total de gastos fijos, el costo por minuto y el costo completo del acrílico, y calcula cada resultado."
+     ],
+     [
+      "Escena 2: Quiere 25 % de margen en el acrílico. Su servicio promedio, de cualquier tipo, le deja $510 después de material, merma y comisión de la terminal. En dos mesas caben unas 110 citas al mes.",
+      "Consigna: calcula el precio del acrílico redondeado hacia arriba a la decena y su punto de equilibrio con y sin su sueldo; di si cabe en su capacidad."
+     ],
+     [
+      "Escena 3: El mes pasado tuvo 9 faltas sin aviso, y una clienta se quejó porque la lista decía «acrílico desde $650» y en caja le cobraron $780 con diseño e IVA.",
+      "Consigna: redacta su política de anticipo y cancelación, el mensaje con que la enviará antes de agendar y su nueva lista de precios totales."
+     ],
+     [
+      "Escena 4: Liliana, de 30 años, técnica con práctica supervisada, trabajaría en la segunda mesa de martes a sábado con los precios y el material del estudio. Alejandra piensa pagarle 35 % de comisión y llamarle «renta de cabina» para no darla de alta.",
+      "Consigna: explica qué relación sería según la LFT, calcula el mínimo por quincena si factura $13,000 y escribe los pasos para contratarla bien."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuál es el costo completo del acrílico escultural de Alejandra?",
+      "$543.50: 120 × $3.75 más $93.50 de material",
+      "$535.00: 120 × $3.75 más $85 sin merma",
+      "$288.50: 120 × $1.625 más $93.50 de material",
+      "Costo por minuto: =(B9+B10)/(B11*60) = ($15,600 + $20,400) ÷ 9,600 = $3.75. Tiempo: 120 × $3.75 = $450. Material con merma: $85 × 1.10 = $93.50. Total: $543.50. Sin merma faltan $8.50 que sí se gastan, y $1.625 por minuto sale de olvidar su sueldo."
+     ],
+     [
+      "¿Qué precio y qué punto de equilibrio con sueldo le corresponden?",
+      "$730 y 71 servicios al mes",
+      "$680 y 31 servicios al mes",
+      "$720 y 71 servicios al mes",
+      "Precio: =REDONDEAR.MAS(543.5/(1-0.25),-1) → $724.67 sube a $730. Equilibrio con sueldo: $36,000 ÷ $510 = 70.6, o sea 71, que caben en sus 110 citas; sin sueldo, $15,600 ÷ $510 = 30.6, o sea 31. $680 sale de sumar 25 % al costo (margen real 20.1 %) y 31 olvida su sueldo; $720 redondea hacia abajo y queda bajo el margen."
+     ],
+     [
+      "¿Cuánto debe pagarle a Liliana como mínimo en una quincena en que factura $13,000?",
+      "$5,121.30, porque el 35 % da $4,550 y no alcanza",
+      "$4,550.00, porque es la comisión que acordaron",
+      "$6,613.05, por el mínimo de la zona libre",
+      "Con horario, precios y material del estudio es relación de trabajo (artículo 20), se llame como se llame. Fuera de la frontera, el mínimo profesional de cultora de belleza es $341.42 diarios: × 15 = $5,121.30. La comisión da $4,550, así que Alejandra completa $571.30. El mínimo de la zona libre ($440.87) no aplica en la Ciudad de México; verifica los montos en la CONASAMI."
+     ]
+    ],
+    "pl": [
+     "Tablero de números del estudio",
+     "Gastos fijos: =SUMA(B2:B8) = $[ ]  Sueldo: $[ ]  Horas cobradas: [ ]\nCosto por minuto: =(B9+B10)/(B11*60) = $[ ]\nServicio | Minutos | Material | Merma | Costo | Margen | Precio (REDONDEAR.MAS)\n[ ] | [ ] | $[ ] | [ ] % | $[ ] | [ ] % | $[ ]\nMargen de contribución promedio: $[ ]\nEquilibrio sin sueldo: [ ]  Con sueldo: [ ]  Capacidad al mes: [ ]\nAnticipo: $[ ]  Política: [ ]  Se envía: antes de agendar, por escrito\nPrecios totales a la vista: [sí / dónde]\nEquipo: [contrato / renta]  Mínimo por quincena: $[ ]  Alta en el IMSS: [fecha]"
+    ]
+   },
+   "quiz": [
+    [
+     "Tu estudio abre 200 horas al mes, pero cobras 110. ¿Entre qué divides tus gastos fijos y tu sueldo para sacar el costo por minuto?",
+     "Entre 6,600 minutos: las 110 horas que cobras",
+     "Entre 12,000 minutos: las 200 horas que abres",
+     "Entre el número de clientas que atendiste ese mes",
+     "Entre 30 días, para obtener primero un costo diario"
+    ],
+    [
+     "Un top de $240 rinde unas 40 aplicaciones. ¿Qué anotas en tu hoja como costo de top por servicio?",
+     "$6.00, con =240/40",
+     "$240, porque lo pagaste completo ese mes",
+     "$24.00, con =240/10",
+     "$0.17, con =40/240"
+    ],
+    [
+     "Una compañera suma 20 % a su costo de $400, cobra $480 y cree que tiene 20 % de margen. ¿Qué le dices?",
+     "Que su margen real es de 16.7 %; para 20 % debe cobrar $500",
+     "Que está bien: sumar 20 % al costo y el margen son lo mismo",
+     "Que su margen real es de 24 %, así que gana más de lo que cree",
+     "Que debería cobrar $420 para que el margen sea exactamente 20 %"
+    ],
+    [
+     "Tus gastos fijos son $12,000 y cada servicio te deja $300 de margen de contribución. ¿Cuántos servicios necesitas al mes para no perder?",
+     "40 servicios",
+     "30 servicios",
+     "300 servicios",
+     "12 servicios"
+    ],
+    [
+     "Una clienta quiere manos y pies juntos con descuento. ¿Cuándo tiene sentido ofrecerle un combo?",
+     "Cuando el descuento sale del tiempo y la preparación que ahorras",
+     "Siempre, porque más servicios por cita dejan más ganancia total",
+     "Cuando la competencia ofrece un combo más barato que el tuyo",
+     "Solo cuando el descuento es igual a todo tu margen de ganancia"
+    ],
+    [
+     "Una clienta no llegó y nunca le enviaste tu política de cancelación antes de agendar. ¿Qué haces con su anticipo?",
+     "Le ofreces reprogramar o devolverlo y corriges tu confirmación",
+     "Lo conservas, porque la política está en tus historias destacadas",
+     "Lo conservas y además le cobras la mitad del servicio la próxima vez",
+     "Lo conservas y le bloqueas la agenda para que no vuelva a pasar"
+    ],
+    [
+     "Tu lista dice «gel desde $380» y en caja sumas $60 de diseño y el IVA. ¿Qué cambias para cumplir con la LFPC?",
+     "Muestras precios totales y cada extra con su precio, a la vista",
+     "Agregas «precios más IVA» al final de la lista, en letra chica",
+     "Explicas los extras de palabra cuando terminas el servicio",
+     "Quitas los precios de la lista y los das solo por mensaje"
+    ],
+    [
+     "Tu estudio cobra servicios de uñas a clientas que no piden factura. ¿Qué dice la regla general que debes verificar con tu contador?",
+     "Causan IVA de 16 % y se amparan con una factura global",
+     "Están exentos de IVA por ser servicios personales de belleza",
+     "Solo causan IVA cuando la clienta pide su factura con RFC",
+     "Solo causan IVA si tus ingresos pasan el tope del RESICO"
+    ],
+    [
+     "Fuera de la frontera norte, una cultora de belleza gana 40 % de comisión y en una quincena factura $12,000. ¿Cuánto le pagas como mínimo?",
+     "$5,121.30: $341.42 diarios por la quincena",
+     "$4,800.00: la comisión acordada por escrito",
+     "$4,725.60: $315.04 diarios por la quincena",
+     "$6,613.05: $440.87 diarios por la quincena"
+    ],
+    [
+     "Una técnica que «renta» tu cabina trabaja con el horario, los precios y el material que tú decides, y empezó hace una semana. ¿Qué es en los hechos y qué te falta?",
+     "Una relación de trabajo: te falta darla de alta en el IMSS",
+     "Una renta de cabina, porque así lo firmaron las dos partes",
+     "Una sociedad, porque las dos se reparten lo que se cobra",
+     "Una prestadora independiente, porque cobra por comisión"
+    ]
+   ]
+  },
+  {
+   "t": "Clientela, permisos y proyecto final",
+   "r": "Cómo mostrar tu trabajo con honestidad, lograr que las clientas regresen y te recomienden, qué permisos verificar antes de abrir y cómo crecer sin perder calidad; cierras con el plan de apertura de tu estudio.",
+   "lecciones": [
+    {
+     "t": "Portafolio honesto y redes: fotos propias, permiso de la clienta y publicidad veraz",
+     "obj": "Armar un portafolio con fotos propias y permisos por escrito, y publicar sin prometer lo que no puedes entregar.",
+     "texto": [
+      "Tu portafolio es una promesa: la clienta que ve una foto espera ese resultado. Por eso solo publicas <b>trabajo tuyo</b>, hecho en clientas reales o en modelos de práctica, y lo dices cuando es una práctica. El artículo 32 de la Ley Federal de Protección al Consumidor pide que la información y la publicidad sean <b>veraces y comprobables</b>. Las fotos de otras técnicas, las imágenes descargadas o fabricadas con herramientas digitales presentadas como tuyas, y los filtros que alisan cutículas, borran levantamientos o cambian el color prometen algo que no vas a entregar.",
+      "Ajustar la luz o recortar el fondo está bien; cambiar el resultado, no. Toma la foto el mismo día, con luz natural o una lámpara de luz blanca, fondo neutro y sin retoque sobre las uñas o las pestañas. Si la clienta quiere, pídele otra foto a las dos o tres semanas: mostrar cómo luce el servicio con el crecimiento es más honesto y te sirve para revisar tu técnica. La técnica fotográfica se ve a fondo en «Fotografía de Producto con el Celular», y los anuncios, en «Marketing Digital y Redes Sociales».",
+      "Una foto también es un dato personal. Un rostro o unos ojos identifican casi siempre, y una mano con un tatuaje, un lunar visible o un anillo particular también puede hacerlo. La ley de datos personales protege también la imagen, y lo más seguro es pedir un <b>permiso</b> por escrito para publicar, separado del consentimiento de la ficha, y di dónde aparecerá la foto. La clienta puede negarse sin perder el servicio ni el precio, y puede pedirte después que la retires.",
+      "Un portafolio honesto también es selectivo. Agrupa por servicio, muestra primero tu especialidad y quita lo que ya no ofreces. Evita frases que no puedes demostrar, como «el gel que no daña» o «pestañas que duran dos meses»: además de engañar, te comprometen frente a cada clienta que las lea. Si un servicio salió mal, no lo tapes con otra foto: corrígelo con la clienta y anota qué aprendiste."
+     ],
+     "comparar": [
+      "«Así no: Subo diseños bonitos que encuentro en internet y les pongo filtro a los míos para que se vean perfectos.»",
+      "«Así sí: Publico solo mi trabajo, con luz real y sin filtros sobre las uñas, y cada foto tiene el permiso escrito de la clienta.»"
+     ],
+     "caso": "Caso ficticio: Abril, de 25 años, abrió hace cuatro meses un estudio de uñas en Tepic y tiene pocas fotos. Una amiga le sugiere descargar diseños de una red social de fotos y subirlos a su perfil «como inspiración», sin aclarar que no son suyos. Abril usa un filtro de belleza que borra las cutículas y empareja los bordes. Esta semana hizo un diseño que le encantó a una clienta de 31 años con un tatuaje pequeño en la muñeca, que no ha firmado ningún permiso para fotos. Otra clienta sí firmó, pero pidió que no se vea su cara.",
+     "p": [
+      [
+       "¿Qué le responde Abril a su amiga?",
+       "Que no las mezcla con su trabajo: prometen lo que ella no hizo",
+       "Que sí, porque lo que se publica en redes es de uso libre",
+       "Que sí, siempre que elija diseños que sabe hacer igual",
+       "Mezclar fotos ajenas con las propias, sin aclararlo, hace creer a la clienta que ese es el trabajo de Abril: la publicidad debe ser veraz y comprobable (artículo 32). Que algo esté publicado no lo vuelve de uso libre, y saber hacer un diseño parecido no cambia que esa foto no es suya. Lo honesto es construir el portafolio con su propio trabajo, aunque crezca despacio."
+      ],
+      [
+       "¿Qué hace Abril con su filtro de belleza?",
+       "Lo deja; solo ajusta luz y encuadre sin tocar las uñas",
+       "Lo usa solo en los diseños más difíciles de fotografiar",
+       "Lo usa, pero lo aclara en un comentario de la publicación",
+       "Un filtro que borra cutículas y empareja bordes cambia el resultado que la clienta va a recibir. Ajustar la luz o recortar el fondo no lo cambia. Usarlo solo en algunas fotos sigue engañando, y aclararlo en un comentario que pocas personas leen no corrige la imagen principal."
+      ],
+      [
+       "¿Puede publicar la foto del diseño de la clienta con tatuaje?",
+       "Solo con su permiso por escrito; el tatuaje la identifica",
+       "Sí, porque es una foto de las manos y no se ve su cara",
+       "Sí, si antes borra el tatuaje con una aplicación de edición",
+       "Un tatuaje puede identificar a una persona, y la foto es un dato personal: hace falta su permiso por escrito, y si se niega no se publica. Que no se vea la cara no basta, y borrar el tatuaje no resuelve la falta de permiso; además, editar la foto de un trabajo abre la puerta a editar también el resultado."
+      ]
+     ],
+     "completar": [
+      "Para publicar una foto de tu clienta, pide un ___ por escrito, separado del consentimiento de la ficha.",
+      "permiso"
+     ],
+     "relacionar": [
+      [
+       "Foto de otra técnica en tu perfil",
+       "Publicidad que no es veraz"
+      ],
+      [
+       "Ajustar la luz o el encuadre",
+       "Válido si no cambia el resultado"
+      ],
+      [
+       "Mano con un tatuaje",
+       "Puede identificar a la clienta"
+      ],
+      [
+       "Permiso para fotos",
+       "Por escrito y aparte de la ficha"
+      ],
+      [
+       "Foto a las tres semanas",
+       "Muestra cómo se mantiene el servicio"
+      ]
+     ],
+     "refl": "Ordena tu portafolio (20 min). 1) Revisa tus últimas 15 publicaciones y marca cuáles son trabajo tuyo, cuáles tienen filtro y cuáles tienen permiso por escrito. 2) Decide qué retiras y qué vuelves a fotografiar. 3) Redacta tu permiso para fotos: qué se publica, dónde y cómo se pide que se retire. 4) Escribe tu guía de foto: luz, fondo, ángulos y cuándo se toma. 5) Elimina o reescribe dos frases de tus redes que no puedas demostrar.",
+     "modelo": "Modelo: «De 15 publicaciones, 3 eran diseños descargados: las borro. Cuatro tenían un filtro que alisaba la piel: las vuelvo a tomar. Mi permiso: “Autorizo al estudio a publicar fotos de mis manos en su perfil y su catálogo, sin mi nombre; puedo pedir que se retiren cuando quiera.” Foto con luz de ventana, fondo gris, el día del servicio y, si la clienta acepta, a las tres semanas. Cambio “el gel que no daña” por “gel aplicado y retirado con cuidado”.» Es buena porque quita lo engañoso, pide un permiso claro y cambia promesas por hechos.",
+     "plantilla": [
+      "Permiso para publicar fotos y guía de portafolio",
+      "Yo, [nombre], autorizo a [estudio] a publicar fotos de mis [manos / pies / ojos / rostro] tomadas el [fecha] en [perfil, catálogo, sitio].\n[ ] Sin mi nombre  [ ] Sin mi rostro  [ ] Otra condición: [ ]\nPuedo pedir que se retiren escribiendo a [contacto]. Negarme no cambia mi servicio ni su precio.\nFirma: [ ]  Fecha: [ ]\nGuía de foto: luz [ ]; fondo [ ]; ángulos [ ]; sin filtros sobre el trabajo; foto de seguimiento a las [ ] semanas"
+     ],
+     "clave": [
+      "Publica solo trabajo tuyo y sin filtros que cambien el resultado: la publicidad debe ser veraz y comprobable.",
+      "Una foto puede identificar a tu clienta: permiso por escrito, aparte de la ficha, y respeta si te lo niega."
+     ]
+    },
+    {
+     "t": "Experiencia, retención y reseñas: que la clienta regrese y te recomiende",
+     "obj": "Diseñar la experiencia antes, durante y después del servicio, medir cuántas clientas regresan y pedir reseñas reales sin comprarlas ni inventarlas.",
+     "texto": [
+      "En este oficio casi todo el trabajo es recurrente: rellenos, retoques, mantenimiento de pestañas. Por eso cada clienta que regresa vale más que una visita suelta. La experiencia tiene tres momentos. <b>Antes</b>: confirmación clara, indicaciones (por ejemplo, llegar sin esmalte o sin rímel) y cómo llegar. <b>Durante</b>: consulta previa, explicar lo que harás, preguntar si está cómoda y respetar el tiempo acordado. <b>Después</b>: cuidados por escrito y la siguiente cita agendada según el sistema y el crecimiento de su uña, que en las manos es de unos 3.5 milímetros al mes.",
+      "Piensa también en la <b>accesibilidad</b>: una clienta en silla de ruedas necesita espacio para acercarse a la mesa; una adulta mayor, una silla firme con brazos y un ritmo sin prisa; alguien con baja visión, que le leas el aviso de privacidad y el consentimiento. Pregunta qué necesita en lugar de suponerlo. Nadie debe recibir peor trato ni un precio distinto por su edad, su cuerpo o su condición: el artículo 58 de la LFPC prohíbe discriminar a los consumidores.",
+      "Mide la <b>retención</b>: de las clientas que atendiste en un periodo, cuántas regresaron dentro de un plazo, por ejemplo 60 días. En Excel basta una columna con la fecha de su siguiente cita y otra que marque si llegó a tiempo; divide las que regresaron entre el total. Si el porcentaje baja, pregunta con respeto a quien no volvió: un mensaje breve te dice más que cualquier suposición. Un programa de lealtad, como un descuento en el décimo servicio, funciona si sus condiciones están por escrito.",
+      "Las <b>reseñas</b> se piden, no se fabrican. Pídelas a todas las clientas, no solo a las contentas, y nunca compres reseñas, las escribas tú ni des un descuento a cambio de cinco estrellas: eso engaña a quien las lee y choca con la publicidad veraz. Responde las críticas con calma: en público, breve y con una solución; en privado, los detalles. Nunca menciones datos de salud de la clienta, como una alergia o la diabetes, porque son datos sensibles."
+     ],
+     "comparar": [
+      "«Así no: Gracias por tu servicio, ¡bye! (Y luego pido reseñas solo a las clientas que me caen bien.)»",
+      "«Así sí: Te dejo tus cuidados por escrito y tu relleno agendado en tres semanas; si quieres, cuéntame en una reseña cómo te fue, bien o mal.»"
+     ],
+     "caso": "Caso ficticio: Samuel, de 34 años, es técnico de uñas y tiene un estudio en Campeche. En el último trimestre atendió a 120 clientas distintas, y 54 regresaron dentro de los 60 días siguientes. Una agencia le ofrece «50 reseñas de cinco estrellas en una semana» por $1,500 (precio de ejemplo). Una clienta dejó una reseña de dos estrellas: dice que su gel se levantó a los cinco días y que nadie le respondió. Samuel recuerda que en su ficha anotó que ella tiene diabetes y tiene la tentación de contestar que «el levantamiento fue por su condición».",
+     "p": [
+      [
+       "¿Cuál es la retención de Samuel en el trimestre?",
+       "45 %: 54 de 120 clientas regresaron",
+       "55 %: 66 de 120 clientas regresaron",
+       "54 %: cada clienta que vuelve es un punto",
+       "54 ÷ 120 = 0.45, o sea 45 %. Las 66 restantes son las que no regresaron, y su 55 % es lo contrario de la retención. Contar cada clienta como un punto solo funciona si atendiste exactamente a 100. Con el dato correcto, Samuel puede preguntar a quienes no volvieron y medir si mejora el próximo trimestre."
+      ],
+      [
+       "¿Qué le responde Samuel a la agencia de reseñas?",
+       "Que no: las reseñas compradas engañan a quien las lee",
+       "Que sí, mientras después pida también reseñas reales a sus clientas",
+       "Que sí, solo para arrancar, y luego las va borrando",
+       "Una reseña comprada o inventada presenta como experiencia real algo que no ocurrió, y eso engaña a otras clientas y va contra la publicidad veraz. Mezclarlas con reseñas reales no las vuelve honestas, y borrarlas después no deshace el engaño de quienes ya decidieron por ellas. Además, si se descubre, la reputación del estudio se cae completa."
+      ],
+      [
+       "¿Cómo responde a la reseña de dos estrellas?",
+       "Se disculpa, ofrece revisar y retocar, y sigue en privado",
+       "Explica que el levantamiento fue por la diabetes de la clienta",
+       "La ignora, porque responder solo le da más visibilidad",
+       "La respuesta pública debe ser breve: agradecer, disculparse por no haber contestado y ofrecer una revisión, que puede incluir un retoque si su política lo cubre. La diabetes es un dato sensible: revelarlo en público viola la confianza y la ley de datos personales, y además sería atribuirle una causa sin diagnóstico. Ignorarla deja la impresión de que a nadie le importa."
+      ]
+     ],
+     "completar": [
+      "Mide la ___: cuántas de las clientas que atendiste regresaron dentro de un plazo, por ejemplo 60 días.",
+      "retención"
+     ],
+     "refl": "Diseña la experiencia y tu medición (20 min). 1) Escribe tres acciones para antes, durante y después del servicio. 2) Anota qué ajustes de accesibilidad puedes ofrecer desde hoy. 3) Calcula tu retención de los últimos tres meses o define cómo la medirás. 4) Redacta el mensaje con el que pedirás reseñas a todas tus clientas. 5) Escribe cómo responderías a una reseña negativa sin revelar datos personales.",
+     "modelo": "Modelo: «Antes: confirmo 24 horas antes con indicaciones y ubicación. Durante: explico cada paso y pregunto si la postura es cómoda. Después: cuidados por escrito y relleno agendado a las tres semanas. Accesibilidad: silla con brazos y paso libre hasta la mesa. Retención: de 80 clientas, 40 regresaron en 60 días, 50 %; escribiré a las que no volvieron. Reseña: “Si te gustó o si algo no, cuéntalo; tu opinión real me ayuda.” Respuesta: “Gracias por avisar y perdón por no contestar; te escribo para revisar tus uñas.”» Es buena porque cubre los tres momentos, mide con datos y no ofrece nada a cambio de estrellas.",
+     "plantilla": [
+      "Ciclo de la clienta y reseñas",
+      "Antes: [confirmación] [indicaciones] [ubicación]\nDurante: [consulta] [explicación de pasos] [comodidad y tiempo]\nDespués: [cuidados por escrito] [siguiente cita en [ ] semanas] [mensaje de seguimiento a los [ ] días]\nAccesibilidad: [ ]\nRetención: clientas atendidas [ ]; regresaron en [ ] días [ ] → [ ] %\nMensaje para pedir reseña a todas: [ ]\nRespuesta a una crítica: agradezco, [ofrezco solución], sigo en privado; sin datos de salud\nLealtad: [beneficio]; condiciones por escrito: [ ]"
+     ],
+     "clave": [
+      "La experiencia tiene antes, durante y después; agenda la siguiente cita antes de que la clienta se vaya.",
+      "Mide la retención, pregunta a quien no volvió y adapta el servicio sin discriminar a nadie.",
+      "Reseñas reales de todas las clientas, nunca compradas ni a cambio de estrellas, y sin datos de salud en tus respuestas."
+     ]
+    },
+    {
+     "t": "Permisos para abrir: aviso sanitario, licencia municipal, uso de suelo y protección civil básica",
+     "obj": "Hacer la lista de permisos que debes verificar antes de abrir, en el orden correcto, y preparar tu estudio con lo básico de protección civil.",
+     "texto": [
+      "Antes de firmar una renta o remodelar, verifica el <b>uso de suelo</b>: cada municipio decide en qué zonas se permite un estudio de belleza. Un ejemplo real: en Corregidora, Querétaro, la licencia de funcionamiento de apertura rápida (tipo SARE) aplica a negocios de bajo impacto de hasta 100 m² y pide dictamen de uso de suelo compatible, constancia de situación fiscal, comprobante de domicilio y contrato de recolección de basura. Otros municipios piden cosas distintas, y los costos cambian: verifica en el tuyo.",
+      "En lo sanitario, el artículo 200 Bis de la Ley General de Salud prevé el <b>aviso de funcionamiento</b> para los establecimientos que no requieren licencia sanitaria, y la clase SCIAN 812110, «Salones y clínicas de belleza y peluquerías», aparece en el acuerdo de giros de la COFEPRIS de 2009. En la Ciudad de México, la Agencia de Protección Sanitaria (AGEPSA) indica presentarlo en línea antes de abrir, uno por establecimiento, con e.firma, RFC y la clave SCIAN; también pide a las estéticas un plan de manejo de residuos biológico-infecciosos y contenedor para navajas. Cada estado puede pedir más: en Jalisco, su reglamento pide licencia sanitaria y tarjeta de control sanitario para el personal de salones de belleza y estéticas. Verifica con la autoridad sanitaria de tu estado qué te corresponde.",
+      "La <b>protección civil</b> básica te cuida a ti y a tus clientas: extintor vigente y a la mano, botiquín de primeros auxilios, salidas libres y señalizadas y números de emergencia a la vista, empezando por el 911. Como trabajas con acetona y monómero, guarda los frascos cerrados y lejos del calor y de cualquier flama. Cada municipio define qué documentos pide según el tamaño y el riesgo del lugar: verifica qué pide tu municipio.",
+      "Recuerda lo que viste en el módulo 1: la medicina estética queda fuera de tu menú, porque la ley la reserva a médicos con aviso o licencia sanitaria (LGS 272 Bis). Un orden práctico para abrir: alta en el SAT (lo ves en «Emprender desde Cero»), uso de suelo, licencia municipal, aviso o licencia sanitaria, protección civil y precios a la vista. Pide cada respuesta por escrito, guarda los comprobantes en una carpeta y verifica cada requisito en tu municipio y en el SAT."
+     ],
+     "comparar": [
+      "«Así no: Firmo la renta, remodelo y abro; si llega una inspección, ya veré qué me piden.»",
+      "«Así sí: Primero confirmo por escrito el uso de suelo, después firmo, y abro con licencia, aviso sanitario, extintor y botiquín.»"
+     ],
+     "caso": "Caso ficticio: Norma, de 47 años, quiere abrir un estudio de uñas y pestañas en un local de 40 m² en la alcaldía Iztapalapa, en la Ciudad de México. El dueño le pide firmar hoy un contrato por dos años y le asegura que «ahí siempre ha habido negocios, no necesitas nada». Norma ya tiene su RFC, pero no ha tramitado su e.firma. Un proveedor le propone sumar a su menú «toxina para patas de gallo» con una enfermera que iría un día por semana. Su hermana abrirá un estudio parecido en Guadalajara y cree que le basta con el mismo trámite que Norma.",
+     "p": [
+      [
+       "¿Qué hace Norma antes de firmar el contrato?",
+       "Confirma por escrito que el uso de suelo permite su giro",
+       "Firma, porque en ese local siempre ha habido negocios",
+       "Firma y tramita el uso de suelo durante la remodelación",
+       "El uso de suelo depende del predio y del giro, no de lo que hubo antes: un local de comida o de ropa no garantiza que un estudio de belleza sea compatible. Si firma primero y el giro no procede, queda atada dos años a un local donde no puede trabajar, y remodelar antes de saberlo arriesga la inversión completa."
+      ],
+      [
+       "¿Qué le falta para presentar su aviso de funcionamiento ante la AGEPSA?",
+       "Su e.firma; ya tiene RFC y la clave es la 812110",
+       "Nada: el aviso se entrega en papel después de abrir",
+       "Una licencia sanitaria, que reemplaza el aviso",
+       "La AGEPSA indica presentar el aviso en línea, antes de abrir, con e.firma, RFC y la clave SCIAN 812110; también pedirá su plan de manejo de residuos y el contenedor para navajas. Entregarlo después de abrir no es lo que indica la autoridad, y para este giro en la Ciudad de México lo que corresponde es el aviso. Su hermana, en Jalisco, debe revisar la licencia sanitaria y la tarjeta de control sanitario que pide ese estado."
+      ],
+      [
+       "¿Qué responde Norma a la propuesta de la toxina?",
+       "Que no: es un acto médico que su estudio no ofrece",
+       "Que sí, si la enfermera firma una carta responsiva",
+       "Que sí, si la anuncia como servicio de otra persona",
+       "La toxina es un acto médico: requiere médico y aviso o licencia sanitaria (LGS 272 Bis), y un estudio de uñas y pestañas no la ofrece. Una carta responsiva no cambia quién puede hacerlo ni el tipo de establecimiento, y anunciarla como servicio de otra persona sigue ocurriendo en su local y bajo su nombre."
+      ]
+     ],
+     "completar": [
+      "Antes de firmar una renta, verifica el uso de ___: cada municipio decide si el giro es compatible con la zona.",
+      "suelo"
+     ],
+     "relacionar": [
+      [
+       "LGS, artículo 200 Bis",
+       "Aviso de funcionamiento"
+      ],
+      [
+       "SCIAN 812110",
+       "Salones y clínicas de belleza y peluquerías"
+      ],
+      [
+       "AGEPSA, Ciudad de México",
+       "Aviso en línea antes de abrir"
+      ],
+      [
+       "Jalisco",
+       "Licencia y tarjeta de control sanitario"
+      ],
+      [
+       "Toxina o rellenos",
+       "Actos médicos: no van en tu estudio"
+      ]
+     ],
+     "refl": "Arma tu ruta de permisos (20 min). 1) Escribe la dirección y los metros de tu espacio y busca en el sitio de tu municipio qué pide para uso de suelo y licencia. 2) Averigua con la autoridad sanitaria de tu estado si te corresponde aviso o licencia y con qué datos. 3) Haz tu lista de protección civil: extintor, botiquín, salidas, números de emergencia y lo que pida tu municipio. 4) Revisa tu menú y quita cualquier servicio que sea acto médico. 5) Ordena todo en una ruta con fechas y responsables.",
+     "modelo": "Modelo: «Local de 35 m² en una avenida con comercios. 1) Esta semana pregunto en desarrollo urbano si el giro es compatible; sin respuesta por escrito no firmo. 2) Tramito mi e.firma y reviso en el sitio de salud de mi estado si va aviso o licencia. 3) Compro extintor y botiquín, señalizo la salida y pego el 911 junto a la caja. 4) Quito “peeling médico” de mi lista de ideas: no es para un estudio. 5) Abro cuando tenga todo en mi carpeta.» Es buena porque pone el uso de suelo antes de la renta, separa lo sanitario de lo municipal y depura el menú.",
+     "plantilla": [
+      "Ruta de permisos para abrir",
+      "Dirección: [ ]  Metros: [ ]  Municipio o alcaldía: [ ]\n1) Alta en el SAT: [ ] (verifica en el SAT)\n2) Uso de suelo: [qué piden, dónde] → respuesta por escrito el [fecha]\n3) Licencia municipal: [requisitos]\n4) Sanitario: [aviso / licencia] ante [autoridad de mi estado]; datos: e.firma, RFC, SCIAN 812110\n5) Protección civil: extintor [ ], botiquín [ ], salidas señalizadas [ ], números de emergencia y 911 [ ]; mi municipio pide [ ]\n6) Precios totales a la vista: [ ]\nServicios que no ofrezco por ser actos médicos: [ ]\nCarpeta de comprobantes: [dónde]"
+     ],
+     "clave": [
+      "Primero el uso de suelo, después la renta y la remodelación: cada municipio decide.",
+      "El aviso de funcionamiento (LGS 200 Bis, SCIAN 812110) y lo que pida tu estado se verifican antes de abrir.",
+      "Protección civil básica y nada de actos médicos en tu menú; en una emergencia, 911."
+     ]
+    },
+    {
+     "t": "Crecer sin perder calidad: estándares escritos, capacitación y venta de productos",
+     "obj": "Escribir los estándares de tu estudio, capacitar y supervisar a quien se suma, medir la calidad por técnica y vender solo productos que cumplen la norma de etiquetado.",
+     "texto": [
+      "Cuando atiendes sola, la calidad vive en tus manos; cuando creces, tiene que vivir en papel. Un manual de <b>estándares</b> describe cómo se hace cada cosa en tu estudio: consulta previa y ficha, protocolo de bioseguridad, pasos y tiempos de cada servicio, retiro, fotos y permisos, agenda y trato a la clienta. Escríbelo en pasos cortos, con listas de verificación que se puedan revisar en la mesa, y actualízalo cuando cambies un producto o un proceso.",
+      "La <b>capacitación</b> no termina con un curso. Quien se suma pasa por práctica presencial supervisada en tu estudio: primero observa, luego atiende modelos con tu revisión y solo después clientas, con tu visto bueno por servicio. Este diplomado no certifica competencias; si alguien de tu equipo quiere certificarse en un estándar del CONOCER, lo hace aparte, con un evaluador acreditado. Verifica en el RENEC del CONOCER los estándares vigentes.",
+      "Mide la calidad con datos sencillos por técnica: porcentaje de retoques por levantamiento, quejas, retención y tiempos reales frente a los de tu agenda. Si una técnica tiene muchos más retoques que las demás, no es para exhibirla ni castigarla: revisen juntas su preparación, su aplicación y sus tiempos, y acompáñala de nuevo en práctica. Haz cada mes una revisión de bioseguridad con la misma lista para todas, también para ti.",
+      "Vender productos (aceite de cutícula, crema de manos, cepillo de pestañas) puede sumar ingresos, pero cada producto cosmético debe tener etiqueta conforme a la NOM-141-SSA1/SCFI-2012: denominación, responsable con nombre y domicilio, país de origen, lote, contenido neto, ingredientes y leyendas en español. Si le falta cualquiera de esos datos, no entra a tu vitrina. Tampoco prometas lo que no está demostrado, como «cura hongos» o «hace crecer las pestañas», y no vendas sérums con prostaglandinas. Fabricar y envasar con tu marca es otro negocio, con obligaciones propias de etiquetado y sanitarias: infórmate antes de intentarlo."
+     ],
+     "comparar": [
+      "«Así no: Cada quien sabe hacerlo a su manera; y este aceite a granel se vende solo, dice que cura hongos.»",
+      "«Así sí: Todas siguen el mismo manual, mido retoques por técnica y solo vendo productos con etiqueta completa en español.»"
+     ],
+     "caso": "Caso ficticio: Carmen, de 52 años, tiene un estudio en Ensenada con tres técnicas y piensa abrir una segunda sucursal. En el último mes, una técnica tuvo 3 retoques por levantamiento en 60 servicios y otra, 9 en 50. Carmen no tiene nada escrito porque «cada una sabe hacerlo». Una proveedora le ofrece aceite de cutícula a granel, en frascos sin etiqueta, «que cura los hongos en dos semanas», y un sérum de pestañas importado con isopropil cloprostenato.",
+     "p": [
+      [
+       "¿Qué porcentaje de retoques tiene cada técnica?",
+       "5 % y 18 %: 3 ÷ 60 y 9 ÷ 50",
+       "3 % y 9 %: un punto por retoque",
+       "5 % y 15 %: 3 ÷ 60 y 9 ÷ 60",
+       "3 ÷ 60 = 0.05 y 9 ÷ 50 = 0.18. Contar un punto por retoque olvida que cada técnica hizo un número distinto de servicios, y dividir las dos entre 60 usa el total equivocado para la segunda. Con 18 % contra 5 %, la diferencia es clara y vale la pena revisarla."
+      ],
+      [
+       "¿Qué hace Carmen con la técnica que tiene 18 % de retoques?",
+       "Revisa con ella preparación, aplicación y tiempos, y la acompaña",
+       "Le descuenta de su pago quincenal cada retoque que tenga que hacer",
+       "La deja solo en manicura y le quita los servicios de gel",
+       "Los retoques altos suelen venir de la preparación, la aplicación o la prisa: revisarlos juntas y acompañarla en práctica corrige la causa. Descontarle del pago no enseña nada y puede chocar con sus derechos laborales; quitarle servicios sin revisar qué pasa tampoco resuelve el problema. Además, este caso muestra que Carmen necesita un manual escrito antes de abrir otra sucursal."
+      ],
+      [
+       "¿Qué hace Carmen con el aceite y el sérum?",
+       "No vende ninguno de los dos productos",
+       "Vende el aceite sin la frase de los hongos",
+       "Vende los dos, aclarando que son importados",
+       "El aceite no tiene etiqueta en español, lote ni responsable, como pide la NOM-141, y además promete curar una enfermedad, que debe ver un médico; quitar la frase no le da etiqueta. El sérum contiene un análogo de prostaglandina, que puede oscurecer el iris y el párpado: el estudio no lo vende ni lo recomienda, y quien quiera alargar sus pestañas consulta a un oftalmólogo. Decir que son importados no corrige nada."
+      ]
+     ],
+     "completar": [
+      "Un manual de ___ describe en pasos cortos cómo se hace cada cosa en tu estudio.",
+      "estándares"
+     ],
+     "relacionar": [
+      [
+       "Aceite sin lote ni responsable",
+       "No se vende"
+      ],
+      [
+       "«Cura hongos en dos semanas»",
+       "Promesa que no puedes hacer"
+      ],
+      [
+       "Sérum con prostaglandina",
+       "Fuera del estudio; remite a oftalmólogo"
+      ],
+      [
+       "Estándar del CONOCER",
+       "Certificación aparte, con evaluador acreditado"
+      ],
+      [
+       "Lista de verificación",
+       "Se revisa en la mesa, servicio por servicio"
+      ]
+     ],
+     "refl": "Escribe la base de tu manual (20 min). 1) Elige tu servicio principal y escribe su estándar en máximo 12 pasos, con tiempos. 2) Haz una lista de verificación de bioseguridad para el cierre del día. 3) Define cómo capacitarás a alguien nuevo: qué observa, en qué practica y cuándo atiende sola. 4) Elige tres indicadores de calidad por técnica y cómo los medirás. 5) Revisa un producto que vendes o quieres vender contra la NOM-141 y anota qué le falta.",
+     "modelo": "Modelo: «Semipermanente: 10 pasos, de la consulta al cierre de mesa, en 60 minutos. Cierre del día: 8 casillas, de vaciar contenedores a revisar el autoclave. Capacitación: una semana de observar, dos con modelos y mi revisión, y después clientas con mi visto bueno. Indicadores: retoques, quejas y tiempos reales. Producto: la crema que vendo tiene lote y contenido neto, pero no responsable ni domicilio; la retiro hasta que el proveedor me dé una con etiqueta completa.» Es buena porque es concreta, pone plazos a la capacitación y revisa el producto contra la norma, no contra la intuición.",
+     "plantilla": [
+      "Índice del manual de estándares y revisión de productos",
+      "1. Consulta previa y ficha: [ ]\n2. Bioseguridad por servicio y cierre del día: [lista]\n3. Servicios: [nombre, pasos, tiempo]\n4. Retiro: [ ]\n5. Fotos y permisos: [ ]\n6. Agenda y trato: [ ]\nCapacitación: observa [ ] semanas → modelos [ ] → clientas con visto bueno\nIndicadores por técnica: retoques [ ] %, quejas [ ], retención [ ] %, tiempos [ ]\nProducto a vender: [ ]  Denominación [ ] Responsable y domicilio [ ] País [ ] Lote [ ] Contenido neto [ ] Ingredientes [ ] Leyendas en español [ ] → [vendo / no vendo]"
+     ],
+     "clave": [
+      "Lo que no está escrito no se puede enseñar ni revisar: arma tu manual con listas de verificación.",
+      "Capacita con práctica presencial supervisada y mide la calidad por técnica para acompañar, no para castigar.",
+      "Vende solo productos con etiqueta NOM-141 completa y sin promesas de curar o hacer crecer."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos completa la segunda mitad de la parte 4 de tu proyecto final. 1) Revisa tu portafolio y redacta tu permiso para fotos. 2) Diseña el ciclo de tu clienta y escribe cómo medirás la retención y pedirás reseñas. 3) Arma tu ruta de permisos con lo que verificarás en tu municipio, con la autoridad sanitaria de tu estado y en el SAT. 4) Escribe el índice de tu manual de estándares. 5) Redacta tu plan de 90 días: qué harás del día 1 al 30, del 31 al 60 y del 61 al 90, con una meta medible por etapa.",
+    "entregable": "Un documento de 2 a 3 páginas con tu permiso para fotos, el ciclo de la clienta y cómo medirás la retención, la ruta de permisos, el índice del manual y el plan de 90 días.",
+    "criterios": "Revisa: el portafolio tiene solo trabajo propio y sin filtros que cambien el resultado, el permiso es por escrito y aparte de la ficha, la ruta pone el uso de suelo antes de firmar una renta y dice qué verificar y dónde, tu menú no tiene actos médicos ni productos sin etiqueta, y el plan de 90 días tiene una meta medible en cada etapa."
+   },
+   "lab": {
+    "t": "Plan de apertura de tu estudio de uñas y pestañas",
+    "obj": "Integrar en un solo plan todo lo que aprendiste: propuesta, bioseguridad, técnica, seguridad química, pestañas, números, permisos y crecimiento.",
+    "esc": "En este laboratorio integrarás todo el diplomado en el plan de apertura de tu propio estudio. Cada escena retoma dos módulos y te pide escribir una parte; al final tendrás un documento que puedes revisar con quien supervise tu práctica presencial, con tu contador y en tu municipio. Para guiarte verás el ejemplo de <b>Estefanía</b>, de 34 años, que abrirá en Irapuato un estudio de semipermanente, gel y extensiones clásicas de pestañas en una cabina de 12 m², con un presupuesto inicial limitado.",
+    "e": [
+     [
+      "Escena 1 (módulos 1 y 2): Estefanía define su propuesta: mujeres que trabajan y quieren uñas cortas y discretas, con citas temprano y por la noche. Duda si sumar pedicure con tina de hidromasaje y acrílico largo.",
+      "Consigna: escribe la parte 1 de tu plan: propuesta en una frase, menú con tiempos, clienta ideal, modalidad con su costo por servicio, tu ficha con consentimiento y aviso de privacidad, y tus criterios para no atender y a quién canalizas."
+     ],
+     [
+      "Escena 2 (módulos 3 y 4): Tiene dos juegos de metálicos, un autoclave y limas desechables, y retirará el gel con acetona solo en las puntas, sin arrancar nunca.",
+      "Consigna: escribe la parte 2: qué herramientas se limpian, desinfectan o esterilizan y cuándo, tu protocolo por servicio, el cierre del día con residuos, y la técnica, el mantenimiento y el retiro de cada sistema que ofrecerás, con el descanso de la uña."
+     ],
+     [
+      "Escena 3 (módulos 5 y 6): Su cabina tiene una ventana pequeña y usa una lámpara compatible con su gel. En pestañas, empezará solo con extensiones clásicas y dejará el lifting para más adelante.",
+      "Consigna: escribe la parte 3: tu plan de seguridad química (ventilación, guantes de nitrilo y su cambio, lámpara compatible, cómo evitas el contacto con producto sin curar, proveedores con etiqueta) y tu protocolo de pestañas con consulta, prueba de parche y plan ante reacciones, con oftalmólogo y 911."
+     ],
+     [
+      "Escena 4 (módulos 7 y 8): Con sus cifras de ejemplo, su costo por minuto es de $3.20 y su semipermanente de 60 minutos lleva $55 de material con 10 % de merma. Abrirá en tres meses.",
+      "Consigna: escribe la parte 4: costos y precios de tres servicios, punto de equilibrio, agenda y política de cancelación, decisión de equipo, permisos por verificar en tu municipio, con la autoridad sanitaria y en el SAT, portafolio y retención, y tu plan de 90 días."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué decisión sobre el pedicure con tina y el acrílico largo es más coherente con el plan de Estefanía?",
+      "Esperar: no encajan con su clienta, su cabina ni su presupuesto",
+      "Sumar los dos desde el inicio, porque un menú amplio atrae más",
+      "Sumar solo el pedicure con tina, que se cobra mejor que las manos",
+      "Su clienta ideal quiere uñas cortas y discretas, así que el acrílico largo no responde a su propuesta. Una tina de hidromasaje no cabe con holgura en 12 m², cuesta y obliga a vaciarla, tallarla y desinfectarla tras cada clienta, más el filtro cada noche. Un menú corto y bien hecho es más seguro al empezar; podrá sumar servicios cuando su espacio y su práctica lo permitan."
+     ],
+     [
+      "¿Qué precio mínimo con 25 % de margen le corresponde a su semipermanente, redondeado hacia arriba a la decena?",
+      "$340: $252.50 ÷ 0.75 = $336.67",
+      "$320: $252.50 × 1.25 = $315.63",
+      "$330: $247.00 ÷ 0.75 = $329.33",
+      "Costo: 60 × $3.20 = $192 de tiempo, más $55 × 1.10 = $60.50 de material con merma: $252.50. Precio: $252.50 ÷ 0.75 = $336.67, que sube a $340. Multiplicar por 1.25 deja solo 20 % de margen, y $247 olvida la merma."
+     ],
+     [
+      "Al revisar su plan completo, ¿qué la deja de verdad lista para abrir?",
+      "Plan escrito, práctica supervisada y permisos verificados",
+      "Haber terminado este diplomado, que la certifica en técnica",
+      "Un portafolio lleno, aunque incluya diseños de otras técnicas",
+      "El plan ordena sus decisiones, la práctica presencial supervisada le da la técnica y los permisos verificados en su municipio, con la autoridad sanitaria y en el SAT le permiten abrir. Este diplomado no certifica ni sustituye la práctica, y un portafolio con trabajo ajeno no es publicidad veraz."
+     ]
+    ],
+    "pl": [
+     "Índice del plan de apertura",
+     "Plan de apertura de [nombre del estudio], [ciudad], [fecha]\nParte 1. Propuesta (módulos 1 y 2)\n 1.1 Propuesta en una frase: [ ]\n 1.2 Menú con tiempos y clienta ideal: [ ]\n 1.3 Modalidad y costo por servicio: [ ]\n 1.4 Ficha con consentimiento y aviso de privacidad: [ ]\n 1.5 Criterios para no atender y a quién canalizo: [ ]\nParte 2. Bioseguridad y técnica (módulos 3 y 4)\n 2.1 Herramientas: limpiar, desinfectar o esterilizar: [ ]\n 2.2 Protocolo por servicio y cierre del día con residuos: [ ]\n 2.3 Técnica, mantenimiento y retiro por sistema: [ ]\nParte 3. Seguridad química y pestañas (módulos 5 y 6)\n 3.1 Ventilación, guantes, lámpara y prevención de alergias: [ ]\n 3.2 Proveedores y etiquetas: [ ]\n 3.3 Protocolo de pestañas con consulta y prueba de parche: [ ]\n 3.4 Plan ante reacciones (detener, oftalmólogo, 911): [ ]\nParte 4. Números, permisos y crecimiento (módulos 7 y 8)\n 4.1 Costos, precios y punto de equilibrio: [ ]\n 4.2 Agenda, anticipo y política de cancelación: [ ]\n 4.3 Equipo: contrato o renta: [ ]\n 4.4 Permisos por verificar (municipio, autoridad sanitaria, SAT): [ ]\n 4.5 Portafolio, retención y reseñas: [ ]\n 4.6 Plan de 90 días: días 1-30 [ ], 31-60 [ ], 61-90 [ ]\nRevisado con: [quien supervisa mi práctica] [contador] [municipio]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una clienta te pide «uñas como las de tu perfil», pero esas fotos son de otra técnica. ¿Cuál es el problema de fondo?",
+     "Tu publicidad no es veraz: prometes un trabajo que no hiciste",
+     "Ninguno, si el diseño es popular y sabes reproducirlo",
+     "Solo de crédito, y se arregla etiquetando a la autora",
+     "Ninguno, porque tu perfil es un catálogo y no publicidad"
+    ],
+    [
+     "Tomas la foto de unas extensiones en la que se ven el ojo y parte de la cara. ¿Qué necesitas para publicarla?",
+     "El permiso por escrito de la clienta, aparte de su ficha",
+     "Nada, siempre que no escribas su nombre en la publicación",
+     "Un permiso de palabra al final del servicio, frente a ti",
+     "Solo que la clienta siga tu perfil en la red social"
+    ],
+    [
+     "Una clienta de 75 años que usa bastón agenda por primera vez. ¿Qué ajuste es el más útil?",
+     "Preguntarle qué necesita y tener silla con brazos y paso libre",
+     "Cobrarle un poco más, porque su servicio tomará más tiempo",
+     "Darle la última cita del día para no retrasar a las demás",
+     "Atenderla solo si llega acompañada de un familiar responsable"
+    ],
+    [
+     "Atendiste a 150 clientas en el trimestre y 60 regresaron dentro de 60 días. ¿Cuál es tu retención?",
+     "40 %",
+     "60 %",
+     "90 %",
+     "25 %"
+    ],
+    [
+     "Ofreces 15 % de descuento a quien deje una reseña de cinco estrellas. ¿Qué tan bien está?",
+     "Mal: condicionar la calificación engaña a quien lee",
+     "Bien, porque la clienta decide si la deja o no",
+     "Bien, siempre que el descuento sea menor al 20 %",
+     "Mal, pero solo porque reduce tu margen de ganancia"
+    ],
+    [
+     "Encontraste un local que te encanta y el dueño quiere que firmes hoy. ¿Qué verificas primero?",
+     "Que el uso de suelo permita un estudio de belleza",
+     "Que tenga buena luz natural para tus fotos",
+     "Que el aviso sanitario del inquilino anterior siga vigente",
+     "Que el contrato no mencione el giro de tu negocio"
+    ],
+    [
+     "Abrirás un estudio de uñas en la Ciudad de México. ¿Qué es correcto sobre el aviso de funcionamiento?",
+     "Se presenta en línea antes de abrir, uno por establecimiento",
+     "Se presenta al año de abrir, si el negocio ya es rentable",
+     "Un solo aviso cubre todas las sucursales que abras después",
+     "Lo presenta la plaza comercial por todos sus locales"
+    ],
+    [
+     "En tu estudio, una clienta se desmaya y no responde. ¿Qué haces primero?",
+     "Llamas al 911 y sigues sus indicaciones",
+     "Le das agua con azúcar y esperas a que despierte",
+     "Le pides a otra clienta que la lleve a su casa",
+     "Le llamas a su familia para saber si le pasa seguido"
+    ],
+    [
+     "Una técnica de tu equipo tiene 16 % de retoques y las demás 5 %. ¿Qué haces?",
+     "Revisas con ella su técnica y la acompañas en práctica",
+     "Le descuentas de su pago quincenal cada retoque",
+     "Nada; los retoques dependen siempre de la clienta",
+     "Publicas los porcentajes de todas en el grupo del equipo"
+    ],
+    [
+     "Quieres vender un aceite de cutícula en tu estudio. ¿Qué revisas en su etiqueta?",
+     "Responsable, lote, contenido, ingredientes y leyendas en español",
+     "Que diga «natural» y «libre de químicos» en la parte de enfrente",
+     "Que su precio sea menor que el de los productos de farmacia",
+     "Que traiga una promesa clara de resultado, como «cura hongos»"
+    ]
+   ]
+  }
+ ]
+}
