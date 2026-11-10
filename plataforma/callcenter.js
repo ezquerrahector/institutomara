@@ -425,11 +425,12 @@ function ccPintarMov(){
   caja.innerHTML = ccTablaMov(d.mov, d.pros);
 }
 function ccTablaMov(mov, pros){
-  var nomP = function(id){ var p = (pros || []).filter(function(x){ return x.id === id; })[0] || (PR.lista || []).filter(function(x){ return x.id === id; })[0]; return p ? (p.nombre_corto || p.nombre) : 'Prospecto'; };
+  var extra = (window.CA && CA.equipo && CA.equipo.pers) || [];
+  var nomP = function(id){ var p = (pros || []).concat(extra).filter(function(x){ return x.id === id; })[0] || (PR.lista || []).filter(function(x){ return x.id === id; })[0]; return p ? (p.nombre_corto || p.nombre || p.correo) : 'Prospecto'; };
   if(!mov.length) return '<p style="color:var(--gris)">Todavía no hay movimientos.</p>';
   return '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Fecha</th><th>Empresa</th><th>Movimiento</th><th>Quedó con</th></tr></thead><tbody>'+
     mov.slice(0, 60).map(function(m){
-      return '<tr><td>'+esc(ccFecha(m.fecha))+'</td><td>'+esc(nomP(m.prospecto_id))+'</td><td>'+esc(CC_ACCION[m.accion] || m.accion)+(m.nota ? '<br><small>'+esc(m.nota)+'</small>' : '')+'</td>'+
+      return '<tr><td>'+esc(ccFecha(m.fecha))+'</td><td>'+esc(nomP(m.prospecto_id || m.persona_id))+(m.persona_id ? ' <small style="color:var(--gris)">(alumno)</small>' : '')+'</td><td>'+esc(CC_ACCION[m.accion] || m.accion)+(m.nota ? '<br><small>'+esc(m.nota)+'</small>' : '')+'</td>'+
         '<td>'+(m.operador_id ? esc(ccNombreOp(m.operador_id)) : '—')+'</td></tr>';
     }).join('')+'</tbody></table></div></div>';
 }
@@ -537,9 +538,15 @@ function ccAdmAbrir(id){
     ops.length ? Nube.tabla('llamada_evaluaciones?select=*&operador_id=in.(' + ops.map(function(o){ return o.id; }).join(',') + ')&order=creado_en.desc&limit=2000') : Promise.resolve([]),
     Nube.tabla('callcenter_movimientos?select=*&callcenter_id=eq.' + id + '&order=fecha.desc&limit=60'),
     Nube.tabla('prospectos?select=id,nombre,nombre_corto&callcenter_id=eq.' + id + '&limit=5000'),
-    Nube.tabla('callcenter_metas?select=*')
+    Nube.tabla('callcenter_metas?select=*'),
+    /* Llamadas a alumnos (etapa 2); si aún no existe la tabla, no pasa nada. */
+    uids.length ? Nube.tabla('alumnos_contactos?select=id,persona_id,fecha,resultado,resumen,creado_por,grabacion&canal=eq.llamada&creado_por=in.(' + uids.join(',') + ')&fecha=gte.' + encodeURIComponent(desde) + '&order=fecha.desc&limit=600').catch(function(){ return []; }) : Promise.resolve([]),
+    Nube.tabla('alumnos_prospectos?select=id,nombre,correo,telefono&callcenter_id=eq.' + id + '&limit=10000').catch(function(){ return []; })
   ]).then(function(r){
-    CC.adm = { ops:ops, llam:r[0] || [], evals:r[1] || [], mov:r[2] || [], pros:r[3] || [], metas:r[4] || [] };
+    var llam = (r[0] || []).concat(r[5] || []).sort(function(a, b){ return new Date(b.fecha) - new Date(a.fecha); });
+    var evals = (r[1] || []).map(function(e){ if(!e.contacto_id && e.alumno_contacto_id) e.contacto_id = e.alumno_contacto_id; return e; });
+    var pros = (r[3] || []).concat((r[6] || []).map(function(p){ return { id:p.id, nombre:p.nombre || p.correo || p.telefono || 'Persona' }; }));
+    CC.adm = { ops:ops, llam:llam, evals:evals, mov:r[2] || [], pros:pros, metas:r[4] || [] };
     var c = $('cc-adm-' + id); if(!c) return;
     c.innerHTML = '<h4 style="margin:16px 0 8px">Su gente</h4>'+
       '<div class="tabla-caja"><div class="tabla-scroll"><table><thead><tr><th>Nombre</th><th>Cuenta</th><th>Descuento máx.</th><th>Calificación</th><th></th></tr></thead><tbody>'+
