@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Devoluciones, garantías y reglas: Profeco y SAT",
+   "r": "Cumplir los derechos del consumidor en compras a distancia, diseñar devoluciones que no te hundan, anunciar con honestidad y entender las retenciones.",
+   "lecciones": [
+    {
+     "t": "Derechos del consumidor en compras a distancia: información, precio total, arrepentimiento y garantías",
+     "obj": "Aplicar en tu tienda las reglas de la LFPC para ventas a distancia: información previa, precio total, arrepentimiento en 5 días hábiles, garantía y devolución por defecto.",
+     "texto": [
+      "Cuando vendes en línea, tu cliente no puede tocar el producto ni preguntarte en un mostrador; por eso la Ley Federal de Protección al Consumidor (LFPC) te pide informar más y antes. El <b>precio total</b> debe verse de forma notoria, con impuestos y cualquier cargo incluido (art. 7 Bis): «$600 más IVA» o un cargo que aparece en el último paso no cumple. En ventas a distancia debes informar antes de la compra el precio, la fecha aproximada de entrega y el costo del envío y del seguro (art. 53). En medios electrónicos, además, tu domicilio físico, teléfonos y medios de contacto para reclamaciones, los términos, las formas de pago y los cargos adicionales (art. 76 Bis). La ley remite a la NMX-COE-001-SCFI-2018 como guía.",
+      "El derecho de arrepentimiento está en el art. 56: en las ventas fuera del establecimiento, el contrato se perfecciona 5 días hábiles después de la entrega, y en ese lapso el consumidor puede <b>revocar</b> su compra sin dar razones. Profeco lo aplica a las compras por internet (verifica su criterio vigente). Tú reintegras el precio; los costos de flete y seguro de esa devolución corren por cuenta del cliente. Como política propia puedes dar más plazo, pero nunca menos.",
+      "Otra cosa es el producto que llega defectuoso, incompleto o distinto de lo que ofreciste. Ahí el consumidor elige entre la reposición del producto o la devolución de lo pagado (art. 92), y cuando procede tiene derecho además a una bonificación de al menos 20 % del precio (art. 92 Ter). Cuando un producto lleva garantía, ésta no puede ser menor a 90 días (art. 77), y los envíos de una reparación o un cambio por garantía los pagas tú, salvo pacto en contrario (art. 53). Escribir «no hay cambios ni devoluciones» no te libera de esto y sólo genera quejas.",
+      "Si no hay acuerdo, tu cliente puede acudir a Profeco por el Teléfono del Consumidor (55 5568 8722 y 800 468 8722, sin costo) o por <b>Concilianet</b>, el módulo para presentar quejas y conciliar en línea con proveedores adheridos. Profeco publica también el Monitoreo de Tiendas Virtuales, que revisa si una tienda muestra medios de contacto, monto total, aviso de privacidad y política de cancelación. Este resumen no es asesoría legal: verifica la ley vigente en el sitio de la Cámara de Diputados y, ante un caso difícil, consulta a Profeco o a un abogado."
+     ],
+     "comparar": [
+      "«Así no: Pijama $600 + IVA. No hay cambios ni devoluciones. El envío se calcula al final.»",
+      "«Así sí: Pijama $696, IVA incluido. Envío $99, llega en 3 a 5 días hábiles. Tienes 5 días hábiles para arrepentirte y 90 días de garantía por defectos.»"
+     ],
+     "caso": "Caso ficticio: Graciela, de 44 años, confecciona pijamas de algodón en la Ciudad de México y las vende en su tienda propia. Su ficha dice «$600 más IVA» y el envío de $99 aparece hasta el último paso del pago. Esta semana le escriben dos clientas. Una recibió su pijama el martes y el jueves avisa que ya no la quiere: está sin usar y con etiqueta. La otra la recibió hace 25 días y la costura del pantalón se abrió al primer lavado. La página de Graciela dice «No hay devoluciones» y ella no sabe qué contestar.",
+     "p": [
+      [
+       "¿Qué le responde Graciela a la clienta que se arrepintió a los dos días hábiles?",
+       "Que la devuelva sin usar; le reembolsa el precio y el envío de regreso corre por cuenta de la clienta",
+       "Que no procede, porque la pijama no tiene defecto y su página avisa que no hay devoluciones",
+       "Que sólo puede cambiarla por otra pijama o un vale, porque el reembolso aplica a productos con defecto",
+       "Está dentro de los 5 días hábiles del art. 56, que Profeco aplica a compras por internet: se reintegra el precio y el flete de esa devolución lo paga la clienta. El aviso «no hay devoluciones» no anula el derecho, y limitarlo a cambio o vale tampoco cumple."
+      ],
+      [
+       "¿Qué hace con la clienta cuya costura se abrió a los 25 días?",
+       "Le ofrece reposición o devolución, a elección de ella, paga los envíos y considera la bonificación del 20 %",
+       "La repara y le cobra el envío de ida y vuelta, porque ya pasaron los 5 días hábiles que da la ley para devolver",
+       "Se niega, porque la clienta pudo revisar la pijama al recibirla y no reclamó en ese momento",
+       "Es un defecto, no un arrepentimiento: aplican los arts. 92 y 92 Ter (reposición o devolución a elección del consumidor y bonificación de al menos 20 % cuando proceda), y el envío por garantía lo paga el proveedor (art. 53). El plazo de 5 días es para arrepentirse, no para reclamar defectos."
+      ],
+      [
+       "¿Cómo debe mostrar Graciela el precio en su ficha?",
+       "«$696, IVA incluido», y el envío de $99 a la vista antes del último paso",
+       "«$600 más IVA», porque así se acostumbra y el cliente hace la cuenta",
+       "«$696» y el envío al confirmar el pago, para no asustar al cliente antes",
+       "El art. 7 Bis pide el monto total con impuestos de forma notoria, y los arts. 53 y 76 Bis piden informar el envío y los cargos adicionales antes de la compra. «Más IVA» obliga al cliente a calcular, y esconder el envío hasta el final es justo lo que provoca abandono y quejas."
+      ]
+     ],
+     "completar": [
+      "En compras a distancia, el consumidor puede ___ su compra sin dar razones dentro de los 5 días hábiles siguientes a la entrega.",
+      "revocar"
+     ],
+     "relacionar": [
+      [
+       "Art. 7 Bis",
+       "Precio total visible, con impuestos y cargos"
+      ],
+      [
+       "Art. 56",
+       "Arrepentirse en 5 días hábiles"
+      ],
+      [
+       "Art. 92 Ter",
+       "Bonificación de al menos 20 % cuando procede"
+      ],
+      [
+       "Art. 77",
+       "Garantía no menor a 90 días"
+      ],
+      [
+       "Concilianet",
+       "Queja y conciliación en línea con Profeco"
+      ]
+     ],
+     "refl": "Revisa tu tienda (o la de alguien que conozcas) con ojos de Profeco (20 min). 1) Abre una ficha y anota si el precio se ve total, con IVA, y en qué paso aparece el envío. 2) Busca tu domicilio, teléfono y medios de contacto: ¿se ven antes de pagar? 3) Escribe en tres líneas qué pasa si alguien se arrepiente en 5 días hábiles y qué pasa si el producto llega con defecto. 4) Lista tres frases de tu tienda que debes corregir.",
+     "modelo": "Modelo: «Mi ficha de aretes decía $350 + IVA; la cambio a $406, IVA incluido. El envío de $95 aparecía hasta el pago; ahora lo pongo debajo del precio con la fecha aproximada de entrega. Mi teléfono no estaba en la tienda; lo agrego al pie de cada página con mi domicilio. Arrepentimiento: 5 días hábiles desde la entrega, reembolso del precio y envío de regreso a cargo del cliente. Defecto: reposición o reembolso, a elección del cliente, y yo pago los envíos. Borro la frase “no hay devoluciones”.» Es buena porque corrige cifras concretas y distingue arrepentimiento de defecto.",
+     "plantilla": [
+      "Página: tus derechos y cómo devolver",
+      "Precio: todos nuestros precios incluyen IVA. Envío: $[ ] a [zona], entrega aproximada en [ ] días hábiles; lo verás antes de pagar.\nSi te arrepientes: tienes 5 días hábiles desde que recibes tu pedido para avisarnos en [correo/teléfono]. Te reembolsamos el precio en [ ] días hábiles por el mismo medio de pago; el envío de regreso corre por tu cuenta.\nSi llega con defecto o distinto a lo anunciado: elige cambio o reembolso; nosotros pagamos los envíos. Garantía: [90 días o más] contra defectos de fabricación.\nContacto: [nombre o razón social], [domicilio], [teléfono], [correo], horario [ ].\nProfeco: Teléfono del Consumidor 55 5568 8722 y 800 468 8722; quejas en línea en Concilianet."
+     ],
+     "clave": [
+      "Arrepentimiento (5 días hábiles, flete a cargo del cliente) y defecto (reposición o devolución, envíos a tu cargo) son derechos distintos.",
+      "El precio total con IVA, el envío y tus datos de contacto se informan antes de la compra.",
+      "«No hay devoluciones» no te libera de la ley: sólo genera quejas en Profeco."
+     ]
+    },
+    {
+     "t": "Tu política de devoluciones y cambios: clara, justa y con su costo calculado",
+     "obj": "Redactar una política de devoluciones y cambios que cumpla la ley, se entienda en un minuto y cuyo costo esperado por pedido ya esté en tu precio.",
+     "texto": [
+      "Tu política de devoluciones es una página que vende o espanta. En la investigación del Baymard Institute, 13 % de quienes abandonaron una compra lo hizo por una política de devoluciones poco satisfactoria, y según la AMVO, 22 % de los compradores mexicanos ha devuelto algo. Una buena política responde cinco preguntas en lenguaje sencillo: cuánto plazo hay, en qué condiciones debe regresar el producto, quién paga cada envío, cómo y en cuánto tiempo se reembolsa, y qué productos tienen reglas especiales.",
+      "Parte del mínimo legal que viste en la lección anterior: 5 días hábiles para arrepentirse, con el envío de regreso a cargo del cliente, y reposición o devolución con envíos a tu cargo si hay defecto. Encima puedes dar más: 30 días para cambios de talla, el primer cambio sin costo o la guía de regreso prepagada. Fija condiciones razonables y verificables, como «sin uso, con etiquetas y en su empaque», y di cómo reembolsas: por el mismo medio de pago y en cuántos días hábiles después de recibir el producto. Para productos de higiene personal, como ropa interior o aretes, o hechos a la medida, aclara antes de la compra qué condiciones aplican; si llegan con defecto o distintos de lo anunciado, la devolución procede siempre. Si dudas hasta dónde puedes limitar el arrepentimiento en esos casos, verifica con Profeco.",
+      "Ahora pon números. El <b>costo esperado</b> de las devoluciones por pedido es la tasa de devolución por el costo de cada devolución. Si de cada 100 pedidos regresan 12 y cada cambio te cuesta $300 entre la guía de regreso, el reenvío y la revisión, cada pedido carga $36 aunque no se devuelva. En Excel, con la tasa en B2 y el costo por devolución en C2, el costo esperado es =B2*C2, y ese renglón entra en tu margen por pedido del módulo 1.",
+      "La mejor política es la que casi no se usa porque el cliente compró bien. Registra el motivo de cada devolución en una hoja: talla, color, defecto, daño en el envío o arrepentimiento. Si la talla domina, mejora tu tabla de medidas; si es el color, tus fotos; si es el daño, tu empaque. Bajar la tasa de 12 % a 8 % con el mismo costo de $300 reduce el costo esperado de $36 a $24 por pedido."
+     ],
+     "comparar": [
+      "«Así no: Cambios sólo con autorización. Pregunta por mensaje. No se aceptan devoluciones de productos en oferta.»",
+      "«Así sí: Tienes 30 días para cambiar talla; el primer cambio es gratis. Si te arrepientes, avísanos en 5 días hábiles; si llega con defecto, cambio o reembolso y nosotros pagamos el envío.»"
+     ],
+     "caso": "Caso ficticio: Octavio, de 36 años, tiene un taller de botas vaqueras de piel en Querétaro y vende unos 200 pares al mes en línea. Su política dice sólo «cambios con autorización». De cada 100 pedidos, 12 regresan, casi todos por talla, y cada cambio le cuesta $300 entre la guía de regreso, el reenvío y limpiar la bota. Un cliente se queja de que tardó tres semanas en recibir su reembolso. Octavio piensa prohibir los cambios en las botas de oferta para «cortar pérdidas».",
+     "p": [
+      [
+       "¿Cuánto le cuesta a Octavio cada pedido por las devoluciones esperadas?",
+       "$36, porque 12 % × $300 = $36",
+       "$300, porque es lo que cuesta cada cambio",
+       "$3.60, porque 1.2 % × $300 = $3.60",
+       "Costo esperado = tasa × costo por devolución = 0.12 × $300 = $36 por pedido. $300 es el costo de un cambio, no el promedio por pedido, y 1.2 % confunde 12 de cada 100 con 12 de cada 1,000."
+      ],
+      [
+       "Con una tabla de medidas mejor, la tasa baja a 8 %. ¿Cuánto ahorra al mes con 200 pedidos?",
+       "$2,400, porque baja de $36 a $24 por pedido",
+       "$1,200, porque ahorra 4 % de cada cambio de $300",
+       "$4,800, porque la tasa bajó a un tercio",
+       "0.08 × $300 = $24; la diferencia es $12 por pedido, y $12 × 200 = $2,400 al mes. La tasa bajó un tercio (de 12 % a 8 %), no a un tercio, y el ahorro se calcula sobre todos los pedidos."
+      ],
+      [
+       "¿Qué hace con las botas de oferta?",
+       "Aplica la misma política: las ofertas mantienen los derechos de arrepentimiento y defecto",
+       "Prohíbe los cambios, porque el descuento ya compensa al cliente cualquier problema",
+       "Acepta sólo defectos, pero sin reembolso: da un vale para usarse en el siguiente mes",
+       "Una oferta es el mismo producto a precio rebajado (art. 46 LFPC); los derechos no se rebajan con el precio. Prohibir cambios genera quejas y un vale obligatorio no es la devolución que el consumidor puede elegir ante un defecto."
+      ]
+     ],
+     "completar": [
+      "La tasa de devolución por el costo de cada devolución da el ___ de las devoluciones por pedido.",
+      "costo esperado"
+     ],
+     "relacionar": [
+      [
+       "Plazo",
+       "Cuántos días tienes para cambiar o devolver"
+      ],
+      [
+       "Condiciones",
+       "Sin uso, con etiquetas y en su empaque"
+      ],
+      [
+       "Quién paga el envío",
+       "Cliente si se arrepiente; tienda si hay defecto"
+      ],
+      [
+       "Reembolso",
+       "Mismo medio de pago y días hábiles definidos"
+      ],
+      [
+       "Registro de motivos",
+       "Saber si fallan la talla, las fotos o el empaque"
+      ]
+     ],
+     "refl": "Escribe tu política de devoluciones y cambios (20 min). 1) Responde las cinco preguntas: plazo, condiciones, quién paga cada envío, cómo y cuándo reembolsas y qué productos tienen reglas especiales. 2) Revisa que respete el mínimo de la LFPC. 3) Calcula tu costo esperado por pedido con tu tasa y tu costo por devolución (o estímalos). 4) Escribe una acción para bajar la causa principal de tus devoluciones.",
+     "modelo": "Modelo: «Vendo sudaderas. Plazo: 30 días para cambio de talla, primer cambio gratis; arrepentimiento en 5 días hábiles desde la entrega, envío de regreso a cargo del cliente. Condiciones: sin uso y con etiqueta. Defecto: cambio o reembolso, a elección del cliente; yo pago los envíos. Reembolso por el mismo medio, en 5 días hábiles después de recibir la prenda. Tasa estimada: 7 %; costo por devolución: $260; costo esperado: $18.20 por pedido. Acción: medir 10 prendas por talla y publicar la tabla con centímetros.» Es buena porque es clara, cumple la ley y pone el costo en números.",
+     "plantilla": [
+      "Política de devoluciones y cambios",
+      "Plazo para cambios: [ ] días desde la entrega. Primer cambio: [gratis/con costo de $ ].\nArrepentimiento: 5 días hábiles desde que recibes; envío de regreso por tu cuenta.\nDefecto o producto distinto al anunciado: cambio o reembolso, tú eliges; nosotros pagamos los envíos.\nCondiciones: [sin uso, con etiquetas, en su empaque].\nReglas especiales (y por qué): [higiene, a la medida], salvo defecto.\nReembolso: por el mismo medio de pago, en [ ] días hábiles tras recibir el producto.\nCómo iniciar: escribe a [correo/WhatsApp] con tu número de pedido.\nMis números: tasa [ ] % × costo por devolución $[ ] = costo esperado $[ ] por pedido."
+     ],
+     "clave": [
+      "Una política clara responde plazo, condiciones, quién paga, cómo se reembolsa y qué excepciones hay.",
+      "Costo esperado por pedido = tasa de devolución × costo por devolución, y va dentro del precio.",
+      "Registra el motivo de cada devolución: la causa principal te dice qué arreglar."
+     ]
+    },
+    {
+     "t": "Promociones, meses sin intereses, Buen Fin y reseñas: anunciar sin engañar",
+     "obj": "Diseñar promociones, descuentos, suscripciones y peticiones de reseñas que cumplan la LFPC y que puedas sostener con pruebas.",
+     "texto": [
+      "El art. 32 de la LFPC considera engañosa la publicidad que induce o puede inducir a error por su forma inexacta, falsa o exagerada, aunque lo que diga sea técnicamente cierto. Para un vendedor en línea esto aterriza en tres reglas: lo que anuncias debe poder comprobarse, las condiciones deben verse donde está la oferta y debes respetar lo que ofreciste (art. 7). No necesitas autorización ni aviso para hacer una promoción (art. 47), pero el anuncio debe indicar condiciones y plazo o cantidad; si no los indicas, se presume que la promoción no tiene fin (art. 48).",
+      "Un «antes $499, ahora $349» sólo es honesto si $499 fue tu precio real y reciente. Si siempre vendiste en $360, el descuento verdadero de un precio de $288 es de 20 %, y eso es lo que anuncias. El envío gratis se anuncia con su condición a la vista: «envío gratis en compras desde $600». Con los <b>meses sin intereses</b> hay un criterio sencillo: si anuncias «sin intereses», la suma de los pagos debe ser igual al precio que anunciaste; si a meses cobras más, hay un costo escondido y el anuncio puede inducir a error. Verifica el caso concreto con Profeco. El Buen Fin 2026 va del 13 al 17 de noviembre (verifica las fechas oficiales), y sus quejas más comunes son precios no respetados y retrasos: no ofrezcas lo que no podrás entregar.",
+      "Si vendes por suscripción, la reforma de diciembre de 2025 al art. 76 Bis (fracciones VIII y IX) te obliga a informar de forma clara y destacada los cobros recurrentes, con su periodicidad, monto y fecha, a obtener el consentimiento expreso del cliente, a avisar al menos 5 días naturales antes de una renovación automática y a permitir que cancele de inmediato y sin penalización.",
+      "Las reseñas pesan: el Spiegel Research Center encontró que un producto con 5 reseñas tiene una probabilidad de compra 270 % mayor que uno sin reseñas, y que la probabilidad más alta se da entre 4.0 y 4.7 estrellas, no con 5.0 perfecto. Comprar reseñas, escribirlas tú o premiar sólo las de cinco estrellas puede considerarse publicidad engañosa (art. 32) y, además, viola las reglas de las plataformas. Pide reseñas a todos tus compradores, sin condicionar nada a que sean buenas, y publica también las críticas."
+     ],
+     "comparar": [
+      "«Así no: ¡Buen Fin! Antes $499, ahora $349. Envío gratis*. Club mensual: se renueva solo; para cancelar, llama en horario de oficina.»",
+      "«Así sí: Buen Fin del 13 al 17 de noviembre: $288 (precio habitual $360, 20 % menos). Envío gratis desde $600. Club mensual de $349, cobro el día 5; te avisamos 5 días antes y cancelas en un clic.»"
+     ],
+     "caso": "Caso ficticio: Mónica, de 31 años, tiene en Cuernavaca una tienda de libros usados y un club mensual: cada mes envía una caja de dos libros por $349, con cobro automático. Para el Buen Fin quiere anunciar la caja suelta «antes $499, ahora $349», aunque siempre la ha vendido en $360. Su club se renueva sin aviso y para cancelar hay que mandar un correo y esperar respuesta. Una agencia le ofrece 40 reseñas de cinco estrellas por $800 para «despegar».",
+     "p": [
+      [
+       "¿Cómo debe anunciar Mónica la caja suelta en el Buen Fin si la vende en $288?",
+       "Precio habitual $360, Buen Fin $288: 20 % de descuento, con fechas",
+       "Antes $499, ahora $288: 42 % de descuento, porque así llama más",
+       "Ahora $288, sin mencionar fechas, para poder alargar la promoción",
+       "El precio de referencia debe ser real: ($360 − $288) ÷ $360 = 20 %. Inventar un «antes» de $499 induce a error (art. 32). Sin fechas ni condiciones se presume que la promoción es indefinida (art. 48), así que tendría que sostener $288 sin fin."
+      ],
+      [
+       "¿Qué cambia en su club mensual para cumplir la reforma de 2025?",
+       "Informar monto y fecha de cobro, pedir consentimiento expreso, avisar 5 días naturales antes y cancelar de inmediato",
+       "Nada, porque el cliente aceptó todos los términos y condiciones al suscribirse la primera vez, y eso vale para siempre",
+       "Avisar por correo un día antes de cada cobro y conservar la cancelación por correo con respuesta",
+       "El art. 76 Bis fr. VIII y IX (DOF 12-12-2025) pide información destacada, consentimiento expreso e informado, aviso de renovación al menos 5 días naturales antes y un mecanismo de cancelación inmediata. Un día de aviso no basta y una cancelación que depende de que alguien responda no es inmediata."
+      ],
+      [
+       "¿Qué hace con la oferta de 40 reseñas de cinco estrellas?",
+       "La rechaza y pide reseñas a todos sus compradores, buenas o malas",
+       "La acepta, pero sólo para los libros que todavía no tienen reseñas",
+       "La acepta si las reseñas las escriben personas reales y no robots",
+       "Las reseñas compradas, aunque las escriban personas reales, pueden inducir a error al consumidor (art. 32) y violan las reglas de las plataformas. Además, un 5.0 perfecto genera menos confianza que un 4.0-4.7 real, según el Spiegel Research Center."
+      ]
+     ],
+     "completar": [
+      "Si anuncias meses sin intereses, la suma de los pagos debe ser igual al ___ que anunciaste.",
+      "precio"
+     ],
+     "refl": "Revisa tus próximas promociones (20 min). 1) Escribe el anuncio de una oferta para el Buen Fin o tu próxima temporada con precio habitual comprobable, porcentaje real, fechas y condiciones. 2) Si ofreces envío gratis o meses sin intereses, redacta la condición tal como se verá en la ficha. 3) Si tienes suscripción, escribe el aviso de renovación. 4) Escribe el mensaje con el que pedirás reseñas a todos tus compradores.",
+     "modelo": "Modelo: «Oferta: macetas colgantes del 13 al 17 de noviembre a $255; precio habitual $300 desde junio (tengo capturas y ventas que lo prueban): 15 % menos, hasta agotar 40 piezas. Envío gratis desde $700, visible junto al precio. Tres meses sin intereses desde $900, mismo total que de contado. Reseñas: “Hola, ¿cómo llegó tu maceta? Si quieres, cuéntanos tu experiencia, buena o mala, aquí: [enlace]. Nos ayuda a mejorar.”» Es buena porque el descuento es comprobable, las condiciones son visibles y la petición de reseñas no condiciona nada.",
+     "plantilla": [
+      "Anuncio de promoción honesta",
+      "Producto: [ ]\nPrecio habitual: $[ ] (vigente desde [fecha]; prueba: [ventas, capturas])\nPrecio de promoción: $[ ] = [ ] % menos | Fechas: del [ ] al [ ] | Existencias: [ ] piezas\nEnvío gratis: [condición visible] | Meses sin intereses: [plazos], mismo total que de contado\nSuscripción: cobro de $[ ] cada [ ], el día [ ]; aviso [5 o más] días naturales antes; cancelación inmediata en [ ]\nMensaje para pedir reseñas: [sin premios condicionados a que sea positiva]"
+     ],
+     "clave": [
+      "Un descuento se calcula sobre tu precio real y reciente, con fechas y condiciones a la vista.",
+      "Suscripciones: monto y fecha claros, consentimiento expreso, aviso 5 días naturales antes y cancelación inmediata.",
+      "Las reseñas se piden a todos y nunca se compran: un 4.5 real vende más que un 5.0 sospechoso."
+     ]
+    },
+    {
+     "t": "Impuestos de vender en plataformas: retenciones de ISR e IVA, RFC y tu contador",
+     "obj": "Calcular las retenciones de ISR e IVA que te hace una plataforma, entender qué cambia si no das tu RFC y llegar preparado con tu contador.",
+     "texto": [
+      "Si eres persona física y vendes productos a través de un marketplace, la plataforma te retiene impuestos antes de depositarte. Con la Ley de Ingresos de la Federación 2026, la <b>retención</b> de ISR por venta de bienes subió a 2.5 % (antes era 1 %), calculada sobre el precio sin IVA. Además, la plataforma retiene la mitad del IVA, que equivale a 8 % del precio sin IVA. Si no le das tu RFC, la retención sube a 20 % de ISR y 100 % del IVA. Es el mito de «si vendo poco no pago impuestos»: la plataforma retiene desde la primera venta. Estas tasas cambian con cada Paquete Económico: verifica en el SAT y con tu contador.",
+      "Un ejemplo: vendes un juego de llaves en $1,160 con IVA. Sin IVA son $1,000 (=B2/1.16 en Excel). La retención de ISR es $25 (=C2*2.5%) y la de IVA $80 (=C2*8%), $105 en total. Sin RFC serían $200 de ISR y $160 de IVA: $360 por la misma venta. La plataforma te entrega un CFDI de retenciones; guárdalo para tu contador, porque lo que te retuvieron cuenta para tu declaración.",
+      "La ley da una opción: si tus ingresos del año anterior por plataformas (más, en su caso, sueldos e intereses) no pasaron de $300,000, puedes elegir que las retenciones sean tu pago definitivo, sin deducciones. Si los rebasas o no eliges esa opción, las retenciones son pagos provisionales y tu contador calcula la diferencia. Desde el 1 de abril de 2026 las plataformas deben dar al SAT acceso en línea y en tiempo real a su información, así que lo que vendes ahí ya es visible para la autoridad.",
+      "Lo que vendes en tu tienda propia, por WhatsApp o en persona no pasa por esa retención: se declara aparte, en el régimen que te indique tu contador. Llévale cada mes tu conciliación del módulo 5, los CFDI de retenciones y tus ventas por canal. Un ajuste a tus cálculos de margen: los ejemplos del diplomado simplifican con precios finales. Si estás inscrito y trasladas IVA, ese IVA no es tuyo: calcula tu margen con el precio sin IVA (÷ 1.16) y con costos sin el IVA que acreditas. Si aún no tienes RFC o e.firma, revisa el diplomado Emprender desde Cero. Esta lección es informativa: confirma todo con tu contador y en sat.gob.mx."
+     ],
+     "comparar": [
+      "«Así no: No di mi RFC al marketplace porque vendo poquito y no quiero que Hacienda me vea.»",
+      "«Así sí: Di mi RFC para que me retengan 2.5 % y 8 % en lugar de 20 % y 100 %, guardo cada CFDI de retenciones y cada mes reviso con mi contador.»"
+     ],
+     "caso": "Caso ficticio: Isidro, de 53 años, vende herramientas manuales en Tijuana: llaves, desarmadores y pinzas. En el marketplace más grande del país vende unos $18,000 al mes sin IVA y en su tienda propia otros $6,000. El año pasado sus ingresos por plataformas fueron de $216,000 y no tuvo sueldo ni intereses. Nunca registró su RFC en la plataforma porque «así no lo ven». Un sobrino le dice que con la tienda propia no tiene que declarar nada porque «ahí nadie retiene».",
+     "p": [
+      [
+       "Supón que Isidro ya registró su RFC y vende un juego de llaves en $1,160 con IVA. ¿Cuánto le retienen?",
+       "$25 de ISR y $80 de IVA",
+       "$29 de ISR y $92.80 de IVA",
+       "$200 de ISR y $160 de IVA",
+       "Sin IVA: $1,160 ÷ 1.16 = $1,000. ISR 2.5 % = $25; IVA retenido 8 % = $80 (la mitad de $160). Calcular sobre el precio con IVA da $29 y $92.80, y $200 y $160 son las retenciones sin RFC."
+      ],
+      [
+       "Con sus ventas de $18,000 al mes sin IVA, ¿cuánto le retienen al mes si da su RFC?",
+       "$450 de ISR y $1,440 de IVA",
+       "$180 de ISR y $1,440 de IVA",
+       "$450 de ISR y $2,880 de IVA",
+       "2.5 % × $18,000 = $450 y 8 % × $18,000 = $1,440. $180 sería la tasa anterior de 1 %, y $2,880 sería retener el IVA completo de 16 %, que sólo aplica sin RFC."
+      ],
+      [
+       "¿Qué le dices sobre la tienda propia y la opción de pago definitivo?",
+       "Las ventas de su tienda se declaran aparte; la opción de pago definitivo cubre las plataformas, y debe revisarlas con su contador",
+       "La tienda propia no se declara porque nadie le retiene, y la opción de pago definitivo cubre todo lo que vende en el año en cualquier canal",
+       "Debe cerrar la tienda propia, porque tener dos canales lo obliga a perder la opción de pago definitivo",
+       "Sin retención no significa sin impuestos: lo que vende fuera de la plataforma se declara por su cuenta. Con $216,000 de ingresos por plataformas el año anterior podría optar por el pago definitivo en esas ventas (verifica condiciones), y su contador definirá el régimen de lo demás."
+      ]
+     ],
+     "completar": [
+      "La plataforma te entrega un CFDI de ___ con lo que te descontó de ISR e IVA.",
+      "retenciones"
+     ],
+     "relacionar": [
+      [
+       "ISR con RFC",
+       "2.5 % del precio sin IVA"
+      ],
+      [
+       "IVA con RFC",
+       "8 % del precio sin IVA"
+      ],
+      [
+       "Sin RFC",
+       "20 % de ISR y 100 % del IVA"
+      ],
+      [
+       "Hasta $300,000 el año anterior",
+       "Puedes optar por pago definitivo"
+      ],
+      [
+       "Tienda propia",
+       "Se declara aparte, sin retención"
+      ]
+     ],
+     "refl": "Prepara tu reunión con el contador (20 min). 1) Calcula las retenciones de ISR y de IVA de tus ventas del último mes en plataformas (o de un mes estimado). 2) Calcula cuánto serían sin RFC y compara. 3) Suma tus ingresos por plataformas del año anterior y anota si podrías revisar la opción de pago definitivo. 4) Escribe tres preguntas para tu contador sobre tus ventas fuera de plataformas.",
+     "modelo": "Modelo: «En octubre vendí $9,280 con IVA en el marketplace: $8,000 sin IVA. Retenciones con RFC: ISR $200 e IVA $640, $840 en total; sin RFC serían $1,600 y $1,280, $2,880. El año pasado facturé $95,000 en plataformas, sin sueldo: le preguntaré si me conviene el pago definitivo. Preguntas: ¿en qué régimen declaro los $3,500 al mes de mi tienda propia?, ¿qué gastos puedo deducir ahí?, ¿qué hago con los CFDI de retenciones?» Es buena porque calcula sobre el precio sin IVA, compara con y sin RFC y lleva preguntas concretas.",
+     "plantilla": [
+      "Hoja mensual para tu contador",
+      "Mes: [ ] | RFC registrado en cada plataforma: [sí/no]\nPlataforma: [ ] | Ventas con IVA $[ ] | Sin IVA $[ ] (=B2/1.16)\nRetención ISR: $[ ] (=C2*2.5%) | Retención IVA: $[ ] (=C2*8%) | CFDI de retenciones descargado: [sí/no]\nVentas fuera de plataformas (tienda, WhatsApp, en persona): $[ ]\nIngresos por plataformas del año anterior: $[ ] → ¿opción de pago definitivo? [preguntar]\nPreguntas para mi contador: [ ]\nTasas verificadas en sat.gob.mx el [fecha]"
+     ],
+     "clave": [
+      "En 2026, con RFC la plataforma retiene 2.5 % de ISR y 8 % de IVA sobre el precio sin IVA; sin RFC, 20 % y 100 % del IVA.",
+      "Hasta $300,000 de ingresos por plataformas el año anterior puedes optar por pago definitivo; revísalo con tu contador.",
+      "Lo que vendes fuera de las plataformas se declara aparte: sin retención no significa sin impuestos."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos deja tu tienda en regla. 1) Revisión Profeco (20 min): precio total con IVA, envío visible antes de pagar, domicilio, teléfono y medios de contacto en cada página. 2) Política de devoluciones (25 min): las cinco preguntas respondidas, arrepentimiento y defecto separados, y costo esperado por pedido calculado. 3) Promoción honesta (20 min): un anuncio para tu próxima temporada con precio habitual comprobable, fechas, condiciones y, si aplica, el aviso de renovación de tu suscripción. 4) Impuestos (25 min): hoja mensual con retenciones de ISR e IVA de tus ventas en plataformas, con y sin RFC, y tres preguntas para tu contador.",
+    "entregable": "La lista de correcciones de tu tienda, tu página de políticas de devoluciones y derechos, un anuncio de promoción honesta y una hoja de Excel con tus retenciones y preguntas para tu contador.",
+    "criterios": "Revisa: el precio se ve total con IVA y el envío antes de pagar, la política distingue arrepentimiento en 5 días hábiles de defecto y su costo esperado está calculado, el descuento parte de un precio real con fechas y condiciones visibles, y las retenciones se calculan sobre el precio sin IVA con la nota de verificar en el SAT."
+   },
+   "lab": {
+    "t": "Políticas y promociones de una tienda de mochilas en Toluca",
+    "obj": "Armar la política de devoluciones, revisar las promociones del Buen Fin y calcular las retenciones de una tienda real que vende en su sitio propio y en un marketplace.",
+    "esc": "<b>Brenda,</b> de 35 años, vende en Toluca mochilas y accesorios de viaje que diseña y manda fabricar en un taller local. Vende unos 150 pedidos al mes entre su tienda propia y el marketplace más grande del país. Su página de políticas dice «Cambios sólo por defecto» y le devuelven 8 de cada 100 pedidos, con un costo de $260 por devolución. Quiere preparar el Buen Fin y no tiene claro qué le retiene la plataforma.",
+    "e": [
+     [
+      "Escena 1: Una clienta recibió el lunes una mochila de $999 y el miércoles escribe que el color no le gustó; está nueva y con etiqueta. Otro cliente reporta que el cierre se rompió a los 40 días.",
+      "Consigna: responde a los dos clientes según la LFPC y reescribe la política de Brenda con plazo, condiciones, quién paga cada envío y cómo se reembolsa."
+     ],
+     [
+      "Escena 2: Con 150 pedidos al mes, 8 % de devoluciones y $260 por devolución, Brenda nunca ha incluido ese costo en sus precios.",
+      "Consigna: calcula el costo esperado por pedido y al mes, escribe la fórmula en Excel y propón dos acciones para bajar la tasa según los motivos más comunes."
+     ],
+     [
+      "Escena 3: Para el Buen Fin, del 13 al 17 de noviembre, quiere anunciar su mochila de viaje «antes $1,299, ahora $899», aunque la vende todo el año en $999. También quiere poner «12 meses sin intereses» y comprar 50 reseñas de cinco estrellas.",
+      "Consigna: reescribe el anuncio con el descuento real, las fechas, las condiciones y la regla de meses sin intereses, y escribe qué hará en lugar de comprar reseñas."
+     ],
+     [
+      "Escena 4: En el marketplace vende una maleta de mano en $1,044 con IVA. Brenda dio su RFC, pero su socia, que vende por su cuenta, no lo ha registrado.",
+      "Consigna: calcula las retenciones de ISR e IVA de esa venta con RFC y sin RFC, explica qué documento debe guardar y escribe dos preguntas para su contador."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cuánto le cuestan a Brenda las devoluciones esperadas por pedido y al mes?",
+      "$20.80 por pedido y $3,120 al mes",
+      "$260 por pedido y $39,000 al mes",
+      "$2.08 por pedido y $312 al mes",
+      "0.08 × $260 = $20.80 por pedido; × 150 = $3,120 al mes. $260 es el costo de una devolución, no el promedio por pedido, y $2.08 usa 0.8 % en lugar de 8 %."
+     ],
+     [
+      "Si en el Buen Fin vende a $899 la mochila que todo el año cuesta $999, ¿qué descuento anuncia?",
+      "10 %, porque ($999 − $899) ÷ $999 ≈ 10 %",
+      "31 %, porque ($1,299 − $899) ÷ $1,299 ≈ 31 %",
+      "11 %, porque ($999 − $899) ÷ $899 ≈ 11 %",
+      "El descuento se calcula sobre el precio habitual real: $100 ÷ $999 ≈ 10 %. El «antes $1,299» nunca existió e induce a error (art. 32 LFPC), y dividir entre $899 calcula el porcentaje sobre el precio rebajado, no el descuento."
+     ],
+     [
+      "¿Qué retenciones le hacen a Brenda por la maleta de $1,044 con IVA?",
+      "ISR $22.50 e IVA $72, sobre $900 sin IVA",
+      "ISR $26.10 e IVA $83.52, sobre $1,044",
+      "ISR $180 e IVA $144, porque es un monto alto",
+      "$1,044 ÷ 1.16 = $900 sin IVA; 2.5 % = $22.50 y 8 % = $72. Calcular sobre el precio con IVA infla la retención, y $180 y $144 son las tasas sin RFC (20 % y 100 % del IVA), que le aplicarían a su socia."
+     ]
+    ],
+    "pl": [
+     "Carpeta de reglas de tu tienda",
+     "1. Revisión Profeco: precio total con IVA [sí/no] | envío antes de pagar [sí/no] | domicilio y teléfono [sí/no]\n2. Política de devoluciones: plazo [ ] | condiciones [ ] | envío si se arrepiente: cliente | envío si hay defecto: tienda | reembolso en [ ] días hábiles\n3. Costo esperado: tasa [ ] % × $[ ] = $[ ] por pedido; × [ ] pedidos = $[ ] al mes\n4. Promoción: precio habitual $[ ] | promoción $[ ] | [ ] % | fechas [ ] | condiciones [ ]\n5. Reseñas: mensaje a todos los compradores [ ]\n6. Retenciones del mes: ventas sin IVA $[ ] | ISR 2.5 % $[ ] | IVA 8 % $[ ] | CFDI guardados [sí/no]\n7. Preguntas para el contador: [ ]\nProfeco: 55 5568 8722 y 800 468 8722 | Concilianet"
+    ]
+   },
+   "quiz": [
+    [
+     "Un cliente recibe un cojín sin defectos y al tercer día hábil pide devolverlo porque cambió de opinión. ¿Qué procede?",
+     "Reembolsar el precio al recibirlo; el envío de regreso lo paga el cliente",
+     "Rechazarlo, porque sólo se aceptan devoluciones de productos con defecto",
+     "Aceptarlo, pero cobrarle una penalización del 20 % del precio pagado",
+     "Darle sólo un vale por el mismo monto para una compra futura en la tienda"
+    ],
+    [
+     "Una lámpara llega con el cable dañado. ¿Qué le ofreces al cliente?",
+     "Reposición o devolución, a su elección, con los envíos a tu cargo",
+     "Sólo la reparación, con el envío de ida y vuelta a cargo del cliente",
+     "Un descuento de 10 % en su siguiente compra y que se quede la lámpara",
+     "Nada, porque el cliente debió revisarla antes de recibir el paquete"
+    ],
+    [
+     "Jacinto anuncia una cafetera en «$850 + IVA». ¿Qué debe corregir?",
+     "Mostrar el precio total con IVA: $986",
+     "Nada, si el IVA aparece en el último paso",
+     "Mostrar $850 y aclarar que no factura",
+     "Poner «IVA no incluido» en letra grande"
+    ],
+    [
+     "Lorena tiene 10 % de devoluciones y cada una le cuesta $180. ¿Qué número suma a su margen por pedido?",
+     "$18 de costo esperado por pedido",
+     "$180, el costo de cada devolución",
+     "$1.80, por ser una de cada 100",
+     "$10, el porcentaje convertido a pesos"
+    ],
+    [
+     "Arturo vende siempre una agenda en $400 y en el Buen Fin la deja en $320. ¿Qué anuncio es honesto?",
+     "Precio habitual $400, ahora $320: 20 % de descuento, del 13 al 17 de noviembre",
+     "Antes $550, ahora $320: 42 % de descuento, sólo durante el Buen Fin",
+     "Precio habitual $400, ahora $320: 25 % de descuento, por tiempo limitado en noviembre",
+     "Ahora $320, la mejor oferta del año, sin fechas para poder extenderla"
+    ],
+    [
+     "Mónica ofrece un plan mensual con cobro automático. ¿Qué debe hacer antes de cada renovación?",
+     "Avisar al menos 5 días naturales antes y permitir cancelar de inmediato",
+     "Nada, porque el cliente ya aceptó el cobro automático al inscribirse",
+     "Avisar el mismo día del cobro y dar 30 días para pedir el reembolso",
+     "Pedirle al cliente una carta firmada si quiere cancelar su suscripción"
+    ],
+    [
+     "Un proveedor de servicios ofrece a Octavio 30 reseñas positivas «de personas reales» por $600. ¿Qué haces?",
+     "Las rechazas: son engañosas aunque las escriban personas reales",
+     "Las compras sólo para productos nuevos que aún no tienen reseñas",
+     "Las compras si dejan 4.5 estrellas en lugar de 5.0 para parecer reales",
+     "Las compras y después pides reseñas reales para irlas diluyendo"
+    ],
+    [
+     "Isidro vende en un marketplace un artículo de $2,320 con IVA y dio su RFC. ¿Cuánto le retienen en total?",
+     "$210: $50 de ISR y $160 de IVA",
+     "$243.60: $58 de ISR y $185.60 de IVA",
+     "$720: $400 de ISR y $320 de IVA",
+     "$370: $50 de ISR y $320 de IVA"
+    ],
+    [
+     "Graciela vende $4,000 al mes por su tienda propia, con pasarela de pago y sin retención. ¿Qué le dices?",
+     "Esos ingresos se declaran aparte; revisa con tu contador en qué régimen",
+     "No los declares, porque si nadie retiene es que no causan impuestos",
+     "Pásalos al marketplace para que la retención sea tu único pago",
+     "Decláralos sólo si en el año pasan de $300,000, como en plataformas"
+    ],
+    [
+     "Un cliente no logra resolver con Brenda la devolución de una mochila defectuosa. ¿A dónde puede acudir?",
+     "Al Teléfono del Consumidor de Profeco o a Concilianet para conciliar en línea",
+     "Al SAT, porque la mochila se vendió en línea y la plataforma le hizo retenciones de impuestos",
+     "A la paquetería, que es la responsable de las garantías de los productos",
+     "A ninguna parte: en compras en línea la garantía depende de cada tienda"
+    ]
+   ]
+  },
+  {
+   "t": "Medir, crecer y proyecto final: tu tienda lista para operar",
+   "r": "Medir lo que importa, atraer y retener clientes con presupuesto controlado, prepararte para temporadas altas e integrar todo en tu plan de 90 días.",
+   "lecciones": [
+    {
+     "t": "Tu tablero mensual: conversión, ticket, costo de adquisición, recompra y devoluciones",
+     "obj": "Armar en Excel un tablero de seis indicadores con fórmulas y metas, y usarlo para tomar una decisión concreta cada mes.",
+     "texto": [
+      "Vender en línea genera muchos datos, pero sólo unos cuantos te dicen qué hacer. Un tablero mensual de seis indicadores basta para una tienda pequeña. La <b>tasa de conversión</b> es pedidos ÷ visitas: de cada 100 personas que entran, cuántas compran. Como referencia, muchas tiendas están entre 2 % y 3 %, aunque varía mucho por producto, precio y origen de las visitas. El <b>ticket promedio</b> es ventas ÷ pedidos. La tasa de devolución es pedidos devueltos ÷ pedidos, y el margen de contribución por pedido lo calculaste en el módulo 1 (si trasladas IVA, calcúlalo sin IVA, como viste en la lección 7.4).",
+      "Los otros dos miden clientes, no pedidos. El <b>costo de adquisición</b> (CAC) es lo que gastaste para conseguir clientes nuevos dividido entre los clientes nuevos que llegaron: $6,000 de anuncios que trajeron 60 clientes nuevos dan un CAC de $100. La <b>recompra</b> es clientes que compraron dos veces o más ÷ total de clientes. Con ella estimas el LTV, el margen que te deja un cliente durante toda su relación contigo: si cada pedido deja $150 de margen y un cliente hace en promedio 1.4 pedidos, su LTV es $210. Una regla práctica, no una ley, sugiere que el LTV sea unas tres veces el CAC; con 2 a 1 o menos estás cerca de no ganar.",
+      "En Excel pon los meses en columnas y los datos en filas: visitas en B2, pedidos en B3, ventas en B4, gasto en anuncios en B5, clientes nuevos en B6, clientes totales en B7, clientes con dos o más compras en B8 y devoluciones en B9. Conversión =B3/B2, ticket =B4/B3, CAC =B5/B6, recompra =B8/B7 y devolución =B9/B3. Si un indicador está en B12 y su meta en N12, =SI(B12>=N12,1,0) marca 1 cuando cumple; en CAC y devoluciones, donde menos es mejor, usa <=. Toma cada dato de los reportes de tu tienda y de cada marketplace.",
+      "Compara cada mes con el mismo mes del año anterior o con meses parecidos: diciembre no se compara con febrero. Y el tablero sirve si termina en una decisión. Si la conversión baja, revisa precio total, fotos y velocidad; si el CAC sube, revisa tus anuncios antes de aumentar el presupuesto; si la recompra es baja, trabaja la experiencia después de la compra. Escribe cada mes una sola decisión y mide su efecto el mes siguiente."
+     ],
+     "comparar": [
+      "«Así no: Este mes vendí $45,000, más que el pasado, así que voy bien y le subo al presupuesto de anuncios.»",
+      "«Así sí: Vendí $45,000 con 2.5 % de conversión, ticket de $450 y CAC de $100; mi LTV es $210, sólo 2.1 veces el CAC. Antes de gastar más en anuncios, trabajo la recompra.»"
+     ],
+     "caso": "Caso ficticio: Lorena, de 28 años, borda sombreros y gorras en La Paz y los vende en su tienda propia y en un marketplace. En octubre tuvo 4,000 visitas, 100 pedidos y $45,000 de ventas. Gastó $6,000 en anuncios, que le trajeron 60 clientes nuevos. En el año ha tenido 300 clientes, de los que 66 compraron dos veces o más, y en octubre le devolvieron 5 pedidos. Cada pedido le deja unos $150 de margen antes de publicidad, y un cliente le compra en promedio 1.4 veces. Quiere duplicar su gasto en anuncios porque «las ventas subieron».",
+     "p": [
+      [
+       "¿Cuáles son la conversión y el ticket promedio de Lorena en octubre?",
+       "2.5 % y $450",
+       "25 % y $450",
+       "2.5 % y $11.25",
+       "Conversión = 100 ÷ 4,000 = 2.5 %; ticket = $45,000 ÷ 100 = $450. El 25 % sale de mover el punto decimal, y $11.25 divide las ventas entre las visitas, no entre los pedidos."
+      ],
+      [
+       "¿Qué te dicen su CAC y su LTV?",
+       "CAC de $100 y LTV de $210: apenas 2.1 veces, cerca de no ganar con clientes nuevos",
+       "CAC de $60 y LTV de $450: le conviene duplicar los anuncios cuanto antes, mientras dure la racha",
+       "CAC de $100 y LTV de $150: pierde dinero con cada cliente nuevo que llega",
+       "CAC = $6,000 ÷ 60 = $100; LTV = $150 × 1.4 = $210, y $210 ÷ $100 = 2.1, por debajo de la referencia práctica de 3. $60 confunde clientes con pesos, $450 es el ticket y no el margen, y $150 olvida la recompra."
+      ],
+      [
+       "¿Qué decisión de noviembre es la más sensata?",
+       "Trabajar la recompra y mejorar los anuncios antes de aumentar el gasto",
+       "Duplicar el gasto en anuncios porque las ventas de octubre subieron",
+       "Apagar los anuncios de inmediato porque el CAC no le deja nada",
+       "Con LTV 2.1 veces el CAC, cada cliente nuevo deja poco; subir la recompra (22 % hoy) o bajar el CAC mejora la relación. Duplicar el gasto suele subir el CAC, y apagar todo ignora que cada cliente sí deja $110 por encima de su costo."
+      ]
+     ],
+     "completar": [
+      "Lo que gastas para conseguir clientes nuevos, dividido entre esos clientes, es el ___ de adquisición.",
+      "costo"
+     ],
+     "relacionar": [
+      [
+       "Conversión",
+       "Pedidos ÷ visitas"
+      ],
+      [
+       "Ticket promedio",
+       "Ventas ÷ pedidos"
+      ],
+      [
+       "CAC",
+       "Gasto para conseguir clientes ÷ clientes nuevos"
+      ],
+      [
+       "Recompra",
+       "Clientes con 2 o más compras ÷ clientes"
+      ],
+      [
+       "LTV",
+       "Margen que deja un cliente en toda su relación"
+      ]
+     ],
+     "refl": "Arma tu tablero (20 min). 1) Reúne los datos de tu último mes (o estímalos si apenas empiezas): visitas, pedidos, ventas, gasto en anuncios, clientes nuevos, clientes totales, clientes que repitieron y devoluciones. 2) Calcula los seis indicadores con fórmulas. 3) Pon una meta realista a cada uno. 4) Escribe la decisión del próximo mes y cómo sabrás si funcionó.",
+     "modelo": "Modelo: «Septiembre: 2,500 visitas, 45 pedidos, $27,000 de ventas, $2,400 en anuncios, 30 clientes nuevos, 160 clientes en el año, 32 que repitieron, 2 devoluciones. Conversión 1.8 %, ticket $600, CAC $80, recompra 20 %, devolución 4.4 %. Margen por pedido $210 y 1.3 pedidos por cliente: LTV $273, 3.4 veces el CAC. Metas: conversión 2.2 % y recompra 25 %. Decisión: agregar fotos en uso a mis 5 productos más visitados y comparar la conversión de octubre.» Es buena porque calcula con datos reales, compara con metas y termina en una sola acción medible.",
+     "plantilla": [
+      "Tablero mensual",
+      "Mes: [ ] | Comparado con: [mismo mes del año anterior o mes parecido]\nVisitas [ ] | Pedidos [ ] | Ventas $[ ] | Gasto en anuncios $[ ] | Clientes nuevos [ ] | Clientes totales [ ] | Repitieron [ ] | Devoluciones [ ]\nConversión =B3/B2 [ ] % (meta [ ]) | Ticket =B4/B3 $[ ] (meta [ ])\nCAC =B5/B6 $[ ] | Recompra =B8/B7 [ ] % | Devolución =B9/B3 [ ] %\nMargen por pedido $[ ] × pedidos por cliente [ ] = LTV $[ ] | LTV ÷ CAC = [ ]\nDecisión del mes: [ ] | Cómo la mediré: [ ]"
+     ],
+     "clave": [
+      "Seis indicadores bastan: conversión, ticket, CAC, recompra, devolución y margen por pedido.",
+      "El LTV se calcula con margen, no con ventas; si apenas duplica el CAC, cuida antes de gastar más.",
+      "Compara meses parecidos y cierra cada tablero con una sola decisión medible."
+     ]
+    },
+    {
+     "t": "Atraer y recuperar clientes: correo, WhatsApp, carrito abandonado y presupuesto de anuncios",
+     "obj": "Construir una lista de clientes con su permiso, recuperar carritos abandonados sin presionar y fijar un presupuesto de anuncios con un CAC máximo.",
+     "texto": [
+      "El cliente que ya te compró es el más barato de volver a atraer, y para hablarle necesitas su permiso. Al cerrar la compra, ofrece una casilla sin marcar para recibir novedades por correo o por WhatsApp y explica qué enviarás y cada cuándo. La LFPC obliga a respetar la decisión del consumidor de no recibir avisos comerciales (art. 76 Bis), y la ley de datos personales pide que tu aviso de privacidad diga para qué usas sus datos. Cada mensaje debe traer una forma sencilla de darse de baja. Comprar bases de datos o agregar números a grupos sin preguntar daña tu reputación y te expone a quejas.",
+      "Cuida la frecuencia y el valor. Como punto de partida, dos a cuatro mensajes al mes con algo útil: una novedad, una guía de uso, una reposición de lo que más se vende o un aviso de temporada. Si muchos se dan de baja o no abren, envía menos o mejora el contenido. La recompra se gana sobre todo con un buen producto y una buena entrega, no con insistencia.",
+      "El <b>carrito abandonado</b> es normal: el Baymard Institute documenta un abandono promedio de 70.22 %. Si el cliente dejó su correo o su número y aceptó recibir mensajes, envíale un recordatorio amable en las primeras horas y, como mucho, otro al día siguiente: qué dejó, el precio total con envío y cómo resolver dudas. No inventes urgencias falsas como «sólo quedan 2» si no es cierto. Y si muchos abandonan en el mismo paso, el problema no se arregla con recordatorios: revisa costos sorpresa, cuenta obligatoria o lentitud, como viste en el módulo 3.",
+      "Para los anuncios, fija primero un <b>CAC máximo</b>: lo más que puedes pagar por un cliente nuevo sin perder. Si el primer pedido te deja $180 de margen antes de publicidad y quieres conservar al menos la mitad, tu CAC máximo es $90. Puedes aceptar uno más alto sólo si tu recompra real lo justifica. Después divide: con $3,000 al mes y un CAC de $75, esperas unos 40 clientes nuevos. Empieza con poco, mide dos o tres semanas y sube sólo lo que esté bajo tu CAC máximo. La estrategia de anuncios en redes la profundiza el diplomado de Marketing Digital."
+     ],
+     "comparar": [
+      "«Así no: Compré una lista de 5,000 correos, mando promociones diario y a quien deja el carrito le escribo tres veces: ¡últimas piezas!»",
+      "«Así sí: Sólo escribo a quien marcó la casilla, dos veces al mes con algo útil y con opción de baja; al carrito abandonado le mando un recordatorio con el total y mi contacto.»"
+     ],
+     "caso": "Caso ficticio: Arturo, de 57 años, encuaderna a mano agendas y libretas en Chetumal y las vende en su tienda propia. Cada primer pedido le deja $180 de margen antes de publicidad. Su sobrina le propone comprar una base de 5,000 correos por $1,500 y mandarles promociones cada semana. Este mes 90 personas dejaron su carrito; 40 de ellas aceptaron recibir mensajes. Arturo tiene $3,000 al mes para anuncios y sus pruebas le dan un CAC de $75.",
+     "p": [
+      [
+       "¿Qué hace Arturo con la base de 5,000 correos?",
+       "No la compra: escribe sólo a quien le dio permiso y ofrece la casilla en su tienda",
+       "La compra y escribe una vez a todos, con una opción para darse de baja al final",
+       "La compra, pero envía los correos desde una cuenta distinta a la de su tienda",
+       "Esas personas no dieron su consentimiento: la LFPC pide respetar la decisión de no recibir publicidad y la ley de datos exige informar la finalidad. Un solo envío con opción de baja no corrige que nunca pidió permiso, y cambiar de cuenta no cambia el problema."
+      ],
+      [
+       "¿A quién y cómo le escribe por los carritos abandonados?",
+       "A los 40 que aceptaron: un recordatorio con el total y su contacto, y como mucho otro",
+       "A los 90: tres mensajes en dos días con «últimas piezas» para crear urgencia",
+       "A los 40: un mensaje diario durante una semana, hasta que compren o pidan que ya no les escriban",
+       "Sólo puede escribir a quien aceptó recibir mensajes, y uno o dos recordatorios útiles bastan. Una urgencia falsa engaña (art. 32 LFPC) e insistir a diario convierte un interés en molestia."
+      ],
+      [
+       "¿Cuál es su CAC máximo si quiere conservar al menos la mitad del margen del primer pedido, y cuántos clientes espera con $3,000?",
+       "$90 de CAC máximo y unos 40 clientes nuevos al mes",
+       "$180 de CAC máximo y unos 17 clientes nuevos al mes",
+       "$75 de CAC máximo y unos 33 clientes nuevos al mes",
+       "La mitad de $180 es $90; con CAC real de $75 está por debajo del máximo, y $3,000 ÷ $75 = 40 clientes. $180 sería gastar todo su margen, y $75 es su CAC actual, no el máximo."
+      ]
+     ],
+     "completar": [
+      "Lo más que puedes pagar por un cliente nuevo sin perder es tu ___.",
+      "CAC máximo"
+     ],
+     "relacionar": [
+      [
+       "Casilla sin marcar",
+       "Consentimiento para recibir mensajes"
+      ],
+      [
+       "Opción de baja",
+       "Respetar a quien ya no quiere avisos"
+      ],
+      [
+       "Recordatorio de carrito",
+       "Total, contacto y como mucho dos mensajes"
+      ],
+      [
+       "CAC máximo",
+       "Tope de lo que pagas por un cliente nuevo"
+      ],
+      [
+       "Prueba pequeña",
+       "Medir dos o tres semanas antes de subir"
+      ]
+     ],
+     "refl": "Diseña tu sistema para atraer y recuperar clientes (20 min). 1) Escribe el texto de la casilla de consentimiento y qué enviarás y cada cuándo. 2) Redacta tu mensaje de carrito abandonado con el total y tu contacto. 3) Calcula tu CAC máximo con el margen de tu primer pedido. 4) Define tu presupuesto de prueba de anuncios y cuántos clientes nuevos esperas.",
+     "modelo": "Modelo: «Casilla: “Quiero recibir novedades y guías de uso por correo, máximo 2 al mes; puedo darme de baja cuando quiera.” Carrito: “Hola, Marta: guardamos tu tapete de lana (total con envío: $1,180). Si tienes dudas de medidas, respóndeme por este mismo chat.” Margen del primer pedido: $260; quiero conservar 60 %: CAC máximo $104. Prueba: $2,000 en tres semanas; con CAC esperado de $80, unos 25 clientes. Si el CAC pasa de $104, ajusto antes de seguir.» Es buena porque pide permiso, no presiona y fija un tope antes de gastar.",
+     "plantilla": [
+      "Sistema de recompra y carrito",
+      "Casilla (sin marcar): [ ]\nQué envío y cada cuándo: [ ] | Baja: [enlace o palabra BAJA]\nCarrito abandonado (sólo con permiso): primer recordatorio a las [ ] horas: [texto con total y contacto] | segundo (opcional) a las [ ] horas: [ ]\nMargen del primer pedido $[ ] × parte que acepto gastar [ ] % = CAC máximo $[ ]\nPresupuesto de prueba $[ ] ÷ CAC esperado $[ ] = [ ] clientes nuevos\nRevisión: [fecha] | Si el CAC supera el máximo: [qué ajusto]"
+     ],
+     "clave": [
+      "Sólo escribes a quien te dio permiso, con algo útil y siempre con opción de baja.",
+      "Al carrito abandonado, uno o dos recordatorios honestos; si muchos abandonan en el mismo paso, arregla ese paso.",
+      "Antes de anunciar, fija tu CAC máximo y prueba con poco."
+     ]
+    },
+    {
+     "t": "Atención al cliente y reseñas: tiempos de respuesta, plantillas y quejas públicas",
+     "obj": "Definir tus tiempos de respuesta, crear plantillas que suenen humanas, pedir reseñas sin comprarlas y responder en público una queja sin pelear.",
+     "texto": [
+      "En línea, la atención es parte del producto: la persona no te ve, así que juzga por lo rápido y claro que respondes. Define una meta de tiempo de respuesta en horario de atención, por ejemplo menos de 4 horas hábiles, publícala junto a tu contacto y mídela cada semana. En los marketplaces la demora en preguntas y reclamos también afecta tu reputación, como viste en el módulo 4. Si no puedes responder de noche, dilo: «Respondemos de lunes a sábado, de 9 a 19 h».",
+      "Las plantillas ahorran tiempo si suenan a ti, no a robot. Ten listas unas diez para las situaciones frecuentes: dónde está mi pedido, cambio de talla, producto dañado, retraso, factura y garantía. Cada una sigue cuatro pasos: saluda por su nombre, responde lo que preguntó con datos concretos, di cuál es el siguiente paso y cuándo, y firma con tu nombre. Personaliza al menos una frase en cada envío y registra cada queja con su motivo en tu hoja: si el mismo motivo se repite, el arreglo está en el producto, la ficha o el envío, no en la respuesta.",
+      "Pide reseñas a todos tus compradores unos días después de la entrega, con un mensaje breve y el enlace directo. Las primeras cuentan mucho: el estudio de Spiegel encontró que pasar de cero a cinco reseñas multiplica la probabilidad de compra, y que una insignia de «comprador verificado» la mejora alrededor de 15 %. No ofrezcas premios a cambio de reseñas positivas ni borres las negativas que la plataforma te permita ocultar: eso engaña a tus siguientes clientes.",
+      "Ante una <b>queja pública</b>, responde en público, breve y con calma: agradece, reconoce lo que salió mal sin culpar al cliente ni a la paquetería, ofrece una solución concreta y pasa los detalles a un canal privado, sin publicar datos personales. Quien lee tu respuesta no es sólo el cliente molesto: son los próximos compradores, que se fijan en cómo resuelves. Si la queja es falsa u ofensiva, repórtala a la plataforma con evidencia en lugar de discutir. Y si el cliente acude a Profeco, atiende la conciliación: suele ser más barato resolver que pelear."
+     ],
+     "comparar": [
+      "«Así no: Respondo cuando puedo. Si alguien deja una reseña mala, le contesto que seguro no siguió las instrucciones.»",
+      "«Así sí: Respondo en menos de 4 horas hábiles con plantillas personalizadas. A una reseña mala: “Gracias por avisarnos, lamentamos que el gotero llegara roto; te enviamos uno nuevo hoy. Te escribimos por mensaje para los datos.”»"
+     ],
+     "caso": "Caso ficticio: Jacinto, de 33 años, vende en la Ciudad de México accesorios para preparar café: goteros de vidrio, filtros de tela y molinos manuales. Recibe unos 120 mensajes a la semana y tarda en promedio 19 horas en contestar. Tiene 38 reseñas con 4.4 estrellas. Ayer apareció una de una estrella: «Llegó roto el gotero y nadie me contesta». Jacinto quiere responder que fue culpa de la paquetería y ofrecer un descuento a quien deje cinco estrellas.",
+     "p": [
+      [
+       "¿Qué responde Jacinto en público a la reseña de una estrella?",
+       "Agradece, reconoce el problema, ofrece reponer el gotero y pasa los datos a privado",
+       "Explica que la culpa fue de la paquetería y que él empacó el gotero con mucho cuidado, como siempre",
+       "No responde en público y le escribe en privado para pedirle que borre la reseña",
+       "La respuesta pública la leen los próximos compradores: reconocer y resolver da confianza. Culpar a la paquetería suena a excusa, y pedir que borre la reseña sin resolver primero agrava la molestia."
+      ],
+      [
+       "¿Qué hace con la idea del descuento por cinco estrellas?",
+       "La descarta y pide reseñas a todos, sin condicionarlas a la calificación",
+       "La aplica sólo a clientes frecuentes, que ya conocen bien sus productos",
+       "La cambia por un descuento a quien deje cualquier reseña de 4 o 5 estrellas",
+       "Premiar calificaciones altas distorsiona las reseñas y engaña a otros compradores, sea con 5 o con 4 estrellas, o sólo con clientes frecuentes. Pedir a todos, sin condición, es honesto y suficiente: su 4.4 real ya está en el rango que más confianza da."
+      ],
+      [
+       "¿Cómo baja su tiempo de respuesta de 19 horas?",
+       "Fija una meta en horario de atención, prepara plantillas y mide cada semana",
+       "Responde todos los mensajes a cualquier hora, aunque sea de madrugada",
+       "Contesta con un mensaje automático que diga que ya recibió la consulta",
+       "Meta pública, plantillas para lo frecuente y medición semanal resuelven sin agotarse. Responder de madrugada no se sostiene, y un mensaje automático sin respuesta real sólo pospone el problema."
+      ]
+     ],
+     "completar": [
+      "Ante una ___ pública, agradece, reconoce, ofrece una solución y pasa los detalles a privado.",
+      "queja"
+     ],
+     "refl": "Arma tu sistema de atención (20 min). 1) Escribe tu horario y tu meta de tiempo de respuesta. 2) Redacta tres plantillas con los cuatro pasos: pedido retrasado, producto dañado y cambio de talla o modelo. 3) Escribe tu mensaje para pedir reseñas a todos. 4) Responde en público una reseña negativa real o inventada de tu negocio.",
+     "modelo": "Modelo: «Horario: lunes a sábado de 9 a 19 h; meta: menos de 3 horas hábiles. Plantilla de retraso: “Hola, Rocío: tu pedido 1045 salió el martes y la guía marca retraso en tu ciudad. Ya abrí reporte con la paquetería; te aviso mañana antes de las 12. Sergio.” Reseñas: “¿Cómo llegó tu pedido? Si quieres, cuéntanos aquí, buena o mala: [enlace].” Respuesta pública: “Gracias, Luis. Lamentamos que la funda llegara descosida; te mandamos otra hoy sin costo. Te escribimos por mensaje.”» Es buena porque es concreta, humana y siempre dice el siguiente paso.",
+     "plantilla": [
+      "Plantillas de atención",
+      "Horario: [ ] | Meta de respuesta: [ ] horas hábiles | Medición: cada [día de la semana]\nPlantilla base: Hola, [nombre]: [respuesta con datos concretos]. [Siguiente paso y cuándo]. [Tu nombre].\nSituaciones: dónde está mi pedido | retraso | dañado | cambio | factura | garantía\nPedir reseña ([ ] días después de la entrega): [mensaje sin condiciones + enlace]\nRespuesta a reseña negativa: Gracias, [nombre]. Lamentamos [lo que pasó]. [Solución concreta]. Te escribimos por mensaje para los detalles.\nRegistro de quejas: fecha | canal | motivo | solución | costo"
+     ],
+     "clave": [
+      "Publica tu horario y una meta de respuesta, y mídela cada semana.",
+      "Plantillas en cuatro pasos y personalizadas; registra los motivos de queja para corregir la causa.",
+      "Las quejas públicas se responden para los próximos compradores: reconocer y resolver, nunca pelear."
+     ]
+    },
+    {
+     "t": "Temporadas altas y crecer con cabeza: Hot Sale, Buen Fin, proveedores y ayuda externa",
+     "obj": "Planear una temporada alta con números de demanda, capacidad y envío, decidir cuándo crecer y cuándo no, y escribir tu plan de 90 días.",
+     "texto": [
+      "Las temporadas altas concentran ventas y también errores. El Hot Sale, organizado por la AMVO, fue en 2026 del 25 de mayo al 2 de junio, y el Buen Fin 2026 va del 13 al 17 de noviembre (verifica fechas cada año); a eso súmale las fechas de tu producto: regreso a clases, Día de las Madres, posadas. Empieza ocho a doce semanas antes con un pronóstico: cuánto vendiste en la misma temporada del año anterior, cuánto creciste desde entonces y cuántas unidades necesitas por producto.",
+      "Luego compara la demanda con tu <b>capacidad</b>: cuánto puedes fabricar o comprar, empacar, enviar y atender por semana. Si en temporada esperas 120 pedidos a la semana y sólo puedes hacer 60, tienes tres caminos: producir por adelantado, conseguir ayuda o vender menos con honestidad, por ejemplo con preventa y fecha de entrega clara. Confirma con tu proveedor los materiales y sus tiempos, y con tu paquetería las recolecciones y la última fecha de envío para llegar a tiempo. Una sobreventa o un retraso en temporada daña tu reputación justo cuando más gente te mira.",
+      "Crecer puede significar contratar ayuda temporal, con las obligaciones laborales que correspondan (consúltalo con tu contador), o pasar el almacén y los envíos a una empresa de logística o al almacén del marketplace cuando el volumen lo justifique y ya calculaste su costo. Pero hay momentos para no crecer: si tu margen por pedido es bajo o negativo, si tus devoluciones van en aumento, si no tienes dinero para el inventario sin endeudarte de más o si la calidad baja cuando produces más. Crecer con números malos sólo hace más grandes las pérdidas.",
+      "Cierra con tu <b>plan de 90 días</b>: tres metas medibles (por ejemplo, conversión de 2 % a 2.5 %, devoluciones de 10 % a 7 % y 30 clientes que repitan), las acciones de cada mes con responsable y fecha, el presupuesto, el escenario pesimista (qué haces si vendes la mitad de lo esperado) y tres fechas de revisión con tu tablero. Ningún plan garantiza ventas; sí te ayuda a decidir con datos y a corregir a tiempo."
+     ],
+     "comparar": [
+      "«Así no: Para posadas acepto todos los pedidos que lleguen y ya veré cómo los saco.»",
+      "«Así sí: Calculé 480 pedidos en cuatro semanas y puedo hacer 240; produzco por adelantado desde octubre, contrato apoyo temporal y, al llegar al tope, abro preventa con fecha clara.»"
+     ],
+     "caso": "Caso ficticio: Reynaldo, de 46 años, hace piñatas y artículos para posadas en Cuernavaca y los vende en línea. Fuera de temporada vende 40 piñatas a la semana y, con un ayudante, hace 60. Para las cuatro semanas de posadas espera 120 pedidos semanales, como el año pasado. Cada piñata va en una caja de 40 × 40 × 40 cm que pesa 1.5 kg, y su paquetería usa divisor 5,000. Faltan seis semanas para la temporada y quiere aceptar todos los pedidos.",
+     "p": [
+      [
+       "¿Cuántas piñatas le faltan a Reynaldo para la temporada si sigue con su capacidad?",
+       "240: necesita 480 en cuatro semanas y puede hacer 240",
+       "360: necesita 480 y en temporada sólo vende 120",
+       "60: es la diferencia entre 120 y 60 en una semana",
+       "Demanda: 120 × 4 = 480; capacidad: 60 × 4 = 240; faltan 240. Si confundes la demanda semanal con la capacidad, o tomas una sola semana, subestimas el faltante."
+      ],
+      [
+       "Si produce por adelantado, ¿le alcanzan las seis semanas que faltan?",
+       "No: con 20 de excedente por semana tardaría 12 semanas; necesita ayuda o preventa",
+       "Sí: con 60 piñatas por semana junta 360 en seis semanas, así que hasta le sobran 120 para enero",
+       "Sí: con 40 por semana junta 240 en seis semanas, justo lo que necesita",
+       "Mientras siga vendiendo 40 por semana, sólo le sobran 20 (60 − 40); 240 ÷ 20 = 12 semanas. Contar las 60 o las 40 completas olvida que sigue surtiendo los pedidos normales."
+      ],
+      [
+       "¿Por qué debe revisar también el envío de sus piñatas?",
+       "Porque su peso volumétrico es 12.8 kg y le cobrarán ese peso, no 1.5 kg",
+       "Porque pesa 1.5 kg y la paquetería le cobrará la tarifa más baja",
+       "Porque su peso volumétrico es 1.28 kg, y eso lo hace muy barato",
+       "40 × 40 × 40 ÷ 5,000 = 12.8 kg, y se cobra el mayor entre el peso real y el volumétrico. Debe cotizar ese peso, valorar entrega local o piñatas plegables y no ofrecer envío gratis sin calcularlo."
+      ]
+     ],
+     "completar": [
+      "Antes de una temporada alta compara tu demanda esperada con tu ___ semanal de fabricar, empacar, enviar y atender.",
+      "capacidad"
+     ],
+     "relacionar": [
+      [
+       "Pronóstico",
+       "Ventas de la misma temporada del año anterior"
+      ],
+      [
+       "Capacidad",
+       "Lo que puedes hacer, empacar y enviar por semana"
+      ],
+      [
+       "Preventa",
+       "Vender con fecha de entrega clara cuando llegas al tope"
+      ],
+      [
+       "Escenario pesimista",
+       "Qué haces si vendes la mitad"
+      ],
+      [
+       "No crecer",
+       "Margen bajo, devoluciones en aumento o calidad que cae"
+      ]
+     ],
+     "refl": "Planea tu próxima temporada alta (20 min). 1) Elige la temporada y escribe tu pronóstico de pedidos por semana con base en datos (o una estimación prudente). 2) Calcula tu capacidad semanal y el faltante. 3) Decide cómo cubrirlo: producción anticipada, ayuda, preventa o un tope de pedidos. 4) Escribe tres metas medibles para tus próximos 90 días.",
+     "modelo": "Modelo: «Temporada: regreso a clases, 4 semanas. El año pasado vendí 70 loncheras por semana; con 15 % de crecimiento espero unas 80. Hoy hago 50 y vendo 35 fuera de temporada: me sobran 15 por semana. Faltante: (80 − 50) × 4 = 120; empiezo 8 semanas antes y junto 120. Si pasan de 80 por semana, preventa con entrega en 10 días. Metas de 90 días: conversión de 1.8 % a 2.2 %, devoluciones de 9 % a 6 % y 25 clientes que repitan. Escenario pesimista: si vendo la mitad, guardo el excedente para diciembre sin endeudarme.» Es buena porque usa datos, calcula el faltante y prevé el escenario malo.",
+     "plantilla": [
+      "Plan de temporada y de 90 días",
+      "Temporada: [ ] | Fechas: [ ] | Semanas: [ ]\nPronóstico por semana: [ ] (base: [año anterior + ajuste])\nCapacidad por semana: hago [ ] | vendo fuera de temporada [ ] | excedente [ ]\nFaltante: [ ] → producción anticipada desde [fecha] | ayuda: [ ] | preventa o tope: [ ]\nPaquetería: recolecciones [ ] | última fecha de envío [ ] | peso volumétrico [ ] kg\nMetas de 90 días: 1) [ ] 2) [ ] 3) [ ]\nAcciones por mes con responsable: [ ]\nEscenario pesimista: [ ] | Revisiones: [fecha 1], [fecha 2], [fecha 3]"
+     ],
+     "clave": [
+      "Planea cada temporada con ocho a doce semanas: pronóstico, capacidad y faltante en números.",
+      "Si la demanda supera tu capacidad, produce antes, consigue ayuda o vende con preventa honesta.",
+      "No crezcas con margen bajo, devoluciones en aumento o calidad que cae: tu plan de 90 días incluye el escenario pesimista."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el tablero y el plan de crecimiento de tu tienda. 1) Tablero (30 min): seis indicadores con fórmulas en Excel, meta por indicador, LTV ÷ CAC y la decisión del mes. 2) Clientes (20 min): casilla de consentimiento, mensaje de carrito abandonado y CAC máximo con tu presupuesto de prueba. 3) Atención (15 min): horario, meta de respuesta, tres plantillas y la respuesta a una reseña negativa. 4) Temporada y plan (25 min): pronóstico, capacidad y faltante de tu próxima temporada alta, y el borrador de tu plan de 90 días con escenario pesimista.",
+    "entregable": "Un archivo de Excel con tu tablero mensual y tu cálculo de CAC máximo, tus textos de consentimiento, carrito abandonado y atención, y el borrador de tu plan de temporada y de 90 días.",
+    "criterios": "Revisa: el tablero calcula con fórmulas y cierra con una decisión, el LTV usa margen y no ventas, sólo escribes a quien dio permiso y el CAC máximo sale de tu margen, las plantillas dicen el siguiente paso, y el plan de 90 días tiene tres metas medibles, faltante calculado y escenario pesimista."
+   },
+   "lab": {
+    "t": "Plan de lanzamiento y operación de tu tienda en línea",
+    "obj": "Integrar en un solo plan todo lo que construiste en el diplomado: canales, utilidad por pedido, catálogo, tienda propia, marketplace, cobro, antifraude, conciliación, envíos, inventario, políticas, promociones, impuestos, tablero y plan de 90 días.",
+    "esc": "Este laboratorio es tu proyecto final: armas el plan de lanzamiento y operación de tu propia tienda en línea o, si aún no la tienes, de una que vas a abrir o que conoces bien, con un archivo de Excel con fórmulas. Si te sirve de referencia, piensa en <b>Valentina,</b> de 41 años, que en Mazatlán diseña y cose trajes de baño. Cada traje le cuesta $310, el empaque $18 y espera 10 devoluciones de cada 100 pedidos, a $220 cada una. Quiere venderlos en $890 en su tienda propia y en $1,044 con IVA en el marketplace más grande del país.",
+    "e": [
+     [
+      "Parte 1 (módulos 1 y 2), canales, utilidad y catálogo: entrega tu elección de canales, la utilidad por pedido de cada canal y tu catálogo inicial con 5 fichas completas.",
+      "Consigna: entrega la matriz de canales con la razón de cada uno, la hoja de margen por pedido con =B2-SUMA(C2:J2) y las devoluciones esperadas (los ejemplos usan precios finales; si estás inscrito y trasladas IVA, ese IVA no es tuyo: pon en B2 el precio sin IVA, =precio/1.16, y los costos sin el IVA que acreditas, y confírmalo con tu contador), el catálogo maestro con SKU y variantes, y 5 fichas con título buscable, atributos, medidas, información comercial obligatoria y fotos honestas."
+     ],
+     [
+      "Parte 2 (módulos 3 y 4), tienda propia y marketplace: entrega las páginas de confianza, la revisión de tu pago, el precio por canal y tu plan de reputación.",
+      "Consigna: entrega tus páginas de contacto, envíos, devoluciones, términos y aviso de privacidad; la lista de revisión de tu pago (precio total visible, compra como invitado, velocidad en celular); tu precio por canal con la fórmula de precio objetivo, y tus plantillas para preguntas y reclamos."
+     ],
+     [
+      "Parte 3 (módulos 5 y 6), cobro, envíos e inventario: entrega tus formas de pago con su costo, tu protocolo antifraude, tu hoja de conciliación, tu plan de envío y empaque y tu inventario maestro.",
+      "Consigna: entrega el costo de cada forma de pago con =(B2*3.49%+4)*1.16 u otra tarifa verificada, tu regla para confirmar pagos en tu banca y no en capturas, la conciliación pedido por pedido, el peso volumétrico y el costo de envío de tu producto principal, tu prueba de caída y el inventario maestro con colchón por canal, stock de seguridad y punto de reorden."
+     ],
+     [
+      "Parte 4 (módulos 7 y 8), reglas, tablero y plan de 90 días: entrega tu política de devoluciones, una promoción honesta, tu hoja de retenciones, tu tablero y tu plan de 90 días.",
+      "Consigna: entrega tu política con arrepentimiento y defecto separados y su costo esperado, el anuncio de una promoción con precio habitual comprobable, las retenciones de ISR e IVA de un mes con la nota de verificar en el SAT, el tablero de seis indicadores con metas y el plan de 90 días con tres metas medibles, escenario pesimista y fechas de revisión."
+     ]
+    ],
+    "p": [
+     [
+      "En su tienda propia, Valentina vende a $890 (precio final), paga a la pasarela (3.49 % + $4) más IVA (ejemplo; verifica la tarifa) y el cliente paga el envío aparte. Con la simplificación del módulo 1, sin separar el IVA, ¿cuánto le deja cada pedido?",
+      "Unos $499.33, tras restar $310, $40.67 de pasarela, $18 y $22",
+      "Unos $521.33, porque las devoluciones no se restan si no ocurren",
+      "Unos $517.33, porque el empaque ya va incluido en el costo",
+      "Pasarela: ($890 × 3.49 % + $4) × 1.16 = $40.67. Devoluciones esperadas: 10 % × $220 = $22. Margen: $890 − $310 − $40.67 − $18 − $22 = $499.33. Omitir las devoluciones esperadas o el empaque sobrestima lo que queda. Ojo: si Valentina está inscrita y traslada IVA, $122.76 de esos $890 son IVA que no es suyo; con su contador recalcularía desde $767.24 y con costos sin el IVA que acredita."
+     ],
+     [
+      "En el marketplace vende un traje en $1,044 con IVA y dio su RFC. ¿Qué retenciones verá en su depósito?",
+      "ISR $22.50 e IVA $72, calculados sobre $900",
+      "ISR $26.10 e IVA $83.52, calculados sobre $1,044",
+      "ISR $180 e IVA $144, por ser una persona física",
+      "$1,044 ÷ 1.16 = $900; 2.5 % = $22.50 y 8 % = $72 (tasas 2026; verifica en el SAT y con tu contador). Calcular sobre el precio con IVA infla la retención, y $180 y $144 corresponden a no haber dado el RFC."
+     ],
+     [
+      "En su primer mes, Valentina tiene 3,200 visitas, 64 pedidos y $60,800 de ventas, y gastó $4,000 en anuncios que trajeron 40 clientes nuevos. ¿Qué anota en su tablero?",
+      "Conversión 2 %, ticket $950 y CAC $100",
+      "Conversión 20 %, ticket $950 y CAC $62.50",
+      "Conversión 2 %, ticket $19 y CAC $100",
+      "Conversión = 64 ÷ 3,200 = 2 %; ticket = $60,800 ÷ 64 = $950; CAC = $4,000 ÷ 40 = $100. El 20 % mueve el punto decimal, $62.50 divide el gasto entre todos los pedidos y no entre los clientes nuevos, y $19 divide las ventas entre las visitas."
+     ]
+    ],
+    "pl": [
+     "Índice del proyecto: Plan de lanzamiento y operación de tu tienda en línea",
+     "Portada: [nombre de la tienda] | [tu nombre] | [ciudad] | [producto principal] | [fecha]\nResumen en cinco líneas: [qué vendes, a quién, por qué canales, margen por pedido, meta de 90 días]\nParte 1. Canales, utilidad y catálogo (módulos 1 y 2)\n  1.1 Matriz de canales y riesgo de depender de uno\n  1.2 Margen de contribución por pedido en cada canal\n  1.3 Catálogo maestro con SKU, variantes y códigos\n  1.4 Cinco fichas completas y honestas\nParte 2. Tienda propia y marketplace (módulos 3 y 4)\n  2.1 Plataforma, dominio y páginas de confianza\n  2.2 Pago sin fricciones y aviso de privacidad\n  2.3 Precio por canal y umbrales\n  2.4 Reputación, preguntas y reclamos\nParte 3. Cobro, envíos e inventario (módulos 5 y 6)\n  3.1 Formas de pago con su costo y antifraude\n  3.2 Conciliación y flujo de caja\n  3.3 Paquetería, peso volumétrico y empaque\n  3.4 Inventario maestro y promesa de entrega\nParte 4. Reglas, tablero y crecimiento (módulos 7 y 8)\n  4.1 Derechos del consumidor y política de devoluciones\n  4.2 Promociones honestas y reseñas\n  4.3 Retenciones y preguntas para tu contador\n  4.4 Tablero mensual, clientes y atención\n  4.5 Temporada alta y plan de 90 días con escenario pesimista\nAnexos: [archivo de Excel, capturas de tus páginas, fotos de empaque]\nMi siguiente decisión y su fecha: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Reynaldo tuvo 5,000 visitas y 90 pedidos. ¿Cuál es su conversión y qué indica?",
+     "1.8 %: algo debajo del rango de referencia, vale revisar ficha, precio y velocidad",
+     "18 %: muy por encima de cualquier tienda, así que no necesita cambiar nada",
+     "1.8 %: con esa conversión está perdiendo dinero y debe cerrar la tienda en línea de inmediato",
+     "55.6 %: porque cada pedido representa unas 56 visitas en su tienda en línea"
+    ],
+    [
+     "Mónica gastó $5,000 en anuncios y llegaron 25 clientes nuevos; cada uno le deja en su relación $400 de margen. ¿Qué concluye?",
+     "CAC $200 y LTV 2 veces el CAC: está cerca de no ganar con clientes nuevos",
+     "CAC $200 y LTV 2 veces el CAC: puede triplicar el gasto con toda seguridad",
+     "CAC $25 y LTV 16 veces el CAC: tiene un margen enorme para crecer rápido",
+     "CAC $400 y LTV igual al CAC: cada cliente nuevo le cuesta lo que le deja"
+    ],
+    [
+     "Lorena tiene 500 clientes en el año y 90 compraron dos veces o más. ¿Cuál es su recompra?",
+     "18 %",
+     "90 %",
+     "5.6 %",
+     "82 %"
+    ],
+    [
+     "Un tablero de Octavio muestra más ventas en diciembre que en noviembre. ¿Qué comparación es más útil?",
+     "Diciembre contra el diciembre del año anterior",
+     "Diciembre contra el promedio de todo el año",
+     "Diciembre contra febrero, el mes más flojo",
+     "Diciembre contra noviembre, el mes anterior"
+    ],
+    [
+     "Arturo quiere mandar promociones a los clientes que compraron pero no marcaron la casilla de novedades. ¿Qué haces?",
+     "Les escribes sólo sobre su pedido; las promociones, a quien aceptó",
+     "Les mandas una promoción al mes, porque ya son tus clientes",
+     "Les escribes sólo por WhatsApp, que no requiere su permiso",
+     "Los agregas a un grupo de difusión con opción de salirse"
+    ],
+    [
+     "El primer pedido de Graciela deja $240 de margen antes de publicidad y quiere conservar al menos 60 %. ¿Cuál es su CAC máximo?",
+     "$96",
+     "$144",
+     "$240",
+     "$400"
+    ],
+    [
+     "Muchos clientes de Isidro abandonan el carrito justo cuando aparece el costo de envío. ¿Qué haces primero?",
+     "Mostrar el envío desde la ficha y revisar si conviene un umbral de envío gratis",
+     "Mandar tres recordatorios a cada carrito con un mensaje de «últimas piezas»",
+     "Subir el presupuesto de anuncios para que lleguen más personas a la tienda",
+     "Ocultar el envío hasta después del pago para que no se arrepientan antes"
+    ],
+    [
+     "Una clienta de Jacinto publica que su molino llegó sin manivela. ¿Qué respuesta pública es mejor?",
+     "«Gracias por avisarnos; lamentamos el faltante. Te enviamos la manivela hoy y te escribimos por mensaje.»",
+     "«Revisamos todos los paquetes antes de enviarlos; seguramente la manivela se quedó dentro de la caja.»",
+     "«Escríbenos por mensaje privado para ver tu caso, porque aquí no resolvemos quejas de clientes.»",
+     "«Lamentamos el inconveniente; el problema fue de la paquetería, que maltrata mucho los envíos.»"
+    ],
+    [
+     "Brenda espera 300 pedidos en la semana del Buen Fin y puede preparar 180. ¿Qué es lo más sensato?",
+     "Preparar inventario antes, conseguir ayuda temporal y fijar un tope o preventa con fecha clara",
+     "Aceptar los 300 pedidos y avisar del retraso sólo a quien pregunte después por el estado de su pedido",
+     "Subir los precios en el Buen Fin para que lleguen menos pedidos a la tienda",
+     "Cancelar los pedidos que no alcance a enviar, porque así lo hacen muchas tiendas"
+    ],
+    [
+     "Valentina tiene margen por pedido de $45 y devoluciones que subieron de 8 % a 15 %. Un amigo le sugiere abrir otro canal y duplicar su inventario. ¿Qué le recomiendas?",
+     "No crecer todavía: primero bajar devoluciones y mejorar el margen por pedido",
+     "Crecer ya, porque con más volumen las devoluciones pesan menos en el total",
+     "Crecer sólo en el marketplace, porque ahí la plataforma absorbe las devoluciones",
+     "Duplicar el inventario pero no abrir canales, porque así reduce el riesgo"
+    ]
+   ]
+  }
+ ]
+}

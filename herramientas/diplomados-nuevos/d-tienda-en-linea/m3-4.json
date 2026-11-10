@@ -1,0 +1,848 @@
+{
+ "modulos": [
+  {
+   "t": "Tu tienda propia: confianza, pago sin fricciones y datos protegidos",
+   "r": "Elegir plataforma y armar una tienda que inspire confianza, cobre sin tropiezos y cuide los datos de tus clientes.",
+   "lecciones": [
+    {
+     "t": "Elegir tu plataforma: tienda hospedada o autogestionada, costo total y dominio propio",
+     "obj": "Comparar plataformas por su costo total de un año, calcular el punto de equilibrio entre dos planes y asegurar que el dominio y los datos de tu tienda sean tuyos.",
+     "texto": [
+      "Para tu tienda propia hay dos caminos. En una <b>tienda hospedada</b> pagas una renta mensual y la plataforma se encarga del servidor, el certificado de seguridad, las actualizaciones y el proceso de pago; tú eliges una plantilla (el «tema»), cargas productos y configuras envíos. En una <b>tienda autogestionada</b> instalas un programa, muchas veces gratuito, en un servidor que rentas (hosting): tienes más libertad, pero tú o alguien que contrates responde por actualizaciones, respaldos y seguridad. Si empiezas con 10 a 30 productos y sin equipo técnico, la hospedada suele ser lo razonable; la autogestionada se justifica con necesidades especiales y presupuesto para mantenimiento.",
+      "Compara el <b>costo total</b> de un año, no el precio del plan. Suma la renta, la comisión por transacción que algunas plataformas cobran si usas una pasarela distinta a la suya, la comisión de la pasarela, las aplicaciones mensuales (reseñas, facturación, envíos), el tema si es de pago, el dominio y las horas tuyas o de un técnico. Ejemplo con tarifas ficticias: el plan A cuesta $399 al mes más 2 % de cada venta; el plan B, $899 sin comisión de la plataforma. El punto de equilibrio está donde $399 + 2 % de las ventas = $899, es decir, en $25,000 al mes: arriba de eso, el B sale más barato. En Excel, con tus ventas en B2, compara =399+B2*2% contra 899. Verifica las tarifas vigentes de cada plataforma.",
+      "Tu <b>dominio</b> es tu dirección propia, como tumarca.com.mx. Con la dirección gratuita que da la plataforma (tumarca.plataforma.com) dependes de ella; con dominio propio, si un día cambias de plataforma, te lo llevas y tus clientes te siguen encontrando. Regístralo a tu nombre y con tu correo, no en la cuenta de quien te diseñó la tienda; activa la renovación automática y anota la fecha de vencimiento: un dominio vencido puede comprarlo otra persona.",
+      "Antes de contratar, pregunta <b>quién es dueño de los datos</b>. Revisa que puedas exportar productos, clientes y pedidos en un archivo de hoja de cálculo (CSV), qué pasa si dejas de pagar y si hay plazo forzoso. Si algún día migras, exporta todo, impórtalo en la nueva plataforma y redirige las direcciones viejas de tus productos a las nuevas, para no perder a quien llega desde buscadores o enlaces guardados. Elegir bien al inicio te ahorra una mudanza cara."
+     ],
+     "comparar": [
+      "«Así no: Elegí el plan más barato que vi y dejé que el diseñador registrara el dominio en su cuenta; total, él lo administra.»",
+      "«Así sí: Comparé el costo de un año con lo que espero vender, registré el dominio a mi nombre y comprobé que puedo exportar clientes y pedidos.»"
+     ],
+     "caso": "Caso ficticio: Teresa, de 34 años, teje en macramé colgantes de pared y portamacetas en Guadalajara y hoy vende por redes y mensajes unos $28,000 al mes; espera llegar a $40,000 en diciembre. Quiere su tienda propia y compara dos planes de una plataforma hospedada (tarifas de ejemplo): A, $399 al mes más 2 % de cada venta porque usará una pasarela externa, y B, $899 al mes sin comisión de la plataforma. Su sobrino le ofrece instalarle «gratis» una tienda autogestionada en su hosting y registrar el dominio en su propia cuenta «para administrarlo él».",
+     "p": [
+      [
+       "Con ventas de $28,000 al mes, ¿qué plan le cuesta menos a Teresa?",
+       "El B: $899 contra $959 del plan A con su 2 %",
+       "El A: $399 es menos de la mitad de lo que cuesta el B",
+       "Cuestan igual: el 2 % de sus ventas equivale a $500",
+       "Plan A = $399 + 2 % × $28,000 = $399 + $560 = $959; plan B = $899. El punto de equilibrio es $25,000 al mes y Teresa ya está arriba, así que el B le ahorra $60 al mes, y más en diciembre. Comparar sólo la renta ignora la comisión, y el 2 % de $28,000 son $560, no $500."
+      ],
+      [
+       "¿Qué debe responder Teresa a la oferta de su sobrino?",
+       "Aceptar sólo con dominio y hosting a su nombre y alguien que actualice y respalde la tienda",
+       "Aceptarla tal cual, porque una tienda gratis siempre sale mejor que pagar una renta mensual",
+       "Rechazarla, porque las tiendas autogestionadas no pueden cobrar con tarjeta ni calcular envíos",
+       "Una tienda autogestionada puede funcionar bien, pero no es gratis: alguien debe actualizarla, respaldarla y protegerla, y si el dominio y el hosting están en la cuenta del sobrino, Teresa no controla su propio negocio. Lo gratis puede salir caro si la tienda se cae o la hackean. Y sí pueden cobrar con tarjeta y calcular envíos mediante complementos."
+      ],
+      [
+       "Antes de contratar cualquier plan, ¿qué debe comprobar Teresa?",
+       "Que pueda exportar productos, clientes y pedidos en un archivo",
+       "Que la plataforma tenga más plantillas gratuitas que las demás",
+       "Que el plan incluya ya instaladas todas las aplicaciones posibles",
+       "Poder exportar sus datos le permite cambiar de plataforma sin empezar de cero y sin perder a sus clientes. Las plantillas se cambian fácil y no deciden el negocio; tener muchas aplicaciones instaladas sube el costo mensual y suele hacer más lenta la tienda."
+      ]
+     ],
+     "completar": [
+      "La dirección propia de tu tienda, como tumarca.com.mx, es tu ___ y debe quedar registrada a tu nombre.",
+      "dominio"
+     ],
+     "relacionar": [
+      [
+       "Tienda hospedada",
+       "Renta mensual; la plataforma cuida servidor y seguridad"
+      ],
+      [
+       "Tienda autogestionada",
+       "Tú respondes por actualizaciones y respaldos"
+      ],
+      [
+       "Dominio propio",
+       "Tu dirección web, registrada a tu nombre"
+      ],
+      [
+       "Exportar en CSV",
+       "Llevarte productos, clientes y pedidos"
+      ],
+      [
+       "Redirigir direcciones viejas",
+       "No perder visitas al cambiar de plataforma"
+      ]
+     ],
+     "refl": "Elige tu plataforma con números (20 min). 1) Escribe cuántos productos tendrás y cuánto esperas vender al mes en tu tienda propia durante los primeros seis meses. 2) Busca dos opciones (dos planes o dos plataformas) y anota renta, comisión por transacción, comisión de la pasarela, aplicaciones que necesitarías, tema y dominio. 3) Calcula el costo de un año de cada una con tu venta esperada y el punto de equilibrio entre ambas. 4) Revisa si cada una te deja exportar productos, clientes y pedidos. 5) Decide y explica en dos líneas por qué.",
+     "modelo": "Modelo: «Venderé muñecas de trapo hechas a mano; espero $15,000 al mes. Opción 1: $299 al mes más 1.5 % por usar mi pasarela = $299 + $225 = $524 al mes, $6,288 al año. Opción 2: $749 sin comisión = $8,988 al año. El equilibrio está en $30,000 al mes, el doble de lo que espero vender: elijo la opción 1 y la reviso si paso de $25,000. Sumo el dominio, registrado a mi nombre con renovación automática. Las dos exportan clientes y pedidos.» Es buena porque compara el costo total con su venta real, calcula el punto de equilibrio y deja una regla para revisar la decisión.",
+     "plantilla": [
+      "Comparador de plataformas",
+      "Venta mensual esperada: $[ ]\nOpción 1: [ ]  Renta $[ ]/mes  Comisión de la plataforma [ ] %  Apps $[ ]/mes  Tema $[ ]  Dominio $[ ]/año\nOpción 2: [ ]  Renta $[ ]/mes  Comisión de la plataforma [ ] %  Apps $[ ]/mes  Tema $[ ]  Dominio $[ ]/año\nCosto anual = (renta + apps + comisión × venta) × 12 + tema + dominio\nPunto de equilibrio = diferencia de rentas ÷ diferencia de comisiones = $[ ]\nExporta productos, clientes y pedidos: [sí / no]  Plazo forzoso: [ ]\nDominio registrado a nombre de: [ ]  Vence: [ ]\nDecisión: [ ] porque [ ]"
+     ],
+     "clave": [
+      "Compara el costo total de un año con tu venta esperada, no sólo la renta del plan.",
+      "Registra el dominio a tu nombre, con tu correo y renovación automática.",
+      "Elige una plataforma que te deje exportar productos, clientes y pedidos."
+     ]
+    },
+    {
+     "t": "Páginas que generan confianza: quién eres, envíos, devoluciones, términos y contacto",
+     "obj": "Redactar las páginas que un comprador revisa antes de confiar en una tienda propia y cumplir la información que la ley pide dar antes de cobrar.",
+     "texto": [
+      "Quien entra por primera vez a tu tienda se pregunta si eres real. La respuesta no está en un sello bonito, sino en páginas concretas, enlazadas al pie de cada pantalla: <b>quiénes somos</b> (quién hace o vende, desde dónde, con fotos reales del taller o del equipo), <b>envíos</b>, <b>cambios y devoluciones</b>, <b>términos y condiciones</b>, <b>aviso de privacidad</b> (lección 3.4) y <b>contacto</b>. No son un trámite: un estudio de Profeco de 2024 halló entre las quejas frecuentes las entregas fuera de tiempo, los productos que no coinciden con lo prometido y la mala atención, justo lo que estas páginas aclaran por adelantado.",
+      "La ley pide parte de esto. El <b>artículo 76 Bis</b> de la Ley Federal de Protección al Consumidor (LFPC) obliga a quien vende por medios electrónicos a dar, antes de cerrar la operación, su domicilio físico, teléfonos y otros medios de contacto para reclamaciones; a informar términos, condiciones, costos, cargos adicionales y formas de pago, y a explicar los elementos de seguridad que usa. El artículo 53 añade, para ventas a distancia, informar antes de la compra el precio, la fecha aproximada de entrega y los costos de seguro y flete. Un formulario sin teléfono ni domicilio no basta. Verifica la ley vigente.",
+      "La norma mexicana de comercio electrónico <b>NMX-COE-001-SCFI-2018</b>, a la que la misma ley remite como guía, pide publicar términos y condiciones separados del aviso de privacidad, con tu identidad, el procedimiento de compra, los derechos del consumidor, los medios de contacto, las reglas de devolución, cambio o reembolso, la seguridad y las condiciones de pago y facturación. En tu página de envíos escribe costos por zona, tiempos aproximados en días hábiles, la paquetería, el cargo de zona extendida si existe y qué haces si un paquete se retrasa. Las devoluciones las verás a fondo en el módulo 7.",
+      "Sobre los sellos: el <b>Distintivo Digital Profeco</b> es voluntario, tiene costo, dura un año y pide requisitos como un año de alta ante Hacienda, contrato de adhesión registrado en Profeco y sitio seguro; verifica si su convocatoria sigue abierta. Nunca pongas un sello que no tramitaste ni insignias genéricas de «tienda 100 % segura»: inducen a error. Lo que más confianza da es lo verificable: un teléfono que contesta, un domicilio real, fotos tuyas y respuestas en el horario que anuncias. Profeco revisa varios de estos datos en su Monitoreo de Tiendas Virtuales."
+     ],
+     "comparar": [
+      "«Así no: Envíos a todo México. Cualquier duda, mándanos mensaje.»",
+      "«Así sí: Enviamos desde Durango por paquetería nacional: $149 a todo el país, 3 a 6 días hábiles; si tu código postal es zona extendida, verás el cargo extra antes de pagar. Teléfono, domicilio y horario de atención, al pie de esta página.»"
+     ],
+     "caso": "Caso ficticio: Benjamín, de 45 años, es herrero en Durango: hace asadores y parrillas de acero en un taller junto a su casa. Su tienda propia tiene inicio, catálogo y un botón de mensajes; no publica domicilio ni teléfono porque no quiere que «le lleguen a la casa». Envía por una paquetería nacional y cobra $149 a todo el país, pero a dos clientes de zonas alejadas les tuvo que pedir $150 más después de que pagaron. Varios visitantes le preguntan si su tienda es confiable, y un conocido le sugiere descargar de internet un sello de «compra segura» para ponerlo en la portada.",
+     "p": [
+      [
+       "¿Qué debe mostrar Benjamín antes de que el cliente pague?",
+       "Domicilio físico, teléfono y medios de contacto, costos de envío y formas de pago",
+       "Sólo el botón de mensajes, porque es el canal que más usan sus clientes de hoy",
+       "Sus redes sociales con el número de seguidores, que demuestran que es una tienda real",
+       "El art. 76 Bis LFPC pide domicilio físico, teléfonos y medios de contacto antes de cerrar la operación, además de costos, cargos y formas de pago. Puede publicar el domicilio de su taller o uno comercial donde reciba reclamaciones. Un botón de mensajes no da un lugar para reclamar, y los seguidores no prueban quién responde por la venta."
+      ],
+      [
+       "¿Qué debe decir su página de envíos sobre las zonas alejadas?",
+       "Que hay un cargo extra en zona extendida y que se ve antes de pagar",
+       "Que entrega en 24 horas a todo el país, para no espantar ninguna venta",
+       "Que envía a todo México y que los costos extra se avisan después por mensaje",
+       "La ley pide informar antes de la compra los costos de flete (art. 53 fr. IV) y el monto total (art. 7 Bis); cobrar después lo que no se informó genera reclamos con razón. Prometer 24 horas a todo el país es irreal con paquetería nacional, y avisar después es justo lo que hoy le causa problemas."
+      ],
+      [
+       "¿Le conviene poner el sello de «compra segura» que le sugieren?",
+       "No: un sello que nadie le otorgó induce a error; mejor datos verificables",
+       "Sí, porque cualquier sello sube la confianza aunque nadie lo haya otorgado",
+       "Sí, siempre que sea genérico y no use el nombre ni el logotipo de Profeco",
+       "Un sello sin respaldo sugiere una revisión que no existió, y eso es información que induce a error (art. 32 LFPC), aunque no use el nombre de Profeco. La confianza real sale de datos que el cliente puede comprobar: teléfono, domicilio, fotos del taller y políticas claras. El Distintivo Digital Profeco existe, pero se tramita y tiene requisitos."
+      ]
+     ],
+     "completar": [
+      "Antes de cerrar la venta, la ley pide dar un domicilio ___, teléfonos y medios de contacto para reclamaciones.",
+      "físico"
+     ],
+     "relacionar": [
+      [
+       "Quiénes somos",
+       "Quién vende, desde dónde y con fotos reales"
+      ],
+      [
+       "Página de envíos",
+       "Costos por zona y tiempos en días hábiles"
+      ],
+      [
+       "Art. 76 Bis LFPC",
+       "Domicilio, teléfonos y contacto antes de pagar"
+      ],
+      [
+       "NMX-COE-001-SCFI-2018",
+       "Guía para los términos y condiciones"
+      ],
+      [
+       "Distintivo Digital Profeco",
+       "Sello voluntario, con requisitos y vigencia de un año"
+      ]
+     ],
+     "refl": "Arma tus páginas de confianza (20 min). 1) Escribe tu página de quiénes somos en unas 80 palabras: quién eres, qué haces, desde dónde y por qué. 2) Escribe tu página de envíos: costo por zona, preparación y traslado en días hábiles, paquetería, zona extendida y qué haces si hay retraso. 3) Lista tus datos de contacto: domicilio físico para reclamaciones, teléfono, correo y horario en que respondes. 4) Revisa que el pie de tu tienda enlace a envíos, cambios, términos, aviso de privacidad y contacto, y anota qué te falta.",
+     "modelo": "Modelo: «Envíos. Enviamos desde nuestro taller de lunes a viernes. Costo: $129 a todo el país; si tu código postal es zona extendida, la paquetería cobra un cargo extra que verás al escribirlo, antes de pagar. Preparamos tu pedido en 1 a 2 días y el traslado tarda de 3 a 6 días hábiles. Te mandamos la guía por correo el día que sale. Si pasan 8 días hábiles y no llega, llámanos al [teléfono] (lunes a sábado, de 9 a 18 h): lo resolvemos con la paquetería o te reponemos el pedido.» Es buena porque da costo, tiempos y cargo extra antes de pagar, y dice qué pasa si algo falla.",
+     "plantilla": [
+      "Página de envíos y contacto",
+      "Enviamos desde [ciudad] por [paquetería nacional] los días [ ].\nCosto: $[ ] a [zonas]; zona extendida: cargo extra de $[ ] que verás antes de pagar.\nPreparación: [ ] días. Traslado aproximado: [ ] días hábiles.\nTe enviamos la guía por [correo / mensaje] el día que sale tu pedido.\nSi no llega en [ ] días hábiles: [qué hacemos].\nContacto: domicilio [ ], teléfono [ ], correo [ ], horario de respuesta [ ]."
+     ],
+     "clave": [
+      "La confianza se gana con datos verificables: domicilio, teléfono, fotos reales y respuestas a tiempo.",
+      "Informa costos de envío, cargos extra y formas de pago antes de cobrar, no después.",
+      "No uses sellos que no te otorgaron; el Distintivo Digital Profeco es voluntario y tiene requisitos."
+     ]
+    },
+    {
+     "t": "Del carrito al pago: costos visibles, compra como invitado y velocidad en el celular",
+     "obj": "Diagnosticar por qué la gente abandona tu carrito y rediseñar el proceso de pago para que sea claro, corto y rápido en el celular.",
+     "texto": [
+      "De cada 10 personas que ponen algo en el carrito, unas 7 se van sin pagar: el Baymard Institute calcula una tasa promedio de <b>abandono de carrito</b> de 70.22 % a partir de 50 estudios. Parte es normal (gente que sólo compara), pero en su encuesta en Estados Unidos las razones evitables encabezan la lista: costos extra demasiado altos, como envío o cargos (40 %), entrega lenta (20 %), desconfianza al dar la tarjeta (19 %), obligación de crear cuenta (18 %), proceso largo o complicado (17 %) y no ver el costo total por adelantado (12 %). En México, la AMVO reporta el envío caro como la razón número uno para abandonar un sitio.",
+      "Primero, <b>costos visibles</b>. Muestra el costo de envío desde la ficha o con un calculador por código postal, y que el total no cambie en el último paso. La LFPC pide informar de forma notoria y visible el monto total a pagar (art. 7 Bis), así que un «cargo por servicio» que aparece al final, además de espantar, incumple la ley. Si decides ofrecer envío gratis, hazlo con un umbral calculado; eso lo verás en el módulo 6.",
+      "Segundo, <b>menos pasos</b>. Permite la compra como <b>invitado</b>: pide sólo correo, nombre, dirección y teléfono, y ofrece crear la cuenta después de pagar. Usa autocompletado del código postal, teclado numérico para teléfono y tarjeta, y botones grandes. Acepta las formas de pago que tu cliente usa: según la AMVO, en 2025 el 69 % de los compradores en línea pagó con débito, 54 % con crédito, 23 % en efectivo en tiendas y 20 % por transferencia (podían elegir varias). Muestra los métodos aceptados y cómo se protege el pago.",
+      "Tercero, <b>velocidad en el celular</b>, desde donde muchos de tus clientes van a comprar. Las métricas de referencia de experiencia web, llamadas Core Web Vitals, son tres: el LCP, cuánto tarda en verse el elemento principal (bueno: 2.5 s o menos); el INP, qué tan rápido responde la página a un toque (200 ms o menos), y el CLS, cuánto «brinca» el contenido mientras carga (0.1 o menos). Lo que más frena a una tienda pequeña: fotos de varios megas sin comprimir, videos que arrancan solos y aplicaciones instaladas que ya no usas. Una vez al mes, haz una compra completa desde un celular con datos móviles y cronométrala."
+     ],
+     "comparar": [
+      "«Así no: El envío lo ves al final. Antes, regístrate con contraseña y confirma tu correo.»",
+      "«Así sí: Envío a tu código postal: $119, visible desde la ficha. Paga como invitado en 3 pasos, con débito, crédito, efectivo o transferencia.»"
+     ],
+     "caso": "Caso ficticio: Nadia, de 27 años, es ilustradora en Villahermosa y vende agendas y libretas con sus dibujos a $289. En su tienda propia, el envío de $119 aparece hasta el último paso y para pagar hay que crear una cuenta con contraseña. El mes pasado se crearon 400 carritos y sólo 100 terminaron en pedido. Una prueba en su celular marca que la imagen principal de la portada tarda 6 segundos en aparecer: subió fotos de 5 MB cada una. Una amiga le aconseja dejar el envío para el final «como todos», porque así el precio se ve más bajo.",
+     "p": [
+      [
+       "¿Cuál es la tasa de abandono de carrito de Nadia?",
+       "75 %: 300 de 400 carritos no pagaron, arriba del promedio",
+       "25 %: 100 pedidos entre 400 carritos, muy debajo del promedio",
+       "300 %: 300 abandonos entre 100 pedidos, una cifra alarmante",
+       "Abandono = carritos sin pedido ÷ carritos creados = 300 ÷ 400 = 75 %, algo arriba del 70.22 % promedio de Baymard. El 25 % es la proporción de carritos que sí terminaron en pedido, no el abandono, y dividir los abandonos entre los pedidos no mide nada útil."
+      ],
+      [
+       "¿Qué cambio en el pago debe hacer Nadia primero?",
+       "Mostrar el envío desde la ficha y permitir pagar como invitado",
+       "Dejar el envío al final, como dice su amiga, para que el precio luzca bajo",
+       "Pedir más datos en el registro para conocer mejor a cada cliente que compra",
+       "Costos sorpresa y obligación de crear cuenta están entre las primeras causas de abandono, y la ley pide mostrar el monto total de forma visible. Esconder el envío hasta el final es justo lo que espanta, y pedir más datos alarga el proceso y aumenta el abandono."
+      ],
+      [
+       "¿Qué indica la prueba de los 6 segundos en el celular?",
+       "Que el LCP está lejos de 2.5 s: debe comprimir fotos y quitar extras",
+       "Que está bien, porque con datos móviles menos de 10 s es aceptable",
+       "Que el problema es el INP, la medida de cuánto tarda en verse una imagen",
+       "El LCP mide cuánto tarda en verse el elemento principal, y lo bueno es 2.5 s o menos; 6 s es más del doble. Comprimir fotos de 5 MB a unos cientos de KB suele ser lo que más ayuda. No hay un aceptable de 10 s, y el INP mide la respuesta a un toque, no la carga de la imagen."
+      ]
+     ],
+     "completar": [
+      "Dejar que alguien compre sin crear una cuenta se llama compra como ___.",
+      "invitado"
+     ],
+     "relacionar": [
+      [
+       "Abandono de carrito",
+       "Carritos sin pedido ÷ carritos creados"
+      ],
+      [
+       "LCP",
+       "Tiempo en que se ve el elemento principal"
+      ],
+      [
+       "INP",
+       "Rapidez de respuesta a un toque"
+      ],
+      [
+       "CLS",
+       "Cuánto se mueve el contenido al cargar"
+      ],
+      [
+       "Compra como invitado",
+       "Pagar sin crear cuenta ni contraseña"
+      ]
+     ],
+     "refl": "Haz tu prueba de compra (20 min). 1) Desde tu celular y con datos móviles, compra un producto en tu tienda (o en una que admires) hasta el último paso antes de pagar. 2) Cuenta los pasos y los campos que te pidieron, y cronometra el tiempo total. 3) Anota en qué momento viste el costo de envío y el total. 4) Mide la velocidad de la portada y de una ficha con una herramienta gratuita de medición y anota LCP, INP y CLS. 5) Escribe tres cambios en orden de prioridad.",
+     "modelo": "Modelo: «Compra de prueba: 6 pasos, 14 campos, 4 min 10 s. El envío ($99) apareció en el paso 5 y había que crear cuenta. Portada: LCP 4.2 s, INP 180 ms, CLS 0.02; ficha: LCP 3.1 s. Cambios: 1) mostrar el envío en la ficha con calculador por código postal; 2) activar la compra como invitado y quitar el campo de fecha de nacimiento; 3) comprimir las 12 fotos de la portada y desinstalar dos aplicaciones que ya no uso. En un mes repito la prueba.» Es buena porque mide, compara con los umbrales y ordena los cambios por su efecto en la venta.",
+     "plantilla": [
+      "Revisión del proceso de pago",
+      "Fecha: [ ]  Aparato: [ ]  Conexión: [datos / wifi]\nPasos hasta pagar: [ ]  Campos pedidos: [ ]  Tiempo total: [ ] min\n¿Se ve el envío en la ficha? [sí / no]  ¿Cambia el total al final? [sí / no]\nCompra como invitado: [sí / no]  Formas de pago: [débito / crédito / efectivo / transferencia]\nLCP: [ ] s (meta ≤ 2.5)  INP: [ ] ms (meta ≤ 200)  CLS: [ ] (meta ≤ 0.1)\nCambio 1: [ ]  Cambio 2: [ ]  Cambio 3: [ ]\nPróxima revisión: [ ]"
+     ],
+     "clave": [
+      "Muestra el envío y el total desde el inicio: los costos sorpresa son la primera causa de abandono.",
+      "Permite comprar como invitado, pide pocos datos y acepta las formas de pago de tus clientes.",
+      "Mide tu tienda en el celular: LCP de 2.5 s o menos, INP de 200 ms o menos y CLS de 0.1 o menos."
+     ]
+    },
+    {
+     "t": "Datos personales y seguridad de tu tienda: aviso de privacidad, contraseñas y accesos",
+     "obj": "Redactar un aviso de privacidad con sus elementos mínimos, atender derechos ARCO y proteger tu tienda con cuentas individuales, verificación en dos pasos y desconfianza de los falsos soportes.",
+     "texto": [
+      "Cada pedido te deja datos personales: nombre, domicilio, teléfono, correo y lo que compró. La <b>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</b>, nueva desde marzo de 2025, te hace responsable de cuidarlos; la autoridad ahora es la Secretaría Anticorrupción y Buen Gobierno, porque el INAI desapareció. Además, la LFPC (art. 76 Bis) te obliga a mantener la confidencialidad de los datos de tus clientes y a usar elementos técnicos de seguridad. Verifica la versión vigente de ambas leyes y, si manejas datos sensibles, busca asesoría.",
+      "Tu <b>aviso de privacidad</b> debe decir, como mínimo: quién eres y tu domicilio; qué datos tratas, señalando si alguno es sensible; para qué los usas, separando las finalidades que requieren el consentimiento del cliente (por ejemplo, mandarle promociones) de las necesarias para entregar su pedido; cómo puede limitar su uso; cómo ejercer sus <b>derechos ARCO</b> (acceso, rectificación, cancelación y oposición), y cómo le avisarás de cambios. Si recibes una solicitud ARCO, la ley da hasta 20 días para responder y, si procede, 15 más para cumplir. Enlázalo al pie de la tienda y junto al botón de pagar.",
+      "La <b>seguridad</b> empieza por lo básico. Nunca guardes números de tarjeta en hojas, libretas o chats: deja que la pasarela de pago los procese y los guarde. Activa la <b>verificación en dos pasos</b> (un código extra además de la contraseña) en tu plataforma, tu correo, tu banco y tu pasarela. Da a cada colaborador su propia cuenta con sólo los permisos que necesita, en lugar de compartir la contraseña de administrador, y quítale el acceso el mismo día que deje de trabajar contigo. Exporta cada mes un respaldo de productos, clientes y pedidos.",
+      "El ataque más común contra tiendas pequeñas no es técnico: es un engaño. Llega un correo o mensaje de un supuesto «soporte de la plataforma» que dice que tu tienda será suspendida y te pide entrar a un enlace o compartir un código. No abras el enlace: entra escribiendo tú la dirección de la plataforma o desde su aplicación, y revisa ahí tus avisos. Ningún soporte legítimo te pide tu contraseña ni el código de verificación. Si caes, cambia contraseñas, avisa a la plataforma y denuncia ante la Policía Cibernética de tu estado o al 089."
+     ],
+     "comparar": [
+      "«Así no: Todos entramos con la misma contraseña y guardo las tarjetas de los clientes frecuentes para cobrarles más rápido.»",
+      "«Así sí: Cada quien tiene su cuenta con sus permisos y verificación en dos pasos, y las tarjetas sólo pasan por la pasarela.»"
+     ],
+     "caso": "Caso ficticio: Rogelio, de 52 años, vende casas de campaña, hieleras y linternas para campismo en Ensenada, en su local y en su tienda propia. Sus dos empleados entran a la tienda con la misma contraseña de administrador, apuntada en una libreta junto a la caja. Para cobrar rápido a clientes frecuentes que le piden por teléfono, guarda sus números de tarjeta en una hoja de cálculo. Esta semana recibió un correo de «soporte de la plataforma» que dice que su tienda será suspendida en 24 horas si no verifica sus datos en un enlace, y un cliente le escribió para pedir que borre sus datos.",
+     "p": [
+      [
+       "¿Qué debe hacer Rogelio con la hoja de tarjetas?",
+       "Borrarla y cobrar sólo por la pasarela, que procesa y guarda las tarjetas",
+       "Ponerle contraseña a la hoja y seguir usándola sólo con clientes frecuentes",
+       "Dejar sólo número y vencimiento, y borrar el código de seguridad de la tarjeta",
+       "Guardar tarjetas en una hoja expone a sus clientes a fraudes y a él a responder por la filtración; la ley le pide confidencialidad y medidas de seguridad. Una contraseña en el archivo no basta, y número más vencimiento sigue siendo un dato muy sensible. Para clientes frecuentes puede enviarles un enlace de pago de la pasarela."
+      ],
+      [
+       "¿Qué hace con el correo de «soporte de la plataforma»?",
+       "No abrir el enlace y revisar avisos entrando él mismo a la plataforma",
+       "Abrir el enlace en el celular, que es más seguro que en la computadora",
+       "Responder el correo y pedir que le confirmen si el aviso es auténtico",
+       "Urgencia, amenaza de suspensión y enlace para verificar datos son señales típicas de suplantación. Entrar escribiendo la dirección o desde la aplicación oficial le muestra si hay un aviso real. Abrir el enlace en el celular no lo protege, y quien envió el correo falso confirmará que es auténtico."
+      ],
+      [
+       "¿Cómo atiende la solicitud del cliente que quiere que borre sus datos?",
+       "Responder en un máximo de 20 días y, si procede, cumplir en 15 más",
+       "Ignorarla, porque los datos de sus clientes son propiedad de su tienda",
+       "Borrar en ese momento todos sus pedidos, incluidas las facturas emitidas",
+       "La cancelación es un derecho ARCO: la ley da hasta 20 días para responder y 15 más para hacerlo efectivo si procede. Los datos son del titular, no de la tienda. Y antes de borrar facturas o registros que la ley obliga a conservar, debe preguntar a su contador cuánto tiempo debe guardarlos."
+      ]
+     ],
+     "completar": [
+      "Acceso, rectificación, cancelación y oposición son los derechos ___ de tus clientes.",
+      "ARCO"
+     ],
+     "relacionar": [
+      [
+       "Aviso de privacidad",
+       "Dice quién eres, qué datos tratas y para qué"
+      ],
+      [
+       "Derechos ARCO",
+       "Acceso, rectificación, cancelación y oposición"
+      ],
+      [
+       "Verificación en dos pasos",
+       "Un código extra además de la contraseña"
+      ],
+      [
+       "Cuenta por colaborador",
+       "Saber quién hizo cada cambio y quitar accesos"
+      ],
+      [
+       "Pasarela de pago",
+       "Procesa y guarda los datos de tarjeta por ti"
+      ]
+     ],
+     "refl": "Protege tu tienda (20 min). 1) Haz una lista de quién entra a tu tienda, tu correo, tu pasarela y tu banca en línea, y con qué permisos. 2) Marca dónde ya tienes verificación en dos pasos y actívala donde falte. 3) Revisa si guardas datos de tarjeta en algún lugar (hojas, fotos, chats) y bórralos. 4) Escribe un borrador de aviso de privacidad con los seis elementos mínimos. 5) Define cada cuándo harás respaldo y quién revisa los avisos de la plataforma.",
+     "modelo": "Modelo: «Accesos: yo (administradora), mi socia (pedidos y productos) y un diseñador (sólo apariencia; lo quito al terminar). Dos pasos: activada en plataforma y correo; hoy la activo en la pasarela. Tarjetas: borré la foto de una tarjeta que me mandó una clienta por mensaje. Aviso: identidad y domicilio; datos: nombre, dirección, teléfono y correo; finalidades necesarias: entregar y facturar; con consentimiento: boletín; limitar uso: enlace para darse de baja; ARCO: correo [ ], respuesta en 20 días; cambios: aviso en la tienda. Respaldo: el día 1 de cada mes.» Es buena porque da permisos mínimos, cubre los seis elementos y deja una rutina.",
+     "plantilla": [
+      "Aviso de privacidad (borrador) y control de accesos",
+      "Responsable: [nombre]  Domicilio: [ ]\nDatos que tratamos: [ ]  ¿Datos sensibles? [no / cuáles]\nFinalidades necesarias: [entregar, facturar, atender garantías]\nFinalidades que requieren tu consentimiento: [promociones, encuestas]\nCómo limitar el uso de tus datos: [ ]\nDerechos ARCO: escribe a [correo]; respondemos en un máximo de 20 días.\nCambios a este aviso: los publicaremos en [ ].\n\nAccesos: [persona] – [permisos] – [dos pasos sí/no] – [fecha de baja]\nRespaldo mensual: día [ ]  Responsable: [ ]"
+     ],
+     "clave": [
+      "Tu aviso de privacidad dice quién eres, qué datos tratas, para qué y cómo ejercer los derechos ARCO.",
+      "No guardes datos de tarjeta: la pasarela los procesa por ti.",
+      "Cuentas individuales, verificación en dos pasos y desconfianza de los falsos soportes protegen tu tienda."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos deja tu tienda propia lista para recibir pedidos con confianza. 1) Compara el costo total de un año de dos plataformas o planes con tu venta esperada y calcula su punto de equilibrio. 2) Redacta tus páginas de quiénes somos, envíos y contacto, y el índice de tus términos y condiciones según la NMX-COE-001. 3) Haz una compra de prueba desde el celular: cuenta pasos y campos, anota cuándo aparece el envío y mide LCP, INP y CLS. 4) Escribe tu aviso de privacidad con los seis elementos mínimos. 5) Haz tu tabla de accesos y activa la verificación en dos pasos donde falte.",
+    "entregable": "Un documento con la comparación de plataformas, tus páginas de quiénes somos, envíos y contacto, el registro de tu compra de prueba con tres cambios priorizados, tu aviso de privacidad y tu tabla de accesos.",
+    "criterios": "Revisa: el costo anual incluye renta, comisiones, aplicaciones y dominio; la página de envíos da costo, días hábiles y cargo de zona extendida antes de pagar; el contacto incluye domicilio físico y teléfono; el proceso de pago permite comprar como invitado y muestra el total desde el inicio; el aviso tiene los seis elementos, y nadie comparte la contraseña de administrador."
+   },
+   "lab": {
+    "t": "La tienda propia de una platera en Zacatecas",
+    "obj": "Elegir plataforma con su costo total, armar páginas de confianza, rediseñar el proceso de pago y redactar el aviso de privacidad de una tienda real.",
+    "esc": "<b>Lucero,</b> de 38 años, hace aretes, anillos y collares de plata en un taller en Zacatecas. Hoy vende por redes y mensajes unos $45,000 al mes y quiere abrir su tienda propia antes de diciembre. Trabaja con su hermano, que empaca los pedidos, y con una fotógrafa que sube las fotos de cada colección.",
+    "e": [
+     [
+      "Escena 1: Tiene tres opciones (tarifas de ejemplo): A, una tienda hospedada a $399 al mes más 2 % de cada venta por usar su propia pasarela; B, la misma plataforma a $899 al mes sin esa comisión; C, una tienda autogestionada con hosting de $350 al mes más $1,200 al mes de un técnico que la mantenga.",
+      "Consigna: calcula el costo mensual de cada opción con $45,000 de ventas, el punto de equilibrio entre A y B, y decide cuál conviene y por qué."
+     ],
+     [
+      "Escena 2: Su borrador sólo dice «Envíos a todo México» y tiene un formulario de contacto. Envía desde Zacatecas por paquetería nacional a $159 (ejemplo); tarda 1 día en preparar y de 3 a 6 días hábiles en entregar, y en zonas extendidas hay un cargo extra.",
+      "Consigna: escribe sus páginas de envíos y de contacto con todo lo que la LFPC y la NMX piden informar antes de pagar."
+     ],
+     [
+      "Escena 3: En una compra de prueba desde el celular, el proceso tiene 5 pasos, obliga a crear cuenta, el envío aparece en el último paso y la portada marca un LCP de 5.1 s porque cada foto pesa 6 MB.",
+      "Consigna: rediseña el proceso de pago en no más de 3 pasos y escribe los cambios para bajar el LCP a 2.5 s o menos."
+     ],
+     [
+      "Escena 4: Su hermano y la fotógrafa entran con la contraseña de Lucero. Ella quiere usar los correos de sus clientes para enviar un boletín con colecciones nuevas y todavía no tiene aviso de privacidad.",
+      "Consigna: redacta su aviso de privacidad con los seis elementos mínimos y un plan de accesos con permisos y verificación en dos pasos."
+     ]
+    ],
+    "p": [
+     [
+      "Con $45,000 de ventas al mes, ¿qué opción le cuesta menos a Lucero?",
+      "La B: $899, contra $1,299 de la A y $1,550 de la C",
+      "La A: sus $399 de renta son la cifra más baja de las tres",
+      "La C: el programa es gratuito y sólo paga $350 de hosting",
+      "A = $399 + 2 % × $45,000 = $1,299; B = $899; C = $350 + $1,200 = $1,550. El punto de equilibrio entre A y B es $25,000 al mes, y Lucero vende casi el doble. La renta más baja no es el costo más bajo, y en la C el programa gratuito no quita el costo del técnico."
+     ],
+     [
+      "Lucero quiere enviar el boletín a sus clientes. ¿Cómo debe hacerlo?",
+      "Pedir consentimiento, con una casilla sin marcar y forma de darse de baja",
+      "Enviarlo a todos, porque al comprarle aceptaron recibir sus promociones",
+      "Comprar una lista de correos de la región para que llegue a más personas",
+      "Las promociones son una finalidad que requiere consentimiento y debe ir separada en el aviso; la LFPC también pide respetar la decisión de no recibir avisos comerciales. Comprar no equivale a aceptar publicidad, y una lista comprada usa datos de personas que nunca le dieron permiso."
+     ],
+     [
+      "Su página dice «plata ley 0.925» en todas las piezas, pero los broches de dos collares son de otro metal. ¿Qué hace?",
+      "Corregir esas fichas: decir qué partes son de plata ley 0.925 y cuáles no",
+      "Dejarlo así, porque la mayor parte de cada collar sí es de plata ley 0.925",
+      "Quitar la palabra plata de toda la tienda para no comprometerse a nada",
+      "La información debe ser veraz y no inducir a error (art. 32 LFPC); si el producto no corresponde a lo ofrecido, el cliente puede exigir devolución o reposición y bonificación. Callar los broches es engañoso, y quitar la palabra plata de todo le quita su mejor argumento de venta, que sí es cierto en el resto."
+     ]
+    ],
+    "pl": [
+     "Plan de tienda propia",
+     "Plataforma elegida: [ ]  Costo mensual con mi venta: $[ ]  Equilibrio entre planes: $[ ]\nPáginas: quiénes somos [ ] envíos [ ] cambios [ ] términos [ ] aviso [ ] contacto [ ]\nDomicilio para reclamaciones: [ ]  Teléfono: [ ]  Horario: [ ]\nProceso de pago: paso 1 [ ]  paso 2 [ ]  paso 3 [ ]  Compra como invitado: [sí]\nEnvío visible desde: [ficha / carrito]  LCP actual: [ ] s → meta 2.5 s o menos\nAviso de privacidad: [6 elementos]  Boletín con consentimiento: [casilla sin marcar]\nAccesos: [persona – permisos – dos pasos]"
+    ]
+   },
+   "quiz": [
+    [
+     "En diciembre, Teresa espera vender $40,000. ¿Cuánto se ahorra ese mes con el plan B ($899 sin comisión) frente al A ($399 más 2 %)?",
+     "$300: el plan A le costaría $1,199 ese mes",
+     "$500: la diferencia entre las dos rentas mensuales",
+     "$800: el 2 % que ya no le pagaría a la plataforma",
+     "$0: con ventas altas los dos planes cuestan igual"
+    ],
+    [
+     "Una vendedora compara un plan de $299 al mes más 1.5 % de cada venta con otro de $749 sin comisión. ¿Desde qué venta mensual le conviene el segundo?",
+     "$30,000: ahí los $450 de diferencia igualan el 1.5 %",
+     "$49,933: ahí los $749 equivalen al 1.5 % de las ventas",
+     "$19,933: ahí los $299 equivalen al 1.5 % de las ventas",
+     "$45,000: se multiplica por 100 la diferencia de $450"
+    ],
+    [
+     "Benjamín cambiará de plataforma y muchos clientes llegan a sus fichas desde buscadores. ¿Qué no puede faltar en la mudanza?",
+     "Redirigir cada dirección vieja a la ficha nueva del mismo producto",
+     "Borrar la tienda vieja el mismo día para no pagar dos rentas",
+     "Cambiar el nombre de la marca para empezar de cero en la nueva",
+     "Volver a escribir todas las fichas a mano para que queden mejor"
+    ],
+    [
+     "Una tienda en línea sólo tiene un formulario de contacto, sin teléfono ni domicilio. ¿Qué incumple?",
+     "El art. 76 Bis de la LFPC, que pide domicilio físico, teléfonos y medios de contacto",
+     "Nada, porque un formulario basta si la tienda responde siempre en menos de 24 horas",
+     "El aviso de privacidad, que es el único lugar donde la ley pide poner el teléfono",
+     "La NOM-050, que exige imprimir el teléfono de la tienda en la etiqueta del producto"
+    ],
+    [
+     "En la tienda de Nadia, una clienta ve $289 en la ficha y al pagar aparecen $119 de envío y $15 de «cargo por servicio» que no se anunciaba. ¿Qué es lo correcto?",
+     "Mostrar el total desde el inicio y no cobrar cargos no informados",
+     "Mantenerlo, porque el cargo por servicio es pequeño y casi nadie lo nota",
+     "Explicar el cargo en los términos y condiciones, aunque no se vea en la ficha",
+     "Quitar el envío por separado y subir el cargo por servicio a $134"
+    ],
+    [
+     "La tienda de Teresa tuvo 520 carritos y 156 pedidos en octubre. ¿Qué tasa de abandono tuvo?",
+     "70 %: 364 de 520 carritos no terminaron en pedido",
+     "30 %: 156 pedidos de los 520 carritos que se crearon",
+     "43 %: 156 pedidos divididos entre 364 carritos abandonados",
+     "233 %: 364 carritos abandonados entre 156 pedidos"
+    ],
+    [
+     "Una prueba de la tienda de Lucero en el celular da LCP 3.8 s, INP 150 ms y CLS 0.05. ¿Qué atiende primero?",
+     "La carga del elemento principal: el LCP pasa de 2.5 s",
+     "La respuesta a los toques: un INP de 150 ms es muy lento",
+     "La estabilidad: un CLS de 0.05 indica saltos muy graves",
+     "Nada: los tres valores están dentro del rango bueno"
+    ],
+    [
+     "Rogelio sólo acepta tarjeta de crédito, y varios clientes le dicen que no tienen o no quieren usarla. ¿Qué hace?",
+     "Agregar débito, transferencia y efectivo en tiendas, con el costo de cada uno calculado",
+     "Pedir a esos clientes que tramiten una tarjeta de crédito si quieren comprar en línea",
+     "Cambiar a sólo efectivo contra entrega en todo el país para no pagar comisiones",
+     "Ofrecer meses sin intereses con crédito para que se animen a sacar su tarjeta"
+    ],
+    [
+     "El aviso de privacidad de una tienda dice quién es el responsable, qué datos pide y para qué, y nada más. ¿Qué le falta?",
+     "Cómo limitar el uso, cómo ejercer los derechos ARCO y cómo avisa de cambios",
+     "Nada: con identidad, datos y finalidades ya cumple con el mínimo de la ley",
+     "La lista de sus clientes actuales, para demostrar que protege sus datos",
+     "Su número de cuenta bancaria, para que los clientes puedan pagarle sin error"
+    ],
+    [
+     "El empleado que manejaba los pedidos de Rogelio renunció ayer en buenos términos. ¿Qué hace primero?",
+     "Quitarle hoy su acceso y cambiar las contraseñas que conocía",
+     "Esperar a fin de mes para quitarle el acceso, por si surgen dudas",
+     "Pedirle que ya no entre, sin cambiar nada, porque confía en él",
+     "Cerrar la tienda y abrir otra con una cuenta nueva para empezar limpio"
+    ]
+   ]
+  },
+  {
+   "t": "Vender en marketplaces: precio, reputación y logística de la plataforma",
+   "r": "Publicar, poner precio y cuidar tu reputación en marketplaces, y decidir cuándo usar el almacén de la plataforma o sus anuncios.",
+   "lecciones": [
+    {
+     "t": "Cómo funciona un marketplace: reglas, tipos de publicación y lo que no controlas",
+     "obj": "Calcular lo que te cobra un marketplace por cada venta, reconocer las reglas que pueden costarte la cuenta y decidir cuánto de tu negocio pones en él.",
+     "texto": [
+      "Un marketplace es como un centro comercial digital: la plataforma pone el tráfico, la búsqueda, el cobro y muchas veces el envío, y tú pones el producto y el servicio. A cambio cobra una <b>comisión por venta</b> que depende de la categoría y del tipo de publicación; en el marketplace más grande del país va, como ejemplo, de alrededor de 8 % a 21.5 %. Además, en productos baratos suele cobrar un <b>cargo fijo por unidad</b>; en ese ejemplo, $25, $30 o $37 según el precio, y nada desde $299. Verifica la tarifa vigente de tu categoría antes de calcular.",
+      "Ese cargo fijo pesa mucho en precios bajos. Una diadema de $189 con 13 % de comisión paga $24.57 más $37 de cargo fijo: $61.57, casi la tercera parte del precio. Los <b>tipos de publicación</b> también cambian la cuenta: una publicación con comisión más alta suele dar más exposición u ofrecer al comprador meses sin intereses; lee qué incluye cada una. En algunos marketplaces, varios vendedores comparten la misma ficha de catálogo y compiten por aparecer como opción principal con su precio, su reputación y su tiempo de entrega.",
+      "Las <b>reglas</b> de la plataforma mandan dentro de su casa. Las más comunes: publicar sólo productos originales o propios, nada de réplicas (vender falsificaciones es delito en México, con penas de prisión), no desviar compradores a tu WhatsApp ni a tu tienda propia, no abrir varias cuentas para lo mismo, cumplir los tiempos de envío y responder a tiempo. Romperlas puede pausar tus publicaciones, retener tu dinero o suspender tu cuenta. Léelas completas y vuelve a leerlas cada cierto tiempo: cambian seguido.",
+      "Y hay cosas que no controlas: el algoritmo que ordena los resultados, los cambios de comisión, las reglas de envío y quién se queda con la relación con el cliente. Por eso el marketplace es un gran canal para que te descubran, pero un mal lugar para tener todos los huevos en la misma canasta. Como viste en el módulo 1, combina canales: usa el marketplace para vender y darte a conocer, y construye en paralelo tu tienda propia y tus redes, sin violar las reglas de la plataforma."
+     ],
+     "comparar": [
+      "«Así no: Subo todo al marketplace con el mismo precio que en mi local y pongo mi WhatsApp en las fotos para cerrar por fuera.»",
+      "«Así sí: Reviso la comisión y el cargo fijo de mi categoría, calculo cuánto me queda por pedido y cumplo las reglas mientras crezco mi canal propio.»"
+     ],
+     "caso": "Caso ficticio: Paloma, de 29 años, hace diademas, pinzas y moños para el cabello en Cancún. El 90 % de sus ventas sale del marketplace más grande del país. Su diadema más vendida cuesta $189, en una categoría con 13 % de comisión y $37 de cargo fijo (tarifas de ejemplo). Una amiga le aconseja poner su número de WhatsApp en la foto del producto «para cerrar ventas por fuera y no pagar comisión». Otra le sugiere abrir una segunda cuenta para tener el doble de publicaciones.",
+     "p": [
+      [
+       "¿Cuánto le cobra el marketplace a Paloma por cada diadema de $189?",
+       "$61.57: $24.57 de comisión más $37 de cargo fijo",
+       "$24.57: el cargo fijo sólo aplica abajo de $99",
+       "$37: el cargo fijo sustituye a la comisión en productos baratos",
+       "Comisión: 13 % × $189 = $24.57; más $37 de cargo fijo, porque en el ejemplo aplica a productos de menos de $299: total $61.57, el 32.6 % del precio. En el ejemplo, el cargo de $25 es para menos de $99, pero hay cargos de $30 y $37 en los rangos siguientes, y el cargo fijo se suma a la comisión, no la sustituye."
+      ],
+      [
+       "¿Le conviene a Paloma poner su WhatsApp en la foto?",
+       "No: desviar compradores suele violar las reglas y arriesga la cuenta",
+       "Sí, mientras vaya en la imagen y no en el texto de la publicación",
+       "Sí, porque así ahorra la comisión y el cliente acaba pagando menos",
+       "Los marketplaces suelen prohibir que saques compradores de la plataforma, sin importar si el dato va en texto o en imagen, y pueden pausar o suspender la cuenta. Ahorrarse la comisión no compensa perder el canal que hoy le da el 90 % de sus ventas."
+      ],
+      [
+       "¿Qué hace Paloma con su dependencia del 90 %?",
+       "Seguir en el marketplace y hacer crecer en paralelo un canal propio",
+       "Abrir una segunda cuenta en el mismo marketplace para tener más",
+       "Cerrar su cuenta y pasarse de golpe a su tienda propia este mes",
+       "Diversificar poco a poco reduce el riesgo sin perder las ventas de hoy. Una segunda cuenta para lo mismo suele violar las reglas y no reduce la dependencia, porque sigue en la misma plataforma. Irse de golpe la deja sin la mayor parte de sus ingresos mientras su tienda propia junta tráfico."
+      ]
+     ],
+     "completar": [
+      "Además de la comisión, algunos marketplaces cobran un cargo ___ por unidad en productos baratos.",
+      "fijo"
+     ],
+     "relacionar": [
+      [
+       "Comisión por venta",
+       "Porcentaje según categoría y tipo de publicación"
+      ],
+      [
+       "Cargo fijo por unidad",
+       "Pesa más en productos baratos"
+      ],
+      [
+       "Ficha de catálogo compartida",
+       "Varios vendedores compiten por el mismo producto"
+      ],
+      [
+       "Desviar compradores a otro canal",
+       "Puede costarte la suspensión de la cuenta"
+      ],
+      [
+       "Algoritmo de resultados",
+       "Ordena la búsqueda y tú no lo controlas"
+      ]
+     ],
+     "refl": "Conoce las reglas y los costos de tu marketplace (20 min). 1) Elige el marketplace donde vendes o quieres vender y busca su tabla vigente de comisiones y cargos fijos para tu categoría. 2) Calcula cuánto te cobraría por tus tres productos principales, en pesos y en porcentaje del precio. 3) Lee sus reglas y anota cinco que podrías romper sin querer. 4) Escribe qué porcentaje de tus ventas depende de ese marketplace y un paso concreto para no depender sólo de él.",
+     "modelo": "Modelo: «Categoría: herramientas, comisión de ejemplo 12 %. Pinzas de $139: $16.68 + $30 de cargo fijo = $46.68 (33.6 % del precio). Juego de llaves de $459: $55.08 (12 %), sin cargo fijo. Caja organizadora de $289: $34.68 + $37 = $71.68 (24.8 %). Reglas que podría romper: poner mi teléfono en la descripción, usar fotos del fabricante sin permiso, enviar tarde los lunes, cancelar por falta de inventario y publicar dos veces el mismo producto. Dependo 70 %: abro mi catálogo en redes con los mismos productos.» Es buena porque calcula en pesos y en porcentaje y aterriza las reglas a su caso.",
+     "plantilla": [
+      "Hoja de costos y reglas del marketplace",
+      "Marketplace: [ ]  Categoría: [ ]  Tipo de publicación: [ ]\nComisión: [ ] %  Cargo fijo: $[ ] (aplica abajo de $[ ])  Fecha de consulta: [ ]\nProducto: [ ]  Precio $[ ]  Comisión $[ ] + cargo fijo $[ ] = $[ ] ([ ] % del precio)\nReglas que debo cuidar: 1) [ ] 2) [ ] 3) [ ] 4) [ ] 5) [ ]\nParte de mis ventas en este marketplace: [ ] %\nPaso para no depender sólo de él: [ ]"
+     ],
+     "clave": [
+      "La comisión cambia por categoría y tipo de publicación, y el cargo fijo pesa mucho en productos baratos.",
+      "Las reglas de la plataforma mandan: romperlas puede costarte la cuenta.",
+      "Usa el marketplace para vender y que te descubran, sin poner ahí todo tu negocio."
+     ]
+    },
+    {
+     "t": "Precio por canal en Excel: comisión, cargo fijo, envío y utilidad neta",
+     "obj": "Calcular en Excel el precio objetivo de un producto en cada canal con la fórmula que incluye comisión, cargo fijo, envío, empaque y margen, y comprobar la utilidad por pedido.",
+     "texto": [
+      "En un marketplace el precio no se calcula sumando un porcentaje al costo, porque la comisión se cobra sobre el precio final. La fórmula del <b>precio objetivo</b> es: precio = (costo + cargo fijo + envío que pagas + empaque) ÷ (1 − comisión − margen objetivo). Con un termo que cuesta $165, $85 de envío a tu cargo, $12 de empaque, 15 % de comisión y 15 % de margen, el precio es $262 ÷ 0.70 = $374.29, que redondeas a $375. Compruébalo: $375 − $56.25 de comisión − $85 − $12 − $165 = $56.75, o sea 15.1 %.",
+      "En Excel, pon el costo en B2, el cargo fijo en C2, el envío en D2, el empaque en E2, la comisión en F2 y el margen en G2, y escribe en H2 =(B2+C2+D2+E2)/(1-F2-G2). En I2, =REDONDEAR.MAS(H2,0) sube el resultado al peso siguiente. En J2, =I2-I2*F2-C2-D2-E2-B2 te da la utilidad por pedido, para revisar cuánto te queda si cambias el precio. Usamos precios finales, como en la lección 1.3 (si trasladas IVA, calcula sin él); las retenciones las verás en los módulos 5 y 7.",
+      "Cuidado con los <b>umbrales</b>. En el ejemplo del marketplace más grande, abajo de $299 hay cargo fijo y el comprador suele pagar el envío; desde $299 desaparece el cargo fijo, pero el envío gratis es obligatorio y tú pagas al menos una parte. Calcula los dos escenarios: un producto de $289 con envío aparte puede dejarte menos de lo que buscas y, además, verse más caro para el cliente que uno de $375 con envío gratis. Decide mirando el total que paga el comprador. Verifica las reglas vigentes de tu categoría.",
+      "Cada canal lleva su propio <b>precio</b>, porque cada uno tiene sus costos. En tu tienda propia no pagas comisión de marketplace, pero sí la pasarela (en el ejemplo, 3.49 % + $4 + IVA) y la publicidad para atraer visitas; con $20 de publicidad por pedido y el envío a cargo del cliente, el mismo termo quedaría en ($165 + $12 + $4.64 + $20) ÷ (1 − 0.0405 − 0.15) = $249.09, unos $250 más envío. No regales margen para igualar a un competidor sin hacer cuentas: si él vende a $329, a ti te quedarían $17.65, apenas 5.4 %. A ese precio, una sola devolución con envío de ida y vuelta puede borrar la utilidad de varias ventas."
+     ],
+     "comparar": [
+      "«Así no: Le sumo 30 % al costo y lo dejo un peso abajo del competidor más barato.»",
+      "«Así sí: Calculo el precio con (costo + fijo + envío + empaque) ÷ (1 − comisión − margen) y comparo con la competencia antes de decidir.»"
+     ],
+     "caso": "Caso ficticio: Ulises, de 41 años, vende en Colima termos y botellas de acero inoxidable que compra a un distribuidor autorizado. Su termo de 750 ml le cuesta $165; en el marketplace paga 15 % de comisión (ejemplo) y, como el precio pasa de $299, ofrece envío gratis que le cuesta $85; el empaque, $12. Quiere 15 % de margen. Un competidor vende un termo parecido a $329, y Ulises piensa bajarlo a $289 «para no pagar envío»: ahí pagaría $37 de cargo fijo y el comprador, unos $99 de envío.",
+     "p": [
+      [
+       "¿Qué precio objetivo debe ponerle Ulises al termo en el marketplace?",
+       "$375: $262 entre 0.70 da $374.29 y se redondea",
+       "$340.60: los $262 de costos por 1.30 de margen y comisión",
+       "$301.30: los $262 de costos por 1.15 del margen objetivo",
+       "($165 + $85 + $12) ÷ (1 − 0.15 − 0.15) = $262 ÷ 0.70 = $374.29 → $375, que deja $56.75 (15.1 %). Multiplicar por 1.30 aplica los porcentajes sobre el costo y no sobre el precio: a $340.60 la comisión sería $51.09 y la utilidad, apenas $27.51. Multiplicar por 1.15 olvida la comisión."
+      ],
+      [
+       "Si iguala al competidor en $329, ¿cuánto le queda por pedido?",
+       "$17.65, apenas 5.4 % del precio",
+       "$67, la diferencia entre $329 y sus $262 de costos",
+       "$49.35, lo que cobra el marketplace de comisión",
+       "$329 − $49.35 de comisión − $85 − $12 − $165 = $17.65, el 5.4 %. Restar sólo los $262 olvida la comisión, que se cobra sobre el precio. Los $49.35 son lo que se lleva el marketplace, no lo que le queda a Ulises."
+      ],
+      [
+       "¿Le conviene bajar el termo a $289 con envío a cargo del comprador?",
+       "Probablemente no: le deja $31.65 y el cliente pagaría $388 en total",
+       "Sí: abajo de $299 no paga envío y el termo se ve más barato",
+       "Sí: a $289 la comisión baja tanto que gana más que a $375",
+       "A $289: $289 − $43.35 − $37 − $12 − $165 = $31.65 (11 %), menos que los $56.75 a $375. Y el comprador pagaría $289 + $99 = $388, más que los $375 con envío gratis. Se ahorra el envío pero gana el cargo fijo, y el precio visible más bajo no es el total que paga el cliente."
+      ]
+     ],
+     "completar": [
+      "En la fórmula del precio objetivo divides entre 1 menos la comisión y menos el ___ objetivo.",
+      "margen"
+     ],
+     "relacionar": [
+      [
+       "=(B2+C2+D2+E2)/(1-F2-G2)",
+       "Precio objetivo del canal"
+      ],
+      [
+       "=REDONDEAR.MAS(H2,0)",
+       "Subir el precio al peso siguiente"
+      ],
+      [
+       "=I2-I2*F2-C2-D2-E2-B2",
+       "Utilidad por pedido"
+      ],
+      [
+       "Umbral de $299 (ejemplo)",
+       "Cambian el cargo fijo y quién paga el envío"
+      ],
+      [
+       "Precio del competidor",
+       "Referencia, no obligación"
+      ]
+     ],
+     "refl": "Calcula tu precio por canal (20 min). 1) Elige un producto y anota su costo, empaque y envío. 2) Busca la comisión y el cargo fijo vigentes de tu categoría en el marketplace, y la comisión de tu pasarela. 3) Define tu margen objetivo. 4) Calcula el precio objetivo en el marketplace y en tu tienda propia con la fórmula. 5) Compara con dos competidores y decide tu precio en cada canal, con la utilidad en pesos que te deja.",
+     "modelo": "Modelo: «Producto: tabla de picar de madera de parota. Costo $230, empaque $15. Marketplace: comisión 14 % (ejemplo), envío gratis a mi cargo $90, margen 15 %: ($230 + $90 + $15) ÷ 0.71 = $471.83 → $472; me deja $70.92. Tienda propia: pasarela 3.49 % + $4 + IVA (4.05 % y $4.64), $25 de publicidad por pedido y el cliente paga el envío: ($230 + $4.64 + $15 + $25) ÷ (1 − 0.0405 − 0.15) = $339.27 → $340. Competidores en el marketplace: $449 y $499. Decido $472 y $340 más envío.» Es buena porque usa la fórmula, separa los costos de cada canal y compara antes de decidir.",
+     "plantilla": [
+      "Calculadora de precio por canal",
+      "Producto: [ ]  Costo: $[ ]  Empaque: $[ ]  Margen objetivo: [ ] %\nMarketplace: comisión [ ] %  cargo fijo $[ ]  envío a mi cargo $[ ]\nPrecio = (costo + fijo + envío + empaque) ÷ (1 − comisión − margen) = $[ ] → $[ ]\nTienda propia: pasarela [ ] % + $[ ]  publicidad por pedido $[ ]\nPrecio = (costo + fijo de pasarela + empaque + publicidad) ÷ (1 − % pasarela − margen) = $[ ]\nUtilidad por pedido: marketplace $[ ]  tienda propia $[ ]\nCompetencia: $[ ] / $[ ]  Decisión: [ ]"
+     ],
+     "clave": [
+      "Precio objetivo = (costo + cargo fijo + envío + empaque) ÷ (1 − comisión − margen).",
+      "Revisa los umbrales: arriba y abajo de $299 (ejemplo) cambian el cargo fijo y quién paga el envío.",
+      "Cada canal lleva su precio; no iguales a la competencia sin calcular lo que te queda."
+     ]
+    },
+    {
+     "t": "Reputación, preguntas y reclamos: responder rápido y resolver mediaciones",
+     "obj": "Medir tus indicadores de reputación, responder preguntas y reclamos con datos y evidencia, y corregir la causa para que no se repitan.",
+     "texto": [
+      "En un marketplace, tu <b>reputación</b> decide cuánto te muestran y cuánto confían en ti. En el marketplace más grande del país se mide con tres indicadores sobre tus ventas recientes: reclamos, envíos con demora y cancelaciones hechas por ti. Como referencia, los límites que se citan son 1.5 % de reclamos, 10 % de demoras y 1 % de cancelaciones, sobre los últimos 60 días si tienes 40 ventas o más; los valores cambian, así que verifícalos en tu panel. Con 80 ventas, una sola cancelación ya es 1.25 %: unos pocos errores pesan mucho.",
+      "Las <b>preguntas</b> antes de la compra son ventas en espera. Respóndelas rápido, completas y con datos: medidas en centímetros, material, compatibilidad, tiempo de envío. Si una pregunta se repite, esa información le falta a tu ficha: agrégala (módulo 2). Ten plantillas para lo frecuente, pero personaliza el saludo y el dato. Nunca contestes «lee la descripción» ni discutas en público: los demás compradores leen cómo tratas a la gente.",
+      "Un <b>reclamo</b> o una mediación se resuelve con calma y <b>evidencia</b>. Guarda de cada pedido una foto del producto y del empaque antes de cerrar, la guía, el peso declarado y los mensajes; en piezas caras, un video corto al empacar. Responde dentro del plazo que marque la plataforma, reconoce el problema sin culpar al cliente y propón una salida concreta: cambio, devolución o reembolso. Pelear un reclamo justo te cuesta la venta y la reputación; resolverlo rápido a veces te cuesta sólo la venta.",
+      "Las <b>cancelaciones</b> casi siempre nacen de vender lo que no tienes, por inventario desfasado entre canales (lo verás en el módulo 6). Las demoras, de prometer tiempos irreales o empacar tarde: define una hora de corte para empacar y cúmplela. Revisa tus tres indicadores cada semana en una hoja, con la fórmula de cada uno: por ejemplo, reclamos ÷ ventas del periodo. Y recuerda que la reputación no se compra: nada de reseñas falsas ni de calificaciones a cambio de regalos (módulo 7)."
+     ],
+     "comparar": [
+      "«Así no: Señora, si no sabe medir, no compre en línea. Lo artesanal no es de fábrica.»",
+      "«Así sí: Lamento que la talla no le quedara. Le comparto las medidas en centímetros y le ofrezco cambio o reembolso; dígame qué prefiere.»"
+     ],
+     "caso": "Caso ficticio: Xóchitl, de 31 años, vende en Guadalajara blusas bordadas a mano por artesanas de su familia. En los últimos 60 días tuvo 120 ventas en el marketplace, 3 reclamos (2 por talla y 1 de una clienta que dice que el bordado «no es como en la foto»), 9 envíos con demora y 2 cancelaciones porque vendió en su tienda propia las últimas piezas. Su ficha no tiene tabla de medidas. La clienta del bordado dejó además una pregunta pública molesta, y Xóchitl quiere contestarle que «lo artesanal no es de fábrica, señora».",
+     "p": [
+      [
+       "¿Qué indicadores de Xóchitl están fuera de los límites de referencia?",
+       "Reclamos (2.5 %) y cancelaciones (1.7 %); las demoras (7.5 %) no",
+       "Sólo las demoras, porque 9 es el número más alto de los tres",
+       "Ninguno: 3 reclamos y 2 cancelaciones en 120 ventas son muy pocos",
+       "Reclamos: 3 ÷ 120 = 2.5 % (límite 1.5 %); demoras: 9 ÷ 120 = 7.5 % (límite 10 %); cancelaciones: 2 ÷ 120 = 1.7 % (límite 1 %). Se comparan porcentajes contra su límite, no cantidades entre sí, y pocos casos pesan mucho porque los límites son bajos."
+      ],
+      [
+       "¿Cómo responde Xóchitl la pregunta pública de la clienta?",
+       "Agradece, explica que cada bordado varía y ofrece cambio o reembolso",
+       "Aclara con firmeza que lo artesanal no es de fábrica y que es normal",
+       "No responde en público y le pide su teléfono para hablarlo por fuera",
+       "Una respuesta amable, con el dato y una salida concreta, calma a la clienta y muestra a otros compradores cómo los tratará. Defenderse con firmeza suena a regaño aunque tenga razón, y pedir el teléfono para hablar fuera de la plataforma suele violar las reglas."
+      ],
+      [
+       "¿Qué cambio reduce más los reclamos por talla?",
+       "Agregar a la ficha una tabla de medidas de cada prenda en centímetros",
+       "Escribir en la ficha que no acepta reclamos por talla en ningún caso",
+       "Pedir a cada comprador que confirme su talla por mensaje fuera del marketplace",
+       "Con medidas reales en centímetros, la compradora compara con una prenda suya y elige mejor. Negarse de antemano a los reclamos no le quita al comprador sus derechos ni las reglas de la plataforma, y sacar la conversación del marketplace la expone a sanciones."
+      ]
+     ],
+     "completar": [
+      "Las fotos del empaque, la guía y los mensajes son la ___ que te ayuda a resolver una mediación.",
+      "evidencia"
+     ],
+     "refl": "Arma tu kit de reputación (20 min). 1) Anota tus ventas, reclamos, demoras y cancelaciones de los últimos 60 días (o usa un ejemplo realista) y calcula cada porcentaje. 2) Escribe las cinco preguntas que más te hacen y una respuesta plantilla para cada una. 3) Redacta una respuesta a un reclamo de «no es como se describe», con disculpa, dato y solución. 4) Define qué evidencia guardarás de cada pedido y dónde la vas a archivar.",
+     "modelo": "Modelo: «60 días: 95 ventas, 1 reclamo (1.05 %), 6 demoras (6.3 %), 0 cancelaciones. Pregunta frecuente: «¿Le queda a una maceta de 12 cm?» → «Hola, gracias por preguntar. La base mide 11 cm por dentro, así que una maceta de 12 cm no entra. Te recomiendo el modelo grande, de 13 cm». Reclamo: «Lamento que no sea lo que esperabas. Te ofrezco cambio por el modelo grande o el reembolso completo; dime qué prefieres». Evidencia: foto del producto y del empaque abierto, guía y peso, en una carpeta por número de pedido.» Es buena porque mide, responde con datos y ofrece una salida concreta.",
+     "plantilla": [
+      "Tablero de reputación y respuestas",
+      "Periodo: [ ]  Ventas: [ ]\nReclamos: [ ] → [ ] % (límite de referencia 1.5 %)\nDemoras: [ ] → [ ] % (10 %)  Cancelaciones: [ ] → [ ] % (1 %)\nPregunta frecuente: [ ]  Respuesta: «Hola, [nombre]. [dato concreto]. [recomendación].»\nReclamo: «Lamento que [problema]. Te ofrezco [cambio / devolución / reembolso] en [plazo].»\nEvidencia guardada: foto del producto [ ] foto del empaque [ ] guía [ ] peso [ ] mensajes [ ]\nCambio en la ficha para que no se repita: [ ]"
+     ],
+     "clave": [
+      "Reclamos, demoras y cancelaciones miden tu reputación: calcula cada porcentaje cada semana.",
+      "Responde preguntas con datos y convierte las repetidas en información de la ficha.",
+      "Resuelve reclamos con evidencia y una salida concreta, sin pelear con el cliente."
+     ]
+    },
+    {
+     "t": "Almacén de la plataforma y anuncios dentro del marketplace: cuándo sí y cuándo no",
+     "obj": "Decidir qué productos enviar al almacén de la plataforma con el costo de almacenaje, y medir los anuncios dentro del marketplace con el ACOS contra tu margen.",
+     "texto": [
+      "El <b>almacén de la plataforma</b> (fulfillment) funciona así: envías tu inventario a su bodega, pagando ese traslado, y la plataforma guarda, empaca, envía y atiende la posventa. A cambio cobra por almacenaje y por cada envío, y fija límites: en el ejemplo del marketplace más grande en México, hasta 25 kg, ningún lado de más de 120 cm y suma de lados de 260 cm o menos. Suele darte entregas más rápidas y mejor exposición, pero tu dinero queda parado en su bodega, y lo que no cumpla y no retires a tiempo puede desecharse con cargo a ti. Verifica las condiciones vigentes.",
+      "Conviene para productos de <b>alta rotación</b>, ligeros y con margen suficiente; no para inventario lento, voluminoso o de temporada. Haz la cuenta del almacenaje: si mandas 80 piezas, vendes 40 al mes y pagas $6 por pieza al mes (ejemplo), el primer mes pagas $480 y el segundo $240: $720 entre 80 piezas, $9 por pieza. Si mandas 30 piezas grandes a $45 al mes y vendes 3, sólo el primer mes pagas $1,350. Empieza con pocos productos y pocas unidades, mide un mes y amplía.",
+      "Los <b>anuncios dentro del marketplace</b> (productos patrocinados) se miden con el <b>ACOS</b> (siglas en inglés de costo de publicidad sobre ventas): gasto en anuncios ÷ ventas atribuidas a esos anuncios. Si gastas $1,800 y los anuncios generan $6,000 en ventas, tu ACOS es 30 %. El punto de equilibrio es tu margen antes de publicidad: si cada venta te deja 24 % antes de anuncios, con un ACOS de 30 % pierdes dinero en esas ventas; con 15 %, ganas. En Excel, con el gasto en B2, las ventas en C2 y tu margen en D2: =B2/C2 da el ACOS y =C2*D2-B2, lo que dejan los anuncios.",
+      "Revisa los anuncios cada semana: deja las búsquedas y productos con ACOS abajo de tu margen, baja la puja o pausa los que están arriba, y nunca anuncies un producto sin inventario o con mala reputación. Hay un matiz: un cliente nuevo que vuelve a comprar sin anuncio puede justificar un ACOS algo más alto, pero sólo si mides esa recompra (módulo 8). Ni el almacén ni los anuncios arreglan un mal precio: primero la cuenta del pedido, después la escala."
+     ],
+     "comparar": [
+      "«Así no: Mandé todo mi inventario al almacén y subí los anuncios porque vendo más; algún día saldrá la ganancia.»",
+      "«Así sí: Mando al almacén sólo lo que rota rápido y dejo los anuncios con ACOS menor a mi margen; los reviso cada semana.»"
+     ],
+     "caso": "Caso ficticio: Gilberto, de 58 años, vende en Durango purificadores de agua para casa y sus cartuchos de repuesto, que se cambian cada seis meses. En el marketplace vende unos 40 cartuchos al mes a $350, que le dejan $84 antes de anuncios (24 %), y 3 purificadores grandes al mes. Le ofrecen pasar todo su inventario al almacén de la plataforma. El mes pasado gastó $1,800 en anuncios de cartuchos que generaron $6,000 en ventas, y su hijo le dice que «vamos bien, porque por cada peso vendimos más de tres».",
+     "p": [
+      [
+       "¿Cómo le fue a Gilberto con los anuncios del mes pasado?",
+       "ACOS de 30 %, arriba de su 24 %: los anuncios le restaron $360",
+       "Bien: por cada peso de anuncio vendió $3.33, así que ganó dinero",
+       "Bien: un ACOS de 30 % es poco comparado con sus $84 por cartucho",
+       "ACOS = $1,800 ÷ $6,000 = 30 %. Esas ventas le dejaron 24 % × $6,000 = $1,440 antes de anuncios; menos $1,800 de gasto, pierde $360. Vender $3.33 por peso no dice nada sin el margen, y comparar un porcentaje con pesos por pieza mezcla unidades. Sólo la recompra medida podría cambiar la conclusión."
+      ],
+      [
+       "¿Qué le conviene mandar al almacén de la plataforma?",
+       "Los cartuchos: ligeros, de alta rotación y con margen",
+       "Los purificadores: son grandes y así libera espacio en casa",
+       "Todo su inventario, para que la plataforma lo muestre más",
+       "Los cartuchos se venden rápido y pesan poco, así que pagan poco almacenaje por pieza y ganan con la entrega rápida. Los purificadores rotan lento y ocupan mucho: pagarían almacenaje mes tras mes. Mandar todo deja su dinero parado en bodega ajena."
+      ],
+      [
+       "¿Qué hace Gilberto con los anuncios este mes?",
+       "Dejar sólo los de ACOS menor a 24 % y revisarlos cada semana",
+       "Duplicar el presupuesto, porque más anuncios traen más utilidad",
+       "Apagarlos para siempre: los anuncios no sirven en un marketplace",
+       "El margen antes de publicidad marca el límite: abajo de 24 %, los anuncios dejan dinero. Como sus clientes recompran cartuchos cada seis meses, podría aceptar algo más si mide esa recompra. Duplicar el gasto con ACOS de 30 % duplica la pérdida, y apagar todo descarta anuncios que sí podrían ser rentables."
+      ]
+     ],
+     "completar": [
+      "El gasto en anuncios dividido entre las ventas atribuidas a esos anuncios se llama ___.",
+      "ACOS"
+     ],
+     "relacionar": [
+      [
+       "ACOS",
+       "Gasto en anuncios ÷ ventas atribuidas"
+      ],
+      [
+       "ACOS de equilibrio",
+       "Igual a tu margen antes de publicidad"
+      ],
+      [
+       "Inventario lento en el almacén",
+       "Paga almacenaje mes tras mes"
+      ],
+      [
+       "Producto de alta rotación",
+       "Buen candidato para el almacén de la plataforma"
+      ],
+      [
+       "Producto voluminoso o pesado",
+       "Revisa límites de medida y costo de almacenaje"
+      ]
+     ],
+     "refl": "Decide almacén y anuncios con números (20 min). 1) Lista tus cinco productos principales con ventas al mes, tamaño, peso y margen antes de publicidad. 2) Marca cuáles serían candidatos al almacén de la plataforma y calcula el almacenaje de un mes con la tarifa vigente o una de ejemplo. 3) Calcula el ACOS de equilibrio de cada uno (margen en pesos ÷ precio). 4) Si ya anuncias, calcula tu ACOS real y decide qué dejas, qué ajustas y qué pausas.",
+     "modelo": "Modelo: «Producto estrella: funda de tela para laptop a $420, margen antes de anuncios $105 (25 %), 60 ventas al mes, 300 g: candidata al almacén. Perchero de madera a $1,150, 4 ventas al mes, voluminoso: lo envío yo. ACOS de equilibrio: funda 25 %, perchero 22 %. Mes pasado: gasté $1,200 en anuncios de la funda y vendí $6,000 atribuidos: ACOS 20 %, me dejaron $300. Mantengo esos anuncios y pruebo $500 en el perchero con un tope de ACOS de 22 %.» Es buena porque separa productos por rotación, calcula el equilibrio y decide con el ACOS real.",
+     "plantilla": [
+      "Decisión de almacén y anuncios",
+      "Producto: [ ]  Precio: $[ ]  Margen antes de anuncios: $[ ] ([ ] %)\nVentas al mes: [ ]  Peso: [ ] kg  Medidas: [ ] cm  ¿Cumple los límites? [ ]\nAlmacenaje: $[ ] por pieza al mes × [ ] piezas = $[ ]\nAlmacén de la plataforma: [sí / no] porque [ ]\nAnuncios: gasto $[ ]  ventas atribuidas $[ ]  ACOS = gasto ÷ ventas = [ ] %\nACOS de equilibrio = margen ÷ precio = [ ] %\nDecisión: [dejo / ajusto / pauso]  Revisión: cada [ ]"
+     ],
+     "clave": [
+      "El almacén de la plataforma conviene para productos ligeros y de alta rotación; el inventario lento paga almacenaje cada mes.",
+      "ACOS = gasto en anuncios ÷ ventas atribuidas; si supera tu margen antes de publicidad, pierdes.",
+      "Primero un precio que deje utilidad; después almacén y anuncios para crecer."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos prepara tu operación en un marketplace. 1) Elige tres productos y consulta la comisión y el cargo fijo vigentes de su categoría. 2) En Excel, calcula el precio objetivo de cada uno en el marketplace y en tu tienda propia con =(B2+C2+D2+E2)/(1-F2-G2), y la utilidad en pesos por pedido. 3) Compara con dos competidores por producto y decide tu precio. 4) Escribe cinco respuestas plantilla a preguntas frecuentes y una a un reclamo. 5) Calcula el ACOS de equilibrio de cada producto y decide cuáles irían al almacén de la plataforma.",
+    "entregable": "Un archivo de Excel con precios por canal y utilidad por pedido de tres productos, una hoja de reputación con sus fórmulas, seis respuestas plantilla y una tabla de decisión de almacén y anuncios.",
+    "criterios": "Revisa: usaste la comisión vigente de tu categoría y anotaste la fecha de consulta; el precio sale de la fórmula y no de un aumento sobre el costo; revisaste los escenarios arriba y abajo del umbral de envío gratis; las respuestas dan datos y no desvían compradores fuera de la plataforma, y el ACOS de equilibrio es igual a tu margen antes de publicidad."
+   },
+   "lab": {
+    "t": "Precio y reputación de una tienda de refacciones para bicicleta en Chihuahua",
+    "obj": "Poner precio por canal con la fórmula, armar paquetes que eviten el cargo fijo, diagnosticar la reputación y decidir sobre los anuncios con el ACOS.",
+    "esc": "<b>Amado,</b> de 51 años, tiene un taller de bicicletas en Chihuahua y vende refacciones en el marketplace más grande del país: cadenas, cámaras, balatas y llantas. Paga 14 % de comisión en su categoría (ejemplo) y quiere 15 % de margen. Vende bien, pero su reputación bajó a amarillo y sus anuncios «no le cuadran».",
+    "e": [
+     [
+      "Escena 1: Una cadena de 9 velocidades le cuesta $210. Como su precio pasa de $299, ofrece envío gratis que le cuesta $95; el empaque, $10.",
+      "Consigna: calcula el precio objetivo con la fórmula, redondéalo y comprueba en pesos la utilidad por pedido."
+     ],
+     [
+      "Escena 2: Las cámaras para llanta le cuestan $48. Sueltas, con $30 de cargo fijo y $8 de empaque, su precio objetivo sería $122, y el comprador pagaría unos $99 de envío. Piensa en un paquete de 3 cámaras con envío gratis ($95) y $10 de empaque.",
+      "Consigna: calcula el precio del paquete, lo que pagaría el cliente por cada cámara en cada opción y decide qué publica."
+     ],
+     [
+      "Escena 3: En los últimos 60 días tuvo 150 ventas, 4 reclamos (3 porque la cámara no era de la rodada correcta), 12 envíos con demora y 1 cancelación.",
+      "Consigna: calcula los tres indicadores, di cuál está fuera del límite de referencia, escribe la respuesta a uno de los reclamos y el cambio que hará en sus fichas."
+     ],
+     [
+      "Escena 4: Gastó $2,400 en anuncios de cadenas y generaron $9,600 en ventas. Su margen antes de anuncios en cadenas es de 15 %.",
+      "Consigna: calcula el ACOS y lo que ganó o perdió con los anuncios, y decide qué hace con ellos el próximo mes."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué precio objetivo le corresponde a la cadena?",
+      "$444: $315 entre 0.71 da $443.66",
+      "$409.50: $315 más 30 % de comisión y margen",
+      "$362.25: $315 más el 15 % de margen que busca",
+      "($210 + $95 + $10) ÷ (1 − 0.14 − 0.15) = $315 ÷ 0.71 = $443.66 → $444, que deja $444 − $62.16 − $95 − $10 − $210 = $66.84 (15.1 %). Sumar 30 % al costo aplica los porcentajes sobre la base equivocada, y sumar sólo el 15 % olvida la comisión."
+     ],
+     [
+      "¿Cómo le fue a Amado con los anuncios de cadenas?",
+      "Perdió unos $960: su ACOS de 25 % supera su margen de 15 %",
+      "Ganó: cada peso de anuncio le trajo $4 en ventas de cadenas",
+      "Quedó a mano: un ACOS de 25 % equivale a su margen de 15 %",
+      "ACOS = $2,400 ÷ $9,600 = 25 %. Esas ventas le dejaron 15 % × $9,600 = $1,440 antes de anuncios; menos $2,400, pierde $960. Vender $4 por peso no es ganar si el margen es 15 %, y un ACOS de 25 % no equivale a un margen de 15 %: está 10 puntos arriba."
+     ],
+     [
+      "¿Qué cambio en sus fichas reduce más los reclamos de cámaras?",
+      "Una tabla de compatibilidad con rodada y tipo de válvula en cada ficha",
+      "Una nota que diga que no acepta reclamos por medidas equivocadas",
+      "Fotos más grandes de cada cámara, con fondo blanco y buena luz",
+      "Tres de cuatro reclamos son por compatibilidad: con rodada y válvula a la vista, el comprador elige bien antes de pagar. Negarse a los reclamos no quita los derechos del comprador ni las reglas de la plataforma, y una foto mejor no dice la medida."
+     ]
+    ],
+    "pl": [
+     "Hoja de precio, reputación y anuncios",
+     "Producto: [ ]  Costo $[ ]  Envío $[ ]  Empaque $[ ]  Cargo fijo $[ ]\nPrecio = (costo + fijo + envío + empaque) ÷ (1 − comisión − margen) = $[ ] → $[ ]\nUtilidad por pedido: $[ ] ([ ] %)\nPaquete: [ ] piezas  Precio $[ ]  Lo que paga el cliente por pieza: $[ ]\nReputación (60 días): reclamos [ ] %  demoras [ ] %  cancelaciones [ ] %\nCausa principal: [ ]  Cambio en la ficha: [ ]\nAnuncios: ACOS [ ] %  Margen [ ] %  Resultado $[ ]  Decisión: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Paloma vende un juego de pinzas a $129 en una categoría con 12 % de comisión y $30 de cargo fijo (ejemplo). ¿Qué parte del precio se queda el marketplace?",
+     "35.3 %: $45.48 de los $129",
+     "12 %: la comisión de la categoría",
+     "23.3 %: los $30 entre los $129",
+     "42 %: 12 % más 30 % del cargo fijo"
+    ],
+    [
+     "Ulises vende una botella que le cuesta $120, con $80 de envío a su cargo, $10 de empaque, 16 % de comisión y 14 % de margen objetivo. ¿Cuál es su precio objetivo?",
+     "$300: $210 entre 0.70",
+     "$273: $210 por 1.30",
+     "$250: $210 entre 0.84, sin el margen",
+     "$241.50: $210 por 1.15"
+    ],
+    [
+     "Xóchitl tuvo 1 reclamo en 50 ventas durante el periodo que mide su reputación. Con un límite de referencia de 1.5 %, ¿cómo está?",
+     "Arriba del límite: 1 de 50 es 2 %",
+     "Bien: un solo reclamo nunca cuenta para la reputación",
+     "Abajo del límite: 1 de 50 es 0.5 %",
+     "Justo en el límite: 1 de 50 es 1.5 %"
+    ],
+    [
+     "Un comprador de Amado dice que la llanta llegó rota. Amado tiene fotos de la llanta y del empaque antes de enviarla, y la guía. ¿Qué hace?",
+     "Atender la mediación con su evidencia y ofrecer cambio o reembolso",
+     "Rechazar el reclamo, porque sus fotos prueban que la llanta salió bien",
+     "Pedirle al comprador que retire el reclamo a cambio de un descuento",
+     "No responder la mediación para que se cierre sola por falta de actividad"
+    ],
+    [
+     "Un cliente pregunta a Gilberto si un cartucho le sirve para su purificador, sin decir el modelo. ¿Cómo responde?",
+     "Le pide el modelo y le dice con cuáles es compatible, según su tabla",
+     "Le dice que sí para no perder la venta y lo resuelve si hay problema",
+     "Le contesta que lea la descripción, porque ahí está toda la información",
+     "Le da su teléfono personal para explicarle mejor en una llamada"
+    ],
+    [
+     "Paloma gastó $900 en anuncios que generaron $4,500 en ventas; su margen antes de anuncios es de 18 %. ¿Qué concluye?",
+     "ACOS 20 %: arriba de su 18 %, pierde unos $90",
+     "ACOS 5 %: muy por debajo de su margen, así que gana",
+     "ACOS 20 %: abajo de su 18 %, así que gana unos $90",
+     "ACOS 18 %: igual a su margen, así que queda a mano"
+    ],
+    [
+     "Un producto de $500 deja $110 antes de anuncios. ¿Cuál es el ACOS máximo para no perder con sus anuncios?",
+     "22 %: $110 entre $500",
+     "455 %: $500 entre $110",
+     "15 %: un tope que sirve para todo producto",
+     "$110: lo que deja cada venta"
+    ],
+    [
+     "Teresa vende portamacetas de macramé (40 al mes) y tapices de pared de dos metros (2 al mes). ¿Qué manda al almacén de la plataforma?",
+     "Los portamacetas: rotan rápido y pesan poco",
+     "Los tapices: así libera espacio en su taller",
+     "Los dos por igual, para tener mejor exposición",
+     "Ninguno: el almacén sólo acepta productos importados"
+    ],
+    [
+     "Rogelio manda 50 hieleras al almacén, vende 5 al mes y paga $20 por pieza al mes (ejemplo). Cada hielera le deja $60. ¿Cómo le va el primer mes?",
+     "Pierde: paga unos $1,000 de almacenaje y gana $300",
+     "Gana $300, porque el almacenaje se lo cobran al comprador",
+     "Gana $200: $300 menos el almacenaje de las 5 vendidas",
+     "Queda a mano, porque la exposición compensa el almacenaje"
+    ],
+    [
+     "Ulises quiere vender el mismo termo más barato en su tienda propia que en el marketplace. ¿Es correcto?",
+     "Sí: cada canal tiene costos distintos y su precio debe cubrir los suyos",
+     "No: la ley obliga a cobrar el mismo precio en todos los canales de venta",
+     "Sí, pero sólo si cambia el nombre del producto en uno de los dos canales",
+     "No: el marketplace le cobraría la diferencia de precio como penalización"
+    ]
+   ]
+  }
+ ]
+}
