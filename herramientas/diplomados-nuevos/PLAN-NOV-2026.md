@@ -102,7 +102,7 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 |---|---|---|---|---|---|---|---|
 | 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Publicado (2026-11-03) |
 | 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Publicado (2026-11-03) |
-| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Listo en rama (2026-11-09) |
+| 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Publicado (2026-11-10) |
 | 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Pendiente |
 | 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Pendiente |
 | 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Pendiente |
