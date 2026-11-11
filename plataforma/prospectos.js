@@ -854,7 +854,7 @@ var PR_COLS = {
   num_origen:['n','no','num','numero','#']
 };
 /* Columnas que trae el Excel de «Descargar» y que la carga no debe guardar como datos extra */
-var PR_COLS_IGNORAR = ['estado','tanda','fecha de alta','operador asignado','contacto','puesto','correo del contacto','contactos registrados',
+var PR_COLS_IGNORAR = ['n provisional','no provisional','estado','tanda','fecha de alta','operador asignado','contacto','puesto','correo del contacto','contactos registrados',
   'ultimo contacto','canal del ultimo contacto','ultimo resultado','proxima llamada','notas'];
 function prMapearEncabezados(enc){
   var map = {};
