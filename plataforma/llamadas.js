@@ -444,7 +444,7 @@ function llPilotoListo(id, adm, nom){
     '<textarea id="lpl-txt" rows="6" style="width:100%;margin-bottom:8px">'+esc(t)+'</textarea>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><button class="btn btn-fantasma btn-sm" onclick="copiarTexto($(\'lpl-txt\').value)">Copiar</button>'+
       '<a class="btn btn-linea btn-sm" href="mailto:'+esc(adm)+'?subject='+encodeURIComponent('Su prueba en Instituto Mara')+'&body='+encodeURIComponent(t)+'">Correo</a>'+
-      '<button class="btn btn-mor btn-sm" onclick="window.open(\'https://wa.me/'+plnTelWa(p.whatsapp || p.telefono)+'?text=\'+encodeURIComponent($(\'lpl-txt\').value),\'_blank\',\'noopener\')">WhatsApp</button></div>'+
+      '<button class="btn btn-mor btn-sm" onclick="window.open(\'https://wa.me/'+plnTelWa(/\d{10}/.test(String(p.whatsapp||'').replace(/\D/g,'')) ? p.whatsapp : p.telefono)+'?text=\'+encodeURIComponent($(\'lpl-txt\').value),\'_blank\',\'noopener\')">WhatsApp</button></div>'+
     (filas ? '<h4 style="margin-bottom:6px">¿Ya te dieron los nombres? Regístralos aquí (opcional)</h4>'+
       '<p style="color:var(--gris);font-size:.88rem;margin-bottom:8px">A cada persona le llega su invitación por correo. Si no los tienes, el administrador los registra después desde «Mi empresa».</p>'+filas : '')+
     '<div id="lpp-aviso"></div>',
