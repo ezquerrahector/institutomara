@@ -142,6 +142,41 @@ function rest(ruta, opciones){
   });
 }
 
+/* Lecturas largas (10 nov 2026). Supabase entrega como máximo 1,000 filas por consulta aunque se
+   pida «limit=20000»: lo demás se pierde sin aviso. Aquí se pide la primera página con el total
+   (Content-Range) y las demás en paralelo, del tamaño que el servidor haya devuelto.
+   La ruta debe traer un «order» estable (con id al final) para que las páginas no se crucen. */
+function restTodo(ruta, maximo){
+  var base = ruta.replace(/([?&])limit=\d+&?/, '$1').replace(/[?&]$/, '');
+  var sep = base.indexOf('?') >= 0 ? '&' : '?';
+  var pedir = function(desde, cuantos, conTotal){
+    return token().then(function(t){
+      var h = { apikey: cfg.key, Authorization: 'Bearer ' + t };
+      if(conTotal) h.Prefer = 'count=exact';
+      return fetch(cfg.url + '/rest/v1/' + base + sep + 'limit=' + cuantos + '&offset=' + desde, { headers: h });
+    }).then(function(r){
+      return r.text().then(function(txt){
+        var d = null; try{ d = txt ? JSON.parse(txt) : null; }catch(e){ d = txt; }
+        if(!r.ok) throw new Error(mensajeError(d, 'Error del servidor (' + r.status + ')'));
+        var cr = /\/(\d+)$/.exec(r.headers.get('Content-Range') || '');
+        return { filas: d || [], total: cr ? Number(cr[1]) : null };
+      });
+    });
+  };
+  return pedir(0, maximo, true).then(function(p){
+    var filas = p.filas, paso = filas.length;
+    var total = Math.min(maximo, p.total == null ? filas.length : p.total);
+    if(!paso || filas.length >= total) return filas;
+    var tandas = [];
+    for(var d = paso; d < total; d += paso) tandas.push(pedir(d, Math.min(paso, total - d), false));
+    return Promise.all(tandas).then(function(rs){
+      rs.forEach(function(x){ filas = filas.concat(x.filas); });
+      if(filas.length < total) throw new Error('No se pudo leer la lista completa (' + filas.length + ' de ' + total + '). Recarga la página.');
+      return filas;
+    });
+  });
+}
+
 function upsert(tabla, filas, conflicto){
   if(!filas || !filas.length) return Promise.resolve([]);
   return rest(tabla + (conflicto ? '?on_conflict=' + conflicto : ''), {
@@ -377,7 +412,11 @@ var Nube = {
   },
   empresaRpc: function(nombre, args){ return rest('rpc/' + nombre, { metodo:'POST', cuerpo:args || {} }); },
   /* Consulta directa a una tabla (solo la usa Administración → Prospectos; RLS solo deja al admin). */
-  tabla: function(ruta, opciones){ return rest(ruta, opciones); },
+  tabla: function(ruta, opciones){
+    var m = /[?&]limit=(\d+)/.exec(ruta);
+    if((!opciones || !opciones.metodo || opciones.metodo === 'GET') && m && Number(m[1]) > 1000) return restTodo(ruta, Number(m[1]));
+    return rest(ruta, opciones);
+  },
   quitarAdminEmpresa: function(id){ return rest('empresas_admins?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }); },
   quitarMiembroEmpresa: function(empresaId, usuarioId){
     return rest('empresas_miembros?empresa_id=eq.' + empresaId + '&usuario_id=eq.' + usuarioId, { metodo:'DELETE', prefer:'return=minimal' });

@@ -13,8 +13,8 @@ var PR_ICONO = { correo:'✉', whatsapp:'💬', llamada:'☎', instagram:'📷',
 
 function prCargar(){
   return Promise.all([
-    Nube.tabla('prospectos?select=*&order=num_origen.asc.nullslast,creado_en.asc&limit=5000'),
-    Nube.tabla('prospecto_contactos?select=*&order=fecha.asc&limit=20000'),
+    Nube.tabla('prospectos?select=*&order=num_origen.asc.nullslast,creado_en.asc,id.asc&limit=5000'),
+    Nube.tabla('prospecto_contactos?select=*&order=fecha.asc,id.asc&limit=20000'),
     Nube.tabla('prospecto_giros?select=*&order=segmento'),
     Nube.tabla('ajustes?id=eq.true&select=prospectos_auto,prospectos_dia_2,prospectos_dia_3').catch(function(){ return [{}]; })
   ]).then(function(r){
@@ -365,16 +365,45 @@ function prSecuenciaMasiva(v){
     .then(function(){ PR.lista.forEach(function(p){ if(ids.indexOf(p.id) >= 0) p.secuencia = v; }); prPintarTabla(); })
     .catch(function(e){ alert(e.message); });
 }
+/* Último correo que le salió (presentación, seguimiento, campaña o plan; sin contar rebotes). */
+function prUltimoCorreo(p){
+  return prContactos(p.id).filter(function(c){ return c.canal === 'correo' && c.sentido === 'saliente' && c.resultado !== 'rebotó'; }).pop() || null;
+}
+var PR_HORAS_ENTRE_CORREOS = 72;
+/* ¿Se le puede mandar ya su siguiente correo? Devuelve el motivo si no (10 nov 2026). */
+function prPorQueNoCorreo(p){
+  var r = prResumen(p), t = prToca(p, 'correo');
+  if(r.respondio) return 'ya respondió';
+  if(!t) return r.correo && r.correo.toque >= 3 ? 'ya recibió los 3 correos' : 'no está en secuencia';
+  if(t.toque > 1 && !t.ya) return 'su '+prOrdinal(t.toque)+' correo toca el '+prFecha(t.cuando);
+  var u = prUltimoCorreo(p);
+  if(u){
+    var h = (Date.now() - new Date(u.fecha).getTime()) / 36e5;
+    if(h < PR_HORAS_ENTRE_CORREOS) return 'ya recibió un correo el '+prFecha(u.fecha)+' ('+(h < 24 ? 'hace '+Math.max(1, Math.round(h))+' h' : 'hace '+Math.floor(h/24)+' d')+')';
+  }
+  return '';
+}
 function prEnviarMasivo(){
   var ids = Object.keys(PR.sel).filter(function(k){ return PR.sel[k]; });
-  var con = ids.map(prPorId).filter(function(p){ return p && p.correo && p.estado !== 'baja' && !prNoContactar(p); });
-  if(!con.length){ alert('Ninguno de los seleccionados tiene correo o se puede contactar (los marcados «No le interesó» o «No quiere correos» se omiten).'); return; }
-  abrirModal('Enviar correo a '+con.length+' prospecto(s)',
-    '<p>Cada uno recibe <b>su siguiente correo</b> de la secuencia (1.º presentación, 2.º recordatorio corto, 3.º cierre), personalizado con su nombre, su giro y sus programas. Sale desde el remitente configurado en Brevo.</p>'+
-    '<ul style="margin:10px 0 10px 18px;max-height:180px;overflow:auto">'+con.map(function(p){ var t = prToca(p,'correo'); return '<li>'+esc(prCorto(p))+' — '+(t ? prOrdinal(t.toque)+' correo' : 'ya recibió los 3')+'</li>'; }).join('')+'</ul>'+
-    '<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="pm-seq" checked> Activar los seguimientos automáticos para ellos</label><div id="pm-aviso"></div>',
-    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="pm-btn" class="btn btn-mor" onclick="prConfirmarMasivo()">Enviar</button>');
-  PR.masivo = con.map(function(p){ return p.id; });
+  if(!ids.length) return;
+  /* Antes de enviar se vuelve a leer el historial: si otra pestaña o el envío anterior ya le escribió, aquí se ve. */
+  abrirModal('Revisando historial…', '<p>Reviso a quién ya le escribimos antes de enviar.</p>', '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>');
+  prCargar().then(function(){
+    var con = ids.map(prPorId).filter(function(p){ return p && p.correo && p.estado !== 'baja' && !prNoContactar(p); });
+    if(!con.length){ cerrarModal(); alert('Ninguno de los seleccionados tiene correo o se puede contactar (los marcados «No le interesó» o «No quiere correos» se omiten).'); return; }
+    var listos = [], espera = [];
+    con.forEach(function(p){ var m = prPorQueNoCorreo(p); if(m) espera.push([p, m]); else listos.push(p); });
+    abrirModal('Enviar correo a '+listos.length+' prospecto(s)',
+      '<p>Cada uno recibe <b>su siguiente correo</b> de la secuencia (1.º presentación, 2.º recordatorio corto, 3.º cierre), personalizado con su nombre, su giro y sus programas. Sale desde el remitente configurado en Brevo.</p>'+
+      (listos.length ? '<ul style="margin:10px 0 10px 18px;max-height:180px;overflow:auto">'+listos.map(function(p){ return '<li>'+esc(prCorto(p))+' — '+prOrdinal(prToca(p,'correo').toque)+' correo</li>'; }).join('')+'</ul>'
+        : '<div class="aviso">A ninguno le toca correo todavía.</div>')+
+      (espera.length ? '<details style="margin:8px 0"'+(listos.length ? '' : ' open')+'><summary style="cursor:pointer"><b>'+espera.length+' no se envían</b> para no saturarlos</summary>'+
+        '<ul style="margin:8px 0 8px 18px;max-height:160px;overflow:auto;color:var(--gris)">'+espera.map(function(x){ return '<li>'+esc(prCorto(x[0]))+' — '+esc(x[1])+'</li>'; }).join('')+'</ul></details>' : '')+
+      '<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="pm-seq" checked> Activar los seguimientos automáticos para ellos</label><div id="pm-aviso"></div>',
+      '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button>'+(listos.length ? '<button id="pm-btn" class="btn btn-mor" onclick="prConfirmarMasivo()">Enviar a '+listos.length+'</button>' : ''));
+    PR.masivo = listos.map(function(p){ return p.id; });
+    prPintarLista();
+  }).catch(function(e){ cerrarModal(); alert(e.message); });
 }
 function prConfirmarMasivo(){
   var b = $('pm-btn'); b.disabled = true; b.textContent = 'Enviando…';
@@ -649,9 +678,9 @@ function prOtroCanal(id, canal){
     .then(function(){ prPintarFicha(id); prPintarMensajes(id); });
 }
 function prEnviarUno(id){
-  var p = prPorId(id), m = PR.msg[id];
-  if(!confirm('¿Enviar el '+prOrdinal(m.toque)+' correo a '+p.correo+'?')) return;
-  Nube.funcionServidor('prospectos', { accion:'enviar', ids:[id], toque:m.toque })
+  var p = prPorId(id), m = PR.msg[id], ojo = prPorQueNoCorreo(p);
+  if(!confirm((ojo ? '⚠ Ojo: ' + ojo + '.\n\n' : '') + '¿Enviar el '+prOrdinal(m.toque)+' correo a '+p.correo+(ojo ? ' de todos modos' : '')+'?')) return;
+  Nube.funcionServidor('prospectos', { accion:'enviar', ids:[id], toque:m.toque, forzar:!!ojo })
     .then(function(r){
       if(r.fallas && r.fallas.length) alert('No salió: ' + r.fallas.join(', '));
       return prCargar().then(function(){ prPintarFicha(id); prCargarMensajes(id); });

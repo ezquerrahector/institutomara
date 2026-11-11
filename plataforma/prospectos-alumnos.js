@@ -26,7 +26,7 @@ var AP_ICONO = { correo:'✉', whatsapp:'💬', llamada:'☎', instagram:'📷',
 function apCargar(){
   return Promise.all([
     Nube.tabla('rpc/alumnos_prospectos_lista', { metodo:'POST', cuerpo:{} }),
-    Nube.tabla('alumnos_contactos?select=*&order=fecha.asc&limit=20000')
+    Nube.tabla('alumnos_contactos?select=*&order=fecha.asc,id.asc&limit=20000')
   ]).then(function(r){ AP.lista = r[0] || []; AP.contactos = r[1] || []; AP.idx = null; });
 }
 function apHuella(){ return JSON.stringify([AP.lista, AP.contactos]); }

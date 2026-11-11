@@ -174,12 +174,12 @@ function ccCargarEquipo(){
     return Promise.all([
       Nube.tabla('callcenters?select=*&id=eq.' + cc),
       Nube.tabla('operadores?select=id,nombre,correo,telefono,activo,es_titular,descuento_max,usuario_id&callcenter_id=eq.' + cc + '&order=nombre.asc'),
-      Nube.tabla('prospectos?select=id,nombre,nombre_corto,segmento,telefono,estado,asignado_a,proxima_llamada,llamadas_intentos,ultimo_resultado,ultima_llamada,num_origen,callcenter_en&callcenter_id=eq.' + cc + '&order=num_origen.asc.nullslast&limit=5000'),
+      Nube.tabla('prospectos?select=id,nombre,nombre_corto,segmento,telefono,estado,asignado_a,proxima_llamada,llamadas_intentos,ultimo_resultado,ultima_llamada,num_origen,callcenter_en&callcenter_id=eq.' + cc + '&order=num_origen.asc.nullslast,id.asc&limit=5000'),
       Nube.empresaRpc('equipo_metricas', {}),
       Nube.tabla('callcenter_metas?select=*'),
       Nube.tabla('prospecto_contactos?select=id,prospecto_id,fecha,resultado,resumen,creado_por,grabacion,contacto_nombre&canal=eq.llamada&fecha=gte.' + encodeURIComponent(desde) + '&order=fecha.desc&limit=600'),
-      Nube.tabla('llamada_evaluaciones?select=*&order=creado_en.desc&limit=2000'),
-      Nube.tabla('prospecto_consultas?select=operador_id&fecha=gte.' + encodeURIComponent(ccHoyIni().toISOString()) + '&limit=10000'),
+      Nube.tabla('llamada_evaluaciones?select=*&order=creado_en.desc,id.desc&limit=2000'),
+      Nube.tabla('prospecto_consultas?select=operador_id&fecha=gte.' + encodeURIComponent(ccHoyIni().toISOString()) + '&order=id&limit=10000'),
       Nube.tabla('callcenter_movimientos?select=*&order=fecha.desc&limit=60'),
       Nube.cargarAjustes(BD).catch(function(){ return null; })
     ]);
@@ -537,11 +537,11 @@ function ccAdmAbrir(id){
     uids.length ? Nube.tabla('prospecto_contactos?select=id,prospecto_id,fecha,resultado,resumen,creado_por,grabacion,contacto_nombre&canal=eq.llamada&creado_por=in.(' + uids.join(',') + ')&fecha=gte.' + encodeURIComponent(desde) + '&order=fecha.desc&limit=600') : Promise.resolve([]),
     ops.length ? Nube.tabla('llamada_evaluaciones?select=*&operador_id=in.(' + ops.map(function(o){ return o.id; }).join(',') + ')&order=creado_en.desc&limit=2000') : Promise.resolve([]),
     Nube.tabla('callcenter_movimientos?select=*&callcenter_id=eq.' + id + '&order=fecha.desc&limit=60'),
-    Nube.tabla('prospectos?select=id,nombre,nombre_corto&callcenter_id=eq.' + id + '&limit=5000'),
+    Nube.tabla('prospectos?select=id,nombre,nombre_corto&callcenter_id=eq.' + id + '&order=id&limit=5000'),
     Nube.tabla('callcenter_metas?select=*'),
     /* Llamadas a alumnos (etapa 2); si aún no existe la tabla, no pasa nada. */
     uids.length ? Nube.tabla('alumnos_contactos?select=id,persona_id,fecha,resultado,resumen,creado_por,grabacion&canal=eq.llamada&creado_por=in.(' + uids.join(',') + ')&fecha=gte.' + encodeURIComponent(desde) + '&order=fecha.desc&limit=600').catch(function(){ return []; }) : Promise.resolve([]),
-    Nube.tabla('alumnos_prospectos?select=id,nombre,correo,telefono&callcenter_id=eq.' + id + '&limit=10000').catch(function(){ return []; })
+    Nube.tabla('alumnos_prospectos?select=id,nombre,correo,telefono&callcenter_id=eq.' + id + '&order=id&limit=10000').catch(function(){ return []; })
   ]).then(function(r){
     var llam = (r[0] || []).concat(r[5] || []).sort(function(a, b){ return new Date(b.fecha) - new Date(a.fecha); });
     var evals = (r[1] || []).map(function(e){ if(!e.contacto_id && e.alumno_contacto_id) e.contacto_id = e.alumno_contacto_id; return e; });
