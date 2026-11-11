@@ -276,8 +276,8 @@ async function contexto() {
   const giros: Record<string, Record<string, string>> = {};
   (await db("prospecto_giros?select=*")).forEach((g: any) => (giros[g.segmento] = g));
   const rangos = await db("planes_rangos?select=desde,hasta,precio_mensual&activo=eq.true&order=desde").catch(() => []);
-  const aj = (await db("ajustes?id=eq.true&select=plan_meses_anual").catch(() => []))[0] || {};
-  return { cat, giros, rangos, mesesAnual: aj.plan_meses_anual || 10 };
+  const aj = (await db("ajustes?id=eq.true&select=plan_meses_anual,prospectos_dia_2,prospectos_dia_3").catch(() => []))[0] || {};
+  return { cat, giros, rangos, mesesAnual: aj.plan_meses_anual || 10, d2: Number(aj.prospectos_dia_2 || 4), d3: Number(aj.prospectos_dia_3 || 10) };
 }
 async function historial(id: string) {
   return await db(`prospecto_contactos?select=canal,sentido,toque,fecha,resultado&prospecto_id=eq.${id}&order=fecha`);
@@ -309,10 +309,35 @@ async function mandar(p: Prospecto, m: { asunto: string; html: string; texto: st
   if (!r.ok) throw new Error(`Brevo ${r.status}: ${(await r.text()).slice(0, 160)}`);
 }
 
-async function enviarA(req: Request, p: Prospecto, toque: number | null, ctx: any, porQuien: string | null, automatico: boolean) {
+// Candado contra correos de más (10 nov 2026). Se revisa en el servidor con el historial completo,
+// así que no importa si la pantalla tenía datos viejos: no sale un correo que no toca.
+const HORAS_ENTRE_CORREOS = 72;
+const ord = (n: number) => n + (n === 1 || n === 3 ? ".er" : ".º");
+const fechaCorta = (d: Date) => d.toLocaleDateString("es-MX", { day: "numeric", month: "short", timeZone: "America/Mexico_City" });
+function porQueNo(h: any[], t: number, ctx: any): string {
+  if (h.some((c) => c.sentido === "entrante" && c.resultado !== "baja")) return "ya respondió; escríbele personalmente";
+  const sig = siguienteToque(h, "correo");
+  if (t !== sig) return sig > 3 ? "ya recibió los 3 correos de la secuencia" : `ya recibió el ${ord(t)} correo; el que sigue es el ${ord(sig)}`;
+  const corr = h.filter((c) => c.sentido === "saliente" && c.canal === "correo" && c.resultado !== "rebotó");
+  if (t >= 2) {
+    const primero = corr.filter((c) => Number(c.toque) === 1)[0];
+    if (!primero) return "no tiene registrado el 1.er correo";
+    const cuando = new Date(new Date(primero.fecha).getTime() + (t === 2 ? ctx.d2 : ctx.d3) * 864e5);
+    if (cuando.getTime() - Date.now() > 12 * 36e5) return `su ${ord(t)} correo toca el ${fechaCorta(cuando)}`;
+  }
+  const ult = corr[corr.length - 1];
+  if (ult) {
+    const horas = (Date.now() - new Date(ult.fecha).getTime()) / 36e5;
+    if (horas < HORAS_ENTRE_CORREOS) return `ya recibió un correo el ${fechaCorta(new Date(ult.fecha))} (hace ${horas < 24 ? Math.max(1, Math.round(horas)) + " h" : Math.floor(horas / 24) + " d"})`;
+  }
+  return "";
+}
+
+async function enviarA(req: Request, p: Prospecto, toque: number | null, ctx: any, porQuien: string | null, automatico: boolean, forzar = false) {
   const h = await historial(p.id);
   const t = toque || siguienteToque(h, "correo");
   if (t > 3) throw new Error("ya recibió los 3 correos de la secuencia");
+  if (!forzar) { const no = porQueNo(h, t, ctx); if (no) throw new Error(no); }
   const m = armar(p, t, ctx, ctx.giros[p.segmento] || null, urlBaja(req, p.token));
   await mandar(p, m);
   await db("prospecto_contactos", {
@@ -468,11 +493,15 @@ serve(async (req) => {
       if (!ids.length) return json({ error: "Elige al menos un prospecto." }, 400);
       const filas: Prospecto[] = await db(`prospectos?id=in.(${ids.join(",")})&select=*`);
       let enviados = 0; const fallas: string[] = [];
+      // «forzar» solo desde la ficha de un prospecto, después de que Héctor vio el aviso; nunca en envíos masivos.
+      const forzar = body.forzar === true && ids.length === 1;
+      // En masivo, el número de correo lo decide el historial de cada quien (no el que trae la pantalla).
+      const toque = ids.length === 1 ? (body.toque || null) : null;
       for (const p of filas) {
         if (p.estado === "baja") { fallas.push(`${corto(p)}: pidió no recibir correos`); continue; }
         if (p.estado === "no_interesa") { fallas.push(`${corto(p)}: marcado «No le interesó»`); continue; }
-        try { await enviarA(req, p, body.toque || null, ctx, u.servicio ? null : u.id, false); enviados++; }
-        catch (x) { fallas.push(`${corto(p)}: ${(x as Error).message}`); }
+        try { await enviarA(req, p, toque, ctx, u.servicio ? null : u.id, false, forzar); enviados++; }
+        catch (x) { fallas.push(`${corto(p)}: ${(x as Error).message}`); continue; }
         if (body.iniciarSecuencia) await db(`prospectos?id=eq.${p.id}`, { metodo: "PATCH", prefer: "return=minimal", cuerpo: { secuencia: true } });
       }
       return json({ ok: true, enviados, fallas });

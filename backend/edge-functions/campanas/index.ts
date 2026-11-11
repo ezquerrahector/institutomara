@@ -28,7 +28,25 @@ const CORREO = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const FIRMA_AL = "Saludos,\n\nHéctor Ezquerra\nDirector Académico | Instituto Mara\ninstitutomara.com · WhatsApp 81 2028 2120";
 const FILTROS_AL = ["kit", "sin_cuenta", "sin_compra", "alumno", "egresado", "membresia"];
 
+// Supabase entrega como máximo 1,000 filas por consulta aunque se pida más (10 nov 2026):
+// las lecturas largas se piden por páginas para no perder envíos ni destinatarios.
 async function db(ruta: string, op: { metodo?: string; cuerpo?: unknown; prefer?: string } = {}) {
+  const m = /[?&]limit=(\d+)/.exec(ruta);
+  if ((!op.metodo || op.metodo === "GET") && m && Number(m[1]) > 1000) {
+    const max = Number(m[1]), base = ruta.replace(/([?&])limit=\d+&?/, "$1").replace(/[?&]$/, "");
+    const sep = base.includes("?") ? "&" : "?";
+    let filas: any[] = [], paso = 0;
+    while (filas.length < max) {
+      const pag: any[] = await db1(`${base}${sep}limit=${Math.min(1000, max - filas.length)}&offset=${filas.length}`);
+      filas = filas.concat(pag);
+      if (!paso) paso = pag.length;
+      if (!pag.length || pag.length < paso) break;
+    }
+    return filas;
+  }
+  return await db1(ruta, op);
+}
+async function db1(ruta: string, op: { metodo?: string; cuerpo?: unknown; prefer?: string } = {}) {
   const h: Record<string, string> = { ...srv };
   if (op.prefer) h.Prefer = op.prefer;
   const r = await fetch(`${URL_SB}/rest/v1/${ruta}`, { method: op.metodo || "GET", headers: h, body: op.cuerpo ? JSON.stringify(op.cuerpo) : undefined });
@@ -86,7 +104,7 @@ const pasaFiltro = (p: any, f: string | null) => !f ? true : f === "kit" ? !!(p.
 async function destinosAlumnos(c: any) {
   const L = (await listaAlumnos()).filter((p) => pasaFiltro(p, c.filtro));
   const todos = L.filter((p) => p.correo && CORREO.test(p.correo) && !p.sin_promociones && p.estado !== "no_interesa");
-  const env: any[] = await db(`campana_alumno_envios?campana_id=eq.${c.id}&select=persona_id&limit=20000`);
+  const env: any[] = await db(`campana_alumno_envios?campana_id=eq.${c.id}&select=persona_id&order=persona_id&limit=20000`);
   const ya = new Set(env.map((x) => x.persona_id));
   return { universo: L.length, todos, pendientes: todos.filter((p) => !ya.has(p.id)), ya: ya.size };
 }
@@ -107,8 +125,8 @@ async function mandar(correos: string, m: { asunto: string; texto: string; html:
 }
 async function destinos(c: any) {
   const seg = c.segmento ? `&segmento=eq.${encodeURIComponent(c.segmento)}` : "";
-  const todos: any[] = await db(`prospectos?estado=not.in.(baja,no_interesa)&correo=not.is.null&correo=neq.${seg}&select=id,nombre,nombre_corto,correo,token&limit=5000`);
-  const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id&limit=10000`);
+  const todos: any[] = await db(`prospectos?estado=not.in.(baja,no_interesa)&correo=not.is.null&correo=neq.${seg}&select=id,nombre,nombre_corto,correo,token&order=id&limit=5000`);
+  const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id&order=prospecto_id&limit=10000`);
   const ya = new Set(env.map((x) => x.prospecto_id));
   return { todos, pendientes: todos.filter((p) => !ya.has(p.id)), ya: ya.size };
 }
@@ -205,7 +223,7 @@ serve(async (req) => {
         return json({ ok: true, enviados, fallas, restantes });
       }
       if (accion === "reporte") {
-        const env: any[] = await db(`campana_alumno_envios?campana_id=eq.${c.id}&select=persona_id,correo,resultado,detalle,fecha&order=fecha&limit=20000`);
+        const env: any[] = await db(`campana_alumno_envios?campana_id=eq.${c.id}&select=persona_id,correo,resultado,detalle,fecha&order=fecha,persona_id&limit=20000`);
         const porId = new Map((await listaAlumnos()).map((p: any) => [p.id, p]));
         const ev = await eventosBrevo(etiqueta);
         const filas = env.map((x) => {
@@ -221,7 +239,7 @@ serve(async (req) => {
     }
 
     if (accion === "reporte") {
-      const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id,correo,resultado,detalle,fecha&order=fecha&limit=10000`);
+      const env: any[] = await db(`campana_envios?campana_id=eq.${c.id}&select=prospecto_id,correo,resultado,detalle,fecha&order=fecha,prospecto_id&limit=10000`);
       const ids = env.map((x) => x.prospecto_id);
       const pros: any[] = [];
       for (let i = 0; i < ids.length; i += 150) pros.push(...await db(`prospectos?id=in.(${ids.slice(i, i + 150).join(",")})&select=id,nombre,nombre_corto,segmento,telefono,estado`));
@@ -255,7 +273,7 @@ serve(async (req) => {
     }
     if (accion === "audiencia") {
       const d = await destinos(c);
-      const total: any[] = await db(`prospectos?select=id${c.segmento ? "&segmento=eq." + encodeURIComponent(c.segmento) : ""}&limit=5000`);
+      const total: any[] = await db(`prospectos?select=id${c.segmento ? "&segmento=eq." + encodeURIComponent(c.segmento) : ""}&order=id&limit=5000`);
       return json({ destinatarios: d.todos.length, pendientes: d.pendientes.length, yaEnviados: d.ya, omitidos: total.length - d.todos.length });
     }
     if (accion === "prueba") {

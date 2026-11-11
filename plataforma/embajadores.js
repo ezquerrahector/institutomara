@@ -12,8 +12,8 @@ function embHoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezo
 function embCargar(){
   return Promise.all([
     Nube.tabla('embajadores?select=*&order=creado_en.desc'),
-    Nube.tabla('embajador_ventas?select=*&order=creado_en.desc&limit=5000'),
-    Nube.tabla('embajador_pagos?select=*&order=pagado_en.desc&limit=2000'),
+    Nube.tabla('embajador_ventas?select=*&order=creado_en.desc,id.desc&limit=5000'),
+    Nube.tabla('embajador_pagos?select=*&order=pagado_en.desc,id.desc&limit=2000'),
     Nube.tabla('ajustes?id=eq.true&select=embajador_comision_pct,embajador_descuento_pct,embajador_dias_espera,embajador_minimo'),
     Nube.tabla('asesor_solicitudes?select=*&order=creado_en.desc&limit=500').catch(function(){ return []; })
   ]).then(function(r){ EMB.lista = r[0] || []; EMB.ventas = r[1] || []; EMB.pagos = r[2] || []; EMB.aj = (r[3] || [])[0] || {}; EMB.asesores = r[4] || []; });

@@ -59,7 +59,7 @@ function caCargar(){
   return ccAsegurarOp().then(function(){
     return Promise.all([
       Nube.tabla('rpc/alumnos_prospectos_lista', { metodo:'POST', cuerpo:{} }),
-      Nube.tabla('alumnos_contactos?select=*&order=fecha.asc&limit=20000')
+      Nube.tabla('alumnos_contactos?select=*&order=fecha.asc,id.asc&limit=20000')
     ]);
   }).then(function(r){
     var yo = ccOp();

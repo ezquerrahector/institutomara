@@ -75,7 +75,7 @@ function plnCargarAdmin(){
     Nube.tabla('operadores?select=*&order=nombre.asc'),
     Nube.tabla('empresas_planes?select=*&order=creado_en.desc&limit=1000'),
     Nube.tabla('empresas?select=id,nombre,operador_id&order=nombre.asc'),
-    Nube.tabla('comisiones?select=operador_id,monto,corte_id&limit=20000'),
+    Nube.tabla('comisiones?select=operador_id,monto,corte_id&order=id&limit=20000'),
     Nube.cargarAjustes(BD).catch(function(){ return null; })
   ]).then(function(r){
     PLN.ops = r[1] || []; PLN.todos = r[2] || []; PLN.empresas = r[3] || []; PLN.comis = r[4] || [];
