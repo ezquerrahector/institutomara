@@ -4,7 +4,7 @@
    listos para correo y WhatsApp, envío por Brevo y seguimientos automáticos.
    Requiere backend/prospectos-piloto.sql y la función «prospectos». */
 
-var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', correo:'', wa:'', sw:'', ot:'', sg:'' }, sel:{}, msg:{}, csv:null };
+var PR = { lista:null, contactos:[], giros:[], aj:{}, f:{ q:'', estado:'', seg:'', ciudad:'', correo:'', wa:'', sw:'', ot:'', sg:'' }, sel:{}, msg:{}, csv:null };
 var PR_ESTADOS = { nuevo:'Sin contactar', contactado:'Contactado', respondio:'Respondió', demo:'Demo agendada',
   piloto:'En piloto', cliente:'Cliente', no_interesa:'No le interesó', descartado:'Descartado', baja:'No quiere correos' };
 var PR_COLOR = { nuevo:'gris', contactado:'alerta', respondio:'tur', demo:'tur', piloto:'tur', cliente:'ok', no_interesa:'error', descartado:'gris', baja:'gris' };
@@ -19,6 +19,7 @@ function prCargar(){
     Nube.tabla('ajustes?id=eq.true&select=prospectos_auto,prospectos_dia_2,prospectos_dia_3').catch(function(){ return [{}]; })
   ]).then(function(r){
     PR.lista = r[0] || []; PR.contactos = r[1] || []; PR.giros = r[2] || []; PR.aj = (r[3] && r[3][0]) || {};
+    prOpcionesCiudad();
   });
 }
 /* Huella de los datos cargados: sirve para no volver a pintar si nada cambió */
@@ -183,6 +184,16 @@ var PR_FILTROS = {
     ['nuevo','Sin contactar', function(p){ return p.estado === 'nuevo'; }],
     ['nointeresa','No le interesó', function(p){ return p.estado === 'no_interesa'; }] ] }
 };
+/* Ciudad (10 nov 2026): opciones según las ciudades que ya hay en la base. Sirve para
+   trabajar o asignar lotes por ciudad (selecciona con el filtro y asigna). */
+PR_FILTROS.ciudad = { rot:'Ciudad', ops:[] };
+function prCiudad(p){ return (p && p.ciudad) || 'León'; }
+function prOpcionesCiudad(){
+  var n = {}; (PR.lista||[]).forEach(function(p){ var c = prCiudad(p); n[c] = (n[c]||0) + 1; });
+  PR_FILTROS.ciudad.ops = Object.keys(n).sort(function(a, b){ return n[b] - n[a] || a.localeCompare(b); })
+    .map(function(c){ return [c, c, function(p){ return prCiudad(p) === c; }]; });
+  if(PR.f.ciudad && !n[PR.f.ciudad]) PR.f.ciudad = '';
+}
 function prPasa(p, grupo, valor){
   if(!valor) return true;
   var op = PR_FILTROS[grupo].ops.filter(function(o){ return o[0] === valor; })[0];
@@ -195,7 +206,7 @@ function prFiltrados(omitir){
     if(f.estado && p.estado !== f.estado) return false;
     if(f.seg && p.segmento !== f.seg) return false;
     for(var g in PR_FILTROS){ if(g !== omitir && !prPasa(p, g, f[g])) return false; }
-    return !q || [p.nombre, p.segmento, p.correo, p.whatsapp, p.telefono, p.cursos_interes, p.notas].join(' ').toLowerCase().indexOf(q) >= 0;
+    return !q || [p.nombre, p.segmento, p.ciudad, p.correo, p.whatsapp, p.telefono, p.cursos_interes, p.notas].join(' ').toLowerCase().indexOf(q) >= 0;
   }).sort(function(a, b){
     if(f.sw === 'toca2' || f.sw === 'toca3' || f.sw === 'espera'){
       var x = prToca(a,'whatsapp'), y = prToca(b,'whatsapp');
@@ -205,10 +216,10 @@ function prFiltrados(omitir){
   });
 }
 function prFiltro(g, v){ PR.f[g] = PR.f[g] === v ? '' : v; prPintarFiltros(); prPintarTabla(); }
-function prLimpiarFiltros(){ PR.f.correo = PR.f.wa = PR.f.sw = PR.f.ot = PR.f.sg = PR.f.estado = PR.f.seg = PR.f.q = ''; prPintarLista(); }
+function prLimpiarFiltros(){ PR.f.ciudad = PR.f.correo = PR.f.wa = PR.f.sw = PR.f.ot = PR.f.sg = PR.f.estado = PR.f.seg = PR.f.q = ''; prPintarLista(); }
 function prPintarFiltros(){
   var caja = $('pr-filtros'); if(!caja) return;
-  var activos = ['correo','wa','sw','ot','sg'].filter(function(g){ return PR.f[g]; }).length;
+  var activos = ['ciudad','correo','wa','sw','ot','sg'].filter(function(g){ return PR.f[g]; }).length;
   /* Cada renglón es independiente: si no eliges nada en él, no filtra.
      Un clic elige la opción; otro clic en la misma la quita. */
   caja.innerHTML = '<p style="color:var(--gris);font-size:.85rem;margin:0 0 8px">Elige solo lo que te interese; los renglones que dejes sin elegir no filtran. Lo que elijas se combina.</p>'+
@@ -335,7 +346,7 @@ function prCanalesTxt(p){
 }
 function prFila(p){
   return '<tr><td><input type="checkbox" aria-label="Seleccionar '+esc(prCorto(p))+'"'+(PR.sel[p.id]?' checked':'')+' onchange="PR.sel[\''+p.id+'\']=this.checked;prPintarTabla()"></td>'+
-    '<td style="min-width:200px"><a href="#" onclick="prAbrir(\''+p.id+'\');return false"><b>'+esc(p.nombre)+'</b></a><br><small style="color:var(--gris)">'+esc(p.segmento||'')+(p.num_origen?' · #'+p.num_origen:'')+'</small></td>'+
+    '<td style="min-width:200px"><a href="#" onclick="prAbrir(\''+p.id+'\');return false"><b>'+esc(p.nombre)+'</b></a><br><small style="color:var(--gris)">'+esc([p.segmento, prCiudad(p), p.num_origen ? '#'+p.num_origen : ''].filter(Boolean).join(' · '))+'</small></td>'+
     '<td style="font-size:.88rem;min-width:220px">'+(p.correo ? prCopiable(p.correo.split(',')[0].trim(), '✉') : '<small style="color:var(--gris)">Sin correo</small>')+'<br>'+
       (p.whatsapp ? prCopiable(prTelLimpio(p.whatsapp).slice(-10), '💬') : p.telefono ? prCopiable(prTelLimpio(p.telefono).slice(-10), '☎') : '')+'</td>'+
     '<td style="font-size:.86rem;min-width:200px">'+prSeguimientoTxt(p)+'</td>'+
@@ -446,7 +457,7 @@ function prPintarDatos(p){
     prCampo('Correo', p.correo, String(p.correo||'').split(',').map(function(c){ return prCopiable(c.trim()); }).join('<br>'))+
     prCampo('WhatsApp', p.whatsapp, prCopiable(prTelLimpio(p.whatsapp).slice(-10)))+
     prCampo('Teléfono', p.telefono, prCopiable(prTelLimpio(p.telefono).slice(-10)))+
-    prCampo('Dirección', p.direccion)+prCampo('Web / Instagram', p.web, webs)+
+    prCampo('Ciudad', prCiudad(p))+prCampo('Dirección', p.direccion)+prCampo('Web / Instagram', p.web, webs)+
     prCampo('Tipo de negocio', p.tipo_negocio)+prCampo('Público objetivo', p.publico)+
     prCampo('Programas recomendados', progs ? 1 : '', '<ul style="margin-left:18px">'+progs+'</ul>')+
     prCampo('Lo que destacan sus reseñas', p.puntos_fuertes)+
@@ -670,6 +681,7 @@ function prEditar(id){
   abrirModal('Editar '+prCorto(p),
     '<div class="fila">'+inp('nombre','Nombre')+inp('nombre_corto','Cómo se le llama en el correo')+'</div>'+
     '<div class="fila">'+inp('correo','Correo(s), separados por coma')+inp('whatsapp','WhatsApp')+inp('telefono','Teléfono')+'</div>'+
+    '<div class="fila">'+inp('ciudad','Ciudad')+inp('direccion','Dirección')+'</div>'+
     '<div class="campo"><label for="pe-segmento">Giro</label><select id="pe-segmento">'+
       [''].concat(PR.giros.map(function(g){ return g.segmento; })).concat(PR.giros.some(function(g){ return g.segmento === p.segmento; }) || !p.segmento ? [] : [p.segmento])
         .map(function(s){ return '<option'+(s===p.segmento?' selected':'')+'>'+esc(s)+'</option>'; }).join('')+'</select></div>'+
@@ -684,7 +696,7 @@ function prEditar(id){
 }
 function prGuardarEdicion(id){
   var v = function(k){ var x = $('pe-'+k).value.trim(); return x || null; };
-  var d = { nombre:v('nombre'), nombre_corto:v('nombre_corto'), correo:v('correo'), whatsapp:v('whatsapp'), telefono:v('telefono'),
+  var d = { nombre:v('nombre'), nombre_corto:v('nombre_corto'), correo:v('correo'), whatsapp:v('whatsapp'), telefono:v('telefono'), ciudad:v('ciudad'), direccion:v('direccion'),
     segmento:v('segmento'), gancho:v('gancho'), notas:v('notas'),
     cursos_ids:[].slice.call(document.querySelectorAll('#pe-progs input:checked')).map(function(x){ return x.value; }) };
   if(!d.nombre){ $('pe-aviso').innerHTML = '<div class="aviso aviso-error">El nombre no puede quedar vacío.</div>'; return; }
@@ -764,7 +776,7 @@ function prDescargarIr(){
       var cs = porP[p.id] || [], u = cs[cs.length - 1];
       return {
         'N°': p.num_origen, 'Segmento': p.segmento || '', 'Nombre de la empresa': p.nombre || '', 'Nombre corto': p.nombre_corto || '',
-        'Dirección': p.direccion || '', 'Puntuación Google': p.puntuacion, 'N° de reseñas': p.resenas,
+        'Ciudad': prCiudad(p), 'Dirección': p.direccion || '', 'Puntuación Google': p.puntuacion, 'N° de reseñas': p.resenas,
         'Teléfono': p.telefono || '', 'Correo': p.correo || '', 'WhatsApp': p.whatsapp || '', 'Web oficial / Instagram': p.web || '',
         'Tipo de negocio': p.tipo_negocio || '', 'Público objetivo aparente': p.publico || '',
         'Cursos / diplomados de interés': p.cursos_interes || '', 'Puntos fuertes': p.puntos_fuertes || '',
@@ -824,6 +836,7 @@ var PR_COLS = {
   nombre:['nombre de la empresa','empresa','nombre','razon social','negocio'],
   segmento:['segmento','giro','sector','industria'],
   direccion:['direccion','domicilio','ubicacion'],
+  ciudad:['ciudad','municipio','localidad'],
   puntuacion:['puntuacion google','puntuacion','calificacion','rating','estrellas'],
   resenas:['n de resenas','no de resenas','numero de resenas','resenas'],
   telefono:['telefono','tel','telefono fijo'],
@@ -840,10 +853,14 @@ var PR_COLS = {
   nombre_corto:['nombre corto'],
   num_origen:['n','no','num','numero','#']
 };
+/* Columnas que trae el Excel de «Descargar» y que la carga no debe guardar como datos extra */
+var PR_COLS_IGNORAR = ['estado','tanda','fecha de alta','operador asignado','contacto','puesto','correo del contacto','contactos registrados',
+  'ultimo contacto','canal del ultimo contacto','ultimo resultado','proxima llamada','notas'];
 function prMapearEncabezados(enc){
   var map = {};
   enc.forEach(function(h, i){
     var n = prNorm(h), k = null;
+    if(PR_COLS_IGNORAR.indexOf(n) >= 0) return;
     Object.keys(PR_COLS).some(function(c){ if(PR_COLS[c].indexOf(n) >= 0){ k = c; return true; } return false; });
     if(k && map[k] == null) map[k] = i; else map['extra:' + h.trim()] = i;
   });
@@ -891,7 +908,7 @@ function prLeerCSV(arch){
       var g = function(k){ var i = map[k]; return i == null ? '' : String(f[i]||'').trim(); };
       var p = { nombre:g('nombre') };
       if(!p.nombre){ omitidos++; return; }
-      ['segmento','direccion','telefono','correo','whatsapp','web','tipo_negocio','publico','cursos_interes','puntos_fuertes','presencia','responde_resenas','gancho','nombre_corto']
+      ['segmento','ciudad','direccion','telefono','correo','whatsapp','web','tipo_negocio','publico','cursos_interes','puntos_fuertes','presencia','responde_resenas','gancho','nombre_corto']
         .forEach(function(k){ var v = g(k); if(v) p[k] = v; });
       if(p.correo) p.correo = p.correo.split(/[;,\s]+/).filter(function(x){ return x.indexOf('@') > 0; }).join(', ');
       var pu = parseFloat(g('puntuacion').replace(',', '.')); if(!isNaN(pu)) p.puntuacion = pu;
