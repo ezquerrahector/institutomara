@@ -71,10 +71,11 @@ function prFecha(iso){
   return d.getDate() + ' ' + m[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear() ? ' ' + d.getFullYear() : '');
 }
 function prOrdinal(n){ return n + (n === 1 || n === 3 ? '.er' : '.º'); }
+/* Número de WhatsApp listo para wa.me. Si el campo WhatsApp trae texto sin número
+   (p. ej. «No verificado»), con conTel se usa el teléfono (10 nov 2026). */
 function prNumWa(p, conTel){
-  var t = String(p.whatsapp || (conTel ? p.telefono : '') || '').replace(/\D/g,'');
-  if(t.length === 10) t = '52' + t;
-  return t.length >= 12 ? t : '';
+  var norma = function(x){ var t = String(x || '').replace(/\D/g,''); if(t.length === 10) t = '52' + t; return t.length >= 12 ? t : ''; };
+  return norma(p.whatsapp) || (conTel ? norma(p.telefono) : '');
 }
 function prTelLimpio(t){ return String(t||'').replace(/\D/g,''); }
 
@@ -742,7 +743,7 @@ function prCrearPiloto(id){
   if(p.empresa_id) return irEmpresa(p.empresa_id);
   if(!confirm('Se crea la empresa «'+p.nombre+'» con sus datos de contacto y te llevo a su ficha con el piloto listo para crear. ¿Continuar?')) return;
   Nube.guardarEmpresa(null, { nombre:p.nombre, contacto_correo:(p.correo||'').split(',')[0].trim() || null,
-      contacto_tel:prTelLimpio(p.whatsapp || p.telefono) || null, notas:'Desde Prospectos' + (p.segmento ? ' · ' + p.segmento : '') })
+      contacto_tel:(prNumWa(p) ? prTelLimpio(p.whatsapp) : prTelLimpio(p.telefono)) || null, notas:'Desde Prospectos' + (p.segmento ? ' · ' + p.segmento : '') })
     .then(function(e){
       return Nube.tabla('prospectos?id=eq.' + id, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ empresa_id:e.id } })
         .then(function(){ p.empresa_id = e.id; irEmpresa(e.id); });
