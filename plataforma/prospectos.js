@@ -151,7 +151,7 @@ function vistaAdminProspectos(){
   return '<div class="seccion"><div class="encabezado-fila"><div><h2>Prospectos</h2>'+
     '<p class="sub" style="margin:0">Empresas a las que ofrecemos capacitación: datos, contactos y seguimiento.</p></div>'+
     '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-mor" onclick="cpAbrir()">📣 Campañas</button><button class="btn btn-linea" onclick="prTextosGiro()">Textos por giro</button>'+
-    '<button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
+    '<button class="btn btn-linea" onclick="prDescargar()">⬇ Descargar</button><button class="btn btn-mor" onclick="prSubirCSV()">Subir CSV</button></div></div><div id="pr-datos">'+(habia ? '' : 'Cargando…')+'</div></div>';
 }
 /* Filtros combinables: un renglón por canal; se suman entre sí (Y). */
 var PR_FILTROS = {
@@ -733,6 +733,63 @@ function prGuardarGiro(k){
   Nube.tabla('prospecto_giros?on_conflict=segmento', { metodo:'POST', prefer:'resolution=merge-duplicates,return=minimal', cuerpo:[d] })
     .then(function(){ return prCargar(); }).then(function(){ prTextosGiro(); })
     .catch(function(e){ $('tg-aviso').innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
+}
+
+/* ---------- Descargar prospectos (solo administrador; 10 nov 2026) ----------
+   Excel con hoja «Prospectos» (encabezados iguales a los de «Subir CSV», para poder
+   volver a cargarlo) e «Historial» (un renglón por contacto). La base solo la puede
+   leer el rol admin (RLS es_admin), así que nadie más puede bajarla aunque vea el botón. */
+function prDescargar(){
+  if(!sesion || sesion.rol !== 'admin') return;
+  var hay = !!PR.lista, total = hay ? PR.lista.length : 0, filt = hay ? prFiltrados().length : 0;
+  var conFiltro = hay && filt !== total;
+  abrirModal('Descargar prospectos',
+    '<p style="margin-bottom:12px">Se descarga un Excel con todos los datos de cada empresa, su estado, operador, fecha de alta y el historial de contactos.</p>'+
+    (conFiltro ? '<div class="campo"><label><input type="radio" name="prd" value="todos" checked> Toda la base ('+total+')</label><br>'+
+      '<label><input type="radio" name="prd" value="filtro"> Solo lo que coincide con el filtro actual ('+filt+')</label></div>' : '')+
+    '<div id="prd-res"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button id="prd-btn" class="btn btn-mor" onclick="prDescargarIr()">Descargar Excel</button>');
+}
+function prDescargarIr(){
+  var b = $('prd-btn'), r = $('prd-res'), op = document.querySelector('input[name=prd]:checked');
+  var soloFiltro = !!(op && op.value === 'filtro');
+  b.disabled = true; b.textContent = 'Preparando…';
+  /* Siempre se vuelve a leer la base para bajar lo más reciente */
+  Promise.all([prCargar(), cpXlsx()]).then(function(res){
+    var X = res[1], lista = soloFiltro ? prFiltrados() : PR.lista.slice();
+    var ops = {}; ((window.LL && LL.ops) || []).forEach(function(o){ ops[o.id] = o.nombre; });
+    var porP = {}; PR.contactos.forEach(function(c){ (porP[c.prospecto_id] = porP[c.prospecto_id] || []).push(c); });
+    var f = function(iso){ return iso ? String(iso).slice(0, 10) : ''; };
+    var filas = lista.map(function(p){
+      var cs = porP[p.id] || [], u = cs[cs.length - 1];
+      return {
+        'N°': p.num_origen, 'Segmento': p.segmento || '', 'Nombre de la empresa': p.nombre || '', 'Nombre corto': p.nombre_corto || '',
+        'Dirección': p.direccion || '', 'Puntuación Google': p.puntuacion, 'N° de reseñas': p.resenas,
+        'Teléfono': p.telefono || '', 'Correo': p.correo || '', 'WhatsApp': p.whatsapp || '', 'Web oficial / Instagram': p.web || '',
+        'Tipo de negocio': p.tipo_negocio || '', 'Público objetivo aparente': p.publico || '',
+        'Cursos / diplomados de interés': p.cursos_interes || '', 'Puntos fuertes': p.puntos_fuertes || '',
+        'Nivel de presencia': p.presencia || '', 'Responde reseñas': p.responde_resenas || '', 'Gancho': p.gancho || '',
+        'Estado': PR_ESTADOS[p.estado] || p.estado || '', 'Tanda': p.lote || '', 'Fecha de alta': f(p.creado_en),
+        'Operador asignado': ops[p.asignado_a] || '', 'Contacto': p.contacto_nombre || '', 'Puesto': p.contacto_puesto || '',
+        'Correo del contacto': p.contacto_correo || '', 'Contactos registrados': cs.length,
+        'Último contacto': u ? f(u.fecha) : '', 'Canal del último contacto': u ? (PR_CANAL[u.canal] || u.canal || '') : '',
+        'Último resultado': p.ultimo_resultado || (u && u.resultado) || '', 'Próxima llamada': f(p.proxima_llamada), 'Notas': p.notas || ''
+      };
+    });
+    var ids = {}; lista.forEach(function(p){ ids[p.id] = p; });
+    var hist = PR.contactos.filter(function(c){ return ids[c.prospecto_id]; }).map(function(c){
+      var p = ids[c.prospecto_id];
+      return { 'N°': p.num_origen, 'Empresa': p.nombre || '', 'Fecha': f(c.fecha), 'Canal': PR_CANAL[c.canal] || c.canal || '',
+        'Sentido': c.sentido || '', 'Toque': c.toque, 'Asunto': c.asunto || '', 'Resumen': c.resumen || '', 'Resultado': c.resultado || '',
+        'Contacto': c.contacto_nombre || '', 'Puesto': c.contacto_puesto || '', 'Automático': c.automatico ? 'Sí' : 'No' };
+    });
+    var wb = X.utils.book_new(), h1 = X.utils.json_to_sheet(filas);
+    h1['!cols'] = Object.keys(filas[0] || {}).map(function(k){ return { wch: Math.min(40, Math.max(10, k.length + 2)) }; });
+    X.utils.book_append_sheet(wb, h1, 'Prospectos');
+    X.utils.book_append_sheet(wb, X.utils.json_to_sheet(hist.length ? hist : [{ 'Sin contactos': '' }]), 'Historial');
+    X.writeFile(wb, 'Prospectos Instituto Mara ' + hoy() + (soloFiltro ? ' (filtro)' : '') + '.xlsx');
+    cerrarModal();
+  }).catch(function(e){ b.disabled = false; b.textContent = 'Descargar Excel'; r.innerHTML = '<div class="aviso aviso-error">'+esc(e.message)+'</div>'; });
 }
 
 /* ---------- Subir CSV (sin duplicar) ---------- */
