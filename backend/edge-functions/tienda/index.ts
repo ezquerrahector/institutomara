@@ -1239,7 +1239,7 @@ async function avisosCambioAplicado(c: any, comision: number | null) {
     plantilla(`Hola, ${e(String(op.nombre).split(" ")[0])}`,
       `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b> pasó de ${e(c.rango_antes)} a <b>${e(c.rango_texto)}</b> ${pagoTxt}.</p>` +
       (comision ? `<p style="font-size:15px;line-height:1.6">Tu comisión: <b>${dinero(comision)}</b> (35 % sin IVA ni comisión de Mercado Pago).</p>` : "") +
-      `<p style="font-size:15px;line-height:1.6">Desde el siguiente cobro ganas tu 5 % sobre ${dinero(sig)}.</p>`, { texto: "Ver mis comisiones", url: urlComisiones }));
+      `<p style="font-size:15px;line-height:1.6">Desde el siguiente cobro ganas tu 25 % sobre ${dinero(sig)}.</p>`, { texto: "Ver mis comisiones", url: urlComisiones }));
   await avisarAdmins(`⬆️ ${emp.nombre} subió a ${c.rango_texto}${Number(c.diferencia) > 0 ? ` (${dinero(c.diferencia)})` : ""}`,
     plantilla("Cambio de plan", `<p style="font-size:15px;line-height:1.6"><b>${e(emp.nombre)}</b>: ${e(c.rango_antes)} → <b>${e(c.rango_texto)}</b> ${pagoTxt}.<br>Siguiente cobro: ${dinero(sig)} ${cadaCuando(p)}.` +
       (op ? `<br>Operador: ${e(op.nombre)}${comision ? ` · comisión ${dinero(comision)}` : ""}` : "") + `</p>`, { texto: "Ver planes", url: urlPlanes }));

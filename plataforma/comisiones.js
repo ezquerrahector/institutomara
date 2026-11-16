@@ -160,7 +160,7 @@ function comPintarOpr(){
       : '<p style="color:var(--gris)">Todavía no tienes recibos. El primero sale en el siguiente corte después de que una de tus empresas pague.</p>')+
     '</div>'+
     '<div class="tarjeta"><h3 style="color:var(--tinta);margin-bottom:4px">Acumulado para tu siguiente recibo</h3>'+
-    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:10px">Solo cuentan los pagos que Mercado Pago ya aprobó. 35 % del primer pago (o del pago anual) y 5 % de cada mes siguiente.</p>'+
+    '<p style="color:var(--gris);font-size:.9rem;margin-bottom:10px">Solo cuentan los pagos que Mercado Pago ya aprobó. 35 % del primer pago (o del pago anual) y 25 % de cada mes siguiente.</p>'+
     (COM.pend.length || COM.ajPend.length ? comDesglose(null, COM.pend, COM.ajPend) : '<p style="color:var(--gris)">Nada por ahora.</p>')+
     '</div>';
 }

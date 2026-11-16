@@ -77,7 +77,7 @@ var EMB_EST_AS = { nueva:'Nueva', contactada:'Contactada', aceptada:'Aceptada', 
 function embVistaAsesores(){
   var l = EMB.asesores || [], nuevas = l.filter(function(a){ return a.estado === 'nueva'; }).length;
   return '<h3 style="margin:26px 0 8px">Solicitudes de asesor comercial (empresas) '+(nuevas ? '<span class="etiqueta alerta">'+nuevas+' nuevas</span>' : '')+'</h3>'+
-    '<p style="color:var(--gris);font-size:.88rem;margin-bottom:8px">Si alguien encaja, dalo de alta como operador en «Planes y operadores» (35 % del primer pago + 5 % mensual).</p>'+
+    '<p style="color:var(--gris);font-size:.88rem;margin-bottom:8px">Si alguien encaja, dalo de alta como operador en «Planes y operadores» (35 % del primer pago + 25 % mensual).</p>'+
     (l.length ? '<div class="tabla-caja"><div class="tabla-scroll"><table><tr><th>Fecha</th><th>Persona</th><th>Disponibilidad</th><th>Experiencia</th><th>Estado</th></tr>'+
       l.map(function(a){ return '<tr><td>'+new Date(a.creado_en).toLocaleDateString('es-MX')+'</td><td><b>'+esc(a.nombre)+'</b><br><small>'+esc(a.correo)+' · <a href="https://wa.me/'+esc(String(a.telefono).replace(/\D/g,'').replace(/^(\d{10})$/,'52$1'))+'" target="_blank" rel="noopener">'+esc(a.telefono)+'</a>'+(a.ciudad ? ' · '+esc(a.ciudad) : '')+'</small></td>'+
         '<td><small>'+esc(a.disponibilidad||'—')+'</small></td><td><small>'+esc(a.experiencia||'—')+'</small></td>'+
