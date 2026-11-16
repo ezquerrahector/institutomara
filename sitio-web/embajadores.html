@@ -211,7 +211,7 @@ details p{color:var(--gris);margin-top:8px}
     document.querySelectorAll('.v-desc').forEach(function(e){ e.textContent = R.descuento; });
     document.querySelectorAll('.v-dias').forEach(function(e){ e.textContent = R.dias; });
     document.querySelectorAll('.v-min').forEach(function(e){ e.textContent = dinero(R.minimo); });
-    var per = [[3,1690],[5,390],[4,490]].reduce(function(t, x){ return t + x[0] * x[1] * (1 - R.descuento / 100) / 1.16 * R.comision / 100; }, 0);
+    var per = [[3,849],[5,390],[4,490]].reduce(function(t, x){ return t + x[0] * x[1] * (1 - R.descuento / 100) / 1.16 * R.comision / 100; }, 0);
     document.getElementById('ej-per').textContent = dinero(per) + ' al mes';
   }
   pintar();
