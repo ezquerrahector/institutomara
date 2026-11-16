@@ -39,8 +39,15 @@ function cpPintarLista(){
         '<div style="color:var(--gris);font-size:.85rem;margin:4px 0">'+(cpAl() ? esc((CP_FILTROS.filter(function(f){ return f[0] === (x.filtro||''); })[0]||['',''])[1])+' · ' : '')+esc(x.asunto)+' · enviados: '+(x.enviados||0)+(x.enviada_en ? ' · '+new Date(x.enviada_en).toLocaleDateString('es-MX') : '')+'</div>'+
         '<div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn btn-linea btn-sm" onclick="cpEditar(\''+x.id+'\')">Editar</button>'+
         '<button class="btn btn-linea btn-sm" onclick="cpPrueba(\''+x.id+'\')">Enviar prueba</button>'+(x.enviados ? '<button class="btn btn-linea btn-sm" onclick="cpReporte(\''+x.id+'\')">⬇ Reporte Excel</button>' : '')+
-        '<button class="btn btn-mor btn-sm" onclick="cpEnviar(\''+x.id+'\')">'+(x.estado === 'enviada' ? 'Enviar a los nuevos' : 'Enviar a todos')+'</button></div></div>'; }).join('')
+        '<button class="btn btn-mor btn-sm" onclick="cpEnviar(\''+x.id+'\')">'+(x.estado === 'enviada' ? 'Enviar a los nuevos' : 'Enviar a todos')+'</button>'+
+        '<button class="btn btn-peligro btn-sm" onclick="cpEliminar(\''+x.id+'\')">Eliminar</button></div></div>'; }).join('')
       : '<div class="aviso">Aún no hay campañas.</div>')+'<div id="cp-aviso"></div>';
+}
+/* Eliminar campaña (16 nov 2026). Los correos ya enviados no se pueden recuperar; se borra su registro. */
+function cpEliminar(id){
+  var x = CP.lista.filter(function(c){ return c.id === id; })[0]; if(!x) return;
+  if(!confirm('¿Eliminar la campaña «' + x.nombre + '»?' + (x.enviados ? '\n\nYa se envió a ' + x.enviados + ' personas: se borra también su registro de envíos y su reporte.' : '') + '\nEsto no se puede deshacer.')) return;
+  Nube.tabla('campanas?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }).then(cpCargar).catch(function(e){ alert(e.message); });
 }
 function cpEditar(id){
   var x = id ? CP.lista.filter(function(c){ return c.id === id; })[0] : { nombre:'', asunto:'', texto:'', segmento:'', filtro:'' };

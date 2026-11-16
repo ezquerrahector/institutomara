@@ -198,7 +198,8 @@ function plnPintarOps(){
         '<td>'+(o.usuario_id ? '<span class="etiqueta ok">Activa</span>' : '<span class="etiqueta alerta">Falta que se registre</span>')+'</td>'+
         '<td>'+empresas(o.id)+'</td><td>'+dinero(porPagar(o.id))+'</td>'+
         '<td style="white-space:nowrap"><button class="btn btn-fantasma btn-sm" onclick="plnEditarOp(\''+o.id+'\')">Editar</button> '+
-        '<button class="btn btn-fantasma btn-sm" onclick="plnAccesoOp(\''+o.id+'\')">Enviar acceso</button></td></tr>';
+        '<button class="btn btn-fantasma btn-sm" onclick="plnAccesoOp(\''+o.id+'\')">Enviar acceso</button> '+
+        '<button class="btn btn-peligro btn-sm" onclick="plnEliminarOp(\''+o.id+'\')">Eliminar</button></td></tr>';
     }).join('')+'</tbody></table></div></div>' : '<p style="color:var(--gris);margin-bottom:12px">Todavía no hay operadores.</p>')+
     '<h4 style="margin:6px 0 10px">Dar de alta un operador</h4>'+
     '<div class="fila"><div class="campo"><label for="op-cor">Correo *</label><input id="op-cor" type="email"></div>'+
@@ -211,6 +212,16 @@ function plnAltaOp(){
   Nube.empresaRpc('operador_alta', { p_correo:$('op-cor').value.trim(), p_nombre:$('op-nom').value.trim(), p_telefono:$('op-tel').value.trim() })
     .then(function(f){ return plnCargarAdmin().then(function(){ plnAccesoOp(f.id); }); })
     .catch(function(e){ av.innerHTML = plnErr(e); });
+}
+/* Eliminar operador (16 nov 2026): sus empresas y alumnos abiertos regresan sin asignar
+   (o a la bolsa de su callcenter). Si ya tiene comisiones, se archiva para conservar su historial. */
+function plnEliminarOp(id){
+  var o = plnOperador(id); if(!o) return;
+  if(!confirm('¿Eliminar a ' + o.nombre + '?\n\nYa no podrá entrar y lo que tenía asignado regresa ' + (o.callcenter_id ? 'a la bolsa de su callcenter' : 'a ti, sin asignar') + '. Esto no se puede deshacer.')) return;
+  Nube.empresaRpc('operador_eliminar', { p_operador:id }).then(function(r){
+    alert(r === 'archivado' ? o.nombre + ' ya no aparece. Como tiene comisiones registradas, su historial se conserva.' : o.nombre + ' se eliminó.');
+    return plnCargarAdmin();
+  }).catch(function(e){ alert(e.message); });
 }
 function plnEditarOp(id){
   var o = plnOperador(id); if(!o) return;

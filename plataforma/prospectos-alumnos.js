@@ -264,11 +264,11 @@ function apPintarHistorial(p){
 
 /* Mensaje de WhatsApp según quién es (se puede editar antes de abrirlo). */
 /* Kit clínico (2 nov 2026): cupón KITCLINICO hasta el 30 nov y compra sin cuenta en la página del kit. */
-var AP_KIT = { psicologo:['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual (33 h) te queda en $996 en lugar de $2,490'],
-  estudiante:['c-pap', 'el curso de Primeros Auxilios Psicológicos te queda en $276 en lugar de $690, y el Diplomado en TCC en $996'],
-  otro:['c-ia-psicologos', 'el curso de IA para Psicólogos y Consultorios te queda en $236 y el Diplomado en TCC en $996'] };
+var AP_KIT = { psicologo:['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual (33 h) te queda en $499.60 en lugar de $1,249'],
+  estudiante:['c-pap', 'el curso de Primeros Auxilios Psicológicos te queda en $276 en lugar de $690, y el Diplomado en TCC en $499.60'],
+  otro:['c-ia-psicologos', 'el curso de IA para Psicólogos y Consultorios te queda en $236 y el Diplomado en TCC en $499.60'] };
 function apMensajeKit(p){
-  var n = apPila(p), o = AP_KIT[(p.extra && p.extra.kit_perfil) || ''] || ['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual te queda en $996 en lugar de $2,490'];
+  var n = apPila(p), o = AP_KIT[(p.extra && p.extra.kit_perfil) || ''] || ['d-tcc', 'el Diplomado en Terapia Cognitivo-Conductual te queda en $499.60 en lugar de $1,249'];
   return 'Hola' + (n ? ', ' + n : '') + '. Te escribo de Instituto Mara. Gracias por descargar el kit de formatos clínicos, ¿ya pudiste usarlo?\n\n' +
     'Por haberlo descargado tienes 60 % de descuento con el cupón KITCLINICO hasta el 30 de noviembre: ' + o[1] + '. Te inscribes aquí sin crear cuenta y pagas con tarjeta, OXXO o transferencia:\n' +
     apSitio() + 'kit-clinico.html?comprar=' + o[0] + '&utm_source=whatsapp&utm_medium=directo&utm_campaign=kit-clinico#inscribete\n\n' +

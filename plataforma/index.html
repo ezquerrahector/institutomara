@@ -606,7 +606,7 @@ details.modelo[open] summary{margin-bottom:8px}
 <script src="nube.js?v=20261110p"></script>
 <script src="interactivo.js?v=20261020c"></script>
 <script src="cursos/indice.js?v=a349830309"></script>
-<script src="cursos/rutas.js?v=20261004"></script>
+<script src="cursos/rutas.js?v=20261116"></script>
 <script>
 /* =========================================================================
    INSTITUTO MARA — AULA VIRTUAL
@@ -4510,7 +4510,7 @@ function pintarCupones(filas){
     return;
   }
   var h = '<div class="tarjeta" style="padding:0;overflow-x:auto"><table class="tabla"><thead><tr>'+
-    '<th>Código</th><th>Descuento</th><th>Curso o ruta</th><th>Usos</th><th>Vence</th><th>Estado</th><th></th>'+
+    '<th>Código</th><th>Descuento</th><th>Curso</th><th>Usos</th><th>Vence</th><th>Estado</th><th></th>'+
     '</tr></thead><tbody>';
   for(var i=0;i<filas.length;i++){
     var c = filas[i];
@@ -4539,7 +4539,7 @@ function nuevoCupon(){ formCupon(null); }
    (es lo que el alumno ya tiene en la mano) y los usos ya hechos se conservan. */
 function formCupon(codigo){
   var c = codigo ? cuponPorCodigo(codigo) : null;
-  var ops = '<option value="">Todos los cursos individuales (no rutas)</option>';
+  var ops = '<option value="">Todos los cursos y diplomados</option>';
   var lista = BD.cursos.concat(window.RUTAS_MARA||[]).filter(function(c,i,a){ return a.findIndex(function(x){ return x.id===c.id; })===i; }).sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
   for(var i=0;i<lista.length;i++)
     ops += '<option value="'+lista[i].id+'"'+(c && c.curso_id===lista[i].id ? ' selected' : '')+'>'+esc(lista[i].nombre)+'</option>';
@@ -4554,7 +4554,7 @@ function formCupon(codigo){
     '<div class="fila"><div class="campo"><label>Tipo de descuento</label>'+
     '<select id="cu-tipo"><option value="porcentaje">Porcentaje</option><option value="monto"'+(c && c.tipo==='monto' ? ' selected' : '')+'>Monto fijo en pesos</option></select></div>'+
     '<div class="campo"><label>Valor</label><input type="number" id="cu-val" min="1" placeholder="20" value="'+v(c && c.valor)+'"></div></div>'+
-    '<div class="campo"><label>Curso o ruta al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
+    '<div class="campo"><label>Curso al que aplica</label><select id="cu-curso">'+ops+'</select></div>'+
     '<div class="fila"><div class="campo"><label>Usos máximos (vacío = sin límite)</label>'+
     '<input type="number" id="cu-max" min="1" placeholder="50" value="'+v(c && c.usos_max)+'"></div>'+
     '<div class="campo"><label>Vence el (opcional)</label><input type="date" id="cu-vence" value="'+v(c && c.vence)+'"></div></div>'+
@@ -4830,7 +4830,7 @@ function ajuste(k, def){
   return (a[k] === undefined || a[k] === null || a[k] === '') ? def : a[k];
 }
 var PLANES_MEM = {
-  esencial:{ nombre:'Esencial', periodo:'al mes', incluye:'Todos los cursos (sin diplomados ni rutas)' },
+  esencial:{ nombre:'Esencial', periodo:'al mes', incluye:'Todos los cursos (sin diplomados)' },
   total:{ nombre:'Total', periodo:'al mes', incluye:'Todo el catálogo: cursos y diplomados' },
   anual:{ nombre:'Anual Total', periodo:'al año', incluye:'Todo el catálogo durante 12 meses, con un solo pago' }
 };
@@ -5385,10 +5385,9 @@ function vistaMuestra(cid){
   if(!lec) lec = m.lecciones[0];
   var total = c.modulos.reduce(function(a,mm){ return a + mm.lecciones.length; }, 0);
   var sitio = '../sitio-web/index.html#programa-' + encodeURIComponent(c.id);
-  /* Cupón de bienvenida visible en la muestra: LANZAMIENTO30 hasta el 21 oct 2026,
-     después BIENVENIDA30 (vence 31 dic 2026). Ambos 30 %. Va en la liga de compra. */
-  var hoy = new Date(), cup = hoy < new Date('2026-10-22T00:00:00-06:00') ? 'LANZAMIENTO30' : (hoy < new Date('2027-01-01T00:00:00-06:00') ? 'BIENVENIDA30' : '');
-  var conCup = cup ? Math.round(c.precio * 0.7) : c.precio, pctCup = 30;
+  /* 16 nov 2026: la muestra ya no anuncia un cupón por su cuenta; se ve el precio normal.
+     Solo si la liga trae ?cupon=… (por ejemplo, de una campaña) se muestra ese cupón. */
+  var cup = '', conCup = c.precio, pctCup = 0;
   /* Si la liga trae su propio cupón (?cupon=…) y el servidor lo acepta para
      este programa, ese manda (p. ej., KITCLINICO de la campaña del kit). */
   if(muestraCupon && muestraCupon.curso === c.id){
@@ -5488,9 +5487,9 @@ avisoEnlaceCorreo();
 })();
 </script>
 <script src="empresas.js?v=20261020r"></script>
-<script src="prospectos.js?v=20261110q"></script>
-<script src="campanas.js?v=20261102d"></script>
-<script src="planes.js?v=20261110p"></script>
+<script src="prospectos.js?v=20261116a"></script>
+<script src="campanas.js?v=20261116a"></script>
+<script src="planes.js?v=20261116a"></script>
 <script src="llamadas.js?v=20261110q"></script>
 <script src="operador.js?v=20261020r"></script>
 <script src="comisiones.js?v=20261019a"></script>
@@ -5501,9 +5500,9 @@ avisoEnlaceCorreo();
 <script src="cambio-rango.js?v=20261019b"></script>
 <script src="acceso-intencion.js?v=20261019a"></script>
 <script src="constancia-logo.js?v=20261020a"></script>
-<script src="prospectos-alumnos.js?v=20261110p"></script>
-<script src="embajadores.js?v=20261110p"></script>
-<script src="callcenter.js?v=20261110p"></script>
-<script src="callcenter-alumnos.js?v=20261110p"></script>
+<script src="prospectos-alumnos.js?v=20261116a"></script>
+<script src="embajadores.js?v=20261116a"></script>
+<script src="callcenter.js?v=20261116a"></script>
+<script src="callcenter-alumnos.js?v=20261116a"></script>
 </body>
 </html>

@@ -173,7 +173,7 @@ function ccCargarEquipo(){
     var cc = o.callcenter_id, desde = new Date(Date.now() - 14 * 864e5).toISOString();
     return Promise.all([
       Nube.tabla('callcenters?select=*&id=eq.' + cc),
-      Nube.tabla('operadores?select=id,nombre,correo,telefono,activo,es_titular,descuento_max,usuario_id&callcenter_id=eq.' + cc + '&order=nombre.asc'),
+      Nube.tabla('operadores?select=id,nombre,correo,telefono,activo,es_titular,descuento_max,usuario_id,archivado&callcenter_id=eq.' + cc + '&order=nombre.asc'),
       Nube.tabla('prospectos?select=id,nombre,nombre_corto,segmento,telefono,estado,asignado_a,proxima_llamada,llamadas_intentos,ultimo_resultado,ultima_llamada,num_origen,callcenter_en&callcenter_id=eq.' + cc + '&order=num_origen.asc.nullslast,id.asc&limit=5000'),
       Nube.empresaRpc('equipo_metricas', {}),
       Nube.tabla('callcenter_metas?select=*'),
@@ -249,7 +249,7 @@ function ccPintarBolsa(){
     '<div class="fila" style="margin-bottom:6px"><div class="campo" style="max-width:320px"><label for="cc-q">Buscar</label><input id="cc-q" value="'+esc(CC.q)+'" oninput="CC.q=this.value;ccPintarBolsa();var e=$(\'cc-q\');e.focus();e.setSelectionRange(e.value.length,e.value.length)"></div>'+
       '<div class="campo" style="max-width:260px"><label for="cc-f">Mostrar</label><select id="cc-f" onchange="CC.filtroAg=this.value;ccPintarBolsa()">'+
         '<option value="">Abiertos (todos)</option><option value="bolsa"'+(f === 'bolsa' ? ' selected' : '')+'>Por repartir</option>'+
-        d.ops.map(function(o){ return '<option value="'+o.id+'"'+(f === o.id ? ' selected' : '')+'>De '+esc(o.nombre)+'</option>'; }).join('')+'</select></div></div>'+
+        d.ops.filter(function(o){ return !o.archivado; }).map(function(o){ return '<option value="'+o.id+'"'+(f === o.id ? ' selected' : '')+'>De '+esc(o.nombre)+'</option>'; }).join('')+'</select></div></div>'+
     (ids.length ? '<div class="aviso" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px"><b>'+ids.length+' seleccionado(s)</b>'+
       '<select id="cc-asig"><option value="">Asignar a…</option>'+activos.map(function(o){ return '<option value="'+o.id+'">'+esc(o.nombre)+(o.es_titular ? ' (yo)' : '')+'</option>'; }).join('')+'</select>'+
       '<button class="btn btn-mor btn-sm" onclick="ccRepartir(true)">Asignar</button>'+
@@ -296,7 +296,7 @@ function ccPintarAgentes(){
   var tope = plnDescMax();
   caja.innerHTML = '<p style="color:var(--gris);font-size:.92rem;margin-bottom:12px">Tus agentes entran con su propia cuenta y solo ven lo que les asignas. Si desactivas a alguien, sus prospectos abiertos regresan a tu bolsa. El descuento máximo general es de '+tope+'%: a cada agente le puedes poner uno menor.</p>'+
     '<div class="tabla-caja" style="margin-bottom:14px"><div class="tabla-scroll"><table><thead><tr><th>Agente</th><th>Teléfono</th><th>Cuenta</th><th>Descuento máx.</th><th>Metas</th><th></th></tr></thead><tbody>'+
-    d.ops.map(function(o){
+    d.ops.filter(function(o){ return !o.archivado; }).map(function(o){
       var m = d.metas.filter(function(x){ return x.operador_id === o.id; })[0];
       var metas = m ? [m.llamadas_dia ? m.llamadas_dia + ' llamadas/día' : '', m.conversaciones_semana ? m.conversaciones_semana + ' conversaciones/semana' : '',
         m.pruebas_mes ? m.pruebas_mes + ' pruebas/mes' : '', m.planes_mes ? m.planes_mes + ' planes/mes' : ''].filter(Boolean).join(' · ') : '';
@@ -305,7 +305,8 @@ function ccPintarAgentes(){
         '<td>'+(o.usuario_id ? '<span class="etiqueta ok">Activa</span>' : '<span class="etiqueta alerta">Falta que se registre</span>')+'</td>'+
         '<td>'+Number(o.descuento_max)+'%</td><td><small>'+(metas ? esc(metas) : '—')+'</small></td>'+
         '<td style="white-space:nowrap">'+(o.es_titular ? '' : '<button class="btn btn-fantasma btn-sm" onclick="ccEditarAgente(\''+o.id+'\')">Editar</button> ')+
-          '<button class="btn btn-fantasma btn-sm" onclick="ccAccesoAgente(\''+o.id+'\')">Enviar acceso</button></td></tr>';
+          '<button class="btn btn-fantasma btn-sm" onclick="ccAccesoAgente(\''+o.id+'\')">Enviar acceso</button>'+
+          (o.es_titular ? '' : ' <button class="btn btn-peligro btn-sm" onclick="ccEliminarAgente(\''+o.id+'\')">Eliminar</button>')+'</td></tr>';
     }).join('')+'</tbody></table></div></div>'+
     '<h4 style="margin:6px 0 10px">Dar de alta un agente</h4>'+
     '<div class="fila"><div class="campo"><label for="ca-cor">Correo *</label><input id="ca-cor" type="email"></div>'+
@@ -332,6 +333,7 @@ function ccEditarAgente(id){
       num('ce-m1', 'Llamadas al día', m.llamadas_dia)+num('ce-m2', 'Conversaciones a la semana', m.conversaciones_semana)+'</div><div class="fila">'+
       num('ce-m3', 'Pruebas al mes', m.pruebas_mes)+num('ce-m4', 'Planes al mes', m.planes_mes)+'</div>'+
     '<div id="ce-aviso"></div>',
+    '<button class="btn btn-peligro" onclick="ccEliminarAgente(\''+id+'\')">Eliminar</button>'+
     '<button class="btn btn-fantasma" onclick="ccActivarAgente(\''+id+'\','+(!o.activo)+')">'+(o.activo ? 'Desactivar' : 'Activar')+'</button>'+
     '<button class="btn btn-fantasma" onclick="cerrarModal()">Cancelar</button><button class="btn btn-mor" onclick="ccGuardarAgente(\''+id+'\')">Guardar</button>');
 }
@@ -342,6 +344,16 @@ function ccGuardarAgente(id){
     .then(function(){ return Nube.empresaRpc('callcenter_meta', { p_operador:id, p_llamadas_dia:ccNum('ce-m1'), p_conversaciones_semana:ccNum('ce-m2'), p_pruebas_mes:ccNum('ce-m3'), p_planes_mes:ccNum('ce-m4') }); })
     .then(function(){ cerrarModal(); return ccCargarEquipo(); })
     .catch(function(e){ av.innerHTML = plnErr(e); });
+}
+/* Eliminar a un agente (16 nov 2026): lo suyo regresa a tu bolsa. Si ya tiene comisiones, se archiva para conservarlas. */
+function ccEliminarAgente(id){
+  var n = ccNombreOp(id);
+  if(!confirm('¿Eliminar a ' + n + '?\n\nYa no podrá entrar y todo lo que tenía asignado regresa a tu bolsa. Esto no se puede deshacer.')) return;
+  Nube.empresaRpc('operador_eliminar', { p_operador:id }).then(function(r){
+    cerrarModal();
+    alert(r === 'archivado' ? n + ' ya no aparece en tu equipo. Como tiene comisiones registradas, su historial se conserva.' : n + ' se eliminó.');
+    return ccCargarEquipo();
+  }).catch(function(e){ alert(e.message); });
 }
 function ccActivarAgente(id, si){
   if(!si && !confirm('¿Desactivar a ' + ccNombreOp(id) + '? Ya no podrá entrar y sus prospectos abiertos regresan a tu bolsa para que los repartas.')) return;
@@ -457,7 +469,7 @@ plnCargarAdmin = function(){
 var _plnPintarOpsCC = plnPintarOps;
 plnPintarOps = function(){
   var todos = PLN.ops;
-  PLN.ops = todos.filter(function(o){ return !o.callcenter_id; });
+  PLN.ops = todos.filter(function(o){ return !o.callcenter_id && !o.archivado; });
   try{ _plnPintarOpsCC(); } finally { PLN.ops = todos; }
 };
 /* En «Supervisión de operadores» se distingue a la gente de cada callcenter. */
@@ -475,12 +487,13 @@ function ccAdmPintar(){
   var dias = Number(ajuste('callcenter_dias_caducidad', 15));
   caja.innerHTML = '<p style="color:var(--gris);font-size:.92rem;margin-bottom:12px">Empresas externas que llaman a tu base. Tú les mandas lotes desde <b>Prospectos</b> (selecciona → «Asignar a…» → el callcenter) y su titular los reparte entre sus agentes. Sus prospectos no los ve nadie más. '+
       'Si un prospecto pasa <b>'+dias+' días</b> sin ningún intento, regresa solo a ti.</p>'+
-    (CC.resumen.length ? CC.resumen.map(function(k){
+    (ccResumenVisible().length ? ccResumenVisible().map(function(k){
       return '<div style="border:1px solid var(--linea);border-radius:14px;padding:14px 16px;margin-bottom:12px">'+
         '<div class="encabezado-fila" style="margin-bottom:10px"><div><b style="font-size:1.05rem">'+esc(k.nombre)+'</b>'+(k.activo ? '' : ' <span class="etiqueta gris">Inactivo</span>')+
           '<br><small style="color:var(--gris)">Titular: '+esc(k.titular || '—')+' · '+esc(k.titular_correo || '')+' · '+k.agentes_activos+' de '+k.agentes_total+' personas activas</small></div>'+
           '<div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn btn-linea btn-sm" onclick="ccAdmAbrir(\''+k.callcenter_id+'\')">'+(CC.abierto === k.callcenter_id ? 'Actualizar' : 'Ver detalle')+'</button>'+
-          '<button class="btn btn-fantasma btn-sm" onclick="ccAdmEstado(\''+k.callcenter_id+'\','+(!k.activo)+')">'+(k.activo ? 'Desactivar' : 'Activar')+'</button></div></div>'+
+          '<button class="btn btn-fantasma btn-sm" onclick="ccAdmEstado(\''+k.callcenter_id+'\','+(!k.activo)+')">'+(k.activo ? 'Desactivar' : 'Activar')+'</button>'+
+          '<button class="btn btn-peligro btn-sm" onclick="ccAdmEliminar(\''+k.callcenter_id+'\')">Eliminar</button></div></div>'+
         '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
           supCifra('Por repartir', k.en_bolsa, k.en_bolsa ? '#B45309' : null)+
           supCifra('Abiertos', k.abiertos, null, k.sin_llamar + ' sin llamar')+
@@ -502,6 +515,23 @@ function ccAdmPintar(){
     '<div class="campo" style="max-width:340px;margin-top:18px"><label for="cn-dias">Días sin gestión para que un prospecto regrese a ti</label>'+
       '<div style="display:flex;gap:8px"><input id="cn-dias" type="number" min="1" max="120" value="'+dias+'"><button class="btn btn-linea btn-sm" onclick="ccAdmDias()">Guardar</button></div><div id="cn-daviso"></div></div>';
   if(CC.abierto) ccAdmAbrir(CC.abierto);
+}
+/* Callcenters archivados (eliminados con historial de comisiones) ya no se muestran. */
+function ccResumenVisible(){
+  var arch = {}; (CC.lista || []).forEach(function(k){ if(k.archivado) arch[k.id] = true; });
+  return (CC.resumen || []).filter(function(k){ return !arch[k.callcenter_id]; });
+}
+function ccAdmEliminar(id){
+  var k = (CC.lista || []).filter(function(x){ return x.id === id; })[0], nom = k ? k.nombre : 'este callcenter';
+  if(!confirm('¿Eliminar «' + nom + '»?\n\nSe borran su titular y sus agentes, y TODAS sus empresas y alumnos regresan a ti sin asignar. Esto no se puede deshacer.')) return;
+  if(prompt('Para confirmar, escribe ELIMINAR') !== 'ELIMINAR') return;
+  Nube.empresaRpc('callcenter_eliminar', { p_callcenter:id }).then(function(r){
+    r = r || {};
+    alert('Listo. Regresaron a ti ' + (r.prospectos || 0) + ' empresas y ' + (r.alumnos || 0) + ' alumnos.' +
+      (r.estado === 'archivado' ? '\nComo tenía comisiones registradas, su historial se conserva aunque ya no aparezca.' : ''));
+    if(CC.abierto === id) CC.abierto = null;
+    return plnCargarAdmin();
+  }).catch(function(e){ alert(e.message); });
 }
 function ccAdmAlta(){
   var av = $('cn-aviso');
@@ -531,7 +561,7 @@ function ccAdmAbrir(id){
   var caja = $('cc-adm-' + id); if(!caja) return;
   caja.innerHTML = '<p style="color:var(--gris);margin-top:12px">Cargando…</p>';
   var desde = new Date(Date.now() - 14 * 864e5).toISOString();
-  var ops = (PLN.ops || []).filter(function(o){ return o.callcenter_id === id; });
+  var ops = (PLN.ops || []).filter(function(o){ return o.callcenter_id === id && !o.archivado; });
   var uids = ops.map(function(o){ return o.usuario_id; }).filter(Boolean);
   Promise.all([
     uids.length ? Nube.tabla('prospecto_contactos?select=id,prospecto_id,fecha,resultado,resumen,creado_por,grabacion,contacto_nombre&canal=eq.llamada&creado_por=in.(' + uids.join(',') + ')&fecha=gte.' + encodeURIComponent(desde) + '&order=fecha.desc&limit=600') : Promise.resolve([]),
@@ -556,7 +586,8 @@ function ccAdmAbrir(id){
           '<td>'+Number(o.descuento_max)+'%</td><td>'+(pr ? '<b>'+pr+'</b> / 5' : '—')+'</td>'+
           '<td style="white-space:nowrap"><button class="btn btn-fantasma btn-sm" onclick="plnEditarOp(\''+o.id+'\')">Editar</button> '+
             (o.es_titular ? '<button class="btn btn-fantasma btn-sm" onclick="plnAccesoOp(\''+o.id+'\')">Enviar acceso</button>' :
-              (o.activo ? '<button class="btn btn-fantasma btn-sm" onclick="ccAdmTitular(\''+id+'\',\''+o.id+'\')">Hacer titular</button>' : ''))+'</td></tr>';
+              (o.activo ? '<button class="btn btn-fantasma btn-sm" onclick="ccAdmTitular(\''+id+'\',\''+o.id+'\')">Hacer titular</button> ' : '')+
+              '<button class="btn btn-peligro btn-sm" onclick="plnEliminarOp(\''+o.id+'\')">Eliminar</button>')+'</td></tr>';
       }).join('')+'</tbody></table></div></div>'+
       '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">«Editar» te deja desactivar a cualquiera. El recibo de comisiones del callcenter sale a nombre de su titular, con la cuenta que él registre.</p>'+
       '<h4 style="margin:16px 0 8px">Auditoría de llamadas</h4>'+ccTablaEval(CC.adm.llam, CC.adm.evals, CC.adm.pros, ops, 'auditoria')+

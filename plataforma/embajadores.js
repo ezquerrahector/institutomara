@@ -108,6 +108,7 @@ function embAbrir(id){
     (ps.length ? '<h4 style="margin:14px 0 6px">Depósitos</h4><ul>'+ps.map(function(p){ return '<li>'+new Date(p.pagado_en).toLocaleDateString('es-MX')+': '+dinero(p.monto)+(p.referencia ? ' · '+esc(p.referencia) : '')+'</li>'; }).join('')+'</ul>' : '')+
     '<div class="fila" style="margin-top:14px;gap:8px">'+
       (e.estado === 'activo' ? '<button class="btn btn-linea btn-sm" onclick="embEstado(\''+id+'\',\'pausado\')">Pausar código</button>' : '<button class="btn btn-linea btn-sm" onclick="embEstado(\''+id+'\',\'activo\')">Reactivar código</button>')+
+      (!vs.length && !ps.length ? '<button class="btn btn-peligro btn-sm" onclick="embEliminar(\''+id+'\')">Eliminar</button>' : '<small style="color:var(--gris);align-self:center">Tiene ventas: para conservar su historial, solo se puede pausar.</small>')+
     '</div>',
     '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button>');
 }
@@ -127,6 +128,14 @@ function embPagar(id){
 function embCancelar(ventaId, id){
   if(!confirm('¿Cancelar esta comisión? Úsalo cuando hubo reembolso o contracargo de la venta.')) return;
   Nube.tabla('embajador_ventas?id=eq.'+ventaId, { metodo:'PATCH', cuerpo:{ estado:'cancelada' } }).then(function(){ return embRefrescar(id); }).catch(function(x){ alert(x.message); });
+}
+/* Eliminar embajador sin ventas (16 nov 2026): se borra junto con su código de descuento. */
+function embEliminar(id){
+  var e = EMB.lista.filter(function(x){ return x.id === id; })[0]; if(!e) return;
+  if(!confirm('¿Eliminar a ' + e.nombre + ' y su código ' + e.codigo + '? Esto no se puede deshacer.')) return;
+  Nube.tabla('cupones?codigo=eq.' + encodeURIComponent(e.codigo), { metodo:'DELETE', prefer:'return=minimal' })
+    .then(function(){ return Nube.tabla('embajadores?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }); })
+    .then(function(){ cerrarModal(); return embRefrescar(); }).catch(function(x){ alert(x.message); });
 }
 function embEstado(id, est){
   var e = EMB.lista.filter(function(x){ return x.id === id; })[0];

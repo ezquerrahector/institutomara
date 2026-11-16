@@ -62,7 +62,7 @@ PRIV='''<p>Este aviso explica qué datos personales recabamos en Instituto Mara,
 
 TERM='''<p>Al crear una cuenta o inscribirte a un curso de <strong>Instituto Mara</strong> aceptas estos términos. Instituto Mara presta sus servicios 100 % en línea desde México. Contacto: <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> · WhatsApp 81 2028 2120.</p>
 <h2>1. Qué ofrecemos</h2>
-<p>Cursos, diplomados y rutas de capacitación <strong>libres</strong>, 100% en línea, con lecciones, ejercicios interactivos, evaluaciones y una <strong>constancia de Instituto Mara</strong> con folio y código QR al terminar.</p>
+<p>Cursos y diplomados de capacitación <strong>libres</strong>, 100% en línea, con lecciones, ejercicios interactivos, evaluaciones y una <strong>constancia de Instituto Mara</strong> con folio y código QR al terminar.</p>
 <div class="caja"><strong>Validez.</strong> Son cursos libres de formación para el trabajo. <strong>No cuentan con Reconocimiento de Validez Oficial de Estudios (RVOE) de la SEP</strong> ni con registro ante el CONOCER. La constancia acredita la capacitación y las horas cursadas; no es un certificado, título ni grado académico. Los diplomados de psicología y salud no habilitan para ejercer la psicoterapia ni para diagnosticar; los de temas legales, laborales o fiscales no sustituyen la asesoría de un profesional.</div>
 <h2>2. Tu cuenta</h2>
 <ul><li>Debes dar datos verdaderos y ser mayor de edad, o inscribirte con autorización de tu madre, padre o tutor.</li><li>Tu cuenta es personal: no la compartas ni revendas el acceso. Podemos suspender cuentas usadas por varias personas.</li><li>Cuida tu contraseña; eres responsable de lo que se haga con tu cuenta.</li></ul>
@@ -89,8 +89,6 @@ REEM='''<p>Queremos que el curso te sirva. Si no es para ti, te devolvemos tu di
 <p>Escríbenos por WhatsApp al <a href="https://wa.me/528120282120">81 2028 2120</a> o a <a href="mailto:contacto@institutomara.com">contacto@institutomara.com</a> desde el correo de tu cuenta, con el nombre del curso. Al aprobar el reembolso se retira tu acceso a ese curso.</p>
 <h2>Cómo y cuándo recibes tu dinero</h2>
 <ul><li>Se devuelve por el mismo medio de pago, a través de Mercado Pago.</li><li>Lo solicitamos dentro de los 5 días hábiles siguientes a tu petición. El tiempo en que se refleja depende de tu banco (en tarjeta suele tardar de 5 a 10 días hábiles). Los pagos en efectivo se devuelven a una cuenta de Mercado Pago o por transferencia a la cuenta que nos indiques a tu nombre.</li></ul>
-<h2>Rutas y paquetes</h2>
-<p>La garantía aplica igual: dentro de los 7 días y sin haber completado el segundo módulo de ninguno de los cursos incluidos.</p>
 <h2>Casos que no aplican</h2>
 <ul><li>Cursos obtenidos con un cupón del 100%.</li><li>Cuando ya pasaron los 7 días o ya completaste el segundo módulo, salvo que el curso tenga una falla que no podamos corregir; en ese caso te devolvemos tu dinero o te damos otro curso, como prefieras.</li><li>Cuentas suspendidas por compartir el acceso o por mal uso.</li></ul>
 <h2>Cobros duplicados o errores</h2>
