@@ -982,7 +982,7 @@ html,body{overflow-x:hidden}
     d.accion = 'solicitud'; b.disabled = true; b.textContent = 'Enviando…'; av.innerHTML = '';
     fetch(SUPA + '/functions/v1/prospectos', { method:'POST', headers:{ 'Content-Type':'application/json', apikey:ANON, Authorization:'Bearer '+ANON }, body:JSON.stringify(d) })
       .then(function(r){ return r.json().then(function(j){ if(!r.ok || j.error) throw new Error(j.error || 'No se pudo enviar.'); return j; }); }).catch(function(x){ if(x instanceof TypeError) throw new Error('No hay conexión. Revisa tu internet e intenta de nuevo.'); throw x; })
-      .then(function(){ f.reset(); b.textContent = 'Enviado ✓'; av.innerHTML = '<div class="emp-ok">¡Listo! Te llamamos hoy para activar tu prueba.</div>'; })
+      .then(function(){ try{ if(window.fbq) fbq('track', 'SubmitApplication', { content_name:'Prueba empresas', content_category:'empresas' }); }catch(x){} f.reset(); b.textContent = 'Enviado ✓'; av.innerHTML = '<div class="emp-ok">¡Listo! Te llamamos hoy para activar tu prueba.</div>'; })
       .catch(function(e){ b.disabled = false; b.textContent = 'Quiero mi prueba sin costo'; av.innerHTML = '<div class="emp-err">' + esc(e.message) + '</div>'; });
   };
 
