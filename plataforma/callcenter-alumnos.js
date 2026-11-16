@@ -152,12 +152,12 @@ function caGuion(p){
       paso('1 · Saluda', '«Hola, ¿hablo con '+b(n)+'? Soy '+b(yo)+', de Instituto Mara. Hace unos días descargaste nuestro kit de formatos clínicos. ¿Te han servido? ¿Tienes dos minutos?»'),
       paso('2 · Pregunta y escucha', '«¿Ya atiendes pacientes o estás estudiando?» · «¿Qué casos te llegan más?» · «¿Qué te gustaría dominar este año?» Anota lo que diga en Comentarios.'),
       paso('3 · Recomienda uno solo', 'Ansiedad o consulta general → TCC. Más allá de la TCC → Terapias Contextuales. Diagnóstico y reportes → Evaluación Psicológica. Crisis y duelo → Primeros Auxilios Psicológicos. Notas e informes → IA para Psicólogos.'),
-      paso('4 · Manda la lección gratis', '«Te mando ahorita por WhatsApp la primera lección para que la veas hoy. No pagas nada por verla.» Usa el botón verde de arriba antes de colgar.'),
+      paso('4 · Manda la lección gratis', '«Te mando ahorita por WhatsApp la primera lección para que la veas hoy. No pagas nada por verla.» Usa el botón «WhatsApp con la información» de arriba antes de colgar.'),
       paso('5 · Cierra con fecha', '«¿Te marco el (día) para ver qué te pareció?» Registra <b>Interesado</b> con esa fecha.')
     ] : [
       paso('1 · Saluda', '«Hola, '+b(n)+', soy '+b(yo)+', de Instituto Mara. Te registraste con nosotros y quería saber qué te gustaría aprender. ¿Tienes dos minutos?»'),
       paso('2 · Pregunta', '«¿Es para tu trabajo actual, para cambiar de trabajo o para emprender?» Escucha y anota.'),
-      paso('3 · Recomienda y manda', 'Recomienda '+b(prog)+' (o el que encaje) y manda su lección gratis con el botón verde de arriba.'),
+      paso('3 · Recomienda y manda', 'Recomienda '+b(prog)+' (o el que encaje) y manda su lección gratis con el botón «WhatsApp con la información».'),
       paso('4 · Cierra con fecha', 'Agenda la siguiente llamada y registra <b>Interesado</b>.')
     ];
   return '<details'+(primera ? ' open' : '')+' style="margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:var(--tinta)">📋 Qué decir'+(kit ? ' (kit clínico)' : '')+'</summary>'+
