@@ -19,6 +19,7 @@ var LL_RES = [
   ['otro_dia','Pidió que llame otro día', 'Escribe la fecha y hora que te dijo.'],
   ['info_correo','Pidió el plan por correo', 'Escribe su correo: le llega el plan de capacitación con precios. Se vuelve a llamar en 3 días hábiles.'],
   ['piloto','Aceptó la prueba', 'Al guardar, se crea su prueba de 5 lugares por 15 días.'],
+  ['contratar','Quiere contratar ya (sin prueba)', 'Escribe el correo de quien administrará la plataforma. Al guardar, se crea la empresa y pasas a registrar su plan y mandarle la liga de pago.'],
   ['demo','Agendó demostración', 'Escribe la fecha y hora de la demostración.'],
   ['proveedor','Ya tiene proveedor', 'Se le vuelve a ofrecer en unos dos meses.'],
   ['no_interesa','No le interesa', 'Ya no se le vuelve a llamar.'],
@@ -337,7 +338,7 @@ function llGuardar(id, siguiente){
   var v = (document.querySelector('input[name=lr-res]:checked')||{}).value;
   if(!v){ av.innerHTML = '<div class="aviso aviso-error">Elige el resultado de la llamada.</div>'; return; }
   var cuando = $('lr-cuando').value ? new Date($('lr-cuando').value).toISOString() : null;
-  if(v === 'piloto' && !$('lr-cor').value.trim()){ av.innerHTML = '<div class="aviso aviso-error">Escribe el correo de quien administrará la plataforma: a ese correo le llega su acceso.</div>'; return; }
+  if((v === 'piloto' || v === 'contratar') && !$('lr-cor').value.trim()){ av.innerHTML = '<div class="aviso aviso-error">Escribe el correo de quien administrará la plataforma: a ese correo le llega su acceso.</div>'; return; }
   b.disabled = true;
   Nube.empresaRpc('registrar_llamada', { p_prospecto:id, p_resultado:v, p_contacto_nombre:$('lr-nom').value.trim() || null,
       p_contacto_puesto:$('lr-pto').value.trim() || null, p_contacto_correo:$('lr-cor').value.trim() || null,
@@ -350,6 +351,7 @@ function llGuardar(id, siguiente){
     })
     .then(function(){
       if(v === 'piloto') return llPiloto(id);
+      if(v === 'contratar') return llContratar(id);
       var c = LL.cola || [], i = c.indexOf(id);
       if(siguiente && i >= 0 && c[i + 1]) llAbrir(c[i + 1]);
       else if(siguiente){ estado.llamadaId = null; pintar(); }
@@ -410,6 +412,38 @@ function llPiloto(id){
       todos.map(function(c){ return '<label style="display:flex;gap:8px;padding:3px 0;align-items:flex-start"><input type="checkbox" class="lp-c" style="width:auto;flex:none;margin-top:4px" value="'+c.id+'"'+(marcados.indexOf(c.id) >= 0 ? ' checked' : '')+'> '+esc(c.nombre)+'</label>'; }).join('')+
     '</div><small style="color:var(--gris)">Ya vienen marcados los de su giro. Puedes agregar los que te pidieron.</small></div><div id="lp-aviso"></div>',
     '<button class="btn btn-fantasma" onclick="cerrarModal();llPintarFicha(\''+id+'\')">Después</button><button id="lp-btn" class="btn btn-mor" onclick="llCrearPiloto(\''+id+'\')">Crear la prueba</button>');
+}
+/* Crea (si hace falta) la empresa del prospecto y su administrador. Devuelve el id de la empresa. */
+function llAsegurarEmpresa(p, adm, nom){
+  var empresaId = p.empresa_id;
+  return (empresaId ? Promise.resolve() :
+    Nube.tabla('empresas', { metodo:'POST', prefer:'return=representation', cuerpo:{ nombre:p.nombre, contacto_nombre:nom || null, contacto_correo:adm,
+        contacto_tel:prTelLimpio(p.telefono || p.whatsapp) || null, operador_id:esOperador() && LL.op ? LL.op.id : (p.asignado_a || null),
+        notas:'Desde Llamadas' + (p.segmento ? ' · ' + p.segmento : '') } })
+      .then(function(r){ empresaId = r && r[0] && r[0].id; if(!empresaId) throw new Error('No se pudo crear la empresa.');
+        return Nube.tabla('prospectos?id=eq.' + p.id, { metodo:'PATCH', prefer:'return=minimal', cuerpo:{ empresa_id:empresaId } }); })
+  ).then(function(){ return Nube.empresaRpc('empresa_agregar_admin', { p_empresa:empresaId, p_correo:adm, p_nombre:nom || null }); })
+   .then(function(){ p.empresa_id = empresaId; return empresaId; });
+}
+/* «Quiere contratar ya» (16 nov 2026): sin prueba. Se crea la empresa y se abre su ficha para
+   registrar el plan pactado y mandarle la liga de pago. La comisión es de quien registra el plan. */
+function llContratar(id){
+  var p = prPorId(id), adm = String(p.contacto_correo || '').trim().toLowerCase(), nom = p.contacto_nombre || '';
+  abrirModal('Contratar sin prueba · ' + prCorto(p),
+    '<p style="margin-bottom:10px">Se crea la empresa con su administrador. En la siguiente pantalla registras el plan que pactaron '+
+      '(número de personas, mensual o anual) y se genera la liga de pago para mandársela.</p>'+
+    '<div class="campo"><label for="lc-adm">Correo de quien administrará la plataforma</label><input id="lc-adm" type="email" value="'+esc(adm)+'"></div>'+
+    '<div class="aviso aviso-info">Cuando paguen, la empresa pasa a «Cliente» y tu comisión se registra sola.</div><div id="lc-aviso"></div>',
+    '<button class="btn btn-fantasma" onclick="cerrarModal();llPintarFicha(\''+id+'\')">Después</button>'+
+    '<button id="lc-btn" class="btn btn-mor" onclick="llContratarSeguir(\''+id+'\')">Registrar su plan</button>');
+}
+function llContratarSeguir(id){
+  var p = prPorId(id), b = $('lc-btn'), adm = String($('lc-adm').value || '').trim().toLowerCase();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(adm)){ $('lc-aviso').innerHTML = '<div class="aviso aviso-error">Escribe el correo de quien administrará la plataforma.</div>'; return; }
+  b.disabled = true; b.textContent = 'Creando…';
+  llAsegurarEmpresa(p, adm, p.contacto_nombre || '').then(function(eid){
+    cerrarModal(); estado.llamadaId = null; ir('admin-empresa', { empresaId:eid });
+  }).catch(function(e){ b.disabled = false; b.textContent = 'Registrar su plan'; $('lc-aviso').innerHTML = plnErr(e); });
 }
 function llCrearPiloto(id){
   var p = prPorId(id), av = $('lp-aviso'), b = $('lp-btn');

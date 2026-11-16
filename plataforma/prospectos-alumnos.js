@@ -12,7 +12,7 @@ var AP = { lista:null, contactos:[], f:{ q:'', tipo:'', origen:'', estado:'', pr
 if(window.PR && !PR.tab) PR.tab = 'empresas';
 
 var AP_ETQ = {
-  sin_cuenta:['Sin cuenta','gris'], sin_compra:['Registrado sin compra','alerta'], alumno:['Alumno','ok'],
+  sin_cuenta:['Sin cuenta','gris'], sin_compra:['Registrado sin compra','alerta'], alumno:['✅ Ya pagó','ok'],
   egresado:['Egresado','tur'], membresia:['Con membresía','tur'], empresa:['Por su empresa','gris']
 };
 var AP_ESTADOS = { nuevo:'Sin contactar', contactado:'Contactado', respondio:'Respondió', inscrito:'Inscrito', no_interesa:'No le interesó' };
