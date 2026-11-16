@@ -117,7 +117,10 @@ function caAbrir(id){
   abrirModal(apNombre(p),
     '<div style="margin-bottom:10px">'+apEtiquetas(p)+'</div>'+
     (tel ? '<p style="margin-bottom:6px"><a class="btn btn-mor btn-sm" href="tel:'+esc(tel)+'">☎ Llamar '+esc(tel)+'</a> '+
-      (wa ? '<a class="btn btn-linea btn-sm" href="https://wa.me/'+wa+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">💬 WhatsApp con la información</a>' : '')+'</p>' : '<p style="color:var(--gris)">Sin teléfono.</p>')+
+      (wa ? '<a class="btn btn-linea btn-sm" href="https://wa.me/'+wa+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">💬 WhatsApp con la información</a> ' : '')+'</p>' : '<p style="color:var(--gris)">Sin teléfono.</p>')+
+    (comprados.length ? '<div class="aviso aviso-ok" style="margin-bottom:10px">✅ <b>Ya pagó:</b> '+esc(comprados.join(', '))+'</div>' : '')+
+    '<p style="margin-bottom:10px"><button class="btn btn-mor btn-sm" onclick="caLiga(\''+id+'\')">🔗 Mandar liga para inscribirse</button> '+
+      '<small style="color:var(--gris);display:block;margin-top:4px">Entra al aula, ve la primera lección gratis y paga para continuar.</small></p>'+
     prCampo('Correo', p.correo, prCopiable(p.correo))+
     prCampo('Le interesa', apProg(p.programa_interes), esc(apProg(p.programa_interes)) + (mu ? ' · <a href="'+esc(mu)+'" target="_blank" rel="noopener">lección gratis</a>' : ''))+
     prCampo('Ya compró', comprados.join(', '))+
@@ -162,6 +165,32 @@ function caGuion(p){
     ];
   return '<details'+(primera ? ' open' : '')+' style="margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:var(--tinta)">📋 Qué decir'+(kit ? ' (kit clínico)' : '')+'</summary>'+
     pasos.join('')+'<p style="font-size:.85rem;color:var(--gris);margin-top:6px">Nunca digas «validez oficial» ni inventes urgencia. Si duda por precio, ofrece la membresía o pregunta a tu titular por un cupón vigente.</p></details>';
+}
+/* Liga personal para inscribirse (16 nov 2026): une su cuenta con esta ficha para que la venta cuente para ti. */
+function caLiga(id){
+  var p = (CA.lista || CA.equipo && CA.equipo.pers || []).filter(function(x){ return x.id === id; })[0]; if(!p) return;
+  var prog = ($('ca-prog') && $('ca-prog').value) || p.programa_interes || '';
+  if(!prog){ alert('Primero elige el programa que le interesa (abajo, en «Programa que le interesa»).'); return; }
+  var c = curso(prog); if(!c){ alert('Ese programa no está disponible.'); return; }
+  Nube.empresaRpc('alumno_liga', { p_persona:id, p_programa:prog }).then(function(tok){
+    if(!tok) throw new Error('No se pudo generar la liga.');
+    p.programa_interes = prog;
+    var liga = apAula() + '?programa=' + encodeURIComponent(prog) + '&ap=' + encodeURIComponent(tok);
+    var yo = ccOp() ? ccOp().nombre.split(' ')[0] : '';
+    var t = 'Hola ' + (apPila(p) || '') + ', soy ' + yo + ' de Instituto Mara. Te dejo tu acceso al ' + c.nombre + '.\n\n' +
+      '1. Entra aquí y crea tu cuenta (1 minuto): ' + liga + '\n' +
+      '2. Empieza con la primera lección, es gratis.\n' +
+      '3. Cuando quieras continuar, pagas ahí mismo ' + dinero(c.precio) + ' con tarjeta, OXXO o transferencia, y se abre todo el programa.\n\n' +
+      'Cualquier duda, aquí estoy.';
+    var wa = apNumWa(p);
+    abrirModal('Liga para ' + apNombre(p),
+      '<p style="margin-bottom:8px">Mándale este mensaje. La liga es personal: al entrar con ella, su compra cuenta para ti.</p>'+
+      '<textarea id="ca-liga-txt" rows="9" style="width:100%">'+esc(t)+'</textarea>'+
+      '<p style="color:var(--gris);font-size:.85rem;margin-top:6px">Registra la llamada para que la venta cuente: si paga dentro de los '+Number(ajuste('alumno_ventana_dias', 30))+' días siguientes, verás «✅ Ya pagó» en su ficha.</p>',
+      '<button class="btn btn-fantasma" onclick="caAbrir(\''+id+'\')">Volver</button>'+
+      '<button class="btn btn-linea" onclick="copiarTexto($(\'ca-liga-txt\').value)">Copiar</button>'+
+      (wa ? '<button class="btn btn-mor" onclick="window.open(\'https://wa.me/'+wa+'?text=\'+encodeURIComponent($(\'ca-liga-txt\').value),\'_blank\',\'noopener\')">WhatsApp</button>' : ''));
+  }).catch(function(e){ alert(e.message); });
 }
 function caResCambio(){ var v = $('ca-res').value; $('ca-prox-c').style.display = (v === 'otro_dia' || v === 'interesado') ? '' : 'none'; }
 function caGuardar(id){
