@@ -437,6 +437,15 @@ function vistaProspecto(){
       '<div style="min-width:0"><div class="tarjeta" id="pf-datos"></div></div>'+
     '</div></div>';
 }
+/* Eliminar un prospecto (16 nov 2026): se borra con su historial de llamadas y correos. */
+function prEliminar(id){
+  var p = prPorId(id); if(!p) return;
+  if(!confirm('¿Eliminar a «' + (p.nombre_corto || p.nombre) + '» de tus prospectos?\n\nSe borra también su historial de llamadas y correos. Esto no se puede deshacer.')) return;
+  Nube.tabla('prospectos?id=eq.' + id, { metodo:'DELETE', prefer:'return=minimal' }).then(function(){
+    PR.lista = (PR.lista || []).filter(function(x){ return x.id !== id; });
+    ir('admin-prospectos');
+  }).catch(function(e){ alert('No se pudo eliminar: ' + e.message); });
+}
 function prPintarFicha(id){
   var p = prPorId(id), cab = $('pf-cab'); if(!cab) return;
   if(!p){ cab.innerHTML = '<div class="aviso aviso-error">No encontré ese prospecto.</div>'; return; }
@@ -446,7 +455,8 @@ function prPintarFicha(id){
     '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><select id="pf-estado" aria-label="Estado" onchange="prCambiarEstado(\''+id+'\',this.value)">'+
       Object.keys(PR_ESTADOS).map(function(k){ return '<option value="'+k+'"'+(p.estado===k?' selected':'')+'>'+PR_ESTADOS[k]+'</option>'; }).join('')+'</select>'+
     prBotonPlan(p)+
-    '<button class="btn btn-mor btn-sm" onclick="prCrearPiloto(\''+id+'\')">'+(p.empresa_id ? 'Ver empresa y piloto' : 'Crear empresa y piloto')+'</button></div></div>'+
+    '<button class="btn btn-mor btn-sm" onclick="prCrearPiloto(\''+id+'\')">'+(p.empresa_id ? 'Ver empresa y piloto' : 'Crear empresa y piloto')+'</button>'+
+    (sesion && sesion.rol === 'admin' ? '<button class="btn btn-peligro btn-sm" onclick="prEliminar(\''+id+'\')">Eliminar</button>' : '')+'</div></div>'+
     '<div style="margin-top:8px">'+prSeguimientoTxt(p)+'</div>';
   prPintarDatos(p); prPintarHistorial(p);
 }

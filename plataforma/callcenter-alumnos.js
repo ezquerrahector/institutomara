@@ -123,6 +123,7 @@ function caAbrir(id){
     prCampo('Ya compró', comprados.join(', '))+
     prCampo('Membresía', p.membresia_hasta || (p.etiquetas || []).indexOf('membresia') >= 0 ? 'Activa' : '')+
     prCampo('Notas', p.notas)+
+    caGuion(p)+
     '<h4 style="margin:12px 0 6px">Historial</h4>'+
     (h.length ? '<div style="font-size:.88rem;margin-bottom:12px">'+h.map(function(c){
       return '<div style="padding:6px 0;border-bottom:1px solid var(--linea)">'+(AP_ICONO[c.canal] || '•')+' <b>'+esc(c.resultado || AP_CANAL[c.canal] || c.canal)+'</b> · '+esc(ccFecha(c.fecha))+
@@ -137,6 +138,30 @@ function caAbrir(id){
     '<p style="color:var(--gris);font-size:.85rem">Si compra en los próximos '+Number(ajuste('alumno_ventana_dias', 30))+' días, la venta cuenta para ti.</p>'+
     '<div id="ca-aviso"></div>',
     '<button class="btn btn-fantasma" onclick="cerrarModal()">Cerrar</button><button class="btn btn-mor" onclick="caGuardar(\''+id+'\')">Guardar llamada</button>');
+}
+/* Guion para llamar a personas (16 nov 2026): el mismo del Manual del agente, con sus datos ya puestos.
+   Se abre la primera vez (sin llamadas) y queda plegado en las siguientes. */
+function caGuion(p){
+  var yo = ccOp() ? ccOp().nombre.split(' ')[0] : '(tu nombre)', n = apPila(p) || '(nombre)';
+  var prog = apProg(p.programa_interes) || '(el programa que le recomiendes)';
+  var b = function(t){ return '<b style="background:#F3E8FF;border-radius:4px;padding:0 3px">'+esc(t)+'</b>'; };
+  var paso = function(rot, txt){ return '<div style="border-left:3px solid var(--morado);background:#F6F4FD;border-radius:0 10px 10px 0;padding:8px 12px;margin:6px 0">'+
+    '<div style="font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--morado)">'+rot+'</div>'+txt+'</div>'; };
+  var kit = apKit(p), primera = !(p.llamadas_intentos > 0);
+  var pasos = kit ? [
+      paso('1 · Saluda', '«Hola, ¿hablo con '+b(n)+'? Soy '+b(yo)+', de Instituto Mara. Hace unos días descargaste nuestro kit de formatos clínicos. ¿Te han servido? ¿Tienes dos minutos?»'),
+      paso('2 · Pregunta y escucha', '«¿Ya atiendes pacientes o estás estudiando?» · «¿Qué casos te llegan más?» · «¿Qué te gustaría dominar este año?» Anota lo que diga en Comentarios.'),
+      paso('3 · Recomienda uno solo', 'Ansiedad o consulta general → TCC. Más allá de la TCC → Terapias Contextuales. Diagnóstico y reportes → Evaluación Psicológica. Crisis y duelo → Primeros Auxilios Psicológicos. Notas e informes → IA para Psicólogos.'),
+      paso('4 · Manda la lección gratis', '«Te mando ahorita por WhatsApp la primera lección para que la veas hoy. No pagas nada por verla.» Usa el botón verde de arriba antes de colgar.'),
+      paso('5 · Cierra con fecha', '«¿Te marco el (día) para ver qué te pareció?» Registra <b>Interesado</b> con esa fecha.')
+    ] : [
+      paso('1 · Saluda', '«Hola, '+b(n)+', soy '+b(yo)+', de Instituto Mara. Te registraste con nosotros y quería saber qué te gustaría aprender. ¿Tienes dos minutos?»'),
+      paso('2 · Pregunta', '«¿Es para tu trabajo actual, para cambiar de trabajo o para emprender?» Escucha y anota.'),
+      paso('3 · Recomienda y manda', 'Recomienda '+b(prog)+' (o el que encaje) y manda su lección gratis con el botón verde de arriba.'),
+      paso('4 · Cierra con fecha', 'Agenda la siguiente llamada y registra <b>Interesado</b>.')
+    ];
+  return '<details'+(primera ? ' open' : '')+' style="margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:var(--tinta)">📋 Qué decir'+(kit ? ' (kit clínico)' : '')+'</summary>'+
+    pasos.join('')+'<p style="font-size:.85rem;color:var(--gris);margin-top:6px">Nunca digas «validez oficial» ni inventes urgencia. Si duda por precio, ofrece la membresía o pregunta a tu titular por un cupón vigente.</p></details>';
 }
 function caResCambio(){ var v = $('ca-res').value; $('ca-prox-c').style.display = (v === 'otro_dia' || v === 'interesado') ? '' : 'none'; }
 function caGuardar(id){
