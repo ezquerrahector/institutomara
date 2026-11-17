@@ -12,7 +12,7 @@ if (fs.statSync(fuente).isDirectory()) { // carpeta: meta.json + partes con {mod
   S = JSON.parse(fs.readFileSync(path.join(fuente, 'meta.json'), 'utf8')); S.modulos = S.modulos || [];
   for (const f of fs.readdirSync(fuente).filter(f => f.endsWith('.json') && f !== 'meta.json').sort()) S.modulos.push(...JSON.parse(fs.readFileSync(path.join(fuente, f), 'utf8')).modulos);
 } else S = JSON.parse(fs.readFileSync(fuente, 'utf8'));
-const HORAS = S.horas || 30, PRECIO = S.precio || 1690, REV = S.revision || '20261004';
+const HORAS = S.horas || 30, PRECIO = S.precio || 849, REV = S.revision || '20261004';
 const ARCH = 'diplomados-2026-10.js';
 const errores = [];
 const req = (cond, msg) => { if (!cond) errores.push(msg); };

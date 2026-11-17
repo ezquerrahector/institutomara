@@ -1,0 +1,826 @@
+{
+ "modulos": [
+  {
+   "t": "Números de la barbería: costo, precio, agenda y equipo",
+   "r": "Calcula el costo real de cada servicio, fija precios, paquetes y membresías que no pierdan, ordena tu agenda con precios totales y propina voluntaria, y decide con claridad cómo trabajar con más barberos.",
+   "lecciones": [
+    {
+     "t": "El costo real de cada servicio: tiempo de silla, material y gastos fijos en Excel",
+     "obj": "Calcular en Excel tu costo por minuto de silla y el costo real de cada servicio, con tu sueldo, el material y la merma incluidos.",
+     "texto": [
+      "Poner el precio «como el de enfrente» es la manera más común de trabajar de más y ganar de menos. Antes de fijar cualquier precio necesitas saber cuánto te cuesta, de verdad, cada servicio. Ese costo se arma con dos piezas: el <b>tiempo de silla</b>, que carga con los gastos fijos de la barbería y con tu sueldo, y el <b>material</b> que se va con cada cliente. Todas las cifras de esta lección son de ejemplo: sustitúyelas por las tuyas.",
+      "Empieza por los <b>gastos fijos</b> del mes, los que pagas aunque no entre nadie: renta o cuota de la silla, luz y agua, internet, la app de agenda, el contador, insumos de limpieza y desinfección, y un apartado para reponer máquinas, cuchillas y el sillón cuando se gasten. En Excel, anótalos en B2 a B8 y súmalos en B9 con =SUMA(B2:B8). En B10 escribe el sueldo que necesitas para vivir: si lo dejas fuera, el negocio parece rentable mientras tú trabajas gratis.",
+      "Ahora divide. El <b>costo por minuto</b> es (gastos fijos + sueldo) ÷ (horas cobradas × 60). Usa las horas <b>cobradas</b>, no las que la cortina está arriba: los ratos sin clientes, la limpieza de cierre y los mandados no se venden. Con las horas cobradas en B11, en B12 escribe =REDONDEAR((B9+B10)/(B11*60),2). Con $7,000 de gastos fijos, $11,000 de sueldo y 120 horas cobradas, el minuto cuesta $18,000 ÷ 7,200 = $2.50.",
+      "Falta el material de cada servicio: tira de cuello, tu porción de desinfectante y lubricante, el lavado de la toalla, la pomada o el talco y, en el afeitado, la hoja nueva y el hemostático individual. Divide lo que pagas por cada producto entre los servicios que rinde y suma una <b>merma</b> por lo que se derrama o se tira, por ejemplo 8 %. El costo queda así: minutos × costo por minuto + material × (1 + merma); con los minutos en B13, el material en B14 y la merma en B15, la fórmula es =REDONDEAR(B13*B12+B14*(1+B15),2). Mide los minutos con cronómetro, incluida la limpieza entre clientes, y repite el cálculo cuando suba la renta o cambie un proveedor."
+     ],
+     "comparar": [
+      "«Así no: Cobro $120 porque eso cobra el de la esquina; lo que sobre al final del mes, eso gano.»",
+      "«Así sí: Sé cuánto me cuesta cada corte con mi sueldo incluido, y con ese dato decido el precio.»"
+     ],
+     "caso": "Caso ficticio: Emiliano, de 33 años, abrió hace cinco meses una barbería de una silla en Iztapalapa, Ciudad de México. Cobra $120 por corte con degradado porque es lo que cobra la barbería de la esquina. Sus gastos fijos son de $7,000 al mes y quiere sacar un sueldo de $11,000 (cifras de ejemplo). El local abre 216 horas al mes, pero sólo cobra unas 120. Su corte ocupa 45 minutos con la limpieza y lleva $16 de material, al que suma 8 % de merma. Cada fin de mes se pregunta por qué no le alcanza.",
+     "p": [
+      [
+       "¿Cuál es el costo por minuto de silla de Emiliano?",
+       "$2.50: $18,000 ÷ 7,200 minutos cobrados",
+       "$1.39: $18,000 ÷ 12,960 minutos con el local abierto",
+       "$0.97: $7,000 ÷ 7,200 minutos, sin contar su sueldo",
+       "Gastos fijos más sueldo: $7,000 + $11,000 = $18,000; horas cobradas: 120 × 60 = 7,200 minutos; $18,000 ÷ 7,200 = $2.50. Si divide entre las 216 horas de apertura (12,960 minutos), reparte el costo en tiempo que nadie le paga y el minuto parece de $1.39. Si deja fuera su sueldo, le sale $0.97 y su trabajo queda gratis."
+      ],
+      [
+       "¿Cuánto le cuesta de verdad su corte con degradado?",
+       "$129.78: 45 × $2.50 + $16 × 1.08",
+       "$128.50: suma el material, pero sin la merma",
+       "$79.83: usa el minuto calculado con horas de apertura",
+       "Tiempo: 45 × $2.50 = $112.50. Material con merma: $16 × 1.08 = $17.28. Total: $129.78. Sin merma serían $128.50, un costo que se queda corto cada mes. Con el minuto de $1.39 (horas de apertura), el tiempo valdría $62.55 y el costo bajaría a $79.83, una cifra que no existe en la realidad."
+      ],
+      [
+       "¿Qué concluye Emiliano sobre su precio de $120?",
+       "Que pierde $9.78 por corte y debe revisar su precio",
+       "Que está bien, porque es el mismo precio de la competencia",
+       "Que conviene bajarlo a $100 para llenar más rápido la agenda",
+       "$120 − $129.78 = −$9.78: cada corte le cuesta más de lo que cobra. Igualar a la competencia no dice nada de sus costos. Llenar más horas sí bajaría su costo por minuto, pero bajar el precio sin números agranda la pérdida de cada corte; primero revisa precio, gastos y agenda."
+      ]
+     ],
+     "completar": [
+      "Para el costo por minuto, divide entre las horas ___, no entre las horas que el local está abierto.",
+      "cobradas"
+     ],
+     "relacionar": [
+      [
+       "Renta, luz e internet",
+       "Gastos fijos del mes"
+      ],
+      [
+       "Tu sueldo",
+       "Se suma antes de dividir"
+      ],
+      [
+       "Horas cobradas × 60",
+       "Divisor del costo por minuto"
+      ],
+      [
+       "Producto derramado o que se tira",
+       "Merma"
+      ],
+      [
+       "Hoja nueva y hemostático individual",
+       "Material de un solo cliente"
+      ]
+     ],
+     "refl": "Calcula tu costo real (20 min). 1) Haz la lista de tus gastos fijos del mes y súmalos con =SUMA(). 2) Anota el sueldo que necesitas. 3) Estima tus horas cobradas en un mes normal, no las de apertura. 4) Calcula tu costo por minuto con =REDONDEAR(). 5) Costea dos servicios con minutos medidos, material y merma. 6) Compara cada costo con el precio que cobras hoy.",
+     "modelo": "Modelo: «Gastos fijos: $6,200; sueldo: $10,000; horas cobradas: 110, o sea 6,600 minutos. Costo por minuto: $16,200 ÷ 6,600 = $2.45. Corte clásico: 40 minutos con limpieza = $98.00, más $14 de material × 1.08 = $15.12; costo: $113.12. Barba con toalla caliente: 30 minutos = $73.50, más $20 × 1.08 = $21.60; costo: $95.10. Hoy cobro $110 por el corte: estoy debajo del costo y lo revisaré con la fórmula de precio.» Es buena porque incluye el sueldo, usa horas cobradas, suma la merma y compara cada costo con el precio real.",
+     "plantilla": [
+      "Hoja de costo por servicio",
+      "Gastos fijos (B2:B8): renta [ ] luz y agua [ ] internet [ ] app de agenda [ ] contador [ ] limpieza y desinfección [ ] reposición de equipo [ ]\nTotal: =SUMA(B2:B8) → $[ ]\nSueldo: $[ ]\nHoras cobradas al mes: [ ]\nCosto por minuto: =REDONDEAR((B9+B10)/(B11*60),2) → $[ ]\nServicio: [ ] | minutos con limpieza: [ ] | material: $[ ] | merma: [ ] %\nCosto del servicio: =REDONDEAR(minutos*costo_por_minuto+material*(1+merma),2) → $[ ]\nPrecio actual: $[ ] | ¿cubre el costo? [sí / no]\n(Cifras de ejemplo; revisa cada tres meses)"
+     ],
+     "clave": [
+      "Tu sueldo va dentro del costo: sin él, el negocio parece rentable mientras trabajas gratis.",
+      "Divide entre horas cobradas, no entre horas de apertura, y suma la merma al material.",
+      "Mide los minutos con cronómetro, incluida la limpieza, y recalcula cuando cambien tus gastos."
+     ]
+    },
+    {
+     "t": "Precio, paquetes y membresías: cuánto cobrar y cuántos servicios necesitas al mes",
+     "obj": "Fijar precios con margen, armar paquetes y membresías que no pierdan dinero y calcular tu punto de equilibrio en servicios al mes.",
+     "texto": [
+      "Con el costo en la mano, el precio se calcula hacia arriba. Decide un <b>margen</b>: la parte del precio que queda después de pagar el costo, para imprevistos, para crecer y para aguantar un mes flojo. La fórmula es precio = costo ÷ (1 − margen). Si un servicio cuesta $140 y quieres 30 % de margen: $140 ÷ 0.70 = $200. En Excel, =REDONDEAR.MAS(B2/(1-B3),-1) redondea hacia arriba a la decena. Multiplicar el costo por 1.30 parece lo mismo, pero da $182 y deja sólo 23 % de margen real. El precio de la zona sirve para ubicarte, no para calcular: si tu costo queda por encima de lo que paga tu colonia, revisa minutos, gastos o cliente antes de bajar.",
+      "Los <b>paquetes</b> juntan servicios que se hacen en la misma visita, como corte y barba o papá e hijo. Pueden costar menos que la suma porque ahorras una limpieza y una espera, pero calcula su costo con los minutos reales y comprueba que el precio siga arriba. Si el descuento se come todo el margen, no es paquete: es trabajo regalado.",
+      "Las <b>membresías</b> cobran por adelantado un número fijo de servicios al mes, por ejemplo dos cortes. Te dan ingreso seguro y clientes que vuelven, pero si son «ilimitadas», tu cliente más fiel se vuelve el que más te cuesta. Fija cuántos servicios incluye, la vigencia, si se acumulan, cómo se cancela y qué pasa si no viene; entrégalo por escrito antes de cobrar. Cada servicio de la membresía debe quedar arriba de su costo.",
+      "Por último, calcula tu <b>punto de equilibrio</b>: cuántos servicios necesitas al mes para cubrir gastos fijos y sueldo. Divide esa suma entre lo que deja cada servicio después de su material: (gastos fijos + sueldo) ÷ (precio promedio − material promedio). En Excel, =REDONDEAR.MAS((B5+B6)/(B7-B8),0). Si el resultado no cabe en tus horas, ajusta precio, gastos o menú. Estas fórmulas dan precios antes de impuestos: si te toca cobrar IVA (16 % en servicios), súmalo al precio de tu lista, porque el cliente debe ver el total. Confírmalo con tu contador y revisa el detalle en «Contabilidad Básica, RESICO y Facturación CFDI 4.0»."
+     ],
+     "comparar": [
+      "«Así no: Lanzo cortes ilimitados por una cuota al mes; seguro casi nadie viene más de dos veces.»",
+      "«Así sí: Mi membresía incluye dos cortes al mes, con vigencia y reglas escritas, y cada corte queda arriba de su costo.»"
+     ],
+     "caso": "Caso ficticio: Lucía, de 41 años, tiene una barbería de dos sillas en Guadalajara. Su corte con barba le cuesta $168.40 y quiere 25 % de margen. Sus gastos fijos son de $8,400 y su sueldo, de $12,000; su precio promedio será de $230 y el material promedio, de $25 por servicio (cifras de ejemplo, antes de impuestos). Su corte solo le cuesta $118. Un cliente le sugiere lanzar «cortes ilimitados por $450 al mes», y varios de sus clientes más fieles vienen cada semana.",
+     "p": [
+      [
+       "¿Qué precio corresponde a su corte con barba, redondeado hacia arriba a la decena?",
+       "$230: $168.40 ÷ 0.75 = $224.53",
+       "$220: $168.40 × 1.25 = $210.50",
+       "$170: el costo redondeado; el margen sale del volumen",
+       "Precio = costo ÷ (1 − margen): $168.40 ÷ 0.75 = $224.53, que sube a $230 con =REDONDEAR.MAS(). Multiplicar por 1.25 da $210.50, con un margen real de sólo 20 %, y redondeado queda en $220. Cobrar el puro costo no deja nada para imprevistos, por más servicios que haga."
+      ],
+      [
+       "¿Cuántos servicios necesita Lucía al mes para su punto de equilibrio?",
+       "100 servicios: $20,400 ÷ ($230 − $25)",
+       "89 servicios: $20,400 ÷ $230, sin restar el material",
+       "50 servicios: $8,400 ÷ $168.40, sin contar su sueldo",
+       "Gastos fijos más sueldo: $8,400 + $12,000 = $20,400. Cada servicio deja $230 − $25 = $205. $20,400 ÷ $205 = 99.51, que sube a 100. Dividir entre el precio completo olvida que el material se va con cada cliente, y dejar fuera el sueldo hace creer que con 50 servicios ya está a salvo."
+      ],
+      [
+       "¿Qué membresía le conviene ofrecer?",
+       "Dos cortes al mes por $300, con vigencia y reglas escritas",
+       "Ilimitada a $450, porque casi nadie viene más de dos veces",
+       "Ilimitada a $450, pero sólo para sus clientes más fieles",
+       "Con dos cortes por $300, cada corte sale en $150: arriba de su costo de $118 y un poco abajo de los $160 que le daría su margen de 25 % ($118 ÷ 0.75 = $157.33), así que al cliente le conviene. Un cliente que viene cada semana usaría 4 cortes: 4 × $118 = $472, más que los $450 de la cuota, así que la ilimitada pierde justo con los clientes más fieles, que son quienes más la aprovecharían."
+      ]
+     ],
+     "completar": [
+      "Para fijar el precio, divide el costo entre (1 − ___).",
+      "margen"
+     ],
+     "refl": "Pon precio a tu menú (20 min). 1) Elige tu margen y explica por qué. 2) Calcula el precio de tres servicios con costo ÷ (1 − margen) y redondea hacia arriba con =REDONDEAR.MAS(). 3) Diseña un paquete y comprueba que siga arriba de su costo. 4) Escribe las reglas de una membresía: servicios incluidos, vigencia, acumulación y cancelación. 5) Calcula tu punto de equilibrio y compáralo con tus horas cobradas.",
+     "modelo": "Modelo: «Margen: 30 %, para tener colchón en meses flojos. Corte: $113.12 ÷ 0.70 = $161.60 → $170. Barba: $95.10 ÷ 0.70 = $135.86 → $140. Paquete corte y barba: 70 minutos × $2.45 + $36.72 de material = $208.22 de costo; precio $280, deja $71.78. Membresía: dos cortes al mes por $300, vigencia de 30 días, no se acumulan y se cancela avisando antes del siguiente cobro. Punto de equilibrio: $16,200 ÷ ($160 − $18) = 114.08 → 115 servicios.» Es buena porque usa la fórmula, redondea hacia arriba y revisa cada promesa contra su costo.",
+     "plantilla": [
+      "Precios, paquetes, membresía y punto de equilibrio",
+      "Margen elegido: [ ] % porque [ ]\nServicio | costo | precio =REDONDEAR.MAS(costo/(1-margen),-1)\n[ ] | $[ ] | $[ ]\n[ ] | $[ ] | $[ ]\n[ ] | $[ ] | $[ ]\nPaquete: [servicios] | minutos [ ] | costo $[ ] | precio $[ ] | deja $[ ]\nMembresía: [ ] servicios al mes por $[ ] | vigencia [ ] | ¿se acumulan? [ ] | cancelación [ ] | precio por servicio $[ ] > costo $[ ]\nPunto de equilibrio: =REDONDEAR.MAS((fijos+sueldo)/(precio_promedio-material_promedio),0) → [ ] servicios\n¿Cabe en mis horas cobradas? [ ]  IVA incluido en la lista: [pregunto a mi contador]"
+     ],
+     "clave": [
+      "Precio = costo ÷ (1 − margen), redondeado hacia arriba; multiplicar por (1 + margen) se queda corto.",
+      "Paquetes y membresías se revisan contra el costo; una membresía ilimitada pierde con tus clientes más fieles.",
+      "El punto de equilibrio te dice cuántos servicios necesitas: si no cabe en tus horas, ajusta antes de abrir."
+     ]
+    },
+    {
+     "t": "Agenda, turnos sin cita, inasistencias, precios a la vista y propinas",
+     "obj": "Organizar citas y turnos sin cita, medir y reducir las inasistencias, mostrar precios totales y manejar la propina como voluntaria.",
+     "texto": [
+      "La agenda es donde se gana o se pierde el tiempo de silla que calculaste. Agenda en bloques del tiempo real de cada servicio, con la limpieza incluida, y deja huecos cortos para retrasos. Muchas barberías combinan <b>citas</b> y <b>turnos sin cita</b>: mañanas con cita y tardes por orden de llegada, o una silla para cada modalidad. Lo importante es que el cliente sepa antes de llegar cómo funciona y cuánto esperará, para que no se vaya molesto después de media hora sentado.",
+      "Las <b>inasistencias</b> se miden: citas a las que nadie llegó ÷ citas agendadas. Cada cita perdida cuesta sus minutos por tu costo por minuto, aunque no gastes material. Para bajarlas, confirma el día anterior con un mensaje breve, ofrece cambiar la hora sin complicaciones y ten una lista de espera para llenar huecos. Si decides pedir anticipo en servicios largos, escribe la política completa: cuánto, hasta cuándo se puede cambiar sin perderlo y qué pasa si el retraso es tuyo. Envíala antes de agendar, nunca después.",
+      "La Ley Federal de Protección al Consumidor pide <b>precios totales</b> a la vista (artículo 7 Bis): el cliente debe saber cuánto pagará, con impuestos incluidos, antes de sentarse. Pon tu lista en la entrada y en tus redes, con lo que incluye cada servicio. Evita el «desde $150» sin explicar qué hace subir el precio; si el pelo largo o un diseño cambian el monto, escríbelo en la misma lista con su cantidad.",
+      "La <b>propina</b> es siempre voluntaria. No la sumes a la cuenta ni dejes un porcentaje preseleccionado en la terminal; si la terminal la ofrece, que la opción «sin propina» se vea igual de clara que las demás. Decide por escrito de quién es: lo justo es que llegue completa a quien atendió. El cliente que no deja propina recibe la próxima vez el mismo trato y el mismo cuidado."
+     ],
+     "comparar": [
+      "«Así no: En la terminal ya viene marcado el 10 %; si el cliente no quiere, que lo pida.»",
+      "«Así sí: La terminal muestra “sin propina” igual de visible que las otras opciones, y nadie insiste.»"
+     ],
+     "caso": "Caso ficticio: Ramiro, de 56 años, tiene una barbería de dos sillas en Celaya que siempre atendió por orden de llegada. Los sábados se juntan hasta ocho clientes esperando y algunos se van. Entre semana empezó a dar citas: en octubre agendó 160 y no llegaron 24. Cada cita ocupa 45 minutos con la limpieza y su costo por minuto es de $2.80 (cifras de ejemplo). Su sobrino le configuró la terminal con 10 % de propina preseleccionado, y su lista en la entrada dice «Corte desde $140».",
+     "p": [
+      [
+       "¿Qué porcentaje de inasistencias tuvo Ramiro en octubre?",
+       "15 %: 24 ÷ 160 citas agendadas",
+       "17.6 %: 24 ÷ 136 citas atendidas",
+       "24 %: cada cita perdida cuenta un punto",
+       "Las inasistencias se dividen entre las citas agendadas: 24 ÷ 160 = 0.15, o sea 15 %. Dividir entre las 136 atendidas infla el resultado, y contar cada falta como un punto sólo funcionaría con 100 citas exactas."
+      ],
+      [
+       "¿Cuánto tiempo de silla le costaron esas inasistencias?",
+       "$3,024: 24 × 45 minutos × $2.80",
+       "$2,688: 24 × 40 minutos, sin la limpieza",
+       "Nada, porque no gastó material en esas citas",
+       "Cada cita perdida bloqueó 45 minutos que ya estaban apartados: 24 × 45 = 1,080 minutos; 1,080 × $2.80 = $3,024. Contar 40 minutos olvida que la limpieza también estaba reservada. Y aunque no gaste material, la renta, la luz y su sueldo corren igual."
+      ],
+      [
+       "¿Qué cambia primero en su terminal y en su lista?",
+       "Propina sin preseleccionar y precios totales por servicio",
+       "Deja el 10 %, porque el cliente puede pedir que se lo quiten",
+       "Mantiene el «desde $140» para no espantar a clientes nuevos",
+       "La propina es voluntaria: un porcentaje ya marcado presiona y muchos clientes ni lo notan. La ley pide precios totales a la vista, y un «desde» sin explicar qué hace subir el precio deja al cliente sin saber cuánto pagará. Una lista con montos claros por servicio evita discusiones en la caja."
+      ]
+     ],
+     "completar": [
+      "Las citas a las que nadie llega se llaman ___ y se miden como porcentaje de las agendadas.",
+      "inasistencias"
+     ],
+     "relacionar": [
+      [
+       "Confirmación el día anterior",
+       "Baja las citas perdidas"
+      ],
+      [
+       "Lista en la entrada con montos totales",
+       "Precios a la vista"
+      ],
+      [
+       "Propina ya marcada en la terminal",
+       "Contradice que sea voluntaria"
+      ],
+      [
+       "Mañanas con cita y tardes por llegada",
+       "Agenda mixta"
+      ],
+      [
+       "Política de anticipo",
+       "Se envía antes de agendar"
+      ]
+     ],
+     "refl": "Ordena tu agenda y tus reglas (20 min). 1) Decide cómo combinarás citas y turnos sin cita y escríbelo como lo leerá el cliente. 2) Calcula tus inasistencias del último mes y lo que costaron en tiempo de silla. 3) Redacta tu mensaje de confirmación. 4) Escribe tu lista de precios totales con lo que incluye cada servicio. 5) Escribe tu regla de propinas.",
+     "modelo": "Modelo: «Martes a viernes, citas de 10 a 3 y por orden de llegada de 4 a 8; sábados, sólo citas hasta las 2. En septiembre agendé 90 citas y no llegaron 9: 10 %; con 45 minutos cada una son 405 minutos, y a $2.50 son $1,012.50. Confirmación: “Hola, te esperamos mañana a las 11 para corte y barba; si necesitas cambiar, responde y te doy otra hora.” Lista: corte $170, barba $140, corte y barba $280, precios totales. Propina: voluntaria, sin preselección, para quien atendió.» Es buena porque explica la agenda, mide con números y deja la propina libre.",
+     "plantilla": [
+      "Reglas de agenda, precios y propinas",
+      "Con cita: [días y horas]\nSin cita: [días y horas] | espera aproximada: [ ]\nInasistencias del mes: [no llegaron] ÷ [agendadas] = [ ] %\nCosto en tiempo: [citas] × [minutos] × $[costo por minuto] = $[ ]\nConfirmación (día anterior): [mensaje]\nAnticipo (si aplica): [monto] | cambio sin costo hasta: [ ] | si el retraso es mío: [ ]\nLista de precios totales: [servicio] $[ ] incluye [ ]\nPropina: voluntaria, sin preselección; es de [ ]"
+     ],
+     "clave": [
+      "Mide las inasistencias y confirma el día anterior: cada cita perdida cuesta tiempo de silla aunque no gastes material.",
+      "Precios totales a la vista antes de sentarse; nada de «desde» sin explicar qué cambia el monto.",
+      "La propina es voluntaria: ni sumada a la cuenta ni preseleccionada, y el trato no depende de ella."
+     ]
+    },
+    {
+     "t": "Trabajar con más barberos: sueldo, comisión o renta de silla, IMSS y obligaciones básicas",
+     "obj": "Distinguir una renta de silla real de una relación laboral y conocer las obligaciones básicas si contratas a un barbero o barbera.",
+     "texto": [
+      "Cuando tu agenda ya no alcanza, sumar a otro barbero o barbera parece sencillo, pero el tipo de acuerdo cambia tus obligaciones. Hay tres formas comunes: <b>renta de silla</b>, <b>sueldo</b> (fijo, a veces con comisión) y <b>comisión</b> sobre lo que cobra. El nombre que le pongas al papel no decide nada: decide cómo se trabaja en los hechos.",
+      "La pregunta clave es <b>quién fija el horario, los precios y el material</b>. En una renta de silla real, quien renta llega cuando quiere, pone sus precios, compra su material, tiene su clientela y emite sus propios comprobantes; tú le cobras una cuota por el espacio. Si en cambio tú le pones horario, le entregas tu lista de precios, le surtes el material y le dices a quién atender, lo más probable es que exista una <b>relación laboral</b>, aunque el contrato diga «renta». Revisa el acuerdo con un abogado laboral antes de firmar.",
+      "Si es trabajador, inscríbelo en el <b>IMSS</b> desde su ingreso (la ley da hasta cinco días hábiles; lo seguro es hacerlo antes de que empiece), respeta la jornada máxima y su día de descanso, y págale al menos el salario mínimo que le corresponde y las prestaciones de ley, como aguinaldo y vacaciones. En 2026, según CONASAMI, el mínimo general es de $315.04 diarios; el mínimo profesional de «peluquero(a) y cultor(a) de belleza en general» es de $341.42 en la zona general, y en la Zona Libre de la Frontera Norte rige un único mínimo de $440.87. Cambian cada año: verifícalos. Con comisión, lo que gane en el periodo no debe quedar debajo del mínimo; si una quincena floja no llega, completas la diferencia (confírmalo con tu abogado laboral).",
+      "En cualquier modalidad, pon por escrito lo que se comparte: protocolo de bioseguridad, uso de la silla y las toallas, de quién son los datos de los clientes y que la propina es de quien atendió. Calcula con tu contador lo que cuesta un trabajador, porque al sueldo se suman cuotas e impuestos, y repasa lo básico en «Emprender desde Cero». Reglas claras protegen a tus clientes, a tu equipo y a ti."
+     ],
+     "comparar": [
+      "«Así no: Le digo que es renta de silla, pero entra a las 10, cobra con mi lista y usa mis productos.»",
+      "«Así sí: Si yo pongo horario, precios y material, lo contrato como trabajador y lo doy de alta en el IMSS.»"
+     ],
+     "caso": "Caso ficticio: Sandra, de 39 años, tiene una barbería en Ensenada, Baja California, dentro de la Zona Libre de la Frontera Norte. Quiere sumar a un barbero de 23 años. Le propone «rentarle la silla» por $2,500 a la quincena, pero con horario de 10 a 6 de martes a sábado, su lista de precios y sus productos. Otra opción que evalúa es pagarle 40 % de comisión; calcula que en una quincena floja haría 70 servicios con precio promedio de $220 (cifras de ejemplo).",
+     "p": [
+      [
+       "¿Qué tipo de acuerdo es, en los hechos, lo que propone Sandra?",
+       "Una relación laboral, aunque lo llame renta de silla",
+       "Una renta de silla, porque él pagaría una cuota fija",
+       "Un acuerdo libre entre dos personas que lo firmarían",
+       "Sandra fijaría el horario, los precios y el material: eso apunta a una relación laboral, sin importar que el papel diga «renta». Que él pague una cuota no cambia quién manda en el trabajo, y la firma de los dos no convierte en independiente a alguien que trabaja bajo sus órdenes. Debe revisarlo con un abogado laboral."
+      ],
+      [
+       "Con 40 % de comisión, ¿cuánto ganaría en esa quincena floja y qué hace Sandra?",
+       "$6,160; completa $453.05 para llegar al mínimo",
+       "$6,160; está bien, porque en comisión no aplica el mínimo",
+       "$9,240; queda arriba del mínimo de su zona",
+       "70 × $220 × 0.40 = $6,160. En la Zona Libre el mínimo es de $440.87 diarios: × 15 = $6,613.05 por quincena. Le faltan $6,613.05 − $6,160 = $453.05, que Sandra completa. Los $9,240 son el 60 % que se queda la barbería, no lo que gana él."
+      ],
+      [
+       "Si lo contrata, ¿desde cuándo lo da de alta en el IMSS?",
+       "Desde el primer día de trabajo",
+       "Al terminar un periodo de prueba de tres meses",
+       "Cuando la barbería facture más de cierto monto al año",
+       "El alta en el IMSS va desde el inicio de la relación laboral (la ley da un plazo de hasta cinco días hábiles, y lo más seguro es hacerla antes del primer día): si se lastima con la navaja en su primera semana, debe estar cubierto. Esperar a que pase un periodo de prueba lo deja sin seguro y a ti con un riesgo, y el alta no depende de cuánto facture la barbería."
+      ]
+     ],
+     "completar": [
+      "Si tú fijas horario, precios y material, lo más probable es que haya una relación ___.",
+      "laboral"
+     ],
+     "relacionar": [
+      [
+       "Quien renta pone horario, precios y material",
+       "Renta de silla real"
+      ],
+      [
+       "Tú fijas horario y lista de precios",
+       "Probable relación laboral"
+      ],
+      [
+       "Barbero contratado",
+       "IMSS desde su ingreso"
+      ],
+      [
+       "Zona Libre de la Frontera Norte",
+       "Mínimo único de $440.87 diarios en 2026"
+      ],
+      [
+       "Quincena floja con comisión",
+       "Se completa hasta el mínimo"
+      ]
+     ],
+     "refl": "Decide cómo trabajarías con alguien más (20 min). 1) Describe al barbero o barbera que necesitas y para qué horario. 2) Responde quién fijaría horario, precios y material, y qué modalidad resulta en los hechos. 3) Busca el salario mínimo vigente de tu zona y calcula el de una quincena. 4) Si sería comisión, calcula cuánto ganaría en una quincena floja y cuánto completarías. 5) Lista lo que pondrás por escrito y tus preguntas para el abogado laboral y el contador.",
+     "modelo": "Modelo: «Necesito a alguien de martes a sábado. Yo pondría horario y precios y daría el material, así que sería trabajador, no renta. Estoy en la zona general: mínimo profesional de $341.42 diarios en 2026, $5,121.30 por quincena. Con 35 % de comisión y 60 servicios a $200, ganaría $4,200: completaría $921.30. Por escrito: bioseguridad, uso de toallas, datos de clientes y propina para quien atiende. Preguntas: ¿qué contrato me conviene? ¿Cuánto cuesta con cuotas del IMSS?» Es buena porque decide por los hechos, calcula el mínimo y prevé completar la quincena.",
+     "plantilla": [
+      "Decisión de equipo",
+      "Necesito: [ ] para [días y horas]\nHorario lo fija: [yo / la persona] | precios: [ ] | material: [ ] | clientela: [ ]\nEn los hechos es: [renta de silla / trabajador]\nSi es trabajador: alta en el IMSS desde [fecha de ingreso]; mínimo de mi zona $[ ] diarios × 15 = $[ ] por quincena; prestaciones de ley: [ ]\nSi es comisión: [ ] % × [servicios] × $[precio promedio] = $[ ]; completo hasta el mínimo: $[ ]\nPor escrito: bioseguridad [ ] toallas y silla [ ] datos de clientes [ ] propina [ ]\nPreguntas para el abogado laboral y el contador: [ ]"
+     ],
+     "clave": [
+      "No decide el nombre del acuerdo: decide quién fija horario, precios y material.",
+      "Si es trabajador: IMSS desde su ingreso, al menos el mínimo de tu zona y prestaciones de ley.",
+      "Verifica cada año los mínimos de CONASAMI y revisa el contrato con un abogado laboral."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma el archivo de Excel con los números de tu barbería; es la primera mitad de la parte 4 de tu plan de apertura. 1) Hoja de gastos fijos con =SUMA() y tu sueldo. 2) Costo por minuto con horas cobradas y =REDONDEAR(). 3) Costo de tres servicios con minutos medidos, material y merma. 4) Precio de cada uno con costo ÷ (1 − margen) y =REDONDEAR.MAS(), un paquete y, si la ofrecerás, una membresía con reglas. 5) Punto de equilibrio comparado con tus horas cobradas. 6) Una hoja con tus inasistencias del último mes (o cómo las medirás), tu lista de precios totales y tu decisión sobre el equipo.",
+    "entregable": "Un archivo de Excel con gastos fijos, costo por minuto, costo y precio de tres servicios, paquete, membresía, punto de equilibrio y control de inasistencias, más una página con tu lista de precios totales, tu regla de propinas y tu decisión de equipo.",
+    "criterios": "Revisa: el costo por minuto incluye tu sueldo y usa horas cobradas, cada servicio suma material con merma, los precios usan costo ÷ (1 − margen) redondeado hacia arriba, el paquete y la membresía quedan arriba del costo, la lista muestra precios totales y la propina es voluntaria, y la decisión de equipo se basa en quién fija horario, precios y material."
+   },
+   "lab": {
+    "t": "Los números de una barbería de dos sillas en Tlaxcala",
+    "obj": "Aplicar costo, precio, agenda y decisión de equipo a una barbería real de barrio, con cifras de ejemplo.",
+    "esc": "<b>Hugo,</b> de 30 años, tiene desde hace un año una barbería de dos sillas en Tlaxcala. Él atiende la primera; la segunda está vacía casi siempre. Los clientes le dicen que es «barato», pero a fin de mes apenas paga la renta. Te pide ayuda para revisar sus números antes de decidir qué hace con la segunda silla. Todas las cifras son de ejemplo.",
+    "e": [
+     [
+      "Escena 1: Hugo junta sus gastos fijos: $9,000 al mes. Quiere un sueldo de $12,000. El local abre 200 horas al mes, pero él cobra unas 125. Su corte con degradado ocupa 45 minutos con la limpieza y lleva $18 de material, con 8 % de merma.",
+      "Consigna: calcula su costo por minuto y el costo del corte con las fórmulas en Excel. Escribe en dos líneas por qué no debe dividir entre las horas de apertura."
+     ],
+     [
+      "Escena 2: Hoy cobra $160 por ese corte. Quiere 30 % de margen y un primo le propone una membresía «ilimitada» por $500 al mes.",
+      "Consigna: calcula el precio con margen y redondeo hacia arriba, y diseña una membresía con número de servicios, vigencia y cancelación que no pierda dinero."
+     ],
+     [
+      "Escena 3: Los sábados se le juntan clientes sin cita; entre semana, de 80 citas al mes no llegan 10. Su terminal sugiere 15 % de propina ya marcado y su lista dice «Corte desde $160».",
+      "Consigna: escribe su regla de agenda mixta, su mensaje de confirmación, su lista de precios totales y su regla de propinas, y calcula su porcentaje de inasistencias."
+     ],
+     [
+      "Escena 4: Una barbera de 27 años quiere la segunda silla. Hugo quiere cobrarle una cuota, pero también que trabaje de 10 a 6, cobre con su lista y use sus productos.",
+      "Consigna: escribe qué acuerdo le conviene a los dos según quién fija horario, precios y material, qué debe ir por escrito y qué preguntará al abogado laboral."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué costo por minuto obtiene Hugo?",
+      "$2.80: $21,000 ÷ 7,500 minutos cobrados",
+      "$1.75: $21,000 ÷ 12,000 minutos de apertura",
+      "$1.20: $9,000 ÷ 7,500 minutos, sin su sueldo",
+      "Gastos fijos más sueldo: $9,000 + $12,000 = $21,000; horas cobradas: 125 × 60 = 7,500 minutos; $21,000 ÷ 7,500 = $2.80. Dividir entre 200 horas de apertura (12,000 minutos) reparte el costo en tiempo que nadie paga, y sin sueldo el minuto parece de $1.20 porque su trabajo queda gratis."
+     ],
+     [
+      "Con 30 % de margen, ¿qué precio corresponde a su corte, redondeado hacia arriba a la decena?",
+      "$210: $145.44 ÷ 0.70 = $207.77",
+      "$190: $145.44 × 1.30 = $189.07",
+      "$180: $126.00 ÷ 0.70, sin el material",
+      "Costo: 45 × $2.80 = $126.00 de tiempo, más $18 × 1.08 = $19.44 de material: $145.44. Precio: $145.44 ÷ 0.70 = $207.77, que sube a $210. Multiplicar por 1.30 deja un margen real menor, y olvidar el material da $180. Con $160 cubre su costo, pero cobra $50 menos del precio que necesita."
+     ],
+     [
+      "Para la segunda silla, ¿qué acuerdo protege más a los dos?",
+      "Renta real por escrito: ella fija horario, precios y material",
+      "Renta, pero con el horario y la lista de precios de Hugo",
+      "Un trato de palabra, para no complicarse con papeles",
+      "Si ella renta, debe decidir su horario, sus precios y su material, y el acuerdo por escrito dice qué incluye la cuota, cómo se comparten toallas y protocolo y de quién son los datos de sus clientes. Si Hugo quiere fijar horario y precios, lo honesto es contratarla como trabajadora con IMSS. Un trato de palabra deja a los dos sin protección."
+     ]
+    ],
+    "pl": [
+     "Tablero de números de la barbería",
+     "Gastos fijos: $[ ] | sueldo: $[ ] | horas cobradas: [ ] → costo por minuto: $[ ]\nServicio | minutos | material con merma | costo | margen | precio\n[ ] | [ ] | $[ ] | $[ ] | [ ] % | $[ ]\nPaquete o membresía: [reglas] | precio por servicio $[ ] > costo $[ ]\nPunto de equilibrio: [ ] servicios al mes | ¿cabe en mis horas? [ ]\nInasistencias: [ ] ÷ [ ] = [ ] % | confirmación: [ ]\nLista de precios totales: [ ] | propina: voluntaria, sin preselección\nSegunda silla: [renta real / trabajador] porque [quién fija horario, precios y material]\n(Cifras de ejemplo)"
+    ]
+   },
+   "quiz": [
+    [
+     "Tu barbería abre 220 horas al mes, pero cobras unas 110. ¿Entre qué divides para sacar el costo por minuto?",
+     "Entre 110 horas × 60, las que de verdad cobras",
+     "Entre 220 horas × 60, porque pagas renta todo ese tiempo",
+     "Entre 30 días, para conocer primero el costo diario",
+     "Entre los clientes del mes anterior, sin contar minutos"
+    ],
+    [
+     "Un afeitado lleva $24 de material y usas 8 % de merma. ¿Cuánto material cargas a su costo?",
+     "$25.92: $24 × 1.08",
+     "$24.00, porque la merma es mínima",
+     "$26.09, al dividir $24 entre 0.92",
+     "$24.08, al sumarle ocho centavos"
+    ],
+    [
+     "Tu corte cuesta $150 y quieres 20 % de margen. ¿Qué precio da =REDONDEAR.MAS(150/(1-0.2),-1)?",
+     "$190: $187.50 hacia arriba",
+     "$180, igual que $150 × 1.20",
+     "$187.50, porque no redondea",
+     "$200, porque redondea a la centena"
+    ],
+    [
+     "Ofreces cortes ilimitados por $500 al mes y tu corte cuesta $130. Un cliente viene cada semana, cuatro veces en el mes. ¿Qué pasa?",
+     "Pierdes $20: te cuesta $520 y pagó $500",
+     "Ganas $370: los $500 menos el costo de un corte",
+     "Quedas igual, porque otros clientes vienen menos",
+     "Ganas $500, porque ya cobraste por adelantado"
+    ],
+    [
+     "Gastos fijos $9,000, sueldo $12,000, precio promedio $250 y material promedio $40. ¿Cuántos servicios necesitas al mes?",
+     "100: $21,000 ÷ $210",
+     "84, al dividir $21,000 entre $250",
+     "43, al dividir $9,000 entre $210",
+     "36, al dividir $9,000 entre $250"
+    ],
+    [
+     "Tu lista dice «Corte $180 + IVA». ¿Qué corriges?",
+     "Pongo el precio total, con el IVA ya incluido",
+     "Nada, si lo explico al momento de cobrar",
+     "Quito la leyenda y cobro el IVA sólo a quien pide factura",
+     "Lo dejo así, porque se ve más barato y atrae clientes"
+    ],
+    [
+     "Un cliente no dejó propina y tu compañero propone atenderlo más rápido la próxima vez. ¿Qué haces?",
+     "Le recuerdas que es voluntaria y el servicio es igual",
+     "Nada: es justo atender mejor a quien deja propina",
+     "Le sumas 10 % de propina a ese cliente en su próxima cuenta",
+     "Le pides al cliente que deje algo la próxima vez"
+    ],
+    [
+     "Agendaste 200 citas en el mes y no llegaron 24. ¿Qué haces primero?",
+     "Calculas 12 % y empiezas a confirmar el día anterior",
+     "Cobras una multa a todos, sin haberlo avisado antes",
+     "Dejas de dar citas y atiendes sólo por orden de llegada",
+     "Agendas dos clientes en cada horario por si uno falta"
+    ],
+    [
+     "Rentas una silla a un barbero, pero le exiges horario de 10 a 6, tu lista de precios y tus productos. ¿Qué es lo más probable?",
+     "Que sea una relación laboral, con IMSS y prestaciones",
+     "Que siga siendo renta, porque él paga una cuota fija",
+     "Que no importe, si los dos firmaron un contrato de renta",
+     "Que sea renta mientras el acuerdo dure menos de un año"
+    ],
+    [
+     "Contratas con sueldo fijo a una barbera en Cuernavaca, en la zona general. ¿Qué mínimo diario de 2026 tomas como referencia, antes de verificarlo?",
+     "$341.42, el profesional de peluquero(a)",
+     "$315.04, el general, porque es el más bajo",
+     "$440.87, el de la Zona Libre de la Frontera Norte",
+     "Ninguno, si ella acepta menos por escrito"
+    ]
+   ]
+  },
+  {
+   "t": "Clientela, permisos y proyecto final",
+   "r": "Muestra tu trabajo con honestidad, crea una experiencia que haga volver, arma tu ruta de permisos y crece sin perder calidad; cierras con el plan de apertura de tu barbería.",
+   "lecciones": [
+    {
+     "t": "Portafolio y redes: fotos propias, permiso del cliente y publicidad veraz",
+     "obj": "Armar un portafolio sólo con trabajo propio, con permiso por escrito de cada cliente, y anunciarte sin prometer lo que no puedes cumplir.",
+     "texto": [
+      "En barbería el cliente elige por fotos: antes de sentarse ya revisó tus degradados y tus barbas en redes. Por eso tu portafolio funciona como una promesa, y la Ley Federal de Protección al Consumidor (artículo 32) pide que la publicidad sea <b>veraz</b> y comprobable. Publica sólo cortes tuyos, hechos en clientes o en modelos de práctica, y aclara cuando sea práctica. Las fotos descargadas de otra cuenta, aunque sepas reproducir ese corte, no son tu trabajo.",
+      "Cuida que la foto muestre lo que el cliente va a recibir. Ajustar la luz, enderezar o recortar el fondo está bien; borrar escalones del degradado, rellenar huecos de la barba o suavizar la piel con un filtro, no. Toma la foto al terminar, con luz pareja, de frente, de lado y de la nuca, y si el cliente acepta, otra a las dos semanas, cuando el pelo ya creció: así se ve cómo se mantiene tu corte. Evita superlativos que no puedes demostrar, como «el mejor degradado de la ciudad», y promesas falsas, como una loción que «detiene la caída»: la calvicie común la trata un dermatólogo.",
+      "Una foto con la cara, un tatuaje o una cicatriz identifica a la persona: es un dato personal. Pide un <b>permiso</b> por escrito, separado de la ficha, que diga dónde se publicará y cómo se puede pedir que se retire. Con menores de edad, el permiso lo firma su mamá, papá o tutor, y aun así conviene no mostrar la cara. Quien dice que no recibe el mismo servicio al mismo precio.",
+      "Tu perfil completa el portafolio: menú con precios totales, ubicación, horario, cómo agendar y tu formación dicha con exactitud; si no estás certificado, no lo digas. Contesta los mensajes con la misma cortesía que en la silla. Para los anuncios pagados y la estrategia de contenido, apóyate en «Marketing Digital y Redes Sociales»."
+     ],
+     "comparar": [
+      "«Así no: Subo degradados de otras cuentas para que mi perfil se vea lleno y le pongo filtro a la piel de mis clientes.»",
+      "«Así sí: Publico sólo mis cortes, con luz pareja y sin filtros sobre el resultado, y cada foto tiene permiso por escrito.»"
+     ],
+     "caso": "Caso ficticio: Alejandra, de 26 años, renta una silla en una barbería de Coyoacán, Ciudad de México, y abrió su perfil hace dos meses con seis fotos propias. Un amigo le sugiere subir degradados de otras cuentas «para que se vea lleno». Quiere usar un filtro que borra los granitos de la nuca de un cliente. Ayer le hizo un diseño de líneas a un niño de 10 años y la mamá le dijo de palabra «sí, súbelo». Además, el dueño le pide anunciar una loción «que detiene la caída del pelo» que venden en el mostrador.",
+     "p": [
+      [
+       "¿Qué le responde Alejandra a su amigo?",
+       "Que no: sólo publica su trabajo, aunque crezca despacio",
+       "Que sí, si elige cortes que ella ya sabe hacer igual",
+       "Que sí, si las mezcla con las suyas sin destacarlas",
+       "Mezclar fotos ajenas hace creer que ese es su trabajo, y la publicidad debe ser veraz y comprobable. Saber hacer un corte parecido no vuelve suya la foto, y mezclarlas sin destacarlas es justo lo que engaña. Un perfil con pocas fotos reales vale más que uno lleno de promesas ajenas."
+      ],
+      [
+       "¿Cómo publica el diseño del niño de 10 años?",
+       "Con permiso escrito de la mamá y sin mostrar la cara",
+       "Lo sube ya, porque la mamá le dijo que sí de palabra",
+       "Lo sube sin etiquetar a la mamá ni decir el nombre",
+       "Con menores, el permiso lo firma su mamá, papá o tutor, por escrito y separado de la ficha, y conviene no mostrar la cara aunque lo tenga. Un sí de palabra no deja constancia de qué se autorizó ni dónde, y quitar el nombre no evita que la cara lo identifique."
+      ],
+      [
+       "¿Qué hace con el anuncio de la loción?",
+       "No promete que detiene la caída; eso lo ve un dermatólogo",
+       "La anuncia, porque si el dueño la vende debe funcionar",
+       "La anuncia con la aclaración «resultados variables»",
+       "Ninguna loción de barbería cura la calvicie común; sus tratamientos eficaces son médicos y los indica un dermatólogo. Anunciarla así es publicidad engañosa, venga de quien venga. Agregar «resultados variables» no corrige una promesa que no se puede comprobar."
+      ]
+     ],
+     "completar": [
+      "La publicidad debe ser ___ y comprobable: muestra sólo tu trabajo y sin filtros que cambien el resultado.",
+      "veraz"
+     ],
+     "relacionar": [
+      [
+       "Foto de otra cuenta en tu perfil",
+       "Publicidad engañosa"
+      ],
+      [
+       "Recortar el fondo o ajustar la luz",
+       "Ajuste válido"
+      ],
+      [
+       "Filtro que borra escalones",
+       "Cambia el resultado"
+      ],
+      [
+       "Corte de un niño",
+       "Permiso de su mamá, papá o tutor"
+      ],
+      [
+       "«Barbero certificado» sin certificado",
+       "Formación dicha sin exactitud"
+      ]
+     ],
+     "refl": "Revisa tu portafolio (20 min). 1) Revisa tus últimas 12 publicaciones y marca cuáles son trabajo tuyo, cuáles tienen un filtro que cambia el resultado y cuáles tienen permiso por escrito. 2) Decide qué retiras. 3) Redacta tu permiso para fotos, con una versión para menores firmada por mamá, papá o tutor. 4) Escribe tu guía de fotos: ángulos, luz y foto a las dos semanas. 5) Cambia dos frases de tu perfil que no puedas demostrar.",
+     "modelo": "Modelo: «De 12 publicaciones, 2 eran degradados de otra cuenta: las borro. Tres tenían un filtro que suavizaba la piel: las vuelvo a tomar. Permiso: “Autorizo a la barbería a publicar fotos de mi corte en su perfil, sin mi nombre; puedo pedir que se retiren escribiendo al número de la barbería.” Para menores, firma su mamá, papá o tutor y no se ve la cara. Guía: frente, lado y nuca, con luz pareja. Cambio “el mejor degradado de la colonia” por “degradados bajos, medios y altos, con cita”.» Es buena porque quita lo engañoso, pide permisos claros y cambia superlativos por hechos.",
+     "plantilla": [
+      "Permiso para fotos y guía de portafolio",
+      "Yo, [nombre], autorizo a [barbería] a publicar fotos de mi [corte / barba / diseño] tomadas el [fecha] en [perfil, catálogo, otro].\n[ ] Sin mi nombre  [ ] Sin mi rostro  [ ] Otra condición: [ ]\nSi es menor de edad: firma de su [mamá / papá / tutor]: [ ]\nPuedo pedir que se retiren escribiendo a [contacto]. Si no acepto, recibo el mismo servicio al mismo precio.\nFirma: [ ]  Fecha: [ ]\nGuía de foto: frente [ ] lado [ ] nuca [ ] | luz [ ] | sin filtros sobre el resultado | foto de seguimiento a las [ ] semanas"
+     ],
+     "clave": [
+      "Publica sólo trabajo tuyo y sin filtros que cambien el resultado: la publicidad debe ser veraz y comprobable.",
+      "Cada foto con permiso por escrito, aparte de la ficha; con menores, firma su mamá, papá o tutor.",
+      "Nada de superlativos ni promesas que no puedes demostrar, como lociones que «curan» la calvicie."
+     ]
+    },
+    {
+     "t": "La experiencia que hace volver: trato, ambiente respetuoso, fidelidad y el barbero como aliado de la salud",
+     "obj": "Diseñar una experiencia y un trato que hagan volver al cliente, medir su fidelidad y referir al médico cuando haga falta, sin diagnosticar.",
+     "texto": [
+      "Una barbería vive de clientes que regresan, y regresan por algo más que el corte. La experiencia empieza antes de llegar: cita clara, confirmación y precio conocido. Sigue en la silla: consulta, explicar lo que harás, preguntar si está cómodo y cumplir el tiempo prometido. Y termina con la recomendación de cuándo volver y la siguiente cita, si la quiere.",
+      "El <b>ambiente respetuoso</b> también es parte del servicio. Una barbería donde se hacen chistes sexistas, comentarios sobre el cuerpo o burlas sobre el pelo de alguien aleja a clientes y a barberas. Pon reglas de trato por escrito para todo el equipo: música a un volumen que deje platicar, nada de comentarios sobre el físico y la misma atención para un niño, un adulto mayor, un cliente con pelo afro o una mujer que pide un corte corto. A quien llega en silla de ruedas o con bastón, pregúntale qué necesita.",
+      "Mide la <b>fidelidad</b>: de los clientes que atendiste en un periodo, cuántos regresaron dentro del plazo que les recomendaste. Si baja, pregunta con respeto a quien no volvió. Un programa de lealtad, como un servicio de cortesía cada cierto número de visitas, funciona si sus reglas están por escrito.",
+      "Además, puedes ser un <b>aliado de la salud</b>. En un ensayo en 52 barberías de Los Ángeles (Victor y colaboradores, 2018) con 319 hombres negros con presión alta, en el grupo donde farmacéuticos atendían dentro de la barbería la presión sistólica bajó 27.0 mmHg a los seis meses, frente a 9.3 mmHg en el grupo de comparación; el 63.6 % llegó a menos de 130/80, contra el 11.7 %. Y en una encuesta en Houston (Bailey y colaboradores, 2011), el 37.1 % de los profesionales del pelo revisaba el cuero cabelludo de más de la mitad de sus clientes. La enseñanza no es que tú diagnostiques: es que la confianza de la silla sirve para <b>referir</b>. Si ves un lunar que cambió o un cliente te cuenta que dejó su tratamiento, sugiérele ver a su médico o ir al centro de salud, sin dar diagnósticos ni recomendar medicamentos."
+     ],
+     "comparar": [
+      "«Así no: Le tomo la presión al cliente y le digo si debe volver a sus pastillas o no.»",
+      "«Así sí: Le digo con calma que vale la pena que lo revise su médico pronto, y le doy el dato del centro de salud.»"
+     ],
+     "caso": "Caso ficticio: Josué, de 48 años, tiene una barbería en Campeche desde hace 12 años y le renta la otra silla a un compañero. Ese compañero bromea sobre el peso de los clientes y, cuando llega una clienta con pelo corto, sobre los «cortes de hombre». Un cliente fiel de 57 años le cuenta que le duele la cabeza seguido y que dejó sus pastillas para la presión «porque ya se sentía bien». Josué piensa comprar un aparato para tomar la presión y decirle a cada cliente si está «bien o mal». En el último trimestre atendió a 150 clientes y 96 regresaron dentro de seis semanas.",
+     "p": [
+      [
+       "¿Qué hace Josué con el cliente que dejó sus pastillas?",
+       "Con calma, le sugiere ver pronto a su médico o al centro de salud",
+       "Le toma la presión y le dice si debe volver a sus pastillas",
+       "Le recomienda un té para la presión que a él le funcionó",
+       "Josué no diagnostica ni decide sobre medicamentos: lo que sí puede hacer es usar la confianza de la silla para que el cliente busque atención. Tomarle la presión y decidir por él es un acto médico, y un remedio casero puede retrasar el tratamiento que necesita. Si en la silla tuviera un dolor de cabeza muy fuerte y repentino, dolor en el pecho o dificultad para hablar, se llama al 911."
+      ],
+      [
+       "¿Qué hace con las bromas de su compañero?",
+       "Habla con él en privado y pone reglas de trato por escrito",
+       "Lo deja pasar, porque en las barberías siempre se bromea",
+       "Le pide que sólo bromee cuando no haya clientas",
+       "Los comentarios sobre el cuerpo o sobre lo que «le toca» a cada quien alejan clientes y lastiman. Hablar en privado evita exhibirlo, y las reglas escritas aplican a todos, también a quien renta la silla. Bromear sólo cuando no hay clientas sigue ofendiendo a los clientes y mantiene el mismo ambiente."
+      ],
+      [
+       "¿Cuál es la fidelidad de Josué en el trimestre?",
+       "64 %: 96 ÷ 150",
+       "36 %: 54 ÷ 150",
+       "96 %: cada cliente que regresó es un punto",
+       "Fidelidad: clientes que regresaron ÷ clientes atendidos = 96 ÷ 150 = 0.64, o sea 64 %. El 36 % son los 54 que no volvieron, a quienes conviene preguntarles qué pasó. Contar un punto por cliente sólo funcionaría si hubiera atendido exactamente a 100."
+      ]
+     ],
+     "completar": [
+      "La confianza de la silla sirve para ___ al médico, no para diagnosticar.",
+      "referir"
+     ],
+     "refl": "Diseña la experiencia de tu barbería (20 min). 1) Anota qué harás antes de que llegue el cliente, mientras está en la silla y al despedirlo. 2) Redacta cinco reglas de trato para tu equipo. 3) Calcula tu fidelidad del último trimestre o define cómo la medirás. 4) Escribe la frase con la que sugerirás a un cliente ver al médico, sin diagnosticar. 5) Anota a qué centro de salud o servicio cercano puedes referir.",
+     "modelo": "Modelo: «Antes: confirmo un día antes con la hora y el precio. Durante: explico lo que haré y pregunto si va bien la temperatura de la toalla. Después: le digo en cuántas semanas conviene volver y le ofrezco la cita. Reglas: nada de comentarios sobre el cuerpo ni chistes sexistas; trato igual para todos; música baja. Fidelidad: 120 clientes, 78 regresaron: 65 %. Frase: “Vi algo en tu nuca que vale la pena que revise un médico; no sé qué es, pero mejor que lo vea.” Centro de salud a tres cuadras.» Es buena porque cuida cada momento, mide con datos y refiere sin diagnosticar.",
+     "plantilla": [
+      "Experiencia, trato y salud",
+      "Antes: [confirmación] [precio total] [cómo llegar]\nDurante: [consulta] [explicación] [comodidad]\nDespués: [cuándo volver] [siguiente cita]\nReglas de trato del equipo: 1) [ ] 2) [ ] 3) [ ] 4) [ ] 5) [ ]\nFidelidad: atendí [ ]; regresaron en [ ] semanas [ ] → [ ] %\nPrograma de lealtad: [beneficio] | reglas por escrito: [ ]\nFrase para referir sin diagnosticar: [ ]\nA dónde refiero: [médico, centro de salud] | Emergencia: 911"
+     ],
+     "clave": [
+      "La experiencia tiene antes, durante y después; ofrece la siguiente cita antes de que el cliente se vaya.",
+      "Reglas de trato por escrito: sin chistes sexistas ni comentarios sobre el cuerpo, para todos por igual.",
+      "Eres aliado de la salud cuando refieres al médico, nunca cuando diagnosticas o recomiendas medicamentos."
+     ]
+    },
+    {
+     "t": "Permisos para abrir: aviso sanitario, licencia municipal, uso de suelo y protección civil básica",
+     "obj": "Armar tu ruta de permisos en el orden correcto y saber qué preguntar en tu municipio, a la autoridad sanitaria de tu estado y en el SAT.",
+     "texto": [
+      "Antes de firmar una renta o de pintar el local, arma tu ruta de permisos. Cambia según el estado y el municipio, así que esta lección te da las preguntas, no las respuestas finales: verifica en tu municipio, con la autoridad sanitaria de tu estado y en el SAT. El orden importa. Primero, el <b>uso de suelo</b>: si el municipio no permite una barbería en ese domicilio, todo lo demás se cae, y ya habrás pagado depósito y adaptaciones.",
+      "En lo sanitario, la Ley General de Salud (artículo 200 Bis) distingue entre establecimientos que presentan <b>aviso de funcionamiento</b> y los que requieren licencia sanitaria. Las barberías entran en la clase 812110 del SCIAN, y lo más probable es que te toque aviso, pero pregunta en tu estado. Algunos ejemplos: en la Ciudad de México, el aviso se presenta en línea al menos 30 días antes de abrir; en Jalisco, el reglamento estatal pide licencia sanitaria con vigencia de dos años y tarjeta de salud del personal; algunos municipios, como Montemorelos, Nuevo León, tienen su propio reglamento con tarjeta sanitaria. Lo de otro estado te sirve de referencia, no de regla.",
+      "En el municipio, pregunta por la <b>licencia de funcionamiento</b> o el permiso que usen para comercios de bajo riesgo, por el anuncio de la fachada y por <b>protección civil</b>: qué revisan en un local pequeño, como extintor, botiquín, salidas libres e instalación eléctrica. Aunque no te lo pidan, tenlo: un calentador de toallas, un secador y tres máquinas cargando en el mismo contacto son un riesgo real.",
+      "En el SAT, tu alta y tu régimen se ven a detalle en «Emprender desde Cero» y en «Contabilidad Básica, RESICO y Facturación CFDI 4.0». Como referencia, en 2026 el RESICO de personas físicas aplica hasta $3.5 millones de ingresos al año, con tasas de 1 % a 2.5 % sobre lo cobrado; según la reforma publicada en noviembre de 2026, el tope sube a $5 millones desde el 1 de enero de 2027: confirma con tu contador y en el SAT. Guarda cada trámite en una carpeta con fecha, folio y vigencia, y anota cuándo renovarlo."
+     ],
+     "comparar": [
+      "«Así no: Firmo hoy, que aquí ya hubo una estética; los permisos los saco cuando ya esté abierto.»",
+      "«Así sí: Antes de firmar, pregunto en el municipio si ahí se permite una barbería, y después sigo con lo sanitario.»"
+     ],
+     "caso": "Caso ficticio: Mónica, de 35 años, quiere abrir su barbería en Tepic, Nayarit, en una casa adaptada sobre una calle residencial. El dueño le pide firmar hoy un contrato de dos años con depósito y le asegura: «aquí antes hubo una estética, no necesitas nada». Una amiga que abrió en Jalisco le dice que allá le pidieron licencia sanitaria y que «en Nayarit debe ser igual». Mónica ya compró un letrero luminoso grande para la fachada.",
+     "p": [
+      [
+       "¿Qué hace Mónica con el contrato?",
+       "Pide tiempo y verifica el uso de suelo antes de firmar",
+       "Firma hoy, porque si hubo una estética el permiso sigue",
+       "Firma y tramita el uso de suelo después de abrir",
+       "El uso de suelo va primero: una calle residencial puede no permitir el giro, y que antes hubiera una estética no garantiza que el permiso siga vigente ni que aplique a una barbería. Firmar antes la deja atada a dos años de renta por un local donde quizá no pueda abrir."
+      ],
+      [
+       "¿Qué hace con lo que le contó su amiga de Jalisco?",
+       "Pregunta a la autoridad sanitaria de Nayarit qué le toca",
+       "Tramita licencia como en Jalisco, porque es estado vecino",
+       "No hace trámite sanitario: una barbería no es una clínica",
+       "Cada estado decide si pide aviso de funcionamiento o licencia y con qué requisitos; lo de Jalisco sirve de referencia, no de regla. Que una barbería no sea clínica no la exime: la autoridad sanitaria de su estado le dirá qué presentar."
+      ],
+      [
+       "¿Qué hace con el letrero luminoso?",
+       "Pregunta en el municipio si su anuncio requiere permiso",
+       "Lo instala ya, porque es su fachada y su negocio",
+       "Lo instala y lo retira sólo si alguien se queja",
+       "Los anuncios en fachada suelen tener reglas municipales de tamaño, iluminación y permiso. Instalarlo sin preguntar puede costarle una multa o retirarlo, y esperar a una queja convierte el ahorro de un trámite en un gasto mayor."
+      ]
+     ],
+     "completar": [
+      "Lo primero de tu ruta de permisos, antes de firmar la renta, es el uso de ___.",
+      "suelo"
+     ],
+     "relacionar": [
+      [
+       "Uso de suelo",
+       "Antes de firmar la renta"
+      ],
+      [
+       "Aviso de funcionamiento o licencia",
+       "Autoridad sanitaria de tu estado"
+      ],
+      [
+       "Extintor, botiquín y salidas libres",
+       "Protección civil"
+      ],
+      [
+       "Alta y régimen fiscal",
+       "SAT y tu contador"
+      ],
+      [
+       "Letrero en la fachada",
+       "Permiso municipal de anuncios"
+      ]
+     ],
+     "refl": "Arma tu ruta de permisos (20 min). 1) Escribe tu domicilio y la pregunta de uso de suelo para tu municipio. 2) Averigua cuál es la autoridad sanitaria de tu estado y anota la pregunta sobre aviso o licencia. 3) Lista lo que revisará protección civil y lo que ya tienes. 4) Anota tus preguntas para el SAT y tu contador. 5) Ordena todo en una tabla con fecha, folio y vigencia.",
+     "modelo": "Modelo: «Local en avenida, colonia mixta. 1) Uso de suelo: pregunto en desarrollo urbano del municipio antes de firmar; si sale negativo, no rento. 2) Sanitario: pregunto a la autoridad sanitaria de mi estado si presento aviso de funcionamiento o licencia y qué piden a las barberías. 3) Municipio: licencia de funcionamiento y permiso del anuncio. 4) Protección civil: extintor vigente, botiquín, salida libre y revisión eléctrica. 5) SAT: alta y régimen con mi contador; pregunto por RESICO y el cambio de 2027. Carpeta con folio, fecha y vigencia.» Es buena porque respeta el orden y convierte cada duda en una pregunta concreta.",
+     "plantilla": [
+      "Ruta de permisos",
+      "Domicilio: [ ] | ¿Firmé ya? [no, hasta tener uso de suelo]\n1) Uso de suelo | dónde: [municipio] | pregunta: [ ] | respuesta: [ ] | fecha: [ ]\n2) Sanitario: [aviso / licencia] | autoridad de mi estado: [ ] | requisitos: [ ] | folio: [ ]\n3) Licencia de funcionamiento | [ ] | vigencia: [ ]\n4) Anuncio en fachada | [ ]\n5) Protección civil: extintor [ ] botiquín [ ] salidas libres [ ] instalación eléctrica [ ]\n6) SAT y contador: régimen [ ] | preguntas: [ ]\nRenovaciones: [trámite] [fecha]\n(Verifica en tu municipio, con la autoridad sanitaria de tu estado y en el SAT)"
+     ],
+     "clave": [
+      "Uso de suelo primero, antes de firmar o adaptar el local.",
+      "Aviso o licencia sanitaria depende de tu estado: lo de otro lugar es referencia, no regla.",
+      "Protección civil y fisco también cuentan: guarda cada trámite con folio, fecha y vigencia."
+     ]
+    },
+    {
+     "t": "Crecer sin perder calidad: estándares escritos, aprendices y venta de productos",
+     "obj": "Escribir el manual de estándares de tu barbería, formar aprendices con supervisión y vender productos con etiqueta y sin promesas falsas.",
+     "texto": [
+      "Crecer puede ser sumar una silla, abrir otro local o vender productos. El riesgo es que la calidad dependa de quién atienda ese día. La defensa es un manual de <b>estándares</b> escrito: tu protocolo de bioseguridad, la consulta y la ficha, la secuencia de tus cortes, los protocolos de afeitado y de tinte, las reglas de trato y de agenda. Si algo sólo vive en tu cabeza, el día que no estés no existe.",
+      "Un <b>aprendiz</b> avanza mejor con un plan por etapas: qué observa, qué practica en maniquí, qué hace con clientes bajo supervisión y quién aprueba cada paso. La navaja y el tinte, sólo cuando su supervisor lo apruebe y siempre con él cerca. Avisa al cliente que lo atiende alguien en formación y ajusta el precio. Si el aprendiz trabaja con horario y bajo tus órdenes, puede haber relación laboral aunque esté aprendiendo: revísalo con un abogado laboral.",
+      "La <b>venta de productos</b> (pomadas, ceras, aceites) puede sumar ingresos, pero cada frasco lleva tu reputación. La NOM-141-SSA1/SCFI-2012 pide que los cosméticos preenvasados traigan etiqueta en español con los datos que exige: no vendas frascos sin etiqueta ni de origen dudoso. Recomienda sólo lo que de verdad usas y explica para qué sirve: una pomada fija, un aceite suaviza. Nada de lociones contra la calvicie: esos tratamientos los indica un dermatólogo. Calcula el margen de cada producto: (precio − costo) ÷ precio.",
+      "Crece con indicadores, no con corazonadas: servicios por semana, fidelidad, inasistencias, quejas, incidentes de bioseguridad y costo por minuto real contra el planeado. Revísalos cada mes y abre la siguiente silla o el siguiente local sólo cuando lo que ya tienes funcione igual sin ti. Una segunda sucursal con estándares flojos no duplica tu negocio: duplica tus problemas."
+     ],
+     "comparar": [
+      "«Así no: Cada barbero hace el degradado a su manera; total, todos saben cortar.»",
+      "«Así sí: El degradado de la casa está escrito paso a paso y cada barbero lo revisa conmigo antes de atender solo.»"
+     ],
+     "caso": "Caso ficticio: Néstor, de 60 años, tiene una barbería de tres sillas en Cuernavaca desde hace 25 años y quiere abrir una segunda sucursal. Nada está escrito: cada barbero hace el degradado distinto. Su sobrina de 20 años es aprendiz, ya hace degradados en maniquí y quiere afeitar con navaja a un cliente el sábado, cuando Néstor estará en el otro local. Un proveedor le ofrece un aceite de barba artesanal sin etiqueta «que hace crecer la barba». La pomada que ya vende le cuesta $96 y la vende a $160 (cifras de ejemplo).",
+     "p": [
+      [
+       "¿Qué responde Néstor a su sobrina sobre el afeitado del sábado?",
+       "Que no afeita sin su supervisor; ese día hace lo ya aprobado",
+       "Que afeite, si el cliente acepta que lo atienda una aprendiz",
+       "Que afeite sólo a clientes conocidos y con hoja nueva",
+       "La navaja exige práctica supervisada y la aprobación de quien la forma; sin Néstor cerca no hay supervisión. Que el cliente acepte o sea conocido no cambia el riesgo de un corte, y la hoja nueva es obligatoria siempre, no un permiso para afeitar sola."
+      ],
+      [
+       "¿Qué margen le deja la pomada?",
+       "40 %: ($160 − $96) ÷ $160",
+       "66.7 %: ($160 − $96) ÷ $96",
+       "60 %: $96 ÷ $160",
+       "El margen se calcula sobre el precio: $160 − $96 = $64; $64 ÷ $160 = 0.40, o sea 40 %. Dividir entre el costo da el aumento sobre el costo (66.7 %), no el margen, y $96 ÷ $160 es la parte del precio que se va en costo."
+      ],
+      [
+       "¿Qué hace con el aceite artesanal?",
+       "No lo vende: no trae etiqueta y su promesa es falsa",
+       "Lo vende, aclarando que es un producto artesanal",
+       "Lo vende, pero sin repetir la promesa del proveedor",
+       "Un cosmético preenvasado debe traer etiqueta en español con los datos que pide la NOM-141; sin ella no sabe qué contiene ni quién responde. Y el aceite de barba no la hace crecer. Callar la promesa no resuelve que el producto no tenga etiqueta."
+      ]
+     ],
+     "completar": [
+      "Si algo sólo vive en tu cabeza, escríbelo en tu manual de ___.",
+      "estándares"
+     ],
+     "relacionar": [
+      [
+       "Manual de la casa",
+       "La misma calidad sin importar quién atiende"
+      ],
+      [
+       "Aprendiz con navaja",
+       "Sólo con su supervisor cerca"
+      ],
+      [
+       "Pomada para vender",
+       "Etiqueta en español (NOM-141)"
+      ],
+      [
+       "Loción contra la calvicie",
+       "No se promete: lo ve el dermatólogo"
+      ],
+      [
+       "Fidelidad e inasistencias",
+       "Indicadores del mes"
+      ]
+     ],
+     "refl": "Prepara tu crecimiento (20 min). 1) Escribe el índice de tu manual de estándares. 2) Diseña el plan de un aprendiz en cuatro etapas, con quién aprueba cada una. 3) Elige dos productos que venderías, revisa su etiqueta y calcula su margen. 4) Elige cinco indicadores mensuales y escribe la condición que debe cumplirse antes de crecer.",
+     "modelo": "Modelo: «Manual: 1) bioseguridad, 2) consulta y ficha, 3) cortes de la casa, 4) barba, afeitado y tinte, 5) trato, agenda y precios. Aprendiz: observa un mes, maniquí dos meses, clientes con supervisión y, al final, navaja sólo cuando yo lo apruebe. Productos: pomada con etiqueta en español, costo $90, precio $150: margen de 40 %; cera, costo $70, precio $120: 41.7 %. Indicadores: servicios por semana, fidelidad, inasistencias, quejas e incidentes. Crezco cuando tres meses seguidos la fidelidad pase de 60 % y no haya incidentes.» Es buena porque escribe lo que hoy depende de la memoria y pone condiciones medibles.",
+     "plantilla": [
+      "Plan de crecimiento",
+      "Manual de estándares: 1) [ ] 2) [ ] 3) [ ] 4) [ ] 5) [ ]\nAprendiz: etapa 1 [ ] | etapa 2 [ ] | etapa 3 [ ] | etapa 4 [ ] | aprueba: [ ]\nNavaja y tinte: sólo con [supervisor] presente\nProducto: [ ] | ¿etiqueta en español? [ ] | costo $[ ] | precio $[ ] | margen =(precio-costo)/precio → [ ] %\nIndicadores del mes: servicios por semana [ ] fidelidad [ ] inasistencias [ ] quejas [ ] incidentes [ ]\nCondición para crecer: [ ]"
+     ],
+     "clave": [
+      "Lo que no está escrito no se puede enseñar ni revisar: arma tu manual antes de crecer.",
+      "Aprendices con plan por etapas; navaja y tinte sólo con aprobación y supervisión.",
+      "Vende productos con etiqueta en español y sin promesas que no puedes demostrar."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos convierte tu plan de apertura en un plan de 90 días que puedas presentar y revisar. 1) Divide los primeros 90 días en tres etapas (días 1-30, 31-60 y 61-90), con tres acciones concretas en cada una. 2) Elige cinco indicadores con su meta de ejemplo y cómo los medirás: servicios por semana, fidelidad, inasistencias, costo por minuto real contra el planeado e incidentes de bioseguridad. 3) Prepara tus preguntas para tres revisiones: con tu supervisor de práctica (qué servicios ya apruebas sin ayuda), con tu contador (régimen, IVA y trabajadores) y en tu municipio y con la autoridad sanitaria de tu estado (uso de suelo, aviso o licencia y protección civil). 4) Prepara una presentación de cinco minutos, preséntala al menos a una de esas tres personas y anota sus observaciones y lo que cambiarás.",
+    "entregable": "Un plan de 90 días de una página con acciones por etapa, cinco indicadores con meta y forma de medirlos, tu lista de preguntas para las tres revisiones y las notas de al menos una revisión real.",
+    "criterios": "Revisa: cada etapa tiene acciones concretas y una meta medible, los indicadores incluyen fidelidad, inasistencias e incidentes de bioseguridad, las metas de dinero están marcadas como de ejemplo, las preguntas al contador y al municipio son específicas, y anotaste qué cambiaste después de la revisión."
+   },
+   "lab": {
+    "t": "Plan de apertura de tu barbería",
+    "obj": "Integrar en un solo documento todo el diplomado: propuesta, bioseguridad, técnica, barba, números, permisos y crecimiento.",
+    "esc": "Aquí reúnes todo lo que aprendiste en el plan de apertura de tu barbería. Cada escena retoma dos módulos y te pide escribir una parte del plan; al final tendrás un documento listo para revisar con tu supervisor de práctica, tu contador y tu municipio. Como guía verás a <b>Iván</b>, de 28 años, que dejó su trabajo de mesero después de dos años de práctica supervisada y abrirá en Irapuato una barbería de una silla, en un local pequeño cerca de una preparatoria. Todas las cifras son de ejemplo.",
+    "e": [
+     [
+      "Escena 1 (módulos 1 y 2): Iván quiere atender a estudiantes de prepa y a papás con sus hijos. Duda si ofrecer desde el primer día afeitado con navaja y tinte de barba, que ha practicado poco.",
+      "Consigna: escribe la parte 1 de tu plan: propuesta en una frase, menú de 4 a 7 servicios con tiempos de silla, cliente ideal, modalidad con su costo por servicio, tu ficha con consentimiento y aviso de privacidad, y tus criterios para no atender y a quién canalizas."
+     ],
+     [
+      "Escena 2 (módulos 3 y 4): Tiene dos máquinas, una patillera, tres juegos de guardas, navaja de hoja desechable, contenedor rígido para hojas y un sillón hidráulico. Le duele la espalda baja al final de los sábados.",
+      "Consigna: escribe la parte 2: protocolo entre un cliente y otro para cada herramienta, protocolo de navaja y plan ante un corte, cierre del día con textiles y residuos, mantenimiento de tus máquinas, tu rutina de altura del sillón y pausas, y tu guía de consulta de diseño."
+     ],
+     [
+      "Escena 3 (módulos 5 y 6): Ofrecerá degradado, corte clásico y arreglo de barba. El afeitado con toalla caliente entrará cuando su supervisor lo apruebe, y el tinte de canas, siempre con prueba de alergia al menos 48 horas antes.",
+      "Consigna: escribe la parte 3: estándares de tus tres cortes con secuencia de guardas y adaptaciones (pelo rizado o afro, niños y adultos mayores), servicio de barba, protocolo de afeitado, alternativas para piel con granitos, protocolo de tinte con prueba de alergia y plan ante reacciones con el 911."
+     ],
+     [
+      "Escena 4 (módulos 7 y 8): Su costo por minuto es de $2.60. Su afeitado ocupará 40 minutos y llevará $30 de material, con 8 % de merma. Abrirá en tres meses y aún no firma la renta.",
+      "Consigna: escribe la parte 4: costo y precio de tres servicios, punto de equilibrio, reglas de agenda, precios totales y propina, decisión de equipo, permisos por verificar en tu municipio, con la autoridad sanitaria de tu estado y en el SAT, portafolio con permisos, experiencia y fidelidad, y tu plan de 90 días."
+     ]
+    ],
+    "p": [
+     [
+      "¿Cómo arma Iván su menú del primer día?",
+      "Con lo que ya domina; navaja y tinte, cuando su supervisor lo apruebe",
+      "Con todos los servicios desde el inicio, para no perder clientes",
+      "Con el tinte desde el inicio, porque deja más dinero que el corte",
+      "Un menú de arranque incluye lo que haces sin ayuda; la navaja y el tinte entran con la aprobación de quien supervisa su práctica, y el tinte siempre con prueba de alergia. Ofrecer todo desde el inicio expone a sus clientes a servicios que aún no domina, y que un servicio deje más dinero no lo vuelve seguro."
+     ],
+     [
+      "Con 30 % de margen, ¿qué precio corresponde a su afeitado, redondeado hacia arriba a la decena?",
+      "$200: $136.40 ÷ 0.70 = $194.86",
+      "$180: $136.40 × 1.30 = $177.32",
+      "$150: $104.00 ÷ 0.70, sin material",
+      "Tiempo: 40 × $2.60 = $104.00. Material con merma: $30 × 1.08 = $32.40. Costo: $136.40. Precio: $136.40 ÷ 0.70 = $194.86, que sube a $200. Multiplicar por 1.30 deja menos margen del que quiere, y olvidar el material lo hace perder en cada afeitado."
+     ],
+     [
+      "Al terminar su plan, ¿qué paso sigue antes de firmar la renta y abrir?",
+      "Revisarlo con su supervisor, su contador y el municipio",
+      "Ninguno: el diplomado ya lo certifica como barbero",
+      "Llenar su perfil de fotos, aunque algunas no sean suyas",
+      "Su supervisor confirma qué servicios ya hace solo, el contador revisa régimen e impuestos, y el municipio y la autoridad sanitaria le dicen qué permisos necesita, empezando por el uso de suelo antes de firmar. El diplomado no certifica ni sustituye la práctica, y un portafolio con fotos ajenas no es publicidad veraz."
+     ]
+    ],
+    "pl": [
+     "Índice del plan de apertura",
+     "Plan de apertura de [nombre de la barbería], [ciudad], [fecha]\nParte 1. Propuesta y cliente (módulos 1 y 2)\n 1.1 Propuesta en una frase: [ ]\n 1.2 Menú con tiempos de silla y cliente ideal: [ ]\n 1.3 Modalidad elegida y su costo por servicio: [ ]\n 1.4 Ficha, consentimiento y aviso de privacidad: [ ]\n 1.5 Cuándo no atiendo y a quién refiero: [ ]\nParte 2. Bioseguridad, herramientas y consulta (módulos 3 y 4)\n 2.1 Protocolo entre clientes por herramienta: [ ]\n 2.2 Navaja, plan ante un corte y cierre del día: [ ]\n 2.3 Mantenimiento, altura del sillón y pausas: [ ]\n 2.4 Guía de consulta de diseño: [ ]\nParte 3. Cortes y barba (módulos 5 y 6)\n 3.1 Estándares de tres cortes con adaptaciones: [ ]\n 3.2 Barba y afeitado: [ ]\n 3.3 Piel con granitos: alternativas y cuándo canalizo: [ ]\n 3.4 Tinte con prueba de alergia y plan ante reacciones (911): [ ]\nParte 4. Números, permisos y clientela (módulos 7 y 8)\n 4.1 Costos, precios y punto de equilibrio: [ ]\n 4.2 Agenda, precios totales y propina: [ ]\n 4.3 Equipo: renta real o trabajador: [ ]\n 4.4 Permisos por verificar (municipio, autoridad sanitaria, SAT): [ ]\n 4.5 Portafolio, experiencia y fidelidad: [ ]\n 4.6 Plan de 90 días: días 1-30 [ ] 31-60 [ ] 61-90 [ ]\nRevisado con: [supervisor de práctica] [contador] [municipio]"
+    ]
+   },
+   "quiz": [
+    [
+     "Un cliente aceptó de palabra que publiques su degradado, pero en la foto se ve el tatuaje de su cuello. ¿Qué haces?",
+     "Le pido el permiso por escrito antes de publicarla",
+     "La publico, porque ya me dijo que sí en voz alta",
+     "La publico y borro el tatuaje con una aplicación",
+     "La publico sin su nombre ni ninguna etiqueta"
+    ],
+    [
+     "¿Qué edición puedes hacer en la foto de un degradado para tu portafolio?",
+     "Ajustar la luz y recortar el fondo",
+     "Borrar los escalones que se alcanzan a notar",
+     "Rellenar con un filtro los huecos de la barba",
+     "Suavizar la piel irritada de la nuca del cliente"
+    ],
+    [
+     "Vas a anunciar tu servicio de afeitado. ¿Qué frase es veraz?",
+     "Afeitado con toalla caliente y hoja nueva en cada cliente",
+     "Afeitado que elimina para siempre los granitos del cuello",
+     "Afeitado que hace que la barba salga más gruesa y pareja",
+     "El mejor afeitado del estado, con resultado garantizado"
+    ],
+    [
+     "Al cortar, ves en la coronilla de un cliente un lunar que, según él, antes no tenía. ¿Qué haces?",
+     "Le cuento lo que veo y sugiero que lo revise un médico",
+     "Le digo que parece cáncer y que vaya a urgencias hoy",
+     "No le digo nada, para no asustarlo sin motivo",
+     "Le recomiendo una crema de farmacia para quitarlo"
+    ],
+    [
+     "Un barbero de tu equipo hace burlas sobre el pelo afro de un cliente. ¿Qué haces?",
+     "Hablo con él en privado y aplico las reglas de trato",
+     "Nada, si el cliente se rió y no dijo que le molestara",
+     "Lo regaño frente al cliente para que aprenda la lección",
+     "Le pido que sólo bromee con clientes de mucha confianza"
+    ],
+    [
+     "Atendiste a 200 clientes en el trimestre y 130 regresaron dentro del plazo. ¿Cuál es tu fidelidad?",
+     "65 %: 130 ÷ 200",
+     "35 %, los que no regresaron",
+     "130 %, un punto por cliente",
+     "53.8 %, al dividir 70 entre 130"
+    ],
+    [
+     "Encontraste un local ideal y el dueño quiere que firmes hoy. ¿Qué verificas antes?",
+     "Que el municipio permita una barbería en ese domicilio",
+     "Que el local se vea bien desde la calle principal",
+     "Que la renta sea más baja que las demás de la zona",
+     "Que antes hubiera ahí otra barbería o una estética"
+    ],
+    [
+     "Abrirás en Tlaxcala y una amiga te pasa los requisitos sanitarios de la Ciudad de México. ¿Cómo los usas?",
+     "Como referencia; verifico con la autoridad de mi estado",
+     "Como regla, porque la capital aplica a todo el país",
+     "No los uso, porque las barberías no tienen requisitos",
+     "Los sigo sólo si el municipio me pone una multa"
+    ],
+    [
+     "Tu contador te habla del RESICO para 2027. ¿Qué sabes de la reforma y qué haces?",
+     "Que sube el tope a $5 millones; lo confirmo con él",
+     "Que el tope sigue en $3.5 millones, sin ningún cambio",
+     "Que el RESICO desaparece a partir del 1 de enero",
+     "Que las barberías ya no podrán tributar en el RESICO"
+    ],
+    [
+     "Un proveedor te ofrece pomadas baratas sin etiqueta en español. ¿Qué haces?",
+     "No las vendo ni las uso: les falta la etiqueta",
+     "Las vendo con una etiqueta que yo mismo imprima",
+     "Las uso en la barbería, pero no las vendo",
+     "Las vendo más baratas para compensar la falta de etiqueta"
+    ]
+   ]
+  }
+ ]
+}
