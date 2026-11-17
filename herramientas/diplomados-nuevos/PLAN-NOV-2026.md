@@ -10,10 +10,12 @@ la publica en tandas (PR a `main` + SQL en Supabase).
 
 ## Orden, identificadores y precio
 
+**Tarifa nueva (16 nov 2026):** los precios de las tablas son los originales. Desde el 16 nov se cobran **$849** (los de $1,690) y **$949** (los de $1,890): usa esos valores en `precio` de cada meta.json nuevo. Los meta.json existentes, el SQL acumulado y el valor por omisión de `crear-diplomado.js` ya se pasaron a la tarifa nueva (17 nov).
+
 | # | id | pref | Diplomado (nombre sugerido) | Precio | familia/área | Estado |
 |---|---|---|---|---|---|---|
 | 1 | d-calidad-lean | cal | Diplomado en Calidad y Mejora Continua: Lean, Six Sigma e ISO 9001 | 1890 | Negocios y finanzas | Publicado (2026-10-20) |
-| 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Listo en rama (2026-10-26) |
+| 2 | d-datos-ia | dat | Diplomado en Análisis de Datos e Inteligencia Artificial para Tomar Decisiones | 1890 | Tecnología | Publicado (2026-10-27) |
 | 3 | d-ventas-experiencia | vtp | Diplomado en Ventas Profesionales y Experiencia del Cliente | 1690 | Negocios y finanzas | Publicado (2026-10-28) |
 | 4 | d-proteccion-civil | pci | Diplomado en Protección Civil y Brigadas de Emergencia en el Trabajo | 1890 | Negocios y finanzas | Pendiente |
 | 5 | d-intervencion-crisis | cri | Diplomado en Intervención en Crisis y Prevención del Suicidio | 1690 | Salud y bienestar | Pendiente |
@@ -103,8 +105,8 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 | 28 | d-emprender-cero | emp | Emprender desde Cero: de la idea a las primeras ventas (validación, modelo de negocio, alta en el SAT, permisos y primeras ventas) | Alto | Medio (c-ia-emprendedores, d-pyme) | — | Publicado (2026-11-03) |
 | 29 | d-tienda-abarrotes | aba | Tienda de Abarrotes y Minisúper Rentable: surtido, márgenes, proveedores, merma y cobro digital | Alto | Bajo | — | Publicado (2026-11-03) |
 | 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Publicado (2026-11-10) |
-| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Listo en rama (2026-11-10) |
-| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Listo en rama (2026-11-16) |
+| 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Publicado (2026-11-10) |
+| 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Publicado (2026-11-17) |
 | 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Pendiente |
 | 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Pendiente |
 | 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Pendiente |
@@ -359,7 +361,7 @@ escribirlo ves que no encaja; usa los nombres exactos de `INSTRUCCIONES.md`.
 - Costos, precios, tiempos de servicio y tarifas de los casos son ficticios (la aritmética la recalcularon los revisores).
 
 ## d-barberia: datos para revisión de experto
-- Categoría: `familia` «Negocios y finanzas», `area` «Emprendimiento y negocio propio», `tema` «Barbería y estética masculina», `dificultad` «desde_cero», precio 1690, giros [] (la tabla dice «—»). Remite a «Emprender desde Cero», a «Contabilidad Básica, RESICO y Facturación CFDI 4.0» y a «Marketing Digital y Redes Sociales para Negocios»; no repite el diplomado de Uñas y Pestañas ni el visagismo de Imagen Personal. Aviso: práctica presencial supervisada indispensable (sobre todo navaja), no certifica (CONOCER), no diagnostica, 911.
+- Categoría: `familia` «Negocios y finanzas», `area` «Emprendimiento y negocio propio», `tema` «Barbería y estética masculina», `dificultad` «desde_cero», precio 849 (tarifa nueva), giros [] (la tabla dice «—»). Remite a «Emprender desde Cero», a «Contabilidad Básica, RESICO y Facturación CFDI 4.0» y a «Marketing Digital y Redes Sociales para Negocios»; no repite el diplomado de Uñas y Pestañas ni el visagismo de Imagen Personal. Aviso: práctica presencial supervisada indispensable (sobre todo navaja), no certifica (CONOCER), no diagnostica, 911.
 - Mercado: Data México (ENOE 1T-2026): ocupación «Peluqueros, barberos, estilistas y peinadores» 474 mil personas, 72.4 % mujeres, 85.2 % informalidad, 34.3 h/semana (cambia cada trimestre). INEGI no separa barberías de la clase 812110; boletín DENUE 05/2026 (Jesús María, Ags.: 95 → 267 establecimientos, 2010-2025) como ejemplo local. Que en México no hay licencia federal de barbero con horas mínimas (M1 L2, deducción).
 - CONOCER: EC1136 «Prestación de servicios de barbería» (nivel 2; fecha DOF 26 nov 2018 sólo de fuente secundaria, no se da en el curso) y EC0193 (DOF 5 jul 2012): confirmar vigencia en el RENEC. Horas de referencia: Texas y California 1,000 h; California 200 h de afeitado y barba y 100 h de desinfección.
 - Sanitario: aviso de funcionamiento para la clase 812110 (Acuerdo COFEPRIS 2009; se leyó la fila, no el encabezado: el curso dice «lo más probable es aviso; verifica»). CDMX AGEPSA (DIGIPRIS, 30 días antes; navajas desechables a contenedor específico; contenedor al 80 %). Jalisco (reglamento de peluquerías: vitrinas cerradas, desinfección antes de cada cliente, tarjeta de salud, licencia de 2 años: confirmar última reforma) y Montemorelos, NL (2023). NOM-087 no menciona barberías: el contenedor rígido se presenta como buena práctica y requisito local. En México no hay registro de desinfectantes «para barbería»: «producto con registro o autorización sanitaria, según su etiqueta».
