@@ -1,0 +1,782 @@
+{
+ "modulos": [
+  {
+   "t": "Qué es la filosofía y para qué te sirve hoy",
+   "r": "Descubre qué hace la filosofía, en qué se distingue de la ciencia, la religión y la autoayuda, y aprende a leer un texto filosófico y a desconfiar de las citas falsas.",
+   "lecciones": [
+    {
+     "t": "Las preguntas que no se responden con un dato",
+     "obj": "Distinguir una pregunta filosófica de una empírica o formal, ubicarla en su rama de la filosofía y diferenciar la filosofía de la ciencia, la religión y la autoayuda.",
+     "texto": [
+      "Empiezas este recorrido con algo que ya sabes hacer: preguntar. Hay preguntas que se resuelven buscando un dato (¿a qué hora abre la farmacia?) y otras que siguen abiertas aunque tengas todos los datos del mundo: ¿es justo que herede más el hijo que cuidó a sus padres?, ¿puedo estar seguro de que mis recuerdos son ciertos?, ¿qué hace buena a una vida? Platón escribió que el asombro «es muy propio del filósofo; no hay otro origen de la filosofía» (<i>Teeteto</i> 155d), y Aristóteles añadió que «por el asombro comenzaron los hombres, ahora y al principio, a filosofar» (<i>Metafísica</i> I 2, 982b12; la traducción puede variar). La filosofía empieza cuando algo que dabas por obvio deja de parecerlo.",
+      "Una forma útil de ordenar las preguntas es por el tipo de respuesta que piden. Las <b>empíricas</b> se responden observando, midiendo o experimentando: ¿este fertilizante aumenta la cosecha? Las <b>formales</b> se responden con definiciones y reglas, como en matemáticas o en lógica: si todos los A son B y esto es A, ¿es B? Las <b>filosóficas</b> no se cierran con un experimento ni con un cálculo, porque discuten los conceptos y los criterios con los que juzgamos: qué es la justicia, qué cuenta como conocimiento, cuándo alguien es responsable. Muchas preguntas reales mezclan los tres tipos, y separar sus partes ya es pensar con más claridad.",
+      "Las ramas principales te ayudan a ubicar cada pregunta. La <b>metafísica</b> pregunta qué es real (¿existe el libre albedrío?); la <b>epistemología</b>, cómo sabemos lo que creemos saber; la <b>lógica</b> estudia qué hace bueno a un razonamiento; la <b>ética</b>, cómo debemos actuar y vivir; la <b>estética</b>, qué es la belleza y qué valor tiene el arte; y la <b>filosofía política</b>, qué hace legítimo al poder y justa a una sociedad.",
+      "¿Y en qué se distingue de sus vecinos? La <b>ciencia</b> responde preguntas empíricas con métodos de prueba; la filosofía examina, entre otras cosas, los conceptos y supuestos que la ciencia usa. La <b>religión</b> ofrece una visión del mundo sostenida por la fe, la tradición y la comunidad; la filosofía no se burla de ella ni la sustituye: examina argumentos, y ha habido grandes filósofos creyentes y no creyentes. La <b>autoayuda</b> promete recetas rápidas para sentirte mejor; la filosofía te pide razones, admite objeciones y a veces te deja con más preguntas, aunque mejor formuladas. Tampoco es terapia: si necesitas atención emocional, acude a un profesional."
+     ],
+     "comparar": [
+      "«Así no: “Eso es pura filosofía, no tiene respuesta; mejor ni lo pensemos.”»",
+      "«Así sí: “Separemos qué parte se resuelve con datos y qué parte depende de lo que consideramos justo.”»"
+     ],
+     "caso": "Caso ficticio: Rosalba, de 41 años, es enfermera en Oaxaca. Su abuela quiere repartir en vida la casa familiar, y en la comida del domingo estalla la discusión: un tío dice que la casa debe ser para él porque la cuidó diez años; una prima responde que la ley reparte en partes iguales; otro primo pregunta cuánto vale hoy la casa. Rosalba siente que todos tienen algo de razón, pero que hablan de cosas distintas, y quiere ordenar la conversación sin herir a nadie.",
+     "p": [
+      [
+       "¿Cuál de las preguntas de la comida familiar es empírica?",
+       "¿Cuánto vale hoy la casa en el mercado de esa colonia?",
+       "¿Es justo que reciba más quien cuidó a la abuela tantos años?",
+       "¿Qué significa realmente tratar igual a todos los hijos y nietos?",
+       "El valor de la casa se averigua con un avalúo o comparando precios: es un dato. Las otras dos discuten criterios (qué es justo, qué es tratar igual), y ningún avalúo las resuelve, por eso son filosóficas."
+      ],
+      [
+       "La pregunta «¿es justo que reciba más quien cuidó?» pertenece sobre todo a…",
+       "La ética, porque pide un criterio sobre cómo debemos actuar",
+       "La epistemología, porque pide saber cuánto cuidó cada quien a la abuela",
+       "La estética, porque trata del valor afectivo que cada quien da a la casa",
+       "Pregunta qué es correcto hacer, y eso es ética. Averiguar cuánto cuidó cada quien sería un dato útil, no la pregunta por el criterio; y el valor afectivo no convierte la discusión en una pregunta sobre la belleza o el arte."
+      ],
+      [
+       "¿Qué conviene que haga Rosalba para ordenar la conversación?",
+       "Separar lo que se resuelve con datos de lo que depende de criterios",
+       "Pedir que decida el pariente que tenga más estudios en la familia",
+       "Proponer que voten ya, porque discutir criterios no lleva a ninguna parte",
+       "Separar las partes evita discutir un avalúo como si fuera un asunto de justicia, y al revés. Más estudios no dan autoridad sobre lo justo, y votar sin aclarar criterios solo cuenta quién grita más fuerte o tiene más aliados."
+      ]
+     ],
+     "completar": [
+      "Platón y Aristóteles coinciden en que la filosofía nace del ___.",
+      "asombro"
+     ],
+     "relacionar": [
+      [
+       "Metafísica",
+       "¿Existe el libre albedrío?"
+      ],
+      [
+       "Epistemología",
+       "¿Cómo distingo saber algo de solo creerlo?"
+      ],
+      [
+       "Lógica",
+       "¿Esta conclusión se sigue de las premisas?"
+      ],
+      [
+       "Ética",
+       "¿Debo decirle la verdad a mi amigo aunque le duela?"
+      ],
+      [
+       "Filosofía política",
+       "¿Qué hace legítima a una autoridad?"
+      ]
+     ],
+     "refl": "Haz tu primer inventario de preguntas. 1) Escribe cinco preguntas que te hayas hecho este año en tu casa, tu trabajo o tu comunidad. 2) Clasifica cada una como empírica, formal o filosófica; si mezcla tipos, sepárala en partes. 3) A las filosóficas asígnales una rama: metafísica, epistemología, lógica, ética, estética o filosofía política. 4) Elige la que más te inquieta y explica en tres líneas por qué no se resuelve solo con un dato.",
+     "modelo": "Modelo: «Pregunta: ¿conviene cambiar a mi hijo de escuela? Es mezcla: qué resultados tiene cada escuela es empírica; qué debe pesar más, sus amistades o el nivel académico, es filosófica (ética). Otra: ¿es correcto revisar el celular de mi hija de 15 años? Filosófica: ética, con un lado de filosofía política sobre autoridad y privacidad. Me inquieta la del celular: aunque sepa cuántas horas lo usa y con quién habla, sigue abierta la pregunta de cuánta privacidad merece y qué justifica mi autoridad.» Es buena porque separa las partes de una pregunta mezclada, nombra la rama y muestra por qué los datos no la cierran.",
+     "plantilla": [
+      "Clasificador de preguntas",
+      "Pregunta: [ ]\nTipo: [empírica / formal / filosófica / mezcla]\nSi mezcla, parte que se responde con datos: [ ]\nParte que pide conceptos o criterios: [ ]\nRama de la filosofía: [ ]\nPor qué me importa: [ ]"
+     ],
+     "clave": [
+      "La filosofía empieza con el asombro ante lo que parecía obvio.",
+      "Las preguntas filosóficas discuten conceptos y criterios: no se cierran con un dato ni con un cálculo.",
+      "La filosofía examina argumentos: no sustituye a la ciencia, no se burla de la fe y no es autoayuda ni terapia."
+     ]
+    },
+    {
+     "t": "Leer un texto filosófico paso a paso",
+     "obj": "Leer un fragmento filosófico identificando su tesis, sus argumentos y sus objeciones, ubicar la cita con su numeración estándar y reconstruirlo con tus palabras.",
+     "texto": [
+      "Un texto filosófico no se lee como una noticia. Su autor quiere convencerte de algo con razones, y tu trabajo es encontrar tres piezas: la <b>tesis</b> (lo que sostiene), los <b>argumentos</b> (las razones que da para sostenerlo) y las <b>objeciones</b> (lo que alguien podría responderle, que a veces el propio autor anticipa). Una buena pista son palabras como «porque», «por lo tanto», «se sigue que» o «podría objetarse». Si después de leer no puedes decir en una frase qué defiende el autor, todavía no lo has leído.",
+      "El método que funciona es lento. Primero, una lectura rápida para ver de qué trata y cómo está organizado. Segundo, una lectura despacio con lápiz: subraya los <b>conceptos</b> clave y anota qué significa cada uno en ese texto, porque palabras como «naturaleza», «razón» o «virtud» cambian de sentido de un autor a otro. Tercero, <b>reconstruye</b> con tus palabras: escribe la tesis y numera las razones. Cuarto, pregúntate qué objeción le harías y si el texto la resiste. Un párrafo bien leído vale más que veinte páginas hojeadas.",
+      "Distingue la <b>fuente primaria</b>, que es el texto del filósofo, de los <b>comentarios</b>, que son lo que otros dicen de él: manuales, videos, resúmenes. Los comentarios ayudan a entrar, pero también simplifican y a veces se equivocan. A los clásicos casi siempre los leerás en <b>traducción</b>, y cada traductor toma decisiones: el mismo pasaje de Platón puede sonar distinto en dos ediciones. Por eso, cuando cites, aclara que la traducción puede variar y, si puedes, compara dos versiones.",
+      "Para ubicar un pasaje sin depender de la página de tu edición, los especialistas usan numeraciones estándar. A Platón se le cita con la <b>numeración Stephanus</b>, tomada de la edición que Henri Estienne publicó en 1578: <i>Apología</i> 38a remite a la página 38, sección a. A Aristóteles se le cita con la <b>numeración Bekker</b>, de la edición de Immanuel Bekker (Berlín, 1831): <i>Metafísica</i> 980a21 es la página 980, columna a, línea 21. Esos números aparecen en el margen de casi todas las buenas ediciones y te permiten comprobar que una frase de verdad está donde dicen."
+     ],
+     "comparar": [
+      "«Así no: ver un resumen en video y afirmar “Platón pensaba que el cuerpo es malo” sin haber abierto el texto.»",
+      "«Así sí: leer el pasaje, anotar la tesis y las razones, y decir “en este diálogo, Platón sostiene que… por estas dos razones”.»"
+     ],
+     "caso": "Caso ficticio: Efraín, de 29 años, es técnico en refrigeración en Hermosillo y se unió a un círculo de lectura en línea. Esta semana toca un fragmento de la <i>Apología</i> de Platón. Un compañero llevó un resumen de internet según el cual Sócrates «se dejó condenar para dar una lección», y dos participantes citan el mismo pasaje con palabras distintas. Efraín leyó el fragmento dos veces y no encontró lo que dice el resumen, pero no sabe cómo mostrarlo sin quedar como sabelotodo.",
+     "p": [
+      [
+       "¿Qué debería hacer Efraín primero para saber si el resumen es fiel?",
+       "Ubicar en el texto el pasaje que el resumen dice explicar",
+       "Buscar otro resumen que diga lo contrario, para equilibrar opiniones",
+       "Preguntar al grupo cuántos están de acuerdo con lo que dice el resumen",
+       "Solo la fuente primaria permite comprobar qué dice el texto. Otro resumen es otro comentario, igual de expuesto a errores, y que la mayoría esté de acuerdo no cambia lo que está escrito en el pasaje."
+      ],
+      [
+       "Al reconstruir el fragmento, ¿qué debe escribir Efraín antes que nada?",
+       "La tesis de Sócrates en una frase y luego sus razones numeradas",
+       "Las palabras difíciles con su definición de un diccionario general",
+       "Su opinión personal sobre si Sócrates merecía o no la condena",
+       "Reconstruir empieza por la tesis y las razones del autor. El diccionario general no da el sentido que el concepto tiene en ese texto, y opinar antes de entender lleva a discutir con un Sócrates imaginario."
+      ],
+      [
+       "Dos compañeros citan el mismo pasaje con palabras distintas. ¿Qué explica mejor la diferencia?",
+       "Usan traducciones distintas; conviene ubicarlo por su número Stephanus",
+       "Uno de los dos inventó la cita, porque un clásico tiene una sola versión",
+       "El original griego se perdió y cada edición lo reconstruye a su gusto",
+       "Lo más probable es que cada uno use una traducción distinta; con el número Stephanus pueden comparar el mismo pasaje. No hay una única versión en español, y el texto griego de Platón se conserva y se edita con criterios académicos, no a gusto de cada quien."
+      ]
+     ],
+     "completar": [
+      "Para citar a Platón sin depender de tu edición se usa la numeración ___.",
+      "Stephanus"
+     ],
+     "refl": "Lee un fragmento breve (media página) de un clásico: puede ser la <i>Apología</i> 37e-38a o cualquier texto filosófico que tengas a mano. 1) Anota la referencia completa: autor, obra, pasaje con numeración estándar si la tiene y la traducción que usaste. 2) Escribe la tesis en una frase. 3) Numera dos o tres razones que da el autor. 4) Subraya dos conceptos clave y explica qué significan en ese texto. 5) Redacta una objeción y di si el texto la resiste.",
+     "modelo": "Modelo: «Platón, <i>Apología</i> 37e-38a, traducción de una edición académica. Tesis: Sócrates no puede callarse ni dejar de filosofar, aunque se lo pidan para salvarse. Razones: 1) conversar cada día sobre la virtud es el mayor bien para el ser humano; 2) una vida sin examen no es digna de ser vivida. Conceptos: “examen”, poner a prueba lo que creemos en diálogo con otros; “virtud”, la excelencia de la persona. Objeción: mucha gente vive bien sin filosofar. Respuesta posible: examinar no exige libros, solo preguntarse por qué se vive como se vive.» Es buena porque separa tesis, razones y objeción, y deja una referencia que cualquiera puede comprobar.",
+     "plantilla": [
+      "Ficha de lectura filosófica",
+      "Autor y obra: [ ]\nPasaje (numeración estándar): [ ]\nTraducción o edición: [ ]\nTesis en una frase: [ ]\nRazones: 1) [ ] 2) [ ] 3) [ ]\nConceptos clave y su sentido en el texto: [ ]\nObjeción posible: [ ]\n¿El texto la resiste? [sí / no / en parte, porque…]"
+     ],
+     "clave": [
+      "Leer filosofía es encontrar tesis, argumentos y objeciones, no coleccionar frases.",
+      "Lee despacio, subraya conceptos y reconstruye con tus palabras.",
+      "Prefiere la fuente primaria, aclara la traducción y ubica la cita con numeración Stephanus o Bekker."
+     ]
+    },
+    {
+     "t": "Mitos sobre la filosofía y citas falsas",
+     "obj": "Desmontar los mitos más comunes sobre la filosofía y comprobar si una cita atribuida a un filósofo es auténtica, con obra, pasaje y traducción.",
+     "texto": [
+      "Cuatro mitos alejan a mucha gente de la filosofía. «No sirve para nada»: entrena habilidades que usas a diario, como distinguir una razón de una ocurrencia o discutir sin pelear. «Todo es opinión»: en filosofía hay desacuerdos, pero no todas las posturas valen lo mismo; unas están mejor argumentadas que otras, y ese <b>relativismo ingenuo</b> se contradice, porque presenta como verdad para todos que nada es verdad para todos. «Es para genios»: las preguntas son de cualquiera y el método se aprende. «Es autoayuda»: puede ayudarte a vivir mejor, pero no promete recetas.",
+      "Las redes están llenas de frases con la foto de un filósofo que él nunca escribió. «Solo sé que no sé nada» no aparece así en Platón: en la <i>Apología</i> (21d) Sócrates dice que es más sabio que otro hombre «porque lo que no sé, tampoco creo saberlo» (traducción aproximada); la fórmula popular es una simplificación posterior. «No estoy de acuerdo con lo que dices, pero defenderé con mi vida tu derecho a decirlo» no es de Voltaire: la escribió Evelyn Beatrice Hall, con el seudónimo S. G. Tallentyre, en un libro de 1906, para resumir la actitud de Voltaire. «Conócete a ti mismo» tampoco es de Sócrates: era una máxima inscrita en el templo de Apolo en Delfos, que él adopta y comenta.",
+      "«El fin justifica los medios» no está en <i>El príncipe</i> de Maquiavelo; lo más cercano es el capítulo XVIII, donde dice que en las acciones de los príncipes se mira al resultado, una idea más matizada que el lema. «Somos lo que hacemos repetidamente; la excelencia, entonces, no es un acto sino un hábito» se atribuye a Aristóteles, pero es una paráfrasis de Will Durant en <i>The Story of Philosophy</i> (1926). La idea sí es aristotélica: en la <i>Ética nicomáquea</i> (II 1, 1103a-b) se lee que nos hacemos justos practicando la justicia. Una frase apócrifa no vuelve mala la idea: solo no pongas palabras ajenas en boca de nadie.",
+      "Para <b>verificar</b> una cita sigue tres pasos. Uno, pide la <b>obra</b>: si quien la comparte no sabe de dónde viene, desconfía. Dos, busca el <b>pasaje</b> por su numeración estándar o su capítulo y léelo en contexto; te ayudan las ediciones académicas. Tres, revisa la <b>traducción</b>: una frase puede ser auténtica en sustancia y sonar distinta según la edición. Si no aparece, preséntala como «atribuida» o, mejor, cita lo que el autor sí dijo."
+     ],
+     "comparar": [
+      "«Así no: compartir la foto de Voltaire con la frase sobre defender tu derecho a decirlo, porque “se ve muy profunda”.»",
+      "«Así sí: “Esa frase es de Evelyn Beatrice Hall, que resumió así la actitud de Voltaire; la idea es valiosa, pero la autoría es otra.”»"
+     ],
+     "caso": "Caso ficticio: Itzel, de 24 años, es diseñadora gráfica en Toluca y lleva las redes sociales de una biblioteca pública. Para el Día Mundial de la Filosofía, su jefa le pide una serie de publicaciones con «frases célebres» y le pasa tres: «Solo sé que no sé nada» (Sócrates), «Somos lo que hacemos repetidamente» (Aristóteles) y «Una vida sin examen no merece ser vivida» (Sócrates). Itzel tiene dos días y no quiere publicar algo falso con el nombre de la biblioteca.",
+     "p": [
+      [
+       "¿Qué frase de la lista puede publicar Itzel como cita, con su fuente?",
+       "La de la vida sin examen, citando la Apología 38a de Platón",
+       "La de solo saber que no se sabe nada, citando la Apología de Platón",
+       "La de lo que hacemos repetidamente, citando la Ética nicomáquea II",
+       "La vida sin examen está en la <i>Apología</i> 38a, en boca de Sócrates. La fórmula de no saber nada simplifica la <i>Apología</i> 21d y no aparece literal, y la de lo que hacemos repetidamente es de Will Durant, aunque resuma una idea de la <i>Ética nicomáquea</i>."
+      ],
+      [
+       "¿Qué hace Itzel con la frase atribuida a Aristóteles?",
+       "Usar la idea documentada: nos hacemos justos practicando la justicia",
+       "Publicarla igual, porque la idea sí es aristotélica y nadie lo notará",
+       "Quitarle el nombre y publicarla como un refrán anónimo de la tradición",
+       "Lo honesto es citar lo que Aristóteles dijo, con su pasaje, o atribuir la frase a Durant. Publicarla con el nombre de Aristóteles difunde una atribución falsa, y presentarla como refrán anónimo borra al autor real."
+      ],
+      [
+       "La jefa insiste: «Todo mundo la conoce así». ¿Qué le responde Itzel?",
+       "Que una biblioteca debe dar la versión documentada y explicar el mito",
+       "Que tiene razón, porque una cita se vuelve auténtica cuando se hace famosa",
+       "Que mejor no publiquen nada de filosofía, para no arriesgarse a un error",
+       "La fama no cambia quién escribió una frase, y una biblioteca es justo el lugar para mostrar cómo se verifica. Renunciar a publicar tira a la basura una buena oportunidad: el mito bien explicado es contenido atractivo."
+      ]
+     ],
+     "completar": [
+      "Para ___ una cita, pide la obra, busca el pasaje y revisa la traducción.",
+      "verificar"
+     ],
+     "relacionar": [
+      [
+       "«Solo sé que no sé nada»",
+       "Simplificación de la Apología 21d"
+      ],
+      [
+       "«No estoy de acuerdo con lo que dices…»",
+       "Evelyn Beatrice Hall, en 1906"
+      ],
+      [
+       "«El fin justifica los medios»",
+       "No aparece en El príncipe"
+      ],
+      [
+       "«Somos lo que hacemos repetidamente»",
+       "Paráfrasis de Will Durant"
+      ],
+      [
+       "«Conócete a ti mismo»",
+       "Máxima del templo de Apolo en Delfos"
+      ]
+     ],
+     "refl": "Haz tu propia verificación. 1) Busca en tus redes o en tu teléfono tres frases atribuidas a filósofos. 2) Para cada una, anota quién la comparte y si menciona obra y pasaje. 3) Investiga si aparece en la obra: busca el pasaje, una edición académica o un sitio serio de investigación de citas. 4) Clasifícala como auténtica, auténtica en sustancia pero no literal, o apócrifa. 5) Para una de ellas, redacta un mensaje breve y amable que corrija la atribución y ofrezca la versión documentada.",
+     "modelo": "Modelo: «Frase: “La excelencia no es un acto sino un hábito”, atribuida a Aristóteles en el estado de una compañera, sin obra. Lo que encontré: viene de Will Durant, <i>The Story of Philosophy</i>, 1926, que resume la <i>Ética nicomáquea</i>. Clasificación: apócrifa como cita, aristotélica como idea. Mensaje: “¡Qué buena idea! Dato curioso: esa frase es de Will Durant resumiendo a Aristóteles; él escribió que nos hacemos justos practicando la justicia (<i>Ética nicomáquea</i> II 1). Te paso la referencia por si te sirve.”» Es buena porque comprueba con fuente, distingue la idea de la autoría y corrige sin humillar.",
+     "plantilla": [
+      "Verificador de citas",
+      "Frase: [ ]\nAtribuida a: [ ]\nDónde la vi: [ ]\nObra y pasaje que se indican: [ninguno / …]\nLo que encontré: [obra, pasaje, edición]\nClasificación: [auténtica / auténtica en sustancia / apócrifa]\nVersión documentada para compartir: [ ]\nMensaje amable de corrección: [ ]"
+     ],
+     "clave": [
+      "Que haya desacuerdo no significa que todas las opiniones valgan lo mismo.",
+      "Muchas frases célebres de filósofos son apócrifas: pide obra, pasaje y traducción.",
+      "Corregir una cita no es despreciar la idea: es dar a cada quien lo suyo."
+     ]
+    },
+    {
+     "t": "La filosofía en tu vida diaria y en el mundo actual",
+     "obj": "Reconocer dónde se usa hoy la filosofía, identificar las habilidades que te deja y empezar tu cuaderno filosófico de preguntas con actitud socrática.",
+     "texto": [
+      "La filosofía no se quedó en Atenas. Hoy trabaja en los <b>comités de ética</b> de los hospitales, que ayudan a deliberar casos difíciles; en la <b>bioética</b>, que discute el consentimiento informado o el uso de datos genéticos; en el debate sobre <b>inteligencia artificial</b>, donde se pregunta quién responde cuando decide un algoritmo; en los <b>derechos humanos</b>, cuyos fundamentos son discusiones sobre la dignidad; en los debates públicos sobre libertad de expresión o impuestos justos; y en la educación: en el bachillerato mexicano actual, la filosofía llega dentro del área de Humanidades, con lógica, ética, estética, teoría del conocimiento, filosofía política e historia de la filosofía.",
+      "Lo que te deja es transferible. Aprendes a <b>formular bien una pregunta</b> antes de responderla; a <b>distinguir</b> conceptos que solemos mezclar, como legal y justo, o creer y saber; a <b>reconstruir</b> el argumento de alguien con quien no estás de acuerdo; a <b>escribir</b> con claridad; y a <b>dialogar</b> sin convertir el desacuerdo en pleito. Te sirven en una junta de trabajo, en una reunión de padres de familia, al leer un contrato o al decidir tu voto. Además, la investigación educativa indica que el pensamiento crítico mejora cuando se practica con diálogo y problemas aplicados, que es justo lo que harás aquí.",
+      "En la <i>Apología</i>, Sócrates explica ante el tribunal por qué no dejará de preguntar, y afirma que «una vida sin examen no es digna de ser vivida por el ser humano» (38a; la traducción puede variar). Examinar no es desconfiar de todo ni criticar a los demás: es preguntarte por qué crees lo que crees y si podrías estar equivocado. La <b>actitud socrática</b> tiene tres rasgos que puedes practicar desde hoy: reconocer lo que no sabes, preguntar antes de afirmar y estar dispuesto a cambiar de opinión ante una buena razón.",
+      "Para volverlo hábito, empieza un <b>cuaderno filosófico</b> de preguntas: una libreta o una nota en tu celular donde anotes, cada vez que algo te asombre o te incomode, la pregunta que hay detrás. Escribe la fecha, la situación, la pregunta bien formulada, su tipo y su rama, y una primera respuesta tuya con una razón. Cada semana relee lo que escribiste y elige una pregunta para pensarla más a fondo. Ese cuaderno será la materia prima de tu proyecto final: al terminar el diplomado escogerás una de esas preguntas para escribir un ensayo breve o conducir un diálogo con otras personas."
+     ],
+     "comparar": [
+      "«Así no: “Yo ya sé lo que pienso de eso; no tengo nada que examinar.”»",
+      "«Así sí: “Creo esto por dos razones; déjame ver si resisten la mejor objeción que me puedan hacer.”»"
+     ],
+     "caso": "Caso ficticio: Gerardo, de 53 años, es jefe de mantenimiento de un hospital privado en Campeche. Lo invitan a participar como representante del personal en el comité de ética del hospital, que esta semana discute si las cámaras de los pasillos, instaladas por seguridad, pueden usarse también para evaluar el desempeño de los trabajadores. Gerardo cree que la filosofía «es cosa de académicos» y que él solo sabe de calderas y plantas de luz.",
+     "p": [
+      [
+       "¿Qué puede aportar Gerardo al comité aunque no haya estudiado filosofía?",
+       "Preguntas claras sobre fines, afectados y límites del uso de las cámaras",
+       "Su opinión técnica sobre la resolución de las cámaras que hay instaladas",
+       "Un voto rápido para que la sesión no se alargue con discusiones abstractas",
+       "La pregunta es para qué se puede usar una herramienta instalada con otro fin y a quién afecta: ahí cualquiera puede aportar preguntas precisas. La resolución de las cámaras es un dato técnico que no decide lo correcto, y votar sin deliberar desperdicia al comité."
+      ],
+      [
+       "Un directivo dice: «Si es legal, es correcto». ¿Qué distinción ayuda aquí?",
+       "Lo legal y lo justo pueden coincidir, pero no son lo mismo",
+       "Lo legal siempre es justo, porque la ley expresa la voluntad de todos",
+       "Lo justo depende de cada quien, así que mejor seguir la ley y ya",
+       "La ley marca un mínimo y a veces llega tarde o se equivoca; por eso se pregunta además si algo es justo. Decir que la ley siempre es justa ignora leyes injustas de la historia, y el relativismo cancela la deliberación que el comité existe para hacer."
+      ],
+      [
+       "¿Qué conducta muestra mejor la actitud socrática de Gerardo en el comité?",
+       "Reconocer lo que no sabe y preguntar antes de dar su postura",
+       "Sostener su primera opinión para no parecer indeciso ante los directivos",
+       "Callar, porque solo deben hablar quienes saben de ética y de leyes",
+       "Reconocer la ignorancia y preguntar es el centro de la actitud socrática. Aferrarse a la primera opinión impide examinarla, y callar desperdicia la mirada de quien conoce el hospital desde dentro."
+      ]
+     ],
+     "completar": [
+      "Una vida sin ___ no es digna de ser vivida por el ser humano, según la Apología.",
+      "examen"
+     ],
+     "refl": "Abre tu cuaderno filosófico. 1) Elige el formato: libreta o nota en tu celular. 2) Registra tres preguntas de esta semana, cada una con fecha, situación, pregunta bien formulada, tipo y rama. 3) Para una de ellas, escribe tu primera respuesta con una razón. 4) Escribe la mejor objeción que alguien podría hacerte. 5) Termina con una frase: ¿cambiarías algo de tu respuesta después de pensarlo?",
+     "modelo": "Modelo: «12 de noviembre. Situación: en la junta de vecinos se propuso multar a quien no barra su banqueta. Pregunta: ¿puede una asamblea obligar a algo que la ley no exige? Tipo: filosófica. Rama: filosofía política. Mi respuesta: sí, si todos aceptaron las reglas de la asamblea, porque fue un acuerdo libre. Objeción: no todos asistieron, y quien no votó no aceptó nada. ¿Cambio algo? Sí: la regla solo sería legítima si se avisó a todos y hubo forma real de opinar.» Es buena porque parte de una situación concreta, formula una pregunta precisa, la clasifica y se corrige ante una objeción.",
+     "plantilla": [
+      "Cuaderno filosófico de preguntas",
+      "Fecha: [ ]\nSituación que me hizo pensar: [ ]\nPregunta bien formulada: [¿…?]\nTipo y rama: [ ]\nMi primera respuesta y una razón: [ ]\nLa mejor objeción: [ ]\n¿Qué cambio después de pensarlo? [ ]"
+     ],
+     "clave": [
+      "La filosofía trabaja hoy en hospitales, en el debate sobre la IA, en los derechos humanos y en la educación.",
+      "Sus habilidades se transfieren: preguntar bien, distinguir, reconstruir, escribir y dialogar.",
+      "La actitud socrática es examinar tus creencias y cambiar de opinión ante buenas razones."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Elige una pregunta filosófica propia y trabájala como lo haría un filósofo. En los primeros 20 minutos revisa tu cuaderno, elige la pregunta que más te inquieta, formúlala con precisión y clasifícala por tipo y rama. En los siguientes 40 minutos busca dos respuestas de autores distintos (clásicos o actuales); lee un fragmento breve de cada uno y anota su tesis y una razón, con obra y pasaje. En los últimos 30 minutos toma una cita atribuida a un filósofo que circule en redes, verifícala con los tres pasos (obra, pasaje y traducción) y redacta un mensaje breve que la confirme o la corrija.",
+    "entregable": "Una página con tu pregunta clasificada, la tesis de dos autores con su referencia y una razón de cada uno, y la ficha de verificación de una cita con tu mensaje para compartir.",
+    "criterios": "Revisa: la pregunta no se resuelve con un dato y está bien delimitada, cada autor aparece con obra y pasaje verificables, las tesis están parafraseadas con tus palabras y la cita verificada se clasifica con evidencia y se corrige con respeto."
+   },
+   "lab": {
+    "t": "La cita del grupo de la familia",
+    "obj": "Aplicar la clasificación de preguntas, la lectura cuidadosa y la verificación de citas para convertir una discusión familiar en una conversación productiva.",
+    "esc": "<b>Maricela,</b> de 47 años, es contadora en Zacatecas y administra el grupo de mensajería de su familia. Tras una discusión sobre si es correcto que su sobrina deje la carrera de Medicina para estudiar Filosofía, un primo compartió una imagen con la foto de Voltaire y la frase «No estoy de acuerdo con lo que dices, pero defenderé con mi vida tu derecho a decirlo»; otro respondió que la filosofía «no sirve para nada» y que «todo es opinión». El grupo está tenso y Maricela quiere ayudar sin regañar a nadie.",
+    "e": [
+     [
+      "Escena 1: En el grupo se mezclan preguntas: ¿cuánto gana quien estudia Filosofía en México?, ¿es irresponsable dejar una carrera a la mitad?, ¿quién decide qué estudia una persona adulta?",
+      "Consigna: clasifica cada pregunta como empírica, formal o filosófica, nombra la rama de las filosóficas y escribe un mensaje que separe lo que se resuelve con datos de lo que depende de criterios."
+     ],
+     [
+      "Escena 2: La sobrina comparte el pasaje de la <i>Apología</i> (38a) sobre la vida sin examen para explicar su decisión, y un tío contesta que eso es «puro rollo».",
+      "Consigna: escribe la tesis del pasaje en una frase, una razón que la apoya y una objeción razonable del tío, con la referencia y la nota de traducción."
+     ],
+     [
+      "Escena 3: Nadie ha revisado la frase atribuida a Voltaire, que ya tiene muchas reacciones y se reenvió a otros grupos.",
+      "Consigna: verifica la cita con los tres pasos, clasifícala y redacta un mensaje amable que dé la autoría correcta sin restarle valor a la idea."
+     ],
+     [
+      "Escena 4: El primo insiste: «Todo es opinión, así que nadie puede decirle nada a la sobrina».",
+      "Consigna: propón una conversación familiar de 20 minutos (en videollamada o en la comida del domingo) con tres preguntas abiertas y dos reglas para hablar, y responde al relativismo ingenuo sin descalificar al primo."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué parte de la discusión se resuelve mejor con datos?",
+      "Cuánto ganan y en qué trabajan quienes estudian Filosofía",
+      "Si la sobrina tiene derecho a elegir su carrera como persona adulta",
+      "Si es irresponsable dejar a la mitad una carrera que ya empezó",
+      "Ingresos y empleo se consultan en encuestas y estadísticas de egresados. Quién decide sobre la vida de una adulta y qué cuenta como responsable son preguntas de criterio: los datos informan, pero no las cierran."
+     ],
+     [
+      "¿Cómo conviene corregir la atribución a Voltaire?",
+      "Dar la autoría de Hall y aclarar que resume la actitud de Voltaire",
+      "Borrar la imagen del grupo sin explicar nada, para no avivar el pleito",
+      "Dejarla, porque defiende la libertad de expresión y eso es lo que importa",
+      "Corregir con la autoría real y el contexto respeta la idea y a quien la compartió. Borrarla sin explicar parece censura y no enseña nada, y dejarla circular difunde un dato falso aunque la idea sea valiosa."
+     ],
+     [
+      "¿Qué responde mejor al «todo es opinión» del primo?",
+      "Que hay desacuerdo, pero unas razones pesan más que otras",
+      "Que tiene razón y que cada quien debe quedarse con lo que ya piensa",
+      "Que se equivoca, porque en filosofía hay respuestas únicas como en aritmética",
+      "El desacuerdo no impide comparar razones: eso es justo lo que hace la filosofía. Dar por buena cualquier postura cancela la conversación, y prometer respuestas únicas como en aritmética exagera en sentido contrario."
+     ]
+    ],
+    "pl": [
+     "Guía para una conversación familiar con filosofía",
+     "Pregunta central: [ ]\nPartes que se resuelven con datos: [ ]\nPartes que dependen de criterios: [ ]\nTexto o idea de apoyo (con referencia): [ ]\nCita revisada y su autoría correcta: [ ]\nTres preguntas abiertas: 1) [ ] 2) [ ] 3) [ ]\nReglas para hablar: [ ]\nCómo cerramos sin humillar a nadie: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Brenda se pregunta si está bien mentirle a un amigo sobre lo mucho que le disgustó su regalo. ¿Qué tipo de pregunta es?",
+     "Filosófica, de ética: pide un criterio sobre cómo actuar",
+     "Empírica: se resuelve preguntando qué haría la mayoría de la gente",
+     "Formal: se resuelve con reglas fijas, como un problema de álgebra",
+     "Estética: trata del gusto personal sobre los regalos que recibimos"
+    ],
+    [
+     "Teodoro dice: «Cuando la ciencia avance lo suficiente, la filosofía ya no hará falta». ¿Qué respuesta es más precisa?",
+     "La ciencia responde preguntas empíricas, y sus conceptos también se examinan",
+     "Tiene razón, porque toda pregunta acabará resuelta con un experimento bien diseñado",
+     "La filosofía y la ciencia nunca han tenido relación entre sí",
+     "La filosofía está por encima de la ciencia porque no necesita datos"
+    ],
+    [
+     "Isaías encuentra en un libro la referencia «Metafísica 982b». ¿Qué le indica?",
+     "Un lugar del texto de Aristóteles según la numeración Bekker",
+     "La página 982 de cualquier edición en español que tenga a mano",
+     "El año en que Aristóteles terminó de escribir esa parte de la obra",
+     "Un pasaje de un diálogo de Platón según la numeración Stephanus"
+    ],
+    [
+     "Fernanda leyó en un manual un resumen de Descartes y quiere citarlo en un trabajo. ¿Qué es lo más riguroso?",
+     "Ir a la obra, ubicar el pasaje y citarlo indicando la traducción",
+     "Citar el resumen del manual como si fueran las palabras de Descartes",
+     "Usar la frase del manual sin referencia, porque se entiende mejor",
+     "Buscar un video que diga lo mismo, para contar con una segunda fuente"
+    ],
+    [
+     "A Rigoberto le llega una imagen: «El fin justifica los medios — Maquiavelo». ¿Qué le conviene responder?",
+     "Que no está en El príncipe; lo más cercano es el capítulo XVIII",
+     "Que es literal del capítulo XVIII, aunque la traducción varíe un poco",
+     "Que sí es de Maquiavelo, pero de una carta privada a un amigo suyo",
+     "Que no importa quién la dijo mientras la idea dé para pensar"
+    ],
+    [
+     "Noemí afirma: «En filosofía todo es opinión; cada quien tiene su verdad». ¿Qué problema tiene esa postura?",
+     "Afirma como verdad para todos que nada es verdad para todos",
+     "Ninguno, porque en filosofía no hay forma de comparar unas razones con otras",
+     "Que en filosofía hay una sola respuesta correcta para cada pregunta",
+     "Que solo los especialistas pueden opinar sobre temas filosóficos"
+    ],
+    [
+     "Saúl oye en su trabajo que la filosofía «es autoayuda con palabras difíciles». ¿Cuál es la diferencia más clara?",
+     "La filosofía pide razones y admite objeciones; no promete recetas",
+     "La autoayuda usa ejemplos de la vida diaria y la filosofía nunca lo hace",
+     "La filosofía solo trata temas del pasado y la autoayuda, los del presente",
+     "No hay diferencia: las dos buscan que la persona se sienta bien pronto"
+    ],
+    [
+     "Paola quiere empezar su cuaderno filosófico. ¿Qué entrada está mejor hecha?",
+     "Fecha, situación, pregunta precisa, tipo, rama y respuesta con una razón",
+     "Una frase inspiradora del día, con el nombre del autor que la dijo",
+     "Un resumen de las noticias de la semana y su opinión sobre cada una",
+     "Una lista de filósofos famosos que le gustaría leer algún día"
+    ],
+    [
+     "En una junta alguien dice: «Esto es legal, así que no hay nada que discutir». ¿Qué aporta la filosofía?",
+     "Distinguir lo legal de lo justo y preguntar por las razones de la regla",
+     "Confirmar que lo legal agota en cualquier caso la discusión sobre lo correcto",
+     "Proponer que se ignore la ley siempre que a la mayoría le parezca injusta",
+     "Dejar el tema a los abogados, porque la ética no se aplica en el trabajo"
+    ],
+    [
+     "Un compañero comparte: «Una vida sin examen no merece ser vivida — Sócrates». ¿Qué es cierto?",
+     "Es auténtica: Platón la pone en boca de Sócrates en la Apología 38a",
+     "Es apócrifa: la inventó un autor moderno para resumir a Sócrates",
+     "Es auténtica, pero Sócrates la escribió en su propio libro de máximas",
+     "Es de Aristóteles y después se le atribuyó por error a Sócrates"
+    ]
+   ]
+  },
+  {
+   "t": "Grandes preguntas I: de Grecia al siglo XVIII",
+   "r": "Recorre a los autores que formularon las preguntas que seguimos haciéndonos —qué es real, cómo sabemos, cómo vivir— y lo que cada uno te deja como herramienta.",
+   "lecciones": [
+    {
+     "t": "Del mito al lógos: los presocráticos y Sócrates",
+     "obj": "Explicar el paso del mito a la explicación racional, reconocer las ideas de Tales, Heráclito y Parménides, y usar la ironía, la mayéutica y la búsqueda de definiciones de Sócrates en una conversación.",
+     "texto": [
+      "Durante siglos, los griegos explicaron el mundo con <b>mitos</b>: relatos de dioses y héroes que daban sentido a las tormentas, las cosechas o la guerra. Hacia el siglo VI a. C., en las ciudades griegas de Jonia, en la costa de la actual Turquía, algunos pensadores empezaron a buscar otra cosa: un <b>lógos</b>, una explicación con razones que cualquiera pudiera discutir. A ellos los llamamos <b>presocráticos</b>. No despreciaban los mitos; hacían otra pregunta: ¿de qué está hecho todo y por qué cambia?",
+      "<b>Tales de Mileto</b> propuso que el principio de todas las cosas es el agua; la respuesta importa menos que el gesto de buscar un principio natural. <b>Heráclito</b> pensó que todo está en cambio y en tensión; en uno de sus fragmentos dice que a quienes se bañan en los mismos ríos les llegan aguas siempre distintas (DK 22 B12; la versión popular del río viene de Platón y de Plutarco). <b>Parménides</b> sostuvo lo contrario: el ser es y no puede no ser, y el cambio que vemos es apariencia. Entre ambos dejaron una pregunta viva: ¿qué permanece cuando todo cambia?",
+      "<b>Sócrates</b> (Atenas, c. 470-399 a. C.) llevó la filosofía de la naturaleza a la vida humana: qué es la justicia, la valentía, la virtud. Su método era la conversación. Con la <b>ironía</b> se presentaba como alguien que no sabía y pedía al otro que le enseñara; luego, con preguntas, mostraba que la definición del interlocutor fallaba. Comparaba su trabajo con el de su madre, que era partera: la <b>mayéutica</b> ayuda a otro a dar a luz sus propias ideas. Buscaba <b>definiciones</b> que valieran para todos los casos, no ejemplos sueltos. Platón cuenta que el oráculo de Delfos dijo que nadie era más sabio que Sócrates, y que él concluyó que su ventaja era no creer saber lo que ignoraba.",
+      "En el año 399 a. C., Sócrates fue acusado de no reconocer a los dioses de la ciudad y de corromper a los jóvenes; un jurado ateniense lo condenó a muerte y él no quiso huir. Conocemos su defensa por la <i>Apología</i> de Platón y por la de Jenofonte, porque <b>Sócrates no escribió nada</b>: lo que sabemos de él viene de sus discípulos y de otros testigos, como el comediógrafo Aristófanes. Por eso, cuando lees «Sócrates dice», en realidad lees a Sócrates según Platón. Su herramienta es sencilla y exigente: antes de discutir, pregunta «¿qué entendemos por…?»."
+     ],
+     "comparar": [
+      "«Así no: “La lealtad es algo obvio; quien no la entiende es porque no quiere.”»",
+      "«Así sí: “Antes de discutir si fue desleal, ¿qué entendemos por lealtad? Dame un caso que sí lo sea y otro que no.”»"
+     ],
+     "caso": "Caso ficticio: Joaquín, de 35 años, es instructor en un taller de mecánica automotriz en Tepic. Un aprendiz de 19 años le dice, muy seguro: «Ser buen mecánico es ser rápido». Joaquín podría corregirlo con un sermón, pero prefiere que el muchacho descubra por sí mismo qué le falta a esa definición, como hacía Sócrates con sus interlocutores en el ágora.",
+     "p": [
+      [
+       "¿Qué pregunta socrática ayuda más a Joaquín a empezar?",
+       "¿Un mecánico rápido que deja mal un freno es buen mecánico?",
+       "¿Sabes cuántos años llevo yo trabajando en este taller, muchacho?",
+       "¿No crees que sería mejor que leyeras completo el manual del taller?",
+       "Un contraejemplo concreto pone a prueba la definición y deja que el aprendiz vea su límite. Invocar la propia experiencia es un argumento de autoridad, y mandarlo al manual evita justo la conversación que lo haría pensar."
+      ],
+      [
+       "El aprendiz corrige: «Es ser rápido y no equivocarse». ¿Qué sigue en la mayéutica?",
+       "Buscar otro caso que ponga a prueba la nueva definición",
+       "Darle ya la definición correcta para no perder más tiempo",
+       "Felicitarlo y cerrar, porque la definición quedó completa",
+       "La mayéutica sigue probando cada definición con nuevos casos: ¿y si es rápido y no se equivoca, pero engaña al cliente con el precio? Dar la respuesta le quita el descubrimiento, y cerrar ahora deja fuera la honestidad o el trato al cliente."
+      ],
+      [
+       "¿Qué distingue la ironía socrática de burlarse del otro?",
+       "Fingir no saber para que el otro examine su idea, no para humillarlo",
+       "Hacer preguntas difíciles para que el otro reconozca quién sabe más",
+       "Hablar en tono serio aunque por dentro uno se esté riendo del otro",
+       "La ironía socrática es una invitación a pensar: quien pregunta se pone en el lugar del que no sabe. Usar preguntas para ganar jerarquía o para reírse del otro rompe la confianza que necesita el diálogo."
+      ]
+     ],
+     "completar": [
+      "La ___ es el arte socrático de ayudar a otro a dar a luz sus propias ideas.",
+      "mayéutica"
+     ],
+     "relacionar": [
+      [
+       "Tales de Mileto",
+       "El agua como principio de todas las cosas"
+      ],
+      [
+       "Heráclito",
+       "Todo está en cambio y en tensión"
+      ],
+      [
+       "Parménides",
+       "El ser es; el cambio es apariencia"
+      ],
+      [
+       "Ironía socrática",
+       "Presentarse como alguien que no sabe"
+      ],
+      [
+       "Búsqueda de definiciones",
+       "Pedir qué vale para todos los casos, no ejemplos sueltos"
+      ]
+     ],
+     "refl": "Practica una conversación socrática breve. 1) Elige un concepto que se use mucho en tu casa o en tu trabajo: lealtad, respeto, éxito, responsabilidad. 2) Pide a alguien su definición y anótala. 3) Haz dos o tres preguntas con contraejemplos que la pongan a prueba, sin burlarte. 4) Registra cómo cambió la definición. 5) Escribe qué aprendiste del concepto y qué aprendiste sobre preguntar.",
+     "modelo": "Modelo: «Concepto: respeto. Mi hermana dijo: “Respetar es no contradecir a los mayores”. Pregunté: si un adulto mayor dice algo falso sobre un medicamento, ¿respetarlo es callar? Dijo que no, que se le puede corregir con buen modo. Nueva definición: “Respetar es tratar al otro con consideración, incluso al contradecirlo”. Pregunté si se puede respetar a alguien con quien estás enojado; dijo que sí, y que eso es lo difícil. Aprendí que el respeto no es obediencia, y que preguntar con calma funcionó mejor que discutir.» Es buena porque usa contraejemplos concretos, registra cómo cambia la definición y no humilla a nadie.",
+     "plantilla": [
+      "Guía de conversación socrática",
+      "Concepto: [ ]\nDefinición inicial del otro: [ ]\nPregunta con contraejemplo 1: [ ]\nRespuesta y ajuste: [ ]\nPregunta con contraejemplo 2: [ ]\nDefinición final: [ ]\nLo que aprendí del concepto: [ ]\nLo que aprendí sobre preguntar: [ ]"
+     ],
+     "clave": [
+      "Los presocráticos cambiaron el relato mítico por explicaciones con razones discutibles.",
+      "Sócrates no escribió nada: lo conocemos por Platón, Jenofonte y otros testigos.",
+      "Pregunta «¿qué entendemos por…?» y prueba las definiciones con contraejemplos."
+     ]
+    },
+    {
+     "t": "Platón y Aristóteles: dos maneras de buscar la verdad",
+     "obj": "Explicar la alegoría de la caverna y la ética aristotélica de la virtud como término medio, y usarlas para revisar tus creencias y tus hábitos.",
+     "texto": [
+      "<b>Platón</b> (c. 427-347 a. C.), discípulo de Sócrates, fundó en Atenas la <b>Academia</b>, una escuela que funcionó durante siglos. En el libro VII de la <i>República</i> cuenta la <b>alegoría de la caverna</b>: unos prisioneros, encadenados desde niños, solo ven sombras proyectadas en una pared y creen que son la realidad. Si uno se libera y sale, el sol primero lo deslumbra; poco a poco entiende. Si regresa a contarlo, los demás se burlan de él. La imagen habla de la educación como un giro de toda el alma y de lo difícil que es soltar lo que creemos saber.",
+      "Detrás está su teoría de las <b>ideas</b> o formas, dicha en términos sencillos: las cosas que vemos cambian y son imperfectas, pero podemos pensar lo que las hace ser lo que son. Ningún círculo dibujado es perfecto y, sin embargo, entendemos qué es un círculo; ningún acto humano es justo del todo y, sin embargo, buscamos qué es la justicia. Para Platón, conocer es pasar de las apariencias a esas formas, y eso exige razonar, no solo mirar.",
+      "<b>Aristóteles</b> (384-322 a. C.) estudió unos veinte años en la Academia y después fundó su propia escuela, el <b>Liceo</b>. Su camino fue otro: empezar por la <b>observación</b> de lo que hay y clasificar plantas, animales, constituciones políticas y formas de razonar. Para entender algo, decía, hay que conocer sus <b>cuatro causas</b>: de qué está hecho, qué forma tiene, qué lo produjo y para qué existe.",
+      "En la <i>Ética nicomáquea</i> pregunta qué es una vida buena. Su respuesta es la <b>eudaimonía</b>, que suele traducirse como felicidad o florecimiento: vivir realizando bien lo propio del ser humano, conforme a la razón y a lo largo de toda una vida. Para eso hacen falta virtudes, y la virtud ética es un <b>término medio</b> entre dos extremos: la valentía está entre la cobardía y la temeridad; la generosidad, entre la tacañería y el derroche. Ese medio no es una fórmula matemática, sino lo adecuado según la persona y la situación, y se forma con el <b>hábito</b>: actuando con justicia una y otra vez llegamos a ser justos. Platón te deja una pregunta, ¿qué sombras tomo por realidad?; Aristóteles, una tarea: ¿qué hábito practico hoy?"
+     ],
+     "comparar": [
+      "«Así no: “La virtud es no pasarse nunca de nada; mejor quedarse siempre a la mitad.”»",
+      "«Así sí: “Lo valiente aquí no es callarme por miedo ni gritarle a mi jefe: es decirle lo que pasó, con datos y en privado.”»"
+     ],
+     "caso": "Caso ficticio: Yesenia, de 31 años, es nutrióloga en Colima. Muchos pacientes llegan convencidos, por videos que vieron en redes, de que un solo alimento «quema la grasa» o de que deben eliminar por completo un grupo de alimentos. Además, ella misma nota que alterna semanas de dieta muy estricta con semanas en que abandona todo. Quiere usar a Platón y a Aristóteles para pensar en ambos problemas.",
+     "p": [
+      [
+       "¿Qué parte de la caverna ilumina mejor la situación de los pacientes?",
+       "Toman por realidad imágenes que otros proyectan y les cuesta soltarlas",
+       "Viven encerrados en su casa y por eso no han aprendido a comer bien",
+       "Ya salieron de la caverna y ahora desprecian a quienes siguen dentro",
+       "Los pacientes creen en lo que les muestran las pantallas como los prisioneros en las sombras. La caverna no habla de encierro físico, y quien acaba de salir en la alegoría no desprecia a nadie: es él quien recibe burlas."
+      ],
+      [
+       "Según Aristóteles, ¿qué le conviene a Yesenia con sus semanas de un extremo a otro?",
+       "Buscar el término medio adecuado a su vida y practicarlo como hábito",
+       "Elegir el extremo más estricto, porque la virtud siempre exige sacrificio",
+       "Calcular la mitad exacta entre sus dos tipos de semana y repetirla",
+       "El término medio aristotélico es lo adecuado a la persona y la situación, y se consolida practicándolo. La virtud no es el extremo más duro, y tampoco una media aritmética que se aplica igual a todos los casos."
+      ],
+      [
+       "Un paciente se enoja cuando Yesenia le explica que el video exagera. ¿Qué le enseña la caverna?",
+       "Que dejar una creencia cómoda deslumbra y genera resistencia",
+       "Que no vale la pena explicar nada a quien no quiere escuchar",
+       "Que debe imponer su verdad, porque ella ya vio la luz del sol",
+       "En la alegoría, salir de la cueva duele y quien vuelve es recibido con burlas: la resistencia es esperable. Rendirse abandona al paciente, e imponer la verdad olvida que la educación es un giro que cada quien tiene que dar."
+      ]
+     ],
+     "completar": [
+      "Para Aristóteles, la virtud ética es un término ___ entre dos extremos.",
+      "medio"
+     ],
+     "refl": "Usa a Platón y a Aristóteles en tu vida. 1) Identifica una «sombra» en tu caverna: una creencia que tomaste de las redes, de tu entorno o de la costumbre sin revisarla. 2) Escribe qué tendrías que hacer para «salir» a comprobarla y qué te incomodaría de hacerlo. 3) Elige una virtud que quieras cultivar: paciencia, valentía, generosidad o templanza. 4) Escribe sus dos extremos en tu caso concreto y cómo se ve el término medio. 5) Diseña un hábito pequeño para practicarla durante una semana.",
+     "modelo": "Modelo: «Sombra: creía que quien no contesta rápido los mensajes del trabajo es irresponsable. Para salir, preguntaré a mi equipo cómo organiza su tiempo; me incomoda descubrir que el problema era mi prisa. Virtud: paciencia. Extremos: exigir respuesta inmediata y, del otro lado, no dar seguimiento a nada. Término medio: acordar tiempos razonables y dar seguimiento sin presionar. Hábito: durante una semana, antes de reenviar un mensaje, esperar el plazo acordado y anotar si de verdad hacía falta insistir.» Es buena porque nombra una creencia concreta, sitúa los extremos en su vida y convierte la virtud en un hábito observable.",
+     "plantilla": [
+      "Mi caverna y mi término medio",
+      "Creencia que tomé sin revisar: [ ]\nDe dónde la tomé: [ ]\nCómo la comprobaría: [ ]\nVirtud que quiero cultivar: [ ]\nExtremo por defecto: [ ]\nExtremo por exceso: [ ]\nTérmino medio en mi situación: [ ]\nHábito de una semana: [ ]"
+     ],
+     "clave": [
+      "La caverna muestra que educarse es un giro difícil: dejar sombras cómodas por lo que de verdad es.",
+      "Aristóteles parte de la observación y explica las cosas por sus cuatro causas.",
+      "La virtud es un término medio adecuado a la situación, y se forma practicándola."
+     ]
+    },
+    {
+     "t": "Fe y razón: filosofía medieval de tres tradiciones",
+     "obj": "Reconocer los aportes de pensadores cristianos, musulmanes y judíos de la Edad Media y analizar las cinco vías de Tomás de Aquino como ejemplo de argumento, sin tomar partido.",
+     "texto": [
+      "Se suele decir que la Edad Media fue una época «oscura» para el pensamiento. No es exacto. Entre los siglos V y XV hubo debates intensos sobre la relación entre <b>fe y razón</b>, se conservaron y comentaron textos antiguos y nacieron universidades como las de Bolonia, París y Oxford. Y la conversación no fue solo cristiana: pensadores musulmanes y judíos leyeron a Platón y a Aristóteles, los discutieron y los transmitieron, a menudo en traducciones del griego al árabe y luego al latín.",
+      "<b>Agustín de Hipona</b> (354-430), en el norte de África, unió la fe cristiana con ideas platónicas; en las <i>Confesiones</i> examina su propia vida con una sinceridad que aún sorprende y se pregunta, entre otras cosas, qué es el tiempo. <b>Avicena</b> (Ibn Sina, 980-1037), persa, fue filósofo y médico; su <i>Canon de medicina</i> se estudió durante siglos. <b>Averroes</b> (Ibn Rushd, 1126-1198), de Córdoba, comentó a Aristóteles con tal detalle que en Europa lo llamaron «el Comentador», y defendió que filosofía y revelación, bien entendidas, no se contradicen. <b>Maimónides</b> (1138-1204), judío también cordobés, escribió la <i>Guía de perplejos</i> para quienes sentían un choque entre la ley religiosa y la filosofía.",
+      "<b>Tomás de Aquino</b> (1225-1274) integró a Aristóteles con la teología cristiana. En la <i>Suma teológica</i> presenta las <b>cinco vías</b>, cinco argumentos para mostrar que Dios existe. La primera, simplificada: vemos que las cosas cambian; todo lo que cambia es movido por otro; no puede haber una cadena infinita de motores; luego hay un primer motor, que Tomás identifica con Dios. Aquí no se trata de decidir si convence, sino de verlo como modelo de razonamiento: premisas y conclusión que pueden examinarse paso a paso. Hay creyentes que lo aceptan, creyentes que apoyan su fe en otras razones y no creyentes que objetan, por ejemplo, que la cadena infinita no está descartada o que un primer motor no tiene por qué ser el Dios de una religión.",
+      "El método de aquellas universidades se llamó <b>escolástica</b>: plantear una pregunta, reunir primero los argumentos contra la postura que se va a defender, dar la respuesta propia con sus razones y, al final, contestar una por una las objeciones. Sigue siendo un modelo de honestidad intelectual: antes de dar tu respuesta, expones con justicia la mejor versión de lo que piensan los demás. Esta lección no te pide creer ni dejar de creer: te pide reconocer un buen argumento, llegue a donde llegue, y respetar a quien concluye otra cosa."
+     ],
+     "comparar": [
+      "«Así no: “En la Edad Media nadie pensaba; todos se limitaban a obedecer.”»",
+      "«Así sí: “En la Edad Media hubo debates fuertes sobre fe y razón entre autores cristianos, musulmanes y judíos; veamos uno de sus argumentos.”»"
+     ],
+     "caso": "Caso ficticio: Abraham, de 44 años, da clases de Humanidades en una preparatoria de Pachuca. En su grupo hay estudiantes católicos, evangélicos, una alumna que no cree en ningún dios y otros que no saben qué pensar. Quiere trabajar las cinco vías de Tomás de Aquino sin que la clase se convierta en un pleito entre bandos ni en una clase de religión.",
+     "p": [
+      [
+       "¿Cómo conviene que Abraham presente las cinco vías?",
+       "Como argumentos con premisas que se examinan paso a paso",
+       "Como una prueba definitiva que todo estudiante debe aceptar",
+       "Como una curiosidad histórica sin relación con la filosofía",
+       "Tratarlas como argumentos permite que creyentes y no creyentes trabajen sobre lo mismo: las premisas. Exigir que se acepten convierte la clase en adoctrinamiento, y reducirlas a curiosidad ignora que son un ejemplo clásico de razonamiento filosófico."
+      ],
+      [
+       "Una alumna no creyente objeta la primera vía. ¿Qué respuesta es más filosófica?",
+       "Pedirle que señale qué premisa rechaza y por qué",
+       "Decirle que la fe no se discute y pasar al tema siguiente",
+       "Darle la razón para que el grupo vea que la clase es neutral",
+       "Ubicar la premisa en disputa convierte la objeción en análisis, como en la escolástica. Cortar la discusión le niega su derecho a argumentar, y darle la razón sin examinar tampoco es neutralidad: es otra forma de no pensar."
+      ],
+      [
+       "¿Qué actividad refleja mejor el método escolástico?",
+       "Exponer objeciones, dar una respuesta y contestar cada objeción",
+       "Votar al final qué postura convence a más estudiantes del grupo",
+       "Leer en voz alta un resumen de la Suma y preguntar fechas de memoria",
+       "La escolástica obliga a presentar y contestar las objeciones una por una. Votar mide popularidad, no calidad de razones, y memorizar fechas no ejercita el método de discusión."
+      ]
+     ],
+     "completar": [
+      "El método universitario medieval que expone objeciones antes de responder se llamó ___.",
+      "escolástica"
+     ],
+     "relacionar": [
+      [
+       "Agustín de Hipona",
+       "Confesiones y la pregunta por el tiempo"
+      ],
+      [
+       "Avicena",
+       "Filósofo y médico persa, autor del Canon"
+      ],
+      [
+       "Averroes",
+       "Llamado «el Comentador» de Aristóteles"
+      ],
+      [
+       "Maimónides",
+       "Guía de perplejos"
+      ],
+      [
+       "Tomás de Aquino",
+       "Las cinco vías en la Suma teológica"
+      ]
+     ],
+     "refl": "Practica la honestidad escolástica con una pregunta que te importe. 1) Formula una pregunta discutida en tu entorno, sobre fe y razón o sobre otro tema. 2) Escribe las dos mejores objeciones a la postura que tú prefieres, como las diría alguien que las defiende en serio. 3) Escribe tu respuesta con una razón principal. 4) Contesta cada objeción por separado. 5) Termina anotando qué aprendiste de la postura contraria.",
+     "modelo": "Modelo: «Pregunta: ¿conviene hacer una oración antes de las juntas en mi trabajo? Prefiero que no. Objeción 1: para muchos compañeros es parte de su identidad y los une. Objeción 2: nadie está obligado a rezar, solo a estar presente. Respuesta: conviene un minuto de silencio que cada quien use como quiera, porque incluye a todos. A la 1: el silencio permite orar a quien lo desee. A la 2: estar presente en un rito ajeno puede incomodar aunque no se exija participar. Aprendí que para muchos no es un trámite, sino algo valioso.» Es buena porque presenta las objeciones con justicia y responde a cada una.",
+     "plantilla": [
+      "Cuestión al estilo escolástico",
+      "Pregunta: [¿…?]\nObjeción 1 (en su mejor versión): [ ]\nObjeción 2 (en su mejor versión): [ ]\nMi respuesta y su razón principal: [ ]\nRespuesta a la objeción 1: [ ]\nRespuesta a la objeción 2: [ ]\nLo que aprendí de la postura contraria: [ ]"
+     ],
+     "clave": [
+      "La Edad Media fue una época de intenso debate entre fe y razón.",
+      "Pensadores cristianos, musulmanes y judíos conservaron y discutieron a los griegos.",
+      "Analizar un argumento no obliga a aceptar ni a rechazar su conclusión: obliga a examinar sus premisas."
+     ]
+    },
+    {
+     "t": "La modernidad: dudar, observar y atreverse a pensar",
+     "obj": "Explicar la duda metódica de Descartes, el empirismo y el problema de la inducción, el lema ilustrado de Kant y las ideas políticas de Maquiavelo y Hobbes, y aplicarlos a la información que recibes.",
+     "texto": [
+      "En el siglo XVII, con el auge de la nueva ciencia y tras décadas de guerras de religión, muchos se preguntaron cómo distinguir lo cierto de lo dudoso. <b>René Descartes</b> propuso la <b>duda metódica</b>: poner en duda, de forma provisional, todo aquello en lo que hubiera el menor motivo de duda, para ver si quedaba algo firme. Los sentidos a veces engañan; podríamos estar soñando. Pero mientras dudo, pienso, y si pienso, existo. En el <i>Discurso del método</i> (1637, parte IV) lo escribe así: «pienso, luego existo» («je pense, donc je suis»). Dudar como método no es desconfiar de todo para siempre: es buscar fundamentos.",
+      "Los <b>empiristas</b> respondieron que todo conocimiento empieza en la experiencia. <b>John Locke</b> comparó la mente al nacer con una hoja en blanco que la experiencia va llenando. <b>David Hume</b> llevó la idea más lejos con el <b>problema de la inducción</b>: hemos visto salir el sol cada mañana, pero ningún número de casos pasados demuestra lógicamente que mañana saldrá; lo esperamos por costumbre. No es una invitación a ignorar la experiencia, sino a reconocer que nuestras generalizaciones son probables, no seguras, algo clave al leer estadísticas o predicciones.",
+      "<b>Immanuel Kant</b> buscó unir la confianza de Descartes en la razón con el empirismo: el conocimiento empieza con la experiencia, pero la mente aporta formas para ordenarla. En 1784 respondió a la pregunta «¿Qué es la Ilustración?» y escribió que es «la salida del ser humano de su minoría de edad autoculpable»; propuso como lema: «¡<i>Sapere aude</i>! ¡Ten el valor de servirte de tu propio entendimiento!» (la traducción puede variar). La frase latina viene del poeta Horacio; Kant la volvió programa: pensar por cuenta propia, sin entregar el juicio a otros por pereza o por miedo.",
+      "La modernidad también replanteó la política. <b>Maquiavelo</b>, en <i>El príncipe</i> (escrito hacia 1513), describió cómo se conquista y se conserva el poder sin idealizarlo. <b>Thomas Hobbes</b>, en el <i>Leviatán</i> (1651), imaginó un «estado de naturaleza» sin autoridad común, inseguro y violento, y argumentó que las personas aceptan un poder soberano a cambio de paz y seguridad. Ambos te dejan una pregunta incómoda: ¿qué justifica que alguien mande? Y esta lección te deja una caja de herramientas: duda con método, revisa de dónde viene lo que crees, desconfía de las generalizaciones fáciles y atrévete a pensar."
+     ],
+     "comparar": [
+      "«Así no: “Yo dudo de todo como Descartes: de las noticias, de los científicos, de mis vecinos; nada es cierto.”»",
+      "«Así sí: “Dudo con método: ¿qué evidencia hay, de dónde viene y qué haría falta para que cambie de opinión?”»"
+     ],
+     "caso": "Caso ficticio: Leticia, de 38 años, es analista de datos en una empresa agrícola de Ciudad Obregón. Su jefe quiere decidir la compra de semilla para el próximo ciclo porque «los últimos cinco años siempre llovió en julio». Además, entre el equipo circula un video que asegura que todos los pronósticos del clima son mentira. Leticia quiere usar lo que aprendió para proponer algo sensato en la reunión del lunes.",
+     "p": [
+      [
+       "¿Qué le señalaría Hume al jefe de Leticia?",
+       "Que cinco años de lluvia hacen probable, no seguro, que vuelva a llover",
+       "Que la experiencia pasada no sirve de nada para prever el clima",
+       "Que hay que esperar a tener cien años de datos para poder decidir",
+       "Hume no dice que la experiencia sea inútil, sino que no da certeza: cinco años sugieren una tendencia, pero conviene prever el riesgo de que falle. Esperar cien años de datos tampoco daría certeza y paralizaría la decisión."
+      ],
+      [
+       "¿Cómo aplicaría Leticia la duda metódica al video?",
+       "Preguntar qué evidencia ofrece y contrastarla con fuentes serias",
+       "Aceptarlo, porque dudar de los pronósticos es dudar como Descartes",
+       "Rechazar cualquier video sin verlo, porque las redes siempre mienten",
+       "La duda metódica busca fundamentos: examina la evidencia del video y la contrasta. Dudar de todos los pronósticos sin razones es desconfianza total, no método, y descartar sin examinar es otro prejuicio."
+      ],
+      [
+       "¿Qué propuesta refleja mejor el «atrévete a pensar» de Kant en el equipo?",
+       "Que cada quien revise los datos y razone antes de seguir al jefe o al video",
+       "Que todos sigan al jefe, porque tiene más experiencia y más información",
+       "Que cada quien decida según lo que sienta, sin necesidad de dar razones",
+       "Kant pide usar el propio entendimiento en lugar de entregar el juicio a otro, sea el jefe o un video. Pensar por cuenta propia no es decidir por corazonada: es razonar con los datos disponibles."
+      ]
+     ],
+     "completar": [
+      "Hume mostró que de muchos casos pasados no se sigue con certeza el futuro: es el problema de la ___.",
+      "inducción"
+     ],
+     "refl": "Pon a prueba una creencia con las herramientas modernas. 1) Elige una afirmación que hayas creído o compartido últimamente, sobre salud, dinero, política o tu trabajo. 2) Duda con método: ¿qué podría hacer que fuera falsa? 3) Pregunta como empirista: ¿de qué experiencia o de qué datos viene? 4) Revisa la inducción: ¿generaliza desde pocos casos? 5) Atrévete a pensar: escribe tu propia conclusión y qué evidencia te haría cambiarla.",
+     "modelo": "Modelo: «Afirmación: “Comprar dólares cuando el peso está fuerte siempre deja ganancia”. Duda: ¿y si el peso se mantiene fuerte o se fortalece más? Experiencia: lo creí porque a un amigo le funcionó dos veces. Inducción: dos casos no bastan, y el tipo de cambio depende de muchos factores. Mi conclusión: puede servir para diversificar ahorros, no como ganancia segura. Me haría cambiar de opinión un análisis con datos de varios años y con los riesgos explicados.» Es buena porque usa las cuatro preguntas, reconoce de dónde viene la creencia y fija qué evidencia la cambiaría.",
+     "plantilla": [
+      "Revisión moderna de una creencia",
+      "Afirmación: [ ]\nDuda metódica, ¿qué la haría falsa?: [ ]\nDe qué experiencia o datos viene: [ ]\n¿Generaliza desde pocos casos?: [ ]\nMi conclusión, pensada por mí: [ ]\nEvidencia que me haría cambiar: [ ]"
+     ],
+     "clave": [
+      "La duda metódica busca fundamentos; no es desconfiar de todo para siempre.",
+      "Hume enseña que las generalizaciones desde la experiencia son probables, no seguras.",
+      "Kant resume la Ilustración en atreverse a usar el propio entendimiento."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "Construye la línea del tiempo personal de una gran pregunta. En los primeros 15 minutos elige una pregunta, por ejemplo «¿qué es una vida buena?», «¿cómo sé que algo es verdad?» o «¿qué justifica que alguien mande?». En los siguientes 50 minutos ubica en una línea del tiempo a cuatro autores de este módulo que la hayan abordado; para cada uno escribe su respuesta en dos líneas, con obra y pasaje o capítulo cuando lo tengas, y lo que tú tomas de él. En los últimos 25 minutos escribe un párrafo con tu respuesta provisional: con qué autor dialogas más y qué objeción de otro autor tendrías que contestar.",
+    "entregable": "Una línea del tiempo con cuatro autores, sus respuestas parafraseadas con referencia y lo que tomas de cada uno, y un párrafo con tu respuesta provisional y una objeción.",
+    "criterios": "Revisa: los cuatro autores pertenecen a épocas distintas y están bien ubicados, las respuestas son paráfrasis fieles sin citas inventadas, lo que tomas de cada autor es concreto y aplicable, y tu párrafo final contesta una objeción real."
+   },
+   "lab": {
+    "t": "La caverna y la duda en tiempos de redes",
+    "obj": "Preparar una sesión de lectura que aplique la caverna de Platón y la duda metódica de Descartes a la información en redes sociales, sin caricaturas ni desconfianza total.",
+    "esc": "<b>Ulises,</b> de 26 años, coordina un club de lectura en una biblioteca pública de Tlaquepaque. <b>Paola,</b> de 33 años, maestra de preparatoria, le propone una sesión conjunta con su grupo y con los adultos del club sobre la alegoría de la caverna y la duda cartesiana «en tiempos de redes sociales». Tienen dos semanas para prepararla, una sesión de 90 minutos y un público de entre 15 y 60 años.",
+    "e": [
+     [
+      "Escena 1: Al planear, Paola propone abrir con la frase «las redes son la caverna y ustedes son los prisioneros», y Ulises teme que suene a sermón.",
+      "Consigna: escribe una explicación de la caverna en cinco frases fieles a la <i>República</i> VII y una pregunta inicial que invite a pensar sin acusar a nadie."
+     ],
+     [
+      "Escena 2: En la sesión, un participante adulto dice que él ya «salió de la caverna» porque no cree nada de lo que dicen los medios ni los científicos.",
+      "Consigna: redacta una respuesta que distinga la duda metódica de Descartes de la desconfianza total y proponga cómo buscar fundamentos."
+     ],
+     [
+      "Escena 3: Una estudiante pregunta si la aplicación que le recomienda videos «la conoce mejor que nadie», porque acierta casi siempre.",
+      "Consigna: usa el problema de la inducción de Hume y el «atrévete a pensar» de Kant para explicar qué se puede concluir de esos aciertos y qué no."
+     ],
+     [
+      "Escena 4: Quedan 20 minutos y hay que cerrar con algo que los asistentes puedan hacer en su casa.",
+      "Consigna: diseña un ejercicio de cierre de 15 minutos y una tarea de una semana que combine la caverna y la duda metódica, con una ficha que cada persona pueda llenar."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué apertura respeta mejor el texto y al público?",
+      "Narrar la caverna y preguntar qué sombras toma cada quien por realidad",
+      "Afirmar que quien usa redes vive en la caverna y debe salir de inmediato",
+      "Empezar con la biografía completa de Platón para dar contexto histórico",
+      "Narrar e invitar a la autoexploración respeta a Platón y no acusa a nadie. Equiparar redes y caverna como sentencia convierte la sesión en sermón, y una biografía larga gasta el tiempo que necesita la discusión."
+     ],
+     [
+      "¿Qué responde mejor al participante que «no cree nada»?",
+      "Que Descartes duda para hallar fundamentos, no para quedarse sin ninguno",
+      "Que hace bien, porque la duda cartesiana consiste en no creer en nada",
+      "Que debe creer a los científicos, porque dudar de ellos es irracional",
+      "La duda de Descartes es provisional y busca algo firme. No creer nada es otra forma de no examinar, y exigir fe ciega en cualquier autoridad tampoco es duda metódica: lo razonable es pedir y evaluar la evidencia."
+     ],
+     [
+      "¿Qué se puede concluir de que la aplicación acierte casi siempre?",
+      "Que predice por patrones pasados con probabilidad, sin conocerla de verdad",
+      "Que la conoce mejor que nadie, porque sus aciertos lo demuestran con certeza",
+      "Que no sirve, porque la inducción nunca da información que valga la pena",
+      "Los aciertos muestran patrones en su conducta pasada que hacen probable lo que verá después; no prueban que la conozca como persona. La inducción no da certeza, pero tampoco es inútil: sostiene buena parte de la ciencia y de la vida diaria."
+     ]
+    ],
+    "pl": [
+     "Guion de sesión: caverna y duda en redes",
+     "Pregunta de apertura: [ ]\nLa caverna en cinco frases (República VII): [ ]\nConexión con las redes sin sermón: [ ]\nDuda metódica frente a desconfianza total: [ ]\nQué se concluye y qué no de una aplicación que acierta: [ ]\nEjercicio de cierre (15 min): [ ]\nTarea de una semana: [ ]\nFicha para cada asistente: [sombra que detecté / cómo la comprobé / qué fundamento encontré]"
+    ]
+   },
+   "quiz": [
+    [
+     "Teodoro, carpintero, dice que todo cambia tanto que nada permanece igual. ¿Con qué presocrático dialoga más?",
+     "Heráclito, que vio todo en cambio y en tensión",
+     "Parménides, que llamó apariencia al cambio que vemos",
+     "Tales, que buscó en el agua el principio de todo",
+     "Sócrates, que pidió definir la justicia y la virtud"
+    ],
+    [
+     "Brenda quiere saber qué pensaba realmente Sócrates. ¿Qué debe tener en cuenta?",
+     "Que no escribió nada y lo conocemos por Platón, Jenofonte y otros",
+     "Que sus libros se perdieron, aunque quedan resúmenes fieles de cada uno",
+     "Que él mismo escribió la Apología para defenderse ante el jurado",
+     "Que sus ideas se conocen por las cartas que le envió a Aristóteles"
+    ],
+    [
+     "En una junta, Isaías pregunta: «Antes de decidir si fue un error, ¿qué entendemos por error?». ¿Qué está usando?",
+     "La búsqueda socrática de definiciones",
+     "La duda metódica que propuso Descartes en el Discurso",
+     "El método de observación y clasificación de Aristóteles",
+     "La alegoría de la caverna de la República de Platón"
+    ],
+    [
+     "Fernanda cree todo lo que ve en un canal de videos porque «se ve muy real». ¿Qué imagen de Platón describe mejor su situación?",
+     "Los prisioneros que toman las sombras por la realidad",
+     "El que vuelve a la cueva y recibe las burlas de los demás",
+     "El sol que deslumbra a quien acaba de salir de la cueva",
+     "El mundo de las ideas como un lugar físico muy lejano"
+    ],
+    [
+     "Rigoberto pasa de no hacer nada de ejercicio a entrenar hasta lastimarse. ¿Qué le sugeriría Aristóteles?",
+     "Buscar el término medio adecuado a él y practicarlo como hábito",
+     "Elegir el extremo más exigente, porque la virtud es puro esfuerzo",
+     "Calcular la mitad exacta de horas y aplicarla igual que todos",
+     "Dejar el ejercicio, porque la virtud solo tiene que ver con los demás"
+    ],
+    [
+     "Noemí afirma que en la Edad Media no hubo filosofía. ¿Qué dato la contradice mejor?",
+     "Averroes y Maimónides comentaron y discutieron a Aristóteles",
+     "Descartes escribió el Discurso del método en plena Edad Media",
+     "Sócrates enseñó en las primeras universidades europeas de su tiempo",
+     "Platón fundó en el siglo XII una academia en la ciudad de París"
+    ],
+    [
+     "En una clase, un alumno creyente y otro no creyente discuten las cinco vías. ¿Qué actitud es más filosófica?",
+     "Examinar cada premisa, sea cual sea la conclusión",
+     "Evitar el tema, porque la fe y la razón no pueden conversar",
+     "Votar quién tiene razón para cerrar pronto la discusión",
+     "Aceptar el argumento sin más porque lo propuso un santo y doctor de la Iglesia"
+    ],
+    [
+     "Saúl lee: «El 90 % de los clientes del mes pasado regresó, así que este mes regresará el 90 %». ¿Qué advertiría Hume?",
+     "Que el pasado hace probable, no seguro, el futuro",
+     "Que la cifra es falsa, porque toda estadística engaña",
+     "Que solo vale si se tienen datos de un siglo completo",
+     "Que la experiencia no sirve para tomar ninguna decisión"
+    ],
+    [
+     "Paola ve que un compañero repite lo que diga el líder del grupo «para no complicarse». ¿Qué texto le serviría para invitarlo a pensar?",
+     "El de Kant sobre la Ilustración y su sapere aude",
+     "El Leviatán de Hobbes, sobre el poder soberano y la paz",
+     "Las Confesiones de Agustín, sobre la pregunta por el tiempo",
+     "La Guía de perplejos de Maimónides, sobre la ley religiosa"
+    ],
+    [
+     "En una colonia sin reglas ni vigilancia, los vecinos aceptan dar autoridad a un comité a cambio de seguridad. ¿Qué autor describe mejor esa lógica?",
+     "Hobbes, con el estado de naturaleza y el soberano",
+     "Parménides, con su idea de un ser que no cambia",
+     "Heráclito, con su idea del cambio constante del río",
+     "Avicena, con su Canon de medicina y su obra filosófica"
+    ]
+   ]
+  }
+ ]
+}

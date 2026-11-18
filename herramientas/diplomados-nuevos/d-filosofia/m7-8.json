@@ -1,0 +1,782 @@
+{
+  "modulos": [
+    {
+      "t": "Filosofía hoy: inteligencia artificial y filosofía como forma de vida",
+      "r": "Aplica la filosofía a la tecnología y la IA, y prueba ejercicios de las escuelas antiguas para vivir con más claridad, sin confundir la filosofía con terapia.",
+      "lecciones": [
+        {
+          "t": "¿Pueden pensar las máquinas? Mente, conciencia e IA",
+          "obj": "Distinguir las principales posturas sobre la mente y usar el juego de la imitación y el cuarto chino para pensar con criterio qué hace un sistema de inteligencia artificial y qué no sabemos todavía.",
+          "texto": [
+            "Cuando un programa te responde con frases fluidas, es casi inevitable preguntarte si «entiende». La pregunta es antigua: es el <b>problema mente-cuerpo</b>, o cómo se relaciona lo que pensamos y sentimos con lo físico. En una línea cada postura: el <b>dualismo</b>, asociado a Descartes, sostiene que la mente es una sustancia distinta del cuerpo; el <b>materialismo</b> afirma que los estados mentales son procesos físicos del cerebro; el <b>funcionalismo</b> define un estado mental por el papel que cumple —qué lo provoca y qué produce—, no por el material del que está hecho. Si el funcionalismo acierta, una máquina podría, en principio, tener mente.",
+            "En 1950 el matemático británico Alan Turing publicó «Computing Machinery and Intelligence» en la revista <i>Mind</i>. En vez de discutir qué significa «pensar», propuso el <b>juego de la imitación</b>: alguien conversa por escrito con una persona y con una máquina sin verlas; si no logra distinguir cuál es la máquina, ¿con qué razón le negamos inteligencia? En 1980 el filósofo John Searle respondió con el <b>cuarto chino</b>: imagina a alguien encerrado que no sabe chino, pero recibe mensajes en ese idioma y, siguiendo un manual de reglas, devuelve respuestas impecables. Desde afuera parece que entiende; adentro solo manipula símbolos. Para Searle, seguir reglas sobre símbolos no basta para comprender su significado.",
+            "Los modelos de lenguaje actuales son un caso real de esta discusión. Se entrenan con enormes cantidades de texto para predecir qué palabra sigue y luego se ajustan con retroalimentación humana; pueden resumir, traducir o argumentar con soltura, y también inventar datos con total seguridad. ¿Comprenden? Hay especialistas serios en ambos lados. Y queda una pregunta más difícil, la de la <b>conciencia</b>: si hay algo que se sienta ser ese sistema, como planteó Thomas Nagel en 1974 a propósito de los murciélagos. Lo honesto hoy es no tomar partido dogmático: ni «es solo un autocompletar» ni «ya tiene sentimientos».",
+            "Lo que sí puedes evitar es <b>antropomorfizar</b>: atribuir intenciones, emociones o lealtad a un sistema por la manera en que habla. Ya a mediados de los años sesenta, el programa ELIZA de Joseph Weizenbaum, que solo reformulaba lo que escribía el usuario, llevó a algunas personas a confiarle intimidades. Regla práctica: juzga una IA por lo que hace y por cómo se comprueba, no por lo humana que suena. Pregúntate qué sabes de su funcionamiento, qué evidencia tienes de que comprende y qué cambiaría si estuvieras equivocado."
+          ],
+          "comparar": [
+            "«Así no: “Me contesta con cariño, así que seguro me quiere”.»",
+            "«Así sí: “Me contesta con frases cálidas; eso habla de cómo fue entrenado, no prueba que sienta algo”.»"
+          ],
+          "caso": "Caso ficticio: Jazmín, de 28 años, es auxiliar de enfermería en Mazatlán. Su papá, de 63 años, jubilado y que vive solo, platica cada noche con un asistente de inteligencia artificial en su celular y asegura: «Este sí me entiende; tiene más sentimientos que mucha gente». Su hermano se burla en el grupo de la familia: «Es una calculadora de palabras, no piensa nada; no seas ingenuo». Jazmín quiere hablar con su papá sin ridiculizarlo y sin darle la razón sin pensar.",
+          "p": [
+            [
+              "El papá razona: «Si conversa como una persona, entonces entiende como una persona». ¿Qué le objetaría Searle?",
+              "Que responder bien con reglas no prueba comprender el sentido",
+              "Que ninguna máquina podrá conversar jamás como una persona",
+              "Que, según el juego de Turing, ya quedó demostrado que comprende",
+              "El cuarto chino concede que la conducta puede ser impecable y niega que eso baste para comprender el significado. Searle no dijo que las máquinas no puedan conversar bien, y el juego de Turing propone un criterio de conducta, no una demostración de comprensión."
+            ],
+            [
+              "¿Qué respuesta sería más honesta filosóficamente que la del hermano?",
+              "Hoy no sabemos con certeza si comprende, pero sí que puede equivocarse",
+              "Está demostrado que estos sistemas no comprenden nada de lo que dicen",
+              "Si a papá le hace bien, da igual si comprende o no; mejor no tocar el tema con él",
+              "Sobre la comprensión y la conciencia de estos sistemas hay debate serio; lo comprobado es que cometen errores con seguridad. Afirmar que está demostrado lo contrario es dogma, y evitar la conversación deja a su papá sin herramientas para usar bien el asistente."
+            ],
+            [
+              "¿Qué puede proponerle Jazmín a su papá para que no antropomorfice sin quitarle lo que le ayuda?",
+              "Usarlo como herramienta, verificar lo importante y cultivar pláticas con personas",
+              "Borrar hoy mismo la aplicación, porque toda conversación con una IA hace daño",
+              "Preguntarle al asistente si tiene sentimientos y creer lo que responda",
+              "La propuesta conserva el beneficio y añade verificación y vínculos humanos. Borrar la aplicación por sistema exagera el riesgo, y lo que el propio sistema diga de sí mismo no es evidencia de que sienta: está entrenado para producir respuestas plausibles."
+            ]
+          ],
+          "completar": [
+            "Atribuir intenciones, emociones o lealtad a un sistema por la manera en que habla es ___.",
+            "antropomorfizar"
+          ],
+          "relacionar": [
+            [
+              "Dualismo",
+              "La mente es una sustancia distinta del cuerpo"
+            ],
+            [
+              "Materialismo",
+              "Pensar es, en el fondo, un proceso físico del cerebro"
+            ],
+            [
+              "Funcionalismo",
+              "Lo mental se define por el papel que cumple, no por su material"
+            ],
+            [
+              "Juego de la imitación",
+              "Si al conversar no lo distingues de una persona, ¿por qué negarle inteligencia?"
+            ],
+            [
+              "Cuarto chino",
+              "Manipular símbolos con reglas no garantiza entender su significado"
+            ]
+          ],
+          "refl": "Analiza tu propia relación con la inteligencia artificial. 1) Describe una ocasión en que un asistente de IA o un sistema de recomendaciones te pareció que «entendía». 2) Explica qué hizo exactamente: qué recibió y qué produjo. 3) Escribe qué diría Turing y qué diría Searle sobre ese caso. 4) Anota qué evidencia te haría cambiar de opinión y una regla personal para no antropomorfizar.",
+          "modelo": "Modelo: «Le pedí a un asistente que me ayudara con una carta de renuncia y me contestó: “Entiendo lo difícil que es esto para ti”. Sentí que me comprendía. Lo que hizo fue recibir mi texto y devolver una carta correcta con frases de empatía. Turing diría que, si conversa como alguien que entiende, no tengo base para negarle inteligencia; Searle, que pudo seguir patrones sin comprender. Cambiaría de opinión si supiera más de cómo procesa el significado. Mi regla: juzgo por lo que hace y lo verifico, no por lo cálido que suena.» Es bueno porque describe el caso con precisión, aplica ambas posturas sin caricatura y termina en una regla.",
+          "plantilla": [
+            "Ficha para pensar una IA sin antropomorfizar",
+            "Sistema y uso: [ ]\nQué recibe y qué produce: [ ]\nLo que me hace sentir que «entiende»: [ ]\nLectura de Turing: [ ]\nLectura de Searle: [ ]\nLo que no sé de cómo funciona: [ ]\nQué verifico antes de confiar: [ ]\nMi regla personal: [ ]"
+          ],
+          "clave": [
+            "Dualismo, materialismo y funcionalismo responden de forma distinta si una máquina podría tener mente.",
+            "Turing propone juzgar por la conducta; Searle advierte que manipular símbolos no garantiza comprender.",
+            "Ante la IA, evita el dogma en ambos sentidos y no confundas un tono cálido con sentimientos."
+          ]
+        },
+        {
+          "t": "Ética de la tecnología y de la IA",
+          "obj": "Identificar los riesgos éticos de un sistema de IA —sesgo, privacidad, responsabilidad y autonomía— y proponer salvaguardas concretas, incluida la verificación cuando usas IA para estudiar.",
+          "texto": [
+            "La pregunta ética ya no es si la IA llegará, sino cómo se usa. Cuatro problemas aparecen una y otra vez. <b>Sesgo</b>: un sistema que aprende de decisiones pasadas puede repetir sus injusticias; si una empresa contrató durante años a pocas mujeres en puestos técnicos, un filtro entrenado con ese historial puede aprender a descartarlas sin que nadie lo programe a propósito. <b>Privacidad</b>: muchos sistemas funcionan con datos personales que la gente no sabe que entregó. <b>Responsabilidad</b>: cuando decide un algoritmo, cada parte culpa a otra —proveedor, programador, usuario— y nadie responde. <b>Autonomía y atención</b>: hay diseños hechos para que sigas viendo o comprando, no para que decidas mejor.",
+            "¿Se resuelve la ética con una encuesta? En 2018 la revista <i>Nature</i> publicó el experimento <b>Moral Machine</b> (Awad y colegas): una plataforma en línea pedía elegir a quién debía salvar un auto autónomo sin frenos, en variantes del dilema del tranvía. Reunió unos 40 millones de decisiones de personas de 233 países y territorios, y encontró diferencias entre grupos culturales. Es un dato valioso sobre <b>preferencias</b>, con un límite: participó quien quiso, no una muestra representativa, y que mucha gente prefiera algo no lo vuelve correcto. Del «así opinan» no se sigue «así debe ser».",
+            "En noviembre de 2021, los 193 Estados miembros de la UNESCO adoptaron la <b>Recomendación sobre la ética de la inteligencia artificial</b>, el primer instrumento normativo mundial en la materia. No obliga como una ley, pero orienta a los gobiernos con principios como la equidad y la no discriminación, la protección de datos, la transparencia y la supervisión humana. En México, a noviembre de 2026 no se había aprobado una ley general de IA y seguían en discusión varias iniciativas: verifica el estado vigente de la legislación antes de afirmar qué obliga. Mientras tanto, las normas sobre datos personales, trabajo y no discriminación siguen aplicando aunque intervenga un algoritmo.",
+            "También usarás IA para estudiar. Úsala como interlocutor, no como oráculo: pídele objeciones a tu idea, ejemplos o un resumen que luego contrastes con el texto original. Estos sistemas pueden inventar citas, pasajes y libros con aspecto impecable. Regla del diplomado: ninguna cita entra a tu cuaderno sin obra, pasaje y una fuente confiable que la confirme. Y cuatro preguntas para cualquier sistema: ¿quién gana con él?, ¿quién puede salir dañado?, ¿quién responde si falla?, ¿cómo se apela su decisión?"
+          ],
+          "comparar": [
+            "«Así no: “Lo decidió el sistema; yo no puedo hacer nada”.»",
+            "«Así sí: “El sistema recomienda; una persona revisa, explica la decisión y atiende las apelaciones”.»"
+          ],
+          "caso": "Caso ficticio: Mauricio, de 42 años, es gerente de recursos humanos de una fábrica de calzado en León. Un proveedor le ofrece un programa de IA que filtra currículums y «predice» qué candidatos rendirán más; está entrenado con las contrataciones de la fábrica de los últimos diez años, cuando casi todos los supervisores fueron hombres. El programa también revisa las redes sociales de cada candidato. El director quiere instalarlo la próxima semana «para ahorrar tiempo».",
+          "p": [
+            [
+              "¿Qué riesgo principal debe revisar Mauricio antes de instalarlo?",
+              "Que el filtro aprenda a descartar mujeres por imitar el historial",
+              "Que el programa resulte más lento que revisar los currículums a mano",
+              "Que los candidatos sepan que se usa un programa y se quejen públicamente en redes",
+              "Un sistema entrenado con diez años de contrataciones casi solo masculinas puede reproducir esa desigualdad sin que nadie lo decida. La velocidad es secundaria, y la preocupación por la imagen pública pone el foco en la reputación y no en la injusticia."
+            ],
+            [
+              "Mauricio propone una encuesta al personal sobre si aceptan el sistema. ¿Qué aporta?",
+              "Muestra lo que prefiere el personal, pero no si el sistema es justo",
+              "Resuelve el asunto: si la mayoría lo aprueba, el sistema es ético",
+              "Nada, porque la opinión del personal no cuenta en estas decisiones técnicas",
+              "Como en Moral Machine, una encuesta registra preferencias valiosas, pero de «así opinan» no se sigue «así debe ser». Tomar el voto como prueba de justicia confunde ambos planos, y despreciar la opinión del personal ignora a quienes vivirán con el sistema."
+            ],
+            [
+              "Si deciden usarlo, ¿qué salvaguarda es más sólida?",
+              "Auditar resultados por sexo, revisión humana y vía de apelación",
+              "Confiar en el proveedor, que garantiza por contrato que no tiene sesgos",
+              "Usarlo sin avisar, para no incomodar a los candidatos que resulten rechazados",
+              "Auditar, revisar y permitir apelar atiende el sesgo y la responsabilidad. Una promesa contractual no sustituye la comprobación, y ocultar el uso del sistema impide que las personas afectadas pidan explicaciones."
+            ]
+          ],
+          "completar": [
+            "Moral Machine aporta datos sobre ___: que mucha gente prefiera algo no lo vuelve correcto.",
+            "preferencias"
+          ],
+          "refl": "Evalúa un sistema automatizado que te afecte. 1) Elige uno: un filtro de empleo, la aplicación que te recomienda contenido, un sistema de crédito o un asistente de IA de tu trabajo. 2) Da un ejemplo concreto de cada problema: sesgo, privacidad, responsabilidad y autonomía. 3) Responde las cuatro preguntas: quién gana, quién puede salir dañado, quién responde si falla y cómo se apela. 4) Propón dos salvaguardas realistas y escribe tu regla para usar IA al estudiar.",
+          "modelo": "Modelo: «Sistema: la aplicación de mi banco aprueba o rechaza préstamos pequeños en segundos. Sesgo: quienes trabajan por su cuenta sin comprobantes pueden quedar fuera. Privacidad: pide acceso a mis contactos. Responsabilidad: cuando me rechazó, nadie supo explicarme por qué. Autonomía: me ofrece crédito justo cuando reviso un saldo bajo. Gana el banco; puedo perder yo. Salvaguardas: pedir por escrito la razón y una revisión humana, y negar permisos innecesarios. Al estudiar: ninguna cita sin obra y pasaje.» Es bueno porque da un ejemplo de cada problema y propone salvaguardas que la persona sí puede exigir.",
+          "plantilla": [
+            "Revisión ética de un sistema de IA",
+            "Sistema: [ ] · Para qué se usa: [ ]\nSesgo posible: [ ] · Cómo se audita: [ ]\nDatos que usa y si hubo consentimiento: [ ]\nQuién responde si falla: [ ]\nEfecto en la autonomía y la atención: [ ]\nQuién gana / quién puede salir dañado: [ ]\nCómo se apela una decisión: [ ]\nSalvaguardas: 1. [ ] 2. [ ]\nLegislación aplicable (verificada el [fecha]): [ ]\nAl estudiar con IA: ninguna cita sin obra, pasaje y fuente confirmada"
+          ],
+          "clave": [
+            "Sesgo, privacidad, responsabilidad y autonomía: cuatro preguntas que todo sistema de IA debe responder.",
+            "Moral Machine registra preferencias de quienes quisieron participar; no dice qué es moralmente correcto.",
+            "Usa la IA como interlocutor, no como oráculo, y verifica el estado vigente de la legislación antes de afirmar qué obliga."
+          ]
+        },
+        {
+          "t": "La filosofía como forma de vida: estoicos y epicúreos",
+          "obj": "Practicar tres ejercicios de la filosofía antigua y la clasificación epicúrea de los deseos, sabiendo qué pueden darte y qué no sustituyen.",
+          "texto": [
+            "El filósofo e historiador francés Pierre Hadot (1922-2010) recordó algo que los manuales suelen olvidar: en la Antigüedad, la filosofía no era solo teoría, sino una <b>forma de vida</b>. Las escuelas enseñaban ejercicios para transformar la manera de mirar, desear y actuar; Hadot los llamó «ejercicios espirituales» en un sentido amplio, no solo religioso (<i>Ejercicios espirituales y filosofía antigua</i>; <i>¿Qué es la filosofía antigua?</i>). Dos escuelas rivales nacieron en Atenas hacia el 300 a. C.: los <b>estoicos</b>, que se reunían en un pórtico pintado, y los <b>epicúreos</b>, en el Jardín de Epicuro.",
+            "Tres ejercicios estoicos que puedes probar. El <b>examen de la noche</b>: Séneca cuenta en <i>De ira</i> (III, 36) que el filósofo Sextio, al acostarse, se preguntaba qué mal suyo había curado ese día, a qué vicio se había resistido y en qué era mejor, y añade que él mismo lo practicaba sin ocultarse nada. La <b>premeditación de los males</b>: imaginar con calma un contratiempo posible, como perder un cliente, para prepararte, no para angustiarte. La <b>vista desde arriba</b>, muy presente en Marco Aurelio: mirar tu problema como desde lo alto, dentro de la ciudad, del país y del tiempo, para devolverle su tamaño. Para profundizar, el catálogo tiene el <b>Diplomado en Estoicismo para la Vida Moderna</b>.",
+            "A <b>Epicuro</b> lo han caricaturizado como patrono de los glotones; es un mito. En la <i>Carta a Meneceo</i> aclara que el placer que busca no es el de los derrochadores, sino no sufrir dolor en el cuerpo ni perturbación en el alma (la traducción puede variar). Para lograrlo distingue tipos de deseos: <b>naturales y necesarios</b>, como comer, beber o abrigarse; naturales pero no necesarios, como un platillo refinado; y <b>vanos</b>, como la fama o el lujo sin fin. Lo vano no tiene límite y por eso nunca sacia; lo necesario es fácil de conseguir. Epicuro elogia el pan y el agua para quien tiene hambre.",
+            "Un límite claro: estos ejercicios ayudan a pensar con más calma, pero <b>no son terapia</b> ni sustituyen a un profesional de salud mental. No se trata de dejar de sentir, de aguantar en silencio ni de culparte por lo que te duele. Si la tristeza, la angustia o el insomnio duran semanas o te impiden funcionar, busca a un profesional. Si estás pasando por un momento muy difícil o piensas en hacerte daño, llama a la Línea de la Vida 800 911 2000 (gratuita, 24 h) o al 911."
+          ],
+          "comparar": [
+            "«Así no: “Ser estoico es no sentir nada; si te duele, es que te falta entrenar”.»",
+            "«Así sí: “Por la noche reviso mi día sin castigarme y, si algo me rebasa, pido ayuda”.»"
+          ],
+          "caso": "Caso ficticio: Rocío, de 39 años, es dueña de una panadería en Celaya. Desde hace meses se acuesta repasando todo lo que salió mal en el día y compra a crédito cosas que no usa «para sentirse mejor». Una amiga le recomienda «hacerse estoica» con videos que prometen «no volver a sentir nada». Rocío también nota que desde hace tres semanas duerme muy mal y ya casi nada le da gusto, ni siquiera estar con sus hijos.",
+          "p": [
+            [
+              "Por lo que nota Rocío desde hace tres semanas, ¿qué le conviene más?",
+              "Probar los ejercicios y, por lo que nota, buscar también a un profesional",
+              "Seguir los videos, porque el estoicismo bien practicado elimina las emociones",
+              "Esperar a sentirse mejor por su cuenta antes de pedir ayuda",
+              "Dormir mal y perder el gusto por casi todo durante semanas es motivo para consultar a un profesional; los ejercicios pueden acompañar, no sustituir. Los estoicos no proponían dejar de sentir, y esperar a que pase sola puede alargar un malestar que tiene atención."
+            ],
+            [
+              "¿Cómo aplicaría Rocío el examen de la noche al estilo de Séneca?",
+              "Revisar qué hizo bien, qué evitó y en qué mejorar, sin castigarse",
+              "Repasar cada error del día hasta encontrar quién tuvo la culpa de cada uno",
+              "Anotar solo lo bueno del día para no ponerse triste antes de dormir",
+              "Las tres preguntas de Sextio miran el progreso propio con honestidad y sin ocultarse nada, pero sin autocastigo. Repasar errores en busca de culpables es lo que ya le quita el sueño, y escribir solo lo bueno oculta justo lo que el ejercicio pide mirar."
+            ],
+            [
+              "Rocío compra a crédito objetos que no usa. Según Epicuro, ¿qué tipo de deseo es?",
+              "Vano: no es natural ni necesario, no tiene límite y nunca sacia",
+              "Natural y necesario: comprar también es una forma de cuidarse",
+              "Natural no necesario, como darse un gusto de vez en cuando con un pan recién hecho",
+              "Comprar cosas que no usa para sentirse mejor no responde a una necesidad natural y no sacia: por eso se repite. No es como comer o abrigarse, y tampoco es un gusto ocasional y limitado, como el platillo refinado de los deseos naturales no necesarios."
+            ]
+          ],
+          "completar": [
+            "Para Pierre Hadot, en la Antigüedad la filosofía era una ___ de vida, con ejercicios para transformar la manera de mirar y de actuar.",
+            "forma"
+          ],
+          "relacionar": [
+            [
+              "Examen de la noche",
+              "Revisar al acostarte qué mejoraste y qué te faltó"
+            ],
+            [
+              "Premeditación de los males",
+              "Imaginar con calma un contratiempo para prepararte"
+            ],
+            [
+              "Vista desde arriba",
+              "Mirar tu problema dentro de la ciudad y del tiempo"
+            ],
+            [
+              "Deseo natural y necesario",
+              "Comer cuando tienes hambre"
+            ],
+            [
+              "Deseo vano",
+              "Querer siempre un celular más caro que el de los demás"
+            ]
+          ],
+          "refl": "Prueba ejercicios de la filosofía antigua esta noche. 1) Haz el examen de la noche con las tres preguntas de Sextio y escribe tus respuestas sin juzgarte con dureza. 2) Haz una lista de diez gastos o deseos de tu último mes y clasifícalos según Epicuro. 3) Elige un contratiempo posible de esta semana y prepáralo con la premeditación de los males: qué podría pasar y qué harías. 4) Escribe qué te dio el ejercicio y qué no puede darte, y a quién acudirías si algo te rebasa.",
+          "modelo": "Modelo: «Examen: hoy curé mi impaciencia al dejar que mi hijo terminara de contarme algo; no resistí revisar el celular en la cena; mañana lo dejaré en la cocina. Deseos: de diez gastos, cuatro fueron naturales y necesarios (despensa, gas, medicina, transporte), tres naturales no necesarios (comidas fuera) y tres vanos (ropa que no he usado). Premeditación: si el cliente grande cancela, llamo a dos prospectos y ajusto horarios. Me dio claridad; no sustituye hablar con alguien si la angustia sigue.» Es bueno porque aplica cada ejercicio con datos concretos y reconoce sus límites.",
+          "plantilla": [
+            "Hoja de ejercicios antiguos",
+            "Fecha: [ ]\nExamen de la noche — Qué mal mío curé hoy: [ ] · A qué vicio me resistí: [ ] · En qué soy mejor: [ ]\nDeseos — Naturales y necesarios: [ ] · Naturales no necesarios: [ ] · Vanos: [ ]\nPremeditación — Contratiempo posible: [ ] · Qué haría: [ ]\nVista desde arriba — Mi problema visto desde lejos: [ ]\nSi algo me rebasa: profesional de salud mental [ ] · Línea de la Vida 800 911 2000 (gratuita, 24 h) · 911"
+          ],
+          "clave": [
+            "Para las escuelas antiguas, la filosofía era una forma de vida con ejercicios concretos, no solo teoría.",
+            "Epicuro no fue glotón: buscaba la ausencia de dolor y de perturbación, y distinguía los deseos vanos de los necesarios.",
+            "Los ejercicios filosóficos ayudan a pensar, pero no sustituyen a un profesional de salud mental."
+          ]
+        },
+        {
+          "t": "Sentido de la vida, sufrimiento y muerte",
+          "obj": "Examinar con respeto lo que dicen Epicuro, Camus y distintas tradiciones sobre la muerte y el sentido, y reconocer cuándo una pregunta filosófica necesita también ayuda profesional.",
+          "texto": [
+            "La pregunta por el sentido de la vida suele llegar en momentos de pérdida, de cambio o de cansancio. La filosofía no tiene una respuesta única, pero ofrece dos grandes caminos. Para unos, el sentido se <b>encuentra</b>: lo da Dios, la naturaleza humana o un orden del mundo, y nuestra tarea es descubrirlo; muchas tradiciones religiosas y la ética de Aristóteles van por aquí. Para otros, el sentido se <b>construye</b>: el universo no trae instrucciones y somos nosotros quienes lo damos con vínculos, proyectos y compromisos, como pensaron los existencialistas. Ambos caminos tienen argumentos serios y personas que viven con hondura desde cada uno.",
+            "Sobre la muerte, Epicuro escribió en la <i>Carta a Meneceo</i>: «acostúmbrate a pensar que la muerte no es nada para nosotros, porque todo bien y todo mal residen en la sensación, y la muerte es privación de sensación» (124-125; la traducción puede variar). Su argumento busca quitar el miedo a estar muerto, no el dolor de perder a alguien: el duelo es por quien se fue y por lo vivido con esa persona, y es legítimo. Una objeción clásica: aunque estar muerto no se sienta, la muerte puede dañarnos al quitarnos lo bueno que aún podíamos vivir.",
+            "Albert Camus, en <i>El mito de Sísifo</i> (1942), llama <b>absurdo</b> al choque entre nuestra necesidad de sentido y un mundo que no responde. Su conclusión no es rendirse, sino la <b>rebelión</b>: vivir con lucidez, libertad y pasión sin esperar garantías. Por eso cierra con Sísifo, condenado a empujar una roca cuesta arriba una y otra vez: «hay que imaginarse a Sísifo feliz». Camus termina del lado de la vida. En México, el <b>Día de Muertos</b> muestra otra relación con la muerte: recordar a quienes se fueron con ofrendas, comida y humor, sin negar la pena. No celebra la muerte; celebra el vínculo.",
+            "Pensar estas preguntas es valioso, pero tiene límites: la filosofía no sustituye a un profesional de salud mental. Busca ayuda si la tristeza dura semanas, si un duelo te impide comer, dormir o trabajar, o si la pregunta por el sentido se vuelve desesperanza. Si atraviesas un momento muy difícil o piensas en hacerte daño, llama a la Línea de la Vida 800 911 2000 (gratuita, 24 h) o al 911. Hablarlo con alguien no es debilidad: también es una manera de cuidar tu vida."
+          ],
+          "comparar": [
+            "«Así no: “Si la vida no tiene un sentido escrito, entonces nada importa”.»",
+            "«Así sí: “Esta pregunta me pesa; quiero pensarla con calma y también hablarla con alguien de confianza”.»"
+          ],
+          "caso": "Caso ficticio: Leonardo, de 45 años, es maestro de Historia en una secundaria de Iztapalapa, en la Ciudad de México. Mientras arma con su grupo de tercero la ofrenda de Día de Muertos, un alumno pregunta en voz alta: «¿Para qué vivimos, si al final todos nos vamos a morir?». Varios se ríen. Una alumna cuyo abuelo murió hace un mes se queda callada y, al terminar la clase, le dice a Leonardo a solas que «a veces ya nada le importa».",
+          "p": [
+            [
+              "¿Cómo puede tomar Leonardo la pregunta del alumno en clase?",
+              "Como una pregunta seria, con respuestas de varias tradiciones",
+              "Como una broma que conviene cortar para no perder el tiempo de la ofrenda",
+              "Como señal segura de que el alumno está en crisis y debe salir del salón",
+              "La pregunta por el sentido es filosófica y legítima; puede abrirse con respuestas religiosas y no religiosas, y la ofrenda es una buena entrada. Cortarla enseña que no se piensa, y tratarla como crisis sin otras señales confunde preguntar con estar en riesgo."
+            ],
+            [
+              "¿Qué debe hacer Leonardo con lo que le dijo la alumna a solas?",
+              "Escucharla, seguir el protocolo con orientación y darle la Línea de la Vida",
+              "Leerle a Epicuro para que entienda que la muerte no es nada para nosotros",
+              "Guardar el secreto, porque se lo contó en confianza y podría enojarse con él si lo comenta",
+              "Un duelo reciente más «ya nada me importa» pide escucha y canalización ese mismo día: orientación, su familia y recursos como la Línea de la Vida, y el 911 si hubiera riesgo inmediato. Un argumento filosófico no responde a ese dolor, y prometer o guardar secreto la deja sola cuando necesita apoyo."
+            ],
+            [
+              "Un alumno dice: «Camus pensaba que, si nada tiene sentido, da igual vivir». ¿Qué le corrige Leonardo?",
+              "Que Camus concluye lo contrario: rebelarse y vivir con lucidez",
+              "Nada, porque es una lectura fiel de lo que Camus llama el absurdo",
+              "Que para Camus el sentido de la vida ya está dado por Dios",
+              "Camus describe el absurdo, pero su respuesta es la rebelión y la vida, y por eso pide imaginar a Sísifo feliz. Decir que «da igual vivir» invierte su conclusión, y Camus no fundaba el sentido en Dios."
+            ]
+          ],
+          "completar": [
+            "Para Camus, el ___ es el choque entre nuestra necesidad de sentido y un mundo que no responde.",
+            "absurdo"
+          ],
+          "refl": "Escribe sobre tu propia relación con estas preguntas. 1) Describe cómo se vive la muerte en tu familia o tu comunidad: rituales, frases, silencios. 2) Explica si para ti el sentido se encuentra, se construye o ambas cosas, con una razón. 3) Aplica el argumento de Epicuro y su objeción clásica a una experiencia tuya, sin forzarla. 4) Escribe a quién acudirías tú, u orientarías a otra persona, si estas preguntas se volvieran demasiado pesadas, e incluye la Línea de la Vida 800 911 2000.",
+          "modelo": "Modelo: «En mi familia ponemos ofrenda cada año y contamos anécdotas de mi abuela; nadie habla de su enfermedad. Para mí el sentido se encuentra y se construye: creo que hay un orden que no inventé, pero también decido a qué dedico mi tiempo. Epicuro me ayuda a no temer estar muerta; la objeción me recuerda que lo que temo es perder años con mis hijos, y eso me lleva a pasar más tiempo con ellos. Si esto me pesara, hablaría con mi hermana y buscaría a un profesional; tengo anotada la Línea de la Vida.» Es bueno porque es honesto, distingue argumento y objeción y cierra con una acción y una red de apoyo.",
+          "plantilla": [
+            "Mapa personal ante el sentido y la muerte",
+            "Cómo se vive la muerte en mi entorno: [ ]\nEl sentido para mí: se encuentra [ ] · se construye [ ] · ambas [ ] · Razón: [ ]\nEpicuro aplicado: [ ] · Objeción: [ ]\nCamus: dónde veo el absurdo [ ] · cómo respondo con lucidez y vida [ ]\nPersonas de confianza: [ ]\nProfesional al que acudiría: [ ]\nLínea de la Vida 800 911 2000 (gratuita, 24 h) · Emergencias: 911"
+          ],
+          "clave": [
+            "El sentido puede entenderse como algo que se encuentra o algo que se construye; ambas posturas merecen respeto.",
+            "Epicuro busca quitar el miedo a estar muerto, no prohibir el duelo; Camus responde al absurdo con rebelión y vida.",
+            "Cuando la pregunta se vuelve desesperanza, la respuesta es buscar ayuda: Línea de la Vida 800 911 2000 o 911."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Diseña y vive un experimento filosófico de siete días. En los primeros 20 minutos elige un ejercicio: el examen de la noche, la clasificación de deseos de Epicuro o un diálogo socrático diario con un asistente de IA sobre una pregunta del diplomado, pidiéndole objeciones y verificando toda cita. Define qué harás, a qué hora, cuánto tiempo y qué observarás. Durante la semana dedica unos 6 minutos diarios (unos 40 en total) a hacerlo y a registrar lo que notaste. En los últimos 30 minutos evalúa qué cambió, qué no, qué te costó y si lo seguirías; si elegiste la IA, anota cuántas citas o datos tuviste que corregir.",
+        "entregable": "Un diario de siete días con el diseño del experimento, los registros diarios y una evaluación final de una página.",
+        "criterios": "Revisa: el ejercicio es fiel a su fuente y está bien descrito, hay registro de los siete días o explicas por qué faltó alguno, la evaluación distingue lo que cambió de lo que esperabas, y reconoces los límites del ejercicio y a quién acudirías si algo te rebasa."
+      },
+      "lab": {
+        "t": "Un asistente nuevo y un compañero en duelo",
+        "obj": "Aplicar la filosofía de la mente, la ética de la IA y la filosofía como forma de vida en un equipo de trabajo, con límites claros y canalización responsable cuando alguien atraviesa un duelo.",
+        "esc": "<b>Miriam,</b> de 44 años, coordina el área de reclamaciones de una aseguradora regional en Chihuahua, con un equipo de 12 personas. La dirección acaba de instalar un asistente de inteligencia artificial que redacta respuestas a clientes y propone qué casos atender primero. Al mismo tiempo, <b>Adrián,</b> de 31 años, regresa al trabajo tres semanas después de la muerte de su hermano.",
+        "e": [
+          [
+            "Escena 1: El asistente redactó una respuesta que niega una reclamación citando una «cláusula 14.3» que no existe en la póliza del cliente. Iba a enviarse cuando una analista lo notó.",
+            "Consigna: explica qué muestra este error sobre la diferencia entre redactar con fluidez y comprender (Turing y Searle), y escribe una regla de verificación para el equipo: qué se revisa siempre, quién firma y quién responde ante el cliente."
+          ],
+          [
+            "Escena 2: Al revisar los datos de un mes, Miriam nota que el asistente deja casi siempre al final de la fila las reclamaciones de personas mayores de 70 años, porque «tardan más en resolverse».",
+            "Consigna: identifica el problema con los cuatro riesgos de la lección de ética de la IA y con la Recomendación de la UNESCO, y propón tres salvaguardas: auditoría periódica, revisión humana y vía de apelación para los clientes."
+          ],
+          [
+            "Escena 3: Un compañero le manda a Adrián frases sobre «no dejar que te afecte lo que no controlas», y el director le sugiere que «platique con el asistente» para desahogarse en lugar de pedir más días.",
+            "Consigna: explica por qué esas respuestas confunden la filosofía con terapia y una herramienta con apoyo humano, y redacta lo que Miriam puede decirle a Adrián: reconocimiento de su pérdida, ajustes concretos de carga y horario, y recursos de ayuda profesional."
+          ],
+          [
+            "Escena 4: En una reunión, Adrián dice en voz baja: «La verdad, ya no le veo caso a nada». Nadie responde y la reunión sigue.",
+            "Consigna: escribe los pasos de Miriam: hablar con él en privado ese mismo día, escuchar sin juzgar ni dar sermones, preguntarle con calma y directamente cómo está y si ha pensado en hacerse daño, ofrecerle la Línea de la Vida 800 911 2000, llamar al 911 y no dejarlo solo si hubiera riesgo inmediato, y acordar con él a quién más avisar."
+          ]
+        ],
+        "p": [
+          [
+            "En la escena 1, ¿quién responde ante el cliente por la cláusula inventada?",
+            "La aseguradora y la persona que aprueba el envío, no el asistente",
+            "Nadie, porque el error lo cometió un programa y no una persona",
+            "El proveedor del asistente, que debe pagarle al cliente los daños directamente",
+            "Un sistema no responde moral ni legalmente: responde la organización que lo usa y la persona que aprueba lo que se envía. Decir que nadie responde es la brecha de responsabilidad que la lección advierte, y trasladarlo todo al proveedor deja sin dueño la decisión ante el cliente."
+          ],
+          [
+            "En la escena 2, ¿qué medida atiende mejor el problema?",
+            "Auditar el orden por edad y corregirlo con revisión humana",
+            "Avisar a los mayores de 70 años que su trámite tardará más",
+            "Mantener el criterio, porque atender rápido beneficia a más clientes cada mes",
+            "El sistema discrimina por edad aunque nadie lo haya programado así; hay que medirlo y corregirlo con supervisión humana. Avisar del retraso lo vuelve oficial, y sumar beneficios para la mayoría ignora la equidad y la no discriminación que pide la UNESCO."
+          ],
+          [
+            "En la escena 4, ¿qué hace primero Miriam?",
+            "Hablar con él en privado ese mismo día, escucharlo y ofrecerle ayuda concreta",
+            "Esperar a ver si lo repite antes de decir algo, para no exagerar",
+            "Recomendarle leer a Camus para que encuentre un sentido frente al absurdo de la vida",
+            "Una frase de desesperanza tras una pérdida pide acercarse ese mismo día, escuchar, preguntar con calma y ofrecer recursos como la Línea de la Vida. Esperar puede ser tarde, y una lectura no sustituye la escucha ni la ayuda profesional."
+          ]
+        ],
+        "pl": [
+          "Protocolo de equipo: IA responsable y cuidado entre compañeros",
+          "Uso del asistente — Qué se verifica siempre: [ ] · Quién firma: [ ] · Quién responde ante el cliente: [ ]\nAuditoría de sesgos — Qué se mide: [ ] · Cada cuándo: [ ] · Vía de apelación: [ ]\nRegreso tras una pérdida — Qué le digo: [ ] · Ajustes de carga y horario: [ ] · Recursos profesionales: [ ]\nSi alguien expresa desesperanza — Hablar en privado hoy: [ ] · Preguntar con calma cómo está: [ ] · Línea de la Vida 800 911 2000 (gratuita, 24 h) · 911 si hay riesgo inmediato · A quién más avisar: [ ]\nLímite: la filosofía y la IA no sustituyen a un profesional de salud mental"
+        ]
+      },
+      "quiz": [
+        [
+          "Tania, programadora en Tijuana, sostiene: «Si una máquina cumple las mismas funciones que una mente, tiene mente, sea de silicio o de neuronas». ¿Qué postura defiende?",
+          "Funcionalismo",
+          "Dualismo",
+          "Materialismo",
+          "Escepticismo"
+        ],
+        [
+          "En un concurso escolar en Cuernavaca, unos jueces chatean con personas y con un programa sin saber quién es quién, y deben adivinar. ¿Qué propuesta de 1950 aplican?",
+          "El juego de la imitación de Turing",
+          "El cuarto chino de Searle",
+          "La duda metódica de Descartes",
+          "El experimento Moral Machine"
+        ],
+        [
+          "Pablo dice: «Mi traductor automático no entiende nada: cambia símbolos por otros según reglas, aunque el resultado sea perfecto». ¿Qué argumento está usando?",
+          "El cuarto chino de Searle",
+          "El juego de la imitación de Turing",
+          "El funcionalismo aplicado a máquinas",
+          "El dualismo cartesiano"
+        ],
+        [
+          "Samuel, de 60 años, le pide perdón a su asistente de voz cuando le habla fuerte, «para que no se sienta mal». ¿Qué conviene recordarle?",
+          "Que un tono humano y cálido no prueba que el sistema sienta algo",
+          "Que ya está demostrado que estos sistemas tienen emociones",
+          "Que debe dejar de usarlo, porque toda IA crea dependencia en las personas mayores",
+          "Que lo correcto es preguntarle al asistente si se ofendió"
+        ],
+        [
+          "Una regidora de Aguascalientes propone programar los vehículos autónomos del municipio según lo que eligió la mayoría en Moral Machine. ¿Cuál es la falla?",
+          "Confunde preferencias de voluntarios con lo moralmente correcto",
+          "Ninguna: millones de decisiones garantizan una respuesta moral",
+          "Que el experimento se hizo en un solo país y por eso no aplica a México",
+          "Que el experimento nunca se publicó en una revista científica"
+        ],
+        [
+          "Una financiera de Ciudad Juárez usa un sistema que rechaza más solicitudes de ciertas colonias, aunque nadie le dio la colonia como criterio. ¿Qué lo explica mejor?",
+          "Aprendió patrones de decisiones pasadas que ya discriminaban",
+          "Los algoritmos no pueden discriminar, porque solo hacen cálculos neutrales",
+          "Alguien lo programó a escondidas para rechazar esas colonias",
+          "Es un error al azar que desaparecerá solo con el tiempo y más solicitudes"
+        ],
+        [
+          "Claudia redacta el aviso de su empresa y escribe: «Cumplimos la Ley General de Inteligencia Artificial de México». ¿Qué le recomiendas?",
+          "Verificar el estado vigente de la legislación antes de afirmarlo",
+          "Dejarlo así, porque esa ley existe desde 2021 gracias a la UNESCO",
+          "Cambiarlo por «cumplimos la ley de la UNESCO», que obliga a todos los países",
+          "Quitar todo aviso, porque a la IA no se le aplica ninguna norma"
+        ],
+        [
+          "Renata le pide a un asistente de IA una cita de Epicuro para su ensayo y recibe una frase con número de pasaje. ¿Qué hace?",
+          "La coteja en una edición confiable antes de usarla",
+          "La usa tal cual, porque el número de pasaje demuestra que es real",
+          "Le pregunta al asistente si está seguro y confía en lo que responda",
+          "La usa, pero sin mencionar de qué obra viene"
+        ],
+        [
+          "Gilberto quiere cambiar de camioneta cada año para que lo vean sus vecinos. Desde Epicuro, ¿qué tipo de deseo es y qué propone el filósofo?",
+          "Vano; reconocer que no tiene límite y que nunca lo saciará",
+          "Natural y necesario; satisfacerlo cuanto antes para estar en paz",
+          "Natural no necesario; darse ese gusto siempre, sin culpa",
+          "Vano; castigarse cada vez que lo sienta hasta dejar de sentirlo"
+        ],
+        [
+          "A medianoche, una amiga de Elena le escribe: «Leí sobre el absurdo y siento que ya no tiene caso seguir». ¿Qué hace Elena?",
+          "Le responde ya, la escucha y le comparte la Línea de la Vida o el 911",
+          "Le explica que Camus concluye que hay que vivir y la deja descansar",
+          "Le recomienda un ejercicio estoico para que deje de sentir tanto",
+          "Espera a la mañana para no exagerar y le escribe con más calma"
+        ]
+      ]
+    },
+    {
+      "t": "Dialogar, escribir y proyecto final",
+      "r": "Aprende a conducir un diálogo filosófico, a hacer filosofía con niñas, niños y jóvenes y a escribir un ensayo argumentativo breve; cierra con tu proyecto final.",
+      "lecciones": [
+        {
+          "t": "El diálogo socrático y la comunidad de indagación",
+          "obj": "Preparar y facilitar un diálogo filosófico en grupo con reglas claras, preguntas que abren y un papel de facilitador bien definido.",
+          "texto": [
+            "Un diálogo filosófico no es un debate para ganar ni una plática para desahogarse: es una búsqueda en común. Sus reglas básicas caben en una tarjeta: habla una persona a la vez; da razones, no solo opiniones; escucha para entender, no para contestar; puedes rechazar una idea sin atacar a quien la dice; y está permitido cambiar de opinión. Ya conoces la mayéutica de Sócrates, que ayudaba a otro a dar a luz sus ideas; en el siglo XX, dos tradiciones convirtieron esa intuición en métodos para grupos.",
+            "El alemán <b>Leonard Nelson</b> (1882-1927) presentó en 1922 una conferencia sobre «el método socrático», que después continuó Gustav Heckmann. En un <b>diálogo socrático</b> al estilo de Nelson, un grupo pequeño parte de una pregunta general —por ejemplo, «¿qué es la confianza?»—, elige un ejemplo concreto que alguien vivió y lo examina a fondo hasta descubrir el principio que lo explica. Se avanza despacio, se busca el acuerdo y se anota lo que se va aclarando. Quien facilita no da su opinión sobre el tema: cuida el método, pide precisión y comprueba que todos entiendan.",
+            "En Estados Unidos, Matthew Lipman llevó a las aulas la <b>comunidad de indagación</b>: el grupo lee un texto o mira una imagen, cada quien propone preguntas, eligen juntos cuál explorar y construyen sobre las ideas de los demás con razones, ejemplos y contraejemplos. No busca que gane el más elocuente, sino que el grupo piense mejor de lo que pensaría cada uno por separado. Quien facilita ayuda con movimientos sencillos: «¿qué quieres decir con…?», «¿puedes dar un ejemplo?», «¿alguien ve un contraejemplo?», «¿en qué se parece tu idea a la de ella?».",
+            "La herramienta más fina es la pregunta. Las <b>preguntas que cierran</b> se contestan con sí, no o un dato, o empujan hacia una respuesta: «¿verdad que el trabajo dignifica?». Las <b>preguntas que abren</b> invitan a pensar: «¿qué hace que un trabajo sea digno?». Prepara tres tipos de preguntas de apoyo: de aclaración, de razones y de consecuencias. Y recuerda que el silencio después de una buena pregunta no es un fracaso: es el grupo pensando. Espera unos segundos antes de rescatarlo."
+          ],
+          "comparar": [
+            "«Así no: “Yo creo que la respuesta es esta; ¿verdad que todos están de acuerdo?”.»",
+            "«Así sí: “Antes de opinar, ¿alguien tiene un ejemplo concreto que haya vivido?”.»"
+          ],
+          "caso": "Caso ficticio: Pablo, de 39 años, es instructor de capacitación en una empresa de logística en Celaya. Tras varios roces entre el turno de día y el de noche, la gerencia le pide una sesión sobre confianza. Su plan: abrir con una presentación de 30 minutos sobre lo que «dicen los filósofos», dar su opinión y preguntar al final: «¿Verdad que la confianza se gana con hechos?». Una supervisora le sugiere probar mejor un diálogo socrático con ocho personas de ambos turnos.",
+          "p": [
+            [
+              "Según el método de Nelson, ¿con qué conviene empezar el diálogo de Pablo?",
+              "Con un ejemplo real que alguien del grupo haya vivido",
+              "Con la definición de confianza que trae el diccionario",
+              "Con una votación sobre qué turno tiene la culpa de los roces recientes",
+              "Nelson parte de una experiencia concreta para descubrir el principio que la explica. Una definición de diccionario cierra la búsqueda antes de empezar, y votar culpables convierte el diálogo en juicio."
+            ],
+            [
+              "¿Qué pregunta abre mejor el diálogo?",
+              "¿Qué hace que confiemos en alguien en el trabajo?",
+              "¿Verdad que la confianza se gana con hechos?",
+              "¿Confían ustedes en el turno de la noche, sí o no?",
+              "Una pregunta que abre invita a dar razones y ejemplos sin sugerir la respuesta. «¿Verdad que…?» empuja hacia lo que Pablo ya piensa, y la de sí o no cierra y además señala a un grupo."
+            ],
+            [
+              "¿Cuál es el papel de Pablo como facilitador?",
+              "Cuidar el método, dar la palabra y pedir precisión, sin imponer su opinión",
+              "Dar al final la respuesta correcta para que nadie se quede confundido",
+              "Quedarse callado toda la sesión para que el grupo discuta solo, sin intervenir",
+              "Quien facilita no decide el contenido, pero sí trabaja: da la palabra, pide ejemplos y aclara términos. Dar la respuesta al final anula lo que el grupo construyó, y no intervenir nunca deja el diálogo sin método."
+            ]
+          ],
+          "completar": [
+            "En un diálogo socrático al estilo de Nelson, quien ___ no da su opinión sobre el tema: cuida el método.",
+            "facilita"
+          ],
+          "refl": "Prepara un diálogo filosófico de 30 minutos. 1) Elige una pregunta general que importe a tu grupo (familia, trabajo, vecinos o amistades) y escríbela de forma que abra. 2) Redacta las cinco reglas con tus palabras. 3) Escribe seis preguntas de apoyo: dos de aclaración, dos de razones y dos de consecuencias. 4) Elige si usarás el método de Nelson (ejemplo vivido) o la comunidad de indagación (texto o imagen) y explica por qué.",
+          "modelo": "Modelo: «Pregunta: ¿qué significa ser un buen vecino? Grupo: seis vecinos de mi privada, después de un pleito por el estacionamiento. Reglas: uno a la vez; razones, no reproches; ejemplos concretos; se vale cambiar de opinión; nadie se va molesto sin decirlo. Apoyo: ¿qué entiendes por buen vecino?, ¿es lo mismo que ser amable?; ¿por qué piensas eso?, ¿qué te lo hizo ver?; ¿qué pasaría si todos actuáramos así?, ¿a quién afectaría? Método: Nelson, partiendo de la tarde en que un vecino nos ayudó con una fuga de agua.» Es bueno porque la pregunta abre, las preguntas de apoyo están clasificadas y el método se ajusta al grupo.",
+          "plantilla": [
+            "Guion para un diálogo filosófico",
+            "Pregunta que abre: [ ]\nMétodo: Nelson (ejemplo vivido) [ ] · Comunidad de indagación (texto o imagen) [ ]\nReglas: 1. Una persona a la vez 2. Razones, no solo opiniones 3. Escuchar para entender 4. Desacuerdo con ideas, respeto a personas 5. Se vale cambiar de opinión\nPreguntas de aclaración: [ ] [ ]\nPreguntas de razones: [ ] [ ]\nPreguntas de consecuencias: [ ] [ ]\nLo que aclaramos hoy: [ ]\nPregunta que queda abierta: [ ]"
+          ],
+          "clave": [
+            "Un diálogo filosófico es una búsqueda en común: razones, escucha y permiso para cambiar de opinión.",
+            "Nelson parte de un ejemplo vivido; Lipman, de preguntas que el grupo elige; en ambos, quien facilita cuida el método.",
+            "Prepara preguntas que abran: de aclaración, de razones y de consecuencias, y deja que el silencio trabaje."
+          ]
+        },
+        {
+          "t": "Filosofía con niñas, niños y adolescentes",
+          "obj": "Organizar una sesión de filosofía con niñas, niños o adolescentes, explicar con honestidad lo que dice la evidencia y saber qué hacer si surge un tema delicado.",
+          "texto": [
+            "El profesor universitario Matthew Lipman notó que sus estudiantes llegaban sin saber razonar y pensó que había que empezar mucho antes. En 1969 publicó una novela para niños, <i>El descubrimiento de Harry Stottlemeier</i>, en la que un niño descubre la lógica, y en 1974 fundó con Ann Margaret Sharp el Instituto para el Avance de la Filosofía para Niños, en el Montclair State College de Nueva Jersey. Así nació <b>Filosofía para Niños</b>: niñas y niños leen una historia, formulan sus propias preguntas y las discuten como comunidad de indagación.",
+            "¿Funciona? Conviene mirar la <b>evidencia</b> con honestidad. Un ensayo con 48 escuelas primarias de Inglaterra (Gorard, Siddiqui y See, 2015, para la Education Endowment Foundation) encontró una mejora pequeña en lectura y matemáticas, equivalente a unos dos meses de avance, con limitaciones de diseño. Un ensayo mucho más grande, con 198 escuelas (Lord y colegas, 2021), no encontró efecto medible en lectura ni en matemáticas. Otros estudios, como el de Topping y Trickey (2007) en Escocia, reportaron mejoras en pruebas de razonamiento, pero con muestras pequeñas. Conclusión: no prometas mejores calificaciones.",
+            "¿Entonces para qué? Por lo que vale en sí: aprender a preguntar, dar razones, escuchar y estar en desacuerdo con respeto. En el ensayo de 2021, casi todos los docentes percibieron más respeto por las opiniones ajenas; es una percepción, no una medición. Para hacerlo en casa o en el aula: 1) lee un cuento breve o muestra una imagen; 2) pide preguntas y anótalas con el nombre de quien las hizo; 3) que voten cuál explorar; 4) conversen con reglas sencillas y apoyos como «¿por qué?» y «¿siempre?»; 5) cierren con lo que cada quien piensa ahora. Con adolescentes funcionan dilemas de su vida, canciones o series.",
+            "Los temas sensibles llegan solos: la muerte de una mascota, la separación de los padres, el miedo. Recíbelos con calma, sin forzar a nadie a hablar y sin convertir la sesión en terapia. Si una niña, un niño o un adolescente revela que alguien le hace daño o que piensa en hacerse daño, escúchalo sin interrogar, agradece que lo haya dicho, no prometas guardar el secreto y avisa de inmediato: en la escuela, según su protocolo; fuera de ella, a la procuraduría de protección de niñas, niños y adolescentes del DIF de tu estado. Si hay peligro inmediato, llama al 911; la Línea de la Vida 800 911 2000 también orienta."
+          ],
+          "comparar": [
+            "«Así no: “Con filosofía, tu hijo va a sacar mejores calificaciones”.»",
+            "«Así sí: “Vamos a practicar preguntar, dar razones y escuchar; no prometemos subir calificaciones”.»"
+          ],
+          "caso": "Caso ficticio: Elena, de 32 años, es maestra de cuarto grado en una primaria de Coyoacán, en la Ciudad de México. Quiere hacer una sesión semanal de filosofía a partir de un cuento. La directora le pide que, en la junta con madres y padres, lo presente como «el método que sube las calificaciones». En la segunda sesión, sobre la pregunta «¿qué es el miedo?», un niño dice que le da miedo llegar a su casa porque un tío le pega cuando su mamá no está.",
+          "p": [
+            [
+              "¿Cómo debe presentar Elena el proyecto en la junta?",
+              "Como práctica para preguntar y razonar, sin prometer calificaciones",
+              "Como un método que da dos meses de avance en lectura y matemáticas",
+              "Como una materia obligatoria más, con examen y calificación al final de cada bimestre",
+              "El efecto de 2015 fue pequeño, con limitaciones, y no se repitió en el ensayo grande de 2021; lo honesto es ofrecer lo que la práctica sí busca. Prometer dos meses de avance exagera la evidencia, y convertirla en materia con examen cambia su naturaleza."
+            ],
+            [
+              "¿Qué hace Elena en el momento en que el niño habla?",
+              "Lo escucha con calma, sin interrogarlo; luego habla con él en privado y sigue el protocolo",
+              "Le pide frente al grupo todos los detalles para entender bien qué pasa en su casa",
+              "Cambia de tema rápidamente y lo comenta con él otro día",
+              "Ante una posible revelación de maltrato se escucha sin interrogar, se continúa en privado y se avisa según el protocolo, sin exponer al niño. Pedir detalles frente al grupo lo expone y puede dañar la investigación, y posponerlo lo deja sin protección."
+            ],
+            [
+              "Después, el niño le pide a Elena que no le cuente a nadie. ¿Qué le responde?",
+              "Que no puede prometerlo, porque necesita avisar para protegerlo",
+              "Que se lo promete, para no romper la confianza que acaba de tenerle",
+              "Que primero hablará con el tío para escuchar las dos versiones",
+              "Prometer secreto ata a Elena a algo que no puede cumplir sin dejar al niño en riesgo; se le explica con cariño que avisará para cuidarlo. Hablar con la persona señalada puede ponerlo en mayor peligro y no le corresponde a la maestra investigar."
+            ]
+          ],
+          "completar": [
+            "Conviene mirar la ___ con honestidad: un ensayo grande de 2021 no encontró efecto medible en lectura ni en matemáticas.",
+            "evidencia"
+          ],
+          "relacionar": [
+            [
+              "Lipman y Sharp",
+              "Fundaron en 1974 el instituto de Filosofía para Niños"
+            ],
+            [
+              "Ensayo de 2015 (48 escuelas)",
+              "Mejora pequeña, de unos dos meses, con limitaciones de diseño"
+            ],
+            [
+              "Ensayo de 2021 (198 escuelas)",
+              "Sin efecto medible en lectura ni en matemáticas"
+            ],
+            [
+              "Comunidad de indagación en el aula",
+              "El grupo vota qué pregunta explorar"
+            ],
+            [
+              "Revelación de un daño",
+              "No prometer secreto y avisar según el protocolo"
+            ]
+          ],
+          "refl": "Diseña una sesión de filosofía de 30 minutos para niñas, niños o adolescentes que conozcas. 1) Elige la edad y un cuento, imagen o situación que despierte preguntas. 2) Escribe cinco preguntas que podrían surgir y dos preguntas de apoyo tuyas. 3) Redacta cómo explicarías a madres, padres o docentes qué se puede esperar y qué no, según la evidencia. 4) Escribe tu protocolo si surge un tema delicado: qué dices, qué no haces y a quién avisas.",
+          "modelo": "Modelo: «Edad: de 9 a 11 años, en el taller de verano de la biblioteca. Estímulo: el cuento de un niño que encuentra una cartera y duda si devolverla. Preguntas posibles: ¿es robar si nadie te ve?, ¿qué es ser honesto?, ¿siempre hay que devolver lo que no es tuyo? Apoyo: ¿por qué?, ¿siempre? A las familias: practicaremos preguntar y escuchar; los estudios no muestran que suba las calificaciones. Protocolo: si alguien revela un daño, escucho, no interrogo, no prometo secreto y aviso a la coordinación y a la procuraduría del DIF; si hay peligro inmediato, 911.» Es bueno porque el estímulo es adecuado a la edad, la promesa es honesta y el protocolo es claro.",
+          "plantilla": [
+            "Plan de sesión de filosofía con niñas, niños o adolescentes",
+            "Edad y lugar: [ ] · Duración: 30 min\nEstímulo (cuento, imagen, situación): [ ]\nReglas: una voz a la vez · razones · respeto\nPreguntas del grupo (con el nombre de quien la hizo): [ ]\nPregunta elegida por votación: [ ]\nMis preguntas de apoyo: ¿por qué? · ¿siempre? · ¿un ejemplo? · [ ]\nCierre: ¿qué pienso ahora? [ ]\nLo que ofrezco a las familias (sin prometer calificaciones): [ ]\nSi surge un tema delicado: escuchar · no interrogar · no prometer secreto · avisar a [ ] · 911 si hay peligro inmediato"
+          ],
+          "clave": [
+            "Filosofía para Niños enseña a preguntar, razonar y escuchar en comunidad de indagación.",
+            "La evidencia sobre mejoras académicas es mixta: el ensayo grande de 2021 no encontró efecto; no prometas calificaciones.",
+            "Ante una revelación de daño: escucha, no interrogues, no prometas secreto y avisa según el protocolo."
+          ]
+        },
+        {
+          "t": "Escribir un ensayo argumentativo breve",
+          "obj": "Escribir un ensayo argumentativo de 800 a 1,200 palabras con pregunta, tesis, argumentos, objeción y respuesta, y evaluarlo con una rúbrica.",
+          "texto": [
+            "Un <b>ensayo argumentativo</b> filosófico defiende una respuesta a una pregunta con razones que otra persona pueda examinar. No es un resumen de lo que dijeron los autores ni un desahogo de opiniones. Su estructura cabe en cinco piezas: 1) una <b>pregunta</b> precisa; 2) una <b>tesis</b>, tu respuesta en una o dos frases; 3) dos o tres <b>argumentos</b> que la sostengan, cada uno en su párrafo; 4) la <b>objeción</b> más fuerte que podrían hacerte y tu <b>respuesta</b>; y 5) una <b>conclusión</b> que diga qué mostraste y qué queda abierto. En este diplomado, la extensión es de 800 a 1,200 palabras.",
+            "Empieza por la pregunta, no por el tema. «La amistad» es un tema; «¿se puede ser amigo de alguien a quien solo conoces en línea?» es una pregunta que admite respuestas opuestas. La tesis debe poder estar equivocada: «depende de cada caso» no compromete a nada; «sí, cuando hay cuidado mutuo sostenido en el tiempo, aunque falte el contacto en persona» sí. Antes de redactar, arma el esqueleto en forma estándar, como aprendiste en el módulo de lógica, para que cada párrafo cumpla una función.",
+            "La objeción más fuerte es la que más te inquieta, no la más fácil de derribar. Formúlala como la escribiría alguien inteligente que piensa distinto, con el principio de caridad, y responde: concede lo que tenga de razón y muestra por qué tu tesis resiste o cómo la ajustas. Un ensayo que no enfrenta objeciones no convence a quien no estaba convencido. Escribe con claridad: frases cortas, cada término con un solo significado, ejemplos concretos y ninguna palabra difícil sin explicar.",
+            "Cita con cuidado. Cada cita textual lleva autor, obra, pasaje y la nota de que la traducción puede variar; lo demás va como paráfrasis («Kant sostiene que…»). Nunca uses frases de imágenes de redes ni citas que te dio una IA sin cotejarlas. Al terminar, revisa con una <b>rúbrica</b> de cinco criterios, del 1 al 4: claridad de la pregunta y la tesis, calidad de los argumentos, fuerza de la objeción y de la respuesta, uso correcto de fuentes, y claridad de la redacción. Léelo en voz alta: donde tú te trabes, quien lea también se trabará."
+          ],
+          "comparar": [
+            "«Así no: “Desde el principio de los tiempos, el ser humano se ha hecho muchas preguntas…”.»",
+            "«Así sí: “¿Es correcto mentir para proteger a alguien? Sostengo que sí, pero solo cuando…”.»"
+          ],
+          "caso": "Caso ficticio: Renata, de 26 años, es recepcionista de un hotel en Acapulco y participa en un concurso de ensayo de la casa de cultura con la pregunta «¿es correcto mentir para proteger a alguien que quieres?». Su borrador tiene 2,000 palabras, empieza con la definición del diccionario, cita «Kant dijo: miente solo si es por amor» tomada de una imagen de redes, enumera seis razones a favor sin ninguna objeción y termina con «cada quien tiene su verdad».",
+          "p": [
+            [
+              "¿Qué debe corregir primero Renata en la estructura?",
+              "Formular una tesis clara y enfrentar la objeción más fuerte",
+              "Agregar más razones a favor hasta reunir por lo menos diez",
+              "Cambiar la definición del diccionario por una de una enciclopedia en línea más reciente",
+              "Sin tesis precisa y sin objeción, el ensayo solo acumula razones de un lado. Más razones del mismo lado no convencen a quien piensa distinto, y cambiar la fuente de la definición no arregla la estructura."
+            ],
+            [
+              "¿Qué hace con la cita atribuida a Kant?",
+              "La quita: no tiene obra ni pasaje y contradice lo que Kant sostuvo",
+              "La deja, pero aclara entre paréntesis que la tomó de redes sociales",
+              "La conserva entre comillas, porque se parece a lo que Kant diría",
+              "Una cita sin obra ni pasaje no se usa; además, Kant es conocido justamente por rechazar la mentira incluso con buenas intenciones. Aclarar que viene de redes no la vuelve auténtica, y «se parece» no es verificar."
+            ],
+            [
+              "¿Qué problema tiene el cierre «cada quien tiene su verdad»?",
+              "Abandona la tesis en vez de defender una respuesta con razones",
+              "Ninguno: es una forma respetuosa de cerrar cualquier ensayo filosófico",
+              "Que es muy corto; debería ocupar un párrafo completo con ejemplos",
+              "Un ensayo argumentativo existe para defender una respuesta; cerrar con relativismo deshace lo que el texto debía mostrar. El respeto se muestra tratando bien las objeciones, no renunciando a la tesis, y alargar la frase no corrige el problema."
+            ]
+          ],
+          "completar": [
+            "La ___ más fuerte es la que más te inquieta, no la más fácil de derribar.",
+            "objeción"
+          ],
+          "relacionar": [
+            [
+              "Pregunta",
+              "¿Es correcto mentir para proteger a alguien que quieres?"
+            ],
+            [
+              "Tesis",
+              "Mentir para evitar un daño grave es correcto solo si no hay otra salida"
+            ],
+            [
+              "Argumento",
+              "Proteger una vida pesa más que decir la verdad a quien quiere dañarla"
+            ],
+            [
+              "Objeción",
+              "Si todos mintiéramos «por proteger», nadie podría confiar en nadie"
+            ],
+            [
+              "Respuesta a la objeción",
+              "Concedo el riesgo; por eso limito la tesis a daños graves sin alternativa"
+            ]
+          ],
+          "refl": "Arma el esqueleto de tu ensayo. 1) Escribe tu pregunta y comprueba que admita respuestas opuestas. 2) Redacta tu tesis en una o dos frases que puedan estar equivocadas. 3) Escribe dos argumentos en forma estándar y la objeción más fuerte con su respuesta. 4) Evalúa tu esqueleto con la rúbrica de cinco criterios y anota qué fuentes verificadas usarás.",
+          "modelo": "Modelo: «Pregunta: ¿debe un algoritmo decidir a quién se contrata? Tesis: un algoritmo puede ayudar a filtrar candidatos, pero ningún rechazo debe ocurrir sin revisión humana y explicación. Argumento 1: estos sistemas aprenden de decisiones pasadas y pueden repetir discriminaciones; por lo tanto, necesitan revisión. Argumento 2: quien es rechazado merece razones que pueda discutir, y un sistema opaco no las da. Objeción: la revisión humana también tiene sesgos y es más lenta. Respuesta: lo concedo; por eso propongo auditar a ambos. Fuente: Recomendación de la UNESCO de 2021.» Es bueno porque la tesis se compromete, cada argumento cumple una función y la objeción es seria.",
+          "plantilla": [
+            "Esqueleto y rúbrica del ensayo argumentativo",
+            "Pregunta: [ ]\nTesis (1-2 frases): [ ]\nArgumento 1 — premisas y conclusión: [ ]\nArgumento 2 — premisas y conclusión: [ ]\nArgumento 3 (opcional): [ ]\nObjeción más fuerte: [ ] · Lo que le concedo: [ ] · Mi respuesta: [ ]\nConclusión: lo que mostré [ ] · lo que queda abierto [ ]\nFuentes (autor, obra, pasaje): [ ]\nRúbrica (1 a 4): pregunta y tesis [ ] · argumentos [ ] · objeción y respuesta [ ] · fuentes [ ] · redacción [ ]\nExtensión: [ ] palabras (800-1,200)"
+          ],
+          "clave": [
+            "Un ensayo argumentativo defiende una tesis con razones: pregunta, tesis, argumentos, objeción con respuesta y conclusión.",
+            "La objeción más fuerte, formulada con caridad, es lo que vuelve convincente tu ensayo.",
+            "Cita solo lo verificado con obra y pasaje; parafrasea lo demás y revisa con la rúbrica."
+          ]
+        },
+        {
+          "t": "Conducir un café filosófico",
+          "obj": "Organizar y moderar un café filosófico de 90 minutos con reglas, roles, manejo de situaciones difíciles y límites claros.",
+          "texto": [
+            "En 1992 el filósofo francés Marc Sautet empezó a reunirse con quien quisiera llegar al Café des Phares, en la plaza de la Bastilla, en París, para discutir una pregunta elegida en el momento; lo contó en <i>Un café pour Socrate</i> (1995). La idea se extendió por el mundo. Un <b>café filosófico</b> es un diálogo abierto, gratuito o de bajo costo, sin requisitos de estudios, en un espacio público. En México puede funcionar en una biblioteca, una casa de cultura, una cafetería, una sala de juntas a la hora de la comida o la sala de una casa.",
+            "Un formato de 90 minutos: 1) <b>bienvenida y reglas</b> (10 min); 2) <b>elección de la pregunta</b> (15 min): las personas proponen preguntas y se vota; 3) <b>diálogo</b> (50 min), con una pausa a la mitad para resumir lo dicho; 4) <b>cierre</b> (15 min): cada quien dice en una frase qué piensa ahora o qué pregunta se lleva. Reparte roles: quien <b>modera</b> da la palabra y cuida las reglas; quien lleva el <b>tiempo</b> avisa los cortes; quien hace de <b>relator</b> anota las ideas en un pizarrón. Una variante es el <b>cine-debate</b>: ver un fragmento corto de una película y discutir la pregunta que plantea.",
+            "Moderar es cuidar que piense el grupo, no que hable más quien más habla. Si alguien acapara, reconoce su aporte y da la palabra a quienes no han participado. Usa una lista de turnos y un límite de dos minutos por intervención. Si alguien se burla o ataca, recuerda la regla: se discuten ideas, no personas. Si la conversación se dispersa, vuelve a la pregunta y pide un ejemplo. No necesitas ser experto: tu tarea no es dar la respuesta, sino sostener el espacio para buscarla.",
+            "Cuida la <b>seguridad emocional</b>. Las preguntas filosóficas a veces tocan heridas: una pérdida, una separación, una injusticia. Si alguien se conmueve, haz una pausa, agradece su confianza y ofrécele hablar al terminar; no conviertas la sesión en terapia ni presiones a nadie a contar algo personal. Un café filosófico no sustituye la atención de un profesional. Ten a la mano la Línea de la Vida 800 911 2000 (gratuita, 24 h) y el 911 para emergencias, y aclara desde el inicio que cada quien comparte solo lo que quiera."
+          ],
+          "comparar": [
+            "«Así no: “Bueno, como nadie más quiere hablar, siga usted, que tiene muy buenas ideas”.»",
+            "«Así sí: “Anotemos tu idea en el pizarrón y abramos la ronda a dos personas nuevas”.»"
+          ],
+          "caso": "Caso ficticio: Gilberto, de 58 años, es maestro jubilado de secundaria en Aguascalientes y organiza el primer café filosófico en el salón de usos múltiples de su unidad habitacional. El grupo vota la pregunta «¿se puede ser feliz sin dinero?». A los 20 minutos de diálogo, un vecino lleva un cuarto de hora hablando sin parar; otro se burla de una joven que dio su opinión, y una señora se quiebra al contar que la despidieron hace un mes.",
+          "p": [
+            [
+              "¿Cómo maneja Gilberto al vecino que acapara la palabra?",
+              "Reconoce su aporte y da la palabra a quienes todavía no han hablado",
+              "Lo deja seguir, porque interrumpirlo sería una falta de respeto",
+              "Le pide que se retire de la sesión para que los demás puedan hablar tranquilos",
+              "Reconocer y redistribuir la palabra cuida a todos sin humillar a nadie; la lista de turnos y el límite de tiempo ayudan. Dejarlo seguir sacrifica al grupo, y expulsarlo es desproporcionado ante algo que se corrige moderando."
+            ],
+            [
+              "¿Qué hace Gilberto ante la burla hacia la joven?",
+              "Recuerda la regla: se discuten ideas, no personas",
+              "La ignora para no hacer más grande el problema",
+              "Le pide a la joven que defienda mejor su idea para que ya no se burlen de ella",
+              "Recordar la regla protege a la joven y al espacio de diálogo. Ignorar la burla le dice al grupo que se vale, y pedirle a ella que se defienda mejor traslada la responsabilidad a quien recibió el ataque."
+            ],
+            [
+              "¿Cómo responde Gilberto cuando la señora se quiebra?",
+              "Hace una pausa, agradece y le ofrece hablar al terminar, con recursos de ayuda",
+              "Pide al grupo que analice su despido como ejemplo de la pregunta del día",
+              "Le asegura que la filosofía basta para superar el despido sin otra ayuda",
+              "Una pausa respetuosa y una plática aparte cuidan su dignidad, y los recursos de ayuda marcan el límite del espacio. Convertir su dolor en material de análisis la expone, y prometer que la filosofía basta confunde el café con terapia."
+            ]
+          ],
+          "completar": [
+            "Moderar es cuidar que piense el grupo; si alguien ___, reconoce su aporte y da la palabra a quienes no han participado.",
+            "acapara"
+          ],
+          "refl": "Planea tu primer café filosófico. 1) Elige el lugar, la fecha, el público y tres preguntas candidatas. 2) Escribe la agenda de 90 minutos con tiempos y roles. 3) Redacta lo que dirás en tres situaciones: alguien acapara, alguien se burla y alguien se conmueve. 4) Escribe la frase con la que aclararás los límites del espacio y los recursos de ayuda que tendrás a la mano.",
+          "modelo": "Modelo: «Lugar: casa de cultura de mi municipio, primer sábado del mes, 11:00. Público: vecinos y estudiantes de prepa. Preguntas: ¿se puede ser libre con deudas?, ¿qué le debemos a los desconocidos?, ¿es justo heredar? Agenda: 10 de reglas, 15 de votación, 50 de diálogo con pausa y 15 de cierre. Roles: yo modero, mi hija lleva el tiempo y un vecino es relator. Si alguien acapara: “Anotemos tu idea; ahora, dos voces nuevas”. Burla: “Aquí discutimos ideas, no personas”. Si alguien se conmueve: pausa, gracias y plática al final. Límites: “Esto no es terapia; comparte solo lo que quieras”, y la Línea de la Vida anotada.» Es bueno porque es concreto, reparte roles y prevé las situaciones difíciles.",
+          "plantilla": [
+            "Guía de café filosófico (90 minutos)",
+            "Lugar y fecha: [ ] · Público: [ ]\nPreguntas candidatas: [ ] [ ] [ ]\n0-10 min Bienvenida, reglas y límites: [ ]\n10-25 min Propuestas y votación de la pregunta: [ ]\n25-75 min Diálogo, con pausa para resumir a la mitad: [ ]\n75-90 min Cierre, una frase por persona: [ ]\nRoles: modera [ ] · tiempo [ ] · relator [ ]\nSi alguien acapara: [ ] · Si alguien se burla: [ ] · Si alguien se conmueve: [ ]\nRecursos: Línea de la Vida 800 911 2000 (gratuita, 24 h) · 911"
+          ],
+          "clave": [
+            "Un café filosófico es un diálogo abierto en un espacio público: desde Sautet en 1992, cualquiera puede participar.",
+            "Noventa minutos bien repartidos: reglas, elección de la pregunta, diálogo con pausa y cierre.",
+            "Moderar es cuidar que el grupo piense y que todos estén seguros; no es dar la respuesta ni hacer terapia."
+          ]
+        }
+      ],
+      "reto": {
+        "texto": "Prepara tu proyecto final con una prueba real y elige una de dos rutas. Ruta del diálogo: en 30 minutos diseña una sesión breve de 30 minutos (pregunta que abre, reglas, seis preguntas de apoyo y cierre); en los siguientes 30 minutos condúcela con 2 a 4 personas de tu familia, tus amistades o tu trabajo, y en los últimos 30 minutos escribe qué funcionó, qué falló y qué cambiarías. Ruta del ensayo: en 30 minutos arma el esqueleto (pregunta, tesis, argumentos, objeción y respuesta); en 45 minutos escribe un borrador de al menos 600 palabras, y en 15 minutos evalúalo con la rúbrica de cinco criterios.",
+        "entregable": "El guion de la sesión con tus notas de la prueba, o el borrador del ensayo con su rúbrica llenada.",
+        "criterios": "Revisa: la pregunta abre y admite respuestas opuestas, hay razones y no solo opiniones, aparece una objeción seria o una situación difícil prevista con su respuesta, y las citas están verificadas y los límites del espacio quedan claros."
+      },
+      "lab": {
+        "t": "Tu pregunta filosófica: del análisis al diálogo",
+        "obj": "Integrar todo el diplomado en un proyecto propio: formular y situar una pregunta filosófica, analizar sus mejores argumentos, deliberarla con las lentes éticas y otras voces, y entregar un ensayo argumentativo o una guía de café filosófico.",
+        "esc": "<b>Daniela,</b> de 35 años, es técnica de laboratorio clínico en Azcapotzalco, en la Ciudad de México. Desde hace dos años cuida por las tardes a su mamá, que tiene una enfermedad crónica, y se turna con su hermano, que vive en Tijuana y ayuda con dinero. En su cuaderno filosófico se repite una pregunta: «¿qué le debemos a quienes nos cuidaron?». Quiere convertirla en un café filosófico en la biblioteca de su colonia o en un ensayo para un concurso. Puedes hacer el proyecto con la pregunta de Daniela o con la tuya, y elegir el entregable A (ensayo argumentativo de 800 a 1,200 palabras) o el B (guía para conducir un café filosófico de 90 minutos). Este proyecto no otorga certificación: es la evidencia de lo que ya sabes hacer.",
+        "e": [
+          [
+            "Escena 1 (módulos 1 y 2): Daniela le cuenta su idea a una prima, que le contesta: «Eso no es filosofía; pregúntale a un abogado qué te toca o a un psicólogo cómo dejar de sentir culpa». Luego le reenvía una imagen con una frase sobre los hijos y los padres atribuida a Aristóteles, sin obra ni pasaje.",
+            "Consigna: formula tu pregunta en una sola frase que admita respuestas opuestas; clasifícala (empírica, formal o filosófica) y ubícala en sus ramas; separa las preguntas empíricas, legales o psicológicas que la rodean de la propiamente filosófica; explica en un párrafo por qué te importa a ti y a otras personas; sitúala con dos autores clásicos de los módulos 1 y 2 (por ejemplo, Sócrates y la vida examinada, Aristóteles y la virtud como hábito, o Kant y el pensar por cuenta propia) con citas verificadas —obra, pasaje y nota de traducción— o paráfrasis, y verifica la frase de la imagen antes de decidir si la usas."
+          ],
+          [
+            "Escena 2 (módulos 3 y 4): En un video viral, un comentarista afirma: «Quien lleva a su mamá a una residencia la abandona: o la cuidas tú o no la quieres». Otro responde: «Los hijos no pidieron nacer, así que no deben nada; quien diga lo contrario es un chantajista».",
+            "Consigna: reconstruye en forma estándar, con premisas numeradas, premisas implícitas y principio de caridad, el mejor argumento a favor de que los hijos tienen deberes de cuidado y el mejor argumento en contra; evalúa la validez de cada uno y la verdad de sus premisas; identifica y nombra las dos falacias que aparecen en el video y redacta una respuesta respetuosa a cada una; afina uno de los argumentos con una idea del módulo 3, como el principio del daño de Mill, la libertad situada de Beauvoir o el pensar de Arendt."
+          ],
+          [
+            "Escena 3 (módulos 5 y 6): Daniela nota que en su familia se da por hecho que el cuidado le toca a ella «por ser mujer y vivir cerca», mientras que el dinero de su hermano «cuenta igual». Él propone pagar a una cuidadora, pero su mamá no quiere que la atienda una desconocida.",
+            "Consigna: analiza la pregunta con las tres lentes éticas —consecuencias para todas las personas afectadas, deberes y respeto a la autonomía de la mamá, virtudes como la gratitud y la justicia— y añade la ética del cuidado de Gilligan; aplica al menos una voz mexicana, latinoamericana o feminista del módulo 6 (por ejemplo, Graciela Hierro, Rosario Castellanos o la injusticia epistémica de Fricker) a la manera en que se reparte el cuidado; propón al menos tres opciones con el método de seis pasos y explica cuál defiendes y qué costo aceptas."
+          ],
+          [
+            "Escena 4 (módulos 7 y 8): Llega la entrega. Si Daniela escribe el ensayo, tiene un mes; si organiza el café, la biblioteca le presta la sala un sábado de 11:00 a 12:30 y espera a unas 15 personas, entre ellas cuidadoras que podrían conmoverse. Además, pensó usar un asistente de IA para buscar citas.",
+            "Consigna: A) si eliges el ensayo, escribe de 800 a 1,200 palabras con pregunta, tesis, dos o tres argumentos, la objeción más fuerte con su respuesta y una conclusión, citando solo lo verificado; B) si eliges la guía, escribe la pregunta, las reglas, la agenda de 90 minutos con roles, seis preguntas de apoyo, cómo moderarás a quien acapare o se burle, el cierre, los límites (no es terapia) y a quién canalizar, con la Línea de la Vida 800 911 2000 y el 911. En ambos casos anota qué verificaste de lo que te dio la IA, evalúate con la rúbrica de cinco criterios y escribe media página sobre qué ejercicio de la filosofía como forma de vida te ayudó en el proceso."
+          ]
+        ],
+        "p": [
+          [
+            "En la escena 1, la prima dice que la pregunta es para un abogado o un psicólogo. ¿Qué le respondes?",
+            "Hay preguntas legales y psicológicas cerca, pero «qué debemos» es filosófica",
+            "Tiene razón: si la ley ya lo regula, la pregunta deja de ser filosófica",
+            "Tiene razón: como implica emociones, solo un psicólogo puede responderla bien",
+            "La ley dice qué se puede exigir y la psicología ayuda con la culpa, pero qué le debemos a alguien y por qué es una pregunta de ética. Que algo esté regulado no responde si es justo, y que implique emociones no la saca del terreno de las razones."
+          ],
+          [
+            "En la escena 2, «o la cuidas tú o no la quieres» es, sobre todo…",
+            "Un falso dilema, porque omite otras formas de cuidar a la mamá",
+            "Un argumento sólido, porque cuidar es la mayor prueba de amor",
+            "Un ataque a la persona, porque descalifica directamente a quien opina distinto",
+            "Presenta solo dos opciones cuando existen otras: turnos, apoyo pagado, residencias de calidad con visitas frecuentes. No es sólido porque su premisa es falsa, y el ataque a la persona aparece en la segunda respuesta, la del «chantajista»."
+          ],
+          [
+            "En la escena 4, si eliges la guía, ¿qué límite debe incluir?",
+            "Que no es terapia, que cada quien comparte lo que quiera y a dónde canalizar",
+            "Que solo podrán participar quienes hayan cuidado a un familiar enfermo durante años",
+            "Que no se permiten emociones, para que el diálogo sea racional",
+            "Con cuidadoras que podrían conmoverse, la guía debe aclarar el alcance del espacio y tener a mano la Línea de la Vida y el 911. Restringir la entrada excluye otras voces útiles, y prohibir emociones es imposible y poco respetuoso."
+          ]
+        ],
+        "pl": [
+          "Índice de tu proyecto final",
+          "Pregunta: [ ] · Entregable: A ensayo [ ] / B guía de café filosófico [ ]\nParte 1 (módulos 1 y 2) — Pregunta formulada: [ ] · Tipo y ramas: [ ] · Preguntas empíricas, legales o psicológicas que la rodean: [ ] · Por qué importa: [ ] · Autor clásico 1 (obra, pasaje): [ ] · Autor clásico 2: [ ] · Cita verificada o paráfrasis: [ ]\nParte 2 (módulos 3 y 4) — Argumento a favor en forma estándar: [ ] · Argumento en contra: [ ] · Validez y verdad de las premisas: [ ] · Falacia 1 y respuesta: [ ] · Falacia 2 y respuesta: [ ] · Idea del módulo 3: [ ]\nParte 3 (módulos 5 y 6) — Consecuencias: [ ] · Deberes: [ ] · Virtudes: [ ] · Cuidado: [ ] · Voz mexicana, latinoamericana o feminista: [ ] · Opciones, decisión y costo: [ ]\nParte 4 (módulos 7 y 8) — Ensayo de 800-1,200 palabras [ ] o guía (pregunta, reglas, agenda, roles, preguntas de apoyo, moderación, cierre, límites y canalización) [ ] · Lo que verifiqué de la IA: [ ] · Rúbrica (1 a 4): pregunta y tesis [ ] argumentos [ ] objeción [ ] fuentes [ ] redacción [ ] · Reflexión: [ ]\nRecursos: Línea de la Vida 800 911 2000 (gratuita, 24 h) · 911"
+        ]
+      },
+      "quiz": [
+        [
+          "Ignacio, de Chihuahua, publica «Solo sé que no sé nada» como cita textual de Sócrates. ¿Qué es lo más preciso?",
+          "Es una simplificación: en la Apología dice no creer saber lo que no sabe",
+          "Es una cita literal de la Apología de Platón, en el pasaje 38a",
+          "Es una frase de Aristóteles que se atribuyó por error a Sócrates",
+          "Es literal, aunque no se sabe en cuál de los diálogos de Platón aparece"
+        ],
+        [
+          "Susana, analista en Mazatlán, dice: «Las ventas subieron cada diciembre de los últimos diez años; entonces es seguro que subirán este diciembre». ¿Qué problema señaló Hume?",
+          "Que la inducción supone, sin probarlo, que el futuro se parecerá al pasado",
+          "Que los sentidos siempre engañan, como concluyó Descartes",
+          "Que solo la deducción produce conocimiento útil",
+          "Que diez años son pocos y con veinte la conclusión sería segura"
+        ],
+        [
+          "El comité vecinal de un fraccionamiento de Cuernavaca quiere multar a un vecino adulto que sale a correr de noche sin compañía, «por su propio bien». Según Mill, ¿qué faltaría para justificarlo?",
+          "Mostrar que esa conducta daña a otros, no solo que a él le conviene",
+          "Que la mayoría del comité vote a favor de la multa",
+          "Que el vecino no haya avisado antes al comité",
+          "Que a la mayoría de los vecinos su conducta les parezca imprudente"
+        ],
+        [
+          "Alfredo razona: «Si llueve, la calle se moja. La calle está mojada. Por lo tanto, llovió». ¿Qué falla?",
+          "Afirma el consecuente: la calle pudo mojarse por otra causa",
+          "Nada: es un modus ponens válido y su conclusión es segura",
+          "Es un modus tollens, válido aunque las premisas fueran falsas",
+          "Es un ataque a la persona contra quien sostiene que no llovió"
+        ],
+        [
+          "Un gerente propone despedir a un trabajador enfermo «porque así ganamos todos más»; otra gerente responde que eso lo trata simplemente como medio. ¿Qué lente usa ella?",
+          "La de los deberes, con la fórmula de la humanidad de Kant",
+          "La de las consecuencias, porque busca el mayor bienestar total",
+          "La de las virtudes, porque pregunta qué haría una persona prudente",
+          "El relativismo, porque cada empresa decide qué es correcto"
+        ],
+        [
+          "En una secundaria de Ciudad Juárez, una alumna dice que en su familia estudiar «no es cosa de mujeres». ¿Qué texto novohispano defiende el derecho de las mujeres a saber?",
+          "La Respuesta a sor Filotea, de Sor Juana",
+          "La raza cósmica, de José Vasconcelos",
+          "El perfil del hombre y la cultura en México, de Samuel Ramos",
+          "La Physica speculatio, de Alonso de la Veracruz"
+        ],
+        [
+          "Samuel le dice a un amigo: «Epicuro enseña que la muerte no es nada, así que no tiene sentido que llores a tu abuelo». ¿Qué error comete?",
+          "Epicuro habla del miedo a la propia muerte; no prohíbe el duelo",
+          "Ninguno: Epicuro pedía no mostrar emociones ante la muerte de nadie",
+          "Que esa frase no es de Epicuro, sino de Camus en El mito de Sísifo",
+          "Que Epicuro sostenía que la muerte es el mayor de los males"
+        ],
+        [
+          "En un diálogo socrático en León, quien facilita dice a la mitad: «Yo creo que la respuesta correcta es esta». ¿Qué falla?",
+          "Impone su opinión en vez de cuidar el método del grupo",
+          "Nada: quien facilita debe dar la respuesta para cerrar bien",
+          "Que debió esperar hasta el final de la sesión para decirla",
+          "Que no la respaldó con una cita textual de Platón"
+        ],
+        [
+          "Una escuela de Acapulco anuncia: «Filosofía para Niños: mejores calificaciones garantizadas». ¿Qué corresponde aclarar?",
+          "Que el ensayo grande de 2021 no halló efecto en lectura ni matemáticas",
+          "Que está demostrado un avance de dos meses en todas las escuelas",
+          "Que los estudios muestran que baja el rendimiento académico",
+          "Que no existe ningún estudio serio sobre Filosofía para Niños"
+        ],
+        [
+          "Claudia termina su ensayo sin ninguna objeción, «para no debilitar la tesis». ¿Qué le recomiendas?",
+          "Enfrentar la objeción más fuerte: es lo que vuelve convincente el ensayo",
+          "Nada: mencionar objeciones solo confunde a quien lee",
+          "Incluir una objeción débil que sea fácil de refutar",
+          "Agregar más citas de autores en lugar de objeciones"
+        ]
+      ]
+    }
+  ]
+}
