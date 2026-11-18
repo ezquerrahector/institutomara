@@ -1,0 +1,822 @@
+{
+ "modulos": [
+  {
+   "t": "Jabón artesanal I: química, sosa cáustica y cálculo",
+   "r": "Qué pasa cuando una grasa se encuentra con la sosa, cómo manejarla sin accidentes, cómo calcular la lejía en Excel con valores de saponificación, sobreengrasado y agua, y cómo diseñar una receta equilibrada antes de tu primer lote.",
+   "lecciones": [
+    {
+     "t": "La saponificación: grasa más sosa es jabón y glicerina (frío, caliente y base glicerinada)",
+     "obj": "Explicar qué ocurre al hacer jabón y elegir entre proceso en frío, en caliente o base glicerinada según tu experiencia y tu tiempo.",
+     "texto": [
+      "Todo jabón verdadero nace de una reacción química llamada <b>saponificación</b>. Los aceites y las mantecas están formados sobre todo por triglicéridos; cuando se mezclan con una solución de hidróxido de sodio, la famosa sosa cáustica, se transforman en dos sustancias nuevas: jabón y glicerina. Por eso ningún jabón sólido hecho desde cero se fabrica sin sosa, aunque la etiqueta no la mencione. Si la receta está bien calculada, la sosa no queda libre en la barra, porque se consumió en la reacción. Para jabón blando o líquido se usa otra base fuerte, el hidróxido de potasio (KOH).",
+      "Esto desmonta dos mitos de bazar. El primero es el jabón «libre de químicos»: el aceite, el agua, la glicerina y el propio jabón son sustancias químicas, así que la frase no informa nada y confunde. El segundo es el jabón «sin sosa» hecho desde cero: no existe. Lo que sí existe es la <b>base glicerinada</b>, un jabón que alguien ya saponificó y que tú solo derrites, coloreas, aromatizas y vacías en moldes; en tu mesa no manejas sosa, pero la base sí la llevó.",
+      "Hay tres caminos para empezar. En el <b>proceso en frío</b> mezclas la lejía con los aceites, viertes en el molde y dejas que la reacción termine sola; da barras muy cuidadas, pero pide un curado de 4 a 6 semanas como guía. En el <b>proceso en caliente</b> cocinas la mezcla para acelerar la saponificación; ojo: el calor acelera la reacción, no la evaporación del agua, así que esa barra también necesita reposo para endurecer. Con la base glicerinada no hay reacción que controlar, pero dependes de la calidad de tu proveedor y de límites que verás en el módulo 4.",
+      "¿Cuál te conviene? Si nunca has trabajado con sosa, empezar con base glicerinada te deja practicar moldes, aromas y presentación mientras estudias la parte química. Si quieres hacer jabón desde cero, la práctica es indispensable y conviene que tu primer lote lo hagas junto a alguien con experiencia. Y en cualquier camino, cada receta se comprueba en una calculadora de saponificación y con la ficha de tu proveedor antes de pesar un solo gramo."
+     ],
+     "comparar": [
+      "«Así no: Mi jabón es cien por ciento natural y libre de químicos; no lleva nada de sosa.»",
+      "«Así sí: Mi jabón se hizo con aceites y sosa; la sosa se transformó en jabón y glicerina, y la receta está calculada para que no quede libre.»"
+     ],
+     "caso": "Caso ficticio: Marisol, de 38 años, es laboratorista clínica en un hospital de Morelia y hace jabones de base glicerinada para regalar. Una amiga le dice que ya es hora de hacer jabón «de verdad», que es igual de fácil y que vio en un video una receta «sin sosa» que solo mezcla aceite de oliva con glicerina líquida. Marisol tiene poco tiempo libre por sus turnos y quiere vender en la posada de su hospital dentro de tres semanas.",
+     "p": [
+      [
+       "¿Qué le responde Marisol a la receta «sin sosa» del video?",
+       "Que sin una base fuerte no hay reacción y eso no será jabón",
+       "Que funciona si deja reposar la mezcla varias semanas en el molde",
+       "Que sirve para jabón líquido, aunque no para hacer barras sólidas",
+       "El jabón se forma cuando la grasa reacciona con una base fuerte: hidróxido de sodio para barras o de potasio para jabón blando o líquido. Aceite con glicerina sigue siendo una mezcla de aceite con glicerina; ni el reposo ni cambiar a formato líquido la convierten en jabón."
+      ],
+      [
+       "Si quiere vender en tres semanas, ¿qué le conviene a Marisol?",
+       "Vender lo de base glicerinada y practicar el jabón en frío sin prisa",
+       "Hacer jabón en frío hoy y venderlo aunque no termine de curar",
+       "Usar el proceso en caliente, que sale listo para venderse al día siguiente",
+       "El jabón en frío necesita de 4 a 6 semanas de curado como guía, y el proceso en caliente acelera la reacción, pero no la evaporación del agua, así que tampoco sale listo de inmediato. Con la base glicerinada vende a tiempo y aprende a manejar la sosa con calma, de preferencia acompañada."
+      ],
+      [
+       "Una compañera le pregunta si su jabón de base glicerinada lleva sosa. ¿Qué contesta Marisol?",
+       "Que la base se hizo con sosa, aunque ella solo la funde",
+       "Que no, porque la base glicerinada es glicerina pura y nada más",
+       "Que sí, y que por eso conviene usarlo siempre con guantes",
+       "La base glicerinada ya es jabón: alguien la saponificó con sosa y la reacción terminó. Decir que es solo glicerina es falso, y si la base está bien hecha no queda sosa libre que obligue a lavarse con guantes."
+      ]
+     ],
+     "completar": [
+      "La reacción entre grasas y sosa que produce jabón y glicerina se llama ___.",
+      "saponificación"
+     ],
+     "relacionar": [
+      [
+       "Proceso en frío",
+       "Reacción sin calor externo y curado largo"
+      ],
+      [
+       "Proceso en caliente",
+       "Acelera la reacción, no la evaporación"
+      ],
+      [
+       "Base glicerinada",
+       "Jabón ya hecho que solo se funde"
+      ],
+      [
+       "Hidróxido de potasio",
+       "Jabón blando o líquido"
+      ],
+      [
+       "Glicerina",
+       "Se forma junto con el jabón"
+      ]
+     ],
+     "refl": "Elige tu punto de partida (20 min). 1) Explica con tus palabras, en cuatro frases, qué es la saponificación, como si se lo contaras a una clienta. 2) Haz una tabla con los tres caminos (frío, caliente y base glicerinada) y anota para cada uno el tiempo que pide, el riesgo que implica y lo que te permite aprender. 3) Elige con cuál empezarás y por qué. 4) Escribe quién, con experiencia, podría acompañarte en tu primer lote con sosa, o dónde buscarías un taller presencial.",
+     "modelo": "Modelo: «La saponificación es la reacción de los aceites con la sosa: al terminar ya no hay aceite ni sosa sueltos, sino jabón y glicerina. El proceso en frío me da control de la receta, pero son de 4 a 6 semanas de curado; el caliente acelera la reacción, aunque igual debo dejar secar la barra; la base glicerinada me evita manejar sosa, pero dependo del proveedor. Empezaré con base glicerinada un mes mientras estudio la seguridad, y haré mi primer lote en frío con una vecina que hace jabón desde hace años.» Es buena porque explica sin mitos, compara tiempos y riesgos y planea la primera vez acompañada.",
+     "plantilla": [
+      "Mi punto de partida en jabón",
+      "Qué es la saponificación, en mis palabras: [ ]\nCamino elegido: [frío / caliente / base glicerinada]\nTiempo que pide hasta vender: [ ]\nRiesgo principal: [ ]\nLo que voy a practicar primero: [ ]\nPersona con experiencia que me acompañará en el primer lote: [ ]\nFecha tentativa del primer lote: [ ]"
+     ],
+     "clave": [
+      "El jabón se forma al reaccionar grasas con una base fuerte; si la receta está bien calculada, no queda sosa libre en la barra.",
+      "El proceso en caliente acelera la saponificación, pero no la evaporación: esa barra también requiere reposo.",
+      "La base glicerinada te permite practicar sin manejar sosa, aunque ya fue hecha con ella."
+     ]
+    },
+    {
+     "t": "Manejo seguro de la sosa cáustica: equipo, orden, almacenamiento y primeros auxilios",
+     "obj": "Preparar tu espacio, tu equipo y tu protocolo para disolver sosa sin accidentes, y saber qué hacer si algo sale mal.",
+     "texto": [
+      "El hidróxido de sodio es un químico corrosivo, no un ingrediente más. Su ficha de seguridad lo clasifica con la palabra <b>Peligro</b> y el pictograma de corrosión: provoca quemaduras graves en la piel y lesiones en los ojos, es nocivo si se ingiere y es corrosivo para los metales. En México, la NOM-018-STPS-2015 pide comunicar esos peligros en los centros de trabajo con el sistema armonizado; aunque tu taller esté en tu casa, adopta la misma disciplina: envase original, etiqueta legible y la hoja de seguridad del proveedor a la mano.",
+      "Antes de abrir el frasco, ponte tu <b>equipo de protección personal</b>: lentes de seguridad tipo goggle, que cierran por los lados; guantes de nitrilo o de hule; manga larga y zapato cerrado. Trabaja con ventilación, sin niños ni mascotas cerca y sin distracciones: nada de contestar el celular con la jarra en la mano. Usa recipientes de acero inoxidable o de plástico resistente al calor, nunca de aluminio, porque la sosa lo ataca. La regla de oro es el orden: <b>siempre la sosa al agua</b>, poco a poco y moviendo, nunca el agua sobre la sosa. Al disolverse, la mezcla se calienta mucho y desprende vapores: no te inclines sobre el recipiente.",
+      "Guarda la sosa en su envase bien cerrado, porque absorbe la humedad del aire; rotulada, en alto o bajo llave y lejos de la cocina y de los alimentos. La lejía ya preparada nunca se deja en un vaso o una botella que alguien pueda confundir con agua o con refresco. Un dato útil al comprar: la sosa no aparece en la ley mexicana de precursores químicos, pero eso no la vuelve inofensiva.",
+      "Ten escrito y pegado tu plan de <b>primeros auxilios</b>, basado en la ficha internacional de seguridad química. En la piel: quita la ropa contaminada y enjuaga con abundante agua al menos 15 minutos. En los ojos: irriga con agua al menos 20 minutos y busca atención médica de inmediato. Si alguien la traga: que se enjuague la boca, no provoques el vómito y llama al 911. No pongas vinagre en la piel para «neutralizar»: las guías solo indican agua, y perder minutos buscando otra cosa empeora la quemadura."
+     ],
+     "comparar": [
+      "«Así no: Ya le agarré la onda; disuelvo la sosa en la cocina, con lentes de sol, y le echo el agua encima para que se deshaga rápido.»",
+      "«Así sí: Me pongo goggles, guantes y manga larga, abro la ventana y vierto la sosa poco a poco sobre el agua en mi jarra de acero inoxidable.»"
+     ],
+     "caso": "Caso ficticio: Rodrigo, de 26 años, estudia diseño industrial en León y vive con su hermana y su sobrina de cuatro años. Quiere hacer su primer lote de jabón el domingo en la cocina, porque ahí está la tarja. Tiene una olla de aluminio que ya no usan, guantes de tela de jardinería y unos lentes de sol. Su hermana le pide que le explique qué pasaría si algo sale mal.",
+     "p": [
+      [
+       "¿En qué recipiente disuelve Rodrigo la sosa?",
+       "En una jarra de acero inoxidable o de plástico resistente",
+       "En la olla de aluminio, si de ahora en adelante es solo del taller",
+       "En un vaso de unicel, para tirarlo al terminar sin lavar nada",
+       "La sosa es corrosiva para metales como el aluminio, así que apartar la olla para el taller no resuelve el problema. El unicel se deforma con el calor de la disolución y puede derramar la lejía. Acero inoxidable o plástico resistente al calor son lo que indican las guías."
+      ],
+      [
+       "Mientras disuelve, le salpica una gota en el antebrazo. ¿Qué hace Rodrigo?",
+       "Quita lo que la cubra y enjuaga con mucha agua al menos 15 minutos",
+       "Se pone vinagre en la zona para neutralizar la sosa cuanto antes",
+       "Se seca con un trapo y sigue, para no perder el lote a la mitad",
+       "Las guías de primeros auxilios para la sosa indican agua abundante durante al menos 15 minutos, retirando la ropa contaminada. El vinagre no está indicado y hace perder tiempo valioso, y limpiarse con un trapo deja el químico actuando sobre la piel. El lote puede esperar; la piel no."
+      ],
+      [
+       "¿Dónde y cómo conviene que Rodrigo haga su primer lote?",
+       "Fuera de la cocina, sin la niña cerca y con alguien con experiencia",
+       "En la cocina, mientras la niña duerme y con la ventana cerrada",
+       "En la cocina, con la niña mirando desde lejos para que aprenda",
+       "Los utensilios y el espacio del jabón deben estar separados de los alimentos, con ventilación y sin niños ni mascotas cerca. Cerrar la ventana concentra los vapores, y una niña de cuatro años no debe estar en el área aunque mire desde lejos. Hacer el primer lote acompañado reduce mucho los errores."
+      ]
+     ],
+     "completar": [
+      "La regla de oro al preparar la lejía es verter siempre la ___ sobre el agua, nunca al revés.",
+      "sosa"
+     ],
+     "relacionar": [
+      [
+       "Salpicadura en la piel",
+       "Agua abundante al menos 15 minutos"
+      ],
+      [
+       "Salpicadura en los ojos",
+       "Agua al menos 20 minutos y atención médica"
+      ],
+      [
+       "Ingestión",
+       "Enjuagar la boca, no provocar el vómito y llamar al 911"
+      ],
+      [
+       "Recipiente de aluminio",
+       "Prohibido: la sosa ataca ese metal"
+      ],
+      [
+       "Envase bien cerrado",
+       "La sosa absorbe la humedad del aire"
+      ]
+     ],
+     "refl": "Escribe tu protocolo de sosa (20 min). 1) Haz la lista de tu equipo de protección y marca lo que ya tienes y lo que te falta. 2) Describe el lugar donde disolverás la sosa: ventilación, superficie, distancia de la cocina y dónde estarán niños y mascotas. 3) Escribe los pasos de la disolución en orden, empezando por ponerte el equipo. 4) Redacta tu cartel de primeros auxilios para piel, ojos e ingestión, con el 911 bien visible.",
+     "modelo": "Modelo: «Tengo guantes de nitrilo y manga larga; me faltan goggles, que compraré antes de empezar. Disolveré en el patio techado, sobre una mesa firme, con mi hija en casa de su abuela. Pasos: me pongo el equipo, peso el agua en la jarra de acero inoxidable, peso la sosa en un vaso seco, la agrego al agua poco a poco moviendo y la dejo enfriar tapada y rotulada. Cartel: piel, agua 15 minutos; ojos, agua 20 minutos y médico; si alguien la traga, enjuagar la boca, no provocar el vómito y llamar al 911; nada de vinagre.» Es buena porque reconoce lo que falta y deja por escrito cada paso y cada respuesta.",
+     "plantilla": [
+      "Protocolo de sosa de mi taller",
+      "Equipo: goggles [ ] guantes de nitrilo o hule [ ] manga larga [ ] zapato cerrado [ ]\nLugar de trabajo: [ ]  Ventilación: [ ]\nNiños y mascotas durante el lote: [dónde estarán]\nRecipiente para la lejía: [acero inoxidable / plástico resistente]\nPasos: 1) equipo puesto 2) pesar el agua 3) pesar la sosa 4) sosa al agua, poco a poco 5) [ ]\nAlmacenamiento: [lugar, cerrado, rotulado]\nPrimeros auxilios: piel, agua 15 min; ojos, agua 20 min y médico; ingestión, enjuagar la boca, no provocar el vómito, 911. Sin vinagre."
+     ],
+     "clave": [
+      "La sosa es corrosiva: goggles, guantes de nitrilo o hule, manga larga, zapato cerrado y ventilación en cada lote.",
+      "Siempre la sosa al agua, en recipiente de acero inoxidable o plástico resistente, nunca de aluminio.",
+      "Ante un accidente, solo agua: 15 minutos en la piel, 20 en los ojos con atención médica, y 911 si alguien la ingiere."
+     ]
+    },
+    {
+     "t": "Calcular la lejía: valores de saponificación, sobreengrasado y agua en Excel",
+     "obj": "Calcular en una hoja de cálculo cuánta sosa y cuánta agua lleva tu receta, y comprobar el resultado con una calculadora de saponificación.",
+     "texto": [
+      "Cada aceite necesita una cantidad distinta de sosa para convertirse en jabón. Ese número es su <b>valor de saponificación</b>, o SAP, y en las tablas para jabón se expresa en gramos de NaOH por gramo de aceite. Algunos valores de referencia: oliva 0.135, coco 0.182, ricino 0.129, karité entre 0.129 y 0.133, manteca de cacao 0.139 y aguacate entre 0.137 y 0.140. Son promedios que varían de un lote a otro; confírmalos con la ficha de tu proveedor. Si una tabla trae el SAP para hidróxido de potasio, divídelo entre 1.4025 para pasarlo a NaOH.",
+      "Veamos un lote de 800 g de aceites: 480 g de oliva (480 × 0.135 = 64.8 g), 200 g de coco (200 × 0.182 = 36.4 g), 80 g de manteca de cacao (80 × 0.139 = 11.12 g) y 40 g de ricino (40 × 0.129 = 5.16 g). La suma da 117.48 g de NaOH: la cantidad que saponificaría todo el aceite. Como los SAP son promedios, se aplica un <b>sobreengrasado</b>, un margen de aceite que se deja sin saponificar a propósito; el mínimo recomendado es 5 %. Entonces, 117.48 × 0.95 = 111.6 g de sosa.",
+      "Falta el agua. Una opción común es el 38 % del peso de los aceites: 800 × 0.38 = 304 g. La concentración de la lejía es la sosa entre la suma de sosa y agua: 111.6 ÷ (111.6 + 304) = 26.9 %. A quien empieza se le aconseja no pasar de alrededor de 40 %. Todo se pesa en gramos, en báscula digital, nunca en tazas ni cucharadas.",
+      "En Excel lo armas así: aceites en A2:A5, gramos en B2:B5, SAP en C2:C5 y, en D2, =B2*C2, copiada hacia abajo. En B6 suma los aceites con =SUMA(B2:B5) y en D6 la sosa al 0 % con =SUMA(D2:D5). En B7 escribe el sobreengrasado (0.05); en B8 la sosa final, =D6*(1-B7); en B9 el agua, =B6*0.38, y en B10 la concentración, =B8/(B8+B9), con formato de porcentaje. La hoja evita errores de dedo, pero no sustituye la verificación: antes de cada lote pasa la receta por una calculadora de saponificación. Si los números no coinciden, no pesas nada hasta encontrar por qué."
+     ],
+     "comparar": [
+      "«Así no: Copié la receta de un video y cambié el aceite de coco por más oliva; la sosa la dejé igual.»",
+      "«Así sí: Cambié coco por oliva, así que recalculé la sosa con los nuevos SAP y comprobé el resultado en una calculadora antes de pesar.»"
+     ],
+     "caso": "Caso ficticio: Carmen, de 50 años, administra una ferretería en Veracruz y ya hizo dos lotes con una amiga experimentada. Ahora quiere su propia receta de 1,000 g de aceites: 600 g de oliva, 300 g de coco y 100 g de ricino, sin sobreengrasado, porque leyó que así el jabón «limpia mejor». Su hoja de Excel le da 148.5 g de sosa al 0 % y la calculadora en línea, un número algo distinto.",
+     "p": [
+      [
+       "¿Qué sobreengrasado le recomiendas a Carmen?",
+       "Al menos 5 %, porque los SAP son promedios",
+       "0 %, para que no quede aceite libre en la barra",
+       "1 %, suficiente si pesa con una buena báscula",
+       "Los valores de saponificación son promedios que varían por lote, así que se deja un margen mínimo de 5 % para que no quede sosa libre si el aceite real necesita menos. Con 0 % no hay margen, y una báscula precisa no corrige que el SAP sea un promedio."
+      ],
+      [
+       "Con 5 % de sobreengrasado, ¿cuánta sosa lleva su lote?",
+       "141.1 g, que sale de 148.5 × 0.95",
+       "148.5 g, porque el margen no cambia la sosa",
+       "155.9 g, al sumar un 5 % a la sosa total",
+       "La sosa al 0 % es 600 × 0.135 + 300 × 0.182 + 100 × 0.129 = 81 + 54.6 + 12.9 = 148.5 g. El sobreengrasado reduce la sosa: 148.5 × 0.95 = 141.1 g. Sumar el 5 % daría más sosa, justo lo contrario de lo que se busca."
+      ],
+      [
+       "Su hoja y la calculadora no coinciden. ¿Qué hace Carmen?",
+       "Revisa SAP, gramos y fórmulas antes de pesar nada",
+       "Promedia los dos resultados y usa ese número de sosa",
+       "Usa el número más bajo, que siempre es el más seguro",
+       "Una diferencia indica un error en algún lado: un SAP tecleado mal, un gramaje distinto o una fórmula que suma la celda equivocada. Promediar esconde el error, y el número más bajo puede venir justo de la fórmula equivocada. Se pesa solo cuando ambos cálculos coinciden y se entiende por qué."
+      ]
+     ],
+     "completar": [
+      "El margen de aceite que se deja sin saponificar a propósito se llama ___.",
+      "sobreengrasado"
+     ],
+     "relacionar": [
+      [
+       "SAP de NaOH",
+       "Gramos de sosa por gramo de aceite"
+      ],
+      [
+       "Sobreengrasado de 5 %",
+       "Multiplicar la sosa total por 0.95"
+      ],
+      [
+       "Agua al 38 %",
+       "Peso de los aceites por 0.38"
+      ],
+      [
+       "Concentración de la lejía",
+       "Sosa entre la suma de sosa y agua"
+      ],
+      [
+       "SAP de KOH",
+       "Dividirlo entre 1.4025 para usar NaOH"
+      ]
+     ],
+     "refl": "Calcula tu primera receta (20 min). 1) Elige tres o cuatro aceites de la tabla de la lección y define un lote de entre 500 y 1,000 g con sus gramos. 2) Multiplica cada uno por su SAP y suma. 3) Aplica 5 % de sobreengrasado, calcula el agua al 38 % y la concentración. 4) Pasa la receta por una calculadora de saponificación y anota la diferencia, si la hay, y su causa probable. 5) Escribe qué dato confirmarás en la ficha de tu proveedor.",
+     "modelo": "Modelo: «Lote de 500 g: 300 g de oliva (300 × 0.135 = 40.5 g de sosa), 150 g de coco (150 × 0.182 = 27.3 g) y 50 g de karité con SAP de 0.129 (6.45 g). Total al 0 %: 74.25 g; con 5 % de sobreengrasado, 74.25 × 0.95 = 70.5 g. Agua: 500 × 0.38 = 190 g; concentración: 70.5 ÷ 260.5 = 27.1 %. Si la calculadora da otro número, reviso primero el karité, porque su SAP viene en rango, y pediré a mi proveedor el dato de su lote.» Es buena porque muestra cada operación, aplica el margen mínimo y sabe dónde buscar una diferencia.",
+     "plantilla": [
+      "Hoja de lejía en Excel",
+      "A1 Aceite | B1 Gramos | C1 SAP NaOH | D1 Sosa\nA2:A5 [aceites] | B2:B5 [g] | C2:C5 [SAP de la ficha] | D2 =B2*C2 (copia hacia abajo)\nB6 =SUMA(B2:B5)   D6 =SUMA(D2:D5)\nB7 Sobreengrasado: 0.05\nB8 Sosa final: =D6*(1-B7)\nB9 Agua: =B6*0.38\nB10 Concentración: =B8/(B8+B9)\nComprobada en calculadora de saponificación: [sí / no; diferencia: ]\nSAP confirmado con la ficha del proveedor: [ ]"
+     ],
+     "clave": [
+      "La sosa se calcula aceite por aceite, gramos por SAP, y luego se suma.",
+      "Se aplica al menos 5 % de sobreengrasado porque los SAP son promedios que varían por lote.",
+      "Tu hoja de Excel se comprueba siempre con una calculadora de saponificación y la ficha del proveedor antes de pesar."
+     ]
+    },
+    {
+     "t": "Diseñar tu receta: qué aporta cada aceite y cómo equilibrar dureza, espuma y suavidad",
+     "obj": "Elegir y combinar aceites para una barra equilibrada, sabiendo qué aporta cada uno y cómo probar tu receta sin depender de números mágicos.",
+     "texto": [
+      "Una vez que sabes calcular la sosa, la pregunta cambia: ¿qué barra quieres? Una buena receta busca equilibrio entre tres cosas que se notan en la regadera: que la barra sea <b>dura</b> y dure, que haga una <b>espuma</b> agradable y que se sienta <b>suave</b> al enjuagar. Ningún aceite da todo a la vez; por eso casi todas las recetas combinan varios, cada uno con un papel.",
+      "El aceite de <b>oliva</b> es la base de muchas recetas: da una barra suave al tacto, de espuma cremosa y discreta, que tarda en endurecer; el jabón hecho solo con oliva necesita curados largos. El de <b>coco</b> aporta dureza y una espuma abundante de burbuja grande, pero en exceso puede sentirse resecante, y por eso en recetas de principiante suele ir como minoría. El de <b>ricino</b> se usa en poca cantidad para ayudar a que la espuma se sostenga; si te pasas, la barra queda blanda y pegajosa. Las mantecas de karité y de cacao dan firmeza y una sensación cremosa, y el aceite de aguacate añade suavidad.",
+      "Las calculadoras de saponificación muestran indicadores de dureza, limpieza o espuma. Úsalos como orientación para comparar dos versiones de tu receta, no como garantía: la prueba real es el lote curado, lavado y evaluado por personas. Otro criterio práctico es el abasto: elige aceites que consigas siempre con el mismo proveedor y con ficha técnica, porque cambiar de origen puede cambiar el SAP y el resultado.",
+      "Diseña con método. Empieza con una receta base de tres o cuatro aceites, cambia una sola variable por lote y anota todo en tu bitácora: proporciones, sobreengrasado, agua, fecha y cómo se sintió la barra al terminar el curado. Pide a tres o cuatro personas que la usen y te digan qué notan. Y cuida lo que dices: puedes describir la barra como firme o de espuma cremosa, pero no prometer que «alivia la dermatitis» o que «cura el acné», porque son propiedades terapéuticas que un jabón no ofrece y que la ley no te permite anunciar."
+     ],
+     "comparar": [
+      "«Así no: Mi jabón lleva siete aceites y cinco mantecas, así que es el más completo y nutritivo del mercado.»",
+      "«Así sí: Mi barra lleva oliva, coco, karité y un poco de ricino: es firme, hace espuma cremosa y se siente suave.»"
+     ],
+     "caso": "Caso ficticio: Emiliano, de 33 años, es herrero en Aguascalientes y hace jabón con su pareja los fines de semana. Su receta de puro aceite de oliva gusta por suave, pero los clientes del tianguis dicen que la barra se deshace en la jabonera y casi no hace espuma. Un conocido le aconseja subir el coco a la mitad de la receta y agregar ricino «al gusto» para que haga mucha espuma.",
+     "p": [
+      [
+       "¿Qué cambio prueba Emiliano primero?",
+       "Sumar una parte de coco y algo de manteca, y recalcular",
+       "Poner mitad de coco, como sugirió el conocido, sin probar",
+       "Dejar la receta igual y pedir a los clientes que la sequen",
+       "Sumar coco en proporción moderada y una manteca da dureza y espuma sin perder suavidad, y cada cambio exige recalcular la sosa. Subir el coco a la mitad de golpe puede dar una barra resecante, y pedir a los clientes que se adapten no corrige la receta."
+      ],
+      [
+       "¿Cómo maneja Emiliano el ricino?",
+       "En poca cantidad, anotando su efecto en la bitácora",
+       "Al gusto, porque más ricino siempre da más espuma",
+       "Lo elimina, porque el ricino no tiene papel en el jabón",
+       "El ricino ayuda a sostener la espuma cuando va en poca cantidad; en exceso deja la barra blanda y pegajosa, así que más no es mejor. Eliminarlo tampoco es necesario: bien dosificado cumple un papel útil."
+      ],
+      [
+       "¿Cómo sabrá Emiliano si la nueva receta funciona?",
+       "Con el lote curado y usado por varias personas",
+       "Con los indicadores de la calculadora, que lo garantizan",
+       "Con el aspecto de la barra al desmoldarla al día siguiente",
+       "Los indicadores de la calculadora orientan, pero no garantizan cómo se sentirá la barra, y al desmoldar todavía falta el curado. La prueba real es usar el jabón curado y escuchar a varias personas."
+      ]
+     ],
+     "completar": [
+      "El aceite de ___ aporta dureza y espuma abundante, pero en exceso puede sentirse resecante.",
+      "coco"
+     ],
+     "relacionar": [
+      [
+       "Oliva",
+       "Barra suave, espuma cremosa, endurece lento"
+      ],
+      [
+       "Coco",
+       "Dureza y espuma abundante; en exceso reseca"
+      ],
+      [
+       "Ricino",
+       "En poca cantidad sostiene la espuma"
+      ],
+      [
+       "Karité y cacao",
+       "Firmeza y sensación cremosa"
+      ]
+     ],
+     "refl": "Diseña tu receta base (20 min). 1) Escribe cómo quieres que sea tu barra en tres rasgos: dureza, espuma y sensación. 2) Elige tres o cuatro aceites y explica qué papel cumple cada uno. 3) Asigna porcentajes que sumen 100 % y calcula los gramos para un lote de prueba. 4) Define la única variable que cambiarás en tu segundo lote y cómo evaluarás el resultado con otras personas. 5) Redacta una descripción de la barra para tu etiqueta o tu publicación, sin promesas terapéuticas.",
+     "modelo": "Modelo: «Quiero una barra firme, de espuma cremosa y suave al enjuagar. Uso 55 % de oliva como base, 25 % de coco para dureza y espuma, 15 % de karité para firmeza y 5 % de ricino para sostener la espuma. Lote de prueba de 600 g: 330, 150, 90 y 30 g; calculo la sosa en mi hoja y la compruebo en la calculadora. En el segundo lote solo cambiaré el karité por manteca de cacao, y cuatro personas usarán cada barra dos semanas. Descripción: “Barra de oliva y karité, de espuma cremosa”.» Es buena porque cada aceite tiene un papel, cambia una sola cosa y describe sin prometer curas.",
+     "plantilla": [
+      "Ficha de diseño de mi receta",
+      "Barra que busco: dureza [ ] espuma [ ] sensación [ ]\nAceite 1: [ ] % [ ] papel: [ ]\nAceite 2: [ ] % [ ] papel: [ ]\nAceite 3: [ ] % [ ] papel: [ ]\nAceite 4: [ ] % [ ] papel: [ ]\nTotal: 100 %   Lote de prueba: [ ] g\nVariable que cambiaré en el siguiente lote: [ ]\nQuiénes lo probarán y qué les preguntaré: [ ]\nDescripción sin promesas terapéuticas: [ ]"
+     ],
+     "clave": [
+      "Ningún aceite da dureza, espuma y suavidad a la vez: la receta los combina con un papel para cada uno.",
+      "Los indicadores de las calculadoras orientan; la prueba real es el lote curado y usado por varias personas.",
+      "Cambia una variable por lote, anótala en la bitácora y describe la barra sin prometer curas."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos arma en Excel tu hoja de lejía y tu receta base; es la primera mitad de la parte 2 de tu plan de lanzamiento. 1) Hoja Sosa: aceites en A2:A5, gramos en B2:B5, SAP de NaOH en C2:C5 (confirmados con la ficha de tu proveedor) y sosa por aceite en D2 con =B2*C2, copiada hacia abajo. 2) Totales: aceites en B6 con =SUMA(B2:B5) y sosa al 0 % en D6 con =SUMA(D2:D5); sobreengrasado en B7 (0.05 o más) y sosa final en B8 con =D6*(1-B7). 3) Agua en B9 con =B6*0.38 y concentración en B10 con =B8/(B8+B9), con formato de porcentaje; comprueba que no pase de alrededor de 40 %. 4) Hoja Escala: en B1 escribe el nuevo tamaño de lote; en B3 el porcentaje de cada aceite con =Sosa!B2/Sosa!$B$6 y en C3 sus gramos con =B3*$B$1, copiados hacia abajo; después vuelve a calcular la sosa con esos gramos. 5) Pasa la receta por una calculadora de saponificación y anota la comparación. 6) Escribe tu protocolo de sosa y el nombre de quien te acompañará en tu primer lote. En algunas configuraciones de Excel el separador es punto y coma: cámbialo si te marca error.",
+    "entregable": "Un archivo de Excel con las hojas Sosa y Escala de tu receta base, comprobado con una calculadora de saponificación, más tu protocolo de sosa en una página.",
+    "criterios": "Revisa: cada SAP coincide con la tabla o con la ficha del proveedor, el sobreengrasado es de al menos 5 %, la concentración no pasa de alrededor de 40 %, la calculadora confirma tu resultado y tu protocolo incluye equipo, el orden sosa al agua y primeros auxilios con el 911."
+   },
+   "lab": {
+    "t": "Revisar la receta de jabón de una maestra antes de su primer lote",
+    "obj": "Detectar errores de cálculo y de seguridad en una receta casera, recalcularla en peso y decidir si el primer lote puede hacerse.",
+    "esc": "<b>Paola,</b> de 44 años, es maestra de primaria en Culiacán y quiere regalar jabones en el intercambio de fin de año de su escuela, dentro de 15 días. Encontró en redes una receta que dice: «2 tazas de aceite de oliva, 1 taza de coco y 3 cucharadas de sosa, sin sobreengrasar para que limpie bien». Planea hacerla en su cocina, en una olla de aluminio, y te pide que la revises.",
+    "e": [
+     [
+      "Escena 1: La receta está en tazas y cucharadas. Paola decide rehacerla en peso, con un lote de 600 g de aceites al que suma un poco de ricino: 360 g de oliva, 180 g de coco y 60 g de ricino.",
+      "Consigna: calcula la sosa al 0 % con los SAP de la tabla, aplica 5 % de sobreengrasado, el agua al 38 % y la concentración; escribe cada operación."
+     ],
+     [
+      "Escena 2: Paola insiste en dejar 0 % de sobreengrasado. Además, su hoja de Excel no coincide con la calculadora porque tecleó 0.182 en la fila del ricino.",
+      "Consigna: explica el error de la hoja y por qué el sobreengrasado no es opcional, en un mensaje breve y amable."
+     ],
+     [
+      "Escena 3: Su plan es la cocina, la olla de aluminio, sus dos hijos haciendo la tarea en la mesa, guantes de tela y ningún tipo de lentes.",
+      "Consigna: rediseña el lugar, el equipo y los pasos, e incluye el cartel de primeros auxilios."
+     ],
+     [
+      "Escena 4: El intercambio es en 15 días y el jabón en frío necesita de 4 a 6 semanas de curado como guía.",
+      "Consigna: escribe tu recomendación sobre el regalo y un plan para su primer lote acompañada de alguien con experiencia."
+     ]
+    ],
+    "p": [
+     [
+      "Con 360 g de oliva, 180 g de coco y 60 g de ricino, ¿cuánta sosa lleva el lote con 5 % de sobreengrasado?",
+      "84.6 g",
+      "89.1 g",
+      "93.6 g",
+      "La sosa al 0 % es 360 × 0.135 + 180 × 0.182 + 60 × 0.129 = 48.6 + 32.76 + 7.74 = 89.1 g. Con 5 % de sobreengrasado: 89.1 × 0.95 = 84.6 g. Usar 89.1 g deja sin margen, y 93.6 g resulta de sumar el 5 % en lugar de restarlo."
+     ],
+     [
+      "Con 84.6 g de sosa y el agua al 38 % de los aceites, ¿cuál es la concentración de su lejía?",
+      "27.1 %",
+      "37.1 %",
+      "38 %",
+      "El agua es 600 × 0.38 = 228 g, y la concentración es 84.6 ÷ (84.6 + 228) = 27.1 %. El 37.1 % sale de dividir la sosa solo entre el agua, y el 38 % confunde la proporción de agua respecto a los aceites con la concentración de la lejía."
+     ],
+     [
+      "¿Qué le recomiendas a Paola sobre el intercambio?",
+      "Regalar base glicerinada y hacer su primer lote sin prisa, acompañada",
+      "Hacer el lote ya y regalarlo con una nota para que lo usen en un mes",
+      "Usar proceso en caliente, que en 15 días ya estará curado y seguro",
+      "Con 15 días no alcanza el curado del proceso en frío, y regalar barras frescas pone en manos de otras personas un producto sin terminar. El proceso en caliente acelera la reacción, no la evaporación. La base glicerinada resuelve el regalo y le da tiempo de aprender con alguien con experiencia."
+     ]
+    ],
+    "pl": [
+     "Revisión de receta antes del primer lote",
+     "Receta original: [ ]\nReceta en gramos: aceite [ ] g × SAP [ ] = [ ] g de sosa (repite por aceite)\nSosa al 0 %: [ ]   Sobreengrasado: [ ] %   Sosa final: [ ]\nAgua: [ ] g   Concentración: [ ] %\nComprobada en calculadora de saponificación: [ ]\nErrores encontrados: [ ]\nLugar, equipo y pasos corregidos: [ ]\nPrimeros auxilios a la vista: [ ]\nDecisión sobre fechas y acompañamiento: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Una clienta te pregunta si tu jabón de oliva hecho en frío tiene sosa. ¿Qué le respondes?",
+     "Que se hizo con sosa y, bien calculado, no queda libre",
+     "Que no lleva sosa porque es un jabón totalmente natural",
+     "Que sí tiene sosa, pero tan poca que no hace ningún daño",
+     "Que la sosa se evapora con el calor durante el curado"
+    ],
+    [
+     "Tienes la jarra con el agua pesada y el vaso con la sosa. ¿Qué haces?",
+     "Viertes la sosa poco a poco sobre el agua, moviendo",
+     "Viertes el agua sobre la sosa para que se disuelva mejor",
+     "Juntas todo de golpe y tapas la jarra para atrapar vapores",
+     "Calientas el agua en la estufa para acelerar la disolución"
+    ],
+    [
+     "Te salpica lejía en un ojo aunque llevabas lentes. ¿Qué haces?",
+     "Irrigo con agua al menos 20 minutos y busco atención médica",
+     "Me enjuago un minuto y, si ya no arde, sigo con el lote",
+     "Me pongo gotas de vinagre diluido para neutralizar la sosa",
+     "Me tallo con una toalla limpia y espero a ver si mejora"
+    ],
+    [
+     "Tu receta lleva 400 g de oliva y 100 g de coco. ¿Cuánta sosa necesitas al 0 %?",
+     "72.2 g",
+     "67.5 g",
+     "91 g",
+     "68.6 g"
+    ],
+    [
+     "Tu cálculo da 120 g de sosa al 0 %. ¿Cuánta usas con 5 % de sobreengrasado?",
+     "114 g",
+     "126 g",
+     "120 g",
+     "108 g"
+    ],
+    [
+     "Una tabla da para el aceite de coco un SAP de KOH de 0.255. ¿Qué valor usas para barras con NaOH?",
+     "0.182, al dividir entre 1.4025",
+     "0.358, al multiplicar por 1.4025",
+     "0.255, porque el valor es el mismo",
+     "0.128, al dividirlo entre dos"
+    ],
+    [
+     "Tu lote es de 700 g de aceites y usarás agua al 38 %. ¿Cuánta agua pesas?",
+     "266 g en la báscula",
+     "266 ml medidos en una taza",
+     "380 g, lo que siempre lleva",
+     "434 g en la báscula"
+    ],
+    [
+     "Un compañero quiere guardar lejía sobrante en una botella de refresco rotulada a mano. ¿Qué le dices?",
+     "Que nunca use envases que se confundan con bebidas",
+     "Que está bien si la guarda dentro del refrigerador",
+     "Que basta con escribir «peligro» con un plumón grueso",
+     "Que mejor la pase a un frasco de aluminio con tapa"
+    ],
+    [
+     "Quieres una barra más dura y espumosa que tu jabón de pura oliva. ¿Qué ajuste pruebas?",
+     "Sumar algo de coco y manteca, y recalcular la sosa",
+     "Subir el ricino hasta la mitad de la receta",
+     "Bajar el sobreengrasado a 0 % para endurecerla",
+     "Cambiar aceites y conservar el cálculo de sosa anterior"
+    ],
+    [
+     "Tu hoja de Excel da 111.6 g de sosa y la calculadora, 118 g. ¿Qué haces?",
+     "Reviso SAP, gramos y fórmulas antes de pesar",
+     "Uso 118 g, porque la calculadora nunca falla",
+     "Uso el promedio, unos 115 g, para quedar en medio",
+     "Uso 111.6 g y subo el agua para compensar"
+    ]
+   ]
+  },
+  {
+   "t": "Jabón artesanal II: elaboración, curado y calidad",
+   "r": "El proceso en frío paso a paso, el curado y la medición del pH, los defectos más comunes y qué hacer con cada uno, y las alternativas sin sosa en tu mesa con base glicerinada, colorantes y exfoliantes.",
+   "lecciones": [
+    {
+     "t": "El proceso en frío paso a paso: temperaturas, traza, moldes y aditivos",
+     "obj": "Seguir un procedimiento ordenado para elaborar un lote en frío, reconocer la traza y decidir cuándo y cómo agregar aroma, color y exfoliante.",
+     "texto": [
+      "El proceso en frío se gana antes de empezar. Ten la receta comprobada en la calculadora, el equipo de protección puesto, el molde listo y todos los ingredientes <b>pesados</b> en recipientes rotulados: aceites, agua, sosa y aditivos. Abre tu bitácora de lote y anota la fecha, la receta y el proveedor y lote de cada ingrediente. Si a la mitad tienes que buscar algo, ahí ocurren los descuidos.",
+      "El orden más usado es este. Prepara la lejía vertiendo la sosa sobre el agua y déjala enfriar en un lugar seguro y rotulado. Derrite las mantecas a fuego bajo y júntalas con los aceites líquidos. Cuando la lejía y los aceites estén tibios y a temperaturas parecidas, según tu receta, vierte la lejía sobre los aceites y mezcla con una licuadora de inmersión exclusiva del taller, en pulsos cortos alternados con movimientos de espátula. Anota las temperaturas de cada lote: así entenderás después por qué uno salió distinto.",
+      "La <b>traza</b> es el punto en que la mezcla se espesa lo suficiente para que un hilo que dejas caer sobre la superficie deje una marca visible antes de hundirse. En traza ligera parece una natilla delgada, y es el mejor momento para los aditivos: los aceites esenciales dentro de la guía de 2 a 4 % para productos con enjuague, o la fragancia según su ficha y sin pasar de su límite IFRA para jabón; luego, el color y el exfoliante. Si mezclas de más llegas a traza espesa y el vaciado se complica. Vierte en moldes de silicona o de madera forrada, nunca de aluminio, golpea con suavidad para sacar burbujas, cubre y deja reposar. A veces la barra se calienta y se ve más oscura y translúcida en el centro: es una etapa normal, no un defecto.",
+      "Al terminar, todo lo que tocó la mezcla sigue siendo cáustico: con guantes y lentes, deja reposar los utensilios y lávalos después. Desmolda cuando la barra esté firme y hazlo con guantes, porque en los primeros días la reacción aún no termina. Tu primer lote, de preferencia, hazlo junto a alguien con experiencia: ver una traza real enseña más que diez videos."
+     ],
+     "comparar": [
+      "«Así no: Le eché la fragancia al final, cuando la mezcla ya estaba espesa, y como no la medí puse un chorrito generoso.»",
+      "«Así sí: Pesé la fragancia según su ficha y su límite para jabón, la agregué en traza ligera y lo anoté en la bitácora.»"
+     ],
+     "caso": "Caso ficticio: Javier, de 28 años, es cocinero en una fonda de Toluca y ya hizo un lote acompañado de una jabonera con experiencia. Para el segundo, solo, quiere ahorrar tiempo: piensa pesar los aceites mientras la lejía se enfría, licuar sin parar hasta que la mezcla espese mucho para «asegurar» la reacción y usar un molde de pan de aluminio que tiene en casa.",
+     "p": [
+      [
+       "¿Cómo organiza Javier su segundo lote?",
+       "Pesa y rotula todo antes de preparar la lejía",
+       "Pesa los aceites mientras se enfría la lejía, para ganar tiempo",
+       "Prepara lejía de más y la guarda para el siguiente lote",
+       "Tener todo pesado y rotulado antes de tocar la sosa evita distracciones con un químico corrosivo cerca. Pesar mientras la lejía se enfría multiplica las ocasiones de error, y guardar lejía de sobra aumenta el riesgo de accidentes y confusiones en casa."
+      ],
+      [
+       "¿Hasta dónde licua Javier la mezcla?",
+       "Hasta traza ligera, con pulsos cortos y espátula",
+       "Hasta que quede muy espesa, para asegurar la reacción",
+       "Sin licuadora, solo con espátula, para no meter aire",
+       "La saponificación continúa en el molde; no hace falta llevar la mezcla a traza espesa, que complica el vaciado y la integración de los aditivos. Mezclar solo con espátula es posible, pero tarda mucho más y aumenta el riesgo de que la mezcla no se integre bien."
+      ],
+      [
+       "¿Qué molde usa Javier?",
+       "Uno de silicona o de madera forrada",
+       "El de aluminio, forrado con una bolsa delgada",
+       "El de aluminio, si es nuevo y de lámina gruesa",
+       "La sosa es corrosiva para metales como el aluminio, y una bolsa delgada puede romperse o dejar huecos. Ser nuevo o grueso no cambia la reacción del metal con la mezcla. La silicona y la madera forrada son las opciones seguras."
+      ]
+     ],
+     "completar": [
+      "El punto en que la mezcla deja una marca visible en la superficie se llama ___.",
+      "traza"
+     ],
+     "relacionar": [
+      [
+       "Traza ligera",
+       "Momento de agregar aroma, color y exfoliante"
+      ],
+      [
+       "Licuadora de inmersión",
+       "Pulsos cortos alternados con espátula"
+      ],
+      [
+       "Molde",
+       "Silicona o madera forrada, nunca aluminio"
+      ],
+      [
+       "Utensilios recién usados",
+       "Siguen cáusticos: guantes y lentes"
+      ],
+      [
+       "Bitácora de lote",
+       "Fecha, proveedores, lotes y temperaturas"
+      ]
+     ],
+     "refl": "Escribe tu procedimiento de lote (20 min). 1) Haz la lista de lo que debe estar pesado y listo antes de tocar la sosa. 2) Escribe los pasos en orden, desde ponerte el equipo hasta cubrir el molde. 3) Define cómo reconocerás la traza ligera y qué aditivos agregarás en ese momento, con sus gramos. 4) Escribe cómo limpiarás y dónde dejarás el molde y los utensilios. 5) Anota quién te acompañará en tu primer lote o cómo lo buscarás.",
+     "modelo": "Modelo: «Antes de la sosa: aceites pesados, agua y sosa en recipientes rotulados, fragancia pesada en báscula de 0.01 g, molde de silicona limpio y bitácora abierta. Pasos: equipo puesto, sosa al agua en el patio y a enfriar; derrito el karité a fuego bajo y lo junto con los líquidos; lejía sobre aceites; pulsos de licuadora con espátula. En traza ligera agrego 3 % de fragancia y el color disuelto en un poco de aceite; vacío, golpeo suave y cubro. Los utensilios reposan y los lavo al otro día con guantes. Me acompaña una vecina que hace jabón desde hace años.» Es buena porque deja todo listo antes y cada aditivo tiene momento y medida.",
+     "plantilla": [
+      "Procedimiento de mi lote en frío",
+      "Lote n.º: [ ]   Fecha: [ ]\nTodo pesado y rotulado: aceites [ ] agua [ ] sosa [ ] aditivos [ ]\nEquipo puesto: [ ]\nTemperatura de la lejía al mezclar: [ ]   de los aceites: [ ]\nTraza ligera a los: [ ] minutos\nAditivos y gramos: [ ]\nMolde: [silicona / madera forrada]\nObservaciones del reposo: [ ]\nLimpieza de utensilios: [ ]\nAcompañante: [ ]"
+     ],
+     "clave": [
+      "El lote se prepara antes de empezar: receta comprobada, todo pesado y rotulado, equipo puesto y bitácora abierta.",
+      "La traza ligera es el momento de agregar aroma, color y exfoliante; la fragancia, dentro de la dosis de su ficha y su límite para jabón.",
+      "Molde de silicona o madera forrada, nunca aluminio; todo lo que tocó la mezcla se maneja con guantes."
+     ]
+    },
+    {
+     "t": "Curado, corte y pH: por qué esperar, cómo medir y cuándo un jabón no se vende",
+     "obj": "Cortar y curar tus barras correctamente, medir su pH con método y decidir con criterios claros qué lote sale a la venta y cuál no.",
+     "texto": [
+      "Una barra recién desmoldada todavía no está lista. Durante el <b>curado</b> termina la reacción y, sobre todo, se evapora el agua de la receta: la barra se vuelve más dura, rinde más en la jabonera y se siente más suave. Como guía, el jabón en frío se cura de 4 a 6 semanas. Córtalo cuando esté firme pero no quebradizo, con guantes, y acomoda las barras separadas en rejillas, en un lugar ventilado, a la sombra y lejos de la humedad de la cocina o del baño; voltéalas de vez en cuando para que sequen parejo.",
+      "Pesa algunas barras al cortarlas y otra vez al final del curado. Verás que pierden peso, y eso importa: el <b>contenido neto</b> que pondrás en la etiqueta es el de la barra curada, no el del día del corte. Anota ambos pesos en tu bitácora; también te dirán cuándo la barra dejó de perder agua.",
+      "Ahora, el <b>pH</b>. Como viste en el módulo 2, el jabón verdadero es alcalino, con valores típicos de 9 a 10, mientras que la superficie de la piel es ligeramente ácida. Por eso no tiene sentido anunciar un jabón verdadero como «pH neutro» o «del mismo pH que tu piel»: no lo es. Mide con tiras de pH de rango amplio o con un medidor calibrado, en una solución de jabón con agua destilada, siempre igual en cada lote, y nunca con la lengua.",
+      "¿Cuándo no se vende? Cuando la barra tiene bolsas de líquido o aceite separado, cuando el pH sale claramente arriba del rango típico, cuando huele a rancio, cuando no terminó su curado o cuando tu bitácora tiene un hueco y no puedes saber cuánta sosa lleva. Ese lote se aparta, se rotula y se maneja con guantes siguiendo la hoja de seguridad; vender «para no perder» es apostar con la piel de tus clientes. Guarda además una <b>muestra de retención</b> de cada lote que sí vendas: si alguien reporta una molestia, podrás revisarla."
+     ],
+     "comparar": [
+      "«Así no: Mi jabón es pH neutro, igualito al de tu piel; y como ya me lo pedían, lo vendí a la semana de hacerlo.»",
+      "«Así sí: Mi jabón, como todo jabón verdadero, es alcalino; lo vendo después del curado y de medir el pH de cada lote.»"
+     ],
+     "caso": "Caso ficticio: Socorro, de 54 años, es costurera en Zacatecas y vende jabones en un mercado de fin de semana. Un cliente le pide 40 barras para un evento dentro de dos semanas, y ella solo tiene un lote cortado hace diez días. Además, una clienta le preguntó si sus jabones son «pH neutro», porque su hija tiene la piel sensible.",
+     "p": [
+      [
+       "¿Qué hace Socorro con el pedido de 40 barras?",
+       "Lo acepta solo con barras que ya terminaron su curado",
+       "Entrega el lote de diez días; en dos semanas ya casi estará",
+       "Pone las barras al sol o junto a la estufa para curar más rápido",
+       "Diez días más dos semanas no completan el curado mínimo de 4 semanas que se usa como guía, y casi curado no es curado. El sol directo y el calor de la estufa no sustituyen el tiempo y pueden dañar la barra. Si no hay barras curadas suficientes, se negocia otra fecha o una cantidad menor."
+      ],
+      [
+       "¿Qué le contesta Socorro a la clienta sobre el pH neutro?",
+       "Que el jabón es alcalino y que ante molestias consulte a un médico",
+       "Que sí es neutro, porque es artesanal y hecho con aceites naturales",
+       "Que lo deje una noche en agua para que el pH baje antes de usarlo",
+       "Todo jabón verdadero es alcalino, con pH típico de 9 a 10, sea artesanal o no; afirmar lo contrario es información engañosa. Remojarlo no lo vuelve neutro. Socorro no diagnostica la piel de nadie: si hay molestia, se suspende y se consulta a un médico."
+      ],
+      [
+       "¿Cómo mide Socorro el pH de sus lotes?",
+       "Con tiras o medidor, en solución con agua destilada, igual cada lote",
+       "Tocando la barra con la punta de la lengua, como hacían antes",
+       "Con tiras sobre la barra mojada con agua de la llave, solo cuando se acuerda",
+       "Un método constante, con agua destilada y tiras de rango amplio o un medidor calibrado, permite comparar lotes y anotar resultados. Probar con la lengua es arriesgado con un producto que podría estar cáustico, y medir al azar con agua de la llave da datos que no se pueden comparar."
+      ]
+     ],
+     "completar": [
+      "Durante el ___ termina la reacción y se evapora el agua de la receta.",
+      "curado"
+     ],
+     "refl": "Diseña tu control de curado y salida (20 min). 1) Describe dónde curarás tus barras: lugar, rejillas, ventilación, luz y humedad. 2) Escribe cómo y cuándo pesarás las barras y cómo decidirás el contenido neto. 3) Define tu método de pH: material, solución, momento y dónde lo anotas. 4) Escribe tu lista de razones para no vender un lote y qué harás con él. 5) Redacta la respuesta que darás si alguien te pregunta si tu jabón es pH neutro.",
+     "modelo": "Modelo: «Curo en el cuarto de visitas, en rejillas, con la ventana abierta y sin sol directo. Peso cinco barras al cortar y cada semana; declararé un contenido neto que todas las barras curadas cumplan. Mido el pH a las cuatro semanas con tiras de rango amplio, en solución con agua destilada, y lo anoto en la bitácora. No vendo si hay líquido o aceite separado, olor rancio, pH fuera de lo típico o un hueco en la bitácora; ese lote lo aparto rotulado. Si me preguntan: “Ningún jabón verdadero es neutro; si notas molestia, suspéndelo y consulta a un médico”.» Es buena porque cada decisión tiene un criterio escrito y la respuesta es honesta.",
+     "plantilla": [
+      "Control de curado y salida de lote",
+      "Lote: [ ]   Fecha de corte: [ ]   Fin de curado previsto: [4 a 6 semanas]\nLugar de curado: [ ]\nPeso al corte: [ ] g   Peso al final: [ ] g   Contenido neto declarado: [ ] g\npH: método [ ] resultado [ ] fecha [ ]\n¿Bolsas de líquido o aceite separado?: [sí / no]\n¿Olor rancio?: [sí / no]   ¿Bitácora completa?: [sí / no]\nDecisión: [se vende / se aparta]\nMuestra de retención guardada: [sí / no; dónde]"
+     ],
+     "clave": [
+      "El curado de 4 a 6 semanas, como guía, endurece la barra y deja que se evapore el agua; el contenido neto es el de la barra curada.",
+      "El jabón verdadero es alcalino, con pH típico de 9 a 10: no lo anuncies como neutro ni igual al de la piel.",
+      "Si hay líquido, aceite separado, olor rancio, pH fuera de lo típico o huecos en la bitácora, el lote no se vende."
+     ]
+    },
+    {
+     "t": "Defectos y soluciones: ceniza blanca, gotas, manchas naranjas, separación y aceleración por fragancia",
+     "obj": "Reconocer los defectos más comunes del jabón en frío, entender su causa probable y decidir si se corrige, se vende o se aparta.",
+     "texto": [
+      "Todo jabonero tiene lotes imperfectos; lo profesional es diagnosticarlos con calma y decidir con criterio. La <b>ceniza blanca</b> es una capa polvosa en la superficie, de carbonato de sodio, que se forma cuando la sosa que aún no reacciona se combina con el dióxido de carbono del aire. Es un defecto estético: se retira raspando o recortando la cara afectada, y se previene cubriendo el molde y evitando corrientes de aire los primeros días.",
+      "Las <b>gotas</b> en la superficie tienen dos orígenes posibles. Si aparecen durante el curado en un lugar húmedo, suelen ser glicerina que atrae la humedad del aire, y se corrigen secando mejor. Si salen en las primeras horas o el lote tuvo un error al pesar, podrían ser lejía: no las toques sin guantes y revisa tu bitácora antes de decidir. Las <b>manchas naranjas</b> que aparecen semanas después, con olor a aceite viejo, indican rancidez: aceites oxidados o vencidos, mucho sobreengrasado con aceites que se oxidan fácil o un curado húmedo y caluroso. Se previenen con aceites frescos, bien guardados y con fecha; un antioxidante como la vitamina E frena la oxidación, pero no rescata un aceite rancio. Esas barras no se venden.",
+      "La <b>separación</b> se ve como aceite encharcado encima, bolsas de líquido dentro o una textura cortada. Suele venir de mezclar poco, de un error al pesar o de un aditivo incompatible, y puede dejar zonas con sosa libre: ese lote no se vende ni se regala; se aparta con guantes y se maneja según la hoja de seguridad.",
+      "La <b>aceleración por fragancia</b> ocurre cuando, al agregar ciertos aromas, la mezcla se espesa de golpe y casi no da tiempo de vaciar. Lee la ficha del proveedor, que a veces advierte este comportamiento, prueba toda fragancia nueva en un lote pequeño y agrégala en traza ligera, mezclando con espátula. Si te pasa, vacía rápido y acepta una superficie rústica: si la mezcla quedó integrada, el problema es de forma. Ante cualquier defecto, anota qué pasó, tu hipótesis y el cambio para el siguiente lote."
+     ],
+     "comparar": [
+      "«Así no: Le salieron unas manchitas naranjas, pero las vendo más baratas como jabón de segunda.»",
+      "«Así sí: Las manchas naranjas con olor a aceite viejo son rancidez: aparto el lote, reviso las fechas de mis aceites y ajusto cómo los guardo.»"
+     ],
+     "caso": "Caso ficticio: Brenda, de 22 años, estudia gastronomía en Pachuca y hace jabón con aceite de aguacate que le regalan de una huerta familiar. Su último lote tiene tres problemas: una capa blanca y polvosa encima, varias barras con manchas naranjas que huelen raro y una barra con un charquito de líquido en el centro al cortarla. Mañana tiene un bazar en su escuela.",
+     "p": [
+      [
+       "¿Qué hace Brenda con la capa blanca y polvosa?",
+       "La raspa o recorta y cubre mejor el siguiente molde",
+       "Descarta el lote completo, porque esa capa es sosa pura",
+       "La deja así y la presenta como un acabado especial de la casa",
+       "La ceniza blanca es carbonato de sodio y es un defecto estético: se retira y se previene cubriendo el molde. No es sosa pura, así que no obliga a tirar el lote, y presentarla como un acabado especial no es honesto con la clientela."
+      ],
+      [
+       "¿Qué hace Brenda con las barras de manchas naranjas?",
+       "No las vende y revisa la edad y el guardado del aceite",
+       "Las vende más baratas, con un letrero de jabón de segunda",
+       "Les recorta las manchas y las vende como barras completas",
+       "Las manchas naranjas con olor raro indican rancidez, que afecta a toda la barra y no solo a la mancha visible. Un descuento no cambia la calidad del producto. La causa probable está en el aceite de aguacate: su edad, cómo se guardó y si estaba fresco."
+      ],
+      [
+       "¿Qué hace Brenda con la barra del charquito de líquido?",
+       "La aparta con guantes y no la vende ni la regala",
+       "La deja curar dos semanas más para que se absorba",
+       "La regala a su familia, que sabe que es jabón casero",
+       "Las bolsas de líquido son señal de separación y pueden contener sosa libre, así que esa barra se maneja con guantes y se aparta. Esperar no garantiza que el riesgo desaparezca, y regalarla a la familia traslada el mismo riesgo a personas cercanas."
+      ]
+     ],
+     "completar": [
+      "Las manchas naranjas con olor a aceite viejo indican ___ de los aceites.",
+      "rancidez"
+     ],
+     "relacionar": [
+      [
+       "Ceniza blanca",
+       "Raspar o recortar y cubrir el molde"
+      ],
+      [
+       "Manchas naranjas",
+       "Aceites oxidados o curado húmedo"
+      ],
+      [
+       "Bolsas de líquido",
+       "Posible sosa libre: no se vende"
+      ],
+      [
+       "Aceleración por fragancia",
+       "Probar en lote pequeño y agregar en traza ligera"
+      ],
+      [
+       "Gotas en curado húmedo",
+       "Glicerina que atrae la humedad del aire"
+      ]
+     ],
+     "refl": "Arma tu guía de defectos (20 min). 1) Haz una tabla con cinco defectos: cómo se ve, causa probable, si se puede vender y qué cambiarás en el siguiente lote. 2) Describe un lote real tuyo, o uno que hayas visto, con algún defecto, y diagnostícalo. 3) Escribe tu regla para manejar y apartar los lotes que no se venden. 4) Anota cómo vas a guardar tus aceites para reducir la rancidez.",
+     "modelo": "Modelo: «Mi lote de lavanda tuvo ceniza blanca encima y gotitas después de una semana de lluvias. Diagnóstico: la ceniza es estética y se fue al recortar la cara superior; las gotas aparecieron tarde, durante un curado húmedo, y la bitácora está completa, así que las atribuyo a glicerina con humedad. Decisión: se vende al terminar el curado en un cuarto más seco y después de medir el pH. Cambios: cubriré el molde y curaré lejos del baño. Mis aceites irán en envases cerrados, a la sombra y con la fecha de apertura.» Es buena porque separa lo estético de lo riesgoso y apoya la decisión en la bitácora y el pH.",
+     "plantilla": [
+      "Diagnóstico de defecto",
+      "Lote: [ ]   Fecha: [ ]\nLo que veo: [ceniza / gotas / manchas naranjas / separación / aceleración / otro]\nCuándo apareció: [ ]\nCausa probable: [ ]\nRevisión de bitácora: [completa / con huecos]\npH: [ ]\nDecisión: [se corrige y se vende / se aparta]\nManejo del lote apartado: [ ]\nCambio para el siguiente lote: [ ]"
+     ],
+     "clave": [
+      "La ceniza blanca es estética; la separación y las bolsas de líquido pueden dejar sosa libre y descartan el lote.",
+      "Las manchas naranjas con olor a aceite viejo son rancidez: se previenen con aceites frescos, bien guardados y con fecha.",
+      "Ante cualquier defecto, revisa la bitácora, anota tu hipótesis y cambia una cosa en el siguiente lote."
+     ]
+    },
+    {
+     "t": "Base glicerinada, colorantes y exfoliantes: alternativas sin sosa y sus límites",
+     "obj": "Elaborar jabones con base glicerinada, elegir colorantes y exfoliantes adecuados y explicar con honestidad lo que esta técnica ofrece y lo que no.",
+     "texto": [
+      "La <b>base glicerinada</b> es jabón ya saponificado que compras en bloques, derrites, personalizas y vacías en moldes. Sirve para empezar, para lotes rápidos y para piezas decorativas, porque en tu mesa no manejas sosa. Fúndela a baño maría o en intervalos cortos de calor, sin hervirla: si se sobrecalienta se espesa, se oscurece y pierde transparencia. Agrega el aroma al retirarla del fuego, dentro de su límite para productos con enjuague, y vacía.",
+      "Sus límites son claros. No controlas la receta: los ingredientes, el pH y la calidad los decide tu proveedor, así que pide su ficha técnica con la lista completa de ingredientes, porque tu etiqueta debe incluirlos. La glicerina atrae la humedad: en climas húmedos la barra «suda» y se llena de gotitas, por eso se envuelve en plástico en cuanto se enfría. Y no la anuncies como «hecha desde cero» ni «sin sosa»: lo honesto es «jabón elaborado con base glicerinada».",
+      "Los <b>colorantes</b> deben ser de grado cosmético, con ficha del proveedor que indique que sirven para jabón y para la piel, en la dosis que marca esa ficha y pesados en báscula de 0.01 g. Crayones, pinturas, tintes para ropa o colorantes de repostería sin indicación cosmética no van, aunque se vean bonitos. En el proceso en frío, además, algunos colores cambian por la alcalinidad de la mezcla: haz una prueba pequeña antes de un lote grande.",
+      "Los <b>exfoliantes</b> dan textura: avena molida, semillas molidas o café usado y bien seco son opciones comunes. Elige partículas finas, sin bordes filosos, y distribúyelas cuando la base empiece a espesar para que no se hundan. Evita fruta fresca, purés o leche sin procesar en la base: aportan agua y pueden echarse a perder dentro de la barra. Y cuida tu descripción: puedes decir «barra con avena molida», pero no que «elimina la celulitis», «reduce medidas» o «quita manchas», porque la ley prohíbe atribuir a los productos de belleza efectos terapéuticos o sugerir que cambian las proporciones del cuerpo."
+     ],
+     "comparar": [
+      "«Así no: Mi jabón de glicerina está hecho desde cero, sin sosa, con colorante de repostería y fresas naturales picadas.»",
+      "«Así sí: Mi jabón está elaborado con base glicerinada; uso colorantes cosméticos con ficha y avena molida fina, y lo envuelvo al enfriar.»"
+     ],
+     "caso": "Caso ficticio: Alfonso, de 61 años, se jubiló como técnico ferroviario en Torreón y hace jabones de base glicerinada con su nieta de 16 años para la tienda de una amiga. Quieren lanzar una barra exfoliante de café con «efecto reductor» y otra de colores intensos hechos con crayones derretidos. Además, las barras que dejaron sin envolver en la tienda se ven sudadas y con gotitas.",
+     "p": [
+      [
+       "¿Cómo describen la barra de café?",
+       "Como barra exfoliante de café, sin prometer cambios de figura",
+       "Como barra reductora, porque el café activa la circulación",
+       "Como barra reductora, con un asterisco de resultados variables",
+       "La regulación de publicidad prohíbe sugerir que un producto de belleza modifica las proporciones del cuerpo, y un asterisco no corrige una promesa engañosa. Describir la textura y el uso es honesto y suficiente para vender."
+      ],
+      [
+       "¿Qué usan Alfonso y su nieta para los colores intensos?",
+       "Colorantes cosméticos con ficha que permita usarlos en jabón",
+       "Los crayones, porque son de cera y se funden bien en la base",
+       "Colorante de repostería, porque si se puede comer sirve en la piel",
+       "Un crayón no está hecho para la piel, y que algo se pueda comer no prueba que sea adecuado para un jabón ni que esté permitido como colorante cosmético. Lo seguro es un colorante cosmético con ficha que indique su uso en jabón."
+      ],
+      [
+       "¿Qué hacen con las barras sudadas?",
+       "Las envuelven al enfriar y piden la ficha de la base",
+       "Les agregan glicerina líquida para que brillen parejo",
+       "Las funden de nuevo con agua y las dejan sin envolver",
+       "La glicerina de la base atrae la humedad del aire, por eso se envuelve en cuanto se enfría; la ficha del proveedor confirma su composición. Agregar más glicerina o agua empeora el sudor y cambia un producto que ya no controlas."
+      ]
+     ],
+     "completar": [
+      "La base glicerinada atrae la humedad y en climas húmedos ___, por eso se envuelve al enfriar.",
+      "suda"
+     ],
+     "refl": "Planea una barra de base glicerinada (20 min). 1) Escribe qué datos pedirás a tu proveedor de base y por qué los necesitas para tu etiqueta. 2) Elige un colorante y un exfoliante, con su cantidad y la razón de elegirlos. 3) Describe tu proceso: fundido sin hervir, momento de los aditivos, vaciado y envoltura. 4) Redacta la descripción de la barra para tu catálogo, sin decir «hecha desde cero» ni prometer efectos en el cuerpo.",
+     "modelo": "Modelo: «Pediré al proveedor la ficha técnica con la lista completa de ingredientes en nombres INCI y la hoja de seguridad, porque mi etiqueta debe declararlos. Colorante: mica de grado cosmético apta para jabón, en la dosis de su ficha, pesada en báscula de 0.01 g; exfoliante: avena molida fina, sin bordes. Fundo a baño maría sin hervir, agrego color y aroma al retirar del fuego, incorporo la avena cuando empieza a espesar, vacío y envuelvo al enfriar. Descripción: “Jabón elaborado con base glicerinada, con avena molida y aroma de vainilla”.» Es buena porque es honesta con la técnica y cada aditivo tiene razón y dosis.",
+     "plantilla": [
+      "Ficha de barra con base glicerinada",
+      "Base: [tipo]   Proveedor: [ ]   Ficha técnica y hoja de seguridad: [sí / no]\nIngredientes de la base para mi etiqueta: [ ]\nColorante: [ ]   Dosis: [ ] g   ¿Apto para jabón y piel según la ficha?: [ ]\nExfoliante: [ ]   Tamaño de partícula: [fino / medio]\nAroma: [ ] % dentro de su límite para productos con enjuague\nFundido: [baño maría / intervalos cortos], sin hervir\nEnvoltura al enfriar: [sí]\nDescripción honesta para el catálogo: [ ]"
+     ],
+     "clave": [
+      "La base glicerinada evita manejar sosa en tu mesa, pero no es jabón sin sosa ni hecho desde cero: dilo con honestidad.",
+      "Pide la ficha técnica de la base, los colorantes y los aromas: tu etiqueta necesita su lista de ingredientes.",
+      "Exfoliantes finos y sin bordes, nada de ingredientes frescos que aporten agua y ninguna promesa de cambios en el cuerpo."
+     ]
+    }
+   ],
+   "reto": {
+    "texto": "En 90 minutos escribe el manual de elaboración y calidad de tu jabón; es la segunda mitad de la parte 2 de tu plan de lanzamiento. 1) Procedimiento de lote en frío, desde el equipo puesto hasta el molde cubierto, con el momento y los gramos de cada aditivo. 2) Plan de curado: lugar, tiempo de 4 a 6 semanas como guía, pesos al corte y al final, y cómo fijarás el contenido neto. 3) Método de pH, siempre igual, y dónde lo anotas. 4) Tabla de defectos con su decisión: se corrige, se vende o se aparta. 5) Criterios escritos para liberar un lote y para apartarlo, y cómo guardarás la muestra de retención. 6) Si usarás base glicerinada, los datos que pedirás al proveedor y la descripción honesta para tu catálogo.",
+    "entregable": "Un manual de dos o tres páginas con procedimiento, plan de curado, método de pH, tabla de defectos y criterios de liberación de lote, listo para tu bitácora.",
+    "criterios": "Revisa: el procedimiento empieza con el equipo puesto y todo pesado, los aditivos se agregan en traza ligera y con gramos, el curado dura al menos 4 semanas y el contenido neto sale de la barra curada, el pH se mide siempre igual y cada defecto tiene una decisión clara, sin vender lotes con líquido, separación o rancidez."
+   },
+   "lab": {
+    "t": "Diagnosticar cuatro lotes con defectos y decidir qué sale a la venta",
+    "obj": "Diagnosticar defectos en varios lotes de jabón en frío, decidir con criterios qué se vende y qué se aparta, y comunicarlo con honestidad.",
+    "esc": "<b>Diana,</b> de 35 años, es fisioterapeuta en Chetumal y vende jabones en frío cada mes en una feria de artesanos. En plena temporada de lluvias, con calor y mucha humedad, tiene cuatro lotes curando en el cuarto junto al baño. La feria es en diez días y te pide ayuda para decidir qué lleva.",
+    "e": [
+     [
+      "Escena 1: El lote A, de coco y oliva, tiene una capa blanca polvosa en la cara superior; su bitácora está completa y lleva cinco semanas curando.",
+      "Consigna: escribe tu diagnóstico y lo que harías para que ese lote pueda venderse."
+     ],
+     [
+      "Escena 2: El lote B tiene gotitas en todas las barras y está en la repisa más cercana a la regadera. Las gotas aparecieron en la segunda semana; en la bitácora, Diana anotó la sosa y los aceites, pero olvidó el agua.",
+      "Consigna: escribe las causas posibles, qué datos revisarías y qué decides con ese lote."
+     ],
+     [
+      "Escena 3: El lote C, hecho con un aceite de aguacate que llevaba meses abierto, tiene manchas naranjas y huele a aceite viejo. El lote D soltó líquido al cortar una barra y su textura se ve cortada.",
+      "Consigna: decide qué pasa con C y D, cómo se manejan y qué cambia en el siguiente lote."
+     ],
+     [
+      "Escena 4: Una compradora frecuente le escribe para apartar «los jabones de aguacate de siempre» y regalarlos en Navidad.",
+      "Consigna: redacta un mensaje honesto con lo que sí llevará a la feria y una fecha realista para el aguacate."
+     ]
+    ],
+    "p": [
+     [
+      "¿Qué lote puede ir a la feria tras una corrección estética?",
+      "El A, recortando la ceniza y midiendo el pH",
+      "El C, si recorta las manchas naranjas",
+      "El D, si escurre el líquido y lo deja secar",
+      "La ceniza blanca es estética, y el lote A tiene bitácora completa y curado suficiente. La rancidez del C afecta a toda la barra, no solo a la mancha, y el líquido del D indica separación con posible sosa libre: ninguno se vende."
+     ],
+     [
+      "¿Qué hace Diana con el lote B?",
+      "Lo pasa a un lugar seco, mide el pH y decide",
+      "Lo vende ya, porque las gotas siempre son glicerina",
+      "Lo tira de inmediato, porque las gotas son siempre lejía",
+      "Las gotas que aparecen en la segunda semana, junto a la regadera, apuntan a glicerina con humedad, y la sosa sí quedó anotada; aun así, se confirma con el pH antes de vender. Afirmar que siempre son glicerina o siempre lejía salta el diagnóstico."
+     ],
+     [
+      "¿Qué cambio evita que se repita lo del lote C?",
+      "Usar aceite fresco, bien cerrado y con fecha de apertura",
+      "Subir el sobreengrasado para que el aceite proteja la barra",
+      "Curar en el cuarto del baño, que es más tibio y protegido",
+      "La rancidez viene de aceites oxidados y de un curado húmedo y caluroso. Más sobreengrasado deja más aceite libre que puede oxidarse, y el cuarto del baño suma humedad. Aceite fresco, guardado y fechado ataca la causa."
+     ]
+    ],
+    "pl": [
+     "Decisión de lotes antes de una venta",
+     "Lote: [ ]   Receta: [ ]   Semanas de curado: [ ]\nDefecto observado: [ ]\nCausa probable: [ ]\nBitácora: [completa / falta: ]\npH: [ ]\nDecisión: [se vende / se corrige y se vende / se aparta]\nManejo del lote apartado: [guantes, rotulado, hoja de seguridad]\nCambio para el siguiente lote: [ ]\nMensaje a clientes: [ ]"
+    ]
+   },
+   "quiz": [
+    [
+     "Al dejar caer un hilo de mezcla, queda una marca visible en la superficie. ¿Qué haces?",
+     "Agrego fragancia y color, y vacío pronto",
+     "Sigo licuando hasta que quede muy espesa",
+     "Espero media hora a que tome más cuerpo",
+     "Agrego agua para que vuelva a estar líquida"
+    ],
+    [
+     "Una fragancia nueva espesó tu mezcla de golpe. ¿Qué haces en el siguiente lote?",
+     "La pruebo en un lote pequeño y la agrego en traza ligera",
+     "Duplico la dosis para que el aroma compense la textura",
+     "La agrego a la lejía caliente antes de unirla con los aceites",
+     "Cambio a un molde de aluminio para que la mezcla enfríe rápido"
+    ],
+    [
+     "Cortaste barras de 120 g y al final del curado pesan menos. ¿Qué contenido neto pones en la etiqueta?",
+     "Uno que cumplan todas las barras ya curadas",
+     "Los 120 g, que fue lo que pesaron al cortarlas",
+     "El promedio entre el peso al corte y el final",
+     "Ninguno, porque el jabón artesanal está exento"
+    ],
+    [
+     "Un cliente pregunta si tu jabón tiene el mismo pH que su piel. ¿Qué le respondes?",
+     "Que no: el jabón es alcalino y la piel es ácida",
+     "Que sí, porque está hecho con aceites naturales",
+     "Que sí, siempre que se cure más tiempo de lo normal",
+     "Que depende del color y del aroma que elija"
+    ],
+    [
+     "Una barra suelta líquido al cortarla y la textura se ve cortada. ¿Qué haces?",
+     "La aparto con guantes y no la vendo",
+     "La vendo con descuento como barra imperfecta",
+     "La dejo curar más hasta que el líquido se seque",
+     "La regalo a mi familia, que sabe que es casera"
+    ],
+    [
+     "Tus barras tienen polvo blanco encima y la bitácora está completa. ¿Qué haces?",
+     "Recorto la cara afectada y cubro el próximo molde",
+     "Desecho el lote completo porque el polvo es sosa pura",
+     "Las lavo con vinagre para disolver el polvo blanco",
+     "Las vendo así y digo que es sal de mar añadida"
+    ],
+    [
+     "Tres semanas después aparecen manchas naranjas y olor a aceite viejo. ¿Qué revisas primero?",
+     "La edad y el guardado de los aceites",
+     "La cantidad de colorante del lote",
+     "El tipo de licuadora que usaste",
+     "La temperatura del agua de la llave"
+    ],
+    [
+     "Quieres vender un jabón exfoliante. ¿Qué descripción usas?",
+     "Barra con avena molida fina para el baño",
+     "Barra que elimina la celulitis en semanas",
+     "Barra que quita las manchas de la piel",
+     "Barra reductora con café y canela"
+    ],
+    [
+     "Usas base glicerinada y una clienta pregunta si es jabón sin sosa. ¿Qué le dices?",
+     "Que la base se hizo con sosa y yo solo la fundo",
+     "Que es sin sosa porque es pura glicerina",
+     "Que es sin sosa porque yo no la manejo",
+     "Que tiene sosa libre y conviene usar guantes"
+    ],
+    [
+     "Un amigo te regala crayones y tinte para ropa para tus jabones de colores. ¿Qué usas?",
+     "Colorantes cosméticos con ficha apta para jabón",
+     "Los crayones, porque la cera se integra a la base",
+     "El tinte para ropa, porque da colores más firmes",
+     "Cualquiera que no manche el agua al enjuagar"
+    ]
+   ]
+  }
+ ]
+}
