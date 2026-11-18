@@ -107,7 +107,7 @@ práctica presencial es indispensable y que no certifica (ni sustituye estándar
 | 30 | d-tienda-en-linea | tel | Tienda en Línea y Marketplaces: catálogo, pagos, envíos, devoluciones y reglas de Profeco | Alto | Medio (c-venta-en-linea, 11 h) | Boutique de ropa | Publicado (2026-11-10) |
 | 31 | d-unas-pestanas | una | Uñas, Pestañas y Belleza como Negocio: técnica, higiene y tu propio estudio | Alto | Bajo | — | Publicado (2026-11-10) |
 | 32 | d-barberia | bar | Barbería y Estética Masculina: servicio, higiene y administración del negocio | Medio-alto | Bajo | — | Publicado (2026-11-17) |
-| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Listo en rama (2026-11-17) |
+| 33 | d-cosmetica-artesanal | cos | Cosmética Natural Artesanal: jabones, velas y cremas, formulación segura, etiquetado y venta | Medio-alto | Bajo | — | Publicado (2026-11-18) |
 | 34 | d-sublimacion | sub | Sublimación, Serigrafía y Productos Personalizados: equipo, costeo y venta a empresas | Medio-alto | Bajo | Agencia de marketing digital | Pendiente |
 | 35 | d-costura-marca | cst | Costura, Arreglos y Tu Propia Marca de Ropa: del taller en casa a la pequeña producción | Medio | Bajo | Boutique de ropa | Pendiente |
 | 36 | d-eventos | eve | Organización de Eventos: bodas, XV años y corporativos (presupuesto, proveedores y contratos) | Alto | Bajo | Hotelería; Restaurante | Pendiente |
@@ -149,7 +149,7 @@ Pedidos puntuales de Héctor que se hacen antes del siguiente del orden. No cuen
 
 | # | id | pref | Diplomado | Precio | Área / familia | Giros (prospectos, nombres exactos) | Estado |
 |---|---|---|---|---|---|---|---|
-| 49 | d-filosofia | fil | Diplomado en Filosofía: pensar con claridad, decidir con criterio y dialogar (pedido del 17 nov 2026) | 849 (equivale a 1690 con la tarifa nueva) | Crecimiento personal / Desarrollo humano · tema «Filosofía» | Colegio privado | Listo en rama (2026-11-18) |
+| 49 | d-filosofia | fil | Diplomado en Filosofía: pensar con claridad, decidir con criterio y dialogar (pedido del 17 nov 2026) | 849 (equivale a 1690 con la tarifa nueva) | Crecimiento personal / Desarrollo humano · tema «Filosofía» | Colegio privado | Publicado (2026-11-18) |
 
 ## Alcance y cuidados por diplomado
 
